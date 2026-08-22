@@ -1,0 +1,14 @@
+[package]
+name = "oxirane-steric-hostile-null-harness"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[workspace]
+
+[dependencies]
+amphora-core = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-core" }
+amphora-molecule-capabilities = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-capabilities" }
+amphora-rdkit-ffi = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi", features = ["rdkit"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }

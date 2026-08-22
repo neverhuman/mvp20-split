@@ -1,0 +1,12 @@
+{
+  "bundle_sha256": "cf34e0ca9a7e110e00a444f4b6a80e26eba72470142c401236f7476f10ae5b38",
+  "evaluation_receipt_sha256": null,
+  "human_review_performed": false,
+  "independence_scope": "CODE_PATH_AND_SIGNING_IDENTITY",
+  "module_id": "amphora-envelope-gates",
+  "required_independent_reimplementation": true,
+  "review_method": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION",
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

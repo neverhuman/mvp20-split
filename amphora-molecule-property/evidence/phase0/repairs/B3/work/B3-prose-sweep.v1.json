@@ -1,0 +1,209 @@
+{
+  "schema": "amphora.phase0-repair.mission-prose-sweep.v1",
+  "repair_item": "B3",
+  "module": "amphora-molecule-property",
+  "target": "amphora-molecule-property/docs/mission.md",
+  "date": "2026-08-04",
+  "method": "line-by-line read of all 1270 pre-repair lines, cross-referenced against every row of the module's evidence/phase0/kpis/RETRACTION-INDEX.md (sections R-A09, R-A11, R-N02) and against each refuting receipt's own verdict/why/corrected-position fields. A passage is listed STALE only where the prose asserts something the receipt bytes contradict.",
+  "sweep_table": [
+    {
+      "kpi_in_retraction_index": "external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+      "index_status": "RETRACTED",
+      "refuting_receipt": "W3_DIELECTRIC_RETRACTION",
+      "mission_md_prose_found": false,
+      "note": "no prose surface: 'RadonPy' occurs 0 times in the pre-repair mission.md (probe recorded in completeness_probes). Nothing to repair."
+    },
+    {
+      "kpi_in_retraction_index": "mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+      "index_status": "RETRACTED",
+      "refuting_receipt": "W3_DIELECTRIC_RETRACTION",
+      "mission_md_prose_found": false,
+      "note": "no prose surface (same probe). Nothing to repair."
+    },
+    {
+      "kpi_in_retraction_index": "openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+      "index_status": "STANDS",
+      "refuting_receipt": "none (W3 disposition NOT_RETRACTED_LABELS_ADMISSIBLE)",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - OpenPoly dielectric constant ML baseline (lines 885-975)",
+      "stale_passages": [
+        "L885 heading 'REAL POSITIVE lift, n=295'",
+        "L887-889 'Directly delivers the coating IP prediction capability for POLYMER DIELECTRIC CONSTANT - a real electrical-insulation property directly relevant to marine electrical enclosures, cable coatings, and dielectric layers.'",
+        "L905 '**MAJOR POSITIVE FINDING**'",
+        "L938-940 '1. **REAL predictive capability**'",
+        "L956-959 '**Portfolio implication**: `amphora-molecule-property` can now offer polymer dielectric constant prediction with a defended MAE ~0.40 eps_r units ... Directly applicable to coating chemistry decisions for electrical-insulation applications.'"
+      ],
+      "why_stale": "The n=295 MEASUREMENTS stand (W3 upholds this KPI; OpenPoly's own dielectric column has 0/295 admissibility violations). What is contradicted is the module-/portfolio-LEVEL capability advertisement built on them: C8 fire 3's consolidated founder-panel row for dielectric_constant reads NO COMPETENT MODEL, and W3 withdraws every cross-corpus dielectric number. Prose repaired by scoping, not by falsely retracting a standing result.",
+      "repair_ids": ["S7", "S8", "S9", "S10", "S11"]
+    },
+    {
+      "kpi_in_retraction_index": "openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "refuting_receipt": "C7_FINAL_TG_DENSITY",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - ML baseline on OpenPoly experimental Tg (lines 1146-1222)",
+      "stale_passages": [
+        "L1195-1198 'ML strictly dominates the frozen physics-Ridge inference' (unscoped)",
+        "L1200-1202 '2. **Portfolio priority**: For coating Tg prediction on experimental targets, the ML pipeline ... should be the primary predictor'",
+        "L1204 '3. **Positive R2 on rigorous LOSO-CV** confirms cross-scaffold generalization.'",
+        "L1206-1209 '4. **Portfolio-wide answer**: Combined with Push #23 (dielectric R2 +0.66) ... the module now has a defended coating-IP Tg predictor'",
+        "L1220 'Applicability domain restricted to the openpoly scaffold distribution.' (silent on the cross-corpus refutation)"
+      ],
+      "why_stale": "C7 final (overall_verdict CLAIM_REFUTED) shows OpenPoly<->Polyuniverse Tg transfer degrades 6.66x / 16.60x and is anti-predictive against a train-median null in both directions. Prose must say within-corpus only.",
+      "repair_ids": ["S15", "S16", "S17"]
+    },
+    {
+      "kpi_in_retraction_index": "radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "refuting_receipt": "C7_FINAL_TG_DENSITY",
+      "mission_md_prose_found": false,
+      "note": "no prose surface: 'density' occurs 0 times in the pre-repair mission.md. Nothing to repair."
+    },
+    {
+      "kpi_in_retraction_index": "stacked-ml-van-krevelen-density-radonpy-kpi.v1.json",
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "refuting_receipt": "none",
+      "mission_md_prose_found": false,
+      "note": "no prose surface (same probe). Nothing to repair."
+    },
+    {
+      "kpi_in_retraction_index": "mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "refuting_receipt": "W7_MULTITARGET_MACRO_BISECTION",
+      "mission_md_prose_found": false,
+      "note": "no prose surface: 'refractive' occurs 0 times in the pre-repair mission.md. Nothing to repair."
+    },
+    {
+      "kpi_in_retraction_index": "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+      "index_status": "REFUTED",
+      "refuting_receipt": "W7_MULTITARGET_MACRO_BISECTION",
+      "mission_md_prose_found": false,
+      "note": "no prose surface: 'multi-target', 'refractive', 'thermal conductivity' all occur 0 times in the pre-repair mission.md. Nothing to repair - the W7 refutation has no mission.md advertisement to correct."
+    },
+    {
+      "kpi_in_retraction_index": "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+      "index_status": "REFUTED",
+      "refuting_receipt": "W8_VK_RIDGE_YGI_ADMISSIBILITY",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - Ridge regression Y_gi fit on 807 Polyuniverse Epoxy polymers (lines 721-793)",
+      "stale_passages": [
+        "L733 '**MAJOR POSITIVE FINDING**: Ridge Y_gi fit BEATS the published-values baseline by 32.6 K ... reaching Bicerano-level accuracy.'",
+        "L771 '1. **The 24-group STRUCTURE is CONFIRMED CORRECT at scale**'",
+        "L773 '2. **The prior \"under-determination\" hypothesis is RESOLVED**'",
+        "L777 '4. **Fitted Y_gi values are chemistry-plausible**: ... deviations for low-frequency groups reflect finite-sample noise, not structural mismatch.'",
+        "L779 '**Portfolio implication**: ... this receipt proves that a 24-group Van Krevelen calibration can achieve Bicerano-level MAE'",
+        "L786-791 claim scope silent on the two refuted claim locks"
+      ],
+      "why_stale": "W8 (verdict REFUTED) finds 2/24 fitted Y_gi sign-reversed against a 0/24-negative published table (vinyl_CH2 -3125.15 vs +2000; nitrile -2843.55 vs +5500), 13/24 deviating >50% in magnitude, and Spearman rho -0.523 between training support and deviation - a directional physical contradiction that falsifies 'structure confirmed correct' and leaves under-determination unresolved for rare groups.",
+      "repair_ids": ["S1", "S2", "S3", "S4", "S5", "S6"]
+    },
+    {
+      "kpi_in_retraction_index": "external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+      "index_status": "STANDS",
+      "refuting_receipt": "W8_VK_RIDGE_YGI_ADMISSIBILITY (indirect: this KPI applies the coefficients W8 refutes)",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - external validation of Push #20 Ridge Y_gi on OpenPoly experimental Tg (lines 1076-1144)",
+      "stale_passages": [
+        "L1102 'RESOLVES the Push #20 Phase-1 hypothesis about applicability domain.'",
+        "L1108 '4. **Real rank correlation** ... confirms the 24-group structure captures ordinal Tg signal'",
+        "L1126 '- Confirms Push #20's Ridge Y_gi calibration has real generalization value.'"
+      ],
+      "why_stale": "The KPI's own numbers stand (index: STANDS) but its prose re-asserts the 24-group-structure claim that W8 refutes, and inherits 2 physically inadmissible coefficients. Repaired by scoping to aggregate-error only, not by retracting the numbers.",
+      "repair_ids": ["S12", "S13", "S14"]
+    },
+    {
+      "kpi_in_retraction_index": "polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "refuting_receipt": "none in index; C7_FINAL_TG_DENSITY answers the section's own open Phase-1 question",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - Polyuniverse Epoxy Tg conformal intervals + AD audit (lines 76-142)",
+      "stale_passages": [
+        "L140-142 'Phase-1 would require ... a cross-dataset transfer test to an independent experimental epoxy Tg dataset.' - stale as forward-looking: that test has since been run (C7) and FAILED."
+      ],
+      "why_stale": "Prose presents the cross-corpus transfer test as an open Phase-1 item; C7 executed it and reached CLAIM_REFUTED. Repaired by recording the answer and the STANDS-WITHIN-CORPUS-ONLY status.",
+      "repair_ids": ["S-A"]
+    },
+    {
+      "kpi_in_retraction_index": "polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json",
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "refuting_receipt": "none in index",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - named-baseline head-to-head on Polyuniverse Epoxy Tg (lines 144-210)",
+      "stale_passages": [
+        "L204-210 claim scope says 'Polyuniverse Epoxy 1M computed polymer chemistry only' but does not disclose the index status or the cross-corpus refutation"
+      ],
+      "why_stale": "Scope statement was already narrow; missing only the explicit within-corpus-only disclosure the index now mandates. Repaired additively.",
+      "repair_ids": ["S-B"]
+    },
+    {
+      "kpi_in_retraction_index": "polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json",
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "refuting_receipt": "none in index",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - Van Krevelen physical group-contribution Tg baseline vs ML (lines 212-288)",
+      "stale_passages": [
+        "L283-288 claim scope does not disclose the index status or the cross-corpus refutation"
+      ],
+      "why_stale": "Same as above; repaired additively.",
+      "repair_ids": ["S-C"]
+    },
+    {
+      "kpi_in_retraction_index": "openpoly-water-contact-angle-ml-baseline-kpi.v1.json / openpoly-water-uptake-ml-baseline-audit-kpi.v1.json / polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json / van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-kpi.v1.json / van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-kpi.v1.json / van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json / van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-kpi.v1.json / coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+      "index_status": "STANDS",
+      "refuting_receipt": "none - no refuting receipt targets these KPIs",
+      "mission_md_prose_found": true,
+      "stale_passages": [],
+      "why_stale": "n/a - prose reviewed and left byte-unchanged. These sections are already honest-negative or correctly scoped (water uptake HONEST NEGATIVE, contact angle MIXED FINDING, VK 15-polymer sections MAJOR HONEST FINDING documenting a broken formula). No claim contradicted by the retraction index.",
+      "repair_ids": []
+    },
+    {
+      "kpi_in_retraction_index": "R-N02 coordinated C=N (amidine/guanidine) categorical fix",
+      "index_status": "GENERALIZATION CLAIM RETRACTED (arithmetic NOT retracted)",
+      "refuting_receipt": "amine-nh-guanidine-conjugation-gap-v1",
+      "mission_md_prose_found": false,
+      "note": "mission.md's EEW/AHEW prose (lines 34-61) reports only the 3 exact anchors + 6 monodisperse + 5 negative controls, which R-N02's scope note explicitly preserves as NOT retracted. No amine-hardener structure-class generalization claim appears in the prose. Nothing to repair."
+    },
+    {
+      "kpi_in_retraction_index": "R-A11 anchored signature-identity re-issue",
+      "index_status": "SIGNATURE IDENTITY ONLY superseded",
+      "refuting_receipt": "n/a",
+      "mission_md_prose_found": false,
+      "note": "scientific content carries forward unchanged; mission.md cites no signing-key identity for that receipt. Nothing to repair."
+    }
+  ],
+  "completeness_probes": {
+    "method": "case-insensitive grep -c on the pre-repair snapshot; a zero count proves the corresponding RETRACTED/REFUTED RadonPy-side claim had no mission.md prose surface at all",
+    "counts_in_pre_repair_mission_md": {
+      "RadonPy": 0,
+      "PI1070": 0,
+      "refractive": 0,
+      "thermal conductivity": 0,
+      "density": 0,
+      "multi-target": 0,
+      "eps_static": 0
+    },
+    "conclusion": "every RETRACTED or REFUTED RadonPy-derived KPI in the index (external-validation dielectric, mixed dielectric conformal, mixed refractive-index conformal, multi-target 4-properties, radonpy-density-ml-vs-VK, stacked-ml-VK-density) is absent from the pre-repair mission.md prose. The stale prose in this file was confined to the OpenPoly / Polyuniverse sections repaired here."
+  },
+  "repairs": [
+    {"id": "S-A", "section": "Polyuniverse Epoxy Tg conformal + AD - claim scope", "old_line_range": "133-142", "refuted_by": ["C7_FINAL_TG_DENSITY"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "the cross-dataset transfer test this claim scope defers to Phase-1 has since been run and refuted"},
+    {"id": "S-B", "section": "named-baseline head-to-head on Polyuniverse Epoxy Tg - claim scope", "old_line_range": "204-210", "refuted_by": ["C7_FINAL_TG_DENSITY"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "index status STANDS-WITHIN-CORPUS-ONLY must be disclosed in prose"},
+    {"id": "S-C", "section": "Van Krevelen physical baseline vs ML - claim scope", "old_line_range": "283-288", "refuted_by": ["C7_FINAL_TG_DENSITY"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "index status STANDS-WITHIN-CORPUS-ONLY must be disclosed in prose"},
+    {"id": "S1", "section": "Ridge Y_gi fit on 807 Polyuniverse Epoxy polymers - headline", "old_line_range": "733", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "REFUTED_CLAIM_REPLACED", "rationale": "aggregate MAE stands; the structural claim it was used to support is refuted"},
+    {"id": "S2", "section": "Ridge Y_gi fit on 807 - SCIENTIFIC RESOLUTION item 1", "old_line_range": "771", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "REFUTED_CLAIM_REPLACED", "rationale": "2/24 fitted Y_gi sign-reversed against a 0/24-negative published table"},
+    {"id": "S3", "section": "Ridge Y_gi fit on 807 - SCIENTIFIC RESOLUTION item 2", "old_line_range": "773", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "REFUTED_CLAIM_REPLACED", "rationale": "under-determination unresolved for rare groups; Spearman rho -0.523"},
+    {"id": "S4", "section": "Ridge Y_gi fit on 807 - SCIENTIFIC RESOLUTION item 4", "old_line_range": "777", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "REFUTED_CLAIM_REPLACED", "rationale": "13/24 deviate >50%; 2/24 physically inadmissible - not benign finite-sample noise"},
+    {"id": "S5", "section": "Ridge Y_gi fit on 807 - portfolio implication", "old_line_range": "779", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "REFUTED_CLAIM_REPLACED", "rationale": "'proves' overstated; Phase-1 remediation from the receipt's own followups substituted"},
+    {"id": "S6", "section": "Ridge Y_gi fit on 807 - claim scope", "old_line_range": "786-791", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "the two refuted claim locks named explicitly"},
+    {"id": "S7", "section": "OpenPoly dielectric constant ML baseline - heading", "old_line_range": "885", "refuted_by": ["W3_DIELECTRIC_RETRACTION", "C8_FIRE3_CONSOLIDATED"], "disposition": "SCOPED_NO_INLINE_PATH_NEEDED", "rationale": "heading re-scoped; both receipt paths cited in the notice block immediately below it"},
+    {"id": "S8", "section": "OpenPoly dielectric constant ML baseline - lede / capability claim", "old_line_range": "887-889", "refuted_by": ["W3_DIELECTRIC_RETRACTION", "C8_FIRE3_CONSOLIDATED", "C8_FIRE2_CLEAN_SUBSET"], "disposition": "RETRACTED_CLAIM_REPLACED", "rationale": "capability-delivery claim replaced by the receipt's own founder-panel NO COMPETENT MODEL wording plus the explicit NOT_RETRACTED_LABELS_ADMISSIBLE scoping for the n=295 numbers"},
+    {"id": "S9", "section": "OpenPoly dielectric constant ML baseline - finding banner", "old_line_range": "905", "refuted_by": ["W3_DIELECTRIC_RETRACTION"], "disposition": "SCOPED_NO_INLINE_PATH_NEEDED", "rationale": "banner re-scoped to within-OpenPoly; points at the notice block that carries the citations"},
+    {"id": "S10", "section": "OpenPoly dielectric constant ML baseline - interpretation item 1", "old_line_range": "938-940", "refuted_by": ["W3_DIELECTRIC_RETRACTION"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "'REAL predictive capability' re-scoped to within-corpus predictive skill"},
+    {"id": "S11", "section": "OpenPoly dielectric constant ML baseline - portfolio implication", "old_line_range": "956-959", "refuted_by": ["W3_DIELECTRIC_RETRACTION", "C8_FIRE3_CONSOLIDATED"], "disposition": "RETRACTED_CLAIM_REPLACED", "rationale": "the headline stale claim; replaced with the receipt's verbatim founder-panel wording"},
+    {"id": "S12", "section": "external validation of Push #20 Ridge Y_gi - finding 1", "old_line_range": "1102", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "aggregate-error comparison; does not vindicate the fitted table structurally"},
+    {"id": "S13", "section": "external validation of Push #20 Ridge Y_gi - finding 4", "old_line_range": "1108", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "REFUTED_CLAIM_REPLACED", "rationale": "'confirms the 24-group structure' is exactly the claim W8 refutes"},
+    {"id": "S14", "section": "external validation of Push #20 Ridge Y_gi - portfolio bullet", "old_line_range": "1126", "refuted_by": ["W8_VK_RIDGE_YGI_ADMISSIBILITY"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "'real generalization value' quantified (+1.0 K over NULL) and structurally caveated"},
+    {"id": "S15", "section": "ML baseline on OpenPoly experimental Tg - interpretation items 1-3", "old_line_range": "1195-1204", "refuted_by": ["C7_FINAL_TG_DENSITY"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "cross-corpus transfer refuted at 6.66x/16.60x, anti-predictive in both directions"},
+    {"id": "S16", "section": "ML baseline on OpenPoly experimental Tg - portfolio-wide answer", "old_line_range": "1206-1209", "refuted_by": ["W3_DIELECTRIC_RETRACTION", "C8_FIRE3_CONSOLIDATED", "C7_FINAL_TG_DENSITY"], "disposition": "RETRACTED_CLAIM_REPLACED", "rationale": "rolls the retracted portfolio-level dielectric claim and the refuted cross-corpus Tg claim into one 'defended coating-IP predictor' sentence"},
+    {"id": "S17", "section": "ML baseline on OpenPoly experimental Tg - claim scope", "old_line_range": "1220-1222", "refuted_by": ["C7_FINAL_TG_DENSITY"], "disposition": "SCOPED_WITHIN_CORPUS_ONLY", "rationale": "applicability domain extended from scaffold-level to corpus-level per C7"}
+  ]
+}

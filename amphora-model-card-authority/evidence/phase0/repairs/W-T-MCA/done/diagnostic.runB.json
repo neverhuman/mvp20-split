@@ -1,0 +1,293 @@
+{
+  "closes": "W-T-MCA: whether the model_card artifact's completeness is measured against a named published model-card baseline, and what that measurement finds.",
+  "counts": {
+    "n_observed_fields": 8,
+    "n_schema_fields": 13,
+    "n_schema_required_fields": 10
+  },
+  "does_not_close": [
+    "Does not close the amphora-model-card-authority authority-lattice-completeness claim (separate receipt, evidence/audit/authority-lattice-completeness-v1, Denning 1976 baseline).",
+    "Does not re-derive or re-execute the native Rust runtime; reuses a previously-captured, previously-signed ground truth capture.",
+    "Does not promote authority, flip scientific_readiness, or modify the portfolio manifest."
+  ],
+  "gates": {
+    "all_gates_pass_bookkeeping_only": true,
+    "at_least_9_requirements_enumerated": true,
+    "claim_survives": false,
+    "every_requirement_has_verdict_and_evidence": true
+  },
+  "hypothesis": "H0: the model_card artifact this module owns completeness for satisfies all 9 Mitchell et al. (2019) model-card sections. Refuted if any section scores divergent with zero required-signal fields observed in the live runtime.",
+  "non_circularity": "SCHEMA_FIELDS/SCHEMA_REQUIRED are parsed live from amphora-candidate-contract/schemas/score-envelope.schema.json (a dependency this module consumes, not a fixture this module authored for this test). OBSERVED_FIELDS are parsed live from a previously-captured, previously-signed native-Rust runtime ground truth (live-runtime-envelope-parity-v1), not re-derived or re-typed by this oracle.",
+  "purpose": "Measure this module's model_card artifact against a NAMED PUBLISHED model-card baseline for the first time (campaign item W-T-MCA), replacing the prior self-referential (fixture-only) completeness claim.",
+  "requirements_summary": {
+    "n_conformant": 0,
+    "n_divergent": 9,
+    "n_not_applicable": 0,
+    "n_requirements": 9
+  },
+  "requirements_table": [
+    {
+      "id": "R1-model-details",
+      "n_present_observed": 1,
+      "n_required": 7,
+      "normative_summary": "Basic model provenance: developing person/org, model date, model version, model type, training algorithms/parameters, reference paper/resource, citation details, license, feedback contact.",
+      "present_in_observed_runtime": [
+        "model_id"
+      ],
+      "present_in_schema_any_property": [],
+      "present_in_schema_required_list": [],
+      "required_signal_fields": [
+        "model_id",
+        "developer",
+        "model_date",
+        "model_version",
+        "citation",
+        "license",
+        "contact"
+      ],
+      "section": "Model Details",
+      "verdict": "divergent"
+    },
+    {
+      "id": "R2-intended-use",
+      "n_present_observed": 0,
+      "n_required": 3,
+      "normative_summary": "Primary intended uses, primary intended users, out-of-scope use cases.",
+      "present_in_observed_runtime": [],
+      "present_in_schema_any_property": [],
+      "present_in_schema_required_list": [],
+      "required_signal_fields": [
+        "primary_intended_uses",
+        "primary_intended_users",
+        "out_of_scope_use_cases"
+      ],
+      "section": "Intended Use",
+      "verdict": "divergent"
+    },
+    {
+      "id": "R3-factors",
+      "n_present_observed": 0,
+      "n_required": 4,
+      "normative_summary": "Relevant factors (groups, instrumentation, environment) and evaluation factors used to disaggregate results.",
+      "present_in_observed_runtime": [],
+      "present_in_schema_any_property": [],
+      "present_in_schema_required_list": [],
+      "required_signal_fields": [
+        "relevant_factors",
+        "evaluation_factors",
+        "instrumentation",
+        "environment_factors"
+      ],
+      "section": "Factors",
+      "verdict": "divergent"
+    },
+    {
+      "id": "R4-metrics",
+      "n_present_observed": 0,
+      "n_required": 4,
+      "normative_summary": "Model performance measures, decision thresholds, and variation/uncertainty approaches.",
+      "present_in_observed_runtime": [],
+      "present_in_schema_any_property": [
+        "kpi_name",
+        "unit",
+        "direction",
+        "validation_bar"
+      ],
+      "present_in_schema_required_list": [
+        "kpi_name",
+        "unit",
+        "direction",
+        "validation_bar"
+      ],
+      "required_signal_fields": [
+        "kpi_name",
+        "unit",
+        "direction",
+        "validation_bar"
+      ],
+      "section": "Metrics",
+      "verdict": "divergent"
+    },
+    {
+      "id": "R5-evaluation-data",
+      "n_present_observed": 0,
+      "n_required": 2,
+      "normative_summary": "Datasets used for evaluation, their motivation, and preprocessing.",
+      "present_in_observed_runtime": [],
+      "present_in_schema_any_property": [
+        "dataset_ids",
+        "dataset_checksums"
+      ],
+      "present_in_schema_required_list": [
+        "dataset_ids",
+        "dataset_checksums"
+      ],
+      "required_signal_fields": [
+        "dataset_ids",
+        "dataset_checksums"
+      ],
+      "section": "Evaluation Data",
+      "verdict": "divergent"
+    },
+    {
+      "id": "R6-training-data",
+      "n_present_observed": 0,
+      "n_required": 2,
+      "normative_summary": "Training data distribution/provenance where available, or an explicit statement of why it is omitted.",
+      "present_in_observed_runtime": [],
+      "present_in_schema_any_property": [],
+      "present_in_schema_required_list": [],
+      "required_signal_fields": [
+        "training_dataset_ids",
+        "training_provenance_statement"
+      ],
+      "section": "Training Data",
+      "verdict": "divergent"
+    },
+    {
+      "id": "R7-quantitative-analyses",
+      "n_present_observed": 0,
+      "n_required": 3,
+      "normative_summary": "Unitary results per factor and intersectional results across factor combinations.",
+      "present_in_observed_runtime": [],
+      "present_in_schema_any_property": [],
+      "present_in_schema_required_list": [],
+      "required_signal_fields": [
+        "unitary_result_value",
+        "subgroup_results",
+        "intersectional_results"
+      ],
+      "section": "Quantitative Analyses",
+      "verdict": "divergent"
+    },
+    {
+      "id": "R8-ethical-considerations",
+      "n_present_observed": 0,
+      "n_required": 3,
+      "normative_summary": "Sensitive data use, intended-use risks, mitigations, and risks/harms identified during model development.",
+      "present_in_observed_runtime": [],
+      "present_in_schema_any_property": [],
+      "present_in_schema_required_list": [],
+      "required_signal_fields": [
+        "ethical_considerations",
+        "known_risks",
+        "misuse_cases"
+      ],
+      "section": "Ethical Considerations",
+      "verdict": "divergent"
+    },
+    {
+      "id": "R9-caveats-and-recommendations",
+      "n_present_observed": 0,
+      "n_required": 3,
+      "normative_summary": "Additional testing recommended, ideal evaluation datasets not used, and other caveats a reader of the card needs.",
+      "present_in_observed_runtime": [],
+      "present_in_schema_any_property": [],
+      "present_in_schema_required_list": [],
+      "required_signal_fields": [
+        "caveats",
+        "recommendations",
+        "known_limitations"
+      ],
+      "section": "Caveats and Recommendations",
+      "verdict": "divergent"
+    }
+  ],
+  "run_type": "AUDIT_ONLY_THEORY_MEASUREMENT",
+  "runtime_analysis": {
+    "cases_with_envelope": [
+      "E1_evidence_package_wrong_type",
+      "F1_valid_formulation_seed0",
+      "F2_same_candidate_new_seed_new_runid"
+    ],
+    "n_cases_with_envelope": 3,
+    "observed_fields_union": [
+      "can_optimize",
+      "current_pass",
+      "model_authority",
+      "model_id",
+      "model_readiness_status",
+      "product_claim_ready",
+      "scientific_applicability",
+      "solver_use"
+    ],
+    "observed_model_card_field_shapes": [
+      [
+        "can_optimize",
+        "current_pass",
+        "model_authority",
+        "model_id",
+        "model_readiness_status",
+        "product_claim_ready",
+        "scientific_applicability",
+        "solver_use"
+      ]
+    ],
+    "observed_shape_is_uniform_across_all_cases": true,
+    "schema_required_fields_never_emitted_by_runtime": [
+      "current_status",
+      "dataset_checksums",
+      "dataset_ids",
+      "direction",
+      "kpi_name",
+      "unit",
+      "validation_bar"
+    ]
+  },
+  "runtime_source_anchors": {
+    "engine_emission_path": "amphora-engine/src/lib.rs",
+    "engine_emission_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+    "mission_doc_path": "amphora-model-card-authority/docs/mission.md",
+    "mission_doc_sha256": "6243f32fe06ff489704268373256051771d39bb30bf4aceb565a1ed6ae43ecb9",
+    "runtime_ground_truth_path": "amphora-model-card-authority/evidence/audit/live-runtime-envelope-parity-v1/runtime_ground_truth.v1.json",
+    "runtime_ground_truth_sha256": "7b9ae1ed909d591f6f2b7dfea6b6a11b479b252a9c3ad6621a97552704190d4b",
+    "score_envelope_schema_path": "amphora-candidate-contract/schemas/score-envelope.schema.json",
+    "score_envelope_schema_sha256": "5b26acb6147c5a8718476f612267be564ac5692c17fc2041b4723e31c141ae26"
+  },
+  "schema_analysis": {
+    "model_card_schema_fields": [
+      "can_optimize",
+      "current_pass",
+      "current_status",
+      "dataset_checksums",
+      "dataset_ids",
+      "direction",
+      "kpi_name",
+      "model_authority",
+      "model_readiness_status",
+      "product_claim_ready",
+      "solver_use",
+      "unit",
+      "validation_bar"
+    ],
+    "model_card_schema_required_fields": [
+      "can_optimize",
+      "current_pass",
+      "current_status",
+      "dataset_checksums",
+      "dataset_ids",
+      "direction",
+      "kpi_name",
+      "model_authority",
+      "unit",
+      "validation_bar"
+    ]
+  },
+  "study_id": "amphora-model-card-authority.mitchell-2019-conformance.v1",
+  "theory_reference": {
+    "authors": "Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, Timnit Gebru",
+    "baseline_name": "Model Cards for Model Reporting",
+    "doi": "10.1145/3287560.3287596",
+    "open_access": true,
+    "pages": "220-229",
+    "secondary_authors": "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daume III, Kate Crawford",
+    "secondary_baseline_name": "Datasheets for Datasets",
+    "secondary_doi": "10.1145/3458723",
+    "secondary_note": "Cited per this module's docs/mission.md convention that dataset-provenance fields (dataset_ids, dataset_checksums) are the evaluation/training-data analogue this secondary baseline's schema formalizes (motivation, composition, collection, preprocessing, uses, distribution, maintenance); not reproduced verbatim.",
+    "secondary_venue": "Communications of the ACM, Vol. 64, No. 12",
+    "secondary_year": 2021,
+    "venue": "Proceedings of the Conference on Fairness, Accountability, and Transparency (FAT* '19)",
+    "year": 2019
+  },
+  "training_data_rationale_stated_in_mission_md": false
+}

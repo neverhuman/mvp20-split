@@ -1,0 +1,101 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-candidate-contract/evidence/phase0",
+  "imported_locks": [],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-candidate-contract",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "8be98d9ed927346fb23b6abd030528a202fa87621c1ecc3ebbc5b149e87ee0f8",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/canonical_formulation_candidate.json",
+      "observed_sha256": "8be98d9ed927346fb23b6abd030528a202fa87621c1ecc3ebbc5b149e87ee0f8",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "da26a9f8c7c59cbc4eb47f099db22808bb83dd804161005d2aefc3323f61f5fb",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/evidence_package_candidate.json",
+      "observed_sha256": "da26a9f8c7c59cbc4eb47f099db22808bb83dd804161005d2aefc3323f61f5fb",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "de617b7311530cb2d6701860daba9db9b37a0ea0d0733ed4e969b8db617f614f",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/formulation_candidate.json",
+      "observed_sha256": "de617b7311530cb2d6701860daba9db9b37a0ea0d0733ed4e969b8db617f614f",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/molecule_candidate.json",
+      "observed_sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "2781f8179a5115b209e1da6d40c21c7affd7ac9ee49dc76ded40fc2fd2e11fd7",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/score_artifact_only_evidence.json",
+      "observed_sha256": "2781f8179a5115b209e1da6d40c21c7affd7ac9ee49dc76ded40fc2fd2e11fd7",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "4486661e9f0140187226175796ea3a86c7582e73b3021d29a6c3ca7b43546218",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/score_failed_gate.json",
+      "observed_sha256": "4486661e9f0140187226175796ea3a86c7582e73b3021d29a6c3ca7b43546218",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "8e4868f25a86167201eaa39685e6e93c2283669fd058b7b43bf98168518722ef",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/score_formulation_objective.json",
+      "observed_sha256": "8e4868f25a86167201eaa39685e6e93c2283669fd058b7b43bf98168518722ef",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "c86ba9daa7d1b62c243bd849aa6b2c52dbf66c1bca323f302115f8ca90a90744",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/score_molecule_objective.json",
+      "observed_sha256": "c86ba9daa7d1b62c243bd849aa6b2c52dbf66c1bca323f302115f8ca90a90744",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "850fac537acb659af8d0463fc2ae3e74bf65dcd8d47b0b36a1e2447725ada20e",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/score_no_authority.json",
+      "observed_sha256": "850fac537acb659af8d0463fc2ae3e74bf65dcd8d47b0b36a1e2447725ada20e",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "cc438c0821e98f57929512f515365751ef52b0b7ac6e8813bb83fdabe337c48b",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "fixtures/score_roadmap_generated_lead.json",
+      "observed_sha256": "cc438c0821e98f57929512f515365751ef52b0b7ac6e8813bb83fdabe337c48b",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

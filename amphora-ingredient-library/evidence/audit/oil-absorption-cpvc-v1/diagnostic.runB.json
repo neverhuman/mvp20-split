@@ -1,0 +1,300 @@
+{
+  "authority": "AUDIT_ONLY",
+  "checkA_daniel_cpvc": {
+    "all_cpvc_within_hard_bound": true,
+    "n_cpvc_within_hard_physical_bound": 10,
+    "n_cpvc_within_plausibility_band": 10,
+    "n_pigments_with_oa_and_density": 10,
+    "per_constant": [
+      {
+        "constant_density": "pigment.barytes.density",
+        "constant_oa": "pigment.barytes.oil_abs",
+        "cpvc_pct": 63.65,
+        "cpvc_volume_fraction": 0.6365,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "BaSO4 blocky extender, low OA class 6-15 (Patton 1979)",
+        "oa_d281_band": [
+          6.0,
+          18.0
+        ],
+        "oa_g_per_100g": 12.0,
+        "oa_grade": "ESTIMATE",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": true,
+        "skeletal_density_g_per_cm3": 4.45
+      },
+      {
+        "constant_density": "pigment.carbon_black.density",
+        "constant_oa": "pigment.carbon_black.oil_abs",
+        "cpvc_pct": 44.42,
+        "cpvc_volume_fraction": 0.4442,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "DBP/OAN structure number, NOT ASTM D281 -- excluded from band check",
+        "oa_d281_band": null,
+        "oa_g_per_100g": 65.0,
+        "oa_grade": "ESTIMATE",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": false,
+        "oa_within_literature_band": null,
+        "skeletal_density_g_per_cm3": 1.8
+      },
+      {
+        "constant_density": "pigment.iron_oxide_black.density",
+        "constant_oa": "pigment.iron_oxide_black.oil_abs",
+        "cpvc_pct": 49.34,
+        "cpvc_volume_fraction": 0.4934,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "synthetic magnetite, class 15-30",
+        "oa_d281_band": [
+          13.0,
+          35.0
+        ],
+        "oa_g_per_100g": 20.0,
+        "oa_grade": "DISTRIBUTOR",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": true,
+        "skeletal_density_g_per_cm3": 4.8
+      },
+      {
+        "constant_density": "pigment.iron_oxide_red.density",
+        "constant_oa": "pigment.iron_oxide_red.oil_abs",
+        "cpvc_pct": 41.83,
+        "cpvc_volume_fraction": 0.4183,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "synthetic hematite, class 15-35",
+        "oa_d281_band": [
+          13.0,
+          40.0
+        ],
+        "oa_g_per_100g": 26.0,
+        "oa_grade": "DISTRIBUTOR",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": true,
+        "skeletal_density_g_per_cm3": 5.0
+      },
+      {
+        "constant_density": "pigment.iron_oxide_yellow.density",
+        "constant_oa": "pigment.iron_oxide_yellow.oil_abs",
+        "cpvc_pct": 62.54,
+        "cpvc_volume_fraction": 0.6254,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "acicular alpha-FeOOH goethite, HIGH-OA class 30-75",
+        "oa_d281_band": [
+          28.0,
+          80.0
+        ],
+        "oa_g_per_100g": 14.0,
+        "oa_grade": "DISTRIBUTOR",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": false,
+        "skeletal_density_g_per_cm3": 4.0
+      },
+      {
+        "constant_density": "pigment.mica.density",
+        "constant_oa": "pigment.mica.oil_abs",
+        "cpvc_pct": 51.42,
+        "cpvc_volume_fraction": 0.5142,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "platy muscovite, high-OA class 25-65",
+        "oa_d281_band": [
+          25.0,
+          70.0
+        ],
+        "oa_g_per_100g": 31.0,
+        "oa_grade": "DISTRIBUTOR",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": true,
+        "skeletal_density_g_per_cm3": 2.85
+      },
+      {
+        "constant_density": "pigment.silica.density",
+        "constant_oa": "pigment.silica.oil_abs",
+        "cpvc_pct": 54.05,
+        "cpvc_volume_fraction": 0.5405,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "crystalline silica extender, class 20-40",
+        "oa_d281_band": [
+          18.0,
+          45.0
+        ],
+        "oa_g_per_100g": 30.0,
+        "oa_grade": "ESTIMATE",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": true,
+        "skeletal_density_g_per_cm3": 2.65
+      },
+      {
+        "constant_density": "pigment.talc.density",
+        "constant_oa": "pigment.talc.oil_abs",
+        "cpvc_pct": 53.52,
+        "cpvc_volume_fraction": 0.5352,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "platy Mg3Si4O10(OH)2, class 22-50 grade-dependent",
+        "oa_d281_band": [
+          20.0,
+          55.0
+        ],
+        "oa_g_per_100g": 29.0,
+        "oa_grade": "SUPPLIER_GUIDE",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": true,
+        "skeletal_density_g_per_cm3": 2.8
+      },
+      {
+        "constant_density": "pigment.wollastonite.density",
+        "constant_oa": "pigment.wollastonite.oil_abs",
+        "cpvc_pct": 57.33,
+        "cpvc_volume_fraction": 0.5733,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "acicular CaSiO3, low-OA class 20-30",
+        "oa_d281_band": [
+          16.0,
+          35.0
+        ],
+        "oa_g_per_100g": 24.0,
+        "oa_grade": "DISTRIBUTOR",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": true,
+        "skeletal_density_g_per_cm3": 2.9
+      },
+      {
+        "constant_density": "pigment.zinc_phosphate.density",
+        "constant_oa": "pigment.zinc_phosphate.oil_abs",
+        "cpvc_pct": 58.62,
+        "cpvc_volume_fraction": 0.5862,
+        "cpvc_within_hard_physical_bound": true,
+        "cpvc_within_plausibility_band": true,
+        "literature_note": "Zn3(PO4)2 anti-corrosive pigment, class 15-30",
+        "oa_d281_band": [
+          13.0,
+          35.0
+        ],
+        "oa_g_per_100g": 20.0,
+        "oa_grade": "DISTRIBUTOR",
+        "oa_load_bearing": false,
+        "oa_method_is_d281": true,
+        "oa_within_literature_band": true,
+        "skeletal_density_g_per_cm3": 3.3
+      }
+    ]
+  },
+  "checkA_oa_literature_band": {
+    "n_oa_checked_against_d281_band": 9,
+    "n_oa_within_literature_band": 8,
+    "oa_anomalies_below_or_above_class_band": [
+      "pigment.iron_oxide_yellow.oil_abs"
+    ],
+    "oa_excluded_method_mismatch": [
+      "pigment.carbon_black.oil_abs"
+    ]
+  },
+  "checkB_monotonicity": {
+    "both_physical_directions_hold": true,
+    "cpvc_strictly_decreasing_in_density_at_fixed_mass_basis_oa": true,
+    "cpvc_strictly_decreasing_in_oa": true
+  },
+  "checkC_fail_closed_mutation_demo": {
+    "baseline_oa": 29.0,
+    "gross_corruptions_flagged": true,
+    "mutations": [
+      {
+        "cpvc_pct": 53.52,
+        "flagged": false,
+        "mutation": "baseline",
+        "oa_g_per_100g": 29.0,
+        "within_plausibility_band": true
+      },
+      {
+        "cpvc_pct": 92.01,
+        "flagged": true,
+        "mutation": "decimal_slip_2.9",
+        "oa_g_per_100g": 2.9,
+        "within_plausibility_band": false
+      },
+      {
+        "cpvc_pct": 10.33,
+        "flagged": true,
+        "mutation": "digit_insert_290",
+        "oa_g_per_100g": 290.0,
+        "within_plausibility_band": false
+      },
+      {
+        "cpvc_pct": 26.63,
+        "flagged": true,
+        "mutation": "transpose_92",
+        "oa_g_per_100g": 92.0,
+        "within_plausibility_band": false
+      },
+      {
+        "cpvc_pct": 46.13,
+        "flagged": false,
+        "mutation": "mistype_39_small_within_band",
+        "oa_g_per_100g": 39.0,
+        "within_plausibility_band": true
+      }
+    ],
+    "talc_density": 2.8,
+    "target": "pigment.talc.oil_abs"
+  },
+  "closes": "Provides a rights-clean published physical envelope (Daniel CPVC) linking the catalog oil-absorption and skeletal-density families; all admissible OA/density pairs yield geometrically valid CPVC, gross OA corruption fails closed.",
+  "constants": {
+    "cpvc_hard_bound": [
+      0.0,
+      1.0
+    ],
+    "cpvc_plausibility_band": [
+      0.3,
+      0.75
+    ],
+    "rho_oil_g_per_mL": 0.935
+  },
+  "does_not_close": [
+    "Does NOT promote OA constants to load-bearing; they remain single-source supplier ESTIMATEs.",
+    "Does NOT establish a measured supplier-independent OA lock (needs a second D281 measurement).",
+    "CPVC envelope is a plausibility bound, NOT a point predictor of a formulated coating's CPVC (dispersion state, particle packing, and binder wetting shift real CPVC).",
+    "carbon_black OA is a DBP/OAN structure number, not D281 -> excluded from band check.",
+    "iron_oxide_yellow catalog OA (14) is below the acicular-goethite class band -> flagged, not resolved."
+  ],
+  "flips_scientific_readiness": false,
+  "headline": "Daniel/Asbeck-Van Loo CPVC identity applied to 10 catalog pigment OA+density pairs: 10/10 within the geometric bound (0,1) and 10/10 within the mineral-extender plausibility band [0.30,0.75]; 8/9 OA values inside coatings-literature D281 class bands (anomaly: pigment.iron_oxide_yellow.oil_abs; method-excluded: pigment.carbon_black.oil_abs); CPVC monotone in both physical directions; gross OA corruption fails closed.",
+  "human_review_performed": false,
+  "hypothesis": "Catalog OA + skeletal density map, via the published Daniel CPVC identity, to packing fractions inside the geometric bound (0,1) and the coatings class envelope; gross OA corruption is driven outside the envelope (fails closed).",
+  "inputs": {
+    "facts_json": "reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_module_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ingredient-library",
+  "non_circularity": "CPVC identity consumes only catalog OA + skeletal density and returns a geometry-fixed packing fraction; the D281 literature bands are coatings-textbook class envelopes (Patton 1979) independent of the supplier TDS that sourced each catalog OA value.",
+  "promotes_authority": false,
+  "purpose": "First independent physical second-signal for the pigment oil-absorption constant family: Daniel/Asbeck-Van Loo CPVC envelope + fail-closed gate.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ingredient-library-oil-absorption-cpvc.v1",
+  "theory_reference": {
+    "cpvc_calc": "Bierwagen, J. Coat. Technol. 64(806) 1992",
+    "cpvc_relationship": "Asbeck & Van Loo, Ind. Eng. Chem. 41(7):1470-1475 (1949)",
+    "oil_absorption_method": "ASTM D281 (linseed-oil spatula rub-out, g/100g)",
+    "rho_oil_g_per_mL": 0.935,
+    "textbook": "Patton, Paint Flow and Pigment Dispersion, 2nd ed., Wiley 1979 (ISBN 978-0-471-03272-3)"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "amphora.dataset-recon-repair-state.v1",
+  "campaign_item_id": "DR-ANNEX",
+  "fires_used": 2,
+  "max_fires": 2,
+  "last_fire_id": "20260811T150002-2000042-4b581f63550c",
+  "last_verdict": "CLAIM_SURVIVED",
+  "done_criterion_met": true,
+  "findings_summary": "Fire 2/2: built discovery-annex.v1.jsonl (new file, 3 entries) and appended 3 supersede-never-rewrite disposition-ledger.v1.jsonl quarantine corrections (DR-LANG-KO-02/-04, DR-LANG-EU-11 -QUARANTINED, verdict REJECTED, supersedes block naming the original candidate_id + exact superseded line sha256). Re-attacked with a fire-2 checker extending fire-1's exact marker-scan with latest-verdict-wins supersession-awareness: unresolved_count=0/3, clause1/clause2/clause3 all NOT observed. 3 independent positive-control mutants (one per candidate, in-memory drop of its superseding disposition line) all correctly re-fired unresolved_count=1. Cross-module grep sweep: zero hits outside this module's own operational cron/audit logs (which merely quote fire-1's verdict text, not a real recipe citation).",
+  "next_fire_should": "None -- item done_criterion met, max_fires (2) exhausted. Done receipt at evidence/phase0/repairs/DR-ANNEX/done/dr-annex-done-receipt.v1.dsse.json.",
+  "artifacts_this_fire": [
+    "amphora-dataset-recon/evidence/ledgers/discovery-annex.v1.jsonl",
+    "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl",
+    "amphora-dataset-recon/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/work/dr_annex_repair.py",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/work/dr_annex_fire2_checker.py",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/work/repair_result.json",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/work/fire2.runA.json",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/work/fire2.runB.json",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/work/fire2.mutate.DR-LANG-KO-02.json",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/work/fire2.mutate.DR-LANG-KO-04.json",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/work/fire2.mutate.DR-LANG-EU-11.json",
+    "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/done/dr-annex-done-receipt.v1.dsse.json"
+  ]
+}

@@ -1,0 +1,791 @@
+{
+  "audit_date": "2026-07-30",
+  "authority": "AUDIT_ONLY",
+  "closes": "Establishes that amphora-source-ledger's shipped two_source_count=9 counts syntactic second URLs, not independent controlled corroboration. Of the 9 dual-sourced load-bearing constants: 2/9 have a second source that is a controlled record in the 162-record registry; 7/9 survive mechanical common-cause screening (C0 identical-resource / C1 same-registrable-domain / C2 same-document-lineage); 2/9 survive once the branded-grade single-originator coupling is also applied; and 0/9 are numerically checkable because the facts.json entry schema stores no second numeric read. Net: 1/9 load-bearing constants carry a corroborating source that is simultaneously controlled and uncoupled. The mutation probes further show the runtime's bytewise 'primary != secondary' test admits 3 classes of self-citation and same-publisher restatement that normalized/registrable-domain screening rejects.",
+  "counts": {
+    "controlled_and_independent_full": 1,
+    "controlled_and_independent_mechanical": 2,
+    "g0_anchors": 4,
+    "g0_anchors_matched": 4,
+    "g1_count_checks": 8,
+    "g1_count_checks_matched": 8,
+    "g2_dual_sourced_constants": 9,
+    "g2_primary_source_is_controlled_record": 8,
+    "g2_second_source_is_controlled_record": 2,
+    "g3_conservative_lineage_misses": 3,
+    "g3_coupled_pairs_including_interpretive": 7,
+    "g3_mechanically_coupled_pairs": 2,
+    "g4_second_numeric_read_fields_in_schema": 0,
+    "g5_probes": 6,
+    "g5_probes_as_specified": 6,
+    "g5_runtime_counts_a_coupled_source_as_dual": 3,
+    "h0_holds_full": 0,
+    "h0_holds_mechanical_only": 0
+  },
+  "derived_gates": {
+    "h0_refuted": true,
+    "prisma_item9_duplicate_comparison_possible": false,
+    "runtime_predicate_is_syntactic_only": true,
+    "shipped_failed_gates_verdict_unaffected": true,
+    "two_source_count_certifies_independent_controlled_corroboration": false
+  },
+  "derived_metrics": {
+    "claimed_source_count": 18.0,
+    "diversity_credit_realized_full": 0.222222,
+    "diversity_credit_realized_mechanical": 0.777778,
+    "effective_independent_source_count_full": 11.0,
+    "effective_independent_source_count_mechanical": 16.0,
+    "h0_hold_rate_full": 0.0,
+    "h0_hold_rate_mechanical": 0.0,
+    "second_source_controlled_rate": 0.222222
+  },
+  "does_not_close": "Does NOT execute the Rust runtime (predicate is transcribed and independently reimplemented; a live-harness differential remains Phase-1 work). Does NOT resolve any URL over the network, so link liveness, paywall state and actual document content are unverified. The mechanical lineage screen (C2) is deliberately conservative and is KNOWN to under-report: see evidence.g3_conservative_lineage_misses for pairs whose document identifiers overlap materially but fall below the pre-set threshold, which was fixed before those values were inspected and was not retuned to capture them. The mechanical coupling count is therefore a LOWER BOUND on true coupling. Coupling is inferred from URL structure, ledger membership and entity class only. The C3 branded-grade single-originator coupling is an ANALYST_ASSERTED rule, reported separately from the mechanical verdict and never folded into the mechanical headline. Does NOT establish that any cited numeric value is wrong; it establishes that the corroboration apparatus cannot currently detect it if one were. Does NOT change the runtime's shipped FAILED_GATES verdict, does NOT promote authority, does NOT flip scientific_readiness, and does NOT modify the portfolio receipts manifest.",
+  "evidence": {
+    "g0_anchor_reproduction": [
+      {
+        "artifact": "facts.json",
+        "match": true,
+        "pinned_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+        "recomputed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+      },
+      {
+        "artifact": "source_records.json",
+        "match": true,
+        "pinned_sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c",
+        "recomputed_sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c"
+      },
+      {
+        "artifact": "benchmark/result.v1.json",
+        "match": true,
+        "pinned_sha256": "a6a680a1202d8b18b097a0d390bf877d93dc985b0f09a5fe52cc2ea16b498115",
+        "recomputed_sha256": "a6a680a1202d8b18b097a0d390bf877d93dc985b0f09a5fe52cc2ea16b498115"
+      },
+      {
+        "artifact": "benchmark/benchmark-lock.v1.json",
+        "match": true,
+        "pinned_sha256": "4d9847b9b57364ba5e3a26233787f8c488789022a4e1fad746af0fab7f3711bd",
+        "recomputed_sha256": "4d9847b9b57364ba5e3a26233787f8c488789022a4e1fad746af0fab7f3711bd"
+      }
+    ],
+    "g1_count_parity": [
+      {
+        "count": "cited_constants",
+        "match": true,
+        "pinned": 83,
+        "recomputed": 83
+      },
+      {
+        "count": "incomplete_source_records",
+        "match": true,
+        "pinned": 0,
+        "recomputed": 0
+      },
+      {
+        "count": "load_bearing",
+        "match": true,
+        "pinned": 23,
+        "recomputed": 23
+      },
+      {
+        "count": "missing_url",
+        "match": true,
+        "pinned": 0,
+        "recomputed": 0
+      },
+      {
+        "count": "prose_waiver",
+        "match": true,
+        "pinned": 14,
+        "recomputed": 14
+      },
+      {
+        "count": "required_record_fields",
+        "match": true,
+        "pinned": 26,
+        "recomputed": 26
+      },
+      {
+        "count": "source_records",
+        "match": true,
+        "pinned": 162,
+        "recomputed": 162
+      },
+      {
+        "count": "two_source",
+        "match": true,
+        "pinned": 9,
+        "recomputed": 9
+      }
+    ],
+    "g1b_predicate_scope": {
+      "diagnostics_rs_sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+      "independence_terms_absent_from_runtime": [
+        "beta_factor",
+        "common_cause",
+        "coupling",
+        "independen",
+        "public_suffix",
+        "registrable",
+        "second_value"
+      ],
+      "independence_terms_present_in_runtime": [],
+      "lib_rs_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116",
+      "predicate_is_syntactic_only": true,
+      "predicate_literal": "!secondary.trim().is_empty() && primary != secondary",
+      "runtime_dual_source_predicate_literal_present": true
+    },
+    "g2_registry_membership": [
+      {
+        "fact_key": "hardener.ancamide_2353.ahew",
+        "primary_host_in_registry": true,
+        "primary_url_in_registry": true,
+        "second_host_in_registry": false,
+        "second_registrable_domain_in_registry": false,
+        "second_url_in_registry": false
+      },
+      {
+        "fact_key": "hardener.ancamide_260a.ahew",
+        "primary_host_in_registry": true,
+        "primary_url_in_registry": true,
+        "second_host_in_registry": false,
+        "second_registrable_domain_in_registry": false,
+        "second_url_in_registry": false
+      },
+      {
+        "fact_key": "hardener.ancamide_350a.ahew",
+        "primary_host_in_registry": true,
+        "primary_url_in_registry": true,
+        "second_host_in_registry": true,
+        "second_registrable_domain_in_registry": true,
+        "second_url_in_registry": true
+      },
+      {
+        "fact_key": "resin.dgeba_331.density",
+        "primary_host_in_registry": true,
+        "primary_url_in_registry": true,
+        "second_host_in_registry": false,
+        "second_registrable_domain_in_registry": true,
+        "second_url_in_registry": false
+      },
+      {
+        "fact_key": "resin.dgeba_331.eew",
+        "primary_host_in_registry": true,
+        "primary_url_in_registry": true,
+        "second_host_in_registry": false,
+        "second_registrable_domain_in_registry": true,
+        "second_url_in_registry": false
+      },
+      {
+        "fact_key": "resin.dgeba_828.density",
+        "primary_host_in_registry": true,
+        "primary_url_in_registry": true,
+        "second_host_in_registry": false,
+        "second_registrable_domain_in_registry": false,
+        "second_url_in_registry": false
+      },
+      {
+        "fact_key": "resin.dgeba_828.eew",
+        "primary_host_in_registry": true,
+        "primary_url_in_registry": true,
+        "second_host_in_registry": false,
+        "second_registrable_domain_in_registry": false,
+        "second_url_in_registry": false
+      },
+      {
+        "fact_key": "solvent.n_butanol.density",
+        "primary_host_in_registry": true,
+        "primary_url_in_registry": true,
+        "second_host_in_registry": true,
+        "second_registrable_domain_in_registry": true,
+        "second_url_in_registry": true
+      },
+      {
+        "fact_key": "solvent.xylene.density",
+        "primary_host_in_registry": false,
+        "primary_url_in_registry": false,
+        "second_host_in_registry": false,
+        "second_registrable_domain_in_registry": false,
+        "second_url_in_registry": false
+      }
+    ],
+    "g3_conservative_lineage_misses": [
+      {
+        "fact_key": "resin.dgeba_828.density",
+        "failed_threshold": "overlap",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.666667,
+        "lineage_shared_tokens": [
+          "828",
+          "epon"
+        ]
+      },
+      {
+        "fact_key": "resin.dgeba_828.eew",
+        "failed_threshold": "overlap",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.666667,
+        "lineage_shared_tokens": [
+          "828",
+          "epon"
+        ]
+      },
+      {
+        "fact_key": "solvent.xylene.density",
+        "failed_threshold": "overlap",
+        "interpretive_couplings": [],
+        "lineage_overlap_coefficient": 0.5,
+        "lineage_shared_tokens": [
+          "xylene"
+        ]
+      }
+    ],
+    "g3_coupling_classification": [
+      {
+        "beta_mechanical": 1.0,
+        "beta_with_interpretive": 1.0,
+        "entity": "ancamide_2353",
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "hardener.ancamide_2353.ahew",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.833333,
+        "lineage_shared_tokens": [
+          "agents",
+          "curing",
+          "epoxy",
+          "guide",
+          "product"
+        ],
+        "mechanical_couplings": [
+          "C2_SAME_DOCUMENT_LINEAGE"
+        ],
+        "primary_registrable_domain": "evonik.com",
+        "property": "ahew",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "biesterfeld.com"
+      },
+      {
+        "beta_mechanical": 1.0,
+        "beta_with_interpretive": 1.0,
+        "entity": "ancamide_260a",
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "hardener.ancamide_260a.ahew",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.833333,
+        "lineage_shared_tokens": [
+          "agents",
+          "curing",
+          "epoxy",
+          "guide",
+          "product"
+        ],
+        "mechanical_couplings": [
+          "C2_SAME_DOCUMENT_LINEAGE"
+        ],
+        "primary_registrable_domain": "evonik.com",
+        "property": "ahew",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "biesterfeld.com"
+      },
+      {
+        "beta_mechanical": 0.0,
+        "beta_with_interpretive": 1.0,
+        "entity": "ancamide_350a",
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "hardener.ancamide_350a.ahew",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.0,
+        "lineage_shared_tokens": [],
+        "mechanical_couplings": [],
+        "primary_registrable_domain": "panpage.de",
+        "property": "ahew",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "evonik.com"
+      },
+      {
+        "beta_mechanical": 0.0,
+        "beta_with_interpretive": 1.0,
+        "entity": "dgeba_331",
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "resin.dgeba_331.density",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.0,
+        "lineage_shared_tokens": [],
+        "mechanical_couplings": [],
+        "primary_registrable_domain": "nmt.edu",
+        "property": "density",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "specialchem.com"
+      },
+      {
+        "beta_mechanical": 0.0,
+        "beta_with_interpretive": 1.0,
+        "entity": "dgeba_331",
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "resin.dgeba_331.eew",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.0,
+        "lineage_shared_tokens": [],
+        "mechanical_couplings": [],
+        "primary_registrable_domain": "nmt.edu",
+        "property": "eew",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "specialchem.com"
+      },
+      {
+        "beta_mechanical": 0.0,
+        "beta_with_interpretive": 1.0,
+        "entity": "dgeba_828",
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "resin.dgeba_828.density",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.666667,
+        "lineage_shared_tokens": [
+          "828",
+          "epon"
+        ],
+        "mechanical_couplings": [],
+        "primary_registrable_domain": "miller-stephenson.com",
+        "property": "density",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "spacematdb.com"
+      },
+      {
+        "beta_mechanical": 0.0,
+        "beta_with_interpretive": 1.0,
+        "entity": "dgeba_828",
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "resin.dgeba_828.eew",
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "lineage_overlap_coefficient": 0.666667,
+        "lineage_shared_tokens": [
+          "828",
+          "epon"
+        ],
+        "mechanical_couplings": [],
+        "primary_registrable_domain": "miller-stephenson.com",
+        "property": "eew",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "spacematdb.com"
+      },
+      {
+        "beta_mechanical": 0.0,
+        "beta_with_interpretive": 0.0,
+        "entity": "n_butanol",
+        "entity_class": "GENERIC_SUBSTANCE",
+        "fact_key": "solvent.n_butanol.density",
+        "interpretive_couplings": [],
+        "lineage_overlap_coefficient": 0.0,
+        "lineage_shared_tokens": [],
+        "mechanical_couplings": [],
+        "primary_registrable_domain": "eastman.com",
+        "property": "density",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "dow.com"
+      },
+      {
+        "beta_mechanical": 0.0,
+        "beta_with_interpretive": 0.0,
+        "entity": "xylene",
+        "entity_class": "GENERIC_SUBSTANCE",
+        "fact_key": "solvent.xylene.density",
+        "interpretive_couplings": [],
+        "lineage_overlap_coefficient": 0.5,
+        "lineage_shared_tokens": [
+          "xylene"
+        ],
+        "mechanical_couplings": [],
+        "primary_registrable_domain": "marathonpetroleum.com",
+        "property": "density",
+        "public_suffix_fallback_used": false,
+        "second_registrable_domain": "scribd.com"
+      }
+    ],
+    "g4_numeric_checkability": {
+      "constants_with_comparable_second_read": 0,
+      "entry_schema_fields": [
+        "grade",
+        "load_bearing",
+        "note",
+        "retrieved",
+        "second_url",
+        "single_source_waiver",
+        "unit",
+        "url",
+        "value"
+      ],
+      "prisma_2020_item9_duplicate_extraction_comparable": false,
+      "second_numeric_value_field_present": false,
+      "second_numeric_value_fields": []
+    },
+    "g5_mutation_probes": [
+      {
+        "oracle_as_expected": true,
+        "oracle_couplings": [
+          "C0_IDENTICAL_RESOURCE",
+          "C1_SAME_REGISTRABLE_DOMAIN",
+          "C2_SAME_DOCUMENT_LINEAGE"
+        ],
+        "oracle_expected": true,
+        "oracle_flags_coupled": true,
+        "probe": "P1_exact_self_citation",
+        "rationale": "Byte-identical second_url: runtime already rejects (p != s). Control.",
+        "runtime_as_expected": true,
+        "runtime_counts_as_dual_source": false,
+        "runtime_expected": false,
+        "second_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?product=71000115"
+      },
+      {
+        "oracle_as_expected": true,
+        "oracle_couplings": [
+          "C0_IDENTICAL_RESOURCE",
+          "C1_SAME_REGISTRABLE_DOMAIN",
+          "C2_SAME_DOCUMENT_LINEAGE"
+        ],
+        "oracle_expected": true,
+        "oracle_flags_coupled": true,
+        "probe": "P2_trailing_slash_self_citation",
+        "rationale": "Same resource, one byte different. Runtime COUNTS it as a second source; normalized C0 catches it. Differential exposure.",
+        "runtime_as_expected": true,
+        "runtime_counts_as_dual_source": true,
+        "runtime_expected": true,
+        "second_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?product=71000115/"
+      },
+      {
+        "oracle_as_expected": true,
+        "oracle_couplings": [
+          "C0_IDENTICAL_RESOURCE",
+          "C1_SAME_REGISTRABLE_DOMAIN",
+          "C2_SAME_DOCUMENT_LINEAGE"
+        ],
+        "oracle_expected": true,
+        "oracle_flags_coupled": true,
+        "probe": "P3_scheme_case_self_citation",
+        "rationale": "Same resource, scheme case-folded. Runtime COUNTS it; C0 catches it.",
+        "runtime_as_expected": true,
+        "runtime_counts_as_dual_source": true,
+        "runtime_expected": true,
+        "second_url": "HTTPS://productcatalog.eastman.com/tds/ProdDatasheet.aspx?product=71000115"
+      },
+      {
+        "oracle_as_expected": true,
+        "oracle_couplings": [
+          "C1_SAME_REGISTRABLE_DOMAIN"
+        ],
+        "oracle_expected": true,
+        "oracle_flags_coupled": true,
+        "probe": "P4_same_publisher_other_page",
+        "rationale": "Different page, same registrable domain (eastman.com). Runtime COUNTS it; C1 catches it. NUREG/CR-5485 same-origin coupling.",
+        "runtime_as_expected": true,
+        "runtime_counts_as_dual_source": true,
+        "runtime_expected": true,
+        "second_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?product=99999999"
+      },
+      {
+        "oracle_as_expected": true,
+        "oracle_couplings": [],
+        "oracle_expected": false,
+        "oracle_flags_coupled": false,
+        "probe": "P5_genuinely_diverse_source",
+        "rationale": "Independent authority, unrelated domain and document lineage. MUST NOT be flagged. False-alarm control.",
+        "runtime_as_expected": true,
+        "runtime_counts_as_dual_source": true,
+        "runtime_expected": true,
+        "second_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C71363&Mask=4"
+      },
+      {
+        "oracle_as_expected": true,
+        "oracle_couplings": [],
+        "oracle_expected": false,
+        "oracle_flags_coupled": false,
+        "probe": "P6_clean_noop",
+        "rationale": "Unmutated shipped value. MUST reproduce the shipped verdict with no new mechanical flag. Regression control.",
+        "runtime_as_expected": true,
+        "runtime_counts_as_dual_source": true,
+        "runtime_expected": true,
+        "second_url": "https://www.dow.com/documents/327/327-00014-01-butanol-tds.pdf"
+      }
+    ],
+    "per_constant_verdict": [
+      {
+        "cond_i_registry": false,
+        "cond_ii_independent_mechanical": false,
+        "cond_ii_independent_with_interpretive": false,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "hardener.ancamide_2353.ahew",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "mechanical_couplings": [
+          "C2_SAME_DOCUMENT_LINEAGE"
+        ]
+      },
+      {
+        "cond_i_registry": false,
+        "cond_ii_independent_mechanical": false,
+        "cond_ii_independent_with_interpretive": false,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "hardener.ancamide_260a.ahew",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "mechanical_couplings": [
+          "C2_SAME_DOCUMENT_LINEAGE"
+        ]
+      },
+      {
+        "cond_i_registry": true,
+        "cond_ii_independent_mechanical": true,
+        "cond_ii_independent_with_interpretive": false,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "hardener.ancamide_350a.ahew",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "mechanical_couplings": []
+      },
+      {
+        "cond_i_registry": false,
+        "cond_ii_independent_mechanical": true,
+        "cond_ii_independent_with_interpretive": false,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "resin.dgeba_331.density",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "mechanical_couplings": []
+      },
+      {
+        "cond_i_registry": false,
+        "cond_ii_independent_mechanical": true,
+        "cond_ii_independent_with_interpretive": false,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "resin.dgeba_331.eew",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "mechanical_couplings": []
+      },
+      {
+        "cond_i_registry": false,
+        "cond_ii_independent_mechanical": true,
+        "cond_ii_independent_with_interpretive": false,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "resin.dgeba_828.density",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "mechanical_couplings": []
+      },
+      {
+        "cond_i_registry": false,
+        "cond_ii_independent_mechanical": true,
+        "cond_ii_independent_with_interpretive": false,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "BRANDED_GRADE",
+        "fact_key": "resin.dgeba_828.eew",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [
+          "C3_BRANDED_GRADE_SINGLE_ORIGINATOR"
+        ],
+        "mechanical_couplings": []
+      },
+      {
+        "cond_i_registry": true,
+        "cond_ii_independent_mechanical": true,
+        "cond_ii_independent_with_interpretive": true,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "GENERIC_SUBSTANCE",
+        "fact_key": "solvent.n_butanol.density",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [],
+        "mechanical_couplings": []
+      },
+      {
+        "cond_i_registry": false,
+        "cond_ii_independent_mechanical": true,
+        "cond_ii_independent_with_interpretive": true,
+        "cond_iii_numerically_checkable": false,
+        "entity_class": "GENERIC_SUBSTANCE",
+        "fact_key": "solvent.xylene.density",
+        "h0_holds_full": false,
+        "h0_holds_mechanical_only": false,
+        "interpretive_couplings": [],
+        "mechanical_couplings": []
+      }
+    ]
+  },
+  "gates": {
+    "all_pass": true,
+    "g0_anchors_reproduced": true,
+    "g1_count_parity": true,
+    "g1b_predicate_scope_anchored": true,
+    "g5_probes_behaved_as_specified": true,
+    "g_verdict_determinate": true
+  },
+  "hypothesis": "H0: each of the 9 load-bearing constants counted by two_source_count has a corroborating source that is (i) a controlled record in the 162-record registry, (ii) not common-cause coupled to the primary, and (iii) backed by a stored second numeric read so the two extractions can be compared.",
+  "method_parameters": {
+    "beta_convention": "1.0 = fully coupled (no diversity credit, Fleming 1975); 0.0 = no coupling mechanism detected",
+    "generic_substance_entities": [
+      "acetone",
+      "barium_sulfate",
+      "butanol",
+      "ethanol",
+      "mek",
+      "mibk",
+      "mica",
+      "n_butanol",
+      "n_butyl_acetate",
+      "silica",
+      "talc",
+      "titanium_dioxide",
+      "toluene",
+      "water",
+      "xylene",
+      "zinc",
+      "zinc_dust"
+    ],
+    "lineage_min_shared_tokens": 3,
+    "lineage_overlap_threshold": 0.75,
+    "lineage_stopwords": [
+      "and",
+      "asp",
+      "aspx",
+      "asset",
+      "assets",
+      "content",
+      "data",
+      "datasheet",
+      "datasheets",
+      "default",
+      "doc",
+      "docs",
+      "document",
+      "documents",
+      "download",
+      "downloads",
+      "fileadmin",
+      "files",
+      "for",
+      "htm",
+      "html",
+      "http",
+      "https",
+      "images",
+      "manudatasheets",
+      "media",
+      "msds",
+      "pdf",
+      "php",
+      "public",
+      "sds",
+      "sheet",
+      "sheets",
+      "sites",
+      "static",
+      "tds",
+      "technical",
+      "the",
+      "uploads",
+      "wp",
+      "www"
+    ],
+    "pinned_public_suffixes": [
+      "ac.uk",
+      "co.jp",
+      "co.uk",
+      "com",
+      "com.au",
+      "de",
+      "edu",
+      "eu",
+      "gov",
+      "gov.uk",
+      "int",
+      "mil",
+      "net",
+      "org",
+      "uk",
+      "us"
+    ],
+    "spec_properties": [
+      "ahew",
+      "amine_value",
+      "density",
+      "eew",
+      "viscosity"
+    ]
+  },
+  "module": "amphora-source-ledger",
+  "non_circularity": "All counts re-derived in CPython from the on-disk fixtures. G0 compares recomputed digests against the SIGNED Phase-0 KPI's pinned anchors. G1 reimplements the runtime predicate transcribed from diagnostics.rs and G1B asserts that predicate's literal text is present in shipped Rust source, so the scope claim rests on shipped code rather than on this oracle's prose.",
+  "phase1_exit_criterion_impact": "The signed KPI's awaiting[] names as the Phase-1 exit criterion 'independent second controlled source for each of the 14 load-bearing constants currently lacking one'. This audit shows the runtime predicate that would be used to certify that criterion tests neither independence nor controlled-registry membership, so satisfying the predicate would not satisfy the criterion. Closing the criterion as written requires three ledger-schema changes: a second numeric read per corroborated constant, a registry-membership requirement on second_url, and a recorded coupling/diversity determination per corroborating pair.",
+  "preconditions": {
+    "modifies_facts_or_records": false,
+    "modifies_module_manifest": false,
+    "modifies_portfolio_receipts_manifest": false,
+    "modifies_signed_phase0_kpi": false,
+    "reads_only": true,
+    "runs_live_rust_runtime": false,
+    "runtime_predicate_transcribed_not_executed": true
+  },
+  "purpose": "Test whether the shipped runtime metric two_source_count=9 certifies CORROBORATION in the sense the module's own Phase-0 theory (PRISMA 2020, Cochrane v6.4, ISO 690:2021) requires, or only the syntactic predicate 'second_url is non-empty and differs bytewise from url'. Independence is scored with the Fleming-1975 beta-factor / NUREG-CR-5485 coupling-mechanism frame used for redundant-channel diversity.",
+  "run_type": "AUDIT_ONLY_INDEPENDENT_CPYTHON_ORACLE",
+  "runtime_source_anchors": {
+    "diagnostics_rs": "amphora-assurance-capabilities/src/diagnostics.rs",
+    "diagnostics_rs_sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "kpi_path": "amphora-source-ledger/evidence/phase0/kpis/source-ledger-dual-source-integrity-kpi.v1.json",
+    "kpi_sha256": "f34a5c6cb9932223c50743df5ef97e165feaf539244cfb38780351b1cd094815",
+    "lib_rs": "amphora-assurance-capabilities/src/lib.rs",
+    "lib_rs_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116"
+  },
+  "schema": "amphora.deterministic-control-diagnostic.v1",
+  "study_id": "amphora-source-ledger-dual-source-independence-common-cause-v1",
+  "theory_reference": {
+    "beta_factor_origin": "Fleming, K.N. (1975), A reliability model for common mode failure in redundant safety systems, Proc. 6th Annual Pittsburgh Conf. on Modeling and Simulation 5:579-581",
+    "common_cause_taxonomy": "Mosleh, A. et al. (1998) NUREG/CR-5485, Guidelines on Modeling Common-Cause Failures in PRA, U.S. NRC, Sec. 3 (coupling mechanisms)",
+    "diversity_scoring": "IEC 61508-6:2010 Annex D",
+    "duplicate_verification": "PRISMA 2020, Page M.J. et al., BMJ 2021;372:n71, items 7-9 (independent duplicate extraction and comparison)",
+    "edition_vs_work": "ISO 690:2021 Sec. 5 (manifestations of the same work)",
+    "lineage_similarity_method": "Szymkiewicz-Simpson overlap coefficient (Szymkiewicz 1934; Simpson 1943)",
+    "note": "PRISMA 2020, Cochrane v6.4 and ISO 690:2021 are cited by the module's own signed Phase-0 KPI theory field; this oracle tests the module against the standard the module itself invokes.",
+    "registrable_domain_method": "RFC 6265 Sec. 5.3 / Mozilla Public Suffix List (pinned subset)",
+    "systematic_review_discipline": "Cochrane Handbook for Systematic Reviews of Interventions v6.4 (2023), Sec. 5 and Sec. 7"
+  }
+}

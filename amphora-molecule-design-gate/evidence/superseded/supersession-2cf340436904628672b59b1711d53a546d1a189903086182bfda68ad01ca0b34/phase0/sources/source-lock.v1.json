@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-molecule-design-gate/evidence/phase0",
+  "imported_locks": [],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-molecule-design-gate",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": []
+}

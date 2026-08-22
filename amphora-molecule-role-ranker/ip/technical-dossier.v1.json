@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-molecule-role-ranker",
+    "molecule lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "10dfb944138ea75ad2c4ce1884b9c2c2b04122687dbc85c55841d6d42c85de6e",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-molecule-role-ranker",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

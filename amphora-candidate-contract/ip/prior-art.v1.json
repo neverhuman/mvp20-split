@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "08a55219cdbbeaf59785891285015c0289de91870069b9a0006c64abbfc16cc1",
+  "module_id": "amphora-candidate-contract",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

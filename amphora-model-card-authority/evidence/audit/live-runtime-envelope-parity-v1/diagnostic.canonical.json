@@ -1,0 +1,197 @@
+{
+ "closes": "First live compiled-Rust differential evidence for amphora-model-card-authority: the shipped native runtime's authority envelope, module-owned error taxonomy, and registry identity match the independent CPython minimum-privilege oracle canonical-JSON byte for byte, the authority grant is seed/run-id invariant, and malformed/unknown/out-of-domain inputs fail closed \u2014 closing the live-runtime gap named in the least-privilege-authority-parity-v1 receipt at AUDIT_ONLY level.",
+ "counts": {
+  "canonical_modules": 29,
+  "claim_locks_per_envelope": 7,
+  "corpus_cases": 5,
+  "envelope_byte_parity_cases": 3,
+  "envelope_fields_per_case": 18,
+  "error_taxonomy_rows": 4,
+  "lane_reachability_rows": 3
+ },
+ "does_not_close": "Candidate-contract parse-error Display strings are recorded but owned and audited by amphora-candidate-contract; no scientific, product, or legal authority is asserted; Phase-0/Phase-1 promotion still requires the human dual-identity ceremony and a locked independent benchmark.",
+ "g1_registry_identity_parity": {
+  "all_pass": true,
+  "default_lane_reachability": {
+   "formulation": {
+    "implementation_match": true,
+    "live_active_contains_module": false,
+    "match": true,
+    "predicted": false,
+    "report_schema_match": true
+   },
+   "infrastructure": {
+    "implementation_match": true,
+    "live_active_contains_module": false,
+    "match": true,
+    "predicted": false,
+    "report_schema_match": true
+   },
+   "molecule": {
+    "implementation_match": true,
+    "live_active_contains_module": false,
+    "match": true,
+    "predicted": false,
+    "report_schema_match": true
+   }
+  },
+  "descriptor_byte_parity": true,
+  "descriptor_canonical_sha256_live": "dcf3419ca2cd07c0857210bd7f3640b9b15793f657a1a643b8208ab50d8d974b",
+  "descriptor_canonical_sha256_predicted": "dcf3419ca2cd07c0857210bd7f3640b9b15793f657a1a643b8208ab50d8d974b",
+  "module_count_live": 29,
+  "module_count_match": true,
+  "module_count_predicted": 29,
+  "no_default_lane_reaches_module": true
+ },
+ "g2_live_envelope_byte_parity": {
+  "all_pass": true,
+  "cases": {
+   "E1_evidence_package_wrong_type": {
+    "byte_parity": true,
+    "envelope_count": 1,
+    "live_envelope_canonical_sha256": "3fe3127ab541097fb16c8e5116d5e5236b38453adaf01d076bbb02b5f2232d4e",
+    "live_ok": true,
+    "predicted_envelope_canonical_sha256": "3fe3127ab541097fb16c8e5116d5e5236b38453adaf01d076bbb02b5f2232d4e",
+    "score_semantics": "ERROR",
+    "status": "ERROR"
+   },
+   "F1_valid_formulation_seed0": {
+    "byte_parity": true,
+    "envelope_count": 1,
+    "live_envelope_canonical_sha256": "284ddcca8578f8f8b9838193969b40b9b746a23281b79c2b08ac3f7551783cb0",
+    "live_ok": true,
+    "predicted_envelope_canonical_sha256": "284ddcca8578f8f8b9838193969b40b9b746a23281b79c2b08ac3f7551783cb0",
+    "score_semantics": "INSUFFICIENT_INPUT",
+    "status": "INSUFFICIENT_INPUT"
+   },
+   "F2_same_candidate_new_seed_new_runid": {
+    "byte_parity": true,
+    "envelope_count": 1,
+    "live_envelope_canonical_sha256": "284ddcca8578f8f8b9838193969b40b9b746a23281b79c2b08ac3f7551783cb0",
+    "live_ok": true,
+    "predicted_envelope_canonical_sha256": "284ddcca8578f8f8b9838193969b40b9b746a23281b79c2b08ac3f7551783cb0",
+    "score_semantics": "INSUFFICIENT_INPUT",
+    "status": "INSUFFICIENT_INPUT"
+   }
+  },
+  "envelope_fields_per_case": 18
+ },
+ "g3_error_taxonomy_byte_parity": {
+  "all_pass": true,
+  "rows": {
+   "candidate_type_error_missing_inputs": {
+    "byte_parity": true,
+    "is_err": true,
+    "live": [
+     "candidate type is not accepted by this capability"
+    ],
+    "predicted": [
+     "candidate type is not accepted by this capability"
+    ]
+   },
+   "report_unknown_lane": {
+    "byte_parity": true,
+    "is_err": true,
+    "live": "native registry manifest is invalid: unknown lane no-such-lane",
+    "predicted": "native registry manifest is invalid: unknown lane no-such-lane"
+   },
+   "resolve_unknown_module": {
+    "byte_parity": true,
+    "is_err": true,
+    "live": "unknown native capability no-such-module",
+    "predicted": "unknown native capability no-such-module"
+   },
+   "unknown_campaign_module": {
+    "byte_parity": true,
+    "is_err": true,
+    "live": "unknown native capability amphora-model-card-authorityx",
+    "predicted": "unknown native capability amphora-model-card-authorityx"
+   }
+  }
+ },
+ "g4_seed_runid_invariance": {
+  "all_pass": true,
+  "byte_identical": true,
+  "f1_canonical_sha256": "284ddcca8578f8f8b9838193969b40b9b746a23281b79c2b08ac3f7551783cb0",
+  "f2_canonical_sha256": "284ddcca8578f8f8b9838193969b40b9b746a23281b79c2b08ac3f7551783cb0",
+  "seeds": [
+   0,
+   20260731
+  ]
+ },
+ "g5_fail_closed_no_grant": {
+  "all_pass": true,
+  "claim_lock_count": 7,
+  "envelopes": {
+   "E1_evidence_package_wrong_type": {
+    "authority_receipt_ranking_eligible_false": true,
+    "claim_locks_complete": true,
+    "granted_level": "MODEL_READINESS_ONLY",
+    "runtime_manifest_sha256_matches_disk": true,
+    "usable_by_optimizer_false": true
+   },
+   "F1_valid_formulation_seed0": {
+    "authority_receipt_ranking_eligible_false": true,
+    "claim_locks_complete": true,
+    "granted_level": "MODEL_READINESS_ONLY",
+    "runtime_manifest_sha256_matches_disk": true,
+    "usable_by_optimizer_false": true
+   },
+   "F2_same_candidate_new_seed_new_runid": {
+    "authority_receipt_ranking_eligible_false": true,
+    "claim_locks_complete": true,
+    "granted_level": "MODEL_READINESS_ONLY",
+    "runtime_manifest_sha256_matches_disk": true,
+    "usable_by_optimizer_false": true
+   }
+  },
+  "module_manifest_sha256_disk": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+  "x1_malformed_fail_closed": {
+   "error_display_recorded_not_predicted": "candidate payload does not match candidate_type formulation",
+   "is_err": true
+  }
+ },
+ "gates": {
+  "all_pass": true,
+  "g0_probe_two_replay_ground_truth": true,
+  "g1_registry_identity_parity": true,
+  "g2_live_envelope_byte_parity": true,
+  "g3_error_taxonomy_byte_parity": true,
+  "g4_seed_runid_invariance": true,
+  "g5_fail_closed_no_grant": true
+ },
+ "hypothesis": "H0 (audited claim): the live runtime envelope for the module is exactly the least-privilege quarantine predicted from the manifest row \u2014 INSUFFICIENT_INPUT semantics, granted level clamped to model_readiness_ceiling, ranking withheld, all claim locks pinned \u2014 for in-domain candidates; exact fail-closed taxonomy for out-of-domain, malformed, and unknown-module inputs; and the grant is invariant to seed and run identity.",
+ "module": "amphora-model-card-authority",
+ "non_circularity": "The oracle is pure CPython with zero Rust linkage and predicts envelope bytes from module-manifest.json plus the published spec; ground truth is stdout of a separately compiled binary linking the real amphora-engine crate (path dependency, no logic copied). Agreement is a cross-implementation check in the sense of McKeeman 1998, not a self-comparison.",
+ "preconditions": {
+  "cargo_target_dir_outside_workspace": "/tmp/amphora-mca-live-probe-target",
+  "evidence_root_absent_by_design": true,
+  "probe_built_offline": true
+ },
+ "provenance": {
+  "corpus_sha256": "c55e6ab86e0ceecba9895ca4fbda989a4ffe8cd8afe8552419a334ca608cc0ec",
+  "ground_truth_runB_sha256": "7b9ae1ed909d591f6f2b7dfea6b6a11b479b252a9c3ad6621a97552704190d4b",
+  "ground_truth_sha256": "7b9ae1ed909d591f6f2b7dfea6b6a11b479b252a9c3ad6621a97552704190d4b",
+  "oracle_sha256": "a76a039dcbf7f33c373488a4afbc63bdd139ea30a58eac6f4ac0a0c9a63d4ed7",
+  "probe_cargo_toml_sha256": "2ab395aa01cf7d91179242f6a3d30691c41e38a51391b972d7cc689b0e63784e",
+  "probe_main_rs_sha256": "3a01450d7710cef521cf2b01bdd8176607488b1265a6dfd32be448acb8610d9d",
+  "runner_sha256": "f1d7f5dd49ced7287a7b5121b943128e6ff2e13ae3be3d091c2960a6ebbfaa4f"
+ },
+ "purpose": "First LIVE compiled-Rust differential harness for the model-card authority surface: the real amphora-engine registry and scoring front door are executed over a locked corpus and compared, canonical-JSON byte for byte, against an independent CPython oracle predicting the full authority envelope, the module-owned error-taxonomy Display strings, and registry identity from the manifest plus published minimum-privilege spec.",
+ "run_type": "live_rust_differential_audit",
+ "runtime_source_anchors": {
+  "amphora-core/src/capability.rs_sha256": "7b358ffa2ed2ca3a090f73c2cc04abe1c42ec0c94e4f7fcf0ec31d6e11f0418a",
+  "amphora-engine/src/lib.rs_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+  "mission_doc_pin_current": false,
+  "mission_doc_pin_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+  "module-manifest.json_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+  "note": "docs/mission.md pins the 2026-07-17 audit-date lib.rs hash; the crate has since changed, so the pin is stale. This receipt anchors the hash actually compiled into the probe."
+ },
+ "schema": "amphora.model-card-authority.live-runtime-envelope-parity-diagnostic.v1",
+ "study_id": "amphora-model-card-authority-live-runtime-envelope-parity-v1",
+ "theory_reference": [
+  "Saltzer & Schroeder 1975, Proc. IEEE 63(9), DOI 10.1109/PROC.1975.9939 \u2014 least privilege, fail-safe defaults",
+  "McKeeman 1998, Digital Technical Journal 10(1):100-107 \u2014 differential testing",
+  "Denning 1976, CACM 19(5), DOI 10.1145/360051.360056 \u2014 lattice model of secure information flow (carried from authority-lattice-completeness-v1)"
+ ]
+}

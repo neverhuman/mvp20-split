@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "58e509215966e7f34ced55a373697b0d37a50bcc1a7db129ea5d33d36a783f93",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-ip-fto-guard",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

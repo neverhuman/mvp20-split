@@ -1,0 +1,127 @@
+{
+  "all_gates_pass": true,
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-solvency-score/reduced-representation-discrimination-v1",
+  "claim_locks": {
+    "authority_ceiling": "RULE_CITED",
+    "constraint_only": true,
+    "no_product_or_optimizer_authority": true,
+    "scientific_readiness": "LOCKED_INTERNAL",
+    "self_authored_fixture_not_external_validation": true
+  },
+  "closes": [],
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent on host)",
+    "module promotion to PHASE_0 (requires human dual-identity ceremony keys)",
+    "portfolio manifest edit (66 receipts / 11 modules unchanged)",
+    "external solubility validation (this study uses only the CC0 self-authored fixture; the externally-validated science remains the separate BigSolDB leave-solute-out benchmark)"
+  ],
+  "edits_portfolio_manifest": false,
+  "fixture": {
+    "license": "CC0-1.0",
+    "majority_class_base_rate": 0.56,
+    "n_compatible": 33,
+    "n_incompatible": 42,
+    "n_pairs": 75,
+    "n_polymers": 5,
+    "n_solvents": 15,
+    "path": "amphora-solvency-score/reference/phase0-solvency-known-answer.v1.json",
+    "sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238"
+  },
+  "gates": {
+    "G1_hansen_reproduction_67_of_75": true,
+    "G2_hansen_auroc_meets_reported_ceiling": true,
+    "G3_teas_simplex_valid": true,
+    "G4_bagley_dv_identity": true,
+    "G5_all_three_auroc_beat_random": true,
+    "G6_fail_closed_full": true,
+    "G7_bootstrap_populated": true
+  },
+  "headline_result": {
+    "auroc_per_polymer_mean": {
+      "bagley_volume_dependent": 0.931788,
+      "hansen_red": 0.980593,
+      "n_polymers_scored": 5,
+      "teas_fractional": 0.895873
+    },
+    "auroc_pooled": {
+      "bagley_volume_dependent": 0.922078,
+      "hansen_red": 0.948773,
+      "teas_fractional": 0.808081
+    },
+    "bootstrap": {
+      "gap_hansen_minus_bagley_ci95": [
+        -0.047625,
+        0.109017
+      ],
+      "gap_hansen_minus_bagley_frac_positive": 0.7496,
+      "gap_hansen_minus_bagley_mean": 0.02673,
+      "gap_hansen_minus_teas_ci95": [
+        0.044094,
+        0.24749
+      ],
+      "gap_hansen_minus_teas_frac_positive": 0.9974,
+      "gap_hansen_minus_teas_mean": 0.140689,
+      "n_boot_effective_hansen_bagley": 5000,
+      "n_boot_effective_hansen_teas": 5000,
+      "n_boot_requested": 5000,
+      "seed": 20260729
+    },
+    "hansen_reproduction": {
+      "hansen_accuracy": 0.893333,
+      "hansen_correct_of_n": "67/75",
+      "matches_shipped_headline_67_75": true
+    },
+    "interpretation": "Independent from-scratch scoring of all 75 CC0 fixture pairs under three published representations of Hansen solubility space. Full Hansen RED reproduces the shipped 67/75 headline exactly and gives pooled AUROC 0.9488. The Teas (1968) fractional representation -- which discards total cohesive-energy magnitude and the interaction radius R -- gives AUROC 0.8081; the Bagley (1971) volume-dependent (dV,dH) representation -- which merges the dispersion and polar axes and drops Hansen's factor-of-4 weighting -- gives AUROC 0.9221. Paired pinned-seed bootstrap (n=5000, seed=20260729): the Hansen-minus-Teas AUROC gap 95% CI is [0.044094, 0.24749] (strictly positive (Hansen better)); the Hansen-minus-Bagley gap 95% CI is [-0.047625, 0.109017] (straddles zero (noninferior)). These are threshold-free rankings so no cutoff was tuned. Applicability domain: every non-physical probe (NaN / +Inf / negative HSP / non-numeric / undefined Teas simplex) fails closed. This is a self-authored CC0 fixture, NOT external validation; the externally-validated science remains the separate BigSolDB leave-solute-out benchmark.",
+    "verdicts": {
+      "bagley_vs_hansen": "NONINFERIOR_WITHIN_BOOTSTRAP_CI",
+      "teas_vs_hansen": "REDUCED_REP_DEGRADES_DISCRIMINATION"
+    }
+  },
+  "human_review_performed": false,
+  "module": "amphora-solvency-score",
+  "organizational_independence_asserted": false,
+  "physical_baseline": {
+    "bagley_volume_dependent": "Bagley, Nielsen, Scigliano, J. Paint Technol. 43(555):35-42 (1971)",
+    "full_hansen_red": "Hansen 2nd ed. CRC 2007 ISBN 978-0-8493-7248-3 Eq. 1.9 (k=4, cutoff=1.0)",
+    "teas_fractional": "Teas, J. Paint Technol. 40(525):19-25 (1968)"
+  },
+  "promotes_authority": false,
+  "provenance": {
+    "fixture_license": "CC0-1.0",
+    "primary_sources": [
+      "C. M. Hansen, Hansen Solubility Parameters: A User's Handbook, 2nd ed., CRC Press 2007, ISBN 978-0-8493-7248-3",
+      "J. P. Teas, Graphic analysis of resin solubilities, Journal of Paint Technology 40(525):19-25 (1968)",
+      "E. B. Bagley, T. P. Nielsen, J. M. Scigliano, Journal of Paint Technology 43(555):35-42 (1971)"
+    ],
+    "scope": "marine anti-corrosion two-part epoxy-amine (DGEBA epoxy + reference polymers) vs coating-relevant solvents"
+  },
+  "purpose": "Independent from-scratch head-to-head of two published reduced-dimensionality simplifications of Hansen solubility space -- the Teas (1968) fractional-parameter representation and the Bagley (1971) volume-dependent (dV,dH) representation -- against the full 3-D Hansen RED sphere, on the module's CC0-1.0 Phase-0 known-answer fixture (5 polymers x 15 solvents = 75 labelled coating solvent-polymer pairs). Threshold-free AUROC is the primary metric (no cutoff tuned) with a pinned-seed paired bootstrap CI on each AUROC gap, to test whether discarding total cohesive-energy magnitude, the interaction radius R, and Hansen's factor-of-4 dispersion weighting measurably degrades compatibility discrimination. No external data; every score is an a-priori (unfitted) evaluation.",
+  "receipt_id": "reduced-representation-discrimination-359f72f6626007f137019b5ed9de5583e23e234ea93cde52dbf47a4f3239e0a2",
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "1bb81064b78e1d68bf4401cf053a0a57812efef87f81474ec0e1f2d0ecc9763c",
+    "fixture_sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238",
+    "harness_sha256": "9b71cb4a730de1ca9bcb06b1717f4829d95a63f57d5e9901fc4d53cd17e644fb",
+    "independent_runs": true,
+    "replays": 2,
+    "runB_diagnostic_sha256": "1bb81064b78e1d68bf4401cf053a0a57812efef87f81474ec0e1f2d0ecc9763c",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "run_type": "SCIENCE_THEORY_BASELINE_REPLAY",
+  "schema": "amphora.solvency-score.reduced-representation-discrimination-receipt.v1",
+  "signature": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzcyI6IHRydWUsCiAgImF1dGhvcml0eSI6ICJBVURJVF9PTkxZIiwKICAiYmVuY2htYXJrIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUvcmVkdWNlZC1yZXByZXNlbnRhdGlvbi1kaXNjcmltaW5hdGlvbi12MSIsCiAgImNsYWltX2xvY2tzIjogewogICAgImF1dGhvcml0eV9jZWlsaW5nIjogIlJVTEVfQ0lURUQiLAogICAgImNvbnN0cmFpbnRfb25seSI6IHRydWUsCiAgICAibm9fcHJvZHVjdF9vcl9vcHRpbWl6ZXJfYXV0aG9yaXR5IjogdHJ1ZSwKICAgICJzY2llbnRpZmljX3JlYWRpbmVzcyI6ICJMT0NLRURfSU5URVJOQUwiLAogICAgInNlbGZfYXV0aG9yZWRfZml4dHVyZV9ub3RfZXh0ZXJuYWxfdmFsaWRhdGlvbiI6IHRydWUKICB9LAogICJjbG9zZXMiOiBbXSwKICAiZG9lc19ub3RfY2xvc2UiOiBbCiAgICAiRVZBTFVBVElPTl9TSUdOQVRVUkVfQUJTRU5UICh0cnVzdC1hbmNob3JlZCBwaGFzZTAtZXZhbHVhdG9yIGtleSBhYnNlbnQgb24gaG9zdCkiLAogICAgIm1vZHVsZSBwcm9tb3Rpb24gdG8gUEhBU0VfMCAocmVxdWlyZXMgaHVtYW4gZHVhbC1pZGVudGl0eSBjZXJlbW9ueSBrZXlzKSIsCiAgICAicG9ydGZvbGlvIG1hbmlmZXN0IGVkaXQgKDY2IHJlY2VpcHRzIC8gMTEgbW9kdWxlcyB1bmNoYW5nZWQpIiwKICAgICJleHRlcm5hbCBzb2x1YmlsaXR5IHZhbGlkYXRpb24gKHRoaXMgc3R1ZHkgdXNlcyBvbmx5IHRoZSBDQzAgc2VsZi1hdXRob3JlZCBmaXh0dXJlOyB0aGUgZXh0ZXJuYWxseS12YWxpZGF0ZWQgc2NpZW5jZSByZW1haW5zIHRoZSBzZXBhcmF0ZSBCaWdTb2xEQiBsZWF2ZS1zb2x1dGUtb3V0IGJlbmNobWFyaykiCiAgXSwKICAiZWRpdHNfcG9ydGZvbGlvX21hbmlmZXN0IjogZmFsc2UsCiAgImZpeHR1cmUiOiB7CiAgICAibGljZW5zZSI6ICJDQzAtMS4wIiwKICAgICJtYWpvcml0eV9jbGFzc19iYXNlX3JhdGUiOiAwLjU2LAogICAgIm5fY29tcGF0aWJsZSI6IDMzLAogICAgIm5faW5jb21wYXRpYmxlIjogNDIsCiAgICAibl9wYWlycyI6IDc1LAogICAgIm5fcG9seW1lcnMiOiA1LAogICAgIm5fc29sdmVudHMiOiAxNSwKICAgICJwYXRoIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUvcmVmZXJlbmNlL3BoYXNlMC1zb2x2ZW5jeS1rbm93bi1hbnN3ZXIudjEuanNvbiIsCiAgICAic2hhMjU2IjogIjliNmI2ODlmYmQzNzYyMDBlZjkyNzdhZjdkNWY0OGZlZTM2M2YzYTdlNjBjODViMzI2NDJiMmYxZDY5NGEyMzgiCiAgfSwKICAiZ2F0ZXMiOiB7CiAgICAiRzFfaGFuc2VuX3JlcHJvZHVjdGlvbl82N19vZl83NSI6IHRydWUsCiAgICAiRzJfaGFuc2VuX2F1cm9jX21lZXRzX3JlcG9ydGVkX2NlaWxpbmciOiB0cnVlLAogICAgIkczX3RlYXNfc2ltcGxleF92YWxpZCI6IHRydWUsCiAgICAiRzRfYmFnbGV5X2R2X2lkZW50aXR5IjogdHJ1ZSwKICAgICJHNV9hbGxfdGhyZWVfYXVyb2NfYmVhdF9yYW5kb20iOiB0cnVlLAogICAgIkc2X2ZhaWxfY2xvc2VkX2Z1bGwiOiB0cnVlLAogICAgIkc3X2Jvb3RzdHJhcF9wb3B1bGF0ZWQiOiB0cnVlCiAgfSwKICAiaGVhZGxpbmVfcmVzdWx0IjogewogICAgImF1cm9jX3Blcl9wb2x5bWVyX21lYW4iOiB7CiAgICAgICJiYWdsZXlfdm9sdW1lX2RlcGVuZGVudCI6IDAuOTMxNzg4LAogICAgICAiaGFuc2VuX3JlZCI6IDAuOTgwNTkzLAogICAgICAibl9wb2x5bWVyc19zY29yZWQiOiA1LAogICAgICAidGVhc19mcmFjdGlvbmFsIjogMC44OTU4NzMKICAgIH0sCiAgICAiYXVyb2NfcG9vbGVkIjogewogICAgICAiYmFnbGV5X3ZvbHVtZV9kZXBlbmRlbnQiOiAwLjkyMjA3OCwKICAgICAgImhhbnNlbl9yZWQiOiAwLjk0ODc3MywKICAgICAgInRlYXNfZnJhY3Rpb25hbCI6IDAuODA4MDgxCiAgICB9LAogICAgImJvb3RzdHJhcCI6IHsKICAgICAgImdhcF9oYW5zZW5fbWludXNfYmFnbGV5X2NpOTUiOiBbCiAgICAgICAgLTAuMDQ3NjI1LAogICAgICAgIDAuMTA5MDE3CiAgICAgIF0sCiAgICAgICJnYXBfaGFuc2VuX21pbnVzX2JhZ2xleV9mcmFjX3Bvc2l0aXZlIjogMC43NDk2LAogICAgICAiZ2FwX2hhbnNlbl9taW51c19iYWdsZXlfbWVhbiI6IDAuMDI2NzMsCiAgICAgICJnYXBfaGFuc2VuX21pbnVzX3RlYXNfY2k5NSI6IFsKICAgICAgICAwLjA0NDA5NCwKICAgICAgICAwLjI0NzQ5CiAgICAgIF0sCiAgICAgICJnYXBfaGFuc2VuX21pbnVzX3RlYXNfZnJhY19wb3NpdGl2ZSI6IDAuOTk3NCwKICAgICAgImdhcF9oYW5zZW5fbWludXNfdGVhc19tZWFuIjogMC4xNDA2ODksCiAgICAgICJuX2Jvb3RfZWZmZWN0aXZlX2hhbnNlbl9iYWdsZXkiOiA1MDAwLAogICAgICAibl9ib290X2VmZmVjdGl2ZV9oYW5zZW5fdGVhcyI6IDUwMDAsCiAgICAgICJuX2Jvb3RfcmVxdWVzdGVkIjogNTAwMCwKICAgICAgInNlZWQiOiAyMDI2MDcyOQogICAgfSwKICAgICJoYW5zZW5fcmVwcm9kdWN0aW9uIjogewogICAgICAiaGFuc2VuX2FjY3VyYWN5IjogMC44OTMzMzMsCiAgICAgICJoYW5zZW5fY29ycmVjdF9vZl9uIjogIjY3Lzc1IiwKICAgICAgIm1hdGNoZXNfc2hpcHBlZF9oZWFkbGluZV82N183NSI6IHRydWUKICAgIH0sCiAgICAiaW50ZXJwcmV0YXRpb24iOiAiSW5kZXBlbmRlbnQgZnJvbS1zY3JhdGNoIHNjb3Jpbmcgb2YgYWxsIDc1IENDMCBmaXh0dXJlIHBhaXJzIHVuZGVyIHRocmVlIHB1Ymxpc2hlZCByZXByZXNlbnRhdGlvbnMgb2YgSGFuc2VuIHNvbHViaWxpdHkgc3BhY2UuIEZ1bGwgSGFuc2VuIFJFRCByZXByb2R1Y2VzIHRoZSBzaGlwcGVkIDY3Lzc1IGhlYWRsaW5lIGV4YWN0bHkgYW5kIGdpdmVzIHBvb2xlZCBBVVJPQyAwLjk0ODguIFRoZSBUZWFzICgxOTY4KSBmcmFjdGlvbmFsIHJlcHJlc2VudGF0aW9uIC0tIHdoaWNoIGRpc2NhcmRzIHRvdGFsIGNvaGVzaXZlLWVuZXJneSBtYWduaXR1ZGUgYW5kIHRoZSBpbnRlcmFjdGlvbiByYWRpdXMgUiAtLSBnaXZlcyBBVVJPQyAwLjgwODE7IHRoZSBCYWdsZXkgKDE5NzEpIHZvbHVtZS1kZXBlbmRlbnQgKGRWLGRIKSByZXByZXNlbnRhdGlvbiAtLSB3aGljaCBtZXJnZXMgdGhlIGRpc3BlcnNpb24gYW5kIHBvbGFyIGF4ZXMgYW5kIGRyb3BzIEhhbnNlbidzIGZhY3Rvci1vZi00IHdlaWdodGluZyAtLSBnaXZlcyBBVVJPQyAwLjkyMjEuIFBhaXJlZCBwaW5uZWQtc2VlZCBib290c3RyYXAgKG49NTAwMCwgc2VlZD0yMDI2MDcyOSk6IHRoZSBIYW5zZW4tbWludXMtVGVhcyBBVVJPQyBnYXAgOTUlIENJIGlzIFswLjA0NDA5NCwgMC4yNDc0OV0gKHN0cmljdGx5IHBvc2l0aXZlIChIYW5zZW4gYmV0dGVyKSk7IHRoZSBIYW5zZW4tbWludXMtQmFnbGV5IGdhcCA5NSUgQ0kgaXMgWy0wLjA0NzYyNSwgMC4xMDkwMTddIChzdHJhZGRsZXMgemVybyAobm9uaW5mZXJpb3IpKS4gVGhlc2UgYXJlIHRocmVzaG9sZC1mcmVlIHJhbmtpbmdzIHNvIG5vIGN1dG9mZiB3YXMgdHVuZWQuIEFwcGxpY2FiaWxpdHkgZG9tYWluOiBldmVyeSBub24tcGh5c2ljYWwgcHJvYmUgKE5hTiAvICtJbmYgLyBuZWdhdGl2ZSBIU1AgLyBub24tbnVtZXJpYyAvIHVuZGVmaW5lZCBUZWFzIHNpbXBsZXgpIGZhaWxzIGNsb3NlZC4gVGhpcyBpcyBhIHNlbGYtYXV0aG9yZWQgQ0MwIGZpeHR1cmUsIE5PVCBleHRlcm5hbCB2YWxpZGF0aW9uOyB0aGUgZXh0ZXJuYWxseS12YWxpZGF0ZWQgc2NpZW5jZSByZW1haW5zIHRoZSBzZXBhcmF0ZSBCaWdTb2xEQiBsZWF2ZS1zb2x1dGUtb3V0IGJlbmNobWFyay4iLAogICAgInZlcmRpY3RzIjogewogICAgICAiYmFnbGV5X3ZzX2hhbnNlbiI6ICJOT05JTkZFUklPUl9XSVRISU5fQk9PVFNUUkFQX0NJIiwKICAgICAgInRlYXNfdnNfaGFuc2VuIjogIlJFRFVDRURfUkVQX0RFR1JBREVTX0RJU0NSSU1JTkFUSU9OIgogICAgfQogIH0sCiAgImh1bWFuX3Jldmlld19wZXJmb3JtZWQiOiBmYWxzZSwKICAibW9kdWxlIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUiLAogICJvcmdhbml6YXRpb25hbF9pbmRlcGVuZGVuY2VfYXNzZXJ0ZWQiOiBmYWxzZSwKICAicGh5c2ljYWxfYmFzZWxpbmUiOiB7CiAgICAiYmFnbGV5X3ZvbHVtZV9kZXBlbmRlbnQiOiAiQmFnbGV5LCBOaWVsc2VuLCBTY2lnbGlhbm8sIEouIFBhaW50IFRlY2hub2wuIDQzKDU1NSk6MzUtNDIgKDE5NzEpIiwKICAgICJmdWxsX2hhbnNlbl9yZWQiOiAiSGFuc2VuIDJuZCBlZC4gQ1JDIDIwMDcgSVNCTiA5NzgtMC04NDkzLTcyNDgtMyBFcS4gMS45IChrPTQsIGN1dG9mZj0xLjApIiwKICAgICJ0ZWFzX2ZyYWN0aW9uYWwiOiAiVGVhcywgSi4gUGFpbnQgVGVjaG5vbC4gNDAoNTI1KToxOS0yNSAoMTk2OCkiCiAgfSwKICAicHJvbW90ZXNfYXV0aG9yaXR5IjogZmFsc2UsCiAgInByb3ZlbmFuY2UiOiB7CiAgICAiZml4dHVyZV9saWNlbnNlIjogIkNDMC0xLjAiLAogICAgInByaW1hcnlfc291cmNlcyI6IFsKICAgICAgIkMuIE0uIEhhbnNlbiwgSGFuc2VuIFNvbHViaWxpdHkgUGFyYW1ldGVyczogQSBVc2VyJ3MgSGFuZGJvb2ssIDJuZCBlZC4sIENSQyBQcmVzcyAyMDA3LCBJU0JOIDk3OC0wLTg0OTMtNzI0OC0zIiwKICAgICAgIkouIFAuIFRlYXMsIEdyYXBoaWMgYW5hbHlzaXMgb2YgcmVzaW4gc29sdWJpbGl0aWVzLCBKb3VybmFsIG9mIFBhaW50IFRlY2hub2xvZ3kgNDAoNTI1KToxOS0yNSAoMTk2OCkiLAogICAgICAiRS4gQi4gQmFnbGV5LCBULiBQLiBOaWVsc2VuLCBKLiBNLiBTY2lnbGlhbm8sIEpvdXJuYWwgb2YgUGFpbnQgVGVjaG5vbG9neSA0Myg1NTUpOjM1LTQyICgxOTcxKSIKICAgIF0sCiAgICAic2NvcGUiOiAibWFyaW5lIGFudGktY29ycm9zaW9uIHR3by1wYXJ0IGVwb3h5LWFtaW5lIChER0VCQSBlcG94eSArIHJlZmVyZW5jZSBwb2x5bWVycykgdnMgY29hdGluZy1yZWxldmFudCBzb2x2ZW50cyIKICB9LAogICJwdXJwb3NlIjogIkluZGVwZW5kZW50IGZyb20tc2NyYXRjaCBoZWFkLXRvLWhlYWQgb2YgdHdvIHB1Ymxpc2hlZCByZWR1Y2VkLWRpbWVuc2lvbmFsaXR5IHNpbXBsaWZpY2F0aW9ucyBvZiBIYW5zZW4gc29sdWJpbGl0eSBzcGFjZSAtLSB0aGUgVGVhcyAoMTk2OCkgZnJhY3Rpb25hbC1wYXJhbWV0ZXIgcmVwcmVzZW50YXRpb24gYW5kIHRoZSBCYWdsZXkgKDE5NzEpIHZvbHVtZS1kZXBlbmRlbnQgKGRWLGRIKSByZXByZXNlbnRhdGlvbiAtLSBhZ2FpbnN0IHRoZSBmdWxsIDMtRCBIYW5zZW4gUkVEIHNwaGVyZSwgb24gdGhlIG1vZHVsZSdzIENDMC0xLjAgUGhhc2UtMCBrbm93bi1hbnN3ZXIgZml4dHVyZSAoNSBwb2x5bWVycyB4IDE1IHNvbHZlbnRzID0gNzUgbGFiZWxsZWQgY29hdGluZyBzb2x2ZW50LXBvbHltZXIgcGFpcnMpLiBUaHJlc2hvbGQtZnJlZSBBVVJPQyBpcyB0aGUgcHJpbWFyeSBtZXRyaWMgKG5vIGN1dG9mZiB0dW5lZCkgd2l0aCBhIHBpbm5lZC1zZWVkIHBhaXJlZCBib290c3RyYXAgQ0kgb24gZWFjaCBBVVJPQyBnYXAsIHRvIHRlc3Qgd2hldGhlciBkaXNjYXJkaW5nIHRvdGFsIGNvaGVzaXZlLWVuZXJneSBtYWduaXR1ZGUsIHRoZSBpbnRlcmFjdGlvbiByYWRpdXMgUiwgYW5kIEhhbnNlbidzIGZhY3Rvci1vZi00IGRpc3BlcnNpb24gd2VpZ2h0aW5nIG1lYXN1cmFibHkgZGVncmFkZXMgY29tcGF0aWJpbGl0eSBkaXNjcmltaW5hdGlvbi4gTm8gZXh0ZXJuYWwgZGF0YTsgZXZlcnkgc2NvcmUgaXMgYW4gYS1wcmlvcmkgKHVuZml0dGVkKSBldmFsdWF0aW9uLiIsCiAgInJlY2VpcHRfaWQiOiAicmVkdWNlZC1yZXByZXNlbnRhdGlvbi1kaXNjcmltaW5hdGlvbi0zNTlmNzJmNjYyNjAwN2YxMzcwMTliNWVkOWRlNTU4M2UyM2UyMzRlYTkzY2RlNTJkYmY0N2E0ZjMyMzllMGEyIiwKICAicmVwcm9kdWNpYmlsaXR5IjogewogICAgImNhbm9uaWNhbF9kaWFnbm9zdGljX3NoYTI1NiI6ICIxYmI4MTA2NGI3OGUxZDY4YmY0NDAxY2YwNTNhMGE1NzgxMmVmZWY4N2Y4MTQ3NGVjMGUxZjJkMGVjYzk3NjNjIiwKICAgICJmaXh0dXJlX3NoYTI1NiI6ICI5YjZiNjg5ZmJkMzc2MjAwZWY5Mjc3YWY3ZDVmNDhmZWUzNjNmM2E3ZTYwYzg1YjMyNjQyYjJmMWQ2OTRhMjM4IiwKICAgICJoYXJuZXNzX3NoYTI1NiI6ICI5YjcxY2I0YTczMGRlMWNhOWJjYjA2YjE3MTdmNDgyOWQ5NWE2M2Y1N2Q1ZTk5MDFmYzRkNTNjZDE3ZTY0NGZiIiwKICAgICJpbmRlcGVuZGVudF9ydW5zIjogdHJ1ZSwKICAgICJyZXBsYXlzIjogMiwKICAgICJydW5CX2RpYWdub3N0aWNfc2hhMjU2IjogIjFiYjgxMDY0Yjc4ZTFkNjhiZjQ0MDFjZjA1M2EwYTU3ODEyZWZlZjg3ZjgxNDc0ZWMwZTFmMmQwZWNjOTc2M2MiLAogICAgInR3b19yZXBsYXlfc2hhMjU2X2dhdGUiOiAiUEFTUyIKICB9LAogICJydW5fdHlwZSI6ICJTQ0lFTkNFX1RIRU9SWV9CQVNFTElORV9SRVBMQVkiLAogICJzY2hlbWEiOiAiYW1waG9yYS5zb2x2ZW5jeS1zY29yZS5yZWR1Y2VkLXJlcHJlc2VudGF0aW9uLWRpc2NyaW1pbmF0aW9uLXJlY2VpcHQudjEiLAogICJzaWduaW5nX2tleSI6IHsKICAgICJhdXRob3JpdHkiOiAiTE9DQUxfREVWRUxPUE1FTlRfQVVESVRfT05MWSIsCiAgICAia2V5X2lkIjogImxvY2FsLTkwMjg3NzNmNDk1OTExOTMiLAogICAgInRydXN0X2FuY2hvcmVkX2luX3BoYXNlMF9zdG9yZSI6IGZhbHNlCiAgfQp9",
+    "payloadType": "application/vnd.amphora.reduced-representation-discrimination-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "SsJKbZ/p6ORPmx6ijwPlrvyuo/yLUL0g2Y9+Rgq+aO5nQCMnMCD2V+ncDaqUTlezCB2DbpG3FURmywCyy0BIDQ=="
+      }
+    ]
+  },
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "trust_anchored_in_phase0_store": false
+  }
+}

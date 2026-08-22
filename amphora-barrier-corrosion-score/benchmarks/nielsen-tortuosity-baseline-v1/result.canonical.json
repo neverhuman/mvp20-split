@@ -1,0 +1,257 @@
+{
+  "aggregate": {
+    "both_physical_models_refuted_on_optimum_location": true,
+    "initial_rise_cussler_verdicts": {
+      "asperti2024": "tortuosity_insufficient_REFUTED",
+      "zhu2022": "tortuosity_sufficient"
+    },
+    "initial_rise_nielsen_verdicts": {
+      "asperti2024": "tortuosity_insufficient_REFUTED",
+      "zhu2022": "tortuosity_sufficient"
+    },
+    "n_strict_in_class_series": 2
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark": "nielsen-tortuosity-baseline-v1",
+  "determinism": {
+    "float_round_decimals": 6,
+    "no_random": true,
+    "no_timestamp": true,
+    "stdlib_only": true
+  },
+  "input_dataset": {
+    "path": "amphora-barrier-corrosion-score/reference/mvp20/data/corrosion_series.json",
+    "schema": "mvp20.corrosion_series.v4",
+    "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+  },
+  "load_bearing_assumption": "Rc/Rc0 = P0/P: the coating (pore) resistance improvement equals the permeability-reduction (tortuosity) factor, valid for an ideal defect-free two-phase film of impermeable platelets in an ionically-resistive matrix. Defects, active inhibition, cathodic delamination and cure-state effects are outside this idealisation.",
+  "modifies_manifest": false,
+  "module": "amphora-barrier-corrosion-score",
+  "named_baselines": [
+    {
+      "citation": "Nielsen, L.E., J. Macromol. Sci. A 1967, 1(5), 929-942",
+      "doi": "10.1080/10601326708053745",
+      "form": "Rc/Rc0 = (1 + (alpha/2) phi)/(1 - phi)",
+      "name": "Nielsen platelet-tortuosity barrier model"
+    },
+    {
+      "citation": "Cussler et al., J. Membr. Sci. 1988, 38(2), 161-174",
+      "doi": "10.1016/S0376-7388(00)80877-7",
+      "form": "Rc/Rc0 = 1 + alpha^2 phi^2/(1 - phi)",
+      "name": "Cussler high-aspect regular-array flake barrier model"
+    }
+  ],
+  "per_series": [
+    {
+      "T1_structural_optimum_location": {
+        "both_models_strictly_increasing_in_phi": true,
+        "cussler_predicted_best_wt_pct": 5.0,
+        "cussler_reproduces_optimum_location": false,
+        "nielsen_predicted_best_wt_pct": 5.0,
+        "nielsen_reproduces_optimum_location": false,
+        "observed_optimum_wt_pct": 1.0,
+        "verdict": "REFUTED_optimum_interior"
+      },
+      "T2_initial_rise_aspect_ratio_inversion": {
+        "cussler_alpha_eff_band": {
+          "max": 2546.256075,
+          "min": 2218.273019,
+          "nom": 2411.566868
+        },
+        "cussler_verdict": "tortuosity_insufficient_REFUTED",
+        "initial_rise_bif_observed": 200.0,
+        "interpretation": "alpha_eff required by the observed initial Rc rise vs published filler aspect-ratio ceiling. Nielsen (linear-in-phi) demands the larger alpha; Cussler (quadratic) the smaller. Both compared to the SAME published ceiling.",
+        "nielsen_alpha_eff_band": {
+          "max": 71638.0,
+          "min": 62384.5,
+          "nom": 67837.965217
+        },
+        "nielsen_verdict": "tortuosity_insufficient_REFUTED",
+        "optimum_wt_pct": 1.0,
+        "phi_optimum_band": {
+          "hi": 0.006339,
+          "lo": 0.005525,
+          "nom": 0.005833
+        },
+        "published_alpha_ceiling": {
+          "cite": "LeBaron 1999 Appl.Clay Sci. 15:11-29; Bharadwaj 2001 Macromolecules 34:9189",
+          "hi": 1000.0,
+          "lo": 50.0
+        }
+      },
+      "all_checks_pass": true,
+      "cite": "Asperti et al., Materials 17(12):3028 (2024), DOI 10.3390/ma17123028",
+      "confound": "none (single nanoclay loading ladder in neat epoxy-amine)",
+      "doi": "10.3390/ma17123028",
+      "fail_closed_checks": {
+        "alpha_eff_positive_finite": true,
+        "bif_unity_at_zero_loading": true,
+        "cussler_strictly_increasing": true,
+        "nielsen_strictly_increasing": true,
+        "observed_optimum_is_interior": true,
+        "phi_monotone_increasing": true,
+        "phi_zero_at_zero_loading": true
+      },
+      "filler_density_g_cm3": {
+        "max": 2.0,
+        "min": 1.9,
+        "nom": 1.98
+      },
+      "filler_family": "montmorillonite",
+      "id": "asperti2024",
+      "in_class": "epoxy-amine",
+      "levels_wt_pct": [
+        0.0,
+        1.0,
+        3.0,
+        5.0
+      ],
+      "matrix_note": "neat cured epoxy-amine matrix; clean single-filler ladder",
+      "phi_nominal": [
+        0.0,
+        0.005833,
+        0.017646,
+        0.029662
+      ],
+      "rc_ohm_cm2": [
+        2000000.0,
+        400000000.0,
+        700000.0,
+        100000000.0
+      ],
+      "use_limit": "within-study direction or bibliographic anchor only; no cross-study pooling",
+      "variable": "nanoclay Cloisite 30B wt%"
+    },
+    {
+      "T1_structural_optimum_location": {
+        "both_models_strictly_increasing_in_phi": true,
+        "cussler_predicted_best_wt_pct": 1.0,
+        "cussler_reproduces_optimum_location": false,
+        "nielsen_predicted_best_wt_pct": 1.0,
+        "nielsen_reproduces_optimum_location": false,
+        "observed_optimum_wt_pct": 0.7,
+        "verdict": "REFUTED_optimum_interior"
+      },
+      "T2_initial_rise_aspect_ratio_inversion": {
+        "cussler_alpha_eff_band": {
+          "max": 1109.628747,
+          "min": 900.4994,
+          "nom": 1033.336333
+        },
+        "cussler_verdict": "tortuosity_sufficient",
+        "initial_rise_bif_observed": 15.445545,
+        "interpretation": "alpha_eff required by the observed initial Rc rise vs published filler aspect-ratio ceiling. Nielsen (linear-in-phi) demands the larger alpha; Cussler (quadratic) the smaller. Both compared to the SAME published ceiling.",
+        "nielsen_alpha_eff_band": {
+          "max": 8418.364202,
+          "min": 6828.678925,
+          "nom": 7838.431462
+        },
+        "nielsen_verdict": "tortuosity_sufficient",
+        "optimum_wt_pct": 0.7,
+        "phi_optimum_band": {
+          "hi": 0.004212,
+          "lo": 0.003419,
+          "nom": 0.003671
+        },
+        "published_alpha_ceiling": {
+          "cite": "Cui,Kundalwal,Kumar 2016 Carbon 98:313-333",
+          "hi": 30000.0,
+          "lo": 1000.0
+        }
+      },
+      "all_checks_pass": true,
+      "cite": "Zhu et al., Materials 15(3):1194 (2022), DOI 10.3390/ma15031194",
+      "confound": "graphene increment sits on a 35% mica matrix; phi_graphene referenced to total film. A denser mica-composite matrix would LOWER phi_graphene and RAISE alpha_eff -- reported band is therefore a lower bound on alpha_eff. SECONDARY/DIRECTIONAL.",
+      "doi": "visible from PMC article metadata",
+      "fail_closed_checks": {
+        "alpha_eff_positive_finite": true,
+        "bif_unity_at_zero_loading": true,
+        "cussler_strictly_increasing": true,
+        "nielsen_strictly_increasing": true,
+        "observed_optimum_is_interior": true,
+        "phi_monotone_increasing": true,
+        "phi_zero_at_zero_loading": true
+      },
+      "filler_density_g_cm3": {
+        "max": 2.26,
+        "min": 2.0,
+        "nom": 2.2
+      },
+      "filler_family": "graphene",
+      "id": "zhu2022",
+      "in_class": "epoxy-amine",
+      "levels_wt_pct": [
+        0.0,
+        0.2,
+        0.5,
+        0.7,
+        1.0
+      ],
+      "matrix_note": "graphene added on top of a FIXED 35% mica/epoxy base",
+      "phi_nominal": [
+        0.0,
+        0.001046,
+        0.00262,
+        0.003671,
+        0.005252
+      ],
+      "rc_ohm_cm2": [
+        1212000000.0,
+        7477000000.0,
+        15590000000.0,
+        18720000000.0,
+        4333000000.0
+      ],
+      "use_limit": "within-study direction or bibliographic anchor only; no cross-study pooling",
+      "variable": "graphene wt% in fixed 35% mica/epoxy"
+    }
+  ],
+  "physical_constants": {
+    "densities_g_cm3": {
+      "cloisite30b": {
+        "max": 2.0,
+        "min": 1.9,
+        "nom": 1.98
+      },
+      "graphene": {
+        "max": 2.26,
+        "min": 2.0,
+        "nom": 2.2
+      },
+      "matrix_epoxy_amine": {
+        "max": 1.2,
+        "min": 1.1,
+        "nom": 1.15
+      }
+    },
+    "published_alpha_ceilings": {
+      "graphene": {
+        "cite": "Cui,Kundalwal,Kumar 2016 Carbon 98:313-333",
+        "hi": 30000.0,
+        "lo": 1000.0
+      },
+      "montmorillonite": {
+        "cite": "LeBaron 1999 Appl.Clay Sci. 15:11-29; Bharadwaj 2001 Macromolecules 34:9189",
+        "hi": 1000.0,
+        "lo": 50.0
+      }
+    }
+  },
+  "promotes_authority": false,
+  "rights": {
+    "constants_class": "published physical constants / group-contribution reference values",
+    "rights_class": "OPEN_ACCESS_CC_BY_4_0",
+    "sources": [
+      "asperti2024 (MDPI Materials, CC BY 4.0)",
+      "zhu2022 (MDPI Materials, CC BY 4.0)"
+    ],
+    "use_limit_respected": "within-study direction only; NO cross-study pooling"
+  },
+  "schema": "amphora.barrier-corrosion-score.nielsen-tortuosity-baseline.v1",
+  "verdict": {
+    "advance_over_prior": "barrier-null-char-v1 showed only that MONOTONE nulls fail on optimum location. This adds the first PHYSICAL named baselines, quantifies WHY they fail (interior optimum = dispersion/agglomeration beyond continuum tortuosity), and adds a NEW falsifiable a-priori discriminator: the effective-aspect-ratio inversion separates tortuosity-consistent (graphene) from tortuosity-insufficient (clay) initial barrier gains.",
+    "does_not_establish": "A validated positive barrier ranking model. The interior optimum -- the part of the signal that beats a monotone predictor -- is driven by dispersion/agglomeration, a formulation-processing variable no zero-parameter continuum-tortuosity model can capture. Closing that still needs >=3 pooled, protocol-controlled formulation->Rc series with dispersion/PVC metadata (the standing DATA wall).",
+    "finding": "Two published a-priori platelet-tortuosity barrier models (Nielsen 1967, Cussler 1988), parameterised with published densities and aspect-ratio ceilings and NOT fit to Rc, are STRUCTURALLY REFUTED on optimum LOCATION for both strict in-class epoxy-amine ladders: both are monotone in phi and predict best barrier at maximum loading, whereas both series peak at an interior loading. On the level-0 -> optimum INITIAL RISE the two fillers diverge: the clay ladder (asperti2024) demands an effective aspect ratio ABOVE the published montmorillonite ceiling (tortuosity insufficient to explain the initial jump alone), while the graphene ladder (zhu2022) is reproducible within the published graphene aspect-ratio range (tortuosity a sufficient a-priori explanation of its initial rise; mica-base confound noted, secondary).",
+    "scope_honesty": "Organic epoxy-amine coating-barrier EIS, correct module scope."
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "axis": "SCHEMA_VS_LIVE_RUNTIME_METRIC_PARITY (distinct from prior 4 receipts, which all audited the pinned FIXTURE, not the contract-vs-runtime binding)",
+  "checkA_runtime_metric_key_extraction": {
+    "function_found": true,
+    "hash_drift_note": "lib.rs is a shared multi-module capability file; a hash mismatch here reflects portfolio-wide concurrent edits to OTHER modules' capabilities in the same file, not necessarily a change to evaluate_ip_fto_guard itself. Reported for provenance; not load-bearing for this audit's verdict, which is scoped to the function body extracted below.",
+    "inserted_gate_keys": [
+      "fto_legal_closure",
+      "technical_landscape_present"
+    ],
+    "inserted_metric_keys": [
+      "boolean_counsel_assertion_ignored",
+      "classification_sweep_count",
+      "fto_status",
+      "legal_advice",
+      "public_family_count"
+    ],
+    "lib_rs_hash_matches_mission_pin": false,
+    "lib_rs_path": "amphora-assurance-capabilities/src/lib.rs",
+    "lib_rs_sha256_now": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116",
+    "mission_md_pinned_lib_rs_sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+    "target_key": "unresolved_technical_categories",
+    "target_key_inserted_by_runtime": false
+  },
+  "checkB_repo_wide_occurrence_census": {
+    "all_repo_hits": [
+      "amphora-ip-fto-guard/docs/capability-profile.json",
+      "amphora-ip-fto-guard/docs/mission.md",
+      "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/diagnostic.canonical.json",
+      "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/diagnostic.runB.json",
+      "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/run_all_elements_rule.py",
+      "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/sign_all_elements_rule.py",
+      "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/diagnostic.canonical.json",
+      "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/diagnostic.runB.json",
+      "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/run_landscape_integrity.py",
+      "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/sign_landscape_integrity.py",
+      "logs/claude-hourly-loop.log"
+    ],
+    "all_repo_hits_count": 11,
+    "finding": "Zero .rs occurrences anywhere in the workspace. Every occurrence is either a schema/doc DECLARATION (docs/capability-profile.json, docs/mission.md) or a value independently RECONSTRUCTED by a prior AUDIT_ONLY diagnostic script (evidence/audit/*), never a value the checked runtime itself computes or emits.",
+    "prior_audit_diagnostic_only_hits": [
+      "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/diagnostic.canonical.json",
+      "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/diagnostic.runB.json",
+      "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/run_all_elements_rule.py",
+      "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/sign_all_elements_rule.py",
+      "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/diagnostic.canonical.json",
+      "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/diagnostic.runB.json",
+      "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/run_landscape_integrity.py",
+      "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/sign_landscape_integrity.py"
+    ],
+    "rust_source_hit_count": 0,
+    "rust_source_hits": [],
+    "schema_or_doc_declaration_hits": [
+      "amphora-ip-fto-guard/docs/capability-profile.json",
+      "amphora-ip-fto-guard/docs/mission.md"
+    ],
+    "self_output_dir_excluded_from_census": "amphora-ip-fto-guard/evidence/audit/metric-schema-parity-v1",
+    "target_key": "unresolved_technical_categories",
+    "unclassified_other_hits": [
+      "logs/claude-hourly-loop.log"
+    ]
+  },
+  "checkC_schema_and_doc_declaration": {
+    "capability_profile_path": "amphora-ip-fto-guard/docs/capability-profile.json",
+    "capability_profile_sha256": "bfd81d240a81fc9ce59699a01385728c449900b1485b6f43eefbf8973d851d47",
+    "declared_kpi0_metric_class": "primary",
+    "declared_kpi0_name": "unresolved category coverage",
+    "declared_kpi0_promotion_phase": "PHASE_1",
+    "declared_kpi0_value_path": "metrics.unresolved_technical_categories",
+    "declared_paths_metric": "metrics.unresolved_technical_categories",
+    "example_current_output_metrics_keys": [
+      "model_card",
+      "unresolved_technical_categories"
+    ],
+    "example_shows_target_key_present_as_null": true,
+    "mission_md_declares_primary_value_path": true,
+    "mission_md_quotes": [
+      "Canonical input is a finite `formulation` `CandidateEnvelope` whose payload matches `candidate_type`. Canonical output is `ScoreEnvelope`; the primary value path is `metrics.unresolved_technical_categories`. Units, direction, nullability, authority, uncertainty, and claim locks are explicit in the profile and envelope. A null or blocked value cannot be converted to an objective.",
+      "The schema-valid fail-closed output example is checked in at `docs/capability-profile.json#/examples/current_output`. Exact paths are: objective `None`, metric `metrics.unresolved_technical_categories`, gate `gates`, uncertainty `uncertainty`, evidence gaps `missing_inputs`, and claim locks `claim_locks`. Nullability is explicit; empirical units and direction come only from the locked benchmark receipt. The authority ceiling is `EVIDENCE_ONLY` and solver-use ceiling is `DISABLED`.",
+      "Primary KPI: **unresolved category coverage** at `metrics.unresolved_technical_categories`. Direction and unit are declared by the locked benchmark; population is the declared applicability domain; split is group/time/source-safe; confidence intervals are mandatory for empirical claims. Locked target: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1."
+    ],
+    "mission_md_sha256": "0ed7e0a1fcfe2014b2f6199e9353e481309ad7760efc90b3b08a431441958bbb"
+  },
+  "checkD_checked_kpi_test_coverage": {
+    "finding": "The Phase-0 checked KPI harness (the only test suite gating this module's Phase-0 acceptance) never references the module's own declared primary-KPI metric key at all -- it asserts on fto_status, legal_advice, public_family_count, classification_sweep_count, and boolean_counsel_assertion_ignored only.",
+    "gate_keys_asserted_by_checked_kpi_test": [
+      "fto_legal_closure",
+      "technical_landscape_present"
+    ],
+    "metric_keys_asserted_by_checked_kpi_test": [
+      "classification_sweep_count",
+      "fto_status",
+      "legal_advice",
+      "public_family_count"
+    ],
+    "target_key_asserted_by_checked_kpi_test": false,
+    "test_file_path": "amphora-assurance-capabilities/tests/ip_fto_guard_phase0_kpi.rs",
+    "test_file_sha256": "6600bb3cb126ecd3a81b6c5709b37c253984f41014aadb58c41a72a071af079d"
+  },
+  "checkE_signed_benchmark_artifact_scan": {
+    "benchmark_dataset_fixture_sha256_declared": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "benchmark_result_all_keys_sample": [
+      "authority_envelope_preservation_rate",
+      "authority_envelope_preserved",
+      "benchmark_execution_complete",
+      "benchmark_id",
+      "benchmark_lock_sha256",
+      "boolean_counsel_assertion_ignored_correctness_rate",
+      "boolean_counsel_assertion_ignored_expected",
+      "boolean_counsel_assertion_ignored_observed",
+      "byte_stable_two_replay",
+      "byte_stable_two_replay_rate",
+      "candidate_id",
+      "classification_sweep_count",
+      "counsel_assertion_ignored_matches_expected",
+      "dataset_fixture_note",
+      "dataset_fixture_sha256",
+      "diagnostic_receipt",
+      "diagnostic_sha256",
+      "direction",
+      "explanation_disclaims_legal_advice",
+      "explanation_disclaims_legal_advice_rate",
+      "fail_closed",
+      "family_count_60",
+      "first_replay",
+      "floor",
+      "fto_legal_closure_false",
+      "fto_legal_closure_gate",
+      "fto_legal_closure_gate_false_rate",
+      "fto_status",
+      "fto_status_pinned_to_never_performed",
+      "fto_status_pinned_to_never_performed_rate",
+      "industrial_context",
+      "kpi",
+      "legal_advice",
+      "legal_advice_false",
+      "legal_advice_false_rate",
+      "module_id",
+      "note",
+      "observed",
+      "passed",
+      "patent_landscape_pinned_60_families_and_6_sweeps_rate",
+      "probe",
+      "probe_sample_size",
+      "probes",
+      "public_family_count",
+      "records",
+      "runtime_family_and_sweep_counts_match_fixture_rate",
+      "runtime_status_scored_rate",
+      "sample_size",
+      "scenario_id",
+      "schema",
+      "second_replay",
+      "status",
+      "status_is_scored",
+      "sweep_count_6",
+      "technical_landscape_present_gate",
+      "technical_landscape_present_gate_true_rate",
+      "technical_landscape_present_true",
+      "unsupported_input_fail_closed_rate"
+    ],
+    "benchmark_result_path": "amphora-ip-fto-guard/evidence/phase0/benchmark/result.v1.json",
+    "benchmark_result_sha256": "bbd8a9675d78bb65d1dfee9209b441bb5cb3ec4c28e2871cf8febf0f7168eec3",
+    "cargo_test_command": "cargo test --workspace --locked ip_fto_guard",
+    "cargo_test_outcome": "1 passed; 0 failed (ip_fto_guard_phase0_kpi_report_is_deterministic_and_gates_pass)",
+    "cargo_test_reproduced": true,
+    "fixture_hash_matches_pin": true,
+    "fixture_sha256_now": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "target_key_present_anywhere_in_signed_benchmark_result": false
+  },
+  "claim_under_attack": "mission.md + docs/capability-profile.json: metrics.unresolved_technical_categories is the module's canonical/primary Phase-1-promotion-gating KPI value path, and is populated by the live checked Rust runtime.",
+  "detector_self_test": {
+    "description": "In-memory-only mutation (no file written): inject unresolved_technical_categories into a COPY of the extracted function body text and re-run the same regex extractor.",
+    "detector_catches_injected_key": true,
+    "purpose": "Demonstrates checkA's absence finding is a positive detection (key genuinely missing), not a parser blind spot (key present but unmatched)."
+  },
+  "does_not_close": [
+    "Does not affect the not_fto/legal_advice/authority-envelope safety findings of the prior 4 audits -- those remain independently corroborated and unaffected.",
+    "Does not itself change scientific_readiness (still UNVALIDATED) or phase (still PRE_PHASE_0); no promotion pathway is invoked or blocked by this cron.",
+    "Does not establish which fix is correct (retarget the KPI to an existing runtime field vs. implement unresolved_technical_categories in the runtime and extend the checked test) -- that is a human/maintainer decision, not performed by this AUDIT_ONLY receipt."
+  ],
+  "headline": "amphora-ip-fto-guard declares metrics.unresolved_technical_categories as its PRIMARY, Phase-1-promotion-gating KPI value path (capability-profile.json kpis[0], metric_class=primary; mission.md 'the primary value path'). Independent static + repo-wide + signed-benchmark audit finds this key is NEVER inserted by the live evaluate_ip_fto_guard runtime, NEVER appears in any Rust source file in the workspace, is NEVER asserted by the module's own checked Phase-0 KPI test, and NEVER appears anywhere inside the signed benchmark result artifact -- the only place it exists is as a schema-example null placeholder and as an independently-reconstructed value inside prior AUDIT_ONLY diagnostics (unrelated to this runtime's own emission). CLAIM REFUTED: the primary/canonical value path is not present in the live checked implementation it is claimed to describe.",
+  "module": "amphora-ip-fto-guard",
+  "non_circularity": "All checks read repo source/text files directly via static parsing (regex over .rs source, JSON parse of schema/docs, grep census). No call into the amphora_assurance_capabilities crate's own runtime, no reuse of any prior audit's reconstructed numbers as ground truth.",
+  "prior_receipts_this_module": [
+    "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/landscape-integrity-receipt.v1.dsse.json",
+    "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/all-elements-rule-receipt.v1.dsse.json",
+    "amphora-ip-fto-guard/evidence/audit/cpc-coverage-v1/cpc-coverage-receipt.v1.dsse.json",
+    "amphora-ip-fto-guard/evidence/audit/legal-status-term-v1/legal-status-term-receipt.v1.dsse.json"
+  ],
+  "run_type": "AUDIT_ONLY_INDEPENDENT_RE_DERIVATION",
+  "schema": "amphora.ip-fto-guard.metric-schema-parity-diagnostic.v1",
+  "study_id": "amphora-ip-fto-guard-metric-schema-parity-v1",
+  "theory_reference": "Portfolio-internal precedent for this audit doctrine: amphora-candidate-contract-schema-runtime-parity-result (16/16), amphora-model-card-authority-live-runtime-envelope-parity-result (live Rust 6/6 byte parity), amphora-report-packager-live-runtime-diagnostic-parity-result (live Rust 5/5 byte parity), amphora-run-provenance-live-runtime-archive-parity-result (mirror erratum 27/27). Same doctrine, first application to amphora-ip-fto-guard.",
+  "verdict": "CLAIM_REFUTED"
+}

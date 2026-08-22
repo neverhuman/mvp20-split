@@ -1,0 +1,47 @@
+{
+  "authority_tier": "REAL_ARITHMETIC",
+  "candidate_id": "DGEBA-monomer",
+  "claim_locks": {
+    "commercial_product_values_not_upgraded_from_defined_monomer": true
+  },
+  "evidence_scope": "molecule",
+  "explanations": [
+    "Defined-molecule structural counts are optimizer-usable for molecule screening."
+  ],
+  "gates": {
+    "smiles_parseable": true
+  },
+  "metrics": {
+    "functionality": 2,
+    "model_card": {
+      "can_optimize": true,
+      "current_pass": true,
+      "current_status": "SCORED",
+      "dataset_checksums": {},
+      "dataset_ids": [
+        "fixtures/molecule_candidate.json"
+      ],
+      "direction": "maximize",
+      "kpi_name": "molecule",
+      "model_authority": "REAL_ARITHMETIC",
+      "score_semantics": "OPTIMIZATION_OBJECTIVE",
+      "unit": "normalized_0_1",
+      "validation_bar": "optimizer-authorized deterministic scorer"
+    }
+  },
+  "missing_inputs": [],
+  "module_id": "fixture-molecule-property",
+  "module_version": "0.1.0",
+  "objective_values": {
+    "functionality": 2
+  },
+  "schema_version": "amphora.score-envelope.v1",
+  "score_0_1": 1.0,
+  "score_semantics": "OPTIMIZATION_OBJECTIVE",
+  "source_refs": [
+    "fixtures/molecule_candidate.json"
+  ],
+  "status": "SCORED",
+  "uncertainty": {},
+  "usable_by_optimizer": true
+}

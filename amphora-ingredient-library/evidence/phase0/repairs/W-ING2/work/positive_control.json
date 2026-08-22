@@ -1,0 +1,42 @@
+{
+  "defect_a_field_corruption": {
+    "baseline_within_gate": true,
+    "defect_pct_deviation": -8.0488,
+    "defect_within_gate": false,
+    "detected": true,
+    "how_planted": "in-memory copy: external_ref_value overwritten 188.5 -> 205.0 (simulated transcription error off the same source PDF); real signed diagnostic and facts.json on disk never touched",
+    "target_row_id": "resin.dgeba_828.eew"
+  },
+  "defect_b_mutation_demo": {
+    "all_gross_mutations_flagged": true,
+    "detected": true,
+    "how_planted": "in-memory catalog-value mutations: digit-insert (x10), decimal-slip (/10), transpose-digits, vs the fixed live Huntsman/tamtranco external reference 198.0",
+    "mutations": [
+      {
+        "flagged": false,
+        "mutation": "baseline",
+        "pct_deviation_vs_external": 0.0,
+        "value": 198.0
+      },
+      {
+        "flagged": true,
+        "mutation": "digit_insert_1980",
+        "pct_deviation_vs_external": 900.0,
+        "value": 1980.0
+      },
+      {
+        "flagged": true,
+        "mutation": "decimal_slip_19.8",
+        "pct_deviation_vs_external": -90.0,
+        "value": 19.8
+      },
+      {
+        "flagged": true,
+        "mutation": "transpose_189",
+        "pct_deviation_vs_external": -4.5455,
+        "value": 189.0
+      }
+    ],
+    "target_fact_key": "hardener.versamid_115.ahew"
+  }
+}

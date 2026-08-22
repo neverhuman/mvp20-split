@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-07-10T20:51:29Z",
+  "manifest_hash": "6af21c2a58127f217b71cfdd9f25107fc1a7935c5d434e2f6ae725a8cae37685",
+  "metric_family_counts": {
+    "rate_mils_per_year": 33,
+    "rate_mm_per_year": 7689,
+    "rating": 16999
+  },
+  "reference_row_count": 24721,
+  "schema_version": "amphora.feedback_v1.nist_benchmark.v1",
+  "source_ids": [
+    "nist_corr_data"
+  ],
+  "top_environments": [
+    [
+      "Sulfuric Acid",
+      2686
+    ],
+    [
+      "Phosphoric Acid",
+      1075
+    ],
+    [
+      "Nitric Acid",
+      996
+    ],
+    [
+      "Sodium Hydroxide",
+      860
+    ],
+    [
+      "Hydrochloric Acid",
+      682
+    ],
+    [
+      "Acetic Acid",
+      665
+    ],
+    [
+      "Food Products",
+      485
+    ],
+    [
+      "Formic Acid",
+      473
+    ],
+    [
+      "Atmospheric Environments",
+      460
+    ],
+    [
+      "Sodium Chloride",
+      455
+    ],
+    [
+      "Hydrofluoric Acid",
+      418
+    ],
+    [
+      "Seawater",
+      377
+    ],
+    [
+      "Chlorine",
+      356
+    ],
+    [
+      "Citric Acid",
+      325
+    ],
+    [
+      "Liquid Metals",
+      288
+    ],
+    [
+      "Chromic Acid",
+      277
+    ],
+    [
+      "Potassium Hydroxide",
+      253
+    ],
+    [
+      "Ferric Chloride",
+      252
+    ],
+    [
+      "Lactic Acid",
+      250
+    ],
+    [
+      "Ammonium Chloride",
+      207
+    ]
+  ]
+}

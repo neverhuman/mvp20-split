@@ -1,0 +1,105 @@
+{
+  "corrections": [
+    {
+      "field": "deterministic_rule_baseline.in_domain_accuracy_bootstrap_ci95",
+      "k": 24,
+      "n": 24,
+      "new_ci": [
+        0.8575264022774743,
+        1.0
+      ],
+      "new_method": "Clopper-Pearson exact two-sided 95% CI",
+      "old_ci": [
+        1.0,
+        1.0
+      ],
+      "old_method": "percentile bootstrap (B=10000, seed 20260728-derived)",
+      "understatement_of_uncertainty": 0.1425
+    },
+    {
+      "field": "fitted_model_out_of_sample.loocv_accuracy_bootstrap_ci95",
+      "k": 24,
+      "n": 24,
+      "new_ci": [
+        0.8575264022774743,
+        1.0
+      ],
+      "new_method": "Clopper-Pearson exact two-sided 95% CI",
+      "old_ci": [
+        1.0,
+        1.0
+      ],
+      "old_method": "percentile bootstrap (B=10000, seed 20260728-derived)",
+      "understatement_of_uncertainty": 0.1425
+    },
+    {
+      "components": {
+        "l1": 0.8575264022774743,
+        "l2": 0.8575264022774743,
+        "p1": 1.0,
+        "p2": 1.0,
+        "u1": 1.0,
+        "u2": 1.0
+      },
+      "field": "noninferiority_test.accuracy_gap_bootstrap_ci95",
+      "k1": 24,
+      "k2": 24,
+      "n1": 24,
+      "n2": 24,
+      "new_ci": [
+        -0.14247359772252566,
+        0.14247359772252566
+      ],
+      "new_method": "MOVER (Newcombe 1998b) paired-difference CI, phi=0 conservative, built from each margin's own Clopper-Pearson exact CI",
+      "old_ci": [
+        0.0,
+        0.0
+      ],
+      "old_method": "percentile bootstrap (B=10000, seed 20260728-derived)",
+      "understatement_of_uncertainty": 0.1425
+    }
+  ],
+  "primary_references": [
+    "Clopper CJ, Pearson ES (1934). The use of confidence or fiducial limits illustrated in the case of the binomial. Biometrika 26(4):404-413.",
+    "Efron B, Tibshirani RJ (1993). An Introduction to the Bootstrap. Chapman & Hall/CRC, ISBN 978-0412042317, ch.13 (percentile bootstrap breakdown at parameter-space boundaries).",
+    "DiCiccio TJ, Efron B (1996). Bootstrap confidence intervals. Statistical Science 11(3):189-228.",
+    "Newcombe RG (1998). Improved confidence intervals for the difference between binomial proportions based on paired data. Statistics in Medicine 17(22):2635-2650 (MOVER / Method 10)."
+  ],
+  "purpose": "REPAIR-MODE fire for campaign item W-ROLE-CI: locate every interval in role-parsimony-conformal-v1 computed by a boundary-collapsing percentile bootstrap, recompute each with a named exact method valid at the boundary, and sweep the portfolio for the same defect class.",
+  "schema": "amphora.molecule-role-ranker.w-role-ci-repair-diagnostic.v1",
+  "sweep": {
+    "distinct_artifacts_outside_this_module": [
+      {
+        "distinct_artifact_dirs": [
+          "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1",
+          "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1",
+          "amphora-molecule-generator/evidence/phase0/repairs/R-A06/work",
+          "amphora-molecule-generator/evidence/phase0/repairs/W-GEN1/work"
+        ],
+        "module": "amphora-molecule-generator",
+        "n_hits_total": 124,
+        "sample_fields": [
+          "all_ci_fields_examined[12].ci",
+          "all_ci_fields_examined[14].ci",
+          "all_ci_fields_examined[20].ci",
+          "all_ci_fields_examined[22].ci",
+          "all_ci_fields_examined[26].ci",
+          "all_ci_fields_examined[27].ci",
+          "already_known_instance_degenerate_fields[0].ci",
+          "already_known_instance_degenerate_fields[1].ci",
+          "already_known_instance_degenerate_fields[2].ci",
+          "already_known_instance_degenerate_fields[3].ci"
+        ]
+      }
+    ],
+    "method": "walked every .json file under mvp20-split (excluding .git/target/node_modules/__pycache__), parsed each, and for every 2-element numeric array reachable under a key matching /ci|interval|bound|coverage/i, flagged it if both elements == 0.0 or both == 1.0",
+    "n_degenerate_hits": 130,
+    "n_json_files_found": 7176,
+    "n_json_files_parsed": 7170,
+    "n_parse_errors": 6
+  },
+  "target_artifact": {
+    "diagnostic_path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/diagnostic.canonical.json",
+    "path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json"
+  }
+}

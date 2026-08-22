@@ -1,0 +1,160 @@
+{
+  "aggregate": {
+    "all_chains_verified_clean": true,
+    "all_kpis_have_receipt_path_field": true,
+    "all_kpis_missing_scientific_receipt_path_field": true,
+    "n_chains_verified_clean": 4,
+    "n_files_investigated": 4
+  },
+  "alerts_investigated": [
+    "2026-07-27T13:11",
+    "2026-07-28T18:10",
+    "2026-07-29T23:06",
+    "2026-07-31T04:09"
+  ],
+  "conclusion": "REFUTED: no unsigned evidence was committed by the loop. All 4 flagged KPI files correctly reference a DSSE Ed25519-signed parent receipt via 'receipt_path'; every recorded receipt_sha256 matches the actual parent receipt bytes; every parent receipt's signature cryptographically verifies against the pinned local-ed25519 public key; every two_replay_sha256_gate reads PASS on both the KPI and its parent receipt. The alerts were false positives caused by the checker probing a nonexistent field name ('.scientific_receipt_path' instead of '.receipt_path').",
+  "does_not_close": [
+    "the underlying checker code itself (this receipt documents the finding; it does not patch the launcher's alerting logic)",
+    "module promotion to PHASE_0 (requires human dual-identity ceremony keys)",
+    "portfolio manifest edit (66 receipts / 11 modules unchanged)"
+  ],
+  "per_file_verification": [
+    {
+      "alert_timestamp": "2026-07-27T13:11",
+      "chain_verified_clean": true,
+      "field_audit": {
+        "kpi_has_receipt_path_field": true,
+        "kpi_has_scientific_receipt_path_field": false,
+        "kpi_has_top_level_signature_key": false
+      },
+      "kpi_file": "amphora-solvency-score/evidence/phase0/kpis/hansen-sphere-coefficient-robustness-v1-kpi.v1.json",
+      "kpi_schema": "amphora.solvency-score.phase0-kpi.hansen-sphere-coefficient-robustness.v1",
+      "parent_receipt_file": "amphora-solvency-score/reference/mvp20/data/hansen_sphere_coefficient_robustness_receipt.v1.json",
+      "receipt_sha256_chain": {
+        "actual_parent_receipt_sha256_recomputed": "34b94011c13b9f246e7e920d2d561b9c5d21d1716c379ba19cc1351d4e1804d1",
+        "kpi_recorded_receipt_sha256": "34b94011c13b9f246e7e920d2d561b9c5d21d1716c379ba19cc1351d4e1804d1",
+        "match": true
+      },
+      "signature_verification": {
+        "algorithm": "Ed25519",
+        "crypto_error": null,
+        "cryptographic_verify_against_pinned_pubkey": true,
+        "envelope_type": "DSSE (payload/payloadType/signatures)",
+        "keyid": "local-9028773f49591193",
+        "keyid_matches_pinned_pubkey_id": true,
+        "payload_bytes_sha256_self_consistent": true,
+        "signature_count": 1,
+        "signature_present_on_parent_receipt": true
+      },
+      "two_replay_gate": {
+        "kpi_field": "PASS",
+        "parent_receipt_field": "PASS"
+      }
+    },
+    {
+      "alert_timestamp": "2026-07-28T18:10",
+      "chain_verified_clean": true,
+      "field_audit": {
+        "kpi_has_receipt_path_field": true,
+        "kpi_has_scientific_receipt_path_field": false,
+        "kpi_has_top_level_signature_key": false
+      },
+      "kpi_file": "amphora-solvency-score/evidence/phase0/kpis/hildebrand-vs-hansen-chi-baseline-v1-kpi.v1.json",
+      "kpi_schema": "amphora.solvency-score.phase0-kpi.hildebrand-vs-hansen-chi-baseline.v1",
+      "parent_receipt_file": "amphora-solvency-score/reference/mvp20/data/hildebrand_vs_hansen_chi_baseline_receipt.v1.json",
+      "receipt_sha256_chain": {
+        "actual_parent_receipt_sha256_recomputed": "fe02ada5408e3b25035a20765aa9530f2eeb657b933e60a7ca4b17e4df9a82fd",
+        "kpi_recorded_receipt_sha256": "fe02ada5408e3b25035a20765aa9530f2eeb657b933e60a7ca4b17e4df9a82fd",
+        "match": true
+      },
+      "signature_verification": {
+        "algorithm": "Ed25519",
+        "crypto_error": null,
+        "cryptographic_verify_against_pinned_pubkey": true,
+        "envelope_type": "DSSE (payload/payloadType/signatures)",
+        "keyid": "local-9028773f49591193",
+        "keyid_matches_pinned_pubkey_id": true,
+        "payload_bytes_sha256_self_consistent": true,
+        "signature_count": 1,
+        "signature_present_on_parent_receipt": true
+      },
+      "two_replay_gate": {
+        "kpi_field": "PASS",
+        "parent_receipt_field": "PASS"
+      }
+    },
+    {
+      "alert_timestamp": "2026-07-29T23:06",
+      "chain_verified_clean": true,
+      "field_audit": {
+        "kpi_has_receipt_path_field": true,
+        "kpi_has_scientific_receipt_path_field": false,
+        "kpi_has_top_level_signature_key": false
+      },
+      "kpi_file": "amphora-solvency-score/evidence/phase0/kpis/reduced-representation-discrimination-v1-kpi.v1.json",
+      "kpi_schema": "amphora.solvency-score.phase0-kpi.reduced-representation-discrimination.v1",
+      "parent_receipt_file": "amphora-solvency-score/reference/mvp20/data/reduced_representation_discrimination_receipt.v1.json",
+      "receipt_sha256_chain": {
+        "actual_parent_receipt_sha256_recomputed": "f7fcc697beb040d71b76ad747465ec2e97b8b68f42652545bed514ee9b147752",
+        "kpi_recorded_receipt_sha256": "f7fcc697beb040d71b76ad747465ec2e97b8b68f42652545bed514ee9b147752",
+        "match": true
+      },
+      "signature_verification": {
+        "algorithm": "Ed25519",
+        "crypto_error": null,
+        "cryptographic_verify_against_pinned_pubkey": true,
+        "envelope_type": "DSSE (payload/payloadType/signatures)",
+        "keyid": "local-9028773f49591193",
+        "keyid_matches_pinned_pubkey_id": true,
+        "payload_bytes_sha256_self_consistent": true,
+        "signature_count": 1,
+        "signature_present_on_parent_receipt": true
+      },
+      "two_replay_gate": {
+        "kpi_field": "PASS",
+        "parent_receipt_field": "PASS"
+      }
+    },
+    {
+      "alert_timestamp": "2026-07-31T04:09",
+      "chain_verified_clean": true,
+      "field_audit": {
+        "kpi_has_receipt_path_field": true,
+        "kpi_has_scientific_receipt_path_field": false,
+        "kpi_has_top_level_signature_key": false
+      },
+      "kpi_file": "amphora-solvency-score/evidence/phase0/kpis/hansen-temperature-envelope-v1-kpi.v1.json",
+      "kpi_schema": "amphora.solvency-score.phase0-kpi.hansen-temperature-envelope.v1",
+      "parent_receipt_file": "amphora-solvency-score/reference/mvp20/data/hansen_temperature_envelope_receipt.v1.json",
+      "receipt_sha256_chain": {
+        "actual_parent_receipt_sha256_recomputed": "23fcbe534be21359fa4d305ad1082858dcce88f49228596237661aaf8f0cd1ad",
+        "kpi_recorded_receipt_sha256": "23fcbe534be21359fa4d305ad1082858dcce88f49228596237661aaf8f0cd1ad",
+        "match": true
+      },
+      "signature_verification": {
+        "algorithm": "Ed25519",
+        "crypto_error": null,
+        "cryptographic_verify_against_pinned_pubkey": true,
+        "envelope_type": "DSSE (payload/payloadType/signatures)",
+        "keyid": "local-9028773f49591193",
+        "keyid_matches_pinned_pubkey_id": true,
+        "payload_bytes_sha256_self_consistent": true,
+        "signature_count": 1,
+        "signature_present_on_parent_receipt": true
+      },
+      "two_replay_gate": {
+        "kpi_field": "PASS",
+        "parent_receipt_field": "PASS"
+      }
+    }
+  ],
+  "pinned_verification_pubkey": {
+    "key_id": "local-9028773f49591193",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "source": ".amphora/control/local-ed25519.pub.json"
+  },
+  "purpose": "Forensic close-out of 4 SIGNING_VIOLATION alerts raised against amphora-solvency-score Phase-0 KPI files. Re-derives, independently of the original alerting checker, whether each flagged KPI's parent evidence chain (KPI -> receipt_path -> DSSE Ed25519 signature -> receipt_sha256 byte match) is intact.",
+  "recommendation": "Update the alert-checker to read '.receipt_path' (with a fallback probe of '.scientific_receipt_path' only for schemas that actually define it) so this false-positive class does not recur on the phase0-kpi.* schema family.",
+  "root_cause": "The alerting checker read a field named '.scientific_receipt_path' on each KPI file and treated its absence as evidence of unsigned data. Every KPI in this schema family (amphora.solvency-score.phase0-kpi.*) is a thin pointer object: it has no top-level 'signature' key by design and instead carries a 'receipt_path' field pointing at a separate, fully DSSE Ed25519-signed parent receipt under reference/mvp20/data/. The field name the checker looked for does not exist in this schema; the field that does the same job is 'receipt_path'. This is a field-name mismatch in the checker, not evidence that any unsigned artifact was committed.",
+  "schema": "amphora.solvency-score.signing-violation-forensics-diagnostic.v1"
+}

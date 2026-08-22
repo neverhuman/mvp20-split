@@ -1,0 +1,248 @@
+{
+  "corpora_audited": [
+    "openpoly_properties",
+    "bigsoldb_solubility",
+    "bigsoldb_density",
+    "polyomics_small_molecules"
+  ],
+  "n_corpora": 4,
+  "results": {
+    "bigsoldb_density": {
+      "acquisition_unit_id": "bigsoldb_density",
+      "constraint": "0.6 g/cm^3 <= liquid density <= 3.4 g/cm^3 at near-ambient conditions",
+      "constraint_citation": "CRC Handbook of Chemistry and Physics, 104th ed. (2023), ISBN 978-1-032-63111-2, Section 'Physical Constants of Organic Compounds' -- common liquid organic solvents span from n-pentane (0.626 g/cm^3) to dense halogenated liquids such as diiodomethane (3.325 g/cm^3); densities outside this band indicate either a unit/transcription error or a non-liquid/non-organic-solvent entry.",
+      "lake_path": "v2/normalized/bigsoldb_density.jsonl.gz",
+      "n_admissible": 2209,
+      "n_inadmissible": 1,
+      "n_rows_evaluable": 2210,
+      "n_total_rows": 2210,
+      "n_violations_total": 1,
+      "pct_admissible_of_evaluable": 0.9995475113122172,
+      "raw_file_sha256": "02226420d9fb3294cb32211dac7f6ff7fa067511924afdb9f1893af1e334aac6",
+      "violations_sample": [
+        {
+          "density_g_cm3": 0.0,
+          "record_id": "bigsoldb_density:raw:000000000920",
+          "solvent": "isopropyl acetate",
+          "temperature_K": "298.15"
+        }
+      ]
+    },
+    "bigsoldb_solubility": {
+      "acquisition_unit_id": "bigsoldb_solubility",
+      "constraint": "0 < solubility_mole_fraction < 1, strict (a mole fraction is n_solute/(n_solute+n_solvent), a probability-like quantity bounded on the open unit interval by definition)",
+      "constraint_citation": "IUPAC Gold Book, 'amount fraction, mole fraction' (doi:10.1351/goldbook.A00296); definitional, not model-dependent.",
+      "duplicate_contradictory_measurement_check": {
+        "contradiction_threshold_log10_units": 0.3,
+        "key": "(canonical_identity=solute SMILES-derived id, Solvent, Temperature_K)",
+        "n_groups_contradictory": 4134,
+        "n_groups_with_ge2_measurements": 4578,
+        "pct_contradictory_of_duplicate_groups": 0.9030144167758847
+      },
+      "lake_path": "v2/normalized/bigsoldb_solubility.jsonl.gz",
+      "n_admissible": 103944,
+      "n_inadmissible": 0,
+      "n_rows_with_mole_fraction": 103944,
+      "n_total_rows": 103944,
+      "n_violations_total": 0,
+      "pct_admissible_of_evaluable": 1.0,
+      "raw_file_sha256": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0",
+      "secondary_diagnostic_internal_log10_consistency": {
+        "n_checked": 100983,
+        "n_consistent_within_1e-6": 100983,
+        "note": "NOT part of the admissible/pct gate above -- reported separately as a data-integrity cross-check.",
+        "pct_consistent": 1.0
+      },
+      "violations_sample": []
+    },
+    "openpoly_properties": {
+      "acquisition_unit_id": "openpoly_properties",
+      "constraint": "Tg (K) < Tm (K), strict",
+      "constraint_citation": "Boyer, R.F., Rubber Chem. Technol. 36, 1303 (1963); Van Krevelen & Te Nijenhuis, 'Properties of Polymers', 4th ed., Elsevier 2009, ISBN 978-0-08-054819-7, Ch.6 (Tg/Tm ratio bounded in [0.5,0.8], i.e. Tg<Tm always for any real semicrystalline/amorphous polymer -- Tg is a kinetic freezing transition of the amorphous phase that occurs strictly below the true first-order crystalline melting transition).",
+      "lake_path": "v2/normalized/openpoly_properties.jsonl.gz",
+      "n_admissible": 143,
+      "n_inadmissible": 24,
+      "n_rows_with_both_Tg_and_Tm": 167,
+      "n_total_rows": 741,
+      "n_violations_total": 24,
+      "pct_admissible_of_evaluable": 0.8562874251497006,
+      "raw_file_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+      "violations_sample": [
+        {
+          "Tg_K": 396.7294118,
+          "Tm_K": 327.1181818,
+          "canonical_identity": "[*]cc(c(nc(c)c)=o)[*]",
+          "name": "PNIPAM",
+          "record_id": "openpoly_properties:raw:000000000013"
+        },
+        {
+          "Tg_K": 536.734867,
+          "Tm_K": 518.312963,
+          "canonical_identity": "[*]cc([*])(c=c)c",
+          "name": "PI",
+          "record_id": "openpoly_properties:raw:000000000021"
+        },
+        {
+          "Tg_K": 485.5032864,
+          "Tm_K": 382.4709639,
+          "canonical_identity": "[*]occoc(ccc([*])=o)=o",
+          "name": "PES",
+          "record_id": "openpoly_properties:raw:000000000023"
+        },
+        {
+          "Tg_K": 406.8547619,
+          "Tm_K": 383.605,
+          "canonical_identity": "[*]cc(c(nc(c)c)=o)[*]",
+          "name": "PNIPAAm",
+          "record_id": "openpoly_properties:raw:000000000026"
+        },
+        {
+          "Tg_K": 408.7521429,
+          "Tm_K": 399.7452083,
+          "canonical_identity": "n[c@@h]1[c@@h](o)[c@h](o[*])[c@@h](co)o[c@h]1[*]",
+          "name": "chitosan",
+          "record_id": "openpoly_properties:raw:000000000028"
+        },
+        {
+          "Tg_K": 486.8207143,
+          "Tm_K": 391.1267742,
+          "canonical_identity": "[*]ccn[*]",
+          "name": "PEI",
+          "record_id": "openpoly_properties:raw:000000000038"
+        },
+        {
+          "Tg_K": 412.9216832,
+          "Tm_K": 373.0833333,
+          "canonical_identity": "[*]c1=cc=c(c(c)(c2=cc=c(occ(c[*])o)c=c2)c)c=c1",
+          "name": "EP",
+          "record_id": "openpoly_properties:raw:000000000041"
+        },
+        {
+          "Tg_K": 394.65,
+          "Tm_K": 367.33,
+          "canonical_identity": "[*]c1=c2c(occo2)=c([*])s1",
+          "name": "PEDOT",
+          "record_id": "openpoly_properties:raw:000000000053"
+        },
+        {
+          "Tg_K": 396.7294118,
+          "Tm_K": 327.1181818,
+          "canonical_identity": "[*]cc(c(nc(c)c)=o)[*]",
+          "name": "PNIPAm",
+          "record_id": "openpoly_properties:raw:000000000060"
+        },
+        {
+          "Tg_K": 459.4236691,
+          "Tm_K": 449.97,
+          "canonical_identity": "[*]oc1=cc=c(c(c)(c2=cc=c(oc3=cc=c(s(=o)(c4=cc=c([*])c=c4)=o)c=c3)c=c2)c)c=c1",
+          "name": "PSF",
+          "record_id": "openpoly_properties:raw:000000000061"
+        }
+      ]
+    },
+    "polyomics_small_molecules": {
+      "acquisition_unit_id": "polyomics_small_molecules",
+      "constraint_A": {
+        "constraint_citation": "Frohlich, H., 'Theory of Dielectrics', Oxford University Press, 1949, Ch.2 -- static permittivity eps_static(omega->0) sums electronic+ionic+orientational polarization and must be >= the optical/electronic-only permittivity eps_inf=n^2 (Maxwell relation) for any passive linear dielectric.",
+        "n_admissible": 16990,
+        "n_inadmissible": 10974,
+        "n_rows_evaluable": 27964,
+        "n_violations_total": 10974,
+        "name": "eps_static >= n_refractive^2 (Frohlich inequality)",
+        "note": "This is the SAME constraint applied to radonpy_pi1070 (1077 rows, C8 fires 1-3, 113/1075=10.5% admissible). polyomics_small_molecules is the larger raw RadonPy simulation-output corpus (28159 rows) that PI1070 was curated from; this generalizes the prior finding to see whether it is an artifact of the 1070-row curation or persists at full scale.",
+        "pct_admissible_of_evaluable": 0.6075668716921756,
+        "violations_sample": [
+          {
+            "UUID": "a097ff2f-b9b8-429d-ad7c-00c0a8c129aa",
+            "eps_static": 1.6830388902281117,
+            "n": 1.465417104122002,
+            "n_squared": 2.1474472890533147,
+            "record_id": "polyomics_small_molecules:raw:000000000027"
+          },
+          {
+            "UUID": "1525fccb-bddf-4f89-8376-a6b83d1171da",
+            "eps_static": 1.5439071010694017,
+            "n": 1.4620565297909909,
+            "n_squared": 2.1376092963044746,
+            "record_id": "polyomics_small_molecules:raw:000000000048"
+          },
+          {
+            "UUID": "dbe68f1a-070d-4c68-adf0-788afb6dc630",
+            "eps_static": 2.134157096625204,
+            "n": 1.4793715658144515,
+            "n_squared": 2.188540229740302,
+            "record_id": "polyomics_small_molecules:raw:000000000049"
+          },
+          {
+            "UUID": "f500c84b-d245-4914-90e6-bc402b1fbe49",
+            "eps_static": 1.4918888632328462,
+            "n": 1.467955489016429,
+            "n_squared": 2.1548933177334635,
+            "record_id": "polyomics_small_molecules:raw:000000000075"
+          },
+          {
+            "UUID": "f301d59e-0b1e-4664-9084-7c9130b91c95",
+            "eps_static": 1.5415852828219043,
+            "n": 1.3851243126370791,
+            "n_squared": 1.918569361458341,
+            "record_id": "polyomics_small_molecules:raw:000000000102"
+          },
+          {
+            "UUID": "47bd382c-dd4d-4a9b-93ba-e29445978e02",
+            "eps_static": 1.428841561145152,
+            "n": 1.4294333960070371,
+            "n_squared": 2.043279833620211,
+            "record_id": "polyomics_small_molecules:raw:000000000103"
+          },
+          {
+            "UUID": "d6c706ff-abb4-4275-85e5-390f720c5ab3",
+            "eps_static": 1.8656210582615225,
+            "n": 1.390889332824101,
+            "n_squared": 1.9345731361638727,
+            "record_id": "polyomics_small_molecules:raw:000000000105"
+          },
+          {
+            "UUID": "8cdc4ae5-f2cd-4a1d-b304-56c75fc7f8bf",
+            "eps_static": 1.7500544708692067,
+            "n": 1.419063371648419,
+            "n_squared": 2.0137408527541787,
+            "record_id": "polyomics_small_molecules:raw:000000000134"
+          },
+          {
+            "UUID": "f95ca4c2-dafe-474a-aeb0-1db549dcf389",
+            "eps_static": 1.833940078097692,
+            "n": 1.4284290121273449,
+            "n_squared": 2.0404094426871024,
+            "record_id": "polyomics_small_molecules:raw:000000000138"
+          },
+          {
+            "UUID": "4b5670bb-2f4e-4a46-8daf-14f154e6d73c",
+            "eps_static": 2.1217663852278337,
+            "n": 1.4872349893812755,
+            "n_squared": 2.2118679136399226,
+            "record_id": "polyomics_small_molecules:raw:000000000141"
+          }
+        ]
+      },
+      "constraint_B": {
+        "constraint_citation": "Lorentz-Lorenz theory (H.A. Lorentz 1880; L. Lorenz 1880); for any condensed-phase dielectric medium in the normal (non-anomalous) dispersion regime at optical frequencies, refractive index relative to vacuum n>=1 by definition of phase velocity v=c/n<=c.",
+        "n_admissible": 27963,
+        "n_inadmissible": 1,
+        "n_rows_evaluable": 27964,
+        "n_violations_total": 1,
+        "name": "refractive_index >= 1",
+        "pct_admissible_of_evaluable": 0.9999642397368045,
+        "violations_sample": [
+          {
+            "UUID": "f9ae4443-42c7-4bb6-87cf-e90c331e6f2e",
+            "n": 0.6136172682654605,
+            "record_id": "polyomics_small_molecules:raw:000000010871"
+          }
+        ]
+      },
+      "lake_path": "v2/normalized/polyomics_small_molecules.jsonl.gz",
+      "n_total_rows": 28159,
+      "raw_file_sha256": "4dc408ff468f9b59b1c59b40efbc8a1750ca0d0c4bcf89ebf8268442553626ac"
+    }
+  }
+}

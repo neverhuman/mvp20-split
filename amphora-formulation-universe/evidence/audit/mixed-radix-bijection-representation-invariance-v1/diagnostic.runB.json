@@ -1,0 +1,249 @@
+{
+  "accounting_output_equal_a_vs_b": true,
+  "authority": "AUDIT_ONLY",
+  "both_universes_individually_pass_oracle_acceptance": true,
+  "claim_locks": {
+    "enumeration_is_not_performance_evidence": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_release_or_qualification": true,
+    "no_superiority_claim": true,
+    "pre_phase_0_research_only": true
+  },
+  "claim_under_test": "evidence/audit/mixed-radix-bijection-v1's claim (bijection_holds_all_universes: true, acceptance_all_perfect: true; prose: 'proves the index<->tuple map is a BIJECTION ... surjective => no silent loss') constitutes independent corroboration that Cartesian enumeration reports every solved and infeasible combination without silent loss or ambiguity, as cited approvingly in docs/mission.md's T-06 Known Contradictions entry ('the module's own documented mixed-radix unranking').",
+  "decoded_tuple_for_declared_infeasible_index_1": {
+    "under_a": [
+      "IPDA",
+      "DGEBF"
+    ],
+    "under_b": [
+      "TETA",
+      "DGEBF"
+    ],
+    "under_c_negative_control": [
+      "IPDA",
+      "DGEBF"
+    ]
+  },
+  "finding": "Universe A and universe B are ACCOUNTING-EQUIVALENT (identical sorted_axis_keys, identical radices, identical place_weights, identical cartesian_total_product=4, identical derived_infeasible_count=1, identical derived_solved_count=3 -- accounting_output_equal_a_vs_b=true, reproducing T-06's 'receipt_bytes_equal=true' finding at the oracle level) and EACH INDIVIDUALLY PASSES EVERY ACCEPTANCE METRIC AND FAILCLOSED PROBE THE SHIPPED mixed-radix-bijection-v1 ORACLE COMPUTES (both_universes_individually_pass_oracle_acceptance=true: bijection_roundtrip/injective/surjective/value_tuple_bijection all true for A alone and for B alone). Yet the declared infeasible index 1 decodes to ('IPDA','DGEBF') under A and ('TETA','DGEBF') under B -- representation_invariant_decode_a_vs_b=false -- reproducing T-06's exact counterexample bit-for-bit via the oracle's own published algorithm. The negative control (universe C, hardener order UNCHANGED from A) decodes identically to A (representation_invariant_decode_a_vs_c_negative_control=true), confirming the instability is caused specifically by the axis-value reordering and not by the harness. The mixed-radix-bijection-v1 oracle's acceptance vocabulary (10 per-universe rate fields plus 9 failclosed_probes, all read from run_mixed_radix_bijection.py) contains no field that is ever computed across two representations of what the runtime treats as 'the same' universe -- every metric is a property of ONE axes dict in isolation. It is therefore structurally incapable of detecting the representation-order defect T-06 already proved live in the Rust runtime, and would report 'acceptance_all_perfect: true' on BOTH universe A and universe B if either were substituted for a fixture entry, exactly as it does today. The receipt's claim to establish that the index<->tuple map is loss-free and duplication-free is true only within a single fixed representation; it does not and cannot establish representation-invariant identity, which is the specific property T-06 disproved and which docs/mission.md cites this oracle in connection with.",
+  "module": "amphora-formulation-universe",
+  "oracle_under_test": {
+    "path": "amphora-formulation-universe/evidence/audit/mixed-radix-bijection-v1/run_mixed_radix_bijection.py",
+    "receipt_path": "amphora-formulation-universe/evidence/audit/mixed-radix-bijection-v1/mixed-radix-bijection-receipt.v1.dsse.json",
+    "sha256": "4da1cbade3a899a224e4eea3b5806e3f0ec8c4cccbab25b981ac13fe6ce0b993"
+  },
+  "prior_finding_reproduced_as_input": {
+    "attack": "index_laundering_out_of_universe_smuggling",
+    "quoted": "the same declared infeasible index resolves to two different physical axis-value tuples across two accounting-equivalent (byte-identical-output) representations of 'the same' universe",
+    "source": "amphora-formulation-universe/evidence/phase0/repairs/T-06/done/t06-independent-adversarial-attack-receipt.v1.dsse.json",
+    "verdict": "CLAIM_REFUTED (2026-08-06, campaign item T-06)"
+  },
+  "refutation_criterion_observation_occurred": true,
+  "refutation_criterion_verbatim": "If two accounting-equivalent representations of the same declared universe (identical axis_cardinalities / cartesian_total / solved / infeasible counts under the oracle's own metrics) decode a shared declared infeasible index to two different physical value tuples, AND the mixed-radix-bijection-v1 oracle's acceptance_all_perfect / bijection_holds_all_universes metrics and 9 failclosed_probes do not flag either representation as failing, then the oracle's claim to certify 'no silent loss' / 'no silent duplication' for the Cartesian-accounting claim is incomplete: it does not cover, and cannot detect, the representation-order identity-instability defect class already proven live by T-06.",
+  "representation_invariant_decode_a_vs_b": false,
+  "representation_invariant_decode_a_vs_c_negative_control": true,
+  "schema": "amphora.formulation-universe.mixed-radix-bijection-representation-invariance.v1",
+  "universe_a": {
+    "axes": {
+      "hardener": [
+        "IPDA",
+        "TETA"
+      ],
+      "resin": [
+        "DGEBA",
+        "DGEBF"
+      ]
+    },
+    "infeasible_indices": [
+      1
+    ],
+    "metrics": {
+      "acceptance_all_perfect_this_universe": true,
+      "axis_values_in_order": [
+        [
+          "IPDA",
+          "TETA"
+        ],
+        [
+          "DGEBA",
+          "DGEBF"
+        ]
+      ],
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_product": 4,
+      "decode_table": {
+        "0": [
+          "IPDA",
+          "DGEBA"
+        ],
+        "1": [
+          "IPDA",
+          "DGEBF"
+        ],
+        "2": [
+          "TETA",
+          "DGEBA"
+        ],
+        "3": [
+          "TETA",
+          "DGEBF"
+        ]
+      },
+      "derived_infeasible_count": 1,
+      "derived_solved_count": 3,
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        2,
+        1
+      ],
+      "radices": [
+        2,
+        2
+      ],
+      "sorted_axis_keys": [
+        "hardener",
+        "resin"
+      ],
+      "value_tuple_bijection": true
+    }
+  },
+  "universe_b": {
+    "axes": {
+      "hardener": [
+        "TETA",
+        "IPDA"
+      ],
+      "resin": [
+        "DGEBA",
+        "DGEBF"
+      ]
+    },
+    "infeasible_indices": [
+      1
+    ],
+    "metrics": {
+      "acceptance_all_perfect_this_universe": true,
+      "axis_values_in_order": [
+        [
+          "TETA",
+          "IPDA"
+        ],
+        [
+          "DGEBA",
+          "DGEBF"
+        ]
+      ],
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_product": 4,
+      "decode_table": {
+        "0": [
+          "TETA",
+          "DGEBA"
+        ],
+        "1": [
+          "TETA",
+          "DGEBF"
+        ],
+        "2": [
+          "IPDA",
+          "DGEBA"
+        ],
+        "3": [
+          "IPDA",
+          "DGEBF"
+        ]
+      },
+      "derived_infeasible_count": 1,
+      "derived_solved_count": 3,
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        2,
+        1
+      ],
+      "radices": [
+        2,
+        2
+      ],
+      "sorted_axis_keys": [
+        "hardener",
+        "resin"
+      ],
+      "value_tuple_bijection": true
+    }
+  },
+  "universe_c_negative_control_unpermuted": {
+    "axes": {
+      "hardener": [
+        "IPDA",
+        "TETA"
+      ],
+      "resin": [
+        "DGEBA",
+        "DGEBF"
+      ]
+    },
+    "infeasible_indices": [
+      1
+    ],
+    "metrics": {
+      "acceptance_all_perfect_this_universe": true,
+      "axis_values_in_order": [
+        [
+          "IPDA",
+          "TETA"
+        ],
+        [
+          "DGEBA",
+          "DGEBF"
+        ]
+      ],
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_product": 4,
+      "decode_table": {
+        "0": [
+          "IPDA",
+          "DGEBA"
+        ],
+        "1": [
+          "IPDA",
+          "DGEBF"
+        ],
+        "2": [
+          "TETA",
+          "DGEBA"
+        ],
+        "3": [
+          "TETA",
+          "DGEBF"
+        ]
+      },
+      "derived_infeasible_count": 1,
+      "derived_solved_count": 3,
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        2,
+        1
+      ],
+      "radices": [
+        2,
+        2
+      ],
+      "sorted_axis_keys": [
+        "hardener",
+        "resin"
+      ],
+      "value_tuple_bijection": true
+    }
+  }
+}

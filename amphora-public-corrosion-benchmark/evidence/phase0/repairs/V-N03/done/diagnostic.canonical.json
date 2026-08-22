@@ -1,0 +1,138 @@
+{
+  "all_checks_pass": true,
+  "authority": "AUDIT_ONLY",
+  "checks": {
+    "1_precondition_done_receipt_exists": true,
+    "2_lomo_generator_script_expected_sha256": "e4c02a789ad6e02e43e6d8b45091d13038498ae086884fffbd959ec165385c13",
+    "2_lomo_generator_script_sha256": "e4c02a789ad6e02e43e6d8b45091d13038498ae086884fffbd959ec165385c13",
+    "2_lomo_generator_script_unmodified": true,
+    "2_matches_r_n03_embedded_reattack": true,
+    "2_observed_replay_sha256": "2fa2793d10b9d7015901b556b686850a84e0902a592ff9741b96d89f01a068e4",
+    "2_rerun_stdout1_sha256": "1270f8feb2fd53f7192548140b4fcd2775150d9b0e398f919974f2778b12dc89",
+    "2_rerun_stdout2_sha256": "1270f8feb2fd53f7192548140b4fcd2775150d9b0e398f919974f2778b12dc89",
+    "2_reruns_byte_identical": true,
+    "2_run1_exit_code": 0,
+    "2_run2_exit_code": 0,
+    "3_extra_in_index": [],
+    "3_index_complete": true,
+    "3_missing_from_index": [],
+    "3_n_indexed_in_v3_consolidated": 8,
+    "3_n_on_disk_audit_receipts": 8,
+    "4_all_sigs_valid": true,
+    "4_dsse_signature_checks": [
+      {
+        "file_sha256": "778e58b654bf27abff65b7ac2d236a8b8b674bc2498ee05031e5d2551e9457e0",
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/R-N03-done-receipt.v1.dsse.json",
+        "sig_valid": true
+      },
+      {
+        "file_sha256": "b1725c94c14191ff88923eba93c2455629af32e6d06d4429c4d95eedaf676f08",
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json",
+        "sig_valid": true
+      },
+      {
+        "file_sha256": "c7dea258068a166cb208606673467bfb52254b131b15379bd7d58ec86fb3eab4",
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+        "sig_valid": true
+      }
+    ],
+    "4_expected_keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "5_all_byte_intact": true,
+    "5_byte_intact_checks": {
+      "amphora-public-corrosion-benchmark/evidence/phase0/kpis/audit-verdicts-consolidated-kpi.v1.json": {
+        "actual_sha256": "9b5766418c2c09643ebf7671c4fcc6acf6ffbd56242f5c4c6bc6e8d84c549ccf",
+        "byte_intact": true,
+        "expected_sha256": "9b5766418c2c09643ebf7671c4fcc6acf6ffbd56242f5c4c6bc6e8d84c549ccf"
+      },
+      "amphora-public-corrosion-benchmark/evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json": {
+        "actual_sha256": "bfbc32fe02df1d0bf8c7611ad8ab28c57f960eede7e640cda1db0b16078ab888",
+        "byte_intact": true,
+        "expected_sha256": "bfbc32fe02df1d0bf8c7611ad8ab28c57f960eede7e640cda1db0b16078ab888"
+      },
+      "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/R-A08-done-receipt.v1.dsse.json": {
+        "actual_sha256": "7bbe415654234e0a68a8efa9fc923a24d9644c19e066b13a5ace9074871de76f",
+        "byte_intact": true,
+        "expected_sha256": "7bbe415654234e0a68a8efa9fc923a24d9644c19e066b13a5ace9074871de76f"
+      },
+      "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json": {
+        "actual_sha256": "4632e46083304a444ffbda2030be0004b28698b5751a935db96b371e6960c4dd",
+        "byte_intact": true,
+        "expected_sha256": "4632e46083304a444ffbda2030be0004b28698b5751a935db96b371e6960c4dd"
+      },
+      "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json": {
+        "actual_sha256": "67b4136a975446b4346d97fda999807209473e6d6a3ff189dd6d2f7a86b92156",
+        "byte_intact": true,
+        "expected_sha256": "67b4136a975446b4346d97fda999807209473e6d6a3ff189dd6d2f7a86b92156"
+      }
+    },
+    "6_kpi_numbers_match_independent_rerun": true,
+    "6_kpi_v3_embedded_lomo_numbers": {
+      "fraction_of_claimed_in_domain_improvement_retained_under_extrapolation": -5.524252985392965,
+      "groups_where_ridge_worse_than_null": [
+        "Carbon and alloy steels",
+        "Nickel and alloys",
+        "Stainless steels"
+      ],
+      "n_groups": 5,
+      "n_groups_ridge_better": 2,
+      "null_design": "extrapolation-honest NULL: median(log10 rate) over the four TRAINING material groups only, never the held-out group's own labels; Ridge refit per fold with the held-out group's one-hot column all-zero in training",
+      "per_group_n": {
+        "Aluminum and alloys": 79,
+        "Carbon and alloy steels": 222,
+        "Copper and alloys": 90,
+        "Nickel and alloys": 50,
+        "Stainless steels": 147
+      },
+      "per_group_null_mae": {
+        "Aluminum and alloys": 1.3672927698283042,
+        "Carbon and alloy steels": 0.7328733059684579,
+        "Copper and alloys": 0.9233192541431502,
+        "Nickel and alloys": 0.6575358423813974,
+        "Stainless steels": 0.6118292668525288
+      },
+      "per_group_ridge_mae": {
+        "Aluminum and alloys": 0.7683014839209595,
+        "Carbon and alloy steels": 1.3915636812315002,
+        "Copper and alloys": 0.5547905842649705,
+        "Nickel and alloys": 0.8809490075269575,
+        "Stainless steels": 1.1375290591197926
+      },
+      "pooled_improvement_log10_lomo": -0.2622277196483753,
+      "pooled_null_MAE_log10_lomo": 0.8105925679603891,
+      "pooled_ridge_MAE_log10_lomo": 1.0728202876087645,
+      "source_receipt": "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json",
+      "worst_group": "Carbon and alloy steels",
+      "worst_group_null_minus_ridge_log10": -0.6586903752630423
+    },
+    "7_mission_md_sha256": "652787b3961608d65b184a04d37fd33c8a797645881384b6eeb594452da2734a",
+    "7_mission_prose_matches_r_n03": true
+  },
+  "claim_under_verify": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/ :: the v2 NIST KPI supersession (in-domain not significant + extrapolation negative) withstands verification",
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "Verify-only: writes no new supersession, edits no existing signed artifact, mission front-matter, or the master manifest. Confined to evidence/phase0/repairs/V-N03/."
+  ],
+  "headline": "V-N03 independent verify of repair R-N03: re-ran the committed LOMO extrapolation generator (sha256 e4c02a789ad6e02e43e6d8b45091d13038498ae086884fffbd959ec165385c13, unmodified) twice from the same hash-pinned raw NIST CORR-DATA CSV; byte-identical to itself (stdout sha 1270f8feb2fd53f7192548140b4fcd2775150d9b0e398f919974f2778b12dc89) and to R-N03's embedded reattack (expected 1270f8feb2fd53f7192548140b4fcd2775150d9b0e398f919974f2778b12dc89) and to the v3 superseding KPI's corrected_values.extrapolation_lomo_cv block (pooled Ridge MAE=1.0728 vs NULL=0.8106, improvement=-0.2622 log10, 2/5 groups). Enumerated evidence/audit/: 8 on-disk receipts, all 8 indexed in the v3 consolidated KPI, 0 missing / 0 extra. Independently Ed25519-verified all 3 R-N03 done artifacts against the pinned Phase-0 evaluator key: all valid. Confirmed byte-intactness of the v1 original KPI/index and R-A08's v2 superseding KPI/index/done-receipt (5/5 files, sha256-identical to what R-N03 recorded before AND after its own fire). Verdict: CLAIM_SURVIVED.",
+  "human_review_performed": false,
+  "modifies_existing_receipts": false,
+  "modifies_manifest": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "promotes_authority": false,
+  "refutation_would_have_shown": [
+    "re-run LOMO numbers differ from R-N03/v3-KPI embedded values",
+    "a DSSE signature fails real Ed25519 verification or uses an unpinned key",
+    "the v3 consolidated audit index misses an on-disk evidence/audit/ receipt",
+    "an original/superseding KPI file's sha256 has drifted from what R-N03 recorded",
+    "mission.md prose has regressed from the R-N03 correction"
+  ],
+  "repair_status": "confirmed_holds",
+  "schema": "amphora.public-corrosion-benchmark.repair-verify.v1",
+  "scientific_success_asserted": false,
+  "supersedes": null,
+  "target_repair_item": "R-N03",
+  "verdict": "CLAIM_SURVIVED",
+  "verify_item": "V-N03"
+}

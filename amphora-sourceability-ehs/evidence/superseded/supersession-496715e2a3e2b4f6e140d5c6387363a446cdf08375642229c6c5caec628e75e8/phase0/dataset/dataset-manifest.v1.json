@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "RIGHTS_QUALIFIED_EVIDENCE",
+  "missing_values_imputed": false,
+  "module_id": "amphora-sourceability-ehs",
+  "rights_gate_passed": false,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "74821caca213fa9cdcb2e1b6fdd6fd15bcca7fc6e74d95eb1ec18159e0491e7c"
+}

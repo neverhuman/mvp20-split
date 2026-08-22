@@ -1,0 +1,17 @@
+[package]
+name = "molgen-w1-runtime-grant-independence-adversarial-harness"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[workspace]
+
+[dependencies]
+amphora-core = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-core" }
+amphora-molecule-capabilities = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-capabilities" }
+amphora-rdkit-ffi = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi", features = ["rdkit"] }
+amphora-engine = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-engine" }
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+sha2 = "0.10"

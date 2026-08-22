@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "75cb090356cba71ffd55345d66ee4273715e9931d84124474132ed363b1ef286",
+  "import_hashes": [],
+  "module_id": "amphora-evidence-intake-validator",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

@@ -1,0 +1,18 @@
+{
+  "campaign_item_id": "W-D-ROLE",
+  "module": "amphora-molecule-role-ranker",
+  "fires": [
+    {
+      "fire_id": "20260813T070001-495707-020cba43b3e2",
+      "action": "13-source rights-clean sweep for external role-attested amine/accelerator/resin sources, completed and signed",
+      "verdict": "BLOCKED_DATA",
+      "receipt": "amphora-molecule-role-ranker/evidence/phase0/repairs/W-D-ROLE/done/W-D-ROLE-source-sweep-receipt.v1.dsse.json"
+    }
+  ],
+  "next_fire_should": "Pick up proposed_followups[] from the done receipt: (1) build RDKit-verified phenalkamine (Cardolite NX-series) and polyetheramine (BASF Baxxodur EC 302-class) structures -- two chemotypes with ZERO fixture representation -- and run the live-FFI role probe against them; (2) extract full structures/SI from the CC BY 4.0 Wiegand & Osburg 2023 Polymers paper (bio-based amine hardeners); (3) read worked examples from the two USPTO patents cited in source 12. Do NOT re-sweep the same 13 sources -- extend past them (e.g. read the full text of sources already found RECOMMENDED/RECOMMENDED_WITH_FLAG rather than searching for new candidate sources) unless a materially different chemotype gap is identified first.",
+  "not_yet_done": [
+    "No structures extracted or built from any source this fire -- pure license/attestation sweep only.",
+    "Sigma-Aldrich Site Use Terms fetch timed out and was never retried.",
+    "ECHA and CAMEO Chemicals primary pages both required search-engine-paraphrase fallback (403s) -- a retry with different timing could get a cleaner direct quote but both are already BLOCKED on other grounds so low priority."
+  ]
+}

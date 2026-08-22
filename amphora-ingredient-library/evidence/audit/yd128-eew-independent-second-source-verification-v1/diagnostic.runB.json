@@ -1,0 +1,120 @@
+{
+  "authority": "AUDIT_ONLY",
+  "checkA_gap_disclosure": {
+    "all_load_bearing_facts_with_unresolved_single_source_waiver": [
+      "hardener.ancamide_220x70.ahew",
+      "hardener.ancamide_2353.density",
+      "hardener.ancamide_260a.density",
+      "hardener.ancamide_350a.density",
+      "hardener.ancamide_700b75.ahew",
+      "hardener.versamid_115.ahew",
+      "hardener.versamid_115.density",
+      "pigment.barytes.density",
+      "pigment.talc.density",
+      "resin.dgeba_yd128.density",
+      "resin.dgeba_yd128.eew",
+      "resin.solid_cut_1001x75.eew_on_nv",
+      "solvent.mak.density",
+      "solvent.mibk.density"
+    ],
+    "gap_closed_by_this_receipt": [
+      "resin.dgeba_yd128.eew",
+      "resin.dgeba_yd128.density"
+    ],
+    "n_all_load_bearing_waivered_facts": 14,
+    "n_gap_closed": 2,
+    "remaining_waivered_after_this_receipt": [
+      "hardener.ancamide_220x70.ahew",
+      "hardener.ancamide_2353.density",
+      "hardener.ancamide_260a.density",
+      "hardener.ancamide_350a.density",
+      "hardener.ancamide_700b75.ahew",
+      "hardener.versamid_115.ahew",
+      "hardener.versamid_115.density",
+      "pigment.barytes.density",
+      "pigment.talc.density",
+      "resin.solid_cut_1001x75.eew_on_nv",
+      "solvent.mak.density",
+      "solvent.mibk.density"
+    ]
+  },
+  "checkB_independent_source_reverification": {
+    "all_within_gate": true,
+    "failing_comparisons": [],
+    "gate_pct": 3.0,
+    "n_total_comparisons": 2,
+    "n_within_gate": 2,
+    "per_comparison": [
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_cited_url": "https://5.imimg.com/data5/HR/FD/MY-117280/standard-liquid-epoxy-resin-yd-128.pdf",
+        "catalog_grade": "TDS",
+        "catalog_load_bearing": true,
+        "catalog_single_source_waiver": "Kukdo TDS direct read (184-190); second source 403-gated -- flagged in blueprint",
+        "catalog_unit": "g/eq",
+        "catalog_value": 187.0,
+        "citation_method": "webfetch_pdf_extraction",
+        "external_ref_range": [
+          184.0,
+          190.0
+        ],
+        "external_ref_value": 187.0,
+        "external_source": "KUKDO EPOXY YD-128 official Technical Data Sheet (document-dated 2019-08-16), 'Resin Properties' table: 'EEW(g/eq) 184-190, Test Method KD-AS-001' (midpoint 187.0)",
+        "external_source_url": "https://sfilev2.f-static.com/image/users/423667/ftp/my_files/YD-128_TDS.pdf?id=33333576",
+        "fact_key": "resin.dgeba_yd128.eew",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-18",
+        "row_id": "resin.dgeba_yd128.eew__kukdo_fstatic_independent",
+        "same_host_as_catalog_citation": false,
+        "same_url_as_catalog_citation": false,
+        "within_external_range": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_cited_url": "https://5.imimg.com/data5/HR/FD/MY-117280/standard-liquid-epoxy-resin-yd-128.pdf",
+        "catalog_grade": "TDS",
+        "catalog_load_bearing": true,
+        "catalog_single_source_waiver": "same TDS; SG@20C",
+        "catalog_unit": "g/mL",
+        "catalog_value": 1.17,
+        "citation_method": "webfetch_pdf_extraction",
+        "external_ref_value": 1.17,
+        "external_source": "KUKDO EPOXY YD-128 official Technical Data Sheet (document-dated 2019-08-16), 'Resin Properties' table: 'Specific Gravity(20C) 1.17, Test Method KD-AS-040 (*1 Reference data)'",
+        "external_source_url": "https://sfilev2.f-static.com/image/users/423667/ftp/my_files/YD-128_TDS.pdf?id=33333576",
+        "fact_key": "resin.dgeba_yd128.density",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-18",
+        "row_id": "resin.dgeba_yd128.density__kukdo_fstatic_independent",
+        "same_host_as_catalog_citation": false,
+        "same_url_as_catalog_citation": false,
+        "within_gate": true
+      }
+    ]
+  },
+  "closes": [
+    "First independent-second-source point comparison ever performed on resin.dgeba_yd128.eew in this module (previously band-checked only by constant-crosscheck-v1, or same-URL-refetched by W-ING2).",
+    "Resolves facts.json's own disclosed gap note on resin.dgeba_yd128.eew: 'second source 403-gated -- flagged in blueprint'."
+  ],
+  "does_not_close": [
+    "Other load-bearing single-source-waivered facts in this module remain untouched by this receipt: hardener.ancamide_220x70.ahew, hardener.ancamide_2353.density, hardener.ancamide_260a.density, hardener.ancamide_350a.density, hardener.ancamide_700b75.ahew, hardener.versamid_115.ahew, hardener.versamid_115.density, pigment.barytes.density, pigment.talc.density, resin.solid_cut_1001x75.eew_on_nv, solvent.mak.density, solvent.mibk.density.",
+    "One manufacturer document from a second host, not a second manufacturer or independent lab titration -- narrows but does not eliminate the risk that Kukdo's own published spec is itself wrong.",
+    "Retrieved-date gap (document dated 2019-08-16 vs facts.json's 2026-07-07 retrieval) is not a temporal-drift audit; only a point/range match is asserted.",
+    "Gate is a point-transcription tolerance (3%), not a physical admissibility bound; establishes no product-qualification, batch-release, optimizer, or FTO authority."
+  ],
+  "headline": "2/2 independent second-host comparisons within the 3.0% gate for resin.dgeba_yd128.eew and resin.dgeba_yd128.density; the specific 'second source 403-gated' gap facts.json discloses on dgeba_yd128.eew is now closed with a genuinely independent host.",
+  "hypothesis": "resin.dgeba_yd128.eew (187.0 g/eq) and resin.dgeba_yd128.density (1.17 g/mL) match, within a 3.0% gate, the Kukdo Chemical YD-128 TDS as independently re-fetched from a second host.",
+  "inputs": {
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "gate_pct": 3.0
+  },
+  "module": "amphora-ingredient-library",
+  "non_circularity": "The external reference document was located via live web search this fire and fetched from sfilev2.f-static.com, a host never cited anywhere in facts.json or in any prior signed receipt in this module. It is not a re-fetch of the catalog's cited 5.imimg.com URL, not a re-fetch of any URL W-ING2 already checked, and not the same resource the module's own blueprint note recorded as 403-gated (specialchem.com / ulprospector.com, both independently reproduced as 403 Forbidden this fire).",
+  "purpose": "Close the self-disclosed 'second source 403-gated' gap on the load-bearing resin.dgeba_yd128.eew constant (and reconfirm its sibling resin.dgeba_yd128.density) against a genuinely independent, second-host, live-fetched manufacturer TDS document -- the first point comparison of dgeba_yd128.eew against any document other than facts.json's own cited URL in this module's history.",
+  "run_type": "audit",
+  "schema": "amphora.ingredient-library.yd128-eew-independent-second-source-verification.v1",
+  "theory_reference": [
+    "KUKDO EPOXY YD-128 Standard Liquid Epoxy Resin TDS, document-dated 2019-08-16, KD-AS-001 (EEW) / KD-AS-040 (specific gravity) internal test methods, fetched live 2026-08-18 via https://sfilev2.f-static.com/image/users/423667/ftp/my_files/YD-128_TDS.pdf?id=33333576",
+    "ASTM D1652 (epoxide equivalent weight titration methodology, same discipline as this module's constant-crosscheck-v1 Check-1)."
+  ]
+}

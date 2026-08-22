@@ -1,0 +1,188 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "W-ROLE-CI",
+  "claim_locks": {
+    "measured_only_lock_preserved": true,
+    "no_objective_emitted": true,
+    "promotes_authority": false
+  },
+  "claim_under_attack": {
+    "claim_text": "Every interval this module publishes is computed by a method valid at its own n. role-parsimony-conformal-v1's bootstrap CIs at k=n=24 are [1.0,1.0] (deterministic_rule_baseline.in_domain_accuracy) and [1.0,1.0] (fitted_model_out_of_sample.loocv_accuracy) and [0.0,0.0] (noninferiority_test.accuracy_gap).",
+    "observed": "Exact Clopper-Pearson lower bound at k=n=24 is 0.8575264022774743, not 1.0. The refutation criterion is MET: the published interval understates the true 95% uncertainty by 0.1425 (matches the campaign item's pre-registered figure of 0.142 within rounding).",
+    "refutation_criterion": "A refutation occurs if the exact Clopper-Pearson two-sided 95% CI for the k=n=24 accuracy proportion differs from the published bootstrap CI [1.0,1.0] -- i.e. if the exact lower bound is < 1.0.",
+    "target_diagnostic_path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/diagnostic.canonical.json",
+    "target_diagnostic_sha256": "075aeaaf8204c712838e41a3c8b42d89f974d1454c65fe75e1862c14700b3ba2",
+    "target_receipt_path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json",
+    "target_receipt_sha256": "1fe0e84b7d50663e31e2a4b8ee5d881dffce378d931c0779444e67d1e87624fb",
+    "target_receipt_signed_with": "local-9028773f49591193 (LOCAL_DEVELOPMENT_AUDIT_ONLY, NOT the pinned PHASE0_EVALUATOR key; does_not_close EVALUATION_SIGNATURE_ABSENT was already logged by the target receipt itself)",
+    "verdict": "CLAIM_REFUTED"
+  },
+  "closes": [],
+  "corrections": [
+    {
+      "field": "deterministic_rule_baseline.in_domain_accuracy_bootstrap_ci95",
+      "k": 24,
+      "n": 24,
+      "new_ci": [
+        0.8575264022774743,
+        1.0
+      ],
+      "new_method": "Clopper-Pearson exact two-sided 95% CI",
+      "old_ci": [
+        1.0,
+        1.0
+      ],
+      "old_method": "percentile bootstrap (B=10000, seed 20260728-derived)",
+      "understatement_of_uncertainty": 0.1425
+    },
+    {
+      "field": "fitted_model_out_of_sample.loocv_accuracy_bootstrap_ci95",
+      "k": 24,
+      "n": 24,
+      "new_ci": [
+        0.8575264022774743,
+        1.0
+      ],
+      "new_method": "Clopper-Pearson exact two-sided 95% CI",
+      "old_ci": [
+        1.0,
+        1.0
+      ],
+      "old_method": "percentile bootstrap (B=10000, seed 20260728-derived)",
+      "understatement_of_uncertainty": 0.1425
+    },
+    {
+      "components": {
+        "l1": 0.8575264022774743,
+        "l2": 0.8575264022774743,
+        "p1": 1.0,
+        "p2": 1.0,
+        "u1": 1.0,
+        "u2": 1.0
+      },
+      "field": "noninferiority_test.accuracy_gap_bootstrap_ci95",
+      "k1": 24,
+      "k2": 24,
+      "n1": 24,
+      "n2": 24,
+      "new_ci": [
+        -0.14247359772252566,
+        0.14247359772252566
+      ],
+      "new_method": "MOVER (Newcombe 1998b) paired-difference CI, phi=0 conservative, built from each margin's own Clopper-Pearson exact CI",
+      "old_ci": [
+        0.0,
+        0.0
+      ],
+      "old_method": "percentile bootstrap (B=10000, seed 20260728-derived)",
+      "understatement_of_uncertainty": 0.1425
+    }
+  ],
+  "date": "2026-08-14",
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (this receipt IS signed with the trust-anchored PHASE0_EVALUATOR key, but that closes only THIS artifact's own signing gap, not the target receipt's, which remains signed under the local-dev key and is left byte-intact per supersede-never-rewrite)",
+    "PHASE_1_INDEPENDENT_EVALUATION (needs external double-labelled expert reference)",
+    "external_rights (fixture is self-authored CC0; not an external benchmark)"
+  ],
+  "fire_id": "20260814T020001-724853-bddd109f6ab9",
+  "flips_scientific_readiness": false,
+  "generated_on_host": "xbabe2",
+  "human_review_performed": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-role-ranker",
+  "objective": "W-ROLE-CI: the role-parsimony-conformal-v1 replay receipt publishes three percentile-bootstrap 95% confidence intervals that collapse to a single point ([1.0,1.0] x2, [0.0,0.0] x1) because the underlying sample is k=n=24 (all predictions correct), so every one of the B=10000 bootstrap resamples is also all-correct and the empirical resample spread is zero. This mechanically understates sampling uncertainty: the true generalization accuracy is NOT known to be exactly 1.0 at n=24. Recompute each with a named exact method valid at the boundary and publish a superseding KPI; then sweep the portfolio for the same defect class and file every hit found.",
+  "organizational_independence_asserted": false,
+  "phase0_gap_ledger": {
+    "MANIFEST_UNCHANGED": "master receipts manifest (66 receipts / 11 modules) NOT edited; requires human dual-identity Phase-0 ceremony keys.",
+    "SCOPE": "corrects interval ADMISSIBILITY only; does not change any point estimate, does not re-run the underlying classification, does not alter the noninferiority verdict (HYPOTHESIS_CORROBORATED_PARSIMONY_FAVOURED still stands on point estimates -- only its uncertainty band was wrong).",
+    "SWEEP_SCOPE": "7170 of 7176 .json files under mvp20-split parsed (6 parse errors, mostly non-UTF8 or non-JSON-despite-extension files); only keys matching /ci|interval|bound|coverage/i were inspected for degenerate 2-element [0.0,0.0]/[1.0,1.0] arrays -- a differently-named degenerate interval field would not be caught."
+  },
+  "primary_references": [
+    "Clopper CJ, Pearson ES (1934). The use of confidence or fiducial limits illustrated in the case of the binomial. Biometrika 26(4):404-413.",
+    "Efron B, Tibshirani RJ (1993). An Introduction to the Bootstrap. Chapman & Hall/CRC, ISBN 978-0412042317, ch.13 (percentile bootstrap breakdown at parameter-space boundaries).",
+    "DiCiccio TJ, Efron B (1996). Bootstrap confidence intervals. Statistical Science 11(3):189-228.",
+    "Newcombe RG (1998). Improved confidence intervals for the difference between binomial proportions based on paired data. Statistics in Medicine 17(22):2635-2650 (MOVER / Method 10)."
+  ],
+  "promotes_authority": false,
+  "proposed_followups": [
+    {
+      "artifact_paths": [
+        "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1",
+        "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1",
+        "amphora-molecule-generator/evidence/phase0/repairs/R-A06/work",
+        "amphora-molecule-generator/evidence/phase0/repairs/W-GEN1/work"
+      ],
+      "defect": "Same defect class (boundary-collapsed percentile-bootstrap CI, [1.0,1.0] at k=n=38) found live in evidence/audit/molgen-deterministic-grammar-yield-v1/molgen-deterministic-grammar-yield-receipt.v1.dsse.json field generator_grammar.feasible_fraction_bootstrap95_ci. NOTE: this module already has an active, independently-filed falsification (evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1, verdict CLAIM_REFUTED, exact CP lower bound 0.9075 cited) and repair items in flight (evidence/phase0/repairs/R-A06, R-A06v2, W-GEN1); this followup names the artifact per the W-ROLE-CI sweep mandate but does NOT claim the defect is unowned there.",
+      "module": "amphora-molecule-generator",
+      "n_hits_in_sweep": 124,
+      "proposed_done_criterion": "Confirm (re-run V-A06/V-A06v2 style independent verify) that the molgen-deterministic-grammar-yield-v1 headline receipt's feasible_fraction_bootstrap95_ci has been superseded by a receipt using an exact-at-boundary method (Clopper-Pearson or equivalent), with old/new bounds shown side by side and a supersedes block; if R-A06v2 already did this, this followup closes as duplicate-confirmed."
+    }
+  ],
+  "receipt_id": "w-role-ci-superseding-kpi-12c262a7b13b3e02cf7f5d1a061c5456",
+  "repair_mode": true,
+  "repair_status": "fix_landed",
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "12c262a7b13b3e02cf7f5d1a061c545659508484243a9ee36c2a5cfb569fd759",
+    "determinism_basis": "All computation is closed-form (incomplete-beta inversion via scipy.stats.beta.ppf) or a deterministic full filesystem walk; no random sampling, no wall-clock, no OS entropy.",
+    "fixture_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+    "harness_sha256": "f48739d0d56e5b724129280a6e05bbddacc241a9fbb70ff841703a3656761d86",
+    "runB_diagnostic_sha256": "12c262a7b13b3e02cf7f5d1a061c545659508484243a9ee36c2a5cfb569fd759",
+    "sweep_harness_sha256": "880baac4911fcd6282222c46294a5663b1482ce29d51e8df55b8a27edbb00e78",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "run_type": "SUPERSEDING_KPI",
+  "schema": "amphora.molecule-role-ranker.w-role-ci-superseding-kpi.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY W-ROLE-CI superseding KPI under evidence/phase0/repairs/W-ROLE-CI/done/"
+  },
+  "supersedes": {
+    "reason": "The target's three bootstrap 95% CIs are inadmissible at the k=n=24 / k1=k2=n1=n2=24 boundary (percentile bootstrap has zero resample variance there). This superseding KPI republishes the same headline point estimates (accuracy 1.0 vs 1.0, gap 0.0) with exact-at-boundary intervals: Clopper-Pearson for the two accuracy margins, MOVER (Newcombe 1998b, phi=0 conservative) for the paired gap. The original file is left byte-intact; this is a NEW artifact, not an edit.",
+    "superseded_deleted_or_modified": false,
+    "superseded_diagnostic_path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/diagnostic.canonical.json",
+    "superseded_diagnostic_sha256": "075aeaaf8204c712838e41a3c8b42d89f974d1454c65fe75e1862c14700b3ba2",
+    "superseded_path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json",
+    "superseded_sha256": "1fe0e84b7d50663e31e2a4b8ee5d881dffce378d931c0779444e67d1e87624fb"
+  },
+  "sweep": {
+    "distinct_artifacts_outside_this_module": [
+      {
+        "distinct_artifact_dirs": [
+          "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1",
+          "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1",
+          "amphora-molecule-generator/evidence/phase0/repairs/R-A06/work",
+          "amphora-molecule-generator/evidence/phase0/repairs/W-GEN1/work"
+        ],
+        "module": "amphora-molecule-generator",
+        "n_hits_total": 124,
+        "sample_fields": [
+          "all_ci_fields_examined[12].ci",
+          "all_ci_fields_examined[14].ci",
+          "all_ci_fields_examined[20].ci",
+          "all_ci_fields_examined[22].ci",
+          "all_ci_fields_examined[26].ci",
+          "all_ci_fields_examined[27].ci",
+          "already_known_instance_degenerate_fields[0].ci",
+          "already_known_instance_degenerate_fields[1].ci",
+          "already_known_instance_degenerate_fields[2].ci",
+          "already_known_instance_degenerate_fields[3].ci"
+        ]
+      }
+    ],
+    "method": "walked every .json file under mvp20-split (excluding .git/target/node_modules/__pycache__), parsed each, and for every 2-element numeric array reachable under a key matching /ci|interval|bound|coverage/i, flagged it if both elements == 0.0 or both == 1.0",
+    "n_degenerate_hits_in_this_module": 6,
+    "n_degenerate_hits_total": 130,
+    "n_json_files_found": 7176,
+    "n_json_files_parsed": 7170,
+    "n_parse_errors": 6
+  },
+  "verdict": "CLAIM_REFUTED"
+}

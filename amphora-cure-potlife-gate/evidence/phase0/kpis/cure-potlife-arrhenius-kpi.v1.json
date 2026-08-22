@@ -1,0 +1,130 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-cure-potlife-gate",
+  "kpi_id": "amphora-cure-potlife-gate-phase0-arrhenius-v1",
+  "capability": "Deterministic Arrhenius rate-constant scaling of two-part epoxy-amine pot-life across temperature. pot_life(T) = pot_life_ref / effective_cure_rate(T, Ea, T_ref). Phase-0 covers pure Arrhenius temperature dependence with published Ea per resin+hardener chemistry family. Phase-1 (BLOCKED operationally) will require 36 owned independently-mixed CRO runs at multi-temperature per Navy prime charter.",
+  "authority_ceiling": "CRO_GATED",
+  "solver_use_ceiling": "CONSTRAINT_ONLY",
+  "population": "Twelve well-characterized two-part epoxy-amine coating systems (DGEBA resin paired with hardeners spanning aliphatic polyamine, cycloaliphatic diamine, aromatic amine, amidoamine adduct, and Mannich-base families) with published activation energies from cure kinetics literature and pot-life values from supplier technical data sheets at four temperatures (10, 22.78 = 73°F, 30, 40 °C).",
+  "split_methodology": "Reference anchor = pot-life at 22.78°C (73°F, coating industry standard per ASTM D2196 / Navy prime charter). Held-out validation at 10, 30, and 40°C using the published Ea from independent kinetics sources (Prime, Kamal-Sourour, Riccardi, Blanco). No fitting is done inside the KPI harness — activation energies are treated as external published constants.",
+  "theory": "Arrhenius (1889) rate constant coupling with cure kinetics: reaction rate k(T) = A · exp(-Ea/RT). Pot-life inversely proportional to rate constant at fixed reference conversion (typically ~10% for practical gel time): pot_life(T) = pot_life_ref · exp[(Ea/R)·(1/T − 1/T_ref)]. Established for epoxy-amine curing chemistry per Prime R.B. Turi 1997 Chapter 8, Kamal & Sourour Polym Eng Sci 13:59 (1973), Riccardi/Adabbo/Williams J Appl Polym Sci 29:2481 (1984), Blanco et al. Polymer 46:7989 (2005). R = 8.31446261815324 J/(mol·K) CODATA 2018.",
+  "metrics": [
+    {
+      "name": "arrhenius_pot_life_mape",
+      "direction": "MINIMIZE",
+      "ceiling": 0.20,
+      "observed": 0.1473336045156335,
+      "sample_size": 36,
+      "passed": true,
+      "authority": "RULE_CITED",
+      "note": "Mean absolute percent error across 12 systems × 3 held-out temperatures (10, 30, 40°C). Consistent with published Arrhenius accuracy on pot-life scaling for well-characterized epoxy-amine systems in the coating industry."
+    },
+    {
+      "name": "arrhenius_over_constant_baseline_lift",
+      "direction": "MAXIMIZE",
+      "floor": 0.30,
+      "observed": 0.8051198523013198,
+      "constant_baseline_mape": 0.9524534568169533,
+      "passed": true,
+      "authority": "RULE_CITED",
+      "note": "Baseline predicts constant pot-life at 22.78°C (no temperature correction). Arrhenius reduces MAPE from 95.2% to 14.7%, a 80.5 percentage-point lift. Pot-life varies 5×–10× across the 30-degree temperature range for these systems."
+    },
+    {
+      "name": "held_out_temperature_extrapolation_mape",
+      "direction": "MINIMIZE",
+      "ceiling": 0.25,
+      "observed": 0.15629611310973887,
+      "sample_size": 12,
+      "passed": true,
+      "authority": "RULE_CITED",
+      "note": "Predicting pot-life at 30°C using published Ea and reference pot-life at 22.78°C. Sample is one point per system."
+    },
+    {
+      "name": "per_system_within_40_percent_rate",
+      "direction": "MAXIMIZE",
+      "floor": 0.80,
+      "observed": 1.0,
+      "within_20_percent_rate": 0.08333333333333333,
+      "sample_size": 12,
+      "passed": true,
+      "authority": "RULE_CITED",
+      "note": "Fraction of systems where the worst-case error across ALL held-out temperatures is within ±40%. Observed 12/12 = 100%. The tighter ±20% threshold gives 1/12 systems (mannich-base only); this is the honest practical accuracy of first-principles Arrhenius scaling on pot-life data, which the module's Phase-1 lock (with 36 owned runs) will improve."
+    },
+    {
+      "name": "applicability_domain_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 9,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "effective_cure_rate returns Err(Range) for all 9 red-team probes: NaN temperature, Infinity Ea, NaN reference T, zero/negative T, zero/negative Ea, zero/negative reference T."
+    },
+    {
+      "name": "authority_lock_preservation_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Fixture authority block preserves optimizer_authority=false, constraint_only=true, commercial_product_authority=false, cro_gated_promotion=true. Phase-1 promotion is CRO-gated and remains BLOCKED regardless of this Phase-0 receipt."
+    }
+  ],
+  "fitted_or_physical_model_artifact": {
+    "schema": "amphora.cure-potlife-gate-arrhenius-per-system.v1",
+    "model_type": "deterministic_physical_arrhenius_per_hardener_family",
+    "gas_constant_j_mol_k": 8.31446261815324,
+    "reference_temperature_c": 22.78,
+    "reference_temperature_f": 73.0,
+    "reference_temperature_k": 295.928,
+    "prediction_rule": "pot_life(T) = pot_life_ref_at_22_78c_min / effective_cure_rate(T_k, Ea, T_ref_k=295.928); equivalently pot_life_ref · exp[(Ea/R)·(1/T_k − 1/T_ref_k)]",
+    "per_system_parameters": [
+      {"system_id": "dgeba-teta",                "hardener_family": "aliphatic-polyamine",  "activation_energy_j_mol": 55000, "pot_life_min_22_78c": 30},
+      {"system_id": "dgeba-deta",                "hardener_family": "aliphatic-polyamine",  "activation_energy_j_mol": 56000, "pot_life_min_22_78c": 45},
+      {"system_id": "dgeba-tepa",                "hardener_family": "aliphatic-polyamine",  "activation_energy_j_mol": 54000, "pot_life_min_22_78c": 60},
+      {"system_id": "dgeba-ipda",                "hardener_family": "cycloaliphatic-amine", "activation_energy_j_mol": 62000, "pot_life_min_22_78c": 240},
+      {"system_id": "dgeba-pacm",                "hardener_family": "cycloaliphatic-amine", "activation_energy_j_mol": 60000, "pot_life_min_22_78c": 360},
+      {"system_id": "dgeba-dach",                "hardener_family": "cycloaliphatic-amine", "activation_energy_j_mol": 58000, "pot_life_min_22_78c": 160},
+      {"system_id": "dgeba-mxda",                "hardener_family": "aromatic-amine",       "activation_energy_j_mol": 58000, "pot_life_min_22_78c": 90},
+      {"system_id": "dgeba-mpda",                "hardener_family": "aromatic-amine",       "activation_energy_j_mol": 68000, "pot_life_min_22_78c": 900},
+      {"system_id": "dgeba-mda",                 "hardener_family": "aromatic-amine",       "activation_energy_j_mol": 65000, "pot_life_min_22_78c": 720},
+      {"system_id": "dgeba-amidoamine-adduct1",  "hardener_family": "amidoamine-adduct",    "activation_energy_j_mol": 52000, "pot_life_min_22_78c": 180},
+      {"system_id": "dgeba-amidoamine-adduct2",  "hardener_family": "amidoamine-adduct",    "activation_energy_j_mol": 55000, "pot_life_min_22_78c": 120},
+      {"system_id": "dgeba-mannich",             "hardener_family": "mannich-base",         "activation_energy_j_mol": 48000, "pot_life_min_22_78c": 15}
+    ],
+    "baseline_prediction_rule": "constant_pot_life_at_22_78c: pot_life_predicted = pot_life_ref_at_22_78c regardless of T"
+  },
+  "claim_locks": {
+    "constraint_only_solver_use": true,
+    "no_optimizer_authority": true,
+    "cro_gated_promotion_still_blocked": true,
+    "commercial_product_is_measured_only": true,
+    "polydisperse_grade_is_measured_only": true,
+    "no_release_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true,
+    "phase1_named_baseline_still_not_beaten": true,
+    "36_owned_independently_mixed_cro_runs_still_pending": true
+  },
+  "benchmark_lock_sha256": "6d51f646780c8f6282302a95ddbd87db033b2462fd0bcc8e84e73fcf0451c54b",
+  "dataset_fixture_sha256": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "945f5b735992900ea58103e55acc35731a72bcad5bd5962a661440fdcd07cf60",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "phase1_operational_readiness_still_blocked": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "36 owned independently-mixed CRO runs at 10/22.78/30/40°C for Phase-1 named-baseline superiority",
+    "Sandia 828/DEA multi-family cure kinetics validation for Phase-1 authority ceiling elevation",
+    "Navy prime v5_requirements charter external certification for CRO_GATED authority ceiling"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-cure-potlife-gate/evidence/phase0",
+  "eligible_sources": [],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/v5_epoch29_unseen_benchmark.json",
+      "observed_sha256": "5f464c738e9e261069964f6624feefad990a35bdb4d656ffaeb3518f02d48443",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/v5_epoch30_lift_audit.json",
+      "observed_sha256": "79e7ed9933482c5434aa5050ac9063a2cbb647e2fad0cb0f6aebbdd44a055af4",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/quarantine/feedback_v2/objects/94efde3f75f1a4afec816b89f66da215150428bc62bf5ae0bd95b0746ed388b6.jsonl.gz",
+      "observed_sha256": "94efde3f75f1a4afec816b89f66da215150428bc62bf5ae0bd95b0746ed388b6",
+      "reason": "ContextOnly material remains quarantined and cannot satisfy a Phase-0 gate"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/pot-life/source-landscape.v1.json",
+      "observed_sha256": "2944d9fbc67dfb9a6ce7ad1a026b94d8b8f9c49e54f30e442c8ea2f93b188417",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    }
+  ],
+  "inventory_hash": "acc54e7a3a8ae0deb4327ad88d068ec87cff35a7e2703a86531d3c07e9ade9e6",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-cure-potlife-gate",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

@@ -1,0 +1,176 @@
+{
+  "schema": "mvp20.v5_validator_dry_run_results.v1",
+  "micro_version": "mvp20.14",
+  "retrieved": "2026-07-06",
+  "rule": "Dry-run results prove validator rejection behavior against synthetic non-candidate fixtures only.",
+  "validator_schema": "mvp20.v5_evidence_intake_validator.v1",
+  "results": [
+    {
+      "package_id": "FIX-PASS-001",
+      "targeted_failure_mode": "minimal pass",
+      "expected_outcome": "ACCEPT",
+      "actual_outcome": "ACCEPT",
+      "matches_expected": true,
+      "rejection_reasons": [],
+      "fixture_only": true,
+      "candidate_data_created": false,
+      "not_physical_evidence": true,
+      "claim_upgrades_allowed": {
+        "physical_validation": false,
+        "legal_FTO": false,
+        "supplier_closure": false,
+        "authority_or_procurement": false,
+        "model_or_ip_promotion": false
+      }
+    },
+    {
+      "package_id": "FIX-FAIL-001",
+      "targeted_failure_mode": "missing hash",
+      "expected_outcome": "REJECT",
+      "actual_outcome": "REJECT",
+      "matches_expected": true,
+      "rejection_reasons": [
+        "missing manifest/file hash"
+      ],
+      "fixture_only": true,
+      "candidate_data_created": false,
+      "not_physical_evidence": true,
+      "claim_upgrades_allowed": {
+        "physical_validation": false,
+        "legal_FTO": false,
+        "supplier_closure": false,
+        "authority_or_procurement": false,
+        "model_or_ip_promotion": false
+      }
+    },
+    {
+      "package_id": "FIX-FAIL-002",
+      "targeted_failure_mode": "orphan sample",
+      "expected_outcome": "REJECT",
+      "actual_outcome": "REJECT",
+      "matches_expected": true,
+      "rejection_reasons": [
+        "orphan sample/panel id"
+      ],
+      "fixture_only": true,
+      "candidate_data_created": false,
+      "not_physical_evidence": true,
+      "claim_upgrades_allowed": {
+        "physical_validation": false,
+        "legal_FTO": false,
+        "supplier_closure": false,
+        "authority_or_procurement": false,
+        "model_or_ip_promotion": false
+      }
+    },
+    {
+      "package_id": "FIX-FAIL-003",
+      "targeted_failure_mode": "computed-as-measured value",
+      "expected_outcome": "REJECT",
+      "actual_outcome": "REJECT",
+      "matches_expected": true,
+      "rejection_reasons": [
+        "computed-as-measured QC value"
+      ],
+      "fixture_only": true,
+      "candidate_data_created": false,
+      "not_physical_evidence": true,
+      "claim_upgrades_allowed": {
+        "physical_validation": false,
+        "legal_FTO": false,
+        "supplier_closure": false,
+        "authority_or_procurement": false,
+        "model_or_ip_promotion": false
+      }
+    },
+    {
+      "package_id": "FIX-FAIL-004",
+      "targeted_failure_mode": "narrative-only evidence",
+      "expected_outcome": "REJECT",
+      "actual_outcome": "REJECT",
+      "matches_expected": true,
+      "rejection_reasons": [
+        "narrative-only evidence package"
+      ],
+      "fixture_only": true,
+      "candidate_data_created": false,
+      "not_physical_evidence": true,
+      "claim_upgrades_allowed": {
+        "physical_validation": false,
+        "legal_FTO": false,
+        "supplier_closure": false,
+        "authority_or_procurement": false,
+        "model_or_ip_promotion": false
+      }
+    },
+    {
+      "package_id": "FIX-FAIL-005",
+      "targeted_failure_mode": "invalid control",
+      "expected_outcome": "REJECT",
+      "actual_outcome": "REJECT",
+      "matches_expected": true,
+      "rejection_reasons": [
+        "invalid or failed control"
+      ],
+      "fixture_only": true,
+      "candidate_data_created": false,
+      "not_physical_evidence": true,
+      "claim_upgrades_allowed": {
+        "physical_validation": false,
+        "legal_FTO": false,
+        "supplier_closure": false,
+        "authority_or_procurement": false,
+        "model_or_ip_promotion": false
+      }
+    },
+    {
+      "package_id": "FIX-FAIL-006",
+      "targeted_failure_mode": "missing calibration/raw file",
+      "expected_outcome": "REJECT",
+      "actual_outcome": "REJECT",
+      "matches_expected": true,
+      "rejection_reasons": [
+        "missing raw file",
+        "missing calibration file"
+      ],
+      "fixture_only": true,
+      "candidate_data_created": false,
+      "not_physical_evidence": true,
+      "claim_upgrades_allowed": {
+        "physical_validation": false,
+        "legal_FTO": false,
+        "supplier_closure": false,
+        "authority_or_procurement": false,
+        "model_or_ip_promotion": false
+      }
+    },
+    {
+      "package_id": "FIX-FAIL-007",
+      "targeted_failure_mode": "IP/FTO overclaim",
+      "expected_outcome": "REJECT",
+      "actual_outcome": "REJECT",
+      "matches_expected": true,
+      "rejection_reasons": [
+        "IP/FTO overclaim without counsel"
+      ],
+      "fixture_only": true,
+      "candidate_data_created": false,
+      "not_physical_evidence": true,
+      "claim_upgrades_allowed": {
+        "physical_validation": false,
+        "legal_FTO": false,
+        "supplier_closure": false,
+        "authority_or_procurement": false,
+        "model_or_ip_promotion": false
+      }
+    }
+  ],
+  "summary": {
+    "fixture_results": 8,
+    "accepted_fixtures": 1,
+    "rejected_fixtures": 7,
+    "expected_matches": 8,
+    "candidate_data_created_rows": 0,
+    "physical_legal_supplier_authority_procurement_claim_upgrades": 0
+  }
+}

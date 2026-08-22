@@ -1,0 +1,30 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.15s
+     Running unittests src/lib.rs (target/debug/deps/amphora_rdkit_ffi-c77f7c30cd16d232)
+
+running 8 tests
+test tests::fingerprint_record_and_tanimoto_are_deterministic ... ok
+test tests::native_record_builds_deterministic_versioned_facts ... ok
+test tests::unsupported_components_and_polymers_fail_before_backend_use ... ok
+test tests::pinned_native_fingerprints_replay_and_preserve_stereochemistry ... ok
+test tests::pinned_native_backend_scores_dicyandiamide_functionality_four ... FAILED
+test tests::pinned_native_backend_excludes_guanidine_class_amine_hydrogens ... ok
+test tests::native_identity_preserves_isotope_charge_and_stereochemistry ... ok
+test tests::pinned_native_backend_matches_reactive_ontology_controls ... ok
+
+failures:
+
+---- tests::pinned_native_backend_scores_dicyandiamide_functionality_four stdout ----
+
+thread 'tests::pinned_native_backend_scores_dicyandiamide_functionality_four' (1508206) panicked at src/lib.rs:529:9:
+assertion `left == right` failed: remote nitrile (not on the imine nitrogen) must not exempt the guanidine N-H
+  left: 4
+ right: 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::pinned_native_backend_scores_dicyandiamide_functionality_four
+
+test result: FAILED. 7 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--lib`

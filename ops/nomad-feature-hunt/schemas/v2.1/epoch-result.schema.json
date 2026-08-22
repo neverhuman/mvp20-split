@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nomad-feature-hunt/v2.1/epoch-result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "receipt_type", "epoch", "roles", "attempts", "new_executed_columns", "novel_valid_columns", "valid_by_domain", "base_families", "phase_receipts"],
+  "properties": {
+    "schema_version": {"const": "2.1"},
+    "receipt_type": {"const": "epoch_result"},
+    "epoch": {"type": "integer", "minimum": 1, "maximum": 10},
+    "roles": {"type": "integer", "const": 36},
+    "attempts": {"type": "integer", "minimum": 36, "maximum": 72},
+    "new_executed_columns": {"type": "integer", "minimum": 0},
+    "novel_valid_columns": {"type": "integer", "minimum": 0},
+    "valid_by_domain": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "base_families": {"type": "integer", "minimum": 0},
+    "phase_receipts": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  }
+}

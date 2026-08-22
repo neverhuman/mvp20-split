@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-fccdb9cbe8c822555d252b78deae91593a99113bdd0db049af33174c0d43103c",
+      "path": "events/fccdb9cbe8c822555d252b78deae91593a99113bdd0db049af33174c0d43103c.json",
+      "sha256": "b37dc4c73862879a5aeee59214c43d088f45d82e3e914789485a0193ee8bcdc2"
+    }
+  ],
+  "module_id": "amphora-known-answer-benchmarks",
+  "schema": "amphora.module-movement-ledger.v1"
+}

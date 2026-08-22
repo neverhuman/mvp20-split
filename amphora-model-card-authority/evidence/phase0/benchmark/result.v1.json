@@ -1,0 +1,133 @@
+{
+  "benchmark_execution_complete": true,
+  "bundle_sha256": "d65d232f07fc8e3a5ce50c24f8a120c658fab1781282462709ea54cdeb8b38c5",
+  "first_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-model-card-authority/reference/mvp20/out/validation_cards.json": "bea4ba80cdcd694189b7123448644ec842ea9b763a80a22ca2feaf56ec26da42",
+        "config/benchmark-lock.v1.json": "17b0a49049e3bcdb090a6aa0043c0d221c33b6b8128ee264e15a7047e4fdf9e9",
+        "module-manifest.json": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7"
+      },
+      "benchmark_lock_hash": "17b0a49049e3bcdb090a6aa0043c0d221c33b6b8128ee264e15a7047e4fdf9e9",
+      "claim_locks": {
+        "authority_registry_is_binding": true,
+        "failed_cards_cannot_rank": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "CONSTRAINT_ONLY",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+          "locked_gate_passed": true,
+          "observations": [],
+          "operational_readiness": "COMPLETE",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": null
+        },
+        "source_genesis_hash": "feff9fac2e0e2c32460dcf118d6e7cc021ad5c75bb5c51e45627bf11a97f178b"
+      },
+      "module_id": "amphora-model-card-authority",
+      "passed": true,
+      "receipt_id": "receipt-daf822c552052cb52cf29b49",
+      "registry_manifest_hash": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1",
+      "signature": {
+        "payload": "eyJhcHBsaWNhYmlsaXR5X2xpbWl0cyI6WyJzb2x2ZW50LWJvcm5lIHR3by1jb21wb25lbnQgZXBveHktcG9seWFtaWRlIG1hcmluZSBjb2F0aW5ncyIsImRpZ2l0YWwgZXZpZGVuY2Ugb25seTsgbm8gcHJvZHVjdCBxdWFsaWZpY2F0aW9uIG9yIHN1cGVyaW9yaXR5IGNsYWltIl0sImFydGlmYWN0X2hhc2hlcyI6eyJhbXBob3JhLW1vZGVsLWNhcmQtYXV0aG9yaXR5L3JlZmVyZW5jZS9tdnAyMC9vdXQvdmFsaWRhdGlvbl9jYXJkcy5qc29uIjoiYmVhNGJhODBjZGNkNjk0MTg5YjcxMjM0NDg2NDRlYzg0MmVhOWI3NjNhODBhMjJjYTJmZWFmNTZlYzI2ZGE0MiIsImNvbmZpZy9iZW5jaG1hcmstbG9jay52MS5qc29uIjoiMTdiMGE0OTA0OWUzYmNkYjA5MGE2YWEwMDQzYzBkMjIxYzMzYjZiODEyOGVlMjY0ZTE1YTcwNDdlNGZkZjllOSIsIm1vZHVsZS1tYW5pZmVzdC5qc29uIjoiYmU2ZDNlODAyM2MxN2E3NzlkODUwM2YzYmZjZmIxNWIwMDIwZDVlYzVjNzY4Yzk3OTEwMTNmZjQxMzRlZDZiNyJ9LCJiZW5jaG1hcmtfbG9ja19oYXNoIjoiMTdiMGE0OTA0OWUzYmNkYjA5MGE2YWEwMDQzYzBkMjIxYzMzYjZiODEyOGVlMjY0ZTE1YTcwNDdlNGZkZjllOSIsImNsYWltX2xvY2tzIjp7ImF1dGhvcml0eV9yZWdpc3RyeV9pc19iaW5kaW5nIjp0cnVlLCJmYWlsZWRfY2FyZHNfY2Fubm90X3JhbmsiOnRydWUsIm5vX3BoYXNlXzFfb3JfcGhhc2VfMl9jbGFpbSI6dHJ1ZSwibm9fcHJvZHVjdF9yZWxlYXNlX29yX3F1YWxpZmljYXRpb24iOnRydWUsIm5vX3N1cGVyaW9yaXR5X2NsYWltIjp0cnVlLCJwcmVfcGhhc2VfMF9yZXNlYXJjaF9vbmx5Ijp0cnVlLCJ1bnJlc29sdmVkX3JpZ2h0c19xdWFyYW50aW5lZCI6dHJ1ZX0sImNvbmZpZGVuY2VfaW50ZXJ2YWxzIjp7fSwiZGVjaXNpb25fdXNlX2NlaWxpbmciOiJDT05TVFJBSU5UX09OTFkiLCJldmlkZW5jZV90aWVyIjoiU1lOVEhFVElDX0RJQUdOT1NUSUMiLCJtZXRyaWNzIjp7ImNvbW1hbmQiOiJiZW5jaG1hcmsgcnVuIC0tbG9ja2VkIC0tYWxsIiwiZGV0YWlscyI6eyJhcnRpZmFjdF9oYXNoX21hdGNoIjp0cnVlLCJjdXJyZW50X2JlbmNobWFya19zdGF0dXMiOiJOT19DSEVDS0VEX0JFTkNITUFSS19SRVNVTFQiLCJsb2NrZWRfZ2F0ZV9wYXNzZWQiOnRydWUsIm9ic2VydmF0aW9ucyI6W10sIm9wZXJhdGlvbmFsX3JlYWRpbmVzcyI6IkNPTVBMRVRFIiwicmFua2luZ19xdWFyYW50aW5lX3ByZXNlcnZlZCI6dHJ1ZSwicmVnaXN0cnlfaWRlbnRpdHlfbWF0Y2giOnRydWUsInJlcG9ydGVkX3Jlc3VsdF9zdGF0dXMiOm51bGx9LCJzb3VyY2VfZ2VuZXNpc19oYXNoIjoiZmVmZjlmYWMyZTBlMmMzMjQ2MGRjZjExOGQ2ZTdjYzAyMWFkNWM3NWJiNWM1MWU0NTYyN2JmMTFhOTdmMTc4YiJ9LCJtb2R1bGVfaWQiOiJhbXBob3JhLW1vZGVsLWNhcmQtYXV0aG9yaXR5IiwicGFzc2VkIjp0cnVlLCJyZWNlaXB0X2lkIjoicmVjZWlwdC1kYWY4MjJjNTUyMDUyY2I1MmNmMjliNDkiLCJyZWdpc3RyeV9tYW5pZmVzdF9oYXNoIjoiYmU2ZDNlODAyM2MxN2E3NzlkODUwM2YzYmZjZmIxNWIwMDIwZDVlYzVjNzY4Yzk3OTEwMTNmZjQxMzRlZDZiNyIsInJlZ2lzdHJ5X293bmVkX2lkZW50aXR5Ijp0cnVlLCJzY2hlbWEiOiJhbXBob3JhLmV2YWx1YXRpb24tcmVjZWlwdC52MSJ9",
+        "payloadType": "application/vnd.amphora.evaluation-receipt.v1+json",
+        "signatures": [
+          {
+            "keyid": "local-9028773f49591193",
+            "sig": "EkedKYtXTkvdxJSigOGNLJ1vBG2QRtFOrbeTjG1OUQKgerDzqomlY3/BaeKps2nrmZkqMb3uItjQxGyq8+QhCw=="
+          }
+        ]
+      }
+    },
+    "diagnostic_sha256": "8419a8544965873a4857a1f18211d2cda82cc0db3b36dd688500c3860bb3ffe2",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "legacy_local_receipt_authority": "NONE",
+  "module_id": "amphora-model-card-authority",
+  "replay_identical": true,
+  "schema": "amphora.module-phase0-benchmark-result.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "second_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-model-card-authority/reference/mvp20/out/validation_cards.json": "bea4ba80cdcd694189b7123448644ec842ea9b763a80a22ca2feaf56ec26da42",
+        "config/benchmark-lock.v1.json": "17b0a49049e3bcdb090a6aa0043c0d221c33b6b8128ee264e15a7047e4fdf9e9",
+        "module-manifest.json": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7"
+      },
+      "benchmark_lock_hash": "17b0a49049e3bcdb090a6aa0043c0d221c33b6b8128ee264e15a7047e4fdf9e9",
+      "claim_locks": {
+        "authority_registry_is_binding": true,
+        "failed_cards_cannot_rank": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "CONSTRAINT_ONLY",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+          "locked_gate_passed": true,
+          "observations": [],
+          "operational_readiness": "COMPLETE",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": null
+        },
+        "source_genesis_hash": "feff9fac2e0e2c32460dcf118d6e7cc021ad5c75bb5c51e45627bf11a97f178b"
+      },
+      "module_id": "amphora-model-card-authority",
+      "passed": true,
+      "receipt_id": "receipt-daf822c552052cb52cf29b49",
+      "registry_manifest_hash": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1",
+      "signature": {
+        "payload": "eyJhcHBsaWNhYmlsaXR5X2xpbWl0cyI6WyJzb2x2ZW50LWJvcm5lIHR3by1jb21wb25lbnQgZXBveHktcG9seWFtaWRlIG1hcmluZSBjb2F0aW5ncyIsImRpZ2l0YWwgZXZpZGVuY2Ugb25seTsgbm8gcHJvZHVjdCBxdWFsaWZpY2F0aW9uIG9yIHN1cGVyaW9yaXR5IGNsYWltIl0sImFydGlmYWN0X2hhc2hlcyI6eyJhbXBob3JhLW1vZGVsLWNhcmQtYXV0aG9yaXR5L3JlZmVyZW5jZS9tdnAyMC9vdXQvdmFsaWRhdGlvbl9jYXJkcy5qc29uIjoiYmVhNGJhODBjZGNkNjk0MTg5YjcxMjM0NDg2NDRlYzg0MmVhOWI3NjNhODBhMjJjYTJmZWFmNTZlYzI2ZGE0MiIsImNvbmZpZy9iZW5jaG1hcmstbG9jay52MS5qc29uIjoiMTdiMGE0OTA0OWUzYmNkYjA5MGE2YWEwMDQzYzBkMjIxYzMzYjZiODEyOGVlMjY0ZTE1YTcwNDdlNGZkZjllOSIsIm1vZHVsZS1tYW5pZmVzdC5qc29uIjoiYmU2ZDNlODAyM2MxN2E3NzlkODUwM2YzYmZjZmIxNWIwMDIwZDVlYzVjNzY4Yzk3OTEwMTNmZjQxMzRlZDZiNyJ9LCJiZW5jaG1hcmtfbG9ja19oYXNoIjoiMTdiMGE0OTA0OWUzYmNkYjA5MGE2YWEwMDQzYzBkMjIxYzMzYjZiODEyOGVlMjY0ZTE1YTcwNDdlNGZkZjllOSIsImNsYWltX2xvY2tzIjp7ImF1dGhvcml0eV9yZWdpc3RyeV9pc19iaW5kaW5nIjp0cnVlLCJmYWlsZWRfY2FyZHNfY2Fubm90X3JhbmsiOnRydWUsIm5vX3BoYXNlXzFfb3JfcGhhc2VfMl9jbGFpbSI6dHJ1ZSwibm9fcHJvZHVjdF9yZWxlYXNlX29yX3F1YWxpZmljYXRpb24iOnRydWUsIm5vX3N1cGVyaW9yaXR5X2NsYWltIjp0cnVlLCJwcmVfcGhhc2VfMF9yZXNlYXJjaF9vbmx5Ijp0cnVlLCJ1bnJlc29sdmVkX3JpZ2h0c19xdWFyYW50aW5lZCI6dHJ1ZX0sImNvbmZpZGVuY2VfaW50ZXJ2YWxzIjp7fSwiZGVjaXNpb25fdXNlX2NlaWxpbmciOiJDT05TVFJBSU5UX09OTFkiLCJldmlkZW5jZV90aWVyIjoiU1lOVEhFVElDX0RJQUdOT1NUSUMiLCJtZXRyaWNzIjp7ImNvbW1hbmQiOiJiZW5jaG1hcmsgcnVuIC0tbG9ja2VkIC0tYWxsIiwiZGV0YWlscyI6eyJhcnRpZmFjdF9oYXNoX21hdGNoIjp0cnVlLCJjdXJyZW50X2JlbmNobWFya19zdGF0dXMiOiJOT19DSEVDS0VEX0JFTkNITUFSS19SRVNVTFQiLCJsb2NrZWRfZ2F0ZV9wYXNzZWQiOnRydWUsIm9ic2VydmF0aW9ucyI6W10sIm9wZXJhdGlvbmFsX3JlYWRpbmVzcyI6IkNPTVBMRVRFIiwicmFua2luZ19xdWFyYW50aW5lX3ByZXNlcnZlZCI6dHJ1ZSwicmVnaXN0cnlfaWRlbnRpdHlfbWF0Y2giOnRydWUsInJlcG9ydGVkX3Jlc3VsdF9zdGF0dXMiOm51bGx9LCJzb3VyY2VfZ2VuZXNpc19oYXNoIjoiZmVmZjlmYWMyZTBlMmMzMjQ2MGRjZjExOGQ2ZTdjYzAyMWFkNWM3NWJiNWM1MWU0NTYyN2JmMTFhOTdmMTc4YiJ9LCJtb2R1bGVfaWQiOiJhbXBob3JhLW1vZGVsLWNhcmQtYXV0aG9yaXR5IiwicGFzc2VkIjp0cnVlLCJyZWNlaXB0X2lkIjoicmVjZWlwdC1kYWY4MjJjNTUyMDUyY2I1MmNmMjliNDkiLCJyZWdpc3RyeV9tYW5pZmVzdF9oYXNoIjoiYmU2ZDNlODAyM2MxN2E3NzlkODUwM2YzYmZjZmIxNWIwMDIwZDVlYzVjNzY4Yzk3OTEwMTNmZjQxMzRlZDZiNyIsInJlZ2lzdHJ5X293bmVkX2lkZW50aXR5Ijp0cnVlLCJzY2hlbWEiOiJhbXBob3JhLmV2YWx1YXRpb24tcmVjZWlwdC52MSJ9",
+        "payloadType": "application/vnd.amphora.evaluation-receipt.v1+json",
+        "signatures": [
+          {
+            "keyid": "local-9028773f49591193",
+            "sig": "EkedKYtXTkvdxJSigOGNLJ1vBG2QRtFOrbeTjG1OUQKgerDzqomlY3/BaeKps2nrmZkqMb3uItjQxGyq8+QhCw=="
+          }
+        ]
+      }
+    },
+    "diagnostic_sha256": "8419a8544965873a4857a1f18211d2cda82cc0db3b36dd688500c3860bb3ffe2",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

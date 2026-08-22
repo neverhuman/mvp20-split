@@ -1,0 +1,12 @@
+{
+  "applicability_domain": [
+    "registered amphora-formulation-universe contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_contract_sha256": "0c851a545a5ea04026a53854e1392a94fd4fb5a642101a9f00ea055dc6bab514",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-formulation-universe",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

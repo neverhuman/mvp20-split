@@ -1,0 +1,11 @@
+{
+  "schema": "amphora.source-ledger.repair-state.t-14.v1",
+  "campaign_item_id": "T-14",
+  "fire_1": {
+    "fire_id": "20260806T060004-1759100-014e4df6ef86",
+    "status": "complete",
+    "outcome": "CLAIM_REFUTED",
+    "summary": "Sampled 12 real citations from facts.json (>=10 required), verified substantively against fetched source content. 10/12 fully support the cited value at the stated locator; 1/12 (barytes) cites only an approximate rounded marketing value where a precise point value is asserted; 1/12 (xylene SDS) does not resolve under automated verification (Cloudflare bot-wall, HTTP 403) despite the runtime treating it as cited. Independently re-derived the exact evaluate_source_ledger gate logic in Python (bit-exact match to real baseline: 83/23/9/14/0/162/0), then ran it against three planted defects: (A) a load-bearing citation swapped to a resolving-but-non-supporting URL, (B) a load-bearing citation swapped to a non-existent domain, (C) a fully-populated-but-semantically-garbage source record appended. All three slipped through undetected -- uncited_constants_rejected stayed true and incomplete_source_record_count stayed 0 in every case. This satisfies the founder directive T2-14 refutation_criterion (resolving-but-non-supporting citation accepted as support)."
+  },
+  "next_fire_if_any": "Not needed -- done_criterion met on fire 1."
+}

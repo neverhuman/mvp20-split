@@ -1,0 +1,81 @@
+{
+  "H0": "mission.md/capability-profile.json's pinned source-hash and benchmark-receipt-hash currently identify the real live files.",
+  "H0_verdict": "REFUTED",
+  "asserted_pins": {
+    "capability_profile_lib_rs_pins": [
+      "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+    ],
+    "mission_md_lib_rs_pins": [
+      "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+    ],
+    "mission_md_result_json_pins": [
+      "bbd8a9675d78bb65d1dfee9209b441bb5cb3ec4c28e2871cf8febf0f7168eec3"
+    ]
+  },
+  "behavior_scoping": {
+    "evaluate_ip_fto_guard_fn_slice_sha256_by_commit": {
+      "284e04bee5a3": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+      "779ec69d3946": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+      "907e75360f2c": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+      "bf7336f22ac5": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a"
+    },
+    "evaluate_ip_fto_guard_fn_slice_sha256_live": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+    "fn_slice_byte_identical_across_full_tracked_history_and_live": true,
+    "interpretation": "The file-level SHA-256 pin has drifted repeatedly (new commits added CroProtocolPackageV2 blueprint-citation logic and other unrelated capabilities), but evaluate_ip_fto_guard's own function body has been byte-identical across the ENTIRE tracked git history and the current working tree: this is a documentation-pin staleness defect, not an undisclosed change to ip-fto-guard's tested behavior."
+  },
+  "consistency_checks": {
+    "capability_profile_lib_pin_matches_live": false,
+    "mission_lib_pin_matches_live": false,
+    "mission_result_pin_matches_live": false
+  },
+  "git_history": {
+    "commit_count": 4,
+    "full_history_all_commits_for_this_file": [
+      {
+        "commit": "907e75360f2c5698b99934c2bee61bdc462e3825",
+        "date": "2026-08-03T23:23:44+00:00",
+        "evaluate_ip_fto_guard_fn_sha256": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+        "lib_rs_sha256": "f7df7055e0488289fdf2976a8a6a5f80d24eb07eab550a595dba6fa945cbe827"
+      },
+      {
+        "commit": "284e04bee5a3a330808af3f2b06d78479899ea2d",
+        "date": "2026-08-05T16:30:01+00:00",
+        "evaluate_ip_fto_guard_fn_sha256": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+        "lib_rs_sha256": "d80e09105f43c25ebf0851460c54d49246d3906056f3dbce2b6ff3a78469b7ca"
+      },
+      {
+        "commit": "779ec69d39466698ad0653e904dbb3c27eedb95c",
+        "date": "2026-08-06T07:30:02+00:00",
+        "evaluate_ip_fto_guard_fn_sha256": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+        "lib_rs_sha256": "ae46b34766f092ddd332fa617a4348c3fda5e0c2b014f54a1662004c73ae7b5d"
+      },
+      {
+        "commit": "bf7336f22ac5288105130346bd7beb69984c1b24",
+        "date": "2026-08-11T17:30:01+00:00",
+        "evaluate_ip_fto_guard_fn_sha256": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+        "lib_rs_sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
+      }
+    ],
+    "mission_lib_pin_ever_matched_a_commit": false
+  },
+  "headline": "H0 'mission.md/capability-profile.json's checked-in SHA-256 pin for amphora-assurance-capabilities/src/lib.rs currently identifies the real live file' is REFUTED: live sha256 is 0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d, mission.md/capability-profile.json assert ['c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d'], and that asserted value never matched ANY commit across the file's full git-tracked history (mission_lib_pin_ever_matched_a_commit=False). The R-B01 repair receipt (2026-08-03) itself already flagged this exact pin as 'already stale before this repair' and recorded a maintainer follow-up in amphora-assurance-capabilities/evidence/phase0/kpis/RETRACTION-INDEX.md that was never performed. The benchmark receipt pin (result.v1.json) is separately stale: mission.md asserts ['bbd8a9675d78bb65d1dfee9209b441bb5cb3ec4c28e2871cf8febf0f7168eec3'], live file is a6cb423d8858421e4b0e8c96de063da7eaaa97916a1da71523ffaae2788b6a77 (matches the R-B01 retraction index's own recorded post-repair value).",
+  "inputs": {
+    "capability_profile_path": "amphora-ip-fto-guard/docs/capability-profile.json",
+    "lib_rs_path": "amphora-assurance-capabilities/src/lib.rs",
+    "mission_md_path": "amphora-ip-fto-guard/docs/mission.md",
+    "result_json_path": "amphora-ip-fto-guard/evidence/phase0/benchmark/result.v1.json"
+  },
+  "known_prior_acknowledgement": {
+    "days_since_acknowledged_and_unfixed": "2026-08-03 to 2026-08-16 (13 days)",
+    "field": "known_stale_prose_pins_not_modified",
+    "quote": "docs/mission.md prose pins lib.rs sha256 c0b2540f... (already stale before this repair; flagged non-load-bearing by metric-schema-parity-v1) and result.v1.json sha256 bbd8a967... (stale as of this repair). mission.md was deliberately left untouched: R-B01 scope does not authorize mission prose edits; maintainer follow-up recorded in RETRACTION-INDEX.md.",
+    "source": "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+  },
+  "live_hashes": {
+    "evaluate_ip_fto_guard_fn_slice_sha256": "6df48f94d5fb3da18b90bbeb8eaef1a4bd2f2821c44bebda16986f16f5183a3a",
+    "lib_rs_sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
+    "result_v1_json_sha256": "a6cb423d8858421e4b0e8c96de063da7eaaa97916a1da71523ffaae2788b6a77"
+  },
+  "purpose": "Determine whether the module's checked-in documentation pins for its own 'live checked implementation' and benchmark receipt currently identify the real files on disk, and if not, whether the drift reflects an actual behavior change in evaluate_ip_fto_guard or only unrelated edits elsewhere in the shared crate file.",
+  "study_id": "IP_FTO_GUARD_PINNED_SOURCE_HASH_INTEGRITY_V1"
+}

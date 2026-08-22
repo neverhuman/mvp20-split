@@ -1,0 +1,35 @@
+{
+  "exact_match_coverage": {
+    "exact_match_coverage_rate": 0.8336,
+    "exact_match_row_count": 637701,
+    "numeric_row_count": 764969
+  },
+  "generated_at": "2026-07-10T20:51:29Z",
+  "manifest_hash": "6af21c2a58127f217b71cfdd9f25107fc1a7935c5d434e2f6ae725a8cae37685",
+  "nearest_neighbor_baseline": {
+    "evaluated_row_count": 1400,
+    "mean_absolute_delta": 291.039779,
+    "median_absolute_delta": 34.864206
+  },
+  "property_family_counts": {
+    "electronic": 331839,
+    "mechanical": 61136,
+    "physical": 4262,
+    "polymer_property": 233947,
+    "synthesizability": 127064,
+    "thermal": 72774,
+    "transport": 5749
+  },
+  "schema_version": "amphora.feedback_v1.property_benchmark.v1",
+  "source_ids": [
+    "omg_physical_properties",
+    "omg_public_zips",
+    "openpoly_benchmark",
+    "pi1m_v2",
+    "point2_metadata",
+    "polyuniverse_epoxy",
+    "polyverse_selected",
+    "radonpy_pi1070"
+  ],
+  "total_corpus_rows": 836771
+}

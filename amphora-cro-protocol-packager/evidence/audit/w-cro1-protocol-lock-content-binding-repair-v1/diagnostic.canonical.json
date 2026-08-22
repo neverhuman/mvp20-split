@@ -1,0 +1,247 @@
+{
+  "acceptance_check": "Re-run T-02's own probe file, byte-unmodified (verified by sha256 equality against T-02's recorded harness_rs_sha256), against the repaired runtime. Compare every one of T-02's 19 directive probes and 16 encoding/path combinations against T-02's recorded results: all must be identical EXCEPT the directive_d threshold-injection probe, which must flip from fail_closed=false/accepted=true to fail_closed=true/accepted=false.",
+  "campaign_item_id": "W-CRO1",
+  "cargo_test_crate_command": "cargo test -p amphora-assurance-capabilities --offline",
+  "cargo_test_crate_green": true,
+  "cargo_test_workspace_command": "cargo test --workspace --offline",
+  "cargo_test_workspace_green": true,
+  "claim_under_attack": "amphora-cro-protocol-packager campaign item W-CRO1 claim: 'No packet-authored performance or decision threshold is honoured by the packager.' T-02 refuted this by showing locked_numeric_thresholds + a content-undereived protocol_lock_sha256 is accepted end-to-end. This receipt attacks the REPAIR: does the content-bound protocol_lock_sha256 check now withstand T-02's exact attack, with no regression on the other 34 probes T-02 recorded?",
+  "directive_context": {
+    "directive_obligation_repaired": "T2-02",
+    "directive_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+    "directive_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+    "directive_sha256_verified_now": true,
+    "note": "W-CRO1's campaign item JSON carries no directive_ref field of its own; it repairs the defect T-02 found under founder directive obligation T2-02. Cited for provenance only, not as a claimed directive_ref of this item."
+  },
+  "does_not_close": [
+    "As T-02 noted, no live production or CLI code path reads locked_numeric_thresholds/protocol_lock_sha256 to make a decision today. This repair closes the signed-packet contract's own acceptance gap (a packet-authored threshold can no longer acquire an unearned content-binding), not a live consumer decision -- because no live consumer of this field exists yet.",
+    "This receipt exercises the Rust runtime only (CroProtocolPackageV2 in amphora-assurance-capabilities). It does not re-probe amphora-cli's invocation surface."
+  ],
+  "encoding_table_byte_identical_to_t02": true,
+  "evading_vector_post_repair": {
+    "fail_closed": true,
+    "group": "directive_d_packet_authored_threshold",
+    "injected_threshold_key": "attacker_pass_fail_yield_strength_min_mpa",
+    "injected_threshold_value": 9999.0,
+    "packet_authored_threshold_accepted": false,
+    "packet_id_recomputed_after_mutation": true,
+    "path": "locked_numeric_thresholds/protocol_lock_sha256",
+    "positive_control_missing_lock_hash_rejected": true,
+    "probe": "attacker_threshold_with_undereived_protocol_lock_hash",
+    "protocol_lock_sha256_is_content_derived": false,
+    "protocol_lock_sha256_used": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sign_ok": false,
+    "validate_ok": false,
+    "verify_signature_ok": false
+  },
+  "evading_vector_pre_repair": {
+    "fail_closed": false,
+    "group": "directive_d_packet_authored_threshold",
+    "injected_threshold_key": "attacker_pass_fail_yield_strength_min_mpa",
+    "injected_threshold_value": 9999.0,
+    "packet_authored_threshold_accepted": true,
+    "packet_id_recomputed_after_mutation": true,
+    "path": "locked_numeric_thresholds/protocol_lock_sha256",
+    "positive_control_missing_lock_hash_rejected": true,
+    "probe": "attacker_threshold_with_undereived_protocol_lock_hash",
+    "protocol_lock_sha256_is_content_derived": false,
+    "protocol_lock_sha256_used": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sign_ok": true,
+    "validate_ok": true,
+    "verify_signature_ok": true
+  },
+  "harness_byte_identical_to_t02": true,
+  "harness_rs_sha256": "7d3959863564d7a8fd04abb15e66bd9e74db6fea182d97f9fc6066ef364f3c01",
+  "module": "amphora-cro-protocol-packager",
+  "n_probes_compared": 20,
+  "n_regressions": 0,
+  "non_circularity": "Uses the REAL compiled amphora-assurance-capabilities crate's CroProtocolPackageV2::validate/sign/verify_signature after the source repair, invoked from T-02's own unmodified Rust #[test] integration test, compiled and run via `cargo test -p amphora-assurance-capabilities --offline`. Not a Python re-implementation.",
+  "positive_control": {
+    "detected": true,
+    "evidence": "post-repair directive_d probe: validate_ok=False, sign_ok=False, verify_signature_ok=False, packet_authored_threshold_accepted=False, fail_closed=True (pre-repair T-02 recorded: packet_authored_threshold_accepted=True, fail_closed=False). CroProtocolPackageV2::validate() now returns Err(Binding) because protocol_lock_sha256 != computed_protocol_lock_sha256().",
+    "how_planted": "amphora-assurance-capabilities/tests/cro_protocol_packager_t02_adversarial_probe.rs directive (d) block: p.locked_numeric_thresholds.insert(\"attacker_pass_fail_yield_strength_min_mpa\", 9999.0); p.protocol_lock_sha256 = Some(\"a\".repeat(64)); p.packet_id = p.computed_packet_id().unwrap(); then validate()/sign()/verify_signature() attempted end-to-end -- byte-identical construction T-02 used to obtain packet_authored_threshold_accepted=true pre-repair.",
+    "planted_defect": "protocol_lock_sha256 set to the literal string 'a' repeated 64 times (format-valid 64-lowercase-hex) while locked_numeric_thresholds contains {'attacker_pass_fail_yield_strength_min_mpa': 9999.0} -- the hash is NEVER computed from that map's content."
+  },
+  "pre_repair_lib_rs_sha256": "d80e09105f43c25ebf0851460c54d49246d3906056f3dbce2b6ff3a78469b7ca",
+  "probe_stdout_sha256": "43bba2ec80a6f2d4006e592cf13e6cff9befaffaede80d78c651022012f5268d",
+  "refutation_criterion_observed_post_repair": false,
+  "refutation_criterion_verbatim": "Any mutation verifies, any lock is bypassable, or a packet-authored threshold is accepted.",
+  "regression_table": [
+    {
+      "group": "directive_a_execution_authorized_true",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "execution_authorized_flipped_true",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "stripped_NO_EXECUTION_AUTHORITY",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "nulled_NO_EXECUTION_AUTHORITY",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "stripped_NO_PROCUREMENT_AUTHORITY",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "nulled_NO_PROCUREMENT_AUTHORITY",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "stripped_NO_SAFETY_CLAIM",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "nulled_NO_SAFETY_CLAIM",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "stripped_NO_SYNTHESIS_CLAIM",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "nulled_NO_SYNTHESIS_CLAIM",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "stripped_NO_PERFORMANCE_CLAIM",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "nulled_NO_PERFORMANCE_CLAIM",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "stripped_NO_QUALIFICATION_CLAIM",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "nulled_NO_QUALIFICATION_CLAIM",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "stripped_NO_RANKING_AUTHORITY",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "nulled_NO_RANKING_AUTHORITY",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "stripped_UNMADE_DIGITAL_PROPOSAL",
+      "regression": false
+    },
+    {
+      "group": "directive_b_strip_or_null_claim_locks",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "nulled_UNMADE_DIGITAL_PROPOSAL",
+      "regression": false
+    },
+    {
+      "group": "directive_c_one_byte_mutation",
+      "identical_to_t02_recorded": true,
+      "post_repair_fail_closed": true,
+      "pre_repair_fail_closed": true,
+      "probe": "signed_packet_payload_one_byte_flip",
+      "regression": false
+    },
+    {
+      "changed_as_expected": true,
+      "group": "directive_d_packet_authored_threshold",
+      "post_repair_accepted": false,
+      "post_repair_fail_closed": true,
+      "post_repair_sign_ok": false,
+      "post_repair_validate_ok": false,
+      "post_repair_verify_signature_ok": false,
+      "pre_repair_accepted": true,
+      "pre_repair_fail_closed": false,
+      "pre_repair_sign_ok": true,
+      "pre_repair_validate_ok": true,
+      "pre_repair_verify_signature_ok": true,
+      "probe": "attacker_threshold_with_undereived_protocol_lock_hash",
+      "regression": false
+    }
+  ],
+  "repair_description": "amphora-assurance-capabilities/src/lib.rs: CroProtocolPackageV2::validate() Binding match arm now requires protocol_lock_sha256 == computed_protocol_lock_sha256() (new pub fn: SHA-256 over canonicalize(serde_json::to_value(&self.locked_numeric_thresholds)), the same stable_hash() construction candidate_sha256/formula_sha256 already use elsewhere in this struct) whenever locked_numeric_thresholds is non-empty. A format-valid-but-undereived hash (e.g. 'a'*64) now fails validate() with CroProtocolPackageError::Binding, which propagates through sign() and verify_signature() (both call validate() first).",
+  "repair_of": "T-02",
+  "repair_of_receipt_path": "amphora-cro-protocol-packager/evidence/phase0/repairs/T-02/done/t02-claim-lock-execution-authority-adversarial-receipt.v1.dsse.json",
+  "repair_of_receipt_sha256": "bd3dccf47ad5b7fa75f8033f0960de23c54d9a175333106aeecb5d4eb910efc5",
+  "repair_verified": true,
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.cro-protocol-packager.w-cro1-protocol-lock-content-binding-repair-diagnostic.v1",
+  "source_hashes": {
+    "amphora-assurance-capabilities/Cargo.toml": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea",
+    "amphora-assurance-capabilities/src/lib.rs": "ae46b34766f092ddd332fa617a4348c3fda5e0c2b014f54a1662004c73ae7b5d"
+  },
+  "study_id": "amphora-cro-protocol-packager-w-cro1-protocol-lock-content-binding-repair-v1",
+  "t02_recorded_harness_rs_sha256": "7d3959863564d7a8fd04abb15e66bd9e74db6fea182d97f9fc6066ef364f3c01",
+  "theory_reference": "Saltzer & Schroeder (1975) 'The Protection of Information in Computer Systems' Proceedings of the IEEE 63(9):1278-1308 -- complete mediation requires every field that participates in a trust decision to be independently authenticated. NIST FIPS 180-4 (2015) SHA-256 -- a hash is only a binding if the verifier recomputes and compares it against the bound content.",
+  "two_replay_byte_identical": true,
+  "verdict": "CLAIM_SURVIVED"
+}

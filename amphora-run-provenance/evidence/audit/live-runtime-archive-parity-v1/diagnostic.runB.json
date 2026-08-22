@@ -1,0 +1,578 @@
+{
+  "authority": "AUDIT_ONLY",
+  "closes": "FIRST live Rust runtime execution for amphora-run-provenance: live re-exec parity of RunArchive create/append/snapshot/final_state + verify_run against the independent CPython oracle (all hashes bit-exact across 7 scenarios), full live RunArchiveError taxonomy (5/5 variants, 11/11 probes as predicted, incl. the Json-vs-Contract strict-parse split), per-surface representation-binding matrix (H0a refuted: strict wall on 1/5 surfaces, 2/2 parser differentials vs RFC 8785), interior-chain verification semantics (H0b refuted: interior Haber-Stornetta linkage attested, not re-verified; oracle strictly stronger 2/2), and a live-ground-truth audit of the signed 2026 parity receipt (H0c refuted: its Python mirror wrote insertion-order bytes where the runtime key-sorts; divergence 100% localized by exact reconstruction, its algorithmic claims unaffected).",
+  "counts": {
+    "g1_field_parity_checks": 56,
+    "g1_field_parity_pass": 56,
+    "g1_interior_chain_events_bit_exact": 32,
+    "g1_interior_chain_events_recomputed": 32,
+    "g1_scenarios": 7,
+    "g1b_differential_checks": 27,
+    "g1b_differential_pass": 27,
+    "g1b_legacy_scenarios": 3,
+    "g2_error_variants_covered": 5,
+    "g2_predicted_equals_observed": 20,
+    "g2_probes": 20,
+    "g3_byte_malleable_surfaces": 3,
+    "g3_parser_differentials_demonstrated": 2,
+    "g3_strict_parse_wall_surfaces": 1,
+    "g3_surfaces": 5,
+    "g4_forged_interior_mismatches_detected_by_oracle": 2
+  },
+  "does_not_close": [
+    "Does NOT change the shipped scheme, the pinned signature_status, or promotion_receipt_eligible; the representational-malleability and interior-linkage findings are verifier-completeness facts, not defects against the module's byte-identical-replay claim.",
+    "Does NOT withdraw or re-sign the 2026 hash-chain-oracle-parity-v1 receipt: its algorithmic and G0 shipped-anchor claims stand; only its byte-format-fidelity sentence and example archive hashes are superseded by this live ground truth (erratum recorded here, original receipt left untouched).",
+    "Does NOT constitute the Phase-1 controlled-key signing pipeline (anchor-necessity receipt) nor an external witness/gossip protocol (Crosby-Wallach).",
+    "Phase-1 hardening derived from this study: (a) verify interior event_hash linkage at verify time (Crosby-Wallach full-link verification), (b) parse ALL surfaces with parse_json_strict or bind container/final-state/snapshot bytes by raw hash to eliminate the 2 demonstrated parser differentials and the snapshot blind spot.",
+    "Grants no batch-release, manufacturing-qualification, regulatory, safety, or product-performance authority. Does not promote the module or flip scientific_readiness."
+  ],
+  "g1_live_positive_scenarios": [
+    {
+      "field_parity": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "promotion_receipt_eligible_pinned_false": true,
+        "root_hash": true,
+        "signature_status_pinned": true,
+        "verify_run_returned_derived_root": true
+      },
+      "interior_chain_recompute_ok": true,
+      "live_root_hash": "282028701196e532efaabf7051edbab3d01f7c7f4720c10a47fe2fa65b32600a",
+      "live_verify_result": "Ok",
+      "n_events": 0,
+      "oracle_derived_fields": {
+        "event_chain_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "final_state_hash": "cc8f08c6b069986299de68aa637517c49068825a7bef0f0b5bfb66e1cf4af555",
+        "manifest_sha256": "99eed2055148c3c298f28f024334590c205a4010139957e099bb6a1ed3cf0d0c",
+        "run_id": "phase0-kpi-empty"
+      },
+      "oracle_derived_root_hash": "282028701196e532efaabf7051edbab3d01f7c7f4720c10a47fe2fa65b32600a",
+      "run_id": "phase0-kpi-empty",
+      "scenario_id": "empty"
+    },
+    {
+      "field_parity": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "promotion_receipt_eligible_pinned_false": true,
+        "root_hash": true,
+        "signature_status_pinned": true,
+        "verify_run_returned_derived_root": true
+      },
+      "interior_chain_recompute_ok": true,
+      "live_root_hash": "c1f39125ef58cafa2517539e91039920d74cb3a05e0165014d50c2257dd8b907",
+      "live_verify_result": "Ok",
+      "n_events": 3,
+      "oracle_derived_fields": {
+        "event_chain_root": "fe680cbdd93717890dad374b33de65ae08e6a2098721dfdf6780543688740bc8",
+        "events_sha256": "3bb21cab6c65fe4eefa0737f51b89c5278459a0314ad234014dc666f569cabe7",
+        "final_state_hash": "231dfa07e93bb19e9e2608eaafcc90a549ffd5c2dfcb87f44ad82bec3c28d197",
+        "manifest_sha256": "d9147b0b2ce0b087a10b6c168d3b658a40fab6e9b416a1aefbc2ad2fbb096bdc",
+        "run_id": "phase0-kpi-small"
+      },
+      "oracle_derived_root_hash": "c1f39125ef58cafa2517539e91039920d74cb3a05e0165014d50c2257dd8b907",
+      "run_id": "phase0-kpi-small",
+      "scenario_id": "small"
+    },
+    {
+      "field_parity": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "promotion_receipt_eligible_pinned_false": true,
+        "root_hash": true,
+        "signature_status_pinned": true,
+        "verify_run_returned_derived_root": true
+      },
+      "interior_chain_recompute_ok": true,
+      "live_root_hash": "ccd1b35d5d25a8d860b3bb893299a1de49967117ae0c14fcbebd6ac1784139a2",
+      "live_verify_result": "Ok",
+      "n_events": 12,
+      "oracle_derived_fields": {
+        "event_chain_root": "98f3a4fec56a9cc75b8256978de417c18f0f1b0de516f9fa30ea18cb1152309f",
+        "events_sha256": "edf82fdb17710fe4f896254a3655e85e193796e773c34d6650ddef6329a51521",
+        "final_state_hash": "6dc985741be495be849d4cd081d34752571885181e2b5148b23ddb835bba1630",
+        "manifest_sha256": "262e174147430a8c2005863361d2082feb6e3a300658e7eb8e195dd6d0f625f4",
+        "run_id": "phase0-kpi-complex"
+      },
+      "oracle_derived_root_hash": "ccd1b35d5d25a8d860b3bb893299a1de49967117ae0c14fcbebd6ac1784139a2",
+      "run_id": "phase0-kpi-complex",
+      "scenario_id": "complex"
+    },
+    {
+      "field_parity": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "promotion_receipt_eligible_pinned_false": true,
+        "root_hash": true,
+        "signature_status_pinned": true,
+        "verify_run_returned_derived_root": true
+      },
+      "interior_chain_recompute_ok": true,
+      "live_root_hash": "0007e5c946d5e08c4259c4a5bc5a904b80ea8bf97ac980f21b4803fc4d847a60",
+      "live_verify_result": "Ok",
+      "n_events": 2,
+      "oracle_derived_fields": {
+        "event_chain_root": "88c5b035cf4dc9d70e1d229a453f0c188046ced63f1e811dd767c594be8301c6",
+        "events_sha256": "44ba17b98e588a35acbc2d59a422ba9e1aea1e98016b530c0af996f542e8e1e9",
+        "final_state_hash": "99b7e73a88e9801ebda111753b98d2789e4f3dc5d9e94b73e037192f53d0eb81",
+        "manifest_sha256": "0c29aadf7f40654cb5668c2d377c73809dbd6e5081e3b24d3f66639f06749ae6",
+        "run_id": "live-unicode-snapshot"
+      },
+      "oracle_derived_root_hash": "0007e5c946d5e08c4259c4a5bc5a904b80ea8bf97ac980f21b4803fc4d847a60",
+      "run_id": "live-unicode-snapshot",
+      "scenario_id": "unicode-float-snapshot"
+    },
+    {
+      "field_parity": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "promotion_receipt_eligible_pinned_false": true,
+        "root_hash": true,
+        "signature_status_pinned": true,
+        "verify_run_returned_derived_root": true
+      },
+      "interior_chain_recompute_ok": true,
+      "live_root_hash": "f4c02167fb7ed7dad56dc2b1f9d0f9afbbe477ae73ebe50f37def461c396ac40",
+      "live_verify_result": "Ok",
+      "n_events": 0,
+      "oracle_derived_fields": {
+        "event_chain_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "final_state_hash": "d0a3d037bb097448d5e092bed4682a7a77a26f3c78322b0bfbb52f24a69bc175",
+        "manifest_sha256": "205e3b99e2bd1f9734a598ac830f8c6b51295cc985e8e2844c3860e7ad7269bb",
+        "run_id": "pos-empty"
+      },
+      "oracle_derived_root_hash": "f4c02167fb7ed7dad56dc2b1f9d0f9afbbe477ae73ebe50f37def461c396ac40",
+      "run_id": "pos-empty",
+      "scenario_id": "legacy-empty"
+    },
+    {
+      "field_parity": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "promotion_receipt_eligible_pinned_false": true,
+        "root_hash": true,
+        "signature_status_pinned": true,
+        "verify_run_returned_derived_root": true
+      },
+      "interior_chain_recompute_ok": true,
+      "live_root_hash": "1c39d7baf89202d94c0fda589ebb1f524455b65d127d0dd4f292e72f21f0c028",
+      "live_verify_result": "Ok",
+      "n_events": 3,
+      "oracle_derived_fields": {
+        "event_chain_root": "4ff236b7f72e6ba883b7107ce2ebe267eb06e701a983ab237e24ccb51ddeda6f",
+        "events_sha256": "2443335e9988a353031e638b4dc4817bb72af4377791c789a97eb8fa88a07707",
+        "final_state_hash": "03d9371cdfcee92f9ea25342a6f6e727e15dbace4ab1d080c0eb0f3e69dba03b",
+        "manifest_sha256": "909cf6f59caa500641ccf3b934bf667546d75a00dd9f515cba9d4ea90be72812",
+        "run_id": "pos-small"
+      },
+      "oracle_derived_root_hash": "1c39d7baf89202d94c0fda589ebb1f524455b65d127d0dd4f292e72f21f0c028",
+      "run_id": "pos-small",
+      "scenario_id": "legacy-small"
+    },
+    {
+      "field_parity": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "promotion_receipt_eligible_pinned_false": true,
+        "root_hash": true,
+        "signature_status_pinned": true,
+        "verify_run_returned_derived_root": true
+      },
+      "interior_chain_recompute_ok": true,
+      "live_root_hash": "71c00810ddc2363ea9ca9216f1c03dc42452f8c8b5646bb69cc5d8dffabe6e0c",
+      "live_verify_result": "Ok",
+      "n_events": 12,
+      "oracle_derived_fields": {
+        "event_chain_root": "aa0877830d04f68310e61eb193898ca262bbe6348b64ee5b195ea0738e79dd62",
+        "events_sha256": "55b6ec7d74bf3b1df21dc576fbd4d9a3c10aa65c3b23932b7502b07ccfb92ed6",
+        "final_state_hash": "5e3aab004c85bc2a63eb248ad439e949f395c7a84f3338b3c8c1139e9c2f5a0d",
+        "manifest_sha256": "97b165107fcffe0a5461917b293617eac898bcd4d0a81a90da1168c6a480310f",
+        "run_id": "pos-complex"
+      },
+      "oracle_derived_root_hash": "71c00810ddc2363ea9ca9216f1c03dc42452f8c8b5646bb69cc5d8dffabe6e0c",
+      "run_id": "pos-complex",
+      "scenario_id": "legacy-complex"
+    }
+  ],
+  "g1b_legacy_mirror_differential": [
+    {
+      "checks": {
+        "live_differs_from_prior_manifest_sha256": true,
+        "live_differs_from_prior_root_hash": true,
+        "live_matches_prior_event_chain_root": true,
+        "live_matches_prior_events_sha256": true,
+        "live_matches_prior_final_state_hash": true,
+        "manifest_value_equality_live_vs_prior_content": true,
+        "reconstructed_insertion_order_events_sha256_equals_prior": true,
+        "reconstructed_insertion_order_manifest_sha256_equals_prior": true,
+        "reconstructed_root_hash_equals_prior": true
+      },
+      "live_root_hash": "f4c02167fb7ed7dad56dc2b1f9d0f9afbbe477ae73ebe50f37def461c396ac40",
+      "n_events": 0,
+      "prior_receipt_root_hash": "e4ec838dd547381714afed4a498c1c472b89a02b675f86f09608814a1ebd31d1",
+      "run_id": "pos-empty",
+      "scenario_id": "legacy-empty"
+    },
+    {
+      "checks": {
+        "live_differs_from_prior_events_sha256": true,
+        "live_differs_from_prior_manifest_sha256": true,
+        "live_differs_from_prior_root_hash": true,
+        "live_matches_prior_event_chain_root": true,
+        "live_matches_prior_final_state_hash": true,
+        "manifest_value_equality_live_vs_prior_content": true,
+        "reconstructed_insertion_order_events_sha256_equals_prior": true,
+        "reconstructed_insertion_order_manifest_sha256_equals_prior": true,
+        "reconstructed_root_hash_equals_prior": true
+      },
+      "live_root_hash": "1c39d7baf89202d94c0fda589ebb1f524455b65d127d0dd4f292e72f21f0c028",
+      "n_events": 3,
+      "prior_receipt_root_hash": "e07e68d5383735278c5d7f2fc63296602f064270311bab78ec471133da935408",
+      "run_id": "pos-small",
+      "scenario_id": "legacy-small"
+    },
+    {
+      "checks": {
+        "live_differs_from_prior_events_sha256": true,
+        "live_differs_from_prior_manifest_sha256": true,
+        "live_differs_from_prior_root_hash": true,
+        "live_matches_prior_event_chain_root": true,
+        "live_matches_prior_final_state_hash": true,
+        "manifest_value_equality_live_vs_prior_content": true,
+        "reconstructed_insertion_order_events_sha256_equals_prior": true,
+        "reconstructed_insertion_order_manifest_sha256_equals_prior": true,
+        "reconstructed_root_hash_equals_prior": true
+      },
+      "live_root_hash": "71c00810ddc2363ea9ca9216f1c03dc42452f8c8b5646bb69cc5d8dffabe6e0c",
+      "n_events": 12,
+      "prior_receipt_root_hash": "a97a538c5a02ee9891f3a1cd300a2cbeda59c347a2948996a956e96359897566",
+      "run_id": "pos-complex",
+      "scenario_id": "legacy-complex"
+    }
+  ],
+  "g2_taxonomy_probes": [
+    {
+      "match": true,
+      "mutation": "generation key duplicated with identical value (semantics-preserving under last-wins)",
+      "observed": "Contract",
+      "predicted": "Contract",
+      "prediction_basis": "events.jsonl goes through parse_json_strict, whose duplicate-key rejection -> ContractError -> Contract",
+      "probe_id": "contract-duplicate-key-event",
+      "surface": "events.jsonl"
+    },
+    {
+      "match": true,
+      "mutation": "first event line truncated to '{\"schema\":'",
+      "observed": "Contract",
+      "predicted": "Contract",
+      "prediction_basis": "syntax errors in events.jsonl are wrapped by parse_json_strict as ContractError::InvalidJson -> Contract (NOT Json)",
+      "probe_id": "contract-truncated-event-line",
+      "surface": "events.jsonl"
+    },
+    {
+      "match": true,
+      "mutation": "RunArchive::create called twice with the same run_id",
+      "observed": "Exists",
+      "predicted": "Exists",
+      "prediction_basis": "create_new semantics: path already exists",
+      "probe_id": "exists-duplicate-create",
+      "surface": "archive directory"
+    },
+    {
+      "match": true,
+      "mutation": "same garbage interior chain, but provenance.event_chain_root set to raw_sha256(empty) which mismatches the last recorded event_hash",
+      "observed": "Integrity",
+      "predicted": "Integrity",
+      "prediction_basis": "event_chain_root equality against the last recorded event_hash IS checked",
+      "probe_id": "forged-chain-root-mismatch",
+      "surface": "events.jsonl interior event_hash fields"
+    },
+    {
+      "match": true,
+      "mutation": "hand-built archive: garbage 64-hex event_hash values never derived from the Haber-Stornetta seed; provenance arithmetically consistent with recorded bytes and recorded (garbage) chain root",
+      "observed": "Ok",
+      "predicted": "Ok",
+      "prediction_basis": "verify_run never recomputes interior event_hash values; it only checks event_chain_root == last RECORDED hash plus file hashes",
+      "probe_id": "forged-interior-chain-consistent-root",
+      "surface": "events.jsonl interior event_hash fields"
+    },
+    {
+      "match": true,
+      "mutation": "single space byte appended",
+      "observed": "Integrity",
+      "predicted": "Integrity",
+      "prediction_basis": "manifest_sha256 raw-byte binding",
+      "probe_id": "integrity-manifest-byte-append",
+      "surface": "manifest.json"
+    },
+    {
+      "match": true,
+      "mutation": "root_hash key removed",
+      "observed": "Integrity",
+      "predicted": "Integrity",
+      "prediction_basis": "explicit 'missing root hash' arm",
+      "probe_id": "integrity-missing-root-hash",
+      "surface": "provenance.json"
+    },
+    {
+      "match": true,
+      "mutation": "second event renumbered sequence 2 -> 3",
+      "observed": "Integrity",
+      "predicted": "Integrity",
+      "prediction_basis": "sequence-contiguity check fires before hash comparison",
+      "probe_id": "integrity-noncontiguous-sequence",
+      "surface": "events.jsonl"
+    },
+    {
+      "match": true,
+      "mutation": "first hex char of root_hash flipped",
+      "observed": "Integrity",
+      "predicted": "Integrity",
+      "prediction_basis": "observed root_hash != stable_hash(expected 5-field seed)",
+      "probe_id": "integrity-root-hash-flip",
+      "surface": "provenance.json"
+    },
+    {
+      "match": true,
+      "mutation": "file deleted",
+      "observed": "Io",
+      "predicted": "Io",
+      "prediction_basis": "fs::read on deleted file",
+      "probe_id": "io-missing-manifest",
+      "surface": "manifest.json"
+    },
+    {
+      "match": true,
+      "mutation": "file deleted",
+      "observed": "Io",
+      "predicted": "Io",
+      "prediction_basis": "fs::read on deleted file (first read in verify_run)",
+      "probe_id": "io-missing-provenance",
+      "surface": "provenance.json"
+    },
+    {
+      "match": true,
+      "mutation": "first event sequence changed from number 1 to string \"1\"",
+      "observed": "Json",
+      "predicted": "Json",
+      "prediction_basis": "parse_json_strict accepts the value; serde from_value(Event) type error -> Json",
+      "probe_id": "json-event-shape-string-sequence",
+      "surface": "events.jsonl"
+    },
+    {
+      "match": true,
+      "mutation": "file replaced with '{invalid' (syntax error, lenient serde path)",
+      "observed": "Json",
+      "predicted": "Json",
+      "prediction_basis": "provenance parsed with LENIENT serde_json::from_slice, so a syntax error surfaces as Json, not Contract",
+      "probe_id": "json-malformed-provenance",
+      "surface": "provenance.json"
+    },
+    {
+      "match": true,
+      "mutation": "first event re-serialized with sorted keys; parsed value identical",
+      "observed": "Integrity",
+      "predicted": "Integrity",
+      "prediction_basis": "events surface is raw-byte-bound via events_sha256; a semantics-preserving re-serialization still fails closed",
+      "probe_id": "surface-events-key-reorder",
+      "surface": "events.jsonl"
+    },
+    {
+      "match": true,
+      "mutation": "outcome key duplicated with identical value; last-wins parse value unchanged",
+      "observed": "Ok",
+      "predicted": "Ok",
+      "prediction_basis": "final-state surface is VALUE-bound (final_state_hash of the lenient last-wins parse); dup key with same value passes",
+      "probe_id": "surface-final-state-duplicate-key",
+      "surface": "final-state.json"
+    },
+    {
+      "match": true,
+      "mutation": "pretty JSON rewritten compact; parsed value identical",
+      "observed": "Ok",
+      "predicted": "Ok",
+      "prediction_basis": "final-state surface is value-bound; bytes are malleable",
+      "probe_id": "surface-final-state-reformat-compact",
+      "surface": "final-state.json"
+    },
+    {
+      "match": true,
+      "mutation": "pretty JSON rewritten compact; parsed value identical",
+      "observed": "Integrity",
+      "predicted": "Integrity",
+      "prediction_basis": "manifest is raw-byte-bound and NEVER parsed by verify_run",
+      "probe_id": "surface-manifest-reformat-compact",
+      "surface": "manifest.json"
+    },
+    {
+      "match": true,
+      "mutation": "decoy root_hash of 64 zeros inserted as FIRST key; honest root_hash later; lenient last-wins",
+      "observed": "Ok",
+      "predicted": "Ok",
+      "prediction_basis": "provenance container bytes are hashed by nothing verify_run checks; lenient last-wins takes the honest root",
+      "probe_id": "surface-provenance-duplicate-root-shadow",
+      "surface": "provenance.json"
+    },
+    {
+      "match": true,
+      "mutation": "pretty JSON rewritten compact; parsed value identical",
+      "observed": "Ok",
+      "predicted": "Ok",
+      "prediction_basis": "provenance container bytes are unbound",
+      "probe_id": "surface-provenance-reformat-compact",
+      "surface": "provenance.json"
+    },
+    {
+      "match": true,
+      "mutation": "snapshot file replaced wholesale with {\"tampered\":true}",
+      "observed": "Ok",
+      "predicted": "Ok",
+      "prediction_basis": "snapshot-*.json files are entirely outside the verify_run read-set",
+      "probe_id": "surface-snapshot-tamper",
+      "surface": "snapshot-000001.json"
+    }
+  ],
+  "g3_surface_binding_matrix": {
+    "observed_live": {
+      "events.jsonl": {
+        "dup_key_probe": "Contract",
+        "reformat_probe": "Integrity"
+      },
+      "final-state.json": {
+        "dup_key_probe": "Ok",
+        "reformat_probe": "Ok"
+      },
+      "manifest.json": {
+        "reformat_probe": "Integrity"
+      },
+      "provenance.json": {
+        "dup_key_shadow_probe": "Ok",
+        "reformat_probe": "Ok"
+      },
+      "snapshot-*.json": {
+        "wholesale_replacement_probe": "Ok"
+      }
+    },
+    "parser_differential": {
+      "final_state_dup_key": {
+        "live_accepted": true,
+        "strict_parser_rejects_same_bytes": true
+      },
+      "provenance_dup_root_shadow": {
+        "decoy_first_key_is_all_zeros": true,
+        "lenient_last_wins_root_equals_live_returned_root": true,
+        "live_accepted": true,
+        "strict_parser_rejects_same_bytes": true
+      }
+    },
+    "predicted_from_source": {
+      "events.jsonl": {
+        "binding": "RAW_BYTE_BOUND_PLUS_STRICT_PARSED_PLUS_SEQUENCE_CHECKED",
+        "byte_malleable_accepted": false,
+        "strict_parse_wall": true
+      },
+      "final-state.json": {
+        "binding": "VALUE_BOUND_LENIENT_PARSE",
+        "byte_malleable_accepted": true,
+        "strict_parse_wall": false
+      },
+      "manifest.json": {
+        "binding": "RAW_BYTE_BOUND_NEVER_PARSED",
+        "byte_malleable_accepted": false,
+        "strict_parse_wall": false
+      },
+      "provenance.json": {
+        "binding": "SELF_CONTAINER_UNBOUND_LENIENT_PARSE",
+        "byte_malleable_accepted": true,
+        "strict_parse_wall": false
+      },
+      "snapshot-*.json": {
+        "binding": "UNBOUND_OUTSIDE_VERIFY_READ_SET",
+        "byte_malleable_accepted": true,
+        "strict_parse_wall": false
+      }
+    }
+  },
+  "g4_interior_chain": {
+    "checked_predicate": "event_chain_root == last RECORDED event_hash (plus raw file hashes); interior linkage NOT recomputed at verify time",
+    "live_chain_root_mismatch_result": "Integrity",
+    "live_verify_result_on_forged_interior_chain": "Ok",
+    "oracle_detects_forgery": true,
+    "oracle_interior_events_total": 2,
+    "oracle_interior_recompute_mismatches": 2
+  },
+  "gates": {
+    "all_pass": true,
+    "g0_anchors_resolved": true,
+    "g1_live_positive_parity": true,
+    "g1b_legacy_differential_fully_localized": true,
+    "g2_taxonomy_parity": true,
+    "g3_h0a_refuted_as_predicted": true,
+    "g4_h0b_refuted_as_predicted": true
+  },
+  "hypothesis": {
+    "h0a": "The strict-parse wall (duplicate-key rejection) and representation binding cover all archive surfaces uniformly.",
+    "h0b": "verify_run re-verifies the interior Haber-Stornetta event_hash linkage.",
+    "h0c": "The signed 2026 hash-chain-oracle-parity receipt's Python mirror is byte-faithful to the live runtime, i.e. its G1 archives are byte-reproducible by the real RunArchive given identical content.",
+    "h_parity": "The live Rust runtime and the independent CPython re-derivation agree bit-exact on every provenance field, interior event hash, and verify_run return value, and reproduce the roots in the signed 2026 parity receipt."
+  },
+  "module": "amphora-run-provenance",
+  "non_circularity": "The Rust harness deliberately IS the runtime (that is the point of a live differential study); the ORACLE side shares zero code with it: hashes are recomputed in CPython from the emitted live bytes using an independent canonicalize/stable_hash implementation, and all 20 probe outcomes were predicted analytically in this file before observation. The cross-time anchor compares against roots recorded in the 2026 signed receipt, which were derived WITHOUT running the runtime.",
+  "preconditions": {
+    "live_harness_built": true,
+    "live_output_sha256": "b7be3f25763def60c2465f716dc535127e06793347e386802f1d17906871481a",
+    "two_live_executions_byte_identical": true
+  },
+  "purpose": "Close the gap all three prior signed receipts name as their top does_not_close item: execute the LIVE Rust runtime (RunArchive::create/append/snapshot/final_state + verify_run) and measure bit-parity against an independent CPython re-derivation, the full live RunArchiveError taxonomy incl. the parse_json_strict Json-vs-Contract split, per-surface representation binding, and interior chain verification.",
+  "run_type": "LIVE_DIFFERENTIAL_AUDIT",
+  "runtime_source_anchors": {
+    "amphora_core_contract_rs_sha256": "27075d51e3c8a016aad478c61d6ab638d50bb53b064680dca811cdbc84017a81",
+    "amphora_core_lib_rs_sha256": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "harness_cargo_toml_sha256": "c9aead218ab7676dfc50cd3ff6f565f0a2a63ea81778da5135aff210852292c6",
+    "harness_main_rs_sha256": "e9a142c3fd9b8d2f37343ed079109a6c8a542244188fb844b6e0c742ba1b7728",
+    "module_manifest_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+    "shipped_kpi_sha256": "ce28ef84b36179c90b8798144825d04e5cd62e16d4b3eaa40997b8fa3ebdc9ce",
+    "sibling_anchor_necessity_receipt_sha256": "b0e54d8582d9712db732122c97211a5c18d93a9561e21e74938cd400e1f416f2",
+    "sibling_merkle_receipt_sha256": "67eb98f824fd5b896e027d4628462d66c816e79ad4a6b481383b90b7bdf6da64",
+    "sibling_parity_receipt_sha256": "798a743d01144c2cb14419d932ed006bf3f3b368f4973787a6eeef99773c5563"
+  },
+  "schema": "amphora.run-provenance.live-runtime-archive-parity-diagnostic.v1",
+  "study_id": "amphora-run-provenance.live-runtime-archive-parity.v1",
+  "theory_reference": [
+    "Haber & Stornetta 1991, How to time-stamp a digital document, J. Cryptology 3(2):99-111, doi:10.1007/BF00196791",
+    "Merkle 1980, Protocols for public key cryptosystems, IEEE S&P",
+    "NIST FIPS 180-4 (2015), Secure Hash Standard (SHA-256)",
+    "RFC 8259 (2017) sect. 4: duplicate object names -> unpredictable behavior",
+    "RFC 8785 (2020), JSON Canonicalization Scheme (JCS)",
+    "Momot, Bratus, Hallberg, Patterson 2016, The Seven Turrets of Babel: A Taxonomy of LangSec Errors, IEEE SecDev, doi:10.1109/SecDev.2016.019",
+    "Crosby & Wallach 2009, Efficient data structures for tamper-evident logging, USENIX Security"
+  ],
+  "toolchain": {
+    "cargo": "cargo 1.96.0 (30a34c682 2026-05-25)",
+    "python": "CPython 3.12.3",
+    "rustc": "rustc 1.96.0 (ac68faa20 2026-05-25)"
+  },
+  "verdict": {
+    "bounded": "None of this changes the shipped scheme's fitness for its stated Phase-0 claim: byte-identical replay detection. All malleable surfaces are still covered the moment any BYTE matters (manifest/events via raw hashes; final-state via its parsed value). The gaps are representational (dup-key bytes, container bytes, snapshots) and interior-linkage completeness, which matter for cross-verifier agreement and for producers with buggy chain construction, not for the non-recomputing-mutation threat model already receipted.",
+    "corroborated": "FIRST live execution of the Rust run-provenance runtime in this module's audit history. The live runtime and the independent CPython re-derivation agree bit-exact on every hash: 56/56 provenance-field/pin parity checks and 32/32 interior Haber-Stornetta event hashes recomputed bit-exact from live bytes across 7 scenarios (the 3 shipped KPI constructions, a unicode+float+snapshot stressor, and the 3 legacy 2026-receipt constructions). All 11 taxonomy probes return the analytically predicted RunArchiveError variant, covering all five variants live, including the previously untested Json-vs-Contract split (shape error -> Json; duplicate-key and syntax errors in events.jsonl -> Contract via parse_json_strict).",
+    "h0a": "H0a REFUTED (predicted from source, confirmed live): the strict-parse wall covers exactly 1/5 archive surfaces (events.jsonl). manifest.json is raw-byte-bound but NEVER parsed; final-state.json is value-bound under a LENIENT parser (duplicate-key and reformat bytes accepted); provenance.json container bytes are bound by nothing verify_run checks (a decoy root_hash as first key is silently shadowed by lenient last-wins); snapshot-*.json is entirely outside the verify read-set. 2/2 duplicate-key byte streams accepted live are rejected by an RFC 8785-strict parser -- a parser differential (Momot et al. 2016) between the runtime and any canonicalization-strict external auditor.",
+    "h0b": "H0b REFUTED (predicted from source, confirmed live): verify_run does NOT re-verify the interior Haber-Stornetta linkage. A hand-forged archive whose 2 event_hash fields are garbage constants passes verify_run Ok when the provenance file is arithmetically consistent with the recorded bytes; the checked predicate is only event_chain_root == last RECORDED hash plus raw file hashes. The independent oracle detects the forgery (2/2 interior recomputes mismatch), i.e. Crosby-Wallach-style full-linkage verification is strictly stronger than the shipped verifier on this axis. Consistent with (and refining) the signed anchor-necessity finding that verify_run is an internal-consistency predicate, not tamper-evidence: even internal consistency of the chain SEEDS is not checked, only hash-of-bytes consistency.",
+    "h0c": "H0c REFUTED, fully localized (27/27 differential checks): the signed 2026 hash-chain-oracle-parity-v1 receipt claimed its Python mirror was 'faithfully mirroring the Rust byte formats', but its G1 archives are NOT byte-reproducible by the live runtime. Root cause (single, proven by exact reconstruction): the mirror wrote JSON in Python-dict insertion order where the live runtime serializes serde_json Values through a BTreeMap, i.e. canonically key-sorted -- affecting manifest.json bytes and the payload sub-Value inside each event line, hence manifest_sha256, events_sha256 (non-empty archives) and root_hash. All value-bound quantities (every event_hash, event_chain_root, final_state_hash) match the receipt bit-exact, and re-serializing the live content in the mirror's insertion orders reproduces every one of the receipt's divergent hashes exactly. The receipt's ALGORITHMIC claims (hash-chain arithmetic, canonicalization, tamper fail-closed logic, G0 shipped-anchor parity) all survive; what falls is only the byte-format fidelity sentence and the example manifest_sha256/events_sha256/root_hash values it recorded, which this live receipt now supersedes with runtime ground truth."
+  }
+}

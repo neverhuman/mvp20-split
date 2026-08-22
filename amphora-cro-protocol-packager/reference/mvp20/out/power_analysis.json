@@ -1,0 +1,102 @@
+{
+  "achieved_power_and_confidence_interval_table": [
+    {
+      "achieved_power_to_detect_delta_1p0": 1.0,
+      "assumed_sigma_log10_abs_z": 0.1,
+      "ci95_halfwidth_log10_abs_z": 0.16,
+      "n_per_track_per_arm": 3
+    },
+    {
+      "achieved_power_to_detect_delta_1p0": 1.0,
+      "assumed_sigma_log10_abs_z": 0.1,
+      "ci95_halfwidth_log10_abs_z": 0.1132,
+      "n_per_track_per_arm": 6
+    },
+    {
+      "achieved_power_to_detect_delta_1p0": 1.0,
+      "assumed_sigma_log10_abs_z": 0.2,
+      "ci95_halfwidth_log10_abs_z": 0.3201,
+      "n_per_track_per_arm": 3
+    },
+    {
+      "achieved_power_to_detect_delta_1p0": 1.0,
+      "assumed_sigma_log10_abs_z": 0.2,
+      "ci95_halfwidth_log10_abs_z": 0.2263,
+      "n_per_track_per_arm": 6
+    },
+    {
+      "achieved_power_to_detect_delta_1p0": 0.9831,
+      "assumed_sigma_log10_abs_z": 0.3,
+      "ci95_halfwidth_log10_abs_z": 0.4801,
+      "n_per_track_per_arm": 3
+    },
+    {
+      "achieved_power_to_detect_delta_1p0": 0.9999,
+      "assumed_sigma_log10_abs_z": 0.3,
+      "ci95_halfwidth_log10_abs_z": 0.3395,
+      "n_per_track_per_arm": 6
+    },
+    {
+      "achieved_power_to_detect_delta_1p0": 0.6878,
+      "assumed_sigma_log10_abs_z": 0.5,
+      "ci95_halfwidth_log10_abs_z": 0.8002,
+      "n_per_track_per_arm": 3
+    },
+    {
+      "achieved_power_to_detect_delta_1p0": 0.9337,
+      "assumed_sigma_log10_abs_z": 0.5,
+      "ci95_halfwidth_log10_abs_z": 0.5658,
+      "n_per_track_per_arm": 6
+    }
+  ],
+  "campaign_item_id": "CF-TEST",
+  "confidence_interval_summary": "At the pre-registered DEFAULT of 6 panels/track/arm, achieved power to detect the pre-registered 1.0 log10|Z| gap stays >=93% across the entire assumed sigma range 0.1-0.5 (e.g. 100.0% at sigma=0.1, 93.4% at sigma=0.5), with 95% CI half-width on the measured gap ranging 0.1132-0.5658 log10 ohm-cm2 over that same sigma range. The pre-registered MINIMUM FLOOR of 3 panels/track/arm is materially weaker: at the pessimistic end of the assumed range (sigma=0.5) it achieves only 68.8% power (below the conventional 80% threshold) with a 0.8002 log10 CI half-width -- i.e. the plan's own stated preference for 6 panels/track/arm 'if budget allows' over the 3-panel floor is exactly the difference between adequately-powered and under-powered at the pessimistic end of the literature-cited sigma range. Stated honestly, not oversold: this is a risk the 3-panel floor carries, not a guarantee the default avoids it, since the true sigma is unmeasured until bench data exists.",
+  "formula": {
+    "achieved_power": "power = Phi(delta / (sigma * sqrt(2/n)) - z_alpha/2), Phi = standard normal CDF",
+    "citation": "Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.). Lawrence Erlbaum Associates. ISBN 978-0-8058-0283-2.",
+    "confidence_interval_95pct_halfwidth": "z_alpha/2 * sigma * sqrt(2/n)",
+    "required_n_per_group": "n = 2 * sigma^2 * (z_alpha/2 + z_beta)^2 / delta^2, two-sided alpha=0.05",
+    "z_alpha_2_alpha0p05_twosided": 1.959963985,
+    "z_beta_power0p80": 0.841621234,
+    "z_beta_power0p90": 1.281551566
+  },
+  "interpretation": "This is NOT a claim that MVP20's true EIS replicate sigma is known -- no EIS has been run on any MVP20 track or candidate. It is a pre-registered sensitivity table: across the full sigma range plausibly implied by Floyd et al. 2009's documented EIS log-resistance replicate scatter, the pre-registered DEFAULT panel count (6/track/arm) keeps power >=80% at every assumed sigma tested here, while the MINIMUM FLOOR (3/track/arm) drops below 80% power at the pessimistic end (sigma=0.5). This quantifies the actual statistical stakes of the pre-registered 'default vs minimum-floor' panel-count choice before any panel is cut, rather than asserting a single point uncertainty value. Once EIS is run, sigma becomes measurable from the bench's own replicate data and this a priori table should be superseded by a post-hoc calibrated interval, not before.",
+  "kind": "a_priori_preregistered_power_analysis",
+  "module": "amphora-cro-protocol-packager",
+  "produced_by_fire_sequence": 2,
+  "required_n_table": [
+    {
+      "assumed_sigma_log10_abs_z": 0.1,
+      "required_n_per_track_per_arm_80pct_power": 1,
+      "required_n_per_track_per_arm_90pct_power": 1
+    },
+    {
+      "assumed_sigma_log10_abs_z": 0.2,
+      "required_n_per_track_per_arm_80pct_power": 1,
+      "required_n_per_track_per_arm_90pct_power": 1
+    },
+    {
+      "assumed_sigma_log10_abs_z": 0.3,
+      "required_n_per_track_per_arm_80pct_power": 2,
+      "required_n_per_track_per_arm_90pct_power": 2
+    },
+    {
+      "assumed_sigma_log10_abs_z": 0.5,
+      "required_n_per_track_per_arm_80pct_power": 4,
+      "required_n_per_track_per_arm_90pct_power": 6
+    }
+  ],
+  "schema": "amphora.cro-protocol-packager.power-analysis.v1",
+  "sigma_assumption_basis": {
+    "doi": "10.1016/j.porgcoat.2009.04.009",
+    "finding_used": "Total error for EIS-derived resistance quantities expressed in log10 form was on the order of 50% (percent standard deviation), estimated three independent ways (Rs variation, panel replicate variation, EIS reading replication) that agreed with each other -- documented, citable evidence that replicate scatter in log10 EIS resistance on coated panels is real and non-negligible, not that this specific MVP20 system's sigma is known precisely. This module has never run EIS on the M00097/M00101/M00109 or Lineage-60/Envelope-65/Enhanced-65/CRO-Robust-65 tracks, so no measured, system-specific sigma exists yet -- that is exactly why this is an a priori (pre-measurement) power analysis over an assumed sigma range, not a post-hoc calibrated interval.",
+    "source": "Floyd, F.L., Avudaiappan, S., Gibson, J., Mehta, B., Smith, P., Provder, T., Escarsega, J. (2009). \"Using electrochemical impedance spectroscopy to predict the corrosion resistance of unexposed coated metal panels.\" Progress in Organic Coatings, 66(1), 8-34."
+  },
+  "status": "PRE-MEASUREMENT ASSUMPTION-BASED QUANTIFICATION -- not a calibrated interval derived from this system's own bench data. No EIS has been run yet on any MVP20 candidate or named track; that is future, external CRO work (docs/mission.md external dependency). This artifact quantifies the STATISTICAL POWER and confidence-interval half-width of the pre-registered decision rule (statistical_decision_rules.minimum_detectable_effect.eis_log10_abs_z_0p01hz, falsification_protocol.json's key_pairwise_bet) as a function of an assumed replicate-scatter sigma, so the plan is not point-only: it declares, before any panel is cut, exactly how much power the pre-registered panel counts (3 minimum floor / 6 default) buy at each plausible sigma, and what sigma would be required to hit standard 80%/90% power targets.",
+  "study_id": "cf-test-power-analysis-v1",
+  "target_effect": {
+    "delta_log10_abs_z": 1.0,
+    "quantity": "eis_log10_abs_z_0p01hz gap, Enhanced-65 vs Envelope-65 (falsification_protocol.json key_pairwise_bet)",
+    "source": "statistical_decision_rules.minimum_detectable_effect.eis_log10_abs_z_0p01hz (this file, unchanged by this repair)"
+  }
+}

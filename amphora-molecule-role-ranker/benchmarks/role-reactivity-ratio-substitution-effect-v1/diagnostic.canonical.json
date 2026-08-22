@@ -1,0 +1,388 @@
+{
+  "attack": {
+    "falsification_criterion": "REFUTED if, for ANY (hardener, literature reactivity ratio) combination, amine-starved MC sol fraction is NOT strictly greater than amine-rich MC sol fraction.",
+    "hypothesis_H2_reactivity_robust": "The H2 direction rule (amine-starved sol strictly greater than amine-rich sol at equal-magnitude +-30% stoichiometric offset, for every g>f marine-primer pair) continues to hold when the equal-group-reactivity idealisation is replaced by the literature-measured primary/secondary amine-H rate ratio.",
+    "n_direction_holds": 6,
+    "n_direction_tests": 6,
+    "n_reversals": 0,
+    "reversals": [],
+    "rows": [
+      {
+        "direction_rule_holds": true,
+        "f": 2,
+        "g": 4,
+        "hardener": "hardener-ipda",
+        "k2_over_k1": 0.65,
+        "n_a_molecules": 20000,
+        "n_b_molecules_rich": 13000,
+        "n_b_molecules_starved": 7692,
+        "prior_signed_analytic_asymmetry_equal_reactivity": 50.189,
+        "reactivity_ratio_name": "girard_reydet_1995_mda_mdea_mcdea",
+        "resin": "resin-dgeba",
+        "sol_asymmetry_starved_over_rich": 167.67505,
+        "sol_wt_pct_amine_rich_r_1p300": 0.028309,
+        "sol_wt_pct_amine_starved_r_0p769": 4.746745
+      },
+      {
+        "direction_rule_holds": true,
+        "f": 2,
+        "g": 4,
+        "hardener": "hardener-ipda",
+        "k2_over_k1": 0.45,
+        "n_a_molecules": 20000,
+        "n_b_molecules_rich": 13000,
+        "n_b_molecules_starved": 7692,
+        "prior_signed_analytic_asymmetry_equal_reactivity": 50.189,
+        "reactivity_ratio_name": "girard_reydet_1995_dds_extreme",
+        "resin": "resin-dgeba",
+        "sol_asymmetry_starved_over_rich": 6248380118728.649,
+        "sol_wt_pct_amine_rich_r_1p300": 0.0,
+        "sol_wt_pct_amine_starved_r_0p769": 4.901894
+      },
+      {
+        "direction_rule_holds": true,
+        "f": 2,
+        "g": 4,
+        "hardener": "hardener-pacm",
+        "k2_over_k1": 0.65,
+        "n_a_molecules": 20000,
+        "n_b_molecules_rich": 13000,
+        "n_b_molecules_starved": 7692,
+        "prior_signed_analytic_asymmetry_equal_reactivity": 42.752313,
+        "reactivity_ratio_name": "girard_reydet_1995_mda_mdea_mcdea",
+        "resin": "resin-dgeba",
+        "sol_asymmetry_starved_over_rich": 428.878572,
+        "sol_wt_pct_amine_rich_r_1p300": 0.011022,
+        "sol_wt_pct_amine_starved_r_0p769": 4.726928
+      },
+      {
+        "direction_rule_holds": true,
+        "f": 2,
+        "g": 4,
+        "hardener": "hardener-pacm",
+        "k2_over_k1": 0.45,
+        "n_a_molecules": 20000,
+        "n_b_molecules_rich": 13000,
+        "n_b_molecules_starved": 7692,
+        "prior_signed_analytic_asymmetry_equal_reactivity": 42.752313,
+        "reactivity_ratio_name": "girard_reydet_1995_dds_extreme",
+        "resin": "resin-dgeba",
+        "sol_asymmetry_starved_over_rich": 2160.187052,
+        "sol_wt_pct_amine_rich_r_1p300": 0.002204,
+        "sol_wt_pct_amine_starved_r_0p769": 4.761743
+      },
+      {
+        "direction_rule_holds": true,
+        "f": 2,
+        "g": 4,
+        "hardener": "hardener-mxda",
+        "k2_over_k1": 0.65,
+        "n_a_molecules": 20000,
+        "n_b_molecules_rich": 13000,
+        "n_b_molecules_starved": 7692,
+        "prior_signed_analytic_asymmetry_equal_reactivity": 59.271118,
+        "reactivity_ratio_name": "girard_reydet_1995_mda_mdea_mcdea",
+        "resin": "resin-dgeba",
+        "sol_asymmetry_starved_over_rich": 181.860885,
+        "sol_wt_pct_amine_rich_r_1p300": 0.028574,
+        "sol_wt_pct_amine_starved_r_0p769": 5.196458
+      },
+      {
+        "direction_rule_holds": true,
+        "f": 2,
+        "g": 4,
+        "hardener": "hardener-mxda",
+        "k2_over_k1": 0.45,
+        "n_a_molecules": 20000,
+        "n_b_molecules_rich": 13000,
+        "n_b_molecules_starved": 7692,
+        "prior_signed_analytic_asymmetry_equal_reactivity": 59.271118,
+        "reactivity_ratio_name": "girard_reydet_1995_dds_extreme",
+        "resin": "resin-dgeba",
+        "sol_asymmetry_starved_over_rich": 363.070639,
+        "sol_wt_pct_amine_rich_r_1p300": 0.014286,
+        "sol_wt_pct_amine_starved_r_0p769": 5.186923
+      }
+    ]
+  },
+  "claim_locks": {
+    "manifest_unchanged": true,
+    "measured_only_lock_preserved": true,
+    "no_objective_emitted": true,
+    "promotes_authority": false
+  },
+  "closes": [],
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent)",
+    "PHASE_1_INDEPENDENT_EVALUATION (needs an external measured sol-fraction / extractables reference set; none rights-clean in the portfolio)",
+    "external_rights (fixture is self-authored CC0; the reactivity ratios are from a published peer-reviewed source cited above, not portfolio data)",
+    "pre_existing_secondary_amine_hardeners (DETA/TETA and similar polyamines with a structurally secondary N already present unreacted; needs a 3-state-per-molecule MC model, not attempted here)",
+    "temperature_dependence_of_r (Girard-Reydet et al. report r as roughly constant over their studied cure temperature range for a given diamine, but the portfolio has not pinned r(T) generally)",
+    "cyclization_magnitude (this MC does not reject intra-cluster bonds, unlike the prior receipt's analytic idealisation, so absolute sol-fraction magnitudes are not expected to match the analytic model exactly except at the validated equal-reactivity control; only the DIRECTION rule is being tested)",
+    "kinetic_gel_time (thermodynamic/topological gel-point conversion only, no rate law integrated over time)"
+  ],
+  "eligible_hardeners": [
+    "hardener-ipda",
+    "hardener-pacm",
+    "hardener-mxda"
+  ],
+  "excluded_hardeners": [
+    "hardener-deta",
+    "hardener-teta"
+  ],
+  "excluded_hardeners_reason": "carry at least one structurally secondary amine N-H already present in the unreacted molecule (e.g. DETA/TETA internal -NH-); the 2-primary-site/4H MC model does not represent them. A pre-existing-secondary-site MC model is a distinct, separately-scoped extension -- logged as does_not_close, not attempted here.",
+  "fixture": {
+    "n_records": 39,
+    "path": "amphora-molecule-role-ranker/reference/phase0-role-known-answer.v1.json",
+    "rights": "CC0-1.0",
+    "sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f"
+  },
+  "functionality_rederivation_agrees_with_fixture": true,
+  "hardener_site_structure": {
+    "hardener-deta": {
+      "all_sites_primary": false,
+      "f_fixture": 0,
+      "f_rederived": 0,
+      "g_fixture": 5,
+      "g_rederived": 5,
+      "h_per_site": [
+        1,
+        2,
+        2
+      ],
+      "n_amine_sites": 3
+    },
+    "hardener-ipda": {
+      "all_sites_primary": true,
+      "f_fixture": 0,
+      "f_rederived": 0,
+      "g_fixture": 4,
+      "g_rederived": 4,
+      "h_per_site": [
+        2,
+        2
+      ],
+      "n_amine_sites": 2
+    },
+    "hardener-mxda": {
+      "all_sites_primary": true,
+      "f_fixture": 0,
+      "f_rederived": 0,
+      "g_fixture": 4,
+      "g_rederived": 4,
+      "h_per_site": [
+        2,
+        2
+      ],
+      "n_amine_sites": 2
+    },
+    "hardener-pacm": {
+      "all_sites_primary": true,
+      "f_fixture": 0,
+      "f_rederived": 0,
+      "g_fixture": 4,
+      "g_rederived": 4,
+      "h_per_site": [
+        2,
+        2
+      ],
+      "n_amine_sites": 2
+    },
+    "hardener-teta": {
+      "all_sites_primary": false,
+      "f_fixture": 0,
+      "f_rederived": 0,
+      "g_fixture": 6,
+      "g_rederived": 6,
+      "h_per_site": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "n_amine_sites": 4
+    },
+    "resin-dgeba": {
+      "all_sites_primary": true,
+      "f_fixture": 2,
+      "f_rederived": 2,
+      "g_fixture": 0,
+      "g_rederived": 0,
+      "h_per_site": [],
+      "n_amine_sites": 0
+    }
+  },
+  "interpretation": "RDKit per-atom re-derivation of amine N-site structure agrees with the fixture for all 6 checked records (True). Of the 5 candidate hardeners, 3 (hardener-ipda, hardener-pacm, hardener-mxda) are all-primary (2 N-sites x 2H) and eligible for the 2-primary-site MC model; ['hardener-deta', 'hardener-teta'] are excluded (structurally secondary N already present) and out of scope for this study. Validation gate: MC at the equal-reactivity control (r=1.0, N=20000 resin molecules) reproduces the SIGNED analytic sol_wt_pct from role-macosko-miller-sol-latitude-v1 within tolerance on 9/9 checks (all_pass=True), so the MC methodology is trusted for the attack. Attack: across 6 (hardener x literature reactivity-ratio) combinations spanning r=k2/k1 in {0.65, 0.45} (Girard-Reydet et al. 1995, DGEBA + aromatic diamines), the H2 direction rule holds in 6/6 cases. H2 is CORROBORATED under both literature reactivity ratios for every eligible hardener: introducing the real, measured kinetic substitution effect (secondary amine-H up to 55% less reactive than primary) changes the MAGNITUDE of the starved/rich sol asymmetry but not its SIGN, so the zero-fitted-parameter directional design rule 'err amine-rich, never amine-starved' survives this attack. This closes the equal_reactivity_idealisation gap left open by the prior receipt for the 3 all-primary hardeners tested (IPDA, PACM, MXDA); DETA/TETA and other pre-existing-secondary-amine hardeners remain untested (see does_not_close). AUDIT_ONLY; no candidate, product, objective, manifest edit, or promotion claim.",
+  "monte_carlo_model": {
+    "cyclization_policy": "intra-cluster bonds are NOT rejected: a finite forest on N_A+N_B nodes has at most N_A+N_B-1 edges, far fewer than required to reach the target conversion, so forbidding them would make the target unreachable. This is the standard random-graph (configuration-model) realisation of Flory-Stockmayer/Macosko-Miller mean-field theory, under which the tree approximation is asymptotically exact pre-gel and intra-cluster bonds are normal post-gel.",
+    "determinism": "random.Random seeded by int(sha256(run-identifying-string)[:16],16); no wall-clock, no OS entropy, no dict/set iteration order dependence",
+    "method": "finite-population kinetic Monte Carlo, weighted-union-find connectivity",
+    "n_resin_molecules": 20000,
+    "scope_restriction": "restricted to hardeners whose every reactive amine nitrogen is primary (2H) in the unreacted state, verified per-atom via RDKit (not asserted)",
+    "stopping_rule": "complete conversion of the limiting group (p_A=1 if r>=1 else p_A=r); identical convention to the analytic Study 2 anchor"
+  },
+  "primary_references": [
+    "Girard-Reydet, E.; Riccardi, C.C.; Sautereau, H.; Pascault, J.-P. (1995) \"Epoxy-Aromatic Diamine Kinetics. Part 1. Modeling and Influence of the Diamine Structure.\" Macromolecules 28(23):7599-7607. doi:10.1021/ma00127a003",
+    "Odian, G. (2004) Principles of Polymerization, 4th ed., Wiley, ch.2, ISBN 978-0-471-27400-1",
+    "prior receipt under attack: role-macosko-miller-sol-latitude-v1 (Macosko, C.W.; Miller, D.R. (1976) Macromolecules 9(2):199-206, doi:10.1021/ma60050a003; Miller, D.R.; Macosko, C.W. (1976) Macromolecules 9(2):206-211, doi:10.1021/ma60050a004)"
+  ],
+  "prior_receipt": {
+    "benchmark": "role-macosko-miller-sol-latitude-v1",
+    "diagnostic_sha256": "ceedff0feb1ac4c437e5d4401473f5086882ec2c0480fd5dafb2b60697554b66",
+    "prior_verdict": "H1_CORROBORATED_H0_REFUTED"
+  },
+  "purpose": "Falsification attack on the role-macosko-miller-sol-latitude-v1 H2 direction rule ('err amine-rich, never amine-starved') under the literature-measured primary/secondary amine-H kinetic substitution effect (unequal group reactivity), which that receipt explicitly left unmodelled. Independent method: finite-population kinetic Monte Carlo (not the recursive generating-function method), validated against the prior receipt's SIGNED analytic values at the equal-reactivity control before being trusted for the attack.",
+  "reactivity_ratios_tested": {
+    "equal_reactivity_control": 1.0,
+    "girard_reydet_1995_dds_extreme": 0.45,
+    "girard_reydet_1995_mda_mdea_mcdea": 0.65
+  },
+  "schema": "amphora.molecule-role-ranker.role-reactivity-ratio-substitution-effect-v1.diagnostic.v1",
+  "toolkit": {
+    "python": "3.12.3",
+    "rdkit": "2026.03.2"
+  },
+  "validation_gate": {
+    "abs_tol_pct_points": 0.5,
+    "all_pass": true,
+    "n_checks": 9,
+    "purpose": "MC at the equal-reactivity control (r_ratio=1.0) must reproduce the SIGNED prior receipt's analytic sol_wt_pct values within finite-population Monte Carlo noise before the MC is trusted for the attack.",
+    "rel_tol": 0.35,
+    "rows": [
+      {
+        "abs_err_pct_points": 0.0,
+        "achieved_pa": 1.0,
+        "analytic_sol_wt_pct": 0.0,
+        "hardener": "hardener-ipda",
+        "mc_sol_wt_pct": 0.0,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 10000,
+        "r_stoich": 1.0,
+        "rel_err": 0.0,
+        "stoich_label": "balanced",
+        "target_pa": 1.0,
+        "validates": true
+      },
+      {
+        "abs_err_pct_points": 0.093094,
+        "achieved_pa": 0.7692,
+        "analytic_sol_wt_pct": 4.950967,
+        "hardener": "hardener-ipda",
+        "mc_sol_wt_pct": 4.857873,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 7692,
+        "r_stoich": 0.769231,
+        "rel_err": 0.018803,
+        "stoich_label": "starved",
+        "target_pa": 0.769231,
+        "validates": true
+      },
+      {
+        "abs_err_pct_points": 0.050447,
+        "achieved_pa": 1.0,
+        "analytic_sol_wt_pct": 0.098647,
+        "hardener": "hardener-ipda",
+        "mc_sol_wt_pct": 0.149094,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 13000,
+        "r_stoich": 1.3,
+        "rel_err": 0.511395,
+        "stoich_label": "rich",
+        "target_pa": 1.0,
+        "validates": true
+      },
+      {
+        "abs_err_pct_points": 0.0,
+        "achieved_pa": 1.0,
+        "analytic_sol_wt_pct": 0.0,
+        "hardener": "hardener-pacm",
+        "mc_sol_wt_pct": 0.0,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 10000,
+        "r_stoich": 1.0,
+        "rel_err": 0.0,
+        "stoich_label": "balanced",
+        "target_pa": 1.0,
+        "validates": true
+      },
+      {
+        "abs_err_pct_points": 0.278596,
+        "achieved_pa": 0.7692,
+        "analytic_sol_wt_pct": 4.782377,
+        "hardener": "hardener-pacm",
+        "mc_sol_wt_pct": 4.503781,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 7692,
+        "r_stoich": 0.769231,
+        "rel_err": 0.058255,
+        "stoich_label": "starved",
+        "target_pa": 0.769231,
+        "validates": true
+      },
+      {
+        "abs_err_pct_points": 0.025373,
+        "achieved_pa": 1.0,
+        "analytic_sol_wt_pct": 0.111863,
+        "hardener": "hardener-pacm",
+        "mc_sol_wt_pct": 0.08649,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 13000,
+        "r_stoich": 1.3,
+        "rel_err": 0.226821,
+        "stoich_label": "rich",
+        "target_pa": 1.0,
+        "validates": true
+      },
+      {
+        "abs_err_pct_points": 0.0,
+        "achieved_pa": 1.0,
+        "analytic_sol_wt_pct": 0.0,
+        "hardener": "hardener-mxda",
+        "mc_sol_wt_pct": -0.0,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 10000,
+        "r_stoich": 1.0,
+        "rel_err": 0.0,
+        "stoich_label": "balanced",
+        "target_pa": 1.0,
+        "validates": true
+      },
+      {
+        "abs_err_pct_points": 0.117348,
+        "achieved_pa": 0.7692,
+        "analytic_sol_wt_pct": 5.104942,
+        "hardener": "hardener-mxda",
+        "mc_sol_wt_pct": 4.987594,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 7692,
+        "r_stoich": 0.769231,
+        "rel_err": 0.022987,
+        "stoich_label": "starved",
+        "target_pa": 0.769231,
+        "validates": true
+      },
+      {
+        "abs_err_pct_points": 0.010724,
+        "achieved_pa": 1.0,
+        "analytic_sol_wt_pct": 0.086129,
+        "hardener": "hardener-mxda",
+        "mc_sol_wt_pct": 0.075405,
+        "n_a_molecules": 20000,
+        "n_b_molecules": 13000,
+        "r_stoich": 1.3,
+        "rel_err": 0.124514,
+        "stoich_label": "rich",
+        "target_pa": 1.0,
+        "validates": true
+      }
+    ]
+  },
+  "verdict": "H2_SURVIVED_UNDER_LITERATURE_REACTIVITY_RATIO",
+  "verdict_detail": {
+    "H2_reactivity_robust": "CORROBORATED",
+    "functionality_rederivation_agrees": true,
+    "mc_validation_gate_all_pass": true,
+    "n_direction_tests": 6,
+    "n_reversals": 0
+  }
+}

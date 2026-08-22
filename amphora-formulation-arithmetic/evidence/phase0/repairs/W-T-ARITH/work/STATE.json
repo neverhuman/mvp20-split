@@ -1,0 +1,14 @@
+{
+  "campaign_item_id": "W-T-ARITH",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260813T150001-146940-f268a8e7488c",
+      "date": "2026-08-13",
+      "outcome": "CLAIM_REFUTED",
+      "summary": "Enumerated 8 normative requirements from EPA Method 24 (40 CFR Part 60 Appendix A-7); 3 conformant, 2 divergent (R2 VOC water/exempt-solvent exclusion Eq.24-3/4/5, R6 uncertainty-budget completeness), 3 not-applicable. Waterborne positive-control probe showed 50 percent VOC overstatement from the R2 gap. Done receipt signed and independently verified.",
+      "done_receipt": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json"
+    }
+  ],
+  "next_action": "none -- done_criterion met this fire. Follow-up repair items (R2, R4, R6, R8 fixes) are filed in proposed_followups[] of the done receipt for a future campaign item, not for this items own re-fire."
+}

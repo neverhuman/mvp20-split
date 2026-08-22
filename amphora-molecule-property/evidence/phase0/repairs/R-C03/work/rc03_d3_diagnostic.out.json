@@ -1,0 +1,192 @@
+{
+  "alpha_results": [
+    {
+      "alpha": 0.0001,
+      "test_MAE_K": 21.457718183667826,
+      "train_MAE_K": 18.955769690890552
+    },
+    {
+      "alpha": 0.001,
+      "test_MAE_K": 21.3498605242278,
+      "train_MAE_K": 19.025041348840027
+    },
+    {
+      "alpha": 0.01,
+      "test_MAE_K": 21.86822143032817,
+      "train_MAE_K": 20.889381462052604
+    },
+    {
+      "alpha": 0.1,
+      "test_MAE_K": 27.74873762805824,
+      "train_MAE_K": 31.85417484473683
+    },
+    {
+      "alpha": 1.0,
+      "test_MAE_K": 82.55012162606874,
+      "train_MAE_K": 89.89123170039142
+    },
+    {
+      "alpha": 10.0,
+      "test_MAE_K": 110.72905892195094,
+      "train_MAE_K": 118.16346885514946
+    },
+    {
+      "alpha": 100.0,
+      "test_MAE_K": 114.58748177194325,
+      "train_MAE_K": 122.03471248234948
+    },
+    {
+      "alpha": 1000.0,
+      "test_MAE_K": 114.98762083695541,
+      "train_MAE_K": 122.43618159031197
+    }
+  ],
+  "result_summary": {
+    "acceptance_pass_vs_original_published_baseline": true,
+    "acceptance_pass_vs_this_sample_baseline": true,
+    "alpha_grid": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "baseline_full24_test_MAE_K_this_sample": 216.5961713445663,
+    "baseline_scoped10_test_MAE_K_this_sample": 116.95961773123759,
+    "best_alpha": 0.001,
+    "csv_sha256": "9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45",
+    "excluded_groups": [
+      "hydroxyl",
+      "aromatic_C_sub",
+      "aromatic_C_H",
+      "amide",
+      "carbonyl",
+      "nitrile",
+      "F",
+      "vinyl_CH2",
+      "ester",
+      "Br",
+      "sulfone",
+      "Cl",
+      "sulfide",
+      "Si_O"
+    ],
+    "in_scope_groups": [
+      "CH2",
+      "CH3",
+      "CH",
+      "ether_O",
+      "primary_amine",
+      "epoxide",
+      "C_quat",
+      "vinyl_CH",
+      "tertiary_amine",
+      "secondary_amine"
+    ],
+    "n_real_sign_flips": 0,
+    "n_sampled": 1000,
+    "n_test": 335,
+    "n_test_scaffolds": 50,
+    "n_train": 625,
+    "n_train_threshold": 500,
+    "n_unique_scaffolds": 260,
+    "n_valid": 960,
+    "orig_kpi_baseline_full24_test_MAE_K_on_original_168row_test_set": 54.559722860262006,
+    "orig_kpi_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979",
+    "per_group_table": [
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 745.0470591565382,
+        "Y_published_K_g_per_mol": 2700,
+        "group": "CH2",
+        "n_train_polymers_with_group_in_original_KPI": 807,
+        "ratio_fitted_over_published": 0.2759433552431623,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 3561.6145127535697,
+        "Y_published_K_g_per_mol": 5200,
+        "group": "CH3",
+        "n_train_polymers_with_group_in_original_KPI": 807,
+        "ratio_fitted_over_published": 0.684925867837225,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 2561.936851757188,
+        "Y_published_K_g_per_mol": 4600,
+        "group": "CH",
+        "n_train_polymers_with_group_in_original_KPI": 807,
+        "ratio_fitted_over_published": 0.5569427938602582,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 0.0,
+        "Y_published_K_g_per_mol": 4000,
+        "group": "ether_O",
+        "n_train_polymers_with_group_in_original_KPI": 807,
+        "ratio_fitted_over_published": 0.0,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 0.0,
+        "Y_published_K_g_per_mol": 8000,
+        "group": "primary_amine",
+        "n_train_polymers_with_group_in_original_KPI": 807,
+        "ratio_fitted_over_published": 0.0,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 41.32768441463647,
+        "Y_published_K_g_per_mol": 6000,
+        "group": "epoxide",
+        "n_train_polymers_with_group_in_original_KPI": 807,
+        "ratio_fitted_over_published": 0.006887947402439412,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 0.0,
+        "Y_published_K_g_per_mol": 4900,
+        "group": "C_quat",
+        "n_train_polymers_with_group_in_original_KPI": 740,
+        "ratio_fitted_over_published": 0.0,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 282.2426550664869,
+        "Y_published_K_g_per_mol": 1900,
+        "group": "vinyl_CH",
+        "n_train_polymers_with_group_in_original_KPI": 656,
+        "ratio_fitted_over_published": 0.1485487658244668,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 2116.1146812299417,
+        "Y_published_K_g_per_mol": 3000,
+        "group": "tertiary_amine",
+        "n_train_polymers_with_group_in_original_KPI": 596,
+        "ratio_fitted_over_published": 0.7053715604099805,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol_NNLS": 5315.3006378574055,
+        "Y_published_K_g_per_mol": 4000,
+        "group": "secondary_amine",
+        "n_train_polymers_with_group_in_original_KPI": 526,
+        "ratio_fitted_over_published": 1.3288251594643514,
+        "sign_admissible": true
+      }
+    ],
+    "positive_control": {
+      "detected": true,
+      "planted_defect_group": "secondary_amine",
+      "planted_flips_found": [
+        "secondary_amine"
+      ]
+    },
+    "real_sign_flips_found": [],
+    "test_MAE_K": 21.3498605242278,
+    "train_MAE_K": 19.025041348840027
+  }
+}

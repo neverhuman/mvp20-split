@@ -1,0 +1,352 @@
+{
+  "schema": "amphora.compound-campaign.v2",
+  "campaign_manifest_path": "config/program/epoxy-amine-compound-campaign.v1.json",
+  "campaign_sha256": "83b29a93ff8ccef9ea6af07cc7960f155ecee5e20a7474dd73cd5c5ce5165307",
+  "execution_profile": {
+    "schema": "amphora.compound-execution-profile.v1",
+    "profile_id": "compound-host-optimized-v1",
+    "rdkit_profile": "host-optimized-znver2-avx2-lto-pgo",
+    "workers": [1, 2, 4, 8, 16, 32, 48, 64, 96, 128],
+    "batch_sizes": [32, 64, 128, 256, 512],
+    "cpu_features": ["x86-64-v2", "znver2", "avx2", "fma", "bmi2", "popcnt", "pgo"],
+    "libraries": [
+      "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitChemReactions.so",
+      "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitGraphMol.so"
+    ],
+    "cache_profile": "campaign-only-cold-and-warm",
+    "deterministic_seed": 20260719
+  },
+  "toolchain_manifests": [
+    {
+      "schema": "amphora.toolchain-manifest.v1",
+      "build_profile": "portable-x86-64-v2-no-fast-math",
+      "version": "2026.03.2",
+      "git_commit": "42fe8c952589bb750e27ea7f259a50b36576bfa5",
+      "source_sha256": "9bea418c32b553920dc3491b282bbfc47e10728ad20ea874ca47c38cc1b0818b",
+      "cxx_standard": "C++20",
+      "compiler": "clang++-17.0.6",
+      "flags": ["-O3", "-march=x86-64-v2", "-fno-fast-math", "-std=c++20"],
+      "library_sha256": {
+        "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitChemReactions.so": "0000000000000000000000000000000000000000000000000000000000000000",
+        "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitGraphMol.so": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "abi_signature": "elf-x86-64-v2-gnu",
+      "dependency_versions": {
+        "boost": "1.86.0",
+        "protobuf": "4.25.3",
+        "python": "3.12.4"
+      },
+      "installed_tree_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "schema": "amphora.toolchain-manifest.v1",
+      "build_profile": "host-optimized-znver2-avx2-lto-pgo",
+      "version": "2026.03.2",
+      "git_commit": "42fe8c952589bb750e27ea7f259a50b36576bfa5",
+      "source_sha256": "9bea418c32b553920dc3491b282bbfc47e10728ad20ea874ca47c38cc1b0818b",
+      "cxx_standard": "C++20",
+      "compiler": "clang++-17.0.6",
+      "flags": ["-O3", "-march=znver2", "-mtune=znver2", "-flto", "-fno-fast-math", "-std=c++20"],
+      "library_sha256": {
+        "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitChemReactions.so": "0000000000000000000000000000000000000000000000000000000000000000",
+        "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitGraphMol.so": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "abi_signature": "elf-znver2-gnu",
+      "dependency_versions": {
+        "boost": "1.86.0",
+        "protobuf": "4.25.3",
+        "python": "3.12.4"
+      },
+      "installed_tree_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "ord_schema_identity": {
+    "schema": "amphora.ord-schema-identity.v1",
+    "version": "0.6.3",
+    "tagged_object_commit": "0a6c92558898156f06365220d3acbe2bea0a1e69",
+    "source_commit": "7eb730963d7a47e1d6a6c5366806ad2133422df4",
+    "dataset_proto_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "reaction_proto_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "test_proto_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "descriptor_set_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "split_manifest": null,
+  "grammar_corpus": null,
+  "method_registry":
+{
+  "schema": "amphora.method-registry.v1",
+  "registry_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "snapshot_id": "feedback-v4-2026-07-19",
+  "all_modules": [
+    "amphora-barrier-corrosion-score",
+    "amphora-candidate-contract",
+    "amphora-cro-protocol-packager",
+    "amphora-cure-potlife-gate",
+    "amphora-design-rule-score",
+    "amphora-envelope-gates",
+    "amphora-evidence-intake-validator",
+    "amphora-formulation-arithmetic",
+    "amphora-formulation-universe",
+    "amphora-ingredient-library",
+    "amphora-ip-fto-guard",
+    "amphora-known-answer-benchmarks",
+    "amphora-model-card-authority",
+    "amphora-molecule-generator",
+    "amphora-molecule-property",
+    "amphora-molecule-role-ranker",
+    "amphora-molecule-novelty",
+    "amphora-molecule-design-gate",
+    "amphora-optimizer-orchestrator",
+    "amphora-process-qc-twin",
+    "amphora-public-corrosion-benchmark",
+    "amphora-redteam-audit",
+    "amphora-report-packager",
+    "amphora-run-provenance",
+    "amphora-solvency-score",
+    "amphora-source-ledger",
+    "amphora-sourceability-ehs",
+    "amphora-tolerance-robustness",
+    "amphora-viscosity-score"
+  ],
+  "modules": {
+    "amphora-barrier-corrosion-score": {
+      "module_id": "amphora-barrier-corrosion-score",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-candidate-contract": {
+      "module_id": "amphora-candidate-contract",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-cro-protocol-packager": {
+      "module_id": "amphora-cro-protocol-packager",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-cure-potlife-gate": {
+      "module_id": "amphora-cure-potlife-gate",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-design-rule-score": {
+      "module_id": "amphora-design-rule-score",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-envelope-gates": {
+      "module_id": "amphora-envelope-gates",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-evidence-intake-validator": {
+      "module_id": "amphora-evidence-intake-validator",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-formulation-arithmetic": {
+      "module_id": "amphora-formulation-arithmetic",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-formulation-universe": {
+      "module_id": "amphora-formulation-universe",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-ingredient-library": {
+      "module_id": "amphora-ingredient-library",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-ip-fto-guard": {
+      "module_id": "amphora-ip-fto-guard",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-known-answer-benchmarks": {
+      "module_id": "amphora-known-answer-benchmarks",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-model-card-authority": {
+      "module_id": "amphora-model-card-authority",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-molecule-generator": {
+      "module_id": "amphora-molecule-generator",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-molecule-property": {
+      "module_id": "amphora-molecule-property",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-molecule-role-ranker": {
+      "module_id": "amphora-molecule-role-ranker",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-molecule-novelty": {
+      "module_id": "amphora-molecule-novelty",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-molecule-design-gate": {
+      "module_id": "amphora-molecule-design-gate",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-optimizer-orchestrator": {
+      "module_id": "amphora-optimizer-orchestrator",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-process-qc-twin": {
+      "module_id": "amphora-process-qc-twin",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-public-corrosion-benchmark": {
+      "module_id": "amphora-public-corrosion-benchmark",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-redteam-audit": {
+      "module_id": "amphora-redteam-audit",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-report-packager": {
+      "module_id": "amphora-report-packager",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-run-provenance": {
+      "module_id": "amphora-run-provenance",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-solvency-score": {
+      "module_id": "amphora-solvency-score",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-source-ledger": {
+      "module_id": "amphora-source-ledger",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-sourceability-ehs": {
+      "module_id": "amphora-sourceability-ehs",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-tolerance-robustness": {
+      "module_id": "amphora-tolerance-robustness",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    },
+    "amphora-viscosity-score": {
+      "module_id": "amphora-viscosity-score",
+      "method_status": "AUTHORITY_DEFERRED",
+      "method_version": "rust-native-2026.07.19",
+      "lock_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_identity": "amphora-core-native-registry",
+      "decision": "DEFERRED"
+    }
+  }
+}
+,
+  "benchmark_locks": [],
+  "expected_authority_ceiling": "AUDIT_ONLY",
+  "campaign_execution_receipt": null,
+  "ord_reactions": [],
+  "ord_exclusions": []
+}

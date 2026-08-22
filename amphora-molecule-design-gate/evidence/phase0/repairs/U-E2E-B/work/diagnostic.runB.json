@@ -1,0 +1,107 @@
+{
+  "brute_force_cross_check": {
+    "brute_force_front_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      13,
+      17
+    ],
+    "method": "O(n^2) exhaustive pairwise dominance over the same n fixed (candidate_id, -novelty_score, ahew_g_per_eq) points, computed independently of nsga2::run in this same binary",
+    "nsga2_front_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      13,
+      17
+    ],
+    "sets_agree": true
+  },
+  "n_survivors_ranked": 20,
+  "nsga2_config": {
+    "eta_crossover": 15.0,
+    "eta_mutation": 20.0,
+    "gene_hi": 19.0,
+    "gene_lo": 0.0,
+    "generations": 200,
+    "p_crossover": 0.9,
+    "p_mutation": 1.0,
+    "pop_size": 40,
+    "seed_hex": "0x20260803"
+  },
+  "objective_definition": {
+    "caveat": "The 'lower ahew_g_per_eq is better' direction is an illustrative convention chosen for this fire to exercise NSGA-II mechanics on the only two live numeric evaluator families this candidate set has (2 of 6 families); it is NOT a portfolio-endorsed design objective. The ranking is AUDIT_ONLY / non-promoting regardless of the direction chosen; amphora-solver-lab's own authority ceiling is unaffected.",
+    "objective_0": "minimize(-novelty_score), i.e. maximize novelty_score (Tanimoto-distance novelty vs the frozen Phase-0 novelty-corpus.v1.json, U-E2E's live novelty evaluator cell)",
+    "objective_1": "minimize(ahew_g_per_eq) (amine hydrogen equivalent weight, U-E2E's live property-evaluator cell)"
+  },
+  "pareto_front_nsga2": [
+    {
+      "ahew_g_per_eq": 62.07675,
+      "candidate_id": "canon-dds",
+      "novelty_score": 0.8888888888888888,
+      "nsga2_objectives_minimized": [
+        -0.8888888888888888,
+        62.07675
+      ]
+    },
+    {
+      "ahew_g_per_eq": 49.56725,
+      "candidate_id": "gen-mda-ddm",
+      "novelty_score": 0.88,
+      "nsga2_objectives_minimized": [
+        -0.88,
+        49.56725
+      ]
+    },
+    {
+      "ahew_g_per_eq": 42.575,
+      "candidate_id": "canon-ipda",
+      "novelty_score": 0.875,
+      "nsga2_objectives_minimized": [
+        -0.875,
+        42.575
+      ]
+    },
+    {
+      "ahew_g_per_eq": 28.548,
+      "candidate_id": "gen-14-dach",
+      "novelty_score": 0.85,
+      "nsga2_objectives_minimized": [
+        -0.85,
+        28.548
+      ]
+    },
+    {
+      "ahew_g_per_eq": 24.373,
+      "candidate_id": "canon-teta",
+      "novelty_score": 0.6666666666666667,
+      "nsga2_objectives_minimized": [
+        -0.6666666666666667,
+        24.373
+      ]
+    },
+    {
+      "ahew_g_per_eq": 20.6338,
+      "candidate_id": "canon-deta",
+      "novelty_score": 0.6363636363636364,
+      "nsga2_objectives_minimized": [
+        -0.6363636363636364,
+        20.6338
+      ]
+    },
+    {
+      "ahew_g_per_eq": 15.025,
+      "candidate_id": "gen-eda",
+      "novelty_score": 0.0,
+      "nsga2_objectives_minimized": [
+        -0.0,
+        15.025
+      ]
+    }
+  ],
+  "schema": "amphora.molecule-design-gate.u-e2e-b-nsga2-ranking-diagnostic.v1"
+}

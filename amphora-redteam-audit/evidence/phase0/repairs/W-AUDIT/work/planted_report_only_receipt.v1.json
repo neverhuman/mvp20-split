@@ -1,0 +1,14 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "signature": {
+    "payload": "ewogICJjYW1wYWlnbl9pdGVtX2lkIjogIkZBS0UtMDIiLAogICJjbGFpbV92ZXJkaWN0IjogIkNMQUlNX1NVUlZJVkVEIiwKICAiZG9uZV9jcml0ZXJpb25fbWV0IjogdHJ1ZSwKICAiaW50ZXJwcmV0YXRpb24iOiAiUmVwYWlyIHBhdGggaXMgY2xlYXI7IHJlY29tbWVuZCBsYW5kaW5nIHRoZSBmaXggbmV4dCBmaXJlLiIsCiAgIm1vZHVsZSI6ICJhbXBob3JhLWZha2UtbW9kdWxlLWZpcmUyIiwKICAicmVjZWlwdF9pZCI6ICJmYWtlLXctYXVkaXQtZmlyZTItcG9zaXRpdmUtY29udHJvbCIsCiAgInNjaGVtYSI6ICJhbXBob3JhLmZha2UtbW9kdWxlLnBsYW50ZWQtcmVwb3J0LW9ubHktcmVjZWlwdC52MSIsCiAgInN1bW1hcnkiOiAiVGhlIGNvcnJlY3RlZCBjb3ZlcmFnZSB0YWJsZSBoYXMgYmVlbiBpZGVudGlmaWVkIGFuZCB0aGUgZml4IGlzIHVuZGVyc3Rvb2Q7IGEgZnV0dXJlIGZpcmUgc2hvdWxkIGFwcGx5IHRoZSBNb25kcmlhbiByZWNhbGlicmF0aW9uIGFuZCBsYW5kIHRoZSBzdXBlcnNlZGluZyBLUEkuIgp9",
+    "payloadType": "application/vnd.amphora.fake+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "4oBrpoqJB+cU5iU62qvjBWYQTtMrWtDorgM0sfDN6I+NjBFd4r1VbwEVyNl5Ws/DwhZF3wZuLzC52To+5PXeDg=="
+      }
+    ]
+  }
+}

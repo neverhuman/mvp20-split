@@ -1,0 +1,234 @@
+{
+  "schema": "amphora.external-work-order-program.v1",
+  "program_id": "PHASE0_CLOSURE_PHASE1_20260718",
+  "issued_on": "2026-07-18",
+  "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+  "execution_window": {
+    "coatings_campaign_start": "2026-07-17",
+    "coatings_campaign_end": "2026-10-15",
+    "protocol_change_authority": "NONE_AFTER_COUNTERSIGNATURE"
+  },
+  "global_receipt_requirements": {
+    "evaluation_signature_required": true,
+    "independent_review_signature_required": true,
+    "evaluation_and_review_signers_must_differ": true,
+    "registry_manifest_hash_required": true,
+    "promotion_policy_hash_required": true,
+    "benchmark_lock_hash_required": true,
+    "raw_data_sha256_manifest_required": true,
+    "rights_manifest_hash_required": true,
+    "two_clean_environment_replay_required": true,
+    "candidate_or_report_supplied_receipts_authoritative": false
+  },
+  "global_exclusions": [
+    "rights-ineligible observation",
+    "method-incomparable observation",
+    "missing lot identifier",
+    "missing scientific input",
+    "split family scaffold site or lot overlap",
+    "post-outcome feature or estimator selection"
+  ],
+  "global_claim_ceiling": [
+    "named endpoint",
+    "named material and lot",
+    "named method temperature and site"
+  ],
+  "globally_prohibited_authority": [
+    "SERVICE_LIFE",
+    "SHELF_LIFE",
+    "BATCH_RELEASE",
+    "PROCUREMENT",
+    "OPTIMIZER",
+    "REGULATORY",
+    "LEGAL",
+    "FTO"
+  ],
+  "work_orders": [
+    {
+      "work_order_id": "WO-MOL-PROPERTY-20260718",
+      "modules": ["amphora-molecule-property"],
+      "counterparties": ["DATA_CURATOR", "INDEPENDENT_CHEMISTRY_REVIEWER", "INDEPENDENT_TOOLKIT_REPRODUCER"],
+      "inputs": [
+        "exact RDKit 2026.03.2 built from commit 42fe8c952589bb750e27ea7f259a50b36576bfa5",
+        "ChEBI release 252 three-star full SDF SHA-256 8f17627476c66e899dabe3cd7ae1cbb94f7ee6c67f2ee91f077a77a19c940ad7 with CC-BY-4.0 license SHA-256 fe7b4ce83b8381cc5b216bbb4af73c570688d1b819c73bbaed8ca401f4677cd6",
+        "PubChem PUG REST CID property cross-check using the endpoint and fixed comparison rules in config/program/molecule-property-sources.v1.json"
+      ],
+      "deliverables": [
+        "at least 300 deduplicated eligible defined single-component structures",
+        "record-level source IDs canonical structures formulas masses stereochemistry and rights",
+        "independent identity formula and mass reconciliation",
+        "sealed reactive-group EEW AHEW invalid-input polymer fragment stereochemistry and measured-versus-computed controls",
+        "signed toolkit reproduction receipt and signed evaluation receipt"
+      ],
+      "fixed_gates": {
+        "minimum_eligible_structures": 300,
+        "required_rdkit_version": "2026.03.2",
+        "chebi_release": 252,
+        "pubchem_identity_rule": "EXACT_FULL_INCHIKEY",
+        "pubchem_formula_rule": "EXACT_STRING",
+        "pubchem_mass_max_abs_error_g_mol": 0.05,
+        "missing_values_imputed": false,
+        "commercial_products_measured_only": true,
+        "independent_toolkit_receipt": true,
+        "all_parent_hashes_current": true
+      },
+      "failure_disposition": "UNVALIDATED",
+      "success_disposition": "INDEPENDENTLY_VALIDATED_WITHIN_SIGNED_APPLICABILITY_DOMAIN"
+    },
+    {
+      "work_order_id": "WO-MOL-ROLE-20260718",
+      "modules": ["amphora-molecule-role-ranker"],
+      "counterparties": ["CHEMISTRY_LABELER_A", "CHEMISTRY_LABELER_B", "BLINDED_ADJUDICATOR", "INDEPENDENT_STATISTICIAN"],
+      "inputs": ["the accepted WO-MOL-PROPERTY frozen corpus"],
+      "deliverables": [
+        "two independent chemistry labels per eligible molecule",
+        "adjudication rules signed before label reconciliation",
+        "family and scaffold-held split with ambiguous and OOD controls",
+        "calibration and expert noninferiority report",
+        "signed evaluation and independent-transfer review receipts"
+      ],
+      "fixed_estimator": {
+        "family": "STANDARDIZED_LOGISTIC",
+        "l2_penalty": 1.0,
+        "seed": 20260717,
+        "training_only_scaling": true
+      },
+      "automatic_failures": [
+        "either verifier reverses primary improvement",
+        "ambiguous or OOD rows receive ranking authority",
+        "candidate-supplied evidence creates authority",
+        "family or scaffold overlap"
+      ],
+      "failure_disposition": "LOCKED_INTERNAL_MAXIMUM",
+      "success_disposition": "INDEPENDENTLY_VALIDATED_WITHIN_SIGNED_ROLE_DOMAIN"
+    },
+    {
+      "work_order_id": "WO-PUBLIC-CORROSION-20260718",
+      "modules": ["amphora-public-corrosion-benchmark"],
+      "counterparties": ["USBR_DATA_CUSTODIAN", "INDEPENDENT_METHOD_REVIEWER", "INDEPENDENT_STATISTICIAN"],
+      "inputs": [
+        "config/program/corrosion-sources.v2.json",
+        "a new V2 benchmark lock created before any V2 outcome evaluation"
+      ],
+      "deliverables": [
+        "official raw acquisitions for ST-19168 ST-22014 and ST-23016",
+        "original row-level ST-22024 observations and numeric EIS exports requested from USBR",
+        "whole-study assignments and endpoint mappings frozen before fit",
+        "prespecified simple model baseline low-frequency solids/PVC and leakage/null reports",
+        "signed method-comparability evaluation and independent review receipts"
+      ],
+      "fixed_gates": {
+        "minimum_eligible_systems": 30,
+        "minimum_eligible_studies": 3,
+        "minimum_untouched_external_systems": 10,
+        "report_plot_digitization": false,
+        "missing_input_imputation": false,
+        "prospective_barrier_campaign_substitution": false
+      },
+      "failure_disposition": "UNVALIDATED",
+      "success_disposition": "INDEPENDENTLY_VALIDATED_FOR_SIGNED_PUBLIC_ENDPOINTS_ONLY"
+    },
+    {
+      "work_order_id": "WO-CRO-COATINGS-20260717",
+      "modules": [
+        "amphora-cure-potlife-gate",
+        "amphora-viscosity-score",
+        "amphora-barrier-corrosion-score",
+        "amphora-solvency-score"
+      ],
+      "counterparties": ["PRIMARY_CRO", "BLINDED_VERIFIER_SITE_A", "BLINDED_VERIFIER_SITE_B", "INDEPENDENT_STATISTICIAN", "INDEPENDENT_SCIENTIFIC_REVIEWER"],
+      "immutable_protocol": "config/program/coatings-90-day-preregistration.v1.json",
+      "deliverables": [
+        "application-specific cure runs",
+        "composition-only rheology screen and locked sag endpoints",
+        "validity-filtered EIS and physical barrier endpoints",
+        "SEC/GPC qualification and all admissible-pair solvency calibrations",
+        "site-specific raw manifests transfer reports and two independent review receipts per module"
+      ],
+      "fixed_gates": {
+        "sites": 3,
+        "verifier_sites": 2,
+        "estimator_change_allowed": false,
+        "either_verifier_reversal_fails": true,
+        "theory_without_paired_lift_is_diagnostic_only": true,
+        "nist_epoxy_dsc_and_rheology_use": "KNOWN_ANSWER_NUMERICAL_OR_THEORY_CONTROLS_ONLY"
+      },
+      "failure_disposition": "LOCKED_INTERNAL_MAXIMUM",
+      "success_disposition": "INDEPENDENTLY_VALIDATED_PER_MODULE_AND_SIGNED_DOMAIN"
+    },
+    {
+      "work_order_id": "WO-DESIGN-RULE-INTERNAL-20260718",
+      "modules": ["amphora-design-rule-score"],
+      "counterparties": ["INDEPENDENT_DATA_AUDITOR", "INDEPENDENT_STATISTICIAN"],
+      "inputs": [
+        "config/program/design-rule-sources.v1.json",
+        "config/program/design-rule-split.v1.json",
+        "immutable PURformance Zenodo record 13742098 acquisitions"
+      ],
+      "deliverables": [
+        "archive integrity and CC-BY-4.0 receipt",
+        "chronology and Random_test isolation audit",
+        "fixed standardized-ridge evaluation",
+        "signed evaluation and review receipts preserving all directional-only claim locks"
+      ],
+      "success_disposition": "LOCKED_INTERNAL",
+      "promotion_beyond_locked_internal": false
+    },
+    {
+      "work_order_id": "WO-PROCESS-QC-20260718",
+      "modules": ["amphora-process-qc-twin"],
+      "counterparties": ["PILOT_MANUFACTURING_SITE", "INDEPENDENT_QC_REVIEWER"],
+      "deliverables": [
+        "30 consecutive manufacturing batches",
+        "time-ordered split frozen before endpoint review",
+        "lot CoA process trace in-process QC release result and deviation records",
+        "drift alarm false-positive and missed-deviation analysis",
+        "signed independent transfer receipt"
+      ],
+      "fixed_gates": {
+        "minimum_batches": 30,
+        "random_split_allowed": false,
+        "batch_release_authority_created": false
+      },
+      "failure_disposition": "UNVALIDATED",
+      "success_disposition": "SEPARATE_PROMOTION_REVIEW_REQUIRED"
+    },
+    {
+      "work_order_id": "WO-MOLECULE-GENERATOR-20260718",
+      "modules": ["amphora-molecule-generator"],
+      "counterparties": ["REACTION_CHEMISTRY_CURATOR", "INDEPENDENT_SYNTHESIS_REVIEWER", "WET_LAB_SITE"],
+      "deliverables": [
+        "hash-locked reaction grammar with reagent and condition applicability",
+        "blinded synthesis-feasibility review",
+        "prospective wet-lab attempts with failures retained",
+        "identity purity yield and safety observations",
+        "signed evaluation and independent review receipts"
+      ],
+      "fixed_gates": {
+        "generated_structure_is_evidence": false,
+        "novelty_implies_synthesizability": false,
+        "failed_attempts_excluded": false
+      },
+      "failure_disposition": "UNVALIDATED",
+      "success_disposition": "SEPARATE_PROMOTION_REVIEW_REQUIRED"
+    },
+    {
+      "work_order_id": "WO-FINAL-STATUS-REVIEW-20260718",
+      "modules": ["ALL_29_MODULES"],
+      "counterparties": ["INDEPENDENT_EVIDENCE_REVIEWER", "MANIFEST_POLICY_OWNER"],
+      "inputs": ["config/program/phase0-closure-phase1-decision.v1.json"],
+      "deliverables": [
+        "signed evaluation receipt for every requested status transition including NOT_APPLICABLE",
+        "independent-review receipt binding manifest profile policy and claim locks",
+        "one final reviewed decision report with exact 29-module coverage",
+        "updated manifest and capability profiles only after receipt acceptance"
+      ],
+      "automatic_failures": [
+        "missing or duplicate module",
+        "stripped claim lock",
+        "stale registry policy profile dataset split or benchmark hash",
+        "same signer for evaluation and independent review"
+      ]
+    }
+  ]
+}

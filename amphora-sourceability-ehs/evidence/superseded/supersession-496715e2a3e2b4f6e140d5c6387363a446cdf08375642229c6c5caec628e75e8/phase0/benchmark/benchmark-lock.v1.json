@@ -1,0 +1,23 @@
+{
+  "attacks": [
+    "STALE_PARENT",
+    "SAME_SIGNER_REVIEW",
+    "FORGED_RIGHTS",
+    "MISSING_LICENSE",
+    "STRIPPED_CLAIM_LOCK",
+    "CANDIDATE_SUPPLIED_EVIDENCE",
+    "CROSS_MODULE_PATH_SUBSTITUTION",
+    "REPLAY_DRIFT",
+    "FALSE_MOVEMENT_CLAIM",
+    "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+    "LEGACY_AMPHORA_RECEIPT_LAUNDERING"
+  ],
+  "dataset_manifest_sha256": "20166283160742d3e9cf31381ef37b88a8fb96d596f4685c6f771556a9eef44e",
+  "module_id": "amphora-sourceability-ehs",
+  "negative_result_authority": "AUDIT_ONLY",
+  "replay_count": 2,
+  "runner": "EXACT_LOCKED_MODULE_BENCHMARK",
+  "schema": "amphora.module-phase0-benchmark-lock.v1",
+  "scientific_success_required_for_phase0": false,
+  "split_manifest_sha256": "67a71f5073781c4d9c6c85f221c537b3ece232b614f0b90683d0ad7e8d50af47"
+}

@@ -1,0 +1,12 @@
+{
+  "bundle_sha256": "28198069905af86f5f2f576c8844ccd3d185f10353ae84aa8a11d13219d89654",
+  "evaluation_receipt_sha256": null,
+  "human_review_performed": false,
+  "independence_scope": "CODE_PATH_AND_SIGNING_IDENTITY",
+  "module_id": "amphora-molecule-property",
+  "required_independent_reimplementation": true,
+  "review_method": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION",
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

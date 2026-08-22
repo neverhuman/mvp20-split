@@ -1,0 +1,23 @@
+{
+  "attribution_statement": "Wei et al., Polymers 2024, 16(9), 1252, doi:10.3390/polym16091252, licensed CC BY 4.0.",
+  "citation": "Wei et al., 'Green and Heavy-Duty Anticorrosion Coatings: Waterborne Epoxy Thermoset Composites Modified through Variation of Zinc Dust Loading and Incorporation of Amine-Capped Aniline Trimer and Graphene Oxide', Polymers 2024, 16(9), 1252",
+  "doi": "10.3390/polym16091252",
+  "fetch_date": "2026-08-13",
+  "fetch_method": "WebFetch (AI-mediated HTML->markdown extraction; xbabe2 has no network access so raw HTML re-fetch was not possible this fire)",
+  "fetched_this_fire": true,
+  "license_quoted_verbatim": "This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/licenses/by/4.0/).",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "methods_excerpt": {
+    "adhesion_testing": "\"ASTM-D3359 standard, also known as the 'Standard Test Method for Measuring Adhesion by Tape Test'\" using grid patterns with 6-11 cuts per direction and pressure-sensitive tape.",
+    "coating_preparation": "\"0.5 g epoxy resin (EP 147w) and 0.375 g curing agent (EH613w) were dissolved in 1 mL of DI water and stirred for 2 h\", then cast onto cold-rolled steel coupons and cured in a programmed furnace from room temperature to 50C in 5 minutes, then to 120C over 1.5 hours, maintained at 120C for 4 hours.",
+    "extraction_caveat": "Captured via the WebFetch tool, which processes fetched HTML through an AI summarization pass rather than returning a raw text dump; fragments below in double quotes are the tool's direct quotation of source sentences, fragments outside quotes are the tool's paraphrase of surrounding source text. This is the same caveat fire 1 applied to ISO/ASTM pages it could not directly WebFetch (403); flagged honestly rather than presented as a hand-verified verbatim paragraph copy.",
+    "salt_spray_testing": "Conducted per \"ASTM B-117\" specifications using carbon steel specimens (70 mm x 150 mm, 145 +/- 10 um thickness) with two parallel 40 mm diagonal cuts. Testing intervals evaluated at 24, 72, 120, 168, 240, and 336 hours.",
+    "wear_resistance": "Conducted per \"ASTM D4060\" using a Taber Abrasion Tester with 1000 wear cycles."
+  },
+  "redistribution_basis": "CC BY 4.0 permits redistribution and adaptation with attribution. Attribution is carried in this import record (citation + DOI + URL above) per license Section 3(a).",
+  "rights_status": "CC_BY",
+  "schema": "amphora.cro-protocol-packager.external-source-rights-evidence.v1",
+  "source_id": "S12",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11085474/",
+  "used_for": "Structural source for evidence/phase0/sources/imports/cro-external-wei2024-candidate.v1.json -- the module's first externally-authored CRO protocol candidate, built this fire."
+}

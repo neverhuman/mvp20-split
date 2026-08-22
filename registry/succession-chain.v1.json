@@ -1,0 +1,25 @@
+{
+  "genesis_manifest_sha256": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+  "head_manifest_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+  "records": [
+    {
+      "predecessor_sha256": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+      "record_sha256": "0be2e86905ad249bfd908889e297ff4871221e4c71ed4cc4d313690738c9fe44",
+      "succession_id": "registry-succession-9ab3cfef5326e8394944fb6a1f15bf46c0f510f37d1946ef60db6d987eed9da9",
+      "successor_sha256": "bff63ed55151f6f9055312a3cd4026fc11edc320c0df61f3593be54d833c87fc"
+    },
+    {
+      "predecessor_sha256": "bff63ed55151f6f9055312a3cd4026fc11edc320c0df61f3593be54d833c87fc",
+      "record_sha256": "4331b19bc615f9c559da753dc5a0d23a269f0b033f129350db8ba48e495f099a",
+      "succession_id": "registry-succession-ff0a1d204ece345dc967ed5e750669ade8a5386d9c222916adfbb31f51764b57",
+      "successor_sha256": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+    },
+    {
+      "record_sha256": "9cf65a914590a867a5569000f5c3b3e4d18dc44cb548ae3c08208441eb5717bf",
+      "succession_id": "registry-succession-82c095f07dbea06bd8037cd7624e8bb3e0ab35a0f577e01b291619815eb0f775",
+      "predecessor_sha256": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "successor_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f"
+    }
+  ],
+  "schema": "amphora.module-registry-succession-chain.v1"
+}

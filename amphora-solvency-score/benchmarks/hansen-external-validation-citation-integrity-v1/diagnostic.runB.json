@@ -1,0 +1,180 @@
+{
+  "actual_n_literature_sourced_rows": 7,
+  "capability_claims_8_published_primary_literature_values": true,
+  "claim_under_attack": {
+    "capability_text": "External validation of Hansen 3-component chi baseline on 8 canonical polymer-solvent chi values from published primary literature (Van Krevelen 1990 Table 7.6; Bawn 1949; Sakurada 1954; Krigbaum 1959; Malcolm-Rowlinson 1957). 5 polymers \u00d7 3 solvents. HONEST FINDING: Hansen predictions correlate STRONGLY (Pearson r=+0.8692) with experimental chi and 75% (6/8) predictions are within factor of 3, in contrast to my prior OMG-chi Hansen receipt which had catastrophic negative R\u00b2 on DFT+COSMO-RS reference chi. This confirms Hansen theory IS useful for real polymer-solvent thermodynamics; the COSMO-RS reference in OMG is a different chi frame. Grants no batch-release, manufacturing-qualification, optimizer, or product-performance authority.",
+    "kpi_path": "amphora-solvency-score/evidence/phase0/kpis/hansen-chi-external-validation-8-published-polymer-solvent-pairs-kpi.v1.json",
+    "kpi_sha256": "372b1606f11543ed9d344f38142a2a0177d18922693a15301b08ef6c0967986f",
+    "reference_receipt_path": "amphora-solvency-score/reference/mvp20/data/hansen_chi_external_validation_8_published_polymer_solvent_pairs_receipt.v1.json",
+    "reference_receipt_sha256": "2e512aa4e34b97d24c36cf3f0aec0410e534f4bdc6ee1c85c0fa72e35e25fa6b"
+  },
+  "does_not_close": [
+    "does not re-derive the Hansen delta_d/delta_p/delta_h values themselves (uses the KPI's own embedded per-pair predictions)",
+    "does not assert the 7 remaining literature citations are individually free of transcription error (only that they carry an author/year/source, unlike the flagged row)",
+    "does not extend coverage beyond the existing 8 pairs (Phase-1 already lists exactly this expansion as an awaiting item)"
+  ],
+  "interpretation": "One of the 8 rows counted toward this KPI's headline 'external validation ... on 8 canonical polymer-solvent chi values from published primary literature' claim (polystyrene/water, chi_published=3.5) is NOT sourced from any publication -- its own citation field reads 'Order-of-magnitude estimate; PS is hydrophobic, high chi'. Genuine literature coverage is 7/8, not 8/8. Recomputing the headline Pearson correlation with only the genuinely-literature-sourced 7 rows drops r from 0.8692 (p=0.0051, significant at alpha=0.05) to 0.6961 (p=0.0823), which is NOT significant at the conventional alpha=0.05 threshold. The leave-one-out sweep shows every OTHER single-row exclusion keeps p<0.02 -- significance is robust to removing any genuine literature point, and fails only when the one non-literature, self-estimated point is removed. The KPI's 'strong, validated' framing is therefore not a property of the 8 published values it claims to rest on; it is an artifact of including one self-authored guess in that count.",
+  "leave_one_out": [
+    {
+      "excluded_row": "polystyrene_PS-chloroform",
+      "excluded_row_is_literature_sourced": true,
+      "pearson_p_loo": 0.013367648480073232,
+      "pearson_r_loo": 0.8585738571672126,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "excluded_row": "PMMA-chloroform",
+      "excluded_row_is_literature_sourced": true,
+      "pearson_p_loo": 0.011192009251730025,
+      "pearson_r_loo": 0.8685697447488137,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "excluded_row": "polyisobutylene_PIB-chloroform",
+      "excluded_row_is_literature_sourced": true,
+      "pearson_p_loo": 0.012559428062001032,
+      "pearson_r_loo": 0.8621698335339667,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "excluded_row": "PVA-water",
+      "excluded_row_is_literature_sourced": true,
+      "pearson_p_loo": 0.0034074133935731916,
+      "pearson_r_loo": 0.9192374863186236,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "excluded_row": "PEG-water",
+      "excluded_row_is_literature_sourced": true,
+      "pearson_p_loo": 0.004098135850214152,
+      "pearson_r_loo": 0.9129279214338155,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "excluded_row": "polystyrene_PS-water",
+      "excluded_row_is_literature_sourced": false,
+      "pearson_p_loo": 0.08234975837598328,
+      "pearson_r_loo": 0.6960963222456731,
+      "significant_at_alpha_0_05": false
+    },
+    {
+      "excluded_row": "PMMA-ethanol",
+      "excluded_row_is_literature_sourced": true,
+      "pearson_p_loo": 0.006268916401437907,
+      "pearson_r_loo": 0.8964118678964095,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "excluded_row": "polystyrene_PS-ethanol",
+      "excluded_row_is_literature_sourced": true,
+      "pearson_p_loo": 0.017618945809220063,
+      "pearson_r_loo": 0.8414451715750688,
+      "significant_at_alpha_0_05": true
+    }
+  ],
+  "pre_registered_refutation_criteria": {
+    "criterion_a": "capability text claims '8 ... published primary literature' AND at least one row is not actually literature-sourced (no publication year, or self-disclosed as an 'estimate')",
+    "criterion_a_triggered": true,
+    "criterion_b": "excluding the non-literature-sourced row(s) moves Pearson p from significant (p<0.05) to not-significant (p>=0.05)",
+    "criterion_b_triggered": true,
+    "verdict": "CLAIM_REFUTED"
+  },
+  "rederivation_cross_check": {
+    "fraction_within_factor_of_3_match": true,
+    "fraction_within_factor_of_3_receipt_reported": 0.75,
+    "fraction_within_factor_of_3_rederived": 0.75,
+    "mae_match": true,
+    "mae_receipt_reported": 0.6558380330449105,
+    "mae_rederived": 0.6558380330449105,
+    "n_pairs": 8,
+    "note": "the KPI text asserts correlation STRENGTH (r=0.8692) but never states or gates on a p-value / significance test; this audit adds that missing check.",
+    "pearson_p_value_disclosed_in_kpi": false,
+    "pearson_p_value_two_tailed_n8": 0.005056284447851126,
+    "pearson_r_match": true,
+    "pearson_r_receipt_reported": 0.8692336903365135,
+    "pearson_r_rederived": 0.8692336903365137,
+    "spearman_r_match": true,
+    "spearman_r_receipt_reported": 0.7425282823862205,
+    "spearman_r_rederived": 0.7425282823862205
+  },
+  "row_audit": [
+    {
+      "chi_hansen_predicted": 0.6428639877760548,
+      "chi_published": 0.35,
+      "citation": "Van Krevelen 1990 Table 7.6 (Bawn 1949)",
+      "literature_sourced": true,
+      "polymer_key": "polystyrene_PS",
+      "solvent": "chloroform"
+    },
+    {
+      "chi_hansen_predicted": 0.49229814425249674,
+      "chi_published": 0.42,
+      "citation": "Van Krevelen 1990 Table 7.6",
+      "literature_sourced": true,
+      "polymer_key": "PMMA",
+      "solvent": "chloroform"
+    },
+    {
+      "chi_hansen_predicted": 1.066939390496322,
+      "chi_published": 0.53,
+      "citation": "Van Krevelen 1990 Table 7.6 (Krigbaum 1959)",
+      "literature_sourced": true,
+      "polymer_key": "polyisobutylene_PIB",
+      "solvent": "chloroform"
+    },
+    {
+      "chi_hansen_predicted": 2.0774807203712298,
+      "chi_published": 0.49,
+      "citation": "Sakurada 1954 J. Polym. Sci.",
+      "literature_sourced": true,
+      "polymer_key": "PVA",
+      "solvent": "water"
+    },
+    {
+      "chi_hansen_predicted": 1.9441342351742998,
+      "chi_published": 0.42,
+      "citation": "Malcolm & Rowlinson 1957 Trans. Faraday Soc. 53: 921",
+      "literature_sourced": true,
+      "polymer_key": "PEG",
+      "solvent": "water"
+    },
+    {
+      "chi_hansen_predicted": 4.058993934315979,
+      "chi_published": 3.5,
+      "citation": "Order-of-magnitude estimate; PS is hydrophobic, high chi",
+      "literature_sourced": false,
+      "polymer_key": "polystyrene_PS",
+      "solvent": "water"
+    },
+    {
+      "chi_hansen_predicted": 1.0737086336224777,
+      "chi_published": 1.2,
+      "citation": "Van Krevelen 1990 Ch. 7",
+      "literature_sourced": true,
+      "polymer_key": "PMMA",
+      "solvent": "ethanol"
+    },
+    {
+      "chi_hansen_predicted": 3.047702485595379,
+      "chi_published": 2.5,
+      "citation": "PS-ethanol near-\u03b8 conditions; Van Krevelen 1990 Ch. 7",
+      "literature_sourced": true,
+      "polymer_key": "polystyrene_PS",
+      "solvent": "ethanol"
+    }
+  ],
+  "sensitivity": {
+    "n_literature_sourced_rows": 7,
+    "n_nonliterature_rows": 1,
+    "nonliterature_rows": [
+      "polystyrene_PS-water"
+    ],
+    "pearson_p_all_n8": 0.005056284447851126,
+    "pearson_p_literature_only_n7": 0.08234975837598328,
+    "pearson_r_all_n8": 0.8692336903365137,
+    "pearson_r_literature_only_n7": 0.6960963222456731,
+    "pearson_significant_at_alpha_0_05_all": true,
+    "pearson_significant_at_alpha_0_05_literature_only": false,
+    "significance_lost_when_nonliterature_rows_excluded": true
+  }
+}

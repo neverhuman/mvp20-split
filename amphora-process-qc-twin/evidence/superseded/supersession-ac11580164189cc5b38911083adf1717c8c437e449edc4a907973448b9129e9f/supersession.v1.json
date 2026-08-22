@@ -1,0 +1,27 @@
+{
+  "archive_root": "evidence/superseded/supersession-ac11580164189cc5b38911083adf1717c8c437e449edc4a907973448b9129e9f",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "6969f24344532cca4bdeb4ea9f7d805a989ef7726829945a0cb743091e216775",
+    "ip/disclosure-log.v1.json": "3363cc9333ef5aa31cd2ebd0dca95ef08949e0792e97da1dbafe2a9a781f404e",
+    "ip/prior-art.v1.json": "19e60b60e74120b2001d74032c54ee11fcb336a242046b7c983729215f5e928b",
+    "ip/technical-dossier.v1.json": "85633be3f1d8a186a185716a9e5c1ba43013ec436388f0a057f4d6317a6d652a",
+    "phase0/benchmark/benchmark-lock.v1.json": "144f814c9a8563ec7ba79b19e6cdcb5f15c1dbe032b9cbecae25304335a8c847",
+    "phase0/bundle.v1.json": "eb964035c63e1706815f7df6863fe19a101b56b37600e5700b015763a467d592",
+    "phase0/dataset/dataset-manifest.v1.json": "3b6c2899968af9570955b5c3acb1f8325b517f7d2ea11f663f544c7cd49b7693",
+    "phase0/kpis/process-qc-twin-spc-audit-kpi.v1.json": "4659beb58259d85c92c0b20a341a8fa7f9ac23aa378bbe49fe4308c0a09fd964",
+    "phase0/promotion/policy.v1.json": "fbce014e11bfaf8fc6f3f654e2d3282a99a993db0c2424f960a4667ef7711aa0",
+    "phase0/raw/SHA256SUMS": "5f7764ca0f5f4f700e94cfc0571dab07db44549beba37a980f7da58441f8d568",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "05ba7629fa85d4174f51918ab6cc7580cc86edb1d275f4c87ade664afe8ebc6d",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v2.json": "204d9d5d679f68d02b2ae8528d9b4ebab19087581dc141061a401c907edd0bc1",
+    "phase0/split/split-manifest.v1.json": "a360645d6c0e8d1cfe338cfb8b7a3ef5d75a8cd2b449e1a5a22d0aab5a3106c6"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-process-qc-twin",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-ac11580164189cc5b38911083adf1717c8c437e449edc4a907973448b9129e9f",
+  "unsigned_preparation_only": true
+}

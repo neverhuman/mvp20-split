@@ -1,0 +1,2157 @@
+{
+ "fixture_path": "reference/phase0-design-gate-known-answer.v1.json",
+ "n_probes": 95,
+ "probes": [
+  {
+   "candidate": {
+    "candidate_id": "resin-dgeba",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::resin-dgeba",
+   "snapshot": {
+    "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 340.42,
+     "formula": "C21H24O4",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "resin-phenyl-glycidyl-ether",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C1OC1COc1ccccc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::resin-phenyl-glycidyl-ether",
+   "snapshot": {
+    "canonical_smiles": "C1OC1COc1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 150.17,
+     "formula": "C9H10O2",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "resin-butyl-glycidyl-ether",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CCCCOCC1CO1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::resin-butyl-glycidyl-ether",
+   "snapshot": {
+    "canonical_smiles": "CCCCOCC1CO1",
+    "facts": {
+     "average_molecular_weight_g_mol": 130.19,
+     "formula": "C7H14O2",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "resin-glycidol",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "OCC1CO1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::resin-glycidol",
+   "snapshot": {
+    "canonical_smiles": "OCC1CO1",
+    "facts": {
+     "average_molecular_weight_g_mol": 74.08,
+     "formula": "C3H6O2",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "resin-epichlorohydrin",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "ClCC1CO1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::resin-epichlorohydrin",
+   "snapshot": {
+    "canonical_smiles": "ClCC1CO1",
+    "facts": {
+     "average_molecular_weight_g_mol": 92.52,
+     "formula": "C3H5ClO",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "resin-styrene-oxide",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C1OC1c1ccccc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::resin-styrene-oxide",
+   "snapshot": {
+    "canonical_smiles": "C1OC1c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 120.15,
+     "formula": "C8H8O",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "resin-cyclohexene-oxide",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C1CCC2OC2C1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::resin-cyclohexene-oxide",
+   "snapshot": {
+    "canonical_smiles": "C1CCC2OC2C1",
+    "facts": {
+     "average_molecular_weight_g_mol": 98.14,
+     "formula": "C6H10O",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "resin-diglycidyl-resorcinol",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C1OC1COc1cccc(OCC2CO2)c1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::resin-diglycidyl-resorcinol",
+   "snapshot": {
+    "canonical_smiles": "C1OC1COc1cccc(OCC2CO2)c1",
+    "facts": {
+     "average_molecular_weight_g_mol": 222.24,
+     "formula": "C12H14O4",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "hardener-deta",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCNCCN"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::hardener-deta",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 103.17,
+     "formula": "C4H13N3",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 5
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "hardener-teta",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCNCCNCCN"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::hardener-teta",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 146.24,
+     "formula": "C6H18N4",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 6
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "hardener-tepa",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCNCCNCCNCCN"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::hardener-tepa",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCNCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 189.3,
+     "formula": "C8H23N5",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 7
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "hardener-ipda",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::hardener-ipda",
+   "snapshot": {
+    "canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+    "facts": {
+     "average_molecular_weight_g_mol": 170.3,
+     "formula": "C10H22N2",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 4
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "hardener-hmda",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCCCCCN"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::hardener-hmda",
+   "snapshot": {
+    "canonical_smiles": "NCCCCCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 116.21,
+     "formula": "C6H16N2",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 4
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "hardener-mxda",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCc1cccc(CN)c1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::hardener-mxda",
+   "snapshot": {
+    "canonical_smiles": "NCc1cccc(CN)c1",
+    "facts": {
+     "average_molecular_weight_g_mol": 136.19,
+     "formula": "C8H12N2",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 4
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "hardener-pacm",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NC1CCC(CC2CCC(N)CC2)CC1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::hardener-pacm",
+   "snapshot": {
+    "canonical_smiles": "NC1CCC(CC2CCC(N)CC2)CC1",
+    "facts": {
+     "average_molecular_weight_g_mol": 210.36,
+     "formula": "C13H26N2",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 4
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "hardener-mpda",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "Nc1cccc(N)c1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::hardener-mpda",
+   "snapshot": {
+    "canonical_smiles": "Nc1cccc(N)c1",
+    "facts": {
+     "average_molecular_weight_g_mol": 108.14,
+     "formula": "C6H8N2",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 4
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "wrong-role-coating-dgeba",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "coating",
+     "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::wrong-role-coating-dgeba",
+   "snapshot": {
+    "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 340.42,
+     "formula": "C21H24O4",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "wrong-role-additive-glycidol",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "additive",
+     "smiles": "OCC1CO1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::wrong-role-additive-glycidol",
+   "snapshot": {
+    "canonical_smiles": "OCC1CO1",
+    "facts": {
+     "average_molecular_weight_g_mol": 74.08,
+     "formula": "C3H6O2",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "wrong-role-solvent-deta",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "solvent",
+     "smiles": "NCCNCCN"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::wrong-role-solvent-deta",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 103.17,
+     "formula": "C4H13N3",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 5
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "wrong-role-pigment-teta",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "pigment",
+     "smiles": "NCCNCCNCCN"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::wrong-role-pigment-teta",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 146.24,
+     "formula": "C6H18N4",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 6
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "wrong-role-extender-toluene",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "extender",
+     "smiles": "Cc1ccccc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::wrong-role-extender-toluene",
+   "snapshot": {
+    "canonical_smiles": "Cc1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 92.14,
+     "formula": "C7H8",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "missing-role-dgeba",
+    "candidate_type": "molecule",
+    "molecule": {
+     "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::missing-role-dgeba",
+   "snapshot": {
+    "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 340.42,
+     "formula": "C21H24O4",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "missing-role-deta",
+    "candidate_type": "molecule",
+    "molecule": {
+     "smiles": "NCCNCCN"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::missing-role-deta",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 103.17,
+     "formula": "C4H13N3",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 5
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "missing-role-toluene",
+    "candidate_type": "molecule",
+    "molecule": {
+     "smiles": "Cc1ccccc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::missing-role-toluene",
+   "snapshot": {
+    "canonical_smiles": "Cc1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 92.14,
+     "formula": "C7H8",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mismatched-resin-ethanol",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CCO"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::mismatched-resin-ethanol",
+   "snapshot": {
+    "canonical_smiles": "CCO",
+    "facts": {
+     "average_molecular_weight_g_mol": 46.07,
+     "formula": "C2H6O",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mismatched-resin-toluene",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "Cc1ccccc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::mismatched-resin-toluene",
+   "snapshot": {
+    "canonical_smiles": "Cc1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 92.14,
+     "formula": "C7H8",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mismatched-resin-water",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "O"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::mismatched-resin-water",
+   "snapshot": {
+    "canonical_smiles": "O",
+    "facts": {
+     "average_molecular_weight_g_mol": 18.02,
+     "formula": "H2O",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mismatched-resin-acetone",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CC(C)=O"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::mismatched-resin-acetone",
+   "snapshot": {
+    "canonical_smiles": "CC(C)=O",
+    "facts": {
+     "average_molecular_weight_g_mol": 58.08,
+     "formula": "C3H6O",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mismatched-hardener-n-butane",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "CCCC"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::mismatched-hardener-n-butane",
+   "snapshot": {
+    "canonical_smiles": "CCCC",
+    "facts": {
+     "average_molecular_weight_g_mol": 58.12,
+     "formula": "C4H10",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mismatched-hardener-ethyl-acetate",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "CCOC(C)=O"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::mismatched-hardener-ethyl-acetate",
+   "snapshot": {
+    "canonical_smiles": "CCOC(C)=O",
+    "facts": {
+     "average_molecular_weight_g_mol": 88.11,
+     "formula": "C4H8O2",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mismatched-hardener-benzene",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::mismatched-hardener-benzene",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mismatched-hardener-cyclohexane",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "C1CCCCC1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::mismatched-hardener-cyclohexane",
+   "snapshot": {
+    "canonical_smiles": "C1CCCCC1",
+    "facts": {
+     "average_molecular_weight_g_mol": 84.16,
+     "formula": "C6H12",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "dual-func-glycidyl-amine-as-resin",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "NCC1CO1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::dual-func-glycidyl-amine-as-resin",
+   "snapshot": {
+    "canonical_smiles": "NCC1CO1",
+    "facts": {
+     "average_molecular_weight_g_mol": 73.09,
+     "formula": "C3H7NO",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 2
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "dual-func-glycidyl-amine-as-hardener",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCC1CO1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::dual-func-glycidyl-amine-as-hardener",
+   "snapshot": {
+    "canonical_smiles": "NCC1CO1",
+    "facts": {
+     "average_molecular_weight_g_mol": 73.09,
+     "formula": "C3H7NO",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 2
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "dual-func-n-glycidyl-aniline-as-resin",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccc(NCC2CO2)cc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::dual-func-n-glycidyl-aniline-as-resin",
+   "snapshot": {
+    "canonical_smiles": "c1ccc(NCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 149.19,
+     "formula": "C9H11NO",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "dual-func-n-glycidyl-aniline-as-hardener",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "c1ccc(NCC2CO2)cc1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::dual-func-n-glycidyl-aniline-as-hardener",
+   "snapshot": {
+    "canonical_smiles": "c1ccc(NCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 149.19,
+     "formula": "C9H11NO",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "dual-func-aminoethyl-glycidyl-ether-as-resin",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "NCCOCC1CO1"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::dual-func-aminoethyl-glycidyl-ether-as-resin",
+   "snapshot": {
+    "canonical_smiles": "NCCOCC1CO1",
+    "facts": {
+     "average_molecular_weight_g_mol": 117.15,
+     "formula": "C5H11NO2",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 2
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "malformed-empty-structure-resin",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": ""
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::malformed-empty-structure-resin",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "malformed-multi-fragment-resin",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CC.O"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::malformed-multi-fragment-resin",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "malformed-wildcard-star-resin",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C*CC"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::malformed-wildcard-star-resin",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "malformed-wildcard-tilde-resin",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C~C"
+    }
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::malformed-wildcard-tilde-resin",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "malformed-no-structure-no-role",
+    "candidate_type": "molecule",
+    "molecule": {}
+   },
+   "class": "FIXTURE",
+   "note": "shipped known-answer record, KPI-harness routing",
+   "probe_id": "fixture::malformed-no-structure-no-role",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "up-benzene",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "UP_FORGERY",
+   "note": "aromatic hydrocarbon, zero oxirane",
+   "probe_id": "up-forgery::benzene",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "up-toluene",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "Cc1ccccc1"
+    }
+   },
+   "class": "UP_FORGERY",
+   "note": "aromatic hydrocarbon, zero amine H",
+   "probe_id": "up-forgery::toluene",
+   "snapshot": {
+    "canonical_smiles": "Cc1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 92.14,
+     "formula": "C7H8",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 4
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "up-water",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "O"
+    }
+   },
+   "class": "UP_FORGERY",
+   "note": "water, zero oxirane",
+   "probe_id": "up-forgery::water",
+   "snapshot": {
+    "canonical_smiles": "O",
+    "facts": {
+     "average_molecular_weight_g_mol": 18.02,
+     "formula": "H2O",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "up-cyclohexane",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "C1CCCCC1"
+    }
+   },
+   "class": "UP_FORGERY",
+   "note": "alkane, zero amine H",
+   "probe_id": "up-forgery::cyclohexane",
+   "snapshot": {
+    "canonical_smiles": "C1CCCCC1",
+    "facts": {
+     "average_molecular_weight_g_mol": 84.16,
+     "formula": "C6H12",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 2
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "up-thf",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C1CCOC1"
+    }
+   },
+   "class": "UP_FORGERY",
+   "note": "5-ring ether declared as oxirane",
+   "probe_id": "up-forgery::thf",
+   "snapshot": {
+    "canonical_smiles": "C1CCOC1",
+    "facts": {
+     "average_molecular_weight_g_mol": 72.11,
+     "formula": "C4H8O",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "up-acetamide",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "CC(N)=O"
+    }
+   },
+   "class": "UP_FORGERY",
+   "note": "amide N-H declared reactive",
+   "probe_id": "up-forgery::acetamide",
+   "snapshot": {
+    "canonical_smiles": "CC(N)=O",
+    "facts": {
+     "average_molecular_weight_g_mol": 59.07,
+     "formula": "C2H5NO",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 2
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "up-pyridine",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "c1ccncc1"
+    }
+   },
+   "class": "UP_FORGERY",
+   "note": "aromatic N declared reactive",
+   "probe_id": "up-forgery::pyridine",
+   "snapshot": {
+    "canonical_smiles": "c1ccncc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 79.1,
+     "formula": "C5H5N",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "up-dgeba-as-hardener",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    }
+   },
+   "class": "UP_FORGERY",
+   "note": "true resin re-badged as hardener via forged amine facts",
+   "probe_id": "up-forgery::dgeba-as-hardener",
+   "snapshot": {
+    "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 340.42,
+     "formula": "C21H24O4",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 2
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "down-resin-dgeba",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    }
+   },
+   "class": "DOWN_FORGERY",
+   "note": "genuine shipped active with facts forged to zero",
+   "probe_id": "down-forgery::resin-dgeba",
+   "snapshot": {
+    "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 340.42,
+     "formula": "C21H24O4",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "down-resin-phenyl-glycidyl-ether",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C1OC1COc1ccccc1"
+    }
+   },
+   "class": "DOWN_FORGERY",
+   "note": "genuine shipped active with facts forged to zero",
+   "probe_id": "down-forgery::resin-phenyl-glycidyl-ether",
+   "snapshot": {
+    "canonical_smiles": "C1OC1COc1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 150.17,
+     "formula": "C9H10O2",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "down-hardener-deta",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCNCCN"
+    }
+   },
+   "class": "DOWN_FORGERY",
+   "note": "genuine shipped active with facts forged to zero",
+   "probe_id": "down-forgery::hardener-deta",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 103.17,
+     "formula": "C4H13N3",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "down-hardener-teta",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCNCCNCCN"
+    }
+   },
+   "class": "DOWN_FORGERY",
+   "note": "genuine shipped active with facts forged to zero",
+   "probe_id": "down-forgery::hardener-teta",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 146.24,
+     "formula": "C6H18N4",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypass-multi-fragment-salt",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCNCCN.Cl.Cl"
+    }
+   },
+   "class": "STRUCTURE_BYPASS",
+   "note": "multi-fragment amine salt: shipped lexical ladder rejects it as multi_fragment_structure when facts are absent",
+   "probe_id": "bypass::multi-fragment-salt",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCN.Cl.Cl",
+    "facts": {
+     "average_molecular_weight_g_mol": 175.1,
+     "formula": "C4H15Cl2N3",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 5
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypassnf-multi-fragment-salt",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCNCCN.Cl.Cl"
+    }
+   },
+   "class": "BYPASS_NOFACTS",
+   "note": "same candidate with facts absent: shipped fail-closed pathway",
+   "probe_id": "bypass-nofacts::multi-fragment-salt",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypass-wildcard",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CC(*)CO"
+    }
+   },
+   "class": "STRUCTURE_BYPASS",
+   "note": "wildcard atom (wildcard_or_query_structure)",
+   "probe_id": "bypass::wildcard",
+   "snapshot": {
+    "canonical_smiles": "CC(*)CO",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypassnf-wildcard",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CC(*)CO"
+    }
+   },
+   "class": "BYPASS_NOFACTS",
+   "note": "same candidate with facts absent: shipped fail-closed pathway",
+   "probe_id": "bypass-nofacts::wildcard",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypass-empty",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": ""
+    }
+   },
+   "class": "STRUCTURE_BYPASS",
+   "note": "empty structure string (empty_structure)",
+   "probe_id": "bypass::empty",
+   "snapshot": {
+    "canonical_smiles": "",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypassnf-empty",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": ""
+    }
+   },
+   "class": "BYPASS_NOFACTS",
+   "note": "same candidate with facts absent: shipped fail-closed pathway",
+   "probe_id": "bypass-nofacts::empty",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypass-missing-smiles",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin"
+    }
+   },
+   "class": "STRUCTURE_BYPASS",
+   "note": "molecule object without smiles (missing_structure)",
+   "probe_id": "bypass::missing-smiles",
+   "snapshot": {
+    "canonical_smiles": "canonical-placeholder",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypassnf-missing-smiles",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin"
+    }
+   },
+   "class": "BYPASS_NOFACTS",
+   "note": "same candidate with facts absent: shipped fail-closed pathway",
+   "probe_id": "bypass-nofacts::missing-smiles",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypass-unclosed-ring",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C1CC"
+    }
+   },
+   "class": "STRUCTURE_BYPASS",
+   "note": "lexically clean but chemically unparseable (unclosed ring bond)",
+   "probe_id": "bypass::unclosed-ring",
+   "snapshot": {
+    "canonical_smiles": "C1CC",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypassnf-unclosed-ring",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C1CC"
+    }
+   },
+   "class": "BYPASS_NOFACTS",
+   "note": "same candidate with facts absent: shipped fail-closed pathway",
+   "probe_id": "bypass-nofacts::unclosed-ring",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypass-pentavalent-carbon",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C(C)(C)(C)(C)C"
+    }
+   },
+   "class": "STRUCTURE_BYPASS",
+   "note": "lexically clean but valence-impossible (5-valent carbon)",
+   "probe_id": "bypass::pentavalent-carbon",
+   "snapshot": {
+    "canonical_smiles": "C(C)(C)(C)(C)C",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "bypassnf-pentavalent-carbon",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "C(C)(C)(C)(C)C"
+    }
+   },
+   "class": "BYPASS_NOFACTS",
+   "note": "same candidate with facts absent: shipped fail-closed pathway",
+   "probe_id": "bypass-nofacts::pentavalent-carbon",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "swap-benzene",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "BINDING_SWAP",
+   "note": "honest DGEBA MoleculeFactsV1 (binding fields = DGEBA) attached to benzene",
+   "probe_id": "swap::dgeba-facts-on-benzene",
+   "snapshot": {
+    "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 340.42,
+     "formula": "C21H24O4",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "swap-hardener",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "NCCNCCN"
+    }
+   },
+   "class": "BINDING_SWAP",
+   "note": "honest facts of one shipped hardener replayed against another",
+   "probe_id": "swap::hardener-teta-facts-on-hardener-deta",
+   "snapshot": {
+    "canonical_smiles": "NCCNCCNCCN",
+    "facts": {
+     "average_molecular_weight_g_mol": 146.24,
+     "formula": "C6H18N4",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 6
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mag-b1",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "MAGNITUDE",
+   "note": "forged ox=1",
+   "probe_id": "magnitude::benzene-ox1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mag-b2",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "MAGNITUDE",
+   "note": "forged ox=u32::MAX; must equal ox=1 decision",
+   "probe_id": "magnitude::benzene-ox4294967295",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 4294967295,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mag-d1",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    }
+   },
+   "class": "MAGNITUDE",
+   "note": "difunctional DGEBA under-declared as monofunctional",
+   "probe_id": "magnitude::dgeba-ox1",
+   "snapshot": {
+    "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 340.42,
+     "formula": "C21H24O4",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "mag-d2",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    }
+   },
+   "class": "MAGNITUDE",
+   "note": "honest DGEBA ox=2 (control pair member)",
+   "probe_id": "magnitude::dgeba-ox2",
+   "snapshot": {
+    "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 340.42,
+     "formula": "C21H24O4",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "serde-absent",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "SERDE_CONTROL",
+   "note": "no snapshot at all: fail-closed fallback branch",
+   "probe_id": "serde::facts-absent",
+   "snapshot": null
+  },
+  {
+   "candidate": {
+    "candidate_id": "serde-neg",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "SERDE_CONTROL",
+   "note": "u32 field negative: serde must reject",
+   "probe_id": "serde::negative-ox",
+   "snapshot": {
+    "mode": "verbatim",
+    "value": {
+     "average_molecular_weight_g_mol": 78.11,
+     "canonical_isomeric_smiles": "c1ccccc1",
+     "canonical_structure_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+     "formula": "C6H6",
+     "ontology_version": "amphora.reactive-ontology.v1",
+     "oxirane_ring_count": -1,
+     "reactive_amine_hydrogen_count": 0,
+     "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+     },
+     "schema": "amphora.molecule-facts.v1",
+     "structure_identity": "smiles-sha256:0",
+     "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+     }
+    }
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "serde-str",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "SERDE_CONTROL",
+   "note": "u32 field as string: serde must reject",
+   "probe_id": "serde::string-ox",
+   "snapshot": {
+    "mode": "verbatim",
+    "value": {
+     "average_molecular_weight_g_mol": 78.11,
+     "canonical_isomeric_smiles": "c1ccccc1",
+     "canonical_structure_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+     "formula": "C6H6",
+     "ontology_version": "amphora.reactive-ontology.v1",
+     "oxirane_ring_count": "2",
+     "reactive_amine_hydrogen_count": 0,
+     "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+     },
+     "schema": "amphora.molecule-facts.v1",
+     "structure_identity": "smiles-sha256:0",
+     "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+     }
+    }
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "serde-float",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "SERDE_CONTROL",
+   "note": "u32 field as float: serde must reject",
+   "probe_id": "serde::float-ox",
+   "snapshot": {
+    "mode": "verbatim",
+    "value": {
+     "average_molecular_weight_g_mol": 78.11,
+     "canonical_isomeric_smiles": "c1ccccc1",
+     "canonical_structure_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+     "formula": "C6H6",
+     "ontology_version": "amphora.reactive-ontology.v1",
+     "oxirane_ring_count": 2.5,
+     "reactive_amine_hydrogen_count": 0,
+     "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+     },
+     "schema": "amphora.molecule-facts.v1",
+     "structure_identity": "smiles-sha256:0",
+     "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+     }
+    }
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "serde-unknown",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "SERDE_CONTROL",
+   "note": "deny_unknown_fields must reject",
+   "probe_id": "serde::unknown-field",
+   "snapshot": {
+    "mode": "verbatim",
+    "value": {
+     "average_molecular_weight_g_mol": 78.11,
+     "canonical_isomeric_smiles": "c1ccccc1",
+     "canonical_structure_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+     "formula": "C6H6",
+     "injected_extra_field": true,
+     "ontology_version": "amphora.reactive-ontology.v1",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0,
+     "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+     },
+     "schema": "amphora.molecule-facts.v1",
+     "structure_identity": "smiles-sha256:0",
+     "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+     }
+    }
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "serde-missing",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "SERDE_CONTROL",
+   "note": "missing required struct field: serde must reject",
+   "probe_id": "serde::missing-provenance",
+   "snapshot": {
+    "mode": "verbatim",
+    "value": {
+     "average_molecular_weight_g_mol": 78.11,
+     "canonical_isomeric_smiles": "c1ccccc1",
+     "canonical_structure_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+     "formula": "C6H6",
+     "ontology_version": "amphora.reactive-ontology.v1",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0,
+     "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+     },
+     "schema": "amphora.molecule-facts.v1",
+     "structure_identity": "smiles-sha256:0"
+    }
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "serde-valid",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "SERDE_CONTROL",
+   "note": "well-typed verbatim forged snapshot: must be ACCEPTED by serde and SCORE (positive control that the serde wall is the only wall)",
+   "probe_id": "serde::verbatim-valid-control",
+   "snapshot": {
+    "mode": "verbatim",
+    "value": {
+     "average_molecular_weight_g_mol": 78.11,
+     "canonical_isomeric_smiles": "c1ccccc1",
+     "canonical_structure_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+     "formula": "C6H6",
+     "ontology_version": "amphora.reactive-ontology.v1",
+     "oxirane_ring_count": 2,
+     "reactive_amine_hydrogen_count": 0,
+     "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+     },
+     "schema": "amphora.molecule-facts.v1",
+     "structure_identity": "smiles-sha256:0",
+     "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+     }
+    }
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-resin-00",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::resin-ox0-nh0",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-resin-10",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::resin-ox1-nh0",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-resin-01",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::resin-ox0-nh1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-resin-11",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "resin",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::resin-ox1-nh1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-hardener-00",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::hardener-ox0-nh0",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-hardener-10",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::hardener-ox1-nh0",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-hardener-01",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::hardener-ox0-nh1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-hardener-11",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "hardener",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::hardener-ox1-nh1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-norole-00",
+    "candidate_type": "molecule",
+    "molecule": {
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::norole-ox0-nh0",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-norole-10",
+    "candidate_type": "molecule",
+    "molecule": {
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::norole-ox1-nh0",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-norole-01",
+    "candidate_type": "molecule",
+    "molecule": {
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::norole-ox0-nh1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-norole-11",
+    "candidate_type": "molecule",
+    "molecule": {
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::norole-ox1-nh1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-solvent-00",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "solvent",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::solvent-ox0-nh0",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-solvent-10",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "solvent",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::solvent-ox1-nh0",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 0
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-solvent-01",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "solvent",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::solvent-ox0-nh1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 0,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  },
+  {
+   "candidate": {
+    "candidate_id": "grid-solvent-11",
+    "candidate_type": "molecule",
+    "molecule": {
+     "role": "solvent",
+     "smiles": "c1ccccc1"
+    }
+   },
+   "class": "GRID",
+   "note": "decision-surface grid point",
+   "probe_id": "grid::solvent-ox1-nh1",
+   "snapshot": {
+    "canonical_smiles": "c1ccccc1",
+    "facts": {
+     "average_molecular_weight_g_mol": 78.11,
+     "formula": "C6H6",
+     "oxirane_ring_count": 1,
+     "reactive_amine_hydrogen_count": 1
+    },
+    "mode": "synth"
+   }
+  }
+ ],
+ "schema": "amphora.molecule-design-gate.fact-snapshot-authority.probes.v1"
+}

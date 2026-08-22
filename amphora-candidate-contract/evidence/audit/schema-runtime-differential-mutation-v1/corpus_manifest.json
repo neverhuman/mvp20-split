@@ -1,0 +1,1525 @@
+[
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "CH_top_inchi_key_no_optin",
+    "prediction": "PARITY",
+    "sha256": "4a41766a54f95b1fa080beeda7a94d1838c67863015e1a07b6cbce340568f0f5"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 140,
+    "name": "CH_top_inchi_key_optin",
+    "prediction": "PARITY",
+    "sha256": "2ce1420549674303d5a27a26597d9c462df6d4409452b56aa41d15eca817d704"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 87,
+    "name": "CH_top_inchi_no_optin",
+    "prediction": "PARITY",
+    "sha256": "f956e9ffaeb9781ab2bd9bb5b684f9b868ba18f68e9e6c1a876bf35361cf4ad7"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 136,
+    "name": "CH_top_inchi_optin",
+    "prediction": "PARITY",
+    "sha256": "6646ef56169d7e46d2c97e80d79e98b774aa911d4a768f9750cb8128f6cf5dde"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 90,
+    "name": "CH_top_inchikey_no_optin",
+    "prediction": "PARITY",
+    "sha256": "20baf37c44f2e2e65db6a21e2d7a642ca1364a49530761d4f5c3c58dfa2e172f"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 139,
+    "name": "CH_top_inchikey_optin",
+    "prediction": "PARITY",
+    "sha256": "c00c0e620131f0829cf06fcf8711dd35560d3d312b3bb16e51f06149a4449e78"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "CH_top_mol_block_no_optin",
+    "prediction": "PARITY",
+    "sha256": "61e63b1da4e4d5699986987dc07e76552231b5f88a93d0b16d9490ea9e241678"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 140,
+    "name": "CH_top_mol_block_optin",
+    "prediction": "PARITY",
+    "sha256": "f3414c7bab9839644bcafd446dcb6a4c26c5cbdb8a60634f3048d174fa92b913"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 85,
+    "name": "CH_top_mol_no_optin",
+    "prediction": "PARITY",
+    "sha256": "e737c0177411e849aa30009a88c28ad0cb9b601b5fc3e3eeefbbddb1641d1048"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 134,
+    "name": "CH_top_mol_optin",
+    "prediction": "PARITY",
+    "sha256": "9e2073179058f29764a08c70a1eb5b4adca6990aa1aacf65b94894118ac4c4bb"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "CH_top_mol_v2000_no_optin",
+    "prediction": "PARITY",
+    "sha256": "518390d0b1519aea7a5d392936e21bff8cdcd359dbca0cb6d391aa653403bcc3"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 140,
+    "name": "CH_top_mol_v2000_optin",
+    "prediction": "PARITY",
+    "sha256": "8e806a6ca72f50480f3b79c0d1a43a14032af551f35d9c5e1fed967b8a4fdc53"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "CH_top_mol_v3000_no_optin",
+    "prediction": "PARITY",
+    "sha256": "2db6a1b33e65f70402d35def7fb17af664113a5fce065ae0c6d084a53ad8990f"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 140,
+    "name": "CH_top_mol_v3000_optin",
+    "prediction": "PARITY",
+    "sha256": "222bfd6804097ac2f486fc8cedd3c26307239b84ce718cd80a4ecb1d49c0cd60"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 92,
+    "name": "CH_top_recipe_csv_no_optin",
+    "prediction": "PARITY",
+    "sha256": "9612d4f5cf3101d58f8756b8aa38cc2376f36d74bf113c6aac17c65870f628c0"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 141,
+    "name": "CH_top_recipe_csv_optin",
+    "prediction": "PARITY",
+    "sha256": "9a1b10c00adc9b782ebf861e34a8795c5603764d43d2be020786d428a111705f"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 85,
+    "name": "CH_top_sdf_no_optin",
+    "prediction": "PARITY",
+    "sha256": "fd7da36498b381b2da74b73158e21d8b6e14a59acc5fea5270789d90fa14092f"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 134,
+    "name": "CH_top_sdf_optin",
+    "prediction": "PARITY",
+    "sha256": "a8cba8a57f791f5eb2b498a00f75657ebd2f6bfdb9f14d7366e8c7e0e51434ee"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 93,
+    "name": "CH_top_sdf_records_no_optin",
+    "prediction": "PARITY",
+    "sha256": "fa12deaba9886c433f857578badd93fca75861f6e50c62414c67d3048929a009"
+  },
+  {
+    "group": "CHEM_TOP",
+    "layer": "STRUCTURAL",
+    "n_bytes": 142,
+    "name": "CH_top_sdf_records_optin",
+    "prediction": "PARITY",
+    "sha256": "d4fdd973c9ccc81c4c1233327b4625f1dc920109e5926f148afa267e2f1b3901"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 93,
+    "name": "L_dup_candidate_id",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "bc17b9aab94bf0c20fa86c3786203bf5bbfb0688d260570ee00835c956b7a851"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 102,
+    "name": "L_dup_candidate_type",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "fec7ef01bcf11fd1910780672e852fcfcb43b6ce877bf98edf20f5844d9e3325"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 91,
+    "name": "L_dup_escaped_key",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "762614a017b69c88dc50724a9b7d6148efbe7668976842d7be4155ac8a63374b"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 86,
+    "name": "L_dup_extra_key",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "6b58b7fc848a1d002904cc4416476fcdaa4558d2453e1f6c834ec35504be4281"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 86,
+    "name": "L_dup_nested_key",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "001152e68c13621a8867c2a81f6cbbc14a26bbab0f8e33f4678eaba61a826590"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 91,
+    "name": "L_nonfinite_infinity",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "1ab6648e1dbd8420ad8eb48ff81979b0da6c11425904f4ea54f22b28799aaa45"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 86,
+    "name": "L_nonfinite_nan",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "231c127185cd2d31f95db4bde874cefd5c9bd543f2bcc140df621a7e7c69cfa3"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 92,
+    "name": "L_nonfinite_neg_infinity",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "8cf1960bfbedf88f901c6097f70558b84b6a3e08402944edc52cc031d246ec60"
+  },
+  {
+    "group": "LEXICAL",
+    "layer": "LEXICAL",
+    "n_bytes": 82,
+    "name": "L_nonfinite_nested",
+    "prediction": "RUNTIME_SUPERSET",
+    "sha256": "19264b1f900860fe2f70d6388f242c50607354b8ec4194f319c937e4e8415ecc"
+  },
+  {
+    "group": "POSITIVE",
+    "layer": "STRUCTURAL",
+    "n_bytes": 93,
+    "name": "POS_base_evidence_package",
+    "prediction": "PARITY",
+    "sha256": "d06e50dfaac6bf0991412e32aefdfbdecaa19fe075befeeb537cc7f401f530c2"
+  },
+  {
+    "group": "POSITIVE",
+    "layer": "STRUCTURAL",
+    "n_bytes": 89,
+    "name": "POS_base_formulation",
+    "prediction": "PARITY",
+    "sha256": "041ebcc70e69a2ffac114cbcd3e6e578becc9599af2018b4de14fd88606839b7"
+  },
+  {
+    "group": "POSITIVE",
+    "layer": "STRUCTURAL",
+    "n_bytes": 75,
+    "name": "POS_base_molecule",
+    "prediction": "PARITY",
+    "sha256": "66ead3eb47543409490cddc7201a9f090a9cebc9b9f366d91c9f2e89b0ae39f8"
+  },
+  {
+    "group": "POSITIVE",
+    "layer": "STRUCTURAL",
+    "n_bytes": 128,
+    "name": "POS_formulation_bare_molecule",
+    "prediction": "PARITY",
+    "sha256": "ff4ed668505ed948dede112b2dad48f980a14339711a7862c5a4b6d03a098bd5"
+  },
+  {
+    "group": "POSITIVE",
+    "layer": "STRUCTURAL",
+    "n_bytes": 92,
+    "name": "POS_molecule_extra_benign_key",
+    "prediction": "PARITY",
+    "sha256": "6f03621e04e9462700d895b2251042222399e64261f009385d4bcf139e803f50"
+  },
+  {
+    "group": "PARSE",
+    "layer": "PARSE",
+    "n_bytes": 9,
+    "name": "P_bare_word",
+    "prediction": "PARSE_BOTH_FAIL",
+    "sha256": "dda18a0e21ae47c53b4309434cbc02ae8bf764fa83a6defbb719431242722aa7"
+  },
+  {
+    "group": "PARSE",
+    "layer": "PARSE",
+    "n_bytes": 0,
+    "name": "P_empty_input",
+    "prediction": "PARSE_BOTH_FAIL",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "group": "PARSE",
+    "layer": "PARSE",
+    "n_bytes": 81,
+    "name": "P_leading_zero",
+    "prediction": "PARSE_BOTH_FAIL",
+    "sha256": "24e1ca7cff6264ff9fadcd3da1c2b03f199abe496aeb33886f2e012c6f017e51"
+  },
+  {
+    "group": "PARSE",
+    "layer": "PARSE",
+    "n_bytes": 75,
+    "name": "P_non_utf8",
+    "prediction": "PARSE_BOTH_FAIL",
+    "sha256": "248687e0d8ca6a5d7e9dbe2071d07ae72fc09bc236df6fb2201494a9f2bbd9c5"
+  },
+  {
+    "group": "PARSE",
+    "layer": "PARSE",
+    "n_bytes": 74,
+    "name": "P_single_quotes",
+    "prediction": "PARSE_BOTH_FAIL",
+    "sha256": "31c73bb93d03d2065fb4d1184556f7d3f88b45ff44e372edaa49b06c07d77706"
+  },
+  {
+    "group": "PARSE",
+    "layer": "PARSE",
+    "n_bytes": 75,
+    "name": "P_trailing_comma",
+    "prediction": "PARSE_BOTH_FAIL",
+    "sha256": "bdb25e6d419c78421a8527144129da65a985ab54070aa19bf53808f88f47fc9d"
+  },
+  {
+    "group": "PARSE",
+    "layer": "PARSE",
+    "n_bytes": 72,
+    "name": "P_unquoted_key",
+    "prediction": "PARSE_BOTH_FAIL",
+    "sha256": "35192a7e080144b31a636b9c8d740edbbc59f5521558d58d4e7850581601453d"
+  },
+  {
+    "group": "PARSE",
+    "layer": "PARSE",
+    "n_bytes": 47,
+    "name": "P_unterminated_object",
+    "prediction": "PARSE_BOTH_FAIL",
+    "sha256": "b715f20af0c7762cef4183cbca176e3b8306da3ab63b195b4b1db10f86cd72bc"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 86,
+    "name": "R_depth_k001",
+    "param": 1,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "9d8b6970c7c16a01517865fd8314a66b6cc672f9e313d786330467521d37d77a"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 148,
+    "name": "R_depth_k032",
+    "param": 32,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "ec04a89c15416ace80b3ac7740385a0e6038ff8f245d5a345cb6d6170b5dc405"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 204,
+    "name": "R_depth_k060",
+    "param": 60,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "220a45ccc88fbfcf7dd846ded4b418ce693684f6cec088de33dcd95ecd249453"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 206,
+    "name": "R_depth_k061",
+    "param": 61,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "e9519f4f85770096523a1a9d2c0eee9ff5b77ba9b829042f98c8460577dc7a7e"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 208,
+    "name": "R_depth_k062",
+    "param": 62,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "14cd89132357d2abe1ba9bec05b5e326ec8faa66ea982119d96195a859164744"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 210,
+    "name": "R_depth_k063",
+    "param": 63,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "5b9fa203d6c0155a3b11fa5748d3c32021ab90cbe9134413fa9164d1dd77cdfe"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 212,
+    "name": "R_depth_k064",
+    "param": 64,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "4fbc70185e9177139bed4d526f03aca1bc4c08f7ff8078490b4e77caa907d09a"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 214,
+    "name": "R_depth_k065",
+    "param": 65,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "7aa165719348a205530c713b71b11d1f8c80ee551fc00408cd635b9a10da0949"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 216,
+    "name": "R_depth_k066",
+    "param": 66,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "814e99322827650998416085531487ff8b91a4e3945c14d89fcca2ef58124db7"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 218,
+    "name": "R_depth_k067",
+    "param": 67,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "0bade7824ff4bd13bf33996021ad38e598a7d308fb97dba702440f3ec9677478"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 220,
+    "name": "R_depth_k068",
+    "param": 68,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "be16d1960949ef0d618f6f0a69860653340270a0dd5081d8073beb9eed787f5f"
+  },
+  {
+    "group": "RES_DEPTH",
+    "layer": "RESOURCE",
+    "n_bytes": 284,
+    "name": "R_depth_k100",
+    "param": 100,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "621e21adf68abba5a376491ae3ddaaf720be1ce88dbf692689b93d0aa5342845"
+  },
+  {
+    "group": "RES_SIZE",
+    "layer": "RESOURCE",
+    "n_bytes": 8388608,
+    "name": "R_size_at_cap",
+    "param": 8388608,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "c0fcb8a51c9dc9dac402b24fe9fdc5a7d0f54f28f0ba481122dcf76001e6b86e"
+  },
+  {
+    "group": "RES_SIZE",
+    "layer": "RESOURCE",
+    "n_bytes": 8388609,
+    "name": "R_size_over_1",
+    "param": 8388609,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "d4ec9977a3105cd2637cd3be7668323e3810fb474113fe5a33227a8b2e03b5ac"
+  },
+  {
+    "group": "RES_SIZE",
+    "layer": "RESOURCE",
+    "n_bytes": 8389632,
+    "name": "R_size_over_1k",
+    "param": 8389632,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "a6856a6ddf475d747bbbb9cdeed252312b9085b69b2c2ce98b5230128ec90e23"
+  },
+  {
+    "group": "RES_SIZE",
+    "layer": "RESOURCE",
+    "n_bytes": 8387584,
+    "name": "R_size_under_1k",
+    "param": 8387584,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "77c3ee820424d10610843356ddacd81e35536b5963fb616c9859e0e0a4ea61ec"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 86,
+    "name": "R_width_w000001",
+    "param": 1,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "ef79889c7dc35754995ce1f90f73a0bd621fababcca37caf06e6bd72ab730a92"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 374,
+    "name": "R_width_w000100",
+    "param": 100,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "e5f9c8027dd4b60ccf58c014bad19982124b8b877b1caac45e5f127cdcfe120e"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588914,
+    "name": "R_width_w099990",
+    "param": 99990,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "0c96954255fd6655c7f4b425c3f5d271af889a020c0a204769d971764b3ac31b"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588944,
+    "name": "R_width_w099995",
+    "param": 99995,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "a88d2c0da21c5063466c8b3a7d0bc90b2e84ec0e678107daa943572ecd861f2e"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588950,
+    "name": "R_width_w099996",
+    "param": 99996,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "84c46f4665da30186a191c9334cf7f2d1009f80183847d34d1dd4370c1e9cede"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588956,
+    "name": "R_width_w099997",
+    "param": 99997,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "2a9013d1a266f2838c29d5cbd1b72b0f27593e24141e6db0ffb7f2b931b38f0b"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588962,
+    "name": "R_width_w099998",
+    "param": 99998,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "a652163ba6b732a64b13f59b38d0746b1c684fce780c416d47e78d3a9806b397"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588968,
+    "name": "R_width_w099999",
+    "param": 99999,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "73da827d0d45e175825ca83daf12690d2fbb52e22223dbf40376c9d093345d6a"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588974,
+    "name": "R_width_w100000",
+    "param": 100000,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "11e36083721deadc4489da73c7f31f2ce34c1b9f736d7fa6f1d50cfa1e3e1228"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588981,
+    "name": "R_width_w100001",
+    "param": 100001,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "72081a0a3f7b7c7c0ee9813c8191dc37e0b63245a9e0be10ac617e040a4a0578"
+  },
+  {
+    "group": "RES_WIDTH",
+    "layer": "RESOURCE",
+    "n_bytes": 588988,
+    "name": "R_width_w100002",
+    "param": 100002,
+    "prediction": "RES_BOUNDARY",
+    "sha256": "6dec885bd0e9819e33627b0adeffdeb04038017a99bdc9139eea12cf0d5afa80"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 94,
+    "name": "S_evidence_package_id_arr",
+    "prediction": "PARITY",
+    "sha256": "6657e035133702789012899e11abf6a3fbe316d4378db1f41ba236e7959d802f"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 73,
+    "name": "S_evidence_package_id_drop",
+    "prediction": "PARITY",
+    "sha256": "246d71ac93b103ad4ef70c286558f9d0eb0678c043c0f0bc7fefa4a8af26d7b3"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "S_evidence_package_id_emptystr",
+    "prediction": "PARITY",
+    "sha256": "f676c4dbc7f58bb974eba4dc0643f885224493fc16a6136473655c3cb41f35d3"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 94,
+    "name": "S_evidence_package_id_false",
+    "prediction": "PARITY",
+    "sha256": "ad7e38b44457929c0f6f056f9738df3e954ff202615b8d43ae8847cd22f2dcb1"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 93,
+    "name": "S_evidence_package_id_float",
+    "prediction": "PARITY",
+    "sha256": "5c15ec70660e1dc82a6586b0eb357dbacdb1b7a6f9ccda25482029f67f5d1b4d"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 90,
+    "name": "S_evidence_package_id_int0",
+    "prediction": "PARITY",
+    "sha256": "420a7eb287cef340d3879c2196a0f1cbe1ee25022c967f2e7c87ee85696c38af"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "S_evidence_package_id_int42",
+    "prediction": "PARITY",
+    "sha256": "73d848dbfa1d3944874f348b7bb23eb38b488635fec88336e33cd0e938a2dc48"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "S_evidence_package_id_intneg",
+    "prediction": "PARITY",
+    "sha256": "c05fe19feaac6ba81c51a8576f807235b9bae11f8049163609971175432825eb"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 93,
+    "name": "S_evidence_package_id_null",
+    "prediction": "PARITY",
+    "sha256": "cec42b44969b5df425e85fd0b8cf2f07dd6e2487dd85472c4e6bba9c8ce1d757"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 98,
+    "name": "S_evidence_package_id_obj",
+    "prediction": "PARITY",
+    "sha256": "d99ab1c46faeb0621cfb8813946d1ccb0cb2a4469574a71809b5603c3c295932"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 93,
+    "name": "S_evidence_package_id_true",
+    "prediction": "PARITY",
+    "sha256": "fe7c918aa063ee130bdd15fde9dd3324a27d844aa2f5d01f540b364ab4ac1f77"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 79,
+    "name": "S_evidence_package_payload_arr",
+    "prediction": "PARITY",
+    "sha256": "4615aea15ea45ae677d9bcbee4ee7f81949bc209e8aa2264981dddab2a466390"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 57,
+    "name": "S_evidence_package_payload_drop",
+    "prediction": "PARITY",
+    "sha256": "e505823874025b58f16ebec33e801ca8704c4070f1ba9a7585cc313bc642c12e"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 76,
+    "name": "S_evidence_package_payload_emptystr",
+    "prediction": "PARITY",
+    "sha256": "18f95b2c0750250ff11f98242ea49571234a20afef5193877af6228b02d3d984"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 78,
+    "name": "S_evidence_package_payload_float",
+    "prediction": "PARITY",
+    "sha256": "584aebfb78d6b0a1522af09a943e4edf8fb9c14265c65cc29f832aa635007155"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 76,
+    "name": "S_evidence_package_payload_int42",
+    "prediction": "PARITY",
+    "sha256": "069215a34d6c082ba330a80b17040cf71436bd663f515517fa1b34309f8d76c2"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 78,
+    "name": "S_evidence_package_payload_null",
+    "prediction": "PARITY",
+    "sha256": "d6f0f63070b93e59e418b9346607a5ea44c014f63eb0339dd8eeb1045b59b34f"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 78,
+    "name": "S_evidence_package_payload_true",
+    "prediction": "PARITY",
+    "sha256": "540b7a7f8f3de2458baaf22b6a10509b3d36c3cdbb3d0fefa43f21ffb0d467f9"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 80,
+    "name": "S_evidence_package_type_arr",
+    "prediction": "PARITY",
+    "sha256": "41cf53511b93a19bcd90840fb950a623a7870e67df072a5de41e98be23c077f6"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 57,
+    "name": "S_evidence_package_type_drop",
+    "prediction": "PARITY",
+    "sha256": "d8828a9799bdb7cc321b42fa26f52bb1946475d009ef94ada7489bc31a60a898"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 77,
+    "name": "S_evidence_package_type_int42",
+    "prediction": "PARITY",
+    "sha256": "6887eb8525c325f18632eba5f70259a5c922e750bc40bdfb4066a216220fd328"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 79,
+    "name": "S_evidence_package_type_null",
+    "prediction": "PARITY",
+    "sha256": "0a745395224037015a34746dea365988b00f02f125ae4e4f9c795bf576a69edd"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 84,
+    "name": "S_evidence_package_type_obj",
+    "prediction": "PARITY",
+    "sha256": "80cc66b8c063187262b727db6dff1d1cfb7797d51b6f589cc61858df848c1ed2"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 79,
+    "name": "S_evidence_package_type_true",
+    "prediction": "PARITY",
+    "sha256": "0ad2aac2439711010284fda4a782323dfbe3000712f7ae31bf98babdcf98f981"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 83,
+    "name": "S_evidence_package_type_val_00_widget",
+    "prediction": "PARITY",
+    "sha256": "f00aff3437263aba3f0349f01b05b5f4e254fc2f7ad3103130708ce7ad0d4089"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 85,
+    "name": "S_evidence_package_type_val_01_Molecule",
+    "prediction": "PARITY",
+    "sha256": "42cf8b1e2977d9865ebec042384fb475f6ea295600d00eba3900bc643dbf8f73"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 85,
+    "name": "S_evidence_package_type_val_02_MOLECULE",
+    "prediction": "PARITY",
+    "sha256": "6f9ad8fe534889c3aa7a9dbac3e9d4981088131e6f0fa98731e39bb29e8328db"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 86,
+    "name": "S_evidence_package_type_val_03_molecule_trail_ws",
+    "prediction": "PARITY",
+    "sha256": "a075f09263c6d7ffba6da8056b64ec08ff5512eb0b117f6f0ce54822c5024f88"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 86,
+    "name": "S_evidence_package_type_val_04_molecule_lead_ws",
+    "prediction": "PARITY",
+    "sha256": "49b458491b4a8ff423b9eff36651faf3d279f9f60172e009986e01170cf543e1"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 80,
+    "name": "S_evidence_package_type_val_05_mol",
+    "prediction": "PARITY",
+    "sha256": "a0bc4693f18d930b7c74fe9ed8cf403a62ca278f7c3d1caec13896d8955543cb"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 89,
+    "name": "S_evidence_package_type_val_06_formulation2",
+    "prediction": "PARITY",
+    "sha256": "cc9a1c321680ae26033f66d986b63dce585eacf78015f8af72399ab2c0c5a4a0"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 85,
+    "name": "S_evidence_package_type_val_07_evidence",
+    "prediction": "PARITY",
+    "sha256": "d925aa1ba2b5ac86f45fe28b681edbe93cae65167fedb386667e75639e57a249"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 90,
+    "name": "S_formulation_id_arr",
+    "prediction": "PARITY",
+    "sha256": "7eac1ba5cb9a956d57fb5376e3ff49129314cf353a944c8f50723f731d7adae2"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 69,
+    "name": "S_formulation_id_drop",
+    "prediction": "PARITY",
+    "sha256": "269d3d74e10a274c9b8b11b38d2beb134b4e6f8bd372798c48b5933d3db89622"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 87,
+    "name": "S_formulation_id_emptystr",
+    "prediction": "PARITY",
+    "sha256": "13154f07ba99f40e23ebc245bff8e56f77c0714a9be687beeffefcde0c043052"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 90,
+    "name": "S_formulation_id_false",
+    "prediction": "PARITY",
+    "sha256": "dd216967dfa3766959b8e6bac494e80e9e508aee7a7c50fc8c32e6daced205bb"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 89,
+    "name": "S_formulation_id_float",
+    "prediction": "PARITY",
+    "sha256": "ce6c32c614a07780790b63059d0782f90a470f41d1cbbaa20e60d513be4d2332"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 86,
+    "name": "S_formulation_id_int0",
+    "prediction": "PARITY",
+    "sha256": "740e6f264f474a92a1492541b0d82f4f419842435ce0c0f0a3358ee9f4ac86eb"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 87,
+    "name": "S_formulation_id_int42",
+    "prediction": "PARITY",
+    "sha256": "e517ca7c67d8c5c9f218aecb261665a9834f165382e1b6a232ba259baafc0a42"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 87,
+    "name": "S_formulation_id_intneg",
+    "prediction": "PARITY",
+    "sha256": "7b3b398027b59a50be63fda014595f43c70aebda8c94df110edaa26e2ef5058f"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 89,
+    "name": "S_formulation_id_null",
+    "prediction": "PARITY",
+    "sha256": "ec233cf5c74cc7220e1aa1a20fce728bce319a86d80e1b87ba9f90eb4fee68a6"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 94,
+    "name": "S_formulation_id_obj",
+    "prediction": "PARITY",
+    "sha256": "655040e59728b29842f78965eb03cbee91c0baa5960b56a3690348797b624c00"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 89,
+    "name": "S_formulation_id_true",
+    "prediction": "PARITY",
+    "sha256": "e021dcffcd9e36aeb374ac7b26b430a34c6eeda30df907d8efd4a2c99d9a5d24"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 72,
+    "name": "S_formulation_payload_arr",
+    "prediction": "PARITY",
+    "sha256": "01a86b4c2e3094a9d5ded9114e204fe01329cbc801e8fc3c4c5bd239419815c9"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 52,
+    "name": "S_formulation_payload_drop",
+    "prediction": "PARITY",
+    "sha256": "680e577b52fd7a740411c4d208c5c585361c068a1b999ae52ab58e83e6b382e1"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 69,
+    "name": "S_formulation_payload_emptystr",
+    "prediction": "PARITY",
+    "sha256": "824f927f9f0c24bf050bb89d9043c0669221c42c9d04efb8417876c1630c3386"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 71,
+    "name": "S_formulation_payload_float",
+    "prediction": "PARITY",
+    "sha256": "37b4d87bbc4f7220cb6e6895659a58e525db34b7430a390190a306e9410ca84e"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 69,
+    "name": "S_formulation_payload_int42",
+    "prediction": "PARITY",
+    "sha256": "4159779663fea8514dedf034a1dcf8aabe54220c280dd222298c6b05bc56de78"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 71,
+    "name": "S_formulation_payload_null",
+    "prediction": "PARITY",
+    "sha256": "4c239750ff8ffd1b2bc0e0df72316933c3abbd2a81d92ce58015e127ee6cc682"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 71,
+    "name": "S_formulation_payload_true",
+    "prediction": "PARITY",
+    "sha256": "a687edaa258baea78e4c5680cdca8166d53898ac4443cae52a5fe28f28b3d96d"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 81,
+    "name": "S_formulation_type_arr",
+    "prediction": "PARITY",
+    "sha256": "764e74677ad903aa77079d38c5e9ddee8a3aa2d03829b7c14939c57e839ea226"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 58,
+    "name": "S_formulation_type_drop",
+    "prediction": "PARITY",
+    "sha256": "6e5fd97e2053dbfa013be64a5ab96d617c19641bfea07842da2f3a188f127910"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 78,
+    "name": "S_formulation_type_int42",
+    "prediction": "PARITY",
+    "sha256": "5c4953642731a34f017b45756868ec3aed0413bcf2c927b4dd407c1019e0cc39"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 80,
+    "name": "S_formulation_type_null",
+    "prediction": "PARITY",
+    "sha256": "464ff9ddf6581826e8bd64e11d8a97f0bc454cf01f29848adc16ded59074fa27"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 85,
+    "name": "S_formulation_type_obj",
+    "prediction": "PARITY",
+    "sha256": "8f0bb30abab1ebd3f5ece6647d5b8ce147acc735f53b6743763e6a548cd43916"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 80,
+    "name": "S_formulation_type_true",
+    "prediction": "PARITY",
+    "sha256": "ea0c002a94bc8b3d6bf08c99fae7ee9776b721c0bb5b93c12e99276dc62fa71f"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 84,
+    "name": "S_formulation_type_val_00_widget",
+    "prediction": "PARITY",
+    "sha256": "f0c3687b44f9d9f5321b3ca2ba87760673d7c221c91a8d440608c0c8f5746aa6"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 86,
+    "name": "S_formulation_type_val_01_Molecule",
+    "prediction": "PARITY",
+    "sha256": "82446bc6d5409f6de17963fec8509adbece2b939c7b171742b6753e8859c9079"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 86,
+    "name": "S_formulation_type_val_02_MOLECULE",
+    "prediction": "PARITY",
+    "sha256": "f4806df1fd7d8142b7020742186930e07d7512719353bdaa54717ef393c2cd5a"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 87,
+    "name": "S_formulation_type_val_03_molecule_trail_ws",
+    "prediction": "PARITY",
+    "sha256": "52740d138d5f804c31fb080f579bf97bb45f9565fb37110f6a80411632871a05"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 87,
+    "name": "S_formulation_type_val_04_molecule_lead_ws",
+    "prediction": "PARITY",
+    "sha256": "32842f8cfd7532836ab9219ba04e902c9bfaef3e27d6989e7c2ee3b5703d7ff3"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 81,
+    "name": "S_formulation_type_val_05_mol",
+    "prediction": "PARITY",
+    "sha256": "ad4dbce129ecaa6df2cf8411b7654d88367feac09363f0ac897e978377261cbe"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 90,
+    "name": "S_formulation_type_val_06_formulation2",
+    "prediction": "PARITY",
+    "sha256": "1ceb9dfbbb792f6ad1fde95afe70ba04957a36fcaecb36a278cdd9149f76b3e6"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 86,
+    "name": "S_formulation_type_val_07_evidence",
+    "prediction": "PARITY",
+    "sha256": "2d9145595c450da8546a7cba221d09baa4159b8bdbe407ce3146bfa76cbde641"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 76,
+    "name": "S_molecule_id_arr",
+    "prediction": "PARITY",
+    "sha256": "58985839ec9270498ab70ed31a4f17027d5942fc5093eb3ae80d50b0b46866ec"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 55,
+    "name": "S_molecule_id_drop",
+    "prediction": "PARITY",
+    "sha256": "3b5534d0ecc7e2a21adfe03e007a0df5577af5af1a2a422d783ddd5b5d13f66f"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 73,
+    "name": "S_molecule_id_emptystr",
+    "prediction": "PARITY",
+    "sha256": "0b868efcb333dad9909e9a85e5715c840aa0b0eae53a209e3bb0ba2e24b7e959"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 76,
+    "name": "S_molecule_id_false",
+    "prediction": "PARITY",
+    "sha256": "38274293997366110d5da2faaf38a484e4ee4e3b81a4879335fa7154862a3ec3"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 75,
+    "name": "S_molecule_id_float",
+    "prediction": "PARITY",
+    "sha256": "e1917ca2a18d8e9bcd839b773263afd352f4b922bee58744f3f900fca16b1af6"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 72,
+    "name": "S_molecule_id_int0",
+    "prediction": "PARITY",
+    "sha256": "329fb508c92bf4fc87cdd8bf14f973f2ef200f765508e3941b34da2b9eb0d65b"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 73,
+    "name": "S_molecule_id_int42",
+    "prediction": "PARITY",
+    "sha256": "579971b0ecf1aa9afa2c027346efddd208cb5bb2db2dba30c860667960fa6a6a"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 73,
+    "name": "S_molecule_id_intneg",
+    "prediction": "PARITY",
+    "sha256": "84178879a45c660438f20c0557c13a6cf1c08c72f7fb7c923ab529e0a4b51c06"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 75,
+    "name": "S_molecule_id_null",
+    "prediction": "PARITY",
+    "sha256": "0cb82cdfe02cd90c9155655a14f35e53bd7e3f26ad78bf965ce4de4d04d5bb81"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 80,
+    "name": "S_molecule_id_obj",
+    "prediction": "PARITY",
+    "sha256": "cc61bd08adb578fcf632083b95027d0033757b501b9f20165026658d55b551ce"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 75,
+    "name": "S_molecule_id_true",
+    "prediction": "PARITY",
+    "sha256": "34cdf5d1bc4e0fe72b0fac97128c3674a52e4de9b84f14deb222b77dd147ab13"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 66,
+    "name": "S_molecule_payload_arr",
+    "prediction": "PARITY",
+    "sha256": "89d367acf99b8c826a917c87ea15e0e424d25a7b9f553d2180efcde58eb10e7c"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 49,
+    "name": "S_molecule_payload_drop",
+    "prediction": "PARITY",
+    "sha256": "43b93388fe11df3849bacae3043123ece2367c17d19a3d3072bcde55af8c5d7f"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 63,
+    "name": "S_molecule_payload_emptystr",
+    "prediction": "PARITY",
+    "sha256": "1f4680584e8b3274918c7b601d2dfdb7435dbf81b1910c009a24fbb9d36a976e"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 65,
+    "name": "S_molecule_payload_float",
+    "prediction": "PARITY",
+    "sha256": "044c8e9d01d497e3aca80315b78864865154a40305ee7ce47bf7efa2cf58cbbb"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 63,
+    "name": "S_molecule_payload_int42",
+    "prediction": "PARITY",
+    "sha256": "5e2bee250bb9137a0f6c7c31cffc4feeee3d309b9b235818dc527349d9423333"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 65,
+    "name": "S_molecule_payload_null",
+    "prediction": "PARITY",
+    "sha256": "b7b8a7d9598e0b67ef88160f0cfedcbc3168f9edfbdb0a6a3c3ccde621d8ae0d"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 65,
+    "name": "S_molecule_payload_true",
+    "prediction": "PARITY",
+    "sha256": "010b873ffdf76a88efdf98cda2ed15dd5a71f66cc189c073f7828cb6f89861d2"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 70,
+    "name": "S_molecule_type_arr",
+    "prediction": "PARITY",
+    "sha256": "a966049906e92f1a86c68a0cdb8099b57c577c94eae30fda4a1c444cf1e4b643"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 47,
+    "name": "S_molecule_type_drop",
+    "prediction": "PARITY",
+    "sha256": "ef3e4d6d70bc72b9cab306ad8d12ef53e738e957dca234ce25a5573bc0448f9b"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 67,
+    "name": "S_molecule_type_int42",
+    "prediction": "PARITY",
+    "sha256": "946635274219b93412daa1261b591f9e3f6473b5d2a42b841e0115e844cca049"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 69,
+    "name": "S_molecule_type_null",
+    "prediction": "PARITY",
+    "sha256": "da87d8917facc7c3c6d53c99cd7d5506a2b733be4542816f6f3b79763536f532"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 74,
+    "name": "S_molecule_type_obj",
+    "prediction": "PARITY",
+    "sha256": "12e719f5909015472c41b1fb76f13add507e635c113a0a86857ec59f4bc165ac"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 69,
+    "name": "S_molecule_type_true",
+    "prediction": "PARITY",
+    "sha256": "8d07c10e5608d6e50369a801bc362c4a922c32f995daa1c8f58983f17ef33fde"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 73,
+    "name": "S_molecule_type_val_00_widget",
+    "prediction": "PARITY",
+    "sha256": "c4b35877ddd0898149c32afbfebb18191bb5785442c8a3c45509e708e51bb773"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 75,
+    "name": "S_molecule_type_val_01_Molecule",
+    "prediction": "PARITY",
+    "sha256": "580aacbfcc6f9243dc09d867e1e09ca19e9698eae95e12f99017832b0ce66be7"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 75,
+    "name": "S_molecule_type_val_02_MOLECULE",
+    "prediction": "PARITY",
+    "sha256": "3d042040a78e7cc2828d916ba9ec752d1ee606699bb0fc91e087e1c02ae7a38f"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 76,
+    "name": "S_molecule_type_val_03_molecule_trail_ws",
+    "prediction": "PARITY",
+    "sha256": "3c34138d968166cd1265d5d2eb42dc9e3e673f6eabd272c03a112c29e41d0d19"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 76,
+    "name": "S_molecule_type_val_04_molecule_lead_ws",
+    "prediction": "PARITY",
+    "sha256": "da24cbad83e93146fd02817b1a0060397e2e3b3de9310923b3b975a3acc2842e"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 70,
+    "name": "S_molecule_type_val_05_mol",
+    "prediction": "PARITY",
+    "sha256": "acbdd61877666bb5f983c03995417bbbff270268497b1fc5fbbefe431bf182fa"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 79,
+    "name": "S_molecule_type_val_06_formulation2",
+    "prediction": "PARITY",
+    "sha256": "ad2f305db6301dfa625caab7b736e306a8470896029ddc4a09be590ea58b3994"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 75,
+    "name": "S_molecule_type_val_07_evidence",
+    "prediction": "PARITY",
+    "sha256": "51af8a68b0fede835bb87893bbdec8a52426b46a72f97cfa5dc4f261f97de6f3"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 7,
+    "name": "S_toplevel_array",
+    "prediction": "PARITY",
+    "sha256": "a615eeaee21de5179de080de8c3052c8da901138406ba71c38c032845f7d54f4"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 5,
+    "name": "S_toplevel_false",
+    "prediction": "PARITY",
+    "sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 4,
+    "name": "S_toplevel_float",
+    "prediction": "PARITY",
+    "sha256": "2efff1261c25d94dd6698ea1047f5c0a7107ca98b0a6c2427ee6614143500215"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 2,
+    "name": "S_toplevel_int",
+    "prediction": "PARITY",
+    "sha256": "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 4,
+    "name": "S_toplevel_null",
+    "prediction": "PARITY",
+    "sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 7,
+    "name": "S_toplevel_string",
+    "prediction": "PARITY",
+    "sha256": "5aa762ae383fbb727af3c7a36d4940a5b8c40a989452d2304fc958ff3f354e7a"
+  },
+  {
+    "group": "STRUCT_BREAK",
+    "layer": "STRUCTURAL",
+    "n_bytes": 4,
+    "name": "S_toplevel_true",
+    "prediction": "PARITY",
+    "sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 128,
+    "name": "X_evidence_plus_formulation",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "1687b2eafa44151a925dcd71422ae81d7cbe920847dba3f3c014341f13adb777"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 119,
+    "name": "X_evidence_plus_molecule",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "305269bede7e0973e503551e6a82977f531c5bafd75cfa493a39aa486dbf049b"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 125,
+    "name": "X_formulation_plus_molecule_canonical_smiles",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "44f0e5c3bd1cefb277b2bd5ca8f19c5d2e5161df33118bddf090d59fdcda2442"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 115,
+    "name": "X_formulation_plus_molecule_smiles",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "230707e84be1cf90ed502c77eb30ba70d65bf846d3f22b68f8149e8a583209b3"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 196,
+    "name": "X_formulation_plus_molecule_structhash",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "e1ff7024f538dc1d06a8b95597a7d2db126eff57d827569185983b67af5cfc0b"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 87,
+    "name": "X_molecule_nested_inchi",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "e703800e89abb0cdafc0d4b5b1daaf5bcb0e3d4ae91cc6f7faeefb792aa658ea"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "X_molecule_nested_inchi_key",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "13d4d53a86501394d4620d3f243011b2a8e38049591dd34f2640b9f4c7279ad7"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 90,
+    "name": "X_molecule_nested_inchikey",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "5674238a7042957c5f6fd17090d57ab05c7e88aacc9129e3b08aac494b36db1d"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 85,
+    "name": "X_molecule_nested_mol",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "5be248838db7e8aa462a819c97d594fa8ed45cf0d9c5cb1d2a8a50cbbb5937a8"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "X_molecule_nested_mol_block",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "af15b4419f258134575435f144cf06a48f56cca2c71b5a642a61a78f5e9b44ad"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "X_molecule_nested_mol_v2000",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "7182a60e5a12ac35559a195eabd3ca64f976d1981039b63646cac69a4bfcd98e"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 91,
+    "name": "X_molecule_nested_mol_v3000",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "36fd64d9fa59f19d698227d5da037295107a63b59c402d8e7c974b472ee95164"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 85,
+    "name": "X_molecule_nested_sdf",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "e214f6cc99de9e4481d90e736dfcc35fd25997fc53c0de3f34e9c5c96db0499b"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 93,
+    "name": "X_molecule_nested_sdf_records",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "48d7e878a139b287778f92785aa93336ee4597b65850aa4884f3410d210d4d33"
+  },
+  {
+    "group": "SCHEMA_SUPERSET",
+    "layer": "STRUCTURAL",
+    "n_bytes": 110,
+    "name": "X_molecule_plus_formulation",
+    "prediction": "SCHEMA_SUPERSET",
+    "sha256": "287b966fe2498e74d4f028a6d3aa63343713083dffc3437d26e591b7ec50fd03"
+  }
+]

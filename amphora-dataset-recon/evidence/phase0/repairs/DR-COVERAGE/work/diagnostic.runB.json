@@ -1,0 +1,107 @@
+{
+  "input_coverage_map_gaps_count": 64,
+  "input_coverage_map_sha256": "5a2fda9a450d70441f650eba7ec48416f8b5856331b0927dd398634be83500f1",
+  "input_dataset_ledger_candidate_ids": [
+    "DR-DISP-Q03",
+    "DR-DISP-Q04",
+    "DR-DISP-Q13",
+    "DR-DISP-Q14",
+    "DR-LANG-CEE-06",
+    "DR-LANG-DE-06",
+    "DR-LANG-EU-11",
+    "DR-LANG-FR-04",
+    "DR-LANG-IBERIAN-01",
+    "DR-LANG-IBERIAN-02",
+    "DR-LANG-IBERIAN-05",
+    "DR-LANG-KO-02",
+    "DR-LANG-KO-04",
+    "DR-LANG-RU-01"
+  ],
+  "input_dataset_ledger_entries_count": 14,
+  "input_dataset_ledger_sha256": "a4e8b70e434ee99fe7704451b826c8e2d73bbaa16a6d196788149ff6b458d418",
+  "recommended_not_in_ledger": [],
+  "recommended_not_in_ledger_count": 0,
+  "refutation_criterion_fired": true,
+  "schema": "amphora.dataset-recon.dr-coverage.completeness-check.v1",
+  "triple_null_violations": [
+    {
+      "gap_id": "corrosion-database-ja",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "Both ja national-materials-database candidates found (PoLyInfo, MatNavi DataSheet Collection No.18) are REJECTED on the rubric's rights-clarity floor -- MatNavi Service Terms of Use prohibit bulk/scripted acquisition regardless of registration status. This mirrors the zh fire's PoLyInfo-class rejection pattern (same underlying custodian, NIMS). No open ja corrosion dataset was found this fire."
+    },
+    {
+      "gap_id": "cure-kinetics-adjacent-epoxy-systems-iberian",
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "note": "Two Spanish PhD theses (Imar 1994 UPV/EHU TGDDM/m-PDA, REJECTED -- no accessible full text anywhere; Morancho 1997 UPC epoxy+elastomer, RECOMMENDED -- see barrier-diffusion... no, see dataset-ledger DSL-03) on adjacent (non-DGEBA/non-marine-coating) epoxy-amine cure-kinetics systems. DSC/Kissinger-class methodology transferable; direct chemistry transferability disclosed as unconfirmed/adjacent, not conflated with the portfolio's own amine-hardener class."
+    },
+    {
+      "gap_id": "cure-kinetics-nl",
+      "module_gaps": [
+        "amphora-cure-kinetics",
+        "amphora-cure-potlife-gate"
+      ],
+      "note": "No dedicated Dutch-language amine-cure-kinetics dataset or thesis was found this fire despite a genuine native-nl query (surfaced only international English-language DSC/Kissinger literature, not a Dutch primary source) and an English TU-Delft-site-restricted follow-up (surfaced an unrelated bridge-design thesis, then the off-topic self-healing-coating record now filed under corrosion-database-nl instead). HONEST EMPTY RESULT, disclosed as a genuine miss, not padded."
+    },
+    {
+      "gap_id": "marine-coating-ks-standard-mapping-ko",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No ship-hull-specific KS anti-corrosion-paint standard number was found despite two differently-phrased searches (queries 3 and 11) -- an honest empty result, mirroring the identical finding across the ja/de/ru fires for this exact sub-question. Surfaced only general zinc-rich shop-primer practitioner descriptions and Korean patent literature (not evaluated as dataset candidates)."
+    },
+    {
+      "gap_id": "national-corrosion-testing-institute-pl-cs",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "SVUOM's 'Korozni mapy materialu CR' (Czech national atmospheric-corrosivity mapping product) was found and its existence confirmed via a KOM-journal article citation, but BOTH the custodian's own site (svuom.cz) and the describing article's PDF were unreachable/unextractable this fire -- svuom.cz confirmed network-blocked from this host by WebFetch AND raw curl (same diagnostic pattern PROBE-WEB recorded for CNKI). Lukasiewicz-IMP (pl) was also searched under this gap-adjacent institute class and REJECTED (off_scope) -- a research institute and house journal, not itself a dataset, mirroring the de fire's Fraunhofer/GfKORR finding."
+    },
+    {
+      "gap_id": "ship-coating-dataset-ko-unresolved",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-owk-adhesion"
+      ],
+      "note": "\ud574\uc591\ud658\uacbd\uacf5\ub2e8_\uc120\ubc15\uc758_\ub3c4\uc7a5\uacb0\ud568\uacfc_\ub300\ucc45 (Korea Marine Environment Management Corporation, 'Ship Coating Defects and Countermeasures') is the single most gap-relevant title surfaced this fire -- directly on marine-hull coating defects -- but a stable data.go.kr detail-page URL could NOT be independently re-resolved across 3 separate queries this fire. Per this item's own refutation criterion ('a native-script citation that fails to resolve'), it is deliberately NOT scored as a disposition candidate and NOT added to dataset-ledger.v1.jsonl -- recorded honestly as an unresolved lead for a future fire, not fabricated or padded with a guessed URL."
+    },
+    {
+      "gap_id": "ship-hull-antifouling-standard-mapping-fr",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No French/AFNOR ship-hull-specific antifouling/anticorrosive paint standard number was found, only a general AFNOR pigment-property definition for 'pigment antisalissure' and the general NF EN ISO 12944 (already captured above) -- an honest negative result mirroring the identical de (BAW Merkblatt search) and ja (JIS ship-hull search) findings for this same scope element across three independent language communities."
+    },
+    {
+      "gap_id": "ship-hull-antifouling-standard-mapping-iberian",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No Spanish/Portuguese/Brazilian ship-hull-specific antifouling/anticorrosive paint standard number was found, only academic/trade literature on antifouling paints and the general UNE-EN ISO 12944 / NP EN ISO 12944 / NBR-referenced ISO 12944 (already captured elsewhere) -- an honest negative result mirroring the identical de (BAW), fr (AFNOR), and ja (JIS) findings for this same scope element across five independent language communities now."
+    },
+    {
+      "gap_id": "ship-hull-antifouling-standard-mapping-it",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No Italian/UNI ship-hull-specific antifouling/anticorrosive paint standard number was found, only general antifouling-application practitioner pages -- an honest negative result mirroring the identical nl/de/ja/fr findings for this same scope element across independent language communities."
+    },
+    {
+      "gap_id": "ship-hull-antifouling-standard-mapping-nl",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No Dutch/NEN ship-hull-specific antifouling/anticorrosive paint standard number was found, only the general NEN standards committee 'Verfwaren, metallieke en anorganische deklagen en corrosie' and the general NEN-EN-ISO 12944 (already captured above) -- an honest negative result mirroring the identical de/ja/fr findings for this same scope element across independent language communities."
+    }
+  ],
+  "triple_null_violations_count": 10
+}

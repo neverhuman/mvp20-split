@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "9e057a4425038dbae6f8000e749a764d76517355e3438568bbc3ebd9cb6353ad",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-sourceability-ehs",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

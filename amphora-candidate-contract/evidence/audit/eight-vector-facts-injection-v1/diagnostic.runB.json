@@ -1,0 +1,266 @@
+{
+  "all_property_results_byte_identical_across_all_8_vectors_and_control": true,
+  "all_vectors_had_raw_untyped_echo_hits": true,
+  "axis": "FIRST adversarial test of amphora-candidate-contract (zero prior ledger verdicts). Targets the contract/envelope parsing path's downstream consumption boundary: whether a candidate-supplied molecular_weight / EEW / AHEW / group_count / canonical-identity value, submitted through 8 alternate JSON encodings, is ever accepted into the typed MoleculeFactsV1 struct or survives into an EquivalentBalance, versus always being recomputed from the host RDKit graph.",
+  "campaign_item_id": "T-01",
+  "claim_under_attack": "amphora-candidate-contract/docs/mission.md: this module has never received an adversarial verdict; its constructive SIGNED_RECEIPT-era receipts (6/6 integrity rates at n=3, candidate-contract-strict-json-integrity-kpi.v1.json) are untested claims about the strength of its contract/envelope parsing boundary.",
+  "control_clean_molecule_facts_v1": {
+    "average_molecular_weight_g_mol": 44.053,
+    "canonical_isomeric_smiles": "C1CO1",
+    "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+    "formula": "C2H4O",
+    "ontology_version": "amphora.reactive-ontology.v1",
+    "oxirane_ring_count": 1,
+    "reactive_amine_hydrogen_count": 0,
+    "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+    },
+    "schema": "amphora.molecule-facts.v1",
+    "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+    "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+    }
+  },
+  "control_clean_property_results": {
+    "ahew_g_per_eq": null,
+    "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+    "canonical_isomeric_smiles": "C1CO1",
+    "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+    "commercial_product_claim_locked": false,
+    "eew_g_per_eq": 44.053,
+    "formula": "C2H4O",
+    "functionality": {
+      "amine_hydrogen": 0,
+      "epoxide": 1
+    },
+    "molecular_weight_g_mol": 44.053,
+    "ontology_version": "amphora.reactive-ontology.v1",
+    "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+    },
+    "reactive_group_counts": {
+      "oxirane_rings": 1,
+      "reactive_amine_hydrogens": 0
+    },
+    "schema": "amphora.molecule-property-results.v1",
+    "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+    "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+    }
+  },
+  "directive_obligation": "T2-01",
+  "directive_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+  "directive_ref": {
+    "doc": "AMPHORA-DIRECTIVE-2026-08-05",
+    "item_id": "T2-01",
+    "md_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+    "md_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+    "owner": "LOOP",
+    "section": "A.1"
+  },
+  "directive_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+  "directive_sha256_verified_now": true,
+  "does_not_close": [
+    "The raw untyped candidate-echo passthrough at /candidate/normalized_molecule/* does carry attacker-controlled content verbatim; if any future code path were added that reads facts from that subtree instead of exclusively from FeatureSnapshot.values['molecule_facts_v1'], it would reopen exactly this attack class. This receipt does not certify that subtree as safe to consume as facts, only that nothing currently does.",
+    "This probe exercises candidate_type='molecule' only (the only type for which MoleculeFactsV1 is derived within the engine's execute() path). Formulation-typed candidates do not construct EquivalentBalance within the engine at all in the current runtime (that computation lives only in amphora-cli's campaign script, fed exclusively from host-generated facts) - this is corroborating structural evidence, not independently probed by live-runtime injection in this receipt.",
+    "amphora-core/src/contract.rs::CandidateEnvelope was not itself observed to reject any of the 8 vectors at the from_value() layer (all 8 were ACCEPTED as valid envelopes, since none violate candidate_id/candidate_type/payload-match rules) - the defense demonstrated here is downstream (host-recompute-and-overwrite), not a contract-layer denylist. The original module claim of 6/6 integrity rates at n=3 concerns the from_bytes/from_value parsing layer itself (duplicate keys, depth, size, NaN/Infinity) and is untouched by this finding either way."
+  ],
+  "equivalent_balance_analysis": {
+    "claim": "EquivalentBalanceV1::from_host_facts (amphora-formulation-capabilities/src/lib.rs) accepts only &amphora_rdkit_ffi::MoleculeFactsV1 (a native Rust struct), never serde_json::Value or candidate JSON, and additionally re-validates facts.toolkit_provenance.exact_version_match plus schema/ontology_version pins before computing eew_g_per_eq/ahew_g_per_eq. Every production call site (amphora-cli/src/compound.rs) supplies structs sourced from host-generated GeneratedMoleculeProposalV1.molecule_facts, never from raw candidate JSON.",
+    "conclusion": "No production code path deserializes candidate-controlled JSON directly into EquivalentBalanceV1::from_host_facts's typed parameters; the Rust type system makes this structurally unreachable, independent of this probe's runtime findings.",
+    "verified_call_sites": [
+      "amphora-formulation-capabilities/src/lib.rs:2897 (test-only, host-constructed facts)",
+      "amphora-cli/src/compound.rs:782 (resin_facts/hardener_facts sourced from generated_structures[..].molecule_facts, host RDKit output)"
+    ]
+  },
+  "founder_directive_done_criteria_met": true,
+  "founder_directive_done_criteria_verbatim": "All eight vectors rejected or ignored; identity recomputed from host graph; no candidate value reaches a typed downstream field.",
+  "harness": "/tmp/cc_probe (standalone cargo bin, path deps: amphora-core, amphora-engine[rdkit])",
+  "harness_main_rs_sha256": "55434b838252c52d65b337d2a4a8c130d1a0c3c0324974fa5969be9b21cabb66",
+  "headline": "SURVIVED: all 8 alternate encodings (top-level key, array container, deep nesting, key-case variant, alternate key name, semantic-alt field, string container, unicode-homoglyph key) of candidate-supplied molecular_weight, EEW, AHEW, group_count (oxirane_ring_count / reactive_amine_hydrogen_count), and canonical identity (canonical_isomeric_smiles / canonical_structure_sha256 / structure_identity) were EVADED (8/8): the typed MoleculeFactsV1 struct at /candidate/normalized_molecule/normalization/molecule_facts_v1 and the amphora-molecule-property capability's scored property_results were byte-identical across all 8 poisoned candidates and a clean control with zero injected keys. 0/8 vectors detected a leak into a typed field (CLAIM_REFUTED trigger); none did. The attacker's payload DID survive verbatim in the raw, documented, untyped candidate echo-back (/candidate/normalized_molecule/*, original input preserved for audit only) in all 8 vectors -- disclosed for completeness, but this is not a typed-field leak and not what the refutation_criterion or done_criterion target.",
+  "module": "amphora-candidate-contract",
+  "n_detected_leak": 0,
+  "n_evaded": 8,
+  "n_vectors": 8,
+  "non_circularity": "Uses the REAL compiled amphora-engine crate via EnginePool::score_campaign_modules (same public API production/CLI campaign code uses), built with the rdkit feature against the pinned RDKit C++ 2026.03.2 toolkit at /home/ubuntu/.local/share/amphora/rdkit-2026.03.2 (real chemistry, not a stub), invoked from a standalone Rust binary outside any workspace member (path deps only, read-only against amphora-core/amphora-engine/amphora-molecule-capabilities/amphora-rdkit-ffi). Not a Python re-implementation of the check logic.",
+  "per_vector_table": [
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "description": "attacker-supplied MW/EEW/AHEW/group-count/identity/whole-facts-struct as top-level sibling keys of candidate_id/candidate_type",
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_hit_count": 16,
+      "raw_untyped_candidate_echo_note": "Poison markers DID appear in the raw, documented, untyped candidate-echo passthrough at /candidate/normalized_molecule/* (original submitted JSON, preserved verbatim for original_bytes_sha256 audit provenance). This subtree is never read by amphora-molecule-capabilities::normalized_facts() (which reads only FeatureSnapshot.values['molecule_facts_v1'], itself populated exclusively from /normalization/molecule_facts_v1 -- a key amphora-engine's normalize_molecule() unconditionally overwrites with fresh RDKit output on every call) or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.",
+      "result": "EVADED (candidate value did NOT reach MoleculeFactsV1 or property_results)",
+      "typed_field_leak_detected": false,
+      "typed_field_leak_evidence": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V1_top_level_key",
+      "vector_kind": "top_level_key"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "description": "attacker-supplied facts wrapped in JSON arrays at molecule.facts, top-level molecule_facts_v1, evidence_refs, and a synthetic equivalents array",
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_hit_count": 28,
+      "raw_untyped_candidate_echo_note": "Poison markers DID appear in the raw, documented, untyped candidate-echo passthrough at /candidate/normalized_molecule/* (original submitted JSON, preserved verbatim for original_bytes_sha256 audit provenance). This subtree is never read by amphora-molecule-capabilities::normalized_facts() (which reads only FeatureSnapshot.values['molecule_facts_v1'], itself populated exclusively from /normalization/molecule_facts_v1 -- a key amphora-engine's normalize_molecule() unconditionally overwrites with fresh RDKit output on every call) or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.",
+      "result": "EVADED (candidate value did NOT reach MoleculeFactsV1 or property_results)",
+      "typed_field_leak_detected": false,
+      "typed_field_leak_evidence": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V2_array_container",
+      "vector_kind": "array_container"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "description": "attacker-supplied facts nested 4-5 levels deep under molecule.provenance.host.facts and meta.a.b.c.d",
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_hit_count": 13,
+      "raw_untyped_candidate_echo_note": "Poison markers DID appear in the raw, documented, untyped candidate-echo passthrough at /candidate/normalized_molecule/* (original submitted JSON, preserved verbatim for original_bytes_sha256 audit provenance). This subtree is never read by amphora-molecule-capabilities::normalized_facts() (which reads only FeatureSnapshot.values['molecule_facts_v1'], itself populated exclusively from /normalization/molecule_facts_v1 -- a key amphora-engine's normalize_molecule() unconditionally overwrites with fresh RDKit output on every call) or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.",
+      "result": "EVADED (candidate value did NOT reach MoleculeFactsV1 or property_results)",
+      "typed_field_leak_detected": false,
+      "typed_field_leak_evidence": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V3_deep_nesting",
+      "vector_kind": "deep_nesting"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "description": "attacker-supplied facts using PascalCase/UPPERCASE variants of the real snake_case field names",
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_hit_count": 13,
+      "raw_untyped_candidate_echo_note": "Poison markers DID appear in the raw, documented, untyped candidate-echo passthrough at /candidate/normalized_molecule/* (original submitted JSON, preserved verbatim for original_bytes_sha256 audit provenance). This subtree is never read by amphora-molecule-capabilities::normalized_facts() (which reads only FeatureSnapshot.values['molecule_facts_v1'], itself populated exclusively from /normalization/molecule_facts_v1 -- a key amphora-engine's normalize_molecule() unconditionally overwrites with fresh RDKit output on every call) or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.",
+      "result": "EVADED (candidate value did NOT reach MoleculeFactsV1 or property_results)",
+      "typed_field_leak_detected": false,
+      "typed_field_leak_evidence": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V4_key_case_variant",
+      "vector_kind": "key_case_variant"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "description": "attacker-supplied facts under plausible alternate/abbreviated key names (mw, eew, ahew, group_count, structure_hash, identity)",
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_hit_count": 9,
+      "raw_untyped_candidate_echo_note": "Poison markers DID appear in the raw, documented, untyped candidate-echo passthrough at /candidate/normalized_molecule/* (original submitted JSON, preserved verbatim for original_bytes_sha256 audit provenance). This subtree is never read by amphora-molecule-capabilities::normalized_facts() (which reads only FeatureSnapshot.values['molecule_facts_v1'], itself populated exclusively from /normalization/molecule_facts_v1 -- a key amphora-engine's normalize_molecule() unconditionally overwrites with fresh RDKit output on every call) or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.",
+      "result": "EVADED (candidate value did NOT reach MoleculeFactsV1 or property_results)",
+      "typed_field_leak_detected": false,
+      "typed_field_leak_evidence": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V5_alternate_key_name",
+      "vector_kind": "alternate_key_name"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "description": "attacker-supplied facts under semantically-equivalent alternate field names (declared/cro_measured/trusted/verified/counsel_confirmed prefixes)",
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_hit_count": 7,
+      "raw_untyped_candidate_echo_note": "Poison markers DID appear in the raw, documented, untyped candidate-echo passthrough at /candidate/normalized_molecule/* (original submitted JSON, preserved verbatim for original_bytes_sha256 audit provenance). This subtree is never read by amphora-molecule-capabilities::normalized_facts() (which reads only FeatureSnapshot.values['molecule_facts_v1'], itself populated exclusively from /normalization/molecule_facts_v1 -- a key amphora-engine's normalize_molecule() unconditionally overwrites with fresh RDKit output on every call) or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.",
+      "result": "EVADED (candidate value did NOT reach MoleculeFactsV1 or property_results)",
+      "typed_field_leak_detected": false,
+      "typed_field_leak_evidence": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V6_semantic_alt_field",
+      "vector_kind": "semantic_alt_field"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "description": "attacker-supplied facts re-typed as JSON strings instead of native number/object types, including the whole forged struct serialized as one string blob",
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_hit_count": 6,
+      "raw_untyped_candidate_echo_note": "Poison markers DID appear in the raw, documented, untyped candidate-echo passthrough at /candidate/normalized_molecule/* (original submitted JSON, preserved verbatim for original_bytes_sha256 audit provenance). This subtree is never read by amphora-molecule-capabilities::normalized_facts() (which reads only FeatureSnapshot.values['molecule_facts_v1'], itself populated exclusively from /normalization/molecule_facts_v1 -- a key amphora-engine's normalize_molecule() unconditionally overwrites with fresh RDKit output on every call) or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.",
+      "result": "EVADED (candidate value did NOT reach MoleculeFactsV1 or property_results)",
+      "typed_field_leak_detected": false,
+      "typed_field_leak_evidence": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V7_string_container",
+      "vector_kind": "string_container"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "description": "attacker-supplied facts under keys using Cyrillic homoglyph characters (U+0430 a, U+0435 e, U+043E o, U+0441 c) substituted for visually-identical Latin letters",
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_hit_count": 12,
+      "raw_untyped_candidate_echo_note": "Poison markers DID appear in the raw, documented, untyped candidate-echo passthrough at /candidate/normalized_molecule/* (original submitted JSON, preserved verbatim for original_bytes_sha256 audit provenance). This subtree is never read by amphora-molecule-capabilities::normalized_facts() (which reads only FeatureSnapshot.values['molecule_facts_v1'], itself populated exclusively from /normalization/molecule_facts_v1 -- a key amphora-engine's normalize_molecule() unconditionally overwrites with fresh RDKit output on every call) or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.",
+      "result": "EVADED (candidate value did NOT reach MoleculeFactsV1 or property_results)",
+      "typed_field_leak_detected": false,
+      "typed_field_leak_evidence": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V8_unicode_homoglyph_key",
+      "vector_kind": "unicode_homoglyph_key"
+    }
+  ],
+  "poison_constants": {
+    "ahew_g_per_eq": 777777.0,
+    "average_molecular_weight_g_mol": 999999.0,
+    "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+    "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+    "eew_g_per_eq": 888888.0,
+    "oxirane_ring_count": 4242,
+    "reactive_amine_hydrogen_count": 4343,
+    "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL"
+  },
+  "positive_control": {
+    "detected": true,
+    "evidence": "poison_hits() on the mock's own output: [\"/property_results/molecular_weight_g_mol == POISON_MW (999999)\"]",
+    "how_planted": "naive_vulnerable_mock_consumer() in this probe's own source reads candidate[\"average_molecular_weight_g_mol\"] (POISON_MW = 999999.0) and echoes it verbatim into output.property_results.molecular_weight_g_mol, instead of calling the real host RDKit molecule_facts() pipeline",
+    "planted_defect": "a mock consumer that naively copies candidate-supplied 'average_molecular_weight_g_mol' straight into a property_results-shaped output, bypassing host RDKit recomputation (the exact defect class this harness exists to catch)"
+  },
+  "probe_stdout_sha256": "56c3bf853a75adfa25079f83c311a74e0607e37835b54bfd94e222cbe642b0f8",
+  "real_smiles_used": "C1OC1",
+  "refutation_criterion_observed": false,
+  "refutation_criterion_statement": "REFUTATION DID NOT OCCUR: in 0/8 vectors did a candidate-supplied value get accepted into MoleculeFactsV1 or survive into an EquivalentBalance. MoleculeFactsV1 (via /candidate/normalized_molecule/normalization/molecule_facts_v1) and the property capability's property_results were byte-identical to the clean control in all 8 poisoned runs. EquivalentBalanceV1 is additionally structurally unreachable from candidate JSON by the Rust type system (see equivalent_balance_analysis).",
+  "refutation_criterion_verbatim": "Any single vector causes a candidate-supplied value to be accepted into MoleculeFactsV1 or to survive into an EquivalentBalance.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.candidate-contract.eight-vector-facts-injection-diagnostic.v1",
+  "source_hashes": {
+    "amphora-core/src/contract.rs": "27075d51e3c8a016aad478c61d6ab638d50bb53b064680dca811cdbc84017a81",
+    "amphora-engine/src/lib.rs": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+    "amphora-molecule-capabilities/src/lib.rs": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c"
+  },
+  "study_id": "amphora-candidate-contract-eight-vector-facts-injection-v1",
+  "theory_reference": "Saltzer & Schroeder (1975) 'The Protection of Information in Computer Systems' Proceedings of the IEEE 63(9):1278-1308 - complete mediation requires every access path to the protected resource (here: the typed molecule-facts boundary) to be checked, not just the literal path a narrow test exercises. Anderson (1980) 'Computer Security Threat Monitoring and Surveillance' - reference-monitor pattern: amphora-engine's normalize_molecule() unconditionally recomputes and overwrites the entire host-owned normalization envelope on every call, rather than searching the candidate for forbidden keys - a recompute-and-overwrite reference monitor is immune to the alternate-encoding evasion class this harness probes for, unlike a denylist/pattern-match monitor. RFC 8259/8785 JSON grammar and canonicalization as already invoked by the module's checked KPI.",
+  "two_replay_byte_identical": true,
+  "verdict": "SURVIVED"
+}

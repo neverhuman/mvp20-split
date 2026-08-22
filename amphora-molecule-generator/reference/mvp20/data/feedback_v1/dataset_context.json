@@ -1,0 +1,678 @@
+{
+  "acquired_at": "2026-07-10T19:50:12Z",
+  "manifest_sha256": "f5d367ed0338b73ed53876c24eca831cba438662417e811d472bc65103a59aa4",
+  "schema_version": "amphora.feedback_v1.dataset_context.v1",
+  "source_count": 9,
+  "sources": [
+    {
+      "access_status": "credentialed_optional",
+      "acquisition_status": "BLOCKED_AFTER_ATTEMPTS",
+      "attempts": [
+        {
+          "error": "missing_kaggle_credentials",
+          "method": "KAGGLE_AUTH",
+          "status": "BLOCKED_AFTER_ATTEMPTS",
+          "timestamp": "2026-07-10T19:50:11Z",
+          "url": "https://www.kaggle.com/competitions/neurips-open-polymer-prediction-2025"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "competition_data_is_benchmark_only": true,
+        "credentialed_source_skipped_without_local_kaggle_credentials": true
+      },
+      "download_count": 0,
+      "id": "kaggle_neurips_open_polymer_prediction",
+      "license": "Kaggle competition terms",
+      "local_raw_path": "feedback/v1/external_data/kaggle_neurips_open_polymer_prediction/raw",
+      "profiles": [],
+      "skip_reason": "missing_kaggle_credentials",
+      "skipped_files": [],
+      "source_url": "https://www.kaggle.com/competitions/neurips-open-polymer-prediction-2025",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct_large",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "OMG_PhysicalProperties-OMG_property_v1.0.zip",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:06Z",
+          "url": "https://zenodo.org/records/13863075/files/TheJacksonLab%2FOMG_PhysicalProperties-OMG_property_v1.0.zip?download=1"
+        }
+      ],
+      "checksum_pass_count": 1,
+      "claim_locks": {
+        "ml_predicted_properties_are_external_context": true,
+        "no_validation_or_procurement_claim": true
+      },
+      "download_count": 1,
+      "id": "omg_physical_properties",
+      "license": "MIT",
+      "local_raw_path": "feedback/v1/external_data/omg_physical_properties/raw",
+      "profiles": [
+        {
+          "file": "OMG_PhysicalProperties-OMG_property_v1.0.zip",
+          "kind": "zip",
+          "member_count": 1174,
+          "members_sample": [
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/LICENSE",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/README.md",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/fold_plot_learning_curve.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/plot_fold_pred_error.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/plot_for_stopping_criteria.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/plot_learning_curve.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/plot_pareto_partial.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/plot_pred.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/plot_uncertainty_correlation.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/plot_uncertainty_trend.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/pred.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/prepare_data.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/save_data_for_stopping_criteria.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/save_fold_pred_error.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/train.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/uncertainty_pred.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/uncertainty_sampling.py",
+            "TheJacksonLab-OMG_PhysicalProperties-eb93418/active_learning/write_job_uncertainty_pred.py"
+          ],
+          "total_uncompressed_bytes": 421763735
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://zenodo.org/records/13863075",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct_large",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "OMG_monomers_CRU.zip",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:05Z",
+          "url": "https://zenodo.org/records/7556992/files/OMG_monomers_CRU.zip?download=1"
+        }
+      ],
+      "checksum_pass_count": 1,
+      "claim_locks": {
+        "no_synthesis_or_availability_claim": true,
+        "omg_generated_structures_are_discovery_context": true
+      },
+      "download_count": 1,
+      "id": "omg_public_zips",
+      "license": "GPL-3.0",
+      "local_raw_path": "feedback/v1/external_data/omg_public_zips/raw",
+      "profiles": [
+        {
+          "file": "OMG_monomers_CRU.zip",
+          "kind": "zip",
+          "member_count": 2,
+          "members_sample": [
+            "OMG_monomers.csv",
+            "OMG_polymers.csv"
+          ],
+          "total_uncompressed_bytes": 1411143073
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://zenodo.org/records/7556992",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "final_polymer_properties_fromliterature.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:03Z",
+          "url": "https://raw.githubusercontent.com/WangGroupFDU/Openpoly_benchmark/main/data/final_polymer_properties_fromliterature.csv"
+        },
+        {
+          "filename": "final_polymer_property_counts_fromliterature.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:03Z",
+          "url": "https://raw.githubusercontent.com/WangGroupFDU/Openpoly_benchmark/main/data/final_polymer_property_counts_fromliterature.csv"
+        },
+        {
+          "filename": "final_model_test_performance_summary.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:03Z",
+          "url": "https://raw.githubusercontent.com/WangGroupFDU/Openpoly_benchmark/main/results/final_model_test_performance_summary.csv"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "external_polymer_corpus_is_context_only": true,
+        "no_procurement_or_performance_claim": true
+      },
+      "download_count": 3,
+      "id": "openpoly_benchmark",
+      "license": "MIT",
+      "local_raw_path": "feedback/v1/external_data/openpoly_benchmark/raw",
+      "profiles": [
+        {
+          "columns": 32,
+          "file": "final_polymer_properties_fromliterature.csv",
+          "headers": [
+            "Name",
+            "PSMILES",
+            "Bandgap (eV)",
+            "CO2 Permeability (Barrer)",
+            "Compressive Strength (MPa)",
+            "Crystallization Temperature (K)",
+            "Elongation at Break (%)",
+            "Flexural Strength (MPa)",
+            "Tg (K)",
+            "H2 Permeability (Barrer)",
+            "Hardness (MPa)",
+            "Impact Strength (kJ/m2)",
+            "Ion Exchange Capacity (meq/g)",
+            "Limiting Oxygen Index (%)",
+            "Lower Critical Solution Temperature (K)",
+            "Tm (K)",
+            "Methanol Permeability (cm2/s)",
+            "O2 Permeability (Barrer)",
+            "Refractive Index",
+            "Swelling Degree (%)"
+          ],
+          "kind": "csv",
+          "rows": 741
+        },
+        {
+          "columns": 2,
+          "file": "final_polymer_property_counts_fromliterature.csv",
+          "headers": [
+            "Property Name",
+            "Number"
+          ],
+          "kind": "csv",
+          "rows": 28
+        },
+        {
+          "columns": 13,
+          "file": "final_model_test_performance_summary.csv",
+          "headers": [
+            "property",
+            "model_type",
+            "test_mse",
+            "test_mae",
+            "test_r2",
+            "ymax",
+            "ymin",
+            "nrmse",
+            "nmae",
+            "rank_test_mse",
+            "rank_test_mae",
+            "rank_test_r2",
+            "Average Rank"
+          ],
+          "kind": "csv",
+          "rows": 208
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://github.com/WangGroupFDU/Openpoly_benchmark",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct_large",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "PI1M_v2.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:03Z",
+          "url": "https://raw.githubusercontent.com/RUIMINMA1996/PI1M/master/PI1M_v2.csv"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "generated_polymer_structures_are_not_qualification_evidence": true,
+        "synthetic_accessibility_is_external_context_only": true
+      },
+      "download_count": 1,
+      "id": "pi1m_v2",
+      "license": "MIT; README note: data for academic purpose only",
+      "local_raw_path": "feedback/v1/external_data/pi1m_v2/raw",
+      "profiles": [
+        {
+          "columns": 2,
+          "file": "PI1M_v2.csv",
+          "headers": [
+            "SMILES",
+            "SA Score"
+          ],
+          "kind": "csv",
+          "rows": 995799
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://github.com/RUIMINMA1996/PI1M",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "Tg_run.log",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/Jiaxin-Xu/POINT2/main/results/Tg/run.log"
+        },
+        {
+          "filename": "Tg_uq_BNN_MACCS_smiles_test.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/Jiaxin-Xu/POINT2/main/results/Tg_uq/BNN_MACCS_2_2048/smiles_test.csv"
+        },
+        {
+          "filename": "Tg_uq_BNN_MACCS_smiles_train.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/Jiaxin-Xu/POINT2/main/results/Tg_uq/BNN_MACCS_2_2048/smiles_train.csv"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "no_external_model_execution": true,
+        "point2_split_metadata_is_benchmark_context": true
+      },
+      "download_count": 3,
+      "id": "point2_metadata",
+      "license": "MIT",
+      "local_raw_path": "feedback/v1/external_data/point2_metadata/raw",
+      "profiles": [
+        {
+          "bytes": 1968,
+          "file": "Tg_run.log",
+          "kind": "file"
+        },
+        {
+          "columns": 1,
+          "file": "Tg_uq_BNN_MACCS_smiles_test.csv",
+          "headers": [
+            "SMILES"
+          ],
+          "kind": "csv",
+          "rows": 1442
+        },
+        {
+          "columns": 1,
+          "file": "Tg_uq_BNN_MACCS_smiles_train.csv",
+          "headers": [
+            "SMILES"
+          ],
+          "kind": "csv",
+          "rows": 5766
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://github.com/Jiaxin-Xu/POINT2",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct_large",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "Epoxy_1M_p.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:07Z",
+          "url": "https://zenodo.org/records/12585902/files/Epoxy_1M_p.csv?download=1"
+        },
+        {
+          "filename": "epoxy_diE.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:09Z",
+          "url": "https://raw.githubusercontent.com/ytl0410/PolyUniverse/main/Generation/epoxy_diE.csv"
+        },
+        {
+          "filename": "epoxy_diN.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:09Z",
+          "url": "https://raw.githubusercontent.com/ytl0410/PolyUniverse/main/Generation/epoxy_diN.csv"
+        }
+      ],
+      "checksum_pass_count": 1,
+      "claim_locks": {
+        "epoxy_relevant_generated_files_are_design_space_context": true,
+        "generated_polymer_library_is_not_candidate_evidence": true
+      },
+      "download_count": 3,
+      "id": "polyuniverse_epoxy",
+      "license": "Zenodo open record; upstream code repository has no explicit license file",
+      "local_raw_path": "feedback/v1/external_data/polyuniverse_epoxy/raw",
+      "profiles": [
+        {
+          "columns": 16,
+          "file": "Epoxy_1M_p.csv",
+          "headers": [
+            "Smiles",
+            "Smiles_Compound_1",
+            "Smiles_Compound_2",
+            "YS",
+            "YM",
+            "Tg",
+            "DC",
+            "BS",
+            "Tm",
+            "Td",
+            "He",
+            "H2",
+            "O2",
+            "N2",
+            "CO2",
+            "CH4"
+          ],
+          "kind": "csv",
+          "rows": 1000000
+        },
+        {
+          "columns": 1,
+          "file": "epoxy_diE.csv",
+          "headers": [
+            "Smiles"
+          ],
+          "kind": "csv",
+          "rows": 35032
+        },
+        {
+          "columns": 1,
+          "file": "epoxy_diN.csv",
+          "headers": [
+            "Smiles"
+          ],
+          "kind": "csv",
+          "rows": 9815
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://zenodo.org/records/12585902",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "Active_Learning_Thermosets.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/Ramprasad-Group/polyVERSE/main/Other/AM_Thermoset_Active_Learning/Active_Learning_Thermosets.csv"
+        },
+        {
+          "filename": "master_solvent_diffusivity_dataset.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/Ramprasad-Group/polyVERSE/main/Other/Solvent_Diffusivity_Sorption_MTL_NCM/master_solvent_diffusivity_dataset.csv"
+        },
+        {
+          "filename": "master_uptake_sorption_dataset.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/Ramprasad-Group/polyVERSE/main/Other/Solvent_Diffusivity_Sorption_MTL_NCM/master_uptake_sorption_dataset.csv"
+        },
+        {
+          "filename": "melt_viscosity_dataset.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/Ramprasad-Group/polyVERSE/main/Other/Melt_Viscosity/melt_viscosity_dataset.csv"
+        },
+        {
+          "filename": "Cohesive_energy_density_2025_06_23.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/Ramprasad-Group/polyVERSE/main/Other/Cohesive_energy_density/Cohesive_energy_density_2025_06_23.csv"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "no_external_rank_right_upgrade": true,
+        "selected_polyverse_files_are_reference_context": true
+      },
+      "download_count": 5,
+      "id": "polyverse_selected",
+      "license": "Georgia Tech Research Corporation General Public Use License Agreement",
+      "local_raw_path": "feedback/v1/external_data/polyverse_selected/raw",
+      "profiles": [
+        {
+          "columns": 12,
+          "file": "Active_Learning_Thermosets.csv",
+          "headers": [
+            "\ufeffIteration",
+            "IDA",
+            "IBOA",
+            "PEGDA",
+            "Young Mod",
+            "Young Mod_stdev",
+            "Peak Stress",
+            "Peak Stress_stdev",
+            "Peak Strain",
+            "Peak Strain_stdev",
+            "Hardness",
+            "Hardness_stdev"
+          ],
+          "kind": "csv",
+          "rows": 67
+        },
+        {
+          "columns": 10,
+          "file": "master_solvent_diffusivity_dataset.csv",
+          "headers": [
+            "",
+            "Index",
+            "Polymer Canonical SMILES",
+            "Solvent Canonical SMILES",
+            "Temperature",
+            "Weight Fraction of Solvent",
+            "Experimental Selector",
+            "Simulated Selector",
+            "Target Diffusivity Value(log10)",
+            "source"
+          ],
+          "kind": "csv",
+          "rows": 3044
+        },
+        {
+          "columns": 7,
+          "file": "master_uptake_sorption_dataset.csv",
+          "headers": [
+            "Polymer Canonical SMILES",
+            "Solvent Canonical SMILES",
+            "Activities",
+            "Uptake Sorption(log10)",
+            "liquid_density_solvent",
+            "MW_rdkit",
+            "log10MV"
+          ],
+          "kind": "csv",
+          "rows": 2277
+        },
+        {
+          "columns": 13,
+          "file": "melt_viscosity_dataset.csv",
+          "headers": [
+            "\ufeffSMILES",
+            "Polymer",
+            "Mn",
+            "Mw",
+            "PDI",
+            "Temperature",
+            "Shear_Rate",
+            "Melt_Viscosity",
+            "Source",
+            "Sample_Type",
+            "Weight 1",
+            "Weight 2",
+            "Aug"
+          ],
+          "kind": "csv",
+          "rows": 1959
+        },
+        {
+          "columns": 4,
+          "file": "Cohesive_energy_density_2025_06_23.csv",
+          "headers": [
+            "",
+            "PID",
+            "smiles1",
+            "value_COE"
+          ],
+          "kind": "csv",
+          "rows": 294
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://github.com/Ramprasad-Group/polyVERSE",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "PI1070.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:04Z",
+          "url": "https://raw.githubusercontent.com/RadonPy/RadonPy/main/data/PI1070.csv"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "md_simulation_corpus_is_not_wet_lab_evidence": true,
+        "no_heavy_md_stack_invoked": true
+      },
+      "download_count": 1,
+      "id": "radonpy_pi1070",
+      "license": "BSD-3-Clause",
+      "local_raw_path": "feedback/v1/external_data/radonpy_pi1070/raw",
+      "profiles": [
+        {
+          "columns": 157,
+          "file": "PI1070.csv",
+          "headers": [
+            "monomer_ID",
+            "smiles",
+            "mol_weight_monomer",
+            "atomic_weight_mean",
+            "vdw_volume_monomer",
+            "qm_total_energy_monomer",
+            "qm_homo_monomer",
+            "qm_lumo_monomer",
+            "qm_dipole_monomer",
+            "qm_dipole_x_monomer",
+            "qm_dipole_y_monomer",
+            "qm_dipole_z_monomer",
+            "qm_polarizability_monomer",
+            "qm_polarizability_xx_monomer",
+            "qm_polarizability_yy_monomer",
+            "qm_polarizability_zz_monomer",
+            "qm_polarizability_xy_monomer",
+            "qm_polarizability_xz_monomer",
+            "qm_polarizability_yz_monomer",
+            "temp"
+          ],
+          "kind": "csv",
+          "rows": 1077
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://github.com/RadonPy/RadonPy",
+      "target_repos": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-generator",
+        "amphora-known-answer-benchmarks"
+      ]
+    }
+  ]
+}

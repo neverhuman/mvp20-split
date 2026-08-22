@@ -1,0 +1,101 @@
+{
+  "attack": "U-VKAD_applicability_domain_group_scope_audit_external_validation_ridge_openpoly_tg",
+  "claim_under_attack": {
+    "receipt": "amphora-molecule-property/evidence/phase0/kpis/external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+    "kpi_sha256": "b73bf0e81d967d837cf9195ad56dec7c9b93cdf8613ec0d1d6272d3ca3e4579a",
+    "reported_push_20_ridge_MAE_K": 70.41754628962593,
+    "reported_van_krevelen_published_MAE_K": {
+      "MAE_K": 91.33528326361476,
+      "R2": -0.7955420030094327,
+      "RMSE_K": 118.83687283057657,
+      "median_signed_err_K": -36.50461376030856,
+      "n": 442,
+      "n_within_100K": 284,
+      "n_within_50K": 157,
+      "pearson_r": 0.0037299062532100257
+    },
+    "reported_MAE_reduction_K": 20.917736973988823
+  },
+  "inputs": {
+    "openpoly_csv_path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+    "openpoly_csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "ridge_fit_kpi_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979",
+    "wprop1_receipt_sha256": "81e45dbfac8c6fdb929b0413634468b3e736760aac790857e00b94ab16bebda0",
+    "in_scope_groups_15": [
+      "CH",
+      "CH2",
+      "CH3",
+      "C_quat",
+      "amide",
+      "aromatic_C_H",
+      "aromatic_C_sub",
+      "carbonyl",
+      "epoxide",
+      "ether_O",
+      "hydroxyl",
+      "primary_amine",
+      "secondary_amine",
+      "tertiary_amine",
+      "vinyl_CH"
+    ],
+    "excluded_groups_9": [
+      "Br",
+      "Cl",
+      "F",
+      "Si_O",
+      "ester",
+      "nitrile",
+      "sulfide",
+      "sulfone",
+      "vinyl_CH2"
+    ]
+  },
+  "row_filter": {
+    "n_csv_rows_total": null,
+    "n_rows_with_valid_Tg": 443,
+    "n_parse_success": 442,
+    "n_parse_fail": 1,
+    "reported_kpi_n": 442
+  },
+  "sanity_gate_full_population_reproduction": {
+    "my_independent_mae_ridge_K": 147.59248635988652,
+    "reported_mae_ridge_K": 70.41754628962593,
+    "my_independent_mae_published_K": 152.31891774828074,
+    "reported_mae_published_K": 91.33528326361476,
+    "note": "Independent re-derivation using self-authored SMARTS group counter; not expected to match to machine precision (different featurizer implementation from the undisclosed original), used only to confirm same order of magnitude / same qualitative conclusion before trusting the partitioned check below."
+  },
+  "falsifying_check": {
+    "pre_registered_refute_criterion": "On partition A (in-scope-only, zero count in all 9 W-PROP1-excluded groups) with n>=(30), MAE_ridge does NOT beat MAE_published (MAE_reduction<=0) => REFUTES the external-validation 'beats published baseline' headline as a general claim.",
+    "partition_A_in_scope_only": {
+      "n": 258,
+      "mae_ridge_K": 147.6418579761372,
+      "mae_published_K": 167.41854371841325,
+      "MAE_reduction_K": 19.776685742276044
+    },
+    "partition_B_touches_excluded_group": {
+      "n": 184,
+      "mae_ridge_K": 147.52325876753497,
+      "mae_published_K": 131.14661611624712,
+      "MAE_reduction_K": -16.376642651287852
+    },
+    "full_population_my_repro": {
+      "n": 442,
+      "mae_ridge_K": 147.59248635988652,
+      "mae_published_K": 152.31891774828074,
+      "MAE_reduction_K": 4.726431388394218
+    },
+    "refuted": false
+  },
+  "positive_control": {
+    "planted_defect": "injected 20 partition-B (touches-excluded-group) rows into the clean partition-A (in-scope-only) sample",
+    "how_planted": "random.sample(partition_B, k=20) with seed=0, concatenated onto partition_A (258 rows) to form a 278-row contaminated copy",
+    "detected": true,
+    "evidence": {
+      "clean_partition_A_MAE_reduction_K": 19.776685742276044,
+      "contaminated_copy_MAE_reduction_K": 16.815843745003576,
+      "clean_n": 258,
+      "contaminated_n": 278,
+      "margin_degraded": true
+    }
+  }
+}

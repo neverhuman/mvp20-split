@@ -1,0 +1,398 @@
+{
+  "attack_shape_verbatim": "Delete one BOM line's EEW citation in a copy and attack whether the completeness check fires; hunt for an uncited or untiered numeric claim; check envelope conformance of every ingredient class.",
+  "authority": "AUDIT_ONLY",
+  "bom_line_findings": [
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required",
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "DGEBA-828-class epoxy",
+        "DGEBA-828-class liquid epoxy resin"
+      ],
+      "ingredient": "dgeba_828",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-EPON828-TDS",
+        "SRC-EPON828"
+      ],
+      "part": "A",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required",
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "silica barrier extender, 2.65 g/cm3 class",
+        "silica extender"
+      ],
+      "ingredient": "silica",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-CAMEO-SILICA",
+        "SRC-SILICA-CAMEO"
+      ],
+      "part": "A",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "high-flash naphtha / VM&P naphtha solvent"
+      ],
+      "ingredient": "naphtha",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-CAMEO-NAPHTHA"
+      ],
+      "part": "A",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "synthetic black iron oxide pigment"
+      ],
+      "ingredient": "iron_oxide_black",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-LANXESS-BLACK-OXIDE"
+      ],
+      "part": "A",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "organoclay thixotrope"
+      ],
+      "ingredient": "thixotrope",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-ELEMENTIS-BENTONE"
+      ],
+      "part": "A",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required",
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "Disperbyk-163-class dispersant and BYK-A-530-class defoamer",
+        "dispersant class"
+      ],
+      "ingredient": "dispersant",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-BYK-ADDITIVES",
+        "SRC-BYK-DISPERBYK-163"
+      ],
+      "part": "A",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required",
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "Disperbyk-163-class dispersant and BYK-A-530-class defoamer",
+        "defoamer/air-release additive"
+      ],
+      "ingredient": "defoamer",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-BYK-ADDITIVES",
+        "SRC-BYK-A530"
+      ],
+      "part": "A",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "n-butanol solvent"
+      ],
+      "ingredient": "n_butanol",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-EASTMAN-NBUTANOL"
+      ],
+      "part": "B",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "Ancamide 350A polyamide/amidoamine curative"
+      ],
+      "ingredient": "ancamide_350a",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-ANCAMIDE-350A"
+      ],
+      "part": "B",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required",
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "silica barrier extender, 2.65 g/cm3 class",
+        "silica extender"
+      ],
+      "ingredient": "silica",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-CAMEO-SILICA",
+        "SRC-SILICA-CAMEO"
+      ],
+      "part": "B",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "organoclay thixotrope"
+      ],
+      "ingredient": "thixotrope",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-ELEMENTIS-BENTONE"
+      ],
+      "part": "B",
+      "target_wt_pct_present": true
+    },
+    {
+      "commercial_source_citation_present": true,
+      "domestic_sourcing_preference_flagged": false,
+      "domestic_sourcing_preference_values": [
+        "unknown / RFQ required",
+        "unknown / RFQ required"
+      ],
+      "function_present": true,
+      "grade_spec_attributes_present": true,
+      "grade_spec_values": [
+        "Disperbyk-163-class dispersant and BYK-A-530-class defoamer",
+        "dispersant class"
+      ],
+      "ingredient": "dispersant",
+      "line_complete_per_done_criteria": true,
+      "line_level_evidence_tier_present": false,
+      "line_passes_full_refutation_criterion": false,
+      "matched_source_record_ids": [
+        "SRC-BYK-ADDITIVES",
+        "SRC-BYK-DISPERBYK-163"
+      ],
+      "part": "B",
+      "target_wt_pct_present": true
+    }
+  ],
+  "campaign_item_id": "CF-BOM",
+  "claim_under_attack": "The current CF-BOM deliverable state is complete and accurate for its scope (finding a miss is CLAIM_REFUTED and is progress).",
+  "companion_evidence_file_check": [
+    {
+      "cited_filename": "funnel_results.json",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": false,
+      "found_paths": []
+    },
+    {
+      "cited_filename": "arithmetic_audit.md",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": false,
+      "found_paths": []
+    },
+    {
+      "cited_filename": "conflict_register.md",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": false,
+      "found_paths": []
+    },
+    {
+      "cited_filename": "validation_cards.md",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": false,
+      "found_paths": []
+    },
+    {
+      "cited_filename": "known_answer_report.md",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": false,
+      "found_paths": []
+    },
+    {
+      "cited_filename": "discovery_annex.md",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": false,
+      "found_paths": []
+    },
+    {
+      "cited_filename": "formulation_black.json",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": false,
+      "found_paths": []
+    },
+    {
+      "cited_filename": "formulation_yellow.json",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": false,
+      "found_paths": []
+    },
+    {
+      "cited_filename": "source_records.json",
+      "cited_in_blueprint": true,
+      "exists_anywhere_in_repo": true,
+      "found_paths": [
+        "amphora-source-ledger/reference/mvp20/data/source_records.json"
+      ]
+    }
+  ],
+  "deliverable_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+  "deliverable_under_test": "amphora-report-packager/reference/mvp20/out/blueprint.md#Section-1-Formulation-and-BOM",
+  "directive_obligation": "CF-BOM",
+  "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+  "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+  "envelope_conformance_spot_check": {
+    "conforms": true,
+    "note": "Every ingredient class present (resin, curative, solvent, pigment, extender, additive) stays inside the two-component epoxy-polyamide solvent-borne envelope per blueprint prose (DGEBA-class resin, reactive polyamide curative, naphtha/n-butanol solvents, iron-oxide pigment, silica extender, dispersant/defoamer/thixotrope additives); no waterborne, zinc-rich, or nanofiller class present. This axis SURVIVES -- it is not the refuting finding here."
+  },
+  "lines_failing_done_criteria": [],
+  "lines_missing_domestic_sourcing_preference_flag": [
+    "dgeba_828",
+    "silica",
+    "naphtha",
+    "iron_oxide_black",
+    "thixotrope",
+    "dispersant",
+    "defoamer",
+    "n_butanol",
+    "ancamide_350a",
+    "silica",
+    "thixotrope",
+    "dispersant"
+  ],
+  "lines_missing_line_level_evidence_tier": [
+    "dgeba_828",
+    "silica",
+    "naphtha",
+    "iron_oxide_black",
+    "thixotrope",
+    "dispersant",
+    "defoamer",
+    "n_butanol",
+    "ancamide_350a",
+    "silica",
+    "thixotrope",
+    "dispersant"
+  ],
+  "missing_companion_files_cited_by_blueprint": [
+    "funnel_results.json",
+    "arithmetic_audit.md",
+    "conflict_register.md",
+    "validation_cards.md",
+    "known_answer_report.md",
+    "discovery_annex.md",
+    "formulation_black.json",
+    "formulation_yellow.json"
+  ],
+  "module": "amphora-cro-protocol-packager",
+  "n_bom_lines_parsed": 12,
+  "n_lines_failing_done_criteria_function_wtpct_source_grade": 0,
+  "n_lines_missing_domestic_sourcing_preference_flag": 12,
+  "n_lines_missing_line_level_evidence_tier": 12,
+  "n_missing_companion_files": 8,
+  "observation": "12/12 BOM lines have function + target wt% + a commercial-source citation URL + a matched grade/spec sourcing record (12/12 pass those four done_criteria fields cleanly). BUT: 12/12 BOM lines have NO domestic-sourcing preference actually flagged -- every matched sourcing record's domestic_taa_status reads 'unknown / RFQ required' (schema declares the field but the value is never a concrete preference determination anywhere in the corpus). 12/12 BOM lines carry no explicit line-level evidence tier label (REAL-ARITHMETIC/RULE-CITED/MODELED-VALIDATED/CRO-GATED) despite the document's own framing that 'no number exceeds its evidence'. And 8 of the companion evidence files the blueprint prose cites by name for its numeric claims (funnel_results.json, arithmetic_audit.md, conflict_register.md, validation_cards.md, known_answer_report.md, discovery_annex.md, formulation_black.json, formulation_yellow.json) do not exist anywhere in the repository, so those numeric claims (recompute counts, validation-card pass/fail bars, known-answer deltas) are uncited in the sense the refutation criterion names: the citation target is absent.",
+  "refutation_criterion_observed": true,
+  "refutation_criterion_verbatim": "Any BOM line lacks function, target weight percent, grade or spec attributes, or a candidate commercial source, or any numeric claim about an ingredient is uncited and untiered.",
+  "schema": "amphora.cro-protocol-packager.cf-bom-formulation-completeness-audit-diagnostic.v1",
+  "sourcing_corpus_sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c",
+  "sourcing_corpus_under_test": "amphora-source-ledger/reference/mvp20/data/source_records.json",
+  "study_id": "cf-bom-formulation-completeness-audit-v1",
+  "verdict": "CLAIM_REFUTED"
+}

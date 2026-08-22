@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "CONTRACT_FIXTURES",
+  "missing_values_imputed": false,
+  "module_id": "amphora-report-packager",
+  "rights_gate_passed": true,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "245054f7e773c0ff5fef1c426e07dd0ebbe00f671054c2e383e54c3390220ea7"
+}

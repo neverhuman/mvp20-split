@@ -1,0 +1,159 @@
+{
+  "search_record": [
+    {
+      "n": 1,
+      "source": "Mendeley Data 10.17632/bypjxzm3fn.1 (companion dataset to Elsevier Data-in-Brief-style article, PMC12528924 / ScienceDirect S2352340925008303, 'Data on mechanical and thermal properties of an amine-epoxy system at various post-curing temperatures')",
+      "query_used": "Mendeley Data epoxy amine glass transition temperature dataset license",
+      "license_status": "VERIFIED_OPEN",
+      "license_quote_verbatim": "This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).",
+      "license_quote_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12528924/ (companion article to the Mendeley dataset DOI 10.17632/bypjxzm3fn.1)",
+      "disposition": "QUALIFYING_RECOMMENDED"
+    },
+    {
+      "n": 2,
+      "source": "Zenodo record 10.5281/zenodo.14227457, 'EPOXY-TITANIUM OXIDE NANOCOMPOSITES: SYNTHESIS AND PROPERTIES'",
+      "query_used": "amine curing agent epoxy density (Zenodo REST API, /api/records)",
+      "license_status": "LICENSE_OPEN_BUT_CHEMISTRY_UNVERIFIED",
+      "license_quote_verbatim": "{\"id\": \"cc-by-4.0\"}",
+      "license_quote_source": "Zenodo REST API record metadata.license field (live query this fire)",
+      "disposition": "NEAR_MISS_logged_not_queued_amine_identity_not_verified_this_fire"
+    },
+    {
+      "n": 3,
+      "source": "Zenodo record 10.31142/ijtsrd15748, 'Characterization of Polymer Composite Materials Based on Epoxy Resin GELR 128 Modified with Epoxidized Sunflower Oil Cured by 4,4'-Diaminodiphenylmethane (DDM/MDA)'",
+      "query_used": "amine curing agent epoxy density (Zenodo REST API, /api/records)",
+      "license_status": "VERIFIED_OPEN",
+      "license_quote_verbatim": "{\"id\": \"cc-by-4.0\"}",
+      "license_quote_source": "Zenodo REST API record metadata.license field (live query this fire)",
+      "disposition": "QUALIFYING_RECOMMENDED"
+    },
+    {
+      "n": 4,
+      "source": "Zenodo record 10.5281/zenodo.5867296, 'Curing exotherm and processing temperature of a family of epoxy resins in the light of fabrication of composites'",
+      "query_used": "amine curing agent epoxy density (Zenodo REST API, /api/records)",
+      "license_status": "LICENSE_OPEN_BUT_SCOPE_MISMATCH",
+      "license_quote_verbatim": "{\"id\": \"cc-by-4.0\"}",
+      "license_quote_source": "Zenodo REST API record metadata.license field (live query this fire)",
+      "disposition": "NEAR_MISS_logged_not_queued_cure_kinetics_not_Tg_density_RI_dielectric_and_amine_identity_not_confirmed"
+    },
+    {
+      "n": 5,
+      "source": "Zenodo record 10.5281/zenodo.15434211, 'CURE KINETICS AND SHRINKAGE MEASUREMENTS IN A FAST CURING EPOXY AMINE RESIN SYSTEM'",
+      "query_used": "amine curing agent epoxy density (Zenodo REST API, /api/records)",
+      "license_status": "BLOCKING_CONDITION",
+      "license_quote_verbatim": "{\"id\": \"cc-by-sa-4.0\"}",
+      "license_quote_source": "Zenodo REST API record metadata.license field (live query this fire)",
+      "disposition": "CONDITIONAL_blocked_ShareAlike_would_require_any_derivative_corpus_or_retrained_model_to_be_relicensed_CC_BY_SA_conflicting_with_LOCKED_INTERNAL_formulation_confidentiality"
+    },
+    {
+      "n": 6,
+      "source": "Zenodo record 10.5281/zenodo.11073749 (Suter, J.), 'LAMMPS input files and analysis for estimating the glass transition temperature using ensemble molecular dynamics of a selection of epoxy resins using different protocols for computing the density-temperature behaviour'",
+      "query_used": "epoxy amine glass transition (Zenodo REST API, /api/records)",
+      "license_status": "BLOCKING_NO_LICENSE_GRANTED",
+      "license_quote_verbatim": "\"license\": None",
+      "license_quote_source": "Zenodo REST API record metadata.license field, record 11073749, fetched live this fire (access_right='open' i.e. viewable, but no reuse license field set -> default all-rights-reserved for redistribution/derivative use)",
+      "disposition": "NEAR_MISS_blocked_no_license_despite_strong_topical_match_MD_simulated_Tg_for_a_selection_of_epoxy_resins"
+    },
+    {
+      "n": 7,
+      "source": "Khazana (Ramprasad Research Group, khazana.gatech.edu / khazana.uconn.edu), DFT-computed dielectric constant / band gap / atomization energy dataset, 1073 polymers (A polymer dataset for accelerated property prediction and design, Scientific Data 2016, doi 10.1038/sdata.2016.12)",
+      "query_used": "Khazana Ramprasad polymer dielectric constant dataset license CC-BY",
+      "license_status": "VERIFIED_OPEN",
+      "license_quote_verbatim": "CC0 1.0 Universal (Public Domain Dedication)",
+      "license_quote_source": "Dryad dataset record doi:10.5061/dryad.5ht3n (Dryad's standard CC0 waiver applies to all Dryad-hosted data; corroborated by khazana.gatech.edu/dataset/ dataset listing)",
+      "disposition": "NEAR_MISS_logged_not_queued_chemotype_mismatch_generic_polymer_backbones_not_diamine_hardeners_low_Tanimoto_relevance_expected"
+    },
+    {
+      "n": 8,
+      "source": "PoLyInfo / NIMS MatNavi polymer database",
+      "query_used": "PoLyInfo NIMS polymer database license terms of use registration",
+      "license_status": "BLOCKING",
+      "license_quote_verbatim": "the acquisition of large amounts of data, whether by manual or mechanical means, is prohibited by the MatNavi Service Terms of Use",
+      "license_quote_source": "NIMS MatNavi Service Terms of Use, as summarized/quoted verbatim in indexed search result over polymer.nims.go.jp / mits.nims.go.jp (direct WebFetch of the terms page itself returned no usable license text this fire; quote sourced from the search snippet of the terms page, not independently re-fetched byte-for-byte -- flagged honestly)",
+      "disposition": "BLOCKED_RIGHTS_bulk_ingestion_prohibited_by_own_terms"
+    },
+    {
+      "n": 9,
+      "source": "PI1M (github.com/RUIMINMA1996/PI1M), generative benchmark dataset, ~1,000,000 polymer p-SMILES (trained on ~12,000 PolyInfo-derived repeat units)",
+      "query_used": "Polymer Genome PI1M dataset generative license CC",
+      "license_status": "BLOCKING",
+      "license_quote_verbatim": "Data for academic purpose only",
+      "license_quote_source": "github.com/RUIMINMA1996/PI1M README.md (fetched live this fire); no OSI/Creative-Commons LICENSE file present in the repository",
+      "disposition": "BLOCKED_RIGHTS_academic_only_restriction_incompatible_with_a_commercial_coating_IP_portfolio"
+    },
+    {
+      "n": 10,
+      "source": "NIST ThermoML Archive (Thermodynamics Research Center / TRC)",
+      "query_used": "NIST ThermoML epoxy amine thermophysical properties public domain",
+      "license_status": "CONDITIONAL_NOT_PUBLIC_DOMAIN",
+      "license_quote_verbatim": "The ThermoML files corresponding to articles in the journals are available here with permission of the journal publishers.",
+      "license_quote_source": "https://www.nist.gov/mml/acmd/trc/thermoml/thermoml-archive (fetched live this fire)",
+      "additional_note_verbatim": "Standard Reference Data (SRD) is an exception [to the general NIST public-domain rule] -- it receives copyright protection under 15 U.S.C. Sec. 290e",
+      "additional_note_source": "https://www.nist.gov/open/license (fetched live this fire); ThermoML/TRC holdings are SRD, so the general 'NIST works are public domain' rule does NOT apply to this specific archive",
+      "disposition": "BLOCKED_RIGHTS_per_publisher_permission_not_a_blanket_rights_clean_grant_also_scope_is_single_component_liquids_not_cured_network_Tg"
+    },
+    {
+      "n": 11,
+      "source": "CRIPT (Community Resource for Innovation in Polymer Technology) data-model paper, ACS Central Science, doi 10.1021/acscentsci.3c00011",
+      "query_used": "CRIPT Community Resource Innovation Polymer Technology dataset license open",
+      "license_status": "VERIFIED_OPEN_BUT_NOT_A_POPULATED_CORPUS",
+      "license_quote_verbatim": "the publication permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained, under the Creative Commons Attribution 4.0 license",
+      "license_quote_source": "ACS Central Science publication page for doi 10.1021/acscentsci.3c00011 (open-access CC-BY-4.0 ACS AuthorChoice article)",
+      "disposition": "NEAR_MISS_logged_not_queued_this_is_a_graph_data_schema_paper_not_a_populated_epoxy_amine_Tg_dataset"
+    },
+    {
+      "n": 12,
+      "source": "Figshare/ACS record 33222290, 'Tailoring Epoxy Network Properties with Gradient Siloxane Hardener Substitution: From Aliphatic Amine Systems to Hybrid Architectures', doi 10.1021/acs.iecr.6c02194.s001",
+      "query_used": "epoxy amine glass transition temperature dataset (Figshare REST API, /v2/articles/search then /v2/articles/{id})",
+      "license_status": "BLOCKING",
+      "license_quote_verbatim": "{'value': 10, 'name': 'CC BY-NC 4.0', 'url': 'https://creativecommons.org/licenses/by-nc/4.0/'}",
+      "license_quote_source": "Figshare REST API article metadata.license field, fetched live this fire",
+      "disposition": "BLOCKED_RIGHTS_NonCommercial_clause_incompatible_with_commercial_coating_IP_portfolio_use"
+    },
+    {
+      "n": 13,
+      "source": "Figshare/Deakin University record 33180353, 'Substitution and stoichiometric effects on the static and dynamic properties of an epoxy imine vitrimer cured with an aromatic amine', doi 10.1016/j.polymer.2026.130577",
+      "query_used": "epoxy amine glass transition temperature dataset (Figshare REST API)",
+      "license_status": "VERIFIED_OPEN_BUT_SCOPE_MISMATCH",
+      "license_quote_verbatim": "{'value': 1, 'name': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}",
+      "license_quote_source": "Figshare REST API article metadata.license field, fetched live this fire",
+      "disposition": "NEAR_MISS_logged_not_queued_dynamic_covalent_imine_vitrimer_chemistry_not_the_permanent_epoxy_amine_addition_network_our_product_targets"
+    },
+    {
+      "n": 14,
+      "source": "Figshare/ACS record 33037511, 'Synthesis and Thermal/Electrical Properties of Propynyl-Containing Difunctional Biomass-Based Epoxy Resins', doi 10.1021/acsapm.6c01904.s001",
+      "query_used": "bio-based amine hardener epoxy Tg density dataset Zenodo Figshare open (led to a broader Figshare API sweep of ACS Applied Polymer Materials SI)",
+      "license_status": "BLOCKING",
+      "license_quote_verbatim": "{'value': 10, 'name': 'CC BY-NC 4.0', 'url': 'https://creativecommons.org/licenses/by-nc/4.0/'}",
+      "license_quote_source": "Figshare REST API article metadata.license field, fetched live this fire",
+      "disposition": "BLOCKED_RIGHTS_NonCommercial_clause"
+    },
+    {
+      "n": 15,
+      "source": "refractiveindex.info database of optical constants (Polyanskiy, M., Scientific Data 2024, doi 10.1038/s41597-023-02898-2)",
+      "query_used": "\"epoxy amine\" refractive index dataset open access supplementary CC-BY",
+      "license_status": "VERIFIED_OPEN_BUT_SCOPE_UNCONFIRMED",
+      "license_quote_verbatim": "Creative Commons CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "license_quote_source": "FAIRsharing.org record FAIRsharing.60127f for the Refractive Index Database",
+      "disposition": "NEAR_MISS_logged_not_queued_general_optical_materials_database_amine_cured_epoxy_network_entries_not_confirmed_present_this_fire"
+    },
+    {
+      "n": 16,
+      "source": "University of Birmingham eData, 'Dataset: Degradation of a model epoxy resin by solvolysis routes' (companion to Polymer Degradation and Stability, 2015)",
+      "query_used": "Citrination epoxy resin dataset open license (this source surfaced incidentally in that sweep)",
+      "license_status": "UNVERIFIED",
+      "license_quote_verbatim": "Open Access (exact license terms not obtainable this fire -- WebFetch of research.birmingham.ac.uk and epapers.bham.ac.uk did not return a quotable license line)",
+      "license_quote_source": "https://research.birmingham.ac.uk/en/datasets/dataset-degradation-of-a-model-epoxy-resin-by-solvolysis-routes/ (fetched live this fire, license text not present on the landing page reachable without further navigation)",
+      "disposition": "BLOCKED_license_unverified_also_property_mismatch_solvolysis_degradation_products_not_Tg_density_RI_dielectric"
+    },
+    {
+      "n": 17,
+      "source": "MDPI Processes 9(1):42, 'Evaluation of Novel Bio-Based Amino Curing Agent Systems for Epoxy Resins: Effect of Tryptophan and Guanine'",
+      "query_used": "bio-based amine hardener epoxy Tg density dataset Zenodo Figshare open",
+      "license_status": "UNVERIFIED_THIS_FIRE",
+      "license_quote_verbatim": "not obtained -- direct WebFetch of mdpi.com/2227-9717/9/1/42 returned HTTP 403 Forbidden this fire",
+      "license_quote_source": "N/A -- fetch blocked; MDPI journals are open-access CC-BY-4.0 by stated editorial policy, but this specific article's license line was NOT independently confirmed this fire and is NOT claimed as verified",
+      "disposition": "NEAR_MISS_logged_license_not_independently_verified_honest_non_claim"
+    }
+  ]
+}

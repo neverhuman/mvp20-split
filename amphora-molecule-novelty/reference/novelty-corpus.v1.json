@@ -1,0 +1,68 @@
+{
+  "schema": "amphora.novelty-corpus.v1",
+  "corpus_id": "amphora-phase0-novelty-controls-20260718",
+  "toolkit_version": "2026.03.2",
+  "morgan_radius": 2,
+  "fingerprint_bits": 2048,
+  "use_chirality": true,
+  "structure_set_sha256": "9990598847af12a1919614a81e66d770f8cf6591d384bfa0519da2fa087fa4bb",
+  "rights_sha256": "8985ccacd6953641e53fc208a6293f8edcd91b5de4d31b4847bbc8239009989d",
+  "rights": {
+    "source_id": "amphora_phase0_novelty_controls",
+    "license": "CC0-1.0",
+    "source_url": "local:amphora-molecule-novelty/reference/novelty-corpus.v1.json",
+    "status": "ACCEPTED",
+    "eligible_for_derivatives": true,
+    "scope": "Amphora-authored known-answer structures for Phase-0 fingerprint and distance controls only"
+  },
+  "entries": [
+    {
+      "structure_id": "alkane-ethane",
+      "canonical_isomeric_smiles": "CC",
+      "canonical_structure_sha256": "a56362a10c816abf206d72cb914e2d5ca454eb9c7e744f88b1a1422c379e9942"
+    },
+    {
+      "structure_id": "alcohol-ethanol",
+      "canonical_isomeric_smiles": "CCO",
+      "canonical_structure_sha256": "ab1de819ede91df490e6441934decfa9041b49f91d6bbadbba4df634ccff57fa"
+    },
+    {
+      "structure_id": "aromatic-benzene",
+      "canonical_isomeric_smiles": "c1ccccc1",
+      "canonical_structure_sha256": "13cad05ca8f49c509e5b7be8c67668484344ebf2b2d12b03b295f14d4b1c32d1"
+    },
+    {
+      "structure_id": "epoxide-oxirane",
+      "canonical_isomeric_smiles": "C1CO1",
+      "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc"
+    },
+    {
+      "structure_id": "amine-ethylenediamine",
+      "canonical_isomeric_smiles": "NCCN",
+      "canonical_structure_sha256": "dcc73bf631f9be42113cee3ffcf0bb8889cf63dd94af75ebee2dd18d532966b2"
+    },
+    {
+      "structure_id": "amide-acetamide",
+      "canonical_isomeric_smiles": "CC(N)=O",
+      "canonical_structure_sha256": "a73c29e3e916daccbda5e8dfdf80ea1cd5b618791a095f3adcb2868fdf2141c4"
+    },
+    {
+      "structure_id": "cyclohexane-carboxylate-control",
+      "canonical_isomeric_smiles": "O=C(O)C1CCCCC1",
+      "canonical_structure_sha256": "8287f11d64c67ce0895edc7af581932518db783e3f201e5db906fc1b22e6ad04"
+    },
+    {
+      "structure_id": "tert-butyl-benzene-control",
+      "canonical_isomeric_smiles": "CC(C)(C)c1ccccc1",
+      "canonical_structure_sha256": "4fa275fa28063f38acfab264d8cacca4f9057007f67ad89f50cc0d2d4ff9ef80"
+    }
+  ],
+  "authority": {
+    "scientific_readiness": "LOCKED_INTERNAL",
+    "solver_use": "AUDIT_ONLY",
+    "optimizer_authority": false,
+    "synthesis_authority": false,
+    "patentability_or_fto_authority": false,
+    "performance_authority": false
+  }
+}

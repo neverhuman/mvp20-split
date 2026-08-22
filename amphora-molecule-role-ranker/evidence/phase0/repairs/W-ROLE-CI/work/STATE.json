@@ -1,0 +1,13 @@
+{
+  "item_id": "W-ROLE-CI",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260814T020001-724853-bddd109f6ab9",
+      "date": "2026-08-14",
+      "action": "Located 3 boundary-collapsed percentile-bootstrap CIs in role-parsimony-conformal-v1 (k=n=24), recomputed with Clopper-Pearson (accuracy margins) and MOVER/Newcombe-1998b phi=0 (paired gap), published superseding KPI signed with pinned PHASE0_EVALUATOR key, self-verified, updated RETRACTION-INDEX.md, swept 7170 parsed .json files portfolio-wide (130 hits, all confined to this module's own target + amphora-molecule-generator which already has active repair items R-A06/R-A06v2/W-GEN1), filed 1 proposed_followup naming that module."
+    }
+  ],
+  "done_receipt": "amphora-molecule-role-ranker/evidence/phase0/repairs/W-ROLE-CI/done/w-role-ci-superseding-kpi-receipt.v1.dsse.json",
+  "notes": "done_criterion met in a single fire: superseding KPI landed with all 3 degenerate intervals recomputed by a named exact method, old/new bounds shown side by side, method justified, supersedes block naming the superseded artifact by sha256; portfolio sweep completed and filed."
+}

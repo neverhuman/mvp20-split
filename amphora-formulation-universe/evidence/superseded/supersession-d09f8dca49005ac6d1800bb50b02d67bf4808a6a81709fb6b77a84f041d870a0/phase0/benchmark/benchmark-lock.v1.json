@@ -1,0 +1,23 @@
+{
+  "attacks": [
+    "STALE_PARENT",
+    "SAME_SIGNER_REVIEW",
+    "FORGED_RIGHTS",
+    "MISSING_LICENSE",
+    "STRIPPED_CLAIM_LOCK",
+    "CANDIDATE_SUPPLIED_EVIDENCE",
+    "CROSS_MODULE_PATH_SUBSTITUTION",
+    "REPLAY_DRIFT",
+    "FALSE_MOVEMENT_CLAIM",
+    "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+    "LEGACY_AMPHORA_RECEIPT_LAUNDERING"
+  ],
+  "dataset_manifest_sha256": "26aa05ab4a7f86c7e5218c5692c3063d14ebd8f2611f4d387f4730eafd4a8a14",
+  "module_id": "amphora-formulation-universe",
+  "negative_result_authority": "AUDIT_ONLY",
+  "replay_count": 2,
+  "runner": "NATIVE_WORKSPACE_LOCKED",
+  "schema": "amphora.module-phase0-benchmark-lock.v1",
+  "scientific_success_required_for_phase0": false,
+  "split_manifest_sha256": "2a5e399ebfe968983de9c62ed651c72ffdfd1038dd855a3f7bd416405721e709"
+}

@@ -1,0 +1,23 @@
+{
+  "attacks": [
+    "STALE_PARENT",
+    "SAME_SIGNER_REVIEW",
+    "FORGED_RIGHTS",
+    "MISSING_LICENSE",
+    "STRIPPED_CLAIM_LOCK",
+    "CANDIDATE_SUPPLIED_EVIDENCE",
+    "CROSS_MODULE_PATH_SUBSTITUTION",
+    "REPLAY_DRIFT",
+    "FALSE_MOVEMENT_CLAIM",
+    "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+    "LEGACY_AMPHORA_RECEIPT_LAUNDERING"
+  ],
+  "dataset_manifest_sha256": "ae7751a79ec2f0be7e92b1721e2eb4cd651e050dddf46b0ba9d7b6ec234af7a3",
+  "module_id": "amphora-known-answer-benchmarks",
+  "negative_result_authority": "AUDIT_ONLY",
+  "replay_count": 2,
+  "runner": "EXACT_LOCKED_MODULE_BENCHMARK",
+  "schema": "amphora.module-phase0-benchmark-lock.v1",
+  "scientific_success_required_for_phase0": false,
+  "split_manifest_sha256": "e9e58e5e696a121375a211ad0babb29faf0a13235182ed182de26f3d7a2ad345"
+}

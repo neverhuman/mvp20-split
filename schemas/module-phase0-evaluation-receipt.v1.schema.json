@@ -1,0 +1,35 @@
+{
+  "$id": "https://amphora.local/schemas/module-phase0-evaluation-receipt.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "required": ["schema", "receipt_id", "module_id", "module_class", "bundle_hash", "bundle_parent_hashes", "evaluator_key_id", "audit_execution_passed", "scientific_outcome", "phase0_eligible", "scientific_readiness", "decision_use_ceiling", "claim_lock_hash", "applicability_domain", "failed_gates", "retained_negative_results", "replay_hash", "metrics"],
+  "properties": {
+    "schema": {"const": "amphora.module-phase0-evaluation-receipt.v1"},
+    "receipt_id": {"type": "string", "minLength": 1},
+    "module_id": {"$ref": "#/$defs/module"},
+    "module_class": {"enum": ["DETERMINISTIC_CONTROL", "SCIENTIFIC_OR_EVIDENCE"]},
+    "bundle_hash": {"$ref": "#/$defs/hash"},
+    "bundle_parent_hashes": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "evaluator_key_id": {"type": "string", "minLength": 1, "not": {"pattern": "^(local|dev)-"}},
+    "audit_execution_passed": {"type": "boolean"},
+    "benchmark_execution_complete": {"type": "boolean"},
+    "scientific_outcome": {"enum": ["PASSED", "FAILED", "NOT_APPLICABLE"]},
+    "phase0_eligible": {"type": "boolean"},
+    "scientific_readiness": {"enum": ["LOCKED_INTERNAL", "NOT_APPLICABLE"]},
+    "decision_use_ceiling": {"const": "AUDIT_ONLY"},
+    "claim_lock_hash": {"$ref": "#/$defs/hash"},
+    "applicability_domain": {"$ref": "#/$defs/strings"},
+    "failed_gates": {"$ref": "#/$defs/strings0"},
+    "retained_negative_results": {"$ref": "#/$defs/strings0"},
+    "replay_hash": {"$ref": "#/$defs/hash"},
+    "metrics": {"type": "object"},
+    "signature": {"type": "object"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "module": {"type": "string", "pattern": "^amphora-[a-z0-9-]+$"},
+    "strings": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "strings0": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "type": "object"
+}

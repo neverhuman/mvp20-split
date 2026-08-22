@@ -1,0 +1,47 @@
+{
+  "schema": "amphora.benchmark-lock.v1",
+  "benchmark_id": "molecule-property-phase-1-lock-v2-2026-07-18",
+  "module_id": "amphora-molecule-property",
+  "endpoints": [
+    "structure_identity",
+    "average_molecular_weight_g_mol",
+    "oxirane_ring_count",
+    "reactive_amine_hydrogen_count",
+    "eew_g_per_eq",
+    "ahew_g_per_eq"
+  ],
+  "baselines": [
+    "independently_generated_structure_and_mass_reference",
+    "sealed_reactive_group_controls",
+    "invalid_and_out_of_domain_controls"
+  ],
+  "metrics": [
+    {"metric":"reactive_group_count_accuracy","direction":"maximize","unit":"fraction_0_1","threshold":1.0},
+    {"metric":"invalid_rejection_accuracy","direction":"maximize","unit":"fraction_0_1","threshold":1.0},
+    {"metric":"eew_ahew_max_abs_error","direction":"minimize","unit":"g/eq","threshold":0.5},
+    {"metric":"structure_identity_and_mass_agreement","direction":"maximize","unit":"fraction_0_1","threshold":1.0},
+    {"metric":"measured_only_claim_lock_preservation","direction":"maximize","unit":"fraction_0_1","threshold":1.0}
+  ],
+  "uncertainty_method": "deterministic exact-control agreement; no sampling uncertainty asserted",
+  "thresholds": {
+    "minimum_truth_set_molecules": 300.0,
+    "minimum_reactive_group_count_accuracy": 1.0,
+    "minimum_invalid_rejection_accuracy": 1.0,
+    "maximum_eew_ahew_abs_error_g_per_eq": 0.5,
+    "minimum_measured_only_claim_lock_preservation": 1.0
+  },
+  "exclusions": [
+    "mixtures, fragments, wildcards, query atoms, and polymers",
+    "commercial products and polydisperse grades as structure-derived EEW/AHEW",
+    "InChI, MOL, and SDF candidate-input ingestion during Phase 1"
+  ],
+  "dataset_hashes": {
+    "config/program/molecule-property-sources.v1.json": "db1fb8a4c257c82740176aedeecd8c34a9ae1e6b6e824f08535e06fcc0c4abf6",
+    "amphora-molecule-property/reference/chebi/rel252/chebi_3_stars.sdf.gz": "8f17627476c66e899dabe3cd7ae1cbb94f7ee6c67f2ee91f077a77a19c940ad7",
+    "amphora-molecule-property/reference/chebi/rel252/LICENSE.txt": "fe7b4ce83b8381cc5b216bbb4af73c570688d1b819c73bbaed8ca401f4677cd6",
+    "amphora-molecule-property/reference/chebi/rel252/chebi_3_stars.acquisition.v1.json": "d3ff89df75f4b52f4a57d2eddffd6c86de9d54f6e4fe321ed1d158bf6771d3a3",
+    "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+    "config/program/molecule-property-split.v1.json": "6d6be71599ef32e44682ab762d2f8603da633a597d00ba0cdec129dd2e670dfa"
+  },
+  "split_hash": "6d6be71599ef32e44682ab762d2f8603da633a597d00ba0cdec129dd2e670dfa"
+}

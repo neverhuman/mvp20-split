@@ -1,0 +1,57 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-ip-fto-guard",
+    "infrastructure lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "benchmark_lock_hash": "5919233bc89e3d3eae79e4220f29ecae0e5b5067851d0464ab845edbff3b38f5",
+  "claim_contract_hash": "58cb4216f99825f7ffdcb8b2af40be47a6339d7fabc106ec1709bfa0888156e2",
+  "claim_locks": {
+    "counsel_required_for_legal_conclusions": true,
+    "fto_not_performed": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_procurement_authority": true,
+    "no_product_performance_authority": true,
+    "no_product_release_or_qualification": true,
+    "no_qualification_authority": true,
+    "no_ranking_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_superiority_claim": true,
+    "not_legal_advice": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true
+  },
+  "dataset_manifest_hash": "5ab5f1d3eef43008e80b6e896c5360edcc4159c486d570296229c6664cd94e55",
+  "disclosure_log_hash": "edc2589e4d6e320257a23475effa084d1ddae76b6386b0282bb451f80b5179fe",
+  "module_class": "SCIENTIFIC_OR_EVIDENCE",
+  "module_id": "amphora-ip-fto-guard",
+  "parents": {
+    "evidence/phase0/benchmark/benchmark-lock.v1.json": "5919233bc89e3d3eae79e4220f29ecae0e5b5067851d0464ab845edbff3b38f5",
+    "evidence/phase0/dataset/dataset-manifest.v1.json": "5ab5f1d3eef43008e80b6e896c5360edcc4159c486d570296229c6664cd94e55",
+    "evidence/phase0/promotion/policy.v1.json": "8e7da8d257938bfefa2acb3ad6f4be66b0580ce5e1034118a0dabc21d9c738a6",
+    "evidence/phase0/raw/SHA256SUMS": "991cf955be289821462572e426d6eadd08c62e84a25dec738e47ef221b345a65",
+    "evidence/phase0/sources/source-lock.v1.json": "e9b07b1475d3a74ff482d2d7be274feec3082e496cd55fc17a26457b758b589e",
+    "evidence/phase0/split/split-manifest.v1.json": "3ba5017d4e2edcad5c52ffdae13552c4849e4ec88f016dc69e564cd4023f863c",
+    "ip/claim-contract.v1.json": "58cb4216f99825f7ffdcb8b2af40be47a6339d7fabc106ec1709bfa0888156e2",
+    "ip/disclosure-log.v1.json": "edc2589e4d6e320257a23475effa084d1ddae76b6386b0282bb451f80b5179fe",
+    "ip/prior-art.v1.json": "b085bef71a86762c181650969824cbc7da8020cf3bbcee54617fbcdb8d4eaf55",
+    "ip/technical-dossier.v1.json": "d413ec2f8eac9bd1faf827d618051b430c0d11072699f67f5325ec06a8ea6588"
+  },
+  "prior_art_hash": "b085bef71a86762c181650969824cbc7da8020cf3bbcee54617fbcdb8d4eaf55",
+  "promotion_policy_hash": "8e7da8d257938bfefa2acb3ad6f4be66b0580ce5e1034118a0dabc21d9c738a6",
+  "registry_manifest_hash": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+  "review_packet_blinded": true,
+  "schema": "amphora.module-phase0-bundle.v1",
+  "source_lock_hash": "e9b07b1475d3a74ff482d2d7be274feec3082e496cd55fc17a26457b758b589e",
+  "split_manifest_hash": "3ba5017d4e2edcad5c52ffdae13552c4849e4ec88f016dc69e564cd4023f863c",
+  "technical_dossier_hash": "d413ec2f8eac9bd1faf827d618051b430c0d11072699f67f5325ec06a8ea6588",
+  "toolkit_versions": {
+    "amphora-rust": "0.1.0",
+    "rdkit": "2026.03.2",
+    "rust-edition": "2021"
+  }
+}

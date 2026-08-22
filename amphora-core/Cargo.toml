@@ -1,0 +1,17 @@
+[package]
+name = "amphora-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+base64.workspace = true
+ed25519-dalek.workspace = true
+flate2.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+serde_jcs.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile = "3"

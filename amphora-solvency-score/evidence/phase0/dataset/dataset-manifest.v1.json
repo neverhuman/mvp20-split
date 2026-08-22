@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "RIGHTS_QUALIFIED_EVIDENCE",
+  "missing_values_imputed": false,
+  "module_id": "amphora-solvency-score",
+  "rights_gate_passed": true,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "31d3595b701f4454ba0ec472b93e49c43769bd956c3a05b23c5b556807651da4"
+}

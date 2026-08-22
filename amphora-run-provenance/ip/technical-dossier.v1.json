@@ -1,0 +1,12 @@
+{
+  "applicability_domain": [
+    "registered amphora-run-provenance contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_contract_sha256": "62257f5b79abc48a7550e785046ef30fd5e352c0b3ff971a90c1d0aeaf3fb590",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-run-provenance",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "edit_id": "a1-honest-current-state-phase",
+    "new": "Per the authoritative front-matter (FOUNDER RULING 2026-08-03: front-matter is authoritative), the current phase is **Phase 0** (`phase: PHASE_0`), scientific readiness is `LOCKED_INTERNAL`, and operational readiness is `READY`. Execution and passing unit tests do not establish human parity. No readiness percentage is asserted.",
+    "occurrences": 1,
+    "old": "Operational state is `SHADOW`; scientific state is `UNVALIDATED`, so the current phase is **Pre-Phase 0**. Execution and passing unit tests do not establish human parity. No readiness percentage is asserted."
+  },
+  {
+    "edit_id": "a2-phase0-readiness-tail",
+    "new": "Per the authoritative front-matter (FOUNDER RULING 2026-08-03:\nfront-matter is authoritative), the `phase` header is `PHASE_0`,\n`scientific_readiness` is `LOCKED_INTERNAL`, and\n`operational_readiness` is `READY`; this prose was aligned to the\nfront-matter by repair R-A10 (repair_mode interactive-2026-08-03).",
+    "occurrences": 1,
+    "old": "Awaiting `PHASE0_EVALUATOR` and `PHASE0_INTERNAL_REVIEWER` signatures\nper the `evaluation.v1.dsse.json` and `phase0-review-receipt.v1.json`\nprotocol before the `phase` header flips to `PHASE_0`. No signed receipt\nhas been produced yet; the module remains `PRE_PHASE_0` for authority\npurposes, and `operational_readiness` stays `SHADOW`."
+  },
+  {
+    "edit_id": "b1-w7-banner-flory-huggins-sections",
+    "new": "\n### Empirical benchmark result \u2014 Flory-Huggins physical chi baseline vs ML\n\n> **W7 REFUTATION NOTICE (2026-08-03): the ML-beats-classical-theory comparison in this section is void per W7.** The signed audit receipt at\n> `evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json`\n> (campaign item W7, verdict `CLAIM_REFUTED`) voided this section's KPI\n> `evidence/phase0/kpis/omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json`:\n> the Fedors group-contribution \u03b4_p reaches 5.2e9 MPa^0.5 against the\n> physically-admissible ceiling of 59.9 MPa^0.5 defined by the receipts'\n> own cited handbooks (Barton 1991; Hansen 2007 Table A.1), and the B2\n> \"linear rescaled\" comparator is mathematically degenerate (fitted OLS\n> slope ~1e-19, collapsed onto the B0 constant-mean predictor). The\n> comparison is void per W7; a valid classical baseline was never run;\n> corrected implementation + fair re-run queued (R-B03/W7b). The numbers\n> below are retained verbatim for provenance only and support no\n> ML-beats-theory claim.\n",
+    "occurrences": 2,
+    "old": "\n### Empirical benchmark result \u2014 Flory-Huggins physical chi baseline vs ML\n"
+  },
+  {
+    "edit_id": "b2-w7-banner-hansen-3component-section",
+    "new": "\n### Empirical benchmark result \u2014 Hansen 3-component \u03b4 chi baseline vs Hildebrand 1-component vs ML\n\n> **W7 REFUTATION NOTICE (2026-08-03): the ML-beats-classical-theory comparison in this section is void per W7.** The signed audit receipt at\n> `evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json`\n> (campaign item W7, verdict `CLAIM_REFUTED`) voided this section's KPI\n> `evidence/phase0/kpis/omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json`:\n> the Van Krevelen/Beerbower group-contribution Hansen components reach\n> 5.33e17 MPa^0.5 against the physically-admissible ceiling of 59.9\n> MPa^0.5 defined by the receipts' own cited handbooks, and the rescaled\n> comparator is mathematically degenerate (fitted OLS slope ~1e-35,\n> collapsed onto the constant-mean predictor). The comparison is void per\n> W7; a valid classical baseline was never run; corrected implementation\n> + fair re-run queued (R-B03/W7b). The numbers below are retained\n> verbatim for provenance only and support no ML-beats-theory claim.\n",
+    "occurrences": 1,
+    "old": "\n### Empirical benchmark result \u2014 Hansen 3-component \u03b4 chi baseline vs Hildebrand 1-component vs ML\n"
+  },
+  {
+    "edit_id": "c1-bigsoldb-headline-w6-hardened",
+    "new": "### Empirical benchmark result \u2014 BigSolDB leave-solute-out headline (W6-hardened)\n\nThe BigSolDB 2.1 leave-solute-out solubility headline is model RMSE\n**0.8770** (95% CI [0.8416, 0.9154]) vs best naive baseline\n(per-solvent mean) RMSE 1.1687 on 94,532 rows / 1,372 solute groups\n(signed comparator:\n`benchmarks/bigsoldb-v1/inhouse_benchmark_receipt.v1.dsse.json`).\nAlongside that figure, the W6 admissibility-hardened re-run \u2014 which\nwholesale-excludes the 1,193 rows (1.18%) in the 517 same-state-point\ninternally-contradictory duplicate groups (>0.3 log10 units at\nidentical solute/solvent/temperature) and re-runs the identical locked\nleave-solute-out protocol \u2014 observes model RMSE **0.8742** (95% CI\n[0.8405, 0.9114]) vs best baseline 1.1667 (n=94,015; 25.08% error\nreduction): the headline survives admissibility hardening essentially\nunchanged. Hardened receipt:\n`evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json`\n(campaign item W6). The 0.8742 hardened figure is to be quoted\nalongside 0.8770 wherever this headline is used.\n\n### Known contradictions\n",
+    "occurrences": 1,
+    "old": "### Known contradictions\n"
+  }
+]

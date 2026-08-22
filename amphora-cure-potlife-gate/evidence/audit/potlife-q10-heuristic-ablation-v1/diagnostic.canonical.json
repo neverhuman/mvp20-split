@@ -1,0 +1,549 @@
+{
+  "G1_reproduces_signed_kpi": {
+    "abs_delta": 2.7755575615628914e-17,
+    "lift_abs_delta": 2.220446049250313e-16,
+    "passed": true,
+    "recomputed_30c_mape": 0.15629611310973887,
+    "recomputed_arrhenius_pot_life_mape": 0.14733360451563352,
+    "recomputed_lift": 0.8051198523013195,
+    "signed_arrhenius_pot_life_mape": 0.1473336045156335,
+    "signed_held_out_30c_mape": 0.15629611310973887,
+    "signed_lift": 0.8051198523013198
+  },
+  "acceptance_bar_reference": {
+    "arrhenius_over_constant_baseline_lift_floor": 0.3,
+    "arrhenius_pot_life_mape_ceiling": 0.2,
+    "held_out_temperature_extrapolation_mape_ceiling": 0.25,
+    "per_system_within_40_percent_rate_floor": 0.8
+  },
+  "claim_locks": {
+    "constraint_only_solver_use": true,
+    "cro_gated_promotion_still_blocked": true,
+    "no_optimizer_authority": true,
+    "pre_phase_0_research_only": true
+  },
+  "closes": [
+    "Establishes that the signed KPI's 'arrhenius_over_constant_baseline_lift' gate compares against a strawman (no temperature scaling at all); a chemistry-blind universal Q10=2 rule achieves 80.0 pp lift over the same constant baseline (vs 80.5 pp for the signed per-system-Ea model), clearing the same 0.30 floor without using any published Ea.",
+    "Shows the per-system published activation energies are NOT clearly the source of the signed model's held-out accuracy: the Ea-free heuristic beats the Ea-based model on 2 of 3 held-out legs (30C, 40C) and ties on the third."
+  ],
+  "constants": {
+    "gas_constant_j_mol_k": 8.31446261815324,
+    "q10": 2.0,
+    "reference_temperature_c": 22.78,
+    "reference_temperature_f": 73.0,
+    "reference_temperature_k": 295.92777777777775
+  },
+  "dataset": {
+    "fixture_id": "amphora-cure-potlife-gate-phase0-known-answer-2026-07-21",
+    "n_legs": 3,
+    "n_pooled_points": 36,
+    "n_systems": 12
+  },
+  "does_not_close": [
+    "Does NOT claim Q10=2 should replace the signed model in the gate; Q10 is chemistry-blind and offers no mechanism, no per-family Flory-Stockmayer gel structure, and was not evaluated for out-of-envelope temperatures.",
+    "Does NOT validate or invalidate any specific published Ea value in isolation; external corroboration of individual Ea values is covered by the prior Kissinger-Ozawa-Doyle-Starink head-to-head receipt (SURVIVED).",
+    "Does NOT touch the module's Rust production fit (src/physics.rs fit_reduced_model), which is a different, richer chemorheology model fit on Stormer viscosity time series, not the Phase-0 KPI's flat per-system Ea lookup table.",
+    "Does NOT modify scientific_readiness (stays UNVALIDATED/PRE_PHASE_0) or the portfolio manifest (66 receipts / 11 modules)."
+  ],
+  "falsification_criterion": {
+    "claim_under_attack": "evidence/phase0/kpis/cure-potlife-arrhenius-kpi.v1.json theory/population fields: held-out accuracy is attributable to published Ea per resin+hardener chemistry family, not to generic temperature sensitivity",
+    "criterion_a_mape_within_0_02_absolute": {
+      "met": true,
+      "observed_abs_delta": 0.005375,
+      "threshold": 0.02
+    },
+    "criterion_b_q10_beats_arrhenius_on_ge_1_leg": {
+      "legs_where_q10_wins": [
+        "30C",
+        "40C"
+      ],
+      "met": true
+    },
+    "criterion_c_q10_avoids_a_breach_arrhenius_commits": {
+      "met": true
+    },
+    "verdict": "REFUTED"
+  },
+  "gates_summary": {
+    "G1_reproduces_signed_kpi": true,
+    "ablation_verdict": "REFUTED"
+  },
+  "headline": "A chemistry-blind, Ea-free Q10=2 universal heuristic (ASTM F1980-16 default acceleration-factor convention) matches the signed per-system published-Ea Arrhenius model overall (0.1527 vs 0.1473 MAPE) and BEATS it on the 30C and 40C held-out legs, including on the one leg (40C) where the signed model itself breaches the KPI's own 0.25 extrapolation ceiling; Q10 does not breach that ceiling on any leg.",
+  "per_system": [
+    {
+      "activation_energy_j_mol": 55000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "aliphatic-polyamine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.020658,
+          "arrhenius_predicted_min": 82.26475,
+          "observed_min": 84.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 72.750769
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.161273,
+          "arrhenius_predicted_min": 17.613272,
+          "observed_min": 21.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 18.187692
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.268802,
+          "arrhenius_predicted_min": 8.77438,
+          "observed_min": 12.0,
+          "q10_abs_pct_err": 0.242179,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 9.093846
+        }
+      },
+      "pot_life_ref_22_78c_min": 30.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-teta",
+      "worst_case_arrhenius_err": 0.268802,
+      "worst_case_q10_err": 0.242179
+    },
+    {
+      "activation_energy_j_mol": 56000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "aliphatic-polyamine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.033221,
+          "arrhenius_predicted_min": 125.681213,
+          "observed_min": 130.0,
+          "q10_abs_pct_err": 0.160568,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 109.126154
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.155957,
+          "arrhenius_predicted_min": 26.165328,
+          "observed_min": 31.0,
+          "q10_abs_pct_err": 0.11995,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 27.281538
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.284964,
+          "arrhenius_predicted_min": 12.870645,
+          "observed_min": 18.0,
+          "q10_abs_pct_err": 0.242179,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 13.640769
+        }
+      },
+      "pot_life_ref_22_78c_min": 45.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-deta",
+      "worst_case_arrhenius_err": 0.284964,
+      "worst_case_q10_err": 0.242179
+    },
+    {
+      "activation_energy_j_mol": 54000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "aliphatic-polyamine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.038456,
+          "arrhenius_predicted_min": 161.539399,
+          "observed_min": 168.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 145.501538
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.153112,
+          "arrhenius_predicted_min": 35.569286,
+          "observed_min": 42.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 36.375385
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.252274,
+          "arrhenius_predicted_min": 17.945426,
+          "observed_min": 24.0,
+          "q10_abs_pct_err": 0.242179,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 18.187692
+        }
+      },
+      "pot_life_ref_22_78c_min": 60.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-tepa",
+      "worst_case_arrhenius_err": 0.252274,
+      "worst_case_q10_err": 0.242179
+    },
+    {
+      "activation_energy_j_mol": 62000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.03927,
+          "arrhenius_predicted_min": 748.274598,
+          "observed_min": 720.0,
+          "q10_abs_pct_err": 0.191658,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 582.006153
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.150502,
+          "arrhenius_predicted_min": 131.672244,
+          "observed_min": 155.0,
+          "q10_abs_pct_err": 0.06128,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 145.501538
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.210156,
+          "arrhenius_predicted_min": 60.028139,
+          "observed_min": 76.0,
+          "q10_abs_pct_err": 0.042753,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 72.750769
+        }
+      },
+      "pot_life_ref_22_78c_min": 240.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-ipda",
+      "worst_case_arrhenius_err": 0.210156,
+      "worst_case_q10_err": 0.191658
+    },
+    {
+      "activation_energy_j_mol": 60000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.001839,
+          "arrhenius_predicted_min": 1081.985957,
+          "observed_min": 1080.0,
+          "q10_abs_pct_err": 0.191658,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 873.00923
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.160956,
+          "arrhenius_predicted_min": 201.370442,
+          "observed_min": 240.0,
+          "q10_abs_pct_err": 0.090615,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 218.252307
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.24673,
+          "arrhenius_predicted_min": 94.158788,
+          "observed_min": 125.0,
+          "q10_abs_pct_err": 0.126991,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 109.126154
+        }
+      },
+      "pot_life_ref_22_78c_min": 360.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-pacm",
+      "worst_case_arrhenius_err": 0.24673,
+      "worst_case_q10_err": 0.191658
+    },
+    {
+      "activation_energy_j_mol": 58000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.007745,
+          "arrhenius_predicted_min": 463.562684,
+          "observed_min": 460.0,
+          "q10_abs_pct_err": 0.156513,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 388.004102
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.155111,
+          "arrhenius_predicted_min": 91.248016,
+          "observed_min": 108.0,
+          "q10_abs_pct_err": 0.101842,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 97.001026
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.24549,
+          "arrhenius_predicted_min": 43.761587,
+          "observed_min": 58.0,
+          "q10_abs_pct_err": 0.163784,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 48.500513
+        }
+      },
+      "pot_life_ref_22_78c_min": 160.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-dach",
+      "worst_case_arrhenius_err": 0.24549,
+      "worst_case_q10_err": 0.163784
+    },
+    {
+      "activation_energy_j_mol": 58000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "aromatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.0029,
+          "arrhenius_predicted_min": 260.75401,
+          "observed_min": 260.0,
+          "q10_abs_pct_err": 0.160568,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 218.252307
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.14455,
+          "arrhenius_predicted_min": 51.327009,
+          "observed_min": 60.0,
+          "q10_abs_pct_err": 0.090615,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 54.563077
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.230753,
+          "arrhenius_predicted_min": 24.615893,
+          "observed_min": 32.0,
+          "q10_abs_pct_err": 0.147452,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 27.281538
+        }
+      },
+      "pot_life_ref_22_78c_min": 90.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-mxda",
+      "worst_case_arrhenius_err": 0.230753,
+      "worst_case_q10_err": 0.160568
+    },
+    {
+      "activation_energy_j_mol": 68000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "aromatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.021109,
+          "arrhenius_predicted_min": 3132.450253,
+          "observed_min": 3200.0,
+          "q10_abs_pct_err": 0.317962,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 2182.523074
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.19672,
+          "arrhenius_predicted_min": 465.902271,
+          "observed_min": 580.0,
+          "q10_abs_pct_err": 0.059257,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 545.630769
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.296954,
+          "arrhenius_predicted_min": 196.852975,
+          "observed_min": 280.0,
+          "q10_abs_pct_err": 0.025659,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 272.815384
+        }
+      },
+      "pot_life_ref_22_78c_min": 900.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-mpda",
+      "worst_case_arrhenius_err": 0.296954,
+      "worst_case_q10_err": 0.317962
+    },
+    {
+      "activation_energy_j_mol": 65000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "aromatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.01175,
+          "arrhenius_predicted_min": 2371.800812,
+          "observed_min": 2400.0,
+          "q10_abs_pct_err": 0.272492,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 1746.018459
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.183601,
+          "arrhenius_predicted_min": 383.707381,
+          "observed_min": 470.0,
+          "q10_abs_pct_err": 0.071267,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 436.504615
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.298314,
+          "arrhenius_predicted_min": 168.40464,
+          "observed_min": 240.0,
+          "q10_abs_pct_err": 0.090615,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 218.252307
+        }
+      },
+      "pot_life_ref_22_78c_min": 720.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-mda",
+      "worst_case_arrhenius_err": 0.298314,
+      "worst_case_q10_err": 0.272492
+    },
+    {
+      "activation_energy_j_mol": 52000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "amidoamine-adduct",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.065673,
+          "arrhenius_predicted_min": 467.163688,
+          "observed_min": 500.0,
+          "q10_abs_pct_err": 0.126991,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 436.504615
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.150044,
+          "arrhenius_predicted_min": 108.794422,
+          "observed_min": 128.0,
+          "q10_abs_pct_err": 0.147452,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 109.126154
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.239222,
+          "arrhenius_predicted_min": 56.297583,
+          "observed_min": 74.0,
+          "q10_abs_pct_err": 0.262661,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 54.563077
+        }
+      },
+      "pot_life_ref_22_78c_min": 180.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-amidoamine-adduct1",
+      "worst_case_arrhenius_err": 0.239222,
+      "worst_case_q10_err": 0.262661
+    },
+    {
+      "activation_energy_j_mol": 55000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "amidoamine-adduct",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.032179,
+          "arrhenius_predicted_min": 329.059002,
+          "observed_min": 340.0,
+          "q10_abs_pct_err": 0.144109,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 291.003077
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.161273,
+          "arrhenius_predicted_min": 70.453088,
+          "observed_min": 84.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 72.750769
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.268802,
+          "arrhenius_predicted_min": 35.097518,
+          "observed_min": 48.0,
+          "q10_abs_pct_err": 0.242179,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 36.375385
+        }
+      },
+      "pot_life_ref_22_78c_min": 120.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-amidoamine-adduct2",
+      "worst_case_arrhenius_err": 0.268802,
+      "worst_case_q10_err": 0.242179
+    },
+    {
+      "activation_energy_j_mol": 48000.0,
+      "arrhenius_within_40pct": true,
+      "hardener_family": "mannich-base",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.138655,
+          "arrhenius_predicted_min": 36.176501,
+          "observed_min": 42.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_beats_arrhenius": true,
+          "q10_predicted_min": 36.375385
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.102454,
+          "arrhenius_predicted_min": 9.424229,
+          "observed_min": 10.5,
+          "q10_abs_pct_err": 0.133919,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 9.093846
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.172541,
+          "arrhenius_predicted_min": 5.130243,
+          "observed_min": 6.2,
+          "q10_abs_pct_err": 0.266625,
+          "q10_beats_arrhenius": false,
+          "q10_predicted_min": 4.546923
+        }
+      },
+      "pot_life_ref_22_78c_min": 15.0,
+      "q10_within_40pct": true,
+      "system_id": "dgeba-mannich",
+      "worst_case_arrhenius_err": 0.172541,
+      "worst_case_q10_err": 0.266625
+    }
+  ],
+  "phase1_requirement": {
+    "note": "If Phase-1 proceeds with an Ea-based model, the 36 owned CRO runs (already required) must include a leave-Ea-out ablation against a Q10 or fitted-single-exponent baseline before per-system published Ea can be claimed as load-bearing science rather than decorative provenance."
+  },
+  "purpose": "Ablate the module's claim that published, chemistry-specific per-system activation energies are the source of the signed KPI's held-out accuracy, by testing whether a universal temperature-only heuristic that ignores every per-system literature Ea does comparably or better.",
+  "results": {
+    "arrhenius_lift_over_constant": 0.80512,
+    "arrhenius_within_40pct_rate": 1.0,
+    "leg_summary": {
+      "10C": {
+        "arrhenius_breaches_extrapolation_ceiling": false,
+        "arrhenius_mape": 0.034455,
+        "q10_beats_arrhenius": false,
+        "q10_breaches_extrapolation_ceiling": false,
+        "q10_mape": 0.177023
+      },
+      "30C": {
+        "arrhenius_breaches_extrapolation_ceiling": false,
+        "arrhenius_mape": 0.156296,
+        "q10_beats_arrhenius": true,
+        "q10_breaches_extrapolation_ceiling": false,
+        "q10_mape": 0.106496
+      },
+      "40C": {
+        "arrhenius_breaches_extrapolation_ceiling": true,
+        "arrhenius_mape": 0.25125,
+        "q10_beats_arrhenius": true,
+        "q10_breaches_extrapolation_ceiling": false,
+        "q10_mape": 0.174605
+      }
+    },
+    "overall_arrhenius_mape": 0.147334,
+    "overall_constant_baseline_mape": 0.952453,
+    "overall_q10_mape": 0.152708,
+    "q10_lift_over_constant": 0.799745,
+    "q10_within_40pct_rate": 1.0
+  },
+  "run_type": "AUDIT_ONLY_ABLATION",
+  "schema": "amphora.cure-potlife-gate.q10-heuristic-ablation-diagnostic.v1",
+  "theory_reference": {
+    "arrhenius": "Arrhenius, S. (1889) Z. Phys. Chem. 4:226; van 't Hoff, J.H. (1884) Etudes de Dynamique Chimique.",
+    "q10_heuristic": "ASTM F1980-16 'Standard Guide for Accelerated Aging of Sterile Barrier Systems' Section 7: AF = Q10^(delta_T/10), Q10=2 conventional default for organic/polymeric degradation in the absence of a measured activation energy; algebraically the Ea ~= 55.8 kJ/mol special case of the same Arrhenius form the module already cites, evaluated with NO per-system chemistry lookup.",
+    "q10_implied_ea_j_mol": 52175.2
+  }
+}

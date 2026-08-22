@@ -1,0 +1,61 @@
+{
+  "attacked_control": {
+    "actual_in_receipt": 43.7,
+    "control_id": "ARITH-A221-X70P1-VOLUME-SOLIDS",
+    "expected_in_receipt": 42.5,
+    "status_in_receipt": "VERIFIED_PASS",
+    "tolerance_absolute_pp": 2.0
+  },
+  "internal_consistency_gate": {
+    "delta": 0.0167,
+    "passes_sanity_gate_abs_lt_0_1pp": true,
+    "published_mix_wt_pct_solids": 64.5,
+    "recomputed_mix_wt_pct_solids": 64.5167
+  },
+  "results": {
+    "correct_volume_weighted_recompute": {
+      "delta_vs_receipt_actual_43_7": -1.2835,
+      "delta_vs_receipt_expected_42_5": -0.0835,
+      "matches_receipt_actual_within_tolerance_2pp": true,
+      "matches_receipt_expected_within_0_2pp": true,
+      "method": "solids_volume_total / mix_volume_total * 100, where component volume = component mass / component density",
+      "value": 42.4165
+    },
+    "derived_mix_density_reference_only": 1.36419,
+    "hypothesized_bug_mass_fraction_weighted": {
+      "closely_reproduces_receipt_actual_within_0_2pp": true,
+      "delta_vs_receipt_actual_43_7": -0.1167,
+      "method": "mass_fraction_A * vol_pct_A + mass_fraction_B * vol_pct_B (INVALID: weights a volume-basis quantity by mass fraction; only valid if density_A == density_B, which is false: 1.51 vs 0.92)",
+      "value": 43.5833
+    }
+  },
+  "schema": "amphora.known-answer.volume-solids-mass-basis-conflation-report.v1",
+  "source": {
+    "cited_by_amphora_as": "amphora-known-answer-benchmarks/reference/mvp20/out/arithmetic_audit.json row id=A221-X70P1",
+    "document": "Evonik Ancamide 221 EMEA Technical Data Sheet (Ancamide 221-X70 curing agent)",
+    "fetched": "2026-08-03",
+    "footer_stamp_in_pdf": "Evonik Operations | Ancamide 221 EMEA | 3/26/2026",
+    "formulation": "A221-X70P1 (Anti-Corrosive Primer), Appendix I p.10 + Technical Data p.11",
+    "url": "https://products.evonik.com/assets/em/ea/Ancamide_221_EMEA_TDS_EN_EN_TDS_PV_52041324_en_GB_EMEA.pdf"
+  },
+  "transcribed_source_values": {
+    "density_A_g_per_mL": 1.51,
+    "density_B_g_per_mL": 0.92,
+    "mass_A_g": 1000.0,
+    "mass_B_g": 200.0,
+    "published_mix_density_g_per_mL": 1.37,
+    "published_mix_vol_pct_solids": 42.5,
+    "published_mix_wt_pct_solids": 64.5,
+    "vol_pct_solids_A": 46.0,
+    "vol_pct_solids_B": 31.5,
+    "wt_pct_solids_A": 70.0,
+    "wt_pct_solids_B": 37.1
+  },
+  "verdict": {
+    "correct_recompute_instead_reproduces_receipt_expected_42_5": true,
+    "gap_as_fraction_of_tolerance_band": 0.642,
+    "gap_between_correct_recompute_and_receipt_actual_pp": 1.2835,
+    "receipt_actual_43_7_is_reproducible_from_cited_source_by_correct_method": false,
+    "receipt_actual_43_7_is_reproducible_from_cited_source_by_mass_fraction_conflation": true
+  }
+}

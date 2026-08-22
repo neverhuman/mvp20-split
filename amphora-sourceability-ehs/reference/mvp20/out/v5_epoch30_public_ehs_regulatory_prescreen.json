@@ -1,0 +1,498 @@
+{
+  "schema": "mvp20.v5_epoch30_public_ehs_regulatory_prescreen.v1",
+  "micro_version": "mvp20.30",
+  "retrieved": "2026-07-07",
+  "input_artifacts_read": [
+    "out/v5_epoch29_public_corrosion_dataset_manifest.json",
+    "out/v5_epoch29_usbr_21019_raw_data_ingest_report.json",
+    "out/v5_epoch29_public_eis_feature_table.json",
+    "out/v5_epoch29_corrosion_benchmark_model_card.json",
+    "out/v5_epoch29_public_control_benchmark_score_lift.json",
+    "out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+    "out/v5_epoch29_future_redteam_failure_modes.json",
+    "out/v5_epoch29_score_caps_and_claim_locks.json",
+    "out/v5_epoch29_redteam_review.json",
+    "out/funnel_results.json",
+    "out/chemistry_cards.json",
+    "out/v5_epoch29_public_control_benchmark_score_lift.json",
+    "data/source_records.json",
+    "out/version_track.json"
+  ],
+  "official_public_sources_only": true,
+  "public_bom_sds_tds_ehs_source_currentness_ingested": true,
+  "no_signed_supplier_declarations": true,
+  "no_lot_coa": true,
+  "no_pfas_free_claim": true,
+  "no_tsca_compliant_claim": true,
+  "no_taa_domestic_claim": true,
+  "no_supplier_closed_claim": true,
+  "no_procurement_ready_claim": true,
+  "no_candidate_performance_claim": true,
+  "no_owned_candidate_wet_lab_data": true,
+  "no_candidate_corrosion_validation": true,
+  "no_lab_contact": true,
+  "no_supplier_contact": true,
+  "no_legal_work": true,
+  "no_authority_contact": true,
+  "no_procurement_action": true,
+  "claim_lock_sentence": "public BOM/SDS/TDS/EHS source-currentness data ingested; no signed supplier declarations; no lot CoA; no PFAS-free, TSCA-compliant, TAA/domestic, procurement, or candidate performance claim.",
+  "title": "mvp20.30 public EHS/regulatory prescreen",
+  "regulatory_sources": [
+    {
+      "source_id": "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+      "title": "EPA TSCA Inventory page",
+      "url": "https://www.epa.gov/tsca-inventory",
+      "human_anchor_url": null,
+      "sha256": "739a8ecc8d7d0c333beb4a70a33191316688e74eb5fc4ca042908c2a18f1321c",
+      "byte_count": 57152,
+      "retrieved": "2026-07-07",
+      "use_limit": "Public regulatory prescreen anchor only; does not prove TSCA compliance for the BOM or selected suppliers."
+    },
+    {
+      "source_id": "SRC-PUBLIC-BOM-EPA-COMPTOX",
+      "title": "EPA CompTox Chemicals Dashboard page",
+      "url": "https://www.epa.gov/comptox-tools/comptox-chemicals-dashboard",
+      "human_anchor_url": null,
+      "sha256": "42e170f7892b9b97e0bceda2662618d32bb6e85c47d1c90241c2695b93cd1898",
+      "byte_count": 70872,
+      "retrieved": "2026-07-07",
+      "use_limit": "Public chemical identifier prescreen anchor only; no full BOM legal or supplier compliance conclusion."
+    },
+    {
+      "source_id": "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+      "title": "eCFR title 40 API currentness anchor for PFAS reporting rule prescreen",
+      "url": "https://www.ecfr.gov/api/versioner/v1/versions/title-40.json",
+      "human_anchor_url": "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-R/part-705",
+      "sha256": "8349e6b2e643521c8e02e70559547793ea9192bf312e7a3e9c04b71a557b4991",
+      "byte_count": 258420,
+      "retrieved": "2026-07-07",
+      "use_limit": "Official eCFR currentness/API anchor with human Part 705 URL recorded; no PFAS-free or PFAS-reporting applicability conclusion."
+    },
+    {
+      "source_id": "SRC-PUBLIC-BOM-FAR-TAA",
+      "title": "FAR 52.225-5 Trade Agreements clause",
+      "url": "https://www.acquisition.gov/far/52.225-5",
+      "human_anchor_url": null,
+      "sha256": "1c7b4dc3da976b30824810720c0e49ecf848782cce7164c993bad52c950db7ed",
+      "byte_count": 135706,
+      "retrieved": "2026-07-07",
+      "use_limit": "Public TAA/domestic-origin legal anchor only; no TAA-compliant, domestic-origin, or procurement-ready claim."
+    },
+    {
+      "source_id": "SRC-PUBLIC-BOM-DLA-QPD-24441",
+      "title": "DLA QPD quick search QPL-24441",
+      "url": "https://qpldocs.dla.mil/quick_search.aspx?qpl=QPL-24441",
+      "human_anchor_url": null,
+      "sha256": "98de9b235df7320f95056c2efedacfcbae9ff5ee2084e70b99e11ba5507fa83d",
+      "byte_count": 56259,
+      "retrieved": "2026-07-07",
+      "use_limit": "Public authority/currentness anchor only; candidate is not QPL-listed and not procurement ready."
+    }
+  ],
+  "prescreen_rows": [
+    {
+      "material_key": "dgeba_828",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "ancamide_350a",
+      "sourceability_classification": "exact_named_grade",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "silica",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "talc",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "mica",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "dispersant",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "defoamer",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "thixotrope",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "iron_oxide_black",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": [
+        "1317-61-9"
+      ],
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "iron_oxide_yellow",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": [
+        "51274-00-1"
+      ],
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "naphtha",
+      "sourceability_classification": "unresolved_generic_key",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": [
+        "110-82-7",
+        "64742-49-0"
+      ],
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "n_butanol",
+      "sourceability_classification": "exact_named_grade",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": [
+        "71-36-3"
+      ],
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    },
+    {
+      "material_key": "zinc_phosphate",
+      "sourceability_classification": "representative_grade_anchor",
+      "regulatory_anchor_source_ids": [
+        "SRC-PUBLIC-BOM-EPA-TSCA-INVENTORY",
+        "SRC-PUBLIC-BOM-EPA-COMPTOX",
+        "SRC-PUBLIC-BOM-ECFR-PFAS-API",
+        "SRC-PUBLIC-BOM-FAR-TAA",
+        "SRC-PUBLIC-BOM-DLA-QPD-24441"
+      ],
+      "public_tsca_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_COMPLIANCE_CLAIM",
+      "public_pfas_prescreen": "PUBLIC_ANCHORS_PRESENT_NO_PFAS_FREE_CLAIM",
+      "public_taa_domestic_prescreen": "PUBLIC_FAR_ANCHOR_PRESENT_NO_TAA_OR_DOMESTIC_ORIGIN_CLAIM",
+      "qpd_prescreen": "DLA_QPD_ANCHOR_PRESENT_CANDIDATE_NOT_LISTED_NO_PROCUREMENT_CLAIM",
+      "cas_ec_identifiers_from_public_docs": "NOT_EXTRACTED",
+      "supplier_declaration_required_to_close": true,
+      "legal_review_required_to_close": true,
+      "claim_locks": {
+        "signed_supplier_declarations_present": false,
+        "lot_coa_present": false,
+        "pfas_free_claim": false,
+        "tsca_compliant_claim": false,
+        "taa_domestic_claim": false,
+        "supplier_closed_claim": false,
+        "procurement_ready_claim": false,
+        "candidate_performance_claim": false,
+        "candidate_corrosion_validation_claim": false
+      }
+    }
+  ],
+  "locked_claims": {
+    "signed_supplier_declarations_present": false,
+    "lot_coa_present": false,
+    "pfas_free_claim": false,
+    "tsca_compliant_claim": false,
+    "taa_domestic_claim": false,
+    "supplier_closed_claim": false,
+    "procurement_ready_claim": false,
+    "candidate_performance_claim": false,
+    "candidate_corrosion_validation_claim": false
+  },
+  "summary": {
+    "material_count": 13,
+    "regulatory_source_count": 5,
+    "all_claim_locks_false": true,
+    "no_supplier_legal_procurement_closure": true,
+    "claim_boundary": "public BOM/SDS/TDS/EHS source-currentness data ingested; no signed supplier declarations; no lot CoA; no PFAS-free, TSCA-compliant, TAA/domestic, procurement, or candidate performance claim."
+  }
+}

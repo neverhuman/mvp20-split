@@ -1,0 +1,400 @@
+{
+  "aggregate_status": "PASS",
+  "all_positive_exact": true,
+  "all_traps_rejected": true,
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "LIMITED_SANITY",
+  "cross_check_portfolio_numbers": {
+    "conformal_quantile_convention": {
+      "note": "Every split/Mondrian conformal receipt in this portfolio depends on the ceil((n+1)(1-alpha))-th order statistic. That rank was re-derived here and shown to equal the Hyndman-Fan Type 1 quantile at the ADJUSTED level ceil((n+1)(1-alpha))/n, and to differ from the library-default Type 7 quantile at the nominal level at every real portfolio calibration size. The Type 7 substitution is anti-conservative in every case measured.",
+      "rank_deficit_type7_by_case": {
+        "D1_n30_a10": "9/10",
+        "D2_n36_a10": "3/2",
+        "D3_n68_a10": "17/10",
+        "D4_n75_a10": "7/5",
+        "D5_n36_a20": "1"
+      },
+      "type7_always_below_conformal_rank": true
+    },
+    "kissinger_dgeba_ipda_ccby": {
+      "all_match": true,
+      "attribution": "Lascano D., Quiles-Carrillo L., Balart R., Boronat T., Montanes N. Kinetic Analysis of the Curing of a Partially Biobased Epoxy Resin Using Dynamic Differential Scanning Calorimetry. Polymers (Basel). 2019;11(3):391.",
+      "checks": {
+        "ea_kJ_per_mol": {
+          "match": true,
+          "rederived_80_digit": "57.261036",
+          "shipped_float64": "57.261036"
+        },
+        "intercept": {
+          "match": true,
+          "rederived_80_digit": "8.832818",
+          "shipped_float64": "8.832818"
+        },
+        "r2": {
+          "match": true,
+          "rederived_80_digit": "0.993794",
+          "shipped_float64": "0.993794"
+        },
+        "se_ea_kJ_per_mol": {
+          "match": true,
+          "rederived_80_digit": "3.199755",
+          "shipped_float64": "3.199755"
+        },
+        "slope_K": {
+          "match": true,
+          "rederived_80_digit": "-6886.919678",
+          "shipped_float64": "-6886.919678"
+        }
+      },
+      "doi": "10.3390/polym11030391",
+      "ea_kJ_per_mol_high_precision": "57.261036218445282123253032263028623504035615055432458311023538470314720158815541",
+      "license": "CC-BY-4.0",
+      "note": "The shipped rights-clean Kissinger fit for the DGEBA / isophorone-diamine two-part epoxy-amine system was recomputed here at 80 significant decimal digits from the raw DSC (heating rate, peak temperature) pairs alone. Every shipped float64 value is reproduced to all six pinned decimals, so the portfolio's headline cure activation energy is certified free of floating-point conditioning error. The estimator's METHOD fidelity and the underlying measurement remain the concern of the cure-kinetics receipts; this battery certifies only the arithmetic."
+    }
+  },
+  "does_not_close": [
+    "estimator METHOD fidelity (whether Kissinger is the right model) - that is the cure-kinetics receipts' concern, not this battery's",
+    "measurement uncertainty in the underlying DSC peaks",
+    "Wampler3/4/5, which carry published pseudo-random perturbations that cannot be regenerated from a rule and are deliberately excluded rather than approximated",
+    "Hyndman-Fan quantile types 3, 4, 5, 8 and 9, deliberately excluded rather than pinned from memory",
+    "whether any shipped conformal receipt actually used the correct rank - this battery pins what the correct rank IS and quantifies the error of the common substitution; auditing each consumer against it is separate work"
+  ],
+  "fail_closed_flag_rate": "1.000000",
+  "fail_closed_results": [
+    {
+      "correctly_flagged": true,
+      "note": "float64 normal-equations solution of Wampler1 loses roughly 6.7 significant digits against the exact all-ones certified vector.",
+      "observed_max_rel_err": "2.234883140772581e-07",
+      "threshold": "1e-8",
+      "trap_id": "T1_naive_normal_equations_wampler1"
+    },
+    {
+      "correctly_flagged": true,
+      "exact_two_pass": "55/6",
+      "is_negative_variance": false,
+      "observed_one_pass_float64": "0.0",
+      "trap_id": "T2_one_pass_variance_shift_1e9"
+    },
+    {
+      "correctly_flagged": true,
+      "exact_two_pass": "55/6",
+      "is_negative_variance": true,
+      "observed_one_pass_float64": "-14563.555555555555",
+      "trap_id": "T3_one_pass_variance_negative"
+    },
+    {
+      "all_deficits_positive_so_type7_is_anticonservative": true,
+      "correctly_flagged": true,
+      "rank_deficits": {
+        "D1_n30_a10": "9/10",
+        "D2_n36_a10": "3/2",
+        "D3_n68_a10": "17/10",
+        "D4_n75_a10": "7/5",
+        "D5_n36_a20": "1"
+      },
+      "trap_id": "T4_type7_substituted_for_conformal_quantile"
+    },
+    {
+      "correctly_flagged": true,
+      "rank_deficits": {
+        "D1_n30_a10": "1",
+        "D2_n36_a10": "1",
+        "D3_n68_a10": "1",
+        "D4_n75_a10": "1",
+        "D5_n36_a20": "1"
+      },
+      "trap_id": "T5_hf1_at_nominal_level"
+    },
+    {
+      "correctly_flagged": true,
+      "observed_df_n": "2.262569",
+      "shipped_df_n_minus_2": "3.199755",
+      "trap_id": "T6_kissinger_se_wrong_dof",
+      "understatement_ratio": "0.707107"
+    },
+    {
+      "correctly_flagged": true,
+      "observed_uncentred_r2": "0.999969",
+      "shipped_centred_r2": "0.993794",
+      "trap_id": "T7_kissinger_uncentred_r2"
+    }
+  ],
+  "methodology": "FIPS 140-3 Sec 7.4 Known-Answer Test (2019). Exact-rational (fractions.Fraction) re-derivation for Blocks A/B/C/D and 80-significant-digit decimal.Decimal re-derivation for Block E. Wampler (1970) DOI 10.2307/2284581; Chan-Golub-LeVeque (1983) DOI 10.1080/00031305.1983.10483115; Hyndman-Fan (1996) DOI 10.1080/00031305.1996.10473566; Vovk et al. (2005) ISBN 978-0-387-00152-4; Lei et al. (2018) DOI 10.1080/01621459.2017.1307116; Kissinger (1957) DOI 10.1021/ac60131a045.",
+  "module_id": "amphora-known-answer-benchmarks",
+  "n_fail_closed": 7,
+  "n_fail_closed_correctly_flagged": 7,
+  "n_positive": 21,
+  "n_positive_pass": 21,
+  "per_block": {
+    "A": "3/3",
+    "B": "2/2",
+    "C": "6/6",
+    "D": "5/5",
+    "E": "5/5"
+  },
+  "positive_pass_rate": "1.000000",
+  "positive_results": [
+    {
+      "arithmetic": "exact_rational",
+      "block": "A",
+      "case_id": "A1_exact_line",
+      "pass": true,
+      "pinned_intercept": "1",
+      "pinned_r2": "1",
+      "pinned_slope": "2",
+      "pinned_ss_res": "0",
+      "rederived_intercept": "1",
+      "rederived_r2": "1",
+      "rederived_slope": "2",
+      "rederived_ss_res": "0"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "A",
+      "case_id": "A2_exact_thirds",
+      "pass": true,
+      "pinned_intercept": "1",
+      "pinned_r2": "1",
+      "pinned_slope": "1/3",
+      "pinned_ss_res": "0",
+      "rederived_intercept": "1",
+      "rederived_r2": "1",
+      "rederived_slope": "1/3",
+      "rederived_ss_res": "0"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "A",
+      "case_id": "A3_noncollinear_residual",
+      "pass": true,
+      "pinned_intercept": "60/37",
+      "pinned_r2": "121/148",
+      "pinned_slope": "55/74",
+      "pinned_ss_res": "135/74",
+      "rederived_intercept": "60/37",
+      "rederived_r2": "121/148",
+      "rederived_slope": "55/74",
+      "rederived_ss_res": "135/74"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "beta_equals_generating_coefficients": true,
+      "block": "B",
+      "case_id": "B1_wampler1",
+      "diagnostic_naive_float64_normal_equations_max_rel_err": "2.234883140772581e-07",
+      "pass": true,
+      "pinned_beta": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "pinned_ss_res": "0",
+      "rederived_beta": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "rederived_ss_res": "0"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "beta_equals_generating_coefficients": true,
+      "block": "B",
+      "case_id": "B2_wampler2",
+      "diagnostic_naive_float64_normal_equations_max_rel_err": "2.565855514169435e-10",
+      "pass": true,
+      "pinned_beta": [
+        "1",
+        "1/10",
+        "1/100",
+        "1/1000",
+        "1/10000",
+        "1/100000"
+      ],
+      "pinned_ss_res": "0",
+      "rederived_beta": [
+        "1",
+        "1/10",
+        "1/100",
+        "1/1000",
+        "1/10000",
+        "1/100000"
+      ],
+      "rederived_ss_res": "0"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "C",
+      "case_id": "C_shift_1e0",
+      "diagnostic_one_pass_float64": "9.166666666666666",
+      "pass": true,
+      "pinned_variance": "55/6",
+      "rederived_variance": "55/6"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "C",
+      "case_id": "C_shift_1e3",
+      "diagnostic_one_pass_float64": "9.166666666666666",
+      "pass": true,
+      "pinned_variance": "55/6",
+      "rederived_variance": "55/6"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "C",
+      "case_id": "C_shift_1e6",
+      "diagnostic_one_pass_float64": "9.166666666666666",
+      "pass": true,
+      "pinned_variance": "55/6",
+      "rederived_variance": "55/6"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "C",
+      "case_id": "C_shift_1e8",
+      "diagnostic_one_pass_float64": "8.88888888888889",
+      "pass": true,
+      "pinned_variance": "55/6",
+      "rederived_variance": "55/6"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "C",
+      "case_id": "C_shift_1e9",
+      "diagnostic_one_pass_float64": "0.0",
+      "pass": true,
+      "pinned_variance": "55/6",
+      "rederived_variance": "55/6"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "C",
+      "case_id": "C_shift_1e10",
+      "diagnostic_one_pass_float64": "-14563.555555555555",
+      "pass": true,
+      "pinned_variance": "55/6",
+      "rederived_variance": "55/6"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "D",
+      "case_id": "D1_n30_a10",
+      "conformal_equals_hf1_at_adjusted_level": true,
+      "pass": true,
+      "pinned_conformal_rank_k": 28,
+      "rank_deficit_of_type7_vs_conformal": "9/10",
+      "rederived_conformal_quantile": "28",
+      "rederived_conformal_rank_k": 28,
+      "rederived_hf1_at_nominal": "27",
+      "rederived_hf6_at_nominal": "279/10",
+      "rederived_hf7_at_nominal": "271/10"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "D",
+      "case_id": "D2_n36_a10",
+      "conformal_equals_hf1_at_adjusted_level": true,
+      "pass": true,
+      "pinned_conformal_rank_k": 34,
+      "rank_deficit_of_type7_vs_conformal": "3/2",
+      "rederived_conformal_quantile": "34",
+      "rederived_conformal_rank_k": 34,
+      "rederived_hf1_at_nominal": "33",
+      "rederived_hf6_at_nominal": "333/10",
+      "rederived_hf7_at_nominal": "65/2"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "D",
+      "case_id": "D3_n68_a10",
+      "conformal_equals_hf1_at_adjusted_level": true,
+      "pass": true,
+      "pinned_conformal_rank_k": 63,
+      "rank_deficit_of_type7_vs_conformal": "17/10",
+      "rederived_conformal_quantile": "63",
+      "rederived_conformal_rank_k": 63,
+      "rederived_hf1_at_nominal": "62",
+      "rederived_hf6_at_nominal": "621/10",
+      "rederived_hf7_at_nominal": "613/10"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "D",
+      "case_id": "D4_n75_a10",
+      "conformal_equals_hf1_at_adjusted_level": true,
+      "pass": true,
+      "pinned_conformal_rank_k": 69,
+      "rank_deficit_of_type7_vs_conformal": "7/5",
+      "rederived_conformal_quantile": "69",
+      "rederived_conformal_rank_k": 69,
+      "rederived_hf1_at_nominal": "68",
+      "rederived_hf6_at_nominal": "342/5",
+      "rederived_hf7_at_nominal": "338/5"
+    },
+    {
+      "arithmetic": "exact_rational",
+      "block": "D",
+      "case_id": "D5_n36_a20",
+      "conformal_equals_hf1_at_adjusted_level": true,
+      "pass": true,
+      "pinned_conformal_rank_k": 30,
+      "rank_deficit_of_type7_vs_conformal": "1",
+      "rederived_conformal_quantile": "30",
+      "rederived_conformal_rank_k": 30,
+      "rederived_hf1_at_nominal": "29",
+      "rederived_hf6_at_nominal": "148/5",
+      "rederived_hf7_at_nominal": "29"
+    },
+    {
+      "arithmetic": "decimal_80_significant_digits",
+      "block": "E",
+      "case_id": "E_kissinger_slope_K",
+      "pass": true,
+      "pinned_shipped_float64": "-6886.919678",
+      "rederived_80_digit": "-6886.919678"
+    },
+    {
+      "arithmetic": "decimal_80_significant_digits",
+      "block": "E",
+      "case_id": "E_kissinger_intercept",
+      "pass": true,
+      "pinned_shipped_float64": "8.832818",
+      "rederived_80_digit": "8.832818"
+    },
+    {
+      "arithmetic": "decimal_80_significant_digits",
+      "block": "E",
+      "case_id": "E_kissinger_r2",
+      "pass": true,
+      "pinned_shipped_float64": "0.993794",
+      "rederived_80_digit": "0.993794"
+    },
+    {
+      "arithmetic": "decimal_80_significant_digits",
+      "block": "E",
+      "case_id": "E_kissinger_ea_kJ_per_mol",
+      "pass": true,
+      "pinned_shipped_float64": "57.261036",
+      "rederived_80_digit": "57.261036"
+    },
+    {
+      "arithmetic": "decimal_80_significant_digits",
+      "block": "E",
+      "case_id": "E_kissinger_se_ea_kJ_per_mol",
+      "pass": true,
+      "pinned_shipped_float64": "3.199755",
+      "rederived_80_digit": "3.199755"
+    }
+  ],
+  "schema": "amphora.known-answer.regression-kernel-kat-report.v1",
+  "scientific_claim": "The shared numeric kernel underneath the portfolio's coating-science estimators reproduces exactly-certified least-squares, sample-variance and order-statistic-quantile answers, and the shipped DGEBA/IPDA Kissinger activation energy is reproduced to all pinned decimals by an 80-digit recomputation. Naive normal equations, one-pass variance, wrong regression degrees of freedom, uncentred r2, and library-default quantile substitution are all detected. NOT a candidate performance or qualification claim.",
+  "vector_set_id": "regression-kernel-kat-v1",
+  "vectors_file_sha256": "ca671a24014b5b194511ce9b00f35d71ebec1718c80fb4b97fa48face40784dd"
+}

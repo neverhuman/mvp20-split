@@ -1,0 +1,535 @@
+{
+  "schema": "mvp20.v5_epoch29_dataset_rights_and_source_currentness_ledger.v1",
+  "micro_version": "mvp20.29",
+  "retrieved": "2026-07-07",
+  "input_artifacts_read": [
+    "out/v5_epoch27_v5_goal_100_gap_scorecard.json",
+    "out/v5_epoch27_missing_to_100_register.json",
+    "out/v5_epoch27_critical_redteam_feedback_matrix.json",
+    "out/v5_epoch27_artifact_vs_evidence_truth_table.json",
+    "out/v5_epoch27_external_evidence_closure_ladder.json",
+    "out/v5_epoch27_best_possible_improvement_plan.json",
+    "out/v5_epoch27_future_critical_audit_pass_contract.json",
+    "out/v5_epoch27_score_caps_and_claim_locks.json",
+    "out/v5_epoch27_redteam_review.json",
+    "out/v5_epoch28_v5_gap_rubric_and_feedback.json",
+    "out/v5_epoch28_feedback_gap_synthesis_map.json",
+    "out/v5_epoch28_real_world_execution_master_plan.json",
+    "out/v5_epoch28_first_30_day_evidence_sprint_packet.json",
+    "out/v5_epoch28_lab_supplier_counsel_packet_requirements.json",
+    "out/v5_epoch28_audit_pass_evidence_acceptance_matrix.json",
+    "out/v5_epoch28_future_redteam_attack_and_failure_modes.json",
+    "out/v5_epoch28_score_caps_and_claim_locks.json",
+    "out/v5_epoch28_redteam_review.json",
+    "data/source_records.json",
+    "out/version_track.json",
+    "https://data.usbr.gov/rise/api/catalog-record/8048",
+    "https://catalog.data.gov/dataset/st-project-21019-data-electrochemical-impedance-spectroscopy-data-2-e-p-1k-2-s"
+  ],
+  "official_public_sources_only": true,
+  "public_raw_corrosion_control_benchmark_data_ingested": true,
+  "no_owned_candidate_wet_lab_data": true,
+  "no_candidate_corrosion_validation": true,
+  "no_current_claim_upgrade_allowed": true,
+  "current_claim_upgrade_allowed": false,
+  "no_lab_contact": true,
+  "no_supplier_contact": true,
+  "no_legal_work": true,
+  "no_authority_contact": true,
+  "no_procurement_action": true,
+  "candidate_performance_claim_moved": false,
+  "candidate_corrosion_proof_moved": false,
+  "owned_wet_lab_data_moved": false,
+  "title": "mvp20.29 dataset rights and source-currentness ledger",
+  "entries": [
+    {
+      "item_id": 128757,
+      "title": "S&T Project 21019 Data: Electrochemical Impedance Spectroscopy Data 2-E-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128757",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-1K-2-S%20-%20EIS%20Data_2.csv",
+      "sha256": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:54:21+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128758,
+      "title": "S&T Project 21019 Data: Erosion Data 2-E-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128758",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-1K-2-S%20-%20Erosion%20Data_1.csv",
+      "sha256": "c72f611d6eea10598dc705c621c161ab86f94ab9f3cf0001787f98966743b16a",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:54:32+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128759,
+      "title": "S&T Project 21019 Data: Impact Data 2-E-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128759",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-1K-2-S%20-%20Impact%20Data_1.csv",
+      "sha256": "d319386d740e5def9db8a53591731a2e756e6ad21763a1f13aba63e8c20716a1",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:54:45+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128760,
+      "title": "S&T Project 21019 Data: Rust Creep Data 2-E-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128760",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-1K-2-S%20-%20Rust%20Creep%20Data_1.csv",
+      "sha256": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:54:59+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128761,
+      "title": "S&T Project 21019 Data: Wet and Dry Adhesion Data 2-E-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128761",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-1K-2-S%20-%20Wet&Dry%20Adhesion%20Data_1.csv",
+      "sha256": "db5667c619b03afca704f062e8b64e766219f24837038dde50548c88e7ff0995",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:55:15+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128762,
+      "title": "S&T Project 21019 Data: Electrochemical Impedance Spectroscopy Data 2-E-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128762",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-2K-2-S%20-%20EIS%20Data_1.csv",
+      "sha256": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:55:29+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128763,
+      "title": "S&T Project 21019 Data: Erosion Data 2-E-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128763",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-2K-2-S%20-%20Erosion%20Data_1.csv",
+      "sha256": "6ae2777bf20721935ecf83d74f973304374919e25170c5fefeb1b6741c409657",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:55:56+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128764,
+      "title": "S&T Project 21019 Data: Impact Data 2-E-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128764",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-2K-2-S%20-%20Impact%20Data_1.csv",
+      "sha256": "cba0d127347507e2fce6a6dd8e7ddd8bb9872944246a464ed285ec0f34272f36",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:56:06+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128765,
+      "title": "S&T Project 21019 Data: Rust Creep Data 2-E-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128765",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-2K-2-S%20-%20Rust%20Creep%20Data_1.csv",
+      "sha256": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:56:17+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128766,
+      "title": "S&T Project 21019 Data: Wet and Dry Adhesion Data 2-E-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128766",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-E-P-2K-2-S%20-%20Wet&Dry%20Adhesion%20Data_1.csv",
+      "sha256": "673129010365ef3984c2e2a287ff14b1c9d315d9107e446cc86e367d10ab1b42",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:56:28+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128767,
+      "title": "S&T Project 21019 Data: Electrochemical Impedance Spectroscopy Data 2-Z-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128767",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-1K-2-S%20-%20EIS%20Data_1.csv",
+      "sha256": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:01:26+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128768,
+      "title": "S&T Project 21019 Data: Erosion Data 2-Z-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128768",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-1K-2-S%20-%20Erosion%20Data_1.csv",
+      "sha256": "2d17de08d48b96921874302e746f6a024c22b3708c935273a8112252f7de3f11",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:01:17+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128769,
+      "title": "S&T Project 21019 Data: Impact Data 2-Z-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128769",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-1K-2-S%20-%20Impact%20Data_1.csv",
+      "sha256": "b3580e3f7ea033d52e082526517002b4c6b9e03eeb68e6b783363091255b1c86",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:01:08+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128770,
+      "title": "S&T Project 21019 Data: Rust Creep Data 2-Z-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128770",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-1K-2-S%20-%20Rust%20Creep%20Data_1.csv",
+      "sha256": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:01:00+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128771,
+      "title": "S&T Project 21019 Data: Wet and Dry Adhesion Data 2-Z-P-1K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128771",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-1K-2-S%20-%20Wet&Dry%20Adhesion%20Data_1.csv",
+      "sha256": "716904a260db91ea3b3d4395fa66d3f08e2466433b6e10047a1bb0e5797609d8",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:00:52+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128772,
+      "title": "S&T Project 21019 Data: Electrochemical Impedance Spectroscopy Data 2-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128772",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-2K-2-S%20-%20EIS%20Data_1.csv",
+      "sha256": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:00:44+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128773,
+      "title": "S&T Project 21019 Data: Erosion Data 2-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128773",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-2K-2-S%20-%20Erosion%20Data_1.csv",
+      "sha256": "ff17e7606af558480b067ca067d69c3f0651dbc2f1c7d5593726d917a7179424",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:00:37+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128774,
+      "title": "S&T Project 21019 Data: Impact Data 2-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128774",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-2K-2-S%20-%20Impact%20Data_1.csv",
+      "sha256": "5e6b2f93d87e182bdf5b9c905bd43ce405c92a1c865e4f7a7449f6f594056a96",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:00:30+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128775,
+      "title": "S&T Project 21019 Data: Rust Creep Data 2-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128775",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-2K-2-S%20-%20Rust%20Creep%20Data_1.csv",
+      "sha256": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T12:00:22+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128776,
+      "title": "S&T Project 21019 Data: Wet and Dry Adhesion Data 2-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128776",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/2-Z-P-2K-2-S%20-%20Wet&Dry%20Adhesion%20Data_1.csv",
+      "sha256": "1d69b9371aa99b72b2d24da151023f1f9822607fd7f9002c65f5acc29478efe5",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:58:49+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128777,
+      "title": "S&T Project 21019 Data: Electrochemical Impedance Spectroscopy Data 3-D-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128777",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-D-P-2K-2-S%20-%20EIS%20Data_2.csv",
+      "sha256": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:58:42+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128778,
+      "title": "S&T Project 21019 Data: Erosion Data 3-D-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128778",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-D-P-2K-2-S%20-%20Erosion%20Data_2.csv",
+      "sha256": "bec75f2d7330c51b7ea2a8949c8db60ff92948bf3bce10d467a527e53dfa5d73",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:58:33+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128780,
+      "title": "S&T Project 21019 Data: Impact Data 3-D-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128780",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-D-P-2K-2-S%20-%20Impact%20Data_1.csv",
+      "sha256": "edecd4849f1c610c5cf107d76bb852da6013d8d15352672112b9b1adc09e78fa",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:58:25+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128781,
+      "title": "S&T Project 21019 Data: Rust Creep Data 3-D-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128781",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-D-P-2K-2-S%20-%20Rust%20Creep%20Data_0.csv",
+      "sha256": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:58:16+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128782,
+      "title": "S&T Project 21019 Data: Wet and Dry Adhesion Data 3-D-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128782",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-D-P-2K-2-S%20-%20Wet&Dry%20Adhesion%20Data_0.csv",
+      "sha256": "f05baa3cfa3e94bd6ad734d777b5934c67530f30d0d27139ded712e3840a062d",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:58:07+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128783,
+      "title": "S&T Project 21019 Data: Electrochemical Impedance Spectroscopy Data 3-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128783",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-Z-P-2K-2-S%20-%20EIS%20Data_0.csv",
+      "sha256": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:57:58+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128785,
+      "title": "S&T Project 21019 Data: Erosion Data 3-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128785",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-Z-P-2K-2-S%20-%20Erosion%20Data_0.csv",
+      "sha256": "6ecc53e3b62a05c5b819cb7a6710c8b5cd3be92f414ea0742dceb7b8b15a17f9",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:57:50+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128786,
+      "title": "S&T Project 21019 Data: Impact Data 3-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128786",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-Z-P-2K-2-S%20-%20Impact%20Data_0.csv",
+      "sha256": "1fa8be3d29843f163e94a28fe991a1527c4669b879981d980563777481800531",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:57:43+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128787,
+      "title": "S&T Project 21019 Data: Rust Creep Data 3-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128787",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-Z-P-2K-2-S%20-%20Rust%20Creep%20Data_0.csv",
+      "sha256": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:57:35+00:00",
+        "update_frequency": "not planned"
+      }
+    },
+    {
+      "item_id": 128788,
+      "title": "S&T Project 21019 Data: Wet and Dry Adhesion Data 3-Z-P-2K-2-S",
+      "source_url": "https://data.usbr.gov/catalog/8048/item/128788",
+      "download_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/3-Z-P-2K-2-S%20-%20Wet&Dry%20Adhesion%20Data_0.csv",
+      "sha256": "b22fdbebd467a22c040885c1531d757585bad5cfdc8fac5b0ccc968b1f07b5b4",
+      "rights_status": "public/open official government dataset",
+      "license_use_limit": "Public/open Bureau of Reclamation dataset; use for public benchmark/control and model-readiness only. Field testing is required to verify testing results; no candidate validation or proprietary data moat claim.",
+      "allowed_use": "public benchmark/control comparison, FAIR spine population, raw-data harness validation, and public model-readiness testing",
+      "prohibited_overread": "not owned candidate data, not proprietary model moat data, not supplier/legal/procurement closure, and not candidate corrosion validation",
+      "source_currentness": {
+        "publication_date": "2024-09-23T12:00:00+00:00",
+        "last_update": "2024-09-30T11:57:28+00:00",
+        "update_frequency": "not planned"
+      }
+    }
+  ],
+  "summary": {
+    "entry_count": 30,
+    "all_entries_public_open": true,
+    "all_entries_have_hashes": true,
+    "all_entries_use_limited": true,
+    "source_domains": [
+      "data.usbr.gov"
+    ]
+  }
+}

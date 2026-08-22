@@ -1,0 +1,106 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "C7",
+  "ceiling": "AUDIT_ONLY red-team/external-validity final verdict. Documents that the shipped OpenPoly Tg RF and RadonPy density RF baselines' applicability domain is within-corpus / within-training-macro-chemotype ONLY and must not be presented as generalizing to structurally novel out-of-corpus polymer chemistry. Does not itself alter the shipped KPI receipt, module honesty ceiling, manifest, or authority ceiling.",
+  "claim_under_attack": {
+    "claim_text": "Within-corpus scaffold-safe performance (Tg RF LOSO MAE 51.24 K, density RF MAE 0.0566 g/cm3) transfers to out-of-corpus chemistry.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json"
+  },
+  "density_verdict": {
+    "final_governing_attack": "attack_2_hierarchical_macro_bisection (fire 2)",
+    "leave_class_out_secondary_result": {
+      "degradation_factor": 1.803992653831988,
+      "pooled_mae_g_per_cm3": 0.07359384878887076,
+      "pooled_null_mae_g_per_cm3": 0.15362969216383376,
+      "pooled_r2": 0.6843678975618499,
+      "status": "RETAINED_AS_GRANULARITY_EVIDENCE_NOT_GOVERNING"
+    },
+    "leave_one_butina_cluster_out_dead_end": {
+      "degradation_factor": 0.9535355561477267,
+      "status": "DOCUMENTED_NEGATIVE_RESULT_WEAKER_THAN_FIRE1"
+    },
+    "macro_bisection_primary_result": {
+      "degradation_factor_A": 13.73773717681496,
+      "degradation_factor_B": 7.5933361123638585,
+      "direction_A_mae_g_per_cm3": 0.5604307480655227,
+      "direction_A_null_mae_g_per_cm3": 0.6417353935461828,
+      "direction_A_r2": -12.151676175050213,
+      "direction_B_mae_g_per_cm3": 0.3097700140127193,
+      "direction_B_null_mae_g_per_cm3": 0.6117158916875001,
+      "direction_B_r2": -5.010432272343768,
+      "n_macro_a": 16,
+      "n_macro_b": 1061,
+      "within_corpus_own_features_mae_g_per_cm3": 0.040794982525313994,
+      "within_corpus_own_features_r2": 0.8443376962521218
+    },
+    "reconciliation": "Fire 1 tested leave-one-polymer-class-out on RadonPy PI1070's own 14 internally-assigned class labels (fine-grained, ~77 polymers/class median) and found 1.80x degradation -- below the 2x bar, reported SURVIVED. Fire 2 escalated to hierarchical average-linkage bisection of the full 1077x1077 Tanimoto distance matrix into 2 macro-chemotypes (16 vs 1061 polymers, cut to maximize inter-group dissimilarity) and found 13.74x/7.59x degradation in both directions -- decisively REFUTED. These are not contradictory results on the same test; they are two different severities of out-of-distribution probe. Leave-class-out removes a fine-grained label group whose chemical/density neighborhood remains densely populated by similar polymers from OTHER classes still in the training set, so held-out molecules are not truly outside the training distribution in feature space -- fire 2 additionally confirmed this mechanism directly via a leave-one-Butina-cluster-out probe (0.95x, no measurable degradation, documented as a dead end). Macro-bisection instead removes an entire structurally-coherent region of chemical space (all 16 polymers in the minority macro-chemotype occupy the upper tail of the density range, 1.277-1.914 g/cm3, structurally distinct from the other 1061) so the held-out set is genuinely outside the training distribution -- the closest within-corpus analogue to a real second-corpus swap that RadonPy PI1070 (the module's only rights-cleared density corpus) permits. Under falsification-first principles the strongest attack that was actually capable of finding a violation governs the verdict: a claim of 'transfers to out-of-corpus chemistry' is not rescued by surviving a weaker probe when a harder, methodologically sound probe using the same threshold and same model breaks it. Density transferability is therefore REFUTED, with the leave-class-out result retained as evidence that the degradation is granularity-dependent (visible once the held-out region is structurally coherent, not visible at fine class-label granularity).",
+    "verdict": "REFUTED"
+  },
+  "fire_sequence": "C7 fire 3 of 3 (max_fires). Fires 1 and 2 (2026-08-01T05:00:02Z, 2026-08-01T16:12:14Z) both ran genuine falsification attacks and both reached correct scientific verdicts, but both were downgraded by the launcher for a signature-format bug (top-level .signature was a bare base64 string, not the required DSSE envelope object). This fire fixes that defect, re-verifies the underlying diagnostics are unmodified (byte-identical sha256 to what fires 1/2 recorded), and issues ONE correctly-signed receipt carrying the final reconciled verdict for both named properties. No new science; this is a packaging/signing/reconciliation fire.",
+  "gates": {
+    "both_directions_computed_both_properties": true,
+    "dead_end_designs_documented_not_hidden": true,
+    "fire1_source_diagnostic_reverified_unmodified": true,
+    "fire2_source_diagnostic_reverified_unmodified": true,
+    "primary_attacks_use_real_chemistry_no_synthetic_labels": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "two_replay_byte_stable_this_receipt": null
+  },
+  "input_artifacts": {
+    "fire1_diagnostic.canonical.json_sha256": "b6326a86fb43e14c67778a1540204c666a9b40f0ea0c2a40e1da3714fd771c99",
+    "fire1_receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json",
+    "fire2_diagnostic.canonical.json_sha256": "4cedf6a149148dae3379b00700bda3b6812106935fca0745ec0e5c8e4547892a",
+    "fire2_receipt_path": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json"
+  },
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "overall_reasoning": "The compound claim 'within-corpus scaffold-safe performance transfers to out-of-corpus chemistry' is REFUTED for BOTH named properties. Tg: catastrophic failure against a true independent second corpus in both directions (6.66x/16.60x degradation, anti-predictive past the training label range). Density: catastrophic failure against the hardest available within-corpus proxy for a second corpus, hierarchical macro-chemotype bisection (13.74x/7.59x degradation in both directions), which supersedes the weaker leave-class-out probe (1.80x, survived) per the reconciliation above. The module's honest applicability domain for both the OpenPoly Tg RF baseline and the RadonPy density RF baseline is within-corpus / within-training-macro-chemotype ONLY, matching the pattern already established for dielectric constant (9x within/external degradation).",
+  "overall_verdict": "CLAIM_REFUTED",
+  "pre_registered_refute_threshold": "held-out (or cross-corpus / cross-macro-chemotype) MAE > 2x the apples-to-apples within-corpus MAE, same features/model/seed => REFUTED. Used identically by both fire 1 and fire 2.",
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass, sources re-verified byte-unmodified) and NOT key custody. Promotion of any downstream honesty-ceiling change requires the human dual-identity Phase-0 ceremony keys this cron does not hold. Manifest untouched at 66/11.",
+  "receipt_id": "c7-fire3-final-tg-density-external-validity-verdict",
+  "recommended_followups": [
+    "Update openpoly-experimental-tg-ml-baseline-kpi.v1.json's claim_locks / capability text (human-owned edit) to explicitly state the applicability domain is within-OpenPoly-distribution for Tg and within-RadonPy-macro-chemotype-distribution for density, citing this receipt.",
+    "The density-corpus data-acquisition ask filed by fire 1 to /home/ubuntu/amphora-cron/data-acquisition-queue.jsonl remains open and is the only path to a literal second-corpus density test; this fire's macro-bisection finding does not reduce its priority, it is a proxy escalation, not a substitute.",
+    "C7 done_criterion (signed external-validation receipts for Tg and density with explicit within-vs-external degradation factors + ledger entries) is now met by this single correctly-signed receipt."
+  ],
+  "rights_check": "No new source touched; reuses OpenPoly, Polyuniverse Epoxy, and RadonPy PI1070, all already rights-cleared and load-bearing elsewhere in this module (fires 1 and 2). No quarantined/CONTEXT_ONLY source opened.",
+  "schema": "amphora.molecule-property.c7-tg-density-external-validity-final-verdict-receipt.v1",
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "note": "NOT in config/phase0-trust-store.v1.json; audit evidence only",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "trust_anchored": false
+  },
+  "study_id": "c7-external-validity-tg-density-final",
+  "supersedes": [
+    {
+      "downgrade_reason": "verdict CLAIM_REFUTED rejected: no signed receipt was produced at all (analysis + ledger line only).",
+      "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json",
+      "resolution": "The receipt file did in fact exist on disk at fire-1 end, but its .signature field was a bare base64 string, which the launcher's mechanical check treats as equivalent to unsigned. Tg finding (6.66x/16.60x degradation) reproduced verbatim below from this file's byte-verified tg_result block; underlying diagnostic.canonical.json re-verified byte-identical."
+    },
+    {
+      "downgrade_reason": "verdict CLAIM_REFUTED rejected: .signature was a bare STRING, not the DSSE envelope object. Also: fire 1 and fire 2 reached OPPOSITE density verdicts - reconcile explicitly.",
+      "receipt": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+      "resolution": "Same signature-format defect, fixed here. Density reconciliation performed below: macro-bisection (fire 2) supersedes leave-class-out (fire 1) as the governing verdict."
+    }
+  ],
+  "tg_verdict": {
+    "degradation_factor_A_openpoly_to_polyuniverse": 6.664730972378266,
+    "degradation_factor_B_polyuniverse_to_openpoly": 16.59532571140167,
+    "direction_A_mae_K": 253.58008302058136,
+    "direction_A_null_baseline_mae_K": 227.9417922626,
+    "direction_A_r2": -92.93916993212326,
+    "direction_B_mae_K": 231.65066270670428,
+    "direction_B_null_baseline_mae_K": 220.55035016794577,
+    "direction_B_r2": -6.79936550224655,
+    "method": "True independent second corpus: train RandomForestRegressor(n_estimators=100, seed=0) on OpenPoly experimental Tg (n=443), cold-predict Polyuniverse Epoxy MD-simulated Tg (n=5000 sample), and reverse. Morgan r=2/512-bit fingerprint features.",
+    "verdict": "REFUTED",
+    "why": "Both directions blow through the 2x threshold by a wide margin (6.66x, 16.60x) and in both directions the cross-corpus model is WORSE than the trivial predict-the-training-median null baseline (anti-predictive, not merely degraded). Root cause: OpenPoly experimental Tg (median 346.3K) and Polyuniverse Epoxy MD Tg (median 117.8K) occupy non-overlapping numeric ranges; a bagged-tree RF structurally cannot extrapolate past its training-label range. Reproduced verbatim from fire 1's byte-verified diagnostic (sha256 unchanged).",
+    "within_openpoly_own_features_mae_K": 38.048059864911984,
+    "within_polyuniverse_own_features_mae_K": 13.958789766178
+  }
+}

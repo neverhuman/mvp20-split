@@ -1,0 +1,11 @@
+{
+  "audit_verdicts_index_count_after": 7,
+  "audit_verdicts_index_count_before": 8,
+  "how_planted": "Copied evidence/audit, evidence/phase0/kpis, evidence/phase0/repairs verbatim into a tempdir, then edited the DSSE payload of the copied live index file (evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json) to remove the single audit_verdicts_index entry whose receipt_path == 'evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json' (entries 8 -> 7), re-base64'd the payload in place, left signatures[] byte-unchanged (now stale/invalid, which is expected and irrelevant to this completeness-only check), and left the on-disk receipt file for that audit completely untouched.",
+  "live_index_post_mutation_sha256": "61c1800ef693739d6db36c987dfc2706a86614529d3f477af3221f1851ac2d0d",
+  "live_index_pre_mutation_sha256": "c7dea258068a166cb208606673467bfb52254b131b15379bd7d58ec86fb3eab4",
+  "live_index_rel": "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+  "target_receipt_path": "evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json",
+  "target_receipt_still_on_disk_in_tmpdir": true,
+  "tmproot": "/tmp/r-s07-positive-control"
+}

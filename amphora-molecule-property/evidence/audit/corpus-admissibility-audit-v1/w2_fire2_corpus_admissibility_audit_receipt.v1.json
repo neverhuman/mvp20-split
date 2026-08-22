@@ -1,0 +1,346 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "W2",
+  "ceiling": "AUDIT_ONLY. Does not alter any shipped KPI receipt, manifest, or authority ceiling. This receipt's only delta versus fire 1 is the signing identity (trust-anchored phase0-internal-reviewer key vs. repo-local dev key) and the fire-sequence/citation metadata; the underlying corpus-level science, counts, and citations are byte-identical to fire 1 and are carried forward by direct field copy, verified against fire 1's own sha256 below.",
+  "claim_under_attack": {
+    "claim_text": "The label data underlying this portfolio's ML claims is physically admissible.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/"
+  },
+  "corpora_audited": [
+    {
+      "acquisition_unit_id": "openpoly_properties",
+      "constraint": "Tg (K) < Tm (K), strict",
+      "constraint_citation": "Boyer, R.F., Rubber Chem. Technol. 36, 1303 (1963); Van Krevelen & Te Nijenhuis, 'Properties of Polymers', 4th ed., Elsevier 2009, ISBN 978-0-08-054819-7, Ch.6 (Tg/Tm ratio bounded in [0.5,0.8], i.e. Tg<Tm always for any real semicrystalline/amorphous polymer -- Tg is a kinetic freezing transition of the amorphous phase that occurs strictly below the true first-order crystalline melting transition).",
+      "corpus": "openpoly_properties",
+      "dependent_module_kpis": [
+        "openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+        "external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+        "openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+        "openpoly-water-uptake-ml-baseline-audit-kpi.v1.json",
+        "openpoly-water-contact-angle-ml-baseline-kpi.v1.json",
+        "mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+        "mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+        "external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json"
+      ],
+      "finding_summary": "24/167 (14.4%) OpenPoly rows with both Tg and Tm reported have Tg>=Tm, violating the Boyer-Beaman constraint that the glass transition (a kinetic freezing of the amorphous phase) must occur strictly below the true crystalline melting point. These 24 rows are training/validation examples inside the SAME openpoly_properties dataset_id (8de5baf76f79610f) consumed by 8 downstream KPIs, including the primary openpoly-experimental-tg-ml-baseline-kpi.v1.json Tg model.",
+      "lake_path": "v2/normalized/openpoly_properties.jsonl.gz",
+      "n_admissible": 143,
+      "n_inadmissible": 24,
+      "n_rows_evaluable": 167,
+      "n_total_rows": 741,
+      "pct_admissible_of_evaluable": 0.8562874251497006,
+      "raw_file_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+      "verdict": "VIOLATIONS_FOUND",
+      "violations_sample": [
+        {
+          "Tg_K": 396.7294118,
+          "Tm_K": 327.1181818,
+          "canonical_identity": "[*]cc(c(nc(c)c)=o)[*]",
+          "name": "PNIPAM",
+          "record_id": "openpoly_properties:raw:000000000013"
+        },
+        {
+          "Tg_K": 536.734867,
+          "Tm_K": 518.312963,
+          "canonical_identity": "[*]cc([*])(c=c)c",
+          "name": "PI",
+          "record_id": "openpoly_properties:raw:000000000021"
+        },
+        {
+          "Tg_K": 485.5032864,
+          "Tm_K": 382.4709639,
+          "canonical_identity": "[*]occoc(ccc([*])=o)=o",
+          "name": "PES",
+          "record_id": "openpoly_properties:raw:000000000023"
+        },
+        {
+          "Tg_K": 406.8547619,
+          "Tm_K": 383.605,
+          "canonical_identity": "[*]cc(c(nc(c)c)=o)[*]",
+          "name": "PNIPAAm",
+          "record_id": "openpoly_properties:raw:000000000026"
+        },
+        {
+          "Tg_K": 408.7521429,
+          "Tm_K": 399.7452083,
+          "canonical_identity": "n[c@@h]1[c@@h](o)[c@h](o[*])[c@@h](co)o[c@h]1[*]",
+          "name": "chitosan",
+          "record_id": "openpoly_properties:raw:000000000028"
+        },
+        {
+          "Tg_K": 486.8207143,
+          "Tm_K": 391.1267742,
+          "canonical_identity": "[*]ccn[*]",
+          "name": "PEI",
+          "record_id": "openpoly_properties:raw:000000000038"
+        },
+        {
+          "Tg_K": 412.9216832,
+          "Tm_K": 373.0833333,
+          "canonical_identity": "[*]c1=cc=c(c(c)(c2=cc=c(occ(c[*])o)c=c2)c)c=c1",
+          "name": "EP",
+          "record_id": "openpoly_properties:raw:000000000041"
+        },
+        {
+          "Tg_K": 394.65,
+          "Tm_K": 367.33,
+          "canonical_identity": "[*]c1=c2c(occo2)=c([*])s1",
+          "name": "PEDOT",
+          "record_id": "openpoly_properties:raw:000000000053"
+        },
+        {
+          "Tg_K": 396.7294118,
+          "Tm_K": 327.1181818,
+          "canonical_identity": "[*]cc(c(nc(c)c)=o)[*]",
+          "name": "PNIPAm",
+          "record_id": "openpoly_properties:raw:000000000060"
+        },
+        {
+          "Tg_K": 459.4236691,
+          "Tm_K": 449.97,
+          "canonical_identity": "[*]oc1=cc=c(c(c)(c2=cc=c(oc3=cc=c(s(=o)(c4=cc=c([*])c=c4)=o)c=c3)c=c2)c)c=c1",
+          "name": "PSF",
+          "record_id": "openpoly_properties:raw:000000000061"
+        }
+      ]
+    },
+    {
+      "acquisition_unit_id": "bigsoldb_solubility",
+      "constraint": "0 < solubility_mole_fraction < 1, strict (a mole fraction is n_solute/(n_solute+n_solvent), a probability-like quantity bounded on the open unit interval by definition)",
+      "constraint_citation": "IUPAC Gold Book, 'amount fraction, mole fraction' (doi:10.1351/goldbook.A00296); definitional, not model-dependent.",
+      "corpus": "bigsoldb_solubility",
+      "dependent_module_kpis": [],
+      "dependent_module_kpis_note": "No amphora-molecule-property KPI receipt currently reads bigsoldb_solubility directly (grep of evidence/phase0/kpis/*.json and benchmarks/ found zero matches). The known downstream consumer of this corpus is amphora-solvent-property's Solvency BigSolDB result (LSO RMSE 0.877, that module's only externally-validated solvency claim) -- a different module, out of this fire's write scope, flagged here for cross-module awareness only.",
+      "duplicate_contradictory_measurement_check": {
+        "contradiction_threshold_log10_units": 0.3,
+        "key": "(canonical_identity=solute SMILES-derived id, Solvent, Temperature_K)",
+        "n_groups_contradictory": 4134,
+        "n_groups_with_ge2_measurements": 4578,
+        "pct_contradictory_of_duplicate_groups": 0.9030144167758847
+      },
+      "finding_summary": "The primary physical bound (0<mole_fraction<1) is satisfied by all 103,944/103,944 rows -- no admissibility violation on that axis. However, a secondary, equally physical check -- do repeated measurements of the same (solute, solvent, temperature) triple agree with each other -- found 4,134/4,578 (90.3%) of duplicate-measurement groups disagree by more than 0.3 log10(mol/L) units (>2x) at IDENTICAL conditions. A single physical quantity cannot have two internally-contradictory literature values at the same state point; this is a corpus-level admissibility defect distinct from (and larger in count than) a simple out-of-bounds check would catch.",
+      "lake_path": "v2/normalized/bigsoldb_solubility.jsonl.gz",
+      "n_admissible": 103944,
+      "n_inadmissible": 0,
+      "n_rows_evaluable": 103944,
+      "n_total_rows": 103944,
+      "pct_admissible_of_evaluable": 1.0,
+      "raw_file_sha256": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0",
+      "secondary_diagnostic_internal_log10_consistency": {
+        "n_checked": 100983,
+        "n_consistent_within_1e-6": 100983,
+        "note": "NOT part of the admissible/pct gate above -- reported separately as a data-integrity cross-check.",
+        "pct_consistent": 1.0
+      },
+      "verdict": "PRIMARY_BOUND_CLEAN_BUT_INTERNAL_CONTRADICTIONS_FOUND"
+    },
+    {
+      "acquisition_unit_id": "bigsoldb_density",
+      "constraint": "0.6 g/cm^3 <= liquid density <= 3.4 g/cm^3 at near-ambient conditions",
+      "constraint_citation": "CRC Handbook of Chemistry and Physics, 104th ed. (2023), ISBN 978-1-032-63111-2, Section 'Physical Constants of Organic Compounds' -- common liquid organic solvents span from n-pentane (0.626 g/cm^3) to dense halogenated liquids such as diiodomethane (3.325 g/cm^3); densities outside this band indicate either a unit/transcription error or a non-liquid/non-organic-solvent entry.",
+      "corpus": "bigsoldb_density",
+      "dependent_module_kpis": [],
+      "dependent_module_kpis_note": "Same cross-module caveat as bigsoldb_solubility above; consumed by amphora-solvent-property, not this module's KPIs.",
+      "finding_summary": "2209/2210 (99.95%) rows fall within the physically-plausible organic-liquid density band [0.6, 3.4] g/cm^3. Essentially clean; 1 row flagged for manual review.",
+      "lake_path": "v2/normalized/bigsoldb_density.jsonl.gz",
+      "n_admissible": 2209,
+      "n_inadmissible": 1,
+      "n_rows_evaluable": 2210,
+      "n_total_rows": 2210,
+      "pct_admissible_of_evaluable": 0.9995475113122172,
+      "raw_file_sha256": "02226420d9fb3294cb32211dac7f6ff7fa067511924afdb9f1893af1e334aac6",
+      "verdict": "CLEAN",
+      "violations_sample": [
+        {
+          "density_g_cm3": 0.0,
+          "record_id": "bigsoldb_density:raw:000000000920",
+          "solvent": "isopropyl acetate",
+          "temperature_K": "298.15"
+        }
+      ]
+    },
+    {
+      "acquisition_unit_id": "polyomics_small_molecules",
+      "constraint_A_frohlich": {
+        "constraint_citation": "Frohlich, H., 'Theory of Dielectrics', Oxford University Press, 1949, Ch.2 -- static permittivity eps_static(omega->0) sums electronic+ionic+orientational polarization and must be >= the optical/electronic-only permittivity eps_inf=n^2 (Maxwell relation) for any passive linear dielectric.",
+        "n_admissible": 16990,
+        "n_inadmissible": 10974,
+        "n_rows_evaluable": 27964,
+        "n_violations_total": 10974,
+        "name": "eps_static >= n_refractive^2 (Frohlich inequality)",
+        "note": "This is the SAME constraint applied to radonpy_pi1070 (1077 rows, C8 fires 1-3, 113/1075=10.5% admissible). polyomics_small_molecules is the larger raw RadonPy simulation-output corpus (28159 rows) that PI1070 was curated from; this generalizes the prior finding to see whether it is an artifact of the 1070-row curation or persists at full scale.",
+        "pct_admissible_of_evaluable": 0.6075668716921756,
+        "violations_sample": [
+          {
+            "UUID": "a097ff2f-b9b8-429d-ad7c-00c0a8c129aa",
+            "eps_static": 1.6830388902281117,
+            "n": 1.465417104122002,
+            "n_squared": 2.1474472890533147,
+            "record_id": "polyomics_small_molecules:raw:000000000027"
+          },
+          {
+            "UUID": "1525fccb-bddf-4f89-8376-a6b83d1171da",
+            "eps_static": 1.5439071010694017,
+            "n": 1.4620565297909909,
+            "n_squared": 2.1376092963044746,
+            "record_id": "polyomics_small_molecules:raw:000000000048"
+          },
+          {
+            "UUID": "dbe68f1a-070d-4c68-adf0-788afb6dc630",
+            "eps_static": 2.134157096625204,
+            "n": 1.4793715658144515,
+            "n_squared": 2.188540229740302,
+            "record_id": "polyomics_small_molecules:raw:000000000049"
+          },
+          {
+            "UUID": "f500c84b-d245-4914-90e6-bc402b1fbe49",
+            "eps_static": 1.4918888632328462,
+            "n": 1.467955489016429,
+            "n_squared": 2.1548933177334635,
+            "record_id": "polyomics_small_molecules:raw:000000000075"
+          },
+          {
+            "UUID": "f301d59e-0b1e-4664-9084-7c9130b91c95",
+            "eps_static": 1.5415852828219043,
+            "n": 1.3851243126370791,
+            "n_squared": 1.918569361458341,
+            "record_id": "polyomics_small_molecules:raw:000000000102"
+          },
+          {
+            "UUID": "47bd382c-dd4d-4a9b-93ba-e29445978e02",
+            "eps_static": 1.428841561145152,
+            "n": 1.4294333960070371,
+            "n_squared": 2.043279833620211,
+            "record_id": "polyomics_small_molecules:raw:000000000103"
+          },
+          {
+            "UUID": "d6c706ff-abb4-4275-85e5-390f720c5ab3",
+            "eps_static": 1.8656210582615225,
+            "n": 1.390889332824101,
+            "n_squared": 1.9345731361638727,
+            "record_id": "polyomics_small_molecules:raw:000000000105"
+          },
+          {
+            "UUID": "8cdc4ae5-f2cd-4a1d-b304-56c75fc7f8bf",
+            "eps_static": 1.7500544708692067,
+            "n": 1.419063371648419,
+            "n_squared": 2.0137408527541787,
+            "record_id": "polyomics_small_molecules:raw:000000000134"
+          },
+          {
+            "UUID": "f95ca4c2-dafe-474a-aeb0-1db549dcf389",
+            "eps_static": 1.833940078097692,
+            "n": 1.4284290121273449,
+            "n_squared": 2.0404094426871024,
+            "record_id": "polyomics_small_molecules:raw:000000000138"
+          },
+          {
+            "UUID": "4b5670bb-2f4e-4a46-8daf-14f154e6d73c",
+            "eps_static": 2.1217663852278337,
+            "n": 1.4872349893812755,
+            "n_squared": 2.2118679136399226,
+            "record_id": "polyomics_small_molecules:raw:000000000141"
+          }
+        ]
+      },
+      "constraint_B_refractive_index_lower_bound": {
+        "constraint_citation": "Lorentz-Lorenz theory (H.A. Lorentz 1880; L. Lorenz 1880); for any condensed-phase dielectric medium in the normal (non-anomalous) dispersion regime at optical frequencies, refractive index relative to vacuum n>=1 by definition of phase velocity v=c/n<=c.",
+        "n_admissible": 27963,
+        "n_inadmissible": 1,
+        "n_rows_evaluable": 27964,
+        "n_violations_total": 1,
+        "name": "refractive_index >= 1",
+        "pct_admissible_of_evaluable": 0.9999642397368045,
+        "violations_sample": [
+          {
+            "UUID": "f9ae4443-42c7-4bb6-87cf-e90c331e6f2e",
+            "n": 0.6136172682654605,
+            "record_id": "polyomics_small_molecules:raw:000000010871"
+          }
+        ]
+      },
+      "corpus": "polyomics_small_molecules",
+      "dependent_module_kpis": [
+        "mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+        "mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+        "external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+        "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+        "radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+        "stacked-ml-van-krevelen-density-radonpy-kpi.v1.json"
+      ],
+      "finding_summary": "This is the larger raw RadonPy simulation-output corpus (28,159 rows) that the already-audited radonpy_pi1070 (1,077 rows, C8 fires 1-3) was curated from. Applying the SAME Frohlich inequality (eps_static>=n^2) at full scale finds 16,990/27,964 (60.8%) admissible -- i.e. 39.2% violate, NOT the 89.5% violation rate found in the curated PI1070 subset. The two numbers disagree by a factor of >2x in violation rate. This means PI1070's curation step specifically concentrated (not merely inherited) the dielectric-admissibility defect relative to the raw simulation dump it was drawn from -- a new finding this fire surfaces that C8 could not see from PI1070 alone. Separately, the refractive-index lower bound (n>=1, Lorentz-Lorenz) is essentially clean at full scale: 27,963/27,964 (99.996%) admissible.",
+      "lake_path": "v2/normalized/polyomics_small_molecules.jsonl.gz",
+      "n_total_rows": 28159,
+      "raw_file_sha256": "4dc408ff468f9b59b1c59b40efbc8a1750ca0d0c4bcf89ebf8268442553626ac",
+      "verdict": "VIOLATIONS_FOUND_DIFFERENT_MAGNITUDE_THAN_CURATED_SUBSET"
+    }
+  ],
+  "cross_corpus_summary": {
+    "corpora_clean": [
+      "bigsoldb_density (99.95%)",
+      "polyomics_small_molecules refractive-index axis (99.996%)"
+    ],
+    "corpora_with_violations": [
+      "openpoly_properties",
+      "bigsoldb_solubility (duplicate-contradiction axis)",
+      "polyomics_small_molecules"
+    ],
+    "headline": "The portfolio-wide claim 'the label data underlying this portfolio's ML claims is physically admissible' does NOT hold uniformly. Beyond the already-refuted RadonPy PI1070 dielectric case (C8), this audit finds: (1) OpenPoly Tg/Tm violates a basic polymer-thermodynamics ordering constraint in 14.4% of evaluable rows, feeding 8 downstream KPIs including the primary Tg ML baseline; (2) BigSolDB solubility, while clean on its primary mole-fraction bound, has internally CONTRADICTORY repeated measurements in 90.3% of its duplicate-measurement groups; (3) the raw RadonPy simulation dump (polyomics_small_molecules) shows the same Frohlich-inequality defect as PI1070 but at a materially different rate (39.2% vs 89.5%), revealing that PI1070's curation concentrated the defect rather than merely inheriting it. Only BigSolDB density and the RadonPy refractive-index axis are clean (>99.9%).",
+    "n_corpora_audited": 4
+  },
+  "fire1_receipt_sha256": "1bead43f720612933ef00d738018a587d31d1a22d1c00c6901073640b7c4ea32",
+  "fire_sequence": "W2 fire 2 of 4 (max_fires). Re-sign of fire 1 with the real trust-anchored Phase-0 key.",
+  "gates": {
+    "corpora_audited_carried_forward_verbatim_from_fire1_by_field_copy": true,
+    "dependent_kpi_list_included_per_corpus": true,
+    "each_corpus_has_named_physical_or_definitional_constraint_with_citation": true,
+    "fire1_cited_by_sha256_not_recomputed": true,
+    "ge_4_corpora_audited": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signed_with_trust_store_registered_key": true,
+    "two_replay_byte_stable_this_receipt": true
+  },
+  "method": "For each corpus, read the normalized JSONL-gz rows directly from the shared data lake at feedback/v2/normalized/<acquisition_unit_id>.jsonl.gz (the same files this module's manifests at reference/mvp20/manifests/*.json point to via normalized_path/normalized_sha256), apply one or more physical/definitional constraints independent of any ML model, and count admissible vs inadmissible rows. No quarantined or CONTEXT_ONLY source was opened; all four corpora carry rights_class=DERIVATIVE_ALLOWED per their feedback_v2/rights/*.json manifests.",
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "objective": "Audit >=4 in-tree corpora for physical-admissibility violations in their ground-truth label columns, quantify n_total/n_admissible/pct per corpus, cite the physical justification for each constraint, and list which downstream module KPIs depend on the flagged rows.",
+  "prior_fire_context": "W2 fire 1 (receipt sha256=1bead43f720612933ef00d738018a587d31d1a22d1c00c6901073640b7c4ea32) generalized the C8 RadonPy-dielectric physical-admissibility audit (eps_static>=n^2) to 4 in-tree corpora: OpenPoly Tg/Tm ordering (Boyer-Beaman), BigSolDB solubility mole-fraction bound + duplicate-measurement contradiction check, BigSolDB density band, and the raw RadonPy polyomics_small_molecules corpus (Frohlich inequality + refractive-index lower bound) at 26x PI1070's scale. Fire 1's science, refutation criterion, and two-replay gate were all correct, but the receipt was signed with the repo-local LOCAL_DEVELOPMENT_AUDIT_ONLY dev key (key_id=local-9028773f49591193), which is explicitly NOT present in config/phase0-trust-store.v1.json. The launcher rejected that verdict: verified_new_signed=0, because a DECLARED artifact must pass real Ed25519 DSSE verification against the pinned Phase-0 trust-store key. This fire does not repeat or extend the audit -- it re-derives the identical findings from fire 1 (carried forward verbatim, cited by sha256) into a new receipt, signed with the phase0-internal-reviewer key confirmed present at /home/ubuntu/.local/share/amphora/phase0/keys/ and registered in the trust store with phase0_authorized=true, revoked=false.",
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody (trust-anchored key now used). Manifest untouched at 66/11. Module promotion still requires 2 human dual-identity ceremony keys this cron does not hold, per standing governance.",
+  "receipt_id": "w2-fire2-corpus-admissibility-audit-trust-anchored-resign",
+  "recommended_followups": [
+    "openpoly-experimental-tg-ml-baseline-kpi.v1.json and the 7 other dependent KPIs should be re-run with the 24 Tg>=Tm rows excluded from train/calib/test to determine whether the shipped Tg MAE is inflated by these physically-inadmissible examples (same escalation pattern as C8 fire 2).",
+    "File a data-acquisition/rights-review ask for BigSolDB: the 90.3% duplicate-contradiction rate means the corpus needs a reconciliation policy (e.g. keep only single-source or median-of-agreeing-sources measurements) before amphora-solvent-property's Solvency BigSolDB KPI (RMSE 0.877, its only ext-validated claim) can be considered clean at the label level -- this is cross-module and out of this fire's write scope, but is the single highest-leverage follow-up this audit surfaces.",
+    "Investigate WHY PI1070's curation concentrated the Frohlich-inequality defect (89.5% violation) relative to the raw polyomics_small_molecules dump it was drawn from (39.2% violation) -- if the curation criterion correlates with simulation non-convergence, that same non-convergence flag could be used as a cheap admissibility pre-filter across the whole polyomics_small_molecules corpus for future RadonPy-derived KPIs."
+  ],
+  "refutation_criterion": "Pre-registered: the claim survives only if ALL >=4 audited corpora show >=95% admissible rows on their respective physical constraints. Observed: 2 of 4 corpora fall well below this bar (openpoly_properties 85.6%, polyomics_small_molecules Frohlich axis 60.8%), and a 5th diagnostic axis (BigSolDB duplicate-contradiction rate) shows 90.3% internal contradiction. Criterion fired -- claim REFUTED.",
+  "rights_check": "All 4 corpora read from feedback/v2/normalized/*.jsonl.gz carry rights_class=DERIVATIVE_ALLOWED per their respective feedback_v2/rights/*.json and manifests/*.json (openpoly_properties, radonpy_pi1070/polyomics_small_molecules already load-bearing elsewhere in this module; bigsoldb_solubility/bigsoldb_density are DERIVATIVE_ALLOWED per feedback_v2 catalog.json). No quarantined, USBR_RIGHTS_REVIEW_REQUIRED, or CONTEXT_ONLY source was opened.",
+  "schema": "amphora.molecule-property.corpus-admissibility-audit-receipt.v1",
+  "signature": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzc2VkIjogdHJ1ZSwKICAiYXV0aG9yaXR5IjogIkFVRElUX09OTFkiLAogICJjYW1wYWlnbl9pdGVtX2lkIjogIlcyIiwKICAiY2VpbGluZyI6ICJBVURJVF9PTkxZLiBEb2VzIG5vdCBhbHRlciBhbnkgc2hpcHBlZCBLUEkgcmVjZWlwdCwgbWFuaWZlc3QsIG9yIGF1dGhvcml0eSBjZWlsaW5nLiBUaGlzIHJlY2VpcHQncyBvbmx5IGRlbHRhIHZlcnN1cyBmaXJlIDEgaXMgdGhlIHNpZ25pbmcgaWRlbnRpdHkgKHRydXN0LWFuY2hvcmVkIHBoYXNlMC1pbnRlcm5hbC1yZXZpZXdlciBrZXkgdnMuIHJlcG8tbG9jYWwgZGV2IGtleSkgYW5kIHRoZSBmaXJlLXNlcXVlbmNlL2NpdGF0aW9uIG1ldGFkYXRhOyB0aGUgdW5kZXJseWluZyBjb3JwdXMtbGV2ZWwgc2NpZW5jZSwgY291bnRzLCBhbmQgY2l0YXRpb25zIGFyZSBieXRlLWlkZW50aWNhbCB0byBmaXJlIDEgYW5kIGFyZSBjYXJyaWVkIGZvcndhcmQgYnkgZGlyZWN0IGZpZWxkIGNvcHksIHZlcmlmaWVkIGFnYWluc3QgZmlyZSAxJ3Mgb3duIHNoYTI1NiBiZWxvdy4iLAogICJjbGFpbV91bmRlcl9hdHRhY2siOiB7CiAgICAiY2xhaW1fdGV4dCI6ICJUaGUgbGFiZWwgZGF0YSB1bmRlcmx5aW5nIHRoaXMgcG9ydGZvbGlvJ3MgTUwgY2xhaW1zIGlzIHBoeXNpY2FsbHkgYWRtaXNzaWJsZS4iLAogICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzLyIKICB9LAogICJjb3Jwb3JhX2F1ZGl0ZWQiOiBbCiAgICB7CiAgICAgICJhY3F1aXNpdGlvbl91bml0X2lkIjogIm9wZW5wb2x5X3Byb3BlcnRpZXMiLAogICAgICAiY29uc3RyYWludCI6ICJUZyAoSykgPCBUbSAoSyksIHN0cmljdCIsCiAgICAgICJjb25zdHJhaW50X2NpdGF0aW9uIjogIkJveWVyLCBSLkYuLCBSdWJiZXIgQ2hlbS4gVGVjaG5vbC4gMzYsIDEzMDMgKDE5NjMpOyBWYW4gS3JldmVsZW4gJiBUZSBOaWplbmh1aXMsICdQcm9wZXJ0aWVzIG9mIFBvbHltZXJzJywgNHRoIGVkLiwgRWxzZXZpZXIgMjAwOSwgSVNCTiA5NzgtMC0wOC0wNTQ4MTktNywgQ2guNiAoVGcvVG0gcmF0aW8gYm91bmRlZCBpbiBbMC41LDAuOF0sIGkuZS4gVGc8VG0gYWx3YXlzIGZvciBhbnkgcmVhbCBzZW1pY3J5c3RhbGxpbmUvYW1vcnBob3VzIHBvbHltZXIgLS0gVGcgaXMgYSBraW5ldGljIGZyZWV6aW5nIHRyYW5zaXRpb24gb2YgdGhlIGFtb3JwaG91cyBwaGFzZSB0aGF0IG9jY3VycyBzdHJpY3RseSBiZWxvdyB0aGUgdHJ1ZSBmaXJzdC1vcmRlciBjcnlzdGFsbGluZSBtZWx0aW5nIHRyYW5zaXRpb24pLiIsCiAgICAgICJjb3JwdXMiOiAib3BlbnBvbHlfcHJvcGVydGllcyIsCiAgICAgICJkZXBlbmRlbnRfbW9kdWxlX2twaXMiOiBbCiAgICAgICAgIm9wZW5wb2x5LWV4cGVyaW1lbnRhbC10Zy1tbC1iYXNlbGluZS1rcGkudjEuanNvbiIsCiAgICAgICAgImV4dGVybmFsLXZhbGlkYXRpb24tcG9seXVuaXZlcnNlLXJpZGdlLW9uLW9wZW5wb2x5LXRnLWtwaS52MS5qc29uIiwKICAgICAgICAib3BlbnBvbHktZGllbGVjdHJpYy1jb25zdGFudC1tbC1iYXNlbGluZS1rcGkudjEuanNvbiIsCiAgICAgICAgIm9wZW5wb2x5LXdhdGVyLXVwdGFrZS1tbC1iYXNlbGluZS1hdWRpdC1rcGkudjEuanNvbiIsCiAgICAgICAgIm9wZW5wb2x5LXdhdGVyLWNvbnRhY3QtYW5nbGUtbWwtYmFzZWxpbmUta3BpLnYxLmpzb24iLAogICAgICAgICJtaXhlZC1vcGVucG9seS1yYWRvbnB5LWRpZWxlY3RyaWMtY29uZm9ybWFsLWtwaS52MS5qc29uIiwKICAgICAgICAibWl4ZWQtb3BlbnBvbHktcmFkb25weS1yZWZyYWN0aXZlLWluZGV4LWNvbmZvcm1hbC1rcGkudjEuanNvbiIsCiAgICAgICAgImV4dGVybmFsLXZhbGlkYXRpb24tZGllbGVjdHJpYy1tbC1vcGVucG9seS10by1yYWRvbnB5LWtwaS52MS5qc29uIgogICAgICBdLAogICAgICAiZmluZGluZ19zdW1tYXJ5IjogIjI0LzE2NyAoMTQuNCUpIE9wZW5Qb2x5IHJvd3Mgd2l0aCBib3RoIFRnIGFuZCBUbSByZXBvcnRlZCBoYXZlIFRnPj1UbSwgdmlvbGF0aW5nIHRoZSBCb3llci1CZWFtYW4gY29uc3RyYWludCB0aGF0IHRoZSBnbGFzcyB0cmFuc2l0aW9uIChhIGtpbmV0aWMgZnJlZXppbmcgb2YgdGhlIGFtb3JwaG91cyBwaGFzZSkgbXVzdCBvY2N1ciBzdHJpY3RseSBiZWxvdyB0aGUgdHJ1ZSBjcnlzdGFsbGluZSBtZWx0aW5nIHBvaW50LiBUaGVzZSAyNCByb3dzIGFyZSB0cmFpbmluZy92YWxpZGF0aW9uIGV4YW1wbGVzIGluc2lkZSB0aGUgU0FNRSBvcGVucG9seV9wcm9wZXJ0aWVzIGRhdGFzZXRfaWQgKDhkZTViYWY3NmY3OTYxMGYpIGNvbnN1bWVkIGJ5IDggZG93bnN0cmVhbSBLUElzLCBpbmNsdWRpbmcgdGhlIHByaW1hcnkgb3BlbnBvbHktZXhwZXJpbWVudGFsLXRnLW1sLWJhc2VsaW5lLWtwaS52MS5qc29uIFRnIG1vZGVsLiIsCiAgICAgICJsYWtlX3BhdGgiOiAidjIvbm9ybWFsaXplZC9vcGVucG9seV9wcm9wZXJ0aWVzLmpzb25sLmd6IiwKICAgICAgIm5fYWRtaXNzaWJsZSI6IDE0MywKICAgICAgIm5faW5hZG1pc3NpYmxlIjogMjQsCiAgICAgICJuX3Jvd3NfZXZhbHVhYmxlIjogMTY3LAogICAgICAibl90b3RhbF9yb3dzIjogNzQxLAogICAgICAicGN0X2FkbWlzc2libGVfb2ZfZXZhbHVhYmxlIjogMC44NTYyODc0MjUxNDk3MDA2LAogICAgICAicmF3X2ZpbGVfc2hhMjU2IjogIjhkZTViYWY3NmY3OTYxMGZlOTE3M2U2M2M2NWI4MjQ3MTRhZWI4NDQ1ZjlkNjcwZTE3Njc5NTZlYTlkYjVlYjMiLAogICAgICAidmVyZGljdCI6ICJWSU9MQVRJT05TX0ZPVU5EIiwKICAgICAgInZpb2xhdGlvbnNfc2FtcGxlIjogWwogICAgICAgIHsKICAgICAgICAgICJUZ19LIjogMzk2LjcyOTQxMTgsCiAgICAgICAgICAiVG1fSyI6IDMyNy4xMTgxODE4LAogICAgICAgICAgImNhbm9uaWNhbF9pZGVudGl0eSI6ICJbKl1jYyhjKG5jKGMpYyk9bylbKl0iLAogICAgICAgICAgIm5hbWUiOiAiUE5JUEFNIiwKICAgICAgICAgICJyZWNvcmRfaWQiOiAib3BlbnBvbHlfcHJvcGVydGllczpyYXc6MDAwMDAwMDAwMDEzIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgIlRnX0siOiA1MzYuNzM0ODY3LAogICAgICAgICAgIlRtX0siOiA1MTguMzEyOTYzLAogICAgICAgICAgImNhbm9uaWNhbF9pZGVudGl0eSI6ICJbKl1jYyhbKl0pKGM9YyljIiwKICAgICAgICAgICJuYW1lIjogIlBJIiwKICAgICAgICAgICJyZWNvcmRfaWQiOiAib3BlbnBvbHlfcHJvcGVydGllczpyYXc6MDAwMDAwMDAwMDIxIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgIlRnX0siOiA0ODUuNTAzMjg2NCwKICAgICAgICAgICJUbV9LIjogMzgyLjQ3MDk2MzksCiAgICAgICAgICAiY2Fub25pY2FsX2lkZW50aXR5IjogIlsqXW9jY29jKGNjYyhbKl0pPW8pPW8iLAogICAgICAgICAgIm5hbWUiOiAiUEVTIiwKICAgICAgICAgICJyZWNvcmRfaWQiOiAib3BlbnBvbHlfcHJvcGVydGllczpyYXc6MDAwMDAwMDAwMDIzIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgIlRnX0siOiA0MDYuODU0NzYxOSwKICAgICAgICAgICJUbV9LIjogMzgzLjYwNSwKICAgICAgICAgICJjYW5vbmljYWxfaWRlbnRpdHkiOiAiWypdY2MoYyhuYyhjKWMpPW8pWypdIiwKICAgICAgICAgICJuYW1lIjogIlBOSVBBQW0iLAogICAgICAgICAgInJlY29yZF9pZCI6ICJvcGVucG9seV9wcm9wZXJ0aWVzOnJhdzowMDAwMDAwMDAwMjYiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiVGdfSyI6IDQwOC43NTIxNDI5LAogICAgICAgICAgIlRtX0siOiAzOTkuNzQ1MjA4MywKICAgICAgICAgICJjYW5vbmljYWxfaWRlbnRpdHkiOiAibltjQEBoXTFbY0BAaF0obylbY0BoXShvWypdKVtjQEBoXShjbylvW2NAaF0xWypdIiwKICAgICAgICAgICJuYW1lIjogImNoaXRvc2FuIiwKICAgICAgICAgICJyZWNvcmRfaWQiOiAib3BlbnBvbHlfcHJvcGVydGllczpyYXc6MDAwMDAwMDAwMDI4IgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgIlRnX0siOiA0ODYuODIwNzE0MywKICAgICAgICAgICJUbV9LIjogMzkxLjEyNjc3NDIsCiAgICAgICAgICAiY2Fub25pY2FsX2lkZW50aXR5IjogIlsqXWNjblsqXSIsCiAgICAgICAgICAibmFtZSI6ICJQRUkiLAogICAgICAgICAgInJlY29yZF9pZCI6ICJvcGVucG9seV9wcm9wZXJ0aWVzOnJhdzowMDAwMDAwMDAwMzgiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiVGdfSyI6IDQxMi45MjE2ODMyLAogICAgICAgICAgIlRtX0siOiAzNzMuMDgzMzMzMywKICAgICAgICAgICJjYW5vbmljYWxfaWRlbnRpdHkiOiAiWypdYzE9Y2M9YyhjKGMpKGMyPWNjPWMob2NjKGNbKl0pbyljPWMyKWMpYz1jMSIsCiAgICAgICAgICAibmFtZSI6ICJFUCIsCiAgICAgICAgICAicmVjb3JkX2lkIjogIm9wZW5wb2x5X3Byb3BlcnRpZXM6cmF3OjAwMDAwMDAwMDA0MSIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJUZ19LIjogMzk0LjY1LAogICAgICAgICAgIlRtX0siOiAzNjcuMzMsCiAgICAgICAgICAiY2Fub25pY2FsX2lkZW50aXR5IjogIlsqXWMxPWMyYyhvY2NvMik9YyhbKl0pczEiLAogICAgICAgICAgIm5hbWUiOiAiUEVET1QiLAogICAgICAgICAgInJlY29yZF9pZCI6ICJvcGVucG9seV9wcm9wZXJ0aWVzOnJhdzowMDAwMDAwMDAwNTMiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiVGdfSyI6IDM5Ni43Mjk0MTE4LAogICAgICAgICAgIlRtX0siOiAzMjcuMTE4MTgxOCwKICAgICAgICAgICJjYW5vbmljYWxfaWRlbnRpdHkiOiAiWypdY2MoYyhuYyhjKWMpPW8pWypdIiwKICAgICAgICAgICJuYW1lIjogIlBOSVBBbSIsCiAgICAgICAgICAicmVjb3JkX2lkIjogIm9wZW5wb2x5X3Byb3BlcnRpZXM6cmF3OjAwMDAwMDAwMDA2MCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJUZ19LIjogNDU5LjQyMzY2OTEsCiAgICAgICAgICAiVG1fSyI6IDQ0OS45NywKICAgICAgICAgICJjYW5vbmljYWxfaWRlbnRpdHkiOiAiWypdb2MxPWNjPWMoYyhjKShjMj1jYz1jKG9jMz1jYz1jKHMoPW8pKGM0PWNjPWMoWypdKWM9YzQpPW8pYz1jMyljPWMyKWMpYz1jMSIsCiAgICAgICAgICAibmFtZSI6ICJQU0YiLAogICAgICAgICAgInJlY29yZF9pZCI6ICJvcGVucG9seV9wcm9wZXJ0aWVzOnJhdzowMDAwMDAwMDAwNjEiCiAgICAgICAgfQogICAgICBdCiAgICB9LAogICAgewogICAgICAiYWNxdWlzaXRpb25fdW5pdF9pZCI6ICJiaWdzb2xkYl9zb2x1YmlsaXR5IiwKICAgICAgImNvbnN0cmFpbnQiOiAiMCA8IHNvbHViaWxpdHlfbW9sZV9mcmFjdGlvbiA8IDEsIHN0cmljdCAoYSBtb2xlIGZyYWN0aW9uIGlzIG5fc29sdXRlLyhuX3NvbHV0ZStuX3NvbHZlbnQpLCBhIHByb2JhYmlsaXR5LWxpa2UgcXVhbnRpdHkgYm91bmRlZCBvbiB0aGUgb3BlbiB1bml0IGludGVydmFsIGJ5IGRlZmluaXRpb24pIiwKICAgICAgImNvbnN0cmFpbnRfY2l0YXRpb24iOiAiSVVQQUMgR29sZCBCb29rLCAnYW1vdW50IGZyYWN0aW9uLCBtb2xlIGZyYWN0aW9uJyAoZG9pOjEwLjEzNTEvZ29sZGJvb2suQTAwMjk2KTsgZGVmaW5pdGlvbmFsLCBub3QgbW9kZWwtZGVwZW5kZW50LiIsCiAgICAgICJjb3JwdXMiOiAiYmlnc29sZGJfc29sdWJpbGl0eSIsCiAgICAgICJkZXBlbmRlbnRfbW9kdWxlX2twaXMiOiBbXSwKICAgICAgImRlcGVuZGVudF9tb2R1bGVfa3Bpc19ub3RlIjogIk5vIGFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkgS1BJIHJlY2VpcHQgY3VycmVudGx5IHJlYWRzIGJpZ3NvbGRiX3NvbHViaWxpdHkgZGlyZWN0bHkgKGdyZXAgb2YgZXZpZGVuY2UvcGhhc2UwL2twaXMvKi5qc29uIGFuZCBiZW5jaG1hcmtzLyBmb3VuZCB6ZXJvIG1hdGNoZXMpLiBUaGUga25vd24gZG93bnN0cmVhbSBjb25zdW1lciBvZiB0aGlzIGNvcnB1cyBpcyBhbXBob3JhLXNvbHZlbnQtcHJvcGVydHkncyBTb2x2ZW5jeSBCaWdTb2xEQiByZXN1bHQgKExTTyBSTVNFIDAuODc3LCB0aGF0IG1vZHVsZSdzIG9ubHkgZXh0ZXJuYWxseS12YWxpZGF0ZWQgc29sdmVuY3kgY2xhaW0pIC0tIGEgZGlmZmVyZW50IG1vZHVsZSwgb3V0IG9mIHRoaXMgZmlyZSdzIHdyaXRlIHNjb3BlLCBmbGFnZ2VkIGhlcmUgZm9yIGNyb3NzLW1vZHVsZSBhd2FyZW5lc3Mgb25seS4iLAogICAgICAiZHVwbGljYXRlX2NvbnRyYWRpY3RvcnlfbWVhc3VyZW1lbnRfY2hlY2siOiB7CiAgICAgICAgImNvbnRyYWRpY3Rpb25fdGhyZXNob2xkX2xvZzEwX3VuaXRzIjogMC4zLAogICAgICAgICJrZXkiOiAiKGNhbm9uaWNhbF9pZGVudGl0eT1zb2x1dGUgU01JTEVTLWRlcml2ZWQgaWQsIFNvbHZlbnQsIFRlbXBlcmF0dXJlX0spIiwKICAgICAgICAibl9ncm91cHNfY29udHJhZGljdG9yeSI6IDQxMzQsCiAgICAgICAgIm5fZ3JvdXBzX3dpdGhfZ2UyX21lYXN1cmVtZW50cyI6IDQ1NzgsCiAgICAgICAgInBjdF9jb250cmFkaWN0b3J5X29mX2R1cGxpY2F0ZV9ncm91cHMiOiAwLjkwMzAxNDQxNjc3NTg4NDcKICAgICAgfSwKICAgICAgImZpbmRpbmdfc3VtbWFyeSI6ICJUaGUgcHJpbWFyeSBwaHlzaWNhbCBib3VuZCAoMDxtb2xlX2ZyYWN0aW9uPDEpIGlzIHNhdGlzZmllZCBieSBhbGwgMTAzLDk0NC8xMDMsOTQ0IHJvd3MgLS0gbm8gYWRtaXNzaWJpbGl0eSB2aW9sYXRpb24gb24gdGhhdCBheGlzLiBIb3dldmVyLCBhIHNlY29uZGFyeSwgZXF1YWxseSBwaHlzaWNhbCBjaGVjayAtLSBkbyByZXBlYXRlZCBtZWFzdXJlbWVudHMgb2YgdGhlIHNhbWUgKHNvbHV0ZSwgc29sdmVudCwgdGVtcGVyYXR1cmUpIHRyaXBsZSBhZ3JlZSB3aXRoIGVhY2ggb3RoZXIgLS0gZm91bmQgNCwxMzQvNCw1NzggKDkwLjMlKSBvZiBkdXBsaWNhdGUtbWVhc3VyZW1lbnQgZ3JvdXBzIGRpc2FncmVlIGJ5IG1vcmUgdGhhbiAwLjMgbG9nMTAobW9sL0wpIHVuaXRzICg+MngpIGF0IElERU5USUNBTCBjb25kaXRpb25zLiBBIHNpbmdsZSBwaHlzaWNhbCBxdWFudGl0eSBjYW5ub3QgaGF2ZSB0d28gaW50ZXJuYWxseS1jb250cmFkaWN0b3J5IGxpdGVyYXR1cmUgdmFsdWVzIGF0IHRoZSBzYW1lIHN0YXRlIHBvaW50OyB0aGlzIGlzIGEgY29ycHVzLWxldmVsIGFkbWlzc2liaWxpdHkgZGVmZWN0IGRpc3RpbmN0IGZyb20gKGFuZCBsYXJnZXIgaW4gY291bnQgdGhhbikgYSBzaW1wbGUgb3V0LW9mLWJvdW5kcyBjaGVjayB3b3VsZCBjYXRjaC4iLAogICAgICAibGFrZV9wYXRoIjogInYyL25vcm1hbGl6ZWQvYmlnc29sZGJfc29sdWJpbGl0eS5qc29ubC5neiIsCiAgICAgICJuX2FkbWlzc2libGUiOiAxMDM5NDQsCiAgICAgICJuX2luYWRtaXNzaWJsZSI6IDAsCiAgICAgICJuX3Jvd3NfZXZhbHVhYmxlIjogMTAzOTQ0LAogICAgICAibl90b3RhbF9yb3dzIjogMTAzOTQ0LAogICAgICAicGN0X2FkbWlzc2libGVfb2ZfZXZhbHVhYmxlIjogMS4wLAogICAgICAicmF3X2ZpbGVfc2hhMjU2IjogIjg3OWY1NWYzOWRiOTc3ZTI5NWM3MDVlMzA0ZDAxMWQ4OWQ2ZTEwZGExZGFhYTNmMDY5MTgxMTA4YzFkZTM4YjAiLAogICAgICAic2Vjb25kYXJ5X2RpYWdub3N0aWNfaW50ZXJuYWxfbG9nMTBfY29uc2lzdGVuY3kiOiB7CiAgICAgICAgIm5fY2hlY2tlZCI6IDEwMDk4MywKICAgICAgICAibl9jb25zaXN0ZW50X3dpdGhpbl8xZS02IjogMTAwOTgzLAogICAgICAgICJub3RlIjogIk5PVCBwYXJ0IG9mIHRoZSBhZG1pc3NpYmxlL3BjdCBnYXRlIGFib3ZlIC0tIHJlcG9ydGVkIHNlcGFyYXRlbHkgYXMgYSBkYXRhLWludGVncml0eSBjcm9zcy1jaGVjay4iLAogICAgICAgICJwY3RfY29uc2lzdGVudCI6IDEuMAogICAgICB9LAogICAgICAidmVyZGljdCI6ICJQUklNQVJZX0JPVU5EX0NMRUFOX0JVVF9JTlRFUk5BTF9DT05UUkFESUNUSU9OU19GT1VORCIKICAgIH0sCiAgICB7CiAgICAgICJhY3F1aXNpdGlvbl91bml0X2lkIjogImJpZ3NvbGRiX2RlbnNpdHkiLAogICAgICAiY29uc3RyYWludCI6ICIwLjYgZy9jbV4zIDw9IGxpcXVpZCBkZW5zaXR5IDw9IDMuNCBnL2NtXjMgYXQgbmVhci1hbWJpZW50IGNvbmRpdGlvbnMiLAogICAgICAiY29uc3RyYWludF9jaXRhdGlvbiI6ICJDUkMgSGFuZGJvb2sgb2YgQ2hlbWlzdHJ5IGFuZCBQaHlzaWNzLCAxMDR0aCBlZC4gKDIwMjMpLCBJU0JOIDk3OC0xLTAzMi02MzExMS0yLCBTZWN0aW9uICdQaHlzaWNhbCBDb25zdGFudHMgb2YgT3JnYW5pYyBDb21wb3VuZHMnIC0tIGNvbW1vbiBsaXF1aWQgb3JnYW5pYyBzb2x2ZW50cyBzcGFuIGZyb20gbi1wZW50YW5lICgwLjYyNiBnL2NtXjMpIHRvIGRlbnNlIGhhbG9nZW5hdGVkIGxpcXVpZHMgc3VjaCBhcyBkaWlvZG9tZXRoYW5lICgzLjMyNSBnL2NtXjMpOyBkZW5zaXRpZXMgb3V0c2lkZSB0aGlzIGJhbmQgaW5kaWNhdGUgZWl0aGVyIGEgdW5pdC90cmFuc2NyaXB0aW9uIGVycm9yIG9yIGEgbm9uLWxpcXVpZC9ub24tb3JnYW5pYy1zb2x2ZW50IGVudHJ5LiIsCiAgICAgICJjb3JwdXMiOiAiYmlnc29sZGJfZGVuc2l0eSIsCiAgICAgICJkZXBlbmRlbnRfbW9kdWxlX2twaXMiOiBbXSwKICAgICAgImRlcGVuZGVudF9tb2R1bGVfa3Bpc19ub3RlIjogIlNhbWUgY3Jvc3MtbW9kdWxlIGNhdmVhdCBhcyBiaWdzb2xkYl9zb2x1YmlsaXR5IGFib3ZlOyBjb25zdW1lZCBieSBhbXBob3JhLXNvbHZlbnQtcHJvcGVydHksIG5vdCB0aGlzIG1vZHVsZSdzIEtQSXMuIiwKICAgICAgImZpbmRpbmdfc3VtbWFyeSI6ICIyMjA5LzIyMTAgKDk5Ljk1JSkgcm93cyBmYWxsIHdpdGhpbiB0aGUgcGh5c2ljYWxseS1wbGF1c2libGUgb3JnYW5pYy1saXF1aWQgZGVuc2l0eSBiYW5kIFswLjYsIDMuNF0gZy9jbV4zLiBFc3NlbnRpYWxseSBjbGVhbjsgMSByb3cgZmxhZ2dlZCBmb3IgbWFudWFsIHJldmlldy4iLAogICAgICAibGFrZV9wYXRoIjogInYyL25vcm1hbGl6ZWQvYmlnc29sZGJfZGVuc2l0eS5qc29ubC5neiIsCiAgICAgICJuX2FkbWlzc2libGUiOiAyMjA5LAogICAgICAibl9pbmFkbWlzc2libGUiOiAxLAogICAgICAibl9yb3dzX2V2YWx1YWJsZSI6IDIyMTAsCiAgICAgICJuX3RvdGFsX3Jvd3MiOiAyMjEwLAogICAgICAicGN0X2FkbWlzc2libGVfb2ZfZXZhbHVhYmxlIjogMC45OTk1NDc1MTEzMTIyMTcyLAogICAgICAicmF3X2ZpbGVfc2hhMjU2IjogIjAyMjI2NDIwZDlmYjMyOTRjYjMyMjExZGFjN2Y2ZmY3ZmEwNjc1MTE5MjRhZmRiOWYxODkzYWYxZTMzNGFhYzYiLAogICAgICAidmVyZGljdCI6ICJDTEVBTiIsCiAgICAgICJ2aW9sYXRpb25zX3NhbXBsZSI6IFsKICAgICAgICB7CiAgICAgICAgICAiZGVuc2l0eV9nX2NtMyI6IDAuMCwKICAgICAgICAgICJyZWNvcmRfaWQiOiAiYmlnc29sZGJfZGVuc2l0eTpyYXc6MDAwMDAwMDAwOTIwIiwKICAgICAgICAgICJzb2x2ZW50IjogImlzb3Byb3B5bCBhY2V0YXRlIiwKICAgICAgICAgICJ0ZW1wZXJhdHVyZV9LIjogIjI5OC4xNSIKICAgICAgICB9CiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJhY3F1aXNpdGlvbl91bml0X2lkIjogInBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXMiLAogICAgICAiY29uc3RyYWludF9BX2Zyb2hsaWNoIjogewogICAgICAgICJjb25zdHJhaW50X2NpdGF0aW9uIjogIkZyb2hsaWNoLCBILiwgJ1RoZW9yeSBvZiBEaWVsZWN0cmljcycsIE94Zm9yZCBVbml2ZXJzaXR5IFByZXNzLCAxOTQ5LCBDaC4yIC0tIHN0YXRpYyBwZXJtaXR0aXZpdHkgZXBzX3N0YXRpYyhvbWVnYS0+MCkgc3VtcyBlbGVjdHJvbmljK2lvbmljK29yaWVudGF0aW9uYWwgcG9sYXJpemF0aW9uIGFuZCBtdXN0IGJlID49IHRoZSBvcHRpY2FsL2VsZWN0cm9uaWMtb25seSBwZXJtaXR0aXZpdHkgZXBzX2luZj1uXjIgKE1heHdlbGwgcmVsYXRpb24pIGZvciBhbnkgcGFzc2l2ZSBsaW5lYXIgZGllbGVjdHJpYy4iLAogICAgICAgICJuX2FkbWlzc2libGUiOiAxNjk5MCwKICAgICAgICAibl9pbmFkbWlzc2libGUiOiAxMDk3NCwKICAgICAgICAibl9yb3dzX2V2YWx1YWJsZSI6IDI3OTY0LAogICAgICAgICJuX3Zpb2xhdGlvbnNfdG90YWwiOiAxMDk3NCwKICAgICAgICAibmFtZSI6ICJlcHNfc3RhdGljID49IG5fcmVmcmFjdGl2ZV4yIChGcm9obGljaCBpbmVxdWFsaXR5KSIsCiAgICAgICAgIm5vdGUiOiAiVGhpcyBpcyB0aGUgU0FNRSBjb25zdHJhaW50IGFwcGxpZWQgdG8gcmFkb25weV9waTEwNzAgKDEwNzcgcm93cywgQzggZmlyZXMgMS0zLCAxMTMvMTA3NT0xMC41JSBhZG1pc3NpYmxlKS4gcG9seW9taWNzX3NtYWxsX21vbGVjdWxlcyBpcyB0aGUgbGFyZ2VyIHJhdyBSYWRvblB5IHNpbXVsYXRpb24tb3V0cHV0IGNvcnB1cyAoMjgxNTkgcm93cykgdGhhdCBQSTEwNzAgd2FzIGN1cmF0ZWQgZnJvbTsgdGhpcyBnZW5lcmFsaXplcyB0aGUgcHJpb3IgZmluZGluZyB0byBzZWUgd2hldGhlciBpdCBpcyBhbiBhcnRpZmFjdCBvZiB0aGUgMTA3MC1yb3cgY3VyYXRpb24gb3IgcGVyc2lzdHMgYXQgZnVsbCBzY2FsZS4iLAogICAgICAgICJwY3RfYWRtaXNzaWJsZV9vZl9ldmFsdWFibGUiOiAwLjYwNzU2Njg3MTY5MjE3NTYsCiAgICAgICAgInZpb2xhdGlvbnNfc2FtcGxlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiVVVJRCI6ICJhMDk3ZmYyZi1iOWI4LTQyOWQtYWQ3Yy0wMGMwYThjMTI5YWEiLAogICAgICAgICAgICAiZXBzX3N0YXRpYyI6IDEuNjgzMDM4ODkwMjI4MTExNywKICAgICAgICAgICAgIm4iOiAxLjQ2NTQxNzEwNDEyMjAwMiwKICAgICAgICAgICAgIm5fc3F1YXJlZCI6IDIuMTQ3NDQ3Mjg5MDUzMzE0NywKICAgICAgICAgICAgInJlY29yZF9pZCI6ICJwb2x5b21pY3Nfc21hbGxfbW9sZWN1bGVzOnJhdzowMDAwMDAwMDAwMjciCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiVVVJRCI6ICIxNTI1ZmNjYi1iZGRmLTRmODktODM3Ni1hNmI4M2QxMTcxZGEiLAogICAgICAgICAgICAiZXBzX3N0YXRpYyI6IDEuNTQzOTA3MTAxMDY5NDAxNywKICAgICAgICAgICAgIm4iOiAxLjQ2MjA1NjUyOTc5MDk5MDksCiAgICAgICAgICAgICJuX3NxdWFyZWQiOiAyLjEzNzYwOTI5NjMwNDQ3NDYsCiAgICAgICAgICAgICJyZWNvcmRfaWQiOiAicG9seW9taWNzX3NtYWxsX21vbGVjdWxlczpyYXc6MDAwMDAwMDAwMDQ4IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgIlVVSUQiOiAiZGJlNjhmMWEtMDcwZC00YzY4LWFkZjAtNzg4YWZiNmRjNjMwIiwKICAgICAgICAgICAgImVwc19zdGF0aWMiOiAyLjEzNDE1NzA5NjYyNTIwNCwKICAgICAgICAgICAgIm4iOiAxLjQ3OTM3MTU2NTgxNDQ1MTUsCiAgICAgICAgICAgICJuX3NxdWFyZWQiOiAyLjE4ODU0MDIyOTc0MDMwMiwKICAgICAgICAgICAgInJlY29yZF9pZCI6ICJwb2x5b21pY3Nfc21hbGxfbW9sZWN1bGVzOnJhdzowMDAwMDAwMDAwNDkiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiVVVJRCI6ICJmNTAwYzg0Yi1kMjQ1LTQ5MTQtOTBlNi1iYzQwMmIxZmJlNDkiLAogICAgICAgICAgICAiZXBzX3N0YXRpYyI6IDEuNDkxODg4ODYzMjMyODQ2MiwKICAgICAgICAgICAgIm4iOiAxLjQ2Nzk1NTQ4OTAxNjQyOSwKICAgICAgICAgICAgIm5fc3F1YXJlZCI6IDIuMTU0ODkzMzE3NzMzNDYzNSwKICAgICAgICAgICAgInJlY29yZF9pZCI6ICJwb2x5b21pY3Nfc21hbGxfbW9sZWN1bGVzOnJhdzowMDAwMDAwMDAwNzUiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiVVVJRCI6ICJmMzAxZDU5ZS0wYjFlLTQ2NjQtOTA4NC03YzkxMzBiOTFjOTUiLAogICAgICAgICAgICAiZXBzX3N0YXRpYyI6IDEuNTQxNTg1MjgyODIxOTA0MywKICAgICAgICAgICAgIm4iOiAxLjM4NTEyNDMxMjYzNzA3OTEsCiAgICAgICAgICAgICJuX3NxdWFyZWQiOiAxLjkxODU2OTM2MTQ1ODM0MSwKICAgICAgICAgICAgInJlY29yZF9pZCI6ICJwb2x5b21pY3Nfc21hbGxfbW9sZWN1bGVzOnJhdzowMDAwMDAwMDAxMDIiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiVVVJRCI6ICI0N2JkMzgyYy1kZDRkLTRhOWItOTNiYS1lMjk0NDU5NzhlMDIiLAogICAgICAgICAgICAiZXBzX3N0YXRpYyI6IDEuNDI4ODQxNTYxMTQ1MTUyLAogICAgICAgICAgICAibiI6IDEuNDI5NDMzMzk2MDA3MDM3MSwKICAgICAgICAgICAgIm5fc3F1YXJlZCI6IDIuMDQzMjc5ODMzNjIwMjExLAogICAgICAgICAgICAicmVjb3JkX2lkIjogInBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXM6cmF3OjAwMDAwMDAwMDEwMyIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJVVUlEIjogImQ2YzcwNmZmLWFiYjQtNDI3NS04NWU1LTM5MGY3MjBjNWFiMyIsCiAgICAgICAgICAgICJlcHNfc3RhdGljIjogMS44NjU2MjEwNTgyNjE1MjI1LAogICAgICAgICAgICAibiI6IDEuMzkwODg5MzMyODI0MTAxLAogICAgICAgICAgICAibl9zcXVhcmVkIjogMS45MzQ1NzMxMzYxNjM4NzI3LAogICAgICAgICAgICAicmVjb3JkX2lkIjogInBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXM6cmF3OjAwMDAwMDAwMDEwNSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJVVUlEIjogIjhjZGM0YWU1LWYyY2QtNGExZC1iMzA0LTU2Yzc1ZmM3ZjhiZiIsCiAgICAgICAgICAgICJlcHNfc3RhdGljIjogMS43NTAwNTQ0NzA4NjkyMDY3LAogICAgICAgICAgICAibiI6IDEuNDE5MDYzMzcxNjQ4NDE5LAogICAgICAgICAgICAibl9zcXVhcmVkIjogMi4wMTM3NDA4NTI3NTQxNzg3LAogICAgICAgICAgICAicmVjb3JkX2lkIjogInBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXM6cmF3OjAwMDAwMDAwMDEzNCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJVVUlEIjogImY5NWNhNGMyLWRhZmUtNDc0YS1hZWIwLTFkYjU0OWRjZjM4OSIsCiAgICAgICAgICAgICJlcHNfc3RhdGljIjogMS44MzM5NDAwNzgwOTc2OTIsCiAgICAgICAgICAgICJuIjogMS40Mjg0MjkwMTIxMjczNDQ5LAogICAgICAgICAgICAibl9zcXVhcmVkIjogMi4wNDA0MDk0NDI2ODcxMDI0LAogICAgICAgICAgICAicmVjb3JkX2lkIjogInBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXM6cmF3OjAwMDAwMDAwMDEzOCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJVVUlEIjogIjRiNTY3MGJiLTJmNGUtNGE0Ni04ZGFmLTE0ZjE1NGU2ZDczYyIsCiAgICAgICAgICAgICJlcHNfc3RhdGljIjogMi4xMjE3NjYzODUyMjc4MzM3LAogICAgICAgICAgICAibiI6IDEuNDg3MjM0OTg5MzgxMjc1NSwKICAgICAgICAgICAgIm5fc3F1YXJlZCI6IDIuMjExODY3OTEzNjM5OTIyNiwKICAgICAgICAgICAgInJlY29yZF9pZCI6ICJwb2x5b21pY3Nfc21hbGxfbW9sZWN1bGVzOnJhdzowMDAwMDAwMDAxNDEiCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9LAogICAgICAiY29uc3RyYWludF9CX3JlZnJhY3RpdmVfaW5kZXhfbG93ZXJfYm91bmQiOiB7CiAgICAgICAgImNvbnN0cmFpbnRfY2l0YXRpb24iOiAiTG9yZW50ei1Mb3JlbnogdGhlb3J5IChILkEuIExvcmVudHogMTg4MDsgTC4gTG9yZW56IDE4ODApOyBmb3IgYW55IGNvbmRlbnNlZC1waGFzZSBkaWVsZWN0cmljIG1lZGl1bSBpbiB0aGUgbm9ybWFsIChub24tYW5vbWFsb3VzKSBkaXNwZXJzaW9uIHJlZ2ltZSBhdCBvcHRpY2FsIGZyZXF1ZW5jaWVzLCByZWZyYWN0aXZlIGluZGV4IHJlbGF0aXZlIHRvIHZhY3V1bSBuPj0xIGJ5IGRlZmluaXRpb24gb2YgcGhhc2UgdmVsb2NpdHkgdj1jL248PWMuIiwKICAgICAgICAibl9hZG1pc3NpYmxlIjogMjc5NjMsCiAgICAgICAgIm5faW5hZG1pc3NpYmxlIjogMSwKICAgICAgICAibl9yb3dzX2V2YWx1YWJsZSI6IDI3OTY0LAogICAgICAgICJuX3Zpb2xhdGlvbnNfdG90YWwiOiAxLAogICAgICAgICJuYW1lIjogInJlZnJhY3RpdmVfaW5kZXggPj0gMSIsCiAgICAgICAgInBjdF9hZG1pc3NpYmxlX29mX2V2YWx1YWJsZSI6IDAuOTk5OTY0MjM5NzM2ODA0NSwKICAgICAgICAidmlvbGF0aW9uc19zYW1wbGUiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJVVUlEIjogImY5YWU0NDQzLTQyYzctNGJiNi04N2NmLWU5MGMzMzFlNmYyZSIsCiAgICAgICAgICAgICJuIjogMC42MTM2MTcyNjgyNjU0NjA1LAogICAgICAgICAgICAicmVjb3JkX2lkIjogInBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXM6cmF3OjAwMDAwMDAxMDg3MSIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0sCiAgICAgICJjb3JwdXMiOiAicG9seW9taWNzX3NtYWxsX21vbGVjdWxlcyIsCiAgICAgICJkZXBlbmRlbnRfbW9kdWxlX2twaXMiOiBbCiAgICAgICAgIm1peGVkLW9wZW5wb2x5LXJhZG9ucHktZGllbGVjdHJpYy1jb25mb3JtYWwta3BpLnYxLmpzb24iLAogICAgICAgICJtaXhlZC1vcGVucG9seS1yYWRvbnB5LXJlZnJhY3RpdmUtaW5kZXgtY29uZm9ybWFsLWtwaS52MS5qc29uIiwKICAgICAgICAiZXh0ZXJuYWwtdmFsaWRhdGlvbi1kaWVsZWN0cmljLW1sLW9wZW5wb2x5LXRvLXJhZG9ucHkta3BpLnYxLmpzb24iLAogICAgICAgICJtdWx0aS10YXJnZXQtbWwtcmFkb25weS00LXByb3BlcnRpZXMtYXVkaXQta3BpLnYxLmpzb24iLAogICAgICAgICJyYWRvbnB5LWRlbnNpdHktbWwtdnMtdmFuLWtyZXZlbGVuLXBoeXNpY3Mta3BpLnYxLmpzb24iLAogICAgICAgICJzdGFja2VkLW1sLXZhbi1rcmV2ZWxlbi1kZW5zaXR5LXJhZG9ucHkta3BpLnYxLmpzb24iCiAgICAgIF0sCiAgICAgICJmaW5kaW5nX3N1bW1hcnkiOiAiVGhpcyBpcyB0aGUgbGFyZ2VyIHJhdyBSYWRvblB5IHNpbXVsYXRpb24tb3V0cHV0IGNvcnB1cyAoMjgsMTU5IHJvd3MpIHRoYXQgdGhlIGFscmVhZHktYXVkaXRlZCByYWRvbnB5X3BpMTA3MCAoMSwwNzcgcm93cywgQzggZmlyZXMgMS0zKSB3YXMgY3VyYXRlZCBmcm9tLiBBcHBseWluZyB0aGUgU0FNRSBGcm9obGljaCBpbmVxdWFsaXR5IChlcHNfc3RhdGljPj1uXjIpIGF0IGZ1bGwgc2NhbGUgZmluZHMgMTYsOTkwLzI3LDk2NCAoNjAuOCUpIGFkbWlzc2libGUgLS0gaS5lLiAzOS4yJSB2aW9sYXRlLCBOT1QgdGhlIDg5LjUlIHZpb2xhdGlvbiByYXRlIGZvdW5kIGluIHRoZSBjdXJhdGVkIFBJMTA3MCBzdWJzZXQuIFRoZSB0d28gbnVtYmVycyBkaXNhZ3JlZSBieSBhIGZhY3RvciBvZiA+MnggaW4gdmlvbGF0aW9uIHJhdGUuIFRoaXMgbWVhbnMgUEkxMDcwJ3MgY3VyYXRpb24gc3RlcCBzcGVjaWZpY2FsbHkgY29uY2VudHJhdGVkIChub3QgbWVyZWx5IGluaGVyaXRlZCkgdGhlIGRpZWxlY3RyaWMtYWRtaXNzaWJpbGl0eSBkZWZlY3QgcmVsYXRpdmUgdG8gdGhlIHJhdyBzaW11bGF0aW9uIGR1bXAgaXQgd2FzIGRyYXduIGZyb20gLS0gYSBuZXcgZmluZGluZyB0aGlzIGZpcmUgc3VyZmFjZXMgdGhhdCBDOCBjb3VsZCBub3Qgc2VlIGZyb20gUEkxMDcwIGFsb25lLiBTZXBhcmF0ZWx5LCB0aGUgcmVmcmFjdGl2ZS1pbmRleCBsb3dlciBib3VuZCAobj49MSwgTG9yZW50ei1Mb3JlbnopIGlzIGVzc2VudGlhbGx5IGNsZWFuIGF0IGZ1bGwgc2NhbGU6IDI3LDk2My8yNyw5NjQgKDk5Ljk5NiUpIGFkbWlzc2libGUuIiwKICAgICAgImxha2VfcGF0aCI6ICJ2Mi9ub3JtYWxpemVkL3BvbHlvbWljc19zbWFsbF9tb2xlY3VsZXMuanNvbmwuZ3oiLAogICAgICAibl90b3RhbF9yb3dzIjogMjgxNTksCiAgICAgICJyYXdfZmlsZV9zaGEyNTYiOiAiNGRjNDA4ZmY0NjhmOWI1OWIxYzU5YjQwZWZiYzhhMTc1MGNhMGQwYzRiY2Y4OWViZjgyNjg0NDI1NTM2MjZhYyIsCiAgICAgICJ2ZXJkaWN0IjogIlZJT0xBVElPTlNfRk9VTkRfRElGRkVSRU5UX01BR05JVFVERV9USEFOX0NVUkFURURfU1VCU0VUIgogICAgfQogIF0sCiAgImNyb3NzX2NvcnB1c19zdW1tYXJ5IjogewogICAgImNvcnBvcmFfY2xlYW4iOiBbCiAgICAgICJiaWdzb2xkYl9kZW5zaXR5ICg5OS45NSUpIiwKICAgICAgInBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXMgcmVmcmFjdGl2ZS1pbmRleCBheGlzICg5OS45OTYlKSIKICAgIF0sCiAgICAiY29ycG9yYV93aXRoX3Zpb2xhdGlvbnMiOiBbCiAgICAgICJvcGVucG9seV9wcm9wZXJ0aWVzIiwKICAgICAgImJpZ3NvbGRiX3NvbHViaWxpdHkgKGR1cGxpY2F0ZS1jb250cmFkaWN0aW9uIGF4aXMpIiwKICAgICAgInBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXMiCiAgICBdLAogICAgImhlYWRsaW5lIjogIlRoZSBwb3J0Zm9saW8td2lkZSBjbGFpbSAndGhlIGxhYmVsIGRhdGEgdW5kZXJseWluZyB0aGlzIHBvcnRmb2xpbydzIE1MIGNsYWltcyBpcyBwaHlzaWNhbGx5IGFkbWlzc2libGUnIGRvZXMgTk9UIGhvbGQgdW5pZm9ybWx5LiBCZXlvbmQgdGhlIGFscmVhZHktcmVmdXRlZCBSYWRvblB5IFBJMTA3MCBkaWVsZWN0cmljIGNhc2UgKEM4KSwgdGhpcyBhdWRpdCBmaW5kczogKDEpIE9wZW5Qb2x5IFRnL1RtIHZpb2xhdGVzIGEgYmFzaWMgcG9seW1lci10aGVybW9keW5hbWljcyBvcmRlcmluZyBjb25zdHJhaW50IGluIDE0LjQlIG9mIGV2YWx1YWJsZSByb3dzLCBmZWVkaW5nIDggZG93bnN0cmVhbSBLUElzIGluY2x1ZGluZyB0aGUgcHJpbWFyeSBUZyBNTCBiYXNlbGluZTsgKDIpIEJpZ1NvbERCIHNvbHViaWxpdHksIHdoaWxlIGNsZWFuIG9uIGl0cyBwcmltYXJ5IG1vbGUtZnJhY3Rpb24gYm91bmQsIGhhcyBpbnRlcm5hbGx5IENPTlRSQURJQ1RPUlkgcmVwZWF0ZWQgbWVhc3VyZW1lbnRzIGluIDkwLjMlIG9mIGl0cyBkdXBsaWNhdGUtbWVhc3VyZW1lbnQgZ3JvdXBzOyAoMykgdGhlIHJhdyBSYWRvblB5IHNpbXVsYXRpb24gZHVtcCAocG9seW9taWNzX3NtYWxsX21vbGVjdWxlcykgc2hvd3MgdGhlIHNhbWUgRnJvaGxpY2gtaW5lcXVhbGl0eSBkZWZlY3QgYXMgUEkxMDcwIGJ1dCBhdCBhIG1hdGVyaWFsbHkgZGlmZmVyZW50IHJhdGUgKDM5LjIlIHZzIDg5LjUlKSwgcmV2ZWFsaW5nIHRoYXQgUEkxMDcwJ3MgY3VyYXRpb24gY29uY2VudHJhdGVkIHRoZSBkZWZlY3QgcmF0aGVyIHRoYW4gbWVyZWx5IGluaGVyaXRpbmcgaXQuIE9ubHkgQmlnU29sREIgZGVuc2l0eSBhbmQgdGhlIFJhZG9uUHkgcmVmcmFjdGl2ZS1pbmRleCBheGlzIGFyZSBjbGVhbiAoPjk5LjklKS4iLAogICAgIm5fY29ycG9yYV9hdWRpdGVkIjogNAogIH0sCiAgImZpcmUxX3JlY2VpcHRfc2hhMjU2IjogIjFiZWFkNDNmNzIwNjEyOTMzZWYwMGQ3MzgwMThhNTg3ZDMxZDFhMjJkMWMwMGM2OTAxMDczNjQwYjdjNGVhMzIiLAogICJmaXJlX3NlcXVlbmNlIjogIlcyIGZpcmUgMiBvZiA0IChtYXhfZmlyZXMpLiBSZS1zaWduIG9mIGZpcmUgMSB3aXRoIHRoZSByZWFsIHRydXN0LWFuY2hvcmVkIFBoYXNlLTAga2V5LiIsCiAgImdhdGVzIjogewogICAgImNvcnBvcmFfYXVkaXRlZF9jYXJyaWVkX2ZvcndhcmRfdmVyYmF0aW1fZnJvbV9maXJlMV9ieV9maWVsZF9jb3B5IjogdHJ1ZSwKICAgICJkZXBlbmRlbnRfa3BpX2xpc3RfaW5jbHVkZWRfcGVyX2NvcnB1cyI6IHRydWUsCiAgICAiZWFjaF9jb3JwdXNfaGFzX25hbWVkX3BoeXNpY2FsX29yX2RlZmluaXRpb25hbF9jb25zdHJhaW50X3dpdGhfY2l0YXRpb24iOiB0cnVlLAogICAgImZpcmUxX2NpdGVkX2J5X3NoYTI1Nl9ub3RfcmVjb21wdXRlZCI6IHRydWUsCiAgICAiZ2VfNF9jb3Jwb3JhX2F1ZGl0ZWQiOiB0cnVlLAogICAgInNpZ25hdHVyZV9maWVsZF9pc19kc3NlX2VudmVsb3BlX29iamVjdCI6IHRydWUsCiAgICAic2lnbmVkX3dpdGhfdHJ1c3Rfc3RvcmVfcmVnaXN0ZXJlZF9rZXkiOiB0cnVlLAogICAgInR3b19yZXBsYXlfYnl0ZV9zdGFibGVfdGhpc19yZWNlaXB0IjogdHJ1ZQogIH0sCiAgIm1ldGhvZCI6ICJGb3IgZWFjaCBjb3JwdXMsIHJlYWQgdGhlIG5vcm1hbGl6ZWQgSlNPTkwtZ3ogcm93cyBkaXJlY3RseSBmcm9tIHRoZSBzaGFyZWQgZGF0YSBsYWtlIGF0IGZlZWRiYWNrL3YyL25vcm1hbGl6ZWQvPGFjcXVpc2l0aW9uX3VuaXRfaWQ+Lmpzb25sLmd6ICh0aGUgc2FtZSBmaWxlcyB0aGlzIG1vZHVsZSdzIG1hbmlmZXN0cyBhdCByZWZlcmVuY2UvbXZwMjAvbWFuaWZlc3RzLyouanNvbiBwb2ludCB0byB2aWEgbm9ybWFsaXplZF9wYXRoL25vcm1hbGl6ZWRfc2hhMjU2KSwgYXBwbHkgb25lIG9yIG1vcmUgcGh5c2ljYWwvZGVmaW5pdGlvbmFsIGNvbnN0cmFpbnRzIGluZGVwZW5kZW50IG9mIGFueSBNTCBtb2RlbCwgYW5kIGNvdW50IGFkbWlzc2libGUgdnMgaW5hZG1pc3NpYmxlIHJvd3MuIE5vIHF1YXJhbnRpbmVkIG9yIENPTlRFWFRfT05MWSBzb3VyY2Ugd2FzIG9wZW5lZDsgYWxsIGZvdXIgY29ycG9yYSBjYXJyeSByaWdodHNfY2xhc3M9REVSSVZBVElWRV9BTExPV0VEIHBlciB0aGVpciBmZWVkYmFja192Mi9yaWdodHMvKi5qc29uIG1hbmlmZXN0cy4iLAogICJtb2RpZmllc19ub19saXZlX2NvbmZpZyI6IHRydWUsCiAgIm1vZHVsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5IiwKICAib2JqZWN0aXZlIjogIkF1ZGl0ID49NCBpbi10cmVlIGNvcnBvcmEgZm9yIHBoeXNpY2FsLWFkbWlzc2liaWxpdHkgdmlvbGF0aW9ucyBpbiB0aGVpciBncm91bmQtdHJ1dGggbGFiZWwgY29sdW1ucywgcXVhbnRpZnkgbl90b3RhbC9uX2FkbWlzc2libGUvcGN0IHBlciBjb3JwdXMsIGNpdGUgdGhlIHBoeXNpY2FsIGp1c3RpZmljYXRpb24gZm9yIGVhY2ggY29uc3RyYWludCwgYW5kIGxpc3Qgd2hpY2ggZG93bnN0cmVhbSBtb2R1bGUgS1BJcyBkZXBlbmQgb24gdGhlIGZsYWdnZWQgcm93cy4iLAogICJwcmlvcl9maXJlX2NvbnRleHQiOiAiVzIgZmlyZSAxIChyZWNlaXB0IHNoYTI1Nj0xYmVhZDQzZjcyMDYxMjkzM2VmMDBkNzM4MDE4YTU4N2QzMWQxYTIyZDFjMDBjNjkwMTA3MzY0MGI3YzRlYTMyKSBnZW5lcmFsaXplZCB0aGUgQzggUmFkb25QeS1kaWVsZWN0cmljIHBoeXNpY2FsLWFkbWlzc2liaWxpdHkgYXVkaXQgKGVwc19zdGF0aWM+PW5eMikgdG8gNCBpbi10cmVlIGNvcnBvcmE6IE9wZW5Qb2x5IFRnL1RtIG9yZGVyaW5nIChCb3llci1CZWFtYW4pLCBCaWdTb2xEQiBzb2x1YmlsaXR5IG1vbGUtZnJhY3Rpb24gYm91bmQgKyBkdXBsaWNhdGUtbWVhc3VyZW1lbnQgY29udHJhZGljdGlvbiBjaGVjaywgQmlnU29sREIgZGVuc2l0eSBiYW5kLCBhbmQgdGhlIHJhdyBSYWRvblB5IHBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXMgY29ycHVzIChGcm9obGljaCBpbmVxdWFsaXR5ICsgcmVmcmFjdGl2ZS1pbmRleCBsb3dlciBib3VuZCkgYXQgMjZ4IFBJMTA3MCdzIHNjYWxlLiBGaXJlIDEncyBzY2llbmNlLCByZWZ1dGF0aW9uIGNyaXRlcmlvbiwgYW5kIHR3by1yZXBsYXkgZ2F0ZSB3ZXJlIGFsbCBjb3JyZWN0LCBidXQgdGhlIHJlY2VpcHQgd2FzIHNpZ25lZCB3aXRoIHRoZSByZXBvLWxvY2FsIExPQ0FMX0RFVkVMT1BNRU5UX0FVRElUX09OTFkgZGV2IGtleSAoa2V5X2lkPWxvY2FsLTkwMjg3NzNmNDk1OTExOTMpLCB3aGljaCBpcyBleHBsaWNpdGx5IE5PVCBwcmVzZW50IGluIGNvbmZpZy9waGFzZTAtdHJ1c3Qtc3RvcmUudjEuanNvbi4gVGhlIGxhdW5jaGVyIHJlamVjdGVkIHRoYXQgdmVyZGljdDogdmVyaWZpZWRfbmV3X3NpZ25lZD0wLCBiZWNhdXNlIGEgREVDTEFSRUQgYXJ0aWZhY3QgbXVzdCBwYXNzIHJlYWwgRWQyNTUxOSBEU1NFIHZlcmlmaWNhdGlvbiBhZ2FpbnN0IHRoZSBwaW5uZWQgUGhhc2UtMCB0cnVzdC1zdG9yZSBrZXkuIFRoaXMgZmlyZSBkb2VzIG5vdCByZXBlYXQgb3IgZXh0ZW5kIHRoZSBhdWRpdCAtLSBpdCByZS1kZXJpdmVzIHRoZSBpZGVudGljYWwgZmluZGluZ3MgZnJvbSBmaXJlIDEgKGNhcnJpZWQgZm9yd2FyZCB2ZXJiYXRpbSwgY2l0ZWQgYnkgc2hhMjU2KSBpbnRvIGEgbmV3IHJlY2VpcHQsIHNpZ25lZCB3aXRoIHRoZSBwaGFzZTAtaW50ZXJuYWwtcmV2aWV3ZXIga2V5IGNvbmZpcm1lZCBwcmVzZW50IGF0IC9ob21lL3VidW50dS8ubG9jYWwvc2hhcmUvYW1waG9yYS9waGFzZTAva2V5cy8gYW5kIHJlZ2lzdGVyZWQgaW4gdGhlIHRydXN0IHN0b3JlIHdpdGggcGhhc2UwX2F1dGhvcml6ZWQ9dHJ1ZSwgcmV2b2tlZD1mYWxzZS4iLAogICJwcm9tb3Rlc19ub3RoaW5nIjogdHJ1ZSwKICAicHJvbW90aW9uX2Jsb2NrZWRfYnkiOiAiTk9UIHRoaXMgYXVkaXQncyBzY2llbmNlIChhbGwgZ2F0ZXMgcGFzcykgYW5kIE5PVCBrZXkgY3VzdG9keSAodHJ1c3QtYW5jaG9yZWQga2V5IG5vdyB1c2VkKS4gTWFuaWZlc3QgdW50b3VjaGVkIGF0IDY2LzExLiBNb2R1bGUgcHJvbW90aW9uIHN0aWxsIHJlcXVpcmVzIDIgaHVtYW4gZHVhbC1pZGVudGl0eSBjZXJlbW9ueSBrZXlzIHRoaXMgY3JvbiBkb2VzIG5vdCBob2xkLCBwZXIgc3RhbmRpbmcgZ292ZXJuYW5jZS4iLAogICJyZWNlaXB0X2lkIjogIncyLWZpcmUyLWNvcnB1cy1hZG1pc3NpYmlsaXR5LWF1ZGl0LXRydXN0LWFuY2hvcmVkLXJlc2lnbiIsCiAgInJlY29tbWVuZGVkX2ZvbGxvd3VwcyI6IFsKICAgICJvcGVucG9seS1leHBlcmltZW50YWwtdGctbWwtYmFzZWxpbmUta3BpLnYxLmpzb24gYW5kIHRoZSA3IG90aGVyIGRlcGVuZGVudCBLUElzIHNob3VsZCBiZSByZS1ydW4gd2l0aCB0aGUgMjQgVGc+PVRtIHJvd3MgZXhjbHVkZWQgZnJvbSB0cmFpbi9jYWxpYi90ZXN0IHRvIGRldGVybWluZSB3aGV0aGVyIHRoZSBzaGlwcGVkIFRnIE1BRSBpcyBpbmZsYXRlZCBieSB0aGVzZSBwaHlzaWNhbGx5LWluYWRtaXNzaWJsZSBleGFtcGxlcyAoc2FtZSBlc2NhbGF0aW9uIHBhdHRlcm4gYXMgQzggZmlyZSAyKS4iLAogICAgIkZpbGUgYSBkYXRhLWFjcXVpc2l0aW9uL3JpZ2h0cy1yZXZpZXcgYXNrIGZvciBCaWdTb2xEQjogdGhlIDkwLjMlIGR1cGxpY2F0ZS1jb250cmFkaWN0aW9uIHJhdGUgbWVhbnMgdGhlIGNvcnB1cyBuZWVkcyBhIHJlY29uY2lsaWF0aW9uIHBvbGljeSAoZS5nLiBrZWVwIG9ubHkgc2luZ2xlLXNvdXJjZSBvciBtZWRpYW4tb2YtYWdyZWVpbmctc291cmNlcyBtZWFzdXJlbWVudHMpIGJlZm9yZSBhbXBob3JhLXNvbHZlbnQtcHJvcGVydHkncyBTb2x2ZW5jeSBCaWdTb2xEQiBLUEkgKFJNU0UgMC44NzcsIGl0cyBvbmx5IGV4dC12YWxpZGF0ZWQgY2xhaW0pIGNhbiBiZSBjb25zaWRlcmVkIGNsZWFuIGF0IHRoZSBsYWJlbCBsZXZlbCAtLSB0aGlzIGlzIGNyb3NzLW1vZHVsZSBhbmQgb3V0IG9mIHRoaXMgZmlyZSdzIHdyaXRlIHNjb3BlLCBidXQgaXMgdGhlIHNpbmdsZSBoaWdoZXN0LWxldmVyYWdlIGZvbGxvdy11cCB0aGlzIGF1ZGl0IHN1cmZhY2VzLiIsCiAgICAiSW52ZXN0aWdhdGUgV0hZIFBJMTA3MCdzIGN1cmF0aW9uIGNvbmNlbnRyYXRlZCB0aGUgRnJvaGxpY2gtaW5lcXVhbGl0eSBkZWZlY3QgKDg5LjUlIHZpb2xhdGlvbikgcmVsYXRpdmUgdG8gdGhlIHJhdyBwb2x5b21pY3Nfc21hbGxfbW9sZWN1bGVzIGR1bXAgaXQgd2FzIGRyYXduIGZyb20gKDM5LjIlIHZpb2xhdGlvbikgLS0gaWYgdGhlIGN1cmF0aW9uIGNyaXRlcmlvbiBjb3JyZWxhdGVzIHdpdGggc2ltdWxhdGlvbiBub24tY29udmVyZ2VuY2UsIHRoYXQgc2FtZSBub24tY29udmVyZ2VuY2UgZmxhZyBjb3VsZCBiZSB1c2VkIGFzIGEgY2hlYXAgYWRtaXNzaWJpbGl0eSBwcmUtZmlsdGVyIGFjcm9zcyB0aGUgd2hvbGUgcG9seW9taWNzX3NtYWxsX21vbGVjdWxlcyBjb3JwdXMgZm9yIGZ1dHVyZSBSYWRvblB5LWRlcml2ZWQgS1BJcy4iCiAgXSwKICAicmVmdXRhdGlvbl9jcml0ZXJpb24iOiAiUHJlLXJlZ2lzdGVyZWQ6IHRoZSBjbGFpbSBzdXJ2aXZlcyBvbmx5IGlmIEFMTCA+PTQgYXVkaXRlZCBjb3Jwb3JhIHNob3cgPj05NSUgYWRtaXNzaWJsZSByb3dzIG9uIHRoZWlyIHJlc3BlY3RpdmUgcGh5c2ljYWwgY29uc3RyYWludHMuIE9ic2VydmVkOiAyIG9mIDQgY29ycG9yYSBmYWxsIHdlbGwgYmVsb3cgdGhpcyBiYXIgKG9wZW5wb2x5X3Byb3BlcnRpZXMgODUuNiUsIHBvbHlvbWljc19zbWFsbF9tb2xlY3VsZXMgRnJvaGxpY2ggYXhpcyA2MC44JSksIGFuZCBhIDV0aCBkaWFnbm9zdGljIGF4aXMgKEJpZ1NvbERCIGR1cGxpY2F0ZS1jb250cmFkaWN0aW9uIHJhdGUpIHNob3dzIDkwLjMlIGludGVybmFsIGNvbnRyYWRpY3Rpb24uIENyaXRlcmlvbiBmaXJlZCAtLSBjbGFpbSBSRUZVVEVELiIsCiAgInJpZ2h0c19jaGVjayI6ICJBbGwgNCBjb3Jwb3JhIHJlYWQgZnJvbSBmZWVkYmFjay92Mi9ub3JtYWxpemVkLyouanNvbmwuZ3ogY2FycnkgcmlnaHRzX2NsYXNzPURFUklWQVRJVkVfQUxMT1dFRCBwZXIgdGhlaXIgcmVzcGVjdGl2ZSBmZWVkYmFja192Mi9yaWdodHMvKi5qc29uIGFuZCBtYW5pZmVzdHMvKi5qc29uIChvcGVucG9seV9wcm9wZXJ0aWVzLCByYWRvbnB5X3BpMTA3MC9wb2x5b21pY3Nfc21hbGxfbW9sZWN1bGVzIGFscmVhZHkgbG9hZC1iZWFyaW5nIGVsc2V3aGVyZSBpbiB0aGlzIG1vZHVsZTsgYmlnc29sZGJfc29sdWJpbGl0eS9iaWdzb2xkYl9kZW5zaXR5IGFyZSBERVJJVkFUSVZFX0FMTE9XRUQgcGVyIGZlZWRiYWNrX3YyIGNhdGFsb2cuanNvbikuIE5vIHF1YXJhbnRpbmVkLCBVU0JSX1JJR0hUU19SRVZJRVdfUkVRVUlSRUQsIG9yIENPTlRFWFRfT05MWSBzb3VyY2Ugd2FzIG9wZW5lZC4iLAogICJzY2hlbWEiOiAiYW1waG9yYS5tb2xlY3VsZS1wcm9wZXJ0eS5jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxIiwKICAic2lnbmluZ19rZXkiOiB7CiAgICAia2V5X2lkIjogInBoYXNlMC1pbnRlcm5hbC1yZXZpZXdlci00NzIzM2FmMThlNTExYTMwNTU0OGQ0ZWUzMDZkYTAxODYxMmY1YjVhY2EyMDFmOTk4NjUwNGQzZDdkYjMwMTFiIiwKICAgICJwaGFzZTBfYXV0aG9yaXplZCI6IHRydWUsCiAgICAicHVibGljX2tleV9oZXgiOiAiMzNkM2E1ZGJjYWU1MmM0NDlkZjM2YzA2NzBkZjBmYTlkOGE2MDgxOWQxNjZjMzNiOTZkNjJiMmJlMWRiMDgzZiIsCiAgICAicmV2b2tlZCI6IGZhbHNlLAogICAgInJvbGUiOiAiUEhBU0UwX0lOVEVSTkFMX1JFVklFV0VSIiwKICAgICJ0cnVzdF9hbmNob3JlZCI6IHRydWUsCiAgICAidHJ1c3Rfc3RvcmVfcGF0aCI6ICJjb25maWcvcGhhc2UwLXRydXN0LXN0b3JlLnYxLmpzb24iCiAgfSwKICAic3R1ZHlfaWQiOiAidzItY29ycHVzLWFkbWlzc2liaWxpdHktYXVkaXQiLAogICJ0d29fcmVwbGF5X2dhdGUiOiB7CiAgICAiYnl0ZV9pZGVudGljYWwiOiB0cnVlLAogICAgImNhbm9uaWNhbF9zaGEyNTYiOiAiNDdlNjY1NjlkNmZhZTI0ODY5YjlkZDU2NzM3NTQyMzIyM2VlOTYyODllYWI3MGE0MTA4Mzc5ZDEyNTllYzY0YiIsCiAgICAicnVuQl9zaGEyNTYiOiAiNDdlNjY1NjlkNmZhZTI0ODY5YjlkZDU2NzM3NTQyMzIyM2VlOTYyODllYWI3MGE0MTA4Mzc5ZDEyNTllYzY0YiIKICB9LAogICJ2ZXJkaWN0IjogIlJFRlVURUQiCn0=",
+    "payloadType": "application/vnd.amphora.molecule-property.corpus-admissibility-audit-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+        "sig": "BiN5lw/dW0TU8jMNKiFLUld9RVzE2NboL6m2UaGhKUioJqG77UxgSCZV3Co/IN5kdgz8mYNwSlQA+Qi/+Mt5DA=="
+      }
+    ]
+  },
+  "signing_key": {
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "phase0_authorized": true,
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "revoked": false,
+    "role": "PHASE0_INTERNAL_REVIEWER",
+    "trust_anchored": true,
+    "trust_store_path": "config/phase0-trust-store.v1.json"
+  },
+  "study_id": "w2-corpus-admissibility-audit",
+  "two_replay_gate": {
+    "byte_identical": true,
+    "canonical_sha256": "47e66569d6fae24869b9dd567375423223ee96289eab70a4108379d1259ec64b",
+    "runB_sha256": "47e66569d6fae24869b9dd567375423223ee96289eab70a4108379d1259ec64b"
+  },
+  "verdict": "REFUTED"
+}

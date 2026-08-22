@@ -1,0 +1,40 @@
+{
+  "schema": "amphora.model-source-landscape.v1",
+  "module_id": "amphora-barrier-corrosion-score",
+  "updated_on": "2026-07-17",
+  "fto_status": "FTO NOT PERFORMED",
+  "sources": [
+    {
+      "source_id": "usbr-st-21019",
+      "source_url": "https://data.usbr.gov/catalog/8048",
+      "acquisition_date": "2026-07-17",
+      "raw_sha256": null,
+      "license": "ACCEPTED_LINEAGE_RECORD_NO_COPIED_ARTIFACT_REUSE",
+      "rights_status": "LINEAGE_CONTEXT_ONLY",
+      "applicability": "Original six-system limitations and protocol lineage",
+      "eligible_for_derivatives": false
+    },
+    {
+      "source_id": "usbr-st-19168",
+      "source_url": "https://data.usbr.gov/catalog/4640/item/11562",
+      "acquisition_date": "2026-07-17",
+      "raw_path": "amphora-barrier-corrosion-score/reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx",
+      "raw_sha256": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1",
+      "license": "USBR_RIGHTS_REVIEW_REQUIRED",
+      "rights_status": "ACQUIRED_UNTOUCHED_QUARANTINED_PENDING_RIGHTS_REVIEW",
+      "applicability": "Ten-system untouched external shadow test",
+      "eligible_for_derivatives": false
+    },
+    {
+      "source_id": "coatings-2023-13-598",
+      "source_url": "https://www.mdpi.com/2079-6412/13/3/598",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "LINK_ONLY_METHOD_LIMITATION_ANCHOR",
+      "rights_status": "CONTEXT_ONLY",
+      "applicability": "Low-frequency impedance limitation; replicate plus visual/adhesion corroboration",
+      "eligible_for_derivatives": false
+    }
+  ],
+  "patents": []
+}

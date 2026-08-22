@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-be318c4f1f9ff968cffd71292225a3693c91313063638749d5ad3a1d67bdaede",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-88f4b0f87f86f407446847be3f76a20811e3fa782ab6313bc1b684fcd1435671.json",
+      "revision_id": "preparation-revision-88f4b0f87f86f407446847be3f76a20811e3fa782ab6313bc1b684fcd1435671",
+      "sha256": "dc5409ccc92ad2c6434172fde25e75b4ca7f379ac4b8af2276836c4c2daedf3c"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-be318c4f1f9ff968cffd71292225a3693c91313063638749d5ad3a1d67bdaede.json",
+      "revision_id": "preparation-revision-be318c4f1f9ff968cffd71292225a3693c91313063638749d5ad3a1d67bdaede",
+      "sha256": "9f2b5d774add722b981d118758662814d178be0ce1608657d51423827b6c69fa"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

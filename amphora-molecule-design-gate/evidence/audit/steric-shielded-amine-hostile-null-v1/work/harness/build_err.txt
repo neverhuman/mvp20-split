@@ -1,0 +1,8 @@
+   Compiling amphora-rdkit-ffi v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi)
+   Compiling serde_jcs v0.2.0
+   Compiling cxx v1.0.199
+   Compiling amphora-core v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-core)
+   Compiling amphora-molecule-capabilities v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-capabilities)
+   Compiling steric-shielded-amine-hostile-null-harness v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-design-gate/evidence/audit/steric-shielded-amine-hostile-null-v1/work/harness)
+    Finished `release` profile [optimized] target(s) in 14.07s
+     Running `target/release/steric-shielded-amine-hostile-null-harness`

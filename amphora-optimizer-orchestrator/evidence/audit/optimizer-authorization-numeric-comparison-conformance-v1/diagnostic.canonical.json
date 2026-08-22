@@ -1,0 +1,1402 @@
+{
+  "acceptance_bar_floors": {
+    "all_met": true,
+    "floor_results": {
+      "binary64_rounding_explains_all_ordering_divergence_floor": true,
+      "ieee754_ordering_parity_floor": true,
+      "ieee_special_value_reachability_ceiling": true,
+      "m3_descriptive_adequacy_floor": true,
+      "nonnumeric_ordering_fail_closed_floor": true,
+      "quarantine_invariant_floor": true
+    },
+    "published_floors": {
+      "binary64_rounding_explains_all_ordering_divergence_floor": 1.0,
+      "ieee754_ordering_parity_floor": 1.0,
+      "ieee_special_value_reachability_ceiling": 0,
+      "m3_descriptive_adequacy_floor": 1.0,
+      "nonnumeric_ordering_fail_closed_floor": 1.0,
+      "quarantine_invariant_floor": 1.0
+    }
+  },
+  "authority": "AUDIT_ONLY",
+  "closes": [
+    "Executes the LIVE Rust runtime (amphora_core::authorize_optimizer_request) for the first time in this module's audit line, over 7776 cases, capturing exact Err reason strings (1 distinct) -- partially discharging the Phase-1 axis named by optimizer-authorization-clause-necessity-v1 for the numeric surface.",
+    "H1 SETTLED: the IEEE 754 special-value attack class is structurally empty -- all 5 NaN/Infinity/out-of-range literals are rejected at the RFC 8259 front door before authorize_optimizer_request is ever entered, so no unordered comparison can be induced from JSON input.",
+    "H2 SETTLED: the four ordering operators are IEEE 754-2019 Sec.5.11 conformant over binary64 on 2500/2500 numeric cases, and fail closed on 1344/1344 non-numeric-operand cases.",
+    "H3 REFUTED: `==`/`!=` are NOT representation-invariant. 16 of 24 exact-value-equal literal pairs compare UNEQUAL at the runtime, confirming that the int/float representation split previously recorded for amphora-cro-protocol-packager canonicalization also reaches the authorization gate.",
+    "H3b REFUTED: the RFC 7493 Sec.2.2 interoperable-integer range is NECESSARY but NOT SUFFICIENT for ordering agreement -- 20 divergent cases have BOTH operands inside [-(2^53-1), 2^53-1] (subnormal tie-rounding 2.5e-324 -> 5e-324, and underflow 1e-400 -> 0). The correct closed criterion, confirmed on all 32/32 divergences, is inexact binary64 rounding of an operand. A front-door range check alone would therefore NOT restore exact-value ordering.",
+    "H4 MEASURED: the sibling CPython contract oracle diverges from the live runtime on 67 of 7776 cases (all on the equality operators), quantifying for the first time the fidelity limit of the oracle that carries the two shipped optimizer audit receipts.",
+    "Quarantine invariant re-confirmed on the live runtime: all 2211 ACCEPT outcomes carry ranking_performed=false, solver_invoked=false, usable_by_optimizer=false, eligible_objective_count=0, authority_upgrade=false, candidate_created_evidence=false -- no numeric input escalates authority."
+  ],
+  "counts": {
+    "distinct_runtime_reason_strings": 1,
+    "equality_divergences_vs_exact_s1": 48,
+    "fail_closed_vs_s1": 40,
+    "fail_closed_vs_s2": 24,
+    "fail_open_vs_s1": 40,
+    "fail_open_vs_s2": 24,
+    "ieee754_ordering_cases_compared": 2500,
+    "ieee754_ordering_mismatches": 0,
+    "literals": 36,
+    "nonnumeric_ordering_cases": 1344,
+    "operators": 6,
+    "ordering_divergences_vs_exact_s1": 32,
+    "ordering_divergences_with_both_operands_inside_ijson_range": 20,
+    "reachable_literals": 31,
+    "representation_orbit_equality_pairs": 24,
+    "representation_sensitive_orbit_pairs": 16,
+    "runtime_accepts": 2211,
+    "runtime_parse_rejects": 2010,
+    "runtime_rejects": 3555,
+    "sibling_oracle_divergences": 67,
+    "total_cases": 7776,
+    "unreachable_literals": 5
+  },
+  "distinct_runtime_reason_strings": [
+    "optimizer hard constraint failed"
+  ],
+  "does_not_close": [
+    "The equality non-conformance is a CONSTRAINT-SCREEN semantics defect, not an authority escalation: every affected outcome still satisfies the quarantine invariant. Its exploitable direction is `!=` (a candidate-authored constraint `!= 110.0` passes against a gate value of 110 that denotes the same number); the `==` direction is fail-closed (availability, not authority).",
+    "Remediating the defect requires a Rust change (numeric-value-normalizing comparison, or an I-JSON range + canonical-number-form admission check at the front door). This cron holds no authority to modify amphora-core; the fix is a Phase-1 item.",
+    "Coverage is the scalar comparison surface only: nested container operands, path traversal, and multi-constraint conjunction interactions are out of scope here.",
+    "The corpus is a hand-curated boundary census (36 literals), not an exhaustive enumeration of the binary64 domain; it targets the documented RFC 7493 / IEEE 754 boundaries rather than random sampling.",
+    "The live harness discharges the Phase-1 reason-string axis only PARTIALLY: this surface emits 1 distinct Err string(s) (['optimizer hard constraint failed']), because every non-comparison field is held well-formed by construction. Full Rust error-taxonomy parity across all 10 documented reason classes still requires re-running the clause-necessity ablation against this live harness.",
+    "Sibling-oracle divergence is measured, not repaired: the shipped optimizer_authorization_oracle.py is left byte-identical (sha256 pinned and re-verified) so the two existing receipts remain reproducible. Correcting its _json_eq to a representation-tagged model is a follow-on item.",
+    "M3 is post-hoc and descriptive; it is not evidence that serde_json's semantics are specified anywhere, and it must be re-validated on any serde_json version bump."
+  ],
+  "fail_closed_vs_exact_semantics": {
+    "case_ids": [
+      "L01_int_zero|L02_int_neg_zero|==",
+      "L01_int_zero|L03_float_zero|==",
+      "L01_int_zero|L04_float_neg_zero|==",
+      "L01_int_zero|L27_float_underflow|<",
+      "L02_int_neg_zero|L01_int_zero|==",
+      "L02_int_neg_zero|L27_float_underflow|!=",
+      "L02_int_neg_zero|L27_float_underflow|<",
+      "L03_float_zero|L01_int_zero|==",
+      "L03_float_zero|L27_float_underflow|!=",
+      "L03_float_zero|L27_float_underflow|<",
+      "L04_float_neg_zero|L01_int_zero|==",
+      "L04_float_neg_zero|L27_float_underflow|!=",
+      "L04_float_neg_zero|L27_float_underflow|<",
+      "L05_int_one|L06_float_one|==",
+      "L06_float_one|L05_int_one|==",
+      "L07_int_110|L08_float_110|==",
+      "L07_int_110|L09_exp_110|==",
+      "L08_float_110|L07_int_110|==",
+      "L09_exp_110|L07_int_110|==",
+      "L10_int_100|L11_exp_100|==",
+      "L11_exp_100|L10_int_100|==",
+      "L12_int_neg_one|L13_float_neg_one|==",
+      "L13_float_neg_one|L12_int_neg_one|==",
+      "L14_int_2p53|L15_int_2p53_plus1|<",
+      "L15_int_2p53_plus1|L14_int_2p53|>",
+      "L18_int_u64_max|L19_int_u64_max_plus1|<",
+      "L19_int_u64_max_plus1|L18_int_u64_max|>",
+      "L20_int_i64_min|L21_int_i64_min_minus1|>",
+      "L21_int_i64_min_minus1|L20_int_i64_min|<",
+      "L25_float_min_subnormal|L26_float_half_subnormal|!=",
+      "L25_float_min_subnormal|L26_float_half_subnormal|>",
+      "L26_float_half_subnormal|L25_float_min_subnormal|!=",
+      "L26_float_half_subnormal|L25_float_min_subnormal|<",
+      "L27_float_underflow|L01_int_zero|>",
+      "L27_float_underflow|L02_int_neg_zero|!=",
+      "L27_float_underflow|L02_int_neg_zero|>",
+      "L27_float_underflow|L03_float_zero|!=",
+      "L27_float_underflow|L03_float_zero|>",
+      "L27_float_underflow|L04_float_neg_zero|!=",
+      "L27_float_underflow|L04_float_neg_zero|>"
+    ],
+    "count": 40,
+    "truncated": false
+  },
+  "fail_open_vs_exact_semantics": {
+    "case_ids": [
+      "L01_int_zero|L02_int_neg_zero|!=",
+      "L01_int_zero|L03_float_zero|!=",
+      "L01_int_zero|L04_float_neg_zero|!=",
+      "L01_int_zero|L27_float_underflow|>=",
+      "L02_int_neg_zero|L01_int_zero|!=",
+      "L02_int_neg_zero|L27_float_underflow|==",
+      "L02_int_neg_zero|L27_float_underflow|>=",
+      "L03_float_zero|L01_int_zero|!=",
+      "L03_float_zero|L27_float_underflow|==",
+      "L03_float_zero|L27_float_underflow|>=",
+      "L04_float_neg_zero|L01_int_zero|!=",
+      "L04_float_neg_zero|L27_float_underflow|==",
+      "L04_float_neg_zero|L27_float_underflow|>=",
+      "L05_int_one|L06_float_one|!=",
+      "L06_float_one|L05_int_one|!=",
+      "L07_int_110|L08_float_110|!=",
+      "L07_int_110|L09_exp_110|!=",
+      "L08_float_110|L07_int_110|!=",
+      "L09_exp_110|L07_int_110|!=",
+      "L10_int_100|L11_exp_100|!=",
+      "L11_exp_100|L10_int_100|!=",
+      "L12_int_neg_one|L13_float_neg_one|!=",
+      "L13_float_neg_one|L12_int_neg_one|!=",
+      "L14_int_2p53|L15_int_2p53_plus1|>=",
+      "L15_int_2p53_plus1|L14_int_2p53|<=",
+      "L18_int_u64_max|L19_int_u64_max_plus1|>=",
+      "L19_int_u64_max_plus1|L18_int_u64_max|<=",
+      "L20_int_i64_min|L21_int_i64_min_minus1|<=",
+      "L21_int_i64_min_minus1|L20_int_i64_min|>=",
+      "L25_float_min_subnormal|L26_float_half_subnormal|<=",
+      "L25_float_min_subnormal|L26_float_half_subnormal|==",
+      "L26_float_half_subnormal|L25_float_min_subnormal|==",
+      "L26_float_half_subnormal|L25_float_min_subnormal|>=",
+      "L27_float_underflow|L01_int_zero|<=",
+      "L27_float_underflow|L02_int_neg_zero|<=",
+      "L27_float_underflow|L02_int_neg_zero|==",
+      "L27_float_underflow|L03_float_zero|<=",
+      "L27_float_underflow|L03_float_zero|==",
+      "L27_float_underflow|L04_float_neg_zero|<=",
+      "L27_float_underflow|L04_float_neg_zero|=="
+    ],
+    "count": 40,
+    "truncated": false
+  },
+  "findings": {
+    "F1_ieee754_binary64_ordering": "CONFORMANT",
+    "F2_rfc8259_value_equality_representation_invariance": "REFUTED",
+    "F3_exact_vs_binary64_ordering": "DIVERGENT_UNDER_BINARY64_ROUNDING",
+    "F4_sibling_oracle_fidelity": "DIVERGENT",
+    "F5_ieee_special_value_attack_class": "STRUCTURALLY_EMPTY",
+    "F6_quarantine_invariant": "HOLDS_ON_ALL_ACCEPTS",
+    "F7_rfc7493_ijson_integer_range_sufficient_for_ordering_agreement": "REFUTED"
+  },
+  "gates": {
+    "all_pass": true,
+    "g1_reachability_prediction_parity": true,
+    "g2_ieee754_binary64_ordering_parity": true,
+    "g3_nonnumeric_ordering_fail_closed": true,
+    "g4_ieee_special_values_unreachable": true,
+    "g5_quarantine_invariant_universal": true,
+    "g6_m3_descriptive_adequacy": true,
+    "g7_ordering_divergence_explained_by_binary64_rounding": true,
+    "g8_sibling_contract_oracle_sha_unchanged": true
+  },
+  "hypothesis": "H1 (reachability): no IEEE 754 special value (NaN, +/-Infinity) and no out-of-binary64-range number is reachable through the RFC 8259 front door, so the NaN-unordered comparison attack class is structurally empty. H2 (IEEE conformance): the four ordering operators implement IEEE 754-2019 Sec.5.11 compareQuiet* over binary64 exactly. H3 (RFC 8259 value-equality): the equality operators are representation-invariant, i.e. two literals denoting the same mathematical number compare equal. H3 is the cross-module transfer of the int/float representation split already recorded for amphora-cro-protocol-packager canonicalization (110.0 vs 110). H4 (oracle fidelity): the sibling CPython contract oracle that carries the two shipped optimizer audit receipts is byte-faithful to the runtime on this surface.",
+  "method_lineage": [
+    "Closes, for the numeric-comparison surface, the axis named in optimizer-authorization-clause-necessity-v1 does_not_close: 'a live differential harness that executes the Rust runtime and captures its reason strings'.",
+    "Transfers the int/float representation hypothesis from amphora-cro-protocol-packager canonicalization-conformance (110.0 vs 110) onto a security-relevant authorization surface.",
+    "Follows amphora-candidate-contract differential-mutation in reporting divergence DIRECTION (fail-open vs fail-closed) rather than a bare mismatch count."
+  ],
+  "module": "amphora-optimizer-orchestrator",
+  "non_circularity": "The Rust side is the REAL runtime: runtime_probe/ declares a path dependency on amphora-core and calls the public amphora_core::authorize_optimizer_request; it contains no copy of the comparison logic. The spec side (numeric_comparison_oracle.py) is written from IEEE 754-2019 and RFC 8259/7493 only, imports nothing from the runtime, and admits no tunable parameter. S1 uses exact rationals (fractions.Fraction); no float touches S1. The descriptive model M3 is declared POST-HOC and is reported only as a characterization, never as evidence for H1-H4.",
+  "ordering_divergence_vs_exact": {
+    "all_explained_by_binary64_rounding": true,
+    "count": 32,
+    "h3b_counterexamples": [
+      "L01_int_zero|L27_float_underflow|<",
+      "L01_int_zero|L27_float_underflow|>=",
+      "L02_int_neg_zero|L27_float_underflow|<",
+      "L02_int_neg_zero|L27_float_underflow|>=",
+      "L03_float_zero|L27_float_underflow|<",
+      "L03_float_zero|L27_float_underflow|>=",
+      "L04_float_neg_zero|L27_float_underflow|<",
+      "L04_float_neg_zero|L27_float_underflow|>=",
+      "L25_float_min_subnormal|L26_float_half_subnormal|<=",
+      "L25_float_min_subnormal|L26_float_half_subnormal|>",
+      "L26_float_half_subnormal|L25_float_min_subnormal|<",
+      "L26_float_half_subnormal|L25_float_min_subnormal|>=",
+      "L27_float_underflow|L01_int_zero|<=",
+      "L27_float_underflow|L01_int_zero|>",
+      "L27_float_underflow|L02_int_neg_zero|<=",
+      "L27_float_underflow|L02_int_neg_zero|>",
+      "L27_float_underflow|L03_float_zero|<=",
+      "L27_float_underflow|L03_float_zero|>",
+      "L27_float_underflow|L04_float_neg_zero|<=",
+      "L27_float_underflow|L04_float_neg_zero|>"
+    ],
+    "h3b_rfc7493_range_criterion_sufficient": false,
+    "records": [
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L01_int_zero|L27_float_underflow|<",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": "<",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L01_int_zero|L27_float_underflow|>=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": ">=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L02_int_neg_zero|L27_float_underflow|<",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": "<",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L02_int_neg_zero|L27_float_underflow|>=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": ">=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L03_float_zero|L27_float_underflow|<",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": "<",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L03_float_zero|L27_float_underflow|>=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": ">=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L04_float_neg_zero|L27_float_underflow|<",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": "<",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L04_float_neg_zero|L27_float_underflow|>=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": ">=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L14_int_2p53|L15_int_2p53_plus1|<",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": "<",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L14_int_2p53|L15_int_2p53_plus1|>=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": ">=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L15_int_2p53_plus1|L14_int_2p53|<=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": "<=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L15_int_2p53_plus1|L14_int_2p53|>",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": ">",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L18_int_u64_max|L19_int_u64_max_plus1|<",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": "<",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L18_int_u64_max|L19_int_u64_max_plus1|>=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": ">=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L19_int_u64_max_plus1|L18_int_u64_max|<=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": "<=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L19_int_u64_max_plus1|L18_int_u64_max|>",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": ">",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L20_int_i64_min|L21_int_i64_min_minus1|<=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": "<=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L20_int_i64_min|L21_int_i64_min_minus1|>",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": ">",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L21_int_i64_min_minus1|L20_int_i64_min|<",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": "<",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L21_int_i64_min_minus1|L20_int_i64_min|>=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": ">=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L25_float_min_subnormal|L26_float_half_subnormal|<=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": "<=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L25_float_min_subnormal|L26_float_half_subnormal|>",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": ">",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L26_float_half_subnormal|L25_float_min_subnormal|<",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": "<",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L26_float_half_subnormal|L25_float_min_subnormal|>=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": ">=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L27_float_underflow|L01_int_zero|<=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": "<=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L27_float_underflow|L01_int_zero|>",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": ">",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L27_float_underflow|L02_int_neg_zero|<=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": "<=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L27_float_underflow|L02_int_neg_zero|>",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": ">",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L27_float_underflow|L03_float_zero|<=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": "<=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L27_float_underflow|L03_float_zero|>",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": ">",
+        "runtime": "REJECT"
+      },
+      {
+        "binary64_s2": "ACCEPT",
+        "case_id": "L27_float_underflow|L04_float_neg_zero|<=",
+        "direction_vs_exact": "FAIL_OPEN",
+        "exact_s1": "REJECT",
+        "op": "<=",
+        "runtime": "ACCEPT"
+      },
+      {
+        "binary64_s2": "REJECT",
+        "case_id": "L27_float_underflow|L04_float_neg_zero|>",
+        "direction_vs_exact": "FAIL_CLOSED",
+        "exact_s1": "ACCEPT",
+        "op": ">",
+        "runtime": "REJECT"
+      }
+    ]
+  },
+  "preconditions": {
+    "corpus_locked_and_order_fixed": true,
+    "m3_declared_post_hoc": true,
+    "rust_side_is_live_runtime_not_reimplementation": true,
+    "s1_uses_exact_rationals_no_float": true,
+    "spec_side_imports_no_runtime": true
+  },
+  "proposed_hardeners": [
+    {
+      "closes_finding": "F3/F7",
+      "id": "H01_canonical_number_admission",
+      "proposal": "Reject any numeric literal whose exact value is not exactly representable in binary64, so that RFC 8259 value semantics and IEEE 754 binary64 semantics coincide on every admitted operand.",
+      "requires": "amphora-core change (Phase-1)",
+      "surface": "front door (deserialization of OptimizerEnvelopeV1.gates and OptimizerConstraintRequestV1.expected)"
+    },
+    {
+      "closes_finding": "F2",
+      "id": "H02_value_normalizing_equality",
+      "proposal": "Compare numeric operands by mathematical value (as_f64 on both sides, or a canonical decimal form) instead of by serde_json Value variant, restoring RFC 8259 representation invariance.",
+      "requires": "amphora-core change (Phase-1)",
+      "surface": "amphora-core::comparison_passes `==` / `!=` arms"
+    },
+    {
+      "closes_finding": "partial F3",
+      "id": "H03_ijson_range_clamp",
+      "proposal": "Enforce the RFC 7493 Sec.2.2 interoperable integer range on gate and expected values. NOTE: this study REFUTES range-clamping as sufficient on its own -- it must be combined with H01.",
+      "requires": "amphora-core change (Phase-1)",
+      "surface": "front door"
+    },
+    {
+      "closes_finding": "F4",
+      "id": "H04_oracle_tagged_equality",
+      "proposal": "Model serde_json's variant-tagged Number equality (model M3 in this study) so the audit oracle reproduces the runtime on the equality operators; re-run oracle-parity-v1 and clause-necessity-v1 afterwards.",
+      "requires": "audit-tooling change only",
+      "surface": "optimizer_authorization_oracle.py::_json_eq"
+    },
+    {
+      "closes_finding": "F2 exposure",
+      "id": "H05_operator_allowlist_narrowing",
+      "proposal": "Restrict candidate-authored (request_source=CANDIDATE) hard constraints to the four ordering operators, which this study shows are IEEE 754 conformant, until H02 lands. This removes the only candidate-reachable exploitation path for the `!=` representation defect.",
+      "requires": "amphora-core change (Phase-1)",
+      "surface": "constraint declaration validation"
+    }
+  ],
+  "provenance": {
+    "corpus_sha256": "e2bc5e037525635ced62e511759bad979b67d6e9a0079dababa3c14a97250403",
+    "runtime_ground_truth_lines": 7776,
+    "runtime_ground_truth_sha256": "79aba1e4af8a91ed4ca53d0f30af2a67bb0127bf3c84e8e0efff2bc1339e461a",
+    "rust_probe_cargo_sha256": "6193797f9bd73ff8f66b811f484911df72fd61861465c425863cd92f89986ac9",
+    "rust_probe_main_sha256": "059c686e74fdfd2216cf894258eae28b1e4a9499f97147a068726db237c8d7c3",
+    "sibling_oracle_sha256": "a0da8ec147ed82bbdf0b58a56b157ba6a683cebe4cdddb2cc38f3d8f5d7d1774",
+    "spec_oracle_sha256": "8f6daf3e71b09522821fd472c40d9f2fcfa230b21bd5d295eda4b96f92baebab"
+  },
+  "purpose": "Characterize the ONLY arithmetic surface inside the amphora-optimizer-orchestrator deny-by-default reference monitor: the hard-constraint comparison operator table (amphora-core::comparison_passes, reached from authorize_optimizer_request). A hostile POLICY- or CANDIDATE-sourced request controls both operands and the operator, so this table is the one place where a numeric literal can flip a constraint from fail to pass without touching any authority field. The study measures the LIVE Rust runtime over a locked 36-literal x 36-literal x 6-operator JSON-text corpus entering through the RFC 8259 front door, and differentials it against two published semantics (RFC 8259 exact-value; IEEE 754-2019 binary64).",
+  "reachability_table": [
+    {
+      "agree": true,
+      "class": "integer",
+      "literal_id": "L01_int_zero",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "0"
+    },
+    {
+      "agree": true,
+      "class": "integer_signed_zero",
+      "literal_id": "L02_int_neg_zero",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "-0"
+    },
+    {
+      "agree": true,
+      "class": "float",
+      "literal_id": "L03_float_zero",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "0.0"
+    },
+    {
+      "agree": true,
+      "class": "float_signed_zero",
+      "literal_id": "L04_float_neg_zero",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "-0.0"
+    },
+    {
+      "agree": true,
+      "class": "integer",
+      "literal_id": "L05_int_one",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "1"
+    },
+    {
+      "agree": true,
+      "class": "float",
+      "literal_id": "L06_float_one",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "1.0"
+    },
+    {
+      "agree": true,
+      "class": "integer",
+      "literal_id": "L07_int_110",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "110"
+    },
+    {
+      "agree": true,
+      "class": "float",
+      "literal_id": "L08_float_110",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "110.0"
+    },
+    {
+      "agree": true,
+      "class": "float_exponent",
+      "literal_id": "L09_exp_110",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "1.10e2"
+    },
+    {
+      "agree": true,
+      "class": "integer",
+      "literal_id": "L10_int_100",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "100"
+    },
+    {
+      "agree": true,
+      "class": "float_exponent",
+      "literal_id": "L11_exp_100",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "1e2"
+    },
+    {
+      "agree": true,
+      "class": "integer",
+      "literal_id": "L12_int_neg_one",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "-1"
+    },
+    {
+      "agree": true,
+      "class": "float",
+      "literal_id": "L13_float_neg_one",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "-1.0"
+    },
+    {
+      "agree": true,
+      "class": "integer_ijson_boundary",
+      "literal_id": "L14_int_2p53",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "9007199254740992"
+    },
+    {
+      "agree": true,
+      "class": "integer_beyond_ijson",
+      "literal_id": "L15_int_2p53_plus1",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "9007199254740993"
+    },
+    {
+      "agree": true,
+      "class": "integer_beyond_ijson",
+      "literal_id": "L16_int_2p53_plus2",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "9007199254740994"
+    },
+    {
+      "agree": true,
+      "class": "integer_beyond_ijson",
+      "literal_id": "L17_int_neg_2p53_minus1",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "-9007199254740993"
+    },
+    {
+      "agree": true,
+      "class": "integer_u64_edge",
+      "literal_id": "L18_int_u64_max",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "18446744073709551615"
+    },
+    {
+      "agree": true,
+      "class": "integer_beyond_u64",
+      "literal_id": "L19_int_u64_max_plus1",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "18446744073709551616"
+    },
+    {
+      "agree": true,
+      "class": "integer_i64_edge",
+      "literal_id": "L20_int_i64_min",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "-9223372036854775808"
+    },
+    {
+      "agree": true,
+      "class": "integer_beyond_i64",
+      "literal_id": "L21_int_i64_min_minus1",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "-9223372036854775809"
+    },
+    {
+      "agree": true,
+      "class": "float_near_overflow",
+      "literal_id": "L22_float_1e308",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "1e308"
+    },
+    {
+      "agree": true,
+      "class": "float_overflow",
+      "literal_id": "L23_float_1e400",
+      "measured_reachable": false,
+      "predicted_reachable": false,
+      "prediction_basis": "NUMBER_OUT_OF_BINARY64_RANGE",
+      "text": "1e400"
+    },
+    {
+      "agree": true,
+      "class": "float_overflow",
+      "literal_id": "L24_float_neg_1e400",
+      "measured_reachable": false,
+      "predicted_reachable": false,
+      "prediction_basis": "NUMBER_OUT_OF_BINARY64_RANGE",
+      "text": "-1e400"
+    },
+    {
+      "agree": true,
+      "class": "float_subnormal",
+      "literal_id": "L25_float_min_subnormal",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "5e-324"
+    },
+    {
+      "agree": true,
+      "class": "float_subnormal_rounding",
+      "literal_id": "L26_float_half_subnormal",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "2.5e-324"
+    },
+    {
+      "agree": true,
+      "class": "float_underflow",
+      "literal_id": "L27_float_underflow",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NUMBER_IN_BINARY64_RANGE",
+      "text": "1e-400"
+    },
+    {
+      "agree": true,
+      "class": "ieee_special_nonjson",
+      "literal_id": "L28_lit_nan",
+      "measured_reachable": false,
+      "predicted_reachable": false,
+      "prediction_basis": "NOT_A_JSON_VALUE",
+      "text": "NaN"
+    },
+    {
+      "agree": true,
+      "class": "ieee_special_nonjson",
+      "literal_id": "L29_lit_inf",
+      "measured_reachable": false,
+      "predicted_reachable": false,
+      "prediction_basis": "NOT_A_JSON_VALUE",
+      "text": "Infinity"
+    },
+    {
+      "agree": true,
+      "class": "ieee_special_nonjson",
+      "literal_id": "L30_lit_neg_inf",
+      "measured_reachable": false,
+      "predicted_reachable": false,
+      "prediction_basis": "NOT_A_JSON_VALUE",
+      "text": "-Infinity"
+    },
+    {
+      "agree": true,
+      "class": "non_numeric",
+      "literal_id": "L31_bool_true",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NON_NUMERIC_JSON_VALUE",
+      "text": "true"
+    },
+    {
+      "agree": true,
+      "class": "non_numeric",
+      "literal_id": "L32_bool_false",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NON_NUMERIC_JSON_VALUE",
+      "text": "false"
+    },
+    {
+      "agree": true,
+      "class": "non_numeric",
+      "literal_id": "L33_null",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NON_NUMERIC_JSON_VALUE",
+      "text": "null"
+    },
+    {
+      "agree": true,
+      "class": "non_numeric",
+      "literal_id": "L34_string_110",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NON_NUMERIC_JSON_VALUE",
+      "text": "\"110\""
+    },
+    {
+      "agree": true,
+      "class": "non_numeric",
+      "literal_id": "L35_array_empty",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NON_NUMERIC_JSON_VALUE",
+      "text": "[]"
+    },
+    {
+      "agree": true,
+      "class": "non_numeric",
+      "literal_id": "L36_object_empty",
+      "measured_reachable": true,
+      "predicted_reachable": true,
+      "prediction_basis": "NON_NUMERIC_JSON_VALUE",
+      "text": "{}"
+    }
+  ],
+  "representation_orbit": {
+    "definition": "pairs of DISTINCT literals with identical exact mathematical value, compared with `==`",
+    "examples": [
+      {
+        "case_id": "L01_int_zero|L02_int_neg_zero|==",
+        "expected_text": "-0",
+        "gate_text": "0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L01_int_zero|L03_float_zero|==",
+        "expected_text": "0.0",
+        "gate_text": "0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L01_int_zero|L04_float_neg_zero|==",
+        "expected_text": "-0.0",
+        "gate_text": "0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L02_int_neg_zero|L01_int_zero|==",
+        "expected_text": "0",
+        "gate_text": "-0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L03_float_zero|L01_int_zero|==",
+        "expected_text": "0",
+        "gate_text": "0.0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L04_float_neg_zero|L01_int_zero|==",
+        "expected_text": "0",
+        "gate_text": "-0.0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L05_int_one|L06_float_one|==",
+        "expected_text": "1.0",
+        "gate_text": "1",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L06_float_one|L05_int_one|==",
+        "expected_text": "1",
+        "gate_text": "1.0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L07_int_110|L08_float_110|==",
+        "expected_text": "110.0",
+        "gate_text": "110",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L07_int_110|L09_exp_110|==",
+        "expected_text": "1.10e2",
+        "gate_text": "110",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L08_float_110|L07_int_110|==",
+        "expected_text": "110",
+        "gate_text": "110.0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L09_exp_110|L07_int_110|==",
+        "expected_text": "110",
+        "gate_text": "1.10e2",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L10_int_100|L11_exp_100|==",
+        "expected_text": "1e2",
+        "gate_text": "100",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L11_exp_100|L10_int_100|==",
+        "expected_text": "100",
+        "gate_text": "1e2",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L12_int_neg_one|L13_float_neg_one|==",
+        "expected_text": "-1.0",
+        "gate_text": "-1",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      },
+      {
+        "case_id": "L13_float_neg_one|L12_int_neg_one|==",
+        "expected_text": "-1",
+        "gate_text": "-1.0",
+        "ieee754_s2": "ACCEPT",
+        "rfc8259_s1": "ACCEPT",
+        "runtime": "REJECT"
+      }
+    ],
+    "pairs": 24,
+    "runtime_disagrees_with_rfc8259": 16
+  },
+  "run_type": "LIVE_RUST_RUNTIME_DIFFERENTIAL_NUMERIC_CONFORMANCE",
+  "runtime_source_anchors": {
+    "amphora-core/src/lib.rs": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "comparison_surface": "amphora-core/src/lib.rs::comparison_passes",
+    "runtime_entry_point": "amphora_core::authorize_optimizer_request",
+    "serde_json_pin": "=1.0.150 (features=[float_roundtrip]); matches workspace Cargo.lock",
+    "sibling_oracle_parity_oracle_sha256": "a0da8ec147ed82bbdf0b58a56b157ba6a683cebe4cdddb2cc38f3d8f5d7d1774"
+  },
+  "schema": "amphora.optimizer-orchestrator.numeric-comparison-conformance-diagnostic.v1",
+  "sibling_oracle_fidelity": {
+    "by_direction": {
+      "ORACLE_OVER_PERMISSIVE": 18,
+      "ORACLE_OVER_STRICT": 49,
+      "ORACLE_REASON_ONLY": 0
+    },
+    "divergences": 67,
+    "oracle_sha256": "a0da8ec147ed82bbdf0b58a56b157ba6a683cebe4cdddb2cc38f3d8f5d7d1774",
+    "records": [
+      {
+        "case_id": "L01_int_zero|L02_int_neg_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L01_int_zero|L02_int_neg_zero|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L01_int_zero|L03_float_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L01_int_zero|L03_float_zero|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L01_int_zero|L04_float_neg_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L01_int_zero|L04_float_neg_zero|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L01_int_zero|L27_float_underflow|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L01_int_zero|L27_float_underflow|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L02_int_neg_zero|L01_int_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L02_int_neg_zero|L01_int_zero|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L03_float_zero|L01_int_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L03_float_zero|L01_int_zero|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L04_float_neg_zero|L01_int_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L04_float_neg_zero|L01_int_zero|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L05_int_one|L06_float_one|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L05_int_one|L06_float_one|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L06_float_one|L05_int_one|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L06_float_one|L05_int_one|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L07_int_110|L08_float_110|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L07_int_110|L08_float_110|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L07_int_110|L09_exp_110|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L07_int_110|L09_exp_110|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L08_float_110|L07_int_110|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L08_float_110|L07_int_110|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L09_exp_110|L07_int_110|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L09_exp_110|L07_int_110|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L10_int_100|L11_exp_100|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L10_int_100|L11_exp_100|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L11_exp_100|L10_int_100|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L11_exp_100|L10_int_100|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L12_int_neg_one|L13_float_neg_one|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L12_int_neg_one|L13_float_neg_one|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L13_float_neg_one|L12_int_neg_one|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L13_float_neg_one|L12_int_neg_one|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L27_float_underflow|L01_int_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L27_float_underflow|L01_int_zero|==",
+        "oracle_error": "ORACLE_OVER_PERMISSIVE",
+        "runtime": "REJECT",
+        "sibling": "ACCEPT"
+      },
+      {
+        "case_id": "L33_null|L01_int_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L02_int_neg_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L03_float_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L04_float_neg_zero|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L05_int_one|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L06_float_one|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L07_int_110|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L08_float_110|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L09_exp_110|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L10_int_100|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L11_exp_100|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L12_int_neg_one|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L13_float_neg_one|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L14_int_2p53|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L15_int_2p53_plus1|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L16_int_2p53_plus2|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L17_int_neg_2p53_minus1|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L18_int_u64_max|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L19_int_u64_max_plus1|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L20_int_i64_min|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L21_int_i64_min_minus1|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L22_float_1e308|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L25_float_min_subnormal|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L26_float_half_subnormal|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L27_float_underflow|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L31_bool_true|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L32_bool_false|!=",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      },
+      {
+        "case_id": "L33_null|L33_null|==",
+        "oracle_error": "ORACLE_OVER_STRICT",
+        "runtime": "ACCEPT",
+        "sibling": "REJECT"
+      }
+    ],
+    "sha_unchanged": true,
+    "truncated": true
+  },
+  "study_id": "optimizer-authorization-numeric-comparison-conformance-v1",
+  "theory_reference": [
+    "IEEE Std 754-2019, IEEE Standard for Floating-Point Arithmetic, DOI 10.1109/IEEESTD.2019.8766229 -- Sec.4.3.1 roundTiesToEven; Sec.5.11 compareQuiet{Equal,Less,LessEqual,Greater,GreaterEqual} and the unordered predicate.",
+    "T. Bray (ed.), RFC 8259 / IETF STD 90, The JavaScript Object Notation (JSON) Data Interchange Format (Dec 2017), DOI 10.17487/RFC8259 -- Sec.6 number grammar (no NaN/Infinity tokens; numbers denote mathematical values).",
+    "ECMA-404, 2nd edition (Dec 2017), The JSON Data Interchange Syntax -- Sec.8 number syntax.",
+    "T. Bray (ed.), RFC 7493, The I-JSON Message Format (Mar 2015), DOI 10.17487/RFC7493 -- Sec.2.2 binary64 range limit and the interoperable integer range [-(2^53-1), 2^53-1].",
+    "J.P. Anderson, Computer Security Technology Planning Study, ESD-TR-73-51 (1972) -- reference monitor, complete mediation.",
+    "Saltzer & Schroeder, The Protection of Information in Computer Systems, Proc. IEEE 63(9):1278-1308 (1975), DOI 10.1109/PROC.1975.9939 -- fail-safe defaults."
+  ]
+}

@@ -1,0 +1,563 @@
+====================================================================================================
+amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json
+  -- supersedes --
+  [
+    {
+      "reason": "That AUDIT_ONLY receipt REFUTED the claim that the declared PRIMARY Phase-1-promotion-gating KPI value path metrics.unresolved_technical_categories is populated by the live checked Rust runtime (it was populated by nothing). This repair implements the population in evaluate_ip_fto_guard() per docs/mission.md + docs/capability-profile.json semantics; the refutation of the PRE-repair runtime remains a true historical record and is superseded, not erased.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-ip-fto-guard/evidence/audit/metric-schema-parity-v1/metric-schema-parity-receipt.v1.dsse.json",
+      "superseded_sha256": "5c7ac925944df036bb2154c7e4573dc0b752cb3a1bc0d3df022d3fd06285da5f"
+    },
+    {
+      "reason": "That AUDIT_ONLY receipt REFUTED (scoped) the general reference-monitor reading of the boolean_counsel_assertion_ignored lock: the pre-repair detection was a single literal-path presence check with a 100% false-negative rate (8/8) against alternate encodings. This repair replaces it with a recursive normalized-key reference-monitor scan; the refutation of the PRE-repair runtime remains a true historical record and is superseded, not erased.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-ip-fto-guard/evidence/audit/counsel-assertion-detection-completeness-v1/counsel-assertion-detection-completeness-receipt.v1.dsse.json",
+      "superseded_sha256": "53624d327d48bb90812c90352c933bab46740be31c78be439c1f4d93284cecea"
+    }
+  ]
+  -- receipt_id --
+  repair-R-B01-v1
+  -- schema --
+  amphora.assurance-capabilities.repair-r-b01-receipt.v1
+====================================================================================================
+amphora-barrier-corrosion-score/evidence/phase0/repairs/R-B02/done/barrier-index-repair-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "reason": "Partially supersedes ONLY the structural finding of W1 (locked_predictor_availability.available=false: metrics.barrier_index unconditionally None on every EisPredictionV1 construction site, making the locked primary KPI structurally unevaluable). This repair implements barrier_index in src/lib.rs so a Some(..) code path now exists inside predict() and is pinned by the module's own live test suite. The W1 receipt file is untouched and remains fully in force for everything else it established -- in particular the statistical-infeasibility findings (all 3 in-class series n=3,4,5 below FEASIBILITY_FLOOR=6; the n=3 series combinatorially unable to reach one-sided alpha=0.05) and the honest power analysis, none of which this code repair alters.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-barrier-corrosion-score/benchmarks/three-series-barrier-ranking-v1/three-series-barrier-ranking-receipt.v1.dsse.json",
+    "superseded_sha256": "87748769549f7d1c93f184ca790ba3d4b2c9060c22b755d45542a415d39f11dd"
+  }
+  -- receipt_id --
+  r-b02-barrier-index-repair-v1
+  -- schema --
+  amphora.barrier-corrosion-score.barrier-index-repair-receipt.v1
+====================================================================================================
+amphora-cure-potlife-gate/evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "preservation_note": "The superseded revision is preserved verbatim at evidence/phase0/repairs/R-A02/work/mission.md.pre-repair (same sha256). docs/mission.md received an authorized PROSE-only amendment; the JSON front-matter between the --- fences is byte-identical before and after (sha256 60b08a7872a6912363f870cf849fc04bd965a18e8ee612ddf45bedc3ca0b0503). No signed artifact, ledger line, KPI, manifest, or amphora-cron byte was deleted or modified.",
+    "reason": "mission.md carried the blanket claim 'under 15% error across a 30-degree temperature range (10C to 40C)', refuted twice: potlife-kpi-envelope-disclosure-gap-v1 (per-leg MAPE 10C 3.445% / 30C 15.628% / 40C 25.124%; 40C breaches both the 15% prose figure and the KPI's own 0.25 held-out extrapolation ceiling, with 12/12 systematic under-prediction at 30C and 40C) and potlife-q10-heuristic-ablation-v1 (chemistry-blind Q10=2 ties the published-Ea model pooled, 0.152708 vs 0.147334 MAPE, and beats it on the 30C and 40C legs, so the per-system Ea are not demonstrably load-bearing). Prose replaced with the qualified truth; the unqualified claim is retracted.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-cure-potlife-gate/docs/mission.md (pre-repair prose revision)",
+    "superseded_sha256": "e8d12fa8d373e548151fa3d93920cd858ba84233c778bdbaf668d13c58ca706d"
+  }
+  -- receipt_id --
+  R-A02-mission-prose-temperature-claim-repair-v1
+  -- schema --
+  amphora.cure-potlife-gate.repair-receipt.v1
+====================================================================================================
+amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json
+  -- supersedes --
+  {
+    "reason": "signature-identity re-issue only - scientific content unchanged, re-verified byte-intact",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json",
+    "superseded_sha256": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd"
+  }
+  -- schema --
+  amphora.design-rule-score.purformance-scratch-hardness-guth-gold-physical-baseline-receipt.anchored-reissue.v1
+====================================================================================================
+amphora-ingredient-library/evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json
+  -- does_not_close --
+  [
+    "Does not establish product qualification, wet-lab performance, supplier closure, or dataset rights.",
+    "Does not re-audit the 13 KPI numeric bullets (parity receipt already confirmed them correct).",
+    "The corrected solid band inherits single-source (TDS) provenance as recorded in facts.json's single_source_waiver; no independent second physical source for the solid cut is claimed.",
+    "Does not modify facts.json, any signed receipt, the falsification ledger, the module manifest, or the master manifest."
+  ]
+  -- supersedes --
+  {
+    "reason": "constant-crosscheck-v1 Check-1's solid_type1_epoxy EEW admissibility band [383.5, 667.8] g/eq (n in [1.5, 3.5], not tabulated in its own cited literature) was refuted 2026-08-03T14:06 by eew-solid-band-mislabel-gap-v1 as 2.84x wider than the Hexion HCD-4022 manufacturer TDS band already recorded in facts.json for the identical fact; 4/4 gap-zone probe values passed undetected. This receipt supersedes that sub-check with the TDS band [450.0, 550.0] g/eq; the original receipt remains in place, unmodified, for the audit trail. Scope: supersedes ONLY the solid_type1_epoxy sub-check of Check-1; the liquid-DGEBA sub-check, Check-2 densities, pigment diagnostic and AHEW honest-negative are NOT superseded.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-ingredient-library/evidence/audit/constant-crosscheck-v1/constant-crosscheck-receipt.v1.dsse.json",
+    "superseded_sha256": "85b207a9f5d0c2d07b1d2b78c8635250d8d29cd3402ff2ce546942f61d28a50f"
+  }
+  -- receipt_id --
+  repair-R-A01-done
+  -- schema --
+  amphora.ingredient-library.repair-R-A01-done-receipt.v1
+====================================================================================================
+amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json
+  -- supersedes --
+  {
+    "reason": "REFUTED by claim-chart-provenance-v1: family 26 asserted claim elements 'polyurea topcoat' (fabricated - zero textual support) and 'low VOC coating system' (unsupported) against the real, hash-pinned EP2653485A2 claim-1 text; this receipt supplies the corrected chart.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+    "superseded_scope": "families[n==26] (EP2653485A2) claim-chart content only: claim1_gist, claim_elements/key_elements, why, design_around, independent_claim_chart. All other 59 rows and all fixture bytes are untouched; the corrected chart lives in THIS receipt's payload, not in the fixture.",
+    "superseded_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+  }
+  -- receipt_id --
+  claim-chart-supersede-repair-R-A13-v1
+  -- schema --
+  amphora.ip-fto-guard.claim-chart-supersede-repair-receipt.v1
+====================================================================================================
+amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/done/R-A05.done-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "reason": "Its ARITH-A221-X70P1-VOLUME-SOLIDS 'actual' (43.7) is refuted by evidence/audit/arith-volume-solids-mass-basis-conflation-v1: 43.7 is reproducible from the cited Evonik Ancamide 221 EMEA TDS only via invalid mass-fraction-weighted averaging of volume-basis percentages (invalid because component densities differ, 1.51 vs 0.92 g/mL); the correct volume-weighted recompute gives 42.4165 (matches the TDS's published 42.5 to 0.0835pp). VERIFIED_PASS statuses and the 6/6 arithmetic pass-rate are NOT retracted (all deltas stay inside the +/-2.0pp band); the superseded artifact remains byte-intact.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json",
+    "superseded_sha256": "be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc"
+  }
+  -- schema --
+  amphora.phase0-repair.done-receipt.v1
+====================================================================================================
+amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json
+  -- does_not_close --
+  [
+    "Runtime remains LOCKED_INTERNAL; no proposal emission enabled.",
+    "No Phase-0 promotion; scientific_readiness stays UNVALIDATED.",
+    "AUDIT_ONLY: does not promote authority and does not flip scientific readiness.",
+    "Does not re-enumerate, alter, add or remove any molecule -- the 38 accepted structures are byte-identical to the superseded receipt's diagnostic.",
+    "Does not repair the generator's difunctional_hardener gate implementation in source; this receipt corrects the published claim only.",
+    "Does not assert the true population feasible fraction is below 100%; only that the data cannot exclude values down to 0.9075.",
+    "Structural/fingerprint diversity remains a structural proxy -- not a property, FTO, or wet-lab performance claim.",
+    "Does not modify, delete, or re-sign either superseded receipt, the falsification ledger, any mission.md front-matter, or the master manifest."
+  ]
+  -- supersedes --
+  [
+    {
+      "reason": "Two independently signed falsification attacks refute two numeric components of this receipt's headline. (a) molgen-grammar-yield-bootstrap-ci-inadmissibility-v1 shows the published feasible_fraction bootstrap 95% CI [1.0000,1.0000] at the k=n=38 all-success boundary is statistically inadmissible: the percentile bootstrap is degenerate there (every resample of 38 identical successes returns exactly 1.0), so the interval reports zero sampling uncertainty where the admissible exact Clopper-Pearson interval is [0.9075,1.0000] -- a 0.0925 lower-bound gap exceeding the a-priori 0.02 admissibility threshold. (b) molgen-hardener-functionality-mislabel-v1 shows the 'difunctional' component of the '38 valid-unique-difunctional-feasible' headline is false: 9 of the 38 accepted proposals carry amine_sites of 3-9 in this receipt's OWN diagnostic yet are flagged difunctional_hardener=true, so the gate did not implement its own stated definition (difunctional == amine_sites==2); the true difunctional yield is 29/38. This repair republishes both corrected values with full derivation. The superseded receipt is left byte-intact on disk.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1/molgen-deterministic-grammar-yield-receipt.v1.dsse.json",
+      "superseded_sha256": "a7bedf57ece42bee60fabb4a1b7069a205b1297735356f21cc4e71dc64c98b0a"
+    },
+    {
+      "reason": "molgen-scaffold-diversity-homolog-fingerprint-saturation-v1 (2026-08-03) refutes this receipt's hypothesis_evaluation verdict CORROBORATED_IN_AUDIT_INSTRUMENT for the hypothesis 'accepted proposals span a diverse region of chemical space (not trivially inflated variants of a single scaffold)'. The headline aggregat ...[truncated]
+  -- receipt_id --
+  molgen-r-a06-superseding-repair-v1
+  -- schema --
+  amphora.molecule-generator.r-a06-superseding-repair-receipt.v1
+====================================================================================================
+amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json
+  -- does_not_close --
+  [
+    "No coating-efficacy, product-performance, batch-release, qualification, regulatory or FTO authority. AUDIT_ONLY, ceiling EVIDENCE_ONLY.",
+    "Does not claim the generator is deficient: it re-labels, it does not re-score. The 38 accepted structures are byte-for-byte unchanged and all 38 remain valid, unique, SA-feasible and network-forming (active_NH >= 3).",
+    "Does not re-derive or dispute R-A06's Clopper-Pearson interval or family-resolved IntDiv_1 table as findings -- both are re-computed here and reproduce exactly, and are carried forward, not superseded.",
+    "Does not assert any measured cure kinetics, gel time, Tg or crosslink density; AHEW and phr values here are definitional quotients (M / n_activeH; 100 * AHEW / EEW), not measurements.",
+    "Does not modify, delete or re-sign R-A06, V-A06, or any receipt they reference; all are left byte-intact on disk and their sha256 values are recorded in provenance.",
+    "The radius-3 fingerprint stress caveat V-A06 raised against the F1 near-degeneracy finding is out of scope here and is neither resolved nor contradicted by this receipt."
+  ]
+  -- supersedes --
+  [
+    {
+      "reason": "The independent verify V-A06 (verdict CLAIM_REFUTED) reproduced R-A06's arithmetic exactly and then refuted its label: R-A06 republished 29/38 as 'difunctional' under the gate amine_sites == 2 (a nitrogen-ATOM count), but under the standard active-hydrogen functionality convention all 29 measure active_NH == 4 (tetrafunctional) and 0 of the 38 measure active_NH == 2. V-A06 declined to assert a new headline, leaving it to this v2. This receipt re-derives both conventions independently from the raw canonical SMILES with two mutually-independent RDKit implementations, validates the instrument against this module's own in-tree known_answer_amines ground truth (Lee & Neville 1967), and publishes both counts explicitly.",
+      "scope_of_supersession": "The FUNCTIONALITY LABEL only: R-A06's corrected_values.valid_unique_difunctional_feasible_yield = 29 and every use of the word 'difunctional' in its corrected_claim, closes[] and headline. R-A06's other two corrections (exact Clopper-Pearson feasible-fraction interval; family-resolved IntDiv_1 diversity table) are NOT superseded -- they are re-derived here and carried forward unchanged.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json",
+      "superseded_sha256": "89fc28d21f7224743a6e0a1d2a0750055058e6167e038eee7a65b90145ea4b52"
+    }
+  ]
+  -- receipt_id --
+  molgen-r-a06v2-functionality-convention-repair-v1
+  -- schema --
+  amphora.molecule-generator.r-a06v2-superseding-repair-receipt.v1
+====================================================================================================
+amphora-molecule-novelty/evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json
+  -- supersedes --
+  [
+    {
+      "reason": "Refuted by corpus-duplicate-exchangeability-audit-v1 (2026-08-02): its 443-row conformal calibration corpus contains only 350 canonically-unique structures (129 duplicate rows, 36 alias groups), violating the Vovk-Gammerman-Shafer exchangeability precondition; on the deduped corpus 5 signed family/alpha cells flip and DDS's cross-family count at alpha=0.05 is 0/4, not the signed 1/4 (maccs_166).",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-novelty/evidence/audit/cross-family-concordance-v1/cross-family-concordance-receipt.v1.dsse.json",
+      "superseded_sha256": "c2498d0590b04786955e5d2269e112862bdccc1522a6dafe3dccf3049c3ad9ab"
+    },
+    {
+      "reason": "Refuted by candidate-structure-identity-audit-v1 (2026-08-03): the signed IPDA candidate_smiles CC1(CC(CC(C1)N)C)CN canonicalizes to C9H20N2, a demethylated homolog that is not isophorone diamine (CAS 2855-13-2, C10H22N2); also inherits the non-exchangeable duplicate-laden calibration corpus refuted above. The numeric result survives both corrections (IPDA NN 0.1667 unchanged; 5/5 NOVEL holds).",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-novelty/evidence/phase0/kpis/tanimoto-nn-novelty-canonical-epoxy-amines-vs-openpoly-kpi.v1.json",
+      "superseded_sha256": "55f8c96c957c8f5ee41aa76ad65d4ddf938a7d705ed522acffe168b512137d25"
+    }
+  ]
+  -- receipt_id --
+  r-a07-novelty-dedup-and-ipda-identity-repair-v1
+  -- schema --
+  amphora.molecule-novelty.r-a07-superseding-repair-receipt.v1
+====================================================================================================
+amphora-molecule-novelty/evidence/phase0/repairs/R-A07v2/done/r-a07v2-four-family-ipda-propagation-repair-receipt.v1.dsse.json
+  -- does_not_close --
+  [
+    "No coating-efficacy, product-performance, batch-release, qualification, regulatory or FTO authority. AUDIT_ONLY, ceiling EVIDENCE_ONLY.",
+    "Novelty here is structural dissimilarity against one CC-BY polymer corpus under four fingerprint families; it is not patentability, freedom-to-operate, or evidence of any coating performance advantage.",
+    "Does not re-derive or dispute the deduplication correction itself; the 443 -> 350 canonical dedup, the 36 duplicate groups / 129 duplicate rows, the locked dedup-set sha256 and R-A07's 5 declared flip cells all reproduce exactly and are carried forward.",
+    "Does not modify, delete or re-sign R-A07, V-A07, the two refuting audit receipts, or the superseded Phase-0 KPI; all are left byte-intact on disk with sha256 recorded in provenance.",
+    "Conformal validity here is conditional on exchangeability of the deduplicated corpus; deduplication removes the specific violation the exchangeability audit found and does not certify exchangeability in general."
+  ]
+  -- supersedes --
+  [
+    {
+      "reason": "The independent verify V-A07 (verdict CLAIM_REFUTED) confirmed all 11 of its self-tests, reproduced R-A07's 5 declared flip cells and its independent IPDA re-derivation, then found that R-A07's shipped four-family table applies the IPDA structural correction (C9H20N2 -> C10H22N2) in no family at all: the fix lives only in a separate morgan_r2_2048-only side table. Propagating the corrected structure into maccs_166 / atompair_2048 / toptorsion_2048 surfaces one undisclosed verdict flip (atompair_2048 / IPDA / alpha=0.01). This receipt republishes the complete four-family table with the correction applied everywhere and discloses every flip.",
+      "scope_of_supersession": "R-A07's corrected_family_alpha_table_deduped_350 and its claim that that table is 'recomputed ... under both corrections'. R-A07's dedup correction, its 5 declared flip cells, its DDS 0/4 cross-family count and its top-level 5/5-NOVEL result are NOT superseded -- all four reproduce exactly here and are carried forward.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-novelty/evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json",
+      "superseded_sha256": "72496a149815075618fd22b4e6fc60cae4953d81f7100a67b394b01b59583198"
+    }
+  ]
+  -- receipt_id --
+  r-a07v2-four-family-ipda-propagation-repair-v1
+  -- schema --
+  amphora.molecule-novelty.r-a07v2-superseding-repair-receipt.v1
+====================================================================================================
+amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json
+  -- supersedes --
+  {
+    "reason": "signature-identity re-issue only - scientific content unchanged, re-verified byte-intact",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+    "superseded_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7"
+  }
+  -- schema --
+  amphora.molecule-property.c8-phys-ml-stack-comparison-receipt.anchored-reissue.v1
+====================================================================================================
+amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json
+  -- receipt_id --
+  b3-mission-prose-retraction-repair
+  -- schema --
+  amphora.phase0-repair.mission-prose-retraction-sweep.v1
+====================================================================================================
+amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "reason": "The 21 live KPI receipt files, all dated 2026-07-23, presented headline claims with no reference to the 12 subsequent falsification-ledger refutations against this module (C7 x3, C8 x3, W2 x3, W3, W7, W8). This index supersedes that unannotated status presentation ONLY. No KPI file is modified or deleted; superseded_sha256 is the sha256 of the newline-joined 'filename:sha256' listing of the 21 files in sorted order (each per-file sha also recorded below).",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-property/evidence/phase0/kpis/ (unannotated 21-file KPI status surface as dated 2026-07-23)",
+    "superseded_sha256": "408273c46004441113ebb34a509218248f0514b13c93749e7379332fcd8edf20",
+    "surface_listing": [
+      {
+        "file": "coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+        "sha256": "e3e9c9fa8b4ebf06cabb887a71647c03180becd6239b16dd0e7f7909de0d1e9f"
+      },
+      {
+        "file": "external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+        "sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520"
+      },
+      {
+        "file": "external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+        "sha256": "b73bf0e81d967d837cf9195ad56dec7c9b93cdf8613ec0d1d6272d3ca3e4579a"
+      },
+      {
+        "file": "mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+        "sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4"
+      },
+      {
+        "file": "mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+        "sha256": "5ab0e74898476cafb02ee23ec54f78bb890a19027ee826bffba10dd6001a367e"
+      },
+      {
+        "file": "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+        "sha256": "a72aa3f4629a755b735b0e10df2046473ac8e8d9a66dc7e3cc591649 ...[truncated]
+  -- receipt_id --
+  r-a09-kpi-status-index
+  -- schema --
+  amphora.phase0-repair.kpi-status-index.v1
+====================================================================================================
+amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "reason": "Supersedes the DEFECT STATE that refuting receipt (a) documented, not the receipt itself: (a) is byte-intact and its REFUTED verdict against the pre-fix n_active_amine_nh() stands as a correct historical finding. Corrected values, adopting (a)'s own prototyped minimal symmetric extension verbatim: guanidine n_active_nh 4 -> 0 (theoretical AHEW 14.768 -> undefined/not-applicable), dicyandiamide 4 -> 0 (AHEW 21.0205 -> undefined), biguanide 5 -> 0 (AHEW 20.2226 -> undefined). 'Undefined' here means the M/n stoichiometric AHEW rule does not apply to this class, NOT that a quantitative equivalent weight has been determined to be infinite.",
+    "repair_item": "R-N02",
+    "repair_mode": "interactive-2026-08-03",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json",
+    "superseded_sha256": "59c447c077a069c18a68fede5308d44c2e52dbc20ba4ba3cc4754f17ac3a4701"
+  }
+  -- receipt_id --
+  rn02-molecule-property-coordinated-cn-fix
+  -- schema --
+  amphora.molecule-property.rn02-coordinated-cn-fix-repair-receipt.v1
+====================================================================================================
+amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json
+  -- supersedes --
+  [
+    {
+      "reason": "DSSE signature made with the unanchored LOCAL_DEVELOPMENT_AUDIT_ONLY key local-9028773f49591193; it cannot verify against the pinned PHASE0_EVALUATOR key in config/phase0-trust-store.v1.json, so the launcher verifier discarded the fire (verified_new_signed=0, verdict downgraded to UNKNOWN). This anchored batch receipt carries the re-verified science and original verdict under the pinned evaluator key. The original file is left byte-intact in place as evidence.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-role-ranker/benchmarks/role-live-runtime-domain-probe-v1/replay_receipt.v1.dsse.json",
+      "superseded_sha256": "00a146943a4543c92fcb3b35549d79e7046bc6b2b7440d63b99f21a256def2e0"
+    },
+    {
+      "reason": "DSSE signature made with the unanchored LOCAL_DEVELOPMENT_AUDIT_ONLY key local-9028773f49591193; it cannot verify against the pinned PHASE0_EVALUATOR key in config/phase0-trust-store.v1.json, so the launcher verifier discarded the fire (verified_new_signed=0, verdict downgraded to UNKNOWN). This anchored batch receipt carries the re-verified science and original verdict under the pinned evaluator key. The original file is left byte-intact in place as evidence.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-role-ranker/benchmarks/role-reactivity-ratio-substitution-effect-v1/replay_receipt.v1.dsse.json",
+      "superseded_sha256": "1ccc3b6c5d0fa90446ad10c12197529a405ac4d247d332aa10be064f90f22784"
+    }
+  ]
+  -- schema --
+  amphora.repair.reinstatement-batch.v1
+====================================================================================================
+amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "reason": "Supersedes the DEFECT STATE documented by receipt (b), not the receipt: (b) is byte-intact and its CLAIM_REFUTED verdict stands historically. Corrected values via the real production FFI: DPG reactive_amine_hydrogen_count 3 -> 0 and role hardener -> out_of_domain; DOTG 3 -> 0 and hardener -> out_of_domain; both now match (b)'s own expected_role on 2/2 scored probes.",
+    "repair_item": "R-N02",
+    "repair_mode": "interactive-2026-08-03",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-role-ranker/benchmarks/role-guanidine-accelerator-domain-probe-v1/replay_receipt.v1.dsse.json",
+    "superseded_sha256": "414a68af76b1db0c658b1d08e757d187122f81874ae2d4612f96808340904099"
+  }
+  -- receipt_id --
+  rn02-molecule-role-ranker-coordinated-cn-fix
+  -- schema --
+  amphora.molecule-role-ranker.rn02-coordinated-cn-fix-repair-receipt.v1
+====================================================================================================
+amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json
+  -- does_not_close --
+  [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "This receipt indexes and cross-references existing signed audit verdicts; it performs no new statistical test and fits no new model.",
+    "Does not modify, delete, or re-sign any indexed audit receipt, the superseded v1 KPIs, the ledger, or the manifest; all remain byte-intact and referenced by path + sha256.",
+    "Index completeness is certified as of build time only; the staleness failure mode recurs unless enumeration is re-run when new audits land (Phase-1 fix: build-time completeness check)."
+  ]
+  -- supersedes --
+  {
+    "reason": "Refuted by consolidated-kpi-staleness-v1 (H0_REFUTED): the v1 index claimed completeness but enumerated only 4 of the then-6 signed audit receipts under evidence/audit/, omitting kpi-surface-completeness-v1 and nist-baseline-fold-significance-v1 -- the latter refuting the very NIST result the v1 honest_headline still described as 'modest but real, and the module's only externally-validated positive result'. This v2 enumerates ALL signed receipts on disk at build time (8), verifies each signature against the pinned Phase-0 evaluator key, and corrects the headline. The v1 file is left byte-intact.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "evidence/phase0/kpis/audit-verdicts-consolidated-kpi.v1.json",
+    "superseded_sha256": "9b5766418c2c09643ebf7671c4fcc6acf6ffbd56242f5c4c6bc6e8d84c549ccf"
+  }
+  -- schema --
+  amphora.public-corrosion-benchmark.audit-verdicts-consolidated-kpi.v2
+====================================================================================================
+amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json
+  -- does_not_close --
+  [
+    "No coating-efficacy, product-performance, batch-release, optimizer, or corrosion-rank authority.",
+    "Does not delete or modify the superseded v1 KPI, any signed audit receipt, the ledger, or the manifest; all remain byte-intact and referenced by path + sha256.",
+    "Does not dispute Ridge regression as theory (Hoerl & Kennard 1970) or the LOSD-CV split design.",
+    "Phase-1 requires: generating scripts committed to the module tree, per-fold significance reporting, and nonlinear ML at n >= 1000 records."
+  ]
+  -- supersedes --
+  {
+    "reason": "Twice-refuted flagship claim. The signed audit nist-baseline-fold-significance-v1 (H0_REFUTED, 4/6 tests failed) established that (a) the pinned Ridge LOSD-CV MAE(log10)=0.6331 vs null 0.6806 ('modest but real') is NOT independently reproducible -- the generating script /tmp/corr_baseline.py was never committed and an honest re-implementation of the KPI's own stated methodology on the identical hash-pinned CSV yields Ridge 0.5888 / null 0.6736 -- and (b) the beats-null effect is NOT fold-robust: 17/30 LOSD folds (binomial p=0.585), cluster-bootstrap 95% CI [-0.0329, 0.4846] crosses zero, Wilcoxon p=0.2710. The v1 file is left byte-intact on disk; this v2 receipt supersedes its ridge-beats-null claim surface.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json",
+    "superseded_sha256": "bfbc32fe02df1d0bf8c7611ad8ab28c57f960eede7e640cda1db0b16078ab888"
+  }
+  -- schema --
+  amphora.public-corrosion-benchmark.nist-baseline-kpi-supersession.v2
+====================================================================================================
+amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json
+  -- does_not_close --
+  [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "This receipt indexes and cross-references existing signed audit verdicts; it performs no new statistical test and fits no new model.",
+    "Does not modify, delete, or re-sign any indexed audit receipt, the superseded v1 KPIs, the ledger, or the manifest; all remain byte-intact and referenced by path + sha256.",
+    "Index completeness is certified as of build time only; the staleness failure mode recurs unless enumeration is re-run when new audits land (Phase-1 fix: build-time completeness check)."
+  ]
+  -- supersedes --
+  {
+    "reason": "Superseded for currency, not refutation of its enumeration: repair R-N03 folded the nist-baseline-material-group-extrapolation-v1 (H0_REFUTED) result into the NIST bare-substrate KPI claim surface itself (v3 KPI supersedes the R-A08 v2 KPI by path + sha256). The R-A08 v2 index already enumerated all 8 signed receipts including the LOMO receipt, but its honest_headline and referenced_bare_substrate_kpi pointer named the R-A08 v2 KPI as the current bare-substrate KPI and treated the LOMO refutation as a side note rather than part of the KPI's corrected claim. This v3 re-enumerates ALL signed receipts on disk at build time, re-verifies each signature against the pinned Phase-0 evaluator key, and points to the R-N03 v3 KPI whose corrected claim is: no defensible predictive lift, in-domain or extrapolative. The v2 index file remains byte-intact.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json",
+    "superseded_sha256": "4632e46083304a444ffbda2030be0004b28698b5751a935db96b371e6960c4dd"
+  }
+  -- schema --
+  amphora.public-corrosion-benchmark.audit-verdicts-consolidated-kpi.v3
+====================================================================================================
+amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json
+  -- does_not_close --
+  [
+    "No coating-efficacy, product-performance, batch-release, optimizer, or corrosion-rank authority.",
+    "Does not delete or modify the superseded v1/v2 KPIs, any signed audit receipt, the ledger, or the manifest; all remain byte-intact and referenced by path + sha256.",
+    "Does not dispute Ridge regression as theory (Hoerl & Kennard 1970) or the LOSD-CV / LOMO-CV split designs.",
+    "Phase-1 requires either an explicit claim honestly restricted to the five trained material groups, or features carrying real physicochemical transfer (e.g. electrode potential, alloy composition) in place of a bare material-group one-hot, plus committed generators and per-fold significance reporting at n >= 1000."
+  ]
+  -- supersedes --
+  {
+    "reason": "Second, orthogonal kill of the same flagship claim. Hours after repair R-A08's superseding KPI corrected the in-domain story (LOSD-CV lift not statistically significant; pinned figures not independently reproducible), the fresh signed audit nist-baseline-material-group-extrapolation-v1 (H0_REFUTED, 4 substantive tests failed) established that the same Ridge baseline also FAILS group-safe extrapolation: under leave-one-material-group-out CV on the identical hash-pinned CSV, pooled Ridge MAE(log10)=1.0728 vs extrapolation-honest NULL 0.8106 (improvement -0.2622 log10, i.e. Ridge is WORSE than a training-only-median constant), Ridge beats the NULL on only 2/5 held-out material groups and is strictly worse on 3/5 (worst: Carbon and alloy steels, +0.6587 log10 excess MAE). The R-A08 KPI's claim surface (in-domain-only correction; extrapolation noted only as a related_subsequent_audit) is superseded by a single consolidated honest claim: no defensible predictive lift, in-domain or extrapolative. The R-A08 file remains byte-intact on disk.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json",
+    "superseded_sha256": "67b4136a975446b4346d97fda999807209473e6d6a3ff189dd6d2f7a86b92156"
+  }
+  -- schema --
+  amphora.public-corrosion-benchmark.nist-baseline-kpi-supersession.v3
+====================================================================================================
+amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "reason": "Supersedes the DEFECT STATE that refuting receipt (b) documented, not the receipt itself: (b) is byte-intact and its CLAIM_REFUTED verdict against the pre-fix bridge.cc stands as a correct historical finding. What is superseded is the shipped behavior it refuted. Corrected value: count_reactive_amine_hydrogens now returns 0 (was 3) for DPG and DOTG, so inferred_role becomes out_of_domain (was hardener), matching (b)'s expected_role on 2/2 scored probes.",
+    "repair_item": "R-N02",
+    "repair_mode": "interactive-2026-08-03",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-role-ranker/benchmarks/role-guanidine-accelerator-domain-probe-v1/replay_receipt.v1.dsse.json",
+    "superseded_sha256": "414a68af76b1db0c658b1d08e757d187122f81874ae2d4612f96808340904099"
+  }
+  -- receipt_id --
+  rn02-rdkit-ffi-coordinated-cn-fix
+  -- schema --
+  amphora.rdkit-ffi.rn02-coordinated-cn-fix-repair-receipt.v1
+====================================================================================================
+amphora-solvency-score/evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "clarification": "The superseded pre-repair revision is preserved byte-exact at amphora-solvency-score/evidence/phase0/repairs/R-A10/work/mission.md.pre-R-A10 (same sha256) and was not deleted. docs/mission.md itself is a prose document, not a signed artifact; its prose was updated in place under the explicit R-A10 authorization (repair rule: mission.md PROSE edits allowed; front-matter never). The JSON front-matter is byte-identical before/after (verified below). No signed receipt, ledger, manifest, KPI, or locked dataset was modified.",
+    "corrected_revision_sha256": "250594b9fb44e6f504e3f786845e72cf90a2336ff838c248b2b81df63e679f36",
+    "reason": "Pre-repair mission.md prose revision (sha256 above) carried (a) a phase/readiness statement contradicting the authoritative front-matter and (b) unqualified ML-beats-classical-theory claims voided by the W7 refutation; it is superseded by the corrected prose revision recorded in this receipt.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-solvency-score/docs/mission.md",
+    "superseded_preserved_at": "amphora-solvency-score/evidence/phase0/repairs/R-A10/work/mission.md.pre-R-A10",
+    "superseded_sha256": "5de41beeb3304df7ac08c860d9ff7e058523e51c31fb02c5891025dbf74fe6a4"
+  }
+  -- receipt_id --
+  r-a10-prose-consistency-w7-disclosure-repair-v1
+  -- schema --
+  amphora.solvency-score.repair-done-receipt.v1
+====================================================================================================
+amphora-solvency-score/evidence/phase0/repairs/R-B03/done/flory-hansen-corrected-instrument-repair-receipt.v1.dsse.json
+  -- does_not_close --
+  [
+    "W7b: fair re-run of the B1/B2-vs-ML comparison on corrected deltas (deliberately NOT run here; queued for the independent cron loop)",
+    "extending the declared group table to the 16% uncovered OMG chemistry (sulfones, Si, B, P, azo/N-oxide) with sourced constants",
+    "root-causing the exact line-level defect of the original uncommitted generator (unrecoverable; never committed)",
+    "human / independent review"
+  ]
+  -- supersedes --
+  {
+    "also_superseded": [
+      {
+        "superseded_deleted_or_modified": false,
+        "superseded_path": "amphora-solvency-score/reference/mvp20/data/omg_chi_hansen_3component_physical_baseline_receipt.v1.json",
+        "superseded_sha256": "f56e179cf59e4e1d1c35b6b56d6558c92a098c2a2d7522d1b513e8d4f78cd2cd"
+      },
+      {
+        "superseded_deleted_or_modified": false,
+        "superseded_path": "amphora-solvency-score/evidence/phase0/kpis/omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json",
+        "superseded_sha256": "98b20b84e3f1d362835c57107a3464163717cac47ab5d095a31fad64051032aa"
+      },
+      {
+        "superseded_deleted_or_modified": false,
+        "superseded_path": "amphora-solvency-score/evidence/phase0/kpis/omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json",
+        "superseded_sha256": "3950f643f06f433b3615379dc2708e058b804f2c390303feb3370d9f3255ab29"
+      }
+    ],
+    "reason": "W7 (CLAIM_REFUTED) showed the uncommitted Fedors/Van Krevelen group-contribution generator behind this receipt (and the three companion artifacts in also_superseded) produced physically impossible solubility parameters -- delta up to 5.155e9 MPa^0.5 (FH) and 5.33e17 MPa^0.5 (Hansen) against the [9.6, 59.875] envelope of its own cited handbooks -- via denominator collapse delta = sqrt(sum dE_i / sum dV_i) with sum dV_i -> 0 from silent zero-volume treatment of unmatched fragments, which also collapsed the B2 'rescaled theory' comparator to the constant predictor. This repair supersedes the refuted instrument with a committed, unit-tested, coverage-explicit, volume-floored, admissibility-gated implementation. All four superseded artifacts are left byte-intact (supersede, never rewrite).",
+    "refuted_by": {
+      "campaign_item_id": "W7",
+      "path": "amphora-solvency-score/evidence/audit/flo ...[truncated]
+  -- receipt_id --
+  flory-hansen-corrected-instrument-repair-v1
+  -- schema --
+  amphora.solvency-score.flory-hansen-corrected-instrument-repair-receipt.v1
+====================================================================================================
+amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json
+  -- supersedes --
+  [
+    {
+      "reason": "kpis.pel_denominator_source and kpis.solvent_cards_ranked[toluene].osha_pel_table_z1_name attribute toluene's 200 ppm PEL to OSHA 29 CFR 1910.1000 Table Z-1; toluene is codified in Table Z-2 (TWA 200 ppm + acceptable ceiling 300 ppm + acceptable maximum peak 500 ppm <=10 min). Provenance/citation defect only; every numeric value in the receipt is unaffected.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/reference/mvp20/data/vapor_hazard_ratio_inhalation_prescreen_receipt.v1.json",
+      "superseded_sha256": "24b2311523613eab44f6b356748aba6574768e3ac502491009ef3af552d8f5b4"
+    },
+    {
+      "reason": "kpis.solvent_envelopes[toluene].osha_pel_table_z1_name ('Toluene') attributes the 200 ppm PEL denominator to OSHA Table Z-1; toluene is a Table Z-2 substance. Provenance/citation defect only; every numeric value in the receipt is unaffected.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/reference/mvp20/data/vhr_temperature_envelope_inhalation_prescreen_receipt.v1.json",
+      "superseded_sha256": "33d8a165ec537f31a5f4c1b19ecaef0607034a998c89b07dff62fea281f4872a"
+    },
+    {
+      "reason": "kpis.pel_denominator_source claims all PEL denominators come from OSHA 29 CFR 1910.1000 Table Z-1; the toluene denominator (200 ppm) is actually the Table Z-2 TWA. Provenance/citation defect only; every numeric value in the receipt is unaffected.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/reference/mvp20/data/mixture_additivity_raoult_osha_inhalation_prescreen_receipt.v1.json",
+      "superseded_sha256": "70c406e5be98144edb85d2a376914c1315ca42281bec1f20689a7e5ba4814441"
+    }
+  ]
+  -- receipt_id --
+  r-a04-osha-table-z2-attribution-correction-v1
+  -- schema --
+  amphora.repair.osha-table-z2-attribution-correction.v1
+====================================================================================================
+amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json
+  -- supersedes --
+  [
+    {
+      "reason": "DSSE signature made with the unanchored LOCAL_DEVELOPMENT_AUDIT_ONLY key local-9028773f49591193; it cannot verify against the pinned PHASE0_EVALUATOR key in config/phase0-trust-store.v1.json, so the launcher verifier discarded the fire (verified_new_signed=0, verdict downgraded to UNKNOWN). This anchored batch receipt carries the re-verified science and original verdict under the pinned evaluator key. The original file is left byte-intact in place as evidence.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json",
+      "superseded_sha256": "1001f14d85dd064e85a3ec57e6b9e4981676720f82c6eb0435bf4695c35547a9"
+    },
+    {
+      "reason": "DSSE signature made with the unanchored LOCAL_DEVELOPMENT_AUDIT_ONLY key local-9028773f49591193; it cannot verify against the pinned PHASE0_EVALUATOR key in config/phase0-trust-store.v1.json, so the launcher verifier discarded the fire (verified_new_signed=0, verdict downgraded to UNKNOWN). This anchored batch receipt carries the re-verified science and original verdict under the pinned evaluator key. The original file is left byte-intact in place as evidence.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json",
+      "superseded_sha256": "47863834bce63443243660895a1ce83739dc4b2eb3025ed74b0ff7cf2c903611"
+    },
+    {
+      "reason": "DSSE signature made with the unanchored LOCAL_DEVELOPMENT_AUDIT_ONLY key local-9028773f49591193; it cannot verify against the pinned PHASE0_EVALUATOR key in config/phase0-trust-store.v1.json, so the launcher verifier discarded the fire (verified_new_signed=0, verdict downgraded  ...[truncated]
+  -- schema --
+  amphora.repair.reinstatement-batch.v1
+====================================================================================================
+amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json
+  -- supersedes --
+  [
+    {
+      "reason": "Same finding (2/5 candidates, IPDA and m-XDA, cite a PubChem CID resolving to an unrelated chemical), but that receipt was signed with the unanchored LOCAL_DEVELOPMENT_AUDIT_ONLY key ('local-9028773f49591193') instead of the pinned PHASE0_EVALUATOR key, so it was never portfolio-verifiable (launcher verified_new_signed=0, downgraded to UNKNOWN) despite ledger fire 20260803T210001-26108-aa59817794da recording verdict REFUTED at 2026-08-03T21:08:14+00:00. This receipt independently re-derives the finding from freshly-fetched PubChem data (not a copy of that fire's raw/ cache) and signs it under the pinned key. The prior artifact is left byte-intact, not deleted or modified.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/reference/mvp20/data/ghs_clp_cid_attribution_audit_receipt.v1.json",
+      "superseded_sha256": "76a80a0ddc91f4ac5574412e7e017097a2af54d23659d75c5f6d13957a486663"
+    },
+    {
+      "reason": "Sibling KPI of the wrong-key-signed receipt above; same signing defect (local-9028773f49591193, not the pinned PHASE0_EVALUATOR key). Left byte-intact, not deleted or modified.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/evidence/phase0/kpis/ghs-clp-cid-attribution-audit-kpi.v1.json",
+      "superseded_sha256": "b480634ae3f57080492820565c62b90dda41002032bf2aedbf6e4716d7babd70"
+    }
+  ]
+  -- receipt_id --
+  ghs-clp-cid-attribution-audit-rebank-rn01-8c4d9c71c853e62993a397a746d111494b6cd51da735afbf6538d4c6466c0481
+  -- schema --
+  amphora.ghs-clp-cid-attribution-audit-rebank.v1
+  -- repair_item_id --
+  R-N01
+====================================================================================================
+amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json
+  -- supersedes --
+  [
+    {
+      "reason": "IPDA and m-XDA cards cite PubChem CIDs (6944, 15642) that resolve to chemically unrelated substances; m-XDA's H334 headline flag does not appear in the CAS-correct record (CID 15133) under either citation. This receipt supersedes with CAS-correct CIDs, re-derived H-statement sets for the two affected cards, and re-evaluated procurement gates. DDS/DETA/TETA cards unaffected (CID citation already correct). Original left byte-intact, not deleted or modified.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/reference/mvp20/data/ghs_clp_public_hazard_prescreen_5_canonical_epoxy_amines_receipt.v1.json",
+      "superseded_sha256": "ebeef1927ee43782a77d0735c90845b63bc651ad7c67c395b2a7d750c96b3411"
+    },
+    {
+      "reason": "Sibling KPI of the corrected receipt above; same defect. Left byte-intact, not deleted or modified.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-sourceability-ehs/evidence/phase0/kpis/ghs-clp-public-hazard-prescreen-5-canonical-epoxy-amines-kpi.v1.json",
+      "superseded_sha256": "86528e37afc02d4010fac0051b256078222803ee194fb9d1131caca5a035f102"
+    }
+  ]
+  -- receipt_id --
+  r-n01-fire2-ghs-clp-hazard-card-cid-correction-v1
+  -- schema --
+  amphora.repair.ghs-clp-cid-hazard-card-correction.v1
+====================================================================================================
+amphora-viscosity-score/evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json
+  -- supersedes --
+  {
+    "additional_superseded_presentations": [
+      {
+        "reason": "Standing uncaveated presentation of Polyverse-derived conformal+AD results with zero rights self-declaration. Superseded as the authoritative presentation by the caveated docs/mission.md prose plus this receipt; file remains intact and byte-identical.",
+        "superseded_deleted_or_modified": false,
+        "superseded_path": "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-polymer-safe-conformal-coverage-and-applicability-domain-kpi.v1.json",
+        "superseded_sha256": "34b77002aa5a3067ad35030cd2bedb819b7da3cd16c6219bf1245a414c3fabb8"
+      },
+      {
+        "reason": "Parent Polyverse model receipt (source-safe GBM R2=0.944) self-declares no CONTEXT_ONLY rights. Superseded as presentation only; file remains intact and byte-identical.",
+        "superseded_deleted_or_modified": false,
+        "superseded_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json",
+        "superseded_sha256": "29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff"
+      },
+      {
+        "reason": "Conformal+AD scientific receipt self-declares no CONTEXT_ONLY rights. Superseded as presentation only; file remains intact and byte-identical.",
+        "superseded_deleted_or_modified": false,
+        "superseded_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json",
+        "superseded_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4"
+      },
+      {
+        "reason": "FFW physical-baseline scientific receipt self-declares no CONTEXT_ONLY rights and no resampled interval. Superseded as presentation only; file remains intact and byte-identical.",
+        "superseded_deleted_or_modi ...[truncated]
+  -- receipt_id --
+  r-a03-polyverse-rights-and-ffw-uncertainty-disclosure-repair-v1
+  -- schema --
+  amphora.viscosity-score.r-a03-disclosure-repair-receipt.v1

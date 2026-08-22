@@ -1,0 +1,545 @@
+{
+  "acceptance_bar_floors": {
+    "all_met": true,
+    "g1_first_principles_ahew_in_band_floor": 1.0,
+    "g2_index_excursion_invariance_floor": 1.0,
+    "g3_combined_rss_strictly_exceeds_mass_only_required": true,
+    "g4_gap_demonstrated_all_envelopes": true,
+    "g5_index_tamper_fail_closed_floor": 1.0
+  },
+  "ahew_derivation": [
+    {
+      "active_amine_H": 5,
+      "ahew_g_per_eq_first_principles": 20.6338,
+      "formula": "C4H13N3",
+      "grade_reference": "Dow DEH 20 (DETA); Lee & Neville 1967 Table 5-2",
+      "hardener": "DETA",
+      "in_published_band": true,
+      "iupac_name": "diethylenetriamine",
+      "molar_mass_g_per_mol": 103.169,
+      "published_band_g_per_eq": [
+        20.0,
+        21.5
+      ]
+    },
+    {
+      "active_amine_H": 4,
+      "ahew_g_per_eq_first_principles": 42.575,
+      "formula": "C10H22N2",
+      "grade_reference": "Huntsman HY 2954 / Vestamin IPD; TDS AHEW ~42.5",
+      "hardener": "IPDA",
+      "in_published_band": true,
+      "iupac_name": "isophorone diamine",
+      "molar_mass_g_per_mol": 170.3,
+      "published_band_g_per_eq": [
+        42.0,
+        43.5
+      ]
+    },
+    {
+      "active_amine_H": 4,
+      "ahew_g_per_eq_first_principles": 27.036,
+      "formula": "C6H8N2",
+      "grade_reference": "aromatic diamine; Ellis 1993 Ch.6; Lee & Neville 1967",
+      "hardener": "MPDA",
+      "in_published_band": true,
+      "iupac_name": "m-phenylenediamine",
+      "molar_mass_g_per_mol": 108.144,
+      "published_band_g_per_eq": [
+        26.5,
+        27.5
+      ]
+    },
+    {
+      "active_amine_H": 4,
+      "ahew_g_per_eq_first_principles": 34.0495,
+      "formula": "C8H12N2",
+      "grade_reference": "MGC MXDA; TDS AHEW ~34.0",
+      "hardener": "MXDA",
+      "in_published_band": true,
+      "iupac_name": "m-xylylenediamine",
+      "molar_mass_g_per_mol": 136.198,
+      "published_band_g_per_eq": [
+        33.5,
+        34.6
+      ]
+    },
+    {
+      "active_amine_H": 4,
+      "ahew_g_per_eq_first_principles": 52.59125,
+      "formula": "C13H26N2",
+      "grade_reference": "Air Products Amicure PACM / Ancamine 2049; TDS ~52.6",
+      "hardener": "PACM",
+      "in_published_band": true,
+      "iupac_name": "bis(4-aminocyclohexyl)methane",
+      "molar_mass_g_per_mol": 210.365,
+      "published_band_g_per_eq": [
+        52.0,
+        53.5
+      ]
+    },
+    {
+      "active_amine_H": 7,
+      "ahew_g_per_eq_first_principles": 27.0438571429,
+      "formula": "C8H23N5",
+      "grade_reference": "Huntsman Aradur 43 (TEPA); Ellis 1993 Ch.6",
+      "hardener": "TEPA",
+      "in_published_band": true,
+      "iupac_name": "tetraethylenepentamine",
+      "molar_mass_g_per_mol": 189.307,
+      "published_band_g_per_eq": [
+        26.0,
+        28.0
+      ]
+    },
+    {
+      "active_amine_H": 6,
+      "ahew_g_per_eq_first_principles": 24.373,
+      "formula": "C6H18N4",
+      "grade_reference": "Dow DEH 24 (TETA); Lee & Neville 1967 Table 5-2",
+      "hardener": "TETA",
+      "in_published_band": true,
+      "iupac_name": "triethylenetetramine",
+      "molar_mass_g_per_mol": 146.238,
+      "published_band_g_per_eq": [
+        23.5,
+        25.5
+      ]
+    }
+  ],
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "closes": "Introduces the amine-hydrogen equivalent-weight chemistry the module lacked; proves the envelope->ratio gap extends, unchanged in magnitude, to the chemically correct stoichiometric index and that the index's metrological uncertainty is strictly wider than the mass ratio's for all 10 envelopes.",
+  "data_gap": {
+    "adduct_hardeners_without_first_principles_ahew": [
+      "dgeba-amidoamine-huntsman-100to50",
+      "dgeba-amidoamine-momentive-100to53",
+      "dgeba-mannich-fast-cure-100to36"
+    ],
+    "n_adduct_hardeners": 3,
+    "n_first_principles_hardeners": 7
+  },
+  "does_not_close": "Does not add a stoichiometric-index constraint to any policy, does not modify the runtime, benchmark-lock, locked dataset, KPI, or manifest, and makes no wet-lab / cure / Tg performance claim. The 3 adduct hardeners (2 amidoamine, 1 Mannich) have no first-principles AHEW and their nominal index requires supplier TDS AHEW (data gap queued). Remediation (an explicit equivalents-index constraint per envelope) requires a human Phase-0 fixture/lock revision this cron cannot perform.",
+  "fixture": {
+    "n_envelopes": 10,
+    "path": "reference/phase0-envelope-gates-known-answer.v1.json",
+    "rights": {
+      "eligible_for_derivatives": true,
+      "license": "CC0-1.0",
+      "scope": "Amphora-authored two-part epoxy-amine coating formulation envelope compilation from Wicks/Jones/Pappas 2007 Chapters 24-25, Ellis 1993 Chapter 6, and supplier technical data sheets for Phase-0 constraint-envelope controls only; no wet-lab measurements or CRO data checked in",
+      "source_id": "amphora_phase0_envelope_gates_known_answer",
+      "source_url": "local:amphora-envelope-gates/reference/phase0-envelope-gates-known-answer.v1.json",
+      "status": "ACCEPTED"
+    },
+    "sha256": "aab0b9a8af2e14ab053744f1dee88f785be37321d582039716a81fee9aec5b52"
+  },
+  "gates": {
+    "G1_first_principles_ahew_in_band": {
+      "n_hardeners": 7,
+      "n_in_band": 7,
+      "passed": true
+    },
+    "G2_index_excursion_invariance": {
+      "amine_lean_excursion_pct": -9.5238095238,
+      "amine_rich_excursion_pct": 10.5263157895,
+      "n_envelopes": 10,
+      "n_invariant": 10,
+      "passed": true,
+      "theorem": "r/r0=(m_B/m_B0)*(m_A0/m_A); EEW and AHEW cancel"
+    },
+    "G3_gum_equivalent_weight_extension": {
+      "combined_rss_pct": 7.2376144615,
+      "mass_only_rss_pct": 7.0710678119,
+      "monotone": true,
+      "passed": true,
+      "strict": true
+    },
+    "G4_stoichiometric_index_gate_gap": {
+      "gap_definition": "both amine-rich (A_lo,B_hi) and amine-lean (A_hi,B_lo) corners PASS all three hard gates yet drive the stoichiometric index +10.5263%/-9.5238% off nominal (>+/-5% intent)",
+      "n_envelopes": 10,
+      "n_gap_exhibited": 10,
+      "passed": true
+    },
+    "G5_index_tamper_battery_fail_closed": {
+      "n_fail_closed": 6,
+      "n_probes": 6,
+      "passed": true,
+      "probes": [
+        {
+          "detail": "AHEW<=0 rejected",
+          "fail_closed": true,
+          "probe": "index_ahew_zero"
+        },
+        {
+          "detail": "EEW<=0 rejected",
+          "fail_closed": true,
+          "probe": "index_eew_zero"
+        },
+        {
+          "detail": "non-finite equivalent weight rejected",
+          "fail_closed": true,
+          "probe": "index_nonfinite_ahew"
+        },
+        {
+          "detail": "m_A<=0 (division) rejected",
+          "fail_closed": true,
+          "probe": "index_zero_part_A_division"
+        },
+        {
+          "detail": "oracle rejects untrusted",
+          "fail_closed": true,
+          "probe": "untrusted_snapshot_corner"
+        },
+        {
+          "detail": "oracle rejects absent feature",
+          "fail_closed": true,
+          "probe": "missing_part_B_feature"
+        }
+      ]
+    }
+  },
+  "headline": "The chemically load-bearing quantity for a two-part epoxy-amine coating is the amine-H:epoxide equivalents index r=(m_B*EEW)/(m_A*AHEW), not the raw mass ratio. First-principles AHEW is derived for 7/7 pure-amine hardeners (all in published band). The mass-envelope-induced index excursion is EEW/AHEW-invariant at +10.5263%/-9.5238% (10/10 envelopes), its GUM tolerance STRICTLY exceeds the mass-only 7.0711% once equivalent-weight uncertainty is admitted, and BOTH amine-rich and amine-lean corners pass all three shipped hard gates (10/10). The shipped 3-constraint envelope bounds neither extreme of the index.",
+  "metrology_constants": {
+    "combined_gum_rss_pct": 7.2376144615,
+    "commercial_dgeba_eew_spec_g_per_eq": [
+      182.0,
+      192.0
+    ],
+    "excursion_invariant_across_envelopes": true,
+    "index_excursion_amine_lean_pct": -9.5238095238,
+    "index_excursion_amine_rich_pct": 10.5263157895,
+    "mass_only_gum_rss_pct": 7.0710678119,
+    "note": "Index excursion is EEW/AHEW-independent because both are per-part multiplicative constants that cancel in r/r0; it equals the mass-ratio excursion. The GUM combined RSS STRICTLY exceeds the mass-only RSS once equivalent-weight uncertainty is admitted, so the chemically correct index carries a wider tolerance than the mass ratio.",
+    "per_part_band_fraction": 0.05,
+    "u_ahew_rel_std_pct": 0.0,
+    "u_eew_rel_std_from_uniform_spec_pct": 1.5437172973
+  },
+  "module": "amphora-envelope-gates",
+  "non_circularity": "Equation r=(m_B*EEW)/(m_A*AHEW), the interval corners, and the GUM RSS are first-principles metrology/chemistry authored here. AHEW is derived purely from IUPAC-2021 atomic weights and the active-H count of the published formula; DGEBA pure EEW=170.21 is the portfolio-locked molar-mass value. Only on-disk fixture bytes are consumed; the shipped constraint-envelope-oracle-v1 evaluate_gate is reused solely to confirm the drifted corners PASS under the actual contract.",
+  "per_envelope": [
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aliphatic-polyamine",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 180.0,
+      "nominal_part_b_g": 20.0,
+      "nominal_stoichiometric_index": {
+        "ahew_g_per_eq": 24.373,
+        "hardener": "TETA",
+        "index_r0_at_pure_dgeba_eew_170_21": 0.7759497076,
+        "index_r0_commercial_eew_band": [
+          0.8296977074,
+          0.8752854935
+        ],
+        "off_stoichiometry_class_at_pure_eew": "amine_lean"
+      },
+      "part_a_band_g": [
+        171.0,
+        189.0
+      ],
+      "part_b_band_g": [
+        19.0,
+        21.0
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aliphatic-polyamine",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 170.0,
+      "nominal_part_b_g": 10.0,
+      "nominal_stoichiometric_index": {
+        "ahew_g_per_eq": 20.6338,
+        "hardener": "DETA",
+        "index_r0_at_pure_dgeba_eew_170_21": 0.4852403794,
+        "index_r0_commercial_eew_band": [
+          0.5188517071,
+          0.5473600426
+        ],
+        "off_stoichiometry_class_at_pure_eew": "amine_lean"
+      },
+      "part_a_band_g": [
+        161.5,
+        178.5
+      ],
+      "part_b_band_g": [
+        9.5,
+        10.5
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aliphatic-polyamine",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 15.0,
+      "nominal_stoichiometric_index": {
+        "ahew_g_per_eq": 27.0438571429,
+        "hardener": "TEPA",
+        "index_r0_at_pure_dgeba_eew_170_21": 0.9440776094,
+        "index_r0_commercial_eew_band": [
+          1.0094713877,
+          1.0649368486
+        ],
+        "off_stoichiometry_class_at_pure_eew": "amine_lean"
+      },
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        14.25,
+        15.75
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 24.0,
+      "nominal_stoichiometric_index": {
+        "ahew_g_per_eq": 42.575,
+        "hardener": "IPDA",
+        "index_r0_at_pure_dgeba_eew_170_21": 0.95949266,
+        "index_r0_commercial_eew_band": [
+          1.0259541985,
+          1.0823253083
+        ],
+        "off_stoichiometry_class_at_pure_eew": "amine_lean"
+      },
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        22.8,
+        25.2
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 200.0,
+      "nominal_part_b_g": 30.0,
+      "nominal_stoichiometric_index": {
+        "ahew_g_per_eq": 52.59125,
+        "hardener": "PACM",
+        "index_r0_at_pure_dgeba_eew_170_21": 0.4854704918,
+        "index_r0_commercial_eew_band": [
+          0.5190977587,
+          0.5476196135
+        ],
+        "off_stoichiometry_class_at_pure_eew": "amine_lean"
+      },
+      "part_a_band_g": [
+        190.0,
+        210.0
+      ],
+      "part_b_band_g": [
+        28.5,
+        31.5
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aromatic-amine",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 22.0,
+      "nominal_stoichiometric_index": {
+        "ahew_g_per_eq": 34.0495,
+        "hardener": "MXDA",
+        "index_r0_at_pure_dgeba_eew_170_21": 1.0997577057,
+        "index_r0_commercial_eew_band": [
+          1.1759350358,
+          1.2405468509
+        ],
+        "off_stoichiometry_class_at_pure_eew": "amine_rich"
+      },
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        20.9,
+        23.1
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aromatic-amine",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 14.0,
+      "nominal_stoichiometric_index": {
+        "ahew_g_per_eq": 27.036,
+        "hardener": "MPDA",
+        "index_r0_at_pure_dgeba_eew_170_21": 0.8813951768,
+        "index_r0_commercial_eew_band": [
+          0.9424471076,
+          0.9942299157
+        ],
+        "off_stoichiometry_class_at_pure_eew": "amine_lean"
+      },
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        13.3,
+        14.7
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "amidoamine-adduct",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 50.0,
+      "nominal_stoichiometric_index": {
+        "hardener": null,
+        "note": "proprietary reactive adduct; AHEW not first-principles derivable -> nominal index requires TDS AHEW (data gap)"
+      },
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        47.5,
+        52.5
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "amidoamine-adduct",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 53.0,
+      "nominal_stoichiometric_index": {
+        "hardener": null,
+        "note": "proprietary reactive adduct; AHEW not first-principles derivable -> nominal index requires TDS AHEW (data gap)"
+      },
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        50.35,
+        55.65
+      ]
+    },
+    {
+      "corner_amine_lean_margin": 0.0,
+      "corner_amine_lean_verdict": "PASS",
+      "corner_amine_rich_margin": 0.0,
+      "corner_amine_rich_verdict": "PASS",
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "g2_lean_matches_invariant": true,
+      "g2_rich_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "mannich-base",
+      "index_excursion_amine_lean_pct": -9.5238095238,
+      "index_excursion_amine_rich_pct": 10.5263157895,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 36.0,
+      "nominal_stoichiometric_index": {
+        "hardener": null,
+        "note": "proprietary reactive adduct; AHEW not first-principles derivable -> nominal index requires TDS AHEW (data gap)"
+      },
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        34.2,
+        37.8
+      ]
+    }
+  ],
+  "purpose": "Extend the envelope->ratio gap from the raw mass ratio to the chemically correct amine-hydrogen:epoxide equivalents stoichiometric index r=(m_B*EEW)/(m_A*AHEW); derive first-principles AHEW for the 7 pure-amine hardeners, prove the index excursion is EEW/AHEW-invariant, extend the GUM budget with equivalent-weight uncertainty, and confirm the shipped envelope bounds neither the amine-rich nor amine-lean corner of the stoichiometric index.",
+  "run_type": "independent_non_runtime_theory_axis",
+  "schema": "amphora.envelope-gates.stoichiometric-index-equivalents-diagnostic.v1",
+  "study_id": "stoichiometric-index-equivalents-v1",
+  "theory_reference": [
+    "Lee, H. & Neville, K., 'Handbook of Epoxy Resins', McGraw-Hill 1967, Ch.5-6 (epoxide equivalent weight EEW, amine-hydrogen equivalent weight AHEW, stoichiometric mix calculation).",
+    "Ellis, B. (ed.), 'Chemistry and Technology of Epoxy Resins', Blackie 1993, Ch.6 (stoichiometric amine:epoxide balance, off-stoichiometry).",
+    "May, C.A. (ed.), 'Epoxy Resins: Chemistry and Technology', 2nd ed., Marcel Dekker 1988, Ch.4 (off-stoichiometry effect on network Tg).",
+    "JCGM 100:2008 (GUM), Law of Propagation of Uncertainty 5.1.2, 4.3.7 (rectangular->standard uncertainty), F.2.4 (quotient of independent inputs).",
+    "Moore, R.E., 'Interval Analysis', Prentice-Hall 1966 (exact worst-case endpoints of a quotient over independent intervals).",
+    "IUPAC 2021 conventional standard atomic weights (C 12.011, H 1.008, N 14.007); amphora KAT molar-mass DGEBA EEW=170.21 g/eq (n=0)."
+  ]
+}

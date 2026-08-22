@@ -1,0 +1,22 @@
+{
+  "byte_intact_after": true,
+  "canonical_payload_sha256": "bf858887eea8fea215d3bef1adeff05c3c4622fa79354221fb4ad8ade8a108b7",
+  "date": "2026-08-03",
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "post_sha256": {
+    "amphora-sourceability-ehs/reference/mvp20/data/mixture_additivity_raoult_osha_inhalation_prescreen_receipt.v1.json": "70c406e5be98144edb85d2a376914c1315ca42281bec1f20689a7e5ba4814441",
+    "amphora-sourceability-ehs/reference/mvp20/data/vapor_hazard_ratio_inhalation_prescreen_receipt.v1.json": "24b2311523613eab44f6b356748aba6574768e3ac502491009ef3af552d8f5b4",
+    "amphora-sourceability-ehs/reference/mvp20/data/vhr_temperature_envelope_inhalation_prescreen_receipt.v1.json": "33d8a165ec537f31a5f4c1b19ecaef0607034a998c89b07dff62fea281f4872a"
+  },
+  "pre_sha256": {
+    "amphora-sourceability-ehs/reference/mvp20/data/mixture_additivity_raoult_osha_inhalation_prescreen_receipt.v1.json": "70c406e5be98144edb85d2a376914c1315ca42281bec1f20689a7e5ba4814441",
+    "amphora-sourceability-ehs/reference/mvp20/data/vapor_hazard_ratio_inhalation_prescreen_receipt.v1.json": "24b2311523613eab44f6b356748aba6574768e3ac502491009ef3af552d8f5b4",
+    "amphora-sourceability-ehs/reference/mvp20/data/vhr_temperature_envelope_inhalation_prescreen_receipt.v1.json": "33d8a165ec537f31a5f4c1b19ecaef0607034a998c89b07dff62fea281f4872a"
+  },
+  "receipt_file_sha256": "b738769e4e5fd2fbb7a024a46dc2d6b2db1a064b0166d8f5180b217d41230741",
+  "receipt_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json",
+  "repair_item": "R-A04",
+  "repair_mode": "interactive-2026-08-03",
+  "self_verified": true,
+  "two_replay_sha256_gate": "PASS"
+}

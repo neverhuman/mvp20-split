@@ -1,0 +1,651 @@
+{
+  "closes": "Independent CPython oracle re-derives the amphora-report-packager packaging map byte-exactly and proves it PRESERVES every authority/claim-lock field: render parity byte-exact, sha256(render) binds the shipped canonical hash manifest, stable_hash(score_envelopes) binds score_envelope_sha256, and the fixture Ed25519 signature verifies over sorted-key compact canonical payload bytes. Leave-one-out over ALL 10/10 required claim locks (the shipped Rust probe covers 1/10) fails closed on 40/40 conditions. The map is INJECTIVE on the claim-lock lattice: 2^10=1024 assignments -> 1024 distinct documents / 1024 distinct SHA-256 (0 collisions), round-trip exact 1024/1024, unique accept 1/1024 (all-locks-true), invariant over 20 key orderings. 26/26 escalation / lock-strip / binding / crypto mutants fail closed, including render-only lock deletion and render-only lock falsification. ADVERSARIAL RESULT: a coordinated adversary that strips a lock, re-renders, re-hashes and RE-SIGNS with its own self-derived key satisfies EVERY crypto and hash-binding clause; the package is rejected by exactly ONE surviving defense (C09_authority_lock_set), and ablating that single clause ADMITS the lock-stripped package. The fixture verifying key is NOT pinned in config/phase0-trust-store.v1.json, so the signature supplies integrity, not authenticity.",
+  "does_not_close": "Does not promote the module, flip scientific_readiness, run the Rust runtime, supply the missing signed score envelopes or a real report package, pin any trust anchor, or certify any release gate true -- those need the authorized Phase-1 pipeline and human dual-identity keys. The oracle proves properties of the deterministic fixture packaging map and its acceptance predicate as re-derived from source bytes; it is a structural / cryptographic proof, not wet-lab, legal, or regulatory adjudication. The named trust-anchor gap is a finding for human review, not a change this run is authorized to make.",
+  "g0_packaging_map_parity": {
+    "backtick_token_count": 24,
+    "backtick_tokens_foreign_to_payload": 0,
+    "canonicalization_note": "amphora_core::canonicalize + serde_json::to_vec = recursive key sort, compact separators; JCS-adjacent but NOT RFC 8785 (no ECMAScript number normalization). Payload carries 0 JSON numbers, so the divergence is provably not load-bearing for this fixture.",
+    "clause_count": 20,
+    "core_rs_sha256": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "diagnostics_rs_sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "fixture_path": "amphora-report-packager/reference/mvp20/fixtures/known-answer-package.v1.json",
+    "fixture_sha256": "2cb9ef66221150fc392a8be1bc8570b13bc93804249df11937e426d2d02d333c",
+    "fixture_signature_verifies": true,
+    "key_id_derivation_parity": true,
+    "librs_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116",
+    "manifest_binds_render": true,
+    "mission_pinned_librs_sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+    "pass": true,
+    "payload_json_number_count": 0,
+    "phase0_rs_sha256": "123c552fedcae880df4d0e5b2d7fbe8ba629ecbc16fb16426b0653ebeb4f5df9",
+    "render_alphabet_closed": true,
+    "render_parity_byte_exact": true,
+    "render_sha256": "47a3b69e19e57a3e42d326026246dfdfee7d978bff88231adb5f4b2b64a26f75",
+    "rendered_document_passes_banned_claim_lint": true,
+    "renderer_emits_lock_map_loop": true,
+    "renderer_has_no_hardcoded_lock_value": true,
+    "score_envelope_hash_parity": true,
+    "score_envelope_sha256_rederived": "9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2",
+    "shipped_fixture_accepted": true,
+    "shipped_manifest_render_sha256": "47a3b69e19e57a3e42d326026246dfdfee7d978bff88231adb5f4b2b64a26f75",
+    "stale_mission_anchor_detected": true
+  },
+  "g1_lock_projection_completeness": {
+    "all_shipped_locks_true": true,
+    "conditions_checked": 40,
+    "conditions_passed": 40,
+    "declared_lock_count": 10,
+    "deletion_changes_render_count": 10,
+    "deletion_rejected_count": 10,
+    "deletion_removes_line_count": 10,
+    "lock_set_parity_with_primary_constant": true,
+    "locks_checked": 10,
+    "pass": true,
+    "per_lock": [
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_ranking_authority",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_optimizer_authority",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_release_authority",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_qualification_authority",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_patentability_authority",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "fto_not_performed",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_procurement_authority",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_regulatory_authority",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_safety_authority",
+        "rendered_exactly_once": true
+      },
+      {
+        "deletion_changes_render": true,
+        "deletion_failing_clauses": [
+          "C09_authority_lock_set",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "deletion_rejected": true,
+        "deletion_removes_line": true,
+        "lock": "no_product_performance_authority",
+        "rendered_exactly_once": true
+      }
+    ],
+    "rendered_exactly_once_count": 10,
+    "required_locks": [
+      "no_ranking_authority",
+      "no_optimizer_authority",
+      "no_release_authority",
+      "no_qualification_authority",
+      "no_patentability_authority",
+      "fto_not_performed",
+      "no_procurement_authority",
+      "no_regulatory_authority",
+      "no_safety_authority",
+      "no_product_performance_authority"
+    ],
+    "runtime_probe_coverage": "shipped Rust diagnostic strips 1 of 10 locks (no_ranking_authority); this oracle strips 10 of 10"
+  },
+  "g2_lattice_injectivity": {
+    "accepting_configs": 1,
+    "accepting_masks": [
+      1023
+    ],
+    "config_space": 1024,
+    "digest_collisions": 0,
+    "distinct_document_sha256": 1024,
+    "distinct_documents": 1024,
+    "distinct_renders_across_orderings": 1,
+    "injective_on_lock_lattice": true,
+    "key_orderings_tested": 20,
+    "pass": true,
+    "rejecting_configs": 1023,
+    "representation_invariant_over_key_order": true,
+    "roundtrip_exact": true,
+    "roundtrip_exact_count": 1024,
+    "unique_accept_all_locks_true": true
+  },
+  "g3_escalation_tamper_battery": {
+    "all_mutants_fail_closed": true,
+    "clause_kill_counts": {
+      "C00_struct_conformance": 1,
+      "C01_schema": 1,
+      "C02_fixture_only": 1,
+      "C03_not_authoritative": 1,
+      "C04_title_nonempty": 1,
+      "C05_score_envelopes_nonempty": 1,
+      "C06_readiness_unvalidated": 2,
+      "C07_ceiling_audit_only": 2,
+      "C08_not_ranking_eligible": 1,
+      "C09_authority_lock_set": 2,
+      "C10_narrative_lint": 1,
+      "C11_score_envelope_hash": 2,
+      "C12_render_parity": 12,
+      "C13_manifest_binds_render": 9,
+      "C14_manifest_singleton": 1,
+      "C15_algorithm_ed25519": 1,
+      "C16_key_id_derivation": 2,
+      "C17_public_key_32b": 1,
+      "C18_signature_64b": 1,
+      "C19_signature_verifies": 24
+    },
+    "clause_unique_kill_counts": {
+      "C00_struct_conformance": 0,
+      "C01_schema": 1,
+      "C02_fixture_only": 0,
+      "C03_not_authoritative": 0,
+      "C04_title_nonempty": 0,
+      "C05_score_envelopes_nonempty": 0,
+      "C06_readiness_unvalidated": 0,
+      "C07_ceiling_audit_only": 0,
+      "C08_not_ranking_eligible": 0,
+      "C09_authority_lock_set": 0,
+      "C10_narrative_lint": 0,
+      "C11_score_envelope_hash": 0,
+      "C12_render_parity": 0,
+      "C13_manifest_binds_render": 0,
+      "C14_manifest_singleton": 0,
+      "C15_algorithm_ed25519": 1,
+      "C16_key_id_derivation": 0,
+      "C17_public_key_32b": 0,
+      "C18_signature_64b": 0,
+      "C19_signature_verifies": 1
+    },
+    "clauses_strictly_necessary": [
+      "C01_schema",
+      "C15_algorithm_ed25519",
+      "C19_signature_verifies"
+    ],
+    "clauses_with_at_least_one_kill": 20,
+    "escalation_all_rejected": true,
+    "escalation_mutants": 8,
+    "lock_strip_all_rejected": true,
+    "lock_strip_mutants": 5,
+    "mutants_rejected": 26,
+    "mutants_tested": 26,
+    "pass": true,
+    "per_mutant": [
+      {
+        "failing_clauses": [
+          "C03_not_authoritative",
+          "C19_signature_verifies"
+        ],
+        "kind": "escalation",
+        "name": "authoritative_true",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C02_fixture_only",
+          "C19_signature_verifies"
+        ],
+        "kind": "escalation",
+        "name": "fixture_only_false",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C08_not_ranking_eligible",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "escalation",
+        "name": "ranking_eligible_true",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C06_readiness_unvalidated",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "escalation",
+        "name": "readiness_validated",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C06_readiness_unvalidated",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "escalation",
+        "name": "readiness_direction_validated",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C07_ceiling_audit_only",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "escalation",
+        "name": "ceiling_release",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C07_ceiling_audit_only",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "escalation",
+        "name": "ceiling_phase_1",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C01_schema"
+        ],
+        "kind": "structural",
+        "name": "schema_swap",
+        "rejected": true,
+        "uniquely_killed_by": "C01_schema"
+      },
+      {
+        "failing_clauses": [
+          "C05_score_envelopes_nonempty",
+          "C11_score_envelope_hash",
+          "C19_signature_verifies"
+        ],
+        "kind": "structural",
+        "name": "score_envelopes_emptied",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C11_score_envelope_hash",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "binding",
+        "name": "score_hash_zeroed",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "binding",
+        "name": "manifest_hash_zeroed",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C14_manifest_singleton",
+          "C19_signature_verifies"
+        ],
+        "kind": "binding",
+        "name": "manifest_extra_entry",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C12_render_parity",
+          "C19_signature_verifies"
+        ],
+        "kind": "binding",
+        "name": "render_single_token_flip",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C12_render_parity",
+          "C19_signature_verifies"
+        ],
+        "kind": "lock_strip",
+        "name": "render_lock_line_deleted",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C12_render_parity",
+          "C19_signature_verifies"
+        ],
+        "kind": "lock_strip",
+        "name": "render_release_lock_line_deleted",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C12_render_parity",
+          "C19_signature_verifies"
+        ],
+        "kind": "lock_strip",
+        "name": "render_lock_value_flipped",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C09_authority_lock_set",
+          "C19_signature_verifies"
+        ],
+        "kind": "lock_strip",
+        "name": "payload_lock_stripped_resynced",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C09_authority_lock_set",
+          "C19_signature_verifies"
+        ],
+        "kind": "lock_strip",
+        "name": "payload_lock_falsified_resynced",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C04_title_nonempty",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "structural",
+        "name": "title_blanked",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C10_narrative_lint",
+          "C12_render_parity",
+          "C13_manifest_binds_render",
+          "C19_signature_verifies"
+        ],
+        "kind": "escalation",
+        "name": "normalized_banned_claim",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C19_signature_verifies"
+        ],
+        "kind": "crypto",
+        "name": "forged_signature_byte",
+        "rejected": true,
+        "uniquely_killed_by": "C19_signature_verifies"
+      },
+      {
+        "failing_clauses": [
+          "C15_algorithm_ed25519"
+        ],
+        "kind": "crypto",
+        "name": "algorithm_swap",
+        "rejected": true,
+        "uniquely_killed_by": "C15_algorithm_ed25519"
+      },
+      {
+        "failing_clauses": [
+          "C16_key_id_derivation",
+          "C19_signature_verifies"
+        ],
+        "kind": "crypto",
+        "name": "public_key_substituted",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C16_key_id_derivation",
+          "C17_public_key_32b",
+          "C19_signature_verifies"
+        ],
+        "kind": "crypto",
+        "name": "public_key_truncated",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C18_signature_64b",
+          "C19_signature_verifies"
+        ],
+        "kind": "crypto",
+        "name": "signature_truncated",
+        "rejected": true,
+        "uniquely_killed_by": null
+      },
+      {
+        "failing_clauses": [
+          "C00_struct_conformance",
+          "C19_signature_verifies"
+        ],
+        "kind": "structural",
+        "name": "unknown_payload_field_smuggled",
+        "rejected": true,
+        "uniquely_killed_by": null
+      }
+    ]
+  },
+  "g4_trust_anchor_adequacy": {
+    "ablating_that_clause_admits_lock_stripped_package": true,
+    "adversaries_rejected": 3,
+    "adversaries_tested": 3,
+    "adversary_public_key_hex": "8c1d621ef67dcab2e3233bff478940dc6582708b14e07d3c9939dd5ccff0dc5b",
+    "adversary_seed_sha256": "7c49d759c072e4412982cc9eb628d68ddc7f03825f6a1f7da2ef87509b4915ff",
+    "all_adversaries_fail_closed": true,
+    "finding": "The report-package signature is SELF-AUTHENTICATING: key_id is derived from the presented public key and that key is not pinned in config/phase0-trust-store.v1.json, so an adversary who re-signs with their own key satisfies every crypto and hash-binding clause. The claim-lock preservation guarantee therefore rests on exactly ONE clause -- the hard-coded REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS set comparison. That clause holds and is load-bearing (ablating it admits a lock-stripped, fully self-consistent, validly signed package), but the cryptographic layer contributes NOTHING against this adversary. Remediation: pin the report-fixture verifying key as a trust anchor (RFC 5280 trust-anchor requirement; Anderson 1972 reference monitor).",
+    "fixture_signing_key_id": "report-fixture-6eec53bda395a1a4b9ff12eb2c05bac501063f79d5264f119422f9623ce6c129",
+    "fixture_signing_key_pinned_in_trust_store": false,
+    "lock_adversary_crypto_layer_satisfied": true,
+    "lock_adversary_defense_count": 1,
+    "lock_adversary_hash_bindings_satisfied": true,
+    "lock_adversary_surviving_defenses": [
+      "C09_authority_lock_set"
+    ],
+    "pass": true,
+    "per_adversary": [
+      {
+        "ablation_accepts_when_clause_removed": [
+          "C09_authority_lock_set"
+        ],
+        "adversary": "coordinated_lock_strip_resigned",
+        "crypto_clauses_all_satisfied": true,
+        "failing_clauses": [
+          "C09_authority_lock_set"
+        ],
+        "hash_binding_clauses_all_satisfied": true,
+        "rejected": true,
+        "surviving_defense_count": 1
+      },
+      {
+        "ablation_accepts_when_clause_removed": [
+          "C09_authority_lock_set"
+        ],
+        "adversary": "coordinated_lock_falsified_resigned",
+        "crypto_clauses_all_satisfied": true,
+        "failing_clauses": [
+          "C09_authority_lock_set"
+        ],
+        "hash_binding_clauses_all_satisfied": true,
+        "rejected": true,
+        "surviving_defense_count": 1
+      },
+      {
+        "ablation_accepts_when_clause_removed": [
+          "C06_readiness_unvalidated"
+        ],
+        "adversary": "coordinated_readiness_escalation_resigned",
+        "crypto_clauses_all_satisfied": true,
+        "failing_clauses": [
+          "C06_readiness_unvalidated"
+        ],
+        "hash_binding_clauses_all_satisfied": true,
+        "rejected": true,
+        "surviving_defense_count": 1
+      }
+    ],
+    "signature_provides": "INTEGRITY_ONLY_SELF_AUTHENTICATING",
+    "single_point_of_defense_clause": "C09_authority_lock_set",
+    "trust_store_path": "config/phase0-trust-store.v1.json",
+    "trust_store_roles": [
+      "PHASE0_EVALUATOR",
+      "PHASE0_INTERNAL_REVIEWER"
+    ],
+    "trust_store_sha256": "fc4fa87f70e58befc39b386a0975c9520a44b1d944c7c4a896d6c16b7437b233"
+  },
+  "gates": {
+    "all_pass": true,
+    "g0_packaging_map_parity": true,
+    "g1_lock_projection_completeness": true,
+    "g2_lattice_injectivity": true,
+    "g3_escalation_tamper_battery": true,
+    "g4_trust_anchor_adequacy": true
+  },
+  "hypothesis": "H1 the packaging map is byte-exactly reproducible and hash/signature bound; H2 every required claim lock is load-bearing in the rendered deliverable (deleting any one fails closed); H3 the map is injective on the 2^10 claim-lock lattice with a unique accept, so no lock value can be altered while holding the deliverable bytes fixed; H4 escalation and lock-strip mutants all fail closed; H5 the preservation guarantee is anchored rather than resting on a single unanchored clause. H1-H4 are corroborated; H5 is REFUTED -- the guarantee rests on one hard-coded lock-set clause because the signing key is not a pinned trust anchor.",
+  "module": "amphora-report-packager",
+  "non_circularity": "Pure CPython; no import of the Rust runtime. The packaging map, the acceptance predicate's 20 clauses, the canonicalization, the banned-claim normalizer, and the 10-element REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS constant are re-derived from primary source bytes (diagnostics.rs, amphora-core/src/lib.rs, amphora-core/src/phase0.rs) whose SHA-256 are recorded. Algebra proved by exhaustive 2^10 enumeration, 10-fold leave-one-out, and a 26-mutant x 20-clause kill matrix (20/20 clauses exercised). The adversary key is derived from a pinned seed so the run is byte-reproducible.",
+  "purpose": "Independently test the module mission's literal falsifiable hypothesis -- that downstream packaging preserves every authority and claim-lock field -- by re-deriving the payload->document packaging map in pure CPython, proving it injective on the claim-lock lattice, exercising leave-one-out over all required locks, and measuring which defense clause actually survives a coordinated re-signing adversary.",
+  "run_type": "AUDIT_ONLY_INDEPENDENT_ORACLE",
+  "runtime_source_anchors": {
+    "acceptance_predicate": "amphora-assurance-capabilities/src/diagnostics.rs::report_fixture_accepted",
+    "canonicalization": "amphora-core/src/lib.rs::canonicalize + stable_hash",
+    "core_rs_sha256": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "diagnostics_rs_sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "fixture": "amphora-report-packager/reference/mvp20/fixtures/known-answer-package.v1.json",
+    "librs_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116",
+    "packaging_map": "amphora-assurance-capabilities/src/diagnostics.rs::render_report",
+    "phase0_rs_sha256": "123c552fedcae880df4d0e5b2d7fbe8ba629ecbc16fb16426b0653ebeb4f5df9",
+    "required_claim_locks": "amphora-core/src/phase0.rs::REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS"
+  },
+  "schema": "amphora.report-packager.render-claim-lock-preservation-diagnostic.v1",
+  "study_id": "amphora-report-packager-render-claim-lock-preservation-v1",
+  "theory_reference": {
+    "Anderson_1972": "Computer Security Technology Planning Study, ESD-TR-73-51 -- reference monitor, deny-by-default",
+    "Denning_1976": "A Lattice Model of Secure Information Flow, CACM 19(5):236-243, doi:10.1145/360051.360056",
+    "FIPS_180_4": "NIST FIPS PUB 180-4 (2015), Secure Hash Standard (SHA-256), doi:10.6028/NIST.FIPS.180-4",
+    "Goguen_Meseguer_1982": "Security Policies and Security Models, Proc. IEEE Symp. Security and Privacy, pp.11-20, doi:10.1109/SP.1982.10014 -- noninterference / no information amplification",
+    "RFC_5280": "Cooper et al. 2008, Internet X.509 PKI Certificate and CRL Profile, doi:10.17487/RFC5280 -- trust anchor requirement for authenticity",
+    "RFC_8032": "Josefsson and Liusvaara 2017, Edwards-Curve Digital Signature Algorithm (EdDSA), doi:10.17487/RFC8032 -- Ed25519",
+    "RFC_8785": "Rundgren et al. 2020, JSON Canonicalization Scheme, doi:10.17487/RFC8785 -- contrast anchor for the module's sorted-key compact canonicalization",
+    "Saltzer_Schroeder_1975": "The Protection of Information in Computer Systems, Proc. IEEE 63(9):1278-1308, doi:10.1109/PROC.1975.9939 -- fail-safe defaults, complete mediation"
+  },
+  "verdict": "PRESERVATION_CORROBORATED_WITH_UNANCHORED_TRUST_BASE"
+}

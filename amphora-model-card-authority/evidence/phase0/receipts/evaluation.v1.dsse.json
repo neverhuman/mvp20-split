@@ -1,0 +1,51 @@
+{
+  "applicability_domain": [
+    "registered amphora-model-card-authority contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "audit_execution_passed": true,
+  "benchmark_execution_complete": true,
+  "bundle_hash": "d65d232f07fc8e3a5ce50c24f8a120c658fab1781282462709ea54cdeb8b38c5",
+  "bundle_parent_hashes": {
+    "evidence/phase0/benchmark/benchmark-lock.v1.json": "65d4874eb4dd8a522660cd0fd9cd3c355af5abcf2f3a157b29f065255c0667c8",
+    "evidence/phase0/dataset/dataset-manifest.v1.json": "4cb9a970ed4dcec47f4ac6c2b74d11e6d8fed41df00a05ac09dcb95c262e4601",
+    "evidence/phase0/promotion/policy.v1.json": "2278d12aa4ec0f9048a39bc2f1ccc581204378d431a3a5e658eb18c4a04c9cc5",
+    "evidence/phase0/raw/SHA256SUMS": "21508c6318009de33fd5c030fa53e6447bb727be000b6a5db5210cb16df7ef52",
+    "evidence/phase0/sources/source-lock.v1.json": "6aeb7c70cc18a3bc8f7bfbb04ea2c63d47eb4fc6ce3c2439ff96b5d769660893",
+    "evidence/phase0/split/split-manifest.v1.json": "536a2a2e412f76b2fcfb6ff3143c6b64a76f399c483cf125d52c8984a03e8b34",
+    "evidence/superseded/supersession-21589fde00224b4a4684aa9b54b9235fd5b9d9c72cbfc25fbf1b178991f527c0/supersession.v1.json": "85b1218bb181c5670c1d65c199d86a613ca4128ac98bea64ee6bd7ca857fb1a3",
+    "ip/claim-contract.v1.json": "d17683ee5ad91d81c4df757ffe05abd22184be304c5d871d2bcb1278e56fe1b3",
+    "ip/disclosure-log.v1.json": "56bd5aa756487be87dd6ccbc922f80ae84a9cc32847df53bf62f6682555d9fed",
+    "ip/prior-art.v1.json": "be3ac45640f1a67812aeb3438b62927dcdda5ccc0c9053a60e313d3a1db56ed9",
+    "ip/technical-dossier.v1.json": "9e4086342835512a5ded67c7cfc280fb8a1a2f48935647cbafa8aeecb4231b30"
+  },
+  "claim_lock_hash": "ddf1b1206122cd1053decf91437976f27faef9bc7627499c8422654df0e09eea",
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "failed_gates": [],
+  "metrics": {
+    "benchmark_execution_complete": true,
+    "benchmark_result_sha256": "2b4a0650374a91820ed52ca1ff9e1fb1974e550570ba8076b2a7317e1675ddbf",
+    "replay_identical": true,
+    "rights_gate_passed": true
+  },
+  "module_class": "DETERMINISTIC_CONTROL",
+  "module_id": "amphora-model-card-authority",
+  "phase0_eligible": true,
+  "receipt_id": "phase0-evaluation-67d390a9316c04d048e21acce0396c706d9578be3783a2dfbe0e86ab7f7ab4b3",
+  "replay_hash": "613d96ac1268249ebe369d9d6232dc0eda285098ec5ebf90b35af175b986c747",
+  "retained_negative_results": [],
+  "schema": "amphora.module-phase0-evaluation-receipt.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "scientific_readiness": "NOT_APPLICABLE",
+  "signature": {
+    "payload": "eyJhcHBsaWNhYmlsaXR5X2RvbWFpbiI6WyJyZWdpc3RlcmVkIGFtcGhvcmEtbW9kZWwtY2FyZC1hdXRob3JpdHkgY29udHJhY3QgYW5kIHN5bnRoZXRpYyBmaXh0dXJlcyIsImFic3RhaW4gb24gbWFsZm9ybWVkLCBzdGFsZSwgdW5hdXRob3JpemVkLCBvciBvdXQtb2YtY29udHJhY3QgaW5wdXQiXSwiYXVkaXRfZXhlY3V0aW9uX3Bhc3NlZCI6dHJ1ZSwiYmVuY2htYXJrX2V4ZWN1dGlvbl9jb21wbGV0ZSI6dHJ1ZSwiYnVuZGxlX2hhc2giOiJkNjVkMjMyZjA3ZmM4ZTNhNWNlNTBjMjRmOGExMjBjNjU4ZmFiMTc4MTI4MjQ2MjcwOWVhNTRjZGViOGIzOGM1IiwiYnVuZGxlX3BhcmVudF9oYXNoZXMiOnsiZXZpZGVuY2UvcGhhc2UwL2JlbmNobWFyay9iZW5jaG1hcmstbG9jay52MS5qc29uIjoiNjVkNDg3NGViNGRkOGE1MjI2NjBjZDBmZDljZDNjMzU1YWY1YWJjZjJmM2ExNTdiMjlmMDY1MjU1YzA2NjdjOCIsImV2aWRlbmNlL3BoYXNlMC9kYXRhc2V0L2RhdGFzZXQtbWFuaWZlc3QudjEuanNvbiI6IjRjYjlhOTcwZWQ0ZGNlYzQ3ZjRhYzZjMmI3NGQxMWU2ZDhmZWQ0MWRmMDBhMDVhYzA5ZGNiOTVjMjYyZTQ2MDEiLCJldmlkZW5jZS9waGFzZTAvcHJvbW90aW9uL3BvbGljeS52MS5qc29uIjoiMjI3OGQxMmFhNGVjMGY5MDQ4YTM5YmMyZjFjY2M1ODEyMDQzNzhkNDMxYTNhNWU2NThlYjE4YzRhMDRjOWNjNSIsImV2aWRlbmNlL3BoYXNlMC9yYXcvU0hBMjU2U1VNUyI6IjIxNTA4YzYzMTgwMDlkZTMzZmQ1YzAzMGZhNTNlNjQ0N2JiNzI3YmUwMDBiNmE1ZGI1MjEwY2IxNmRmN2VmNTIiLCJldmlkZW5jZS9waGFzZTAvc291cmNlcy9zb3VyY2UtbG9jay52MS5qc29uIjoiNmFlYjdjNzBjYzE4YTNiYzhmN2JmYmIwNGVhMmM2M2Q0N2ViNGZjNmNlM2MyNDM5ZmY5NmI1ZDc2OTY2MDg5MyIsImV2aWRlbmNlL3BoYXNlMC9zcGxpdC9zcGxpdC1tYW5pZmVzdC52MS5qc29uIjoiNTM2YTJhMmU0MTJmNzZiMmZjZmI2ZmYzMTQzYzZiNjRhNzZmMzk5YzQ4M2NmMTI1ZDUyYzg5ODRhMDNlOGIzNCIsImV2aWRlbmNlL3N1cGVyc2VkZWQvc3VwZXJzZXNzaW9uLTIxNTg5ZmRlMDAyMjRiNGE0Njg0YWE5YjU0YjkyMzVmZDViOWQ5YzcyY2JmYzI1ZmJmMWIxNzg5OTFmNTI3YzAvc3VwZXJzZXNzaW9uLnYxLmpzb24iOiI4NWIxMjE4YmIxODFjNTY3MGMxZDY1YzE5OWQ4NmE2MTNjYTQxMjhhYzk4YmVhNjRlZTZiZDdjYTg1N2ZiMWEzIiwiaXAvY2xhaW0tY29udHJhY3QudjEuanNvbiI6ImQxNzY4M2VlNWFkOTFkODFjNGRmNzU3ZmZlMDVhYmQyMjE4NGJlMzA0YzVkODcxZDJiY2IxMjc4ZTU2ZmUxYjMiLCJpcC9kaXNjbG9zdXJlLWxvZy52MS5qc29uIjoiNTZiZDVhYTc1NjQ4N2JlODdkZDZjY2JjOTIyZjgwYWU4NGE5Y2MzMjg0N2RmNTNiZjYyZjY2ODI1NTVkOWZlZCIsImlwL3ByaW9yLWFydC52MS5qc29uIjoiYmUzYWM0NTY0MGYxYTY3ODEyYWViMzQzOGI2MjkyN2RjZGRhNWNjYzBjOTA1M2E2MGUzMTNkM2ExZGI1NmVkOSIsImlwL3RlY2huaWNhbC1kb3NzaWVyLnYxLmpzb24iOiI5ZTQwODYzNDI4MzU1MTJhNWRlZDY3YzdjZmMyODBmYjhhMWEyZjQ4OTM1NjQ3Y2JhZmE4YWVlY2I0MjMxYjMwIn0sImNsYWltX2xvY2tfaGFzaCI6ImRkZjFiMTIwNjEyMmNkMTA1M2RlY2Y5MTQzNzk3NmYyN2ZhZWY5YmM3NjI3NDk5Yzg0MjI2NTRkZjBlMDllZWEiLCJkZWNpc2lvbl91c2VfY2VpbGluZyI6IkFVRElUX09OTFkiLCJldmFsdWF0b3Jfa2V5X2lkIjoicGhhc2UwLWV2YWx1YXRvci0zZWY2YjM1Y2RiYmZlYTc0YTk2YTVjOWI5OGE1MTVkNTcxNThhMDllY2FmZjEwYWNmYTFmMTU5OTBiZTAwMTc4IiwiZmFpbGVkX2dhdGVzIjpbXSwibWV0cmljcyI6eyJiZW5jaG1hcmtfZXhlY3V0aW9uX2NvbXBsZXRlIjp0cnVlLCJiZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6IjJiNGEwNjUwMzc0YTkxODIwZWQ1MmNhMWZmOWUxZmIxOTc0ZTU1MDU3MGJhODA3NmIyYTczMTdlMTY3NWRkYmYiLCJyZXBsYXlfaWRlbnRpY2FsIjp0cnVlLCJyaWdodHNfZ2F0ZV9wYXNzZWQiOnRydWV9LCJtb2R1bGVfY2xhc3MiOiJERVRFUk1JTklTVElDX0NPTlRST0wiLCJtb2R1bGVfaWQiOiJhbXBob3JhLW1vZGVsLWNhcmQtYXV0aG9yaXR5IiwicGhhc2UwX2VsaWdpYmxlIjp0cnVlLCJyZWNlaXB0X2lkIjoicGhhc2UwLWV2YWx1YXRpb24tNjdkMzkwYTkzMTZjMDRkMDQ4ZTIxYWNjZTAzOTZjNzA2ZDk1NzhiZTM3ODNhMmRmYmUwZTg2YWI3ZjdhYjRiMyIsInJlcGxheV9oYXNoIjoiNjEzZDk2YWMxMjY4MjQ5ZWJlMzY5ZDlkNjIzMmRjMGVkYTI4NTA5OGVjNWViZjkwYjM1YWYxNzViOTg2Yzc0NyIsInJldGFpbmVkX25lZ2F0aXZlX3Jlc3VsdHMiOltdLCJzY2hlbWEiOiJhbXBob3JhLm1vZHVsZS1waGFzZTAtZXZhbHVhdGlvbi1yZWNlaXB0LnYxIiwic2NpZW50aWZpY19vdXRjb21lIjoiTk9UX0FQUExJQ0FCTEUiLCJzY2llbnRpZmljX3JlYWRpbmVzcyI6Ik5PVF9BUFBMSUNBQkxFIn0=",
+    "payloadType": "application/vnd.amphora.module-phase0-evaluation-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "RwR6i0EF1ibngTXRaZ4uW54kNJ7WZ0WRzXlEdvEF5N/qxHBI7shFNn1YK2PRLuMu+SAiN4fI//Ltj/Tiqa+rAA=="
+      }
+    ]
+  }
+}

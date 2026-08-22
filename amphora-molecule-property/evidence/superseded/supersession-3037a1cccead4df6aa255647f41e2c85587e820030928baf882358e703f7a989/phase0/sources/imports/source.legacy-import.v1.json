@@ -1,0 +1,71 @@
+{
+  "schema": "amphora.module-source-census.v1",
+  "module_id": "amphora-molecule-property",
+  "frozen_on": "2026-07-18",
+  "sources": [
+    {
+      "source_id": "legacy_molecule_property_controls",
+      "publisher": "Amphora local benchmark compilation",
+      "study_id": "MOLECULE_PROPERTY_LEGACY_CONTROLS",
+      "source_url": "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json",
+      "acquisition_status": "ACQUIRED",
+      "local_manifest": "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json",
+      "local_manifest_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+      "license": "Mixed public and supplier references; no single hash-bound derivative license covers the compiled benchmark",
+      "rights_status": "QUARANTINED",
+      "eligible_for_derivatives": false,
+      "restrictions": [
+        "legacy controls are replay-only",
+        "replace with a fixed ChEBI CC BY 4.0 release and PubChem cross-checks",
+        "commercial product rows remain measured-only"
+      ]
+    },
+    {
+      "source_id": "chebi_fixed_release_truth_set",
+      "publisher": "EMBL-EBI ChEBI",
+      "study_id": "COATINGS_REACTIVE_MOLECULE_TRUTH_SET_V1",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/archive/rel252/SDF/chebi_3_stars.sdf.gz",
+      "release_id": "ChEBI-252",
+      "release_date": "2026-05-01",
+      "acquisition_status": "FETCH_LOCKED_NOT_ACQUIRED",
+      "local_manifest": null,
+      "local_manifest_sha256": null,
+      "license": "CC BY 4.0",
+      "rights_status": "PLANNED",
+      "eligible_for_derivatives": false,
+      "fetch": {
+        "download_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/archive/rel252/SDF/chebi_3_stars.sdf.gz",
+        "expected_sha256": "8f17627476c66e899dabe3cd7ae1cbb94f7ee6c67f2ee91f077a77a19c940ad7",
+        "install_path": "amphora-molecule-property/reference/chebi/rel252/chebi_3_stars.sdf.gz",
+        "license_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/archive/rel252/SDF/LICENSE",
+        "license_sha256": "fe7b4ce83b8381cc5b216bbb4af73c570688d1b819c73bbaed8ca401f4677cd6",
+        "license_install_path": "amphora-molecule-property/reference/chebi/rel252/LICENSE.txt",
+        "acquisition_record_path": "amphora-molecule-property/reference/chebi/rel252/chebi_3_stars.acquisition.v1.json"
+      },
+      "selection_lock": {
+        "minimum_eligible_records": 300,
+        "ordering": "ascending numeric ChEBI ID before eligibility filtering",
+        "required_fields": ["ChEBI ID", "SMILES", "INCHIKEY", "FORMULA", "MASS", "PubChem Compound Database Links"],
+        "exclusions_before_id_and_split_freeze": [
+          "RDKit 2026.03.2 parse failure",
+          "multiple connected components",
+          "wildcard query or polymer structure",
+          "missing or multiple PubChem compound identifiers",
+          "missing scientific input",
+          "identity formula or mass cross-check failure"
+        ],
+        "pubchem_pug_rest_property_endpoint": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/property/CanonicalSMILES,IsomericSMILES,MolecularFormula,MolecularWeight,InChIKey/JSON",
+        "identity_rule": "exact full InChIKey",
+        "formula_rule": "exact molecular formula string",
+        "mass_rule": "absolute difference at most 0.05 g/mol",
+        "missing_values_imputed": false
+      },
+      "restrictions": [
+        "minimum 300 deduplicated defined single-component molecules",
+        "PubChem identifier and structure cross-check required",
+        "independently generated structure and mass references required",
+        "raw acquisition alone does not create derivative or promotion authority"
+      ]
+    }
+  ]
+}

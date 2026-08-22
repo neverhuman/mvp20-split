@@ -1,0 +1,216 @@
+{
+  "aggregate": {
+    "hansen_3_component": {
+      "fraction_within_factor_of_3": 0.75,
+      "mae_chi_units": 0.6558380331,
+      "n_within_factor_of_3": 6,
+      "pearson_r": 0.8692336903,
+      "rmse_chi_units": 0.8551887358,
+      "spearman_r": 0.7425282824
+    },
+    "hildebrand_1_parameter": {
+      "fraction_within_factor_of_3": 0.75,
+      "mae_chi_units": 1.7297636534,
+      "n_within_factor_of_3": 6,
+      "pearson_r": 0.459784888,
+      "rmse_chi_units": 2.661659631,
+      "spearman_r": 0.598813131
+    },
+    "mae_ratio_hildebrand_over_hansen": 2.6374860348
+  },
+  "all_gates_pass": true,
+  "chloroform_subset": {
+    "hansen_mae": 0.3007005075,
+    "hildebrand_mae": 0.1757280756,
+    "n": 3
+  },
+  "constants": {
+    "R_gas_J_per_mol_K": 8.314462618,
+    "chi_S_entropic": 0.34,
+    "implied_molar_volume_cm3_per_mol": {
+      "chloroform": 80.65,
+      "ethanol": 58.68,
+      "water": 18.07
+    },
+    "implied_vs_literature_relative_error": {
+      "chloroform": 0.0056,
+      "ethanol": 0.005,
+      "water": 0.0
+    },
+    "literature_molar_volume_cm3_per_mol": {
+      "chloroform": 80.2,
+      "ethanol": 58.39,
+      "water": 18.07
+    },
+    "prefactor_Vs_over_RT_per_solvent": {
+      "chloroform": 0.0325338435,
+      "ethanol": 0.0236712453,
+      "water": 0.0072893559
+    },
+    "solvent_hansen_hsp_MPa_half": {
+      "chloroform": [
+        17.8,
+        3.1,
+        5.7
+      ],
+      "ethanol": [
+        15.8,
+        8.8,
+        19.4
+      ],
+      "water": [
+        15.5,
+        16.0,
+        42.3
+      ]
+    },
+    "temperature_K": 298.15
+  },
+  "ethanol_subset": {
+    "hansen_mae": 0.336996926,
+    "hildebrand_mae": 0.255835762,
+    "n": 2
+  },
+  "fail_closed_rate": 1.0,
+  "gates": {
+    "G1_hansen_known_answer_reproduced": true,
+    "G2_prefactor_constant_per_solvent": true,
+    "G3_implied_molar_volume_within_2pct_of_literature": true,
+    "G4_hildebrand_worse_on_mae": true,
+    "G5_fail_closed_on_nonphysical_inputs": true
+  },
+  "hostile_fail_closed": [
+    {
+      "abstained": true,
+      "case": "nan_delta_p"
+    },
+    {
+      "abstained": true,
+      "case": "negative_delta_d"
+    },
+    {
+      "abstained": true,
+      "case": "inf_solvent_dh"
+    },
+    {
+      "abstained": true,
+      "case": "zero_prefactor"
+    },
+    {
+      "abstained": true,
+      "case": "negative_prefactor"
+    }
+  ],
+  "interpretation": "Independent re-derivation of the Hansen 3-component chi reproduces the signed external-validation receipt exactly (max |err| 0.00e+00 chi units; MAE 0.6558, Pearson 0.8692), confirming the prefactor and Ra metric. Swapping ONLY the cohesive-distance term for the single Hildebrand parameter delta_total (Hildebrand & Scott 1950) degrades MAE from 0.6558 to 1.7298 chi units (2.64x worse) and Pearson from 0.869 to 0.460. The degradation is concentrated in the strongly hydrogen-bonding water systems (PVA, PEG, PS in water): Hansen MAE 1.224 vs Hildebrand MAE 4.266, because the scalar delta folds water's large delta_H=42.3 into a single term and grossly over-predicts chi. This a-priori, unfitted comparison corroborates Hansen's central thesis that resolving cohesive energy into dD/dP/dH is required for polar/H-bonding coating systems, and is not reproducible by the 1-D Hildebrand parameter.",
+  "n_pairs": 8,
+  "per_pair": [
+    {
+      "Ra2": 37.2367916434,
+      "chi_hansen_receipt": 0.6428639877760548,
+      "chi_hansen_reproduced": 0.6428639878,
+      "chi_hildebrand": 0.3657632523,
+      "chi_published": 0.35,
+      "delta_total_polymer": 18.0558294355,
+      "delta_total_solvent": 18.9457119159,
+      "hansen_reproduction_abs_err": 0.0,
+      "polymer_key": "polystyrene_PS",
+      "solvent": "chloroform"
+    },
+    {
+      "Ra2": 18.7248880491,
+      "chi_hansen_receipt": 0.49229814425249674,
+      "chi_hansen_reproduced": 0.4922981443,
+      "chi_hildebrand": 0.4020962224,
+      "chi_published": 0.42,
+      "delta_total_polymer": 20.3272564971,
+      "delta_total_solvent": 18.9457119159,
+      "hansen_reproduction_abs_err": 0.0,
+      "polymer_key": "PMMA",
+      "solvent": "chloroform"
+    },
+    {
+      "Ra2": 89.3763924199,
+      "chi_hansen_receipt": 1.066939390496322,
+      "chi_hansen_reproduced": 1.0669393905,
+      "chi_hildebrand": 1.0235171969,
+      "chi_published": 0.53,
+      "delta_total_polymer": 14.3621084798,
+      "delta_total_solvent": 18.9457119159,
+      "hansen_reproduction_abs_err": 0.0,
+      "polymer_key": "polyisobutylene_PIB",
+      "solvent": "chloroform"
+    },
+    {
+      "Ra2": 953.4344317793,
+      "chi_hansen_receipt": 2.0774807203712298,
+      "chi_hansen_reproduced": 2.0774807204,
+      "chi_hildebrand": 5.5466789277,
+      "chi_published": 0.49,
+      "delta_total_polymer": 21.0812072887,
+      "delta_total_solvent": 47.807321615,
+      "hansen_reproduction_abs_err": 0.0,
+      "polymer_key": "PVA",
+      "solvent": "water"
+    },
+    {
+      "Ra2": 880.2611707164,
+      "chi_hansen_receipt": 1.9441342351742998,
+      "chi_hansen_reproduced": 1.9441342352,
+      "chi_hildebrand": 4.8703918111,
+      "chi_published": 0.42,
+      "delta_total_polymer": 22.8772626963,
+      "delta_total_solvent": 47.807321615,
+      "hansen_reproduction_abs_err": 0.0,
+      "polymer_key": "PEG",
+      "solvent": "water"
+    },
+    {
+      "Ra2": 2040.780554847,
+      "chi_hansen_receipt": 4.058993934315979,
+      "chi_hansen_reproduced": 4.0589939343,
+      "chi_hildebrand": 6.7921827379,
+      "chi_published": 3.5,
+      "delta_total_polymer": 18.0558294355,
+      "delta_total_solvent": 47.807321615,
+      "hansen_reproduction_abs_err": 0.0,
+      "polymer_key": "polystyrene_PS",
+      "solvent": "water"
+    },
+    {
+      "Ra2": 123.9831066802,
+      "chi_hansen_receipt": 1.0737086336224777,
+      "chi_hansen_reproduced": 1.0737086336,
+      "chi_hildebrand": 1.2485104403,
+      "chi_published": 1.2,
+      "delta_total_polymer": 20.3272564971,
+      "delta_total_solvent": 26.5224433264,
+      "hansen_reproduction_abs_err": 0.0,
+      "polymer_key": "PMMA",
+      "solvent": "ethanol"
+    },
+    {
+      "Ra2": 457.551336792,
+      "chi_hansen_receipt": 3.047702485595379,
+      "chi_hansen_reproduced": 3.0477024856,
+      "chi_hildebrand": 2.0368389163,
+      "chi_published": 2.5,
+      "delta_total_polymer": 18.0558294355,
+      "delta_total_solvent": 26.5224433264,
+      "hansen_reproduction_abs_err": 0.0,
+      "polymer_key": "polystyrene_PS",
+      "solvent": "ethanol"
+    }
+  ],
+  "run_type": "PHYSICAL_BASELINE_HEAD_TO_HEAD",
+  "schema": "amphora.solvency-score.hildebrand-vs-hansen-chi-diagnostic.v1",
+  "source_receipt": {
+    "path": "amphora-solvency-score/reference/mvp20/data/hansen_chi_external_validation_8_published_polymer_solvent_pairs_receipt.v1.json",
+    "sha256": "2e512aa4e34b97d24c36cf3f0aec0410e534f4bdc6ee1c85c0fa72e35e25fa6b"
+  },
+  "target_property": "Flory-Huggins interaction parameter chi (polymer-solvent)",
+  "water_subset_strong_hbond": {
+    "hansen_mae": 1.2235362966,
+    "hildebrand_mae": 4.2664178256,
+    "n": 3
+  }
+}

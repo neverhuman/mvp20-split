@@ -1,0 +1,1295 @@
+{
+  "results": {
+    "corpus_a_real_manifest_receipts": [
+      {
+        "extraction_error": null,
+        "file_sha256": "63fe1b960253c4835f5656cf3a8b91ec095d27540cb02397e6edd741e88ddfb7",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-st19168-eis-rustcreep-d5",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-barrier-corrosion-score/reference/eis/st-19168/st19168_eis_rust_creep_correlation_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "30977b5113d2b430e75dcee73ecbaee6f18135103f5efea90634a78c57e0ffe9",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-corr-data-corrosion-mats",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/corr_data_corrosion_rate_qspr_model_material_safe_v2_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "045a1d4a8b1b958780d9f69b44a0aa5c241e2b5db328f89c3d97ae7851f791d8",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-corr-data-corrosion-7df6",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/corr_data_corrosion_rate_qspr_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "72e65b19297fbb6e9d282e393448cdbd014b4ad44bb165581be17aa6a9471074",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-corr-data-corrosion-v3-e",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/corr_data_corrosion_rate_qspr_model_v3_env_features_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "22a2594cdd28214c711a9b5e7f061d5b17681ef72f5ba276a58ba172677053b0",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyverse-diffusivity-co",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/polyverse_diffusivity_conformal_and_applicability_domain_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "b5d0641af3e9dda01548d29fafe1de7e2bff91d5f7f03e0c13ddc7810c604b6a",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyverse-diffusivity-na",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/polyverse_diffusivity_named_baseline_benchmark_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "5985e5a68515cd227937688e621a2e2d2e9e68e491728bafc8ca997d150135bd",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyverse-diffusivity-a8",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/polyverse_solvent_diffusivity_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "0da7dd6a75b2c07423cec83fee408bf559021f690d1a327495eada8e95431449",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyverse-uptake-sorptio",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/polyverse_solvent_uptake_sorption_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "ed4a4b60c72c9f3165443cd86940782d1e58286fa8dff187f02461ef421331d7",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-evonik-cure-kinetics-98a",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-cure-potlife-gate/reference/mvp20/data/evonik_cure_kinetics_correlation_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "9a35f6042879580e14f8656864107b851deeacecca76d4371c4698fddba9c090",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-purformance-multi-target",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/purformance_multi_target_coating_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "e87d4a8c2a92282f74f399c03860c5327e3ba221e66c3ffec4bb6d8b052953ce",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-purformance-scratch-hard",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/purformance_scratch_hardness_conformal_prediction_interval_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "41f4e930b503bf0a501e35149d4e4e0f3e3f6c44d9b4154f7cce155918a48714",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-purformance-scratch-hard",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/purformance_scratch_hardness_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "dd7295340f40560c014936c1a70c2fd560ed2eccc31940ae349707617ed345d5",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-purformance-scratch-hard",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/purformance_scratch_hardness_named_baseline_benchmark_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "5bb53ff1c91954f1765a71270d4f47f736fda0d45e38c3eba34813afd062f3de",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-tanimoto-nn-novelty-cano",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-novelty/reference/mvp20/data/tanimoto_nn_novelty_of_canonical_epoxy_amines_against_openpoly_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "c7cdca9045a2fab1ee8b61f1081a6b4ed6275509bc2e640b08392cc5edd54a09",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-coating-candidate-design",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/coating_candidate_design_card_5_canonical_epoxy_amines_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "00ad1da4bfdca1677c70bf5b72abf804fa33060b2522e96a23ae9268c346e514",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-eew-ahew-toolkit-a377660",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/eew_ahew_independent_toolkit_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "6ca909e2e3ac3002901ffd6f041d9a2d6fc9da51f82e7555e350f5b3a57fdcb0",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-push-20-ridge-ygi-extern",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/external_validation_of_polyuniverse_ridge_ygi_on_openpoly_experimental_tg_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "ff0dba2bbcd1d225cc17c4720030558c5579e70f72c6c6716f5d315949dac3a4",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-external-validation-open",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/external_validation_openpoly_dielectric_ml_on_radonpy_pi1070_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "143dafd7d2570232722f640fe147099022cbb359748bc36588035c26497b5d83",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-mixed-openpoly-radonpy-d",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/mixed_openpoly_radonpy_dielectric_ml_split_conformal_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "d4ecd75047981061dec89b0b74347df562f2427378b34ac68807df23dd09b49b",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-mixed-openpoly-radonpy-r",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/mixed_openpoly_radonpy_refractive_index_ml_split_conformal_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "28aaedceaaa8cd2da16f4d9435fc3a3cfe1b7ef62ed5f01007e1dd9158ef4b0f",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-multi-target-ml-radonpy-",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/multi_target_ml_radonpy_pi1070_4_properties_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "fc6104cc22b252238e38898ba6cc7e7825e64c6eaebd9d55084fe1de4e76974f",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-nist-corr-marine-baselin",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/nist_corr_data_marine_steel_corrosion_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "6f41975166c6d4d6727f469529cad003d43be6215bbff4d3cd56794c06f412dc",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-omg-monomers-toolkit-val",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/omg_monomers_toolkit_validation_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "3c3272ad213ef6eb985768df10d73caa1821f12381a37655c770e2433e72725e",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-openpoly-barrier-multi-t",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/openpoly_barrier_multi_target_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "0d00c7bf01fb3c59a0366d0c119fbefb56f5c6dff236cf10b26ae27e7442b38c",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-openpoly-benchmark-compa",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/openpoly_benchmark_comparison_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "93250d3ad2a970a3af965e420602521aaf096f93d896d620b44e6464a9544f1f",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-openpoly-dielectric-base",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/openpoly_dielectric_constant_ml_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "ce229b0eb47ac0db1de47996690ad9d7a88a37f567d012ff827b071acd6c2db6",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-openpoly-experimental-tg",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/openpoly_experimental_tg_ml_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "8e8e6c6a28dedc0e8771d5c8979da7071166e8401aaf763dc5e303447bf46078",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-openpoly-water-contact-a",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/openpoly_water_contact_angle_ml_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "d09e0a013cf3d4c65b888a29e66cb7100f22b3d733cc576de0f34f2c8553a953",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-openpoly-water-uptake-ml",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/openpoly_water_uptake_ml_baseline_audit_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "2c7b807b187a520800d563ca647636355f318044d469246a5a8bd823928bab65",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyuniverse-epoxy-tg-co",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/polyuniverse_epoxy_tg_conformal_and_applicability_domain_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "0aaf262d28bd4d55924c35e6acdd18d33d800a59e3a9c9695f6f7942e7bd077e",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyuniverse-epoxy-tg-ex",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/polyuniverse_epoxy_tg_external_validation_5_canonical_epoxy_amines_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "c2b062df67d4078b837c799e49aba0d25fe3c2e64168e2fa0cd6fdf5904fec72",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyuniverse-epoxy-tg-ba",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/polyuniverse_epoxy_tg_named_baseline_benchmark_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "0e1cafe97b0d20ebd9b6b256ff686f80c47174ea1768065787e4eecec58bb78c",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyuniverse-epoxy-tg-va",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/polyuniverse_epoxy_tg_van_krevelen_physical_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "9235683fa7e9f74dbd6bf29f95d37b8dcc281c679c12212241c7465a9a413150",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyuniverse-epoxy-tg-ym",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/polyuniverse_epoxy_tg_ym_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "a868617a8f3cc0927f204b16493f79e902371f68e30f625228cca5a0127a22dc",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-radonpy-density-ml-vs-va",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/radonpy_pi1070_density_ml_and_van_krevelen_physics_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "47578f17f2b088d4ab13b9fdf6a7edf43217d66b7541f314017c550ea21da5fb",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-radonpy-pi1070-multi-tar",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/radonpy_pi1070_multi_target_coating_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "5de4aa94af89265eeacd72332f6d1315610304699248186f28c274e0f98adef3",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-radonpy-thermal-mechanic",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/radonpy_pi1070_thermal_mechanical_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "ae031d1e913bb93165618e30aa2c1a4be132a45a3f793190a529ce8745f8a841",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-stacked-ml-vk-physics-de",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/stacked_ml_and_van_krevelen_physics_density_radonpy_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "af6e164db810ab7a161b6d4f17833d67ccac0ef93df5b42feb81ee42e4340f92",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-vk-ridge-fit-1000pol-160",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/van_krevelen_ridge_fit_on_1000_polyuniverse_polymers_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "605a0b92639834c0882ee41b02c1087cf4158300b9c4e200cd3baac65b938a36",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-vk-ridge-retuned-15pol-1",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/van_krevelen_ridge_retuned_Ygi_on_15_canonical_homopolymers_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "ffb64503a4b29cbedeab631c1d2aaad6dce8cdbe57a77db0b8f7a35a90177ace",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-vk-tg-LOO-rescaled-15pol",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/van_krevelen_tg_LOO_rescaled_15_canonical_homopolymers_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "a9d489d46553ff13b3af7a69bcc928b4608cd87e3d1fa3852674e74794b50f2c",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-vk-tg-corrected-15pol-3d",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/van_krevelen_tg_corrected_formula_on_15_canonical_homopolymers_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "daa091c94edf56bbce21b5ce52cd145bff69a18914489325efb61c87f8fdb698",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-vk-tg-external-validatio",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/reference/mvp20/data/van_krevelen_tg_external_validation_15_canonical_homopolymers_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "c2f6174cdc6cbb74d5835a7ecd93d699a9b36ad43ffa1b0bc575233eb8948596",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-coating-candidate-decisi",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-role-ranker/reference/mvp20/data/portfolio_integrated_candidate_decision_card_v2_5_canonical_epoxy_amines_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "5ae71fed610d3e42db42c1a4c64a9cd97f09f9e848f95721aad595ef2eb0b981",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-bigsoldb-qspr-95a4a7df40",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/bigsoldb_solubility_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "23682550fbe8a5a73d4f9d244942bfa15ba79cf5752169ac29df202b56513dbd",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-formulation-matrix-full-",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/formulation_matrix_full_library_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "595b8599f4f442d6ed102289250a04a1d607b7a325fa31c99d0346c4cf7962f9",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-formulation-screener-7e3",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/formulation_screener_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "2e512aa4e34b97d24c36cf3f0aec0410e534f4bdc6ee1c85c0fa72e35e25fa6b",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-hansen-chi-external-vali",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/hansen_chi_external_validation_8_published_polymer_solvent_pairs_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "24851e08d9b5f24d933891b47395b336ac76751b4a96d58a9aa5426d68734708",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-omg-chi-conformal-ad-bff",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/omg_chi_conformal_and_applicability_domain_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "87c49f224c0112d29d340e6d5cb81ec19f660fc1f2d1558091b4efb31f33a602",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-omg-chi-flory-huggins-ba",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/omg_chi_flory_huggins_physical_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "f56e179cf59e4e1d1c35b6b56d6558c92a098c2a2d7522d1b513e8d4f78cd2cd",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-omg-chi-hansen-3componen",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/omg_chi_hansen_3component_physical_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "b86592eb93128779230f1af6935328abfab1e20811fc76bbd6cce4e48689b5c0",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-omg-chi-hostile-null-65b",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/omg_chi_model_hostile_null_redteam_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "858db5b211f268b6239340e00cadde4dbd203c653276d7bdd456b1dbde0a0711",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-omg-chi-c74dbc5e75ecc9ba",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/omg_chi_parameter_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "21e1e7d73c14896cbe31ea2656244cb9f49b4dd0e3a48ab863ea57c0afd43786",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-omg-chi-transfer-59d34c5",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/omg_chi_transfer_test_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "0ac4783e3b1083453845701a7f1ad9db91548a4fae3ae4bd999bac2734ee7b5b",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-omg-hsp-8cb87c4ffa6b88d4",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/omg_hansen_solubility_parameter_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "26588656ff165ed2d4245955a7290b0ef1170dcd0229f722a0305b3f140e05e1",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyomics-dmf-chi-491706",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/polyomics_dmf_chi_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "1f9404fd986da8c72b6c697e0d37d4eb6e5cf3d379de300ca376fc90dc1bbe33",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyverse-ced-3f57d74b1a",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/reference/mvp20/data/polyverse_cohesive_energy_density_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "ebeef1927ee43782a77d0735c90845b63bc651ad7c67c395b2a7d750c96b3411",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-ghs-clp-public-hazard-pr",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-sourceability-ehs/reference/mvp20/data/ghs_clp_public_hazard_prescreen_5_canonical_epoxy_amines_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "9907775ab048c0c89e3e6cfaabc4eb03434ab34b3cadfeb48b391c39062d5f9a",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-push-20-ridge-ygi-bootst",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-tolerance-robustness/reference/mvp20/data/bootstrap_ci_on_push_20_ridge_ygi_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "1b63d48b926f9804bc7984d398193c593796731242d79062ac0ebd34203edad0",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-bootstrap-prediction-int",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-tolerance-robustness/reference/mvp20/data/bootstrap_prediction_intervals_on_openpoly_experimental_tg_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "16fe912bb7285a7c97a174ebdef2fa86e34a9f5a525a7f86644e690221213693",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-conformalized-quantile-r",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-tolerance-robustness/reference/mvp20/data/conformalized_quantile_regression_openpoly_experimental_tg_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "a269fef5885ddcbf674e9d625d806c5926454f660064718a4e2fee12b4ae67d7",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-split-conformal-random-f",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-tolerance-robustness/reference/mvp20/data/split_conformal_on_random_forest_ml_openpoly_experimental_tg_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "ec50a8ce7aeab392735716d8fae7e866fe2be0b84ee6acff9ae7e874bd5f2c18",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-split-conformal-openpoly",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-tolerance-robustness/reference/mvp20/data/split_conformal_prediction_on_openpoly_experimental_tg_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyverse-melt-viscosity",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyverse-melt-viscosity",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff",
+        "freshness_matches_manifest": true,
+        "keyid": "toolkit-reviewer-cbe8c0fdd039291c0d714ab802e1065212f430984d0e4629611354075978c251",
+        "label": "A-polyverse-melt-viscosity",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      }
+    ],
+    "corpus_b_known_bad_ra11": [
+      {
+        "extraction_error": null,
+        "file_sha256": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+        "freshness_matches_manifest": true,
+        "keyid": "phase0-evaluator-audit-3ef6b35cdbbfea74a96a5c9b98a515d5",
+        "label": "B-RA11-0",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": false,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+        "freshness_matches_manifest": true,
+        "keyid": "local-9028773f49591193",
+        "label": "B-RA11-1",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      }
+    ],
+    "corpus_c_known_bad_ra12": [
+      {
+        "extraction_error": null,
+        "file_sha256": "f3e5d38b3d2401f66c0aef4de22a12298ccf7bea41241da1363aeca16a72bc8a",
+        "freshness_matches_manifest": true,
+        "keyid": "local-9028773f49591193",
+        "label": "C-RA12-0",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/benchmarks/molar-volume-density-v1/replay_receipt.v1.dsse.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "8dd6dd61715f10823b0dceddbfedb27d34564e6ec9b99dc8adbcc6b7daa0c72a",
+        "freshness_matches_manifest": true,
+        "keyid": "local-9028773f49591193",
+        "label": "C-RA12-1",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-solvency-score/benchmarks/bigsoldb-v1/inhouse_benchmark_receipt.v1.dsse.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "00a146943a4543c92fcb3b35549d79e7046bc6b2b7440d63b99f21a256def2e0",
+        "freshness_matches_manifest": true,
+        "keyid": "local-9028773f49591193",
+        "label": "C-RA12-2",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-role-ranker/benchmarks/role-live-runtime-domain-probe-v1/replay_receipt.v1.dsse.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "c65b4910f6cc348dd255353b9dc560349d48ce64f63532a02426c1d4c915192b",
+        "freshness_matches_manifest": true,
+        "keyid": "local-9028773f49591193",
+        "label": "C-RA12-3",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-role-ranker/benchmarks/role-macosko-miller-sol-latitude-v1/replay_receipt.v1.dsse.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "1ccc3b6c5d0fa90446ad10c12197529a405ac4d247d332aa10be064f90f22784",
+        "freshness_matches_manifest": true,
+        "keyid": "local-9028773f49591193",
+        "label": "C-RA12-4",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-role-ranker/benchmarks/role-reactivity-ratio-substitution-effect-v1/replay_receipt.v1.dsse.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "1fe0e84b7d50663e31e2a4b8ee5d881dffce378d931c0779444e67d1e87624fb",
+        "freshness_matches_manifest": true,
+        "keyid": "local-9028773f49591193",
+        "label": "C-RA12-5",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      },
+      {
+        "extraction_error": null,
+        "file_sha256": "906fdb138f053c417b00a5bf4b02ee85f136cd411539a27f5b18baa767af0f8e",
+        "freshness_matches_manifest": true,
+        "keyid": "local-9028773f49591193",
+        "label": "C-RA12-6",
+        "predicate_gates": {
+          "evidence_package_accepted": false,
+          "host_verified_signature_receipt": false
+        },
+        "predicate_score": 0.0,
+        "predicate_status": "FAILED_GATES",
+        "relative_path": "amphora-molecule-role-ranker/benchmarks/role-flory-gelation-v1/replay_receipt.v1.dsse.json",
+        "revocation_checked": false,
+        "signature_verified_real_crypto": true,
+        "trust_store_status": "UNTRUSTED"
+      }
+    ]
+  },
+  "summary": {
+    "corpus_a_n": 66,
+    "corpus_a_scored_rate": 0.0,
+    "corpus_a_signature_verified_real_crypto_rate": 1.0,
+    "corpus_a_trusted_rate": 0.0,
+    "corpus_b_correctly_flagged_failed_gates_rate": 1.0,
+    "corpus_b_n": 2,
+    "corpus_c_correctly_flagged_failed_gates_rate": 1.0,
+    "corpus_c_n": 7
+  }
+}

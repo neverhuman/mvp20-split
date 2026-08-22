@@ -1,0 +1,466 @@
+{
+  "authority": "AUDIT_ONLY",
+  "corr_data_bare_metal_proof": {
+    "coating_fraction": 0.001497,
+    "conclusion": "bare-metal materials/chemical-compatibility corrosion; not marine coating barrier performance",
+    "dataset": "corr_data_database",
+    "n_rows": 24721,
+    "n_rows_mentioning_coating_terms": 37
+  },
+  "data_wall": {
+    "in_scope_coating_physics_that_is_quarantined_context_only": [
+      "polyverse_cohesive_energy",
+      "polyverse_diffusivity",
+      "polyverse_melt_viscosity",
+      "polyverse_sorption",
+      "polyverse_thermoset_mechanics"
+    ],
+    "n_data_objects": 26,
+    "n_in_scope_coating_physics": 5,
+    "n_rights_clean": 20,
+    "n_rights_clean_AND_in_scope_coating_property": 0,
+    "rights_clean_AND_in_scope_ids": [],
+    "rights_clean_dataset_scope_breakdown": {
+      "BARE_METAL_CORROSION_NOT_COATING": 1,
+      "BENCHMARK_METADATA": 4,
+      "CHECKSUM_METADATA": 1,
+      "OUT_OF_SCOPE_GENERIC": 1,
+      "OUT_OF_SCOPE_GENERIC_POLYMER": 4,
+      "OUT_OF_SCOPE_PREDICTED": 1,
+      "OUT_OF_SCOPE_PROCESS": 1,
+      "OUT_OF_SCOPE_PROCESS_AUTOMATION": 2,
+      "OUT_OF_SCOPE_SEMICONDUCTOR": 1,
+      "OUT_OF_SCOPE_SIMULATION": 1,
+      "REFERENCE_STRUCTURES": 1,
+      "SOLUBILITY_EXPERIMENTAL_ADJACENT": 1,
+      "SOLVENT_DENSITY_EXPERIMENTAL_ADJACENT": 1
+    }
+  },
+  "does_not": [
+    "does not promote or demote any module",
+    "does not modify any of the 66 signed manifest receipts",
+    "does not use a trust-anchored phase0 key (local AUDIT_ONLY key only)",
+    "does not itself acquire or license any dataset"
+  ],
+  "live_phase0": {
+    "n_phase0_LOCKED_INTERNAL": 3,
+    "n_phase0_NOT_APPLICABLE": 7,
+    "n_phase0_with_PASSED_scientific_benchmark": 1,
+    "phase0_count": 10,
+    "phase0_modules_scientific_readiness": [
+      {
+        "benchmark_scientific_outcome": "NOT_APPLICABLE",
+        "module_id": "amphora-candidate-contract",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_scientific_outcome": "NOT_APPLICABLE",
+        "module_id": "amphora-envelope-gates",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_scientific_outcome": "NOT_APPLICABLE",
+        "module_id": "amphora-formulation-arithmetic",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_scientific_outcome": "NOT_APPLICABLE",
+        "module_id": "amphora-formulation-universe",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_scientific_outcome": "NOT_APPLICABLE",
+        "module_id": "amphora-model-card-authority",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_scientific_outcome": "NOT_APPLICABLE",
+        "module_id": "amphora-molecule-design-gate",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_scientific_outcome": "FAILED",
+        "module_id": "amphora-process-qc-twin",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_scientific_outcome": "NOT_APPLICABLE",
+        "module_id": "amphora-run-provenance",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_scientific_outcome": "PASSED",
+        "module_id": "amphora-solvency-score",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_scientific_outcome": "FAILED",
+        "module_id": "amphora-tolerance-robustness",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      }
+    ],
+    "phase0_modules_with_PASSED_science": [
+      "amphora-solvency-score"
+    ],
+    "pre_phase0_count": 19
+  },
+  "modifies_existing_receipts": false,
+  "pre_phase0_blocker_counts": {
+    "A_POST_SIGN_DIAGNOSTIC_DRIFT": 9,
+    "B_DATA_RIGHTS_WALL": 6,
+    "C_BENCHMARK_NEVER_EXECUTED_OR_SIGNED": 4
+  },
+  "pre_phase0_blocker_taxonomy": {
+    "A_POST_SIGN_DIAGNOSTIC_DRIFT": [
+      "amphora-cro-protocol-packager",
+      "amphora-evidence-intake-validator",
+      "amphora-known-answer-benchmarks",
+      "amphora-molecule-property",
+      "amphora-optimizer-orchestrator",
+      "amphora-public-corrosion-benchmark",
+      "amphora-redteam-audit",
+      "amphora-report-packager",
+      "amphora-source-ledger"
+    ],
+    "B_DATA_RIGHTS_WALL": [
+      "amphora-cure-potlife-gate",
+      "amphora-ip-fto-guard",
+      "amphora-molecule-generator",
+      "amphora-molecule-role-ranker",
+      "amphora-sourceability-ehs",
+      "amphora-viscosity-score"
+    ],
+    "C_BENCHMARK_NEVER_EXECUTED_OR_SIGNED": [
+      "amphora-barrier-corrosion-score",
+      "amphora-design-rule-score",
+      "amphora-ingredient-library",
+      "amphora-molecule-novelty"
+    ]
+  },
+  "promotes_authority": false,
+  "purpose": "Red-team the 'FULL Phase-0 science' claim by proving the portfolio's growth wall is structural: the intersection of (rights-clean, i.e. Phase-0-KPI-usable) and (in-scope experimental coating property) datasets is empty, so no new in-scope coating-science module can be honestly promoted from in-tree data.",
+  "records": [
+    {
+      "dataset_prefix": "radonpy_pi1070",
+      "endpoint": "simulation_property_row",
+      "in_scope_coating_physics": false,
+      "n_rows": 1077,
+      "object_sha256_prefix": "14bcdf900b9c91e6",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_SIMULATION",
+      "scope_note": "polyimide molecular-dynamics simulation, not epoxy-amine, not experimental",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "omg_physical_properties",
+      "endpoint": "computed_physical_property",
+      "in_scope_coating_physics": false,
+      "n_rows": 346555,
+      "object_sha256_prefix": "2bbf4c6a299dfad9",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_GENERIC_POLYMER",
+      "scope_note": "OMG computed generic-polymer physical properties",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "point2_test_split",
+      "endpoint": "benchmark_test_membership",
+      "in_scope_coating_physics": false,
+      "n_rows": 1442,
+      "object_sha256_prefix": "30a3c66195bc65d3",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "BENCHMARK_METADATA",
+      "scope_note": "benchmark split membership, not property data",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "polyomics_chi_dimethylformamide",
+      "endpoint": "predicted_chi_parameter",
+      "in_scope_coating_physics": false,
+      "n_rows": 93331,
+      "object_sha256_prefix": "354fdd18e48609dd",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_PREDICTED",
+      "scope_note": "predicted Flory-Huggins chi for DMF; computed, not experimental",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "omg_physical_properties_v3",
+      "endpoint": "computed_physical_property",
+      "in_scope_coating_physics": false,
+      "n_rows": 346555,
+      "object_sha256_prefix": "36e01a8d8ed79bb2",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_GENERIC_POLYMER",
+      "scope_note": "OMG computed generic-polymer physical properties",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "bigsoldb_solubility",
+      "endpoint": "solubility_log_s",
+      "in_scope_coating_physics": false,
+      "n_rows": 103944,
+      "object_sha256_prefix": "3ca9e1fce3444a2d",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "SOLUBILITY_EXPERIMENTAL_ADJACENT",
+      "scope_note": "BigSolDB experimental solubility; formulation-adjacent; ALREADY the basis of amphora-solvency-score Phase-0",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "openpoly_model_results",
+      "endpoint": "published_model_result",
+      "in_scope_coating_physics": false,
+      "n_rows": 208,
+      "object_sha256_prefix": "4176fe4ee4a7e930",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_GENERIC_POLYMER",
+      "scope_note": "published generic-polymer model results",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "polyverse_sorption",
+      "endpoint": "uptake_sorption_log10",
+      "in_scope_coating_physics": true,
+      "n_rows": 2277,
+      "object_sha256_prefix": "4a43dbaa1daffd3c",
+      "rights_class": "CONTEXT_ONLY",
+      "rights_clean": false,
+      "scope_label": "IN_SCOPE_COATING_PHYSICS",
+      "scope_note": "solvent sorption/uptake (barrier-relevant)",
+      "usable_for_phase0_science_kpi": false
+    },
+    {
+      "dataset_prefix": "polyverse_melt_viscosity",
+      "endpoint": "melt_viscosity",
+      "in_scope_coating_physics": true,
+      "n_rows": 1959,
+      "object_sha256_prefix": "5978b9aa7a0b1d10",
+      "rights_class": "CONTEXT_ONLY",
+      "rights_clean": false,
+      "scope_label": "IN_SCOPE_COATING_PHYSICS",
+      "scope_note": "melt viscosity (application/rheology-relevant)",
+      "usable_for_phase0_science_kpi": false
+    },
+    {
+      "dataset_prefix": "point2_train_split",
+      "endpoint": "benchmark_train_membership",
+      "in_scope_coating_physics": false,
+      "n_rows": 5766,
+      "object_sha256_prefix": "793fc17f5a57dad7",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "BENCHMARK_METADATA",
+      "scope_note": "benchmark split membership, not property data",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "pronto_process_archive_v3",
+      "endpoint": "process_sensor_missingness",
+      "in_scope_coating_physics": false,
+      "n_rows": 189010,
+      "object_sha256_prefix": "79792befa1aa7428",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_PROCESS",
+      "scope_note": "generic industrial process sensor archive",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "corr_data_database",
+      "endpoint": "corrosion_rate_or_rating",
+      "in_scope_coating_physics": false,
+      "n_rows": 24721,
+      "object_sha256_prefix": "80d8f4d281874dae",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "BARE_METAL_CORROSION_NOT_COATING",
+      "scope_note": "materials-vs-chemical-environment bare-metal corrosion compatibility; substrate not coating",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "polyverse_cohesive_energy",
+      "endpoint": "cohesive_energy",
+      "in_scope_coating_physics": true,
+      "n_rows": 294,
+      "object_sha256_prefix": "81b9b86fe84ab89e",
+      "rights_class": "CONTEXT_ONLY",
+      "rights_clean": false,
+      "scope_label": "IN_SCOPE_COATING_PHYSICS",
+      "scope_note": "cohesive energy density (Hansen/solubility-relevant)",
+      "usable_for_phase0_science_kpi": false
+    },
+    {
+      "dataset_prefix": "polyverse_thermoset_mechanics",
+      "endpoint": "thermoset_mechanics",
+      "in_scope_coating_physics": true,
+      "n_rows": 67,
+      "object_sha256_prefix": "94efde3f75f1a4af",
+      "rights_class": "CONTEXT_ONLY",
+      "rights_clean": false,
+      "scope_label": "IN_SCOPE_COATING_PHYSICS",
+      "scope_note": "thermoset network mechanics (directly epoxy-amine network-relevant)",
+      "usable_for_phase0_science_kpi": false
+    },
+    {
+      "dataset_prefix": "polyomics_small_molecules",
+      "endpoint": "computed_small_molecule_property",
+      "in_scope_coating_physics": false,
+      "n_rows": 28159,
+      "object_sha256_prefix": "9850530553585373",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_GENERIC",
+      "scope_note": "computed small-molecule properties",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "bigsoldb_density",
+      "endpoint": "solvent_density",
+      "in_scope_coating_physics": false,
+      "n_rows": 2210,
+      "object_sha256_prefix": "a3d0c3517cd918fd",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "SOLVENT_DENSITY_EXPERIMENTAL_ADJACENT",
+      "scope_note": "BigSolDB experimental solvent density; formulation-adjacent; used by solvency molar-volume",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "corr_data_checksum",
+      "endpoint": "publisher_checksum",
+      "in_scope_coating_physics": false,
+      "n_rows": 1,
+      "object_sha256_prefix": "a78bff33cf6ceccf",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "CHECKSUM_METADATA",
+      "scope_note": "publisher checksum",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "purformance_experiment_v3",
+      "endpoint": "purformance_experiment_observation",
+      "in_scope_coating_physics": false,
+      "n_rows": 146908,
+      "object_sha256_prefix": "bda6fd5ab1315a06",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_PROCESS_AUTOMATION",
+      "scope_note": "APROL DCS / PDA process-automation export, not coating chemistry",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "openpoly_properties",
+      "endpoint": "endpoint_specific_polymer_property",
+      "in_scope_coating_physics": false,
+      "n_rows": 741,
+      "object_sha256_prefix": "cbda8b22adccfaa7",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_GENERIC_POLYMER",
+      "scope_note": "generic-polymer endpoint properties",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "polyverse_diffusivity",
+      "endpoint": "solvent_diffusivity_log10",
+      "in_scope_coating_physics": true,
+      "n_rows": 3044,
+      "object_sha256_prefix": "cbf127bad303e995",
+      "rights_class": "CONTEXT_ONLY",
+      "rights_clean": false,
+      "scope_label": "IN_SCOPE_COATING_PHYSICS",
+      "scope_note": "solvent diffusivity (barrier/permeation-relevant)",
+      "usable_for_phase0_science_kpi": false
+    },
+    {
+      "dataset_prefix": "uci_secom_archive_v3",
+      "endpoint": "process_yield_label",
+      "in_scope_coating_physics": false,
+      "n_rows": 1567,
+      "object_sha256_prefix": "e48e4aafb820e968",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_SEMICONDUCTOR",
+      "scope_note": "UCI SECOM semiconductor-manufacturing process yield",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "chebi_release_252_3star_v3",
+      "endpoint": "curated_molecule_structure",
+      "in_scope_coating_physics": false,
+      "n_rows": 52779,
+      "object_sha256_prefix": "e7ebf8a80cb04cb2",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "REFERENCE_STRUCTURES",
+      "scope_note": "ChEBI curated molecule structures; reference, not property measurements",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "point2_run_log",
+      "endpoint": "run_provenance_metadata",
+      "in_scope_coating_physics": false,
+      "n_rows": 1,
+      "object_sha256_prefix": "e8ca985df15935d1",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "BENCHMARK_METADATA",
+      "scope_note": "run provenance metadata",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "purformance_evaluation_v3",
+      "endpoint": "purformance_published_evaluation",
+      "in_scope_coating_physics": false,
+      "n_rows": 1330,
+      "object_sha256_prefix": "e9c9ba5b0e727099",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "OUT_OF_SCOPE_PROCESS_AUTOMATION",
+      "scope_note": "APROL process-automation evaluation",
+      "usable_for_phase0_science_kpi": true
+    },
+    {
+      "dataset_prefix": "pi1m_structures",
+      "endpoint": "synthetic_accessibility_context",
+      "in_scope_coating_physics": false,
+      "n_rows": 995799,
+      "object_sha256_prefix": "fe23c6d1e4b50bd3",
+      "rights_class": "CONTEXT_ONLY",
+      "rights_clean": false,
+      "scope_label": "OUT_OF_SCOPE_GENERIC",
+      "scope_note": "PI1M synthetic-accessibility context; generic polymer structures",
+      "usable_for_phase0_science_kpi": false
+    },
+    {
+      "dataset_prefix": "openpoly_counts",
+      "endpoint": "endpoint_count_metadata",
+      "in_scope_coating_physics": false,
+      "n_rows": 28,
+      "object_sha256_prefix": "fecd513f4d11cd0d",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "rights_clean": true,
+      "scope_label": "BENCHMARK_METADATA",
+      "scope_note": "endpoint count metadata",
+      "usable_for_phase0_science_kpi": true
+    }
+  ],
+  "schema": "amphora.redteam-audit.rights-scope-data-wall-v1.diagnostic.v1",
+  "verdict": {
+    "full_phase0_science_claim": "FALSE",
+    "n_phase0_with_PASSED_science": 1,
+    "new_in_scope_coating_science_promotable_from_in_tree_data_this_run": false,
+    "only_passed_science_modules": [
+      "amphora-solvency-score"
+    ],
+    "root_cause": "STRUCTURAL DATA WALL: rights-clean data is out-of-scope/simulation/semiconductor/generic-polymer/solubility-adjacent; every in-scope experimental coating polymer-physics dataset (viscosity, cohesive-energy/Hansen, thermoset mechanics, sorption, diffusivity) is CONTEXT_ONLY-quarantined. The blocker is DATA RIGHTS, not science."
+  }
+}

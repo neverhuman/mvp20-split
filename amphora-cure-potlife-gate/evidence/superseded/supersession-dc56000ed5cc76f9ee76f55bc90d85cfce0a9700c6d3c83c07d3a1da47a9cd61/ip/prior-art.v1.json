@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "568729f8e28ef9dbda03e6c5f716ca1f8a23768926d86e88aef398267b148425",
+  "module_id": "amphora-cure-potlife-gate",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

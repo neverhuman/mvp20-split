@@ -1,0 +1,170 @@
+{
+  "attack": {
+    "description": "Probed molecule_facts() with 5 chemically-valid SMILES encodings of dicyandiamide (all formula C2H4N4, all the same real molecule, differing only in which nitrogen a given kekulization/tautomer choice marks as the formal C=N): the fixture's canonical form ('NC(=NC#N)N'), the alternate tautomer with the double bond on a terminal amino nitrogen instead ('N=C(N)NC#N'), two reorderings of that alternate tautomer, and a PubChem-style atom ordering of the canonical tautomer.",
+    "interpretation": "3 of 5 equally-valid encodings of the identical molecule scored 0 active hydrogens under fire 1's fix -- the categorical defect W-FFI1 refuted, reproduced via representation choice alone, on live production molecule_facts().",
+    "kind": "smiles_tautomer_representation_invariance_probe",
+    "result_before_this_fires_repair": {
+      "C(=NC#N)(N)N": 4,
+      "N#CNC(=N)N": 0,
+      "N#CNC(N)=N": 0,
+      "N=C(N)NC#N": 0,
+      "NC(=NC#N)N": 4
+    }
+  },
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "W-FFI2",
+  "claim_under_attack": {
+    "claim_text": "Active-hydrogen counting is correct for every amine class that appears in real coatings.",
+    "receipt_path": "amphora-rdkit-ffi/src/bridge.cc"
+  },
+  "crate_test": {
+    "command": "cargo test -p amphora-rdkit-ffi --features rdkit",
+    "new_test": "pinned_native_backend_dicyandiamide_score_is_tautomer_representation_invariant",
+    "result": {
+      "failed": 0,
+      "ignored": 0,
+      "passed": 9,
+      "status": "ok"
+    }
+  },
+  "date": "2026-08-06",
+  "does_not_close": [
+    "cargo test --workspace is not fully green: amphora-molecule-capabilities' role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi still hardcodes dicyandiamide=0 in its guanidine_class fixture. Out of this fire's write scope.",
+    "amphora-molecule-property's independent Python re-implementation (compute_amine_class.py::n_active_amine_nh) was not checked for either the original DICY=0 defect or this fire's tautomer-representation defect; both are plausible given it mirrors the same R-N02 categorical rule. Out of this fire's write scope.",
+    "The done_criterion's 'implemented in the FFI' bar for the structural criterion is met; the 'cargo test green in ... the workspace' bar is not, purely due to the out-of-module companion test above."
+  ],
+  "fire_id": "20260806T100004-3083995-107840f73adc",
+  "flips_scientific_readiness": false,
+  "gates_summary": {
+    "crate_level_cargo_test_green": true,
+    "new_tautomer_representation_attack_re_run_against_own_fix": true,
+    "original_refuting_harnesses_re_run_unmodified": true,
+    "positive_control_detects_planted_defect": true,
+    "real_production_ffi_not_reimplemented": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "supersede_never_rewrite_honored": true,
+    "two_replay_byte_stable_this_receipt": true,
+    "workspace_level_cargo_test_green": false,
+    "zero_regressions_among_non_targeted_probes": true
+  },
+  "generated_on_host": "xbabe2",
+  "human_review_performed": false,
+  "implementation": {
+    "bridge_cc_after_sha256": "7ce7798c9d0769307c704f4be0572f2333184261dd559630ebf7493df31c332a",
+    "bridge_cc_before_sha256": "e9f70d8893118d6c096d40793800ffc41c92ad4b6fc0867a0c890b2ab35914b0",
+    "change": "Was: loop over DOUBLE bonds only, take the double-bonded nitrogen, scan its other neighbors for a nitrile carbon. Now: loop over ALL neighboring atoms of the guanidine carbon (regardless of bond order), and for each nitrogen neighbor, scan ITS other neighbors for a nitrile carbon. is_amidine_or_guanidine_carbon (the outer C=N gate) is unchanged; only the narrower cyanamide-detection scan was broadened from 'the one formally-double-bonded N' to 'every directly-bonded N'.",
+    "file": "amphora-rdkit-ffi/src/bridge.cc",
+    "function": "is_cyanamide_substituted_guanidine_carbon",
+    "lib_rs_after_sha256": "d570242676538f236f0131c3743b77b331ba87411d7c5081674c01db3250f88f",
+    "lib_rs_before_sha256": "ea28c416b1fef1549acd87a07975f48233a4e188e9edf103e45ad80c9244ea9d",
+    "new_test": "pinned_native_backend_dicyandiamide_score_is_tautomer_representation_invariant"
+  },
+  "input_artifacts": [
+    "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI2/work/attempts-2/crate_test.txt",
+    "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI2/work/attempts-2/ffi1_reattack.txt",
+    "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI2/work/attempts-2/vn02c_reattack.txt",
+    "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI2/work/attempts-2/mutant_positive_control_test.txt",
+    "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI2/work/attempts-2/workspace_test_full.txt"
+  ],
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-rdkit-ffi",
+  "objective": "W-FFI2 (continued): the done_criterion requires the structural boundary to be genuinely structural, not an artifact of one particular SMILES encoding. This fire attacks fire 1's own repair with a representation-invariance probe (multiple chemically-valid tautomer/atom-ordering SMILES for dicyandiamide, same molecular formula C2H4N4) and, on finding it falsifies the fix, repairs the predicate to be bond-order-independent while re-verifying zero regressions against every prior probe set.",
+  "organizational_independence_asserted": false,
+  "positive_control": {
+    "detected": true,
+    "evidence": "cargo test --features rdkit against the mutant: 8/9 passed, 1 FAILED -- tests::pinned_native_backend_dicyandiamide_score_is_tautomer_representation_invariant panicked with 'assertion left == right failed: dicyandiamide tautomer N=C(N)NC#N must score functionality 4 ... left: 0, right: 4'. The new regression test fires precisely on the defect it exists to catch; the real (non-mutant) repaired crate passes all 9/9.",
+    "how_planted": "bridge.cc's is_cyanamide_substituted_guanidine_carbon body (the version shipped in fire 1, sha256 of the standalone mutant file: 676eebe3f646d95ceb9bf55476435f71ee2f869757c84d6a9ecb34d4d97538c7) replaced this fire's broadened body: reverted from 'scan every directly-bonded nitrogen' back to 'scan only the double-bonded nitrogen'.",
+    "planted_defect": "Restored fire 1's narrower (double-bond-only) is_cyanamide_substituted_guanidine_carbon body -- the exact predicate this fire's attack falsified -- in a standalone mutant copy of the crate at /tmp/wffi2-mutant-fire2 (own Cargo.toml, isolated from the workspace; deleted after use). All other files, including this fire's NEW tautomer-representation-invariance test, were copied byte-identical from the real repaired crate."
+  },
+  "promotes_authority": false,
+  "re_attack_of_own_fix": {
+    "protocol": "Per REPAIR-MODE rule 2, re-ran BOTH original refuting-attack harnesses UNMODIFIED against this fire's repaired bridge.cc: W-FFI1's ffi1-verify (sha256 9807e41f35cedea52a8fa2ae88cb6b12552f9e8c285cd53606cd45c8c9c329e8, `cargo run --release`, same 14 hardcoded probes) and V-N02c's vn02c-verify (sha256 c09a4fb4b1b5eb08ddecc3b809eaf33fa381c28d2968dda38c0a7ce35f1720c1, same command, same 8 probes). Then attacked THIS fire's own new predicate with the tautomer-representation probe above and confirmed it now withstands.",
+    "r_n02_v_n02c_vn02c_verify": {
+      "failing_probe": {
+        "canonical_smiles": "N#CN=C(N)N",
+        "category": "r_n02_probe_reattack",
+        "expected_reactive_amine_hydrogen_count": 0,
+        "id": "dicyandiamide",
+        "observed_reactive_amine_hydrogen_count": 4,
+        "pass": false,
+        "smiles": "NC(=NC#N)N"
+      },
+      "interpretation": "The harness's own pre-registered expectation for dicyandiamide is 0 (it predates the repair), so this single 'failure' is the INTENDED flip fire 1 already identified and is unchanged by this fire. All other 7/8 probes, including DPG, DOTG, guanidine, biguanide, IPDA over-exclusion sanity, the agmatine remote-amine probe, and the protonated-guanidinium formal-charge probe, are unaffected: zero regressions.",
+      "n_probes_failed": 1,
+      "n_probes_total": 8,
+      "verdict_of_original_harness_expectations": "CLAIM_REFUTED"
+    },
+    "tautomer_representation_probe_after_repair": {
+      "adversarial_narrowness_probes_unchanged": {
+        "n_methylguanidine_CN=C(N)N_stays_0": true,
+        "remote_nitrile_guanidine_N#CCNC(=N)N_stays_0": true
+      },
+      "all_score_functionality_four": true,
+      "smiles_tested": [
+        "NC(=NC#N)N",
+        "N=C(N)NC#N",
+        "N#CNC(N)=N",
+        "N#CNC(=N)N",
+        "C(=NC#N)(N)N"
+      ]
+    },
+    "w_ffi1_ffi1_verify": {
+      "n_probes_formula_or_mw_mismatch": 0,
+      "n_probes_mismatching_published_convention": 0,
+      "n_probes_total": 14,
+      "verdict": "CLAIM_SURVIVED"
+    }
+  },
+  "receipt_id": "w-ffi2-rdkit-ffi-tautomer-invariance-fe3ca302c6688aaeb56728b411f88668",
+  "repair_status": "fix_landed_in_module_workspace_companion_pending",
+  "reproducibility": {
+    "determinism_basis": "receipt body assembled purely from fixed, already-captured artifact files (no RNG, no wall clock); body serialized twice with sort_keys=True and compared byte-identical before signing.",
+    "harness_binary_provenance": "cargo test/run against amphora-rdkit-ffi (path dependency, feature=rdkit) compiled with cxx against the pinned RDKit 2026.03.2 prefix at /home/ubuntu/.local/share/amphora/rdkit-2026.03.2; toolkit_provenance.exact_version_match=true recorded in both re-attack harness runs.",
+    "independent_runs": true,
+    "replays": 2,
+    "two_replay_sha256_gate": "PASS"
+  },
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new external data source opened. No quarantined or rights-restricted source touched. Same public citations as fire 1 (WO1993010168A1; Fedtke et al. 1993 DOI 10.1007/BF00329879; chembk.com CAS 461-58-5 pKa listing) plus no new ones.",
+  "run_type": "REPAIR_ATTEMPT",
+  "schema": "amphora.rdkit-ffi.w-ffi2-tautomer-invariance-repair-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY repair-attempt receipt under evidence/phase0/repairs/W-FFI2/attempts/"
+  },
+  "structural_criterion": {
+    "statement": "A guanidine/amidine carbon (has at least one C=N double bond to a nitrogen, per R-N02) is exempted from the categorical N-H exclusion IFF at least one nitrogen DIRECTLY BONDED TO IT -- regardless of whether that particular C-N bond is formally single or double in the parsed structure -- itself carries a nitrile (C#N) substituent. This is the dicyandiamide/cyanoguanidine motif (CAS 461-58-5): the cyanamide nitrile withdraws electron density from whichever resonance form is drawn, collapsing the guanidine's superbase pKaH from 13.6 to ~0.7 (chembk.com CAS 461-58-5 listing) regardless of tautomer. WO1993010168A1 (1993) states dicyandiamide has functionality four; Fedtke, Domaratius & Walter, Polymer Bulletin 31:429-435 (1993), DOI 10.1007/BF00329879, show its terminal amino nitrogens ring-open a glycidyl-ether epoxide model compound. Pure alkyl/aryl/H-substituted guanidines (DPG CAS 102-06-7, DOTG CAS 97-39-2, guanidine CAS 113-00-8, biguanide CAS 461-71-2) carry no nitrile on any directly-bonded nitrogen in any tautomer and remain fully excluded.",
+    "why_bond_order_independent": "Guanidine's three nitrogens are resonance-equivalent -- that is the entire premise of the Y-delocalization the R-N02 exclusion itself relies on. Restricting the cyanamide search to only the nitrogen RDKit's parser happened to mark as the formal double bond therefore encoded an input-representation artifact, not a chemical distinction. Scanning every directly-bonded nitrogen restores the structural (representation-invariant) character the fix was supposed to have."
+  },
+  "supersedes": {
+    "reason": "Fire 1's cyanamide-substituted-guanidine-carbon predicate only inspected the DOUBLE-bonded (formal-imine) nitrogen of the guanidine/amidine carbon. Dicyandiamide's three guanidine nitrogens are resonance-equivalent by the same Y-delocalization argument the fix itself is premised on, so which nitrogen a given SMILES kekulizes as the formal C=N is a drawing convention, not a chemical fact. RDKit does not tautomer-canonicalize on parse. Feeding an equally valid alternate tautomer SMILES of the SAME molecule (e.g. 'N=C(N)NC#N' -- double bond on a terminal NH2 instead of the cyanamide nitrogen; formula C2H4N4 either way) scored 0 active hydrogens, not 4 -- silently reproducing the exact W-FFI1 defect on chemically-identical input. Every fixture that exercised the fire-1 fix (W-FFI1's ffi1-verify, V-N02c's vn02c-verify, the crate's own unit tests, amphora-molecule-role-ranker's known-answer file, amphora-molecule-capabilities' regression test) hardcodes the single string 'NC(=NC#N)N', so none could have caught this. Fire 1's receipt is NOT deleted or edited; this receipt supersedes it with a strictly broader predicate.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI2/attempts/w-ffi2-rdkit-ffi-cyanoguanidine-repair-receipt.v1.dsse.json",
+    "superseded_sha256": "f84176546fdc3dc6e1892b5bb34026b1ada2c214fd2fb945978305023bbb87e5"
+  },
+  "verdict": "CLAIM_SURVIVED",
+  "why": "This fire's attack -- feeding molecule_facts() alternate but chemically-valid tautomer SMILES for dicyandiamide -- refuted fire 1's repair (3 of 5 representations of the identical molecule scored 0 instead of 4, reproducing the original W-FFI1 defect). The predicate was broadened to be bond-order/tautomer independent while preserving exact narrowness (n-methylguanidine and remote-nitrile adversarial probes still 0). Re-attacking the NEW predicate with the same tautomer probe now shows all 5 representations correctly score functionality 4, and re-running BOTH original unmodified refuting harnesses (W-FFI1's ffi1-verify, V-N02c's vn02c-verify) shows zero regressions beyond the already-intended dicyandiamide flip. A positive control (fire 1's narrower predicate, restored in a standalone mutant) confirms the new regression test has real power to catch the representation-dependence defect it targets. The CURRENT state of the claim -- as re-attacked by the strongest instrument available (tautomer-representation invariance) -- WITHSTANDS. Full workspace-green remains a separate, disclosed, outstanding item out of this fire's write scope.",
+  "workspace_test": {
+    "command": "cargo test --workspace --features rdkit --no-fail-fast",
+    "failing_binary_module": "amphora-molecule-capabilities",
+    "failing_test": "tests::role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi",
+    "interpretation": "Identical, pre-existing, disclosed-in-fire-1 companion-test failure in a DIFFERENT module (amphora-molecule-capabilities), out of this fire's write scope (module confinement). No NEW workspace failures were introduced by this fire's broadened predicate. cargo test --workspace is therefore still not fully green, and the item's done_criterion remains unmet this fire.",
+    "n_failing_binaries": 1,
+    "unchanged_from_fire_1": true
+  }
+}

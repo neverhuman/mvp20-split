@@ -1,0 +1,50 @@
+{
+  "authority_tier": "ROADMAP",
+  "candidate_id": "DGEBA-monomer",
+  "claim_locks": {
+    "generated_molecules_unmade_unvalidated": true
+  },
+  "evidence_scope": "discovery_lead",
+  "explanations": [
+    "Generated molecules are quarantined discovery leads."
+  ],
+  "gates": {
+    "synthesis_evidence_present": false
+  },
+  "metrics": {
+    "model_card": {
+      "can_optimize": false,
+      "current_pass": true,
+      "current_status": "SCORED",
+      "dataset_checksums": {},
+      "dataset_ids": [
+        "fixtures/molecule_candidate.json"
+      ],
+      "direction": "context",
+      "kpi_name": "discovery_lead",
+      "model_authority": "ROADMAP",
+      "score_semantics": "ROADMAP",
+      "unit": "normalized_0_1",
+      "validation_bar": "not optimizer-authorized objective"
+    },
+    "n_generated": 18
+  },
+  "missing_inputs": [
+    "synthesis evidence",
+    "validation evidence"
+  ],
+  "module_id": "fixture-molecule-generator",
+  "module_version": "0.1.0",
+  "objective_values": {
+    "top_generated_score": 0.8
+  },
+  "schema_version": "amphora.score-envelope.v1",
+  "score_0_1": 0.0,
+  "score_semantics": "ROADMAP",
+  "source_refs": [
+    "fixtures/molecule_candidate.json"
+  ],
+  "status": "SCORED",
+  "uncertainty": {},
+  "usable_by_optimizer": false
+}

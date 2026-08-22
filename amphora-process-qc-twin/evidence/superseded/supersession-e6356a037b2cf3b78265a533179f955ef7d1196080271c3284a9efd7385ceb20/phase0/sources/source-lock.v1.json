@@ -1,0 +1,20 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-process-qc-twin/evidence/phase0",
+  "imported_locks": [],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-process-qc-twin",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/capture_template.json",
+      "observed_sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

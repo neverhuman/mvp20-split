@@ -1,0 +1,137 @@
+{
+  "counts": {
+    "n_forgery_admitted_by_predicate": 7,
+    "n_forgery_total": 7,
+    "n_positive_control_correctly_rejected": 1,
+    "n_valid_unusual_accepted_by_predicate": 4,
+    "n_valid_unusual_total": 4
+  },
+  "live_authority_under_test": {
+    "dsse_verifier": "amphora-core/src/crypto.rs :: verify_dsse (real Ed25519 + real revocation check)",
+    "modified": false,
+    "predicate": "amphora-assurance-capabilities/src/lib.rs :: evaluate_evidence_intake, host_receipt_valid"
+  },
+  "records": [
+    {
+      "case_id": "F1_resigned_wrong_key",
+      "directive_category": "a_non_anchored_dev_key",
+      "family": "forgery",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": true,
+      "real_dsse_verify_dsse_error": "unknown DSSE signing key dev-unanchored-cf971c21c741398d9913ac04488f1693d68262b0f1f690351bfd7e78619c15fb",
+      "real_dsse_verify_dsse_ok": false
+    },
+    {
+      "case_id": "F2_truncated_keyid",
+      "directive_category": null,
+      "family": "forgery",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": true,
+      "real_dsse_verify_dsse_error": "unknown DSSE signing key phase0-evaluator-3ef6b35",
+      "real_dsse_verify_dsse_ok": false
+    },
+    {
+      "case_id": "F3_payload_signature_mismatch",
+      "directive_category": null,
+      "family": "forgery",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": true,
+      "real_dsse_verify_dsse_error": "DSSE signature verification failed",
+      "real_dsse_verify_dsse_ok": false
+    },
+    {
+      "case_id": "F4_valid_envelope_tampered_payload",
+      "directive_category": null,
+      "family": "forgery",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": true,
+      "real_dsse_verify_dsse_error": "DSSE signature verification failed",
+      "real_dsse_verify_dsse_ok": false
+    },
+    {
+      "case_id": "F5_cross_module_replay",
+      "directive_category": null,
+      "family": "forgery",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": true,
+      "real_dsse_verify_dsse_error": "DSSE signature verification failed",
+      "real_dsse_verify_dsse_ok": false
+    },
+    {
+      "case_id": "DIR_C_stale_revoked_key",
+      "directive_category": "c_stale_revoked",
+      "family": "forgery",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": true,
+      "real_dsse_verify_dsse_error": "revoked DSSE signing key test-revoked-5351286d147ffe1c00d3dc576b4ff9ebe730af0ec6b5cba521c5d805f6c29811",
+      "real_dsse_verify_dsse_ok": false
+    },
+    {
+      "case_id": "DIR_D_rights_unresolved_quarantined",
+      "directive_category": "d_rights_unresolved_quarantined",
+      "family": "forgery",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": false,
+      "real_dsse_verify_dsse_error": null,
+      "real_dsse_verify_dsse_ok": true
+    },
+    {
+      "case_id": "POSCTRL_B_hash_mismatch_to_artifact",
+      "directive_category": "b_hash_mismatched_to_artifact",
+      "family": "positive_control",
+      "predicate_evidence_package_accepted": false,
+      "predicate_status": "FAILED_GATES",
+      "real_crypto_says_reject_but_predicate_accepted": false,
+      "real_dsse_verify_dsse_error": null,
+      "real_dsse_verify_dsse_ok": true
+    },
+    {
+      "case_id": "U1_multiple_signatures",
+      "directive_category": null,
+      "family": "valid_unusual",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": false,
+      "real_dsse_verify_dsse_error": null,
+      "real_dsse_verify_dsse_ok": true
+    },
+    {
+      "case_id": "U2_unknown_payload_type",
+      "directive_category": null,
+      "family": "valid_unusual",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": false,
+      "real_dsse_verify_dsse_error": null,
+      "real_dsse_verify_dsse_ok": true
+    },
+    {
+      "case_id": "U3_nested_envelope",
+      "directive_category": null,
+      "family": "valid_unusual",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": false,
+      "real_dsse_verify_dsse_error": null,
+      "real_dsse_verify_dsse_ok": true
+    },
+    {
+      "case_id": "U4_large_payload",
+      "directive_category": null,
+      "family": "valid_unusual",
+      "predicate_evidence_package_accepted": true,
+      "predicate_status": "SCORED",
+      "real_crypto_says_reject_but_predicate_accepted": false,
+      "real_dsse_verify_dsse_error": null,
+      "real_dsse_verify_dsse_ok": true
+    }
+  ],
+  "schema": "amphora.evidence-intake-validator.t04-adversarial-forgery-report.v1"
+}

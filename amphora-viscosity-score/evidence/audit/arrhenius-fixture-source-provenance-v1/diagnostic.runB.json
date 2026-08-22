@@ -1,0 +1,316 @@
+{
+  "angle_1_offline_fit_reproducibility": {
+    "interpretation": "essentially exact (floating-point-precision) reproduction of the fixture's baked-in 'fitted offline via numpy' Ea/R2 from its own raw {20,40,60}C viscosity numbers",
+    "max_ea_relative_error": 6.989861803895867e-08,
+    "max_r2_absolute_error": 4.373745920993599e-07,
+    "n_solvents": 25,
+    "per_solvent": [
+      {
+        "fixture_ea_j_mol": 6801.074,
+        "fixture_r2": 0.999975,
+        "rederived_ea_j_mol": 6801.073525,
+        "rederived_r2": 0.99997471,
+        "rel_err": 6.989861803895867e-08,
+        "solvent_id": "dichloromethane"
+      },
+      {
+        "fixture_ea_j_mol": 7738.656,
+        "fixture_r2": 0.999042,
+        "rederived_ea_j_mol": 7738.656466,
+        "rederived_r2": 0.99904236,
+        "rel_err": 6.015628933614155e-08,
+        "solvent_id": "n-pentane"
+      },
+      {
+        "fixture_ea_j_mol": 8321.869,
+        "fixture_r2": 0.999306,
+        "rederived_ea_j_mol": 8321.868549,
+        "rederived_r2": 0.99930583,
+        "rel_err": 5.419033793839191e-08,
+        "solvent_id": "acetonitrile"
+      },
+      {
+        "fixture_ea_j_mol": 9398.197,
+        "fixture_r2": 0.999967,
+        "rederived_ea_j_mol": 9398.19749,
+        "rederived_r2": 0.99996681,
+        "rel_err": 5.21424449190115e-08,
+        "solvent_id": "n-octane"
+      },
+      {
+        "fixture_ea_j_mol": 7307.553,
+        "fixture_r2": 0.999681,
+        "rederived_ea_j_mol": 7307.553325,
+        "rederived_r2": 0.99968117,
+        "rel_err": 4.4501701674712926e-08,
+        "solvent_id": "acetone"
+      },
+      {
+        "fixture_ea_j_mol": 8873.301,
+        "fixture_r2": 0.999809,
+        "rederived_ea_j_mol": 8873.300612,
+        "rederived_r2": 0.99980915,
+        "rel_err": 4.373553845381488e-08,
+        "solvent_id": "toluene"
+      },
+      {
+        "fixture_ea_j_mol": 10815.319,
+        "fixture_r2": 0.999866,
+        "rederived_ea_j_mol": 10815.318578,
+        "rederived_r2": 0.99986619,
+        "rel_err": 3.900374812224896e-08,
+        "solvent_id": "methanol"
+      },
+      {
+        "fixture_ea_j_mol": 11696.818,
+        "fixture_r2": 0.996246,
+        "rederived_ea_j_mol": 11696.817549,
+        "rederived_r2": 0.99624598,
+        "rel_err": 3.858796437606725e-08,
+        "solvent_id": "dimethylformamide"
+      },
+      {
+        "fixture_ea_j_mol": 8805.689,
+        "fixture_r2": 0.999572,
+        "rederived_ea_j_mol": 8805.689331,
+        "rederived_r2": 0.99957199,
+        "rel_err": 3.7616028786357065e-08,
+        "solvent_id": "chloroform"
+      },
+      {
+        "fixture_ea_j_mol": 14221.198,
+        "fixture_r2": 0.996675,
+        "rederived_ea_j_mol": 14221.198467,
+        "rederived_r2": 0.99667478,
+        "rel_err": 3.286325725264007e-08,
+        "solvent_id": "cyclohexane"
+      },
+      {
+        "fixture_ea_j_mol": 9334.904,
+        "fixture_r2": 0.999673,
+        "rederived_ea_j_mol": 9334.903696,
+        "rederived_r2": 0.9996727,
+        "rel_err": 3.2542126796042e-08,
+        "solvent_id": "n-heptane"
+      },
+      {
+        "fixture_ea_j_mol": 10490.339,
+        "fixture_r2": 0.999767,
+        "rederived_ea_j_mol": 10490.338668,
+        "rederived_r2": 0.99976704,
+        "rel_err": 3.1668097812142116e-08,
+        "solvent_id": "benzene"
+      },
+      {
+        "fixture_ea_j_mol": 15530.237,
+        "fixture_r2": 0.998923,
+        "rederived_ea_j_mol": 15530.236537,
+        "rederived_r2": 0.99892259,
+        "rel_err": 2.983198692215629e-08,
+        "solvent_id": "water"
+      },
+      {
+        "fixture_ea_j_mol": 8448.211,
+        "fixture_r2": 1.0,
+        "rederived_ea_j_mol": 8448.21125,
+        "rederived_r2": 1.0,
+        "rel_err": 2.9541326099393213e-08,
+        "solvent_id": "methyl-ethyl-ketone"
+      },
+      {
+        "fixture_ea_j_mol": 9068.266,
+        "fixture_r2": 0.999732,
+        "rederived_ea_j_mol": 9068.266254,
+        "rederived_r2": 0.99973213,
+        "rel_err": 2.8028593331508345e-08,
+        "solvent_id": "ethyl-acetate"
+      },
+      {
+        "fixture_ea_j_mol": 14375.136,
+        "fixture_r2": 0.999972,
+        "rederived_ea_j_mol": 14375.136388,
+        "rederived_r2": 0.99997172,
+        "rel_err": 2.6983897260000686e-08,
+        "solvent_id": "ethanol"
+      },
+      {
+        "fixture_ea_j_mol": 13876.714,
+        "fixture_r2": 0.999881,
+        "rederived_ea_j_mol": 13876.713639,
+        "rederived_r2": 0.99988126,
+        "rel_err": 2.6014868492997418e-08,
+        "solvent_id": "1-4-dioxane"
+      },
+      {
+        "fixture_ea_j_mol": 14521.357,
+        "fixture_r2": 0.999986,
+        "rederived_ea_j_mol": 14521.357314,
+        "rederived_r2": 0.9999863,
+        "rel_err": 2.160117754478818e-08,
+        "solvent_id": "dimethyl-sulfoxide"
+      },
+      {
+        "fixture_ea_j_mol": 22399.542,
+        "fixture_r2": 0.999728,
+        "rederived_ea_j_mol": 22399.542394,
+        "rederived_r2": 0.99972775,
+        "rel_err": 1.7577052443888598e-08,
+        "solvent_id": "isopropanol"
+      },
+      {
+        "fixture_ea_j_mol": 7910.478,
+        "fixture_r2": 0.998257,
+        "rederived_ea_j_mol": 7910.478135,
+        "rederived_r2": 0.99825723,
+        "rel_err": 1.7104990941765837e-08,
+        "solvent_id": "diethyl-ether"
+      },
+      {
+        "fixture_ea_j_mol": 9658.938,
+        "fixture_r2": 0.999391,
+        "rederived_ea_j_mol": 9658.937903,
+        "rederived_r2": 0.99939111,
+        "rel_err": 1.0046553505959822e-08,
+        "solvent_id": "p-xylene"
+      },
+      {
+        "fixture_ea_j_mol": 18484.026,
+        "fixture_r2": 0.999391,
+        "rederived_ea_j_mol": 18484.026153,
+        "rederived_r2": 0.99939101,
+        "rel_err": 8.28167449601542e-09,
+        "solvent_id": "n-butanol"
+      },
+      {
+        "fixture_ea_j_mol": 8278.734,
+        "fixture_r2": 0.997295,
+        "rederived_ea_j_mol": 8278.734064,
+        "rederived_r2": 0.99729477,
+        "rel_err": 7.765385631937527e-09,
+        "solvent_id": "n-hexane"
+      },
+      {
+        "fixture_ea_j_mol": 58008.347,
+        "fixture_r2": 0.99925,
+        "rederived_ea_j_mol": 58008.346682,
+        "rederived_r2": 0.99925044,
+        "rel_err": 5.4847337537983955e-09,
+        "solvent_id": "glycerol"
+      },
+      {
+        "fixture_ea_j_mol": 8941.003,
+        "fixture_r2": 0.990372,
+        "rederived_ea_j_mol": 8941.002968,
+        "rederived_r2": 0.99037224,
+        "rel_err": 3.620860049457769e-09,
+        "solvent_id": "tetrahydrofuran"
+      }
+    ]
+  },
+  "angle_2_external_data_provenance": {
+    "any_gate_flip_vs_original": false,
+    "corrected_gates_pass": {
+      "arrhenius_mape_within_training_range": true,
+      "arrhenius_over_constant_baseline_lift": true,
+      "held_out_temperature_extrapolation_mape": true,
+      "per_solvent_within_10pct_rate": true
+    },
+    "corrected_report": {
+      "arrhenius_mape_within_training_range": 0.012959613381614466,
+      "arrhenius_over_constant_baseline_lift": 0.6419013850951405,
+      "constant_baseline_mape": 0.6548609984767549,
+      "held_out_temperature_extrapolation_mape": 0.0056334821655468935,
+      "held_out_worst_case_abs_pct_error": 0.03757538210401713,
+      "per_solvent_within_10pct_rate": 1.0,
+      "per_solvent_within_5pct_rate": 1.0,
+      "r_squared_arrhenius_minimum": 0.990372
+    },
+    "deltas_vs_original": {
+      "arrhenius_mape_within_training_range": 0.00036498222208795027,
+      "arrhenius_over_constant_baseline_lift": 0.0007729874645440171,
+      "constant_baseline_mape": 0.0011379696866319344,
+      "held_out_temperature_extrapolation_mape": 0.0007366722186235844,
+      "held_out_worst_case_abs_pct_error": 0.018416805465589617,
+      "per_solvent_within_10pct_rate": 0.0,
+      "per_solvent_within_5pct_rate": 0.0,
+      "r_squared_arrhenius_minimum": 0.0
+    },
+    "external_source": {
+      "citation": "Segur, J.B. & Oberstar, H.E. (1951) Ind. Eng. Chem. 43(9):2117-2120, 100 wt% glycerine column, as reproduced in the widely-cited Dow/GPA aqueous-glycerine-viscosity compilation",
+      "mirror_url_fetched_this_fire": "https://web.cecs.pdx.edu/~gerry/class/EAS361/lab/pdf/glycerinWaterViscosity_Dorsey.pdf"
+    },
+    "fixture_cited_source": "CRC Handbook 100th ed. Table 6.183 glycerol dynamic viscosity",
+    "per_temperature": [
+      {
+        "fixture_value_mpas": 1412.0,
+        "relative_diff_pct": 0.1418,
+        "segur_oberstar_1951_dow_table_value_mpas": 1410.0,
+        "temperature_c": 20.0
+      },
+      {
+        "fixture_value_mpas": 623.0,
+        "relative_diff_pct": 1.7974,
+        "segur_oberstar_1951_dow_table_value_mpas": 612.0,
+        "temperature_c": 30.0
+      },
+      {
+        "fixture_value_mpas": 289.0,
+        "relative_diff_pct": 1.7606,
+        "segur_oberstar_1951_dow_table_value_mpas": 284.0,
+        "temperature_c": 40.0
+      },
+      {
+        "fixture_value_mpas": 81.3,
+        "relative_diff_pct": 0.0,
+        "segur_oberstar_1951_dow_table_value_mpas": 81.3,
+        "temperature_c": 60.0
+      }
+    ],
+    "reason_selected": "highest fitted_activation_energy_j_mol (58008 J/mol) of all 25 solvents; most temperature-sensitive; a known super-Arrhenius, glass-forming liquid",
+    "solvent_checked": "glycerol"
+  },
+  "fixture_path": "amphora-viscosity-score/reference/phase0-viscosity-known-answer.v1.json",
+  "fixture_sha256": "e4d8f92ac99a91bcbc1ac15f776eef716b55c900fd608e1423019e9b132f8428",
+  "gas_constant_j_mol_k": 8.31446261815324,
+  "kpi_under_attack_path": "amphora-viscosity-score/evidence/phase0/kpis/viscosity-arrhenius-kpi.v1.json",
+  "kpi_under_attack_sha256": "fcfa296871935e0f33a023ad6d7a4c1f69dc982e31dc341bfcfa749b3655ec93",
+  "original_gates_pass": {
+    "arrhenius_mape_within_training_range": true,
+    "arrhenius_over_constant_baseline_lift": true,
+    "held_out_temperature_extrapolation_mape": true,
+    "per_solvent_within_10pct_rate": true
+  },
+  "original_report": {
+    "arrhenius_mape_within_training_range": 0.012594631159526515,
+    "arrhenius_over_constant_baseline_lift": 0.6411283976305965,
+    "constant_baseline_mape": 0.653723028790123,
+    "held_out_temperature_extrapolation_mape": 0.004896809946923309,
+    "held_out_worst_case_abs_pct_error": 0.019158576638427516,
+    "per_solvent_within_10pct_rate": 1.0,
+    "per_solvent_within_5pct_rate": 1.0,
+    "r_squared_arrhenius_minimum": 0.990372
+  },
+  "positive_control_1_fabricated_ea": {
+    "detected": true,
+    "evidence": "angle-1 reproducibility check max_ea_relative_error jumps from 0.0000000699 to 0.166667",
+    "how_planted": "reference/phase0-viscosity-known-answer.v1.json solvents[water].fitted_activation_energy_j_mol 15530.237 -> 18636.284 (in a private in-memory copy only; fixture file itself untouched)",
+    "planted_defect": "water fitted_activation_energy_j_mol multiplied by 1.20 (a +20% fabrication)"
+  },
+  "positive_control_2_wrong_column": {
+    "detected": true,
+    "evidence": {
+      "arrhenius_mape_within_training_range": 0.2153737809869533,
+      "gates": {
+        "arrhenius_mape_within_training_range": false,
+        "arrhenius_over_constant_baseline_lift": true,
+        "held_out_temperature_extrapolation_mape": false,
+        "per_solvent_within_10pct_rate": true
+      },
+      "held_out_temperature_extrapolation_mape": 0.21606587681241474
+    },
+    "how_planted": "glycerol raw values 1412.0/623.0/289.0/81.3 -> 219.0/109.0/60.0/22.5 mPa*s (private in-memory copy only; fixture file itself untouched)",
+    "planted_defect": "glycerol viscosity_mpas_{20,30,40,60}c replaced with the table's 90 wt% glycerine column instead of the correct 100 wt% column -- the same class of table-misread error this portfolio's Amorim-2021 HB fire already proved is a real, recurring hazard"
+  },
+  "schema": "amphora.viscosity-score.arrhenius-fixture-source-provenance-probe.v1",
+  "verdict": "CLAIM_SURVIVED"
+}

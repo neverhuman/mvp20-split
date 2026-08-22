@@ -1,0 +1,168 @@
+{
+  "attack_shape_verbatim": "Merge two curative alternates into one unexplained pick in a copy and attack whether the check fires; hunt for an evidence-indistinguishable pair shipped without a discriminating experiment.",
+  "campaign_item_id": "CF-ALT",
+  "claim_under_attack": "The current CF-ALT deliverable state is complete and accurate for its scope (finding a miss is CLAIM_REFUTED and is progress).",
+  "cross_module_context_read_only": {
+    "blueprint_md_path": "amphora-report-packager/reference/mvp20/out/blueprint.md",
+    "blueprint_md_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+    "cro_protocol_md_path": "amphora-cro-protocol-packager/reference/mvp20/out/cro_protocol.md",
+    "cro_protocol_md_sha256": "e13dc9aa380c5b0376cd1b8d5aebb2b3f78db98d042195f6a59abde74e8177d1",
+    "falsification_protocol_path": "amphora-cro-protocol-packager/reference/mvp20/out/falsification_protocol.json",
+    "falsification_protocol_sha256": "b2fa8de6b50f8605dbe5a412af5d818e8792be864af7ea6e3ef10320959504b6"
+  },
+  "deliverable_sha256": "28a642b8644cd8ac948da1f2548d4cf5ca3a2313bd58fb1f9471fcc97af8b65d",
+  "deliverable_under_test": "amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json",
+  "directive_obligation": "CF-ALT",
+  "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+  "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+  "fire_sequence": 1,
+  "module": "amphora-cro-protocol-packager",
+  "refutation_criterion_verbatim": "Any pair of evidence-indistinguishable candidates ships without ranked alternates and a named discriminating experiment.",
+  "schema": "amphora.cro-protocol-packager.cf-alt-alternates-audit-diagnostic.v1",
+  "step_1_carried_candidates": {
+    "candidates_list": [
+      "M00097",
+      "M00101",
+      "M00109"
+    ],
+    "pairs_evaluated": [
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00097",
+          "M00101"
+        ],
+        "pvc_pct_delta": 0.169,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      },
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00097",
+          "M00109"
+        ],
+        "pvc_pct_delta": 0.656,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      },
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00101",
+          "M00109"
+        ],
+        "pvc_pct_delta": 0.487,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      }
+    ],
+    "prediction_ledger_ids": [
+      "M00097",
+      "M00101",
+      "M00109"
+    ]
+  },
+  "step_2_named_discriminating_experiments_in_real_corpus": {
+    "additional_missing_companion_files": {
+      "funnel_results_json_cited_by_blueprint_for_alternates": true,
+      "funnel_results_json_exists_anywhere_in_repo": false,
+      "power_analysis_json_exists_anywhere_in_repo": false,
+      "power_analysis_path_cited_by_this_modules_own_capture_template": "out/power_analysis.json"
+    },
+    "explicit_id_to_track_name_tie_present": {
+      "M00097": true,
+      "M00098": true,
+      "M00101": true,
+      "M00109": true
+    },
+    "finding": "The only named discriminating experiment in the corpus (key_pairwise: Enhanced-65 > Envelope-65) is keyed to the Lineage-60/Envelope-65/Enhanced-65/CRO-Robust-65 track namespace, not to the M00-series ids this module's own capture_template.json carries. Only M00097 has a prose (not structured/machine-checkable) tie to a track name ('Lead M00097 / Envelope-65' in blueprint.md). M00101 and M00109 -- both explicitly in THIS module's own 'candidates' list -- are never tied to any track name anywhere in the four in-scope files, so the named experiment cannot be verified to resolve them. Separately, 'Enhanced-65' (the zinc-phosphate functional variant per blueprint prose) most plausibly corresponds to M00098, which is entirely ABSENT from this module's own candidates list and prediction_ledger -- an internal inconsistency in this module's own carried-candidate bookkeeping, independent of the cross-module ownership question.",
+    "key_pairwise_bet_falsification_protocol": {
+      "decision_rule": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+      "must_hold": true,
+      "pair": [
+        "Enhanced-65",
+        "Envelope-65"
+      ],
+      "tie_handling": "no model promotion if noisy/tied within replicate scatter"
+    },
+    "key_pairwise_capture_template": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+    "m00098_functional_variant_in_this_modules_candidates_list": false,
+    "m00098_functional_variant_in_this_modules_prediction_ledger": false,
+    "m00_series_ids_mentioned_per_file": {
+      "blueprint.md": [
+        "M00097",
+        "M00098",
+        "M00101",
+        "M00109"
+      ],
+      "capture_template.json": [
+        "M00097",
+        "M00101",
+        "M00109"
+      ],
+      "cro_protocol.md": [],
+      "falsification_protocol.json": []
+    },
+    "structured_crosswalk_sentences_found_in_blueprint": [
+      "**Lead M00097 / Envelope-65** (+ alternates M00101, M00109, and functional variant M00098): DGEBA-class liquid epoxy (EEW in the government 175\u2013190 band) + reactive polyamide (ancamide_350a) at R=0.7, HAP-compliant naphtha + n_butanol solvent system (per C-005), silica barrier-extender pack, no functional zinc phosphate in the primary, and iron-oxide identification color. Enhanced-65 adds zinc phosphate only as a functional optional variant."
+    ],
+    "track_names_used_by_named_experiment": [
+      "Enhanced-65",
+      "Envelope-65"
+    ]
+  },
+  "step_3_real_corpus_unresolved_pairs": {
+    "n_unresolved": 3,
+    "refutation_criterion_observed": true,
+    "resolved_pair_experiments": {},
+    "unresolved_evidence_indistinguishable_pairs": [
+      [
+        "M00097",
+        "M00101"
+      ],
+      [
+        "M00097",
+        "M00109"
+      ],
+      [
+        "M00101",
+        "M00109"
+      ]
+    ]
+  },
+  "step_4_discrimination_control": {
+    "description": "Synthetic fully-repaired copy: every evidence-indistinguishable pair gets an explicit pair-keyed named discriminating experiment. SAME checker must report zero unresolved pairs.",
+    "discrimination_control_passed": true,
+    "resolved_pair_experiments": {
+      "M00097|M00101": "ASTM D870 immersion + ISO 16773 EIS pairwise gap (M00097 vs M00101), same protocol construction as falsification_protocol.json's key_pairwise_bet, decision rule: >=1.0 log10 |Z|@0.01Hz gap and greater than replicate scatter",
+      "M00097|M00109": "ASTM D870 immersion + ISO 16773 EIS pairwise gap (M00097 vs M00109), same protocol construction as falsification_protocol.json's key_pairwise_bet, decision rule: >=1.0 log10 |Z|@0.01Hz gap and greater than replicate scatter",
+      "M00101|M00109": "ASTM D870 immersion + ISO 16773 EIS pairwise gap (M00101 vs M00109), same protocol construction as falsification_protocol.json's key_pairwise_bet, decision rule: >=1.0 log10 |Z|@0.01Hz gap and greater than replicate scatter"
+    },
+    "unresolved_pairs_on_repaired_copy": []
+  },
+  "step_5_positive_control": {
+    "description": "Attack-shape-literal: from the fully-repaired state, silently strip the named discriminating experiment for exactly the M00101 vs M00109 pair (the 'merge into one unexplained pick' scenario -- no test is named to choose between them, so a downstream reader picks one silently). The checker must re-flag exactly that pair and only that pair.",
+    "detected": true,
+    "evidence": "unresolved_pairs_after_planting == [['M00101', 'M00109']], matching exactly the single pair whose resolution was stripped -- the checker fired on the planted defect and did not over- or under-flag.",
+    "how_planted": "dict.pop on the fully-repaired resolved_pair_experiments map, key frozenset({'M00101','M00109'}); all other pairs' resolutions left intact",
+    "planted_defect": "removed resolved_pair_experiments[frozenset({'M00101','M00109'})]",
+    "unresolved_pairs_after_planting": [
+      [
+        "M00101",
+        "M00109"
+      ]
+    ]
+  },
+  "study_id": "cf-alt-ranked-alternates-discriminating-experiment-v1",
+  "verdict": "CLAIM_REFUTED"
+}

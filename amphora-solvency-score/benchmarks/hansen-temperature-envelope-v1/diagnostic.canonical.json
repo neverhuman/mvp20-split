@@ -1,0 +1,1189 @@
+{
+  "all_gates_pass": true,
+  "baseline_25c": {
+    "accuracy": 0.893333,
+    "auroc": 0.948773,
+    "correct_of_75": 67,
+    "matches_shipped_headline": true
+  },
+  "benchmark": "amphora-solvency-score/hansen-temperature-envelope-v1",
+  "bootstrap": {
+    "acc_delta_40c_minus_25c_ci95": [
+      -0.04,
+      0.0
+    ],
+    "acc_delta_5c_minus_25c_ci95": [
+      -0.04,
+      0.0
+    ],
+    "n_resamples": 5000,
+    "reference_scenario": "S1_common_alpha alpha=1.0e-03",
+    "seed": 20260731
+  },
+  "borderline_pairs": [
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::chloroform",
+      "red_25c": 0.839532,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": false,
+      "pair_id": "epoxy-dgeba-linear-uncured::n-butanol",
+      "red_25c": 1.15641,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::p-xylene",
+      "red_25c": 1.141907,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::toluene",
+      "red_25c": 1.161364,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": true,
+      "observed_compatible": true,
+      "pair_id": "polyamide-nylon66::dimethylformamide",
+      "red_25c": 0.986842,
+      "verdict_boundary_crossing_temperature_c": 12.130122
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::ethanol",
+      "red_25c": 1.151533,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::n-butanol",
+      "red_25c": 1.017343,
+      "verdict_boundary_crossing_temperature_c": 47.04069
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::chloroform",
+      "red_25c": 0.904887,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::ethyl-acetate",
+      "red_25c": 0.889288,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": false,
+      "pair_id": "polymethyl-methacrylate::n-butanol",
+      "red_25c": 1.268295,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::p-xylene",
+      "red_25c": 1.239395,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::toluene",
+      "red_25c": 1.24424,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": true,
+      "observed_compatible": false,
+      "pair_id": "polystyrene::acetone",
+      "red_25c": 1.005318,
+      "verdict_boundary_crossing_temperature_c": 29.520342
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polystyrene::cyclohexane",
+      "red_25c": 0.902769,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polystyrene::dimethylformamide",
+      "red_25c": 1.033418,
+      "verdict_boundary_crossing_temperature_c": 54.759203
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polystyrene::ethyl-acetate",
+      "red_25c": 0.896601,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polystyrene::methyl-ethyl-ketone",
+      "red_25c": 0.874122,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": false,
+      "pair_id": "polystyrene::n-butanol",
+      "red_25c": 1.231522,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": false,
+      "pair_id": "polystyrene::n-hexane",
+      "red_25c": 1.157159,
+      "verdict_boundary_crossing_temperature_c": null
+    },
+    {
+      "crossing_inside_5_to_40c": false,
+      "observed_compatible": true,
+      "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+      "red_25c": 0.954901,
+      "verdict_boundary_crossing_temperature_c": -19.309341
+    }
+  ],
+  "envelope": {
+    "alpha_grid_per_k": [
+      0.0006,
+      0.0008,
+      0.001,
+      0.0012,
+      0.0015
+    ],
+    "alpha_treatment": "swept, not fitted; S0 is the alpha-independent lower bound",
+    "alpha_values_invented": false,
+    "n_temperature_points": 36,
+    "rationale": "ISO 12944-7 / IMO PSPC cold-end application (~5 C) to tropical topside service (~40 C) for marine two-part epoxy-amine coatings",
+    "t_high_c": 40.0,
+    "t_low_c": 5.0,
+    "t_step_c": 1.0
+  },
+  "fixture": {
+    "license": "CC0-1.0",
+    "n_pairs": 75,
+    "n_polymers": 5,
+    "n_solvents": 15,
+    "path": "amphora-solvency-score/reference/phase0-solvency-known-answer.v1.json",
+    "sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238"
+  },
+  "gates": {
+    "all_components_monotone_decreasing_in_T": true,
+    "all_reds_finite_over_envelope": true,
+    "alpha_free_case_leaves_dd_dp_exactly_fixed": true,
+    "baseline_25c_auroc_meets_acceptance_bar": true,
+    "baseline_25c_reproduces_shipped_67_of_75": true,
+    "envelope_covers_iso12944_application_window": true,
+    "fixture_sha256_matches_lock": true,
+    "fixture_shape_5x15_75_pairs": true,
+    "law_is_identity_at_reference_temperature": true,
+    "temperature_law_matches_published_derivatives": true
+  },
+  "headline": {
+    "alpha_free_bound_alone_refutes_h0": false,
+    "alpha_free_lower_bound_flips": 0,
+    "common_alpha_flip_counts_across_declared_grid": [
+      2
+    ],
+    "flip_count_sensitive_to_alpha_magnitude_within_grid": false,
+    "flipped_pair_ids": [
+      "polyamide-nylon66::dimethylformamide",
+      "polyamide-nylon66::n-butanol",
+      "polystyrene::acetone",
+      "polyvinyl-chloride::dichloromethane",
+      "polyvinyl-chloride::tetrahydrofuran"
+    ],
+    "h0": "every 25 C RED verdict is invariant over 5-40 C under Hansen's own temperature law",
+    "h0_verdict": "REFUTED",
+    "smallest_common_alpha_that_breaks_invariance_per_k": 0.000261,
+    "worst_case_max_abs_delta_red": 0.392252,
+    "worst_case_verdict_flips_over_declared_scenarios": 5
+  },
+  "interpretation": "amphora-solvency-score ships a Hansen RED verdict built from 25 C parameter tables and an interaction radius R that carries no temperature argument, yet marine two-part epoxy-amine coatings are applied near 5 C and serviced near 40 C. Applying Hansen & Beerbower's own published temperature law (1971; zero fitted parameters) across that envelope: the 25 C baseline reproduces the shipped 67/75 headline exactly and the law implementation matches the published derivatives to 0.0 relative error. H0 (verdict invariance) is REFUTED: worst case 5 of 75 verdicts flip inside 5-40 C, with max |dRED| 0.392252. Where the refutation does and does not rest on alpha is stated precisely: the assumption-free lower bound (S0 -- the alpha-independent 1.22e-3 hydrogen-bonding term acting alone, no thermal-expansion coefficient assumed) flips 0 verdicts, so the H-bonding term BY ITSELF does not refute H0; thermal expansion is necessary. But the refutation is not sensitive to WHICH alpha: invariance already breaks at alpha = 0.000261 1/K, far below any real organic liquid, and the common-alpha flip count is constant at [2] across the entire declared 6.0e-4 .. 1.5e-3 1/K range -- so no alpha value was tuned to produce the result. At alpha = 1.0e-3 1/K the RED of every pair scales between 0.975033 and 1.034313 of its 25 C value while the rank ordering is essentially preserved (min Kendall tau-b 0.990631, AUROC in [0.94733, 0.952381]) -- i.e. temperature moves the DECISION BOUNDARY, not the ranking. Mechanism: co-scaling R with the polymer's own Hansen-norm contraction (S3) leaves 0 flips, removing 5, which localises the drift to the temperature-invariant R rather than to the parameter law. Practical consequence for solvent selection: a fixed-R 25 C Hansen sphere is systematically more permissive at tropical application temperature and more restrictive in winter application, and the exposure is confined to pairs sitting within a few percent of RED = 1 -- e.g. polyamide-nylon66::dimethylformamide (RED 0.9868 at 25 C) crosses the boundary at 12.13 C and polystyrene::acetone (RED 1.0053) crosses at 29.52 C. Effect size is deliberately not overstated: the paired pinned-seed bootstrap CIs on the change in agreement with the 25 C label set are [-0.04, 0.0] at 5 C and [-0.04, 0.0] at 40 C, both straddling zero, so at n = 75 the AGGREGATE divergence is not resolvable -- the durable finding is the identified boundary-crossing pairs and the fixed-R mechanism, not a headline accuracy change. Note also that the fixture labels are 25 C observations, so off-25 C counts measure divergence from the shipped verdict set, not predictive error. Scope: self-authored CC0 fixture, LOCKED_INTERNAL, CONSTRAINT_ONLY -- this is a self-consistency falsification of the shipped rule, NOT external validation, and it does not re-label any pair.",
+  "label_temperature_caveat": {
+    "fixture_labels_observed_at_c": 25.0,
+    "note": "observed_compatible labels are 25 C observations, so the correct_of_75 counts reported at other temperatures measure DIVERGENCE of the temperature-corrected verdict from the 25 C label set, NOT predictive error at that temperature. No pair is re-labelled and no accuracy claim is made off 25 C."
+  },
+  "law_verification": {
+    "max_relative_error_vs_published_derivatives": 0.0,
+    "method": "central difference h=1e-4 K against the analytic right-hand sides"
+  },
+  "mechanism": {
+    "direction": "RED = Ra/R falls with rising T when R is held fixed, so a fixed-R Hansen sphere is systematically MORE PERMISSIVE hot and MORE RESTRICTIVE cold than its 25 C calibration",
+    "flips_removed_by_co_scaling_R": 5,
+    "question": "is the drift an artifact of holding the interaction radius R temperature-invariant while all three HSP components contract?",
+    "s3_flipped_pair_ids": [],
+    "s3_r_co_scaled_flips": 0
+  },
+  "physical_baseline": {
+    "constants": {
+      "T0_K": 298.15,
+      "c_d": 1.25,
+      "c_h": 0.5,
+      "c_p": 0.5,
+      "dh_term_per_k": 0.00122,
+      "factor_k": 4.0,
+      "red_cutoff": 1.0
+    },
+    "free_parameters_fitted": 0,
+    "integration": "exact for constant alpha over the envelope; T0 = 298.15 K",
+    "red_sphere": "Hansen 2007 handbook Eq. 1.9, Ra^2 = 4*ddD^2 + ddP^2 + ddH^2, RED = Ra/R",
+    "temperature_law": "Hansen & Beerbower 1971 (Kirk-Othmer Suppl. Vol., 2nd ed., pp. 889-910); d(dD)/dT = -1.25 a dD, d(dP)/dT = -0.50 a dP, d(dH)/dT = -(1.22e-3 + 0.50 a) dH"
+  },
+  "scenarios": {
+    "S0_alpha_free_lower_bound": {
+      "accuracy_correct_of_75_max": 67,
+      "accuracy_correct_of_75_min": 67,
+      "alpha_polymer_per_k": 0.0,
+      "alpha_solvent_per_k": 0.0,
+      "auroc_max": 0.950938,
+      "auroc_min": 0.948052,
+      "endpoints": [
+        {
+          "accuracy": 0.893333,
+          "auroc": 0.950938,
+          "correct_of_75": 67,
+          "kendall_tau_b_vs_25c": 0.992072,
+          "temperature_c": 5.0
+        },
+        {
+          "accuracy": 0.893333,
+          "auroc": 0.948773,
+          "correct_of_75": 67,
+          "kendall_tau_b_vs_25c": 1.0,
+          "temperature_c": 25.0
+        },
+        {
+          "accuracy": 0.893333,
+          "auroc": 0.948052,
+          "correct_of_75": 67,
+          "kendall_tau_b_vs_25c": 0.994234,
+          "temperature_c": 40.0
+        }
+      ],
+      "flips": [],
+      "interaction_radius_co_scaled": false,
+      "kendall_tau_b_vs_25c_min": 0.992072,
+      "max_abs_delta_red": 0.230289,
+      "n_verdict_flips_in_envelope": 0,
+      "red_ratio_max_over_envelope": 1.023855,
+      "red_ratio_min_over_envelope": 0.9825
+    },
+    "S1_common_alpha": {
+      "alpha_1.0e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 66,
+        "alpha_polymer_per_k": 0.001,
+        "alpha_solvent_per_k": 0.001,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.88,
+            "auroc": 0.952381,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.990631,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.94733,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.007418,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 30.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.999438,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.990631,
+        "max_abs_delta_red": 0.337959,
+        "n_verdict_flips_in_envelope": 2,
+        "red_ratio_max_over_envelope": 1.034313,
+        "red_ratio_min_over_envelope": 0.975033
+      },
+      "alpha_1.2e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 66,
+        "alpha_polymer_per_k": 0.0012,
+        "alpha_solvent_per_k": 0.0012,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.88,
+            "auroc": 0.952381,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.98991,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.94733,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.009435,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 29.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.999715,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.98991,
+        "max_abs_delta_red": 0.359639,
+        "n_verdict_flips_in_envelope": 2,
+        "red_ratio_max_over_envelope": 1.036418,
+        "red_ratio_min_over_envelope": 0.973547
+      },
+      "alpha_1.5e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 66,
+        "alpha_polymer_per_k": 0.0015,
+        "alpha_solvent_per_k": 0.0015,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.88,
+            "auroc": 0.952381,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.991351,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.94733,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.012468,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 29.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.998375,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.991351,
+        "max_abs_delta_red": 0.392252,
+        "n_verdict_flips_in_envelope": 2,
+        "red_ratio_max_over_envelope": 1.039827,
+        "red_ratio_min_over_envelope": 0.97114
+      },
+      "alpha_6.0e-04": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 66,
+        "alpha_polymer_per_k": 0.0006,
+        "alpha_solvent_per_k": 0.0006,
+        "auroc_max": 0.951659,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.88,
+            "auroc": 0.951659,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.992793,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.94733,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.003396,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 33.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.999499,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.992793,
+        "max_abs_delta_red": 0.294745,
+        "n_verdict_flips_in_envelope": 2,
+        "red_ratio_max_over_envelope": 1.030116,
+        "red_ratio_min_over_envelope": 0.978013
+      },
+      "alpha_8.0e-04": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 66,
+        "alpha_polymer_per_k": 0.0008,
+        "alpha_solvent_per_k": 0.0008,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.88,
+            "auroc": 0.952381,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.991351,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.94733,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.005405,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 31.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.999607,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.991351,
+        "max_abs_delta_red": 0.316327,
+        "n_verdict_flips_in_envelope": 2,
+        "red_ratio_max_over_envelope": 1.032212,
+        "red_ratio_min_over_envelope": 0.976522
+      }
+    },
+    "S2_solvent_only_alpha": {
+      "alpha_1.0e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 64,
+        "alpha_polymer_per_k": 0.0,
+        "alpha_solvent_per_k": 0.001,
+        "auroc_max": 0.950938,
+        "auroc_min": 0.946609,
+        "endpoints": [
+          {
+            "accuracy": 0.853333,
+            "auroc": 0.950938,
+            "correct_of_75": 64,
+            "kendall_tau_b_vs_25c": 0.948829,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.948773,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.974775,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.01777,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polyamide-nylon66::n-butanol",
+            "red_25c": 1.017343,
+            "red_at_flip_temperature": 0.941595,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.955194,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 30.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+            "red_25c": 0.954901,
+            "red_at_flip_temperature": 1.008079,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.948829,
+        "max_abs_delta_red": 0.330035,
+        "n_verdict_flips_in_envelope": 4,
+        "red_ratio_max_over_envelope": 1.219595,
+        "red_ratio_min_over_envelope": 0.717094
+      },
+      "alpha_1.2e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 64,
+        "alpha_polymer_per_k": 0.0,
+        "alpha_solvent_per_k": 0.0012,
+        "auroc_max": 0.950938,
+        "auroc_min": 0.946609,
+        "endpoints": [
+          {
+            "accuracy": 0.853333,
+            "auroc": 0.950938,
+            "correct_of_75": 64,
+            "kendall_tau_b_vs_25c": 0.943784,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.946609,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.966847,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.025554,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polyamide-nylon66::n-butanol",
+            "red_25c": 1.017343,
+            "red_at_flip_temperature": 0.928631,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.944949,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 29.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+            "red_25c": 0.954901,
+            "red_at_flip_temperature": 1.005951,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.943784,
+        "max_abs_delta_red": 0.350723,
+        "n_verdict_flips_in_envelope": 4,
+        "red_ratio_max_over_envelope": 1.26431,
+        "red_ratio_min_over_envelope": 0.662557
+      },
+      "alpha_1.5e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 64,
+        "alpha_polymer_per_k": 0.0,
+        "alpha_solvent_per_k": 0.0015,
+        "auroc_max": 0.951659,
+        "auroc_min": 0.944444,
+        "endpoints": [
+          {
+            "accuracy": 0.853333,
+            "auroc": 0.950938,
+            "correct_of_75": 64,
+            "kendall_tau_b_vs_25c": 0.933694,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.866667,
+            "auroc": 0.944444,
+            "correct_of_75": 65,
+            "kendall_tau_b_vs_25c": 0.96036,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.039521,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polyamide-nylon66::n-butanol",
+            "red_25c": 1.017343,
+            "red_at_flip_temperature": 0.910975,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.929594,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 39.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyvinyl-chloride::dichloromethane",
+            "red_25c": 0.768779,
+            "red_at_flip_temperature": 1.006489,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 28.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+            "red_25c": 0.954901,
+            "red_at_flip_temperature": 1.002756,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.933694,
+        "max_abs_delta_red": 0.382224,
+        "n_verdict_flips_in_envelope": 5,
+        "red_ratio_max_over_envelope": 1.331338,
+        "red_ratio_min_over_envelope": 0.584501
+      },
+      "alpha_6.0e-04": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 64,
+        "alpha_polymer_per_k": 0.0,
+        "alpha_solvent_per_k": 0.0006,
+        "auroc_max": 0.950216,
+        "auroc_min": 0.945887,
+        "endpoints": [
+          {
+            "accuracy": 0.853333,
+            "auroc": 0.948773,
+            "correct_of_75": 64,
+            "kendall_tau_b_vs_25c": 0.968288,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.948773,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.983423,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.005907,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polyamide-nylon66::n-butanol",
+            "red_25c": 1.017343,
+            "red_at_flip_temperature": 0.970138,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.975696,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 33.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+            "red_25c": 0.954901,
+            "red_at_flip_temperature": 1.005911,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.968288,
+        "max_abs_delta_red": 0.289404,
+        "n_verdict_flips_in_envelope": 4,
+        "red_ratio_max_over_envelope": 1.130171,
+        "red_ratio_min_over_envelope": 0.830047
+      },
+      "alpha_8.0e-04": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 64,
+        "alpha_polymer_per_k": 0.0,
+        "alpha_solvent_per_k": 0.0008,
+        "auroc_max": 0.950216,
+        "auroc_min": 0.946609,
+        "endpoints": [
+          {
+            "accuracy": 0.853333,
+            "auroc": 0.950216,
+            "correct_of_75": 64,
+            "kendall_tau_b_vs_25c": 0.958919,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.948052,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.97982,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.011219,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polyamide-nylon66::n-butanol",
+            "red_25c": 1.017343,
+            "red_at_flip_temperature": 0.955449,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.965444,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 31.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+            "red_25c": 0.954901,
+            "red_at_flip_temperature": 1.005931,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.958919,
+        "max_abs_delta_red": 0.309596,
+        "n_verdict_flips_in_envelope": 4,
+        "red_ratio_max_over_envelope": 1.174875,
+        "red_ratio_min_over_envelope": 0.773044
+      }
+    },
+    "S3_mechanism_R_co_scaled": {
+      "alpha_1.0e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 67,
+        "alpha_polymer_per_k": 0.001,
+        "alpha_solvent_per_k": 0.001,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.952381,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.990631,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.94733,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [],
+        "interaction_radius_co_scaled": true,
+        "kendall_tau_b_vs_25c_min": 0.990631,
+        "max_abs_delta_red": 0.080719,
+        "n_verdict_flips_in_envelope": 0,
+        "red_ratio_max_over_envelope": 1.009978,
+        "red_ratio_min_over_envelope": 0.986848
+      },
+      "alpha_1.2e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 67,
+        "alpha_polymer_per_k": 0.0012,
+        "alpha_solvent_per_k": 0.0012,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.952381,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.990631,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.94733,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [],
+        "interaction_radius_co_scaled": true,
+        "kendall_tau_b_vs_25c_min": 0.990631,
+        "max_abs_delta_red": 0.05345,
+        "n_verdict_flips_in_envelope": 0,
+        "red_ratio_max_over_envelope": 1.01196,
+        "red_ratio_min_over_envelope": 0.984263
+      },
+      "alpha_1.5e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 67,
+        "alpha_polymer_per_k": 0.0015,
+        "alpha_solvent_per_k": 0.0015,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.952381,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.990631,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.94733,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.995676,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [],
+        "interaction_radius_co_scaled": true,
+        "kendall_tau_b_vs_25c_min": 0.990631,
+        "max_abs_delta_red": 0.032245,
+        "n_verdict_flips_in_envelope": 0,
+        "red_ratio_max_over_envelope": 1.014939,
+        "red_ratio_min_over_envelope": 0.980397
+      },
+      "alpha_6.0e-04": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 67,
+        "alpha_polymer_per_k": 0.0006,
+        "alpha_solvent_per_k": 0.0006,
+        "auroc_max": 0.951659,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.951659,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.992793,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.94733,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [],
+        "interaction_radius_co_scaled": true,
+        "kendall_tau_b_vs_25c_min": 0.992793,
+        "max_abs_delta_red": 0.135444,
+        "n_verdict_flips_in_envelope": 0,
+        "red_ratio_max_over_envelope": 1.014941,
+        "red_ratio_min_over_envelope": 0.98894
+      },
+      "alpha_8.0e-04": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 67,
+        "alpha_polymer_per_k": 0.0008,
+        "alpha_solvent_per_k": 0.0008,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.952381,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.991351,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.94733,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [],
+        "interaction_radius_co_scaled": true,
+        "kendall_tau_b_vs_25c_min": 0.991351,
+        "max_abs_delta_red": 0.10805,
+        "n_verdict_flips_in_envelope": 0,
+        "red_ratio_max_over_envelope": 1.012285,
+        "red_ratio_min_over_envelope": 0.989299
+      }
+    }
+  },
+  "schema": "amphora.solvency-score.hansen-temperature-envelope-diagnostic.v1"
+}

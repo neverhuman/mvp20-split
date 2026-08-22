@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "484be3680eb93f8ef923328ac4823e0ec6ec45b3e585b7cd77cd5ebcd8db035c",
+  "module_id": "amphora-molecule-generator",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

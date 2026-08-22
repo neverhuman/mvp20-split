@@ -1,0 +1,354 @@
+{
+  "authority": "AUDIT_ONLY",
+  "check1_dgeba_eew_admissibility": {
+    "M0_g_per_mol": 340.42,
+    "all_within_band": true,
+    "fail_closed_mutation_demo": [
+      {
+        "eew": 187.0,
+        "flagged_out_of_band": false,
+        "implied_n": 0.1181,
+        "mutation": "baseline"
+      },
+      {
+        "eew": 1187.0,
+        "flagged_out_of_band": true,
+        "implied_n": 7.1517,
+        "mutation": "digit_insert_1x87"
+      },
+      {
+        "eew": 287.0,
+        "flagged_out_of_band": true,
+        "implied_n": 0.8215,
+        "mutation": "mistype_287"
+      },
+      {
+        "eew": 18.7,
+        "flagged_out_of_band": true,
+        "implied_n": -1.0657,
+        "mutation": "decimal_slip_18.7"
+      },
+      {
+        "eew": 178.0,
+        "flagged_out_of_band": false,
+        "implied_n": 0.0548,
+        "mutation": "transpose_178 (small, within band)"
+      }
+    ],
+    "functionality": 2,
+    "liquid_admissible_eew_band": [
+      170.21,
+      198.645
+    ],
+    "liquid_n_ceiling": 0.2,
+    "n_load_bearing_eew_corroborated": 4,
+    "n_load_bearing_eew_total": 4,
+    "per_constant": [
+      {
+        "admissible_eew_band": [
+          170.21,
+          198.645
+        ],
+        "catalog_eew_g_per_eq": 187.0,
+        "constant": "resin.dgeba_331.eew",
+        "implied_oligomer_n": 0.1181,
+        "resin_class": "liquid_DGEBA",
+        "within_admissible_band": true
+      },
+      {
+        "admissible_eew_band": [
+          170.21,
+          198.645
+        ],
+        "catalog_eew_g_per_eq": 188.5,
+        "constant": "resin.dgeba_828.eew",
+        "implied_oligomer_n": 0.1286,
+        "resin_class": "liquid_DGEBA",
+        "within_admissible_band": true
+      },
+      {
+        "admissible_eew_band": [
+          170.21,
+          198.645
+        ],
+        "catalog_eew_g_per_eq": 187.0,
+        "constant": "resin.dgeba_yd128.eew",
+        "implied_oligomer_n": 0.1181,
+        "resin_class": "liquid_DGEBA",
+        "within_admissible_band": true
+      },
+      {
+        "admissible_eew_band": [
+          383.5,
+          667.8
+        ],
+        "catalog_eew_g_per_eq": 500.0,
+        "constant": "resin.solid_cut_1001x75.eew_on_nv",
+        "implied_oligomer_n": 2.3196,
+        "resin_class": "solid_type1_epoxy",
+        "within_admissible_band": true
+      }
+    ],
+    "pure_dgeba_eew0": 170.21,
+    "repeat_g_per_mol": 284.35
+  },
+  "check2_density_second_source": {
+    "all_within_gate": true,
+    "fail_closed_plus10pct_all_flagged": true,
+    "gate_pct": 3.0,
+    "load_bearing_corroborated": 7,
+    "max_abs_pct_deviation": 0.8507,
+    "per_constant": [
+      {
+        "abs_pct": 0.4292,
+        "catalog_g_per_mL": 1.16,
+        "constant": "resin.dgeba_331.density",
+        "load_bearing": true,
+        "pct_deviation": -0.4292,
+        "reference_g_per_mL": 1.165,
+        "reference_source": "liquid DGEBA d25 (Lee & Neville 1967 handbook band 1.16-1.17)",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.4292,
+        "catalog_g_per_mL": 1.16,
+        "constant": "resin.dgeba_828.density",
+        "load_bearing": true,
+        "pct_deviation": -0.4292,
+        "reference_g_per_mL": 1.165,
+        "reference_source": "liquid DGEBA d25 (Lee & Neville 1967 handbook band 1.16-1.17)",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.4292,
+        "catalog_g_per_mL": 1.17,
+        "constant": "resin.dgeba_yd128.density",
+        "load_bearing": true,
+        "pct_deviation": 0.4292,
+        "reference_g_per_mL": 1.165,
+        "reference_source": "liquid DGEBA d25 (Lee & Neville 1967 handbook band 1.16-1.17)",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.0618,
+        "catalog_g_per_mL": 0.81,
+        "constant": "solvent.butyl_alcohol.density",
+        "load_bearing": false,
+        "pct_deviation": 0.0618,
+        "reference_g_per_mL": 0.8095,
+        "reference_source": "n-butyl alcohol == 1-butanol d20, CRC 97th ed.",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.8507,
+        "catalog_g_per_mL": 0.818,
+        "constant": "solvent.mak.density",
+        "load_bearing": true,
+        "pct_deviation": 0.8507,
+        "reference_g_per_mL": 0.8111,
+        "reference_source": "2-heptanone (methyl n-amyl ketone) d20, CRC Handbook 97th ed.",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.1499,
+        "catalog_g_per_mL": 0.802,
+        "constant": "solvent.mibk.density",
+        "load_bearing": true,
+        "pct_deviation": 0.1499,
+        "reference_g_per_mL": 0.8008,
+        "reference_source": "4-methyl-2-pentanone d20, CRC Handbook 97th ed.",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.0618,
+        "catalog_g_per_mL": 0.81,
+        "constant": "solvent.n_butanol.density",
+        "load_bearing": true,
+        "pct_deviation": 0.0618,
+        "reference_g_per_mL": 0.8095,
+        "reference_source": "1-butanol d20, CRC Handbook 97th ed.",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.3261,
+        "catalog_g_per_mL": 0.923,
+        "constant": "solvent.pm.density",
+        "load_bearing": false,
+        "pct_deviation": 0.3261,
+        "reference_g_per_mL": 0.92,
+        "reference_source": "1-methoxy-2-propanol d20, CRC/supplier consensus",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.5598,
+        "catalog_g_per_mL": 0.97,
+        "constant": "solvent.pma.density",
+        "load_bearing": false,
+        "pct_deviation": 0.5598,
+        "reference_g_per_mL": 0.9646,
+        "reference_source": "1-methoxy-2-propyl acetate (PGMEA) d20, CRC 97th ed.",
+        "within_3.0_pct_gate": true
+      },
+      {
+        "abs_pct": 0.4619,
+        "catalog_g_per_mL": 0.87,
+        "constant": "solvent.xylene.density",
+        "load_bearing": true,
+        "pct_deviation": 0.4619,
+        "reference_g_per_mL": 0.866,
+        "reference_source": "mixed xylene isomer average (o0.880/m0.864/p0.861 d20), CRC 97th ed.",
+        "within_3.0_pct_gate": true
+      }
+    ]
+  },
+  "does_not_close": [
+    "Does NOT establish product qualification, wet-lab performance, or supplier closure.",
+    "Check-1 is an admissibility BOUND (n in [0,0.2]), not a point predictor; small within-band transpositions of EEW are not caught (see mutation demo).",
+    "Polyamide AHEW and mineral-pigment skeletal densities remain single-source (no independent lock)."
+  ],
+  "headline": "All 4 catalog EEW constants fall inside the structure-derived epoxy-oligomer admissibility band (liquid n in [0,0.20]); 7 load-bearing solvent/resin densities corroborated by CRC/Lee-Neville second source to <=3.00% (max 0.85%); fail-closed mutation tests confirm gross-error detection. Polyamide AHEW honestly single-source.",
+  "honest_negative_polyamide_ahew": {
+    "constants": [
+      {
+        "catalog_g_per_eq": 264.0,
+        "constant": "hardener.ancamide_220x70.ahew",
+        "grade": "TDS",
+        "load_bearing": true
+      },
+      {
+        "catalog_g_per_eq": 114.0,
+        "constant": "hardener.ancamide_2353.ahew",
+        "grade": "SUPPLIER_GUIDE",
+        "load_bearing": true
+      },
+      {
+        "catalog_g_per_eq": 120.0,
+        "constant": "hardener.ancamide_260a.ahew",
+        "grade": "SUPPLIER_GUIDE",
+        "load_bearing": true
+      },
+      {
+        "catalog_g_per_eq": 100.0,
+        "constant": "hardener.ancamide_350a.ahew",
+        "grade": "TDS",
+        "load_bearing": true
+      },
+      {
+        "catalog_g_per_eq": 170.0,
+        "constant": "hardener.ancamide_700b75.ahew",
+        "grade": "SUPPLIER_GUIDE",
+        "load_bearing": true
+      },
+      {
+        "catalog_g_per_eq": 198.0,
+        "constant": "hardener.versamid_115.ahew",
+        "grade": "TDS",
+        "load_bearing": true
+      }
+    ],
+    "note": "Proprietary polyamide/amidoamine oligomer structures have no rights-clean first-principles AHEW baseline; these legitimately remain single-source supplier constants. No independent corroboration asserted."
+  },
+  "human_review_performed": false,
+  "inputs": {
+    "facts_json": "reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+  },
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ingredient-library",
+  "non_circularity": "Check-1 admissibility band derived only from molecular structure (BPA-diglycidyl-ether + epoxy-repeat molar mass); Check-2 references are CRC Handbook / Lee&Neville independent of the supplier TDS that sourced the catalog.",
+  "pigment_density_diagnostic": {
+    "note": "Reported only, NOT gated. Formulation density is skeletal pigment density; ideal single-crystal density would false-flag porous/hydrated oxide pigments (hematite 5.26 vs pigment-grade ~5.0). Requires pycnometric second source to lock.",
+    "per_constant": [
+      {
+        "catalog_g_per_cm3": 4.45,
+        "constant": "pigment.barytes.density",
+        "load_bearing": true,
+        "pct_deviation": -0.6696,
+        "reference_g_per_cm3": 4.48,
+        "reference_source": "BaSO4 CRC 4.48; pigment barytes ~4.3-4.5"
+      },
+      {
+        "catalog_g_per_cm3": 1.8,
+        "constant": "pigment.carbon_black.density",
+        "load_bearing": false,
+        "pct_deviation": -2.7027,
+        "reference_g_per_cm3": 1.85,
+        "reference_source": "amorphous CB 1.7-2.0"
+      },
+      {
+        "catalog_g_per_cm3": 4.8,
+        "constant": "pigment.iron_oxide_black.density",
+        "load_bearing": false,
+        "pct_deviation": 0.0,
+        "reference_g_per_cm3": 4.8,
+        "reference_source": "magnetite Fe3O4 crystallographic 5.17; pigment-grade skeletal ~4.6-5.0"
+      },
+      {
+        "catalog_g_per_cm3": 5.0,
+        "constant": "pigment.iron_oxide_red.density",
+        "load_bearing": false,
+        "pct_deviation": 0.0,
+        "reference_g_per_cm3": 5.0,
+        "reference_source": "hematite Fe2O3 crystallographic 5.26; pigment-grade skeletal ~4.6-5.0"
+      },
+      {
+        "catalog_g_per_cm3": 4.0,
+        "constant": "pigment.iron_oxide_yellow.density",
+        "load_bearing": false,
+        "pct_deviation": -1.2346,
+        "reference_g_per_cm3": 4.05,
+        "reference_source": "goethite a-FeOOH 3.8-4.3"
+      },
+      {
+        "catalog_g_per_cm3": 2.85,
+        "constant": "pigment.mica.density",
+        "load_bearing": false,
+        "pct_deviation": 0.0,
+        "reference_g_per_cm3": 2.85,
+        "reference_source": "muscovite 2.76-3.0"
+      },
+      {
+        "catalog_g_per_cm3": 2.65,
+        "constant": "pigment.silica.density",
+        "load_bearing": false,
+        "pct_deviation": 0.0,
+        "reference_g_per_cm3": 2.65,
+        "reference_source": "quartz SiO2 2.65 CRC"
+      },
+      {
+        "catalog_g_per_cm3": 2.8,
+        "constant": "pigment.talc.density",
+        "load_bearing": true,
+        "pct_deviation": 0.7194,
+        "reference_g_per_cm3": 2.78,
+        "reference_source": "Mg3Si4O10(OH)2 2.58-2.83; pigment ~2.7-2.85"
+      },
+      {
+        "catalog_g_per_cm3": 2.9,
+        "constant": "pigment.wollastonite.density",
+        "load_bearing": false,
+        "pct_deviation": 0.0,
+        "reference_g_per_cm3": 2.9,
+        "reference_source": "CaSiO3 2.86-3.09"
+      },
+      {
+        "catalog_g_per_cm3": 3.3,
+        "constant": "pigment.zinc_phosphate.density",
+        "load_bearing": false,
+        "pct_deviation": 3.125,
+        "reference_g_per_cm3": 3.2,
+        "reference_source": "hydrated Zn3(PO4)2 hopeite ~3.0-3.3"
+      }
+    ]
+  },
+  "promotes_authority": false,
+  "purpose": "Independent physical second-signal for load-bearing catalog constants; fail-closed sensitivity demonstration for the module falsifiable hypothesis.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ingredient-library-constant-crosscheck.v1",
+  "theory_reference": {
+    "density_reference": "CRC Handbook of Chemistry and Physics, 97th ed. (2016)",
+    "eew_oligomer_series": "Ellis 1993 (ISBN 978-0-7514-0095-6); Lee & Neville 1967, Handbook of Epoxy Resins",
+    "pigment_density_method": "ASTM D153 skeletal (pycnometric) pigment density"
+  }
+}

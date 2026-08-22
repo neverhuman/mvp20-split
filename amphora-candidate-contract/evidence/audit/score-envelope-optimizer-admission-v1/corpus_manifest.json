@@ -1,0 +1,959 @@
+{
+  "cases": [
+    {
+      "case_id": "C01_missing_candidate_id",
+      "case_sha256": "cb66fc0d8642f0a911446f5c390d0da2b0c10a45db27bc6a561cdf51ac0c9c9d",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'candidate_id' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_evidence_scope",
+      "case_sha256": "baca8c4d3a94a78b3a1777784fa8c5653b64a92f6336cab5eab2346ae29882f5",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'evidence_scope' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_explanations",
+      "case_sha256": "bf28d98725b61371326e17c49158b44f1c83809ee2e68fdc2f6ac4b7ac893481",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'explanations' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_missing_inputs",
+      "case_sha256": "2d5918dae0bb68a3fced8a89a7cd2cd6c46fdf2803464d424494bd394001381c",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'missing_inputs' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_module_version",
+      "case_sha256": "e6d531a2f9942f656a9910bf92c17d48db89923ed77fdf57fd3d676813f570ee",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'module_version' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_schema_version",
+      "case_sha256": "b5da3002475cf1d9e5a1a892b1d169fc37d6074d170155d45acecb12e26e30b1",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'schema_version' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_score_0_1",
+      "case_sha256": "ae4197a127e362c6b28dd356bb6c5d8f1513c3cfb2ba143c4b1f425f45bc945a",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'score_0_1' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_score_semantics",
+      "case_sha256": "73c7ee6632e417e4fa3a9529b980297b94f4f2ae11fe5c9df3678631ce11bc03",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'score_semantics' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_source_refs",
+      "case_sha256": "8d07fa978d399ab34da6a895338bf748fba8280c5480847d1637554a3d38a732",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'source_refs' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C01_missing_uncertainty",
+      "case_sha256": "843b2fa35e3649105a1db123a7b3abe85a57477d9d1f8be846ea70db975f8940",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "'uncertainty' is schema-required but never dereferenced by the runtime admission path.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C02_score_above_one",
+      "case_sha256": "79088f9930f09f521b117e30e6a1a93dbdfbebb210da3ae2ce4440badc4e468d",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "score_0_1 maximum=1 is schema-only.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C03_score_below_zero",
+      "case_sha256": "c5e407a9cafb000d3d4c25a2382dfcb3590554c3d2e16e7e17220c6b6e518e78",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "score_0_1 minimum=0 is schema-only.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C04_status_off_enum",
+      "case_sha256": "53ad127b0ea8728c7a3c8f74a5e866a8d9f0fe512156c7123306f5c3dca03c30",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "status enum is schema-only when no hard constraint targets the module.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C05_score_semantics_off_enum",
+      "case_sha256": "a194980607b753e5edafbee515318bb672a9c07d8e11b72ab907183c3da70d68",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "score_semantics enum is schema-only.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C06_empty_evidence_scope",
+      "case_sha256": "d71a65a42a01d00e2cd90b8b904e270ef7338cb592ec0b9fd2a5c5bfddaa997c",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "evidence_scope minLength=1 is schema-only.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C07_model_card_missing_kpi_name",
+      "case_sha256": "86587b2d014a794e93d5636c9abe8a8428bd5fd1b309bcbe2b6fd8bba485d8fd",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "model_card.required is schema-only; the runtime never reads the model card.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C08_drop_model_card",
+      "case_sha256": "1f888aac51490c9a9d47b27503de17f1ade8ca1bedcf63cb84b2c54ae7f00315",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "metrics.required=[model_card] is schema-only.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "C09_bad_hash_pattern",
+      "case_sha256": "8d25b980cf6af5595cd16b27c1f58a65ae0f0d6562517c8f948825825c9c0c5a",
+      "layer": "SCHEMA_SUPERSET",
+      "note": "The 64-hex pattern on metrics hash fields is schema-only.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "E01_usable_by_optimizer_true",
+      "case_sha256": "099b09d66a35016cc6944214db57dc400cec6d1a1131c998eb1d0df736c4b688",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Schema types usable_by_optimizer as a free boolean; the runtime fails closed on true.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "optimizer escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E02_nonempty_objective_values",
+      "case_sha256": "fdbf7d447011753693f7e8329839a81705964b5add2d4c7f20b7c7a1f6a52aa7",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Schema types objective_values as a free object; the runtime fails closed on non-empty.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "score escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E03_ranking_eligible_true",
+      "case_sha256": "a605579b832805d7ef0e65374c30aa01f499addb25659b4e36d26b535a525f07",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Ranking lock released; schema has no opinion.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "ranking escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_fto_not_performed",
+      "case_sha256": "e6cacc26ea623693055aa730bc44559025e5c85acf3c0f1e2eeee3d2c6ceb750",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'fto_not_performed' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_optimizer_authority",
+      "case_sha256": "c736909cad27516af40a0a4df01ecbdc10d288591b9ad9a4309d3236be44b205",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_optimizer_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_patentability_authority",
+      "case_sha256": "420cb504c782d335eda0a4658209d8b829efa67f382740a3432b97f5574435ce",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_patentability_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_procurement_authority",
+      "case_sha256": "3954606ed0cc89428023751579f535601cce34f5ce321cf3fa12ff2326b474bd",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_procurement_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_product_performance_authority",
+      "case_sha256": "9adad02f8914643adf18ca86498bb3ad5f3ec25cd840abe70c435e3568d615fd",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_product_performance_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_qualification_authority",
+      "case_sha256": "5438299216b3ab299ecd36e99c7bc7df7be092b1235de11deeb0252323aa3317",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_qualification_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_ranking_authority",
+      "case_sha256": "3f7790c243f70eb649be32d367748bff73c5e20cec174b47354bd990e6f25df7",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_ranking_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_regulatory_authority",
+      "case_sha256": "9e27ea0c010d622356c3663a5de9aca50643719e04cfb41f3056a38d72f8ca16",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_regulatory_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_release_authority",
+      "case_sha256": "5a3f415e3a2dac047594eb641620b581982ef9c1341d4999df676fecc2a88181",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_release_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E04_missing_lock_no_safety_authority",
+      "case_sha256": "f29077e0cc57b39d17e0e1051889fc4e525a7c0d11a8aaa084b85542541bd190",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority claim lock 'no_safety_authority' absent; schema types claim_locks as a free object.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E05_lock_set_false",
+      "case_sha256": "327e279b88d49aee48b120cf6c50e59e3f6d319d9601bfe065fa2e85d66f6370",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "Zero-authority lock explicitly released to false.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "lock escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E06_solver_use_OBJECTIVE",
+      "case_sha256": "582798b9f0fc3f8a5c4256d5a89b61a7398b01014cc0dbf0a34687e512807ea6",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "solver_use=OBJECTIVE is INSIDE the schema enum but ABOVE the runtime ceiling set {DISABLED, AUDIT_ONLY, CONSTRAINT_ONLY}.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "E06_solver_use_RandD_OBJECTIVE",
+      "case_sha256": "5ce6efb0b01860aa3dca1be46ee6235bbd67e6804290e5cb5e296c3ab18b7b24",
+      "layer": "RUNTIME_SUPERSET_ESCALATION",
+      "note": "solver_use=R&D_OBJECTIVE is INSIDE the schema enum but ABOVE the runtime ceiling set {DISABLED, AUDIT_ONLY, CONSTRAINT_ONLY}.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver escalation"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F01_shipped_score_artifact_only_evidence",
+      "case_sha256": "5a19bcc8212488c921fe457573a7d9b590fc3109542e56617d5927d4d0800cfb",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Shipped module fixture, verbatim.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "module_id unregistered",
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F01_shipped_score_failed_gate",
+      "case_sha256": "cebddc98f215736dc24b6f8fa85b834cf285b70188358cde9273f2ca1631431c",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Shipped module fixture, verbatim.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "module_id unregistered",
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F01_shipped_score_formulation_objective",
+      "case_sha256": "e7cba91ded26902c6dde8780bfc4f965d14f0dc69446fcc70f4eaa541fe2dc4e",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Shipped module fixture, verbatim.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "module_id unregistered",
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F01_shipped_score_molecule_objective",
+      "case_sha256": "ebc9ca470630c6d75de6307f9bbaa755c7ecf3a3633c823ef89d61919a570db4",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Shipped module fixture, verbatim.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "module_id unregistered",
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F01_shipped_score_no_authority",
+      "case_sha256": "91e5f4e8e64db577fdf82f78742171effc4c14e67770a5c6ba08dabb721ae7dc",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Shipped module fixture, verbatim.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "module_id unregistered",
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F01_shipped_score_roadmap_generated_lead",
+      "case_sha256": "59a2ea0b1f380a36ff07fe8b76a95b9297f326cdc84f4eca48dc403fce3523fc",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Shipped module fixture, verbatim.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "module_id unregistered",
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F02_registered_score_artifact_only_evidence",
+      "case_sha256": "8151e6f4bce7f78bdae482bb5be8888d3c7bb963231cca5b75917644800b8c1a",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Same fixture with module_id repaired to a registered module -- localizes that the runtime refusal is NOT merely module registration.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F02_registered_score_failed_gate",
+      "case_sha256": "1ff5bb08edd98c5901df4a116d8415c5d4ee935eb99b75c34e5954c8c6270b81",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Same fixture with module_id repaired to a registered module -- localizes that the runtime refusal is NOT merely module registration.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F02_registered_score_formulation_objective",
+      "case_sha256": "8b66bf964ce1afb22fb509561d99e369a68fdf0788e7b8bdecaafa2dcc0ffb99",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Same fixture with module_id repaired to a registered module -- localizes that the runtime refusal is NOT merely module registration.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F02_registered_score_molecule_objective",
+      "case_sha256": "0d4c6aa748f16295cd5f46cb1982dd2f9226b783361d1ba0d71f38f5e3873dd8",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Same fixture with module_id repaired to a registered module -- localizes that the runtime refusal is NOT merely module registration.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F02_registered_score_no_authority",
+      "case_sha256": "60a48761dec8dd5571e324077a9ffa94361d62bc3062afafb77508c74c2b6b43",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Same fixture with module_id repaired to a registered module -- localizes that the runtime refusal is NOT merely module registration.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "F02_registered_score_roadmap_generated_lead",
+      "case_sha256": "0589b0bf02543bd2cf920edb650909bb56c792092cf8a3d24f0c7394f877ca46",
+      "layer": "EMPIRICAL_SHIPPED",
+      "note": "Same fixture with module_id repaired to a registered module -- localizes that the runtime refusal is NOT merely module registration.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver_use is absent",
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "G00_gate_fully_populated",
+      "case_sha256": "120ef5595777d29ef1b9cbfbd676fc55bd98bd4ff12192a1689bcf1b78e08dd2",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Trigger + all 14 obligations present: the provenance gate is satisfied.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "G01_ablate_authority_receipt",
+      "case_sha256": "d3bd841b53adf808ddd8e9e2c4e5fa52ef34e2d4ab4f601e16564ef107b10215",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'authority_receipt' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_claim_boundary",
+      "case_sha256": "f40efca9ee432b3215bbcbf10a91b2901d9980e5afacd617f30749a15f2eef7e",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'claim_boundary' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_formula_hash",
+      "case_sha256": "026c55186ab73fe50b752b8856edf6f311dc4951120efa681218d5de39802cbe",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'formula_hash' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_ingredient_catalog_hash",
+      "case_sha256": "618b042ff952fc8194c51a33ec304357b902cf5ebf7fd380107f0e80ccd100bc",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'ingredient_catalog_hash' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_ingredient_catalog_source_hash",
+      "case_sha256": "29a88e1eb0fc3cf874c578d8fda52f0a64cbdd58dfbb386c4576ee06fc3154bf",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'ingredient_catalog_source_hash' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_input_hash",
+      "case_sha256": "686d88b1ea462be3a3a51943afdd01010b6816af349ac39e479e1d8eb01cf199",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'input_hash' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_model_id",
+      "case_sha256": "3b4794ab5b4bd8de80f8dd6511d67107b4832e41c200806ec9f4bacdbb9f458e",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'model_id' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_model_readiness_status",
+      "case_sha256": "05bc7f9d06a35942ae876283d6bd60c179c0aad6f63a579cb14075e3c567fa29",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'model_readiness_status' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_model_receipt_hash",
+      "case_sha256": "91655357f2e8918900e8f9c4594ab8566c65175aab58bdf45a2c992569f02d73",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'model_receipt_hash' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_normalization_version",
+      "case_sha256": "5c4e6f8fca65138072af198509307e1513a7ed4c2c3af3627285d90278f2691e",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'normalization_version' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_prediction_status",
+      "case_sha256": "dec5381605f34a179c61ccda505e0cd8c0a76f924bbd1806b26b3a2426020279",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'prediction_status' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_primary_prediction",
+      "case_sha256": "63aa1b798ab0d266daf767c863ff0de2416fbc58b3a2ea608a61867596c1dcbe",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'primary_prediction' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_score_content_hash",
+      "case_sha256": "7a9a8ed6dfa1ab4995ff68310863d03c7067ea94e10555ab24a94c88bb4724e3",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'score_content_hash' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G01_ablate_solver_use",
+      "case_sha256": "fe4a5b85bf458a34b2d14ef2dd2b381744a57c01d314a307cbc1ca9965c93412",
+      "layer": "CONDITIONAL_GATE",
+      "note": "Necessity ablation: with the trigger present, dropping obligation 'solver_use' must be rejected by the schema (clause is load-bearing).",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver_use is absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "G02_escape_hatch_drop_trigger",
+      "case_sha256": "41bb7760f0b172787bf03f73d81874f7a78a26348bad2441ecf85b5ee6cab489",
+      "layer": "CONDITIONAL_GATE",
+      "note": "FAIL-OPEN: deleting the single trigger key model_receipt_schema discharges all 14 provenance obligations at once; the schema still accepts.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "G03_escape_hatch_bare_prediction",
+      "case_sha256": "5cb04caa8d3d67e86733fd761858cc24ceb80a7d5f5cc4cb865b257da7d7daf4",
+      "layer": "CONDITIONAL_GATE",
+      "note": "FAIL-OPEN, realistic form: a numeric primary_prediction with NO model_receipt_hash, formula_hash, input_hash, catalog hashes, normalization_version, score_content_hash, claim_boundary or authority_receipt binding is schema-valid, because the entire provenance gate is opt-in on a key the emitter controls.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "P01_base_conformant",
+      "case_sha256": "aaebcdb5a34398cca723e37c2e3c1918fd5d7ce337467f89de32aa3bd768301c",
+      "layer": "CORE_PARITY",
+      "note": "Fully-conformant quarantined DGEBA/IPDA envelope.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "P02_extra_metrics_keys",
+      "case_sha256": "7fdd5f20438167bbcb909e469056831a365ef7a5cbac80817351a4e7d3842e25",
+      "layer": "CORE_PARITY",
+      "note": "metrics.additionalProperties=true; runtime ignores unknown metrics keys.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "P03_roadmap_tier",
+      "case_sha256": "97af7733249e6469f7e2bf2167a1537833d404500c8e9dd851233f2dfbbd4dbe",
+      "layer": "CORE_PARITY",
+      "note": "ROADMAP is in the schema enum and is not in the runtime escalation blocklist.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "P04_solver_disabled",
+      "case_sha256": "9ecf770ceeb86265147b4ea21d3d35507a254fdfa61f5bf333dee29ba7a09149",
+      "layer": "CORE_PARITY",
+      "note": "solver_use=DISABLED is within the runtime ceiling set.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "P05_solver_constraint_only",
+      "case_sha256": "2405db8fe2abefbd2841999712c7670ca599d9a985a7f43fc75fd561c0205be0",
+      "layer": "CORE_PARITY",
+      "note": "solver_use=CONSTRAINT_ONLY is the top of the runtime ceiling set.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "P06_failed_gates_status",
+      "case_sha256": "1ff9124d756d35763c81df62a2c33fd57cd10524404a202f3eda4b4e06a5e9d6",
+      "layer": "CORE_PARITY",
+      "note": "status is only status-checked by the runtime when a hard constraint targets the module; with no constraints both oracles accept.",
+      "runtime_prediction": "ADMIT",
+      "runtime_reject_reasons_predicted": [],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "R01_missing_authority_tier",
+      "case_sha256": "d4577505cc032196f322032b950875530550817b9375e9245b1d97d9d30fc332",
+      "layer": "CORE_PARITY",
+      "note": "'authority_tier' is required by the schema AND dereferenced by the runtime admission path.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "authority_tier absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R01_missing_claim_locks",
+      "case_sha256": "c2a8aca353f6229e729b109f2c97c527e55cb5f118908f67bf7ae04d546827b3",
+      "layer": "CORE_PARITY",
+      "note": "'claim_locks' is required by the schema AND dereferenced by the runtime admission path.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "claim_locks absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R01_missing_gates",
+      "case_sha256": "b38abc18f4b6ce3e82668705fbd408934aece4f190bea5138583b92563f12a2a",
+      "layer": "CORE_PARITY",
+      "note": "'gates' is required by the schema AND dereferenced by the runtime admission path.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "gates absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R01_missing_metrics",
+      "case_sha256": "92b3889b737c23f8b4bdf226dd842945a60de4ebd077aa1482917192f25a30c5",
+      "layer": "CORE_PARITY",
+      "note": "'metrics' is required by the schema AND dereferenced by the runtime admission path.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "metrics absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R01_missing_module_id",
+      "case_sha256": "7653d61cd129a7e2ea38f804c3ec434014de6690214508d030fec6cbeffa3d1c",
+      "layer": "CORE_PARITY",
+      "note": "'module_id' is required by the schema AND dereferenced by the runtime admission path.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "module_id absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R01_missing_objective_values",
+      "case_sha256": "a03a16ce8e4840b536e820214d802aa73b0a717ea146b0b0f04e65042bfdf805",
+      "layer": "CORE_PARITY",
+      "note": "'objective_values' is required by the schema AND dereferenced by the runtime admission path.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "objective_values absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R01_missing_status",
+      "case_sha256": "04cd87b26ac7c9b034ef691a96848bfc4e35ba007d6c2377c05092103d7a0f45",
+      "layer": "CORE_PARITY",
+      "note": "'status' is required by the schema AND dereferenced by the runtime admission path.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "status absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R01_missing_usable_by_optimizer",
+      "case_sha256": "608f3c97ddf911d3fc1e24bf3c385ed0ed8f45d1e02830f525aae0e67c0340bb",
+      "layer": "CORE_PARITY",
+      "note": "'usable_by_optimizer' is required by the schema AND dereferenced by the runtime admission path.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "usable_by_optimizer absent"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R02_escalated_tier_OPTIMIZER",
+      "case_sha256": "abd36d3a15e54aecb94566f61bb8c31c4f596c482793f52bfff5491d466e10d6",
+      "layer": "CORE_PARITY",
+      "note": "Escalated authority tier: outside the schema enum AND on the runtime blocklist (defence in depth -- both deciders agree).",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "authority escalation"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R02_escalated_tier_PRODUCTION",
+      "case_sha256": "65281f8584e8415ab716a75b6f69faf7da7dc934e50751912092e9597e2d89c4",
+      "layer": "CORE_PARITY",
+      "note": "Escalated authority tier: outside the schema enum AND on the runtime blocklist (defence in depth -- both deciders agree).",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "authority escalation"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "R02_escalated_tier_RANKING",
+      "case_sha256": "f022dbee5b8b306d7ac550964d62876f31584941a0598b72c7e1d70185df63c5",
+      "layer": "CORE_PARITY",
+      "note": "Escalated authority tier: outside the schema enum AND on the runtime blocklist (defence in depth -- both deciders agree).",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "authority escalation"
+      ],
+      "schema_prediction": "REJECT"
+    },
+    {
+      "case_id": "S01_drop_metrics_solver_use",
+      "case_sha256": "405eedd8c05472db5056f2785b7e4e1a05718a23f3ca1c5477436cc5b2d6f31d",
+      "layer": "RUNTIME_SUPERSET_PROVENANCE",
+      "note": "Runtime unconditionally dereferences /metrics/solver_use; the schema requires it ONLY when metrics.model_receipt_schema is present.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "solver_use is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "S02_drop_authority_receipt",
+      "case_sha256": "51017c2c76616ae4db7c950c860cecf56f26cd10bd7f05a8e5935275e53c4bea",
+      "layer": "RUNTIME_SUPERSET_PROVENANCE",
+      "note": "Runtime unconditionally dereferences /metrics/authority_receipt/ranking_eligible.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "S03_drop_ranking_eligible",
+      "case_sha256": "3c019a1a69f5eb0ea9b3cda338695b873db7c5738f0e95d7cbede3770bb133af",
+      "layer": "RUNTIME_SUPERSET_PROVENANCE",
+      "note": "authority_receipt present but the ranking lock inside it is unconstrained by the schema.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    },
+    {
+      "case_id": "S04_null_authority_receipt",
+      "case_sha256": "1553e950153bdfb74e8c917170555542b6befb9f3cd7fd7c615418aabc3bd17d",
+      "layer": "RUNTIME_SUPERSET_PROVENANCE",
+      "note": "Schema types authority_receipt as ['object','null']; null satisfies the schema and destroys the runtime ranking lock.",
+      "runtime_prediction": "REJECT",
+      "runtime_reject_reasons_predicted": [
+        "ranking lock is absent"
+      ],
+      "schema_prediction": "ACCEPT"
+    }
+  ],
+  "conditional_gate": {
+    "n_clauses": 15,
+    "obligation_keys": [
+      "model_id",
+      "model_receipt_hash",
+      "formula_hash",
+      "input_hash",
+      "ingredient_catalog_hash",
+      "ingredient_catalog_source_hash",
+      "normalization_version",
+      "prediction_status",
+      "primary_prediction",
+      "solver_use",
+      "model_readiness_status",
+      "authority_receipt",
+      "score_content_hash",
+      "claim_boundary"
+    ],
+    "trigger_key": "model_receipt_schema"
+  },
+  "fixture_sha256": {
+    "score_artifact_only_evidence.json": "2781f8179a5115b209e1da6d40c21c7affd7ac9ee49dc76ded40fc2fd2e11fd7",
+    "score_failed_gate.json": "4486661e9f0140187226175796ea3a86c7582e73b3021d29a6c3ca7b43546218",
+    "score_formulation_objective.json": "8e4868f25a86167201eaa39685e6e93c2283669fd058b7b43bf98168518722ef",
+    "score_molecule_objective.json": "c86ba9daa7d1b62c243bd849aa6b2c52dbf66c1bca323f302115f8ca90a90744",
+    "score_no_authority.json": "850fac537acb659af8d0463fc2ae3e74bf65dcd8d47b0b36a1e2447725ada20e",
+    "score_roadmap_generated_lead.json": "cc438c0821e98f57929512f515365751ef52b0b7ac6e8813bb83fdabe337c48b"
+  },
+  "layer_counts": {
+    "CONDITIONAL_GATE": 17,
+    "CORE_PARITY": 17,
+    "EMPIRICAL_SHIPPED": 12,
+    "RUNTIME_SUPERSET_ESCALATION": 16,
+    "RUNTIME_SUPERSET_PROVENANCE": 4,
+    "SCHEMA_SUPERSET": 18
+  },
+  "n_cases": 84,
+  "required_zero_authority_claim_locks": [
+    "no_ranking_authority",
+    "no_optimizer_authority",
+    "no_release_authority",
+    "no_qualification_authority",
+    "no_patentability_authority",
+    "fto_not_performed",
+    "no_procurement_authority",
+    "no_regulatory_authority",
+    "no_safety_authority",
+    "no_product_performance_authority"
+  ],
+  "runtime_also_required_keys": [
+    "module_id",
+    "status",
+    "authority_tier",
+    "objective_values",
+    "gates",
+    "claim_locks",
+    "usable_by_optimizer",
+    "metrics"
+  ],
+  "schema_only_required_keys": [
+    "module_version",
+    "candidate_id",
+    "score_0_1",
+    "uncertainty",
+    "missing_inputs",
+    "explanations",
+    "source_refs",
+    "evidence_scope",
+    "score_semantics",
+    "schema_version"
+  ],
+  "schema_required_keys": [
+    "module_id",
+    "module_version",
+    "candidate_id",
+    "status",
+    "authority_tier",
+    "score_0_1",
+    "objective_values",
+    "metrics",
+    "gates",
+    "uncertainty",
+    "claim_locks",
+    "missing_inputs",
+    "explanations",
+    "source_refs",
+    "usable_by_optimizer",
+    "evidence_scope",
+    "score_semantics",
+    "schema_version"
+  ]
+}

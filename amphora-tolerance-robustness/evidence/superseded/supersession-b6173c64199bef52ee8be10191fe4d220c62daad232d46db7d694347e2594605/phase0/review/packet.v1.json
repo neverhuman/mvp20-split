@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "62e6d906be91ab17374467faf3aca6c8e3737b96b22409eff72a5bd1036f99b1",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-tolerance-robustness",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

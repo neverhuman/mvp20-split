@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "8087e5d27710c94bd44b5f8e67e1d52bb93c490949b7b5dfa39524fa944e0faa",
+  "module_id": "amphora-molecule-novelty",
+  "parent_revision_id": "preparation-revision-9ab596901982f080df67e239d14973065c7bb1d61a0804622fa8f2807f731fdf",
+  "revision_id": "preparation-revision-cf1a1ca96e41ba0ae881664d20504f6b35f00ff59dd1b113fd5091978766b294",
+  "revision_number": 2,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-5e59eccd45944933b046366ee3f3672e48ac39b6378212f6dd8de5d6cb356f6f",
+  "supersession_path": "evidence/superseded/supersession-5e59eccd45944933b046366ee3f3672e48ac39b6378212f6dd8de5d6cb356f6f/supersession.v1.json",
+  "supersession_sha256": "c5ba27e004fda5f27eba1f9e6b89413e955b7553a9b3289139dcea73f54c02c2",
+  "unsigned_preparation_only": true
+}

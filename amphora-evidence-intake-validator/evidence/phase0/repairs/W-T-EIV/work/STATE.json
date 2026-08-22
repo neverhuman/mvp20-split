@@ -1,0 +1,16 @@
+{
+  "schema": "amphora.evidence-intake-validator.repair-item-state.v1",
+  "campaign_item_id": "W-T-EIV",
+  "module_id": "amphora-evidence-intake-validator",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260813T130001-3510138-575e826fd059",
+      "date": "2026-08-13",
+      "outcome": "CLAIM_REFUTED",
+      "summary": "Built the first named-published-baseline conformance table for this module: 11 DSSE v1.0.2 (secure-systems-lab/dsse, 2024-05-10) normative requirements tested mechanically against the live evaluate_evidence_intake/host_receipt_valid predicate. 0/11 conformant, 8/11 divergent, 3/11 not_applicable. The predicate validates a flat 11-field self-asserted JSON receipt structurally incompatible with the DSSE envelope schema (no payload/payloadType/signatures, zero PAE computation, zero calls to any signature/trust-store/revocation primitive of its own), while a structurally conformant DSSE implementation already exists in-repo (amphora-core/src/crypto.rs) and is used by the sibling CroProtocolPackage capability in the same file but never by this predicate. Corroborates and gives spec-named structural cause for T-04's prior behavioral finding. Neither half of the claim under attack survives: not conformant, and the divergence was not previously stated against this named baseline.",
+      "receipt": "amphora-evidence-intake-validator/evidence/phase0/repairs/W-T-EIV/done/w-t-eiv-dsse-spec-conformance-done-receipt.v1.dsse.json"
+    }
+  ],
+  "done_criterion_met": true
+}

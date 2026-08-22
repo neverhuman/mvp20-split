@@ -1,0 +1,12 @@
+{
+  "applicability_domain": [
+    "registered amphora-source-ledger contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_contract_sha256": "af0c65828bf2578829bf83f47f06df76a45ca93b2e8ea8e69ac3f3e103e3cb2e",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-source-ledger",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

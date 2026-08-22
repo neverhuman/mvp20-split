@@ -1,0 +1,204 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "V1-MOLPROP",
+  "claim_locks": {
+    "applicability_domain_within_radonpy_macro_chemotype_distribution_only": true,
+    "leave_class_out_result_is_granularity_evidence_not_a_generalization_claim": true,
+    "macro_chemotype_bisection_is_the_governing_refutation": true,
+    "ml_calibrated_for_radonpy_md_simulated_context_only": true,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_optimizer_authority": true,
+    "no_out_of_corpus_transfer_claim": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_solver_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": false
+  },
+  "claim_promoted": {
+    "claim_text": "The leave-polymer-class-out density result is the module's one external-validity positive and belongs on the KPI surface with its scope stated.",
+    "receipt_path": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/"
+  },
+  "currency_reverification": {
+    "currency_reverified": true,
+    "fire1_byte_identical": true,
+    "fire1_compute_script_sha256": "c533cbd4ea83445821fdf91829148297501fc9fea3cabdb34a4a3818dd5e30d1",
+    "fire1_pinned_canonical_sha256": "b6326a86fb43e14c67778a1540204c666a9b40f0ea0c2a40e1da3714fd771c99",
+    "fire1_rerun_diagnostic_sha256": "b6326a86fb43e14c67778a1540204c666a9b40f0ea0c2a40e1da3714fd771c99",
+    "fire2_byte_identical": true,
+    "fire2_compute_script_sha256": "f9a2a71dcbfd2159e112c85fa328fb02a456dfe17f55c90747013f6b6f2926a2",
+    "fire2_pinned_canonical_sha256": "4cedf6a149148dae3379b00700bda3b6812106935fca0745ec0e5c8e4547892a",
+    "fire2_rerun_diagnostic_sha256": "4cedf6a149148dae3379b00700bda3b6812106935fca0745ec0e5c8e4547892a",
+    "method": "Re-executed both source compute scripts live this fire (compute_external_validity.py and compute_density_cluster_external_validity.py, same script sha256 as originally signed, same pinned RadonPy PI1070 CSV, seed=0) from the pinned RadonPy PI1070 CSV. This is the pre-registered falsification check for this promotion: had either fresh diagnostic.out.json differed by even one byte from the diagnostic.canonical.json already cited by the signed fire-1/fire-2/final receipts, the cited numbers would be stale or irreproducible and this KPI could not honestly be built -- CLAIM_REFUTED would follow instead."
+  },
+  "fire_id": "20260804T190001-3390911-51482abeef5a",
+  "flips_scientific_readiness": false,
+  "governing_verdict_source": {
+    "density_verdict_verdict": "REFUTED",
+    "final_governing_attack": "attack_2_hierarchical_macro_bisection (fire 2)",
+    "overall_verdict": "CLAIM_REFUTED",
+    "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+    "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+    "reconciliation_quoted": "Fire 1 tested leave-one-polymer-class-out on RadonPy PI1070's own 14 internally-assigned class labels (fine-grained, ~77 polymers/class median) and found 1.80x degradation -- below the 2x bar, reported SURVIVED. Fire 2 escalated to hierarchical average-linkage bisection of the full 1077x1077 Tanimoto distance matrix into 2 macro-chemotypes (16 vs 1061 polymers, cut to maximize inter-group dissimilarity) and found 13.74x/7.59x degradation in both directions -- decisively REFUTED. These are not contradictory results on the same test; they are two different severities of out-of-distribution probe. Leave-class-out removes a fine-grained label group whose chemical/density neighborhood remains densely populated by similar polymers from OTHER classes still in the training set, so held-out molecules are not truly outside the training distribution in feature space -- fire 2 additionally confirmed this mechanism directly via a leave-one-Butina-cluster-out probe (0.95x, no measurable degradation, documented as a dead end). Macro-bisection instead removes an entire structurally-coherent region of chemical space (all 16 polymers in the minority macro-chemotype occupy the upper tail of the density range, 1.277-1.914 g/cm3, structurally distinct from the other 1061) so the held-out set is genuinely outside the training distribution -- the closest within-corpus analogue to a real second-corpus swap that RadonPy PI1070 (the module's only rights-cleared density corpus) permits. Under falsification-first principles the strongest attack that was actually capable of finding a violation governs the verdict: a claim of 'transfers to out-of-corpus chemistry' is not rescued by surviving a weaker probe when a harder, methodologically sound probe using the same threshold and same model breaks it. Density transferability is therefore REFUTED, with the leave-class-out result retained as evidence that the degradation is granularity-dependent (visible once the held-out region is structurally coherent, not visible at fine class-label granularity)."
+  },
+  "kpi_capability_text": "Leave-polymer-class-out cross-validation of the shipped RadonPy PI1070 density RF baseline (Morgan r=2/512-bit fingerprint + log10(MW) features, RandomForestRegressor(n_estimators=100, seed=0)) across 14 of RadonPy's own authentic polymer_class labels (>=8 members each) achieves pooled MAE 0.0736 g/cm3 (R2 0.6844, n=1059 pooled across 14 classes) vs an apples-to-apples within-corpus MAE of 0.0408 g/cm3 -- 1.80x degradation, under the pre-registered 2x REFUTE bar (SURVIVED). This is the module's only ML external-validity result at any granularity that has ever survived a genuinely falsifying probe. SCOPE LIMIT (load-bearing, not optional): this is NOT a general out-of-corpus transfer claim. A harder, methodologically superior probe -- hierarchical average-linkage bisection of the FULL 1077x1077 Tanimoto distance matrix into 2 maximally-dissimilar structural macro-chemotypes (16 vs 1061 polymers) -- decisively REFUTES transfer: 13.74x degradation training on the 16-polymer macro-chemotype and cold-predicting the other 1061 (MAE 0.5604 g/cm3, R2 -12.15), and 7.59x degradation in reverse (MAE 0.3098 g/cm3, R2 -5.01). Per the C7 final reconciled verdict, the strongest attack that was actually capable of finding a violation governs: macro-bisection supersedes leave-class-out as the answer to 'does density transfer to out-of-corpus chemistry'. The leave-class-out survival is retained here strictly as granularity evidence: it shows the degradation is invisible at fine within-corpus class-label granularity (held-out molecules remain densely surrounded by similar training neighbors from other classes -- confirmed directly by the leave-one-Butina-cluster-out dead-end probe at 0.95x, no measurable degradation) but becomes catastrophic once the held-out region is a structurally coherent macro-chemotype. This KPI's applicability-domain claim is therefore SCOPED to within-RadonPy-macro-chemotype-distribution ONLY and must NOT be cited as evidence the shipped density baseline generalizes to structurally novel out-of-corpus polymer chemistry.",
+  "leave_class_out_result": {
+    "degradation_factor": 1.803992653831988,
+    "eligible_classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16
+    ],
+    "n_classes_used": 14,
+    "per_class_mae": {
+      "1": {
+        "mae": 0.12940838521031453,
+        "n_test": 83
+      },
+      "10": {
+        "mae": 0.05840669972018309,
+        "n_test": 50
+      },
+      "11": {
+        "mae": 0.0658859654150001,
+        "n_test": 11
+      },
+      "13": {
+        "mae": 0.043078386697435675,
+        "n_test": 261
+      },
+      "15": {
+        "mae": 0.07816642764174994,
+        "n_test": 40
+      },
+      "16": {
+        "mae": 0.09160047945560605,
+        "n_test": 11
+      },
+      "2": {
+        "mae": 0.08638223546478259,
+        "n_test": 161
+      },
+      "3": {
+        "mae": 0.07891607318819058,
+        "n_test": 162
+      },
+      "4": {
+        "mae": 0.08381837091153398,
+        "n_test": 118
+      },
+      "5": {
+        "mae": 0.22922319760003027,
+        "n_test": 8
+      },
+      "6": {
+        "mae": 0.11946349126354777,
+        "n_test": 9
+      },
+      "7": {
+        "mae": 0.07144920070643425,
+        "n_test": 67
+      },
+      "8": {
+        "mae": 0.12799299139310613,
+        "n_test": 11
+      },
+      "9": {
+        "mae": 0.03710000138755508,
+        "n_test": 67
+      }
+    },
+    "pooled_leave_class_out_n": 1059,
+    "pooled_mae_g_per_cm3": 0.07359384878887076,
+    "pooled_null_mae_g_per_cm3": 0.15362969216383376,
+    "pooled_r2": 0.6843678975618499,
+    "source_receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json",
+    "status": "RETAINED_AS_GRANULARITY_EVIDENCE_NOT_GOVERNING",
+    "verdict": "SURVIVED",
+    "within_corpus_own_features_mae_g_per_cm3": 0.040794982525313994,
+    "within_corpus_own_features_r2": 0.8443376962521218
+  },
+  "macro_bisection_governing_refutation": {
+    "direction_A_train_macro_a16_test_macro_b1061": {
+      "degradation_factor": 13.73773717681496,
+      "mae_g_per_cm3": 0.5604307480655227,
+      "null_mae_g_per_cm3": 0.6417353935461828,
+      "r2": -12.151676175050213
+    },
+    "direction_B_train_macro_b1061_test_macro_a16": {
+      "degradation_factor": 7.5933361123638585,
+      "mae_g_per_cm3": 0.3097700140127193,
+      "null_mae_g_per_cm3": 0.6117158916875001,
+      "r2": -5.010432272343768
+    },
+    "leave_one_butina_cluster_out_dead_end": {
+      "degradation_factor": 0.9535355561477267,
+      "status": "DOCUMENTED_NEGATIVE_RESULT_WEAKER_THAN_FIRE1"
+    },
+    "method": "scipy average-linkage agglomerative clustering (Sokal & Michener 1958; Murtagh & Contreras 2012) on the full 1077x1077 Tanimoto distance matrix over Morgan r=2/512-bit fingerprints, cut to 2 macro-chemotypes (fcluster maxclust=2)",
+    "n_macro_a": 16,
+    "n_macro_b": 1061,
+    "source_receipt_path": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+    "verdict": "REFUTED"
+  },
+  "modifies_benchmark_lock": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_shipped_kpi_radonpy_density_ml_vs_van_krevelen_physics_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "CONSTRUCTIVE V1-MOLPROP: promote the module's one surviving ML external-validity result (C7 fire-1 leave-polymer-class-out density, 1.80x degradation, SURVIVED the pre-registered 2x REFUTE bar) onto the signed KPI surface, with the FULL honest framing the C7 final reconciled verdict requires -- explicitly citing the governing macro-chemotype bisection refutation (13.74x / 7.59x, REFUTED) alongside it and scoping the KPI's applicability-domain claim to within-RadonPy-macro-chemotype-distribution ONLY. A KPI that omitted the governing refutation would itself be a defect; this receipt does not do that.",
+  "pre_registered_refute_threshold": "held-out (or cross-macro-chemotype) MAE > 2x the apples-to-apples within-corpus MAE, same features/model/seed => REFUTED. Identical threshold used by both source fires and reused unmodified here.",
+  "primary_sources": [
+    "Butina, D. J. Chem. Inf. Comput. Sci. 1999, 39(4), 747-750 (Tanimoto clustering)",
+    "Sokal, R.R. & Michener, C.D. 1958, Univ. Kansas Sci. Bull. 38, 1409-1438 (average linkage)",
+    "Murtagh, F. & Contreras, P. 2012, WIREs Data Mining Knowl. Discov. 2(1), 86-97 (hierarchical clustering review)",
+    "Fujimoto, N. et al. 2023, RadonPy: automated physical property calculation using all-atom classical molecular dynamics simulations for polymer informatics (RadonPy PI1070 corpus)",
+    "Breiman, L. 2001, Machine Learning 45(1), 5-32 (Random Forest)",
+    "Rogers, D. & Hahn, M. 2010, J. Chem. Inf. Model. 50(5), 742-754 (Morgan/ECFP fingerprints)"
+  ],
+  "promotes_authority": false,
+  "receipt_id": "v1-molprop-density-leave-class-out-scoped-kpi-958f4d69a10ee79f5f9f129aa8475be8",
+  "recommended_followups": [
+    "The still-open density-corpus data-acquisition ask (filed by C7 fire 1 to /home/ubuntu/amphora-cron/data-acquisition-queue.jsonl) remains the only path to a literal second-corpus density test; this KPI's macro-bisection scope note is a proxy, not a substitute, and does not reduce that ask's priority."
+  ],
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed. Promotion of any downstream honesty-ceiling change (e.g. editing the shipped radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json itself) requires the human dual-identity Phase-0 ceremony keys this cron does not hold.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "RadonPy PI1070 is already extensively rights-cleared and load-bearing elsewhere in this module (fires 1 and 2 of C7, and the shipped radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json). No new source touched; no quarantined/CONTEXT_ONLY source opened.",
+  "schema": "amphora.molecule-property.v1-molprop-density-leave-class-out-scoped-kpi.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY V1-MOLPROP density KPI promotion done-receipt under evidence/phase0/repairs/V1-MOLPROP/done/"
+  },
+  "supersedes_nothing_additive_only": true,
+  "verdict": "CLAIM_SURVIVED",
+  "why": "The constructive claim under test -- that the leave-class-out density result can be honestly promoted to the KPI surface with its scope stated -- survives: (1) independent live re-execution of both source compute scripts today reproduces byte-identical diagnostics to what the already-signed fire-1/fire-2/final receipts cite, so the underlying numbers are current and reproducible, not stale; (2) this receipt cites the governing macro-bisection refutation (13.74x/7.59x, REFUTED) alongside the leave-class-out survival (1.80x) exactly as the C7 final reconciled verdict requires, and scopes the applicability-domain claim to within-RadonPy-macro-chemotype-distribution ONLY -- a KPI that omitted the governing refutation would itself have been a defect, and this one does not omit it."
+}

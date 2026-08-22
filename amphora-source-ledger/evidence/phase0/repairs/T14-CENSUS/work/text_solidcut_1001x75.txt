@@ -1,0 +1,108 @@
+Technical Data Sheet
+
+Re-issued September 2001
+
+
+
+EPON™ Resin 1001-X-75
+
+
+
+Product Description
+EPON™ Resin 1001-X-75 is a 75 percent solids solution of an EPON 1001F type epoxy resin in xylene.
+Systems based on EPON 1001-X-75 can be formulated to have excellent chemical resistance, corrosion
+resistance, and low color. This resin is used in formulating various room temperature curing industrial
+maintenance coatings including clears, primers, masonry surfacers, and gloss and semigloss enamels. The
+base resin is also available in other solvent lineups.
+
+
+
+Sales Specification
+Property                                 Units            Value              Test Method/Standard
+Weight per Epoxide, based on              g/eq          450 – 550                ASTM D1652
+nonvolatiles
+Viscosity at 25°C 1                     Gardner           Z2 – Z7                ASTM D1545
+Color                                   Gardner          3 max.                  ASTM D1544
+Solids                                   % wt.         74.0 – 76.0                SRC09Q16
+
+
+1
+    ASTM D1545 (Gardner-Holdt - Bubble Time Method), determined on resin solution as supplied.
+
+Typical Properties
+Property                                 Units            Value              Test Method/Standard
+Density at 25°C, Solution                lb/gal            9.1                   ASTM D1475
+Density at 25°C, Nonvolatiles,           lb/gal            9.9
+calculated
+Flashpoint, Setaflash                     °F                84                   ASTM D3278
+Solvent                                                  Xylene
+
+
+
+
+Processing/How to use
+
+General Information
+A wide variety of curing agents can be used with EPON 1001-X-75, including aliphatic amines, amine
+adducts, tertiary amines, polyamidoamines and polyamido-amine adducts. More complete information on
+the use of some of these curing agents can be found in the various product bulletins describing specific
+
+
+
+HCD-4022 (Rev. 7/15/2015 11:10:31 AM)                                                                Page 1 of 2
+EPON Resin 1001-X-75
+
+
+curing agents.
+
+Typical of epoxy resins, EPON 1001-X-75 may be initially incompatible with many of the curing agents used.
+As the chemical reaction between the two proceeds, compatability develops. Use of the system too soon
+after mixing can result in “blushing” or other film defects; to prevent this, an induction period is required.
+
+
+
+Safety, Storage & Handling
+Please refer to the MSDS for the most current Safety and Handling information.
+
+
+Please refer to the Hexion web site for Shelf Life and recommended Storage information.
+
+Exposure to these materials should be minimized and avoided, if feasible, through the observance of proper
+precautions, use of appropriate engineering controls and proper personal protective clothing and
+equipment, and adherence to proper handling procedures. None of these materials should be used,
+stored, or transported until the handling precautions and recommendations as stated in the
+Material Safety Data Sheet (MSDS) for these and all other products being used are understood by
+all persons who will work with them. Questions and requests for information on Hexion Inc. ("Hexion")
+products should be directed to your Hexion sales representative, or the nearest Hexion sales office.
+Information and MSDSs on non-Hexion products should be obtained from the respective manufacturer.
+
+Packaging
+Available in bulk and drum quantities.
+
+Contact Information
+For product prices, availability, or order placement, please contact customer service:
+www.hexion.com/Contacts/
+
+For literature and technical assistance, visit our website at: www.hexion.com
+
+   ® and ™ Licensed trademarks of Hexion Inc.
+
+   DISCLAIMER
+
+   The information provided herein was believed by Hexion Inc. (“Hexion”) to be accurate at the time of preparation or prepared from sources believed to be
+   reliable, but it is the responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures
+   applicable to the safe handling and use of the product and to determine the suitability of the product for its intended use. All products supplied by Hexion
+   are subject to Hexion’s terms and conditions of sale. HEXION MAKES NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE
+   MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF ANY INFORMATION PROVIDED BY HEXION,
+   except that the product shall conform to Hexion’s specifications. Nothing contained herein constitutes an offer for the sale of any product.
+
+
+
+
+PDS-4022- (Rev.7/15/2015 11:10:31 AM)
+
+
+
+
+HCD-4022 (Rev. 7/15/2015 11:10:31 AM)                                                                                                                    Page 2 of 2
+

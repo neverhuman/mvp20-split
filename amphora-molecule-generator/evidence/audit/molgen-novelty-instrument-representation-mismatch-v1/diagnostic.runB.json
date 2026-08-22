@@ -1,0 +1,164 @@
+{
+  "a_priori_proof": {
+    "argument": "RDKit canonical SMILES preserve atomic composition; a molecule graph with zero dummy ('*') atoms cannot canonicalize to a string identical to one produced from a molecule graph containing one or more '*' atoms (different atom-type multiset => different canonical string, always). Given canon_set_star_fraction == 1.0 (every valid PI1M-prefix canonical structure retains its '*' atom(s)) and every in-scope proposal is closed-shell (zero '*' atoms), membership of any in-scope proposal in pi1m_canon is a set-theoretic impossibility independent of chemical content -- novelty_vs_pi1m_prefix_structural = 1.0 is FORCED by representation mismatch, not measured from structural dissimilarity.",
+    "holds": true
+  },
+  "attacked_claimed_value": 1.0,
+  "attacked_field": "results.inscope_novelty_vs_pi1m_prefix_structural",
+  "attacked_receipt": "amphora-molecule-generator/evidence/audit/molgen-quality-feasibility-baseline-v1/molgen-quality-feasibility-baseline-receipt.v1.dsse.json",
+  "baseline_reproduction": {
+    "inscope_novelty_vs_pi1m_prefix_structural_reproduced": 1.0,
+    "inscope_proposals": [
+      {
+        "canonical_smiles": "NCCN",
+        "contains_star": false,
+        "input_smiles": "NCCN",
+        "name": "ethylenediamine (EDA) hardener"
+      },
+      {
+        "canonical_smiles": "NCCNCCN",
+        "contains_star": false,
+        "input_smiles": "NCCNCCN",
+        "name": "diethylenetriamine (DETA) hardener"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCN",
+        "contains_star": false,
+        "input_smiles": "NCCNCCNCCN",
+        "name": "triethylenetetramine (TETA) hardener"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCNCCN",
+        "contains_star": false,
+        "input_smiles": "NCCNCCNCCNCCN",
+        "name": "tetraethylenepentamine (TEPA) hardener"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCNCCNCCN",
+        "contains_star": false,
+        "input_smiles": "NCCNCCNCCNCCNCCN",
+        "name": "pentaethylenehexamine (PEHA) hardener"
+      },
+      {
+        "canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+        "contains_star": false,
+        "input_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+        "name": "isophoronediamine (IPDA) hardener"
+      },
+      {
+        "canonical_smiles": "NCc1cccc(CN)c1",
+        "contains_star": false,
+        "input_smiles": "NCc1cccc(CN)c1",
+        "name": "m-xylylenediamine (MXDA) hardener"
+      },
+      {
+        "canonical_smiles": "NCC1CCCC(CN)C1",
+        "contains_star": false,
+        "input_smiles": "NCC1CCCC(CN)C1",
+        "name": "1,3-bis(aminomethyl)cyclohexane (1,3-BAC) hardener"
+      },
+      {
+        "canonical_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+        "contains_star": false,
+        "input_smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1",
+        "name": "4,4'-diaminodiphenylsulfone (DDS) hardener"
+      },
+      {
+        "canonical_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+        "contains_star": false,
+        "input_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+        "name": "4,4'-methylenedianiline (MDA/DDM) hardener"
+      },
+      {
+        "canonical_smiles": "NCCN1CCNCC1",
+        "contains_star": false,
+        "input_smiles": "NCCN1CCNCC1",
+        "name": "N-aminoethylpiperazine (AEP) hardener"
+      },
+      {
+        "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+        "contains_star": false,
+        "input_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+        "name": "DGEBA diglycidyl ether epoxy monomer (n=0)"
+      }
+    ],
+    "matches_target_receipt_claimed_value": true
+  },
+  "decap_candidates": [
+    {
+      "decapped_canonical": "CC[CH2][Fe][CH2]CCC(=O)OCCCCOCCCNCC=O",
+      "decapped_smiles": "[H]CCC[Fe]CCCC(=O)OCCCCOCCCNCC([H])=O",
+      "registered_novel_by_instrument": true,
+      "source_pi1m_smiles": "*CCC[Fe]CCCC(=O)OCCCCOCCCNCC(*)=O"
+    },
+    {
+      "decapped_canonical": "CCCC1C=CNC2=CC=C2CCCC1",
+      "decapped_smiles": "[H]CCCC1C=CNC2=CC=C2C([H])CCC1",
+      "registered_novel_by_instrument": true,
+      "source_pi1m_smiles": "*CCCC1C=CNC2=CC=C2C(*)CCC1"
+    },
+    {
+      "decapped_canonical": "CCC",
+      "decapped_smiles": "[H]CCC[H]",
+      "registered_novel_by_instrument": true,
+      "source_pi1m_smiles": "*CCC*"
+    },
+    {
+      "decapped_canonical": "CNCCCCCOC(=O)CNCC=O",
+      "decapped_smiles": "[H]C(=O)CNC([H])C(=O)OCCCCCNC",
+      "registered_novel_by_instrument": true,
+      "source_pi1m_smiles": "*C(=O)CNC(*)C(=O)OCCCCCNC"
+    },
+    {
+      "decapped_canonical": "CC(CCCCCCC(C)(C)C)C(N)=O",
+      "decapped_smiles": "[H]CC(C)(C)CCCCCCC(C)C(=O)N[H]",
+      "registered_novel_by_instrument": true,
+      "source_pi1m_smiles": "*CC(C)(C)CCCCCCC(C)C(=O)N*"
+    },
+    {
+      "decapped_canonical": "CC(C=O)C(=O)CCCNC(=O)NCCCc1ccc(O)cc1",
+      "decapped_smiles": "[H]Oc1ccc(CCCNC(=O)NCCCC(=O)C(C)C([H])=O)cc1",
+      "registered_novel_by_instrument": true,
+      "source_pi1m_smiles": "*Oc1ccc(CCCNC(=O)NCCCC(=O)C(C)C(*)=O)cc1"
+    },
+    {
+      "decapped_canonical": "CCCC(C)(C)CC",
+      "decapped_smiles": "[H]CC([H])C(C)(C)CCC",
+      "registered_novel_by_instrument": true,
+      "source_pi1m_smiles": "*CC(*)C(C)(C)CCC"
+    },
+    {
+      "decapped_canonical": "CC(C)CC=O",
+      "decapped_smiles": "[H]CC([H])(C)CC=O",
+      "registered_novel_by_instrument": true,
+      "source_pi1m_smiles": "*CC(*)(C)CC=O"
+    }
+  ],
+  "does_not_close": [
+    "Does not attack inscope_validity, inscope_uniqueness, or the SA feasibility gate (separately audited elsewhere, e.g. R-S06).",
+    "Does not claim the 12 in-scope proposals ARE non-novel -- only that this instrument cannot possibly determine that either way.",
+    "No IP/freedom-to-operate claim; AUDIT_ONLY."
+  ],
+  "hash_and_count_lock": {
+    "pi1m_normalized_artifact_relpath": "reference/mvp20/quarantine/feedback_v2/objects/fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17.jsonl.gz",
+    "pi1m_normalized_artifact_sha256_expected": "fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17",
+    "prefix_rows_processed": 20000,
+    "prefix_valid_rows": 19946
+  },
+  "headline": "The signed novelty_vs_pi1m_prefix_structural=1.0 result is a structural tautology, not an empirical finding: canon_set_star_fraction=1.0 means every valid PI1M-prefix reference structure retains its dummy-attachment-point atom, so ANY closed-shell candidate -- including 8 closed-shell structures decapped directly FROM the reference corpus itself -- is forced to register 'novel' by pure representation mismatch. The instrument has zero power to return anything but 1.0 for a closed-shell input against this reference population, contradicting the target's own 'lower-bound sanity check' framing (a sanity check that cannot fail checks nothing).",
+  "pi1m_reference_star_characterization": {
+    "canonical_set_size": 19946,
+    "canonical_set_star_fraction": 1.0,
+    "star_in_valid_rows_fraction": 1.0
+  },
+  "positive_control": {
+    "detected": true,
+    "evidence": "decap_novelty_vs_pi1m_prefix_structural = 1.0 over 8 corpus-derived closed-shell structures (expected <1.0 if the instrument had any power to recognize corpus-native structures; observed all 8/8 flagged 'novel', identical to the in-scope baseline's 12/12)",
+    "how_planted": "For each of the first 8 RDKit-parseable rows in the same 20000-row PI1M prefix the target receipt locks (sha256 fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17), replaced every '*' character with '[H]' in the raw SMILES string, re-parsed and canonicalized with RDKit (rdkit 2026.03.2), then ran the target's own verbatim metric_novelty(candidate_canon_set, pi1m_canon).",
+    "planted_defect": "Fed the instrument N=8 closed-shell structures produced by decapping (*  -> [H], i.e. attachment point saturated with hydrogen) real PI1M reference-corpus rows -- structures maximally 'non-novel' by construction, since they are literally derived from members of the reference set itself."
+  },
+  "rdkit_version": "2026.03.2",
+  "refutation_summary": "REFUTES the epistemic content of results.inscope_novelty_vs_pi1m_prefix_structural=1.0 and its accompanying 'novelty_basis_note' characterization as a 'lower-bound sanity check': the metric is a constant function equal to 1.0 for the entire population of possible closed-shell inputs against this reference set, proven both a priori (set-membership impossibility, star_fraction=1.0) and empirically (8/8 corpus-decapped positive-control structures still register 'novel'). Does NOT dispute the target's validity/uniqueness/SA-feasibility findings (untouched, out of scope of this attack), and does NOT dispute that PI1M itself was correctly hash-locked and read; only the interpretability of the signed novelty number is refuted.",
+  "study_id": "MOLGEN_NOVELTY_INSTRUMENT_REPRESENTATION_MISMATCH_V1",
+  "verdict": "CLAIM_REFUTED"
+}

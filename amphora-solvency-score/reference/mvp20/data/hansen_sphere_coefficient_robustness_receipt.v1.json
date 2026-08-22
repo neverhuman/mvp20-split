@@ -1,0 +1,123 @@
+{
+  "all_gates_pass": true,
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-solvency-score/hansen-coefficient-robustness-v1",
+  "claim_locks": {
+    "authority_ceiling": "RULE_CITED",
+    "constraint_only": true,
+    "no_product_or_optimizer_authority": true,
+    "scientific_readiness": "LOCKED_INTERNAL",
+    "self_authored_fixture_not_external_validation": true
+  },
+  "closes": [],
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent on host)",
+    "module promotion to PHASE_0 (requires human dual-identity ceremony keys)",
+    "portfolio manifest edit (66 receipts / 11 modules unchanged)",
+    "external solubility validation (this study uses only the CC0 self-authored fixture; the externally-validated science remains the separate BigSolDB leave-solute-out benchmark)"
+  ],
+  "edits_portfolio_manifest": false,
+  "fixture": {
+    "license": "CC0-1.0",
+    "majority_class_base_rate": 0.56,
+    "n_pairs": 75,
+    "n_polymers": 5,
+    "n_solvents": 15,
+    "path": "amphora-solvency-score/reference/phase0-solvency-known-answer.v1.json",
+    "positive_pairs": 33,
+    "sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238"
+  },
+  "gates": {
+    "G1_reproduces_shipped_headline_67_of_75": true,
+    "G1b_shipped_benchmark_bound_and_passed": true,
+    "G2_canonical_beats_acceptance_bar": true,
+    "G3_canonical_beats_majority_baseline": true,
+    "G4_canonical_is_argmax_at_cutoff_1p0": true,
+    "G5_canonical_within_5pct_of_grid_maximum": true,
+    "G6_fail_closed_all_hostile_probes": true
+  },
+  "headline_result": {
+    "canonical_accuracy": 0.893333,
+    "canonical_constants": {
+      "dispersion_weight_k": 4,
+      "sphere_cutoff": 1.0
+    },
+    "canonical_correct_of_n": "67/75",
+    "canonical_false_compatible": 0,
+    "canonical_min_per_polymer_accuracy": 0.8,
+    "canonical_vs_grid_max_gap_pairs": 3,
+    "dispersion_argmax_k": 4,
+    "dispersion_slice_at_cutoff_1p0_by_k": {
+      "1": 63,
+      "2": 65,
+      "3": 66,
+      "4": 67,
+      "5": 66,
+      "6": 62,
+      "8": 59
+    },
+    "grid_best_cell": {
+      "accuracy": 0.933333,
+      "correct": 70,
+      "cutoff": 1.3,
+      "k": 8
+    },
+    "grid_cells_ge_0p85_bar": "22/49",
+    "interpretation": "Independent reproduction is exact: the from-scratch Hansen RED classifier at the published constants (k=4, cutoff=1.0) scores 67/75 = 0.8933, matching the shipped Phase-0 headline, with zero high-confidence false-compatibles and 0.80 worst-polymer generalization. Robustness: holding the sphere boundary at its published value 1.0, classification accuracy over the fixture peaks EXACTLY at Hansen's theoretical dispersion weight k=4 (63,65,66,67,66,62,59 correct for k=1,2,3,4,5,6,8) -- an independent corroboration of the factor-of-4 from data. Across the full published-plausible 7x7 (k, cutoff) envelope the a-priori canonical operating point sits only 3 pairs (<=5%) below the post-hoc grid maximum (k=8, cutoff=1.3, 70/75); the 2-D argmax drifts along a ridge only because k and cutoff are partially degenerate (scaling k rescales Ra against the cutoff), which the physical 1-D slice removes. The shipped headline is therefore a robust, near-optimal, un-tuned operating point rather than a fragile constant-tuning artifact. Applicability-domain: 6/6 non-physical inputs (NaN / +Inf / negative HSP / zero or negative radius / missing field) fail closed to abstention.",
+    "majority_class_base_rate": 0.56
+  },
+  "human_review_performed": false,
+  "module": "amphora-solvency-score",
+  "organizational_independence_asserted": false,
+  "physical_baseline": {
+    "canonical_constants": {
+      "dispersion_weight_k": 4,
+      "sphere_cutoff": 1.0
+    },
+    "equation": "Ra^2 = k*(dD_p-dD_s)^2 + (dP_p-dP_s)^2 + (dH_p-dH_s)^2 ; RED = sqrt(Ra^2)/R ; compatible iff RED <= cutoff",
+    "fitting": "NONE \u2014 every (k, cutoff) cell is an a-priori evaluation; constants are not tuned to the fixture",
+    "name": "Hansen RED solubility-sphere classifier",
+    "primary_source": "C. M. Hansen, Hansen Solubility Parameters: A User's Handbook, 2nd ed., CRC Press 2007, ISBN 978-0-8493-7248-3 (Eq. 1.9)"
+  },
+  "promotes_authority": false,
+  "provenance": {
+    "fixture_license": "CC0-1.0",
+    "primary_source": "C. M. Hansen, Hansen Solubility Parameters: A User's Handbook, 2nd ed., CRC Press 2007, ISBN 978-0-8493-7248-3",
+    "scope": "marine anti-corrosion two-part epoxy-amine (DGEBA epoxy + linear/uncured reference polymers) vs coating-relevant solvents"
+  },
+  "purpose": "Independent from-scratch re-implementation of the module's Hansen RED solubility-sphere classifier (independent of the production Rust engine) on the CC0-1.0 Phase-0 known-answer fixture, followed by a falsification-oriented robustness sweep of the two free constants of the Hansen distance metric -- the dispersion weight k (published 4) and the sphere cutoff (published 1.0) -- to test whether the shipped 67/75 classification headline is robust to the choice of these constants or a fragile artifact of tuning them to this fixture. No external data; every grid cell is an a-priori (unfitted) evaluation.",
+  "receipt_id": "hansen-sphere-coeff-robustness-07181e3bfddd0b9959b219a083a882aea28253404bf157e473ae560c5437ab9f",
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "e783569022c13ec3df776caf2d80ada228aabcb130f3d2012a66d520a24472a7",
+    "fixture_sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238",
+    "harness_sha256": "2e10d7089292f38bc21eb9a2a05493715e4631bbbc24cf7eda46fcf19c4891fa",
+    "independent_runs": true,
+    "replays": 2,
+    "runB_diagnostic_sha256": "e783569022c13ec3df776caf2d80ada228aabcb130f3d2012a66d520a24472a7",
+    "shipped_result_sha256": "ade9edbad9fcf433e54f524fcbe2fcf9000c2f14000aa70bee4a274a4a59b583",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "run_type": "SCIENCE_ROBUSTNESS_REPLAY",
+  "schema": "amphora.solvency-score.hansen-sphere-coefficient-robustness-receipt.v1",
+  "shipped_reference": {
+    "documented_headline": "classification_accuracy_rate 0.893 (67/75) per module docs/mission.md",
+    "path": "amphora-solvency-score/evidence/phase0/benchmark/result.v1.json",
+    "scientific_outcome": "PASSED",
+    "sha256": "ade9edbad9fcf433e54f524fcbe2fcf9000c2f14000aa70bee4a274a4a59b583"
+  },
+  "signature": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzcyI6IHRydWUsCiAgImF1dGhvcml0eSI6ICJBVURJVF9PTkxZIiwKICAiYmVuY2htYXJrIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUvaGFuc2VuLWNvZWZmaWNpZW50LXJvYnVzdG5lc3MtdjEiLAogICJjbGFpbV9sb2NrcyI6IHsKICAgICJhdXRob3JpdHlfY2VpbGluZyI6ICJSVUxFX0NJVEVEIiwKICAgICJjb25zdHJhaW50X29ubHkiOiB0cnVlLAogICAgIm5vX3Byb2R1Y3Rfb3Jfb3B0aW1pemVyX2F1dGhvcml0eSI6IHRydWUsCiAgICAic2NpZW50aWZpY19yZWFkaW5lc3MiOiAiTE9DS0VEX0lOVEVSTkFMIiwKICAgICJzZWxmX2F1dGhvcmVkX2ZpeHR1cmVfbm90X2V4dGVybmFsX3ZhbGlkYXRpb24iOiB0cnVlCiAgfSwKICAiY2xvc2VzIjogW10sCiAgImRvZXNfbm90X2Nsb3NlIjogWwogICAgIkVWQUxVQVRJT05fU0lHTkFUVVJFX0FCU0VOVCAodHJ1c3QtYW5jaG9yZWQgcGhhc2UwLWV2YWx1YXRvciBrZXkgYWJzZW50IG9uIGhvc3QpIiwKICAgICJtb2R1bGUgcHJvbW90aW9uIHRvIFBIQVNFXzAgKHJlcXVpcmVzIGh1bWFuIGR1YWwtaWRlbnRpdHkgY2VyZW1vbnkga2V5cykiLAogICAgInBvcnRmb2xpbyBtYW5pZmVzdCBlZGl0ICg2NiByZWNlaXB0cyAvIDExIG1vZHVsZXMgdW5jaGFuZ2VkKSIsCiAgICAiZXh0ZXJuYWwgc29sdWJpbGl0eSB2YWxpZGF0aW9uICh0aGlzIHN0dWR5IHVzZXMgb25seSB0aGUgQ0MwIHNlbGYtYXV0aG9yZWQgZml4dHVyZTsgdGhlIGV4dGVybmFsbHktdmFsaWRhdGVkIHNjaWVuY2UgcmVtYWlucyB0aGUgc2VwYXJhdGUgQmlnU29sREIgbGVhdmUtc29sdXRlLW91dCBiZW5jaG1hcmspIgogIF0sCiAgImVkaXRzX3BvcnRmb2xpb19tYW5pZmVzdCI6IGZhbHNlLAogICJmaXh0dXJlIjogewogICAgImxpY2Vuc2UiOiAiQ0MwLTEuMCIsCiAgICAibWFqb3JpdHlfY2xhc3NfYmFzZV9yYXRlIjogMC41NiwKICAgICJuX3BhaXJzIjogNzUsCiAgICAibl9wb2x5bWVycyI6IDUsCiAgICAibl9zb2x2ZW50cyI6IDE1LAogICAgInBhdGgiOiAiYW1waG9yYS1zb2x2ZW5jeS1zY29yZS9yZWZlcmVuY2UvcGhhc2UwLXNvbHZlbmN5LWtub3duLWFuc3dlci52MS5qc29uIiwKICAgICJwb3NpdGl2ZV9wYWlycyI6IDMzLAogICAgInNoYTI1NiI6ICI5YjZiNjg5ZmJkMzc2MjAwZWY5Mjc3YWY3ZDVmNDhmZWUzNjNmM2E3ZTYwYzg1YjMyNjQyYjJmMWQ2OTRhMjM4IgogIH0sCiAgImdhdGVzIjogewogICAgIkcxX3JlcHJvZHVjZXNfc2hpcHBlZF9oZWFkbGluZV82N19vZl83NSI6IHRydWUsCiAgICAiRzFiX3NoaXBwZWRfYmVuY2htYXJrX2JvdW5kX2FuZF9wYXNzZWQiOiB0cnVlLAogICAgIkcyX2Nhbm9uaWNhbF9iZWF0c19hY2NlcHRhbmNlX2JhciI6IHRydWUsCiAgICAiRzNfY2Fub25pY2FsX2JlYXRzX21ham9yaXR5X2Jhc2VsaW5lIjogdHJ1ZSwKICAgICJHNF9jYW5vbmljYWxfaXNfYXJnbWF4X2F0X2N1dG9mZl8xcDAiOiB0cnVlLAogICAgIkc1X2Nhbm9uaWNhbF93aXRoaW5fNXBjdF9vZl9ncmlkX21heGltdW0iOiB0cnVlLAogICAgIkc2X2ZhaWxfY2xvc2VkX2FsbF9ob3N0aWxlX3Byb2JlcyI6IHRydWUKICB9LAogICJoZWFkbGluZV9yZXN1bHQiOiB7CiAgICAiY2Fub25pY2FsX2FjY3VyYWN5IjogMC44OTMzMzMsCiAgICAiY2Fub25pY2FsX2NvbnN0YW50cyI6IHsKICAgICAgImRpc3BlcnNpb25fd2VpZ2h0X2siOiA0LAogICAgICAic3BoZXJlX2N1dG9mZiI6IDEuMAogICAgfSwKICAgICJjYW5vbmljYWxfY29ycmVjdF9vZl9uIjogIjY3Lzc1IiwKICAgICJjYW5vbmljYWxfZmFsc2VfY29tcGF0aWJsZSI6IDAsCiAgICAiY2Fub25pY2FsX21pbl9wZXJfcG9seW1lcl9hY2N1cmFjeSI6IDAuOCwKICAgICJjYW5vbmljYWxfdnNfZ3JpZF9tYXhfZ2FwX3BhaXJzIjogMywKICAgICJkaXNwZXJzaW9uX2FyZ21heF9rIjogNCwKICAgICJkaXNwZXJzaW9uX3NsaWNlX2F0X2N1dG9mZl8xcDBfYnlfayI6IHsKICAgICAgIjEiOiA2MywKICAgICAgIjIiOiA2NSwKICAgICAgIjMiOiA2NiwKICAgICAgIjQiOiA2NywKICAgICAgIjUiOiA2NiwKICAgICAgIjYiOiA2MiwKICAgICAgIjgiOiA1OQogICAgfSwKICAgICJncmlkX2Jlc3RfY2VsbCI6IHsKICAgICAgImFjY3VyYWN5IjogMC45MzMzMzMsCiAgICAgICJjb3JyZWN0IjogNzAsCiAgICAgICJjdXRvZmYiOiAxLjMsCiAgICAgICJrIjogOAogICAgfSwKICAgICJncmlkX2NlbGxzX2dlXzBwODVfYmFyIjogIjIyLzQ5IiwKICAgICJpbnRlcnByZXRhdGlvbiI6ICJJbmRlcGVuZGVudCByZXByb2R1Y3Rpb24gaXMgZXhhY3Q6IHRoZSBmcm9tLXNjcmF0Y2ggSGFuc2VuIFJFRCBjbGFzc2lmaWVyIGF0IHRoZSBwdWJsaXNoZWQgY29uc3RhbnRzIChrPTQsIGN1dG9mZj0xLjApIHNjb3JlcyA2Ny83NSA9IDAuODkzMywgbWF0Y2hpbmcgdGhlIHNoaXBwZWQgUGhhc2UtMCBoZWFkbGluZSwgd2l0aCB6ZXJvIGhpZ2gtY29uZmlkZW5jZSBmYWxzZS1jb21wYXRpYmxlcyBhbmQgMC44MCB3b3JzdC1wb2x5bWVyIGdlbmVyYWxpemF0aW9uLiBSb2J1c3RuZXNzOiBob2xkaW5nIHRoZSBzcGhlcmUgYm91bmRhcnkgYXQgaXRzIHB1Ymxpc2hlZCB2YWx1ZSAxLjAsIGNsYXNzaWZpY2F0aW9uIGFjY3VyYWN5IG92ZXIgdGhlIGZpeHR1cmUgcGVha3MgRVhBQ1RMWSBhdCBIYW5zZW4ncyB0aGVvcmV0aWNhbCBkaXNwZXJzaW9uIHdlaWdodCBrPTQgKDYzLDY1LDY2LDY3LDY2LDYyLDU5IGNvcnJlY3QgZm9yIGs9MSwyLDMsNCw1LDYsOCkgLS0gYW4gaW5kZXBlbmRlbnQgY29ycm9ib3JhdGlvbiBvZiB0aGUgZmFjdG9yLW9mLTQgZnJvbSBkYXRhLiBBY3Jvc3MgdGhlIGZ1bGwgcHVibGlzaGVkLXBsYXVzaWJsZSA3eDcgKGssIGN1dG9mZikgZW52ZWxvcGUgdGhlIGEtcHJpb3JpIGNhbm9uaWNhbCBvcGVyYXRpbmcgcG9pbnQgc2l0cyBvbmx5IDMgcGFpcnMgKDw9NSUpIGJlbG93IHRoZSBwb3N0LWhvYyBncmlkIG1heGltdW0gKGs9OCwgY3V0b2ZmPTEuMywgNzAvNzUpOyB0aGUgMi1EIGFyZ21heCBkcmlmdHMgYWxvbmcgYSByaWRnZSBvbmx5IGJlY2F1c2UgayBhbmQgY3V0b2ZmIGFyZSBwYXJ0aWFsbHkgZGVnZW5lcmF0ZSAoc2NhbGluZyBrIHJlc2NhbGVzIFJhIGFnYWluc3QgdGhlIGN1dG9mZiksIHdoaWNoIHRoZSBwaHlzaWNhbCAxLUQgc2xpY2UgcmVtb3Zlcy4gVGhlIHNoaXBwZWQgaGVhZGxpbmUgaXMgdGhlcmVmb3JlIGEgcm9idXN0LCBuZWFyLW9wdGltYWwsIHVuLXR1bmVkIG9wZXJhdGluZyBwb2ludCByYXRoZXIgdGhhbiBhIGZyYWdpbGUgY29uc3RhbnQtdHVuaW5nIGFydGlmYWN0LiBBcHBsaWNhYmlsaXR5LWRvbWFpbjogNi82IG5vbi1waHlzaWNhbCBpbnB1dHMgKE5hTiAvICtJbmYgLyBuZWdhdGl2ZSBIU1AgLyB6ZXJvIG9yIG5lZ2F0aXZlIHJhZGl1cyAvIG1pc3NpbmcgZmllbGQpIGZhaWwgY2xvc2VkIHRvIGFic3RlbnRpb24uIiwKICAgICJtYWpvcml0eV9jbGFzc19iYXNlX3JhdGUiOiAwLjU2CiAgfSwKICAiaHVtYW5fcmV2aWV3X3BlcmZvcm1lZCI6IGZhbHNlLAogICJtb2R1bGUiOiAiYW1waG9yYS1zb2x2ZW5jeS1zY29yZSIsCiAgIm9yZ2FuaXphdGlvbmFsX2luZGVwZW5kZW5jZV9hc3NlcnRlZCI6IGZhbHNlLAogICJwaHlzaWNhbF9iYXNlbGluZSI6IHsKICAgICJjYW5vbmljYWxfY29uc3RhbnRzIjogewogICAgICAiZGlzcGVyc2lvbl93ZWlnaHRfayI6IDQsCiAgICAgICJzcGhlcmVfY3V0b2ZmIjogMS4wCiAgICB9LAogICAgImVxdWF0aW9uIjogIlJhXjIgPSBrKihkRF9wLWREX3MpXjIgKyAoZFBfcC1kUF9zKV4yICsgKGRIX3AtZEhfcyleMiA7IFJFRCA9IHNxcnQoUmFeMikvUiA7IGNvbXBhdGlibGUgaWZmIFJFRCA8PSBjdXRvZmYiLAogICAgImZpdHRpbmciOiAiTk9ORSBcdTIwMTQgZXZlcnkgKGssIGN1dG9mZikgY2VsbCBpcyBhbiBhLXByaW9yaSBldmFsdWF0aW9uOyBjb25zdGFudHMgYXJlIG5vdCB0dW5lZCB0byB0aGUgZml4dHVyZSIsCiAgICAibmFtZSI6ICJIYW5zZW4gUkVEIHNvbHViaWxpdHktc3BoZXJlIGNsYXNzaWZpZXIiLAogICAgInByaW1hcnlfc291cmNlIjogIkMuIE0uIEhhbnNlbiwgSGFuc2VuIFNvbHViaWxpdHkgUGFyYW1ldGVyczogQSBVc2VyJ3MgSGFuZGJvb2ssIDJuZCBlZC4sIENSQyBQcmVzcyAyMDA3LCBJU0JOIDk3OC0wLTg0OTMtNzI0OC0zIChFcS4gMS45KSIKICB9LAogICJwcm9tb3Rlc19hdXRob3JpdHkiOiBmYWxzZSwKICAicHJvdmVuYW5jZSI6IHsKICAgICJmaXh0dXJlX2xpY2Vuc2UiOiAiQ0MwLTEuMCIsCiAgICAicHJpbWFyeV9zb3VyY2UiOiAiQy4gTS4gSGFuc2VuLCBIYW5zZW4gU29sdWJpbGl0eSBQYXJhbWV0ZXJzOiBBIFVzZXIncyBIYW5kYm9vaywgMm5kIGVkLiwgQ1JDIFByZXNzIDIwMDcsIElTQk4gOTc4LTAtODQ5My03MjQ4LTMiLAogICAgInNjb3BlIjogIm1hcmluZSBhbnRpLWNvcnJvc2lvbiB0d28tcGFydCBlcG94eS1hbWluZSAoREdFQkEgZXBveHkgKyBsaW5lYXIvdW5jdXJlZCByZWZlcmVuY2UgcG9seW1lcnMpIHZzIGNvYXRpbmctcmVsZXZhbnQgc29sdmVudHMiCiAgfSwKICAicHVycG9zZSI6ICJJbmRlcGVuZGVudCBmcm9tLXNjcmF0Y2ggcmUtaW1wbGVtZW50YXRpb24gb2YgdGhlIG1vZHVsZSdzIEhhbnNlbiBSRUQgc29sdWJpbGl0eS1zcGhlcmUgY2xhc3NpZmllciAoaW5kZXBlbmRlbnQgb2YgdGhlIHByb2R1Y3Rpb24gUnVzdCBlbmdpbmUpIG9uIHRoZSBDQzAtMS4wIFBoYXNlLTAga25vd24tYW5zd2VyIGZpeHR1cmUsIGZvbGxvd2VkIGJ5IGEgZmFsc2lmaWNhdGlvbi1vcmllbnRlZCByb2J1c3RuZXNzIHN3ZWVwIG9mIHRoZSB0d28gZnJlZSBjb25zdGFudHMgb2YgdGhlIEhhbnNlbiBkaXN0YW5jZSBtZXRyaWMgLS0gdGhlIGRpc3BlcnNpb24gd2VpZ2h0IGsgKHB1Ymxpc2hlZCA0KSBhbmQgdGhlIHNwaGVyZSBjdXRvZmYgKHB1Ymxpc2hlZCAxLjApIC0tIHRvIHRlc3Qgd2hldGhlciB0aGUgc2hpcHBlZCA2Ny83NSBjbGFzc2lmaWNhdGlvbiBoZWFkbGluZSBpcyByb2J1c3QgdG8gdGhlIGNob2ljZSBvZiB0aGVzZSBjb25zdGFudHMgb3IgYSBmcmFnaWxlIGFydGlmYWN0IG9mIHR1bmluZyB0aGVtIHRvIHRoaXMgZml4dHVyZS4gTm8gZXh0ZXJuYWwgZGF0YTsgZXZlcnkgZ3JpZCBjZWxsIGlzIGFuIGEtcHJpb3JpICh1bmZpdHRlZCkgZXZhbHVhdGlvbi4iLAogICJyZWNlaXB0X2lkIjogImhhbnNlbi1zcGhlcmUtY29lZmYtcm9idXN0bmVzcy0wNzE4MWUzYmZkZGQwYjk5NTliMjE5YTA4M2E4ODJhZWEyODI1MzQwNGJmMTU3ZTQ3M2FlNTYwYzU0MzdhYjlmIiwKICAicmVwcm9kdWNpYmlsaXR5IjogewogICAgImNhbm9uaWNhbF9kaWFnbm9zdGljX3NoYTI1NiI6ICJlNzgzNTY5MDIyYzEzZWMzZGY3NzZjYWYyZDgwYWRhMjI4YWFiY2IxMzBmM2QyMDEyYTY2ZDUyMGEyNDQ3MmE3IiwKICAgICJmaXh0dXJlX3NoYTI1NiI6ICI5YjZiNjg5ZmJkMzc2MjAwZWY5Mjc3YWY3ZDVmNDhmZWUzNjNmM2E3ZTYwYzg1YjMyNjQyYjJmMWQ2OTRhMjM4IiwKICAgICJoYXJuZXNzX3NoYTI1NiI6ICIyZTEwZDcwODkyOTJmMzhiYzIxZWI5YTJhMDU0OTM3MTVlNDYzMWJiYmMyNGNmN2VkYTQ2ZmNmMTljNDg5MWZhIiwKICAgICJpbmRlcGVuZGVudF9ydW5zIjogdHJ1ZSwKICAgICJyZXBsYXlzIjogMiwKICAgICJydW5CX2RpYWdub3N0aWNfc2hhMjU2IjogImU3ODM1NjkwMjJjMTNlYzNkZjc3NmNhZjJkODBhZGEyMjhhYWJjYjEzMGYzZDIwMTJhNjZkNTIwYTI0NDcyYTciLAogICAgInNoaXBwZWRfcmVzdWx0X3NoYTI1NiI6ICJhZGU5ZWRiYWQ5ZmNmNDMzZTU0ZjUyNGZjYmUyZmNmOTAwMGMyZjE0MDAwYWE3MGJlZTRhMjc0YTRhNTliNTgzIiwKICAgICJ0d29fcmVwbGF5X3NoYTI1Nl9nYXRlIjogIlBBU1MiCiAgfSwKICAicnVuX3R5cGUiOiAiU0NJRU5DRV9ST0JVU1RORVNTX1JFUExBWSIsCiAgInNjaGVtYSI6ICJhbXBob3JhLnNvbHZlbmN5LXNjb3JlLmhhbnNlbi1zcGhlcmUtY29lZmZpY2llbnQtcm9idXN0bmVzcy1yZWNlaXB0LnYxIiwKICAic2hpcHBlZF9yZWZlcmVuY2UiOiB7CiAgICAiZG9jdW1lbnRlZF9oZWFkbGluZSI6ICJjbGFzc2lmaWNhdGlvbl9hY2N1cmFjeV9yYXRlIDAuODkzICg2Ny83NSkgcGVyIG1vZHVsZSBkb2NzL21pc3Npb24ubWQiLAogICAgInBhdGgiOiAiYW1waG9yYS1zb2x2ZW5jeS1zY29yZS9ldmlkZW5jZS9waGFzZTAvYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uIiwKICAgICJzY2llbnRpZmljX291dGNvbWUiOiAiUEFTU0VEIiwKICAgICJzaGEyNTYiOiAiYWRlOWVkYmFkOWZjZjQzM2U1NGY1MjRmY2JlMmZjZjkwMDBjMmYxNDAwMGFhNzBiZWU0YTI3NGE0YTU5YjU4MyIKICB9LAogICJzaWduaW5nX2tleSI6IHsKICAgICJhdXRob3JpdHkiOiAiTE9DQUxfREVWRUxPUE1FTlRfQVVESVRfT05MWSIsCiAgICAia2V5X2lkIjogImxvY2FsLTkwMjg3NzNmNDk1OTExOTMiLAogICAgInRydXN0X2FuY2hvcmVkX2luX3BoYXNlMF9zdG9yZSI6IGZhbHNlCiAgfQp9",
+    "payloadType": "application/vnd.amphora.hansen-sphere-coefficient-robustness-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "2g3Rin0Nt5vTSZceWAonrSp8638TqquaxQ6/6v1iubZM94SWsqsvSQ6C6CBwknQuzW9xFrvMRp6Q85yAAtFUAA=="
+      }
+    ]
+  },
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "trust_anchored_in_phase0_store": false
+  }
+}

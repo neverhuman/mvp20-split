@@ -1,0 +1,30 @@
+{
+  "campaign_item_id": "DR-COVERAGE",
+  "coverage_map_audited_gaps_count": 64,
+  "coverage_map_audited_sha256": "5a2fda9a450d70441f650eba7ec48416f8b5856331b0927dd398634be83500f1",
+  "fires_used": 2,
+  "last_fire_id": "20260811T120001-531794-e1706ed51e19",
+  "last_receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-COVERAGE/done/dr-coverage-fire2-repair-receipt.v1.dsse.json",
+  "last_verdict": "CLAIM_SURVIVED",
+  "max_fires": 2,
+  "next_fire_instructions": "max_fires (2) reached; done_criterion met via coverage-map.v2.json + done/ receipt. No further DR-COVERAGE fires authorized by campaign.",
+  "open_defect": {
+    "count": 0,
+    "fix_pattern": "Each row has module_gaps non-empty and an honest empty-search-result note, but all three of best_recommended/best_conditional/commissioned_measurement_candidate are null. The live file already demonstrates the correct pattern on 12 other rows (e.g. jis-eew-testdata-annex-ja): fill commissioned_measurement_candidate with an explicit conversion sentence citing the directive's rule 7 wording, per this item's own done_criterion. coverage-map.v1.json is APPEND-ONLY (rule 3) -- a fix must supersede, not rewrite, e.g. by appending a corrected coverage-map.v2.json or a per-row correction record, not editing the v1 file in place.",
+    "gap_ids": [
+      "corrosion-database-ja",
+      "cure-kinetics-adjacent-epoxy-systems-iberian",
+      "cure-kinetics-nl",
+      "marine-coating-ks-standard-mapping-ko",
+      "national-corrosion-testing-institute-pl-cs",
+      "ship-coating-dataset-ko-unresolved",
+      "ship-hull-antifouling-standard-mapping-fr",
+      "ship-hull-antifouling-standard-mapping-iberian",
+      "ship-hull-antifouling-standard-mapping-it",
+      "ship-hull-antifouling-standard-mapping-nl"
+    ],
+    "kind": "triple_null_violations",
+    "status": "repaired_fire2"
+  },
+  "schema": "amphora.dataset-recon.dr-coverage.state.v1"
+}

@@ -1,0 +1,203 @@
+{
+  "authority": "AUDIT_ONLY",
+  "checkA_gap_disclosure": {
+    "all_load_bearing_pigment_density_facts": [
+      "pigment.barytes.density",
+      "pigment.talc.density"
+    ],
+    "gap_closed_by_this_receipt": [
+      "pigment.barytes.density",
+      "pigment.talc.density"
+    ],
+    "n_all_load_bearing_pigment_density_facts": 2,
+    "n_gap_closed": 2,
+    "prior_treatment": "constant-crosscheck-v1 pigment_density_diagnostic: reported only, NOT gated (undisclosed-to-gated, not undisclosed-entirely -- the gap itself was honestly named, just never closed until this receipt)."
+  },
+  "checkB_point_value_reverification": {
+    "all_within_gate": true,
+    "failing_comparisons": [],
+    "gate_pct": 3.0,
+    "n_independent_source_comparisons": 3,
+    "n_total_comparisons": 5,
+    "n_transcription_fidelity_comparisons": 2,
+    "n_within_gate": 5,
+    "per_comparison": [
+      {
+        "abs_pct_deviation": 1.1111,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_single_source_waiver": "mineral density well-established (4.4-4.5 across sources)",
+        "catalog_unit": "g/cm3",
+        "catalog_value": 4.45,
+        "citation_method": "webfetch_extracted_page_content",
+        "external_ref_value": 4.5,
+        "external_source": "20microns.com Barytes product page: 'high specific gravity (about 4.5 g/cm3)' / Key Benefits: '~4.5 g/cm3'",
+        "external_source_url": "https://www.20microns.com/products/barytes",
+        "fact_key": "pigment.barytes.density",
+        "pct_deviation": -1.1111,
+        "retrieved": "2026-08-14",
+        "row_id": "pigment.barytes.density__20microns_same_url",
+        "same_url_as_catalog_citation": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 1.1364,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_single_source_waiver": "mineral density well-established (4.4-4.5 across sources)",
+        "catalog_unit": "g/cm3",
+        "catalog_value": 4.45,
+        "citation_method": "direct_pdf_fetch_pdftotext",
+        "external_ref_value": 4.4,
+        "external_source": "Excalibar Minerals LLC ExBar(TM) W-series high-purity white barytes TDS (Cary Company mirror), 'Typical Physical Properties: Specific Gravity 4.4' -- identical across all 6 listed particle-size grades (W400/W325/W4/W3/W2/W1)",
+        "external_source_url": "https://www.thecarycompany.com/media/pdf/specs/tds-excalibar-exbar-w4barytes.pdf",
+        "fact_key": "pigment.barytes.density",
+        "pct_deviation": 1.1364,
+        "retrieved": "2026-08-14",
+        "row_id": "pigment.barytes.density__excalibar_exbar_independent",
+        "same_url_as_catalog_citation": false,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.6696,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_single_source_waiver": "mineral density well-established (4.4-4.5 across sources)",
+        "catalog_unit": "g/cm3",
+        "catalog_value": 4.45,
+        "citation_method": "webfetch_extracted_page_content",
+        "external_ref_value": 4.48,
+        "external_source": "Wikipedia 'Baryte' mineral infobox: Density 4.48 g/cm3, Specific gravity 4.3-5 (standard mineralogy-handbook consensus, independent of any coatings-filler supplier)",
+        "external_source_url": "https://en.wikipedia.org/wiki/Baryte",
+        "fact_key": "pigment.barytes.density",
+        "pct_deviation": -0.6696,
+        "retrieved": "2026-08-14",
+        "row_id": "pigment.barytes.density__wikipedia_baryte_independent",
+        "same_url_as_catalog_citation": false,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_single_source_waiver": "ASTM D281-cited supplier page; mineral density well-established",
+        "catalog_unit": "g/cm3",
+        "catalog_value": 2.8,
+        "citation_method": "webfetch_extracted_page_content",
+        "external_ref_value": 2.8,
+        "external_source": "digitalfire.com Silverline 303 Talc (Imerys) materials database entry: 'Specific Gravity/Density: 2.8'",
+        "external_source_url": "https://digitalfire.com/material/silverline+303+talc",
+        "fact_key": "pigment.talc.density",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-14",
+        "row_id": "pigment.talc.density__digitalfire_silverline303_same_url",
+        "same_url_as_catalog_citation": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_single_source_waiver": "ASTM D281-cited supplier page; mineral density well-established",
+        "catalog_unit": "g/cm3",
+        "catalog_value": 2.8,
+        "citation_method": "direct_pdf_fetch_pdftotext",
+        "external_ref_value": 2.8,
+        "external_source": "The Cary Company 'ABT 1000 Antiblock Talc' TDS PDF, Technical Data table: 'Specific Gravity 2.8' -- a different commercial talc product/manufacturer than the catalog's cited Imerys Silverline 303",
+        "external_source_url": "https://www.thecarycompany.com/media/pdf/specs/TDS_ABT1000_Jan2008.pdf",
+        "fact_key": "pigment.talc.density",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-14",
+        "row_id": "pigment.talc.density__cary_abt1000_independent",
+        "same_url_as_catalog_citation": false,
+        "within_gate": true
+      }
+    ]
+  },
+  "checkC_range_reverification": {
+    "all_within_range": true,
+    "n_total_comparisons": 1,
+    "n_within_range": 1,
+    "per_comparison": [
+      {
+        "catalog_value": 2.8,
+        "citation_method": "webfetch_extracted_page_content",
+        "external_ref_range": [
+          2.58,
+          2.83
+        ],
+        "external_source": "Alliance Chemical industrial talc powder product page: 'Density/Specific Gravity: 2.58-2.83 g/cm3'",
+        "external_source_url": "https://alliancechemical.com/pages/chemicals-talc-powder-white-colored",
+        "fact_key": "pigment.talc.density",
+        "retrieved": "2026-08-14",
+        "row_id": "pigment.talc.density__alliancechemical_range_independent",
+        "same_url_as_catalog_citation": false,
+        "within_published_range": true
+      }
+    ]
+  },
+  "checkD_fail_closed_mutation_demo": {
+    "gross_corruptions_flagged": true,
+    "mutations": [
+      {
+        "flagged": false,
+        "mutation": "baseline",
+        "pct_deviation_vs_abt1000_tds": 0.0,
+        "value": 2.8
+      },
+      {
+        "flagged": true,
+        "mutation": "digit_insert_28.0",
+        "pct_deviation_vs_abt1000_tds": 900.0,
+        "value": 28.0
+      },
+      {
+        "flagged": true,
+        "mutation": "decimal_slip_0.28",
+        "pct_deviation_vs_abt1000_tds": -90.0,
+        "value": 0.28
+      },
+      {
+        "flagged": true,
+        "mutation": "transpose_8.2",
+        "pct_deviation_vs_abt1000_tds": 192.8571,
+        "value": 8.2
+      }
+    ],
+    "reference": "Cary Company ABT 1000 Antiblock Talc TDS, Specific Gravity 2.8",
+    "target": "pigment.talc.density"
+  },
+  "closes": [
+    "Closes the LAST remaining load-bearing-constant coverage gap in facts.json: pigment.barytes.density and pigment.talc.density, the two constants constant-crosscheck-v1 explicitly disclosed as single-source with no independent lock. Combined with constant-crosscheck-v1 (resin EEW + resin/solvent density), hardener-tds-external-verification-v1 + W-ING1 (hardener density), and W-ING2 (resin EEW + remaining hardener AHEW/amine-value), every one of the 23 load-bearing constants currently in facts.json now has at least one independent second-source or transcription-fidelity comparison on record in a signed receipt.",
+    "Provides the class of evidence constant-crosscheck-v1's own pigment_density_diagnostic note said was required to lock this gap: supplier-stated specific gravity for real commercial pigment-grade products (Excalibar ExBar barytes TDS SG=4.4; Cary ABT 1000 talc TDS SG=2.8), not idealized single-crystal/mineralogical density."
+  ],
+  "does_not_close": [
+    "2 of 6 comparisons re-fetch the SAME url the catalog already cites -- a transcription/link-rot check, not independent corroboration.",
+    "Supplier-stated TDS specific gravity is that manufacturer's own QC value for their specific product grade, not a pycnometric measurement performed by this audit on a physical sample of the catalog's actual purchased material -- it narrows, but does not eliminate, the single-source risk constant-crosscheck-v1 named.",
+    "Does not resolve which named commercial sub-grade (e.g. ExBar W1 vs W325 particle cut) the catalog's single unnamed 'barytes' record corresponds to.",
+    "Gate is a point-transcription/range-containment tolerance, not a physical admissibility bound; does not establish product qualification or supplier closure."
+  ],
+  "flips_scientific_readiness": false,
+  "headline": "Closed the last undisclosed-but-open load-bearing-constant coverage gap in this module's catalog: pigment.barytes.density (4.45 g/cm3) and pigment.talc.density (2.8 g/cm3), the two constants constant-crosscheck-v1 explicitly flagged as single-source. 5/5 point-value comparisons within the 3.0% gate (2 transcription-fidelity re-fetches, 3 genuinely independent second-source comparisons); 1/1 additional range-containment comparisons pass. Zero divergences found; every load-bearing constant in facts.json (23/23) now carries at least one independent or transcription-fidelity second-source comparison across this module's signed receipt chain.",
+  "human_review_performed": false,
+  "hypothesis": "The catalog's shipped load-bearing pigment.barytes.density (4.45 g/cm3) and pigment.talc.density (2.8 g/cm3) match, within a 3% gate (or within a published range), supplier-stated specific-gravity values for actual commercial pigment-grade products drawn from manufacturer TDS literature independent of facts.json's own cited source.",
+  "inputs": {
+    "facts_json_rel": "reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "gate_pct": 3.0
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_module_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ingredient-library",
+  "non_circularity": "2 of 6 comparisons re-fetch the SAME url already cited in facts.json (20microns.com for barytes, digitalfire.com for talc) -- transcription/link-rot checks, not independent corroboration. 4 comparisons (Excalibar ExBar TDS + Wikipedia Baryte for barytes; Cary ABT1000 TDS + Alliance Chemical range for talc) are against a document/publisher genuinely independent of the catalog's cited source.",
+  "promotes_authority": false,
+  "purpose": "External second-source re-verification of the last two load-bearing constants in facts.json with zero independent corroboration -- pigment.barytes.density and pigment.talc.density -- explicitly disclosed as an open gap by constant-crosscheck-v1 ('Polyamide AHEW and mineral-pigment skeletal densities remain single-source (no independent lock)') and requiring 'pycnometric second source to lock' per that receipt's pigment_density_diagnostic note.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ingredient-library-pigment-density-second-source-verification.v1",
+  "theory_reference": {
+    "gate_pct": 3.0,
+    "method": "Same Daniel-style manufacturer-literature second-source discipline as constant-crosscheck-v1 Check-2 and hardener-tds-external-verification-v1 / W-ING2, applied to the two constants those receipts explicitly excluded."
+  }
+}

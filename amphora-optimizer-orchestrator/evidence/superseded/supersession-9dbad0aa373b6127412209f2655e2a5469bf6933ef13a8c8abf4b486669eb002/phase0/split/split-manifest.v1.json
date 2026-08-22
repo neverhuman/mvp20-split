@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "84447e51db76659e974e50fb0385df10197b67847172f9f4203287f1ae15d812",
+  "import_hashes": [],
+  "module_id": "amphora-optimizer-orchestrator",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

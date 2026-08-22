@@ -1,0 +1,374 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": "amphora-molecule-property/reference/mvp20/out/feedback_v1_property_benchmark.json",
+      "artifact_sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b",
+      "authority": "NO_PROMOTION_INFERRED",
+      "benchmark_id": "amphora-molecule-property-checked-current",
+      "observations": [
+        {
+          "json_path": "exact_match_coverage.exact_match_coverage_rate",
+          "value": 0.8336
+        },
+        {
+          "json_path": "nearest_neighbor_baseline.evaluated_row_count",
+          "value": 1400
+        },
+        {
+          "json_path": "nearest_neighbor_baseline.median_absolute_delta",
+          "value": 34.864206
+        }
+      ],
+      "reported_result_status": null,
+      "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-molecule-property-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "molecule"
+  ],
+  "ceilings": {
+    "authority_tier": "REAL_ARITHMETIC",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "DISABLED"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 6,
+    "checked_benchmark_status": "CHECKED_ARTIFACT_REPORTED_METRICS",
+    "implementation_version": "0.2.1",
+    "operational_readiness": "AUDIT",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "datasets": [
+    {
+      "dataset_id": "amphora-molecule-property/reference/mvp20/data/corrosion_series.json",
+      "hash": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "path": "amphora-molecule-property/reference/mvp20/data/corrosion_series.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-molecule-property/reference/mvp20/data/cure_verification_set.json",
+      "hash": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "path": "amphora-molecule-property/reference/mvp20/data/cure_verification_set.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json",
+      "hash": "bebd4690d51fd8f20c2b7506c1bb5a1da08bce4a286638c8c3309cfca74ccd54",
+      "path": "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-molecule-property/reference/mvp20/data/facts.json",
+      "hash": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "path": "amphora-molecule-property/reference/mvp20/data/facts.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-molecule-property/reference/mvp20/locks/openpoly_properties-8de5baf76f79610f.json",
+      "hash": "954d0b5a9c0f6437cf62cbe9901227d221750d6cc5e4d51af3927169cf718ef7",
+      "path": "amphora-molecule-property/reference/mvp20/locks/openpoly_properties-8de5baf76f79610f.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-property/reference/mvp20/data/corrosion_series.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-property/reference/mvp20/data/cure_verification_set.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-property/reference/mvp20/data/facts.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-property/reference/mvp20/data/feedback_v1/dataset_context.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-molecule-property/reference/mvp20/out/feedback_v1_property_benchmark.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": "amphora-molecule-property/reference/mvp20/out/feedback_v1_property_benchmark.json",
+      "artifact_sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b",
+      "gap": "The observations are transcribed checked-artifact fields, not an independent validation or promotion conclusion.",
+      "observations": [
+        {
+          "json_path": "exact_match_coverage.exact_match_coverage_rate",
+          "value": 0.8336
+        },
+        {
+          "json_path": "nearest_neighbor_baseline.evaluated_row_count",
+          "value": 1400
+        },
+        {
+          "json_path": "nearest_neighbor_baseline.median_absolute_delta",
+          "value": 34.864206
+        }
+      ],
+      "reported_result_status": null,
+      "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+    },
+    "external_dependencies": [
+      "Independent defined-molecule controls and measured commercial-grade EEW/AHEW"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-molecule-capabilities/src/lib.rs",
+      "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
+      "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+    },
+    "known_contradictions": [
+      "Exact calculations apply only to defined single-component structures; commercial-grade EEW/AHEW remains measured-only."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-molecule-capabilities/src/lib.rs",
+      "scenario": "Reject mixtures/commercial grades from exact single-molecule authority.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-molecule-property",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "molecule",
+        "dataset_id": "eew-ahew-known-answers.v1",
+        "model_id": "molecule-reactive-function-v1",
+        "model_readiness_status": "MODEL_READINESS_ONLY",
+        "solver_use": "DISABLED",
+        "track_id": "molecule_property_reactive_function"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-molecule-property-example",
+      "candidate_type": "molecule",
+      "molecule": {
+        "role": "resin",
+        "smiles": "CC"
+      }
+    },
+    "current_output": {
+      "authority_tier": "REAL_ARITHMETIC",
+      "candidate_id": "amphora-molecule-property-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {},
+      "metrics": {
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "known-answer accuracy",
+          "model_authority": "REAL_ARITHMETIC",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        },
+        "property_results": null
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-molecule-property",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "known-answer accuracy",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1.",
+      "unit": "declared by locked benchmark",
+      "value_path": "metrics.property_results"
+    }
+  ],
+  "lane": "molecule",
+  "module_id": "amphora-molecule-property",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "metrics.property_results",
+    "non_blocking_claim_locks": [
+      "benchmark_required_for_optimizer_use",
+      "commercial_product_values_not_upgraded_from_defined_monomer",
+      "estimated_density_not_authoritative"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PRE_PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 2,
+      "decision_value": 3,
+      "downstream_leverage": 2,
+      "effort": 2,
+      "evidence_gap": 3,
+      "external_delay": 2
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 12,
+    "score": 22
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

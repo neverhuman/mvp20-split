@@ -1,0 +1,145 @@
+--- mission.orig.md	2026-08-03 20:17:11.302367354 +0000
++++ mission.md	2026-08-03 20:17:33.493696030 +0000
+@@ -83,6 +83,20 @@
+ 
+ ### Empirical benchmark result — Polyverse melt viscosity polymer-safe conformal intervals + applicability-domain audit
+ 
++**Rights caveat — [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel].**
++The underlying Polyverse melt-viscosity dataset is licensed under the
++Georgia Tech Research Corporation General Public Use License Agreement;
++the module's own rights decision
++(`reference/mvp20/quarantine/feedback_v2/exclusions/polyverse_melt_viscosity-3cd923b4d67399f9.rights.json`)
++records rights_class `CONTEXT_ONLY`, `promotion_eligible: false`, and
++physical quarantine of all derivatives pending counsel review. Every
++result in this section is Polyverse-derived and is context-only
++evidence — NOT a lawful basis for a scored, promoted, or derivative
++KPI while the rights question is open. Disclosure gap identified by
++the signed refuting audit at
++`evidence/audit/polyverse-rights-disclosure-gap-v1/`; repaired under
++item R-A03.
++
+ A distribution-free calibrated-uncertainty study on polymer melt
+ viscosity — the primary rheological property that governs coating
+ application (spray, brush, dip) and film self-leveling. The Polyverse
+@@ -92,7 +106,8 @@
+ unique polymer SMILES. The parent Polyverse melt viscosity model
+ receipt at `reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json`
+ (SHA-256 `29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff`) reports 5-fold source-safe GBM R² = 0.944
+-(RMSE 0.527 log10(Pa·s)). This push adds distribution-free split-
++(RMSE 0.527 log10(Pa·s)) [Polyverse dataset: CONTEXT_ONLY,
++promotion_eligible=false, pending counsel]. This push adds distribution-free split-
+ conformal prediction intervals (Papadopoulos-Proedrou-Vovk-Gammerman
+ 2002) with Morgan-fingerprint Tanimoto applicability-domain scoring
+ (OECD 2007 QSAR Guidance Principle 3), under a STRICTER polymer-safe
+@@ -108,7 +123,9 @@
+ (SHA-256 `34b77002aa5a3067ad35030cd2bedb819b7da3cd16c6219bf1245a414c3fabb8`).
+ 
+ Observed Phase-0 KPI outcomes (13/13 deterministic gates PASSED;
+-`phase0_deterministic_gates_passed: true`):
++`phase0_deterministic_gates_passed: true`; every outcome below is
++Polyverse-derived [Polyverse dataset: CONTEXT_ONLY,
++promotion_eligible=false, pending counsel]):
+ 
+ - `polymer_safe_marginal_conformal_coverage_at_alpha_010_meets_worst_case_floor` observed **0.8974** (target ≥ 0.80 worst-case) — **PASSED**
+ - `polymer_safe_marginal_conformal_coverage_at_alpha_010_within_1_sigma_of_asymptotic` observed **0.8974** (target ≥ 0.879 = 0.90 − 1σ finite-sample deficit at n=195) — **PASSED**
+@@ -118,11 +135,11 @@
+ - `hostile_null_width_inflates_over_real_signal` observed **1.15×** (target ≥ 1.10) — **PASSED** (modest inflation reflects the modest R²=0.454 polymer-safe signal)
+ - `worst_ad_quintile_coverage_at_alpha_010_meets_permissive_floor` observed **0.3793** (target ≥ 0.30, PERMISSIVE) — **PASSED**
+ - `marginal_coverage_preserved_despite_conditional_low_ad_undercoverage` — **PASSED**: HONESTLY documents that marginal coverage (0.8974) is preserved as guaranteed by split-conformal theory, but conditional coverage in the lowest-AD quintile (0.3793) drops far below marginal — the expected behavior under strong within-test distribution shift.
+-- `test_r2_positive_polymer_safe` observed **+0.4535** — **PASSED** (modest positive; much lower than parent's source-safe R² 0.944)
+-- `polymer_safe_r2_lower_than_parent_source_safe_r2_documented` — **PASSED** (honestly documents the 0.4905 R² gap)
++- `test_r2_positive_polymer_safe` observed **+0.4535** — **PASSED** (modest positive; much lower than parent's source-safe R² 0.944) [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]
++- `polymer_safe_r2_lower_than_parent_source_safe_r2_documented` — **PASSED** (honestly documents the 0.4905 R² gap) [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]
+ - Housekeeping: parent_receipt_hash_bit_stable, input_csv_hash_bit_stable, polymer_disjoint_train_cal_test, byte_stable_two_replay_pipeline.
+ 
+-**HONEST FINDINGS**:
++**HONEST FINDINGS** [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]:
+ 1. **Polymer-safe R² (0.4535) is much lower than parent source-safe R² (0.944)** — a gap of 0.4905 that quantifies how much of parent's apparent performance was co-representation of the same polymer at multiple sources rather than true generalization to novel chemistry. This is a real coating-IP-relevant finding: the model is far less confident on novel polymer chemistries than the parent 5-fold source-safe R² suggested.
+ 2. **Marginal coverage is preserved but conditional coverage fails in the low-AD stratum**: the lowest-AD quintile (Tanimoto 0.24-0.40 to nearest training scaffold, n=29 test rows) has coverage 0.379 — dramatically below the marginal 0.897. Split-conformal theory only guarantees marginal, not conditional; this observation exposes the applicability boundary quantitatively.
+ 3. **Median interval width 6.55 log10(Pa·s)** is honest: for a novel polymer with polymer-safe R² 0.45, 90%-coverage intervals must be very wide (equivalent to a factor of 4e+06 multiplicative uncertainty on melt viscosity).
+@@ -136,8 +153,10 @@
+ 2017 LightGBM.
+ 
+ Claim scope: this KPI is a calibrated-uncertainty + applicability-
+-domain attestation on **Polyverse melt viscosity chemistry only**,
+-based on literature-curated (not wet-lab) viscosity measurements.
++domain attestation on **Polyverse melt viscosity chemistry only**
++[Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending
++counsel], based on literature-curated (not wet-lab) viscosity
++measurements.
+ Grants no batch-release, manufacturing-qualification, optimizer, or
+ product-performance authority. Phase-1 explicitly flags: wet-lab
+ validation, Fox-Flory-Whitten physical baseline (η ~ Mw^3.4),
+@@ -147,6 +166,25 @@
+ 
+ ### Empirical benchmark result — Fox-Flory-Whitten physical scaling law vs ML (physics wins)
+ 
++**Uncertainty caveat — [n=13 independent chemistries, no resampled interval - interval work queued as R-C04].**
++The FFW-beats-ML headline below is a single seed=0 point-estimate
++comparison on 194 test rows drawn from only 13 independent polymer
++chemistries — below the ~30-cluster rule-of-thumb for reliable
++cluster-robust inference (Cameron-Gelbach-Miller 2008; Cameron-Miller
++2015) — and no bootstrap, jackknife, cluster-robust, or other resampled
++interval on the R² gap has been computed anywhere in the module.
++**Rights caveat — [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel].**
++Every result in this section derives from the same quarantined
++Georgia Tech GPULA-licensed Polyverse melt-viscosity dataset (module
++rights decision: rights_class `CONTEXT_ONLY`, `promotion_eligible:
++false`, all derivatives physically quarantined pending counsel review),
++and is context-only evidence, not a lawful basis for a scored or
++promoted KPI.
++Disclosure gaps identified by the signed refuting audits at
++`evidence/audit/polyverse-rights-disclosure-gap-v1/` and
++`evidence/audit/ffw-vs-ml-uncertainty-disclosure-gap-v1/`; repaired
++under item R-A03.
++
+ A second complementary Phase-0 KPI for `amphora-viscosity-score`, applying
+ the same red-team-defensible methodology as the molecule-property Van
+ Krevelen push, this time comparing ML against the CLASSICAL polymer
+@@ -164,6 +202,8 @@
+ (SHA-256 `5137bdae3eb4418492fee70395656842fcf32d92fcf7bc8cf3cbd867c3d0e98b`).
+ 
+ **5-baseline ranking on polymer-safe test (n=194 test rows on 13 novel polymers):**
++[Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]
++[n=13 independent chemistries, no resampled interval - interval work queued as R-C04]
+ 
+ | Baseline | Polymer-safe R² | RMSE log10(Pa·s) | Fitted params |
+ |---|---:|---:|---|
+@@ -174,9 +214,11 @@
+ | B0_constant_mean | -0.0009 | 2.395 | 1 |
+ 
+ Observed Phase-0 KPI outcomes (10/10 deterministic gates PASSED;
+-`phase0_deterministic_gates_passed: true`):
++`phase0_deterministic_gates_passed: true`; every outcome below is
++Polyverse-derived [Polyverse dataset: CONTEXT_ONLY,
++promotion_eligible=false, pending counsel]):
+ 
+-- `best_physical_ffw_baseline_beats_ml_r2_documented` — **PASSED**: B3 physical (Mw + Arrhenius T, 3 fitted params) R² **+0.5972** BEATS ML full HistGBM R² **+0.4536** by **+0.1436** R².
++- `best_physical_ffw_baseline_beats_ml_r2_documented` — **PASSED**: B3 physical (Mw + Arrhenius T, 3 fitted params) R² **+0.5972** BEATS ML full HistGBM R² **+0.4536** by **+0.1436** R². [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel] [n=13 independent chemistries, no resampled interval - interval work queued as R-C04]
+ - `ffw_pure_mw_scaling_beats_constant_baseline` gap **++0.3559** — pure FFW η ~ Mw^3.4 already beats constant with just 1 fitted intercept.
+ - `fitted_Mw_slope_close_to_theoretical_range` slope **+2.1107** ∈ [1.0, 4.0] — falls between the theoretical unentangled Rouse regime (a=1) and entangled reptation regime (a=3.4), physically reasonable for a mixed dataset.
+ - `b2_linear_mw_regression_beats_b1_pure_scaling` gap **+0.2373** — fitting the slope helps over fixed 3.4 (the dataset spans both regimes).
+@@ -186,7 +228,10 @@
+ 
+ **HONEST INTERPRETATION** (the key finding). On polymer-safe test data
+ (13 novel polymer SMILES), **classical polymer physics beats ML for
+-melt viscosity prediction**. The physical scaling laws (Fox-Flory 1948,
++melt viscosity prediction** [Polyverse dataset: CONTEXT_ONLY,
++promotion_eligible=false, pending counsel] [n=13 independent
++chemistries, no resampled interval - interval work queued as R-C04].
++The physical scaling laws (Fox-Flory 1948,
+ Whitten 1954, Berry-Fox 1968 reptation exponent, Ferry 1980) capture the
+ Mw-dependence of melt viscosity via 2-3 fitted parameters and generalize
+ to novel chemistries better than a 519-feature HistGBM. This is a
+@@ -205,7 +250,10 @@
+ the physical law is a fair baseline.
+ 
+ Claim scope: this KPI documents that classical polymer physics beats
+-ML on the Polyverse melt viscosity polymer-safe test. It grants no
++ML on the Polyverse melt viscosity polymer-safe test [Polyverse
++dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]
++[n=13 independent chemistries, no resampled interval - interval work
++queued as R-C04]. It grants no
+ batch-release, manufacturing-qualification, optimizer, or product-
+ performance authority. Phase-1 explicitly flags: chemistry-aware graph
+ ML (polyBERT), FFW+ML ensemble, Mc regime-switching, wet-lab validation

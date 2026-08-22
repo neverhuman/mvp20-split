@@ -1,0 +1,34 @@
+{
+  "campaign_item_id": "W-D-KAB",
+  "fires": [
+    {
+      "fire_id": "20260813T030002-2723015-0125b9e50f8a",
+      "status": "done_criterion_met",
+      "sources_swept": 12,
+      "recommended": 4,
+      "recommended_with_flag": 1,
+      "blocked": 7,
+      "receipt": "amphora-known-answer-benchmarks/evidence/phase0/repairs/W-D-KAB/done/W-D-KAB-source-sweep-receipt.v1.dsse.json",
+      "queue_lines_appended": 4,
+      "next_step_for_future_fires": "An R- item should convert the 4 RECOMMENDED MIL-DTL-24441 formula sheets into locked ARITH-*/FORM-* controls (weight-solids/VOC recompute vs base-spec ceiling), after first resolving the /19B zinc-pigment kg/lb inconsistency against a second independent copy of the document. Do not re-sweep the same 12 sources; extend past them."
+    },
+    {
+      "fire_id": "20260813T040001-3318991-94760c4f3436",
+      "status": "extended_and_two_anomalies_resolved; item still BLOCKED_DATA at max_fires",
+      "sources_swept_total": 14,
+      "new_sources_this_fire": 2,
+      "recommended_clean": 5,
+      "recommended_with_resolved_flag": 2,
+      "blocked": 7,
+      "receipt": "amphora-known-answer-benchmarks/evidence/phase0/repairs/W-D-KAB/done/W-D-KAB-source-sweep-receipt.v2.dsse.json",
+      "supersedes": "amphora-known-answer-benchmarks/evidence/phase0/repairs/W-D-KAB/done/W-D-KAB-source-sweep-receipt.v1.dsse.json (extension, not correction -- v1 fully carried forward)",
+      "queue_lines_appended": 2,
+      "resolved_this_fire": [
+        "/19B zinc-pigment kg/lb anomaly (v1 flag) resolved via internal Quantitative-Requirements pigment-content-% cross-check: corrected value 861.8 kg (not printed 86.84 kg)",
+        "/30A naphtha kg/lb anomaly (newly found this fire) resolved via cross-document match against /31A's identical 208.0lb naphtha row: corrected value 94.35 kg (not printed 93.35 kg)"
+      ],
+      "this_item_is_at_max_fires": true,
+      "next_step_for_future_fires": "This item (W-D-KAB) has exhausted its max_fires:2 budget. Both flagged rows now have a resolved corrected figure -- an R- item can convert the 5 clean + 2 resolved-flag MIL-DTL-24441 formula sheets (7 total: D, /20A, /21A, /29B, /30A[corrected], /31A, /19B[corrected]) into locked ARITH-*/FORM-* controls without further anomaly-resolution work. Do NOT re-sweep sources 1-14; if a new W- item for this module opens, start from source 15 and consult both v1 and v2 sweep records first."
+    }
+  ]
+}

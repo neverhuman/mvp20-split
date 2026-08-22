@@ -1,0 +1,745 @@
+{
+  "all_gates_passed": true,
+  "atomic_weight_uncertainty": {
+    "signal_to_atomic_weight_uncertainty": 15.1,
+    "smallest_refuting_residual_mg_koh_per_g": 0.1519,
+    "u_M0_g_per_mol": 0.016897,
+    "u_identity_A_mg_koh_per_g": 0.010044
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "gates": {
+    "G1_cross_receipt_parity_and_identity_closure": {
+      "identity_A_mg_koh_per_g": 197.2886,
+      "identity_E0_g_per_eq": 170.2095,
+      "identity_form": "OHV = A * (1 - E0/EEW)",
+      "max_identity_vs_pure_oligomer_deviation_mg_koh_per_g": 0.0,
+      "passed": true,
+      "rows": [
+        {
+          "abs_diff": 0.0,
+          "matches": true,
+          "prior_signed": 340.419,
+          "quantity": "M0_g_per_mol",
+          "rederived": 340.419,
+          "source_receipt": "dgeba-oligomer-eew-series-v1"
+        },
+        {
+          "abs_diff": 0.0,
+          "matches": true,
+          "prior_signed": 284.355,
+          "quantity": "M_repeat_g_per_mol",
+          "rederived": 284.355,
+          "source_receipt": "dgeba-oligomer-eew-series-v1"
+        },
+        {
+          "abs_diff": 0.0,
+          "matches": true,
+          "prior_signed": 142.1775,
+          "quantity": "eew_slope_g_per_eq_per_n",
+          "rederived": 142.1775,
+          "source_receipt": "dgeba-oligomer-eew-series-v1"
+        },
+        {
+          "abs_diff": 0.0,
+          "matches": true,
+          "prior_signed": 197.289,
+          "quantity": "ohv_asymptote_mg_koh_per_g",
+          "rederived": 197.289,
+          "source_receipt": "dgeba-oligomer-hydroxyl-value-v1"
+        },
+        {
+          "abs_diff": 0.0,
+          "matches": true,
+          "prior_signed": 89.792,
+          "quantity": "ohv_n1_mg_koh_per_g",
+          "rederived": 89.792,
+          "source_receipt": "dgeba-oligomer-hydroxyl-value-v1"
+        },
+        {
+          "abs_diff": 0.0,
+          "matches": true,
+          "prior_signed": 123.415,
+          "quantity": "ohv_n2_mg_koh_per_g",
+          "rederived": 123.415,
+          "source_receipt": "dgeba-oligomer-hydroxyl-value-v1"
+        },
+        {
+          "abs_diff": 0.0,
+          "matches": true,
+          "prior_signed": 141.016,
+          "quantity": "ohv_n3_mg_koh_per_g",
+          "rederived": 141.016,
+          "source_receipt": "dgeba-oligomer-hydroxyl-value-v1"
+        }
+      ]
+    },
+    "G2_polydispersity_invariance": {
+      "claim": "EEW and OHV of an ideal linear DGEBA mixture depend on the distribution ONLY through its first moment <n>; both are exactly dispersity-invariant, so the shipped EEW -> n_bar inversion is a genuine mixture property.",
+      "passed": true,
+      "rows": [
+        {
+          "dispersity_fold_span": 3.6717,
+          "dispersity_range": [
+            1.073807,
+            3.942671
+          ],
+          "distributions": [
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 1.083402,
+              "distribution": "flory_most_probable",
+              "eew_mixture_g_per_eq": 188.692575,
+              "invariant": true,
+              "nbar_actual": 0.13,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 19.325085
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 1.073807,
+              "distribution": "poisson",
+              "eew_mixture_g_per_eq": 188.692575,
+              "invariant": true,
+              "nbar_actual": 0.13,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 19.325085
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 1.580858,
+              "distribution": "bimodal_n0_n8",
+              "eew_mixture_g_per_eq": 188.692575,
+              "invariant": true,
+              "nbar_actual": 0.13,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 19.325085
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 3.942671,
+              "distribution": "bimodal_n0_n40",
+              "eew_mixture_g_per_eq": 188.692575,
+              "invariant": true,
+              "nbar_actual": 0.13,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 19.325085
+            }
+          ],
+          "eew_spread_across_distributions_g_per_eq": 0.0,
+          "grade": "liquid (Epon 828 / DER 331 class)",
+          "nbar_target": 0.13
+        },
+        {
+          "dispersity_fold_span": 6.7678,
+          "dispersity_range": [
+            1.186769,
+            8.031869
+          ],
+          "distributions": [
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 1.625678,
+              "distribution": "flory_most_probable",
+              "eew_mixture_g_per_eq": 504.326625,
+              "invariant": true,
+              "nbar_actual": 2.35,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 130.703986
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 1.186769,
+              "distribution": "poisson",
+              "eew_mixture_g_per_eq": 504.326625,
+              "invariant": true,
+              "nbar_actual": 2.35,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 130.703986
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 2.055247,
+              "distribution": "bimodal_n0_n8",
+              "eew_mixture_g_per_eq": 504.326625,
+              "invariant": true,
+              "nbar_actual": 2.35,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 130.703986
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 8.031869,
+              "distribution": "bimodal_n0_n40",
+              "eew_mixture_g_per_eq": 504.326625,
+              "invariant": true,
+              "nbar_actual": 2.35,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 130.703986
+            }
+          ],
+          "eew_spread_across_distributions_g_per_eq": 0.0,
+          "grade": "semisolid (Epon 1001F / DER 671 class)",
+          "nbar_target": 2.35
+        },
+        {
+          "dispersity_fold_span": 4.9712,
+          "dispersity_range": [
+            1.131808,
+            5.626448
+          ],
+          "distributions": [
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 1.777665,
+              "distribution": "flory_most_probable",
+              "eew_mixture_g_per_eq": 866.87925,
+              "invariant": true,
+              "nbar_actual": 4.9,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 158.551494
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 1.131808,
+              "distribution": "poisson",
+              "eew_mixture_g_per_eq": 866.87925,
+              "invariant": true,
+              "nbar_actual": 4.9,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 158.551494
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 1.408604,
+              "distribution": "bimodal_n0_n8",
+              "eew_mixture_g_per_eq": 866.87925,
+              "invariant": true,
+              "nbar_actual": 4.9,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 158.551494
+            },
+            {
+              "dev_cross_titration_identity": 0.0,
+              "dev_eew_vs_single_oligomer_formula": 0.0,
+              "dev_ohv_vs_single_oligomer_formula": 0.0,
+              "dispersity_Mw_over_Mn": 5.626448,
+              "distribution": "bimodal_n0_n40",
+              "eew_mixture_g_per_eq": 866.87925,
+              "invariant": true,
+              "nbar_actual": 4.9,
+              "nbar_inversion_error": 0.0,
+              "ohv_mixture_mg_koh_per_g": 158.551494
+            }
+          ],
+          "eew_spread_across_distributions_g_per_eq": 0.0,
+          "grade": "solid (Epon 1004F / DER 664 class)",
+          "nbar_target": 4.9
+        }
+      ],
+      "truncation_nmax": 2000
+    },
+    "G3_H0_end_group_defect_robustness": {
+      "H0": "The EEW<->OHV cross-titration identity (and hence the EEW -> n_bar inversion) is robust to realistic DGEBA end-group defects: <=1% relative residual for up to 5 mol% alpha-glycol and/or chlorohydrin ends.",
+      "defect_rows_breaching_1pct_bar": 12,
+      "defect_rows_tested_at_or_above_1molpct": 16,
+      "dose_response_monotone_in_glycol_load": true,
+      "interpretation": "Two distinct results. (i) The invariance proved in G2 is an IDEAL-SERIES property only: it survives arbitrary polydispersity but NOT epoxide-consuming end groups, which add hydroxyl and remove epoxide simultaneously and so move EEW and OHV off the one-parameter curve in different directions. The residual is therefore not noise - it is a zero-parameter DETECTOR of non-ideal DGEBA, monotone in defect load. (ii) The detector's power is strongly GRADE-DEPENDENT. On low-advancement liquid grades every defect row breaches the bar, because the ideal hydroxyl baseline is small and the two extra OH per hydrolyzed end are a large relative perturbation. On advanced grades the backbone already carries a large ideal OHV, the same defect is a small relative perturbation, and only the heavier loads breach. Relative sensitivity therefore falls by ~17.2x from the liquid to the semisolid grade, so a single fixed relative acceptance bar is NOT a valid QC rule across the DGEBA grade range.",
+      "max_nbar_relative_bias": 0.302113,
+      "max_residual_relative": 0.410206,
+      "passed": true,
+      "refutation_basis": "Universal claim refuted by counterexample: 12 of 16 defect rows at >=1 mol% total defect breach the 1% relative bar, worst case 0.4102 relative. The breach is NOT uniform, and the non-uniformity is the second finding.",
+      "relative_sensitivity_loss_liquid_to_semisolid_fold": 17.25,
+      "rows": [
+        {
+          "eew_measured_g_per_eq": 188.6926,
+          "exceeds_1pct_identity_bar": false,
+          "nbar_inferred_from_eew": 0.13,
+          "nbar_inversion_bias": 0.0,
+          "nbar_inversion_relative_bias": 0.0,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 19.3251,
+          "ohv_predicted_by_identity_mg_koh_per_g": 19.3251,
+          "phi_glycol_molfrac": 0.0,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": -0.0,
+          "residual_relative": -0.0,
+          "total_defect_molfrac": 0.0
+        },
+        {
+          "eew_measured_g_per_eq": 189.2106,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.1336,
+          "nbar_inversion_bias": 0.0036,
+          "nbar_inversion_relative_bias": 0.028029,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 20.8067,
+          "ohv_predicted_by_identity_mg_koh_per_g": 19.8124,
+          "phi_glycol_molfrac": 0.005,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 0.9943,
+          "residual_relative": 0.050186,
+          "total_defect_molfrac": 0.005
+        },
+        {
+          "eew_measured_g_per_eq": 189.7313,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.1373,
+          "nbar_inversion_bias": 0.0073,
+          "nbar_inversion_relative_bias": 0.056199,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 22.2875,
+          "ohv_predicted_by_identity_mg_koh_per_g": 20.2994,
+          "phi_glycol_molfrac": 0.01,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 1.9881,
+          "residual_relative": 0.097941,
+          "total_defect_molfrac": 0.01
+        },
+        {
+          "eew_measured_g_per_eq": 190.7805,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.1447,
+          "nbar_inversion_bias": 0.0147,
+          "nbar_inversion_relative_bias": 0.112966,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 25.2472,
+          "ohv_predicted_by_identity_mg_koh_per_g": 21.2728,
+          "phi_glycol_molfrac": 0.02,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 3.9744,
+          "residual_relative": 0.18683,
+          "total_defect_molfrac": 0.02
+        },
+        {
+          "eew_measured_g_per_eq": 191.8404,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.1521,
+          "nbar_inversion_bias": 0.0221,
+          "nbar_inversion_relative_bias": 0.170309,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 28.204,
+          "ohv_predicted_by_identity_mg_koh_per_g": 22.2452,
+          "phi_glycol_molfrac": 0.03,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 5.9587,
+          "residual_relative": 0.267867,
+          "total_defect_molfrac": 0.03
+        },
+        {
+          "eew_measured_g_per_eq": 193.9928,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.1673,
+          "nbar_inversion_bias": 0.0373,
+          "nbar_inversion_relative_bias": 0.286759,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 34.1091,
+          "ohv_predicted_by_identity_mg_koh_per_g": 24.1873,
+          "phi_glycol_molfrac": 0.05,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 9.9218,
+          "residual_relative": 0.410206,
+          "total_defect_molfrac": 0.05
+        },
+        {
+          "eew_measured_g_per_eq": 189.824,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.138,
+          "nbar_inversion_bias": 0.008,
+          "nbar_inversion_relative_bias": 0.061214,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 20.7915,
+          "ohv_predicted_by_identity_mg_koh_per_g": 20.3858,
+          "phi_glycol_molfrac": 0.0,
+          "psi_chlorohydrin_molfrac": 0.01,
+          "residual_delta_mg_koh_per_g": 0.4057,
+          "residual_relative": 0.019902,
+          "total_defect_molfrac": 0.01
+        },
+        {
+          "eew_measured_g_per_eq": 190.9669,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.146,
+          "nbar_inversion_bias": 0.016,
+          "nbar_inversion_relative_bias": 0.123047,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 22.2552,
+          "ohv_predicted_by_identity_mg_koh_per_g": 21.4445,
+          "phi_glycol_molfrac": 0.0,
+          "psi_chlorohydrin_molfrac": 0.02,
+          "residual_delta_mg_koh_per_g": 0.8107,
+          "residual_relative": 0.037803,
+          "total_defect_molfrac": 0.02
+        },
+        {
+          "eew_measured_g_per_eq": 190.8737,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.1453,
+          "nbar_inversion_bias": 0.0153,
+          "nbar_inversion_relative_bias": 0.118006,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 23.7504,
+          "ohv_predicted_by_identity_mg_koh_per_g": 21.3587,
+          "phi_glycol_molfrac": 0.01,
+          "psi_chlorohydrin_molfrac": 0.01,
+          "residual_delta_mg_koh_per_g": 2.3918,
+          "residual_relative": 0.111981,
+          "total_defect_molfrac": 0.02
+        },
+        {
+          "eew_measured_g_per_eq": 194.2766,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 0.1693,
+          "nbar_inversion_bias": 0.0393,
+          "nbar_inversion_relative_bias": 0.302113,
+          "nbar_true": 0.13,
+          "ohv_measured_mg_koh_per_g": 29.6168,
+          "ohv_predicted_by_identity_mg_koh_per_g": 24.4402,
+          "phi_glycol_molfrac": 0.02,
+          "psi_chlorohydrin_molfrac": 0.03,
+          "residual_delta_mg_koh_per_g": 5.1766,
+          "residual_relative": 0.211807,
+          "total_defect_molfrac": 0.05
+        },
+        {
+          "eew_measured_g_per_eq": 504.3266,
+          "exceeds_1pct_identity_bar": false,
+          "nbar_inferred_from_eew": 2.35,
+          "nbar_inversion_bias": 0.0,
+          "nbar_inversion_relative_bias": 0.0,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 130.704,
+          "ohv_predicted_by_identity_mg_koh_per_g": 130.704,
+          "phi_glycol_molfrac": 0.0,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 0.0,
+          "residual_relative": 0.0,
+          "total_defect_molfrac": 0.0
+        },
+        {
+          "eew_measured_g_per_eq": 505.6358,
+          "exceeds_1pct_identity_bar": false,
+          "nbar_inferred_from_eew": 2.3592,
+          "nbar_inversion_bias": 0.0092,
+          "nbar_inversion_relative_bias": 0.003918,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 131.2485,
+          "ohv_predicted_by_identity_mg_koh_per_g": 130.8764,
+          "phi_glycol_molfrac": 0.005,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 0.3721,
+          "residual_relative": 0.002843,
+          "total_defect_molfrac": 0.005
+        },
+        {
+          "eew_measured_g_per_eq": 506.9515,
+          "exceeds_1pct_identity_bar": false,
+          "nbar_inferred_from_eew": 2.3685,
+          "nbar_inversion_bias": 0.0185,
+          "nbar_inversion_relative_bias": 0.007856,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 131.7928,
+          "ohv_predicted_by_identity_mg_koh_per_g": 131.0487,
+          "phi_glycol_molfrac": 0.01,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 0.7441,
+          "residual_relative": 0.005678,
+          "total_defect_molfrac": 0.01
+        },
+        {
+          "eew_measured_g_per_eq": 509.6028,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 2.3871,
+          "nbar_inversion_bias": 0.0371,
+          "nbar_inversion_relative_bias": 0.015791,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 132.8813,
+          "ohv_predicted_by_identity_mg_koh_per_g": 131.3934,
+          "phi_glycol_molfrac": 0.02,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 1.4879,
+          "residual_relative": 0.011324,
+          "total_defect_molfrac": 0.02
+        },
+        {
+          "eew_measured_g_per_eq": 512.2811,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 2.4059,
+          "nbar_inversion_bias": 0.0559,
+          "nbar_inversion_relative_bias": 0.023807,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 133.9693,
+          "ohv_predicted_by_identity_mg_koh_per_g": 131.7379,
+          "phi_glycol_molfrac": 0.03,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 2.2314,
+          "residual_relative": 0.016939,
+          "total_defect_molfrac": 0.03
+        },
+        {
+          "eew_measured_g_per_eq": 517.72,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 2.4442,
+          "nbar_inversion_bias": 0.0942,
+          "nbar_inversion_relative_bias": 0.040086,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 136.1443,
+          "ohv_predicted_by_identity_mg_koh_per_g": 132.4265,
+          "phi_glycol_molfrac": 0.05,
+          "psi_chlorohydrin_molfrac": 0.0,
+          "residual_delta_mg_koh_per_g": 3.7178,
+          "residual_relative": 0.028074,
+          "total_defect_molfrac": 0.05
+        },
+        {
+          "eew_measured_g_per_eq": 507.0442,
+          "exceeds_1pct_identity_bar": false,
+          "nbar_inferred_from_eew": 2.3691,
+          "nbar_inversion_bias": 0.0191,
+          "nbar_inversion_relative_bias": 0.008133,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 131.2127,
+          "ohv_predicted_by_identity_mg_koh_per_g": 131.0608,
+          "phi_glycol_molfrac": 0.0,
+          "psi_chlorohydrin_molfrac": 0.01,
+          "residual_delta_mg_koh_per_g": 0.1519,
+          "residual_relative": 0.001159,
+          "total_defect_molfrac": 0.01
+        },
+        {
+          "eew_measured_g_per_eq": 509.7891,
+          "exceeds_1pct_identity_bar": false,
+          "nbar_inferred_from_eew": 2.3884,
+          "nbar_inversion_bias": 0.0384,
+          "nbar_inversion_relative_bias": 0.016349,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 131.7211,
+          "ohv_predicted_by_identity_mg_koh_per_g": 131.4175,
+          "phi_glycol_molfrac": 0.0,
+          "psi_chlorohydrin_molfrac": 0.02,
+          "residual_delta_mg_koh_per_g": 0.3037,
+          "residual_relative": 0.002311,
+          "total_defect_molfrac": 0.02
+        },
+        {
+          "eew_measured_g_per_eq": 509.696,
+          "exceeds_1pct_identity_bar": false,
+          "nbar_inferred_from_eew": 2.3878,
+          "nbar_inversion_bias": 0.0378,
+          "nbar_inversion_relative_bias": 0.01607,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 132.3011,
+          "ohv_predicted_by_identity_mg_koh_per_g": 131.4054,
+          "phi_glycol_molfrac": 0.01,
+          "psi_chlorohydrin_molfrac": 0.01,
+          "residual_delta_mg_koh_per_g": 0.8957,
+          "residual_relative": 0.006816,
+          "total_defect_molfrac": 0.02
+        },
+        {
+          "eew_measured_g_per_eq": 518.0038,
+          "exceeds_1pct_identity_bar": true,
+          "nbar_inferred_from_eew": 2.4462,
+          "nbar_inversion_bias": 0.0962,
+          "nbar_inversion_relative_bias": 0.040935,
+          "nbar_true": 2.35,
+          "ohv_measured_mg_koh_per_g": 134.4035,
+          "ohv_predicted_by_identity_mg_koh_per_g": 132.4621,
+          "phi_glycol_molfrac": 0.02,
+          "psi_chlorohydrin_molfrac": 0.03,
+          "residual_delta_mg_koh_per_g": 1.9415,
+          "residual_relative": 0.014657,
+          "total_defect_molfrac": 0.05
+        }
+      ],
+      "stratification_by_advancement": [
+        {
+          "defect_rows_breaching_1pct_bar": 8,
+          "defect_rows_tested": 8,
+          "eew_ideal_g_per_eq": 188.6926,
+          "nbar": 0.13,
+          "nbar_relative_bias_at_1molpct_glycol": 0.056199,
+          "ohv_ideal_mg_koh_per_g": 19.3251,
+          "relative_residual_per_molpct_glycol": 0.097941
+        },
+        {
+          "defect_rows_breaching_1pct_bar": 4,
+          "defect_rows_tested": 8,
+          "eew_ideal_g_per_eq": 504.3266,
+          "nbar": 2.35,
+          "nbar_relative_bias_at_1molpct_glycol": 0.007856,
+          "ohv_ideal_mg_koh_per_g": 130.704,
+          "relative_residual_per_molpct_glycol": 0.005678
+        }
+      ],
+      "verdict": "H0_REFUTED",
+      "zero_defect_rows_exactly_on_identity": true
+    },
+    "G4_detector_sensitivity_and_specificity": {
+      "detection_floor_note": "The assumed relative titration precisions are PARAMETRIC sensitivity inputs chosen by this audit, NOT quoted ASTM D1652/D4274 precision statements; no repeatability figure is claimed from the standards.",
+      "parametric_detection_floor": [
+        {
+          "floors": [
+            {
+              "assumed_relative_titration_precision": 0.005,
+              "min_detectable_glycol_molpct_k2": 0.9,
+              "u_residual_mg_koh_per_g": 0.895
+            },
+            {
+              "assumed_relative_titration_precision": 0.01,
+              "min_detectable_glycol_molpct_k2": 1.7999,
+              "u_residual_mg_koh_per_g": 1.7901
+            },
+            {
+              "assumed_relative_titration_precision": 0.02,
+              "min_detectable_glycol_molpct_k2": 3.5998,
+              "u_residual_mg_koh_per_g": 3.5802
+            }
+          ],
+          "nbar": 0.13,
+          "ohv_ideal_mg_koh_per_g": 19.3251
+        },
+        {
+          "floors": [
+            {
+              "assumed_relative_titration_precision": 0.005,
+              "min_detectable_glycol_molpct_k2": 1.9711,
+              "u_residual_mg_koh_per_g": 0.7334
+            },
+            {
+              "assumed_relative_titration_precision": 0.01,
+              "min_detectable_glycol_molpct_k2": 3.9421,
+              "u_residual_mg_koh_per_g": 1.4669
+            },
+            {
+              "assumed_relative_titration_precision": 0.02,
+              "min_detectable_glycol_molpct_k2": 7.8843,
+              "u_residual_mg_koh_per_g": 2.9337
+            }
+          ],
+          "nbar": 2.35,
+          "ohv_ideal_mg_koh_per_g": 130.704
+        }
+      ],
+      "passed": true,
+      "sensitivity": [
+        {
+          "eew_ideal_g_per_eq": 188.6926,
+          "nbar": 0.13,
+          "sensitivities": [
+            {
+              "d_delta_d_molpct_mg_koh_per_g": 1.9891,
+              "defect": "alpha_glycol"
+            },
+            {
+              "d_delta_d_molpct_mg_koh_per_g": 0.4061,
+              "defect": "chlorohydrin"
+            }
+          ]
+        },
+        {
+          "eew_ideal_g_per_eq": 504.3266,
+          "nbar": 2.35,
+          "sensitivities": [
+            {
+              "d_delta_d_molpct_mg_koh_per_g": 0.7442,
+              "defect": "alpha_glycol"
+            },
+            {
+              "d_delta_d_molpct_mg_koh_per_g": 0.1519,
+              "defect": "chlorohydrin"
+            }
+          ]
+        }
+      ],
+      "specificity_controls": [
+        {
+          "correct": true,
+          "eew_g_per_eq": 188.6926,
+          "flagged_non_ideal": false,
+          "identity_prediction_mg_koh_per_g": 19.3251,
+          "name": "ideal Flory DGEBA, no additive (TRUE NEGATIVE)",
+          "ohv_mg_koh_per_g": 19.3251,
+          "residual_relative": -0.0,
+          "should_flag": false
+        },
+        {
+          "correct": true,
+          "eew_g_per_eq": 184.4131,
+          "flagged_non_ideal": true,
+          "identity_prediction_mg_koh_per_g": 15.1952,
+          "name": "20 mol% phenyl glycidyl ether monofunctional diluent",
+          "ohv_mg_koh_per_g": 17.5765,
+          "residual_relative": 0.156709,
+          "should_flag": true
+        },
+        {
+          "correct": true,
+          "eew_g_per_eq": 201.3754,
+          "flagged_non_ideal": true,
+          "identity_prediction_mg_koh_per_g": 30.5334,
+          "name": "10 mol% free bisphenol-A (unreacted precursor)",
+          "ohv_mg_koh_per_g": 49.0618,
+          "residual_relative": 0.606822,
+          "should_flag": true
+        },
+        {
+          "correct": true,
+          "eew_g_per_eq": 198.5991,
+          "flagged_non_ideal": true,
+          "identity_prediction_mg_koh_per_g": 28.2023,
+          "name": "5 mol% fully hydrolyzed DGEBA diol (both epoxides opened)",
+          "ohv_mg_koh_per_g": 48.0957,
+          "residual_relative": 0.705383,
+          "should_flag": true
+        }
+      ]
+    }
+  },
+  "maps_to_module_hypothesis": "Tests the mixture-level validity of the module's shipped EEW-band -> n_bar advancement inversion. Establishes that the inversion is exactly dispersity-invariant (a strictly stronger result than the pure-oligomer receipts supported), and REFUTES the implicit robustness assumption behind it by showing that epoxide-consuming end groups bias it while simultaneously breaking the EEW<->OHV identity - which converts the identity into a zero-parameter QC detector whose power is quantified here, and shown to be grade-dependent rather than uniform.",
+  "module": "amphora-molecule-property",
+  "primary_sources": [
+    "Flory, J. Am. Chem. Soc. 58(10):1877 (1936), doi:10.1021/ja01301a016",
+    "Lee & Neville 1967 Handbook of Epoxy Resins",
+    "May 1988 Epoxy Resins: Chemistry and Technology 2nd ed ISBN 0-8247-7690-9",
+    "ASTM D1652",
+    "ASTM D4274",
+    "Prohaska et al. Pure Appl. Chem. 94(5):573 (2022) doi:10.1515/pac-2019-0603"
+  ],
+  "prior_receipt_sha256": {
+    "dgeba_oligomer_eew_series_receipt.v1.json": "636429b9b904de2f9dfc1f401d1c8d9a36f837871f155671e2d5b8f6edbd4fb9",
+    "dgeba_oligomer_hydroxyl_value_receipt.v1.json": "2c1deaae4be1efa3c07f71865c9a62b36edae97cdc638e8d85e962ad4388e1d7"
+  },
+  "rdkit_version_detected": "2026.03.2",
+  "rule": "Ideal linear DGEBA mixtures obey the zero-parameter cross-titration identity OHV = A*(1 - E0/EEW) with A = 56100/M_repeat = 197.29 mg KOH/g and E0 = M0/2 = 170.21 g/eq, exactly and independently of dispersity.",
+  "structural_constants": {
+    "M0_g_per_mol": 340.419,
+    "M_H2O_g_per_mol": 18.015,
+    "M_HCl_g_per_mol": 36.461,
+    "M_repeat_g_per_mol": 284.355,
+    "koh_factor": 56100.0
+  },
+  "study_id": "dgeba-polydispersity-cross-titration-v1"
+}

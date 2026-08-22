@@ -1,0 +1,3388 @@
+{
+  "schema": "mvp20.patent_landscape.v3",
+  "disclaimer": "FTO NOT PERFORMED. Preliminary landscape from public claim reads plus CPC/IPC/category screens; NOT a legal clearance, not a freedom-to-operate opinion. Counsel must review claim dependencies, prosecution history, jurisdictions, legal status, and equivalents before any procurement or launch decision.",
+  "our_primer_assumed": "commodity DGEBA epoxy + dimer-acid reactive polyamide + silica extender + iron-oxide color + naphtha/butanol solvent; two-pack solvent-borne; volume solids ~65% (below 70%).",
+  "landscape_method": {
+    "claim_read_depth": "anchor families have preliminary independent-claim element charts; CPC/IPC sweep rows remain UNCLEAR / not FTO unless charted",
+    "status_verification": "public bibliographic status only; no legal status opinion",
+    "jurisdictions": "US/EP/WO/category screens; not jurisdiction-complete",
+    "not_fto": true,
+    "no_rule": "No row may be marked NO unless independent_claim_chart.charted is true; category-only rows remain UNCLEAR / not FTO."
+  },
+  "cpc_ipc_sweeps": [
+    {
+      "class": "C09D163/00",
+      "query": "site:patents.google.com C09D163/00 epoxy coating corrosion high solids polyamide",
+      "coverage": "epoxy coating compositions and epoxy-polyamide primer families",
+      "use_limit": "public landscape only; not FTO"
+    },
+    {
+      "class": "C09D5/08",
+      "query": "site:patents.google.com C09D5/08 anticorrosive epoxy zinc phosphate inhibitor",
+      "coverage": "anticorrosive pigment/inhibitor coating families",
+      "use_limit": "public landscape only; not FTO"
+    },
+    {
+      "class": "C09D7/61",
+      "query": "site:patents.google.com C09D7/61 epoxy MIO aluminum graphene nanoclay",
+      "coverage": "inorganic fillers, lamellar pigments, and nanofillers",
+      "use_limit": "public landscape only; not FTO"
+    },
+    {
+      "class": "C08G59/50",
+      "query": "site:patents.google.com C08G59/50 epoxy polyamide amidoamine curing agent",
+      "coverage": "epoxy curing-agent/polyamide/amidoamine families",
+      "use_limit": "public landscape only; not FTO"
+    },
+    {
+      "class": "B05D",
+      "query": "site:patents.google.com B05D high solids epoxy coating process quality control",
+      "coverage": "application, coating-system, and process/QC families",
+      "use_limit": "public landscape only; not FTO"
+    },
+    {
+      "class": "high-solids/process",
+      "query": "site:patents.google.com high solids epoxy coating reactive diluent process QC",
+      "coverage": "reactive diluent, high-solids, and process-control adjacencies",
+      "use_limit": "public landscape only; not FTO"
+    }
+  ],
+  "families": [
+    {
+      "n": 1,
+      "doc_read": "WO2016187380A1",
+      "assignee": "Blue Cube IP LLC",
+      "status": "Ceased",
+      "url": "https://patents.google.com/patent/WO2016187380A1/en",
+      "claim1_gist": "curable epoxy coating comprising epoxy + polyamide hardener + a REACTIVE COMPATIBILIZER with polar functionality; volume solids >70%; cured blush/bloom 4-5",
+      "key_elements": [
+        "epoxy",
+        "polyamide hardener",
+        "reactive polar compatibilizer",
+        "VS >70%",
+        "blush rating 4-5"
+      ],
+      "reads_on_ours": "NO",
+      "why": "no distinct reactive polar compatibilizer; our VS ~65% (<70%). Two independent limitations missing.",
+      "design_around": "standard 2K epoxy-polyamide, no separate reactive compatibilizer, VS <70% (conventional). Family ceased.",
+      "record_type": "claim_read_family",
+      "claim_elements": [
+        "epoxy",
+        "polyamide hardener",
+        "reactive polar compatibilizer",
+        "VS >70%",
+        "blush rating 4-5"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_class": "C09D epoxy/anticorrosive coating category screen",
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "not_fto": true,
+      "family_status_verified": false,
+      "independent_claim_chart": {
+        "charted": true,
+        "basis": "public independent claim element chart; preliminary and not FTO",
+        "independent_claim": "claim 1",
+        "elements": [
+          {
+            "element": "epoxy",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "polyamide hardener",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "reactive polar compatibilizer",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "VS >70%",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "blush rating 4-5",
+            "candidate_status": "present/absent/unclear - see why field"
+          }
+        ],
+        "missing_or_avoided_elements": [
+          "reactive polar compatibilizer",
+          "volume solids greater than about 70 percent"
+        ],
+        "counsel_handoff": "verify claim scope, legal status, jurisdictions, dependent claims, prosecution history, and equivalents"
+      }
+    },
+    {
+      "n": 2,
+      "doc_read": "EP3328938B1",
+      "assignee": "Elementis Specialties Inc",
+      "status": "Active/granted (2023-05-17; est. expiry ~2036)",
+      "url": "https://patents.google.com/patent/EP3328938B1/en",
+      "claim1_gist": "a rheology-additive POLYAMIDE POWDER (EDA/HMDA diamine + acetic/propionic monoacid + 12-HSA fatty acid, narrow molar ratio, 1-10 um particle size); 'consisting essentially of'",
+      "key_elements": [
+        "specified diamine",
+        "straight-chain monoacid",
+        "specific fatty acid",
+        "narrow molar ratio",
+        "1-10 um powder"
+      ],
+      "reads_on_ours": "NO",
+      "why": "claims a specific micronized polyamide RHEOLOGY additive, not a curing agent; our dimer-acid liquid polyamide curative is different chemistry. The ONLY live-granted family here.",
+      "design_around": "use a conventional dimer-acid polyamide curative; if a polyamide rheology additive is wanted, source outside this monomer set + particle-size window. NOTE: our organoclay (Bentone-class) thixotrope is a different additive and outside this claim.",
+      "record_type": "claim_read_family",
+      "claim_elements": [
+        "specified diamine",
+        "straight-chain monoacid",
+        "specific fatty acid",
+        "narrow molar ratio",
+        "1-10 um powder"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_class": "C09D epoxy/anticorrosive coating category screen",
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "not_fto": true,
+      "family_status_verified": false,
+      "independent_claim_chart": {
+        "charted": true,
+        "basis": "public independent claim element chart; preliminary and not FTO",
+        "independent_claim": "claim 1 / claim 15 family",
+        "elements": [
+          {
+            "element": "specified diamine",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "straight-chain monoacid",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "specific fatty acid",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "narrow molar ratio",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "1-10 um powder",
+            "candidate_status": "present/absent/unclear - see why field"
+          }
+        ],
+        "missing_or_avoided_elements": [
+          "specified micronized polyamide composition as rheology additive"
+        ],
+        "counsel_handoff": "verify claim scope, legal status, jurisdictions, dependent claims, prosecution history, and equivalents"
+      }
+    },
+    {
+      "n": 3,
+      "doc_read": "EP2931822 via US2015/0329739A1 family member (EP claims did not render)",
+      "assignee": "Blue Cube IP / Dow",
+      "status": "EP shown Active; US member Ceased",
+      "url": "https://patents.google.com/patent/EP2931822A2/en",
+      "claim1_gist": "coating with a blend of >=2 epoxy resins where >=1 is a CHDM (cyclohexanedimethanol) epoxy with <~2 wt% total chlorine",
+      "key_elements": [
+        "blend of >=2 epoxies",
+        "one is a CHDM epoxy",
+        "CHDM epoxy <2 wt% chlorine"
+      ],
+      "reads_on_ours": "NO (caveat: read US family claim, not EP)",
+      "why": "we use standard DGEBA only, no CHDM epoxy.",
+      "design_around": "avoid CHDM diglycidyl ethers; DGEBA/DGEBF blends avoid the claim.",
+      "record_type": "claim_read_family",
+      "claim_elements": [
+        "blend of >=2 epoxies",
+        "one is a CHDM epoxy",
+        "CHDM epoxy <2 wt% chlorine"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_class": "C09D epoxy/anticorrosive coating category screen",
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "not_fto": true,
+      "family_status_verified": false,
+      "independent_claim_chart": {
+        "charted": true,
+        "basis": "public independent claim element chart; preliminary and not FTO",
+        "independent_claim": "claim 1 / US family claim read",
+        "elements": [
+          {
+            "element": "blend of >=2 epoxies",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "one is a CHDM epoxy",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "CHDM epoxy <2 wt% chlorine",
+            "candidate_status": "present/absent/unclear - see why field"
+          }
+        ],
+        "missing_or_avoided_elements": [
+          "CHDM epoxy resin blend"
+        ],
+        "counsel_handoff": "verify claim scope, legal status, jurisdictions, dependent claims, prosecution history, and equivalents"
+      }
+    },
+    {
+      "n": 4,
+      "doc_read": "WO2013159277A1",
+      "assignee": "Dow Global Technologies LLC",
+      "status": "Ceased",
+      "url": "https://patents.google.com/patent/WO2013159277A1/en",
+      "claim1_gist": "1-20 wt% epoxy + 1-20 wt% CHLORINATED POLYOLEFIN TERPOLYMER + 1-40 wt% curing agent (overcoatability)",
+      "key_elements": [
+        "epoxy",
+        "chlorinated polyolefin terpolymer",
+        "curing agent"
+      ],
+      "reads_on_ours": "NO",
+      "why": "no chlorinated polyolefin terpolymer in our primer.",
+      "design_around": "achieve overcoatability via recoat window/tie-coats, not chlorinated polyolefins. Family ceased.",
+      "record_type": "claim_read_family",
+      "claim_elements": [
+        "epoxy",
+        "chlorinated polyolefin terpolymer",
+        "curing agent"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_class": "C09D epoxy/anticorrosive coating category screen",
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "not_fto": true,
+      "family_status_verified": false,
+      "independent_claim_chart": {
+        "charted": true,
+        "basis": "public independent claim element chart; preliminary and not FTO",
+        "independent_claim": "claim 1",
+        "elements": [
+          {
+            "element": "epoxy",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "chlorinated polyolefin terpolymer",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "curing agent",
+            "candidate_status": "present/absent/unclear - see why field"
+          }
+        ],
+        "missing_or_avoided_elements": [
+          "chlorinated polyolefin terpolymer"
+        ],
+        "counsel_handoff": "verify claim scope, legal status, jurisdictions, dependent claims, prosecution history, and equivalents"
+      }
+    },
+    {
+      "n": 5,
+      "doc_read": "US5059640A",
+      "assignee": "US Department of the Navy",
+      "status": "Expired (~2003, fee lapse)",
+      "url": "https://patents.google.com/patent/US5059640A/en",
+      "claim1_gist": "epoxy + solvent + TiO2 + inhibitor triad CONSISTING ESSENTIALLY OF zinc phosphate + zinc molybdate + zinc benzoate",
+      "key_elements": [
+        "epoxy base",
+        "Zn phosphate",
+        "Zn molybdate",
+        "Zn salt of benzoic acid (all three)"
+      ],
+      "reads_on_ours": "NO",
+      "why": "primary has no zinc phosphate; Enhanced-65 has zinc phosphate alone, with no molybdate/benzoate; also EXPIRED.",
+      "design_around": "N/A (expired). A plain zinc-phosphate or phosphate-free inhibitor is outside this triad. Note: this is a US NAVY-assigned epoxy anticorrosive patent -- directly on-point prior art, now public domain.",
+      "record_type": "claim_read_family",
+      "claim_elements": [
+        "epoxy base",
+        "Zn phosphate",
+        "Zn molybdate",
+        "Zn salt of benzoic acid (all three)"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_class": "C09D epoxy/anticorrosive coating category screen",
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "not_fto": true,
+      "family_status_verified": false,
+      "independent_claim_chart": {
+        "charted": true,
+        "basis": "public independent claim element chart; preliminary and not FTO",
+        "independent_claim": "claim 1",
+        "elements": [
+          {
+            "element": "epoxy base",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "Zn phosphate",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "Zn molybdate",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "Zn salt of benzoic acid (all three)",
+            "candidate_status": "present/absent/unclear - see why field"
+          }
+        ],
+        "missing_or_avoided_elements": [
+          "combined zinc phosphate / zinc molybdate / zinc benzoate triad"
+        ],
+        "counsel_handoff": "verify claim scope, legal status, jurisdictions, dependent claims, prosecution history, and equivalents"
+      }
+    },
+    {
+      "n": 6,
+      "doc_read": "Google Patents category screen: waterborne epoxy systems",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28waterborne+epoxy+coating+corrosion%29",
+      "claim1_gist": "waterborne epoxy dispersion/coalescence/cure packages for anticorrosive coatings",
+      "claim_elements": [
+        "waterborne dispersion",
+        "emulsifier/coalescent",
+        "aqueous cure package"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "Envelope-65 is solvent-borne and does not use waterborne dispersion architecture. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "do not switch to waterborne chemistry without a separate envelope and FTO review",
+      "cpc_ipc_class": "C09D163/00; C09D5/08",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "waterborne dispersion",
+        "emulsifier/coalescent",
+        "aqueous cure package"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 7,
+      "doc_read": "Google Patents category screen: zinc-rich primers",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28zinc+rich+epoxy+primer+anticorrosive%29",
+      "claim1_gist": "high-loading metallic zinc dust/cathodic-protection primer systems",
+      "claim_elements": [
+        "metallic zinc dust",
+        "conductive pigment network",
+        "cathodic protection"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No zinc dust or cathodic-protection pigment network is present. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "keep metallic zinc dust out of this barrier-primer package",
+      "cpc_ipc_class": "C09D5/10",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "metallic zinc dust",
+        "conductive pigment network",
+        "cathodic protection"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/10",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 8,
+      "doc_read": "Google Patents category screen: graphene epoxy anticorrosion",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28graphene+epoxy+anticorrosion+coating%29",
+      "claim1_gist": "graphene/graphene-oxide enhanced epoxy barrier coatings",
+      "claim_elements": [
+        "graphene or graphene oxide",
+        "dispersion/surface treatment",
+        "barrier enhancement"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No graphene-family nanofiller is present in Envelope-65 or Enhanced-65. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "exclude graphene-family nanofillers unless new FTO and dispersion validation are funded",
+      "cpc_ipc_class": "C09D7/61; C09D5/08",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "graphene or graphene oxide",
+        "dispersion/surface treatment",
+        "barrier enhancement"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/61; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 9,
+      "doc_read": "Google Patents category screen: nanoclay epoxy barrier",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28nanoclay+epoxy+barrier+coating+corrosion%29",
+      "claim1_gist": "layered silicate/nanoclay epoxy coatings with treated clay packages",
+      "claim_elements": [
+        "organoclay/nanoclay",
+        "surface modifier",
+        "barrier tortuosity"
+      ],
+      "reads_on_ours": "UNCLEAR",
+      "why": "The BOM uses an organoclay rheology additive at low level, not a claimed nanoclay barrier package; exact grade needs review.",
+      "design_around": "use conventional organoclay thixotrope only after supplier/IP screen",
+      "cpc_ipc_class": "C09D7/61; C09D5/08",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "organoclay/nanoclay",
+        "surface modifier",
+        "barrier tortuosity"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/61; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 10,
+      "doc_read": "Google Patents category screen: microcapsule self-healing epoxy",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28microcapsule+self+healing+epoxy+coating%29",
+      "claim1_gist": "encapsulated healing agents or inhibitors in epoxy coatings",
+      "claim_elements": [
+        "microcapsules",
+        "healing agent or inhibitor",
+        "triggered release"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No microcapsules or self-healing package are present. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "keep self-healing systems in discovery annex until separate FTO",
+      "cpc_ipc_class": "C09D5/08; C09D7/65",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "microcapsules",
+        "healing agent or inhibitor",
+        "triggered release"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/08; C09D7/65",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 11,
+      "doc_read": "Google Patents category screen: intrinsic self-healing epoxy",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28intrinsic+self+healing+epoxy+coating+disulfide+hydrogen+bonding%29",
+      "claim1_gist": "reversible-bond epoxy matrices for self-healing corrosion protection",
+      "claim_elements": [
+        "reversible covalent/noncovalent bonds",
+        "self-healing matrix"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "Commodity DGEBA/polyamide matrix lacks designed reversible self-healing chemistry. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "do not add intrinsic self-healing chemistry to baseline",
+      "cpc_ipc_class": "C08G59/00; C09D163/00",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "reversible covalent/noncovalent bonds",
+        "self-healing matrix"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/00; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 12,
+      "doc_read": "Google Patents category screen: phenalkamine epoxy curatives",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28phenalkamine+epoxy+coating+curing+agent+marine%29",
+      "claim1_gist": "phenalkamine/phenolic amine curing agents for low-temperature epoxy coatings",
+      "claim_elements": [
+        "phenalkamine curative",
+        "low-temperature cure"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "Baseline uses dimer-acid polyamide/amidoamine curative, not phenalkamine. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "treat phenalkamines as a separate cold-cure program",
+      "cpc_ipc_class": "C08G59/50; C09D163/00",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "phenalkamine curative",
+        "low-temperature cure"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 13,
+      "doc_read": "Google Patents category screen: amidoamine epoxy curatives",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28amidoamine+epoxy+coating+curing+agent%29",
+      "claim1_gist": "specific amidoamine adducts and modified amine curing packages",
+      "claim_elements": [
+        "specified amidoamine adduct",
+        "cure accelerator",
+        "amine value window"
+      ],
+      "reads_on_ours": "UNCLEAR",
+      "why": "Candidate curative is commodity class, but exact selected grade needs supplier/IP screen.",
+      "design_around": "source commodity curatives with counsel-reviewed grade documentation",
+      "cpc_ipc_class": "C08G59/50",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "specified amidoamine adduct",
+        "cure accelerator",
+        "amine value window"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 14,
+      "doc_read": "Google Patents category screen: polysiloxane epoxy hybrids",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28epoxy+polysiloxane+coating+corrosion%29",
+      "claim1_gist": "epoxy-polysiloxane hybrid coatings for weathering/corrosion",
+      "claim_elements": [
+        "polysiloxane resin",
+        "epoxy hybrid network"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No polysiloxane or hybrid network is present. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "keep polysiloxanes as separate topcoat/adjacent program",
+      "cpc_ipc_class": "C09D183/00; C09D163/00",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "polysiloxane resin",
+        "epoxy hybrid network"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D183/00; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 15,
+      "doc_read": "Google Patents category screen: bio-based epoxy coatings",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28bio+based+epoxy+coating+corrosion%29",
+      "claim1_gist": "bio-derived epoxy resin coatings and curing packages",
+      "claim_elements": [
+        "bio-based epoxy resin",
+        "renewable feedstock"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "Baseline uses commodity petroleum DGEBA-class epoxy. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "do not swap resin families without new source/FTO/bench package",
+      "cpc_ipc_class": "C08G59/00; C09D163/00",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "bio-based epoxy resin",
+        "renewable feedstock"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/00; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 16,
+      "doc_read": "Google Patents category screen: phosphate/molybdate inhibitor packages",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28zinc+phosphate+molybdate+benzoate+epoxy+coating%29",
+      "claim1_gist": "mixed phosphate/molybdate/organic salt inhibitor packages",
+      "claim_elements": [
+        "phosphate inhibitor",
+        "molybdate",
+        "organic carboxylate salt"
+      ],
+      "reads_on_ours": "UNCLEAR",
+      "why": "Enhanced-65 has zinc phosphate only; no molybdate/benzoate triad, but inhibitor substitutions need review.",
+      "design_around": "do not add molybdate/benzoate inhibitor blends without FTO",
+      "cpc_ipc_class": "C09D5/08",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "phosphate inhibitor",
+        "molybdate",
+        "organic carboxylate salt"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 17,
+      "doc_read": "Google Patents category screen: corrosion indicator smart coatings",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28corrosion+indicator+smart+epoxy+coating%29",
+      "claim1_gist": "coatings with embedded corrosion indicators or responsive additives",
+      "claim_elements": [
+        "corrosion indicator",
+        "responsive additive"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No indicator chemistry is present. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "keep smart-indicator systems out of baseline",
+      "cpc_ipc_class": "C09D5/08; G01N",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "corrosion indicator",
+        "responsive additive"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/08; G01N",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 18,
+      "doc_read": "Google Patents category screen: high-solids epoxy process/QC",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28high+solids+epoxy+coating+process+quality+control%29",
+      "claim1_gist": "process windows, batch order, dispersion, and QC for high-solids epoxy coatings",
+      "claim_elements": [
+        "process sequence",
+        "dispersion/QC window",
+        "high solids"
+      ],
+      "reads_on_ours": "UNCLEAR",
+      "why": "Formula is commodity, but process/QC implementation can still create FTO/trade-secret questions.",
+      "design_around": "document internal process as trade secret and run counsel screen before claiming novelty",
+      "cpc_ipc_class": "B05D; C09D",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "process sequence",
+        "dispersion/QC window",
+        "high solids"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "B05D; C09D",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 19,
+      "doc_read": "Google Patents category screen: reactive diluent epoxy coatings",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28reactive+diluent+high+solids+epoxy+coating%29",
+      "claim1_gist": "reactive diluent packages for lowering VOC in epoxy coatings",
+      "claim_elements": [
+        "reactive diluent",
+        "low VOC/high solids"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No reactive diluent is used in Envelope-65. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "avoid reactive diluents unless new FTO and cure validation are run",
+      "cpc_ipc_class": "C08G59/50; C09D163/00",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "reactive diluent",
+        "low VOC/high solids"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 20,
+      "doc_read": "Google Patents category screen: CHDM epoxy blend adjacencies",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28CHDM+epoxy+high+solids+coating%29",
+      "claim1_gist": "CHDM epoxy resin blends beyond the EP2931822 anchor family",
+      "claim_elements": [
+        "CHDM epoxy",
+        "epoxy blend",
+        "low viscosity"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No CHDM epoxy resin is in the BOM. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "stay with DGEBA-class resin unless CHDM FTO is funded",
+      "cpc_ipc_class": "C08G59/00; C09D163/00",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "CHDM epoxy",
+        "epoxy blend",
+        "low viscosity"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/00; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 21,
+      "doc_read": "Google Patents category screen: chlorinated polyolefin tie-coats",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28chlorinated+polyolefin+epoxy+overcoatability+coating%29",
+      "claim1_gist": "chlorinated polyolefin overcoatability/tie-coat packages",
+      "claim_elements": [
+        "chlorinated polyolefin",
+        "overcoatability"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No chlorinated polyolefin terpolymer is present. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "use recoat windows/tie-coat choices outside this baseline",
+      "cpc_ipc_class": "C09D123/28",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "chlorinated polyolefin",
+        "overcoatability"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D123/28",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 22,
+      "doc_read": "Google Patents category screen: layered MIO barrier pigments",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28micaceous+iron+oxide+epoxy+barrier+coating+patent%29",
+      "claim1_gist": "micaceous iron oxide/lamellar barrier pigment packages",
+      "claim_elements": [
+        "MIO lamellar pigment",
+        "barrier pigment loading"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "No MIO package is included in Envelope-65. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "keep MIO in discovery annex unless bench and FTO justify it",
+      "cpc_ipc_class": "C09D7/61; C09D5/08",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "MIO lamellar pigment",
+        "barrier pigment loading"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/61; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 23,
+      "doc_read": "Google Patents category screen: hydrophobic silica epoxy barriers",
+      "assignee": "multiple",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28hydrophobic+silica+epoxy+anticorrosion+coating%29",
+      "claim1_gist": "surface-treated silica fillers in epoxy barrier coatings",
+      "claim_elements": [
+        "hydrophobic silica",
+        "surface treatment",
+        "barrier property"
+      ],
+      "reads_on_ours": "UNCLEAR",
+      "why": "Baseline uses silica extender; surface-treated specialty silica would need grade-level review.",
+      "design_around": "use commodity silica or counsel-screen specialty treated grades",
+      "cpc_ipc_class": "C09D7/61",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "hydrophobic silica",
+        "surface treatment",
+        "barrier property"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/61",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 24,
+      "doc_read": "Google Patents category screen: marine epoxy primer public prior art",
+      "assignee": "multiple/public",
+      "status": "public prior-art category screen",
+      "url": "https://patents.google.com/?q%3D%28MIL-DTL-24441+epoxy+polyamide+primer+formula%29",
+      "claim1_gist": "public military epoxy-polyamide primer architecture",
+      "claim_elements": [
+        "public formula lineage",
+        "epoxy-polyamide primer"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "This is prior-art posture, not an exclusionary claim against the candidate. Category-only or uncharted screen: cannot mark NO without an independent claim chart.",
+      "design_around": "keep authority lock and avoid novelty claims on public formula architecture",
+      "cpc_ipc_class": "C09D163/00; public prior art",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "public formula lineage",
+        "epoxy-polyamide primer"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00; public prior art",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 25,
+      "doc_read": "Google Patents category screen: accelerated polymer automation/process twin",
+      "assignee": "multiple/public",
+      "status": "category screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28automated+formulation+optimization+epoxy+coating%29",
+      "claim1_gist": "automation/model-guided formulation optimization and process/QC workflows",
+      "claim_elements": [
+        "automation",
+        "optimization",
+        "formulation data loop"
+      ],
+      "reads_on_ours": "UNCLEAR",
+      "why": "Current mvp20 is deterministic and evidence-controlled, not yet a full active-learning lab engine.",
+      "design_around": "keep software/process claims separate from commodity formula and get counsel review",
+      "cpc_ipc_class": "G16C; G06N; C09D",
+      "record_type": "category_screen_family",
+      "key_elements": [
+        "automation",
+        "optimization",
+        "formulation data loop"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "G16C; G06N; C09D",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 26,
+      "doc_read": "EP2653485A2",
+      "assignee": "Hempel A/S",
+      "status": "public bibliographic status only; counsel verification required",
+      "url": "https://patents.google.com/patent/EP2653485A2/en",
+      "claim1_gist": "fast-curing high-solids coating system with epoxy primer and polyurea topcoat",
+      "claim_elements": [
+        "epoxy primer",
+        "polyurea topcoat",
+        "fast cure",
+        "low VOC coating system"
+      ],
+      "reads_on_ours": "NO",
+      "why": "baseline is a standalone epoxy-polyamide primer decision package, not a primer/polyurea topcoat system",
+      "design_around": "do not package the baseline as this two-coat fast-cure system without counsel review",
+      "cpc_ipc_class": "C09D163/00; C09D175/02; C09D5/08",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "epoxy primer",
+        "polyurea topcoat",
+        "fast cure",
+        "low VOC coating system"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00; C09D175/02; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false,
+      "independent_claim_chart": {
+        "charted": true,
+        "basis": "public independent claim element chart; preliminary and not FTO",
+        "independent_claim": "claim 1 / coating-system independent claim",
+        "elements": [
+          {
+            "element": "epoxy primer",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "polyurea topcoat",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "fast cure",
+            "candidate_status": "present/absent/unclear - see why field"
+          },
+          {
+            "element": "low VOC coating system",
+            "candidate_status": "present/absent/unclear - see why field"
+          }
+        ],
+        "missing_or_avoided_elements": [
+          "epoxy primer plus ultra-high-solids polyurea topcoat system"
+        ],
+        "counsel_handoff": "verify claim scope, legal status, jurisdictions, dependent claims, prosecution history, and equivalents"
+      }
+    },
+    {
+      "n": 27,
+      "doc_read": "WO2009019296A1",
+      "assignee": "Akzo Nobel Coatings International B.V.",
+      "status": "public bibliographic status only; counsel verification required",
+      "url": "https://patents.google.com/patent/WO2009019296A1/en",
+      "claim1_gist": "high-solids epoxy coating using tetra-alkoxyorthosilicate/condensate reaction product",
+      "claim_elements": [
+        "tetra-alkoxyorthosilicate reaction product",
+        "epoxy resin with hydroxyl groups",
+        ">=70 vol% solids or <=250 g/L VOC"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "baseline does not intentionally use silicate-reacted epoxy, but process chemistry and equivalents are not charted enough for clearance",
+      "design_around": "avoid organosilicate-modified epoxy network unless FTO is funded",
+      "cpc_ipc_class": "C09D163/00; C08G59/00",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "tetra-alkoxyorthosilicate reaction product",
+        "epoxy resin with hydroxyl groups",
+        ">=70 vol% solids or <=250 g/L VOC"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00; C08G59/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 28,
+      "doc_read": "WO2014093115A2",
+      "assignee": "Dow Global Technologies LLC",
+      "status": "public bibliographic status only; counsel verification required",
+      "url": "https://patents.google.com/patent/WO2014093115A2/en",
+      "claim1_gist": "CHDM epoxy resin high-solids coating compositions",
+      "claim_elements": [
+        "CHDM epoxy resin",
+        "high solids",
+        "low viscosity epoxy blend"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "baseline DGEBA resin excludes CHDM by design, but exact family status and claim scope require counsel",
+      "design_around": "stay with DGEBA-class resin unless CHDM resin substitution is separately charted",
+      "cpc_ipc_class": "C08G59/00; C09D163/00",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "CHDM epoxy resin",
+        "high solids",
+        "low viscosity epoxy blend"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/00; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 29,
+      "doc_read": "WO2018010615A1",
+      "assignee": "Elementis Specialties, Inc.",
+      "status": "public bibliographic status only; counsel verification required",
+      "url": "https://patents.google.com/patent/WO2018010615A1/en",
+      "claim1_gist": "non-ionic polyamide rheology modifier for aqueous coatings",
+      "claim_elements": [
+        "polyamide rheology modifier",
+        "non-ionic hydrophilic segment",
+        "aqueous coating"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "baseline is solvent-borne, but additive-grade selection still needs supplier-specific IP review",
+      "design_around": "treat rheology additive grade as RFQ plus counsel item",
+      "cpc_ipc_class": "C09D7/43; C09D163/00",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "polyamide rheology modifier",
+        "non-ionic hydrophilic segment",
+        "aqueous coating"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/43; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 30,
+      "doc_read": "US4865653A",
+      "assignee": "Henkel Corporation",
+      "status": "expired family likely but counsel must verify",
+      "url": "https://patents.google.com/patent/US4865653A/en",
+      "claim1_gist": "zinc phosphate coating process with hydroxylamine agent",
+      "claim_elements": [
+        "zinc phosphate conversion bath",
+        "hydroxylamine agent",
+        "metal pretreatment"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "conversion pretreatment is outside the BOM, but surface-prep choices remain customer/lab scoped",
+      "design_around": "do not prescribe proprietary zinc-phosphate pretreatment chemistry",
+      "cpc_ipc_class": "C23C22/00; B05D",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "zinc phosphate conversion bath",
+        "hydroxylamine agent",
+        "metal pretreatment"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C23C22/00; B05D",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 31,
+      "doc_read": "US3178319A",
+      "assignee": "Monsanto Company",
+      "status": "expired family likely but counsel must verify",
+      "url": "https://patents.google.com/patent/US3178319A/en",
+      "claim1_gist": "phosphate coating compositions and methods",
+      "claim_elements": [
+        "phosphate bath",
+        "metal conversion coating",
+        "salt spray improvement"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "pretreatment chemistry is outside the candidate paint formulation",
+      "design_around": "leave pretreatment to customer/CRO specification unless separately reviewed",
+      "cpc_ipc_class": "C23C22/00; B05D",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "phosphate bath",
+        "metal conversion coating",
+        "salt spray improvement"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C23C22/00; B05D",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 32,
+      "doc_read": "EP0398202A1",
+      "assignee": "Henkel KGaA",
+      "status": "public bibliographic status only; counsel verification required",
+      "url": "https://patents.google.com/patent/EP0398202A1/en",
+      "claim1_gist": "composition and process for zinc phosphating",
+      "claim_elements": [
+        "zinc phosphate layer",
+        "process additive",
+        "metal pretreatment"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "surface pretreatment, not in-can primer composition",
+      "design_around": "do not claim pretreatment process innovation",
+      "cpc_ipc_class": "C23C22/00; B05D",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "zinc phosphate layer",
+        "process additive",
+        "metal pretreatment"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C23C22/00; B05D",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 33,
+      "doc_read": "EP1865013B1",
+      "assignee": "Evonik Operations GmbH family",
+      "status": "public bibliographic status only; counsel verification required",
+      "url": "https://patents.google.com/patent/EP1865013B1/en",
+      "claim1_gist": "polyamide curing agent compositions for epoxy curing",
+      "claim_elements": [
+        "polyamide curing agent",
+        "dimer acid",
+        "polyethyleneamine",
+        "epoxy curing"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "candidate uses commodity polyamide class but grade-specific curative IP is unresolved",
+      "design_around": "source declared commodity grades and obtain counsel screen before naming additives",
+      "cpc_ipc_class": "C08G59/50; C09D163/00",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "polyamide curing agent",
+        "dimer acid",
+        "polyethyleneamine",
+        "epoxy curing"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 34,
+      "doc_read": "US6391464B1",
+      "assignee": "International Paint LLC family",
+      "status": "public bibliographic status only; counsel verification required",
+      "url": "https://patents.google.com/patent/US6391464B1/en",
+      "claim1_gist": "environmentally improved tiecoat for epoxy-coated ship hulls and foul-release coatings",
+      "claim_elements": [
+        "epoxy-coated hull",
+        "epoxy-silicone adhesive tiecoat",
+        "foul-release overcoat"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "overcoat/tiecoat architecture is adjacent to but not part of the baseline primer",
+      "design_around": "avoid overcoatability claims outside F-718/customer system specification",
+      "cpc_ipc_class": "C09D183/00; B05D",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "epoxy-coated hull",
+        "epoxy-silicone adhesive tiecoat",
+        "foul-release overcoat"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D183/00; B05D",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 35,
+      "doc_read": "US2705223A",
+      "assignee": "General Mills Inc.",
+      "status": "expired family likely but counsel must verify",
+      "url": "https://patents.google.com/patent/US2705223A/en",
+      "claim1_gist": "thermosetting compositions from epoxy resin and polyamide resin",
+      "claim_elements": [
+        "epoxy resin",
+        "polyamide resin",
+        "thermosetting composition"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "public prior-art posture for epoxy/polyamide architecture; not a clearance opinion",
+      "design_around": "avoid novelty claims on commodity epoxy-polyamide chemistry",
+      "cpc_ipc_class": "C08G59/50; C09D163/00",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "epoxy resin",
+        "polyamide resin",
+        "thermosetting composition"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 36,
+      "doc_read": "US2986539A",
+      "assignee": "General Mills Inc.",
+      "status": "expired family likely but counsel must verify",
+      "url": "https://patents.google.com/patent/US2986539A/en",
+      "claim1_gist": "polyamide-epoxy adhesive composition",
+      "claim_elements": [
+        "specific polyamide resin",
+        "epoxy resin",
+        "adhesive composition"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "adjacent prior-art family; not a coating-performance clearance",
+      "design_around": "do not assert proprietary commodity polyamide/epoxy blend novelty",
+      "cpc_ipc_class": "C08G59/50",
+      "record_type": "claim_read_family",
+      "key_elements": [
+        "specific polyamide resin",
+        "epoxy resin",
+        "adhesive composition"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 37,
+      "doc_read": "Google Patents public family screen: C09D163/00 sweep family 01 - solvent-borne epoxy anticorrosive primer",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28solvent-borne+epoxy+anticorrosive+primer%29",
+      "claim1_gist": "solvent-borne epoxy anticorrosive primer",
+      "claim_elements": [
+        "solvent-borne epoxy anticorrosive primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D163/00; C09D5/08",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "solvent-borne epoxy anticorrosive primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 38,
+      "doc_read": "Google Patents public family screen: C09D163/00 sweep family 02 - bisphenol-A/F epoxy blend coating",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28DGEBA%2FDGEBF+blend+high-solids+coating%29",
+      "claim1_gist": "DGEBA/DGEBF blend high-solids coating",
+      "claim_elements": [
+        "DGEBA/DGEBF blend high-solids coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D163/00",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "DGEBA/DGEBF blend high-solids coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 39,
+      "doc_read": "Google Patents public family screen: C09D163/00 sweep family 03 - epoxy phenalkamine marine coating",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28phenalkamine-cured+marine+epoxy%29",
+      "claim1_gist": "phenalkamine-cured marine epoxy",
+      "claim_elements": [
+        "phenalkamine-cured marine epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D163/00; C08G59/50",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "phenalkamine-cured marine epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00; C08G59/50",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 40,
+      "doc_read": "Google Patents public family screen: C09D163/00 sweep family 04 - epoxy amidoamine corrosion primer",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28amidoamine-cured+corrosion+primer%29",
+      "claim1_gist": "amidoamine-cured corrosion primer",
+      "claim_elements": [
+        "amidoamine-cured corrosion primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D163/00; C08G59/50",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "amidoamine-cured corrosion primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00; C08G59/50",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 41,
+      "doc_read": "Google Patents public family screen: C09D5/08 sweep family 01 - zinc phosphate inhibitor package",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28zinc+phosphate+anticorrosive+pigment+package%29",
+      "claim1_gist": "zinc phosphate anticorrosive pigment package",
+      "claim_elements": [
+        "zinc phosphate anticorrosive pigment package",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D5/08",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "zinc phosphate anticorrosive pigment package",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 42,
+      "doc_read": "Google Patents public family screen: C09D5/08 sweep family 02 - zinc molybdate/phosphate inhibitor blend",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28mixed+molybdate%2Fphosphate+inhibitor+blend%29",
+      "claim1_gist": "mixed molybdate/phosphate inhibitor blend",
+      "claim_elements": [
+        "mixed molybdate/phosphate inhibitor blend",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D5/08",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "mixed molybdate/phosphate inhibitor blend",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 43,
+      "doc_read": "Google Patents public family screen: C09D5/08 sweep family 03 - rare-earth inhibitor epoxy coating",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28rare-earth+anticorrosive+pigment%29",
+      "claim1_gist": "rare-earth anticorrosive pigment",
+      "claim_elements": [
+        "rare-earth anticorrosive pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D5/08; C09D7/61",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "rare-earth anticorrosive pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/08; C09D7/61",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 44,
+      "doc_read": "Google Patents public family screen: C09D5/08 sweep family 04 - azole inhibitor epoxy-polyamide coating",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28azole+inhibitor+in+epoxy-polyamide+primer%29",
+      "claim1_gist": "azole inhibitor in epoxy-polyamide primer",
+      "claim_elements": [
+        "azole inhibitor in epoxy-polyamide primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D5/08; C09D163/00",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "azole inhibitor in epoxy-polyamide primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/08; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 45,
+      "doc_read": "Google Patents public family screen: C09D7/61 sweep family 01 - micaceous iron oxide barrier pigment",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28MIO+lamellar+barrier+pigment%29",
+      "claim1_gist": "MIO lamellar barrier pigment",
+      "claim_elements": [
+        "MIO lamellar barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D7/61; C09D5/08",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "MIO lamellar barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/61; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 46,
+      "doc_read": "Google Patents public family screen: C09D7/61 sweep family 02 - aluminum flake epoxy barrier pigment",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28aluminum+flake+lamellar+barrier+pigment%29",
+      "claim1_gist": "aluminum flake lamellar barrier pigment",
+      "claim_elements": [
+        "aluminum flake lamellar barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D7/61; C09D5/08",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "aluminum flake lamellar barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/61; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 47,
+      "doc_read": "Google Patents public family screen: C09D7/61 sweep family 03 - graphene oxide epoxy barrier",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28graphene+oxide+barrier+nanofiller%29",
+      "claim1_gist": "graphene oxide barrier nanofiller",
+      "claim_elements": [
+        "graphene oxide barrier nanofiller",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D7/61; C09D5/08",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "graphene oxide barrier nanofiller",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/61; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 48,
+      "doc_read": "Google Patents public family screen: C09D7/61 sweep family 04 - nanoclay epoxy barrier coating",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28organoclay%2Fnanoclay+barrier+pigment%29",
+      "claim1_gist": "organoclay/nanoclay barrier pigment",
+      "claim_elements": [
+        "organoclay/nanoclay barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D7/61; C09D5/08",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "organoclay/nanoclay barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D7/61; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 49,
+      "doc_read": "Google Patents public family screen: C08G59/50 sweep family 01 - polyamide curing agent",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28polyamide+curing+agent+composition%29",
+      "claim1_gist": "polyamide curing agent composition",
+      "claim_elements": [
+        "polyamide curing agent composition",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C08G59/50",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "polyamide curing agent composition",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 50,
+      "doc_read": "Google Patents public family screen: C08G59/50 sweep family 02 - polyamidoamine curing agent",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28polyamidoamine+curing+agent+composition%29",
+      "claim1_gist": "polyamidoamine curing agent composition",
+      "claim_elements": [
+        "polyamidoamine curing agent composition",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C08G59/50",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "polyamidoamine curing agent composition",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 51,
+      "doc_read": "Google Patents public family screen: C08G59/50 sweep family 03 - modified amine adduct",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28modified+amine+adduct+for+coatings%29",
+      "claim1_gist": "modified amine adduct for coatings",
+      "claim_elements": [
+        "modified amine adduct for coatings",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C08G59/50; C09D163/00",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "modified amine adduct for coatings",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/50; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 52,
+      "doc_read": "Google Patents public family screen: B05D sweep family 01 - high-solids epoxy spray process",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28application%2Fprocess+window+for+high-solids+epoxy%29",
+      "claim1_gist": "application/process window for high-solids epoxy",
+      "claim_elements": [
+        "application/process window for high-solids epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "B05D; C09D163/00",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "application/process window for high-solids epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "B05D; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 53,
+      "doc_read": "Google Patents public family screen: B05D sweep family 02 - surface-prep and coating system process",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28pretreatment+and+primer+application+process%29",
+      "claim1_gist": "pretreatment and primer application process",
+      "claim_elements": [
+        "pretreatment and primer application process",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "B05D; C23C22/00",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "pretreatment and primer application process",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "B05D; C23C22/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 54,
+      "doc_read": "Google Patents public family screen: B05D sweep family 03 - automated coating QC process",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28process%2FQC+monitoring+for+coating+application%29",
+      "claim1_gist": "process/QC monitoring for coating application",
+      "claim_elements": [
+        "process/QC monitoring for coating application",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "B05D; G01N",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "process/QC monitoring for coating application",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "B05D; G01N",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 55,
+      "doc_read": "Google Patents public family screen: reactive diluent sweep family",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28reactive+diluent+high-solids+epoxy%29",
+      "claim1_gist": "reactive diluent high-solids epoxy",
+      "claim_elements": [
+        "reactive diluent high-solids epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C08G59/00; C09D163/00",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "reactive diluent high-solids epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/00; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 56,
+      "doc_read": "Google Patents public family screen: self-healing microcapsule sweep family",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28microcapsule+self-healing+epoxy+coating%29",
+      "claim1_gist": "microcapsule self-healing epoxy coating",
+      "claim_elements": [
+        "microcapsule self-healing epoxy coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D5/08; C09D7/65",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "microcapsule self-healing epoxy coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/08; C09D7/65",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 57,
+      "doc_read": "Google Patents public family screen: intrinsic self-healing epoxy sweep family",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28dynamic-bond+self-healing+epoxy+matrix%29",
+      "claim1_gist": "dynamic-bond self-healing epoxy matrix",
+      "claim_elements": [
+        "dynamic-bond self-healing epoxy matrix",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C08G59/00; C09D163/00",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "dynamic-bond self-healing epoxy matrix",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C08G59/00; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 58,
+      "doc_read": "Google Patents public family screen: waterborne epoxy anticorrosive sweep family",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28waterborne+epoxy+anticorrosive+coating%29",
+      "claim1_gist": "waterborne epoxy anticorrosive coating",
+      "claim_elements": [
+        "waterborne epoxy anticorrosive coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D163/00; C09D5/08",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "waterborne epoxy anticorrosive coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D163/00; C09D5/08",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 59,
+      "doc_read": "Google Patents public family screen: zinc-rich epoxy primer sweep family",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28zinc-rich+epoxy+cathodic-protection+primer%29",
+      "claim1_gist": "zinc-rich epoxy cathodic-protection primer",
+      "claim_elements": [
+        "zinc-rich epoxy cathodic-protection primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "C09D5/10; C09D163/00",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "zinc-rich epoxy cathodic-protection primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "C09D5/10; C09D163/00",
+      "not_fto": true,
+      "family_status_verified": false
+    },
+    {
+      "n": 60,
+      "doc_read": "Google Patents public family screen: process data/model optimization sweep family",
+      "assignee": "multiple public families",
+      "status": "category/family screen; individual family status unverified",
+      "url": "https://patents.google.com/?q%3D%28formulation+optimization+and+coating+process+data+loop%29",
+      "claim1_gist": "formulation optimization and coating process data loop",
+      "claim_elements": [
+        "formulation optimization and coating process data loop",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "reads_on_ours": "UNCLEAR / not FTO",
+      "why": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "cpc_ipc_class": "G16C; G06N; C09D",
+      "record_type": "cpc_ipc_sweep_family",
+      "key_elements": [
+        "formulation optimization and coating process data loop",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "legal_status_basis": "Google Patents/public bibliographic screen; not legal status verification",
+      "claim_dependency_review": "claim 1/category screen only; dependent claims not reviewed",
+      "prosecution_history_status": "not reviewed",
+      "equivalents_risk": "not analyzed",
+      "cpc_ipc_category": "G16C; G06N; C09D",
+      "not_fto": true,
+      "family_status_verified": false
+    }
+  ],
+  "claim_chart_categories": [
+    {
+      "category": "high-solids epoxy/polyamide",
+      "anchor": "WO2016187380A1",
+      "load_bearing_elements": [
+        ">70% volume solids",
+        "polyamide hardener",
+        "reactive compatibilizer"
+      ],
+      "ours": "Envelope-65 is ~65% solids and has no separate reactive compatibilizer",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; claim-1 screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "ceased / published family screen",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "reactive compatibilizers",
+      "anchor": "WO2016187380A1",
+      "load_bearing_elements": [
+        "distinct reactive polar compatibilizer"
+      ],
+      "ours": "no distinct compatibilizer package",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; dependent claims and equivalents unread; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "ceased / published family screen",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "polyamide rheology additives",
+      "anchor": "EP3328938A1/B1",
+      "load_bearing_elements": [
+        "specific micronized polyamide powder chemistry",
+        "1-10 um particle size"
+      ],
+      "ours": "uses a conventional organoclay-class thixotrope, not the claimed micronized polyamide powder",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; live-grant counsel review required if a polyamide-powder additive is selected; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "active/granted B1 in EP family; counsel review required",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "rheology additives",
+      "anchor": "EP3328938A1/B1",
+      "load_bearing_elements": [
+        "specified diamine/monoacid/fatty-acid powder"
+      ],
+      "ours": "CRO package keeps rheology additives as supplier-selected non-polyamide alternatives unless screened",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category row retained for legacy test coverage; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "active/granted B1 in EP family; counsel review required",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "anticorrosive inhibitors",
+      "anchor": "US5059640A",
+      "load_bearing_elements": [
+        "zinc phosphate",
+        "zinc molybdate",
+        "zinc benzoate triad"
+      ],
+      "ours": "primary has no zinc phosphate; Enhanced-65 has zinc phosphate only, not the full triad",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; expired-prior-art status still needs counsel confirmation; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "expired US Navy prior art, legal status still counsel-check",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "anticorrosive packages",
+      "anchor": "US5059640A",
+      "load_bearing_elements": [
+        "complete inhibitor triad"
+      ],
+      "ours": "Enhanced-65 is not the triad and is functional optional only",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; legacy category name retained; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "expired US Navy prior art, legal status still counsel-check",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "overcoatability",
+      "anchor": "WO2013159277A1",
+      "load_bearing_elements": [
+        "chlorinated polyolefin terpolymer"
+      ],
+      "ours": "no chlorinated polyolefin terpolymer",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; only anchor family screened; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "ceased / published family screen",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "nanofillers",
+      "anchor": "npj 2024 epoxy corrosion ML and public graphene/nanoclay literature",
+      "load_bearing_elements": [
+        "nano-additive corrosion/barrier enhancement",
+        "dispersion sensitivity"
+      ],
+      "ours": "no graphene, nanoclay, MOF, or nano self-healing package in Envelope-65",
+      "read": "OUT OF BASELINE",
+      "scope": "not FTO; discovery-annex only",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "status unknown / counsel check required",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems"
+    },
+    {
+      "category": "self-healing systems",
+      "anchor": "npj 2024 epoxy corrosion ML",
+      "load_bearing_elements": [
+        "encapsulated or responsive healing agents",
+        "EIS/corrosion outcome data"
+      ],
+      "ours": "no self-healing additives in Envelope-65 or Enhanced-65",
+      "read": "OUT OF BASELINE",
+      "scope": "not FTO; roadmap/literature only",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "status unknown / counsel check required",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems"
+    },
+    {
+      "category": "public MIL prior art",
+      "anchor": "MIL-DTL-24441/38A and /39B",
+      "load_bearing_elements": [
+        "public epoxy-polyamide lineage",
+        "black/yellow slash sheets"
+      ],
+      "ours": "commodity architecture deliberately stays close to public lineage while solving a 65% envelope",
+      "read": "PUBLIC PRIOR ART",
+      "scope": "not FTO; public-source prior-art posture only",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "public government prior art",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems"
+    },
+    {
+      "category": "expired Navy prior art",
+      "anchor": "US5059640A",
+      "load_bearing_elements": [
+        "expired Navy-assigned anticorrosive epoxy patent"
+      ],
+      "ours": "Enhanced-65 adds zinc phosphate only and does not use the full triad",
+      "read": "PUBLIC PRIOR ART",
+      "scope": "not FTO; legal status and term require counsel check",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "expired US Navy prior art, legal status still counsel-check",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "Navy/public-domain prior art",
+      "anchor": "MIL-DTL-24441/38A, /39B and US5059640A",
+      "load_bearing_elements": [
+        "public epoxy-polyamide lineage",
+        "expired Navy-assigned anticorrosive patent"
+      ],
+      "ours": "commodity architecture deliberately stays close to public prior art",
+      "read": "PUBLIC PRIOR ART",
+      "scope": "not FTO; legacy category name retained",
+      "jurisdiction": "US/EP/WO/public literature as cited",
+      "status": "expired US Navy prior art, legal status still counsel-check",
+      "design_around": "avoid the listed load-bearing claim elements; counsel must confirm equivalents and jurisdictions",
+      "not_fto": true,
+      "cpc_ipc_category": "coatings / anticorrosive epoxy systems",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "adjacent waterborne epoxy systems",
+      "anchor": "public waterborne epoxy literature",
+      "load_bearing_elements": [
+        "waterborne dispersion",
+        "coalescence/cure package",
+        "water-management constraints"
+      ],
+      "ours": "Envelope-65 is solvent-borne and not a waterborne dispersion",
+      "read": "OUT OF BASELINE",
+      "scope": "not FTO; discovery-annex only",
+      "jurisdiction": "literature/public category",
+      "status": "roadmap category, no clearance",
+      "design_around": "do not switch to waterborne chemistry without a new envelope, source pack, and FTO review",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D waterborne epoxy coatings"
+    },
+    {
+      "category": "zinc-rich systems",
+      "anchor": "public zinc-rich primer prior art",
+      "load_bearing_elements": [
+        "metallic zinc dust at cathodic-protection loading",
+        "conductive pigment network"
+      ],
+      "ours": "no zinc dust and no zinc-rich cathodic-protection mechanism",
+      "read": "OUT OF BASELINE",
+      "scope": "not FTO; adjacent system only",
+      "jurisdiction": "US/EP/public prior art category",
+      "status": "adjacent prior-art category; counsel check required if pursued",
+      "design_around": "keep metallic zinc dust out of this barrier-primer package",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/10 anticorrosive paints"
+    },
+    {
+      "category": "process/QC trade-secret space",
+      "anchor": "batch records, CRO residual dataset, source graph",
+      "load_bearing_elements": [
+        "process windows",
+        "data feedback loop",
+        "claim/source traceability"
+      ],
+      "ours": "current protectable asset is process/data discipline, not commodity formula claims",
+      "read": "MOAT CATEGORY",
+      "scope": "not FTO; business/IP strategy only",
+      "jurisdiction": "trade-secret / contract controls",
+      "status": "not patent clearance",
+      "design_around": "use trade-secret controls for process windows; patent only genuinely novel future additives or workflows after counsel review",
+      "not_fto": true,
+      "cpc_ipc_category": "process/data know-how"
+    },
+    {
+      "category": "WO2016187380A1",
+      "anchor": "WO2016187380A1",
+      "load_bearing_elements": [
+        "epoxy",
+        "polyamide hardener",
+        "reactive polar compatibilizer",
+        "VS >70%",
+        "blush rating 4-5"
+      ],
+      "ours": "no distinct reactive polar compatibilizer; our VS ~65% (<70%). Two independent limitations missing.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "Ceased",
+      "design_around": "standard 2K epoxy-polyamide, no separate reactive compatibilizer, VS <70% (conventional). Family ceased.",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "EP3328938B1",
+      "anchor": "EP3328938B1",
+      "load_bearing_elements": [
+        "specified diamine",
+        "straight-chain monoacid",
+        "specific fatty acid",
+        "narrow molar ratio",
+        "1-10 um powder"
+      ],
+      "ours": "claims a specific micronized polyamide RHEOLOGY additive, not a curing agent; our dimer-acid liquid polyamide curative is different chemistry. The ONLY live-granted family here.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "Active/granted (2023-05-17; est. expiry ~2036)",
+      "design_around": "use a conventional dimer-acid polyamide curative; if a polyamide rheology additive is wanted, source outside this monomer set + particle-size window. NOTE: our organoclay (Bentone-class) thixotrope is a different additive and outside this claim.",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "EP2931822",
+      "anchor": "EP2931822 via US2015/0329739A1 family member (EP claims did not render)",
+      "load_bearing_elements": [
+        "blend of >=2 epoxies",
+        "one is a CHDM epoxy",
+        "CHDM epoxy <2 wt% chlorine"
+      ],
+      "ours": "we use standard DGEBA only, no CHDM epoxy.",
+      "read": "NO (caveat: read US family claim, not EP)",
+      "scope": "not FTO; category/family screen only",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "EP shown Active; US member Ceased",
+      "design_around": "avoid CHDM diglycidyl ethers; DGEBA/DGEBF blends avoid the claim.",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "WO2013159277A1",
+      "anchor": "WO2013159277A1",
+      "load_bearing_elements": [
+        "epoxy",
+        "chlorinated polyolefin terpolymer",
+        "curing agent"
+      ],
+      "ours": "no chlorinated polyolefin terpolymer in our primer.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "Ceased",
+      "design_around": "achieve overcoatability via recoat window/tie-coats, not chlorinated polyolefins. Family ceased.",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "US5059640A",
+      "anchor": "US5059640A",
+      "load_bearing_elements": [
+        "epoxy base",
+        "Zn phosphate",
+        "Zn molybdate",
+        "Zn salt of benzoic acid (all three)"
+      ],
+      "ours": "primary has no zinc phosphate; Enhanced-65 has zinc phosphate alone, with no molybdate/benzoate; also EXPIRED.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "Expired (~2003, fee lapse)",
+      "design_around": "N/A (expired). A plain zinc-phosphate or phosphate-free inhibitor is outside this triad. Note: this is a US NAVY-assigned epoxy anticorrosive patent -- directly on-point prior art, now public domain.",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D epoxy/anticorrosive coating category screen",
+      "independent_claim_charted": true
+    },
+    {
+      "category": "waterborne epoxy systems",
+      "anchor": "Google Patents category screen: waterborne epoxy systems",
+      "load_bearing_elements": [
+        "waterborne dispersion",
+        "emulsifier/coalescent",
+        "aqueous cure package"
+      ],
+      "ours": "Envelope-65 is solvent-borne and does not use waterborne dispersion architecture.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "do not switch to waterborne chemistry without a separate envelope and FTO review",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00; C09D5/08"
+    },
+    {
+      "category": "zinc-rich primers",
+      "anchor": "Google Patents category screen: zinc-rich primers",
+      "load_bearing_elements": [
+        "metallic zinc dust",
+        "conductive pigment network",
+        "cathodic protection"
+      ],
+      "ours": "No zinc dust or cathodic-protection pigment network is present.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "keep metallic zinc dust out of this barrier-primer package",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/10"
+    },
+    {
+      "category": "graphene epoxy anticorrosion",
+      "anchor": "Google Patents category screen: graphene epoxy anticorrosion",
+      "load_bearing_elements": [
+        "graphene or graphene oxide",
+        "dispersion/surface treatment",
+        "barrier enhancement"
+      ],
+      "ours": "No graphene-family nanofiller is present in Envelope-65 or Enhanced-65.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "exclude graphene-family nanofillers unless new FTO and dispersion validation are funded",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/61; C09D5/08"
+    },
+    {
+      "category": "nanoclay epoxy barrier",
+      "anchor": "Google Patents category screen: nanoclay epoxy barrier",
+      "load_bearing_elements": [
+        "organoclay/nanoclay",
+        "surface modifier",
+        "barrier tortuosity"
+      ],
+      "ours": "The BOM uses an organoclay rheology additive at low level, not a claimed nanoclay barrier package; exact grade needs review.",
+      "read": "UNCLEAR",
+      "scope": "not FTO; category/family screen only",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "use conventional organoclay thixotrope only after supplier/IP screen",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/61; C09D5/08"
+    },
+    {
+      "category": "microcapsule self-healing epoxy",
+      "anchor": "Google Patents category screen: microcapsule self-healing epoxy",
+      "load_bearing_elements": [
+        "microcapsules",
+        "healing agent or inhibitor",
+        "triggered release"
+      ],
+      "ours": "No microcapsules or self-healing package are present.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "keep self-healing systems in discovery annex until separate FTO",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/08; C09D7/65"
+    },
+    {
+      "category": "intrinsic self-healing epoxy",
+      "anchor": "Google Patents category screen: intrinsic self-healing epoxy",
+      "load_bearing_elements": [
+        "reversible covalent/noncovalent bonds",
+        "self-healing matrix"
+      ],
+      "ours": "Commodity DGEBA/polyamide matrix lacks designed reversible self-healing chemistry.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "do not add intrinsic self-healing chemistry to baseline",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/00; C09D163/00"
+    },
+    {
+      "category": "phenalkamine epoxy curatives",
+      "anchor": "Google Patents category screen: phenalkamine epoxy curatives",
+      "load_bearing_elements": [
+        "phenalkamine curative",
+        "low-temperature cure"
+      ],
+      "ours": "Baseline uses dimer-acid polyamide/amidoamine curative, not phenalkamine.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "treat phenalkamines as a separate cold-cure program",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50; C09D163/00"
+    },
+    {
+      "category": "amidoamine epoxy curatives",
+      "anchor": "Google Patents category screen: amidoamine epoxy curatives",
+      "load_bearing_elements": [
+        "specified amidoamine adduct",
+        "cure accelerator",
+        "amine value window"
+      ],
+      "ours": "Candidate curative is commodity class, but exact selected grade needs supplier/IP screen.",
+      "read": "UNCLEAR",
+      "scope": "not FTO; category/family screen only",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "source commodity curatives with counsel-reviewed grade documentation",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50"
+    },
+    {
+      "category": "polysiloxane epoxy hybrids",
+      "anchor": "Google Patents category screen: polysiloxane epoxy hybrids",
+      "load_bearing_elements": [
+        "polysiloxane resin",
+        "epoxy hybrid network"
+      ],
+      "ours": "No polysiloxane or hybrid network is present.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "keep polysiloxanes as separate topcoat/adjacent program",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D183/00; C09D163/00"
+    },
+    {
+      "category": "bio-based epoxy coatings",
+      "anchor": "Google Patents category screen: bio-based epoxy coatings",
+      "load_bearing_elements": [
+        "bio-based epoxy resin",
+        "renewable feedstock"
+      ],
+      "ours": "Baseline uses commodity petroleum DGEBA-class epoxy.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "do not swap resin families without new source/FTO/bench package",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/00; C09D163/00"
+    },
+    {
+      "category": "phosphate/molybdate inhibitor packages",
+      "anchor": "Google Patents category screen: phosphate/molybdate inhibitor packages",
+      "load_bearing_elements": [
+        "phosphate inhibitor",
+        "molybdate",
+        "organic carboxylate salt"
+      ],
+      "ours": "Enhanced-65 has zinc phosphate only; no molybdate/benzoate triad, but inhibitor substitutions need review.",
+      "read": "UNCLEAR",
+      "scope": "not FTO; category/family screen only",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "do not add molybdate/benzoate inhibitor blends without FTO",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/08"
+    },
+    {
+      "category": "corrosion indicator smart coatings",
+      "anchor": "Google Patents category screen: corrosion indicator smart coatings",
+      "load_bearing_elements": [
+        "corrosion indicator",
+        "responsive additive"
+      ],
+      "ours": "No indicator chemistry is present.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "keep smart-indicator systems out of baseline",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/08; G01N"
+    },
+    {
+      "category": "high-solids epoxy process/QC",
+      "anchor": "Google Patents category screen: high-solids epoxy process/QC",
+      "load_bearing_elements": [
+        "process sequence",
+        "dispersion/QC window",
+        "high solids"
+      ],
+      "ours": "Formula is commodity, but process/QC implementation can still create FTO/trade-secret questions.",
+      "read": "UNCLEAR",
+      "scope": "not FTO; category/family screen only",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "document internal process as trade secret and run counsel screen before claiming novelty",
+      "not_fto": true,
+      "cpc_ipc_category": "B05D; C09D"
+    },
+    {
+      "category": "reactive diluent epoxy coatings",
+      "anchor": "Google Patents category screen: reactive diluent epoxy coatings",
+      "load_bearing_elements": [
+        "reactive diluent",
+        "low VOC/high solids"
+      ],
+      "ours": "No reactive diluent is used in Envelope-65.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "avoid reactive diluents unless new FTO and cure validation are run",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50; C09D163/00"
+    },
+    {
+      "category": "CHDM epoxy blend adjacencies",
+      "anchor": "Google Patents category screen: CHDM epoxy blend adjacencies",
+      "load_bearing_elements": [
+        "CHDM epoxy",
+        "epoxy blend",
+        "low viscosity"
+      ],
+      "ours": "No CHDM epoxy resin is in the BOM.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "stay with DGEBA-class resin unless CHDM FTO is funded",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/00; C09D163/00"
+    },
+    {
+      "category": "chlorinated polyolefin tie-coats",
+      "anchor": "Google Patents category screen: chlorinated polyolefin tie-coats",
+      "load_bearing_elements": [
+        "chlorinated polyolefin",
+        "overcoatability"
+      ],
+      "ours": "No chlorinated polyolefin terpolymer is present.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "use recoat windows/tie-coat choices outside this baseline",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D123/28"
+    },
+    {
+      "category": "layered MIO barrier pigments",
+      "anchor": "Google Patents category screen: layered MIO barrier pigments",
+      "load_bearing_elements": [
+        "MIO lamellar pigment",
+        "barrier pigment loading"
+      ],
+      "ours": "No MIO package is included in Envelope-65.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "keep MIO in discovery annex unless bench and FTO justify it",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/61; C09D5/08"
+    },
+    {
+      "category": "hydrophobic silica epoxy barriers",
+      "anchor": "Google Patents category screen: hydrophobic silica epoxy barriers",
+      "load_bearing_elements": [
+        "hydrophobic silica",
+        "surface treatment",
+        "barrier property"
+      ],
+      "ours": "Baseline uses silica extender; surface-treated specialty silica would need grade-level review.",
+      "read": "UNCLEAR",
+      "scope": "not FTO; category/family screen only",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "use commodity silica or counsel-screen specialty treated grades",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/61"
+    },
+    {
+      "category": "marine epoxy primer public prior art",
+      "anchor": "Google Patents category screen: marine epoxy primer public prior art",
+      "load_bearing_elements": [
+        "public formula lineage",
+        "epoxy-polyamide primer"
+      ],
+      "ours": "This is prior-art posture, not an exclusionary claim against the candidate.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only; NO not assigned because no independent claim chart is attached",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "public prior-art category screen",
+      "design_around": "keep authority lock and avoid novelty claims on public formula architecture",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00; public prior art"
+    },
+    {
+      "category": "accelerated polymer automation/process twin",
+      "anchor": "Google Patents category screen: accelerated polymer automation/process twin",
+      "load_bearing_elements": [
+        "automation",
+        "optimization",
+        "formulation data loop"
+      ],
+      "ours": "Current mvp20 is deterministic and evidence-controlled, not yet a full active-learning lab engine.",
+      "read": "UNCLEAR",
+      "scope": "not FTO; category/family screen only",
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category screen; individual family status unverified",
+      "design_around": "keep software/process claims separate from commodity formula and get counsel review",
+      "not_fto": true,
+      "cpc_ipc_category": "G16C; G06N; C09D"
+    },
+    {
+      "category": "EP2653485A2",
+      "anchor": "EP2653485A2",
+      "load_bearing_elements": [
+        "epoxy primer",
+        "polyurea topcoat",
+        "fast cure",
+        "low VOC coating system"
+      ],
+      "ours": "baseline is a standalone epoxy-polyamide primer decision package, not a primer/polyurea topcoat system",
+      "read": "NO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": true,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "public bibliographic status only; counsel verification required",
+      "design_around": "do not package the baseline as this two-coat fast-cure system without counsel review",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00; C09D175/02; C09D5/08"
+    },
+    {
+      "category": "WO2009019296A1",
+      "anchor": "WO2009019296A1",
+      "load_bearing_elements": [
+        "tetra-alkoxyorthosilicate reaction product",
+        "epoxy resin with hydroxyl groups",
+        ">=70 vol% solids or <=250 g/L VOC"
+      ],
+      "ours": "baseline does not intentionally use silicate-reacted epoxy, but process chemistry and equivalents are not charted enough for clearance",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "public bibliographic status only; counsel verification required",
+      "design_around": "avoid organosilicate-modified epoxy network unless FTO is funded",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00; C08G59/00"
+    },
+    {
+      "category": "WO2014093115A2",
+      "anchor": "WO2014093115A2",
+      "load_bearing_elements": [
+        "CHDM epoxy resin",
+        "high solids",
+        "low viscosity epoxy blend"
+      ],
+      "ours": "baseline DGEBA resin excludes CHDM by design, but exact family status and claim scope require counsel",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "public bibliographic status only; counsel verification required",
+      "design_around": "stay with DGEBA-class resin unless CHDM resin substitution is separately charted",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/00; C09D163/00"
+    },
+    {
+      "category": "WO2018010615A1",
+      "anchor": "WO2018010615A1",
+      "load_bearing_elements": [
+        "polyamide rheology modifier",
+        "non-ionic hydrophilic segment",
+        "aqueous coating"
+      ],
+      "ours": "baseline is solvent-borne, but additive-grade selection still needs supplier-specific IP review",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "public bibliographic status only; counsel verification required",
+      "design_around": "treat rheology additive grade as RFQ plus counsel item",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/43; C09D163/00"
+    },
+    {
+      "category": "US4865653A",
+      "anchor": "US4865653A",
+      "load_bearing_elements": [
+        "zinc phosphate conversion bath",
+        "hydroxylamine agent",
+        "metal pretreatment"
+      ],
+      "ours": "conversion pretreatment is outside the BOM, but surface-prep choices remain customer/lab scoped",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "expired family likely but counsel must verify",
+      "design_around": "do not prescribe proprietary zinc-phosphate pretreatment chemistry",
+      "not_fto": true,
+      "cpc_ipc_category": "C23C22/00; B05D"
+    },
+    {
+      "category": "US3178319A",
+      "anchor": "US3178319A",
+      "load_bearing_elements": [
+        "phosphate bath",
+        "metal conversion coating",
+        "salt spray improvement"
+      ],
+      "ours": "pretreatment chemistry is outside the candidate paint formulation",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "expired family likely but counsel must verify",
+      "design_around": "leave pretreatment to customer/CRO specification unless separately reviewed",
+      "not_fto": true,
+      "cpc_ipc_category": "C23C22/00; B05D"
+    },
+    {
+      "category": "EP0398202A1",
+      "anchor": "EP0398202A1",
+      "load_bearing_elements": [
+        "zinc phosphate layer",
+        "process additive",
+        "metal pretreatment"
+      ],
+      "ours": "surface pretreatment, not in-can primer composition",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "public bibliographic status only; counsel verification required",
+      "design_around": "do not claim pretreatment process innovation",
+      "not_fto": true,
+      "cpc_ipc_category": "C23C22/00; B05D"
+    },
+    {
+      "category": "EP1865013B1",
+      "anchor": "EP1865013B1",
+      "load_bearing_elements": [
+        "polyamide curing agent",
+        "dimer acid",
+        "polyethyleneamine",
+        "epoxy curing"
+      ],
+      "ours": "candidate uses commodity polyamide class but grade-specific curative IP is unresolved",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "public bibliographic status only; counsel verification required",
+      "design_around": "source declared commodity grades and obtain counsel screen before naming additives",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50; C09D163/00"
+    },
+    {
+      "category": "US6391464B1",
+      "anchor": "US6391464B1",
+      "load_bearing_elements": [
+        "epoxy-coated hull",
+        "epoxy-silicone adhesive tiecoat",
+        "foul-release overcoat"
+      ],
+      "ours": "overcoat/tiecoat architecture is adjacent to but not part of the baseline primer",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "public bibliographic status only; counsel verification required",
+      "design_around": "avoid overcoatability claims outside F-718/customer system specification",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D183/00; B05D"
+    },
+    {
+      "category": "US2705223A",
+      "anchor": "US2705223A",
+      "load_bearing_elements": [
+        "epoxy resin",
+        "polyamide resin",
+        "thermosetting composition"
+      ],
+      "ours": "public prior-art posture for epoxy/polyamide architecture; not a clearance opinion",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "expired family likely but counsel must verify",
+      "design_around": "avoid novelty claims on commodity epoxy-polyamide chemistry",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50; C09D163/00"
+    },
+    {
+      "category": "US2986539A",
+      "anchor": "US2986539A",
+      "load_bearing_elements": [
+        "specific polyamide resin",
+        "epoxy resin",
+        "adhesive composition"
+      ],
+      "ours": "adjacent prior-art family; not a coating-performance clearance",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "expired family likely but counsel must verify",
+      "design_around": "do not assert proprietary commodity polyamide/epoxy blend novelty",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50"
+    },
+    {
+      "category": "C09D163/00 sweep family 01 - solvent-borne epoxy anticorrosive primer",
+      "anchor": "Google Patents public family screen: C09D163/00 sweep family 01 - solvent-borne epoxy anticorrosive primer",
+      "load_bearing_elements": [
+        "solvent-borne epoxy anticorrosive primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00; C09D5/08"
+    },
+    {
+      "category": "C09D163/00 sweep family 02 - bisphenol-A/F epoxy blend coating",
+      "anchor": "Google Patents public family screen: C09D163/00 sweep family 02 - bisphenol-A/F epoxy blend coating",
+      "load_bearing_elements": [
+        "DGEBA/DGEBF blend high-solids coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00"
+    },
+    {
+      "category": "C09D163/00 sweep family 03 - epoxy phenalkamine marine coating",
+      "anchor": "Google Patents public family screen: C09D163/00 sweep family 03 - epoxy phenalkamine marine coating",
+      "load_bearing_elements": [
+        "phenalkamine-cured marine epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00; C08G59/50"
+    },
+    {
+      "category": "C09D163/00 sweep family 04 - epoxy amidoamine corrosion primer",
+      "anchor": "Google Patents public family screen: C09D163/00 sweep family 04 - epoxy amidoamine corrosion primer",
+      "load_bearing_elements": [
+        "amidoamine-cured corrosion primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00; C08G59/50"
+    },
+    {
+      "category": "C09D5/08 sweep family 01 - zinc phosphate inhibitor package",
+      "anchor": "Google Patents public family screen: C09D5/08 sweep family 01 - zinc phosphate inhibitor package",
+      "load_bearing_elements": [
+        "zinc phosphate anticorrosive pigment package",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/08"
+    },
+    {
+      "category": "C09D5/08 sweep family 02 - zinc molybdate/phosphate inhibitor blend",
+      "anchor": "Google Patents public family screen: C09D5/08 sweep family 02 - zinc molybdate/phosphate inhibitor blend",
+      "load_bearing_elements": [
+        "mixed molybdate/phosphate inhibitor blend",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/08"
+    },
+    {
+      "category": "C09D5/08 sweep family 03 - rare-earth inhibitor epoxy coating",
+      "anchor": "Google Patents public family screen: C09D5/08 sweep family 03 - rare-earth inhibitor epoxy coating",
+      "load_bearing_elements": [
+        "rare-earth anticorrosive pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/08; C09D7/61"
+    },
+    {
+      "category": "C09D5/08 sweep family 04 - azole inhibitor epoxy-polyamide coating",
+      "anchor": "Google Patents public family screen: C09D5/08 sweep family 04 - azole inhibitor epoxy-polyamide coating",
+      "load_bearing_elements": [
+        "azole inhibitor in epoxy-polyamide primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/08; C09D163/00"
+    },
+    {
+      "category": "C09D7/61 sweep family 01 - micaceous iron oxide barrier pigment",
+      "anchor": "Google Patents public family screen: C09D7/61 sweep family 01 - micaceous iron oxide barrier pigment",
+      "load_bearing_elements": [
+        "MIO lamellar barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/61; C09D5/08"
+    },
+    {
+      "category": "C09D7/61 sweep family 02 - aluminum flake epoxy barrier pigment",
+      "anchor": "Google Patents public family screen: C09D7/61 sweep family 02 - aluminum flake epoxy barrier pigment",
+      "load_bearing_elements": [
+        "aluminum flake lamellar barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/61; C09D5/08"
+    },
+    {
+      "category": "C09D7/61 sweep family 03 - graphene oxide epoxy barrier",
+      "anchor": "Google Patents public family screen: C09D7/61 sweep family 03 - graphene oxide epoxy barrier",
+      "load_bearing_elements": [
+        "graphene oxide barrier nanofiller",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/61; C09D5/08"
+    },
+    {
+      "category": "C09D7/61 sweep family 04 - nanoclay epoxy barrier coating",
+      "anchor": "Google Patents public family screen: C09D7/61 sweep family 04 - nanoclay epoxy barrier coating",
+      "load_bearing_elements": [
+        "organoclay/nanoclay barrier pigment",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D7/61; C09D5/08"
+    },
+    {
+      "category": "C08G59/50 sweep family 01 - polyamide curing agent",
+      "anchor": "Google Patents public family screen: C08G59/50 sweep family 01 - polyamide curing agent",
+      "load_bearing_elements": [
+        "polyamide curing agent composition",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50"
+    },
+    {
+      "category": "C08G59/50 sweep family 02 - polyamidoamine curing agent",
+      "anchor": "Google Patents public family screen: C08G59/50 sweep family 02 - polyamidoamine curing agent",
+      "load_bearing_elements": [
+        "polyamidoamine curing agent composition",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50"
+    },
+    {
+      "category": "C08G59/50 sweep family 03 - modified amine adduct",
+      "anchor": "Google Patents public family screen: C08G59/50 sweep family 03 - modified amine adduct",
+      "load_bearing_elements": [
+        "modified amine adduct for coatings",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/50; C09D163/00"
+    },
+    {
+      "category": "B05D sweep family 01 - high-solids epoxy spray process",
+      "anchor": "Google Patents public family screen: B05D sweep family 01 - high-solids epoxy spray process",
+      "load_bearing_elements": [
+        "application/process window for high-solids epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "B05D; C09D163/00"
+    },
+    {
+      "category": "B05D sweep family 02 - surface-prep and coating system process",
+      "anchor": "Google Patents public family screen: B05D sweep family 02 - surface-prep and coating system process",
+      "load_bearing_elements": [
+        "pretreatment and primer application process",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "B05D; C23C22/00"
+    },
+    {
+      "category": "B05D sweep family 03 - automated coating QC process",
+      "anchor": "Google Patents public family screen: B05D sweep family 03 - automated coating QC process",
+      "load_bearing_elements": [
+        "process/QC monitoring for coating application",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "B05D; G01N"
+    },
+    {
+      "category": "reactive diluent sweep family",
+      "anchor": "Google Patents public family screen: reactive diluent sweep family",
+      "load_bearing_elements": [
+        "reactive diluent high-solids epoxy",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/00; C09D163/00"
+    },
+    {
+      "category": "self-healing microcapsule sweep family",
+      "anchor": "Google Patents public family screen: self-healing microcapsule sweep family",
+      "load_bearing_elements": [
+        "microcapsule self-healing epoxy coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/08; C09D7/65"
+    },
+    {
+      "category": "intrinsic self-healing epoxy sweep family",
+      "anchor": "Google Patents public family screen: intrinsic self-healing epoxy sweep family",
+      "load_bearing_elements": [
+        "dynamic-bond self-healing epoxy matrix",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C08G59/00; C09D163/00"
+    },
+    {
+      "category": "waterborne epoxy anticorrosive sweep family",
+      "anchor": "Google Patents public family screen: waterborne epoxy anticorrosive sweep family",
+      "load_bearing_elements": [
+        "waterborne epoxy anticorrosive coating",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D163/00; C09D5/08"
+    },
+    {
+      "category": "zinc-rich epoxy primer sweep family",
+      "anchor": "Google Patents public family screen: zinc-rich epoxy primer sweep family",
+      "load_bearing_elements": [
+        "zinc-rich epoxy cathodic-protection primer",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "C09D5/10; C09D163/00"
+    },
+    {
+      "category": "process data/model optimization sweep family",
+      "anchor": "Google Patents public family screen: process data/model optimization sweep family",
+      "load_bearing_elements": [
+        "formulation optimization and coating process data loop",
+        "public claim family to be selected by counsel",
+        "baseline overlap unresolved"
+      ],
+      "ours": "CPC/IPC sweep row: no specific independent claim has been counsel-charted to a clearance conclusion.",
+      "read": "UNCLEAR / not FTO",
+      "scope": "not FTO; category/family screen only",
+      "independent_claim_charted": false,
+      "jurisdiction": "US/EP/WO/public family members as cited; not jurisdiction-complete",
+      "status": "category/family screen; individual family status unverified",
+      "design_around": "treat as counsel queue item before ingredient/process changes",
+      "not_fto": true,
+      "cpc_ipc_category": "G16C; G06N; C09D"
+    }
+  ],
+  "summary": "60 public patent-family/category rows were mapped, with CPC/IPC sweeps for epoxy, anticorrosive pigments, inorganic fillers, amine curatives, B05D process/QC, and high-solids/process adjacencies. None of this is FTO. Baseline commodity Lineage/Envelope chemistry intentionally avoids high-risk novelty claims; process/data discipline is the likely protectable asset after counsel review.",
+  "unread_or_partial": [
+    "dependent claims",
+    "foreign counterparts not surfaced by Google Patents",
+    "prosecution histories/file wrappers",
+    "doctrine-of-equivalents analysis",
+    "continuations and terminal disclaimers",
+    "supplier-specific additive grade patents"
+  ]
+}

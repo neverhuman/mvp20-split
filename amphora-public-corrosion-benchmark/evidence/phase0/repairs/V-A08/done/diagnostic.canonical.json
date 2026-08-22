@@ -1,0 +1,147 @@
+{
+  "all_checks_pass": true,
+  "authority": "AUDIT_ONLY",
+  "checks": {
+    "1_precondition_done_receipt_exists": true,
+    "2_matches_r_a08_embedded_reattack_stdout_sha256": true,
+    "2_original_refuting_script_expected_sha256": "d6300bbd3fa6a8e3cb9d93838b668f10c68343b629ea0ec9e2b2da4910c42287",
+    "2_original_refuting_script_path": "evidence/audit/nist-baseline-fold-significance-v1/run_fold_significance.py",
+    "2_original_refuting_script_sha256": "d6300bbd3fa6a8e3cb9d93838b668f10c68343b629ea0ec9e2b2da4910c42287",
+    "2_reruns_byte_identical": true,
+    "2_run1_exit_code": 0,
+    "2_run1_stdout_sha256": "d7b154c654f1b8d33d48c96d3c19bc887af78de20e878513ca6a42124da9e799",
+    "2_run2_exit_code": 0,
+    "2_run2_stdout_sha256": "d7b154c654f1b8d33d48c96d3c19bc887af78de20e878513ca6a42124da9e799",
+    "2_same_seed_same_threshold": "alpha=0.01 fixed, LOSD-CV seed=0, refute bars unchanged from the committed script (>=60% fold-win, CI excludes 0, Wilcoxon p<=0.05)",
+    "2_script_unmodified": true,
+    "3_extra_in_index": [],
+    "3_index_complete_and_accurate": true,
+    "3_index_sha256_mismatches": [],
+    "3_missing_from_index": [],
+    "3_n_indexed_in_v2_consolidated": 8,
+    "3_n_on_disk_audit_receipts": 8,
+    "4_all_sigs_valid_and_pinned": true,
+    "4_dsse_signature_checks": [
+      {
+        "file_sha256": "7bbe415654234e0a68a8efa9fc923a24d9644c19e066b13a5ace9074871de76f",
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned": true,
+        "path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/R-A08-done-receipt.v1.dsse.json",
+        "sig_valid": true
+      },
+      {
+        "file_sha256": "4632e46083304a444ffbda2030be0004b28698b5751a935db96b371e6960c4dd",
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned": true,
+        "path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json",
+        "sig_valid": true
+      },
+      {
+        "file_sha256": "67b4136a975446b4346d97fda999807209473e6d6a3ff189dd6d2f7a86b92156",
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned": true,
+        "path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json",
+        "sig_valid": true
+      }
+    ],
+    "4_expected_keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "5_all_superseded_originals_byte_intact": true,
+    "5_byte_intact_checks": {
+      "amphora-public-corrosion-benchmark/evidence/phase0/kpis/audit-verdicts-consolidated-kpi.v1.json": {
+        "actual_sha256": "9b5766418c2c09643ebf7671c4fcc6acf6ffbd56242f5c4c6bc6e8d84c549ccf",
+        "byte_intact": true,
+        "expected_sha256": "9b5766418c2c09643ebf7671c4fcc6acf6ffbd56242f5c4c6bc6e8d84c549ccf"
+      },
+      "amphora-public-corrosion-benchmark/evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json": {
+        "actual_sha256": "bfbc32fe02df1d0bf8c7611ad8ab28c57f960eede7e640cda1db0b16078ab888",
+        "byte_intact": true,
+        "expected_sha256": "bfbc32fe02df1d0bf8c7611ad8ab28c57f960eede7e640cda1db0b16078ab888"
+      }
+    },
+    "6_escalation_beyond_repair_self_check": {
+      "alpha_selection_counts": {
+        "0.01": 3,
+        "0.1": 4,
+        "1.0": 23
+      },
+      "bootstrap_ci_seed_1234_b20000": [
+        -0.028329182046960166,
+        0.4799661988052148
+      ],
+      "bootstrap_ci_seed_1234_crosses_zero": true,
+      "bootstrap_ci_seed_99999_b20000": [
+        -0.03428695141686245,
+        0.4735875057221617
+      ],
+      "bootstrap_ci_seed_99999_crosses_zero": true,
+      "conclusion": "The 'no fold-robust, statistically significant lift' finding is NOT an artifact of under-tuned alpha or a cherry-picked bootstrap seed. It survives independent re-derivation from scratch.",
+      "method": "from-scratch re-implementation (not a copy of run_fold_significance.py) using nested per-fold Ridge alpha selection over the KPI's own stated grid [0.01,0.1,1.0,10.0,100.0] via 5-fold CV on the TRAINING fold only (the repair's reattack fixed alpha=0.01 throughout), plus two fresh cluster-bootstrap seeds (1234, 99999) independent of the repair's seed=0, B=20000 each.",
+      "n_folds": 30,
+      "n_folds_ridge_better": 16,
+      "pooled_null_mae": 0.6736173487910971,
+      "pooled_ridge_mae_nested_alpha": 0.5871902735241163,
+      "script_path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/V-A08/work/independent_reimpl.py",
+      "script_sha256": "6d0ef8d691f8b3311eef82b6e2573caf317b0fa4684259015b5a58192e1b64ef",
+      "sign_test_p": 0.8555355519056321,
+      "stdout_raw": "N_DOCS: 30\nALPHA_SELECTION_COUNTS: Counter({1.0: 23, 0.1: 4, 0.01: 3})\nPOOLED_RIDGE_MAE_NESTED_ALPHA: 0.5871902735241163\nPOOLED_NULL_MAE: 0.6736173487910971\nN_FOLDS_RIDGE_BETTER: 16 / 30\nSIGN_TEST_P: 0.8555355519056321\nWILCOXON_P: 0.2621222734451294\nBOOTSTRAP_CI_SEED1234_B20000: (-0.028329182046960166, 0.4799661988052148) crosses_zero: True\nBOOTSTRAP_CI_SEED99999_B20000: (-0.03428695141686245, 0.4735875057221617) crosses_zero: True\nESCALATED_VERDICT_STILL_REFUTED_NO_SIGNIFICANT_LIFT: True\n",
+      "wilcoxon_p": 0.2621222734451294,
+      "would_have_refuted_the_repair_if": "nested-alpha tuning recovered >=60% fold-win rate AND/OR either fresh-seed bootstrap CI excluded zero AND/OR Wilcoxon p<=0.05 -- none occurred; tuning did not even improve the fold-win rate (16/30 vs the repair's 17/30), and both fresh seeds reproduce CI-crosses-zero within 0.006 log10 units of the repair's own seed=0 result."
+    },
+    "7_mission_md_front_matter": {
+      "audit_date": "2026-07-17",
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "capability-profile.json",
+      "consumers": [],
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "evidence_inventory": "../../config/module-evidence-inventory.json",
+      "lane": "formulation",
+      "module_id": "amphora-public-corrosion-benchmark",
+      "operational_readiness": "AUDIT",
+      "phase": "PRE_PHASE_0",
+      "schema": "amphora.module-mission.v1",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    "7_mission_md_sha256_current": "652787b3961608d65b184a04d37fd33c8a797645881384b6eeb594452da2734a",
+    "7_note": "mission.md was edited again by the LATER R-N03 fire (same day); current sha256 will not equal R-A08's own recorded sha256_after. Checked instead that R-A08's own correction language (CORRECTED/SUPERSEDED block + inline RETRACTED annotation) is still present verbatim, and that front-matter (phase/readiness) is unchanged from PRE_PHASE_0 / UNVALIDATED -- no unauthorized promotion.",
+    "7_r_a08_correction_markers_present_in_prose": true
+  },
+  "claim_under_verify": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/ :: the interactive repair R-A08 (in-domain LOSD-CV significance correction of the NIST CORR-DATA marine steel baseline KPI, and the 8-receipt consolidated audit-verdicts index) withstands independent adversarial verification.",
+  "date": "2026-08-04",
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, optimizer, or corrosion-rank authority.",
+    "Does not dispute Ridge regression as theory (Hoerl & Kennard 1970) or the LOSD-CV split design.",
+    "Verify-only: writes no new supersession, edits no existing signed artifact, mission front-matter, or the master manifest. Confined to evidence/phase0/repairs/V-A08/.",
+    "Separately, the module's broader NIST-baseline claim surface (extrapolation/group-transfer) was independently refuted by R-N03 and verified by V-N03 in a prior fire; that is out of scope here -- this receipt verifies ONLY R-A08's own claimed fix (in-domain LOSD significance correction + index completeness)."
+  ],
+  "generated_on_host": "xbabe2",
+  "headline": "V-A08 independent verify of repair R-A08: re-ran the COMMITTED, UNMODIFIED run_fold_significance.py (sha256 d6300bbd3fa6a8e3cb9d93838b668f10c68343b629ea0ec9e2b2da4910c42287) twice from the identical hash-pinned raw NIST CSV -- byte-identical to itself and to R-A08's embedded reattack stdout (sha256 d7b154c654f1b8d33d48c96d3c19bc887af78de20e878513ca6a42124da9e799). Enumerated evidence/audit/: 8 on-disk signed receipts, all 8 indexed in the v2 consolidated KPI with matching sha256, 0 missing / 0 extra. Independently Ed25519-verified all 3 R-A08 done artifacts against the pinned Phase-0 evaluator key: all valid, all correctly keyed. Confirmed both superseded v1 originals remain byte-intact on disk (supersede-never-rewrite honored). ESCALATION beyond R-A08's own self-check: wrote an independent from-scratch reimplementation using proper nested per-fold alpha selection over the KPI's own stated grid (the repair fixed alpha=0.01) and two bootstrap seeds never used by the repair (1234, 99999, B=20000 each). Result: tuning did not even improve the fold-win rate (16/30 vs the repair's 17/30, sign-test p=0.856), Wilcoxon p=0.262, and both fresh-seed 95% CIs cross zero ([-0.028,0.480] and [-0.034,0.474]) -- within 0.006 log10 units of the repair's own seed=0 result. This was a genuinely falsifying attack (a fold-win rate >=60% under tuning, or either fresh CI excluding zero, would have refuted the repair) and it did not occur. Confirmed R-A08's correction language remains present in mission.md prose and its front-matter (phase=PRE_PHASE_0, scientific_readiness=UNVALIDATED) is unmodified. Verdict: CLAIM_SURVIVED.",
+  "human_review_performed": false,
+  "modifies_existing_receipts": false,
+  "modifies_manifest": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "phase": "PRE_PHASE_0",
+  "promotes_authority": false,
+  "refutation_would_have_shown": [
+    "no done receipt exists at R-A08/done/ (precondition fail)",
+    "the committed run_fold_significance.py has been modified (sha256 drift) or the two reruns are not byte-identical to each other or to R-A08's embedded stdout hash",
+    "evidence/audit/ contains a signed receipt absent from the v2 consolidated index, or the index cites a stale receipt sha256",
+    "any of the 3 R-A08 done DSSE envelopes fails real Ed25519 verification or uses a non-pinned key",
+    "a superseded v1 original's sha256 has drifted (rewritten instead of superseded)",
+    "an independent from-scratch reimplementation with proper nested alpha tuning and fresh bootstrap seeds recovers a fold-robust, statistically significant Ridge-beats-null effect",
+    "mission.md's front-matter (phase/readiness) has been modified, or R-A08's correction language has been silently removed"
+  ],
+  "repair_status": "confirmed_holds",
+  "schema": "amphora.public-corrosion-benchmark.repair-verify.v1",
+  "scientific_success_asserted": false,
+  "supersedes": null,
+  "target_repair_item": "R-A08",
+  "verdict": "CLAIM_SURVIVED",
+  "verify_item": "V-A08"
+}

@@ -1,0 +1,143 @@
+{
+  "attack_description": "GroupKFold(group=material) never separates metallurgically near-identical alloy aliases (e.g. 316/316L/316LN/316Ti, or Hastelloy-C-276/Alloy-C-276/Inco-C-276) since each alias is a distinct string label but the SAME or near-identical chemistry. This re-runs the identical feature engineering, HistGBM model, seed, and metrics with the group axis changed from raw material string to metallurgical FAMILY (ASM Handbook Vol.3; Sedriks 1996; Uhlig-Revie 2008), which guarantees all aliases of one family fall in the same fold.",
+  "attacks_claim": "corr-rate-qspr-v1/HANDOFF.md headline: leave-material-out (GroupKFold group=material) HistGBM R2=0.316 on log10(corrosion rate mm/yr), described as 'the reproducible artifact of record' for corrosion-rate QSPR in this module.",
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-barrier-corrosion-score/corr-rate-family-safe-v1",
+  "cohort": {
+    "classified_subset_n": 7282,
+    "full_cohort_n": 7699,
+    "n_families_in_classified_subset": 17,
+    "n_materials_in_classified_subset": 551
+  },
+  "comparison": {
+    "family_safe_beats_best_baseline_rmse": true,
+    "family_safe_gbm_r2_positive": true,
+    "r2_drop_family_minus_material": -0.223374,
+    "r2_family_safe_subset": 0.132087,
+    "r2_material_safe_subset": 0.355461
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "canonical_round_decimals": 6,
+    "omp_num_threads": "1",
+    "seed": 0
+  },
+  "family_classification": {
+    "family_coverage_pct": 94.583712,
+    "family_row_counts": {
+      "aluminum": 120,
+      "carbide_cermet": 24,
+      "carbon_steel_cast_iron": 561,
+      "chromium": 6,
+      "cobalt_alloy": 256,
+      "copper_alloy": 486,
+      "lead": 307,
+      "magnesium": 57,
+      "molybdenum": 2,
+      "nickel_alloy": 1888,
+      "precious_metal": 319,
+      "stainless_steel": 1976,
+      "tantalum_niobium": 266,
+      "tin": 37,
+      "titanium": 658,
+      "zinc": 60,
+      "zirconium_hafnium": 259
+    },
+    "method": "ordered keyword/regex substring rules, same methodology as in-tree COMPOSITION lookup; first-match-wins",
+    "n_classified": 7282,
+    "n_families": 17,
+    "n_modeled_full_cohort": 7699,
+    "n_unclassified_rows": 417,
+    "reference": "ASM Handbook Vol.3: Stainless Steels; Sedriks 1996 Corrosion of Stainless Steels; Uhlig-Revie 2008 Corrosion and Corrosion Control"
+  },
+  "model": {
+    "estimator": "HistGradientBoostingRegressor",
+    "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "random_state": 0
+    },
+    "sklearn_version": "1.7.2"
+  },
+  "modifies_manifest": false,
+  "promotes_authority": false,
+  "refutation_criterion": "REFUTED if family_safe.gbm.r2 <= 0.0 OR family_safe_error_reduction_vs_best_baseline_pct <= 0.0 (on the identical classified-subset rows/features/model/seed as material_safe_subset); SURVIVED otherwise, even if reduced relative to material_safe_subset.",
+  "results": {
+    "family_safe_classified_subset": {
+      "baseline_global_mean": {
+        "mae": 1.015781,
+        "r2": -0.004621,
+        "rmse": 1.245599
+      },
+      "baseline_group_mean": {
+        "mae": 1.015781,
+        "r2": -0.004621,
+        "rmse": 1.245599
+      },
+      "error_reduction_vs_best_baseline_pct": 7.052628,
+      "gbm": {
+        "mae": 0.928427,
+        "r2": 0.132087,
+        "rmse": 1.157751
+      },
+      "n_folds": 5,
+      "per_fold_r2": [
+        {
+          "n_test": 1976,
+          "r2": 0.165932
+        },
+        {
+          "n_test": 1888,
+          "r2": 0.117892
+        },
+        {
+          "n_test": 1141,
+          "r2": -0.003119
+        },
+        {
+          "n_test": 1132,
+          "r2": 0.06438
+        },
+        {
+          "n_test": 1145,
+          "r2": 0.221653
+        }
+      ]
+    },
+    "material_safe_classified_subset": {
+      "baseline_global_mean": {
+        "mae": 1.013799,
+        "r2": -0.002047,
+        "rmse": 1.244002
+      },
+      "baseline_group_mean": {
+        "mae": 1.013799,
+        "r2": -0.002047,
+        "rmse": 1.244002
+      },
+      "error_reduction_vs_best_baseline_pct": 19.798838,
+      "gbm": {
+        "mae": 0.771544,
+        "r2": 0.355461,
+        "rmse": 0.997704
+      },
+      "n_folds": 5
+    },
+    "material_safe_full_cohort_reference": {
+      "gbm_r2": 0.326607,
+      "gbm_rmse": 1.027868,
+      "note": "replicates corr-rate-qspr-v1 exactly (full n=7699 cohort, GroupKFold group=material, 5-fold)"
+    }
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-family-safe-attack.v1",
+  "scope_honesty": "Diagnostic on bare metal/alloy substrate corrosion (NIST CORR-DATA), same scope ceiling as corr-rate-qspr-v1: NOT organic-coating barrier performance. No candidate/coating superiority claim.",
+  "verdict": "CLAIM_SURVIVED"
+}

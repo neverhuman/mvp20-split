@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "10dfb944138ea75ad2c4ce1884b9c2c2b04122687dbc85c55841d6d42c85de6e",
+  "module_id": "amphora-molecule-role-ranker",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

@@ -1,0 +1,357 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "ceiling_note": "Offline oracle over shipped evidence bytes. It measures which axes the shipped KPI cross-checks, NOT whether the Rust runtime defends the uncovered axes. Live Rust re-execution of the per-axis adversarial corpus and error-taxonomy parity remain the Phase-1 axis. AUDIT_ONLY: no promotion, no authority, manifest untouched.",
+  "gates": {
+    "G1_lock_multiset_structure": {
+      "benchmark_lock_sha256_recomputed": "4ffdfa1a40b426036160b4c2e25bdaaff978aa762ec98c8c3243d514bfbe71cf",
+      "declared_array_length": 47,
+      "declared_unique_count": 46,
+      "digest_parity": true,
+      "duplicate_axes": {
+        "AUTHORITY_ESCALATION": [
+          14,
+          46
+        ]
+      },
+      "is_set": false,
+      "name": "lock_multiset_structure_and_digest_parity",
+      "passed": true,
+      "shipped_benchmark_lock_sha256": "4ffdfa1a40b426036160b4c2e25bdaaff978aa762ec98c8c3243d514bfbe71cf"
+    },
+    "G2_shipped_kpi_self_criterion": {
+      "arithmetic_defect_found": false,
+      "criterion": "C_self : checked -> declared (every cross-checked axis is in the lock)",
+      "name": "shipped_kpi_reproduction_under_its_own_criterion",
+      "passed": true,
+      "recomputed_observed": 1.0,
+      "recomputed_sample_size": 24,
+      "replay1_equals_replay2": true,
+      "shipped_floor": 1.0,
+      "shipped_observed": 1.0,
+      "shipped_passed": true,
+      "shipped_sample_size": 24
+    },
+    "G3_adequacy_subsumption_falsification": {
+      "C_declared_meets_floor": false,
+      "checked_is_proper_subset_of_declared": true,
+      "criterion": "C_declared : declared -> checked (every locked attack axis is cross-checked)",
+      "cross_checked_count": 24,
+      "declared_unique_count": 46,
+      "finding": "ADEQUACY_GAP: the KPI reports 1.0 'coverage complete' but is scoped to a 24-axis subset; under the declared-corpus criterion the same evidence yields 12/23 = 0.521739 < floor 1.0. The word 'complete' in the KPI name is scope-relative, not corpus-relative.",
+      "kpi_floor": 1.0,
+      "name": "adequacy_criterion_subsumption_falsification",
+      "observed_C_declared": 0.5217391304,
+      "observed_C_declared_exact": "12/23",
+      "passed": true,
+      "subsumption": "C_declared strictly subsumes C_self on this instance: checked is a proper subset of declared (Rapps-Weyuker 1985 subsumption ordering)",
+      "uncovered_axes": [
+        "ALTERED_BENCHMARK_OUTPUT",
+        "CANDIDATE_SUPPLIED_EVIDENCE",
+        "CROSS_MODULE_PATH_SUBSTITUTION",
+        "FAILING_DETERMINISTIC_DIAGNOSTIC",
+        "FALSE_BENCHMARK_EXECUTION_COMPLETE",
+        "FALSE_HUMAN_REVIEW_CLAIM",
+        "FALSE_MOVEMENT_CLAIM",
+        "FORGED_RIGHTS",
+        "FORGED_SIGNATURE",
+        "INCOMPLETE_REVIEW_POLICY",
+        "LEGACY_AMPHORA_RECEIPT_LAUNDERING",
+        "MISSING_LICENSE",
+        "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+        "REPLAY_DRIFT",
+        "REPOSITORY_LOCAL_PRIVATE_KEY",
+        "SAME_SIGNER_REVIEW",
+        "STALE_PARENT",
+        "STRIPPED_CLAIM_LOCK",
+        "STRIPPED_MISSION_LOCKS",
+        "SUPERSESSION_ARCHIVE_SUBSTITUTION",
+        "UNKNOWN_REVIEWER_MODULE",
+        "WRONG_ROLE_SIGNATURE"
+      ],
+      "uncovered_count": 22
+    },
+    "G4_block_partition_diagnosis": {
+      "block_set_overlap": [
+        "AUTHORITY_ESCALATION"
+      ],
+      "boundary_index": 23,
+      "checked_equals_ordered_inner_block": true,
+      "diagnosis": "The cross-checked set is EXACTLY the ordered contiguous suffix attacks[23:47]; the lock is two concatenated corpora \u2014 an OUTER portfolio-governance block (23 axes, delegated to sibling modules) and an INNER meta-audit block (24 axes, self-checked) \u2014 intersecting in exactly one axis, AUTHORITY_ESCALATION (which is therefore the sole axis both delegated and self-checked, and the source of the duplicate). The omission coincides with a concatenation seam, so it is a scoping artifact, not a random or adversarial omission.",
+      "inner_block": [
+        "IDENTITY_OR_MODULE_SUBSTITUTION",
+        "REGISTRY_TAMPERING",
+        "REGISTRY_SUPERSESSION_TAMPERING",
+        "FOLDER_CONFINEMENT_ESCAPE",
+        "DSSE_FORGERY",
+        "DSSE_WRONG_ROLE",
+        "DSSE_LOCAL_SIGNER",
+        "DSSE_REVOKED_SIGNER",
+        "DSSE_SAME_SIGNER",
+        "FALSE_HUMAN_REVIEW",
+        "INCOMPLETE_POLICY",
+        "ALTERED_DIAGNOSTIC",
+        "NONDETERMINISTIC_DIAGNOSTIC",
+        "FALSE_EXECUTION_COMPLETION",
+        "UNEXECUTED_SCIENCE",
+        "RIGHTS_LAUNDERING",
+        "EVIDENCE_LAUNDERING",
+        "SOURCE_DUPLICATE",
+        "SOURCE_MISSING_FIELD",
+        "SOURCE_WAIVER_LAUNDERING",
+        "REPORT_SIGNATURE_DEFECT",
+        "REPORT_ENVELOPE_BINDING_DEFECT",
+        "REPORT_CLAIM_LOCK_DEFECT",
+        "AUTHORITY_ESCALATION"
+      ],
+      "inner_block_len": 24,
+      "name": "block_partition_diagnosis",
+      "outer_block": [
+        "STALE_PARENT",
+        "SAME_SIGNER_REVIEW",
+        "WRONG_ROLE_SIGNATURE",
+        "FORGED_SIGNATURE",
+        "REPOSITORY_LOCAL_PRIVATE_KEY",
+        "FORGED_RIGHTS",
+        "MISSING_LICENSE",
+        "STRIPPED_CLAIM_LOCK",
+        "CANDIDATE_SUPPLIED_EVIDENCE",
+        "CROSS_MODULE_PATH_SUBSTITUTION",
+        "REPLAY_DRIFT",
+        "ALTERED_BENCHMARK_OUTPUT",
+        "FALSE_HUMAN_REVIEW_CLAIM",
+        "FALSE_MOVEMENT_CLAIM",
+        "AUTHORITY_ESCALATION",
+        "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+        "LEGACY_AMPHORA_RECEIPT_LAUNDERING",
+        "STRIPPED_MISSION_LOCKS",
+        "FAILING_DETERMINISTIC_DIAGNOSTIC",
+        "FALSE_BENCHMARK_EXECUTION_COMPLETE",
+        "INCOMPLETE_REVIEW_POLICY",
+        "UNKNOWN_REVIEWER_MODULE",
+        "SUPERSESSION_ARCHIVE_SUBSTITUTION"
+      ],
+      "outer_block_len": 23,
+      "passed": true,
+      "random_subset_null_probability": 1.2673675110566375e-13
+    },
+    "G5_compensating_control_search": {
+      "axis_coverage_kpi_is_portfolio_unique": true,
+      "compensating_kpi_attestations_found": 0,
+      "declared_only_count": 22,
+      "finding": "Each of the 22 uncovered axes IS declared in 27-28 of the 28 sibling module benchmark-locks, yet `attack_axis_coverage_complete_rate` exists in exactly 1 of 29 shipped module results \u2014 amphora-redteam-audit itself. No sibling ships a KPI that cross-checks its own declared attack axes, so the 22 outer axes are DECLARED_ONLY portfolio-wide: no shipped KPI attests them anywhere.",
+      "honesty_note": "This establishes absence of a shipped KPI-level attestation. It does NOT prove the underlying Rust defenses are absent; sibling runtimes may implement them without a coverage KPI. Live Rust re-execution is the Phase-1 axis.",
+      "modules_scanned": 29,
+      "modules_with_axis_coverage_kpi": [
+        "amphora-redteam-audit"
+      ],
+      "name": "compensating_control_search",
+      "passed": true,
+      "per_axis": [
+        {
+          "axis": "ALTERED_BENCHMARK_OUTPUT",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "CANDIDATE_SUPPLIED_EVIDENCE",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "CROSS_MODULE_PATH_SUBSTITUTION",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "FAILING_DETERMINISTIC_DIAGNOSTIC",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 27,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "FALSE_BENCHMARK_EXECUTION_COMPLETE",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 27,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "FALSE_HUMAN_REVIEW_CLAIM",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "FALSE_MOVEMENT_CLAIM",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "FORGED_RIGHTS",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "FORGED_SIGNATURE",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "INCOMPLETE_REVIEW_POLICY",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 27,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "LEGACY_AMPHORA_RECEIPT_LAUNDERING",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "MISSING_LICENSE",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "REPLAY_DRIFT",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "REPOSITORY_LOCAL_PRIVATE_KEY",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "SAME_SIGNER_REVIEW",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "STALE_PARENT",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "STRIPPED_CLAIM_LOCK",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "STRIPPED_MISSION_LOCKS",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 27,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "SUPERSESSION_ARCHIVE_SUBSTITUTION",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 27,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "UNKNOWN_REVIEWER_MODULE",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 27,
+          "status": "DECLARED_ONLY"
+        },
+        {
+          "axis": "WRONG_ROLE_SIGNATURE",
+          "cross_checked_by_any_axis_coverage_kpi": false,
+          "sibling_locks_declaring": 28,
+          "status": "DECLARED_ONLY"
+        }
+      ],
+      "sibling_declaration_span": [
+        27,
+        28
+      ]
+    },
+    "G6_duplicate_axis_counterfactual": {
+      "dedup_changes_digest": true,
+      "finding": "AUTHORITY_ESCALATION appears twice (indices 14 and 46), so `attacks` is a multiset, not a set. The duplicate is KPI-INERT (both C_self and C_declared are unchanged when it is removed) but DIGEST-LOAD-BEARING: any well-intentioned downstream normalization that set-izes the array changes the canonical digest and breaks benchmark-lock continuity. Recorded as an operational hazard, not a security defect.",
+      "jcs_as_is_sha256": "3a81a6e4c4732af1046900981b1d2b941fa7d0cd1955a866d80e6e5267427b4e",
+      "jcs_deduplicated_sha256": "bb23e5f6d7b57256a432309cfb4c13ee836f1d51001ef6fa168ffc10d8e31719",
+      "kpi_unchanged_by_dedup": true,
+      "kpi_under_dedup_C_declared_exact": "12/23",
+      "kpi_under_dedup_C_self": 1.0,
+      "name": "duplicate_axis_counterfactual",
+      "passed": true,
+      "shipped_raw_sha256": "4ffdfa1a40b426036160b4c2e25bdaaff978aa762ec98c8c3243d514bfbe71cf"
+    },
+    "G7_anchors_and_replay": {
+      "benchmark_execution_complete": true,
+      "benchmark_lock_sha256": "4ffdfa1a40b426036160b4c2e25bdaaff978aa762ec98c8c3243d514bfbe71cf",
+      "first_replay_kpi_equals_second": true,
+      "kpi_document_sha256": "23dd612b1bf945e2c83823731ea41aee1de4cd8fb74d185ec0d8a614cbd9d67d",
+      "name": "subject_anchors_and_replay_determinism",
+      "oracle_reads_only": true,
+      "passed": true,
+      "shipped_result_v1_sha256": "701482a26cbe704e06bdade4c3af3279e6fee066319c5041822f37ed8dbf9f1f"
+    }
+  },
+  "headline_numbers": {
+    "C_declared_observed": 0.521739,
+    "C_declared_observed_exact": "12/23",
+    "C_self_observed": 1.0,
+    "cross_checked_axes": 24,
+    "declared_axes_array_len": 47,
+    "declared_axes_unique": 46,
+    "kpi_floor": 1.0,
+    "modules_scanned": 29,
+    "modules_with_axis_coverage_kpi": 1,
+    "uncovered_axes": 22
+  },
+  "hypothesis": "Shipped KPI `attack_axis_coverage_complete_rate` = 1.0 (floor 1.0, n=24) implies the module's declared adversarial attack corpus is completely covered.",
+  "module_id": "amphora-redteam-audit",
+  "oracle_id": "axis-adequacy-subsumption-v1",
+  "relation_to_prior_oracle": {
+    "dispatch-boundary-fail-closed-v1": "covered the INPUT module-id dispatch allowlist; disjoint from axis adequacy",
+    "meta-integrity-oracle-parity-v1": "its G3 asserted checked -> declared (24/24 axes present in the lock); this oracle tests the converse declared -> checked and finds the 22-axis gap",
+    "non_overlap_asserted": true
+  },
+  "remediation_note": "Non-authoritative suggestion for a future human-keyed fire: either (a) rename the KPI to `meta_audit_axis_coverage_complete_rate` and add a second KPI over the outer block, or (b) require each sibling module to ship its own axis-coverage KPI so the outer 23 axes gain attestation. This oracle changes nothing.",
+  "schema": "amphora.redteam-audit.independent-oracle-result.v1",
+  "theory_sources": [
+    "Zhu, Hall, May (1997) ACM Comput. Surv. 29(4):366-427, doi:10.1145/267580.267590",
+    "Rapps & Weyuker (1985) IEEE TSE SE-11(4):367-375, doi:10.1109/TSE.1985.232226",
+    "DeMillo, Lipton, Sayward (1978) IEEE Computer 11(4):34-41, doi:10.1109/C-M.1978.218136",
+    "Anderson (1972) ESD-TR-73-51 reference monitor / complete mediation",
+    "Saltzer & Schroeder (1975) Proc. IEEE 63(9):1278-1308, doi:10.1109/PROC.1975.9939",
+    "NIST SP 800-53 Rev.5 CA-8 / RA-5 (scoped assessment coverage)",
+    "RFC 8785 JSON Canonicalization Scheme; NIST FIPS 180-4; RFC 8032 Ed25519"
+  ],
+  "verdict": "HYPOTHESIS_PARTIALLY_REFUTED",
+  "verdict_statement": "CORROBORATED as arithmetic: under its own criterion (every cross-checked axis is declared) the KPI reproduces exactly 24/24 = 1.0, replay-identical, with no arithmetic defect. REFUTED as a completeness claim: the lock declares 46 unique axes and the KPI cross-checks 24 of them, so under the declared-corpus adequacy criterion the same evidence yields 12/23 = 0.521739 < the 1.0 floor. 22 axes are declared-and-never-cross-checked, and the omitted set is exactly the ordered outer block attacks[0:23] minus AUTHORITY_ESCALATION \u2014 a scoping seam, not a random gap. No sibling module ships a compensating axis-coverage KPI.",
+  "zero_authority_claim_locks": {
+    "fto_not_performed": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_procurement_authority": true,
+    "no_product_performance_authority": true,
+    "no_qualification_authority": true,
+    "no_ranking_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true
+  }
+}

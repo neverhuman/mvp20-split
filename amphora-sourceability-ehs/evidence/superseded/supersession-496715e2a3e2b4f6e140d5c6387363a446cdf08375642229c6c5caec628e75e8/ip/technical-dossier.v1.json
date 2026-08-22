@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-sourceability-ehs",
+    "infrastructure lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "a2c850087f2e1b5f97cb7a7a7ff98b9c4bb3c7409650c8aac4c9b93fd7d0a4ac",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-sourceability-ehs",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

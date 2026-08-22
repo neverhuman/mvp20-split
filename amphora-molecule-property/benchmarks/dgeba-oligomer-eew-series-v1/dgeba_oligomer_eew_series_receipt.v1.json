@@ -1,0 +1,219 @@
+{
+  "all_gates_passed": true,
+  "atomic_weight_uncertainty": {
+    "bar_g_per_eq": 0.5,
+    "headroom_factor": 59.2,
+    "u_M_g_per_mol": 0.0169,
+    "u_eew_g_per_eq": 0.00845
+  },
+  "authority": "AUDIT_ONLY",
+  "ceiling": "AUDIT_ONLY structural/stoichiometric second-signal. It corroborates that the module's canonical EEW structure rule is self-consistent across the entire DGEBA oligomer series (not curve-fit to the n=0 monomer) and gives the mechanistic account of commercial-grade EEW elevation, but asserts nothing about the exact EEW of polydisperse commercial grades (measured composition required), product qualification, or cure conversion. Live runtime stays LOCKED_INTERNAL; the commercial_product_claim_locked=true lock is unchanged.",
+  "claim": "An independent RDKit-2026.03.2 reference implementation extends the module's canonical EEW structure rule (EEW = M / n_epoxide) from the pure n=0 DGEBA monomer to the linear difunctional DGEBA oligomer SERIES. (1) The n=0 monomer reproduces the shipped Phase-0 expected EEW 170.2 g/eq (abs err 0.01, bar 0.5). (2) Four independently RDKit-constructed oligomers n=0..3 (C21H24O4, C39H44O7, C57H64O10, C75H84O13) each carry EXACTLY 2 terminal epoxide groups and are mass-additive: the bisphenol-A/2-hydroxy-propylene repeat mass is a byte-exact constant 284.355 g/mol across all three adjacent pairs (spread 0.0, max additivity deviation 0.0), so EEW(n) = 170.21 + 142.18*n exactly. (3) The mole-weighted number-average EEW_bar = 170.21 + 142.18*n_bar maps every published commercial DGEBA EEW band (liquid Epon 828/DER 331, near-monomer DER 332, semisolid Epon 1001F, solid Epon 1004F) to a non-negative n_bar that overlaps the independently published number-average degree of polymerization, mechanistically explaining why commercial grades read EEW > 170.2 WITHOUT asserting an exact EEW for the polydisperse mixture (composition is measured, not derived). (4) Four fail-closed controls (bisphenol-A 0 epoxide, phenyl glycidyl ether 1 epoxide, mono-hydrolyzed DGEBA 1 epoxide, fully advanced DGEBA-diol 0 epoxide) are all correctly excluded as non-difunctional-DGEBA exact anchors. IUPAC-2021 standard-atomic-weight uncertainty propagates to <=0.0085 g/eq on EEW(n=0), so the 0.5 g/eq acceptance bar carries ~59x headroom over fundamental atomic-mass uncertainty.",
+  "dsse_envelope": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzc2VkIjogdHJ1ZSwKICAiYXRvbWljX3dlaWdodF91bmNlcnRhaW50eSI6IHsKICAgICJiYXJfZ19wZXJfZXEiOiAwLjUsCiAgICAiaGVhZHJvb21fZmFjdG9yIjogNTkuMiwKICAgICJ1X01fZ19wZXJfbW9sIjogMC4wMTY5LAogICAgInVfZWV3X2dfcGVyX2VxIjogMC4wMDg0NQogIH0sCiAgImF1dGhvcml0eSI6ICJBVURJVF9PTkxZIiwKICAiY2VpbGluZyI6ICJBVURJVF9PTkxZIHN0cnVjdHVyYWwvc3RvaWNoaW9tZXRyaWMgc2Vjb25kLXNpZ25hbC4gSXQgY29ycm9ib3JhdGVzIHRoYXQgdGhlIG1vZHVsZSdzIGNhbm9uaWNhbCBFRVcgc3RydWN0dXJlIHJ1bGUgaXMgc2VsZi1jb25zaXN0ZW50IGFjcm9zcyB0aGUgZW50aXJlIERHRUJBIG9saWdvbWVyIHNlcmllcyAobm90IGN1cnZlLWZpdCB0byB0aGUgbj0wIG1vbm9tZXIpIGFuZCBnaXZlcyB0aGUgbWVjaGFuaXN0aWMgYWNjb3VudCBvZiBjb21tZXJjaWFsLWdyYWRlIEVFVyBlbGV2YXRpb24sIGJ1dCBhc3NlcnRzIG5vdGhpbmcgYWJvdXQgdGhlIGV4YWN0IEVFVyBvZiBwb2x5ZGlzcGVyc2UgY29tbWVyY2lhbCBncmFkZXMgKG1lYXN1cmVkIGNvbXBvc2l0aW9uIHJlcXVpcmVkKSwgcHJvZHVjdCBxdWFsaWZpY2F0aW9uLCBvciBjdXJlIGNvbnZlcnNpb24uIExpdmUgcnVudGltZSBzdGF5cyBMT0NLRURfSU5URVJOQUw7IHRoZSBjb21tZXJjaWFsX3Byb2R1Y3RfY2xhaW1fbG9ja2VkPXRydWUgbG9jayBpcyB1bmNoYW5nZWQuIiwKICAiY2xhaW0iOiAiQW4gaW5kZXBlbmRlbnQgUkRLaXQtMjAyNi4wMy4yIHJlZmVyZW5jZSBpbXBsZW1lbnRhdGlvbiBleHRlbmRzIHRoZSBtb2R1bGUncyBjYW5vbmljYWwgRUVXIHN0cnVjdHVyZSBydWxlIChFRVcgPSBNIC8gbl9lcG94aWRlKSBmcm9tIHRoZSBwdXJlIG49MCBER0VCQSBtb25vbWVyIHRvIHRoZSBsaW5lYXIgZGlmdW5jdGlvbmFsIERHRUJBIG9saWdvbWVyIFNFUklFUy4gKDEpIFRoZSBuPTAgbW9ub21lciByZXByb2R1Y2VzIHRoZSBzaGlwcGVkIFBoYXNlLTAgZXhwZWN0ZWQgRUVXIDE3MC4yIGcvZXEgKGFicyBlcnIgMC4wMSwgYmFyIDAuNSkuICgyKSBGb3VyIGluZGVwZW5kZW50bHkgUkRLaXQtY29uc3RydWN0ZWQgb2xpZ29tZXJzIG49MC4uMyAoQzIxSDI0TzQsIEMzOUg0NE83LCBDNTdINjRPMTAsIEM3NUg4NE8xMykgZWFjaCBjYXJyeSBFWEFDVExZIDIgdGVybWluYWwgZXBveGlkZSBncm91cHMgYW5kIGFyZSBtYXNzLWFkZGl0aXZlOiB0aGUgYmlzcGhlbm9sLUEvMi1oeWRyb3h5LXByb3B5bGVuZSByZXBlYXQgbWFzcyBpcyBhIGJ5dGUtZXhhY3QgY29uc3RhbnQgMjg0LjM1NSBnL21vbCBhY3Jvc3MgYWxsIHRocmVlIGFkamFjZW50IHBhaXJzIChzcHJlYWQgMC4wLCBtYXggYWRkaXRpdml0eSBkZXZpYXRpb24gMC4wKSwgc28gRUVXKG4pID0gMTcwLjIxICsgMTQyLjE4Km4gZXhhY3RseS4gKDMpIFRoZSBtb2xlLXdlaWdodGVkIG51bWJlci1hdmVyYWdlIEVFV19iYXIgPSAxNzAuMjEgKyAxNDIuMTgqbl9iYXIgbWFwcyBldmVyeSBwdWJsaXNoZWQgY29tbWVyY2lhbCBER0VCQSBFRVcgYmFuZCAobGlxdWlkIEVwb24gODI4L0RFUiAzMzEsIG5lYXItbW9ub21lciBERVIgMzMyLCBzZW1pc29saWQgRXBvbiAxMDAxRiwgc29saWQgRXBvbiAxMDA0RikgdG8gYSBub24tbmVnYXRpdmUgbl9iYXIgdGhhdCBvdmVybGFwcyB0aGUgaW5kZXBlbmRlbnRseSBwdWJsaXNoZWQgbnVtYmVyLWF2ZXJhZ2UgZGVncmVlIG9mIHBvbHltZXJpemF0aW9uLCBtZWNoYW5pc3RpY2FsbHkgZXhwbGFpbmluZyB3aHkgY29tbWVyY2lhbCBncmFkZXMgcmVhZCBFRVcgPiAxNzAuMiBXSVRIT1VUIGFzc2VydGluZyBhbiBleGFjdCBFRVcgZm9yIHRoZSBwb2x5ZGlzcGVyc2UgbWl4dHVyZSAoY29tcG9zaXRpb24gaXMgbWVhc3VyZWQsIG5vdCBkZXJpdmVkKS4gKDQpIEZvdXIgZmFpbC1jbG9zZWQgY29udHJvbHMgKGJpc3BoZW5vbC1BIDAgZXBveGlkZSwgcGhlbnlsIGdseWNpZHlsIGV0aGVyIDEgZXBveGlkZSwgbW9uby1oeWRyb2x5emVkIERHRUJBIDEgZXBveGlkZSwgZnVsbHkgYWR2YW5jZWQgREdFQkEtZGlvbCAwIGVwb3hpZGUpIGFyZSBhbGwgY29ycmVjdGx5IGV4Y2x1ZGVkIGFzIG5vbi1kaWZ1bmN0aW9uYWwtREdFQkEgZXhhY3QgYW5jaG9ycy4gSVVQQUMtMjAyMSBzdGFuZGFyZC1hdG9taWMtd2VpZ2h0IHVuY2VydGFpbnR5IHByb3BhZ2F0ZXMgdG8gPD0wLjAwODUgZy9lcSBvbiBFRVcobj0wKSwgc28gdGhlIDAuNSBnL2VxIGFjY2VwdGFuY2UgYmFyIGNhcnJpZXMgfjU5eCBoZWFkcm9vbSBvdmVyIGZ1bmRhbWVudGFsIGF0b21pYy1tYXNzIHVuY2VydGFpbnR5LiIsCiAgImdhdGVzIjogewogICAgIkcxX21vbm9tZXJfYW5jaG9yIjogewogICAgICAiYWJzX2Vycl9nX3Blcl9lcSI6IDAuMDA5NSwKICAgICAgImJhciI6IDAuNSwKICAgICAgImVld19uMF9ydWxlIjogMTcwLjIxLAogICAgICAicGFzc2VkIjogdHJ1ZSwKICAgICAgInNoaXBwZWRfZXhwZWN0ZWQiOiAxNzAuMgogICAgfSwKICAgICJHMl9vbGlnb21lcl9hZGRpdGl2aXR5X2RpZnVuY3Rpb25hbGl0eSI6IHsKICAgICAgIk0wX2dfcGVyX21vbCI6IDM0MC40MTksCiAgICAgICJNX3JlcGVhdF9nX3Blcl9tb2wiOiAyODQuMzU1LAogICAgICAiYWxsX29saWdvbWVyc19leGFjdGx5XzJfZXBveGlkZXMiOiB0cnVlLAogICAgICAiZWV3X3Nsb3BlX2dfcGVyX2VxX3Blcl9uIjogMTQyLjE3NzUsCiAgICAgICJtYXhfYWRkaXRpdml0eV9kZXZpYXRpb25fZ19wZXJfbW9sIjogMC4wLAogICAgICAicGFzc2VkIjogdHJ1ZSwKICAgICAgInJlcGVhdF9DMThIMjBPM190aGVvcmV0aWNhbCI6IDI4NC4zNDg5LAogICAgICAicmVwZWF0X21hc3Nfc3ByZWFkX2Fjcm9zc19wYWlyc19nX3Blcl9tb2wiOiAwLjAKICAgIH0sCiAgICAiRzNfY29tbWVyY2lhbF9iYW5kX25iYXJfY29uc2lzdGVuY3kiOiB7CiAgICAgICJtb25vdG9uZV9pbmNyZWFzaW5nX25iYXJfd2l0aF9lZXciOiB0cnVlLAogICAgICAibm90ZSI6ICJDb3Jyb2JvcmF0aXZlIG9ubHk6IG51bWJlci1hdmVyYWdlIEVFVyBvZiBhIG1peHR1cmUgcmVxdWlyZXMgTUVBU1VSRUQgY29tcG9zaXRpb247IHRoaXMgZG9lcyBOT1QgYXNzZXJ0IGFuIGV4YWN0IEVFVyBmb3IgY29tbWVyY2lhbCBncmFkZXMgYW5kIGRvZXMgTk9UIG92ZXJ0dXJuIHRoZSBtb2R1bGUncyBjb21tZXJjaWFsX3Byb2R1Y3RfY2xhaW1fbG9ja2VkPXRydWUgbG9jay4iLAogICAgICAicGFzc2VkIjogdHJ1ZSwKICAgICAgInJvd3MiOiBbCiAgICAgICAgewogICAgICAgICAgImVld19iYW5kIjogWwogICAgICAgICAgICAxODUuMCwKICAgICAgICAgICAgMTkyLjAKICAgICAgICAgIF0sCiAgICAgICAgICAiZ3JhZGUiOiAiRXBvbiA4MjggLyBERVIgMzMxIChsaXF1aWQpIiwKICAgICAgICAgICJuYmFyX3B1Ymxpc2hlZCI6IFsKICAgICAgICAgICAgMC4xLAogICAgICAgICAgICAwLjE2CiAgICAgICAgICBdLAogICAgICAgICAgIm5iYXJfcnVsZSI6IFsKICAgICAgICAgICAgMC4xMDQsCiAgICAgICAgICAgIDAuMTUzCiAgICAgICAgICBdLAogICAgICAgICAgIm5vbm5lZyI6IHRydWUsCiAgICAgICAgICAib3ZlcmxhcHNfcHVibGlzaGVkIjogdHJ1ZQogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImVld19iYW5kIjogWwogICAgICAgICAgICAxNzEuMCwKICAgICAgICAgICAgMTc1LjAKICAgICAgICAgIF0sCiAgICAgICAgICAiZ3JhZGUiOiAiREVSIDMzMiAobmVhci1tb25vbWVyIGxpcXVpZCkiLAogICAgICAgICAgIm5iYXJfcHVibGlzaGVkIjogWwogICAgICAgICAgICAwLjAsCiAgICAgICAgICAgIDAuMDQKICAgICAgICAgIF0sCiAgICAgICAgICAibmJhcl9ydWxlIjogWwogICAgICAgICAgICAwLjAwNiwKICAgICAgICAgICAgMC4wMzQKICAgICAgICAgIF0sCiAgICAgICAgICAibm9ubmVnIjogdHJ1ZSwKICAgICAgICAgICJvdmVybGFwc19wdWJsaXNoZWQiOiB0cnVlCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiZWV3X2JhbmQiOiBbCiAgICAgICAgICAgIDQ1MC4wLAogICAgICAgICAgICA1NjAuMAogICAgICAgICAgXSwKICAgICAgICAgICJncmFkZSI6ICJFcG9uIDEwMDFGIC8gREVSIDY3MSAoc2VtaXNvbGlkKSIsCiAgICAgICAgICAibmJhcl9wdWJsaXNoZWQiOiBbCiAgICAgICAgICAgIDEuOSwKICAgICAgICAgICAgMi44CiAgICAgICAgICBdLAogICAgICAgICAgIm5iYXJfcnVsZSI6IFsKICAgICAgICAgICAgMS45NjgsCiAgICAgICAgICAgIDIuNzQyCiAgICAgICAgICBdLAogICAgICAgICAgIm5vbm5lZyI6IHRydWUsCiAgICAgICAgICAib3ZlcmxhcHNfcHVibGlzaGVkIjogdHJ1ZQogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImVld19iYW5kIjogWwogICAgICAgICAgICA4MDAuMCwKICAgICAgICAgICAgOTUwLjAKICAgICAgICAgIF0sCiAgICAgICAgICAiZ3JhZGUiOiAiRXBvbiAxMDA0RiAvIERFUiA2NjQgKHNvbGlkKSIsCiAgICAgICAgICAibmJhcl9wdWJsaXNoZWQiOiBbCiAgICAgICAgICAgIDQuNCwKICAgICAgICAgICAgNS41CiAgICAgICAgICBdLAogICAgICAgICAgIm5iYXJfcnVsZSI6IFsKICAgICAgICAgICAgNC40MywKICAgICAgICAgICAgNS40ODUKICAgICAgICAgIF0sCiAgICAgICAgICAibm9ubmVnIjogdHJ1ZSwKICAgICAgICAgICJvdmVybGFwc19wdWJsaXNoZWQiOiB0cnVlCiAgICAgICAgfQogICAgICBdCiAgICB9LAogICAgIkc0X2ZhaWxjbG9zZWRfY29udHJvbHMiOiB7CiAgICAgICJwYXNzZWQiOiB0cnVlLAogICAgICAicm93cyI6IFsKICAgICAgICB7CiAgICAgICAgICAiY29ycmVjdGx5X2V4Y2x1ZGVkIjogdHJ1ZSwKICAgICAgICAgICJleHBlY3RlZF9lcG94aWRlIjogMCwKICAgICAgICAgICJpc19kaWZ1bmN0aW9uYWxfZGdlYmFfZXhhY3RfYW5jaG9yIjogZmFsc2UsCiAgICAgICAgICAibl9lcG94aWRlIjogMCwKICAgICAgICAgICJuYW1lIjogImJpc3BoZW5vbC1BIChubyBlcG94aWRlLCBwcmVjdXJzb3IpIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImNvcnJlY3RseV9leGNsdWRlZCI6IHRydWUsCiAgICAgICAgICAiZXhwZWN0ZWRfZXBveGlkZSI6IDEsCiAgICAgICAgICAiaXNfZGlmdW5jdGlvbmFsX2RnZWJhX2V4YWN0X2FuY2hvciI6IGZhbHNlLAogICAgICAgICAgIm5fZXBveGlkZSI6IDEsCiAgICAgICAgICAibmFtZSI6ICJwaGVueWwgZ2x5Y2lkeWwgZXRoZXIgKG1vbm9mdW5jdGlvbmFsKSIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJjb3JyZWN0bHlfZXhjbHVkZWQiOiB0cnVlLAogICAgICAgICAgImV4cGVjdGVkX2Vwb3hpZGUiOiAxLAogICAgICAgICAgImlzX2RpZnVuY3Rpb25hbF9kZ2ViYV9leGFjdF9hbmNob3IiOiBmYWxzZSwKICAgICAgICAgICJuX2Vwb3hpZGUiOiAxLAogICAgICAgICAgIm5hbWUiOiAiREdFQkEgbW9uby1oeWRyb2x5emVkIChvbmUgZXBveGlkZSBvcGVuZWQgdG8gZGlvbCkiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiY29ycmVjdGx5X2V4Y2x1ZGVkIjogdHJ1ZSwKICAgICAgICAgICJleHBlY3RlZF9lcG94aWRlIjogMCwKICAgICAgICAgICJpc19kaWZ1bmN0aW9uYWxfZGdlYmFfZXhhY3RfYW5jaG9yIjogZmFsc2UsCiAgICAgICAgICAibl9lcG94aWRlIjogMCwKICAgICAgICAgICJuYW1lIjogImZ1bGx5IGFkdmFuY2VkIERHRUJBLWRpb2wgKGJvdGggZXBveGlkZXMgb3BlbmVkKSIKICAgICAgICB9CiAgICAgIF0KICAgIH0KICB9LAogICJpbnB1dF9hcnRpZmFjdHMiOiB7CiAgICAiY29tcHV0ZV9kZ2ViYV9vbGlnb21lci5weV9zaGEyNTYiOiAiMDRlYWM0NmJjZDAyOGUxZmNjOWRjYjZjZTZlNDM3Mzc4M2E2MDkwNWM1ODNlZTYxMjNiYmJiMGI5NTcxMGNlNyIsCiAgICAiZGlhZ25vc3RpYy5jYW5vbmljYWwuanNvbl9zaGEyNTYiOiAiMTViMzNjMGQxMzlmNjU2NDg0OTBiYzYxZWE4ZmQ2OWVlNGI3NThmODVlMmM1ZWVjMWQyNjVmODEzYjU2Y2IxOCIsCiAgICAiZWV3X2FoZXdfYmVuY2htYXJrLnYxLmpzb25fc2hhMjU2IjogIjNkZTI2ZjIwMzQyM2E4MDIxMmU2YzkwYWFhNTExZTUxMTJjNzliZjkyYWM1NmI0YzYzMjYwYzMwODZkNDYzOGYiCiAgfSwKICAibWFwc190b19tb2R1bGVfaHlwb3RoZXNpcyI6ICJFeHRlbmRzICdjYW5vbmljYWwgc3RydWN0dXJlIHJ1bGVzIHJlcHJvZHVjZSBsb2NrZWQgRUVXL0FIRVcga25vd24gYW5zd2VycycgZnJvbSB0aGUgc2luZ2xlIG49MCBtb25vbWVyIHRvIHRoZSBwdXJlLW9saWdvbWVyIHNlcmllcyAoZWFjaCBvbGlnb21lciBpcyBpdHNlbGYgYSBzaW5nbGUgY29tcG9uZW50IHdpdGggYW4gZXhhY3QgRUVXKSwgYW5kIGdpdmVzIHRoZSBtZWNoYW5pc3RpYywgbW9sZS13ZWlnaHRlZCBhY2NvdW50IG9mIGNvbW1lcmNpYWwtZ3JhZGUgRUVXIGVsZXZhdGlvbiB3aXRob3V0IGNsYWltaW5nIGFuIGV4YWN0IEVFVyBmb3IgcG9seWRpc3BlcnNlIG1peHR1cmVzLiIsCiAgIm1vZGlmaWVzX25vX2xpdmVfY29uZmlnIjogdHJ1ZSwKICAibW9kdWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkiLAogICJvbGlnb21lcnNfYnVpbHQiOiB7CiAgICAiMCI6IHsKICAgICAgImVld19nX3Blcl9lcSI6IDE3MC4yMSwKICAgICAgImZvcm11bGEiOiAiQzIxSDI0TzQiLAogICAgICAibW9sd3RfZ19wZXJfbW9sIjogMzQwLjQxOSwKICAgICAgIm5fZXBveGlkZSI6IDIsCiAgICAgICJzbWlsZXMiOiAiQyhDMUNPMSlPYzFjY2MoY2MxKUMoQykoQyljMWNjYyhPQ0MyQ08yKWNjMSIKICAgIH0sCiAgICAiMSI6IHsKICAgICAgImVld19nX3Blcl9lcSI6IDMxMi4zODcsCiAgICAgICJmb3JtdWxhIjogIkMzOUg0NE83IiwKICAgICAgIm1vbHd0X2dfcGVyX21vbCI6IDYyNC43NzQsCiAgICAgICJuX2Vwb3hpZGUiOiAyLAogICAgICAic21pbGVzIjogIkMoQzFDTzEpT2MxY2NjKGNjMSlDKEMpKEMpYzFjY2MoT0NDKE8pQ09jMmNjYyhjYzIpQyhDKShDKWMyY2NjKE9DQzNDTzMpY2MyKWNjMSIKICAgIH0sCiAgICAiMiI6IHsKICAgICAgImVld19nX3Blcl9lcSI6IDQ1NC41NjUsCiAgICAgICJmb3JtdWxhIjogIkM1N0g2NE8xMCIsCiAgICAgICJtb2x3dF9nX3Blcl9tb2wiOiA5MDkuMTI5LAogICAgICAibl9lcG94aWRlIjogMiwKICAgICAgInNtaWxlcyI6ICJDKEMxQ08xKU9jMWNjYyhjYzEpQyhDKShDKWMxY2NjKE9DQyhPKUNPYzJjY2MoY2MyKUMoQykoQyljMmNjYyhPQ0MoTylDT2MzY2NjKGNjMylDKEMpKEMpYzNjY2MoT0NDNENPNCljYzMpY2MyKWNjMSIKICAgIH0sCiAgICAiMyI6IHsKICAgICAgImVld19nX3Blcl9lcSI6IDU5Ni43NDIsCiAgICAgICJmb3JtdWxhIjogIkM3NUg4NE8xMyIsCiAgICAgICJtb2x3dF9nX3Blcl9tb2wiOiAxMTkzLjQ4NCwKICAgICAgIm5fZXBveGlkZSI6IDIsCiAgICAgICJzbWlsZXMiOiAiQyhDMUNPMSlPYzFjY2MoY2MxKUMoQykoQyljMWNjYyhPQ0MoTylDT2MyY2NjKGNjMilDKEMpKEMpYzJjY2MoT0NDKE8pQ09jM2NjYyhjYzMpQyhDKShDKWMzY2NjKE9DQyhPKUNPYzRjY2MoY2M0KUMoQykoQyljNGNjYyhPQ0M1Q081KWNjNCljYzMpY2MyKWNjMSIKICAgIH0KICB9LAogICJwcmltYXJ5X3NvdXJjZXMiOiBbCiAgICAiTGVlICYgTmV2aWxsZSAxOTY3IEhhbmRib29rIG9mIEVwb3h5IFJlc2lucyIsCiAgICAiTWF5IDE5ODggRXBveHkgUmVzaW5zIDJuZCBlZCBJU0JOIDAtODI0Ny03NjkwLTkiLAogICAgIkVsbGlzIDE5OTMgQ2hlbWlzdHJ5IGFuZCBUZWNobm9sb2d5IG9mIEVwb3h5IFJlc2lucyBJU0JOIDAtNzUxNC0wMDk1LTAiLAogICAgIkFTVE0gRDE2NTIiLAogICAgIlByb2hhc2thIGV0IGFsLiBQdXJlIEFwcGwuIENoZW0uIDk0KDUpOjU3MyAoMjAyMikgZG9pOjEwLjE1MTUvcGFjLTIwMTktMDYwMyIKICBdLAogICJwcm9tb3Rlc19ub3RoaW5nIjogdHJ1ZSwKICAicHJvbW90aW9uX2Jsb2NrZWRfYnkiOiAiTk9UIHRoaXMgYXVkaXQncyBzY2llbmNlIChhbGwgZ2F0ZXMgcGFzcykgYW5kIE5PVCBrZXkgY3VzdG9keS4gUHJvbW90aW9uIHJlcXVpcmVzIHRoZSBodW1hbiBkdWFsLWlkZW50aXR5IFBoYXNlLTAgY2VyZW1vbnkga2V5cyB0aGlzIGNyb24gZG9lcyBub3QgaG9sZDsgdGhlIGltbXV0YWJsZSAyMDI2LTA3LTIyIGV2YWx1YXRpb24udjEuZHNzZS5qc29uIHN0YXRlLW1hY2hpbmUgbG9jayBpcyB1bmNoYW5nZWQuIE1hbmlmZXN0IHVudG91Y2hlZCBhdCA2Ni8xMS4iLAogICJyZGtpdF92ZXJzaW9uIjogIjIwMjYuMDMuMiIsCiAgInJlY2VpcHRfaWQiOiAiZGdlYmEtb2xpZ29tZXItZWV3LXNlcmllcy0xNWIzM2MwZDEzOWY2NTY0ODQ5MGJjNjFlYThmZDY5ZSIsCiAgInJlcGVhdF9tYXNzX2Zyb21fZWFjaF9wYWlyIjogewogICAgIjEiOiAyODQuMzU1LAogICAgIjIiOiAyODQuMzU1LAogICAgIjMiOiAyODQuMzU1CiAgfSwKICAicnVsZSI6ICJFRVcobikgPSAoTTAgKyBuKk1fcmVwZWF0KS8yIGZvciB0aGUgbGluZWFyIGRpZnVuY3Rpb25hbCBER0VCQSBvbGlnb21lciBzZXJpZXM7IG51bWJlci1hdmVyYWdlIEVFV19iYXIgPSAxNzAuMjEgKyAxNDIuMTgqbl9iYXIgZm9yIGEgbWl4dHVyZS4iLAogICJzY2hlbWEiOiAiYW1waG9yYS5tb2xlY3VsZS1wcm9wZXJ0eS5kZ2ViYS1vbGlnb21lci1lZXctc2VyaWVzLXJlY2VpcHQudjEiLAogICJzaWduaW5nX2tleSI6IHsKICAgICJhdXRob3JpdHkiOiAiTE9DQUxfREVWRUxPUE1FTlRfQVVESVRfT05MWSIsCiAgICAia2V5X2lkIjogImxvY2FsLTkwMjg3NzNmNDk1OTExOTMiLAogICAgIm5vdGUiOiAiTk9UIGluIGNvbmZpZy9waGFzZTAtdHJ1c3Qtc3RvcmUudjEuanNvbjsgYXVkaXQgZXZpZGVuY2Ugb25seSIsCiAgICAicHVibGljX2tleV9oZXgiOiAiNGI3MjJmNDUxNmUwMzVjZTNjYjk1Y2NlY2ZmZTQ2MzhhNjg3ZDkyNDFlNjk3MGY0YzFjZjVjMjg1YjJlZGY5MyIsCiAgICAidHJ1c3RfYW5jaG9yZWQiOiBmYWxzZQogIH0sCiAgInN0dWR5X2lkIjogImRnZWJhLW9saWdvbWVyLWVldy1zZXJpZXMtdjEiLAogICJ0d29fcmVwbGF5X2dhdGUiOiB7CiAgICAiYnl0ZV9pZGVudGljYWwiOiB0cnVlLAogICAgImNhbm9uaWNhbF9zaGEyNTYiOiAiMTViMzNjMGQxMzlmNjU2NDg0OTBiYzYxZWE4ZmQ2OWVlNGI3NThmODVlMmM1ZWVjMWQyNjVmODEzYjU2Y2IxOCIsCiAgICAicnVuQl9zaGEyNTYiOiAiMTViMzNjMGQxMzlmNjU2NDg0OTBiYzYxZWE4ZmQ2OWVlNGI3NThmODVlMmM1ZWVjMWQyNjVmODEzYjU2Y2IxOCIKICB9Cn0=",
+    "payloadType": "application/vnd.amphora.molecule-property.dgeba-oligomer-eew-series-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "6xllrjteFts/iXlJL5m1oqb/jmcgv4vkBijMJgnRkhZY8VwBrqQnjXec5cnWBxoqpUaJSs3pRb7/wVnbw3cDCg=="
+      }
+    ]
+  },
+  "gates": {
+    "G1_monomer_anchor": {
+      "abs_err_g_per_eq": 0.0095,
+      "bar": 0.5,
+      "eew_n0_rule": 170.21,
+      "passed": true,
+      "shipped_expected": 170.2
+    },
+    "G2_oligomer_additivity_difunctionality": {
+      "M0_g_per_mol": 340.419,
+      "M_repeat_g_per_mol": 284.355,
+      "all_oligomers_exactly_2_epoxides": true,
+      "eew_slope_g_per_eq_per_n": 142.1775,
+      "max_additivity_deviation_g_per_mol": 0.0,
+      "passed": true,
+      "repeat_C18H20O3_theoretical": 284.3489,
+      "repeat_mass_spread_across_pairs_g_per_mol": 0.0
+    },
+    "G3_commercial_band_nbar_consistency": {
+      "monotone_increasing_nbar_with_eew": true,
+      "note": "Corroborative only: number-average EEW of a mixture requires MEASURED composition; this does NOT assert an exact EEW for commercial grades and does NOT overturn the module's commercial_product_claim_locked=true lock.",
+      "passed": true,
+      "rows": [
+        {
+          "eew_band": [
+            185.0,
+            192.0
+          ],
+          "grade": "Epon 828 / DER 331 (liquid)",
+          "nbar_published": [
+            0.1,
+            0.16
+          ],
+          "nbar_rule": [
+            0.104,
+            0.153
+          ],
+          "nonneg": true,
+          "overlaps_published": true
+        },
+        {
+          "eew_band": [
+            171.0,
+            175.0
+          ],
+          "grade": "DER 332 (near-monomer liquid)",
+          "nbar_published": [
+            0.0,
+            0.04
+          ],
+          "nbar_rule": [
+            0.006,
+            0.034
+          ],
+          "nonneg": true,
+          "overlaps_published": true
+        },
+        {
+          "eew_band": [
+            450.0,
+            560.0
+          ],
+          "grade": "Epon 1001F / DER 671 (semisolid)",
+          "nbar_published": [
+            1.9,
+            2.8
+          ],
+          "nbar_rule": [
+            1.968,
+            2.742
+          ],
+          "nonneg": true,
+          "overlaps_published": true
+        },
+        {
+          "eew_band": [
+            800.0,
+            950.0
+          ],
+          "grade": "Epon 1004F / DER 664 (solid)",
+          "nbar_published": [
+            4.4,
+            5.5
+          ],
+          "nbar_rule": [
+            4.43,
+            5.485
+          ],
+          "nonneg": true,
+          "overlaps_published": true
+        }
+      ]
+    },
+    "G4_failclosed_controls": {
+      "passed": true,
+      "rows": [
+        {
+          "correctly_excluded": true,
+          "expected_epoxide": 0,
+          "is_difunctional_dgeba_exact_anchor": false,
+          "n_epoxide": 0,
+          "name": "bisphenol-A (no epoxide, precursor)"
+        },
+        {
+          "correctly_excluded": true,
+          "expected_epoxide": 1,
+          "is_difunctional_dgeba_exact_anchor": false,
+          "n_epoxide": 1,
+          "name": "phenyl glycidyl ether (monofunctional)"
+        },
+        {
+          "correctly_excluded": true,
+          "expected_epoxide": 1,
+          "is_difunctional_dgeba_exact_anchor": false,
+          "n_epoxide": 1,
+          "name": "DGEBA mono-hydrolyzed (one epoxide opened to diol)"
+        },
+        {
+          "correctly_excluded": true,
+          "expected_epoxide": 0,
+          "is_difunctional_dgeba_exact_anchor": false,
+          "n_epoxide": 0,
+          "name": "fully advanced DGEBA-diol (both epoxides opened)"
+        }
+      ]
+    }
+  },
+  "input_artifacts": {
+    "compute_dgeba_oligomer.py_sha256": "04eac46bcd028e1fcc9dcb6ce6e4373783a60905c583ee6123bbbb0b95710ce7",
+    "diagnostic.canonical.json_sha256": "15b33c0d139f65648490bc61ea8fd69ee4b758f85e2c5eec1d265f813b56cb18",
+    "eew_ahew_benchmark.v1.json_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f"
+  },
+  "maps_to_module_hypothesis": "Extends 'canonical structure rules reproduce locked EEW/AHEW known answers' from the single n=0 monomer to the pure-oligomer series (each oligomer is itself a single component with an exact EEW), and gives the mechanistic, mole-weighted account of commercial-grade EEW elevation without claiming an exact EEW for polydisperse mixtures.",
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "oligomers_built": {
+    "0": {
+      "eew_g_per_eq": 170.21,
+      "formula": "C21H24O4",
+      "molwt_g_per_mol": 340.419,
+      "n_epoxide": 2,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC2CO2)cc1"
+    },
+    "1": {
+      "eew_g_per_eq": 312.387,
+      "formula": "C39H44O7",
+      "molwt_g_per_mol": 624.774,
+      "n_epoxide": 2,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC3CO3)cc2)cc1"
+    },
+    "2": {
+      "eew_g_per_eq": 454.565,
+      "formula": "C57H64O10",
+      "molwt_g_per_mol": 909.129,
+      "n_epoxide": 2,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC(O)COc3ccc(cc3)C(C)(C)c3ccc(OCC4CO4)cc3)cc2)cc1"
+    },
+    "3": {
+      "eew_g_per_eq": 596.742,
+      "formula": "C75H84O13",
+      "molwt_g_per_mol": 1193.484,
+      "n_epoxide": 2,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC(O)COc3ccc(cc3)C(C)(C)c3ccc(OCC(O)COc4ccc(cc4)C(C)(C)c4ccc(OCC5CO5)cc4)cc3)cc2)cc1"
+    }
+  },
+  "primary_sources": [
+    "Lee & Neville 1967 Handbook of Epoxy Resins",
+    "May 1988 Epoxy Resins 2nd ed ISBN 0-8247-7690-9",
+    "Ellis 1993 Chemistry and Technology of Epoxy Resins ISBN 0-7514-0095-0",
+    "ASTM D1652",
+    "Prohaska et al. Pure Appl. Chem. 94(5):573 (2022) doi:10.1515/pac-2019-0603"
+  ],
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Promotion requires the human dual-identity Phase-0 ceremony keys this cron does not hold; the immutable 2026-07-22 evaluation.v1.dsse.json state-machine lock is unchanged. Manifest untouched at 66/11.",
+  "rdkit_version": "2026.03.2",
+  "receipt_id": "dgeba-oligomer-eew-series-15b33c0d139f65648490bc61ea8fd69e",
+  "repeat_mass_from_each_pair": {
+    "1": 284.355,
+    "2": 284.355,
+    "3": 284.355
+  },
+  "rule": "EEW(n) = (M0 + n*M_repeat)/2 for the linear difunctional DGEBA oligomer series; number-average EEW_bar = 170.21 + 142.18*n_bar for a mixture.",
+  "schema": "amphora.molecule-property.dgeba-oligomer-eew-series-receipt.v1",
+  "signature": "6xllrjteFts/iXlJL5m1oqb/jmcgv4vkBijMJgnRkhZY8VwBrqQnjXec5cnWBxoqpUaJSs3pRb7/wVnbw3cDCg==",
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "note": "NOT in config/phase0-trust-store.v1.json; audit evidence only",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "trust_anchored": false
+  },
+  "study_id": "dgeba-oligomer-eew-series-v1",
+  "two_replay_gate": {
+    "byte_identical": true,
+    "canonical_sha256": "15b33c0d139f65648490bc61ea8fd69ee4b758f85e2c5eec1d265f813b56cb18",
+    "runB_sha256": "15b33c0d139f65648490bc61ea8fd69ee4b758f85e2c5eec1d265f813b56cb18"
+  }
+}

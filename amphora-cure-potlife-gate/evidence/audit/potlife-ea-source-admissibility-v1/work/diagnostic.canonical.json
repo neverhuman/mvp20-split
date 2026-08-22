@@ -1,0 +1,181 @@
+{
+  "also_examines_lineage": {
+    "R-C02": "amphora-cure-potlife-gate/evidence/phase0/repairs/R-C02/done/R-C02-repair-receipt.v1.dsse.json",
+    "potlife-lofo-family-safe-v1": "amphora-cure-potlife-gate/evidence/audit/potlife-lofo-family-safe-v1/potlife-lofo-family-safe-receipt.v1.dsse.json",
+    "potlife-lofso-combined-safe-v1": "amphora-cure-potlife-gate/evidence/audit/potlife-lofso-combined-safe-v1/potlife-lofso-combined-safe-receipt.v1.dsse.json",
+    "potlife-lovo-source-safe-v1": "amphora-cure-potlife-gate/evidence/audit/potlife-lovo-source-safe-v1/potlife-lovo-source-safe-receipt.v1.dsse.json",
+    "potlife-q10-heuristic-ablation-v1": "amphora-cure-potlife-gate/evidence/audit/potlife-q10-heuristic-ablation-v1/potlife-q10-heuristic-ablation-receipt.v1.dsse.json"
+  },
+  "attack_type": "physical-admissibility / provenance audit of the underlying per-system Ea labels (not a re-split, not a re-derivation of MAPE arithmetic)",
+  "attacks": "amphora-cure-potlife-gate/evidence/phase0/repairs/R-C02/done/R-C02-repair-receipt.v1.dsse.json",
+  "classification_rows": [
+    {
+      "activation_energy_classification": "SYSTEM_SPECIFIC",
+      "activation_energy_source": "Prime R.B. (Turi 1997 Table 8-1) DGEBA/TETA Ea = 55 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "prime r.b.",
+      "hardener_family": "aliphatic-polyamine",
+      "pot_life_source": "Dow DER 331 + DEH 24 TDS; Ellis 1993 Chapter 5",
+      "pot_life_source_document_key": "dow der 331 + deh 24 tds",
+      "same_source_document": false,
+      "system_id": "dgeba-teta"
+    },
+    {
+      "activation_energy_classification": "SYSTEM_SPECIFIC",
+      "activation_energy_source": "Kamal & Sourour Polym Eng Sci 13:59 (1973) DGEBA/DETA Ea = 56 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "kamal & sourour polym eng sci 13:59",
+      "hardener_family": "aliphatic-polyamine",
+      "pot_life_source": "Dow DER 331 + DEH 20 TDS; supplier gel time at nominal mass",
+      "pot_life_source_document_key": "dow der 331 + deh 20 tds",
+      "same_source_document": false,
+      "system_id": "dgeba-deta"
+    },
+    {
+      "activation_energy_classification": "FAMILY_CLASS_APPROXIMATE",
+      "activation_energy_source": "Prime R.B. (Turi 1997) TEPA family Ea ~54 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "prime r.b.",
+      "hardener_family": "aliphatic-polyamine",
+      "pot_life_source": "Huntsman Aradur 43 (TEPA) TDS",
+      "pot_life_source_document_key": "huntsman aradur 43",
+      "same_source_document": false,
+      "system_id": "dgeba-tepa"
+    },
+    {
+      "activation_energy_classification": "SYSTEM_SPECIFIC",
+      "activation_energy_source": "Blanco et al. Polymer 46:7989 (2005) DGEBA/IPDA Ea = 62 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "blanco et al. polymer 46:7989",
+      "hardener_family": "cycloaliphatic-amine",
+      "pot_life_source": "Huntsman Araldite GY 6010 + HY 2954 (IPDA) TDS 4h @ 25C",
+      "pot_life_source_document_key": "huntsman araldite gy 6010 + hy 2954",
+      "same_source_document": false,
+      "system_id": "dgeba-ipda"
+    },
+    {
+      "activation_energy_classification": "FAMILY_CLASS_APPROXIMATE",
+      "activation_energy_source": "Prime R.B. (Turi 1997) PACM family Ea ~60 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "prime r.b.",
+      "hardener_family": "cycloaliphatic-amine",
+      "pot_life_source": "Air Products Ancamine 2049 (PACM) TDS 6h @ 25C",
+      "pot_life_source_document_key": "air products ancamine 2049",
+      "same_source_document": false,
+      "system_id": "dgeba-pacm"
+    },
+    {
+      "activation_energy_classification": "FAMILY_CLASS_APPROXIMATE",
+      "activation_energy_source": "Prime R.B. (Turi 1997) cycloaliphatic diamine Ea ~58 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "prime r.b.",
+      "hardener_family": "cycloaliphatic-amine",
+      "pot_life_source": "Momentive Heloxy DACH TDS",
+      "pot_life_source_document_key": "momentive heloxy dach tds",
+      "same_source_document": false,
+      "system_id": "dgeba-dach"
+    },
+    {
+      "activation_energy_classification": "FAMILY_CLASS_APPROXIMATE",
+      "activation_energy_source": "Riccardi et al. J Appl Polym Sci 29:2481 (1984) MXDA-type Ea ~58 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "riccardi et al. j appl polym sci 29:2481",
+      "hardener_family": "aromatic-amine",
+      "pot_life_source": "Mitsubishi Gaskineide Nx-1052 (MXDA) TDS 90 min @ 25C",
+      "pot_life_source_document_key": "mitsubishi gaskineide nx-1052",
+      "same_source_document": false,
+      "system_id": "dgeba-mxda"
+    },
+    {
+      "activation_energy_classification": "FAMILY_CLASS_APPROXIMATE",
+      "activation_energy_source": "Prime R.B. (Turi 1997) MPDA Ea ~68 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "prime r.b.",
+      "hardener_family": "aromatic-amine",
+      "pot_life_source": "Aldrich MPDA + Epikote 828 15h @ 25C (Ellis 1993 Chapter 5)",
+      "pot_life_source_document_key": "aldrich mpda + epikote 828 15h @ 25c",
+      "same_source_document": false,
+      "system_id": "dgeba-mpda"
+    },
+    {
+      "activation_energy_classification": "SYSTEM_SPECIFIC",
+      "activation_energy_source": "Riccardi et al. J Appl Polym Sci 29:2481 (1984) MDA Ea = 65 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "riccardi et al. j appl polym sci 29:2481",
+      "hardener_family": "aromatic-amine",
+      "pot_life_source": "Epikote 828 + MDA 12h @ 25C (Ellis 1993)",
+      "pot_life_source_document_key": "epikote 828 + mda 12h @ 25c",
+      "same_source_document": false,
+      "system_id": "dgeba-mda"
+    },
+    {
+      "activation_energy_classification": "FAMILY_CLASS_APPROXIMATE",
+      "activation_energy_source": "Prime R.B. (Turi 1997) amidoamine adduct Ea ~52 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "prime r.b.",
+      "hardener_family": "amidoamine-adduct",
+      "pot_life_source": "Huntsman Aradur 3486 (amidoamine) TDS 3h @ 25C",
+      "pot_life_source_document_key": "huntsman aradur 3486",
+      "same_source_document": false,
+      "system_id": "dgeba-amidoamine-adduct1"
+    },
+    {
+      "activation_energy_classification": "FAMILY_CLASS_APPROXIMATE",
+      "activation_energy_source": "Kamal-Sourour framework Ea ~55 kJ/mol for amidoamine",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "kamal-sourour framework ea ~55 kj/mol for amidoamine",
+      "hardener_family": "amidoamine-adduct",
+      "pot_life_source": "Momentive EPI-CURE 3125 (amidoamine) TDS 2h @ 25C",
+      "pot_life_source_document_key": "momentive epi-cure 3125",
+      "same_source_document": false,
+      "system_id": "dgeba-amidoamine-adduct2"
+    },
+    {
+      "activation_energy_classification": "FAMILY_CLASS_APPROXIMATE",
+      "activation_energy_source": "Prime R.B. (Turi 1997) Mannich base Ea ~48 kJ/mol",
+      "cross_source_pairing": true,
+      "ea_source_document_key": "prime r.b.",
+      "hardener_family": "mannich-base",
+      "pot_life_source": "Air Products Ancamine 2735 (Mannich) TDS 15 min @ 25C",
+      "pot_life_source_document_key": "air products ancamine 2735",
+      "same_source_document": false,
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "criterion_a_family_class_approximate_ea_present": true,
+  "criterion_b_cross_source_pairing_present": true,
+  "dataset": {
+    "fixture_id": "amphora-cure-potlife-gate-phase0-known-answer-2026-07-21",
+    "n_systems": 12,
+    "path": "amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+    "sha256": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1"
+  },
+  "falsification_criterion": "The 'per-system published Ea' / 'chemistry-specific per-system Ea' framing used by R-C02 and its full lineage (original KPI, potlife-q10-heuristic-ablation-v1, potlife-lofo-family-safe-v1, potlife-lovo-source-safe-v1, potlife-lofso-combined-safe-v1) is falsified if, for the 12-system locked fixture, EITHER (a) any activation_energy_source is a family/class-level approximate citation (contains an explicit '~' tolerance marker and/or a class-level qualifier word: 'family', 'type', 'framework') rather than a system-specific exact citation, OR (b) any system's activation_energy_source and pot_life_source are drawn from two independently authored documents (cross-source pairing) rather than one document reporting both quantities for the same physical formulation.",
+  "falsified": true,
+  "lineage_receipt_sha256": {
+    "R-C02": "69eff1a5d187354258c826ad893bcd9c51ee5407d9275647c558e6c96ed0fd81",
+    "potlife-lofo-family-safe-v1": "7cccb5086838717c379f0057f0d11cb495dde178f532bd0199f71be1b56b7c4f",
+    "potlife-lofso-combined-safe-v1": "b54d08a05a31772fc49bd4b116aff2b6756f6426cc95fbe678355c5b286e06a9",
+    "potlife-lovo-source-safe-v1": "74dfe19d65659df07f7decf7f21ef56de634ece4f84ee5134290c9fa4fdce744",
+    "potlife-q10-heuristic-ablation-v1": "35631dd71698e754e7973736fe5046c39102d01c6043c737274c93691540f549"
+  },
+  "module": "amphora-cure-potlife-gate",
+  "schema": "amphora.cure-potlife-gate.ea-source-admissibility-audit-diagnostic.v1",
+  "summary": {
+    "n_cross_source_pairing": 12,
+    "n_family_class_approximate_ea": 8,
+    "n_same_source_pairing": 0,
+    "n_system_specific_ea": 4,
+    "n_systems": 12,
+    "pct_cross_source_pairing": 100.0,
+    "pct_family_class_approximate_ea": 66.67
+  },
+  "target_claim_text": {
+    "dof_accounting": "For every system s, the leg-L correction factor is computed from the OTHER 11 systems only (leave-one-system-out); system s's own datum never informs its own correction. No temperature-domain extrapolation of a per-system curve (avoids the T0-identifiability failure mode that refuted VFT in potlife-arrhenius-curvature-mechanism-v1).",
+    "form": "corrected_pred(s, L) = arrhenius_pred(s, L) * exp(mean_{i != s}[ln(observed_i,L / arrhenius_pred_i,L)])",
+    "name": "LOSO cross-system multiplicative bias correction on incumbent per-system published-Ea Arrhenius",
+    "physical_basis": "Corrects the already-established, direction-consistent (12/12 systems, both warm legs) convexity of ln(pot life) vs 1/T reported in potlife-arrhenius-curvature-mechanism-v1, using an empirical population-level calibration factor rather than a per-system parametric curvature law."
+  },
+  "verdict": "CLAIM_REFUTED",
+  "verdict_meaning": "REFUTED: the 'per-system published Ea' framing carried by every receipt in the R-C02 lineage mischaracterizes the fixture. Of 12 systems, 8 (66.7%) cite a family/class-level literature-average Ea rather than a system-specific value, and 12/12 (100.0%) pair that Ea citation with a pot-life measurement drawn from an entirely different, independently authored document (a named vendor TDS) for a commercial product distinct from whatever specimen the Ea study measured. This does not dispute the MAPE arithmetic in R-C02/LOFO/LOVO/LOFSO (those numbers are recomputed correctly from the fixture as written); it disputes the physical-admissibility framing that the model is built on genuinely per-system published activation energies."
+}

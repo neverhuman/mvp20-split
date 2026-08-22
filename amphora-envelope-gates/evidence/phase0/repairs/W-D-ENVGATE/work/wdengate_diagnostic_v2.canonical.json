@@ -1,0 +1,356 @@
+{
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "W-D-ENVGATE",
+  "citation_not_found": [
+    {
+      "cited_source": "Huntsman Araldite GY-6010 + HY 2954 (IPDA) TDS",
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "finding": "HY 2954 does not appear anywhere in the real GY 6010 TDS's 17-entry hardener compatibility table; the cited source/product-combination could not be located."
+    }
+  ],
+  "claim_under_attack": {
+    "claim_text": "The envelope gates' fail-closed metrics carry a real sample size drawn from published formulations.",
+    "receipt_path": "amphora-envelope-gates/evidence/"
+  },
+  "done_criterion_status": {
+    "actual_count_of_explicit_tolerance_band_sources": 5,
+    "every_finding_filed_in_proposed_followups_with_module_defect_done_criterion": true,
+    "four_fail_closed_gates_rescored_against_external_bands_reporting_disagreements": true,
+    "ge_5_qualifying_sources_are_named_supplier_tds_or_formulation_guide_with_explicit_tolerance_band": true,
+    "n_sources_swept": 13,
+    "overall_done_criterion_met": true,
+    "required_count": 5,
+    "sources_swept_ge_12_each_with_query_and_license": true
+  },
+  "fire_sequence": 2,
+  "four_fail_closed_gates_rescore": {
+    "G2_boundary_bit_exactness": {
+      "demo_bounds_pbw": [
+        32.0,
+        36.0
+      ],
+      "disagreement": "None found, but for a structural reason rather than a substantive one: G2's bit-exactness holds for ANY bound value substituted in this way, self-authored or real-external, because AT_*_BOUNDARY test snapshots are constructed as v := lo (or v := hi) and IEEE-754 subtraction of a float from itself is exact for every finite double. G2 passing is therefore a tautological property of the fixture's test-case construction method, not evidence that the module's tolerance MODEL (nominal ratio +/- band) matches any real published source -- that question is answered by G3, not G2. Recording this as a scope-boundary finding: G2 is not capable of detecting the kind of sourcing defect this item is attacking.",
+      "margin_at_lower_bound_bit_exact_zero": true,
+      "margin_at_upper_bound_bit_exact_zero": true,
+      "method": "G2 asserts that a KAT test_case tagged AT_LOWER_BOUNDARY/AT_UPPER_BOUNDARY has binding_margin bit-exact 0.0 f64. This is checked here by substituting this fire's real, externally-sourced Hexion bounds (32.0, 36.0 pbw) for the fixture's self-authored bounds and re-deriving the same equality."
+    },
+    "G3_tolerance_band_construction": {
+      "all_real_sources_are_asymmetric": true,
+      "all_real_sources_fail_the_symmetric_pm5pct_check": true,
+      "closest_source_to_the_module_assumption_still_fails": {
+        "lower_deviation_pct": 5.55,
+        "source": "Hexion EPIKOTE Resin L 20 / EPIKURE Curing Agent 960 Technical Data Sheet (Rev 04/09/15)",
+        "still_fails_symmetric_check": true,
+        "upper_deviation_pct": 6.25
+      },
+      "disagreement": "Every one of 5 real, named, explicit tolerance bands located across both fires is asymmetric and diverges from the module's assumed symmetric +/-5% band. The closest, Hexion EPIKOTE L20/EPIKURE 960 (-5.55%/+6.25%), is far closer to symmetric +/-5% than the 4 WEST SYSTEM bands, but still fails both the exact-symmetric and exact-+/-5% checks G3 requires. 0 of 5 real sources match the module's G3 assumption; G3 would REJECT all 5 if substituted for the fixture's self-authored numbers.",
+      "method": "The module's own oracle (benchmarks/constraint-envelope-oracle-v1/run_envelope_gates.py, gate G3) asserts every envelope's tolerance band is a symmetric +/-5%-by-mass-per-part window (TOL_FRAC=0.05, checked via is_5pct). This re-score applies that identical G3 arithmetic to all 5 real, named, explicit tolerance bands now located (WEST SYSTEM 105/205, 105/206, 105/207, 105/209 by Gougeon Brothers, plus Hexion EPIKOTE L20/EPIKURE 960) instead of the fixture's self-authored numbers.",
+      "results": [
+        {
+          "acceptable_ratio_range": [
+            4.83,
+            6.2
+          ],
+          "lower_deviation_pct": 6.94,
+          "module_g3_is_pm5pct_check_result": false,
+          "module_g3_symmetric_check_result": false,
+          "nominal_ratio": 5.19,
+          "source": "WEST SYSTEM 105/205 (Gougeon Brothers) Technical Data Sheet",
+          "upper_deviation_pct": 19.46
+        },
+        {
+          "acceptable_ratio_range": [
+            4.84,
+            6.19
+          ],
+          "lower_deviation_pct": 9.7,
+          "module_g3_is_pm5pct_check_result": false,
+          "module_g3_symmetric_check_result": false,
+          "nominal_ratio": 5.36,
+          "source": "WEST SYSTEM 105/206 (Gougeon Brothers) Technical Data Sheet",
+          "upper_deviation_pct": 15.49
+        },
+        {
+          "acceptable_ratio_range": [
+            3.41,
+            4.16
+          ],
+          "lower_deviation_pct": 6.32,
+          "module_g3_is_pm5pct_check_result": false,
+          "module_g3_symmetric_check_result": false,
+          "nominal_ratio": 3.64,
+          "source": "WEST SYSTEM 105/207 (Gougeon Brothers) Technical Data Sheet",
+          "upper_deviation_pct": 14.29
+        },
+        {
+          "acceptable_ratio_range": [
+            3.3,
+            4.03
+          ],
+          "lower_deviation_pct": 10.33,
+          "module_g3_is_pm5pct_check_result": false,
+          "module_g3_symmetric_check_result": false,
+          "nominal_ratio": 3.68,
+          "source": "WEST SYSTEM 105/209 (Gougeon Brothers) Technical Data Sheet",
+          "upper_deviation_pct": 9.51
+        },
+        {
+          "acceptable_ratio_range": [
+            2.778,
+            3.125
+          ],
+          "lower_deviation_pct": 5.55,
+          "module_g3_is_pm5pct_check_result": false,
+          "module_g3_symmetric_check_result": false,
+          "nominal_ratio": 2.9412,
+          "source": "Hexion EPIKOTE Resin L 20 / EPIKURE Curing Agent 960 Technical Data Sheet (Rev 04/09/15)",
+          "upper_deviation_pct": 6.25
+        }
+      ]
+    },
+    "G4_ratio_consistency": {
+      "disagreement": "G4, as actually implemented, cannot and does not detect envelope_id/nominal-mass ratio mismatches regardless of whether the nominal values originate from the self-authored fixture or from real external supplier data -- the code path simply does not exist. The disagreement is between the oracle's own docstring claim ('and ratio-string consistency') and its actual behavior, not between sourced and unsourced data.",
+      "finding": {
+        "consequence": "This is the root cause of fire 1's internal defect finding (dgeba-pacm-marine-topcoat-100to30: envelope_id says 100:30, recorded nominal masses are 200.0g:30.0g) passing G4 silently: G4 was never capable of catching it, contrary to what the oracle's own docstring claims it does.",
+        "docstring_claims_ratio_string_check": true,
+        "finding": "The oracle's own module docstring (run_envelope_gates.py) states G4 'checks nominal part_A + part_B == total and ratio-string consistency', but the actual implementation (`g4_pass = all(e[\"nominal_parts_sum_to_total\"] for e in per_env)`) only ever checks the additive-sum property; no code path compares envelope_id's declared ratio string against nominal_part_a_g/nominal_part_b_g anywhere in the file. This is confirmed by direct source read this fire, independent of any external data sourcing.",
+        "gate": "G4",
+        "implementation_only_checks_additive_sum": true
+      },
+      "method": "Re-examine G4 (benchmarks/constraint-envelope-oracle-v1/run_envelope_gates.py) against this fire's newly confirmed oracle-source finding."
+    },
+    "G5_tamper_battery": {
+      "disagreement": "Not re-scorable against externally-sourced tolerance bands: G5's probes mutate STRUCTURE (inverted bounds, missing trust flags, injected claims) rather than substitute alternative nominal/tolerance VALUES, so swapping in Hexion's or WEST SYSTEM's real numbers exercises no different code path than the fixture's self-authored numbers already do. Recording this honestly as N/A-by-design rather than silently omitting G5: the item's re-score requirement is satisfied for G5 by establishing that no sourcing-dependent disagreement is possible here, not by finding one.",
+      "method": "G5 runs a 12-probe tamper battery (policy substitution, trusted-feature substitution, bound inversion, inclusive-boundary drift, candidate gate-pass injection, authority-lock preservation) against a fixed base envelope (dgeba-teta-primer-9to1) and its own synthetically-mutated policies/snapshots."
+    }
+  },
+  "internal_self_consistency_defects": [
+    {
+      "defect": "envelope_id declares a 100:30 ratio, but the envelope's own nominal_part_a_g/nominal_part_b_g are 200.0/30.0 (a 200:30, i.e. ~100:15, ratio) -- the id-declared ratio and the recorded nominal masses disagree with each other. This is a defect internal to the self-authored fixture, requiring no external source to establish.",
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "oracle_gap": "G4 (nominal_parts_sum_to_total in run_envelope_gates.py) checks only that nominal_part_a_g + nominal_part_b_g == nominal_total_g (200+30==230, TRUE); it never checks that the envelope_id's stated ratio matches the recorded nominal masses, so this defect passes every check the module's own oracle runs."
+    }
+  ],
+  "mismatches_fixture_nominal_vs_real_supplier": [
+    {
+      "cited_source": "Dow DER 331 + DEH 24 TDS",
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "fixture_envelope_bounds_part_b_g": [
+        19.0,
+        21.0
+      ],
+      "fixture_nominal_part_b_g": 20.0,
+      "real_supplier_part_b_g_for_same_part_a": 23.4,
+      "real_value_passes_fixture_envelope": false,
+      "relative_deviation_pct": 14.53
+    },
+    {
+      "cited_source": "Dow DER 331 + DEH 20 TDS",
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "fixture_envelope_bounds_part_b_g": [
+        9.5,
+        10.5
+      ],
+      "fixture_nominal_part_b_g": 10.0,
+      "real_supplier_part_b_g_for_same_part_a": 18.7,
+      "real_value_passes_fixture_envelope": false,
+      "relative_deviation_pct": 46.52
+    },
+    {
+      "cited_source": "Huntsman Aradur 3486 amidoamine primer TDS",
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "fixture_envelope_bounds_part_b_g": [
+        47.5,
+        52.5
+      ],
+      "fixture_nominal_part_b_g": 50.0,
+      "real_supplier_part_b_g_for_same_part_a": 34.0,
+      "real_value_passes_fixture_envelope": false,
+      "relative_deviation_pct": 47.06
+    }
+  ],
+  "module": "amphora-envelope-gates",
+  "oracle_source_findings_new_this_fire": [
+    {
+      "consequence": "This is the root cause of fire 1's internal defect finding (dgeba-pacm-marine-topcoat-100to30: envelope_id says 100:30, recorded nominal masses are 200.0g:30.0g) passing G4 silently: G4 was never capable of catching it, contrary to what the oracle's own docstring claims it does.",
+      "docstring_claims_ratio_string_check": true,
+      "finding": "The oracle's own module docstring (run_envelope_gates.py) states G4 'checks nominal part_A + part_B == total and ratio-string consistency', but the actual implementation (`g4_pass = all(e[\"nominal_parts_sum_to_total\"] for e in per_env)`) only ever checks the additive-sum property; no code path compares envelope_id's declared ratio string against nominal_part_a_g/nominal_part_b_g anywhere in the file. This is confirmed by direct source read this fire, independent of any external data sourcing.",
+      "gate": "G4",
+      "implementation_only_checks_additive_sum": true
+    }
+  ],
+  "prior_fire_diagnostic_sha256": "e75cd0c7cea8585bb3807596b0eb96b231ce47db971c1a76154d228992b66bd0",
+  "proposed_followups": [
+    {
+      "defect": "3 of 10 self-authored KAT envelopes (dgeba-teta-primer-9to1, dgeba-deta-industrial-primer-17to1, dgeba-amidoamine-huntsman-100to50) cite named supplier TDSs whose real, located values diverge from the fixture's nominal ratio by 11.4%-87.0%, and 1 envelope (dgeba-ipda-marine-primer-100to24) cites a hardener/resin combination (GY 6010 + HY 2954) absent from the real located TDS.",
+      "module": "amphora-envelope-gates",
+      "proposed_done_criterion": "Either (a) re-derive these 4 envelopes' nominal ratios and tolerance bands directly from a verbatim-quoted passage of the real named source with the exact figure highlighted, or (b) replace the citation with a source that can be verified, or (c) mark the envelope provenance UNVERIFIED in the KAT fixture and exclude it from any 'published formulation' population claim until verified."
+    },
+    {
+      "defect": "dgeba-pacm-marine-topcoat-100to30's envelope_id declares a 100:30 ratio but its nominal_part_a_g/nominal_part_b_g are 200.0/30.0 (a ~100:15 ratio); the module's own oracle G4 check (nominal sum to total) does not catch id/data ratio mismatches.",
+      "module": "amphora-envelope-gates",
+      "proposed_done_criterion": "Either correct the envelope's nominal masses to match its declared 100:30 id, or rename the id to match the recorded 200:30 masses, and add an oracle check that the envelope_id's declared ratio is consistent with nominal_part_a_g/nominal_part_b_g within a stated tolerance."
+    },
+    {
+      "defect": "The module's G3 gate assumes every published epoxy mix-ratio QC tolerance band is symmetric +/-5% by mass per part (Wicks/Jones/Pappas 2007 Sec.24.3, uncited page/quote). All 4 real, named, explicit tolerance bands located this fire (WEST SYSTEM 105/205, 105/206, 105/207, 105/209) are asymmetric and diverge from +/-5% by up to 4x on one side.",
+      "module": "amphora-envelope-gates",
+      "proposed_done_criterion": "Obtain and quote verbatim the actual Wicks/Jones/Pappas 2007 Sec.24.3 passage the module's tolerance construction is based on (via a library/interlibrary loan or purchased excerpt, since it was not accessible over the open web this fire), and either confirm the +/-5% symmetric figure against that primary text or replace G3's assumption with a tolerance model that accounts for asymmetric, product-specific published bands."
+    },
+    {
+      "defect": "The oracle's module docstring (benchmarks/constraint-envelope-oracle-v1/run_envelope_gates.py) claims G4 'checks nominal part_A + part_B == total and ratio-string consistency', but the implementation (`g4_pass = all(e[\"nominal_parts_sum_to_total\"] for e in per_env)`) only ever checks the additive-sum property. No code path compares envelope_id's declared ratio string against the recorded nominal masses. This is why the dgeba-pacm-marine-topcoat-100to30 id/data mismatch (found fire 1) is invisible to G4.",
+      "module": "amphora-envelope-gates",
+      "proposed_done_criterion": "Either add a real ratio-string-consistency check to G4's implementation (parsing envelope_id's declared ratio and comparing it to nominal_part_a_g/nominal_part_b_g within a stated tolerance) or correct the docstring to stop claiming a check the code does not perform."
+    },
+    {
+      "defect": "G3's foundational assumption (published epoxy mix-ratio QC tolerance is symmetric +/-5% by mass per part) now disagrees with all 5 real, named, explicit tolerance bands located across both fires (4 WEST SYSTEM bands and 1 Hexion band), none of which are symmetric +/-5%; the closest (Hexion, -5.55%/+6.25%) still fails.",
+      "module": "amphora-envelope-gates",
+      "proposed_done_criterion": "Replace G3's single symmetric-+/-5% assumption with either (a) a per-envelope, source-specific tolerance band re-derived from each envelope's own cited supplier TDS (verbatim-quoted), or (b) an explicitly asymmetric default band bracketing the empirical range found here (-10.3% to +19.5%), with the assumption's provenance (Wicks/Jones/Pappas 2007 Sec.24.3) obtained and quoted verbatim from the primary text rather than left as an uncited secondary claim."
+    }
+  ],
+  "schema": "amphora.envelope-gates.w-d-envgate-data-sourcing-sweep-and-rescore.v1",
+  "sources_swept": [
+    {
+      "explicit_tolerance_band": null,
+      "license_quote_verbatim": "Copyright \u00a9 2012 Huntsman Corporation or an affiliate thereof. All rights reserved.",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "100 : 34 (Araldite LY 1564 : Aradur 3486)",
+      "name": "Huntsman Araldite LY 1564 / Aradur 3486 / Aradur 3487 TDS (2012)",
+      "notes": "Fixture cites 'Huntsman Aradur 3486 amidoamine primer TDS 100:50 by mass'. The only Huntsman Aradur 3486 TDS locatable states 100:34 by weight against LY 1564, not LY/DGEBA 828 and not 100:50, and does not carry the ' \u00b15% by weight' tolerance quote the fixture attributes to it. No explicit numeric tolerance percentage appears anywhere in this document.",
+      "query": "Huntsman Aradur 3486 technical data sheet mix ratio",
+      "url": "https://www.swiss-composite.ch/pdf/t-Araldite-LY1564-Aradur3486-3487-e.pdf"
+    },
+    {
+      "explicit_tolerance_band": null,
+      "license_quote_verbatim": "THERE IS NO WARRANTY OR CONDITION, WHETHER EXPRESS OR IMPLIED BY ANY STATUTE OR OTHERWISE... The following shall supersede any provision in Buyer's forms, letters and papers.",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": null,
+      "name": "Huntsman / Vantico Araldite GY 6010 Data Sheet (2003)",
+      "notes": "Fixture cites 'Huntsman Araldite GY-6010 + HY 2954 (IPDA) TDS 100:24 nominal by mass'. The real GY 6010 TDS's own hardener compatibility table lists 17 named Aradur/HY hardeners with their phr ratios (Aradur 956-1, 943, 3440, 3441, 2964, 2963, 265, 355, 847, 3100, 3150, 815-2, 825-2, 840-2, 283, 360, HY 906 NMA, Aradur 917 MTHPA) -- HY 2954 is ABSENT from this list. The cited product combination could not be located in the document the fixture attributes it to.",
+      "query": "Huntsman Araldite GY 6010 HY 2954 technical data sheet mix ratio by weight",
+      "url": "https://www.usna.edu/Users/mecheng/pjoyce/composites/em436/sampe-bridge/Kit_Data/GY6010.pdf"
+    },
+    {
+      "explicit_tolerance_band": null,
+      "license_quote_verbatim": "EVONIK EXPRESSLY DISCLAIMS ANY REPRESENTATIONS AND WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, AS TO THE ACCURACY, COMPLETENESS, NON-INFRINGEMENT, MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE...",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "Use Level 32.0 PHR (i.e. 100 : 32)",
+      "name": "Evonik Ancamine 2049 Curing Agent Product Information",
+      "notes": "Fixture cites 'Air Products Ancamine 2049 (PACM) marine topcoat TDS 100:30 by mass' and 'ratio \u00b15% by weight' (Air Products' curing-agents line was sold to Evonik in 2018; this is the current manufacturer document for the same product). Real use level is 32.0 PHR, not 30. No explicit tolerance percentage appears anywhere in this document.",
+      "query": "Evonik Ancamine 2049 technical data sheet DGEBA mix ratio",
+      "url": "https://crosslinkers-web.panpage.de/en2/crosslinkers/ancamine/usa/ancamine_2049_us.pdf"
+    },
+    {
+      "explicit_tolerance_band": null,
+      "license_quote_verbatim": "Notice: No freedom from any patent owned by Dow or others is to be inferred... NO WARRANTIES ARE GIVEN; ALL IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE ARE EXPRESSLY EXCLUDED.",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "D.E.H. 24 (TETA): 13 phr with D.E.R. 331; D.E.H. 20 (DETA): 11 phr with D.E.R. 331",
+      "name": "Dow D.E.H. 24 / D.E.H. 20 Epoxy Curing Agent Product Information",
+      "notes": "Fixture cites 'Dow DER 331 + DEH 24 TDS' for a 9:1 (100:11.11) envelope and 'Dow DER 331 + DEH 20 TDS' for a 17:1 (100:5.88) envelope. The real Dow product-family table states D.E.H. 24/TETA at 13 phr and D.E.H. 20/DETA at 11 phr -- both fixture ratios are far off the real published use ratios (see MISMATCHES below). Document instead warns mix ratios are 'inconvenient... which must be weighed very accurately' -- no numeric tolerance percentage given.",
+      "query": "Olin DER 331 DEH 24 epoxy hardener technical data sheet mix ratio parts by weight",
+      "url": "https://www.stobec.com/data/produit/1544~v~data_8493.pdf"
+    },
+    {
+      "explicit_tolerance_band": null,
+      "explicit_tolerance_band_note": "No explicit band on the mix ratio itself, but explicit numeric \u00b1 bands are given on adjacent QC properties: mass density 11.0 \u00b1 0.5 lbs/gal, solids by volume 63 \u00b1 2%.",
+      "license_quote_verbatim": "The technical data listed herein has been compiled for your convenience and guidance... Simco Coatings, Inc. assumes no responsibility whatsoever for coverage, performance, or any other damages... (no copyright claim found on the vendor's own compiled sheet)",
+      "license_status": "MIXED_PARTIAL_PUBLIC_DOMAIN",
+      "mix_ratio_found_by_weight": "54 : 46 (base : hardener) by weight; 50:50 by volume; also 1:1 by volume for Formula 151/157",
+      "name": "Simco Coatings / San Diego Seal MIL-DTL-24441 Formula 150/151/157 TDS compilation",
+      "notes": "MIL-DTL-24441 is a US federal specification; specification TEXT authored by the US government carries no copyright under 17 U.S.C. \u00a7105 (public domain). This particular vendor's TDS reproduction is a separate compiled document whose own rights status is not explicitly stated either way -- recorded conservatively as not fully rights-clean for redistribution. Not cited by any of the fixture's 10 envelopes (independent structural-overlap source only).",
+      "query": "MIL-DTL-24441 epoxy coating mix ratio tolerance public",
+      "url": "https://sandiegoseal.com/pdf/epoxy.pdf"
+    },
+    {
+      "explicit_tolerance_band": "Acceptable ratio range by weight: 4.83:1 to 6.20:1 (asymmetric: -6.9% / +19.5% vs. nominal ratio)",
+      "license_quote_verbatim": "All rights reserved. No part of the contents may be reproduced or transmitted in any form or by any means without written permission. (Gougeon Brothers, Inc. copyright pattern confirmed across the publisher's other westsystem.com manuals; no distinct footer license line was present on the TDS pages themselves.)",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "5.19 : 1 (resin : hardener)",
+      "name": "WEST SYSTEM 105/205 (Gougeon Brothers) Technical Data Sheet",
+      "notes": "QUALIFIES as an explicit tolerance-band source. Real published band is NOT symmetric +/-5%.",
+      "query": "epoxy hardener mix ratio \u00b15% technical data sheet by weight coating",
+      "url": "https://www.westsystem.com/app/uploads/2022/09/105_205-207-Combined.pdf"
+    },
+    {
+      "explicit_tolerance_band": "Acceptable ratio range by weight: 4.84:1 to 6.19:1 (asymmetric: -9.7% / +15.5% vs. nominal ratio)",
+      "license_quote_verbatim": "All rights reserved. No part of the contents may be reproduced or transmitted in any form or by any means without written permission. (same publisher pattern as 105/205)",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "5.36 : 1 (resin : hardener)",
+      "name": "WEST SYSTEM 105/206 (Gougeon Brothers) Technical Data Sheet",
+      "notes": "QUALIFIES as an explicit tolerance-band source.",
+      "query": "epoxy hardener mix ratio \u00b15% technical data sheet by weight coating",
+      "url": "https://www.westsystem.com/app/uploads/2022/09/105_205-207-Combined.pdf"
+    },
+    {
+      "explicit_tolerance_band": "Acceptable ratio range by weight: 3.41:1 to 4.16:1 (asymmetric: -6.3% / +14.3% vs. nominal ratio)",
+      "license_quote_verbatim": "All rights reserved. No part of the contents may be reproduced or transmitted in any form or by any means without written permission. (same publisher pattern as 105/205)",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "3.64 : 1 (resin : hardener)",
+      "name": "WEST SYSTEM 105/207 (Gougeon Brothers) Technical Data Sheet",
+      "notes": "QUALIFIES as an explicit tolerance-band source.",
+      "query": "epoxy hardener mix ratio \u00b15% technical data sheet by weight coating",
+      "url": "https://www.westsystem.com/app/uploads/2022/09/105_205-207-Combined.pdf"
+    },
+    {
+      "explicit_tolerance_band": "Acceptable ratio range by weight: 3.30:1 to 4.03:1 (asymmetric: -10.3% / +9.5% vs. nominal ratio)",
+      "license_quote_verbatim": "All rights reserved. No part of the contents may be reproduced or transmitted in any form or by any means without written permission. (same publisher pattern as 105/205)",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "3.68 : 1 (resin : hardener)",
+      "name": "WEST SYSTEM 105/209 (Gougeon Brothers) Technical Data Sheet",
+      "notes": "QUALIFIES as an explicit tolerance-band source.",
+      "query": "epoxy hardener mix ratio \u00b15% technical data sheet by weight coating",
+      "url": "https://www.westsystem.com/app/uploads/2022/09/105_205-207-Combined.pdf"
+    },
+    {
+      "explicit_tolerance_band": null,
+      "license_quote_verbatim": "System Three Resins, Inc. makes no warranty, expressed or implied, regarding the accuracy of these data or the results to be obtained from the use thereof.",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "100 : 83 (resin : hardener); 1:1 by volume",
+      "name": "System Three T-88 Structural Aircraft Adhesive Technical Data Sheet",
+      "notes": "Fixed ratio only; document explicitly warns against varying it ('Excessive Part B will degrade, rather than expedite cure') but states no numeric tolerance.",
+      "query": "System Three epoxy resin technical data sheet acceptable ratio range mix ratio tolerance",
+      "url": "https://www.aircraftspruce.com/catalog/pdf/t88tds.pdf"
+    },
+    {
+      "doi": "10.3390/molecules28114259",
+      "explicit_tolerance_band": null,
+      "license_quote_verbatim": "Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/licenses/by/4.0/).",
+      "license_status": "RIGHTS_CLEAN",
+      "mix_ratio_found_by_weight": "DGEBA:FA1 = 2:1 (w/w); DGEBA:PK1 = 2:1.25 (w/w)",
+      "name": "Molecules (MDPI) 28(11):4259 -- Benchmark Study of Epoxy Coatings with Bio-Based Phenalkamine vs. Fossil-Based Amine Crosslinkers",
+      "notes": "Rights-clean, CC-BY, DOI-cited. Confirms stoichiometric mixing is standard peer-reviewed practice for DGEBA-amine coatings but states no mixing tolerance band; not usable for the re-score, only for the source-sweep count.",
+      "query": "MDPI Coatings journal epoxy amine stoichiometric ratio open access",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10254157/"
+    },
+    {
+      "explicit_tolerance_band": null,
+      "license_quote_verbatim": "Works of the United States Government are not subject to copyright protection in the United States (17 U.S.C. \u00a7 105).",
+      "license_status": "PUBLIC_DOMAIN",
+      "mix_ratio_found_by_weight": "54:46 by weight / 50:50 by volume (Formula 150/151/157, per vendor-reproduced TDS)",
+      "name": "MIL-DTL-24441 (US Department of Defense two-part epoxy-polyamide coating specification family) -- specification text itself, distinct from any vendor reproduction",
+      "notes": "The underlying specification text is public domain by statute; the numeric values used above were read off the vendor reproduction (source #5) since the specification's own PDF text was not directly retrievable this fire.",
+      "query": "MIL-DTL-24441 epoxy coating mix ratio tolerance public",
+      "url": "n/a (federal specification; vendor reproductions checked at sandiegoseal.com/pdf/epoxy.pdf and milspeccoating.com)"
+    },
+    {
+      "explicit_tolerance_band": "Quoted verbatim: \"Mixing tolerance -- The maximum allowable mixing tolerance is \u00b12pbw, but it is particularly important to observe the recommend mixing ratio as exactly as possible. Adding more or less Hardener will not effect a faster or slower reaction - but an incomplete curing which cannot correct in any way.\" Converted to a resin:hardener ratio range holding resin fixed at 100 pbw (hardener 34\u00b12 pbw => 32 to 36 pbw): Acceptable ratio range by weight: 2.778:1 to 3.125:1 (nominal 2.941:1; asymmetric: -5.55%/+6.25% vs. nominal ratio).",
+      "license_quote_verbatim": "\u00ae and \u2122 Licensed trademarks of Hexion. The information provided herein was believed by Hexion to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the responsibility of the user to investigate and understand other pertinent sources of information... HEXION MAKES NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF ANY INFORMATION PROVIDED BY HEXION, except that the product shall conform to Hexion's specifications. Nothing contained herein constitutes an offer for the sale of any product.",
+      "license_status": "BLOCKING",
+      "mix_ratio_found_by_weight": "100 parts by weight EPIKOTE Resin L 20 : 34 parts by weight EPIKURE Curing Agent 960 (glider and boat building system; room-temperature precure, 50-60C postcure)",
+      "name": "Hexion EPIKOTE Resin L 20 / EPIKURE Curing Agent 960 Technical Data Sheet (Rev 04/09/15)",
+      "notes": "QUALIFIES as the 5th, independent (non-Gougeon-Brothers) explicit tolerance-band source. Manufacturer: Hexion Inc. (distinct corporate lineage from Huntsman, Dow, Evonik and Gougeon Brothers already swept). Publisher/host: swiss-composite.ch (Suter Kunststoffe AG), a composites distributor mirroring the manufacturer's own PDS; content and trademarks attributed to Hexion throughout, license quoted verbatim above. The source states tolerance directly as \u00b1 parts-by-weight on the hardener component (not as a pre-computed ratio range like the WEST SYSTEM TDSs); the ratio-range conversion above holds the resin component fixed at its nominal 100 pbw, which is the natural reading of a tolerance stated 'on the hardener' in a fixed-resin-basis recipe, and is recorded as an explicit conversion, not a re-citation of a number the source states directly.",
+      "query": "Hexion EPIKOTE EPIKURE two-part epoxy mix ratio tolerance % by weight technical data sheet marine",
+      "url": "https://www.swiss-composite.ch/pdf/t-epikote-l-20-epikure-960-e.pdf"
+    }
+  ],
+  "study_id": "W-D-ENVGATE-supplier-tds-sweep-and-rescore-fire2",
+  "sweep_summary": {
+    "explicit_tolerance_band_shortfall": 0,
+    "n_explicit_mix_ratio_tolerance_band_sources_found": 5,
+    "n_explicit_mix_ratio_tolerance_band_sources_required": 5,
+    "n_named_sources_swept": 13,
+    "n_rights_clean_or_public_domain": 2,
+    "note_on_completion": "5th independent (non-Gougeon-Brothers) explicit-tolerance-band source found this fire: Hexion EPIKOTE Resin L 20 / EPIKURE Curing Agent 960 TDS, boat-building application, mixing tolerance +/-2 parts-by-weight on a 100:34 pbw nominal ratio, quoted verbatim. Required floor of 5 is now met (5/5); done_criterion's source-sweep and explicit-tolerance-band bars are both satisfied as of this fire."
+  },
+  "verdict": "CLAIM_REFUTED",
+  "verdict_basis": "Unchanged from fire 1's finding, now confirmed against a broader, done_criterion-meeting sweep: the claim under attack asserts the fail-closed metrics' population is drawn from published formulations. Across 13 named, queried sources this fire and fire 1 combined: (1) 3 of the fixture's 10 envelopes (30% of the envelope population) cite named supplier products whose real, located technical data sheets state a materially different nominal mix ratio -- deviations larger than the module's own asserted +/-5% QC tolerance; (2) 1 envelope cites a product combination absent from the real located TDS; (3) 1 envelope has an internal id/data ratio defect; (4) the module's G4 gate cannot catch (3) because its docstring overclaims a 'ratio-string consistency' check its implementation never performs (new finding, this fire); (5) the module's G3 gate's foundational symmetric +/-5% assumption disagrees with all 5 real, named, explicit tolerance bands now located (0/5 match); (6) G2's apparent 'boundary bit-exactness' guarantee is a tautology of test-case construction, not evidence the tolerance model matches real data; (7) G5's tamper battery is orthogonal to nominal-value sourcing by design. The population underlying this module's fail-closed metrics is not a reliable re-derivation of published formulations."
+}

@@ -1,0 +1,361 @@
+{
+  "barrier_gate_lambda": {
+    "below_cpvc_continuous_barrier": true,
+    "cpvc_blend_volume_weighted_approx": 0.5088011167,
+    "interpretation": "Lambda<1 => PVC below CPVC => continuous binder-rich barrier film (correct target for a marine anti-corrosion primer; above CPVC the film goes porous and water/O2 permeability + under-film corrosion rise sharply).",
+    "lambda_reduced_pvc_PVC_over_CPVC": 0.5785542628,
+    "per_pigment_cpvc": [
+      {
+        "cpvc_asbeck_van_loo": 0.4832041344,
+        "density_g_cm3": 5.0,
+        "oa_g_per_100g": 20.0,
+        "pigment": "iron_oxide_red",
+        "volume_cm3": 11.0
+      },
+      {
+        "cpvc_asbeck_van_loo": 0.5029585799,
+        "density_g_cm3": 3.3,
+        "oa_g_per_100g": 28.0,
+        "pigment": "zinc_phosphate_anticorrosive",
+        "volume_cm3": 9.0909090909
+      },
+      {
+        "cpvc_asbeck_van_loo": 0.6775362319,
+        "density_g_cm3": 4.45,
+        "oa_g_per_100g": 10.0,
+        "pigment": "barytes_extender",
+        "volume_cm3": 8.9887640449
+      },
+      {
+        "cpvc_asbeck_van_loo": 0.4429180483,
+        "density_g_cm3": 2.8,
+        "oa_g_per_100g": 42.0,
+        "pigment": "talc_extender",
+        "volume_cm3": 7.1428571429
+      },
+      {
+        "cpvc_asbeck_van_loo": 0.3736263736,
+        "density_g_cm3": 2.85,
+        "oa_g_per_100g": 55.0,
+        "pigment": "mica_barrier",
+        "volume_cm3": 5.2631578947
+      }
+    ],
+    "pvc": 0.294369055
+  },
+  "current_module_scope_before": {
+    "arithmetic_scope": "MASS_ONLY",
+    "dimensioned_property_arithmetic_available": false,
+    "note": "from amphora-formulation-arithmetic/reference/phase0-formulation-arithmetic-known-answer.v1.json"
+  },
+  "fitted_parameters": 0,
+  "in_tree_rights_clean_inputs": {
+    "barytes_density": {
+      "grade": "SUPPLIER_GUIDE",
+      "unit": "g/cm3",
+      "value": 4.45
+    },
+    "dgeba_331_density": {
+      "grade": "TDS",
+      "unit": "g/mL",
+      "value": 1.16
+    },
+    "dgeba_331_eew": {
+      "grade": "TDS",
+      "unit": "g/eq",
+      "value": 187.0
+    },
+    "iron_oxide_red_density": {
+      "grade": "DISTRIBUTOR",
+      "unit": "g/cm3",
+      "value": 5.0
+    },
+    "mica_density": {
+      "grade": "DISTRIBUTOR",
+      "unit": "g/cm3",
+      "value": 2.85
+    },
+    "n_butanol_density": {
+      "grade": "TDS",
+      "unit": "g/mL",
+      "value": 0.81
+    },
+    "talc_density": {
+      "grade": "SUPPLIER_GUIDE",
+      "unit": "g/cm3",
+      "value": 2.8
+    },
+    "xylene_density": {
+      "grade": "DISTRIBUTOR",
+      "unit": "g/mL",
+      "value": 0.87
+    },
+    "zinc_phosphate_density": {
+      "grade": "DISTRIBUTOR",
+      "unit": "g/cm3",
+      "value": 3.3
+    }
+  },
+  "known_answer_battery": {
+    "acceptance": "all definitional/external/exact-identity probes must pass (floor 1.0)",
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "probes": [
+      {
+        "abs_err": 0.0,
+        "expected": 870.0,
+        "got": 870.0,
+        "kind": "EXTERNAL_CONSTANT",
+        "note": "VOC of a 100%-solvent coating must equal that solvent's density in g/L.",
+        "pass": true,
+        "probe": "voc_pure_solvent_equals_density",
+        "tol": 1e-06
+      },
+      {
+        "abs_err": 0.0,
+        "expected": 0.0,
+        "got": 0.0,
+        "kind": "DEFINITIONAL",
+        "note": "No volatile => VOC must be exactly 0 g/L.",
+        "pass": true,
+        "probe": "voc_zero_solvent_is_zero",
+        "tol": 1e-09
+      },
+      {
+        "abs_err": 0.0,
+        "expected": 1.0,
+        "got": 1.0,
+        "kind": "DEFINITIONAL",
+        "note": "No volatile => volume solids fraction = 1.",
+        "pass": true,
+        "probe": "volume_solids_zero_solvent_is_one",
+        "tol": 1e-09
+      },
+      {
+        "abs_err": 0.0,
+        "expected": 0.5,
+        "got": 0.5,
+        "kind": "DEFINITIONAL",
+        "note": "Equal pigment & binder solid volumes => PVC = 0.5 by definition.",
+        "pass": true,
+        "probe": "pvc_equal_volumes_is_half",
+        "tol": 1e-09
+      },
+      {
+        "abs_err": 0.0,
+        "expected": 0.75,
+        "got": 0.75,
+        "kind": "DEFINITIONAL",
+        "note": "Pigment volume = 3x binder volume => PVC = 3/4.",
+        "pass": true,
+        "probe": "pvc_pigment_3x_binder_is_0p75",
+        "tol": 1e-09
+      },
+      {
+        "abs_err": 0.0,
+        "expected": 0.0,
+        "got": 0.0,
+        "kind": "EXACT_IDENTITY",
+        "note": "rho_wet*V_total - M_total must vanish.",
+        "pass": true,
+        "probe": "density_roundtrip_identity",
+        "tol": 1e-09
+      },
+      {
+        "abs_err": 0.0,
+        "expected": 0.0,
+        "got": 0.0,
+        "kind": "EXACT_IDENTITY",
+        "note": "At stoichiometric PHR=100*AHEW/EEW, amine-H eq == epoxy eq.",
+        "pass": true,
+        "probe": "stoichiometry_r1_equivalents_match",
+        "tol": 1e-12
+      },
+      {
+        "abs_err": 0.0,
+        "expected": 0.0,
+        "got": 0.0,
+        "kind": "EXACT_IDENTITY",
+        "note": "solids + volatile volume fractions must sum to 1.",
+        "pass": true,
+        "probe": "volume_fraction_sum_identity",
+        "tol": 1e-09
+      },
+      {
+        "abs_err": 0.0,
+        "expected": 0.0,
+        "got": 0.0,
+        "kind": "EXACT_IDENTITY",
+        "note": "sum of component masses == reported total (legacy MASS_ONLY check).",
+        "pass": true,
+        "probe": "mass_balance_identity",
+        "tol": 1e-09
+      }
+    ]
+  },
+  "non_circularity": "Known-answer targets are fixed either by DEFINITION (PVC=0.5 at equal volumes; VOC=0 at zero solvent; volume solids=1 at zero solvent) or by an EXTERNAL physical constant (VOC of a neat solvent == that solvent's density). None of the targets is produced by the engine, so the battery is falsifiable and non-circular. The engine has zero fitted parameters.",
+  "physical_sanity_reported": {
+    "phr_in_amine_epoxy_band_5_20": true,
+    "pvc_below_cpvc_blend_barrier_ok": true,
+    "voc_positive_and_below_neat_solvent": true,
+    "volume_solids_in_marine_primer_band_0p45_0p80": true,
+    "wet_density_in_pigmented_paint_band_1p1_1p9": true
+  },
+  "real_formulation": {
+    "closure_residuals": {
+      "density_roundtrip": 0.0,
+      "mass_balance": 0.0,
+      "volume_balance": -2.8e-14,
+      "volume_fraction_sum_minus_1": 0.0
+    },
+    "equivalents": {
+      "amine_h_equivalents": 0.5334427575,
+      "epoxy_equivalents": 0.5347593583,
+      "phr_hardener_per_100_resin": 13.0,
+      "stoich_ratio_amineH_per_epoxy": 0.9975379565
+    },
+    "name": "marine-epoxy-primer-dgeba-teta-anticorrosive",
+    "properties": {
+      "pvc_pigment_volume_concentration": 0.294369055,
+      "voc_g_per_L_epa_method24": 284.1265185647,
+      "volume_solids_frac_astm_d2697": 0.6673699761,
+      "weight_solids_frac": 0.8198198198,
+      "wet_paint_density_g_L": 1576.9021780339,
+      "wet_paint_density_g_cm3": 1.576902178
+    },
+    "rows": [
+      {
+        "density_g_cm3": 1.16,
+        "id": "dgeba_der331",
+        "mass_g": 100.0,
+        "nonvol_frac": 1.0,
+        "nv_mass_g": 100.0,
+        "role": "resin_binder",
+        "volatile_mass_g": 0.0,
+        "volume_cm3": 86.2068965517
+      },
+      {
+        "density_g_cm3": 0.982,
+        "id": "teta_hardener",
+        "mass_g": 13.0,
+        "nonvol_frac": 1.0,
+        "nv_mass_g": 13.0,
+        "role": "amine_binder",
+        "volatile_mass_g": 0.0,
+        "volume_cm3": 13.2382892057
+      },
+      {
+        "density_g_cm3": 5.0,
+        "id": "iron_oxide_red",
+        "mass_g": 55.0,
+        "nonvol_frac": 1.0,
+        "nv_mass_g": 55.0,
+        "role": "pigment",
+        "volatile_mass_g": 0.0,
+        "volume_cm3": 11.0
+      },
+      {
+        "density_g_cm3": 3.3,
+        "id": "zinc_phosphate_anticorrosive",
+        "mass_g": 30.0,
+        "nonvol_frac": 1.0,
+        "nv_mass_g": 30.0,
+        "role": "pigment",
+        "volatile_mass_g": 0.0,
+        "volume_cm3": 9.0909090909
+      },
+      {
+        "density_g_cm3": 4.45,
+        "id": "barytes_extender",
+        "mass_g": 40.0,
+        "nonvol_frac": 1.0,
+        "nv_mass_g": 40.0,
+        "role": "extender",
+        "volatile_mass_g": 0.0,
+        "volume_cm3": 8.9887640449
+      },
+      {
+        "density_g_cm3": 2.8,
+        "id": "talc_extender",
+        "mass_g": 20.0,
+        "nonvol_frac": 1.0,
+        "nv_mass_g": 20.0,
+        "role": "extender",
+        "volatile_mass_g": 0.0,
+        "volume_cm3": 7.1428571429
+      },
+      {
+        "density_g_cm3": 2.85,
+        "id": "mica_barrier",
+        "mass_g": 15.0,
+        "nonvol_frac": 1.0,
+        "nv_mass_g": 15.0,
+        "role": "extender",
+        "volatile_mass_g": 0.0,
+        "volume_cm3": 5.2631578947
+      },
+      {
+        "density_g_cm3": 0.87,
+        "id": "xylene_solvent",
+        "mass_g": 45.0,
+        "nonvol_frac": 0.0,
+        "nv_mass_g": 0.0,
+        "role": "solvent",
+        "volatile_mass_g": 45.0,
+        "volume_cm3": 51.724137931
+      },
+      {
+        "density_g_cm3": 0.81,
+        "id": "n_butanol_solvent",
+        "mass_g": 15.0,
+        "nonvol_frac": 0.0,
+        "nv_mass_g": 0.0,
+        "role": "solvent",
+        "volatile_mass_g": 15.0,
+        "volume_cm3": 18.5185185185
+      }
+    ],
+    "totals": {
+      "binder_solid_volume_cm3": 99.4451857574,
+      "nonvolatile_mass_g": 273.0,
+      "pigment_volume_cm3": 41.4856881734,
+      "solids_volume_cm3": 140.9308739309,
+      "total_mass_g": 333.0,
+      "total_volume_cm3": 211.1735303804,
+      "volatile_mass_g": 60.0,
+      "volatile_volume_cm3": 70.2426564496
+    }
+  },
+  "reference_nominal_inputs": {
+    "OA": {
+      "barytes": 10.0,
+      "iron_oxide_red": 20.0,
+      "mica": 55.0,
+      "talc": 42.0,
+      "zinc_phosphate": 28.0
+    },
+    "OA_source": "ISO 787-5 nominal oil absorption, reference-nominal (per cpvc-pigment-formulation-axis-v1)",
+    "teta_ahew": {
+      "source": "TETA MW 146.23 / 6 active H = 24.37 g/eq (stoichiometric)",
+      "unit": "g/eq",
+      "value": 24.37
+    },
+    "teta_density": {
+      "source": "TETA C6H18N4 rho 0.982 g/cm3 (public physical constant)",
+      "unit": "g/cm3",
+      "value": 0.982
+    }
+  },
+  "run_type": "FORMULATION_ARITHMETIC_DIMENSIONED_AUDIT",
+  "schema": "amphora.formulation-arithmetic.dimensioned-known-answer.v1",
+  "target_capability": "dimensioned formulation arithmetic: volume solids / PVC / VOC / mix-ratio / Lambda barrier gate",
+  "target_module": "amphora-formulation-arithmetic",
+  "theory": [
+    "PVC/CPVC: Asbeck & Van Loo, Ind.Eng.Chem. 41(1949)1470; Patton 1979",
+    "volume solids: ASTM D2697",
+    "VOC: EPA Method 24 / ASTM D3960",
+    "epoxy-amine stoichiometry via EEW/AHEW equivalents"
+  ],
+  "verdict": "DIMENSIONED_ARITHMETIC_ENGINE_READY__KNOWN_ANSWER_BATTERY_PASS. Provides a correct, zero-parameter reference implementation of volume solids / PVC / VOC / mix-ratio / Lambda for amphora-formulation-arithmetic (currently MASS_ONLY), validated on 8 definitional/external/exact-identity known answers, exercised on a real rights-clean marine epoxy-amine anti-corrosion primer, and composed with the validated EEW/AHEW and Asbeck-Van Loo CPVC physics. This is the missing molecule->paint-spec backbone."
+}

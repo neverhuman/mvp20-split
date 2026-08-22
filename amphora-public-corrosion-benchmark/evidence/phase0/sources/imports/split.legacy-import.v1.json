@@ -1,0 +1,14 @@
+{
+  "schema": "amphora.split-manifest.v1",
+  "split_id": "corrosion-pilot-replay-no-phase1-holdout-2026-07-17",
+  "dataset_hash": "b59bc8fff1b65e287945e52b19f4849f252e018b62e9626bed0814584f3d9a5a",
+  "assignment_method": "study-and-system blocked; existing six-system pilot is replay-only and supplies zero untouched Phase-1 systems",
+  "assignments": [
+    {"row_id":"2-E-P-1K-2-S","split":"PILOT_REPLAY","source":"usbr_21019","family":"polysiloxane","scaffold":"2-E-P-1K-2-S","time":"2022","lot":"system"},
+    {"row_id":"2-E-P-2K-2-S","split":"PILOT_REPLAY","source":"usbr_21019","family":"polysiloxane","scaffold":"2-E-P-2K-2-S","time":"2022","lot":"system"},
+    {"row_id":"2-Z-P-1K-2-S","split":"PILOT_REPLAY","source":"usbr_21019","family":"polysiloxane","scaffold":"2-Z-P-1K-2-S","time":"2022","lot":"system"},
+    {"row_id":"2-Z-P-2K-2-S","split":"PILOT_REPLAY","source":"usbr_21019","family":"polysiloxane","scaffold":"2-Z-P-2K-2-S","time":"2022","lot":"system"},
+    {"row_id":"3-D-P-2K-2-S","split":"PILOT_REPLAY","source":"usbr_21019","family":"polysiloxane","scaffold":"3-D-P-2K-2-S","time":"2022","lot":"system"},
+    {"row_id":"3-Z-P-2K-2-S","split":"PILOT_REPLAY","source":"usbr_21019","family":"polysiloxane","scaffold":"3-Z-P-2K-2-S","time":"2022","lot":"system"}
+  ]
+}

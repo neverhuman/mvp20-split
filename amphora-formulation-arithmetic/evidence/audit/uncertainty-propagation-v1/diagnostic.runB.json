@@ -1,0 +1,350 @@
+{
+  "acceptance": {
+    "gum_lpu_linearization_validated_by_mc": true,
+    "known_answer_battery_all_pass": true,
+    "reproduces_prior_volumetric_point_estimates": true
+  },
+  "authority": "AUDIT_ONLY",
+  "closes": [
+    "Adds first calibrated (GUM LPU + Monte Carlo cross-validated) uncertainty intervals to the module's dimensioned outputs; prior receipt reported point estimates only.",
+    "Identifies the dominant input-uncertainty contributor per output (uncertainty budget), enabling targeted data-grade improvement."
+  ],
+  "coverage_factor_finding": "The first-order LPU combined standard uncertainty u_c matches the Monte Carlo standard deviation for every output (linearization is adequate: the reciprocal density map is near-linear over the +/-2.5% Type B ranges). However the Gaussian coverage factor k=1.96 OVER-COVERS for outputs whose budget is dominated by one or two bounded (rectangular/trapezoidal) inputs -- volume_solids and stoich have MC effective k~1.6-1.7 -- reproducing the exact JCGM 101 sec.8 motivation for preferring the MC coverage interval over a normal-theory expanded uncertainty. Report the MC interval as the calibrated interval; report u_c as the combined standard uncertainty.",
+  "does_not_close": [
+    "Does NOT promote amphora-formulation-arithmetic or flip scientific_readiness (needs two trust-anchored human phase0 keys this AUDIT_ONLY key lacks).",
+    "Does NOT modify the manifest (66 receipts / 11 modules), the shipped Rust engine (still MASS_ONLY), the signed Phase-0 KPI, or any locked dataset.",
+    "Input Type B grade half-widths are a documented convention (0.5/1.5/2.5/3.0% for TDS/SUPPLIER_GUIDE/DISTRIBUTOR/REFERENCE_NOMINAL); tightening them to measured supplier tolerance bands is a Phase-1 data ask.",
+    "Masses treated as exact (nominal recipe / specification arithmetic); prepared-batch weighing tolerance is a separate scenario not propagated here."
+  ],
+  "fitted_parameters": 0,
+  "gum_lpu_linearization_validated_by_mc_all_outputs": true,
+  "input_uncertainty_budget": {
+    "grade_relative_halfwidth": {
+      "DISTRIBUTOR": 0.025,
+      "REFERENCE_NOMINAL": 0.03,
+      "SUPPLIER_GUIDE": 0.015,
+      "TDS": 0.005
+    },
+    "inputs": [
+      {
+        "a_grade": 0.0058,
+        "a_res": 0.005,
+        "grade": "TDS",
+        "name": "density::dgeba_der331",
+        "rel_u_combined": 0.0038113459,
+        "u_combined": 0.0044211612,
+        "u_grade": 0.0033486316,
+        "u_res": 0.0028867513,
+        "value": 1.16
+      },
+      {
+        "a_grade": 0.02946,
+        "a_res": 0.0005,
+        "grade": "REFERENCE_NOMINAL",
+        "name": "density::teta_hardener",
+        "rel_u_combined": 0.0173230025,
+        "u_combined": 0.0170111885,
+        "u_grade": 0.0170087389,
+        "u_res": 0.0002886751,
+        "value": 0.982
+      },
+      {
+        "a_grade": 0.125,
+        "a_res": 0.05,
+        "grade": "DISTRIBUTOR",
+        "name": "density::iron_oxide_red",
+        "rel_u_combined": 0.0155456318,
+        "u_combined": 0.0777281588,
+        "u_grade": 0.0721687836,
+        "u_res": 0.0288675135,
+        "value": 5.0
+      },
+      {
+        "a_grade": 0.0825,
+        "a_res": 0.05,
+        "grade": "DISTRIBUTOR",
+        "name": "density::zinc_phosphate_anticorrosive",
+        "rel_u_combined": 0.0168776816,
+        "u_combined": 0.0556963494,
+        "u_grade": 0.0476313972,
+        "u_res": 0.0288675135,
+        "value": 3.3
+      },
+      {
+        "a_grade": 0.06675,
+        "a_res": 0.005,
+        "grade": "SUPPLIER_GUIDE",
+        "name": "density::barytes_extender",
+        "rel_u_combined": 0.0086845162,
+        "u_combined": 0.0386460973,
+        "u_grade": 0.0385381305,
+        "u_res": 0.0028867513,
+        "value": 4.45
+      },
+      {
+        "a_grade": 0.042,
+        "a_res": 0.05,
+        "grade": "SUPPLIER_GUIDE",
+        "name": "density::talc_extender",
+        "rel_u_combined": 0.013464491,
+        "u_combined": 0.0377005747,
+        "u_grade": 0.0242487113,
+        "u_res": 0.0288675135,
+        "value": 2.8
+      },
+      {
+        "a_grade": 0.07125,
+        "a_res": 0.005,
+        "grade": "DISTRIBUTOR",
+        "name": "density::mica_barrier",
+        "rel_u_combined": 0.0144692533,
+        "u_combined": 0.0412373718,
+        "u_grade": 0.0411362067,
+        "u_res": 0.0028867513,
+        "value": 2.85
+      },
+      {
+        "a_grade": 0.02175,
+        "a_res": 0.005,
+        "grade": "DISTRIBUTOR",
+        "name": "density::xylene_solvent",
+        "rel_u_combined": 0.0148102382,
+        "u_combined": 0.0128849072,
+        "u_grade": 0.0125573684,
+        "u_res": 0.0028867513,
+        "value": 0.87
+      },
+      {
+        "a_grade": 0.00405,
+        "a_res": 0.005,
+        "grade": "TDS",
+        "name": "density::n_butanol_solvent",
+        "rel_u_combined": 0.0045863547,
+        "u_combined": 0.0037149473,
+        "u_grade": 0.0023382686,
+        "u_res": 0.0028867513,
+        "value": 0.81
+      },
+      {
+        "a_grade": 0.935,
+        "a_res": 0.05,
+        "grade": "TDS",
+        "name": "eew::dgeba_der331",
+        "rel_u_combined": 0.002890876,
+        "u_combined": 0.5405938093,
+        "u_grade": 0.5398225017,
+        "u_res": 0.0288675135,
+        "value": 187.0
+      },
+      {
+        "a_grade": 0.73115,
+        "a_res": 0.0,
+        "grade": "REFERENCE_NOMINAL",
+        "name": "ahew::teta_hardener",
+        "rel_u_combined": 0.0173205081,
+        "u_combined": 0.4221296493,
+        "u_grade": 0.4221296493,
+        "u_res": 0.0,
+        "value": 24.3716666667
+      }
+    ],
+    "method": "Type B (GUM 4.3): rectangular quoting-resolution component (half-width 0.5*10^-ndecimals) convolved with a rectangular grade/source-dispersion component; u=a/sqrt(3)."
+  },
+  "known_answer_sensitivity_battery": {
+    "all_pass": true,
+    "n_pass": 3,
+    "n_total": 3,
+    "probes": [
+      {
+        "abs_err": 8.87e-08,
+        "expected": 1000.0,
+        "got": 1000.0000000887,
+        "kind": "EXTERNAL_CONSTANT",
+        "note": "VOC(g/L)=1000*rho for a neat solvent => exact sensitivity 1000; u(VOC)=1000*u(rho).",
+        "pass": true,
+        "probe": "neat_solvent_voc_sensitivity_is_1000",
+        "tol": 0.001
+      },
+      {
+        "abs_err": 0.0,
+        "expected_u_c": 0.0,
+        "expected_value": 1.0,
+        "got_u_c": 0.0,
+        "got_value": 1.0,
+        "kind": "EXACT_IDENTITY",
+        "note": "No volatile => V_solid==V_total identically for all densities => volume_solids=1 with exactly zero propagated uncertainty.",
+        "pass": true,
+        "probe": "zero_solvent_volume_solids_is_1_with_zero_uncertainty",
+        "tol": 1e-09
+      },
+      {
+        "detail": {
+          "pvc": {
+            "point_abs_diff": 0.0,
+            "u_c_abs_diff": 0.0
+          },
+          "voc_g_per_L": {
+            "point_abs_diff": 0.0,
+            "u_c_abs_diff": 5e-10
+          },
+          "volume_solids_frac": {
+            "point_abs_diff": 0.0,
+            "u_c_abs_diff": 0.0
+          },
+          "wet_paint_density_g_cm3": {
+            "point_abs_diff": 0.0,
+            "u_c_abs_diff": 0.0
+          }
+        },
+        "kind": "EXACT_IDENTITY",
+        "note": "Volume-solids/PVC/VOC/wet-density and their propagated uncertainties are intensive => invariant under uniform mass scaling.",
+        "pass": true,
+        "probe": "intensive_property_and_uncertainty_scale_invariance",
+        "scale_factor": 2.5,
+        "tol": 1e-09
+      }
+    ]
+  },
+  "linearization_validation_tolerance_rel": 0.03,
+  "mc_config": {
+    "coverage_interval": "probabilistically symmetric 2.5/97.5 percentile",
+    "draws": 400000,
+    "per_input_distribution": "nominal + U(-a_res,a_res) + U(-a_grade,a_grade) (exact trapezoidal convolution of two Type B rectangulars)",
+    "rng": "numpy.random.default_rng (PCG64)",
+    "seed": 20260727
+  },
+  "non_circularity": "The falsifiable claim -- first-order LPU intervals equal the reference Monte Carlo intervals within the JCGM 101 sec.8 tolerance -- is refutable: a strongly nonlinear output would make the two diverge and FAIL. The three known-answer sensitivity probes are fixed by an EXTERNAL constant (neat-solvent VOC sensitivity=1000) or by EXACT IDENTITIES (zero-solvent volume-solids u=0; intensive scale-invariance) -- none produced by the engine.",
+  "real_formulation_name": "marine-epoxy-primer-dgeba-teta-anticorrosive",
+  "reproduces_prior_volumetric_outputs": true,
+  "results": {
+    "pvc": {
+      "U95_lpu_gaussian_k1.96": 0.0031321535,
+      "ci95_lpu_high": 0.2975012085,
+      "ci95_lpu_low": 0.2912369015,
+      "dominant_fraction_of_variance": 0.2870589799,
+      "dominant_input": "density::iron_oxide_red",
+      "effective_coverage_factor_k_mc": 1.9513321751,
+      "gaussian_k1.96_over_covers": false,
+      "linearization_validated_by_mc": true,
+      "lpu_vs_mc_std_rel_diff": 0.0004803298,
+      "mc_ci95_halfwidth": 0.003118302,
+      "mc_ci95_high": 0.2975268437,
+      "mc_ci95_low": 0.2912902397,
+      "mc_mean": 0.2943975469,
+      "mc_std": 0.0015988055,
+      "point_estimate": 0.294369055,
+      "prior_receipt_point": 0.294369055,
+      "reproduces_prior": true,
+      "reproduces_prior_abs_err": 0.0,
+      "u_c_lpu": 0.0015980375
+    },
+    "stoich_ratio_amineH_per_epoxy": {
+      "U95_lpu_gaussian_k1.96": 0.0343307129,
+      "ci95_lpu_high": 1.0318004524,
+      "ci95_lpu_low": 0.9631390266,
+      "dominant_fraction_of_variance": 0.9728977791,
+      "dominant_input": "ahew::teta_hardener",
+      "effective_coverage_factor_k_mc": 1.6837454266,
+      "gaussian_k1.96_over_covers": true,
+      "linearization_validated_by_mc": true,
+      "lpu_vs_mc_std_rel_diff": 0.0008978514,
+      "mc_ci95_halfwidth": 0.029491929,
+      "mc_ci95_high": 1.0277764839,
+      "mc_ci95_low": 0.9687926259,
+      "mc_mean": 0.9977917691,
+      "mc_std": 0.0175314104,
+      "point_estimate": 0.9974697395,
+      "prior_receipt_point": 0.9975379565,
+      "reproduces_prior": false,
+      "reproduces_prior_abs_err": 6.8217e-05,
+      "u_c_lpu": 0.0175156698
+    },
+    "voc_g_per_L": {
+      "U95_lpu_gaussian_k1.96": 2.4003690076,
+      "ci95_lpu_high": 286.5268875722,
+      "ci95_lpu_low": 281.7261495571,
+      "dominant_fraction_of_variance": 0.7082903204,
+      "dominant_input": "density::xylene_solvent",
+      "effective_coverage_factor_k_mc": 1.8727513913,
+      "gaussian_k1.96_over_covers": true,
+      "linearization_validated_by_mc": true,
+      "lpu_vs_mc_std_rel_diff": 6.79343e-05,
+      "mc_ci95_halfwidth": 2.2935175503,
+      "mc_ci95_high": 286.3848956989,
+      "mc_ci95_low": 281.7978605983,
+      "mc_mean": 284.0985694777,
+      "mc_std": 1.2247612684,
+      "point_estimate": 284.1265185647,
+      "prior_receipt_point": 284.1265185647,
+      "reproduces_prior": true,
+      "reproduces_prior_abs_err": 0.0,
+      "u_c_lpu": 1.2246780651
+    },
+    "volume_solids_frac": {
+      "U95_lpu_gaussian_k1.96": 0.0050026868,
+      "ci95_lpu_high": 0.672372663,
+      "ci95_lpu_low": 0.6623672893,
+      "dominant_fraction_of_variance": 0.8996435839,
+      "dominant_input": "density::xylene_solvent",
+      "effective_coverage_factor_k_mc": 1.7799775791,
+      "gaussian_k1.96_over_covers": true,
+      "linearization_validated_by_mc": true,
+      "lpu_vs_mc_std_rel_diff": 2.89954e-05,
+      "mc_ci95_halfwidth": 0.0045431992,
+      "mc_ci95_high": 0.6718541805,
+      "mc_ci95_low": 0.6627677822,
+      "mc_mean": 0.6673624603,
+      "mc_std": 0.0025523172,
+      "point_estimate": 0.6673699761,
+      "prior_receipt_point": 0.6673699761,
+      "reproduces_prior": true,
+      "reproduces_prior_abs_err": 0.0,
+      "u_c_lpu": 0.0025523912
+    },
+    "wet_paint_density_g_cm3": {
+      "U95_lpu_gaussian_k1.96": 0.013322048,
+      "ci95_lpu_high": 1.590224226,
+      "ci95_lpu_low": 1.56358013,
+      "dominant_fraction_of_variance": 0.7082903203,
+      "dominant_input": "density::xylene_solvent",
+      "effective_coverage_factor_k_mc": 1.8727513913,
+      "gaussian_k1.96_over_covers": true,
+      "linearization_validated_by_mc": true,
+      "lpu_vs_mc_std_rel_diff": 6.79343e-05,
+      "mc_ci95_halfwidth": 0.0127290224,
+      "mc_ci95_high": 1.5894361711,
+      "mc_ci95_low": 1.5639781263,
+      "mc_mean": 1.5767470606,
+      "mc_std": 0.006797425,
+      "point_estimate": 1.576902178,
+      "prior_receipt_point": 1.576902178,
+      "reproduces_prior": true,
+      "reproduces_prior_abs_err": 0.0,
+      "u_c_lpu": 0.0067969633
+    }
+  },
+  "run_type": "GUM_LPU_VS_MONTE_CARLO_UNCERTAINTY_PROPAGATION",
+  "schema": "amphora.formulation-arithmetic.uncertainty-propagation.v1",
+  "stoich_anchor_note": {
+    "abs_diff": 6.8217e-05,
+    "point": 0.9974697395,
+    "prior_receipt_point": 0.9975379565,
+    "reason": "AHEW convention: TETA MW 146.23 / 6 N-H = 24.3717 g/eq here vs the prior receipt's value; <1e-2% shift, far inside the propagated stoich U95, and inside the REFERENCE_NOMINAL input uncertainty.",
+    "within_stoich_U95": true
+  },
+  "study_id": "formulation-arithmetic-uncertainty-propagation-v1",
+  "target_capability": "Calibrated uncertainty intervals on dimensioned formulation arithmetic (volume-solids ASTM D2697, PVC, wet-paint density, VOC EPA Method 24, stoichiometric mix ratio via EEW/AHEW).",
+  "target_module": "amphora-formulation-arithmetic",
+  "theory_reference": {
+    "arithmetic_baselines": [
+      "ASTM D2697 volume nonvolatile (volume solids)",
+      "EPA Method 24 / ASTM D3960 VOC content (g/L)",
+      "Asbeck & Van Loo 1949 / Patton 1979 PVC",
+      "EEW/AHEW stoichiometric equivalents (Ellis 1993; Wicks/Jones/Pappas 2007)"
+    ],
+    "gum_lpu": "JCGM 100:2008 (GUM), Evaluation of measurement data -- Guide to the expression of uncertainty in measurement, sec. 4.3 (Type B), sec. 5.1 eq.10 (LPU, uncorrelated inputs).",
+    "monte_carlo": "JCGM 101:2008 (GUM Supplement 1), Propagation of distributions using a Monte Carlo method, sec. 5-7; sec. 8 GUM-vs-MC validation."
+  },
+  "verdict": "GUM_LPU_STANDARD_UNCERTAINTY_VALIDATED_BY_MONTE_CARLO",
+  "why_gum_not_bootstrap_conformal": "The engine has zero fitted parameters, so predictive uncertainty is not a residual/resampling quantity; bootstrap and split-conformal are inapplicable. The metrologically correct calibrated interval for zero-parameter arithmetic is input-measurement-uncertainty propagation (GUM), cross-validated by Monte Carlo."
+}

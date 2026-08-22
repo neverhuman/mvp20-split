@@ -1,0 +1,32 @@
+{
+  "both_rows_cite_R_C01": true,
+  "index_after_expected_sha256": "40960ebd3b6141bc87406b63410e58950406271cc76d3616a757f85cfbf32bfa",
+  "index_after_sha256": "40960ebd3b6141bc87406b63410e58950406271cc76d3616a757f85cfbf32bfa",
+  "index_before_sha256": "1a2bdc3b90b5b64f495b52365c4b6a283823191922376985f82db30d78796c1b",
+  "no_literal_pending_remains": true,
+  "orig_sweep_script_path": "amphora-redteam-audit/evidence/phase0/repairs/V1-RESOLVE/work/run_v1_resolve_sweep.py",
+  "orig_sweep_script_sha256": "ed71f8eaf065af033936de4d23cc4ee3cf54beddd51c970f1cb52f36ddd25823",
+  "postrepair_sweep_runA_sha256": "207c73b8a862836d64916fe567089abe57896be8852056ef79c8d101deb74c51",
+  "postrepair_sweep_two_replay_byte_identical": true,
+  "row2_explicitly_disclaims_mismatched_referent": false,
+  "tolerance_robustness_rows_postrepair": [
+    {
+      "claim_excerpt": "OpenPoly Tg split-conformal coverage 0.9683 (split-conformal-prediction-openpoly-tg-kpi.v1.json)",
+      "literal_pending": false,
+      "superseded_by_cell": "NONE YET. No repair receipt exists for this claim. Explicitly tracked as open campaign item R-C01 (scaffold-aware conformal repair; acceptance criterion: mean coverage >= 0.90 on the same 60-seed scaffold-disjoint Monte Carlo draw used by the refuting receipt above, with an honest re-scope permitted if that bar cannot be met). Resolution status of R-C01 lives in the falsification ledger and campaign state, not in this row; do not read this row as pointing at a receipt that verifies (W-TOL1, 2026-08-05).",
+      "superseded_by_exists": false,
+      "superseded_by_paths_cited": [],
+      "superseded_by_verifies": false
+    },
+    {
+      "claim_excerpt": "RadonPy eps_r conformal coverage (mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json, coverage claim)",
+      "literal_pending": false,
+      "superseded_by_cell": "NONE YET for this claim's own conformal COVERAGE number (0.9558). The amphora-molecule-property dielectric retraction chain (evidence/audit/dielectric-retraction-v1/, logs/claims-requiring-retraction.jsonl) exists and DSSE-verifies, but refutes LABEL ADMISSIBILITY of RadonPy data, not this row's coverage number -- does not resolve this row. No receipt anywhere republishes a corrected admissibility-stratified coverage figure. Tracked as open item R-C01 (admissibility-stratified coverage recomputation); until it lands, 0.9558 stays refuted and unrepaired (W-TOL1, 2026-08-05).",
+      "superseded_by_exists": true,
+      "superseded_by_paths_cited": [
+        "logs/claims-requiring-retraction.jsonl"
+      ],
+      "superseded_by_verifies": true
+    }
+  ]
+}

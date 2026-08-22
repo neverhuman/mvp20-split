@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "RIGHTS_QUALIFIED_EVIDENCE",
+  "missing_values_imputed": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "rights_gate_passed": false,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "163cd4ac95db36ed329a430d823e11402702e89f9f958f2c84f2149eff32e8c0"
+}

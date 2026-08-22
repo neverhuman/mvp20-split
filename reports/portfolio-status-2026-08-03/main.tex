@@ -1,0 +1,140 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,top=16mm,bottom=16mm,left=17mm,right=17mm,headheight=9mm,footskip=9mm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,calc,fit}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{seqsplit}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textgreek}
+\usepackage{newunicodechar}
+\newunicodechar{χ}{\ensuremath{\chi}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{↓}{\ensuremath{\downarrow}}
+\newunicodechar{↑}{\ensuremath{\uparrow}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{—}{\textemdash}
+\newunicodechar{–}{\textendash}
+\newunicodechar{…}{\ldots}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{±}{\ensuremath{\pm}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{∼}{\ensuremath{\sim}}
+\newunicodechar{ó}{\'{o}}
+\newunicodechar{é}{\'{e}}
+\newunicodechar{á}{\'{a}}
+\newunicodechar{í}{\'{i}}
+\newunicodechar{ü}{\"{u}}
+\newunicodechar{ö}{\"{o}}
+\newunicodechar{ä}{\"{a}}
+\newunicodechar{ñ}{\~{n}}
+\newunicodechar{²}{\ensuremath{^2}}
+\newunicodechar{³}{\ensuremath{^3}}
+\newunicodechar{°}{\ensuremath{^{\circ}}}
+\newunicodechar{₀}{\ensuremath{_0}}
+\newunicodechar{₁}{\ensuremath{_1}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{ω}{\ensuremath{\omega}}
+
+% ==== Amphora colour system (forked verbatim from epoxy-amine review) =========
+\definecolor{Navy}{HTML}{102A43}
+\definecolor{Blue}{HTML}{1666A8}
+\definecolor{Cyan}{HTML}{2D9CDB}
+\definecolor{Teal}{HTML}{168C86}
+\definecolor{Green}{HTML}{23856D}
+\definecolor{Orange}{HTML}{E56B2F}
+\definecolor{Amber}{HTML}{D99A1D}
+\definecolor{Red}{HTML}{B54747}
+\definecolor{Ink}{HTML}{243B53}
+\definecolor{Muted}{HTML}{627D98}
+\definecolor{Line}{HTML}{D9E2EC}
+\definecolor{Panel}{HTML}{F4F7FA}
+\definecolor{PaleBlue}{HTML}{EAF3FA}
+\definecolor{PaleOrange}{HTML}{FFF1E8}
+\definecolor{PaleGreen}{HTML}{EAF7F2}
+\definecolor{PaleAmber}{HTML}{FBEED4}
+\definecolor{PaleRed}{HTML}{FAECEC}
+
+\hypersetup{colorlinks=true,linkcolor=Blue,urlcolor=Blue,pdftitle={Amphora Coating IP Portfolio Status --- 2026-07-30},pdfauthor={Amphora Engineering}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt}
+\setlist[itemize]{leftmargin=4.2mm,itemsep=1.3pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=5mm,itemsep=1.3pt,topsep=2pt}
+\renewcommand{\arraystretch}{1.18}
+
+% row colours in tables
+\usepackage[table]{xcolor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\fontsize{7.2}{8}\selectfont\color{Muted} AMPHORA COATING IP / PORTFOLIO STATUS}
+\fancyhead[R]{\sffamily\fontsize{7.2}{8}\selectfont\color{Muted} 03 AUG 2026 / AUDIT\_ONLY}
+\fancyfoot[L]{\sffamily\fontsize{7}{8}\selectfont\color{Muted} Every claim traces to a signed, byte-stable evidence receipt on xbabe2. No product qualification, no procurement authority.}
+\fancyfoot[R]{\sffamily\fontsize{7}{8}\selectfont\color{Muted} \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\titleformat{\section}{\sffamily\bfseries\Large\color{Navy}}{}{0pt}{}[\vspace{1mm}\color{Cyan}\rule{18mm}{1.2pt}]
+\titleformat{\subsection}{\sffamily\bfseries\normalsize\color{Navy}}{}{0pt}{}
+
+% ==== Macros forked from epoxy-amine review ===================================
+\newcommand{\PageTitle}[2]{%
+  {\sffamily\fontsize{7.5}{9}\selectfont\bfseries\color{Cyan}\MakeUppercase{#1}}\\[-1pt]
+  {\sffamily\fontsize{20}{22}\selectfont\bfseries\color{Navy}#2}\par\vspace{3mm}}
+\newcommand{\eyebrow}[1]{{\sffamily\fontsize{7.5}{9}\selectfont\bfseries\color{Cyan}\MakeUppercase{#1}}\par\vspace{2pt}}
+\newcommand{\metric}[2]{%
+  \begin{tcolorbox}[enhanced,boxrule=0pt,arc=2mm,colback=PaleBlue,left=3mm,right=3mm,top=2mm,bottom=2mm]
+  {\sffamily\bfseries\color{Navy}#1.}\ \color{Ink}#2
+  \end{tcolorbox}}
+\newcommand{\callout}[2]{%
+  \begin{tcolorbox}[enhanced,breakable,colback=PaleRed,colframe=Red!30,boxrule=.55pt,arc=2mm,left=3mm,right=3mm,top=2.5mm,bottom=2.5mm]
+  {\sffamily\bfseries\color{Red}#1.}\ \color{Ink}#2
+  \end{tcolorbox}}
+\newcommand{\good}[1]{\textcolor{Green}{\bfseries #1}}
+\newcommand{\bad}[1]{\textcolor{Red}{\bfseries #1}}
+\newcommand{\phasezero}[1]{{\setlength{\fboxsep}{2pt}\colorbox{PaleGreen}{\color{Green}\bfseries\sffamily\small #1}}}
+\newcommand{\prephase}[1]{{\setlength{\fboxsep}{2pt}\colorbox{PaleAmber}{\color{Amber!80!black}\bfseries\sffamily\small #1}}}
+\newcommand{\code}[1]{{\ttfamily\fontsize{7.2}{8.4}\selectfont\detokenize{#1}}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{document}
+\input{snippets/cover.tex}
+\input{snippets/tldr.tex}
+\input{snippets/program.tex}
+\input{snippets/scoreboard.tex}
+\input{snippets/system.tex}
+\input{snippets/lift.tex}
+\input{snippets/modules_full.tex}
+\input{snippets/modules_half.tex}
+\input{snippets/infra.tex}
+\input{snippets/survivals.tex}
+\input{snippets/errata.tex}
+\input{snippets/trustchain.tex}
+\input{snippets/references.tex}
+\end{document}

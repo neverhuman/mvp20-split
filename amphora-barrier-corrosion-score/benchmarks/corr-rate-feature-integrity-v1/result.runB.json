@@ -1,0 +1,134 @@
+{
+  "attack_description": "corr-rate-marine-envelope-v1 (2026-08-15) co-discovered that the deployed env_features() 'marine' flag conflates seawater immersion with atmospheric exposure (has('seawater','sea water','marine','atmospheric')): 313/499 (62.7%) of deployed marine_feature==1 rows are actually atmospheric. That flag is one of the 13 env features consumed by build_matrix() and fed directly into the SAME GroupKFold(family) HistGBM pipeline that produced the promoted KPI's R2=0.132087 -- so the defect was never isolated to the marine-only test split; it is baked into the promoted KPI's own training features. This re-runs the identical family-safe pipeline with ONLY the marine flag corrected (restricted to true seawater/sea-water substrings) and compares to the deployed (buggy) feature result on the identical rows/model/seed/CV.",
+  "attacks_claim": "evidence/phase0/kpis/corr-rate-family-safe-qspr-kpi.v1.dsse.json (GroupKFold(group=metallurgical_family, 5-fold) HistGBM R2=0.132087, promoted 2026-08-04, campaign item V1-KPI-BARR, 'the module's strongest rights-clean empirical claim').",
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-barrier-corrosion-score/corr-rate-feature-integrity-v1",
+  "cohort": {
+    "classified_subset_n": 7282,
+    "full_cohort_n": 7699,
+    "n_families_in_classified_subset": 17,
+    "n_marine_flag_values_changed_by_fix": 1975
+  },
+  "comparison": {
+    "corrected_family_safe_beats_best_baseline_rmse": true,
+    "corrected_family_safe_r2_positive": true,
+    "r2_buggy": 0.132087,
+    "r2_corrected": 0.131294,
+    "r2_delta_corrected_minus_buggy": -0.000793
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "canonical_round_decimals": 6,
+    "omp_num_threads": "1",
+    "seed": 0
+  },
+  "model": {
+    "estimator": "HistGradientBoostingRegressor",
+    "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "random_state": 0
+    },
+    "sklearn_version": "1.7.2"
+  },
+  "modifies_manifest": false,
+  "promotes_authority": false,
+  "refutation_criterion": "REFUTED if corrected_feature.family_safe.gbm.r2 <= 0.0 OR corrected_feature.family_safe_error_reduction_vs_best_baseline_pct <= 0.0 (identical classified-subset rows/model/seed/CV as the promoted corr-rate-family-safe-qspr-kpi.v1); SURVIVED otherwise, even if r2 changes materially relative to the buggy-feature promoted number.",
+  "results": {
+    "corrected_feature_family_safe": {
+      "baseline_global_mean": {
+        "mae": 1.015781,
+        "r2": -0.004621,
+        "rmse": 1.245599
+      },
+      "baseline_group_mean": {
+        "mae": 1.015781,
+        "r2": -0.004621,
+        "rmse": 1.245599
+      },
+      "error_reduction_vs_best_baseline_pct": 7.010174,
+      "gbm": {
+        "mae": 0.928034,
+        "r2": 0.131294,
+        "rmse": 1.15828
+      },
+      "n_folds": 5,
+      "note": "This fire's real attack input -- verdict driver.",
+      "per_fold_r2": [
+        {
+          "n_test": 1976,
+          "r2": 0.224616
+        },
+        {
+          "n_test": 1888,
+          "r2": 0.107438
+        },
+        {
+          "n_test": 1141,
+          "r2": -0.055338
+        },
+        {
+          "n_test": 1132,
+          "r2": 0.080872
+        },
+        {
+          "n_test": 1145,
+          "r2": 0.119618
+        }
+      ]
+    },
+    "deployed_buggy_feature_family_safe": {
+      "baseline_global_mean": {
+        "mae": 1.015781,
+        "r2": -0.004621,
+        "rmse": 1.245599
+      },
+      "baseline_group_mean": {
+        "mae": 1.015781,
+        "r2": -0.004621,
+        "rmse": 1.245599
+      },
+      "error_reduction_vs_best_baseline_pct": 7.052628,
+      "gbm": {
+        "mae": 0.928427,
+        "r2": 0.132087,
+        "rmse": 1.157751
+      },
+      "n_folds": 5,
+      "note": "Reference only (reproduces the promoted KPI's own pipeline byte-for-byte on the deployed feature set) -- NOT the verdict driver.",
+      "per_fold_r2": [
+        {
+          "n_test": 1976,
+          "r2": 0.165932
+        },
+        {
+          "n_test": 1888,
+          "r2": 0.117892
+        },
+        {
+          "n_test": 1141,
+          "r2": -0.003119
+        },
+        {
+          "n_test": 1132,
+          "r2": 0.06438
+        },
+        {
+          "n_test": 1145,
+          "r2": 0.221653
+        }
+      ]
+    }
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-feature-integrity-attack.v1",
+  "scope_honesty": "Diagnostic on bare metal/alloy substrate corrosion (NIST CORR-DATA), same scope ceiling as corr-rate-family-safe-v1: NOT organic-coating barrier performance. No candidate/coating superiority claim.",
+  "verdict": "CLAIM_SURVIVED"
+}

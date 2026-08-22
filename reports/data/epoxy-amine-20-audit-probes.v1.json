@@ -1,0 +1,147 @@
+{
+  "schema": "amphora.compound-audit-card-set.v1",
+  "set_id": "epoxy-amine-report-probes-2026-07-19",
+  "authority_ceiling": "AUDIT_ONLY",
+  "compounds": [
+    {
+      "proposal_id": "EA-P01",
+      "display_name": "Phenyl glycidyl ether",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "c1ccccc1OCC2CO2",
+      "chemistry_note": "Monofunctional aromatic glycidyl-ether control."
+    },
+    {
+      "proposal_id": "EA-P02",
+      "display_name": "p-Cresyl glycidyl ether",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "Cc1ccc(OCC2CO2)cc1",
+      "chemistry_note": "Methyl-substituted aromatic glycidyl-ether control."
+    },
+    {
+      "proposal_id": "EA-P03",
+      "display_name": "4-tert-Butylphenyl glycidyl ether",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "CC(C)(C)c1ccc(OCC2CO2)cc1",
+      "chemistry_note": "Bulky monofunctional aromatic epoxide probe."
+    },
+    {
+      "proposal_id": "EA-P04",
+      "display_name": "Resorcinol diglycidyl ether",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "c1cc(OCC2CO2)cc(OCC3CO3)c1",
+      "chemistry_note": "Difunctional meta-disubstituted aromatic epoxide probe."
+    },
+    {
+      "proposal_id": "EA-P05",
+      "display_name": "Hydroquinone diglycidyl ether",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "c1cc(OCC2CO2)ccc1OCC3CO3",
+      "chemistry_note": "Difunctional para-disubstituted aromatic epoxide probe."
+    },
+    {
+      "proposal_id": "EA-P06",
+      "display_name": "Catechol diglycidyl ether",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "c1ccc(OCC2CO2)c(OCC3CO3)c1",
+      "chemistry_note": "Difunctional ortho-disubstituted aromatic epoxide probe."
+    },
+    {
+      "proposal_id": "EA-P07",
+      "display_name": "1,4-Butanediol diglycidyl ether",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "C1OC1COCCCCOCC2CO2",
+      "chemistry_note": "Flexible aliphatic difunctional epoxide probe."
+    },
+    {
+      "proposal_id": "EA-P08",
+      "display_name": "1,6-Hexanediol diglycidyl ether",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "C1OC1COCCCCCCOCC2CO2",
+      "chemistry_note": "Longer-chain aliphatic difunctional epoxide probe."
+    },
+    {
+      "proposal_id": "EA-P09",
+      "display_name": "Bisphenol F diglycidyl ether model",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "c1cc(OCC2CO2)ccc1Cc3ccc(OCC4CO4)cc3",
+      "chemistry_note": "Two-ring aromatic difunctional epoxy model structure."
+    },
+    {
+      "proposal_id": "EA-P10",
+      "display_name": "Bisphenol A diglycidyl ether model",
+      "requested_role": "EPOXIDE_RESIN",
+      "smiles": "CC(c1ccc(OCC2CO2)cc1)(c3ccc(OCC4CO4)cc3)C",
+      "chemistry_note": "DGEBA-like difunctional epoxy model structure."
+    },
+    {
+      "proposal_id": "EA-P11",
+      "display_name": "Ethylenediamine",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NCCN",
+      "chemistry_note": "Small primary diamine positive-role control."
+    },
+    {
+      "proposal_id": "EA-P12",
+      "display_name": "Diethylenetriamine",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NCCNCCN",
+      "chemistry_note": "Mixed primary/secondary polyamine control."
+    },
+    {
+      "proposal_id": "EA-P13",
+      "display_name": "Triethylenetetramine",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NCCNCCNCCN",
+      "chemistry_note": "Higher-functionality linear polyamine probe."
+    },
+    {
+      "proposal_id": "EA-P14",
+      "display_name": "1,3-Diaminopropane",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NCCCN",
+      "chemistry_note": "Short-chain aliphatic primary diamine control."
+    },
+    {
+      "proposal_id": "EA-P15",
+      "display_name": "1,4-Diaminobutane",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NCCCCN",
+      "chemistry_note": "Medium-chain aliphatic primary diamine probe."
+    },
+    {
+      "proposal_id": "EA-P16",
+      "display_name": "1,6-Diaminohexane",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NCCCCCCN",
+      "chemistry_note": "Longer-chain aliphatic primary diamine probe."
+    },
+    {
+      "proposal_id": "EA-P17",
+      "display_name": "m-Xylylenediamine",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NCc1cccc(CN)c1",
+      "chemistry_note": "Meta-substituted aromatic-linked primary diamine probe."
+    },
+    {
+      "proposal_id": "EA-P18",
+      "display_name": "p-Xylylenediamine",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NCc1ccc(CN)cc1",
+      "chemistry_note": "Para-substituted aromatic-linked primary diamine probe."
+    },
+    {
+      "proposal_id": "EA-P19",
+      "display_name": "Isophorone diamine model",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "chemistry_note": "Branched cycloaliphatic diamine model structure."
+    },
+    {
+      "proposal_id": "EA-P20",
+      "display_name": "4,4'-Methylenebis(cyclohexylamine)",
+      "requested_role": "REACTIVE_AMINE_HARDENER",
+      "smiles": "NC1CCC(CC1)C2CCC(CC2)N",
+      "chemistry_note": "Two-ring cycloaliphatic primary diamine probe."
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "anchor_check": {
+    "candidates_checked": [
+      "DDS",
+      "DETA",
+      "TETA",
+      "m-XDA"
+    ],
+    "max_abs_err": 0.0,
+    "note_on_IPDA": "IPDA uses the R-A07v2-corrected structure (not directly comparable to the still-shipped defective KPI string), but R-A07 already proved the correction leaves IPDA's Morgan NN numerically unchanged at 0.16666666666666666, which this run also reproduces.",
+    "purpose": "Confirm this fresh reimplementation reproduces the signed KPI's own per-candidate NN Tanimoto EXACTLY before trusting the downstream conformal layer.",
+    "reproduces_signed_nn_exact": true
+  },
+  "candidates": {
+    "DDS": {
+      "anchor_abs_err_vs_signed_kpi": 0.0,
+      "conformal_novel_smoothed": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false,
+        "0.2": true
+      },
+      "conformal_novel_strict": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false,
+        "0.2": true
+      },
+      "conformal_p_smoothed": 0.11486486486486487,
+      "conformal_p_strict": 0.11286681715575621,
+      "fixed_040_novel": true,
+      "nn_reference_name": "polyethersulfone",
+      "nn_tanimoto": 0.39285714285714285,
+      "nonconformity_alpha": 0.6071428571428572,
+      "signed_kpi_nn_tanimoto": 0.39285714285714285
+    },
+    "DETA": {
+      "anchor_abs_err_vs_signed_kpi": 0.0,
+      "conformal_novel_smoothed": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true,
+        "0.2": true
+      },
+      "conformal_novel_strict": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true,
+        "0.2": true
+      },
+      "conformal_p_smoothed": 0.0045045045045045045,
+      "conformal_p_strict": 0.002257336343115124,
+      "fixed_040_novel": true,
+      "nn_reference_name": "PEI",
+      "nn_tanimoto": 0.16666666666666666,
+      "nonconformity_alpha": 0.8333333333333334,
+      "signed_kpi_nn_tanimoto": 0.16666666666666666
+    },
+    "IPDA": {
+      "anchor_abs_err_vs_signed_kpi": null,
+      "conformal_novel_smoothed": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true,
+        "0.2": true
+      },
+      "conformal_novel_strict": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true,
+        "0.2": true
+      },
+      "conformal_p_smoothed": 0.0045045045045045045,
+      "conformal_p_strict": 0.002257336343115124,
+      "fixed_040_novel": true,
+      "nn_reference_name": "poly(1,3-adamantane)s",
+      "nn_tanimoto": 0.16666666666666666,
+      "nonconformity_alpha": 0.8333333333333334,
+      "signed_kpi_nn_tanimoto": 0.16666666666666666
+    },
+    "TETA": {
+      "anchor_abs_err_vs_signed_kpi": 0.0,
+      "conformal_novel_smoothed": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true,
+        "0.2": true
+      },
+      "conformal_novel_strict": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true,
+        "0.2": true
+      },
+      "conformal_p_smoothed": 0.0022522522522522522,
+      "conformal_p_strict": 0.0,
+      "fixed_040_novel": true,
+      "nn_reference_name": "PEI",
+      "nn_tanimoto": 0.15789473684210525,
+      "nonconformity_alpha": 0.8421052631578947,
+      "signed_kpi_nn_tanimoto": 0.15789473684210525
+    },
+    "m-XDA": {
+      "anchor_abs_err_vs_signed_kpi": 0.0,
+      "conformal_novel_smoothed": {
+        "0.01": false,
+        "0.05": true,
+        "0.1": true,
+        "0.2": true
+      },
+      "conformal_novel_strict": {
+        "0.01": false,
+        "0.05": true,
+        "0.1": true,
+        "0.2": true
+      },
+      "conformal_p_smoothed": 0.02252252252252252,
+      "conformal_p_strict": 0.020316027088036117,
+      "fixed_040_novel": true,
+      "nn_reference_name": "poly(p-xylylene)",
+      "nn_tanimoto": 0.23809523809523808,
+      "nonconformity_alpha": 0.7619047619047619,
+      "signed_kpi_nn_tanimoto": 0.23809523809523808
+    }
+  },
+  "corpus": {
+    "corpus_set_sha256": "25b7f35c26594d7be5454826c0f399d7716131214c3c314646930257cf560304",
+    "csv_path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "n_members": 443,
+    "wildcard_cap": "'*' -> 'C' (methyl-cap, reproduces signed featurization)"
+  },
+  "does_not_close": [
+    "No batch-release, manufacturing-qualification, optimizer, FTO, or patentability authority.",
+    "Conformal validity here is marginal (unconditional); per-scaffold Mondrian-conditional coverage is a separate, already-flagged Phase-1 item.",
+    "Calibration corpus is OpenPoly polymers only; broader USPTO/ChEMBL prior-art calibration remains Phase-1."
+  ],
+  "empirical_validity_self_check": {
+    "member_false_novelty_fraction_by_alpha": {
+      "0.01": 0.009029345372460496,
+      "0.05": 0.04966139954853273,
+      "0.1": 0.09932279909706546,
+      "0.2": 0.1963882618510158
+    },
+    "validity_holds_at_all_alphas": true
+  },
+  "falsifying_observation_occurred": true,
+  "falsifying_observation_sought": "At least one candidate classified NOVEL by the fixed 0.40 Tanimoto cut fails to reach conformal significance (p > 0.05) under a distribution-free novelty test calibrated on the corpus's own leave-one-out NN-Tanimoto distribution.",
+  "featurization": {
+    "fingerprint": "Morgan/ECFP r=2, 2048 bits",
+    "similarity": "Tanimoto"
+  },
+  "fixed_cut": {
+    "novel_count": 5,
+    "source_status": "citation fabricated -- see evidence/audit/citation-provenance-threshold-source-v1 (CLAIM_REFUTED 2026-08-14, not yet repaired)",
+    "threshold": 0.4
+  },
+  "flips_scientific_readiness": false,
+  "head_to_head": {
+    "agreement_at_a05_smoothed": false,
+    "agreement_at_a05_strict": false,
+    "candidates_failing_significance_a05_smoothed": [
+      "DDS"
+    ],
+    "conformal_novel_count_a05_smoothed": 4,
+    "conformal_novel_count_a05_strict": 4,
+    "fixed_040_novel_count": 5
+  },
+  "headline": "Fresh independent re-derivation: fixed-0.40-cut headline claims 5/5 candidates NOVEL. Under a genuine distribution-free conformal novelty test (Vovk-Gammerman-Shafer 2005) calibrated on the SAME SHA-locked reference corpus's own LOO NN-Tanimoto distribution, only 4/5 reach significance at the standard alpha=0.05 level (smoothed p-value convention); 4/5 under the strict rank-fraction convention. Candidate(s) failing significance at alpha=0.05: ['DDS'].",
+  "interpretation": "The shipped KPI's flat claim 'REAL FINDING: 5/5 candidates classified NOVEL' and its passed=true metric 'all_candidates_classified_novel_below_0_40_threshold' do NOT survive a defensible, distribution-free statistical novelty test at the standard alpha=0.05 significance level: DDS (fixed-cut NN Tanimoto 0.3929, only 0.0071 below the now-unsupported 0.40 cut) fails to reach conformal significance (p=0.1149 > 0.05) under BOTH tested p-value conventions. The true, defensible statement this corpus supports is 4/5 NOVEL at alpha=0.05, with DDS a genuine borderline case -- not 5/5. This closes the loop the citation-provenance fire opened (2026-08-14): the 0.40 cut had no real literature source, and now that it is replaced with a real distribution-free test, its headline count changes.",
+  "method": {
+    "alphas_tested": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "conformal_p_smoothed": "p(x) = (#{i: alpha_i >= alpha_x} + 1) / (n + 1)  [Vovk-Gammerman-Shafer 2005 sec 2.3]",
+    "conformal_p_strict": "p(x) = #{i: alpha_i >= alpha_x} / n  [alternate convention, sanity cross-check]",
+    "nonconformity": "alpha(x) = 1 - max_j Tanimoto(x, corpus_j)  [LOO for corpus members]"
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "positive_control": {
+    "detected": true,
+    "expected_if_detector_works": "nonconformity_alpha == 0.0, conformal_p == 1.0, conformal_novel=False at every alpha",
+    "how_planted": "used corpus row 0 ('PLA') fingerprint directly as a synthetic 'candidate'",
+    "observed_conformal_p": 1.0,
+    "observed_nn_tanimoto": 1.0,
+    "observed_nonconformity_alpha": 0.0,
+    "planted_defect": "candidate = exact byte-identical duplicate of corpus member 'PLA'"
+  },
+  "prior_orphaned_receipt_reproduced": {
+    "path": "evidence/audit/conformal-anomaly-detection-v1/conformal-anomaly-detection-receipt.v1.dsse.json",
+    "prior_dds_conformal_novel_a05": false,
+    "prior_dds_conformal_p": 0.11486486486486487,
+    "reproduces_prior_qualitative_finding": true,
+    "status_before_this_fire": "created, DSSE-signed, byte-stable, but NEVER appended to logs/falsification-ledger.jsonl -- not mechanically credited under any fire",
+    "this_run_dds_conformal_novel_a05": false,
+    "this_run_dds_conformal_p_smoothed": 0.11486486486486487
+  },
+  "promotes_authority": false,
+  "purpose": "Re-adjudicate the still-live, un-superseded KPI metric 'all_candidates_classified_novel_below_0_40_threshold' (observed=5, passed=true) now that its sole cited authority for the 0.40 cutoff (Bajusz-Racz-Heberger 2015) has been shown (2026-08-14, citation-provenance-threshold-source-v1) to contain no such threshold anywhere in its text.",
+  "rdkit_version": "2026.03.2",
+  "study_id": "amphora-molecule-novelty-conformal-significance-reattack-v1",
+  "verdict": "REFUTED"
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-molecule-property",
+  "kpi_id": "amphora-molecule-property-eew-ahew-v1",
+  "capability": "Exact deterministic EEW and AHEW from defined single-component SMILES",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "solver_use_ceiling": "DISABLED",
+  "population": "Defined, single-component monodisperse epoxy resins and amines with pinned RDKit 2026.03.2 canonicalization",
+  "split_methodology": "Source-safe held-out: exact-implementation records fix the arithmetic; monodisperse validation records replay across independent sources; technical-grade records held out and remain MEASURED_ONLY",
+  "theory": "EEW = molecular_weight_g_mol / oxirane_ring_count (ASTM D1652 basis); AHEW = molecular_weight_g_mol / active_amine_hydrogen_count (amine-titration basis). Applies only to defined single-component structures with pinned reactive-group ontology.",
+  "metrics": [
+    {
+      "name": "exact_implementation_max_abs_error_g_per_eq",
+      "direction": "MINIMIZE",
+      "threshold": 0.5,
+      "observed": 0.03399999999999892,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC"
+    },
+    {
+      "name": "monodisperse_tolerance_hit_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "tolerance_g_per_eq": 6.0,
+      "sample_size": 6,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC"
+    },
+    {
+      "name": "monodisperse_mae_g_per_eq",
+      "direction": "MINIMIZE",
+      "threshold": 6.0,
+      "observed": 0.022750000000009745,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC"
+    },
+    {
+      "name": "negative_control_pass_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "sample_size": 5,
+      "passed": true,
+      "authority": "AUDIT_ONLY"
+    },
+    {
+      "name": "technical_grade_directional_accuracy",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "sample_size": 3,
+      "passed": true,
+      "authority": "AUDIT_ONLY"
+    }
+  ],
+  "claim_locks": {
+    "commercial_product_is_measured_only": true,
+    "polydisperse_grade_is_measured_only": true,
+    "no_optimizer_authority": true,
+    "no_release_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true
+  },
+  "benchmark_lock_sha256": "de2a5d875a1ca7e5c66fc4754c595ac048b2a8fbf393f7d67ee0722776defbeb",
+  "dataset_fixture_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "236c90195c5af5e902607c6f5fead1a60c96f294dc5d10e8de55b8f596b3eb2d",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json"
+  ]
+}

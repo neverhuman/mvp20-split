@@ -1,0 +1,65 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "19322c407185ffb5e56d710fb2dc9041f7d6535a478c12b1853f80f35b374519",
+  "payload_decoded": {
+    "action": "Anchored signature-identity re-issue of amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json as amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json; original untouched.",
+    "authority": "AUDIT_ONLY",
+    "date": "2026-08-03",
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-molecule-property",
+    "promotes_authority": false,
+    "reattack_observed_results": {
+      "dsse_verifies_against_trust_store": true,
+      "keyid_equals_pinned_trust_store_key_id": true,
+      "keyid_prefix_phase0_evaluator_3ef6b35": true,
+      "original_byte_intact": true,
+      "original_sha256_after_write": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+      "original_sha256_before": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+      "reloaded_payload_sha256_matches_two_replay_sha256": true,
+      "self_verified_with_seed_derived_pubkey": true
+    },
+    "repair_artifacts": {
+      "anchored_reissue_file_sha256": "2c57343a35c892c50891ecf91914996cf5707e99cce9c48e2cf11e214a4da190",
+      "anchored_reissue_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json",
+      "anchored_reissue_payload_canonical_sha256": "210c0ed962e28cc20be82af740e34854ded8e22357c18e88a5768306f6df3095",
+      "retraction_index": {
+        "existed_before": false,
+        "path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+        "sha256_after": "4dd0409b70a5981c483eada5126aeadc92bfdb647af5ede4b0eeb97cc73ce34a",
+        "sha256_before": null
+      },
+      "work_log": "amphora-molecule-property/evidence/phase0/repairs/R-A11/work/R-A11-work-log.a.v1.json"
+    },
+    "repair_item": "R-A11",
+    "repair_mode": "interactive-2026-08-03",
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "supersedes": {
+      "reason": "signature-identity re-issue only - scientific content unchanged, re-verified byte-intact",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+      "superseded_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "two_replay_sha256_gate": "PASS"
+  },
+  "signature": {
+    "payload": "eyJhY3Rpb24iOiJBbmNob3JlZCBzaWduYXR1cmUtaWRlbnRpdHkgcmUtaXNzdWUgb2YgYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC1maXJlMi1jbGVhbi1zdWJzZXQtdjEvYzhfZmlyZTJfZGllbGVjdHJpY19jbGVhbl9zdWJzZXRfcmVjZWlwdC52MS5qc29uIGFzIGFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tYzgtZmlyZTItY2xlYW4tc3Vic2V0LXYxL2M4X2ZpcmUyX2RpZWxlY3RyaWNfY2xlYW5fc3Vic2V0X3JlY2VpcHQudjEuYW5jaG9yZWQtcmVpc3N1ZS52MS5qc29uOyBvcmlnaW5hbCB1bnRvdWNoZWQuIiwiYXV0aG9yaXR5IjoiQVVESVRfT05MWSIsImRhdGUiOiIyMDI2LTA4LTAzIiwiZmxpcHNfc2NpZW50aWZpY19yZWFkaW5lc3MiOmZhbHNlLCJnZW5lcmF0ZWRfb25faG9zdCI6InhiYWJlMiIsIm1vZGlmaWVzX2V4aXN0aW5nX3JlY2VpcHRzIjpmYWxzZSwibW9kaWZpZXNfbWFuaWZlc3QiOmZhbHNlLCJtb2R1bGUiOiJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5IiwicHJvbW90ZXNfYXV0aG9yaXR5IjpmYWxzZSwicmVhdHRhY2tfb2JzZXJ2ZWRfcmVzdWx0cyI6eyJkc3NlX3ZlcmlmaWVzX2FnYWluc3RfdHJ1c3Rfc3RvcmUiOnRydWUsImtleWlkX2VxdWFsc19waW5uZWRfdHJ1c3Rfc3RvcmVfa2V5X2lkIjp0cnVlLCJrZXlpZF9wcmVmaXhfcGhhc2UwX2V2YWx1YXRvcl8zZWY2YjM1Ijp0cnVlLCJvcmlnaW5hbF9ieXRlX2ludGFjdCI6dHJ1ZSwib3JpZ2luYWxfc2hhMjU2X2FmdGVyX3dyaXRlIjoiZGE5MGY2NDI5OWIwY2FkNjI3OGI0ZWYzMmIxNjczMzZlNmQzYjEwYTI2ZjU3MDkwNmNiZGY1NjhlZjQ0MDRlNyIsIm9yaWdpbmFsX3NoYTI1Nl9iZWZvcmUiOiJkYTkwZjY0Mjk5YjBjYWQ2Mjc4YjRlZjMyYjE2NzMzNmU2ZDNiMTBhMjZmNTcwOTA2Y2JkZjU2OGVmNDQwNGU3IiwicmVsb2FkZWRfcGF5bG9hZF9zaGEyNTZfbWF0Y2hlc190d29fcmVwbGF5X3NoYTI1NiI6dHJ1ZSwic2VsZl92ZXJpZmllZF93aXRoX3NlZWRfZGVyaXZlZF9wdWJrZXkiOnRydWV9LCJyZXBhaXJfYXJ0aWZhY3RzIjp7ImFuY2hvcmVkX3JlaXNzdWVfZmlsZV9zaGEyNTYiOiIyYzU3MzQzYTM1Yzg5MmM1MDg5MWVjZjkxOTE0OTk2Y2Y1NzA3ZTk5Y2NlOWM0OGUyY2YxMWUyMTRhNGRhMTkwIiwiYW5jaG9yZWRfcmVpc3N1ZV9wYXRoIjoiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC1maXJlMi1jbGVhbi1zdWJzZXQtdjEvYzhfZmlyZTJfZGllbGVjdHJpY19jbGVhbl9zdWJzZXRfcmVjZWlwdC52MS5hbmNob3JlZC1yZWlzc3VlLnYxLmpzb24iLCJhbmNob3JlZF9yZWlzc3VlX3BheWxvYWRfY2Fub25pY2FsX3NoYTI1NiI6IjIxMGMwZWQ5NjJlMjhjYzIwYmU4MmFmNzQwZTM0ODU0ZGVkOGUyMjM1N2MxOGU4OGE1NzY4MzA2ZjZkZjMwOTUiLCJyZXRyYWN0aW9uX2luZGV4Ijp7ImV4aXN0ZWRfYmVmb3JlIjpmYWxzZSwicGF0aCI6ImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvUkVUUkFDVElPTi1JTkRFWC5tZCIsInNoYTI1Nl9hZnRlciI6IjRkZDA0MDliNzBhNTk4MWM0ODNlYWRhNTEyNmFlYWRjOTJiZmRiNjQ3YWY1ZWRlNGIwZWViOTdjYzczY2UzNGEiLCJzaGEyNTZfYmVmb3JlIjpudWxsfSwid29ya19sb2ciOiJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9yZXBhaXJzL1ItQTExL3dvcmsvUi1BMTEtd29yay1sb2cuYS52MS5qc29uIn0sInJlcGFpcl9pdGVtIjoiUi1BMTEiLCJyZXBhaXJfbW9kZSI6ImludGVyYWN0aXZlLTIwMjYtMDgtMDMiLCJzY2hlbWEiOiJhbXBob3JhLnBoYXNlMC1yZXBhaXIuZG9uZS1yZWNlaXB0LnYxIiwic2lnbmluZ19rZXkiOnsiZGVyaXZlc19waW5uZWRfdHJ1c3Rfc3RvcmVfa2V5X2lkIjp0cnVlLCJrZXlfaWQiOiJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLCJwdWJsaWNfa2V5X2hleCI6IjZjZjA3YWJmMWE1NWFkYWFjMTNlNzhhYmMzMWM1MzFkMDNkOGYwZDQyMzIzNDYzNDRhNzM2NDE4YzdiNDU2NjQiLCJyb2xlIjoiUEhBU0UwX0VWQUxVQVRPUiJ9LCJzdXBlcnNlZGVzIjp7InJlYXNvbiI6InNpZ25hdHVyZS1pZGVudGl0eSByZS1pc3N1ZSBvbmx5IC0gc2NpZW50aWZpYyBjb250ZW50IHVuY2hhbmdlZCwgcmUtdmVyaWZpZWQgYnl0ZS1pbnRhY3QiLCJzdXBlcnNlZGVkX2RlbGV0ZWRfb3JfbW9kaWZpZWQiOmZhbHNlLCJzdXBlcnNlZGVkX3BhdGgiOiJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLWM4LWZpcmUyLWNsZWFuLXN1YnNldC12MS9jOF9maXJlMl9kaWVsZWN0cmljX2NsZWFuX3N1YnNldF9yZWNlaXB0LnYxLmpzb24iLCJzdXBlcnNlZGVkX3NoYTI1NiI6ImRhOTBmNjQyOTliMGNhZDYyNzhiNGVmMzJiMTY3MzM2ZTZkM2IxMGEyNmY1NzA5MDZjYmRmNTY4ZWY0NDA0ZTcifSwidHJ1c3RfYW5jaG9yZWRfaW5fcGhhc2UwX3N0b3JlIjp0cnVlLCJ0d29fcmVwbGF5X3NoYTI1Nl9nYXRlIjoiUEFTUyJ9",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "U4xmptXpA0s4RMz7TLRWwJ878RGWUqKx/gXXXxF1ZHdfcJm9teRhpqE+aLfWN1HwDUbR3OPc3itIE9NAvS/TCQ=="
+      }
+    ]
+  }
+}

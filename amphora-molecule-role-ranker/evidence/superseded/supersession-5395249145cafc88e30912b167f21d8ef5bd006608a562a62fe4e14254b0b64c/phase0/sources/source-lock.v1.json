@@ -1,0 +1,78 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-molecule-role-ranker/evidence/phase0",
+  "imported_locks": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "c491c0906bd07d0a0a29dbeb2b7abf2755ceb593e66013843cdd8d1b206de063",
+      "source_path": "config/program/molecule-role-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "8d75b686d6479c3798a88c1b0030aea8e15aa4268b064e120025c59038b97df5",
+      "source_path": "config/program/molecule-role-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "1b06324df68f7024946ce7c8cf091e436e18d5274c5a82f607129596bb5247be",
+      "source_path": "config/benchmark-locks/amphora-molecule-role-ranker.v1.json"
+    }
+  ],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-molecule-role-ranker",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/molecule_library.json",
+      "observed_sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/role_fit_benchmark.v1.json",
+      "observed_sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

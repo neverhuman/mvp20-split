@@ -1,0 +1,97 @@
+{
+  "schema": "amphora.dashboard-kpi-profile.v1",
+  "profile_id": "molecule-demo-v1",
+  "objectives": [
+    {
+      "id": "role_fit",
+      "module_id": "amphora-molecule-role-ranker",
+      "section": "objective_values",
+      "path": "role_fit",
+      "label": "Role fit",
+      "direction": "maximize",
+      "unit": "normalized_0_1",
+      "weight": 0.70,
+      "display_lower": 0.0,
+      "display_upper": 1.0
+    },
+    {
+      "id": "novelty_score",
+      "module_id": "amphora-molecule-novelty",
+      "section": "objective_values",
+      "path": "novelty_score",
+      "label": "Novelty — design-space objective",
+      "direction": "maximize",
+      "unit": "normalized_0_1",
+      "weight": 0.30,
+      "display_lower": 0.0,
+      "display_upper": 1.0
+    }
+  ],
+  "hard_constraints": [
+    {
+      "id": "molecule_design_gate",
+      "module_id": "amphora-molecule-design-gate",
+      "section": "gates",
+      "path": "pass_all_hard",
+      "label": "Structural design gate",
+      "operator": "==",
+      "expected": true
+    }
+  ],
+  "display_kpis": [
+    {
+      "id": "eew",
+      "module_id": "amphora-molecule-property",
+      "section": "objective_values",
+      "path": "eew_g_per_eq",
+      "label": "EEW",
+      "unit": "g/eq",
+      "direction": "context"
+    },
+    {
+      "id": "ahew",
+      "module_id": "amphora-molecule-property",
+      "section": "objective_values",
+      "path": "ahew_g_per_eq",
+      "label": "AHEW",
+      "unit": "g/eq",
+      "direction": "context"
+    },
+    {
+      "id": "max_similarity",
+      "module_id": "amphora-molecule-novelty",
+      "section": "metrics",
+      "path": "max_similarity",
+      "label": "Maximum corpus similarity",
+      "unit": "normalized_0_1",
+      "direction": "context"
+    },
+    {
+      "id": "novelty_band",
+      "module_id": "amphora-molecule-novelty",
+      "section": "metrics",
+      "path": "novelty_band",
+      "label": "Novelty band",
+      "unit": "category",
+      "direction": "context"
+    },
+    {
+      "id": "design_gate_status",
+      "module_id": "amphora-molecule-design-gate",
+      "section": "gates",
+      "path": "pass_all_hard",
+      "label": "Design gate",
+      "unit": "boolean",
+      "direction": "context"
+    },
+    {
+      "id": "design_gate_reason",
+      "module_id": "amphora-molecule-design-gate",
+      "section": "metrics",
+      "path": "gate_reasons",
+      "label": "Design-gate reason",
+      "unit": "text",
+      "direction": "context"
+    }
+  ]
+}

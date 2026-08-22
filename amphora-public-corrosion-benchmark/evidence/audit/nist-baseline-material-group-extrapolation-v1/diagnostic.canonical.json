@@ -1,0 +1,138 @@
+{
+  "audit_id": "nist-baseline-material-group-extrapolation-v1",
+  "dataset": {
+    "csv_sha256": "9b6b82d0a562cfd68c5c452a8e75f0ae4c8bc21a72d89a7bc07049242e4c5cc5",
+    "environments": [
+      "Atmospheric Environments",
+      "Seawater",
+      "Sodium Chloride"
+    ],
+    "material_groups": [
+      "Aluminum and alloys",
+      "Carbon and alloy steels",
+      "Copper and alloys",
+      "Nickel and alloys",
+      "Stainless steels"
+    ],
+    "median_imputation": {
+      "concentration_vol_pct": 10.0,
+      "duration_hr": 13140.0,
+      "temperature_C": 32.0
+    },
+    "n_records_after_filter": 588,
+    "n_source_documents": 30,
+    "n_total_records_in_raw_csv": 24721,
+    "source": "NIST CORR-DATA Database v2017, doi:10.18434/M3TH4R"
+  },
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "Does not dispute the physical theory (Ridge regression, Hoerl & Kennard 1970) itself, nor the LOSD-CV design as a study-bias control; it disputes whether the KPI's beats-null claim implies any group-transferable predictive value, which is a materially different and stronger claim than in-domain interpolation.",
+    "Does not modify or supersede the signed NIST baseline KPI, the prior fold-significance audit, or the raw dataset; all remain independently valid artifacts, referenced by path + sha256.",
+    "Phase-1 would need either (a) an explicit, honestly-scoped claim restricted to the five trained material groups only, or (b) features that carry real physicochemical transfer (e.g. standard electrode potential, alloy composition) in place of a bare material-group one-hot, to support any claim of predictive value for novel coatings/substrates."
+  ],
+  "headline": "Leave-one-material-group-out (LOMO-CV) extrapolation audit of the NIST CORR-DATA marine steel baseline KPI's '+0.0475 log10 (7.0%) Ridge-beats-NULL' claim, on the same hash-pinned raw CSV (n=588 records / 30 source documents / 3 environments / 5 material groups, reproduces exactly). Held out each of the 5 material groups in turn (Aluminum, Carbon/alloy steels, Copper, Nickel, Stainless -- corrosion-rate medians spanning nearly 3 orders of magnitude, 0.006-0.10 mm/yr), refitting Ridge on the other four with an extrapolation-honest NULL (training-only median, never touching the held-out group's own labels). Pooled across all 588 held-out predictions: Ridge-LOMO MAE=1.0728 vs NULL-LOMO MAE=0.8106, a NEGATIVE improvement of -0.2622 log10 units (vs the signed in-domain LOSD claim of +0.0475) -- -552% of the claimed in-domain improvement is retained under group-safe extrapolation. Per-group: Ridge beats the extrapolation-honest NULL on only 2/5 held-out groups; the worst case is Carbon and alloy steels, where Ridge MAE exceeds NULL MAE by 0.6587 log10 units (Ridge is WORSE than a naive constant). 3/5 groups show Ridge strictly worse than NULL. This demonstrates the model's in-domain 'beats-null' advantage is substantially or wholly material-group memorization via the one-hot dummy (interpolation among five already-seen categories with very different baseline rate levels), not a transferable physical relationship the environment/temperature/concentration/duration terms encode -- exactly the distinction LOSD-CV, which keeps all five groups present in every training fold, cannot detect. Conclusion: H0 (the beats-null effect reflects group-transferable predictive information, not group-identity memorization) is H0 REFUTED.",
+  "human_review_performed": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "n_tests_failed": 4,
+  "prior_audit_relationship": "Distinct from evidence/audit/nist-baseline-fold-significance-v1 (which attacked LOSD-fold reproducibility/robustness of the same pooled number and already found H0_REFUTED). This audit does not repeat that test; it holds the LOSD result fixed and instead asks whether the beats-null effect generalizes across a genuinely novel held-out axis (material group) that LOSD-CV never tests, since every material group is present via one-hot dummy in every LOSD training fold.",
+  "promotes_authority": false,
+  "schema": "amphora.public-corrosion-benchmark.audit.v1",
+  "scientific_success_asserted": false,
+  "target_claim": "evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json#fitted_or_physical_model_artifact.improvement_MAE_log10_reduction=0.0475 (Ridge beats per-material-group-median NULL; implicit generalization claim that the environment/temperature/concentration/duration features carry group-transferable predictive information, tested here under group-safe leave-one-material-group-out extrapolation rather than the signed KPI's leave-one-source-document-out interpolation split)",
+  "tests": {
+    "T1_population_filter_reproduction": {
+      "n_environments": 3,
+      "n_material_groups": 5,
+      "n_records": 588,
+      "n_source_documents": 30,
+      "note": "Independent re-derivation from raw CORR-DATA_Database.csv (hash-pinned 9b6b82d0..., matches dataset_fixture_sha256 in the signed KPI). Reproduces exactly n=588/30 docs/3 envs/5 material groups, identical to the prior fold-significance audit.",
+      "pass": true,
+      "refutes_claim": false
+    },
+    "T2_pooled_lomo_ridge_vs_null": {
+      "note": "NULL here is extrapolation-honest: median(log10 rate) over the FOUR TRAINING material groups only, never the held-out group's own labels (unlike the signed KPI's per-material-group median NULL, which requires having already seen the group). Ridge is refit per held-out group with that group's one-hot column all-zero in training (uninformative, as it would be for a truly novel material category).",
+      "pooled_improvement_log10_lomo": -0.2622277196483753,
+      "pooled_null_MAE_log10_lomo": 0.8105925679603891,
+      "pooled_ridge_MAE_log10_lomo": 1.0728202876087645,
+      "refute_bar": "pooled LOMO improvement (NULL_MAE - Ridge_MAE) >= 0.01 log10 units",
+      "refutes_claim": true
+    },
+    "T3_per_group_sign_test": {
+      "n_groups": 5,
+      "n_groups_ridge_better": 2,
+      "per_group_n": {
+        "Aluminum and alloys": 79,
+        "Carbon and alloy steels": 222,
+        "Copper and alloys": 90,
+        "Nickel and alloys": 50,
+        "Stainless steels": 147
+      },
+      "per_group_null_mae": {
+        "Aluminum and alloys": 1.3672927698283042,
+        "Carbon and alloy steels": 0.7328733059684579,
+        "Copper and alloys": 0.9233192541431502,
+        "Nickel and alloys": 0.6575358423813974,
+        "Stainless steels": 0.6118292668525288
+      },
+      "per_group_ridge_mae": {
+        "Aluminum and alloys": 0.7683014839209595,
+        "Carbon and alloy steels": 1.3915636812315002,
+        "Copper and alloys": 0.5547905842649705,
+        "Nickel and alloys": 0.8809490075269575,
+        "Stainless steels": 1.1375290591197926
+      },
+      "per_group_true_median_log10_rate": {
+        "Aluminum and alloys": -3.0,
+        "Carbon and alloy steels": -1.853871964321762,
+        "Copper and alloys": -2.6989700043360187,
+        "Nickel and alloys": -2.0969100130080562,
+        "Stainless steels": -2.0
+      },
+      "refute_bar": "Ridge should beat NULL on a majority (>=3/5) of held-out material groups",
+      "refutes_claim": true,
+      "worst_group": "Carbon and alloy steels",
+      "worst_group_null_minus_ridge_log10": -0.6586903752630423
+    },
+    "T4_catastrophic_miscalibration_check": {
+      "groups_where_ridge_worse_than_null": [
+        "Carbon and alloy steels",
+        "Nickel and alloys",
+        "Stainless steels"
+      ],
+      "n_groups_ridge_worse_than_null": 3,
+      "note": "signed_bias > 0 means Ridge systematically OVER-predicts corrosion rate for the held-out group (log10 units); < 0 means it under-predicts.",
+      "per_group_ridge_signed_bias_log10": {
+        "Aluminum and alloys": 0.024065950355556545,
+        "Carbon and alloy steels": -1.3897307060487698,
+        "Copper and alloys": -0.09922918300685188,
+        "Nickel and alloys": 0.4940374156623999,
+        "Stainless steels": 0.8914008517626387
+      },
+      "per_group_training_median_used_as_null": {
+        "Aluminum and alloys": -2.0,
+        "Carbon and alloy steels": -2.3979400086720375,
+        "Copper and alloys": -2.0,
+        "Nickel and alloys": -2.0457574905606752,
+        "Stainless steels": -2.0969100130080562
+      },
+      "refute_bar": "Ridge-LOMO MAE should never exceed the extrapolation-honest constant NULL for any held-out group",
+      "refutes_claim": true
+    },
+    "T5_degradation_vs_signed_in_domain_claim": {
+      "fraction_of_claimed_in_domain_improvement_retained_under_extrapolation": -5.524252985392965,
+      "lomo_pooled_improvement_log10": -0.2622277196483753,
+      "refute_bar": "LOMO pooled improvement retains >= 50% of the signed in-domain (LOSD) +0.0475 log10 improvement",
+      "refutes_claim": true,
+      "signed_kpi_losd_improvement_log10": 0.047468448737186475
+    }
+  },
+  "tests_failed": [
+    "T2_pooled_lomo_ridge_vs_null",
+    "T3_per_group_sign_test",
+    "T4_catastrophic_miscalibration_check",
+    "T5_degradation_vs_signed_in_domain_claim"
+  ],
+  "verdict": "H0_REFUTED"
+}

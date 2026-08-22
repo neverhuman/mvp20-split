@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "58cb4216f99825f7ffdcb8b2af40be47a6339d7fabc106ec1709bfa0888156e2",
+  "module_id": "amphora-ip-fto-guard",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

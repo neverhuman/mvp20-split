@@ -1,0 +1,58 @@
+{
+  "$id": "https://amphora.local/schemas/module-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Amphora module policy manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "repository", "policy", "modules"],
+  "properties": {
+    "$schema": {"const": "schemas/module-manifest.schema.json"},
+    "schema": {"const": "amphora.module-manifest.v2"},
+    "repository": {"const": "amphora-mvp20"},
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normalization_owner", "authority_resolution", "rust_final_ranking_enforcement", "unknown_module_policy", "unknown_true_claim_lock_policy", "product_claim_ready"],
+      "properties": {
+        "normalization_owner": {"const": "amphora-candidate-contract"},
+        "mandatory_claim_locks": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "authority_resolution": {"const": "minimum_privilege"},
+        "rust_final_ranking_enforcement": {"const": true},
+        "unknown_module_policy": {"const": "REJECT"},
+        "unknown_true_claim_lock_policy": {"const": "BLOCK"},
+        "product_claim_ready": {"const": false}
+      }
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 29,
+      "maxItems": 29,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["project", "import_path", "authority_tier", "readiness", "documentation", "candidate_type", "capability_profile", "lane", "candidate_types", "operational_readiness", "scientific_readiness", "authority_ceiling", "solver_use_ceiling", "model_readiness_ceiling", "ranking_eligible", "non_blocking_claim_locks"],
+        "properties": {
+          "project": {"type": "string", "pattern": "^amphora-[a-z0-9-]+$"},
+          "import_path": {"type": "string", "pattern": "^amphora_[a-z0-9_]+$"},
+          "authority_tier": {"$ref": "#/$defs/authority"},
+          "readiness": {"type": "string", "minLength": 1},
+          "documentation": {"type": "string", "pattern": "^amphora-[a-z0-9-]+/docs/mission\\.md$"},
+          "candidate_type": {"type": "string", "minLength": 1},
+          "capability_profile": {"type": "string", "pattern": "^amphora-[a-z0-9-]+/docs/capability-profile\\.json$"},
+          "lane": {"enum": ["molecule", "formulation", "performance", "infrastructure"]},
+          "candidate_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["molecule", "formulation", "evidence_package"]}},
+          "operational_readiness": {"type": "string", "minLength": 1},
+          "scientific_readiness": {"type": "string", "minLength": 1},
+          "authority_ceiling": {"$ref": "#/$defs/authority"},
+          "solver_use_ceiling": {"enum": ["DISABLED", "AUDIT_ONLY", "CONSTRAINT_ONLY", "OBJECTIVE", "R&D_OBJECTIVE"]},
+          "model_readiness_ceiling": {"enum": ["NOT_PROVEN", "MODEL_READINESS_ONLY", "R&D_RANKING_READY", "COMPUTATIONAL_VALIDATED", "NOT_APPLICABLE"]},
+          "ranking_eligible": {"type": "boolean"},
+          "non_blocking_claim_locks": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "authority": {"enum": ["REAL_ARITHMETIC", "RULE_CITED", "LIMITED_SANITY", "MODELED_DIRECTIONAL", "CRO_GATED", "EVIDENCE_ONLY", "ROADMAP"]}
+  }
+}

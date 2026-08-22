@@ -1,0 +1,60 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-viscosity-score",
+    "performance lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "benchmark_lock_hash": "161d65810edcd729a4883e42eacdaa40b4b3a4375b9a46e74b81db27a81133e7",
+  "claim_contract_hash": "b3a2e489fafe342515cfc98bd122feb61e34a13cc4399595c39a00511889bbcd",
+  "claim_locks": {
+    "exact_ku_prediction_remains_null": true,
+    "fto_not_performed": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_procurement_authority": true,
+    "no_product_performance_authority": true,
+    "no_product_release_or_qualification": true,
+    "no_qualification_authority": true,
+    "no_rank_authority": true,
+    "no_ranking_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_superiority_claim": true,
+    "owned_rheology_measurement_required": true,
+    "pre_phase_0_research_only": true,
+    "separate_ku_and_sag_heads": true,
+    "unresolved_rights_quarantined": true
+  },
+  "dataset_manifest_hash": "423e24ef62cb4df2b481f09f50222709018231bca988f7a2bff65b030b6edf74",
+  "disclosure_log_hash": "5bc799bbfa7a121506677b5c61013af8f727b628775dfc349feadc459b242afa",
+  "module_class": "SCIENTIFIC_OR_EVIDENCE",
+  "module_id": "amphora-viscosity-score",
+  "parents": {
+    "evidence/phase0/benchmark/benchmark-lock.v1.json": "161d65810edcd729a4883e42eacdaa40b4b3a4375b9a46e74b81db27a81133e7",
+    "evidence/phase0/dataset/dataset-manifest.v1.json": "423e24ef62cb4df2b481f09f50222709018231bca988f7a2bff65b030b6edf74",
+    "evidence/phase0/promotion/policy.v1.json": "a17833581a6563bb48c18fe07264a808dd6fa0d8e2ffc0a34a1d595a1cba3a19",
+    "evidence/phase0/raw/SHA256SUMS": "98566dc27906ca5a18bdc86ec5cd22cd62dce4631733fb5140a8ef443c9ed108",
+    "evidence/phase0/sources/source-lock.v2.json": "12f1bbcc2f3997f8543671bf45e5fd2f861de43c214411ae19ed14b57f83b415",
+    "evidence/phase0/split/split-manifest.v1.json": "2c73d270a8109637c79a75e081ad2502ca3332faf1d4a0a9bebae070da66643f",
+    "evidence/superseded/supersession-732a0e2aeaf3d5cf6ad3a09f1f3ab84a14f98098e00d52d7d8a2d16181138471/supersession.v1.json": "5818c87139bbe2f86d4821a07d5612a33a127a0394721ff618ccf7d3602383d5",
+    "ip/claim-contract.v1.json": "b3a2e489fafe342515cfc98bd122feb61e34a13cc4399595c39a00511889bbcd",
+    "ip/disclosure-log.v1.json": "5bc799bbfa7a121506677b5c61013af8f727b628775dfc349feadc459b242afa",
+    "ip/prior-art.v1.json": "f24654cb548aaf53532aff5209061021086ec2ecca13059229fa53b99fe727a1",
+    "ip/technical-dossier.v1.json": "8e8f0e94efe42339279364ca6074b99874f9a8b9fddea4a448f6f786fa348e1e"
+  },
+  "prior_art_hash": "f24654cb548aaf53532aff5209061021086ec2ecca13059229fa53b99fe727a1",
+  "promotion_policy_hash": "a17833581a6563bb48c18fe07264a808dd6fa0d8e2ffc0a34a1d595a1cba3a19",
+  "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+  "review_packet_blinded": true,
+  "schema": "amphora.module-phase0-bundle.v1",
+  "source_lock_hash": "12f1bbcc2f3997f8543671bf45e5fd2f861de43c214411ae19ed14b57f83b415",
+  "split_manifest_hash": "2c73d270a8109637c79a75e081ad2502ca3332faf1d4a0a9bebae070da66643f",
+  "technical_dossier_hash": "8e8f0e94efe42339279364ca6074b99874f9a8b9fddea4a448f6f786fa348e1e",
+  "toolkit_versions": {
+    "amphora-rust": "0.1.0",
+    "rdkit": "2026.03.2",
+    "rust-edition": "2021"
+  }
+}

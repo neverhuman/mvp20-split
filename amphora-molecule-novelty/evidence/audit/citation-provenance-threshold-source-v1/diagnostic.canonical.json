@@ -1,0 +1,246 @@
+{
+  "attack_type": "citation-provenance / literature-threshold-fabrication audit",
+  "authority": "AUDIT_ONLY",
+  "claim_under_attack": {
+    "artifact": "evidence/phase0/kpis/tanimoto-nn-novelty-canonical-epoxy-amines-vs-openpoly-kpi.v1.json#fitted_or_physical_model_artifact.novelty_thresholds",
+    "asserted_field": "threshold_source",
+    "asserted_value": "Bajusz-R\u00e1cz-H\u00e9berger 2015 J. Cheminform.",
+    "governance_requirement_invoked": "Every signed artifact must use a real published physical/group-contribution/thermodynamic baseline (cite year + DOI/ISBN).",
+    "numeric_thresholds_attributed_to_this_source": {
+      "highly_similar_T_ge": 0.75,
+      "moderately_similar_T_ge": 0.55,
+      "novel_T_lt": 0.4,
+      "weakly_similar_T_ge": 0.4
+    }
+  },
+  "downstream_files_inheriting_this_citation_unmodified": [
+    "reference/mvp20/data/tanimoto_nn_novelty_of_canonical_epoxy_amines_against_openpoly_receipt.v1.json",
+    "evidence/phase0/kpis/tanimoto-nn-novelty-canonical-epoxy-amines-vs-openpoly-kpi.v1.json",
+    "evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "evidence/audit/conformal-anomaly-detection-v1/run_novelty_conformal.py",
+    "evidence/audit/oligomer-repeat-unit-capping-sensitivity-v1/run_novelty_oligomer_capping.py",
+    "evidence/audit/corpus-duplicate-exchangeability-audit-v1/run_novelty_dedup_audit.py",
+    "evidence/audit/candidate-structure-identity-audit-v1/run_novelty_candidate_identity_audit.py",
+    "evidence/audit/fingerprint-coefficient-robustness-v1/run_novelty_robustness.py",
+    "evidence/audit/cross-family-concordance-v1/run_novelty_crossfamily.py",
+    "evidence/audit/mondrian-conditional-coverage-v1/run_novelty_mondrian.py",
+    "evidence/phase0/repairs/R-A07/work/run_repair_RA07.py",
+    "evidence/phase0/repairs/R-A07v2/work/run_ra07v2.py",
+    "evidence/phase0/repairs/V-A07/work/run_verify_VA07.py",
+    "evidence/phase0/repairs/V-A07v2/work/run_va07v2_verify.py",
+    "evidence/phase0/repairs/W-D-NOV/work/fire2/run_second_corpus_novelty_attack.py"
+  ],
+  "fetched_evidence": {
+    "extracted_text_chars": 56326,
+    "extracted_text_sha256": "fed3b0de2447400bb46245e18fe44f951712f8e48cf5a3432fb03cd0fbef0e76",
+    "fetched_via": "curl -sL, xbabe1 (direct curl to xbabe2 was Google-reCAPTCHA-blocked; xbabe1 egress succeeded with real article HTML, verified below by topic-anchor term presence, not a bot-challenge page)",
+    "html_bytes": 197014,
+    "html_sha256": "71d0079110c5c240fe05be0f3b61c67060370da5f37e708b9ffc52e2b3a4b839",
+    "idconv_api_response_sha256": "014e772a72764713ec2b86f689ba86ed6ed59533a635466e614dbb76e2e4bd59",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4456712/"
+  },
+  "finding": {
+    "all_threshold_related_terms_zero_hits_in_cited_paper": true,
+    "scope_of_refutation": "This attack refutes the CITATION PROVENANCE of the classification thresholds only. It does NOT contest the underlying raw NN-Tanimoto values themselves (0.1579-0.3929 for the 5 candidates), which have been independently re-derived and confirmed correct 6 separate times by prior fires (candidate-structure-identity-audit-v1, R-A07, V-A07, R-A07v2, W-NOV1, V-A07v2) and are not in dispute here. What is refuted is the specific, load-bearing scientific claim that these particular 0.40/0.55/0.75 boundary values are supported by a real published source -- they are not.",
+    "statement": "The paper actually cited as threshold_source (DOI 10.1186/s13321-015-0069-3, confirmed identity-matched via NCBI's official ID Converter API against the exact DOI) is a comparative study of similarity/distance METRICS (Tanimoto vs Dice vs Cosine vs Soergel vs 4 others), ranked by Sum-of-Ranking-Differences and ANOVA against a composite consensus ranking. Its full text, fetched and verified against real topic-anchor terms ('Sum of ranking differences', 'SRD', 'Dice', 'Cosine coefficient', 'Soergel'), contains ZERO occurrences of 'threshold', 'cutoff', 'weakly similar', 'moderately similar', or the numeric values 0.85, 0.75, 0.55, or 0.40 anywhere in its body. The paper does not propose, discuss, or cite any Tanimoto similarity-value classification scheme for novelty screening. The threshold_source citation attached to every NOVEL/not-NOVEL verdict this module has ever issued is therefore FABRICATED / UNSUPPORTED attribution -- the specific 0.40/0.55/0.75 cutoff values do not trace to the paper named as their source."
+  },
+  "kpi_sha256": "55f8c96c957c8f5ee41aa76ad65d4ddf938a7d705ed522acffe168b512137d25",
+  "kpi_threshold_block_observed": {
+    "highly_similar_T_ge": 0.75,
+    "moderately_similar_T_ge": 0.55,
+    "novel_T_lt": 0.4,
+    "threshold_source": "Bajusz-R\u00e1cz-H\u00e9berger 2015 J. Cheminform.",
+    "weakly_similar_T_ge": 0.4
+  },
+  "module_id": "amphora-molecule-novelty",
+  "n_downstream_files_inheriting_citation": 15,
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "0.40": {
+        "n_hits": 2,
+        "sample_contexts": [
+          "ic, the calculated similarity  For practical structure-novelty screening we recommend classifying Tanimoto values below 0.40 as novel (weakly similar), 0.40 to 0.55 as weakly similar, 0.55 to 0.75 as moderately similar, and above 0.75 as hi",
+          "or practical structure-novelty screening we recommend classifying Tanimoto values below 0.40 as novel (weakly similar), 0.40 to 0.55 as weakly similar, 0.55 to 0.75 as moderately similar, and above 0.75 as highly similar; this threshold sch"
+        ]
+      },
+      "0.55": {
+        "n_hits": 2,
+        "sample_contexts": [
+          "ical structure-novelty screening we recommend classifying Tanimoto values below 0.40 as novel (weakly similar), 0.40 to 0.55 as weakly similar, 0.55 to 0.75 as moderately similar, and above 0.75 as highly similar; this threshold scheme is t",
+          "creening we recommend classifying Tanimoto values below 0.40 as novel (weakly similar), 0.40 to 0.55 as weakly similar, 0.55 to 0.75 as moderately similar, and above 0.75 as highly similar; this threshold scheme is the appropriate cutoff fo"
+        ]
+      },
+      "0.75": {
+        "n_hits": 2,
+        "sample_contexts": [
+          " we recommend classifying Tanimoto values below 0.40 as novel (weakly similar), 0.40 to 0.55 as weakly similar, 0.55 to 0.75 as moderately similar, and above 0.75 as highly similar; this threshold scheme is the appropriate cutoff for finger",
+          "ues below 0.40 as novel (weakly similar), 0.40 to 0.55 as weakly similar, 0.55 to 0.75 as moderately similar, and above 0.75 as highly similar; this threshold scheme is the appropriate cutoff for fingerprint-based novelty screening. values "
+        ]
+      },
+      "novel": {
+        "n_hits": 6,
+        "sample_contexts": [
+          "ommon on bits is present in the definition of every distance metric, the calculated similarity  For practical structure-novelty screening we recommend classifying Tanimoto values below 0.40 as novel (weakly similar), 0.40 to 0.55 as weakly ",
+          "calculated similarity  For practical structure-novelty screening we recommend classifying Tanimoto values below 0.40 as novel (weakly similar), 0.40 to 0.55 as weakly similar, 0.55 to 0.75 as moderately similar, and above 0.75 as highly sim",
+          "rately similar, and above 0.75 as highly similar; this threshold scheme is the appropriate cutoff for fingerprint-based novelty screening. values will be degenerate as a result (here, \u201cdegenerations\u201d mean repetitions: the same similarity va",
+          "he order of the SRD runs) is included as Additional file 2 . Sum of ranking differences Sum of ranking differences is a novel and simple procedure [ 26 , 27 , 33 ] to compare methods, models, analytical techniques, etc . and it is entirely ",
+          "t provide us information about the applicability of these similarity metrics in specific scenarios (such as identifying novel ligands for a given protein), it presents a much more general picture, where the metrics are compared to each othe"
+        ]
+      },
+      "threshold": {
+        "n_hits": 1,
+        "sample_contexts": [
+          "ly similar), 0.40 to 0.55 as weakly similar, 0.55 to 0.75 as moderately similar, and above 0.75 as highly similar; this threshold scheme is the appropriate cutoff for fingerprint-based novelty screening. values will be degenerate as a resul"
+        ]
+      }
+    },
+    "how_planted": "mutated_text = text[:20000] + <313-char synthetic threshold sentence> + text[20000:]",
+    "note": "not required for a REFUTED verdict (only SURVIVED verdicts require a positive control per protocol); included anyway to prove the zero-hit result above is a real absence, not a broken detector.",
+    "planted_defect": "inserted a synthetic sentence defining a 0.40/0.55/0.75 Tanimoto novelty-threshold scheme into a copy of the real fetched article text"
+  },
+  "schema": "amphora.molecule-novelty.audit.citation-provenance-threshold-source.v1",
+  "scientific_receipt_sha256": "5bb53ff1c91954f1765a71270d4f47f736fda0d45e38c3eba34813afd062f3de",
+  "scientific_receipt_threshold_block_observed": {
+    "highly_similar_T_ge": 0.75,
+    "moderately_similar_T_ge": 0.55,
+    "novel_T_lt": 0.4,
+    "threshold_source": "Bajusz-R\u00e1cz-H\u00e9berger 2015 J. Cheminform.",
+    "weakly_similar_T_ge": 0.4
+  },
+  "source_identity_verification": {
+    "canonical_citation": "Bajusz D, Racz A, Heberger K. Why is Tanimoto index an appropriate choice for fingerprint-based similarity calculations? J Cheminform. 2015;7:20. doi:10.1186/s13321-015-0069-3",
+    "cited_as_in_kpi": "Bajusz-R\u00e1cz-H\u00e9berger 2015 J. Cheminform.",
+    "matches_cited_paper": true,
+    "requested_doi": "10.1186/s13321-015-0069-3",
+    "resolved_doi": "10.1186/s13321-015-0069-3",
+    "resolved_pmcid": "PMC4456712",
+    "resolved_pmid": 26052348
+  },
+  "threshold_term_search_on_real_fetched_paper": {
+    "0.4 ": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "0.40": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "0.55": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "0.75": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "0.85": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "cut-off": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "cutoff": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "highly similar": {
+      "n_hits": 1,
+      "sample_contexts": [
+        "rather in an algorithmic approach, which is explained in detail in references [ 24 , 25 ] (Table 2 ). Some metrics show highly similar behavior (identical in terms of ranking) with each other, which can be attributed to relationships in the"
+      ]
+    },
+    "moderately similar": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "novel": {
+      "n_hits": 3,
+      "sample_contexts": [
+        "he order of the SRD runs) is included as Additional file 2 . Sum of ranking differences Sum of ranking differences is a novel and simple procedure [ 26 , 27 , 33 ] to compare methods, models, analytical techniques, etc . and it is entirely ",
+        "t provide us information about the applicability of these similarity metrics in specific scenarios (such as identifying novel ligands for a given protein), it presents a much more general picture, where the metrics are compared to each othe",
+        "gle Scholar ] 4. Eckert H, Bajorath J. Molecular similarity analysis in virtual screening: foundations, limitations and novel approaches. Drug Discov Today. 2007;12:225\u201333. doi: 10.1016/j.drudis.2007.01.011. [ DOI ] [ PubMed ] [ Google Scho"
+      ]
+    },
+    "threshold": {
+      "n_hits": 0,
+      "sample_contexts": []
+    },
+    "weakly similar": {
+      "n_hits": 0,
+      "sample_contexts": []
+    }
+  },
+  "topic_anchor_search": {
+    "Cosine coefficient": {
+      "n_hits": 3,
+      "sample_contexts": [
+        "lved, as well as any bias introduced by examining only one or a few specific scenarios. The Tanimoto index, Dice index, Cosine coefficient and Soergel distance were identified to be the best (and in some sense equivalent) metrics for simila",
+        " j A \u2212 x j B D A , B = a + b \u2212 2 c Euclidean distance D A , B = \u2211 j = 1 n x j A \u2212 x j B 2 1 2 D A , B = a + b \u2212 2 c 1 2 Cosine coefficient S A , B = \u2211 j = 1 n x j A x j B / \u2211 j = 1 n x j A 2 \u2211 j = 1 n x j B 2 1 2 S A , B = c ab 1 2 Dice coe",
+        "n regarding the rankings of the studied similarity metrics. We have shown that the Tanimoto-related (but not monotonic) Cosine coefficient is an equally appropriate choice. Two-way ANOVA showed us that the factor of molecular size and the f"
+      ]
+    },
+    "Dice": {
+      "n_hits": 15,
+      "sample_contexts": [
+        "mpounds involved, as well as any bias introduced by examining only one or a few specific scenarios. The Tanimoto index, Dice index, Cosine coefficient and Soergel distance were identified to be the best (and in some sense equivalent) metric",
+        "databases). In this paper we present a large-scale comparison of eight commonly available similarity metrics (Tanimoto, Dice, Cosine, Substructure [ 24 ] and Superstructure [ 25 ] similarities, and similarity definitions derived from the Ma",
+        "2 c 1 2 Cosine coefficient S A , B = \u2211 j = 1 n x j A x j B / \u2211 j = 1 n x j A 2 \u2211 j = 1 n x j B 2 1 2 S A , B = c ab 1 2 Dice coefficient S A , B = 2 \u2211 j = 1 n x j A x j B / \u2211 j = 1 n x j A 2 + \u2211 j = 1 n x j B 2 S A , B = 2 c /[ a + b ] Tani",
+        "distance is identical to the complement of the Tanimoto coefficient and both are monotonic with each other and with the Dice coefficient. The Manhattan and Euclidean coefficients are also monotonic. However, the relationships of these coeff",
+        "ents are also monotonic. However, the relationships of these coefficients and their average are not linear. For example Dice vs . Average of Dice, Soergel, and Tanimoto coefficients provides a concave curve, while Soergel vs . Average is co"
+      ]
+    },
+    "SRD": {
+      "n_hits": 79,
+      "sample_contexts": [
+        " similarity/distance metrics are compared on a large dataset of molecular fingerprints with sum of ranking differences (SRD) and ANOVA analysis. The effects of molecular size, selection methods and data pretreatment methods on the outcome o",
+        " compared based on their ranking of the compounds within one experiment (one dataset) using sum of ranking differences (SRD), while the results of the entire set of experiments were summarized on box and whisker plots. Finally, the effects ",
+        "l Abstract. Open in a new tab A visual summary of the comparison of similarity metrics with sum of ranking differences (SRD). Electronic supplementary material The online version of this article (doi:10.1186/s13321-015-0069-3) contains supp",
+        "on 1 ) based on their rankings of the same datasets, using analysis of variance (ANOVA) and sum of ranking differences (SRD) [ 26 , 27 ]. Our goal was to study the ranking behavior of well-known and easily available similarity metrics on ma",
+        "arity rankings, we were obliged to choose another type of fingerprint to study. (Another reason was a limitation of the SRD calculation in case of repeated observations (ties); namely at present the number of molecules/objects cannot exceed"
+      ]
+    },
+    "Soergel": {
+      "n_hits": 18,
+      "sample_contexts": [
+        "as introduced by examining only one or a few specific scenarios. The Tanimoto index, Dice index, Cosine coefficient and Soergel distance were identified to be the best (and in some sense equivalent) metrics for similarity calculations, i.e ",
+        "ure [ 24 ] and Superstructure [ 25 ] similarities, and similarity definitions derived from the Manhattan, Euclidean and Soergel distances, see Equation 1 ) based on their rankings of the same datasets, using analysis of variance (ANOVA) and",
+        " A , B = \u2211 j = 1 n x j A x j B \u2211 j = 1 n x j A 2 + \u2211 j = 1 n x j B 2 \u2212 \u2211 j = 1 n x j A x j B S A , B = c /[ a + b \u2212 c ] Soergel distance b D A , B = \u2211 j = 1 n x j A \u2212 x j B / \u2211 j = 1 n max x j A , x j B D A , B = 1 \u2212 c a + b \u2212 c Substructur",
+        "in molecule A, b is number of on bits in molecule B, while c is the number of bits that are on in both molecules. b The Soergel distance is the complement of the Tanimoto coefficient. i.e. every similarity metric corresponds to a distance m",
+        "l in terms of ranking) with each other, which can be attributed to relationships in their definitions. For example, the Soergel distance is identical to the complement of the Tanimoto coefficient and both are monotonic with each other and w"
+      ]
+    },
+    "Sum of ranking differences": {
+      "n_hits": 18,
+      "sample_contexts": [
+        " this work, eight well-known similarity/distance metrics are compared on a large dataset of molecular fingerprints with sum of ranking differences (SRD) and ANOVA analysis. The effects of molecular size, selection methods and data pretreatm",
+        "set. Similarity metrics were compared based on their ranking of the compounds within one experiment (one dataset) using sum of ranking differences (SRD), while the results of the entire set of experiments were summarized on box and whisker ",
+        "he studied metrics. Graphical Abstract. Open in a new tab A visual summary of the comparison of similarity metrics with sum of ranking differences (SRD). Electronic supplementary material The online version of this article (doi:10.1186/s133",
+        " which is available to authorized users. Keywords: Fingerprint, Similarity, Ranking, Data fusion, Analysis of variance, Sum of ranking differences, Distance metrics Background Quantifying the similarity of two molecules is a key concept and",
+        "oergel distances, see Equation 1 ) based on their rankings of the same datasets, using analysis of variance (ANOVA) and sum of ranking differences (SRD) [ 26 , 27 ]. Our goal was to study the ranking behavior of well-known and easily availa"
+      ]
+    },
+    "eight": {
+      "n_hits": 19,
+      "sample_contexts": [
+        "{ background: repeat-y; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='350' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cfilter x='-.02' y='0' width='1.05' height='1' id='",
+        "' width='20' height='350' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cfilter x='-.02' y='0' width='1.05' height='1' id='c'%3E%3CfeFlood flood-color='%23FFF'/%3E%3CfeComposite in='SourceGraphic'/%3E%3C/filter%3E%3Ctext id='b' f",
+        "everal methods (similarity and distance metrics) to quantify the similarity of molecular representations. In this work, eight well-known similarity/distance metrics are compared on a large dataset of molecular fingerprints with sum of ranki",
+        "milarity calculations, i.e . these metrics could produce the rankings closest to the composite (average) ranking of the eight metrics. The similarity metrics derived from Euclidean and Manhattan distances are not recommended on their own, a",
+        " be biologically relevant ( e.g. MDDR or NCI anti-AIDS databases). In this paper we present a large-scale comparison of eight commonly available similarity metrics (Tanimoto, Dice, Cosine, Substructure [ 24 ] and Superstructure [ 25 ] simil"
+      ]
+    },
+    "ranking": {
+      "n_hits": 47,
+      "sample_contexts": [
+        "ork, eight well-known similarity/distance metrics are compared on a large dataset of molecular fingerprints with sum of ranking differences (SRD) and ANOVA analysis. The effects of molecular size, selection methods and data pretreatment met",
+        "hosen reference compound and the rest were calculated for each dataset. Similarity metrics were compared based on their ranking of the compounds within one experiment (one dataset) using sum of ranking differences (SRD), while the results o",
+        "milarity metrics were compared based on their ranking of the compounds within one experiment (one dataset) using sum of ranking differences (SRD), while the results of the entire set of experiments were summarized on box and whisker plots. ",
+        "o be the best (and in some sense equivalent) metrics for similarity calculations, i.e . these metrics could produce the rankings closest to the composite (average) ranking of the eight metrics. The similarity metrics derived from Euclidean ",
+        " metrics for similarity calculations, i.e . these metrics could produce the rankings closest to the composite (average) ranking of the eight metrics. The similarity metrics derived from Euclidean and Manhattan distances are not recommended "
+      ]
+    }
+  }
+}

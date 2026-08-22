@@ -1,0 +1,160 @@
+{
+  "authority": "AUDIT_ONLY",
+  "bootstrap": {
+    "interval": "95% percentile",
+    "method": "Efron-Tibshirani 1993 paired percentile bootstrap",
+    "resamples": 10000,
+    "rng": "np.random.default_rng(0)"
+  },
+  "canonical_sha256": "cd54e22dc36c57687255951d36e102b6ca4720e0e8e7a572ed906ea2f0621a6d",
+  "claim_scope": "Calibrated physical-baseline attestation on Purformance HTE 2K-PUR lacquer scratch hardness only, normalized feature domain [0,1]^4. Grants no batch-release, qualification, optimizer, or product-performance authority. Intervals are marginal not conditional. Phase-1 would require independent wet-lab validation and a cross-formulator dataset.",
+  "closes_gate": null,
+  "delta_r2_paired_bootstrap": {
+    "P1_physical_minus_B0_constant": {
+      "ci95": [
+        0.13398962246170368,
+        0.5473290530875347
+      ],
+      "excludes_zero": true,
+      "point": 0.34660528998999807
+    },
+    "P1_physical_minus_B1_vernetzung_only": {
+      "ci95": [
+        0.09861306883060056,
+        0.5239252822306681
+      ],
+      "excludes_zero": true,
+      "point": 0.3189679933104653
+    },
+    "P1_physical_minus_B2_linear_all_4": {
+      "ci95": [
+        -0.03655310484863779,
+        0.033501510017322836
+      ],
+      "excludes_zero": false,
+      "point": 0.00045014258381492755
+    },
+    "REF_ml_minus_P1_physical": {
+      "ci95": [
+        -0.06954454794690591,
+        0.17121731476924518
+      ],
+      "excludes_zero": false,
+      "point": 0.0512190059836527
+    }
+  },
+  "features": [
+    "Vernetzung",
+    "HDI-IPDI",
+    "Mattierungsmittel",
+    "Pigmentpaste"
+  ],
+  "honest_interpretation": "The Guth-Gold reinforced-network physical model (5 physically-interpretable parameters) reaches pooled LOIO R2=0.3345. The paired bootstrap confirms it significantly beats both the constant baseline (Delta-R2 CI excludes 0) and the crosslink-density-only Rule-1 baseline R2=0.0156 (Delta-R2 CI excludes 0): a >20x improvement, so filler reinforcement (matting silica + pigment) plus network/hard-segment stiffening is real, group-safe signal. It is statistically indistinguishable from unstructured linear regression on all 4 features (R2=0.3341) AND from a DEFAULT HistGBM (R2=0.3857; ML-minus-physical Delta-R2 CI INCLUDES 0) -- so out-of-the-box ML carries no advantage over classical composite mechanics here. Only the parent receipt's TUNED HistGBM (R2=0.8555, external to this receipt) clears the physical baseline, quantifying that the extra variance lives in higher-order interactions accessible only to a hyperparameter-tuned tree ensemble, not to additive classical physics or default ML. The hostile-null y-shuffle collapses the physical R2 to <0, confirming the fit is not exchangeability leakage.",
+  "hostile_null_falsifiability": {
+    "physical_r2_on_real_labels": 0.33452768734121086,
+    "physical_r2_on_shuffled_labels": -0.09714248221590638,
+    "signal_collapses_under_shuffle": true
+  },
+  "input_zip_sha256": "b6e89fe900b1aaf73beb882eeb07dfaf702e0818c9f443de6e84aaa8e32b0036",
+  "license": "CC-BY-4.0 (dataset)",
+  "loio_r2_bootstrap_ci95": {
+    "B0_constant_mean": [
+      -0.07811407059059002,
+      0.006403686801724245
+    ],
+    "B1_Vernetzung_only_linear": [
+      -0.0916929027919729,
+      0.08145404161311298
+    ],
+    "B2_linear_all_4_features": [
+      0.12256498394163327,
+      0.5068130640443366
+    ],
+    "P1_guth_gold_reinforced_network_physical": [
+      0.10763057155657542,
+      0.5188895285999859
+    ],
+    "REF_histgbm_default_random_state_0": [
+      0.19410698365190013,
+      0.5344374556277725
+    ]
+  },
+  "loio_results": {
+    "B0_constant_mean": {
+      "mae": 2.37342571527357,
+      "r2": -0.012077602648787211,
+      "rmse": 3.069596833999319
+    },
+    "B1_Vernetzung_only_linear": {
+      "mae": 2.272565447518688,
+      "r2": 0.01555969403074553,
+      "rmse": 3.0273952461020226
+    },
+    "B2_linear_all_4_features": {
+      "mae": 1.8283719102181926,
+      "r2": 0.33407754475739593,
+      "rmse": 2.4899249736480975
+    },
+    "P1_guth_gold_reinforced_network_physical": {
+      "mae": 1.8345537252922586,
+      "r2": 0.33452768734121086,
+      "rmse": 2.489083275995225
+    },
+    "REF_histgbm_default_random_state_0": {
+      "mae": 1.7339842965492165,
+      "r2": 0.38574669332486355,
+      "rmse": 2.39137774259778
+    }
+  },
+  "modifies_existing_receipts": false,
+  "module": "amphora-design-rule-score",
+  "n_formulations": 86,
+  "named_baseline_benchmark_receipt_sha256": "dd7295340f40560c014936c1a70c2fd560ed2eccc31940ae349707617ed345d5",
+  "parent_model_receipt_sha256": "41f4e930b503bf0a501e35149d4e4e0f3e3f6c44d9b4154f7cce155918a48714",
+  "physical_model": {
+    "equation": "H = H0*(1 + a*Vernetzung + b*HDI_IPDI)*(1 + 2.5*phi + 14.1*phi^2), phi = cm*Mattierungsmittel + cp*Pigmentpaste",
+    "fit": "scipy.optimize.least_squares (Trust Region Reflective), bounded, per LOIO training fold; deterministic",
+    "n_parameters": 5,
+    "name": "Guth-Gold reinforced-network",
+    "rationale": "Network/hard-segment stiffening (Flory 1953; Wicks-Jones-Pappas 2007 Rule 1) multiplied by Einstein-Guth-Gold rigid-filler modulus reinforcement (Guth&Gold 1938; Guth 1945) from the two filler axes (matting silica, pigment paste)."
+  },
+  "promotes_authority": false,
+  "reviewer_key_id": "phase0-evaluator-audit-3ef6b35cdbbfea74a96a5c9b98a515d5",
+  "reviewer_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "run_a_canonical_sha256": "cd54e22dc36c57687255951d36e102b6ca4720e0e8e7a572ed906ea2f0621a6d",
+  "run_b_canonical_sha256": "cd54e22dc36c57687255951d36e102b6ca4720e0e8e7a572ed906ea2f0621a6d",
+  "schema": "amphora.design-rule-score.purformance-scratch-hardness-guth-gold-physical-baseline-receipt.v1",
+  "signature": {
+    "payload": "eyJhdXRob3JpdHkiOiJBVURJVF9PTkxZIiwiYm9vdHN0cmFwIjp7ImludGVydmFsIjoiOTUlIHBlcmNlbnRpbGUiLCJtZXRob2QiOiJFZnJvbi1UaWJzaGlyYW5pIDE5OTMgcGFpcmVkIHBlcmNlbnRpbGUgYm9vdHN0cmFwIiwicmVzYW1wbGVzIjoxMDAwMCwicm5nIjoibnAucmFuZG9tLmRlZmF1bHRfcm5nKDApIn0sImNsYWltX3Njb3BlIjoiQ2FsaWJyYXRlZCBwaHlzaWNhbC1iYXNlbGluZSBhdHRlc3RhdGlvbiBvbiBQdXJmb3JtYW5jZSBIVEUgMkstUFVSIGxhY3F1ZXIgc2NyYXRjaCBoYXJkbmVzcyBvbmx5LCBub3JtYWxpemVkIGZlYXR1cmUgZG9tYWluIFswLDFdXjQuIEdyYW50cyBubyBiYXRjaC1yZWxlYXNlLCBxdWFsaWZpY2F0aW9uLCBvcHRpbWl6ZXIsIG9yIHByb2R1Y3QtcGVyZm9ybWFuY2UgYXV0aG9yaXR5LiBJbnRlcnZhbHMgYXJlIG1hcmdpbmFsIG5vdCBjb25kaXRpb25hbC4gUGhhc2UtMSB3b3VsZCByZXF1aXJlIGluZGVwZW5kZW50IHdldC1sYWIgdmFsaWRhdGlvbiBhbmQgYSBjcm9zcy1mb3JtdWxhdG9yIGRhdGFzZXQuIiwiY2xvc2VzX2dhdGUiOm51bGwsImRlbHRhX3IyX3BhaXJlZF9ib290c3RyYXAiOnsiUDFfcGh5c2ljYWxfbWludXNfQjBfY29uc3RhbnQiOnsiY2k5NSI6WzAuMTMzOTg5NjIyNDYxNzAzNjgsMC41NDczMjkwNTMwODc1MzQ3XSwiZXhjbHVkZXNfemVybyI6dHJ1ZSwicG9pbnQiOjAuMzQ2NjA1Mjg5OTg5OTk4MDd9LCJQMV9waHlzaWNhbF9taW51c19CMV92ZXJuZXR6dW5nX29ubHkiOnsiY2k5NSI6WzAuMDk4NjEzMDY4ODMwNjAwNTYsMC41MjM5MjUyODIyMzA2NjgxXSwiZXhjbHVkZXNfemVybyI6dHJ1ZSwicG9pbnQiOjAuMzE4OTY3OTkzMzEwNDY1M30sIlAxX3BoeXNpY2FsX21pbnVzX0IyX2xpbmVhcl9hbGxfNCI6eyJjaTk1IjpbLTAuMDM2NTUzMTA0ODQ4NjM3NzksMC4wMzM1MDE1MTAwMTczMjI4MzZdLCJleGNsdWRlc196ZXJvIjpmYWxzZSwicG9pbnQiOjAuMDAwNDUwMTQyNTgzODE0OTI3NTV9LCJSRUZfbWxfbWludXNfUDFfcGh5c2ljYWwiOnsiY2k5NSI6Wy0wLjA2OTU0NDU0Nzk0NjkwNTkxLDAuMTcxMjE3MzE0NzY5MjQ1MThdLCJleGNsdWRlc196ZXJvIjpmYWxzZSwicG9pbnQiOjAuMDUxMjE5MDA1OTgzNjUyN319LCJmZWF0dXJlcyI6WyJWZXJuZXR6dW5nIiwiSERJLUlQREkiLCJNYXR0aWVydW5nc21pdHRlbCIsIlBpZ21lbnRwYXN0ZSJdLCJob25lc3RfaW50ZXJwcmV0YXRpb24iOiJUaGUgR3V0aC1Hb2xkIHJlaW5mb3JjZWQtbmV0d29yayBwaHlzaWNhbCBtb2RlbCAoNSBwaHlzaWNhbGx5LWludGVycHJldGFibGUgcGFyYW1ldGVycykgcmVhY2hlcyBwb29sZWQgTE9JTyBSMj0wLjMzNDUuIFRoZSBwYWlyZWQgYm9vdHN0cmFwIGNvbmZpcm1zIGl0IHNpZ25pZmljYW50bHkgYmVhdHMgYm90aCB0aGUgY29uc3RhbnQgYmFzZWxpbmUgKERlbHRhLVIyIENJIGV4Y2x1ZGVzIDApIGFuZCB0aGUgY3Jvc3NsaW5rLWRlbnNpdHktb25seSBSdWxlLTEgYmFzZWxpbmUgUjI9MC4wMTU2IChEZWx0YS1SMiBDSSBleGNsdWRlcyAwKTogYSA+MjB4IGltcHJvdmVtZW50LCBzbyBmaWxsZXIgcmVpbmZvcmNlbWVudCAobWF0dGluZyBzaWxpY2EgKyBwaWdtZW50KSBwbHVzIG5ldHdvcmsvaGFyZC1zZWdtZW50IHN0aWZmZW5pbmcgaXMgcmVhbCwgZ3JvdXAtc2FmZSBzaWduYWwuIEl0IGlzIHN0YXRpc3RpY2FsbHkgaW5kaXN0aW5ndWlzaGFibGUgZnJvbSB1bnN0cnVjdHVyZWQgbGluZWFyIHJlZ3Jlc3Npb24gb24gYWxsIDQgZmVhdHVyZXMgKFIyPTAuMzM0MSkgQU5EIGZyb20gYSBERUZBVUxUIEhpc3RHQk0gKFIyPTAuMzg1NzsgTUwtbWludXMtcGh5c2ljYWwgRGVsdGEtUjIgQ0kgSU5DTFVERVMgMCkgLS0gc28gb3V0LW9mLXRoZS1ib3ggTUwgY2FycmllcyBubyBhZHZhbnRhZ2Ugb3ZlciBjbGFzc2ljYWwgY29tcG9zaXRlIG1lY2hhbmljcyBoZXJlLiBPbmx5IHRoZSBwYXJlbnQgcmVjZWlwdCdzIFRVTkVEIEhpc3RHQk0gKFIyPTAuODU1NSwgZXh0ZXJuYWwgdG8gdGhpcyByZWNlaXB0KSBjbGVhcnMgdGhlIHBoeXNpY2FsIGJhc2VsaW5lLCBxdWFudGlmeWluZyB0aGF0IHRoZSBleHRyYSB2YXJpYW5jZSBsaXZlcyBpbiBoaWdoZXItb3JkZXIgaW50ZXJhY3Rpb25zIGFjY2Vzc2libGUgb25seSB0byBhIGh5cGVycGFyYW1ldGVyLXR1bmVkIHRyZWUgZW5zZW1ibGUsIG5vdCB0byBhZGRpdGl2ZSBjbGFzc2ljYWwgcGh5c2ljcyBvciBkZWZhdWx0IE1MLiBUaGUgaG9zdGlsZS1udWxsIHktc2h1ZmZsZSBjb2xsYXBzZXMgdGhlIHBoeXNpY2FsIFIyIHRvIDwwLCBjb25maXJtaW5nIHRoZSBmaXQgaXMgbm90IGV4Y2hhbmdlYWJpbGl0eSBsZWFrYWdlLiIsImhvc3RpbGVfbnVsbF9mYWxzaWZpYWJpbGl0eSI6eyJwaHlzaWNhbF9yMl9vbl9yZWFsX2xhYmVscyI6MC4zMzQ1Mjc2ODczNDEyMTA4NiwicGh5c2ljYWxfcjJfb25fc2h1ZmZsZWRfbGFiZWxzIjotMC4wOTcxNDI0ODIyMTU5MDYzOCwic2lnbmFsX2NvbGxhcHNlc191bmRlcl9zaHVmZmxlIjp0cnVlfSwiaW5wdXRfemlwX3NoYTI1NiI6ImI2ZTg5ZmU5MDBiMWFhZjczYmViODgyZWViMDdkZmFmNzAyZTA4MThjOWY0NDNkZTZlODRhYWE4ZTMyYjAwMzYiLCJsaWNlbnNlIjoiQ0MtQlktNC4wIChkYXRhc2V0KSIsImxvaW9fcjJfYm9vdHN0cmFwX2NpOTUiOnsiQjBfY29uc3RhbnRfbWVhbiI6Wy0wLjA3ODExNDA3MDU5MDU5MDAyLDAuMDA2NDAzNjg2ODAxNzI0MjQ1XSwiQjFfVmVybmV0enVuZ19vbmx5X2xpbmVhciI6Wy0wLjA5MTY5MjkwMjc5MTk3MjksMC4wODE0NTQwNDE2MTMxMTI5OF0sIkIyX2xpbmVhcl9hbGxfNF9mZWF0dXJlcyI6WzAuMTIyNTY0OTgzOTQxNjMzMjcsMC41MDY4MTMwNjQwNDQzMzY2XSwiUDFfZ3V0aF9nb2xkX3JlaW5mb3JjZWRfbmV0d29ya19waHlzaWNhbCI6WzAuMTA3NjMwNTcxNTU2NTc1NDIsMC41MTg4ODk1Mjg1OTk5ODU5XSwiUkVGX2hpc3RnYm1fZGVmYXVsdF9yYW5kb21fc3RhdGVfMCI6WzAuMTk0MTA2OTgzNjUxOTAwMTMsMC41MzQ0Mzc0NTU2Mjc3NzI1XX0sImxvaW9fcmVzdWx0cyI6eyJCMF9jb25zdGFudF9tZWFuIjp7Im1hZSI6Mi4zNzM0MjU3MTUyNzM1NywicjIiOi0wLjAxMjA3NzYwMjY0ODc4NzIxMSwicm1zZSI6My4wNjk1OTY4MzM5OTkzMTl9LCJCMV9WZXJuZXR6dW5nX29ubHlfbGluZWFyIjp7Im1hZSI6Mi4yNzI1NjU0NDc1MTg2ODgsInIyIjowLjAxNTU1OTY5NDAzMDc0NTUzLCJybXNlIjozLjAyNzM5NTI0NjEwMjAyMjZ9LCJCMl9saW5lYXJfYWxsXzRfZmVhdHVyZXMiOnsibWFlIjoxLjgyODM3MTkxMDIxODE5MjYsInIyIjowLjMzNDA3NzU0NDc1NzM5NTkzLCJybXNlIjoyLjQ4OTkyNDk3MzY0ODA5NzV9LCJQMV9ndXRoX2dvbGRfcmVpbmZvcmNlZF9uZXR3b3JrX3BoeXNpY2FsIjp7Im1hZSI6MS44MzQ1NTM3MjUyOTIyNTg2LCJyMiI6MC4zMzQ1Mjc2ODczNDEyMTA4Niwicm1zZSI6Mi40ODkwODMyNzU5OTUyMjV9LCJSRUZfaGlzdGdibV9kZWZhdWx0X3JhbmRvbV9zdGF0ZV8wIjp7Im1hZSI6MS43MzM5ODQyOTY1NDkyMTY1LCJyMiI6MC4zODU3NDY2OTMzMjQ4NjM1NSwicm1zZSI6Mi4zOTEzNzc3NDI1OTc3OH19LCJtb2RpZmllc19leGlzdGluZ19yZWNlaXB0cyI6ZmFsc2UsIm1vZHVsZSI6ImFtcGhvcmEtZGVzaWduLXJ1bGUtc2NvcmUiLCJuX2Zvcm11bGF0aW9ucyI6ODYsIm5hbWVkX2Jhc2VsaW5lX2JlbmNobWFya19yZWNlaXB0X3NoYTI1NiI6ImRkNzI5NTM0MGY0MDU2MGMwMTQ5MzZjMWE3MGMyZmQ1NjBlZDJlY2NjMzE5NDBhZTM0OTcwNzYxN2VkMzQ1ZDUiLCJwYXJlbnRfbW9kZWxfcmVjZWlwdF9zaGEyNTYiOiI0MWY0ZTkzMGI1MDNiZjBhNTAxZTM1MTQ5ZDRlNGUwZjNlM2Y2YzQ0ZDliNDE1NGY3Y2NlMTU1OTE4YTQ4NzE0IiwicGh5c2ljYWxfbW9kZWwiOnsiZXF1YXRpb24iOiJIID0gSDAqKDEgKyBhKlZlcm5ldHp1bmcgKyBiKkhESV9JUERJKSooMSArIDIuNSpwaGkgKyAxNC4xKnBoaV4yKSwgcGhpID0gY20qTWF0dGllcnVuZ3NtaXR0ZWwgKyBjcCpQaWdtZW50cGFzdGUiLCJmaXQiOiJzY2lweS5vcHRpbWl6ZS5sZWFzdF9zcXVhcmVzIChUcnVzdCBSZWdpb24gUmVmbGVjdGl2ZSksIGJvdW5kZWQsIHBlciBMT0lPIHRyYWluaW5nIGZvbGQ7IGRldGVybWluaXN0aWMiLCJuX3BhcmFtZXRlcnMiOjUsIm5hbWUiOiJHdXRoLUdvbGQgcmVpbmZvcmNlZC1uZXR3b3JrIiwicmF0aW9uYWxlIjoiTmV0d29yay9oYXJkLXNlZ21lbnQgc3RpZmZlbmluZyAoRmxvcnkgMTk1MzsgV2lja3MtSm9uZXMtUGFwcGFzIDIwMDcgUnVsZSAxKSBtdWx0aXBsaWVkIGJ5IEVpbnN0ZWluLUd1dGgtR29sZCByaWdpZC1maWxsZXIgbW9kdWx1cyByZWluZm9yY2VtZW50IChHdXRoJkdvbGQgMTkzODsgR3V0aCAxOTQ1KSBmcm9tIHRoZSB0d28gZmlsbGVyIGF4ZXMgKG1hdHRpbmcgc2lsaWNhLCBwaWdtZW50IHBhc3RlKS4ifSwicHJvbW90ZXNfYXV0aG9yaXR5IjpmYWxzZSwic2NoZW1hIjoiYW1waG9yYS5kZXNpZ24tcnVsZS1zY29yZS5wdXJmb3JtYW5jZS1zY3JhdGNoLWhhcmRuZXNzLWd1dGgtZ29sZC1waHlzaWNhbC1iYXNlbGluZS1yZWNlaXB0LnYxIiwic3BsaXQiOiJsZWF2ZS1vbmUtaXRlcmF0aW9uLW91dCAoTE9JTyksIDMgRG9FIGl0ZXJhdGlvbnMgKG49MTcvMjcvNDIpIiwidGFyZ2V0IjoiS3JhdHpoXHUwMGU0cnRlIiwidGFyZ2V0X3VuaXQiOiJOIChFcmljaHNlbiA0MzUgbmFuby1zY3JhdGNoKSIsInRoZW9yeV9yZWZlcmVuY2VzIjpbIkd1dGggJiBHb2xkIDE5MzggUGh5cy4gUmV2LiA1MzozMjIgKEVpbnN0ZWluLUd1dGgtR29sZCBmaWxsZXIgcmVpbmZvcmNlbWVudCkiLCJHdXRoIDE5NDUgSi4gQXBwbC4gUGh5cy4gMTY6MjAtMjUiLCJGbG9yeSAxOTUzIFByaW5jaXBsZXMgb2YgUG9seW1lciBDaGVtaXN0cnkgKG5ldHdvcmsgbW9kdWx1cyB+IGNyb3NzbGluayBkZW5zaXR5KSIsIldpY2tzLCBKb25lcywgUGFwcGFzIDIwMDcgT3JnYW5pYyBDb2F0aW5ncyAzcmQgZWQuIFdpbGV5IENoLiAyNCAoUnVsZSAxKSIsIkVmcm9uICYgVGlic2hpcmFuaSAxOTkzIEFuIEludHJvZHVjdGlvbiB0byB0aGUgQm9vdHN0cmFwIChwZXJjZW50aWxlIENJKSIsIkNvcmR0cywgU2Fzc21hbm5zaGF1c2VuLCBSZW5kZWwsIEtsZWluLCBSZWRkZW1hbm4sIEJlcmdlIDIwMjQgQ2hlbS4gTWF0ZXIuIChQdXJmb3JtYW5jZSwgWmVub2RvIDEzNzQyMDk4KSIsIkVyaWNoc2VuIDQzNSBuYW5vLXNjcmF0Y2ggbWV0aG9kIl0sInRvb2xraXQiOnsibmFtZSI6InNjaWtpdC1sZWFybitzY2lweStvcGVucHl4bCIsIm51bXB5X3ZlcnNpb24iOiIxLjI2LjQiLCJvcGVucHl4bF92ZXJzaW9uIjoiMy4xLjUiLCJweXRob25fdmVyc2lvbiI6IjMuMTIuMyIsInNjaXB5X3ZlcnNpb24iOiIxLjE2LjMiLCJza2xlYXJuX3ZlcnNpb24iOiIxLjcuMiJ9fQ==",
+    "payloadType": "application/vnd.amphora.design-rule-score-guth-gold-physical-baseline-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-audit-3ef6b35cdbbfea74a96a5c9b98a515d5",
+        "sig": "QVeH4QDk2XQvDnx+CFiTTSjcTiRV4Rrhly5KVjmhL4/XSLx2oO/aFgZzdFuL0vUt/uqbFpbnxg0TT3uWDiYhAA=="
+      }
+    ]
+  },
+  "signing_authority": "AUDIT_ONLY",
+  "split": "leave-one-iteration-out (LOIO), 3 DoE iterations (n=17/27/42)",
+  "target": "Kratzh\u00e4rte",
+  "target_unit": "N (Erichsen 435 nano-scratch)",
+  "theory_references": [
+    "Guth & Gold 1938 Phys. Rev. 53:322 (Einstein-Guth-Gold filler reinforcement)",
+    "Guth 1945 J. Appl. Phys. 16:20-25",
+    "Flory 1953 Principles of Polymer Chemistry (network modulus ~ crosslink density)",
+    "Wicks, Jones, Pappas 2007 Organic Coatings 3rd ed. Wiley Ch. 24 (Rule 1)",
+    "Efron & Tibshirani 1993 An Introduction to the Bootstrap (percentile CI)",
+    "Cordts, Sassmannshausen, Rendel, Klein, Reddemann, Berge 2024 Chem. Mater. (Purformance, Zenodo 13742098)",
+    "Erichsen 435 nano-scratch method"
+  ],
+  "toolkit": {
+    "name": "scikit-learn+scipy+openpyxl",
+    "numpy_version": "1.26.4",
+    "openpyxl_version": "3.1.5",
+    "python_version": "3.12.3",
+    "scipy_version": "1.16.3",
+    "sklearn_version": "1.7.2"
+  },
+  "trust_anchored_in_phase0_store": false,
+  "two_replay_sha256_gate": "PASS"
+}

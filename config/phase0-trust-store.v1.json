@@ -1,0 +1,24 @@
+{
+  "authorization_status": "AUTHORIZED_PHASE0_SERVICE_IDENTITIES",
+  "keys": [
+    {
+      "algorithm": "Ed25519",
+      "development": false,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "phase0_authorized": true,
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "revoked": false,
+      "role": "PHASE0_EVALUATOR"
+    },
+    {
+      "algorithm": "Ed25519",
+      "development": false,
+      "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+      "phase0_authorized": true,
+      "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+      "revoked": false,
+      "role": "PHASE0_INTERNAL_REVIEWER"
+    }
+  ],
+  "schema": "amphora.phase0-trust-store.v1"
+}

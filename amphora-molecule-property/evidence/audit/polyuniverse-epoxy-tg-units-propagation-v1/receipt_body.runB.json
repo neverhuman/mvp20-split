@@ -1,0 +1,341 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "ceiling": "AUDIT_ONLY. Does not alter any of the 4 non-compliant shipped KPI JSON files (supersede-never-rewrite; originals left byte-intact), any manifest, or any authority ceiling. Extends the module's falsification record with a propagation-completeness REFUTATION; a companion RETRACTION-INDEX.md entry records this finding against the 4 affected KPI paths, citing this receipt.",
+  "claim_under_attack": {
+    "description": "The module's Polyuniverse-Epoxy-Tg-family Phase-0 KPI receipts consistently and correctly label the underlying MD-simulated Tg target's physical units, OR any correction to a prior mislabel has been propagated to every consuming KPI surface per this module's own supersede-never-rewrite / RETRACTION-INDEX discipline (established precedent: W3, 2026-08-02, dielectric-retraction propagation, verdict REFUTED).",
+    "primary_kpi_path": "amphora-molecule-property/evidence/phase0/kpis/polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+    "primary_kpi_target_claim": "marginal_conformal_coverage_at_alpha_010_meets_target observed 0.9049 (target >=0.90), 10,279 scaffold-safe held-out test polymers, population described as 'MD-simulated Tg (K)'"
+  },
+  "corroboration_of_disclosed_correction": {
+    "fraction_above_100": 0.7373,
+    "max": 219.18443,
+    "mean": 118.0595152916,
+    "min": 28.558092,
+    "n": 10000,
+    "note": "Compare to the disclosed correction receipt's own reported n=10k sample stats (mean 118, range [28,219], 74%>100) in polyuniverse_epoxy_tg_external_validation_5_canonical_epoxy_amines_receipt.v1.json / docs/mission.md 'CRITICAL HONEST FINDING -- units disclosure'. This audit takes the first 10,000 CSV rows in file order (deterministic, no RNG) rather than reproducing an undisclosed sampling method; approximate agreement corroborates that the raw column is on a degC-like scale, not K."
+  },
+  "detector_discriminating_power_check": {
+    "detector_discriminates": true,
+    "expected": "classified_corrected == True (this KPI carries an explicit units claim_lock)",
+    "observed_classified_corrected": true,
+    "probe_file": "coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json"
+  },
+  "falsifying_check": {
+    "n_non_compliant": 4,
+    "pre_registered_refute_criterion": "If any Phase-0 KPI receipt under evidence/phase0/kpis/ presents an absolute Polyuniverse-Epoxy-Tg numeric value (y_stats mean/min/max, RMSE/MAE in 'K', or a raw group-contribution physical-baseline prediction) WITHOUT either the corrected degC unit label or an explicit claim_lock/text pointer to the known K-vs-degC correction, the propagation-completeness claim is REFUTED for that file.",
+    "refuted": true
+  },
+  "fire_id": "20260816T150001-4102815-4defdf28f6bd",
+  "fire_sequence": "ROTATION fire. Surveyed evidence/phase0/kpis/ for the strongest never-before-ledger-attacked STANDING claim (cross-checked against 26 prior amphora-molecule-property ledger lines, none of which name polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json). That KPI's headline (marginal split-conformal coverage 0.9049 >= 0.90 target on n=10,279 scaffold-safe held-out test polymers, 10/10 deterministic gates passed, hostile-null and AD-quintile positive controls already built in) is one of the module's most statistically rigorous artifacts. Independently re-derived its target variable ('Tg (K)') straight from the pinned raw CSV (dataset_fixture_sha256 9f1f5c59..., byte-verified) and found it is thermodynamically inadmissible taken literally as Kelvin (1 row Tg<0K; 0/1,000,000 rows reach 300K room temperature for a coating meant to be a rigid solid there). Investigating further surfaced that this EXACT defect was already discovered and honestly disclosed by a sibling receipt in this module (polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json / docs/mission.md 'CRITICAL HONEST FINDING -- units disclosure': the raw column is degC, not K; a Celsius delta equals a Kelvin delta so RMSE/MAE/coverage-WIDTH magnitudes are unaffected, only the absolute-value unit LABEL was wrong). The live falsifiable question this fire actually tests is narrower and novel: has that already-known correction been PROPAGATED to every sibling KPI that shares the same raw-CSV provenance, per this module's own supersede-never-rewrite / RETRACTION-INDEX discipline -- the same propagation-completeness pattern precedent W3 (2026-08-02, dielectric-retraction propagation) established and REFUTED for a different label defect.",
+  "flips_scientific_readiness": false,
+  "gates": {
+    "detector_discriminating_power_confirmed": true,
+    "in_scope_determined_by_direct_hash_provenance_not_text_heuristic": true,
+    "raw_csv_sha256_matches_kpi_pin": true,
+    "self_contained_reads_only_already_signed_or_already_rights_cleared_inputs": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "two_replay_byte_stable_diagnostic": true
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "compute_script_sha256": "9b84c1891aa5d6400a4afedcf85450e77110a71509269324d1169be171958611",
+    "correction_source_kpi_path": "amphora-molecule-property/evidence/phase0/kpis/polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json",
+    "correction_source_kpi_sha256": "94fba60037e20a4763d2881d8aa3efd46298e094eedd8a67216e58a2ea9d32f9",
+    "primary_kpi_path": "amphora-molecule-property/evidence/phase0/kpis/polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+    "primary_kpi_sha256": "447f5ca832054c0e606b89eb7dfdbd38db3f3a85377c299d982122a3316221e4",
+    "raw_csv_matches_kpi_pin": true,
+    "raw_csv_path": "feedback/v1/external_data/polyuniverse_epoxy/raw/Epoxy_1M_p.csv",
+    "raw_csv_sha256": "9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45"
+  },
+  "literal_kelvin_admissibility": {
+    "rule_1_absolute_zero": {
+      "example_violation_value": -0.7562993,
+      "n_violations": 1,
+      "statement": "T[K] >= 0 always, by definition of the Kelvin scale (no exception, no domain assumption required)",
+      "violated": true
+    },
+    "rule_2_room_temperature_sanity": {
+      "fraction_at_or_above_300K": 0.0,
+      "n_at_or_above_300K": 0,
+      "n_rows": 1000000,
+      "statement": "A cured epoxy-amine MARINE COATING network is designed to be a rigid glassy solid at ambient service temperature; essentially all real cured epoxy-amine Tg values in the literature this module already cites (May 1988 Ch.6; this module's own OpenPoly experimental Tg corpus, range [146,589] K) sit at or above ~300 K",
+      "violated": true
+    },
+    "rule_3_below_lowest_known_polymer_Tg": {
+      "fraction_below_140K": 0.801161,
+      "n_below_140K": 801161,
+      "n_rows": 1000000,
+      "statement": "PDMS (polydimethylsiloxane), one of the most flexible common polymers known, has Tg ~146-150 K (Mark, J.E. ed. 2007, Physical Properties of Polymers Handbook, 2nd ed., Springer, Ch.19 Table 19.1) -- among the lowest Tg of any widely-characterized polymer. A rigid, aromatic, densely-crosslinked epoxy-amine thermoset network should not read BELOW this floor.",
+      "violated": true
+    }
+  },
+  "method": "1) Independently re-derive the raw 'Tg' column distribution from the pinned CSV (feedback/v1/external_data/polyuniverse_epoxy/raw/Epoxy_1M_p.csv, sha256-verified byte-identical to the KPI's own dataset_fixture_sha256 pin), full n=1,000,000 rows, no sampling. 2) Physical-admissibility check under a LITERAL Kelvin reading: (a) absolute-zero floor T>=0K (a law-of-physics bound, no domain assumption), (b) room-temperature sanity (a coating network should be a rigid solid at >=300K service temperature; corroborated against this module's own OpenPoly experimental Tg corpus range [146,589]K), (c) below-lowest-known-polymer-Tg floor (PDMS ~146-150K, Mark ed. 2007 Physical Properties of Polymers Handbook Ch.19 Table 19.1). 3) Corroborate the ALREADY-disclosed correction receipt's own reported n=10k-sample stats (mean 118, range [28,219], 74%>100) using a deterministic first-10k-rows read of the same pinned CSV (no RNG needed since this is corroboration, not the falsifying check). 4) Enumerate every file in evidence/phase0/kpis/, and classify each as in-scope (its OWN JSON pins dataset_fixture_sha256 or input_csv_sha256 to the raw defective-label CSV -- unambiguous shared-provenance test, not a text/regex proximity heuristic) vs out-of-scope. For each in-scope file, check for an explicit units-correction claim_lock key or corrected-unit text marker. 5) Discriminating-power sanity check (not the falsifying criterion): confirm the same classifier correctly recognizes a KNOWN-corrected sibling (coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json, which carries an explicit 'polyuniverse_tg_units_are_C_not_K_per_prior_correction_receipt' claim_lock) as corrected, i.e. the classifier does not just flag everything.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "Test whether the K-vs-degC unit correction already disclosed in polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json has been propagated -- via an explicit claim_lock or corrected-unit text pointer -- to EVERY sibling Phase-0 KPI receipt whose own JSON directly pins the same raw defective-label CSV fixture (dataset_fixture_sha256 / input_csv_sha256 == 9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45).",
+  "organizational_independence_asserted": false,
+  "pre_registered_refute_criterion": "If any Phase-0 KPI receipt under evidence/phase0/kpis/ presents an absolute Polyuniverse-Epoxy-Tg numeric value (y_stats mean/min/max, RMSE/MAE in 'K', or a raw group-contribution physical-baseline prediction) WITHOUT either the corrected degC unit label or an explicit claim_lock/text pointer to the known K-vs-degC correction, the propagation-completeness claim is REFUTED for that file.",
+  "primary_sources": [
+    "Mark, J.E. ed. 2007, Physical Properties of Polymers Handbook, 2nd ed., Springer, Ch.19 Table 19.1 (PDMS Tg ~146-150K, among the lowest known for a common polymer)",
+    "May, C.A. ed. 1988, Epoxy Resins: Chemistry and Technology, 2nd ed., Marcel Dekker, Ch.6 (canonical epoxy-amine Tg values, already cited by this module's own external-validation-5-canonical receipt)",
+    "This module's own polyuniverse_epoxy_tg_external_validation_5_canonical_epoxy_amines_receipt.v1.json 'CRITICAL HONEST FINDING -- units disclosure' (the original correction, dated prior to this fire)",
+    "This module's own amphora-molecule-property/evidence/audit/dielectric-retraction-v1/ (W3, 2026-08-02) as the established propagation-completeness attack precedent"
+  ],
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "propagation_audit": {
+    "compliant_count": 1,
+    "compliant_files": [
+      "polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json"
+    ],
+    "files_scanned": 21,
+    "in_scope_presents_absolute_value": 5,
+    "non_compliant_count": 4,
+    "non_compliant_files": [
+      "polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+      "polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json",
+      "polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json",
+      "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json"
+    ],
+    "rows": [
+      {
+        "classified_corrected": true,
+        "correction_claim_lock_hit": [
+          "polyuniverse_tg_units_are_C_not_K_per_prior_correction_receipt"
+        ],
+        "correction_text_marker_hit": [
+          "not_K",
+          "units_are_C_not_K"
+        ],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "e3e9c9fa8b4ebf06cabb887a71647c03180becd6239b16dd0e7f7909de0d1e9f"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "b73bf0e81d967d837cf9195ad56dec7c9b93cdf8613ec0d1d6272d3ca3e4579a"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "5ab0e74898476cafb02ee23ec54f78bb890a19027ee826bffba10dd6001a367e"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "a72aa3f4629a755b735b0e10df2046473ac8e8d9a66dc7e3cc59164914767dd6"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "a77572d6f36a960a5ab5aed62fdac6bd8cb3e7d7f39d7b63be16ee5ca6481878"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "openpoly-water-contact-angle-ml-baseline-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "974e39c709a50296cda415bf61b75efa25fff8f7f8ef5e64b363ff123bd68965"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "openpoly-water-uptake-ml-baseline-audit-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "194f5c73d977b6a1cc07dded862dc51d9e205286a78244649ac07f131bc38364"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": true,
+        "file": "polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+        "pinning_field": "dataset_fixture_sha256",
+        "sha256": "447f5ca832054c0e606b89eb7dfdbd38db3f3a85377c299d982122a3316221e4"
+      },
+      {
+        "classified_corrected": true,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [
+          "not K",
+          "unit interpretation",
+          "\u00b0C, not K"
+        ],
+        "directly_pins_raw_mislabeled_csv_fixture": true,
+        "file": "polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json",
+        "pinning_field": "dataset_fixture_sha256",
+        "sha256": "94fba60037e20a4763d2881d8aa3efd46298e094eedd8a67216e58a2ea9d32f9"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": true,
+        "file": "polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json",
+        "pinning_field": "dataset_fixture_sha256",
+        "sha256": "74d534f3f2f17e8cc2ec5dc91b10cfa22a9e9d78f800d02d74e1eec5f83c26e2"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": true,
+        "file": "polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json",
+        "pinning_field": "dataset_fixture_sha256",
+        "sha256": "dcc4af575760d227bc34f29a7cbbea450f1a48d484d9e93c5fdb74296a3869d5"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "c8bae23b8deeb8f79edca0af1be6c4457c8abec0cdb5e94eb874e6a7ba18701a"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "stacked-ml-van-krevelen-density-radonpy-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "0dc1b6f663d9edb75652bf221712b01f4847b7f62f3620e12e57af7c8adcf751"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": true,
+        "file": "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+        "pinning_field": "dataset_fixture_sha256",
+        "sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "645b4a7e4cc3c5a8f3a5b679ff6336c8f212ee4206a0d9fc86089804044f4803"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "7680f16bed40bd843ceb301ec056482d942ddc0150497497387508963e4964e1"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "bd49b1b3bc72b99109e3c2ef021bd6c950f8b3c957e8c88b3e4fe3354d4f128b"
+      },
+      {
+        "classified_corrected": false,
+        "correction_claim_lock_hit": [],
+        "correction_text_marker_hit": [],
+        "directly_pins_raw_mislabeled_csv_fixture": false,
+        "file": "van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json",
+        "pinning_field": null,
+        "sha256": "e8e6da561ef1236ddef1de1f05505b02890e48ad0b4c72b751edf5e3af4c2fde"
+      }
+    ]
+  },
+  "raw_tg_column_full_corpus_stats": {
+    "max": 256.0292,
+    "mean": 118.1847871092634,
+    "median": 117.598225,
+    "min": -0.7562993,
+    "n": 1000000,
+    "std": 26.22962881518496
+  },
+  "receipt_id": "w12-polyuniverse-epoxy-tg-units-propagation-audit",
+  "recommended_followups": [
+    "A future fire (or a founder-facing report generator pre-processing step) should add the units-correction claim_lock/text pointer to the 4 non-compliant KPI JSON files' NEXT superseding revision (never edit the originals in place), OR at minimum ensure the report generator that renders these 4 receipts for any external-facing artifact consults RETRACTION-INDEX.md before quoting an absolute Tg value from any of them.",
+    "The van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json non-compliant file is ALSO the subject of the unrelated W8/W-PROP1/R-C03 sign-reversed-coefficient chain; a future repair fire consolidating a superseding receipt for that KPI should fold in BOTH defects (sign-reversed Y_gi AND the units label) rather than issuing two separate superseding artifacts."
+  ],
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened. Reads only the already-in-tree, already-rights-cleared Polyuniverse Epoxy CSV (already cited by 5+ prior signed receipts in this module, sha256 9f1f5c59...) and already-signed sibling KPI JSON files.",
+  "schema": "amphora.molecule-property.units-correction-propagation-completeness-audit-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY audit receipt under evidence/audit/"
+  },
+  "study_id": "polyuniverse-epoxy-tg-units-propagation-v1",
+  "verdict": "CLAIM_REFUTED",
+  "why": "Pre-registered criterion fires if ANY in-scope KPI (own JSON pins dataset_fixture_sha256/input_csv_sha256 to the raw defective-label CSV) lacks the units-correction claim_lock/text marker. Observed: 5 in-scope KPIs found, only 1 carries the correction (['polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json']); 4 do NOT: ['polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json', 'polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json', 'polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json', 'van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json']. The primary claim under attack (polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json, marginal coverage 0.9049) is itself one of the 4 non-compliant files -- its own population/capability text still reads 'MD-simulated Tg (K)' with y_stats_K field names, and its reported y_stats absolute values (min 14.1, max 247.9, mean 119.5) are, read literally as Kelvin, thermodynamically inadmissible (rule_1: 1/1,000,000 rows Tg<0K in the full corpus; rule_2: 0/1,000,000 rows reach 300K; rule_3: 80.1% of rows read below the lowest-known-common-polymer Tg floor). The module's own already-published correction (degC not K) resolves the absolute-value admissibility violation, but that correction has NOT been propagated to this KPI's own claim_locks/population text nor recorded in RETRACTION-INDEX.md, so a reader of this specific signed receipt in isolation (exactly how a founder-facing report generator would consume it) is not warned. The propagation-completeness claim is REFUTED for 4 of 5 in-scope KPI surfaces. Note: RMSE/MAE/coverage-interval-WIDTH magnitudes in these 4 receipts are numerically unaffected by the label error (a Celsius delta equals a Kelvin delta) -- this is a label-integrity and claim-discipline defect, not a re-derivation of the conformal coverage arithmetic itself, which is not challenged by this fire."
+}

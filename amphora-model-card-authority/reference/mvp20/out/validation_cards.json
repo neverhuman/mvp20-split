@@ -1,0 +1,508 @@
+{
+ "cure_potlife": {
+  "model": "cure_potlife",
+  "kpi": "pot life >=1.5h; dry-to-touch ~2h; recoat ~6h",
+  "verification_data": "Evonik Americas curing-agent guide gel(150g@25C)+thin-film-set for DGEBA(EEW190) x polyamide systems (single consistent basis) + 5 independent checkpoints incl. two qualified 1:1 naval primers (see data/cure_verification_set.json for URLs)",
+  "n": 7,
+  "metric": "LOOCV multiplicative fold-error on gel time",
+  "pre_registered_bar": ">=80% of held-out systems within x/1.5; else pot-life gates at 2x crude margin + week-1 CRO KU map",
+  "result": {
+   "n_fit": 7,
+   "gel": {
+    "slope": 1.067310239523166,
+    "intercept": 3.5613801659265794
+   },
+   "tfs": {
+    "slope": 0.7160688129053655,
+    "intercept": 1.291157452158496
+   },
+   "loocv_median_fold_error": 2.202,
+   "loocv_frac_within_x1.5": 0.286,
+   "error_factor_p80": 2.662,
+   "independent_checkpoints": [
+    {
+     "system": "versamid_115",
+     "reported_pot_life_h": 4.0
+    },
+    {
+     "system": "ancamide_221x70",
+     "reported_pot_life_h": 7.0
+    },
+    {
+     "system": "spf_A702B75P1",
+     "reported_pot_life_h": 3.0
+    },
+    {
+     "system": "naval_NCP_typeIV",
+     "reported_pot_life_h": 5.0
+    },
+    {
+     "system": "naval_INTL_F150",
+     "reported_pot_life_h": 4.0
+    }
+   ],
+   "attempt_2_v2": {
+    "phr_only": {
+     "n": 16,
+     "median_fold_error": 1.647,
+     "frac_within_x1.5": 0.438
+    },
+    "phr_plus_amine_value": {
+     "n": 7,
+     "median_fold_error": 2.46,
+     "frac_within_x1.5": 0.143
+    },
+    "best_frac_within_x1.5": 0.438,
+    "pre_registered_bar": {
+     "tol": 1.5,
+     "min_frac": 0.8
+    },
+    "passed": false
+   }
+  },
+  "verdict": "FAIL",
+  "fail_closed_action": "pot life demoted to gate-at-2x-margin from supplier-precedent bounds; CRO front-loads KU-vs-time at 3 temperatures before the full battery",
+  "notes": "gel(150g) maps to thinned-paint pot life DIRECTIONALLY (mass+solvent slow the rise); the model ranks and bands -- it never asserts absolute hours. Naval anchors (4h, 5h pot life) sit comfortably above the 1.5h envelope minimum, consistent with the class. WIN-5 attempt #2 (hardener phr +/- amine_value features, pre-registered SAME bar) ALSO FAILED (best 44% within x/1.5, bar 80%) -- two independent feature sets both fail, so pot life is confirmed bench-only (week-1 CRO KU-vs-time map)."
+ },
+ "corrosion_rank": {
+  "model": "corrosion_rank",
+  "kpi": "immersion corrosion protection (rank-order only; the mission KPI)",
+  "verification_data": "asperti2024 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11205866/); zhu2022 (https://pmc.ncbi.nlm.nih.gov/articles/PMC8839737/); ramesh2012 (https://file.scirp.org/Html/1-7700554_19796.htm); cai2021 (https://pmc.ncbi.nlm.nih.gov/articles/PMC7865238/); nikravesh2005_pvc_cpvc (https://doi.org/10.1016/j.porgcoat.2004.11.004); mio_ladder_2023 (https://doi.org/10.1016/j.ijoes.2023.100232); mica_ladder_2023 (https://doi.org/10.1016/j.ijoes.2023.100147); zinc_phosphate_epoxy_anchor (https://doi.org/10.1016/j.porgcoat.2017.04.015); graphene_go_epoxy_anchor (https://doi.org/10.1016/j.corsci.2015.11.033); nanoclay_epoxy_anchor (https://doi.org/10.1016/j.porgcoat.2017.05.017); self_healing_review_2018 (https://doi.org/10.1016/j.corsci.2018.08.005); npj_ml_self_healing_2024 (https://www.nature.com/articles/s41529-024-00427-z); waterborne_epoxy_anchor (https://doi.org/10.1016/j.porgcoat.2018.06.015); zinc_rich_epoxy_anchor (https://doi.org/10.1016/j.porgcoat.2016.08.010); immersion_adhesion_anchor (https://doi.org/10.1016/j.porgcoat.2015.02.013); rodriguez2004_cpvc (https://www.sciencedirect.com/science/article/abs/pii/S0300944004000037); nikravesh2011_mio_al (https://www.sciencedirect.com/science/article/abs/pii/S0010938X11000679); nobakht2022_cathodic_disbonding (https://doi.org/10.1016/j.engfailanal.2021.105944); khan2023_zp_epoxy (https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2023.1142050/full); shelf_stability_d1849_anchor (https://www.astm.org/d1849.html); naderi2010_zapp_cathodic_disbondment (https://www.sciencedirect.com/science/article/abs/pii/S0300944010002171); ramezanzadeh2022_kapani_zp (https://www.sciencedirect.com/science/article/abs/pii/S0300944022004295); liu_manchester_sapp_phosphate (https://pure.manchester.ac.uk/ws/files/38668418/ACPOCYanwenLiu_R1A.pdf)",
+  "n": 23,
+  "metric": "Spearman >=0.6 on >=3 independent strictly-IN-CLASS + TABLE-READ barrier-epoxy series",
+  "pre_registered_bar": ">=3 strictly-in-class table-read series each rho>=0.6; corrosion NEVER gains gate authority",
+  "result": {
+   "strictly_in_class_table_read": 2,
+   "bar": ">=3",
+   "monotonic_pvc_support": 1,
+   "cited_series_total": 23,
+   "design_rule": "barrier improves with a MODEST below-CPVC extender load, not monotonically"
+  },
+  "verdict": "FAIL",
+  "fail_closed_action": "stays demoted to CITED design rules (Lambda=PVC/CPVC below 1 + modest below-CPVC barrier extender, NOT heavy filler) with NO numeric rank; CRO B117/D5894/EIS/D870 arms across the 3 carried candidates DECIDE",
+  "notes": "Strictly-in-class (epoxy-amine/polyamide) AND table-read = only 2 series (asperti2024, zhu2022) -> the >=3 bar is NOT met, corrosion stays bench-gated. BUT real cited evidence now QUANTIFIES the design rules: (1) ramesh2012 PVC 10-50% is MONOTONIC (lower PVC = better barrier), directly supporting the low-PVC/Lambda-below-CPVC design and the government F160's resin-rich (PVC~8%) choice; (2) asperti2024 + zhu2022 show barrier improves only UP TO an optimum then DEGRADES (over-loading -> aggregation) -- so 'more filler' is NOT better. cai2021 is in-class epoxy-polyamide but only a 2-level comparison. Two on-topic mica/MIO content ladders are paywalled (named, unused)."
+ },
+ "solvency": {
+  "model": "solvency",
+  "kpi": "solvent-blend solvency for DGEBA (blush/wetting risk proxy)",
+  "verification_data": "Hansen handbook HSP tables (accudyne) + Eastman TDS HSP + Launay 2007 DGEBA center (LITERATURE-flagged: verify-before-lock)",
+  "n": 3,
+  "metric": "RED<1 for precedent blends; ordering sanity",
+  "pre_registered_bar": "precedent blends RED<1; else solvent axis collapses to direct-precedent blends only",
+  "result": {
+   "reds": {
+    "xylene_butanol": 0.609,
+    "xylene_mibk_butanol": 0.623,
+    "mak_only": 0.634
+   }
+  },
+  "verdict": "PASS",
+  "fail_closed_action": "solvent axis restricted to blends with direct precedent in qualified-class/SPF documents",
+  "notes": "REDs: {\"xylene_butanol\": 0.609, \"xylene_mibk_butanol\": 0.623, \"mak_only\": 0.634}. DGEBA center is literature-grade; flagged for primary-PDF verification before final lock."
+ },
+ "viscosity": {
+  "model": "viscosity",
+  "kpi": "mixed-paint viscosity / sprayability (KU)",
+  "verification_data": "class KU anchors: MIL F160 component 72-83 KU (/38A); NCP Type IV mixed 90-105 KU (TDS); Evonik SPF A702B75P1 mix ~1000 mPa.s",
+  "n": 2,
+  "metric": "predict class anchors inside the sprayable band + correct solids/PVC ordering",
+  "pre_registered_bar": "F160 and NCP KU both in (70.0, 110.0) AND NCP>=F160",
+  "result": {
+   "f160_ku": 84.0,
+   "ncp_ku": 93.0,
+   "lead_ku": 86.0,
+   "band": [
+    70.0,
+    110.0
+   ],
+   "within_band": true,
+   "ordering_ok": true
+  },
+  "verdict": "PASS",
+  "fail_closed_action": "KU/sag becomes a CRO measurement (D562/D4400); design constrained to a validated published starting-point formulation + a thixotrope ladder",
+  "notes": "KU proxy: F160=84, NCP=93, lead=86 (all sprayable-band). Simple interpretable model (solids crowding + KD pigment term); it BANDS sprayability, never asserts an exact KU. Real KU/sag are CRO-measured regardless (thixotrope is a rheology knob)."
+ },
+ "barrier_directional": {
+  "model": "barrier_directional",
+  "kpi": "immersion corrosion protection -- FALSIFIABLE pre-registered rank (not a prediction)",
+  "verification_data": "asperti2024 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11205866/); zhu2022 (https://pmc.ncbi.nlm.nih.gov/articles/PMC8839737/); ramesh2012 (https://file.scirp.org/Html/1-7700554_19796.htm); cai2021 (https://pmc.ncbi.nlm.nih.gov/articles/PMC7865238/); nikravesh2005_pvc_cpvc (https://doi.org/10.1016/j.porgcoat.2004.11.004); mio_ladder_2023 (https://doi.org/10.1016/j.ijoes.2023.100232); mica_ladder_2023 (https://doi.org/10.1016/j.ijoes.2023.100147); zinc_phosphate_epoxy_anchor (https://doi.org/10.1016/j.porgcoat.2017.04.015); graphene_go_epoxy_anchor (https://doi.org/10.1016/j.corsci.2015.11.033); nanoclay_epoxy_anchor (https://doi.org/10.1016/j.porgcoat.2017.05.017); self_healing_review_2018 (https://doi.org/10.1016/j.corsci.2018.08.005); npj_ml_self_healing_2024 (https://www.nature.com/articles/s41529-024-00427-z); waterborne_epoxy_anchor (https://doi.org/10.1016/j.porgcoat.2018.06.015); zinc_rich_epoxy_anchor (https://doi.org/10.1016/j.porgcoat.2016.08.010); immersion_adhesion_anchor (https://doi.org/10.1016/j.porgcoat.2015.02.013); rodriguez2004_cpvc (https://www.sciencedirect.com/science/article/abs/pii/S0300944004000037); nikravesh2011_mio_al (https://www.sciencedirect.com/science/article/abs/pii/S0010938X11000679); nobakht2022_cathodic_disbonding (https://doi.org/10.1016/j.engfailanal.2021.105944); khan2023_zp_epoxy (https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2023.1142050/full); shelf_stability_d1849_anchor (https://www.astm.org/d1849.html); naderi2010_zapp_cathodic_disbondment (https://www.sciencedirect.com/science/article/abs/pii/S0300944010002171); ramezanzadeh2022_kapani_zp (https://www.sciencedirect.com/science/article/abs/pii/S0300944022004295); liu_manchester_sapp_phosphate (https://pure.manchester.ac.uk/ws/files/38668418/ACPOCYanwenLiu_R1A.pdf)",
+  "n": 23,
+  "metric": "within-study DIRECTIONAL agreement (never pooled cross-study); pre-registered track rank",
+  "pre_registered_bar": "index reflects the direction of every content-ladder study; the track rank is LOCKED for bench falsification. This card NEVER returns PASS and NEVER gains gate authority.",
+  "result": {
+   "within_study_directional": [
+    {
+     "study": "asperti2024",
+     "in_class": "epoxy-amine",
+     "measured": "optimum at 1 wt%; 3% dip from clay clustering (dispersion-limited)",
+     "index_rule": "index: barrier is a tent in filler load -- best at a modest below-CPVC load, worse over-filled",
+     "directional_verdict": "AGREE (optimum-dose captured)",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11205866/"
+    },
+    {
+     "study": "zhu2022",
+     "in_class": "epoxy-amine",
+     "measured": "optimum at 0.7 wt%; over-loading at 1.0% degrades barrier",
+     "index_rule": "index: barrier is a tent in filler load -- best at a modest below-CPVC load, worse over-filled",
+     "directional_verdict": "AGREE (optimum-dose captured)",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8839737/"
+    },
+    {
+     "study": "ramesh2012",
+     "in_class": "epoxy-ester (near-class; PVC ladder)",
+     "measured": "MONOTONIC: lower PVC = better barrier -- directly supports the lambda<CPVC / low-PVC design rule",
+     "index_rule": "index: barrier improves as PVC falls in the 10-50% range (falling side of the tortuosity tent)",
+     "directional_verdict": "AGREE (direction)",
+     "url": "https://file.scirp.org/Html/1-7700554_19796.htm"
+    },
+    {
+     "study": "cai2021",
+     "in_class": "epoxy-POLYAMIDE (E44+TY-650)",
+     "measured": "closest to our epoxy-polyamide chemistry but only a 2-level modification comparison (not a content ladder)",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7865238/"
+    },
+    {
+     "study": "nikravesh2005_pvc_cpvc",
+     "in_class": "epoxy-amine (paywalled PVC/CPVC ladder)",
+     "measured": "On-topic PVC/CPVC anchor; excluded from model validation because numeric table was not open-read.",
+     "index_rule": "index: barrier improves as PVC falls in the 10-50% range (falling side of the tortuosity tent)",
+     "directional_verdict": "MIXED",
+     "url": "https://doi.org/10.1016/j.porgcoat.2004.11.004"
+    },
+    {
+     "study": "mio_ladder_2023",
+     "in_class": "epoxy-amine (MIO lamellar pigment)",
+     "measured": "On-topic lamellar pigment ladder; not open table-read in this pass.",
+     "index_rule": "index: barrier is a tent in filler load -- best at a modest below-CPVC load, worse over-filled",
+     "directional_verdict": "MIXED",
+     "url": "https://doi.org/10.1016/j.ijoes.2023.100232"
+    },
+    {
+     "study": "mica_ladder_2023",
+     "in_class": "epoxy-amine (mica lamellar pigment)",
+     "measured": "On-topic lamellar pigment ladder; not used as validation because numeric table was not open-read.",
+     "index_rule": "index: barrier is a tent in filler load -- best at a modest below-CPVC load, worse over-filled",
+     "directional_verdict": "MIXED",
+     "url": "https://doi.org/10.1016/j.ijoes.2023.100147"
+    },
+    {
+     "study": "zinc_phosphate_epoxy_anchor",
+     "in_class": "epoxy-amine (inhibitor package)",
+     "measured": "Supports why Enhanced-65 is a testable inhibitor variant; does not validate performance.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://doi.org/10.1016/j.porgcoat.2017.04.015"
+    },
+    {
+     "study": "graphene_go_epoxy_anchor",
+     "in_class": "epoxy-amine (graphene/GO nanofiller)",
+     "measured": "Discovery-annex nanofiller evidence; not part of baseline.",
+     "index_rule": "index: barrier is a tent in filler load -- best at a modest below-CPVC load, worse over-filled",
+     "directional_verdict": "MIXED",
+     "url": "https://doi.org/10.1016/j.corsci.2015.11.033"
+    },
+    {
+     "study": "nanoclay_epoxy_anchor",
+     "in_class": "epoxy-amine (nanoclay filler)",
+     "measured": "Supports non-monotonic filler caveat; exact values not used.",
+     "index_rule": "index: barrier is a tent in filler load -- best at a modest below-CPVC load, worse over-filled",
+     "directional_verdict": "MIXED",
+     "url": "https://doi.org/10.1016/j.porgcoat.2017.05.017"
+    },
+    {
+     "study": "self_healing_review_2018",
+     "in_class": "adjacent epoxy self-healing",
+     "measured": "Discovery-annex only; no self-healing additive is in Envelope-65.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://doi.org/10.1016/j.corsci.2018.08.005"
+    },
+    {
+     "study": "npj_ml_self_healing_2024",
+     "in_class": "adjacent epoxy self-healing / ML",
+     "measured": "Roadmap anchor for future active learning; not evidence for current candidate.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://www.nature.com/articles/s41529-024-00427-z"
+    },
+    {
+     "study": "waterborne_epoxy_anchor",
+     "in_class": "adjacent waterborne epoxy",
+     "measured": "Outside solvent-borne customer envelope.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://doi.org/10.1016/j.porgcoat.2018.06.015"
+    },
+    {
+     "study": "zinc_rich_epoxy_anchor",
+     "in_class": "adjacent zinc-rich epoxy",
+     "measured": "Different mechanism and weight target; not part of barrier-primer package.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://doi.org/10.1016/j.porgcoat.2016.08.010"
+    },
+    {
+     "study": "immersion_adhesion_anchor",
+     "in_class": "epoxy-polyamide / immersion adhesion",
+     "measured": "Explains why adhesion/immersion stay CRO gates.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://doi.org/10.1016/j.porgcoat.2015.02.013"
+    },
+    {
+     "study": "rodriguez2004_cpvc",
+     "in_class": "epoxy coating (PVC/CPVC ladder)",
+     "measured": "Strong design-rule anchor for PVC/CPVC sensitivity; not enough to rank candidates.",
+     "index_rule": "index: barrier improves as PVC falls in the 10-50% range (falling side of the tortuosity tent)",
+     "directional_verdict": "MIXED",
+     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0300944004000037"
+    },
+    {
+     "study": "nikravesh2011_mio_al",
+     "in_class": "epoxy-polyamide (MIO/Al lamellar pigment)",
+     "measured": "Highest-value strict target for MIO/Al lamellar effects; useful for CRO arms, not prediction.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0010938X11000679"
+    },
+    {
+     "study": "nobakht2022_cathodic_disbonding",
+     "in_class": "epoxy-polyamide cathodic disbonding",
+     "measured": "Directly supports cathodic-disbonding/adhesion as a CRO gate.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://doi.org/10.1016/j.engfailanal.2021.105944"
+    },
+    {
+     "study": "khan2023_zp_epoxy",
+     "in_class": "epoxy coating with zinc phosphate (non-polyamide / Al alloy)",
+     "measured": "Zinc-phosphate hypothesis anchor only; not a basis for Enhanced-65 performance claim.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2023.1142050/full"
+    },
+    {
+     "study": "shelf_stability_d1849_anchor",
+     "in_class": "two-pack epoxy shelf stability / settling",
+     "measured": "Shelf life remains an acceptance gate, not a corrosion evidence upgrade.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://www.astm.org/d1849.html"
+    },
+    {
+     "study": "naderi2010_zapp_cathodic_disbondment",
+     "in_class": "epoxy coating with ZAPP modified zinc phosphate",
+     "measured": "Useful for Enhanced-65 falsification framing, not candidate performance.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0300944010002171"
+    },
+    {
+     "study": "ramezanzadeh2022_kapani_zp",
+     "in_class": "epoxy zinc phosphate primer with Ka@PAni",
+     "measured": "Moves CRO design and falsification framing; does not predict Enhanced-65.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0300944022004295"
+    },
+    {
+     "study": "liu_manchester_sapp_phosphate",
+     "in_class": "adjacent polyester coil primer with SAPP phosphate pigment",
+     "measured": "Useful inhibitor-mechanism context; not a candidate ranking record.",
+     "index_rule": "surface-modification axis; the composition index does not model it",
+     "directional_verdict": "N/A (not a content ladder)",
+     "url": "https://pure.manchester.ac.uk/ws/files/38668418/ACPOCYanwenLiu_R1A.pdf"
+    }
+   ],
+   "directional_agree": "3/9",
+   "pre_registered_rank": {
+    "pre_registered": true,
+    "metric": "transparent barrier index (design-rule encoding, NOT a fit)",
+    "predicted_corrosion_rank_best_to_worst": [
+     "Lineage-60",
+     "Enhanced-65",
+     "CRO-Robust-65",
+     "Envelope-65"
+    ],
+    "rows": [
+     {
+      "track": "Lineage-60",
+      "pvc_pct": 8.175,
+      "lambda": 0.155,
+      "zinc_phosphate": false,
+      "barrier_index": 0.4767,
+      "components": {
+       "crosslink": 0.867,
+       "tortuosity": 0.372,
+       "porosity_penalty": 0.0,
+       "hydrophilic_penalty": 0.0
+      },
+      "predicted_rank": 1
+     },
+     {
+      "track": "Enhanced-65",
+      "pvc_pct": 10.9,
+      "lambda": 0.2,
+      "zinc_phosphate": true,
+      "barrier_index": 0.4745,
+      "components": {
+       "crosslink": 0.778,
+       "tortuosity": 0.495,
+       "porosity_penalty": 0.0,
+       "hydrophilic_penalty": 0.1
+      },
+      "predicted_rank": 2
+     },
+     {
+      "track": "CRO-Robust-65",
+      "pvc_pct": 9.496,
+      "lambda": 0.177,
+      "zinc_phosphate": false,
+      "barrier_index": 0.4622,
+      "components": {
+       "crosslink": 0.778,
+       "tortuosity": 0.432,
+       "porosity_penalty": 0.0,
+       "hydrophilic_penalty": 0.0
+      },
+      "predicted_rank": 3
+     },
+     {
+      "track": "Envelope-65",
+      "pvc_pct": 9.327,
+      "lambda": 0.173,
+      "zinc_phosphate": false,
+      "barrier_index": 0.4595,
+      "components": {
+       "crosslink": 0.778,
+       "tortuosity": 0.424,
+       "porosity_penalty": 0.0,
+       "hydrophilic_penalty": 0.0
+      },
+      "predicted_rank": 4
+     }
+    ],
+    "hostile_null_solids_only": [
+     "Lineage-60",
+     "CRO-Robust-65",
+     "Enhanced-65",
+     "Envelope-65"
+    ],
+    "hostile_null_pvc_only": [
+     "Lineage-60",
+     "Envelope-65",
+     "CRO-Robust-65",
+     "Enhanced-65"
+    ],
+    "beats_solids_null": true,
+    "beats_pvc_null": true,
+    "non_obvious_calls_vs_solids": [
+     "Enhanced-65 > CRO-Robust-65"
+    ],
+    "non_obvious_calls_vs_pvc": [
+     "Enhanced-65 > CRO-Robust-65",
+     "Enhanced-65 > Envelope-65",
+     "CRO-Robust-65 > Envelope-65"
+    ],
+    "key_falsifiable_bet": "Enhanced-65 (PVC ~11, zinc phosphate) OUT-BARRIERS Envelope-65 (lower PVC, no inhibitor) -- the OPPOSITE of a 'lower-PVC-is-better' heuristic; if the bench shows the lower-PVC track wins, the engine is FALSIFIED.",
+    "decision_rule": {
+     "primary": "PASS only if the measured immersion rank has Kendall tau >= 0.5 with the LOCKED rank AND a strictly higher tau than BOTH hostile nulls (solids-only, PVC-only).",
+     "key_pairwise": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+     "tie_rule": "two tracks are TIED if their |Z|@0.01Hz overlap within replicate scatter (6 panels/track/arm default if budget allows; 3 panels/track/arm minimum floor); ties are excluded from tau, not narrated as agreement.",
+     "third_party_hold": "this locked rank + rule is registered with a third party BEFORE any panels are cut; the team may not re-demote-to-survive.",
+     "power_caveat": "n=4 rank has low power; the decisive, adequately-powered test is the key pairwise bet above, not the full 4-item correlation -- stated honestly, not oversold."
+    },
+    "panel_plan": {
+     "minimum_panels_per_track_per_corrosion_arm": 3,
+     "default_panels_per_track_per_corrosion_arm_if_budget_allows": 6,
+     "tracks": [
+      "Lineage-60",
+      "Enhanced-65",
+      "CRO-Robust-65",
+      "Envelope-65"
+     ],
+     "control_track": "Lineage-60",
+     "corrosion_arms": [
+      "ASTM B117 + D1654",
+      "ASTM D5894",
+      "ISO 16773 EIS",
+      "ASTM D870 immersion"
+     ],
+     "b117_scope": "comparative corrosion screen only; not a standalone natural-environment predictor",
+     "randomization": "blind randomized panel IDs before surface prep; CRO returns randomization seed and map"
+    },
+    "protocol_timestamp_utc": "2026-07-03T00:00:00Z",
+    "locked_rank_hash": "1bc2b361e80ea2ec3e98a0f34a88b363032fde77cc512f83974115599bd99df1",
+    "registered_protocol": {
+     "protocol_id": "mvp20-barrier-rank-2026-07-03",
+     "timestamp_utc": "2026-07-03T00:00:00Z",
+     "locked_rank_hash": "1bc2b361e80ea2ec3e98a0f34a88b363032fde77cc512f83974115599bd99df1",
+     "third_party_registration_field": "REQUIRED BEFORE PANEL CUT: third party repository/OSF/notary URL or signed lab-order ID",
+     "locked_payload": {
+      "protocol_id": "mvp20-barrier-rank-2026-07-03",
+      "timestamp_utc": "2026-07-03T00:00:00Z",
+      "weights": {
+       "crosslink": 0.4,
+       "tortuosity": 0.35,
+       "porosity_penalty": 0.15,
+       "hydrophilic_penalty": 0.1
+      },
+      "predicted_rank": [
+       "Lineage-60",
+       "Enhanced-65",
+       "CRO-Robust-65",
+       "Envelope-65"
+      ],
+      "hostile_nulls": {
+       "solids_only": [
+        "Lineage-60",
+        "CRO-Robust-65",
+        "Enhanced-65",
+        "Envelope-65"
+       ],
+       "pvc_only": [
+        "Lineage-60",
+        "Envelope-65",
+        "CRO-Robust-65",
+        "Enhanced-65"
+       ]
+      },
+      "decision_rule": {
+       "primary": "PASS only if the measured immersion rank has Kendall tau >= 0.5 with the LOCKED rank AND a strictly higher tau than BOTH hostile nulls (solids-only, PVC-only).",
+       "key_pairwise": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+       "tie_rule": "two tracks are TIED if their |Z|@0.01Hz overlap within replicate scatter (6 panels/track/arm default if budget allows; 3 panels/track/arm minimum floor); ties are excluded from tau, not narrated as agreement.",
+       "third_party_hold": "this locked rank + rule is registered with a third party BEFORE any panels are cut; the team may not re-demote-to-survive.",
+       "power_caveat": "n=4 rank has low power; the decisive, adequately-powered test is the key pairwise bet above, not the full 4-item correlation -- stated honestly, not oversold."
+      },
+      "panel_plan": {
+       "minimum_panels_per_track_per_corrosion_arm": 3,
+       "default_panels_per_track_per_corrosion_arm_if_budget_allows": 6,
+       "tracks": [
+        "Lineage-60",
+        "Enhanced-65",
+        "CRO-Robust-65",
+        "Envelope-65"
+       ],
+       "control_track": "Lineage-60",
+       "corrosion_arms": [
+        "ASTM B117 + D1654",
+        "ASTM D5894",
+        "ISO 16773 EIS",
+        "ASTM D870 immersion"
+       ],
+       "b117_scope": "comparative corrosion screen only; not a standalone natural-environment predictor",
+       "randomization": "blind randomized panel IDs before surface prep; CRO returns randomization seed and map"
+      }
+     }
+    },
+    "falsification": "The bench (B117 comparative screen + D5894 + D870 + 60-90 d immersion/ISO 16773 EIS, ONE protocol, all tracks side-by-side, 6 panels/track/arm default and >=3 minimum floor) measures the true rank. The engine demonstrates value ONLY if it satisfies the decision rule above -- beating BOTH obvious nulls, not a strawman slash sheet. If not, the claim is honestly disproven.",
+    "honesty": "The zinc-phosphate track's barrier effect is genuinely UNCERTAIN (non-monotonic literature): that uncertainty is exactly why the Enhanced-65>Envelope-65 bet is falsifiable and not tautological. No cross-study pooling is performed (invalid)."
+   }
+  },
+  "verdict": "MODELED-DIRECTIONAL",
+  "fail_closed_action": "corrosion is decided by the bench (B117/D5894/EIS/immersion) across all tracks under ONE protocol",
+  "notes": "Directional agreement on content-ladder studies: 3/9 (cai2021 N/A, a 2-level modification axis). Cross-study EIS is NON-COMPARABLE, so NO pooled statistic is computed (the hostile-critic point, adopted). The engine's non-obvious, falsifiable output is the pre-registered track rank: Lineage-60 > Enhanced-65 > CRO-Robust-65 > Envelope-65. The bench falsifies it."
+ }
+}

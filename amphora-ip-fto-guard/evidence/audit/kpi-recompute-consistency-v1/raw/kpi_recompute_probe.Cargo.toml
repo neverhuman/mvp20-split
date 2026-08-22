@@ -1,0 +1,11 @@
+[package]
+name = "kpi_recompute_probe"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+amphora-core = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-core" }
+amphora-assurance-capabilities = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-assurance-capabilities" }
+serde_json = "1"
+
+[workspace]

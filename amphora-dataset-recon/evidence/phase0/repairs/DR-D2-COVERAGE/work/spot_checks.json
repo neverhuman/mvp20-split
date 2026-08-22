@@ -1,0 +1,50 @@
+[
+  {
+    "closure_supported": true,
+    "contradiction_reasons": [],
+    "dsse_signature_verifies": true,
+    "envelope_shape": "nested_under_signature_key",
+    "obligation_id": "PROBE-WEB",
+    "payload_type": "application/vnd.amphora.dataset-recon.probe-web-receipt+json",
+    "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/PROBE-WEB/done/probe-web-receipt.v1.dsse.json",
+    "receipt_sha256": "43eca180e24bf0561e8c7951f74b4d0562b6306f1009fa0d37f178cb29969d22",
+    "signature_keyid_matches_pinned_evaluator": true,
+    "verdict_field_found_in_payload": null
+  },
+  {
+    "closure_supported": true,
+    "contradiction_reasons": [],
+    "dsse_signature_verifies": true,
+    "envelope_shape": "nested_under_signature_key",
+    "obligation_id": "DR-LANG-DE",
+    "payload_type": "application/vnd.amphora.dataset-recon-repair-done-dr-lang-de+json",
+    "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-DE/done/dr-lang-de-receipt.v1.dsse.json",
+    "receipt_sha256": "9e8eb5a6a524cf6fb6b1c5646af9c114ba4fb2bea7d452cb994fc365221b4088",
+    "signature_keyid_matches_pinned_evaluator": true,
+    "verdict_field_found_in_payload": "CLAIM_SURVIVED"
+  },
+  {
+    "closure_supported": true,
+    "contradiction_reasons": [],
+    "dsse_signature_verifies": true,
+    "envelope_shape": "nested_under_signature_key",
+    "obligation_id": "DR-COVERAGE",
+    "payload_type": "application/vnd.amphora.dataset-recon-repair-done-dr-coverage+json",
+    "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-COVERAGE/done/dr-coverage-fire2-repair-receipt.v1.dsse.json",
+    "receipt_sha256": "7762ad70ceab66738864b9c9b43b32ffdce6d07e890d3f128ebc9490aabb82e5",
+    "signature_keyid_matches_pinned_evaluator": true,
+    "verdict_field_found_in_payload": "CLAIM_SURVIVED"
+  },
+  {
+    "closure_supported": true,
+    "contradiction_reasons": [],
+    "dsse_signature_verifies": true,
+    "envelope_shape": "nested_under_signature_key",
+    "obligation_id": "CF-ARITH",
+    "payload_type": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/CF-ARITH.done-receipt.v1.dsse.json",
+    "receipt_sha256": "5c38f4206ce8b7a3f78af4a18b8696ef487e0095c70e28a35edc7ec457a378e3",
+    "signature_keyid_matches_pinned_evaluator": true,
+    "verdict_field_found_in_payload": "CLAIM_SURVIVED"
+  }
+]

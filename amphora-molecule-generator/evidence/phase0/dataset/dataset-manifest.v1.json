@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "RIGHTS_QUALIFIED_EVIDENCE",
+  "missing_values_imputed": false,
+  "module_id": "amphora-molecule-generator",
+  "rights_gate_passed": false,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "d498f4e1c46d108a30a3dc8c8a53ee415d5960b99c3aefd2ba6dadf9984aeeeb"
+}

@@ -1,0 +1,146 @@
+{
+  "baseline": {
+    "fetch_date": "2026-08-13",
+    "fetch_urls": [
+      "https://raw.githubusercontent.com/secure-systems-lab/dsse/master/envelope.md",
+      "https://raw.githubusercontent.com/secure-systems-lab/dsse/master/protocol.md"
+    ],
+    "files_cited": [
+      "envelope.md",
+      "protocol.md"
+    ],
+    "license_note": "Public open-source specification (not paywalled); short normative excerpts quoted below under fair use, full text not reproduced.",
+    "name": "DSSE (Dead Simple Signing Envelope) Specification",
+    "publisher": "secure-systems-lab",
+    "repo_url": "https://github.com/secure-systems-lab/dsse",
+    "version": "1.0.2",
+    "version_date": "2024-05-10"
+  },
+  "campaign_item_id": "W-T-EIV",
+  "claim_second_half_check": {
+    "check": "Do this module's checked-in docs (mission.md, capability-profile.json, shipped KPI) name the DSSE spec, PAE, or secure-systems-lab by name anywhere, i.e. is the divergence found here already 'deliberate and stated' against this specific named baseline?",
+    "finding": "mission.md uses the literal word 'DSSE' twice (both referring to the portfolio's OWN receipt-signing corpus / T-04's cross-check against amphora_core::verify_dsse), and no checked-in doc for this module ever cites the DSSE ENVELOPE SCHEMA or the PAE CONSTRUCTION as a named specification this predicate's own receipt format was measured against or deliberately diverges from. T-04 (2026-08-05) already established the BEHAVIORAL consequence (forged envelopes admitted); this run is the first to name the SPECIFICATION itself, pin its version, and show the receipt wire-format is structurally incompatible with the DSSE envelope schema independent of any particular forgery.",
+    "mentions_dsse_spec_by_name_or_pae_construction": false,
+    "mentions_dsse_word_at_all": true
+  },
+  "claim_under_attack": {
+    "claim_text": "The validator conforms to the published DSSE specification, and any divergence is deliberate and stated.",
+    "receipt_path": "amphora-evidence-intake-validator/evidence/phase0/kpis/"
+  },
+  "host_verified_receipt_schema_construction": {
+    "all_construction_sites_are_test_only": true,
+    "construction_line_numbers_in_lib_rs": [
+      1452
+    ],
+    "note": "No production (non-#[cfg(test)]) code path in this file constructs a HOST_VERIFIED_RECEIPT_FEATURE value from a real amphora_core::verify_dsse() call; the only construction site(s) found are inside `mod tests` (starts line 1287)."
+  },
+  "live_authority_under_test": {
+    "evaluate_evidence_intake_starts_line": 673,
+    "host_receipt_valid_starts_line": 729,
+    "mod_tests_starts_line": 1287,
+    "runtime": "amphora-assurance-capabilities/src/lib.rs :: evaluate_evidence_intake, host_receipt_valid",
+    "runtime_file_sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
+  },
+  "module_id": "amphora-evidence-intake-validator",
+  "overall_claim_survives": false,
+  "requirements": [
+    {
+      "evidence": "Live host_receipt_valid (amphora-assurance-capabilities/src/lib.rs:729) checks a receipt object with cardinality 11 and fields ['accepted', 'candidate_id', 'fresh', 'package_sha256', 'revocation_checked', 'schema', 'signature_algorithm', 'signature_verified', 'trust_store_status']. None of payload/payloadType/signatures is present: {'payload': False, 'payloadType': False, 'signatures': False}.",
+      "id": "R1-envelope-schema",
+      "normative_statement": "The envelope MUST be a JSON object with exactly three top-level fields: payload, payloadType, and signatures (a required array).",
+      "spec_citation": "envelope.md :: Envelope JSON fields",
+      "verdict": "divergent"
+    },
+    {
+      "evidence": "No `payload` field exists anywhere in the checked receipt schema (11 fields, ['accepted', 'candidate_id', 'fresh', 'package_sha256', 'revocation_checked', 'schema', 'signature_algorithm', 'signature_verified', 'trust_store_status']); the signed-content analogue `package_sha256` is a SHA-256 digest, not a base64 body, so the actual bytes claimed to be signed are never carried through this validation boundary.",
+      "id": "R2-payload-field",
+      "normative_statement": "payload MUST be the Base64 encoding of the raw signed message bytes (SERIALIZED_BODY).",
+      "spec_citation": "envelope.md :: payload field / Base64()",
+      "verdict": "divergent"
+    },
+    {
+      "evidence": "No `signatures` array or `keyid` field exists in the live receipt schema for this optionality rule to apply to.",
+      "id": "R3-keyid-optional",
+      "normative_statement": "signature.keyid is OPTIONAL; a verifier MUST NOT require or reject solely for its absence.",
+      "spec_citation": "envelope.md :: \"The following fields are OPTIONAL and MAY be unset: signature.keyid.\"",
+      "verdict": "not_applicable"
+    },
+    {
+      "evidence": "No `sig` field or signature object exists. The nearest field, `verifier_id`, is checked only via `.and_then(Value::as_str).is_some_and(|v| !v.is_empty())` -- a free-form non-empty string, not a decoded cryptographic signature.",
+      "id": "R4-sig-required",
+      "normative_statement": "Each entry in signatures MUST carry a `sig` field (the base64-encoded raw signature bytes).",
+      "spec_citation": "envelope.md :: signature object schema (sig required)",
+      "verdict": "divergent"
+    },
+    {
+      "evidence": "The receipt schema is a flat JSON object (cardinality 11), not an array-bearing envelope; multi-signer / (t,n)-threshold trust is structurally impossible to express.",
+      "id": "R5-signatures-array-multisig",
+      "normative_statement": "signatures MUST be an array, supporting zero or more independent signers over one payload.",
+      "spec_citation": "envelope.md :: \"An envelope MAY have more than one signature.\"",
+      "verdict": "divergent"
+    },
+    {
+      "evidence": "grep of the live evidence-intake region (lines 673-761) for the literal 'DSSEv1' token or a local `fn pae(` finds: False. Zero PAE computation of any kind occurs in this code path.",
+      "id": "R6-pae-construction",
+      "normative_statement": "The signature MUST be computed, and MUST be verified, over the Pre-Authentication Encoding of (payloadType, body) -- never over the raw JSON envelope or the base64 payload string.",
+      "spec_citation": "protocol.md :: PAE(type, body) = \"DSSEv1\" + SP + LEN(type) + SP + type + SP + LEN(body) + SP + body",
+      "verdict": "divergent"
+    },
+    {
+      "evidence": "host_receipt_valid calls verify_dsse: False; calls sign_dsse: False. The predicate instead performs `receipt.get(\"signature_verified\").and_then(Value::as_bool) == Some(true)` -- a boolean-equality check on a value supplied by the caller's own FeatureSnapshot, not a value the module computes. Corroborated by T-04 (evidence/phase0/repairs/T-04/done/t04-adversarial-forgery-done.v1.dsse.json, 2026-08-05): 7/7 forged-DSSE-envelope cases across all 5 named forgery classes were ADMITTED by this predicate while `amphora_core::verify_dsse` correctly rejected the identical forged envelopes.",
+      "id": "R7-verifier-must-decode-and-verify",
+      "normative_statement": "The verifier MUST itself decode SERIALIZED_BODY/PAYLOAD_TYPE/SIGNATURE and cryptographically verify SIGNATURE against the recomputed PAE; acceptance MUST be grounded in that computation, not in an externally supplied claim of having been verified.",
+      "spec_citation": "protocol.md :: Verification procedure steps 1 and 3 (\"Verify SIGNATURE against PAE(...). Reject if the verification fails\")",
+      "verdict": "divergent"
+    },
+    {
+      "evidence": "No base64-encoded or PAE-structured field is present in the receipt schema for a decode step to apply to; the closest checks are JSON type/string-equality tests on already-parsed Value::as_str/as_bool.",
+      "id": "R8-decode-reject-on-failure",
+      "normative_statement": "The verifier MUST reject the envelope if base64/PAE decoding of any field fails.",
+      "spec_citation": "protocol.md :: Verification procedure step 1 (\"Reject if decoding fails\")",
+      "verdict": "not_applicable"
+    },
+    {
+      "evidence": "Trust is granted on a single string-equality test `receipt.get(\"trust_store_status\").and_then(Value::as_str) == Some(\"TRUSTED\")` with no ACCEPTED_KEYS set, no per-signature loop, and no independent trust-store lookup performed by this module -- the value is asserted by the caller-supplied FeatureSnapshot, exactly the pattern V1-REAL-EIV (2026-08-04) showed cannot be honestly reproduced from the repo's own config/phase0-trust-store.v1.json (0/66 real receipts anchor).",
+      "id": "R9-threshold-counts-verified-signatures",
+      "normative_statement": "Any trust decision involving multiple/threshold signers MUST count only signatures whose cryptographic verification independently succeeded, not a self-reported trust flag.",
+      "spec_citation": "protocol.md :: Multi-signature (t,n) verification (\"add successful keys to ACCEPTED_KEYS... reject if the unique keys in ACCEPTED_KEYS is less than t\")",
+      "verdict": "divergent"
+    },
+    {
+      "evidence": "No payload bytes are ever carried through this validation boundary (see R2), so there is no verified-vs-consumed byte pair for this guarantee to hold or violate; it is vacuously inapplicable rather than satisfied.",
+      "id": "R10-byte-identity-guarantee",
+      "normative_statement": "The bytes cryptographically verified MUST be the same bytes the application subsequently consumes (non-detachment guarantee).",
+      "spec_citation": "envelope.md :: \"Implementations MUST ensure that the same payload bytes that are verified are the ones sent to the application layer.\"",
+      "verdict": "not_applicable"
+    },
+    {
+      "evidence": "amphora-core/src/crypto.rs defines DsseEnvelope{payload_type, payload, signatures} (present: True), a PAE builder matching the spec formula (present: True), and verify_dsse() that decodes payload as base64 and verifies each signatures[] entry against the recomputed PAE. It is called 1 time(s) (sign) / 1 time(s) (verify) elsewhere in the SAME file (lines [299, 320]), by the sibling CroProtocolPackage capability, but zero times inside evaluate_evidence_intake/host_receipt_valid.",
+      "id": "R11-conformant-implementation-exists-unused",
+      "normative_statement": "cross-check: does this codebase already ship a spec-conformant DSSE implementation that COULD have been used here?",
+      "spec_citation": "protocol.md + envelope.md :: cross-check (not itself a MUST/SHOULD clause): PAE formula + envelope schema",
+      "verdict": "divergent"
+    }
+  ],
+  "schema": "amphora.evidence-intake-validator.dsse-spec-conformance-diagnostic.v1",
+  "sibling_conformant_implementation": {
+    "call_sites_sign_dsse_line_numbers": [
+      299
+    ],
+    "call_sites_verify_dsse_line_numbers": [
+      320
+    ],
+    "file_sha256": "df2261f8cca8546dbd8e2ece8c956bcfa790b9ca0458544a1ddfb8bbf2b8c444",
+    "has_dsse_envelope_struct": true,
+    "has_pae_builder": true,
+    "path": "amphora-core/src/crypto.rs",
+    "used_by_evidence_intake_predicate": false,
+    "used_elsewhere_in_same_file": true
+  },
+  "summary": {
+    "n_conformant": 0,
+    "n_divergent": 8,
+    "n_not_applicable": 3,
+    "n_requirements": 11
+  }
+}

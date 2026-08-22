@@ -1,0 +1,259 @@
+{
+  "a702b75p1_delta_explanation": {
+    "conclusion": "A702B75P1's larger delta is disclosed approximation noise from class-constant substitution in a bottom-up BOM recompute - a different, honest mechanism - NOT the silent invalid mass-fraction averaging that produced A221's 43.7. Both the receipt value (|60.7-62.0|=1.3pp) and the exact top-down value (|61.748-62.0|=0.252pp) sit inside the +/-2.0pp band.",
+    "decomposition": {
+      "meaning_1": "-0.252pp of the recorded -1.31pp delta is inherent TDS rounding slack: the exact volume-weighted recompute from the TDS's own component data (masses 1000/284 g, densities 1.64/0.95 g/mL, component VS 67.9/49.2%) gives 61.748, not 62.0.",
+      "meaning_2": "The remaining ~-1.048pp is the engine's bottom-up full-BOM recompute using flagged APPROXIMATE class constants for 4 trade-name lines (ancamide_702b75 - the dominant 202 g B-side binder - ancamine_k54, antiterra_u, bentone_sd2), disclosed at generation time in arithmetic_audit.json 'approx' and known_answer_report.json. Corroboration: the same engine run's bottom-up mix density 1.448 g/mL overshoots the exact TDS-derived mix density 1.41300 g/mL by +0.035 (~2.5% total-volume understatement), demonstrating that the approximate constants materially shift computed volumes; the same-order shift on the solids-volume side yields the -1.048pp VS shortfall.",
+      "published_62_0_minus_exact_topdown_pp": 0.252,
+      "residual_engine_vs_topdown_pp": -1.048
+    },
+    "evidence_not_conflated": "The invalid mass-fraction method gives 63.7639 (|63.7639-60.7|=3.0639pp, and on the OPPOSITE side of the published 62.0), so 60.7 is NOT reproducible by the A221 bug mechanism.",
+    "is_mass_basis_conflation": false,
+    "receipt_recorded_delta_pp": -1.31
+  },
+  "corrected_pass_rate": {
+    "a221_corrected_abs_delta_vs_expected_pp": 0.0835,
+    "a702_topdown_abs_delta_vs_expected_pp": 0.252,
+    "aggregate_status_unchanged": "INCOMPLETE",
+    "arithmetic_subset_pass_rate_before": 1.0,
+    "arithmetic_subset_pass_rate_corrected": 1.0,
+    "control_count": 14,
+    "note": "The repair corrects the A221 reference 'actual' from 43.7 (invalid mass-fraction-weighted) to 42.4165 (exact volume-weighted); |42.5-42.4165|=0.0835pp and |62.0-61.748|=0.252pp both sit far inside the +/-2.0pp band, so no VERIFIED_PASS/FAIL bit flips and the arithmetic_subset_6_of_6_pass_rate KPI value (1.0) is numerically unchanged. What changes is the reference values' derivation honesty, not the pass-rate.",
+    "tolerance_band_pp": 2.0,
+    "verified_pass_count_before": 13,
+    "verified_pass_count_corrected": 13
+  },
+  "derivations": {
+    "A221-X70P1": {
+      "correct_volume_weighted_pct": {
+        "exact": "51833/1222",
+        "rounded_4dp": 42.4165
+      },
+      "inputs_from_refuting_receipt_transcription": {
+        "dens_A": "151/100",
+        "dens_B": "23/25",
+        "mass_A": "1000",
+        "mass_B": "200",
+        "published_mix_density": "137/100",
+        "published_mix_vs": "85/2",
+        "published_mix_wt": "129/2",
+        "receipt_actual": "437/10",
+        "vol_pct_A": "46",
+        "vol_pct_B": "63/2",
+        "wt_pct_A": "70",
+        "wt_pct_B": "371/10"
+      },
+      "invalid_mass_fraction_pct": {
+        "exact": "523/12",
+        "rounded_4dp": 43.5833
+      },
+      "solids_vol_mL": {
+        "approx": 373.114,
+        "exact": "1295825/3473"
+      },
+      "total_vol_mL": {
+        "approx": 879.643,
+        "exact": "3055000/3473"
+      },
+      "vol_A_mL": {
+        "approx": 662.2517,
+        "exact": "100000/151"
+      },
+      "vol_B_mL": {
+        "approx": 217.3913,
+        "exact": "5000/23"
+      }
+    },
+    "A702B75P1": {
+      "correct_volume_weighted_pct": {
+        "exact": "642797/10410",
+        "rounded_4dp": 61.748
+      },
+      "inputs_transcribed_from_tds": {
+        "dens_A": "41/25",
+        "dens_B": "19/20",
+        "mass_A": "1000",
+        "mass_B": "284",
+        "published_mix_density": "141/100",
+        "published_mix_vs": "62",
+        "published_mix_wt": "771/10",
+        "receipt_actual": "607/10",
+        "vol_pct_A": "679/10",
+        "vol_pct_B": "246/5",
+        "wt_pct_A": "833/10",
+        "wt_pct_B": "111/2"
+      },
+      "internal_consistency_gates": {
+        "delta": 0.0511,
+        "density_delta": 0.003,
+        "derived_mix_density_g_per_mL": 1.413,
+        "mix_ratio_by_volume_published": 2.0,
+        "mix_ratio_by_volume_recomputed": 2.0397,
+        "mix_ratio_by_weight_published": 3.5,
+        "mix_ratio_by_weight_recomputed": 3.5211,
+        "passes_sanity_gate_abs_lt_0_1pp": true,
+        "published_mix_density_g_per_mL": 1.41,
+        "published_mix_wt_pct_solids": 77.1,
+        "recomputed_mix_wt_pct_solids": 77.1511
+      },
+      "invalid_mass_fraction_pct": {
+        "exact": "102341/1605",
+        "rounded_4dp": 63.7639
+      },
+      "solids_vol_mL": {
+        "approx": 561.1065,
+        "exact": "10927549/19475"
+      },
+      "tds_pdf_sha256": "7b95cd630cf392c87fbd852afea0e6d77591dcdb0d62f6390e5c46ba7d061abe",
+      "total_vol_mL": {
+        "approx": 908.7035,
+        "exact": "707880/779"
+      },
+      "vol_A_mL": {
+        "approx": 609.7561,
+        "exact": "25000/41"
+      },
+      "vol_B_mL": {
+        "approx": 298.9474,
+        "exact": "5680/19"
+      }
+    }
+  },
+  "method_statement": "For every control in control_by_control_receipt.v1.json carrying a volume-solids semantic, the mix volume-solids % was recomputed BOTH ways with exact rational arithmetic (fractions.Fraction, floats only at final 4dp rounding): (1) CORRECT volume-weighted: total solids volume / total mix volume * 100, component volume = mass/density - the only valid way to combine volume-basis percentages of components with different densities; (2) INVALID mass-fraction-weighted: sum(mass_fraction_i * vol_pct_i) - valid only if all densities are equal (false in both controls: 1.51 vs 0.92 and 1.64 vs 0.95 g/mL). A control is flagged as conflated when its receipt 'actual' lies within 0.2pp of method (2) but not method (1) - the same 'closely reproduces' band the refuting receipt used.",
+  "reattack_observed_results": {
+    "abs_gap_corrected_vs_invalid_pp": 1.1668,
+    "check_rerun": "falsification criterion of evidence/audit/arith-volume-solids-mass-basis-conflation-v1 receipt.v1.dsse.json, applied to the corrected value",
+    "correct_method_reproduces_published_42_5_within_0_2pp": true,
+    "corrected_a221_equals_refuting_recompute_to_4dp": true,
+    "corrected_actual_not_reproducible_by_invalid_method": true,
+    "internal_consistency_gate_replicated": {
+      "delta": 0.0167,
+      "passes_abs_lt_0_1pp": true,
+      "published": 64.5,
+      "recomputed_mix_wt_pct_solids": 64.5167
+    },
+    "invalid_method_still_reproduces_old_actual_43_7_within_0_2pp": true,
+    "sweep_covers_every_volume_solids_control": true,
+    "volume_solids_controls_swept": 2,
+    "volume_solids_controls_total": 2
+  },
+  "repair_item": "R-A05",
+  "repair_mode": "interactive-2026-08-03",
+  "schema": "amphora.known-answer.volume-solids-sweep-repair-report.v1",
+  "sweep_table_non_volume_solids": [
+    {
+      "control_id": "ARITH-A221-X70P1-DENSITY",
+      "reason": "no volume-solids semantic",
+      "semantic": "density",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "ARITH-A702B75P1-DENSITY",
+      "reason": "no volume-solids semantic",
+      "semantic": "density",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "ARITH-MIL-F160-COMPONENT-A-DENSITY",
+      "reason": "no volume-solids semantic",
+      "semantic": "density",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "ARITH-MIL-F160-COMPONENT-B-DENSITY",
+      "reason": "no volume-solids semantic",
+      "semantic": "density",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "F160-BLACK",
+      "reason": "no volume-solids semantic",
+      "semantic": "exact_status",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "F161-YELLOW",
+      "reason": "no volume-solids semantic",
+      "semantic": "exact_status",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "EVONIK-SPF-A702B75P1",
+      "reason": "no volume-solids semantic",
+      "semantic": "exact_status",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "NCP-TYPE-IV-ANCHOR",
+      "reason": "no volume-solids semantic",
+      "semantic": "exact_status",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "INTL-F150-ANCHOR",
+      "reason": "no volume-solids semantic",
+      "semantic": "exact_status",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "NEG-CONTROL-1",
+      "reason": "no volume-solids semantic",
+      "semantic": "exact_status",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "NEG-CONTROL-2",
+      "reason": "no volume-solids semantic",
+      "semantic": "exact_status",
+      "swept": false,
+      "volume_solids_semantic": false
+    },
+    {
+      "control_id": "NEG-CONTROL-3",
+      "reason": "no volume-solids semantic",
+      "semantic": "exact_status",
+      "swept": false,
+      "volume_solids_semantic": false
+    }
+  ],
+  "sweep_table_volume_solids": [
+    {
+      "abs_delta_receipt_actual_vs_correct_pp": 1.2835,
+      "abs_delta_receipt_actual_vs_invalid_pp": 0.1167,
+      "control_id": "ARITH-A221-X70P1-VOLUME-SOLIDS",
+      "correct_reproduces_published_within_0_3pp": true,
+      "correct_volume_weighted": 42.4165,
+      "invalid_mass_fraction_weighted": 43.5833,
+      "receipt_actual": 43.7,
+      "receipt_actual_matches_correct_within_0_2pp": false,
+      "receipt_actual_matches_invalid_within_0_2pp": true,
+      "receipt_expected": 42.5,
+      "semantic": "volume_solids_pct",
+      "verdict": "MASS_BASIS_CONFLATION_CONFIRMED"
+    },
+    {
+      "abs_delta_receipt_actual_vs_correct_pp": 1.048,
+      "abs_delta_receipt_actual_vs_invalid_pp": 3.0639,
+      "control_id": "ARITH-A702B75P1-VOLUME-SOLIDS",
+      "correct_reproduces_published_within_0_3pp": true,
+      "correct_volume_weighted": 61.748,
+      "invalid_mass_fraction_weighted": 63.7639,
+      "receipt_actual": 60.7,
+      "receipt_actual_matches_correct_within_0_2pp": false,
+      "receipt_actual_matches_invalid_within_0_2pp": false,
+      "receipt_expected": 62.0,
+      "semantic": "volume_solids_pct",
+      "verdict": "NOT_MASS_BASIS_CONFLATED"
+    }
+  ]
+}

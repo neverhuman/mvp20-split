@@ -1,0 +1,454 @@
+{
+  "does_not": [
+    "does NOT promote amphora-molecule-property (or any module) to PHASE_0 or change scientific_readiness",
+    "does NOT modify any of the 66 signed receipts or the receipts manifest",
+    "does NOT assert organizational independence or perform human review",
+    "does NOT claim a blend flash-off curve or a fitted (circular) Tb correction",
+    "does NOT perform PHASE0_EVALUATOR / PHASE0_INTERNAL_REVIEWER signing (AUDIT_ONLY key custody only)"
+  ],
+  "honest_limitations": [
+    "Pure-component Tb at 1 atm; a real coating solvent BLEND evaporates non-ideally (Raoult/activity + boundary-layer effects) -- Tb gives the pure-component ordering, not the true blend flash-off curve (a Phase-1 activity-coefficient extension).",
+    "methanol is out-of-domain (first-order groups miss strong C1-alcohol self-association).",
+    "ethanol and n-heptane reported as honest boundary cases (~3-4% under-prediction).",
+    "Joback first-order Tb degrades for large / highly-functional molecules (Tb>~500 K); all panel solvents are small and well inside Joback's validated range.",
+    "Relative-evaporation-rate CLASS (ASTM D3539, nBuAc=100) is monotone in Tb for these non-associating solvents but not linearly; only the ORDER is claimed, via Spearman.",
+    "Evaporation-order is near-perfect but NOT perfect: the few rank inversions all occur between solvents boiling within a small Tb gap (see kpis.max_inversion_tb_gap_K and discordant_pairs) -- i.e. solvents that are operationally the same volatility class."
+  ],
+  "kpis": {
+    "core_domain_definition": "aromatic, aliphatic, cyclic, C3+ alcohol, ketone, ester, cyclic-ketone chemistries; excludes methanol (strongly self-associating C1 alcohol, declared out-of-domain a priori)",
+    "core_lift_over_mean_null_pct": 76.9826,
+    "core_strict_tb_MAPE_pct": 1.1831,
+    "core_tb_MAPE_pct": 1.448,
+    "core_tb_RMSE_K": 6.5395,
+    "core_tb_max_abs_pct_err": 3.9552,
+    "core_tb_max_abs_pct_err_solvent": "ethanol",
+    "core_within_3pct": "16/18",
+    "core_within_5pct": "18/18",
+    "discordant_pairs": [
+      {
+        "delta_tb_exp_K": 1.22,
+        "higher_boiler": "n-heptane",
+        "lower_boiler": "1-propanol"
+      },
+      {
+        "delta_tb_exp_K": 1.22,
+        "higher_boiler": "1-butanol",
+        "lower_boiler": "mibk"
+      },
+      {
+        "delta_tb_exp_K": 1.23,
+        "higher_boiler": "ethanol",
+        "lower_boiler": "ethyl-acetate"
+      },
+      {
+        "delta_tb_exp_K": 1.54,
+        "higher_boiler": "2-propanol",
+        "lower_boiler": "cyclohexane"
+      },
+      {
+        "delta_tb_exp_K": 2.58,
+        "higher_boiler": "mek",
+        "lower_boiler": "ethyl-acetate"
+      },
+      {
+        "delta_tb_exp_K": 7.12,
+        "higher_boiler": "1-butanol",
+        "lower_boiler": "toluene"
+      },
+      {
+        "delta_tb_exp_K": 8.5,
+        "higher_boiler": "methanol",
+        "lower_boiler": "acetone"
+      },
+      {
+        "delta_tb_exp_K": 16.16,
+        "higher_boiler": "n-heptane",
+        "lower_boiler": "2-propanol"
+      },
+      {
+        "delta_tb_exp_K": 16.48,
+        "higher_boiler": "1-propanol",
+        "lower_boiler": "cyclohexane"
+      },
+      {
+        "delta_tb_exp_K": 17.7,
+        "higher_boiler": "n-heptane",
+        "lower_boiler": "cyclohexane"
+      }
+    ],
+    "max_inversion_tb_gap_K": 17.7,
+    "n_core_and_boundary": 18,
+    "n_core_strict": 16,
+    "n_discordant_pairs": 10,
+    "n_total_pairs": 171,
+    "null_mean_tb_RMSE_K": 28.4113,
+    "per_family_tb_MAPE_pct": {
+      "alcohol": 2.4647,
+      "aliphatic": 2.3205,
+      "aromatic": 0.7367,
+      "cyclic": 2.0431,
+      "ester": 0.6315,
+      "ketone": 1.1434
+    },
+    "spearman_evap_order_all_modeled": 0.970175,
+    "spearman_evap_order_core": 0.966976,
+    "systematic_bias_note": "Joback first-order Tb is known to under-predict slightly for n-alkanes and small H-bonding alcohols; reported, not corrected (a fitted correction would break non-circularity)."
+  },
+  "n_solvents_group_modeled": 19,
+  "n_solvents_total": 19,
+  "per_solvent": [
+    {
+      "M_g_mol": 74.12,
+      "abs_pct_err": 1.9367,
+      "domain": "CORE",
+      "err_K": -7.57,
+      "family": "alcohol",
+      "id": "1-butanol",
+      "n_groups": 5,
+      "rho_20C_g_cm3": 0.8098,
+      "smiles": "CCCCO",
+      "tb_exp_K": 390.87,
+      "tb_pred_K": 383.3
+    },
+    {
+      "M_g_mol": 60.1,
+      "abs_pct_err": 2.6812,
+      "domain": "CORE",
+      "err_K": -9.93,
+      "family": "alcohol",
+      "id": "1-propanol",
+      "n_groups": 4,
+      "rho_20C_g_cm3": 0.8035,
+      "smiles": "CCCO",
+      "tb_exp_K": 370.35,
+      "tb_pred_K": 360.42
+    },
+    {
+      "M_g_mol": 60.1,
+      "abs_pct_err": 1.2858,
+      "domain": "CORE",
+      "err_K": 4.57,
+      "family": "alcohol",
+      "id": "2-propanol",
+      "n_groups": 4,
+      "rho_20C_g_cm3": 0.7855,
+      "smiles": "CC(O)C",
+      "tb_exp_K": 355.41,
+      "tb_pred_K": 359.98
+    },
+    {
+      "M_g_mol": 58.08,
+      "abs_pct_err": 2.1537,
+      "domain": "CORE",
+      "err_K": -7.09,
+      "family": "ketone",
+      "id": "acetone",
+      "n_groups": 3,
+      "rho_20C_g_cm3": 0.7845,
+      "smiles": "CC(=O)C",
+      "tb_exp_K": 329.2,
+      "tb_pred_K": 322.11
+    },
+    {
+      "M_g_mol": 78.11,
+      "abs_pct_err": 1.5117,
+      "domain": "CORE",
+      "err_K": 5.34,
+      "family": "aromatic",
+      "id": "benzene",
+      "n_groups": 6,
+      "rho_20C_g_cm3": 0.8765,
+      "smiles": "c1ccccc1",
+      "tb_exp_K": 353.24,
+      "tb_pred_K": 358.58
+    },
+    {
+      "M_g_mol": 84.16,
+      "abs_pct_err": 2.0431,
+      "domain": "CORE",
+      "err_K": 7.23,
+      "family": "cyclic",
+      "id": "cyclohexane",
+      "n_groups": 6,
+      "rho_20C_g_cm3": 0.7785,
+      "smiles": "C1CCCCC1",
+      "tb_exp_K": 353.87,
+      "tb_pred_K": 361.1
+    },
+    {
+      "M_g_mol": 98.14,
+      "abs_pct_err": 0.0397,
+      "domain": "CORE",
+      "err_K": 0.17,
+      "family": "ketone",
+      "id": "cyclohexanone",
+      "n_groups": 6,
+      "rho_20C_g_cm3": 0.9478,
+      "smiles": "O=C1CCCCC1",
+      "tb_exp_K": 428.75,
+      "tb_pred_K": 428.92
+    },
+    {
+      "M_g_mol": 46.07,
+      "abs_pct_err": 3.9552,
+      "domain": "BOUNDARY",
+      "err_K": -13.9,
+      "family": "alcohol",
+      "id": "ethanol",
+      "n_groups": 3,
+      "rho_20C_g_cm3": 0.7893,
+      "smiles": "CCO",
+      "tb_exp_K": 351.44,
+      "tb_pred_K": 337.54
+    },
+    {
+      "M_g_mol": 88.11,
+      "abs_pct_err": 0.2484,
+      "domain": "CORE",
+      "err_K": -0.87,
+      "family": "ester",
+      "id": "ethyl-acetate",
+      "n_groups": 4,
+      "rho_20C_g_cm3": 0.9006,
+      "smiles": "CCOC(=O)C",
+      "tb_exp_K": 350.21,
+      "tb_pred_K": 349.34
+    },
+    {
+      "M_g_mol": 106.17,
+      "abs_pct_err": 0.0073,
+      "domain": "CORE",
+      "err_K": -0.03,
+      "family": "aromatic",
+      "id": "ethylbenzene",
+      "n_groups": 8,
+      "rho_20C_g_cm3": 0.867,
+      "smiles": "CCc1ccccc1",
+      "tb_exp_K": 409.35,
+      "tb_pred_K": 409.32
+    },
+    {
+      "M_g_mol": 72.11,
+      "abs_pct_err": 2.2109,
+      "domain": "CORE",
+      "err_K": -7.8,
+      "family": "ketone",
+      "id": "mek",
+      "n_groups": 4,
+      "rho_20C_g_cm3": 0.8054,
+      "smiles": "CCC(=O)C",
+      "tb_exp_K": 352.79,
+      "tb_pred_K": 344.99
+    },
+    {
+      "M_g_mol": 32.04,
+      "abs_pct_err": 6.8226,
+      "domain": "OUT_OF_DOMAIN",
+      "err_K": -23.04,
+      "family": "alcohol",
+      "id": "methanol",
+      "n_groups": 2,
+      "rho_20C_g_cm3": 0.7914,
+      "smiles": "CO",
+      "tb_exp_K": 337.7,
+      "tb_pred_K": 314.66
+    },
+    {
+      "M_g_mol": 100.16,
+      "abs_pct_err": 0.1694,
+      "domain": "CORE",
+      "err_K": 0.66,
+      "family": "ketone",
+      "id": "mibk",
+      "n_groups": 6,
+      "rho_20C_g_cm3": 0.7965,
+      "smiles": "CC(=O)CC(C)C",
+      "tb_exp_K": 389.65,
+      "tb_pred_K": 390.31
+    },
+    {
+      "M_g_mol": 116.16,
+      "abs_pct_err": 1.0147,
+      "domain": "CORE",
+      "err_K": -4.05,
+      "family": "ester",
+      "id": "n-butyl-acetate",
+      "n_groups": 6,
+      "rho_20C_g_cm3": 0.8825,
+      "smiles": "CCCCOC(=O)C",
+      "tb_exp_K": 399.15,
+      "tb_pred_K": 395.1
+    },
+    {
+      "M_g_mol": 100.2,
+      "abs_pct_err": 3.1784,
+      "domain": "BOUNDARY",
+      "err_K": -11.81,
+      "family": "aliphatic",
+      "id": "n-heptane",
+      "n_groups": 7,
+      "rho_20C_g_cm3": 0.6838,
+      "smiles": "CCCCCCC",
+      "tb_exp_K": 371.57,
+      "tb_pred_K": 359.76
+    },
+    {
+      "M_g_mol": 86.18,
+      "abs_pct_err": 1.4625,
+      "domain": "CORE",
+      "err_K": -5.0,
+      "family": "aliphatic",
+      "id": "n-hexane",
+      "n_groups": 6,
+      "rho_20C_g_cm3": 0.6606,
+      "smiles": "CCCCCC",
+      "tb_exp_K": 341.88,
+      "tb_pred_K": 336.88
+    },
+    {
+      "M_g_mol": 106.17,
+      "abs_pct_err": 0.7855,
+      "domain": "CORE",
+      "err_K": -3.28,
+      "family": "aromatic",
+      "id": "o-xylene",
+      "n_groups": 8,
+      "rho_20C_g_cm3": 0.8802,
+      "smiles": "Cc1ccccc1C",
+      "tb_exp_K": 417.58,
+      "tb_pred_K": 414.3
+    },
+    {
+      "M_g_mol": 106.17,
+      "abs_pct_err": 0.678,
+      "domain": "CORE",
+      "err_K": 2.79,
+      "family": "aromatic",
+      "id": "p-xylene",
+      "n_groups": 8,
+      "rho_20C_g_cm3": 0.8611,
+      "smiles": "Cc1ccc(C)cc1",
+      "tb_exp_K": 411.51,
+      "tb_pred_K": 414.3
+    },
+    {
+      "M_g_mol": 92.14,
+      "abs_pct_err": 0.701,
+      "domain": "CORE",
+      "err_K": 2.69,
+      "family": "aromatic",
+      "id": "toluene",
+      "n_groups": 7,
+      "rho_20C_g_cm3": 0.8669,
+      "smiles": "Cc1ccccc1",
+      "tb_exp_K": 383.75,
+      "tb_pred_K": 386.44
+    }
+  ],
+  "phase0_reconciliation_redteam": {
+    "by_scientific_readiness": {
+      "LOCKED_INTERNAL": 4,
+      "NOT_APPLICABLE": 13
+    },
+    "externally_validated_science_modules": [
+      "amphora-solvency-score"
+    ],
+    "honest_reading": "PHASE_0 here = a reproducibility+rights+independence GOVERNANCE lock, NOT scientific validation. NOT_APPLICABLE-readiness modules are governance/infrastructure; LOCKED_INTERNAL modules passed an INTERNAL known-answer only. ZERO modules carry scientific_readiness=VALIDATED. Exactly ONE module (amphora-solvency-score) has any EXTERNAL-data predictive validation behind it. 'FULL Phase-0' is an engineering/governance milestone, never a count of validated coating science. This audit does NOT change that count.",
+    "n_externally_validated_science": 1,
+    "n_modules_labelled_phase0_in_live_frontmatter": 17,
+    "phase0_modules": [
+      {
+        "module": "amphora-candidate-contract",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-cro-protocol-packager",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-envelope-gates",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-evidence-intake-validator",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-formulation-arithmetic",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-formulation-universe",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-known-answer-benchmarks",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-model-card-authority",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-molecule-design-gate",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-optimizer-orchestrator",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-process-qc-twin",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-redteam-audit",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-report-packager",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-run-provenance",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-solvency-score",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-source-ledger",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-tolerance-robustness",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      }
+    ]
+  },
+  "rights": {
+    "ground_truth_data": "NIST Chemistry WebBook -- U.S. Government work, public domain",
+    "in_scope": "marine two-part epoxy-amine coating thinner / co-solvent chemistries (xylenes, MEK, MIBK, n-butyl acetate, n-butanol, IPA, ...); no adjacent-industry data",
+    "physical_constants": "M, rho are tabulated CRC/NIST facts (non-copyrightable)",
+    "predictor_method": "Joback group contribution -- published theory, freely usable",
+    "rights_gate_passed": true
+  },
+  "schema": "amphora.redteam-audit.joback-boiling-point-volatility-ccby-v1.diagnostic.v1",
+  "target_capability": "a-priori normal boiling point Tb / solvent-volatility ordering for VOC + evaporation-balance solvent-blend design; the volatility companion to the anchored Hildebrand/Hansen delta solubility axis feeding amphora-solvency-score",
+  "target_module": "amphora-molecule-property",
+  "theory": {
+    "ground_truth": "NIST Chemistry WebBook experimental normal boiling points (public domain)",
+    "non_circularity": "Joback tbk_i are universal published constants NOT fitted to this panel; ground-truth Tb are independent experimental measurements. No parameter is tuned on the validation set.",
+    "operational_kpi": "Spearman rank correlation of predicted vs experimental Tb = fidelity of the fast/medium/slow evaporation ORDER a blend is actually designed on (monotone in Tb for these solvents)",
+    "predictor": "Joback & Reid 1987 first-order group contribution: Tb = 198.2 K + sum_i n_i tbk_i",
+    "predictor_citation": "Joback & Reid, Chem. Eng. Commun. 1987, 57, 233; Poling/Prausnitz/O'Connell, Properties of Gases and Liquids 5th ed., Table C-1",
+    "trust_guard": "every hand-encoded Joback group multiset is formula-checked against RDKit (C,H,O) -- a miscount cannot pass"
+  },
+  "verdict": {
+    "authority": "AUDIT_ONLY -- graded domain-of-applicability study, NOT a Phase-0 gate",
+    "gate_logic": "core_tb_MAPE<=2.5% AND 100% within +-5% AND lift>=60% AND spearman(core evap-order)>=0.95 (conservative: gated on the core set, not the more-favourable all-modeled set)",
+    "gate_passed": true,
+    "graded_outcome": "VALIDATED_IN_DOMAIN"
+  }
+}

@@ -1,0 +1,383 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": "amphora-known-answer-benchmarks/reference/mvp20/out/arithmetic_audit.json",
+      "artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "authority": "NO_PROMOTION_INFERRED",
+      "benchmark_id": "amphora-known-answer-benchmarks-checked-current",
+      "observations": [
+        {
+          "json_path": "n_formulas",
+          "value": 4
+        },
+        {
+          "json_path": "n_checks",
+          "value": 6
+        },
+        {
+          "json_path": "n_pass",
+          "value": 6
+        }
+      ],
+      "reported_result_status": null,
+      "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-known-answer-benchmarks-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "formulation"
+  ],
+  "ceilings": {
+    "authority_tier": "LIMITED_SANITY",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "DISABLED"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": false,
+    "checked_artifact_count": 7,
+    "checked_benchmark_status": "CHECKED_ARTIFACT_REPORTED_METRICS",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "BLOCKED",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "LOCKED_INTERNAL"
+  },
+  "datasets": [
+    {
+      "dataset_id": "amphora-known-answer-benchmarks/reference/mvp20/locks/bigsoldb_solubility-879f55f39db977e2.json",
+      "hash": "ba524f1ebc0098e654d32b27ecdb64a82bef284a43ee9248c3a34042b02fd920",
+      "path": "amphora-known-answer-benchmarks/reference/mvp20/locks/bigsoldb_solubility-879f55f39db977e2.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/data/feedback_v1/dataset_context.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "8baa9906a2124ccefde35acf1a886ab807215ed2a948de22d14b245a8deb0a81"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/out/arithmetic_audit.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/out/feedback_v1_aggregate_report.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "7f2c8b7e6ec48152d395d4e1fa540e1ccf4c5ccf60d41ef08c7982396db228f7"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/out/feedback_v1_dataset_benchmark_report.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "0543c15114f7092b4e50ecee377979ee239ced3eaf6dcc7e2a8671c057dfb7cb"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/out/known_answer_report.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "8ad390291d012c2adfcb707dfbb84c151d1748a81fdd3d5109116abd4072c1e3"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/out/known_reference_cards.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/out/mil_recovery.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "99aec4b8279e0215a7b3ff36f6570cc12eae1c42731622ed7a3857acf6bb077d"
+      },
+      {
+        "kind": "evaluation_receipt",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json",
+        "rights": {
+          "evidence_path": "amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json",
+          "gap": "One historical control remains UNVERIFIED; the arithmetic subset is 6/6 only.",
+          "status": "KNOWN"
+        },
+        "sha256": "be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": "amphora-known-answer-benchmarks/reference/mvp20/out/arithmetic_audit.json",
+      "artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "gap": "The observations are transcribed checked-artifact fields, not an independent validation or promotion conclusion.",
+      "observations": [
+        {
+          "json_path": "n_formulas",
+          "value": 4
+        },
+        {
+          "json_path": "n_checks",
+          "value": 6
+        },
+        {
+          "json_path": "n_pass",
+          "value": 6
+        }
+      ],
+      "reported_result_status": null,
+      "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+    },
+    "external_dependencies": [
+      "Independent reference calculations and controlled standard-method cases"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-assurance-capabilities/src/lib.rs",
+      "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+      "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+    },
+    "known_contradictions": [
+      "Known-answer recovery is limited sanity evidence and is not an independent performance benchmark or candidate validation."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-assurance-capabilities/src/lib.rs",
+      "scenario": "Validate the checked known-answer fixture as a limited-sanity ScoreEnvelope.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-known-answer-benchmarks",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": null,
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-known-answer-benchmarks-example",
+      "candidate_type": "formulation",
+      "formulation": {
+        "application": {
+          "dft_mil": 5.0,
+          "relative_humidity_pct": 50.0,
+          "substrate": "steel",
+          "surface_preparation": "declared",
+          "temperature_C": 25.0
+        },
+        "basis": "mass_g_per_batch",
+        "batch_mass_g": 137.13,
+        "ingredient_catalog_version": "facts.v2",
+        "process": {
+          "application_method": null,
+          "induction_time_min": null,
+          "mix_order": null,
+          "pot_age_h": 0.0
+        },
+        "recipe": {
+          "part_A": {
+            "dgeba_828": {
+              "ingredient_id": "dgeba_828",
+              "mass_g": 100.0
+            }
+          },
+          "part_B": {
+            "ancamide_350a": {
+              "ingredient_id": "ancamide_350a",
+              "mass_g": 37.13
+            }
+          }
+        }
+      }
+    },
+    "current_output": {
+      "authority_tier": "LIMITED_SANITY",
+      "candidate_id": "amphora-known-answer-benchmarks-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {},
+      "metrics": {
+        "known_answer_pass_rate": null,
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "known-answer pass rate",
+          "model_authority": "LIMITED_SANITY",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        }
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-known-answer-benchmarks",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "known-answer pass rate",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1.",
+      "unit": "declared by locked benchmark",
+      "value_path": "metrics.known_answer_pass_rate"
+    }
+  ],
+  "lane": "infrastructure",
+  "module_id": "amphora-known-answer-benchmarks",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "metrics.known_answer_pass_rate",
+    "non_blocking_claim_locks": [
+      "feedback_v1_benchmarks_do_not_validate_candidate_performance",
+      "known_answers_do_not_validate_candidate_performance",
+      "negative_controls_must_reject"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 4,
+      "decision_value": 4,
+      "downstream_leverage": 5,
+      "effort": 2,
+      "evidence_gap": 3,
+      "external_delay": 0
+    },
+    "ladder": "infrastructure_assurance",
+    "p0_override": false,
+    "rank": 8,
+    "score": 37
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

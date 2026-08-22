@@ -1,0 +1,13 @@
+{
+  "campaign_item_id": "V-A07v2",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260811T190001-18332-7aa59dc1f740",
+      "date": "2026-08-11",
+      "outcome": "CLAIM_SURVIVED",
+      "done_receipt": "amphora-molecule-novelty/evidence/phase0/repairs/V-A07v2/done/v-a07v2-done-receipt.v1.dsse.json",
+      "summary": "6th independent IPDA re-derivation + fresh 20-cell four-family table reimplementation: 0 undisclosed flips vs R-A07v2 shipped table. NEW attack surface: InChIKey mobile-H tautomer/notation collision audit of the 350-structure corpus found 2 undisclosed duplicate structures (atom-mapped-wildcard cap() bug), materiality-checked on truthful 348-structure corpus: 0 cells flip. Positive control (planted lactam/lactim InChIKey collision) fires correctly."
+    }
+  ]
+}

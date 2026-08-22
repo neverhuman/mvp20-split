@@ -1,0 +1,263 @@
+{
+  "cases": [
+    {
+      "case_id": "BASELINE_VALID",
+      "description": "genuine host facts, finite positive mass and ratio",
+      "front_door_recompute": {
+        "n_e_matches_struct_epoxide_equivalents": true,
+        "n_e_recompute_from_resin_mass_and_eew": 0.5882352941176471,
+        "phr_matches_struct_theoretical_hardener_phr": true,
+        "phr_recompute_from_masses": 12.11764705882353
+      },
+      "result": {
+        "ahew_g_per_eq": 20.6,
+        "amine_hydrogen_equivalents": 0.5882352941176471,
+        "candidate_property_overrides_accepted_flag": false,
+        "eew_g_per_eq": 170.0,
+        "epoxide_equivalents_n_e": 0.5882352941176471,
+        "hardener_mass_g": 12.11764705882353,
+        "outcome": "OK_SCALAR_RETURNED",
+        "theoretical_hardener_phr": 12.11764705882353,
+        "total_mass_g": 112.11764705882354
+      }
+    },
+    {
+      "case_id": "NON_FINITE_MASS_0",
+      "description": "resin_mass_g = NaN",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_MASS_1",
+      "description": "resin_mass_g = inf",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_MASS_2",
+      "description": "resin_mass_g = -inf",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_MASS_3",
+      "description": "resin_mass_g = 0.0",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_MASS_4",
+      "description": "resin_mass_g = -1.0",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_OR_NONPOSITIVE_RATIO_0",
+      "description": "equivalent_ratio = NaN",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_OR_NONPOSITIVE_RATIO_1",
+      "description": "equivalent_ratio = inf",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_OR_NONPOSITIVE_RATIO_2",
+      "description": "equivalent_ratio = -inf",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_OR_NONPOSITIVE_RATIO_3",
+      "description": "equivalent_ratio = 0.0",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_OR_NONPOSITIVE_RATIO_4",
+      "description": "equivalent_ratio = -1.0",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "NON_FINITE_OR_NONPOSITIVE_RATIO_5",
+      "description": "equivalent_ratio = -0.0001",
+      "expected": "ERR_FAILED_CLOSED (InvalidQuantity)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "InvalidQuantity",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "ZERO_GROUP_RESIN_NO_OXIRANE",
+      "description": "resin has oxirane_ring_count = 0",
+      "expected": "ERR_FAILED_CLOSED (NoOxirane)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "NoOxirane",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "ZERO_GROUP_HARDENER_NO_AMINE_H",
+      "description": "hardener has reactive_amine_hydrogen_count = 0",
+      "expected": "ERR_FAILED_CLOSED (NoReactiveAmineHydrogen)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "NoReactiveAmineHydrogen",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "case_id": "ZERO_GROUP_BOTH",
+      "description": "both molecules zero-group (no oxirane, no amine H)",
+      "expected": "ERR_FAILED_CLOSED (NoOxirane, checked first)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "NoOxirane",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    },
+    {
+      "both_accepted_as_distinct_valid_scalars": true,
+      "case_id": "INVERTED_RATIO_RECIPROCAL",
+      "description": "ratio=2.0 vs its reciprocal ratio=0.5: both are finite positive scalars with no way for pure arithmetic to know which the caller 'meant'",
+      "note": "this is correct, intended behavior: equivalent_ratio is a caller-chosen stoichiometry input, not a value the function can validate the direction of. NOT counted as a refutation on its own.",
+      "result_ratio_0_5_reciprocal": {
+        "ahew_g_per_eq": 20.6,
+        "amine_hydrogen_equivalents": 1.1764705882352942,
+        "candidate_property_overrides_accepted_flag": false,
+        "eew_g_per_eq": 170.0,
+        "epoxide_equivalents_n_e": 0.5882352941176471,
+        "hardener_mass_g": 24.23529411764706,
+        "outcome": "OK_SCALAR_RETURNED",
+        "theoretical_hardener_phr": 24.23529411764706,
+        "total_mass_g": 124.23529411764706
+      },
+      "result_ratio_2_0": {
+        "ahew_g_per_eq": 20.6,
+        "amine_hydrogen_equivalents": 0.29411764705882354,
+        "candidate_property_overrides_accepted_flag": false,
+        "eew_g_per_eq": 170.0,
+        "epoxide_equivalents_n_e": 0.5882352941176471,
+        "hardener_mass_g": 6.058823529411765,
+        "outcome": "OK_SCALAR_RETURNED",
+        "theoretical_hardener_phr": 6.058823529411765,
+        "total_mass_g": 106.05882352941177
+      }
+    },
+    {
+      "both_role_assignments_accepted_ok": true,
+      "case_id": "ROLE_INVERSION_DUAL_ROLE_MOLECULES",
+      "description": "two structurally-amphoteric (dual_role=true) molecules, called as from_host_facts(A,B,..) then from_host_facts(B,A,..): the function has no check beyond raw group-count presence, so an inverted resin/hardener role assignment is silently accepted for ambiguous inputs rather than flagged",
+      "produce_different_scalars_silently": true,
+      "result_A_as_resin_B_as_hardener": {
+        "ahew_g_per_eq": 54.666666666666664,
+        "amine_hydrogen_equivalents": 0.6666666666666666,
+        "candidate_property_overrides_accepted_flag": false,
+        "eew_g_per_eq": 150.0,
+        "epoxide_equivalents_n_e": 0.6666666666666666,
+        "hardener_mass_g": 36.44444444444444,
+        "outcome": "OK_SCALAR_RETURNED",
+        "theoretical_hardener_phr": 36.44444444444444,
+        "total_mass_g": 136.44444444444446
+      },
+      "result_B_as_resin_A_as_hardener_role_inverted": {
+        "ahew_g_per_eq": 75.0,
+        "amine_hydrogen_equivalents": 0.6097560975609756,
+        "candidate_property_overrides_accepted_flag": false,
+        "eew_g_per_eq": 164.0,
+        "epoxide_equivalents_n_e": 0.6097560975609756,
+        "hardener_mass_g": 45.73170731707317,
+        "outcome": "OK_SCALAR_RETURNED",
+        "theoretical_hardener_phr": 45.731707317073166,
+        "total_mass_g": 145.7317073170732
+      }
+    },
+    {
+      "REFUTATION_OBSERVATION_injected_constant_entered_balance": true,
+      "case_id": "CANDIDATE_SUPPLIED_CONSTANT_INJECTION",
+      "description": "hand-fabricated MoleculeFactsV1 (never touched RDKit; average_molecular_weight_g_mol=1.0, oxirane_ring_count=999 chosen arbitrarily) deserialized from raw JSON using only the two PUBLIC constants REACTIVE_ONTOLOGY_VERSION and REQUIRED_RDKIT_VERSION, then passed as the resin argument to from_host_facts",
+      "fabricated_eew_g_per_eq_expected_if_accepted": 0.001001001001001001,
+      "fabricated_facts_sha256_marker": "not_computed_by_any_toolkit",
+      "fabricated_json_deserialized_ok": true,
+      "result": {
+        "ahew_g_per_eq": 20.6,
+        "amine_hydrogen_equivalents": 99900.0,
+        "candidate_property_overrides_accepted_flag": false,
+        "eew_g_per_eq": 0.001001001001001001,
+        "epoxide_equivalents_n_e": 99900.0,
+        "hardener_mass_g": 2057940.0000000002,
+        "outcome": "OK_SCALAR_RETURNED",
+        "theoretical_hardener_phr": 2057940.0000000002,
+        "total_mass_g": 2058040.0000000002
+      }
+    },
+    {
+      "case_id": "NEGATIVE_CONTROL_WRONG_TOOLKIT_STRING",
+      "description": "same fabrication, but detected_version does not match the pinned public constant — this IS correctly rejected, showing the string-equality gate is real and this is not a trivially-broken function, only an insufficiently-authenticated one",
+      "expected": "ERR_FAILED_CLOSED (Toolkit)",
+      "matches_expected": true,
+      "result": {
+        "error_variant": "Toolkit",
+        "outcome": "ERR_FAILED_CLOSED"
+      }
+    }
+  ],
+  "directive_ref": {
+    "doc": "AMPHORA-DIRECTIVE-2026-08-05",
+    "item_id": "T2-05",
+    "section": "A.1"
+  },
+  "module": "amphora-formulation-arithmetic",
+  "non_finite_and_zero_group_axes_all_failed_closed": true,
+  "refutation_criterion_verbatim": "Any candidate-supplied constant enters the balance, or an inverted/non-finite case returns a scalar instead of failing closed.",
+  "refutation_observation_occurred": true,
+  "schema": "amphora.formulation-arithmetic.t05-equivalent-balance-attack.v1",
+  "target_function": "amphora_formulation_capabilities::EquivalentBalanceV1::from_host_facts",
+  "target_source_path": "amphora-formulation-capabilities/src/lib.rs",
+  "verdict": "CLAIM_REFUTED"
+}

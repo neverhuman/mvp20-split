@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "RIGHTS_QUALIFIED_EVIDENCE",
+  "missing_values_imputed": false,
+  "module_id": "amphora-design-rule-score",
+  "rights_gate_passed": true,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "562a0bb085e3c8c61a3c2504610c03d01f81e5380bb88848f711f8c3f87e17d3"
+}

@@ -1,0 +1,29 @@
+{
+  "archive_root": "evidence/superseded/supersession-4f44aa2cf057a2c5d9184188c981e95333834b8a96eabd12dc236d3b828a0d7b",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "dc69610303d4b012d8430949fc8d9bfe08c3c7a016360cbf429363261cc40418",
+    "ip/disclosure-log.v1.json": "d76945a13dec94e7b5b96b879ff66fc122de6ae7964b891479f659dc321c1920",
+    "ip/prior-art.v1.json": "c5fd5dd4f80562c3f13adbec4a1e5b4bd6e547d4d8bd19c7f49cf4be4954d5a5",
+    "ip/technical-dossier.v1.json": "0dac8675bb0ccd7c23e5ba47748b1cf19e60456001cab72c91561b60ca416529",
+    "phase0/benchmark/benchmark-lock.v1.json": "d1e538af22e7300acda1f5c757231c902e35dedb49abb7f04985fd97a087cbab",
+    "phase0/bundle.v1.json": "2cf87b245c6cf8d8281a8ae245ae649d201ce772ce3cfd54cfed754ce0b26081",
+    "phase0/dataset/dataset-manifest.v1.json": "f615f6811bfc52eda6157699ea96fb7ba6ba684268b9d80386c6967e120d91c6",
+    "phase0/promotion/policy.v1.json": "f7d72855e66bba7d02b59a19ae1c753d67a52d98774c798ac76c0656410df060",
+    "phase0/raw/SHA256SUMS": "7fd351ed2b35a0ce67cb1f993e68ca18a17bce0383dfc6d15f070c45c707a6ed",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "d0eaf813cfb325455e5768070c7616edc54a77d9c11d091a60807735bdbb60a9",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/imports/benchmark.legacy-import.v1.json": "c9ca98af8eb32fd58a43ca35c21757d635ab92f2cfbdedf733410632aad11e20",
+    "phase0/sources/imports/source.legacy-import.v1.json": "bb430af31bec46408e4f9cfd841d27b9d608cb68a97f583506acea25d8d856e4",
+    "phase0/sources/imports/split.legacy-import.v1.json": "338e80c57f3816e7c8eee060e8bbcada999b61fc94aed3027d9b0c27fd637055",
+    "phase0/sources/source-lock.v1.json": "28b77d1cce25f5a9cfac6c86cfa7b5327dec75c0e97b8a59513aa09dd0108116",
+    "phase0/split/split-manifest.v1.json": "6bde23077b14f865358183538c094916c05f5b4f3fc72899f439fb790c86b1b0"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-4f44aa2cf057a2c5d9184188c981e95333834b8a96eabd12dc236d3b828a0d7b",
+  "unsigned_preparation_only": true
+}

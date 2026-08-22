@@ -1,0 +1,412 @@
+{
+  "schema": "mvp20.claim_registry.v2",
+  "retrieved": "2026-07-03",
+  "trace_types": [
+    "source",
+    "generated_arithmetic",
+    "explicit_assumption",
+    "test_target",
+    "absence"
+  ],
+  "claims": [
+    {
+      "id": "CL-AUTH-001",
+      "claim_type": "authority",
+      "claim": "This package is a candidate engineering package only, not a qualified or procurement-approved product.",
+      "evidence_tier": "AUTHORITY",
+      "source_ids": [
+        "SRC-DLA-QPD-ABOUT",
+        "SRC-QPL-24441",
+        "SRC-F718"
+      ],
+      "trace": {
+        "type": "source",
+        "paths": [
+          "data/source_records.json:SRC-DLA-QPD-ABOUT",
+          "data/source_records.json:SRC-QPL-24441",
+          "data/source_records.json:SRC-F718"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Candidate only: not QPL-listed, not NAVSEA-qualified, and not an approval for procurement."
+    },
+    {
+      "id": "CL-AUTH-002",
+      "claim_type": "authority",
+      "claim": "QPL-24441 is the governing procurement source for MIL-DTL-24441 products.",
+      "evidence_tier": "AUTHORITY",
+      "source_ids": [
+        "SRC-DLA-QPD-ABOUT",
+        "SRC-QPL-24441"
+      ],
+      "trace": {
+        "type": "source",
+        "paths": [
+          "data/source_records.json:SRC-DLA-QPD-ABOUT",
+          "data/source_records.json:SRC-QPL-24441"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Qualification status must be verified against QPL-24441; the DLA/QPD pages verified 2026-07-06 reported MIL-DTL-24441D, 23 part entries, and last update 27-JAN-2026."
+    },
+    {
+      "id": "CL-LINEAGE-001",
+      "claim_type": "numeric",
+      "claim": "Public black/yellow Formula 160/161 lineage is near 60.2% volume solids, not the 65+/-2% envelope target.",
+      "evidence_tier": "AUTHORITY",
+      "source_ids": [
+        "SRC-F160",
+        "SRC-F161",
+        "SRC-STIC-TYPEIV-TDS"
+      ],
+      "trace": {
+        "type": "source",
+        "paths": [
+          "data/mil_formula_sheets.json:documents.stic_typeIV_TDS.volume_solids_by_formula_pct"
+        ]
+      },
+      "confidence": "MEDIUM",
+      "customer_safe": "The 65% black/yellow package is envelope-literal and materially different from public Formula 160/161; Formula 160 black full-BOM recovery remains source-conflict-held."
+    },
+    {
+      "id": "CL-FORM-001",
+      "claim_type": "numeric",
+      "claim": "Envelope-65 is solved to 1:1 by volume, 65% volume solids, and VOC below 340 g/L with no functional zinc phosphate.",
+      "evidence_tier": "REAL-ARITHMETIC",
+      "source_ids": [
+        "SRC-EPA-M24"
+      ],
+      "trace": {
+        "type": "generated_arithmetic",
+        "paths": [
+          "out/funnel_results.json:candidate_packages.Envelope-65.black.derived.mix_ratio_by_volume",
+          "out/funnel_results.json:candidate_packages.Envelope-65.black.derived.volume_solids_pct",
+          "out/funnel_results.json:candidate_packages.Envelope-65.black.derived.voc_g_per_l"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Envelope-65 is the primary phosphate-free candidate; color pigments are identification only."
+    },
+    {
+      "id": "CL-FORM-002",
+      "claim_type": "formulation",
+      "claim": "Enhanced-65 contains zinc phosphate and is a functional optional variant.",
+      "evidence_tier": "REAL-ARITHMETIC",
+      "source_ids": [
+        "SRC-US5059640"
+      ],
+      "trace": {
+        "type": "generated_arithmetic",
+        "paths": [
+          "out/funnel_results.json:candidate_packages.Enhanced-65.black.recipe"
+        ]
+      },
+      "confidence": "MEDIUM",
+      "customer_safe": "Enhanced-65 must be justified by corrosion testing before zinc phosphate is retained."
+    },
+    {
+      "id": "CL-NUM-001",
+      "claim_type": "numeric",
+      "claim": "Envelope-65 black/yellow parity remains within set tolerances for solids, VOC, density, and PVC/CPVC.",
+      "evidence_tier": "REAL-ARITHMETIC",
+      "source_ids": [
+        "SRC-EPA-M24"
+      ],
+      "trace": {
+        "type": "generated_arithmetic",
+        "paths": [
+          "out/funnel_results.json:candidate_packages.Envelope-65.parity"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Black/yellow twins are equal-volume color swaps and remain within the arithmetic parity bars."
+    },
+    {
+      "id": "CL-NUM-002",
+      "claim_type": "numeric",
+      "claim": "Envelope-65 reports weight per gallon, PVC/CPVC, and stoichiometric ratio from generated arithmetic.",
+      "evidence_tier": "REAL-ARITHMETIC",
+      "source_ids": [
+        "SRC-EPA-M24"
+      ],
+      "trace": {
+        "type": "generated_arithmetic",
+        "paths": [
+          "out/funnel_results.json:candidate_packages.Envelope-65.black.derived.weight_lb_per_gal",
+          "out/funnel_results.json:candidate_packages.Envelope-65.black.derived.pvc_pct",
+          "out/funnel_results.json:candidate_packages.Envelope-65.black.derived.lambda_pvc_cpvc",
+          "out/funnel_results.json:candidate_packages.Envelope-65.black.derived.stoichiometric_ratio"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "WPG, PVC/CPVC, and stoichiometry are computed fields, not supplier or model claims."
+    },
+    {
+      "id": "CL-NUM-003",
+      "claim_type": "numeric",
+      "claim": "DFT/WFT/coverage values are deterministic consequences of the 65% solids target.",
+      "evidence_tier": "REAL-ARITHMETIC",
+      "source_ids": [
+        "SRC-EPA-M24"
+      ],
+      "trace": {
+        "type": "generated_arithmetic",
+        "paths": [
+          "out/funnel_results.json:carry_3[0].derived.coverage_ft2_gal_at_dft",
+          "out/funnel_results.json:carry_3[0].derived.wft_mils_at_dft"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Film-build and coverage numbers are arithmetic targets that still require CRO drawdown/spray confirmation."
+    },
+    {
+      "id": "CL-WET-001",
+      "claim_type": "absence",
+      "claim": "No wet-lab performance data exists for the candidate package.",
+      "evidence_tier": "ABSENT",
+      "source_ids": [],
+      "trace": {
+        "type": "absence",
+        "paths": [
+          "out/validation_cards.json",
+          "out/capture_template.json"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Pot life, corrosion, adhesion, sprayability, sag and shelf life remain CRO bench gates."
+    },
+    {
+      "id": "CL-CORR-001",
+      "claim_type": "model_boundary",
+      "claim": "The corrosion model failed its pre-registered evidence bar.",
+      "evidence_tier": "MODELED-AND-FAILED",
+      "source_ids": [
+        "SRC-NPJ-2024",
+        "SRC-CPVC-EIS"
+      ],
+      "trace": {
+        "type": "generated_arithmetic",
+        "paths": [
+          "out/validation_cards.json:corrosion_rank"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Corrosion is not predicted; B117/D5894/EIS/immersion testing decides."
+    },
+    {
+      "id": "CL-CURE-001",
+      "claim_type": "model_boundary",
+      "claim": "The cure/pot-life model failed its pre-registered bar.",
+      "evidence_tier": "MODELED-AND-FAILED",
+      "source_ids": [],
+      "trace": {
+        "type": "generated_arithmetic",
+        "paths": [
+          "out/validation_cards.json:cure_potlife"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Pot life is not predicted; the week-1 KU-vs-time screen is mandatory."
+    },
+    {
+      "id": "CL-CRO-001",
+      "claim_type": "test_target",
+      "claim": "CRO scale ladder uses 250 g screen, 1 kg/component bench, 5 gal kit, and 50 gal pilot gates.",
+      "evidence_tier": "TEST-TARGET",
+      "source_ids": [],
+      "trace": {
+        "type": "test_target",
+        "paths": [
+          "out/capture_template.json:batch_sizes"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Batch sizes are execution gates, not proof of scale-up success."
+    },
+    {
+      "id": "CL-CRO-002",
+      "claim_type": "test_target",
+      "claim": "Panel prep and application controls require SSPC-SP10/NACE No.2 blast, 2.5-3.5 mil profile, soluble salts, RH, substrate temperature, and dew-point margin records.",
+      "evidence_tier": "TEST-TARGET",
+      "source_ids": [
+        "SRC-SSPC-SP10"
+      ],
+      "trace": {
+        "type": "test_target",
+        "paths": [
+          "out/capture_template.json:panel_prep",
+          "out/capture_template.json:environmental_controls"
+        ]
+      },
+      "confidence": "MEDIUM",
+      "customer_safe": "Surface preparation and environment are required returned-data fields."
+    },
+    {
+      "id": "CL-CRO-003",
+      "claim_type": "test_target",
+      "claim": "Early kill gates include gel/phase split, pot life below 90 min, VOC over 340 g/L, volume solids outside 63-67%, severe sag/pinhole, failed adhesion, and early corrosion failure.",
+      "evidence_tier": "TEST-TARGET",
+      "source_ids": [
+        "SRC-EPA-M24"
+      ],
+      "trace": {
+        "type": "test_target",
+        "paths": [
+          "out/capture_template.json:early_kill_gates"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Failed early gates stop or reformulate before paid scale-up."
+    },
+    {
+      "id": "CL-IP-001",
+      "claim_type": "ip",
+      "claim": "Patent review is a preliminary claim chart, not a freedom-to-operate opinion.",
+      "evidence_tier": "LEGAL-SCOPE",
+      "source_ids": [
+        "SRC-WO2016187380",
+        "SRC-EP3328938",
+        "SRC-US5059640",
+        "SRC-WO2013159277",
+        "SRC-EP2931822"
+      ],
+      "trace": {
+        "type": "source",
+        "paths": [
+          "data/patent_landscape.json:disclaimer",
+          "data/patent_landscape.json:claim_chart_categories"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Not an FTO opinion; counsel must review claims, jurisdictions, prosecution history and equivalents."
+    },
+    {
+      "id": "CL-SUPPLY-001",
+      "claim_type": "sourcing",
+      "claim": "Candidate sourcing has property-window grades and alternates, but domestic/TAA status and lead times are not verified.",
+      "evidence_tier": "SUPPLIER-DOC",
+      "source_ids": [
+        "SRC-EPON828",
+        "SRC-EVONIK-GUIDE",
+        "SRC-EASTMAN-NBUTANOL",
+        "SRC-CAMEO-SILICA",
+        "SRC-BYK-ADDITIVES",
+        "SRC-ELEMENTIS-BENTONE"
+      ],
+      "trace": {
+        "type": "source",
+        "paths": [
+          "data/source_records.json:records[kind=supplier]"
+        ]
+      },
+      "confidence": "MEDIUM",
+      "customer_safe": "Sourcing is RFQ-gated; domestic/TAA and PFAS/TSCA claims require supplier declarations."
+    },
+    {
+      "id": "CL-SUPPLY-002",
+      "claim_type": "unknown",
+      "claim": "PFAS, TSCA inventory, domestic/TAA, and lead-time fields are unknown unless supplier declarations are obtained.",
+      "evidence_tier": "UNKNOWN",
+      "source_ids": [
+        "SRC-EPON828",
+        "SRC-EVONIK-GUIDE",
+        "SRC-BYK-ADDITIVES",
+        "SRC-ELEMENTIS-BENTONE"
+      ],
+      "trace": {
+        "type": "explicit_assumption",
+        "paths": [
+          "data/source_records.json:records[*].pfas_status",
+          "data/source_records.json:records[*].tsca_status",
+          "data/source_records.json:records[*].domestic_taa_status"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Supplier declaration fields are rendered as unknown / RFQ required unless verified."
+    },
+    {
+      "id": "CL-ENGINE-001",
+      "claim_type": "roadmap",
+      "claim": "The current engine is deterministic and evidence-controlled; standards RAG, patent claim graph, process twin, and CRO Bayesian optimization are next-phase roadmap, not current capability.",
+      "evidence_tier": "ROADMAP",
+      "source_ids": [
+        "SRC-NPJ-2024",
+        "SRC-BO-ML-2025",
+        "SRC-NIST-SDL"
+      ],
+      "trace": {
+        "type": "explicit_assumption",
+        "paths": [
+          "ideas/tip3.txt",
+          "ideas/tip4.txt"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Current capability is deterministic constraint solving plus validation-card discipline; active-learning autonomy is the next engine."
+    },
+    {
+      "id": "CL-FALS-001",
+      "claim_type": "test_target",
+      "claim": "The barrier-rank falsification protocol stores a timestamped locked-rank hash, hostile nulls, tie rule, panel count and third-party registration field.",
+      "evidence_tier": "TEST-TARGET",
+      "source_ids": [],
+      "trace": {
+        "type": "generated_arithmetic",
+        "paths": [
+          "out/funnel_results.json:barrier_prediction.registered_protocol",
+          "out/capture_template.json:statistical_decision_rules"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "The locked barrier-rank protocol can lose; it is registered before panels are cut and compared against hostile nulls."
+    },
+    {
+      "id": "CL-CRO-004",
+      "claim_type": "test_target",
+      "claim": "The CRO order includes controls, randomized panel IDs, raw returned-file paths, calibration records, and minimum panel counts.",
+      "evidence_tier": "TEST-TARGET",
+      "source_ids": [
+        "SRC-ASTM-B117",
+        "SRC-ASTM-D5894",
+        "SRC-ASTM-D870",
+        "SRC-ASTM-D4541",
+        "SRC-ISO-16773"
+      ],
+      "trace": {
+        "type": "test_target",
+        "paths": [
+          "out/capture_template.json:controls",
+          "out/capture_template.json:randomization",
+          "out/capture_template.json:returned_file_schema",
+          "out/capture_template.json:calibration_records"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "CRO execution requires controls, randomization, raw files, calibration records, and minimum panel counts."
+    },
+    {
+      "id": "CL-SUPPLY-003",
+      "claim_type": "unknown",
+      "claim": "Every BOM supplier row remains unknown/RFQ-required for PFAS, TSCA, TAA/domestic origin, lead time, SDS/TDS revision and CoA fields until declarations are attached.",
+      "evidence_tier": "UNKNOWN",
+      "source_ids": [
+        "SRC-TSCA-INVENTORY",
+        "SRC-EPON828",
+        "SRC-EVONIK-GUIDE",
+        "SRC-CAMEO-NAPHTHA",
+        "SRC-LANXESS-BLACK-OXIDE",
+        "SRC-LANXESS-YELLOW-OXIDE",
+        "SRC-ZINC-PHOSPHATE-ZP10"
+      ],
+      "trace": {
+        "type": "explicit_assumption",
+        "paths": [
+          "data/source_records.json:rfq_declaration_template",
+          "out/capture_template.json:supplier_declaration_template"
+        ]
+      },
+      "confidence": "HIGH",
+      "customer_safe": "Supplier PFAS/TSCA/TAA/origin/lead-time fields stay unknown / RFQ required until declaration evidence is attached."
+    }
+  ]
+}

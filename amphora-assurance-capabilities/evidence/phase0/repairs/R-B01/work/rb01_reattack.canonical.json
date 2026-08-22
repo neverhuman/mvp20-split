@@ -1,0 +1,200 @@
+{
+  "acceptance": {
+    "cargo_green": true,
+    "control_positive_detected": true,
+    "eight_of_eight_probes_detected": true,
+    "primary_kpi_populated_by_runtime": true,
+    "zero_safety_breaches": true
+  },
+  "cargo_test": {
+    "command": "~/.cargo/bin/cargo test --offline --locked -p amphora-assurance-capabilities",
+    "green": true,
+    "test_result_lines": [
+      "test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.18s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s",
+      "test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.40s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.41s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.47s",
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s",
+      "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s"
+    ]
+  },
+  "reattack_a_metric_schema_parity": {
+    "benchmark_kpi_gate_unresolved_technical_categories_populated_rate": {
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "note": "declared primary KPI value path metrics.unresolved_technical_categories is populated by the live runtime and equals the harness's independent claim-chart-category recompute from the on-disk fixture",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 5
+    },
+    "benchmark_result_sha256_now": "a6cb423d8858421e4b0e8c96de063da7eaaa97916a1da71523ffaae2788b6a77",
+    "inserted_metric_keys_by_live_runtime": [
+      "boolean_counsel_assertion_ignored",
+      "classification_sweep_count",
+      "fto_legal_closure",
+      "fto_status",
+      "legal_advice",
+      "public_family_count",
+      "technical_landscape_present",
+      "unresolved_technical_categories"
+    ],
+    "lib_rs_sha256_now": "f7df7055e0488289fdf2976a8a6a5f80d24eb07eab550a595dba6fa945cbe827",
+    "rust_source_hit_count": 3,
+    "rust_source_hits": [
+      "amphora-assurance-capabilities/src/lib.rs",
+      "amphora-assurance-capabilities/tests/ip_fto_guard_counsel_assertion_probes.rs",
+      "amphora-assurance-capabilities/tests/ip_fto_guard_phase0_kpi.rs"
+    ],
+    "target_key": "unresolved_technical_categories",
+    "target_key_asserted_by_checked_kpi_test": true,
+    "target_key_asserted_by_probe_regression_test": true,
+    "target_key_inserted_by_runtime": true,
+    "target_key_present_anywhere_in_benchmark_result": true
+  },
+  "reattack_b_counsel_assertion_detection": {
+    "detection_recall_rate": 1.0,
+    "harness": "/tmp/ip_fto_probe_rb01 (standalone cargo bin, path deps: amphora-core, amphora-assurance-capabilities)",
+    "harness_main_rs_sha256": "774fe86c58433285d0fbcea56ecc1a8b1f93251545432abf5be409515bab8fa3",
+    "n_adversarial_scenarios": 8,
+    "n_false_negatives": 0,
+    "n_safety_breaches": 0,
+    "probe_stdout_sha256": "9f78dac4ae00ccacd7083783804055564670086f7dc246c54508392921d6fb63",
+    "records": [
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": true,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "control-exact-path-true",
+        "unresolved_technical_categories": 75
+      },
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": false,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "A1-top-level-key",
+        "unresolved_technical_categories": 75
+      },
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": false,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "A2-counsel-fto-array",
+        "unresolved_technical_categories": 75
+      },
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": false,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "A3-nested-one-level-deeper",
+        "unresolved_technical_categories": 75
+      },
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": false,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "A4-case-variant-key",
+        "unresolved_technical_categories": 75
+      },
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": false,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "A5-alternate-path-name",
+        "unresolved_technical_categories": 75
+      },
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": false,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "A6-semantic-alt-claim-key",
+        "unresolved_technical_categories": 75
+      },
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": false,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "A7-counsel-fto-string",
+        "unresolved_technical_categories": 75
+      },
+      {
+        "authority_envelope_clean": true,
+        "boolean_counsel_assertion_ignored_observed": true,
+        "detected": true,
+        "false_negative": false,
+        "fto_legal_closure_false_ok": true,
+        "fto_status": "FTO NOT PERFORMED",
+        "fto_status_pinned_ok": true,
+        "is_control": false,
+        "legal_advice_false_ok": true,
+        "safety_invariant_intact": true,
+        "scenario_id": "A8-unicode-confusable-key",
+        "unresolved_technical_categories": 75
+      }
+    ],
+    "two_replay_byte_identical": true
+  },
+  "repair_item": "R-B01",
+  "schema": "amphora.assurance-capabilities.repair-r-b01-reattack-diagnostic.v1"
+}

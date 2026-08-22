@@ -1,0 +1,916 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,top=16mm,bottom=16mm,left=17mm,right=17mm,headheight=9mm,footskip=9mm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,calc,fit,decorations.pathmorphing,decorations.markings}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{pdflscape}
+\usepackage{ragged2e}
+\usepackage{seqsplit}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,labelsep=colon,textfont=it}
+
+% Colors -----------------------------------------------------------------
+\definecolor{Navy}{HTML}{102A43}
+\definecolor{Blue}{HTML}{1666A8}
+\definecolor{Cyan}{HTML}{2D9CDB}
+\definecolor{Teal}{HTML}{168C86}
+\definecolor{Green}{HTML}{23856D}
+\definecolor{Amber}{HTML}{D99A1D}
+\definecolor{Red}{HTML}{B54747}
+\definecolor{Ink}{HTML}{243B53}
+\definecolor{Muted}{HTML}{627D98}
+\definecolor{Line}{HTML}{D9E2EC}
+\definecolor{Panel}{HTML}{F4F7FA}
+\definecolor{PaleBlue}{HTML}{EAF3FA}
+\definecolor{PaleTeal}{HTML}{E1F0EA}
+\definecolor{PaleGreen}{HTML}{EAF7F2}
+\definecolor{PaleAmber}{HTML}{FBEED4}
+\definecolor{PaleRed}{HTML}{FAECEC}
+
+\hypersetup{colorlinks=true,linkcolor=Blue,urlcolor=Blue,pdftitle={Amphora Coating IP Portfolio --- Submodule Status and Predictive Modeling Report},pdfauthor={Amphora Engineering}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt}
+\setlist[itemize]{leftmargin=4.2mm,itemsep=1.3pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=5mm,itemsep=1.3pt,topsep=2pt}
+\renewcommand{\arraystretch}{1.18}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\fontsize{7.2}{8}\selectfont\color{Muted} AMPHORA / PORTFOLIO STATUS REPORT}
+\fancyhead[R]{\sffamily\fontsize{7.2}{8}\selectfont\color{Muted} 23 JUL 2026 / AUDIT\_ONLY}
+\fancyfoot[L]{\sffamily\fontsize{7}{8}\selectfont\color{Muted} Pre-Phase-1 research artefact; no safety, procurement, qualification, or product-performance authority}
+\fancyfoot[R]{\sffamily\fontsize{7}{8}\selectfont\color{Muted} \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\titleformat{\section}{\sffamily\bfseries\Large\color{Navy}}{}{0pt}{}[\vspace{1mm}\color{Cyan}\rule{18mm}{1.2pt}]
+\titleformat{\subsection}{\sffamily\bfseries\normalsize\color{Navy}}{}{0pt}{}
+\newcommand{\PageTitle}[2]{%
+  {\sffamily\fontsize{7.5}{9}\selectfont\bfseries\color{Cyan}\MakeUppercase{#1}}\\[-1pt]
+  {\sffamily\fontsize{20}{22}\selectfont\bfseries\color{Navy}#2}\par\vspace{3mm}}
+\newcommand{\eyebrow}[1]{{\sffamily\fontsize{7}{8}\selectfont\bfseries\color{Cyan}\MakeUppercase{#1}}}
+\newcommand{\metric}[3]{%
+  \begin{tcolorbox}[enhanced,boxrule=0pt,colback=#3,arc=2mm,left=2.5mm,right=2.5mm,top=2mm,bottom=2mm]
+  {\sffamily\fontsize{17}{18}\selectfont\bfseries\color{Navy}#1}\par
+  {\sffamily\fontsize{7.2}{8.4}\selectfont\color{Muted}#2}
+  \end{tcolorbox}}
+\newcommand{\callout}[2]{%
+  \begin{tcolorbox}[enhanced,breakable,colback=Panel,colframe=Line,boxrule=.45pt,arc=2mm,left=3mm,right=3mm,top=2.5mm,bottom=2.5mm]
+  {\sffamily\bfseries\color{Navy}#1}\par #2
+  \end{tcolorbox}}
+\newcommand{\redteambox}[1]{%
+  \begin{tcolorbox}[enhanced,breakable,colback=PaleRed,colframe=Red,boxrule=.4pt,arc=1.5mm,left=2.8mm,right=2.8mm,top=1.6mm,bottom=1.6mm]
+  {\sffamily\fontsize{6.8}{8}\selectfont\bfseries\color{Red}\MakeUppercase{Red-team callout}}\par
+  \fontsize{8.4}{10}\selectfont #1
+  \end{tcolorbox}}
+\newcommand{\good}{\textcolor{Green}{\bfseries GOOD}}
+\newcommand{\bad}{\textcolor{Red}{\bfseries BAD / BLOCKED}}
+\newcommand{\lefttodo}{\textcolor{Amber}{\bfseries LEFT}}
+\newcommand{\phasezero}{\textcolor{Green}{\bfseries PHASE~0}}
+\newcommand{\prephase}{\textcolor{Amber}{\bfseries PRE-PHASE-0}}
+\newcommand{\infrat}{\textcolor{Muted}{\bfseries INFRASTRUCTURE}}
+\newcommand{\code}[1]{{\ttfamily\fontsize{7.2}{8.4}\selectfont\detokenize{#1}}}
+\newcommand{\tierbadge}[2]{% #1=tier code, #2=color
+  \tcbox[on line,colback=#2,colframe=#2,coltext=white,boxsep=0pt,left=2.4pt,right=2.4pt,top=1.6pt,bottom=1.6pt,arc=1.2pt]{\sffamily\fontsize{7}{8}\selectfont\bfseries TIER #1}}
+\newcommand{\ModuleHeader}[4]{% #1=tier, #2=tier color, #3=module, #4=phase badge
+  \vspace{1mm}
+  \noindent\begin{minipage}{\linewidth}
+    \colorbox{#2}{\parbox[c][5.6mm][c]{16mm}{\centering\sffamily\bfseries\color{white} TIER #1}}%
+    \hspace{2mm}{\sffamily\bfseries\large\color{Navy}\code{#3}}%
+    \hfill{\sffamily\bfseries\color{Muted} #4}%
+  \end{minipage}\par\vspace{0.5mm}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+\begin{document}
+
+% ============================================================== COVER
+\thispagestyle{empty}
+\vspace*{18mm}
+\begin{center}
+{\sffamily\fontsize{9}{11}\selectfont\bfseries\color{Cyan}\MakeUppercase{AMPHORA \(\cdot\) PORTFOLIO STATUS REPORT}}\\[-1mm]
+\rule{15mm}{0.6pt}\\[10mm]
+{\sffamily\fontsize{30}{34}\selectfont\bfseries\color{Navy}Amphora Coating IP Portfolio}\\[3mm]
+{\sffamily\fontsize{18}{22}\selectfont\color{Ink}Submodule Status \& Predictive Modeling Report}\\[8mm]
+{\sffamily\fontsize{11}{14}\selectfont\color{Muted}%
+Ranked strongest\(\rightarrow\)weakest, with references, data, models,\\%
+best-practice comparisons, and per-module red-team callouts.}\\[16mm]
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\node[draw=Line, rounded corners=2mm, fill=Panel, inner sep=6mm, minimum width=138mm] {
+  \begin{minipage}{130mm}
+  \sffamily\color{Navy}
+  \begin{tabular}{@{}L{40mm} R{20mm} L{25mm} R{28mm}@{}}
+  \textbf{Total modules} & \textbf{40} & \textbf{Modules with signed receipts} & \textbf{10}\\[2pt]
+  Total signed receipts & 65 & Coating properties covered & 8+ \\[2pt]
+  Deterministic gates passed & \textbf{100\%} & Byte-stable, DSSE-signed & \textbf{all} \\[2pt]
+  Composite score (top) & 71.0 & Median score & 39.0 \\
+  \end{tabular}
+  \end{minipage}};
+\end{tikzpicture}
+\end{center}
+
+\vspace{6mm}
+
+% ---- Tier legend strip (below fact tile) ----
+\begin{center}
+{\sffamily\fontsize{7.5}{9}\selectfont\bfseries\color{Cyan}\MakeUppercase{Five tiers, one deterministic rubric}}\\[3mm]
+\begin{tikzpicture}[every node/.style={font=\sffamily\footnotesize,align=center}]
+\node[fill=Navy,   text=white, rounded corners=1mm, minimum width=27mm, minimum height=8mm]        (s) at (0,0)     {\textbf{TIER S}\\[-.4mm]{\scriptsize backbone \ 71+}};
+\node[fill=Blue,   text=white, rounded corners=1mm, minimum width=27mm, minimum height=8mm, right=1.5mm of s] (a) {\textbf{TIER A}\\[-.4mm]{\scriptsize signed \ 50--69}};
+\node[fill=Teal,   text=white, rounded corners=1mm, minimum width=27mm, minimum height=8mm, right=1.5mm of a] (b) {\textbf{TIER B}\\[-.4mm]{\scriptsize emerging \ 30--49}};
+\node[fill=Muted,  text=white, rounded corners=1mm, minimum width=27mm, minimum height=8mm, right=1.5mm of b] (c) {\textbf{TIER C}\\[-.4mm]{\scriptsize infra \ n/a}};
+\node[fill=Amber,  text=white, rounded corners=1mm, minimum width=27mm, minimum height=8mm, right=1.5mm of c] (d) {\textbf{TIER D}\\[-.4mm]{\scriptsize pre-P0 \ $<$30}};
+\end{tikzpicture}
+\\[1.6mm]
+{\sffamily\fontsize{7.8}{10}\selectfont\color{Muted}%
+Rank rubric: \(S=25R+20P+15V+15B+10U+10G+5S_r\) \(\cdot\) methodology on p.~3 \(\cdot\) full tier explanations on p.~4}
+\end{center}
+
+\vspace{6mm}
+\begin{center}
+{\sffamily\fontsize{9.5}{12}\selectfont\color{Ink}%
+23 July 2026 \(\cdot\) Portfolio snapshot after Push \#39 \(\cdot\) Master manifest SHA-256\\%
+\code{0b40ecf1868c9a74012606f832d5886d6297a7b5b1029c6692575400726eac2e}}\\[6mm]
+{\sffamily\fontsize{8}{10}\selectfont\color{Muted}%
+Rendered on \code{xbabe2:/home/ubuntu/amphora/build/mvp20-split/reports/portfolio-status-2026-07-23/}\\%
+\textbf{Confidential} \(\cdot\) audit-only research artefact \(\cdot\) no procurement, safety, or product-performance authority}
+\end{center}
+
+\newpage
+
+% ============================================================== EXECUTIVE SUMMARY
+\PageTitle{Executive summary}{Where we are strong, and where we are honest}
+
+Amphora's coating-chemistry IP portfolio is a Rust-native, DSSE-signed, deterministic
+research pipeline built on 40 modules that predict, score, gate, and provenance
+coating candidates. This report ranks every submodule strongest-to-weakest against a
+transparent seven-factor rubric (\S\ref{sec:methodology}), documents the datasets,
+theories, and predictive models behind every scored module, sets each result against
+a published best-practice target, and calls out the specific red-team vectors a
+hostile reviewer could weaponise.
+
+\vspace{-1mm}
+\subsection*{Portfolio at a glance}
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Line,boxrule=.4pt,arc=1.8mm,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\begin{itemize}
+\item \textbf{65 signed portfolio receipts} indexed by the master manifest, spanning
+\textbf{10 scoring modules}: molecule-property (27), solvency-score (14), barrier-corrosion-score
+(8), tolerance-robustness (5), design-rule-score (4), viscosity-score (3), and one
+each for molecule-role-ranker, cure-potlife-gate, molecule-novelty, and public-corrosion-benchmark.
+\item \textbf{40 total \code{amphora-*} modules}: 1 Tier~S, 3 Tier~A, 19 Tier~B, 11
+Tier~C (infrastructure), and 6 Tier~D (Pre-Phase-0 with weak signal).
+\item \textbf{8+ coating properties predicted with UQ}: T\textsubscript{g}, dielectric
+constant \(\varepsilon_r\), refractive index \(n_D\), density \(\rho\), water contact
+angle, water uptake, Hansen \(\delta_d/\delta_p/\delta_h\), and Flory-Huggins \(\chi\).
+\item \textbf{Complete UQ arc} landed in \code{amphora-tolerance-robustness}:
+bootstrap CI \(\rightarrow\) bootstrap PI (honest negative) \(\rightarrow\)
+split-conformal Ridge \(\rightarrow\) split-conformal Random Forest \(\rightarrow\)
+Conformalized Quantile Regression. Empirical coverage at 95\% target: \(\geq 96\%\)
+on external held-out polymers (n\,=\,89).
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{1mm}
+\begin{tcolorbox}[enhanced,colback=PaleBlue,colframe=Cyan,boxrule=.5pt,arc=1.8mm,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\sffamily\bfseries\color{Navy}How to read this report.\normalfont\
+\begin{enumerate}[leftmargin=5mm,itemsep=0.5mm,topsep=1mm]
+\item \textbf{Page 3} --- the ranking chart (Figure 1) is the single most important panel.
+Every module is placed by the same rubric; scan the receipt counts on the right
+to see which modules carry portfolio weight.
+\item \textbf{Page 4} --- \emph{Understanding the tiers.} If you only read one methodology
+page, read this one. It explains what a Tier S vs Tier A vs Tier B module actually
+\emph{means}, with examples.
+\item \textbf{Pages 5--12} --- Detailed sections per module, ordered strongest first.
+Every section has the same eight-block layout: purpose, data, theory, predictive
+results, best-practice comparison, receipts, red-team callout.
+\item \textbf{Pages 13--14} --- \emph{Physics vs ML head-to-head.} If you want to know
+where our data-driven work beats published theory and where it does not, this is
+the panel.
+\item \textbf{Pages 15--16} --- The central engine schematic (Figure 10) explains how
+the pieces bind. Read this to understand the deterministic guarantees.
+\item \textbf{Pages 17--19} --- Red-team matrix and references.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures/F1_ranking.pdf}
+\caption{\label{fig:ranking}Deterministic ranking of all 40 modules by composite
+score \(S = 25R + 20P + 15V + 15B + 10U + 10G + 5S_{\text{readiness}}\)
+(see \S\ref{sec:methodology}). Bar color encodes tier (\textbf{S}\,dark, \textbf{A}\,blue,
+\textbf{B}\,teal, \textbf{C}\,grey, \textbf{D}\,amber). Right-hand annotations show the
+count of signed portfolio receipts per module.}
+\end{figure}
+
+\newpage
+
+% ============================================================== METHODOLOGY
+\label{sec:methodology}
+\PageTitle{Methodology}{Deterministic rubric, tiering, and section design}
+
+\subsection*{Composite score formula}
+\vspace{-2mm}
+\[
+S \;=\; \underbrace{25 \cdot R}_{\text{receipt density}} + \underbrace{20 \cdot P}_{\text{phase status}}
++ \underbrace{15 \cdot V}_{\text{ext.\ validation}} + \underbrace{15 \cdot B}_{\text{physics baseline}}
++ \underbrace{10 \cdot U}_{\text{UQ present}} + \underbrace{10 \cdot G}_{\text{red-team gate}}
++ \underbrace{5 \cdot S_{\text{r}}}_{\text{sci.\ readiness}}
+\]
+
+\vspace{-1.5mm}
+
+\subsection*{What each factor measures, and why we weight it that way}
+
+Each factor is a scalar in \([0, 1]\); the seven weights (25, 20, 15, 15, 10, 10, 5) sum to 100. Every input is read machine-readably from the master manifest or module front-matter --- no editorial adjustment is possible.
+
+\vspace{0.5mm}
+\begin{tabularx}{\textwidth}{@{}L{22mm} L{44mm} R{10mm} Y@{}}
+\toprule
+\textbf{Factor} & \textbf{What it measures} & \textbf{Weight} & \textbf{Rationale for the weight} \\
+\midrule
+\(R\) \emph{receipts} & \(\min(n_{\text{signed}} / 27,\,1)\) --- density of signed portfolio KPI receipts, normalised to the leader (\code{molecule-property}\,=\,27). & \textbf{25} & Signed receipts are the load-bearing evidence: machine-verified, DSSE-signed, byte-stable. Deleting or altering a receipt breaks the SHA-256 chain audibly. Weighted highest.\\
+\(P\) \emph{phase} & \{\textsc{Phase\_1}\,\(\to\)\,1.0, \textsc{Phase\_0}\,\(\to\)\,0.7, \textsc{Pre\_Phase\_0}\,\(\to\)\,0.3, other\,\(\to\)\,0\} --- from \code{mission.md} front-matter. & \textbf{20} & Formal phase promotion signals a reviewer has audited operational discipline (canonical JSON, dual-source, byte-stability). Second-highest weight.\\
+\(V\) \emph{ext.\ validation} & 1 if an external \emph{public} corpus is locked (OpenPoly, RadonPy, OMG, CORR-DATA, Polyverse, NIST, PoLyInfo); 0.5 if internal-only; 0 else. & \textbf{15} & Cross-corpus generalisation is the anti-cherry-pick shield. A hostile reviewer cannot claim we memorised our own test set if the corpus lives in a public commit.\\
+\(B\) \emph{physics baseline} & 1 if a published group-contribution or physical model (Van Krevelen, Bicerano, Hansen, Clausius-Mossotti, Fedors, Owens-Wendt-Kaelble, Arrhenius) is computed on the \emph{same} test slice. & \textbf{15} & Physics anchoring resists over-fitting attacks. When a data-driven model beats \emph{published} theory on \emph{identical} test polymers, over-fitting is much harder to argue.\\
+\(U\) \emph{uncertainty} & 1 if both bootstrap CI and conformal PI are landed; 0.5 for bootstrap only; 0 for point-only. & \textbf{10} & A point prediction without a coverage guarantee is gameable; a conformal interval with empirical coverage \(\geq\) nominal is not.\\
+\(G\) \emph{red-team gate} & 1 for \code{amphora-redteam-audit} (owns the 24-axis runtime); 0.5 if invoked; 0 else. & \textbf{10} & Adversarial pressure exposes silent failures. Weighted lower than \(R/P\) because the gate itself is a runtime, not a scientific claim.\\
+\(S_r\) \emph{sci.\ readiness} & \{LOCKED\_INTERNAL\,\(\to\)\,1, NOT\_APPLICABLE\,\(\to\)\,0.5, UNVALIDATED\,\(\to\)\,0\} & \textbf{5} & Self-reported readiness in \code{mission.md} front-matter --- a signal, not proof. Deliberately weighted lowest to prevent self-inflation.\\
+\bottomrule
+\end{tabularx}
+
+\vspace{2mm}
+\callout{Signed receipts \(\neq\) mission front-matter phase.}{%
+A module can carry many portfolio receipts (evidence of scientific work landed under
+signed audit) while its \code{mission.md} still reports \textsc{Pre\_Phase\_0} /
+\textsc{Unvalidated}. This is by design: the front-matter is deliberately conservative
+until an \emph{independent} evaluator signs. The \textbf{portfolio manifest} tracks
+evidence \emph{completed}; the \textbf{mission front-matter} tracks the module's
+formal readiness \emph{declaration}. Both are correct; both are shown throughout this report.}
+
+\newpage
+
+% ============================================================== UNDERSTANDING THE TIERS
+\PageTitle{Understanding the tiers}{What Tier S, A, B, C, D actually mean to founders}
+
+The composite score partitions the 40 modules into five tiers with visibly different scientific character. Each tier answers a different question a reviewer or investor is likely to ask.
+
+\vspace{-1mm}
+
+% Tier S -----------------------------------------------------
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Navy,boxrule=1.2pt,arc=2mm,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\begin{minipage}{18mm}
+\centering\colorbox{Navy}{\parbox[c][10mm][c]{16mm}{\centering\sffamily\bfseries\color{white}TIER S}}\par
+\vspace{1mm}
+{\sffamily\fontsize{7.2}{8.4}\selectfont\color{Muted}score \(\geq 70\)\\1 module}
+\end{minipage}\hfill
+\begin{minipage}{150mm}
+\textbf{Portfolio backbone.} \emph{Where our coating IP claim lives.}
+If a founder asks \enquote{what do we actually predict?}, the answer comes from Tier S: T\textsubscript{g}, dielectric, refractive index, density, plus the uncertainty quantification that guards them all. Deleting a Tier S module would collapse the coating IP claim.
+
+\vspace{0.5mm}
+\textbf{Qualifies when:} \(\geq 5\) signed portfolio receipts \(\cdot\) at least one external-corpus validation \(\cdot\) both bootstrap and conformal UQ landed \(\cdot\) at least one physics baseline computed.
+
+\textbf{Example:} \code{amphora-molecule-property} (27 receipts spanning Tg, \(\varepsilon_r\), \(n_D\), \(\rho\), water contact angle, water uptake, Hansen \(\delta\), Flory-Huggins \(\chi\)).
+
+\textbf{Trust:} the property MAE / R\textsuperscript{2} numbers, the conformal coverage \(\geq 95\%\), the signed receipts.
+\textbf{Be careful:} the mission front-matter still says \textsc{Pre\_Phase\_0} / \textsc{Unvalidated}. Portfolio-level maturity does not imply module-level maturity until an independent evaluator signs.
+\end{minipage}
+\end{tcolorbox}
+
+% Tier A -----------------------------------------------------
+\begin{tcolorbox}[enhanced,colback=PaleBlue,colframe=Blue,boxrule=1.0pt,arc=2mm,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\begin{minipage}{18mm}
+\centering\colorbox{Blue}{\parbox[c][10mm][c]{16mm}{\centering\sffamily\bfseries\color{white}TIER A}}\par
+\vspace{1mm}
+{\sffamily\fontsize{7.2}{8.4}\selectfont\color{Muted}score 50--69\\3 modules}
+\end{minipage}\hfill
+\begin{minipage}{150mm}
+\textbf{Signed Phase-0.} \emph{Property-specialised scientific modules.}
+Real receipts, real theory, real external validation --- narrower scope than Tier S. Each Tier A module owns one coating property family (solvency, corrosion, viscosity).
+
+\vspace{0.5mm}
+\textbf{Qualifies when:} 3--14 signed portfolio receipts \(\cdot\) at least one external corpus locked \(\cdot\) physics baseline present \(\cdot\) UQ (bootstrap-only OK).
+
+\textbf{Examples:} \code{amphora-solvency-score} (14 receipts, Hansen 3-component + Flory-Huggins \(\chi\)); \code{amphora-barrier-corrosion-score} (8 receipts, NIST CORR-DATA + Polyverse diffusivity); \code{amphora-tolerance-robustness} (5 receipts, complete UQ arc --- \emph{ranks Tier A on score but functions as Tier S for every other module}).
+
+\textbf{Trust:} property-specific predictions with a published-theory anchor.
+\textbf{Be careful:} external corpora are often small (8--30 samples). Phase-1 must expand each.
+\end{minipage}
+\end{tcolorbox}
+
+% Tier B -----------------------------------------------------
+\begin{tcolorbox}[enhanced,colback=PaleTeal,colframe=Teal,boxrule=1.0pt,arc=2mm,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\begin{minipage}{18mm}
+\centering\colorbox{Teal}{\parbox[c][10mm][c]{16mm}{\centering\sffamily\bfseries\color{white}TIER B}}\par
+\vspace{1mm}
+{\sffamily\fontsize{7.2}{8.4}\selectfont\color{Muted}score 30--49\\19 modules}
+\end{minipage}\hfill
+\begin{minipage}{150mm}
+\textbf{Emerging Phase-0.} \emph{Two distinct populations sit here.} (i) Scientific-emerging modules with exactly one signed portfolio receipt that opens a new claim (novelty, corrosion baseline, decision card, pot-life). (ii) Administrative-Phase-0 modules that own a load-bearing pipeline hook (source-ledger, formulation-arithmetic, evidence-intake-validator) --- their score reflects operational discipline, not scientific evidence.
+
+\vspace{0.5mm}
+\textbf{Qualifies when:} score in \([30, 49]\) \(\cdot\) 0--4 signed portfolio receipts \(\cdot\) may lack physics or UQ.
+
+\textbf{Examples (scientific):} \code{amphora-molecule-role-ranker} (Push \#39 v2 decision card), \code{amphora-molecule-novelty} (Push \#31 Tanimoto NN).
+\textbf{Examples (administrative):} \code{amphora-source-ledger}, \code{amphora-formulation-arithmetic}, \code{amphora-evidence-intake-validator}.
+
+\textbf{Trust:} the single receipt (when present) is real and reproducible. The administrative hook is Rust code with unit tests.
+\textbf{Be careful:} the rubric warns explicitly that Phase-0 phase-lock alone can lift an administrative module above a scientific Pre-Phase-0 one --- \emph{that inversion is a signal to read the module, not a licence to promote it.}
+\end{minipage}
+\end{tcolorbox}
+
+% Tier C and D on same page ---------------------------------
+\begin{minipage}[t]{0.485\textwidth}
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Muted,boxrule=0.8pt,arc=2mm,left=2.5mm,right=2.5mm,top=1.8mm,bottom=1.8mm]
+\centering\colorbox{Muted}{\parbox[c][8mm][c]{16mm}{\centering\sffamily\bfseries\color{white}TIER C}}\par
+\vspace{1mm}
+{\sffamily\fontsize{7.2}{8.4}\selectfont\color{Muted}score 0 \(\cdot\) 11 modules}\par\vspace{1mm}
+\textbf{Infrastructure, assurance, meta.} \emph{The invisible spine.} No scientific claim to sign; every scientific module in Tiers S/A/B depends on them.
+
+\vspace{0.5mm}
+\textbf{Qualifies when:} no \code{mission.md} (or NOT\_APPLICABLE) \(\cdot\) provides load-bearing code (canonical JSON, DSSE, hash chains, Rust dispatch, RDKit bindings, meta-audit runtime).
+
+\textbf{Examples:} \code{amphora-core}, \code{amphora-engine}, \code{amphora-assurance-capabilities}, \code{amphora-rdkit-ffi}.
+
+\textbf{Trust:} deterministic execution and byte-stability of the workspace itself.
+\textbf{Be careful:} highest blast-radius attack surface. A supply-chain compromise here invalidates every Tier S receipt downstream. Lock \code{Cargo.lock} \emph{and} verify RDKit fingerprints per release.
+\end{tcolorbox}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\begin{tcolorbox}[enhanced,colback=PaleAmber,colframe=Amber,boxrule=0.8pt,arc=2mm,left=2.5mm,right=2.5mm,top=1.8mm,bottom=1.8mm]
+\centering\colorbox{Amber}{\parbox[c][8mm][c]{16mm}{\centering\sffamily\bfseries\color{white}TIER D}}\par
+\vspace{1mm}
+{\sffamily\fontsize{7.2}{8.4}\selectfont\color{Muted}score \(<\)30 \(\cdot\) 6 modules}\par\vspace{1mm}
+\textbf{Pre-Phase-0.} \emph{Honestly gated or deliberately parked.} These modules exist but do not currently support a signed portfolio claim. Some await legal / EHS / supplier confirmations; some are roadmap-only until safety guardrails are added.
+
+\vspace{0.5mm}
+\textbf{Qualifies when:} score \(<\)30 \(\cdot\) missing \(\geq 3\) of \{receipts, external validation, physics, UQ, red-team gate\} \(\cdot\) usually GATED or ROADMAP.
+
+\textbf{Examples:} \code{amphora-molecule-generator} (ROADMAP --- generative model deliberately parked), \code{amphora-ip-fto-guard} (GATED --- awaits FTO opinion), \code{amphora-ingredient-library} (GATED --- rights confirmations).
+
+\textbf{Trust:} nothing scientific; Tier D is honest about its status.
+\textbf{Be careful:} promoting a Tier D module without the same evidence discipline the Tier S receipts required is the highest-risk move in the portfolio.
+\end{tcolorbox}
+\end{minipage}
+
+\vspace{3mm}
+
+% Portfolio composition on same page as Tier C/D ------------------------
+{\sffamily\fontsize{7.5}{9}\selectfont\bfseries\color{Cyan}\MakeUppercase{Portfolio composition}}\par\vspace{1mm}
+{\sffamily\bfseries\large\color{Navy}Where the receipts sit \& section template}\par\vspace{2mm}
+
+\begin{figure}[!h]
+\centering
+\begin{minipage}[b]{0.55\textwidth}
+\includegraphics[width=\textwidth]{figures/F2_receipts_donut.pdf}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.42\textwidth}
+\includegraphics[width=\textwidth]{figures/F3_phase_status.pdf}
+\end{minipage}
+\caption{\textbf{Left:} 65 signed receipts across 10 portfolio modules. \code{amphora-molecule-property} dominates because it owns the widest property surface. \textbf{Right:} Every Tier concentrates a different phase mix. Tier B holds 19 modules and splits between Phase-0 pipeline hooks and Pre-Phase-0 scientific modules.}
+\end{figure}
+
+\vspace{-1mm}
+\textbf{Per-module section template.} Every Tier~S/A/B section uses an identical eight-block layout: (1)~tier badge + module ID + phase pill; (2)~\emph{Purpose} (1 sentence); (3)~\emph{Data} (with SHA-256); (4)~\emph{Theory \& baselines}; (5)~\emph{Predictive results} (MAE / R\textsuperscript{2} / coverage); (6)~\emph{Best-practice vs Amphora}; (7)~\emph{Receipts}; (8)~\emph{Red-team callout} (pale-red box). Tier~C and D use a compact single-row table.
+
+\newpage
+
+% ============================================================== TIER S
+\PageTitle{Tier S \(\cdot\) Portfolio backbone}{The strongest scientific modules}
+
+\ModuleHeader{S}{Navy}{amphora-molecule-property}{\prephase / receipts 27}
+
+\textbf{Purpose.} Structure-property prediction hub for coating monomers and polymers: T\textsubscript{g}, dielectric constant \(\varepsilon_r\), refractive index \(n_D\), density \(\rho\), water contact angle, water uptake, Hansen \(\delta_d/\delta_p/\delta_h\).
+
+\textbf{Data locked (external validation).}
+\begin{itemize}[nosep]
+\item OpenPoly literature benchmark, Ma et\ al.\ 2023 --- 741 polymers, up to 443 with experimental \(T_g\)~(K); CSV SHA-256 \code{5108...9b3f}.
+\item RadonPy PI1070, Fujimoto et\ al.\ 2023 J.\ Chem.\ Theory Comput. --- 1077 polymers with MD-simulated \(\rho, n_D, \varepsilon_r\), \(\lambda_{\text{thermal}}\), \(C_p\), 5 replicates each.
+\item Polyuniverse Epoxy 1M --- 1000-polymer sample used to fit Ridge \(Y_{gi}\).
+\item OMG chi/Hansen fixtures for solvency comparison.
+\end{itemize}
+
+\textbf{Theory \& baselines.} Van~Krevelen 1990 Ch.~6/10/11/18 group-contribution; Bicerano 2002 40-group; Clausius-Mossotti 1879 (\(\varepsilon_r\)); Bondi 1968 Van~der~Waals volumes; Rogers-Hahn 2010 Morgan/ECFP; Papadopoulos-Proedrou-Vovk-Gammerman 2002 split-conformal.
+
+\textbf{Predictive results (external validation).}
+\begin{center}\footnotesize
+\begin{tabular}{@{}L{28mm} L{34mm} R{12mm} R{12mm} R{14mm} L{28mm}@{}}
+\toprule
+\textbf{Property} & \textbf{Best model} & \textbf{MAE} & \textbf{R\textsuperscript{2}} & \textbf{Coverage} & \textbf{Corpus} \\
+\midrule
+\(T_g\) [K] & RF LOSO-CV, Push \#26 & 51.24 & +0.40 & --- & OpenPoly n=442 \\
+\(T_g\) [K] & Ridge \(Y_{gi}\), Push \#25 & 70.42 & +0.26 (r) & --- & vs published VK on same set \\
+\(\varepsilon_r\) & RF holdout, Push \#23 & 0.40 & +0.56 & --- & OpenPoly n=59 \\
+\(\varepsilon_r\) mixed & RF+conformal, Push \#34 & 1.08 & +0.70 & 0.9745 & OpenPoly+RadonPy n=275 \\
+\(n_D\) & Mixed RF+conformal, Push \#35 & 0.030 & +0.64 & 0.9634 & OpenPoly+RadonPy n=246 \\
+\(\rho\) [g/cm\(^3\)] & Stacked RF+VK, Push \#38 & 0.057 & +0.80 & 0.9306 & RadonPy n=216 \\
+\(\theta_{\text{H}_2\text{O}}\) & RF LOSO, Push \#24 & 14.73 & +0.078 & --- & OpenPoly n=173 \\
+\bottomrule
+\end{tabular}\end{center}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.86\textwidth]{figures/F5_property_parity.pdf}
+\caption{Per-property head-to-head. \good\ Density and \(n_D\) beat their Van~Krevelen physics baselines by more than 50\%. \lefttodo\ \(\varepsilon_r\) still trails the within-context Push \#23 target because cross-corpus training absorbs a 3.5\(\times\) distribution shift (Push \#33).}
+\end{figure}
+
+\textbf{Best practice vs Amphora.} Bicerano 2002 reports \(T_g\)-MAE floors around 25--30\,K on curated experimental sets; our LOSO estimate at 51\,K is \(\sim 2\times\) worse than Bicerano's tightest published target, and it is HONEST because it is measured on cross-scaffold held-out polymers (Bicerano's number is within-data). Density: Van~Krevelen 1990 Ch.~4 typically delivers \(\pm 0.03\)--\(0.06\) g/cm\(^3\); our stacked RF+VK is at 0.057 g/cm\(^3\) on RadonPy MD data --- \emph{parity} with the published target, but with additional conformal PI coverage the published baseline does not provide.
+
+\redteambox{The model card advertises \emph{portfolio-level} 27 signed receipts, but the mission front-matter still declares \code{scientific_readiness: UNVALIDATED}. A red-team reviewer could argue we are cherry-picking positive test slices while burying the water-uptake honest-negative (Push \#22) and the dielectric distribution-shift finding (Push \#33). Every negative receipt is signed and indexed --- \emph{do not delete or reorder them under founder pressure} --- and every cross-corpus evaluation slice must remain seeded to a public commit hash.}
+
+\newpage
+
+\ModuleHeader{S}{Navy}{amphora-tolerance-robustness}{\phasezero / receipts 5}
+
+\textbf{Purpose.} Uncertainty quantification, distributional robustness, and prediction-interval coverage for every ML-based property predictor in the portfolio.
+
+\textbf{Data locked.} Same OpenPoly experimental \(T_g\) (n\,=\,442) and Polyuniverse Epoxy \(Y_{gi}\) fits as \code{amphora-molecule-property}; 60/20/20 seed=0 train/calibration/test.
+
+\textbf{Theory \& baselines.} Efron 1979 non-parametric bootstrap; Papadopoulos-Proedrou-Vovk-Gammerman 2002 inductive conformal; Romano-Patterson-Cand\`es 2019 Conformalized Quantile Regression; Angelopoulos-Bates 2021 tutorial; Vovk-Gammerman-Shafer 2005 Algorithmic Learning in a Random World Ch.~4.
+
+\textbf{Predictive results --- UQ arc.}
+\begin{center}\footnotesize
+\begin{tabular}{@{}L{50mm} R{20mm} R{18mm} R{16mm} R{16mm}@{}}
+\toprule
+\textbf{Method} & \textbf{Target} & \textbf{Empirical} & \textbf{PI width} & \textbf{Push} \\
+\midrule
+Bootstrap PI (parameter uncertainty only) & 95\% & \textcolor{Red}{\textbf{25.1\%}} & 51.6~K & \#28 \\
+Split-conformal on Ridge \(Y_{gi}\) & 95\% & \textbf{96.83\%} & 374.9~K & \#29 \\
+Split-conformal on RF ML predictor & 95\% & \textbf{96.63\%} & 343.5~K & \#30 \\
+Conformalized Quantile Regression & 95\% & \textbf{100.00\%} & 388.9~K & \#32 \\
+\bottomrule
+\end{tabular}\end{center}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/F4_uq_arc.pdf}
+\caption{The UQ arc: parameter-only bootstrap (Push \#28) massively undercovers on external test polymers, motivating the split-conformal fix (\#29, \#30). CQR (\#32) achieves marginal over-coverage.}
+\end{figure}
+
+\textbf{Best practice vs Amphora.} Lei-G'Sell-Rinaldo-Tibshirani-Wasserman 2018 JASA established that split-conformal delivers valid marginal coverage under exchangeability; our empirical result at 96.6\%--96.8\% on external held-out polymers reproduces the theoretical guarantee to within \(\pm 2\) percentage points --- consistent with finite-sample tolerance for \(n_{\text{cal}} \approx 88\).
+
+\redteambox{The bootstrap PI honest-negative (25\% coverage) MUST remain in the portfolio unedited; deleting it would let a competitor claim we hid the parameter-only trap. Conformal coverage guarantees hold only under exchangeability --- if training and calibration polymers come from different manufacturers or eras, the guarantee silently breaks. A reviewer should verify our split by scaffold and by source-document to guard against covariate shift.}
+
+\newpage
+
+% ============================================================== TIER A
+\PageTitle{Tier A \(\cdot\) Signed Phase-0}{Solvency, corrosion, viscosity, design rules}
+
+\ModuleHeader{A}{Blue}{amphora-solvency-score}{\prephase / receipts 14}
+
+\textbf{Purpose.} Hansen 3-component solubility parameters \(\delta_d, \delta_p, \delta_h\) and Flory-Huggins \(\chi\) predictions for polymer/solvent compatibility.
+
+\textbf{Data.} OMG chi/Hansen fixture; published Hansen 2007 handbook; 8 published external polymer-solvent pairs used for external validation.
+
+\textbf{Theory \& baselines.} Hansen 2007 Ch.~2 (3-component decomposition); Flory 1953 Ch.~12; Huggins 1942; Fedors 1974; van~Krevelen 1990 Ch.~7; conformal PI (as \S3.2).
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}L{50mm} R{18mm} R{16mm} R{16mm}@{}}
+\toprule
+\textbf{Model / Result} & \textbf{MAE} & \textbf{R\textsuperscript{2}} & \textbf{Coverage} \\
+\midrule
+Hansen 3-component ML baseline vs physics & 1.3 MPa\(^{1/2}\) & +0.52 & --- \\
+Flory-Huggins \(\chi\) physical baseline & 0.31 & +0.40 & --- \\
+Chi conformal PI on 3 solvents & --- & --- & 0.92 \\
+External validation on 8 published pairs & 1.6 MPa\(^{1/2}\) & --- & --- \\
+\bottomrule
+\end{tabular}\end{center}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/F6_hansen_3d.pdf}
+\caption{Hansen space projection. The 5 canonical epoxy amines (Push \#19/\#39) cluster to the polar+H-bonding quadrant, aligning with published Hansen 2007 values for aliphatic amines. IPDA (cycloaliphatic) sits closest to non-polar solvents; DDS (aromatic sulfone) at higher \(\delta_p\).}
+\end{figure}
+
+\textbf{Best practice vs Amphora.} Hansen 2007 tabulates polymer/solvent \(\delta\) triples with an implicit \(\pm 1\)--2 MPa\(^{1/2}\) accuracy; our external validation matches at 1.6 MPa\(^{1/2}\), within the published reference band.
+
+\redteambox{Hansen parameter tabulations from Hansen 2007 are already circulating in literature --- a hostile reviewer can accuse us of memorising published training values and re-serving them as \enquote{predictions}. Our defence is the 8-pair external held-out set, but this set is small; Phase-1 must add another 20\,+ pairs from independent references before we can claim Hansen-domain prediction (not just interpolation).}
+
+\medskip
+
+\ModuleHeader{A}{Blue}{amphora-barrier-corrosion-score}{\prephase / receipts 8}
+
+\textbf{Purpose.} EIS impedance-derived barrier performance predictions, solvent diffusivity, rust-creep susceptibility for coating candidate ranking.
+
+\textbf{Data.} Bureau of Reclamation ST-19168 EIS+rust-creep pairs; NACE-NIST CORR-DATA v1/v2/v3 (7666 corrosion records); Polyverse solvent diffusivity (3044 records); polymer sorption model (2137 records, 45 polymers).
+
+\textbf{Theory.} Uhlig-Revie 2008 Corrosion \& Corrosion Control §2.3, §11.2; Roberge 2008 Corrosion Engineering Ch.~7; NACE MP0169 (baseline steel/seawater); EN~ISO~12944-2 marine categories; Kramers-Kronig relations for EIS validity.
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}L{54mm} R{16mm} R{16mm} R{18mm}@{}}
+\toprule
+\textbf{Result} & \textbf{MAE} & \textbf{R\textsuperscript{2}} & \textbf{Notes} \\
+\midrule
+CORR-DATA log-rate QSPR (n=7666) & 0.63 log(mm/yr) & --- & material-safe split \\
+CORR-DATA marine subset (n=588) LOSD-CV & 0.633 log(mm/yr) & --- & carbon steel baseline \\
+Polyverse diffusivity conformal PI & --- & --- & coverage 0.94 \\
+Rust-creep 168\,h correlation (ST-19168) & --- & r = +0.71 & 12 coatings \\
+\bottomrule
+\end{tabular}\end{center}
+
+\redteambox{The NIST CORR-DATA subset is heavily biased toward stainless and copper alloys; our carbon-steel-in-seawater baseline (median 0.038 mm/yr) has few source-documents and could be gamed by a competitor claiming any polymer barrier that reduces this rate by \(>50\%\). Phase-1 must add frequency-resolved EIS spectra (Kramers-Kronig-validated) before any coating efficacy claim graduates from research to test-lab.}
+
+\newpage
+
+\ModuleHeader{A}{Blue}{amphora-viscosity-score}{\prephase / receipts 3}
+
+\textbf{Purpose.} Predict melt viscosity of coating resins over the process temperature envelope; enforce cure/pot-life kinetics.
+
+\textbf{Data.} Polyverse melt viscosity dataset (polymer-safe holdout); published viscosity/Tg pairs.
+
+\textbf{Theory.} Fox-Flory-Whitten 1954 (\(\eta \propto M_w^{3.4}\)); Arrhenius temperature dependence; Van~Krevelen 1990 Ch.~15; Kissinger 1957 non-isothermal DSC kinetics.
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}L{54mm} R{16mm} R{16mm} R{18mm}@{}}
+\toprule
+\textbf{Result} & \textbf{MAE (\(\log_{10}\eta\))} & \textbf{R\textsuperscript{2}} & \textbf{Notes} \\
+\midrule
+Fox-Flory-Whitten physical baseline & 0.55 & +0.62 & MW range 200--10\(^5\) g/mol \\
+ML polymer-safe holdout & 0.41 & +0.71 & Polyverse n=180 \\
+Conformal PI coverage & --- & --- & 0.93 at 95\% \\
+\bottomrule
+\end{tabular}\end{center}
+
+\redteambox{Melt viscosity training data is heavily concentrated on thermoplastics; our epoxy/amine coating targets are thermosets, so extrapolation across chemistry classes carries systematic risk. Any \enquote{cure-kinetics-passes} declaration must be gated on the pot-life module (Push \#12 Arrhenius) reproducing published Ea within \(\pm 15\%\).}
+
+\medskip
+
+\ModuleHeader{A}{Blue}{amphora-design-rule-score}{\prephase / receipts 4}
+
+\textbf{Purpose.} Predict Purformance-style mechanical scores (gloss, hiding, cupping, scratch hardness) from formulation composition.
+
+\textbf{Data.} Purformance multi-target evaluation set (4 QC endpoints).
+
+\textbf{Theory.} Multi-target regression (Caruana 1997); scratch hardness models (Suh 1986; Briscoe 1998).
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}L{54mm} R{16mm} R{16mm} R{18mm}@{}}
+\toprule
+\textbf{Result} & \textbf{MAE} & \textbf{R\textsuperscript{2}} & \textbf{Coverage} \\
+\midrule
+Multi-target ML (4 QC endpoints) & varies & +0.40 (avg) & --- \\
+Scratch hardness conformal PI & --- & +0.63 & 0.95 \\
+\bottomrule
+\end{tabular}\end{center}
+
+\redteambox{QC endpoints (gloss, hiding, cupping) are notoriously operator- and instrument-dependent; a red-team reviewer can point to any within-lab test where a single instrument calibration shifted the reported gloss by 5+ points --- our conformal PI must be validated per-instrument before claim generalisation.}
+
+\newpage
+
+% ============================================================== TIER B
+\PageTitle{Tier B \(\cdot\) Emerging Phase-0}{Novelty, corrosion baseline, meta-audit, decision card}
+
+\ModuleHeader{B}{Teal}{amphora-molecule-role-ranker}{\prephase / receipts 1}
+
+\textbf{Purpose.} Integrated portfolio decision card ranking canonical candidates against all portfolio predictors simultaneously with per-property applicability domain.
+
+\textbf{Data \& theory.} Push \#39 v2 decision card for 5 canonical DGEBA epoxy amines (IPDA, DDS, DETA, TETA, m-XDA); each scored on 5 predictors (Tg, \(\varepsilon_r\), \(n_D\), \(\rho\)-stacked, \(\theta_{\text{H}_2\text{O}}\)) with per-predictor Tanimoto NN AD gate at \(T \geq 0.30\); Keeney-Raiffa 1976 multi-attribute utility; OECD 2007 QSAR Principle 3.
+
+\textbf{Key result.} DDS ranks \#1 (composite 0.063; \emph{only} candidate passing all 5 AD gates); 4/5 candidates HONESTLY gated out of domain; ranked list reproduces chemistry expectations (aromatic sulfone \(\rightarrow\) high Tg 146\,\(^{\circ}\)C).
+
+\redteambox{The composite scoring formula is a chemistry-motivated PROTOTYPE; the coefficients (100/20 sigmoid steepness, 90\,\(^{\circ}\) hydrophobic threshold) are hand-picked and could be tuned to promote any candidate. Publish the exact scoring formula in the receipt, freeze the AD threshold, and never allow silent coefficient updates between candidate rounds.}
+
+\medskip
+
+\ModuleHeader{B}{Teal}{amphora-molecule-novelty}{\prephase / receipts 1}
+
+\textbf{Purpose.} Chemical novelty scoring via Tanimoto NN against a locked reference corpus.
+
+\textbf{Data.} Push \#31 --- 5 canonical amines vs 442 openpoly reference polymers (Morgan/ECFP radius 2, 2048 bits).
+
+\textbf{Theory.} Rogers-Hahn 2010; Bajusz-R\'acz-H\'eberger 2015 J.\ Cheminform.; Bemis-Murcko 1996; Willett-Barnard-Downs 1998.
+
+\textbf{Result.} 5/5 candidates classified NOVEL (T \(< 0.40\)); 4/5 below reference LOO 5th percentile; 2/5 share Bemis-Murcko scaffolds with references (aromatic sulfone / xylene) --- honest nuance.
+
+\redteambox{Structural novelty is NOT patentability; a reviewer could confuse the two and inflate the IP claim. Every novelty receipt already carries a claim-lock: \enquote{novelty score is a reference similarity metric, NOT a legal patentability determination.}}
+
+\medskip
+
+\ModuleHeader{B}{Teal}{amphora-public-corrosion-benchmark}{\prephase / receipts 1}
+
+\textbf{Purpose.} Locked public corrosion benchmark on the NIST CORR-DATA marine subset.
+
+\textbf{Data \& theory.} Push \#21 --- NIST CORR-DATA 2017 (doi:10.18434/M3TH4R), 24{,}721 records; 588 marine polymers × 30 source documents subset; Leave-One-Source-Document-Out CV; Ridge on log(corrosion rate) target.
+
+\textbf{Result.} MAE(log\(_{10}\) rate) = 0.633 vs NULL median 0.681; \good\ real +7.0\% relative lift; carbon-steel-in-seawater baseline median 0.038 mm/yr established as the number future coatings must beat.
+
+\redteambox{The subset is heavily biased toward stainless and copper alloys; carbon steel per-material-family has only \(\sim 128\) rows and Phase-1 must add more before any lifetime forecast leaves the research envelope.}
+
+\medskip
+
+\ModuleHeader{B}{Teal}{amphora-cure-potlife-gate}{\prephase / receipts 1}
+
+\textbf{Purpose.} Arrhenius pot-life kinetics for 25 published DGEBA/amine systems (Evonik cure kinetics dataset).
+
+\textbf{Data \& theory.} Kissinger 1957 non-isothermal DSC; Arrhenius rate law; May 1988 Epoxy Resins Ch.~6.
+
+\textbf{Result.} pot-life MAPE 14.7\%; Arrhenius over constant baseline lift +80.5\%; held-out temperature extrapolation MAPE 15.6\%.
+
+\redteambox{Pot-life depends on stoichiometry (amine hydrogen equivalence ratio) that is not always reported in published DSC data --- a reviewer could point to systematic bias. Any pot-life claim must include the AHEW/EEW ratio used for computation.}
+
+\medskip
+
+\enlargethispage{30mm}
+\vspace{-1mm}\nopagebreak
+{\footnotesize
+\begin{tcolorbox}[colback=PaleTeal,colframe=Teal,boxrule=.4pt,arc=1.2mm,left=2mm,right=2mm,top=1mm,bottom=1mm]
+{\sffamily\bfseries\color{Teal}\code{amphora-redteam-audit}}\ \textbullet\ \phasezero\ \textbullet\ owns runtime, 0 signed receipts \textbullet\ \textbf{47 red-team attacks locked} (24 module-specific + 23 standard axes); dispatches deterministic control diagnostic across 9 upstream modules; every axis cross-checked at the benchmark boundary. Theory: DSSE (in-toto 2020), Ed25519 (RFC 8032), SHA-256 (NIST FIPS 180-4), SP 800-53 AU-6/CM-6. \emph{Attack axes authored in-house; Phase-1 needs an independent adversarial corpus before claiming \emph{coverage} rather than \emph{presence}.} Detailed in the central engine (p.~\pageref{sec:engine}).
+\end{tcolorbox}}
+
+\newpage
+
+% ============================================================== PHYSICS VS ML
+\PageTitle{Physics vs ML head-to-head}{Where our data-driven models beat published theory --- and where they do not}
+
+The strongest evidence for coating-IP durability is a fair, receipt-signed side-by-side of a published physics baseline against our data-driven model on the \emph{same} test slice. Three examples:
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.86\textwidth]{figures/F7_density_head_to_head.pdf}
+\caption{\textbf{Density on RadonPy PI1070} (Push \#36/\#38). \good\ RF beats VK physics by 57\% MAE; the stacked RF+VK ensemble adds R\textsuperscript{2} +0.08 and improved rank correlation. The Wolpert 1992 stack keeps interpretable weights (\(w_{\text{RF}} = 0.635, w_{\text{VK}} = 0.288\)) --- data and physics both contribute.}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.86\textwidth]{figures/F8_distribution_shift.pdf}
+\caption{\textbf{Cross-dataset generalisation (Push \#33/\#34).} Push \#33 is our best-signed \emph{honest-negative}: an OpenPoly-trained dielectric ML model deteriorates from MAE 0.40 to MAE 4.04 on RadonPy MD-simulated polymers because the training and test distributions differ by 3.5\(\times\) in median. Push \#34 closes the gap by mixed-source training.}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/F9_bestpractice_parity.pdf}
+\caption{\textbf{Amphora vs best-practice targets.} On \(\rho\) and \(n_D\) we hit or beat published Van~Krevelen accuracies. On \(T_g\) we trail Bicerano's tightest 30\,K target by \(\sim 20\)\,K --- but Bicerano numbers are within-data and ours are cross-scaffold held-out, so the comparison is deliberately unfavourable to us.}
+\end{figure}
+
+\newpage
+
+% ============================================================== TIER C
+\PageTitle{Tier C \(\cdot\) Infrastructure, assurance, meta}{The invisible spine}
+
+Tier~C modules do not score on the scientific rubric (no receipts to sign, no
+predictions to publish), but every scientific module in Tiers~S/A/B depends on
+them. They are the \emph{deterministic} spine: canonical JSON, DSSE signing, hash
+chains, evidence intake, source ledger, run provenance, report packaging, and
+the runtime dispatch.
+
+\begin{center}\footnotesize
+\begin{tabularx}{\textwidth}{@{}L{50mm} L{18mm} Y@{}}
+\toprule
+\textbf{Module} & \textbf{Role} & \textbf{Purpose} \\
+\midrule
+\code{amphora-core} & Rust library & Schemas, DSSE, \code{stable_hash}, \code{canonicalize}, \code{parse_json_strict}. Load-bearing for every KPI receipt.\\
+\code{amphora-engine} & Rust runtime & Deterministic dispatch across capability modules; enforces fail-closed on unknown module IDs.\\
+\code{amphora-cli} & Binary & Operator interface (\code{rtk cargo run -- ...}); reproducibility glue.\\
+\code{amphora-tui} & Binary & Terminal review UI; renders KPI receipts to reviewers.\\
+\code{amphora-bridge} & Rust library & Cross-module contract types.\\
+\code{amphora-rdkit-ffi} & FFI wrapper & Rust-safe RDKit bindings for chemistry featurisation (SMILES, Morgan FP, scaffolds).\\
+\code{amphora-assurance-capabilities} & Capability layer & Ships \code{deterministic_control_diagnostic} and \code{REDTEAM_ATTACK_AXES[24]}; every audit call originates here.\\
+\code{amphora-formulation-capabilities} & Capability layer & Formulation-arithmetic + universe + envelope-gates dispatch.\\
+\code{amphora-molecule-capabilities} & Capability layer & Molecule-property + molecule-role-ranker dispatch.\\
+\code{amphora-ord-codec} & Codec library & Open Reaction Database schema binding for cure/reaction records.\\
+\code{amphora-phase0-reviewer} & Runtime & Human-review receipt validator; enforces reviewer signatures.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\redteambox{Infrastructure is only as trustworthy as its release process --- a supply-chain attack (dependency substitution, Rust registry compromise, or upstream RDKit patch drift) invalidates every scientific receipt downstream. Lock \code{Cargo.lock}, verify RDKit build fingerprints per release, and keep the \code{amphora-redteam-audit} runtime the sole authoritative gate on merge.}
+
+\newpage
+
+% ============================================================== TIER B (admin) & D
+\PageTitle{Tier B \(\cdot\) administrative Phase-0 \(\cdot\) 12 pipeline modules}{Phase-0 pipeline hooks without signed scientific receipts}
+
+The following 12 modules are formally \phasezero\ (mission front-matter) but hold no
+signed \emph{portfolio} receipts yet --- they own pipeline hooks (contract validation,
+envelope gates, source ledger, run provenance, report packaging, etc.) required by
+the assurance runtime, but no scientific KPI has landed in the portfolio manifest.
+
+\begin{center}\footnotesize
+\begin{tabularx}{\textwidth}{@{}L{46mm} L{18mm} Y@{}}
+\toprule
+\textbf{Module} & \textbf{Score} & \textbf{Role in the pipeline} \\
+\midrule
+\code{amphora-formulation-arithmetic} & 44 & Deterministic BOM arithmetic \& solvent simultaneity solve.\\
+\code{amphora-formulation-universe} & 44 & Enumerate formulation candidates onto the target surface.\\
+\code{amphora-optimizer-orchestrator} & 44 & Coordinates constrained candidate search under authority locks.\\
+\code{amphora-source-ledger} & 44 & Dual-source integrity for every dataset citation.\\
+\code{amphora-candidate-contract} & 39 & Strict-JSON integrity for candidate declarations.\\
+\code{amphora-cro-protocol-packager} & 39 & Signed CRO-request packet builder.\\
+\code{amphora-envelope-gates} & 39 & Constraint envelope evaluation runtime.\\
+\code{amphora-evidence-intake-validator} & 39 & Host-side receipt integrity check on ingest.\\
+\code{amphora-molecule-design-gate} & 39 & Structural applicability check before scoring.\\
+\code{amphora-report-packager} & 39 & Signed deliverable quarantine (report-out).\\
+\code{amphora-run-provenance} & 39 & Hash-chain integrity for every deterministic run.\\
+\code{amphora-known-answer-benchmarks} & 34 & Locked known-answer harnesses; awaiting scientific KPI.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\redteambox{Score inflation is a real risk here: several of these are P=0.7 (Phase-0 phase-lock) with zero science signal. A reviewer could argue we are letting operational-readiness score points substitute for validated science. The rubric weights receipt density at 25 vs phase status at 20 specifically to prevent this trap --- and no Tier~B admin module reaches Tier~A on rubric alone.}
+
+\vspace{2mm}
+
+\PageTitle{Tier D \(\cdot\) Pre-Phase-0}{Weak signal or roadmap-only --- and why}
+
+\begin{center}\footnotesize
+\begin{tabularx}{\textwidth}{@{}L{40mm} L{14mm} L{28mm} Y@{}}
+\toprule
+\textbf{Module} & \textbf{Score} & \textbf{Op.\ readiness} & \textbf{Why still Pre-Phase-0 (blocker)} \\
+\midrule
+\code{amphora-ip-fto-guard} & 28.5 & GATED & Technical landscape locked; awaiting an independent FTO opinion before any patentability declaration.\\
+\code{amphora-sourceability-ehs} & 28.5 & GATED & EHS pre-screen exists but sourceability landscape is public-only; awaiting supplier confirmations.\\
+\code{amphora-process-qc-twin} & 24.0 & OPEN & SPC control-chart runtime is authored; no signed KPI yet because production data has not been linked in.\\
+\code{amphora-model-card-authority} & 16.5 & COMPLETE & Emits model cards; no scientific claim of its own to sign --- meta by design.\\
+\code{amphora-ingredient-library} & 11.0 & GATED & Ingredient catalogue exists but rights confirmations block release.\\
+\code{amphora-molecule-generator} & --- & ROADMAP & By-design roadmap-only; deliberately quarantined until authority-lock discipline is added to the generation loop.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\redteambox{\code{amphora-molecule-generator} is the single most dangerous module in the workspace: a generative model that fires without authority-lock review can flood the pipeline with unvalidated candidates and starve reviewers. Its \code{ROADMAP} status is a deliberate defensive posture --- do not promote it until the \code{amphora-redteam-audit} runtime carries a dedicated attack axis for \emph{unbounded generation}.}
+
+\newpage
+
+% ============================================================== CENTRAL ENGINE
+\label{sec:engine}
+\PageTitle{The central engine}{How the submodules bind}
+
+\begin{center}
+\begin{tikzpicture}[
+  every node/.style={font=\sffamily\footnotesize, align=center},
+  hubnode/.style={rounded corners=2mm, draw=Navy, minimum width=58mm, minimum height=9mm, text=Navy, thick, align=center, text width=54mm},
+  spoke/.style={rounded corners=1.6mm, draw=Blue, fill=PaleBlue, text=Navy, thick, align=center, text width=32mm, inner sep=1.6mm},
+  spoke2/.style={rounded corners=1.6mm, draw=Teal, fill=PaleTeal, text=Navy, thick, align=center, text width=32mm, inner sep=1.6mm},
+  spoke3/.style={rounded corners=1.6mm, draw=Amber, fill=PaleAmber, text=Navy, thick, align=center, text width=32mm, inner sep=1.6mm},
+  arrow/.style={-{Latex[length=2mm,width=1.6mm]}, thick},
+]
+% Center stack --------
+\node[hubnode, fill=PaleBlue] (eng) at (0, 1.6) {\textbf{amphora-engine}\\[-.4mm]{\scriptsize Rust runtime {\textbullet} deterministic dispatch}};
+\node[hubnode, fill=Panel]   (core) at (0, 0)   {\textbf{amphora-core}\\[-.4mm]{\scriptsize DSSE {\textbullet} stable\_hash {\textbullet} parse\_json\_strict}};
+\node[hubnode, fill=Panel]   (ass) at (0, -1.6) {\textbf{amphora-assurance-capabilities}\\[-.4mm]{\scriptsize deterministic\_control\_diagnostic {\textbullet} 24 attack axes}};
+\node[draw=Cyan, ultra thick, rounded corners=3mm, fit=(eng)(ass), inner sep=3mm](hub){};
+\node[anchor=south, text=Cyan, font=\sffamily\bfseries\small] at (hub.north) {CENTRAL ENGINE};
+
+% Spokes ---------------
+\node[spoke]  (prop)   at ( 6.4, 3.2) {\textbf{Property predictors}\\[-.4mm]{\scriptsize molecule-property\\ molecule-capabilities\\ rdkit-ffi}};
+\node[spoke]  (score)  at ( 7.2, 0)   {\textbf{Scoring modules}\\[-.4mm]{\scriptsize solvency-score\\ viscosity-score\\ design-rule-score\\ barrier-corrosion-score}};
+\node[spoke2] (uq)     at ( 6.4, -3.2){\textbf{UQ \& robustness}\\[-.4mm]{\scriptsize tolerance-robustness}};
+\node[spoke3] (evid)   at (-6.4, -3.2){\textbf{Evidence pipeline}\\[-.4mm]{\scriptsize evidence-intake-validator\\ source-ledger\\ run-provenance\\ report-packager}};
+\node[spoke3] (meta)   at (-7.2, 0)   {\textbf{Meta \& audit}\\[-.4mm]{\scriptsize redteam-audit\\ phase0-reviewer\\ model-card-authority}};
+\node[spoke]  (iface)  at (-6.4, 3.2) {\textbf{Interfaces}\\[-.4mm]{\scriptsize cli {\textbullet} tui {\textbullet} bridge}};
+
+% Arrows ---------------
+\draw[arrow, Navy] (hub.east) -- (prop.west)  node[midway, above, font=\scriptsize, color=Cyan] {\textit{include\_bytes!}};
+\draw[arrow, Navy] (hub.east) -- (score.west) node[midway, above, font=\scriptsize, color=Cyan] {\textit{predict}};
+\draw[arrow, Navy] (hub.east) -- (uq.west)    node[midway, below, font=\scriptsize, color=Cyan] {\textit{conformal PI}};
+\draw[arrow, Navy] (evid.east) -- (hub.west)  node[midway, below, font=\scriptsize, color=Cyan] {\textit{SHA-256 chain}};
+\draw[arrow, Navy] (meta.east) -- (hub.west)  node[midway, above, font=\scriptsize, color=Cyan] {\textit{audit gate}};
+\draw[arrow, Navy] (iface.east) -- (hub.west) node[midway, above, font=\scriptsize, color=Cyan] {\textit{CLI/TUI}};
+
+% Bottom output ------
+\node[draw=Green, thick, fill=PaleGreen, rounded corners=2mm, text=Navy, font=\sffamily\bfseries, text width=90mm, align=center] (out) at (0, -5.4) {DSSE-signed KPI receipt $\rightarrow$ portfolio manifest};
+\draw[arrow, Green, ultra thick] (hub.south) -- (out.north);
+\end{tikzpicture}
+\end{center}
+
+\vspace{2mm}
+\textbf{How it works.} The central engine (\code{amphora-engine} on top of \code{amphora-core} and \code{amphora-assurance-capabilities}) is a deterministic Rust runtime. Every scientific module (property, scoring, UQ) is dispatched by module ID: unknown IDs \emph{fail-closed} with \code{Err}. Every dispatched result is validated via \code{DeterministicControlDiagnosticV1.validate()}, canonicalised via \code{stable_hash}, and enveloped in a DSSE Ed25519 signature. The evidence pipeline flows in the other direction: raw datasets pass through \code{amphora-evidence-intake-validator} \(\rightarrow\) \code{amphora-source-ledger} \(\rightarrow\) \code{amphora-run-provenance} \(\rightarrow\) \code{amphora-report-packager}, with hash chains binding every artefact to a locked source commit.
+
+The audit ring (\code{amphora-redteam-audit}, \code{amphora-phase0-reviewer}, \code{amphora-model-card-authority}) sits on the return path: no KPI receipt reaches the portfolio manifest without traversing the deterministic control diagnostic (24 attack axes) and a signed reviewer receipt. The CLI/TUI/bridge triad is the human interface --- deliberately \emph{read-only} in the runtime path; every state-changing operation must originate from a signed command with an operator identity.
+
+\begin{tcolorbox}[enhanced,colback=PaleGreen,colframe=Green,boxrule=.5pt,arc=1.8mm,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\sffamily\bfseries\color{Navy}Byte-stability is the contract.\normalfont\ Every scientific pipeline in this
+portfolio runs twice under \code{OMP_NUM_THREADS=1}; the two consecutive DSSE-signed
+receipts must be SHA-256-identical, or the receipt is rejected before it can reach
+the manifest. This is the single most powerful red-team defence in the workspace,
+and it is enforced at the engine boundary --- not at the module boundary.
+\end{tcolorbox}
+
+\newpage
+
+% ============================================================== RED-TEAM MATRIX
+\PageTitle{Consolidated red-team matrix}{Cheat vectors \& mitigations per tier}
+
+\begin{center}\footnotesize
+\begin{tabularx}{\textwidth}{@{}L{22mm} L{50mm} Y@{}}
+\toprule
+\textbf{Tier} & \textbf{Concrete cheat / drift vector} & \textbf{Mitigation (already in place unless \lefttodo)} \\
+\midrule
+\tierbadge{S}{Navy} molecule-property   & Selectively deleting honest-negative receipts (water uptake, dielectric distribution shift) to inflate portfolio narrative. & Every negative receipt is signed + indexed in the master manifest; deletion breaks the SHA-256 chain audibly.\\
+\tierbadge{S}{Navy} tolerance-robustness & Silent covariate shift breaking exchangeability, invalidating the conformal coverage guarantee. & Verification requires scaffold-safe and source-document splits; \lefttodo\ Phase-1 add Mondrian-conformal per scaffold cluster.\\
+\tierbadge{A}{Blue} solvency-score       & Memorising published Hansen/Flory tables and reserving them as predictions. & 8-pair external validation; Phase-1 must add \(\geq 20\) independent held-out pairs.\\
+\tierbadge{A}{Blue} barrier-corrosion    & Cherry-picking corrosion subsets that favour our polymer chemistry. & Locked LOSD-CV across 30 source documents; Phase-1: frequency-resolved EIS with Kramers-Kronig validation.\\
+\tierbadge{A}{Blue} viscosity-score      & Thermoplastic training extrapolated to thermoset epoxies. & Cure/pot-life module cross-check; \lefttodo\ Phase-1 add thermoset-specific holdout.\\
+\tierbadge{A}{Blue} design-rule-score    & Instrument-drift in QC endpoints (gloss, hiding, cupping). & Per-instrument conformal PI; \lefttodo\ Phase-1 lock per-instrument calibration.\\
+\tierbadge{B}{Teal} molecule-role-ranker & Silent coefficient tuning on the composite score to promote favoured candidates. & Composite formula published in every receipt; freeze between candidate rounds.\\
+\tierbadge{B}{Teal} molecule-novelty     & Confusing structural novelty with legal patentability. & Claim-lock in every receipt.\\
+\tierbadge{B}{Teal} public-corrosion-benchmark & Overreach beyond the material families in NIST CORR-DATA. & Baseline claim restricted to uncoated substrates; \lefttodo\ Phase-1 expand.\\
+\tierbadge{B}{Teal} cure-potlife-gate    & Stoichiometry ambiguity in published DSC data. & AHEW/EEW ratio required in every kinetics receipt.\\
+\tierbadge{B}{Teal} redteam-audit        & Attack corpus authored in-house may miss adversarial modes. & \lefttodo\ Phase-1 independent external adversarial corpus.\\
+\tierbadge{C}{Muted} core / engine / ...  & Rust dependency substitution or upstream RDKit drift. & \code{Cargo.lock} + RDKit fingerprint audit; assurance-capabilities is the sole authoritative merge gate.\\
+\tierbadge{D}{Amber} molecule-generator  & Unbounded generation floods reviewers. & Deliberate \code{ROADMAP} lock until dedicated attack axis lands.\\
+\tierbadge{D}{Amber} model-card-authority & Model cards drift from the receipts they describe. & Every model card must SHA-256-reference its receipts; \lefttodo\ Phase-1 add a two-replay match check.\\
+\tierbadge{D}{Amber} sourceability-ehs   & Public-only pre-screen may miss supplier-specific hazards. & Locked as GATED; Phase-1 supplier confirmations required.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\newpage
+
+% ============================================================== REFERENCES
+\PageTitle{References}{Published theory, datasets, and methods used in this portfolio}
+
+\subsection*{Physical theory and group-contribution baselines}
+\begin{itemize}\footnotesize
+\item Van Krevelen, D.\ W.\ (1990). \emph{Properties of Polymers}, 3rd ed. Elsevier. Ch.~4 (density), Ch.~6 (Tg), Ch.~10 (refractive index), Ch.~11 (dielectric), Ch.~18 (permeability).
+\item Bicerano, J.\ (2002). \emph{Prediction of Polymer Properties}, 3rd ed. Marcel Dekker. Ch.~6 (Tg 40-group).
+\item Bondi, A.\ (1968). \emph{Molecular Crystals, Liquids, and Glasses}. Ch.~4 Van der Waals volumes.
+\item Hansen, C.\ M.\ (2007). \emph{Hansen Solubility Parameters --- A User's Handbook}, 2nd ed. CRC Press.
+\item Flory, P.\ J.\ (1953). \emph{Principles of Polymer Chemistry}. Cornell UP. Ch.~12.
+\item Huggins, M.\ L.\ (1942). \emph{J.\ Am.\ Chem.\ Soc.} 64, 1712.
+\item Fedors, R.\ F.\ (1974). \emph{Polym.\ Eng.\ Sci.} 14(2), 147.
+\item Clausius, R.\ (1879). Die mechanische Behandlung der Elektrizität; Mossotti, O.\ F.\ (1850).
+\item Fox, T.\ G., Flory, P.\ J.\ (1954). \emph{J.\ Polym.\ Sci.} 14, 315. Fox-Flory-Whitten viscosity scaling.
+\item Kissinger, H.\ E.\ (1957). \emph{Anal.\ Chem.} 29, 1702.
+\item Owens, D.\ K., Wendt, R.\ C.\ (1969); Kaelble, D.\ H.\ (1970); Wu, S.\ (1971). Surface-energy decompositions.
+\item Cassie, A.\ B.\ D.\ (1948). \emph{Disc.\ Faraday Soc.} 3, 11.
+\item Uhlig, H.\ H., Revie, R.\ W.\ (2008). \emph{Corrosion and Corrosion Control}, 4th ed. Wiley.
+\item Roberge, P.\ R.\ (2008). \emph{Corrosion Engineering}, McGraw-Hill.
+\end{itemize}
+
+\subsection*{Data sources}
+\begin{itemize}\footnotesize
+\item Ma, R., \textit{et al.} (2023). OpenPoly literature benchmark. github.com/TheJacksonLab/OMG\_PhysicalProperties.
+\item Fujimoto, K., Endo, R., Uchida, A., Ishikawa, T., Nakajima, T., Iida, K., Matsuoka, T., Rappe, A.\ M.\ (2023). RadonPy PI1070. \emph{J.\ Chem.\ Theory Comput.} 19, 15.
+\item NIST/NACE CORR-DATA (2017). \texttt{doi:10.18434/M3TH4R}. 24,721 corrosion observations.
+\item Polyverse melt viscosity, diffusivity, sorption datasets.
+\item OMG polymer chi/Hansen fixtures.
+\item Bureau of Reclamation ST-19168 EIS + rust-creep dataset.
+\item Evonik cure kinetics for 25 DGEBA/amine systems.
+\item May, C.\ A.\ (Ed.) (1988). \emph{Epoxy Resins --- Chemistry and Technology}, 2nd ed. Marcel Dekker.
+\end{itemize}
+
+\subsection*{Statistical / ML methodology}
+\begin{itemize}\footnotesize
+\item Hoerl, A.\ E., Kennard, R.\ W.\ (1970). Ridge regression. \emph{Technometrics} 12, 55.
+\item Efron, B.\ (1979). Bootstrap methods. \emph{Ann.\ Statist.} 7, 1.
+\item Breiman, L.\ (2001). Random Forests. \emph{Mach.\ Learn.} 45, 5.
+\item Rogers, D., Hahn, M.\ (2010). Extended-Connectivity Fingerprints (ECFP4). \emph{J.\ Chem.\ Inf.\ Model.} 50, 742.
+\item Bemis, G.\ W., Murcko, M.\ A.\ (1996). \emph{J.\ Med.\ Chem.} 39, 2887 (scaffold framework).
+\item Bajusz, D., R\'acz, A., H\'eberger, K.\ (2015). Tanimoto thresholds. \emph{J.\ Cheminform.} 7, 20.
+\item Papadopoulos, H., Proedrou, K., Vovk, V., Gammerman, A.\ (2002). Inductive confidence machines for regression. \emph{ICML}.
+\item Vovk, V., Gammerman, A., Shafer, G.\ (2005). \emph{Algorithmic Learning in a Random World}. Ch.~4.
+\item Lei, J., G'Sell, M., Rinaldo, A., Tibshirani, R., Wasserman, L.\ (2018). Distribution-free predictive inference. \emph{JASA}.
+\item Romano, Y., Patterson, E., Cand\`es, E.\ (2019). Conformalized Quantile Regression. \emph{NeurIPS}.
+\item Angelopoulos, A.\ N., Bates, S.\ (2021). Gentle intro to conformal prediction.
+\item Wolpert, D.\ H.\ (1992). Stacked Generalization. \emph{Neural Networks} 5(2), 241.
+\item Ke, G., \textit{et al.} (2017). LightGBM. \emph{NeurIPS}.
+\item Caruana, R.\ (1997). Multitask learning. \emph{Mach.\ Learn.} 28, 41.
+\item Keeney, R.\ L., Raiffa, H.\ (1976). \emph{Decisions with Multiple Objectives}. Wiley.
+\item OECD (2007). \emph{Guidance Document on the Validation of (Q)SAR Models}. Principle 3 (applicability domain).
+\end{itemize}
+
+\subsection*{Cryptography / audit / assurance}
+\begin{itemize}\footnotesize
+\item In-toto Attestation v1.0 (2020). Dead Simple Signing Envelope (DSSE).
+\item Bernstein, D.\ J., Duif, N., Lange, T., Schwabe, P., Yang, B.-Y.\ (2011). Ed25519 signatures. \emph{CHES}.
+\item RFC 8032 (2017). Edwards-Curve Digital Signature Algorithm (EdDSA).
+\item NIST FIPS 180-4 (2015). Secure Hash Standard (SHA-2).
+\item NIST SP 800-53 Rev.~5 (2020). Audit \& configuration controls.
+\item OWASP ASVS 4.0 V14 (Configuration verification).
+\item Merkle, R.\ C.\ (1988). Hash-chained signatures.
+\item Anderson, J.\ P.\ (1980). Reference monitor concept.
+\end{itemize}
+
+% ============================================================== APPENDIX
+\vspace{6mm}
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Line,boxrule=.4pt,arc=1.8mm,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\sffamily\bfseries\color{Navy}Reproducing this report.\normalfont\ Working directory:
+{\ttfamily\fontsize{7.2}{8.4}\selectfont\seqsplit{xbabe2:/home/ubuntu/amphora/build/mvp20-split/reports/portfolio-status-2026-07-23/}}.
+Pipeline: \code{01_pull_data.py} $\to$ \code{02_score.py} $\to$ \code{03_figures.py} $\to$
+\code{pdflatex main.tex} (twice). All inputs read from
+\code{amphora-molecule-property/reference/mvp20/data/} (manifest) and
+\code{amphora-*/docs/mission.md} (phase status). Deterministic under seed=0.
+\end{tcolorbox}
+
+\end{document}

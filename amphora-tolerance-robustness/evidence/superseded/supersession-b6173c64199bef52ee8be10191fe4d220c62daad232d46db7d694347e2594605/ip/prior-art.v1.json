@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "661d95f0c41eb3f5a8fc9918b5e4c4261f6e82350e15c96f1d47a02705bb92ae",
+  "module_id": "amphora-tolerance-robustness",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

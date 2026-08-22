@@ -1,0 +1,2 @@
+mean_cov_baseline=0.8746 mean_cov_pac=0.9073 acceptance_met=True
+two_replay_sha256 d3cadd30c98a60013b8102ec23620025453405f30911d9fcee4419ec86fe7b2f

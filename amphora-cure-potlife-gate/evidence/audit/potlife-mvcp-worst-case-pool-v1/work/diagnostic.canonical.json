@@ -1,0 +1,559 @@
+{
+  "acceptance_by_k": {
+    "1": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.119172
+    },
+    "2": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.105965
+    },
+    "3": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.095237
+    },
+    "4": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.085514
+    },
+    "5": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.07912
+    },
+    "6": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.072362
+    },
+    "7": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.066446
+    },
+    "8": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.060612
+    },
+    "9": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.054926
+    },
+    "10": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.048024
+    },
+    "11": {
+      "criterion_a_met": true,
+      "criterion_b_met": true,
+      "legs_where_worst_case_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "n_legs_beat_q10": 3,
+      "overall_met": true,
+      "worst_case_40C_pooled_mape": 0.039543
+    }
+  },
+  "also_re_examines": [
+    "amphora-cure-potlife-gate/evidence/audit/potlife-lofo-family-safe-v1/potlife-lofo-family-safe-receipt.v1.dsse.json",
+    "amphora-cure-potlife-gate/evidence/audit/potlife-lovo-source-safe-v1/potlife-lovo-source-safe-receipt.v1.dsse.json",
+    "amphora-cure-potlife-gate/evidence/audit/potlife-lofso-combined-safe-v1/potlife-lofso-combined-safe-receipt.v1.dsse.json"
+  ],
+  "any_breach_across_k_1_to_10": false,
+  "attack_type": "worst-case pool-size fragility (minimum-viable-calibration-pool, MVCP): exhaustive search over all 2^11-1 non-empty donor subsets of the 11 non-held-out systems, bucketed by pool size k=1..11, worst/best/mean pooled MAPE at every k",
+  "attacks": "amphora-cure-potlife-gate/evidence/phase0/repairs/R-C02/done/R-C02-repair-receipt.v1.dsse.json",
+  "dataset": {
+    "fixture_id": "amphora-cure-potlife-gate-phase0-known-answer-2026-07-21",
+    "n_donor_subsets_enumerated_per_system_per_leg": 2047,
+    "n_legs": 3,
+    "n_pooled_points": 36,
+    "n_systems": 12,
+    "path": "amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+    "sha256": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1"
+  },
+  "falsification_criterion": "Apply R-C02's own pre-registered acceptance bar (40C-leg pooled MAPE <= 0.25 AND beats Q10=2 heuristic (pooled MAPE per leg) on >= 2/3 legs) to the WORST-CASE pooled MAPE at every correction-pool size k = 1..10 (any pool strictly smaller than R-C02's own tested n=11). If the worst-case pooled result breaches either criterion at any k>=1, this shows R-C02's SURVIVED verdict (and LOFO/LOVO/LOFSO's) depends on the specific n=11 pool size tested and does not generalize to smaller real-world calibration pools, which LOFO/LOVO/LOFSO already document occur down to n=6 under group-safety constraints alone.",
+  "k11_worst_case_matches_rc02_signed_numbers": true,
+  "k1_single_donor_detail": [
+    {
+      "10C_best_single_donor_err": 0.000422,
+      "10C_worst_single_donor_err": 0.137016,
+      "30C_best_single_donor_err": 0.0,
+      "30C_worst_single_donor_err": 0.065513,
+      "40C_best_single_donor_err": 0.0,
+      "40C_worst_single_donor_err": 0.116314,
+      "hardener_family": "aliphatic-polyamine",
+      "system_id": "dgeba-teta"
+    },
+    {
+      "10C_best_single_donor_err": 0.001074,
+      "10C_worst_single_donor_err": 0.122433,
+      "30C_best_single_donor_err": 0.001008,
+      "30C_worst_single_donor_err": 0.059587,
+      "40C_best_single_donor_err": 0.017016,
+      "40C_worst_single_donor_err": 0.135844,
+      "hardener_family": "aliphatic-polyamine",
+      "system_id": "dgeba-deta"
+    },
+    {
+      "10C_best_single_donor_err": 0.00542,
+      "10C_worst_single_donor_err": 0.116349,
+      "30C_best_single_donor_err": 0.002353,
+      "30C_worst_single_donor_err": 0.056423,
+      "40C_best_single_donor_err": 0.007378,
+      "40C_worst_single_donor_err": 0.096342,
+      "hardener_family": "aliphatic-polyamine",
+      "system_id": "dgeba-tepa"
+    },
+    {
+      "10C_best_single_donor_err": 0.031296,
+      "10C_worst_single_donor_err": 0.206618,
+      "30C_best_single_donor_err": 0.000508,
+      "30C_worst_single_donor_err": 0.057518,
+      "40C_best_single_donor_err": 0.026788,
+      "40C_worst_single_donor_err": 0.125627,
+      "hardener_family": "cycloaliphatic-amine",
+      "system_id": "dgeba-ipda"
+    },
+    {
+      "10C_best_single_donor_err": 0.001052,
+      "10C_worst_single_donor_err": 0.163152,
+      "30C_best_single_donor_err": 0.000392,
+      "30C_worst_single_donor_err": 0.065146,
+      "40C_best_single_donor_err": 0.001637,
+      "40C_worst_single_donor_err": 0.089625,
+      "hardener_family": "cycloaliphatic-amine",
+      "system_id": "dgeba-pacm"
+    },
+    {
+      "10C_best_single_donor_err": 0.004831,
+      "10C_worst_single_donor_err": 0.170002,
+      "30C_best_single_donor_err": 0.001009,
+      "30C_worst_single_donor_err": 0.058639,
+      "40C_best_single_donor_err": 0.00164,
+      "40C_worst_single_donor_err": 0.088132,
+      "hardener_family": "cycloaliphatic-amine",
+      "system_id": "dgeba-dach"
+    },
+    {
+      "10C_best_single_donor_err": 0.001053,
+      "10C_worst_single_donor_err": 0.164377,
+      "30C_best_single_donor_err": 0.006482,
+      "30C_worst_single_donor_err": 0.064914,
+      "40C_best_single_donor_err": 0.01115,
+      "40C_worst_single_donor_err": 0.09626,
+      "hardener_family": "aromatic-amine",
+      "system_id": "dgeba-mxda"
+    },
+    {
+      "10C_best_single_donor_err": 0.000421,
+      "10C_worst_single_donor_err": 0.136537,
+      "30C_best_single_donor_err": 0.01606,
+      "30C_worst_single_donor_err": 0.104972,
+      "40C_best_single_donor_err": 0.001948,
+      "40C_worst_single_donor_err": 0.150303,
+      "hardener_family": "aromatic-amine",
+      "system_id": "dgeba-mpda"
+    },
+    {
+      "10C_best_single_donor_err": 0.009127,
+      "10C_worst_single_donor_err": 0.147393,
+      "30C_best_single_donor_err": 0.016322,
+      "30C_worst_single_donor_err": 0.090363,
+      "40C_best_single_donor_err": 0.001944,
+      "40C_worst_single_donor_err": 0.151955,
+      "hardener_family": "aromatic-amine",
+      "system_id": "dgeba-mda"
+    },
+    {
+      "10C_best_single_donor_err": 0.028311,
+      "10C_worst_single_donor_err": 0.101005,
+      "30C_best_single_donor_err": 0.000509,
+      "30C_worst_single_donor_err": 0.058056,
+      "40C_best_single_donor_err": 0.008289,
+      "40C_worst_single_donor_err": 0.084172,
+      "hardener_family": "amidoamine-adduct",
+      "system_id": "dgeba-amidoamine-adduct1"
+    },
+    {
+      "10C_best_single_donor_err": 0.001075,
+      "10C_worst_single_donor_err": 0.123639,
+      "30C_best_single_donor_err": 0.0,
+      "30C_worst_single_donor_err": 0.065513,
+      "40C_best_single_donor_err": 0.0,
+      "40C_worst_single_donor_err": 0.116314,
+      "hardener_family": "amidoamine-adduct",
+      "system_id": "dgeba-amidoamine-adduct2"
+    },
+    {
+      "10C_best_single_donor_err": 0.078123,
+      "10C_worst_single_donor_err": 0.171237,
+      "30C_best_single_donor_err": 0.049177,
+      "30C_worst_single_donor_err": 0.117283,
+      "40C_best_single_donor_err": 0.047578,
+      "40C_worst_single_donor_err": 0.179182,
+      "hardener_family": "mannich-base",
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "largest_breaching_k": null,
+  "min_viable_pool_size_where_worst_case_still_passes": 1,
+  "module": "amphora-cure-potlife-gate",
+  "overall_worst_case_survives_down_to_k1": true,
+  "pooled_by_k": {
+    "1": {
+      "10C": {
+        "best_case_pooled_mape": 0.013517,
+        "mean_case_pooled_mape": 0.049833,
+        "worst_case_pooled_mape": 0.146646
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.007818,
+        "mean_case_pooled_mape": 0.027682,
+        "worst_case_pooled_mape": 0.071994
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.010447,
+        "mean_case_pooled_mape": 0.055716,
+        "worst_case_pooled_mape": 0.119172
+      }
+    },
+    "2": {
+      "10C": {
+        "best_case_pooled_mape": 0.011162,
+        "mean_case_pooled_mape": 0.043149,
+        "worst_case_pooled_mape": 0.106257
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.007483,
+        "mean_case_pooled_mape": 0.024555,
+        "worst_case_pooled_mape": 0.056161
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.007187,
+        "mean_case_pooled_mape": 0.047761,
+        "worst_case_pooled_mape": 0.105965
+      }
+    },
+    "3": {
+      "10C": {
+        "best_case_pooled_mape": 0.011309,
+        "mean_case_pooled_mape": 0.039937,
+        "worst_case_pooled_mape": 0.084814
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.008601,
+        "mean_case_pooled_mape": 0.022628,
+        "worst_case_pooled_mape": 0.04499
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.00993,
+        "mean_case_pooled_mape": 0.044815,
+        "worst_case_pooled_mape": 0.095237
+      }
+    },
+    "4": {
+      "10C": {
+        "best_case_pooled_mape": 0.012091,
+        "mean_case_pooled_mape": 0.038137,
+        "worst_case_pooled_mape": 0.07439
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.008998,
+        "mean_case_pooled_mape": 0.021232,
+        "worst_case_pooled_mape": 0.039369
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.012045,
+        "mean_case_pooled_mape": 0.04315,
+        "worst_case_pooled_mape": 0.085514
+      }
+    },
+    "5": {
+      "10C": {
+        "best_case_pooled_mape": 0.013925,
+        "mean_case_pooled_mape": 0.03686,
+        "worst_case_pooled_mape": 0.067513
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.009578,
+        "mean_case_pooled_mape": 0.020261,
+        "worst_case_pooled_mape": 0.035705
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.014835,
+        "mean_case_pooled_mape": 0.042087,
+        "worst_case_pooled_mape": 0.07912
+      }
+    },
+    "6": {
+      "10C": {
+        "best_case_pooled_mape": 0.01571,
+        "mean_case_pooled_mape": 0.035877,
+        "worst_case_pooled_mape": 0.061173
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.010015,
+        "mean_case_pooled_mape": 0.019571,
+        "worst_case_pooled_mape": 0.032498
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.017258,
+        "mean_case_pooled_mape": 0.041359,
+        "worst_case_pooled_mape": 0.072362
+      }
+    },
+    "7": {
+      "10C": {
+        "best_case_pooled_mape": 0.017843,
+        "mean_case_pooled_mape": 0.035099,
+        "worst_case_pooled_mape": 0.05638
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.010721,
+        "mean_case_pooled_mape": 0.019042,
+        "worst_case_pooled_mape": 0.03002
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.019933,
+        "mean_case_pooled_mape": 0.040824,
+        "worst_case_pooled_mape": 0.066446
+      }
+    },
+    "8": {
+      "10C": {
+        "best_case_pooled_mape": 0.019787,
+        "mean_case_pooled_mape": 0.034495,
+        "worst_case_pooled_mape": 0.051286
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.01137,
+        "mean_case_pooled_mape": 0.018613,
+        "worst_case_pooled_mape": 0.027635
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.022878,
+        "mean_case_pooled_mape": 0.040418,
+        "worst_case_pooled_mape": 0.060612
+      }
+    },
+    "9": {
+      "10C": {
+        "best_case_pooled_mape": 0.021846,
+        "mean_case_pooled_mape": 0.034066,
+        "worst_case_pooled_mape": 0.046625
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.011936,
+        "mean_case_pooled_mape": 0.01826,
+        "worst_case_pooled_mape": 0.025629
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.027023,
+        "mean_case_pooled_mape": 0.040099,
+        "worst_case_pooled_mape": 0.054926
+      }
+    },
+    "10": {
+      "10C": {
+        "best_case_pooled_mape": 0.025386,
+        "mean_case_pooled_mape": 0.033788,
+        "worst_case_pooled_mape": 0.041842
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.013412,
+        "mean_case_pooled_mape": 0.017985,
+        "worst_case_pooled_mape": 0.023074
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.03253,
+        "mean_case_pooled_mape": 0.039841,
+        "worst_case_pooled_mape": 0.048024
+      }
+    },
+    "11": {
+      "10C": {
+        "best_case_pooled_mape": 0.033611,
+        "mean_case_pooled_mape": 0.033611,
+        "worst_case_pooled_mape": 0.033611
+      },
+      "30C": {
+        "best_case_pooled_mape": 0.017805,
+        "mean_case_pooled_mape": 0.017805,
+        "worst_case_pooled_mape": 0.017805
+      },
+      "40C": {
+        "best_case_pooled_mape": 0.039543,
+        "mean_case_pooled_mape": 0.039543,
+        "worst_case_pooled_mape": 0.039543
+      }
+    }
+  },
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "donor_effect_detail": [
+        {
+          "clean_worst_case_k1_err": 0.135844,
+          "held_out_system": "dgeba-deta",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 8.778989
+        },
+        {
+          "clean_worst_case_k1_err": 0.096342,
+          "held_out_system": "dgeba-tepa",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 9.226006
+        },
+        {
+          "clean_worst_case_k1_err": 0.125627,
+          "held_out_system": "dgeba-ipda",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 9.802279
+        },
+        {
+          "clean_worst_case_k1_err": 0.089625,
+          "held_out_system": "dgeba-pacm",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 9.302018
+        },
+        {
+          "clean_worst_case_k1_err": 0.088132,
+          "held_out_system": "dgeba-dach",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 9.318911
+        },
+        {
+          "clean_worst_case_k1_err": 0.09626,
+          "held_out_system": "dgeba-mxda",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 9.520452
+        },
+        {
+          "clean_worst_case_k1_err": 0.150303,
+          "held_out_system": "dgeba-mpda",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 8.61537
+        },
+        {
+          "clean_worst_case_k1_err": 0.151955,
+          "held_out_system": "dgeba-mda",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 8.596677
+        },
+        {
+          "clean_worst_case_k1_err": 0.084172,
+          "held_out_system": "dgeba-amidoamine-adduct1",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 9.404444
+        },
+        {
+          "clean_worst_case_k1_err": 0.116314,
+          "held_out_system": "dgeba-amidoamine-adduct2",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 9.0
+        },
+        {
+          "clean_worst_case_k1_err": 0.179182,
+          "held_out_system": "dgeba-mannich",
+          "poison_increases_worst_case": true,
+          "poisoned_worst_case_k1_err": 10.316231
+        }
+      ],
+      "interpretation": "The full n=11 LOSO average dilutes the single corrupted donor across 11 systems and does not breach the ceiling (structurally blind to this class of single-bad-actor data defect); the MVCP k=1 worst-case search correctly identifies that a facility unlucky enough to calibrate against ONLY the corrupted system as its single comparator would breach the acceptance bar. This is the detection mechanism this attack exists to exercise.",
+      "loso_k11_breaches_ceiling_with_poison_present": false,
+      "loso_k11_worst_case_pooled_40C_mape_with_poison_present": 0.21955,
+      "mvcp_k1_breaches_ceiling_with_poison_present": true,
+      "mvcp_k1_worst_case_pooled_40C_mape_with_poison_present": 8.499808,
+      "n_other_systems_total": 11,
+      "n_other_systems_where_poison_increases_their_own_worst_case_k1_error": 11
+    },
+    "how_planted": "raw['dgeba-teta']['40C']['arrhenius_log_ratio'] shifted by +ln(10)=2.302585 (equivalent to the observed 40C pot-life value being misread/transcribed as 10x its true value) before recomputing worst/best/mean-case correction factors across all pool sizes k=1..11 for every OTHER held-out system",
+    "planted_defect": "10x multiplicative corruption (transcription/decimal-misread class) injected into dgeba-teta's 40C-leg observed-vs-Arrhenius-predicted log-ratio only; used as a candidate DONOR in other systems' correction pools (the corrupted system's own held-out prediction is not evaluated -- this tests whether the MVCP worst-case-donor search notices a bad DONOR, which is exactly the failure mode LOSO's flat average cannot surface)"
+  },
+  "q10_leg_mape": {
+    "10C": 0.177023,
+    "30C": 0.106496,
+    "40C": 0.174605
+  },
+  "schema": "amphora.cure-potlife-gate.mvcp-worst-case-pool-diagnostic.v1",
+  "smallest_pool_size_tested": 1
+}

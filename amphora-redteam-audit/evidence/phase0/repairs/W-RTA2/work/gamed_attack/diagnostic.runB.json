@@ -1,0 +1,79 @@
+{
+  "attack_description": "Swept the oligomerization index n from the physically real range (0-5) out to absurd, non-physical values (up to 1e12) and declared the refutation criterion to be: the model's predicted EEW leaves the domain of a valid equivalent weight (becomes negative, NaN, or infinite).",
+  "attack_label": "extreme-oligomerization-index perturbation / domain-validity boundary sweep",
+  "demonstration_only": true,
+  "not_a_real_portfolio_verdict": true,
+  "refutation_criterion_fired_on_any_row": false,
+  "rows": [
+    {
+      "n": 0,
+      "predicted_eew_g_per_eq": 170.21,
+      "refutation_fires": false
+    },
+    {
+      "n": 1,
+      "predicted_eew_g_per_eq": 312.39,
+      "refutation_fires": false
+    },
+    {
+      "n": 2,
+      "predicted_eew_g_per_eq": 454.57000000000005,
+      "refutation_fires": false
+    },
+    {
+      "n": 3,
+      "predicted_eew_g_per_eq": 596.75,
+      "refutation_fires": false
+    },
+    {
+      "n": 5,
+      "predicted_eew_g_per_eq": 881.1100000000001,
+      "refutation_fires": false
+    },
+    {
+      "n": 10,
+      "predicted_eew_g_per_eq": 1592.0100000000002,
+      "refutation_fires": false
+    },
+    {
+      "n": 1000,
+      "predicted_eew_g_per_eq": 142350.21,
+      "refutation_fires": false
+    },
+    {
+      "n": 1000000,
+      "predicted_eew_g_per_eq": 142180170.21,
+      "refutation_fires": false
+    },
+    {
+      "n": 1000000000,
+      "predicted_eew_g_per_eq": 142180000170.21,
+      "refutation_fires": false
+    },
+    {
+      "n": 1000000000000,
+      "predicted_eew_g_per_eq": 142180000000170.22,
+      "refutation_fires": false
+    }
+  ],
+  "schema": "amphora.redteam-audit.w-rta2-gamed-attack-diagnostic.v1",
+  "sweep_n_values": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    10,
+    1000,
+    1000000,
+    1000000000,
+    1000000000000
+  ],
+  "target_claim": {
+    "claim_text": "EEW(n) = 170.21 + 142.18*n g/eq for the linear difunctional DGEBA oligomer series, n >= 0.",
+    "module": "amphora-molecule-property",
+    "receipt": "amphora-molecule-property/benchmarks/dgeba-oligomer-eew-series-v1/dgeba_oligomer_eew_series_receipt.v1.json"
+  },
+  "verdict_this_gamed_attack_would_claim": "CLAIM_SURVIVED",
+  "why_criterion_cannot_fire": "eew(n) = 170.21 + 142.18*n is affine in n with two strictly positive coefficients. For every n in the claim's own domain (n >= 0, a nonnegative oligomerization index) the output is provably positive, finite, and monotonically increasing. No value of n -- however physically absurd -- can drive the output negative, to NaN, or to infinity. The criterion is unfalsifiable by algebraic construction, independent of whether the EEW(n) claim is actually true. A genuinely falsifying attack on this claim would instead need to compare predicted EEW against independently measured manufacturer technical-data-sheet values (as the module's own real benchmark already does) or challenge the additivity/mass-conservation assumption directly -- not sweep an input that structurally cannot leave the model's positive range."
+}

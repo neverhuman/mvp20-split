@@ -1,0 +1,306 @@
+{
+  "all_edge_cases_agree_real_attack": false,
+  "all_within_tolerance_real_attack": true,
+  "claim_under_attack": "evidence/phase0/kpis/herschel-bulkley-ccby-amorim2021-kpi.v1.json :: HERSCHEL_BULKLEY (src/lib.rs:1227) benchmark numbers reflect the compiled primitive, not merely a disclosed Python re-derivation",
+  "edge_case_results": [
+    {
+      "agree": true,
+      "case": "negative_yield_stress",
+      "python_oracle_is_ok": false,
+      "rust_is_ok": false
+    },
+    {
+      "agree": true,
+      "case": "zero_yield_stress_should_be_ok",
+      "python_oracle_is_ok": true,
+      "rust_is_ok": true
+    },
+    {
+      "agree": true,
+      "case": "zero_consistency",
+      "python_oracle_is_ok": false,
+      "rust_is_ok": false
+    },
+    {
+      "agree": true,
+      "case": "negative_consistency",
+      "python_oracle_is_ok": false,
+      "rust_is_ok": false
+    },
+    {
+      "agree": true,
+      "case": "zero_flow_index",
+      "python_oracle_is_ok": false,
+      "rust_is_ok": false
+    },
+    {
+      "agree": true,
+      "case": "negative_flow_index",
+      "python_oracle_is_ok": false,
+      "rust_is_ok": false
+    },
+    {
+      "agree": true,
+      "case": "zero_shear_rate",
+      "python_oracle_is_ok": false,
+      "rust_is_ok": false
+    },
+    {
+      "agree": true,
+      "case": "negative_shear_rate",
+      "python_oracle_is_ok": false,
+      "rust_is_ok": false
+    },
+    {
+      "agree": true,
+      "case": "nan_yield_stress",
+      "python_oracle_is_ok": false,
+      "rust_is_ok": false
+    },
+    {
+      "agree": false,
+      "case": "infinite_yield_stress",
+      "python_oracle_is_ok": true,
+      "rust_is_ok": false
+    }
+  ],
+  "live_rust_diagnostic_sha256": "d02c0736488ad26be9860fb862ddc52eb70ffaae26067a0e5af4cf1c7a0b74bc",
+  "max_rel_diff_real_attack": 0.0,
+  "module": "amphora-viscosity-score",
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "mutant_python_oracle": 1271.5423384747994,
+      "rel_diff": 90.20207242265063,
+      "rust_live": 13.942033384747994,
+      "sample": "Epoxy",
+      "shear_rate_s_inv": 100.0
+    },
+    "how_planted": "herschel_bulkley_mutant_oracle() in this script: K * (gamma_dot ** n) replaces K * (gamma_dot ** (n - 1.0)); all guard logic and inputs otherwise identical to the real oracle and to the live-Rust call",
+    "mutant_max_rel_diff": 90.20207242265063,
+    "planted_defect": "mutant Python oracle uses gamma_dot**n instead of gamma_dot**(n-1) in the Herschel-Bulkley consistency term -- a wrong-exponent re-derivation bug, the exact class of drift this parity check exists to catch"
+  },
+  "real_attack_fired": true,
+  "row_results": [
+    {
+      "K": 48.99,
+      "curve": [
+        {
+          "python_oracle": 1335.207169931523,
+          "rel_diff": 0.0,
+          "rust_live": 1335.207169931523,
+          "shear_rate_s_inv": 0.1,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 172.89000000000001,
+          "rel_diff": 0.0,
+          "rust_live": 172.89000000000001,
+          "shear_rate_s_inv": 1.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 37.336374596698505,
+          "rel_diff": 0.0,
+          "rust_live": 37.336374596698505,
+          "shear_rate_s_inv": 10.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 13.942033384747994,
+          "rel_diff": 0.0,
+          "rust_live": 13.942033384747994,
+          "shear_rate_s_inv": 100.0,
+          "within_tolerance": true
+        }
+      ],
+      "n": 0.7069,
+      "sample": "Epoxy",
+      "tau0": 123.9
+    },
+    {
+      "K": 166.8,
+      "curve": [
+        {
+          "python_oracle": 6738.1104767441675,
+          "rel_diff": 0.0,
+          "rust_live": 6738.1104767441675,
+          "shear_rate_s_inv": 0.1,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 798.5,
+          "rel_diff": 0.0,
+          "rust_live": 798.5,
+          "shear_rate_s_inv": 1.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 129.23874332623768,
+          "rel_diff": 0.0,
+          "rust_live": 129.23874332623768,
+          "shear_rate_s_inv": 10.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 32.48653743829901,
+          "rel_diff": 0.0,
+          "rust_live": 32.48653743829901,
+          "shear_rate_s_inv": 100.0,
+          "within_tolerance": true
+        }
+      ],
+      "n": 0.5978,
+      "sample": "1",
+      "tau0": 631.7
+    },
+    {
+      "K": 193.4,
+      "curve": [
+        {
+          "python_oracle": 6789.389826396761,
+          "rel_diff": 0.0,
+          "rust_live": 6789.389826396761,
+          "shear_rate_s_inv": 0.1,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 820.5,
+          "rel_diff": 0.0,
+          "rust_live": 820.5,
+          "shear_rate_s_inv": 1.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 134.86334502219253,
+          "rel_diff": 0.0,
+          "rust_live": 134.86334502219253,
+          "shear_rate_s_inv": 10.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 33.18984797255199,
+          "rel_diff": 0.0,
+          "rust_live": 33.18984797255199,
+          "shear_rate_s_inv": 100.0,
+          "within_tolerance": true
+        }
+      ],
+      "n": 0.5718,
+      "sample": "2",
+      "tau0": 627.1
+    },
+    {
+      "K": 333.0,
+      "curve": [
+        {
+          "python_oracle": 11471.2027149496,
+          "rel_diff": 0.0,
+          "rust_live": 11471.2027149496,
+          "shear_rate_s_inv": 0.1,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 1387.0,
+          "rel_diff": 0.0,
+          "rust_live": 1387.0,
+          "shear_rate_s_inv": 1.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 224.48148271024053,
+          "rel_diff": 0.0,
+          "rust_live": 224.48148271024053,
+          "shear_rate_s_inv": 10.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 53.123782355763694,
+          "rel_diff": 0.0,
+          "rust_live": 53.123782355763694,
+          "shear_rate_s_inv": 100.0,
+          "within_tolerance": true
+        }
+      ],
+      "n": 0.5534,
+      "sample": "3",
+      "tau0": 1054.0
+    },
+    {
+      "K": 561.9,
+      "curve": [
+        {
+          "python_oracle": 16903.83936997845,
+          "rel_diff": 0.0,
+          "rust_live": 16903.83936997845,
+          "shear_rate_s_inv": 0.1,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 2075.9,
+          "rel_diff": 0.0,
+          "rust_live": 2075.9,
+          "shear_rate_s_inv": 1.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 330.40247345304317,
+          "rel_diff": 0.0,
+          "rust_live": 330.40247345304317,
+          "shear_rate_s_inv": 10.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 72.16417779374876,
+          "rel_diff": 0.0,
+          "rust_live": 72.16417779374876,
+          "shear_rate_s_inv": 100.0,
+          "within_tolerance": true
+        }
+      ],
+      "n": 0.5032,
+      "sample": "4",
+      "tau0": 1514.0
+    },
+    {
+      "K": 257.3,
+      "curve": [
+        {
+          "python_oracle": 8267.33970651764,
+          "rel_diff": 0.0,
+          "rust_live": 8267.33970651764,
+          "shear_rate_s_inv": 0.1,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 1011.4000000000001,
+          "rel_diff": 0.0,
+          "rust_live": 1011.4000000000001,
+          "shear_rate_s_inv": 1.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 166.5564558607224,
+          "rel_diff": 0.0,
+          "rust_live": 166.5564558607224,
+          "shear_rate_s_inv": 10.0,
+          "within_tolerance": true
+        },
+        {
+          "python_oracle": 39.82889901271129,
+          "rel_diff": 0.0,
+          "rust_live": 39.82889901271129,
+          "shear_rate_s_inv": 100.0,
+          "within_tolerance": true
+        }
+      ],
+      "n": 0.5493,
+      "sample": "5",
+      "tau0": 754.1
+    }
+  ],
+  "schema": "amphora.viscosity-score.hb-live-runtime-parity-check-diagnostic.v1",
+  "source_lock_sha256": "a17a37b39b9657efae41ffaab4d7975a5da2ede40ba6f8fd64bd5996e8bf225c",
+  "tolerance_rel": 1e-09,
+  "verdict": "CLAIM_REFUTED"
+}

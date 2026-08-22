@@ -1,0 +1,29 @@
+# Retraction / Supersession Index — amphora-tolerance-robustness
+
+Created 2026-08-03 (operator, closing the R-A00 canary finding: this module had 2
+REFUTED ledger verdicts and no index).
+
+Amended 2026-08-05 (W-TOL1, closing the portfolio-wide V1-RESOLVE sweep's two
+NOT_RESOLVED findings against this index: a literal `PENDING` token with no
+referent on the OpenPoly Tg row, and a superseded-by cell on the RadonPy row
+that named a real, DSSE-verified receipt covering a different, narrower claim
+(label admissibility) than the one this row is attached to (conformal
+coverage). Both rows are rewritten below to state plainly that no repair has
+landed and to name the campaign item (R-C01) that owns the gap, per
+V1-RESOLVE's own resolution rule: an honest "no repair yet, queued as R-C01"
+is a resolved row; a bare PENDING or a mismatched referent is not. See
+amphora-tolerance-robustness/evidence/phase0/repairs/W-TOL1/done/ for the
+signed repair receipt.)
+
+## OpenPoly Tg split-conformal coverage 0.9683 (split-conformal-prediction-openpoly-tg-kpi.v1.json)
+- refuted-by: evidence/audit/repeated-scaffold-monte-carlo-conformal-openpoly-tg-v1/repeated-scaffold-monte-carlo-conformal-openpoly-tg-receipt.v1.dsse.json (2026-08-03; mean scaffold-safe coverage 0.8746 over 60 draws, CI [0.8497,0.8974] excludes 0.95; also takes down the jackknife+/CV+, Mondrian, normalized-adaptive and training-conditional-PAC cousins as robustness evidence)
+- superseded-by: NONE YET. No repair receipt exists for this claim. Explicitly tracked as open campaign item R-C01 (scaffold-aware conformal repair; acceptance criterion: mean coverage >= 0.90 on the same 60-seed scaffold-disjoint Monte Carlo draw used by the refuting receipt above, with an honest re-scope permitted if that bar cannot be met). Resolution status of R-C01 lives in the falsification ledger and campaign state, not in this row; do not read this row as pointing at a receipt that verifies (W-TOL1, 2026-08-05).
+
+## RadonPy eps_r conformal coverage (mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json, coverage claim)
+- refuted-by: evidence/audit/conformal-coverage-attack-v1/conformal-coverage-attack-receipt.v1.dsse.json (2026-08-02, W5; admissible-subset coverage 0.6923, Wilson CI [0.5573,0.8009] excludes 0.95 — apparent 0.9558 propped up by 89.5% physically-inadmissible labels)
+- superseded-by: NONE YET for this claim's own conformal COVERAGE number (0.9558). The amphora-molecule-property dielectric retraction chain (evidence/audit/dielectric-retraction-v1/, logs/claims-requiring-retraction.jsonl) exists and DSSE-verifies, but refutes LABEL ADMISSIBILITY of RadonPy data, not this row's coverage number -- does not resolve this row. No receipt anywhere republishes a corrected admissibility-stratified coverage figure. Tracked as open item R-C01 (admissibility-stratified coverage recomputation); until it lands, 0.9558 stays refuted and unrepaired (W-TOL1, 2026-08-05).
+
+## Note
+The mechanical conformal guarantee under exchangeability (random splits) is intact;
+what fell is coverage under scaffold/deployment shift. The bootstrap-PI honest
+negative (0.2511 vs 0.95 nominal) was self-reported by this module and stands.

@@ -1,0 +1,117 @@
+{
+  "authority": "AUDIT_ONLY",
+  "headline": "REFUTED: all 3/3 hardeners the signed receipt labels 'uncheckable, no amine value, remain single-source' in fact have a published amine value in the SAME document already cited as their own AHEW source url; 3/3 of the now-checkable pairs also fall inside the receipt's own admissibility band, but the checked-population claim in the signed results is factually wrong as written.",
+  "inputs": {
+    "external_source": {
+      "column_order_validation": "AHEW (WT/{H} Equivalent) column extracted for ancamide_350a (the in-catalog cross-check row) reads 100 g/eq, byte-identical to reference/mvp20/data/facts.json hardener.ancamide_350a.ahew=100.0 and amine_value=380.0 (row: AV=380, AHEW=100) -- confirms correct column mapping before trusting the 3 target rows below.",
+      "extraction_method": "pdftotext -layout, then row-anchored grep on the AMIDOAMINES product table (Curing Agent / Type / Color / Viscosity / Specific Gravity / Amine Value (mg KOH/g) / WT/{H} Equivalent [=AHEW, g/eq] / Use Level / Gel Time / Thin Film Set Time / Glass Transition Temp / Typical Cure Schedule columns, header confirmed at pdftotext line ~795-853)",
+      "fetched_pdf_sha256": "7ac384ec33f861350bee5ffd919a84afa4743cab14682b6942b01b7910524339",
+      "note": "This is the EXACT url already cited as the load-bearing citation for hardener.ancamide_220x70.ahew (url field), hardener.ancamide_2353.ahew (url field) and hardener.ancamide_260a.ahew (url field) in the live reference/mvp20/data/facts.json -- not a new/untrusted source.",
+      "title": "Evonik AMERICAS Epoxy Curing Agents, Diluents, Accelerators, Adhesion Promoters product guide",
+      "url": "https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf"
+    },
+    "facts_json_rel": "reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+  },
+  "module": "amphora-ingredient-library",
+  "oracle_reused": {
+    "file": "run_amine_ahew_verbatim.py",
+    "functions_called": [
+      "band",
+      "check_pair"
+    ],
+    "matches_original_signed_provenance_oracle_sha256": true,
+    "modified": false,
+    "sha256": "8d5fe08f5792ff2a255dfac186024499acc973d512fafb0f39a26f9782b876cc"
+  },
+  "reopened_source_check": {
+    "n_actually_checkable_from_already_cited_source": 3,
+    "n_actually_in_admissibility_band": 3,
+    "n_targets": 3,
+    "per_hardener": {
+      "hardener.ancamide_220x70": {
+        "ahew_catalog_g_eq": 264.0,
+        "ahew_lower_bound_g_eq": 165.0165,
+        "ahew_upper_bound_g_eq": 330.0329,
+        "amine_value_extracted_from_same_cited_source_mgKOH_g": 170.0,
+        "amine_value_mgKOH_g": 170.0,
+        "cited_ahew_source_url_in_facts_json": "https://products.evonik.com/assets/s_/us/Ancamide_220X70_us_TDS_EN_EN_TDS_PV_52041880_en_US_US.pdf",
+        "facts_json_ahew_g_eq": 264.0,
+        "implied_active_H_per_basic_N": 1.2501,
+        "implied_ratio_physical": true,
+        "in_admissibility_band": true,
+        "matches_reopened_source_document": false,
+        "pdf_reported_ahew_g_eq": 264.0,
+        "row_ahew_matches_facts_json": true
+      },
+      "hardener.ancamide_2353": {
+        "ahew_catalog_g_eq": 114.0,
+        "ahew_lower_bound_g_eq": 85.0085,
+        "ahew_upper_bound_g_eq": 170.017,
+        "amine_value_extracted_from_same_cited_source_mgKOH_g": 330.0,
+        "amine_value_mgKOH_g": 330.0,
+        "cited_ahew_source_url_in_facts_json": "https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf",
+        "facts_json_ahew_g_eq": 114.0,
+        "implied_active_H_per_basic_N": 1.4914,
+        "implied_ratio_physical": true,
+        "in_admissibility_band": true,
+        "matches_reopened_source_document": true,
+        "pdf_reported_ahew_g_eq": 114.0,
+        "row_ahew_matches_facts_json": true
+      },
+      "hardener.ancamide_260a": {
+        "ahew_catalog_g_eq": 120.0,
+        "ahew_lower_bound_g_eq": 80.1509,
+        "ahew_upper_bound_g_eq": 160.3017,
+        "amine_value_extracted_from_same_cited_source_mgKOH_g": 350.0,
+        "amine_value_mgKOH_g": 350.0,
+        "cited_ahew_source_url_in_facts_json": "https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf",
+        "facts_json_ahew_g_eq": 120.0,
+        "implied_active_H_per_basic_N": 1.3358,
+        "implied_ratio_physical": true,
+        "in_admissibility_band": true,
+        "matches_reopened_source_document": true,
+        "pdf_reported_ahew_g_eq": 120.0,
+        "row_ahew_matches_facts_json": true
+      }
+    }
+  },
+  "reproduced_original_claim": {
+    "n_uncheckable_per_original_claim": 3,
+    "per_hardener": [
+      {
+        "ahew_catalog_g_eq": 264.0,
+        "ahew_source": "TDS",
+        "hardener": "hardener.ancamide_220x70",
+        "has_amine_value_key_in_facts_json": false,
+        "reason_in_signed_receipt": "no amine value reported -> AV<->AHEW band not evaluable; remains single-source"
+      },
+      {
+        "ahew_catalog_g_eq": 114.0,
+        "ahew_source": "SUPPLIER_GUIDE",
+        "hardener": "hardener.ancamide_2353",
+        "has_amine_value_key_in_facts_json": false,
+        "reason_in_signed_receipt": "no amine value reported -> AV<->AHEW band not evaluable; remains single-source"
+      },
+      {
+        "ahew_catalog_g_eq": 120.0,
+        "ahew_source": "SUPPLIER_GUIDE",
+        "hardener": "hardener.ancamide_260a",
+        "has_amine_value_key_in_facts_json": false,
+        "reason_in_signed_receipt": "no amine value reported -> AV<->AHEW band not evaluable; remains single-source"
+      }
+    ]
+  },
+  "run_type": "falsification.amine_value_ahew_consistency.uncheckable_set_completeness",
+  "schema": "amphora.ingredient-library.amine-ahew-uncheckable-gap.diagnostic.v1",
+  "target_claim": {
+    "asserted_reason": "no amine value reported -> AV<->AHEW band not evaluable; remains single-source (x3)",
+    "asserted_value": 3,
+    "field": "results.n_uncheckable_no_amine_value / results.uncheckable_hardeners[].reason",
+    "receipt": "amphora-ingredient-library/evidence/audit/amine-value-ahew-consistency-v1/amine-value-ahew-consistency-receipt.v1.dsse.json"
+  },
+  "verdict": {
+    "claim_refuted": true,
+    "explanation": "The signed receipt claims all 3 named hardeners are uncheckable by the AV<->AHEW relationship because 'no amine value reported'. But the amine value for all 3 is published in the EXACT document already cited as the load-bearing `url` for each hardener's own AHEW fact in facts.json (the Evonik AMERICAS curing agents product guide) -- the oracle never read past the pre-existing amine_value.* keys in facts.json to check the cited source documents themselves. All 3 are in fact checkable, and (bonus finding) all 3 pass the admissibility band once checked -- but the SIGNED claim 'n_uncheckable_no_amine_value=3 / remain single-source' is false as written: it describes an evaluability gap that does not exist in the cited sources."
+  }
+}

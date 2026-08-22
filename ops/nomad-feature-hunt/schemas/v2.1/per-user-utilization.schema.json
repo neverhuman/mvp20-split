@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nomad-feature-hunt/v2.1/per-user-utilization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "receipt_type", "epoch", "wave_id", "requested_workers", "eligible_slots", "jobs", "successes", "failures", "rate_limits", "eligible_user_ids", "covered_user_ids", "per_user", "coverage_complete"],
+  "properties": {
+    "schema_version": {"const": "2.1"},
+    "receipt_type": {"const": "per_user_utilization"},
+    "epoch": {"type": "integer", "minimum": 1, "maximum": 10},
+    "wave_id": {"type": "string"},
+    "requested_workers": {"type": "integer", "minimum": 0},
+    "eligible_slots": {"type": "integer", "minimum": 0},
+    "jobs": {"type": "integer", "minimum": 0},
+    "successes": {"type": "integer", "minimum": 0},
+    "failures": {"type": "integer", "minimum": 0},
+    "rate_limits": {"type": "integer", "minimum": 0},
+    "eligible_user_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "covered_user_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "per_user": {"type": "object", "additionalProperties": {"type": "object", "additionalProperties": false, "required": ["jobs", "successes", "failures", "rate_limits"], "properties": {"jobs": {"type": "integer", "minimum": 0}, "successes": {"type": "integer", "minimum": 0}, "failures": {"type": "integer", "minimum": 0}, "rate_limits": {"type": "integer", "minimum": 0}}}},
+    "coverage_complete": {"type": "boolean"}
+  }
+}

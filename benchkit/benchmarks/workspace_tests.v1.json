@@ -1,0 +1,26 @@
+{
+  "schema": "amphora.benchkit.workspace-tests.v1",
+  "command": "cargo test --workspace --no-fail-fast (flock .cron.lock, xbabe2)",
+  "date": "2026-08-04",
+  "total_suites": 62,
+  "suites_ok": 60,
+  "tests_passed": 363,
+  "tests_failed": 3,
+  "all_green": false,
+  "phase_d_caused_regressions": 0,
+  "failures": [
+    {
+      "test": "amphora-cli (bin amphora-tui) phase0::tests::source_ledger_historical_movement_and_status_are_read_only",
+      "symptom": "assert status[phase0_count] == 16, got 9 (data-state assertion over live evidence tree)",
+      "attribution": "PRE-EXISTING / CONCURRENT-WORKSTREAM: phase counts are computed from per-module evidence/phase0 state; the tree at baseline commit 907e753 (post-Wave-R+ supersessions, 2026-08-03T23:30Z) plus a concurrent cron fire at 2026-08-04T00:09 that rewrote 10 modules benchmark/result.v1.json files (git status: M amphora-candidate-contract, amphora-envelope-gates, amphora-formulation-arithmetic, amphora-formulation-universe, amphora-process-qc-twin, amphora-public-corrosion-benchmark, amphora-run-provenance, amphora-solvency-score, amphora-tolerance-robustness + new amphora-design-rule-score result). No Phase-D file is an input to this computation.",
+      "phase_d_causal_path": "none: Phase D added benchkit/ (python, not compiled or read by cargo tests) and .cargo/config.toml rustc-wrapper (sccache is output-transparent; identical compiler outputs)"
+    },
+    {
+      "test": "amphora-solver-lab tests/demo_replay.rs::{diagnostics_carry_bounded_authority, fresh_two_replay_is_byte_identical}",
+      "symptom": "demo p3 refuses to derive from stale GHS KPI because superseding receipt R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json exists",
+      "attribution": "NOT AN EXISTING GOVERNANCE TEST: amphora-solver-lab is a NEW crate added by the concurrent Phase C workstream (untracked at baseline); its fail-closed staleness guard fired because the R-N01 fire2 cron receipt landed during the day. Correct refusal behavior; Phase C concern.",
+      "phase_d_causal_path": "none"
+    }
+  ],
+  "note": "all 60 suites that existed at the Phase-D start and are not the live-evidence status assertion pass; the two failing suites are attributed above with zero Phase-D causation"
+}

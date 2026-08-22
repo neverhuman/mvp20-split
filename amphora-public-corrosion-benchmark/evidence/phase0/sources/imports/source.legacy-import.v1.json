@@ -1,0 +1,126 @@
+{
+  "schema": "amphora.public-corrosion-source-census.v2",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "census_id": "PUBLIC_CORROSION_CENSUS_20260718_V2",
+  "frozen_on": "2026-07-18",
+  "supersedes": "config/program/corrosion-sources.v1.json",
+  "activation": "NEW_BENCHMARK_LOCK_REQUIRED; V1 RESULTS MUST NOT BE RELABELED",
+  "study_assignment_unit": "WHOLE_STUDY",
+  "sources": [
+    {
+      "source_id": "usbr_19168",
+      "study_id": "USBR_ST_19168",
+      "official_url": "https://data.usbr.gov/catalog/4640",
+      "role": "FIT_DEVELOPMENT",
+      "data_status": "NOT_ACQUIRED",
+      "endpoint_mapping": {
+        "eis": "EIS_SPECTRA_PENDING_FREQUENCY_METHOD_AUDIT",
+        "rust_creep": "RUST_CREEP_MM_IF_METHOD_COMPARABLE",
+        "adhesion": "EXCLUDE_UNLESS_METHOD_AND_UNITS_MATCH"
+      },
+      "promotion_eligible": false,
+      "unlock_conditions": [
+        "official raw files acquired immutably",
+        "rights and method-comparability audit accepted",
+        "lot and scientific-input completeness accepted"
+      ]
+    },
+    {
+      "source_id": "usbr_21019",
+      "study_id": "USBR_ST_21019",
+      "official_url": "https://data.usbr.gov/catalog/8048",
+      "role": "FIT_DEVELOPMENT",
+      "data_status": "ACQUIRED_UNDER_V1_LOCK",
+      "endpoint_mapping": {
+        "eis": "LOG10_ABS_Z_AT_LOCKED_FREQUENCIES",
+        "rust_creep": "RUST_CREEP_MM",
+        "adhesion": "EXCLUDE_UNLESS_METHOD_AND_UNITS_MATCH"
+      },
+      "promotion_eligible": true,
+      "restrictions": ["V1 observed results remain attached to the V1 benchmark lock"]
+    },
+    {
+      "source_id": "usbr_22014",
+      "study_id": "USBR_ST_22014",
+      "official_url": "https://data.usbr.gov/catalog/8052/item/128792",
+      "role": "CALIBRATION_DIAGNOSTIC",
+      "data_status": "NOT_ACQUIRED",
+      "endpoint_mapping": {
+        "adhesion": "PULL_OFF_ADHESION_IF_SUBSTRATE_CONDITION_METHOD_AND_UNITS_MATCH",
+        "eis": "NOT_AVAILABLE",
+        "rust_creep": "NOT_AVAILABLE"
+      },
+      "promotion_eligible": false,
+      "unlock_conditions": ["endpoint comparability accepted without outcome-driven remapping"]
+    },
+    {
+      "source_id": "usbr_23016",
+      "study_id": "USBR_ST_23016",
+      "official_url": "https://data.usbr.gov/catalog/8134",
+      "role": "SEALED_EXTERNAL_CONTEXT",
+      "data_status": "NOT_ACQUIRED",
+      "endpoint_mapping": {
+        "eis": "FIELD_EIS_CONTEXT; EXCLUDE_FROM_LAB_ENDPOINT_UNLESS COMPARABILITY_PASSES",
+        "visual_condition": "REPORT_ONLY_DIAGNOSTIC",
+        "rust_creep": "NOT_COMPARABLE"
+      },
+      "promotion_eligible": false,
+      "restrictions": ["field observations do not become prospective untouched systems"]
+    },
+    {
+      "source_id": "usbr_22024",
+      "study_id": "USBR_ST_22024",
+      "official_url": "https://data.usbr.gov/rise/content-rise-public/rise/catalog-item/binary/8540-2023-43_Historic%20Linings_ST_Final_Report_Signed.pdf",
+      "project_url": "https://www.usbr.gov/research/projects/detail.cfm?id=22024",
+      "role": "SEALED_EXTERNAL_CONTEXT",
+      "data_status": "REPORT_AVAILABLE_ORIGINAL_RAW_REQUEST_REQUIRED",
+      "endpoint_mapping": {
+        "historic_condition": "ORIGINAL_ROW_DATA_ONLY",
+        "eis": "ORIGINAL_NUMERIC_EXPORT_ONLY",
+        "report_plot": "INELIGIBLE_FOR_DIGITIZATION"
+      },
+      "promotion_eligible": false,
+      "unlock_conditions": [
+        "USBR supplies original row-level observations and numeric EIS exports",
+        "raw-data receipt binds materials sites dates methods and hashes",
+        "no values are digitized from report plots"
+      ]
+    },
+    {
+      "source_id": "usbr_22037",
+      "study_id": "USBR_ST_22037",
+      "official_url": "https://data.usbr.gov/catalog/8051",
+      "project_url": "https://www.usbr.gov/research/projects/detail.cfm?id=22037",
+      "role": "MECHANISTIC_CONTEXT_ONLY",
+      "data_status": "PUBLIC_RECORD_AVAILABLE",
+      "endpoint_mapping": {
+        "cathodic_disbondment": "MECHANISTIC_CONTEXT_ONLY",
+        "field_eis": "MECHANISTIC_CONTEXT_ONLY",
+        "polarization": "MECHANISTIC_CONTEXT_ONLY"
+      },
+      "promotion_eligible": false,
+      "restrictions": ["mechanistically distinct cathodic-protection interaction study"]
+    }
+  ],
+  "v2_fail_closed_gates": {
+    "minimum_eligible_systems": 30,
+    "minimum_eligible_studies": 3,
+    "minimum_untouched_external_systems": 10,
+    "missing_inputs_imputed": false,
+    "plot_digitization_allowed": false,
+    "post_outcome_feature_search": false
+  },
+  "required_evaluations": [
+    "PRESPECIFIED_SIMPLE_MODEL",
+    "CURRENT_BASELINE",
+    "LOW_FREQUENCY_DIAGNOSTICS",
+    "SOLIDS_PVC_NULLS",
+    "OUTCOME_FEATURE_LEAKAGE_ATTACK",
+    "LABEL_PERMUTATION_NULL"
+  ],
+  "authority_limits": [
+    "public historic EIS cannot replace the prospective barrier campaign",
+    "no service-life inference",
+    "no product qualification or optimizer authority"
+  ]
+}

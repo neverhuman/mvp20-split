@@ -1,0 +1,40 @@
+{
+  "schema": "amphora.rights-clean-dataset.v1",
+  "dataset_id": "ccby-dgeba-cycloaliphaticamine-dsc-kissinger-polym11030391",
+  "in_scope": true,
+  "scope_note": "Two-part epoxy-amine thermoset. Epoxy: Resoltech 1070 ECO (DGEBA-based epoxy with a partially bio-based reactive diluent). Hardener: Resoltech 1074 ECO, active species 3-aminomethyl-3,5,5-trimethylcyclohexylamine (isophorone diamine, IPDA; a cycloaliphatic diamine). Directly in-scope for marine anti-corrosion two-part epoxy-amine cure/pot-life physics.",
+  "rights": {
+    "license": "CC-BY-4.0",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Lascano D., Quiles-Carrillo L., Balart R., Boronat T., Montanes N. Kinetic Analysis of the Curing of a Partially Biobased Epoxy Resin Using Dynamic Differential Scanning Calorimetry. Polymers (Basel). 2019;11(3):391.",
+    "doi": "10.3390/polym11030391",
+    "pmc_id": "PMC6473346",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6473346/",
+    "publisher": "MDPI",
+    "retrieved_utc_date": "2026-07-25"
+  },
+  "measurement": {
+    "technique": "non-isothermal (dynamic) DSC exotherm-peak method",
+    "gas_constant_J_per_mol_K": 8.314462618,
+    "source_table": "Table 3 (peak cure temperature and total reaction enthalpy vs heating rate)"
+  },
+  "raw_inputs": {
+    "description": "ONLY these (heating_rate, peak_temperature) pairs feed the Kissinger recomputation. reaction_enthalpy is carried for provenance and is NOT used by the estimator.",
+    "records": [
+      {"heating_rate_K_per_min": 2.5, "peak_temperature_K": 351.5, "reaction_enthalpy_J_per_g": 373.9},
+      {"heating_rate_K_per_min": 5.0, "peak_temperature_K": 361.9, "reaction_enthalpy_J_per_g": 366.5},
+      {"heating_rate_K_per_min": 10.0, "peak_temperature_K": 373.2, "reaction_enthalpy_J_per_g": 305.5},
+      {"heating_rate_K_per_min": 20.0, "peak_temperature_K": 388.9, "reaction_enthalpy_J_per_g": 285.8}
+    ]
+  },
+  "reference_outputs": {
+    "note": "Activation energies reported by the paper. Used ONLY as validation targets, never as inputs to the recomputation, so recovering Kissinger Ea from the raw peaks is a genuine method-fidelity test, not a tautology.",
+    "activation_energy_kJ_per_mol": [
+      {"method": "Kissinger", "Ea": 57.3, "uncertainty": 3.1},
+      {"method": "KAS", "Ea": 59.8, "uncertainty": 3.3},
+      {"method": "FWO", "Ea": 62.8, "uncertainty": 3.1},
+      {"method": "Starink", "Ea": 60.0, "uncertainty": 3.3}
+    ]
+  }
+}

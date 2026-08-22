@@ -1,0 +1,250 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "R-C03",
+  "ceiling": "AUDIT_ONLY. Does not alter the shipped multi-target-ml-radonpy-4-properties-audit-kpi.v1.json (supersede-never-rewrite), any manifest, or any authority ceiling. Publishes the group-safe headline the campaign item's deliverable 1 requires; deliverables 2 (AD gate) and 3 (constrained VK refit) are separate, not yet attempted this fire.",
+  "claim_locks": {
+    "fto_not_performed": true,
+    "group_safe_split_numbers_are_the_headline_for_density_refractive_index_thermal_conductivity": true,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_solver_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "original_random_split_claim_of_generalization_REMAINS_refuted_not_reinstated": true,
+    "pre_phase_0_research_only": true,
+    "static_dielectric_const_excluded_pending_label_admissibility_not_split_methodology": true,
+    "superseding_kpi_headline_table_fidelity_to_sources_verified_with_positive_control": true,
+    "unresolved_rights_quarantined": false
+  },
+  "claim_under_attack": {
+    "claim_text": "single-task RF R2>0 on RadonPy PI1070 refractive_index (+0.893) and thermal_conductivity (+0.542) under a 60/20/20 deterministic random split generalizes.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/multi-target-ml-radonpy-4-properties-audit-kpi.v1.json"
+  },
+  "currency_reverification": {
+    "c7_script_sha256": "f9a2a71dcbfd2159e112c85fa328fb02a456dfe17f55c90747013f6b6f2926a2",
+    "method": "Re-executed both compute_multitarget_macro_bisection.py (W7) and compute_density_cluster_external_validity.py (C7 fire 2) verbatim, same file same sha256 as originally signed, seed=0, deterministic. All degradation factors and cross-macro-chemotype MAE/R2 values reproduced byte-identically, confirming the refuting evidence this deliverable builds on is current, not stale.",
+    "per_property_byte_identical": [
+      {
+        "byte_identical_rerun": true,
+        "property": "refractive_index",
+        "source": "W7"
+      },
+      {
+        "byte_identical_rerun": true,
+        "property": "thermal_conductivity",
+        "source": "W7"
+      },
+      {
+        "byte_identical_rerun": true,
+        "property": "density",
+        "source": "C7_fire2"
+      }
+    ],
+    "w7_script_sha256": "5eb927ebc3a740bb26270cebcf56270b54e599329207c6acb119aa3b862213da"
+  },
+  "demoted_reference_random_split_60_20_20": {
+    "caveat": "DEMOTED TO WITHIN-CORPUS REFERENCE ONLY. These are the numbers the superseded KPI originally presented as its headline. Every one of them was measured under a random 60/20/20 row split of the SAME RadonPy PI1070 corpus (not group/scaffold-safe). All 4 properties FAIL a 2x-degradation group-safe re-test (density: C7 fire 2 REFUTED; refractive_index + thermal_conductivity: W7 REFUTED; static_dielectric_const: label inadmissible, W2/C8/W3 RETRACTED). Do not cite these numbers as evidence of out-of-corpus or out-of-macro-chemotype predictive skill.",
+    "density": {
+      "multi_task_MAE": 0.09124195716500791,
+      "multi_task_R2": 0.4699373213682694,
+      "single_task_MAE": 0.05551611086460358,
+      "single_task_R2": 0.746828141253135
+    },
+    "refractive_index": {
+      "multi_task_MAE": 0.05088107105721665,
+      "multi_task_R2": 0.42185520022927037,
+      "single_task_MAE": 0.02048474632563185,
+      "single_task_R2": 0.8925382908965608
+    },
+    "static_dielectric_const": {
+      "multi_task_MAE": 1.8164849140667065,
+      "multi_task_R2": 0.3919681184500553,
+      "single_task_MAE": 1.8256407077308305,
+      "single_task_R2": 0.3891657236558348
+    },
+    "thermal_conductivity": {
+      "multi_task_MAE": 0.034642589927666306,
+      "multi_task_R2": 0.1819275794498022,
+      "single_task_MAE": 0.02461998435149133,
+      "single_task_R2": 0.5419252833436438
+    }
+  },
+  "fidelity_check": {
+    "method": "Pre-registered refute criterion: ANY number in headline_group_safe_split that does not byte-exactly match its cited source receipt's stored value => REFUTES the claim that this superseding KPI faithfully represents its source evidence (a transcription-fidelity attack, distinct from the underlying ML claim itself).",
+    "pre_registered_refute_criterion": "any assembled headline value != cited source receipt value (exact float equality, same-machine same-float-repr re-derivation) => REFUTED",
+    "result_on_real_table": {
+      "match": true,
+      "mismatches": [],
+      "n_fields_checked": 8,
+      "n_mismatches": 0
+    },
+    "verdict": "SURVIVED"
+  },
+  "flips_scientific_readiness": false,
+  "gates": {
+    "currency_reverification_byte_identical_both_scripts": true,
+    "fidelity_check_passes_on_real_table": true,
+    "positive_control_detects_planted_defect": true,
+    "reuses_pre_validated_2x_refute_threshold": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true
+  },
+  "headline_group_safe_split": {
+    "density": {
+      "direction_A_train_small_test_large": {
+        "degradation_factor_vs_within_corpus": 13.73773717681496,
+        "mae_g_per_cm3": 0.5604307480655227,
+        "r2": -12.151676175050213
+      },
+      "direction_B_train_large_test_small": {
+        "degradation_factor_vs_within_corpus": 7.5933361123638585,
+        "mae_g_per_cm3": 0.3097700140127193,
+        "r2": -5.010432272343768
+      },
+      "group_safe_verdict": "REFUTED",
+      "method": "hierarchical average-linkage macro-bisection (2 macro-chemotypes), Tanimoto Morgan r=2/512-bit",
+      "n_macro_a": 16,
+      "n_macro_b": 1061,
+      "source_receipt": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+      "source_receipt_sha256": "1ba393b905e0a0463bd1b2c3ae5f6e3a538b31c341e3d6ca955b0d3936f8968a",
+      "within_corpus_own_features_mae_g_per_cm3": 0.040794982525313994
+    },
+    "refractive_index": {
+      "direction_A_train_small_test_large": {
+        "degradation_factor_vs_within_corpus": 9.922448512588657,
+        "mae": 0.19077473856671048,
+        "r2": -5.0002114358303205
+      },
+      "direction_B_train_large_test_small": {
+        "degradation_factor_vs_within_corpus": 3.1322555011379456,
+        "mae": 0.06022255732500009,
+        "r2": -0.6000135510632414
+      },
+      "group_safe_verdict": "REFUTED",
+      "method": "hierarchical average-linkage macro-bisection (2 macro-chemotypes), Tanimoto Morgan r=2/512-bit; same-corpus 4-property-complete subset",
+      "n_macro_a": 16,
+      "n_macro_b": 1052,
+      "source_receipt": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+      "source_receipt_sha256": "24bc32043db26138d618746912f540b32bc6fbe13074892006d11803388f904c",
+      "within_corpus_own_features_mae": 0.019226578835322115
+    },
+    "static_dielectric_const": {
+      "already_retracted_by": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+      "already_retracted_by_sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b",
+      "excluded_from_group_safe_split_headline": true,
+      "exclusion_reason": "static_dielectric_const's defect is LABEL ADMISSIBILITY, not split methodology: the Frohlich (1949) eps_static>=n_refractive^2 physical constraint is violated in 89.5% of RadonPy PI1070 rows (W2/C8). A group-safe split evaluated on physically-inadmissible labels would not be a meaningful number -- the property is already RETRACTED at the label level, upstream of any split-methodology question. Not re-litigated here; running macro-bisection on an inadmissible label and presenting a headline MAE for it would itself be a new honesty defect, so it is deliberately not done.",
+      "group_safe_verdict": "N/A_LABEL_INADMISSIBLE_UPSTREAM_OF_SPLIT_QUESTION"
+    },
+    "thermal_conductivity": {
+      "direction_A_train_small_test_large": {
+        "degradation_factor_vs_within_corpus": 4.516263414649325,
+        "mae": 0.10846006412761407,
+        "r2": -2.833517310143484
+      },
+      "direction_B_train_large_test_small": {
+        "degradation_factor_vs_within_corpus": 1.8625964718151355,
+        "mae": 0.04473107837812498,
+        "r2": -1.2427526601509622
+      },
+      "group_safe_verdict": "REFUTED",
+      "method": "hierarchical average-linkage macro-bisection (2 macro-chemotypes), Tanimoto Morgan r=2/512-bit; same-corpus 4-property-complete subset",
+      "n_macro_a": 16,
+      "n_macro_b": 1052,
+      "source_receipt": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+      "source_receipt_sha256": "24bc32043db26138d618746912f540b32bc6fbe13074892006d11803388f904c",
+      "within_corpus_own_features_mae": 0.024015442450899576
+    }
+  },
+  "human_review_performed": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_shipped_kpi_van_krevelen_ridge_fit": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "R-C03 deliverable 1: re-run the 4-property RadonPy PI1070 ML evaluation under the macro-bisection group-safe split (the refuting receipt's own protocol, evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/) and publish THOSE numbers as the headline, with the shipped random-split numbers demoted to within-corpus reference only.",
+  "organizational_independence_asserted": false,
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "match": false,
+      "mismatches": [
+        {
+          "assembled": 0.6104307480655228,
+          "field": "density.dirA.mae",
+          "source": 0.5604307480655227
+        }
+      ],
+      "n_fields_checked": 8,
+      "n_mismatches": 1
+    },
+    "how_planted": "headline_group_safe_split['density']['direction_A_train_small_test_large']['mae_g_per_cm3']: 0.5604307480655227 -> 0.6104307480655228 (source receipt C7 fire2 records 0.5604307480655227)",
+    "planted_defect": "density.direction_A_train_small_test_large.mae_g_per_cm3 mutated from the true cited source value to a fabricated inflated value, in an in-memory copy of the assembled headline table",
+    "real_table_fidelity_check_result": {
+      "match": true,
+      "mismatches": [],
+      "n_fields_checked": 8,
+      "n_mismatches": 0
+    }
+  },
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this deliverable's science (all gates pass) and NOT key custody. Manifest untouched at 66/11.",
+  "receipt_id": "rc03-d1-multitarget-group-safe-headline-superseding-kpi",
+  "recommended_followups": [
+    "Add a RETRACTION-INDEX.md entry for this R-C03 deliverable-1 superseding KPI (done in this same fire).",
+    "R-C03 deliverable 2 (AD gate on Tg/density predictors, tested on C7 cross-corpus pairs) and deliverable 3 (constrained NNLS/projected VK Ridge refit scoped to n_train>=500) remain open for subsequent fires of this campaign item.",
+    "mission.md does not currently reference multi-target-ml-radonpy-4-properties-audit-kpi.v1.json by name (confirmed 0 occurrences in R-B3's sweep) -- no prose update required for this deliverable."
+  ],
+  "repair_deliverable": "1_of_3: SUPERSEDING multi-target KPI publishing group-safe-split headline numbers, random-split demoted to reference",
+  "repair_status": "deliverable_1_of_3_landed_survived_reattack_headline_demoted",
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened. Reads only already-in-tree, already-signed receipts (W7, C7 fire 2, the dielectric retraction receipt) and the already-in-tree RadonPy PI1070 CSV via the two verbatim-rerun compute scripts, all previously rights-cleared.",
+  "schema": "amphora.molecule-property.multitarget-radonpy-4-properties-group-safe-headline-superseding-kpi.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY R-C03 deliverable-1 superseding KPI checkpoint under evidence/phase0/repairs/R-C03/attempts/"
+  },
+  "source_receipts": {
+    "c7_fire2_density_macro_bisection": {
+      "path": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+      "sha256": "1ba393b905e0a0463bd1b2c3ae5f6e3a538b31c341e3d6ca955b0d3936f8968a"
+    },
+    "dielectric_label_retraction": {
+      "path": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+      "sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+    },
+    "w7_multitarget_macro_bisection": {
+      "path": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+      "sha256": "24bc32043db26138d618746912f540b32bc6fbe13074892006d11803388f904c"
+    }
+  },
+  "study_id": "amphora-molecule-property-rc03-deliverable1-group-safe-headline-v1",
+  "supersedes": {
+    "reason": "W7 (evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/) REFUTED this KPI's refractive_index and thermal_conductivity headline numbers under a group-safe macro-chemotype-bisection split; C7 fire 2 independently REFUTED the density headline the same way; W2/C8/W3 separately RETRACTED static_dielectric_const at the label level. R-A09 recorded REFUTED status in RETRACTION-INDEX.md but did not itself publish a superseding artifact with group-safe numbers as the headline -- this receipt performs that publication.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-property/evidence/phase0/kpis/multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+    "superseded_sha256": "a72aa3f4629a755b735b0e10df2046473ac8e8d9a66dc7e3cc59164914767dd6"
+  },
+  "verdict": "CLAIM_SURVIVED",
+  "why": "The ORIGINAL claim (random-60/20/20-split R2/MAE numbers in multi-target-ml-radonpy-4-properties-audit-kpi.v1.json represent real predictive skill) remains REFUTED for all 4 properties and is NOT reinstated here -- W7 and C7 fire 2's findings stand, reconfirmed live this fire by byte-identical re-execution of both their scripts. What this receipt adds is the deliverable the campaign item asked for: a superseding KPI that publishes the group-safe macro-bisection numbers (13.74x/7.59x density degradation, 9.92x/3.13x refractive_index, 4.52x/1.86x thermal_conductivity, all REFUTED against the pre-registered 2x bar) as the HEADLINE, with the inflated random-split numbers explicitly demoted to a labeled within-corpus-reference-only section. The narrower claim under test THIS fire -- 'this superseding artifact faithfully and accurately transcribes the numbers it cites from its already-signed sources, with no inflation or transcription defect' -- SURVIVES: the fidelity checker found 0/8 mismatches on the real table, and a positive control (a deliberately planted +0.05 g/cm3 transcription defect in density's direction-A MAE) was correctly detected as a mismatch, confirming the checker has real power to catch the failure mode it exists to catch."
+}

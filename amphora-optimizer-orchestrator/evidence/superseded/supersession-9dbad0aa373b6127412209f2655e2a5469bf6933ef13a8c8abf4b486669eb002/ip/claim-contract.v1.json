@@ -1,0 +1,44 @@
+{
+  "abstain_outside_applicability": true,
+  "applicability_domain": [
+    "registered amphora-optimizer-orchestrator contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_locks": {
+    "claim_locks_remain_binding": true,
+    "fto_not_performed": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_procurement_authority": true,
+    "no_product_performance_authority": true,
+    "no_product_release_or_qualification": true,
+    "no_qualification_authority": true,
+    "no_ranking_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_superiority_claim": true,
+    "optimizer_must_not_use_failed_or_no_authority_scores": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true
+  },
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "module_class": "DETERMINISTIC_CONTROL",
+  "module_id": "amphora-optimizer-orchestrator",
+  "prohibited_authorities": [
+    "RANKING",
+    "OPTIMIZER_USE",
+    "RELEASE",
+    "QUALIFICATION",
+    "PATENTABILITY",
+    "FTO",
+    "PROCUREMENT",
+    "REGULATORY",
+    "SAFETY",
+    "PRODUCT_PERFORMANCE"
+  ],
+  "registry_manifest_hash": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+  "schema": "amphora.module-claim-contract.v1",
+  "scientific_readiness_ceiling": "NOT_APPLICABLE"
+}

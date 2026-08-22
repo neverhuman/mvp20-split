@@ -1,0 +1,26 @@
+{
+  "archive_root": "evidence/superseded/supersession-c519a7390f27df20051517365661f6cb2dced6cbd7264862de30c069511359bd",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "acb9ba98f25b2c0b8077af6e670eb9761367fb35e7b60874609bc3fdebb1de4a",
+    "ip/disclosure-log.v1.json": "7be8ef5626506f69da05997262672702de568847542a0db7f70c2b3765b926cb",
+    "ip/prior-art.v1.json": "bd4ea2885d0517f3782e8aebf7a9b4c1ee5b3c5747004da299296cff392b6c13",
+    "ip/technical-dossier.v1.json": "40d7d0f2b7bc6a1bc052fd5ace3e3fb7acb642bccbe584cfd10fa85b6760ea4d",
+    "phase0/benchmark/benchmark-lock.v1.json": "7bb50cf14a1420462b9518e7659b31429708771be4bb9e661c8359c4191acb25",
+    "phase0/bundle.v1.json": "3236435ba944e785028367b55c60c4c528266495aa1b32af995199b0d654d3e6",
+    "phase0/dataset/dataset-manifest.v1.json": "b5282c3f866b2bfb299f8bc768fd1b42b91b2f31f1a673c9f60a230b93e1c7f2",
+    "phase0/promotion/policy.v1.json": "9ebbc9cab9d7da1f5b16c8848df9c63c9b626011bb68effc2a8bf6febd1fd343",
+    "phase0/raw/SHA256SUMS": "27fac023ef376d1870bed4c78cff3e205be572a857de45f8bb6475bc9ad31d69",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "e1f0b17ea165881060d9f7c1a300fde27ceb94122e33d83413c4d9b7b2a06af3",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v1.json": "09d719c1616a9afe22a2773718aeeb69833928cdd617fdada432f8021dddb962",
+    "phase0/split/split-manifest.v1.json": "3e4e08273c915d1af835425a47c586374fcf39c3c1ed2852b23018cf74f167da"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-formulation-arithmetic",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-c519a7390f27df20051517365661f6cb2dced6cbd7264862de30c069511359bd",
+  "unsigned_preparation_only": true
+}

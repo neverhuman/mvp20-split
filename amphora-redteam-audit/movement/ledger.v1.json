@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-01c49c5137475180e29f829d2b30858a808aedb03e3e99e35dded19f037add87",
+      "path": "events/01c49c5137475180e29f829d2b30858a808aedb03e3e99e35dded19f037add87.json",
+      "sha256": "d1ea6eeb80e96ff7bcde71a004b4982efde5d54df94abb2c8370ce811cd6c0b8"
+    }
+  ],
+  "module_id": "amphora-redteam-audit",
+  "schema": "amphora.module-movement-ledger.v1"
+}

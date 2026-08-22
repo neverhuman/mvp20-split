@@ -1,0 +1,688 @@
+{
+  "audit_id": "eis-brasher-kingsbury-water-uptake-admissibility-v1",
+  "authority": "AUDIT_ONLY",
+  "axis": "theory",
+  "baths": [
+    "BOR",
+    "DI",
+    "HAR",
+    "PRO"
+  ],
+  "coating_systems": [
+    "2-E-P-1K-2-S",
+    "2-E-P-2K-2-S",
+    "2-Z-P-1K-2-S",
+    "2-Z-P-2K-2-S",
+    "3-D-P-2K-2-S",
+    "3-Z-P-2K-2-S"
+  ],
+  "comparison_against_existing_model": {
+    "candidate": "Brasher-Kingsbury water uptake derived from the same single-frequency bytes",
+    "existing": "ISO 16773 low-frequency |Z| barrier metric (already receipted by this module in eis-rustcreep-crossmodality-v1 and eis-reproducibility-discrimination-power-v1)",
+    "result": "the candidate is NOT an improvement and NOT even admissible: it is rank-redundant with |Z| (T2), violates its own physical preconditions (T1), produces impossible values (T3), shows no Fickian time signature (T4), and is buried under the panel-to-panel noise floor (T5). The module correctly retains |Z| as its only single-frequency barrier descriptor."
+  },
+  "data_source": {
+    "author": "Brian Baumgarten",
+    "catalog_item": "8048",
+    "date_of_publication": "2024-09-11",
+    "in_coating_scope": true,
+    "project": "21019",
+    "publisher": "US Bureau of Reclamation (RISE)",
+    "rights": "US Federal Government work, public domain (17 U.S.C. 105)",
+    "rights_clean": true,
+    "url": "https://data.usbr.gov/catalog/8048"
+  },
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "Does NOT refute Brasher-Kingsbury as physics; it refutes its APPLICABILITY to a single-frequency 0.01 Hz summary. The law remains the correct target once frequency-resolved spectra are available.",
+    "The 6 passivity-violating rows are reported, not repaired: this cron holds no authority to edit or re-issue the upstream USBR bytes.",
+    "Phase-1 water-uptake capability requires frequency-resolved Z'(f), Z''(f) sweeps with a high-frequency (>= 1 kHz) coating-capacitance plateau, Kramers-Kronig / linear-KK residual validation, a pre-immersion dry C_0, and specimen area + dry-film thickness."
+  ],
+  "eps_water": 80.0,
+  "extraction_frequency_hz": 0.01,
+  "headline": "First physical-admissibility audit of the Brasher-Kingsbury (1954) coating water-uptake law against this module's single-frequency EIS substrate (USBR-21019, 306 records, 6 coating systems x 4 baths). H0 REFUTED on 6 of 6 independent physical screens. (T0) 6/306 records (1.96%) carry |phase| > 90 deg and are IMPOSSIBLE for any passive cell -- a previously undetected integrity defect localized to 1 source file(s). (T1) median dissipation factor 0.74: only 14.3% of records are capacitance-dominated, so no coating capacitance can be read at 0.01 Hz. (T2) log10 C_eff is Spearman -0.9921 with log10|Z| -- rank-redundant, zero new information. (T3) only 51.1% of derived water uptakes are physically plausible; 26.1% are negative and 3.0% exceed the film volume (max 3.83). (T4) only 1/36 series are monotone; the weak aggregate time drift (post-anchor rho +0.157, perm p=0.01065) is not system-robust (95% CI [-0.19, 0.50]), so no Fickian uptake trajectory is identified. (T5) panel-to-panel reproducibility propagates to sigma(phi_v)=0.67 volume fraction, 2.2x the entire 0-30 vol% physical range. Conclusion: the module's declared Kramers-Kronig / equivalent-circuit abstention is now quantitatively EVIDENCED, not merely asserted; |Z| remains the only defensible single-frequency descriptor.",
+  "human_review_performed": false,
+  "hypothesis_H0": "The USBR-21019 single-frequency 0.01 Hz EIS summary admits a valid Brasher-Kingsbury (1954) reduction to coating water uptake, and that uptake carries barrier information beyond |Z| alone.",
+  "inputs": [
+    {
+      "path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv",
+      "sha256": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f"
+    },
+    {
+      "path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv",
+      "sha256": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba"
+    },
+    {
+      "path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv",
+      "sha256": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b"
+    },
+    {
+      "path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv",
+      "sha256": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525"
+    },
+    {
+      "path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv",
+      "sha256": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf"
+    },
+    {
+      "path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv",
+      "sha256": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311"
+    }
+  ],
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "n_coating_systems": 6,
+  "n_records_parsed": 306,
+  "n_records_passive_and_usable": 300,
+  "n_tests_failed": 6,
+  "phase": "PRE_PHASE_0",
+  "promotes_authority": false,
+  "schema": "amphora.public-corrosion-benchmark.eis-brasher-kingsbury-water-uptake-admissibility.v1",
+  "scientific_success_asserted": false,
+  "tests": {
+    "T0_passivity_screen": {
+      "fraction_impossible": 0.019608,
+      "meaning": "These rows cannot be produced by any passive electrochemical cell; they are instrument/processing artifacts in the published summary. They are localized, not diffuse, so the defect is a cell-level acquisition fault rather than a global convention error. Any Kramers-Kronig or equivalent-circuit fit that ingested them would be silently invalid.",
+      "n_inductive_quadrant_0_to_90": 0,
+      "n_phase_out_of_passive_range": 6,
+      "n_records_total": 306,
+      "principle": "passive LTI two-terminal immittance requires Re{Z}>=0 <=> phase in [-90,+90] deg (B2)",
+      "verdict": "IMPOSSIBLE_RECORDS_PRESENT",
+      "violating_records": [
+        {
+          "abs_Z_ohm": 3740000000.0,
+          "bath": "BOR",
+          "date": "2022-04-28",
+          "phase_deg": 134.6994,
+          "replicate": "0",
+          "sample": "2-Z-P-2K-2-S",
+          "source_file": "128772_2-z-p-2k-2-s_eis.csv"
+        },
+        {
+          "abs_Z_ohm": 415000.0,
+          "bath": "HAR",
+          "date": "2022-03-31",
+          "phase_deg": 167.2641,
+          "replicate": "2",
+          "sample": "2-Z-P-2K-2-S",
+          "source_file": "128772_2-z-p-2k-2-s_eis.csv"
+        },
+        {
+          "abs_Z_ohm": 814000.0,
+          "bath": "HAR",
+          "date": "2022-04-05",
+          "phase_deg": 105.4507,
+          "replicate": "2",
+          "sample": "2-Z-P-2K-2-S",
+          "source_file": "128772_2-z-p-2k-2-s_eis.csv"
+        },
+        {
+          "abs_Z_ohm": 1790000.0,
+          "bath": "HAR",
+          "date": "2022-04-12",
+          "phase_deg": -142.7966,
+          "replicate": "2",
+          "sample": "2-Z-P-2K-2-S",
+          "source_file": "128772_2-z-p-2k-2-s_eis.csv"
+        },
+        {
+          "abs_Z_ohm": 3800000.0,
+          "bath": "HAR",
+          "date": "2022-04-18",
+          "phase_deg": -116.7167,
+          "replicate": "2",
+          "sample": "2-Z-P-2K-2-S",
+          "source_file": "128772_2-z-p-2k-2-s_eis.csv"
+        },
+        {
+          "abs_Z_ohm": 446000.0,
+          "bath": "HAR",
+          "date": "2022-04-27",
+          "phase_deg": 117.4503,
+          "replicate": "2",
+          "sample": "2-Z-P-2K-2-S",
+          "source_file": "128772_2-z-p-2k-2-s_eis.csv"
+        }
+      ],
+      "violations_by_cell": {
+        "2-Z-P-2K-2-S|0|BOR": 1,
+        "2-Z-P-2K-2-S|2|HAR": 5
+      },
+      "violations_by_source_file": {
+        "128772_2-z-p-2k-2-s_eis.csv": 6
+      }
+    },
+    "T1_capacitive_dominance": {
+      "criterion_D_le": 0.176327,
+      "criterion_equivalent_phase_deg": -80.0,
+      "dissipation_factor_quantiles": {
+        "25": 0.322684,
+        "5": 0.113663,
+        "50": 0.735627,
+        "75": 1.689859,
+        "95": 4.729556
+      },
+      "fraction_D_le_1_phase_beyond_45deg": 0.613333,
+      "fraction_capacitance_dominated": 0.143333,
+      "meaning": "At 0.01 Hz the median dissipation factor is 0.736: the response is resistively dominated, i.e. the charge-transfer / diffusion branch, not the coating dielectric. Only 14.3% of records sit in the capacitance-dominated regime where a coating capacitance can be read off at all.",
+      "n_passive_records": 300,
+      "principle": "Brasher-Kingsbury presumes C is the COATING capacitance => the immittance at the extraction frequency must be capacitance-dominated, D=|cot(phi)|<<1 (B1,B3)",
+      "verdict": "PRECONDITION_FAILED"
+    },
+    "T2_information_redundancy": {
+      "meaning": "|rho| = 0.9921. The single-frequency 'capacitance' is a near-perfect monotone rescaling of the impedance modulus already receipted under ISO 16773, so it carries essentially ZERO additional rank information. This is expected: with one frequency, C_eff = -1/(2 pi f |Z| sin phi) and phi varies over a far narrower dynamic range than |Z| (which spans 6.5 decades).",
+      "n": 300,
+      "pearson_log10Ceff_vs_log10absZ": {
+        "r": -0.984966
+      },
+      "principle": "if C_eff is a monotone restatement of |Z| it can add no barrier information",
+      "spearman_log10Ceff_vs_log10absZ": {
+        "p_two_sided": 2.0635963455452324e-270,
+        "rho": -0.992063
+      },
+      "verdict": "REDUNDANT"
+    },
+    "T3_brasher_kingsbury_range_admissibility": {
+      "C0_caveat": "USBR provides no pre-immersion (dry) reading, so C_0 is already partly wetted; this biases phi_v LOW and therefore makes the admissibility test CONSERVATIVE (it can only under-count violations of the phi_v<0 kind).",
+      "C0_convention": "earliest-date reading of each (coating system, replicate panel, bath) series",
+      "fraction_gt_1_more_water_than_film_volume": 0.030303,
+      "fraction_in_physical_unit_interval_0_1": 0.708333,
+      "fraction_in_plausible_band_0_to_0p30": 0.511364,
+      "fraction_negative_impossible_net_desorption": 0.261364,
+      "law": "phi_v = log10(C_t/C_0)/log10(80)   (Brasher & Kingsbury 1954)",
+      "meaning": "Only 51.1% of Brasher-Kingsbury values land in the physically plausible 0-30 vol% band; 26.1% are NEGATIVE (net water expulsion relative to the first immersion reading) and 3.0% exceed 1.0 (more absorbed water than the entire film volume). The maximum is 3.83, i.e. 383% water by volume.",
+      "n_phi_v_values": 264,
+      "note_area_free": "the law uses only the capacitance RATIO, so the missing USBR specimen area and film thickness cancel exactly and cannot excuse this failure",
+      "phi_v_quantiles": {
+        "0": -0.909512,
+        "100": 3.825425,
+        "25": -0.016841,
+        "50": 0.120013,
+        "75": 0.28225
+      },
+      "verdict": "RANGE_INADMISSIBLE"
+    },
+    "T4_fickian_time_consistency": {
+      "aggregate_drift_significant_vs_permutation": true,
+      "anchor_exclusion": "the t0 point (phi_v == 0 by construction, and the earliest date) is EXCLUDED; including it would manufacture a positive time-rank correlation out of the definition of the estimator",
+      "cluster_bootstrap": {
+        "ci95": [
+          -0.191828,
+          0.496549
+        ],
+        "median": 0.157359,
+        "n_boot": 20000,
+        "resample_unit": "coating_system",
+        "seed": 12345
+      },
+      "estimator": "mean over series of Spearman rho(phi_v, immersion days)",
+      "fraction_monotone": 0.027778,
+      "hostile_null": "within-series permutation of phi_v against date order",
+      "meaning": "Only 1 of 36 panel-bath series are monotone non-decreasing (2.8%). A weak aggregate positive drift may be present -- mean post-anchor time-rank rho +0.157, permutation p=0.01065 -- so apparent capacitance does creep upward with exposure. But that drift is NOT robust to clustering by coating system (95% CI [-0.192, 0.497]) and is nowhere near the monotone approach-to-equilibrium a Fickian sorption curve requires. The honest reading is a weak, system-inconsistent drift consistent with progressive coating degradation (which also lowers |Z|), NOT an identified water-uptake trajectory.",
+      "n_permutations": 20000,
+      "n_series_ge_3_points": 36,
+      "n_series_monotone_non_decreasing": 1,
+      "null_mean_rho": -0.000358,
+      "null_sd_rho": 0.068528,
+      "observed_mean_rho": 0.157359,
+      "per_series": [
+        {
+          "bath": "BOR",
+          "monotone": false,
+          "n_points": 8,
+          "phi_v_max": 0.591555,
+          "phi_v_min": -0.051011,
+          "replicate": "0",
+          "rho_phi_v_vs_time": -0.714286,
+          "sample": "2-E-P-1K-2-S",
+          "span_days": 211.0
+        },
+        {
+          "bath": "PRO",
+          "monotone": false,
+          "n_points": 8,
+          "phi_v_max": 1.572428,
+          "phi_v_min": -0.083231,
+          "replicate": "0",
+          "rho_phi_v_vs_time": 0.75,
+          "sample": "2-E-P-1K-2-S",
+          "span_days": 211.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 10,
+          "phi_v_max": 0.600671,
+          "phi_v_min": 0.0,
+          "replicate": "1",
+          "rho_phi_v_vs_time": -0.833333,
+          "sample": "2-E-P-1K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 10,
+          "phi_v_max": 3.825425,
+          "phi_v_min": 0.0,
+          "replicate": "2",
+          "rho_phi_v_vs_time": -0.266667,
+          "sample": "2-E-P-1K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.179664,
+          "phi_v_min": -0.307067,
+          "replicate": "5",
+          "rho_phi_v_vs_time": -0.97619,
+          "sample": "2-E-P-1K-2-S",
+          "span_days": 215.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.177061,
+          "phi_v_min": -0.36927,
+          "replicate": "6",
+          "rho_phi_v_vs_time": -0.952381,
+          "sample": "2-E-P-1K-2-S",
+          "span_days": 215.0
+        },
+        {
+          "bath": "BOR",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.539913,
+          "phi_v_min": -0.068193,
+          "replicate": "0",
+          "rho_phi_v_vs_time": -0.309524,
+          "sample": "2-E-P-2K-2-S",
+          "span_days": 211.0
+        },
+        {
+          "bath": "PRO",
+          "monotone": false,
+          "n_points": 8,
+          "phi_v_max": 0.390325,
+          "phi_v_min": -0.018099,
+          "replicate": "0",
+          "rho_phi_v_vs_time": 0.75,
+          "sample": "2-E-P-2K-2-S",
+          "span_days": 211.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 10,
+          "phi_v_max": 0.48175,
+          "phi_v_min": 0.0,
+          "replicate": "1",
+          "rho_phi_v_vs_time": -0.483333,
+          "sample": "2-E-P-2K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 10,
+          "phi_v_max": 0.931235,
+          "phi_v_min": 0.0,
+          "replicate": "2",
+          "rho_phi_v_vs_time": -0.05,
+          "sample": "2-E-P-2K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.458455,
+          "phi_v_min": 0.0,
+          "replicate": "5",
+          "rho_phi_v_vs_time": 0.97619,
+          "sample": "2-E-P-2K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.128402,
+          "phi_v_min": -0.184794,
+          "replicate": "6",
+          "rho_phi_v_vs_time": -0.571429,
+          "sample": "2-E-P-2K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "BOR",
+          "monotone": false,
+          "n_points": 8,
+          "phi_v_max": 0.335023,
+          "phi_v_min": -0.153965,
+          "replicate": "0",
+          "rho_phi_v_vs_time": -0.321429,
+          "sample": "2-Z-P-1K-2-S",
+          "span_days": 211.0
+        },
+        {
+          "bath": "PRO",
+          "monotone": false,
+          "n_points": 8,
+          "phi_v_max": 2.139792,
+          "phi_v_min": -0.059982,
+          "replicate": "0",
+          "rho_phi_v_vs_time": 0.214286,
+          "sample": "2-Z-P-1K-2-S",
+          "span_days": 211.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.293383,
+          "phi_v_min": -0.155713,
+          "replicate": "1",
+          "rho_phi_v_vs_time": 0.928571,
+          "sample": "2-Z-P-1K-2-S",
+          "span_days": 210.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.019049,
+          "phi_v_min": -0.779818,
+          "replicate": "2",
+          "rho_phi_v_vs_time": -0.857143,
+          "sample": "2-Z-P-1K-2-S",
+          "span_days": 210.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.0,
+          "phi_v_min": -0.909512,
+          "replicate": "5",
+          "rho_phi_v_vs_time": -1.0,
+          "sample": "2-Z-P-1K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.705308,
+          "phi_v_min": -0.648548,
+          "replicate": "6",
+          "rho_phi_v_vs_time": -0.309524,
+          "sample": "2-Z-P-1K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "BOR",
+          "monotone": false,
+          "n_points": 6,
+          "phi_v_max": 1.199824,
+          "phi_v_min": 0.0,
+          "replicate": "0",
+          "rho_phi_v_vs_time": -0.2,
+          "sample": "2-Z-P-2K-2-S",
+          "span_days": 211.0
+        },
+        {
+          "bath": "PRO",
+          "monotone": false,
+          "n_points": 8,
+          "phi_v_max": 0.93635,
+          "phi_v_min": 0.0,
+          "replicate": "0",
+          "rho_phi_v_vs_time": 0.535714,
+          "sample": "2-Z-P-2K-2-S",
+          "span_days": 211.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 1.209702,
+          "phi_v_min": 0.0,
+          "replicate": "1",
+          "rho_phi_v_vs_time": 0.47619,
+          "sample": "2-Z-P-2K-2-S",
+          "span_days": 210.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 5,
+          "phi_v_max": 0.787698,
+          "phi_v_min": 0.0,
+          "replicate": "2",
+          "rho_phi_v_vs_time": 0.4,
+          "sample": "2-Z-P-2K-2-S",
+          "span_days": 202.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.139391,
+          "phi_v_min": 0.0,
+          "replicate": "5",
+          "rho_phi_v_vs_time": 0.904762,
+          "sample": "2-Z-P-2K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 9,
+          "phi_v_max": 0.245692,
+          "phi_v_min": 0.0,
+          "replicate": "6",
+          "rho_phi_v_vs_time": 0.309524,
+          "sample": "2-Z-P-2K-2-S",
+          "span_days": 214.0
+        },
+        {
+          "bath": "BOR",
+          "monotone": false,
+          "n_points": 6,
+          "phi_v_max": 0.129204,
+          "phi_v_min": -0.072698,
+          "replicate": "0",
+          "rho_phi_v_vs_time": -0.5,
+          "sample": "3-D-P-2K-2-S",
+          "span_days": 124.0
+        },
+        {
+          "bath": "PRO",
+          "monotone": false,
+          "n_points": 6,
+          "phi_v_max": 0.320342,
+          "phi_v_min": -0.041581,
+          "replicate": "0",
+          "rho_phi_v_vs_time": -0.6,
+          "sample": "3-D-P-2K-2-S",
+          "span_days": 124.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 6,
+          "phi_v_max": 0.372973,
+          "phi_v_min": -0.027086,
+          "replicate": "1",
+          "rho_phi_v_vs_time": 0.7,
+          "sample": "3-D-P-2K-2-S",
+          "span_days": 125.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": true,
+          "n_points": 6,
+          "phi_v_max": 0.287313,
+          "phi_v_min": 0.0,
+          "replicate": "1",
+          "rho_phi_v_vs_time": 1.0,
+          "sample": "3-D-P-2K-2-S",
+          "span_days": 125.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 6,
+          "phi_v_max": 0.382407,
+          "phi_v_min": -0.036594,
+          "replicate": "2",
+          "rho_phi_v_vs_time": 1.0,
+          "sample": "3-D-P-2K-2-S",
+          "span_days": 125.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 6,
+          "phi_v_max": 0.324989,
+          "phi_v_min": 0.0,
+          "replicate": "2",
+          "rho_phi_v_vs_time": 0.9,
+          "sample": "3-D-P-2K-2-S",
+          "span_days": 125.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 11,
+          "phi_v_max": 1.468138,
+          "phi_v_min": 0.0,
+          "replicate": "1",
+          "rho_phi_v_vs_time": 0.951515,
+          "sample": "3-Z-P-2K-2-S",
+          "span_days": 209.0
+        },
+        {
+          "bath": "BOR",
+          "monotone": false,
+          "n_points": 7,
+          "phi_v_max": 0.318787,
+          "phi_v_min": -0.002164,
+          "replicate": "12",
+          "rho_phi_v_vs_time": 0.942857,
+          "sample": "3-Z-P-2K-2-S",
+          "span_days": 201.0
+        },
+        {
+          "bath": "HAR",
+          "monotone": false,
+          "n_points": 10,
+          "phi_v_max": 2.860531,
+          "phi_v_min": -0.269803,
+          "replicate": "23",
+          "rho_phi_v_vs_time": 0.7,
+          "sample": "3-Z-P-2K-2-S",
+          "span_days": 209.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 11,
+          "phi_v_max": 0.791715,
+          "phi_v_min": 0.0,
+          "replicate": "5",
+          "rho_phi_v_vs_time": 0.551515,
+          "sample": "3-Z-P-2K-2-S",
+          "span_days": 209.0
+        },
+        {
+          "bath": "DI",
+          "monotone": false,
+          "n_points": 11,
+          "phi_v_max": 0.208159,
+          "phi_v_min": 0.0,
+          "replicate": "6",
+          "rho_phi_v_vs_time": 0.733333,
+          "sample": "3-Z-P-2K-2-S",
+          "span_days": 209.0
+        },
+        {
+          "bath": "PRO",
+          "monotone": false,
+          "n_points": 7,
+          "phi_v_max": 1.763182,
+          "phi_v_min": -0.011936,
+          "replicate": "9",
+          "rho_phi_v_vs_time": 0.885714,
+          "sample": "3-Z-P-2K-2-S",
+          "span_days": 201.0
+        }
+      ],
+      "perm_p_one_sided_positive": 0.010649,
+      "permutation_seed": 0,
+      "principle": "Fickian sorption from a constant-activity reservoir is monotone non-decreasing in time toward equilibrium (Crank 1975, Ch.4)",
+      "system_robust": false,
+      "verdict": "FICKIAN_SIGNATURE_NOT_ESTABLISHED"
+    },
+    "T5_noise_floor_propagation": {
+      "estimator": "matched (system,bath,date) duplicate-panel log10(C) differences; the shared exposure-time trend cancels exactly, so this is a pure panel-to-panel term",
+      "meaning": "One standard deviation of panel-to-panel reproducibility maps to 0.666 volume fraction of apparent water uptake, i.e. 67 vol%. The entire physically admissible range of coating water uptake is 0-30 vol%. The measurement noise floor is 2.2x the whole signal range, so even a perfectly specified Brasher-Kingsbury extraction on these bytes would be unresolvable.",
+      "n_matched_pairs": 101,
+      "noise_to_signal_ratio": 2.219162,
+      "physical_signal_range_phi_v": 0.3,
+      "principle": "ISO 5725-2:2019 between-panel reproducibility propagated through the Brasher-Kingsbury law (B1,B5)",
+      "propagation": "sigma(phi_v) = sqrt(2) * sigma_log10C / log10(80); the sqrt(2) is because phi_v differences TWO independent capacitance reads (C_t and C_0)",
+      "sigma_between_panel_log10C_decades": 0.89589,
+      "sigma_phi_v_propagated": 0.665748,
+      "verdict": "NOISE_EXCEEDS_SIGNAL"
+    }
+  },
+  "tests_failed": [
+    "T0_passivity_screen",
+    "T1_capacitive_dominance",
+    "T2_information_redundancy",
+    "T3_brasher_kingsbury_range_admissibility",
+    "T4_fickian_time_consistency",
+    "T5_noise_floor_propagation"
+  ],
+  "theory_baselines": [
+    {
+      "citation": "Brasher D.M. & Kingsbury A.H., J. Appl. Chem. 4(2):62-72 (1954)",
+      "doi": "10.1002/jctb.5010040202",
+      "id": "B1",
+      "law": "phi_v = log10(C_t/C_0)/log10(80)"
+    },
+    {
+      "citation": "Boukamp B.A., J. Electrochem. Soc. 142(6):1885-1894 (1995); Macdonald J.R., J. Electroanal. Chem. 193:57-74 (1985); Barsoukov & Macdonald, Impedance Spectroscopy 2nd ed., Wiley 2005",
+      "doi": "10.1149/1.2044210",
+      "id": "B2",
+      "isbn": "978-0-471-64749-2",
+      "law": "passivity: Re{Z}>=0 => phase in [-90,+90] deg (Kramers-Kronig prerequisite)"
+    },
+    {
+      "citation": "Barsoukov & Macdonald, Impedance Spectroscopy, 2nd ed., Wiley 2005, Sec. 1.2",
+      "id": "B3",
+      "isbn": "978-0-471-64749-2",
+      "law": "Z'=|Z|cos(phi); Z''=|Z|sin(phi); C_eff=-1/(2 pi f Z''); D=|cot(phi)|"
+    },
+    {
+      "citation": "Crank J., The Mathematics of Diffusion, 2nd ed., Oxford 1975, Ch. 4",
+      "id": "B4",
+      "isbn": "978-0-19-853411-2",
+      "law": "Fickian plane-sheet sorption is monotone non-decreasing to equilibrium"
+    },
+    {
+      "citation": "ISO 5725-2:2019",
+      "id": "B5",
+      "law": "ISO 5725-2:2019 repeatability/reproducibility decomposition"
+    }
+  ],
+  "verdict": "H0_REFUTED",
+  "what_this_changes": "The README's blanket abstention ('Kramers-Kronig and equivalent-circuit claims abstain unless a source contains frequency-resolved real/imaginary spectra') was a DECLARATION. It is now an EVIDENCED boundary with a quantified magnitude on each of five independent physical axes, plus a newly discovered integrity defect in the upstream public bytes (T0) that no prior audit of this module detected."
+}

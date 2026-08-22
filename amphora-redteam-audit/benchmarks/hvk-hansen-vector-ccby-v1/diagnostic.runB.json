@@ -1,0 +1,744 @@
+{
+  "does_not": [
+    "does NOT promote amphora-solvency-score (or any module) to a new phase or change scientific_readiness",
+    "does NOT modify any of the 66 signed receipts or the receipts manifest",
+    "does NOT assert organizational independence or perform human review",
+    "does NOT re-fit the Van Krevelen group constants or tune any parameter on the validation panel",
+    "does NOT hardcode an external resin Hansen sphere or claim a specific DGEBA RED-number ranking",
+    "does NOT perform PHASE0_EVALUATOR / PHASE0_INTERNAL_REVIEWER signing (AUDIT_ONLY key custody only)"
+  ],
+  "honest_limitations": [
+    "First-order Hoftyzer-Van Krevelen has no pi-cohesion group: bare aromatic and conjugated rings (benzene, styrene) are assigned delta_h=0 and a low aromatic delta_d, so they are the largest-Ra cases and are reported as a DECLARED BOUNDARY, not hidden. Substituted aromatics (toluene, xylenes, ethylbenzene) recover as alkyl groups add.",
+    "the predictor uses the MEASURED molar volume V=M/rho; a fully a-priori vector would chain a group-contribution molar volume (Fedors V is separately validated in the molar-volume/density audit), which this audit references but does not re-derive, to isolate the HvK group-parameter accuracy.",
+    "literature Hansen triples themselves carry method scatter of order +-0.5-1 MPa^0.5 between compilations; the graded metric is therefore a per-component RMSE and a vector distance benchmarked to the epoxy R0~8-13 selection radius, not a spuriously precise sub-1% number.",
+    "Hansen distances here are between a solvent's a-priori and literature POINTS; a full RED-number solvent-selection decision also needs a resin sphere (delta_d, delta_p, delta_h, R0). No single external DGEBA sphere is hardcoded; the operational KPI is instead the self-contained solvent-to-solvent geometry preservation (nearest replacement / blend-toward-target).",
+    "20-solvent single-panel study; broader chemistries (amines, glycol ethers, nitrogen heterocycles) are a natural extension, not claimed here."
+  ],
+  "kpis": {
+    "all_components": {
+      "frac_Ra_within_3": "15/19",
+      "frac_Ra_within_5": "18/19",
+      "hansen_Ra_max_MPa0.5": 5.261,
+      "hansen_Ra_max_solvent": "benzene",
+      "hansen_Ra_mean_MPa0.5": 1.815,
+      "hansen_Ra_median_MPa0.5": 1.274,
+      "lift_over_mean_vector_null_pct": 72.117,
+      "n": 19,
+      "null_mean_vector_Ra_rmse_MPa0.5": 8.208,
+      "rmse_delta_d_MPa0.5": 0.734,
+      "rmse_delta_h_MPa0.5": 1.7,
+      "rmse_delta_p_MPa0.5": 0.435
+    },
+    "all_geometry": {
+      "mean_distance_rank_spearman": 0.8196,
+      "median_distance_rank_spearman": 0.8596,
+      "min_distance_rank_spearman": 0.4324,
+      "n_targets": 19,
+      "nearest_neighbour_solvent_match": "15/19"
+    },
+    "core_components": {
+      "frac_Ra_within_3": "15/17",
+      "frac_Ra_within_5": "17/17",
+      "hansen_Ra_max_MPa0.5": 3.711,
+      "hansen_Ra_max_solvent": "o-xylene",
+      "hansen_Ra_mean_MPa0.5": 1.454,
+      "hansen_Ra_median_MPa0.5": 1.194,
+      "lift_over_mean_vector_null_pct": 79.207,
+      "n": 17,
+      "null_mean_vector_Ra_rmse_MPa0.5": 8.37,
+      "rmse_delta_d_MPa0.5": 0.474,
+      "rmse_delta_h_MPa0.5": 1.417,
+      "rmse_delta_p_MPa0.5": 0.35
+    },
+    "core_domain_definition": "polar + hydrogen-bonding + non-polar aliphatic/cyclic/halogen coating solvents (alcohols, ketones, esters, aliphatics, cyclics, substituted aromatics, chlorobenzene) -- where delta_p/delta_h drive solvent selection; bare aromatic/conjugated rings (benzene, styrene) are BOUNDARY.",
+    "core_geometry": {
+      "mean_distance_rank_spearman": 0.8654,
+      "median_distance_rank_spearman": 0.8529,
+      "min_distance_rank_spearman": 0.5324,
+      "n_targets": 17,
+      "nearest_neighbour_solvent_match": "15/17"
+    },
+    "epoxy_R0_context": {
+      "typical_range_MPa0_5": [
+        8.0,
+        13.0
+      ]
+    },
+    "hansen_Ra_interpretation": "Ra is the Skaarup/Hansen distance (delta_d weighted x4). A structure-only vector that lands within Ra ~ 1-2 MPa^0.5 of the true point is far inside a typical epoxy/DGEBA interaction radius R0 ~ 8-13, so the a-priori vector preserves the RED-number inside/outside solvent-selection decision for a novel solvent with no measured Hansen parameters."
+  },
+  "n_boundary": 2,
+  "n_core": 17,
+  "n_solvents_total": 19,
+  "per_solvent": [
+    {
+      "M_g_mol": 74.12,
+      "Vm_cm3_mol": 91.529,
+      "domain": "CORE",
+      "err_dd": -0.267,
+      "err_dh": -1.018,
+      "err_dp": -0.237,
+      "family": "alcohol",
+      "hansen_Ra_MPa0.5": 1.174,
+      "hvk_groups": {
+        "CH2": 3,
+        "CH3": 1,
+        "OH": 1
+      },
+      "id": "1-butanol",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        16.0,
+        5.7,
+        15.8
+      ],
+      "lit_total_MPa0.5": 23.198,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.733,
+        5.463,
+        14.782
+      ],
+      "pred_total_MPa0.5": 22.268,
+      "rho_20c_g_cm3": 0.8098,
+      "smiles": "CCCCO"
+    },
+    {
+      "M_g_mol": 60.1,
+      "Vm_cm3_mol": 74.798,
+      "domain": "CORE",
+      "err_dd": -0.358,
+      "err_dh": -1.048,
+      "err_dp": -0.115,
+      "family": "alcohol",
+      "hansen_Ra_MPa0.5": 1.274,
+      "hvk_groups": {
+        "CH2": 2,
+        "CH3": 1,
+        "OH": 1
+      },
+      "id": "1-propanol",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        16.0,
+        6.8,
+        17.4
+      ],
+      "lit_total_MPa0.5": 24.597,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.642,
+        6.685,
+        16.352
+      ],
+      "pred_total_MPa0.5": 23.596,
+      "rho_20c_g_cm3": 0.8035,
+      "smiles": "CCCO"
+    },
+    {
+      "M_g_mol": 58.08,
+      "Vm_cm3_mol": 74.034,
+      "domain": "CORE",
+      "err_dd": -0.237,
+      "err_dh": -1.802,
+      "err_dp": 0.001,
+      "family": "ketone",
+      "hansen_Ra_MPa0.5": 1.864,
+      "hvk_groups": {
+        "C=O_ketone": 1,
+        "CH3": 2
+      },
+      "id": "acetone",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        15.5,
+        10.4,
+        7.0
+      ],
+      "lit_total_MPa0.5": 19.935,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.263,
+        10.401,
+        5.198
+      ],
+      "pred_total_MPa0.5": 19.187,
+      "rho_20c_g_cm3": 0.7845,
+      "smiles": "CC(=O)C"
+    },
+    {
+      "M_g_mol": 78.11,
+      "Vm_cm3_mol": 89.116,
+      "domain": "BOUNDARY",
+      "err_dd": -2.353,
+      "err_dh": -2.0,
+      "err_dp": 1.234,
+      "family": "aromatic",
+      "hansen_Ra_MPa0.5": 5.261,
+      "hvk_groups": {
+        "benzene_ring_C6": 1
+      },
+      "id": "benzene",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        18.4,
+        0.0,
+        2.0
+      ],
+      "lit_total_MPa0.5": 18.508,
+      "pred_dd_dp_dh_MPa0.5": [
+        16.047,
+        1.234,
+        0.0
+      ],
+      "pred_total_MPa0.5": 16.094,
+      "rho_20c_g_cm3": 0.8765,
+      "smiles": "c1ccccc1"
+    },
+    {
+      "M_g_mol": 112.56,
+      "Vm_cm3_mol": 101.791,
+      "domain": "CORE",
+      "err_dd": -0.531,
+      "err_dh": -0.018,
+      "err_dp": 1.21,
+      "family": "halogenated",
+      "hansen_Ra_MPa0.5": 1.61,
+      "hvk_groups": {
+        "Cl": 1,
+        "benzene_ring_C6": 1
+      },
+      "id": "chlorobenzene",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        19.0,
+        4.3,
+        2.0
+      ],
+      "lit_total_MPa0.5": 19.583,
+      "pred_dd_dp_dh_MPa0.5": [
+        18.469,
+        5.51,
+        1.982
+      ],
+      "pred_total_MPa0.5": 19.375,
+      "rho_20c_g_cm3": 1.1058,
+      "smiles": "Clc1ccccc1"
+    },
+    {
+      "M_g_mol": 84.16,
+      "Vm_cm3_mol": 108.105,
+      "domain": "CORE",
+      "err_dd": -0.057,
+      "err_dh": -0.2,
+      "err_dp": 0.0,
+      "family": "cyclic",
+      "hansen_Ra_MPa0.5": 0.23,
+      "hvk_groups": {
+        "CH2": 6,
+        "sat_ring_closure": 1
+      },
+      "id": "cyclohexane",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        16.8,
+        0.0,
+        0.2
+      ],
+      "lit_total_MPa0.5": 16.801,
+      "pred_dd_dp_dh_MPa0.5": [
+        16.743,
+        0.0,
+        0.0
+      ],
+      "pred_total_MPa0.5": 16.743,
+      "rho_20c_g_cm3": 0.7785,
+      "smiles": "C1CCCCC1"
+    },
+    {
+      "M_g_mol": 46.07,
+      "Vm_cm3_mol": 58.368,
+      "domain": "CORE",
+      "err_dd": -0.381,
+      "err_dh": -0.889,
+      "err_dp": -0.234,
+      "family": "alcohol",
+      "hansen_Ra_MPa0.5": 1.194,
+      "hvk_groups": {
+        "CH2": 1,
+        "CH3": 1,
+        "OH": 1
+      },
+      "id": "ethanol",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        15.8,
+        8.8,
+        19.4
+      ],
+      "lit_total_MPa0.5": 26.522,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.419,
+        8.566,
+        18.511
+      ],
+      "pred_total_MPa0.5": 25.569,
+      "rho_20c_g_cm3": 0.7893,
+      "smiles": "CCO"
+    },
+    {
+      "M_g_mol": 88.11,
+      "Vm_cm3_mol": 97.835,
+      "domain": "CORE",
+      "err_dd": -0.468,
+      "err_dh": 1.259,
+      "err_dp": -0.292,
+      "family": "ester",
+      "hansen_Ra_MPa0.5": 1.595,
+      "hvk_groups": {
+        "CH2": 1,
+        "CH3": 2,
+        "COO_ester": 1
+      },
+      "id": "ethyl-acetate",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        15.8,
+        5.3,
+        7.2
+      ],
+      "lit_total_MPa0.5": 18.154,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.332,
+        5.008,
+        8.459
+      ],
+      "pred_total_MPa0.5": 18.213,
+      "rho_20c_g_cm3": 0.9006,
+      "smiles": "CCOC(=O)C"
+    },
+    {
+      "M_g_mol": 106.17,
+      "Vm_cm3_mol": 122.457,
+      "domain": "CORE",
+      "err_dd": -0.488,
+      "err_dh": -1.4,
+      "err_dp": 0.298,
+      "family": "aromatic",
+      "hansen_Ra_MPa0.5": 1.732,
+      "hvk_groups": {
+        "CH2": 1,
+        "CH3": 1,
+        "benzene_ring_C6": 1
+      },
+      "id": "ethylbenzene",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        17.8,
+        0.6,
+        1.4
+      ],
+      "lit_total_MPa0.5": 17.865,
+      "pred_dd_dp_dh_MPa0.5": [
+        17.312,
+        0.898,
+        0.0
+      ],
+      "pred_total_MPa0.5": 17.336,
+      "rho_20c_g_cm3": 0.867,
+      "smiles": "CCc1ccccc1"
+    },
+    {
+      "M_g_mol": 72.11,
+      "Vm_cm3_mol": 89.533,
+      "domain": "CORE",
+      "err_dd": -0.363,
+      "err_dh": -0.374,
+      "err_dp": -0.4,
+      "family": "ketone",
+      "hansen_Ra_MPa0.5": 0.91,
+      "hvk_groups": {
+        "C=O_ketone": 1,
+        "CH2": 1,
+        "CH3": 2
+      },
+      "id": "mek",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        16.0,
+        9.0,
+        5.1
+      ],
+      "lit_total_MPa0.5": 19.053,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.637,
+        8.6,
+        4.726
+      ],
+      "pred_total_MPa0.5": 18.461,
+      "rho_20c_g_cm3": 0.8054,
+      "smiles": "CCC(=O)C"
+    },
+    {
+      "M_g_mol": 32.04,
+      "Vm_cm3_mol": 40.485,
+      "domain": "CORE",
+      "err_dd": 0.461,
+      "err_dh": -0.074,
+      "err_dp": 0.05,
+      "family": "alcohol",
+      "hansen_Ra_MPa0.5": 0.927,
+      "hvk_groups": {
+        "CH3": 1,
+        "OH": 1
+      },
+      "id": "methanol",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        15.1,
+        12.3,
+        22.3
+      ],
+      "lit_total_MPa0.5": 29.607,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.561,
+        12.35,
+        22.226
+      ],
+      "pred_total_MPa0.5": 29.811,
+      "rho_20c_g_cm3": 0.7914,
+      "smiles": "CO"
+    },
+    {
+      "M_g_mol": 100.16,
+      "Vm_cm3_mol": 125.75,
+      "domain": "CORE",
+      "err_dd": -0.191,
+      "err_dh": -0.112,
+      "err_dp": 0.023,
+      "family": "ketone",
+      "hansen_Ra_MPa0.5": 0.398,
+      "hvk_groups": {
+        "C=O_ketone": 1,
+        "CH": 1,
+        "CH2": 1,
+        "CH3": 3
+      },
+      "id": "mibk",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        15.3,
+        6.1,
+        4.1
+      ],
+      "lit_total_MPa0.5": 16.974,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.109,
+        6.123,
+        3.988
+      ],
+      "pred_total_MPa0.5": 16.784,
+      "rho_20c_g_cm3": 0.7965,
+      "smiles": "CC(=O)CC(C)C"
+    },
+    {
+      "M_g_mol": 116.16,
+      "Vm_cm3_mol": 131.626,
+      "domain": "CORE",
+      "err_dd": -0.302,
+      "err_dh": 0.993,
+      "err_dp": 0.023,
+      "family": "ester",
+      "hansen_Ra_MPa0.5": 1.162,
+      "hvk_groups": {
+        "CH2": 3,
+        "CH3": 2,
+        "COO_ester": 1
+      },
+      "id": "n-butyl-acetate",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        15.8,
+        3.7,
+        6.3
+      ],
+      "lit_total_MPa0.5": 17.407,
+      "pred_dd_dp_dh_MPa0.5": [
+        15.498,
+        3.723,
+        7.293
+      ],
+      "pred_total_MPa0.5": 17.528,
+      "rho_20c_g_cm3": 0.8825,
+      "smiles": "CCCCOC(=O)C"
+    },
+    {
+      "M_g_mol": 100.2,
+      "Vm_cm3_mol": 146.534,
+      "domain": "CORE",
+      "err_dd": -0.355,
+      "err_dh": 0.0,
+      "err_dp": 0.0,
+      "family": "aliphatic",
+      "hansen_Ra_MPa0.5": 0.709,
+      "hvk_groups": {
+        "CH2": 5,
+        "CH3": 2
+      },
+      "id": "n-heptane",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        15.3,
+        0.0,
+        0.0
+      ],
+      "lit_total_MPa0.5": 15.3,
+      "pred_dd_dp_dh_MPa0.5": [
+        14.945,
+        0.0,
+        0.0
+      ],
+      "pred_total_MPa0.5": 14.945,
+      "rho_20c_g_cm3": 0.6838,
+      "smiles": "CCCCCCC"
+    },
+    {
+      "M_g_mol": 86.18,
+      "Vm_cm3_mol": 130.457,
+      "domain": "CORE",
+      "err_dd": -0.183,
+      "err_dh": 0.0,
+      "err_dp": 0.0,
+      "family": "aliphatic",
+      "hansen_Ra_MPa0.5": 0.365,
+      "hvk_groups": {
+        "CH2": 4,
+        "CH3": 2
+      },
+      "id": "n-hexane",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        14.9,
+        0.0,
+        0.0
+      ],
+      "lit_total_MPa0.5": 14.9,
+      "pred_dd_dp_dh_MPa0.5": [
+        14.717,
+        0.0,
+        0.0
+      ],
+      "pred_total_MPa0.5": 14.717,
+      "rho_20c_g_cm3": 0.6606,
+      "smiles": "CCCCCC"
+    },
+    {
+      "M_g_mol": 106.17,
+      "Vm_cm3_mol": 120.62,
+      "domain": "CORE",
+      "err_dd": 1.019,
+      "err_dh": -3.1,
+      "err_dp": -0.088,
+      "family": "aromatic",
+      "hansen_Ra_MPa0.5": 3.711,
+      "hvk_groups": {
+        "CH3": 2,
+        "benzene_ring_C6": 1
+      },
+      "id": "o-xylene",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        17.8,
+        1.0,
+        3.1
+      ],
+      "lit_total_MPa0.5": 18.096,
+      "pred_dd_dp_dh_MPa0.5": [
+        18.819,
+        0.912,
+        0.0
+      ],
+      "pred_total_MPa0.5": 18.841,
+      "rho_20c_g_cm3": 0.8802,
+      "smiles": "Cc1ccccc1C"
+    },
+    {
+      "M_g_mol": 106.17,
+      "Vm_cm3_mol": 123.296,
+      "domain": "CORE",
+      "err_dd": 0.811,
+      "err_dh": -3.1,
+      "err_dp": -0.108,
+      "family": "aromatic",
+      "hansen_Ra_MPa0.5": 3.5,
+      "hvk_groups": {
+        "CH3": 2,
+        "benzene_ring_C6": 1
+      },
+      "id": "p-xylene",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        17.6,
+        1.0,
+        3.1
+      ],
+      "lit_total_MPa0.5": 17.899,
+      "pred_dd_dp_dh_MPa0.5": [
+        18.411,
+        0.892,
+        0.0
+      ],
+      "pred_total_MPa0.5": 18.433,
+      "rho_20c_g_cm3": 0.8611,
+      "smiles": "Cc1ccc(C)cc1"
+    },
+    {
+      "M_g_mol": 104.15,
+      "Vm_cm3_mol": 114.956,
+      "domain": "BOUNDARY",
+      "err_dd": -0.941,
+      "err_dh": -4.1,
+      "err_dp": -0.043,
+      "family": "conjugated",
+      "hansen_Ra_MPa0.5": 4.512,
+      "hvk_groups": {
+        "=CH": 1,
+        "=CH2": 1,
+        "benzene_ring_C6": 1
+      },
+      "id": "styrene",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        18.6,
+        1.0,
+        4.1
+      ],
+      "lit_total_MPa0.5": 19.073,
+      "pred_dd_dp_dh_MPa0.5": [
+        17.659,
+        0.957,
+        0.0
+      ],
+      "pred_total_MPa0.5": 17.685,
+      "rho_20c_g_cm3": 0.906,
+      "smiles": "C=Cc1ccccc1"
+    },
+    {
+      "M_g_mol": 92.14,
+      "Vm_cm3_mol": 106.287,
+      "domain": "CORE",
+      "err_dd": -0.594,
+      "err_dh": -2.0,
+      "err_dp": -0.365,
+      "family": "aromatic",
+      "hansen_Ra_MPa0.5": 2.355,
+      "hvk_groups": {
+        "CH3": 1,
+        "benzene_ring_C6": 1
+      },
+      "id": "toluene",
+      "lit_hansen_dd_dp_dh_MPa0.5": [
+        18.0,
+        1.4,
+        2.0
+      ],
+      "lit_total_MPa0.5": 18.165,
+      "pred_dd_dp_dh_MPa0.5": [
+        17.406,
+        1.035,
+        0.0
+      ],
+      "pred_total_MPa0.5": 17.436,
+      "rho_20c_g_cm3": 0.8669,
+      "smiles": "Cc1ccccc1"
+    }
+  ],
+  "phase0_reconciliation_redteam": {
+    "by_scientific_readiness": {
+      "LOCKED_INTERNAL": 4,
+      "NOT_APPLICABLE": 13
+    },
+    "externally_validated_science_modules": [
+      "amphora-solvency-score"
+    ],
+    "honest_reading": "PHASE_0 here = a reproducibility+rights+independence GOVERNANCE lock, NOT scientific validation. Live cross-check of every phase0 promotion policy: scientific_success_required is FALSE in 100% of them and ZERO target scientific_readiness=VALIDATED (ceiling is LOCKED_INTERNAL). No module carries scientific_readiness=VALIDATED. Exactly ONE module (amphora-solvency-score) has any EXTERNAL-data predictive validation behind it. 'FULL Phase-0' is an engineering/governance milestone, never a count of validated coating science. This audit does NOT change that count.",
+    "n_externally_validated_science": 1,
+    "n_modules_labelled_phase0_in_live_frontmatter": 17,
+    "n_phase0_promotion_policies_requiring_scientific_success": 0,
+    "n_phase0_promotion_policies_targeting_scientific_readiness_VALIDATED": 0,
+    "phase0_modules": [
+      {
+        "module": "amphora-candidate-contract",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-cro-protocol-packager",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-envelope-gates",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-evidence-intake-validator",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-formulation-arithmetic",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-formulation-universe",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-known-answer-benchmarks",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-model-card-authority",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-molecule-design-gate",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-optimizer-orchestrator",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-process-qc-twin",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-redteam-audit",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-report-packager",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-run-provenance",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-solvency-score",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-source-ledger",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-tolerance-robustness",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      }
+    ]
+  },
+  "redteam_finding_ester_oxygen_double_count": "RED-TEAM FINDING (this run): the RDKit heavy-atom (C,O,Cl) formula guard added by this audit caught that the shared single-pass oxygen classification used by the already-signed Fedors cohesive-energy audit double-counts an ester's single-bonded oxygen as BOTH a COO_ester and an O_ether when RDKit lists that oxygen before the carbonyl oxygen (e.g. ethyl acetate SMILES 'CCOC(=O)C'). That inflates the ester hydrogen-bonding term by the ether Eh (3000 J/mol), giving delta_h(ethyl acetate)=10.1 vs literature 7.2. This audit CORRECTS it with a two-pass oxygen classifier (carbonyl first, consuming the ester O before the ether pass), which the formula guard enforces (ester O count = 2, not 3). The prior signed Fedors receipt is NOT modified (immutable); this is logged as an honest red-team note. Impact on the Fedors audit is minor (its headline was the SCALAR total delta, dominated by delta_d/cohesive energy, so ester total-delta error stayed ~4%); the correction matters specifically for the ester delta_h / Hansen-vector geometry that THIS audit validates.",
+  "rights": {
+    "ground_truth_data": "Hansen 2007 Handbook (delta_d,delta_p,delta_h) triples -- tabulated physical constants, non-copyrightable facts",
+    "in_scope": "marine two-part epoxy-amine coating solvent / co-solvent / thinner selection and blend design in Hansen space; no adjacent-industry data",
+    "molar_volume_inputs": "M, rho -- tabulated CRC/NIST facts (non-copyrightable)",
+    "predictor_method": "Hoftyzer-Van Krevelen group contribution -- published theory, freely usable",
+    "rights_gate_passed": true
+  },
+  "schema": "amphora.redteam-audit.hvk-hansen-vector-ccby-v1.diagnostic.v1",
+  "target_capability": "a-priori STRUCTURE-ONLY Hansen solubility VECTOR (delta_d, delta_p, delta_h) and the operational Hansen-distance geometry (Ra / RED-number solvent selection) for coating solvents -- extending the crown-jewel solvency module from measured/literature Hansen vectors to NOVEL solvents with no measured parameters. Completes the component validation the Fedors cohesive-energy audit left at scalar delta + delta_d only.",
+  "target_module": "amphora-solvency-score",
+  "theory": {
+    "ground_truth": "Hansen 2007 Handbook canonical (delta_d, delta_p, delta_h) solvent triples -- tabulated physical constants (facts)",
+    "molar_volume_input": "V = M/rho (rho_20C), tabulated CRC/NIST facts",
+    "non_circularity": "HvK group constants (F_di, F_pi, E_hi) are universal Van Krevelen literature values, NOT re-fit here; ground-truth Hansen triples are independent tabulations; no parameter is tuned on this validation panel",
+    "operational_kpi": "per-component RMSE (MPa^0.5, honest near delta~0), Hansen vector distance Ra vs epoxy R0~8-13, and solvent-selection geometry preservation (distance-rank Spearman + nearest-neighbour match) -- not a spurious scalar MAPE",
+    "predictor": "Hoftyzer-Van Krevelen partial parameters: delta_d=SUM(F_di)/V, delta_p=sqrt(SUM(F_pi^2))/V, delta_h=sqrt(SUM(E_hi)/V); V=M/rho",
+    "predictor_citation": "Van Krevelen & te Nijenhuis, 'Properties of Polymers' 4th ed. ch.7; Hansen 'HSP: A User's Handbook' 2nd ed. 2007",
+    "trust_guard": "group multiset formula-checked (C,O,Cl reconstruction) vs RDKit; HvK constant table byte-identical to the Fedors cohesive-energy audit; delta_d/delta_p reproduce that audit for all non-ester families. The ester oxygen bookkeeping is CORRECTED here (see redteam_finding_ester_oxygen_double_count): the RDKit formula guard rejects the ester single-bond O being counted as both an ester and an ether, which the prior shared logic did"
+  },
+  "verdict": {
+    "authority": "AUDIT_ONLY -- graded domain-of-applicability study, NOT a Phase-0 gate",
+    "gate_logic": "core: RMSE(delta_d)<=1.0 AND RMSE(delta_p)<=1.0 AND RMSE(delta_h)<=2.5 MPa^0.5 AND Hansen Ra median<=2.0 AND mean<=2.5 AND >=(n-1) within Ra<=5 AND lift over mean-vector null>=50% AND mean solvent-distance rank Spearman>=0.75",
+    "gate_passed": true,
+    "graded_outcome": "VALIDATED_IN_DOMAIN"
+  }
+}

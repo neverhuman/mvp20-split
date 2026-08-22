@@ -1,0 +1,61 @@
+{
+  "disclosure_scan": {
+    "kpi_has_any_domain_gap_disclosure": false,
+    "kpi_tokens_present": [],
+    "mission_has_any_domain_gap_disclosure": false,
+    "mission_tokens_present": [],
+    "tokens_checked": [
+      "out-of-window",
+      "out of window",
+      "out-of-fitted-window",
+      "fitted window",
+      "fitting window",
+      "mislabel",
+      "glass-forming",
+      "glass forming",
+      "vogel-fulcher",
+      "domain-of-validity",
+      "domain of validity",
+      "42.8",
+      "arrhenius-extrapolation-domain-gap"
+    ]
+  },
+  "does_not_close": [
+    "Does not modify the Arrhenius KPI, docs/mission.md, the domain-gap receipt, or the 66-receipt master manifest.",
+    "Does not re-run the live-Rust extrapolation probe -- that evidence is taken as already-established (and independently re-verified here only at the DSSE-signature and ledger level).",
+    "Does not assert the KPI's PASSED gate values are numerically wrong on their own stated scope (30C interpolation) -- only that the already-signed finding about the guard's inadequacy outside that scope is undisclosed."
+  ],
+  "inputs_sha256": {
+    "arrhenius_kpi": "fcfa296871935e0f33a023ad6d7a4c1f69dc982e31dc341bfcfa749b3655ec93",
+    "domain_gap_receipt": "c309a497a9259fadad1eb7d9afab5c1dd40d9c4d2d318198faccfac83fb030c1",
+    "ledger": "18b6e5e79e232f4ed0449b77813edc21781c8b394d037cba0fbde097fa6d50a5",
+    "mission_md": "9bd28864021842af573a3af498b4a65c766219dfea7a7f5714ef8d9566fda0c8"
+  },
+  "interpretation": "The arrhenius-extrapolation-domain-gap-v1 audit (2026-08-14) is a validly DSSE-signed REFUTED finding, confirmed both by re-verifying its Ed25519 signature against the pinned evaluator key and by locating its ledger line (fire_id 20260814T130001-2255528-544555cc0ef7, verdict REFUTED). It found that `held_out_temperature_extrapolation_mape` is mislabeled (30C is interpolation, strictly inside the [20,60]C fitted span, not extrapolation), that the module's only temperature guard (finite_between(-273.14, 500.0)) is a physical-plausibility bound that accepted 12/12 genuinely out-of-fitted-window probe calls, and that glycerol -- a known glass-forming, super-Arrhenius liquid -- breaches the module's own +/-10% quality floor by up to 42.8% once actually evaluated outside its fitting window. One day later, the standing viscosity-arrhenius-kpi.v1.json still cites both attacked gate names with their original PASSED values and carries zero token from this audit's vocabulary anywhere in its body; docs/mission.md, which already demonstrates (via its R-A03 Polyverse caveat, present elsewhere in the identical file) that this module knows how to and does attach inline disclosure caveats to standing prose, likewise carries none for this finding. The disclosure mechanism is proven available in this exact document and is simply unused for this specific, already-signed refutation.",
+  "positive_control_file_capable_of_carrying_caveats": {
+    "note": "mission.md already carries an inline caveat elsewhere in the same file for a different, already-repaired finding (R-A03: '[Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]', appearing adjacent to every Polyverse-derived result). This proves the absence of an equivalent caveat for the domain-gap finding is a real gap, not a limitation of the document format -- the mechanism for inline disclosure exists in this exact file and is unused here.",
+    "ra03_caveat_pattern_present_in_mission_md": true
+  },
+  "purpose": "Documentation-completeness audit: has the already-signed, already-REFUTED arrhenius-extrapolation-domain-gap-v1 finding (fire_id 20260814T130001-2255528-544555cc0ef7) been incorporated as a disclosed caveat into the standing Phase-0 Arrhenius KPI and/or docs/mission.md prose, the same pattern this module already established for its Polyverse rights gap (R-A03) and its FFW-vs-ML uncertainty gap?",
+  "results": {
+    "disclosure_gap_confirmed": true,
+    "disclosure_mechanism_proven_available_and_unused": true,
+    "no_disclosure_in_kpi": true,
+    "no_disclosure_in_mission_prose": true,
+    "standing_kpi_unchanged_since_the_refutation": true,
+    "upstream_finding_is_genuine_signed_refutation": true
+  },
+  "schema": "amphora.viscosity-score.arrhenius-extrapolation-disclosure-audit-diagnostic.v1",
+  "standing_kpi_still_cites_the_attacked_gates": {
+    "cites_applicability_domain_fail_closed_rate": true,
+    "cites_held_out_temperature_extrapolation_mape": true
+  },
+  "upstream_finding_verification": {
+    "domain_gap_receipt_dsse_signature_valid": true,
+    "domain_gap_receipt_fire_id": "20260814T130001-2255528-544555cc0ef7",
+    "domain_gap_receipt_verdict": "CLAIM_REFUTED",
+    "ledger_confirms_refuted": true,
+    "ledger_entry_found": true
+  },
+  "verdict": "REFUTED"
+}

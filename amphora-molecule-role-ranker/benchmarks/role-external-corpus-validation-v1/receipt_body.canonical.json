@@ -1,0 +1,219 @@
+{
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "claim_under_attack": {
+    "asserted": "1.0 (24/24 in-domain), scored ONLY on the module's own self-authored 44-record fixture (reference/phase0-role-known-answer.v2.json, sha 7345ab13d31d9d8ce31392e3648c6a74db3e541162e0aea9ff24035b38a22a4e). This is the strongest standing STANDING claim of the module: the flagship Phase-0 KPI's implicit generalization assertion -- that the deterministic role rule (has_oxirane=false & reactive_amine_hydrogen_count>0 => hardener) correctly classifies real coating-relevant molecules, not merely the fixture it was scored on.",
+    "metric": "structural_inference_agreement_rate",
+    "receipt": "amphora-molecule-role-ranker/evidence/phase0/kpis/role-classification-kpi.v1.json"
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (this is an AUDIT_ONLY science-validation replay, not a Phase-0 evaluation/review signature).",
+    "Exhaustive external-chemotype coverage of the role rule (this fire closes exactly the two gaps W-D-ROLE named; more may exist).",
+    "Any change to the shipped bridge.cc, the KPI receipt, or the master manifest (66 receipts/11 modules unchanged)."
+  ],
+  "fire_id": "20260814T220001-2925808-a4ebb8dc84f4",
+  "fire_sequence": "ROTATION fire, empty campaign item -- strongest standing claim identified from the module's own ledger history. Prior fires already broke the fixture's self-scoring closure once via a structural chemotype gap (guanidine accelerators DPG/DOTG, REFUTED, repaired under R-N02/V-N02b) and found generalization SURVIVED against 10 hostile-null/edge probes (role-live-runtime-domain-probe-v1) plus DETA/TETA reactivity-ratio extensions (R-S05). The W-D-ROLE fire (2026-08-13) swept 13 public sources for rights-clean external role-attested molecules and flagged two whole chemotype families with ZERO fixture representation -- phenalkamine and polyetheramine -- as the direct next probe target, but did not itself build or run probes (BLOCKED verdict, source-sweep only). This fire finishes that unfinished attack: it takes the harness already staged at benchmarks/role-external-corpus-validation-v1/harness/ (built, not yet compiled/run/signed as of fire start) and executes it -- builds against the real production RDKit FFI, runs the two-replay byte-stability gate, and signs the result.",
+  "flips_scientific_readiness": false,
+  "gates_summary": {
+    "attack_capable_of_falsifying": true,
+    "fixture_disjointness_independently_reverified": true,
+    "fixture_untouched": true,
+    "positive_control_fired_on_planted_defect_only": true,
+    "real_production_ffi_not_reimplemented": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "two_replay_byte_stable_this_receipt": true
+  },
+  "headline_result": {
+    "disagreements": [
+      {
+        "expected_oxirane_ring_count": 0,
+        "expected_reactive_amine_hydrogen_count": 4,
+        "expected_role": "hardener",
+        "id": "compound6-epoxide-contamination-positive-control",
+        "is_positive_control": true,
+        "observed_oxirane_ring_count": 1,
+        "observed_reactive_amine_hydrogen_count": 4,
+        "observed_role": "ambiguous",
+        "smiles": "NCc1cc(OCC2CO2)c(N)c(OC)c1"
+      }
+    ],
+    "n_disagreements": 1,
+    "n_pass": 5,
+    "n_real_external_probes": 5,
+    "n_real_external_probes_pass": 5,
+    "n_scored_probes": 6,
+    "positive_control_fired": true,
+    "real_probes_all_agree": true,
+    "verdict": "HYPOTHESIS_SURVIVED_WITH_POSITIVE_CONTROL"
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "fixture_disjointness_reverified_at_signing_time": true,
+    "fixture_v2_sha256_unchanged": "7345ab13d31d9d8ce31392e3648c6a74db3e541162e0aea9ff24035b38a22a4e",
+    "harness_cargo_toml_sha256": "17cdcbba74f8c0dc63bd7331c2ba4f1ff517d19207d62ffaccdb97ef3d237087",
+    "harness_main_rs_sha256": "9d8b86353a9a5dc711c7a10bc7587f25f70bfd592589d85cbc9bd614c290374c",
+    "prior_source_sweep_receipt": "amphora-molecule-role-ranker/evidence/phase0/repairs/W-D-ROLE/done/W-D-ROLE-source-sweep-receipt.v1.dsse.json"
+  },
+  "method": "Invoked the REAL production RDKit C++ FFI (amphora_rdkit_ffi::molecule_facts, pinned RDKit 2026.03.2, exact_version_match=true recorded in toolkit_provenance) via the pre-staged Rust harness on five real external probes: (1) 4,4'-diaminodiphenyl sulfone (DDS, CAS 80-08-0), hot-curing aromatic diamine cited in Wiegand & Osburg (2023), Polymers 15(4):990, https://doi.org/10.3390/polym15040990 (CC BY 4.0); (2) 4-amino-3-methoxybenzylamine ('Compound 5'), vanillin-derived bio-based amine hardener, same source, DSC/TGA-confirmed cure behavior; (3) 4-amino-3,5-dimethoxybenzylamine ('Compound 6'), syringaldehyde-derived analog, same source; (4) a discrete n=5 oligomer analog of a Jeffamine/Baxxodur-class polyetheramine (BASF's own product-line description: 'EC 302 = polyetheramine D 400 analog'); (5) a simplified single-Mannich-site phenalkamine (cardanol + formaldehyde + TETA Mannich base, the Cardolite NX-series synthesis route). Plus one in-harness POSITIVE CONTROL: compound 6 with a glycidyl ether group substituted onto one OMe position (planted oxirane contamination), expected_role left at the stale original 'hardener' label so a working harness must register a disagreement. Pre-registered refute criterion: attack fires (REFUTED) iff any of the 5 real probes' observed_role != expected attested role. Pre-registered positive-control criterion: the harness's own scoring is only trustworthy if the planted-defect probe registers a disagreement (observed_role='ambiguous' against stale expected_role='hardener').",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-role-ranker",
+  "objective": "Test whether the deterministic role rule generalizes to five real, independently-attested, rights-clean external molecules spanning two chemotype families the 44-record self-authored fixture has ZERO representation of (phenalkamine, polyetheramine) plus a bio-based lignin-derived amine-hardener family (vanillin- and syringaldehyde-derived diamines) and a hot-curing aromatic sulfone diamine -- none of which collide with any of the fixture's 41 unique canonical SMILES.",
+  "organizational_independence_asserted": false,
+  "positive_control": {
+    "detected": true,
+    "evidence": "observed_oxirane_ring_count=1, observed_reactive_amine_hydrogen_count=4, observed_role='ambiguous' != expected_role='hardener' -- the harness registered exactly 1 disagreement, on exactly this probe, and no others",
+    "how_planted": "harness probe compound6-epoxide-contamination-positive-control: SMILES changed from compound 6's real structure NCc1cc(OC)c(N)c(OC)c1 to NCc1cc(OCC2CO2)c(N)c(OC)c1 (one OMe -> glycidyl ether), while expected_oxirane_ring_count/expected_role were deliberately left at the pre-defect values (0, 'hardener') rather than updated for the mutation",
+    "planted_defect": "one glycidyl ether (oxirane) group substituted onto compound 6's structure, simulating a mislabeled or dual-functional-contaminated external sample filed under compound 6's original attested 'hardener' role"
+  },
+  "pre_registered_refute_criterion": "Attack fires (REFUTED) iff any of the 5 real external probes' observed_role != expected attested role (dds, compound5, compound6, jeffamine-d400-analog, phenalkamine -- all expected 'hardener'). Observed: 5/5 match (real_probes_all_agree=true, n_real_external_probes_pass=5/5). Criterion not met on any probe -- claim SURVIVES this attack.",
+  "primary_sources": [
+    "Wiegand, T. & Osburg, V.-S. (2023), 'Synthesis, Curing and Thermal Behavior of Amine Hardeners from Potentially Renewable Sources', Polymers 15(4):990, https://doi.org/10.3390/polym15040990 (CC BY 4.0) -- DDS reference hardener plus two novel vanillin/syringaldehyde-derived bio-based amine hardeners (compounds 5 and 6), independently DSC/TGA-confirmed cure behavior.",
+    "BASF Baxxodur EC-1xx/2xx/3xx product-line description ('EC 302 = polyetheramine D 400 analog'), basf.com product pages, fetched and license-verified in the prior W-D-ROLE sweep fire.",
+    "Cardolite NX-series phenalkamine synthesis route (cardanol + formaldehyde + polyethylenepolyamine Mannich condensation), cardolite.com/phenalkamines/ and the open cure-chemistry literature on cardanol-Mannich-base curing kinetics."
+  ],
+  "probes": [
+    {
+      "average_molecular_weight_g_mol": 248.307,
+      "canonical_isomeric_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "citation": "4,4'-Diaminodiphenyl sulfone (DDS), CAS 80-08-0, formula C12H12N2O2S, MW 248.30. Cited as the hot-curing aromatic-amine reference hardener in Wiegand & Osburg (2023), 'Synthesis, Curing and Thermal Behavior of Amine Hardeners from Potentially Renewable Sources', Polymers 15(4):990, https://doi.org/10.3390/polym15040990 (CC BY 4.0; fetched and license text confirmed verbatim from https://pmc.ncbi.nlm.nih.gov/articles/PMC9962791/ in the prior W-D-ROLE sweep fire, source 9).",
+      "expected_oxirane_ring_count": 0,
+      "expected_reactive_amine_hydrogen_count": 4,
+      "expected_role": "hardener",
+      "formula": "C12H12N2O2S",
+      "id": "dds-diaminodiphenyl-sulfone",
+      "is_positive_control": false,
+      "note": "real external molecule, canonical SMILES verified disjoint from all 41 canonical SMILES in reference/phase0-role-known-answer.v2.json (44 records). Both amines are aniline-type (exocyclic NH2 on an aromatic ring, not an in-ring pyrrole/imidazole N-H like EMI-24's hostile null), neither adjacent to the ring's own carbonyl/sulfonyl carbon (the sulfone S is two bonds from each N, not a direct neighbor), so both should count as reactive amine H.",
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4,
+      "observed_role": "hardener",
+      "pass": true,
+      "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+    },
+    {
+      "average_molecular_weight_g_mol": 152.197,
+      "canonical_isomeric_smiles": "COc1cc(CN)ccc1N",
+      "citation": "4-Amino-3-methoxybenzylamine ('Compound 5' in the source paper), synthesized from vanillin, formula C8H12N2O, MW 152.2 (matches the paper's reported M+=152). Wiegand & Osburg (2023), Polymers 15(4):990, https://doi.org/10.3390/polym15040990 (CC BY 4.0). Paper states: 'Two differently substituted diamines were prepared to act as amine-curing agents for epoxy resins' and reports DSC onset 71C / Tg 68C, cold-curing behavior similar to IPDA -- an independent published DSC/TGA cure-behavior attestation of hardener role, not a supplier TDS claim.",
+      "expected_oxirane_ring_count": 0,
+      "expected_reactive_amine_hydrogen_count": 4,
+      "expected_role": "hardener",
+      "formula": "C8H12N2O",
+      "id": "compound5-vanillin-derived-amine-hardener",
+      "is_positive_control": false,
+      "note": "novel bio-based/renewable amine hardener chemotype (lignin-derived), zero representation in the 44-record self-authored fixture per the prior sweep's structural_or_factor_overlap finding. One aromatic (aniline-type) NH2 plus one aliphatic benzylic CH2NH2, neither carbonyl/sulfonyl-adjacent.",
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4,
+      "observed_role": "hardener",
+      "pass": true,
+      "smiles": "NCc1cc(OC)c(N)cc1"
+    },
+    {
+      "average_molecular_weight_g_mol": 182.223,
+      "canonical_isomeric_smiles": "COc1cc(CN)cc(OC)c1N",
+      "citation": "4-Amino-3,5-dimethoxybenzylamine ('Compound 6' in the source paper), synthesized from syringaldehyde, formula C9H14N2O2, MW 182.22 (matches the paper's reported M+=182). Same source and license as compound 5. Paper reports DSC onset 79C / Tg 160C and TGA thermal stability 'similar to those formed with IPDA'.",
+      "expected_oxirane_ring_count": 0,
+      "expected_reactive_amine_hydrogen_count": 4,
+      "expected_role": "hardener",
+      "formula": "C9H14N2O2",
+      "id": "compound6-syringaldehyde-derived-amine-hardener",
+      "is_positive_control": false,
+      "note": "second independent instance of the lignin-derived bio-based amine hardener chemotype, dimethoxy-substituted analog of compound 5.",
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4,
+      "observed_role": "hardener",
+      "pass": true,
+      "smiles": "NCc1cc(OC)c(N)c(OC)c1"
+    },
+    {
+      "average_molecular_weight_g_mol": 364.527,
+      "canonical_isomeric_smiles": "CC(N)COC(C)COC(C)COC(C)COC(C)COC(C)CN",
+      "citation": "Discrete n=5 oligomer analog of a poly(propylene glycol) diamine polyetheramine (Jeffamine/Baxxodur-class; BASF's own Baxxodur EC-1xx/2xx/3xx product-line description states 'EC 302 = polyetheramine D 400 analog', fetched verbatim from basf.com/global/en/legal.html + product pages in the prior W-D-ROLE sweep fire, source 4). Commercial Jeffamine/Baxxodur polyetheramine products are average-MW mixtures over a distribution of n; this harness uses a single discrete n=5 oligomer (MW 364.5) as a structural representative, matching how the portfolio's own DGEBA oligomer-series receipts already handle polymeric analogs with an explicit n.",
+      "expected_oxirane_ring_count": 0,
+      "expected_reactive_amine_hydrogen_count": 4,
+      "expected_role": "hardener",
+      "formula": "C18H40N2O5",
+      "id": "jeffamine-d400-baxxodur-ec302-polyetheramine-analog",
+      "is_positive_control": false,
+      "note": "polyetheramine chemotype, zero representation in the 44-record fixture per the prior sweep's structural_or_factor_overlap finding. Two terminal primary amines on secondary carbons, polyether backbone, no carbonyl/sulfonyl neighbor to either amine nitrogen.",
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4,
+      "observed_role": "hardener",
+      "pass": true,
+      "smiles": "CC(N)COC(C)COC(C)COC(C)COC(C)COC(C)CN"
+    },
+    {
+      "average_molecular_weight_g_mol": 462.767,
+      "canonical_isomeric_smiles": "CCCCCCCCCCCCCCCc1ccc(CNCCNCCNCCN)c(O)c1",
+      "citation": "Simplified single-Mannich-site phenalkamine: cardanol (a C15-alkyl-substituted phenol from cashew nutshell liquid, CNSL) condensed with formaldehyde and triethylenetetramine (TETA) via the Mannich reaction, the synthesis route documented for Cardolite NX-series phenalkamine curing agents (cardolite.com/phenalkamines/, prior W-D-ROLE sweep fire source 5) and in the open cure-chemistry literature (e.g. Jaillet et al. and related cardanol-Mannich-base curing-kinetics studies of phenalkamines synthesized from polyethylenepolyamines). Uses a saturated C15 alkyl chain in place of real cardanol's mixed mono/di/tri-ene chain (41% triene major component) -- immaterial to the has_oxirane/reactive_amine_hydrogen rule under test, which does not inspect the alkyl tail.",
+      "expected_oxirane_ring_count": 0,
+      "expected_reactive_amine_hydrogen_count": 5,
+      "expected_role": "hardener",
+      "formula": "C28H54N4O",
+      "id": "phenalkamine-cardanol-teta-mannich-base",
+      "is_positive_control": false,
+      "note": "phenalkamine chemotype, zero representation in the 44-record fixture per the prior sweep's structural_or_factor_overlap finding -- flagged there as directly analogous in kind to the guanidine gap that broke the rule once already (a whole chemotype family absent from the self-authored fixture). Three secondary benzylamine/polyamine N-H (1H each) plus one terminal primary N-H2 (2H) = 5 reactive amine H expected; none adjacent to a carbonyl/sulfonyl carbon or sulfur. Phenalkamines are formulated as the stoichiometric hardener component in industry TDS/literature (unlike DPG/ DOTG guanidine accelerators, which are never listed as curing agents and are used at sub-stoichiometric catalytic loadings), so 'hardener' is the correct attested expectation, not a repeat of the guanidine failure mode.",
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 5,
+      "observed_role": "hardener",
+      "pass": true,
+      "smiles": "Oc1cc(CCCCCCCCCCCCCCC)ccc1CNCCNCCNCCN"
+    },
+    {
+      "average_molecular_weight_g_mol": 224.26,
+      "canonical_isomeric_smiles": "COc1cc(CN)cc(OCC2CO2)c1N",
+      "citation": "POSITIVE CONTROL, not an external source citation. Constructed in-harness by substituting one of compound 6's two OMe groups with a glycidyl ether (-O-CH2-[oxirane]) group, simulating a mislabeled or dual-functional-contaminated external sample filed under compound 6's original attested role. planted_defect: added one oxirane ring to a real external hardener's structure while leaving expected_role at the ORIGINAL 'hardener' label (not updated for the defect). If this harness's disagreement-detection is working, observed_role must come back 'ambiguous' (oxirane present AND amine H present) and register a disagreement against the stale 'hardener' expectation.",
+      "expected_oxirane_ring_count": 0,
+      "expected_reactive_amine_hydrogen_count": 4,
+      "expected_role": "hardener",
+      "formula": "C11H16N2O3",
+      "id": "compound6-epoxide-contamination-positive-control",
+      "is_positive_control": true,
+      "note": "expected_oxirane and expected_role are DELIBERATELY the pre-defect values (compound 6's real, correct attestation), not the correct facts for this mutated structure -- the mismatch against reality is the planted defect. The attack fires (a disagreement is recorded) if and only if this harness's scoring can detect the injected structural mismatch.",
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 4,
+      "observed_role": "ambiguous",
+      "pass": false,
+      "smiles": "NCc1cc(OCC2CO2)c(N)c(OC)c1"
+    }
+  ],
+  "promotes_authority": false,
+  "receipt_id": "role-external-corpus-validation-63c8db44831874c55449e1db4c50f920",
+  "recommended_followups": [
+    "Add the 5 real external probes (or a representative subset) to the module's own known-answer fixture as a v3, alongside the guanidine-class out_of_domain records already added in R-N02's v2, so the phenalkamine/polyetheramine chemotype gap identified by W-D-ROLE is regression-guarded going forward.",
+    "Probe further named chemotype gaps not yet tested: Mannich-base non-phenalkamine curing agents, ketimine/aldimine blocked-amine latent hardeners."
+  ],
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "63c8db44831874c55449e1db4c50f9209758674f0e7dd41c0afd9a84508c0f77",
+    "determinism_basis": "no RNG, no wall-clock, fixed hardcoded probe list, serde_json BTreeMap key ordering => canonical byte order every run; two independent process invocations produced byte-identical stdout (sha256 63c8db44831874c55449e1db4c50f9209758674f0e7dd41c0afd9a84508c0f77 both).",
+    "fixture_disjointness": "none of the 6 probes' canonical_isomeric_smiles (5 real + 1 positive control) match any of the 41 unique canonical SMILES in reference/phase0-role-known-answer.v2.json (44 records, sha 7345ab13d31d9d8ce31392e3648c6a74db3e541162e0aea9ff24035b38a22a4e); re-verified independently at signing time, not merely trusted from the harness's own comment.",
+    "harness_binary_provenance": "cargo build --release against amphora-rdkit-ffi (path dependency, feature=rdkit) compiled with cxx against the pinned RDKit 2026.03.2 prefix at /home/ubuntu/.local/share/amphora/rdkit-2026.03.2 (RDKIT_INCLUDE_DIR=.../include/rdkit, RDKIT_LIB_DIR=.../lib, BOOST_INCLUDE_DIR=.../include); backend_status().exact_version_match=true recorded in toolkit_provenance.",
+    "independent_runs": true,
+    "replays": 2,
+    "runB_diagnostic_sha256": "63c8db44831874c55449e1db4c50f9209758674f0e7dd41c0afd9a84508c0f77",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new external data source opened or acquired this fire (all 5 real probe citations were already license-verified in the prior W-D-ROLE sweep fire). All probe molecules are constructed in-harness from published chemical-identity SMILES and evaluated purely structurally via the already-checked-in, already-licensed RDKit FFI backend; no dataset with UNRESOLVED or quarantined rights was read.",
+  "run_type": "SCIENCE_VALIDATION_REPLAY",
+  "schema": "amphora.molecule-role-ranker.role-external-corpus-validation-v1-audit-receipt.v1",
+  "scope_note": "Does not re-open the already-repaired guanidine/amidine C=N gap (R-N02) or the reactivity-ratio direction-rule question (role-reactivity-ratio-substitution-effect-v1, R-S05). Does not assert exhaustive chemotype coverage: the W-D-ROLE sweep surfaced these two families as the most promising named gaps from 13 sources, not as the complete set of gaps; further chemotype families (e.g. Mannich-base non-phenalkamine curing agents, ketimine/aldimine blocked amines) remain untested and are candidate future probes, not evidence of failure.",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY benchmark receipt under benchmarks/"
+  },
+  "verdict": "CLAIM_SURVIVED",
+  "why": "All 5 real external probes -- spanning two chemotype families the self-authored fixture has zero representation of (phenalkamine, polyetheramine) plus an independently published bio-based lignin-derived amine-hardener pair and a hot-curing aromatic sulfone diamine -- were correctly classified 'hardener' by the live production RDKit FFI + deterministic role rule, matching their independently published/documented real-world formulation role. This closes the specific gap the prior W-D-ROLE sweep flagged (phenalkamine and polyetheramine chemotypes named as the direct next probe target after the guanidine-accelerator failure) without finding a new failure mode. The positive control (a planted oxirane contamination on a real external probe) fired correctly and exclusively -- the harness's own disagreement-detection is proven live, not vacuous, which is the precondition for treating its 5/5 silence on the real probes as informative."
+}

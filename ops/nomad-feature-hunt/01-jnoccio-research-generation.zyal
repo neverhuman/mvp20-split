@@ -1,0 +1,41 @@
+<<<ZYAL v1:daemon id=nomad-feature-hunt-jnoccio>>>
+version: v1
+intent: daemon
+confirm: RUN_FOREVER
+id: nomad-feature-hunt-jnoccio
+
+job:
+  name: "NOMAD Jnoccio research and generation"
+  objective: "Run exactly 70 stable roles through a bounded 20-worker Jnoccio pool."
+
+loop:
+  policy: bounded
+  max_iterations: 1
+  sleep: 2s
+  circuit_breaker:
+    max_consecutive_errors: 1
+    on_trip: halt
+
+engine:
+  command: "python3 -m nomad_feature_hunt.controller jnoccio --run-id ${RUN_ID:?RUN_ID_required}"
+
+fleet:
+  provider: jnoccio
+  model: jnoccio-router
+  roles: 70
+  max_workers: 20
+  retry_failures: 1
+
+research:
+  rounds_max: 3
+  providers: [openalex, crossref, arxiv]
+  claim_level_citations: true
+
+memory:
+  owner: controller
+  agent_write: deny
+  inject: [semantic_fingerprints, claimed_subdomains, prior_failures, relevant_research]
+
+budgets: { wall_clock: 48h, cost_usd: 500, on_exhaust: stop_incomplete }
+<<<END_ZYAL id=nomad-feature-hunt-jnoccio>>>
+ZYAL_ARM RUN_FOREVER id=nomad-feature-hunt-jnoccio

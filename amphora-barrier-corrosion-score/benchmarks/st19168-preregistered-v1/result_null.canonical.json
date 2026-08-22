@@ -1,0 +1,61 @@
+{
+  "alpha": 0.05,
+  "does_not_close": [
+    "This is a single ST-19168-derived corroborating analysis, not the locked mission.md primary KPI itself (a blinded four-track independent-panel comparison). It cannot promote authority, phase, or manifest state on its own.",
+    "n<=10 is far below the Bonett-Wright (2000) n~25 needed for 80% power at tau=0.5 one-sided alpha=0.05 -- see PREREGISTRATION.md honest power section."
+  ],
+  "feasibility": "OK",
+  "gate_summary": {
+    "step1_primary_locked_target": false,
+    "step2_superiority_vs_solids": null,
+    "step3_superiority_vs_pvc": null
+  },
+  "input_system_ids": [
+    "SHADOW-NULL-01",
+    "SHADOW-NULL-02",
+    "SHADOW-NULL-03",
+    "SHADOW-NULL-04",
+    "SHADOW-NULL-05",
+    "SHADOW-NULL-06",
+    "SHADOW-NULL-07",
+    "SHADOW-NULL-08",
+    "SHADOW-NULL-09",
+    "SHADOW-NULL-10"
+  ],
+  "locked_tau_target": 0.5,
+  "module": "amphora-barrier-corrosion-score",
+  "n_systems": 10,
+  "point_estimates": {
+    "asymptotic_p_locked": 0.08924165,
+    "asymptotic_p_pvc": 0.78844673,
+    "asymptotic_p_solids": 0.65472085,
+    "tau_locked_vs_eis_secondary_truth": -0.244444,
+    "tau_locked_vs_rust_creep_truth": -0.422222,
+    "tau_pvc_only_vs_rust_creep_truth": -0.066667,
+    "tau_solids_only_vs_rust_creep_truth": 0.111111
+  },
+  "primary_test_step1": {
+    "cross_check_agreement": true,
+    "fromscratch_independent_permutation": {
+      "method": "exact_full_enumeration",
+      "n_reference_permutations": 3628800,
+      "observed_tau": -0.422222,
+      "p_value_one_sided": 0.96372493
+    },
+    "hypothesis": "tau(locked_barrier_index, -rust_creep_mm) > 0, one-sided, AND observed tau >= 0.50",
+    "meets_magnitude_target_tau_ge_0p50": false,
+    "observed_tau": -0.422222,
+    "scipy_exact_p_value_one_sided": 0.96372492,
+    "step_pass": false
+  },
+  "schema": "amphora.barrier-corrosion-score.st19168-preregistered-analysis-result.v1",
+  "step2_superiority_vs_solids_only_null": {
+    "reason": "fixed-sequence gatekeeping: step1 failed",
+    "skipped": true
+  },
+  "step3_superiority_vs_pvc_only_null": {
+    "reason": "fixed-sequence gatekeeping: step1 or step2 failed",
+    "skipped": true
+  },
+  "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+}

@@ -1,0 +1,516 @@
+{
+  "DGEBA_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+  "EEW_DGEBA": 170.2095,
+  "authority": "AUDIT_ONLY",
+  "correlations_pearson_unique7": {
+    "B_backbone_binary": 0.687801,
+    "B_backbone_weighted": 0.722431,
+    "aromatic_fraction": 0.504742,
+    "ring_atom_fraction": 0.457788
+  },
+  "data_ceiling_honesty": {
+    "independent_sources": 3,
+    "n_measurements": 9,
+    "n_unique_systems": 7,
+    "new_data_this_run": 0,
+    "rejected_data": "web-search-SUMMARY Tg values (e.g. DGEBA/MDA ~170 C) were REJECTED: not read from an actual source page and cross-protocol -> would violate the v2 'every value read from the source page' standard and inject noise into n=7."
+  },
+  "does_not": [
+    "does NOT promote amphora-molecule-property or any module to PHASE_0",
+    "does NOT add any PHASE_0 module or modify the 66 signed receipts or the manifest",
+    "does NOT fabricate, web-summarize, or 'mid-range' any Tg value",
+    "does NOT perform PHASE0_EVALUATOR / PHASE0_INTERNAL_REVIEWER signing",
+    "does NOT claim a validated Tg KPI: G1 and G2 remain unmet"
+  ],
+  "honest_limitations": [
+    "n=7 unique / n=9 measurements is BELOW the n>=12 G1 gate; unchanged this run.",
+    "LOO is leverage-dominated by DDS (208 C) and IPDA (158 C); removing either shifts the fit.",
+    "connectivity-only rigidity cannot encode IPDA gem-dimethyl steric hindrance (B low, Tg high) nor the crosslink-functionality boost that lifts aliphatic TETA/DETA above the ring amines.",
+    "the physics-weighted variant raises in-sample r (0.72) but WORSENS LOO -> classic small-N overfitting sensitivity; the simpler binary descriptor is reported as primary.",
+    "DGEBA/DDS inter-lab scatter (200/204/220) sets an ~8.6 C irreducible MAE floor."
+  ],
+  "incumbent_state_from_signed_receipts": {
+    "note": "quoted verbatim by SHA from signed in-tree receipts; not recomputed",
+    "polyuniverse_ml_MAE_C": 39.119479,
+    "polyuniverse_ml_receipt_sha256": "0aaf262d28bd4d55924c35e6acdd18d33d800a59e3a9c9695f6f7942e7bd077e",
+    "raw_van_krevelen_MAE_C": 109.077814,
+    "raw_van_krevelen_receipt_sha256": "0e1cafe97b0d20ebd9b6b256ff686f80c47174ea1768065787e4eecec58bb78c"
+  },
+  "leave_one_SOURCE_out_backbone": {
+    "held_out": "S2 independent-lab NEW chemistries (CYDM,C8DA)",
+    "mae_C": 33.164516,
+    "n_held_out": 2,
+    "predictions": [
+      {
+        "amine_class": "cycloaliphatic",
+        "err_C": 54.89,
+        "pred_Tg_C": 151.89,
+        "published_Tg_C": 97,
+        "system": "DGEBA+1,3-BAC"
+      },
+      {
+        "amine_class": "aliphatic",
+        "err_C": 11.44,
+        "pred_Tg_C": 105.44,
+        "published_Tg_C": 94,
+        "system": "DGEBA+C8DA"
+      }
+    ],
+    "train": "S1 (n=5, May 1988)"
+  },
+  "leave_one_system_out": {
+    "B_backbone_binary": {
+      "descriptor": "B_backbone_binary",
+      "loo_bias_C": -5.957744,
+      "loo_mae_C": 35.730624,
+      "loo_rmse_C": 42.296484,
+      "n": 7,
+      "per_system": [
+        {
+          "amine_class": "cycloaliphatic",
+          "err_C": 50.32,
+          "pred_Tg_C": 147.32,
+          "published_Tg_C": 97.0,
+          "system": "DGEBA+1,3-BAC"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": 7.17,
+          "pred_Tg_C": 101.17,
+          "published_Tg_C": 94.0,
+          "system": "DGEBA+C8DA"
+        },
+        {
+          "amine_class": "aromatic",
+          "err_C": -78.07,
+          "pred_Tg_C": 129.93,
+          "published_Tg_C": 208.0,
+          "system": "DGEBA+DDS"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": -23.13,
+          "pred_Tg_C": 91.87,
+          "published_Tg_C": 115.0,
+          "system": "DGEBA+DETA"
+        },
+        {
+          "amine_class": "cycloaliphatic",
+          "err_C": -14.36,
+          "pred_Tg_C": 143.64,
+          "published_Tg_C": 158.0,
+          "system": "DGEBA+IPDA"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": -30.35,
+          "pred_Tg_C": 89.65,
+          "published_Tg_C": 120.0,
+          "system": "DGEBA+TETA"
+        },
+        {
+          "amine_class": "araliphatic",
+          "err_C": 46.71,
+          "pred_Tg_C": 146.71,
+          "published_Tg_C": 100.0,
+          "system": "DGEBA+m-XDA"
+        }
+      ]
+    },
+    "B_backbone_weighted": {
+      "descriptor": "B_backbone_weighted",
+      "loo_bias_C": -8.252897,
+      "loo_mae_C": 38.027341,
+      "loo_rmse_C": 45.489464,
+      "n": 7,
+      "per_system": [
+        {
+          "amine_class": "cycloaliphatic",
+          "err_C": 32.54,
+          "pred_Tg_C": 129.54,
+          "published_Tg_C": 97.0,
+          "system": "DGEBA+1,3-BAC"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": 11.2,
+          "pred_Tg_C": 105.2,
+          "published_Tg_C": 94.0,
+          "system": "DGEBA+C8DA"
+        },
+        {
+          "amine_class": "aromatic",
+          "err_C": -87.54,
+          "pred_Tg_C": 120.46,
+          "published_Tg_C": 208.0,
+          "system": "DGEBA+DDS"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": -17.13,
+          "pred_Tg_C": 97.87,
+          "published_Tg_C": 115.0,
+          "system": "DGEBA+DETA"
+        },
+        {
+          "amine_class": "cycloaliphatic",
+          "err_C": -33.44,
+          "pred_Tg_C": 124.56,
+          "published_Tg_C": 158.0,
+          "system": "DGEBA+IPDA"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": -23.88,
+          "pred_Tg_C": 96.12,
+          "published_Tg_C": 120.0,
+          "system": "DGEBA+TETA"
+        },
+        {
+          "amine_class": "araliphatic",
+          "err_C": 60.47,
+          "pred_Tg_C": 160.47,
+          "published_Tg_C": 100.0,
+          "system": "DGEBA+m-XDA"
+        }
+      ]
+    },
+    "ring_only_reproduction": {
+      "descriptor": "ring_atom_fraction",
+      "loo_bias_C": -1.599969,
+      "loo_mae_C": 40.505739,
+      "loo_rmse_C": 48.734347,
+      "n": 7,
+      "per_system": [
+        {
+          "amine_class": "cycloaliphatic",
+          "err_C": 60.14,
+          "pred_Tg_C": 157.14,
+          "published_Tg_C": 97.0,
+          "system": "DGEBA+1,3-BAC"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": 19.86,
+          "pred_Tg_C": 113.86,
+          "published_Tg_C": 94.0,
+          "system": "DGEBA+C8DA"
+        },
+        {
+          "amine_class": "aromatic",
+          "err_C": -91.06,
+          "pred_Tg_C": 116.94,
+          "published_Tg_C": 208.0,
+          "system": "DGEBA+DDS"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": -11.35,
+          "pred_Tg_C": 103.65,
+          "published_Tg_C": 115.0,
+          "system": "DGEBA+DETA"
+        },
+        {
+          "amine_class": "cycloaliphatic",
+          "err_C": -26.18,
+          "pred_Tg_C": 131.82,
+          "published_Tg_C": 158.0,
+          "system": "DGEBA+IPDA"
+        },
+        {
+          "amine_class": "aliphatic",
+          "err_C": -18.78,
+          "pred_Tg_C": 101.22,
+          "published_Tg_C": 120.0,
+          "system": "DGEBA+TETA"
+        },
+        {
+          "amine_class": "araliphatic",
+          "err_C": 56.17,
+          "pred_Tg_C": 156.17,
+          "published_Tg_C": 100.0,
+          "system": "DGEBA+m-XDA"
+        }
+      ]
+    }
+  },
+  "null_baselines": {
+    "insample_mean_Tg_MAE_C": 31.755102,
+    "loo_mean_Tg_MAE_C": 37.047619,
+    "note": "v2 quoted the in-sample NULL (31.76); the fair comparison for a LOO model is the LOO-NULL (37.05). Both reported for transparency."
+  },
+  "phase0_gates": {
+    "G1_rights_clean_cited_n_ge_12_spanning_4_classes": {
+      "classes_spanned": 4,
+      "current_n_measurements": 9,
+      "current_n_unique": 7,
+      "independent_sources": 3,
+      "met": false,
+      "status": "UNCHANGED_FROM_V2 (no new data acquired this run; web-summary values were REJECTED as not page-verified -> honest data ceiling preserved)"
+    },
+    "G2_grouped_or_LOO_mae_le_25C": {
+      "detail": "backbone-rigidity improves best LOO MAE 40.5->35.7 C but remains > 25 C target",
+      "improved_from_v2_best_C": 40.505739,
+      "measured_inter_lab_floor_C": 8.64,
+      "met": false,
+      "observed_best_loo_mae_C": 35.730624,
+      "target_C": 25.0
+    },
+    "G3_beats_incumbent_ml_39C_and_vk_109C_and_null": {
+      "beats_incumbent_ml_39_1C": true,
+      "beats_insample_null": false,
+      "beats_loo_null": true,
+      "beats_raw_vk_109C": true,
+      "met_partial_first_time": true,
+      "note": "v2 met NONE of incumbent/null (only beat VK). v3 backbone descriptor is the FIRST structure-only model to beat the incumbent ML and the LOO-NULL."
+    },
+    "G4_non_circular_structure_only_descriptors": {
+      "detail": "backbone rigidity is pure topology from SMILES; measured Tg never used as a feature",
+      "met": true
+    },
+    "G5_signed_two_replay_reproducible": {
+      "detail": "deterministic; byte-stable two-replay",
+      "met": true
+    }
+  },
+  "phase0_reconciliation_redteam": {
+    "finding": "0 of 29 modules are scientific_readiness=VALIDATED; every module is MODEL_READINESS_ONLY. 'FULL Phase-0' is a governance/engineering milestone, NOT a count of externally-validated scientific capabilities. Founder skepticism is correct. The single module with real external-data science behind it remains amphora-solvency-score (BigSolDB leave-solute-out); network-Tg is the highest-value gap and is ADVANCED but NOT closed by this run.",
+    "model_readiness_ceiling_distribution": {
+      "MODEL_READINESS_ONLY": 29
+    },
+    "n_modules": 29,
+    "n_scientific_readiness_VALIDATED": 0,
+    "scientific_readiness_distribution": {
+      "UNVALIDATED": 29
+    }
+  },
+  "predecessor": "network-tg-feasibility-v2 (signed; untouched)",
+  "raw_measurements": [
+    {
+      "Tg_C": 158,
+      "active_amine_H": 4,
+      "amine": "IPDA",
+      "amine_class": "cycloaliphatic",
+      "citation": "May 1988 Ch.6 p.209",
+      "cure": "stoichiometric full cure",
+      "license": "individual-fact-CC0",
+      "method": "DSC",
+      "smiles": "NCC1(C)CC(N)CC(C)(C)C1",
+      "source_id": "S1"
+    },
+    {
+      "Tg_C": 100,
+      "active_amine_H": 4,
+      "amine": "m-XDA",
+      "amine_class": "araliphatic",
+      "citation": "May 1988 Ch.6 p.210",
+      "cure": "stoichiometric full cure",
+      "license": "individual-fact-CC0",
+      "method": "DSC",
+      "smiles": "NCc1cccc(CN)c1",
+      "source_id": "S1"
+    },
+    {
+      "Tg_C": 220,
+      "active_amine_H": 4,
+      "amine": "DDS",
+      "amine_class": "aromatic",
+      "citation": "May 1988 Ch.6 p.208",
+      "cure": "stoichiometric full cure",
+      "license": "individual-fact-CC0",
+      "method": "DSC",
+      "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "source_id": "S1"
+    },
+    {
+      "Tg_C": 120,
+      "active_amine_H": 6,
+      "amine": "TETA",
+      "amine_class": "aliphatic",
+      "citation": "May 1988 Ch.6",
+      "cure": "stoichiometric full cure",
+      "license": "individual-fact-CC0",
+      "method": "DSC",
+      "smiles": "NCCNCCNCCN",
+      "source_id": "S1"
+    },
+    {
+      "Tg_C": 115,
+      "active_amine_H": 5,
+      "amine": "DETA",
+      "amine_class": "aliphatic",
+      "citation": "May 1988 Ch.6",
+      "cure": "stoichiometric full cure",
+      "license": "individual-fact-CC0",
+      "method": "DSC",
+      "smiles": "NCCNCCN",
+      "source_id": "S1"
+    },
+    {
+      "Tg_C": 200,
+      "active_amine_H": 4,
+      "amine": "DDS",
+      "amine_class": "aromatic",
+      "citation": "Polymers 2024 16(1)67 doi:10.3390/polym16010067 (EP-DDS pristine)",
+      "cure": "150C/2h+180C/3h",
+      "license": "CC-BY-4.0",
+      "method": "DSC 10C/min N2",
+      "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "source_id": "S2"
+    },
+    {
+      "Tg_C": 97,
+      "active_amine_H": 4,
+      "amine": "1,3-BAC",
+      "amine_class": "cycloaliphatic",
+      "citation": "Polymers 2024 16(1)67 (EP-CYDM pristine)",
+      "cure": "70C/4h+130C/2h+150C/1h",
+      "license": "CC-BY-4.0",
+      "method": "DSC 10C/min N2",
+      "smiles": "NCC1CCCC(CN)C1",
+      "source_id": "S2"
+    },
+    {
+      "Tg_C": 94,
+      "active_amine_H": 4,
+      "amine": "C8DA",
+      "amine_class": "aliphatic",
+      "citation": "Polymers 2024 16(1)67 (EP-8CH2DA pristine)",
+      "cure": "70C/4h+130C/2h+150C/1h",
+      "license": "CC-BY-4.0",
+      "method": "DSC 10C/min N2",
+      "smiles": "NCCCCCCCCN",
+      "source_id": "S2"
+    },
+    {
+      "Tg_C": 204,
+      "active_amine_H": 4,
+      "amine": "DDS",
+      "amine_class": "aromatic",
+      "citation": "Savonnet 2018 ACS SusChemEng 6 / arXiv:1911.08960 Tab.1",
+      "cure": "stoichiometric full cure",
+      "license": "individual-fact",
+      "method": "DSC",
+      "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "source_id": "S3"
+    }
+  ],
+  "schema": "amphora.redteam-audit.network-tg-feasibility-v3.diagnostic.v1",
+  "supersedes_nothing": true,
+  "target_capability": "glass_transition_temperature_of_DGEBA_amine_networks",
+  "target_kpi_id": "network-tg-backbone-rigidity-feasibility-v3",
+  "target_module": "amphora-molecule-property",
+  "theory": {
+    "descriptor": "backbone N-to-N shortest-path rigid-bond fraction (rigid = aromatic|in-ring|multiple-order; flexible = rotatable single acyclic). Physics: Tg tracks the rotational-barrier density of the strand connecting crosslink junctions (DiMarzio/Gibbs; Van Krevelen ch.6 rigidity concept), NOT whole-molecule composition.",
+    "non_circularity": "descriptor computed purely from amine SMILES; measured Tg never used as a feature",
+    "weighted_variant_weights": {
+      "aliphatic_ring": 0.5,
+      "aromatic_or_double": 1.0,
+      "note": "declared a-priori from rotational-barrier physics; NOT fit to labels",
+      "rotatable": 0.0
+    }
+  },
+  "unique_consensus_systems": [
+    {
+      "B_backbone_binary": 0.333333,
+      "B_backbone_weighted": 0.166667,
+      "Tg_consensus_C": 97.0,
+      "amine": "1,3-BAC",
+      "amine_class": "cycloaliphatic",
+      "aromatic_fraction": 0.0,
+      "n_measurements": 1,
+      "ring_atom_fraction": 0.6,
+      "system": "DGEBA+1,3-BAC",
+      "tg_values_C": [
+        97
+      ]
+    },
+    {
+      "B_backbone_binary": 0.0,
+      "B_backbone_weighted": 0.0,
+      "Tg_consensus_C": 94.0,
+      "amine": "C8DA",
+      "amine_class": "aliphatic",
+      "aromatic_fraction": 0.0,
+      "n_measurements": 1,
+      "ring_atom_fraction": 0.0,
+      "system": "DGEBA+C8DA",
+      "tg_values_C": [
+        94
+      ]
+    },
+    {
+      "B_backbone_binary": 0.6,
+      "B_backbone_weighted": 0.6,
+      "Tg_consensus_C": 208.0,
+      "amine": "DDS",
+      "amine_class": "aromatic",
+      "aromatic_fraction": 0.705882,
+      "n_measurements": 3,
+      "ring_atom_fraction": 0.705882,
+      "system": "DGEBA+DDS",
+      "tg_values_C": [
+        220,
+        200,
+        204
+      ]
+    },
+    {
+      "B_backbone_binary": 0.0,
+      "B_backbone_weighted": 0.0,
+      "Tg_consensus_C": 115.0,
+      "amine": "DETA",
+      "amine_class": "aliphatic",
+      "aromatic_fraction": 0.0,
+      "n_measurements": 1,
+      "ring_atom_fraction": 0.0,
+      "system": "DGEBA+DETA",
+      "tg_values_C": [
+        115
+      ]
+    },
+    {
+      "B_backbone_binary": 0.4,
+      "B_backbone_weighted": 0.2,
+      "Tg_consensus_C": 158.0,
+      "amine": "IPDA",
+      "amine_class": "cycloaliphatic",
+      "aromatic_fraction": 0.0,
+      "n_measurements": 1,
+      "ring_atom_fraction": 0.5,
+      "system": "DGEBA+IPDA",
+      "tg_values_C": [
+        158
+      ]
+    },
+    {
+      "B_backbone_binary": 0.0,
+      "B_backbone_weighted": 0.0,
+      "Tg_consensus_C": 120.0,
+      "amine": "TETA",
+      "amine_class": "aliphatic",
+      "aromatic_fraction": 0.0,
+      "n_measurements": 1,
+      "ring_atom_fraction": 0.0,
+      "system": "DGEBA+TETA",
+      "tg_values_C": [
+        120
+      ]
+    },
+    {
+      "B_backbone_binary": 0.333333,
+      "B_backbone_weighted": 0.333333,
+      "Tg_consensus_C": 100.0,
+      "amine": "m-XDA",
+      "amine_class": "araliphatic",
+      "aromatic_fraction": 0.6,
+      "n_measurements": 1,
+      "ring_atom_fraction": 0.6,
+      "system": "DGEBA+m-XDA",
+      "tg_values_C": [
+        100
+      ]
+    }
+  ],
+  "verdict": "ADVANCED_NOT_VALIDATED: the backbone-path topological rigidity descriptor is the first structure-only, non-circular model to beat both the incumbent ML (LOO 35.7 vs 39.1 C) and the leave-one-out NULL (37.0 C), improving the best LOO MAE from 40.5 to 35.7 C and correctly ranking the two highest-Tg systems (DDS 208, IPDA 158) that whole-molecule aromatic fraction cannot separate. It still FAILS the >=25 C KPI gate (G2) and the n>=12 data gate (G1). Connectivity alone cannot capture IPDA's gem-dimethyl STERIC rigidity (B low, Tg high) -> the remaining constraints are (a) protocol-consistent data quantity and (b) a steric/side-group descriptor beyond backbone connectivity. NOT a Phase-0 promotion."
+}

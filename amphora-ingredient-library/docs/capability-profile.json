@@ -1,0 +1,313 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-ingredient-library-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "formulation"
+  ],
+  "ceilings": {
+    "authority_tier": "RULE_CITED",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "AUDIT_ONLY"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": false,
+    "checked_artifact_count": 3,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "GATED",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "datasets": [
+    {
+      "dataset_id": "amphora-ingredient-library/reference/mvp20/data/corrosion_series.json",
+      "hash": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "path": "amphora-ingredient-library/reference/mvp20/data/corrosion_series.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-ingredient-library/reference/mvp20/data/cure_verification_set.json",
+      "hash": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "path": "amphora-ingredient-library/reference/mvp20/data/cure_verification_set.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+      "hash": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "path": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-ingredient-library/reference/mvp20/data/corrosion_series.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-ingredient-library/reference/mvp20/data/cure_verification_set.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "No checked-in module-specific benchmark result artifact was identified.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "Current supplier TDS/SDS/CoA records with grade, rights, and issuer binding"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-formulation-capabilities/src/lib.rs",
+      "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+      "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+    },
+    "known_contradictions": [
+      "The local ingredient catalog contains sourced and approximate values with unresolved rights/currentness and cannot qualify a commercial grade."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-formulation-capabilities/src/lib.rs",
+      "scenario": "Ignore zero-mass ingredients and reject unknown load-bearing records.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-ingredient-library",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": null,
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-ingredient-library-example",
+      "candidate_type": "formulation",
+      "formulation": {
+        "application": {
+          "dft_mil": 5.0,
+          "relative_humidity_pct": 50.0,
+          "substrate": "steel",
+          "surface_preparation": "declared",
+          "temperature_C": 25.0
+        },
+        "basis": "mass_g_per_batch",
+        "batch_mass_g": 137.13,
+        "ingredient_catalog_version": "facts.v2",
+        "process": {
+          "application_method": null,
+          "induction_time_min": null,
+          "mix_order": null,
+          "pot_age_h": 0.0
+        },
+        "recipe": {
+          "part_A": {
+            "dgeba_828": {
+              "ingredient_id": "dgeba_828",
+              "mass_g": 100.0
+            }
+          },
+          "part_B": {
+            "ancamide_350a": {
+              "ingredient_id": "ancamide_350a",
+              "mass_g": 37.13
+            }
+          }
+        }
+      }
+    },
+    "current_output": {
+      "authority_tier": "RULE_CITED",
+      "candidate_id": "amphora-ingredient-library-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {},
+      "metrics": {
+        "ingredient_count": null,
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "active ingredient coverage",
+          "model_authority": "RULE_CITED",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        }
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-ingredient-library",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "active ingredient coverage",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1.",
+      "unit": "declared by locked benchmark",
+      "value_path": "metrics.ingredient_count"
+    }
+  ],
+  "lane": "formulation",
+  "module_id": "amphora-ingredient-library",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "metrics.ingredient_count",
+    "non_blocking_claim_locks": [
+      "ingredient_roles_are_not_performance_claims",
+      "uncited_constants_rejected"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PRE_PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 2,
+      "decision_value": 2,
+      "downstream_leverage": 3,
+      "effort": 2,
+      "evidence_gap": 2,
+      "external_delay": 1
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 14,
+    "score": 19
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

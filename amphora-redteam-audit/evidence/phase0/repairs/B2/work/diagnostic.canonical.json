@@ -1,0 +1,554 @@
+{
+  "authority": "AUDIT_ONLY",
+  "counts": {
+    "binding_destroyed": 9,
+    "binding_intact": 10,
+    "derived_phase0_count": 9,
+    "derived_pre_phase0_count": 20,
+    "module_harness_shape_on_disk": 17,
+    "modules": 29,
+    "runtime_shape_on_disk": 10,
+    "with_evaluation_receipt": 19
+  },
+  "defect": "Two writers produced <module>/evidence/phase0/benchmark/result.v1.json in incompatible shapes. The runtime evaluator writes the RUNTIME envelope and pins its exact SHA-256 into the immutable signed Phase-0 evaluation receipt; the per-module KPI integration harnesses overwrote the same path with the MODULE-HARNESS report shape, destroying the evaluated bytes and silently dropping the module out of phase0_count.",
+  "does_not": [
+    "does not modify any signed receipt, movement event, benchmark lock, locked fixture, manifest, or mission front-matter",
+    "does not promote, demote, or re-sign any module",
+    "does not weaken amphora-cli/src/phase0.rs verification"
+  ],
+  "modules": [
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-barrier-corrosion-score",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": false,
+      "shipped_result_sha256": null,
+      "shipped_result_shape": null
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-candidate-contract",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "bf6f0100a99d4b2094d0e912e674b00b8d5fc57861c41b91303c7286790edd19",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "bf6f0100a99d4b2094d0e912e674b00b8d5fc57861c41b91303c7286790edd19",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-cro-protocol-packager",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "9028beed25df43c5e1c453931d000636e9b2e128d1426101114bbbb829627909",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "dc2cb1dca3f4eb3f3291165c4cdbd28627586dec73c7119c12350087f488743e",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-cure-potlife-gate",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": true,
+      "shipped_result_sha256": "945f5b735992900ea58103e55acc35731a72bcad5bd5962a661440fdcd07cf60",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-design-rule-score",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": false,
+      "shipped_result_sha256": null,
+      "shipped_result_shape": null
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-envelope-gates",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "60dfcce33408921922d08dabaa0da0517d530fed34252507bed6897fbacb1965",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "60dfcce33408921922d08dabaa0da0517d530fed34252507bed6897fbacb1965",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-evidence-intake-validator",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "65fcd096abb99b8dde4050259afdce1b024a83d8dbd1a66de58d7646b5090467",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "00dbbe9f58921b7dcc65afaa39b7f09a03e6b9647b9c17ed9342a8dca62b9738",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-formulation-arithmetic",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "7d25d1bc039b06a910cd99170456e85bc52b0c7bb0abdcfaf3b779e617aa1935",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "7d25d1bc039b06a910cd99170456e85bc52b0c7bb0abdcfaf3b779e617aa1935",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-formulation-universe",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "4d875109fa6ff999de81cffc89c1a6e3f24700a77263845a4a9bf943d23892f9",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "4d875109fa6ff999de81cffc89c1a6e3f24700a77263845a4a9bf943d23892f9",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-ingredient-library",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": true,
+      "shipped_result_sha256": "06229682503e25a26da0391dac29c4f44e8ad46948c4b9ad77f76101b109fc1e",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-ip-fto-guard",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": true,
+      "shipped_result_sha256": "a6cb423d8858421e4b0e8c96de063da7eaaa97916a1da71523ffaae2788b6a77",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-known-answer-benchmarks",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "abfbf104f49b4dc6423bedbfd0dc0ef82585bd712012f23e91bd8e8dc2181595",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "3f2f6853f132f032a4b62a52ff3485d6f9b88b44affb3d50e84e8d310808ab11",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-model-card-authority",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "2b4a0650374a91820ed52ca1ff9e1fb1974e550570ba8076b2a7317e1675ddbf",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "2b4a0650374a91820ed52ca1ff9e1fb1974e550570ba8076b2a7317e1675ddbf",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-molecule-design-gate",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "3fd72f0fa08ae6e306a6718f0a618cab4abc876add5fd06521ac0022d0857761",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "8873baa3d050984dbf58fadd8d78a12f03c586e436a1c243a268ff0c93945964",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-molecule-generator",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": true,
+      "shipped_result_sha256": "604cd64f12ffeb66962e6b50505051717923954865f9d19f7f19c9f84ed6e8ef",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-molecule-novelty",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": true,
+      "shipped_result_sha256": "66b5249517256d7c1eca18aaeca267a968d759a4403959d103e3204784495e48",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": false,
+      "module_id": "amphora-molecule-property",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": "fc5a505c7e88c931842abaaebe0d4b2373f1d580c9b7b1ff2523a46a0a25c923",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "d04b516c806f452556ccdc91250d6ee2474f09565ac1656a88cbf13776716f90",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-molecule-role-ranker",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": true,
+      "shipped_result_sha256": "f2a21f74e03b6b20f53fb10d4cdb6f2b477ce2b9a6e5200947c1ed91ad3a136a",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-optimizer-orchestrator",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "cfeb75e14e319a36b0181d36127e219a6c2eb8ce3a7e2cc00bb6a9d23e490afd",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "e1d95b6b338b10d5999d9d0af4e5b2e8f635eab72a888942e9a77439382eba17",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-process-qc-twin",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "5fb9d00bb31361109f59082007a78d7603743d62891a58f3028912f676b59a8b",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "5fb9d00bb31361109f59082007a78d7603743d62891a58f3028912f676b59a8b",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "INDEPENDENT_REVIEW_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": true,
+      "has_independent_review": false,
+      "module_id": "amphora-public-corrosion-benchmark",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": "ff45578dd25d0c5a2e452ebfd7c194724a2a19225121f228feb48ca18eb31177",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "ff45578dd25d0c5a2e452ebfd7c194724a2a19225121f228feb48ca18eb31177",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-redteam-audit",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "2bba87aa9a2e5caffe6ede62685a953fa8d676b9b015a8d73640e1b3178d8e9c",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "701482a26cbe704e06bdade4c3af3279e6fee066319c5041822f37ed8dbf9f1f",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-report-packager",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "157200403ad396e73c9e2b85f21bb1c15b27ab09b913ebd1c571259a7380f7d0",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "fc797aac97caa75ce25fba2f3c7b00742c7b3a601647982284c223121f0fc6e1",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-run-provenance",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "792c1ce02d881d95affcc08f222d6bc0f6128c9b883f34029dda30474c4ad5fc",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "792c1ce02d881d95affcc08f222d6bc0f6128c9b883f34029dda30474c4ad5fc",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-solvency-score",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "ade9edbad9fcf433e54f524fcbe2fcf9000c2f14000aa70bee4a274a4a59b583",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "ade9edbad9fcf433e54f524fcbe2fcf9000c2f14000aa70bee4a274a4a59b583",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": false,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-source-ledger",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "cdbfda048e73ef53971fd9860dc9ae0f9464fdd2214b550c76eaeb7d3211e965",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "a6a680a1202d8b18b097a0d390bf877d93dc985b0f09a5fe52cc2ea16b498115",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-sourceability-ehs",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": true,
+      "shipped_result_sha256": "189390bfa08cfda9d88895aaae8e20fd9b2db6f67d60e662f58f4bb3e4f033f2",
+      "shipped_result_shape": "MODULE_HARNESS"
+    },
+    {
+      "binding_matches": true,
+      "derived_phase": "PHASE_0",
+      "derived_reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING",
+      "has_evaluation_receipt": true,
+      "has_independent_review": true,
+      "module_id": "amphora-tolerance-robustness",
+      "movement_event_count": 1,
+      "receipt_pinned_result_sha256": "767dbcbe1d56ca7c9a7fd8064687ecba6c7337f5752264f56f874ac9465f3a03",
+      "shipped_result_present": true,
+      "shipped_result_sha256": "767dbcbe1d56ca7c9a7fd8064687ecba6c7337f5752264f56f874ac9465f3a03",
+      "shipped_result_shape": "RUNTIME"
+    },
+    {
+      "binding_matches": null,
+      "derived_phase": "PRE_PHASE_0",
+      "derived_reason": "EVALUATION_SIGNATURE_ABSENT",
+      "has_evaluation_receipt": false,
+      "has_independent_review": false,
+      "module_id": "amphora-viscosity-score",
+      "movement_event_count": 0,
+      "receipt_pinned_result_sha256": null,
+      "shipped_result_present": true,
+      "shipped_result_sha256": "6164d8d153533f71c372ef28792c1f8521de35ddaa0d60a3dce12c196dac314e",
+      "shipped_result_shape": "MODULE_HARNESS"
+    }
+  ],
+  "repair_item": "B2",
+  "schema": "amphora.phase0-repair.B2-two-writer-diagnostic.v1",
+  "writers": {
+    "module_harness_writer_count": 27,
+    "module_harness_writers": [
+      {
+        "file": "amphora-assurance-capabilities/tests/cro_protocol_packager_phase0_kpi.rs",
+        "sha256": "a8b361e65b2df8cccda8271c15609c7753a50cef564b804b38e0138c9d88a030",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-assurance-capabilities/tests/evidence_intake_validator_phase0_kpi.rs",
+        "sha256": "a28626110653e25128a50254467bcca430e8c0c6482c9025deff2afa1796915f",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-assurance-capabilities/tests/ip_fto_guard_phase0_kpi.rs",
+        "sha256": "21172fdded3dda34e897378148cff47edd7e517c6d2f858676e12f34dc1b888c",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-assurance-capabilities/tests/known_answer_benchmarks_phase0_kpi.rs",
+        "sha256": "83bede62344484e2e2ded3b8ca42ff135f087b5ce51ec6bd62c1599a694fdffd",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-assurance-capabilities/tests/optimizer_orchestrator_phase0_kpi.rs",
+        "sha256": "a2d4f933b85c59262065adaa60b3c8bc50ce95888234cdc198df22c399decd45",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-assurance-capabilities/tests/redteam_audit_phase0_kpi.rs",
+        "sha256": "c92f52f805f64310485698eb6e1e5cac27f4c912318cc908b76bcee8872b8499",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-assurance-capabilities/tests/report_packager_phase0_kpi.rs",
+        "sha256": "14d241716fb65a9d8506a1a9da9a4af0eb24cf063f3430d45c7adf6b91f62db1",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-assurance-capabilities/tests/source_ledger_phase0_kpi.rs",
+        "sha256": "20d7820b0cba3574b64c20c36f98a00974f6eb706e4e4a29e2c91d0568c73471",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-assurance-capabilities/tests/sourceability_ehs_phase0_kpi.rs",
+        "sha256": "065f28f29bbb9ae9065eadcfd7033ee5e210abe05cebacae854961ae819d1257",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-core/tests/candidate_contract_phase0_kpi.rs",
+        "sha256": "4f6046ee86aebcdb67d987660c08ab28579925de25b33629199a8f14bdd2adb9",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-core/tests/run_provenance_phase0_kpi.rs",
+        "sha256": "d399bc775fab05170e6b06a45d38a62f86087e6f3bb5b37540fff17f9f3f9495",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-cure-potlife-gate/tests/cure_potlife_phase0_kpi.rs",
+        "sha256": "b8ac10b72d29044d4bf24ffb07a41949abeb33aa667d57006cebb7d7be1d8cc6",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-formulation-capabilities/tests/design_rule_score_phase0_kpi.rs",
+        "sha256": "246807908dafb299e67dad2da660657f39a4f785684cb79a9abae7849fe69fd0",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-formulation-capabilities/tests/envelope_gates_phase0_kpi.rs",
+        "sha256": "8a419bfb49b80ab5ae4617e6c24016956aaa928bcc16de66c1a6e77cb0b4123f",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-formulation-capabilities/tests/formulation_arithmetic_phase0_kpi.rs",
+        "sha256": "c5297a2fbcc36de193cacafe8958911e279e2e69633554306617d9ecc3ce577c",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-formulation-capabilities/tests/formulation_universe_phase0_kpi.rs",
+        "sha256": "faeac9f05da3533baf04fa447a80d01bd502766757622698470791c4d4c4a55a",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-formulation-capabilities/tests/ingredient_library_phase0_kpi.rs",
+        "sha256": "63843ce95508a5dd6b2a42ad8f7cb95a1e944ec9d61564d9ff1d059974d9dbdf",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-formulation-capabilities/tests/process_qc_twin_phase0_kpi.rs",
+        "sha256": "80fd0b35688d339abfdaacf5b9f26393aebe7e01aea9c7c0fc20d655c4d04287",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-formulation-capabilities/tests/public_corrosion_benchmark_phase0_kpi.rs",
+        "sha256": "edd26f90259f736957f3e00570d6f3e827b5b50365c2f13bef4ac8110fb80b95",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-formulation-capabilities/tests/tolerance_robustness_phase0_kpi.rs",
+        "sha256": "8f126ff11f1390d59ad9a19e95ba2394b851f1422d0e4ddb5a1f9ec4174898f8",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-molecule-capabilities/tests/design_gate_phase0_kpi.rs",
+        "sha256": "bad549a8365b0aae815cb6aa624792b7119e1a7759b7a1cdacfb2676c4120fb4",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-molecule-capabilities/tests/molecule_generator_phase0_kpi.rs",
+        "sha256": "cd6b561dae620943459ae5c6f0196b4c764e7b3a40fc9b4a7b7af2bc451da391",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-molecule-capabilities/tests/molecule_novelty_phase0_kpi.rs",
+        "sha256": "f5a979324f802221daedf94430a3ecc1aa7f75707bb69f66e7c53c6b82fbaacd",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-molecule-capabilities/tests/property_phase0_kpi.rs",
+        "sha256": "224ce1e6f33f5b203b7d3c2e55ccd6833ff8e9848211c6b2ce383bd6c3ecf0cb",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-molecule-capabilities/tests/role_ranker_phase0_kpi.rs",
+        "sha256": "a617a63b3b0bff143f9b91b8a24c6b405f1586b610b8e501cbf877310210647e",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-solvency-score/tests/solvency_phase0_kpi.rs",
+        "sha256": "df0f5473138e46f2b15338837a9852faf538adeb3f47bcc97c4b1b3e10236731",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      },
+      {
+        "file": "amphora-viscosity-score/tests/viscosity_phase0_kpi.rs",
+        "sha256": "83c56c3eebfe0ecb50f7edc92cdc6d74f895fbdaa86d3bcfb1ddd43f8862df7f",
+        "writes_to": "CARGO_TARGET_TMPDIR"
+      }
+    ],
+    "module_harness_writers_still_targeting_shipped_evidence": [],
+    "runtime_authority_writer": {
+      "declares_write_call": true,
+      "file": "amphora-cli/src/phase0.rs",
+      "function": "evaluate",
+      "sha256": "400232e300d28990ec08df7abd159684eb86f2cdabe1894eb3fd5a0acc47de9d",
+      "verifier_functions": [
+        "verify_module_with_replay",
+        "verify_evaluation_result",
+        "verify_deterministic_diagnostic",
+        "benchmark_execution_complete"
+      ],
+      "write_call": "write_json_immutable(&result_path, &result)"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "any_named_t06_defect_live_today": true,
+  "attack2_numeric_type_duplicate_defect_live_today": true,
+  "attack3_index_identity_instability_defect_live_today": true,
+  "days_since_t06": 9,
+  "fresh_execution_2026_08_15": {
+    "command": "cargo test --workspace --locked -p amphora-formulation-capabilities --test formulation_universe_redteam_t06_independent -- --nocapture",
+    "parsed_run1": {
+      "attack2_branch": "ACCEPTED",
+      "attack2_cardinality": "Some(2)",
+      "attack2_total": "Some(2)",
+      "attack3_index": 1,
+      "attack3_receipt_bytes_equal": true,
+      "attack3_tuple_under_A": [
+        "IPDA",
+        "DGEBF"
+      ],
+      "attack3_tuple_under_B": [
+        "TETA",
+        "DGEBF"
+      ],
+      "cargo_test_result": "ok",
+      "cargo_tests_failed": 0,
+      "cargo_tests_passed": 4
+    },
+    "parsed_run2": {
+      "attack2_branch": "ACCEPTED",
+      "attack2_cardinality": "Some(2)",
+      "attack2_total": "Some(2)",
+      "attack3_index": 1,
+      "attack3_receipt_bytes_equal": true,
+      "attack3_tuple_under_A": [
+        "IPDA",
+        "DGEBF"
+      ],
+      "attack3_tuple_under_B": [
+        "TETA",
+        "DGEBF"
+      ],
+      "cargo_test_result": "ok",
+      "cargo_tests_failed": 0,
+      "cargo_tests_passed": 4
+    },
+    "parses_agree": true,
+    "run1_run2_stderr_byte_identical": false,
+    "run1_run2_stdout_byte_identical": true,
+    "run1_stdout_sha256": "16dc987eff8ff86190409f765116526ce7ea7597c07c2c7b558ca7d9773a884a",
+    "run2_stdout_sha256": "16dc987eff8ff86190409f765116526ce7ea7597c07c2c7b558ca7d9773a884a",
+    "stderr_nondeterminism_note": "stderr differs only in non-load-bearing cargo build-tool noise (package-cache lock-wait lines under concurrent CI load, compile-time-in-seconds); the T06_* diagnostic lines and all parsed fields are identical (see parses_agree)."
+  },
+  "kpi_claim_under_test": {
+    "kpi_claimed_note_verbatim": "CARTESIAN_CANONICAL_DUPLICATION attack axis. Four probes: literal string duplicate, integer duplicate, null duplicate, canonically-equal objects with different JSON key insertion orders (defeated via amphora_core::stable_hash). All return Err.",
+    "kpi_claimed_observed": 1.0,
+    "kpi_claimed_passed": true,
+    "kpi_claimed_sample_size": 4,
+    "metric_name": "cartesian_canonical_duplication_fail_closed_rate"
+  },
+  "kpi_dup_metric_is_currently_stale_and_incomplete": true,
+  "module": "amphora-formulation-universe",
+  "n_supersession_or_retraction_references": 0,
+  "provenance_continuity": {
+    "kpi_last_git_commit": "2026-08-03 907e75360f2c5698b99934c2bee61bdc462e3825",
+    "kpi_sha256_now": "5f23bf9b9f73d513607509ab953ee8f3c852ea692e7dcd95842a6bc2e30f5df0",
+    "lib_rs_sha256_now": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
+    "lib_rs_unchanged_since_t06": true,
+    "t06_recorded_lib_rs_sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
+    "t06_recorded_test_harness_sha256": "c4525abaa45f6e8dcee8a8a449021d59c8991fb9aa784bc9182818233f3c637c",
+    "t06_test_file_sha256_now": "c4525abaa45f6e8dcee8a8a449021d59c8991fb9aa784bc9182818233f3c637c",
+    "t06_test_file_unchanged_since_t06": true
+  },
+  "retraction_index_exists": false,
+  "run_date": "2026-08-15",
+  "study_id": "kpi-claim-currency-v1",
+  "supersession_or_retraction_references_to_kpi_file": []
+}

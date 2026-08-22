@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "d228ee2e3ecd39ea369009546a2fb36956e2a9c8d37043f77c7e84155b4babb1",
+  "module_id": "amphora-barrier-corrosion-score",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

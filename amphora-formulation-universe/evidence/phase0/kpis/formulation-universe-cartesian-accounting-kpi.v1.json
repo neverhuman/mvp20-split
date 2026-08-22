@@ -1,0 +1,143 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-formulation-universe",
+  "kpi_id": "amphora-formulation-universe-phase0-cartesian-accounting-v1",
+  "capability": "Deterministic Cartesian search-space accounting for coating-formulation Design-of-Experiments enumeration. For every candidate universe (registered axes + optional infeasible indices), validate_formulation_universe computes cartesian_total (product of axis cardinalities), infeasible_candidate_count (deduplicated, in-range check), and solved_candidate_count = cartesian_total - infeasible_candidate_count. Phase-0 covers mass-only Cartesian accounting up to MAX_FORMULATION_UNIVERSE_CARDINALITY = 10 000. Phase-1 will extend the ceiling once optimizer-orchestrator is authorised for larger populations.",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "solver_use_ceiling": "AUDIT_ONLY",
+  "population": "Ten Design-of-Experiments universes from Montgomery 2017 Design and Analysis of Experiments 8th ed. Ch. 5-8 (2^k, 3^k, 2^(k-p) factorial designs) and Wicks/Jones/Pappas 2007 §24.5 (mixed-level formulation factorials with a priori infeasibility exclusion). Cartesian totals in the fixture range from 8 (2^3) to 32 (2^(5-1) half-fraction).",
+  "split_methodology": "No fitting — Cartesian accounting is integer arithmetic. Each universe carries an explicit axes JSON, optional infeasible-index list, and the reference cartesian_total / solved / infeasible counts verified locally in Python before test-time evaluation.",
+  "theory": "Design of Experiments (DoE) — Fisher 1935 'The Design of Experiments'; Box, Hunter & Hunter 1978 'Statistics for Experimenters'; Montgomery 2017 'Design and Analysis of Experiments' 8th ed. Chapters 5-8 (factorial and fractional-factorial designs). A formulation search universe is the Cartesian product of design factors (resin × hardener × solvent × pigment × additive), with declared infeasibility subtracted. This is the industrial standard in coating screening (Wicks, Jones & Pappas 'Organic Coatings: Science and Technology' 4th ed. 2007 §24.5). solved + infeasible = cartesian_total is an integer identity, not a hypothesis.",
+  "metrics": [
+    {
+      "name": "cartesian_identity_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction of fixture universes where solved_candidate_count + infeasible_candidate_count = cartesian_total at u64 bit precision. Ten universes, all correct."
+    },
+    {
+      "name": "cartesian_product_arithmetic_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction where cartesian_total = Π axis_cardinalities matches an independent Python-side reference product exactly."
+    },
+    {
+      "name": "axis_order_determinism_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "For each universe, axis JSON keys are rotated into 3 different insertion orders; every permutation returns a byte-identical FormulationUniverseAccountingV1 via BTreeMap key ordering."
+    },
+    {
+      "name": "candidate_feasibility_claim_ignore_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "CANDIDATE_FEASIBILITY_CLAIM attack axis. For each universe, adversary injects a claims object claiming solved_count=99999, authority_upgrade=true, ranking_eligible=true, and forged objective_values. The runtime records candidate_feasibility_claims_ignored=true AND the computed counts + authority envelope are UNCHANGED."
+    },
+    {
+      "name": "cartesian_cardinality_overflow_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 3,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "CARTESIAN_CARDINALITY_OVERFLOW attack axis. Three probes: product 30x30x30=27000, product 200x200=40000, single axis with 10001 values. All exceed MAX_FORMULATION_UNIVERSE_CARDINALITY=10000 and return Err."
+    },
+    {
+      "name": "infeasible_index_laundering_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 6,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "INFEASIBLE_INDEX_LAUNDERING attack axis. Six probes: index==total (boundary), index>>total, duplicate index, negative non-u64 index, float non-integer index, infeasible without registered axes. All return Err."
+    },
+    {
+      "name": "cartesian_canonical_duplication_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 4,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "CARTESIAN_CANONICAL_DUPLICATION attack axis. Four probes: literal string duplicate, integer duplicate, null duplicate, canonically-equal objects with different JSON key insertion orders (defeated via amphora_core::stable_hash). All return Err."
+    },
+    {
+      "name": "authority_lock_preservation_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Every output preserves ranking_eligible=false, usable_by_optimizer=false, authority_upgrade=false, candidate_created_evidence=false, unresolved_legacy_data_accessed=false, feasibility_basis='DECLARATIVE_ACCOUNTING_ONLY', scientific_readiness='UNVALIDATED', objective_values={}."
+    },
+    {
+      "name": "byte_stable_two_replay_rate",
+      "direction": "MAXIMIZE",
+      "observed": 1.0,
+      "sample_size": 10,
+      "authority": "AUDIT_ONLY",
+      "note": "Observational. Every universe candidate invoked twice back-to-back and asserted byte-identical FormulationUniverseAccountingV1."
+    }
+  ],
+  "fitted_or_physical_model_artifact": {
+    "schema": "amphora.formulation-universe-cartesian-accounting.v1",
+    "model_type": "deterministic_physical_cartesian_product_with_infeasibility_subtraction",
+    "prediction_rule": "cartesian_total = Π axis_cardinality[axis] over all axis ∈ axes; solved = cartesian_total - |infeasible_indices|; infeasible_count = |infeasible_indices|. All indices in [0, cartesian_total) with no duplicates.",
+    "canonical_deduplication_rule": "axis entries are compared via amphora_core::stable_hash (canonical-JSON SHA-256) to detect canonically-equal duplicates independent of key insertion order",
+    "cardinality_ceiling": 10000,
+    "no_learned_parameters": true,
+    "no_baseline_defined": true,
+    "note": "Integer arithmetic over registered axes. No parameters to learn; the theory is set-cardinality arithmetic (Cartesian product) and dedup via canonical hash."
+  },
+  "claim_locks": {
+    "declarative_accounting_only": true,
+    "no_optimizer_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "no_qualification_evidence_upgrade": true,
+    "no_release_evidence_upgrade": true,
+    "no_product_evidence_upgrade": true,
+    "commercial_product_is_measured_only": true,
+    "no_release_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true,
+    "candidate_feasibility_claims_never_evaluated": true,
+    "cardinality_ceiling_10000_enforced": true
+  },
+  "benchmark_lock_sha256": "3ca1ab54ca79431fdf482109fc7d1ecb693eda54cc38c411a42eeaffc74f6d35",
+  "dataset_fixture_sha256": "cb3cdb8bd40ebfeadd929ab42fed7df4596375aa1d00b24242755479676029b3",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "d10f3abedeff79333c06005489c59170a65f2d5682bbc2795e95f26be0ba08e8",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "Phase-1 cardinality ceiling increase beyond 10000 once optimizer-orchestrator is authorised for larger candidate populations"
+  ]
+}

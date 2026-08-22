@@ -1,0 +1,268 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "rights binding loss",
+    "source-study-system leakage",
+    "unit or area mismatch",
+    "method mismatch",
+    "authority ceiling violation",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": "config/benchmark-locks/amphora-barrier-corrosion-score.v1.json",
+      "artifact_sha256": "3ae06a1a5e1dfb06eb613aaf1afde8ad405f9862f2c735c868cc9963985e18a5",
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "measured-eis-endpoints-promotion-v1",
+      "observations": [],
+      "reported_result_status": "AUTOMATIC_DEMOTION_NO_ELIGIBLE_DATA",
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "formulation"
+  ],
+  "ceilings": {
+    "authority_tier": "MODELED_DIRECTIONAL",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "AUDIT_ONLY"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 5,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "SHADOW",
+    "runtime_integration": "Native Rust measured-EIS endpoint slice accepts only candidate-bound host-verified EIS, signed artifacts and receipts, raw hashes, rights, methods, and applicability admission.",
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "datasets": [
+    {
+      "dataset_id": "eis-source-landscape-v1",
+      "hash": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423",
+      "path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": "1"
+    },
+    {
+      "dataset_id": "usbr-st-19168-untouched-external",
+      "hash": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1",
+      "path": "amphora-barrier-corrosion-score/reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": "official-download-2026-07-17"
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "ST-19168 is acquired and hash-bound but remains untouched and rights-quarantined; no promotion rows exist.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+        "rights": {
+          "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+          "gap": "Known source and rights status; promotion rows remain absent and the external workbook remains quarantined.",
+          "status": "KNOWN"
+        },
+        "sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-barrier-corrosion-score/reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx",
+        "rights": {
+          "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+          "gap": "Official raw workbook is hash-bound and untouched but is ineligible for derivatives pending rights review.",
+          "status": "KNOWN"
+        },
+        "sha256": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "config/program/eis-corrosion-split.v1.json",
+        "rights": {
+          "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+          "gap": "Empty locked split records absent promotion rows and quarantined untouched external systems.",
+          "status": "KNOWN"
+        },
+        "sha256": "d958e42128fd7efe3c1c5ce8fa968c0660a09c11b40e8e9e5039ed18adb3f73d"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "config/benchmark-locks/amphora-barrier-corrosion-score.v1.json",
+        "rights": {
+          "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+          "gap": "Benchmark gates and hostile nulls are locked; no checked result is promoted.",
+          "status": "KNOWN"
+        },
+        "sha256": "9f6cff8696de522713c044bb7f5c640adcd995dec4b65779c0051bc99a21ae99"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "config/program/eis-corrosion-sources.v1.json",
+        "rights": {
+          "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+          "gap": "The census binds only quarantined context and does not imply derivative eligibility.",
+          "status": "KNOWN"
+        },
+        "sha256": "83032250b2b614e908be15b8ed17144788d801436a8ff3ebd06bc05a63720b90"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "Locked execution auto-demotes because 30 systems, three studies, ten external systems, endpoints, and review are absent.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "At least 30 independent systems across three studies, ten untouched ST-19168 external systems, five panels per system/exposure, measured endpoints, rights clearance, and independent review"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-barrier-corrosion-score/src/lib.rs",
+      "sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-barrier-corrosion-score/Cargo.toml",
+      "version_source_sha256": "cbf327e094f5e4973ef4551878a90be280fc10e3e161aaedfdaccecd9b68bcc0"
+    },
+    "known_contradictions": [
+      "Six existing plus ten acquired external systems remain below promotion; low-frequency impedance alone can hide interface corrosion."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-barrier-corrosion-score/src/lib.rs",
+      "scenario": "Recover a synthetic full circuit while rejecting short spectra and field/lab method substitution.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-barrier-corrosion-score",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "formulation",
+        "dataset_id": "measured-eis-promotion-data-unavailable-external-quarantined.v1",
+        "model_id": "measured-eis-endpoints-v1",
+        "model_readiness_status": "MODEL_READINESS_ONLY",
+        "solver_use": "AUDIT_ONLY",
+        "track_id": "measured_eis_corrosion_endpoints"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-barrier-corrosion-score/src/lib.rs",
+        "sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "eis-example",
+      "candidate_type": "formulation"
+    },
+    "current_output": {
+      "authority": "SHADOW",
+      "barrier_index": null,
+      "corrosion_rank": null,
+      "estimated_rust_creep_mm": null,
+      "estimated_wet_adhesion_mpa": null,
+      "service_life": null
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON plus host FeatureSnapshot"
+    ],
+    "target": [
+      "candidate-bound full-spectrum or declared single-frequency lab EIS observation bundle"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "constant endpoint and low-frequency impedance",
+      "confidence_interval": "study-block and paired system confidence bounds",
+      "direction": "context",
+      "evidence_source": "signed locked evaluation receipt",
+      "failure_threshold": "any leakage, method, endpoint, external-system, or hostile-null failure",
+      "metric_class": "promotion_bundle",
+      "name": "locked measured-EIS endpoint gates",
+      "population": "source-study-system grouped panels plus untouched external systems",
+      "promotion_phase": "PHASE_1",
+      "split": "source then study then coating system",
+      "target": "Kendall tau, endpoint MAE lift, calibration, interval, and hostile-null gates",
+      "unit": "boolean",
+      "value_path": "metrics.locked_gate_passed"
+    }
+  ],
+  "lane": "performance",
+  "module_id": "amphora-barrier-corrosion-score",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "electrochemical sign and units preserved",
+    "commercial_grades": "panel, formulation, family, and lot binding required",
+    "fragments": "not applicable to measured panel identity",
+    "isotopes": "not inferred",
+    "mixtures": "coating system identity remains indivisible across folds",
+    "normalized_structure_or_formula_hash": "owned by amphora-candidate-contract",
+    "original_byte_hash": "required for every spectrum and endpoint raw file",
+    "polymers": "coating family is declared, not inferred",
+    "stereochemistry": "not inferred",
+    "toolkit_and_version": "recorded for circuit and endpoint fit generators"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates.host_verified_candidate_bound_eis",
+    "metric": "metrics.estimated_rust_creep_mm",
+    "non_blocking_claim_locks": [
+      "no_rank_authority",
+      "no_service_life_claim",
+      "measured_eis_required"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty.rust_creep_90"
+  },
+  "phase": "PRE_PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "Official ST-19168 acquisition is hash-bound and remains untouched until the external test"
+    ],
+    "phase_1": [
+      "All system-grouped endpoint and hostile-null gates pass"
+    ],
+    "phase_2": [
+      "Independent review and prospective replication pass without a service-life or formulation-only claim"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 2,
+      "decision_value": 5,
+      "downstream_leverage": 5,
+      "effort": 5,
+      "evidence_gap": 5,
+      "external_delay": 5
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 4,
+    "score": 34
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

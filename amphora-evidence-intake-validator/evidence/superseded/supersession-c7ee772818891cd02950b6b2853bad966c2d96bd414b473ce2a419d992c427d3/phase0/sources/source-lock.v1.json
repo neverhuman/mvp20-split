@@ -1,0 +1,38 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-evidence-intake-validator/evidence/phase0",
+  "imported_locks": [],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-evidence-intake-validator",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "169ec39a3038d726d8c5b5263e7abd2b5ad7c28c0501490edd66848fb1167a46",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_evidence_intake_validator.json",
+      "observed_sha256": "169ec39a3038d726d8c5b5263e7abd2b5ad7c28c0501490edd66848fb1167a46",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "64a9d98a23fce4531254acff7b4cd981413760c7c0cfad15bf4155ff1d011ce8",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_non_candidate_fixture_packages.json",
+      "observed_sha256": "64a9d98a23fce4531254acff7b4cd981413760c7c0cfad15bf4155ff1d011ce8",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "5a30d78b583b615f101a60b19cf072343221f524f7d07485fd9c2917ca0f6aba",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_validator_dry_run_results.json",
+      "observed_sha256": "5a30d78b583b615f101a60b19cf072343221f524f7d07485fd9c2917ca0f6aba",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-redteam-audit/evidence/phase0",
+  "imported_locks": [],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-redteam-audit",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "775330ec4d180802357c50b06de0d744544696b0e8f3d76e08d1d1f5a33e1b84",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/claim_registry.json",
+      "observed_sha256": "775330ec4d180802357c50b06de0d744544696b0e8f3d76e08d1d1f5a33e1b84",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "be8279ec78ca3980ba52b3b616390ac86601cca51809e300bfcd9d757de39c79",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/redteam_self_audit.json",
+      "observed_sha256": "be8279ec78ca3980ba52b3b616390ac86601cca51809e300bfcd9d757de39c79",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

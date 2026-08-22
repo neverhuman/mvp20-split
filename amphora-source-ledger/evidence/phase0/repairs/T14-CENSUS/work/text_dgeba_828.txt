@@ -1,0 +1,413 @@
+Technical Data Sheet
+EPON™ Resin 828
+Product Description
+EPON™ Resin 828 is an undiluted clear difunctional bisphenol A/epichlorohydrin derived liquid epoxy resin. When cross-linked or hardened with
+appropriate curing agents, very good mechanical, adhesive, dielectric and chemical resistance properties are obtained. Because of this versatility,
+EPON Resin 828 has become a standard epoxy resin used in formulation, fabrication and fusion technology.
+
+Benefits
+        Fiber reinforced pipes, tanks and composites
+        Tooling, casting and molding compounds
+        Construction, electrical and aerospace adhesives
+        High solids/low VOC maintenance and marine coatings
+        Electrical encapsulations and laminates
+        Chemical resistant tank linings, flooring and grouts
+        Base resin for epoxy fusion technology
+
+
+Sales Specifications
+                               Property                                                Value                              Unit                                   Test Method
+
+Color                                                                    1 max.                              Gardner                        ASTM D1544
+
+Viscosity at 25°C                                                        110 - 150                           P                              ASTM D445
+
+Weight per Epoxide                                                       185 - 192                           g/eq                           ASTM D-1625
+
+
+Typical Properties
+                                             Property                                                      Value                   Unit                             Test Method
+
+Density at 25°C                                                                                     9.7                lb/gal                         ASTM D1475
+
+Density                                                                                             1.16               g/mL
+
+Refractive Index @ 25°C (77°F)                                                                      1.573
+
+Specific Heat                                                                                       0.5                BTU/lb/°F
+
+Vapour Pressure @ 25°C (77°F)                                                                       0.03               mm Hg
+
+
+
+
+EPON Resin 828                                                                                                                                       Generated:         May 25, 2022
+http://www.westlakeepoxy.com/en-US/product/epon-resin-828                                                                                            Issue Date:
+                                                                                                                                                     Revision:          6/21/2021 4:00:00 AM
+
+® and ™ Licensed trademarks of Westlake Inc.
+The information provided herein was believed by Westlake Inc. (“Westlake ”) to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the
+responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures applicable to the safe handling and use of the product
+and to determine the suitability of the product for its intended use. All products supplied by Westlake Epoxy are subject to Westlake Epoxy’s terms and conditions of sale. WESTLAKE MAKES
+NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF
+ANY INFORMATION PROVIDED BY WESTLAKE, except that the product shall conform to Westlake's specifications. Nothing contained herein constitutes an offer for the sale of any product.
+
+                                                                                                                                                                                   Page 1 of 7
+Processing/How to use
+General Information
+The low viscosity and cure properties of EPON Resin 828 allow its use under various application and fabrication techniques including:
+       Spraying and brushing
+       Filament winding
+       Pressure laminating
+       Vacuum bag laminating
+       Pultrusion
+       Casting
+       Molding
+       Toweling
+
+
+Curing Agents
+EPON Resin 828 can be cured or cross-linked with a variety of curing agents depending on properties desired in the finished product and the
+processing conditions employed. Some commonly used curing agents, recommended concentrations, typical cure schedules employed in major
+end-use applications, plus sources for these curing agents are displayed in Table 1.
+
+Performance Properties
+Perfomance Characteristics of Cured EPON Resin 828
+Mechanical Properties
+High performance, high strength materials are obtained when this resin is cured with a variety of curing agents. Unfilled systems in common use
+have tensile values greater than 10,000 psi (69 MPa) with modulus values greater than 400,000 psi (2750 MPa). Such systems are normally very
+rigid. If greater flexibility is needed systems can be formulated to provide up to 300% elongation.
+Adhesive Properties
+One of the most widely recognized properties of cured EPON Resin 828 is strong adhesion to a broad range of substrates. Such systems exhibit
+shear strength of up to 6,000 psi (41 Mpa). One factor which contributes to this property is the low shrinkage shown by these systems during cure.
+Compared to other polymers, epoxy resins have low internal stresses resulting in strong and durable finished products.
+Electrical Properties
+EPON Resin 828 cured systems have very good electrical insulating characteristics and dielectric properties. For example, systems can be
+obtained with anhydride and amine curing agents having volume resistivities up to 1 x 10E16 ohm-cm, dielectric constants of 3-5 and dissipation
+factors of 0.002 to 0.020 at ambient conditions. Electrical encapsulations, laminates and molding compounds are frequently based on EPON
+Resin 828.
+Chemical Resistance
+Cured EPON Resin 828 is highly resistant to a broad range of chemicals, including caustic, acids, fuels and solvents. Chemically resistant
+reinforced structures and linings or coatings over metal can be formulated with EPON Resin 828.
+Formulating Techniques
+The primary components of a thermosetting resin formula are the epoxy resin and the hardener or curing agent. However, in practice other
+materials are normally incorporated to achieve special properties. For example, inert fillers such as silicas, talcs, calcium silicates, micas, clays
+and calcium carbonate can be added to further reduce shrinkage and improve dimensional stability. Also, reactive diluents can be added to EPON
+Resin 828 to reduce viscosity. The effect on viscosity by adding such materials is shown in Figure 1.
+Table 1 / Curing Agents for EPON™ 828
+
+
+
+
+EPON Resin 828                                                                                                                                       Generated:         May 25, 2022
+http://www.westlakeepoxy.com/en-US/product/epon-resin-828                                                                                            Issue Date:
+                                                                                                                                                     Revision:          6/21/2021 4:00:00 AM
+
+® and ™ Licensed trademarks of Westlake Inc.
+The information provided herein was believed by Westlake Inc. (“Westlake ”) to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the
+responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures applicable to the safe handling and use of the product
+and to determine the suitability of the product for its intended use. All products supplied by Westlake Epoxy are subject to Westlake Epoxy’s terms and conditions of sale. WESTLAKE MAKES
+NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF
+ANY INFORMATION PROVIDED BY WESTLAKE, except that the product shall conform to Westlake's specifications. Nothing contained herein constitutes an offer for the sale of any product.
+
+                                                                                                                                                                                   Page 2 of 7
+                                                            Recommended                       Typical Cure Schedule                    Deflection
+                                                            Concentration                              Time                           Temperature
+
+      Curing Agent1             Physical State                 Range, phr2                              °C (°F)                          3 °C (°F)
+                                                                                                                                                              Applications 4 Suppliers 5
+
+
+Aliphatic Amines
+
+
+EPIKURE™ 3223                        Liquid                          12                              7d, 25(77)                         120(250)                 ABCDEFHI              1
+(DETA)
+
+
+EPIKURE 3234 (TETA)                  Liquid                          13                              7d, 25(77)                         120(250)                 ABCDEFHI              1
+
+
+                                                                                                   24h, 25(77) &
+EPIKURE 3200 (AEP)                   Liquid                          22                                                                 120(250)                   BCEFGH              1
+                                                                                                    1h, 150(300)
+
+
+EPIKURE 3270                         Liquid                          75                              14d, 25(77)                         56(133)                 ABCDEFHI              1
+
+
+EPIKURE 3271                         Liquid                          18                              14d, 25(77)                         66(151)                 ABCDEFHI              1
+
+
+EPIKURE 3274                         Liquid                          40                              14d, 25(77)                            ---                  ABCDEFHI              1
+
+
+EPIKURE 3230                         Liquid                          35                              7d, 25(77)                          68(155)                 ABCDEFHI              1
+
+
+D-400 Type PEA                       Liquid                          55                          30 min, 115(240)                         31(88)                   ABCEFH              4
+
+
+Cycloaliphatic Amines
+
+
+EPIKURE 3370                                                         Liquid          38                 7d, 25(77)                       56(133)                    ABCDEFHI                1
+
+
+EPIKURE 3382                                                         Liquid          63                 7d, 25(77)                       63(145)                    ABCDEFHI                1
+
+
+                                                                                                      24h, 25(77) &
+EPIKURE 3383                                                         Liquid          60                                                  54(129)                    ABCDEFHI                1
+                                                                                                      2h, 100(212)
+
+
+Polyamides
+
+
+EPIKURE 3115                                           Liquid              120                   1h, 100(212)                           85(185)                          AB                1
+
+
+EPIKURE 3125                                           Liquid              90                     7d, 25(77)                            90(195)                      ABCEFH                1
+
+
+EPIKURE 3140                                           Liquid              75                     7d, 25(77)                           115(240)                      ABCEFH                1
+
+
+
+
+EPON Resin 828                                                                                                                                       Generated:         May 25, 2022
+http://www.westlakeepoxy.com/en-US/product/epon-resin-828                                                                                            Issue Date:
+                                                                                                                                                     Revision:          6/21/2021 4:00:00 AM
+
+® and ™ Licensed trademarks of Westlake Inc.
+The information provided herein was believed by Westlake Inc. (“Westlake ”) to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the
+responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures applicable to the safe handling and use of the product
+and to determine the suitability of the product for its intended use. All products supplied by Westlake Epoxy are subject to Westlake Epoxy’s terms and conditions of sale. WESTLAKE MAKES
+NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF
+ANY INFORMATION PROVIDED BY WESTLAKE, except that the product shall conform to Westlake's specifications. Nothing contained herein constitutes an offer for the sale of any product.
+
+                                                                                                                                                                                   Page 3 of 7
+Amindoamines
+
+
+                                                                                            16h, 25(77) &
+EPIKURE 3015                                           Liquid            50                                                            ---                         ABCDEFHI                 1
+                                                                                              2h, 93(200)
+
+
+                                                                                            16h, 25(77) &
+EPIKURE 3055                                           Liquid            50                                                        67(153)                         ABCDEFHI                     1
+                                                                                              2h, 93(200)
+
+
+EPIKURE 3072                                           Liquid            35                   14d, 25(77)                          59(138)                         ABCDEFHI                     1
+
+
+EPIKURE W                                                                       Liquid                                                                                                  5
+
+
+                                                                                                            2h, 80(175) &
+Metaphenylenediamine (MPDA)                                                     Solid        14                                              150(300)              BCDGHI               3
+                                                                                                            2h, 150(300)
+
+
+                                                                                                            2h, 80(175) &
+Methylene dianiline (MDA)                                                       Solid        27                                              160(320)              BCDEGHI             11
+                                                                                                            2h, 150(300)
+
+
+                                                                                                            5h, 125(257) &
+Diaminodiphenyl Sulfone (DADS)                                                  Solid        25                                              170(350)              BCDGHI             2, 11
+                                                                                                            1h, 200(392)
+
+Table 1 / Curing Agents for EPON™ 828, cont.
+
+
+                                         RecommendedConcentration                  Typical Cure Schedule Time Deflection Temperature
+                                                     Range, phr2                                  °C (°F)                            3 °C (°F)
+Curing Agent1 PhysicalState                                                                                                                                 Applications 4 Suppliers 5
+
+
+                                   Anhydrides
+
+
+                                                                                                               2h, 120(250) &
+Methyl tetrahydrophthalic Anhydride (MTHPA)                                              Liquid     80                                        130(266)        BCDGHI             8, 9, 10
+                                                                                                                2h, 150(300)
+
+
+NADIC Methyl                                                                                                   1h, 120(250) &
+                                                                                         Liquid     90                                        180(356)        BCDGHI             8, 9, 10
+Anhydride (NMA)                                                                                               2-24h, 260(500)
+
+
+                                                                                                               1h, 80(175) &
+Hexahydrophthalic Anhydride (HHPA)                                                       Solid      80                                        130(265)        BCDGHI           7, 8, 9,10
+                                                                                                                2h, 150(300)
+
+
+
+
+EPON Resin 828                                                                                                                                       Generated:         May 25, 2022
+http://www.westlakeepoxy.com/en-US/product/epon-resin-828                                                                                            Issue Date:
+                                                                                                                                                     Revision:          6/21/2021 4:00:00 AM
+
+® and ™ Licensed trademarks of Westlake Inc.
+The information provided herein was believed by Westlake Inc. (“Westlake ”) to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the
+responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures applicable to the safe handling and use of the product
+and to determine the suitability of the product for its intended use. All products supplied by Westlake Epoxy are subject to Westlake Epoxy’s terms and conditions of sale. WESTLAKE MAKES
+NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF
+ANY INFORMATION PROVIDED BY WESTLAKE, except that the product shall conform to Westlake's specifications. Nothing contained herein constitutes an offer for the sale of any product.
+
+                                                                                                                                                                                   Page 4 of 7
+                Catalysts and Miscellaneous
+
+
+                                                                                                                    4h, 50(122) &
+2-Ethyl- 4-Methyl Imidazole (EMI-24)                                        Metastable Liquid             3                                      170(340)           BCDGHI             11
+                                                                                                                     2h, 170(340)
+
+
+BF3-Monoethylamine                                                                                                 1h, 120(250) &
+                                                                                   Liquid                 3                                      170(340)           BCDGHI             12
+(BF3-MEA)                                                                                                            2h, 170(340)
+
+
+Diethylaminopropylamine 6                                                           Solid                 6       30 min, 115(240)               100(212)              ABC             5, 6
+
+
+Dicyandiamide                                                                       Solid                 4          1h, 177(350)                150(300)           BCDGHI          11, 13
+
+1 Cures can be effected with these curing agents over a wide range of temperatures. Higher temperatures yield shorter cure times and highest
+                                                                                                                                          Tg.
+2 Parts of curing agent per 100 parts of resin.
+
+3 Systems cured at room temperature were post cured at elevated temperature to achieve deflection values.
+
+4 Application codes: A - Coatings; B - Adhesives; C - Castings; D - Moldings; E - Flooring; F - Paving; G - Electrical Laminates; H - Structural
+Laminates; I-Filament Winding.
+5 Supplier Code:
+
+
+   1. Hexion
+   2. RSA Corporation
+   3. DuPont
+   4. Huntsman
+   5. BASF COrporation
+   6. Eastman
+   7. Milliken & Company
+   8. Lindau Chemicals, Inc.
+   9. Broadview Technologies Inc.
+  10. Dixie Chemical
+  11. Evonik
+  12. Leepoxy
+  13. AlzChem
+6 Dimethylamino propylamine may be substituted at expense of slightly reduced pot life. Sources are 2 and 16.
+
+Figure 1 / Viscosity at 25 °C of EPON™ Resin 828 blends with various diluents
+
+
+
+
+EPON Resin 828                                                                                                                                       Generated:         May 25, 2022
+http://www.westlakeepoxy.com/en-US/product/epon-resin-828                                                                                            Issue Date:
+                                                                                                                                                     Revision:          6/21/2021 4:00:00 AM
+
+® and ™ Licensed trademarks of Westlake Inc.
+The information provided herein was believed by Westlake Inc. (“Westlake ”) to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the
+responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures applicable to the safe handling and use of the product
+and to determine the suitability of the product for its intended use. All products supplied by Westlake Epoxy are subject to Westlake Epoxy’s terms and conditions of sale. WESTLAKE MAKES
+NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF
+ANY INFORMATION PROVIDED BY WESTLAKE, except that the product shall conform to Westlake's specifications. Nothing contained herein constitutes an offer for the sale of any product.
+
+                                                                                                                                                                                   Page 5 of 7
+Fusion Technology
+EPON Resin 828 is the product of choice for a resin chemist using a specific fusion catalyst when processing proprietary solid epoxy resins or
+epoxy esters. Upon request, Westlake Epoxy can provide EPON Resin 828 exhibiting extremely low hydrolyzable and total chlorine, two end groups
+that may be deleterious to resin curing and long term performance in electrical uses.
+
+
+FDA Status
+Provisions are made in the FDA regulations for the use of EPON Resin 828, when properly formulated, applied and cured, for food contact
+applications under Title 21 Code of Federal Regulations 175.300. The regulations should be consulted for complete details. In particular, we
+direct your attention to subparagraph (b) of 21 CFR 174.5 and the general provisions applicable to indirect food additives listed there.
+
+
+Identification and Classification
+Chemical Abstract Service Registry Number: 25068-38-6 (EPA/TSCA inventory designation)
+Generic name: Liquid Bisphenol A Epichlorohydrin based epoxy resin.
+Chemical designation: Phenol, 4,4O - (1-methylethylidene) bis-polymer with (chloromethyl) oxirane.
+Figure 2 / Viscosity - temperature profile for EPON™ Resin 828
+
+
+
+
+Figure 3 / Specific gravity - temperature profile for EPON™ Resin 828
+
+
+
+
+Formulation and Application Information
+For additional performance characteristics information covering adhesives, laminating, casting and molding applications, consult bulletin SC:67,
+entitled "EPON Resin Structural Reference Manual." For epoxy resin amine-cured coatings, consult bulletin SC:193, entitled "Formulating Amine-
+Cured Coatings with EPON Resin."
+Figure 4 / Viscosity - temperature profile (for 5 samples of EPON™ Resin 828 ranging in viscosity from 110-150 poise)
+
+
+
+
+EPON Resin 828                                                                                                                                       Generated:         May 25, 2022
+http://www.westlakeepoxy.com/en-US/product/epon-resin-828                                                                                            Issue Date:
+                                                                                                                                                     Revision:          6/21/2021 4:00:00 AM
+
+® and ™ Licensed trademarks of Westlake Inc.
+The information provided herein was believed by Westlake Inc. (“Westlake ”) to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the
+responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures applicable to the safe handling and use of the product
+and to determine the suitability of the product for its intended use. All products supplied by Westlake Epoxy are subject to Westlake Epoxy’s terms and conditions of sale. WESTLAKE MAKES
+NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF
+ANY INFORMATION PROVIDED BY WESTLAKE, except that the product shall conform to Westlake's specifications. Nothing contained herein constitutes an offer for the sale of any product.
+
+                                                                                                                                                                                   Page 6 of 7
+Safety, Storage & Handling
+Please refer to the MSDS for the most current Safety and Handling information.
+Please refer to the Westlake Epoxy web site for Shelf Life and recommended Storage information.
+EPON Resin 828 is an undiluted liquid epoxy resin that is available in tank cars, tank trucks and 500 pound net closed head drums. EPON Resin
+828 is normally shipped in bulk from 150 °F (66 °C) to 180 °F (82 °C) and can be stored at 120-140 °F (49-60 °C) for ease of handling. The
+viscosity/temperature profile and the specific gravity/temperature profile for EPON Resin 828 are displayed in Figures 2 and 3 respectively for your
+guidance.
+NOTE OF CAUTION: When checking viscosity of EPON Resin 828 incoming samples, we caution you to make certain that the product is maintained
+at 25 +/- 0.01 °C before testing. You will note in Figure 4 that EPON Resin 828 can vary in viscosity by 10-15 poise for each degree in temperature
+the product varies from 25 °C.
+Exposure to these materials should be minimized and avoided, if feasible, through the observance of proper precautions, use of appropriate
+engineering controls and proper personal protective clothing and equipment, and adherence to proper handling procedures. None of these
+materials should be used, stored, or transported until the handling precautions and recommendations as stated in the Material Safety Data Sheet
+(MSDS) for these and all other products being used are understood by all persons who will work with them. Questions and requests for
+information on Westlake Epoxy. ("Westlake Epoxy") products should be directed to your Westlake Epoxy sales representative, or the nearest
+Westlake Epoxy sales office. Information and MSDSs on non-Westlake Epoxy products should be obtained from the respective manufacturer.
+
+Packaging
+Available in bulk and drum quantities.
+
+
+Contact Information
+For product prices, availability, or order placement, please contact customer service:
+www.westlakeepoxy.com/contact-us
+For literature and technical assistance, visit our website at:www.westlakeepoxy.com
+
+
+
+
+EPON Resin 828                                                                                                                                       Generated:         May 25, 2022
+http://www.westlakeepoxy.com/en-US/product/epon-resin-828                                                                                            Issue Date:
+                                                                                                                                                     Revision:          6/21/2021 4:00:00 AM
+
+® and ™ Licensed trademarks of Westlake Inc.
+The information provided herein was believed by Westlake Inc. (“Westlake ”) to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the
+responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures applicable to the safe handling and use of the product
+and to determine the suitability of the product for its intended use. All products supplied by Westlake Epoxy are subject to Westlake Epoxy’s terms and conditions of sale. WESTLAKE MAKES
+NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF
+ANY INFORMATION PROVIDED BY WESTLAKE, except that the product shall conform to Westlake's specifications. Nothing contained herein constitutes an offer for the sale of any product.
+
+                                                                                                                                                                                   Page 7 of 7
+

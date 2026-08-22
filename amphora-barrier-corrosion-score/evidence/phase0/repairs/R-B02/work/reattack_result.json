@@ -1,0 +1,18 @@
+{
+  "cargo_rerun_result": "test result: ok. 6 passed; 0 failed",
+  "expected_barrier_index_reference_input": 5.445956747872523,
+  "lib_rs_sha256_after": "4773b6cb7012c3b85a5cf2d319d5e99ae4b8b2a41d2c0540f6a751bb0a6955fc",
+  "lib_rs_sha256_before": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27",
+  "payload_canonical_sha256": "b497418c435e9e96cef77ec896c080e41dc3f3be73aa9ee26bce3895604b4f48",
+  "structural_scan": {
+    "abstain_still_pins_none": true,
+    "helper_fn_present": true,
+    "metrics_barrier_index_emits_prediction_value": true,
+    "metrics_hardcoded_null_removed": true,
+    "n_barrier_index_none_literal_sites": 1,
+    "predict_assigns_from_helper": true,
+    "some_returning_construction_present": true
+  },
+  "two_replay_sha256_gate": "PASS",
+  "w1_receipt_sha256_before_and_after": "87748769549f7d1c93f184ca790ba3d4b2c9060c22b755d45542a415d39f11dd"
+}

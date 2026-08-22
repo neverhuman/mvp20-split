@@ -1,0 +1,403 @@
+{
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "claim_under_attack": {
+    "asserted": "The flagship, never-before-ledger-attacked portfolio-integration KPI (populated 2026-07-23, crown-jewel demo integrating 5 ML property predictors with per-predictor Tanimoto-NN applicability-domain gating over 5 canonical DGEBA epoxy-amine hardener candidates). Its claim_locks assert ad_gates_prevent_out_of_domain_high_confidence_scores=true. Its scored honest_out_of_domain_documentation metric (observed=1.0, passed=true) states: '3/5 candidates have 0/5 AD gates passed -- HONESTLY documented as OUT-OF-DOMAIN... Candidates gated out: IPDA, TETA, DETA.' m-XDA is NOT in that list -- it is published with 3/5 AD gates passed (density=dielectric=refractive_index_nn_tanimoto=0.30 exactly, at the >=0.30 admissibility threshold), giving it a non-zero composite_score (0.0377, ranked #2 of 5) computed with a partial ad_reliability_multiplier=0.1317 rather than being zeroed out as out-of-domain.",
+    "metric": "honest_out_of_domain_documentation / n_candidates_with_zero_ad_gates_passed",
+    "receipt": "amphora-molecule-role-ranker/evidence/phase0/kpis/portfolio-integrated-candidate-decision-card-v2-5-canonical-epoxy-amines-kpi.v1.json",
+    "receipt_sha256_at_attack_time": "50d0b54833ebe08a3e0eea0cb7cc8436edb6e3884f211618e156e455f1a444c7"
+  },
+  "corpus_and_fingerprint_detail": {
+    "candidate_representation": "raw candidate hardener monomer SMILES exactly as published in the KPI's own fitted_or_physical_model_artifact.candidate_cards[].smiles field",
+    "corpus_construction": "per-predictor REAL training corpus = property-specific non-null-value subset of the SHA-pinned openpoly_properties / radonpy_pi1070 normalized data (feedback/v2/normalized/*.jsonl.gz), matching each predictor's actual training-receipt-declared source (openpoly-only for Tg/contact-angle, radonpy-only for density, openpoly UNION radonpy non-null-per-property for dielectric/refractive-index)",
+    "fingerprint": "RDKit Morgan/ECFP radius=2 nBits=2048 (RDKit default folded bit-vector; Rogers & Hahn 2010, matching the KPI's own cited theory reference)",
+    "similarity": "Tanimoto (RDKit DataStructs.TanimotoSimilarity)"
+  },
+  "corpus_sizes": {
+    "contact_angle": 105,
+    "density": 1077,
+    "dielectric": 1369,
+    "refractive_index": 1164,
+    "tg": 373
+  },
+  "corpus_source_files": {
+    "openpoly_csv_sha256_cited_by_kpi": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "openpoly_normalized_jsonl_gz": "feedback/v2/normalized/openpoly_properties.jsonl.gz",
+    "openpoly_normalized_sha256": "cbda8b22adccfaa760b9ab8a31c4ed024cafe42326954c408b1d5383d93c8436",
+    "radonpy_csv_sha256_cited_by_kpi": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4",
+    "radonpy_normalized_jsonl_gz": "feedback/v2/normalized/radonpy_pi1070.jsonl.gz",
+    "radonpy_normalized_sha256": "14bcdf900b9c91e6ca4dab2f7c8dcde49cb8831accc8369e57cee43307b41c38"
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (this is an AUDIT_ONLY science-validation reattack, not a Phase-0 evaluation/review signature).",
+    "Root cause of the m-XDA 0.30-vs-0.28125 discrepancy (implementation bug vs deliberate rounding vs stale cache -- unestablished).",
+    "The IPDA raw-value reproducibility gap (does not change any gate PASS/FAIL outcome or ranking, so left open as a lower-priority residual).",
+    "Any change to the KPI receipt itself, the master manifest, or the underlying ML predictor models (66 receipts/11 modules unchanged; this receipt documents the defect in place per supersede-never-rewrite discipline)."
+  ],
+  "fire_id": "20260816T040001-2356391-b397f633eebe",
+  "fire_sequence": "ROTATION fire, empty campaign item. Read the module's full falsification-ledger history (13 prior fires against role-classification-kpi.v1.json and its benchmarks) and confirmed via grep that this second, more recently populated flagship KPI -- portfolio-integrated-candidate-decision-card-v2-5-canonical-epoxy-amines-kpi.v1.json -- has never appeared in logs/falsification-ledger.jsonl under any module. No generating script for this receipt exists anywhere in the repo (grep for its distinctive field names across all modules found zero .py hits outside the KPI/reference-receipt JSON themselves) -- it is an orphaned, previously-unauditable flagship claim, the strongest standing untested claim in the module.",
+  "flips_scientific_readiness": false,
+  "gates_summary": {
+    "attack_capable_of_falsifying": true,
+    "corpus_sha256_matches_kpi_cited_source": true,
+    "fixture_untouched": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "two_replay_byte_stable_this_receipt": true
+  },
+  "headline_result": {
+    "gate_flip_detail": [
+      {
+        "candidate": "m-XDA",
+        "predictor": "density",
+        "published_gate_pass": true,
+        "published_value": 0.3,
+        "recomputed_gate_pass": false,
+        "recomputed_nn_corpus_member": "*C(C*)Cc1cc(ccc1)C",
+        "recomputed_value": 0.28125
+      },
+      {
+        "candidate": "m-XDA",
+        "predictor": "dielectric",
+        "published_gate_pass": true,
+        "published_value": 0.3,
+        "recomputed_gate_pass": false,
+        "recomputed_nn_corpus_member": "*C(C*)Cc1cc(ccc1)C",
+        "recomputed_value": 0.28125
+      },
+      {
+        "candidate": "m-XDA",
+        "predictor": "refractive_index",
+        "published_gate_pass": true,
+        "published_value": 0.3,
+        "recomputed_gate_pass": false,
+        "recomputed_nn_corpus_member": "*C(C*)Cc1cc(ccc1)C",
+        "recomputed_value": 0.28125
+      }
+    ],
+    "n_candidates_with_zero_ad_gates_passed_published": 3,
+    "n_candidates_with_zero_ad_gates_passed_recomputed": 4,
+    "n_exact_matches": 17,
+    "n_gate_outcome_flips_at_0_30_threshold": 3,
+    "n_mismatches": 8,
+    "n_total_metrics_checked": 25,
+    "published_honest_out_of_domain_documentation_metric": {
+      "authority": "REAL_ARITHMETIC",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "honest_out_of_domain_documentation",
+      "note": "3/5 candidates have 0/5 AD gates passed \u2014 HONESTLY documented as OUT-OF-DOMAIN. This is red-team-defensible portfolio behavior: refuses to grant high-confidence scores to candidates outside training distributions. Candidates gated out: IPDA, TETA, DETA.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 5
+    },
+    "top_ranked_candidate": "DDS",
+    "top_ranked_candidate_still_passes_all_5_gates_under_reattack": true,
+    "zero_gate_candidates_published": [
+      "DETA",
+      "IPDA",
+      "TETA"
+    ],
+    "zero_gate_candidates_recomputed": [
+      "DETA",
+      "IPDA",
+      "TETA",
+      "m-XDA"
+    ]
+  },
+  "human_review_performed": false,
+  "method": "Rebuilt each of the 5 predictors' REAL training corpora as property-specific non-null-value subsets of the two SHA-pinned source datasets the KPI itself cites (openpoly_csv_sha256=8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3, radonpy_csv_sha256=4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4), read from feedback/v2/normalized/{openpoly_properties,radonpy_pi1070}.jsonl.gz (the portfolio's own canonicalized copies of those exact files): Tg and water-contact-angle corpora = openpoly rows with a non-null value for that property (373 and 105 unique PSMILES respectively, matching each predictor's actual dataset_fixture_path-cited training receipt); density corpus = radonpy rows with non-null density (1077 unique SMILES); dielectric and refractive-index corpora = openpoly UNION radonpy non-null-per-property subsets, matching the 'mixed openpoly+RadonPy' methodology both predictors' own receipts declare (Push #34, #35). Computed standard ECFP4 fingerprints (RDKit GetMorganFingerprintAsBitVect, radius=2, nBits=2048 -- the RDKit default, matching the KPI's own cited Rogers & Hahn 2010 ECFP/Morgan theory reference) for every corpus member and for each of the 5 candidate hardener SMILES exactly as published in the KPI's own candidate_cards[].smiles field, then computed Tanimoto nearest-neighbor similarity per candidate per predictor-corpus and compared against the published applicability_domain values. Swept 12 alternative radius/nBits configurations (radius in {1,2,3}, nBits in {512,1024,2048,4096}) plus an unfolded/sparse (collision-free) ECFP variant before settling on this configuration -- it uniquely reproduces DDS, TETA, and DETA's applicability-domain values EXACTLY (15/15 individual metrics, byte-identical to the published floats) across all three candidates, independently validating that this is genuinely the underlying methodology and not a coincidental fit.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-role-ranker",
+  "objective": "Independently reproduce the KPI's per-predictor applicability-domain Tanimoto-NN gate values from the exact corpora and fingerprint methodology it cites, and test whether the reproduced values change any candidate's gate PASS/FAIL outcome at the KPI's own published >=0.30 threshold -- which would falsify the honest_out_of_domain_documentation claim and the m-XDA composite-score ranking that depends on it.",
+  "organizational_independence_asserted": false,
+  "per_candidate_results": {
+    "DDS": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        },
+        "density": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        },
+        "dielectric": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        },
+        "refractive_index": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        },
+        "tg": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        }
+      },
+      "n_ad_gates_passed_flipped": false,
+      "n_ad_gates_passed_published": 5,
+      "n_ad_gates_passed_recomputed": 5,
+      "smiles": "NC1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)N"
+    },
+    "DETA": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.16666666666666666,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.16666666666666666,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "density": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.14285714285714285,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.14285714285714285,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "dielectric": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.2222222222222222,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.2222222222222222,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "refractive_index": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.16666666666666666,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.16666666666666666,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "tg": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.16666666666666666,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.16666666666666666,
+          "recomputed_gate_pass_at_0_30": false
+        }
+      },
+      "n_ad_gates_passed_flipped": false,
+      "n_ad_gates_passed_published": 0,
+      "n_ad_gates_passed_recomputed": 0,
+      "smiles": "NCCNCCN"
+    },
+    "IPDA": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.13333333333333333,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.08571428571428572,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "density": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.28125,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.2,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "dielectric": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.28125,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.2,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "refractive_index": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.28125,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.2,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "tg": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.16666666666666666,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.14583333333333334,
+          "recomputed_gate_pass_at_0_30": false
+        }
+      },
+      "n_ad_gates_passed_flipped": false,
+      "n_ad_gates_passed_published": 0,
+      "n_ad_gates_passed_recomputed": 0,
+      "smiles": "CC1(CC(CC(C1)N)C)CN"
+    },
+    "TETA": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.15789473684210525,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.15789473684210525,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "density": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.13793103448275862,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.13793103448275862,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "dielectric": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.21052631578947367,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.21052631578947367,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "refractive_index": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.15789473684210525,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.15789473684210525,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "tg": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.15789473684210525,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.15789473684210525,
+          "recomputed_gate_pass_at_0_30": false
+        }
+      },
+      "n_ad_gates_passed_flipped": false,
+      "n_ad_gates_passed_published": 0,
+      "n_ad_gates_passed_recomputed": 0,
+      "smiles": "NCCNCCNCCN"
+    },
+    "m-XDA": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.17857142857142858,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.17857142857142858,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "density": {
+          "exact_match": false,
+          "gate_outcome_flipped": true,
+          "published": 0.3,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.28125,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "dielectric": {
+          "exact_match": false,
+          "gate_outcome_flipped": true,
+          "published": 0.3,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.28125,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "refractive_index": {
+          "exact_match": false,
+          "gate_outcome_flipped": true,
+          "published": 0.3,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.28125,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "tg": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.23809523809523808,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.23809523809523808,
+          "recomputed_gate_pass_at_0_30": false
+        }
+      },
+      "n_ad_gates_passed_flipped": true,
+      "n_ad_gates_passed_published": 3,
+      "n_ad_gates_passed_recomputed": 0,
+      "smiles": "NCC1=CC=CC(=C1)CN"
+    }
+  },
+  "pre_registered_refute_criterion": "Attack fires (REFUTED) iff independent re-derivation of the per-predictor Tanimoto-NN applicability-domain gate values, using the KPI's own cited corpora (openpoly_csv_sha256/radonpy_csv_sha256) and cited fingerprint reference (Rogers & Hahn 2010 ECFP, RDKit default Morgan radius=2/nBits=2048), changes the gate PASS/FAIL outcome (at the KPI's own published >=0.30 threshold) for at least one candidate, thereby changing n_candidates_with_zero_ad_gates_passed or the named honest_out_of_domain_documentation candidate list.",
+  "primary_sources": [
+    "Rogers, D. & Hahn, M. (2010), 'Extended-Connectivity Fingerprints', J. Chem. Inf. Model. 50(5):742-754 -- the ECFP/Morgan fingerprint methodology the attacked KPI itself cites in its theory list for applicability-domain computation.",
+    "OECD (2007) QSAR Validation Principle 3 (applicability domain) -- also cited by the attacked KPI."
+  ],
+  "promotes_authority": false,
+  "receipt_id": "portfolio-decision-card-ad-gate-reproducibility-a0ede137bea9ba013264332e55007206",
+  "recommended_followups": [
+    "File a repair item (R-<id>) to recompute the decision-card KPI's applicability-domain gates with a documented, versioned fingerprint specification (radius, nBits, corpus-construction rule) and re-issue a v2 KPI with m-XDA correctly gated at 0/5, plus a superseding entry in RETRACTION-INDEX.md.",
+    "Commit the (currently entirely absent) generating script for this KPI to the repo so the decision card is independently reproducible end-to-end, not just its AD-gating layer.",
+    "Resolve the residual IPDA value-level reproducibility gap to rule out a second, currently-invisible defect that happens not to flip a gate outcome."
+  ],
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "a0ede137bea9ba013264332e550072062543b5b51af5fe807f0ff1dd4e599a8d",
+    "command": "python3 amphora-molecule-role-ranker/evidence/audit/portfolio-decision-card-ad-gate-reproducibility-v1/run_ad_gate_reattack.py",
+    "determinism_basis": "no RNG, no wall-clock; corpus construction is a pure deterministic pass over the SHA-pinned gzipped normalized JSONL files with sorted() SMILES sets; two independent process invocations produced byte-identical stdout (sha256 a0ede137bea9ba013264332e550072062543b5b51af5fe807f0ff1dd4e599a8d both).",
+    "independent_runs": true,
+    "replays": 2,
+    "runB_diagnostic_sha256": "a0ede137bea9ba013264332e550072062543b5b51af5fe807f0ff1dd4e599a8d",
+    "run_script_path": "amphora-molecule-role-ranker/evidence/audit/portfolio-decision-card-ad-gate-reproducibility-v1/run_ad_gate_reattack.py",
+    "run_script_sha256": "3acd8ae30678f52b911c407a02043a1668440a3c27fb238aa9cfd075ac545a3d",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new external data source opened or acquired this fire. Both corpora (openpoly_properties, radonpy_pi1070) were already rights-cleared and normalized into feedback/v2/normalized/ by prior fires across the portfolio; this fire only read the existing normalized JSONL and computed structural fingerprints via the already-licensed RDKit toolkit.",
+  "run_type": "SCIENCE_VALIDATION_REATTACK",
+  "schema": "amphora.molecule-role-ranker.portfolio-decision-card-ad-gate-reproducibility-audit-receipt.v1",
+  "scope_note": "Does not question the DDS top-ranked finding or its 5/5 gate-pass status, which reproduces exactly. Does not fully resolve IPDA's residual value-level discrepancies (IPDA's raw AD values do not reproduce exactly under this methodology either, but its gate PASS/FAIL outcome is unaffected -- published and recomputed both give 0/5 gates passed for IPDA, so no ranking or out-of-domain-documentation claim depends on the exact IPDA numbers). Does not re-derive the underlying ML predictions (Tg_C_ml_prediction, density, dielectric, RI, contact-angle values themselves) -- only the applicability-domain gating layer. Does not assert the m-XDA discrepancy is deliberate fabrication versus an implementation bug (e.g. an off-by-one in a >= vs > boundary check, or a stale cached value); root cause is unestablished, only the observable inconsistency with the KPI's own stated, cited methodology.",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY falsification receipt under evidence/audit/"
+  },
+  "verdict": "CLAIM_REFUTED",
+  "why": "17/25 (68%) of the published per-candidate per-predictor AD Tanimoto-NN values reproduce EXACTLY under a methodology independently chosen to match the KPI's own cited corpora and cited fingerprint reference -- including a clean 15/15 sweep (100%) for DDS, TETA, and DETA across all 5 predictors each, which rules out corpus-selection or fingerprint-parameter mismatch as the general explanation and validates the reattack methodology as the real underlying computation. Against that validated methodology, m-XDA's density, dielectric, and refractive-index AD gates recompute to 0.28125 (a clean 9/32, structurally consistent with every other genuinely-computed Tanimoto ratio in this dataset), not the published 0.30 -- a suspiciously round value that is the ONLY one of 25 published AD numbers that is not an ugly small-integer fraction of a real bitset intersection/union. 0.28125 falls BELOW the KPI's own published >=0.30 admissibility threshold on all three gates. That flips m-XDA from 3/5 AD gates passed to 0/5: n_candidates_with_zero_ad_gates_passed should read 4 (adding m-XDA to IPDA/TETA/DETA), not the published 3, and the honest_out_of_domain_documentation metric's named candidate list is incomplete. Under the KPI's own composite-scoring formula (composite = ... x ad_reliability_multiplier, where ad_reliability_multiplier is the MEAN of the 5 per-predictor AD values), an honestly-gated m-XDA should have zero density/dielectric/refractive_index contribution to its domain-reliability score rather than the 0.30 credit it currently receives -- meaning m-XDA's published #2-ranked composite_score of 0.0377 was computed on an inflated domain-reliability input. The top-ranked candidate (DDS, the KPI's headline finding) is UNAFFECTED: its 5/5 gate-pass outcome and composite_score reproduce exactly under the same independently-validated methodology."
+}

@@ -1,0 +1,13 @@
+warning: unused import: `FormulationUniverseAccountingV1`
+  --> amphora-formulation-capabilities/tests/formulation_universe_redteam_t06_independent.rs:17:36
+   |
+17 |     validate_formulation_universe, FormulationUniverseAccountingV1,
+   |                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `amphora-formulation-capabilities` (test "formulation_universe_redteam_t06_independent") generated 1 warning (run `cargo fix --test "formulation_universe_redteam_t06_independent" -p amphora-formulation-capabilities` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.13s
+     Running tests/formulation_universe_redteam_t06_independent.rs (/home/ubuntu/amphora/build/mvp20-split/target/debug/deps/formulation_universe_redteam_t06_independent-7de3637f88c7bdc4)
+T06_ATTACK2_BRANCH=ACCEPTED cardinality=Some(2) total=Some(2)
+T06_FINDING index=1 tuple_under_A=("IPDA", "DGEBF") tuple_under_B=("TETA", "DGEBF") receipt_bytes_equal=true

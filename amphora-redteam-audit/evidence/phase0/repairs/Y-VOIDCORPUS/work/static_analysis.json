@@ -1,0 +1,32 @@
+{
+  "conclusion": "redteam_diagnostic() takes no arguments, performs no I/O, and calls no external authorization or validation function. `rejected` is definitionally `mask != 0`, and by the function's own corpus-generation construction (singleton bits, pairwise bits, then ascending masks filtered to popcount>=3) every generated mask is provably non-zero, so `all_rejected` is true for any run regardless of external system state. `granted` is the single hardcoded literal `false`, never assigned from `mask`, `index`, or any other value, so `authority_granted_count` is definitionally 0 on every run. Both quantities that gate `passed` for this module's own diagnostic entry are therefore invariant constants, not measurements.",
+  "function_line_range_1indexed": [
+    724,
+    815
+  ],
+  "function_signature_line": "fn redteam_diagnostic() -> Result<DeterministicControlDiagnosticV1, String> {",
+  "granted_assignments_found": [
+    "false"
+  ],
+  "granted_is_single_hardcoded_constant_false": true,
+  "io_or_external_authorization_call_scan": {
+    ".get(\"": false,
+    "File::": false,
+    "amphora_core::": false,
+    "authorize_": false,
+    "include_bytes!": false,
+    "read_to": false,
+    "reqwest": false,
+    "std::fs": false,
+    "std::net": false,
+    "strict_json(": false
+  },
+  "no_io_or_external_calls_in_function_body": true,
+  "rejected_derivation_found": [
+    "mask != 0"
+  ],
+  "rejected_is_pure_mask_nonzero_check": true,
+  "source_file": "/home/ubuntu/amphora/build/mvp20-split/amphora-assurance-capabilities/src/diagnostics.rs",
+  "source_file_sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+  "zero_parameters": true
+}

@@ -1,0 +1,1 @@
+﻿Code, Dataset and HTE running details of the paper"High-Throughput and Explainable Machine Learning for Lacquer Formulations: Enhancing Coating Development by Interpretable Models"

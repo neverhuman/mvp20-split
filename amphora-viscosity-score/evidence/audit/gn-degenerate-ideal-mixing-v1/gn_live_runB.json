@@ -1,0 +1,25 @@
+{
+  "end_to_end_observation_pigment_volume_fraction": 0.0,
+  "end_to_end_observation_yield_stress_pa": 0.0,
+  "end_to_end_theory_apparent_viscosity_two_liquid_observation_pa_s": 2.000000001,
+  "finding": "gn_zero_interaction_result_pa_s is bit-identical (to floating point evaluation order) to ideal_mixing_independent_closed_form_pa_s, i.e. the exact live call site's hardcoded zero-interaction matrix makes grunberg_nissan_mix compute plain ideal log-linear mixing, not Grunberg-Nissan mixing. gn_nonzero_interaction_result_pa_s diverges materially (see zero_interaction_vs_nonzero_interaction_rel_diff), proving the omitted term is not negligible when the underlying function IS given real interaction data -- the function itself is not broken, only its sole live caller never supplies anything but zeros.",
+  "function_under_test": "grunberg_nissan_mix (src/lib.rs:1171-1206) and its sole call site inside theory_apparent_viscosity (src/lib.rs:1263-1301, call at line 1285), called live via the compiled crate -- not reimplemented",
+  "gn_nonzero_interaction_result_pa_s": 2.568050833375483,
+  "gn_zero_interaction_result_pa_s": 2.0,
+  "ideal_mixing_independent_closed_form_pa_s": 2.0,
+  "inputs": {
+    "fractions": [
+      0.5,
+      0.5
+    ],
+    "nonzero_g12_demo_magnitude": 1.0,
+    "viscosities_pa_s": [
+      1.0,
+      4.0
+    ]
+  },
+  "module_id": "amphora-viscosity-score",
+  "schema": "amphora.viscosity-score.gn-live-runtime-interaction-wiring-diagnostic.v1",
+  "zero_interaction_vs_independent_ideal_mixing_abs_diff": 0.0,
+  "zero_interaction_vs_nonzero_interaction_rel_diff": 0.2840254166877414
+}

@@ -1,0 +1,51 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-barrier-corrosion-score/evidence/phase0",
+  "imported_locks": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "83032250b2b614e908be15b8ed17144788d801436a8ff3ebd06bc05a63720b90",
+      "source_path": "config/program/eis-corrosion-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "d958e42128fd7efe3c1c5ce8fa968c0660a09c11b40e8e9e5039ed18adb3f73d",
+      "source_path": "config/program/eis-corrosion-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "9f6cff8696de522713c044bb7f5c640adcd995dec4b65779c0051bc99a21ae99",
+      "source_path": "config/benchmark-locks/amphora-barrier-corrosion-score.v1.json"
+    }
+  ],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-barrier-corrosion-score",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/eis/source-landscape.v1.json",
+      "observed_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423",
+      "rights_evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx",
+      "observed_sha256": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1",
+      "rights_evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+      "rights_status": "KNOWN"
+    }
+  ]
+}

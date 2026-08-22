@@ -1,0 +1,950 @@
+{
+  "all_known_answer_gates_passed": true,
+  "attacked_gap": {
+    "prior_refutation": "evidence/audit/sigma-estimator-attribution-parity-v1/ (2026-08-15, CLAIM_REFUTED)",
+    "source": "amphora-process-qc-twin/docs/mission.md, 'Known contradictions'",
+    "text": "The consolidated ARL-characterization KPI's estimated-parameter figures are labeled by sigma estimator (S/c4 vs MRbar/d2), but neither label matches the live runtime's actual estimator (plain uncorrected sample S); see the sigma estimator attribution parity audit above. The runtime's true operating ARL/false-alarm/recall degradation under raw S remains uncharacterized."
+  },
+  "authority": "AUDIT_ONLY",
+  "baseline_size_requirement": {
+    "criterion": "p95 (guaranteed) union false-alarm count <= 1.5",
+    "false_alarm_budget_per_30_batch": 1.5,
+    "m50_still_meets_budget_under_raw_S": true,
+    "m50_union_fa_p95_Sc4_prior_receipt_WRONG_ESTIMATOR": 1.10155,
+    "m50_union_fa_p95_raw_S": 1.13631,
+    "smallest_tabulated_m_meeting_criterion_Sc4_prior_receipt_WRONG_ESTIMATOR": 50,
+    "smallest_tabulated_m_meeting_criterion_raw_S": 50,
+    "tabulated_m": [
+      20,
+      25,
+      30,
+      50,
+      100,
+      300,
+      1000
+    ],
+    "union_fa_p95_by_m_raw_S": {
+      "100": 0.68974,
+      "1000": 0.28715,
+      "20": 2.80348,
+      "25": 2.19207,
+      "30": 1.81993,
+      "300": 0.39397,
+      "50": 1.13631
+    }
+  },
+  "claim_verdict": "SURVIVED",
+  "closes": [
+    "First guaranteed ARL0 / union false-alarm characterization under the sigma estimator the runtime actually implements (raw, uncorrected S), for all three live detectors simultaneously.",
+    "Closes mission.md's explicit 'Known contradictions' item flagging this gap after sigma-estimator-attribution-parity-v1's REFUTED finding.",
+    "Directly compares against the (mislabeled) S/c4 figures from estparam-memory-detector-arl-degradation-v1 to quantify the direction and size of the mislabeling's practical consequence."
+  ],
+  "detector_design": {
+    "cusum_h": 5.0,
+    "cusum_k": 0.5,
+    "ewma_L": 3.0,
+    "ewma_lambda": 0.2,
+    "note": "All three charts (Shewhart limits, EWMA control limit, CUSUM z-standardization) read the identical `sigma` value computed once per baseline -- verified live in the source (gate live_runtime_sigma_formula_parity).",
+    "shewhart_individuals_L": 3.0,
+    "sigma_estimator": "raw sample standard deviation, Bessel n-1, full baseline window, NO c4 correction -- verbatim amphora-formulation-capabilities/src/lib.rs::audit_process_qc lines ~111-120"
+  },
+  "does_not_close": [
+    "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+    "Assumes i.i.d. normal in-control data; autocorrelation and non-normality are not modeled (already separately characterized/REFUTED for the S/c4 estimator by ar1-estparam-drift-corpus-v1; that AR(1) x raw-S cross is still open).",
+    "The union false-alarm figure is a Bonferroni rate bound summing per-chart 30/ARL0; it does not model the strong positive dependence among the three charts (they read the same stream), so it is conservative by construction.",
+    "MRbar/d2 x raw-S is moot: the runtime never computes a moving range at all, so that cross does not apply here (it was only relevant to the now-superseded S/c4 and MRbar/d2 mislabeling).",
+    "No prospective time-ordered 30-batch pilot is checked in; this is a theory characterization, not a false-alarm measurement on real batches.",
+    "Out-of-control (ARL1) performance and the recall >=90% half of the KPI are not characterized here."
+  ],
+  "estimated_parameter_distribution_by_baseline_m": [
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.53174,
+        "arl0_mean": 844.652,
+        "arl0_median": 178.639,
+        "arl0_p05_guaranteed": 28.877,
+        "arl0_p25": 75.868
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.47852,
+        "arl0_mean": 933.215,
+        "arl0_median": 214.303,
+        "arl0_p05_guaranteed": 32.877,
+        "arl0_p25": 89.44
+      },
+      "m": 20,
+      "shewhart": {
+        "P_arl0_below_200": 0.43506,
+        "arl0_mean": 1245.751,
+        "arl0_median": 255.046,
+        "arl0_p05_guaranteed": 30.439,
+        "arl0_p25": 97.212
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.16162,
+        "mean": 0.80278,
+        "median": 0.44209,
+        "p95_guaranteed": 2.80348,
+        "p99": 4.65521
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.4917,
+        "arl0_mean": 684.011,
+        "arl0_median": 205.172,
+        "arl0_p05_guaranteed": 36.646,
+        "arl0_p25": 93.103
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.43311,
+        "arl0_mean": 771.6,
+        "arl0_median": 247.428,
+        "arl0_p05_guaranteed": 42.177,
+        "arl0_p25": 110.375
+      },
+      "m": 25,
+      "shewhart": {
+        "P_arl0_below_200": 0.40625,
+        "arl0_mean": 937.083,
+        "arl0_median": 275.213,
+        "arl0_p05_guaranteed": 38.861,
+        "arl0_p25": 113.686
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.11279,
+        "mean": 0.65847,
+        "median": 0.38867,
+        "p95_guaranteed": 2.19207,
+        "p99": 3.58043
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.45557,
+        "arl0_mean": 605.895,
+        "arl0_median": 227.87,
+        "arl0_p05_guaranteed": 44.112,
+        "arl0_p25": 108.319
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.39404,
+        "arl0_mean": 691.611,
+        "arl0_median": 272.298,
+        "arl0_p05_guaranteed": 51.325,
+        "arl0_p25": 129.126
+      },
+      "m": 30,
+      "shewhart": {
+        "P_arl0_below_200": 0.38281,
+        "arl0_mean": 783.357,
+        "arl0_median": 287.817,
+        "arl0_p05_guaranteed": 46.681,
+        "arl0_p25": 128.265
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.08008,
+        "mean": 0.56821,
+        "median": 0.35638,
+        "p95_guaranteed": 1.81993,
+        "p99": 2.91218
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.34668,
+        "arl0_mean": 501.374,
+        "arl0_median": 285.883,
+        "arl0_p05_guaranteed": 73.087,
+        "arl0_p25": 156.7
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.27539,
+        "arl0_mean": 583.618,
+        "arl0_median": 340.954,
+        "arl0_p05_guaranteed": 83.97,
+        "arl0_p25": 186.437
+      },
+      "m": 50,
+      "shewhart": {
+        "P_arl0_below_200": 0.31299,
+        "arl0_mean": 563.009,
+        "arl0_median": 315.892,
+        "arl0_p05_guaranteed": 72.621,
+        "arl0_p25": 168.606
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.02148,
+        "mean": 0.40295,
+        "median": 0.2917,
+        "p95_guaranteed": 1.13631,
+        "p99": 1.7145
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.19043,
+        "arl0_mean": 461.232,
+        "arl0_median": 352.578,
+        "arl0_p05_guaranteed": 127.352,
+        "arl0_p25": 227.073
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.11963,
+        "arl0_mean": 543.923,
+        "arl0_median": 420.904,
+        "arl0_p05_guaranteed": 149.98,
+        "arl0_p25": 272.308
+      },
+      "m": 100,
+      "shewhart": {
+        "P_arl0_below_200": 0.21045,
+        "arl0_mean": 451.232,
+        "arl0_median": 342.318,
+        "arl0_p05_guaranteed": 117.339,
+        "arl0_p25": 216.044
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.0,
+        "mean": 0.29371,
+        "median": 0.24593,
+        "p95_guaranteed": 0.68974,
+        "p99": 0.94753
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.02441,
+        "arl0_mean": 456.134,
+        "arl0_median": 418.953,
+        "arl0_p05_guaranteed": 226.35,
+        "arl0_p25": 324.375
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.00293,
+        "arl0_mean": 543.664,
+        "arl0_median": 501.555,
+        "arl0_p05_guaranteed": 275.137,
+        "arl0_p25": 389.887
+      },
+      "m": 300,
+      "shewhart": {
+        "P_arl0_below_200": 0.06494,
+        "arl0_mean": 394.521,
+        "arl0_median": 360.862,
+        "arl0_p05_guaranteed": 191.99,
+        "arl0_p25": 276.534
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.0,
+        "mean": 0.22883,
+        "median": 0.21526,
+        "p95_guaranteed": 0.39397,
+        "p99": 0.49168
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.0,
+        "arl0_mean": 461.344,
+        "arl0_median": 450.055,
+        "arl0_p05_guaranteed": 322.363,
+        "arl0_p25": 390.973
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.0,
+        "arl0_mean": 552.89,
+        "arl0_median": 539.981,
+        "arl0_p05_guaranteed": 389.65,
+        "arl0_p25": 470.535
+      },
+      "m": 1000,
+      "shewhart": {
+        "P_arl0_below_200": 0.0,
+        "arl0_mean": 377.368,
+        "arl0_median": 367.386,
+        "arl0_p05_guaranteed": 259.466,
+        "arl0_p25": 316.859
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.0,
+        "mean": 0.20779,
+        "median": 0.20394,
+        "p95_guaranteed": 0.28715,
+        "p99": 0.32846
+      }
+    }
+  ],
+  "gates": {
+    "cusum_markov_chain_vs_published": {
+      "max_rel_err_vs_published": 0.00363,
+      "passed": true,
+      "rows": [
+        {
+          "arl_markov_chain": 465.504,
+          "arl_published_montgomery_t9p4": 465.0,
+          "arl_siegmund_closed_form": 469.1112,
+          "rel_err_vs_published": 0.00108,
+          "rel_err_vs_siegmund": 0.00769,
+          "shift_sigma": 0.0
+        },
+        {
+          "arl_markov_chain": 139.5039,
+          "arl_published_montgomery_t9p4": 139.0,
+          "arl_siegmund_closed_form": 141.9262,
+          "rel_err_vs_published": 0.00363,
+          "rel_err_vs_siegmund": 0.01707,
+          "shift_sigma": 0.25
+        },
+        {
+          "arl_markov_chain": 37.9966,
+          "arl_published_montgomery_t9p4": 38.0,
+          "arl_siegmund_closed_form": 38.0196,
+          "rel_err_vs_published": 9e-05,
+          "rel_err_vs_siegmund": 0.0006,
+          "shift_sigma": 0.5
+        },
+        {
+          "arl_markov_chain": 17.0481,
+          "arl_published_montgomery_t9p4": 17.0,
+          "arl_siegmund_closed_form": 17.0306,
+          "rel_err_vs_published": 0.00283,
+          "rel_err_vs_siegmund": 0.00103,
+          "shift_sigma": 0.75
+        },
+        {
+          "arl_markov_chain": 10.3758,
+          "arl_published_montgomery_t9p4": 10.4,
+          "arl_siegmund_closed_form": 10.3362,
+          "rel_err_vs_published": 0.00233,
+          "rel_err_vs_siegmund": 0.00383,
+          "shift_sigma": 1.0
+        },
+        {
+          "arl_markov_chain": 5.7471,
+          "arl_published_montgomery_t9p4": 5.75,
+          "arl_siegmund_closed_form": 5.666,
+          "rel_err_vs_published": 0.0005,
+          "rel_err_vs_siegmund": 0.01432,
+          "shift_sigma": 1.5
+        },
+        {
+          "arl_markov_chain": 4.0088,
+          "arl_published_montgomery_t9p4": 4.01,
+          "arl_siegmund_closed_form": 3.8884,
+          "rel_err_vs_published": 0.00029,
+          "rel_err_vs_siegmund": 0.03096,
+          "shift_sigma": 2.0
+        }
+      ],
+      "source": "Brook & Evans 1972; Page 1954; Siegmund 1985; Montgomery 2020 Table 9.4",
+      "tol": 0.06
+    },
+    "direct_run_length_mc_method_agreement": {
+      "max_rel_err": 0.01175,
+      "passed": true,
+      "rows": [
+        {
+          "arl_direct_mc": 369.2092,
+          "arl_markov_or_closed_form": 370.3983,
+          "chart": "shewhart",
+          "delta": 0.0,
+          "rel_err": 0.00321,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 559.1386,
+          "arl_markov_or_closed_form": 559.5958,
+          "chart": "ewma",
+          "delta": 0.0,
+          "rel_err": 0.00082,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 464.0807,
+          "arl_markov_or_closed_form": 465.504,
+          "chart": "cusum",
+          "delta": 0.0,
+          "rel_err": 0.00306,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 60.9391,
+          "arl_markov_or_closed_form": 60.9939,
+          "chart": "shewhart",
+          "delta": 0.0,
+          "rel_err": 0.0009,
+          "s": 1.25
+        },
+        {
+          "arl_direct_mc": 110.3567,
+          "arl_markov_or_closed_form": 110.2077,
+          "chart": "ewma",
+          "delta": 0.0,
+          "rel_err": 0.00135,
+          "s": 1.25
+        },
+        {
+          "arl_direct_mc": 89.4234,
+          "arl_markov_or_closed_form": 88.9855,
+          "chart": "cusum",
+          "delta": 0.0,
+          "rel_err": 0.00492,
+          "s": 1.25
+        },
+        {
+          "arl_direct_mc": 154.075,
+          "arl_markov_or_closed_form": 155.2242,
+          "chart": "shewhart",
+          "delta": 0.5,
+          "rel_err": 0.0074,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 44.2974,
+          "arl_markov_or_closed_form": 44.1246,
+          "chart": "ewma",
+          "delta": 0.5,
+          "rel_err": 0.00392,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 38.1404,
+          "arl_markov_or_closed_form": 37.9966,
+          "chart": "cusum",
+          "delta": 0.5,
+          "rel_err": 0.00378,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 79.7545,
+          "arl_markov_or_closed_form": 80.7025,
+          "chart": "shewhart",
+          "delta": 0.35,
+          "rel_err": 0.01175,
+          "s": 1.15
+        },
+        {
+          "arl_direct_mc": 57.4651,
+          "arl_markov_or_closed_form": 57.2928,
+          "chart": "ewma",
+          "delta": 0.35,
+          "rel_err": 0.00301,
+          "s": 1.15
+        },
+        {
+          "arl_direct_mc": 51.4102,
+          "arl_markov_or_closed_form": 51.2703,
+          "chart": "cusum",
+          "delta": 0.35,
+          "rel_err": 0.00273,
+          "s": 1.15
+        },
+        {
+          "arl_direct_mc": 2381.9981,
+          "arl_markov_or_closed_form": 2401.0494,
+          "chart": "shewhart",
+          "delta": 0.0,
+          "rel_err": 0.00793,
+          "s": 0.85
+        },
+        {
+          "arl_direct_mc": 3192.8834,
+          "arl_markov_or_closed_form": 3195.0374,
+          "chart": "ewma",
+          "delta": 0.0,
+          "rel_err": 0.00067,
+          "s": 0.85
+        },
+        {
+          "arl_direct_mc": 2841.0037,
+          "arl_markov_or_closed_form": 2844.0251,
+          "chart": "cusum",
+          "delta": 0.0,
+          "rel_err": 0.00106,
+          "s": 0.85
+        }
+      ],
+      "tol": 0.02
+    },
+    "ewma_lambda_to_1_recovers_generalized_shewhart": {
+      "max_rel_err": 0.0,
+      "passed": true,
+      "rows": [
+        {
+          "delta": 0.0,
+          "ewma_lambda1": 370.3983,
+          "rel_err": 0.0,
+          "s": 1.0,
+          "shewhart_exact": 370.3983
+        },
+        {
+          "delta": 0.0,
+          "ewma_lambda1": 60.9939,
+          "rel_err": 0.0,
+          "s": 1.25,
+          "shewhart_exact": 60.9939
+        },
+        {
+          "delta": 0.0,
+          "ewma_lambda1": 5655.0029,
+          "rel_err": 0.0,
+          "s": 0.8,
+          "shewhart_exact": 5655.0029
+        },
+        {
+          "delta": 0.5,
+          "ewma_lambda1": 155.2242,
+          "rel_err": 0.0,
+          "s": 1.0,
+          "shewhart_exact": 155.2242
+        },
+        {
+          "delta": 0.5,
+          "ewma_lambda1": 49.0692,
+          "rel_err": 0.0,
+          "s": 1.2,
+          "shewhart_exact": 49.0692
+        },
+        {
+          "delta": -0.4,
+          "ewma_lambda1": 496.982,
+          "rel_err": 0.0,
+          "s": 0.9,
+          "shewhart_exact": 496.982
+        }
+      ],
+      "source": "Roberts 1959; Brook & Evans 1972; Lucas & Saccucci 1990",
+      "tol": 0.01
+    },
+    "fail_closed": {
+      "passed": true,
+      "rows": [
+        {
+          "check": "ewma_p05_monotone_increasing_in_m",
+          "passed": true,
+          "values": [
+            32.877,
+            42.177,
+            51.325,
+            83.97,
+            149.98,
+            275.137,
+            389.65
+          ]
+        },
+        {
+          "check": "union_fa_p95_monotone_decreasing_in_m",
+          "passed": true,
+          "values": [
+            2.80348,
+            2.19207,
+            1.81993,
+            1.13631,
+            0.68974,
+            0.39397,
+            0.28715
+          ]
+        },
+        {
+          "check": "union_fa_p95_exceeds_known_parameter_value",
+          "passed": true
+        },
+        {
+          "check": "rawS_p05_le_Sc4_p05_all_shared_m_conservative_direction",
+          "detail": [
+            {
+              "Sc4_cusum_p05_prior_receipt": 30.222,
+              "Sc4_ewma_p05_prior_receipt": 34.411,
+              "Sc4_shewhart_p05_prior_receipt": 32.671,
+              "cusum_rawS_le_Sc4": true,
+              "ewma_rawS_le_Sc4": true,
+              "m": 20,
+              "rawS_cusum_p05": 28.877,
+              "rawS_ewma_p05": 32.877,
+              "rawS_shewhart_p05": 30.439,
+              "shewhart_rawS_le_Sc4": true
+            },
+            {
+              "Sc4_cusum_p05_prior_receipt": 45.752,
+              "Sc4_ewma_p05_prior_receipt": 53.296,
+              "Sc4_shewhart_p05_prior_receipt": 49.211,
+              "cusum_rawS_le_Sc4": true,
+              "ewma_rawS_le_Sc4": true,
+              "m": 30,
+              "rawS_cusum_p05": 44.112,
+              "rawS_ewma_p05": 51.325,
+              "rawS_shewhart_p05": 46.681,
+              "shewhart_rawS_le_Sc4": true
+            },
+            {
+              "Sc4_cusum_p05_prior_receipt": 74.954,
+              "Sc4_ewma_p05_prior_receipt": 86.198,
+              "Sc4_shewhart_p05_prior_receipt": 75.224,
+              "cusum_rawS_le_Sc4": true,
+              "ewma_rawS_le_Sc4": true,
+              "m": 50,
+              "rawS_cusum_p05": 73.087,
+              "rawS_ewma_p05": 83.97,
+              "rawS_shewhart_p05": 72.621,
+              "shewhart_rawS_le_Sc4": true
+            },
+            {
+              "Sc4_cusum_p05_prior_receipt": 129.349,
+              "Sc4_ewma_p05_prior_receipt": 152.355,
+              "Sc4_shewhart_p05_prior_receipt": 119.668,
+              "cusum_rawS_le_Sc4": true,
+              "ewma_rawS_le_Sc4": true,
+              "m": 100,
+              "rawS_cusum_p05": 127.352,
+              "rawS_ewma_p05": 149.98,
+              "rawS_shewhart_p05": 117.339,
+              "shewhart_rawS_le_Sc4": true
+            },
+            {
+              "Sc4_cusum_p05_prior_receipt": 227.824,
+              "Sc4_ewma_p05_prior_receipt": 276.86,
+              "Sc4_shewhart_p05_prior_receipt": 193.382,
+              "cusum_rawS_le_Sc4": true,
+              "ewma_rawS_le_Sc4": true,
+              "m": 300,
+              "rawS_cusum_p05": 226.35,
+              "rawS_ewma_p05": 275.137,
+              "rawS_shewhart_p05": 191.99,
+              "shewhart_rawS_le_Sc4": true
+            },
+            {
+              "Sc4_cusum_p05_prior_receipt": 323.049,
+              "Sc4_ewma_p05_prior_receipt": 390.457,
+              "Sc4_shewhart_p05_prior_receipt": 260.064,
+              "cusum_rawS_le_Sc4": true,
+              "ewma_rawS_le_Sc4": true,
+              "m": 1000,
+              "rawS_cusum_p05": 322.363,
+              "rawS_ewma_p05": 389.65,
+              "rawS_shewhart_p05": 259.466,
+              "shewhart_rawS_le_Sc4": true
+            }
+          ],
+          "passed": true
+        },
+        {
+          "check": "rawS_union_fa_p95_ge_Sc4_union_fa_p95_all_shared_m",
+          "detail": [
+            {
+              "Sc4_union_fa_p95_prior_receipt": 2.66102,
+              "m": 20,
+              "rawS_ge_Sc4": true,
+              "rawS_union_fa_p95": 2.80348
+            },
+            {
+              "Sc4_union_fa_p95_prior_receipt": 1.73991,
+              "m": 30,
+              "rawS_ge_Sc4": true,
+              "rawS_union_fa_p95": 1.81993
+            },
+            {
+              "Sc4_union_fa_p95_prior_receipt": 1.10155,
+              "m": 50,
+              "rawS_ge_Sc4": true,
+              "rawS_union_fa_p95": 1.13631
+            },
+            {
+              "Sc4_union_fa_p95_prior_receipt": 0.67757,
+              "m": 100,
+              "rawS_ge_Sc4": true,
+              "rawS_union_fa_p95": 0.68974
+            },
+            {
+              "Sc4_union_fa_p95_prior_receipt": 0.39133,
+              "m": 300,
+              "rawS_ge_Sc4": true,
+              "rawS_union_fa_p95": 0.39397
+            },
+            {
+              "Sc4_union_fa_p95_prior_receipt": 0.28652,
+              "m": 1000,
+              "rawS_ge_Sc4": true,
+              "rawS_union_fa_p95": 0.28715
+            }
+          ],
+          "passed": true
+        },
+        {
+          "check": "positive_control_planted_c4_bug_detected",
+          "passed": true
+        }
+      ]
+    },
+    "known_parameter_limit_m_to_inf": {
+      "known_parameter_arl0": {
+        "cusum": 465.504,
+        "ewma": 559.596,
+        "shewhart": 370.398
+      },
+      "known_parameter_union_fa_per_30_batch": 0.19905,
+      "max_rel_err": 0.00061,
+      "median_arl0_at_m_1e5": {
+        "cusum": 465.234,
+        "ewma": 559.281,
+        "shewhart": 370.173
+      },
+      "note": "As m -> inf, c4(m) -> 1 so raw S and S/c4 coincide asymptotically; the estimated-parameter median ARL0 must collapse onto the known-parameter ARL0 regardless of the c4 divisor.",
+      "passed": true,
+      "tol": 0.03
+    },
+    "live_runtime_sigma_formula_parity": {
+      "checks": {
+        "bessel_n_minus_1_denominator": true,
+        "no_c4_division": true,
+        "no_moving_range": true,
+        "shared_sigma_all_three_detectors": true
+      },
+      "file_sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
+      "passed": true,
+      "source": "amphora-formulation-capabilities/src/lib.rs::audit_process_qc (live checked)"
+    },
+    "quadrature_grid_convergence": {
+      "max_rel_err": 0.0232,
+      "note": "64x64 vs 96x96 equal-probability stratified (U,W) grid nodes.",
+      "passed": true,
+      "rows": [
+        {
+          "chart": "shewhart",
+          "m": 25,
+          "p05_grid64": 38.861,
+          "p05_grid96": 38.593,
+          "rel_err": 0.00694
+        },
+        {
+          "chart": "ewma",
+          "m": 25,
+          "p05_grid64": 42.177,
+          "p05_grid96": 41.703,
+          "rel_err": 0.01137
+        },
+        {
+          "chart": "cusum",
+          "m": 25,
+          "p05_grid64": 36.646,
+          "p05_grid96": 37.028,
+          "rel_err": 0.01032
+        },
+        {
+          "chart": "union_fa_p95",
+          "m": 25,
+          "p05_grid64": 2.19207,
+          "p05_grid96": 2.24414,
+          "rel_err": 0.0232
+        },
+        {
+          "chart": "shewhart",
+          "m": 30,
+          "p05_grid64": 46.681,
+          "p05_grid96": 46.776,
+          "rel_err": 0.00203
+        },
+        {
+          "chart": "ewma",
+          "m": 30,
+          "p05_grid64": 51.325,
+          "p05_grid96": 50.891,
+          "rel_err": 0.00853
+        },
+        {
+          "chart": "cusum",
+          "m": 30,
+          "p05_grid64": 44.112,
+          "p05_grid96": 44.773,
+          "rel_err": 0.01476
+        },
+        {
+          "chart": "union_fa_p95",
+          "m": 30,
+          "p05_grid64": 1.81993,
+          "p05_grid96": 1.85404,
+          "rel_err": 0.0184
+        },
+        {
+          "chart": "shewhart",
+          "m": 100,
+          "p05_grid64": 117.339,
+          "p05_grid96": 118.684,
+          "rel_err": 0.01133
+        },
+        {
+          "chart": "ewma",
+          "m": 100,
+          "p05_grid64": 149.98,
+          "p05_grid96": 150.868,
+          "rel_err": 0.00589
+        },
+        {
+          "chart": "cusum",
+          "m": 100,
+          "p05_grid64": 127.352,
+          "p05_grid96": 126.431,
+          "rel_err": 0.00728
+        },
+        {
+          "chart": "union_fa_p95",
+          "m": 100,
+          "p05_grid64": 0.68974,
+          "p05_grid96": 0.67956,
+          "rel_err": 0.01498
+        }
+      ],
+      "tol": 0.05
+    },
+    "raw_s_chi_law_closed_form_vs_direct_mc": {
+      "max_rel_err": 0.00258,
+      "note": "E[S] = c4(m) < 1: raw S (what the runtime computes) is a biased-LOW estimator of sigma. This is the quantitative basis for the direction predicted in this receipt's docstring.",
+      "passed": true,
+      "rows": [
+        {
+          "closed_form_E_S": 0.986934,
+          "closed_form_var_S": 0.025961,
+          "m": 20,
+          "mc_mean_S": 0.986906,
+          "mc_var_S": 0.025938,
+          "mean_rel_err": 3e-05,
+          "var_rel_err": 0.00088
+        },
+        {
+          "closed_form_E_S": 0.98964,
+          "closed_form_var_S": 0.020612,
+          "m": 25,
+          "mc_mean_S": 0.989762,
+          "mc_var_S": 0.020643,
+          "mean_rel_err": 0.00012,
+          "var_rel_err": 0.00152
+        },
+        {
+          "closed_form_E_S": 0.991418,
+          "closed_form_var_S": 0.01709,
+          "m": 30,
+          "mc_mean_S": 0.991455,
+          "mc_var_S": 0.017124,
+          "mean_rel_err": 4e-05,
+          "var_rel_err": 0.00198
+        },
+        {
+          "closed_form_E_S": 0.994911,
+          "closed_form_var_S": 0.010151,
+          "m": 50,
+          "mc_mean_S": 0.99486,
+          "mc_var_S": 0.010178,
+          "mean_rel_err": 5e-05,
+          "var_rel_err": 0.00258
+        },
+        {
+          "closed_form_E_S": 0.997478,
+          "closed_form_var_S": 0.005038,
+          "m": 100,
+          "mc_mean_S": 0.997733,
+          "mc_var_S": 0.005045,
+          "mean_rel_err": 0.00026,
+          "var_rel_err": 0.00145
+        },
+        {
+          "closed_form_E_S": 0.99975,
+          "closed_form_var_S": 0.0005,
+          "m": 1000,
+          "mc_mean_S": 0.999787,
+          "mc_var_S": 0.000501,
+          "mean_rel_err": 4e-05,
+          "var_rel_err": 0.00207
+        }
+      ],
+      "source": "Cochran's theorem for normal-sample S^2 (n-1 denominator); Montgomery 2020 App. VI (E[S]=c4*sigma, Var[S]=(1-c4^2)*sigma^2)",
+      "tol": 0.02
+    }
+  },
+  "governance": {
+    "flips_scientific_readiness": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_signed_phase0_kpi": false,
+    "module_scientific_readiness": "LOCKED_INTERNAL",
+    "portfolio_manifest_modules": 11,
+    "portfolio_manifest_receipts": 66,
+    "promotes_authority": false
+  },
+  "guaranteed_arl0_retention_at_pilot_baseline_vs_known_parameter": {
+    "m20": {
+      "cusum": 0.062,
+      "ewma": 0.0588,
+      "shewhart": 0.0822
+    },
+    "m25": {
+      "cusum": 0.0787,
+      "ewma": 0.0754,
+      "shewhart": 0.1049
+    }
+  },
+  "headline": "First receipt in this module's history whose sigma estimator matches the live checked runtime bit-for-bit (raw Bessel n-1 sample S, no c4 correction, no moving range). Under raw S, the guaranteed (95th-pct) union false-alarm count at the module's previously-reported-sufficient baseline m=50 is 1.13631 (vs 1.10155 under the WRONG S/c4 estimator characterized by estparam-memory-detector-arl-degradation-v1), against the locked budget of 1.5. The smallest tabulated baseline meeting the budget under raw S is m=50 (UNCHANGED from the wrong-estimator claim of m=50). m=50 STILL MEETS the budget under raw S. At the module's actual pilot baseline m=20-25 (the runtime's own hard floor -- baselines below 20 are rejected), guaranteed ARL0 retention is {'shewhart': 0.0822, 'ewma': 0.0588, 'cusum': 0.062} / {'shewhart': 0.1049, 'ewma': 0.0754, 'cusum': 0.0787} of known-parameter value (Shewhart/EWMA/CUSUM), already known from prior receipts to breach the union budget regardless of estimator; this receipt does not change that separately-known conclusion but replaces its estimator-mislabeled basis with the correct one.",
+  "known_parameter_reference": {
+    "arl0": {
+      "cusum": 465.504,
+      "ewma": 559.596,
+      "shewhart": 370.398
+    },
+    "prior_receipt": "spc-arl-characterization-v1",
+    "union_false_alarms_per_30_batch": 0.19905
+  },
+  "kpi_linkage": {
+    "closes_mission_known_contradiction": "'The runtime's true operating ARL/false-alarm/recall degradation under raw S remains uncharacterized.'",
+    "false_alarm_budget_expected_per_30_batch": 1.5,
+    "module_locked_kpi": "prospective 30-batch pilot: seeded-control recall >=90%, false alarms <=5%, zero false releases"
+  },
+  "module": "amphora-process-qc-twin",
+  "non_circularity": "The (U,W) reduction is the same exact algebraic identity used by every prior receipt in this family; the ONLY change is removing the /c4(m) divisor from W, because Cochran's theorem gives V=(m-1)S^2/sigma^2 ~ chi^2_{m-1} directly for the RAW (uncorrected) S the runtime computes -- no estimated constant, no Monte Carlo needed for the sigma law itself (closed form, unlike the MRbar/d2 receipts). Validated by an independent direct-MC re-derivation of the raw-S mean/variance (G1) that never calls chi2.ppf, and by a positive control that reintroduces the removed /c4(m) divisor and confirms the comparison machinery detects it.",
+  "positive_control": {
+    "detected": true,
+    "evidence": [
+      {
+        "gap_rawS_minus_planted": 0.09774,
+        "m": 25,
+        "planted_c4_bug_union_fa_p95": 2.09433,
+        "rawS_union_fa_p95": 2.19207
+      },
+      {
+        "gap_rawS_minus_planted": 0.03476,
+        "m": 50,
+        "planted_c4_bug_union_fa_p95": 1.10155,
+        "rawS_union_fa_p95": 1.13631
+      }
+    ],
+    "how_planted": "uw_nodes(m, nu, nw, apply_c4_bug=True) divides W = sqrt(chi2_{m-1}/(m-1)) by c4(m), exactly reversing this receipt's single substantive change vs the prior S/c4 receipt. Run at m=25 and m=50.",
+    "planted_defect": "Reintroduce the /c4(m) bias-correction divisor into the (U,W) sampling law that this receipt's entire purpose is to remove -- i.e. silently revert this receipt's harness to compute the SAME (wrong) estimator as estparam-memory-detector-arl-degradation-v1 / estparam-arl-degradation-v1."
+  },
+  "purpose": "Close mission.md's explicit open gap: characterize this module's guaranteed ARL0 / union false-alarm degradation under the sigma estimator the live runtime actually implements (raw S), which no prior receipt in this module has done.",
+  "reproducibility_seed": {
+    "cusum_states": 100,
+    "ewma_states": 201,
+    "mc_direct_s_samples": 400000,
+    "mc_seed_base": 20260816,
+    "numpy": "1.26.4",
+    "quadrature_nodes": [
+      64,
+      64
+    ],
+    "quadrature_nodes_fine": [
+      96,
+      96
+    ]
+  },
+  "run_type": "AUDIT_ONLY_THEORY_CHARACTERIZATION",
+  "schema": "amphora.process-qc-twin.raw-s-estparam-arl-degradation.v1",
+  "study_id": "raw-s-estparam-arl-degradation-v1",
+  "theory_reference": {
+    "anchors": "Montgomery 2020 Table 9.4; NIST/SEMATECH e-Handbook 6.3",
+    "c4_bias": "Montgomery 2020 ISQC 8th ed. Appendix VI; NIST/SEMATECH e-Handbook 6.3.2",
+    "cusum_closed_form": "Siegmund 1985, Sequential Analysis, Springer, ISBN 978-0-387-96134-7",
+    "estimated_parameter_cusum": "Jones, Champ & Rigdon 2004, JQT 36(1):95-108, DOI 10.1080/00224065.2004.11980254",
+    "estimated_parameter_ewma": "Jones, Champ & Rigdon 2001, Technometrics 43(2):156-167, DOI 10.1198/004017001750386279",
+    "guaranteed_arl_framing": "Quesenberry 1993, JQT 25(4):237-247",
+    "markov_chain_arl": "Brook & Evans 1972, Biometrika 59(3):539-549",
+    "two_sided_combination": "Lucas & Crosier 1982, Technometrics 24(3):199-205"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "archive_root": "evidence/superseded/supersession-d64bad96da05edfc01864dc811be55b920efb171d9a3cc6e97188ed74cf4b396",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "58cb4216f99825f7ffdcb8b2af40be47a6339d7fabc106ec1709bfa0888156e2",
+    "ip/disclosure-log.v1.json": "edc2589e4d6e320257a23475effa084d1ddae76b6386b0282bb451f80b5179fe",
+    "ip/prior-art.v1.json": "b085bef71a86762c181650969824cbc7da8020cf3bbcee54617fbcdb8d4eaf55",
+    "ip/technical-dossier.v1.json": "d413ec2f8eac9bd1faf827d618051b430c0d11072699f67f5325ec06a8ea6588",
+    "phase0/benchmark/benchmark-lock.v1.json": "5919233bc89e3d3eae79e4220f29ecae0e5b5067851d0464ab845edbff3b38f5",
+    "phase0/bundle.v1.json": "58e509215966e7f34ced55a373697b0d37a50bcc1a7db129ea5d33d36a783f93",
+    "phase0/dataset/dataset-manifest.v1.json": "5ab5f1d3eef43008e80b6e896c5360edcc4159c486d570296229c6664cd94e55",
+    "phase0/promotion/policy.v1.json": "8e7da8d257938bfefa2acb3ad6f4be66b0580ce5e1034118a0dabc21d9c738a6",
+    "phase0/raw/SHA256SUMS": "991cf955be289821462572e426d6eadd08c62e84a25dec738e47ef221b345a65",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "8370561ee64e620b672e89e79088a494d4586baaf9097e9a53ddec835ddf28f7",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v1.json": "e9b07b1475d3a74ff482d2d7be274feec3082e496cd55fc17a26457b758b589e",
+    "phase0/split/split-manifest.v1.json": "3ba5017d4e2edcad5c52ffdae13552c4849e4ec88f016dc69e564cd4023f863c"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-ip-fto-guard",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-d64bad96da05edfc01864dc811be55b920efb171d9a3cc6e97188ed74cf4b396",
+  "unsigned_preparation_only": true
+}

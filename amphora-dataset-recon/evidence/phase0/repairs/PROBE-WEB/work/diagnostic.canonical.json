@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-10",
+  "defect_run_unsupported": [
+    {
+      "assertion": "WebFetch successfully retrieved and summarized native-Japanese dataset descriptions from J-STAGE, confirming full-text native-script access.",
+      "language": "ja",
+      "target": "https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E9%98%B2%E8%85%90%E5%A1%97%E6%96%99",
+      "tool": "WebFetch"
+    }
+  ],
+  "fire_id": "20260810T020001-4093980-59cfaefb325c",
+  "ledger_entry_sha256": "0fd12053ad9db240c027485f01ef3c4a625291da6f2b1639ee55592419f8f651",
+  "planted_defect_claim": {
+    "assertion": "WebFetch successfully retrieved and summarized native-Japanese dataset descriptions from J-STAGE, confirming full-text native-script access.",
+    "language": "ja",
+    "target": "https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E9%98%B2%E8%85%90%E5%A1%97%E6%96%99",
+    "tool": "WebFetch"
+  },
+  "real_claims": [
+    {
+      "assertion": "WebSearch is available and returns real ranked results with URLs for an English coatings-domain query.",
+      "language": "en",
+      "target": "marine anti-corrosion epoxy coating salt spray test dataset ASTM B117",
+      "tool": "WebSearch"
+    },
+    {
+      "assertion": "WebSearch is available for native-script (Chinese) queries and returns real ranked results with native-script titles.",
+      "language": "zh",
+      "target": "\u73af\u6c27\u6811\u8102 \u56fa\u5316\u52a8\u529b\u5b66 \u6570\u636e\u96c6 CNKI",
+      "tool": "WebSearch"
+    },
+    {
+      "assertion": "WebFetch is available and can retrieve an evaluative summary of a native-language page's content and access terms without downloading the underlying data.",
+      "language": "zh",
+      "target": "https://nbsdc.cn/general/dataSetHome?searchKey=%E6%B5%8B%E8%AF%95%E4%BB%AA",
+      "tool": "WebFetch"
+    },
+    {
+      "assertion": "WebFetch FAILS against www.cnki.net with a TLS certificate mismatch (cert served for *.cdn.myqcloud.com, not cnki.net).",
+      "language": "zh",
+      "target": "https://www.cnki.net",
+      "tool": "WebFetch"
+    },
+    {
+      "assertion": "raw HTTP (curl) from xbabe1 is available and can reach a zh-language university journal portal (HTTP 200).",
+      "language": "zh",
+      "target": "https://fhclxb.buaa.edu.cn/article/id/13902",
+      "tool": "curl_raw_http_xbabe1"
+    },
+    {
+      "assertion": "raw HTTP (curl) from xbabe1 can reach J-STAGE (ja national repository index class) -- reachability only, English-rendered results path, NOT a completed native-script SERP round-trip.",
+      "language": "ja",
+      "target": "https://www.jstage.jst.go.jp/result/global/-char/en?globalSearchKey=%E9%98%B2%E8%85%90%E5%A1%97%E6%96%99",
+      "tool": "curl_raw_http_xbabe1"
+    },
+    {
+      "assertion": "raw HTTP (curl) from xbabe1 ALSO fails against www.cnki.net with an identical TLS certificate mismatch, confirming the CNKI failure is network-level, not WebFetch-specific.",
+      "language": "n/a",
+      "target": "https://www.cnki.net",
+      "tool": "curl_raw_http_xbabe1"
+    }
+  ],
+  "real_claims_unsupported": [],
+  "refutation_criterion_fired_on_planted_defect": true,
+  "refutation_criterion_fired_on_real_claims": false,
+  "schema": "amphora.dataset-recon.probe-web-diagnostic.v1"
+}

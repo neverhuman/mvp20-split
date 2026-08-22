@@ -1,0 +1,133 @@
+{
+  "attack": "Ingested the CC-BY-4.0 Wei et al. 2024 (Polymers 16(9)1252) salt-spray/adhesion/wear Methods excerpt as this module's first externally-authored source, built a real-data-derived CRO protocol candidate from it (0.5g/0.375g recipe masses, 336h/1000-cycle QC checkpoints -- not synthetic round numbers), and ran the module's own independent packet-binding-parity re-derivation (G1-G6, reused unmodified from benchmarks/packet-binding-parity-v1/run_binding_parity.py, including its built-in 12-probe fail-closed tamper battery as positive control) plus a new G7 sourcing-provenance-disclosure gate against it.",
+  "baseline_self_authored_fixture": {
+    "all_gates_passed": false,
+    "fixture_id": "cro-known-answer-150g-v1",
+    "gates_summary": {
+      "G1_candidate_sha256_binding": true,
+      "G2_formula_sha256_binding": true,
+      "G3_rendering_byte_exact": true,
+      "G4_ed25519_signature": true,
+      "G5_completeness_accepts_valid": true,
+      "G6_tamper_battery_all_fail_closed": true,
+      "G7_sourcing_provenance_disclosed": false
+    }
+  },
+  "campaign_item_id": "W-D-CRO",
+  "claim_under_attack": "The packager's claims are tested against real externally-authored test protocols.",
+  "external_candidate": {
+    "all_gates_passed": true,
+    "fixture_id": "cro-external-wei2024-salt-spray-v1",
+    "gates_detail": {
+      "G1_candidate_sha256_binding": {
+        "passed": true
+      },
+      "G2_formula_sha256_binding": {
+        "passed": true
+      },
+      "G3_rendering_byte_exact": {
+        "passed": true
+      },
+      "G4_ed25519_signature": {
+        "passed": true
+      },
+      "G5_completeness_accepts_valid": {
+        "passed": true,
+        "reasons": []
+      },
+      "G6_tamper_battery_all_fail_closed": {
+        "n_probes": 12,
+        "n_rejected": 12,
+        "passed": true,
+        "probes": [
+          {
+            "kind": "formula_binding",
+            "probe": "recipe_amount_mutated_breaks_formula_hash",
+            "rejected": true
+          },
+          {
+            "kind": "rendering",
+            "probe": "recipe_amount_mutated_breaks_rendering",
+            "rejected": true
+          },
+          {
+            "kind": "signature",
+            "probe": "recipe_amount_mutated_breaks_signature",
+            "rejected": true
+          },
+          {
+            "kind": "candidate_binding",
+            "probe": "candidate_id_mutated_breaks_candidate_hash",
+            "rejected": true
+          },
+          {
+            "kind": "signature",
+            "probe": "formula_sha256_substituted_breaks_signature",
+            "rejected": true
+          },
+          {
+            "kind": "completeness",
+            "probe": "emptied_controls_fails_completeness",
+            "rejected": true
+          },
+          {
+            "kind": "completeness",
+            "probe": "emptied_required_outputs_fails_completeness",
+            "rejected": true
+          },
+          {
+            "kind": "completeness",
+            "probe": "emptied_custody_fails_completeness",
+            "rejected": true
+          },
+          {
+            "kind": "completeness",
+            "probe": "flipped_no_release_authority_fails_completeness",
+            "rejected": true
+          },
+          {
+            "kind": "completeness",
+            "probe": "injected_results_fails_completeness",
+            "rejected": true
+          },
+          {
+            "kind": "completeness",
+            "probe": "ranking_eligible_true_fails_completeness",
+            "rejected": true
+          },
+          {
+            "kind": "completeness",
+            "probe": "nonnumeric_amount_fails_completeness",
+            "rejected": true
+          }
+        ]
+      },
+      "G7_sourcing_provenance_disclosed": {
+        "issues": [],
+        "passed": true
+      }
+    },
+    "gates_summary": {
+      "G1_candidate_sha256_binding": true,
+      "G2_formula_sha256_binding": true,
+      "G3_rendering_byte_exact": true,
+      "G4_ed25519_signature": true,
+      "G5_completeness_accepts_valid": true,
+      "G6_tamper_battery_all_fail_closed": true,
+      "G7_sourcing_provenance_disclosed": true
+    },
+    "source_doi": "10.3390/polym16091252",
+    "source_id": "S12"
+  },
+  "finding": "All 7 gates (G1-G7) pass on the real external-sourced candidate, matching the self-authored fixture's result, AND the 12-probe tamper battery fails closed 12/12 on the external candidate too (positive control fired correctly). This is the first time in this module's history the packet-binding-parity claim has been tested against genuinely externally-authored protocol content rather than the n=5 self-authored fixture -- until this fire the claim was, by the receipt's own prior admission, completely untested against anything external. The claim survives this first real test.",
+  "fire_id": "20260813T120001-3027409-e2aebae4642c",
+  "positive_control": {
+    "detected": true,
+    "evidence": "12/12 tamper probes rejected on the real external-sourced candidate (same 12/12 fail-closed result the harness gets on the self-authored fixture), confirming the harness is capable of catching a defect of the exact kind it exists to catch, run against genuinely external content for the first time.",
+    "how_planted": "G6_tamper_battery_all_fail_closed probes (see gates_detail.G6...probes in external_candidate above): each deep-copies the untampered external payload, mutates exactly one field (e.g. recipe_steps[0].amount += 1.0, or candidate.candidate_id = 'forged'), and re-checks the relevant binding/rendering/signature/completeness predicate against the ORIGINAL unmutated hash/signature.",
+    "planted_defect": "12 independent tamper mutations (amount bump, candidate_id forgery, formula_sha256 substitution, emptied controls/outputs/custody, flipped authority lock, injected pre-execution results, ranking_eligible=true, non-numeric amount) applied to COPIES of the real external-sourced candidate payload, not the untampered original."
+  },
+  "schema": "amphora.cro-protocol-packager.w-d-cro-external-candidate-binding-parity-diagnostic.v1",
+  "study_id": "w-d-cro-external-candidate-binding-parity-fire2",
+  "verdict": "CLAIM_SURVIVED"
+}

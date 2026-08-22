@@ -1,0 +1,184 @@
+{
+  "also_feeds": [
+    "amphora-molecule-property",
+    "amphora-design-rule-score"
+  ],
+  "authority": "AUDIT_ONLY",
+  "does_not_close": [
+    "does NOT promote amphora-barrier-corrosion-score to VALIDATED scientific_readiness: phase-0 is a governance state (scientific_success_required_for_phase0=false on all live locks; 0/29 modules scientific_readiness==VALIDATED) needing two trust-anchored phase0 signatures this AUDIT_ONLY key cannot supply",
+    "does NOT change the manifest (still 66 receipts / 11 modules)",
+    "does NOT modify the shipped Rust engine or any of the 66 signed receipts",
+    "reported D magnitudes and the 250um DFT are REFERENCE_NOMINAL; only the exact identities and the real-M_inf permeance ranking are defended"
+  ],
+  "engine_output": {
+    "operational_breakthrough_DGEBA_amine_marine_coat": {
+      "DFT_um": 250.0,
+      "D_ref_m2_s_literature_anchor": 8e-13,
+      "D_ref_source": "PMC8877360 DGEBA epoxy-amine, CC BY 4.0",
+      "geometry": "one exposed face, impermeable steel substrate (effective 2*DFT)",
+      "note": "REFERENCE_NOMINAL geometry/D: DFT and D flagged, set TIMESCALE only.",
+      "operational_finding": "At a real 250 um marine DFT with the literature DGEBA-amine D, water half-saturates the film to the steel in ~hours and 90%-saturates in well under a day. Water ARRIVAL at steel is fast; marine barrier protection is therefore a STEADY-STATE-PERMEANCE (P=D*S) and WET-ADHESION problem, not a water-arrival-delay problem. This inverts the naive 'thicker=slower water' intuition and is the actionable takeaway.",
+      "t_90pct_saturation_hours": 18.4,
+      "t_half_hours": 4.269,
+      "t_half_seconds": 15370.0,
+      "t_lag_daynes_hours": 14.47,
+      "t_lag_daynes_seconds": 52083.0
+    },
+    "permeance_ranking_3_real_systems": {
+      "D_treatment": "shared literature anchor; validated FFV free-volume ordering (CYDM tightest < DDS < 8CH2DA loosest) reinforces same direction",
+      "figure_of_merit": "P = D * S  (lower = better barrier); S ~ equilibrium M_inf",
+      "ranked_best_to_worst": [
+        {
+          "Minf_wt_pct": 0.16,
+          "P_rel_D_times_S": 1.28e-13,
+          "S_rel_from_Minf": 0.16,
+          "amine_type": "cycloaliphatic",
+          "barrier_rank_best_to_worst": 1,
+          "ffv_rank_free_volume": "tightest",
+          "ffv_source": "barrier-freevolume-ffv-v1",
+          "system": "EP-CYDM"
+        },
+        {
+          "Minf_wt_pct": 1.7,
+          "P_rel_D_times_S": 1.36e-12,
+          "S_rel_from_Minf": 1.7,
+          "amine_type": "aromatic-sulfone",
+          "barrier_rank_best_to_worst": 2,
+          "ffv_rank_free_volume": "intermediate",
+          "ffv_source": "barrier-freevolume-ffv-v1",
+          "system": "EP-DDS"
+        },
+        {
+          "Minf_wt_pct": 2.0,
+          "P_rel_D_times_S": 1.6e-12,
+          "S_rel_from_Minf": 2.0,
+          "amine_type": "aliphatic",
+          "barrier_rank_best_to_worst": 3,
+          "ffv_rank_free_volume": "loosest",
+          "ffv_source": "barrier-freevolume-ffv-v1",
+          "system": "EP-8CH2DA"
+        }
+      ],
+      "resolves_prior_ambiguity": "barrier-water-uptake-hydrophilicity-ccby-v1 found hydrophilic-group density anti-correlated with uptake within this family (underdetermined, rho=-0.5). The permeance composition P=D*S is UNAMBIGUOUS here: EP-CYDM wins on BOTH low uptake (S) and tight free volume (D); EP-8CH2DA loses on both. The two independent barrier descriptors agree once combined."
+    }
+  },
+  "fitted_parameters": "NONE (all closed-form identities; D/DFT are flagged constants)",
+  "honest_limitations": [
+    "Absolute D is REFERENCE_NOMINAL: the literature DGEBA-amine band spans 1e-13..2e-11 m2/s across protocols/temperature (2+ orders); only the within-family RANKING (real M_inf, reinforced by validated FFV) is defended.",
+    "Real epoxies often show PSEUDO-FICKIAN / two-stage sorption; single-D Fickian is an engineering approximation (flagged, documented in the source literature).",
+    "D is strongly Arrhenius in temperature; the marine service T is not fixed here.",
+    "n=3 systems, single immersion protocol -> not statistically promotable; same data wall as barrier-water-uptake. Precise per-system validation needs time-resolved gravimetric curves for >=~10 protocol-matched DGEBA-amine films."
+  ],
+  "known_answer_battery": {
+    "all_pass": true,
+    "checks": [
+      {
+        "abs_err": 7.32e-06,
+        "computed": 0.0491827,
+        "id": "KA1_half_time_constant",
+        "identity": "solve[ Mt/Minf(x)=0.5 ]  ->  D*t_half/L^2 = 0.04919  (Crank 1975)",
+        "pass": true,
+        "reference": 0.04919
+      },
+      {
+        "constant_4_over_sqrt_pi": 2.256758,
+        "id": "KA2_short_time_sqrt_slope",
+        "identity": "Mt/Minf -> (4/sqrt(pi))*sqrt(Dt/L^2) as x->0 ; 4/sqrt(pi)=2.256758",
+        "pass": true,
+        "rel_err_pct": 5.25e-11,
+        "series_ratio_at_x0.01": 2.256758
+      },
+      {
+        "abs_err": 1.76e-07,
+        "id": "KA3_daynes_barrer_time_lag",
+        "identity": "steady permeation flux line intercept x0 = 1/6  ->  t_L = L^2/(6D)",
+        "pass": true,
+        "recovered_intercept_x0": 0.166666,
+        "recovered_slope": 1.0,
+        "reference_intercept": 0.166667
+      },
+      {
+        "D_recovered_m2_s": 8.00119e-13,
+        "D_true_m2_s": 8e-13,
+        "id": "KA4_round_trip_on_real_anchor",
+        "identity": "D_true -> series t_half -> D=0.04919 L^2/t_half == D_true",
+        "pass": true,
+        "rel_err_pct": 0.01487,
+        "t_half_days": 0.8926,
+        "t_half_seconds": 77118.4
+      },
+      {
+        "factor": 4.0,
+        "id": "KA5_steel_backed_one_face_factor",
+        "identity": "impermeable substrate = no-flux face -> effective thickness 2L -> t_half x4",
+        "pass": true,
+        "reference": 4.0
+      },
+      {
+        "id": "KA6_second_anchor_timescale_sanity",
+        "identity": "DGEBA/TETA D=2.17e-11 m2/s (CC BY 4.0) -> free-film t_half physical",
+        "pass": true,
+        "t_half_hours": 2.518,
+        "t_half_seconds": 9065.9
+      }
+    ],
+    "n_checks": 6,
+    "n_pass": 6
+  },
+  "literature_anchors_ccby": [
+    {
+      "D_m2_s": 8e-13,
+      "Minf_wt_pct": 2.2,
+      "doi_or_id": "PMC8877360",
+      "fit": "sqrt-t Fickian",
+      "license": "CC BY 4.0",
+      "system": "DGEBA epoxy-amine free film",
+      "thickness_mm": 1.12
+    },
+    {
+      "D_m2_s": 2.17e-11,
+      "Minf_wt_pct": 4.82,
+      "doi_or_id": "Polimeros/scielo HsgPHhmYmRSPPKQPqKFLdck",
+      "fit": "Jacobs-Jones (pseudo-Fickian)",
+      "license": "CC BY 4.0",
+      "system": "DGEBA/TETA stoichiometric (phr 13)"
+    },
+    {
+      "D_m2_s": "1e-13 .. 3e-13",
+      "doi_or_id": "ScienceDirect S0141391019302678 (review statement)",
+      "fit": "Fickian",
+      "license": "citation_only_band",
+      "system": "amine-based epoxies"
+    }
+  ],
+  "new_axis_justification": "All 66 signed receipts treat the barrier at EQUILIBRIUM (water-uptake, tortuosity, thermal-CTE) or via a STATIC free-volume proxy for D (barrier-freevolume-ffv-v1). None computes the TIME for water/O2 to traverse a real dry-film-thickness, nor the steady-state permeance P=D*S that governs the wet coating. This is the transient-kinetics gap.",
+  "non_circularity": "Known-answer identities are pure mathematics (Crank series), independent of any coating data. The real anchors (D, M_inf) are measured externally under CC-BY licenses and are NOT used to fit the identities -- KA4 round-trips the anchor D through the independent series and recovers it. The 3-system ranking uses real in-tree M_inf; D magnitude is a flagged shared constant.",
+  "real_input_data": {
+    "n_systems": 3,
+    "provenance": "barrier-water-uptake-hydrophilicity-ccby-v1 -> Polymers 2024 16(1):67 (PMC10780492), CC BY 4.0; byte-identical M_inf",
+    "systems_Minf_wt_pct": {
+      "EP-8CH2DA": 2.0,
+      "EP-CYDM": 0.16,
+      "EP-DDS": 1.7
+    }
+  },
+  "reference_nominal_constants": {
+    "D_DGEBA_amine_anchor_m2_s": 8e-13,
+    "D_anchor_source": "PMC8877360, epoxy-amine, D=8.0e-9 cm2/s, CC BY 4.0",
+    "D_band_m2_s": "1e-13 .. 2.17e-11 across protocols (see literature_anchors)",
+    "marine_DFT_um": 250.0
+  },
+  "schema": "amphora.redteam-audit.barrier-diffusion-timelag-fickian-ccby-v1.diagnostic.v1",
+  "target_capability": "transient water/O2 barrier ingress kinetics: Fickian time-lag, operational breakthrough time to steel, and Daynes steady-state permeance P=D*S",
+  "target_module": "amphora-barrier-corrosion-score",
+  "theory": {
+    "daynes_barrer_time_lag": "t_L = L^2/(6 D)  (steady permeation intercept 1/6)",
+    "half_time": "D t_half / L^2 = 0.04919",
+    "permeability": "P = D * S  (Daynes); barrier merit = low P and low P/L",
+    "plane_sheet_series": "Mt/Minf = 1 - sum_n 8/((2n+1)^2 pi^2) exp(-(2n+1)^2 pi^2 D t/L^2)",
+    "short_time": "Mt/Minf = (4/sqrt(pi)) sqrt(D t / L^2)  (Mt/Minf < ~0.6)",
+    "source": "J. Crank, The Mathematics of Diffusion, 2nd ed, OUP 1975",
+    "steel_backed_boundary": "impermeable substrate = no-flux face => effective 2L"
+  },
+  "verdict": "BARRIER_DIFFUSION_TIMELAG__EXACT_FICKIAN_IDENTITIES_VALIDATED__MAGNITUDE_LITERATURE_ANCHORED_CCBY__PERMEANCE_RANKING_REAL_INTREE__PRECISION_VALIDATION_DATA_RIGHTS_BLOCKED"
+}

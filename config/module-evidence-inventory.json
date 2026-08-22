@@ -1,0 +1,3497 @@
+{
+  "$schema": "../schemas/module-evidence-inventory.schema.json",
+  "audit_date": "2026-07-17",
+  "hash_algorithm": "SHA-256",
+  "module_count": 29,
+  "modules": [
+    {
+      "artifact_gap": "ST-19168 is acquired and hash-bound but remains untouched and rights-quarantined; no promotion rows exist.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+          "rights": {
+            "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+            "gap": "Known source and rights status; promotion rows remain absent and the external workbook remains quarantined.",
+            "status": "KNOWN"
+          },
+          "sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-barrier-corrosion-score/reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx",
+          "rights": {
+            "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+            "gap": "Official raw workbook is hash-bound and untouched but is ineligible for derivatives pending rights review.",
+            "status": "KNOWN"
+          },
+          "sha256": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "config/program/eis-corrosion-split.v1.json",
+          "rights": {
+            "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+            "gap": "Empty locked split records absent promotion rows and quarantined untouched external systems.",
+            "status": "KNOWN"
+          },
+          "sha256": "d958e42128fd7efe3c1c5ce8fa968c0660a09c11b40e8e9e5039ed18adb3f73d"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "config/benchmark-locks/amphora-barrier-corrosion-score.v1.json",
+          "rights": {
+            "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+            "gap": "Benchmark gates and hostile nulls are locked; no checked result is promoted.",
+            "status": "KNOWN"
+          },
+          "sha256": "9f6cff8696de522713c044bb7f5c640adcd995dec4b65779c0051bc99a21ae99"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "config/program/eis-corrosion-sources.v1.json",
+          "rights": {
+            "evidence_path": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+            "gap": "The census binds only quarantined context and does not imply derivative eligibility.",
+            "status": "KNOWN"
+          },
+          "sha256": "83032250b2b614e908be15b8ed17144788d801436a8ff3ebd06bc05a63720b90"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "Locked execution auto-demotes because 30 systems, three studies, ten external systems, endpoints, and review are absent.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "At least 30 independent systems across three studies, ten untouched ST-19168 external systems, five panels per system/exposure, measured endpoints, rights clearance, and independent review"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-barrier-corrosion-score/src/lib.rs",
+        "sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-barrier-corrosion-score/Cargo.toml",
+        "version_source_sha256": "cbf327e094f5e4973ef4551878a90be280fc10e3e161aaedfdaccecd9b68bcc0"
+      },
+      "known_contradictions": [
+        "Six existing plus ten acquired external systems remain below promotion; low-frequency impedance alone can hide interface corrosion."
+      ],
+      "module_id": "amphora-barrier-corrosion-score",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-barrier-corrosion-score/src/lib.rs",
+        "scenario": "Recover a synthetic full circuit while rejecting short spectra and field/lab method substitution.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "measured-eis-promotion-data-unavailable-external-quarantined.v1",
+          "model_id": "measured-eis-endpoints-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "AUDIT_ONLY",
+          "track_id": "measured_eis_corrosion_endpoints"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-barrier-corrosion-score/src/lib.rs",
+          "sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/canonical_formulation_candidate.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "8be98d9ed927346fb23b6abd030528a202fa87621c1ecc3ebbc5b149e87ee0f8"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/evidence_package_candidate.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "da26a9f8c7c59cbc4eb47f099db22808bb83dd804161005d2aefc3323f61f5fb"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/formulation_candidate.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "de617b7311530cb2d6701860daba9db9b37a0ea0d0733ed4e969b8db617f614f"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/molecule_candidate.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/score_artifact_only_evidence.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "2781f8179a5115b209e1da6d40c21c7affd7ac9ee49dc76ded40fc2fd2e11fd7"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/score_failed_gate.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "4486661e9f0140187226175796ea3a86c7582e73b3021d29a6c3ca7b43546218"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/score_formulation_objective.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "8e4868f25a86167201eaa39685e6e93c2283669fd058b7b43bf98168518722ef"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/score_molecule_objective.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "c86ba9daa7d1b62c243bd849aa6b2c52dbf66c1bca323f302115f8ca90a90744"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/score_no_authority.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "850fac537acb659af8d0463fc2ae3e74bf65dcd8d47b0b36a1e2447725ada20e"
+        },
+        {
+          "kind": "input_fixture",
+          "path": "amphora-candidate-contract/fixtures/score_roadmap_generated_lead.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "cc438c0821e98f57929512f515365751ef52b0b7ac6e8813bb83fdabe337c48b"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Validated chemistry file parsers and locked cross-toolkit normalization vectors"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-engine/src/lib.rs",
+        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-engine/Cargo.toml",
+        "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
+      },
+      "known_contradictions": [
+        "Runtime support is JSON CandidateEnvelope plus molecule SMILES; InChI, MOL, SDF, and recipe CSV remain target contracts rather than implemented parsers."
+      ],
+      "module_id": "amphora-candidate-contract",
+      "portfolio_edges": {
+        "consumers": [
+          "amphora-barrier-corrosion-score",
+          "amphora-cro-protocol-packager",
+          "amphora-cure-potlife-gate",
+          "amphora-design-rule-score",
+          "amphora-envelope-gates",
+          "amphora-evidence-intake-validator",
+          "amphora-formulation-arithmetic",
+          "amphora-formulation-universe",
+          "amphora-ingredient-library",
+          "amphora-ip-fto-guard",
+          "amphora-known-answer-benchmarks",
+          "amphora-model-card-authority",
+          "amphora-molecule-design-gate",
+          "amphora-molecule-generator",
+          "amphora-molecule-novelty",
+          "amphora-molecule-property",
+          "amphora-molecule-role-ranker",
+          "amphora-optimizer-orchestrator",
+          "amphora-process-qc-twin",
+          "amphora-public-corrosion-benchmark",
+          "amphora-redteam-audit",
+          "amphora-report-packager",
+          "amphora-run-provenance",
+          "amphora-solvency-score",
+          "amphora-source-ledger",
+          "amphora-sourceability-ehs",
+          "amphora-tolerance-robustness",
+          "amphora-viscosity-score"
+        ],
+        "dependencies": []
+      },
+      "red_team_fixture": {
+        "path": "amphora-engine/src/lib.rs",
+        "scenario": "Reject non-finite candidate and score values before serialization.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-engine/src/lib.rs",
+          "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "output_artifact",
+          "path": "amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-cro-protocol-packager/reference/mvp20/out/cro_protocol.md",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "4e001dc82eac042fa90fd1164faece447e40c7ef3f0f29649dd0322e12faa0d9"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-cro-protocol-packager/reference/mvp20/out/falsification_protocol.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "b2fa8de6b50f8605dbe5a412af5d818e8792be864af7ea6e3ef10320959504b6"
+        },
+        {
+          "kind": "synthetic_fixture",
+          "path": "amphora-cro-protocol-packager/reference/mvp20/fixtures/known-answer-protocol-package.v1.json",
+          "rights": {
+            "evidence_path": "amphora-cro-protocol-packager/reference/mvp20/fixtures/known-answer-protocol-package.v1.json",
+            "gap": "Repository-issued synthetic deterministic fixture only; no CRO execution or scientific authority.",
+            "status": "KNOWN"
+          },
+          "sha256": "72e1f99bb6c0748d9c7b0f5376b8d2c63e7932288e8e5a3e8387e23d25a7323e"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "CRO execution, signed method selection, and returned candidate-bound raw data"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      },
+      "known_contradictions": [
+        "A candidate- and formula-bound packet is an execution specification only; no returned CRO measurements are checked in."
+      ],
+      "module_id": "amphora-cro-protocol-packager",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "scenario": "Reject negative/non-finite recipe masses and candidate or formula hash mismatch.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-assurance-capabilities/src/lib.rs",
+          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-cure-potlife-gate/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-cure-potlife-gate/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-cure-potlife-gate/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-cure-potlife-gate/reference/pot-life/source-landscape.v1.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "2944d9fbc67dfb9a6ce7ad1a026b94d8b8f9c49e54f30e442c8ea2f93b188417"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-cure-potlife-gate/reference/mvp20/out/v5_epoch29_unseen_benchmark.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "5f464c738e9e261069964f6624feefad990a35bdb4d656ffaeb3518f02d48443"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-cure-potlife-gate/reference/mvp20/out/v5_epoch30_lift_audit.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "79e7ed9933482c5434aa5050ac9063a2cbb647e2fad0cb0f6aebbdd44a055af4"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": "amphora-cure-potlife-gate/reference/mvp20/out/v5_epoch30_lift_audit.json",
+        "artifact_sha256": "79e7ed9933482c5434aa5050ac9063a2cbb647e2fad0cb0f6aebbdd44a055af4",
+        "gap": "This is the legacy gel-time benchmark artifact. Its observations are transcribed checked-artifact fields, not coating pot-life physics evidence, an independent validation, or a promotion conclusion.",
+        "observations": [
+          {
+            "json_path": "status",
+            "value": "exploratory"
+          },
+          {
+            "json_path": "promotion_status",
+            "value": "EXPLORATORY_SIGNAL_REQUIRES_EXTERNAL_VALIDATION"
+          },
+          {
+            "json_path": "primary_metric",
+            "value": "fraction_within_x1.5_error_band"
+          },
+          {
+            "json_path": "model_metric",
+            "value": 0.4375
+          },
+          {
+            "json_path": "baseline_metric",
+            "value": 0.375
+          },
+          {
+            "json_path": "absolute_lift",
+            "value": 0.0625
+          }
+        ],
+        "reported_result_status": "exploratory",
+        "status": "CHECKED_ARTIFACT_REPORTED_STATUS"
+      },
+      "external_dependencies": [
+        "Genuinely external complete gel-time rows and multi-temperature CRO batches",
+        "Thirty-six independently mixed, owned coating pot-life runs plus packet-bound independent review"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-cure-potlife-gate/src/lib.rs",
+        "sha256": "1a1737339b903705a0af19e28277137c3476ef4ff5d145125996f2a3d0e13939",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-cure-potlife-gate/Cargo.toml",
+        "version_source_sha256": "c3ff103a1edc87ad8b17058607bcb4a5c28ac375d2e0c716ff94d3e56277a150"
+      },
+      "known_contradictions": [
+        "The checked gel-time lift audit is exploratory and reports no statistically established lift or genuinely external locked validation set.",
+        "The coating-pot-life physics track has contracts and synthetic diagnostics but no checked-in owned 36-run benchmark or independent review."
+      ],
+      "module_id": "amphora-cure-potlife-gate",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-cure-potlife-gate/src/lib.rs",
+        "scenario": "Strictly reject unknown fields and malformed hashes across the coating pot-life contract preflight.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "cure-verification-set.v1",
+          "model_id": "cure-potlife-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "CONSTRAINT_ONLY",
+          "track_id": "cure_gel_film_set_pot_life"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-cure-potlife-gate/src/lib.rs",
+          "sha256": "1a1737339b903705a0af19e28277137c3476ef4ff5d145125996f2a3d0e13939"
+        },
+        {
+          "path": "amphora-cure-potlife-gate/src/contract.rs",
+          "sha256": "4f88268d559b11aa0f4f3e18d7173b528107454bc79f7242ec3c13c4c9decd70"
+        },
+        {
+          "path": "amphora-cure-potlife-gate/src/evaluation.rs",
+          "sha256": "36ba0132e1d3cad16a798a2a50a68d3e9c6d2868e9e01996ad7fb5cf660c595d"
+        },
+        {
+          "path": "amphora-cure-potlife-gate/src/physics.rs",
+          "sha256": "01d9f3365aa702d0b40eb3ab4819abe0fe923346543f8fe054c4e5d84832068e"
+        },
+        {
+          "path": "amphora-cure-potlife-gate/src/preflight.rs",
+          "sha256": "bfb7d7214a73107276ee3ab63ea2cfe1e367f291d3bb03c99da4d60acbd0fad7"
+        },
+        {
+          "path": "amphora-cure-potlife-gate/src/protocol.rs",
+          "sha256": "7dea16b049e1b514296b561225100a7d124883ae4eab2eda9b66ae8cbdfabe92"
+        },
+        {
+          "path": "amphora-cure-potlife-gate/src/tests.rs",
+          "sha256": "764ae2faac065e8b2f99435522749b9de812915edf93aa14954d1e1169bab69a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-design-rule-score/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-design-rule-score/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-design-rule-score/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-design-rule-score/reference/mvp20/data/feedback_v1/dataset_context.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "9e4a3ccd0b3783920ca59bf5e0c79b07da5e8934dffbe6206100b02a7ae62572"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Eligible primary-study series with locked extraction and subgroup identifiers"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      },
+      "known_contradictions": [
+        "Within-study directional literature rules do not establish cross-family formulation performance or candidate qualification."
+      ],
+      "module_id": "amphora-design-rule-score",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "scenario": "Ignore zero-mass ingredients and block literature-direction overclaim.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "literature-series.v1",
+          "model_id": "directional-design-rule-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "AUDIT_ONLY",
+          "track_id": "directional_design_rule_literature"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-formulation-capabilities/src/lib.rs",
+          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-envelope-gates/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-envelope-gates/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-envelope-gates/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Authoritative unit/envelope specifications and measured boundary-case controls"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      },
+      "known_contradictions": [
+        "Deterministic envelope consistency can reject arithmetic defects but cannot establish wet-lab fitness or performance."
+      ],
+      "module_id": "amphora-envelope-gates",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "scenario": "Keep domain state, hard gates, and signed margins logically consistent.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-formulation-capabilities/src/lib.rs",
+          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "output_artifact",
+          "path": "amphora-evidence-intake-validator/reference/mvp20/out/v5_evidence_intake_validator.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "169ec39a3038d726d8c5b5263e7abd2b5ad7c28c0501490edd66848fb1167a46"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-evidence-intake-validator/reference/mvp20/out/v5_non_candidate_fixture_packages.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "64a9d98a23fce4531254acff7b4cd981413760c7c0cfad15bf4155ff1d011ce8"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-evidence-intake-validator/reference/mvp20/out/v5_validator_dry_run_results.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "5a30d78b583b615f101a60b19cf072343221f524f7d07485fd9c2917ca0f6aba"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": "amphora-evidence-intake-validator/reference/mvp20/out/v5_validator_dry_run_results.json",
+        "artifact_sha256": "5a30d78b583b615f101a60b19cf072343221f524f7d07485fd9c2917ca0f6aba",
+        "gap": "The observations are transcribed checked-artifact fields, not an independent validation or promotion conclusion.",
+        "observations": [
+          {
+            "json_path": "summary.fixture_results",
+            "value": 8
+          },
+          {
+            "json_path": "summary.expected_matches",
+            "value": 8
+          },
+          {
+            "json_path": "summary.physical_legal_supplier_authority_procurement_claim_upgrades",
+            "value": 0
+          }
+        ],
+        "reported_result_status": null,
+        "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+      },
+      "external_dependencies": [
+        "Issuer-bound cryptographic or independently verifiable evidence receipts"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      },
+      "known_contradictions": [
+        "Synthetic rejection fixtures test intake behavior; accepted intake cannot by itself create scientific, legal, supplier, or procurement authority."
+      ],
+      "module_id": "amphora-evidence-intake-validator",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "scenario": "Reject nonexistent files and duplicate resolution of one manifest entry.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "evidence_package",
+          "dataset_id": "evidence-intake-rule-suite.v1",
+          "model_id": "evidence-intake-authority-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "DISABLED",
+          "track_id": "evidence_intake_provenance_authority"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-assurance-capabilities/src/lib.rs",
+          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-formulation-arithmetic/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-formulation-arithmetic/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-formulation-arithmetic/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Independent hand/spreadsheet known answers and official method definitions"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      },
+      "known_contradictions": [
+        "Computational success and in-envelope arithmetic are not formulation fitness or corrosion-performance evidence."
+      ],
+      "module_id": "amphora-formulation-arithmetic",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "scenario": "Reject non-finite formulation arithmetic inputs.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "arithmetic-known-answers.v1",
+          "model_id": "formula-arithmetic-envelope-v1",
+          "model_readiness_status": "R&D_RANKING_READY",
+          "solver_use": "OBJECTIVE",
+          "track_id": "formulation_arithmetic_envelope"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-formulation-capabilities/src/lib.rs",
+          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-formulation-universe/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-formulation-universe/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-formulation-universe/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Locked design-space specification and empirical evaluation of selected formulations"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      },
+      "known_contradictions": [
+        "Cartesian accounting establishes enumerated and infeasible counts, not empirical superiority of any solved formulation."
+      ],
+      "module_id": "amphora-formulation-universe",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "scenario": "Require a formulation and reconcile total, solved, and infeasible Cartesian counts.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-formulation-capabilities/src/lib.rs",
+          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-ingredient-library/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-ingredient-library/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Current supplier TDS/SDS/CoA records with grade, rights, and issuer binding"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      },
+      "known_contradictions": [
+        "The local ingredient catalog contains sourced and approximate values with unresolved rights/currentness and cannot qualify a commercial grade."
+      ],
+      "module_id": "amphora-ingredient-library",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "scenario": "Ignore zero-mass ingredients and reject unknown load-bearing records.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-formulation-capabilities/src/lib.rs",
+          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Qualified patent counsel, current jurisdictional search, and claim charts"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      },
+      "known_contradictions": [
+        "FTO is explicitly not performed; neither a Boolean counsel flag nor a local patent landscape creates legal closure."
+      ],
+      "module_id": "amphora-ip-fto-guard",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "scenario": "Keep FTO NOT PERFORMED even when signed_by_counsel is true.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-assurance-capabilities/src/lib.rs",
+          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-known-answer-benchmarks/reference/mvp20/data/feedback_v1/dataset_context.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "8baa9906a2124ccefde35acf1a886ab807215ed2a948de22d14b245a8deb0a81"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-known-answer-benchmarks/reference/mvp20/out/arithmetic_audit.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-known-answer-benchmarks/reference/mvp20/out/feedback_v1_aggregate_report.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "7f2c8b7e6ec48152d395d4e1fa540e1ccf4c5ccf60d41ef08c7982396db228f7"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-known-answer-benchmarks/reference/mvp20/out/feedback_v1_dataset_benchmark_report.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0543c15114f7092b4e50ecee377979ee239ced3eaf6dcc7e2a8671c057dfb7cb"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-known-answer-benchmarks/reference/mvp20/out/known_answer_report.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "8ad390291d012c2adfcb707dfbb84c151d1748a81fdd3d5109116abd4072c1e3"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-known-answer-benchmarks/reference/mvp20/out/known_reference_cards.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-known-answer-benchmarks/reference/mvp20/out/mil_recovery.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "99aec4b8279e0215a7b3ff36f6570cc12eae1c42731622ed7a3857acf6bb077d"
+        },
+        {
+          "kind": "evaluation_receipt",
+          "path": "amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json",
+          "rights": {
+            "evidence_path": "amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json",
+            "gap": "One historical control remains UNVERIFIED; the arithmetic subset is 6/6 only.",
+            "status": "KNOWN"
+          },
+          "sha256": "be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": "amphora-known-answer-benchmarks/reference/mvp20/out/arithmetic_audit.json",
+        "artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+        "gap": "The observations are transcribed checked-artifact fields, not an independent validation or promotion conclusion.",
+        "observations": [
+          {
+            "json_path": "n_formulas",
+            "value": 4
+          },
+          {
+            "json_path": "n_checks",
+            "value": 6
+          },
+          {
+            "json_path": "n_pass",
+            "value": 6
+          }
+        ],
+        "reported_result_status": null,
+        "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+      },
+      "external_dependencies": [
+        "Independent reference calculations and controlled standard-method cases"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      },
+      "known_contradictions": [
+        "Known-answer recovery is limited sanity evidence and is not an independent performance benchmark or candidate validation."
+      ],
+      "module_id": "amphora-known-answer-benchmarks",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "scenario": "Validate the checked known-answer fixture as a limited-sanity ScoreEnvelope.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-assurance-capabilities/src/lib.rs",
+          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "output_artifact",
+          "path": "amphora-model-card-authority/reference/mvp20/out/validation_cards.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "bea4ba80cdcd694189b7123448644ec842ea9b763a80a22ca2feaf56ec26da42"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Independent validation receipts bound to frozen model and dataset hashes"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-engine/src/lib.rs",
+        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-engine/Cargo.toml",
+        "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
+      },
+      "known_contradictions": [
+        "A model card records and restricts authority but cannot grant scientific validation, legal approval, or product authority."
+      ],
+      "module_id": "amphora-model-card-authority",
+      "portfolio_edges": {
+        "consumers": [
+          "amphora-optimizer-orchestrator",
+          "amphora-redteam-audit"
+        ],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-run-provenance"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-engine/src/lib.rs",
+        "scenario": "Validate the checked model-card authority fixture and its fail-closed envelope fields.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-engine/src/lib.rs",
+          "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-generator/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-generator/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-generator/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-generator/reference/mvp20/data/feedback_v1/dataset_context.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Scaffold-held-out benchmark, expert review, and synthesis-feasibility controls"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
+        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+      },
+      "known_contradictions": [
+        "The current generator is deterministic rule/template code, not a trained generative model with prospective closed-loop superiority evidence."
+      ],
+      "module_id": "amphora-molecule-generator",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "scenario": "Validate the checked generator fixture without inferring trained-model or performance authority.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-molecule-capabilities/src/lib.rs",
+          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-property/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-property/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-property/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-property/reference/mvp20/data/feedback_v1/dataset_context.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-molecule-property/reference/mvp20/out/feedback_v1_property_benchmark.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": "amphora-molecule-property/reference/mvp20/out/feedback_v1_property_benchmark.json",
+        "artifact_sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b",
+        "gap": "The observations are transcribed checked-artifact fields, not an independent validation or promotion conclusion.",
+        "observations": [
+          {
+            "json_path": "exact_match_coverage.exact_match_coverage_rate",
+            "value": 0.8336
+          },
+          {
+            "json_path": "nearest_neighbor_baseline.evaluated_row_count",
+            "value": 1400
+          },
+          {
+            "json_path": "nearest_neighbor_baseline.median_absolute_delta",
+            "value": 34.864206
+          }
+        ],
+        "reported_result_status": null,
+        "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+      },
+      "external_dependencies": [
+        "Independent defined-molecule controls and measured commercial-grade EEW/AHEW"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
+        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+      },
+      "known_contradictions": [
+        "Exact calculations apply only to defined single-component structures; commercial-grade EEW/AHEW remains measured-only."
+      ],
+      "module_id": "amphora-molecule-property",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "scenario": "Reject mixtures/commercial grades from exact single-molecule authority.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "molecule",
+          "dataset_id": "eew-ahew-known-answers.v1",
+          "model_id": "molecule-reactive-function-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "DISABLED",
+          "track_id": "molecule_property_reactive_function"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-molecule-capabilities/src/lib.rs",
+          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-role-ranker/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-role-ranker/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-role-ranker/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-role-ranker/reference/mvp20/data/feedback_v1/dataset_context.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-role-ranker/reference/mvp20/data/molecule_library.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-molecule-role-ranker/reference/mvp20/data/role_fit_benchmark.v1.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Independent expert role labels and candidate-bound grade evidence"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
+        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+      },
+      "known_contradictions": [
+        "Role-fit rules and declared evidence do not establish polyamide identity, marine qualification, synthesis feasibility, or performance."
+      ],
+      "module_id": "amphora-molecule-role-ranker",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "scenario": "Keep measured-only and missing-class evidence from becoming qualification authority.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "molecule",
+          "dataset_id": "role-fit-benchmark.v1",
+          "model_id": "molecule-role-fit-v1",
+          "model_readiness_status": "R&D_RANKING_READY",
+          "solver_use": "R&D_OBJECTIVE",
+          "track_id": "molecule_role_fit"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-molecule-capabilities/src/lib.rs",
+          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "No checked-in dataset, output artifact, or non-README fixture was discovered for this module.",
+      "artifacts": [],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Frozen owned comparison corpus plus patent and synthesis review"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
+        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+      },
+      "known_contradictions": [
+        "Corpus distance is not patent novelty, freedom to operate, synthesis feasibility, or performance evidence."
+      ],
+      "module_id": "amphora-molecule-novelty",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "scenario": "Prevent corpus novelty from becoming patent novelty or performance authority.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "molecule",
+          "dataset_id": "feedback-v1-polymer-corpus",
+          "model_id": "molecule-novelty-v1",
+          "model_readiness_status": "R&D_RANKING_READY",
+          "solver_use": "R&D_OBJECTIVE",
+          "track_id": "molecule_novelty"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-molecule-capabilities/src/lib.rs",
+          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "No checked-in dataset, output artifact, or non-README fixture was discovered for this module.",
+      "artifacts": [],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Independent structural controls, EHS review, and synthesis assessment"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
+        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+      },
+      "known_contradictions": [
+        "Structural applicability gates do not establish EHS acceptability, synthesis feasibility, qualification, procurement, or performance."
+      ],
+      "module_id": "amphora-molecule-design-gate",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "scenario": "Reject malformed chemistry and preserve EHS/synthesis/performance claim locks.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "molecule",
+          "dataset_id": "structural-applicability-rules-v1",
+          "model_id": "molecule-design-gate-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "CONSTRAINT_ONLY",
+          "track_id": "molecule_design_gate"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-molecule-capabilities/src/lib.rs",
+          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "No checked-in dataset, output artifact, or non-README fixture was discovered for this module.",
+      "artifacts": [],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Centrally authorized validated objectives and Rust/Python decision parity fixtures"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-engine/src/lib.rs",
+        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-engine/Cargo.toml",
+        "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
+      },
+      "known_contradictions": [
+        "Dependency-aware ranking can enforce authority but cannot repair unvalidated scientific objectives or create missing evidence."
+      ],
+      "module_id": "amphora-optimizer-orchestrator",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-model-card-authority"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-engine/src/lib.rs",
+        "scenario": "Reject unknown modules, blocked locks, and unauthorized objective escalation.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-engine/src/lib.rs",
+          "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        },
+        {
+          "path": "amphora-core/src/lib.rs",
+          "sha256": "20fa48ab7e758ec7ff5c562cceb426466193a73597f66a708f5455bbc440ad86"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "output_artifact",
+          "path": "amphora-process-qc-twin/reference/mvp20/out/capture_template.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-process-qc-twin/reference/mvp20/out/process-qc-audit-shell.v1.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "The source licenses are cataloged, but promotion remains blocked until a non-development rights reviewer signs exact artifact-bound receipts.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "e81f219121523ccf1f20c3c490c917ae413a30190df0515dd250c689056929c1"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": "amphora-process-qc-twin/reference/mvp20/out/process-qc-audit-shell.v1.json",
+        "artifact_sha256": "e81f219121523ccf1f20c3c490c917ae413a30190df0515dd250c689056929c1",
+        "gap": "This is a reproducible audit shell, not a prospective 30-batch pilot, manufacturing qualification, or batch-release validation; cryptographic rights review remains outstanding.",
+        "observations": [
+          {
+            "json_path": "source_bindings[0].row_count",
+            "value": 1567
+          },
+          {
+            "json_path": "source_bindings[1].row_count",
+            "value": 189010
+          },
+          {
+            "json_path": "owned_deterministic_controls.false_positive_alert_count",
+            "value": 0
+          },
+          {
+            "json_path": "owned_deterministic_controls.missed_deviation_detector_count",
+            "value": 0
+          },
+          {
+            "json_path": "authority_ceiling",
+            "value": "AUDIT_ONLY"
+          }
+        ],
+        "reported_result_status": "DIAGNOSTIC_CONTROLS_PASS",
+        "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+      },
+      "external_dependencies": [
+        "Prospective time-ordered 30-batch pilot with seeded controls"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      },
+      "known_contradictions": [
+        "No prospective 30-batch pilot is checked in, and the module has no manufacturing or batch-release authority."
+      ],
+      "module_id": "amphora-process-qc-twin",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "scenario": "Detect seeded controls without granting batch-release authority.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "candidate-supplied-time-ordered-process-qc-history.v1",
+          "model_id": "process-qc-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "AUDIT_ONLY",
+          "track_id": "process_qc_batch_release"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-formulation-capabilities/src/lib.rs",
+          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/feedback_v1/dataset_context.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "a7fa933ae5a147c4503bbfd525948b86d6dfb527023b6dac3c16e550ff74cc05"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128758_2-e-p-1k-2-s_erosion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "c72f611d6eea10598dc705c621c161ab86f94ab9f3cf0001787f98966743b16a"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128759_2-e-p-1k-2-s_impact.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "d319386d740e5def9db8a53591731a2e756e6ad21763a1f13aba63e8c20716a1"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128760_2-e-p-1k-2-s_rust_creep.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128761_2-e-p-1k-2-s_wet_dry_adhesion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "db5667c619b03afca704f062e8b64e766219f24837038dde50548c88e7ff0995"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128763_2-e-p-2k-2-s_erosion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "6ae2777bf20721935ecf83d74f973304374919e25170c5fefeb1b6741c409657"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128764_2-e-p-2k-2-s_impact.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "cba0d127347507e2fce6a6dd8e7ddd8bb9872944246a464ed285ec0f34272f36"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128765_2-e-p-2k-2-s_rust_creep.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128766_2-e-p-2k-2-s_wet_dry_adhesion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "673129010365ef3984c2e2a287ff14b1c9d315d9107e446cc86e367d10ab1b42"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128768_2-z-p-1k-2-s_erosion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "2d17de08d48b96921874302e746f6a024c22b3708c935273a8112252f7de3f11"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128769_2-z-p-1k-2-s_impact.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "b3580e3f7ea033d52e082526517002b4c6b9e03eeb68e6b783363091255b1c86"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128770_2-z-p-1k-2-s_rust_creep.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128771_2-z-p-1k-2-s_wet_dry_adhesion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "716904a260db91ea3b3d4395fa66d3f08e2466433b6e10047a1bb0e5797609d8"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128773_2-z-p-2k-2-s_erosion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "ff17e7606af558480b067ca067d69c3f0651dbc2f1c7d5593726d917a7179424"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128774_2-z-p-2k-2-s_impact.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "5e6b2f93d87e182bdf5b9c905bd43ce405c92a1c865e4f7a7449f6f594056a96"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128775_2-z-p-2k-2-s_rust_creep.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128776_2-z-p-2k-2-s_wet_dry_adhesion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "1d69b9371aa99b72b2d24da151023f1f9822607fd7f9002c65f5acc29478efe5"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128778_3-d-p-2k-2-s_erosion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "bec75f2d7330c51b7ea2a8949c8db60ff92948bf3bce10d467a527e53dfa5d73"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128780_3-d-p-2k-2-s_impact.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "edecd4849f1c610c5cf107d76bb852da6013d8d15352672112b9b1adc09e78fa"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128781_3-d-p-2k-2-s_rust_creep.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128782_3-d-p-2k-2-s_wet_dry_adhesion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "f05baa3cfa3e94bd6ad734d777b5934c67530f30d0d27139ded712e3840a062d"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128785_3-z-p-2k-2-s_erosion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "6ecc53e3b62a05c5b819cb7a6710c8b5cd3be92f414ea0742dceb7b8b15a17f9"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128786_3-z-p-2k-2-s_impact.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "1fa8be3d29843f163e94a28fe991a1527c4669b879981d980563777481800531"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128787_3-z-p-2k-2-s_rust_creep.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128788_3-z-p-2k-2-s_wet_dry_adhesion.csv",
+          "rights": {
+            "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+            "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+            "status": "KNOWN"
+          },
+          "sha256": "b22fdbebd467a22c040885c1531d757585bad5cfdc8fac5b0ccc968b1f07b5b4"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/feedback_v1_nist_benchmark.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "e318214998d2691f5866324b84e13ed361d89a388daeb27d3f39ce2beb14fc20"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_corrosion_benchmark_model_card.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "1572d664af8ad654f55743ee5c4729025b2a8859adfcb6c8ae95abd87a2687b6"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "671dacef8517464182a3fb7508a6bcf3f8814a3d414e8634d154b87c59b011ed"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_public_corrosion_dataset_manifest.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "b59bc8fff1b65e287945e52b19f4849f252e018b62e9626bed0814584f3d9a5a"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_public_eis_feature_table.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "58082a5356a51f74cf38fe5175de18435995de998ac23473437ffa19623059c4"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_unseen_benchmark.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "d58316fad1db07e3f01ec4ec136e98d786cb7c799ba51cd643df9fe601ad6ed0"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch30_lift_audit.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "5daada4f00b4ca6cb99a92cf0d7cb733d1118fc46630d6cf55e996aa2e3547b8"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch30_lift_audit.json",
+        "artifact_sha256": "5daada4f00b4ca6cb99a92cf0d7cb733d1118fc46630d6cf55e996aa2e3547b8",
+        "gap": "The observations are transcribed checked-artifact fields, not an independent validation or promotion conclusion.",
+        "observations": [
+          {
+            "json_path": "status",
+            "value": "failed"
+          },
+          {
+            "json_path": "promotion_status",
+            "value": "NO_LIFT_DETECTED_CURRENT_DATA"
+          },
+          {
+            "json_path": "primary_metric",
+            "value": "grouped_accuracy_on_median_derived_endpoint_label"
+          },
+          {
+            "json_path": "model_metric",
+            "value": 0.666667
+          },
+          {
+            "json_path": "baseline_metric",
+            "value": 0.666667
+          },
+          {
+            "json_path": "absolute_lift",
+            "value": 0.0
+          }
+        ],
+        "reported_result_status": "failed",
+        "status": "CHECKED_ARTIFACT_REPORTED_STATUS"
+      },
+      "external_dependencies": [
+        "At least 30 independent systems including 10 locked external systems"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      },
+      "known_contradictions": [
+        "The checked public-system audit reports no lift on current data and contains no owned candidate wet-lab validation."
+      ],
+      "module_id": "amphora-public-corrosion-benchmark",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "scenario": "Keep the grouped unseen benchmark deterministic and not promoted.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "public-corrosion-six-system-benchmark.v1",
+          "model_id": "corrosion-eis-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "AUDIT_ONLY",
+          "track_id": "corrosion_eis"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-formulation-capabilities/src/lib.rs",
+          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-redteam-audit/reference/mvp20/data/claim_registry.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "775330ec4d180802357c50b06de0d744544696b0e8f3d76e08d1d1f5a33e1b84"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-redteam-audit/reference/mvp20/out/redteam_self_audit.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "be8279ec78ca3980ba52b3b616390ac86601cca51809e300bfcd9d757de39c79"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Independent adversarial review and mutation corpus"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      },
+      "known_contradictions": [
+        "A successful self-audit only confirms encoded checks; it is not independent red-team coverage or evidence that all attacks were anticipated."
+      ],
+      "module_id": "amphora-redteam-audit",
+      "portfolio_edges": {
+        "consumers": [
+          "amphora-report-packager"
+        ],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-model-card-authority"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "scenario": "Reject empty or malformed artifact lists and invalid input envelopes.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-assurance-capabilities/src/lib.rs",
+          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "synthetic_diagnostic_fixture",
+          "path": "amphora-report-packager/reference/mvp20/fixtures/known-answer-package.v1.json",
+          "rights": {
+            "evidence_path": "amphora-report-packager/reference/mvp20/fixtures/known-answer-package.v1.json",
+            "gap": "Non-authoritative synthetic known-answer package; it creates no product or scientific evidence.",
+            "status": "KNOWN"
+          },
+          "sha256": "2cb9ef66221150fc392a8be1bc8570b13bc93804249df11937e426d2d02d333c"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-report-packager/reference/mvp20/out/CUSTOMER_FACING.tex",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ba69a64ca49fc5973faea36c0cbcbc6ea89fca60b73d3556758f4882cad83b71"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-report-packager/reference/mvp20/out/FOUNDER_FACING.tex",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "d0517f12e93ffec1a8ebac67fb5040bd6c70627e57738b4f6fbb8448e10b6742"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-report-packager/reference/mvp20/out/blueprint.md",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-report-packager/reference/mvp20/out/f718_style_datasheet.md",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0c34557390f7cf8f38e5bc375646ce325c53c0451a14ef52b9b1c8934291795b"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Approved audience-specific claim policy and independently accepted input envelopes"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      },
+      "known_contradictions": [
+        "Packaging valid envelopes cannot upgrade their claim locks, evidence tier, legal status, or product authority."
+      ],
+      "module_id": "amphora-report-packager",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-redteam-audit"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "scenario": "Reject empty or malformed artifact lists and claim-lock stripping.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-assurance-capabilities/src/lib.rs",
+          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "output_artifact",
+          "path": "amphora-run-provenance/reference/mvp20/out/run_manifest.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "eb68f96019b42e0617a08243d391c1aaf1104de62e1f797ca266b9533cd3e8c6"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Signed execution environment, immutable artifact store, and independent replay"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-engine/src/lib.rs",
+        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-engine/Cargo.toml",
+        "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
+      },
+      "known_contradictions": [
+        "A deterministic provenance record binds observed bytes but does not independently prove the scientific truth or ownership of those bytes."
+      ],
+      "module_id": "amphora-run-provenance",
+      "portfolio_edges": {
+        "consumers": [
+          "amphora-model-card-authority"
+        ],
+        "dependencies": [
+          "amphora-candidate-contract"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-engine/src/lib.rs",
+        "scenario": "Reject empty or malformed artifacts and detect replay-byte drift.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-engine/src/lib.rs",
+          "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "openCOSMO and quantum-generator licenses are unresolved and no owned 96-blend calibration dataset exists.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+          "rights": {
+            "evidence_path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+            "gap": "Known source and rights status; parameter downloads remain unacquired and ineligible.",
+            "status": "KNOWN"
+          },
+          "sha256": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "config/program/solvency-model-split.v1.json",
+          "rights": {
+            "evidence_path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+            "gap": "Empty group split records that promotion measurements are absent.",
+            "status": "KNOWN"
+          },
+          "sha256": "48b174964b9cb9c01b89425abc8a8f16f7a308624b7efdeacc83c3aa9f6f16cb"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "config/benchmark-locks/amphora-solvency-score.v1.json",
+          "rights": {
+            "evidence_path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+            "gap": "Group-held-out gates, baselines, and hostile nulls are locked but not passed.",
+            "status": "KNOWN"
+          },
+          "sha256": "97fa89d672767a94427f9f412ee4e92656751c3369d9afacd8411a17042f7afc"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "config/program/solvency-sources.v1.json",
+          "rights": {
+            "evidence_path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+            "gap": "The census binds quarantined context and grants no parameter reuse rights.",
+            "status": "KNOWN"
+          },
+          "sha256": "e4a219a8156f4700bfccb318590a28fd2d6de6a7fb3f6a5967ad5917264eeed3"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": "amphora-solvency-score/benchmarks/bigsoldb-v1/evaluation_receipt.v20.canonical.json",
+        "artifact_sha256": "74d3a0f71e6512283de2bf32a16fc76a1543439dbbb0a92c73e986d4f187a9ae",
+        "gap": "Leave-solute-out grouped-CV retrospective on public BigSolDB v2.0 (CC-BY-4.0, Krasnov et al. Sci Data 2025); AUDIT_ONLY diagnostic. Not an owned prospective 96-blend carrier-compatibility calibration; no pigmented/drying/cure/shelf-life claim; no product qualification; only leave_solute_out is two-replay SHA-256 gated.",
+        "observations": [
+          {
+            "json_path": "splits[0].split",
+            "value": "leave_solute_out"
+          },
+          {
+            "json_path": "splits[0].model.rmse",
+            "value": 0.8770255643028615
+          },
+          {
+            "json_path": "splits[0].model.rmse_ci95_cluster_bootstrap[0]",
+            "value": 0.8416341720920943
+          },
+          {
+            "json_path": "splits[0].model.rmse_ci95_cluster_bootstrap[1]",
+            "value": 0.9154344725058612
+          },
+          {
+            "json_path": "splits[0].model.r2",
+            "value": 0.48194739618244054
+          },
+          {
+            "json_path": "splits[0].baselines.b1_solvent_mean.rmse",
+            "value": 1.1686915142248226
+          },
+          {
+            "json_path": "n_rows_modeled",
+            "value": 94532
+          },
+          {
+            "json_path": "raw_sha256",
+            "value": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0"
+          }
+        ],
+        "reported_result_status": "MODEL_BEATS_BEST_BASELINE_ON_UNSEEN_SOLUTES_AUDIT_ONLY",
+        "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
+      },
+      "external_dependencies": [
+        "At least 96 unique blends, four held-out solvent-family groups, three resin/lot groups, 10/25/40 C duplicates with microscopy and turbidity, parameter rights, and independent review"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-solvency-score/src/lib.rs",
+        "sha256": "4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-solvency-score/Cargo.toml",
+        "version_source_sha256": "13c1f55c8447cd4341d87e9a7b995ff91274cdee77cde957bae1405d6ba36a26"
+      },
+      "known_contradictions": [
+        "The fixed-catalog carrier calculation cannot claim pigmented stability, drying, cure, shelf life, qualification, or a compatibility probability."
+      ],
+      "module_id": "amphora-solvency-score",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-solvency-score/src/lib.rs",
+        "scenario": "Verify critical Flory-Huggins behavior, permutation invariance, conservation, and strict unknown-field rejection.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "carrier-solvency-promotion-data-not-yet-available.v1",
+          "model_id": "carrier-solvency-tpd-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "CONSTRAINT_ONLY",
+          "track_id": "unpigmented_carrier_solvency"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-solvency-score/src/lib.rs",
+          "sha256": "4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-source-ledger/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-source-ledger/reference/mvp20/data/feedback_v1/dataset_context.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "4b78b54e22d517f8ffb64e39643fd18c4c1c856bced965664d33a3e23c3fd5d0"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-source-ledger/reference/mvp20/data/source_records.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-source-ledger/reference/mvp20/out/feedback_v1_aggregate_report.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "7f2c8b7e6ec48152d395d4e1fa540e1ccf4c5ccf60d41ef08c7982396db228f7"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Primary-source snapshots, licenses, revision checks, and independent extraction review"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      },
+      "known_contradictions": [
+        "The ledger contains conflicts, snapshots, paywalled sources, and manual-confirmation gaps; a resolved URL is not verified candidate evidence."
+      ],
+      "module_id": "amphora-source-ledger",
+      "portfolio_edges": {
+        "consumers": [
+          "amphora-barrier-corrosion-score",
+          "amphora-cro-protocol-packager",
+          "amphora-cure-potlife-gate",
+          "amphora-design-rule-score",
+          "amphora-envelope-gates",
+          "amphora-evidence-intake-validator",
+          "amphora-formulation-arithmetic",
+          "amphora-formulation-universe",
+          "amphora-ingredient-library",
+          "amphora-ip-fto-guard",
+          "amphora-known-answer-benchmarks",
+          "amphora-molecule-design-gate",
+          "amphora-molecule-generator",
+          "amphora-molecule-novelty",
+          "amphora-molecule-property",
+          "amphora-molecule-role-ranker",
+          "amphora-process-qc-twin",
+          "amphora-public-corrosion-benchmark",
+          "amphora-solvency-score",
+          "amphora-sourceability-ehs",
+          "amphora-tolerance-robustness",
+          "amphora-viscosity-score"
+        ],
+        "dependencies": [
+          "amphora-candidate-contract"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "scenario": "Validate the checked source-ledger score fixture without treating URL resolution as evidence closure.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": null,
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-assurance-capabilities/src/lib.rs",
+          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        },
+        {
+          "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/basf_n_butanol_sds.pdf",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "8c6515360cbd93d713eed892bd3187a2eee808adac2e9a222d7d7304b59a0fa9"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_a_530.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0126cd5c899573355e5e53ef553455bf6a81240c07eea4d816edf9e22fdc96e5"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_disperbyk_110.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "a1a4c0cf56d7a5dfb540d400ee1d2153a0ff59bbe012621e978506a5813bb44b"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_ghs_sds.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "c2387516a067c43d2785ba3991b12407b268b515a92eed4a1790b35c9966ecb9"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/dla_qpd_24441.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "98de9b235df7320f95056c2efedacfcbae9ff5ee2084e70b99e11ba5507fa83d"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ecfr_pfas_api.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "8349e6b2e643521c8e02e70559547793ea9192bf312e7a3e9c04b71a557b4991"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/elementis_bentone_38.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "33b333255efc050be918c3352655e3eb6a90ecedf5daf2edfbb128e3b681c84a"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/epa_comptox.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "42e170f7892b9b97e0bceda2662618d32bb6e85c47d1c90241c2695b93cd1898"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/epa_tsca_inventory.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "739a8ecc8d7d0c333beb4a70a33191316688e74eb5fc4ca042908c2a18f1321c"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/evonik_ancamide_350a.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "c1a53fbda98c0f652de34a3bf1ef952077fdba31dc42f5c02930b19ec8571c0f"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/far_taa.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "1c7b4dc3da976b30824810720c0e49ecf848782cce7164c993bad52c950db7ed"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/fisher_naphtha_sds.pdf",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "1662e7760684df30bbe73367ad18825468dc0ece7453c62086ac8108c6984f42"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/heubach_zp10.pdf",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "92bd35e75c1ba4c1eeea9c8e7d91eaf6c9ae1942a7b41b020e9a0b3e324ed478"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_document_finder.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ee7c1ad929d2e37e14afdea03da1663fe3dbeda8933ac8d1c5eab2d892d29dce"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_mica.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "4a3269fbb86d03ab3506397c9de836710a9cc056cd1f04795c5d29f5f0028567"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_talc.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "e1923246b7e6505a479930886b1fe61c310a2b5bf1b79278ac9b90e9c2ea5de7"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_318.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "305b5fe43a907f23ab936f5e85dd8b295f2b5f96eb74bcf7fcf57f1c8f09baf9"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_920.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "5a02e7004ff2d0df47f97dec0bd15cb57bac50f33ec75d07eb9aa7d9f5d54ca5"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/olin_epoxy_stewardship.pdf",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "2eef5fd84f806e40ef411feb1d1ca91d9990cca777dabf5a445fc073feb8970a"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_minusil.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "08f9c750badbacca69ef00d5e060de736f3d62ba862cb419aa86576094fe6195"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_tds_finder.html",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0d85b67ce5a8253335102ed0ca86713cb31c3f568135002759e59578ac091a74"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_bom_line_source_packet_matrix.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "3962c50d3f5679cbce54f2ed7e7cfa121f3e17e2e81ab92929ab32136420493c"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_ehs_regulatory_prescreen.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "7b5ccb002415b8dda49994db42e9a8471542317dec03589140dc771d8d6caa0a"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_unresolved_supplier_declaration_gap_register.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "cbef70c1757bda50e03d318b6289e3a97051f69afba368489b37a2a3effc3377"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "No checked-in module-specific benchmark result artifact was identified.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "Current candidate- and issuer-bound supplier declarations and lot evidence"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      },
+      "known_contradictions": [
+        "Public prescreen records are not candidate-bound supplier declarations, procurement approval, or regulatory closure."
+      ],
+      "module_id": "amphora-sourceability-ehs",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "scenario": "Reject stale, wrong-grade, unbound, or hash-mismatched supplier evidence.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "public-sourceability-prescreen.v1",
+          "model_id": "sourceability-evidence-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "DISABLED",
+          "track_id": "sourceability_ehs_supplier_closure"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-assurance-capabilities/src/lib.rs",
+          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-tolerance-robustness/reference/mvp20/data/corrosion_series.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-tolerance-robustness/reference/mvp20/data/cure_verification_set.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+        },
+        {
+          "kind": "dataset",
+          "path": "amphora-tolerance-robustness/reference/mvp20/data/facts.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-tolerance-robustness/reference/mvp20/out/v5_epoch29_simulation_config.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "fd43c4a20eba5e339faa42d078296932c91560a18200891292fb0715e3257c81"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "amphora-tolerance-robustness/reference/mvp20/out/v5_epoch30_lift_audit.json",
+          "rights": {
+            "evidence_path": null,
+            "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+            "status": "UNRESOLVED"
+          },
+          "sha256": "bae623eb85a130cd40d1e0d3ae7a4b14690dc59dee4716a693cc7fd99f133263"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": "amphora-tolerance-robustness/reference/mvp20/out/v5_epoch30_lift_audit.json",
+        "artifact_sha256": "bae623eb85a130cd40d1e0d3ae7a4b14690dc59dee4716a693cc7fd99f133263",
+        "gap": "The observations are transcribed checked-artifact fields, not an independent validation or promotion conclusion.",
+        "observations": [
+          {
+            "json_path": "status",
+            "value": "simulation_only"
+          },
+          {
+            "json_path": "promotion_status",
+            "value": "UNSEEN_PERTURBATION_SIMULATION"
+          },
+          {
+            "json_path": "primary_metric",
+            "value": "normalized_10th_percentile_gate_margin"
+          },
+          {
+            "json_path": "model_metric",
+            "value": 0.0778374135557138
+          },
+          {
+            "json_path": "baseline_metric",
+            "value": 0.08291977976434006
+          },
+          {
+            "json_path": "absolute_lift",
+            "value": -0.00508236620862626
+          }
+        ],
+        "reported_result_status": "simulation_only",
+        "status": "CHECKED_ARTIFACT_REPORTED_STATUS"
+      },
+      "external_dependencies": [
+        "Measured lot/process variation and prospective formulation repeats"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      },
+      "known_contradictions": [
+        "The reported robustness result is simulation-only and is not calibrated against measured manufacturing variation."
+      ],
+      "module_id": "amphora-tolerance-robustness",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "scenario": "Keep robust flag, gate status, objective, and receipt mutually consistent.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "fixed-band-robustness-simulation.v1",
+          "model_id": "formulation-robustness-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "CONSTRAINT_ONLY",
+          "track_id": "robustness_formulation_margin"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-formulation-capabilities/src/lib.rs",
+          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        }
+      ]
+    },
+    {
+      "artifact_gap": "No owned multi-family, multi-temperature rheology promotion dataset or independent review exists.",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+          "rights": {
+            "evidence_path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+            "gap": "Known method and patent-context status; no source is admitted as training authority.",
+            "status": "KNOWN"
+          },
+          "sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "config/program/viscosity-split.v1.json",
+          "rights": {
+            "evidence_path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+            "gap": "Empty formulation-family split records that owned measurements are absent.",
+            "status": "KNOWN"
+          },
+          "sha256": "a6ef9b6c2d8d6d73bde295ed5e3b28ff1c35736fd68ad5cedc7fb3161c3f15ee"
+        },
+        {
+          "kind": "output_artifact",
+          "path": "config/benchmark-locks/amphora-viscosity-score.v1.json",
+          "rights": {
+            "evidence_path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+            "gap": "Theory heads, baselines, uncertainty gates, and hostile nulls are locked but not passed.",
+            "status": "KNOWN"
+          },
+          "sha256": "3ce4a1697e4ebfc160e97ab37a10831dd027275ac6f1cdf3223329dbc7a5aa8e"
+        }
+      ],
+      "current_benchmark": {
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "gap": "Locked execution auto-demotes because owned measurements and independent review are absent.",
+        "observations": [],
+        "reported_result_status": null,
+        "status": "NO_CHECKED_BENCHMARK_RESULT"
+      },
+      "external_dependencies": [
+        "At least 30 unique formulations across three families at 18.3, 22.8, and 35 C with full flow curves, KU, D4400 sag, duplicates, lots, and locked process history"
+      ],
+      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "implementation": {
+        "path": "amphora-viscosity-score/src/lib.rs",
+        "sha256": "55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48",
+        "version": "0.1.0-rust",
+        "version_source_path": "amphora-viscosity-score/Cargo.toml",
+        "version_source_sha256": "1ba6a8c99f8f8010ec0f86db243310a011b6fd042e45f1e6b159c4d3abdd0126"
+      },
+      "known_contradictions": [
+        "Theory computation is implemented, but KU and D4400 heads remain unpromoted and exact_ku_prediction remains null."
+      ],
+      "module_id": "amphora-viscosity-score",
+      "portfolio_edges": {
+        "consumers": [],
+        "dependencies": [
+          "amphora-candidate-contract",
+          "amphora-source-ledger"
+        ]
+      },
+      "red_team_fixture": {
+        "path": "amphora-viscosity-score/src/lib.rs",
+        "scenario": "Verify liquid mixing, temperature response, crowding, yield flow, sag threshold, and malformed-input abstention.",
+        "selector": "native_workspace_locked"
+      },
+      "runtime_integration": {
+        "adapter_policy": {
+          "candidate_type": "formulation",
+          "dataset_id": "rheology-promotion-data-not-yet-available.v1",
+          "model_id": "viscosity-rheology-v1",
+          "model_readiness_status": "MODEL_READINESS_ONLY",
+          "solver_use": "DISABLED",
+          "track_id": "viscosity_rheology_sag"
+        },
+        "adapter_registered": true,
+        "registry_path": "amphora-engine/src/lib.rs",
+        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      },
+      "tests": [
+        {
+          "path": "amphora-viscosity-score/src/lib.rs",
+          "sha256": "55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48"
+        }
+      ]
+    }
+  ],
+  "schema": "amphora.module-evidence-inventory.v1"
+}

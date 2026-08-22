@@ -1,0 +1,281 @@
+{
+  "all_legs_pass": true,
+  "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "campaign_item_id": "V-N02a",
+  "leg1_original_3_probes": {
+    "all_zero": true,
+    "refute_criterion": "any of the 3 probes returns nonzero n_active_nh",
+    "rows": [
+      {
+        "canonical_smiles": "N=C(N)N",
+        "formula": "CH5N3",
+        "id": "guanidine",
+        "mw": 59.072,
+        "n_active_nh": 0,
+        "note": "CAS 113-00-8",
+        "smiles": "NC(=N)N",
+        "theoretical_ahew": null
+      },
+      {
+        "canonical_smiles": "N#CN=C(N)N",
+        "formula": "C2H4N4",
+        "id": "dicyandiamide",
+        "mw": 84.082,
+        "n_active_nh": 0,
+        "note": "CAS 461-58-5; DICY",
+        "smiles": "NC(=NC#N)N",
+        "theoretical_ahew": null
+      },
+      {
+        "canonical_smiles": "N=C(N)NC(=N)N",
+        "formula": "C2H7N5",
+        "id": "biguanide",
+        "mw": 101.113,
+        "n_active_nh": 0,
+        "note": "CAS 461-71-2",
+        "smiles": "NC(=N)NC(=N)N",
+        "theoretical_ahew": null
+      }
+    ]
+  },
+  "leg2_26_record_regression": {
+    "all_match": true,
+    "n_records": 26,
+    "refute_criterion": "any record's computed n_active_nh diverges from the module's own asserted truth value",
+    "rows": [
+      {
+        "computed_n_active_nh": 5,
+        "expected_n_active_nh": 5,
+        "match": true,
+        "record_id": "exact-deta",
+        "smiles": "NCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "exact-ipda",
+        "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+      },
+      {
+        "computed_n_active_nh": 5,
+        "expected_n_active_nh": 5,
+        "match": true,
+        "record_id": "mono-ahew-deta",
+        "smiles": "NCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "mono-ahew-ipda",
+        "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "mono-ahew-hmda",
+        "smiles": "NCCCCCCN"
+      },
+      {
+        "computed_n_active_nh": 5,
+        "expected_n_active_nh": 5,
+        "match": true,
+        "record_id": "deta",
+        "smiles": "NCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 6,
+        "expected_n_active_nh": 6,
+        "match": true,
+        "record_id": "teta",
+        "smiles": "NCCNCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 7,
+        "expected_n_active_nh": 7,
+        "match": true,
+        "record_id": "tepa",
+        "smiles": "NCCNCCNCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "eda",
+        "smiles": "NCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "ipda",
+        "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "hmda",
+        "smiles": "NCCCCCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "mxda",
+        "smiles": "NCc1cccc(CN)c1"
+      },
+      {
+        "computed_n_active_nh": 2,
+        "expected_n_active_nh": 2,
+        "match": true,
+        "record_id": "piperazine",
+        "smiles": "C1CNCCN1"
+      },
+      {
+        "computed_n_active_nh": 3,
+        "expected_n_active_nh": 3,
+        "match": true,
+        "record_id": "aep",
+        "smiles": "NCCN1CCNCC1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "dach",
+        "smiles": "NC1CCCCC1N"
+      },
+      {
+        "computed_n_active_nh": 2,
+        "expected_n_active_nh": 2,
+        "match": true,
+        "record_id": "aniline",
+        "smiles": "Nc1ccccc1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "mda",
+        "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "dds",
+        "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "triethylamine",
+        "smiles": "CCN(CC)CC"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "acetamide",
+        "smiles": "CC(=O)N"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "dmf",
+        "smiles": "CN(C)C=O"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "urea",
+        "smiles": "NC(=O)N"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "acetonitrile",
+        "smiles": "CC#N"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "pyridine",
+        "smiles": "c1ccncc1"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "nitrobenzene",
+        "smiles": "O=[N+]([O-])c1ccccc1"
+      },
+      {
+        "computed_n_active_nh": 2,
+        "expected_n_active_nh": 2,
+        "match": true,
+        "record_id": "ethanolamine",
+        "smiles": "NCCO"
+      }
+    ]
+  },
+  "leg3_novel_amidine_probes": {
+    "all_expected": true,
+    "refute_criterion": "any novel probe's computed n_active_nh diverges from its chemically-justified expected value",
+    "rows": [
+      {
+        "canonical_smiles": "CC(=N)N",
+        "expected_n_active_nh": 0,
+        "formula": "C2H6N2",
+        "id": "acetamidine",
+        "match": true,
+        "mw": 58.084,
+        "n_active_nh": 0,
+        "note": "CAS 60-10-6; simple aliphatic amidine, C=N-bearing carbon distinct from guanidine's N-C(=N)-N core; tests whether the R-N02 exclusion generalizes beyond the 3-nitrogen guanidine pattern to a 2-nitrogen amidine pattern.",
+        "smiles": "CC(=N)N",
+        "theoretical_ahew": null
+      },
+      {
+        "canonical_smiles": "N=C(N)c1ccccc1",
+        "expected_n_active_nh": 0,
+        "formula": "C7H8N2",
+        "id": "benzamidine",
+        "match": true,
+        "mw": 120.155,
+        "n_active_nh": 0,
+        "note": "CAS 618-39-3; aromatic-substituted amidine; tests substituent-independence of the exclusion.",
+        "smiles": "NC(=N)c1ccccc1",
+        "theoretical_ahew": null
+      },
+      {
+        "canonical_smiles": "Nc1ccccn1",
+        "expected_n_active_nh": 2,
+        "formula": "C5H6N2",
+        "id": "2-aminopyridine",
+        "match": true,
+        "mw": 94.117,
+        "n_active_nh": 2,
+        "note": "CAS 504-29-0; ADVERSARIAL BOUNDARY probe -- primary aromatic exocyclic amine (same class as aniline, already n_active_nh=2 in the 26-record set); the ring C-N bond is aromatic (bond order 1.5 in RDKit), not a localized C=N pi-acceptor, so the amidine/guanidine delocalization mechanism the shipped rule targets does not apply. Refutes R-N02 if the fix over-fires and zeroes this out.",
+        "smiles": "Nc1ccccn1",
+        "theoretical_ahew": 47.0585
+      }
+    ]
+  },
+  "r_n02_done_receipt_sha256": "bdd71b4044c6f4975e8fa6c9754251567c9f394264a24a1880d40065186737f3",
+  "rdkit_version_detected": "2026.03.2",
+  "schema": "amphora.molecule-property.v-n02a-independent-verify-sweep.v1",
+  "shipped_n_active_amine_nh_source_sha256": "6af029de1add4ace1f051bad327ee5de3349756c80cb5a4af092b4835db731d4",
+  "target_receipt_sha256": "74e2c759c1f56ba435ad2807be1f2bdc37c479d68fca81934569901072ba6519",
+  "target_source_file": "amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/compute_amine_class.py",
+  "target_source_file_sha256": "b1d846ef4b3b103c500ec2b28a7918aeec685bd4ffe555e5f8181a2174ede15a",
+  "verdict": "CLAIM_SURVIVED",
+  "verifies_repair": "R-N02"
+}

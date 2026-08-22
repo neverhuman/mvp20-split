@@ -1,0 +1,213 @@
+{
+  "aggregate": {
+    "control_matched_T": {
+      "max_coverage": 1.0,
+      "mean_coverage": 0.912117,
+      "min_coverage": 0.776758,
+      "n_avg": 183,
+      "std_coverage": 0.088988
+    },
+    "paired_ttest_AD_indomain_minus_control": {
+      "mean_diff": -0.018432,
+      "pvalue_onesided_less": 0.208109,
+      "significant_at_0.05": false,
+      "statistic": -0.852171
+    },
+    "paired_ttest_shift_minus_control": {
+      "mean_diff": -0.022258,
+      "pvalue_onesided_less": 0.153222,
+      "significant_at_0.05": false,
+      "statistic": -1.084248
+    },
+    "shifted_T_gt_308": {
+      "binom_p_deficit_onesided_on_mean": 0.249584,
+      "max_coverage": 0.955189,
+      "mean_coverage": 0.889858,
+      "min_coverage": 0.785377,
+      "n": 424,
+      "seeds_below_target_090": 5,
+      "std_coverage": 0.059245
+    },
+    "shifted_T_gt_308_AD_flagged_indomain_subset": {
+      "max_coverage": 1.0,
+      "mean_coverage": 0.893684,
+      "min_coverage": 0.731132,
+      "n_avg": 278,
+      "seeds_below_target_090": 5,
+      "std_coverage": 0.090078
+    }
+  },
+  "alpha": 0.1,
+  "attacks_claim": {
+    "attack_type": "distribution-shift (temperature-regime extrapolation within a SINGLE source, where the receipt's applicability-domain score is purely structural and blind to T/weight-fraction)",
+    "refutation_criterion": "One-sided paired t-test (alpha=0.05, n=10 scaffold-partition seeds) that shifted-regime (T>308K) coverage is significantly LOWER than a matched-T control's coverage under the identical model/q_hat for that seed -- for either the full shifted test set or the AD-flagged-in-domain subset of it.",
+    "target_receipt": "reference/mvp20/data/polyverse_diffusivity_conformal_and_applicability_domain_receipt.v1.json",
+    "target_statement": "within_source_marginal_conformal_coverage_at_alpha_010_meets_target observed 0.9277 (target >=0.90) PASSED; worst_ad_quintile_coverage_at_alpha_010_meets_worst_case_floor observed 0.9000 PASSED -- i.e. within the tested polymer-scaffold AD interior, split-conformal coverage is claimed reliable.",
+    "theoretical_basis": "Tibshirani, Barber, Candes, Ramdas 2019 NeurIPS 'Conformal Prediction Under Covariate Shift'; split-conformal marginal coverage requires cal/test exchangeability. Applicability-domain methods restricted to structural (Morgan fingerprint) similarity (OECD 2007 Principle 3; Roy-Kar-Ambure 2015) do not certify exchangeability along covariates (temperature, weight fraction) outside the fingerprint space."
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark": "polyverse-diffusivity-temperature-shift-v1",
+  "dataset": {
+    "T_split_K": 308.0,
+    "input_csv_sha256": "e848a732e327cc4261bed7b2487710686548f85550454475c418e17ed2ed0b06",
+    "n_inrange_T_le_308": 1621,
+    "n_polymers": 81,
+    "n_rows_ncomm2023": 2045,
+    "n_shifted_T_gt_308": 424,
+    "restricted_source": "ncomm(2023)",
+    "shifted_T_range_K": [
+      309.0,
+      413.0
+    ],
+    "source_csv": "feedback/v1/external_data/polyverse_selected/raw/master_solvent_diffusivity_dataset.csv"
+  },
+  "determinism": {
+    "float_round_decimals": 6,
+    "no_timestamp": true,
+    "omp_num_threads": "1",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "sklearn_random_state": 0
+  },
+  "finding": "Across 10 independent scaffold-partition seeds, shifted-regime (T>308K) coverage (mean 0.8899) is NOT statistically distinguishable from the matched-T control's coverage (mean 0.9121) under a one-sided paired t-test (p=0.1532 for the full shifted set, p=0.2081 for the AD-flagged-in-domain subset) -- the deficit seen in any single seed is within the range of ordinary finite-sample scaffold-holdout variance already present in the matched-T control (control coverage itself ranges 0.7768-1.0000 across seeds). The attack was genuinely capable of falsifying: had temperature-regime extrapolation caused a stable, seed-independent coverage collapse distinguishable from ordinary holdout noise, the paired test would have detected it.",
+  "gbm_hyperparameters": {
+    "l2_regularization": 0.1,
+    "learning_rate": 0.05,
+    "max_depth": 6,
+    "max_iter": 500,
+    "min_samples_leaf": 20,
+    "random_state": 0
+  },
+  "module": "amphora-barrier-corrosion-score",
+  "n_seeds": 10,
+  "per_seed": [
+    {
+      "coverage_control_matched_T": 1.0,
+      "coverage_shifted": 0.867925,
+      "coverage_shifted_AD_indomain": 0.863248,
+      "n_cal": 349,
+      "n_ctrl": 246,
+      "n_shifted_AD_indomain": 234,
+      "n_train": 1026,
+      "q_hat": 2.324283,
+      "seed": 0
+    },
+    {
+      "coverage_control_matched_T": 0.789954,
+      "coverage_shifted": 0.879717,
+      "coverage_shifted_AD_indomain": 0.875445,
+      "n_cal": 170,
+      "n_ctrl": 219,
+      "n_shifted_AD_indomain": 281,
+      "n_train": 1232,
+      "q_hat": 2.810424,
+      "seed": 1
+    },
+    {
+      "coverage_control_matched_T": 0.776758,
+      "coverage_shifted": 0.785377,
+      "coverage_shifted_AD_indomain": 0.731132,
+      "n_cal": 117,
+      "n_ctrl": 327,
+      "n_shifted_AD_indomain": 212,
+      "n_train": 1177,
+      "q_hat": 2.150407,
+      "seed": 2
+    },
+    {
+      "coverage_control_matched_T": 1.0,
+      "coverage_shifted": 0.955189,
+      "coverage_shifted_AD_indomain": 1.0,
+      "n_cal": 495,
+      "n_ctrl": 105,
+      "n_shifted_AD_indomain": 218,
+      "n_train": 1021,
+      "q_hat": 5.103311,
+      "seed": 3
+    },
+    {
+      "coverage_control_matched_T": 1.0,
+      "coverage_shifted": 0.948113,
+      "coverage_shifted_AD_indomain": 0.997024,
+      "n_cal": 400,
+      "n_ctrl": 50,
+      "n_shifted_AD_indomain": 336,
+      "n_train": 1171,
+      "q_hat": 4.880085,
+      "seed": 4
+    },
+    {
+      "coverage_control_matched_T": 0.878307,
+      "coverage_shifted": 0.919811,
+      "coverage_shifted_AD_indomain": 0.911017,
+      "n_cal": 94,
+      "n_ctrl": 189,
+      "n_shifted_AD_indomain": 236,
+      "n_train": 1338,
+      "q_hat": 3.113705,
+      "seed": 5
+    },
+    {
+      "coverage_control_matched_T": 0.830846,
+      "coverage_shifted": 0.865566,
+      "coverage_shifted_AD_indomain": 0.876471,
+      "n_cal": 270,
+      "n_ctrl": 201,
+      "n_shifted_AD_indomain": 340,
+      "n_train": 1150,
+      "q_hat": 1.934028,
+      "seed": 6
+    },
+    {
+      "coverage_control_matched_T": 0.863158,
+      "coverage_shifted": 0.794811,
+      "coverage_shifted_AD_indomain": 0.756098,
+      "n_cal": 383,
+      "n_ctrl": 95,
+      "n_shifted_AD_indomain": 246,
+      "n_train": 1143,
+      "q_hat": 1.99435,
+      "seed": 7
+    },
+    {
+      "coverage_control_matched_T": 0.982143,
+      "coverage_shifted": 0.931604,
+      "coverage_shifted_AD_indomain": 0.929412,
+      "n_cal": 250,
+      "n_ctrl": 224,
+      "n_shifted_AD_indomain": 340,
+      "n_train": 1147,
+      "q_hat": 3.385283,
+      "seed": 8
+    },
+    {
+      "coverage_control_matched_T": 1.0,
+      "coverage_shifted": 0.950472,
+      "coverage_shifted_AD_indomain": 0.996997,
+      "n_cal": 444,
+      "n_ctrl": 176,
+      "n_shifted_AD_indomain": 333,
+      "n_train": 1001,
+      "q_hat": 3.867001,
+      "seed": 9
+    }
+  ],
+  "promotes_authority": false,
+  "schema": "amphora.barrier-corrosion-score.polyverse-diffusivity-temperature-shift-receipt.v1",
+  "scope_honesty": {
+    "caveat": "This survival does NOT establish that the AD-interior guarantee holds under all covariate shifts -- only that a T-regime extrapolation shift, at this sample size (n=424 shifted rows, ~10-49 scaffolds per arm), does not produce a coverage deficit distinguishable from ordinary scaffold-holdout sampling variance. The matched-T control itself swings from 0.777 to 1.0 across seeds, showing this benchmark is underpowered to detect anything but a large effect. AUDIT_ONLY; does not flip scientific_readiness (stays UNVALIDATED/PRE_PHASE_0); does not modify the manifest (66 receipts/11 modules) or any locked dataset or signed Phase-0 KPI.",
+    "outcome": "CLAIM_SURVIVED"
+  },
+  "target_marginal_coverage": 0.9,
+  "verdict": "CLAIM_SURVIVED"
+}

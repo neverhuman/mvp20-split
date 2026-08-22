@@ -1,0 +1,845 @@
+{
+  "benchmark_execution_complete": true,
+  "bundle_sha256": "fb886c212b4d4483985c36c35995777a94723e9e1624a0b5f89a48d2e6fb2d64",
+  "first_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-formulation-arithmetic/reference/mvp20/data/corrosion_series.json": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+        "amphora-formulation-arithmetic/reference/mvp20/data/cure_verification_set.json": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+        "amphora-formulation-arithmetic/reference/mvp20/data/facts.json": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+        "config/benchmark-lock.v1.json": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+        "module-manifest.json": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+      },
+      "benchmark_lock_hash": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+      "claim_locks": {
+        "arithmetic_is_not_performance_proof": true,
+        "gate_pass_is_not_wet_lab_performance": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "CONSTRAINT_ONLY",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+          "deterministic_control_diagnostic": {
+            "details": {
+              "authority_upgrade_count": 0,
+              "candidate_created_evidence_count": 0,
+              "fixture_hashes": {
+                "canonical-110-plus-40": "b5146a4900ffd2cf0efc64f9634fe2e00e35e295e53812d0344d113a47d6a298",
+                "canonical-legacy-alias-collision": "0e8d5f8586cb84606a07ae901191d538b2a0e1428243a041e4b3367c1e056bea",
+                "finite-input-sum-overflow": "3d7c8da20b8cc68d54299c3b859d2b38eb1daacb467aa615855111f32f1757e0",
+                "ingredient-id-mismatch": "7493a523a77358be11b9e29e0f51c6600390debeccf17f20fe42ad0b4366cd89",
+                "missing-part-a": "4fc503a86359eed47c07b032ba665a99f90cbe8dbbbede57451d7e1f47cf90fd",
+                "missing-part-b": "e2fd04309467775423115f4b57b34c43a6862728cfec0a17b0f801dc50167a7c",
+                "negative-mass": "72f9c7dbb1c96a71fe8d1e6924fc7aac5628f91910830f6878f57b6a5843341a",
+                "nonnumeric-mass": "ce9465d6e83b2738f83c1268c5d375c008cbc271f04cf8513b08dc87f2c350da",
+                "order-zero-and-claims-invariant": "ed128bea80dae2ddc7ce8616a02e31a7d297764e2770f2781367cfc851766ebc"
+              },
+              "fixture_inputs": [
+                {
+                  "candidate_claims": null,
+                  "case_id": "canonical-110-plus-40",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": {
+                    "ahew": 105,
+                    "density": 1.2,
+                    "eew": 190,
+                    "evidence": {
+                      "candidate_supplied": true
+                    },
+                    "feasibility": null,
+                    "nonvolatile": 0.8,
+                    "oil_absorption": 12,
+                    "performance": "superior"
+                  },
+                  "case_id": "order-zero-and-claims-invariant",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin-b",
+                      "key": "resin-b",
+                      "mass_g": 10.0
+                    },
+                    {
+                      "ingredient_id": "zero",
+                      "key": "zero",
+                      "mass_g": 0.0
+                    },
+                    {
+                      "ingredient_id": "resin-a",
+                      "key": "resin-a",
+                      "mass_g": 100.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "negative-mass",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": -1.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "nonnumeric-mass",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": "110"
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "canonical-legacy-alias-collision",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "ingredient-id-mismatch",
+                  "part_A": [
+                    {
+                      "ingredient_id": "other-resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "finite-input-sum-overflow",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin-a",
+                      "key": "resin-a",
+                      "mass_g": 1.7976931348623157e+308
+                    },
+                    {
+                      "ingredient_id": "resin-b",
+                      "key": "resin-b",
+                      "mass_g": 1.7976931348623157e+308
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 1.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "missing-part-a",
+                  "part_A": null,
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "missing-part-b",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_B": null,
+                  "part_a": null,
+                  "part_b": null
+                }
+              ],
+              "fixture_results": {
+                "canonical-110-plus-40": {
+                  "arithmetic_scope": "MASS_ONLY",
+                  "authority_upgrade": false,
+                  "candidate_created_evidence": false,
+                  "ignored_candidate_fields": [],
+                  "ignored_zero_mass_entries": [],
+                  "objective_values": {},
+                  "part_a_mass_g": 110.0,
+                  "part_b_mass_g": 40.0,
+                  "positive_mass_ingredient_ids": [
+                    "hardener",
+                    "resin"
+                  ],
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "status": "UNVALIDATED",
+                  "total_mass_g": 150.0,
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "canonical-legacy-alias-collision": {
+                  "error": "capability input is invalid: recipe cannot declare both part_A and part_a"
+                },
+                "finite-input-sum-overflow": {
+                  "error": "capability input is invalid: formulation mass sum is not finite"
+                },
+                "ingredient-id-mismatch": {
+                  "error": "capability input is invalid: ingredient_id does not match recipe key resin"
+                },
+                "missing-part-a": {
+                  "arithmetic_scope": "MASS_ONLY",
+                  "authority_upgrade": false,
+                  "candidate_created_evidence": false,
+                  "ignored_candidate_fields": [],
+                  "ignored_zero_mass_entries": [],
+                  "objective_values": {},
+                  "part_a_mass_g": null,
+                  "part_b_mass_g": null,
+                  "positive_mass_ingredient_ids": [],
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "status": "ABSTAIN",
+                  "total_mass_g": null,
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "missing-part-b": {
+                  "arithmetic_scope": "MASS_ONLY",
+                  "authority_upgrade": false,
+                  "candidate_created_evidence": false,
+                  "ignored_candidate_fields": [],
+                  "ignored_zero_mass_entries": [],
+                  "objective_values": {},
+                  "part_a_mass_g": null,
+                  "part_b_mass_g": null,
+                  "positive_mass_ingredient_ids": [],
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "status": "ABSTAIN",
+                  "total_mass_g": null,
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "negative-mass": {
+                  "error": "capability input is invalid: negative ingredient mass at part_A.resin"
+                },
+                "nonnumeric-mass": {
+                  "error": "capability input is invalid: ingredient mass for resin must be finite numeric"
+                },
+                "order-zero-and-claims-invariant": {
+                  "arithmetic_scope": "MASS_ONLY",
+                  "authority_upgrade": false,
+                  "candidate_created_evidence": false,
+                  "ignored_candidate_fields": [
+                    "ahew",
+                    "density",
+                    "eew",
+                    "evidence",
+                    "nonvolatile",
+                    "oil_absorption",
+                    "performance"
+                  ],
+                  "ignored_zero_mass_entries": [
+                    "part_A.zero"
+                  ],
+                  "objective_values": {},
+                  "part_a_mass_g": 110.0,
+                  "part_b_mass_g": 40.0,
+                  "positive_mass_ingredient_ids": [
+                    "hardener",
+                    "resin-a",
+                    "resin-b"
+                  ],
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "status": "UNVALIDATED",
+                  "total_mass_g": 150.0,
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                }
+              },
+              "objective_value_count": 0,
+              "result_digest": "e37552d82eefcf9723364b7889a8e3d4afe8f0a6920d0d043cf333216ffebcc4",
+              "unresolved_legacy_data_open_count": 0
+            },
+            "expected_fixture_outcomes": {
+              "canonical-110-plus-40": "ACCEPT",
+              "canonical-legacy-alias-collision": "REJECT",
+              "finite-input-sum-overflow": "REJECT",
+              "ingredient-id-mismatch": "REJECT",
+              "missing-part-a": "REJECT",
+              "missing-part-b": "REJECT",
+              "negative-mass": "REJECT",
+              "nonnumeric-mass": "REJECT",
+              "order-zero-and-claims-invariant": "ACCEPT"
+            },
+            "implementation_readiness": "COMPLETE",
+            "module_id": "amphora-formulation-arithmetic",
+            "negative_control_count": 7,
+            "observed_fixture_outcomes": {
+              "canonical-110-plus-40": "ACCEPT",
+              "canonical-legacy-alias-collision": "REJECT",
+              "finite-input-sum-overflow": "REJECT",
+              "ingredient-id-mismatch": "REJECT",
+              "missing-part-a": "REJECT",
+              "missing-part-b": "REJECT",
+              "negative-mass": "REJECT",
+              "nonnumeric-mass": "REJECT",
+              "order-zero-and-claims-invariant": "ACCEPT"
+            },
+            "passed": true,
+            "positive_control_count": 2,
+            "schema": "amphora.deterministic-control-diagnostic.v1",
+            "zero_authority_assertions": {
+              "fto_not_performed": true,
+              "no_optimizer_authority": true,
+              "no_patentability_authority": true,
+              "no_procurement_authority": true,
+              "no_product_performance_authority": true,
+              "no_qualification_authority": true,
+              "no_ranking_authority": true,
+              "no_regulatory_authority": true,
+              "no_release_authority": true,
+              "no_safety_authority": true
+            }
+          },
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": true,
+          "observations": [],
+          "operational_readiness": "COMPLETE",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": null
+        }
+      },
+      "module_id": "amphora-formulation-arithmetic",
+      "passed": true,
+      "receipt_id": "receipt-1ad233ce67c547d47d14a3be",
+      "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "b475218b6bda7e3a8d75d6c1449dc97a22f07e43277690a68754066c62023bd4",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "legacy_local_receipt_authority": "NONE",
+  "module_id": "amphora-formulation-arithmetic",
+  "replay_identical": true,
+  "schema": "amphora.module-phase0-benchmark-result.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "second_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-formulation-arithmetic/reference/mvp20/data/corrosion_series.json": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+        "amphora-formulation-arithmetic/reference/mvp20/data/cure_verification_set.json": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+        "amphora-formulation-arithmetic/reference/mvp20/data/facts.json": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+        "config/benchmark-lock.v1.json": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+        "module-manifest.json": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+      },
+      "benchmark_lock_hash": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+      "claim_locks": {
+        "arithmetic_is_not_performance_proof": true,
+        "gate_pass_is_not_wet_lab_performance": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "CONSTRAINT_ONLY",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+          "deterministic_control_diagnostic": {
+            "details": {
+              "authority_upgrade_count": 0,
+              "candidate_created_evidence_count": 0,
+              "fixture_hashes": {
+                "canonical-110-plus-40": "b5146a4900ffd2cf0efc64f9634fe2e00e35e295e53812d0344d113a47d6a298",
+                "canonical-legacy-alias-collision": "0e8d5f8586cb84606a07ae901191d538b2a0e1428243a041e4b3367c1e056bea",
+                "finite-input-sum-overflow": "3d7c8da20b8cc68d54299c3b859d2b38eb1daacb467aa615855111f32f1757e0",
+                "ingredient-id-mismatch": "7493a523a77358be11b9e29e0f51c6600390debeccf17f20fe42ad0b4366cd89",
+                "missing-part-a": "4fc503a86359eed47c07b032ba665a99f90cbe8dbbbede57451d7e1f47cf90fd",
+                "missing-part-b": "e2fd04309467775423115f4b57b34c43a6862728cfec0a17b0f801dc50167a7c",
+                "negative-mass": "72f9c7dbb1c96a71fe8d1e6924fc7aac5628f91910830f6878f57b6a5843341a",
+                "nonnumeric-mass": "ce9465d6e83b2738f83c1268c5d375c008cbc271f04cf8513b08dc87f2c350da",
+                "order-zero-and-claims-invariant": "ed128bea80dae2ddc7ce8616a02e31a7d297764e2770f2781367cfc851766ebc"
+              },
+              "fixture_inputs": [
+                {
+                  "candidate_claims": null,
+                  "case_id": "canonical-110-plus-40",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": {
+                    "ahew": 105,
+                    "density": 1.2,
+                    "eew": 190,
+                    "evidence": {
+                      "candidate_supplied": true
+                    },
+                    "feasibility": null,
+                    "nonvolatile": 0.8,
+                    "oil_absorption": 12,
+                    "performance": "superior"
+                  },
+                  "case_id": "order-zero-and-claims-invariant",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin-b",
+                      "key": "resin-b",
+                      "mass_g": 10.0
+                    },
+                    {
+                      "ingredient_id": "zero",
+                      "key": "zero",
+                      "mass_g": 0.0
+                    },
+                    {
+                      "ingredient_id": "resin-a",
+                      "key": "resin-a",
+                      "mass_g": 100.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "negative-mass",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": -1.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "nonnumeric-mass",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": "110"
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "canonical-legacy-alias-collision",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "ingredient-id-mismatch",
+                  "part_A": [
+                    {
+                      "ingredient_id": "other-resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "finite-input-sum-overflow",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin-a",
+                      "key": "resin-a",
+                      "mass_g": 1.7976931348623157e+308
+                    },
+                    {
+                      "ingredient_id": "resin-b",
+                      "key": "resin-b",
+                      "mass_g": 1.7976931348623157e+308
+                    }
+                  ],
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 1.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "missing-part-a",
+                  "part_A": null,
+                  "part_B": [
+                    {
+                      "ingredient_id": "hardener",
+                      "key": "hardener",
+                      "mass_g": 40.0
+                    }
+                  ],
+                  "part_a": null,
+                  "part_b": null
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "missing-part-b",
+                  "part_A": [
+                    {
+                      "ingredient_id": "resin",
+                      "key": "resin",
+                      "mass_g": 110.0
+                    }
+                  ],
+                  "part_B": null,
+                  "part_a": null,
+                  "part_b": null
+                }
+              ],
+              "fixture_results": {
+                "canonical-110-plus-40": {
+                  "arithmetic_scope": "MASS_ONLY",
+                  "authority_upgrade": false,
+                  "candidate_created_evidence": false,
+                  "ignored_candidate_fields": [],
+                  "ignored_zero_mass_entries": [],
+                  "objective_values": {},
+                  "part_a_mass_g": 110.0,
+                  "part_b_mass_g": 40.0,
+                  "positive_mass_ingredient_ids": [
+                    "hardener",
+                    "resin"
+                  ],
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "status": "UNVALIDATED",
+                  "total_mass_g": 150.0,
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "canonical-legacy-alias-collision": {
+                  "error": "capability input is invalid: recipe cannot declare both part_A and part_a"
+                },
+                "finite-input-sum-overflow": {
+                  "error": "capability input is invalid: formulation mass sum is not finite"
+                },
+                "ingredient-id-mismatch": {
+                  "error": "capability input is invalid: ingredient_id does not match recipe key resin"
+                },
+                "missing-part-a": {
+                  "arithmetic_scope": "MASS_ONLY",
+                  "authority_upgrade": false,
+                  "candidate_created_evidence": false,
+                  "ignored_candidate_fields": [],
+                  "ignored_zero_mass_entries": [],
+                  "objective_values": {},
+                  "part_a_mass_g": null,
+                  "part_b_mass_g": null,
+                  "positive_mass_ingredient_ids": [],
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "status": "ABSTAIN",
+                  "total_mass_g": null,
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "missing-part-b": {
+                  "arithmetic_scope": "MASS_ONLY",
+                  "authority_upgrade": false,
+                  "candidate_created_evidence": false,
+                  "ignored_candidate_fields": [],
+                  "ignored_zero_mass_entries": [],
+                  "objective_values": {},
+                  "part_a_mass_g": null,
+                  "part_b_mass_g": null,
+                  "positive_mass_ingredient_ids": [],
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "status": "ABSTAIN",
+                  "total_mass_g": null,
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "negative-mass": {
+                  "error": "capability input is invalid: negative ingredient mass at part_A.resin"
+                },
+                "nonnumeric-mass": {
+                  "error": "capability input is invalid: ingredient mass for resin must be finite numeric"
+                },
+                "order-zero-and-claims-invariant": {
+                  "arithmetic_scope": "MASS_ONLY",
+                  "authority_upgrade": false,
+                  "candidate_created_evidence": false,
+                  "ignored_candidate_fields": [
+                    "ahew",
+                    "density",
+                    "eew",
+                    "evidence",
+                    "nonvolatile",
+                    "oil_absorption",
+                    "performance"
+                  ],
+                  "ignored_zero_mass_entries": [
+                    "part_A.zero"
+                  ],
+                  "objective_values": {},
+                  "part_a_mass_g": 110.0,
+                  "part_b_mass_g": 40.0,
+                  "positive_mass_ingredient_ids": [
+                    "hardener",
+                    "resin-a",
+                    "resin-b"
+                  ],
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "status": "UNVALIDATED",
+                  "total_mass_g": 150.0,
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                }
+              },
+              "objective_value_count": 0,
+              "result_digest": "e37552d82eefcf9723364b7889a8e3d4afe8f0a6920d0d043cf333216ffebcc4",
+              "unresolved_legacy_data_open_count": 0
+            },
+            "expected_fixture_outcomes": {
+              "canonical-110-plus-40": "ACCEPT",
+              "canonical-legacy-alias-collision": "REJECT",
+              "finite-input-sum-overflow": "REJECT",
+              "ingredient-id-mismatch": "REJECT",
+              "missing-part-a": "REJECT",
+              "missing-part-b": "REJECT",
+              "negative-mass": "REJECT",
+              "nonnumeric-mass": "REJECT",
+              "order-zero-and-claims-invariant": "ACCEPT"
+            },
+            "implementation_readiness": "COMPLETE",
+            "module_id": "amphora-formulation-arithmetic",
+            "negative_control_count": 7,
+            "observed_fixture_outcomes": {
+              "canonical-110-plus-40": "ACCEPT",
+              "canonical-legacy-alias-collision": "REJECT",
+              "finite-input-sum-overflow": "REJECT",
+              "ingredient-id-mismatch": "REJECT",
+              "missing-part-a": "REJECT",
+              "missing-part-b": "REJECT",
+              "negative-mass": "REJECT",
+              "nonnumeric-mass": "REJECT",
+              "order-zero-and-claims-invariant": "ACCEPT"
+            },
+            "passed": true,
+            "positive_control_count": 2,
+            "schema": "amphora.deterministic-control-diagnostic.v1",
+            "zero_authority_assertions": {
+              "fto_not_performed": true,
+              "no_optimizer_authority": true,
+              "no_patentability_authority": true,
+              "no_procurement_authority": true,
+              "no_product_performance_authority": true,
+              "no_qualification_authority": true,
+              "no_ranking_authority": true,
+              "no_regulatory_authority": true,
+              "no_release_authority": true,
+              "no_safety_authority": true
+            }
+          },
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": true,
+          "observations": [],
+          "operational_readiness": "COMPLETE",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": null
+        }
+      },
+      "module_id": "amphora-formulation-arithmetic",
+      "passed": true,
+      "receipt_id": "receipt-1ad233ce67c547d47d14a3be",
+      "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "b475218b6bda7e3a8d75d6c1449dc97a22f07e43277690a68754066c62023bd4",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "amphora.engine-result.v1",
+  "title": "Amphora EngineResult",
+  "type": "object",
+  "required": ["schema", "run_id", "candidate", "score_envelopes", "optimization", "cost", "evidence_gaps", "blocked_claims", "lineage", "provenance"],
+  "properties": {
+    "schema": {"const": "amphora.engine-result.v1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "candidate": {"type": "object", "required": ["candidate_id", "candidate_type"], "properties": {"candidate_id": {"type": "string"}, "candidate_type": {"type": "string"}}},
+    "score_envelopes": {"type": "array", "items": {"type": "object"}},
+    "optimization": {"type": "object", "required": ["objectives", "constraints", "pareto_status"], "properties": {"objectives": {"type": "array"}, "constraints": {"type": "array"}, "pareto_status": {"type": "string"}}},
+    "cost": {"type": "object", "required": ["status"], "properties": {"status": {"enum": ["AVAILABLE", "MISSING", "INSUFFICIENT", "NOT_APPLICABLE"]}}},
+    "evidence_gaps": {"type": "array"},
+    "blocked_claims": {"type": "array"},
+    "lineage": {"type": "object", "required": ["parent_ids", "generation", "mutation_id"], "properties": {"parent_ids": {"type": "array"}, "generation": {"type": "integer"}, "mutation_id": {"type": ["string", "null"]}}},
+    "provenance": {"type": "object", "required": ["input_hash", "module_versions", "model_hashes", "source_hashes", "result_hash"]}
+  }
+}

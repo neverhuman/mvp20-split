@@ -1,0 +1,541 @@
+{
+  "admissibility_verdict": {
+    "inadmissible": true,
+    "interpretation": "The reported bootstrap 95% CI [1.0000,1.0000] materially understates sampling uncertainty at this sample size: the data are consistent with a true population feasible fraction as low as 0.9075 at 95% confidence under the accepted exact-binomial standard, not the ~100%-certainty reading a naive reader takes from the reported interval. This does not dispute that all 38 OBSERVED productions pass SA<6 (a deterministic fact); it disputes the CALIBRATED-INTERVAL claim mission.md requires for empirical KPIs, which mission.md and the target receipt's own cited theory (Efron 1979) explicitly demand.",
+    "verdict": "CLAIM_REFUTED"
+  },
+  "attacked_claim": {
+    "field": "generator_grammar.feasible_fraction_bootstrap95_ci",
+    "receipt": "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1/molgen-deterministic-grammar-yield-receipt.v1.dsse.json",
+    "reported_bootstrap_B": 10000,
+    "reported_bootstrap_seed": 20260728,
+    "reported_ci": [
+      1.0,
+      1.0
+    ],
+    "reported_k": 38,
+    "reported_n": 38,
+    "reported_point_estimate": 1.0
+  },
+  "clopper_pearson_reference": {
+    "alpha": 0.05,
+    "k": 38,
+    "lower": 0.907487,
+    "lower_gap_vs_reported_bootstrap": 0.092513,
+    "n": 38,
+    "upper": 1.0
+  },
+  "degeneracy_sweep": {
+    "B_values_tested": [
+      200,
+      2000,
+      10000
+    ],
+    "all_degenerate": true,
+    "grid": [
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 11
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 11
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 11
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 11
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 11
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 11
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 11
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 11
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 11
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 22
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 22
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 22
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 22
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 22
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 22
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 22
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 22
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 22
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 20260728
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 20260728
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 20260728
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 20260728
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 20260728
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 20260728
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 20260728
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 20260728
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 20260728
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 999983
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 999983
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 999983
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 999983
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 999983
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 999983
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 999983
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 999983
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 999983
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 424242
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 424242
+      },
+      {
+        "B": 200,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 424242
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 424242
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 424242
+      },
+      {
+        "B": 2000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 424242
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 38,
+        "seed": 424242
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 100,
+        "seed": 424242
+      },
+      {
+        "B": 10000,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "degenerate": true,
+        "resample_size": 1000,
+        "seed": 424242
+      }
+    ],
+    "n_combinations": 45,
+    "n_degenerate": 45,
+    "resample_sizes_tested": [
+      38,
+      100,
+      1000
+    ],
+    "seeds_tested": [
+      11,
+      22,
+      20260728,
+      999983,
+      424242
+    ]
+  },
+  "does_not_close": [
+    "Does not dispute the deterministic fact that all 38 currently-enumerated grammar productions individually pass SA<6 -- that observation stands.",
+    "Does not modify, supersede, or invalidate the underlying molgen-deterministic-grammar-yield-v1 receipt; this is an independent AUDIT_ONLY companion finding.",
+    "Does not claim the true feasible fraction IS below 90.7%; only that the reported interval cannot rule that out and should not have been presented as [1.0000,1.0000].",
+    "AUDIT_ONLY: module runtime stays LOCKED_INTERNAL; no proposals emitted; no Phase-0 promotion; scientific_readiness stays UNVALIDATED."
+  ],
+  "falsification_criterion": {
+    "declared_a_priori": true,
+    "gap_threshold": 0.02,
+    "rule": "CLAIM_REFUTED if reported_bootstrap_lower - clopper_pearson_lower > 0.02"
+  },
+  "headline": "Attack on molgen-deterministic-grammar-yield-v1's reported feasible-fraction bootstrap 95% CI [1.0000,1.0000] over k=38/n=38 (all-feasible boundary): percentile bootstrap at k=n is mathematically degenerate (45/45 seed x B x resample-size combinations collapse to exactly [1.0000,1.0000], vs 0/1 for the k=n-1 off-boundary control); the admissible exact Clopper-Pearson (1934) 95% CI for the SAME k/n is [0.9075,1.0000] -- a 0.0925 lower-bound gap (EXCEEDS the a-priori 0.02 admissibility threshold), meaning the data are fully consistent with a true population feasible rate as low as 0.9075 rather than the 100%-certain reading implied by the reported interval. VERDICT: CLAIM_REFUTED (reported CI is statistically inadmissible).",
+  "off_boundary_control": {
+    "ci": [
+      0.921053,
+      1.0
+    ],
+    "degenerate": false,
+    "description": "same bootstrap routine at k=n-1=37/n=38 (one simulated infeasible)",
+    "interpretation": "Non-degenerate off-boundary CI confirms the bootstrap routine itself is correctly implemented; degeneracy is specific to the k=n boundary the target receipt happens to occupy, not a general implementation defect.",
+    "k": 37,
+    "n": 38
+  },
+  "purpose": "Falsification attack on the calibrated-interval component of molgen-deterministic-grammar-yield-v1's headline feasible-fraction claim: test whether its reported bootstrap 95% CI is an admissible confidence interval at the k=n boundary it lands on.",
+  "reproduction_of_target_bootstrap": {
+    "matches_receipt_reported_ci": true,
+    "reproduced_ci": [
+      1.0,
+      1.0
+    ]
+  },
+  "rights_posture": "No new dataset consumed; operates only on the already-checked-in diagnostic.canonical.json from molgen-deterministic-grammar-yield-v1 and public statistical theory (Clopper & Pearson 1934, Efron 1979). Manifest (66 receipts / 11 modules) untouched; no locked dataset or signed Phase-0 KPI modified.",
+  "schema": "amphora.molecule-generator.grammar-yield-ci-inadmissibility-diagnostic.v1",
+  "study_id": "molgen-grammar-yield-bootstrap-ci-inadmissibility-v1",
+  "theory_reference": {
+    "bootstrap": "Efron 1979 Ann. Statist. 7(1):1-26 (percentile bootstrap, cited by target receipt)",
+    "boundary_bootstrap_failure": "Efron & Tibshirani 1993 'An Introduction to the Bootstrap' Ch. 13 notes percentile-bootstrap unreliability at parameter boundaries; a sample with zero within-sample variance (all-identical observations) resamples to the same statistic with probability 1, independent of true n.",
+    "exact_binomial_interval": "Clopper & Pearson 1934 Biometrika 26(4):404-413"
+  }
+}

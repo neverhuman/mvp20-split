@@ -1,0 +1,15 @@
+[package]
+name = "score-admission-oracle"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "score_admission_oracle"
+path = "rust_harness_main.rs"
+
+[dependencies]
+amphora-core = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-core" }
+serde_json = "1"
+
+[workspace]

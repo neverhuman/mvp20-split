@@ -1,0 +1,11 @@
+{
+  "campaign_item_id": "X-SOLVER-P3",
+  "status": "done",
+  "fires_used": 1,
+  "max_fires": 3,
+  "last_fire_id": "20260814T110001-1175738-a5389d84286e",
+  "gate_checked": "X-EHS-CID done receipt present and CLAIM_SURVIVED",
+  "verdict": "CLAIM_SURVIVED",
+  "done_receipt": "amphora-redteam-audit/evidence/phase0/repairs/X-SOLVER-P3/done/x-solver-p3-relaxation-audit-trail-receipt.v1.dsse.json",
+  "notes": "Relaxation engine implemented entirely inside amphora-redteam-audit (relaxation_registry.py); amphora-solver-lab crate untouched. All done_criterion elements satisfied in a single fire: per-relaxation audit fields, real-P3-blocking-set demonstration, hazard/rights structural fail-closed test, authority-ceiling before/after proof, and positive_control for the CLAIM_SURVIVED verdict."
+}

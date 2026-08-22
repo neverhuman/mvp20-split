@@ -1,0 +1,51 @@
+{
+  "candidate_id": "fixture-evidence-pass",
+  "candidate_type": "evidence_package",
+  "context": {
+    "jurisdiction": "US",
+    "target_spec": "v5 evidence intake dry-run"
+  },
+  "evidence_refs": {
+    "evidence_package": {
+      "all_samples_linked": true,
+      "authority_or_procurement_claim_made": false,
+      "calibration_files": [
+        "cal/cal-001.json"
+      ],
+      "calibration_present": true,
+      "computed_values_claimed_measured": false,
+      "calculated_vs_measured_flags": {
+        "eis_impedance": "measured"
+      },
+      "controls_valid": true,
+      "accepted_cro_packet_id": "CRO-PACKET-001",
+      "analysis_version": "analysis.v1",
+      "deviations": [],
+      "execution_date": "2026-07-11",
+      "feature_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "file_hashes": {
+        "manifest.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "formula_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "has_manifest_hash": true,
+      "ip_fto_claim_made": false,
+      "narrative_only": false,
+      "lab_package_signature": "LAB-SIGNATURE-001",
+      "manifest_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "model_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "operator_id": "operator-001",
+      "permitted_use": "internal-r-and-d",
+      "physical_validation_claim_made": false,
+      "raw_file_present": true,
+      "raw_files": [
+        "raw/eis-001.csv"
+      ],
+      "sample_links": [
+        "batch-1/sample-1/panel-1"
+      ],
+      "source_license": "laboratory-owned",
+      "supplier_closure_claim_made": false
+    },
+    "package_id": "FIX-PASS-001"
+  }
+}

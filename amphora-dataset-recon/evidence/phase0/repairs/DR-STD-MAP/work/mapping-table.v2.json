@@ -1,0 +1,816 @@
+{
+  "campaign_item_id": "DR-STD-MAP",
+  "census_hits_this_fire": {
+    "DIN": [
+      "DIN",
+      "DIN EN ISO 12944",
+      "DIN EN ISO 17025",
+      "DIN EN ISO 3001",
+      "DIN EN ISO 9227"
+    ],
+    "GB/T": [
+      "GB/T 10125",
+      "GB/T 13351-1992",
+      "GB/T 6748",
+      "GB/T 6822",
+      "GB/T 6822-2014",
+      "GB/T 6822-2024"
+    ],
+    "GOST": [
+      "GOST 124",
+      "GOST 343",
+      "GOST 9.032",
+      "GOST 9.401",
+      "GOST Р 567",
+      "ГОСТ"
+    ],
+    "JIS": [
+      "JIS K 5551",
+      "JIS K 5551:2018",
+      "JIS K 5552",
+      "JIS K 5553",
+      "JIS K 7236",
+      "JIS K7236",
+      "JIS Z 2371",
+      "JIS Z 2371:2015"
+    ],
+    "KS": [
+      "KS D 9502",
+      "KS D ISO 9227",
+      "KS M 2270",
+      "KS M ISO 3001",
+      "KS M ISO 9227",
+      "KS M ISO3001",
+      "KSMISO14855",
+      "KSMISO3001"
+    ],
+    "NF": [
+      "NF EN ISO 12944",
+      "NF EN ISO 3001",
+      "NF EN ISO 9227"
+    ],
+    "natl_en_iso": [
+      "CSN EN ISO 12944",
+      "CSN EN ISO 9227",
+      "NEN-EN-ISO 12944",
+      "NEN-EN-ISO 3001",
+      "NEN-EN-ISO 9227",
+      "NP EN ISO 12944",
+      "NP EN ISO 3001",
+      "NP EN ISO 9227",
+      "PN-EN ISO 12944",
+      "PN-EN ISO 9227",
+      "UNE-EN ISO 12944",
+      "UNE-EN ISO 9227",
+      "UNI EN ISO 12944",
+      "UNI EN ISO 3001",
+      "UNI EN ISO 9227",
+      "ČSN EN ISO 12944"
+    ]
+  },
+  "date": "2026-08-10",
+  "fire_id": "20260810T170001-3732775-ad6a5dd6f225",
+  "framing": "AUDIT-ONLY",
+  "integrity_gap_count": 11,
+  "iso_scope_reference_text": {
+    "ISO 12944": "ISO 12944 (Paints and varnishes -- Corrosion protection of steel structures by protective paint systems) specifies performance requirements, corrosivity categories (C1-C5, CX/Im immersion) and test methods for protective coating systems on structural steel, including Part 9 offshore-structure scope.",
+    "ISO 3001": "ISO 3001:1999 specifies a method for the determination of the epoxy equivalent, applicable to all epoxy compounds (with an epoxyamine modification in annex A). Epoxy equivalent = mass of resin in grams containing one mole of epoxy groups. Test principle: epoxy groups reacted with nascent HBr from perchloric acid and tetraethylammonium bromide -- a titrimetric method.",
+    "ISO 9227": "ISO 9227:2022 specifies the apparatus, the reagents and the procedure to be used in conducting the neutral salt spray (NSS), acetic acid salt spray (AASS) and copper-accelerated acetic acid salt spray (CASS) tests for assessment of the corrosion resistance of metallic materials, with or without permanent or temporary corrosion protection. Useful for detecting discontinuities such as pores and other defects in coatings."
+  },
+  "module": "amphora-dataset-recon",
+  "row_count": 42,
+  "rows": [
+    {
+      "astm_iso_equiv": "NOT_FOUND -- searched explicitly in DR-LANG-ZH (fire_id 20260810T060001-1892882-de641a9ef68c); no stated ISO/ASTM cross-reference located on the SAMR metadata page.",
+      "comparability_rating": "unconfirmed_no_equivalence_found",
+      "integrity_gap": true,
+      "integrity_gap_reason": "No closest ASTM/ISO equivalent found despite an explicit search -- ship-hull-specific antifouling standards appear to be a genuinely national-only regulatory niche in every language community this campaign has searched so far (zh is the only one with a codified number at all; ja/de/fr/nl/it/pl/cs/ko/es/pt all returned empty for this same sub-question).",
+      "methodological_deltas": "N/A -- no equivalence found to state a delta against.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "GB/T 6822-2024 船体防污防锈漆体系 (Anti-fouling and anti-corrosive paint systems on ship hulls, implemented 2025-06-01, replaces GB/T 6822-2014)",
+      "source": {
+        "candidate_id": "DR-LANG-ZH-04",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "GB/T",
+      "standard_id": "GB/T 6822-2024 (supersedes GB/T 6822-2014)"
+    },
+    {
+      "astm_iso_equiv": "N/A -- moot, standard is abolished.",
+      "comparability_rating": "not_applicable_abolished",
+      "integrity_gap": false,
+      "methodological_deltas": "N/A -- abolished, no current text to diff.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "GB/T 13351-1992 船底防锈漆通用技术条件, ABOLISHED 2008-04-01, superseded by the GB/T 6748 and GB/T 6822 lineage.",
+      "source": {
+        "candidate_id": "DR-LANG-ZH-05",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "GB/T",
+      "standard_id": "GB/T 13351-1992"
+    },
+    {
+      "astm_iso_equiv": "NOT_FOUND -- searched explicitly this fire (WebSearch 'GB/T 6748 涂料标准 环氧当量 OR 船底漆'); no stated ISO/ASTM cross-reference located in available metadata.",
+      "comparability_rating": "unconfirmed_no_equivalence_found",
+      "integrity_gap": true,
+      "integrity_gap_reason": "Standard was cited only in passing (DR-LANG-ZH-05's disposition note, as GB/T 6822's above-waterline sibling) and never independently mapped -- this fire closed that gap by searching it directly; result is a genuine unmapped-standard integrity gap, same shape as GB/T 6822 itself.",
+      "methodological_deltas": "N/A -- no equivalence found to state a delta against.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "GB/T 6748-2008 (船用防锈底漆 / general specification of anticorrosive marine paint, supersedes GB 6748-1986). Specifies classification, requirements, test methods, inspection rules, marking/packaging/transport/storage for rust-preventive paint on ship-hull parts above the design waterline and internal structures (excluding liquid tanks) -- the above-waterline sibling standard to GB/T 6822's below-waterline antifouling scope.",
+      "source": {
+        "kind": "fresh_websearch_this_fire",
+        "query": "GB/T 6748 涂料标准 环氧当量 OR 船底漆"
+      },
+      "standard_class": "GB/T",
+      "standard_id": "GB/T 6748-2008"
+    },
+    {
+      "astm_iso_equiv": "ISO 9227:2017 (stated 'modified adoption' relationship per nssi.org.cn / ndls.org.cn national standard library metadata, confirmed via fresh WebSearch this fire); method-class-comparable to ASTM B117 (both neutral-salt-spray tests). (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "iso_direct_adoption_stated",
+      "integrity_gap": false,
+      "methodological_deltas": "Modified (not identical) adoption of ISO 9227:2017 -- exact clause-level deltas not confirmed this fire (no full text acquired, per no-acquisition discipline); title/scope-level convergence only, matching the confidence level already used for GOST 34388-2018 and KS D ISO 9227.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "GB/T 10125-2021 (人造气氛腐蚀试验 盐雾试验 / Corrosion tests in artificial atmospheres -- Salt spray tests), implemented 2022-03-01, replaces GB/T 10125-2012. Explicitly a modified adoption of ISO 9227:2017 per its own published metadata (nssi.org.cn, ndls.org.cn national standard library records). Specifies apparatus/reagents/procedure for NSS/AASS/CASS salt-spray tests, same scope class as ISO 9227.",
+      "source": {
+        "kind": "fresh_websearch_this_fire",
+        "query": "GB/T 10125-2021 人造气氛腐蚀试验 盐雾试验 ISO 9227"
+      },
+      "standard_class": "GB/T",
+      "standard_id": "GB/T 10125-2021"
+    },
+    {
+      "astm_iso_equiv": "ISO 9227:2012 (explicit technical-modification adoption stated by source); broadly method-class-comparable to ASTM B117 (both neutral-salt-spray tests). (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "method_class_confirmed_iso_explicit_astm_inferred",
+      "integrity_gap": false,
+      "methodological_deltas": "Technical modifications from ISO 9227:2012 -- source states this is a modified (not verbatim) adoption; clause-by-clause diff not performed this fire.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "JIS Z 2371:2015 塔水噪霧試験方法 (salt spray test method)",
+      "source": {
+        "candidate_id": "DR-LANG-JA-04",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "JIS",
+      "standard_id": "JIS Z 2371:2015"
+    },
+    {
+      "astm_iso_equiv": "NOT_FOUND -- searched implicitly via the marine-hull query in DR-LANG-JA; no stated ISO/ASTM cross-reference located this fire.",
+      "comparability_rating": "unconfirmed_no_equivalence_found",
+      "integrity_gap": true,
+      "integrity_gap_reason": "General structural/zinc-rich paint standards, not confirmed marine-hull-specific and not confirmed against any ASTM/ISO number -- an honest unmapped-standard gap, same class as GB/T 6822/6748.",
+      "methodological_deltas": "N/A -- no equivalence found to state a delta against.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "JIS K 5551:2018 (構造物用さび止めペイント, structural rust-preventive paint); JIS K 5552 (zinc-rich primer); JIS K 5553 (thick-film zinc-rich paint)",
+      "source": {
+        "candidate_id": "DR-LANG-JA-05",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "JIS",
+      "standard_id": "JIS K 5551:2018 / JIS K 5552 / JIS K 5553"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999 (Plastics -- Epoxy compounds -- Determination of epoxy equivalent) -- title/scope level convergence stated in the ja fire's WebSearch evidence.",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "Direct-adoption pattern per this campaign's own convention for JIS ISO-based standards (same pattern as JIS Z 2371 -> ISO 9227); clause-by-clause diff not performed -- no full text acquired.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "JIS K 7236 エポキシ樹脂のエポキシ当量 試験方法 (epoxy resin -- test method for epoxy equivalent)",
+      "source": {
+        "gap_id": "jis-eew-testdata-annex-ja",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json",
+        "note": "This standard's ISO 3001 mapping previously existed ONLY as free-text inside coverage-map.v1.json's gaps[].commissioned_measurement_candidate field -- never as a disposition-ledger row with a structured standard_mapping{published_standard, astm_iso_equiv, comparability_rating} triple. Promoted to a proper row this fire."
+      },
+      "standard_class": "JIS",
+      "standard_id": "JIS K 7236"
+    },
+    {
+      "astm_iso_equiv": "DIN EN ISO 12944 IS the direct German/European-language adoption of ISO 12944 itself. No specific ASTM single-standard equivalent confirmed this fire. (ISO 12944's own scope: protective paint/coating systems.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption, not a separate national standard (unlike GB/T 6822).",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "DIN EN ISO 12944 (Parts 1-9, esp. Part 9 offshore) -- Korrosionsschutz von Stahlbauten durch Beschichtungssysteme",
+      "source": {
+        "candidate_id": "DR-LANG-DE-04",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "DIN EN ISO 12944"
+    },
+    {
+      "astm_iso_equiv": "DIN EN ISO 9227 IS the direct German/European adoption of ISO 9227 itself; method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_method_class_confirmed_astm_inferred",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption, no separate national number.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "DIN EN ISO 9227 -- Korrosionsprüfungen in künstlichen Atmosphären, Salzsprühnebelprüfungen",
+      "source": {
+        "candidate_id": "DR-LANG-DE-05",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "DIN EN ISO 9227"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999, direct DIN EN adoption -- title/scope level only. (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "DIN EN ISO 3001 -- Epoxidharze, Bestimmung des Epoxidäquivalents",
+      "source": {
+        "gap_id": "din-eew-testdata-annex-de",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json",
+        "note": "Previously prose-only inside coverage-map gaps[]; promoted to a structured row this fire."
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "DIN EN ISO 3001"
+    },
+    {
+      "astm_iso_equiv": "N/A -- accreditation standard, not a coating test method.",
+      "comparability_rating": "not_applicable_accreditation_standard",
+      "integrity_gap": false,
+      "methodological_deltas": "N/A -- category mismatch, no coating-performance delta applies.",
+      "own_scope_category": [
+        "ACCREDITATION"
+      ],
+      "published_standard": "DIN EN ISO 17025 -- testing/calibration laboratory accreditation",
+      "source": {
+        "candidate_id": "DR-LANG-DE-02",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "DIN EN ISO 17025"
+    },
+    {
+      "astm_iso_equiv": "ИСО 9227:2012 (explicit technical-modification adoption per own text: 'модифицирован на основе международного стандарта ISO 9227:2012'); method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "iso_direct_adoption_stated",
+      "integrity_gap": false,
+      "methodological_deltas": "Modified adoption -- own text states 'modified based on' ISO 9227:2012, exact clauses not diffed.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "ГОСТ 34388-2018 Трубы стальные. Метод испытаний коррозионной стойкости в соляном тумане",
+      "source": {
+        "candidate_id": "DR-LANG-RU-02",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "GOST",
+      "standard_id": "GOST 34388-2018"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999 -- CONFIRMED this fire via the standard's own official title/designation on docs.cntd.ru (document 1200128340): \"ГОСТ Р 56752-2015 (ИСО 3001:1999)\", i.e. the GOST designation itself carries the ISO number as a parenthetical in its formal title -- a direct-adoption marker confirmed at the official-designation level. (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "iso_direct_adoption_confirmed_via_own_designation_title",
+      "fire2_correction_note": "FIRE-2 CORRECTION (supersedes fire-1 row of the same standard_id, amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/done/dr-std-map-receipt.v1.dsse.json): fire-1 signed this row integrity_gap=false while its own methodological_deltas text disclosed 'WebSearch-surfaced only ... NOT independently page-confirmed ... disclosed as a lower-confidence mapping' -- textually identical weak-evidence language to 5 other rows fire-1 correctly flagged integrity_gap=true (CSN EN ISO 9227, UNE-EN ISO 9227, UNE-EN ISO 12944, NP EN ISO 12944, NP EN ISO 9227). That was an internal gap-flag-consistency defect in the SIGNED fire-1 artifact -- detected this fire by an independent 5th-limb checker (fire-1's 4 limbs never compared a row's own confidence language to its gap flag). Fire-2 closes it with FRESH page-title-level evidence (docs.cntd.ru document 1200128340's own official designation carries '(ИСО 3001:1999)' directly in the standard's title), which is independently sufficient to justify integrity_gap=false on its own merits -- the row is fixed, not merely re-labeled.",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct adoption per the standard's own formal designation title.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "ГОСТ Р 56752-2015 (эпоксидное число, epoxy equivalent determination)",
+      "source": {
+        "fire_id": "20260810T170001-3732775-ad6a5dd6f225",
+        "kind": "fresh_websearch_fire2",
+        "query": "ГОСТ Р 56752-2015 эпоксидное число ISO 3001"
+      },
+      "standard_class": "GOST",
+      "standard_id": "GOST Р 56752-2015"
+    },
+    {
+      "astm_iso_equiv": "NOT_FOUND -- source's own recorded evidence states no stated ISO equivalence; superseded in practice by GOST Р 56752-2015, which IS mapped to ISO 3001:1999 (see that row above). (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "not_applicable_superseded_in_practice",
+      "integrity_gap": false,
+      "methodological_deltas": "N/A -- no equivalence stated for this specific (older) standard; the ISO-3001 mapping applies to its de-facto successor, not to this standard's own text.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "ГОСТ 12497-78 Пластмассы. Методы определения эпоксидных групп (Plastics. Methods for determination of epoxy groups), effective 1979, RF-only scope.",
+      "source": {
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/search-record.v1.jsonl",
+        "note": "Recorded in DR-LANG-RU's search-record.v1.jsonl (fire_id 20260810T090001-3307991-b3648fc59c25) result_note, never promoted to its own disposition-ledger candidate row -- this fire elevated it to a structured mapping-table row."
+      },
+      "standard_class": "GOST",
+      "standard_id": "GOST 12497-78"
+    },
+    {
+      "astm_iso_equiv": "N/A -- coating-classification/designation standard (7 appearance/defect classes + operating-condition group codes), not a single-number ASTM/ISO test-method equivalent. Adjacent in concept to ISO 12944's corrosivity-category system (C1-C5/CX) but not a stated direct equivalence.",
+      "comparability_rating": "not_directly_comparable_classification_system",
+      "integrity_gap": true,
+      "integrity_gap_reason": "Cited only in a coverage-map gap NOTE ('GOST 9.032 and GOST 9.401 are the general anti-corrosion coating-system standards referenced alongside ISO 12944') alongside GOST 9.401, never independently mapped with its own closest-equivalent/delta/rating triple -- this fire closed the citation-discovery gap by researching it directly, but a classification-vs-performance-standard type mismatch means no single ASTM/ISO number is a genuine equivalent; declared as an integrity gap rather than forced into a false mapping.",
+      "methodological_deltas": "N/A -- different standard TYPE (classification/designation vs. performance/test-method); no single delta statement applies.",
+      "own_scope_category": [
+        "CLASSIFICATION"
+      ],
+      "published_standard": "GOST 9.032-74 (ЕСЗКС. Покрытия лакокрасочные. Группы, технические требования и обозначения / Unified System for Protection Against Corrosion and Aging. Paint and varnish coatings. Groups, technical requirements and designations). Defines 7 appearance/defect classes for paint/varnish coatings and a designation scheme referencing operating-condition groups (per GOST 9.104-79) -- a coating appearance-classification and designation standard, not a single numbered performance/test-method standard.",
+      "source": {
+        "kind": "fresh_websearch_this_fire",
+        "query": "GOST 9.032 покрытия лакокрасочные группы"
+      },
+      "standard_class": "GOST",
+      "standard_id": "GOST 9.032-74"
+    },
+    {
+      "astm_iso_equiv": "Method-class-comparable to ISO 12944 (general coating-system corrosion-protection performance requirements) and to accelerated-weathering test-method standards (e.g. ISO 16474-class / ASTM G154), not clause-by-clause confirmed this fire; no single explicit ISO/ASTM cross-reference number found in available metadata.",
+      "comparability_rating": "method_class_plausible_not_clause_confirmed",
+      "integrity_gap": true,
+      "integrity_gap_reason": "Same citation-discovery gap as GOST 9.032 above -- previously only in a coverage-map prose note, never independently mapped. No single ASTM/ISO equivalence number was found this fire; declared as an integrity gap rather than forced into a false mapping.",
+      "methodological_deltas": "Unconfirmed -- title/scope only, no cross-reference number found to diff against.",
+      "own_scope_category": [
+        "GENERAL_WEATHERING"
+      ],
+      "published_standard": "GOST 9.401-2018 (current edition; supersedes GOST 9.401-91): ЕСЗКС. Покрытия лакокрасочные. Общие требования и методы ускоренных испытаний на стойкость к воздействию климатических факторов / Unified System for Protection Against Corrosion and Aging. Paint and varnish coatings. General requirements and methods of accelerated tests for resistance to climatic factors.",
+      "source": {
+        "kind": "fresh_websearch_this_fire",
+        "query": "GOST 9.401 покрытия лакокрасочные общие требования"
+      },
+      "standard_class": "GOST",
+      "standard_id": "GOST 9.401-2018"
+    },
+    {
+      "astm_iso_equiv": "ISO 9227:1990 (identical adoption, per KSA); broadly method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "method_class_confirmed_iso_explicit_astm_inferred",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- identical adoption per source (KSSN / e-나라 표준인증 government portal).",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "KS D ISO 9227:2005 인공대기에서의 부식 - 염수분무시험",
+      "source": {
+        "candidate_id": "DR-LANG-KO-01",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "KS",
+      "standard_id": "KS D ISO 9227:2005"
+    },
+    {
+      "astm_iso_equiv": "ISO 9227:2006(MOD) -- CONFIRMED this fire via kssn.net's own standard-detail listing ('대응국제표준: ISO 9227:2006(MOD)'). Method-class-comparable to ASTM B117. Distinct MOD-adoption vintage (2006) from the campaign's already-confirmed 'KS D ISO 9227:2005' row (2005 vintage) -- both are genuine Korean designations, not a duplicate. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "iso_direct_adoption_confirmed_mod_distinct_vintage",
+      "integrity_gap": false,
+      "methodological_deltas": "MOD (modified) adoption per kssn.net's own stated designation; exact clause-level deltas not confirmed (no full text acquired, per no-acquisition discipline) -- same confidence tier as GOST 34388-2018 and the KS D ISO 9227:2005 row above. Resolves fire-1's open STATE.json item: KS D 9502 and KS D ISO 9227:2005 are two distinct, genuine Korean designations MOD-adopting two different ISO 9227 editions (2006 vs 2005), not the same standard under two names and not a duplicate citation.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "KS D 9502 염수 분무 시험방법 (중성, 아세트산 및 캐스 분무 시험) -- Salt spray test method (neutral, acetic-acid, and CASS spray tests); Korea's own domestic salt-spray designation, related to but recorded separately from KS D ISO 9227:2005 in this campaign's own DR-LANG-KO search-record (result_note: 'Also surfaced KS D 9502 ... a related domestic salt-spray method').",
+      "source": {
+        "fire_id": "20260810T170001-3732775-ad6a5dd6f225",
+        "kind": "fresh_websearch_fire2",
+        "query": "KS D 9502 한국표준 규격 내용"
+      },
+      "standard_class": "KS",
+      "standard_id": "KS D 9502"
+    },
+    {
+      "astm_iso_equiv": "EXCLUDED -- not a coating/corrosion-test standard (confirmed unrelated asphalt primer).",
+      "comparability_rating": "excluded_confirmed_irrelevant",
+      "integrity_gap": false,
+      "methodological_deltas": "N/A -- excluded, not a real citation requiring a mapping.",
+      "own_scope_category": [],
+      "published_standard": "Investigated in the DR-LANG-KO fire (fire_id 20260810T100002-3826207-0feb3e17adea, search-record query 'KS ㅌ 방청도료 규격 아연분말 프라이머'): result_note explicitly identifies KS M 2270 as 'unrelated asphalt primer, false-positive on primer'. EXCLUDED from this mapping table by design -- it is not a coating/corrosion-test standard relevant to this portfolio's scope, already correctly disclosed as a rejected false-positive, not an unmapped standard.",
+      "source": {
+        "candidate_id": null,
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/search-record.v1.jsonl",
+        "note": "DR-LANG-KO fire_id 20260810T100002-3826207-0feb3e17adea own result_note already disposed of this as a false positive."
+      },
+      "standard_class": "KS",
+      "standard_id": "KS M 2270"
+    },
+    {
+      "astm_iso_equiv": "SAME STANDARD AS KS D ISO 9227:2005 (see that row above) -- 'KS M' was this campaign's own incorrect query guess, not a second real standard. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "excluded_query_artifact_not_a_real_designation",
+      "integrity_gap": false,
+      "methodological_deltas": "N/A -- not a distinct standard.",
+      "own_scope_category": [],
+      "published_standard": "Query-string artifact, not a real Korean standard designation -- the DR-LANG-KO fire's own search-record result_note discloses: 'Query used an incorrect prefix guess (KS M); the actual Korean designation is KS D ISO 9227, not KS M -- an honest correction of my own query, not a source discrepancy.'",
+      "source": {
+        "candidate_id": null,
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/search-record.v1.jsonl",
+        "note": "DR-LANG-KO fire_id 20260810T100002-3826207-0feb3e17adea query text, not a standard citation."
+      },
+      "standard_class": "KS",
+      "standard_id": "KS M ISO 9227"
+    },
+    {
+      "astm_iso_equiv": "EXCLUDED -- unrelated search-result noise, not a claimed citation.",
+      "comparability_rating": "excluded_unrelated_search_noise",
+      "integrity_gap": false,
+      "methodological_deltas": "N/A -- excluded.",
+      "own_scope_category": [],
+      "published_standard": "A sample_urls entry (ksNo=KSMISO14855-1) that appeared as an incidental Korean-government-portal search-result link inside the DR-LANG-KO fire's KS M ISO 3001 (EEW) query -- never evaluated, never claimed as gap-relevant, and outside this portfolio's coating/corrosion scope (ISO 14855 is a biodegradability-under-composting-conditions test method, unrelated to marine epoxy-amine coatings).",
+      "source": {
+        "candidate_id": null,
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/search-record.v1.jsonl",
+        "note": "sample_urls artifact inside DR-LANG-KO fire_id 20260810T100002-3826207-0feb3e17adea, never asserted as a real citation by that fire itself."
+      },
+      "standard_class": "KS",
+      "standard_id": "KS M ISO 14855"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999 -- identical adoption per the official e-나라 표준인증 government portal. (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- identical adoption.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "KS M ISO 3001 -- 에폭시 당량 결정 (epoxy equivalent determination)",
+      "source": {
+        "gap_id": "ks-eew-testdata-annex-ko",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json",
+        "note": "Previously prose-only inside coverage-map gaps[]; promoted to a structured row this fire."
+      },
+      "standard_class": "KS",
+      "standard_id": "KS M ISO 3001"
+    },
+    {
+      "astm_iso_equiv": "NF EN ISO 12944 IS the direct French/European-language adoption of ISO 12944 itself. No specific ASTM single-standard equivalent confirmed this fire. (ISO 12944's own scope: protective paint/coating systems.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "NF EN ISO 12944 (Parties 1-9, esp. Partie 9 offshore)",
+      "source": {
+        "candidate_id": "DR-LANG-FR-01",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "NF",
+      "standard_id": "NF EN ISO 12944"
+    },
+    {
+      "astm_iso_equiv": "NF EN ISO 9227 IS the direct French/European adoption of ISO 9227; method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_method_class_confirmed_astm_inferred",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "NF EN ISO 9227 -- Essai au brouillard salin",
+      "source": {
+        "candidate_id": "DR-LANG-FR-02",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "NF",
+      "standard_id": "NF EN ISO 9227"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999, direct NF EN adoption -- title/scope/method-principle level (fr search surfaced the exact titration-principle text). (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "NF EN ISO 3001 -- Équivalent époxyde",
+      "source": {
+        "gap_id": "nf-eew-testdata-annex-fr",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json",
+        "note": "Previously prose-only inside coverage-map gaps[]; promoted to a structured row this fire."
+      },
+      "standard_class": "NF",
+      "standard_id": "NF EN ISO 3001"
+    },
+    {
+      "astm_iso_equiv": "UNI EN ISO 12944 IS the direct Italian/European-language adoption of ISO 12944 itself. (ISO 12944's own scope: protective paint/coating systems.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "UNI EN ISO 12944-9:2018 (Parti 1-9, esp. Parte 9 offshore)",
+      "source": {
+        "candidate_id": "DR-LANG-EU-06",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "UNI EN ISO 12944"
+    },
+    {
+      "astm_iso_equiv": "Direct Italian/European adoption tracking ISO 9227:2022/Amd1:2024's lineage. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption; UNI's edition numbering lags the ISO/EN year by one cycle.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "UNI EN ISO 9227:2024 (current, in force since 2024-09-12; corrected from the withdrawn 2017 edition, via the also-withdrawn 2023 intermediate, in the DR-LANG-EU fire-2 spot-check)",
+      "source": {
+        "candidate_id": "DR-LANG-EU-07-CORRECTED",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "UNI EN ISO 9227:2024"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999, direct UNI-EN adoption -- title/scope/method-principle level (it search surfaced the exact TEABr/perchloric-acid titration principle text). (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "UNI EN ISO 3001 -- equivalente epossidico",
+      "source": {
+        "gap_id": "it-eew-testdata-annex",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json",
+        "note": "Previously prose-only inside coverage-map gaps[]; promoted to a structured row this fire."
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "UNI EN ISO 3001"
+    },
+    {
+      "astm_iso_equiv": "NEN-EN-ISO 12944 IS the direct Dutch/European-language adoption of ISO 12944 itself. (ISO 12944's own scope: protective paint/coating systems.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "NEN-EN-ISO 12944 (Delen 1-9, esp. Deel 9 offshore)",
+      "source": {
+        "candidate_id": "DR-LANG-EU-01",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "NEN-EN-ISO 12944"
+    },
+    {
+      "astm_iso_equiv": "Direct Dutch/European adoption of ISO 9227:2022 (Edition 5); Amendment 1:2024 is a footnote-of-warning amendment, not a substantive method change. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "NEN-EN-ISO 9227:2022 (+A1:2024) (current, corrected from the withdrawn 2017 edition in the DR-LANG-EU fire-2 spot-check)",
+      "source": {
+        "candidate_id": "DR-LANG-EU-02-CORRECTED",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "NEN-EN-ISO 9227:2022"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999/1997, direct NEN-EN adoption -- title/scope level only. (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "NEN-EN-ISO 3001 -- epoxide-equivalent",
+      "source": {
+        "gap_id": "nl-eew-testdata-annex",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json",
+        "note": "Previously prose-only inside coverage-map gaps[]; promoted to a structured row this fire."
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "NEN-EN-ISO 3001"
+    },
+    {
+      "astm_iso_equiv": "PN-EN ISO 12944 IS the direct Polish/European-language adoption of ISO 12944 itself. (ISO 12944's own scope: protective paint/coating systems.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "PN-EN ISO 12944 (Parts 1-9, esp. Part 9 offshore)",
+      "source": {
+        "candidate_id": "DR-LANG-CEE-02",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "PN-EN ISO 12944"
+    },
+    {
+      "astm_iso_equiv": "Direct Polish/European adoption of ISO 9227; method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_method_class_confirmed_astm_inferred",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "PN-EN ISO 9227 -- direct Polish/European adoption of ISO 9227",
+      "source": {
+        "candidate_id": "DR-LANG-CEE-03",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "PN-EN ISO 9227"
+    },
+    {
+      "astm_iso_equiv": "Direct Czech/European adoption of ISO 12944 itself. (ISO 12944's own scope: protective paint/coating systems.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "ČSN EN ISO 12944 (Parts 1-9, esp. Part 9 offshore)",
+      "source": {
+        "candidate_id": "DR-LANG-CEE-07",
+        "kind": "disposition_ledger",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/disposition-ledger.v1.jsonl"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "ČSN EN ISO 12944"
+    },
+    {
+      "astm_iso_equiv": "NOT INDEPENDENTLY CONFIRMED THIS CAMPAIGN -- coverage-map's own DR-LANG-CEE gap note states explicitly: 'Czech CSN EN ISO 9227 not separately searched this fire, but ISO 9227 is expected to be an identical direct adoption per the established EN-adoption pattern.' Inference by pattern only, never independently verified by a dedicated Czech-language search or WebFetch. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "identical_to_iso_by_pattern_inference_unconfirmed_this_campaign",
+      "integrity_gap": true,
+      "integrity_gap_reason": "The campaign's own coverage-map explicitly discloses this mapping was NEVER independently searched or confirmed -- it is an inference by pattern from the other EN-ISO-adoption national standards, not a verified finding. Declared as an integrity gap per the item's own instruction that an unmapped/unconfirmed standard must be declared as one, not quietly treated as equivalent to the confirmed rows above.",
+      "methodological_deltas": "Unconfirmed -- no independent verification performed.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "ČSN EN ISO 9227 -- expected direct Czech/European adoption of ISO 9227",
+      "source": {
+        "gap_id": "salt-spray-standard-mapping-pl-cs",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "ČSN EN ISO 9227"
+    },
+    {
+      "astm_iso_equiv": "Direct national adoption of ISO 9227 per the established EN-adoption pattern across this campaign; NOT independently page-confirmed (AENOR store is paywalled, no free scope text surfaced this campaign). (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "identical_to_iso_by_pattern_inference_unconfirmed_this_campaign",
+      "integrity_gap": true,
+      "integrity_gap_reason": "Paywalled at AENOR; only the standard NUMBER and its EN-ISO-adoption pattern were found, never a scope-text confirmation. Declared as an integrity gap rather than silently folded into the confirmed DIN/NF/NEN/UNI rows.",
+      "methodological_deltas": "Unconfirmed -- paywalled, title-level inference only.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "UNE-EN ISO 9227 (Spain, AENOR) -- salt spray, paywalled",
+      "source": {
+        "gap_id": "salt-spray-standard-mapping-iberian",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "UNE-EN ISO 9227"
+    },
+    {
+      "astm_iso_equiv": "Direct national adoption of ISO 12944 per the established EN-adoption pattern across this campaign; NOT independently page-confirmed this campaign. (ISO 12944's own scope: protective paint/coating systems.)",
+      "comparability_rating": "identical_to_iso_by_pattern_inference_unconfirmed_this_campaign",
+      "integrity_gap": true,
+      "integrity_gap_reason": "Only ever named in passing inside a gap note about the ABSENCE of an Iberian ship-hull-specific standard; never itself independently searched or scope-confirmed. Declared as an integrity gap rather than silently treated as equivalent-confirmed like the DIN/NF/NEN/UNI rows above.",
+      "methodological_deltas": "Unconfirmed -- title-level inference only, no dedicated es-language WebFetch performed.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "UNE-EN ISO 12944 (Spain, AENOR) -- general structural-steel coating-system standard, direct national adoption of ISO 12944, referenced only in the iberian fire's ship-hull-antifouling empty-result gap note, not independently page-confirmed.",
+      "source": {
+        "gap_id": "ship-hull-antifouling-standard-mapping-iberian",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "UNE-EN ISO 12944"
+    },
+    {
+      "astm_iso_equiv": "Direct national adoption of ISO 12944 per the established EN-adoption pattern across this campaign; NOT independently page-confirmed this campaign. (ISO 12944's own scope: protective paint/coating systems.)",
+      "comparability_rating": "identical_to_iso_by_pattern_inference_unconfirmed_this_campaign",
+      "integrity_gap": true,
+      "integrity_gap_reason": "Same as UNE-EN ISO 12944 above -- named only in passing, never independently confirmed.",
+      "methodological_deltas": "Unconfirmed -- title-level inference only, no dedicated pt-language WebFetch performed.",
+      "own_scope_category": [
+        "MARINE_COATING"
+      ],
+      "published_standard": "NP EN ISO 12944 (Portugal, IPQ) -- general structural-steel coating-system standard, direct national adoption of ISO 12944, referenced only in the iberian fire's ship-hull-antifouling empty-result gap note, not independently page-confirmed.",
+      "source": {
+        "gap_id": "ship-hull-antifouling-standard-mapping-iberian",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "NP EN ISO 12944"
+    },
+    {
+      "astm_iso_equiv": "Direct national adoption of ISO 9227 per the established EN-adoption pattern; NOT independently page-confirmed (IPQ store is paywalled). (ISO 9227's own scope: salt spray corrosion tests.)",
+      "comparability_rating": "identical_to_iso_by_pattern_inference_unconfirmed_this_campaign",
+      "integrity_gap": true,
+      "integrity_gap_reason": "Same paywalled-inference gap as UNE-EN ISO 9227 above.",
+      "methodological_deltas": "Unconfirmed -- paywalled, title-level inference only.",
+      "own_scope_category": [
+        "SALT_SPRAY"
+      ],
+      "published_standard": "NP EN ISO 9227 (Portugal, IPQ) -- salt spray, paywalled",
+      "source": {
+        "gap_id": "salt-spray-standard-mapping-iberian",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "NP EN ISO 9227"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999, direct NP EN adoption -- title/scope level only. (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption (title/scope level).",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "NP EN ISO 3001 -- epoxy equivalent, Portugal (IPQ)",
+      "source": {
+        "gap_id": "eew-testdata-annex-iberian",
+        "kind": "coverage_map_prose_elevated",
+        "ledger_path": "amphora-dataset-recon/evidence/ledgers/coverage-map.v1.json",
+        "note": "Previously prose-only inside coverage-map gaps[]; promoted to a structured row this fire."
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "NP EN ISO 3001"
+    },
+    {
+      "astm_iso_equiv": "ISO 3001:1999 -- CONFIRMED this fire via technickenormy.cz: 'this norm is a Czech version of the European standard EN ISO 3001:1999' -- direct national EN-ISO adoption, same pattern as the already-confirmed DIN/NF/NEN/UNI/NP EN ISO 3001 rows. (ISO 3001's own scope: determination of the epoxy equivalent.)",
+      "comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "integrity_gap": false,
+      "methodological_deltas": "None stated -- direct EN adoption, confirmed this fire.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "ČSN EN ISO 3001 -- Plasty - Epoxidové sloučeniny - Stanovení epoxidového ekvivalentu",
+      "source": {
+        "fire_id": "20260810T170001-3732775-ad6a5dd6f225",
+        "kind": "fresh_websearch_fire2",
+        "query": "ČSN EN ISO 3001 epoxidová hodnota norma"
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "ČSN EN ISO 3001"
+    },
+    {
+      "astm_iso_equiv": "NOT_SEARCHED this campaign in any language community.",
+      "comparability_rating": "unmapped_never_searched",
+      "integrity_gap": true,
+      "integrity_gap_reason": "Never independently searched in Polish or any other language community across this entire 9-language-fire campaign -- an honest, declared integrity gap per this item's own rule that an unmapped standard must be declared as one, not silently inferred from the CSN/DIN/NF/NEN/UNI/NP EN-ISO-adoption pattern.",
+      "own_scope_category": [
+        "EEW"
+      ],
+      "published_standard": "PN-EN ISO 3001 (Polish national EN-ISO-adoption class; expected sibling of the confirmed DIN/NF/NEN/UNI/NP/CSN EN ISO 3001 rows)",
+      "source": {
+        "kind": "census_gap",
+        "note": "split out of fire-1's merged 'ČSN EN ISO 3001 / PN-EN ISO 3001' row this fire; CSN half confirmed, PN half remains an open gap."
+      },
+      "standard_class": "natl_en_iso",
+      "standard_id": "PN-EN ISO 3001"
+    }
+  ],
+  "schema": "amphora.dataset-recon.standard-mapping-table.v1",
+  "scope_note": "Every non-ASTM/ISO standard cited anywhere across dataset-ledger.v1.jsonl, disposition-ledger.v1.jsonl, search-record.v1.jsonl, and coverage-map.v1.json as of this fire's start, consolidated into one signed table with a closest ASTM/ISO equivalent named, known methodological deltas stated, and a comparability rating -- or, where any of those three is genuinely unavailable, an explicit integrity_gap declaration with a reason, per the item's own instruction that an unmapped standard is an integrity gap that must be declared, not silently omitted.",
+  "supersedes": {
+    "reason": "GOST Р 56752-2015 row's integrity_gap flag was inconsistent with its own stated evidentiary confidence (see audit violation above); KS D 9502 <-> ISO 9227 relationship was an unresolved open item; CSN/PN EN ISO 3001 merged census-gap row conflated a now-confirmable Czech half with a genuinely still-unsearched Polish half.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/work/mapping-table.v1.json",
+    "superseded_sha256": "2c3a17f4f4d6a18c35edbd793287f42ff8bc0aa3cc3af32b51df14225a17bde8"
+  }
+}

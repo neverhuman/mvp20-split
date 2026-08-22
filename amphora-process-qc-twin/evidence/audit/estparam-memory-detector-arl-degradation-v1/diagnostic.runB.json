@@ -1,0 +1,822 @@
+{
+  "all_known_answer_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "baseline_size_requirement": {
+    "criterion": "p95 (guaranteed) union false-alarm count <= 1.5",
+    "false_alarm_budget_per_30_batch": 1.5,
+    "smallest_tabulated_m_meeting_criterion": 50,
+    "tabulated_m": [
+      20,
+      30,
+      50,
+      100,
+      300,
+      1000
+    ],
+    "union_fa_p95_by_m": {
+      "100": 0.67757,
+      "1000": 0.28652,
+      "20": 2.66102,
+      "30": 1.73991,
+      "300": 0.39133,
+      "50": 1.10155
+    }
+  },
+  "closes": [
+    "Estimated-parameter guaranteed ARL0 for the EWMA(0.20,3) arm of the live union.",
+    "Estimated-parameter guaranteed ARL0 for the two-sided CUSUM(0.5,5) arm.",
+    "First guaranteed (not best-case) bound on the module's 30-batch UNION false-alarm KPI, i.e. all three arms of the union now characterized under estimated limits.",
+    "Independent Brook-Evans Markov-chain CUSUM solver cross-validated against Siegmund 1985 and Montgomery Table 9.4, removing the prior receipt's sole reliance on the Siegmund approximation.",
+    "Ranks which arm of the union is most sensitive to a short Phase-I baseline."
+  ],
+  "detector_design": {
+    "cusum_h": 5.0,
+    "cusum_headstart": 0.0,
+    "cusum_k": 0.5,
+    "ewma_L": 3.0,
+    "ewma_lambda": 0.2,
+    "ewma_limits": "asymptotic, +/- L*sqrt(lam/(2-lam)), z0 = 0",
+    "note": "sigma_hat = MRbar/d2 is the more conservative estimator (ARE 0.605, moving-range-arl-degradation-v1); the S/c4 results here are therefore an UPPER bound on the memory arms' guaranteed ARL0.",
+    "phase1_estimators": "mu_hat = Xbar, sigma_hat = S/c4(m) (unbiased; exact chi law)",
+    "shewhart_individuals_L": 3.0
+  },
+  "does_not_close": [
+    "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+    "Assumes i.i.d. normal in-control data; autocorrelation and non-normality are not modeled and remain open.",
+    "Uses sigma_hat = S/c4; the MRbar/d2 estimator actually defaulted to by Individuals charts is strictly worse (ARE 0.605), so the memory-arm guaranteed ARL0 reported here is an upper bound, not the operating value. The MRbar/d2 x EWMA/CUSUM cross is still open.",
+    "The two-sided CUSUM ARL uses the Lucas-Crosier 1/ARL = 1/ARL+ + 1/ARL- combination, which is an approximation (validated to <=6% against Montgomery Table 9.4, not exact).",
+    "The union false-alarm figure is a Bonferroni rate bound summing per-chart 30/ARL0; it does not model the strong positive dependence among the three charts (they read the same stream), so it is conservative by construction.",
+    "No prospective time-ordered 30-batch pilot is checked in; this is a theory characterization, not a false-alarm measurement on real batches.",
+    "Out-of-control (ARL1) performance under estimated parameters, and the recall >=90% half of the KPI, are not characterized here."
+  ],
+  "estimated_parameter_distribution_by_baseline_m": [
+    {
+      "c4": 0.98693427,
+      "cusum": {
+        "P_arl0_below_200": 0.50488,
+        "arl0_mean": 1018.83,
+        "arl0_median": 196.272,
+        "arl0_p05_guaranteed": 30.222,
+        "arl0_p25": 81.447
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.45215,
+        "arl0_mean": 1114.003,
+        "arl0_median": 235.925,
+        "arl0_p05_guaranteed": 34.411,
+        "arl0_p25": 96.146
+      },
+      "m": 20,
+      "shewhart": {
+        "P_arl0_below_200": 0.4043,
+        "arl0_mean": 1521.567,
+        "arl0_median": 288.152,
+        "arl0_p05_guaranteed": 32.671,
+        "arl0_p25": 107.271
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.146,
+        "mean": 0.74784,
+        "median": 0.39819,
+        "p95_guaranteed": 2.66102,
+        "p99": 4.45957
+      }
+    },
+    {
+      "c4": 0.99141805,
+      "cusum": {
+        "P_arl0_below_200": 0.43457,
+        "arl0_mean": 672.0,
+        "arl0_median": 243.354,
+        "arl0_p05_guaranteed": 45.752,
+        "arl0_p25": 113.945
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.37549,
+        "arl0_mean": 763.784,
+        "arl0_median": 290.512,
+        "arl0_p05_guaranteed": 53.296,
+        "arl0_p25": 135.899
+      },
+      "m": 30,
+      "shewhart": {
+        "P_arl0_below_200": 0.35938,
+        "arl0_mean": 877.692,
+        "arl0_median": 312.305,
+        "arl0_p05_guaranteed": 49.211,
+        "arl0_p25": 137.46
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.07275,
+        "mean": 0.53847,
+        "median": 0.33225,
+        "p95_guaranteed": 1.73991,
+        "p99": 2.81301
+      }
+    },
+    {
+      "c4": 0.9949113,
+      "cusum": {
+        "P_arl0_below_200": 0.33154,
+        "arl0_mean": 529.09,
+        "arl0_median": 298.232,
+        "arl0_p05_guaranteed": 74.954,
+        "arl0_p25": 162.188
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.26123,
+        "arl0_mean": 614.832,
+        "arl0_median": 355.061,
+        "arl0_p05_guaranteed": 86.198,
+        "arl0_p25": 192.969
+      },
+      "m": 50,
+      "shewhart": {
+        "P_arl0_below_200": 0.29639,
+        "arl0_mean": 597.685,
+        "arl0_median": 331.845,
+        "arl0_p05_guaranteed": 75.224,
+        "arl0_p25": 176.072
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.01807,
+        "mean": 0.38845,
+        "median": 0.27961,
+        "p95_guaranteed": 1.10155,
+        "p99": 1.66952
+      }
+    },
+    {
+      "c4": 0.99747798,
+      "cusum": {
+        "P_arl0_below_200": 0.18213,
+        "arl0_mean": 472.681,
+        "arl0_median": 360.428,
+        "arl0_p05_guaranteed": 129.349,
+        "arl0_p25": 231.414
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.11621,
+        "arl0_mean": 557.05,
+        "arl0_median": 430.148,
+        "arl0_p05_guaranteed": 152.355,
+        "arl0_p25": 277.471
+      },
+      "m": 100,
+      "shewhart": {
+        "P_arl0_below_200": 0.20264,
+        "arl0_mean": 463.617,
+        "arl0_median": 350.832,
+        "arl0_p05_guaranteed": 119.668,
+        "arl0_p25": 220.942
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.0,
+        "mean": 0.28772,
+        "median": 0.24048,
+        "p95_guaranteed": 0.67757,
+        "p99": 0.93247
+      }
+    },
+    {
+      "c4": 0.99916423,
+      "cusum": {
+        "P_arl0_below_200": 0.02344,
+        "arl0_mean": 459.713,
+        "arl0_median": 422.112,
+        "arl0_p05_guaranteed": 227.824,
+        "arl0_p25": 326.668
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.00293,
+        "arl0_mean": 547.812,
+        "arl0_median": 505.255,
+        "arl0_p05_guaranteed": 276.86,
+        "arl0_p25": 392.561
+      },
+      "m": 300,
+      "shewhart": {
+        "P_arl0_below_200": 0.06445,
+        "arl0_mean": 397.876,
+        "arl0_median": 363.834,
+        "arl0_p05_guaranteed": 193.382,
+        "arl0_p25": 278.697
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.0,
+        "mean": 0.22712,
+        "median": 0.2136,
+        "p95_guaranteed": 0.39133,
+        "p99": 0.48866
+      }
+    },
+    {
+      "c4": 0.99974978,
+      "cusum": {
+        "P_arl0_below_200": 0.0,
+        "arl0_mean": 462.418,
+        "arl0_median": 451.095,
+        "arl0_p05_guaranteed": 323.049,
+        "arl0_p25": 391.846
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.0,
+        "arl0_mean": 554.141,
+        "arl0_median": 541.19,
+        "arl0_p05_guaranteed": 390.457,
+        "arl0_p25": 471.557
+      },
+      "m": 1000,
+      "shewhart": {
+        "P_arl0_below_200": 0.0,
+        "arl0_mean": 378.307,
+        "arl0_median": 368.292,
+        "arl0_p05_guaranteed": 260.064,
+        "arl0_p25": 317.618
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.0,
+        "mean": 0.20731,
+        "median": 0.20346,
+        "p95_guaranteed": 0.28652,
+        "p99": 0.32776
+      }
+    }
+  ],
+  "exact_conditional_reduction": {
+    "U": "(mu_hat - mu)/sigma ~ N(0, 1/m)",
+    "W": "sigma_hat/sigma = sqrt(V/(m-1))/c4(m), V ~ chi^2_{m-1}",
+    "consequence": "conditional ARL = known-parameter ARL at delta_eff = -U/W, s_eff = 1/W; unconditional law by marginalizing the exact joint law of (U,W)",
+    "independence": "Xbar independent of S under normality (Cochran)",
+    "standardized_phase2_observation": "Y = (Z - U)/W ~ N(-U/W, 1/W^2)"
+  },
+  "gates": {
+    "c4_constant_known_answer": {
+      "max_abs_err": 4.07e-05,
+      "passed": true,
+      "rows": [
+        {
+          "abs_err": 1.54e-05,
+          "c4_computed": 0.797885,
+          "c4_published": 0.7979,
+          "m": 2
+        },
+        {
+          "abs_err": 2.69e-05,
+          "c4_computed": 0.886227,
+          "c4_published": 0.8862,
+          "m": 3
+        },
+        {
+          "abs_err": 1.44e-05,
+          "c4_computed": 0.939986,
+          "c4_published": 0.94,
+          "m": 5
+        },
+        {
+          "abs_err": 4.07e-05,
+          "c4_computed": 0.972659,
+          "c4_published": 0.9727,
+          "m": 10
+        },
+        {
+          "abs_err": 4.04e-05,
+          "c4_computed": 0.98964,
+          "c4_published": 0.9896,
+          "m": 25
+        }
+      ],
+      "source": "Montgomery 2020 App. VI; NIST/SEMATECH 6.3.2",
+      "tol": 5e-05
+    },
+    "cusum_markov_chain_vs_published": {
+      "max_rel_err_vs_published": 0.00363,
+      "note": "Validates the NEW generalized-variance CUSUM solver at s=1 against the same published anchors used by spc-arl-characterization-v1.",
+      "passed": true,
+      "rows": [
+        {
+          "arl_markov_chain": 465.504,
+          "arl_published_montgomery_t9p4": 465.0,
+          "arl_siegmund_closed_form": 469.1112,
+          "rel_err_vs_published": 0.00108,
+          "rel_err_vs_siegmund": 0.00769,
+          "shift_sigma": 0.0
+        },
+        {
+          "arl_markov_chain": 139.5039,
+          "arl_published_montgomery_t9p4": 139.0,
+          "arl_siegmund_closed_form": 141.9262,
+          "rel_err_vs_published": 0.00363,
+          "rel_err_vs_siegmund": 0.01707,
+          "shift_sigma": 0.25
+        },
+        {
+          "arl_markov_chain": 37.9966,
+          "arl_published_montgomery_t9p4": 38.0,
+          "arl_siegmund_closed_form": 38.0196,
+          "rel_err_vs_published": 9e-05,
+          "rel_err_vs_siegmund": 0.0006,
+          "shift_sigma": 0.5
+        },
+        {
+          "arl_markov_chain": 17.0481,
+          "arl_published_montgomery_t9p4": 17.0,
+          "arl_siegmund_closed_form": 17.0306,
+          "rel_err_vs_published": 0.00283,
+          "rel_err_vs_siegmund": 0.00103,
+          "shift_sigma": 0.75
+        },
+        {
+          "arl_markov_chain": 10.3758,
+          "arl_published_montgomery_t9p4": 10.4,
+          "arl_siegmund_closed_form": 10.3362,
+          "rel_err_vs_published": 0.00233,
+          "rel_err_vs_siegmund": 0.00383,
+          "shift_sigma": 1.0
+        },
+        {
+          "arl_markov_chain": 5.7471,
+          "arl_published_montgomery_t9p4": 5.75,
+          "arl_siegmund_closed_form": 5.666,
+          "rel_err_vs_published": 0.0005,
+          "rel_err_vs_siegmund": 0.01432,
+          "shift_sigma": 1.5
+        },
+        {
+          "arl_markov_chain": 4.0088,
+          "arl_published_montgomery_t9p4": 4.01,
+          "arl_siegmund_closed_form": 3.8884,
+          "rel_err_vs_published": 0.00029,
+          "rel_err_vs_siegmund": 0.03096,
+          "shift_sigma": 2.0
+        }
+      ],
+      "source": "Brook & Evans 1972; Page 1954; Siegmund 1985; Montgomery 2020 Table 9.4",
+      "tol": 0.06
+    },
+    "cusum_richardson_eliminant_stability": {
+      "max_eliminant_rel_shift": 0.000241,
+      "note": "2*ARL(2N) - ARL(N) must be insensitive to the base grid N if the O(1/N) boundary term is genuinely the leading error.",
+      "passed": true,
+      "rows": [
+        {
+          "delta": 0.0,
+          "eliminant_rel_shift": 9.6e-05,
+          "raw_bias_removed_rel": 0.02563,
+          "raw_midpoint_N100": 453.5274,
+          "richardson_N100_200": 465.504,
+          "richardson_N200_400": 465.4594,
+          "s": 1.0
+        },
+        {
+          "delta": 0.0,
+          "eliminant_rel_shift": 1.6e-05,
+          "raw_bias_removed_rel": 0.01721,
+          "raw_midpoint_N100": 87.4524,
+          "richardson_N100_200": 88.9855,
+          "richardson_N200_400": 88.9841,
+          "s": 1.25
+        },
+        {
+          "delta": 0.4,
+          "eliminant_rel_shift": 2.5e-05,
+          "raw_bias_removed_rel": 0.01028,
+          "raw_midpoint_N100": 59.2065,
+          "richardson_N100_200": 59.8228,
+          "richardson_N200_400": 59.8213,
+          "s": 1.0
+        },
+        {
+          "delta": 0.0,
+          "eliminant_rel_shift": 0.000241,
+          "raw_bias_removed_rel": 0.03544,
+          "raw_midpoint_N100": 2742.579,
+          "richardson_N100_200": 2844.0251,
+          "richardson_N200_400": 2843.3404,
+          "s": 0.85
+        },
+        {
+          "delta": 0.8,
+          "eliminant_rel_shift": 9e-06,
+          "raw_bias_removed_rel": 0.00545,
+          "raw_midpoint_N100": 14.4579,
+          "richardson_N100_200": 14.537,
+          "richardson_N200_400": 14.5371,
+          "s": 1.1
+        }
+      ],
+      "tol": 0.005
+    },
+    "direct_run_length_mc_method_agreement": {
+      "max_rel_err": 0.00877,
+      "mc_runs": 40000,
+      "mc_seed_base": 20260731,
+      "note": "Independent method: direct simulation of the actual chart recursions on N(delta, s^2) streams, pinned seed, no Markov chain involved. Tolerance is ~4x the MC relative standard error (1/sqrt(40000) = 0.5%).",
+      "passed": true,
+      "rows": [
+        {
+          "arl_direct_mc": 368.7307,
+          "arl_markov_or_closed_form": 370.3983,
+          "chart": "shewhart",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.0045,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 558.1466,
+          "arl_markov_or_closed_form": 559.5958,
+          "chart": "ewma",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00259,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 467.1832,
+          "arl_markov_or_closed_form": 465.504,
+          "chart": "cusum",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00361,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 60.9367,
+          "arl_markov_or_closed_form": 60.9939,
+          "chart": "shewhart",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00094,
+          "s": 1.25
+        },
+        {
+          "arl_direct_mc": 110.5271,
+          "arl_markov_or_closed_form": 110.2077,
+          "chart": "ewma",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.0029,
+          "s": 1.25
+        },
+        {
+          "arl_direct_mc": 88.9978,
+          "arl_markov_or_closed_form": 88.9855,
+          "chart": "cusum",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00014,
+          "s": 1.25
+        },
+        {
+          "arl_direct_mc": 154.2833,
+          "arl_markov_or_closed_form": 155.2242,
+          "chart": "shewhart",
+          "delta": 0.5,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00606,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 44.1827,
+          "arl_markov_or_closed_form": 44.1246,
+          "chart": "ewma",
+          "delta": 0.5,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00132,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 37.768,
+          "arl_markov_or_closed_form": 37.9966,
+          "chart": "cusum",
+          "delta": 0.5,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00602,
+          "s": 1.0
+        },
+        {
+          "arl_direct_mc": 80.5119,
+          "arl_markov_or_closed_form": 80.7025,
+          "chart": "shewhart",
+          "delta": 0.35,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00236,
+          "s": 1.15
+        },
+        {
+          "arl_direct_mc": 57.4617,
+          "arl_markov_or_closed_form": 57.2928,
+          "chart": "ewma",
+          "delta": 0.35,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00295,
+          "s": 1.15
+        },
+        {
+          "arl_direct_mc": 51.7201,
+          "arl_markov_or_closed_form": 51.2703,
+          "chart": "cusum",
+          "delta": 0.35,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00877,
+          "s": 1.15
+        },
+        {
+          "arl_direct_mc": 2388.9803,
+          "arl_markov_or_closed_form": 2401.0494,
+          "chart": "shewhart",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00503,
+          "s": 0.85
+        },
+        {
+          "arl_direct_mc": 3215.2642,
+          "arl_markov_or_closed_form": 3195.0374,
+          "chart": "ewma",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00633,
+          "s": 0.85
+        },
+        {
+          "arl_direct_mc": 2856.7915,
+          "arl_markov_or_closed_form": 2844.0251,
+          "chart": "cusum",
+          "delta": 0.0,
+          "mc_rel_se_approx": 0.005,
+          "rel_err": 0.00449,
+          "s": 0.85
+        }
+      ],
+      "tol": 0.02
+    },
+    "ewma_lambda_to_1_recovers_generalized_shewhart": {
+      "max_rel_err": 0.0,
+      "note": "Exercises the N(delta, s^2) generalization, including s != 1.",
+      "passed": true,
+      "rows": [
+        {
+          "delta": 0.0,
+          "ewma_lambda1": 370.3983,
+          "rel_err": 0.0,
+          "s": 1.0,
+          "shewhart_exact": 370.3983
+        },
+        {
+          "delta": 0.0,
+          "ewma_lambda1": 60.9939,
+          "rel_err": 0.0,
+          "s": 1.25,
+          "shewhart_exact": 60.9939
+        },
+        {
+          "delta": 0.0,
+          "ewma_lambda1": 5655.0029,
+          "rel_err": 0.0,
+          "s": 0.8,
+          "shewhart_exact": 5655.0029
+        },
+        {
+          "delta": 0.5,
+          "ewma_lambda1": 155.2242,
+          "rel_err": 0.0,
+          "s": 1.0,
+          "shewhart_exact": 155.2242
+        },
+        {
+          "delta": 0.5,
+          "ewma_lambda1": 49.0692,
+          "rel_err": 0.0,
+          "s": 1.2,
+          "shewhart_exact": 49.0692
+        },
+        {
+          "delta": -0.4,
+          "ewma_lambda1": 496.982,
+          "rel_err": 0.0,
+          "s": 0.9,
+          "shewhart_exact": 496.982
+        }
+      ],
+      "source": "Roberts 1959; Brook & Evans 1972; Lucas & Saccucci 1990",
+      "tol": 0.01
+    },
+    "fail_closed": {
+      "passed": true,
+      "rows": [
+        {
+          "check": "tampered_c4_rejected",
+          "passed": true
+        },
+        {
+          "check": "m_lt_2_rejected",
+          "passed": true
+        },
+        {
+          "check": "ewma_p05_monotone_increasing_in_m",
+          "passed": true,
+          "values": [
+            34.411,
+            53.296,
+            86.198,
+            152.355,
+            276.86,
+            390.457
+          ]
+        },
+        {
+          "check": "degradation_direction_p05_below_median",
+          "passed": true
+        },
+        {
+          "check": "union_fa_p95_monotone_decreasing_in_m",
+          "passed": true,
+          "values": [
+            2.66102,
+            1.73991,
+            1.10155,
+            0.67757,
+            0.39133,
+            0.28652
+          ]
+        },
+        {
+          "check": "union_fa_p95_exceeds_known_parameter_value",
+          "passed": true
+        }
+      ]
+    },
+    "known_parameter_limit_m_to_inf": {
+      "cusum_state_grid_convergence": {
+        "note": "raw midpoint chain converges O(1/N) from below; the Richardson eliminant is stable to <0.1% across three grid pairs and lands on Montgomery Table 9.4's 465.",
+        "raw_N100": 453.527,
+        "raw_N200": 459.516,
+        "raw_N400": 462.488,
+        "raw_N800": 463.968,
+        "richardson_N100_200": 465.504,
+        "richardson_N200_400": 465.459,
+        "richardson_N400_800": 465.448
+      },
+      "ewma_state_grid_convergence": {
+        "N201": 559.596,
+        "N401": 559.804,
+        "N601": 559.843
+      },
+      "known_parameter_arl0": {
+        "cusum": 465.504,
+        "ewma": 559.596,
+        "shewhart": 370.398
+      },
+      "known_parameter_union_fa_per_30_batch": 0.19905,
+      "max_rel_err": 0.000584,
+      "median_arl0_at_m_1e5": {
+        "cusum": 465.245,
+        "ewma": 559.293,
+        "shewhart": 370.182
+      },
+      "note": "As m -> inf, U -> 0 and W -> 1, so the estimated-parameter median ARL0 must collapse onto the known-parameter ARL0 of spc-arl-characterization-v1.",
+      "passed": true,
+      "prior_receipt_known_parameter_union_fa": 0.199,
+      "tol": 0.02
+    },
+    "quadrature_grid_convergence": {
+      "max_rel_err": 0.02342,
+      "note": "Equal-probability stratified midpoint quadrature on the exact (U,W) law; 64x64 vs 96x96 nodes.",
+      "passed": true,
+      "rows": [
+        {
+          "chart": "shewhart",
+          "m": 30,
+          "p05_grid64": 49.211,
+          "p05_grid96": 49.321,
+          "rel_err": 0.00223
+        },
+        {
+          "chart": "ewma",
+          "m": 30,
+          "p05_grid64": 53.296,
+          "p05_grid96": 52.863,
+          "rel_err": 0.00819
+        },
+        {
+          "chart": "cusum",
+          "m": 30,
+          "p05_grid64": 45.752,
+          "p05_grid96": 46.378,
+          "rel_err": 0.0135
+        },
+        {
+          "chart": "union_fa_p95",
+          "m": 30,
+          "p05_grid64": 1.73991,
+          "p05_grid96": 1.78164,
+          "rel_err": 0.02342
+        },
+        {
+          "chart": "shewhart",
+          "m": 100,
+          "p05_grid64": 119.668,
+          "p05_grid96": 121.039,
+          "rel_err": 0.01133
+        },
+        {
+          "chart": "ewma",
+          "m": 100,
+          "p05_grid64": 152.355,
+          "p05_grid96": 153.322,
+          "rel_err": 0.00631
+        },
+        {
+          "chart": "cusum",
+          "m": 100,
+          "p05_grid64": 129.349,
+          "p05_grid96": 128.452,
+          "rel_err": 0.00698
+        },
+        {
+          "chart": "union_fa_p95",
+          "m": 100,
+          "p05_grid64": 0.67757,
+          "p05_grid96": 0.66768,
+          "rel_err": 0.01481
+        }
+      ],
+      "tol": 0.05
+    },
+    "shewhart_known_parameter_anchor": {
+      "arl0_computed": 370.3983,
+      "arl0_published": 370.4,
+      "passed": true,
+      "rel_err": 4e-06,
+      "source": "Shewhart 1931; Montgomery 2020 Ch.6; NIST 6.3.1",
+      "tol": 0.01
+    }
+  },
+  "governance": {
+    "flips_scientific_readiness": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_signed_phase0_kpi": false,
+    "module_scientific_readiness": "LOCKED_INTERNAL",
+    "portfolio_manifest_modules": 11,
+    "portfolio_manifest_receipts": 66,
+    "promotes_authority": false
+  },
+  "guaranteed_arl0_retention_at_m30_vs_known_parameter": {
+    "cusum": 0.0983,
+    "ewma": 0.0952,
+    "shewhart": 0.1329
+  },
+  "headline": "Estimated-parameter (Phase-II) run-length degradation of the EWMA(0.20,3) and two-sided CUSUM(0.5,5) arms of the live three-detector union, via the exact conditional reduction Y ~ N(-U/W, 1/W^2) (Jones-Champ-Rigdon 2001/2004) with Brook-Evans Markov-chain ARL solvers generalized to non-unit variance. The memory detectors degrade MORE than Shewhart: at a 30-observation baseline the guaranteed (5th-pct) ARL0 retains only 9.5% (EWMA) and 9.8% (CUSUM) of its known-parameter value versus 13.3% for Shewhart, and the guaranteed (95th-pct) union false-alarm count over the module's 30-batch KPI window rises from the known-parameter 0.199 to 1.73991 -- outside the locked budget of 1.5.",
+  "known_parameter_reference": {
+    "arl0": {
+      "cusum": 465.504,
+      "ewma": 559.596,
+      "shewhart": 370.398
+    },
+    "prior_receipt": "spc-arl-characterization-v1",
+    "union_false_alarms_per_30_batch": 0.19905
+  },
+  "kpi_linkage": {
+    "closes_prior_does_not_close_item": "estparam-arl-degradation-v1 / moving-range-arl-degradation-v1 does_not_close #3: 'Estimated-parameter EWMA (Jones, Champ, Rigdon 2001) and CUSUM guaranteed-ARL under estimated parameters remain open Phase-1 gaps.'",
+    "false_alarm_budget_expected_per_30_batch": 1.5,
+    "guaranteed_union_fa_per_30_batch_m100": 0.67757,
+    "guaranteed_union_fa_per_30_batch_m30": 1.73991,
+    "known_parameter_union_fa_per_30_batch": 0.19905,
+    "module_locked_kpi": "prospective 30-batch pilot: seeded-control recall >=90%, false alarms <=5%, zero false releases"
+  },
+  "module": "amphora-process-qc-twin",
+  "non_circularity": "The conditional reduction is an exact algebraic identity, not a fit. The two Markov-chain solvers are validated against published anchors that were NOT used to build them: Montgomery Table 9.4 two-sided CUSUM, Siegmund's 1985 closed form, the exact geometric Shewhart law (via the lambda -> 1 EWMA limit at s != 1), and independent pinned-seed direct run-length simulation of the actual chart recursions.",
+  "purpose": "Close does_not_close item #3 of estparam-arl-degradation-v1 and moving-range-arl-degradation-v1: estimated-parameter EWMA and CUSUM guaranteed ARL. Until now only 1 of the 3 arms of the union the module actually alarms on had been characterized under estimated limits, so the union false-alarm KPI had no guaranteed (as opposed to best-case) bound.",
+  "reproducibility_seed": {
+    "cusum_states": 100,
+    "ewma_states": 201,
+    "mc_max_steps": 20000,
+    "mc_runs": 40000,
+    "mc_seed_base": 20260731,
+    "numpy": "1.26.4",
+    "quadrature_nodes": [
+      64,
+      64
+    ],
+    "quadrature_nodes_fine": [
+      96,
+      96
+    ]
+  },
+  "run_type": "AUDIT_ONLY_THEORY_CHARACTERIZATION",
+  "schema": "amphora.process-qc-twin.estparam-memory-detector-arl-degradation.v1",
+  "study_id": "estparam-memory-detector-arl-degradation-v1",
+  "theory_reference": {
+    "anchors": "Montgomery 2020, ISQC 8th ed., Ch.6 / Table 9.4; NIST/SEMATECH e-Handbook 6.3",
+    "cusum_closed_form": "Siegmund 1985, Sequential Analysis, Springer, ISBN 978-0-387-96134-7; Page 1954, Biometrika 41:100-115",
+    "estimated_parameter_cusum": "Jones, Champ & Rigdon 2004, JQT 36(1):95-108, DOI 10.1080/00224065.2004.11980254",
+    "estimated_parameter_ewma": "Jones, Champ & Rigdon 2001, Technometrics 43(2):156-167, DOI 10.1198/004017001750386279; Jones 2002, JQT 34(3):277-288",
+    "guaranteed_arl_framing": "Quesenberry 1993, JQT 25(4):237-247; Saleh, Mahmoud, Keefe & Woodall 2015, JQT 47(2):127-138",
+    "markov_chain_arl": "Brook & Evans 1972, Biometrika 59(3):539-549; Lucas & Saccucci 1990, Technometrics 32(1):1-12",
+    "two_sided_combination": "Lucas & Crosier 1982, Technometrics 24(3):199-205"
+  },
+  "worst_degrading_arm_at_m30": "ewma"
+}

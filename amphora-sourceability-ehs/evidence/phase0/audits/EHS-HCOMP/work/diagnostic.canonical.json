@@ -1,0 +1,142 @@
+{
+  "any_candidate_refuted": true,
+  "attack": "H-statement-completeness of DETA/TETA cards vs their own cited PubChem ECHA C&L aggregate",
+  "authoritative_receipt_sha256": "1f658452c27d9738bd3af1f93433a5489ffb57b6b3f2682ceb39d5b6e1a10d61",
+  "candidates": {
+    "DETA": {
+      "aquatic_tier_mismatch": false,
+      "card_aquatic_tier": [
+        "H411"
+      ],
+      "card_h_statement_codes": [
+        "H302",
+        "H312",
+        "H314",
+        "H317",
+        "H411"
+      ],
+      "card_pubchem_notifications_summary": "Aggregated GHS information provided per 3716 reports by companies from 49 notifications to the ECHA C&L Inventory. Each notification may be associated with multiple companies.",
+      "cas": "111-40-0",
+      "cid_used": 8111,
+      "live_aggregate_codes_with_pct": [
+        {
+          "code": "H302",
+          "pct": 99.9
+        },
+        {
+          "code": "H312",
+          "pct": 95.2
+        },
+        {
+          "code": "H314",
+          "pct": 99.9
+        },
+        {
+          "code": "H317",
+          "pct": 99.9
+        },
+        {
+          "code": "H318",
+          "pct": 68.3
+        },
+        {
+          "code": "H330",
+          "pct": 71.7
+        },
+        {
+          "code": "H335",
+          "pct": 70.7
+        }
+      ],
+      "live_aggregate_matched_reference_number": 19,
+      "live_aggregate_raw_hazard_statement_text": "H302 (> 99.9%): Harmful if swallowed [Warning Acute toxicity, oral] H312 (95.2%): Harmful in contact with skin [Warning Acute toxicity, dermal] H314 (> 99.9%): Causes severe skin burns and eye damage [Danger Skin corrosion/irritation] H317 (> 99.9%): May cause an allergic skin reaction [Warning Sensitization, Skin] H318 (68.3%): Causes serious eye damage [Danger Serious eye damage/eye irritation] H330 (71.7%): Fatal if inhaled [Danger Acute toxicity, inhalation] H335 (70.7%): May cause respiratory irritation [Warning Specific target organ toxicity, single exposure; Respiratory tract irritation]",
+      "live_aggregate_summary_text": "Aggregated GHS information provided per 3716 reports by companies from 49 notifications to the ECHA C&L Inventory. Each notification may be associated with multiple companies.",
+      "live_majority_aquatic_tier": [],
+      "live_majority_codes_ge10pct": [
+        "H302",
+        "H312",
+        "H314",
+        "H317",
+        "H318",
+        "H330",
+        "H335"
+      ],
+      "missing_from_card_non_aquatic": [
+        "H318",
+        "H330",
+        "H335"
+      ],
+      "refuted_for_candidate": true
+    },
+    "TETA": {
+      "aquatic_tier_mismatch": true,
+      "card_aquatic_tier": [
+        "H411"
+      ],
+      "card_h_statement_codes": [
+        "H302",
+        "H312",
+        "H314",
+        "H317",
+        "H411"
+      ],
+      "card_pubchem_notifications_summary": "Aggregated GHS information provided per 2507 reports by companies from 30 notifications to the ECHA C&L Inventory. Each notification may be associated with multiple companies.",
+      "cas": "112-24-3",
+      "cid_used": 5565,
+      "live_aggregate_codes_with_pct": [
+        {
+          "code": "H302",
+          "pct": 18.4
+        },
+        {
+          "code": "H312",
+          "pct": 18.4
+        },
+        {
+          "code": "H302",
+          "pct": 34.2
+        },
+        {
+          "code": "H312",
+          "pct": 90.3
+        },
+        {
+          "code": "H314",
+          "pct": 99.6
+        },
+        {
+          "code": "H317",
+          "pct": 99.6
+        },
+        {
+          "code": "H318",
+          "pct": 39.4
+        },
+        {
+          "code": "H412",
+          "pct": 99.5
+        }
+      ],
+      "live_aggregate_matched_reference_number": 24,
+      "live_aggregate_raw_hazard_statement_text": "H302+H312 (18.4%): Harmful if swallowed or in contact with skin [Warning Acute toxicity, oral; acute toxicity, dermal] H302 (34.2%): Harmful if swallowed [Warning Acute toxicity, oral] H312 (90.3%): Harmful in contact with skin [Warning Acute toxicity, dermal] H314 (99.6%): Causes severe skin burns and eye damage [Danger Skin corrosion/irritation] H317 (99.6%): May cause an allergic skin reaction [Warning Sensitization, Skin] H318 (39.4%): Causes serious eye damage [Danger Serious eye damage/eye irritation] H412 (99.5%): Harmful to aquatic life with long lasting effects [Hazardous to the aquatic environment, long-term hazard]",
+      "live_aggregate_summary_text": "Aggregated GHS information provided per 2507 reports by companies from 30 notifications to the ECHA C&L Inventory. Each notification may be associated with multiple companies.",
+      "live_majority_aquatic_tier": [
+        "H412"
+      ],
+      "live_majority_codes_ge10pct": [
+        "H302",
+        "H312",
+        "H314",
+        "H317",
+        "H318",
+        "H412"
+      ],
+      "missing_from_card_non_aquatic": [
+        "H318"
+      ],
+      "refuted_for_candidate": true
+    }
+  },
+  "fire_id": "20260815T000001-4006146-25a0bf6559b0",
+  "schema": "amphora.sourceability-ehs.ehs-hcomp.diagnostic.v1"
+}

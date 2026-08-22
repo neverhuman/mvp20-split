@@ -1,0 +1,31 @@
+{
+  "schema": "amphora.module-registry-succession.v1",
+  "succession_id": "registry-succession-82c095f07dbea06bd8037cd7624e8bb3e0ab35a0f577e01b291619815eb0f775",
+  "predecessor": {
+    "path": "registry/archive/25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5/module-manifest.json",
+    "sha256": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+  },
+  "successor": {
+    "path": "registry/archive/571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f/module-manifest.json",
+    "sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f"
+  },
+  "edits": [
+    {
+      "module_id": "amphora-solvency-score",
+      "field": "operational_readiness",
+      "old_value": "SHADOW",
+      "new_value": "READY"
+    },
+    {
+      "module_id": "amphora-solvency-score",
+      "field": "readiness",
+      "old_value": "SHADOW",
+      "new_value": "READY"
+    }
+  ],
+  "no_scientific_change": true,
+  "no_rights_change": true,
+  "no_ranking_change": true,
+  "no_solver_change": true,
+  "no_authority_change": true
+}

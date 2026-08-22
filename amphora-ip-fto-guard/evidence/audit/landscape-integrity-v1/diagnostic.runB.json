@@ -1,0 +1,558 @@
+{
+  "authority": "AUDIT_ONLY",
+  "check1_no_rule_invariant": {
+    "all_rows_satisfy_no_rule": true,
+    "conclusive_NO_rows": 6,
+    "per_row": [
+      {
+        "charted": true,
+        "class": "conclusive_NO",
+        "n": 1,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "NO"
+      },
+      {
+        "charted": true,
+        "class": "conclusive_NO",
+        "n": 2,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "NO"
+      },
+      {
+        "charted": true,
+        "class": "conclusive_NO",
+        "n": 3,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "NO (caveat: read US family claim, not EP)"
+      },
+      {
+        "charted": true,
+        "class": "conclusive_NO",
+        "n": 4,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "NO"
+      },
+      {
+        "charted": true,
+        "class": "conclusive_NO",
+        "n": 5,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "NO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 6,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 7,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 8,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 9,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 10,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 11,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 12,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 13,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 14,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 15,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 16,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 17,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 18,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 19,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 20,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 21,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 22,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 23,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 24,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 25,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR"
+      },
+      {
+        "charted": true,
+        "class": "conclusive_NO",
+        "n": 26,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "NO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 27,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 28,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 29,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 30,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 31,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 32,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 33,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 34,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 35,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 36,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 37,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 38,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 39,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 40,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 41,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 42,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 43,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 44,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 45,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 46,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 47,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 48,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 49,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 50,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 51,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 52,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 53,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 54,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 55,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 56,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 57,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 58,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 59,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      },
+      {
+        "charted": null,
+        "class": "unresolved_UNCLEAR",
+        "n": 60,
+        "no_rule_satisfied": true,
+        "reads_on_ours": "UNCLEAR / not FTO"
+      }
+    ],
+    "rule": "No row may be marked NO unless independent_claim_chart.charted is true; category-only rows remain UNCLEAR / not FTO.",
+    "unresolved_UNCLEAR_rows": 54
+  },
+  "check2_authority_envelope": {
+    "envelope_clean": true,
+    "families_missing_not_fto": [],
+    "forbidden_legal_closure_key_hits": [],
+    "landscape_method_not_fto_true": true,
+    "top_level_disclaimer_present": true
+  },
+  "check3_sweep_coverage": {
+    "all_formal_symbols_have_family_coverage": true,
+    "descriptive_process_adjacency_sweeps": 1,
+    "formal_cpc_ipc_symbols": 5,
+    "note": "One declared sweep ('high-solids/process') is a descriptive process adjacency, not a formal CPC/IPC symbol; its families are captured under the B05D / process rows. Reported as descriptive-only, not treated as a coverage gap.",
+    "per_sweep": [
+      {
+        "class": "C09D163/00",
+        "coverage_ok": true,
+        "family_rows_matched": 25,
+        "kind": "formal_cpc_ipc_symbol",
+        "well_formed_cpc_ipc_symbol": true
+      },
+      {
+        "class": "C09D5/08",
+        "coverage_ok": true,
+        "family_rows_matched": 19,
+        "kind": "formal_cpc_ipc_symbol",
+        "well_formed_cpc_ipc_symbol": true
+      },
+      {
+        "class": "C09D7/61",
+        "coverage_ok": true,
+        "family_rows_matched": 9,
+        "kind": "formal_cpc_ipc_symbol",
+        "well_formed_cpc_ipc_symbol": true
+      },
+      {
+        "class": "C08G59/50",
+        "coverage_ok": true,
+        "family_rows_matched": 11,
+        "kind": "formal_cpc_ipc_symbol",
+        "well_formed_cpc_ipc_symbol": true
+      },
+      {
+        "class": "B05D",
+        "coverage_ok": true,
+        "family_rows_matched": 8,
+        "kind": "formal_cpc_ipc_symbol",
+        "well_formed_cpc_ipc_symbol": true
+      },
+      {
+        "class": "high-solids/process",
+        "coverage_ok": true,
+        "family_rows_matched": 0,
+        "kind": "descriptive_process_adjacency",
+        "well_formed_cpc_ipc_symbol": false
+      }
+    ]
+  },
+  "does_not_close": [
+    "Does NOT establish FTO, patentability, procurement, or jurisdictional coverage.",
+    "Verifies INTERNAL consistency + fail-closed behaviour only; external patent bibliographic facts (assignee, legal status, claim text, prosecution history, equivalents) are counsel-scope and network/rights blocked from the cron.",
+    "Validates the governance rule is non-vacuous; does NOT flip scientific_readiness (remains UNVALIDATED) and asserts no human parity."
+  ],
+  "fail_closed_mutation_demo": {
+    "all_mutations_caught": true,
+    "mutations": [
+      {
+        "caught": true,
+        "mutation": "uncharted_UNCLEAR_row_relabelled_NO",
+        "no_rule_still_passes": false,
+        "target_family_n": 6,
+        "violates": "landscape_method.no_rule"
+      },
+      {
+        "caught": true,
+        "closure_keys_detected": 1,
+        "mutation": "legal_closure_key_injected_fto_clear_true",
+        "target_family_n": 1,
+        "violates": "Anderson-1980 reference-monitor (no authority elevation)"
+      },
+      {
+        "caught": true,
+        "matches_pin": false,
+        "mutated_sha256": "ad7a37e0a7d03844000f774048b648997c072c781542f49828c4ba881c8d707e",
+        "mutation": "single_trailing_byte_appended",
+        "violates": "pinned SHA-256 fixture lock"
+      }
+    ]
+  },
+  "hash_and_count_lock": {
+    "family_count": 60,
+    "family_count_matches_pin": true,
+    "landscape_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "pinned_family_count": 60,
+    "pinned_landscape_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "pinned_sweep_count": 6,
+    "sha_matches_pin": true,
+    "sweep_count": 6,
+    "sweep_count_matches_pin": true
+  },
+  "headline": "Pinned patent-landscape fixture (SHA 52ada090..., 60 families / 6 sweeps) re-verified: no_rule holds on all 60 rows (6 conclusive-NO all charted, 54 UNCLEAR category-only); authority envelope clean (0 legal-closure keys, not_fto on every row); 5/5 formal CPC/IPC sweep symbols have family coverage; reconstructed unresolved_technical_categories=54 with FTO claimed nowhere -> falsifiable hypothesis corroborated; all 3 fail-closed mutations caught.",
+  "human_review_performed": false,
+  "inputs": {
+    "patent_landscape_json": "reference/mvp20/data/patent_landscape.json",
+    "patent_landscape_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+  },
+  "kpi_reconstruction": {
+    "conclusive_NO_rows": 6,
+    "fto_claimed_anywhere": false,
+    "hypothesis_surfaces_unresolved_without_claiming_fto": true,
+    "total_rows": 60,
+    "unresolved_technical_categories_recomputed": 54
+  },
+  "modifies_manifest": false,
+  "modifies_pinned_fixture": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ip-fto-guard",
+  "non_circularity": "Baselines are (B1) the fixture's OWN declared decision rule landscape_method.no_rule, re-verified by an independent on-disk parser (the runtime embeds the fixture at compile time); (B2) the Anderson-1980 reference-monitor no-authority-elevation invariant; (B3) the CPC/IPC classification-symbol grammar. None of these baselines is fitted to the data.",
+  "organizational_independence_asserted": false,
+  "promotes_authority": false,
+  "purpose": "Independent internal-consistency + fail-closed second-signal for the ip-fto-guard falsifiable hypothesis: technical landscape screening surfaces unresolved technical categories WITHOUT claiming freedom-to-operate.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ip-fto-guard-landscape-integrity.v1",
+  "theory_reference": {
+    "classification_framework": "Cooperative Patent Classification (CPC) / IPC joint framework; USPTO MPEP 9th ed. Rev.07.2022 Section 706; 35 U.S.C. Section 102/103",
+    "no_rule": "landscape_method.no_rule (fixture-declared falsifiable decision rule)",
+    "reference_monitor": "Anderson, J.P. (1980) ESD-TR-73-51 Computer Security Technology Planning Study"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "6cd061111f209f2bb3b5c039a27e9ee1d1de49212889bd713863542f23e2069c",
+  "module_id": "amphora-ingredient-library",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

@@ -1,0 +1,68 @@
+{
+  "context_other_modules_citing_identical_stale_hash_for_same_shared_file": [
+    "amphora-molecule-design-gate",
+    "amphora-molecule-generator",
+    "amphora-molecule-novelty",
+    "amphora-molecule-property",
+    "amphora-molecule-role-ranker"
+  ],
+  "does_not_close": [
+    "Does not modify mission.md, capability-profile.json, the manifest, or any other module's docs -- reports the finding only.",
+    "Does not assert amphora-molecule-capabilities/src/lib.rs itself is functionally broken or that design_gate_result() behaves differently than documented -- this audit is about the hash BINDING (provenance claim), not runtime behavior, which prior T-08 / U-E2E / U-E2E-B live-runtime fires already separately exercised.",
+    "Other modules (amphora-molecule-generator, amphora-molecule-novelty, amphora-molecule-role-ranker, amphora-molecule-property) cite the identical stale hash for the identical shared file; amphora-molecule-generator's own 2026-08-16 fire already reported and signed this same defect for itself. Repairing docs in modules other than amphora-molecule-design-gate is out of scope for this receipt and is reported as context only.",
+    "Does not determine WHY the hash drifted (most likely: the shared amphora-molecule-capabilities/src/lib.rs crate grew via later repairs -- e.g. the Wave-R interactive repairs referenced in the git baseline commit message -- after mission.md's audit_date 2026-07-17 documentation was authored, and the citation was never recomputed) -- ROOT CAUSE is out of scope; the BINDING FAILURE is in scope and is what this receipt certifies."
+  ],
+  "findings": {
+    "mismatch_capability_profile_vs_actual": true,
+    "mismatch_mission_md_vs_actual": true,
+    "n_mission_md_hash_citations_checked": 2,
+    "n_mission_md_hash_citations_mismatched": 2
+  },
+  "measurements": {
+    "actual_hash_stable_and_committed_not_live_drift": true,
+    "actual_sha256_git_baseline_commit_blob": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
+    "actual_sha256_git_head_blob": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
+    "actual_sha256_working_tree": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
+    "claimed_hash_capability_profile": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+    "claimed_hash_occurrences_mission_md": [
+      "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+      "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+    ],
+    "git_baseline_commit_that_added_file": "907e753",
+    "git_head_commit": "3e2d60a3ac3a0afc22b39ee2ee902121818ac3f1",
+    "git_status_short_for_target_file": "",
+    "independent_cross_check_hashes": {
+      "amphora-candidate-contract/eight-vector-facts-injection-v1": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
+      "amphora-molecule-generator/molgen-implementation-hash-binding-integrity-v1": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c"
+    },
+    "independent_cross_check_sources": [
+      "amphora-candidate-contract/eight-vector-facts-injection-v1",
+      "amphora-molecule-generator/molgen-implementation-hash-binding-integrity-v1"
+    ],
+    "independent_cross_checks_agree_with_actual_hash": {
+      "amphora-candidate-contract/eight-vector-facts-injection-v1": true,
+      "amphora-molecule-generator/molgen-implementation-hash-binding-integrity-v1": true
+    },
+    "target_file_path_as_declared_in_capability_profile": "amphora-molecule-capabilities/src/lib.rs",
+    "target_file_relpath": "amphora-molecule-capabilities/src/lib.rs",
+    "working_tree_matches_baseline_commit_blob": true,
+    "working_tree_matches_head_blob": true
+  },
+  "refutation_criterion": "claimed_hash != sha256(current git-committed content of amphora-molecule-capabilities/src/lib.rs); any mismatch refutes, deterministic string comparison, no tolerance.",
+  "study_id": "DESIGNGATE_IMPLEMENTATION_HASH_BINDING_INTEGRITY_V1",
+  "target_claim": {
+    "automatic_demotion_trigger_invoked": "source hash mutation",
+    "automatic_demotion_triggers_declared": [
+      "schema divergence",
+      "source hash mutation",
+      "incomplete locked fold",
+      "authority ceiling violation",
+      "claim-lock loss",
+      "non-finite output"
+    ],
+    "capability_profile_path": "amphora-molecule-design-gate/docs/capability-profile.json",
+    "claim_text": "mission.md 'Honest current state' and capability-profile.json evidence_inventory.implementation both assert SHA-256 5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861 for the module's live checked implementation at amphora-molecule-capabilities/src/lib.rs.",
+    "mission_md_path": "amphora-molecule-design-gate/docs/mission.md"
+  },
+  "verdict": "CLAIM_REFUTED"
+}

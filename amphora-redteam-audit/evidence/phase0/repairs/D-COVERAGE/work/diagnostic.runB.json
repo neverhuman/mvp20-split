@@ -1,0 +1,794 @@
+{
+  "directive": {
+    "title": "Closing the Open Portfolio \u2014 Adversarial Coverage, Verification Debt, and the Lab-in-the-Loop Program",
+    "prepared": "2026-08-05",
+    "framing": "AUDIT-ONLY throughout: no product qualification, procurement, safety, synthesis, or freedom-to-operate authority is asserted or granted by this document.",
+    "host": "xbabe2",
+    "root": "/home/ubuntu/amphora/build/mvp20-split",
+    "docx_path": "docs/directives/2026-08-05-closing-the-open-portfolio.docx",
+    "docx_sha256": "650e48c503de0acdebb33e1adc956b6d695b7fd22500d8c44f62a507c9be9322",
+    "md_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+    "md_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+    "source_on_xbabe1": "/home/ubuntu/Amphora_Closing_The_Open_Portfolio.docx"
+  },
+  "rows": [
+    {
+      "id": "A1-FIRE-INSPECTION",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "A fire finishing materially faster than the median is opened for inspection",
+      "index_status": "already-delivered",
+      "campaign_items": [],
+      "item_statuses": [],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "A1-NOTE-T07-T11",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "T-07 and T-11 stay queued at lower priority",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-07",
+        "T-11"
+      ],
+      "item_statuses": [
+        "pending",
+        "pending"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "T2-01",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Typed-payload override injection",
+      "index_status": "closed",
+      "campaign_items": [
+        "T-01",
+        "T-01B"
+      ],
+      "item_statuses": [
+        "done",
+        "done"
+      ],
+      "fires": 2,
+      "receipts": [
+        "amphora-candidate-contract/evidence/audit/eight-vector-facts-injection-v1/eight-vector-facts-injection-receipt.v1.dsse.json",
+        "amphora-candidate-contract/evidence/phase0/repairs/T-01/done/eight-vector-facts-injection-receipt.v1.dsse.json",
+        "amphora-candidate-contract/evidence/phase0/repairs/T-01B/done/normalized-molecule-consumer-sweep-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-02",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Packet authority and claim-lock integrity (Phase-0 gap)",
+      "index_status": "closed",
+      "campaign_items": [
+        "T-02"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-cro-protocol-packager/evidence/audit/t02-claim-lock-execution-authority-adversarial-v1/t02-claim-lock-execution-authority-adversarial-receipt.v1.dsse.json",
+        "amphora-cro-protocol-packager/evidence/phase0/repairs/T-02/done/t02-claim-lock-execution-authority-adversarial-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-03",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Inclusive-margin and boundary gaming",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-03"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-envelope-gates/evidence/phase0/repairs/T-03/done/t03-adversarial-attack-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-04",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Intake spoofing and rights bypass (Phase-0 gap)",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-04"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-assurance-capabilities/tests/evidence_intake_validator_t04_adversarial_forgery.rs",
+        "amphora-evidence-intake-validator/docs/mission.md",
+        "amphora-evidence-intake-validator/evidence/phase0/kpis/RETRACTION-INDEX.md",
+        "amphora-evidence-intake-validator/evidence/phase0/repairs/T-04/done/t04-adversarial-forgery-done.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-05",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Stoichiometric identity and mass-balance attack",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-05"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/done/T-05.done-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-06",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Accounting-vs-feasibility conflation (merge evidence)",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-06"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-formulation-universe/evidence/phase0/repairs/T-06/done/t06-independent-adversarial-attack-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-08",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Structural-applicability bypass (Phase-0 gap)",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-08"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-molecule-design-gate/evidence/phase0/repairs/T-08/done/t08-design-gate-live-runtime-adversarial-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-09",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Unauthorized ranking / objective emission (Phase-0 gap)",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-09"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-optimizer-orchestrator/evidence/phase0/repairs/T-09/done/authorization-injection-encoding-t09-done.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-10",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Adversarial drift + stall closeout",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-10"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-process-qc-twin/evidence/audit/ar1-estparam-drift-corpus-v1/ar1-estparam-drift-corpus-receipt.v1.dsse.json",
+        "amphora-process-qc-twin/evidence/phase0/repairs/T-10/done/t-10-done-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-12",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Claim-lock and quarantine bypass (Phase-0 gap)",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-12"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-report-packager/evidence/phase0/repairs/T-12/done/t12-forged-upstream-receipt-directive-t2-12.done-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-13",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Hash-chain and replay integrity",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-13"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-run-provenance/evidence/audit/real-archive-tamper-scale-v1/real-archive-tamper-scale-receipt.v1.dsse.json",
+        "amphora-run-provenance/evidence/phase0/repairs/T-13/done/real-archive-tamper-scale-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "T2-14",
+      "section": "A.1",
+      "owner": "LOOP",
+      "title": "Resolve-vs-support citation attack (Phase-0 gap)",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "T-14"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-source-ledger/evidence/phase0/repairs/T-14/done/t-14-done-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "V2-A06v2",
+      "section": "A.2",
+      "owner": "LOOP",
+      "title": "Verify molecule-generator R-A06v2 against the AHEW functionality convention",
+      "index_status": "already-satisfied",
+      "campaign_items": [
+        "V-A06v2"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-molecule-generator/evidence/phase0/repairs/V-A06v2/done/v-a06v2-molecule-generator-independent-verify-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "V2-A07v2",
+      "section": "A.2",
+      "owner": "LOOP",
+      "title": "Verify molecule-novelty R-A07v2 across all four fingerprint families",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "V-A07v2"
+      ],
+      "item_statuses": [
+        "pending"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "V2-B02",
+      "section": "A.2",
+      "owner": "LOOP",
+      "title": "Verify barrier-corrosion R-B02 (barrier_index now computed)",
+      "index_status": "already-satisfied",
+      "campaign_items": [
+        "V-B02"
+      ],
+      "item_statuses": [
+        "done"
+      ],
+      "fires": 1,
+      "receipts": [
+        "amphora-barrier-corrosion-score/evidence/phase0/repairs/V-B02/done/v-b02-independent-verify-receipt.v1.dsse.json"
+      ],
+      "closed": true
+    },
+    {
+      "id": "V2-REMAINDER",
+      "section": "A.2",
+      "owner": "LOOP",
+      "title": "One V2-* item per remaining unverified repair (directive says 12 more)",
+      "index_status": "reconciled-with-deviation",
+      "campaign_items": [
+        "R-C01-V",
+        "R-C02-V",
+        "R-C03-V",
+        "R-C04-V",
+        "R-C05-V"
+      ],
+      "item_statuses": [
+        "blocked",
+        "blocked",
+        "blocked",
+        "blocked",
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "X-EHS-CID",
+      "section": "A.3",
+      "owner": "LOOP",
+      "title": "Land the superseding hazard-card receipt for the CID defect",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "X-EHS-CID"
+      ],
+      "item_statuses": [
+        "pending"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "X-HEARTBEAT",
+      "section": "A.3",
+      "owner": "LOOP",
+      "title": "Cron-side heartbeat recording an attempted fire even when the agent never starts",
+      "index_status": "already-delivered",
+      "campaign_items": [],
+      "item_statuses": [],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "X-LEDGER-TS",
+      "section": "A.3",
+      "owner": "LOOP",
+      "title": "Ship and prove the leading-backslash timestamp parser guard",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "X-LEDGER-TS"
+      ],
+      "item_statuses": [
+        "pending"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "X-SCHEMA-WATCH",
+      "section": "A.3",
+      "owner": "LOOP",
+      "title": "Keep RESTORED_SCHEMA_FLIP under active log review",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "X-SCHEMA-WATCH"
+      ],
+      "item_statuses": [
+        "pending"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "X-SOLVER-P3",
+      "section": "A.3",
+      "owner": "LOOP",
+      "title": "Solver-lab constraint relaxation with an explicit audit trail",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "X-SOLVER-P3"
+      ],
+      "item_statuses": [
+        "pending"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "U-MLIP",
+      "section": "C.6-adjacent",
+      "owner": "LOOP",
+      "title": "Feasibility: can an MLIP supply physically-admissible dielectric and density labels?",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "U-MLIP"
+      ],
+      "item_statuses": [
+        "pending"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "D-COVERAGE",
+      "section": "meta",
+      "owner": "LOOP",
+      "title": "Sign the founder-directive coverage table into the evidence tree",
+      "index_status": "in-progress",
+      "campaign_items": [
+        "D-COVERAGE"
+      ],
+      "item_statuses": [
+        "pending"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-CREDENTIALS",
+      "section": "B.1",
+      "owner": "HUMAN",
+      "title": "Register the two trusted signer identities (blocks everything)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "B-CREDENTIALS"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-CEREMONY-RD07",
+      "section": "B.2",
+      "owner": "HUMAN",
+      "title": "Run the R-D07 re-evaluation ceremony (restores 8 of 9 modules)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "R-D07"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-MERGE-RD08",
+      "section": "B.3",
+      "owner": "HUMAN",
+      "title": "Decide R-D08 \u2014 the formulation-universe merge",
+      "index_status": "blocked",
+      "campaign_items": [
+        "R-D08"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-ASK-R-D01",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "title": "Rights/data ask R-D01",
+      "index_status": "blocked",
+      "campaign_items": [
+        "R-D01"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-ASK-R-D02",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "title": "Rights/data ask R-D02",
+      "index_status": "blocked",
+      "campaign_items": [
+        "R-D02"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-ASK-R-D03",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "title": "Rights/data ask R-D03",
+      "index_status": "blocked",
+      "campaign_items": [
+        "R-D03"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-ASK-R-D04",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "title": "Rights/data ask R-D04",
+      "index_status": "blocked",
+      "campaign_items": [
+        "R-D04"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-ASK-R-D05",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "title": "Rights/data ask R-D05",
+      "index_status": "blocked",
+      "campaign_items": [
+        "R-D05"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-ASK-R-D06",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "title": "Rights/data ask R-D06",
+      "index_status": "blocked",
+      "campaign_items": [
+        "R-D06"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "B-COUNTERPARTIES",
+      "section": "B.5",
+      "owner": "HUMAN",
+      "title": "Contract the eight independent counterparties",
+      "index_status": "blocked",
+      "campaign_items": [
+        "B-COUNTERPARTIES"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C0",
+      "section": "C.0",
+      "owner": "LAB",
+      "title": "Common transfer path, promotion gate, and kill/hold gate",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C0"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C1",
+      "section": "C.1",
+      "owner": "LAB",
+      "title": "Formulation coverage \u2014 seed campaign (30 formulations / 3 families)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C1"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C10",
+      "section": "C.10",
+      "owner": "LAB",
+      "title": "Process-QC prospective pilot (30 batches, seeded failures)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C10"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C2",
+      "section": "C.2",
+      "owner": "LAB",
+      "title": "Barrier-corrosion campaign (210 panels / 40 systems, incl. 10 untouched external)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C2"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C3",
+      "section": "C.3",
+      "owner": "LAB",
+      "title": "Cure / pot-life campaign (36 runs: 24 fit + 12 sealed holdouts)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C3"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C4",
+      "section": "C.4",
+      "owner": "LAB",
+      "title": "Viscosity / sag campaign (288 cells, three temperatures)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C4"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C5",
+      "section": "C.5",
+      "owner": "LAB",
+      "title": "Solvency / blend calibration campaign",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C5"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C6",
+      "section": "C.6",
+      "owner": "LAB",
+      "title": "Molecule-property validation + dielectric labels (>=300 eligible structures)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C6"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C7",
+      "section": "C.7",
+      "owner": "LAB",
+      "title": "Molecule-role blinded-label campaign",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C7"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C8",
+      "section": "C.8",
+      "owner": "LAB",
+      "title": "Design-rule second-formulator DoE",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C8"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    },
+    {
+      "id": "LAB-C9",
+      "section": "C.9",
+      "owner": "LAB",
+      "title": "Independent chemistry red-team (96 attacks + 32 valid controls)",
+      "index_status": "blocked",
+      "campaign_items": [
+        "LAB-C9"
+      ],
+      "item_statuses": [
+        "blocked"
+      ],
+      "fires": 0,
+      "receipts": [],
+      "closed": false
+    }
+  ],
+  "unmapped": [],
+  "orphans": []
+}

@@ -1,0 +1,1120 @@
+{
+  "anchor": {
+    "max_abs_err": 0.0,
+    "morgan_r2_reproduces_signed_nn_exact": true,
+    "per_candidate": {
+      "DDS": {
+        "abs_err": 0.0,
+        "exact": true,
+        "nn_tanimoto": 0.39285714285714285,
+        "scaffold_category": "CARBOAROMATIC",
+        "signed": 0.39285714285714285
+      },
+      "DETA": {
+        "abs_err": 0.0,
+        "exact": true,
+        "nn_tanimoto": 0.16666666666666666,
+        "scaffold_category": "ACYCLIC",
+        "signed": 0.16666666666666666
+      },
+      "IPDA": {
+        "abs_err": 0.0,
+        "exact": true,
+        "nn_tanimoto": 0.16666666666666666,
+        "scaffold_category": "ALIPHATIC_RING",
+        "signed": 0.16666666666666666
+      },
+      "TETA": {
+        "abs_err": 0.0,
+        "exact": true,
+        "nn_tanimoto": 0.15789473684210525,
+        "scaffold_category": "ACYCLIC",
+        "signed": 0.15789473684210525
+      },
+      "m-XDA": {
+        "abs_err": 0.0,
+        "exact": true,
+        "nn_tanimoto": 0.23809523809523808,
+        "scaffold_category": "CARBOAROMATIC",
+        "signed": 0.23809523809523808
+      }
+    }
+  },
+  "authority": "AUDIT_ONLY",
+  "candidates": {
+    "DDS": {
+      "category_n": 117,
+      "corpus_members_as_or_more_isolated_global": 50,
+      "corpus_members_as_or_more_isolated_in_category": 19,
+      "fixed_040_novel": true,
+      "marginal_conformal_p": 0.11486486486486487,
+      "marginal_novel": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": true
+      },
+      "mondrian_conformal_p": 0.1694915254237288,
+      "mondrian_novel": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": true
+      },
+      "nn_tanimoto": 0.39285714285714285,
+      "nonconformity_alpha": 0.6071428571428572,
+      "p_shift_mondrian_minus_marginal": 0.054626660558863935,
+      "scaffold_category": "CARBOAROMATIC",
+      "verdict_changed_a05": false
+    },
+    "DETA": {
+      "category_n": 255,
+      "corpus_members_as_or_more_isolated_global": 1,
+      "corpus_members_as_or_more_isolated_in_category": 0,
+      "fixed_040_novel": true,
+      "marginal_conformal_p": 0.0045045045045045045,
+      "marginal_novel": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mondrian_conformal_p": 0.00390625,
+      "mondrian_novel": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "nn_tanimoto": 0.16666666666666666,
+      "nonconformity_alpha": 0.8333333333333334,
+      "p_shift_mondrian_minus_marginal": -0.0005982545045045045,
+      "scaffold_category": "ACYCLIC",
+      "verdict_changed_a05": false
+    },
+    "IPDA": {
+      "category_n": 42,
+      "corpus_members_as_or_more_isolated_global": 1,
+      "corpus_members_as_or_more_isolated_in_category": 0,
+      "fixed_040_novel": true,
+      "marginal_conformal_p": 0.0045045045045045045,
+      "marginal_novel": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mondrian_conformal_p": 0.023255813953488372,
+      "mondrian_novel": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "nn_tanimoto": 0.16666666666666666,
+      "nonconformity_alpha": 0.8333333333333334,
+      "p_shift_mondrian_minus_marginal": 0.018751309448983868,
+      "scaffold_category": "ALIPHATIC_RING",
+      "verdict_changed_a05": false
+    },
+    "TETA": {
+      "category_n": 255,
+      "corpus_members_as_or_more_isolated_global": 0,
+      "corpus_members_as_or_more_isolated_in_category": 0,
+      "fixed_040_novel": true,
+      "marginal_conformal_p": 0.0022522522522522522,
+      "marginal_novel": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mondrian_conformal_p": 0.00390625,
+      "mondrian_novel": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "nn_tanimoto": 0.15789473684210525,
+      "nonconformity_alpha": 0.8421052631578947,
+      "p_shift_mondrian_minus_marginal": 0.0016539977477477478,
+      "scaffold_category": "ACYCLIC",
+      "verdict_changed_a05": false
+    },
+    "m-XDA": {
+      "category_n": 117,
+      "corpus_members_as_or_more_isolated_global": 9,
+      "corpus_members_as_or_more_isolated_in_category": 4,
+      "fixed_040_novel": true,
+      "marginal_conformal_p": 0.02252252252252252,
+      "marginal_novel": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mondrian_conformal_p": 0.0423728813559322,
+      "mondrian_novel": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "nn_tanimoto": 0.23809523809523808,
+      "nonconformity_alpha": 0.7619047619047619,
+      "p_shift_mondrian_minus_marginal": 0.01985035883340968,
+      "scaffold_category": "CARBOAROMATIC",
+      "verdict_changed_a05": false
+    }
+  },
+  "closes": [
+    "Closes the residual explicitly named in conformal-anomaly-detection-v1 does_not_close: 'per-scaffold Mondrian-conditional coverage is Phase-1' -- now measured, and installed if needed.",
+    "Quantifies, per Bemis-Murcko ring-system class, the false-novelty rate the marginal conformal screen actually delivers, and reports the resolution floor 1/(n_k+1) each category imposes."
+  ],
+  "corpus": {
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "n_members": 443,
+    "rights_class": "CC/DERIVATIVE_ALLOWED",
+    "source": "OpenPoly literature polymers (Ma et al. 2023), experimental-Tg external-validation family",
+    "structure_set_sha256": "25b7f35c26594d7be5454826c0f399d7716131214c3c314646930257cf560304",
+    "taxonomy_assignment_sha256": "17c60310f2ed297b7bcf29746cfc1c48136331b6cce928bb94cb7e4d2fd832c4",
+    "wildcard_cap": "'*'->'C' (methyl-cap, reproduces signed featurization)"
+  },
+  "discrimination_controls": {
+    "all_mondrian_non_novel_a05": true,
+    "fragments": {
+      "glucose": {
+        "category_n": 42,
+        "marginal_conformal_p": 0.11711711711711711,
+        "mondrian_conformal_p": 0.16279069767441862,
+        "mondrian_non_novel_a05": true,
+        "nn_tanimoto": 0.4,
+        "scaffold_category": "ALIPHATIC_RING"
+      },
+      "n-hexane": {
+        "category_n": 255,
+        "marginal_conformal_p": 0.23873873873873874,
+        "mondrian_conformal_p": 0.19140625,
+        "mondrian_non_novel_a05": true,
+        "nn_tanimoto": 0.5,
+        "scaffold_category": "ACYCLIC"
+      }
+    }
+  },
+  "does_not_close": [
+    "No batch-release, manufacturing-qualification, optimizer, FTO, or patentability authority.",
+    "Conditioning is on ring-system class only; finer Mondrian taxonomies (per-Murcko-framework, per-monomer-family) are limited by category size -- with n=443 a finer partition falls below the 1/(n_k+1) resolution floor at alpha=0.05.",
+    "Calibration corpus is OpenPoly polymers only; a USPTO/ChEMBL prior-art SMILES calibration corpus remains the outstanding external DATA_ASK and is what a Phase-1 patentability-relevant novelty claim would require.",
+    "Structural corpus distance is not prior-art search and not a legal novelty opinion."
+  ],
+  "fail_closed": {
+    "bad_smiles_rejected": true,
+    "exact_duplicate_all_non_novel": true,
+    "exact_duplicate_per_category": {
+      "ACYCLIC": {
+        "mondrian_p": 1.0,
+        "nn": 1.0,
+        "non_novel_all_alphas": true
+      },
+      "ALIPHATIC_RING": {
+        "mondrian_p": 1.0,
+        "nn": 1.0,
+        "non_novel_all_alphas": true
+      },
+      "CARBOAROMATIC": {
+        "mondrian_p": 1.0,
+        "nn": 1.0,
+        "non_novel_all_alphas": true
+      },
+      "HETEROAROMATIC": {
+        "mondrian_p": 1.0,
+        "nn": 1.0,
+        "non_novel_all_alphas": true
+      }
+    },
+    "taxonomy_label_free": true,
+    "taxonomy_total_and_disjoint": true
+  },
+  "h0": {
+    "breaches": [
+      {
+        "alpha": 0.1,
+        "binomial_p": 0.043070477047177626,
+        "category": "CARBOAROMATIC",
+        "excess_ratio": 1.5384615384615385,
+        "fraction": 0.15384615384615385
+      },
+      {
+        "alpha": 0.05,
+        "binomial_p": 0.013576672706277871,
+        "category": "HETEROAROMATIC",
+        "excess_ratio": 3.4482758620689657,
+        "fraction": 0.1724137931034483
+      },
+      {
+        "alpha": 0.1,
+        "binomial_p": 0.021616715796312563,
+        "category": "HETEROAROMATIC",
+        "excess_ratio": 2.413793103448276,
+        "fraction": 0.2413793103448276
+      }
+    ],
+    "n_breaching_cells": 3,
+    "refuted": true,
+    "statement": "The marginal conformal novelty detector is ALSO scaffold-conditionally valid: its per-category false-novelty fraction is <= alpha for every category and alpha.",
+    "worst_breach": {
+      "alpha": 0.05,
+      "binomial_p": 0.013576672706277871,
+      "category": "HETEROAROMATIC",
+      "excess_ratio": 3.4482758620689657,
+      "fraction": 0.1724137931034483
+    }
+  },
+  "head_to_head": {
+    "candidates_whose_a05_verdict_changed": [],
+    "fixed_040_novel_count": 5,
+    "marginal_novel_count_by_alpha": {
+      "a0.01": 3,
+      "a0.05": 4,
+      "a0.1": 4,
+      "a0.2": 5
+    },
+    "max_candidate_mondrian_p": 0.1694915254237288,
+    "mondrian_novel_count_by_alpha": {
+      "a0.01": 2,
+      "a0.05": 4,
+      "a0.1": 4,
+      "a0.2": 5
+    },
+    "mondrian_survivors_a05": [
+      "IPDA",
+      "DETA",
+      "TETA",
+      "m-XDA"
+    ]
+  },
+  "headline": "Mondrian conformal novelty (Vovk-Lindsay-Nouretdinov-Gammerman 2003) over the 443-member SHA-locked OpenPoly corpus partitioned into 4 Bemis-Murcko ring-system classes (ACYCLIC 255 / ALIPHATIC_RING 42 / CARBOAROMATIC 117 / HETEROAROMATIC 29): the Morgan(r2,2048) anchor reproduces every signed candidate NN EXACTLY (max err 0.00e+00), then H0 ('marginal conformal is already scaffold-conditionally valid') is REFUTED -- 3 category x alpha cells breach nominal, worst HETEROAROMATIC@alpha=0.05 at 0.1724 (3.45x nominal, exact-binomial p=1.36e-02). Mondrian restores conditional validity in 4/4 categories at all 4 alphas and in all 3 representations. Candidate count at alpha=0.05: fixed-0.40 5/5, marginal 4/5, Mondrian 4/5; no candidate verdict flips.",
+  "hypothesis_evaluation": {
+    "interpretation": "Scaffold-conditional coverage is a strictly stronger and more honest guarantee for a novelty screen used to support IP claims: it is the per-chemistry error rate, not the portfolio average. Where the marginal detector over-flags a sparse scaffold class, every 'novel' verdict in that class carries a higher true false-novelty rate than its stated alpha -- the exact direction that manufactures unearned novelty. Mondrian conditioning removes that, at a quantified cost in resolution for small categories.",
+    "prior_audit_claim": "conformal-anomaly-detection-v1: 4/5 conformal-novel at alpha=0.05 with MARGINAL validity.",
+    "signed_claim": "5/5 canonical DGEBA epoxy-amine hardeners are NOVEL vs the OpenPoly corpus (NN Tanimoto < 0.40).",
+    "verdict": "H0_REFUTED__MARGINAL_CONFORMAL_IS_NOT_SCAFFOLD_CONDITIONALLY_VALID__MONDRIAN_REPAIRS"
+  },
+  "marginal_conditional_coverage": {
+    "ACYCLIC": {
+      "n_members": 255,
+      "per_alpha": {
+        "a0.01": {
+          "binomial_one_sided_p": 1.0,
+          "boot95_fraction": [
+            0.0,
+            0.0
+          ],
+          "exceeds_nominal": false,
+          "excess_ratio": 0.0,
+          "false_novelty_fraction": 0.0,
+          "n_flagged_novel": 0,
+          "nominal_alpha": 0.01,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.05": {
+          "binomial_one_sided_p": 0.9997826818367384,
+          "boot95_fraction": [
+            0.0,
+            0.027450980392156862
+          ],
+          "exceeds_nominal": false,
+          "excess_ratio": 0.23529411764705882,
+          "false_novelty_fraction": 0.011764705882352941,
+          "n_flagged_novel": 3,
+          "nominal_alpha": 0.05,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.1": {
+          "binomial_one_sided_p": 0.998416540375479,
+          "boot95_fraction": [
+            0.027450980392156862,
+            0.0784313725490196
+          ],
+          "exceeds_nominal": false,
+          "excess_ratio": 0.5098039215686274,
+          "false_novelty_fraction": 0.050980392156862744,
+          "n_flagged_novel": 13,
+          "nominal_alpha": 0.1,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.2": {
+          "binomial_one_sided_p": 0.9905276201396709,
+          "boot95_fraction": [
+            0.10588235294117647,
+            0.18823529411764706
+          ],
+          "exceeds_nominal": false,
+          "excess_ratio": 0.7254901960784313,
+          "false_novelty_fraction": 0.1450980392156863,
+          "n_flagged_novel": 37,
+          "nominal_alpha": 0.2,
+          "significant_excess_p_lt_0.05": false
+        }
+      }
+    },
+    "ALIPHATIC_RING": {
+      "n_members": 42,
+      "per_alpha": {
+        "a0.01": {
+          "binomial_one_sided_p": 1.0,
+          "boot95_fraction": [
+            0.0,
+            0.0
+          ],
+          "exceeds_nominal": false,
+          "excess_ratio": 0.0,
+          "false_novelty_fraction": 0.0,
+          "n_flagged_novel": 0,
+          "nominal_alpha": 0.01,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.05": {
+          "binomial_one_sided_p": 0.15689261495578216,
+          "boot95_fraction": [
+            0.023809523809523808,
+            0.19047619047619047
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 1.9047619047619047,
+          "false_novelty_fraction": 0.09523809523809523,
+          "n_flagged_novel": 4,
+          "nominal_alpha": 0.05,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.1": {
+          "binomial_one_sided_p": 0.23962636975031407,
+          "boot95_fraction": [
+            0.047619047619047616,
+            0.23809523809523808
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 1.4285714285714284,
+          "false_novelty_fraction": 0.14285714285714285,
+          "n_flagged_novel": 6,
+          "nominal_alpha": 0.1,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.2": {
+          "binomial_one_sided_p": 0.06210707973579388,
+          "boot95_fraction": [
+            0.16666666666666666,
+            0.4523809523809524
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 1.5476190476190477,
+          "false_novelty_fraction": 0.30952380952380953,
+          "n_flagged_novel": 13,
+          "nominal_alpha": 0.2,
+          "significant_excess_p_lt_0.05": false
+        }
+      }
+    },
+    "CARBOAROMATIC": {
+      "n_members": 117,
+      "per_alpha": {
+        "a0.01": {
+          "binomial_one_sided_p": 0.11318255914925707,
+          "boot95_fraction": [
+            0.0,
+            0.05982905982905983
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 2.564102564102564,
+          "false_novelty_fraction": 0.02564102564102564,
+          "n_flagged_novel": 3,
+          "nominal_alpha": 0.01,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.05": {
+          "binomial_one_sided_p": 0.06885571688338224,
+          "boot95_fraction": [
+            0.03418803418803419,
+            0.13675213675213677
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 1.7094017094017093,
+          "false_novelty_fraction": 0.08547008547008547,
+          "n_flagged_novel": 10,
+          "nominal_alpha": 0.05,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.1": {
+          "binomial_one_sided_p": 0.043070477047177626,
+          "boot95_fraction": [
+            0.09401709401709402,
+            0.2222222222222222
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 1.5384615384615385,
+          "false_novelty_fraction": 0.15384615384615385,
+          "n_flagged_novel": 18,
+          "nominal_alpha": 0.1,
+          "significant_excess_p_lt_0.05": true
+        },
+        "a0.2": {
+          "binomial_one_sided_p": 0.170913197061294,
+          "boot95_fraction": [
+            0.1623931623931624,
+            0.3247863247863248
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 1.1965811965811965,
+          "false_novelty_fraction": 0.23931623931623933,
+          "n_flagged_novel": 28,
+          "nominal_alpha": 0.2,
+          "significant_excess_p_lt_0.05": false
+        }
+      }
+    },
+    "HETEROAROMATIC": {
+      "n_members": 29,
+      "per_alpha": {
+        "a0.01": {
+          "binomial_one_sided_p": 0.2528279056684035,
+          "boot95_fraction": [
+            0.0,
+            0.10344827586206896
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 3.4482758620689653,
+          "false_novelty_fraction": 0.034482758620689655,
+          "n_flagged_novel": 1,
+          "nominal_alpha": 0.01,
+          "significant_excess_p_lt_0.05": false
+        },
+        "a0.05": {
+          "binomial_one_sided_p": 0.013576672706277871,
+          "boot95_fraction": [
+            0.034482758620689655,
+            0.3103448275862069
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 3.4482758620689657,
+          "false_novelty_fraction": 0.1724137931034483,
+          "n_flagged_novel": 5,
+          "nominal_alpha": 0.05,
+          "significant_excess_p_lt_0.05": true
+        },
+        "a0.1": {
+          "binomial_one_sided_p": 0.021616715796312563,
+          "boot95_fraction": [
+            0.10344827586206896,
+            0.3793103448275862
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 2.413793103448276,
+          "false_novelty_fraction": 0.2413793103448276,
+          "n_flagged_novel": 7,
+          "nominal_alpha": 0.1,
+          "significant_excess_p_lt_0.05": true
+        },
+        "a0.2": {
+          "binomial_one_sided_p": 0.10838167222642756,
+          "boot95_fraction": [
+            0.13793103448275862,
+            0.4827586206896552
+          ],
+          "exceeds_nominal": true,
+          "excess_ratio": 1.5517241379310345,
+          "false_novelty_fraction": 0.3103448275862069,
+          "n_flagged_novel": 9,
+          "nominal_alpha": 0.2,
+          "significant_excess_p_lt_0.05": false
+        }
+      }
+    }
+  },
+  "method": {
+    "alphas": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "bootstrap": {
+      "n": 2000,
+      "resample": "members within category",
+      "rng": "Park-Miller MINSTD 48271",
+      "seed": 20260730
+    },
+    "conditional_validity_test": "per-category LOO false-novelty fraction vs nominal alpha, exact one-sided binomial",
+    "guarantee": "P(p_k <= a | kappa = k) <= a for every category k (Mondrian), vs P(p <= a) <= a on average (marginal)",
+    "marginal_p": "p(x) = (#{i: alpha_i >= alpha_x} + 1)/(n+1)",
+    "mondrian_p": "p_k(x) = (#{i: kappa_i = k, alpha_i >= alpha_x} + 1)/(n_k + 1), k = kappa(x)",
+    "nonconformity": "alpha_i = 1 - max_{j != i} Tanimoto(x_i, x_j) over the FULL corpus"
+  },
+  "module": "amphora-molecule-novelty",
+  "mondrian_conditional_coverage": {
+    "ACYCLIC": {
+      "alpha_reachable": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "min_attainable_p": 0.00390625,
+      "min_category_n_for_alpha": {
+        "a0.01": 99,
+        "a0.05": 19,
+        "a0.1": 9,
+        "a0.2": 4
+      },
+      "n_members": 255,
+      "per_alpha": {
+        "a0.01": {
+          "boot95_fraction": [
+            0.0,
+            0.0196078431372549
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.00784313725490196,
+          "n_flagged_novel": 2,
+          "nominal_alpha": 0.01
+        },
+        "a0.05": {
+          "boot95_fraction": [
+            0.023529411764705882,
+            0.07450980392156863
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.047058823529411764,
+          "n_flagged_novel": 12,
+          "nominal_alpha": 0.05
+        },
+        "a0.1": {
+          "boot95_fraction": [
+            0.06274509803921569,
+            0.13725490196078433
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.09803921568627451,
+          "n_flagged_novel": 25,
+          "nominal_alpha": 0.1
+        },
+        "a0.2": {
+          "boot95_fraction": [
+            0.14901960784313725,
+            0.24705882352941178
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.19607843137254902,
+          "n_flagged_novel": 50,
+          "nominal_alpha": 0.2
+        }
+      }
+    },
+    "ALIPHATIC_RING": {
+      "alpha_reachable": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "min_attainable_p": 0.023255813953488372,
+      "min_category_n_for_alpha": {
+        "a0.01": 99,
+        "a0.05": 19,
+        "a0.1": 9,
+        "a0.2": 4
+      },
+      "n_members": 42,
+      "per_alpha": {
+        "a0.01": {
+          "boot95_fraction": [
+            0.0,
+            0.0
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.0,
+          "n_flagged_novel": 0,
+          "nominal_alpha": 0.01
+        },
+        "a0.05": {
+          "boot95_fraction": [
+            0.0,
+            0.11904761904761904
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.047619047619047616,
+          "n_flagged_novel": 2,
+          "nominal_alpha": 0.05
+        },
+        "a0.1": {
+          "boot95_fraction": [
+            0.023809523809523808,
+            0.19047619047619047
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.09523809523809523,
+          "n_flagged_novel": 4,
+          "nominal_alpha": 0.1
+        },
+        "a0.2": {
+          "boot95_fraction": [
+            0.07142857142857142,
+            0.30952380952380953
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.19047619047619047,
+          "n_flagged_novel": 8,
+          "nominal_alpha": 0.2
+        }
+      }
+    },
+    "CARBOAROMATIC": {
+      "alpha_reachable": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "min_attainable_p": 0.00847457627118644,
+      "min_category_n_for_alpha": {
+        "a0.01": 99,
+        "a0.05": 19,
+        "a0.1": 9,
+        "a0.2": 4
+      },
+      "n_members": 117,
+      "per_alpha": {
+        "a0.01": {
+          "boot95_fraction": [
+            0.0,
+            0.02564102564102564
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.008547008547008548,
+          "n_flagged_novel": 1,
+          "nominal_alpha": 0.01
+        },
+        "a0.05": {
+          "boot95_fraction": [
+            0.008547008547008548,
+            0.08547008547008547
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.042735042735042736,
+          "n_flagged_novel": 5,
+          "nominal_alpha": 0.05
+        },
+        "a0.1": {
+          "boot95_fraction": [
+            0.042735042735042736,
+            0.15384615384615385
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.09401709401709402,
+          "n_flagged_novel": 11,
+          "nominal_alpha": 0.1
+        },
+        "a0.2": {
+          "boot95_fraction": [
+            0.11965811965811966,
+            0.26495726495726496
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.18803418803418803,
+          "n_flagged_novel": 22,
+          "nominal_alpha": 0.2
+        }
+      }
+    },
+    "HETEROAROMATIC": {
+      "alpha_reachable": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "min_attainable_p": 0.03333333333333333,
+      "min_category_n_for_alpha": {
+        "a0.01": 99,
+        "a0.05": 19,
+        "a0.1": 9,
+        "a0.2": 4
+      },
+      "n_members": 29,
+      "per_alpha": {
+        "a0.01": {
+          "boot95_fraction": [
+            0.0,
+            0.0
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.0,
+          "n_flagged_novel": 0,
+          "nominal_alpha": 0.01
+        },
+        "a0.05": {
+          "boot95_fraction": [
+            0.0,
+            0.10344827586206896
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.034482758620689655,
+          "n_flagged_novel": 1,
+          "nominal_alpha": 0.05
+        },
+        "a0.1": {
+          "boot95_fraction": [
+            0.0,
+            0.1724137931034483
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.06896551724137931,
+          "n_flagged_novel": 2,
+          "nominal_alpha": 0.1
+        },
+        "a0.2": {
+          "boot95_fraction": [
+            0.034482758620689655,
+            0.3103448275862069
+          ],
+          "exceeds_nominal": false,
+          "false_novelty_fraction": 0.1724137931034483,
+          "n_flagged_novel": 5,
+          "nominal_alpha": 0.2
+        }
+      }
+    }
+  },
+  "mondrian_repair": {
+    "conditionally_valid_all_categories_all_alphas": true,
+    "residual_breaches": [],
+    "resolution_limit": "Mondrian p is bounded below by 1/(n_k+1), so a category cannot certify novelty at any alpha <= 1/(n_k+1) regardless of how alien the molecule is. This is the price of conditioning and it is reported per category rather than hidden."
+  },
+  "non_circularity": "The Morgan(r2,2048)/Tanimoto lane reproduces the independently-signed per-candidate NN Tanimoto to <1e-12 before any conformal or Mondrian layer is applied. The Mondrian taxonomy is a structure-only function (ring systems), computed without reading Tg, novelty labels, or the signed verdict, so it cannot import the answer. Corpus is the SHA-locked rights-clean OpenPoly CSV, read-only. The p-value adds no free parameter: it is a rank statistic inside the object's own category.",
+  "pooled_coverage": {
+    "marginal": {
+      "a0.01": 0.009029345372460496,
+      "a0.05": 0.04966139954853273,
+      "a0.1": 0.09932279909706546,
+      "a0.2": 0.1963882618510158
+    },
+    "marginal_pooled_valid": true,
+    "mondrian": {
+      "a0.01": 0.006772009029345372,
+      "a0.05": 0.045146726862302484,
+      "a0.1": 0.09480812641083522,
+      "a0.2": 0.19187358916478556
+    },
+    "note": "The marginal detector is valid POOLED -- that is exactly why the per-category breach is invisible without this test: over-flagging in sparse scaffold classes is paid for by under-flagging in the dense majority class."
+  },
+  "positive_controls_decoys": {
+    "alien_decoys": {
+      "caffeine": {
+        "category_n": 29,
+        "marginal_conformal_p": 0.009009009009009009,
+        "marginal_novel_a05": true,
+        "mondrian_conformal_p": 0.03333333333333333,
+        "mondrian_novel_a05": true,
+        "nn_tanimoto": 0.1875,
+        "scaffold_category": "HETEROAROMATIC"
+      },
+      "hexachlorophosphazene": {
+        "category_n": 42,
+        "marginal_conformal_p": 0.0022522522522522522,
+        "marginal_novel_a05": true,
+        "mondrian_conformal_p": 0.023255813953488372,
+        "mondrian_novel_a05": true,
+        "nn_tanimoto": 0.09999999999999998,
+        "scaffold_category": "ALIPHATIC_RING"
+      },
+      "melamine": {
+        "category_n": 29,
+        "marginal_conformal_p": 0.0022522522522522522,
+        "marginal_novel_a05": true,
+        "mondrian_conformal_p": 0.03333333333333333,
+        "mondrian_novel_a05": true,
+        "nn_tanimoto": 0.09999999999999998,
+        "scaffold_category": "HETEROAROMATIC"
+      },
+      "perfluorodecalin": {
+        "category_n": 42,
+        "marginal_conformal_p": 0.0022522522522522522,
+        "marginal_novel_a05": true,
+        "mondrian_conformal_p": 0.023255813953488372,
+        "mondrian_novel_a05": true,
+        "nn_tanimoto": 0.10344827586206895,
+        "scaffold_category": "ALIPHATIC_RING"
+      }
+    },
+    "all_mondrian_novel_a05": true,
+    "decoys_lost_by_conditioning": [],
+    "note": "Structure-alien controls must stay novel under the stricter conditional test; any decoy that was marginal-novel but is no longer Mondrian-novel is reported as a power cost of conditioning."
+  },
+  "purpose": "Close the residual defect the prior signed audit named in its own does_not_close: conformal novelty validity was UNCONDITIONAL (marginal). Test whether the marginal detector is also valid WITHIN each Bemis-Murcko ring-system class, and if not, install and verify the Mondrian (category-conditional) conformal construction and re-adjudicate the 5 signed candidates.",
+  "rdkit_version": "2026.03.2",
+  "representation_invariance": {
+    "contrast": "The conditional guarantee is a rank property inside each category, so it survives changing the fingerprint; the marginal detector's per-category miscalibration does not go away by changing representation either -- it is a property of corpus composition, not of the metric.",
+    "marginal_conditional_validity_fails_in_every_representation": true,
+    "mondrian_conditional_validity_invariant": true,
+    "per_representation": {
+      "maccs_166": {
+        "candidates_mondrian_novel_a05": 4,
+        "marginal_conditional_validity_holds": false,
+        "marginal_per_category_false_novelty": {
+          "ACYCLIC": {
+            "a0.01": 0.00392156862745098,
+            "a0.05": 0.011764705882352941,
+            "a0.1": 0.06666666666666667,
+            "a0.2": 0.1450980392156863
+          },
+          "ALIPHATIC_RING": {
+            "a0.01": 0.0,
+            "a0.05": 0.07142857142857142,
+            "a0.1": 0.09523809523809523,
+            "a0.2": 0.16666666666666666
+          },
+          "CARBOAROMATIC": {
+            "a0.01": 0.008547008547008548,
+            "a0.05": 0.08547008547008547,
+            "a0.1": 0.1111111111111111,
+            "a0.2": 0.2905982905982906
+          },
+          "HETEROAROMATIC": {
+            "a0.01": 0.06896551724137931,
+            "a0.05": 0.20689655172413793,
+            "a0.1": 0.27586206896551724,
+            "a0.2": 0.3448275862068966
+          }
+        },
+        "mondrian_conditional_validity_holds": true,
+        "mondrian_per_category_false_novelty": {
+          "ACYCLIC": {
+            "a0.01": 0.00784313725490196,
+            "a0.05": 0.03529411764705882,
+            "a0.1": 0.09803921568627451,
+            "a0.2": 0.1803921568627451
+          },
+          "ALIPHATIC_RING": {
+            "a0.01": 0.0,
+            "a0.05": 0.047619047619047616,
+            "a0.1": 0.09523809523809523,
+            "a0.2": 0.19047619047619047
+          },
+          "CARBOAROMATIC": {
+            "a0.01": 0.008547008547008548,
+            "a0.05": 0.03418803418803419,
+            "a0.1": 0.09401709401709402,
+            "a0.2": 0.18803418803418803
+          },
+          "HETEROAROMATIC": {
+            "a0.01": 0.0,
+            "a0.05": 0.034482758620689655,
+            "a0.1": 0.06896551724137931,
+            "a0.2": 0.13793103448275862
+          }
+        },
+        "worst_marginal_excess_ratio": 6.896551724137931
+      },
+      "morgan_r2_2048": {
+        "candidates_mondrian_novel_a05": 4,
+        "marginal_conditional_validity_holds": false,
+        "marginal_per_category_false_novelty": {
+          "ACYCLIC": {
+            "a0.01": 0.0,
+            "a0.05": 0.011764705882352941,
+            "a0.1": 0.050980392156862744,
+            "a0.2": 0.1450980392156863
+          },
+          "ALIPHATIC_RING": {
+            "a0.01": 0.0,
+            "a0.05": 0.09523809523809523,
+            "a0.1": 0.14285714285714285,
+            "a0.2": 0.30952380952380953
+          },
+          "CARBOAROMATIC": {
+            "a0.01": 0.02564102564102564,
+            "a0.05": 0.08547008547008547,
+            "a0.1": 0.15384615384615385,
+            "a0.2": 0.23931623931623933
+          },
+          "HETEROAROMATIC": {
+            "a0.01": 0.034482758620689655,
+            "a0.05": 0.1724137931034483,
+            "a0.1": 0.2413793103448276,
+            "a0.2": 0.3103448275862069
+          }
+        },
+        "mondrian_conditional_validity_holds": true,
+        "mondrian_per_category_false_novelty": {
+          "ACYCLIC": {
+            "a0.01": 0.00784313725490196,
+            "a0.05": 0.047058823529411764,
+            "a0.1": 0.09803921568627451,
+            "a0.2": 0.19607843137254902
+          },
+          "ALIPHATIC_RING": {
+            "a0.01": 0.0,
+            "a0.05": 0.047619047619047616,
+            "a0.1": 0.09523809523809523,
+            "a0.2": 0.19047619047619047
+          },
+          "CARBOAROMATIC": {
+            "a0.01": 0.008547008547008548,
+            "a0.05": 0.042735042735042736,
+            "a0.1": 0.09401709401709402,
+            "a0.2": 0.18803418803418803
+          },
+          "HETEROAROMATIC": {
+            "a0.01": 0.0,
+            "a0.05": 0.034482758620689655,
+            "a0.1": 0.06896551724137931,
+            "a0.2": 0.1724137931034483
+          }
+        },
+        "worst_marginal_excess_ratio": 3.4482758620689657
+      },
+      "morgan_r3_2048": {
+        "candidates_mondrian_novel_a05": 3,
+        "marginal_conditional_validity_holds": false,
+        "marginal_per_category_false_novelty": {
+          "ACYCLIC": {
+            "a0.01": 0.0,
+            "a0.05": 0.01568627450980392,
+            "a0.1": 0.0392156862745098,
+            "a0.2": 0.11372549019607843
+          },
+          "ALIPHATIC_RING": {
+            "a0.01": 0.0,
+            "a0.05": 0.09523809523809523,
+            "a0.1": 0.16666666666666666,
+            "a0.2": 0.35714285714285715
+          },
+          "CARBOAROMATIC": {
+            "a0.01": 0.02564102564102564,
+            "a0.05": 0.08547008547008547,
+            "a0.1": 0.15384615384615385,
+            "a0.2": 0.28205128205128205
+          },
+          "HETEROAROMATIC": {
+            "a0.01": 0.034482758620689655,
+            "a0.05": 0.13793103448275862,
+            "a0.1": 0.3103448275862069,
+            "a0.2": 0.3448275862068966
+          }
+        },
+        "mondrian_conditional_validity_holds": true,
+        "mondrian_per_category_false_novelty": {
+          "ACYCLIC": {
+            "a0.01": 0.00784313725490196,
+            "a0.05": 0.043137254901960784,
+            "a0.1": 0.09803921568627451,
+            "a0.2": 0.19607843137254902
+          },
+          "ALIPHATIC_RING": {
+            "a0.01": 0.0,
+            "a0.05": 0.047619047619047616,
+            "a0.1": 0.09523809523809523,
+            "a0.2": 0.19047619047619047
+          },
+          "CARBOAROMATIC": {
+            "a0.01": 0.008547008547008548,
+            "a0.05": 0.042735042735042736,
+            "a0.1": 0.09401709401709402,
+            "a0.2": 0.19658119658119658
+          },
+          "HETEROAROMATIC": {
+            "a0.01": 0.0,
+            "a0.05": 0.034482758620689655,
+            "a0.1": 0.06896551724137931,
+            "a0.2": 0.1724137931034483
+          }
+        },
+        "worst_marginal_excess_ratio": 3.4482758620689653
+      }
+    }
+  },
+  "rights_posture": {
+    "corpus": "CC/DERIVATIVE_ALLOWED OpenPoly, SHA-locked, read-only",
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_signed_phase0_kpi": false
+  },
+  "self_tests": [
+    {
+      "name": "corpus_sha_locked",
+      "pass": true
+    },
+    {
+      "name": "anchor_reproduces_signed_nn_exact",
+      "pass": true
+    },
+    {
+      "name": "taxonomy_total_disjoint_label_free",
+      "pass": true
+    },
+    {
+      "name": "every_category_nonempty",
+      "pass": true
+    },
+    {
+      "name": "mondrian_p_ge_min_attainable",
+      "pass": true
+    },
+    {
+      "name": "mondrian_conditional_validity_all_categories_all_alphas",
+      "pass": true
+    },
+    {
+      "name": "marginal_pooled_validity_still_holds",
+      "pass": true
+    },
+    {
+      "name": "exact_duplicate_non_novel_every_category",
+      "pass": true
+    },
+    {
+      "name": "alien_decoys_mondrian_novel_a05",
+      "pass": true
+    },
+    {
+      "name": "hydrocarbon_fragments_mondrian_non_novel_a05",
+      "pass": true
+    },
+    {
+      "name": "mondrian_validity_representation_invariant",
+      "pass": true
+    },
+    {
+      "name": "bad_smiles_rejected",
+      "pass": true
+    }
+  ],
+  "self_tests_all_pass": true,
+  "study_id": "molecule-novelty-mondrian-conditional-coverage-v1",
+  "taxonomy": {
+    "categories": [
+      "ACYCLIC",
+      "ALIPHATIC_RING",
+      "CARBOAROMATIC",
+      "HETEROAROMATIC"
+    ],
+    "category_sizes": {
+      "ACYCLIC": 255,
+      "ALIPHATIC_RING": 42,
+      "CARBOAROMATIC": 117,
+      "HETEROAROMATIC": 29
+    },
+    "definition": "ACYCLIC = no rings; ALIPHATIC_RING = rings but none aromatic; HETEROAROMATIC = has an aromatic ring containing a non-carbon atom; CARBOAROMATIC = has an aromatic ring, all aromatic rings all-carbon. Total and disjoint over the corpus.",
+    "label_free": true,
+    "name": "bemis_murcko_ring_system_class"
+  },
+  "theory_reference": [
+    "Vovk, Lindsay, Nouretdinov, Gammerman 2003, 'Mondrian confidence machine', On-line Compression Modelling project, working paper #4 (category-conditional conformal validity).",
+    "Vovk, Gammerman, Shafer 2005, Algorithmic Learning in a Random World, Springer, ISBN 978-0-387-00152-4, sec. 4.5 (Mondrian conformal predictors) and ch. 2-3 (NN nonconformity).",
+    "Bemis, Murcko 1996, J Med Chem 39:2887, DOI 10.1021/jm9602928 (molecular frameworks / ring-system taxonomy).",
+    "Laxhammar, Falkman 2015, Ann Math Artif Intell 74:67, DOI 10.1007/s10472-013-9381-7 (conformal anomaly detection).",
+    "Bajusz, Racz, Heberger 2015, J Cheminform 7:20 (fixed 0.40 Tanimoto novelty cut -- original incumbent).",
+    "Rogers, Hahn 2010, J Chem Inf Model 50:742 (ECFP/Morgan).",
+    "Durant et al. 2002, J Chem Inf Comput Sci 42:1273 (MACCS 166 keys)."
+  ]
+}

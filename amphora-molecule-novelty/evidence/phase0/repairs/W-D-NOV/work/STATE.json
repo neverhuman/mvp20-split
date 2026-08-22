@@ -1,0 +1,30 @@
+{
+  "campaign_item_id": "W-D-NOV",
+  "fires": [
+    {
+      "fire_id": "20260813T050002-3861856-74742f3ffe2c",
+      "status": "done_criterion_met",
+      "sources_swept": 13,
+      "recommended": 2,
+      "recommended_with_flag": 6,
+      "blocked": 4,
+      "blocked_with_flag": 1,
+      "receipt": "amphora-molecule-novelty/evidence/phase0/repairs/W-D-NOV/done/W-D-NOV-source-sweep-receipt.v1.dsse.json",
+      "queue_lines_appended": 3,
+      "next_step_for_future_fires": "Do not re-sweep sources 1-13. An R- item should download the Khazana/Polymer Genome (Dryad DOI 10.5061/dryad.5ht3n, CC BY 4.0) structures, canonicalize with RDKit, dedup against OpenPoly's 350 distinct structures, and compute an ECFP4/Tanimoto NN overlap distribution the same way tanimoto-nn-novelty-canonical-epoxy-amines-vs-openpoly-kpi.v1.json did -- that is the single most actionable clean-license finding. Separately: (a) SureChEMBL's data-owner ambiguity needs a direct email/terms-page follow-up before use despite being the best patent-derived-structure-set match; (b) PolyUniverse's Zenodo record 12585902 returned HTTP 403 this fire and should be re-fetched -- it is the best topical epoxy/vitrimer chemistry match found but is rights-blocked pending that check; (c) a narrower per-CASRN commodity-monomer cross-check corpus (PubChem + EPA CompTox) for the ~20-30 already-named DGEBA analogs/amine hardeners in amphora-ingredient-library is lower-risk than any bulk-corpus approach."
+    },
+    {
+      "fire_id": "20260813T060001-102740-350fdfcfba36",
+      "status": "claim_survived_second_corpus_acquired",
+      "second_corpus": "PolyUniverse Zenodo 10.5281/zenodo.12585902 PolyInfo_p.csv (CC-BY-4.0), 12370 canonically-distinct structures after dedup",
+      "n_candidates_flipped": 0,
+      "corpus_overlap_with_openpoly_350": {
+        "n_exact_match": 146,
+        "median_nn_tanimoto": 0.6329113924050633
+      },
+      "positive_control": "planted exact-duplicate of IPDA into mutated corpus copy; attack correctly flipped IPDA novel_vs_union_corpus to false and none of the other 4 candidates",
+      "receipt": "amphora-molecule-novelty/evidence/phase0/repairs/W-D-NOV/done/W-D-NOV-second-corpus-novelty-retest-receipt.v1.dsse.json",
+      "next_step_for_future_fires": "Corpora are not structurally independent (42pct exact-match overlap) -- a future fire should acquire a genuinely disjoint third corpus (Google Patents Public Data CC-BY-4.0 via BigQuery, or a per-CASRN PubChem/EPA-CompTox commodity-monomer cross-check) OR build CIF-to-SMILES tooling to unlock the CC0-licensed Khazana/Polymer Genome Dryad deposit (1073 periodic polymer CIF structures, not SMILES)."
+    }
+  ]
+}

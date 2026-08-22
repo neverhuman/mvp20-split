@@ -1,0 +1,38 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-cro-protocol-packager/evidence/phase0",
+  "imported_locks": [],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-cro-protocol-packager",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/capture_template.json",
+      "observed_sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "4e001dc82eac042fa90fd1164faece447e40c7ef3f0f29649dd0322e12faa0d9",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/cro_protocol.md",
+      "observed_sha256": "4e001dc82eac042fa90fd1164faece447e40c7ef3f0f29649dd0322e12faa0d9",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "b2fa8de6b50f8605dbe5a412af5d818e8792be864af7ea6e3ef10320959504b6",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/falsification_protocol.json",
+      "observed_sha256": "b2fa8de6b50f8605dbe5a412af5d818e8792be864af7ea6e3ef10320959504b6",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "runA_clean_full_sha256": "5f8c118678184b51be83aeed464d51fe5184a1bcd3a7d3efd4881caeefc5aa8f",
+  "runA_clean_payload_sha256": "665c76343237dce5a6f9e57f42f21945ff4c436816a255280654b755ac47fb8b",
+  "runA_poison_full_sha256": "c25d8af9452209309fc7c4ac0baba56bdc9d084d47b83a96a82952322746429d",
+  "runA_poison_payload_sha256": "afc1bd4108145652c55acad7c8ecf812da6d0e8d9f86a6631aedc4c2bad02050",
+  "runB_clean_full_sha256": "eec96cab966fe5960bbcee73032429933025d60f9e52b3a5f5a73d055fc195f3",
+  "runB_clean_payload_sha256": "665c76343237dce5a6f9e57f42f21945ff4c436816a255280654b755ac47fb8b",
+  "runB_poison_full_sha256": "377e273975ca4a0bbfdfc6808e7669618f821a9d665ad908b0564b7bb27b2c41",
+  "runB_poison_payload_sha256": "afc1bd4108145652c55acad7c8ecf812da6d0e8d9f86a6631aedc4c2bad02050",
+  "two_replay_payload_identical_excl_local_dev_identity": true
+}

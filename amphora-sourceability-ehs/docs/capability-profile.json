@@ -1,0 +1,687 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-sourceability-ehs-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "formulation"
+  ],
+  "ceilings": {
+    "authority_tier": "EVIDENCE_ONLY",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "DISABLED"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 25,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "GATED",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "datasets": [
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/basf_n_butanol_sds.pdf",
+      "hash": "8c6515360cbd93d713eed892bd3187a2eee808adac2e9a222d7d7304b59a0fa9",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/basf_n_butanol_sds.pdf",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_a_530.html",
+      "hash": "0126cd5c899573355e5e53ef553455bf6a81240c07eea4d816edf9e22fdc96e5",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_a_530.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_disperbyk_110.html",
+      "hash": "a1a4c0cf56d7a5dfb540d400ee1d2153a0ff59bbe012621e978506a5813bb44b",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_disperbyk_110.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_ghs_sds.html",
+      "hash": "c2387516a067c43d2785ba3991b12407b268b515a92eed4a1790b35c9966ecb9",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_ghs_sds.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/dla_qpd_24441.html",
+      "hash": "98de9b235df7320f95056c2efedacfcbae9ff5ee2084e70b99e11ba5507fa83d",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/dla_qpd_24441.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ecfr_pfas_api.json",
+      "hash": "8349e6b2e643521c8e02e70559547793ea9192bf312e7a3e9c04b71a557b4991",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ecfr_pfas_api.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/elementis_bentone_38.html",
+      "hash": "33b333255efc050be918c3352655e3eb6a90ecedf5daf2edfbb128e3b681c84a",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/elementis_bentone_38.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/epa_comptox.html",
+      "hash": "42e170f7892b9b97e0bceda2662618d32bb6e85c47d1c90241c2695b93cd1898",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/epa_comptox.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/epa_tsca_inventory.html",
+      "hash": "739a8ecc8d7d0c333beb4a70a33191316688e74eb5fc4ca042908c2a18f1321c",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/epa_tsca_inventory.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/evonik_ancamide_350a.html",
+      "hash": "c1a53fbda98c0f652de34a3bf1ef952077fdba31dc42f5c02930b19ec8571c0f",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/evonik_ancamide_350a.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/far_taa.html",
+      "hash": "1c7b4dc3da976b30824810720c0e49ecf848782cce7164c993bad52c950db7ed",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/far_taa.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/fisher_naphtha_sds.pdf",
+      "hash": "1662e7760684df30bbe73367ad18825468dc0ece7453c62086ac8108c6984f42",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/fisher_naphtha_sds.pdf",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/heubach_zp10.pdf",
+      "hash": "92bd35e75c1ba4c1eeea9c8e7d91eaf6c9ae1942a7b41b020e9a0b3e324ed478",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/heubach_zp10.pdf",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_document_finder.html",
+      "hash": "ee7c1ad929d2e37e14afdea03da1663fe3dbeda8933ac8d1c5eab2d892d29dce",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_document_finder.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_mica.html",
+      "hash": "4a3269fbb86d03ab3506397c9de836710a9cc056cd1f04795c5d29f5f0028567",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_mica.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_talc.html",
+      "hash": "e1923246b7e6505a479930886b1fe61c310a2b5bf1b79278ac9b90e9c2ea5de7",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_talc.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_318.html",
+      "hash": "305b5fe43a907f23ab936f5e85dd8b295f2b5f96eb74bcf7fcf57f1c8f09baf9",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_318.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_920.html",
+      "hash": "5a02e7004ff2d0df47f97dec0bd15cb57bac50f33ec75d07eb9aa7d9f5d54ca5",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_920.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/olin_epoxy_stewardship.pdf",
+      "hash": "2eef5fd84f806e40ef411feb1d1ca91d9990cca777dabf5a445fc073feb8970a",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/olin_epoxy_stewardship.pdf",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_minusil.html",
+      "hash": "08f9c750badbacca69ef00d5e060de736f3d62ba862cb419aa86576094fe6195",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_minusil.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_tds_finder.html",
+      "hash": "0d85b67ce5a8253335102ed0ca86713cb31c3f568135002759e59578ac091a74",
+      "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_tds_finder.html",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/basf_n_butanol_sds.pdf",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "8c6515360cbd93d713eed892bd3187a2eee808adac2e9a222d7d7304b59a0fa9"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_a_530.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "0126cd5c899573355e5e53ef553455bf6a81240c07eea4d816edf9e22fdc96e5"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_disperbyk_110.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "a1a4c0cf56d7a5dfb540d400ee1d2153a0ff59bbe012621e978506a5813bb44b"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/byk_ghs_sds.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "c2387516a067c43d2785ba3991b12407b268b515a92eed4a1790b35c9966ecb9"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/dla_qpd_24441.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "98de9b235df7320f95056c2efedacfcbae9ff5ee2084e70b99e11ba5507fa83d"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ecfr_pfas_api.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "8349e6b2e643521c8e02e70559547793ea9192bf312e7a3e9c04b71a557b4991"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/elementis_bentone_38.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "33b333255efc050be918c3352655e3eb6a90ecedf5daf2edfbb128e3b681c84a"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/epa_comptox.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "42e170f7892b9b97e0bceda2662618d32bb6e85c47d1c90241c2695b93cd1898"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/epa_tsca_inventory.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "739a8ecc8d7d0c333beb4a70a33191316688e74eb5fc4ca042908c2a18f1321c"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/evonik_ancamide_350a.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "c1a53fbda98c0f652de34a3bf1ef952077fdba31dc42f5c02930b19ec8571c0f"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/far_taa.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "1c7b4dc3da976b30824810720c0e49ecf848782cce7164c993bad52c950db7ed"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/fisher_naphtha_sds.pdf",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "1662e7760684df30bbe73367ad18825468dc0ece7453c62086ac8108c6984f42"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/heubach_zp10.pdf",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "92bd35e75c1ba4c1eeea9c8e7d91eaf6c9ae1942a7b41b020e9a0b3e324ed478"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_document_finder.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "ee7c1ad929d2e37e14afdea03da1663fe3dbeda8933ac8d1c5eab2d892d29dce"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_mica.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "4a3269fbb86d03ab3506397c9de836710a9cc056cd1f04795c5d29f5f0028567"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/imerys_talc.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "e1923246b7e6505a479930886b1fe61c310a2b5bf1b79278ac9b90e9c2ea5de7"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_318.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "305b5fe43a907f23ab936f5e85dd8b295f2b5f96eb74bcf7fcf57f1c8f09baf9"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_920.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "5a02e7004ff2d0df47f97dec0bd15cb57bac50f33ec75d07eb9aa7d9f5d54ca5"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/olin_epoxy_stewardship.pdf",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "2eef5fd84f806e40ef411feb1d1ca91d9990cca777dabf5a445fc073feb8970a"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_minusil.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "08f9c750badbacca69ef00d5e060de736f3d62ba862cb419aa86576094fe6195"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-sourceability-ehs/reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_tds_finder.html",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "0d85b67ce5a8253335102ed0ca86713cb31c3f568135002759e59578ac091a74"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_bom_line_source_packet_matrix.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "3962c50d3f5679cbce54f2ed7e7cfa121f3e17e2e81ab92929ab32136420493c"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_ehs_regulatory_prescreen.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "7b5ccb002415b8dda49994db42e9a8471542317dec03589140dc771d8d6caa0a"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_unresolved_supplier_declaration_gap_register.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "cbef70c1757bda50e03d318b6289e3a97051f69afba368489b37a2a3effc3377"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "No checked-in module-specific benchmark result artifact was identified.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "Current candidate- and issuer-bound supplier declarations and lot evidence"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-assurance-capabilities/src/lib.rs",
+      "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+      "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+    },
+    "known_contradictions": [
+      "Public prescreen records are not candidate-bound supplier declarations, procurement approval, or regulatory closure."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-assurance-capabilities/src/lib.rs",
+      "scenario": "Reject stale, wrong-grade, unbound, or hash-mismatched supplier evidence.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-sourceability-ehs",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "formulation",
+        "dataset_id": "public-sourceability-prescreen.v1",
+        "model_id": "sourceability-evidence-v1",
+        "model_readiness_status": "MODEL_READINESS_ONLY",
+        "solver_use": "DISABLED",
+        "track_id": "sourceability_ehs_supplier_closure"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-sourceability-ehs-example",
+      "candidate_type": "formulation",
+      "formulation": {
+        "application": {
+          "dft_mil": 5.0,
+          "relative_humidity_pct": 50.0,
+          "substrate": "steel",
+          "surface_preparation": "declared",
+          "temperature_C": 25.0
+        },
+        "basis": "mass_g_per_batch",
+        "batch_mass_g": 137.13,
+        "ingredient_catalog_version": "facts.v2",
+        "process": {
+          "application_method": null,
+          "induction_time_min": null,
+          "mix_order": null,
+          "pot_age_h": 0.0
+        },
+        "recipe": {
+          "part_A": {
+            "dgeba_828": {
+              "ingredient_id": "dgeba_828",
+              "mass_g": 100.0
+            }
+          },
+          "part_B": {
+            "ancamide_350a": {
+              "ingredient_id": "ancamide_350a",
+              "mass_g": 37.13
+            }
+          }
+        }
+      }
+    },
+    "current_output": {
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_id": "amphora-sourceability-ehs-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {
+        "sourceability_status": null
+      },
+      "metrics": {
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "evidence question accuracy",
+          "model_authority": "EVIDENCE_ONLY",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        }
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-sourceability-ehs",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "evidence question accuracy",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1.",
+      "unit": "declared by locked benchmark",
+      "value_path": "gates.sourceability_status"
+    }
+  ],
+  "lane": "infrastructure",
+  "module_id": "amphora-sourceability-ehs",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "gates.sourceability_status",
+    "non_blocking_claim_locks": [
+      "no_pfas_free_claim",
+      "no_procurement_ready_claim",
+      "no_taa_domestic_claim",
+      "no_tsca_compliant_claim"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PRE_PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 4,
+      "decision_value": 4,
+      "downstream_leverage": 3,
+      "effort": 3,
+      "evidence_gap": 4,
+      "external_delay": 2
+    },
+    "ladder": "infrastructure_assurance",
+    "p0_override": false,
+    "rank": 9,
+    "score": 33
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

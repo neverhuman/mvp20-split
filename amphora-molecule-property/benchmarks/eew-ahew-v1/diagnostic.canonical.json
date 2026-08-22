@@ -1,0 +1,224 @@
+{
+  "acceptance_bar": {
+    "exact_implementation_max_abs_error_g_per_eq": 0.5,
+    "lower_bound_directional_accuracy": 1.0,
+    "minimum_monodisperse_records_per_property": 3,
+    "minimum_technical_grade_records": 3,
+    "monodisperse_mae_max_g_per_eq": 6.0,
+    "monodisperse_tolerance_g_per_eq": 6.0,
+    "monodisperse_tolerance_hit_rate": 1.0,
+    "negative_control_pass_rate": 1.0
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark_file_acceptance_bar_passed": true,
+  "benchmark_id": "amphora-molecule-property-eew-ahew-v1",
+  "claim_locks": {
+    "no_candidate_specific_performance_claim": true,
+    "no_product_release_or_qualification": true,
+    "no_superiority_claim": true,
+    "replay_only": true
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent on host)",
+    "minimum_300_truth_set_molecules (in-tree truth set has ~12 eligible molecules)",
+    "RIGHTS: truth set is QUARANTINED / replay-only; ChEBI-252 CC-BY-4.0 replacement FETCH_LOCKED_NOT_ACQUIRED"
+  ],
+  "engine": {
+    "amine_nh_smarts": "[N&X3&!$([N&X3][C&X3]=[O&X1])&!$([N&X3][C&X3]=[S&X1])&!$([N&X3]=*)&!$([N&+])&!$([N&X3][#7]=,#[#6,#7,#8])]",
+    "oxirane_smarts": "[OX2r3]",
+    "python": "3.12.3",
+    "rdkit": "2026.03.2"
+  },
+  "gates": {
+    "exact_implementation_max_abs_error_at_most_0_5": true,
+    "exact_structure_and_functionality_agree": true,
+    "monodisperse_mae_at_most_6": true,
+    "monodisperse_tolerance_hit_rate_1_0": true,
+    "negative_control_pass_rate_1_0": true,
+    "technical_grade_lower_bound_directional_1_0": true
+  },
+  "module_id": "amphora-molecule-property",
+  "per_record": {
+    "exact": [
+      {
+        "abs_error_g_per_eq": 0.01,
+        "active_nh_match": true,
+        "canonical_smiles_match": true,
+        "computed": {
+          "active_nh": 0,
+          "ahew_g_per_eq": null,
+          "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+          "eew_g_per_eq": 170.21,
+          "epoxide_groups": 2,
+          "mol_weight": 340.42
+        },
+        "epoxide_groups_match": true,
+        "expected_value": 170.2,
+        "functionality_match": true,
+        "record_id": "exact-dgeba",
+        "status": "ok",
+        "within_0_5": true
+      },
+      {
+        "abs_error_g_per_eq": 0.03,
+        "active_nh_match": true,
+        "canonical_smiles_match": true,
+        "computed": {
+          "active_nh": 5,
+          "ahew_g_per_eq": 20.63,
+          "canonical_smiles": "NCCNCCN",
+          "eew_g_per_eq": null,
+          "epoxide_groups": 0,
+          "mol_weight": 103.17
+        },
+        "epoxide_groups_match": true,
+        "expected_value": 20.6,
+        "functionality_match": true,
+        "record_id": "exact-deta",
+        "status": "ok",
+        "within_0_5": true
+      },
+      {
+        "abs_error_g_per_eq": 0.03,
+        "active_nh_match": true,
+        "canonical_smiles_match": true,
+        "computed": {
+          "active_nh": 4,
+          "ahew_g_per_eq": 42.57,
+          "canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+          "eew_g_per_eq": null,
+          "epoxide_groups": 0,
+          "mol_weight": 170.3
+        },
+        "epoxide_groups_match": true,
+        "expected_value": 42.6,
+        "functionality_match": true,
+        "record_id": "exact-ipda",
+        "status": "ok",
+        "within_0_5": true
+      }
+    ],
+    "monodisperse": [
+      {
+        "abs_error_g_per_eq": 0.01,
+        "computed": 170.21,
+        "expected_value": 170.2,
+        "property": "eew",
+        "record_id": "mono-eew-dgeba-pubchem",
+        "within_tol": true
+      },
+      {
+        "abs_error_g_per_eq": 0.01,
+        "computed": 170.21,
+        "expected_value": 170.2,
+        "property": "eew",
+        "record_id": "mono-eew-dgeba-supplier",
+        "within_tol": true
+      },
+      {
+        "abs_error_g_per_eq": 0.01,
+        "computed": 170.21,
+        "expected_value": 170.2,
+        "property": "eew",
+        "record_id": "mono-eew-dgeba-astm",
+        "within_tol": true
+      },
+      {
+        "abs_error_g_per_eq": 0.03,
+        "computed": 20.63,
+        "expected_value": 20.6,
+        "property": "ahew",
+        "record_id": "mono-ahew-deta",
+        "within_tol": true
+      },
+      {
+        "abs_error_g_per_eq": 0.03,
+        "computed": 42.57,
+        "expected_value": 42.6,
+        "property": "ahew",
+        "record_id": "mono-ahew-ipda",
+        "within_tol": true
+      },
+      {
+        "abs_error_g_per_eq": 0.05,
+        "computed": 29.05,
+        "expected_value": 29.1,
+        "property": "ahew",
+        "record_id": "mono-ahew-hmda",
+        "within_tol": true
+      }
+    ],
+    "negative": [
+      {
+        "expected_parseable": true,
+        "expected_reason": "no_reactive_groups",
+        "pass": true,
+        "record_id": "negative-amide-n",
+        "status": "ok"
+      },
+      {
+        "expected_parseable": true,
+        "expected_reason": "no_reactive_groups",
+        "pass": true,
+        "record_id": "negative-missing-reactive-group",
+        "status": "ok"
+      },
+      {
+        "expected_parseable": false,
+        "expected_reason": "invalid_smiles",
+        "pass": true,
+        "record_id": "negative-invalid-smiles",
+        "status": "invalid_smiles"
+      },
+      {
+        "expected_parseable": false,
+        "expected_reason": "multi_fragment_structure",
+        "pass": true,
+        "record_id": "negative-mixture",
+        "status": "multi_fragment_structure"
+      },
+      {
+        "expected_parseable": false,
+        "expected_reason": "wildcard_or_polymer_structure",
+        "pass": true,
+        "record_id": "negative-polymer-wildcard",
+        "status": "wildcard_or_polymer_structure"
+      }
+    ],
+    "technical_lower_bound": [
+      {
+        "computed": 170.21,
+        "directional_ok": true,
+        "measured_lower_bound": 180.0,
+        "record_id": "technical-dgeba-1"
+      },
+      {
+        "computed": 170.21,
+        "directional_ok": true,
+        "measured_lower_bound": 185.0,
+        "record_id": "technical-dgeba-2"
+      },
+      {
+        "computed": 170.21,
+        "directional_ok": true,
+        "measured_lower_bound": 190.0,
+        "record_id": "technical-dgeba-3"
+      }
+    ]
+  },
+  "run_type": "REPLAY_VERIFICATION",
+  "schema": "amphora.molecule-property.eew-ahew-replay-diagnostic.v1",
+  "summary": {
+    "exact_max_abs_error_g_per_eq": 0.03,
+    "monodisperse_mae_g_per_eq": 0.0233,
+    "monodisperse_n": 6,
+    "monodisperse_within_tol": 6,
+    "negative_n": 5,
+    "negative_pass": 5,
+    "technical_lower_bound_n": 3,
+    "technical_lower_bound_pass": 3,
+    "truth_molecules_scored": 12
+  },
+  "truth_set_file": "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json",
+  "truth_set_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f"
+}

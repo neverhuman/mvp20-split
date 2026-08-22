@@ -1,0 +1,3111 @@
+{
+  "any_family_broke_claim": true,
+  "campaign_item_id": "R-S06",
+  "does_not_close": [
+    "Runtime remains LOCKED_INTERNAL; no proposal emission enabled.",
+    "This is an AUDIT_ONLY diagnostic; it grants no promotion authority.",
+    "Family 3's 'at risk' rows are a documented-residual proximity flag, not independently re-measured under a second RDKit build."
+  ],
+  "family_1_known_hard_structures": {
+    "attack": "known_hard_to_synthesize_structures_scoring_sa_below_6",
+    "criterion_met": true,
+    "n_attempted": 3,
+    "n_slipped_through": 3,
+    "refutation_criterion": "A structure with a primary-literature-documented difficult synthesis (low yield, hazardous, and/or a landmark multi-step total synthesis undertaken specifically because of its difficulty) scores SA<6.0 (the module's own 'synthesizable' cut) under the exact SA_Score reference implementation the target receipt validates.",
+    "results": [
+      {
+        "citation": "Eaton & Cole 1964, J. Am. Chem. Soc. 86(15):3157-3158",
+        "formula_matches_expected": true,
+        "formula_observed": "C8H8",
+        "hardness_evidence": "First synthesis of a Platonic hydrocarbon cage; ~695 kJ/mol angle strain (109.5deg tetrahedral carbons forced to 90deg cube vertices); specialized multi-step route from 2-cyclopentenone via base-mediated dimerization/rearrangement; derivatives historically hazardous (energetic-materials use).",
+        "n_atoms": 8,
+        "n_bridgehead_atoms": 0,
+        "n_chiral_centers_detected": 0,
+        "n_macrocycles_gt8": 0,
+        "n_spiro_atoms": 0,
+        "name": "cubane",
+        "sa_score": 3.169396,
+        "slips_through_as_false_feasible": true,
+        "smiles": "C12C3C4C1C5C2C3C45",
+        "valid": true,
+        "why_it_slips": "Fragment score is dominated by common small aliphatic CH2/CH substructures (frequent in the PubChem training corpus); the cage's high vertex/bond symmetry triggers the fingerprint-density symmetry bonus (score3, sascorer.py 'not in the original publication...to make highly symmetrical molecules easier to synthesise'); the algorithm has NO ring-strain term at all, so 682-695 kJ/mol of angle strain that drove decades of synthetic effort is structurally invisible to the score."
+      },
+      {
+        "citation": "Katz & Acton 1973, J. Am. Chem. Soc. 95(8):2738-2739",
+        "formula_matches_expected": true,
+        "formula_observed": "C6H6",
+        "hardness_evidence": "First synthesis via photolysis of an azo precursor derived from benzvalene at -196C through a biradical intermediate, <10% yield; ~682 kJ/mol ring strain (60deg C-C-C angles vs 109.5deg ideal); explosive.",
+        "n_atoms": 6,
+        "n_bridgehead_atoms": 0,
+        "n_chiral_centers_detected": 0,
+        "n_macrocycles_gt8": 0,
+        "n_spiro_atoms": 0,
+        "name": "prismane",
+        "sa_score": 3.327552,
+        "slips_through_as_false_feasible": true,
+        "smiles": "C12C3C1C4C2C34",
+        "valid": true,
+        "why_it_slips": "Fragment score is dominated by common small aliphatic CH2/CH substructures (frequent in the PubChem training corpus); the cage's high vertex/bond symmetry triggers the fingerprint-density symmetry bonus (score3, sascorer.py 'not in the original publication...to make highly symmetrical molecules easier to synthesise'); the algorithm has NO ring-strain term at all, so 682-695 kJ/mol of angle strain that drove decades of synthetic effort is structurally invisible to the score."
+      },
+      {
+        "citation": "Paquette 1982, J. Am. Chem. Soc. 104(16):4503-4504",
+        "formula_matches_expected": true,
+        "formula_observed": "C20H20",
+        "hardness_evidence": "~29-step total synthesis, widely cited as one of the most celebrated multi-step total syntheses in organic chemistry history specifically because of its extreme difficulty; pursued for its aesthetic dodecahedral symmetry, not practical availability.",
+        "n_atoms": 20,
+        "n_bridgehead_atoms": 0,
+        "n_chiral_centers_detected": 0,
+        "n_macrocycles_gt8": 0,
+        "n_spiro_atoms": 0,
+        "name": "dodecahedrane",
+        "sa_score": 2.837187,
+        "slips_through_as_false_feasible": true,
+        "smiles": "C12C3C4C5C1C6C7C2C8C3C9C4C1C5C6C2C7C8C9C12",
+        "valid": true,
+        "why_it_slips": "Fragment score is dominated by common small aliphatic CH2/CH substructures (frequent in the PubChem training corpus); the cage's high vertex/bond symmetry triggers the fingerprint-density symmetry bonus (score3, sascorer.py 'not in the original publication...to make highly symmetrical molecules easier to synthesise'); the algorithm has NO ring-strain term at all, so 682-695 kJ/mol of angle strain that drove decades of synthetic effort is structurally invisible to the score."
+      }
+    ],
+    "structures_that_slipped": [
+      "cubane",
+      "prismane",
+      "dodecahedrane"
+    ]
+  },
+  "family_2_degenerate_valid_smiles": {
+    "attack": "degenerate_but_valid_smiles_passing_validity_gate",
+    "criterion_met": true,
+    "n_attempted": 9,
+    "n_slipped_through": 9,
+    "positive_control_legitimate_molecule": {
+      "expected": true,
+      "name": "methane_control_should_remain_valid",
+      "note": "Legitimate single-fragment organic molecule; included to show the gate is not simply broken for everything -- it specifically fails to reject non-covalent / multi-fragment / non-organic degenerate inputs while correctly accepting ordinary molecules.",
+      "passes_shipped_validity_gate": true,
+      "smiles": "C"
+    },
+    "refutation_criterion": "An input that is not a single coherent covalent candidate molecule (a bare wildcard atom, an isolated inert atom, a multi-fragment mixture/salt, or an isotope-only diatomic gas) is reported valid=True by the target receipt's shipped metric_validity() definition (`Chem.MolFromSmiles(smi) is not None`, no connectivity or fragment-count check).",
+    "results": [
+      {
+        "defect": "atomic_number_0_dummy_no_real_element",
+        "n_disconnected_fragments": 1,
+        "n_heavy_atoms": 0,
+        "name": "bare_wildcard_dummy_atom",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "*"
+      },
+      {
+        "defect": "inert_single_atom_no_covalent_bonds",
+        "n_disconnected_fragments": 1,
+        "n_heavy_atoms": 1,
+        "name": "isolated_noble_gas_He",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "[He]"
+      },
+      {
+        "defect": "inert_single_atom_no_covalent_bonds",
+        "n_disconnected_fragments": 1,
+        "n_heavy_atoms": 1,
+        "name": "isolated_noble_gas_Ar",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "[Ar]"
+      },
+      {
+        "defect": "10_disconnected_components_not_one_candidate_molecule",
+        "n_disconnected_fragments": 10,
+        "n_heavy_atoms": 10,
+        "name": "ten_disconnected_methane_fragments",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "C.C.C.C.C.C.C.C.C.C"
+      },
+      {
+        "defect": "2_disconnected_ionic_fragments_not_one_covalent_species",
+        "n_disconnected_fragments": 2,
+        "n_heavy_atoms": 2,
+        "name": "NaCl_ionic_salt_two_fragments",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "[Na+].[Cl-]"
+      },
+      {
+        "defect": "diatomic_gas_not_organic_hardener_candidate",
+        "n_disconnected_fragments": 1,
+        "n_heavy_atoms": 0,
+        "name": "diatomic_hydrogen_gas",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "[H][H]"
+      },
+      {
+        "defect": "isotope_labelled_diatomic_gas_not_organic_candidate",
+        "n_disconnected_fragments": 1,
+        "n_heavy_atoms": 0,
+        "name": "deuterium_gas_isotope_only",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "[2H][2H]"
+      },
+      {
+        "defect": "diatomic_gas_not_organic_hardener_candidate",
+        "n_disconnected_fragments": 1,
+        "n_heavy_atoms": 2,
+        "name": "diatomic_oxygen",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "O=O"
+      },
+      {
+        "defect": "4_disconnected_ionic_fragments_not_one_covalent_species",
+        "n_disconnected_fragments": 4,
+        "n_heavy_atoms": 4,
+        "name": "four_fragment_salt_cluster",
+        "passes_shipped_validity_gate": true,
+        "slips_through_as_false_valid": true,
+        "smiles": "[Na+].[Na+].[Cl-].[Cl-]"
+      }
+    ],
+    "structures_that_slipped": [
+      "bare_wildcard_dummy_atom",
+      "isolated_noble_gas_He",
+      "isolated_noble_gas_Ar",
+      "ten_disconnected_methane_fragments",
+      "NaCl_ionic_salt_two_fragments",
+      "diatomic_hydrogen_gas",
+      "deuterium_gas_isotope_only",
+      "diatomic_oxygen",
+      "four_fragment_salt_cluster"
+    ]
+  },
+  "family_3_boundary_probing": {
+    "attack": "boundary_probing_sa_5_9_to_6_1",
+    "criterion_met": true,
+    "flagged_rows": [
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.93978,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.93978,
+        "shipped_says_feasible": true,
+        "smiles": "*CCCC1C=CNC2=CC=C2C(*)CCC1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.062422,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.062422,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)(C)CC=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.001183,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.001183,
+        "shipped_says_feasible": false,
+        "smiles": "*O*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.921427,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.921427,
+        "shipped_says_feasible": true,
+        "smiles": "*CCC(*)(C)CC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.099303,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.099303,
+        "shipped_says_feasible": false,
+        "smiles": "*OCC(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.02801,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.02801,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(O)O[Si](*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.982378,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.982378,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(C#N)C(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.012244,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.012244,
+        "shipped_says_feasible": false,
+        "smiles": "*SC(C)C[Si](*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.005614,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.005614,
+        "shipped_says_feasible": false,
+        "smiles": "*CCCCC/C=C/C(CCNC(=O)C1=CC=C2C=CC(=C1)C(=O)NCc1ccccc12)=C(CC)COP(=O)(O*)OCC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.033388,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.033388,
+        "shipped_says_feasible": false,
+        "smiles": "*c1cnc(*)s1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.944063,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.944063,
+        "shipped_says_feasible": true,
+        "smiles": "*C/C=C/C1CC(*)C(C(C)CC)C2C(=O)OCC2CCCC1(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.073302,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.073302,
+        "shipped_says_feasible": false,
+        "smiles": "*OC1CCN(*)C1C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.914711,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.914711,
+        "shipped_says_feasible": true,
+        "smiles": "*CCC(C)N(*)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.005281,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.005281,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)NCC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.073549,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.073549,
+        "shipped_says_feasible": false,
+        "smiles": "*O[Si](C)(C)[Si](*)(C)O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.995795,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.995795,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(c1ccccc1)C1C(=O)N2CC1=CC=CC=C(C)C(*)C2=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.978508,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.978508,
+        "shipped_says_feasible": true,
+        "smiles": "*/C=C/C(=O)N*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.045005,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.045005,
+        "shipped_says_feasible": false,
+        "smiles": "*SN1C=CC(=*)CC1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.060862,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.060862,
+        "shipped_says_feasible": false,
+        "smiles": "*c1ccc(Cc2ccc(N3C=C(C(F)(F)F)C4=CC=C(C3=O)C(C(F)(F)F)=CC3=CC=C(O4)C(=O)c4cc(Oc5ccc6c(c5)C(=O)N(*)C6=O)ccc4S3)cc2)cc1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.066229,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": true,
+        "mine_sa": 6.049418,
+        "mine_says_feasible": false,
+        "shipped_sa": 5.98319,
+        "shipped_says_feasible": true,
+        "smiles": "*C(F)(F)C(*)(F)C([2H])(F)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": -0.03415,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.903063,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.937213,
+        "shipped_says_feasible": true,
+        "smiles": "*N=P(*)(OC1=C(F)C(Cl)=C(F)C1(F)F)Oc1c(F)c(F)c([2H])c([2H])c1Cl"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": -0.044157,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.001564,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.045721,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)C(=O)OCCOC([2H])(Br)C(O)C(OC(C)=O)N(C(Cl)OC(F)(F)OC(F)(F)C(F)(F)C(F)(F)F)C(C)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.960145,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.960145,
+        "shipped_says_feasible": true,
+        "smiles": "*/C=C/C1CCC(C)(C(C)(C)C)CCC(C)C(*)C1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.965463,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.965463,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(*)(Cl)P(=O)(O)O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.958972,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.958972,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(*)C(=O)OC(C[Zn])C1CC1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.955119,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.955119,
+        "shipped_says_feasible": true,
+        "smiles": "*CC1CCSC(=O)C1*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.051765,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.051765,
+        "shipped_says_feasible": false,
+        "smiles": "*C(=S)C/C=C/C(*)C=C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.983623,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.983623,
+        "shipped_says_feasible": true,
+        "smiles": "*CCCC1COC(*)C1O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.081165,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.081165,
+        "shipped_says_feasible": false,
+        "smiles": "*CCCC(*)OC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.072964,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.072964,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(CO*)C(C)O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.09628,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.09628,
+        "shipped_says_feasible": false,
+        "smiles": "*NC[Ge](C)(C)CCC(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.026678,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.026678,
+        "shipped_says_feasible": false,
+        "smiles": "*N(CC1COC(F)(C(F)(F)F)C1(F)F)CC(F)(F)C(F)(F)C(F)(F)C(F)(F)C1(F)C(F)(F)C(F)(F)C(F)(F)C1(F)C(*)(F)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.95556,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.95556,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(C)(C=C/N=C(\\*)C)CO"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.06109,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.06109,
+        "shipped_says_feasible": false,
+        "smiles": "*C1=Cc2sc(*)cc2S(=O)(=O)O[N+]2=CC=CC2=C1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.017665,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.017665,
+        "shipped_says_feasible": false,
+        "smiles": "*C(=O)Sc1ccc(C2=CC=C3NC(=O)c4ccc5ccc(OC6=CC=C(Oc7ccc(Oc8ccc(N9C(=O)c%10ccc(*)cc%10C9=O)cc8)cc7)C6=O)ccc(n(c(=O)c5c4)C=C2)C3=O)cc1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": -0.243819,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": true,
+        "mine_sa": 5.992011,
+        "mine_says_feasible": true,
+        "shipped_sa": 6.235829,
+        "shipped_says_feasible": false,
+        "smiles": "*C(=O)Nc1cccc(NC(=O)c2ccc3c(c2)C(=O)N2C=C2C=CC=C2C(=O)C(=CC=CC(N4C(=O)c5ccc(*)cc5C4=O)=C3)P2(=O)c2ccccc2)c1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.95314,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.95314,
+        "shipped_says_feasible": true,
+        "smiles": "*C/C=C(\\C)C(C)N*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.085787,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.085787,
+        "shipped_says_feasible": false,
+        "smiles": "*O[Si](*)(C)CCC#C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": -0.087392,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": true,
+        "mine_sa": 5.970058,
+        "mine_says_feasible": true,
+        "shipped_sa": 6.057451,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)C(=O)OCC([2H])(Cl)Cl"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.001218,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.010219,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.009002,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)c1nc([2H])c(F)c(F)n1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.94132,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.94132,
+        "shipped_says_feasible": true,
+        "smiles": "*/C=C(\\C)C[N+](*)(C)CC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.986974,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.986974,
+        "shipped_says_feasible": true,
+        "smiles": "*SCC[N+](*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.924902,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.924902,
+        "shipped_says_feasible": true,
+        "smiles": "*CC[PH](C)(C)CCCC(=O)N*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.971109,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.971109,
+        "shipped_says_feasible": true,
+        "smiles": "*CCc1nc(*)nc(C2=CC=C[N+]=[N+]2)n1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.920582,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.920582,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(C)(C)C1C=C(C)C1*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.969693,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.969693,
+        "shipped_says_feasible": true,
+        "smiles": "*OC(C#CCC(*)=O)C(C)O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.933276,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.933276,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(*)c1ccc(SC2=CC=CC3=CC=CC=C2[Pb]3)cc1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.905572,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.905572,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(C#N)C(*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.984105,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.984105,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(*)C[N+](C)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.004602,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.004602,
+        "shipped_says_feasible": false,
+        "smiles": "*OC(=O)C1COC2C(*)COC12"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.960741,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.960741,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(CO*)=NO"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.994475,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.994475,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(F)(F)C1(F)C(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(*)(F)C1(F)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.935156,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.935156,
+        "shipped_says_feasible": true,
+        "smiles": "*OCC(CC(C)(O)OC)C(C)O*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.99935,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.99935,
+        "shipped_says_feasible": true,
+        "smiles": "*C/C=C/C=C(CC)C(Cl)C(*)Cl"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.025008,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.025008,
+        "shipped_says_feasible": false,
+        "smiles": "*CCCC(C)SS*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.910046,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.910046,
+        "shipped_says_feasible": true,
+        "smiles": "*C(=O)Nc1ccc(OC2=CC=C3NC(=O)c4ccc5cc(OC)c(-c6cc(C)c(N7C(=O)c8ccc(*)cc8C7=O)cc6C(F)(F)F)cc(C)c(n(c(=O)c5c4)C=C2)C3=O)cc1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.044574,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.044574,
+        "shipped_says_feasible": false,
+        "smiles": "*CCCCCCCCN1CC(=C2C=CC(S(=O)(=O)c3ccc(NC(=O)C(CC(C)C)n4c(=O)c5cc6c(=O)n(*)c(=O)c6cc5c4=O)cc3)=CC=C3C=C(C2)C3=O)C1=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.098291,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.098291,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)(C)CC#N"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.922574,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.922574,
+        "shipped_says_feasible": true,
+        "smiles": "*CCN1C(=O)C2C3C=CC(C4C(=O)N(*)C(=O)C34)C2C1=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.03324,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.03324,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)(CC(=O)OCC(CC)CCCC)C(=O)OC12CC3CC(C)(CC(C)(C3)C1)C2"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.906145,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.906145,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(CBr)(CO*)CSC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.039138,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.039138,
+        "shipped_says_feasible": false,
+        "smiles": "*O[Si](C)(CC[Si](C)(C)C#CN(C)C)C(=O)C1CCC(*)CO1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.903987,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.903987,
+        "shipped_says_feasible": true,
+        "smiles": "*N=P(*)(CC)CCC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.046572,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.046572,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(C(*)C)P(=O)(O)O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.900076,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.900076,
+        "shipped_says_feasible": true,
+        "smiles": "*OC1OC(*)C2CCCC12C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.029766,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.029766,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(F)(Cl)C(=O)O*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.927272,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.927272,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(CC)(CCl)O*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.967194,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.967194,
+        "shipped_says_feasible": true,
+        "smiles": "*CC1CCC(*)(C)C1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.07616,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.07616,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)C(C=C)CC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.000163,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.000163,
+        "shipped_says_feasible": false,
+        "smiles": "*/C=C/C[Si](*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.040234,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.040234,
+        "shipped_says_feasible": false,
+        "smiles": "*SC(C)S(*)(=O)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.049908,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.049908,
+        "shipped_says_feasible": false,
+        "smiles": "*/C(Cl)=C(/*)C#N"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.978934,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.978934,
+        "shipped_says_feasible": true,
+        "smiles": "*OC(C#CC)CC(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.924596,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.924596,
+        "shipped_says_feasible": true,
+        "smiles": "*SC(=O)OC1COC(*)CO1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.969627,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.969627,
+        "shipped_says_feasible": true,
+        "smiles": "*c1ccc2c(c1)SC1=CC3=Nn4c3ccc(-c3nc5cc(C(*)(C(F)(F)F)C(F)(F)F)ccc5o3)ccc3ccc(cc3c4=O)C(=C1)C2=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.922402,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.922402,
+        "shipped_says_feasible": true,
+        "smiles": "*c1ccc(C(C)(C)c2ccc(N3C=CC4=CC=C(C=CC5=CC=C(O4)C(=O)c4cc(Oc6ccc7c(c6)C(=O)N(*)C7=O)ccc4O5)C3=O)cc2)cc1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.930226,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.930226,
+        "shipped_says_feasible": true,
+        "smiles": "*OC1COC(Cl)C(*)OC1CO"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.927547,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.927547,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(C)(C)SO*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.046331,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.046331,
+        "shipped_says_feasible": false,
+        "smiles": "*C1C(*)C2OCCOC12"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.019811,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.019811,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(=O)C(*)CN"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.912607,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.912607,
+        "shipped_says_feasible": true,
+        "smiles": "*NC(C=C)CC(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.914197,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.914197,
+        "shipped_says_feasible": true,
+        "smiles": "*NC(C)C=CC(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.067654,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.067654,
+        "shipped_says_feasible": false,
+        "smiles": "*CCC[N+](*)(C)CC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.907,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.907,
+        "shipped_says_feasible": true,
+        "smiles": "*Oc1ccc(C(C)(C)C2=CC=C(c3ccccc3)Oc3ccc4ccc(c(=O)c(cc3)C=C2)C=CC4c2ccc(C(=O)c3ccc(*)cc3)cc2)cc1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.080709,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.080709,
+        "shipped_says_feasible": false,
+        "smiles": "*OC(=S)C=CC(*)CC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.054634,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.054634,
+        "shipped_says_feasible": false,
+        "smiles": "*OC(F)(F)C(*)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.001927,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.001927,
+        "shipped_says_feasible": false,
+        "smiles": "*C1C(*)C(O)C(O)C1O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.062304,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.062304,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(CC)(CI)CS*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.068244,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.068244,
+        "shipped_says_feasible": false,
+        "smiles": "*OC1=CC=C(C2CCC(C)OC3(C)COCCCCCOC(=O)CC3CCC2C(=O)OCCCC)CC(c2ccc(*)cc2)N=C1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.082811,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.082811,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(C=O)C(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.053509,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.053509,
+        "shipped_says_feasible": false,
+        "smiles": "*CNC(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.933104,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.933104,
+        "shipped_says_feasible": true,
+        "smiles": "*CC1CCCCCCCC[SH](CC)COC(=O)C(CC(NC(=O)COC(=O)CCCCCC)C(=O)CC(*)C(=O)OCCCC)C1CC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.062135,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.062135,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(=O)OC1CCC1OC12CC(CC1C(=O)O*)C2"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.974746,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.974746,
+        "shipped_says_feasible": true,
+        "smiles": "*/C=C/C(C)(C)C(*)O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.04242,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.04242,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(Br)C(*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.998864,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.998864,
+        "shipped_says_feasible": true,
+        "smiles": "*C(=O)Nc1ccc(S(=O)(=O)N2NC(=O)C3=CC=C(Oc4ccc5cc-5c(=O)n(c5ccc(Oc6ccc7c(c6)C(=O)N(*)C7=O)cc5c4=O)C(C)=C3)C2=O)cc1S(=O)(=O)C(F)(F)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.002238,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.002238,
+        "shipped_says_feasible": false,
+        "smiles": "*OC1CCCC2CCCCC(CC1)OCC2*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.012202,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.012202,
+        "shipped_says_feasible": false,
+        "smiles": "*OP(=O)(CCl)O*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.057583,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.057583,
+        "shipped_says_feasible": false,
+        "smiles": "*/C=C/C1B[N+](*)(CCCCC)C1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": -0.070154,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": true,
+        "mine_sa": 5.997471,
+        "mine_says_feasible": true,
+        "shipped_sa": 6.067625,
+        "shipped_says_feasible": false,
+        "smiles": "*C([2H])SC(*)(F)C(=O)OC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.922779,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.922779,
+        "shipped_says_feasible": true,
+        "smiles": "*OC(C)O[Si](*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.020872,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.020872,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)[SH](B)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.923134,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.923134,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(=O)SCC(*)C#N"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.928309,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.928309,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(Cl)(CCl)C(*)(F)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.946108,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.946108,
+        "shipped_says_feasible": true,
+        "smiles": "*OC(*)C=C(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.030746,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.030746,
+        "shipped_says_feasible": false,
+        "smiles": "*OC(=O)SCC1CCC(*)N1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.931472,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.931472,
+        "shipped_says_feasible": true,
+        "smiles": "*CC[Si](C)(C)O*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.000596,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.000596,
+        "shipped_says_feasible": false,
+        "smiles": "*CCC(C)(C[N+]C)CC(=O)N*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.035013,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.035013,
+        "shipped_says_feasible": false,
+        "smiles": "*c1cnc(*)o1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.05019,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.05019,
+        "shipped_says_feasible": false,
+        "smiles": "*OCP(=O)(O)OC1COC2C(*)COC12"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.956628,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.956628,
+        "shipped_says_feasible": true,
+        "smiles": "*CC1CCC(C[N+](C)C)CC(C)(S*)CO1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.960961,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.960961,
+        "shipped_says_feasible": true,
+        "smiles": "*C(C)C(C)[Si](*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.978394,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.978394,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(*)c1ccc([SH](F)(F)(F)F)cc1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.022417,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.022417,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(CF)(CBr)C1OC(=O)OC(C)CC(O)C1O[Si](O)(COCCOC)O*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.914478,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.914478,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(C)(C)CC(C)(C)[SH]1C(=O)OC(=O)C1*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.030414,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.030414,
+        "shipped_says_feasible": false,
+        "smiles": "*N=P(*)(CC)NCC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.923483,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.923483,
+        "shipped_says_feasible": true,
+        "smiles": "*O[Si](*)(C)[Si](C)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.008748,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.008748,
+        "shipped_says_feasible": false,
+        "smiles": "*C#CC1CC(*)C2C(=O)OC(=O)C12"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.932522,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.932522,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(CBr)C(=O)O*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.003273,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.003273,
+        "shipped_says_feasible": false,
+        "smiles": "*CSCCSS*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.059642,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.059642,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(O)C[N+](*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.976221,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.976221,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(*)C(=O)O[N+](C)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.922931,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.922931,
+        "shipped_says_feasible": true,
+        "smiles": "*CCC[PH](C)(C*)CCCC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.05733,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.05733,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(CO)CO*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.009862,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.009862,
+        "shipped_says_feasible": false,
+        "smiles": "*CC#C[Si](*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.911054,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.911054,
+        "shipped_says_feasible": true,
+        "smiles": "*C(=O)c1ccc2c(c1)C(=O)N(c1ccc(/N=N/c3ccc(OCC)cc3)cc1)C1=CC=C(OC3=CC=C(C=C1)Oc1ccc(N4C(=O)c5ccc(*)cc54)cc1C3=O)C2=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.006177,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.006177,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)(C=N)CC(C)(CO)OC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.917946,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.917946,
+        "shipped_says_feasible": true,
+        "smiles": "*OC(C)C(O)C(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.056415,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.056415,
+        "shipped_says_feasible": false,
+        "smiles": "*N=[PH](N=P(*)(C)OC(C)C)S(=O)(=O)O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.932281,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.932281,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(C)(C)C#*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.960288,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.960288,
+        "shipped_says_feasible": true,
+        "smiles": "*/C=C/C(C)CC(*)C(OCC(F)(F)F)S(=O)(=O)O[Na]"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.010724,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.010724,
+        "shipped_says_feasible": false,
+        "smiles": "*CCC1CN(*)CC1C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.044149,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.044149,
+        "shipped_says_feasible": false,
+        "smiles": "*CCC[Si](*)(B)CCC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": -0.038938,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.082873,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.121811,
+        "shipped_says_feasible": false,
+        "smiles": "*/[SH]=N/c1c(Cl)c([2H])c(*)c(I)c1Cl"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.098904,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.098904,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)(F)C(=O)S(F)(F)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.967537,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.967537,
+        "shipped_says_feasible": true,
+        "smiles": "*C#CC(C=C)CC(*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.969584,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.969584,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(*)(C#N)C#N"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.083189,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.083189,
+        "shipped_says_feasible": false,
+        "smiles": "*OC1CC(*)OC1(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.010819,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.010819,
+        "shipped_says_feasible": false,
+        "smiles": "*C/C=C/CC*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.046975,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.046975,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(*)S(=O)(=O)Cl"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.097053,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.097053,
+        "shipped_says_feasible": false,
+        "smiles": "*C/C=C(/*)C#CC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.028003,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.028003,
+        "shipped_says_feasible": false,
+        "smiles": "*OC1CCC(*)OC1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.097534,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.097534,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(OC(C)=O)C1(C)C(=O)OC(=O)C1C(*)C(=O)OC1CC[Si]1(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.056827,
+        "divergent_beyond_ka_tolerance": true,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.998673,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.941846,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(*)(F)C(=O)OC([2H])(F)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.968742,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.968742,
+        "shipped_says_feasible": true,
+        "smiles": "*C1C(*)C1(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.03998,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.03998,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(C)(CCl)CO*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.023936,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.023936,
+        "shipped_says_feasible": false,
+        "smiles": "*CSSCC1CCC(C*)C([N+]C)CC(C)C1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.950117,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.950117,
+        "shipped_says_feasible": true,
+        "smiles": "*CC1(C)C=C[N+](*)(C#N)C=C1"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.085245,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.085245,
+        "shipped_says_feasible": false,
+        "smiles": "*/C=C/C(CCl)(CBr)C(*)=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.998733,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.998733,
+        "shipped_says_feasible": true,
+        "smiles": "*CC/C=C(/*)C#N"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.984433,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.984433,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(O)C1CC1OC(*)(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.933063,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.933063,
+        "shipped_says_feasible": true,
+        "smiles": "*CCC(F)(F)C(*)Cl"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.085119,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.085119,
+        "shipped_says_feasible": false,
+        "smiles": "*/C(Cl)=C(/*)Cl"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.976601,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.976601,
+        "shipped_says_feasible": true,
+        "smiles": "*O[Si](*)(C)CCC=O"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.96035,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.96035,
+        "shipped_says_feasible": true,
+        "smiles": "*O[Si](C)=C(F)C(*)(F)F"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.090665,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.090665,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(C)(Cl)C(*)(Cl)Cl"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.039825,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.039825,
+        "shipped_says_feasible": false,
+        "smiles": "*O[Si](*)(F)CCC"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.99335,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.99335,
+        "shipped_says_feasible": true,
+        "smiles": "*CC(CCl)(CBr)CO*"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 6.028761,
+        "mine_says_feasible": false,
+        "shipped_sa": 6.028761,
+        "shipped_says_feasible": false,
+        "smiles": "*CC(O*)C(CC)S(C)(OC)SC(C)C"
+      },
+      {
+        "at_risk_within_documented_max_residual_0_66": true,
+        "delta": 0.0,
+        "divergent_beyond_ka_tolerance": false,
+        "flipped_now_between_shipped_and_mine": false,
+        "mine_sa": 5.927101,
+        "mine_says_feasible": true,
+        "shipped_sa": 5.927101,
+        "shipped_says_feasible": true,
+        "smiles": "*CC1CC(*)C1"
+      }
+    ],
+    "n_boundary_rows_at_risk_under_documented_max_residual_0_66": 160,
+    "n_boundary_rows_divergent_beyond_ka_tolerance": 9,
+    "n_boundary_rows_flipped_now_shipped_vs_mine": 4,
+    "n_rows_in_boundary_band_5_9_to_6_1": 160,
+    "pi1m_prefix_rows_scanned": 20000,
+    "refutation_criterion": "Among PI1M reference-prefix structures whose SA score falls in the target's own admitted SA-instrument residual (up to 0.66 units, 'documented RDKit-version sensitivity...dismissed as confined to exotic heteroaromatic motifs'), at least one row's SA lies within 5.9-6.1 of the 6.0 feasibility cut AND either (a) the shipped vs. recomputed SA already disagree on feasible/infeasible, or (b) the row's distance from 6.0 is within the receipt's own documented max residual of 0.66, meaning the receipt's dismissal ('coating hardeners...fall in the exactly-reproduced majority') does not establish boundary-band safety, since the boundary band is exactly where the dismissed residual matters.",
+    "representation_invariance_subprobe": {
+      "n_boundary_band_structures_checked": 160,
+      "n_divergent_across_representation": 1,
+      "rows": [
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.93978,
+          "sa_kekulized_resmiles": 5.93978,
+          "sa_randomized_atomorder_resmiles": 5.93978,
+          "smiles": "*CCCC1C=CNC2=CC=C2C(*)CCC1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.062422,
+          "sa_kekulized_resmiles": 6.062422,
+          "sa_randomized_atomorder_resmiles": 6.062422,
+          "smiles": "*CC(*)(C)CC=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.001183,
+          "sa_kekulized_resmiles": 6.001183,
+          "sa_randomized_atomorder_resmiles": 6.001183,
+          "smiles": "*O*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.921427,
+          "sa_kekulized_resmiles": 5.921427,
+          "sa_randomized_atomorder_resmiles": 5.921427,
+          "smiles": "*CCC(*)(C)CC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.099303,
+          "sa_kekulized_resmiles": 6.099303,
+          "sa_randomized_atomorder_resmiles": 6.099303,
+          "smiles": "*OCC(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.02801,
+          "sa_kekulized_resmiles": 6.02801,
+          "sa_randomized_atomorder_resmiles": 6.02801,
+          "smiles": "*CC(O)O[Si](*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.982378,
+          "sa_kekulized_resmiles": 5.982378,
+          "sa_randomized_atomorder_resmiles": 5.982378,
+          "smiles": "*CC(C#N)C(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.012244,
+          "sa_kekulized_resmiles": 6.012244,
+          "sa_randomized_atomorder_resmiles": 6.012244,
+          "smiles": "*SC(C)C[Si](*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.005614,
+          "sa_kekulized_resmiles": 6.005614,
+          "sa_randomized_atomorder_resmiles": 6.005614,
+          "smiles": "*CCCCC/C=C/C(CCNC(=O)C1=CC=C2C=CC(=C1)C(=O)NCc1ccccc12)=C(CC)COP(=O)(O*)OCC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.033388,
+          "sa_kekulized_resmiles": 6.033388,
+          "sa_randomized_atomorder_resmiles": 6.033388,
+          "smiles": "*c1cnc(*)s1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.944063,
+          "sa_kekulized_resmiles": 5.944063,
+          "sa_randomized_atomorder_resmiles": 5.944063,
+          "smiles": "*C/C=C/C1CC(*)C(C(C)CC)C2C(=O)OCC2CCCC1(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.073302,
+          "sa_kekulized_resmiles": 6.073302,
+          "sa_randomized_atomorder_resmiles": 6.073302,
+          "smiles": "*OC1CCN(*)C1C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.914711,
+          "sa_kekulized_resmiles": 5.914711,
+          "sa_randomized_atomorder_resmiles": 5.914711,
+          "smiles": "*CCC(C)N(*)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.005281,
+          "sa_kekulized_resmiles": 6.005281,
+          "sa_randomized_atomorder_resmiles": 6.005281,
+          "smiles": "*CC(*)NCC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.073549,
+          "sa_kekulized_resmiles": 6.073549,
+          "sa_randomized_atomorder_resmiles": 6.073549,
+          "smiles": "*O[Si](C)(C)[Si](*)(C)O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.995795,
+          "sa_kekulized_resmiles": 5.995795,
+          "sa_randomized_atomorder_resmiles": 5.995795,
+          "smiles": "*CC(c1ccccc1)C1C(=O)N2CC1=CC=CC=C(C)C(*)C2=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.978508,
+          "sa_kekulized_resmiles": 5.978508,
+          "sa_randomized_atomorder_resmiles": 5.978508,
+          "smiles": "*/C=C/C(=O)N*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.045005,
+          "sa_kekulized_resmiles": 6.045005,
+          "sa_randomized_atomorder_resmiles": 6.045005,
+          "smiles": "*SN1C=CC(=*)CC1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.060862,
+          "sa_kekulized_resmiles": 6.060862,
+          "sa_randomized_atomorder_resmiles": 6.060862,
+          "smiles": "*c1ccc(Cc2ccc(N3C=C(C(F)(F)F)C4=CC=C(C3=O)C(C(F)(F)F)=CC3=CC=C(O4)C(=O)c4cc(Oc5ccc6c(c5)C(=O)N(*)C6=O)ccc4S3)cc2)cc1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.049418,
+          "sa_kekulized_resmiles": 6.049418,
+          "sa_randomized_atomorder_resmiles": 6.049418,
+          "smiles": "*C(F)(F)C(*)(F)C([2H])(F)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.903063,
+          "sa_kekulized_resmiles": 5.903063,
+          "sa_randomized_atomorder_resmiles": 5.903063,
+          "smiles": "*N=P(*)(OC1=C(F)C(Cl)=C(F)C1(F)F)Oc1c(F)c(F)c([2H])c([2H])c1Cl"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.001564,
+          "sa_kekulized_resmiles": 6.001564,
+          "sa_randomized_atomorder_resmiles": 6.001564,
+          "smiles": "*CC(*)C(=O)OCCOC([2H])(Br)C(O)C(OC(C)=O)N(C(Cl)OC(F)(F)OC(F)(F)C(F)(F)C(F)(F)F)C(C)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.960145,
+          "sa_kekulized_resmiles": 5.960145,
+          "sa_randomized_atomorder_resmiles": 5.960145,
+          "smiles": "*/C=C/C1CCC(C)(C(C)(C)C)CCC(C)C(*)C1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.965463,
+          "sa_kekulized_resmiles": 5.965463,
+          "sa_randomized_atomorder_resmiles": 5.965463,
+          "smiles": "*CC(*)(Cl)P(=O)(O)O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.958972,
+          "sa_kekulized_resmiles": 5.958972,
+          "sa_randomized_atomorder_resmiles": 5.958972,
+          "smiles": "*CC(*)C(=O)OC(C[Zn])C1CC1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.955119,
+          "sa_kekulized_resmiles": 5.955119,
+          "sa_randomized_atomorder_resmiles": 5.955119,
+          "smiles": "*CC1CCSC(=O)C1*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.051765,
+          "sa_kekulized_resmiles": 6.051765,
+          "sa_randomized_atomorder_resmiles": 6.051765,
+          "smiles": "*C(=S)C/C=C/C(*)C=C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.983623,
+          "sa_kekulized_resmiles": 5.983623,
+          "sa_randomized_atomorder_resmiles": 5.983623,
+          "smiles": "*CCCC1COC(*)C1O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.081165,
+          "sa_kekulized_resmiles": 6.081165,
+          "sa_randomized_atomorder_resmiles": 6.081165,
+          "smiles": "*CCCC(*)OC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.072964,
+          "sa_kekulized_resmiles": 6.072964,
+          "sa_randomized_atomorder_resmiles": 6.072964,
+          "smiles": "*CC(CO*)C(C)O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.09628,
+          "sa_kekulized_resmiles": 6.09628,
+          "sa_randomized_atomorder_resmiles": 6.09628,
+          "smiles": "*NC[Ge](C)(C)CCC(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.026678,
+          "sa_kekulized_resmiles": 6.026678,
+          "sa_randomized_atomorder_resmiles": 6.026678,
+          "smiles": "*N(CC1COC(F)(C(F)(F)F)C1(F)F)CC(F)(F)C(F)(F)C(F)(F)C(F)(F)C1(F)C(F)(F)C(F)(F)C(F)(F)C1(F)C(*)(F)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.95556,
+          "sa_kekulized_resmiles": 5.95556,
+          "sa_randomized_atomorder_resmiles": 5.95556,
+          "smiles": "*CC(C)(C=C/N=C(\\*)C)CO"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.06109,
+          "sa_kekulized_resmiles": 6.06109,
+          "sa_randomized_atomorder_resmiles": 6.06109,
+          "smiles": "*C1=Cc2sc(*)cc2S(=O)(=O)O[N+]2=CC=CC2=C1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.017665,
+          "sa_kekulized_resmiles": 6.017665,
+          "sa_randomized_atomorder_resmiles": 6.017665,
+          "smiles": "*C(=O)Sc1ccc(C2=CC=C3NC(=O)c4ccc5ccc(OC6=CC=C(Oc7ccc(Oc8ccc(N9C(=O)c%10ccc(*)cc%10C9=O)cc8)cc7)C6=O)ccc(n(c(=O)c5c4)C=C2)C3=O)cc1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.992011,
+          "sa_kekulized_resmiles": 5.992011,
+          "sa_randomized_atomorder_resmiles": 5.992011,
+          "smiles": "*C(=O)Nc1cccc(NC(=O)c2ccc3c(c2)C(=O)N2C=C2C=CC=C2C(=O)C(=CC=CC(N4C(=O)c5ccc(*)cc5C4=O)=C3)P2(=O)c2ccccc2)c1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.95314,
+          "sa_kekulized_resmiles": 5.95314,
+          "sa_randomized_atomorder_resmiles": 5.95314,
+          "smiles": "*C/C=C(\\C)C(C)N*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.085787,
+          "sa_kekulized_resmiles": 6.085787,
+          "sa_randomized_atomorder_resmiles": 6.085787,
+          "smiles": "*O[Si](*)(C)CCC#C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.970058,
+          "sa_kekulized_resmiles": 5.970058,
+          "sa_randomized_atomorder_resmiles": 5.970058,
+          "smiles": "*CC(*)C(=O)OCC([2H])(Cl)Cl"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.010219,
+          "sa_kekulized_resmiles": 6.010219,
+          "sa_randomized_atomorder_resmiles": 6.010219,
+          "smiles": "*CC(*)c1nc([2H])c(F)c(F)n1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.94132,
+          "sa_kekulized_resmiles": 5.94132,
+          "sa_randomized_atomorder_resmiles": 5.94132,
+          "smiles": "*/C=C(\\C)C[N+](*)(C)CC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.986974,
+          "sa_kekulized_resmiles": 5.986974,
+          "sa_randomized_atomorder_resmiles": 5.986974,
+          "smiles": "*SCC[N+](*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.924902,
+          "sa_kekulized_resmiles": 5.924902,
+          "sa_randomized_atomorder_resmiles": 5.924902,
+          "smiles": "*CC[PH](C)(C)CCCC(=O)N*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.971109,
+          "sa_kekulized_resmiles": 5.971109,
+          "sa_randomized_atomorder_resmiles": 5.971109,
+          "smiles": "*CCc1nc(*)nc(C2=CC=C[N+]=[N+]2)n1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.920582,
+          "sa_kekulized_resmiles": 5.920582,
+          "sa_randomized_atomorder_resmiles": 5.920582,
+          "smiles": "*CC(C)(C)C1C=C(C)C1*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.969693,
+          "sa_kekulized_resmiles": 5.969693,
+          "sa_randomized_atomorder_resmiles": 5.969693,
+          "smiles": "*OC(C#CCC(*)=O)C(C)O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.933276,
+          "sa_kekulized_resmiles": 5.933276,
+          "sa_randomized_atomorder_resmiles": 5.933276,
+          "smiles": "*CC(*)c1ccc(SC2=CC=CC3=CC=CC=C2[Pb]3)cc1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.905572,
+          "sa_kekulized_resmiles": 5.905572,
+          "sa_randomized_atomorder_resmiles": 5.905572,
+          "smiles": "*CC(C#N)C(*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.984105,
+          "sa_kekulized_resmiles": 5.984105,
+          "sa_randomized_atomorder_resmiles": 5.984105,
+          "smiles": "*CC(*)C[N+](C)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.004602,
+          "sa_kekulized_resmiles": 6.004602,
+          "sa_randomized_atomorder_resmiles": 6.004602,
+          "smiles": "*OC(=O)C1COC2C(*)COC12"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.960741,
+          "sa_kekulized_resmiles": 5.960741,
+          "sa_randomized_atomorder_resmiles": 5.960741,
+          "smiles": "*CC(CO*)=NO"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.994475,
+          "sa_kekulized_resmiles": 5.994475,
+          "sa_randomized_atomorder_resmiles": 5.994475,
+          "smiles": "*CC(F)(F)C1(F)C(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(*)(F)C1(F)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.935156,
+          "sa_kekulized_resmiles": 5.935156,
+          "sa_randomized_atomorder_resmiles": 5.935156,
+          "smiles": "*OCC(CC(C)(O)OC)C(C)O*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.99935,
+          "sa_kekulized_resmiles": 5.99935,
+          "sa_randomized_atomorder_resmiles": 5.99935,
+          "smiles": "*C/C=C/C=C(CC)C(Cl)C(*)Cl"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.025008,
+          "sa_kekulized_resmiles": 6.025008,
+          "sa_randomized_atomorder_resmiles": 6.025008,
+          "smiles": "*CCCC(C)SS*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.910046,
+          "sa_kekulized_resmiles": 5.910046,
+          "sa_randomized_atomorder_resmiles": 5.910046,
+          "smiles": "*C(=O)Nc1ccc(OC2=CC=C3NC(=O)c4ccc5cc(OC)c(-c6cc(C)c(N7C(=O)c8ccc(*)cc8C7=O)cc6C(F)(F)F)cc(C)c(n(c(=O)c5c4)C=C2)C3=O)cc1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.044574,
+          "sa_kekulized_resmiles": 6.044574,
+          "sa_randomized_atomorder_resmiles": 6.044574,
+          "smiles": "*CCCCCCCCN1CC(=C2C=CC(S(=O)(=O)c3ccc(NC(=O)C(CC(C)C)n4c(=O)c5cc6c(=O)n(*)c(=O)c6cc5c4=O)cc3)=CC=C3C=C(C2)C3=O)C1=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.098291,
+          "sa_kekulized_resmiles": 6.098291,
+          "sa_randomized_atomorder_resmiles": 6.098291,
+          "smiles": "*CC(*)(C)CC#N"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.922574,
+          "sa_kekulized_resmiles": 5.922574,
+          "sa_randomized_atomorder_resmiles": 5.922574,
+          "smiles": "*CCN1C(=O)C2C3C=CC(C4C(=O)N(*)C(=O)C34)C2C1=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.03324,
+          "sa_kekulized_resmiles": 6.03324,
+          "sa_randomized_atomorder_resmiles": 6.03324,
+          "smiles": "*CC(*)(CC(=O)OCC(CC)CCCC)C(=O)OC12CC3CC(C)(CC(C)(C3)C1)C2"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.906145,
+          "sa_kekulized_resmiles": 5.906145,
+          "sa_randomized_atomorder_resmiles": 5.906145,
+          "smiles": "*CC(CBr)(CO*)CSC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.039138,
+          "sa_kekulized_resmiles": 6.039138,
+          "sa_randomized_atomorder_resmiles": 6.039138,
+          "smiles": "*O[Si](C)(CC[Si](C)(C)C#CN(C)C)C(=O)C1CCC(*)CO1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.903987,
+          "sa_kekulized_resmiles": 5.903987,
+          "sa_randomized_atomorder_resmiles": 5.903987,
+          "smiles": "*N=P(*)(CC)CCC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.046572,
+          "sa_kekulized_resmiles": 6.046572,
+          "sa_randomized_atomorder_resmiles": 6.046572,
+          "smiles": "*CC(C(*)C)P(=O)(O)O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.900076,
+          "sa_kekulized_resmiles": 5.900076,
+          "sa_randomized_atomorder_resmiles": 5.900076,
+          "smiles": "*OC1OC(*)C2CCCC12C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.029766,
+          "sa_kekulized_resmiles": 6.029766,
+          "sa_randomized_atomorder_resmiles": 6.029766,
+          "smiles": "*CC(F)(Cl)C(=O)O*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.927272,
+          "sa_kekulized_resmiles": 5.927272,
+          "sa_randomized_atomorder_resmiles": 5.927272,
+          "smiles": "*CC(CC)(CCl)O*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.967194,
+          "sa_kekulized_resmiles": 5.967194,
+          "sa_randomized_atomorder_resmiles": 5.967194,
+          "smiles": "*CC1CCC(*)(C)C1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.07616,
+          "sa_kekulized_resmiles": 6.07616,
+          "sa_randomized_atomorder_resmiles": 6.07616,
+          "smiles": "*CC(*)C(C=C)CC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.000163,
+          "sa_kekulized_resmiles": 6.000163,
+          "sa_randomized_atomorder_resmiles": 6.000163,
+          "smiles": "*/C=C/C[Si](*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.040234,
+          "sa_kekulized_resmiles": 6.040234,
+          "sa_randomized_atomorder_resmiles": 6.040234,
+          "smiles": "*SC(C)S(*)(=O)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.049908,
+          "sa_kekulized_resmiles": 6.049908,
+          "sa_randomized_atomorder_resmiles": 6.049908,
+          "smiles": "*/C(Cl)=C(/*)C#N"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.978934,
+          "sa_kekulized_resmiles": 5.978934,
+          "sa_randomized_atomorder_resmiles": 5.978934,
+          "smiles": "*OC(C#CC)CC(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.924596,
+          "sa_kekulized_resmiles": 5.924596,
+          "sa_randomized_atomorder_resmiles": 5.924596,
+          "smiles": "*SC(=O)OC1COC(*)CO1"
+        },
+        {
+          "divergent_across_representation": true,
+          "sa_canonical": 5.969627,
+          "sa_kekulized_resmiles": 5.969627,
+          "sa_randomized_atomorder_resmiles": 6.049924,
+          "smiles": "*c1ccc2c(c1)SC1=CC3=Nn4c3ccc(-c3nc5cc(C(*)(C(F)(F)F)C(F)(F)F)ccc5o3)ccc3ccc(cc3c4=O)C(=C1)C2=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.922402,
+          "sa_kekulized_resmiles": 5.922402,
+          "sa_randomized_atomorder_resmiles": 5.922402,
+          "smiles": "*c1ccc(C(C)(C)c2ccc(N3C=CC4=CC=C(C=CC5=CC=C(O4)C(=O)c4cc(Oc6ccc7c(c6)C(=O)N(*)C7=O)ccc4O5)C3=O)cc2)cc1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.930226,
+          "sa_kekulized_resmiles": 5.930226,
+          "sa_randomized_atomorder_resmiles": 5.930226,
+          "smiles": "*OC1COC(Cl)C(*)OC1CO"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.927547,
+          "sa_kekulized_resmiles": 5.927547,
+          "sa_randomized_atomorder_resmiles": 5.927547,
+          "smiles": "*CC(C)(C)SO*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.046331,
+          "sa_kekulized_resmiles": 6.046331,
+          "sa_randomized_atomorder_resmiles": 6.046331,
+          "smiles": "*C1C(*)C2OCCOC12"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.019811,
+          "sa_kekulized_resmiles": 6.019811,
+          "sa_randomized_atomorder_resmiles": 6.019811,
+          "smiles": "*CC(=O)C(*)CN"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.912607,
+          "sa_kekulized_resmiles": 5.912607,
+          "sa_randomized_atomorder_resmiles": 5.912607,
+          "smiles": "*NC(C=C)CC(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.914197,
+          "sa_kekulized_resmiles": 5.914197,
+          "sa_randomized_atomorder_resmiles": 5.914197,
+          "smiles": "*NC(C)C=CC(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.067654,
+          "sa_kekulized_resmiles": 6.067654,
+          "sa_randomized_atomorder_resmiles": 6.067654,
+          "smiles": "*CCC[N+](*)(C)CC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.907,
+          "sa_kekulized_resmiles": 5.907,
+          "sa_randomized_atomorder_resmiles": 5.907,
+          "smiles": "*Oc1ccc(C(C)(C)C2=CC=C(c3ccccc3)Oc3ccc4ccc(c(=O)c(cc3)C=C2)C=CC4c2ccc(C(=O)c3ccc(*)cc3)cc2)cc1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.080709,
+          "sa_kekulized_resmiles": 6.080709,
+          "sa_randomized_atomorder_resmiles": 6.080709,
+          "smiles": "*OC(=S)C=CC(*)CC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.054634,
+          "sa_kekulized_resmiles": 6.054634,
+          "sa_randomized_atomorder_resmiles": 6.054634,
+          "smiles": "*OC(F)(F)C(*)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.001927,
+          "sa_kekulized_resmiles": 6.001927,
+          "sa_randomized_atomorder_resmiles": 6.001927,
+          "smiles": "*C1C(*)C(O)C(O)C1O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.062304,
+          "sa_kekulized_resmiles": 6.062304,
+          "sa_randomized_atomorder_resmiles": 6.062304,
+          "smiles": "*CC(CC)(CI)CS*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.068244,
+          "sa_kekulized_resmiles": 6.068244,
+          "sa_randomized_atomorder_resmiles": 6.068244,
+          "smiles": "*OC1=CC=C(C2CCC(C)OC3(C)COCCCCCOC(=O)CC3CCC2C(=O)OCCCC)CC(c2ccc(*)cc2)N=C1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.082811,
+          "sa_kekulized_resmiles": 6.082811,
+          "sa_randomized_atomorder_resmiles": 6.082811,
+          "smiles": "*CC(C=O)C(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.053509,
+          "sa_kekulized_resmiles": 6.053509,
+          "sa_randomized_atomorder_resmiles": 6.053509,
+          "smiles": "*CNC(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.933104,
+          "sa_kekulized_resmiles": 5.933104,
+          "sa_randomized_atomorder_resmiles": 5.933104,
+          "smiles": "*CC1CCCCCCCC[SH](CC)COC(=O)C(CC(NC(=O)COC(=O)CCCCCC)C(=O)CC(*)C(=O)OCCCC)C1CC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.062135,
+          "sa_kekulized_resmiles": 6.062135,
+          "sa_randomized_atomorder_resmiles": 6.062135,
+          "smiles": "*CC(=O)OC1CCC1OC12CC(CC1C(=O)O*)C2"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.974746,
+          "sa_kekulized_resmiles": 5.974746,
+          "sa_randomized_atomorder_resmiles": 5.974746,
+          "smiles": "*/C=C/C(C)(C)C(*)O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.04242,
+          "sa_kekulized_resmiles": 6.04242,
+          "sa_randomized_atomorder_resmiles": 6.04242,
+          "smiles": "*CC(Br)C(*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.998864,
+          "sa_kekulized_resmiles": 5.998864,
+          "sa_randomized_atomorder_resmiles": 5.998864,
+          "smiles": "*C(=O)Nc1ccc(S(=O)(=O)N2NC(=O)C3=CC=C(Oc4ccc5cc-5c(=O)n(c5ccc(Oc6ccc7c(c6)C(=O)N(*)C7=O)cc5c4=O)C(C)=C3)C2=O)cc1S(=O)(=O)C(F)(F)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.002238,
+          "sa_kekulized_resmiles": 6.002238,
+          "sa_randomized_atomorder_resmiles": 6.002238,
+          "smiles": "*OC1CCCC2CCCCC(CC1)OCC2*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.012202,
+          "sa_kekulized_resmiles": 6.012202,
+          "sa_randomized_atomorder_resmiles": 6.012202,
+          "smiles": "*OP(=O)(CCl)O*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.057583,
+          "sa_kekulized_resmiles": 6.057583,
+          "sa_randomized_atomorder_resmiles": 6.057583,
+          "smiles": "*/C=C/C1B[N+](*)(CCCCC)C1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.997471,
+          "sa_kekulized_resmiles": 5.997471,
+          "sa_randomized_atomorder_resmiles": 5.997471,
+          "smiles": "*C([2H])SC(*)(F)C(=O)OC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.922779,
+          "sa_kekulized_resmiles": 5.922779,
+          "sa_randomized_atomorder_resmiles": 5.922779,
+          "smiles": "*OC(C)O[Si](*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.020872,
+          "sa_kekulized_resmiles": 6.020872,
+          "sa_randomized_atomorder_resmiles": 6.020872,
+          "smiles": "*CC(*)[SH](B)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.923134,
+          "sa_kekulized_resmiles": 5.923134,
+          "sa_randomized_atomorder_resmiles": 5.923134,
+          "smiles": "*CC(=O)SCC(*)C#N"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.928309,
+          "sa_kekulized_resmiles": 5.928309,
+          "sa_randomized_atomorder_resmiles": 5.928309,
+          "smiles": "*CC(Cl)(CCl)C(*)(F)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.946108,
+          "sa_kekulized_resmiles": 5.946108,
+          "sa_randomized_atomorder_resmiles": 5.946108,
+          "smiles": "*OC(*)C=C(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.030746,
+          "sa_kekulized_resmiles": 6.030746,
+          "sa_randomized_atomorder_resmiles": 6.030746,
+          "smiles": "*OC(=O)SCC1CCC(*)N1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.931472,
+          "sa_kekulized_resmiles": 5.931472,
+          "sa_randomized_atomorder_resmiles": 5.931472,
+          "smiles": "*CC[Si](C)(C)O*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.000596,
+          "sa_kekulized_resmiles": 6.000596,
+          "sa_randomized_atomorder_resmiles": 6.000596,
+          "smiles": "*CCC(C)(C[N+]C)CC(=O)N*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.035013,
+          "sa_kekulized_resmiles": 6.035013,
+          "sa_randomized_atomorder_resmiles": 6.035013,
+          "smiles": "*c1cnc(*)o1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.05019,
+          "sa_kekulized_resmiles": 6.05019,
+          "sa_randomized_atomorder_resmiles": 6.05019,
+          "smiles": "*OCP(=O)(O)OC1COC2C(*)COC12"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.956628,
+          "sa_kekulized_resmiles": 5.956628,
+          "sa_randomized_atomorder_resmiles": 5.956628,
+          "smiles": "*CC1CCC(C[N+](C)C)CC(C)(S*)CO1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.960961,
+          "sa_kekulized_resmiles": 5.960961,
+          "sa_randomized_atomorder_resmiles": 5.960961,
+          "smiles": "*C(C)C(C)[Si](*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.978394,
+          "sa_kekulized_resmiles": 5.978394,
+          "sa_randomized_atomorder_resmiles": 5.978394,
+          "smiles": "*CC(*)c1ccc([SH](F)(F)(F)F)cc1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.022417,
+          "sa_kekulized_resmiles": 6.022417,
+          "sa_randomized_atomorder_resmiles": 6.022417,
+          "smiles": "*CC(CF)(CBr)C1OC(=O)OC(C)CC(O)C1O[Si](O)(COCCOC)O*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.914478,
+          "sa_kekulized_resmiles": 5.914478,
+          "sa_randomized_atomorder_resmiles": 5.914478,
+          "smiles": "*CC(C)(C)CC(C)(C)[SH]1C(=O)OC(=O)C1*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.030414,
+          "sa_kekulized_resmiles": 6.030414,
+          "sa_randomized_atomorder_resmiles": 6.030414,
+          "smiles": "*N=P(*)(CC)NCC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.923483,
+          "sa_kekulized_resmiles": 5.923483,
+          "sa_randomized_atomorder_resmiles": 5.923483,
+          "smiles": "*O[Si](*)(C)[Si](C)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.008748,
+          "sa_kekulized_resmiles": 6.008748,
+          "sa_randomized_atomorder_resmiles": 6.008748,
+          "smiles": "*C#CC1CC(*)C2C(=O)OC(=O)C12"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.932522,
+          "sa_kekulized_resmiles": 5.932522,
+          "sa_randomized_atomorder_resmiles": 5.932522,
+          "smiles": "*CC(CBr)C(=O)O*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.003273,
+          "sa_kekulized_resmiles": 6.003273,
+          "sa_randomized_atomorder_resmiles": 6.003273,
+          "smiles": "*CSCCSS*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.059642,
+          "sa_kekulized_resmiles": 6.059642,
+          "sa_randomized_atomorder_resmiles": 6.059642,
+          "smiles": "*CC(O)C[N+](*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.976221,
+          "sa_kekulized_resmiles": 5.976221,
+          "sa_randomized_atomorder_resmiles": 5.976221,
+          "smiles": "*CC(*)C(=O)O[N+](C)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.922931,
+          "sa_kekulized_resmiles": 5.922931,
+          "sa_randomized_atomorder_resmiles": 5.922931,
+          "smiles": "*CCC[PH](C)(C*)CCCC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.05733,
+          "sa_kekulized_resmiles": 6.05733,
+          "sa_randomized_atomorder_resmiles": 6.05733,
+          "smiles": "*CC(CO)CO*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.009862,
+          "sa_kekulized_resmiles": 6.009862,
+          "sa_randomized_atomorder_resmiles": 6.009862,
+          "smiles": "*CC#C[Si](*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.911054,
+          "sa_kekulized_resmiles": 5.911054,
+          "sa_randomized_atomorder_resmiles": 5.911054,
+          "smiles": "*C(=O)c1ccc2c(c1)C(=O)N(c1ccc(/N=N/c3ccc(OCC)cc3)cc1)C1=CC=C(OC3=CC=C(C=C1)Oc1ccc(N4C(=O)c5ccc(*)cc54)cc1C3=O)C2=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.006177,
+          "sa_kekulized_resmiles": 6.006177,
+          "sa_randomized_atomorder_resmiles": 6.006177,
+          "smiles": "*CC(*)(C=N)CC(C)(CO)OC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.917946,
+          "sa_kekulized_resmiles": 5.917946,
+          "sa_randomized_atomorder_resmiles": 5.917946,
+          "smiles": "*OC(C)C(O)C(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.056415,
+          "sa_kekulized_resmiles": 6.056415,
+          "sa_randomized_atomorder_resmiles": 6.056415,
+          "smiles": "*N=[PH](N=P(*)(C)OC(C)C)S(=O)(=O)O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.932281,
+          "sa_kekulized_resmiles": 5.932281,
+          "sa_randomized_atomorder_resmiles": 5.932281,
+          "smiles": "*CC(C)(C)C#*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.960288,
+          "sa_kekulized_resmiles": 5.960288,
+          "sa_randomized_atomorder_resmiles": 5.960288,
+          "smiles": "*/C=C/C(C)CC(*)C(OCC(F)(F)F)S(=O)(=O)O[Na]"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.010724,
+          "sa_kekulized_resmiles": 6.010724,
+          "sa_randomized_atomorder_resmiles": 6.010724,
+          "smiles": "*CCC1CN(*)CC1C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.044149,
+          "sa_kekulized_resmiles": 6.044149,
+          "sa_randomized_atomorder_resmiles": 6.044149,
+          "smiles": "*CCC[Si](*)(B)CCC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.082873,
+          "sa_kekulized_resmiles": 6.082873,
+          "sa_randomized_atomorder_resmiles": 6.082873,
+          "smiles": "*/[SH]=N/c1c(Cl)c([2H])c(*)c(I)c1Cl"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.098904,
+          "sa_kekulized_resmiles": 6.098904,
+          "sa_randomized_atomorder_resmiles": 6.098904,
+          "smiles": "*CC(*)(F)C(=O)S(F)(F)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.967537,
+          "sa_kekulized_resmiles": 5.967537,
+          "sa_randomized_atomorder_resmiles": 5.967537,
+          "smiles": "*C#CC(C=C)CC(*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.969584,
+          "sa_kekulized_resmiles": 5.969584,
+          "sa_randomized_atomorder_resmiles": 5.969584,
+          "smiles": "*CC(*)(C#N)C#N"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.083189,
+          "sa_kekulized_resmiles": 6.083189,
+          "sa_randomized_atomorder_resmiles": 6.083189,
+          "smiles": "*OC1CC(*)OC1(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.010819,
+          "sa_kekulized_resmiles": 6.010819,
+          "sa_randomized_atomorder_resmiles": 6.010819,
+          "smiles": "*C/C=C/CC*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.046975,
+          "sa_kekulized_resmiles": 6.046975,
+          "sa_randomized_atomorder_resmiles": 6.046975,
+          "smiles": "*CC(*)S(=O)(=O)Cl"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.097053,
+          "sa_kekulized_resmiles": 6.097053,
+          "sa_randomized_atomorder_resmiles": 6.097053,
+          "smiles": "*C/C=C(/*)C#CC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.028003,
+          "sa_kekulized_resmiles": 6.028003,
+          "sa_randomized_atomorder_resmiles": 6.028003,
+          "smiles": "*OC1CCC(*)OC1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.097534,
+          "sa_kekulized_resmiles": 6.097534,
+          "sa_randomized_atomorder_resmiles": 6.097534,
+          "smiles": "*CC(OC(C)=O)C1(C)C(=O)OC(=O)C1C(*)C(=O)OC1CC[Si]1(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.998673,
+          "sa_kekulized_resmiles": 5.998673,
+          "sa_randomized_atomorder_resmiles": 5.998673,
+          "smiles": "*CC(*)(F)C(=O)OC([2H])(F)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.968742,
+          "sa_kekulized_resmiles": 5.968742,
+          "sa_randomized_atomorder_resmiles": 5.968742,
+          "smiles": "*C1C(*)C1(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.03998,
+          "sa_kekulized_resmiles": 6.03998,
+          "sa_randomized_atomorder_resmiles": 6.03998,
+          "smiles": "*CC(C)(CCl)CO*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.023936,
+          "sa_kekulized_resmiles": 6.023936,
+          "sa_randomized_atomorder_resmiles": 6.023936,
+          "smiles": "*CSSCC1CCC(C*)C([N+]C)CC(C)C1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.950117,
+          "sa_kekulized_resmiles": 5.950117,
+          "sa_randomized_atomorder_resmiles": 5.950117,
+          "smiles": "*CC1(C)C=C[N+](*)(C#N)C=C1"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.085245,
+          "sa_kekulized_resmiles": 6.085245,
+          "sa_randomized_atomorder_resmiles": 6.085245,
+          "smiles": "*/C=C/C(CCl)(CBr)C(*)=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.998733,
+          "sa_kekulized_resmiles": 5.998733,
+          "sa_randomized_atomorder_resmiles": 5.998733,
+          "smiles": "*CC/C=C(/*)C#N"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.984433,
+          "sa_kekulized_resmiles": 5.984433,
+          "sa_randomized_atomorder_resmiles": 5.984433,
+          "smiles": "*CC(O)C1CC1OC(*)(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.933063,
+          "sa_kekulized_resmiles": 5.933063,
+          "sa_randomized_atomorder_resmiles": 5.933063,
+          "smiles": "*CCC(F)(F)C(*)Cl"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.085119,
+          "sa_kekulized_resmiles": 6.085119,
+          "sa_randomized_atomorder_resmiles": 6.085119,
+          "smiles": "*/C(Cl)=C(/*)Cl"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.976601,
+          "sa_kekulized_resmiles": 5.976601,
+          "sa_randomized_atomorder_resmiles": 5.976601,
+          "smiles": "*O[Si](*)(C)CCC=O"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.96035,
+          "sa_kekulized_resmiles": 5.96035,
+          "sa_randomized_atomorder_resmiles": 5.96035,
+          "smiles": "*O[Si](C)=C(F)C(*)(F)F"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.090665,
+          "sa_kekulized_resmiles": 6.090665,
+          "sa_randomized_atomorder_resmiles": 6.090665,
+          "smiles": "*CC(C)(Cl)C(*)(Cl)Cl"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.039825,
+          "sa_kekulized_resmiles": 6.039825,
+          "sa_randomized_atomorder_resmiles": 6.039825,
+          "smiles": "*O[Si](*)(F)CCC"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.99335,
+          "sa_kekulized_resmiles": 5.99335,
+          "sa_randomized_atomorder_resmiles": 5.99335,
+          "smiles": "*CC(CCl)(CBr)CO*"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 6.028761,
+          "sa_kekulized_resmiles": 6.028761,
+          "sa_randomized_atomorder_resmiles": 6.028761,
+          "smiles": "*CC(O*)C(CC)S(C)(OC)SC(C)C"
+        },
+        {
+          "divergent_across_representation": false,
+          "sa_canonical": 5.927101,
+          "sa_kekulized_resmiles": 5.927101,
+          "sa_randomized_atomorder_resmiles": 5.927101,
+          "smiles": "*CC1CC(*)C1"
+        }
+      ]
+    }
+  },
+  "hash_and_count_lock": {
+    "pi1m_normalized_artifact_relpath": "reference/mvp20/quarantine/feedback_v2/objects/fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17.jsonl.gz",
+    "pi1m_normalized_artifact_sha256_expected": "fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17",
+    "pi1m_normalized_artifact_sha256_observed": "fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17",
+    "prefix_rows_processed": 20000,
+    "target_receipt_relpath": "evidence/audit/molgen-quality-feasibility-baseline-v1/molgen-quality-feasibility-baseline-receipt.v1.dsse.json"
+  },
+  "headline": "3/3 attack families executed. Family 1 (known-hard structures): 3/3 genuinely hard-to-synthesize strained-cage hydrocarbons score SA<6 (false feasible) -- cubane, prismane, dodecahedrane. Family 2 (degenerate validity): 9/9 non-molecule / non-covalent / multi-fragment SMILES pass the shipped validity gate as valid=True. Family 3 (SA 5.9-6.1 boundary): 160 PI1M reference structures fall in the boundary band; 4 already flip feasible/infeasible between shipped and recomputed SA, 160 more lie within the receipt's own documented max residual (0.66) of the SA=6.0 cut.",
+  "rdkit_version": "2026.03.2",
+  "rights_posture": "PI1M reference reused exactly as already consulted by the target receipt (CONTEXT_ONLY, non-scored, TRAINING_CORPUS consumer role); no new data acquired. Manifest untouched.",
+  "study_id": "MOLGEN_SA_VALIDITY_ADVERSARIAL_PROBE_R_S06_V1",
+  "target_claim": {
+    "claim_text": "The generator's validity and feasibility (SA<6) gate components withstand adversarial probing.",
+    "receipt_path": "amphora-molecule-generator/evidence/audit/molgen-quality-feasibility-baseline-v1/molgen-quality-feasibility-baseline-receipt.v1.dsse.json",
+    "target_fields_attacked": [
+      "hypothesis_evaluation.feasibility_preserved",
+      "deterministic_inscope_proposal_demo.all_proposals_feasible",
+      "results.inscope_validity (metric_validity gate)",
+      "sa_feasibility_known_answer (dismissed residual, boundary-band)"
+    ]
+  },
+  "theory_reference": {
+    "family1_citations": [
+      "Eaton & Cole 1964, J. Am. Chem. Soc. 86(15):3157-3158",
+      "Katz & Acton 1973, J. Am. Chem. Soc. 95(8):2738-2739",
+      "Paquette 1982, J. Am. Chem. Soc. 104(16):4503-4504"
+    ],
+    "feasibility_sa_score": "Ertl & Schuffenhauer 2009 J. Cheminform. 1:8",
+    "toolkit": "RDKit Contrib/SA_Score fpscores reference implementation (same as target)"
+  },
+  "verdict": "CLAIM_REFUTED"
+}

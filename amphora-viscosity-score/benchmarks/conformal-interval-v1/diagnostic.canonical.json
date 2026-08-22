@@ -1,0 +1,1279 @@
+{
+  "alphas": [
+    0.2,
+    0.1,
+    0.05
+  ],
+  "arrhenius": {
+    "n_solvents": 25,
+    "per_alpha": {
+      "0.05": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.00676564,
+          0.00799542
+        ],
+        "deploy_band_halfwidth_ln": 0.00799542,
+        "deploy_band_mult_factor": 1.008027,
+        "families_undercovering": [
+          "alcohol"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 0.75,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 1.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.96,
+        "nominal_coverage": 0.95
+      },
+      "0.10": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.00466025,
+          0.00799542
+        ],
+        "deploy_band_halfwidth_ln": 0.00760548,
+        "deploy_band_mult_factor": 1.007634,
+        "families_undercovering": [
+          "alcohol",
+          "ether"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 0.75,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 0.666667,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 1.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.92,
+        "nominal_coverage": 0.9
+      },
+      "0.20": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.00255205,
+          0.00676564
+        ],
+        "deploy_band_halfwidth_ln": 0.00466025,
+        "deploy_band_mult_factor": 1.004671,
+        "families_undercovering": [
+          "alcohol",
+          "cycloalkane",
+          "ester",
+          "ether"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 0.75,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 0.333333,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 1.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.8,
+        "nominal_coverage": 0.8
+      }
+    },
+    "per_solvent": [
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 1.087,
+        "ln_residual": -0.00466025,
+        "pred_30c_mpas": 1.0819461,
+        "score_abs_ln": 0.00466025,
+        "solvent_id": "1-4-dioxane"
+      },
+      {
+        "family": "ketone",
+        "held_out_30c_mpas": 0.293,
+        "ln_residual": -0.00088583,
+        "pred_30c_mpas": 0.29274057,
+        "score_abs_ln": 0.00088583,
+        "solvent_id": "acetone"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 0.325,
+        "ln_residual": 0.00082063,
+        "pred_30c_mpas": 0.32526681,
+        "score_abs_ln": 0.00082063,
+        "solvent_id": "acetonitrile"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.564,
+        "ln_residual": -0.00213732,
+        "pred_30c_mpas": 0.56279584,
+        "score_abs_ln": 0.00213732,
+        "solvent_id": "benzene"
+      },
+      {
+        "family": "halogenated",
+        "held_out_30c_mpas": 0.51,
+        "ln_residual": 0.00208697,
+        "pred_30c_mpas": 0.51106547,
+        "score_abs_ln": 0.00208697,
+        "solvent_id": "chloroform"
+      },
+      {
+        "family": "cycloalkane",
+        "held_out_30c_mpas": 0.821,
+        "ln_residual": -0.00676564,
+        "pred_30c_mpas": 0.81546416,
+        "score_abs_ln": 0.00676564,
+        "solvent_id": "cyclohexane"
+      },
+      {
+        "family": "halogenated",
+        "held_out_30c_mpas": 0.394,
+        "ln_residual": 0.00171682,
+        "pred_30c_mpas": 0.39467701,
+        "score_abs_ln": 0.00171682,
+        "solvent_id": "dichloromethane"
+      },
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 0.213,
+        "ln_residual": 0.00083008,
+        "pred_30c_mpas": 0.21317688,
+        "score_abs_ln": 0.00083008,
+        "solvent_id": "diethyl-ether"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 1.802,
+        "ln_residual": 0.00361586,
+        "pred_30c_mpas": 1.80852758,
+        "score_abs_ln": 0.00361586,
+        "solvent_id": "dimethyl-sulfoxide"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 0.749,
+        "ln_residual": 0.00129276,
+        "pred_30c_mpas": 0.7499689,
+        "score_abs_ln": 0.00129276,
+        "solvent_id": "dimethylformamide"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 0.983,
+        "ln_residual": -0.00178685,
+        "pred_30c_mpas": 0.98124509,
+        "score_abs_ln": 0.00178685,
+        "solvent_id": "ethanol"
+      },
+      {
+        "family": "ester",
+        "held_out_30c_mpas": 0.406,
+        "ln_residual": -0.00580371,
+        "pred_30c_mpas": 0.40365052,
+        "score_abs_ln": 0.00580371,
+        "solvent_id": "ethyl-acetate"
+      },
+      {
+        "family": "polyol",
+        "held_out_30c_mpas": 623.0,
+        "ln_residual": 0.00052091,
+        "pred_30c_mpas": 623.32460898,
+        "score_abs_ln": 0.00052091,
+        "solvent_id": "glycerol"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 1.774,
+        "ln_residual": -0.00799542,
+        "pred_30c_mpas": 1.75987268,
+        "score_abs_ln": 0.00799542,
+        "solvent_id": "isopropanol"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 0.51,
+        "ln_residual": -0.00145034,
+        "pred_30c_mpas": 0.50926086,
+        "score_abs_ln": 0.00145034,
+        "solvent_id": "methanol"
+      },
+      {
+        "family": "ketone",
+        "held_out_30c_mpas": 0.376,
+        "ln_residual": 0.00162713,
+        "pred_30c_mpas": 0.3766123,
+        "score_abs_ln": 0.00162713,
+        "solvent_id": "methyl-ethyl-ketone"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 2.253,
+        "ln_residual": -0.00117608,
+        "pred_30c_mpas": 2.25035186,
+        "score_abs_ln": 0.00117608,
+        "solvent_id": "n-butanol"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.365,
+        "ln_residual": -0.00327892,
+        "pred_30c_mpas": 0.36380516,
+        "score_abs_ln": 0.00327892,
+        "solvent_id": "n-heptane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.279,
+        "ln_residual": 0.00062637,
+        "pred_30c_mpas": 0.27917481,
+        "score_abs_ln": 0.00062637,
+        "solvent_id": "n-hexane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.478,
+        "ln_residual": 0.00110595,
+        "pred_30c_mpas": 0.47852893,
+        "score_abs_ln": 0.00110595,
+        "solvent_id": "n-octane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.213,
+        "ln_residual": 0.00083008,
+        "pred_30c_mpas": 0.21317688,
+        "score_abs_ln": 0.00083008,
+        "solvent_id": "n-pentane"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.57,
+        "ln_residual": -0.00255205,
+        "pred_30c_mpas": 0.56854719,
+        "score_abs_ln": 0.00255205,
+        "solvent_id": "p-xylene"
+      },
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 0.435,
+        "ln_residual": 0.00760548,
+        "pred_30c_mpas": 0.43832099,
+        "score_abs_ln": 0.00760548,
+        "solvent_id": "tetrahydrofuran"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.526,
+        "ln_residual": 0.00231099,
+        "pred_30c_mpas": 0.52721699,
+        "score_abs_ln": 0.00231099,
+        "solvent_id": "toluene"
+      },
+      {
+        "family": "water",
+        "held_out_30c_mpas": 0.7972,
+        "ln_residual": 0.00357546,
+        "pred_30c_mpas": 0.80005545,
+        "score_abs_ln": 0.00357546,
+        "solvent_id": "water"
+      }
+    ],
+    "score_stats_ln": {
+      "argmax_solvent": "isopropanol",
+      "max": 0.00799542,
+      "median": 0.00178685,
+      "min": 0.00052091
+    }
+  },
+  "arrhenius_vs_vft_band": {
+    "0.05": {
+      "arrhenius_band_factor": 1.008027,
+      "arrhenius_loo_cov": 0.96,
+      "tighter_model": "arrhenius",
+      "vft_band_factor": 1.011352,
+      "vft_loo_cov": 0.96
+    },
+    "0.10": {
+      "arrhenius_band_factor": 1.007634,
+      "arrhenius_loo_cov": 0.92,
+      "tighter_model": "arrhenius",
+      "vft_band_factor": 1.010657,
+      "vft_loo_cov": 0.92
+    },
+    "0.20": {
+      "arrhenius_band_factor": 1.004671,
+      "arrhenius_loo_cov": 0.8,
+      "tighter_model": "arrhenius",
+      "vft_band_factor": 1.005624,
+      "vft_loo_cov": 0.8
+    }
+  },
+  "bootstrap": {
+    "ci": "percentile 90%",
+    "resamples": 4000,
+    "seed": 20260728
+  },
+  "claim_locks": {
+    "authority": "AUDIT_ONLY",
+    "edits_master_manifest": false,
+    "edits_signed_kpi": false,
+    "promotes_module": false,
+    "scientific_success_required_for_phase0": false
+  },
+  "closes": [
+    "Delivers calibrated (distribution-free, finite-sample) prediction intervals for the incumbent Arrhenius viscosity-temperature extrapolation -- the signed KPI previously reported only point predictions and R^2.",
+    "Quantifies the deployment band as a multiplicative viscosity factor with a seeded bootstrap CI, and tests whether marginal coverage hides family-conditional (per-chemistry) under-coverage.",
+    "Confirms the calibrated band discriminates the fitted extrapolator from a temperature-blind control (fail-closed probe)."
+  ],
+  "closes_gap_from_prior_receipt": "vft-arrhenius-adequacy-v1 phase0_gap_ledger left interval UNCALIBRATED; this receipt calibrates it.",
+  "conformity_score": "abs(ln eta_pred - ln eta_true) at held-out 30 C (multiplicative-scale absolute residual)",
+  "does_not_close": [
+    "Coverage is over EXCHANGEABLE solvents within this fixed 25-solvent corpus; a genuinely new solvent from an unseen chemical class carries no finite-sample guarantee (Mondrian per-family n as low as 1).",
+    "Still a per-solvent temperature fit (needs >=3 measured viscosities per solvent); does NOT predict viscosity from structure a-priori -- the Orrick-Erbar / Sastri-Rao group-contribution gap remains open, blocked on a rights-clean group-contribution table.",
+    "Newtonian pure solvents only; formulation blends, pigment crowding, and Krebs-KU / sag rheology are Phase-1 wet-lab."
+  ],
+  "fail_closed": [
+    {
+      "assert": "aborts if benchmark result bytes differ from pinned SHA",
+      "observed_sha256": "6164d8d153533f71c372ef28792c1f8521de35ddaa0d60a3dce12c196dac314e",
+      "pass": true,
+      "pinned_sha256": "6164d8d153533f71c372ef28792c1f8521de35ddaa0d60a3dce12c196dac314e",
+      "probe": "result_sha_pin"
+    },
+    {
+      "assert": "a zero half-width band must NOT achieve nominal coverage",
+      "coverage_at_zero_halfwidth": 0.0,
+      "pass": true,
+      "probe": "zero_width_band_not_vacuous"
+    },
+    {
+      "arrhenius_band_factor_a0.10": 1.007634,
+      "assert": "fitted Arrhenius 90% band must be tighter than temperature-blind control",
+      "pass": true,
+      "probe": "temperature_blind_control_wider",
+      "tempblind_band_factor_a0.10": 1.148816
+    }
+  ],
+  "hold_out_scheme": "per solvent: train Arrhenius/VFT on 25/40/60 C, predict 30 C; conformal calibration is leave-one-SOLVENT-out over the 25 held-out-30C scores",
+  "interpretation_fields": {
+    "family_conditional_gap": true,
+    "marginal_calibration_ok": true
+  },
+  "n_solvents": 25,
+  "purpose": "Distribution-free calibrated prediction-interval audit of the signed Arrhenius viscosity-temperature KPI: wrap the 2-parameter Arrhenius extrapolator (25/40/60 C -> held-out 30 C) in a split/jackknife-LOO conformal predictor over the 25 rights-clean pure Newtonian solvents and quantify marginal coverage, deployment band width (with bootstrap CI), FAMILY-CONDITIONAL coverage, and discrimination vs a temperature-blind control -- turning the incumbent point prediction into a decision-grade interval, using only data already in the signed benchmark.",
+  "schema": "amphora.viscosity-score.conformal-interval-calibration-diagnostic.v1",
+  "source_result_path": "amphora-viscosity-score/evidence/phase0/benchmark/result.v1.json",
+  "source_result_sha256": "6164d8d153533f71c372ef28792c1f8521de35ddaa0d60a3dce12c196dac314e",
+  "temperature_blind_control": {
+    "n_solvents": 25,
+    "per_alpha": {
+      "0.05": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.12147498,
+          0.40492992
+        ],
+        "deploy_band_halfwidth_ln": 0.40492992,
+        "deploy_band_mult_factor": 1.499197,
+        "families_undercovering": [
+          "polyol"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 1.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.96,
+        "nominal_coverage": 0.95
+      },
+      "0.10": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.10224802,
+          0.40492992
+        ],
+        "deploy_band_halfwidth_ln": 0.13873205,
+        "deploy_band_mult_factor": 1.148816,
+        "families_undercovering": [
+          "alcohol",
+          "polyol"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 0.75,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 1.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.92,
+        "nominal_coverage": 0.9
+      },
+      "0.20": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.06851995,
+          0.12147498
+        ],
+        "deploy_band_halfwidth_ln": 0.10224802,
+        "deploy_band_mult_factor": 1.107658,
+        "families_undercovering": [
+          "alcohol",
+          "polar-aprotic",
+          "polyol",
+          "water"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 0.5,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 0.666667,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 0.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.8,
+        "nominal_coverage": 0.8
+      }
+    },
+    "per_solvent": [
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 1.087,
+        "ln_residual": 0.08800751,
+        "pred_30c_mpas": 1.187,
+        "score_abs_ln": 0.08800751,
+        "solvent_id": "1-4-dioxane"
+      },
+      {
+        "family": "ketone",
+        "held_out_30c_mpas": 0.293,
+        "ln_residual": 0.04341249,
+        "pred_30c_mpas": 0.306,
+        "score_abs_ln": 0.04341249,
+        "solvent_id": "acetone"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 0.325,
+        "ln_residual": 0.05390526,
+        "pred_30c_mpas": 0.343,
+        "score_abs_ln": 0.05390526,
+        "solvent_id": "acetonitrile"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.564,
+        "ln_residual": 0.06851995,
+        "pred_30c_mpas": 0.604,
+        "score_abs_ln": 0.06851995,
+        "solvent_id": "benzene"
+      },
+      {
+        "family": "halogenated",
+        "held_out_30c_mpas": 0.51,
+        "ln_residual": 0.06085528,
+        "pred_30c_mpas": 0.542,
+        "score_abs_ln": 0.06085528,
+        "solvent_id": "chloroform"
+      },
+      {
+        "family": "cycloalkane",
+        "held_out_30c_mpas": 0.821,
+        "ln_residual": 0.08964696,
+        "pred_30c_mpas": 0.898,
+        "score_abs_ln": 0.08964696,
+        "solvent_id": "cyclohexane"
+      },
+      {
+        "family": "halogenated",
+        "held_out_30c_mpas": 0.394,
+        "ln_residual": 0.04709668,
+        "pred_30c_mpas": 0.413,
+        "score_abs_ln": 0.04709668,
+        "solvent_id": "dichloromethane"
+      },
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 0.213,
+        "ln_residual": 0.05035389,
+        "pred_30c_mpas": 0.224,
+        "score_abs_ln": 0.05035389,
+        "solvent_id": "diethyl-ether"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 1.802,
+        "ln_residual": 0.10224802,
+        "pred_30c_mpas": 1.996,
+        "score_abs_ln": 0.10224802,
+        "solvent_id": "dimethyl-sulfoxide"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 0.749,
+        "ln_residual": 0.06836962,
+        "pred_30c_mpas": 0.802,
+        "score_abs_ln": 0.06836962,
+        "solvent_id": "dimethylformamide"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 0.983,
+        "ln_residual": 0.08853615,
+        "pred_30c_mpas": 1.074,
+        "score_abs_ln": 0.08853615,
+        "solvent_id": "ethanol"
+      },
+      {
+        "family": "ester",
+        "held_out_30c_mpas": 0.406,
+        "ln_residual": 0.05277004,
+        "pred_30c_mpas": 0.428,
+        "score_abs_ln": 0.05277004,
+        "solvent_id": "ethyl-acetate"
+      },
+      {
+        "family": "polyol",
+        "held_out_30c_mpas": 623.0,
+        "ln_residual": 0.40492992,
+        "pred_30c_mpas": 934.0,
+        "score_abs_ln": 0.40492992,
+        "solvent_id": "glycerol"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 1.774,
+        "ln_residual": 0.13873205,
+        "pred_30c_mpas": 2.038,
+        "score_abs_ln": 0.13873205,
+        "solvent_id": "isopropanol"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 0.51,
+        "ln_residual": 0.06453852,
+        "pred_30c_mpas": 0.544,
+        "score_abs_ln": 0.06453852,
+        "solvent_id": "methanol"
+      },
+      {
+        "family": "ketone",
+        "held_out_30c_mpas": 0.376,
+        "ln_residual": 0.05686286,
+        "pred_30c_mpas": 0.398,
+        "score_abs_ln": 0.05686286,
+        "solvent_id": "methyl-ethyl-ketone"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 2.253,
+        "ln_residual": 0.12147498,
+        "pred_30c_mpas": 2.544,
+        "score_abs_ln": 0.12147498,
+        "solvent_id": "n-butanol"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.365,
+        "ln_residual": 0.05594002,
+        "pred_30c_mpas": 0.386,
+        "score_abs_ln": 0.05594002,
+        "solvent_id": "n-heptane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.279,
+        "ln_residual": 0.05236799,
+        "pred_30c_mpas": 0.294,
+        "score_abs_ln": 0.05236799,
+        "solvent_id": "n-hexane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.478,
+        "ln_residual": 0.06087072,
+        "pred_30c_mpas": 0.508,
+        "score_abs_ln": 0.06087072,
+        "solvent_id": "n-octane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.213,
+        "ln_residual": 0.05035389,
+        "pred_30c_mpas": 0.224,
+        "score_abs_ln": 0.05035389,
+        "solvent_id": "n-pentane"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.57,
+        "ln_residual": 0.0595921,
+        "pred_30c_mpas": 0.605,
+        "score_abs_ln": 0.0595921,
+        "solvent_id": "p-xylene"
+      },
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 0.435,
+        "ln_residual": 0.06238102,
+        "pred_30c_mpas": 0.463,
+        "score_abs_ln": 0.06238102,
+        "solvent_id": "tetrahydrofuran"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.526,
+        "ln_residual": 0.06263557,
+        "pred_30c_mpas": 0.56,
+        "score_abs_ln": 0.06263557,
+        "solvent_id": "toluene"
+      },
+      {
+        "family": "water",
+        "held_out_30c_mpas": 0.7972,
+        "ln_residual": 0.11067751,
+        "pred_30c_mpas": 0.8905,
+        "score_abs_ln": 0.11067751,
+        "solvent_id": "water"
+      }
+    ],
+    "score_stats_ln": {
+      "argmax_solvent": "glycerol",
+      "max": 0.40492992,
+      "median": 0.06238102,
+      "min": 0.04341249
+    }
+  },
+  "verdict": "CALIBRATED_MARGINAL_ONLY_FAMILY_CONDITIONAL_GAP",
+  "vft": {
+    "n_solvents": 25,
+    "per_alpha": {
+      "0.05": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.00866712,
+          0.01128839
+        ],
+        "deploy_band_halfwidth_ln": 0.01128839,
+        "deploy_band_mult_factor": 1.011352,
+        "families_undercovering": [
+          "polyol"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 1.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.96,
+        "nominal_coverage": 0.95
+      },
+      "0.10": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.0056085,
+          0.01128839
+        ],
+        "deploy_band_halfwidth_ln": 0.01060025,
+        "deploy_band_mult_factor": 1.010657,
+        "families_undercovering": [
+          "cycloalkane",
+          "polyol"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 1.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 1.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.92,
+        "nominal_coverage": 0.9
+      },
+      "0.20": {
+        "coverage_meets_nominal": true,
+        "deploy_band_halfwidth_bootstrap90_ln": [
+          0.00283686,
+          0.00866712
+        ],
+        "deploy_band_halfwidth_ln": 0.0056085,
+        "deploy_band_mult_factor": 1.005624,
+        "families_undercovering": [
+          "alcohol",
+          "cycloalkane",
+          "ester",
+          "ether",
+          "polyol"
+        ],
+        "family_conditional_coverage": {
+          "alcohol": {
+            "coverage": 0.75,
+            "n": 4
+          },
+          "aromatic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "cycloalkane": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "ester": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "ether": {
+            "coverage": 0.666667,
+            "n": 3
+          },
+          "halogenated": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "ketone": {
+            "coverage": 1.0,
+            "n": 2
+          },
+          "n-alkane": {
+            "coverage": 1.0,
+            "n": 4
+          },
+          "polar-aprotic": {
+            "coverage": 1.0,
+            "n": 3
+          },
+          "polyol": {
+            "coverage": 0.0,
+            "n": 1
+          },
+          "water": {
+            "coverage": 1.0,
+            "n": 1
+          }
+        },
+        "loo_marginal_coverage": 0.8,
+        "nominal_coverage": 0.8
+      }
+    },
+    "per_solvent": [
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 1.087,
+        "ln_residual": -0.00530542,
+        "pred_30c_mpas": 1.08124827,
+        "score_abs_ln": 0.00530542,
+        "solvent_id": "1-4-dioxane"
+      },
+      {
+        "family": "ketone",
+        "held_out_30c_mpas": 0.293,
+        "ln_residual": -0.00088583,
+        "pred_30c_mpas": 0.29274057,
+        "score_abs_ln": 0.00088583,
+        "solvent_id": "acetone"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 0.325,
+        "ln_residual": 0.00068592,
+        "pred_30c_mpas": 0.325223,
+        "score_abs_ln": 0.00068592,
+        "solvent_id": "acetonitrile"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.564,
+        "ln_residual": -0.00297908,
+        "pred_30c_mpas": 0.5623223,
+        "score_abs_ln": 0.00297908,
+        "solvent_id": "benzene"
+      },
+      {
+        "family": "halogenated",
+        "held_out_30c_mpas": 0.51,
+        "ln_residual": 0.00136379,
+        "pred_30c_mpas": 0.51069601,
+        "score_abs_ln": 0.00136379,
+        "solvent_id": "chloroform"
+      },
+      {
+        "family": "cycloalkane",
+        "held_out_30c_mpas": 0.821,
+        "ln_residual": -0.01060025,
+        "pred_30c_mpas": 0.81234316,
+        "score_abs_ln": 0.01060025,
+        "solvent_id": "cyclohexane"
+      },
+      {
+        "family": "halogenated",
+        "held_out_30c_mpas": 0.394,
+        "ln_residual": 0.00171682,
+        "pred_30c_mpas": 0.39467701,
+        "score_abs_ln": 0.00171682,
+        "solvent_id": "dichloromethane"
+      },
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 0.213,
+        "ln_residual": 0.00052939,
+        "pred_30c_mpas": 0.21311279,
+        "score_abs_ln": 0.00052939,
+        "solvent_id": "diethyl-ether"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 1.802,
+        "ln_residual": 0.00283686,
+        "pred_30c_mpas": 1.80711928,
+        "score_abs_ln": 0.00283686,
+        "solvent_id": "dimethyl-sulfoxide"
+      },
+      {
+        "family": "polar-aprotic",
+        "held_out_30c_mpas": 0.749,
+        "ln_residual": 0.00129276,
+        "pred_30c_mpas": 0.7499689,
+        "score_abs_ln": 0.00129276,
+        "solvent_id": "dimethylformamide"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 0.983,
+        "ln_residual": -0.00178685,
+        "pred_30c_mpas": 0.98124509,
+        "score_abs_ln": 0.00178685,
+        "solvent_id": "ethanol"
+      },
+      {
+        "family": "ester",
+        "held_out_30c_mpas": 0.406,
+        "ln_residual": -0.00580371,
+        "pred_30c_mpas": 0.40365052,
+        "score_abs_ln": 0.00580371,
+        "solvent_id": "ethyl-acetate"
+      },
+      {
+        "family": "polyol",
+        "held_out_30c_mpas": 623.0,
+        "ln_residual": -0.01128839,
+        "pred_30c_mpas": 616.00687738,
+        "score_abs_ln": 0.01128839,
+        "solvent_id": "glycerol"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 1.774,
+        "ln_residual": -0.00866712,
+        "pred_30c_mpas": 1.75869096,
+        "score_abs_ln": 0.00866712,
+        "solvent_id": "isopropanol"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 0.51,
+        "ln_residual": -0.00145034,
+        "pred_30c_mpas": 0.50926086,
+        "score_abs_ln": 0.00145034,
+        "solvent_id": "methanol"
+      },
+      {
+        "family": "ketone",
+        "held_out_30c_mpas": 0.376,
+        "ln_residual": 0.00162713,
+        "pred_30c_mpas": 0.3766123,
+        "score_abs_ln": 0.00162713,
+        "solvent_id": "methyl-ethyl-ketone"
+      },
+      {
+        "family": "alcohol",
+        "held_out_30c_mpas": 2.253,
+        "ln_residual": -0.00276599,
+        "pred_30c_mpas": 2.24677684,
+        "score_abs_ln": 0.00276599,
+        "solvent_id": "n-butanol"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.365,
+        "ln_residual": -0.00327892,
+        "pred_30c_mpas": 0.36380516,
+        "score_abs_ln": 0.00327892,
+        "solvent_id": "n-heptane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.279,
+        "ln_residual": 1.751e-05,
+        "pred_30c_mpas": 0.27900489,
+        "score_abs_ln": 1.751e-05,
+        "solvent_id": "n-hexane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.478,
+        "ln_residual": 0.00110595,
+        "pred_30c_mpas": 0.47852893,
+        "score_abs_ln": 0.00110595,
+        "solvent_id": "n-octane"
+      },
+      {
+        "family": "n-alkane",
+        "held_out_30c_mpas": 0.213,
+        "ln_residual": 0.00052939,
+        "pred_30c_mpas": 0.21311279,
+        "score_abs_ln": 0.00052939,
+        "solvent_id": "n-pentane"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.57,
+        "ln_residual": -0.00255205,
+        "pred_30c_mpas": 0.56854719,
+        "score_abs_ln": 0.00255205,
+        "solvent_id": "p-xylene"
+      },
+      {
+        "family": "ether",
+        "held_out_30c_mpas": 0.435,
+        "ln_residual": 0.0056085,
+        "pred_30c_mpas": 0.43744655,
+        "score_abs_ln": 0.0056085,
+        "solvent_id": "tetrahydrofuran"
+      },
+      {
+        "family": "aromatic",
+        "held_out_30c_mpas": 0.526,
+        "ln_residual": 0.00231099,
+        "pred_30c_mpas": 0.52721699,
+        "score_abs_ln": 0.00231099,
+        "solvent_id": "toluene"
+      },
+      {
+        "family": "water",
+        "held_out_30c_mpas": 0.7972,
+        "ln_residual": 0.00043676,
+        "pred_30c_mpas": 0.79754826,
+        "score_abs_ln": 0.00043676,
+        "solvent_id": "water"
+      }
+    ],
+    "score_stats_ln": {
+      "argmax_solvent": "glycerol",
+      "max": 0.01128839,
+      "median": 0.00178685,
+      "min": 1.751e-05
+    }
+  }
+}

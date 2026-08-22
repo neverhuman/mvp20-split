@@ -1,0 +1,8 @@
+{
+  "item_id": "R-S06",
+  "status": "done",
+  "fire_id": "20260812T210001-3552166-9417eab46afd",
+  "verdict": "CLAIM_REFUTED",
+  "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-S06/done/r-s06-sa-validity-adversarial-probe-receipt.v1.dsse.json",
+  "summary": "All 3 attack families executed against molgen-quality-feasibility-baseline-v1: 3/3 known-hard cage structures (cubane/prismane/dodecahedrane) score SA<6; 9/9 degenerate SMILES pass validity; 4/160 PI1M boundary-band rows already flip feasible/infeasible, plus 1 representation-non-invariance flip found."
+}

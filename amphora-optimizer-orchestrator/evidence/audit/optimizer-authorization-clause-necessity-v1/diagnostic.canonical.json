@@ -1,0 +1,511 @@
+{
+  "acceptance_bar_floors": {
+    "all_met": true,
+    "floor_results": {
+      "attack_axes_covered_floor": true,
+      "necessity_rate_floor": true,
+      "unique_accepting_configuration_required": true
+    },
+    "published_floors": {
+      "attack_axes_covered_floor": 6,
+      "necessity_rate_floor": 1.0,
+      "unique_accepting_configuration_required": true
+    }
+  },
+  "attack_axes_covered": [
+    "DUPLICATE_SCORE_ENVELOPE",
+    "FAILED_OR_NO_AUTHORITY_SCORE",
+    "MISSING_OPTIMIZER_CLAIM_LOCK",
+    "OBJECTIVE_CONSTRAINT_INJECTION",
+    "SOLVER_RANKING_ESCALATION",
+    "UNKNOWN_OBJECTIVE_PATH_OPERATOR"
+  ],
+  "authority": "AUDIT_ONLY",
+  "baseline_accepts": true,
+  "baseline_output": {
+    "authority_upgrade": false,
+    "candidate_created_evidence": false,
+    "eligible_objective_count": 0,
+    "hard_constraints_passed": true,
+    "objective_values": {},
+    "ranking_performed": false,
+    "solver_invoked": false,
+    "status": "NO_ELIGIBLE_OBJECTIVES",
+    "usable_by_optimizer": false
+  },
+  "baseline_quarantine_invariant": true,
+  "closes": [
+    "Establishes guard-clause NECESSITY/IRREDUNDANCY for the optimizer-orchestrator deny-by-default authorization contract: all 37 atomic guards are individually load-bearing (necessity rate 1.0000); the well-formed baseline is the unique accepting configuration; the independent clause enumeration exercises all 6 documented attack axes. Reason-level structure beyond the accept/reject decision parity of oracle-parity-v1."
+  ],
+  "counts": {
+    "accepting_configurations": 1,
+    "atomic_guard_clauses": 37,
+    "attack_axes_covered": 6,
+    "distinct_deny_reason_classes": 10,
+    "necessary_clauses": 37
+  },
+  "distinct_deny_reason_classes": [
+    "candidate objective injection is forbidden",
+    "optimizer constraint declaration is unknown, duplicate, or malformed",
+    "optimizer constraint envelope is not SCORED",
+    "optimizer constraint module envelope is absent",
+    "optimizer constraint path is absent or unknown",
+    "optimizer envelope attempts authority, score, solver, or lock escalation",
+    "optimizer envelope module is unknown or duplicated",
+    "optimizer hard constraint failed",
+    "optimizer objective declaration is unknown, duplicate, or malformed",
+    "optimizer registry policy is altered or incomplete"
+  ],
+  "does_not_close": [
+    "Rust error-taxonomy / exact Err-string parity still requires a live differential harness that executes the Rust runtime and captures its reason strings (Phase-1).",
+    "Necessity is shown for the enumerated atomic guards under single-field mutation; it is not an exhaustive 2^N truth table over all guard combinations (interactions are covered only insofar as each guard is independently sufficient to reject).",
+    "No product qualification, batch release, procurement, FTO, regulatory, or wet-lab claim; authorization is screening-envelope mediation only.",
+    "No promotion, no manifest edit, no scientific_readiness flip (module stays NOT_APPLICABLE / infrastructure lane, solver_use_ceiling DISABLED)."
+  ],
+  "gates": {
+    "all_pass": true,
+    "g1_baseline_accepts": true,
+    "g2_baseline_quarantine_invariant": true,
+    "g3_all_clauses_necessary": true,
+    "g4_all_six_attack_axes_covered": true,
+    "g5_unique_accepting_configuration": true
+  },
+  "hypothesis": "Every atomic guard clause in authorize_optimizer_request is NECESSARY: exactly one configuration (the well-formed baseline) accepts, and each single-clause violation rejects. No redundant (droppable) guard exists; the six documented attack axes are all exercised by the independent clause enumeration.",
+  "method_lineage": [
+    "amphora-evidence-intake-validator predicate-completeness (truth-table clause necessity).",
+    "amphora-model-card-authority lattice-completeness (irredundant clause set).",
+    "Extends optimizer-authorization-oracle-parity-v1 along its named does_not_close axis (reason-level structure)."
+  ],
+  "module": "amphora-optimizer-orchestrator",
+  "necessity_rate": 1.0,
+  "non_circularity": "The oracle (optimizer_authorization_oracle.py) is the identical standalone CPython re-implementation used by oracle-parity-v1; its sha256 is pinned below and cross-checked against the sibling study, confirming the contract logic was NOT modified for this study. It does not import, FFI-call, or read the Rust runtime. Necessity is a structural property of the contract verified by constructed minimal cases, not by comparison to any label the oracle itself emits.",
+  "per_axis": {
+    "DUPLICATE_SCORE_ENVELOPE": {
+      "all_necessary": true,
+      "clause_count": 4,
+      "clause_ids": [
+        "C04_registered_duplicate",
+        "C13_envelope_duplicate",
+        "C22_objective_id_dup",
+        "C27_constraint_id_dup"
+      ]
+    },
+    "FAILED_OR_NO_AUTHORITY_SCORE": {
+      "all_necessary": true,
+      "clause_count": 6,
+      "clause_ids": [
+        "C12_envelope_unknown_module",
+        "C17_authority_tier_empty",
+        "C18_authority_tier_banned",
+        "C32_constraint_envelope_absent",
+        "C33_envelope_not_scored",
+        "C37_constraint_fails"
+      ]
+    },
+    "MISSING_OPTIMIZER_CLAIM_LOCK": {
+      "all_necessary": true,
+      "clause_count": 2,
+      "clause_ids": [
+        "C10_required_locks_trimmed",
+        "C20_claim_lock_missing"
+      ]
+    },
+    "OBJECTIVE_CONSTRAINT_INJECTION": {
+      "all_necessary": true,
+      "clause_count": 2,
+      "clause_ids": [
+        "C02_request_source",
+        "C11_candidate_injection"
+      ]
+    },
+    "SOLVER_RANKING_ESCALATION": {
+      "all_necessary": true,
+      "clause_count": 11,
+      "clause_ids": [
+        "C01_request_schema",
+        "C03_policy_schema",
+        "C05_registered_missing",
+        "C06_ranking_enabled",
+        "C07_solver_enabled",
+        "C08_authority_expansion",
+        "C09_decision_ceiling",
+        "C14_ranking_eligible",
+        "C15_usable_by_optimizer",
+        "C16_envelope_objective_values",
+        "C19_solver_ceiling_invalid"
+      ]
+    },
+    "UNKNOWN_OBJECTIVE_PATH_OPERATOR": {
+      "all_necessary": true,
+      "clause_count": 12,
+      "clause_ids": [
+        "C21_objective_id_empty",
+        "C23_objective_module_unknown",
+        "C24_objective_section",
+        "C25_objective_path_empty",
+        "C26_constraint_id_empty",
+        "C28_constraint_module_unknown",
+        "C29_constraint_section",
+        "C30_constraint_path_empty",
+        "C31_constraint_operator_invalid",
+        "C34_path_all_empty_parts",
+        "C35_path_first_absent",
+        "C36_path_nested_absent"
+      ]
+    }
+  },
+  "preconditions": {
+    "baseline_is_well_formed_accept": true,
+    "oracle_does_not_import_rust": true,
+    "single_field_mutation_per_clause": true
+  },
+  "purpose": "Prove the amphora-optimizer-orchestrator deny-by-default authorization contract is IRREDUNDANT: from one minimal well-formed accepting request/policy/envelope triple, ablating each atomic guard clause by a single-field violation flips the unique accepting configuration to REJECT. Establishes that no guard is removable without admitting an unauthorized row (reference-monitor complete mediation, made constructive), and that the independent clause-set partitions onto all six shipped module-specific attack axes. Strictly stronger than the accept/reject DECISION parity of oracle-parity-v1.",
+  "records": [
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C01_request_schema",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "request.schema not the pinned request schema",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "OBJECTIVE_CONSTRAINT_INJECTION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C02_request_source",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "request.request_source not in {POLICY,CANDIDATE}",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C03_policy_schema",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "policy.schema not the pinned policy schema",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "DUPLICATE_SCORE_ENVELOPE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C04_registered_duplicate",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "policy.registered_modules contains a duplicate (len != set len)",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C05_registered_missing",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "policy.registered_modules != the pinned 29-module set",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C06_ranking_enabled",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "policy.ranking_enabled flipped true",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C07_solver_enabled",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "policy.solver_enabled flipped true",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C08_authority_expansion",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "policy.authority_expansion_allowed flipped true",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C09_decision_ceiling",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "policy.decision_use_ceiling not AUDIT_ONLY",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "MISSING_OPTIMIZER_CLAIM_LOCK",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C10_required_locks_trimmed",
+      "deny_reason": "optimizer registry policy is altered or incomplete",
+      "description": "policy.required_claim_locks trimmed below the pinned 10 locks",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "OBJECTIVE_CONSTRAINT_INJECTION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C11_candidate_injection",
+      "deny_reason": "candidate objective injection is forbidden",
+      "description": "request_source=CANDIDATE carrying objectives",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "FAILED_OR_NO_AUTHORITY_SCORE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C12_envelope_unknown_module",
+      "deny_reason": "optimizer envelope module is unknown or duplicated",
+      "description": "envelope module_id not in the registered set",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "DUPLICATE_SCORE_ENVELOPE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C13_envelope_duplicate",
+      "deny_reason": "optimizer envelope module is unknown or duplicated",
+      "description": "two envelopes for the same module_id",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C14_ranking_eligible",
+      "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "description": "envelope.ranking_eligible flipped true",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C15_usable_by_optimizer",
+      "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "description": "envelope.usable_by_optimizer flipped true",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C16_envelope_objective_values",
+      "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "description": "envelope carries non-empty objective_values",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "FAILED_OR_NO_AUTHORITY_SCORE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C17_authority_tier_empty",
+      "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "description": "envelope.authority_tier blank",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "FAILED_OR_NO_AUTHORITY_SCORE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C18_authority_tier_banned",
+      "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "description": "envelope.authority_tier in the banned tier set",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "SOLVER_RANKING_ESCALATION",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C19_solver_ceiling_invalid",
+      "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "description": "envelope.solver_use_ceiling outside the allowed set",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "MISSING_OPTIMIZER_CLAIM_LOCK",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C20_claim_lock_missing",
+      "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "description": "envelope drops a required zero-authority claim lock",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C21_objective_id_empty",
+      "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+      "description": "objective_id blank",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "DUPLICATE_SCORE_ENVELOPE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C22_objective_id_dup",
+      "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+      "description": "two objectives sharing an objective_id",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C23_objective_module_unknown",
+      "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+      "description": "objective.module_id not registered",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C24_objective_section",
+      "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+      "description": "objective.section not objective_values",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C25_objective_path_empty",
+      "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+      "description": "objective.path blank",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C26_constraint_id_empty",
+      "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+      "description": "constraint_id blank",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "DUPLICATE_SCORE_ENVELOPE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C27_constraint_id_dup",
+      "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+      "description": "two constraints sharing a constraint_id",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C28_constraint_module_unknown",
+      "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+      "description": "constraint.module_id not registered",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C29_constraint_section",
+      "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+      "description": "constraint.section not gates",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C30_constraint_path_empty",
+      "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+      "description": "constraint.path blank",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C31_constraint_operator_invalid",
+      "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+      "description": "constraint.operator outside the allowed relational set",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "FAILED_OR_NO_AUTHORITY_SCORE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C32_constraint_envelope_absent",
+      "deny_reason": "optimizer constraint module envelope is absent",
+      "description": "constraint references a registered module with no supplied envelope",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "FAILED_OR_NO_AUTHORITY_SCORE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C33_envelope_not_scored",
+      "deny_reason": "optimizer constraint envelope is not SCORED",
+      "description": "referenced envelope.status not SCORED",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C34_path_all_empty_parts",
+      "deny_reason": "optimizer constraint path is absent or unknown",
+      "description": "constraint.path is non-blank but resolves to zero path parts ('.')",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C35_path_first_absent",
+      "deny_reason": "optimizer constraint path is absent or unknown",
+      "description": "constraint.path first segment absent from envelope.gates",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "UNKNOWN_OBJECTIVE_PATH_OPERATOR",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C36_path_nested_absent",
+      "deny_reason": "optimizer constraint path is absent or unknown",
+      "description": "constraint.path descends into a scalar gate value",
+      "necessary": true
+    },
+    {
+      "ablated_verdict": "REJECT",
+      "attack_axis": "FAILED_OR_NO_AUTHORITY_SCORE",
+      "baseline_verdict": "ACCEPT",
+      "clause_id": "C37_constraint_fails",
+      "deny_reason": "optimizer hard constraint failed",
+      "description": "hard constraint comparison does not pass",
+      "necessary": true
+    }
+  ],
+  "run_type": "INDEPENDENT_NON_RUNTIME_CLAUSE_NECESSITY_ABLATION",
+  "runtime_source_anchors": {
+    "evidence/phase0/benchmark/result.v1.json": "e1d95b6b338b10d5999d9d0af4e5b2e8f635eab72a888942e9a77439382eba17",
+    "sibling_oracle_parity_oracle_sha256": "a0da8ec147ed82bbdf0b58a56b157ba6a683cebe4cdddb2cc38f3d8f5d7d1774"
+  },
+  "schema": "amphora.optimizer-orchestrator.authorization-clause-necessity-diagnostic.v1",
+  "study_id": "optimizer-authorization-clause-necessity-v1",
+  "theory_reference": [
+    "J.P. Anderson, Computer Security Technology Planning Study, ESD-TR-73-51 (1972) -- reference monitor, complete mediation.",
+    "Saltzer & Schroeder, The Protection of Information in Computer Systems, Proc. IEEE 63(9):1278-1308 (1975) -- fail-safe defaults, least privilege, economy of mechanism.",
+    "NIST SP 800-53 Rev.5 (2020) AC-3 access enforcement, AC-6 least privilege.",
+    "NIST SP 800-207 (2020) Zero Trust Architecture -- deny by default."
+  ]
+}

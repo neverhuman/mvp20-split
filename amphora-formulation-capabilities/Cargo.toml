@@ -1,0 +1,19 @@
+[package]
+name = "amphora-formulation-capabilities"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+amphora-core = { path = "../amphora-core" }
+amphora-rdkit-ffi = { path = "../amphora-rdkit-ffi" }
+amphora-viscosity-score = { path = "../amphora-viscosity-score" }
+amphora-solvency-score = { path = "../amphora-solvency-score" }
+amphora-barrier-corrosion-score = { path = "../amphora-barrier-corrosion-score" }
+amphora-cure-potlife-gate = { path = "../amphora-cure-potlife-gate" }
+serde_json = "1"
+serde = { workspace = true, features = ["derive"] }
+thiserror.workspace = true
+
+[dev-dependencies]
+sha2.workspace = true

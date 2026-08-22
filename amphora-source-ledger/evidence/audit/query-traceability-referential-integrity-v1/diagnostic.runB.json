@@ -1,0 +1,405 @@
+{
+  "audit_date": "2026-07-31",
+  "authority": "AUDIT_ONLY",
+  "closes": "Establishes that the source ledger's key discipline is sound but its provenance graph is incomplete on all three completeness axes. Entity integrity (Codd 1970) HOLDS: 0 duplicate and 0 empty primary keys across 162 record ids, 17 query ids, and 19 target strings. Referential integrity (Date 1981) HOLDS: 0/129 query_id foreign-key references dangle and no record omits the required query_ids field. H0 REFUTED on completeness: (H0a) 34/162 records (21.0%) carry an empty query_ids list and are therefore query-orphans with no mechanical acquisition provenance (17 authority, 8 supplier, 5 patent, 4 literature); (H0b) 5/17 queries (Q-002, Q-003, Q-011, Q-012, Q-013) are referenced by zero records, so the work they represent is not load-bearing for any ledger entry; (H0c) the schema defines no key linking source_targets to queries or records, and the strongest syntactic rule (bidirectional normalized containment) resolves only 4/19 declared targets, so target coverage is emitter-asserted rather than machine-checkable. All 8 structural mutation probes (dangling ref, duplicate/blank keys, referenced-query deletion, required-field removal, orphan injection/stranding) were killed by the oracle.",
+  "counts": {
+    "g0_anchors": 4,
+    "g0_anchors_matched": 4,
+    "g1_empty_keys": 0,
+    "g1_query_id_duplicates": 0,
+    "g1_record_id_duplicates": 0,
+    "g1_target_duplicates": 0,
+    "g2_dangling_refs": 0,
+    "g2_records_missing_query_ids_field": 0,
+    "g2_total_foreign_key_refs": 129,
+    "g3_query_orphan_records": 34,
+    "g3_records": 162,
+    "g4_queries": 17,
+    "g4_record_orphan_queries": 5,
+    "g5_targets": 19,
+    "g5_targets_syntactically_matched": 4,
+    "g5_targets_unmatched": 15,
+    "g6_probes": 8,
+    "g6_probes_killed": 8
+  },
+  "derived_gates": {
+    "entity_integrity_holds": true,
+    "h0_refuted": true,
+    "h0a_record_query_traceability_holds": false,
+    "h0b_query_load_bearing_holds": false,
+    "h0c_target_linkage_determinable": false,
+    "query_ids_listed_as_required_field": true,
+    "referential_integrity_holds": true,
+    "target_key_defined_in_schema": false
+  },
+  "derived_metrics": {
+    "query_orphan_record_fraction": 0.209877,
+    "record_orphan_query_fraction": 0.294118,
+    "referential_integrity_violation_rate": 0.0,
+    "target_syntactic_resolvability_fraction": 0.210526
+  },
+  "does_not_close": "Does NOT establish that any orphan record's content is wrong or that its source is unreliable: 17/34 query-orphans are kind=authority anchors (e.g. SRC-QPL-24441, SRC-MIL-DTL-24441D) that were plausibly hand-entered rather than query-discovered; the finding is that the ledger cannot distinguish 'hand-entered by design' from 'provenance lost'. Does NOT establish that orphan queries were wasted effort, only that no record credits them. Does NOT evaluate URL liveness, license terms, or numeric content. Does NOT change the runtime's shipped verdicts, does NOT promote authority, does NOT flip scientific_readiness, and does NOT modify the portfolio receipts manifest (66 receipts / 11 modules).",
+  "evidence": {
+    "anchors": {
+      "ledger_sha256_matches_pin": true,
+      "n_queries_matches_pin": true,
+      "n_records_matches_pin": true,
+      "n_targets_matches_pin": true
+    },
+    "entity_integrity": {
+      "empty_query_ids": 0,
+      "empty_record_ids": 0,
+      "empty_targets": 0,
+      "query_id_duplicates": [],
+      "record_id_duplicates": [],
+      "target_duplicates": []
+    },
+    "orphan_query_register": [
+      {
+        "query_id": "Q-002",
+        "target": "VOC and solids method anchor"
+      },
+      {
+        "query_id": "Q-003",
+        "target": "application-data-sheet authority boundary"
+      },
+      {
+        "query_id": "Q-011",
+        "target": "autonomy roadmap boundary"
+      },
+      {
+        "query_id": "Q-012",
+        "target": "systematic corrosion/falsification evidence rebuild"
+      },
+      {
+        "query_id": "Q-013",
+        "target": "public patent CPC/IPC landscape and counsel-ready claim charts"
+      }
+    ],
+    "orphan_record_register": [
+      {
+        "kind": "authority",
+        "record_id": "SRC-ASTM-D2805"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-ASTM-D4541"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-ASTM-D5894"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-ASTM-D870"
+      },
+      {
+        "kind": "literature",
+        "record_id": "SRC-BO-ML-2025"
+      },
+      {
+        "kind": "supplier",
+        "record_id": "SRC-BYK-ADDITIVES"
+      },
+      {
+        "kind": "supplier",
+        "record_id": "SRC-CAMEO-NAPHTHA"
+      },
+      {
+        "kind": "supplier",
+        "record_id": "SRC-CAMEO-SILICA"
+      },
+      {
+        "kind": "literature",
+        "record_id": "SRC-CPVC-EIS"
+      },
+      {
+        "kind": "patent",
+        "record_id": "SRC-EP2931822"
+      },
+      {
+        "kind": "patent",
+        "record_id": "SRC-EP3328938"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-EPA-M24"
+      },
+      {
+        "kind": "supplier",
+        "record_id": "SRC-EPON828"
+      },
+      {
+        "kind": "supplier",
+        "record_id": "SRC-EVONIK-GUIDE"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-F160"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-F161"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-F718"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-ISO-16773"
+      },
+      {
+        "kind": "supplier",
+        "record_id": "SRC-LANXESS-BLACK-OXIDE"
+      },
+      {
+        "kind": "supplier",
+        "record_id": "SRC-LANXESS-YELLOW-OXIDE"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-MIL-DTL-24441D"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-NESHAP-SHIPYARD"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-NFPA-30"
+      },
+      {
+        "kind": "literature",
+        "record_id": "SRC-NIST-SDL"
+      },
+      {
+        "kind": "literature",
+        "record_id": "SRC-NPJ-2024"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-OSHA-1910-106"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-QPL-24441"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-SCAQMD-1106"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-SSPC-SP10"
+      },
+      {
+        "kind": "authority",
+        "record_id": "SRC-TSCA-INVENTORY"
+      },
+      {
+        "kind": "patent",
+        "record_id": "SRC-US5059640"
+      },
+      {
+        "kind": "patent",
+        "record_id": "SRC-WO2013159277"
+      },
+      {
+        "kind": "patent",
+        "record_id": "SRC-WO2016187380"
+      },
+      {
+        "kind": "supplier",
+        "record_id": "SRC-ZINC-PHOSPHATE-ZP10"
+      }
+    ],
+    "orphan_records_by_kind": {
+      "authority": 17,
+      "literature": 4,
+      "patent": 5,
+      "supplier": 8
+    },
+    "probe_register": [
+      {
+        "expectation": "one dangling foreign-key reference detected",
+        "killed": true,
+        "probe": "m1_dangling_query_ref"
+      },
+      {
+        "expectation": "record primary-key duplicate detected",
+        "killed": true,
+        "probe": "m2_duplicate_record_id"
+      },
+      {
+        "expectation": "query primary-key duplicate detected",
+        "killed": true,
+        "probe": "m3_duplicate_query_id"
+      },
+      {
+        "expectation": "deleting Q-016 exposes its 32 references as dangling",
+        "killed": true,
+        "probe": "m4_delete_referenced_query"
+      },
+      {
+        "expectation": "empty record primary key detected",
+        "killed": true,
+        "probe": "m5_blank_record_id"
+      },
+      {
+        "expectation": "required query_ids field removal detected",
+        "killed": true,
+        "probe": "m6_drop_query_ids_field"
+      },
+      {
+        "expectation": "injected never-referenced query counted as orphan",
+        "killed": true,
+        "probe": "m7_orphan_query_injection"
+      },
+      {
+        "expectation": "removing both Q-004 referrers strands Q-004 as orphan",
+        "killed": true,
+        "probe": "m8_strand_query_by_record_removal"
+      }
+    ],
+    "target_query_adjacency": [
+      {
+        "matched_query_ids": [
+          "Q-001"
+        ],
+        "target": "QPL/QPD authority"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "MIL-DTL-24441 and slash sheets"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "NAVSEA F-718"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "EPA Method 24"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "shipyard NESHAP"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "40 CFR 63 Subpart II shipyard NESHAP"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "OSHA/NFPA flammable-liquid controls"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "TSCA inventory"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "PFAS declaration/regulatory screens"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "TAA/domestic-origin procurement screens"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "ASTM/ISO test methods"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "ASTM/ISO/SSPC/NACE test methods"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "supplier TDS/SDS/RFQ declarations"
+      },
+      {
+        "matched_query_ids": [
+          "Q-015"
+        ],
+        "target": "commercial QPL reference controls"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "patent claim charts and CPC/IPC category screens"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "corrosion literature by evidence bucket"
+      },
+      {
+        "matched_query_ids": [
+          "Q-014"
+        ],
+        "target": "strict corrosion literature extraction"
+      },
+      {
+        "matched_query_ids": [],
+        "target": "self-driving-lab roadmap"
+      },
+      {
+        "matched_query_ids": [
+          "Q-017"
+        ],
+        "target": "public BOM/SDS/TDS/EHS sourceability"
+      }
+    ],
+    "unmatched_targets": [
+      "MIL-DTL-24441 and slash sheets",
+      "NAVSEA F-718",
+      "EPA Method 24",
+      "shipyard NESHAP",
+      "40 CFR 63 Subpart II shipyard NESHAP",
+      "OSHA/NFPA flammable-liquid controls",
+      "TSCA inventory",
+      "PFAS declaration/regulatory screens",
+      "TAA/domestic-origin procurement screens",
+      "ASTM/ISO test methods",
+      "ASTM/ISO/SSPC/NACE test methods",
+      "supplier TDS/SDS/RFQ declarations",
+      "patent claim charts and CPC/IPC category screens",
+      "corrosion literature by evidence bucket",
+      "self-driving-lab roadmap"
+    ]
+  },
+  "gates": {
+    "all_pass": true,
+    "g0_anchors_reproduced": true,
+    "g6_probes_behaved_as_specified": true,
+    "g_verdict_determinate": true
+  },
+  "hypothesis": "H0 (implied by the ledger's own schema, which lists query_ids among required_record_fields and publishes source_targets as the acquisition contract): (H0a) every record carries >=1 query_id; (H0b) every query in source_query_ledger is referenced by >=1 record; (H0c) every declared source_target is mechanically resolvable to >=1 query.",
+  "method_parameters": {
+    "normalization_rule": "lowercase; replace [^a-z0-9]+ with single space; strip",
+    "probe_count": 8,
+    "randomness": "none (pure set/count arithmetic)",
+    "target_linkage_rule": "bidirectional normalized substring containment between source_target and query.target free text (schema defines no key, so syntactic containment is the strongest mechanical linkage available)"
+  },
+  "module": "amphora-source-ledger",
+  "non_circularity": "The oracle re-parses the raw ledger JSON bytes directly and implements Codd/Date integrity checks from scratch in CPython; it calls no module code and reads no module-derived report. Registry-size anchors (162 records) reproduce the figure pinned in the previously signed dual-source-independence-common-cause-v1 receipt; the ledger byte hash is pinned in this oracle's source, which is itself hash-bound into the receipt.",
+  "phase1_exit_criterion_impact": "A Phase-1 provenance claim over this ledger requires three schema repairs: (1) a provenance_class field on each record ({query_derived, hand_entered_authority, ...}) so an empty query_ids list is either justified or a defect; (2) target ids plus a query.target_ids foreign key so target coverage becomes a checkable referential constraint instead of free text; (3) a disposition field on each query so never-referenced queries are either closed as unproductive or flagged as unharvested work.",
+  "preconditions": {
+    "ledger_path": "amphora-source-ledger/reference/mvp20/data/source_records.json",
+    "ledger_sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c",
+    "pinned_ledger_sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c"
+  },
+  "purpose": "Test whether the 162-record source ledger's provenance graph (record -> query -> declared source target) is complete and referentially sound, i.e. whether every ledger record can be mechanically traced back to the search query that produced it and every declared acquisition target is mechanically served.",
+  "run_type": "offline_relational_integrity_audit",
+  "schema": "amphora.source-ledger.query-traceability-referential-integrity-diagnostic.v1",
+  "study_id": "source-ledger-query-traceability-referential-integrity-v1",
+  "theory_reference": [
+    {
+      "citation": "E.F. Codd, 'A Relational Model of Data for Large Shared Data Banks', Communications of the ACM 13(6):377-387, 1970",
+      "doi": "10.1145/362384.362685",
+      "name": "Codd 1970 (entity integrity, relational model)"
+    },
+    {
+      "citation": "C.J. Date, 'Referential Integrity', Proceedings of the 7th International Conference on Very Large Data Bases (VLDB), pp. 2-12, 1981",
+      "name": "Date 1981 (referential integrity)"
+    }
+  ]
+}

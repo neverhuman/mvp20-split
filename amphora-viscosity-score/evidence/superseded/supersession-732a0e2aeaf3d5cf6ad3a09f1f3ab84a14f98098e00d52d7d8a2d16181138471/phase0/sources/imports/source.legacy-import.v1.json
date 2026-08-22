@@ -1,0 +1,17 @@
+{
+  "schema": "amphora.module-source-census.v1",
+  "module_id": "amphora-viscosity-score",
+  "sources": [
+    {
+      "source_id": "viscosity-source-landscape-v1",
+      "publisher": "Amphora",
+      "source_url": "local:amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+      "license": "MIXED_CONTEXT_ONLY",
+      "rights_status": "QUARANTINED_CONTEXT",
+      "eligible_for_derivatives": false,
+      "restrictions": ["No scientific training rows; owned promotion measurements are absent"],
+      "local_manifest": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+      "local_manifest_sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749"
+    }
+  ]
+}

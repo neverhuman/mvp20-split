@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "06ce86d9a8e69fd3761be8b236274df85570f15e2e86f2b314bfc45efc43de18",
+  "import_hashes": [],
+  "module_id": "amphora-run-provenance",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

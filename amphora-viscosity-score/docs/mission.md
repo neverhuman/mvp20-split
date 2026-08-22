@@ -1,0 +1,389 @@
+---
+{"audit_date": "2026-07-17", "authority_ceiling": "LIMITED_SANITY", "candidate_types": ["formulation"], "capability_profile": "capability-profile.json", "consumers": [], "dependencies": ["amphora-candidate-contract", "amphora-source-ledger"], "evidence_inventory": "../../config/module-evidence-inventory.json", "lane": "performance", "module_id": "amphora-viscosity-score", "operational_readiness": "SHADOW", "phase": "PRE_PHASE_0", "schema": "amphora.module-mission.v1", "scientific_readiness": "UNVALIDATED", "solver_use_ceiling": "DISABLED"}
+---
+
+# amphora-viscosity-score mission
+
+## Decision and falsifiable hypothesis
+
+This module supports the decision of whether rheology and sag should be measured for a formulation. Its falsifiable hypothesis is that a measured, temperature-aware model can predict KU and sag across formulation families.
+
+It does not establish product qualification, batch release, procurement approval, legal freedom to operate, regulatory compliance, supplier closure, or wet-lab performance. Phase 2, if later earned, means defensible R&D technical IP only.
+
+## Honest current state
+
+The live checked implementation is native Rust at `amphora-viscosity-score/src/lib.rs` with SHA-256 `55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
+
+Focused checked test evidence:
+
+- `amphora-viscosity-score/src/lib.rs` — SHA-256 `55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48`
+
+Operational state is `SHADOW`; scientific state is `UNVALIDATED`, so the current phase is **Pre-Phase 0**. Execution and passing unit tests do not establish human parity. No readiness percentage is asserted.
+
+### Checked datasets and artifacts
+
+- `dataset` `amphora-viscosity-score/reference/mvp20/data/corrosion_series.json` — SHA-256 `ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde`; rights `UNRESOLVED` (No checked-in license or ownership receipt is bound to this local file by the inventory.)
+- `dataset` `amphora-viscosity-score/reference/mvp20/data/cure_verification_set.json` — SHA-256 `884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2`; rights `UNRESOLVED` (No checked-in license or ownership receipt is bound to this local file by the inventory.)
+- `dataset` `amphora-viscosity-score/reference/mvp20/data/facts.json` — SHA-256 `0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb`; rights `UNRESOLVED` (No checked-in license or ownership receipt is bound to this local file by the inventory.)
+
+Rights are reported per file; local presence is not evidence of ownership or permission. Artifact presence and a matching hash do not establish dataset rights, scientific validity, or ownership. All listed artifact rights remain `UNRESOLVED` because no SHA-bound rights receipt was found.
+
+### Current benchmark result
+
+Phase-0 known-answer harness at
+`amphora-viscosity-score/tests/viscosity_phase0_kpi.rs` drives the
+deterministic `arrhenius_viscosity` primitive across a self-authored
+fixture at
+`amphora-viscosity-score/reference/phase0-viscosity-known-answer.v1.json`
+(SHA-256 `e4d8f92ac99a91bcbc1ac15f776eef716b55c900fd608e1423019e9b132f8428`;
+CC0-1.0, `eligible_for_derivatives: true`; 25 pure Newtonian solvents
+with published dynamic viscosity at 20/25/30/40/60°C from CRC Handbook
+100th ed., NIST Chemistry WebBook, and Yaws' Handbook of
+Thermodynamic and Physical Properties; per-solvent activation energies
+fitted offline via numpy linear regression on ln(η) vs. 1/T over
+{20, 40, 60}°C, with 30°C held out as an interpolation validation
+target) and emits a byte-stable canonical receipt at
+`evidence/phase0/benchmark/result.v1.json`
+(SHA-256 `6164d8d153533f71c372ef28792c1f8521de35ddaa0d60a3dce12c196dac314e`).
+The Phase-0 KPI receipt lives at
+`evidence/phase0/kpis/viscosity-arrhenius-kpi.v1.json`.
+
+Observed Phase-0 KPI outcomes (all deterministic, `cargo test --workspace --locked`):
+
+- `arrhenius_mape_within_training_range` observed **1.26%** (50 pairs = 25 solvents × 2 in-range temperatures) — **PASSED** (ceiling 5%)
+- `arrhenius_over_constant_baseline_lift` observed **+64.1 pp** (Arrhenius 1.26% MAPE vs. constant-viscosity-at-25°C baseline 65.4% MAPE) — **PASSED** (floor 20 pp)
+- `held_out_temperature_extrapolation_mape` observed **0.49%** at 30°C interpolation; worst case 1.92% — **PASSED** (ceiling 8%)
+- `per_solvent_minimum_prediction_quality_rate` observed **1.0** (25/25 solvents within ±10% at 30°C; 25/25 also within tighter ±5%) — **PASSED** (floor 0.85)
+- `applicability_domain_fail_closed_rate` observed **1.0** (10/10 red-team probes with NaN/Infinity/negative viscosity or E_a, T below absolute zero, T above 500°C ceiling correctly return `Err(ViscosityError::Range)`) — **PASSED** (floor 1.0)
+- `authority_lock_preservation_rate` observed **1.0** — **PASSED** (floor 1.0)
+- `r_squared_arrhenius_minimum` observed **0.9904** (worst-case ln(η) vs. 1/T fit quality across the 25 solvents; median > 0.9995) — reported observationally
+
+The Arrhenius temperature dependence reproduces published pure-solvent
+viscosities to well under 2% error across a 40-degree temperature span
+(20–60°C), a ~50× improvement over the naive constant-viscosity-at-25°C
+baseline. Phase-0 covers **pure Newtonian solvents only**; the module's
+built-in Grunberg-Nissan blend mixing, Krieger-Dougherty pigment
+crowding, and Herschel-Bulkley yield flow paths remain scientifically
+`UNVALIDATED` and require wet-lab formulation rheology for Phase-1.
+
+### Empirical benchmark result — Herschel-Bulkley CC-BY parameter-level KPI
+
+The `HERSCHEL_BULKLEY` yield-flow path (`src/lib.rs:1227`) has a
+parameter-level Phase-0 KPI at
+`evidence/phase0/kpis/herschel-bulkley-ccby-amorim2021-kpi.v1.json`,
+promoted (item V1-KPI-VISC) from the signed `AUDIT_ONLY` benchmark at
+`evidence/audit/herschel-bulkley-ccby-amorim2021-v1/`. The module's
+exact HB equation, evaluated at published fitted parameters (tau_0, K,
+n; R²>0.998) from Amorim, Oliveira, Mancini & Sirqueira (2021, *SN
+Applied Sciences* 3:236, doi:10.1007/s42452-021-04247-7, **CC BY
+4.0**) for a commercial DGEBA epoxy/polyamide anti-corrosion coating
+(control + 5 carbon-black/nanoclay formulations), reproduces the
+paper's own Fig.3 apparent-viscosity axis bounds, monotonic
+shear-thinning behavior, and stated formulation rankings — but only
+after repairing a documented locale decimal-separator ambiguity in the
+as-printed table (independently justified by the paper's own axis
+metadata). The naive literal-English reading of the same table fails
+the paper's own axis bounds by 13×–1500× for all 6 formulations; this
+control-arm failure is what confirms the attack was genuinely capable
+of falsifying the claim. **Scope is narrow**: single source, single
+commercial resin family, single temperature (25°C), and this is a
+parameter-level cross-check (module equation evaluated at the paper's
+own published parameters), not a raw (γ̇, η) point-level regression —
+the source paper does not tabulate raw flow-curve points. This KPI
+does not flip module phase or overall `scientific_readiness` (both
+remain `PRE_PHASE_0`/`UNVALIDATED` pending the human `PHASE0_EVALUATOR`
++ `PHASE0_INTERNAL_REVIEWER` ceremony). `KRIEGER_DOUGHERTY` pigment
+crowding remains fully unbenchmarked in-tree — **not** a plain
+open-literature data gap (that framing is superseded; see below).
+Campaign C9 found a genuine on-scope eta-vs-phi ladder with an
+explicit Krieger-Dougherty fit (Reynolds et al. 2024,
+doi:10.1002/adem.202301630) but it is CC BY-NC-ND, i.e. a rights wall
+(`evidence/audit/krieger-dougherty-rights-wall-reynolds2024-v1/`,
+`BLOCKED_RIGHTS`), still standing and unresolved pending human rights
+review. Campaign item W-VISC1 subsequently found a second, unambiguous
+CC BY 4.0, on-scope candidate (Finke, Sangros Gimenez, Kwade & Schilde
+2021, *Materials* 14(11):2752, doi:10.3390/ma14112752 — boehmite
+nanoparticles in Araldite LY 556 epoxy resin) and ran a full
+KRIEGER_DOUGHERTY benchmark against figure-digitized values from it
+(`evidence/phase0/repairs/W-VISC1/attempts/krieger-dougherty-ccby-reachability-probe-v1/`,
+`CLAIM_REFUTED` on the narrow "no rights-clean dataset is reachable"
+claim). That benchmark is honestly underpowered: every tested solids
+loading sits at phi ≈ 0.04–0.09, far below any physically plausible
+phi_max (0.5–0.74), so phi_max and intrinsic viscosity are not
+separably identifiable from it (R²≈0.80 at the module's own default
+Einstein intrinsic viscosity of 2.5; R²≈0.998 only at an intrinsic
+viscosity ~14× that value, with phi_max pegged at the search bound).
+It neither confirms nor refutes KRIEGER_DOUGHERTY's correctness near
+packing, and does not change `scientific_readiness`. Campaign item
+W-VISC2 (2026-08-14) landed this same benchmark as a signed `done`
+receipt (`evidence/phase0/repairs/W-VISC2/done/krieger-dougherty-benchmark-landed-v1/`,
+`CLAIM_SURVIVED` on "the viscosity model can be measured against a
+named published physical baseline") after re-verifying it fresh rather
+than trusting the W-VISC1 checkpoint: the exact script reproduced its
+diagnostic byte-for-byte across two additional independent replays, an
+unrelated pixel-scan re-digitization of Fig. 8 corroborated all 5 used
+points within a few percent, and a positive control (a planted 10×
+decimal-shift defect) was caught by both a monotonicity check and a
+collapse in R² (0.797→0.634 / 0.998→0.865), confirming the harness is
+sensitive to bad input rather than vacuous. The underpowered-near-
+phi_max limitation above is unchanged and unresolved.
+
+**Disclosure — live-runtime parity gap (2026-08-18).** Every KD fire above
+(C9, W-VISC1, W-VISC2) computed against a hand-written Python `kd_vec`
+re-derivation, described in those scripts' own docstrings as "replicated
+verbatim from src/lib.rs:1208-1224" — never against the actual compiled
+`krieger_dougherty` primitive. A signed audit,
+`evidence/audit/kd-live-runtime-parity-v1/` (`CLAIM_REFUTED`), built a
+cargo example that calls the live primitive directly and found: the
+arithmetic itself does match bit-for-bit (10/10 numeric points at the
+W-VISC2 fitted parameters), but the cited line range also covers the
+primitive's four input-validity guards (src/lib.rs:1211-1218), which the
+Python oracle never implements at all. 5 of 10 guard-rail probes diverge —
+negative/zero liquid viscosity, a negative pigment volume fraction, a
+packing fraction above 1, and a negative intrinsic viscosity are all
+silently accepted and numerically evaluated by the unguarded Python
+oracle, where the compiled Rust function correctly returns `Err`. This
+does not change the W-VISC1/W-VISC2 numeric findings (their inputs are
+all in-domain) but means the "verbatim" self-description of the oracle
+used across every KD fire to date is false for the guard-rail path.
+
+### Phase-0 readiness
+
+All Phase-0 deterministic gates in
+`evidence/phase0/promotion/policy.v1.json` (`RIGHTS` for the CC0
+self-authored viscosity compilation, `LOCKED_SPLIT`, `LOCKED_BENCHMARK`,
+`TWO_REPLAYS`, `RED_TEAM` across 23 attack axes plus the six new
+in-runtime Arrhenius-boundary tests, `CLAIM_LOCKS`,
+`FOLDER_CONFINEMENT`, `BENCHMARK_EXECUTION_COMPLETE`,
+`MODULE_INVARIANTS`) are passing. Awaiting `PHASE0_EVALUATOR` and
+`PHASE0_INTERNAL_REVIEWER` signatures per the `evaluation.v1.dsse.json`
+and `phase0-review-receipt.v1.json` protocol before the `phase` header
+flips to `PHASE_0`. No signed receipt has been produced yet; the module
+remains `PRE_PHASE_0` for authority purposes, and
+`operational_readiness` stays `SHADOW`.
+
+### Empirical benchmark result — Polyverse melt viscosity polymer-safe conformal intervals + applicability-domain audit
+
+**Rights caveat — [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel].**
+The underlying Polyverse melt-viscosity dataset is licensed under the
+Georgia Tech Research Corporation General Public Use License Agreement;
+the module's own rights decision
+(`reference/mvp20/quarantine/feedback_v2/exclusions/polyverse_melt_viscosity-3cd923b4d67399f9.rights.json`)
+records rights_class `CONTEXT_ONLY`, `promotion_eligible: false`, and
+physical quarantine of all derivatives pending counsel review. Every
+result in this section is Polyverse-derived and is context-only
+evidence — NOT a lawful basis for a scored, promoted, or derivative
+KPI while the rights question is open. Disclosure gap identified by
+the signed refuting audit at
+`evidence/audit/polyverse-rights-disclosure-gap-v1/`; repaired under
+item R-A03.
+
+A distribution-free calibrated-uncertainty study on polymer melt
+viscosity — the primary rheological property that governs coating
+application (spray, brush, dip) and film self-leveling. The Polyverse
+melt-viscosity dataset supplies 1,380 (polymer
+SMILES, Mn, Mw, PDI, T, shear rate) → log10(η, Pa·s) measurements from
+67 published rheology sources across 67
+unique polymer SMILES. The parent Polyverse melt viscosity model
+receipt at `reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json`
+(SHA-256 `29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff`) reports 5-fold source-safe GBM R² = 0.944
+(RMSE 0.527 log10(Pa·s)) [Polyverse dataset: CONTEXT_ONLY,
+promotion_eligible=false, pending counsel]. This push adds distribution-free split-
+conformal prediction intervals (Papadopoulos-Proedrou-Vovk-Gammerman
+2002) with Morgan-fingerprint Tanimoto applicability-domain scoring
+(OECD 2007 QSAR Guidance Principle 3), under a STRICTER polymer-safe
+partition (60/20/20 by unique SMILES) than the parent's source-safe
+protocol.
+
+The signed scientific receipt lives at
+`reference/mvp20/data/polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json`
+(SHA-256 `4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4`,
+receipt_id `polyverse-melt-viscosity-conformal-ad-36683bfed9e723a31c59872ad253b08b4ffd4a947c8d384c0a8fdb2c6962e915`).
+The Phase-0 KPI receipt lives at
+`evidence/phase0/kpis/polyverse-melt-viscosity-polymer-safe-conformal-coverage-and-applicability-domain-kpi.v1.json`
+(SHA-256 `34b77002aa5a3067ad35030cd2bedb819b7da3cd16c6219bf1245a414c3fabb8`).
+
+Observed Phase-0 KPI outcomes (13/13 deterministic gates PASSED;
+`phase0_deterministic_gates_passed: true`; every outcome below is
+Polyverse-derived [Polyverse dataset: CONTEXT_ONLY,
+promotion_eligible=false, pending counsel]):
+
+- `polymer_safe_marginal_conformal_coverage_at_alpha_010_meets_worst_case_floor` observed **0.8974** (target ≥ 0.80 worst-case) — **PASSED**
+- `polymer_safe_marginal_conformal_coverage_at_alpha_010_within_1_sigma_of_asymptotic` observed **0.8974** (target ≥ 0.879 = 0.90 − 1σ finite-sample deficit at n=195) — **PASSED**
+- `polymer_safe_marginal_conformal_coverage_at_alpha_020_meets_target` observed **0.8103** (target ≥ 0.80) — **PASSED**
+- `hostile_null_shuffle_coverage_at_alpha_010_meets_worst_case_floor` observed **0.8974** (target ≥ 0.80) — **PASSED**
+- `hostile_null_shuffle_coverage_at_alpha_010_within_1_sigma_of_asymptotic` observed **0.8974** (target ≥ 0.879) — **PASSED**
+- `hostile_null_width_inflates_over_real_signal` observed **1.15×** (target ≥ 1.10) — **PASSED** (modest inflation reflects the modest R²=0.454 polymer-safe signal)
+- `worst_ad_quintile_coverage_at_alpha_010_meets_permissive_floor` observed **0.3793** (target ≥ 0.30, PERMISSIVE) — **PASSED**
+- `marginal_coverage_preserved_despite_conditional_low_ad_undercoverage` — **PASSED**: HONESTLY documents that marginal coverage (0.8974) is preserved as guaranteed by split-conformal theory, but conditional coverage in the lowest-AD quintile (0.3793) drops far below marginal — the expected behavior under strong within-test distribution shift.
+- `test_r2_positive_polymer_safe` observed **+0.4535** — **PASSED** (modest positive; much lower than parent's source-safe R² 0.944) [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]
+- `polymer_safe_r2_lower_than_parent_source_safe_r2_documented` — **PASSED** (honestly documents the 0.4905 R² gap) [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]
+- Housekeeping: parent_receipt_hash_bit_stable, input_csv_hash_bit_stable, polymer_disjoint_train_cal_test, byte_stable_two_replay_pipeline.
+
+**HONEST FINDINGS** [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]:
+1. **Polymer-safe R² (0.4535) is much lower than parent source-safe R² (0.944)** — a gap of 0.4905 that quantifies how much of parent's apparent performance was co-representation of the same polymer at multiple sources rather than true generalization to novel chemistry. This is a real coating-IP-relevant finding: the model is far less confident on novel polymer chemistries than the parent 5-fold source-safe R² suggested.
+2. **Marginal coverage is preserved but conditional coverage fails in the low-AD stratum**: the lowest-AD quintile (Tanimoto 0.24-0.40 to nearest training scaffold, n=29 test rows) has coverage 0.379 — dramatically below the marginal 0.897. Split-conformal theory only guarantees marginal, not conditional; this observation exposes the applicability boundary quantitatively.
+3. **Median interval width 6.55 log10(Pa·s)** is honest: for a novel polymer with polymer-safe R² 0.45, 90%-coverage intervals must be very wide (equivalent to a factor of 4e+06 multiplicative uncertainty on melt viscosity).
+
+The theory stack: Papadopoulos-Proedrou-Vovk-Gammerman 2002 split
+conformal; Vovk-Gammerman-Shafer 2005; Lei et al 2018 JASA;
+Angelopoulos & Bates 2021; OECD 2007 QSAR Guidance Principle 3;
+Roy-Kar-Ambure 2015; Bemis-Murcko 1996; Rogers & Hahn 2010; Rouse 1953
+polymer bead-spring; Doi-Edwards 1988 reptation; Ferry 1980
+Viscoelastic Properties; Cross 1965 shear-rate dependence; Ke et al
+2017 LightGBM.
+
+Claim scope: this KPI is a calibrated-uncertainty + applicability-
+domain attestation on **Polyverse melt viscosity chemistry only**
+[Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending
+counsel], based on literature-curated (not wet-lab) viscosity
+measurements.
+Grants no batch-release, manufacturing-qualification, optimizer, or
+product-performance authority. Phase-1 explicitly flags: wet-lab
+validation, Fox-Flory-Whitten physical baseline (η ~ Mw^3.4),
+Mondrian-conformal to restore conditional coverage in the low-AD
+regime, and named-baseline benchmark comparable to the
+molecule-property module's methodology.
+
+### Empirical benchmark result — Fox-Flory-Whitten physical scaling law vs ML (physics wins)
+
+**Uncertainty caveat — [n=13 independent chemistries, no resampled interval - interval work queued as R-C04].**
+The FFW-beats-ML headline below is a single seed=0 point-estimate
+comparison on 194 test rows drawn from only 13 independent polymer
+chemistries — below the ~30-cluster rule-of-thumb for reliable
+cluster-robust inference (Cameron-Gelbach-Miller 2008; Cameron-Miller
+2015) — and no bootstrap, jackknife, cluster-robust, or other resampled
+interval on the R² gap has been computed anywhere in the module.
+**Rights caveat — [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel].**
+Every result in this section derives from the same quarantined
+Georgia Tech GPULA-licensed Polyverse melt-viscosity dataset (module
+rights decision: rights_class `CONTEXT_ONLY`, `promotion_eligible:
+false`, all derivatives physically quarantined pending counsel review),
+and is context-only evidence, not a lawful basis for a scored or
+promoted KPI.
+Disclosure gaps identified by the signed refuting audits at
+`evidence/audit/polyverse-rights-disclosure-gap-v1/` and
+`evidence/audit/ffw-vs-ml-uncertainty-disclosure-gap-v1/`; repaired
+under item R-A03.
+
+A second complementary Phase-0 KPI for `amphora-viscosity-score`, applying
+the same red-team-defensible methodology as the molecule-property Van
+Krevelen push, this time comparing ML against the CLASSICAL polymer
+physics scaling law η ~ Mw^a (Fox-Flory 1948; Whitten 1954;
+Berry-Fox 1968; Ferry 1980 Ch. 10; Doi-Edwards 1988 reptation theory).
+Same polymer-safe 60/20/20 partition and same 519-feature ML model as
+the prior conformal+AD receipt — apples-to-apples comparison.
+
+The signed scientific receipt lives at
+`reference/mvp20/data/polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json`
+(SHA-256 `3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3`,
+receipt_id `polyverse-melt-viscosity-ffw-baseline-c062d2ac6b51e0bf77b99ca2b27da910fd08db0afc22fddbba8ce71bdb8ea8f4`).
+The Phase-0 KPI receipt lives at
+`evidence/phase0/kpis/polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-vs-ml-kpi.v1.json`
+(SHA-256 `5137bdae3eb4418492fee70395656842fcf32d92fcf7bc8cf3cbd867c3d0e98b`).
+
+**5-baseline ranking on polymer-safe test (n=194 test rows on 13 novel polymers):**
+[Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]
+[n=13 independent chemistries, no resampled interval - interval work queued as R-C04]
+
+| Baseline | Polymer-safe R² | RMSE log10(Pa·s) | Fitted params |
+|---|---:|---:|---|
+| B3_FFW_linear_Mw_and_Arrhenius_T | +0.5972 | 1.520 | 3 |
+| B2_FFW_linear_Mw_only | +0.5923 | 1.529 | 2 |
+| B4_full_HistGBM | +0.4536 | 1.770 | many (histogram GBM leaves) |
+| B1_FFW_pure_Mw_3.4_mean_anchored | +0.3550 | 1.923 | 1 |
+| B0_constant_mean | -0.0009 | 2.395 | 1 |
+
+Observed Phase-0 KPI outcomes (10/10 deterministic gates PASSED;
+`phase0_deterministic_gates_passed: true`; every outcome below is
+Polyverse-derived [Polyverse dataset: CONTEXT_ONLY,
+promotion_eligible=false, pending counsel]):
+
+- `best_physical_ffw_baseline_beats_ml_r2_documented` — **PASSED**: B3 physical (Mw + Arrhenius T, 3 fitted params) R² **+0.5972** BEATS ML full HistGBM R² **+0.4536** by **+0.1436** R². [Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel] [n=13 independent chemistries, no resampled interval - interval work queued as R-C04]
+- `ffw_pure_mw_scaling_beats_constant_baseline` gap **++0.3559** — pure FFW η ~ Mw^3.4 already beats constant with just 1 fitted intercept.
+- `fitted_Mw_slope_close_to_theoretical_range` slope **+2.1107** ∈ [1.0, 4.0] — falls between the theoretical unentangled Rouse regime (a=1) and entangled reptation regime (a=3.4), physically reasonable for a mixed dataset.
+- `b2_linear_mw_regression_beats_b1_pure_scaling` gap **+0.2373** — fitting the slope helps over fixed 3.4 (the dataset spans both regimes).
+- `b3_adding_arrhenius_T_improves_b2` gap **+0.0048** — marginal improvement (dataset T range doesn't strongly drive variance beyond Mw).
+- `ml_beats_constant_baseline` gap **++0.4545** — ML does learn *some* signal (just less than the physical law captures).
+- Housekeeping: parent_receipt_hash_bit_stable, conformal_receipt_hash_bit_stable, input_csv_hash_bit_stable, byte_stable_two_replay_pipeline.
+
+**HONEST INTERPRETATION** (the key finding). On polymer-safe test data
+(13 novel polymer SMILES), **classical polymer physics beats ML for
+melt viscosity prediction** [Polyverse dataset: CONTEXT_ONLY,
+promotion_eligible=false, pending counsel] [n=13 independent
+chemistries, no resampled interval - interval work queued as R-C04].
+The physical scaling laws (Fox-Flory 1948,
+Whitten 1954, Berry-Fox 1968 reptation exponent, Ferry 1980) capture the
+Mw-dependence of melt viscosity via 2-3 fitted parameters and generalize
+to novel chemistries better than a 519-feature HistGBM. This is a
+GENUINE finding: for melt viscosity, physics is the correct baseline,
+not ML. The fitted Mw slope 2.11 (B2) lies between the Rouse-regime a=1
+and reptation-regime a=3.4, consistent with a dataset spanning both
+entangled and unentangled polymer chemistries. Phase-1 would investigate
+whether chemistry-aware graph neural networks (polyBERT, Chemprop), an
+FFW+ML ensemble, or a regime-switching Mc-aware baseline can close or
+overturn this gap.
+
+Applicability of the physical baseline. FFW applies to LINEAR
+homopolymers with the Mw-power-law scaling. It is expected to underperform
+on branched, crosslinked, filled, or copolymer melts where entanglement
+topology differs. This dataset is dominated by linear homopolymers so
+the physical law is a fair baseline.
+
+Claim scope: this KPI documents that classical polymer physics beats
+ML on the Polyverse melt viscosity polymer-safe test [Polyverse
+dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]
+[n=13 independent chemistries, no resampled interval - interval work
+queued as R-C04]. It grants no
+batch-release, manufacturing-qualification, optimizer, or product-
+performance authority. Phase-1 explicitly flags: chemistry-aware graph
+ML (polyBERT), FFW+ML ensemble, Mc regime-switching, wet-lab validation
+on novel-chemistry linear homopolymer melts.
+
+### Known contradictions
+
+- The current class-anchor KU proxy has no measured multi-family, multi-temperature rheology validation.
+
+Across the portfolio, the emitted envelope, adapter, manifest, model receipt/card, portfolio policy, and Rust ranking boundary must all agree. The most restrictive policy controls.
+
+## Inputs, outputs, and normalization
+
+Current accepted format: canonical CandidateEnvelope JSON. The current runtime supports JSON plus molecule SMILES only through the central candidate contract. Target interface: canonical CandidateEnvelope JSON. That target interface is already the runtime interface for this module. Unsupported formats fail closed.
+
+External chemistry normalizes once in `amphora-candidate-contract`; this module consumes canonical `CandidateEnvelope` data. Original bytes, normalized structure/formula, toolkit/version, stereochemistry, isotope, charge, fragment, mixture, polymer, and commercial-grade policies are retained in the capability profile.
+
+Canonical input is a finite `formulation` `CandidateEnvelope` whose payload matches `candidate_type`. Canonical output is `ScoreEnvelope`; the primary value path is `metrics.class_anchor_ku_proxy`. Units, direction, nullability, authority, uncertainty, and claim locks are explicit in the profile and envelope. A null or blocked value cannot be converted to an objective.
+
+## Canonical current examples and typed paths
+
+```json
+{"candidate_id": "amphora-viscosity-score-example", "candidate_type": "formulation", "formulation": {"application": {"dft_mil": 5.0, "relative_humidity_pct": 50.0, "substrate": "steel", "surface_preparation": "declared", "temperature_C": 25.0}, "basis": "mass_g_per_batch", "batch_mass_g": 137.13, "ingredient_catalog_version": "facts.v2", "process": {"application_method": null, "induction_time_min": null, "mix_order": null, "pot_age_h": 0.0}, "recipe": {"part_A": {"dgeba_828": {"ingredient_id": "dgeba_828", "mass_g": 100.0}}, "part_B": {"ancamide_350a": {"ingredient_id": "ancamide_350a", "mass_g": 37.13}}}}}
+```
+
+The schema-valid fail-closed output example is checked in at `docs/capability-profile.json#/examples/current_output`. Exact paths are: objective `None`, metric `metrics.class_anchor_ku_proxy`, gate `gates`, uncertainty `uncertainty`, evidence gaps `missing_inputs`, and claim locks `claim_locks`. Nullability is explicit; empirical units and direction come only from the locked benchmark receipt. The authority ceiling is `LIMITED_SANITY` and solver-use ceiling is `DISABLED`.
+
+## Data, theory, model, and uncertainty strategy
+
+Applicability domain is solvent-borne two-component epoxy-polyamide marine-coating R&D and the explicitly declared candidate types. Missing values are not imputed across an authority boundary. Empirical work uses group, family, source, and time-safe splits; computed values remain labeled computed; candidate evidence remains separate from public context. Subgroup reporting and calibrated intervals are required wherever the locked KPI is empirical. Named standard, expert/CRO, primary-literature, simple physical, and hostile-null baselines precede promotion.
+
+## KPI register and promotion gates
+
+Primary KPI: **external KU MAE** at `metrics.class_anchor_ku_proxy`. Direction and unit are declared by the locked benchmark; population is the declared applicability domain; split is group/time/source-safe; confidence intervals are mandatory for empirical claims. Locked target: At least 30 formulations across families and three temperatures; external KU MAE <= 5 KU and sag balanced accuracy >= 0.80.
+
+- Phase 0 — Useful: deterministic or evidence-bound capability, contract parity, fail-closed malformed/OOD behavior, no unresolved authority contradiction, and the module acceptance tests pass.
+- Phase 1 — Human parity: the locked independent evaluation beats or matches the best reproducible named baseline at the stated target with uncertainty.
+- Phase 2 — Defensible IP: prospective superiority repeats independently, owned provenance and ablations freeze, and patent-versus-trade-secret review is documented. Counsel separately determines FTO.
+
+Focused acceptance command: `rtk cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
+
+External dependency or delay:
+
+- At least 30 measured formulations across families and three temperatures
+
+Estimated effort is represented by the checked-in 0–5 priority factors, not a fabricated schedule. Schema drift, source mutation, incomplete folds, non-finite output, authority escalation, or lost claim locks automatically demote the module.
+
+## Red-team dossier
+
+Regression coverage must exercise malformed chemistry; mixtures, fragments, and polymers; unsupported formats; unit ambiguity; zero-mass ingredients; NaN and Infinity; out-of-domain inputs; group/source/time leakage; mutated sources; computed-as-measured records; spoofed identity; authority escalation; stripped or unknown claim locks; fixed-seed replay drift; and legal, regulatory, supplier, procurement, qualification, or release overclaim. Every such case must fail closed or remain an explicit evidence gap.
+
+Module-focused checked fixture: `amphora-viscosity-score/src/lib.rs` via `rtk cargo test --workspace --locked`. Scenario: Verify liquid mixing, temperature response, crowding, yield flow, sag threshold, and malformed-input abstention.

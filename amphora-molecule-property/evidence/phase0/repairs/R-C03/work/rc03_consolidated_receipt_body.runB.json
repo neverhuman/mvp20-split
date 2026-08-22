@@ -1,0 +1,294 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "c7_final_receipt_cited": {
+    "path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+    "sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+  },
+  "campaign_item_id": "R-C03",
+  "claim_locks": {
+    "24_group_structure_confirmed_correct_at_scale": false,
+    "ad_gate_demonstrated_on_c7_failing_legs": true,
+    "constrained_nnls_vk_refit_no_sign_flips_by_construction": true,
+    "fto_not_performed": true,
+    "group_safe_split_headline_published": true,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_solver_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": false
+  },
+  "claim_under_attack": {
+    "claim_text": "Superseding KPIs report group-safe-split headline numbers with applicability-domain gating; VK Ridge refit is scope-limited to well-supported groups without sign flips.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/"
+  },
+  "deliverables": {
+    "d1_group_safe_headline": {
+      "fire_id": null,
+      "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-C03/attempts/rc03-d1-group-safe-headline-superseding-kpi.v1.dsse.json",
+      "receipt_sha256": "e25940fced180ef008b7d3e866b0971a34160f5f0483f9d6b0a588a03a22a934",
+      "summary": "Group-safe macro-bisection headline for density/refractive_index/thermal_conductivity (all REFUTED vs 2x bar); random-split numbers demoted to reference; static_dielectric_const excluded (label inadmissibility, already retracted). Fidelity of the superseding table verified against a genuine planted-defect positive control.",
+      "verdict": "CLAIM_SURVIVED"
+    },
+    "d2_ad_gate": {
+      "fire_id": null,
+      "per_leg_table": [
+        {
+          "abstention_rate_meets_90pct_target": true,
+          "abstention_rate_on_failing_transfer": 1.0,
+          "leg": "tg_A_train_openpoly_test_polyuniverse",
+          "leg_passes_acceptance": true,
+          "n_combined_abstain": 5000,
+          "n_range_abstain": 0,
+          "n_range_abstain_marginal_beyond_tanimoto": 0,
+          "n_tanimoto_abstain": 5000,
+          "n_test": 5000,
+          "n_train": 443,
+          "positive_control_abstention_rate_with_gate_disabled": 0.0,
+          "positive_control_disabled_tau": 1.1,
+          "positive_control_fired": true,
+          "tau_tanimoto_distance": 0.5714285714285714,
+          "train_label_range": [
+            146.0,
+            589.0
+          ],
+          "within_corpus_coverage_meets_90pct_target": true,
+          "within_corpus_coverage_rate": 0.9006772009029346
+        },
+        {
+          "abstention_rate_meets_90pct_target": true,
+          "abstention_rate_on_failing_transfer": 1.0,
+          "leg": "tg_B_train_polyuniverse_test_openpoly",
+          "leg_passes_acceptance": true,
+          "n_combined_abstain": 443,
+          "n_range_abstain": 0,
+          "n_range_abstain_marginal_beyond_tanimoto": 0,
+          "n_tanimoto_abstain": 443,
+          "n_test": 443,
+          "n_train": 5000,
+          "positive_control_abstention_rate_with_gate_disabled": 0.0,
+          "positive_control_disabled_tau": 1.1,
+          "positive_control_fired": true,
+          "tau_tanimoto_distance": 0.5333333333333333,
+          "train_label_range": [
+            22.772299,
+            237.03786
+          ],
+          "within_corpus_coverage_meets_90pct_target": true,
+          "within_corpus_coverage_rate": 0.9018
+        },
+        {
+          "abstention_rate_meets_90pct_target": true,
+          "abstention_rate_on_failing_transfer": 0.9820923656927427,
+          "leg": "density_A_train_macro_a_test_macro_b",
+          "leg_passes_acceptance": true,
+          "n_combined_abstain": 1042,
+          "n_range_abstain": 0,
+          "n_range_abstain_marginal_beyond_tanimoto": 0,
+          "n_tanimoto_abstain": 1042,
+          "n_test": 1061,
+          "n_train": 16,
+          "positive_control_abstention_rate_with_gate_disabled": 0.0,
+          "positive_control_disabled_tau": 1.1,
+          "positive_control_fired": true,
+          "tau_tanimoto_distance": 0.6956521739130435,
+          "train_label_range": [
+            1.27745434,
+            1.914482486
+          ],
+          "within_corpus_coverage_meets_90pct_target": true,
+          "within_corpus_coverage_rate": 0.9375
+        },
+        {
+          "abstention_rate_meets_90pct_target": true,
+          "abstention_rate_on_failing_transfer": 0.9375,
+          "leg": "density_B_train_macro_b_test_macro_a",
+          "leg_passes_acceptance": true,
+          "n_combined_abstain": 15,
+          "n_range_abstain": 0,
+          "n_range_abstain_marginal_beyond_tanimoto": 0,
+          "n_tanimoto_abstain": 15,
+          "n_test": 16,
+          "n_train": 1061,
+          "positive_control_abstention_rate_with_gate_disabled": 0.0,
+          "positive_control_disabled_tau": 1.1,
+          "positive_control_fired": true,
+          "tau_tanimoto_distance": 0.5135135135135135,
+          "train_label_range": [
+            0.742358507,
+            1.815896982
+          ],
+          "within_corpus_coverage_meets_90pct_target": true,
+          "within_corpus_coverage_rate": 0.9000942507068803
+        }
+      ],
+      "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-C03/attempts/rc03-d2-ad-gate-tg-density-demonstration.v1.dsse.json",
+      "receipt_sha256": "f65438b9f88740b358607ccddbc12675c522146700028c0ed27f364305ad3048",
+      "summary": "AD gate (Tanimoto NN-distance threshold, per-training-set CV/LOO calibrated, OR training-label-range check) demonstrated on all 4 C7 failing legs (tg_A, tg_B, density_A, density_B). All 4 meet the pre-registered >=90% abstention-on-failing-transfer / >=90% within-corpus-coverage bar: abstention 93.75-100%, coverage 90.0-93.75%. Positive control (tau disabled -> 1.1) collapses abstention to 0.0% on all 4 legs. Demonstration only; not wired into any shipped serving predictor code path.",
+      "verdict": "CLAIM_SURVIVED"
+    },
+    "d3_constrained_vk_refit": {
+      "acceptance_result": {
+        "all_criteria_met": true,
+        "criterion_1_zero_sign_flips": true,
+        "criterion_2_beats_this_sample_baseline": true,
+        "criterion_3_beats_original_published_baseline": true
+      },
+      "fire_id": "20260812T030001-3760089-46bea74696ba",
+      "per_group_table": [
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 745.0470591565382,
+          "Y_published_K_g_per_mol": 2700,
+          "group": "CH2",
+          "n_train_polymers_with_group_in_original_KPI": 807,
+          "ratio_fitted_over_published": 0.2759433552431623,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 3561.6145127535697,
+          "Y_published_K_g_per_mol": 5200,
+          "group": "CH3",
+          "n_train_polymers_with_group_in_original_KPI": 807,
+          "ratio_fitted_over_published": 0.684925867837225,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 2561.936851757188,
+          "Y_published_K_g_per_mol": 4600,
+          "group": "CH",
+          "n_train_polymers_with_group_in_original_KPI": 807,
+          "ratio_fitted_over_published": 0.5569427938602582,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 0.0,
+          "Y_published_K_g_per_mol": 4000,
+          "group": "ether_O",
+          "n_train_polymers_with_group_in_original_KPI": 807,
+          "ratio_fitted_over_published": 0.0,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 0.0,
+          "Y_published_K_g_per_mol": 8000,
+          "group": "primary_amine",
+          "n_train_polymers_with_group_in_original_KPI": 807,
+          "ratio_fitted_over_published": 0.0,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 41.32768441463647,
+          "Y_published_K_g_per_mol": 6000,
+          "group": "epoxide",
+          "n_train_polymers_with_group_in_original_KPI": 807,
+          "ratio_fitted_over_published": 0.006887947402439412,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 0.0,
+          "Y_published_K_g_per_mol": 4900,
+          "group": "C_quat",
+          "n_train_polymers_with_group_in_original_KPI": 740,
+          "ratio_fitted_over_published": 0.0,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 282.2426550664869,
+          "Y_published_K_g_per_mol": 1900,
+          "group": "vinyl_CH",
+          "n_train_polymers_with_group_in_original_KPI": 656,
+          "ratio_fitted_over_published": 0.1485487658244668,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 2116.1146812299417,
+          "Y_published_K_g_per_mol": 3000,
+          "group": "tertiary_amine",
+          "n_train_polymers_with_group_in_original_KPI": 596,
+          "ratio_fitted_over_published": 0.7053715604099805,
+          "sign_admissible": true
+        },
+        {
+          "Y_fitted_K_g_per_mol_NNLS": 5315.3006378574055,
+          "Y_published_K_g_per_mol": 4000,
+          "group": "secondary_amine",
+          "n_train_polymers_with_group_in_original_KPI": 526,
+          "ratio_fitted_over_published": 1.3288251594643514,
+          "sign_admissible": true
+        }
+      ],
+      "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-C03/attempts/rc03-d3-constrained-nnls-vk-refit.v1.dsse.json",
+      "receipt_sha256": "9952ec2d073be7c191e777735cf2985f5904598887c0f2df8f5b03e3d6bfe788",
+      "summary": "NNLS-constrained Ridge refit on the 10 groups with n_train>=500 (CH2, CH3, CH, C_quat, vinyl_CH, ether_O, primary_amine, secondary_amine, tertiary_amine, epoxide). Zero sign flips (guaranteed by construction). Test MAE 21.35 K vs same-sample published-baseline 216.60 K and original reference baseline 54.56 K -- both acceptance criteria met.",
+      "verdict": "CLAIM_SURVIVED"
+    }
+  },
+  "fire_id": "20260812T030001-3760089-46bea74696ba",
+  "flips_scientific_readiness": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "objective": "R-C03, three deliverables across three fires: (1) SUPERSEDING multi-target KPI under the macro-bisection group-safe split; (2) AD GATE on Tg/density predictors demonstrated on the C7 failing legs; (3) CONSTRAINED VK REFIT via NNLS scope-limited to n_train>=500 groups, no sign flips by construction.",
+  "positive_control": {
+    "detected": true,
+    "evidence": "sign_flip_check on the real fitted table found [] (must be empty -- claim survives); the SAME check re-run on the planted copy found ['secondary_amine'] (must be non-empty -- detector fires)",
+    "how_planted": "planted_coef[9] (secondary_amine) = -abs(best_coef[9]) = -5315.3006378574055, all other 9 coefficients left at their real NNLS-fitted values",
+    "note": "d2 (AD gate) carries an independent positive control of its own (tau disabled -> 1.1 collapses abstention to 0.0% on all 4 legs; see d2 receipt f65438b9f88740b358607ccddbc12675c522146700028c0ed27f364305ad3048). Reproduced here verbatim for the consolidated receipt's own self-contained positive_control field, per the done_criterion requirement.",
+    "planted_defect": "negated the largest-magnitude fitted NNLS coefficient (group=secondary_amine) in a COPY of the fitted table, simulating the kind of sign-inadmissible coefficient the acceptance check (criterion_1) exists to catch",
+    "source_deliverable": "d3 (constrained VK refit)"
+  },
+  "pre_registered_acceptance_stated_numerically": {
+    "d1_group_safe_split_protocol": "reused verbatim from evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/ (the refuting receipt's own protocol)",
+    "d2_abstention_target": ">=90% abstention on the 4 C7 failing legs -- observed 93.75-100%",
+    "d2_coverage_target": ">=90% within-corpus coverage retained -- observed 90.0-93.75%",
+    "d3_MAE_target": "test MAE <= published Y_gi baseline MAE -- observed 21.35 K <= 216.60 K (same test sample) and <= 54.56 K (original KPI reference baseline)",
+    "d3_sign_flip_target": "0 fitted Y_gi with sign opposite published, among in-scope (n_train>=500) groups -- observed 0/10 (guaranteed by NNLS construction)"
+  },
+  "promotes_authority": false,
+  "receipt_id": "rc03-consolidated-done-9952ec2d073be7c191e777735cf2985f",
+  "repair_status": "fix_landed_survived_reattack",
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened this fire beyond the already-rights-cleared, already-hash-pinned Polyuniverse Epoxy CSV cited by the original KPI. Consolidation reads only already-in-tree, already-signed artifacts.",
+  "schema": "amphora.molecule-property.rc03-consolidated-done-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY R-C03 consolidated done receipt under evidence/phase0/repairs/R-C03/done/"
+  },
+  "solver_use_ceiling": "AUDIT_ONLY",
+  "supersedes": [
+    {
+      "reason": "Deliverable 1: the within-corpus 60/20/20-random-split headline (refractive_index R2=+0.893, thermal_conductivity R2=+0.542) is demoted to within-corpus reference; the macro-bisection group-safe-split numbers (all REFUTED vs the 2x external-validity bar; static_dielectric_const excluded for label inadmissibility) are published as the new headline. See deliverable-1 receipt for the full per-leg table.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-property/evidence/phase0/kpis/multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+      "superseded_sha256": "a72aa3f4629a755b735b0e10df2046473ac8e8d9a66dc7e3cc59164914767dd6"
+    },
+    {
+      "reason": "Deliverable 3: replaces the unconstrained 24-group Ridge fit (2/24 sign-reversed coefficients per W8) with a non-negative-least-squares (NNLS) refit scope-limited to the 10 groups with n_train_polymers_with_group>=500 in the ORIGINAL KPI's own table. No sign flip is possible by construction. Test MAE 21.35 K beats both the same-sample published-baseline MAE (216.60 K) and the original KPI's own reference baseline (54.56 K).",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+      "superseded_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979"
+    }
+  ],
+  "verdict": "CLAIM_SURVIVED",
+  "why": "All three pre-registered R-C03 deliverables landed and each independently meets its numeric acceptance bar: (1) group-safe-split headline numbers published, superseding the random-split-only multitarget KPI; (2) an AD gate demonstrated >=90% abstention on known C7 failing transfers while retaining >=90% within-corpus coverage, on all 4 legs; (3) a constrained (NNLS) VK Ridge refit scope-limited to well-supported groups produces zero sign flips by construction and beats the published Y_gi baseline on test MAE. This consolidated receipt ties the three deliverable-level receipts together and supersedes the two most concretely nameable original KPIs (multi-target-ml-radonpy-4-properties-audit-kpi.v1.json and van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json) by sha256, per the done_criterion's supersedes requirement."
+}

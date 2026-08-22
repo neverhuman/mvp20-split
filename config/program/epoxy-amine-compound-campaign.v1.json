@@ -1,0 +1,78 @@
+{
+  "schema": "amphora.compound-campaign.v1",
+  "campaign_id": "epoxy-amine-phase0-v1",
+  "feedback_snapshot": {
+    "snapshot_id": "feedback-v4-2026-07-19",
+    "catalog_path": "feedback/v4/catalog.json",
+    "catalog_sha256": "bea0d3131ded316c2b53a5adbb4ecc201a83dfbc462a9ed59ae5a153c4f7c1e0"
+  },
+  "chebi_snapshot": {
+    "snapshot_id": "feedback-v3-2026-07-19",
+    "catalog_path": "feedback/v3/catalog.json",
+    "catalog_sha256": "d37ce23bc14a5fe12e337458a4d18b3925f9e4924619e50d9416e78ba70ace65"
+  },
+  "ord_snapshot": {
+    "git_commit": "ddb0d25770c80a0a6fcf9948c26e1c8f828cb8ad",
+    "ord_schema_version": "0.6.3",
+    "ord_schema_commit": "0a6c92558898156f06365220d3acbe2bea0a1e69",
+    "object_manifest_path": "feedback/v4/catalog.json",
+    "object_manifest_sha256": "6576280c45276470735a005684766de2c39bc808c4c79f672f8104dd82856850",
+    "object_count": 550,
+    "total_bytes": 1181061030,
+    "acquisition_kind": "ORD_GIT_LFS_TREE"
+  },
+  "rdkit_build": {
+    "version": "2026.03.2",
+    "git_commit": "42fe8c952589bb750e27ea7f259a50b36576bfa5",
+    "build_manifest_path": "artifacts/toolchains/rdkit-2026.03.2/build-manifest.v1.json",
+    "build_manifest_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "source_sha256": "9bea418c32b553920dc3491b282bbfc47e10728ad20ea874ca47c38cc1b0818b",
+    "library_sha256": {
+      "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitChemReactions.so": "0000000000000000000000000000000000000000000000000000000000000000",
+      "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitGraphMol.so": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "deterministic_seed": 20260719,
+  "cohort_thresholds": {
+    "unique_structures": 24,
+    "epoxide_bearing": 8,
+    "reactive_amine_bearing": 8,
+    "scaffold_pair_groups": 6
+  },
+  "maximum_generation_attempts": 96,
+  "pairing_rule": {
+    "method": "CANONICAL_HASH_ROLE_SCAFFOLD_STRATA",
+    "resin_mass_g": 100.0,
+    "equivalent_ratio": 1.0,
+    "deterministic_tie_break": "SHA256_ASCENDING"
+  },
+  "packet_count": 12,
+  "authority_ceiling": "AUDIT_ONLY",
+  "production_scientific_ranking_enabled": false,
+  "generation_requests": [
+    {"request_id":"resin-01","parent_structures":["Oc1ccccc1","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-02","parent_structures":["Oc1ccc(O)cc1","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-03","parent_structures":["Oc1cccc(O)c1","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-04","parent_structures":["Oc1ccc2cc(O)ccc2c1","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-05","parent_structures":["CC(C)(c1ccc(O)cc1)c1ccc(O)cc1","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-06","parent_structures":["OCCO","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-07","parent_structures":["OCCCO","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-08","parent_structures":["OCCCCO","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-09","parent_structures":["OCCOCCO","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-10","parent_structures":["Oc1ccc(Cc2ccc(O)cc2)cc1","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-11","parent_structures":["Oc1ccc(-c2ccc(O)cc2)cc1","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"resin-12","parent_structures":["Oc1ccc(S(=O)(=O)c2ccc(O)cc2)cc1","ClCC1CO1"],"reaction_family":"ORD_GLYCIDYL_ETHER_FORMATION","requested_role":"resin"},
+    {"request_id":"hardener-01","parent_structures":["NCCN","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-02","parent_structures":["NCCCN","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-03","parent_structures":["NCCCCN","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-04","parent_structures":["NCCOCCN","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-05","parent_structures":["NCCNCCN","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-06","parent_structures":["NCCCNCCCN","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-07","parent_structures":["NCc1ccccc1CN","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-08","parent_structures":["NCc1ccc(CN)cc1","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-09","parent_structures":["Nc1ccc(N)cc1","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-10","parent_structures":["Nc1cccc(N)c1","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-11","parent_structures":["NC1CCCCC1N","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"},
+    {"request_id":"hardener-12","parent_structures":["NC1CCC(CC1)N","CC=O"],"reaction_family":"ORD_REDUCTIVE_AMINATION","requested_role":"hardener"}
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "amphora.known-answer.unit-conversion-kat-vectors.v1",
+  "vector_set_id": "unit-conversion-kat-v1",
+  "module_id": "amphora-known-answer-benchmarks",
+  "purpose": "Locked exact known-answer test vectors for the dimensional-analysis / unit-conversion axis of the known-answer benchmark. Every expected value is fixed by an exact rational defining constant published in a primary authority (NIST SP 811 2008; NIST HB 44 App C; BIPM SI; ASTM D2697; EPA Method 24). No empirical fit; no candidate performance claim. AUDIT_ONLY.",
+  "authority_ceiling": "LIMITED_SANITY",
+  "scope": "solvent-borne two-part epoxy-amine marine anti-corrosion coating formulation arithmetic",
+  "exact_defining_constants": {
+    "US_gallon_L": "3.785411784 (exact; 231 in^3, 1 in = 25.4 mm exact)",
+    "US_gallon_in3": "231 (exact, NIST HB 44)",
+    "avoirdupois_pound_kg": "0.45359237 (exact, international yard-and-pound 1959)",
+    "inch_mm": "25.4 (exact)",
+    "mil_um": "25.4 (exact; 1 mil = 0.001 in)",
+    "foot_m": "0.3048 (exact)",
+    "sq_foot_m2": "0.09290304 (exact, 0.3048^2)",
+    "kelvin_celsius_offset": "273.15 (exact, BIPM)",
+    "Imperial_gallon_L": "4.54609 (exact, for negative-control trap only; NOT used in US coating specs)"
+  },
+  "tolerance_policy": "Each positive vector pins the expected value to the stated decimal places; the independent verifier re-derives the value from the exact rational defining constants and PASSES iff round(exact_rational, decimals) equals the pinned expected. Float arithmetic is not used in the gate.",
+  "positive_vectors": [
+    {"id": "DENS-GML-TO-LBGAL", "quantity": "mass density", "input": 1.0, "input_unit": "g/mL", "expected": 8.345404, "output_unit": "lb/US_gal", "decimals": 6, "primary_source": "NIST SP 811 (2008) Appendix B.8, entry 'pound per gallon (U.S. liquid) -> gram per cubic centimeter' reciprocal = 8.345 404 E+00", "relevance": "coating component density is quoted lb/gal on US TDS and g/mL in SI; the two MIL-DTL-24441 F-160 controls in this module are gated in lb/gal"},
+    {"id": "VOC-LBGAL-TO-GL", "quantity": "VOC content", "input": 1.0, "input_unit": "lb/US_gal", "expected": 119.826427, "output_unit": "g/L", "decimals": 6, "primary_source": "EPA Method 24 / 40 CFR 59; exact = 453.59237/3.785411784 g/L", "relevance": "regulatory VOC limits for marine coatings are set in both g/L and lb/gal"},
+    {"id": "VOC-2P8-LBGAL-TO-GL", "quantity": "VOC content", "input": 2.8, "input_unit": "lb/US_gal", "expected": 335.514, "output_unit": "g/L", "decimals": 3, "primary_source": "EPA Method 24; 2.8 lb/gal x (453.59237/3.785411784)", "relevance": "2.8 lb/gal is a common high-solids marine-primer VOC ceiling"},
+    {"id": "DFT-1MIL-TO-UM", "quantity": "dry film thickness", "input": 1.0, "input_unit": "mil", "expected": 25.4, "output_unit": "um", "decimals": 1, "primary_source": "Exact: 1 mil = 0.001 in, 1 in = 25.4 mm", "relevance": "DFT specs are quoted in mils (US) and microns (SI)"},
+    {"id": "DFT-5MIL-TO-UM", "quantity": "dry film thickness", "input": 5.0, "input_unit": "mil", "expected": 127.0, "output_unit": "um", "decimals": 1, "primary_source": "Exact: 5 x 25.4", "relevance": "5 mil is a typical single-coat epoxy DFT"},
+    {"id": "DFT-100UM-TO-MIL", "quantity": "dry film thickness", "input": 100.0, "input_unit": "um", "expected": 3.937008, "output_unit": "mil", "decimals": 6, "primary_source": "Exact: 100/25.4", "relevance": "reverse conversion regression check"},
+    {"id": "COVERAGE-1MIL-100VS-FT2GAL", "quantity": "theoretical spreading rate", "input": 1.0, "input_unit": "mil_at_100pct_volume_solids", "expected": 1604.166667, "output_unit": "ft2/US_gal", "decimals": 6, "primary_source": "The '1604 rule': 1 US gal = 231 in^3 exactly, spread to 0.001 in => 231/0.001 in^2 = 231000 in^2 = 231000/144 ft^2", "relevance": "coverage math underlies practical spreading-rate and cost-per-area estimates"},
+    {"id": "COVERAGE-1UM-100VS-M2L", "quantity": "theoretical spreading rate", "input": 1.0, "input_unit": "um_at_100pct_volume_solids", "expected": 1000.0, "output_unit": "m2/L", "decimals": 3, "primary_source": "Exact: 1 L = 1000 cm^3 spread to 1e-4 cm => 1000/1e-4 cm^2 = 1e7 cm^2 = 1000 m^2", "relevance": "SI coverage constant"},
+    {"id": "COVERAGE-1604-FT2GAL-TO-M2L", "quantity": "spreading rate unit bridge", "input": 1604.166667, "input_unit": "ft2/US_gal", "expected": 39.370079, "output_unit": "m2/L", "decimals": 6, "primary_source": "Exact: (231000/144)*0.09290304/3.785411784; must equal 1000/25.4 = 39.370079", "relevance": "cross-consistency of the two coverage constants; catches a US<->SI coverage-rule swap"},
+    {"id": "TEMP-25C-TO-K", "quantity": "temperature", "input": 25.0, "input_unit": "degC", "expected": 298.15, "output_unit": "K", "decimals": 2, "primary_source": "BIPM SI: T/K = t/degC + 273.15", "relevance": "cure-kinetics and pot-life arithmetic use absolute temperature; the module ARITH controls are anchored at 25 C"},
+    {"id": "TEMP-25C-TO-F", "quantity": "temperature", "input": 25.0, "input_unit": "degC", "expected": 77.0, "output_unit": "degF", "decimals": 1, "primary_source": "Exact: t_F = t_C*9/5 + 32", "relevance": "US application datasheets quote degF"},
+    {"id": "MASS-1LB-TO-KG", "quantity": "mass", "input": 1.0, "input_unit": "lb", "expected": 0.453592, "output_unit": "kg", "decimals": 6, "primary_source": "International yard-and-pound 1959: 1 lb = 0.45359237 kg exact", "relevance": "batch-mass unit base for density conversions"},
+    {"id": "VOL-1GAL-TO-L", "quantity": "volume", "input": 1.0, "input_unit": "US_gal", "expected": 3.785412, "output_unit": "L", "decimals": 6, "primary_source": "NIST HB 44: 1 US gal = 231 in^3 = 3.785411784 L exact", "relevance": "volume-solids and coverage math base"},
+    {"id": "AREA-1FT2-TO-M2", "quantity": "area", "input": 1.0, "input_unit": "ft2", "expected": 0.092903, "output_unit": "m2", "decimals": 6, "primary_source": "Exact: (0.3048)^2 = 0.09290304 m^2", "relevance": "coverage unit bridge base"}
+  ],
+  "fail_closed_hostile_vectors": [
+    {"id": "TRAP-WATER-833", "quantity": "mass density", "input": 1.0, "input_unit": "g/mL", "wrong_factor": 8.33, "correct_expected": 8.345404, "output_unit": "lb/US_gal", "trap": "8.33 lb/gal is the density of WATER, routinely mis-applied as the g/mL->lb/gal conversion factor. It is NOT the conversion constant (8.345404). A verifier that accepts 8.33 has a unit regression.", "must_flag_reason": "abs(8.33 - 8.345404) = 0.015404 lb/gal exceeds the 0.5 ulp at 6 decimals"},
+    {"id": "TRAP-IMPERIAL-GAL", "quantity": "mass density", "input": 1.0, "input_unit": "g/mL", "wrong_factor": 10.022413, "correct_expected": 8.345404, "output_unit": "lb/US_gal", "trap": "Using the Imperial (UK) gallon 4.54609 L instead of the US gallon 3.785411784 L yields 10.0224 lb/gal. US marine coating specs (MIL-DTL-24441, ASTM) use the US gallon.", "must_flag_reason": "US-vs-Imperial gallon confusion; 10.0224 != 8.345404"},
+    {"id": "TRAP-MIL-AS-MM", "quantity": "dry film thickness", "input": 1.0, "input_unit": "mil", "wrong_value": 1000.0, "correct_expected": 25.4, "output_unit": "um", "trap": "Treating 1 mil as 1 mm (1000 um) instead of 25.4 um is a 39.37x thickness error that silently 40x-inflates coverage.", "must_flag_reason": "1000 != 25.4"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "campaign_item_id": "W-T-DESIGNGATE",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260813T180001-1580042-09cba913874c",
+      "outcome": "CLAIM_REFUTED",
+      "receipt": "amphora-molecule-design-gate/evidence/phase0/repairs/W-T-DESIGNGATE/done/w-t-designgate-ad-comparator-receipt.v1.dsse.json",
+      "summary": "Implemented leverage/Williams-plot AD comparator (Gramatica 2007); 21/55 gate-vs-AD divergences characterized; 5 OECD principles enumerated; mission.md prose bullet appended."
+    }
+  ],
+  "done_criterion_met": true,
+  "notes": "done_criterion fully satisfied in one fire: no multi-fire continuation needed."
+}

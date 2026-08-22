@@ -1,0 +1,120 @@
+{
+  "campaign_item_id": "",
+  "claim_under_attack": {
+    "claim_text": "single-task RF R2>0 on RadonPy PI1070 refractive_index (+0.893) and thermal_conductivity (+0.542) under a 60/20/20 deterministic random split generalizes.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/multi-target-ml-radonpy-4-properties-audit-kpi.v1.json"
+  },
+  "degradation_refute_threshold": 2.0,
+  "featurization": {
+    "additional_features": [
+      "log10(MolWt+1)"
+    ],
+    "morgan_bits": 512,
+    "morgan_radius": 2
+  },
+  "macro_bisection": {
+    "method": "scipy average-linkage agglomerative clustering on full n x n Tanimoto distance matrix (Sokal & Michener 1958 UPGMA-family; Murtagh & Contreras 2012 review), cut to 2 clusters (fcluster maxclust=2). Identical method to C7 fire 2 (density), applied on the same-corpus 4-property-complete subset (n=1068-ish) instead of the density-only subset (n=1077).",
+    "n_macro_a": 16,
+    "n_macro_b": 1052
+  },
+  "multitarget_kpi_sha256": "a72aa3f4629a755b735b0e10df2046473ac8e8d9a66dc7e3cc59164914767dd6",
+  "n_polymers_all_4_properties_present": 1068,
+  "overall_refuted": true,
+  "per_property": {
+    "refractive_index": {
+      "degradation_factor_A": 9.922448512588657,
+      "degradation_factor_B": 3.1322555011379456,
+      "direction_A_train_macro_a_test_macro_b": {
+        "mae": 0.19077473856671048,
+        "n_test": 1052,
+        "n_train": 16,
+        "null_mae_using_train_median": 0.22828996939163493,
+        "r2": -5.0002114358303205,
+        "test_y_range": [
+          1.322149613,
+          1.838878626
+        ],
+        "train_y_range": [
+          1.274131972,
+          1.474554484
+        ]
+      },
+      "direction_B_train_macro_b_test_macro_a": {
+        "mae": 0.06022255732500009,
+        "n_test": 16,
+        "n_train": 1052,
+        "null_mae_using_train_median": 0.2067443396875,
+        "r2": -0.6000135510632414,
+        "test_y_range": [
+          1.274131972,
+          1.474554484
+        ],
+        "train_y_range": [
+          1.322149613,
+          1.838878626
+        ]
+      },
+      "own_features_within_corpus_5fold": {
+        "mae": 0.019226578835322115,
+        "n": 1068,
+        "r2": 0.8983032814424559
+      },
+      "property_refuted": true,
+      "refuted_A": true,
+      "refuted_B": true,
+      "shipped_multi_task_r2_random_60_20_20_split": 0.42185520022927037,
+      "shipped_single_task_r2_random_60_20_20_split": 0.8925382908965608
+    },
+    "thermal_conductivity": {
+      "degradation_factor_A": 4.516263414649325,
+      "degradation_factor_B": 1.8625964718151355,
+      "direction_A_train_macro_a_test_macro_b": {
+        "mae": 0.10846006412761407,
+        "n_test": 1052,
+        "n_train": 16,
+        "null_mae_using_train_median": 0.12715379126425855,
+        "r2": -2.833517310143484,
+        "test_y_range": [
+          0.096200541,
+          0.618759937
+        ],
+        "train_y_range": [
+          0.082200976,
+          0.209551814
+        ]
+      },
+      "direction_B_train_macro_b_test_macro_a": {
+        "mae": 0.04473107837812498,
+        "n_test": 16,
+        "n_train": 1052,
+        "null_mae_using_train_median": 0.11133129731250002,
+        "r2": -1.2427526601509622,
+        "test_y_range": [
+          0.082200976,
+          0.209551814
+        ],
+        "train_y_range": [
+          0.096200541,
+          0.618759937
+        ]
+      },
+      "own_features_within_corpus_5fold": {
+        "mae": 0.024015442450899576,
+        "n": 1068,
+        "r2": 0.6432064797670449
+      },
+      "property_refuted": true,
+      "refuted_A": true,
+      "refuted_B": false,
+      "shipped_multi_task_r2_random_60_20_20_split": 0.1819275794498022,
+      "shipped_single_task_r2_random_60_20_20_split": 0.5419252833436438
+    }
+  },
+  "prior_related_findings": {
+    "density_same_corpus_same_method": "C7 fire 2/3: REFUTED, degradation 13.74x/7.59x (benchmarks/density-butina-cluster-external-validity-c7-v2)",
+    "dielectric_same_corpus": "C8/W2: static_dielectric_const label itself found physically inadmissible (Frohlich eps>=n^2 violated in 89.5% of PI1070 rows); R2 collapses to <=0 on the physically-valid subset alone (c8_fire2_dielectric_clean_subset_receipt.v1.json)"
+  },
+  "radonpy_csv_sha256": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4",
+  "seed": 0,
+  "study_id": "amphora-molecule-property-w7-multitarget-macro-bisection-external-validity-v1"
+}

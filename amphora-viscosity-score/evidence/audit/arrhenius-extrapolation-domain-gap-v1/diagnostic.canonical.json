@@ -1,0 +1,219 @@
+{
+  "code_range_guard_c": [
+    -273.14,
+    500.0
+  ],
+  "fitted_window_c": [
+    20.0,
+    60.0
+  ],
+  "function_under_test": "arrhenius_viscosity (src/lib.rs:1147), called live via the compiled crate -- not reimplemented",
+  "glycerol": {
+    "ea_j_mol": 58008.347,
+    "eta_25c_mpas": 934.0,
+    "out_of_window_breaches_10pct_quality_floor": 6,
+    "out_of_window_probe_count": 6,
+    "range_guard_ever_rejected_an_out_of_window_call": false,
+    "rows": [
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -34.117260435781525,
+        "predicted_mpas": 7952.04666540117,
+        "published_mpas": 12070.0,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 0.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -17.27213274018818,
+        "predicted_mpas": 3226.386823132661,
+        "published_mpas": 3900.0,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 10.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": -1.2669345061862363,
+        "predicted_mpas": 1392.136223462774,
+        "published_mpas": 1410.0,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 20.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": 3.7476786349249114,
+        "predicted_mpas": 634.9357932457405,
+        "published_mpas": 612.0,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 30.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": 7.209970444430675,
+        "predicted_mpas": 304.4763160621831,
+        "published_mpas": 284.0,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 40.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": 7.607599258363702,
+        "predicted_mpas": 152.80279094687646,
+        "published_mpas": 142.0,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 50.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": -1.690897418748516,
+        "predicted_mpas": 79.92530039855745,
+        "published_mpas": 81.3,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 60.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -14.19936902941421,
+        "predicted_mpas": 43.41511927111641,
+        "published_mpas": 50.6,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 70.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -23.472544286049686,
+        "predicted_mpas": 24.41225837275015,
+        "published_mpas": 31.9,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 80.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -33.47796160875867,
+        "predicted_mpas": 14.169194177334404,
+        "published_mpas": 21.3,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 90.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -42.78844060182206,
+        "predicted_mpas": 8.467310790930336,
+        "published_mpas": 14.8,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 100.0
+      }
+    ],
+    "solvent_id": "glycerol",
+    "worst_in_fitted_window_abs_pct_err": 7.607599258363702,
+    "worst_out_of_fitted_window_abs_pct_err": 42.78844060182206
+  },
+  "module_id": "amphora-viscosity-score",
+  "per_solvent_quality_tolerance_pct": 10.0,
+  "published_source": {
+    "citation": "Segur, J.B. & Oberstar, H.E. (1951) 'Viscosity of Glycerol and Its Aqueous Solutions', Ind. Eng. Chem. 43(9):2117-2120; table as compiled and republished in 'Physical Properties of Glycerine and Its Solutions', Glycerine Producers' Association (1963)",
+    "mirror_fetched_this_fire": "https://web.cecs.pdx.edu/~gerry/class/EAS361/lab/pdf/glycerinWaterViscosity_Dorsey.pdf",
+    "water_column_footnote": "Viscosity of water column footnoted in the same table to N.E. Dorsey, 'Properties of Ordinary Water-Substance', p.184, New York (1940)"
+  },
+  "schema": "amphora.viscosity-score.arrhenius-extrapolation-domain-gap-diagnostic.v1",
+  "water": {
+    "ea_j_mol": 15530.237,
+    "eta_25c_mpas": 0.8905,
+    "out_of_window_breaches_10pct_quality_floor": 2,
+    "out_of_window_probe_count": 6,
+    "range_guard_ever_rejected_an_out_of_window_call": false,
+    "rows": [
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -11.831235515057772,
+        "predicted_mpas": 1.5799842595701648,
+        "published_mpas": 1.792,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 0.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -5.1230473156875185,
+        "predicted_mpas": 1.2409905411108073,
+        "published_mpas": 1.308,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 10.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": -1.400708491721667,
+        "predicted_mpas": 0.9909228796581971,
+        "published_mpas": 1.005,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 20.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": 0.2972335233954754,
+        "predicted_mpas": 0.8030799488218275,
+        "published_mpas": 0.8007,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 30.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": 0.5550143774422414,
+        "predicted_mpas": 0.6596408943160211,
+        "published_mpas": 0.656,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 40.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": -0.1710860224046964,
+        "predicted_mpas": 0.5484600533929086,
+        "published_mpas": 0.5494,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 50.0
+      },
+      {
+        "in_fitted_window_20_60c": true,
+        "pct_error": -1.6425570982759123,
+        "predicted_mpas": 0.4610996923232825,
+        "published_mpas": 0.4688,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 60.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -3.571957843880716,
+        "predicted_mpas": 0.3915942791960004,
+        "published_mpas": 0.4061,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 70.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -5.8464034537783975,
+        "predicted_mpas": 0.33565757168728,
+        "published_mpas": 0.3565,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 80.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -8.321084213472501,
+        "predicted_mpas": 0.29016376846435954,
+        "published_mpas": 0.3165,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 90.0
+      },
+      {
+        "in_fitted_window_20_60c": false,
+        "pct_error": -10.922553490782422,
+        "predicted_mpas": 0.2528017931931595,
+        "published_mpas": 0.2838,
+        "range_guard_accepted_the_call": true,
+        "temperature_c": 100.0
+      }
+    ],
+    "solvent_id": "water",
+    "worst_in_fitted_window_abs_pct_err": 1.6425570982759123,
+    "worst_out_of_fitted_window_abs_pct_err": 11.831235515057772
+  }
+}

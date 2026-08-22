@@ -1,0 +1,100 @@
+{
+  "attack_shape_verbatim": "Delete one BOM line's EEW citation in a copy and attack whether the completeness check fires; hunt for an uncited or untiered numeric claim; check envelope conformance of every ingredient class.",
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "CF-BOM",
+  "claim_under_attack": "The current CF-BOM deliverable state is complete and accurate for its scope (finding a miss is CLAIM_REFUTED and is progress).",
+  "deliverable_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+  "deliverable_under_test": "amphora-report-packager/reference/mvp20/out/blueprint.md#Section-1-Formulation-and-BOM",
+  "directive_obligation": "CF-BOM",
+  "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+  "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+  "module": "amphora-cro-protocol-packager",
+  "prior_diagnostic_script_sha256_cited": "e5473ba4869cda27e1b7c722d03ad5e501a201df5e9e66a9a5084c9bc6f488b8",
+  "reconfirms_prior_receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-BOM/attempts/cf-bom-formulation-completeness-audit-receipt.v1.dsse.json",
+  "refutation_criterion_observed": true,
+  "refutation_criterion_verbatim": "Any BOM line lacks function, target weight percent, grade or spec attributes, or a candidate commercial source, or any numeric claim about an ingredient is uncited and untiered.",
+  "schema": "amphora.cro-protocol-packager.cf-bom-formulation-completeness-audit-diagnostic.v2",
+  "sourcing_corpus_sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c",
+  "sourcing_corpus_under_test": "amphora-source-ledger/reference/mvp20/data/source_records.json",
+  "step_a_reconfirm": {
+    "deliverable_unchanged_since_fire1": true,
+    "fire1_deliverable_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+    "fire1_sourcing_corpus_sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c",
+    "lines_missing_domestic_sourcing_preference_flag": [
+      "dgeba_828",
+      "silica",
+      "naphtha",
+      "iron_oxide_black",
+      "thixotrope",
+      "dispersant",
+      "defoamer",
+      "n_butanol",
+      "ancamide_350a",
+      "silica",
+      "thixotrope",
+      "dispersant"
+    ],
+    "lines_missing_line_level_evidence_tier": [
+      "dgeba_828",
+      "silica",
+      "naphtha",
+      "iron_oxide_black",
+      "thixotrope",
+      "dispersant",
+      "defoamer",
+      "n_butanol",
+      "ancamide_350a",
+      "silica",
+      "thixotrope",
+      "dispersant"
+    ],
+    "missing_companion_files_cited_by_blueprint": [
+      "funnel_results.json",
+      "arithmetic_audit.md",
+      "conflict_register.md",
+      "validation_cards.md",
+      "known_answer_report.md",
+      "discovery_annex.md",
+      "formulation_black.json",
+      "formulation_yellow.json"
+    ],
+    "n_lines_missing_domestic_sourcing_preference_flag": 12,
+    "n_lines_missing_line_level_evidence_tier": 12,
+    "reconfirms_v1_missing_companion_files": true,
+    "reconfirms_v1_missing_domestic_flag_and_tier_lists": true,
+    "sourcing_corpus_unchanged_since_fire1": true
+  },
+  "step_b_positive_control": {
+    "detected": true,
+    "evidence": {
+      "dgeba_828_finding_after_mutation": {
+        "commercial_source_citation_present": false,
+        "domestic_sourcing_preference_flagged": false,
+        "function_present": true,
+        "grade_spec_attributes_present": true,
+        "ingredient": "dgeba_828",
+        "line_complete_per_done_criteria": false,
+        "line_level_evidence_tier_present": false,
+        "line_passes_full_refutation_criterion": false,
+        "matched_source_record_ids": [
+          "SRC-EPON828-TDS",
+          "SRC-EPON828"
+        ],
+        "part": "A",
+        "target_wt_pct_present": true
+      },
+      "dgeba_828_now_in_lines_failing_done_criteria": true
+    },
+    "how_planted": "mutated_lines[dgeba_828/Part A]['citation'] set from \"TDS: https://miller-stephenson.com/wp-content/uploads/2024/06/EPON-828_TDS.pdf ; https://s\" to '' (empty string) prior to re-running check_line() -- no file on disk was modified",
+    "planted_defect": "deleted the dgeba_828 (Part A) BOM line's EEW-bearing TDS citation in an in-memory copy of the parsed table"
+  },
+  "step_c_discrimination_control": {
+    "checker_reports_refuted": false,
+    "description": "synthetic fully-repaired copy: every BOM line given a concrete domestic-sourcing determination and an explicit [RULE-CITED] tier label; same checker re-run",
+    "discrimination_control_passed": true,
+    "note": "confirms the checker is not hard-wired to always return REFUTED -- it discriminates a genuinely complete BOM from the real, incomplete one"
+  },
+  "structural_finding": "The CF-BOM deliverable (blueprint.md) is owned by amphora-report-packager and its backing sourcing corpus (source_records.json) is owned by amphora-source-ledger; neither file lives inside amphora-cro-protocol-packager. This fire's binding write-scope instruction restricts writes to amphora-cro-protocol-packager only. Landing the actual repair (populating domestic_taa_status determinations, adding per-line evidence-tier labels, creating the 8 missing companion evidence files) requires edits inside those two other modules and cannot be performed from within this module's write scope this fire. This is a scope/ownership blocker on repair, not a new refutation axis -- the refutation itself is unchanged and reconfirmed above.",
+  "study_id": "cf-bom-formulation-completeness-audit-v2",
+  "verdict": "CLAIM_REFUTED"
+}

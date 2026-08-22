@@ -1,0 +1,132 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "W3",
+  "ceiling": "AUDIT_ONLY retraction/propagation receipt. Does not itself alter any shipped KPI receipt file, module honesty ceiling, manifest, or authority ceiling -- it documents which surfaces must be corrected and by whom (KPI files: this module; founder report: xbabe1 operator, out of this fire's write scope).",
+  "claim_under_attack": {
+    "claim_text": "Dielectric-constant ML results cited on the module KPI surface and in the founder report rest on admissible labels.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json"
+  },
+  "corrected_dielectric_position": {
+    "clean_only_zero_contamination_result": {
+      "all_arms_R2_le_0": true,
+      "ml_R2": -0.02625668447651175,
+      "n_calib": 22,
+      "n_test": 24,
+      "n_train": 67,
+      "paired_bootstrap_physics_minus_ml_mae_ci90_includes_zero": true,
+      "physics_R2": -1.0405349777711903,
+      "source_receipt_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+      "stack_R2": -0.04820763516393378,
+      "verdict": "NO_COMPETENT_MODEL -- physics, ML, and stack all fail to beat the clean test-set mean on the physically-valid subset."
+    },
+    "consolidated_reconciliation_receipt_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+    "population": {
+      "constraint": "eps_static >= eps_infinity = n_measured^2 (Frohlich 1949 Ch.2 / Debye 1929, model-independent thermodynamic inequality)",
+      "fraction_admissible": 0.10511627906976745,
+      "openpoly_own_labels_control": "0/295 violations under OpenPoly's own internally-consistent DFT decomposition (eps_Total>=eps_Electronic) -- the label defect is isolated to RadonPy PI1070's MD fluctuation-formula route and does NOT implicate OpenPoly's own dielectric-constant column.",
+      "physically_valid_rows": 113,
+      "source_receipt_sha256": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7",
+      "total_radonpy_dielectric_rows": 1075,
+      "violation_rows": 962
+    },
+    "prior_numbers_withdrawn": "The contaminated-population numbers previously presented as representative dielectric-ML skill (mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json overall R2=0.6991 / RadonPy-slice R2=0.7001; external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json R2=0.0248 evaluated against the same 89.5%-corrupted RadonPy target column; C8 fire 1's full-population dielectric row R2=0.6427) are WITHDRAWN as evidence of genuine chemistry-to-dielectric-constant predictive skill. They remain on disk for audit-trail completeness only and MUST NOT be cited in any founder-facing or KPI-surface summary as a positive result."
+  },
+  "fire_sequence": "W3 fire 1.",
+  "flips_scientific_readiness": false,
+  "founder_report_retraction_targets": [
+    {
+      "claim_text": "Dielectric \u03b5r MAE bars: phys=0.31, ML=0.22, stack=0.19 (labelled [SCHEMATIC] in-code but rendered without that caveat visible on the figure itself; Push #38 illustrative placeholder numbers, not receipt-backed).",
+      "corrected_statement": "Replace the dielectric column with founder_f8_panel_row_text.dielectric_constant from c8_fire3_final_consolidated_receipt.v1.json verbatim: 'NO COMPETENT MODEL -- label integrity failure (89.5% of RadonPy ground-truth violates eps_static>=n^2); on the n=113 physically-valid subset all of {physics MAE 19.9 R2 -1.04, ML MAE 13.1 R2 -0.03, stack MAE 14.5 R2 -0.05} fail to beat the test-set mean. Do not report a point estimate.' Density/Tg/RI columns should also switch from the SCHEMATIC placeholder arrays to the real receipt-backed triplets in the same consolidated receipt.",
+      "file": "/home/ubuntu/amphora/reports/portfolio-status-2026-07-30/scripts/03_figures.py",
+      "location": "F8 panel (props=['Tg (\u00b0C)','Dielectric \u03b5r','RI n_D'], physics/ml_only/stacked arrays)",
+      "superseded_by_receipt_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+      "surface": "founder_report_figure"
+    },
+    {
+      "claim_text": "RadonPy \u03b5r held-out set: 614 dielectric constant measurements, 95% conformal empirical coverage 0.943 vs nominal 0.950, presented without any label-integrity caveat.",
+      "corrected_statement": "The conformal coverage FRACTION itself is not mechanically falsified (coverage guarantees hold under exchangeability regardless of whether the target is physically well-formed), but the row must add a caveat: '89.5% of the underlying RadonPy static_dielectric_const rows violate the Frohlich eps_static>=n^2 inequality (amphora-molecule-property C8 audit); this coverage number characterizes interval calibration against a corrupted target and must not be read as evidence of physically meaningful dielectric-constant prediction.'",
+      "file": "/home/ubuntu/amphora/reports/portfolio-status-2026-07-30/scripts/04_render_snippets.py",
+      "location": "amphora-tolerance-robustness data table, row 'RadonPy \u03b5r held-out set' / 'RadonPy eps_r 95% conformal empirical coverage' (~line 116-118)",
+      "superseded_by_receipt_sha256": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7",
+      "surface": "founder_report_table"
+    }
+  ],
+  "gates": {
+    "all_cited_numbers_traced_to_c8_fires_1_2_3_by_sha256": true,
+    "no_new_computation_pure_reconciliation": true,
+    "openpoly_only_kpi_correctly_not_blanket_retracted": true,
+    "retraction_list_written_with_ge_1_line": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "two_replay_byte_stable_this_receipt": null
+  },
+  "human_review_performed": false,
+  "kpi_surface_dispositions": [
+    {
+      "disposition": "NOT_RETRACTED_LABELS_ADMISSIBLE",
+      "file": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+      "rationale": "This KPI trains and evaluates ENTIRELY on OpenPoly's own dielectric-constant column (n=295, scaffold-safe holdout MAE=0.4040 R2=0.5649, LOSO-CV R2=0.6591), which C8's own admissibility control found 0/295 violations under the Frohlich-equivalent OpenPoly-internal check. This file's headline numbers remain citable AS-IS, scoped explicitly to the OpenPoly literature population -- they must not be read as evidence about RadonPy-derived dielectric predictions, and the KPI's own claim_locks already restrict it to 'baseline_valid_on_openpoly_scaffold_distribution_only'.",
+      "sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+    },
+    {
+      "disposition": "RETRACT",
+      "file": "amphora-molecule-property/evidence/phase0/kpis/external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+      "rationale": "This KPI evaluates the OpenPoly-trained model against RadonPy's static_dielectric_const as ground truth for n_test_radonpy=1077 rows (reported best_external_R2=0.0248, marginal lift_over_null=0.7001). Because 89.5% of that target column is physically inadmissible (eps_static<n^2), this MAE/R2 pair is evaluated against corrupted labels and is NOT interpretable as an external-validity measurement of dielectric-constant predictive skill until RadonPy's label integrity is repaired (data-acquisition ask already filed by C8 fire 1).",
+      "sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520"
+    },
+    {
+      "disposition": "RETRACT",
+      "file": "amphora-molecule-property/evidence/phase0/kpis/mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+      "rationale": "This KPI pools 1077 RadonPy rows (962/1075=89.5% corrupted) with 295 OpenPoly rows for BOTH training and evaluation, reporting overall test R2=0.6991 and RadonPy-slice test R2=0.7001. C8 fire 2 showed this large apparent RadonPy skill is an artifact of the RF exploiting the corrupted majority's low variance near the under-converged electronic-only limit: on the honest, zero-contamination clean-only subset (n=113), the equivalent RF collapses to R2=-0.0263. The 95% conformal PI-coverage guarantee (0.9745) remains a mechanically valid statement about interval calibration on THIS corrupted target, but the accompanying R2/MAE point-skill numbers must not be cited as evidence of real dielectric-constant predictive capability.",
+      "sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4"
+    },
+    {
+      "disposition": "SUPERSEDED_BY_C8_FIRE3",
+      "file": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v1/c8_phys_ml_stack_comparison_receipt.v1.json",
+      "rationale": "C8 fire 1's dielectric row (full-population ML R2=0.6427) is internally superseded by c8_fire3_final_consolidated_receipt.v1.json's dielectric_constant.verdict=NO_COMPETENT_MODEL. Fire 1 remains on disk as prior-fire audit trail; any external citation of its dielectric numbers in isolation (without fire 2/3 context) would be misleading.",
+      "sha256": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7"
+    }
+  ],
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "Write a superseding KPI receipt recording the corrected dielectric position across the module's dielectric KPI surface (all three evidence/phase0/kpis/*dielectric* files) and emit a machine-readable retraction list (logs/claims-requiring-retraction.jsonl) covering every externally-published claim (module KPI files + founder report F8 panel + founder report tolerance-robustness table) that must be corrected, so the report can be fixed mechanically rather than from memory.",
+  "organizational_independence_asserted": false,
+  "prior_fire_context": "C8 fire 1 (sha256=0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7) found RadonPy PI1070's static_dielectric_const violates the Frohlich inequality in 89.5% of rows. C8 fire 2 (sha256=da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7) escalated to a zero-contamination retrain and found all three of {physics, ML, stack} score R2<=0 on the physically-valid 10.5% subset. C8 fire 3 (sha256=c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57) consolidated this into ONE internal comparison receipt with the corrected dielectric row, but that receipt lives under benchmarks/ (an internal reconciliation artifact) -- it does not itself mark the three module KPI-surface files as superseded, nor does it touch the founder report generator. This fire (campaign item W3) does exactly that: it is a propagation/retraction fire, not a new experiment -- every number below is cited by sha256 from C8 fires 1-3, none recomputed.",
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Manifest untouched at 66/11.",
+  "receipt_id": "w3-dielectric-retraction-superseding-kpi",
+  "recommended_followups": [
+    "Operator (xbabe1, out of cron write scope): apply founder_report_retraction_targets to 03_figures.py F8 panel and 04_render_snippets.py tolerance-robustness table using logs/claims-requiring-retraction.jsonl mechanically.",
+    "If/when the RadonPy dielectric data-integrity ask (filed C8 fire 1, data-acquisition-queue.jsonl) is resolved with a re-converged or experimental corpus, re-run external-validation and mixed KPIs and supersede this receipt in turn.",
+    "campaign_item W3: recommend campaign_item_status=done -- superseding KPI receipt written under evidence/audit/dielectric-retraction-v1/ and retraction list written with 5 lines, satisfying the stated done_criterion."
+  ],
+  "retraction_list_line_count": 5,
+  "retraction_list_lines_sha256": "9fb68dde1d1eb8bc3057edbb3deed6361cfa08dea029985188e4d8b23b311404",
+  "retraction_list_path": "logs/claims-requiring-retraction.jsonl",
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new source touched; pure reconciliation/propagation of already rights-cleared C8 fires 1-3. No quarantined/CONTEXT_ONLY source opened.",
+  "schema": "amphora.molecule-property.dielectric-retraction-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY audit receipt under evidence/audit/"
+  },
+  "study_id": "w3-dielectric-retraction",
+  "verdict": "CLAIM_REFUTED",
+  "verdict_rationale": "The claim under attack -- that dielectric-constant ML results cited on the module KPI surface and in the founder report rest on admissible labels -- is REFUTED for 2 of 3 KPI-surface files (external-validation and mixed-openpoly-radonpy, both of which evaluate against or train on RadonPy's 89.5%-inadmissible static_dielectric_const column) and for both identified founder-report surfaces (F8 panel schematic bars; tolerance-robustness coverage table row). It SURVIVES, narrowly, for the OpenPoly-only baseline KPI, whose own labels pass their own admissibility control (0/295 violations) -- that file is correctly NOT retracted, only scoped. This asymmetric outcome (retract 2 of 3 KPI files + 2 report surfaces, uphold 1 KPI file) is itself the honest finding: a blanket retraction of everything dielectric would overstate the defect, exactly as the original claim understated it."
+}

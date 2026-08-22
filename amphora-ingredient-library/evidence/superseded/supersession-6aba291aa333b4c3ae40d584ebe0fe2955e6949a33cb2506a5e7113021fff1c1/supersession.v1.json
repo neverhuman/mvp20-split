@@ -1,0 +1,27 @@
+{
+  "archive_root": "evidence/superseded/supersession-6aba291aa333b4c3ae40d584ebe0fe2955e6949a33cb2506a5e7113021fff1c1",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "6cd061111f209f2bb3b5c039a27e9ee1d1de49212889bd713863542f23e2069c",
+    "ip/disclosure-log.v1.json": "a5d55b0ff03ac00a40ff9cea03b02ff6105bfb961400e3b2f34b43b52172a45c",
+    "ip/prior-art.v1.json": "033904d3c37e2de94231b10b67a64f8c1ea5fed73d16414662826d3b09ca82de",
+    "ip/technical-dossier.v1.json": "5dec01bc6de7c2e96a87531dbe123721634affafb4253e3ac91d004c1eebf1f7",
+    "phase0/benchmark/benchmark-lock.v1.json": "e27aa5871f18640e174061ce857cfb873f4a6dfa3c0c7f2f0689e34663be8392",
+    "phase0/bundle.v1.json": "548676bcc438380d69d392fe64f445e9cb213071deac95e369a18cbdafa7713f",
+    "phase0/dataset/dataset-manifest.v1.json": "a67103493a8dfa1365406e386cdd65558e2564b008e1c15a2a894ff339dfa97f",
+    "phase0/kpis/ingredient-library-ledger-quarantine-kpi.v1.json": "798521c6958d6b4b9817f31de48c079e1ff4171bc1813935791dc49c5abc74d1",
+    "phase0/promotion/policy.v1.json": "12f210fb56ef951ea99c878c8344ff78be34ba249365c245f2d30a17c6f458a3",
+    "phase0/raw/SHA256SUMS": "0b59db16f7f7b833d8e9178ceb08e9ef6a5cd1ef5097f9203a738a6009a37bc5",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "09c95897a29592158da0a5a8e48ba5ff5e066b53153f058bebea7b2d87f33f64",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v2.json": "4f72beb4a1df43b8e261aefacc9e6beb4e09957e0418bb663f2ca49814b14eb3",
+    "phase0/split/split-manifest.v1.json": "59306a54fe39cfde8d322f8e68d9fe35236132f6a67b66780a108b1935867eca"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-ingredient-library",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-6aba291aa333b4c3ae40d584ebe0fe2955e6949a33cb2506a5e7113021fff1c1",
+  "unsigned_preparation_only": true
+}

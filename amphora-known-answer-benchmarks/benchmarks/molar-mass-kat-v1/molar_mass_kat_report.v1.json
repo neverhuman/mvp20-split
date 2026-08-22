@@ -1,0 +1,316 @@
+{
+  "aggregate_status": "PASS",
+  "all_positive_exact": true,
+  "all_trap_correct_pins_consistent": true,
+  "all_traps_rejected": true,
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "LIMITED_SANITY",
+  "cross_check_portfolio_constants": {
+    "dgeba_eew_cross_check_matches_to_2_decimals": true,
+    "dgeba_eew_g_per_eq": "170.21",
+    "dgeba_eew_series_module_anchor_g_per_eq": 170.21,
+    "note": "The DGEBA (n=0) epoxide equivalent weight EEW = M(C21H24O4)/2 is re-derived here as an EXACT rational sum of the IUPAC 2021 atomic weights, independent of any published EEW. It reproduces the amphora-molecule-property DGEBA EEW-series anchor EEW(0) = 170.21 g/eq to 2 decimals, corroborating that module non-circularly and locking the atomic-weight table that the portfolio's EEW/AHEW, mix-ratio, VOC and pigment arithmetic depend on. A future edit to a pinned atomic weight is caught as a known-answer regression."
+  },
+  "fail_closed_flag_rate": "1.000000",
+  "fail_closed_results": [
+    {
+      "abs_error": "0.001",
+      "correct_exact": "18.015",
+      "correct_expected_pin_consistent": true,
+      "correctly_flagged": true,
+      "id": "TRAP-O-INTEGER",
+      "wrong_value": 18.016
+    },
+    {
+      "abs_error": "0.016",
+      "correct_exact": "18.015",
+      "correct_expected_pin_consistent": true,
+      "correctly_flagged": true,
+      "id": "TRAP-H-INTEGER",
+      "wrong_value": 17.999
+    },
+    {
+      "abs_error": "0.01",
+      "correct_exact": "170.30",
+      "correct_expected_pin_consistent": true,
+      "correctly_flagged": true,
+      "id": "TRAP-N-INTEGER",
+      "wrong_value": 170.29
+    },
+    {
+      "abs_error": "0.05",
+      "correct_exact": "92.52",
+      "correct_expected_pin_consistent": true,
+      "correctly_flagged": true,
+      "id": "TRAP-CL-OLD-355",
+      "wrong_value": 92.57
+    },
+    {
+      "abs_error": "0.2",
+      "correct_exact": "340.4",
+      "correct_expected_pin_consistent": true,
+      "correctly_flagged": true,
+      "id": "TRAP-C-INTEGER",
+      "wrong_value": 340.2
+    },
+    {
+      "abs_error": "0.004",
+      "correct_exact": "18.015",
+      "correct_expected_pin_consistent": true,
+      "correctly_flagged": true,
+      "id": "TRAP-WATER-MONOISOTOPIC",
+      "wrong_value": 18.0106
+    },
+    {
+      "abs_error": "170.21",
+      "correct_exact": "170.21",
+      "correct_expected_pin_consistent": true,
+      "correctly_flagged": true,
+      "id": "TRAP-EEW-FUNCTIONALITY-1",
+      "wrong_value": 340.42
+    }
+  ],
+  "methodology": "FIPS 140-3 Sec 7.4 Known-Answer Test (2019); IUPAC CIAAW 2021 standard atomic weights (Meija et al., Pure Appl. Chem. 2016, 88(3):265-291, DOI 10.1515/pac-2015-0305). Exact rational molar-mass re-derivation from the pinned atomic-weight table; float-free gate.",
+  "module_id": "amphora-known-answer-benchmarks",
+  "n_fail_closed": 7,
+  "n_fail_closed_correctly_flagged": 7,
+  "n_positive": 23,
+  "n_positive_pass": 23,
+  "positive_pass_rate": "1.000000",
+  "positive_results": [
+    {
+      "exact_rational": "126/125",
+      "id": "AW-H",
+      "independently_derived": "1.008",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "1.008",
+      "quantity": "H",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "12011/1000",
+      "id": "AW-C",
+      "independently_derived": "12.011",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "12.011",
+      "quantity": "C",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "14007/1000",
+      "id": "AW-N",
+      "independently_derived": "14.007",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "14.007",
+      "quantity": "N",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "15999/1000",
+      "id": "AW-O",
+      "independently_derived": "15.999",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "15.999",
+      "quantity": "O",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "709/20",
+      "id": "AW-Cl",
+      "independently_derived": "35.45",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "35.45",
+      "quantity": "Cl",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "1603/50",
+      "id": "AW-S",
+      "independently_derived": "32.06",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "32.06",
+      "quantity": "S",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "3269/50",
+      "id": "AW-Zn",
+      "independently_derived": "65.38",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "65.38",
+      "quantity": "Zn",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "47867/1000",
+      "id": "AW-Ti",
+      "independently_derived": "47.867",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "47.867",
+      "quantity": "Ti",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "3603/200",
+      "id": "MW-H2O",
+      "independently_derived": "18.015",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "18.015",
+      "quantity": "water",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "228291/1000",
+      "id": "MW-BPA",
+      "independently_derived": "228.29",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "228.29",
+      "quantity": "bisphenol A",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "46261/500",
+      "id": "MW-ECH",
+      "independently_derived": "92.52",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "92.52",
+      "quantity": "epichlorohydrin",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "340419/1000",
+      "id": "MW-DGEBA-N0",
+      "independently_derived": "340.4",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "340.4",
+      "quantity": "DGEBA (n=0)",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "1703/10",
+      "id": "MW-IPDA",
+      "independently_derived": "170.30",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "170.30",
+      "quantity": "isophoronediamine",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "103169/1000",
+      "id": "MW-DETA",
+      "independently_derived": "103.17",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "103.17",
+      "quantity": "diethylenetriamine",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "73119/500",
+      "id": "MW-TETA",
+      "independently_derived": "146.2",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "146.2",
+      "quantity": "triethylenetetramine",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "68099/500",
+      "id": "MW-MXDA",
+      "independently_derived": "136.2",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "136.2",
+      "quantity": "m-xylylenediamine",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "15973/200",
+      "id": "MW-TIO2",
+      "independently_derived": "79.87",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "79.87",
+      "quantity": "titanium dioxide",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "81379/1000",
+      "id": "MW-ZNO",
+      "independently_derived": "81.38",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "81.38",
+      "quantity": "zinc oxide",
+      "unit": "g/mol"
+    },
+    {
+      "exact_rational": "340419/2000",
+      "id": "EEW-DGEBA-N0",
+      "independently_derived": "170.21",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "170.21",
+      "quantity": "DGEBA (n=0) epoxide equivalent weight",
+      "unit": "g/eq"
+    },
+    {
+      "exact_rational": "1703/40",
+      "id": "AHEW-IPDA",
+      "independently_derived": "42.58",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "42.58",
+      "quantity": "IPDA amine-hydrogen equivalent weight",
+      "unit": "g/eq"
+    },
+    {
+      "exact_rational": "103169/5000",
+      "id": "AHEW-DETA",
+      "independently_derived": "20.63",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "20.63",
+      "quantity": "DETA amine-hydrogen equivalent weight",
+      "unit": "g/eq"
+    },
+    {
+      "exact_rational": "24373/1000",
+      "id": "AHEW-TETA",
+      "independently_derived": "24.37",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "24.37",
+      "quantity": "TETA amine-hydrogen equivalent weight",
+      "unit": "g/eq"
+    },
+    {
+      "exact_rational": "68099/2000",
+      "id": "AHEW-MXDA",
+      "independently_derived": "34.05",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "34.05",
+      "quantity": "MXDA amine-hydrogen equivalent weight",
+      "unit": "g/eq"
+    }
+  ],
+  "schema": "amphora.known-answer.molar-mass-kat-report.v1",
+  "scientific_claim": "Deterministic molar-mass arithmetic over the IUPAC 2021 standard atomic weights reproduces the published molar masses of the coating molecules and their theoretical epoxide/amine equivalent weights; regressions to integer nucleon counts, legacy atomic-weight roundings, monoisotopic masses, or wrong functionality are detected. NOT a candidate performance or qualification claim.",
+  "vector_set_id": "molar-mass-kat-v1",
+  "vectors_file_sha256": "066268fcb9010eb762cea12c584d82ccb71000f9ef3ea639d88102bb4070ec78"
+}

@@ -1,0 +1,263 @@
+{
+  "axis": "injection-encoding completeness of the CANDIDATE-objective quarantine boundary in authorize_optimizer_request, probed against the REAL compiled Rust runtime (not a re-implementation), plus the founder-directive T2-09 rank/aggregate-score/composition attack",
+  "campaign_item_id": "T-09",
+  "checkA2_live_cli_phase0_verify": {
+    "cli_derived_phase": "PRE_PHASE_0",
+    "command": "cargo run --offline --locked -p amphora-cli -- portfolio phase0 verify --module amphora-optimizer-orchestrator",
+    "evaluation_result_mismatch": true,
+    "failed_gates": [
+      "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+    ],
+    "mission_md_front_matter_phase": "PHASE_0",
+    "note": "Confirms the directive's PHASE-0 BINDING GAP for this module on fresh live-CLI output gathered this fire: mission.md front-matter declares phase=PHASE_0 while the CLI verifier independently derives PRE_PHASE_0, failed_gates=[\"EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt\"]. Signatures are not being asserted invalid here; the binding between the recorded benchmark and the evaluation receipt is broken. This receipt records that state for the R-D07 human ceremony trail; it does NOT attempt the ceremony (needs two human-held identities this cron does not hold) and does NOT modify mission.md front-matter.",
+    "output": {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-optimizer-orchestrator",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "NOT_APPLICABLE"
+    }
+  },
+  "checkA_current_runtime_and_pin_state": {
+    "core_lib_rs_hash_matches_mission_pin": false,
+    "core_lib_rs_sha256_now": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "diagnostics_rs_hash_matches_mission_pin": false,
+    "diagnostics_rs_sha256_now": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "engine_lib_rs_hash_matches_mission_pin": false,
+    "engine_lib_rs_sha256_now": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+    "mission_md_pinned_core_lib_rs_sha256": "20fa48ab7e758ec7ff5c562cceb426466193a73597f66a708f5455bbc440ad86",
+    "mission_md_pinned_diagnostics_rs_sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a",
+    "mission_md_pinned_engine_lib_rs_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+    "note": "All three of mission.md's pinned source hashes are STALE against current on-disk source (0/3 match). This corroborates, on fresh evidence gathered this fire, the founder directive's PHASE-0 BINDING GAP instruction (a prior test harness overwrote hash-pinned evidence bytes) -- reported for continuity, not itself the refutation target of this attack, which is the live compiled authorize_optimizer_request function's runtime behavior (unaffected by which source snapshot mission.md's prose happens to cite)."
+  },
+  "checkB_eight_encoding_injection_table": {
+    "harness": "/tmp/opt_orch_probe (standalone cargo bin, path dep: amphora-core)",
+    "harness_main_rs_sha256": "7cb4a811d6c3845ecf552afbe96c43975bf39db0fef0f354433e3bfe48c43f2f",
+    "headline": "8/8 adversarial encodings blocked; 0 slipped through and reached a forbidden path.",
+    "n_blocked": 8,
+    "n_encodings": 8,
+    "n_slipped_through": 0,
+    "probe_stdout_sha256": "b402ada209570940f82ae17a701dba5bb2346b61824bc935c539cf87b2eb0226",
+    "structural_note": "Six of the eight cases (1,2,3,4,5,7,8) never reach authorize_optimizer_request at all: they fail Rust's own serde deserialization of OptimizerAuthorizationRequestV1 (#[serde(deny_unknown_fields)], no field aliases, no case-insensitive matching), because the gate's request type is strongly-typed rather than a dynamically-walked serde_json::Value as in amphora-ip-fto-guard's counsel-assertion check. Case 6 (semantic-alt-field, an objective smuggled via hard_constraints with section=objective_values) parses successfully but is rejected inside authorize_optimizer_request itself (constraint.section != 'gates').",
+    "table": [
+      {
+        "authorize_ok": null,
+        "block_reason": "unknown field `objectives_override`, expected one of `schema`, `request_source`, `objectives`, `hard_constraints` at line 1 column 60",
+        "blocked": true,
+        "blocked_at": "serde_deserialization",
+        "case_id": "1-top-level-key",
+        "description": "extra top-level key carrying the smuggled objective alongside a schema-valid empty objectives array",
+        "parse_ok": false,
+        "reached_forbidden_path": false
+      },
+      {
+        "authorize_ok": null,
+        "block_reason": "invalid type: map, expected a string at line 1 column 38",
+        "blocked": true,
+        "blocked_at": "serde_deserialization",
+        "case_id": "2-array-container",
+        "description": "objectives value wrapped in an extra array layer (array-of-array container)",
+        "parse_ok": false,
+        "reached_forbidden_path": false
+      },
+      {
+        "authorize_ok": null,
+        "block_reason": "invalid type: map, expected a sequence at line 1 column 36",
+        "blocked": true,
+        "blocked_at": "serde_deserialization",
+        "case_id": "3-deeper-nesting",
+        "description": "objective declaration nested one level deeper than the schema-valid array",
+        "parse_ok": false,
+        "reached_forbidden_path": false
+      },
+      {
+        "authorize_ok": null,
+        "block_reason": "unknown field `Objectives`, expected one of `schema`, `request_source`, `objectives`, `hard_constraints` at line 1 column 13",
+        "blocked": true,
+        "blocked_at": "serde_deserialization",
+        "case_id": "4-key-case-variant",
+        "description": "capitalized key variant 'Objectives' in place of required 'objectives'",
+        "parse_ok": false,
+        "reached_forbidden_path": false
+      },
+      {
+        "authorize_ok": null,
+        "block_reason": "unknown field `objective_list`, expected one of `schema`, `request_source`, `objectives`, `hard_constraints` at line 1 column 39",
+        "blocked": true,
+        "blocked_at": "serde_deserialization",
+        "case_id": "5-alternate-key-name",
+        "description": "semantically-equivalent alternate key name 'objective_list' in place of 'objectives'",
+        "parse_ok": false,
+        "reached_forbidden_path": false
+      },
+      {
+        "authorize_ok": false,
+        "block_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+        "blocked": true,
+        "blocked_at": "authorize_optimizer_request",
+        "case_id": "6-semantic-alt-field",
+        "description": "objective smuggled through the hard_constraints field by mislabeling section as objective_values",
+        "parse_ok": true,
+        "reached_forbidden_path": false
+      },
+      {
+        "authorize_ok": null,
+        "block_reason": "invalid type: string \"[{\\\"objective_id\\\":\\\"smuggle-7\\\",\\\"module_id\\\":\\\"amphora-optimizer-orchestrator\\\",\\\"section\\\":\\\"objective_values\\\",\\\"path\\\":\\\"score\\\"}]\", expected a sequence at line 1 column 173",
+        "blocked": true,
+        "blocked_at": "serde_deserialization",
+        "case_id": "7-string-container",
+        "description": "objectives value provided as a JSON-encoded string instead of a real array",
+        "parse_ok": false,
+        "reached_forbidden_path": false
+      },
+      {
+        "authorize_ok": null,
+        "block_reason": "unknown field `\u043ebjectives`, expected one of `schema`, `request_source`, `objectives`, `hard_constraints` at line 1 column 119",
+        "blocked": true,
+        "blocked_at": "serde_deserialization",
+        "case_id": "8-unicode-homoglyph-key",
+        "description": "unicode-homoglyph key: Cyrillic '\u043e' (U+043E) substituted for Latin 'o' in 'objectives'",
+        "parse_ok": false,
+        "reached_forbidden_path": false
+      }
+    ],
+    "two_replay_byte_identical": true
+  },
+  "checkC_directive_t2_09_rank_score_composition_attack": {
+    "any_eligible_objective_across_sweep": false,
+    "any_rank_or_aggregate_score_produced_across_sweep": false,
+    "consistent_constraints_control": {
+      "authorize_ok": true,
+      "hard_constraints_passed": true,
+      "rank_or_score_produced": false,
+      "status": "NO_ELIGIBLE_OBJECTIVES"
+    },
+    "contradictory_envelope_test": {
+      "actual_gate_value": true,
+      "composed_as_and_not_average": true,
+      "constraints": [
+        "amphora-candidate-contract.gates.risk_flag == true",
+        "amphora-candidate-contract.gates.risk_flag == false"
+      ],
+      "interpretation": "the failing contradictory constraint short-circuits the whole request to Err on first mismatch (strict AND / fail-closed); there is no partial-credit, averaged, or percentage-pass output anywhere in the return type or the loop logic",
+      "result": {
+        "authorize_ok": false,
+        "error": "optimizer hard constraint failed"
+      }
+    },
+    "n_registered_modules_fed": 29,
+    "objective_count_sweep": [
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 0,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 1,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 2,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 3,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 5,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 10,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      }
+    ],
+    "pass_fail_abstain_not_applicable_note": "The runtime does not materialize a 4-state PASS/FAIL/ABSTAIN/NOT_APPLICABLE enum anywhere in OptimizerAuthorizationV1 or authorize_optimizer_request; the actual composition is a 2-state fail-closed system (Ok = locked-zero-authority output, Err = rejected on first violation, short-circuit AND across hard_constraints). This trivially satisfies 'composes rather than averages' (there is no numeric averaging anywhere in the function), but the directive's literal ABSTAIN/NOT_APPLICABLE state names do not correspond to a distinct code path in this module as shipped -- reported honestly rather than silently assumed to match.",
+    "solver_averaged_instead_of_composed": false,
+    "type_evidence": "OptimizerAuthorizationV1 fields (amphora-core/src/lib.rs:566-577): status:String, hard_constraints_passed:bool, eligible_objective_count:usize, objective_values:BTreeMap<String,String>, ranking_performed:bool, solver_invoked:bool, usable_by_optimizer:bool, authority_upgrade:bool, candidate_created_evidence:bool -- no numeric rank/score field exists in the type signature at all; objective_values is BTreeMap<String,String> (string-valued), not a numeric score map",
+    "type_has_no_rank_or_score_field": true
+  },
+  "claim_under_attack": "docs/mission.md: 'amphora-optimizer-orchestrator has never received an adversarial verdict; its constructive SIGNED_RECEIPT-era receipts are untested claims.' This is the FIRST adversarial fire for this module (confirmed: zero prior lines for module==amphora-optimizer-orchestrator in logs/falsification-ledger.jsonl).",
+  "does_not_close": [
+    "Does not establish that OTHER call sites into authorize_optimizer_request (beyond rank_candidates and this probe) construct requests safely; only the function's own input-validation boundary was exercised.",
+    "Does not repair or attempt the R-D07 human dual-identity ceremony needed to reconcile mission.md's PHASE_0 front-matter with the CLI's live PRE_PHASE_0 derivation.",
+    "Does not establish that hard_constraints from a CANDIDATE request_source are explicitly forbidden the same way objectives are (the code only blocks CANDIDATE+objectives, not CANDIDATE+hard_constraints) -- but hard_constraints can only ever affect the boolean hard_constraints_passed field, never eligible_objective_count/ranking_performed/solver_invoked/usable_by_optimizer/authority_upgrade, which remain hardcoded regardless; this asymmetry is noted but does not itself reach a forbidden path.",
+    "Does not certify Phase-1/Phase-2 promotion, scientific validity, procurement, legal, or safety authority. AUDIT_ONLY."
+  ],
+  "headline": "CLAIM_SURVIVED: 8/8 adversarial injection encodings blocked (6/8 fail closed at the serde type boundary before ever reaching authorize_optimizer_request; 1/8 fails inside the function on the section-mismatch check; the 8th is the semantic-alt-field case, same bucket). Positive control fired correctly (mutant with the CANDIDATE-objective check removed AND output fields computed from the request DID reach the forbidden path on the identical input the real function blocks). Founder-directive T2-09 attack: fed typed envelopes for all 29 registered modules, swept 0-10 valid POLICY-sourced objectives, and fed mutually contradictory hard constraints -- under every input, eligible_objective_count stayed 0, ranking_performed/solver_invoked/usable_by_optimizer/authority_upgrade stayed false, and the contradictory constraint pair produced Err (fail-closed AND composition), never an averaged or partial result. RANK: NONE and FINAL AGGREGATE SCORE: NOT AUTHORIZED held under all inputs tested, and is additionally guaranteed structurally: OptimizerAuthorizationV1 has no numeric rank or score field at all. The pre-committed refutation_criterion did NOT occur.",
+  "module": "amphora-optimizer-orchestrator",
+  "non_circularity": "Uses the REAL compiled amphora-core crate via authorize_optimizer_request + quarantined_optimizer_policy (the exact functions rank_candidates calls in production), invoked from a standalone Rust binary outside any workspace member (path dep only, read-only against amphora-core). Not a Python re-implementation of the check logic.",
+  "positive_control": {
+    "detected": true,
+    "evidence": "real authorize_optimizer_request() -> Err(Some(\"candidate objective injection is forbidden\")) [blocked]; mutant_authorize_with_defect() on the SAME input -> Ok(eligible_objective_count=1, ranking_performed=true, usable_by_optimizer=true) [forbidden path reached] -- the classifier used above (reached_forbidden_path) correctly distinguishes the two",
+    "how_planted": "mutant_authorize_with_defect() in this probe's own source: (1) omits the `if request.request_source == \"CANDIDATE\" && !request.objectives.is_empty() { return Err(...) }` guard present in amphora-core/src/lib.rs authorize_optimizer_request; (2) sets eligible_objective_count = req.objectives.len(), ranking_performed = eligible>0, usable_by_optimizer = eligible>0, objective_values populated from req.objectives, instead of the real function's hardcoded 0/false/false/empty-map literals",
+    "input": "identical directly-constructed OptimizerAuthorizationRequestV1: request_source=CANDIDATE, objectives=[{objective_id: direct-smuggle, module_id: amphora-optimizer-orchestrator, section: objective_values, path: score}]",
+    "mutant_function_result": {
+      "output": {
+        "eligible_objective_count": 1,
+        "objective_values_len": 1,
+        "ranking_performed": true,
+        "status": "MUTANT_RANKED",
+        "usable_by_optimizer": true
+      },
+      "reached_forbidden_path": true
+    },
+    "planted_defect": "CANDIDATE-objective-injection check removed AND eligible_objective_count/objective_values/ranking_performed/usable_by_optimizer computed from the request instead of hardcoded locked constants",
+    "real_function_result": {
+      "blocked": true,
+      "error": "candidate objective injection is forbidden"
+    }
+  },
+  "refutation_criterion_observation_occurred": false,
+  "refutation_criterion_verbatim": "Any input yields a rank, an aggregate score, or an authorized objective; or the solver is shown to average scores.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.optimizer-orchestrator.authorization-injection-encoding-diagnostic.v1",
+  "study_id": "amphora-optimizer-orchestrator-authorization-injection-encoding-v1",
+  "theory_reference": "Karush 1939 / Kuhn-Tucker 1951 KKT conditions; Nemhauser & Wolsey 1988 Integer & Combinatorial Optimization (cited by mission.md); Anderson 1972/1980 reference monitor concept (complete mediation, tamperproof, verifiable); Saltzer & Schroeder 1975 'complete mediation' design principle.",
+  "verdict": "CLAIM_SURVIVED"
+}

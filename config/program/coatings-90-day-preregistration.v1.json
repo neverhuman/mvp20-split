@@ -1,0 +1,104 @@
+{
+  "schema": "amphora.coatings-90-day-preregistration.v1",
+  "program_id": "coatings-submodel-evidence-20260717",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "start_date": "2026-07-17",
+  "end_date": "2026-10-15",
+  "authority_scope": "MODULE_LEVEL_PHASE_1_ATTEMPT",
+  "applicability_ceiling": "Named solvent-borne DGEBA/polyamide materials, lots, temperatures, methods, geometries, and laboratory endpoints only",
+  "master_design": {
+    "formulation_count": 30,
+    "family_count": 3,
+    "formulations_per_family": 10,
+    "selection": "SEEDED_MAXIMIN_WITHOUT_ENDPOINT_LABELS_OR_MODEL_RANKS",
+    "seed": 20260717,
+    "coverage_variables": [
+      "solids",
+      "pvc_cpvc",
+      "solvent_loading",
+      "rheology_additive_loading",
+      "stoichiometric_ratio"
+    ]
+  },
+  "fixed_estimator": {
+    "family": "STANDARDIZED_RIDGE_LOGISTIC",
+    "l2_penalty": 1.0,
+    "training_only_scaling": true,
+    "seed": 20260717,
+    "post_outcome_feature_search": false,
+    "alternate_black_box_family_permitted": false
+  },
+  "sites": {
+    "primary_cro_count": 1,
+    "blinded_verifier_count": 2,
+    "independent_statistician_required": true,
+    "separate_scientific_reviewer_required": true
+  },
+  "campaigns": {
+    "cure": {
+      "primary_runs": 36,
+      "fit_runs": 24,
+      "sealed_primary_holdouts": 12,
+      "sealed_holdouts_per_verifier": 12,
+      "temperatures_f": [65, 73, 95],
+      "endpoint": "AIRLESS_SPRAY_FIRST_PROPERTY_FAILURE_INTERVAL"
+    },
+    "viscosity_sag": {
+      "primary_condition_cells": 180,
+      "verifier_condition_cells_each": 54,
+      "total_condition_cells": 288,
+      "temperatures_c": [18.3, 22.8, 35.0],
+      "endpoints": ["LOG_APPARENT_VISCOSITY", "ASTM_D562_KU", "ASTM_D4400_SAG"]
+    },
+    "barrier": {
+      "total_panels": 210,
+      "unique_systems": 40,
+      "untouched_external_systems": 10,
+      "eis_frequency_hz": [100000.0, 0.01],
+      "minimum_points_per_decade": 10,
+      "index_day": 7,
+      "endpoint_day": 56,
+      "endpoints": ["RUST_CREEP_MM", "WET_ADHESION_MPA"]
+    },
+    "solvency": {
+      "resin_grade_lots": 3,
+      "non_overlapping_solvent_groups": 4,
+      "admissible_sets": 12,
+      "primary_blends": 96,
+      "primary_observations": 576,
+      "verifier_observations_each": 144,
+      "cooccurring_pair_calibrations": 28,
+      "temperatures_c": [10, 25, 40],
+      "endpoints": ["MICROSCOPY_SINGLE_PHASE_1H_24H", "TURBIDITY_NTU_1H_24H"]
+    }
+  },
+  "evaluation": {
+    "raw_data_frozen_before_unblinding": true,
+    "sha256_manifests_required": true,
+    "cluster_bootstrap_replicates": 10000,
+    "highest_independence_unit_required": true,
+    "hostile_nulls_reported": true,
+    "all_subgroups_and_abstentions_reported": true,
+    "two_clean_environment_replay_required": true
+  },
+  "automatic_stop_conditions": [
+    "V2_RECEIPT_IMPLEMENTATION_NOT_ACCEPTED_BEFORE_NEW_EVIDENCE",
+    "CANDIDATE_MEASUREMENTS_NOT_STARTED_BY_DAY_21",
+    "PUBLIC_CORROSION_FEWER_THAN_30_SYSTEMS_3_STUDIES_10_EXTERNAL",
+    "SOLVENCY_IDENTITIES_RIGHTS_SEC_GPC_OR_28_PAIR_PATHS_NOT_QUALIFIED_BY_DAY_14",
+    "EITHER_VERIFIER_SITE_REVERSES_PRIMARY_IMPROVEMENT"
+  ],
+  "status_vocabulary": ["INDEPENDENTLY_VALIDATED", "LOCKED_INTERNAL", "UNVALIDATED"],
+  "prohibited_claims": [
+    "SHELF_LIFE",
+    "SERVICE_LIFE",
+    "PRODUCT_QUALIFICATION",
+    "COATING_SYSTEM_COMPATIBILITY",
+    "BATCH_RELEASE",
+    "PROCUREMENT",
+    "OPTIMIZER_AUTHORITY",
+    "REGULATORY",
+    "LEGAL",
+    "FTO"
+  ]
+}

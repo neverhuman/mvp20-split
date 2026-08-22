@@ -1,0 +1,90 @@
+{
+  "$schema": "amphora.module-phase0-repair-done.v1",
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "campaign_item_id": "R-S07",
+  "checker_script": {
+    "discovery_method": "Auto-discovers the live (non-superseded) *-consolidated-kpi DSSE file by scanning evidence/phase0/kpis/*consolidated-kpi*.json and evidence/phase0/repairs/*/done/*consolidated-kpi*.dsse.json, then excluding any candidate named by another candidate's own supersedes.superseded_path. On this run this correctly resolved to the R-N03 v3 index (which itself supersedes the R-A08 v2 index named in this item's objective text), not a hardcoded path -- so the gate does not itself go stale across future repairs the way the index it checks did.",
+    "does_not_verify_signatures": "By design: completeness (does every on-disk receipt appear in the index?) is orthogonal to authenticity (is the index validly signed?). Signature authenticity of evidence/audit/ receipts against the pinned Phase-0 key is independently audited by evidence/audit/consolidated-kpi-staleness-v1/run_staleness_audit.py's T1.",
+    "identity_key": "receipt_path",
+    "identity_key_rationale": "3 of the 8 on-disk evidence/audit/ receipts (eis-reproducibility-discrimination-power-v1, eis-rustcreep-crossmodality-v1, multi-instrument-concordance-v1) are stored in the live v3 index's audit_verdicts_index with audit_id: null (their own signed payloads carry no explicit audit_id field). receipt_path is always present and unambiguous in every index entry and every on-disk receipt's path, so it -- not audit_id -- is the correct, robust completeness key. Verified directly against the live v3 payload before choosing this design (see decode excerpt this fire's session log; not re-included here to avoid duplicating the KPI's own content).",
+    "path": "evidence/phase0/kpis/check_index_completeness.py",
+    "sha256": "5c97ede24e63de5a34ca3da2e0df32a7b0e0289a14df254869b82efb478b412f"
+  },
+  "claim_under_test": {
+    "claim_text": "A committed checker script detects within one run any signed audit receipt absent from the consolidated index (the defect that recurred twice).",
+    "receipt_path": "amphora-public-corrosion-benchmark/evidence/phase0/kpis/"
+  },
+  "date": "2026-08-12",
+  "directive_obligation": "none",
+  "directive_path": "none",
+  "directive_sha256": "",
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "Does not re-derive, dispute, or modify any individual audit's own statistics.",
+    "Does not modify, delete, or re-sign the live v3 consolidated-kpi index, any evidence/audit/ receipt, the v1/v2 superseded indices, the ledger, or the manifest; all remain byte-intact and referenced by path + sha256. The tempdir mutation exists only under /tmp and touches no file inside the module tree.",
+    "This is a detector, not an enforced gate: nothing currently invokes check_index_completeness.py automatically pre-commit or in CI for this module; wiring it into an actual build/CI hook is future work this receipt does not claim to have done.",
+    "The identity_key=receipt_path design choice means a receipt whose index entry has the correct path but a corrupted/wrong audit_id would NOT be flagged by this gate; it checks presence, not full-entry fidelity."
+  ],
+  "flips_scientific_readiness": false,
+  "generated_on_host": "xbabe2",
+  "human_review_performed": false,
+  "modifies_existing_receipts": false,
+  "modifies_manifest": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "objective_summary": "The 2026-08-03T04:00 fire (consolidated-kpi-staleness-v1) recommended a build-time CI gate over manual re-indexing (see its does_not_close: 'Phase-1 fix: build-time completeness check'). This delivers that gate as check_index_completeness.py, committed at evidence/phase0/kpis/check_index_completeness.py (sha256 5c97ede24e63de5a34ca3da2e0df32a7b0e0289a14df254869b82efb478b412f), executable, and re-runnable against any module-root.",
+  "positive_control": {
+    "detected": true,
+    "evidence": "check_index_completeness.py --module-root /tmp/r-s07-positive-control exited 1 (FAIL_STALE_INDEX) with missing_from_index == ['evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json'], matching exactly the one receipt whose index entry was deleted -- and only that one; extra_in_index_not_on_disk == [] confirms no other diff was introduced.",
+    "how_planted": "Copied evidence/audit, evidence/phase0/kpis, evidence/phase0/repairs verbatim into a tempdir, then edited the DSSE payload of the copied live index file (evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json) to remove the single audit_verdicts_index entry whose receipt_path == 'evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json' (entries 8 -> 7), re-base64'd the payload in place, left signatures[] byte-unchanged (now stale/invalid, which is expected and irrelevant to this completeness-only check), and left the on-disk receipt file for that audit completely untouched.",
+    "planted_defect": "In a tempdir copy only, deleted the eis-rustcreep-crossmodality-v1 audit's entry (receipt_path=evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json) from the copy of the live consolidated-kpi index's audit_verdicts_index, while leaving the real signed receipt file for that audit present and unmodified on disk in the same tempdir."
+  },
+  "promotes_authority": false,
+  "refutation_criterion_considered": "This checker WOULD have been refuted by: (a) exiting 0 (silently passing) against the tempdir copy with the planted gap, or (b) exiting nonzero against the real, currently-clean live index (false positive), or (c) the two live replay runs producing different stdout bytes (non-determinism). None of (a), (b), (c) occurred; observed instead: real run exit 0 / 0 missing / byte-stable replay, tempdir run exit 1 / exactly the one planted gap named.",
+  "repair_item": "R-S07",
+  "repair_mode": "campaign-2026-08-12",
+  "reproducibility": {
+    "canonical_core_payload_sha256": "64f14bbb19ea730d88447f1f8f6d5e11e0fcea368008950be70f1b1630415e7c",
+    "two_replay_note": "The checker's own stdout was independently confirmed byte-identical across two live runs (see run_against_live... .stdout_byte_identical_across_replay). The signed receipt payload below additionally passes this module's standard canonical two-replay sha256 gate (see two_replay_sha256_gate).",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "run_against_live_r_a08_r_n03_refreshed_index": {
+    "command": "python3 evidence/phase0/kpis/check_index_completeness.py",
+    "exit_code_run1": 0,
+    "exit_code_run2_replay": 0,
+    "full_stdout_sha256": "8bc6be4ae38fb7f3857f2ac0bb6fb3810fa6e6bcbd1a2d0276a641d0b780a2ea",
+    "gate": "PASS",
+    "missing_from_index": [],
+    "n_indexed_receipt_paths": 8,
+    "n_on_disk_receipts": 8,
+    "resolved_index_kpi_id": "amphora-public-corrosion-benchmark-phase0-audit-verdicts-consolidated-v3",
+    "resolved_index_path": "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+    "stdout_byte_identical_across_replay": true
+  },
+  "run_against_tempdir_with_hidden_receipt": {
+    "command": "python3 evidence/phase0/kpis/check_index_completeness.py --module-root /tmp/r-s07-positive-control",
+    "exit_code": 1,
+    "full_stdout_sha256": "92c79c8b82a33ea0dba5d84f72bc6256479af5f6c5d51e18fce51ac3c9dc775b",
+    "gate": "FAIL_STALE_INDEX",
+    "missing_from_index": [
+      "evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json"
+    ],
+    "positive_control_build_summary": {
+      "audit_verdicts_index_count_after": 7,
+      "audit_verdicts_index_count_before": 8,
+      "how_planted": "Copied evidence/audit, evidence/phase0/kpis, evidence/phase0/repairs verbatim into a tempdir, then edited the DSSE payload of the copied live index file (evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json) to remove the single audit_verdicts_index entry whose receipt_path == 'evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json' (entries 8 -> 7), re-base64'd the payload in place, left signatures[] byte-unchanged (now stale/invalid, which is expected and irrelevant to this completeness-only check), and left the on-disk receipt file for that audit completely untouched.",
+      "live_index_post_mutation_sha256": "61c1800ef693739d6db36c987dfc2706a86614529d3f477af3221f1851ac2d0d",
+      "live_index_pre_mutation_sha256": "c7dea258068a166cb208606673467bfb52254b131b15379bd7d58ec86fb3eab4",
+      "live_index_rel": "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+      "target_receipt_path": "evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json",
+      "target_receipt_still_on_disk_in_tmpdir": true,
+      "tmproot": "/tmp/r-s07-positive-control"
+    },
+    "tempdir_construction": "Not by touching real files. A fresh tempdir mirrors evidence/audit/, evidence/phase0/kpis/, evidence/phase0/repairs/ verbatim from the real module, then the copied live index file's DSSE payload is edited to delete exactly one audit_verdicts_index entry (receipt_path == evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json), while the corresponding receipt file itself is left present and untouched on disk in the tempdir -- reproducing exactly the shape of the recurring defect: a real signed receipt exists, the index was not rebuilt to reference it."
+  },
+  "schema": "amphora.public-corrosion-benchmark.repair-done.R-S07.v1",
+  "scientific_success_asserted": false,
+  "trust_anchored_in_phase0_store": true,
+  "verdict": "CLAIM_SURVIVED",
+  "verdict_rationale": "The claim under test is that a committed checker script detects, within one run, any signed audit receipt absent from the consolidated index. Two required observations, both captured this fire: (1) against the real, live, R-A08-then-R-N03-refreshed index the checker exits 0 with zero missing (a checker that only ever passes is not evidence on its own, which is why (2) is required) -- (2) against a tempdir copy with one receipt's index entry deliberately hidden (the exact recurring defect class), the same unmodified checker exits 1 and names precisely that one receipt as missing. The claim withstands this test: CLAIM_SURVIVED."
+}

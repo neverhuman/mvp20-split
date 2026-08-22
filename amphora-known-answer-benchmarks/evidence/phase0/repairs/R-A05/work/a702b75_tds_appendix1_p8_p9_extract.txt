@@ -1,0 +1,65 @@
+pdftotext -layout extract, pages 8-9 (A702B75P1 formulation + technical data)
+source pdf sha256: 7b95cd630cf392c87fbd852afea0e6d77591dcdb0d62f6390e5c46ba7d061abe
+url: https://products.evonik.com/assets/s_/us/Ancamide_702B75_us_TDS_EN_EN_TDS_PV_52042312_en_US_US.pdf
+fetched: 2026-08-03
+==============================================================================
+APPENDIX I PRIMER FORMULATIONS
+
+
+   ANCAMIDE 702B75P1 ANTI-CORROSIVE PRIMER BASED ON LIQUID EPOXY RESIN EEW 190.
+   CURING AGENT LOADING 90% OF THEORETICAL STOICHIOMETRY
+
+       Nb.               A-Component (g)                                                                Anti-Corrosive Primer
+        1.                  Epoxy Resin                   Bis A diglycidyl ether (EEW190)                      250.00
+        2.                  Settling agent                           Antiterra U                                 5.00
+        3.                   Thixotrope                            Bentone SD-2                                 8.00
+        4.                     Solvent                                 Xylene                                  127.00
+                                                                      n butanol                                 40.00
+        5.                       Filler                            Blanc fix micro                             160.00
+        6.                       Filler                          Microtalc mica W1                             100.00
+        7.                       Filler                           Heucophos ZP10             Heubach           100.00
+        8.                       Filler                           Bayferrox 130M              Bayer             90.00
+        9.                       Filler                          Wollastocoat 10ES                             120.00
+                                                                                                               1,000.00
+      A-Component Manufacture Procedure:
+      • Charge components 1-4 and stir homogeneous at low shear
+      • Slowly add components 5-9 and then mix under high shear for 30 mins until Hegman gauge 7 is achieved
+       Nb.               B-Component (g)
+        1.                  Curing Agent                         Ancamide 702B75             Evonik            202.00
+        2.                  Curing Agent                           Ancamine K54              Evonik              6.00
+        3.                     Solvent                                 Xylene                                   57.50
+        4.                     Solvent                              Dowanol PM                                  18.50
+                                                                                                               284.00
+      Total                                                                                                    1,284.00
+      After mixing Part A and B, apply a 15-30 minute induction time prior to application.
+
+
+
+
+Evonik Operations | Ancamide 702B75 us | Page 8/15 | 3/26/2026
+   TECHNICAL DATA
+
+
+      Mixing ratio                     weight     3.5 :1               Pot-life           h       3
+                                       volume     2.0 :1
+      Density (g/ml)                  - Part A    1.64               Gloss (60°)                  45
+                                      - Part B    0.95
+                                        -Mix       1.41
+      Solid Content (Weight %)        - Part A    83.3            BK Dry time 23°C
+                                      - Part B    55.5                 Phase I            h      1.30
+                                        -Mix       77.1                Phase II           h      4.00
+      Solid Content (Volume %)        - Part A    67.9           Hard Dry Thumb Twist     h      3.50
+                                      - Part B    49.2
+                                        -Mix       62.0
+      Mix Viscosity* @ 25°C            mPa.s      1000            Persoz Hardness       7 days   240
+      VOC                               g/l        320              Direct impact       cm.kg     80
+      PVC                                %         32.5             Reverse impact      cm.kg     4
+
+
+   *ASTM D 1544-80
+
+
+
+
+Evonik Operations | Ancamide 702B75 us | Page 9/15 | 3/26/2026
+   

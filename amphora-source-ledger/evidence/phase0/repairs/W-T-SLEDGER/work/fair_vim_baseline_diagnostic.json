@@ -1,0 +1,52 @@
+{
+  "counts": {
+    "fact_url_corroboration_rate": 0.5517,
+    "license_field_is_free_text_not_structured_enum": true,
+    "link_audit_status_vocabulary": [
+      "resolved",
+      "paywalled",
+      "blocked",
+      "snapshot_only"
+    ],
+    "n_distinct_fact_urls": 29,
+    "n_distinct_record_urls": 153,
+    "n_doi_urls_in_facts": 0,
+    "n_doi_urls_in_records": 4,
+    "n_entries": 83,
+    "n_fact_urls_corroborated_by_source_records": 16,
+    "n_facts_entries_mentioning_method": 2,
+    "n_facts_entries_with_uncertainty_or_tolerance_field": 0,
+    "n_load_bearing": 23,
+    "n_records": 162,
+    "n_records_citing_astm_iso_or_dxxxx_method": 30,
+    "n_records_with_non_boilerplate_numeric_tolerance": 61,
+    "n_records_with_non_boilerplate_numeric_tolerance_rate": 0.3765,
+    "n_second_url": 13,
+    "n_single_source_waiver": 14,
+    "n_url_present": 83,
+    "records_citing_method_ids_sample": [
+      "SRC-F718",
+      "SRC-SCAQMD-1106",
+      "SRC-EPON828",
+      "SRC-EASTMAN-NBUTANOL",
+      "SRC-ASTM-D2697",
+      "SRC-ASTM-D1475",
+      "SRC-ASTM-B117",
+      "SRC-ASTM-D5894",
+      "SRC-ASTM-D870",
+      "SRC-ASTM-D4541"
+    ],
+    "registry_dir_files": [
+      "succession.v1.json"
+    ],
+    "schema_facts": "mvp20.facts.v1",
+    "schema_records": "mvp20.source_records.v4"
+  },
+  "inputs": {
+    "facts_path": "amphora-source-ledger/reference/mvp20/data/facts.json",
+    "facts_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "records_path": "amphora-source-ledger/reference/mvp20/data/source_records.json",
+    "records_sha256": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c"
+  },
+  "schema": "amphora.source-ledger.w-t-sledger.fair-vim-baseline-diagnostic.v1"
+}

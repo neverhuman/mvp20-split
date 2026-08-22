@@ -1,0 +1,136 @@
+{
+  "all_gates_passed": true,
+  "attack": "C8 fire 2: clean-only (zero-contamination) dielectric physics-vs-ML-vs-stack pipeline on RadonPy PI1070, escalating fire 1's contaminated-train/clean-test-slice (n=20) probe into a fully clean train+calib+test pipeline (n_clean=113).",
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "C8",
+  "ceiling": "AUDIT_ONLY red-team escalation of fire 1's data-integrity finding. Does not itself alter any shipped KPI receipt, module honesty ceiling, manifest, or authority ceiling. Documents that the dielectric arm of the C8 comparison table has NO currently-defensible {physics, ML, stack} numbers, not merely a physics-vs-ML label-quality caveat.",
+  "claim_under_attack": {
+    "claim_text": "A founder-facing per-property physics-vs-ML-vs-stack comparison can be built entirely from receipt-backed numbers (no illustrative placeholders).",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json"
+  },
+  "comparison_to_fire1": {
+    "fire1_contaminated_train_clean_test_slice_n20": {
+      "ml_MAE": 10.240509886364913,
+      "ml_R2": 0.47513726838508663,
+      "n": 20,
+      "physics_MAE": 28.120446145676784,
+      "physics_R2": -0.9865622319026621
+    },
+    "fire1_full_population_contaminated_train_and_test": {
+      "ml_MAE": 1.466589416518702,
+      "ml_R2": 0.6427238530481524,
+      "physics_MAE": 9.627206210912188,
+      "physics_R2": -1.672170143117905
+    },
+    "fire2_clean_train_and_test_this_fire": {
+      "ml_MAE": 13.056624833276937,
+      "ml_R2": -0.02625668447651175,
+      "n": 24,
+      "physics_MAE": 19.887546403521394,
+      "physics_R2": -1.0405349777711903
+    },
+    "interpretation": "Training the RF from scratch on ONLY the physically-valid rows (n_train=67) rather than the full 89.5%-corrupted population removes the large-n advantage that let ML fit the corrupted majority's low-variance near-electronic-limit values. This isolates whether ML's edge over physics reflects genuine chemical-structure-to-dielectric-constant skill or simply exploiting the corrupted population's homogeneity."
+  },
+  "consequence_for_founder_facing_f8_panel": "Fire 1 already narrowed the dielectric arm to RadonPy-only and flagged the label defect. This fire goes further: the dielectric row of the F8 comparison table cannot honestly present ANY of {physics, ML, stack} as a competent RadonPy dielectric-constant predictor using current receipt-backed data -- all three arms fail to beat a constant-mean baseline once evaluated without label contamination. The shipped mixed-dielectric-conformal-kpi's R2=0.64 number should NOT be cited in the F8 panel as representative dielectric-ML skill; it reflects fitting a corrupted, low-variance majority label, not real predictive capability. C8's dielectric row should read 'NO COMPETENT MODEL -- label integrity failure, n_clean=113' rather than any point MAE/R2, until an experimental or re-converged dielectric corpus is acquired (already queued in fire 1).",
+  "criterion_a_ml_r2_le_0": true,
+  "criterion_b_ci_includes_zero": true,
+  "fire_sequence": "C8 fire 2 of 4 (max_fires).",
+  "gates": {
+    "population_and_violation_counts_reproduce_fire1_exactly": true,
+    "pre_registered_refute_criteria_fixed_before_running": true,
+    "reused_verbatim_featurization_and_onsager_formula_from_fire1": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "two_replay_byte_stable_this_receipt": true
+  },
+  "headline_finding": {
+    "property": "dielectric_constant",
+    "summary": "On the clean-only pipeline (RF retrained on n_train=67 physically-valid rows only, evaluated on n_test=24 physically-valid rows only), ML's test R2 collapses to -0.0263 (WORSE than predicting the population mean) and the Ridge stack's test R2 is -0.0482. Onsager physics scores R2=-1.0405 on the same clean test set -- still poor, but the paired bootstrap 90% CI of (physics_MAE - ML_MAE) is [-0.40, +13.92], INCLUDING ZERO: ML's MAE advantage over physics is not statistically distinguishable from chance at this honest sample size. Both pre-registered refute criteria fire. CONCLUSION: the previously-reported large ML-over-physics advantage for dielectric constant (shipped KPI R2=0.64 vs Onsager R2=-1.67) is NOT a robust chemistry-to-property skill signal -- it is an artifact of RF exploiting the LOW VARIANCE of the corrupted majority (962/1075 rows collapsed toward the under-converged electronic-only limit, which is easy to predict near-constant and looks like high R2 against a homogeneous target). On the honest, physically-valid 10.5% of the population, NEITHER physics NOR ML NOR the stack produces a competent dielectric-constant predictor (all three R2 <= 0, i.e. no better than the test-set mean).",
+    "type": "DECISIVE_REFUTATION_OF_ML_ADVANTAGE"
+  },
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "objective": "Escalate fire 1's dielectric data-integrity finding into a decisive test: does ML's large apparent advantage over Onsager physics for RadonPy dielectric constant (shipped mixed-dielectric-conformal-kpi; fire-1 full-population physics R2=-1.67 vs ML R2=+0.64) survive a ZERO-CONTAMINATION pipeline, where the Random Forest is retrained from scratch using ONLY the 113/1075=10.5% physically-valid rows for train+calib+test alike (not just a clean test slice of a model fit on corrupted data)?",
+  "population": {
+    "fraction_clean": 0.10511627906976745,
+    "physically_valid_rows_eps_static_ge_n2": 113,
+    "total_radonpy_dielectric_rows": 1075,
+    "violation_rows_excluded": 962
+  },
+  "pre_registered_refute_criterion": {
+    "criterion_a": "ML test R2 <= 0 on the clean-only pipeline (no better than predicting the mean)",
+    "criterion_b": "paired bootstrap (n_boot=2000, seed=0) 90%% CI of (physics_MAE - ML_MAE) on the clean test set includes zero",
+    "logic": "EITHER criterion refutes the claim that ML's apparent large advantage over Onsager physics (shipped KPI, fire-1 full-population: physics R2=-1.67 vs ML R2=+0.64) is real predictive skill rather than an artifact of scoring against 89.5%-corrupted labels at large n."
+  },
+  "prior_fire_context": "C8 fire 1 (c8_phys_ml_stack_comparison_receipt.v1.json) built all four property triplets and, while doing so, found RadonPy PI1070's static_dielectric_const ground truth violates the model-independent thermodynamic inequality eps_static>=n_measured^2 (Frohlich 1949 Ch.2) in 962/1075=89.5% of rows. Fire 1 reported this as a label-quality defect but only tested its downstream consequence with a WEAK probe: an RF trained on the full 89.5%-corrupted population, then evaluated on the physically-valid SLICE of its test split (n=20). That leaves the training data still contaminated. Fire 1's own recommended followup #3 was: 're-run ... filtered to the physically-valid subset only, to determine whether the shipped ML KPI's reported MAE/R2 are themselves inflated ... by training against corrupted labels.' This fire executes exactly that.",
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Manifest untouched at 66/11.",
+  "receipt_id": "c8-fire2-dielectric-clean-subset-pipeline",
+  "recommended_followups": [
+    "Formally amend the C8 done_criterion / F8 founder panel: mark the dielectric row as label-integrity-blocked (no competent model, n_clean=113) rather than reporting the shipped KPI's contaminated-population R2=0.64.",
+    "The data-acquisition queue entry filed in fire 1 (experimental or re-converged RadonPy dielectric corpus) remains the only path to a real dielectric arm; this fire adds no new data ask, it strengthens the existing one with a decisive quantitative consequence.",
+    "Density, Tg, and refractive-index arms (fire 1) are NOT implicated by this finding -- their ground-truth columns passed their own respective integrity checks (density: MD-simulated, no known label defect; Tg: literature-sourced; RI: refractive_index column itself, not derived from the flagged static_dielectric_const column). Only dielectric_constant is affected.",
+    "campaign_item C8: density and Tg triplets (fire 1) stand as receipt-backed and citable. Dielectric is now decisively NOT citable as a competent model (this fire). RI physics/stack remain RadonPy-only (fire 1, BLOCKED_DATA on OpenPoly). Recommend campaign_item_status=pending: fire 3/4 should either acquire the queued dielectric data, or produce the formal 'dielectric: no competent model' F8 table row text so the campaign item can close honestly on 3/4 properties + 1 explicitly-labeled negative result (which itself satisfies 'no illustrative placeholders')."
+  ],
+  "results": {
+    "ml_clean_only": {
+      "MAE": 13.056624833276937,
+      "R2": -0.02625668447651175,
+      "RMSE": 18.76846567549229,
+      "n": 24,
+      "pearson_r": 0.6310904740893654
+    },
+    "paired_bootstrap_physics_minus_ml_mae": {
+      "ci90_hi": 13.918536931816268,
+      "ci90_lo": -0.40165565626212735,
+      "includes_zero": true,
+      "n_boot": 2000,
+      "point_estimate": 6.830921570244458
+    },
+    "physics_clean_only": {
+      "MAE": 19.887546403521394,
+      "R2": -1.0405349777711903,
+      "RMSE": 26.46505450764722,
+      "n": 24,
+      "pearson_r": -0.29124936954685154
+    },
+    "stack_clean_only": {
+      "MAE": 14.522128739742584,
+      "R2": -0.04820763516393378,
+      "RMSE": 18.968126197028056,
+      "n": 24,
+      "pearson_r": 0.641967561392906
+    },
+    "stack_weights_clean_only": {
+      "intercept": 9.662519815428226,
+      "w_physics": -0.04871579502371679,
+      "w_rf": 0.8307026502591619
+    }
+  },
+  "rights_check": "No new source touched; re-reads RadonPy PI1070 (Fujimoto et al. 2023), already rights-cleared and load-bearing elsewhere in this module. No quarantined/CONTEXT_ONLY source opened.",
+  "schema": "amphora.molecule-property.c8-phys-ml-stack-comparison-receipt.v1",
+  "signature": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzc2VkIjogdHJ1ZSwKICAiYXR0YWNrIjogIkM4IGZpcmUgMjogY2xlYW4tb25seSAoemVyby1jb250YW1pbmF0aW9uKSBkaWVsZWN0cmljIHBoeXNpY3MtdnMtTUwtdnMtc3RhY2sgcGlwZWxpbmUgb24gUmFkb25QeSBQSTEwNzAsIGVzY2FsYXRpbmcgZmlyZSAxJ3MgY29udGFtaW5hdGVkLXRyYWluL2NsZWFuLXRlc3Qtc2xpY2UgKG49MjApIHByb2JlIGludG8gYSBmdWxseSBjbGVhbiB0cmFpbitjYWxpYit0ZXN0IHBpcGVsaW5lIChuX2NsZWFuPTExMykuIiwKICAiYXV0aG9yaXR5IjogIkFVRElUX09OTFkiLAogICJjYW1wYWlnbl9pdGVtX2lkIjogIkM4IiwKICAiY2VpbGluZyI6ICJBVURJVF9PTkxZIHJlZC10ZWFtIGVzY2FsYXRpb24gb2YgZmlyZSAxJ3MgZGF0YS1pbnRlZ3JpdHkgZmluZGluZy4gRG9lcyBub3QgaXRzZWxmIGFsdGVyIGFueSBzaGlwcGVkIEtQSSByZWNlaXB0LCBtb2R1bGUgaG9uZXN0eSBjZWlsaW5nLCBtYW5pZmVzdCwgb3IgYXV0aG9yaXR5IGNlaWxpbmcuIERvY3VtZW50cyB0aGF0IHRoZSBkaWVsZWN0cmljIGFybSBvZiB0aGUgQzggY29tcGFyaXNvbiB0YWJsZSBoYXMgTk8gY3VycmVudGx5LWRlZmVuc2libGUge3BoeXNpY3MsIE1MLCBzdGFja30gbnVtYmVycywgbm90IG1lcmVseSBhIHBoeXNpY3MtdnMtTUwgbGFiZWwtcXVhbGl0eSBjYXZlYXQuIiwKICAiY2xhaW1fdW5kZXJfYXR0YWNrIjogewogICAgImNsYWltX3RleHQiOiAiQSBmb3VuZGVyLWZhY2luZyBwZXItcHJvcGVydHkgcGh5c2ljcy12cy1NTC12cy1zdGFjayBjb21wYXJpc29uIGNhbiBiZSBidWlsdCBlbnRpcmVseSBmcm9tIHJlY2VpcHQtYmFja2VkIG51bWJlcnMgKG5vIGlsbHVzdHJhdGl2ZSBwbGFjZWhvbGRlcnMpLiIsCiAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvcmFkb25weS1kZW5zaXR5LW1sLXZzLXZhbi1rcmV2ZWxlbi1waHlzaWNzLWtwaS52MS5qc29uIgogIH0sCiAgImNvbXBhcmlzb25fdG9fZmlyZTEiOiB7CiAgICAiZmlyZTFfY29udGFtaW5hdGVkX3RyYWluX2NsZWFuX3Rlc3Rfc2xpY2VfbjIwIjogewogICAgICAibWxfTUFFIjogMTAuMjQwNTA5ODg2MzY0OTEzLAogICAgICAibWxfUjIiOiAwLjQ3NTEzNzI2ODM4NTA4NjYzLAogICAgICAibiI6IDIwLAogICAgICAicGh5c2ljc19NQUUiOiAyOC4xMjA0NDYxNDU2NzY3ODQsCiAgICAgICJwaHlzaWNzX1IyIjogLTAuOTg2NTYyMjMxOTAyNjYyMQogICAgfSwKICAgICJmaXJlMV9mdWxsX3BvcHVsYXRpb25fY29udGFtaW5hdGVkX3RyYWluX2FuZF90ZXN0IjogewogICAgICAibWxfTUFFIjogMS40NjY1ODk0MTY1MTg3MDIsCiAgICAgICJtbF9SMiI6IDAuNjQyNzIzODUzMDQ4MTUyNCwKICAgICAgInBoeXNpY3NfTUFFIjogOS42MjcyMDYyMTA5MTIxODgsCiAgICAgICJwaHlzaWNzX1IyIjogLTEuNjcyMTcwMTQzMTE3OTA1CiAgICB9LAogICAgImZpcmUyX2NsZWFuX3RyYWluX2FuZF90ZXN0X3RoaXNfZmlyZSI6IHsKICAgICAgIm1sX01BRSI6IDEzLjA1NjYyNDgzMzI3NjkzNywKICAgICAgIm1sX1IyIjogLTAuMDI2MjU2Njg0NDc2NTExNzUsCiAgICAgICJuIjogMjQsCiAgICAgICJwaHlzaWNzX01BRSI6IDE5Ljg4NzU0NjQwMzUyMTM5NCwKICAgICAgInBoeXNpY3NfUjIiOiAtMS4wNDA1MzQ5Nzc3NzExOTAzCiAgICB9LAogICAgImludGVycHJldGF0aW9uIjogIlRyYWluaW5nIHRoZSBSRiBmcm9tIHNjcmF0Y2ggb24gT05MWSB0aGUgcGh5c2ljYWxseS12YWxpZCByb3dzIChuX3RyYWluPTY3KSByYXRoZXIgdGhhbiB0aGUgZnVsbCA4OS41JS1jb3JydXB0ZWQgcG9wdWxhdGlvbiByZW1vdmVzIHRoZSBsYXJnZS1uIGFkdmFudGFnZSB0aGF0IGxldCBNTCBmaXQgdGhlIGNvcnJ1cHRlZCBtYWpvcml0eSdzIGxvdy12YXJpYW5jZSBuZWFyLWVsZWN0cm9uaWMtbGltaXQgdmFsdWVzLiBUaGlzIGlzb2xhdGVzIHdoZXRoZXIgTUwncyBlZGdlIG92ZXIgcGh5c2ljcyByZWZsZWN0cyBnZW51aW5lIGNoZW1pY2FsLXN0cnVjdHVyZS10by1kaWVsZWN0cmljLWNvbnN0YW50IHNraWxsIG9yIHNpbXBseSBleHBsb2l0aW5nIHRoZSBjb3JydXB0ZWQgcG9wdWxhdGlvbidzIGhvbW9nZW5laXR5LiIKICB9LAogICJjb25zZXF1ZW5jZV9mb3JfZm91bmRlcl9mYWNpbmdfZjhfcGFuZWwiOiAiRmlyZSAxIGFscmVhZHkgbmFycm93ZWQgdGhlIGRpZWxlY3RyaWMgYXJtIHRvIFJhZG9uUHktb25seSBhbmQgZmxhZ2dlZCB0aGUgbGFiZWwgZGVmZWN0LiBUaGlzIGZpcmUgZ29lcyBmdXJ0aGVyOiB0aGUgZGllbGVjdHJpYyByb3cgb2YgdGhlIEY4IGNvbXBhcmlzb24gdGFibGUgY2Fubm90IGhvbmVzdGx5IHByZXNlbnQgQU5ZIG9mIHtwaHlzaWNzLCBNTCwgc3RhY2t9IGFzIGEgY29tcGV0ZW50IFJhZG9uUHkgZGllbGVjdHJpYy1jb25zdGFudCBwcmVkaWN0b3IgdXNpbmcgY3VycmVudCByZWNlaXB0LWJhY2tlZCBkYXRhIC0tIGFsbCB0aHJlZSBhcm1zIGZhaWwgdG8gYmVhdCBhIGNvbnN0YW50LW1lYW4gYmFzZWxpbmUgb25jZSBldmFsdWF0ZWQgd2l0aG91dCBsYWJlbCBjb250YW1pbmF0aW9uLiBUaGUgc2hpcHBlZCBtaXhlZC1kaWVsZWN0cmljLWNvbmZvcm1hbC1rcGkncyBSMj0wLjY0IG51bWJlciBzaG91bGQgTk9UIGJlIGNpdGVkIGluIHRoZSBGOCBwYW5lbCBhcyByZXByZXNlbnRhdGl2ZSBkaWVsZWN0cmljLU1MIHNraWxsOyBpdCByZWZsZWN0cyBmaXR0aW5nIGEgY29ycnVwdGVkLCBsb3ctdmFyaWFuY2UgbWFqb3JpdHkgbGFiZWwsIG5vdCByZWFsIHByZWRpY3RpdmUgY2FwYWJpbGl0eS4gQzgncyBkaWVsZWN0cmljIHJvdyBzaG91bGQgcmVhZCAnTk8gQ09NUEVURU5UIE1PREVMIC0tIGxhYmVsIGludGVncml0eSBmYWlsdXJlLCBuX2NsZWFuPTExMycgcmF0aGVyIHRoYW4gYW55IHBvaW50IE1BRS9SMiwgdW50aWwgYW4gZXhwZXJpbWVudGFsIG9yIHJlLWNvbnZlcmdlZCBkaWVsZWN0cmljIGNvcnB1cyBpcyBhY3F1aXJlZCAoYWxyZWFkeSBxdWV1ZWQgaW4gZmlyZSAxKS4iLAogICJjcml0ZXJpb25fYV9tbF9yMl9sZV8wIjogdHJ1ZSwKICAiY3JpdGVyaW9uX2JfY2lfaW5jbHVkZXNfemVybyI6IHRydWUsCiAgImZpcmVfc2VxdWVuY2UiOiAiQzggZmlyZSAyIG9mIDQgKG1heF9maXJlcykuIiwKICAiZ2F0ZXMiOiB7CiAgICAicG9wdWxhdGlvbl9hbmRfdmlvbGF0aW9uX2NvdW50c19yZXByb2R1Y2VfZmlyZTFfZXhhY3RseSI6IHRydWUsCiAgICAicHJlX3JlZ2lzdGVyZWRfcmVmdXRlX2NyaXRlcmlhX2ZpeGVkX2JlZm9yZV9ydW5uaW5nIjogdHJ1ZSwKICAgICJyZXVzZWRfdmVyYmF0aW1fZmVhdHVyaXphdGlvbl9hbmRfb25zYWdlcl9mb3JtdWxhX2Zyb21fZmlyZTEiOiB0cnVlLAogICAgInNpZ25hdHVyZV9maWVsZF9pc19kc3NlX2VudmVsb3BlX29iamVjdCI6IHRydWUsCiAgICAidHdvX3JlcGxheV9ieXRlX3N0YWJsZV90aGlzX3JlY2VpcHQiOiB0cnVlCiAgfSwKICAiaGVhZGxpbmVfZmluZGluZyI6IHsKICAgICJwcm9wZXJ0eSI6ICJkaWVsZWN0cmljX2NvbnN0YW50IiwKICAgICJzdW1tYXJ5IjogIk9uIHRoZSBjbGVhbi1vbmx5IHBpcGVsaW5lIChSRiByZXRyYWluZWQgb24gbl90cmFpbj02NyBwaHlzaWNhbGx5LXZhbGlkIHJvd3Mgb25seSwgZXZhbHVhdGVkIG9uIG5fdGVzdD0yNCBwaHlzaWNhbGx5LXZhbGlkIHJvd3Mgb25seSksIE1MJ3MgdGVzdCBSMiBjb2xsYXBzZXMgdG8gLTAuMDI2MyAoV09SU0UgdGhhbiBwcmVkaWN0aW5nIHRoZSBwb3B1bGF0aW9uIG1lYW4pIGFuZCB0aGUgUmlkZ2Ugc3RhY2sncyB0ZXN0IFIyIGlzIC0wLjA0ODIuIE9uc2FnZXIgcGh5c2ljcyBzY29yZXMgUjI9LTEuMDQwNSBvbiB0aGUgc2FtZSBjbGVhbiB0ZXN0IHNldCAtLSBzdGlsbCBwb29yLCBidXQgdGhlIHBhaXJlZCBib290c3RyYXAgOTAlIENJIG9mIChwaHlzaWNzX01BRSAtIE1MX01BRSkgaXMgWy0wLjQwLCArMTMuOTJdLCBJTkNMVURJTkcgWkVSTzogTUwncyBNQUUgYWR2YW50YWdlIG92ZXIgcGh5c2ljcyBpcyBub3Qgc3RhdGlzdGljYWxseSBkaXN0aW5ndWlzaGFibGUgZnJvbSBjaGFuY2UgYXQgdGhpcyBob25lc3Qgc2FtcGxlIHNpemUuIEJvdGggcHJlLXJlZ2lzdGVyZWQgcmVmdXRlIGNyaXRlcmlhIGZpcmUuIENPTkNMVVNJT046IHRoZSBwcmV2aW91c2x5LXJlcG9ydGVkIGxhcmdlIE1MLW92ZXItcGh5c2ljcyBhZHZhbnRhZ2UgZm9yIGRpZWxlY3RyaWMgY29uc3RhbnQgKHNoaXBwZWQgS1BJIFIyPTAuNjQgdnMgT25zYWdlciBSMj0tMS42NykgaXMgTk9UIGEgcm9idXN0IGNoZW1pc3RyeS10by1wcm9wZXJ0eSBza2lsbCBzaWduYWwgLS0gaXQgaXMgYW4gYXJ0aWZhY3Qgb2YgUkYgZXhwbG9pdGluZyB0aGUgTE9XIFZBUklBTkNFIG9mIHRoZSBjb3JydXB0ZWQgbWFqb3JpdHkgKDk2Mi8xMDc1IHJvd3MgY29sbGFwc2VkIHRvd2FyZCB0aGUgdW5kZXItY29udmVyZ2VkIGVsZWN0cm9uaWMtb25seSBsaW1pdCwgd2hpY2ggaXMgZWFzeSB0byBwcmVkaWN0IG5lYXItY29uc3RhbnQgYW5kIGxvb2tzIGxpa2UgaGlnaCBSMiBhZ2FpbnN0IGEgaG9tb2dlbmVvdXMgdGFyZ2V0KS4gT24gdGhlIGhvbmVzdCwgcGh5c2ljYWxseS12YWxpZCAxMC41JSBvZiB0aGUgcG9wdWxhdGlvbiwgTkVJVEhFUiBwaHlzaWNzIE5PUiBNTCBOT1IgdGhlIHN0YWNrIHByb2R1Y2VzIGEgY29tcGV0ZW50IGRpZWxlY3RyaWMtY29uc3RhbnQgcHJlZGljdG9yIChhbGwgdGhyZWUgUjIgPD0gMCwgaS5lLiBubyBiZXR0ZXIgdGhhbiB0aGUgdGVzdC1zZXQgbWVhbikuIiwKICAgICJ0eXBlIjogIkRFQ0lTSVZFX1JFRlVUQVRJT05fT0ZfTUxfQURWQU5UQUdFIgogIH0sCiAgIm1vZGlmaWVzX25vX2xpdmVfY29uZmlnIjogdHJ1ZSwKICAibW9kdWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkiLAogICJvYmplY3RpdmUiOiAiRXNjYWxhdGUgZmlyZSAxJ3MgZGllbGVjdHJpYyBkYXRhLWludGVncml0eSBmaW5kaW5nIGludG8gYSBkZWNpc2l2ZSB0ZXN0OiBkb2VzIE1MJ3MgbGFyZ2UgYXBwYXJlbnQgYWR2YW50YWdlIG92ZXIgT25zYWdlciBwaHlzaWNzIGZvciBSYWRvblB5IGRpZWxlY3RyaWMgY29uc3RhbnQgKHNoaXBwZWQgbWl4ZWQtZGllbGVjdHJpYy1jb25mb3JtYWwta3BpOyBmaXJlLTEgZnVsbC1wb3B1bGF0aW9uIHBoeXNpY3MgUjI9LTEuNjcgdnMgTUwgUjI9KzAuNjQpIHN1cnZpdmUgYSBaRVJPLUNPTlRBTUlOQVRJT04gcGlwZWxpbmUsIHdoZXJlIHRoZSBSYW5kb20gRm9yZXN0IGlzIHJldHJhaW5lZCBmcm9tIHNjcmF0Y2ggdXNpbmcgT05MWSB0aGUgMTEzLzEwNzU9MTAuNSUgcGh5c2ljYWxseS12YWxpZCByb3dzIGZvciB0cmFpbitjYWxpYit0ZXN0IGFsaWtlIChub3QganVzdCBhIGNsZWFuIHRlc3Qgc2xpY2Ugb2YgYSBtb2RlbCBmaXQgb24gY29ycnVwdGVkIGRhdGEpPyIsCiAgInBvcHVsYXRpb24iOiB7CiAgICAiZnJhY3Rpb25fY2xlYW4iOiAwLjEwNTExNjI3OTA2OTc2NzQ1LAogICAgInBoeXNpY2FsbHlfdmFsaWRfcm93c19lcHNfc3RhdGljX2dlX24yIjogMTEzLAogICAgInRvdGFsX3JhZG9ucHlfZGllbGVjdHJpY19yb3dzIjogMTA3NSwKICAgICJ2aW9sYXRpb25fcm93c19leGNsdWRlZCI6IDk2MgogIH0sCiAgInByZV9yZWdpc3RlcmVkX3JlZnV0ZV9jcml0ZXJpb24iOiB7CiAgICAiY3JpdGVyaW9uX2EiOiAiTUwgdGVzdCBSMiA8PSAwIG9uIHRoZSBjbGVhbi1vbmx5IHBpcGVsaW5lIChubyBiZXR0ZXIgdGhhbiBwcmVkaWN0aW5nIHRoZSBtZWFuKSIsCiAgICAiY3JpdGVyaW9uX2IiOiAicGFpcmVkIGJvb3RzdHJhcCAobl9ib290PTIwMDAsIHNlZWQ9MCkgOTAlJSBDSSBvZiAocGh5c2ljc19NQUUgLSBNTF9NQUUpIG9uIHRoZSBjbGVhbiB0ZXN0IHNldCBpbmNsdWRlcyB6ZXJvIiwKICAgICJsb2dpYyI6ICJFSVRIRVIgY3JpdGVyaW9uIHJlZnV0ZXMgdGhlIGNsYWltIHRoYXQgTUwncyBhcHBhcmVudCBsYXJnZSBhZHZhbnRhZ2Ugb3ZlciBPbnNhZ2VyIHBoeXNpY3MgKHNoaXBwZWQgS1BJLCBmaXJlLTEgZnVsbC1wb3B1bGF0aW9uOiBwaHlzaWNzIFIyPS0xLjY3IHZzIE1MIFIyPSswLjY0KSBpcyByZWFsIHByZWRpY3RpdmUgc2tpbGwgcmF0aGVyIHRoYW4gYW4gYXJ0aWZhY3Qgb2Ygc2NvcmluZyBhZ2FpbnN0IDg5LjUlLWNvcnJ1cHRlZCBsYWJlbHMgYXQgbGFyZ2Ugbi4iCiAgfSwKICAicHJpb3JfZmlyZV9jb250ZXh0IjogIkM4IGZpcmUgMSAoYzhfcGh5c19tbF9zdGFja19jb21wYXJpc29uX3JlY2VpcHQudjEuanNvbikgYnVpbHQgYWxsIGZvdXIgcHJvcGVydHkgdHJpcGxldHMgYW5kLCB3aGlsZSBkb2luZyBzbywgZm91bmQgUmFkb25QeSBQSTEwNzAncyBzdGF0aWNfZGllbGVjdHJpY19jb25zdCBncm91bmQgdHJ1dGggdmlvbGF0ZXMgdGhlIG1vZGVsLWluZGVwZW5kZW50IHRoZXJtb2R5bmFtaWMgaW5lcXVhbGl0eSBlcHNfc3RhdGljPj1uX21lYXN1cmVkXjIgKEZyb2hsaWNoIDE5NDkgQ2guMikgaW4gOTYyLzEwNzU9ODkuNSUgb2Ygcm93cy4gRmlyZSAxIHJlcG9ydGVkIHRoaXMgYXMgYSBsYWJlbC1xdWFsaXR5IGRlZmVjdCBidXQgb25seSB0ZXN0ZWQgaXRzIGRvd25zdHJlYW0gY29uc2VxdWVuY2Ugd2l0aCBhIFdFQUsgcHJvYmU6IGFuIFJGIHRyYWluZWQgb24gdGhlIGZ1bGwgODkuNSUtY29ycnVwdGVkIHBvcHVsYXRpb24sIHRoZW4gZXZhbHVhdGVkIG9uIHRoZSBwaHlzaWNhbGx5LXZhbGlkIFNMSUNFIG9mIGl0cyB0ZXN0IHNwbGl0IChuPTIwKS4gVGhhdCBsZWF2ZXMgdGhlIHRyYWluaW5nIGRhdGEgc3RpbGwgY29udGFtaW5hdGVkLiBGaXJlIDEncyBvd24gcmVjb21tZW5kZWQgZm9sbG93dXAgIzMgd2FzOiAncmUtcnVuIC4uLiBmaWx0ZXJlZCB0byB0aGUgcGh5c2ljYWxseS12YWxpZCBzdWJzZXQgb25seSwgdG8gZGV0ZXJtaW5lIHdoZXRoZXIgdGhlIHNoaXBwZWQgTUwgS1BJJ3MgcmVwb3J0ZWQgTUFFL1IyIGFyZSB0aGVtc2VsdmVzIGluZmxhdGVkIC4uLiBieSB0cmFpbmluZyBhZ2FpbnN0IGNvcnJ1cHRlZCBsYWJlbHMuJyBUaGlzIGZpcmUgZXhlY3V0ZXMgZXhhY3RseSB0aGF0LiIsCiAgInByb21vdGVzX25vdGhpbmciOiB0cnVlLAogICJwcm9tb3Rpb25fYmxvY2tlZF9ieSI6ICJOT1QgdGhpcyBhdWRpdCdzIHNjaWVuY2UgKGFsbCBnYXRlcyBwYXNzKSBhbmQgTk9UIGtleSBjdXN0b2R5LiBNYW5pZmVzdCB1bnRvdWNoZWQgYXQgNjYvMTEuIiwKICAicmVjZWlwdF9pZCI6ICJjOC1maXJlMi1kaWVsZWN0cmljLWNsZWFuLXN1YnNldC1waXBlbGluZSIsCiAgInJlY29tbWVuZGVkX2ZvbGxvd3VwcyI6IFsKICAgICJGb3JtYWxseSBhbWVuZCB0aGUgQzggZG9uZV9jcml0ZXJpb24gLyBGOCBmb3VuZGVyIHBhbmVsOiBtYXJrIHRoZSBkaWVsZWN0cmljIHJvdyBhcyBsYWJlbC1pbnRlZ3JpdHktYmxvY2tlZCAobm8gY29tcGV0ZW50IG1vZGVsLCBuX2NsZWFuPTExMykgcmF0aGVyIHRoYW4gcmVwb3J0aW5nIHRoZSBzaGlwcGVkIEtQSSdzIGNvbnRhbWluYXRlZC1wb3B1bGF0aW9uIFIyPTAuNjQuIiwKICAgICJUaGUgZGF0YS1hY3F1aXNpdGlvbiBxdWV1ZSBlbnRyeSBmaWxlZCBpbiBmaXJlIDEgKGV4cGVyaW1lbnRhbCBvciByZS1jb252ZXJnZWQgUmFkb25QeSBkaWVsZWN0cmljIGNvcnB1cykgcmVtYWlucyB0aGUgb25seSBwYXRoIHRvIGEgcmVhbCBkaWVsZWN0cmljIGFybTsgdGhpcyBmaXJlIGFkZHMgbm8gbmV3IGRhdGEgYXNrLCBpdCBzdHJlbmd0aGVucyB0aGUgZXhpc3Rpbmcgb25lIHdpdGggYSBkZWNpc2l2ZSBxdWFudGl0YXRpdmUgY29uc2VxdWVuY2UuIiwKICAgICJEZW5zaXR5LCBUZywgYW5kIHJlZnJhY3RpdmUtaW5kZXggYXJtcyAoZmlyZSAxKSBhcmUgTk9UIGltcGxpY2F0ZWQgYnkgdGhpcyBmaW5kaW5nIC0tIHRoZWlyIGdyb3VuZC10cnV0aCBjb2x1bW5zIHBhc3NlZCB0aGVpciBvd24gcmVzcGVjdGl2ZSBpbnRlZ3JpdHkgY2hlY2tzIChkZW5zaXR5OiBNRC1zaW11bGF0ZWQsIG5vIGtub3duIGxhYmVsIGRlZmVjdDsgVGc6IGxpdGVyYXR1cmUtc291cmNlZDsgUkk6IHJlZnJhY3RpdmVfaW5kZXggY29sdW1uIGl0c2VsZiwgbm90IGRlcml2ZWQgZnJvbSB0aGUgZmxhZ2dlZCBzdGF0aWNfZGllbGVjdHJpY19jb25zdCBjb2x1bW4pLiBPbmx5IGRpZWxlY3RyaWNfY29uc3RhbnQgaXMgYWZmZWN0ZWQuIiwKICAgICJjYW1wYWlnbl9pdGVtIEM4OiBkZW5zaXR5IGFuZCBUZyB0cmlwbGV0cyAoZmlyZSAxKSBzdGFuZCBhcyByZWNlaXB0LWJhY2tlZCBhbmQgY2l0YWJsZS4gRGllbGVjdHJpYyBpcyBub3cgZGVjaXNpdmVseSBOT1QgY2l0YWJsZSBhcyBhIGNvbXBldGVudCBtb2RlbCAodGhpcyBmaXJlKS4gUkkgcGh5c2ljcy9zdGFjayByZW1haW4gUmFkb25QeS1vbmx5IChmaXJlIDEsIEJMT0NLRURfREFUQSBvbiBPcGVuUG9seSkuIFJlY29tbWVuZCBjYW1wYWlnbl9pdGVtX3N0YXR1cz1wZW5kaW5nOiBmaXJlIDMvNCBzaG91bGQgZWl0aGVyIGFjcXVpcmUgdGhlIHF1ZXVlZCBkaWVsZWN0cmljIGRhdGEsIG9yIHByb2R1Y2UgdGhlIGZvcm1hbCAnZGllbGVjdHJpYzogbm8gY29tcGV0ZW50IG1vZGVsJyBGOCB0YWJsZSByb3cgdGV4dCBzbyB0aGUgY2FtcGFpZ24gaXRlbSBjYW4gY2xvc2UgaG9uZXN0bHkgb24gMy80IHByb3BlcnRpZXMgKyAxIGV4cGxpY2l0bHktbGFiZWxlZCBuZWdhdGl2ZSByZXN1bHQgKHdoaWNoIGl0c2VsZiBzYXRpc2ZpZXMgJ25vIGlsbHVzdHJhdGl2ZSBwbGFjZWhvbGRlcnMnKS4iCiAgXSwKICAicmVzdWx0cyI6IHsKICAgICJtbF9jbGVhbl9vbmx5IjogewogICAgICAiTUFFIjogMTMuMDU2NjI0ODMzMjc2OTM3LAogICAgICAiUjIiOiAtMC4wMjYyNTY2ODQ0NzY1MTE3NSwKICAgICAgIlJNU0UiOiAxOC43Njg0NjU2NzU0OTIyOSwKICAgICAgIm4iOiAyNCwKICAgICAgInBlYXJzb25fciI6IDAuNjMxMDkwNDc0MDg5MzY1NAogICAgfSwKICAgICJwYWlyZWRfYm9vdHN0cmFwX3BoeXNpY3NfbWludXNfbWxfbWFlIjogewogICAgICAiY2k5MF9oaSI6IDEzLjkxODUzNjkzMTgxNjI2OCwKICAgICAgImNpOTBfbG8iOiAtMC40MDE2NTU2NTYyNjIxMjczNSwKICAgICAgImluY2x1ZGVzX3plcm8iOiB0cnVlLAogICAgICAibl9ib290IjogMjAwMCwKICAgICAgInBvaW50X2VzdGltYXRlIjogNi44MzA5MjE1NzAyNDQ0NTgKICAgIH0sCiAgICAicGh5c2ljc19jbGVhbl9vbmx5IjogewogICAgICAiTUFFIjogMTkuODg3NTQ2NDAzNTIxMzk0LAogICAgICAiUjIiOiAtMS4wNDA1MzQ5Nzc3NzExOTAzLAogICAgICAiUk1TRSI6IDI2LjQ2NTA1NDUwNzY0NzIyLAogICAgICAibiI6IDI0LAogICAgICAicGVhcnNvbl9yIjogLTAuMjkxMjQ5MzY5NTQ2ODUxNTQKICAgIH0sCiAgICAic3RhY2tfY2xlYW5fb25seSI6IHsKICAgICAgIk1BRSI6IDE0LjUyMjEyODczOTc0MjU4NCwKICAgICAgIlIyIjogLTAuMDQ4MjA3NjM1MTYzOTMzNzgsCiAgICAgICJSTVNFIjogMTguOTY4MTI2MTk3MDI4MDU2LAogICAgICAibiI6IDI0LAogICAgICAicGVhcnNvbl9yIjogMC42NDE5Njc1NjEzOTI5MDYKICAgIH0sCiAgICAic3RhY2tfd2VpZ2h0c19jbGVhbl9vbmx5IjogewogICAgICAiaW50ZXJjZXB0IjogOS42NjI1MTk4MTU0MjgyMjYsCiAgICAgICJ3X3BoeXNpY3MiOiAtMC4wNDg3MTU3OTUwMjM3MTY3OSwKICAgICAgIndfcmYiOiAwLjgzMDcwMjY1MDI1OTE2MTkKICAgIH0KICB9LAogICJyaWdodHNfY2hlY2siOiAiTm8gbmV3IHNvdXJjZSB0b3VjaGVkOyByZS1yZWFkcyBSYWRvblB5IFBJMTA3MCAoRnVqaW1vdG8gZXQgYWwuIDIwMjMpLCBhbHJlYWR5IHJpZ2h0cy1jbGVhcmVkIGFuZCBsb2FkLWJlYXJpbmcgZWxzZXdoZXJlIGluIHRoaXMgbW9kdWxlLiBObyBxdWFyYW50aW5lZC9DT05URVhUX09OTFkgc291cmNlIG9wZW5lZC4iLAogICJzY2hlbWEiOiAiYW1waG9yYS5tb2xlY3VsZS1wcm9wZXJ0eS5jOC1waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tcmVjZWlwdC52MSIsCiAgInNpZ25pbmdfa2V5IjogewogICAgImF1dGhvcml0eSI6ICJMT0NBTF9ERVZFTE9QTUVOVF9BVURJVF9PTkxZIiwKICAgICJrZXlfaWQiOiAibG9jYWwtOTAyODc3M2Y0OTU5MTE5MyIsCiAgICAibm90ZSI6ICJOT1QgaW4gY29uZmlnL3BoYXNlMC10cnVzdC1zdG9yZS52MS5qc29uOyBhdWRpdCBldmlkZW5jZSBvbmx5IiwKICAgICJwdWJsaWNfa2V5X2hleCI6ICI0YjcyMmY0NTE2ZTAzNWNlM2NiOTVjY2VjZmZlNDYzOGE2ODdkOTI0MWU2OTcwZjRjMWNmNWMyODViMmVkZjkzIiwKICAgICJ0cnVzdF9hbmNob3JlZCI6IGZhbHNlCiAgfSwKICAic3BsaXQiOiAiY2xlYW4tb25seSBwbGFpbiByYW5kb20gNjAvMjAvMjAgKHNlZWQ9MCksIG5fdHJhaW49NjcsIG5fY2FsaWI9MjIsIG5fdGVzdD0yNCAtLSBSRiByZXRyYWluZWQgRlJPTSBTQ1JBVENIIG9uIGNsZWFuLXRyYWluIG9ubHkgKGZpcmUgMSdzIFJGIHdhcyB0cmFpbmVkIG9uIHRoZSBmdWxsIDg5LjUlLWNvcnJ1cHRlZCBwb3B1bGF0aW9uIGFuZCBvbmx5IHRlc3Qtc2xpY2VkIHRvIG49MjAgY2xlYW4gcm93cykiLAogICJzdHVkeV9pZCI6ICJjOC1waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24iLAogICJ0d29fcmVwbGF5X2dhdGUiOiB7CiAgICAiYnl0ZV9pZGVudGljYWwiOiB0cnVlLAogICAgImNhbm9uaWNhbF9zaGEyNTYiOiAiMzU5OTYwNTRkNjIxYWZjZmE1MTlkZTgxMDNkYzNlZWYyZDEzMGQ5ZjNjZTdhY2RmYjkzZmUzMDRlZmEyZmI2ZSIsCiAgICAicnVuQl9zaGEyNTYiOiAiMzU5OTYwNTRkNjIxYWZjZmE1MTlkZTgxMDNkYzNlZWYyZDEzMGQ5ZjNjZTdhY2RmYjkzZmUzMDRlZmEyZmI2ZSIKICB9LAogICJ2ZXJkaWN0IjogIlJFRlVURUQiCn0=",
+    "payloadType": "application/vnd.amphora.molecule-property.c8-phys-ml-stack-comparison-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "lSTt4mYo/fxnGh1jZw84CJtd9kSBh8yJ5jM8ZDmcWkOKMWbnh/ymp5arYip0zSAH/XnvVyfW98jwqT4ghp3CDg=="
+      }
+    ]
+  },
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "note": "NOT in config/phase0-trust-store.v1.json; audit evidence only",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "trust_anchored": false
+  },
+  "split": "clean-only plain random 60/20/20 (seed=0), n_train=67, n_calib=22, n_test=24 -- RF retrained FROM SCRATCH on clean-train only (fire 1's RF was trained on the full 89.5%-corrupted population and only test-sliced to n=20 clean rows)",
+  "study_id": "c8-phys-ml-stack-comparison",
+  "two_replay_gate": {
+    "byte_identical": true,
+    "canonical_sha256": "35996054d621afcfa519de8103dc3eef2d130d9f3ce7acdfb93fe304efa2fb6e",
+    "runB_sha256": "35996054d621afcfa519de8103dc3eef2d130d9f3ce7acdfb93fe304efa2fb6e"
+  },
+  "verdict": "REFUTED"
+}

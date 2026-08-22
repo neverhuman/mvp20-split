@@ -1,0 +1,15 @@
+{
+  "schema": "amphora.dataset-recon.repair-state.v1",
+  "campaign_item_id": "DR-LANG-KO",
+  "last_fire_id": "20260810T100002-3826207-0feb3e17adea",
+  "status": "done_criterion_met_fire_1_of_2",
+  "done_receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-KO/done/dr-lang-ko-receipt.v1.dsse.json",
+  "claim_verdict": "CLAIM_SURVIVED",
+  "candidates_recorded": ["DR-LANG-KO-01", "DR-LANG-KO-02", "DR-LANG-KO-03", "DR-LANG-KO-04", "DR-LANG-KO-05"],
+  "dataset_ledger_entries_recommended": ["DR-LANG-KO-02", "DR-LANG-KO-04"],
+  "previously_supplied_candidates_rediscovered": [],
+  "previously_supplied_candidates_note": "genuinely empty prior list, explained in intake manifest",
+  "empty_result_gaps": ["ks-eew-testdata-annex-ko", "marine-coating-ks-standard-mapping-ko"],
+  "unresolved_leads": ["ship-coating-dataset-ko-unresolved (해양환경공단_선박의_도장결함과_대책, citation would not independently re-resolve across 3 attempts)"],
+  "notes": "If a 2nd fire runs against this item (max_fires=2), it should spot-check THIS fire's own deliverable (per the item's own ATTACK SHAPE) rather than repeat these same 12 queries -- candidates for a 2nd-fire follow-up: (1) resolve the ship-coating-defects dataset's stable data.go.kr URL via the portal's own search UI/API instead of general WebSearch, (2) query KRISS and KIMS directly for a Korean corrosion database, (3) re-verify all 5 refutation-criterion limbs against live sources a second time (true external audit, not just this fire's own internal checker), (4) resolve the exact 제1종시설물 점검 진단 결과(철근부식도) dataset id distinct from the 철근탐사 시험 dataset actually scored."
+}

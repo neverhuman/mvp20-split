@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-3136c201118e1f75efec1fc17f5d09d383ed8543bd07c8dfca54705c08468829",
+  "module_id": "amphora-tolerance-robustness",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-958be09f43bce7e1e0417d4cb5a9de4e95a302def3857b392db4be9caef3fdbc.json",
+      "revision_id": "preparation-revision-958be09f43bce7e1e0417d4cb5a9de4e95a302def3857b392db4be9caef3fdbc",
+      "sha256": "441b3749abf626c1c3f987eaa9f3c100fc1350b57cd8dce42ca93c1090c66b1a"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-3136c201118e1f75efec1fc17f5d09d383ed8543bd07c8dfca54705c08468829.json",
+      "revision_id": "preparation-revision-3136c201118e1f75efec1fc17f5d09d383ed8543bd07c8dfca54705c08468829",
+      "sha256": "3b956f4ba17ccdf7c9a95b33b1afb138289a76060b5b276913d854e06f3ecda3"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

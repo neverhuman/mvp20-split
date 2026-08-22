@@ -1,0 +1,9 @@
+{
+  "item": "D-COVERAGE",
+  "fires_used": 1,
+  "max_fires": 2,
+  "status": "done",
+  "last_fire_id": "20260809T230003-2808754-913e4d9e0b37",
+  "receipt": "amphora-redteam-audit/evidence/phase0/repairs/D-COVERAGE/done/d-coverage-founder-directive-coverage-receipt.v1.dsse.json",
+  "summary": "Signed the 46-row founder-directive coverage table + self-attack on the naive closed flag. 16/46 closed by naive campaign-item-done flag; spot-checked 4 (T2-01,T2-04,T2-05,T2-13) by reading actual DSSE receipt bytes: only 5 of 16 closed obligations are backed by a receipt confirming the founder's done_criteria were actually met (defense held), 1 mixed, 10 backed by a CLAIM_REFUTED receipt proving the named defect IS present and unremediated. Verdict CLAIM_REFUTED against the naive 16/46-closed-means-delivered reading."
+}

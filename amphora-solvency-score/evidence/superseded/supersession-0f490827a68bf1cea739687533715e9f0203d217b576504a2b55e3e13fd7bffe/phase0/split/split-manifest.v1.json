@@ -1,0 +1,30 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "e333a8aa44b1612f39fe19c0ddabbc27f6a7c4f1f047fb4e05da87afab02bb3b",
+  "import_hashes": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "e4a219a8156f4700bfccb318590a28fd2d6de6a7fb3f6a5967ad5917264eeed3",
+      "source_path": "config/program/solvency-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "48b174964b9cb9c01b89425abc8a8f16f7a308624b7efdeacc83c3aa9f6f16cb",
+      "source_path": "config/program/solvency-model-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "97fa89d672767a94427f9f412ee4e92656751c3369d9afacd8411a17042f7afc",
+      "source_path": "config/benchmark-locks/amphora-solvency-score.v1.json"
+    }
+  ],
+  "module_id": "amphora-solvency-score",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

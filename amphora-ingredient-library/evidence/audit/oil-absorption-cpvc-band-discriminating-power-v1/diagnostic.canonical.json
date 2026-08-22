@@ -1,0 +1,221 @@
+{
+  "attacks": {
+    "claim": "CPVC plausibility-band gate [0.30,0.75] is an independent physical second-signal / fail-closed gate over the pigment oil-absorption family, distinct from (adds power beyond) the literature D281 OA-class-band check computed in the same oracle.",
+    "receipt": "amphora-ingredient-library/evidence/audit/oil-absorption-cpvc-v1/oil-absorption-cpvc-receipt.v1.dsse.json"
+  },
+  "authority": "AUDIT_ONLY",
+  "closes": "Demonstrates the CPVC plausibility-band gate in oil-absorption-cpvc-v1 is not an independent fail-closed second-signal on the real catalog: its own literature-band anomaly (iron_oxide_yellow) passes the CPVC gate undetected, the literature band is a strict subset of the CPVC-accepted OA interval for 7/9 covered pigments, and on average the CPVC gate tolerates 1.6x more multiplicative OA error than the literature band before tripping.",
+  "criterion_would_be_refuted_if": "n_lit_flags >= 1 and n_cpvc_flags_of_lit_flagged < n_lit_flags",
+  "does_not_close": [
+    "Does NOT claim the Daniel/Asbeck-Van Loo CPVC identity itself is wrong -- the physical relationship and its hard geometric bound (0,1) are untouched.",
+    "Does NOT retract the literature OA-class-band check, which is the tighter and more informative of the two gates in the target oracle.",
+    "Does NOT modify facts.json, the module manifest, or any signed Phase-0 KPI.",
+    "Does NOT alter the target oil-absorption-cpvc-v1 receipt in place -- that artifact is left byte-identical; this is a new, separate audit receipt."
+  ],
+  "falsification_criterion": "If the CPVC plausibility-band gate ([0.30,0.75]) is a genuine independent fail-closed second-signal (not strictly subsumed by the literature-band gate already computed in the same oracle), then for every real catalog OA value the literature-band check itself flags as anomalous, the CPVC gate must ALSO flag it.",
+  "flips_scientific_readiness": false,
+  "headline": "CPVC plausibility-band gate [0.30,0.75] signed in oil-absorption-cpvc-v1 is subsumed by (strictly weaker than) the oracle's own literature D281 OA-class-band check for 7/9 covered pigments; the one real catalog anomaly the literature band flags (iron_oxide_yellow, OA=14) is NOT flagged by the CPVC gate (CPVC=0.6254 inside [0.30,0.75]); CPVC gate tolerates 1.6x more multiplicative OA error on average before tripping than the literature band -> the 'independent fail-closed second-signal' framing is refuted on the real catalog, even though checkC's synthetic 10x/0.1x mutation demo (unaffected) still holds.",
+  "human_review_performed": false,
+  "inputs": {
+    "facts_json": "reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "target_oracle_sha256": "c61a6020019c0a02f32b538b1d6b961f6e6deaacb8110bba928682da80585515",
+    "target_receipt_sha256": "4b127f2df523888cc16c4cabdfe6e515f6e298106faa6b38a9729e237b37f1cc"
+  },
+  "method": "Imported the TARGET receipt's own live oracle module (run_cpvc.py) directly -- reused its LIT_OA_BAND dict, RHO_OIL, CPVC_PLAUS_LO/HI, and cpvc_from_oa() verbatim, no retyped constants -- inverted cpvc_from_oa() to find, per pigment, the full OA interval the CPVC plausibility band would accept, and compared it against the already-published literature band for the same pigment, plus the actual live catalog value.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_module_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ingredient-library",
+  "non_circularity": "Consumes only the target's own oracle module + the live facts.json; the OA-interval inversion is an exact algebraic inverse of the target's own cpvc_from_oa(), so it cannot introduce a discrepancy the target's own function would not reproduce forwards.",
+  "per_constant": [
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": false,
+      "constant_oa": "pigment.barytes.oil_abs",
+      "cpvc_actual": 0.6365,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        7.0,
+        49.03
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": false,
+      "literature_d281_band_g_per_100g": [
+        6.0,
+        18.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 1.713,
+      "multiplicative_slack_before_literature_band_trips": 1.5,
+      "oa_actual_g_per_100g": 12.0,
+      "rho_pig_g_per_cm3": 4.45
+    },
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": false,
+      "constant_oa": "pigment.iron_oxide_black.oil_abs",
+      "cpvc_actual": 0.4934,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        6.49,
+        45.45
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": true,
+      "literature_d281_band_g_per_100g": [
+        13.0,
+        35.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 2.273,
+      "multiplicative_slack_before_literature_band_trips": 1.538,
+      "oa_actual_g_per_100g": 20.0,
+      "rho_pig_g_per_cm3": 4.8
+    },
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": false,
+      "constant_oa": "pigment.iron_oxide_red.oil_abs",
+      "cpvc_actual": 0.4183,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        6.23,
+        43.63
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": true,
+      "literature_d281_band_g_per_100g": [
+        13.0,
+        40.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 1.678,
+      "multiplicative_slack_before_literature_band_trips": 1.538,
+      "oa_actual_g_per_100g": 26.0,
+      "rho_pig_g_per_cm3": 5.0
+    },
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": true,
+      "constant_oa": "pigment.iron_oxide_yellow.oil_abs",
+      "cpvc_actual": 0.6254,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        7.79,
+        54.54
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": false,
+      "literature_d281_band_g_per_100g": [
+        28.0,
+        80.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 1.797,
+      "multiplicative_slack_before_literature_band_trips": 0.5,
+      "oa_actual_g_per_100g": 14.0,
+      "rho_pig_g_per_cm3": 4.0
+    },
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": false,
+      "constant_oa": "pigment.mica.oil_abs",
+      "cpvc_actual": 0.5142,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        10.94,
+        76.55
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": true,
+      "literature_d281_band_g_per_100g": [
+        25.0,
+        70.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 2.469,
+      "multiplicative_slack_before_literature_band_trips": 1.24,
+      "oa_actual_g_per_100g": 31.0,
+      "rho_pig_g_per_cm3": 2.85
+    },
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": false,
+      "constant_oa": "pigment.silica.oil_abs",
+      "cpvc_actual": 0.5405,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        11.76,
+        82.33
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": true,
+      "literature_d281_band_g_per_100g": [
+        18.0,
+        45.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 2.551,
+      "multiplicative_slack_before_literature_band_trips": 1.5,
+      "oa_actual_g_per_100g": 30.0,
+      "rho_pig_g_per_cm3": 2.65
+    },
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": false,
+      "constant_oa": "pigment.talc.oil_abs",
+      "cpvc_actual": 0.5352,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        11.13,
+        77.92
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": true,
+      "literature_d281_band_g_per_100g": [
+        20.0,
+        55.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 2.605,
+      "multiplicative_slack_before_literature_band_trips": 1.45,
+      "oa_actual_g_per_100g": 29.0,
+      "rho_pig_g_per_cm3": 2.8
+    },
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": false,
+      "constant_oa": "pigment.wollastonite.oil_abs",
+      "cpvc_actual": 0.5733,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        10.75,
+        75.23
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": true,
+      "literature_d281_band_g_per_100g": [
+        16.0,
+        35.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 2.233,
+      "multiplicative_slack_before_literature_band_trips": 1.458,
+      "oa_actual_g_per_100g": 24.0,
+      "rho_pig_g_per_cm3": 2.9
+    },
+    {
+      "actual_value_flagged_by_cpvc_band": false,
+      "actual_value_flagged_by_literature_band": false,
+      "constant_oa": "pigment.zinc_phosphate.oil_abs",
+      "cpvc_actual": 0.5862,
+      "cpvc_plausibility_implied_oa_band_g_per_100g": [
+        9.44,
+        66.11
+      ],
+      "literature_band_fully_subsumed_by_cpvc_band": true,
+      "literature_d281_band_g_per_100g": [
+        13.0,
+        35.0
+      ],
+      "multiplicative_slack_before_cpvc_band_trips": 2.118,
+      "multiplicative_slack_before_literature_band_trips": 1.538,
+      "oa_actual_g_per_100g": 20.0,
+      "rho_pig_g_per_cm3": 3.3
+    }
+  ],
+  "promotes_authority": false,
+  "purpose": "Test whether the CPVC plausibility-band gate signed in oil-absorption-cpvc-v1 has independent discriminating power, or is mathematically subsumed by (strictly weaker than) the literature OA-class-band check already computed in the same oracle.",
+  "results": {
+    "avg_multiplicative_slack_cpvc_band": 2.16,
+    "avg_multiplicative_slack_literature_band": 1.362,
+    "cpvc_band_slack_vs_literature_band_ratio": 1.585,
+    "n_literature_band_fully_subsumed_by_cpvc_band": 7,
+    "n_of_those_also_flagged_by_cpvc_band": 0,
+    "n_pigments_literature_band_covered": 9,
+    "n_real_catalog_values_flagged_by_literature_band": 1,
+    "named_unflagged_anomaly": "pigment.iron_oxide_yellow.oil_abs = 14 g/100g: literature-band-flagged (band [28.0,80.0]) but CPVC = 0.6254 is inside [0.30,0.75] -- NOT flagged",
+    "observed_refutes_criterion": true
+  },
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ingredient-library.oil-absorption-cpvc-band-discriminating-power-audit.v1",
+  "verdict": "CLAIM_REFUTED"
+}

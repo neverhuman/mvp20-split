@@ -1,0 +1,45 @@
+{
+  "mutant1_check": {
+    "candidate_count": 85,
+    "clean": false,
+    "schema": "amphora.dataset-recon.dr-disp-completeness-check.v1",
+    "violation_count": 1,
+    "violations": [
+      {
+        "candidate_id": "DR-DISP-BASK-R-D01",
+        "kind": "manifest_candidate_missing_disposition"
+      }
+    ]
+  },
+  "mutant1_fired": true,
+  "mutant2_check": {
+    "candidate_count": 86,
+    "clean": false,
+    "schema": "amphora.dataset-recon.dr-disp-completeness-check.v1",
+    "violation_count": 1,
+    "violations": [
+      {
+        "candidate_id": "DR-DISP-Q03",
+        "kind": "recommended_empty_serves"
+      }
+    ]
+  },
+  "mutant2_fired": true,
+  "mutant3_check": {
+    "candidate_count": 86,
+    "clean": false,
+    "schema": "amphora.dataset-recon.dr-disp-completeness-check.v1",
+    "violation_count": 1,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-ZH-06",
+        "kind": "not_exactly_one_verdict",
+        "verdict_count": 2
+      }
+    ]
+  },
+  "mutant3_fired": true,
+  "target_dup_id": "DR-LANG-ZH-06",
+  "target_missing_id": "DR-DISP-BASK-R-D01",
+  "target_serves_id": "DR-DISP-Q03"
+}

@@ -1,0 +1,31 @@
+{
+  "accepted_for_phase0": true,
+  "bundle_hash": "e97db58ea40be1ef7ac65439d2597e93276f78e21cb90d97b1644af814b489d0",
+  "claim_locks_preserved": true,
+  "evaluation_receipt_hash": "3039edd54345b1775ef73d56d00df10e76adc0b5c32251b8e12ef791f8546b3b",
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "findings": [
+    "automated code-path and signing-identity independence only",
+    "no human or organizational independence asserted"
+  ],
+  "human_review_performed": false,
+  "independence_scope": "CODE_PATH_AND_SIGNING_IDENTITY",
+  "independent_reimplementation_passed": true,
+  "module_id": "amphora-redteam-audit",
+  "parent_hashes_current": true,
+  "review_id": "phase0-review-cc4c1a784cab38f23d12b3d19e7096015baf599c28dd0d24102e5130c3198e21",
+  "review_method": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION",
+  "reviewer_key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+  "schema": "amphora.module-phase0-review-receipt.v1",
+  "signature": {
+    "payload": "eyJhY2NlcHRlZF9mb3JfcGhhc2UwIjp0cnVlLCJidW5kbGVfaGFzaCI6ImU5N2RiNThlYTQwYmUxZWY3YWM2NTQzOWQyNTk3ZTkzMjc2Zjc4ZTIxY2I5MGQ5N2IxNjQ0YWY4MTRiNDg5ZDAiLCJjbGFpbV9sb2Nrc19wcmVzZXJ2ZWQiOnRydWUsImV2YWx1YXRpb25fcmVjZWlwdF9oYXNoIjoiMzAzOWVkZDU0MzQ1YjE3NzVlZjczZDU2ZDAwZGYxMGU3NmFkYzBiNWMzMjI1MWI4ZTEyZWY3OTFmODU0NmIzYiIsImV2YWx1YXRvcl9rZXlfaWQiOiJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLCJmaW5kaW5ncyI6WyJhdXRvbWF0ZWQgY29kZS1wYXRoIGFuZCBzaWduaW5nLWlkZW50aXR5IGluZGVwZW5kZW5jZSBvbmx5Iiwibm8gaHVtYW4gb3Igb3JnYW5pemF0aW9uYWwgaW5kZXBlbmRlbmNlIGFzc2VydGVkIl0sImh1bWFuX3Jldmlld19wZXJmb3JtZWQiOmZhbHNlLCJpbmRlcGVuZGVuY2Vfc2NvcGUiOiJDT0RFX1BBVEhfQU5EX1NJR05JTkdfSURFTlRJVFkiLCJpbmRlcGVuZGVudF9yZWltcGxlbWVudGF0aW9uX3Bhc3NlZCI6dHJ1ZSwibW9kdWxlX2lkIjoiYW1waG9yYS1yZWR0ZWFtLWF1ZGl0IiwicGFyZW50X2hhc2hlc19jdXJyZW50Ijp0cnVlLCJyZXZpZXdfaWQiOiJwaGFzZTAtcmV2aWV3LWNjNGMxYTc4NGNhYjM4ZjIzZDEyYjNkMTllNzA5NjAxNWJhZjU5OWMyOGRkMGQyNDEwMmU1MTMwYzMxOThlMjEiLCJyZXZpZXdfbWV0aG9kIjoiQVVUT01BVEVEX0lOREVQRU5ERU5UX1JFSU1QTEVNRU5UQVRJT04iLCJyZXZpZXdlcl9rZXlfaWQiOiJwaGFzZTAtaW50ZXJuYWwtcmV2aWV3ZXItNDcyMzNhZjE4ZTUxMWEzMDU1NDhkNGVlMzA2ZGEwMTg2MTJmNWI1YWNhMjAxZjk5ODY1MDRkM2Q3ZGIzMDExYiIsInNjaGVtYSI6ImFtcGhvcmEubW9kdWxlLXBoYXNlMC1yZXZpZXctcmVjZWlwdC52MSIsInplcm9fYXV0aG9yaXR5X2FmZmlybWVkIjp0cnVlfQ==",
+    "payloadType": "application/vnd.amphora.module-phase0-review-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+        "sig": "w2jLczBFFblawGdTJQD4uhsHS3yH5NVyV6OAofUjJyIrUCEZ6N+NRCd0zjR+ZAS4nnx6wESXlw9qPK+AJByjAw=="
+      }
+    ]
+  },
+  "zero_authority_affirmed": true
+}

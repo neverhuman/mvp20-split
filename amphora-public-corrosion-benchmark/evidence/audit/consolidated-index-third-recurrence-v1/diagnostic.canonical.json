@@ -1,0 +1,96 @@
+{
+  "audit_id": "consolidated-index-third-recurrence-v1",
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "Does not dispute either missing audit's own statistics (already independently signed and Ed25519-verified); it disputes whether the hand-descended consolidated-kpi index stays current as new audits land -- the identical question consolidated-kpi-staleness-v1 (2026-08-03) and R-S07 (2026-08-12) already asked, now re-asked against real drift that occurred after R-S07 shipped.",
+    "Does not modify or re-sign the v3 index, check_index_completeness.py, the NIST KPI, or either missing evidence/audit/ receipt; all remain referenced by path + sha256.",
+    "Phase-1 fix would be running check_index_completeness.py as a pre-commit or CI gate so index staleness cannot land at all, rather than relying on a human/agent fire to notice it after the fact -- R-S07 built the detector; this audit shows the detector still has no automatic trigger."
+  ],
+  "headline": "Third-recurrence audit of amphora-public-corrosion-benchmark's consolidated audit-verdicts KPI index, using the module's own committed R-S07 checker (check_index_completeness.py, sha256 5c97ede24e63de5a34ca3da2e0df32a7b0e0289a14df254869b82efb478b412f, matches=True) run for real against the live repository (not a synthetic tempdir copy). T1: 10 on-disk evidence/audit/ receipts, all Ed25519-verified against the pinned Phase-0 evaluator key. T2: the checker's own real subprocess invocation returns gate=FAIL_STALE_INDEX, exit=1, missing_from_index=['evidence/audit/nist-baseline-descriptive-boundary-provenance-v1/nist-baseline-descriptive-boundary-provenance-receipt.v1.dsse.json', 'evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json'] -- 2 of 10 on-disk receipts absent from the live v3 index. T3/T4: both missing receipts (nist-baseline-descriptive-boundary-provenance-v1, nist-baseline-full-distribution-unit-provenance-v1) carry verdict H0_REFUTED and target exactly the seawater_uncoated_substrate_baselines descriptive-block claim that RETRACTION-INDEX.md and mission.md currently describe as 'the only claim surface left standing' and 'remain valid' after R-A08/R-N03 retracted the predictive claim -- so the gap is not cosmetic, it hides the retraction of the module's last standing claim from its own audit index. Conclusion: H0 (the live consolidated-kpi index is a complete, current census whose referenced claim characterizations are accurate) is H0 REFUTED. This is the THIRD occurrence (v1->v2, v2->v3, and now v3-stale-in-place) of the identical defect class; the R-S07 checker correctly detects it when run, but nothing in this module's build or commit path forces it to run automatically when a new evidence/audit/ receipt lands -- the mechanism works, the discipline of invoking it does not.",
+  "human_review_performed": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "n_tests_failed": 2,
+  "promotes_authority": false,
+  "schema": "amphora.public-corrosion-benchmark.audit.v1",
+  "scientific_success_asserted": false,
+  "target_claim": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json#audit_verdicts_index (claims to be a complete, current census of this module's signed evidence/audit/ receipts, the invariant repair R-S07's check_index_completeness.py exists to mechanically guarantee)",
+  "tests": {
+    "T0_checker_provenance": {
+      "checker_path": "evidence/phase0/kpis/check_index_completeness.py",
+      "checker_sha256_pinned_by_r_s07_receipt": "5c97ede24e63de5a34ca3da2e0df32a7b0e0289a14df254869b82efb478b412f",
+      "checker_sha256_this_run": "5c97ede24e63de5a34ca3da2e0df32a7b0e0289a14df254869b82efb478b412f",
+      "matches": true
+    },
+    "T1_pinned_key_signature_verification": {
+      "all_verified_against_pinned_phase0_evaluator_key": true,
+      "n_receipts_checked": 10,
+      "pinned_evaluator_keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+    },
+    "T2_real_checker_subprocess_invocation": {
+      "command": [
+        "/usr/bin/python3",
+        "evidence/phase0/kpis/check_index_completeness.py",
+        "--module-root",
+        "."
+      ],
+      "exit_code": 1,
+      "extra_in_index_not_on_disk": [],
+      "gate": "FAIL_STALE_INDEX",
+      "index_path": "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+      "missing_from_index": [
+        "evidence/audit/nist-baseline-descriptive-boundary-provenance-v1/nist-baseline-descriptive-boundary-provenance-receipt.v1.dsse.json",
+        "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json"
+      ],
+      "n_indexed_receipt_paths": 8,
+      "n_on_disk_receipts": 10,
+      "refutes_claim": true
+    },
+    "T3_missing_receipt_detail": {
+      "missing_detail": [
+        {
+          "headline": "Boundary-value unit-provenance audit of the NIST CORR-DATA marine steel KPI's seawater_uncoated_substrate_baselines -- the only claim surface this module's own retraction chain (R-A08, R-N03) left standing after two prior predictive-lift refutations. T1/T2: Seawater-only re-filtering reproduces n=142 records across 5 material groups, and all 30 reported n/min/p25/median/p75/max fields match the si",
+          "receipt_path": "evidence/audit/nist-baseline-descriptive-boundary-provenance-v1/nist-baseline-descriptive-boundary-provenance-receipt.v1.dsse.json",
+          "verdict": "H0_REFUTED",
+          "verified_against_pinned_phase0_evaluator_key": true
+        },
+        {
+          "headline": "Full-distribution unit-provenance audit (T4 escalation) of the NIST CORR-DATA marine steel KPI's seawater_uncoated_substrate_baselines, extending nist-baseline-descriptive-boundary-provenance-v1's 2-field row-trace to all 25 rate-valued reported fields via independent whole-array reconstruction from the mils/yr column. n=142 Seawater records, 0 missing a mils/yr entry. Of 25 rate fields compared, ",
+          "receipt_path": "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json",
+          "verdict": "H0_REFUTED",
+          "verified_against_pinned_phase0_evaluator_key": true
+        }
+      ]
+    },
+    "T4_materiality_against_last_standing_claim": {
+      "materiality_hits": [
+        {
+          "headline": "Boundary-value unit-provenance audit of the NIST CORR-DATA marine steel KPI's seawater_uncoated_substrate_baselines -- the only claim surface this module's own retraction chain (R-A08, R-N03) left standing after two prior predictive-lift refutations. T1/T2: Seawater-only re-filtering reproduces n=142 records across 5 material groups, and all 30 reported n/min/p25/median/p75/max fields match the si",
+          "receipt_path": "evidence/audit/nist-baseline-descriptive-boundary-provenance-v1/nist-baseline-descriptive-boundary-provenance-receipt.v1.dsse.json",
+          "verdict": "H0_REFUTED",
+          "verified_against_pinned_phase0_evaluator_key": true
+        },
+        {
+          "headline": "Full-distribution unit-provenance audit (T4 escalation) of the NIST CORR-DATA marine steel KPI's seawater_uncoated_substrate_baselines, extending nist-baseline-descriptive-boundary-provenance-v1's 2-field row-trace to all 25 rate-valued reported fields via independent whole-array reconstruction from the mils/yr column. n=142 Seawater records, 0 missing a mils/yr entry. Of 25 rate fields compared, ",
+          "receipt_path": "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json",
+          "verdict": "H0_REFUTED",
+          "verified_against_pinned_phase0_evaluator_key": true
+        }
+      ],
+      "n_materiality_hits": 2,
+      "refute_bar": "no un-indexed receipt both (a) verdict H0_REFUTED and (b) targets the seawater_uncoated_substrate_baselines descriptive-block claim the live KPI / mission.md currently characterize as 'remain valid'",
+      "refutes_claim": true
+    },
+    "T5_live_v3_kpi_hash_snapshot": {
+      "note": "Recorded for downstream repair provenance; this run does not modify the file.",
+      "v3_kpi_path": "evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json",
+      "v3_kpi_sha256_this_run": "b1725c94c14191ff88923eba93c2455629af32e6d06d4429c4d95eedaf676f08"
+    }
+  },
+  "tests_failed": [
+    "T2_real_checker_subprocess_invocation",
+    "T4_materiality_against_last_standing_claim"
+  ],
+  "verdict": "H0_REFUTED"
+}

@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "d3a29e3afb0b37aa279329554e4db0858d5081736d73b037837117572b6c3381",
+  "module_id": "amphora-formulation-arithmetic",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

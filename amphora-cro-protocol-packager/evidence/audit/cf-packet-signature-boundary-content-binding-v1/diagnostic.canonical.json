@@ -1,0 +1,132 @@
+{
+  "attack_description": "Ran the existing, unmodified acceptance probe amphora-assurance-capabilities/tests/cf_packet_repair_content_binding_probe.rs (authored 2026-08-11 as the intended CF-PACKET fire-2 acceptance test but never signed into a receipt or logged to the falsification ledger) twice (two-replay, byte-identical JSON output). The probe drafts a final-assembly packet whose candidate_binding.blueprint_citations[0].sha256 is set to a fabricated value ('f'*64) that does not match the real amphora-report-packager/reference/mvp20/out/blueprint.md bytes, then checks validate(), sign(), verify_signature() against an honest TrustStore, and the separate disk-bound verify_blueprint_citations(root) gate.",
+  "campaign_item_id": "",
+  "cargo_test_command": "cargo test -p amphora-assurance-capabilities --offline cf_packet_repair_content_binding_probe -- --nocapture",
+  "cargo_test_green": true,
+  "claim_under_attack": "CroProtocolPackageV2::sign()/verify_signature() (the DSSE Ed25519 signing boundary) establish that a final-assembly packet's locked_numeric_thresholds are content-bound to the blueprint artifacts cited in candidate_binding.blueprint_citations, per the CF-PACKET done_criterion clause and the verify_blueprint_citations doc comment in amphora-assurance-capabilities/src/lib.rs",
+  "control_correct_citation_accepted": true,
+  "does_not_close": [
+    "Does not claim verify_blueprint_citations(root) itself is broken -- it correctly detects the mismatch when called; the gap is that sign()/verify_signature() never call it.",
+    "Does not claim any currently-shipped packet in this module's reference/ or evidence/ trees actually carries a fabricated blueprint citation -- this is a capability gap in the runtime API, demonstrated with a constructed test packet, not a claim about existing signed artifacts.",
+    "Does not itself repair the gap (e.g. by having verify_signature() take an optional root: Option<&Path> and call verify_blueprint_citations when locked_numeric_thresholds is non-empty); that is a follow-on repair-item fire.",
+    "No CRO acceptance, wet-lab, qualification, procurement, or release authority; no promotion, manifest edit, KPI/benchmark-lock edit, or scientific_readiness flip."
+  ],
+  "finding": "CLAIM_REFUTED (residual, distinct from CF-PACKET fire 1). The 2026-08-11 CF-PACKET repair added structural blueprint-citation presence checks to validate() and a new disk-bound verify_blueprint_citations(root) gate that correctly re-derives and compares each cited blueprint's sha256 against its real bytes. But sign() and verify_signature() -- the module's actual DSSE Ed25519 cryptographic-authenticity boundary, the one this portfolio's SIGNING DISCIPLINE treats as authoritative everywhere else -- call validate() only and NEVER call verify_blueprint_citations(root). Consequently a packet whose blueprint_citations[0].sha256 is fabricated (does not match the real blueprint.md bytes) still validate()s Ok, sign()s Ok, and independently verify_signature()s Ok against an honest TrustStore; only a separately-named, easily-omitted extra call (verify_blueprint_citations(root), which needs the caller to also pass a filesystem root -- something sign()/verify_signature() do not take as an argument at all) detects the mismatch. A downstream consumer who follows this module's own documented pattern elsewhere (trust a valid DSSE signature as the authenticity/content-binding boundary; see T-02/W-CRO1's protocol_lock_sha256 precedent, which IS enforced inside validate()) will accept a cryptographically 'valid', signed CRO protocol packet whose locked numeric thresholds cite a blueprint hash that does not correspond to any real blueprint content. The done_criterion clause 'the packet citing every blueprint artifact by path+sha256 so the thresholds are content-bound to the blueprint they came from' is therefore still not established by the packet's own signature -- it is established only if the caller remembers an extra, differently-shaped, filesystem-dependent function call outside the signing/verification API.",
+  "harness_byte_identical_across_copies": true,
+  "harness_rs_path": "amphora-assurance-capabilities/tests/cf_packet_repair_content_binding_probe.rs",
+  "harness_rs_sha256": "e21878fea34bf1933beb3656ac4a6e2514b18279350f3914aadf0f7c60f531af",
+  "module": "amphora-cro-protocol-packager",
+  "n_t02_shape_slipped_through": 0,
+  "no_blueprint_citation_probe": {
+    "accepted_with_no_citation": false,
+    "probe": "no_blueprint_citation_present",
+    "rejected_by": "validate",
+    "sign_ok": false,
+    "validate_ok": false,
+    "verify_signature_ok": false
+  },
+  "positive_control_from_probe": {
+    "detected": true,
+    "evidence": "verify_blueprint_citations(root) returned Err(Binding) for the planted-defect packet",
+    "how_planted": "baseline_packet_with_citation(real_hash) cloned, then blueprint_citations[0].sha256 rewritten from b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879 to ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, candidate_sha256 and packet_id recomputed to keep the packet self-consistent",
+    "planted_defect": "candidate_binding.blueprint_citations[0].sha256 mutated to a value not matching the real blueprint.md bytes"
+  },
+  "real_blueprint_path": "amphora-report-packager/reference/mvp20/out/blueprint.md",
+  "real_blueprint_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+  "refutation_criterion_clause_tested": "whether a signed-and-independently-verified packet (validate() Ok, sign() Ok, verify_signature() Ok against an honest TrustStore) can carry a blueprint_citations sha256 that does NOT match the real cited file's bytes -- i.e. whether the module's actual cryptographic authenticity gate (not a separately-named, non-mandatory disk check) enforces the content-binding the done_criterion names",
+  "refutation_criterion_observed": true,
+  "refutation_criterion_source": "CF-PACKET fire-1 STATE.json next_fire_should / done_criterion clause (quoted verbatim in cf_packet_repair_content_binding_probe.rs module doc comment, lines 1-24)",
+  "refutation_criterion_verbatim": "the packet citing every blueprint artifact by path+sha256 so the thresholds are content-bound to the blueprint they came from",
+  "related_campaign_item_id": "CF-PACKET",
+  "related_prior_fires": [
+    "20260811T160001-2556943-1464ab6b14ba (CF-PACKET fire 1, CLAIM_REFUTED, found no blueprint-citation content-binding at all)"
+  ],
+  "run_type": "rotation_falsification_attack",
+  "schema": "amphora.cro-protocol-packager.cf-packet-signature-boundary-content-binding-diagnostic.v1",
+  "signature_boundary_accepts_content_unbound_packet": true,
+  "study_id": "cf-packet-signature-boundary-content-binding-v1",
+  "t02_w_cro1_attack_shape_holds_no_regression": true,
+  "t02_w_cro1_attack_shape_probes": [
+    {
+      "accepted": true,
+      "expected_accept": true,
+      "group": "control_correct_citation",
+      "probe": "correctly_cited_packet_round_trips_including_new_gate",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_blueprint_citations_ok": true,
+      "verify_signature_ok": true
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_execution_authorized"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_EXECUTION_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_PROCUREMENT_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_SAFETY_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_SYNTHESIS_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_PERFORMANCE_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_QUALIFICATION_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_RANKING_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "UNMADE_DIGITAL_PROPOSAL"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_status_drift"
+    },
+    {
+      "control_unmutated_signature_verifies": true,
+      "fail_closed": true,
+      "group": "t02_shape_one_byte_mutation"
+    },
+    {
+      "fail_closed": true,
+      "group": "w_cro1_shape_lock_hash_not_derived"
+    }
+  ],
+  "verdict": "CLAIM_REFUTED",
+  "wrong_blueprint_citation_probe": {
+    "cited_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "criterion_clause": "cited blueprint sha256 that does not match the blueprint file",
+    "fully_accepted_despite_mismatched_citation": false,
+    "probe": "wrong_blueprint_sha256_citation",
+    "real_blueprint_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+    "rejected_by": "verify_blueprint_citations",
+    "sign_ok": true,
+    "validate_ok": true,
+    "verify_blueprint_citations_err": "CRO feasibility package hash binding is invalid",
+    "verify_blueprint_citations_ok": false,
+    "verify_signature_ok": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "both_cases_diverge": true,
+  "cases": [
+    {
+      "case": "unregistered_module_scored",
+      "divergence_A_rejects_B_discloses": true,
+      "envelope_status": "SCORED",
+      "marker": "UNREGISTERED_LEAK_9f3a1c",
+      "module_id": "amphora-not-a-registered-module-zz",
+      "module_is_registered": false,
+      "site_a_authorize_optimizer_request_rejected": true,
+      "site_a_error": "optimizer envelope module is unknown or duplicated",
+      "site_b_eligible_objectives": 0,
+      "site_b_feasible": false,
+      "site_b_leaked_marker_verbatim": true,
+      "site_b_rank_candidates_display_kpis_value": "UNREGISTERED_LEAK_9f3a1c",
+      "site_b_ranking_performed": false
+    },
+    {
+      "case": "registered_module_failed_gates",
+      "divergence_A_rejects_B_discloses": true,
+      "envelope_status": "FAILED_GATES",
+      "marker": "FAILEDGATES_LEAK_7c1d44",
+      "module_id": "amphora-molecule-property",
+      "module_is_registered": true,
+      "site_a_authorize_optimizer_request_rejected": true,
+      "site_a_error": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_b_eligible_objectives": 0,
+      "site_b_feasible": false,
+      "site_b_leaked_marker_verbatim": true,
+      "site_b_rank_candidates_display_kpis_value": "FAILEDGATES_LEAK_7c1d44",
+      "site_b_ranking_performed": false
+    }
+  ],
+  "probe": "optimizer-display-kpi-scope-boundary-v1",
+  "registered_modules_count": 29
+}

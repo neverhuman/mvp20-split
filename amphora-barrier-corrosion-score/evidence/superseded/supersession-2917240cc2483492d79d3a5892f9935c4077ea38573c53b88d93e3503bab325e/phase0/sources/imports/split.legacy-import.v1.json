@@ -1,0 +1,7 @@
+{
+  "schema": "amphora.measured-eis-split.v1",
+  "module_id": "amphora-barrier-corrosion-score",
+  "split_id": "eis-promotion-data-absent-external-data-quarantined",
+  "dataset_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423",
+  "assignments": []
+}

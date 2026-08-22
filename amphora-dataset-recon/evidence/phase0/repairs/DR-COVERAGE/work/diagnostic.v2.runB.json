@@ -1,0 +1,28 @@
+{
+  "input_coverage_map_gaps_count": 64,
+  "input_coverage_map_sha256": "cf2591b284f64336bcadfff8576ea3085e0ecbf7a4cf0f154e6a6d663e573bea",
+  "input_dataset_ledger_candidate_ids": [
+    "DR-DISP-Q03",
+    "DR-DISP-Q04",
+    "DR-DISP-Q13",
+    "DR-DISP-Q14",
+    "DR-LANG-CEE-06",
+    "DR-LANG-DE-06",
+    "DR-LANG-EU-11",
+    "DR-LANG-FR-04",
+    "DR-LANG-IBERIAN-01",
+    "DR-LANG-IBERIAN-02",
+    "DR-LANG-IBERIAN-05",
+    "DR-LANG-KO-02",
+    "DR-LANG-KO-04",
+    "DR-LANG-RU-01"
+  ],
+  "input_dataset_ledger_entries_count": 14,
+  "input_dataset_ledger_sha256": "a4e8b70e434ee99fe7704451b826c8e2d73bbaa16a6d196788149ff6b458d418",
+  "recommended_not_in_ledger": [],
+  "recommended_not_in_ledger_count": 0,
+  "refutation_criterion_fired": false,
+  "schema": "amphora.dataset-recon.dr-coverage.completeness-check.v1",
+  "triple_null_violations": [],
+  "triple_null_violations_count": 0
+}

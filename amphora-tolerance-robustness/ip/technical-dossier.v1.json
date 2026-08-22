@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-tolerance-robustness",
+    "formulation lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "be36a0158e933f8cfb8e128d1abbc4aa6869c22e85b5be83a764554ecd3b1554",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-tolerance-robustness",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

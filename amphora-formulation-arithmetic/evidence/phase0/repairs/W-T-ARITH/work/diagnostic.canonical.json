@@ -1,0 +1,225 @@
+{
+  "baseline": {
+    "astm_conventions_cited_not_reproduced": [
+      "ASTM D1475 (density of paint/varnish/lacquer) -- Method 24 sec 6.1, 11.3.3",
+      "ASTM D2369 (volatile content of coatings) -- Method 24 sec 6.2, 11.2.2/11.3.1",
+      "ASTM D2697 -- referenced by this module's own docs as the volume-solids convention Method 24 sec 11.3.4 delegates to ('manufacturer's formulation'); Method 24's own text does not name D2697 explicitly, D2697 is this module's citation, not the CFR's",
+      "ASTM D6093 -- not cited by Method 24 text at all; appears only in this module's campaign-item framing as an alternate industry convention"
+    ],
+    "citation": "40 CFR Part 60, Appendix A-7 (Test Methods 19 through 25E)",
+    "doi_isbn": "not applicable -- US federal regulation (40 CFR), public domain under 17 U.S.C. sec 105; CFR citation is the standard scholarly reference in place of a DOI/ISBN",
+    "name": "EPA Method 24 -- Determination of Volatile Matter Content, Water Content, Density, Volume Solids, and Weight Solids of Surface Coatings",
+    "public_domain": true,
+    "retrieved": "2026-08-13",
+    "url_authoritative": "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-C/part-60/appendix-Appendix%20A-7%20to%20Part%2060",
+    "url_primary": "https://www.epa.gov/sites/default/files/2020-12/documents/method_24.pdf",
+    "version": "unofficial internet version dated October 7, 2020 (points to eCFR as authoritative)"
+  },
+  "campaign_item_id": "W-T-ARITH",
+  "claim_under_attack": {
+    "claim_text": "The arithmetic identities conform to the published standards that define them.",
+    "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/kpis/"
+  },
+  "overall_verdict": "CLAIM_REFUTED",
+  "overall_verdict_reasoning": "R2 is a genuine, structural divergence from EPA Method 24 Eq. 24-3/24-4/24-5: the module's voc_g_per_L_epa_method24 field -- named for this exact method -- computes Wv*Dc (total volatile mass basis) unconditionally, never Wo*Dc (nonaqueous-volatile-only basis), because its ingredient schema has no water or exempt-solvent category at all (0/83 facts.json entries). Method 24 makes this exclusion non-optional the moment water or an exempt solvent is present (Eq. 24-4, Eq. 24-5). The waterborne probe shows a 50.0% VOC overstatement versus the EPA-conformant value on a realistic 30g-water addition to the module's own marine-primer fixture. This is the SAME mass/volume-basis-conflation defect CLASS already found once in this portfolio (amphora-known-answer-benchmarks ARITH-A221-X70P1-VOLUME-SOLIDS, 2026-08-03) -- a self-referential fixture that never exercised the water/exempt-solvent path let it go undetected until measured against the actual regulatory text. R4/R6/R8 are additional, lower-severity gaps filed as proposed_followups. R1/R3/R5/R7 hold as CONFORMANT/NOT_APPLICABLE for the cases they cover.",
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "divergence_abs_g_per_L": 124.3917603755,
+      "divergence_rel": 0.5,
+      "engine_naive_voc_g_per_L": 373.1752811266,
+      "epa_conformant_voc_g_per_L": 248.783520751,
+      "zero_water_control_divergence": 0.0
+    },
+    "how_planted": "in-memory ingredient list for the re-implemented compute_formulation() call only -- no in-tree file was modified; BASE_INGREDIENTS (from formulation_dimensioned_audit.py, unmodified) plus one appended dict {id: water_diluent, mass_g: 30.0, density: 1.00, nonvol: 0.0}",
+    "note": "included for rigor even though the overall verdict is CLAIM_REFUTED (which does not strictly require a positive control) -- demonstrates the R2 divergence is a real, structural, repeatable defect and not a one-off arithmetic slip: the zero-water control shows the two formulas coincide exactly (divergence 0.0) when no water is present, and diverge by the water's full mass contribution the instant water is added, exactly as Eq. 24-4 predicts.",
+    "planted_defect": "added a 30 g water ingredient (density 1.00 g/cm3, the value EPA Method 24 sec 1.1 itself assigns water CAS 7732-18-5) to the real marine-primer fixture, tagged with the module's ONLY available volatile role ('solvent', nonvol=0.0) since no water-specific role exists"
+  },
+  "prior_fires_on_this_claim_id": {
+    "CF-ARITH_2026-08-10": "independently re-derived a candidate BOM's VOC/volume-solids numbers from scratch with a xylene-density positive control; SURVIVED",
+    "T-05_2026-08-05": "attacked stoichiometric EquivalentBalanceV1 mass-vs-volume basis via live Rust; unrelated defect found (candidate-supplied-constant injection); REFUTED",
+    "gap_this_fire_closes": "neither prior fire measured against a NAMED PUBLISHED BASELINE (EPA Method 24); both compared against the module's own re-derivation"
+  },
+  "proposed_followups": [
+    {
+      "finding": "voc_g_per_L_epa_method24 (and any downstream field derived from it) computes Wv*Dc, not Wo*Dc; it silently includes water and exempt-solvent mass in the VOC numerator whenever either is present, because the ingredient schema has no category for either. This is the same mass/volume-basis-conflation defect class the founder brief names as having already bitten this portfolio once.",
+      "proposed_repair_criterion": "add explicit 'water' and 'exempt_solvent' roles (or boolean flags) to the dimensioned-engine ingredient schema; change voc_g_L computation to M_vol_organic_only/V_total per Eq. 24-3/24-4/24-5's Wo hierarchy; add a waterborne known-answer probe (e.g. this fire's 30g-water variant) asserting engine_voc == epa_conformant_voc to the known-answer battery so the gap cannot silently regress; rename the field away from '_epa_method24' suffix until the fix lands, since the current name overclaims conformance",
+      "requirement_id": "R2"
+    },
+    {
+      "finding": "Method 24 sec 11.3.4 delegates the volume-solids formula to 'the manufacturer's formulation' with no equation given in the CFR text itself; the module's ASTM-D2697-style component-volume-summation convention cannot be verified against Method 24's own (silent) text at the equation level, only cited as an industry convention.",
+      "proposed_repair_criterion": "either (a) obtain lawful access to ASTM D2697 text and verify the module's Vs formula reproduces D2697's worked examples exactly, filing that as a NEW, separate paid-standard-conformance receipt (never reproducing D2697 text), or (b) explicitly document in mission.md that volume-solids arithmetic conforms to the ASTM D2697 CONVENTION by citation only and is NOT verifiable against the free EPA Method 24 text, closing this as a permanent NOT_APPLICABLE_AT_EQUATION_LEVEL rather than an open gap",
+      "requirement_id": "R4"
+    },
+    {
+      "finding": "the module's GUM Type-B density uncertainty budget never references Method 24 Table 24-1's measured intra/inter-laboratory density precision (+/-0.001 / +/-0.002 kg/L) as a floor or component, even though that table is a directly-applicable published precision statement for exactly the quantity (Dc) the budget models.",
+      "proposed_repair_criterion": "add a Table-24-1-derived measurement-precision floor as an explicit additional Type-B component (or a documented lower bound) in uncertainty-propagation-v1's density budget, and report the ratio of supplier-grade dispersion to EPA measurement-precision floor per ingredient so a reader can see which term dominates",
+      "requirement_id": "R6"
+    },
+    {
+      "finding": "Method 24's asymmetric waterborne confidence-limit rule (lower bound for Wv/Dc, upper bound for Ww) has no counterpart in the module's symmetric GUM/MC intervals; currently moot only because R2 means no waterborne formulation can be correctly represented at all yet.",
+      "proposed_repair_criterion": "once R2 is repaired and a waterborne ingredient category exists, add the sec 9.2/12.6 asymmetric confidence-limit substitution as an explicit computation path, gated on a 'waterborne: true' formulation flag, with its own known-answer probe",
+      "requirement_id": "R8"
+    }
+  ],
+  "reproduces_prior_audited_engine_output": {
+    "total_mass_g": {
+      "audited": 333.0,
+      "match": true,
+      "reimpl": 333.0
+    },
+    "total_volume_cm3": {
+      "audited": 211.1735303804,
+      "match": true,
+      "reimpl": 211.1735303804
+    },
+    "voc_g_per_L": {
+      "audited": 284.1265185647,
+      "match": true,
+      "reimpl": 284.1265185647
+    },
+    "volume_solids": {
+      "audited": 0.6673699761,
+      "match": true,
+      "reimpl": 0.6673699761
+    }
+  },
+  "requirement_count": 8,
+  "requirements": [
+    {
+      "applies_to": "amphora-formulation-arithmetic dimensioned engine, weight_solids_frac output",
+      "epa_citation": "Method 24 sec 12.5, Eq. 24-6",
+      "epa_quoted_text": "\"Weight Fraction Solids. Ws = 1 - Wv  Eq. 24-6\"",
+      "evidence": {
+        "computation": "module's own wt_solids (M_nv/M_total) + volatile weight fraction (M_vol/M_total) for the real primer",
+        "residual_from_1": -1.982e-11,
+        "sum": 0.99999999998,
+        "volatile_weight_frac": 0.1801801802,
+        "wt_solids": 0.8198198198
+      },
+      "id": "R1",
+      "requirement_paraphrase": "Weight fraction solids and weight fraction volatile matter must sum to exactly 1 (mass balance).",
+      "verdict": "CONFORMANT"
+    },
+    {
+      "applies_to": "amphora-formulation-arithmetic dimensioned engine, voc_g_per_L_epa_method24 output -- the field is even NAMED after this method while not implementing its water-exclusion clause",
+      "epa_citation": "Method 24 sec 12.4, Eq. 24-3/24-4/24-5",
+      "epa_quoted_text": "\"12.4.2 Waterborne Coatings. Wo = Wv - Ww  Eq. 24-4\" ; \"12.4.3 Coatings Containing Exempt Solvents. Wo = Wv - WE - Ww  Eq. 24-5\" (contrast: \"12.4.1 Solvent-borne Coatings. Wo = Wv  Eq. 24-3\")",
+      "evidence": {
+        "engine_formula": "voc_g_L = 1000 * M_vol / V_total, where M_vol sums ALL nonvol<1 ingredient mass indiscriminately -- this is 1000*Wv*Dc, not 1000*Wo*Dc.",
+        "no_water_control": {
+          "divergence": 0.0,
+          "engine_naive_voc_g_L": 284.1265185647,
+          "epa_conformant_voc_g_L": 284.1265185647,
+          "note": "with water mass 0, the naive and EPA-conformant (Wo-based) formulas must coincide -- verifies the probe itself is sound"
+        },
+        "structural_gap": "amphora-ingredient-library/reference/mvp20/data/facts.json has 0/83 entries tagged water or exempt-solvent; the dimensioned engine's ingredient schema (formulation_dimensioned_audit.py) has exactly one volatile role ('solvent', nonvol=0.0) with no water/exempt distinction, so it has no way to compute Wo != Wv even in principle.",
+        "waterborne_probe": {
+          "divergence_abs_g_per_L": 124.3917603755,
+          "divergence_rel": 0.5,
+          "engine_naive_voc_g_L_includes_water_mass": 373.1752811266,
+          "epa_conformant_voc_g_L_excludes_water_per_Eq24-4": 248.783520751,
+          "note": "same primer + 30g water treated by the engine as an ordinary 'solvent' ingredient (density 1.00 g/cm3, the value Method 24 sec 1.1 itself assigns water, CAS 7732-18-5)"
+        }
+      },
+      "id": "R2",
+      "requirement_paraphrase": "The VOC-relevant volatile fraction (Wo, 'nonaqueous volatile matter') MUST exclude water and exempt-solvent mass from the numerator whenever either is present; only solvent-borne coatings with neither may use total volatile mass Wv directly as Wo.",
+      "verdict": "DIVERGENT"
+    },
+    {
+      "applies_to": "amphora-formulation-arithmetic dimensioned engine, voc_g_per_L_epa_method24 output on the existing (solvent-only) fixture",
+      "epa_citation": "Method 24 sec 11.3.3 Dc + sec 12.4 Wo (density-basis identity derivable, not itself an EPA equation number)",
+      "epa_quoted_text": "Dc (sec 11.3.3, \"Determine the density (Dc, kg/l) of the surface coating\") combined with Wo (sec 12.4) implies VOC content per liter of coating = 1000 * Wo * Dc (g/L); Method 24 does not print this composite equation, it is the direct dimensional consequence of its own defined quantities.",
+      "evidence": {
+        "conditional_on": "R2 -- the identity only holds because the real-primer fixture happens to contain no water/exempt solvent (Wo==Wv there); it is NOT a general guarantee, as R2's waterborne probe demonstrates",
+        "no_water_case": {
+          "abs_diff": 0.0,
+          "derived_1000_Wo_Dc": 284.1265185647,
+          "engine_value": 284.1265185647
+        }
+      },
+      "id": "R3",
+      "requirement_paraphrase": "the module's VOC formula equals the EPA-derivable density-basis identity 1000*Wo*Dc, provided Wo (not Wv) is used",
+      "verdict": "CONFORMANT_CONDITIONAL"
+    },
+    {
+      "applies_to": "amphora-formulation-arithmetic dimensioned engine, volume_solids_frac_astm_d2697 output",
+      "epa_citation": "Method 24 sec 11.3.4",
+      "epa_quoted_text": "\"11.3.4 Solids Content. Determine the volume fraction (Vs) solids of the coating by calculation using the manufacturer's formulation.\"",
+      "evidence": {
+        "closure_check": "volume_fraction_sum_minus_1 residual (module's own internal identity, not an EPA identity)",
+        "closure_value": 0.0,
+        "engine_value": 0.6673699761,
+        "finding": "cannot be checked bit-for-bit against Method-24 TEXT because the text contains no such equation to check against -- this is a genuine gap in the free/public baseline, not a module defect",
+        "module_convention_used": "vol_solids = V_solids / V_total (component-volume summation from mass/density) -- this is the module's own docs' citation of ASTM D2697, not a CFR-defined formula"
+      },
+      "id": "R4",
+      "requirement_paraphrase": "Method 24 itself specifies NO numeric equation for volume-fraction solids -- it explicitly delegates the calculation to 'the manufacturer's formulation' with no formula given anywhere in the method text (sections 1 through 17 read in full; no Vs equation number exists alongside Eq. 24-1 through 24-6).",
+      "verdict": "NOT_APPLICABLE_AT_EQUATION_LEVEL"
+    },
+    {
+      "applies_to": "amphora-formulation-arithmetic dimensioned engine, wet_paint_density_g_cm3 / wet_paint_density_g_L outputs",
+      "epa_citation": "Method 24 sec 11.3.3 (\"Dc, kg/l\") and sec 12.1 nomenclature (\"Dc = Density of coating or ink, g/cm3(g/in3)\")",
+      "epa_quoted_text": "\"Determine the density (Dc, kg/l) of the surface coating using the procedure in ASTM D 1475.\" / \"Dc = Density of coating or ink, g/cm3(g/in3).\"",
+      "evidence": {
+        "density_roundtrip_residual_M_total_minus_rho_times_V": 0.0,
+        "engine_wet_density_g_L": 1576.9021780339,
+        "engine_wet_density_g_cm3": 1.576902178,
+        "g_cm3_times_1000_equals_g_L": -3.4e-08,
+        "note": "1 g/cm3 == 1 kg/L numerically; Method 24's two nomenclature statements (sec 11.3.3 kg/l vs sec 12.1 g/cm3) are the same number, not a contradiction",
+        "units_dimensionally_consistent": true
+      },
+      "id": "R5",
+      "requirement_paraphrase": "coating density must be a single self-consistent quantity Dc; kg/L and g/cm3 are numerically identical units (1 g/cm3 = 1 kg/L), so both of Method 24's own unit statements must agree with each other and with the mass/volume identity M_total = Dc * V_total.",
+      "verdict": "CONFORMANT"
+    },
+    {
+      "applies_to": "amphora-formulation-arithmetic/evidence/audit/uncertainty-propagation-v1 GUM Type-B budget, density::dgeba_der331 input",
+      "epa_citation": "Method 24 sec 13.1, Table 24-1",
+      "epa_quoted_text": "\"TABLE 24-1 -- ANALYTICAL PRECISION STATEMENTS ... Density, Dc Intra-laboratory +/-0.001 kg/l ; Inter-laboratory +/-0.002 kg/l\"",
+      "evidence": {
+        "dgeba_331_density_u_combined_kg_per_L": 0.0044211612,
+        "epa_intra_lab_density_precision_kg_per_L": 0.001,
+        "finding": "the module's GUM Type-B density uncertainty (evidence/audit/uncertainty-propagation-v1) is built entirely from SUPPLIER-GRADE dispersion bands (TDS 0.5%, SUPPLIER_GUIDE 1.5%, DISTRIBUTOR 2.5%, REFERENCE_NOMINAL 3.0%) and never references or includes Method 24's Table 24-1 measurement-repeatability floor as a component at all",
+        "interpretation": "these are different uncertainty SOURCES (supplier declaration variability vs analytical measurement repeatability), so a numeric mismatch is not itself a bug -- but the module's budget has no explicit floor/component tied to the published measurement-precision standard, which is the completeness gap being reported",
+        "ratio_module_uncertainty_to_epa_floor": 4.421
+      },
+      "id": "R6",
+      "requirement_paraphrase": "Method 24 states the empirically-measured repeatability of a Dc determination is +/-0.001 kg/L (intra-lab) / +/-0.002 kg/L (inter-lab) -- this is a measurement-precision floor a calibrated uncertainty budget for coating density should at minimum be able to compare itself against.",
+      "verdict": "DIVERGENT_IN_KIND"
+    },
+    {
+      "applies_to": "n/a -- scope boundary check",
+      "epa_citation": "Method 24 sec 12.2, Eq. 24-1",
+      "epa_quoted_text": "\"12.2 To determine if a coating or ink can be classified as a thin-film UV cured coating or ink, use the following equation: C = F A Dc  Eq. 24-1\"",
+      "evidence": {
+        "reason": "amphora-formulation-arithmetic has no UV-cured-coating scope and no F/A/C fields anywhere in its ingredient or formulation schema (confirmed by reading formulation_dimensioned_audit.py's compute_formulation() signature and the module's fixture)"
+      },
+      "id": "R7",
+      "requirement_paraphrase": "thin-film UV-radiation-cured coating classification requires substrate area (A), manufacturer film thickness (F), and coating-on-substrate mass (C).",
+      "verdict": "NOT_APPLICABLE"
+    },
+    {
+      "applies_to": "amphora-formulation-arithmetic/evidence/audit/uncertainty-propagation-v1 -- and, if a waterborne formulation were ever added, this asymmetric rule would need to be implemented alongside the R2 fix",
+      "epa_citation": "Method 24 sec 9.2, 12.6",
+      "epa_quoted_text": "\"9.2 Confidence Limits for Waterborne Coatings. Because of the inherent increased imprecision in the determination of the VOC content of waterborne coatings as the weight percent of water increases, measured parameters for waterborne coatings are replaced with appropriate confidence limits... For Wv and Dc, use the lower confidence limits; for Ww, use the upper confidence limit.\"",
+      "evidence": {
+        "reason": "the module's GUM/MC uncertainty engine (uncertainty-propagation-v1) reports symmetric two-sided intervals (ci95_lpu_low/high, mc_ci95_low/high) for every output uniformly, with no waterborne-specific asymmetric confidence-limit substitution rule; consistent with R2's finding that the module has no waterborne coating category at all, so this Method-24 requirement has no formulation in scope to apply to yet",
+        "symmetric_around_point_estimate": true,
+        "voc_g_per_L_ci95_lpu_high": 286.5268875722,
+        "voc_g_per_L_ci95_lpu_low": 281.7261495571
+      },
+      "id": "R8",
+      "requirement_paraphrase": "for waterborne coatings, Method 24 requires ASYMMETRIC treatment: Wv and Dc pulled to their lower confidence bound, Ww pushed to its upper bound, when computing the reported VOC figure -- not a symmetric interval.",
+      "verdict": "NOT_APPLICABLE"
+    }
+  ],
+  "run_type": "W-T-ARITH_NAMED_PUBLISHED_BASELINE_CONFORMANCE_AUDIT",
+  "schema": "amphora.formulation-arithmetic.epa-method24-conformance-audit.v1",
+  "target_module": "amphora-formulation-arithmetic",
+  "verdict_counts": {
+    "conformant": 3,
+    "divergent": 2,
+    "not_applicable": 3
+  }
+}

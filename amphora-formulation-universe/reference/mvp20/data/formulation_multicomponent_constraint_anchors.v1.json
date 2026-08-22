@@ -1,0 +1,102 @@
+{
+  "schema": "amphora.formulation-universe.multicomponent-constraint-anchors.v1",
+  "anchor_id": "formulation_multicomponent_constraint_anchors_v1",
+  "rights": {
+    "license": "CC0-1.0",
+    "status": "ACCEPTED",
+    "eligible_for_derivatives": true,
+    "source_id": "amphora_formulation_universe_multicomponent_constraint_anchors",
+    "source_url": "local:amphora-formulation-universe/reference/mvp20/data/formulation_multicomponent_constraint_anchors.v1.json",
+    "scope": "Amphora-authored marine epoxy-amine constrained-mixture regions with multicomponent linear constraints (pigment-volume-concentration bands per Asbeck & Van Loo 1949, amine-H:epoxide stoichiometric-ratio bands per Lee & Neville 1967). Nominal audit constants (densities, EEW, AHEW) are Amphora-chosen round handbook-typical values for AUDIT_ONLY geometry oracles; they are not measured supplier data and carry no third-party database rights."
+  },
+  "primary_sources": [
+    {"source": "Snee, R.D. (1979) Experimental designs for mixture systems with multicomponent constraints, Commun. Stat. Theory Methods A8(4):303-326", "doi": "10.1080/03610927908827762"},
+    {"source": "Piepel, G.F. (1988) Programs for generating extreme vertices and centroids of linearly constrained experimental regions, J. Qual. Technol. 20(2):125-136", "doi": "10.1080/00224065.1988.11979094"},
+    {"source": "Snee, R.D. & Marquardt, D.W. (1974) Extreme vertices designs for linear mixture models, Technometrics 16(3):399-408", "doi": "10.1080/00401706.1974.10489209"},
+    {"source": "Motzkin, Raiffa, Thompson & Thrall (1953) The Double Description Method, Annals of Math. Studies 28", "isbn": "978-0-691-07935-6"},
+    {"source": "Asbeck, W.K. & Van Loo, M. (1949) Critical pigment volume relationships, Ind. Eng. Chem. 41(7):1470-1475", "doi": "10.1021/ie50475a042"},
+    {"source": "Lee, H. & Neville, K. (1967) Handbook of Epoxy Resins, McGraw-Hill", "isbn": "978-0-07-036997-9"},
+    {"source": "Cornell, J.A. (2002) Experiments with Mixtures, 3rd ed., Wiley", "isbn": "0-471-07916-2"}
+  ],
+  "constants_note": "All numeric constants are decimal strings parsed as exact rationals. Densities in g/cm3 of the wet-paint component as dosed; EEW/AHEW in g/eq. PVC is computed on the solvent-free (dry-film) volume basis: PVC = V_pigment / (V_pigment + V_binder), with V_i = x_i / rho_i per unit mixture mass. The stoichiometric index r = (x_amine/AHEW) / (x_epoxy/EEW) is amine-H equivalents per epoxide equivalent.",
+  "regions": [
+    {
+      "region_id": "marine-primer-4c-pvc-stoich",
+      "industrial_context": "Marine anti-corrosion two-part epoxy-amine primer, weight fractions of the mixed (A+B) wet paint; cycloaliphatic-amine-class hardener; PVC band plus stoichiometric band.",
+      "components": ["dgeba_resin", "amine_hardener", "pigment_tio2", "solvent_xylene_mibk"],
+      "lower": ["0.30", "0.08", "0.15", "0.05"],
+      "upper": ["0.50", "0.20", "0.40", "0.25"],
+      "densities": {"dgeba_resin": "1.16", "amine_hardener": "0.95", "pigment_tio2": "4.23", "solvent_xylene_mibk": "0.87"},
+      "binder_components": ["dgeba_resin", "amine_hardener"],
+      "pigment_components": ["pigment_tio2"],
+      "pvc_band": {"lower": "0.12", "upper": "0.20"},
+      "stoich": {"epoxy_component": "dgeba_resin", "amine_component": "amine_hardener", "eew": "190.0", "ahew": "43.0", "band": {"lower": "0.90", "upper": "1.10"}},
+      "expected_dim": 3
+    },
+    {
+      "region_id": "hb-barrier-topcoat-5c-pvc-stoich",
+      "industrial_context": "High-build marine barrier topcoat with glass-flake extender, polyamide-class hardener; PVC band over TiO2+flake, stoichiometric band.",
+      "components": ["dgeba_resin", "amine_hardener", "pigment_tio2", "glass_flake_filler", "solvent_xylene_mibk"],
+      "lower": ["0.25", "0.06", "0.05", "0.10", "0.05"],
+      "upper": ["0.45", "0.18", "0.20", "0.30", "0.20"],
+      "densities": {"dgeba_resin": "1.16", "amine_hardener": "0.95", "pigment_tio2": "4.23", "glass_flake_filler": "2.50", "solvent_xylene_mibk": "0.87"},
+      "binder_components": ["dgeba_resin", "amine_hardener"],
+      "pigment_components": ["pigment_tio2", "glass_flake_filler"],
+      "pvc_band": {"lower": "0.15", "upper": "0.25"},
+      "stoich": {"epoxy_component": "dgeba_resin", "amine_component": "amine_hardener", "eew": "190.0", "ahew": "95.0", "band": {"lower": "0.85", "upper": "1.15"}},
+      "expected_dim": 4
+    },
+    {
+      "region_id": "solventfree-tanklining-3c-pvc-stoich",
+      "industrial_context": "Solvent-free tank-lining epoxy, talc extender; tight stoichiometric band, PVC band.",
+      "components": ["dgeba_resin", "amine_hardener", "talc_filler"],
+      "lower": ["0.45", "0.10", "0.10"],
+      "upper": ["0.70", "0.30", "0.40"],
+      "densities": {"dgeba_resin": "1.16", "amine_hardener": "0.95", "talc_filler": "2.75"},
+      "binder_components": ["dgeba_resin", "amine_hardener"],
+      "pigment_components": ["talc_filler"],
+      "pvc_band": {"lower": "0.10", "upper": "0.20"},
+      "stoich": {"epoxy_component": "dgeba_resin", "amine_component": "amine_hardener", "eew": "190.0", "ahew": "43.0", "band": {"lower": "0.95", "upper": "1.05"}},
+      "expected_dim": 2
+    },
+    {
+      "region_id": "stoich-band-only-4c",
+      "industrial_context": "Primer region with a single multicomponent constraint: tight stoichiometric band, no PVC band.",
+      "components": ["dgeba_resin", "amine_hardener", "pigment_tio2", "solvent_xylene_mibk"],
+      "lower": ["0.30", "0.08", "0.15", "0.05"],
+      "upper": ["0.50", "0.20", "0.40", "0.25"],
+      "densities": {"dgeba_resin": "1.16", "amine_hardener": "0.95", "pigment_tio2": "4.23", "solvent_xylene_mibk": "0.87"},
+      "binder_components": ["dgeba_resin", "amine_hardener"],
+      "pigment_components": ["pigment_tio2"],
+      "pvc_band": null,
+      "stoich": {"epoxy_component": "dgeba_resin", "amine_component": "amine_hardener", "eew": "190.0", "ahew": "43.0", "band": {"lower": "1.00", "upper": "1.05"}},
+      "expected_dim": 3
+    },
+    {
+      "region_id": "pvc-band-only-4c",
+      "industrial_context": "Primer region with a single multicomponent constraint: tight PVC band, no stoichiometric band.",
+      "components": ["dgeba_resin", "amine_hardener", "pigment_tio2", "solvent_xylene_mibk"],
+      "lower": ["0.30", "0.08", "0.15", "0.05"],
+      "upper": ["0.50", "0.20", "0.40", "0.25"],
+      "densities": {"dgeba_resin": "1.16", "amine_hardener": "0.95", "pigment_tio2": "4.23", "solvent_xylene_mibk": "0.87"},
+      "binder_components": ["dgeba_resin", "amine_hardener"],
+      "pigment_components": ["pigment_tio2"],
+      "pvc_band": {"lower": "0.14", "upper": "0.18"},
+      "stoich": null,
+      "expected_dim": 3
+    },
+    {
+      "region_id": "stoich-equality-3c",
+      "industrial_context": "Solvent-free lining locked at exact 1:1 amine-H:epoxide stoichiometry (degenerate band lower == upper); the feasible set collapses to a lower-dimensional face.",
+      "components": ["dgeba_resin", "amine_hardener", "talc_filler"],
+      "lower": ["0.45", "0.10", "0.10"],
+      "upper": ["0.70", "0.30", "0.40"],
+      "densities": {"dgeba_resin": "1.16", "amine_hardener": "0.95", "talc_filler": "2.75"},
+      "binder_components": ["dgeba_resin", "amine_hardener"],
+      "pigment_components": ["talc_filler"],
+      "pvc_band": null,
+      "stoich": {"epoxy_component": "dgeba_resin", "amine_component": "amine_hardener", "eew": "190.0", "ahew": "43.0", "band": {"lower": "1.00", "upper": "1.00"}},
+      "expected_dim": 1
+    }
+  ]
+}

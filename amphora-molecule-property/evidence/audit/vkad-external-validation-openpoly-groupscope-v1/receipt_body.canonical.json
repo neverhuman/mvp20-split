@@ -1,0 +1,157 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "ceiling": "AUDIT_ONLY. Does not alter the shipped external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json, any manifest, or any authority ceiling. Extends the module's falsification record: the KPI's 'beats published baseline' headline is shown to survive restriction to W-PROP1's trustworthy-group applicability domain, with a disclosed reproducibility caveat for a future fire.",
+  "claim_under_attack": {
+    "kpi_sha256": "b73bf0e81d967d837cf9195ad56dec7c9b93cdf8613ec0d1d6272d3ca3e4579a",
+    "receipt": "amphora-molecule-property/evidence/phase0/kpis/external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+    "reported_MAE_reduction_K": 20.917736973988823,
+    "reported_push_20_ridge_MAE_K": 70.41754628962593,
+    "reported_van_krevelen_published_MAE_K": {
+      "MAE_K": 91.33528326361476,
+      "R2": -0.7955420030094327,
+      "RMSE_K": 118.83687283057657,
+      "median_signed_err_K": -36.50461376030856,
+      "n": 442,
+      "n_within_100K": 284,
+      "n_within_50K": 157,
+      "pearson_r": 0.0037299062532100257
+    }
+  },
+  "falsifying_check": {
+    "full_population_my_repro": {
+      "MAE_reduction_K": 4.726431388394218,
+      "mae_published_K": 152.31891774828074,
+      "mae_ridge_K": 147.59248635988652,
+      "n": 442
+    },
+    "partition_A_in_scope_only": {
+      "MAE_reduction_K": 19.776685742276044,
+      "mae_published_K": 167.41854371841325,
+      "mae_ridge_K": 147.6418579761372,
+      "n": 258
+    },
+    "partition_B_touches_excluded_group": {
+      "MAE_reduction_K": -16.376642651287852,
+      "mae_published_K": 131.14661611624712,
+      "mae_ridge_K": 147.52325876753497,
+      "n": 184
+    },
+    "pre_registered_refute_criterion": "On partition A (in-scope-only, zero count in all 9 W-PROP1-excluded groups) with n>=(30), MAE_ridge does NOT beat MAE_published (MAE_reduction<=0) => REFUTES the external-validation 'beats published baseline' headline as a general claim.",
+    "refuted": false
+  },
+  "fire_id": "20260816T030001-1818964-093e44761466",
+  "fire_sequence": "ROTATION fire. Identified the strongest never-before-attacked unqualified-STANDS positive claim in amphora-molecule-property via RETRACTION-INDEX.md (line 40: external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json, status STANDS, 'no refuting receipt targets this KPI'). This KPI's headline was published (dataset_fixture_paths pin the van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json) but was never re-checked against W-PROP1 (2026-08-05, SURVIVED), which scope-limited that same 24-group Ridge coefficient table to 15 trustworthy in-scope groups (n_train>=125) after W8 (2026-08-03, REFUTED) found 2 sign-reversed coefficients concentrated in low-support groups. This attack asks: does the external-validation 'beats published baseline' finding survive when restricted to the chemistry the model's own scoping (W-PROP1) says it can trust, or is the advantage propped up by chemistry that touches the already-flagged-untrustworthy groups?",
+  "flips_scientific_readiness": false,
+  "gates": {
+    "positive_control_detected": true,
+    "positive_control_present": true,
+    "self_contained_reads_only_already_signed_or_already_rights_cleared_inputs": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "two_replay_byte_stable_diagnostic": true
+  },
+  "honest_disclosed_caveat_NOT_used_to_flip_verdict": "My independent re-derivation's ABSOLUTE MAE values diverge substantially from the KPI's reported figures: my full-population MAE_ridge=147.59K vs reported 70.42K (+110%), and my MAE_published=152.32K vs reported 91.34K (+67%). This was explicitly pre-declared NOT to be the falsifying criterion (the compute script states this before results were seen) because an independent SMARTS re-implementation is not expected to numerically match an undisclosed original featurizer, and the mismatch could stem from either implementation without further work to isolate which. It is disclosed here as a genuine, load-bearing, previously-unknown fact: no per-molecule featurization script (SMILES-to-24-group-vector) exists anywhere in this repo for this KPI's authority_ceiling=REAL_ARITHMETIC claim -- confirmed by a repo-wide grep for the group vocabulary across every .py/.rs file in mvp20-split, which surfaces only downstream meta-analyses of the pre-aggregated coefficient table (W8, W-PROP1, C8) and never a raw SMILES-to-group-count step. This means the REAL_ARITHMETIC authority-ceiling's implicit promise -- that the reported figures are independently checkable pure arithmetic from the cited dataset_fixture_paths -- is not currently met in practice: an independent good-faith attempt following the same cited theory cannot reproduce the reported absolute numbers within a defensible tolerance, though it DOES reproduce the qualitative ranking (Ridge beats published, both on the full population and on partition A). RECOMMENDED FOLLOWUP (not actioned this fire, to avoid moving this receipt's own pre-registered goalposts after seeing results): a future fire should attack the REAL_ARITHMETIC-reproducibility claim directly and specifically, with that framed as the pre-registered criterion from the start.",
+  "human_review_performed": false,
+  "input_artifacts": {
+    "compute_script_sha256": "771eb5e45f1903dd946f1bfa10690c2526e217f8c2669a5290413a8157ec720b",
+    "excluded_groups_9": [
+      "Br",
+      "Cl",
+      "F",
+      "Si_O",
+      "ester",
+      "nitrile",
+      "sulfide",
+      "sulfone",
+      "vinyl_CH2"
+    ],
+    "external_validation_kpi_path": "amphora-molecule-property/evidence/phase0/kpis/external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+    "external_validation_kpi_sha256": "b73bf0e81d967d837cf9195ad56dec7c9b93cdf8613ec0d1d6272d3ca3e4579a",
+    "in_scope_groups_15": [
+      "CH",
+      "CH2",
+      "CH3",
+      "C_quat",
+      "amide",
+      "aromatic_C_H",
+      "aromatic_C_sub",
+      "carbonyl",
+      "epoxide",
+      "ether_O",
+      "hydroxyl",
+      "primary_amine",
+      "secondary_amine",
+      "tertiary_amine",
+      "vinyl_CH"
+    ],
+    "openpoly_csv_path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+    "openpoly_csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "ridge_fit_kpi_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979",
+    "wprop1_receipt_sha256": "81e45dbfac8c6fdb929b0413634468b3e736760aac790857e00b94ab16bebda0"
+  },
+  "method": "1) Independently featurize the 442 OpenPoly test polymers (PSMILES column, feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv, rows with a valid Tg (K) value) into the same 24 Van Krevelen groups using self-authored RDKit SMARTS (Van Krevelen 1990 Ch.3 / Bicerano 2002 Ch.3 group-additive definitions), repeat-unit molar mass via RDKit MolWt with the 2 polymer attachment points ([*]) capped with H (all 443 rows have exactly 2 wildcards, confirmed). 2) Apply the ALREADY-SIGNED, hash-pinned fitted_Ygi_comparison (Ridge) and Y_published_K_g_per_mol (Van Krevelen 1990 Table 6.6) coefficient tables verbatim: Tg_pred = sum(Y_gi * n_i) / M_repeat_unit. 3) Sanity-gate (NOT the falsifying criterion, pre-declared as such in the compute script before results were seen): compare my independent full-population MAE against the KPI's own reported MAE_K values, to confirm qualitative-direction agreement. 4) THE FALSIFYING CHECK: partition into A = in-scope-only (zero count in all 9 W-PROP1-excluded groups) vs B = touches-excluded-group (nonzero count in >=1 excluded group); recompute MAE_ridge and MAE_published on A alone using the same already-fitted coefficients (no re-fit).",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "Test whether external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json's 'Push #20 Ridge Y_gi DO generalize (modestly) beyond MD-simulated training distribution' / 'beats published Van Krevelen baseline by 22.9%' headline survives an applicability-domain restriction to the 15 W-PROP1 in-scope (trustworthy) Van Krevelen groups, using an INDEPENDENT re-derivation of the 442-row OpenPoly test population's group composition (no in-tree featurizer exists for this KPI to reuse -- repo-wide grep for the group vocabulary confirms only downstream meta-analyses of the pre-aggregated coefficient table exist, never a per-molecule SMILES-to-group-vector step).",
+  "organizational_independence_asserted": false,
+  "positive_control": {
+    "detected": true,
+    "evidence": "On the REAL clean input (partition A, n=258) the check does NOT fire: MAE_reduction_K=19.777 > 0, i.e. Ridge still beats the published baseline restricted to trustworthy-group chemistry -> claim SURVIVES. On the planted-defect input (partition B, n=184) the SAME check DOES fire: MAE_reduction_K=-16.377 <= 0 (n>=30) -- i.e. if the external-validation population had instead been drawn only from untrustworthy-group chemistry, this check would have correctly REFUTED the 'beats baseline' headline. This demonstrates the check is sensitive to the exact failure mode it exists to catch, not a dead/inert gate.",
+    "how_planted": "Population changed from partition_A (n=258, real clean input, MAE_reduction_K=19.777) to partition_B (n=184, planted-defect input, MAE_reduction_K=-16.377); same coefficients (Y_fitted/Y_published), same formula, same code path, only the input row-set changed.",
+    "planted_defect": "Substitute the evaluation population from partition A (in-scope-only chemistry, zero count in all 9 W-PROP1-excluded groups) to partition B (touches-excluded-group chemistry, nonzero count in >=1 of the 9 groups W-PROP1 already flagged untrustworthy, incl. the 2 sign-reversed groups nitrile/vinyl_CH2) -- the exact substitution defect (evaluating an external-validation 'beats baseline' claim over untrustworthy-group chemistry instead of trustworthy chemistry) this partitioned check exists to catch."
+  },
+  "pre_registered_refute_criterion": "On partition A (in-scope-only, zero count in all 9 W-PROP1-excluded groups) with n>=(30), MAE_ridge does NOT beat MAE_published (MAE_reduction<=0) => REFUTES the external-validation 'beats published baseline' headline as a general claim.",
+  "primary_sources": [
+    "Van Krevelen, D.W. 1990, Properties of Polymers, 3rd ed., Ch. 3 (group definitions) and Ch. 6 Table 6.6 (published Y_gi baseline)",
+    "Bicerano, J. 2002, Prediction of Polymer Properties, 3rd ed., Ch. 3 (group-additive contribution scheme)",
+    "Ma, R. et al 2023, OpenPoly benchmark dataset, https://github.com/TheJacksonLab/OMG_PhysicalProperties",
+    "RDKit 2026.03.2 (SMARTS substructure matching, molecular weight)"
+  ],
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "receipt_id": "u-vkad-external-validation-openpoly-groupscope-audit",
+  "recommended_followups": [
+    "A future fire should directly attack authority_ceiling=REAL_ARITHMETIC reproducibility for this KPI (and any sibling Van Krevelen KPI): no in-tree script performs SMILES-to-24-group featurization; an independent re-implementation diverges from reported absolute MAE by ~67-110%. Candidate pre-registered criterion: 'an independent re-derivation using cited published group definitions must reproduce the reported MAE within +/-25%; failure REFUTES the REAL_ARITHMETIC authority-ceiling claim for this KPI.'",
+    "If W-PROP1's in-scope/excluded group scoping is ever formally propagated to external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json's own claim_locks (it has not been), this receipt's partition-A numbers (independently re-derived, not the KPI's own pipeline) should NOT be cited as a replacement for the KPI's own pipeline re-run restricted to in-scope groups -- they are useful confirmation, not a substitute, precisely because of the reproducibility caveat above."
+  ],
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened. Reads only the already-in-tree, already-rights-cleared OpenPoly CSV (already cited by 2 prior signed receipts in this module, sha256 8de5baf7...9db5eb3), the already-signed ridge-fit KPI, the already-signed external-validation KPI, and the already-signed W-PROP1 repair receipt.",
+  "row_filter": {
+    "n_csv_rows_total": null,
+    "n_parse_fail": 1,
+    "n_parse_success": 442,
+    "n_rows_with_valid_Tg": 443,
+    "reported_kpi_n": 442
+  },
+  "sanity_gate_full_population_reproduction": {
+    "my_independent_mae_published_K": 152.31891774828074,
+    "my_independent_mae_ridge_K": 147.59248635988652,
+    "note": "Independent re-derivation using self-authored SMARTS group counter; not expected to match to machine precision (different featurizer implementation from the undisclosed original), used only to confirm same order of magnitude / same qualitative conclusion before trusting the partitioned check below.",
+    "reported_mae_published_K": 91.33528326361476,
+    "reported_mae_ridge_K": 70.41754628962593
+  },
+  "schema": "amphora.molecule-property.van-krevelen-external-validation-applicability-domain-audit-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY audit receipt under evidence/audit/"
+  },
+  "study_id": "vkad-external-validation-openpoly-groupscope-v1",
+  "verdict": "CLAIM_SURVIVED",
+  "why": "Pre-registered criterion: on partition A (in-scope-only, n>=30), MAE_ridge must NOT beat MAE_published for the claim to be REFUTED. Observed: partition A (n=258) MAE_reduction_K=19.777 (published_MAE=167.419, ridge_MAE=147.642) -- Ridge beats published on the trustworthy-group-only subset, so the criterion does NOT fire; the external-validation 'beats baseline' headline survives restriction to the W-PROP1 in-scope groups, not just the full unscoped population. Positive control (below) confirms the same check DOES correctly fire when the population is swapped to partition B (untrustworthy-group chemistry only), so this is not a dead check that could never refute anything."
+}

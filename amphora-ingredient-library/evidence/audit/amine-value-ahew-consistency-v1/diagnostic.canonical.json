@@ -1,0 +1,141 @@
+{
+  "authority": "AUDIT_ONLY",
+  "checkA_amine_value_ahew_band": {
+    "all_within_band": true,
+    "n_hardeners_with_both_av_and_ahew": 3,
+    "n_with_physical_implied_ratio": 3,
+    "n_within_admissibility_band": 3,
+    "per_hardener": {
+      "hardener.ancamide_350a": {
+        "ahew_catalog_g_eq": 100.0,
+        "ahew_load_bearing": true,
+        "ahew_lower_bound_g_eq": 73.8232,
+        "ahew_source": "TDS",
+        "ahew_upper_bound_g_eq": 147.6463,
+        "amine_value_mgKOH_g": 380.0,
+        "amine_value_source": "TDS",
+        "implied_active_H_per_basic_N": 1.4765,
+        "implied_ratio_physical": true,
+        "in_admissibility_band": true
+      },
+      "hardener.ancamide_700b75": {
+        "ahew_catalog_g_eq": 170.0,
+        "ahew_load_bearing": true,
+        "ahew_lower_bound_g_eq": 116.8867,
+        "ahew_source": "SUPPLIER_GUIDE",
+        "ahew_upper_bound_g_eq": 233.7733,
+        "amine_value_mgKOH_g": 240.0,
+        "amine_value_source": "SUPPLIER_GUIDE",
+        "implied_active_H_per_basic_N": 1.3751,
+        "implied_ratio_physical": true,
+        "in_admissibility_band": true
+      },
+      "hardener.versamid_115": {
+        "ahew_catalog_g_eq": 198.0,
+        "ahew_load_bearing": true,
+        "ahew_lower_bound_g_eq": 117.8689,
+        "ahew_source": "TDS",
+        "ahew_upper_bound_g_eq": 235.7378,
+        "amine_value_mgKOH_g": 238.0,
+        "amine_value_source": "TDS",
+        "implied_active_H_per_basic_N": 1.1906,
+        "implied_ratio_physical": true,
+        "in_admissibility_band": true
+      }
+    }
+  },
+  "checkB_uncheckable_no_amine_value": {
+    "hardeners": [
+      {
+        "ahew_catalog_g_eq": 264.0,
+        "ahew_source": "TDS",
+        "hardener": "hardener.ancamide_220x70",
+        "reason": "no amine value reported -> AV<->AHEW band not evaluable; remains single-source"
+      },
+      {
+        "ahew_catalog_g_eq": 114.0,
+        "ahew_source": "SUPPLIER_GUIDE",
+        "hardener": "hardener.ancamide_2353",
+        "reason": "no amine value reported -> AV<->AHEW band not evaluable; remains single-source"
+      },
+      {
+        "ahew_catalog_g_eq": 120.0,
+        "ahew_source": "SUPPLIER_GUIDE",
+        "hardener": "hardener.ancamide_260a",
+        "reason": "no amine value reported -> AV<->AHEW band not evaluable; remains single-source"
+      }
+    ],
+    "n_uncheckable": 3,
+    "note": "AHEW present but no amine value -> AV<->AHEW band not evaluable; remain single-source"
+  },
+  "checkC_fail_closed_mutation_demo": {
+    "amine_value_mgKOH_g": 380.0,
+    "band_g_eq": [
+      73.8232,
+      147.6463
+    ],
+    "gross_corruptions_flagged": true,
+    "mutations": [
+      {
+        "ahew": 100.0,
+        "flagged_out_of_band": false,
+        "mutation": "baseline"
+      },
+      {
+        "ahew": 1000.0,
+        "flagged_out_of_band": true,
+        "mutation": "digit_insert_1000"
+      },
+      {
+        "ahew": 10.0,
+        "flagged_out_of_band": true,
+        "mutation": "decimal_slip_10"
+      },
+      {
+        "ahew": 101.0,
+        "flagged_out_of_band": false,
+        "mutation": "transpose_within_band_101"
+      },
+      {
+        "ahew": 198.0,
+        "flagged_out_of_band": true,
+        "mutation": "swap_with_versamid_198"
+      }
+    ],
+    "target": "hardener.ancamide_350a"
+  },
+  "closes": [
+    "Adds the FIRST physical second-signal over the amine-hardener AHEW family (the open honest-negative of constant-crosscheck-v1) for the 3 hardeners with both constants.",
+    "Corroborates AHEW and amine value as mutually consistent under amine stoichiometry."
+  ],
+  "does_not_close": [
+    "AV and AHEW share the supplier TDS -> cross-quantity consistency, NOT a supplier-INDEPENDENT lock.",
+    "Band is an admissibility BOUND, not a point predictor: small within-band AHEW errors are not caught.",
+    "3 hardeners report AHEW with no amine value and remain single-source (uncheckable by this relationship).",
+    "Does NOT establish product qualification, wet-lab performance, or supplier closure."
+  ],
+  "headline": "All 3/3 amine hardeners that report both an amine value and an AHEW fall inside the amine-value-derived stoichiometric admissibility band (28052.8/AV <= AHEW <= 56105.6/AV), with implied active-H-per-basic-N in [1,2] for 3/3; 3 AHEW constants lack an amine value and remain honestly single-source; gross AHEW corruption is flagged out-of-band (fail-closed).",
+  "hypothesis": "Every hardener AHEW that also has a reported amine value must satisfy the stoichiometric band M_KOH/(2*AV) <= AHEW <= M_KOH/AV; gross AHEW corruption falls outside the band (fail-closed).",
+  "inputs": {
+    "M_KOH_mg_per_mol": 56105.6,
+    "facts_json_rel": "reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "ratio_bounds_active_H_per_basic_N": [
+      1.0,
+      2.0
+    ]
+  },
+  "module": "amphora-ingredient-library",
+  "non_circularity": "Amine value is titrated (ASTM D2073/D2074) independently of the AHEW epoxy-stoichiometry determination; the band ties the two independently-measured quantities via amine chemistry, so intra-TDS mutual consistency is a genuine cross-quantity second signal, not a self-referential re-read.",
+  "purpose": "Independent physical second-signal for the load-bearing amine-hardener AHEW constant family via the amine-value<->AHEW stoichiometric admissibility band; closes part of the open honest-negative left by constant-crosscheck-v1.",
+  "run_type": "independent_physical_second_signal.amine_value_ahew_consistency",
+  "schema": "amphora.ingredient-library.amine-value-ahew-consistency.diagnostic.v1",
+  "theory_reference": {
+    "M_KOH_g_per_mol": 56.1056,
+    "M_KOH_source": "IUPAC 2021 standard atomic weights; CRC Handbook 97th ed.",
+    "ahew_definition": "May (ed.) 1988, Epoxy Resins: Chemistry and Technology 2nd ed. (ISBN 978-0-8247-7690-9)",
+    "ahew_stoichiometry": "Lee & Neville 1967, Handbook of Epoxy Resins (ISBN 978-0-07-036997-1)",
+    "amine_value_method": "ASTM D2074-07 / ASTM D2073 (titrimetric amine value)",
+    "band_formula": "28052.8/AV <= AHEW <= 56105.6/AV  (active H per basic N in [1,2])"
+  }
+}

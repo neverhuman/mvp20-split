@@ -1,0 +1,768 @@
+{
+  "cases_where_live_dispatch_disagrees_with_ground_truth": 30,
+  "direct_evaluate_envelope_policy_pass_true_count": 30,
+  "fixture_path": "amphora-envelope-gates/reference/phase0-envelope-gates-known-answer.v1.json",
+  "fixture_sha256": "aab0b9a8af2e14ab053744f1dee88f785be37321d582039716a81fee9aec5b52",
+  "live_dispatch_envelope_evaluated_true_count": 0,
+  "live_dispatch_pass_all_hard_true_count": 0,
+  "n_cases": 50,
+  "per_case": [
+    {
+      "case_id": "dgeba-teta-primer-9to1-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-teta-primer-9to1-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-teta-primer-9to1-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-teta-primer-9to1-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-teta-primer-9to1-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-deta-industrial-primer-17to1-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-deta-industrial-primer-17to1-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-deta-industrial-primer-17to1-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-deta-industrial-primer-17to1-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-deta-industrial-primer-17to1-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-ipda-marine-primer-100to24-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-ipda-marine-primer-100to24-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-ipda-marine-primer-100to24-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-ipda-marine-primer-100to24-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-ipda-marine-primer-100to24-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-mxda-tank-lining-100to22-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-mxda-tank-lining-100to22-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-mxda-tank-lining-100to22-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-mxda-tank-lining-100to22-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-mxda-tank-lining-100to22-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-amidoamine-huntsman-100to50-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-amidoamine-huntsman-100to50-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-amidoamine-huntsman-100to50-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-amidoamine-huntsman-100to50-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-amidoamine-huntsman-100to50-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-amidoamine-momentive-100to53-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-amidoamine-momentive-100to53-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-amidoamine-momentive-100to53-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-amidoamine-momentive-100to53-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-amidoamine-momentive-100to53-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "case_id": "dgeba-mannich-fast-cure-100to36-nominal",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "NOMINAL"
+    },
+    {
+      "case_id": "dgeba-mannich-fast-cure-100to36-at-lower-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-mannich-fast-cure-100to36-at-upper-boundary",
+      "direct_evaluate_envelope_policy_pass_all_hard": true,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "expected_pass_all_hard_per_fixture_label": true,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": false,
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "case_id": "dgeba-mannich-fast-cure-100to36-just-below-lower",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "case_id": "dgeba-mannich-fast-cure-100to36-wildly-out",
+      "direct_evaluate_envelope_policy_pass_all_hard": false,
+      "direct_matches_fixture_label": true,
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "expected_pass_all_hard_per_fixture_label": false,
+      "live_dispatch_gates_envelope_evaluated": false,
+      "live_dispatch_gates_pass_all_hard": false,
+      "live_dispatch_missing_inputs": [
+        "rights-cleared arithmetic FeatureSnapshot"
+      ],
+      "live_dispatch_status": "INSUFFICIENT_INPUT",
+      "live_reports_ground_truth_pass_all_hard": true,
+      "subgroup": "WILDLY_OUT"
+    }
+  ],
+  "real_runtime_path": "amphora-formulation-capabilities/src/lib.rs",
+  "real_runtime_sha256_at_test_time": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
+  "source_evidence": {
+    "envelope_gates_dispatch_fn_receives_features_param": false,
+    "hardcoded_none_none_false_call_present": true
+  },
+  "study_id": "live-capability-dispatch-wiring-v1"
+}

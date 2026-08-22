@@ -1,0 +1,275 @@
+{
+  "DGEBA": {
+    "M_g_per_mol": 340.419,
+    "V_fedors_cm3_per_mol": 277.4,
+    "note": "engine over-predicts even neat DGEBA (~+5.8% vs ~1.16 g/cm3)",
+    "rho_pred_monomer": 1.2272,
+    "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+  },
+  "authority": "AUDIT_ONLY",
+  "corroboration_rights_restricted_NOT_SCORED": {
+    "DGEBA_DETA": 1.178,
+    "DGEBA_IPDA": 1.135,
+    "DGEBA_MXDA": 1.185,
+    "doi": "10.1021/acsomega.2c03071",
+    "license": "CC-BY-NC-ND-4.0 (REJECTED for scoring; non-commercial, no-derivatives)"
+  },
+  "cure_shrinkage_sanity": {
+    "conclusion": "reaction-differenced additive V overshoots real cure shrinkage by ~3x -> a second, independent cause of over-prediction",
+    "modeled_volume_shrinkage_pct": 13.01,
+    "physical_epoxy_cure_shrinkage_pct_literature": "2 to 6"
+  },
+  "diagnostic_independent_polyols": [
+    {
+      "n_polar_motif": 1,
+      "name": "ethanolamine",
+      "pct_error": -1.69,
+      "rho_exp_g_per_cm3": 1.012,
+      "rho_pred_g_per_cm3": 0.9949,
+      "smiles": "OCCN"
+    },
+    {
+      "n_polar_motif": 3,
+      "name": "diethanolamine",
+      "pct_error": 7.81,
+      "rho_exp_g_per_cm3": 1.097,
+      "rho_pred_g_per_cm3": 1.1826,
+      "smiles": "OCCNCCO"
+    },
+    {
+      "n_polar_motif": 4,
+      "name": "triethanolamine",
+      "pct_error": 12.87,
+      "rho_exp_g_per_cm3": 1.124,
+      "rho_pred_g_per_cm3": 1.2686,
+      "smiles": "OCCN(CCO)CCO"
+    },
+    {
+      "n_polar_motif": 3,
+      "name": "N-methyldiethanolamine",
+      "pct_error": 4.91,
+      "rho_exp_g_per_cm3": 1.043,
+      "rho_pred_g_per_cm3": 1.0943,
+      "smiles": "CN(CCO)CCO"
+    },
+    {
+      "n_polar_motif": 1,
+      "name": "1-amino-2-propanol",
+      "pct_error": 0.46,
+      "rho_exp_g_per_cm3": 0.961,
+      "rho_pred_g_per_cm3": 0.9654,
+      "smiles": "CC(O)CN"
+    },
+    {
+      "n_polar_motif": 1,
+      "name": "3-amino-1-propanol",
+      "pct_error": -1.31,
+      "rho_exp_g_per_cm3": 0.982,
+      "rho_pred_g_per_cm3": 0.9692,
+      "smiles": "OCCCN"
+    },
+    {
+      "n_polar_motif": 2,
+      "name": "ethylene glycol",
+      "pct_error": 6.83,
+      "rho_exp_g_per_cm3": 1.113,
+      "rho_pred_g_per_cm3": 1.189,
+      "smiles": "OCCO"
+    },
+    {
+      "n_polar_motif": 2,
+      "name": "1,2-propanediol",
+      "pct_error": 7.07,
+      "rho_exp_g_per_cm3": 1.036,
+      "rho_pred_g_per_cm3": 1.1093,
+      "smiles": "CC(O)CO"
+    },
+    {
+      "n_polar_motif": 3,
+      "name": "glycerol",
+      "pct_error": 19.33,
+      "rho_exp_g_per_cm3": 1.261,
+      "rho_pred_g_per_cm3": 1.5048,
+      "smiles": "OCC(O)CO"
+    },
+    {
+      "n_polar_motif": 1,
+      "name": "2-amino-2-methyl-1-propanol",
+      "pct_error": 2.51,
+      "rho_exp_g_per_cm3": 0.934,
+      "rho_pred_g_per_cm3": 0.9574,
+      "smiles": "CC(C)(N)CO"
+    }
+  ],
+  "does_not": [
+    "does NOT promote any module to PHASE_0 or change any scientific_readiness",
+    "does NOT modify any of the 66 signed receipts or the receipts manifest (66/11)",
+    "does NOT claim a validated density predictor (this is a REFUTATION)",
+    "does NOT score on any rights-restricted (CC-BY-NC / -ND) datum",
+    "does NOT perform trust-anchored phase0 signing (AUDIT_ONLY key custody only)"
+  ],
+  "exploratory_motif_correction": {
+    "V_corr_cm3_per_mol": 654.904,
+    "amine": "IPDA",
+    "calibration_rms_pct_on_independent_polyols": 3.49,
+    "corr_pct_error_vs_rights_clean": 17.61,
+    "correction_c_cm3_per_motif": 2.634,
+    "rho_corr_g_per_cm3": 1.2996,
+    "transfer_conclusion": "correction FAILS to transfer: motif term is diluted in the large aromatic/ether repeat unit; residual over-prediction unchanged in magnitude"
+  },
+  "gates": {
+    "G1_reaction_delta_bookkeeping_exact": true,
+    "G2_naive_predictor_refuted_gt_10pct_over": true,
+    "G3_engine_overpredicts_clustered_polyols": true,
+    "G4_reaction_diff_overshoots_cure_shrinkage": true,
+    "G5_motif_correction_does_not_transfer": true,
+    "G6_rights_clean_anchor_is_ccby": true,
+    "G7_best_multiamine_set_is_rights_restricted": true
+  },
+  "honest_limitations": [
+    "Only ONE rights-clean CC-BY scoreable measured network density exists in reach (DGEBA+IPDA 1.105, 10.3390/polym13081348); the richer multi-amine experimental set (DETA 1.178 / IPDA 1.135 / MXDA 1.185) is CC-BY-NC-ND and REJECTED on rights.",
+    "This refutes the NAIVE additive-volume route only. A proper amorphous-network density method (Van Krevelen amorphous V_w x 1.6, or Bicerano network group correlation with an explicit crosslink-densification term) is NOT tested here.",
+    "n=1 rights-clean point cannot VALIDATE any corrected predictor; the refutation of the naive route, however, holds on multiple independent diagnostics."
+  ],
+  "kpis": {
+    "engine_overprediction_glycerol_pct": 19.33,
+    "engine_overprediction_triethanolamine_pct": 12.87,
+    "motif_correction_c_cm3": 2.634,
+    "motif_correction_cal_rms_pct": 3.49,
+    "motif_correction_transfer_error_pct_IPDA": 17.61,
+    "n_amine_panel": 6,
+    "n_rights_clean_scoreable_points": 1,
+    "naive_pct_error_vs_rights_clean_IPDA": 20.52
+  },
+  "naive_predictor_panel": [
+    {
+      "M_amine_g_per_mol": 170.3,
+      "M_stoich_unit_g_per_mol": 851.138,
+      "V_stoich_unit_cm3_per_mol_naive": 639.1,
+      "amine": "IPDA",
+      "amine_name": "isophorone diamine",
+      "family": "cycloaliphatic",
+      "functionality_reactive_NH": 4,
+      "n_DGEBA_per_amine": 2.0,
+      "n_polar_motif": 6,
+      "n_primary_N": 2,
+      "n_secondary_N": 0,
+      "naive_pct_error_vs_rights_clean": 20.52,
+      "rho_measured_rights_clean_g_per_cm3": 1.105,
+      "rho_pred_naive_g_per_cm3": 1.3318,
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "M_amine_g_per_mol": 136.198,
+      "M_stoich_unit_g_per_mol": 817.036,
+      "V_stoich_unit_cm3_per_mol_naive": 589.8,
+      "amine": "mXDA",
+      "amine_name": "m-xylylenediamine",
+      "family": "araliphatic",
+      "functionality_reactive_NH": 4,
+      "n_DGEBA_per_amine": 2.0,
+      "n_polar_motif": 6,
+      "n_primary_N": 2,
+      "n_secondary_N": 0,
+      "rho_pred_naive_g_per_cm3": 1.3853,
+      "smiles": "NCc1cccc(CN)c1"
+    },
+    {
+      "M_amine_g_per_mol": 103.169,
+      "M_stoich_unit_g_per_mol": 954.2165,
+      "V_stoich_unit_cm3_per_mol_naive": 681.9,
+      "amine": "DETA",
+      "amine_name": "diethylenetriamine",
+      "family": "aliphatic",
+      "functionality_reactive_NH": 5,
+      "n_DGEBA_per_amine": 2.5,
+      "n_polar_motif": 8,
+      "n_primary_N": 2,
+      "n_secondary_N": 1,
+      "rho_pred_naive_g_per_cm3": 1.3993,
+      "smiles": "NCCNCCN"
+    },
+    {
+      "M_amine_g_per_mol": 146.238,
+      "M_stoich_unit_g_per_mol": 1167.495,
+      "V_stoich_unit_cm3_per_mol_naive": 834.0,
+      "amine": "TETA",
+      "amine_name": "triethylenetetramine",
+      "family": "aliphatic",
+      "functionality_reactive_NH": 6,
+      "n_DGEBA_per_amine": 3.0,
+      "n_polar_motif": 10,
+      "n_primary_N": 2,
+      "n_secondary_N": 2,
+      "rho_pred_naive_g_per_cm3": 1.3999,
+      "smiles": "NCCNCCNCCN"
+    },
+    {
+      "M_amine_g_per_mol": 198.269,
+      "M_stoich_unit_g_per_mol": 879.107,
+      "V_stoich_unit_cm3_per_mol_naive": 633.7,
+      "amine": "DDM",
+      "amine_name": "4,4'-methylenedianiline",
+      "family": "aromatic",
+      "functionality_reactive_NH": 4,
+      "n_DGEBA_per_amine": 2.0,
+      "n_polar_motif": 6,
+      "n_primary_N": 2,
+      "n_secondary_N": 0,
+      "rho_pred_naive_g_per_cm3": 1.3873,
+      "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1"
+    },
+    {
+      "M_amine_g_per_mol": 248.307,
+      "M_stoich_unit_g_per_mol": 929.145,
+      "V_stoich_unit_cm3_per_mol_naive": 644.6,
+      "amine": "DDS",
+      "amine_name": "4,4'-diaminodiphenylsulfone",
+      "family": "aromatic",
+      "functionality_reactive_NH": 4,
+      "n_DGEBA_per_amine": 2.0,
+      "n_polar_motif": 6,
+      "n_primary_N": 2,
+      "n_secondary_N": 0,
+      "rho_pred_naive_g_per_cm3": 1.4414,
+      "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+    }
+  ],
+  "non_circularity": "Fedors increments are fixed 1974 constants (never fit to any epoxy datum). Measured epoxy density read only as validation target. The exploratory motif correction is calibrated ONLY on independent small-molecule aminoalcohol/polyol CRC densities, never on epoxy data.",
+  "phase0_reconciliation_redteam": {
+    "conclusion": "FULL Phase-0 is a GOVERNANCE milestone, not validated science. Founder skepticism upheld, re-verified live this run.",
+    "live_module_manifest_scientific_readiness": "all 29 UNVALIDATED (0 VALIDATED)",
+    "phase0_decision_report_status": "EXECUTION_INCOMPLETE; promotable=false for all"
+  },
+  "reaction_delta_increments_cm3_per_mol": {
+    "epoxide_ring_open": -9.8,
+    "primary_NH2_to_tertiary_N": -28.2,
+    "secondary_NH_to_tertiary_N": -13.5
+  },
+  "reaction_delta_selfcheck": {
+    "both_exact": true,
+    "testA_secondary_delta": 333.8,
+    "testA_secondary_direct": 333.8,
+    "testB_tertiary_delta": 255.5,
+    "testB_tertiary_direct": 255.5
+  },
+  "rights_clean_source": {
+    "IPDA": {
+      "doi": "10.3390/polym13081348",
+      "license": "CC-BY-4.0",
+      "quote": "A bulk DGEBA-IPDA system exhibits a density of around 1105 kg m-3"
+    }
+  },
+  "rights_clean_truth": {
+    "IPDA": 1.105
+  },
+  "schema": "amphora.cured-network-density-apriori-refuted.diagnostic.v1",
+  "target_capability": "a-priori mass density of the cured DGEBA+amine network (foundational to free-volume -> water/O2 permeability -> anti-corrosion barrier)",
+  "target_module": "amphora-molecule-property",
+  "theory": "Fedors 1974 additive molar-volume increments (Van Krevelen & Te Nijenhuis, Properties of Polymers 4th ed. Sec 7.2) as implemented in the portfolio's density-validated solvency engine (hsp.hvk_hsp); applied to the fully-reacted stoichiometric network unit (epoxy + N-H -> beta-hydroxyamine, atoms conserved). rho = M_unit / V_unit.",
+  "verdict": {
+    "gates_all_pass": true,
+    "label": "NAIVE_GROUP_CONTRIBUTION_DENSITY_REFUTED_FOR_CURED_NETWORKS",
+    "one_line": "A-priori additive Fedors/VK molar-volume density applied to the reacted DGEBA+amine unit over-predicts the one rights-clean CC-BY measured network density (IPDA: 1.33 pred vs 1.105 meas, +20.5%). Three independent causes: (1) additive engine over-predicts clustered H-bonded polyol/amino-alcohol motifs (glycerol +19%, triethanolamine +13%) and the cured network IS a poly-beta-hydroxyamine; (2) reaction-differenced V overshoots real cure shrinkage ~3x; (3) a motif correction calibrated non-circularly on independent aminoalcohols does NOT transfer (diluted in the large repeat unit). NOT a validated predictor; promotes nothing."
+  }
+}

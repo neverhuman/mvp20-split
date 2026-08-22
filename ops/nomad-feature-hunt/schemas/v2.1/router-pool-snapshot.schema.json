@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nomad-feature-hunt/v2.1/router-pool-snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "receipt_type", "captured_at", "provider", "upstream_key_source", "user_count", "eligible_slot_count", "disk_profile_ids", "jekko_profile_ids", "live_profile_ids", "per_user_slot_counts", "per_provider_slot_counts", "health_sha256", "valid", "errors"],
+  "properties": {
+    "schema_version": {"const": "2.1"},
+    "receipt_type": {"const": "router_pool_snapshot"},
+    "captured_at": {"type": "string"},
+    "provider": {"const": "jnoccio"},
+    "upstream_key_source": {"const": "users_pool"},
+    "visible_model": {"type": "string"},
+    "ok": {"type": "boolean"},
+    "user_count": {"type": "integer", "minimum": 0},
+    "eligible_slot_count": {"type": "integer", "minimum": 0},
+    "keyed_model_count": {"type": "integer", "minimum": 0},
+    "available_model_count": {"type": "integer", "minimum": 0},
+    "disk_profile_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "jekko_profile_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "live_profile_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "per_user_slot_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "per_provider_slot_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "health_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "valid": {"type": "boolean"},
+    "errors": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "clause_necessity": {
+    "lb": true,
+    "s": true,
+    "w": true
+  },
+  "closes": "Per-entry: 23/23 load-bearing constants carry an independent second source (9) or a recorded prose waiver (14); 0 coverage gaps; the two sets partition the load-bearing set exactly. The 3-clause citation predicate is complete (7 accept / 1 reject), monotone on the evidence lattice, and every clause is necessary. Adversarial coverage-strip, load-bearing-flip, and byte-tamper batteries all fail closed with zero false alarms on the clean ledger.",
+  "count_parity_detail": {
+    "cited_constant_count": {
+      "match": true,
+      "oracle": 83,
+      "runtime": 83
+    },
+    "load_bearing_constant_count": {
+      "match": true,
+      "oracle": 23,
+      "runtime": 23
+    },
+    "prose_waiver_count": {
+      "match": true,
+      "oracle": 14,
+      "runtime": 14
+    },
+    "two_source_count": {
+      "match": true,
+      "oracle": 9,
+      "runtime": 9
+    }
+  },
+  "counts": {
+    "entries_total": 83,
+    "g0_anchor_checks": 1,
+    "g0_anchor_matched": 1,
+    "g1_count_parity_checks": 4,
+    "g1_count_parity_matched": 4,
+    "g2_invariants": 3,
+    "g2_invariants_ok": 3,
+    "g3_predicate_checks": 5,
+    "g3_predicate_checks_ok": 5,
+    "g3_truth_table_accepts": 7,
+    "g3_truth_table_rejects": 1,
+    "g4_battery_a_stripcoverage_flagged": 23,
+    "g4_battery_a_total": 23,
+    "g4_battery_b_expected_flag": 56,
+    "g4_battery_b_false_alarm": 0,
+    "g4_battery_b_flip_flagged": 56,
+    "g4_battery_b_total": 60,
+    "g4_battery_c_byte_tamper_detected": 1,
+    "g4_clean_noop_no_false_alarm": 1,
+    "g4_flagged_total": 80,
+    "g4_must_flag_total": 80,
+    "load_bearing": 23,
+    "load_bearing_coverage_gaps": 0,
+    "load_bearing_double_covered": 0,
+    "load_bearing_prose_waiver": 14,
+    "load_bearing_second_source": 9,
+    "non_load_bearing": 60
+  },
+  "does_not_close": "Does not re-exec the Rust runtime, does not close the 9+14 open load-bearing single-source constants with controlled independent evidence, does not establish qualification/regulatory/FTO.",
+  "gates": {
+    "all_pass": true,
+    "g0_content_anchor": true,
+    "g1_count_parity": true,
+    "g2_per_entry_invariant": true,
+    "g3_predicate_completeness": true,
+    "g4_adversarial_fail_closed": true
+  },
+  "hypothesis": "hash-bound source records prevent uncited constants from entering calculations",
+  "invariant": "for all e: load_bearing(e) => (second_url(e)!=null OR single_source_waiver(e)!=null)",
+  "module": "amphora-source-ledger",
+  "monotonicity_ok": true,
+  "non_circularity": "re-parses facts.json raw bytes with stdlib only; never imports, links, or executes the live Rust evaluate_source_ledger",
+  "provenance_grade_distribution": {
+    "DISTRIBUTOR": 20,
+    "ESTIMATE": 3,
+    "HANDBOOK": 4,
+    "LITERATURE": 2,
+    "SUPPLIER_GUIDE": 12,
+    "TDS": 42
+  },
+  "purpose": "Prove, per-entry and from raw bytes, the module's falsifiable invariant that no load-bearing constant enters calculations without an independent second source or a recorded prose waiver; formalize the citation decision predicate and prove each clause necessary.",
+  "run_type": "AUDIT_ONLY_NON_RUNTIME_ORACLE",
+  "runtime_pointer": {
+    "runtime_lib_pointer_stale": true,
+    "runtime_lib_present": true
+  },
+  "runtime_source_anchors": {
+    "facts_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "facts_sha256_pin": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "runtime_lib_sha256_pin": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+    "runtime_lib_sha256_recomputed": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116"
+  },
+  "study_id": "amphora-source-ledger-citation-integrity-loadbearing-completeness-v1",
+  "theory_reference": [
+    "Anderson 1972 reference monitor (ESD-TR-73-51)",
+    "Haber & Stornetta 1991 J.Cryptology 3(2):99-111",
+    "Denning 1976 CACM 19(5):236-243",
+    "Ioannidis 2005 PLoS Med 2(8):e124",
+    "ISO 690:2021; PRISMA 2020 (BMJ 372:n71)"
+  ],
+  "unique_reject_correct": true,
+  "unique_reject_row": [
+    1,
+    0,
+    0
+  ]
+}

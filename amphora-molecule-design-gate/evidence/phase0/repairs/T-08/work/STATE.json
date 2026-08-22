@@ -1,0 +1,10 @@
+{
+  "schema": "amphora.repair-item-state.v1",
+  "campaign_item_id": "T-08",
+  "module": "amphora-molecule-design-gate",
+  "status": "done",
+  "fires": ["20260806T010002-2733535-6cfd7e648ae0"],
+  "verdict": "CLAIM_SURVIVED",
+  "done_receipt": "evidence/phase0/repairs/T-08/done/t08-design-gate-live-runtime-adversarial-receipt.v1.dsse.json",
+  "notes": "Single-fire completion: built a live-RDKit-FFI harness (Part A, 13 held-out real coating molecule gate probes incl. 4 hostile nulls BDMA/EMI-24/DPG/DOTG) plus a founder-directive T2-08 fail-closed/mutation-quarantine attack (Part B). All probes matched expectation; 0 slip-throughs; 0 mutation/generation violations; positive control fired. done_criterion met on first fire."
+}

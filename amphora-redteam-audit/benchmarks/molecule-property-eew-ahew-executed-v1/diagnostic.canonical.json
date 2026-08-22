@@ -1,0 +1,233 @@
+{
+  "acceptance_bar": {
+    "exact_implementation_max_abs_error_g_per_eq": 0.5,
+    "lower_bound_directional_accuracy": 1.0,
+    "minimum_monodisperse_records_per_property": 3,
+    "minimum_technical_grade_records": 3,
+    "monodisperse_mae_max_g_per_eq": 6.0,
+    "monodisperse_tolerance_g_per_eq": 6.0,
+    "monodisperse_tolerance_hit_rate": 1.0,
+    "negative_control_pass_rate": 1.0
+  },
+  "all_gates_pass": true,
+  "authority": "AUDIT_ONLY",
+  "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "benchmark_id": "amphora-molecule-property-eew-ahew-v1",
+  "claim_locks": {
+    "decision_use_ceiling": "AUDIT_ONLY",
+    "no_candidate_specific_performance_claim": true,
+    "no_product_release_or_qualification": true,
+    "no_superiority_claim": true,
+    "public_retrospective_shadow_maximum": true,
+    "unresolved_rights_quarantined": true
+  },
+  "exact_controls": {
+    "max_abs_error_g_per_eq": 0.0338,
+    "n": 3,
+    "rows": [
+      {
+        "abs_error_g_per_eq": 0.0095,
+        "active_nh": 0,
+        "active_nh_match": true,
+        "computed": 170.2095,
+        "epoxide_groups": 2,
+        "epoxide_match": true,
+        "expected": 170.2,
+        "mol_weight": 340.419,
+        "property": "eew",
+        "record_id": "exact-dgeba"
+      },
+      {
+        "abs_error_g_per_eq": 0.0338,
+        "active_nh": 5,
+        "active_nh_match": true,
+        "computed": 20.6338,
+        "epoxide_groups": 0,
+        "epoxide_match": true,
+        "expected": 20.6,
+        "mol_weight": 103.169,
+        "property": "ahew",
+        "record_id": "exact-deta"
+      },
+      {
+        "abs_error_g_per_eq": 0.025,
+        "active_nh": 4,
+        "active_nh_match": true,
+        "computed": 42.575,
+        "epoxide_groups": 0,
+        "epoxide_match": true,
+        "expected": 42.6,
+        "mol_weight": 170.3,
+        "property": "ahew",
+        "record_id": "exact-ipda"
+      }
+    ]
+  },
+  "gates": {
+    "all_exact_controls_executed": true,
+    "equivalent_weight_max_abs_error_at_most_0_5": true,
+    "invalid_and_out_of_domain_rejection_100_percent": true,
+    "minimum_300_truth_set_molecules": true,
+    "monodisperse_within_tolerance": true,
+    "negative_control_pass_rate_100_percent": true,
+    "pinned_rdkit_2026_03_2_available": true,
+    "reactive_group_counts_100_percent": true,
+    "structure_identity_and_mass_agree": true,
+    "technical_grade_lower_bound_directional": true
+  },
+  "maps_to_module_failed_gates": {
+    "all_exact_controls_executed": true,
+    "equivalent_weight_max_abs_error_at_most_0_5": true,
+    "independent_reference_receipt_bound": "OUT_OF_SCOPE_FOR_THIS_DIAGNOSTIC",
+    "invalid_and_out_of_domain_rejection_100_percent": true,
+    "minimum_300_truth_set_molecules": true,
+    "note": "These are the gates listed false in amphora-molecule-property/evidence/phase0/benchmark/result.v1.json (scientific_outcome=FAILED). Root cause there was backend_status.available=false. With RDKit loaded here they are recomputed.",
+    "pinned_rdkit_2026_03_2_available": true,
+    "reactive_group_counts_100_percent": true,
+    "sealed_controls_present": "REQUIRES_SPLIT_WIRING_NOT_AUTONOMOUS",
+    "structure_identity_and_mass_agree": true
+  },
+  "modifies_no_live_config": true,
+  "monodisperse": {
+    "hit_rate": 1.0,
+    "mae_g_per_eq": 0.0226,
+    "n": 6,
+    "rows": [
+      {
+        "abs_error": 0.0095,
+        "computed": 170.2095,
+        "expected": 170.2,
+        "property": "eew",
+        "record_id": "mono-eew-dgeba-pubchem",
+        "within_tol": true
+      },
+      {
+        "abs_error": 0.0095,
+        "computed": 170.2095,
+        "expected": 170.2,
+        "property": "eew",
+        "record_id": "mono-eew-dgeba-supplier",
+        "within_tol": true
+      },
+      {
+        "abs_error": 0.0095,
+        "computed": 170.2095,
+        "expected": 170.2,
+        "property": "eew",
+        "record_id": "mono-eew-dgeba-astm",
+        "within_tol": true
+      },
+      {
+        "abs_error": 0.0338,
+        "computed": 20.6338,
+        "expected": 20.6,
+        "property": "ahew",
+        "record_id": "mono-ahew-deta",
+        "within_tol": true
+      },
+      {
+        "abs_error": 0.025,
+        "computed": 42.575,
+        "expected": 42.6,
+        "property": "ahew",
+        "record_id": "mono-ahew-ipda",
+        "within_tol": true
+      },
+      {
+        "abs_error": 0.048,
+        "computed": 29.052,
+        "expected": 29.1,
+        "property": "ahew",
+        "record_id": "mono-ahew-hmda",
+        "within_tol": true
+      }
+    ]
+  },
+  "negative_controls": {
+    "n": 5,
+    "pass_rate": 1.0,
+    "rejection_hits": 3,
+    "rejection_targets": 3,
+    "rows": [
+      {
+        "active_nh": 0,
+        "parseable": true,
+        "pass": true,
+        "record_id": "negative-amide-n",
+        "rejected_reason": null
+      },
+      {
+        "active_nh": 0,
+        "parseable": true,
+        "pass": true,
+        "record_id": "negative-missing-reactive-group",
+        "rejected_reason": null
+      },
+      {
+        "active_nh": null,
+        "parseable": false,
+        "pass": true,
+        "record_id": "negative-invalid-smiles",
+        "rejected_reason": "invalid_smiles"
+      },
+      {
+        "active_nh": null,
+        "parseable": false,
+        "pass": true,
+        "record_id": "negative-mixture",
+        "rejected_reason": "multi_fragment_structure"
+      },
+      {
+        "active_nh": null,
+        "parseable": false,
+        "pass": true,
+        "record_id": "negative-polymer-wildcard",
+        "rejected_reason": "wildcard_or_polymer_structure"
+      }
+    ]
+  },
+  "promotes_nothing": true,
+  "rdkit_version_detected": "2026.03.2",
+  "rdkit_version_required": "2026.03.2",
+  "schema": "amphora.redteam-audit.eew-ahew-executed-diagnostic.v1",
+  "study_id": "MOLECULE_PROPERTY_EEW_AHEW_EXECUTED_V1",
+  "technical_grade": {
+    "directional_accuracy": 1.0,
+    "n": 3,
+    "rows": [
+      {
+        "measured_lower_bound": 180.0,
+        "record_id": "technical-dgeba-1",
+        "theoretical_eew": 170.2095,
+        "theoretical_is_valid_lower_bound": true
+      },
+      {
+        "measured_lower_bound": 185.0,
+        "record_id": "technical-dgeba-2",
+        "theoretical_eew": 170.2095,
+        "theoretical_is_valid_lower_bound": true
+      },
+      {
+        "measured_lower_bound": 190.0,
+        "record_id": "technical-dgeba-3",
+        "theoretical_eew": 170.2095,
+        "theoretical_is_valid_lower_bound": true
+      }
+    ]
+  },
+  "truth_set_identity": {
+    "chebi_release": "ChEBI-252",
+    "formula_exact": 300,
+    "inchikey_full_exact": 300,
+    "inchikey_skeleton_exact": 300,
+    "max_pubchem_mass_dev_gmol": 0.05,
+    "n_parsed": 300,
+    "n_records": 300,
+    "note": "REPRODUCIBILITY (RDKit reproduces stored formula/InChIKey/MW) is 100%; INDEPENDENCE vs PubChem MW is >=99% (a small number sit at the 0.05 g/mol selection boundary). Prior chebi-truthset-built receipt's '300/300 InChIKey' is confirmed against canonical_smiles; the raw ChEBI `smiles` field carries aromatic-tautomer forms RDKit's default sanitizer rejects (25/300) and is NOT the build field.",
+    "pubchem_mass_agreement_rate": 0.9967,
+    "pubchem_mass_within_0_05_gmol": 299,
+    "rdkit_mw_reproduces_stored": 300,
+    "smiles_field_used": "canonical_smiles"
+  },
+  "truthset_sha256": "88f9c43dcf26c1bb1db3eefdb254582469af2fb45d975f2573409ef719d959a6"
+}

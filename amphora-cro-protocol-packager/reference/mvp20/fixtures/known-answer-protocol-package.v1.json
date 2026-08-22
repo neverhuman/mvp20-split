@@ -1,0 +1,132 @@
+{
+  "payload": {
+    "authoritative": false,
+    "authority_lock": {
+      "fto_not_performed": true,
+      "no_optimizer_authority": true,
+      "no_patentability_authority": true,
+      "no_procurement_authority": true,
+      "no_product_performance_authority": true,
+      "no_qualification_authority": true,
+      "no_ranking_authority": true,
+      "no_regulatory_authority": true,
+      "no_release_authority": true,
+      "no_safety_authority": true
+    },
+    "blinding": {
+      "enabled": true,
+      "masked_fields": [
+        "formula_id",
+        "treatment"
+      ]
+    },
+    "candidate": {
+      "candidate_id": "synthetic-cro-fixture-formula-150g",
+      "candidate_type": "formulation",
+      "formulation": {
+        "formula_id": "synthetic-110-40-mass-only"
+      }
+    },
+    "candidate_sha256": "968f86dc63cdc780f7fde25ad7d8bed9c9ce657dd07f792338b6ecdbbaff5b7f",
+    "canonical_rendering": "# Locked CRO fixture cro-known-answer-150g-v1\n\nCandidate SHA-256: `968f86dc63cdc780f7fde25ad7d8bed9c9ce657dd07f792338b6ecdbbaff5b7f`\nFormula SHA-256: `7d3967d4c902a46b34f8ce8dcf3d6d8f68001d113e877f407e87cf543ab9f849`\n\n## Recipe\n1. ADD synthetic-resin 110 g (tolerance -0.5/+0.5)\n2. ADD synthetic-hardener 40 g (tolerance -0.2/+0.2)\n\n## Controls\n- blank-control [NEGATIVE]: substrate without coating\n- reference-control [COMPARATOR]: declared synthetic reference\n\n## Decision rules\n- pull_off_strength >= 5 MPa => CONTINUE\n\n## Early-kill rules\n- blistering_grade > 2 ASTM_grade => STOP\n\n## Required outputs\n- raw_measurements.csv\n- custody_log.json\n- deviations.json\n- signed_result_receipt.json\n\n## Authority lock\n- fto_not_performed: true\n- no_optimizer_authority: true\n- no_patentability_authority: true\n- no_procurement_authority: true\n- no_product_performance_authority: true\n- no_qualification_authority: true\n- no_ranking_authority: true\n- no_regulatory_authority: true\n- no_release_authority: true\n- no_safety_authority: true\n\nScientific readiness: UNVALIDATED\nDecision use: AUDIT_ONLY\nRanking eligible: false\nLab execution: NOT_EXECUTED\n",
+    "controls": [
+      {
+        "control_id": "blank-control",
+        "control_type": "NEGATIVE",
+        "treatment": "substrate without coating"
+      },
+      {
+        "control_id": "reference-control",
+        "control_type": "COMPARATOR",
+        "treatment": "declared synthetic reference"
+      }
+    ],
+    "custody": {
+      "handoffs": [
+        "PACKAGER_TO_CRO",
+        "CRO_RECEIPT",
+        "CRO_TO_ARCHIVE"
+      ],
+      "sample_ids_required": true,
+      "tamper_evidence_required": true
+    },
+    "decision_rules": [
+      {
+        "metric": "pull_off_strength",
+        "operator": ">=",
+        "outcome": "CONTINUE",
+        "threshold": 5.0,
+        "unit": "MPa"
+      }
+    ],
+    "decision_use_ceiling": "AUDIT_ONLY",
+    "early_kill_rules": [
+      {
+        "metric": "blistering_grade",
+        "operator": ">",
+        "outcome": "STOP",
+        "threshold": 2.0,
+        "unit": "ASTM_grade"
+      }
+    ],
+    "fixture_id": "cro-known-answer-150g-v1",
+    "fixture_only": true,
+    "formula_sha256": "7d3967d4c902a46b34f8ce8dcf3d6d8f68001d113e877f407e87cf543ab9f849",
+    "lab_execution_status": "NOT_EXECUTED",
+    "narrative": [
+      "Synthetic fixture for deterministic packet validation only.",
+      "No laboratory execution or product authority is asserted."
+    ],
+    "power_analysis": {
+      "alpha": 0.05,
+      "effect_size": 1.0,
+      "power": 0.8,
+      "replicates_per_arm": 6
+    },
+    "randomization": {
+      "method": "PERMUTED_BLOCK",
+      "seed_source": "preregistered fixture seed hash"
+    },
+    "ranking_eligible": false,
+    "recipe_steps": [
+      {
+        "action": "ADD",
+        "amount": 110.0,
+        "ingredient_id": "synthetic-resin",
+        "sequence": 1,
+        "tolerance": {
+          "minus": 0.5,
+          "plus": 0.5
+        },
+        "unit": "g"
+      },
+      {
+        "action": "ADD",
+        "amount": 40.0,
+        "ingredient_id": "synthetic-hardener",
+        "sequence": 2,
+        "tolerance": {
+          "minus": 0.2,
+          "plus": 0.2
+        },
+        "unit": "g"
+      }
+    ],
+    "required_outputs": [
+      "raw_measurements.csv",
+      "custody_log.json",
+      "deviations.json",
+      "signed_result_receipt.json"
+    ],
+    "results": null,
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "schema": "amphora.cro-protocol-known-answer.v1",
+  "signature": {
+    "algorithm": "Ed25519",
+    "candidate_supplied": false,
+    "key_id": "cro-fixture-141941a2b72f61ecbe7b0b5fb7871d95bebe0013ea9b3006ab7c8775c5382256",
+    "public_key_hex": "bc4c75f9e33899614ca108e774ac7de10690e6a27f0e936069681bdf66e632f7",
+    "signature_hex": "58c341941a14a70784c063fe60e6064cd54b1d2594bd7b977dfd08aa5d21ec4f3d2cf5c8e5dcb4ada573855753e36e127e685220f009f79becdc57df0f64c307"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "blueprint_axis": [
+    {
+      "accepted_despite_mismatched_citation": true,
+      "cited_matches_real": false,
+      "cited_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "probe": "wrong_blueprint_sha256_citation",
+      "real_blueprint_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_signature_ok": true
+    },
+    {
+      "accepted_with_no_citation": true,
+      "probe": "no_blueprint_citation_present",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_signature_ok": true
+    },
+    {
+      "accepted_with_fabricated_values": true,
+      "probe": "fabricated_threshold_values_with_correct_citation_hash",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_signature_ok": true
+    }
+  ],
+  "blueprint_content_binding_gap_confirmed": true,
+  "directive_probes": [
+    {
+      "accepted": true,
+      "expected_accept": true,
+      "group": "control_correct_citation",
+      "probe": "correctly_cited_packet_round_trips",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_signature_ok": true
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_execution_authorized",
+      "probe": "execution_authorized_flipped_true_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_EXECUTION_AUTHORITY_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_PROCUREMENT_AUTHORITY_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_SAFETY_CLAIM_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_SYNTHESIS_CLAIM_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_PERFORMANCE_CLAIM_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_QUALIFICATION_CLAIM_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_RANKING_AUTHORITY_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_UNMADE_DIGITAL_PROPOSAL_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_status_drift",
+      "probe": "status_drifted_from_draft_on_final_assembly"
+    },
+    {
+      "control_unmutated_signature_verifies": true,
+      "fail_closed": true,
+      "group": "t02_shape_one_byte_mutation",
+      "probe": "signed_final_assembly_payload_one_byte_flip"
+    },
+    {
+      "fail_closed": true,
+      "group": "w_cro1_shape_lock_hash_not_derived",
+      "probe": "protocol_lock_sha256_not_content_derived_on_final_assembly"
+    }
+  ],
+  "harness": "cf_packet_blueprint_citation_binding_probe",
+  "n_t02_shape_slipped_through": 0,
+  "real_blueprint_path": "amphora-report-packager/reference/mvp20/out/blueprint.md",
+  "real_blueprint_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+  "schema_under_test": "amphora.cro-protocol-package.v2"
+}

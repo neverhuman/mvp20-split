@@ -1,0 +1,319 @@
+{
+  "attack_shape_verbatim": "Remove the induction-time parameter from a copy and attack whether the envelope crosswalk fires; walk the envelope's application table and hunt for an uncovered parameter.",
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "CF-PROC",
+  "claim_under_attack": "The current CF-PROC deliverable state is complete and accurate for its scope",
+  "deliverable_under_test": {
+    "amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+    "amphora-cro-protocol-packager/reference/mvp20/out/cro_protocol.md": "4e001dc82eac042fa90fd1164faece447e40c7ef3f0f29649dd0322e12faa0d9",
+    "amphora-report-packager/reference/mvp20/out/blueprint.md": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879"
+  },
+  "directive_obligation": "CF-PROC",
+  "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+  "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+  "envelope_source": {
+    "path": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+    "sha256": "bb1a01b1a2a6128da1531e7a8d4ed01769dbbf02ce6952c6982be3ee153e53e2"
+  },
+  "module": "amphora-cro-protocol-packager",
+  "refutation_criterion_verbatim": "The mixing, induction and application section or the bench-scale sequence omits a parameter the envelope's WFT, coverage or cure schedule requires, or a scale-sensitive step is unflagged.",
+  "step_a_real_crosswalk": {
+    "missing_keys": [
+      "dry_to_touch_h",
+      "functional_cure_h",
+      "recoat_window_h",
+      "mix_ratio_tolerance_pct",
+      "thinning_limit_numeric"
+    ],
+    "n_missing": 5,
+    "params": [
+      {
+        "criterion_clause": "application",
+        "envelope_path": "performance_envelope.induction_min.target",
+        "found": true,
+        "key": "induction_min",
+        "matched_snippet": "induction ~30",
+        "required_value": "30 min"
+      },
+      {
+        "criterion_clause": "application",
+        "envelope_path": "performance_envelope.pot_life_h.min",
+        "found": true,
+        "key": "pot_life_h_min",
+        "matched_snippet": "Pot life \u22651.5",
+        "required_value": ">=1.5 h @ 73F/50%RH"
+      },
+      {
+        "criterion_clause": "WFT",
+        "envelope_path": "performance_envelope.wft_mils",
+        "found": true,
+        "key": "wft_mils",
+        "matched_snippet": "7\u20139",
+        "required_value": "7-9 mil"
+      },
+      {
+        "criterion_clause": "coverage",
+        "envelope_path": "performance_envelope.coverage_ft2_per_gal",
+        "found": true,
+        "key": "coverage_ft2_per_gal",
+        "matched_snippet": "175\u2013230",
+        "required_value": "175-230 ft2/gal"
+      },
+      {
+        "criterion_clause": "coverage",
+        "envelope_path": "fixed_constraints.dft_mils_per_coat",
+        "found": true,
+        "key": "dft_mils_per_coat",
+        "matched_snippet": "4.5-6",
+        "required_value": "4.5-6.0 mil"
+      },
+      {
+        "criterion_clause": "cure schedule",
+        "envelope_path": "performance_envelope.dry_to_touch_h.target",
+        "found": false,
+        "key": "dry_to_touch_h",
+        "matched_snippet": null,
+        "required_value": "2 h (envelope's own dry-to-touch target, distinct from the MIL-cited 3 h set-to-touch)"
+      },
+      {
+        "criterion_clause": "cure schedule",
+        "envelope_path": "performance_envelope.functional_cure_h.target",
+        "found": false,
+        "key": "functional_cure_h",
+        "matched_snippet": null,
+        "required_value": "6 h (envelope's own functional-cure target, stated as such -- not merely numerically-coincident with the MIL dry-hard citation)"
+      },
+      {
+        "criterion_clause": "cure schedule",
+        "envelope_path": "fixed_constraints.recoat_window_h.target",
+        "found": false,
+        "key": "recoat_window_h",
+        "matched_snippet": null,
+        "required_value": "6 h"
+      },
+      {
+        "criterion_clause": "application",
+        "envelope_path": "fixed_constraints.mix_ratio_by_volume.engine_tolerance_pct",
+        "found": false,
+        "key": "mix_ratio_tolerance_pct",
+        "matched_snippet": null,
+        "required_value": "3% engine tolerance band on the 1:1-by-volume mix ratio"
+      },
+      {
+        "criterion_clause": "application (done_criteria-named element)",
+        "envelope_path": "fixed_constraints.voc_g_per_l (max 340, design_to 320) -- the practical thinning ceiling; no field named 'thinning' exists in the envelope, so the deliverable itself must state the derived numeric limit",
+        "found": false,
+        "key": "thinning_limit_numeric",
+        "matched_snippet": null,
+        "required_value": "an explicit numeric thinning limit (e.g. max % thinner by volume, max fl oz/gal, or an explicit VOC-headroom-derived cap) -- 'thinning limits' is named verbatim in the CF-PROC done_criteria"
+      }
+    ],
+    "refuted": true,
+    "scale_sensitive_snippet": "scale-up",
+    "scale_sensitive_step_flagged": true
+  },
+  "step_b_positive_control": {
+    "detected": true,
+    "evidence": {
+      "missing_keys": [
+        "induction_min",
+        "dry_to_touch_h",
+        "functional_cure_h",
+        "recoat_window_h",
+        "mix_ratio_tolerance_pct",
+        "thinning_limit_numeric"
+      ],
+      "n_missing": 6,
+      "params": [
+        {
+          "criterion_clause": "application",
+          "envelope_path": "performance_envelope.induction_min.target",
+          "found": false,
+          "key": "induction_min",
+          "matched_snippet": null,
+          "required_value": "30 min"
+        },
+        {
+          "criterion_clause": "application",
+          "envelope_path": "performance_envelope.pot_life_h.min",
+          "found": true,
+          "key": "pot_life_h_min",
+          "matched_snippet": "Pot life \u22651.5",
+          "required_value": ">=1.5 h @ 73F/50%RH"
+        },
+        {
+          "criterion_clause": "WFT",
+          "envelope_path": "performance_envelope.wft_mils",
+          "found": true,
+          "key": "wft_mils",
+          "matched_snippet": "7\u20139",
+          "required_value": "7-9 mil"
+        },
+        {
+          "criterion_clause": "coverage",
+          "envelope_path": "performance_envelope.coverage_ft2_per_gal",
+          "found": true,
+          "key": "coverage_ft2_per_gal",
+          "matched_snippet": "175\u2013230",
+          "required_value": "175-230 ft2/gal"
+        },
+        {
+          "criterion_clause": "coverage",
+          "envelope_path": "fixed_constraints.dft_mils_per_coat",
+          "found": true,
+          "key": "dft_mils_per_coat",
+          "matched_snippet": "4.5-6",
+          "required_value": "4.5-6.0 mil"
+        },
+        {
+          "criterion_clause": "cure schedule",
+          "envelope_path": "performance_envelope.dry_to_touch_h.target",
+          "found": false,
+          "key": "dry_to_touch_h",
+          "matched_snippet": null,
+          "required_value": "2 h (envelope's own dry-to-touch target, distinct from the MIL-cited 3 h set-to-touch)"
+        },
+        {
+          "criterion_clause": "cure schedule",
+          "envelope_path": "performance_envelope.functional_cure_h.target",
+          "found": false,
+          "key": "functional_cure_h",
+          "matched_snippet": null,
+          "required_value": "6 h (envelope's own functional-cure target, stated as such -- not merely numerically-coincident with the MIL dry-hard citation)"
+        },
+        {
+          "criterion_clause": "cure schedule",
+          "envelope_path": "fixed_constraints.recoat_window_h.target",
+          "found": false,
+          "key": "recoat_window_h",
+          "matched_snippet": null,
+          "required_value": "6 h"
+        },
+        {
+          "criterion_clause": "application",
+          "envelope_path": "fixed_constraints.mix_ratio_by_volume.engine_tolerance_pct",
+          "found": false,
+          "key": "mix_ratio_tolerance_pct",
+          "matched_snippet": null,
+          "required_value": "3% engine tolerance band on the 1:1-by-volume mix ratio"
+        },
+        {
+          "criterion_clause": "application (done_criteria-named element)",
+          "envelope_path": "fixed_constraints.voc_g_per_l (max 340, design_to 320) -- the practical thinning ceiling; no field named 'thinning' exists in the envelope, so the deliverable itself must state the derived numeric limit",
+          "found": false,
+          "key": "thinning_limit_numeric",
+          "matched_snippet": null,
+          "required_value": "an explicit numeric thinning limit (e.g. max % thinner by volume, max fl oz/gal, or an explicit VOC-headroom-derived cap) -- 'thinning limits' is named verbatim in the CF-PROC done_criteria"
+        }
+      ],
+      "refuted": true,
+      "scale_sensitive_snippet": "scale-up",
+      "scale_sensitive_step_flagged": true
+    },
+    "how_planted": "regex-substituted 'induction ... 30 ...' occurrences and bare 'induction' tokens with '[REDACTED]' across blueprint.md / cro_protocol.md / capture_template.json copies",
+    "planted_defect": "deleted every induction-time-with-value mention (and bare 'induction' token) from a copy of the full corpus, per the attack shape's literal instruction"
+  },
+  "step_c_discrimination_control": {
+    "discrimination_control_passed": true,
+    "evidence": {
+      "missing_keys": [],
+      "n_missing": 0,
+      "params": [
+        {
+          "criterion_clause": "application",
+          "envelope_path": "performance_envelope.induction_min.target",
+          "found": true,
+          "key": "induction_min",
+          "matched_snippet": "induction ~30",
+          "required_value": "30 min"
+        },
+        {
+          "criterion_clause": "application",
+          "envelope_path": "performance_envelope.pot_life_h.min",
+          "found": true,
+          "key": "pot_life_h_min",
+          "matched_snippet": "Pot life \u22651.5",
+          "required_value": ">=1.5 h @ 73F/50%RH"
+        },
+        {
+          "criterion_clause": "WFT",
+          "envelope_path": "performance_envelope.wft_mils",
+          "found": true,
+          "key": "wft_mils",
+          "matched_snippet": "7\u20139",
+          "required_value": "7-9 mil"
+        },
+        {
+          "criterion_clause": "coverage",
+          "envelope_path": "performance_envelope.coverage_ft2_per_gal",
+          "found": true,
+          "key": "coverage_ft2_per_gal",
+          "matched_snippet": "175\u2013230",
+          "required_value": "175-230 ft2/gal"
+        },
+        {
+          "criterion_clause": "coverage",
+          "envelope_path": "fixed_constraints.dft_mils_per_coat",
+          "found": true,
+          "key": "dft_mils_per_coat",
+          "matched_snippet": "4.5-6",
+          "required_value": "4.5-6.0 mil"
+        },
+        {
+          "criterion_clause": "cure schedule",
+          "envelope_path": "performance_envelope.dry_to_touch_h.target",
+          "found": true,
+          "key": "dry_to_touch_h",
+          "matched_snippet": "Dry-to-touch (envelope functional target): 2",
+          "required_value": "2 h (envelope's own dry-to-touch target, distinct from the MIL-cited 3 h set-to-touch)"
+        },
+        {
+          "criterion_clause": "cure schedule",
+          "envelope_path": "performance_envelope.functional_cure_h.target",
+          "found": true,
+          "key": "functional_cure_h",
+          "matched_snippet": "Functional cure (envelope functional target): 6",
+          "required_value": "6 h (envelope's own functional-cure target, stated as such -- not merely numerically-coincident with the MIL dry-hard citation)"
+        },
+        {
+          "criterion_clause": "cure schedule",
+          "envelope_path": "fixed_constraints.recoat_window_h.target",
+          "found": true,
+          "key": "recoat_window_h",
+          "matched_snippet": "Recoat window: 6",
+          "required_value": "6 h"
+        },
+        {
+          "criterion_clause": "application",
+          "envelope_path": "fixed_constraints.mix_ratio_by_volume.engine_tolerance_pct",
+          "found": true,
+          "key": "mix_ratio_tolerance_pct",
+          "matched_snippet": "Mix ratio tolerance: 3% (engine tolerance",
+          "required_value": "3% engine tolerance band on the 1:1-by-volume mix ratio"
+        },
+        {
+          "criterion_clause": "application (done_criteria-named element)",
+          "envelope_path": "fixed_constraints.voc_g_per_l (max 340, design_to 320) -- the practical thinning ceiling; no field named 'thinning' exists in the envelope, so the deliverable itself must state the derived numeric limit",
+          "found": true,
+          "key": "thinning_limit_numeric",
+          "matched_snippet": "Thinning limit: do not exceed 5%",
+          "required_value": "an explicit numeric thinning limit (e.g. max % thinner by volume, max fl oz/gal, or an explicit VOC-headroom-derived cap) -- 'thinning limits' is named verbatim in the CF-PROC done_criteria"
+        }
+      ],
+      "refuted": false,
+      "scale_sensitive_snippet": "scale-up",
+      "scale_sensitive_step_flagged": true
+    },
+    "patch_description": "synthetic fully-repaired copy adding explicit dry-to-touch/functional-cure/mix-ratio-tolerance/thinning-limit language to a copy of blueprint.md",
+    "real_missing_keys": [
+      "dry_to_touch_h",
+      "functional_cure_h",
+      "mix_ratio_tolerance_pct",
+      "recoat_window_h",
+      "thinning_limit_numeric"
+    ],
+    "still_missing_after_patch": []
+  },
+  "study_id": "cf-proc-mixing-induction-application-crosswalk-v1",
+  "verdict": "CLAIM_REFUTED"
+}

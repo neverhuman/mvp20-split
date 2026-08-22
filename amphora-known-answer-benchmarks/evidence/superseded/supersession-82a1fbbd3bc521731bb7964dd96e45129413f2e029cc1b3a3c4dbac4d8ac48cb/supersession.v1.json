@@ -1,0 +1,27 @@
+{
+  "archive_root": "evidence/superseded/supersession-82a1fbbd3bc521731bb7964dd96e45129413f2e029cc1b3a3c4dbac4d8ac48cb",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "5b75a2b2f1e1fad0635db2527595763afda34eb3cef6269a2037078593299c97",
+    "ip/disclosure-log.v1.json": "f731b4d47975305ee008bbae149fb46d31d1d6a2add887eb4f862bc93a5f5b23",
+    "ip/prior-art.v1.json": "66afdc0d661dce1e16f0eb5380bca69ac35a09343edaf9fb657fe70374908181",
+    "ip/technical-dossier.v1.json": "ee2cd2d5fe042af4ee8513dbc4739316eab3bb774bb54763cfaa30ed82683060",
+    "phase0/benchmark/benchmark-lock.v1.json": "c993a0d53257a9fae84dcff997db4e13652ee9d5b418914f3cd1692a18e48d51",
+    "phase0/bundle.v1.json": "a54a2423bfd7a35c6fdebf84b86d719ed2ca0ab46f00fc0d7f5557345e2956e8",
+    "phase0/dataset/dataset-manifest.v1.json": "41b8176dcf58fcad29b60a2ec4eeb43ebb3ca58a8d2986ccb8c681bbee8249a9",
+    "phase0/kpis/known-answer-benchmarks-audit-kpi.v1.json": "eeced6f7f3251d8418b8095e08d7b5cd03af7b3fe91f777e7b73adefe6e84ea4",
+    "phase0/promotion/policy.v1.json": "8309481122ef0203ecfb3f6d8b6b21451fb3c6e94af85c5b9b6ad61472e8f366",
+    "phase0/raw/SHA256SUMS": "6952bf0c200d8570e6401acb8daef48087b588095846c636a3ac0b0b67cb0a4f",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "6da216d25e4fa1246664f94dc42cfd8dffac1eab0c2039ad32b8266321c340c3",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v2.json": "9565dd515f61b1616ee9b9f3e4aa69e75e18ece58d92136591d4d7afa30a3376",
+    "phase0/split/split-manifest.v1.json": "4189b9d46fdb3bfbc7cd6efb01f9f5277113828e8ee4f71828c5f9cacc48ba2e"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-known-answer-benchmarks",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-82a1fbbd3bc521731bb7964dd96e45129413f2e029cc1b3a3c4dbac4d8ac48cb",
+  "unsigned_preparation_only": true
+}

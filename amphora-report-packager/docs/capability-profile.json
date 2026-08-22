@@ -1,0 +1,293 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-report-packager-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "evidence_package"
+  ],
+  "ceilings": {
+    "authority_tier": "EVIDENCE_ONLY",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "DISABLED"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": false,
+    "checked_artifact_count": 4,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "COMPLETE",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "NOT_APPLICABLE"
+  },
+  "datasets": [
+    {
+      "dataset_id": "report-claim-lint-corpus",
+      "hash": null,
+      "path": null,
+      "rights": "UNRESOLVED",
+      "status": "NOT_CHECKED_IN",
+      "version": null
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-redteam-audit"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "synthetic_diagnostic_fixture",
+        "path": "amphora-report-packager/reference/mvp20/fixtures/known-answer-package.v1.json",
+        "rights": {
+          "evidence_path": "amphora-report-packager/reference/mvp20/fixtures/known-answer-package.v1.json",
+          "gap": "Non-authoritative synthetic known-answer package; it creates no product or scientific evidence.",
+          "status": "KNOWN"
+        },
+        "sha256": "2cb9ef66221150fc392a8be1bc8570b13bc93804249df11937e426d2d02d333c"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-report-packager/reference/mvp20/out/CUSTOMER_FACING.tex",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "ba69a64ca49fc5973faea36c0cbcbc6ea89fca60b73d3556758f4882cad83b71"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-report-packager/reference/mvp20/out/FOUNDER_FACING.tex",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "d0517f12e93ffec1a8ebac67fb5040bd6c70627e57738b4f6fbb8448e10b6742"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-report-packager/reference/mvp20/out/blueprint.md",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-report-packager/reference/mvp20/out/f718_style_datasheet.md",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "0c34557390f7cf8f38e5bc375646ce325c53c0451a14ef52b9b1c8934291795b"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "No checked-in module-specific benchmark result artifact was identified.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "Approved audience-specific claim policy and independently accepted input envelopes"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-assurance-capabilities/src/lib.rs",
+      "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
+      "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+    },
+    "known_contradictions": [
+      "Packaging valid envelopes cannot upgrade their claim locks, evidence tier, legal status, or product authority."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-assurance-capabilities/src/lib.rs",
+      "scenario": "Reject empty or malformed artifact lists and claim-lock stripping.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-report-packager",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": null,
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-assurance-capabilities/src/lib.rs",
+        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+      },
+      {
+        "path": "amphora-assurance-capabilities/src/diagnostics.rs",
+        "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-report-packager-example",
+      "candidate_type": "evidence_package",
+      "evidence_refs": {
+        "evidence_package": {}
+      }
+    },
+    "current_output": {
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_id": "amphora-report-packager-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {
+        "authority_lock_present": null
+      },
+      "metrics": {
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "claim-lock preservation",
+          "model_authority": "EVIDENCE_ONLY",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        }
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-report-packager",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "claim-lock preservation",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1.",
+      "unit": "declared by locked benchmark",
+      "value_path": "gates.authority_lock_present"
+    }
+  ],
+  "lane": "infrastructure",
+  "module_id": "amphora-report-packager",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "gates.authority_lock_present",
+    "non_blocking_claim_locks": [
+      "banned_claim_lint_required",
+      "human_deliverables_downstream_only"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 4,
+      "decision_value": 3,
+      "downstream_leverage": 3,
+      "effort": 2,
+      "evidence_gap": 2,
+      "external_delay": 0
+    },
+    "ladder": "infrastructure_assurance",
+    "p0_override": false,
+    "rank": 12,
+    "score": 27
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

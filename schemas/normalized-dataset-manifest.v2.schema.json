@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amphora.invalid/schemas/normalized-dataset-manifest.v2.schema.json",
+  "title": "NormalizedDatasetManifestV2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "dataset_id", "acquisition_unit_id", "source_intent_id", "raw_sha256", "raw_bytes", "normalized_path", "normalized_sha256", "rejection_path", "rejection_sha256", "identity_index_path", "identity_index_sha256", "duplicate_index_path", "duplicate_index_sha256", "record_count", "rejection_count", "endpoint_counts", "evidence_class", "rights_class", "quarantined", "ordering", "gzip_mtime"],
+  "properties": {
+    "schema": {"const": "amphora.normalized-dataset-manifest.v2"},
+    "dataset_id": {"type": "string", "minLength": 1},
+    "acquisition_unit_id": {"type": "string", "minLength": 1},
+    "source_intent_id": {"type": "string", "minLength": 1},
+    "raw_sha256": {"$ref": "#/$defs/hash"},
+    "raw_bytes": {"type": "integer", "minimum": 0},
+    "normalized_path": {"type": "string", "minLength": 1},
+    "normalized_sha256": {"$ref": "#/$defs/hash"},
+    "rejection_path": {"type": "string", "minLength": 1},
+    "rejection_sha256": {"$ref": "#/$defs/hash"},
+    "identity_index_path": {"type": "string", "minLength": 1},
+    "identity_index_sha256": {"$ref": "#/$defs/hash"},
+    "duplicate_index_path": {"type": "string", "minLength": 1},
+    "duplicate_index_sha256": {"$ref": "#/$defs/hash"},
+    "record_count": {"type": "integer", "minimum": 0},
+    "rejection_count": {"type": "integer", "minimum": 0},
+    "endpoint_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "evidence_class": {"type": "string"},
+    "rights_class": {"type": "string"},
+    "quarantined": {"type": "boolean"},
+    "ordering": {"type": "string", "minLength": 1},
+    "gzip_mtime": {"const": 0}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

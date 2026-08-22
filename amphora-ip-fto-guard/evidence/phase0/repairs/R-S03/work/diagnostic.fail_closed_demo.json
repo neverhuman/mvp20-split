@@ -1,0 +1,207 @@
+{
+  "charted_family_count": 6,
+  "charted_ns": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    26
+  ],
+  "claim_under_attack": "amphora-ip-fto-guard/evidence/audit/: Patent family ownership chains in patent_landscape.json are current and correctly attributed (R-S03), for the 6 claim-charted families.",
+  "corroboration": {
+    "blue_cube_is_olin_address": true,
+    "finding": "Blue Cube Spinco Inc.'s SEC-registered address matches Olin Corporation's SEC-registered address (190 Carondelet Plaza, Suite 1530, Clayton, MO), and Wikipedia (citing contemporary reporting) states Olin completed acquisition of Dow's Global Epoxy business unit on 2015-10-05. Blue Cube entities, including the IP-holding affiliate 'Blue Cube IP LLC', are therefore domiciled with / controlled by Olin Corporation, not Dow, as of that date.",
+    "question": "Is 'Blue Cube IP LLC' (assignee for families n=1, n=3) a Dow entity or an Olin Corporation entity as of the 2015 Dow chlorine/epoxy-business divestiture?",
+    "sources_consulted": [
+      {
+        "quote": "October 5, 2015, Olin successfully acquired Dow's U.S. Gulf Coast Chlor-Alkali and Vinyl, Global Chlorinated Organics, and Global Epoxy business units",
+        "sha256": "c2ba31c89f560300f0bfe3b0a7ba560711617fb54c93ac73c9e54ece6a64fa02",
+        "source": "Wikipedia: Olin Corporation, section 'Spinoffs and joint ventures (2015-2022)'",
+        "url": "https://en.wikipedia.org/wiki/Olin_Corporation"
+      },
+      {
+        "extracted_address": "190 CARONDELET PLZ, STE 1530",
+        "sha256": "4c399117ec9416d016b7c6b434deedd52f79032cb5a7000f7f095b785664a85c",
+        "source": "SEC EDGAR company search: 'Blue Cube Spinco Inc.' (CIK 0001640811) registered business address",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=blue+cube&type=&dateb=&owner=include&count=40"
+      },
+      {
+        "extracted_address": "190 CARONDELET PLAZA SUITE 1530",
+        "sha256": "07cca86cf7e56a88f55c5556ecfa211e47acd6f38bb0c291c0a9beb3d1cec9e8",
+        "source": "SEC EDGAR company search: 'Olin Corporation' registered business address",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=olin+corp&type=10-K&dateb=&owner=include&count=10"
+      }
+    ]
+  },
+  "counts": {
+    "current": 4,
+    "misattributed": 2,
+    "stale": 0
+  },
+  "refutation_evidence_family_n": [
+    2,
+    3
+  ],
+  "register_attempts": [
+    {
+      "evidence": "HTTP 403 on all 3 application-number lookups; response body and headers show Cloudflare bot challenge (server: cloudflare, cf-ray present, no legal-events/proprietor data returned).",
+      "raw_files": [
+        "epo_EP16833614.headers.txt",
+        "epo_EP16833614.body.html",
+        "epo_EP13812324.headers.txt",
+        "epo_EP13812324.body.html",
+        "epo_EP13172326.headers.txt",
+        "epo_EP13172326.body.html"
+      ],
+      "register": "EPO Register (register.epo.org)",
+      "result": "BLOCKED",
+      "targets": [
+        "EP16833614 (EP3328938B1)",
+        "EP13812324 (EP2931822A2)",
+        "EP13172326 (EP2653485A2)"
+      ]
+    },
+    {
+      "evidence": "HTTP 301 redirect to https://data.uspto.gov/support/transition-guide/patentsview, a client-side-rendered page that injects an AWS WAF JS challenge (edge.sdk.awswaf.com/.../challenge.js) before any content renders; the legacy free-query endpoint is retired and its successor is not fetchable by unauthenticated headless HTTP.",
+      "raw_files": [
+        "uspto_patentsview.headers.txt",
+        "uspto_patentsview.body.html"
+      ],
+      "register": "USPTO PatentsView / patent-assignment API (api.patentsview.org)",
+      "result": "BLOCKED",
+      "targets": [
+        "US5059640A"
+      ]
+    },
+    {
+      "evidence": "DNS NXDOMAIN for all 4 legacy assignment-search hostnames on this network (getent hosts fails); search.patentsview.org (current PatentsView search UI, requires a registered API key per USPTO's published transition guide) is likewise unresolvable.",
+      "raw_files": [
+        "dns_assignment-api.uspto.gov.txt",
+        "dns_legacy-assignment.uspto.gov.txt",
+        "dns_assignment.uspto.gov.txt",
+        "dns_patft.uspto.gov.txt",
+        "dns_search.patentsview.org.txt"
+      ],
+      "register": "USPTO Patent Assignment Search (assignment-api.uspto.gov / legacy-assignment.uspto.gov / assignment.uspto.gov / patft.uspto.gov)",
+      "result": "BLOCKED",
+      "targets": [
+        "US5059640A"
+      ]
+    },
+    {
+      "evidence": "HTTP 200 on all 6 documents, both the prior (2026-08-03) in-tree snapshot and a fresh live re-fetch (this fire). Page itself disclaims: 'The listed assignees may be inaccurate. Google has not performed a legal analysis and makes no representation or warranty as to the accuracy of the list.'",
+      "raw_files": [],
+      "register": "Google Patents biblio page (patents.google.com) -- an aggregator, NOT a primary government register; used as best-available in-tree/live public source per the item's fallback clause.",
+      "result": "AVAILABLE",
+      "targets": [
+        "WO2016187380A1.html",
+        "EP3328938B1.html",
+        "EP2931822A2.html",
+        "WO2013159277A1.html",
+        "US5059640A.html",
+        "EP2653485A2.html"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "chain_status": "current",
+      "confidence": "low",
+      "doc_read": "WO2016187380A1",
+      "google_patents_current_assignee_live": "Blue Cube IP LLC",
+      "google_patents_current_assignee_prior_2026_08_03": "Blue Cube IP LLC",
+      "google_patents_original_assignee": "Blue Cube IP LLC",
+      "json_assignee": "Blue Cube IP LLC",
+      "live_snapshot_sha256": "f8dc254181e4b5171f6678009d1f6f65b17c0d7e9961fcd6127c4d93b1b735b2",
+      "n": 1,
+      "prior_snapshot_hash_pin_ok": true,
+      "rationale": "json assignee 'Blue Cube IP LLC' matches the live Google Patents current-assignee field, and no contradicting register evidence was found, but this entity's IP was part of a 2015 corporate divestiture (family n=1's own assignee 'Blue Cube IP LLC' is a direct spinoff product; family n=4's 'Dow Global Technologies LLC' covers chemistry -- chlorinated polyolefin epoxy overcoatability -- that falls within the same divested Global Epoxy business scope) and neither authoritative register (EPO, USPTO) is reachable from this environment to confirm no further, un-recorded-at-Google assignment has since occurred. Confidence is LOW, not a positive finding of currency.",
+      "snapshot_drift_2026_08_03_to_2026_08_12": false,
+      "source_consulted": "Google Patents biblio page (aggregator; EPO Register and USPTO PatentsView/assignment search both attempted and blocked -- see register_attempts)",
+      "url": "https://patents.google.com/patent/WO2016187380A1/en"
+    },
+    {
+      "chain_status": "misattributed",
+      "confidence": "medium",
+      "doc_read": "EP3328938B1",
+      "google_patents_current_assignee_live": "Elementis Specialties Inc",
+      "google_patents_current_assignee_prior_2026_08_03": "Elementis Specialties Inc",
+      "google_patents_original_assignee": "Elementis Specialties Inc",
+      "json_assignee": "Elementis Specialties Inc / BASF",
+      "live_snapshot_sha256": "2be62772cd5b6e74c1c35f093638da55001879bd025bb54bc0252717fa567a11",
+      "n": 2,
+      "prior_snapshot_hash_pin_ok": true,
+      "rationale": "json assignee text appends '/ BASF' to the entity 'Elementis Specialties Inc', asserting an additional current owner/controller. This audit has no corroboration confirming 'BASF' as a current co-owner or controller of 'Elementis Specialties Inc', and the live bibliographic record does not name it. An uncorroborated appended party name is an ownership-chain assertion this audit cannot verify -- treated as misattributed pending verification.",
+      "snapshot_drift_2026_08_03_to_2026_08_12": false,
+      "source_consulted": "Google Patents biblio page (aggregator; EPO Register and USPTO PatentsView/assignment search both attempted and blocked -- see register_attempts)",
+      "url": "https://patents.google.com/patent/EP3328938B1/en"
+    },
+    {
+      "chain_status": "misattributed",
+      "confidence": "medium",
+      "doc_read": "EP2931822 via US2015/0329739A1 family member (EP claims did not render)",
+      "google_patents_current_assignee_live": "Blue Cube IP LLC",
+      "google_patents_current_assignee_prior_2026_08_03": "Blue Cube IP LLC",
+      "google_patents_original_assignee": "Blue Cube IP LLC",
+      "json_assignee": "Blue Cube IP / Dow",
+      "live_snapshot_sha256": "b7831640e0c5585356d774043e62174e1d08c7f1947eab5a0f4b4c4ff05a1a15",
+      "n": 3,
+      "prior_snapshot_hash_pin_ok": true,
+      "rationale": "json assignee text appends '/ Dow' to the entity 'Blue Cube IP LLC'. Corroborating public sources (Wikipedia + SEC EDGAR, see corroboration block) show Blue Cube IP LLC is domiciled with/controlled by Olin Corporation as of the 2015-10-05 Dow-to-Olin epoxy business transfer, not Dow. Appending '/ Dow' asserts a current ownership tie to Dow that the best-available public evidence contradicts.",
+      "snapshot_drift_2026_08_03_to_2026_08_12": false,
+      "source_consulted": "Google Patents biblio page (aggregator; EPO Register and USPTO PatentsView/assignment search both attempted and blocked -- see register_attempts)",
+      "url": "https://patents.google.com/patent/EP2931822A2/en"
+    },
+    {
+      "chain_status": "current",
+      "confidence": "low",
+      "doc_read": "WO2013159277A1",
+      "google_patents_current_assignee_live": "Dow Global Technologies LLC",
+      "google_patents_current_assignee_prior_2026_08_03": "Dow Global Technologies LLC",
+      "google_patents_original_assignee": "Dow Global Technologies LLC",
+      "json_assignee": "Dow Global Technologies LLC",
+      "live_snapshot_sha256": "14cfaa8dcc87f0065e2da9b85f159262adfd83fa95bd5f57f9df339c6e231d3a",
+      "n": 4,
+      "prior_snapshot_hash_pin_ok": true,
+      "rationale": "json assignee 'Dow Global Technologies LLC' matches the live Google Patents current-assignee field, and no contradicting register evidence was found, but this entity's IP was part of a 2015 corporate divestiture (family n=1's own assignee 'Blue Cube IP LLC' is a direct spinoff product; family n=4's 'Dow Global Technologies LLC' covers chemistry -- chlorinated polyolefin epoxy overcoatability -- that falls within the same divested Global Epoxy business scope) and neither authoritative register (EPO, USPTO) is reachable from this environment to confirm no further, un-recorded-at-Google assignment has since occurred. Confidence is LOW, not a positive finding of currency.",
+      "snapshot_drift_2026_08_03_to_2026_08_12": false,
+      "source_consulted": "Google Patents biblio page (aggregator; EPO Register and USPTO PatentsView/assignment search both attempted and blocked -- see register_attempts)",
+      "url": "https://patents.google.com/patent/WO2013159277A1/en"
+    },
+    {
+      "chain_status": "current",
+      "confidence": "high",
+      "doc_read": "US5059640A",
+      "google_patents_current_assignee_live": "US Department of Navy",
+      "google_patents_current_assignee_prior_2026_08_03": "US Department of Navy",
+      "google_patents_original_assignee": "US Department of Navy",
+      "json_assignee": "US Department of the Navy",
+      "live_snapshot_sha256": "dbe292c5d6054a1e73ecc8903d5e4d5c515cc011640c6cbb55fdedb65edee4f2",
+      "n": 5,
+      "prior_snapshot_hash_pin_ok": true,
+      "rationale": "US5059640A expired 2003 (fee lapse, per its own status field) and is US-government-owned; ownership chain is moot for an expired, public-domain patent, and government assignments of this kind are not subject to the commercial-M&A staleness risk that applies to families n=1/n=3/n=4.",
+      "snapshot_drift_2026_08_03_to_2026_08_12": false,
+      "source_consulted": "Google Patents biblio page (aggregator; EPO Register and USPTO PatentsView/assignment search both attempted and blocked -- see register_attempts)",
+      "url": "https://patents.google.com/patent/US5059640A/en"
+    },
+    {
+      "chain_status": "current",
+      "confidence": "medium",
+      "doc_read": "EP2653485A2",
+      "google_patents_current_assignee_live": "Hempel AS",
+      "google_patents_current_assignee_prior_2026_08_03": "Hempel AS",
+      "google_patents_original_assignee": "Hempel AS",
+      "json_assignee": "Hempel A/S",
+      "live_snapshot_sha256": "54ea48f9eb65fbd93fdd1b479a4fd1c410ad1f1c74c96e22470b983c1c28cd0e",
+      "n": 26,
+      "prior_snapshot_hash_pin_ok": true,
+      "rationale": "json assignee 'Hempel A/S' matches the live Google Patents current-assignee field. No known merger/divestiture/name-change affecting this entity was found. Independent primary-register confirmation (EPO Register) was attempted and blocked (see register_attempts); this call rests on the aggregator source only.",
+      "snapshot_drift_2026_08_03_to_2026_08_12": false,
+      "source_consulted": "Google Patents biblio page (aggregator; EPO Register and USPTO PatentsView/assignment search both attempted and blocked -- see register_attempts)",
+      "url": "https://patents.google.com/patent/EP2653485A2/en"
+    }
+  ],
+  "study_id": "amphora-ip-fto-guard-assignee-ownership-chain-audit-v1",
+  "verdict": "CLAIM_REFUTED"
+}

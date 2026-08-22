@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-ff3c50af971e6ab63064a5ed84774f3ed6be8c44d5066245a0ae4b8579d84f58",
+      "path": "events/ff3c50af971e6ab63064a5ed84774f3ed6be8c44d5066245a0ae4b8579d84f58.json",
+      "sha256": "c822cd4a23b0d05103e7f8632999141ca1faa5d44fc0d25047e02faa5f9763cb"
+    }
+  ],
+  "module_id": "amphora-model-card-authority",
+  "schema": "amphora.module-movement-ledger.v1"
+}

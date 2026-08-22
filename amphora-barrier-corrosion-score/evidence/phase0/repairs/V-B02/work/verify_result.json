@@ -1,0 +1,10 @@
+{
+  "discrepancy_log10_ohm_cm2": 3.4968585541019634,
+  "lib_rs_sha256_unchanged": "4773b6cb7012c3b85a5cf2d319d5e99ae4b8b2a41d2c0540f6a751bb0a6955fc",
+  "observed_wrong_barrier_index": 1.9490981937705594,
+  "payload_canonical_sha256": "5a4200a4f2f81ca83a2c080e38111ec23a7fb641367fade07e3ef79c1159a7ae",
+  "production_path_gated": true,
+  "r_b02_done_receipt_sha256_unchanged": "8ffcd5595bbf0215c8c061b8c7be80fb620d59105926288817b6cb6243e6670f",
+  "true_low_freq_barrier_index": 5.445956747872523,
+  "verdict": "CLAIM_REFUTED_SCOPED"
+}

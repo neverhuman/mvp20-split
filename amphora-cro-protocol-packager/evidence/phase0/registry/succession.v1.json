@@ -1,0 +1,79 @@
+{
+  "edits": [
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-cro-protocol-packager",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-cro-protocol-packager",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-envelope-gates",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-envelope-gates",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-formulation-arithmetic",
+      "new_value": "COMPLETE",
+      "old_value": "SHADOW"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-formulation-arithmetic",
+      "new_value": "COMPLETE",
+      "old_value": "SHADOW"
+    },
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-formulation-universe",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-formulation-universe",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-optimizer-orchestrator",
+      "new_value": "COMPLETE",
+      "old_value": "SHADOW"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-optimizer-orchestrator",
+      "new_value": "COMPLETE",
+      "old_value": "SHADOW"
+    }
+  ],
+  "no_authority_change": true,
+  "no_ranking_change": true,
+  "no_rights_change": true,
+  "no_scientific_change": true,
+  "no_solver_change": true,
+  "predecessor": {
+    "path": "registry/archive/bff63ed55151f6f9055312a3cd4026fc11edc320c0df61f3593be54d833c87fc/module-manifest.json",
+    "sha256": "bff63ed55151f6f9055312a3cd4026fc11edc320c0df61f3593be54d833c87fc"
+  },
+  "schema": "amphora.module-registry-succession.v1",
+  "succession_id": "registry-succession-ff0a1d204ece345dc967ed5e750669ade8a5386d9c222916adfbb31f51764b57",
+  "successor": {
+    "path": "registry/archive/25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5/module-manifest.json",
+    "sha256": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+  }
+}

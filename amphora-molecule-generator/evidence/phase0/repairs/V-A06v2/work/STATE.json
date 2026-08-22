@@ -1,0 +1,13 @@
+{
+  "campaign_item_id": "V-A06v2",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260805T150001-3200237-3fc764d2dcf6",
+      "date": "2026-08-05",
+      "outcome": "CLAIM_SURVIVED",
+      "summary": "Independent re-derivation (bond-type enumeration, no SMARTS) of both conventions from raw 38 canonical SMILES reproduced R-A06v2 exactly (0/38 mismatches). Instrument validated 8/8 known_answer_amines + 6/6 fail_closed_decoys before asserting. Positive control (demethylated MDA/DDM) detected. Convention-choice attack checked against Lee & Neville 1967, Ellis 1993, Flory 1953, ASTM D2074 -- no refuting source found. Done receipt written.",
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/V-A06v2/done/v-a06v2-molecule-generator-independent-verify-receipt.v1.dsse.json"
+    }
+  ]
+}

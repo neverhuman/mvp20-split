@@ -1,0 +1,180 @@
+{
+  "adjacent_homolog_similarity": {
+    "F1_adjacent_tanimoto": [
+      0.36363636363636365,
+      0.9090909090909091,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "F1_adjacent_tanimoto_mean": 0.8961038961038961,
+    "F1_polyethyleneamine_order_by_repeat_unit_count": [
+      "NCCN",
+      "NCCNCCN",
+      "NCCNCCNCCN",
+      "NCCNCCNCCNCCN",
+      "NCCNCCNCCNCCNCCN",
+      "NCCNCCNCCNCCNCCNCCN",
+      "NCCNCCNCCNCCNCCNCCNCCN",
+      "NCCNCCNCCNCCNCCNCCNCCNCCN"
+    ],
+    "F2_adjacent_tanimoto": [
+      0.75,
+      0.875,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "F2_adjacent_tanimoto_mean": 0.9583333333333334,
+    "F2_alpha_omega_diamine_order_by_chain_length": [
+      "NCCCN",
+      "NCCCCN",
+      "NCCCCCN",
+      "NCCCCCCN",
+      "NCCCCCCCN",
+      "NCCCCCCCCN",
+      "NCCCCCCCCCN",
+      "NCCCCCCCCCCN",
+      "NCCCCCCCCCCCN",
+      "NCCCCCCCCCCCCN"
+    ],
+    "combined_adjacent_pairs_n": 16,
+    "combined_adjacent_pairs_tanimoto_ge_0p99": 12,
+    "combined_adjacent_pairs_tanimoto_ge_0p99_fraction": 0.75
+  },
+  "attacked_claim": "amphora-molecule-generator/evidence/audit/molgen-scaffold-diversity-v1/molgen-scaffold-diversity-receipt.v1.dsse.json#hypothesis_evaluation (hypothesis: 'The deterministic grammar's accepted proposals span a diverse region of chemical space (not trivially inflated variants of a single scaffold)'; verdict: CORROBORATED_IN_AUDIT_INSTRUMENT; headline IntDiv_1=0.7681, mean pairwise Tanimoto=0.2319 over all 703 pairs)",
+  "attacked_receipt_sha256": "f74b5bcc37eb4306109984178e305d3aa84b4d4f24527d5a984f32125cff9fb7",
+  "cross_bloc_homolog_vs_ring_mean_tanimoto": 0.10538435321223348,
+  "does_not_close": [
+    "Runtime remains LOCKED_INTERNAL; no proposal emission enabled.",
+    "No Phase-0 promotion; scientific_readiness stays UNVALIDATED.",
+    "This does not modify, retract, or re-sign the attacked molgen-scaffold-diversity-v1 receipt; it is an independent companion finding.",
+    "This is a structural fingerprint-resolution finding, not a property, FTO, or wet-lab performance claim.",
+    "Bemis-Murcko scaffold counting (7 generic ring frameworks) is untouched; this finding is specific to the ECFP/Tanimoto IntDiv_1 instrument and the acyclic homolog families it is blind to."
+  ],
+  "falsification_criterion": "H0 (attacked receipt's hypothesis_evaluation) is REFUTED if at least one family comprising >=15% of the 38 accepted proposals (n>=6) has, under the SAME Morgan/ECFP radius-2 2048-bit Tanimoto instrument used for the receipt's headline IntDiv_1=0.7681, an internal IntDiv_1 <= 0.25 (mean pairwise Tanimoto >= 0.75) AND >=50% of its chain-length-adjacent neighbor pairs at Tanimoto >= 0.99 (fingerprint-indistinguishable). This operationalizes 'not trivially inflated variants of a single scaffold' at family resolution using only the attacked receipt's own metric space.",
+  "fingerprint": {
+    "n_bits": 2048,
+    "note": "identical fingerprint definition to the attacked receipt",
+    "radius": 2,
+    "tanimoto": "binary Tanimoto coefficient",
+    "type": "Morgan/ECFP"
+  },
+  "homolog_bloc": {
+    "families": [
+      "F1_polyethyleneamine",
+      "F2_alpha_omega_diamine"
+    ],
+    "fraction_of_accepted_set": 0.47368421052631576,
+    "intdiv1": 0.3848002034276544,
+    "mean_pairwise_tanimoto": 0.6151997965723456,
+    "n_members": 18,
+    "n_pairs": 153
+  },
+  "hypothesis_evaluation": {
+    "actionable_consequence": "The scaffold-diversity receipt's CORROBORATED_IN_AUDIT_INSTRUMENT verdict, read as an aggregate 'the accepted set is diverse' claim, does not hold at family resolution: the two linear-chain homologous families are literal textbook trivially-inflated-variant series (differ only by a repeated -CH2- or -CH2CH2NH- unit), and the SAME ECFP-r2/2048 instrument the receipt relies on cannot resolve most adjacent members of either family from one another. Any downstream use of the IntDiv_1=0.7681 aggregate to argue the generator avoids near-duplicate proposals must be corrected to disclose that this holds only across families, not within the two homolog families comprising nearly half the accepted set.",
+    "decision_rule": "H0 (attacked receipt's hypothesis_evaluation) is REFUTED if at least one family comprising >=15% of the 38 accepted proposals (n>=6) has, under the SAME Morgan/ECFP radius-2 2048-bit Tanimoto instrument used for the receipt's headline IntDiv_1=0.7681, an internal IntDiv_1 <= 0.25 (mean pairwise Tanimoto >= 0.75) AND >=50% of its chain-length-adjacent neighbor pairs at Tanimoto >= 0.99 (fingerprint-indistinguishable). This operationalizes 'not trivially inflated variants of a single scaffold' at family resolution using only the attacked receipt's own metric space.",
+    "evidence": "F1_polyethyleneamine (n=8, 21.1% of set): IntDiv_1=0.1851 (mean Tanimoto 0.8149), 5/7 adjacent chain-length-neighbor pairs fingerprint-saturated at Tanimoto>=0.99 (TETA-TEPA-PEHA-k6-k7-k8 all pairwise identical). F2_alpha_omega_diamine (n=10, 26.3% of set): IntDiv_1=0.0870 (mean Tanimoto 0.9130), 7/9 adjacent pairs saturated. Both families independently violate the decision rule despite the receipt's headline aggregate IntDiv_1=0.7681 -- the aggregate is driven by cross-family contrast (homolog-bloc-vs-ring mean Tanimoto=0.1054) and conceals near-total indistinguishability within 47.4% of the corpus under the receipt's own instrument.",
+    "h0": "The deterministic grammar's accepted proposals span a diverse region of chemical space (not trivially inflated variants of a single scaffold).",
+    "verdict": "H0_REFUTED"
+  },
+  "instrument_self_tests": {
+    "all_pass": true,
+    "identity_self_similarity_is_exactly_1": true,
+    "unrelated_ring_pair_control": {
+      "pair": [
+        "DDS(sulfone)",
+        "benzidine(4,4'-diaminobiphenyl)"
+      ],
+      "tanimoto": 0.42105263157894735,
+      "well_below_homolog_adjacent_saturation": true
+    }
+  },
+  "n_molecules": 38,
+  "non_circularity": "SMILES and family labels are read verbatim from the hash-locked prior grammar-yield diagnostic (unchanged); fingerprints are independently recomputed here with the exact parameters (Morgan r2, 2048 bits) documented in the attacked receipt's own 'fingerprint' field. The aggregate IntDiv_1 recomputation exactly reproduces the attacked receipt's reported 0.768098 (parity self-test), confirming this is the same instrument evaluated at finer (per-family) resolution, not a different or looser metric substituted to force a refutation.",
+  "overall_intdiv1_receipt_reported": 0.768098,
+  "overall_intdiv1_recomputed": 0.7680979235095,
+  "overall_mean_pairwise_tanimoto_recomputed": 0.23190207649050001,
+  "per_family_decision_rule_evaluation": [
+    {
+      "adjacent_pairs_tanimoto_ge_0p99_fraction": 0.7142857142857143,
+      "family": "F1_polyethyleneamine",
+      "fraction_of_accepted_set": 0.21052631578947367,
+      "intdiv1": 0.18506493506493515,
+      "n": 8,
+      "violates_decision_rule": true
+    },
+    {
+      "adjacent_pairs_tanimoto_ge_0p99_fraction": 0.7777777777777778,
+      "family": "F2_alpha_omega_diamine",
+      "fraction_of_accepted_set": 0.2631578947368421,
+      "intdiv1": 0.08703703703703702,
+      "n": 10,
+      "violates_decision_rule": true
+    }
+  ],
+  "per_family_intdiv1": {
+    "F1_polyethyleneamine": {
+      "fraction_of_accepted_set": 0.21052631578947367,
+      "intdiv1": 0.18506493506493515,
+      "mean_pairwise_tanimoto": 0.8149350649350648,
+      "n": 8,
+      "n_pairs": 28
+    },
+    "F2_alpha_omega_diamine": {
+      "fraction_of_accepted_set": 0.2631578947368421,
+      "intdiv1": 0.08703703703703702,
+      "mean_pairwise_tanimoto": 0.912962962962963,
+      "n": 10,
+      "n_pairs": 45
+    },
+    "F3_cycloaliphatic": {
+      "fraction_of_accepted_set": 0.2631578947368421,
+      "intdiv1": 0.7484599748041226,
+      "mean_pairwise_tanimoto": 0.25154002519587737,
+      "n": 10,
+      "n_pairs": 45
+    },
+    "F4_bridged_bisaniline": {
+      "fraction_of_accepted_set": 0.18421052631578946,
+      "intdiv1": 0.6092561481981322,
+      "mean_pairwise_tanimoto": 0.3907438518018677,
+      "n": 7,
+      "n_pairs": 21
+    },
+    "F5_xylylenediamine": {
+      "fraction_of_accepted_set": 0.07894736842105263,
+      "intdiv1": 0.521078431372549,
+      "mean_pairwise_tanimoto": 0.478921568627451,
+      "n": 3,
+      "n_pairs": 3
+    }
+  },
+  "purpose": "Attack amphora-molecule-generator/evidence/audit/molgen-scaffold-diversity-v1's CORROBORATED_IN_AUDIT_INSTRUMENT verdict by evaluating its own Morgan/ECFP r2/2048 Tanimoto instrument WITHIN each accepted family instead of only in aggregate, testing whether the two linear-chain homologous families (47.4% of the accepted set) are actually resolved as diverse by that instrument.",
+  "receipt_collapsed_control_intdiv1_floor": 0.0,
+  "recomputation_matches_receipt": true,
+  "rights_posture": {
+    "external_dataset_used": false,
+    "input_smiles": "read from hash-locked amphora-molecule-generator prior receipt (published scaffold families)",
+    "methods": "RDKit (BSD-licensed); Morgan/ECFP fingerprint and Tanimoto coefficient are published open methods",
+    "new_external_data_acquired": false
+  },
+  "run_type": "FALSIFICATION_ATTACK_DIVERSITY_METRIC_FAMILY_RESOLUTION",
+  "schema": "amphora.molecule-generator.molgen-scaffold-diversity-homolog-fingerprint-saturation.v1",
+  "source_diagnostic_sha256": "55afc806360e6abeab30bbc7e71ed94e8ef4a5ee6e1f67a0b02358c699dc01a8",
+  "study_id": "molgen-scaffold-diversity-homolog-fingerprint-saturation-v1",
+  "theory_reference": {
+    "fingerprint": "Rogers & Hahn 2010 J. Chem. Inf. Model. 50(5):742-754 (ECFP)",
+    "homologous_series_fingerprint_saturation": "Known limitation of finite-radius circular fingerprints on linear repeat-unit chains: once chain length exceeds ~2x the fingerprint radius, added repeat units contribute no new substructure environments beyond those already hashed into the bit vector, so ECFP-r2 similarity between chain homologs saturates toward 1.0 (folding/collision effects in a fixed-width 2048-bit vector reinforce this for the longer members).",
+    "internal_diversity_metric": "Polykovskiy et al. 2020 Front. Pharmacol. 11:565644 (MOSES IntDiv_p)",
+    "similarity_coefficient": "Bajusz, Racz & Heberger 2015 J. Cheminform. 7:20 (Tanimoto)",
+    "toolkit": "RDKit 2026.03.2 Morgan fingerprints"
+  },
+  "verdict": "H0_REFUTED"
+}

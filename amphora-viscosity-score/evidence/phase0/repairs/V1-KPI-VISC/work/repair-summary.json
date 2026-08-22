@@ -1,0 +1,10 @@
+{
+  "item_id": "V1-KPI-VISC",
+  "fire_id": "20260804T180001-2865241-83867ea6648b",
+  "action": "PROMOTE_AUDIT_TO_KPI_SURFACE",
+  "outcome": "CLAIM_SURVIVED",
+  "done_receipt": "amphora-viscosity-score/evidence/phase0/repairs/V1-KPI-VISC/done/herschel-bulkley-kpi-promotion-receipt.v1.dsse.json",
+  "kpi_surface_entry": "amphora-viscosity-score/evidence/phase0/kpis/herschel-bulkley-ccby-amorim2021-kpi.v1.json",
+  "mission_prose_updated": true,
+  "notes": "Re-ran original run_hb_benchmark.py verbatim (harness sha256 683fcd7fac6f078daceba6117c7b93561d1398364c02d73572f846843cfa29c0), byte-identical to parent audit diagnostic sha256 2a564a3cdcf27151b1aaa196093ae5ca2e249d29eff050d7fba067445da5a578. Promotion is purely additive, does not flip module phase/scientific_readiness."
+}

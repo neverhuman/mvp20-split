@@ -1,0 +1,307 @@
+{
+  "EEW_DGEBA": 170.2095,
+  "authority": "AUDIT_ONLY",
+  "cited_validation_set": [
+    {
+      "AHEW": 42.575,
+      "Mc_g_per_mol": 283.712667,
+      "active_amine_H": 4,
+      "amine": "IPDA",
+      "amine_MW": 170.3,
+      "amine_class": "cycloaliphatic",
+      "amine_smiles": "NCC1(C)CC(N)CC(C)(C)C1",
+      "aromatic_fraction": 0.0,
+      "citation": "May 1988 Ch.6 p.209",
+      "crosslink_density_mol_per_g": 0.00235,
+      "n_junctions": 2,
+      "published_Tg_C": 158,
+      "ring_atom_fraction": 0.5,
+      "rotatable_bond_density": 0.083333,
+      "strand_unit_mass": 851.138,
+      "system": "DGEBA+IPDA"
+    },
+    {
+      "AHEW": 34.0495,
+      "Mc_g_per_mol": 272.345333,
+      "active_amine_H": 4,
+      "amine": "m-XDA",
+      "amine_MW": 136.198,
+      "amine_class": "araliphatic",
+      "amine_smiles": "NCc1cccc(CN)c1",
+      "aromatic_fraction": 0.6,
+      "citation": "May 1988 Ch.6 p.210",
+      "crosslink_density_mol_per_g": 0.002448,
+      "n_junctions": 2,
+      "published_Tg_C": 100,
+      "ring_atom_fraction": 0.6,
+      "rotatable_bond_density": 0.2,
+      "strand_unit_mass": 817.036,
+      "system": "DGEBA+m-XDA"
+    },
+    {
+      "AHEW": 62.07675,
+      "Mc_g_per_mol": 309.715,
+      "active_amine_H": 4,
+      "amine": "DDS",
+      "amine_MW": 248.307,
+      "amine_class": "aromatic",
+      "amine_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "aromatic_fraction": 0.705882,
+      "citation": "May 1988 Ch.6 p.208",
+      "crosslink_density_mol_per_g": 0.002153,
+      "n_junctions": 2,
+      "published_Tg_C": 220,
+      "ring_atom_fraction": 0.705882,
+      "rotatable_bond_density": 0.117647,
+      "strand_unit_mass": 929.145,
+      "system": "DGEBA+DDS"
+    },
+    {
+      "AHEW": 24.373,
+      "Mc_g_per_mol": 194.5825,
+      "active_amine_H": 6,
+      "amine": "TETA",
+      "amine_MW": 146.238,
+      "amine_class": "aliphatic",
+      "amine_smiles": "NCCNCCNCCN",
+      "aromatic_fraction": 0.0,
+      "citation": "May 1988 Ch.6",
+      "crosslink_density_mol_per_g": 0.003426,
+      "n_junctions": 4,
+      "published_Tg_C": 120,
+      "ring_atom_fraction": 0.0,
+      "rotatable_bond_density": 0.7,
+      "strand_unit_mass": 1167.495,
+      "system": "DGEBA+TETA"
+    },
+    {
+      "AHEW": 20.6338,
+      "Mc_g_per_mol": 212.048111,
+      "active_amine_H": 5,
+      "amine": "DETA",
+      "amine_MW": 103.169,
+      "amine_class": "aliphatic",
+      "amine_smiles": "NCCNCCN",
+      "aromatic_fraction": 0.0,
+      "citation": "May 1988 Ch.6",
+      "crosslink_density_mol_per_g": 0.003144,
+      "n_junctions": 3,
+      "published_Tg_C": 115,
+      "ring_atom_fraction": 0.0,
+      "rotatable_bond_density": 0.571429,
+      "strand_unit_mass": 954.2165,
+      "system": "DGEBA+DETA"
+    }
+  ],
+  "correlations_all10_direction_only": {
+    "aromatic_fraction": 0.492764,
+    "crosslink_density_mol_per_g": -0.449665,
+    "ring_atom_fraction": 0.692312,
+    "rotatable_bond_density": -0.607918
+  },
+  "correlations_cited5": {
+    "aromatic_fraction": 0.418887,
+    "crosslink_density_mol_per_g": -0.618697,
+    "ring_atom_fraction": 0.564241,
+    "rotatable_bond_density": -0.546163
+  },
+  "does_not": [
+    "does NOT promote amphora-molecule-property or any module to PHASE_0",
+    "does NOT modify any of the 66 signed receipts or the manifest",
+    "does NOT claim wet-lab measurement, product qualification, or superiority",
+    "does NOT score any KPI on CONTEXT_ONLY polyverse/polyuniverse data"
+  ],
+  "honest_limitations": [
+    "No fitted Tg KPI is claimed; n=5 rights-clean cited systems is below the bar.",
+    "Representative extension (n=5, provenance B) is mid-range literature, +/-15-25 C, used ONLY for physics-direction, excluded from every gate/KPI.",
+    "Crosslink model assumes ideal stoichiometric full cure, all junctions 3-functional; real networks have cure-conversion and topological-defect dependence.",
+    "Inter-lab published Tg scatter (e.g. DGEBA/DDS 128-220 C across isomer/ratio/cure) sets a hard ~+/-20-30 C accuracy floor for ANY Tg model on literature ground truth."
+  ],
+  "incumbent_state_from_signed_receipts": {
+    "note": "quoted verbatim from signed in-tree receipts; NOT recomputed here",
+    "polyuniverse_ml_baseline": {
+      "ml_MAE_C": 39.119479,
+      "ml_pearson_r_across_5": 0.076899,
+      "receipt": "polyuniverse_epoxy_tg_external_validation_5_canonical_epoxy_amines_receipt.v1.json",
+      "receipt_sha256": "0aaf262d28bd4d55924c35e6acdd18d33d800a59e3a9c9695f6f7942e7bd077e",
+      "verdict": "FAILS: no correlation (r~0.08) on the 5 canonical network systems"
+    },
+    "raw_van_krevelen_baseline": {
+      "receipt": "polyuniverse_epoxy_tg_van_krevelen_physical_baseline_receipt.v1.json",
+      "receipt_sha256": "0e1cafe97b0d20ebd9b6b256ff686f80c47174ea1768065787e4eecec58bb78c",
+      "verdict": "FAILS: linear-polymer group contribution is wrong physics for networks",
+      "vk_MAE_C_on_5canonical": 109.077814,
+      "vk_raw_r2_on_polyuniverse": -27.104248
+    }
+  },
+  "phase0_gates_for_a_real_tg_kpi": {
+    "G1_rights_clean_cited_n_ge_12_spanning_4_classes": {
+      "current_n_cited": 5,
+      "detail": "only n=5, single source; need >=12 across aliphatic/cycloaliphatic/araliphatic/aromatic",
+      "met": false
+    },
+    "G2_grouped_or_LOO_mae_le_25C_on_cited_set": {
+      "detail": "n=5 too small for a trustworthy fitted estimate; not claimed",
+      "met": false
+    },
+    "G3_beats_incumbent_ml_39C_and_vk_109C_on_trusted_set": {
+      "detail": "correct physics (ring r=+0.69 on n=10) but not established on a trustworthy cited set",
+      "met": "DIRECTION_ONLY"
+    },
+    "G4_non_circular_structure_only_descriptors": {
+      "detail": "crosslink density + rigidity are pure structure; never use measured Tg",
+      "met": true
+    },
+    "G5_signed_two_replay_reproducible": {
+      "detail": "this audit",
+      "met": true
+    }
+  },
+  "physical_model_loo": {
+    "all10_crosslink_plus_ring_DIRECTION_ONLY": {
+      "descriptors": [
+        "crosslink_density_mol_per_g",
+        "ring_atom_fraction"
+      ],
+      "loo_mae_C": 28.588911,
+      "loo_rmse_C": 37.792102,
+      "n": 10
+    },
+    "all10_ring_only_DIRECTION_ONLY": {
+      "descriptors": [
+        "ring_atom_fraction"
+      ],
+      "loo_mae_C": 24.060522,
+      "loo_rmse_C": 32.707093,
+      "n": 10
+    },
+    "cited5_crosslink_plus_ring": {
+      "descriptors": [
+        "crosslink_density_mol_per_g",
+        "ring_atom_fraction"
+      ],
+      "loo_mae_C": 73.944804,
+      "loo_rmse_C": 82.376013,
+      "n": 5
+    },
+    "cited5_ring_only": {
+      "descriptors": [
+        "ring_atom_fraction"
+      ],
+      "loo_mae_C": 40.964269,
+      "loo_rmse_C": 58.405726,
+      "n": 5
+    }
+  },
+  "representative_extension_set_non_kpi": [
+    {
+      "AHEW": 49.56725,
+      "Mc_g_per_mol": 293.035667,
+      "active_amine_H": 4,
+      "amine": "DDM",
+      "amine_MW": 198.269,
+      "amine_class": "aromatic",
+      "amine_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "aromatic_fraction": 0.8,
+      "citation": "4,4'-MDA, lit. range 160-175",
+      "crosslink_density_mol_per_g": 0.002275,
+      "n_junctions": 2,
+      "published_Tg_C": 170,
+      "ring_atom_fraction": 0.8,
+      "rotatable_bond_density": 0.133333,
+      "strand_unit_mass": 879.107,
+      "system": "DGEBA+DDM"
+    },
+    {
+      "AHEW": 27.036,
+      "Mc_g_per_mol": 262.994,
+      "active_amine_H": 4,
+      "amine": "m-PDA",
+      "amine_MW": 108.144,
+      "amine_class": "aromatic",
+      "amine_smiles": "Nc1cccc(N)c1",
+      "aromatic_fraction": 0.75,
+      "citation": "lit. range 150-165",
+      "crosslink_density_mol_per_g": 0.002535,
+      "n_junctions": 2,
+      "published_Tg_C": 150,
+      "ring_atom_fraction": 0.75,
+      "rotatable_bond_density": 0.0,
+      "strand_unit_mass": 788.982,
+      "system": "DGEBA+m-PDA"
+    },
+    {
+      "AHEW": 52.59125,
+      "Mc_g_per_mol": 297.067667,
+      "active_amine_H": 4,
+      "amine": "PACM",
+      "amine_MW": 210.365,
+      "amine_class": "cycloaliphatic",
+      "amine_smiles": "NC1CCC(CC1)CC1CCC(N)CC1",
+      "aromatic_fraction": 0.0,
+      "citation": "lit. range 150-165",
+      "crosslink_density_mol_per_g": 0.002244,
+      "n_junctions": 2,
+      "published_Tg_C": 160,
+      "ring_atom_fraction": 0.8,
+      "rotatable_bond_density": 0.133333,
+      "strand_unit_mass": 891.203,
+      "system": "DGEBA+PACM"
+    },
+    {
+      "AHEW": 47.57175,
+      "Mc_g_per_mol": 290.375,
+      "active_amine_H": 4,
+      "amine": "JeffD230",
+      "amine_MW": 190.287,
+      "amine_class": "polyether",
+      "amine_smiles": "CC(N)COCC(C)OCC(C)N",
+      "aromatic_fraction": 0.0,
+      "citation": "polyether, lit. range 80-95",
+      "crosslink_density_mol_per_g": 0.002296,
+      "n_junctions": 2,
+      "published_Tg_C": 85,
+      "ring_atom_fraction": 0.0,
+      "rotatable_bond_density": 0.538462,
+      "strand_unit_mass": 871.125,
+      "system": "DGEBA+JeffD230"
+    },
+    {
+      "AHEW": 15.025,
+      "Mc_g_per_mol": 246.979333,
+      "active_amine_H": 4,
+      "amine": "EDA",
+      "amine_MW": 60.1,
+      "amine_class": "aliphatic",
+      "amine_smiles": "NCCN",
+      "aromatic_fraction": 0.0,
+      "citation": "lit. range 110-120",
+      "crosslink_density_mol_per_g": 0.002699,
+      "n_junctions": 2,
+      "published_Tg_C": 115,
+      "ring_atom_fraction": 0.0,
+      "rotatable_bond_density": 0.25,
+      "strand_unit_mass": 740.938,
+      "system": "DGEBA+EDA"
+    }
+  ],
+  "schema": "amphora.redteam-audit.network-tg-feasibility-v1.diagnostic.v1",
+  "target_capability": "glass_transition_temperature_of_DGEBA_amine_networks",
+  "target_kpi_id": "network-tg-crosslink-rigidity-feasibility-v1",
+  "target_module": "amphora-molecule-property",
+  "theory": {
+    "crosslink_density": "exact stoichiometric network model; junctions = amine N bearing >=1 active H, each -> 3-functional after full cure; strand unit mass W = M_amine + (active amine H)*EEW_DGEBA; Mc = W/(1.5*n_junctions). Derived purely from molecular structure and stoichiometry (EEW/AHEW), never from measured Tg -> NON-CIRCULAR. Ties to verified EEW/AHEW core.",
+    "references": [
+      "Nielsen 1969 (crosslink Tg shift)",
+      "Fox-Loshaek 1955",
+      "DiMarzio 1964",
+      "Van Krevelen 1990 / Bicerano 2002 (rigidity)"
+    ],
+    "rigidity": "ring-atom fraction (credits aromatic AND cycloaliphatic rings) + rotatable-bond density capture segmental stiffness (Van Krevelen/Bicerano rigidity intuition); crosslink correction is Nielsen/Fox-Loshaek/DiMarzio."
+  },
+  "verdict": {
+    "headline": "Network-Tg is the highest-value UNVALIDATED coating-science gap. The in-tree ML (MAE 39.1 C, r~0.08) and raw Van Krevelen (MAE 109.1 C) both FAIL because they use linear-polymer physics on a crosslinked network. The correct physics -- exact non-circular crosslink density (from the verified EEW/AHEW core) + ring/rotatable rigidity -- is prototyped here and shows real signal (ring-fraction Pearson r=+0.69, n=10; LOO MAE ~24-29 C direction-only, ring-only 24 C / +crosslink 29 C). It is NOT yet a Phase-0 KPI: rights-clean cited Tg is n=5 single-source with +/-20-30 C inter-lab scatter. One rights-clean cited dataset (>=12 systems, controlled cure) converts this into a defensible KPI.",
+    "phase": "PRE_PHASE_0",
+    "status": "CORRECT_PHYSICS_IDENTIFIED__BLOCKED_ON_RIGHTS_CLEAN_DATA"
+  }
+}

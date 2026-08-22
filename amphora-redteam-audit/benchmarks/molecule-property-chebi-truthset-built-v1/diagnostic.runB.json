@@ -1,0 +1,65 @@
+{
+  "authority": "AUDIT_ONLY",
+  "chebi_release": "ChEBI-252",
+  "chebi_sdf_sha256": "8f17627476c66e899dabe3cd7ae1cbb94f7ee6c67f2ee91f077a77a19c940ad7",
+  "domain_coverage": {
+    "ahew_computable_amine": 296,
+    "coverage_rate": 1.0,
+    "eew_computable_epoxide": 4,
+    "reactive_group_computable_total": 300
+  },
+  "exact_accuracy_anchors": {
+    "bar_g_per_eq": 0.5,
+    "max_abs_error_g_per_eq": 0.034,
+    "pass": true,
+    "rows": [
+      {
+        "abs_error_g_per_eq": 0.009,
+        "computed": 170.209,
+        "id": "DGEBA",
+        "property": "eew",
+        "reference": 170.2,
+        "reference_source": "PubChem 340.42 / ASTM D1652"
+      },
+      {
+        "abs_error_g_per_eq": 0.034,
+        "computed": 20.634,
+        "id": "DETA",
+        "property": "ahew",
+        "reference": 20.6,
+        "reference_source": "titration amine value"
+      },
+      {
+        "abs_error_g_per_eq": 0.025,
+        "computed": 42.575,
+        "id": "IPDA",
+        "property": "ahew",
+        "reference": 42.6,
+        "reference_source": "supplier MW 170.30"
+      }
+    ]
+  },
+  "funnel": {
+    "candidates_queried_ascending": 400,
+    "candidates_total_in_scope_single_cid": 8933,
+    "selected": 300
+  },
+  "gates": {
+    "exact_anchor_error_at_most_0_5": true,
+    "independent_triple_agreement_100pct": true,
+    "minimum_300_truth_set_molecules": true
+  },
+  "independent_cross_check": {
+    "formula_rule": "exact molecular formula string (ChEBI==RDKit==PubChem)",
+    "identity_rule": "exact full InChIKey (ChEBI==RDKit==PubChem)",
+    "mass_rule": "abs diff <= 0.05 g/mol vs both PubChem and ChEBI",
+    "max_mass_abs_err_rdkit_vs_chebi_g_per_mol": 0.0,
+    "max_mass_abs_err_rdkit_vs_pubchem_g_per_mol": 0.05,
+    "n_truth_set": 300,
+    "triple_agreement_pass": 300,
+    "triple_agreement_rate": 1.0
+  },
+  "rdkit_version": "2026.03.2",
+  "schema": "amphora.molecule_property.chebi_pubchem_truthset_diagnostic.v1",
+  "selection_rule": "lowest-ChEBI-ID candidates passing ChEBI==RDKit==PubChem triple cross-check (InChIKey exact, formula exact, mass<=0.05 g/mol)"
+}

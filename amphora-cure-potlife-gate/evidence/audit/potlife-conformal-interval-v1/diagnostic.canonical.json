@@ -1,0 +1,254 @@
+{
+  "all_structural_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "claim_locks": {
+    "audit_only_no_authority": true,
+    "cro_gated_promotion_still_blocked": true,
+    "no_manifest_mutation": true,
+    "phase1_named_baseline_still_not_beaten": true,
+    "pre_phase_0_research_only": true
+  },
+  "closes": [
+    "Point-only reporting: the signed Arrhenius gate now carries a distribution-free calibrated band with finite-sample marginal coverage guarantee.",
+    "Quantifies the honest CRO-gate uncertainty as a multiplicative pot-life factor."
+  ],
+  "crosscheck_mape_vs_signed_kpi": {
+    "abs_difference": 0.0,
+    "recomputed_held_out_mape": 0.147333604516,
+    "signed_kpi_arrhenius_pot_life_mape": 0.1473336045156335,
+    "ties_to_signed_truth_table": true
+  },
+  "does_not_close": [
+    "Does NOT modify the signed Arrhenius KPI or the 66-receipt master manifest.",
+    "Does NOT promote the module out of PRE_PHASE_0 (human dual-identity keys required).",
+    "Does NOT beat the Phase-1 named pot-life baseline; 36 owned independently-mixed CRO runs still pending.",
+    "Coverage guarantee is MARGINAL over the exchangeable held-out set; family-conditional coverage is reported separately and is the open Phase-1 question.",
+    "Absolute pot-life of a thinned marine paint differs from these gel/pot-life anchors; the band is validated on the published truth table only."
+  ],
+  "families": {
+    "aliphatic-polyamine": 9,
+    "amidoamine-adduct": 6,
+    "aromatic-amine": 9,
+    "cycloaliphatic-amine": 9,
+    "mannich-base": 3
+  },
+  "gates": {
+    "G1_marginal_conformal_meets_nominal": {
+      "definition": "LOO (jackknife+) empirical coverage >= nominal at alpha in {0.10,0.20}",
+      "passed": true
+    },
+    "G2_family_conditional_validity": {
+      "definition": "leave-one-amine-class-out coverage >= nominal for EVERY class; if any class under-covers, marginal conformal is valid but NOT family-conditional -> CRO gate needs class-stratified intervals",
+      "informative": true,
+      "marginal_valid_but_not_family_conditional": true
+    },
+    "G3_score_fail_closed": {
+      "definition": "nonconformity score returns None (fail-closed) on NaN/Inf/<=0 inputs",
+      "n_fail_closed": 5,
+      "n_probes": 5,
+      "passed": true,
+      "probes": [
+        {
+          "fail_closed": true,
+          "probe": "nan_pred"
+        },
+        {
+          "fail_closed": true,
+          "probe": "inf_obs"
+        },
+        {
+          "fail_closed": true,
+          "probe": "zero_pred"
+        },
+        {
+          "fail_closed": true,
+          "probe": "negative_obs"
+        },
+        {
+          "fail_closed": true,
+          "probe": "none_pred"
+        }
+      ]
+    },
+    "G4_mape_reproduces_signed_kpi": {
+      "definition": "recomputed held-out MAPE matches signed KPI to <1e-9",
+      "passed": true
+    }
+  },
+  "headline": "Distribution-free conformal wraps the signed Arrhenius pot-life gate: marginal leave-one-out (jackknife+) coverage meets nominal at both 90% and 80% (G1 PASS); the group / leave-one-amine-class-out test shows marginal validity is NOT family-conditional (under-covering classes: aliphatic-polyamine,aromatic-amine); the parametric Gaussian band is MIS-calibrated. Median 90% band = x1.398531 pot-life factor. MAPE crosscheck ties to signed KPI (delta 2.8e-17).",
+  "human_review_performed": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-cure-potlife-gate",
+  "n_points": 36,
+  "non_circularity": "The Arrhenius activation energies are external published constants (Prime 1997; Kamal & Sourour 1973; Blanco 2005), not fit to these 36 points, so the log-residuals are genuinely out-of-sample. Conformal calibration is leave-one-out (P1) and leave-one-amine-class-out (P2); no test point informs its own band.",
+  "nonconformity_score": "s_i = |ln(pred_i) - ln(obs_i)| (multiplicative pot-life error)",
+  "p1_bootstrap_ci_coverage_alpha0.10": {
+    "alpha": 0.1,
+    "ci95_hi": 1.0,
+    "ci95_lo": 0.833333,
+    "iters": 10000,
+    "point_coverage": 0.916667,
+    "seed": 20260728
+  },
+  "p1_marginal_loo_jackknife_plus": {
+    "alpha_0.10": {
+      "empirical_coverage": 0.916667,
+      "median_band_multiplicative_factor": 1.398531,
+      "median_halfwidth_log": 0.33542261,
+      "meets_nominal": true,
+      "n": 36,
+      "n_covered": 33,
+      "nominal_coverage": 0.9
+    },
+    "alpha_0.20": {
+      "empirical_coverage": 0.805556,
+      "median_band_multiplicative_factor": 1.327545,
+      "median_halfwidth_log": 0.28333114,
+      "meets_nominal": true,
+      "n": 36,
+      "n_covered": 29,
+      "nominal_coverage": 0.8
+    }
+  },
+  "p2_leave_one_family_out_group_conformal": {
+    "alpha_0.10": {
+      "families_undercovering": [
+        "aromatic-amine"
+      ],
+      "marginal_valid_but_not_family_conditional": true,
+      "nominal_coverage": 0.9,
+      "per_family": {
+        "aliphatic-polyamine": {
+          "calibration_halfwidth_log": 0.35233247,
+          "empirical_coverage": 1.0,
+          "meets_nominal": true,
+          "n_covered": 9,
+          "n_test": 9
+        },
+        "amidoamine-adduct": {
+          "calibration_halfwidth_log": 0.33542261,
+          "empirical_coverage": 1.0,
+          "meets_nominal": true,
+          "n_covered": 6,
+          "n_test": 6
+        },
+        "aromatic-amine": {
+          "calibration_halfwidth_log": 0.31307059,
+          "empirical_coverage": 0.777778,
+          "meets_nominal": false,
+          "n_covered": 7,
+          "n_test": 9
+        },
+        "cycloaliphatic-amine": {
+          "calibration_halfwidth_log": 0.35233247,
+          "empirical_coverage": 1.0,
+          "meets_nominal": true,
+          "n_covered": 9,
+          "n_test": 9
+        },
+        "mannich-base": {
+          "calibration_halfwidth_log": 0.33542261,
+          "empirical_coverage": 1.0,
+          "meets_nominal": true,
+          "n_covered": 3,
+          "n_test": 3
+        }
+      },
+      "pooled_empirical_coverage": 0.944444
+    },
+    "alpha_0.20": {
+      "families_undercovering": [
+        "aliphatic-polyamine",
+        "aromatic-amine"
+      ],
+      "marginal_valid_but_not_family_conditional": true,
+      "nominal_coverage": 0.8,
+      "per_family": {
+        "aliphatic-polyamine": {
+          "calibration_halfwidth_log": 0.28168659,
+          "empirical_coverage": 0.666667,
+          "meets_nominal": false,
+          "n_covered": 6,
+          "n_test": 9
+        },
+        "amidoamine-adduct": {
+          "calibration_halfwidth_log": 0.28333114,
+          "empirical_coverage": 0.833333,
+          "meets_nominal": true,
+          "n_covered": 5,
+          "n_test": 6
+        },
+        "aromatic-amine": {
+          "calibration_halfwidth_log": 0.28333114,
+          "empirical_coverage": 0.777778,
+          "meets_nominal": false,
+          "n_covered": 7,
+          "n_test": 9
+        },
+        "cycloaliphatic-amine": {
+          "calibration_halfwidth_log": 0.31307059,
+          "empirical_coverage": 1.0,
+          "meets_nominal": true,
+          "n_covered": 9,
+          "n_test": 9
+        },
+        "mannich-base": {
+          "calibration_halfwidth_log": 0.29071856,
+          "empirical_coverage": 1.0,
+          "meets_nominal": true,
+          "n_covered": 3,
+          "n_test": 3
+        }
+      },
+      "pooled_empirical_coverage": 0.833333
+    }
+  },
+  "p3_parametric_gaussian_band": {
+    "by_alpha": {
+      "alpha_0.10": {
+        "band_halfwidth_log": 0.19147969,
+        "band_multiplicative_factor": 1.21104,
+        "empirical_coverage": 0.944444,
+        "meets_nominal": true,
+        "n_covered": 34,
+        "nominal_coverage": 0.9
+      },
+      "alpha_0.20": {
+        "band_halfwidth_log": 0.14918719,
+        "band_multiplicative_factor": 1.16089,
+        "empirical_coverage": 0.722222,
+        "meets_nominal": false,
+        "n_covered": 26,
+        "nominal_coverage": 0.8
+      }
+    },
+    "gaussian_fit": {
+      "mean_log_resid": -0.16261829,
+      "note": "signed log-residual mean/std; mean != 0 indicates directional bias",
+      "std_log_resid": 0.11641139
+    }
+  },
+  "per_held_out_temperature_marginal_coverage": {
+    "10.00C": {
+      "empirical_coverage_marginal_alpha0.10": 1.0,
+      "n": 12,
+      "n_covered": 12
+    },
+    "30.00C": {
+      "empirical_coverage_marginal_alpha0.10": 1.0,
+      "n": 12,
+      "n_covered": 12
+    },
+    "40.00C": {
+      "empirical_coverage_marginal_alpha0.10": 0.75,
+      "n": 12,
+      "n_covered": 9
+    }
+  },
+  "promotes_authority": false,
+  "purpose": "Add distribution-free calibrated prediction intervals (conformal + bootstrap) to the module's signed Arrhenius pot-life temperature-scaling gate, which currently reports only a point MAPE. Uses ONLY the already-signed 12-system x 3-held-out-temperature truth table; no new data, no model refit.",
+  "run_type": "MODEL_AXIS_CALIBRATED_INTERVAL_CONFORMAL",
+  "schema": "amphora.cure-potlife-gate.conformal-interval-diagnostic.v1",
+  "theory_reference": "Conformal prediction: Vovk, Gammerman & Shafer 2005 'Algorithmic Learning in a Random World'; Lei, G'Sell, Rinaldo, Tibshirani & Wasserman 2018 JASA 113:1094; jackknife+ / CV+ Barber, Candes, Ramdas & Tibshirani 2021 Ann. Statist. 49:486; Mondrian/group conformal Vovk et al. 2003. Underlying model: Arrhenius (1889) k(T)=A*exp(-Ea/RT), pot_life(T)=pot_life_ref*exp[(Ea/R)(1/T-1/T_ref)], R=8.31446261815324 J/(mol.K) CODATA 2018, T_ref=295.928 K (22.78 C)."
+}

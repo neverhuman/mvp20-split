@@ -1,0 +1,39 @@
+{
+  "schema": "amphora.measured-eis-benchmark-lock.v1",
+  "module_id": "amphora-barrier-corrosion-score",
+  "benchmark_id": "measured-eis-endpoints-promotion-v1",
+  "dataset_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423",
+  "split_sha256": "d958e42128fd7efe3c1c5ce8fa968c0660a09c11b40e8e9e5039ed18adb3f73d",
+  "baselines": [
+    "CURRENT_FULL_SPECTRUM",
+    "LOW_FREQUENCY_IMPEDANCE",
+    "SOLIDS_ONLY",
+    "PVC_ONLY",
+    "BLINDED_COATINGS_EXPERT"
+  ],
+  "hostile_nulls": [
+    "LEAKAGE",
+    "SHUFFLE",
+    "TIME_REVERSAL",
+    "UNIT_AREA_MISMATCH",
+    "CLIPPED_SPECTRUM",
+    "FIELD_LAB_METHOD_MISMATCH"
+  ],
+  "thresholds": {
+    "kendall_tau_min": 0.5,
+    "study_block_lower_bound_min": 0.0,
+    "classification_lift_min": 0.1,
+    "calibration_error_max": 0.1,
+    "interval_90_coverage_min": 0.85,
+    "interval_90_coverage_max": 0.95,
+    "minimum_independent_systems": 30.0,
+    "minimum_studies": 3.0,
+    "minimum_untouched_external_systems": 10.0,
+    "minimum_replicate_panels": 5.0,
+    "delta_kendall_tau_min": 0.1,
+    "delta_kendall_tau_lower_95_min": 0.0,
+    "rust_creep_error_degradation_max": 0.0,
+    "wet_adhesion_error_degradation_max": 0.0
+  },
+  "immutable": true
+}

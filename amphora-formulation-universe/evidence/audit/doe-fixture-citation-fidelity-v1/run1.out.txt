@@ -1,0 +1,8 @@
+
+running 3 tests
+test doe_fixture_positive_control_parser_reads_well_formed_labels ... ok
+test doe_fixture_design_type_field_is_never_consumed_by_runtime ... ok
+test doe_fixture_citation_fidelity_audit ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

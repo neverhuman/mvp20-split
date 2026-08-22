@@ -1,0 +1,106 @@
+{
+  "$schema": "amphora.module-phase0-kpi.v1",
+  "authority_ceiling": "LIMITED_SANITY",
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "Phase-1: raw (gamma_dot, eta) point-level flow-curve dataset (this source only tabulates fitted parameters + a graphical Fig.3)",
+    "Phase-1: additional sources spanning multiple resin families and temperatures to test HB adequacy beyond this single paper",
+    "KRIEGER_DOUGHERTY: a rights-clean pigment/filler volume-fraction viscosity ladder (data-acquisition-queue ask)"
+  ],
+  "capability": "Herschel-Bulkley yield-flow path (src/lib.rs:1227) evaluated at published fitted parameters (tau_0, K, n) from a rights-clean CC BY 4.0 real-data source: Amorim, Oliveira, Mancini & Sirqueira (2021) SN Applied Sciences 3:236, doi:10.1007/s42452-021-04247-7 -- commercial DGEBA epoxy/polyamide anti-corrosion coating, control + 5 carbon-black/nanoclay formulations, steady-shear 0.1-100 s^-1, 25C, R^2>0.998 for all 6 fits. This is PARAMETER-LEVEL reproduction (module equation evaluated at the paper's own published tau_0/K/n and cross-checked against the paper's own stated Fig.3 axis bounds and ranking claims), not a raw (gamma_dot, eta) point-level regression -- the source paper does not tabulate raw flow-curve points.",
+  "claim_locks": {
+    "documented_locale_repair_independently_justified": true,
+    "krieger_dougherty_remains_unbenchmarked": true,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_solver_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "parameter_level_benchmark_only_not_point_level_regression": true,
+    "pre_phase_0_research_only": true,
+    "single_source_single_resin_single_temperature_scope": true
+  },
+  "dataset_fixture_sha256": "a17a37b39b9657efae41ffaab4d7975a5da2ede40ba6f8fd64bd5996e8bf225c",
+  "kpi_id": "amphora-viscosity-score-phase0-herschel-bulkley-ccby-amorim2021-kpi-v1",
+  "krieger_dougherty_status": "KRIEGER_DOUGHERTY (pigment/filler volume-fraction crowding, src/lib.rs:1208) remains UNBENCHMARKED in-tree. No rights-clean pigment/filler volume-fraction viscosity ladder was located during the parent audit's open-literature sweep (MDPI Coatings/Polymers, RSC Advances, ACS Omega, Scientific Reports, Frontiers, SN Applied Sciences). This is a genuine data gap, filed to the data-acquisition-queue, not a rights-quarantine of an identified asset.",
+  "locale_repair_provenance": {
+    "control_arm_result": "The literal-English reading of the SAME as-printed table (comma = thousands separator, i.e. what a downstream engineer would transcribe verbatim) fails the paper's own axis bounds by 13x-1500x for every one of the 6 formulations. This control arm is the falsifying observation the attack was pre-registered to surface, and it DID fire -- just for the wrong/naive reading, not the corrected one.",
+    "issue": "As-printed Table 2 typesets every tau_0/K value with a comma before the final 3 digits, while n/R2/MRD in the same table use a period -- a Word/Excel-to-PDF locale (comma-decimal) mixup affecting only the thousands-scale columns.",
+    "literal_english_max_multiple_over_axis_ceiling": 169.0383936997845,
+    "repair": "Last comma read as the decimal separator (European/Brazilian locale convention consistent with the corresponding author's Brazilian institutional affiliation), independently justified by cross-checking against the paper's OWN stated Fig.3 apparent-viscosity axis metadata (1 to 1e5 Pa.s) -- not by fitting the repair to make the module's equation look good."
+  },
+  "metrics": [
+    {
+      "authority": "REAL_ARITHMETIC",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "corrected_reading_all_within_paper_axis_bounds",
+      "note": "All 6 formulations' apparent viscosity (locale-repaired reading) lands inside the paper's own stated Fig.3 axis range [1, 1e5] Pa.s at all 4 tested shear rates.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 6
+    },
+    {
+      "authority": "REAL_ARITHMETIC",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "corrected_reading_all_monotonic_shear_thinning",
+      "note": "All 6 formulations n<1 and apparent viscosity monotonically decreasing with shear rate, matching the paper's own stated finding.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 6
+    },
+    {
+      "authority": "REAL_ARITHMETIC",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "paper_ranking_claims_reproduced",
+      "note": "Sample 4 = max yield stress (tau_0), unmodified epoxy control = min consistency coefficient (K), reproducing the paper's own stated ranking.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 6
+    },
+    {
+      "authority": "REAL_ARITHMETIC",
+      "ceiling": 0.0,
+      "direction": "MINIMIZE",
+      "name": "literal_reading_control_arm_fails_axis_bounds",
+      "note": "Control arm: literal-English (naive transcription) reading of the same table fails the paper's own axis bounds by 13x-1500x for all 6 formulations -- confirms the attack was genuinely capable of falsifying and did fire, just not for the justified reading.",
+      "observed": 0.0,
+      "passed": true,
+      "sample_size": 6
+    }
+  ],
+  "module_id": "amphora-viscosity-score",
+  "n_deterministic_gates_defined": 4,
+  "n_deterministic_gates_passed": 4,
+  "phase0_deterministic_gates_passed": true,
+  "populated_at": "2026-08-04",
+  "population": "Commercial DGEBA epoxy/polyamide marine/anti-corrosion coating, control + 5 carbon-black/nanoclay formulations, 25C, steady shear 0.1-100 s^-1.",
+  "schema": "amphora.module-phase0-kpi.v1",
+  "scientific_receipt_id": "herschel-bulkley-ccby-amorim2021-v1",
+  "scientific_receipt_path": "amphora-viscosity-score/evidence/audit/herschel-bulkley-ccby-amorim2021-v1/herschel-bulkley-ccby-amorim2021-receipt.v1.dsse.json",
+  "scientific_receipt_sha256": "1b301ee5fef9c3cc2cac78b297a5a449f83ec33ceb824809672550ca454baddb",
+  "scope_limits": [
+    "Single source (one paper, one lab).",
+    "Single commercial resin family (JUMBO-grade DGEBA epoxy / polyamide).",
+    "Single temperature (25C).",
+    "Parameter-level benchmark only -- module equation evaluated AT published fitted tau_0/K/n, cross-checked against the paper's own reported axis range and ranking claims. No raw (gamma_dot, eta) point-level regression was performed or is possible from this source (paper tabulates only fitted parameters and a graphical Fig.3, not raw flow-curve data points).",
+    "Does not establish Herschel-Bulkley adequacy across coating chemistries, resin families, or temperatures."
+  ],
+  "source": {
+    "doi": "10.1007/s42452-021-04247-7",
+    "license": "CC BY 4.0 (Springer Nature Open Access; verified in article Compliance-with-Ethical-Standards section: 'This article is licensed under a Creative Commons Attribution 4.0 International License')",
+    "source_id": "amorim-oliveira-mancini-sirqueira-2021-sn-applied-sciences",
+    "source_lock_sha256": "a17a37b39b9657efae41ffaab4d7975a5da2ede40ba6f8fd64bd5996e8bf225c"
+  },
+  "split_methodology": "No split performed -- this is a parameter-level cross-check against externally published fitted parameters and externally published axis/ranking metadata, not a fitted model with train/test partitions.",
+  "theory": "Herschel, W.H. & Bulkley, R. (1926) 'Konsistenzmessungen von Gummi-Benzollosungen', Kolloid-Zeitschrift 39:291-300. eta_apparent(gamma_dot) = tau_0/gamma_dot + K*gamma_dot^(n-1)."
+}

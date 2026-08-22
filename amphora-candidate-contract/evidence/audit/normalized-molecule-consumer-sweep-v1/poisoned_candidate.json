@@ -1,0 +1,16 @@
+{
+  "candidate_id": "DGEBA-monomer-T01B-poison",
+  "candidate_type": "molecule",
+  "canonical_structure_hash": "POISON_HASH_deadbeefcafebabe0000000000000000000000000000000000000000",
+  "context": {
+    "dft_basis_mil": 5.0,
+    "target_spec": "resin EEW band for Envelope-65"
+  },
+  "evidence_refs": {},
+  "molecule": {
+    "name": "DGEBA monomer (T-01B poison probe)",
+    "role": "resin",
+    "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1",
+    "source_refs": ["data/molecule_library.json"]
+  }
+}

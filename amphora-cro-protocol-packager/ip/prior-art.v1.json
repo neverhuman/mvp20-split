@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "a142261f7f67205d408961631a17696adf6904c6a8326f282afd4f94139c6b04",
+  "module_id": "amphora-cro-protocol-packager",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

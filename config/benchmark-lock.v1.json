@@ -1,0 +1,54 @@
+{
+  "baselines": [
+    "constant_baseline",
+    "transparent_theory_baseline",
+    "strong_conventional_baseline",
+    "current_implementation",
+    "hostile_null"
+  ],
+  "benchmark_id": "amphora-portfolio-digital-phase1-lock-2026-07-17",
+  "dataset_hashes": {
+    "config/module-evidence-inventory.json": "10dfa58d1967acfbbedd732869bb8da948870ad975f47befbb0def9c997af9f3",
+    "module-manifest.json": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f"
+  },
+  "endpoints": [
+    "artifact_integrity",
+    "locked_module_result",
+    "authority_quarantine"
+  ],
+  "exclusions": [
+    "no physical candidate qualification",
+    "no product or superiority claim",
+    "no scientific ranking without independent external evidence",
+    "unresolved-rights artifacts remain quarantined"
+  ],
+  "metrics": [
+    {
+      "direction": "maximize",
+      "metric": "artifact_hash_match",
+      "threshold": 1.0,
+      "unit": "boolean"
+    },
+    {
+      "direction": "maximize",
+      "metric": "registry_identity_match",
+      "threshold": 1.0,
+      "unit": "boolean"
+    },
+    {
+      "direction": "maximize",
+      "metric": "ranking_quarantine_preserved",
+      "threshold": 1.0,
+      "unit": "boolean"
+    }
+  ],
+  "module_id": "amphora-portfolio",
+  "schema": "amphora.benchmark-lock.v1",
+  "split_hash": "5d08e73c6de99e45623e3fa4ee5186cd43bbd85766fc0ae74ab6a947dbb36ffb",
+  "thresholds": {
+    "artifact_hash_match": 1.0,
+    "ranking_quarantine_preserved": 1.0,
+    "registry_identity_match": 1.0
+  },
+  "uncertainty_method": "paired deterministic artifact replay; empirical intervals required when observations exist"
+}

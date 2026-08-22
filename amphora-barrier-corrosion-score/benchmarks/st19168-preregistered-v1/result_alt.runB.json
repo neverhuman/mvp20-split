@@ -1,0 +1,93 @@
+{
+  "alpha": 0.05,
+  "does_not_close": [
+    "This is a single ST-19168-derived corroborating analysis, not the locked mission.md primary KPI itself (a blinded four-track independent-panel comparison). It cannot promote authority, phase, or manifest state on its own.",
+    "n<=10 is far below the Bonett-Wright (2000) n~25 needed for 80% power at tau=0.5 one-sided alpha=0.05 -- see PREREGISTRATION.md honest power section."
+  ],
+  "feasibility": "OK",
+  "gate_summary": {
+    "step1_primary_locked_target": true,
+    "step2_superiority_vs_solids": true,
+    "step3_superiority_vs_pvc": false
+  },
+  "input_system_ids": [
+    "SHADOW-ALT-01",
+    "SHADOW-ALT-02",
+    "SHADOW-ALT-03",
+    "SHADOW-ALT-04",
+    "SHADOW-ALT-05",
+    "SHADOW-ALT-06",
+    "SHADOW-ALT-07",
+    "SHADOW-ALT-08",
+    "SHADOW-ALT-09",
+    "SHADOW-ALT-10"
+  ],
+  "locked_tau_target": 0.5,
+  "module": "amphora-barrier-corrosion-score",
+  "n_systems": 10,
+  "point_estimates": {
+    "asymptotic_p_locked": 0.0094911,
+    "asymptotic_p_pvc": 0.24492878,
+    "asymptotic_p_solids": 0.24492878,
+    "tau_locked_vs_eis_secondary_truth": 0.644444,
+    "tau_locked_vs_rust_creep_truth": 0.644444,
+    "tau_pvc_only_vs_rust_creep_truth": 0.288889,
+    "tau_solids_only_vs_rust_creep_truth": -0.288889
+  },
+  "primary_test_step1": {
+    "cross_check_agreement": true,
+    "fromscratch_independent_permutation": {
+      "method": "exact_full_enumeration",
+      "n_reference_permutations": 3628800,
+      "observed_tau": 0.644444,
+      "p_value_one_sided": 0.00457451
+    },
+    "hypothesis": "tau(locked_barrier_index, -rust_creep_mm) > 0, one-sided, AND observed tau >= 0.50",
+    "meets_magnitude_target_tau_ge_0p50": true,
+    "observed_tau": 0.644444,
+    "scipy_exact_p_value_one_sided": 0.00457424,
+    "step_pass": true
+  },
+  "schema": "amphora.barrier-corrosion-score.st19168-preregistered-analysis-result.v1",
+  "step2_superiority_vs_solids_only_null": {
+    "hypothesis": "tau(locked,truth) > tau(solids_only,truth), one-sided",
+    "paired_bootstrap": {
+      "bootstrap_ci_95_delta_tau": [
+        0.1,
+        1.7
+      ],
+      "bootstrap_mean_delta_tau": 0.932,
+      "n_bootstrap": 100000,
+      "p_value_one_sided_delta_gt_0": 0.01724983,
+      "point_estimate_delta_tau": 0.933333
+    },
+    "permutation_robustness_crosscheck": {
+      "method": "exact_full_enumeration",
+      "n_reference_permutations": 3628800,
+      "observed_delta_tau": 0.933333,
+      "p_value_one_sided": 0.01365988
+    },
+    "step_pass": true
+  },
+  "step3_superiority_vs_pvc_only_null": {
+    "hypothesis": "tau(locked,truth) > tau(pvc_only,truth), one-sided",
+    "paired_bootstrap": {
+      "bootstrap_ci_95_delta_tau": [
+        -0.4,
+        1.076923
+      ],
+      "bootstrap_mean_delta_tau": 0.353976,
+      "n_bootstrap": 100000,
+      "p_value_one_sided_delta_gt_0": 0.19678803,
+      "point_estimate_delta_tau": 0.355556
+    },
+    "permutation_robustness_crosscheck": {
+      "method": "exact_full_enumeration",
+      "n_reference_permutations": 3628800,
+      "observed_delta_tau": 0.355556,
+      "p_value_one_sided": 0.1793124
+    },
+    "step_pass": false
+  },
+  "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+}

@@ -1,0 +1,1413 @@
+{
+  "G1_reproduces_signed_kpi": {
+    "arrhenius_pot_life_mape_abs_delta": 0.0,
+    "arrhenius_pot_life_mape_recomputed": 0.1473336045156335,
+    "arrhenius_pot_life_mape_signed": 0.1473336045156335,
+    "description": "Independently re-derives the two signed Phase-0 KPI error metrics from the locked dataset, establishing that this audit is anchored to the same numbers the KPI was signed on.",
+    "held_out_temperature_extrapolation_mape_abs_delta": 5.551115123125783e-17,
+    "held_out_temperature_extrapolation_mape_recomputed": 0.15629611310973893,
+    "held_out_temperature_extrapolation_mape_signed": 0.15629611310973887,
+    "passed": true,
+    "signed_kpi_sha256": "54f19e3fc36cb712920ee0f207d88539bc1834fa93f9097e93e885f1e7c306a8",
+    "tie_tolerance": 1e-12
+  },
+  "G2_curvature_is_real": {
+    "description": "Tests whether convex curvature of ln t vs 1/T survives a hostile null in which the truth is exactly Arrhenius and the only departure is rounding of each value to its own reported significant-figure quantum.",
+    "effect_size_sigma_over_null": 22.425473866282637,
+    "linear_log_rms_mean": 0.06001575053274633,
+    "n_systems": 12,
+    "n_systems_positive_curvature": 12,
+    "null_draws": 20000,
+    "null_mean_c2_mean": 88201.92559367482,
+    "null_mean_c2_sd": 164441.18325634787,
+    "null_model": "pure Arrhenius truth + reported-precision rounding, seed 20260730",
+    "null_p_mean_c2_ge_observed": 0.0,
+    "null_p_n_positive_ge_observed": 0.0,
+    "observed_c2_by_system": [
+      4048476.3786297212,
+      4823037.146392567,
+      4048476.3786297594,
+      1662697.1721232815,
+      3061321.3867513705,
+      3036528.6498927325,
+      2913382.33808033,
+      4191569.832487124,
+      4322981.178239596,
+      4232417.260902603,
+      4247619.678223627,
+      4721973.198641265
+    ],
+    "observed_mean_c2": 3775873.3832494975,
+    "passed": true,
+    "quadratic_log_rms_mean": 0.03224872786836699,
+    "reported_quanta": [
+      [
+        1.0,
+        10.0,
+        1.0,
+        1.0
+      ],
+      [
+        10.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        10.0,
+        1.0,
+        1.0
+      ],
+      [
+        10.0,
+        10.0,
+        1.0,
+        1.0
+      ],
+      [
+        10.0,
+        10.0,
+        10.0,
+        1.0
+      ],
+      [
+        10.0,
+        10.0,
+        1.0,
+        1.0
+      ],
+      [
+        10.0,
+        10.0,
+        10.0,
+        1.0
+      ],
+      [
+        100.0,
+        100.0,
+        10.0,
+        10.0
+      ],
+      [
+        100.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      [
+        100.0,
+        10.0,
+        1.0,
+        1.0
+      ],
+      [
+        10.0,
+        10.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        0.1,
+        0.1
+      ]
+    ]
+  },
+  "G3_kamal_sourour_refuted": {
+    "analytic_lemma": "PROVEN POINTWISE, NOT FOR THE INTEGRAL. ln(k1 + k2 a^m) is a log-sum-exp of functions affine in x = 1/T, hence convex in x; therefore ln of the Kamal-Sourour integrand is concave in x at every fixed alpha, and the LOCAL apparent activation energy is a convex combination of Ea1 and Ea2 that rises monotonically with temperature. An integral of log-concave functions need not itself be log-concave, so this does NOT prove c2 <= 0 for the integrated time-to-conversion, and the enumeration duly finds 1551 of 25080 cells with small positive c2. The refutation therefore rests on the enumeration, not on the lemma: no cell reproduces the observed curvature MAGNITUDE, whose smallest admissible value is 1.89e+06 while the largest positive curvature anywhere on the grid is 1.72e+05.",
+    "analytic_lemma_numeric_checks": 96,
+    "analytic_lemma_numeric_checks_passed": 96,
+    "cells_evaluated": 25080,
+    "cells_reproducing_both_rho_and_curvature_magnitude": 0,
+    "cells_reproducing_both_rho_and_curvature_sign": 0,
+    "cells_reproducing_observed_curvature_magnitude": 0,
+    "cells_reproducing_rho_in_band": 2200,
+    "cells_with_positive_curvature": 1551,
+    "description": "Exhaustively enumerates the Kamal-Sourour autocatalytic two-channel model over a pre-declared physical envelope and asks whether ANY cell reproduces BOTH the observed apparent-Ea deficit and the observed sign of the curvature.",
+    "example_rho_matching_cells": [
+      {
+        "Ea2_over_Ea1": 0.3,
+        "alpha_star": 0.4472135954999579,
+        "c2": -1074352.228937339,
+        "k2_over_k1_at_Tref": 0.3,
+        "m": 0.5,
+        "n": 1.5,
+        "rho": 0.912647122105392,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "Ea2_over_Ea1": 0.3,
+        "alpha_star": 0.3,
+        "c2": -1036283.850401367,
+        "k2_over_k1_at_Tref": 1.0,
+        "m": 1.0,
+        "n": 1.0,
+        "rho": 0.9110153541322575,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "Ea2_over_Ea1": 0.3,
+        "alpha_star": 0.4472135954999579,
+        "c2": -1333118.429808645,
+        "k2_over_k1_at_Tref": 1.0,
+        "m": 1.0,
+        "n": 1.0,
+        "rho": 0.8759631458204323,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "Ea2_over_Ea1": 0.3,
+        "alpha_star": 0.3,
+        "c2": -1088590.9571654925,
+        "k2_over_k1_at_Tref": 1.0,
+        "m": 1.0,
+        "n": 2.0,
+        "rho": 0.9063044137799685,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "Ea2_over_Ea1": 0.3,
+        "alpha_star": 0.4472135954999579,
+        "c2": -1435209.149312778,
+        "k2_over_k1_at_Tref": 1.0,
+        "m": 1.0,
+        "n": 2.0,
+        "rho": 0.8657562599553419,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "Ea2_over_Ea1": 0.3,
+        "alpha_star": 0.05,
+        "c2": -1087479.8716567133,
+        "k2_over_k1_at_Tref": 1.0,
+        "m": 0.5,
+        "n": 1.5,
+        "rho": 0.9107483134618598,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "Ea2_over_Ea1": 0.3,
+        "alpha_star": 0.1,
+        "c2": -1370302.226623064,
+        "k2_over_k1_at_Tref": 1.0,
+        "m": 0.5,
+        "n": 1.5,
+        "rho": 0.881349265634055,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "Ea2_over_Ea1": 0.3,
+        "alpha_star": 0.1,
+        "c2": -999659.9750544328,
+        "k2_over_k1_at_Tref": 3.0,
+        "m": 1.0,
+        "n": 1.0,
+        "rho": 0.9143291623411001,
+        "system_id": "dgeba-teta"
+      }
+    ],
+    "grid": {
+      "Ea1_source": "per-system published Ea from the locked dataset",
+      "Ea2_over_Ea1": [
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        1.2,
+        1.5,
+        2.0
+      ],
+      "alpha_star_also_includes_flory_stockmayer_gel_conversion": true,
+      "alpha_star_fixed": [
+        0.05,
+        0.1,
+        0.2,
+        0.3
+      ],
+      "k2_over_k1_at_Tref": [
+        0.1,
+        0.3,
+        1.0,
+        3.0,
+        10.0,
+        30.0,
+        100.0,
+        300.0
+      ],
+      "m_n_pairs": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          2.0
+        ],
+        [
+          0.5,
+          1.5
+        ],
+        [
+          2.0,
+          1.0
+        ],
+        [
+          1.5,
+          1.5
+        ]
+      ]
+    },
+    "model_max_curvature_c2": 172333.81854960675,
+    "model_rho_range": [
+      0.3194458810971655,
+      1.9693806953666033
+    ],
+    "observed_curvature_c2_mean": 3775873.3832494975,
+    "observed_curvature_magnitude_band": [
+      1887936.6916247488,
+      7551746.766498995
+    ],
+    "observed_over_model_max_curvature_ratio": 21.91022873529958,
+    "passed": true,
+    "refutation_basis": "joint criterion: no enumerated cell reproduces the apparent-Ea deficit together with the observed curvature, on either sign or magnitude",
+    "rho_band": [
+      0.85,
+      0.92
+    ],
+    "rho_range_among_positive_curvature_cells": [
+      0.9999999999999999,
+      1.9693806953666033
+    ],
+    "simpson_convergence_delta_c2_2001_vs_8001": 1.5576370060443878e-07,
+    "verdict": "REFUTED"
+  },
+  "G4_flory_stockmayer_alpha_star_invariance": {
+    "all_sign_invariant_and_negative": true,
+    "description": "Anchors the Kamal-Sourour threshold conversion to the structural Flory-Stockmayer gel conversion a_gel = 1/sqrt((f-1)(g-1)) with f = 2 for DGEBA and g the amine-hydrogen functionality, and confirms the refutation in G3 does not depend on the choice of threshold conversion.",
+    "epoxy_functionality_f": 2,
+    "passed": true,
+    "rows": [
+      {
+        "alpha_gel": 0.4472135954999579,
+        "amine_hydrogen_functionality_g": 6,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "alpha_gel": 0.5,
+        "amine_hydrogen_functionality_g": 5,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-deta"
+      },
+      {
+        "alpha_gel": 0.4082482904638631,
+        "amine_hydrogen_functionality_g": 7,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-tepa"
+      },
+      {
+        "alpha_gel": 0.5773502691896258,
+        "amine_hydrogen_functionality_g": 4,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-ipda"
+      },
+      {
+        "alpha_gel": 0.5773502691896258,
+        "amine_hydrogen_functionality_g": 4,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-pacm"
+      },
+      {
+        "alpha_gel": 0.5773502691896258,
+        "amine_hydrogen_functionality_g": 4,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-dach"
+      },
+      {
+        "alpha_gel": 0.5773502691896258,
+        "amine_hydrogen_functionality_g": 4,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-mxda"
+      },
+      {
+        "alpha_gel": 0.5773502691896258,
+        "amine_hydrogen_functionality_g": 4,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-mpda"
+      },
+      {
+        "alpha_gel": 0.5773502691896258,
+        "amine_hydrogen_functionality_g": 4,
+        "curvature_signs_over_alpha_star": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sign_invariant": true,
+        "system_id": "dgeba-mda"
+      }
+    ],
+    "systems_structurally_resolved": 9,
+    "systems_structurally_unresolved": [
+      "dgeba-amidoamine-adduct1",
+      "dgeba-amidoamine-adduct2",
+      "dgeba-mannich"
+    ],
+    "unresolved_reason": "proprietary oligomeric amidoamine adducts and the Mannich base (tertiary-amine catalytic cure) have no well-defined amine-hydrogen functionality; they are covered by the fixed alpha* sweep only"
+  },
+  "G5_vft_alternative": {
+    "caveat": "VFT is corroborated here as a DESCRIPTIVE form with the correct curvature sign and magnitude. This harness does NOT establish a free-volume mechanism; T0 is weakly identified from four temperatures per system.",
+    "curvature_sign_matches_all_systems": true,
+    "description": "Fits the Vogel-Fulcher-Tammann free-volume form with a single shared T0 across all systems and asks whether it reproduces both the sign and the magnitude of the observed curvature and the observed apparent-Ea deficit.",
+    "free_T0_per_system": [
+      {
+        "A": -2.0085033993501566,
+        "B": 452.0167453484197,
+        "T0_K": 212.89806271996858,
+        "log_rms": 0.029302185509395902,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "A": -1.1095854854457299,
+        "B": 366.92300768486024,
+        "T0_K": 221.72070365965752,
+        "log_rms": 0.0245124029403629,
+        "system_id": "dgeba-deta"
+      },
+      {
+        "A": -1.3153562428978105,
+        "B": 452.016749279148,
+        "T0_K": 212.8980623712067,
+        "log_rms": 0.029302185509395312,
+        "system_id": "dgeba-tepa"
+      },
+      {
+        "A": -6.297647363118195,
+        "B": 1845.1390836978173,
+        "T0_K": 139.78415524165072,
+        "log_rms": 0.031309522334241835,
+        "system_id": "dgeba-ipda"
+      },
+      {
+        "A": -1.9390611132035906,
+        "B": 850.2917369065101,
+        "T0_K": 187.79971003505042,
+        "log_rms": 0.03207678175171317,
+        "system_id": "dgeba-pacm"
+      },
+      {
+        "A": -2.3007372766852066,
+        "B": 786.0260123587893,
+        "T0_K": 189.86769816726374,
+        "log_rms": 0.02933755882489453,
+        "system_id": "dgeba-dach"
+      },
+      {
+        "A": -3.2511163373285665,
+        "B": 856.4787437882142,
+        "T0_K": 185.89440313590154,
+        "log_rms": 0.02729838533398263,
+        "system_id": "dgeba-mxda"
+      },
+      {
+        "A": -0.9129636190729792,
+        "B": 734.7337546806378,
+        "T0_K": 201.29726649334103,
+        "log_rms": 0.04113931864025555,
+        "system_id": "dgeba-mpda"
+      },
+      {
+        "A": -0.32733219053804197,
+        "B": 621.5699361549997,
+        "T0_K": 206.45463163445334,
+        "log_rms": 0.03421141992419669,
+        "system_id": "dgeba-mda"
+      },
+      {
+        "A": 0.15405078729308957,
+        "B": 400.7854318156368,
+        "T0_K": 216.9617951654773,
+        "log_rms": 0.03134402017579197,
+        "system_id": "dgeba-amidoamine-adduct1"
+      },
+      {
+        "A": -0.4825922113392537,
+        "B": 426.8216037699117,
+        "T0_K": 215.4696392278984,
+        "log_rms": 0.02981276662915085,
+        "system_id": "dgeba-amidoamine-adduct2"
+      },
+      {
+        "A": -1.9931593359091064,
+        "B": 347.23875814354324,
+        "T0_K": 222.51557474255105,
+        "log_rms": 0.024930169235161843,
+        "system_id": "dgeba-mannich"
+      }
+    ],
+    "global_T0_K": 203.5,
+    "global_T0_grid": [
+      150.0,
+      278.5,
+      0.5
+    ],
+    "global_T0_rows": [
+      {
+        "A": -2.6273344750655045,
+        "B": 561.2793311111118,
+        "log_rms": 0.03026730400042523,
+        "model_curvature_c2": 3642214.68110061,
+        "model_rho": 0.8651826984567855,
+        "system_id": "dgeba-teta"
+      },
+      {
+        "A": -2.334199751270184,
+        "B": 572.2029634744214,
+        "log_rms": 0.029695199062063183,
+        "model_curvature_c2": 3713099.55420978,
+        "model_rho": 0.8662705324302227,
+        "system_id": "dgeba-deta"
+      },
+      {
+        "A": -1.9341872945055645,
+        "B": 561.2793311111124,
+        "log_rms": 0.03026730400042494,
+        "model_curvature_c2": 3642214.6811005888,
+        "model_rho": 0.8812046002800593,
+        "system_id": "dgeba-tepa"
+      },
+      {
+        "A": -1.4998450713304898,
+        "B": 645.0487104763117,
+        "log_rms": 0.0447912449186912,
+        "model_curvature_c2": 4185805.093999994,
+        "model_rho": 0.8820481381739297,
+        "system_id": "dgeba-ipda"
+      },
+      {
+        "A": -0.7994577548785953,
+        "B": 620.2228508095784,
+        "log_rms": 0.033859924591741676,
+        "model_curvature_c2": 4024706.8572805035,
+        "model_rho": 0.8763709602939516,
+        "system_id": "dgeba-pacm"
+      },
+      {
+        "A": -1.3497161503198694,
+        "B": 596.009745109456,
+        "log_rms": 0.03075462717444656,
+        "model_curvature_c2": 3867584.8608559226,
+        "model_rho": 0.8711979261542024,
+        "system_id": "dgeba-dach"
+      },
+      {
+        "A": -2.008428976614211,
+        "B": 603.2153419541042,
+        "log_rms": 0.02968334083972915,
+        "model_curvature_c2": 3914342.917244217,
+        "model_rho": 0.8817304737832824,
+        "system_id": "dgeba-mxda"
+      },
+      {
+        "A": -0.7321278062751375,
+        "B": 700.6857527857212,
+        "log_rms": 0.04118551279567784,
+        "model_curvature_c2": 4546841.10776384,
+        "model_rho": 0.8735863510684978,
+        "system_id": "dgeba-mpda"
+      },
+      {
+        "A": -0.5571974591763688,
+        "B": 663.6525669882564,
+        "log_rms": 0.03431183606417955,
+        "model_curvature_c2": 4306527.941888926,
+        "model_rho": 0.865603268503406,
+        "system_id": "dgeba-mda"
+      },
+      {
+        "A": -0.7164400269243564,
+        "B": 550.9015111680189,
+        "log_rms": 0.03327386259118728,
+        "model_curvature_c2": 3574871.655873334,
+        "model_rho": 0.8981773227642418,
+        "system_id": "dgeba-amidoamine-adduct1"
+      },
+      {
+        "A": -1.2760274594301744,
+        "B": 564.848260479418,
+        "log_rms": 0.0314501153940002,
+        "model_curvature_c2": 3665373.92859208,
+        "model_rho": 0.8706840161970272,
+        "system_id": "dgeba-amidoamine-adduct2"
+      },
+      {
+        "A": -3.229580571654677,
+        "B": 553.5008111161749,
+        "log_rms": 0.03022087770623749,
+        "model_curvature_c2": 3591738.8517720806,
+        "model_rho": 0.977616425951168,
+        "system_id": "dgeba-mannich"
+      }
+    ],
+    "mean_log_rms_free_T0_per_system": 0.030381393067378595,
+    "mean_log_rms_linear_arrhenius": 0.06001575053274633,
+    "model_mean_curvature_c2": 3889610.1776401564,
+    "model_mean_rho": 0.8841393928380646,
+    "model_n_positive_curvature": 12,
+    "observed_mean_curvature_c2": 3775873.3832494975,
+    "observed_mean_rho": 0.8841154904929919,
+    "passed": true,
+    "pooled_log_rms_global_T0": 0.033636329390905335
+  },
+  "G6_legwise_bias_and_ceiling_breach": {
+    "bias_is_one_sided_above_anchor": true,
+    "description": "Decomposes the signed KPI's aggregate error by held-out temperature leg. The signed KPI evaluated its held_out_temperature_extrapolation_mape metric on the 30C leg only (sample_size 12); this checks every leg in the same locked dataset against the same acceptance ceiling.",
+    "direction": "Above the 73 degF anchor the incumbent under-predicts pot life in every system, i.e. it errs toward declaring the pot shorter than the compilation says. For a pot-life constraint gate this is the fail-safe direction, but the 40C magnitude exceeds the module's own acceptance ceiling.",
+    "kpi_ceiling": 0.25,
+    "kpi_metric_leg_identified_by_this_audit": "30C",
+    "kpi_metric_observed_signed": 0.15629611310973887,
+    "kpi_metric_sample_size": 12,
+    "legs": {
+      "10C": {
+        "breaches_kpi_held_out_temperature_ceiling": false,
+        "mape": 0.03445458260510905,
+        "mean_legwise_Ea_over_cited": 1.0289899540385248,
+        "mean_signed_relative_error": -0.02582889476942483,
+        "n_systems": 12,
+        "n_systems_pot_life_under_predicted": 8
+      },
+      "30C": {
+        "breaches_kpi_held_out_temperature_ceiling": false,
+        "mape": 0.15629611310973893,
+        "mean_legwise_Ea_over_cited": 0.6955502560974951,
+        "mean_signed_relative_error": -0.15629611310973893,
+        "n_systems": 12,
+        "n_systems_pot_life_under_predicted": 12
+      },
+      "40C": {
+        "breaches_kpi_held_out_temperature_ceiling": true,
+        "mape": 0.2512501178320526,
+        "mean_legwise_Ea_over_cited": 0.7744414130167457,
+        "mean_signed_relative_error": -0.2512501178320526,
+        "n_systems": 12,
+        "n_systems_pot_life_under_predicted": 12
+      }
+    },
+    "legs_breaching_ceiling": [
+      "40C"
+    ],
+    "passed": true
+  },
+  "G7_effective_independence": {
+    "cluster_conservative_sign_test_significant_at_0.05": false,
+    "cluster_conservative_sign_test_two_sided_p": 0.25,
+    "description": "The 12 systems are not 12 independent temperature measurements. Normalised log temperature profiles are clustered to bound how much independent shape information the compilation actually carries, and the curvature sign test is reported at both the naive and the cluster-conservative level.",
+    "duplicate_profile_pairs": [
+      [
+        "dgeba-teta",
+        "dgeba-tepa",
+        "dgeba-amidoamine-adduct2"
+      ],
+      [
+        "dgeba-amidoamine-adduct1",
+        "dgeba-mannich"
+      ]
+    ],
+    "n_distinct_normalised_profiles": 11,
+    "n_shape_clusters_at_tol_0.10": 3,
+    "n_systems": 12,
+    "naive_sign_test_two_sided_p": 0.00048828125,
+    "note": "The sign test is under-powered once shape clustering is credited. The load-bearing evidence for G2 is therefore the EFFECT SIZE against the rounding null (22.4 sigma), not the sign count.",
+    "passed": true,
+    "single_linkage_clusters": {
+      "0.02": [
+        [
+          "dgeba-teta",
+          "dgeba-tepa",
+          "dgeba-amidoamine-adduct2"
+        ],
+        [
+          "dgeba-amidoamine-adduct1",
+          "dgeba-mannich"
+        ],
+        [
+          "dgeba-dach"
+        ],
+        [
+          "dgeba-deta"
+        ],
+        [
+          "dgeba-ipda"
+        ],
+        [
+          "dgeba-mda"
+        ],
+        [
+          "dgeba-mpda"
+        ],
+        [
+          "dgeba-mxda"
+        ],
+        [
+          "dgeba-pacm"
+        ]
+      ],
+      "0.05": [
+        [
+          "dgeba-teta",
+          "dgeba-deta",
+          "dgeba-tepa",
+          "dgeba-amidoamine-adduct1",
+          "dgeba-amidoamine-adduct2",
+          "dgeba-mannich"
+        ],
+        [
+          "dgeba-pacm",
+          "dgeba-dach",
+          "dgeba-mxda"
+        ],
+        [
+          "dgeba-ipda"
+        ],
+        [
+          "dgeba-mda"
+        ],
+        [
+          "dgeba-mpda"
+        ]
+      ],
+      "0.10": [
+        [
+          "dgeba-teta",
+          "dgeba-deta",
+          "dgeba-tepa",
+          "dgeba-amidoamine-adduct1",
+          "dgeba-amidoamine-adduct2",
+          "dgeba-mannich"
+        ],
+        [
+          "dgeba-ipda",
+          "dgeba-pacm",
+          "dgeba-dach",
+          "dgeba-mxda"
+        ],
+        [
+          "dgeba-mpda",
+          "dgeba-mda"
+        ]
+      ]
+    }
+  },
+  "G8_leave_one_temperature_out": {
+    "M2_beats_M0": true,
+    "M2_beats_M1": false,
+    "description": "Out-of-sample head-to-head on all 48 locked points. Each fold holds out one temperature per system; the VFT shared T0 is re-estimated on the training fold only, so no held-out point informs any model parameter.",
+    "models": {
+      "M0_cited_Ea_arrhenius": "published Ea (not fitted) + 1 fitted log-offset",
+      "M1_free_arrhenius": "2 fitted parameters, ln t = a + b/T",
+      "M2_vft_global_T0_trainfold": "2 fitted parameters per system + 1 shared T0 fitted on the training fold"
+    },
+    "n_folds": 4,
+    "n_folds_with_T0_at_grid_boundary": 2,
+    "n_predictions": 48,
+    "operational_conclusion": "The curvature is real and in-sample detectable but is NOT yet exploitable out of sample. The shared VFT T0 is unidentified from three training temperatures: it swings over 98 K across folds and pins to the grid boundary in 2 of 4 folds. VFT improves on the incumbent at the two interpolating folds and is the WORST model on the 40C extrapolating fold (0.2413 vs 0.2003 incumbent), which is precisely the regime the gate needs. A free two-parameter Arrhenius, which carries no curvature at all, wins overall (0.1211). This audit therefore does NOT license replacing the incumbent scaler with a curvature-aware form; it establishes the diagnosis and the data requirement to act on it.",
+    "overall_mape": {
+      "M0_cited_Ea_arrhenius": 0.14620783859076691,
+      "M1_free_arrhenius": 0.12113253424545214,
+      "M2_vft_global_T0_trainfold": 0.1392811609428779
+    },
+    "passed": true,
+    "per_fold": {
+      "10C": {
+        "held_out_T_K": 283.15,
+        "mape": {
+          "M0_cited_Ea_arrhenius": 0.14479734115105555,
+          "M1_free_arrhenius": 0.21673635226852409,
+          "M2_vft_global_T0_trainfold": 0.13984417846278122
+        },
+        "train_fold_T0_hit_grid_boundary": true,
+        "train_fold_global_T0_K": 150.0
+      },
+      "22.78C": {
+        "held_out_T_K": 295.92777777777775,
+        "mape": {
+          "M0_cited_Ea_arrhenius": 0.17684988938557797,
+          "M1_free_arrhenius": 0.14375605863583518,
+          "M2_vft_global_T0_trainfold": 0.09973532319932922
+        },
+        "train_fold_T0_hit_grid_boundary": true,
+        "train_fold_global_T0_K": 150.0
+      },
+      "30C": {
+        "held_out_T_K": 303.15,
+        "mape": {
+          "M0_cited_Ea_arrhenius": 0.06286445053434754,
+          "M1_free_arrhenius": 0.013849277449646988,
+          "M2_vft_global_T0_trainfold": 0.07621905127546691
+        },
+        "train_fold_T0_hit_grid_boundary": false,
+        "train_fold_global_T0_K": 218.0
+      },
+      "40C": {
+        "held_out_T_K": 313.15,
+        "mape": {
+          "M0_cited_Ea_arrhenius": 0.20031967329208664,
+          "M1_free_arrhenius": 0.11018844862780235,
+          "M2_vft_global_T0_trainfold": 0.2413260908339342
+        },
+        "train_fold_T0_hit_grid_boundary": false,
+        "train_fold_global_T0_K": 248.5
+      }
+    },
+    "train_fold_T0_range_K": [
+      150.0,
+      248.5
+    ],
+    "winner": "M1_free_arrhenius"
+  },
+  "G9_applicability_domain_fail_closed": {
+    "all_probes_correct": true,
+    "description": "Confirms the temperature-scaling surface still refuses every out-of-envelope, non-finite, and non-physical input, so the curvature finding does not arrive alongside a loosened gate.",
+    "envelope_K": [
+      283.15,
+      313.15
+    ],
+    "fail_closed_rate": 1.0,
+    "n_hostile_probes": 14,
+    "n_hostile_probes_refused": 14,
+    "n_probes": 16,
+    "passed": true,
+    "probes": [
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "below_envelope_0C",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "above_envelope_60C",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "absolute_zero",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "negative_kelvin",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "nan_temperature",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "inf_temperature",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "missing_temperature",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "zero_activation_energy",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "negative_activation_energy",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "nan_activation_energy",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "missing_activation_energy",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "zero_reference_pot_life",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "negative_reference_pot_life",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": true,
+        "probe": "nan_reference_pot_life",
+        "refused": true,
+        "value": null
+      },
+      {
+        "correct": true,
+        "expected_refusal": false,
+        "probe": "in_envelope_control_30C",
+        "refused": false,
+        "value": 17.613271968993857
+      },
+      {
+        "correct": true,
+        "expected_refusal": false,
+        "probe": "in_envelope_control_10C",
+        "refused": false,
+        "value": 82.26475043146449
+      }
+    ]
+  },
+  "authority": "AUDIT_ONLY",
+  "claim_locks": {
+    "flips_scientific_readiness": false,
+    "human_review_performed": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_prior_signed_receipt": false,
+    "modifies_signed_phase0_kpi": false,
+    "organizational_independence_asserted": false,
+    "promotes_authority": false,
+    "scope": "marine anti-corrosion two-part DGEBA epoxy-amine pot life only"
+  },
+  "closes": [
+    "Explains the previously unexplained 0.884 apparent-Ea deficit as CURVATURE of ln(pot life) in 1/T, not as a uniform rescaling of the activation energy. The cold leg (10C vs the 73 degF anchor) recovers the cited chemical Ea to within 3% on average; the warm legs recover only 70-77% of it.",
+    "REFUTES Kamal-Sourour two-channel autocatalytic kinetics as the mechanism, by exhaustive enumeration over 25080 cells at every threshold conversion from 0.05 to the structural Flory-Stockmayer gel point: the model can reproduce the deficit or a positive curvature but never the observed curvature magnitude, falling short by a factor of 22.",
+    "Rules out reported-precision rounding of the supplier compilation as the source of the curvature, at 22.4 sigma over a hostile Arrhenius-truth null.",
+    "Replaces a single aggregate MAPE with a directional per-leg error budget, and establishes that the incumbent errs in the fail-safe direction above the anchor in 12/12 systems at both 30C and 40C.",
+    "Identifies that the module's held_out_temperature_extrapolation_mape metric was evaluated on the 30C leg only and that the 40C leg of the same locked dataset breaches the same 0.25 ceiling.",
+    "Establishes, out of sample on all 48 locked points, that no curvature-aware model currently earns its keep: the shared-T0 VFT loses to a plain two-parameter Arrhenius overall and is the worst model on the 40C extrapolating fold. The correct action on this evidence is to acquire data, not to change the scaler.",
+    "Adds three published baselines (Kamal-Sourour 1973, Flory 1941 / Stockmayer 1943, Vogel 1921 / Fulcher 1925 / Tammann-Hesse 1926) to a module whose only prior physical law was Arrhenius."
+  ],
+  "constants": {
+    "R_J_per_mol_K": 8.31446261815324,
+    "T_ref_F": 73.0,
+    "T_ref_K": 295.92777777777775,
+    "T_ref_derivation": "(73 degF - 32) * 5/9 + 273.15",
+    "T_zero_K": 273.15,
+    "temperatures_C": [
+      10.0,
+      22.78,
+      30.0,
+      40.0
+    ],
+    "temperatures_K": [
+      283.15,
+      295.92777777777775,
+      303.15,
+      313.15
+    ]
+  },
+  "dataset": {
+    "families": [
+      "aliphatic-polyamine",
+      "amidoamine-adduct",
+      "aromatic-amine",
+      "cycloaliphatic-amine",
+      "mannich-base"
+    ],
+    "license": "CC0-1.0",
+    "modified_by_this_harness": false,
+    "n_held_out_points": 36,
+    "n_points": 48,
+    "n_systems": 12,
+    "path": "amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+    "rights_status": "ACCEPTED",
+    "sha256": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1"
+  },
+  "does_not_close": [
+    "Does NOT establish a free-volume or WLF mechanism. VFT is corroborated only as a descriptive form with the correct curvature sign and magnitude in sample; T0 is weakly identified from four temperatures per system and pins to the search grid boundary in 2 of 4 leave-one-temperature-out folds.",
+    "Does NOT identify the true mechanism. It eliminates one named candidate (Kamal-Sourour) and one artefact (rounding); a temperature-dependent threshold conversion induced by the viscosity-based pot-life definition remains an untested and equally plausible explanation.",
+    "Does NOT validate the module. scientific_readiness stays UNVALIDATED and phase stays PRE_PHASE_0.",
+    "Does NOT amend the signed Phase-0 KPI, its acceptance bar, or its metrics. The 40C ceiling breach is recorded here as an audit finding for human review.",
+    "Cannot separate physics from compilation practice. The locked pot-life values are a curated supplier-TDS compilation, not independent measurements; only 11 distinct normalised temperature profiles and 3 shape clusters are present, so the cluster-conservative sign test is under-powered (two-sided p = 0.25) and the curvature may be a property of how the compilation was built.",
+    "Does NOT license replacing the incumbent with VFT in the gate. Any such change requires the owned multi-temperature CRO runs named in the Phase-1 charter."
+  ],
+  "gates_summary": {
+    "all_passed": true,
+    "n_gates": 9,
+    "n_passed": 9,
+    "per_gate": {
+      "G1_reproduces_signed_kpi": true,
+      "G2_curvature_is_real": true,
+      "G3_kamal_sourour_refuted": true,
+      "G4_flory_stockmayer_alpha_star_invariance": true,
+      "G5_vft_alternative": true,
+      "G6_legwise_bias_and_ceiling_breach": true,
+      "G7_effective_independence": true,
+      "G8_leave_one_temperature_out": true,
+      "G9_applicability_domain_fail_closed": true
+    }
+  },
+  "headline": "The ~11.6% apparent-activation-energy deficit in the signed Phase-0 pot-life Arrhenius KPI is not two-channel cure chemistry, and it is not a uniform rescaling of Ea: it is curvature. ln(pot life) vs 1/T is convex in 12/12 locked systems (mean c2 = 3.78e+06), an effect 22.4 sigma beyond a hostile null in which the truth is exactly Arrhenius and the only departure is reported-precision rounding (0/20000 draws). The Kamal-Sourour (1973) autocatalytic two-channel law, enumerated over 25080 cells spanning threshold conversions from 0.05 to the structural Flory-Stockmayer gel conversion, reproduces the deficit in 2200 cells but the observed curvature in NONE: its largest positive curvature anywhere on the grid is 1.72e+05, 22x too small. Kamal-Sourour is REFUTED as the mechanism. A Vogel-Fulcher-Tammann form with a single shared T0 = 203.5 K reproduces both the curvature sign (12/12) and the deficit (rho 0.8841 model vs 0.8841 observed) in sample, but is NOT exploitable out of sample: T0 is unidentified from three training temperatures and VFT is the worst of three models on the 40C extrapolating fold. Operationally the incumbent is near-unbiased below the 73 degF anchor (-2.6% at 10C) and one-sidedly conservative above it (-15.6% at 30C, -25.1% at 40C, under-predicting pot life in 12/12 systems at both), which is the fail-safe direction for a pot-life constraint; but the 40C leg's MAPE 0.2513 breaches the module's own 0.25 held-out-temperature ceiling, a ceiling the signed KPI evaluated on the 30C leg only (0.1563).",
+  "module": "amphora-cure-potlife-gate",
+  "non_circularity": "Activation energies are external published constants read from the locked known-answer file; they are never fitted. The curvature estimator is applied identically to the locked data and to every model's forward prediction. The Kamal-Sourour grid is enumerated over a pre-declared physical envelope, not tuned to the data. Flory-Stockmayer gel conversions come from amine-hydrogen functionality (molecular structure), not from any measurement.",
+  "per_system": [
+    {
+      "Ea_apparent_J_per_mol": 47555.58257087377,
+      "Ea_cited_J_per_mol": 55000.0,
+      "amine_hydrogen_functionality_g": 6,
+      "curvature_c2": 4048476.3786297212,
+      "flory_stockmayer_alpha_gel": 0.4472135954999579,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "aliphatic-polyamine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 56138.12163231837,
+        "30C": 36836.57512754453,
+        "40C": 40993.635859927475
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 1.0206931205876066,
+        "30C": 0.6697559114099005,
+        "40C": 0.7453388338168632
+      },
+      "linear_arrhenius_log_rms": 0.06219568484962343,
+      "pot_life_min": [
+        84.0,
+        30.0,
+        21.0,
+        12.0
+      ],
+      "quadratic_log_rms": 0.031443581213672966,
+      "rho_apparent_over_cited": 0.8646469558340685,
+      "system_id": "dgeba-teta"
+    },
+    {
+      "Ea_apparent_J_per_mol": 48439.44587069475,
+      "Ea_cited_J_per_mol": 56000.0,
+      "amine_hydrogen_functionality_g": 5,
+      "curvature_c2": 4823037.146392567,
+      "flory_stockmayer_alpha_gel": 0.5,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "aliphatic-polyamine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 57842.10959066127,
+        "30C": 38489.053907146656,
+        "40C": 40993.635859927475
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 1.0328948141189511,
+        "30C": 0.6873045340561903,
+        "40C": 0.7320292117844192
+      },
+      "linear_arrhenius_log_rms": 0.06957961144740878,
+      "pot_life_min": [
+        130.0,
+        45.0,
+        31.0,
+        18.0
+      ],
+      "quadratic_log_rms": 0.02746729536127937,
+      "rho_apparent_over_cited": 0.8649901048338348,
+      "system_id": "dgeba-deta"
+    },
+    {
+      "Ea_apparent_J_per_mol": 47555.58257087382,
+      "Ea_cited_J_per_mol": 54000.0,
+      "amine_hydrogen_functionality_g": 7,
+      "curvature_c2": 4048476.3786297594,
+      "flory_stockmayer_alpha_gel": 0.4082482904638631,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "aliphatic-polyamine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 56138.12163231837,
+        "30C": 36836.57512754453,
+        "40C": 40993.635859927475
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 1.0395948450429329,
+        "30C": 0.682158798658232,
+        "40C": 0.7591414048134718
+      },
+      "linear_arrhenius_log_rms": 0.06219568484962361,
+      "pot_life_min": [
+        168.0,
+        60.0,
+        42.0,
+        24.0
+      ],
+      "quadratic_log_rms": 0.03144358121367313,
+      "rho_apparent_over_cited": 0.8806589364976634,
+      "system_id": "dgeba-tepa"
+    },
+    {
+      "Ea_apparent_J_per_mol": 54836.00596854607,
+      "Ea_cited_J_per_mol": 62000.0,
+      "amine_hydrogen_functionality_g": 4,
+      "curvature_c2": 1662697.1721232815,
+      "flory_stockmayer_alpha_gel": 0.5773502691896258,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 59899.832169888716,
+        "30C": 45154.44524709211,
+        "40C": 51445.25542527855
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 0.9661263253207857,
+        "30C": 0.7282975039853566,
+        "40C": 0.8297621842786863
+      },
+      "linear_arrhenius_log_rms": 0.03854587419913588,
+      "pot_life_min": [
+        720.0,
+        240.0,
+        155.0,
+        76.0
+      ],
+      "quadratic_log_rms": 0.03162397298648961,
+      "rho_apparent_over_cited": 0.884451709170098,
+      "system_id": "dgeba-ipda"
+    },
+    {
+      "Ea_apparent_J_per_mol": 52635.9914791525,
+      "Ea_cited_J_per_mol": 60000.0,
+      "amine_hydrogen_functionality_g": 4,
+      "curvature_c2": 3061321.3867513705,
+      "flory_stockmayer_alpha_gel": 0.5773502691896258,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 59899.832169888716,
+        "30C": 41875.51206005088,
+        "40C": 47324.13919081113
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 0.9983305361648119,
+        "30C": 0.697925201000848,
+        "40C": 0.7887356531801856
+      },
+      "linear_arrhenius_log_rms": 0.05242010530970853,
+      "pot_life_min": [
+        1080.0,
+        360.0,
+        240.0,
+        125.0
+      ],
+      "quadratic_log_rms": 0.033186529300615955,
+      "rho_apparent_over_cited": 0.8772665246525416,
+      "system_id": "dgeba-pacm"
+    },
+    {
+      "Ea_apparent_J_per_mol": 50575.56962127956,
+      "Ea_cited_J_per_mol": 58000.0,
+      "amine_hydrogen_functionality_g": 4,
+      "curvature_c2": 3036528.6498927325,
+      "flory_stockmayer_alpha_gel": 0.5773502691896258,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 57579.346783736975,
+        "30C": 40592.54251319401,
+        "40C": 45397.71456394022
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 0.9927473583402927,
+        "30C": 0.699871422641276,
+        "40C": 0.782719216619659
+      },
+      "linear_arrhenius_log_rms": 0.05048225942097634,
+      "pot_life_min": [
+        460.0,
+        160.0,
+        108.0,
+        58.0
+      ],
+      "quadratic_log_rms": 0.03047126833612688,
+      "rho_apparent_over_cited": 0.8719925796772338,
+      "system_id": "dgeba-dach"
+    },
+    {
+      "Ea_apparent_J_per_mol": 51197.1519477636,
+      "Ea_cited_J_per_mol": 58000.0,
+      "amine_hydrogen_functionality_g": 4,
+      "curvature_c2": 2913382.33808033,
+      "flory_stockmayer_alpha_gel": 0.5773502691896258,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "aromatic-amine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 57842.10959066127,
+        "30C": 41875.51206005088,
+        "40C": 46263.09314702548
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 0.9972777515631253,
+        "30C": 0.7219915872422565,
+        "40C": 0.7976395370176806
+      },
+      "linear_arrhenius_log_rms": 0.04789167548787448,
+      "pot_life_min": [
+        260.0,
+        90.0,
+        60.0,
+        32.0
+      ],
+      "quadratic_log_rms": 0.028326361726504948,
+      "rho_apparent_over_cited": 0.8827095163407518,
+      "system_id": "dgeba-mxda"
+    },
+    {
+      "Ea_apparent_J_per_mol": 59419.04144496565,
+      "Ea_cited_J_per_mol": 68000.0,
+      "amine_hydrogen_functionality_g": 4,
+      "curvature_c2": 4191569.832487124,
+      "flory_stockmayer_alpha_gel": 0.5773502691896258,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "aromatic-amine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 69163.26740982028,
+        "30C": 45376.78703454441,
+        "40C": 52237.11110301032
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 1.0171068736738278,
+        "30C": 0.6673056916844766,
+        "40C": 0.768192810338387
+      },
+      "linear_arrhenius_log_rms": 0.07024888395631172,
+      "pot_life_min": [
+        3200.0,
+        900.0,
+        580.0,
+        280.0
+      ],
+      "quadratic_log_rms": 0.042990051910053825,
+      "rho_apparent_over_cited": 0.8738094330142008,
+      "system_id": "dgeba-mpda"
+    },
+    {
+      "Ea_apparent_J_per_mol": 56257.77934625629,
+      "Ea_cited_J_per_mol": 65000.0,
+      "amine_hydrogen_functionality_g": 4,
+      "curvature_c2": 4322981.178239596,
+      "flory_stockmayer_alpha_gel": 0.5773502691896258,
+      "flory_stockmayer_resolved": true,
+      "hardener_family": "aromatic-amine",
+      "legwise_Ea_J_per_mol": {
+        "10C": 65644.42220436565,
+        "30C": 44049.86016828274,
+        "40C": 49150.461252387046
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 1.0099141877594715,
+        "30C": 0.6776901564351191,
+        "40C": 0.7561609423444161
+      },
+      "linear_arrhenius_log_rms": 0.06781838947802804,
+      "pot_life_min": [
+        2400.0,
+        720.0,
+        470.0,
+        240.0
+      ],
+      "quadratic_log_rms": 0.03627658475898114,
+      "rho_apparent_over_cited": 0.8655042976347121,
+      "system_id": "dgeba-mda"
+    },
+    {
+      "Ea_apparent_J_per_mol": 46660.0772462503,
+      "Ea_cited_J_per_mol": 52000.0,
+      "amine_hydrogen_functionality_g": null,
+      "curvature_c2": 4232417.260902603,
+      "flory_stockmayer_alpha_gel": null,
+      "flory_stockmayer_resolved": false,
+      "hardener_family": "amidoamine-adduct",
+      "legwise_Ea_J_per_mol": {
+        "10C": 55703.67170889221,
+        "30C": 35210.12072010541,
+        "40C": 39767.84198061388
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 1.0712244559402349,
+        "30C": 0.6771177061558733,
+        "40C": 0.7647661919348823
+      },
+      "linear_arrhenius_log_rms": 0.06546283778110074,
+      "pot_life_min": [
+        500.0,
+        180.0,
+        128.0,
+        74.0
+      ],
+      "quadratic_log_rms": 0.03373673108740176,
+      "rho_apparent_over_cited": 0.8973091778125057,
+      "system_id": "dgeba-amidoamine-adduct1"
+    },
+    {
+      "Ea_apparent_J_per_mol": 47847.32191894059,
+      "Ea_cited_J_per_mol": 55000.0,
+      "amine_hydrogen_functionality_g": null,
+      "curvature_c2": 4247619.678223627,
+      "flory_stockmayer_alpha_gel": null,
+      "flory_stockmayer_resolved": false,
+      "hardener_family": "amidoamine-adduct",
+      "legwise_Ea_J_per_mol": {
+        "10C": 56783.37386023268,
+        "30C": 36836.57512754453,
+        "40C": 40993.635859927475
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 1.0324249792769578,
+        "30C": 0.6697559114099005,
+        "40C": 0.7453388338168632
+      },
+      "linear_arrhenius_log_rms": 0.06483707223469812,
+      "pot_life_min": [
+        340.0,
+        120.0,
+        84.0,
+        48.0
+      ],
+      "quadratic_log_rms": 0.032155563403154494,
+      "rho_apparent_over_cited": 0.8699513076171017,
+      "system_id": "dgeba-amidoamine-adduct2"
+    },
+    {
+      "Ea_apparent_J_per_mol": 46852.576455897135,
+      "Ea_cited_J_per_mol": 48000.0,
+      "amine_hydrogen_functionality_g": null,
+      "curvature_c2": 4721973.198641265,
+      "flory_stockmayer_alpha_gel": null,
+      "flory_stockmayer_resolved": false,
+      "hardener_family": "mannich-base",
+      "legwise_Ea_J_per_mol": {
+        "10C": 56138.12163231837,
+        "30C": 36836.57512754453,
+        "40C": 39526.66254026081
+      },
+      "legwise_Ea_over_cited": {
+        "10C": 1.1695442006732994,
+        "30C": 0.7674286484905111,
+        "40C": 0.8234721362554336
+      },
+      "linear_arrhenius_log_rms": 0.06851092737846638,
+      "pot_life_min": [
+        42.0,
+        15.0,
+        10.5,
+        6.2
+      ],
+      "quadratic_log_rms": 0.027863213122449697,
+      "rho_apparent_over_cited": 0.9760953428311903,
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "phase1_requirement": {
+    "blocking_for": "any curvature-aware or VFT-based replacement of the incumbent scaler",
+    "gap": "Discriminating a genuine non-Arrhenius pot-life law from an artefact of supplier-TDS compilation practice requires independently mixed, independently measured pot-life replicates at four or more temperatures per system.",
+    "minimum_design": ">= 5 temperatures spanning 5-45 C, >= 3 independent mixes per temperature per system, >= 6 systems, gel time by a single declared method (ASTM D2471 or D2196), so that the quadratic curvature term is estimable per system with residual degrees of freedom.",
+    "why_current_data_cannot_settle_it": "All four temperatures per system come from one compiled source family, 11 of 12 normalised profiles are distinct, and single-linkage clustering at tolerance 0.10 leaves only 3 shape clusters, so the cluster-conservative sign test has two-sided p = 0.250 and is under-powered."
+  },
+  "purpose": "Determine the mechanism behind the ~11.6% deficit between the activation energy recovered from the locked pot-life data and the externally published chemical Ea used by the signed Phase-0 Arrhenius KPI, by implementing and falsifying two published baselines the module did not previously contain.",
+  "run_type": "AUDIT_ONLY_MECHANISM_DIAGNOSTIC",
+  "schema": "amphora.cure-potlife-gate.curvature-mechanism-diagnostic.v1",
+  "theory_reference": {
+    "arrhenius": "Arrhenius S., Z Phys Chem 4:226 (1889)",
+    "flory": "Flory P.J., J Am Chem Soc 63:3083-3090 (1941), doi:10.1021/ja01856a061",
+    "fulcher": "Fulcher G.S., J Am Ceram Soc 8:339-355 (1925), doi:10.1111/j.1151-2916.1925.tb16731.x",
+    "gas_constant": "R = 8.31446261815324 J/(mol K), CODATA 2018 (exact, SI-2019)",
+    "kamal_sourour": "Kamal M.R. & Sourour S., Polym Eng Sci 13(1):59-64 (1973), doi:10.1002/pen.760130110",
+    "stockmayer": "Stockmayer W.H., J Chem Phys 11:45-55 (1943), doi:10.1063/1.1723803",
+    "tammann_hesse": "Tammann G. & Hesse W., Z Anorg Allg Chem 156:245-257 (1926), doi:10.1002/zaac.19261560121",
+    "vogel": "Vogel H., Phys Z 22:645-646 (1921)",
+    "wlf": "Williams M.L., Landel R.F., Ferry J.D., J Am Chem Soc 77:3701-3707 (1955), doi:10.1021/ja01619a008"
+  }
+}

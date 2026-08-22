@@ -1,0 +1,12 @@
+{
+  "schema": "amphora.viscosity-score.w-visc2-state.v1",
+  "campaign_item_id": "W-VISC2",
+  "last_fire_date": "2026-08-14",
+  "last_fire_id": "20260814T010001-380476-43200a19dbd1",
+  "status": "done",
+  "summary": "Landed the W-VISC1 Krieger-Dougherty / Finke et al. 2021 benchmark as a signed done receipt under the corrected W-VISC2 criterion. Re-verified fresh rather than carried forward on trust: (1) re-ran run_kd_ccby_reachability_probe.py byte-for-byte, reproduced diagnostic sha256 5e226610993205de8a9d2f017bad792f077e66bce18b8c312c51dd2954b237ee matching W-VISC1 canonical+runB exactly, plus one more independent replay (4 total independent executions across both fires); (2) independently pixel-scanned fig8.jpg and corroborated all 5 used digitized points within a few percent using only the published axis calibration, and confirmed the 4 excluded points genuinely cluster too tightly to separate; (3) built and ran a positive control (10x decimal-shift defect planted on the wt_pct=15.0 point) that is caught by both a monotonicity physical-admissibility check and a large R^2 collapse (0.797->0.634 fixed-Einstein, 0.998->0.865 free-intrinsic), proving the harness is sensitive to bad data.",
+  "verdict": "CLAIM_SURVIVED",
+  "receipt_this_fire": "amphora-viscosity-score/evidence/phase0/repairs/W-VISC2/done/krieger-dougherty-benchmark-landed-v1/krieger-dougherty-benchmark-landed-receipt.v1.dsse.json",
+  "does_not_change": "W-VISC1 attempt receipt remains unmodified and valid. C9 fire 1 HERSCHEL_BULKLEY and C9 fire 2 Reynolds-2024 BLOCKED_RIGHTS receipts unmodified. Master manifest untouched. No KPI promoted, no phase flip.",
+  "residual_open_item": "The dilute-regime non-identifiability (every tested phi 0.041-0.089 sits far below any physically plausible phi_max 0.5-0.74) is a structural dataset-loading-range limitation, not a digitization artifact, and remains unresolved. Decisively probing KRIEGER_DOUGHERTY near packing would require a rights-clean dataset spanning toward phi_max; none was found this fire and none was searched for (out of scope for landing already-completed work)."
+}

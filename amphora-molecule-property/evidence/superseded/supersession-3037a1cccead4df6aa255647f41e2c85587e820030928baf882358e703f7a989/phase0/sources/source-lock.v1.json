@@ -1,0 +1,87 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-molecule-property/evidence/phase0",
+  "imported_locks": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "db1fb8a4c257c82740176aedeecd8c34a9ae1e6b6e824f08535e06fcc0c4abf6",
+      "source_path": "config/program/molecule-property-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "6d6be71599ef32e44682ab762d2f8603da633a597d00ba0cdec129dd2e670dfa",
+      "source_path": "config/program/molecule-property-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "cae7d558ccdcd2e5909c14a58e1a0f33f72eb2be5207f3caf8be18d9c2a1070d",
+      "source_path": "config/benchmark-locks/amphora-molecule-property.v1.json"
+    }
+  ],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-molecule-property",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/eew_ahew_benchmark.v1.json",
+      "observed_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "954d0b5a9c0f6437cf62cbe9901227d221750d6cc5e4d51af3927169cf718ef7",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/locks/openpoly_properties-8de5baf76f79610f.json",
+      "observed_sha256": "954d0b5a9c0f6437cf62cbe9901227d221750d6cc5e4d51af3927169cf718ef7",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/feedback_v1_property_benchmark.json",
+      "observed_sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

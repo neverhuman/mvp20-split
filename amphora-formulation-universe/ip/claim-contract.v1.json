@@ -1,0 +1,43 @@
+{
+  "abstain_outside_applicability": true,
+  "applicability_domain": [
+    "registered amphora-formulation-universe contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_locks": {
+    "enumeration_is_not_performance_evidence": true,
+    "fto_not_performed": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_procurement_authority": true,
+    "no_product_performance_authority": true,
+    "no_product_release_or_qualification": true,
+    "no_qualification_authority": true,
+    "no_ranking_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_superiority_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true
+  },
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "module_class": "DETERMINISTIC_CONTROL",
+  "module_id": "amphora-formulation-universe",
+  "prohibited_authorities": [
+    "RANKING",
+    "OPTIMIZER_USE",
+    "RELEASE",
+    "QUALIFICATION",
+    "PATENTABILITY",
+    "FTO",
+    "PROCUREMENT",
+    "REGULATORY",
+    "SAFETY",
+    "PRODUCT_PERFORMANCE"
+  ],
+  "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+  "schema": "amphora.module-claim-contract.v1",
+  "scientific_readiness_ceiling": "NOT_APPLICABLE"
+}

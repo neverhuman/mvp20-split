@@ -1,0 +1,51 @@
+{
+  "H0": "evidence/phase0/kpis/ip-fto-guard-technical-landscape-kpi.v1.json's checked-in SHA-256 pins (benchmark_result_sha256, benchmark_lock_sha256, dataset_fixture_sha256) currently identify the real, live files on disk.",
+  "H0_verdict": "REFUTED",
+  "asserted_pins": {
+    "kpi_benchmark_lock_sha256": "a58cf06f6ac0bc8f5139a76444dbf839e1a76d52f33df3e810558be69d066da4",
+    "kpi_benchmark_result_sha256": "bbd8a9675d78bb65d1dfee9209b441bb5cb3ec4c28e2871cf8febf0f7168eec3",
+    "kpi_dataset_fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+  },
+  "consistency_checks": {
+    "kpi_landscape_pin_matches_live": true,
+    "kpi_lock_pin_matches_live": true,
+    "kpi_result_pin_is_the_known_pre_R_B01_stale_value": true,
+    "kpi_result_pin_matches_live": false
+  },
+  "does_not_close": [
+    "Does not modify or supersede the pinned patent_landscape.json fixture, the manifest, or any signed Phase-0 KPI/evaluation.",
+    "Does not establish legal FTO, patentability, or counsel review status.",
+    "Does not address the still-open kpi-recompute-consistency-v1 finding (54 vs 75 unresolved_technical_categories semantics) -- unrelated defect, separately tracked.",
+    "Does not re-verify config/module-evidence-inventory.json (outside this module's subtree; already flagged as a portfolio-wide followup by PIN-01)."
+  ],
+  "fail_closed_mutation_demo": {
+    "description": "Compare a deliberately wrong 64-char sentinel pin (all zeros) against the live result.v1.json hash: must be flagged as a mismatch (mutation caught). Separately confirm the benchmark_lock_sha256 pin, which really does match live, is NOT flagged (no false positive).",
+    "lock_pin_self_consistent_no_false_positive": true,
+    "mutated_pin": "0000000000000000000000000000000000000000000000000000000000000000",
+    "mutation_would_be_caught": true
+  },
+  "headline": "H0 'evidence/phase0/kpis/ip-fto-guard-technical-landscape-kpi.v1.json's checked-in SHA-256 pins (benchmark_result_sha256, benchmark_lock_sha256, dataset_fixture_sha256) currently identify the real, live files on disk.' is REFUTED: benchmark_result_sha256 pinned in the KPI receipt is bbd8a9675d78bb65d1dfee9209b441bb5cb3ec4c28e2871cf8febf0f7168eec3, but the live evidence/phase0/benchmark/result.v1.json file hashes to a6cb423d8858421e4b0e8c96de063da7eaaa97916a1da71523ffaae2788b6a77. The pinned value is exactly the SAME stale pre-R-B01 value (bbd8a9675d78bb65d1dfee9209b441bb5cb3ec4c28e2871cf8febf0f7168eec3) that the 2026-08-16 PIN-01 audit already found and fixed in docs/mission.md and docs/capability-profile.json -- but PIN-01 never touched this KPI receipt file, so the same known-stale hash survives here, in the one artifact this module's own mission.md prose names as 'The Phase-0 KPI receipt' and that is explicitly 'awaiting PHASE0_EVALUATOR ... signatures' before Phase-0 promotion. benchmark_lock_sha256 (pin=a58cf06f6ac0bc8f5139a76444dbf839e1a76d52f33df3e810558be69d066da4, live=a58cf06f6ac0bc8f5139a76444dbf839e1a76d52f33df3e810558be69d066da4) and dataset_fixture_sha256 (pin=52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc, live=52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc) both remain correctly pinned -- this is a single-field, single-file defect, not a wholesale KPI failure.",
+  "inputs": {
+    "kpi_receipt_path": "amphora-ip-fto-guard/evidence/phase0/kpis/ip-fto-guard-technical-landscape-kpi.v1.json",
+    "landscape_json_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+    "lock_json_path": "amphora-ip-fto-guard/evidence/phase0/benchmark/benchmark-lock.v1.json",
+    "result_json_path": "amphora-ip-fto-guard/evidence/phase0/benchmark/result.v1.json"
+  },
+  "live_hashes": {
+    "benchmark_lock_v1_json_sha256": "a58cf06f6ac0bc8f5139a76444dbf839e1a76d52f33df3e810558be69d066da4",
+    "patent_landscape_json_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "result_v1_json_sha256": "a6cb423d8858421e4b0e8c96de063da7eaaa97916a1da71523ffaae2788b6a77"
+  },
+  "prior_repair_scope_cross_check": {
+    "cap_profile_result_pin_fields_present": [
+      "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
+    ],
+    "mission_md_asserts_live_pin": true,
+    "mission_md_still_asserts_stale_pin": false,
+    "note": "mission.md and capability-profile.json were corrected by PIN-01 and (as expected) no longer assert the stale value; the defect found by this audit is confined to the KPI receipt file, which PIN-01's own receipt did not enumerate as in-scope.",
+    "pin01_receipt": "amphora-ip-fto-guard/evidence/audit/pinned-source-hash-integrity-v1/pinned-source-hash-integrity-receipt.v1.dsse.json"
+  },
+  "purpose": "Determine whether the checked-in SHA-256 pins inside evidence/phase0/kpis/ip-fto-guard-technical-landscape-kpi.v1.json -- the module's own named 'Phase-0 KPI receipt', still awaiting evaluator/reviewer signature -- currently identify the real, live files on disk, independent of and in addition to the already-fixed mission.md / capability-profile.json pins.",
+  "schema": "amphora.ip-fto-guard.kpi-benchmark-pin-integrity-diagnostic.v1",
+  "study_id": "IP_FTO_GUARD_KPI_BENCHMARK_PIN_INTEGRITY_V1"
+}

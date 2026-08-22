@@ -1,0 +1,580 @@
+{
+  "authority": "AUDIT_ONLY",
+  "closes": "Establishes, by independent non-runtime re-derivation with G0 byte-exact parity against the shipped Rust hash anchors, that amphora-run-provenance's verify_run is an internal-consistency predicate (15/15 non-recomputing mutations fail closed) and NOT a tamper-evidence predicate (0/8 consistent re-forges detected); identifies root_hash as the unique minimally sufficient 32-byte external anchor (8/8, versus at most 6/8 for any single component hash); separates anchor COMPLETENESS from anchor LOCALIZATION (root-only localizes 0/8, four component hashes localize 8/8); and shows constructively that a DSSE Ed25519 attestation over {run_id, root_hash} restores 8/8 detection in-band under cold key custody but 0/8 under hot-key custody on the producing host -- converting the module's open 'Phase-1 controlled-key signing pipeline' item from a checkbox into a testable key-custody requirement with a measured threat model.",
+  "counts": {
+    "g0_anchor_checks": 13,
+    "g0_pass": 13,
+    "g1_fail_closed": 15,
+    "g1_single_mutation_probes": 15,
+    "g2_detected_by_internal_verify": 0,
+    "g2_reforge_scenarios": 8,
+    "g3_detected_by_external_root_anchor": 8,
+    "g5_localized_by_component_anchors": 8,
+    "g5_localized_by_root_anchor_only": 0,
+    "g6_detected_cold_key_custody": 8,
+    "g6_detected_hot_key_on_producing_host": 0
+  },
+  "does_not_close": [
+    "Does NOT execute the live Rust runtime; live re-exec parity of RunArchive create/append/final_state/verify_run and the full RunArchiveError taxonomy remains the Phase-1 ceiling.",
+    "Does NOT change the shipped Haber-Stornetta linear-chain scheme, the pinned signature_status, or promotion_receipt_eligible.",
+    "Does NOT constitute the Phase-1 controlled-key signing pipeline: the DSSE construction in G6 is an AUDIT_ONLY demonstration under the audit key, not a production attestation service, and no independent witness or gossip protocol (Crosby-Wallach) is implemented.",
+    "Does NOT model an adversary with sub-SHA-256 collision capability; all findings are under the standard FIPS 180-4 collision-resistance assumption.",
+    "Grants no batch-release, manufacturing-qualification, regulatory, safety, or product-performance authority. Does not promote the module or flip scientific_readiness."
+  ],
+  "g0_anchor_parity": [
+    {
+      "anchor": "shipped_diagnostic_receipt_stable_hash",
+      "match": true,
+      "recomputed": "3d2ce808d69efbec0d6fb29eec4b945bff5ff3bd3c14bad1cfae3f10cfc37fd7",
+      "shipped": "3d2ce808d69efbec0d6fb29eec4b945bff5ff3bd3c14bad1cfae3f10cfc37fd7"
+    },
+    {
+      "anchor": "shipped_bundle_raw_sha256",
+      "match": true,
+      "recomputed": "19b8e11a86370ecdb8a0a283cd2ded5e944d551a74e963af0ca7ae7d140eb81b",
+      "shipped": "19b8e11a86370ecdb8a0a283cd2ded5e944d551a74e963af0ca7ae7d140eb81b"
+    },
+    {
+      "anchor": "shipped_benchmark_lock_raw_sha256",
+      "match": true,
+      "recomputed": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360",
+      "shipped": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360"
+    },
+    {
+      "anchor": "bundle_parent_binding::benchmark_lock_hash",
+      "match": true,
+      "recomputed": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360",
+      "shipped": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360"
+    },
+    {
+      "anchor": "bundle_parent_binding::claim_contract_hash",
+      "match": true,
+      "recomputed": "62257f5b79abc48a7550e785046ef30fd5e352c0b3ff971a90c1d0aeaf3fb590",
+      "shipped": "62257f5b79abc48a7550e785046ef30fd5e352c0b3ff971a90c1d0aeaf3fb590"
+    },
+    {
+      "anchor": "bundle_parent_binding::dataset_manifest_hash",
+      "match": true,
+      "recomputed": "06ce86d9a8e69fd3761be8b236274df85570f15e2e86f2b314bfc45efc43de18",
+      "shipped": "06ce86d9a8e69fd3761be8b236274df85570f15e2e86f2b314bfc45efc43de18"
+    },
+    {
+      "anchor": "bundle_parent_binding::disclosure_log_hash",
+      "match": true,
+      "recomputed": "75e21f71841efe26ad750bd0dd192b2abf3af287fd6799be58f2781ef1d020f0",
+      "shipped": "75e21f71841efe26ad750bd0dd192b2abf3af287fd6799be58f2781ef1d020f0"
+    },
+    {
+      "anchor": "bundle_parent_binding::prior_art_hash",
+      "match": true,
+      "recomputed": "06599cf22e413a60505407890fd984fe8b68ec9d8236d8da2191169ccc0b55d5",
+      "shipped": "06599cf22e413a60505407890fd984fe8b68ec9d8236d8da2191169ccc0b55d5"
+    },
+    {
+      "anchor": "bundle_parent_binding::promotion_policy_hash",
+      "match": true,
+      "recomputed": "f3dfca41671e41c03e8216339af5c710b1af471776c21e94625f9eaa1749f290",
+      "shipped": "f3dfca41671e41c03e8216339af5c710b1af471776c21e94625f9eaa1749f290"
+    },
+    {
+      "anchor": "bundle_parent_binding::source_lock_hash",
+      "match": true,
+      "recomputed": "8195ce6828f3e52fec732a60dbdb1413d564beed03e7071f3e62bab4e820dfa0",
+      "shipped": "8195ce6828f3e52fec732a60dbdb1413d564beed03e7071f3e62bab4e820dfa0"
+    },
+    {
+      "anchor": "bundle_parent_binding::split_manifest_hash",
+      "match": true,
+      "recomputed": "7ec2650109dd1f37d04cc7b6a13a404174477319313f799680641ab3d2f280d1",
+      "shipped": "7ec2650109dd1f37d04cc7b6a13a404174477319313f799680641ab3d2f280d1"
+    },
+    {
+      "anchor": "bundle_parent_binding::technical_dossier_hash",
+      "match": true,
+      "recomputed": "571f698d988c156f520d092f4a246ad4b9391698ada94bb31009d08accb02c39",
+      "shipped": "571f698d988c156f520d092f4a246ad4b9391698ada94bb31009d08accb02c39"
+    },
+    {
+      "anchor": "shipped_replay_identical",
+      "match": true,
+      "recomputed": "3d2ce808d69efbec0d6fb29eec4b945bff5ff3bd3c14bad1cfae3f10cfc37fd7",
+      "shipped": "3d2ce808d69efbec0d6fb29eec4b945bff5ff3bd3c14bad1cfae3f10cfc37fd7"
+    }
+  ],
+  "g1_single_mutation_probes": [
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "manifest_bytes_mutated_no_rehash"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "events_extra_line_appended_no_rehash"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "final_state_mutated_no_rehash"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "provenance_root_hash_tampered"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "provenance_events_sha256_tampered"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "provenance_manifest_sha256_tampered"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "provenance_event_chain_root_tampered"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "provenance_final_state_hash_tampered"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "provenance_run_id_tampered"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "provenance_root_hash_removed"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "event_sequence_gap"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "event_payload_mutated_no_rehash"
+    },
+    {
+      "expected_variant": "Io",
+      "fail_closed": true,
+      "observed_variant": "Io",
+      "probe": "provenance_json_missing"
+    },
+    {
+      "expected_variant": "Io",
+      "fail_closed": true,
+      "observed_variant": "Io",
+      "probe": "manifest_json_missing"
+    },
+    {
+      "expected_variant": "Io",
+      "fail_closed": true,
+      "observed_variant": "Io",
+      "probe": "events_jsonl_missing"
+    }
+  ],
+  "g2_g5_consistent_reforge_probes": [
+    {
+      "anchor_field_divergence": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": false,
+        "manifest_sha256": false,
+        "root_hash": true,
+        "run_id": false
+      },
+      "component_anchors_diverged": [
+        "events_sha256",
+        "event_chain_root"
+      ],
+      "detected_by_external_root_anchor": true,
+      "detected_by_internal_verify": false,
+      "expected_component_anchors": [
+        "event_chain_root",
+        "events_sha256"
+      ],
+      "forged_root_hash": "34a0273fe08438703b8a0abf616445d84ef8f10765341deccdabbf746ab3df9f",
+      "internal_verify_variant": "Ok",
+      "localized_by_component_anchors": true,
+      "localized_by_root_anchor_only": false,
+      "mutated_component": "events",
+      "scenario": "event_payload_score_forged",
+      "semantic_harm": "Falsifies a recorded barrier score for one DGEBA-polyamide candidate."
+    },
+    {
+      "anchor_field_divergence": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "root_hash": true,
+        "run_id": false
+      },
+      "component_anchors_diverged": [
+        "manifest_sha256",
+        "events_sha256",
+        "event_chain_root",
+        "final_state_hash"
+      ],
+      "detected_by_external_root_anchor": true,
+      "detected_by_internal_verify": false,
+      "expected_component_anchors": [
+        "event_chain_root",
+        "events_sha256",
+        "final_state_hash",
+        "manifest_sha256"
+      ],
+      "forged_root_hash": "1f60dee4441a024dd54ba47b87c3aa025da3e6ecff2c2cbaef4fab391357013f",
+      "internal_verify_variant": "Ok",
+      "localized_by_component_anchors": true,
+      "localized_by_root_anchor_only": false,
+      "mutated_component": "events+manifest+final_state",
+      "scenario": "unfavourable_event_deleted_and_renumbered",
+      "semantic_harm": "Suppresses one SCORED event and renumbers the chain so the sequence stays contiguous."
+    },
+    {
+      "anchor_field_divergence": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "root_hash": true,
+        "run_id": false
+      },
+      "component_anchors_diverged": [
+        "manifest_sha256",
+        "events_sha256",
+        "event_chain_root",
+        "final_state_hash"
+      ],
+      "detected_by_external_root_anchor": true,
+      "detected_by_internal_verify": false,
+      "expected_component_anchors": [
+        "event_chain_root",
+        "events_sha256",
+        "final_state_hash",
+        "manifest_sha256"
+      ],
+      "forged_root_hash": "f36e7d0a9e8ddc47000f51e961ac117539bc2d5b5ab50eb9c937f756d29f9a2c",
+      "internal_verify_variant": "Ok",
+      "localized_by_component_anchors": true,
+      "localized_by_root_anchor_only": false,
+      "mutated_component": "events+manifest+final_state",
+      "scenario": "fabricated_event_inserted",
+      "semantic_harm": "Injects a never-executed SCORED event with a favourable barrier score."
+    },
+    {
+      "anchor_field_divergence": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": false,
+        "manifest_sha256": false,
+        "root_hash": true,
+        "run_id": false
+      },
+      "component_anchors_diverged": [
+        "events_sha256",
+        "event_chain_root"
+      ],
+      "detected_by_external_root_anchor": true,
+      "detected_by_internal_verify": false,
+      "expected_component_anchors": [
+        "event_chain_root",
+        "events_sha256"
+      ],
+      "forged_root_hash": "564100aa4036c45aef28f395bc245c2292ba62082eed9c0b316defa81530c319",
+      "internal_verify_variant": "Ok",
+      "localized_by_component_anchors": true,
+      "localized_by_root_anchor_only": false,
+      "mutated_component": "events",
+      "scenario": "event_order_permuted",
+      "semantic_harm": "Reverses the temporal order of two events so a later result appears to have preceded a decision."
+    },
+    {
+      "anchor_field_divergence": {
+        "event_chain_root": false,
+        "events_sha256": false,
+        "final_state_hash": false,
+        "manifest_sha256": true,
+        "root_hash": true,
+        "run_id": false
+      },
+      "component_anchors_diverged": [
+        "manifest_sha256"
+      ],
+      "detected_by_external_root_anchor": true,
+      "detected_by_internal_verify": false,
+      "expected_component_anchors": [
+        "manifest_sha256"
+      ],
+      "forged_root_hash": "01c766d17cc05ccdfc6341f8795192ee88bc344a2f29b7dc7340dcf69097c238",
+      "internal_verify_variant": "Ok",
+      "localized_by_component_anchors": true,
+      "localized_by_root_anchor_only": false,
+      "mutated_component": "manifest",
+      "scenario": "manifest_monte_carlo_seed_forged",
+      "semantic_harm": "Rewrites the pinned RNG seed, destroying the reproducibility claim while the archive still verifies."
+    },
+    {
+      "anchor_field_divergence": {
+        "event_chain_root": false,
+        "events_sha256": false,
+        "final_state_hash": true,
+        "manifest_sha256": false,
+        "root_hash": true,
+        "run_id": false
+      },
+      "component_anchors_diverged": [
+        "final_state_hash"
+      ],
+      "detected_by_external_root_anchor": true,
+      "detected_by_internal_verify": false,
+      "expected_component_anchors": [
+        "final_state_hash"
+      ],
+      "forged_root_hash": "4c0d390ad7fa8228e57ba9594d94ef2abc9c0caee458c1cfa9637dfa8bedbcb3",
+      "internal_verify_variant": "Ok",
+      "localized_by_component_anchors": true,
+      "localized_by_root_anchor_only": false,
+      "mutated_component": "final_state",
+      "scenario": "final_state_best_candidate_forged",
+      "semantic_harm": "Substitutes the reported winning candidate of the screening run."
+    },
+    {
+      "anchor_field_divergence": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "root_hash": true,
+        "run_id": false
+      },
+      "component_anchors_diverged": [
+        "manifest_sha256",
+        "events_sha256",
+        "event_chain_root",
+        "final_state_hash"
+      ],
+      "detected_by_external_root_anchor": true,
+      "detected_by_internal_verify": false,
+      "expected_component_anchors": [
+        "event_chain_root",
+        "events_sha256",
+        "final_state_hash",
+        "manifest_sha256"
+      ],
+      "forged_root_hash": "3ab64b713dde077d2993687169a72e6ee97509dfddce37f34cbee37de4804016",
+      "internal_verify_variant": "Ok",
+      "localized_by_component_anchors": true,
+      "localized_by_root_anchor_only": false,
+      "mutated_component": "manifest+events+final_state",
+      "scenario": "whole_archive_rebuilt_same_run_id",
+      "semantic_harm": "Discards the real run entirely and substitutes a different run under the same run_id."
+    },
+    {
+      "anchor_field_divergence": {
+        "event_chain_root": true,
+        "events_sha256": true,
+        "final_state_hash": true,
+        "manifest_sha256": true,
+        "root_hash": true,
+        "run_id": false
+      },
+      "component_anchors_diverged": [
+        "manifest_sha256",
+        "events_sha256",
+        "event_chain_root",
+        "final_state_hash"
+      ],
+      "detected_by_external_root_anchor": true,
+      "detected_by_internal_verify": false,
+      "expected_component_anchors": [
+        "event_chain_root",
+        "events_sha256",
+        "final_state_hash",
+        "manifest_sha256"
+      ],
+      "forged_root_hash": "2d427ea3a5c1e2971b6b4a9e4585cc096c9d17a44d594109bb5e89ca52c39928",
+      "internal_verify_variant": "Ok",
+      "localized_by_component_anchors": true,
+      "localized_by_root_anchor_only": false,
+      "mutated_component": "events+manifest+final_state",
+      "scenario": "log_truncated_and_rechained",
+      "semantic_harm": "Rolls the run back to its first 6 events (Crosby-Wallach truncation attack) with a consistent re-chain."
+    }
+  ],
+  "g4_complete_single_anchor_fields": [
+    "root_hash"
+  ],
+  "g4_single_anchor_field_coverage": {
+    "event_chain_root": 6,
+    "events_sha256": 6,
+    "final_state_hash": 5,
+    "manifest_sha256": 5,
+    "root_hash": 8,
+    "run_id": 0
+  },
+  "g6_dsse_in_band_anchor": {
+    "dsse_payload_type": "application/vnd.amphora.run-provenance-attestation+json",
+    "ed25519_deterministic_rfc8032": true,
+    "honest_attestation_body_sha256": "c08ce473d080f877466a4e7323edcbd2fbdcc14daddd0d70fff3bfa4fac2e8d0",
+    "honest_attestation_sig_sha256": "6530b6ae2aa01b444645c8f65fcf0f2de36af32b1cbfcc89dc03266785d4531c",
+    "rows": [
+      {
+        "adversary_resigned_envelope_verifies": true,
+        "detected_cold_key_custody": true,
+        "detected_hot_key_on_producing_host": false,
+        "scenario": "event_payload_score_forged"
+      },
+      {
+        "adversary_resigned_envelope_verifies": true,
+        "detected_cold_key_custody": true,
+        "detected_hot_key_on_producing_host": false,
+        "scenario": "unfavourable_event_deleted_and_renumbered"
+      },
+      {
+        "adversary_resigned_envelope_verifies": true,
+        "detected_cold_key_custody": true,
+        "detected_hot_key_on_producing_host": false,
+        "scenario": "fabricated_event_inserted"
+      },
+      {
+        "adversary_resigned_envelope_verifies": true,
+        "detected_cold_key_custody": true,
+        "detected_hot_key_on_producing_host": false,
+        "scenario": "event_order_permuted"
+      },
+      {
+        "adversary_resigned_envelope_verifies": true,
+        "detected_cold_key_custody": true,
+        "detected_hot_key_on_producing_host": false,
+        "scenario": "manifest_monte_carlo_seed_forged"
+      },
+      {
+        "adversary_resigned_envelope_verifies": true,
+        "detected_cold_key_custody": true,
+        "detected_hot_key_on_producing_host": false,
+        "scenario": "final_state_best_candidate_forged"
+      },
+      {
+        "adversary_resigned_envelope_verifies": true,
+        "detected_cold_key_custody": true,
+        "detected_hot_key_on_producing_host": false,
+        "scenario": "whole_archive_rebuilt_same_run_id"
+      },
+      {
+        "adversary_resigned_envelope_verifies": true,
+        "detected_cold_key_custody": true,
+        "detected_hot_key_on_producing_host": false,
+        "scenario": "log_truncated_and_rechained"
+      }
+    ],
+    "signing_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "signing_key_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664"
+  },
+  "gates": {
+    "all_pass": true,
+    "g0_anchor_parity_byte_exact": true,
+    "g0_honest_archive_verifies": true,
+    "g1_single_mutation_all_fail_closed": true,
+    "g2_all_reforges_undetected_by_internal_verify": true,
+    "g3_external_root_anchor_detects_all": true,
+    "g4_root_hash_is_unique_complete_single_anchor": true,
+    "g5_component_anchors_localize_all": true,
+    "g5_root_only_anchor_localizes_none": true,
+    "g6_dsse_cold_key_detects_all": true,
+    "g6_hot_key_on_producing_host_detects_none": true
+  },
+  "honest_reference_run": {
+    "event_chain_root": "9b66d0899eef44fc06d8a20f5dd25f821cf6e749e478f344585a6421984077f5",
+    "events_sha256": "356f9af79ca20809d32c9cdd971ae425a076ca528fcb125f9a8c1773c38e8b02",
+    "final_state_hash": "a11611c7874bebfe2ce3ef2286f19c9330f72dd16ece3098efb194dc54dc7923",
+    "generations": 3,
+    "manifest_sha256": "3e8d0fd2b2a3dab25ad69c4f69d1aaa7cb7255d5f55d52b3daa7da0387f7ce3c",
+    "n_events": 12,
+    "promotion_receipt_eligible": false,
+    "root_hash": "0d347c1a11c2b72222bb9afdba1f27ee4d1069c2fa20013dced24010afcb853f",
+    "run_id": "run-dgeba-polyamide-marine-0012",
+    "signature_status": "UNSIGNED_CONTROLLED_KEY_REQUIRED",
+    "verify_run_ok": true
+  },
+  "hypothesis": "verify_run is a purely INTERNAL consistency predicate: it detects 100% of non-recomputing mutations but 0% of consistent re-forges, because a consistent re-forge is bit-indistinguishable from an honest write to any predicate computed solely from the archive. Tamper-evidence therefore requires an anchor held outside the archive, root_hash is the unique single provenance field whose retention detects every re-forge, and a DSSE Ed25519 attestation supplies that anchor in-band only under cold key custody (Haber-Stornetta 1991 witnessing requirement; RFC 6962 Signed Tree Head; Crosby-Wallach 2009).",
+  "module": "amphora-run-provenance",
+  "non_circularity": "The oracle shares no code with the Rust runtime. It re-derives canonicalize/stable_hash/raw_sha256 from the published algorithm and proves bit-parity by reproducing shipped runtime hash anchors (G0) before any adversarial claim is made. The adversarial writer and the honest writer call the SAME write_archive function -- that identity is the finding, not an artifact of the harness.",
+  "preconditions": {
+    "changes_shipped_scheme": false,
+    "coating_scope": "solvent-borne two-component DGEBA epoxy / polyamide amidoamine marine anti-corrosion screening run archive",
+    "flips_scientific_readiness": false,
+    "modifies_locked_dataset": false,
+    "modifies_module_manifest": false,
+    "modifies_portfolio_manifest": false,
+    "modifies_signed_phase0_kpi": false,
+    "promotes_authority": false,
+    "rng_used": false,
+    "runs_live_rust_runtime": false,
+    "wall_clock_used": false
+  },
+  "purpose": "Determine whether the shipped Haber-Stornetta linear hash-chain run archive is tamper-EVIDENT or merely internally SELF-CONSISTENT, by separating non-recomputing single-mutation probes (the shipped KPI's threat model) from CONSISTENT RE-FORGE probes in which the adversary mutates the scientific record and then recomputes the full chain and all five provenance hashes exactly as the honest writer would; then quantify which external anchor is minimally sufficient to restore tamper-evidence, and under what key-custody assumption a DSSE Ed25519 attestation supplies that anchor in-band.",
+  "rates": {
+    "consistent_reforge_detection_rate_dsse_cold_key": 1.0,
+    "consistent_reforge_detection_rate_dsse_hot_key": 0.0,
+    "consistent_reforge_detection_rate_external_root_anchor": 1.0,
+    "consistent_reforge_detection_rate_internal_verify": 0.0,
+    "localization_rate_component_anchors": 1.0,
+    "localization_rate_root_anchor_only": 0.0,
+    "single_mutation_detection_rate": 1.0
+  },
+  "run_type": "AUDIT_ONLY_INDEPENDENT_ORACLE_ADVERSARIAL_CHARACTERIZATION",
+  "runtime_source_anchors": {
+    "runtime_implementation_path": "amphora-engine/src/lib.rs",
+    "shipped_bundle_sha256": "19b8e11a86370ecdb8a0a283cd2ded5e944d551a74e963af0ca7ae7d140eb81b",
+    "shipped_kpi_path": "evidence/phase0/kpis/run-provenance-hash-chain-integrity-kpi.v1.json",
+    "shipped_kpi_sha256": "ce28ef84b36179c90b8798144825d04e5cd62e16d4b3eaa40997b8fa3ebdc9ce",
+    "shipped_result_sha256": "792c1ce02d881d95affcc08f222d6bc0f6128c9b883f34029dda30474c4ad5fc",
+    "sibling_merkle_oracle_sha256": "0d94b594461898a05f6d7ede49d8bdf77314ddfe32df0e1c5df893dc9dbdc4d3",
+    "sibling_parity_oracle_sha256": "1deff3c1dd12e360fe7252d91ab69a31fc99786939333d9c74c170a55e815ced"
+  },
+  "schema": "amphora.run-provenance.anchor-necessity-reforge-resistance-diagnostic.v1",
+  "study_id": "run-provenance-anchor-necessity-reforge-resistance-v1",
+  "theory_reference": {
+    "bellare_yee_2003": "Bellare & Yee, 'Forward-Security in Private-Key Cryptography', CT-RSA 2003, LNCS 2612:1-18, DOI 10.1007/3-540-36563-X_1.",
+    "crosby_wallach_2009": "Crosby & Wallach, 'Efficient Data Structures for Tamper-Evident Logging', 18th USENIX Security Symposium (2009), pp. 317-334 -- self-consistency is insufficient for tamper-evidence; signed commitments + gossip are required; source of the truncation-attack scenario.",
+    "fips_180_4": "NIST FIPS 180-4 (2015) Secure Hash Standard (SHA-256).",
+    "haber_stornetta_1991": "Haber & Stornetta, 'How to time-stamp a digital document', J. Cryptology 3(2):99-111, DOI 10.1007/BF00196791 -- the linking scheme binds only because the head is witnessed or published by parties other than the document owner.",
+    "in_toto_slsa": "in-toto Attestation Framework v1.0 (2020) + SLSA v1.0 (2023) -- provenance authority derives from the signed envelope, not the digest.",
+    "kelsey_schneier_1999": "Kelsey & Schneier, 'Secure Audit Logs to Support Computer Forensics', ACM TISSEC 2(2):159-176, DOI 10.1145/317087.317089 -- forward integrity via an evolving one-way key.",
+    "nist_sp_800_92": "NIST SP 800-92 (2006) Section 2.3.2 -- log integrity requires protecting the log from the entity that generates it.",
+    "rfc6962_2013": "RFC 6962 'Certificate Transparency' Sections 3.2, 3.5 -- the tree head carries no authority unless signed (STH).",
+    "rfc8032_2017": "RFC 8032 'EdDSA: Ed25519' -- deterministic signatures, hence byte-stable across replays.",
+    "saltzer_schroeder_1975": "Saltzer & Schroeder, Proc. IEEE 63(9):1278-1308 -- complete mediation. Anderson (1980) -- audit-log threat model."
+  },
+  "verdict": {
+    "bounded": "The claim does NOT extend to tamper-evidence. 8/8 consistent re-forges -- including score falsification, unfavourable-event deletion with renumbering, fabricated-event insertion, temporal reordering, monte_carlo_seed rewriting, best-candidate substitution, whole-archive substitution under the same run_id, and Crosby-Wallach log truncation -- pass verify_run with Ok. verify_run is an INTERNAL CONSISTENCY predicate, not a tamper-evidence predicate. This is not a defect in the implementation; it is the Haber-Stornetta 1991 witnessing requirement, and the shipped module already names it in kpi.awaiting and pins signature_status to UNSIGNED_CONTROLLED_KEY_REQUIRED.",
+    "corroborated": "The claim holds exactly as written for non-recomputing mutations: 15/15 single-mutation probes fail closed with the expected RunArchiveError variant, a superset of the shipped KPI's 10 probes.",
+    "key_custody_condition": "A DSSE Ed25519 attestation over {run_id, root_hash} supplies the anchor in-band and detects 8/8 re-forges under COLD key custody, but 0/8 when the signing key is hot on the run-producing host, because the adversary simply re-signs the forged root. Phase-1 signing is therefore necessary but not sufficient: the controlled key must live outside the host that writes the archive, or forward-integrity key evolution (Kelsey-Schneier 1999; Bellare-Yee 2003) must be added.",
+    "localization_tradeoff": "A root-only anchor is complete but yields exactly one accept/reject bit and localizes the mutated component in 0/8 scenarios; retaining all four component hashes localizes it in 8/8. Completeness and diagnosticity are separable properties of the anchor set.",
+    "minimal_sufficient_anchor": "Of the 6 provenance fields, root_hash is the UNIQUE single field whose out-of-band retention detects all 8 re-forges (32 bytes). No component hash alone is complete: {\"event_chain_root\": 6, \"events_sha256\": 6, \"final_state_hash\": 5, \"manifest_sha256\": 5, \"root_hash\": 8, \"run_id\": 0} out of 8.",
+    "shipped_kpi_claim_under_test": "fitted_or_physical_model_artifact.content_addressable_end_to_end == true, with prediction_rule note 'Runtime is content-addressable end-to-end; any single-bit mutation of any artifact fails verify_run.'",
+    "status": "PARTIALLY_CORROBORATED_SCOPE_BOUNDED"
+  }
+}

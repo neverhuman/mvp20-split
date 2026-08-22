@@ -1,0 +1,384 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "W-PROP1",
+  "claim_locks": {
+    "24_group_structure_confirmed_correct_SCOPED_to_well_supported_groups": true,
+    "24_group_structure_confirmed_correct_at_scale": false,
+    "excluded_groups_named": [
+      "nitrile",
+      "F",
+      "vinyl_CH2",
+      "ester",
+      "Br",
+      "sulfone",
+      "Cl",
+      "sulfide",
+      "Si_O"
+    ],
+    "fto_not_performed": true,
+    "in_scope_all_sign_consistent_with_published": true,
+    "in_scope_groups_named": [
+      "CH2",
+      "CH3",
+      "CH",
+      "ether_O",
+      "primary_amine",
+      "epoxide",
+      "C_quat",
+      "vinyl_CH",
+      "tertiary_amine",
+      "secondary_amine",
+      "hydroxyl",
+      "aromatic_C_sub",
+      "aromatic_C_H",
+      "amide",
+      "carbonyl"
+    ],
+    "in_scope_groups_still_with_gt50pct_magnitude_deviation": [
+      "CH2",
+      "vinyl_CH",
+      "secondary_amine",
+      "aromatic_C_sub",
+      "aromatic_C_H",
+      "amide"
+    ],
+    "n_groups_excluded": 9,
+    "n_groups_in_scope": 15,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_solver_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "pre_phase_0_research_only": true,
+    "prior_ridge_receipt_under_determination_hypothesis_NOT_resolved_for_excluded_groups": true,
+    "prior_ridge_receipt_under_determination_hypothesis_resolved_for_in_scope_groups_only": true,
+    "published_Ygi_remain_correct_for_experimental_Tg_context": true,
+    "scope_limited_to_groups_with_n_train_ge_threshold": true,
+    "sign_consistency_does_not_imply_small_magnitude_error": true,
+    "unresolved_rights_quarantined": false
+  },
+  "currency_reverification": {
+    "method": "Re-executed compute_vk_ygi_admissibility.py verbatim (same file, same sha256 as originally signed by W8) against the same pinned ridge-fit KPI this fire. Byte-identical n_sign_flipped_vs_published_positive_baseline=2 and kpi_sha256 match reconfirm the base refutation is current, not stale, before building the re-scoping repair on top of it.",
+    "w8_currency_reverified": true,
+    "w8_rerun_kpi_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979",
+    "w8_rerun_n_sign_flipped": 2,
+    "w8_script_sha256": "6c8d492103de337e9c245438ae29c2031aee2a0118c5843b2b47495bfad89c3f"
+  },
+  "derived_threshold": {
+    "max_inadmissible_n_train": 124,
+    "next_observed_n_train_value_above_threshold": 154,
+    "robustness_note": "Derived from only 3 sub-threshold groups with a fitted coefficient that is non-positive (Si_O n=0 fitted=0.0 exactly; vinyl_CH2 n=31 fitted<0; nitrile n=124 fitted<0) against 21 positive-fitted groups in a 24-group table -- a small-sample boundary, not a statistically powered generalization bound. The empirical gap between the highest excluded n_train (124, nitrile) and the lowest included n_train (154, carbonyl) is wide enough ([125, 154) contains no observed data points) that any threshold value in that gap (125 through 154) yields the IDENTICAL 15-included/9-excluded partition, so the exact choice of 125 vs. e.g. a rounder 150 is immaterial to which groups are in/out. This threshold should be revisited if Phase-1 adds training polymers for the excluded low-support groups.",
+    "rule": "T = 1 + max(n_train_polymers_with_group among sign-inadmissible groups)",
+    "threshold_n_train_polymers_with_group": 125
+  },
+  "fire_id": "20260805T100001-937579-bc890a7ce316",
+  "flips_scientific_readiness": false,
+  "method": "Self-contained re-derivation from the ridge-fit KPI's own fitted_Ygi_comparison array (24 rows, each already storing n_train_polymers_with_group, fitted and published Y_gi). Sign-admissibility per group is defined as Y_fitted_K_g_per_mol > 0 (the published table is 100% positive by Van Krevelen 1990 / Bicerano 2002 convention, so a positive fitted coefficient is the physically-consistent direction). The per-group training-support threshold is derived, not assumed: T = 1 + max(n_train_polymers_with_group) over every group whose fitted Y_gi is NOT sign-admissible in this dataset (this includes the two W8 sign-flipped groups, vinyl_CH2 n_train=31 and nitrile n_train=124, and the zero-support Si_O row n_train=0 whose fitted coefficient is identically 0.0 and therefore undetermined, not merely small). This is the tightest data-derived boundary above which every group in the actually-observed 24-group table is sign-consistent -- it is read directly off the failure boundary in the data rather than picked as a round number.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_shipped_kpi_van_krevelen_ridge_fit": false,
+  "module": "amphora-molecule-property",
+  "objective": "W-PROP1: scope-limit the Van Krevelen Ridge KPI's claim locks to well-supported groups. Compute per-group training support, choose and justify a threshold FROM THE DATA (not assumed 500), and publish a superseding KPI whose claim locks apply only to groups above it, with excluded groups named.",
+  "original_refuting_receipt": {
+    "path": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+    "pre_registered_refute_criterion": ">=1 of 24 fitted Y_gi has sign opposite to its published (100% positive) counterpart => REFUTES '24-group structure confirmed correct' / 'under-determination hypothesis now resolved'",
+    "sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed",
+    "sign_flipped_groups": [
+      {
+        "Y_fitted_K_g_per_mol": -3125.1482313108504,
+        "Y_published_K_g_per_mol": 2000,
+        "group": "vinyl_CH2",
+        "n_train_percentile_from_bottom": 29.2,
+        "n_train_polymers_with_group": 31,
+        "n_train_rank_ascending_of_24": 7
+      },
+      {
+        "Y_fitted_K_g_per_mol": -2843.550181839689,
+        "Y_published_K_g_per_mol": 5500,
+        "group": "nitrile",
+        "n_train_percentile_from_bottom": 37.5,
+        "n_train_polymers_with_group": 124,
+        "n_train_rank_ascending_of_24": 9
+      }
+    ],
+    "spearman_rho_n_train_vs_abs_relative_deviation": -0.5231260000976025,
+    "verdict": "REFUTED"
+  },
+  "per_group_table": {
+    "excluded": [
+      {
+        "Y_fitted_K_g_per_mol": -2843.550181839689,
+        "Y_published_K_g_per_mol": 5500,
+        "abs_relative_deviation": 1.5170091239708525,
+        "group": "nitrile",
+        "n_train_polymers_with_group": 124,
+        "ratio_fitted_over_published": -0.5170091239708525,
+        "sign_admissible": false
+      },
+      {
+        "Y_fitted_K_g_per_mol": 3745.796758915482,
+        "Y_published_K_g_per_mol": 1500,
+        "abs_relative_deviation": 1.4971978392769878,
+        "group": "F",
+        "n_train_polymers_with_group": 32,
+        "ratio_fitted_over_published": 2.497197839276988,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": -3125.1482313108504,
+        "Y_published_K_g_per_mol": 2000,
+        "abs_relative_deviation": 2.5625741156554254,
+        "group": "vinyl_CH2",
+        "n_train_polymers_with_group": 31,
+        "ratio_fitted_over_published": -1.5625741156554251,
+        "sign_admissible": false
+      },
+      {
+        "Y_fitted_K_g_per_mol": 1456.4321413319951,
+        "Y_published_K_g_per_mol": 15000,
+        "abs_relative_deviation": 0.9029045239112004,
+        "group": "ester",
+        "n_train_polymers_with_group": 18,
+        "ratio_fitted_over_published": 0.09709547608879968,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 9241.336635233636,
+        "Y_published_K_g_per_mol": 4500,
+        "abs_relative_deviation": 1.0536303633852526,
+        "group": "Br",
+        "n_train_polymers_with_group": 16,
+        "ratio_fitted_over_published": 2.0536303633852526,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 10824.23794021889,
+        "Y_published_K_g_per_mol": 20000,
+        "abs_relative_deviation": 0.4587881029890555,
+        "group": "sulfone",
+        "n_train_polymers_with_group": 15,
+        "ratio_fitted_over_published": 0.5412118970109445,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 2070.108759827247,
+        "Y_published_K_g_per_mol": 4000,
+        "abs_relative_deviation": 0.4824728100431882,
+        "group": "Cl",
+        "n_train_polymers_with_group": 4,
+        "ratio_fitted_over_published": 0.5175271899568118,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 526.8309386457724,
+        "Y_published_K_g_per_mol": 5000,
+        "abs_relative_deviation": 0.8946338122708455,
+        "group": "sulfide",
+        "n_train_polymers_with_group": 1,
+        "ratio_fitted_over_published": 0.10536618772915449,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 0.0,
+        "Y_published_K_g_per_mol": 4000,
+        "abs_relative_deviation": 1.0,
+        "group": "Si_O",
+        "n_train_polymers_with_group": 0,
+        "ratio_fitted_over_published": 0.0,
+        "sign_admissible": false
+      }
+    ],
+    "in_scope": [
+      {
+        "Y_fitted_K_g_per_mol": 4178.026959043282,
+        "Y_published_K_g_per_mol": 2700,
+        "abs_relative_deviation": 0.5474173922382526,
+        "group": "CH2",
+        "n_train_polymers_with_group": 807,
+        "ratio_fitted_over_published": 1.5474173922382526,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 6151.500942703433,
+        "Y_published_K_g_per_mol": 5200,
+        "abs_relative_deviation": 0.18298095051989094,
+        "group": "CH3",
+        "n_train_polymers_with_group": 807,
+        "ratio_fitted_over_published": 1.182980950519891,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 6779.817076578444,
+        "Y_published_K_g_per_mol": 4600,
+        "abs_relative_deviation": 0.4738732775170531,
+        "group": "CH",
+        "n_train_polymers_with_group": 807,
+        "ratio_fitted_over_published": 1.473873277517053,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 2375.4713089823917,
+        "Y_published_K_g_per_mol": 4000,
+        "abs_relative_deviation": 0.40613217275440205,
+        "group": "ether_O",
+        "n_train_polymers_with_group": 807,
+        "ratio_fitted_over_published": 0.593867827245598,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 7228.458913352506,
+        "Y_published_K_g_per_mol": 8000,
+        "abs_relative_deviation": 0.09644263583093671,
+        "group": "primary_amine",
+        "n_train_polymers_with_group": 807,
+        "ratio_fitted_over_published": 0.9035573641690633,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 4167.802007542193,
+        "Y_published_K_g_per_mol": 6000,
+        "abs_relative_deviation": 0.30536633207630115,
+        "group": "epoxide",
+        "n_train_polymers_with_group": 807,
+        "ratio_fitted_over_published": 0.6946336679236988,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 4474.234962950936,
+        "Y_published_K_g_per_mol": 4900,
+        "abs_relative_deviation": 0.08689082388756397,
+        "group": "C_quat",
+        "n_train_polymers_with_group": 740,
+        "ratio_fitted_over_published": 0.913109176112436,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 5093.954398903177,
+        "Y_published_K_g_per_mol": 1900,
+        "abs_relative_deviation": 1.6810286310016722,
+        "group": "vinyl_CH",
+        "n_train_polymers_with_group": 656,
+        "ratio_fitted_over_published": 2.681028631001672,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 4251.357077718797,
+        "Y_published_K_g_per_mol": 3000,
+        "abs_relative_deviation": 0.4171190259062656,
+        "group": "tertiary_amine",
+        "n_train_polymers_with_group": 596,
+        "ratio_fitted_over_published": 1.4171190259062656,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 8457.898096924913,
+        "Y_published_K_g_per_mol": 4000,
+        "abs_relative_deviation": 1.1144745242312282,
+        "group": "secondary_amine",
+        "n_train_polymers_with_group": 526,
+        "ratio_fitted_over_published": 2.114474524231228,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 6651.656520398236,
+        "Y_published_K_g_per_mol": 12000,
+        "abs_relative_deviation": 0.4456952899668136,
+        "group": "hydroxyl",
+        "n_train_polymers_with_group": 414,
+        "ratio_fitted_over_published": 0.5543047100331864,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 7993.283766013424,
+        "Y_published_K_g_per_mol": 5000,
+        "abs_relative_deviation": 0.5986567532026847,
+        "group": "aromatic_C_sub",
+        "n_train_polymers_with_group": 313,
+        "ratio_fitted_over_published": 1.5986567532026847,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 4039.033840363744,
+        "Y_published_K_g_per_mol": 1700,
+        "abs_relative_deviation": 1.3759022590374963,
+        "group": "aromatic_C_H",
+        "n_train_polymers_with_group": 225,
+        "ratio_fitted_over_published": 2.3759022590374963,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 5268.050276561636,
+        "Y_published_K_g_per_mol": 12000,
+        "abs_relative_deviation": 0.5609958102865303,
+        "group": "amide",
+        "n_train_polymers_with_group": 156,
+        "ratio_fitted_over_published": 0.43900418971346966,
+        "sign_admissible": true
+      },
+      {
+        "Y_fitted_K_g_per_mol": 6508.419237689383,
+        "Y_published_K_g_per_mol": 11000,
+        "abs_relative_deviation": 0.40832552384641974,
+        "group": "carbonyl",
+        "n_train_polymers_with_group": 154,
+        "ratio_fitted_over_published": 0.5916744761535803,
+        "sign_admissible": true
+      }
+    ]
+  },
+  "primary_sources": [
+    "Van Krevelen, D.W. 1990, Properties of Polymers, 3rd ed., Ch. 6 Table 6.6",
+    "Bicerano, J. 2002, Prediction of Polymer Properties, 3rd ed., Ch. 6",
+    "Hoerl, A.E. & Kennard, R.W. 1970, Technometrics 12: 55-67 (Ridge regression)",
+    "Bemis, G.W. & Murcko, M.A. 1996, J. Med. Chem. 39(15) (Bemis-Murcko scaffolds)"
+  ],
+  "promotes_authority": false,
+  "re_attack_of_original_criterion_restricted_to_scoped_groups": {
+    "criterion_reused_verbatim": ">=1 of 24 fitted Y_gi has sign opposite to its published (100% positive) counterpart => REFUTES '24-group structure confirmed correct' / 'under-determination hypothesis now resolved'",
+    "in_scope_sign_flips_found": [],
+    "restricted_to": "the 15 in-scope groups (n_train >= 125) only",
+    "result": "SURVIVED"
+  },
+  "receipt_id": "wprop1-vk-ridge-scope-limited-superseding-kpi-ba24230c8d11e414f0779daf433a5afe",
+  "recommended_followups": [
+    "Update evidence/phase0/kpis/RETRACTION-INDEX.md with a W-PROP1 section recording this scope-limited superseding KPI (done in this same fire).",
+    "mission.md line ~796's placeholder 'roughly 500 or more' language should be replaced with the derived threshold and named excluded groups (done in this same fire).",
+    "Phase-1: acquire additional Polyuniverse Epoxy (or equivalent MD-simulated) polymers containing the 9 excluded groups, especially vinyl_CH2 (n=31) and nitrile (n=124), to re-derive this threshold with more than 2 failing examples."
+  ],
+  "repair_status": "fix_landed_survived_reattack",
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened. Reads only the already-in-tree, already-signed ridge-fit KPI and the already-in-tree, already-signed W8 audit receipt/script, all previously rights-cleared.",
+  "schema": "amphora.molecule-property.van-krevelen-ridge-scope-limited-superseding-kpi.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY W-PROP1 scope-limited superseding KPI under evidence/phase0/repairs/W-PROP1/done/"
+  },
+  "solver_use_ceiling": "AUDIT_ONLY",
+  "supersedes": {
+    "reason": "W8 (2026-08-03) REFUTED this KPI's headline claim that the fit 'confirms the 24-group structure is correct' / 'resolves' the prior under-determination hypothesis: 2/24 fitted Y_gi are sign-reversed vs the published (100% positive) baseline, both in the bottom third of per-group training support. R-A09 recorded REFUTED status in RETRACTION-INDEX.md; B3 retracted the mission.md prose asserting structural correctness but left 'scope-limited to groups with n_train of roughly 500 or more' as an unimplemented placeholder recommendation, not an actual per-group re-scoping of the KPI's own claim_locks. This receipt performs that re-scoping: it derives a training-support threshold directly from the KPI's own stored per-group table (not assumed as 500), partitions the 24 groups into in-scope / excluded, restricts the surviving structural-correctness claim lock to the in-scope groups only, and names the excluded ones.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+    "superseded_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979"
+  },
+  "verdict": "CLAIM_SURVIVED",
+  "why": "The original (unscoped) claim remains REFUTED and is NOT reinstated by this receipt -- W8's finding stands, reconfirmed live this fire by byte-identical re-execution of its own script. What this receipt adds is a properly re-scoped claim: restricting '24-group structure confirmed correct' to the 15 groups with n_train_polymers_with_group >= 125 (a threshold derived from the data's own sign-admissibility boundary, not assumed), all 15 of which are sign-consistent with the published Van Krevelen table (0 flips found when the original W8 pre-registered criterion is re-applied restricted to this subset). The 9 excluded groups (nitrile, F, vinyl_CH2, ester, Br, sulfone, Cl, sulfide, Si_O) include both original W8 sign-flips (vinyl_CH2, nitrile) plus 6 further groups whose n_train (0-32-ish range... see per_group_table) is below the empirical admissibility boundary and are therefore not asserted as structurally confirmed either, pending more training data. Honesty caveat retained: sign-consistency is NOT the same as small magnitude error -- 6 of the 15 in-scope groups still deviate >50% in magnitude from published (already disclosed by the original KPI as expected calibration drift, not re-litigated here)."
+}

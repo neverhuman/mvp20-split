@@ -1,0 +1,1135 @@
+{
+  "ad_method": {
+    "autoscaling": "z-score per descriptor over the training set (mean/std below)",
+    "citation": "Gramatica, P. (2007). \"Principles of QSAR Models Validation: Internal and External.\" QSAR & Combinatorial Science, 26(5), 694-701. DOI: 10.1002/qsar.200610151.",
+    "descriptor_means": {
+      "average_molecular_weight_g_mol": 129.3005,
+      "oxirane_ring_count": 0.5405,
+      "reactive_amine_hydrogen_count": 1.6757
+    },
+    "descriptor_source": "the same 3 numeric facts (average_molecular_weight_g_mol, oxirane_ring_count, reactive_amine_hydrogen_count) the gate itself consumes to decide role_appropriate_reactivity -- chosen so the AD comparator and the gate operate on the identical evidence surface, isolating the methodological difference (numeric-range check vs substructure/role rule) rather than a data difference.",
+    "descriptor_stds": {
+      "average_molecular_weight_g_mol": 77.0354,
+      "oxirane_ring_count": 0.691,
+      "reactive_amine_hydrogen_count": 2.2737
+    },
+    "descriptors": [
+      "average_molecular_weight_g_mol",
+      "oxirane_ring_count",
+      "reactive_amine_hydrogen_count"
+    ],
+    "h_star_formula": "3*(p+1)/n  (Tropsha/Gramatica/Gombar 2003 warning-leverage convention)",
+    "h_star_value": 0.324324,
+    "n_train": 37,
+    "name": "hat-matrix leverage / Williams plot",
+    "p_descriptors": 3,
+    "supporting_citations": [
+      "Atkinson, A.C. (1985), Plots, Transformations, and Regression, Oxford: Clarendon Press, ISBN 0-19-853359-4 (hat-matrix leverage statistic).",
+      "Tropsha, A., Gramatica, P., Gombar, V.K. (2003), \"The Importance of Being Earnest: Validation is the Absolute Essential for Successful Application and Interpretation of QSPR Models\", QSAR & Combinatorial Science, 22(1), 69-77, DOI: 10.1002/qsar.200390007 (h* = 3(p+1)/n warning-leverage threshold)."
+    ],
+    "training_set": "the 37 fact-bearing records of reference/phase0-design-gate-known-answer.v1.json (fixture sha256 45ed29ed699f6c089848d72496f136ef1148497b802a8095ca426ef54392930c)"
+  },
+  "campaign_item_id": "W-T-DESIGNGATE",
+  "comparator_results": [
+    {
+      "ad_in_domain": true,
+      "case_id": "resin-dgeba",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 340.42,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.25905,
+      "source": "fixture_training",
+      "subgroup": "VALID_RESIN",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "resin-phenyl-glycidyl-ether",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 150.17,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.046087,
+      "source": "fixture_training",
+      "subgroup": "VALID_RESIN",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "resin-butyl-glycidyl-ether",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 130.19,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.048797,
+      "source": "fixture_training",
+      "subgroup": "VALID_RESIN",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "resin-glycidol",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 74.08,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.10025,
+      "source": "fixture_training",
+      "subgroup": "VALID_RESIN",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "resin-epichlorohydrin",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 92.52,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.076207,
+      "source": "fixture_training",
+      "subgroup": "VALID_RESIN",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "resin-styrene-oxide",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 120.15,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.053254,
+      "source": "fixture_training",
+      "subgroup": "VALID_RESIN",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "resin-cyclohexene-oxide",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 98.14,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.070268,
+      "source": "fixture_training",
+      "subgroup": "VALID_RESIN",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "resin-diglycidyl-resorcinol",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 222.24,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.155312,
+      "source": "fixture_training",
+      "subgroup": "VALID_RESIN",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "hardener-deta",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 103.17,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 5
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.093611,
+      "source": "fixture_training",
+      "subgroup": "VALID_HARDENER",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "hardener-teta",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 146.24,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 6
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.127787,
+      "source": "fixture_training",
+      "subgroup": "VALID_HARDENER",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "hardener-tepa",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 189.3,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 7
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.191933,
+      "source": "fixture_training",
+      "subgroup": "VALID_HARDENER",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "hardener-ipda",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 170.3,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.092278,
+      "source": "fixture_training",
+      "subgroup": "VALID_HARDENER",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "hardener-hmda",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 116.21,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.059705,
+      "source": "fixture_training",
+      "subgroup": "VALID_HARDENER",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "hardener-mxda",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 136.19,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.064739,
+      "source": "fixture_training",
+      "subgroup": "VALID_HARDENER",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "hardener-pacm",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 210.36,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.155134,
+      "source": "fixture_training",
+      "subgroup": "VALID_HARDENER",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "hardener-mpda",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 108.14,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.059997,
+      "source": "fixture_training",
+      "subgroup": "VALID_HARDENER",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "wrong-role-coating-dgeba",
+      "characterization": "wrong-role-coating-dgeba (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "coating",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 340.42,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.25905,
+      "source": "fixture_training",
+      "subgroup": "WRONG_ROLE",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "wrong-role-additive-glycidol",
+      "characterization": "wrong-role-additive-glycidol (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "additive",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 74.08,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.10025,
+      "source": "fixture_training",
+      "subgroup": "WRONG_ROLE",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "wrong-role-solvent-deta",
+      "characterization": "wrong-role-solvent-deta (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "solvent",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 103.17,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 5
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.093611,
+      "source": "fixture_training",
+      "subgroup": "WRONG_ROLE",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "wrong-role-pigment-teta",
+      "characterization": "wrong-role-pigment-teta (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "pigment",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 146.24,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 6
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.127787,
+      "source": "fixture_training",
+      "subgroup": "WRONG_ROLE",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "wrong-role-extender-toluene",
+      "characterization": "wrong-role-extender-toluene (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "extender",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 92.14,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.099629,
+      "source": "fixture_training",
+      "subgroup": "WRONG_ROLE",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "missing-role-dgeba",
+      "characterization": "missing-role-dgeba (MISSING_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": null,
+      "descriptors": {
+        "average_molecular_weight_g_mol": 340.42,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.25905,
+      "source": "fixture_training",
+      "subgroup": "MISSING_ROLE",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "missing-role-deta",
+      "characterization": "missing-role-deta (MISSING_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": null,
+      "descriptors": {
+        "average_molecular_weight_g_mol": 103.17,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 5
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.093611,
+      "source": "fixture_training",
+      "subgroup": "MISSING_ROLE",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "missing-role-toluene",
+      "characterization": "missing-role-toluene (MISSING_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": null,
+      "descriptors": {
+        "average_molecular_weight_g_mol": 92.14,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.099629,
+      "source": "fixture_training",
+      "subgroup": "MISSING_ROLE",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "mismatched-resin-ethanol",
+      "characterization": "mismatched-resin-ethanol (MISMATCHED_RESIN): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 46.07,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.086262,
+      "source": "fixture_training",
+      "subgroup": "MISMATCHED_RESIN",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "mismatched-resin-toluene",
+      "characterization": "mismatched-resin-toluene (MISMATCHED_RESIN): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 92.14,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.099629,
+      "source": "fixture_training",
+      "subgroup": "MISMATCHED_RESIN",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "mismatched-resin-water",
+      "characterization": "mismatched-resin-water (MISMATCHED_RESIN): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 18.02,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.099474,
+      "source": "fixture_training",
+      "subgroup": "MISMATCHED_RESIN",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "mismatched-resin-acetone",
+      "characterization": "mismatched-resin-acetone (MISMATCHED_RESIN): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 58.08,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.085546,
+      "source": "fixture_training",
+      "subgroup": "MISMATCHED_RESIN",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "mismatched-hardener-n-butane",
+      "characterization": "mismatched-hardener-n-butane (MISMATCHED_HARDENER): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 58.12,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.085549,
+      "source": "fixture_training",
+      "subgroup": "MISMATCHED_HARDENER",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "mismatched-hardener-ethyl-acetate",
+      "characterization": "mismatched-hardener-ethyl-acetate (MISMATCHED_HARDENER): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 88.11,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.09672,
+      "source": "fixture_training",
+      "subgroup": "MISMATCHED_HARDENER",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "mismatched-hardener-benzene",
+      "characterization": "mismatched-hardener-benzene (MISMATCHED_HARDENER): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 78.11,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.090942,
+      "source": "fixture_training",
+      "subgroup": "MISMATCHED_HARDENER",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "mismatched-hardener-cyclohexane",
+      "characterization": "mismatched-hardener-cyclohexane (MISMATCHED_HARDENER): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 84.16,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.094193,
+      "source": "fixture_training",
+      "subgroup": "MISMATCHED_HARDENER",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "dual-func-glycidyl-amine-as-resin",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 73.09,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.155447,
+      "source": "fixture_training",
+      "subgroup": "DUAL_FUNCTIONAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "dual-func-glycidyl-amine-as-hardener",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 73.09,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.155447,
+      "source": "fixture_training",
+      "subgroup": "DUAL_FUNCTIONAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "dual-func-n-glycidyl-aniline-as-resin",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 149.19,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 1
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.04087,
+      "source": "fixture_training",
+      "subgroup": "DUAL_FUNCTIONAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "dual-func-n-glycidyl-aniline-as-hardener",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 149.19,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 1
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.04087,
+      "source": "fixture_training",
+      "subgroup": "DUAL_FUNCTIONAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "dual-func-aminoethyl-glycidyl-ether-as-resin",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 117.15,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.082021,
+      "source": "fixture_training",
+      "subgroup": "DUAL_FUNCTIONAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": null,
+      "case_id": "malformed-empty-structure-resin",
+      "characterization": "Structural admissibility (lexical/RDKit-parseability) precedes any numeric descriptor computation in the gate's own pipeline; no facts snapshot exists to form a descriptor vector, so leverage is architecturally undefined here. This is an ordering fact about the two checks, not a defect in either.",
+      "declared_role": "resin",
+      "descriptors": null,
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": null,
+      "source": "fixture_malformed",
+      "subgroup": "MALFORMED_STRUCTURE",
+      "verdict": "not_applicable"
+    },
+    {
+      "ad_in_domain": null,
+      "case_id": "malformed-multi-fragment-resin",
+      "characterization": "Structural admissibility (lexical/RDKit-parseability) precedes any numeric descriptor computation in the gate's own pipeline; no facts snapshot exists to form a descriptor vector, so leverage is architecturally undefined here. This is an ordering fact about the two checks, not a defect in either.",
+      "declared_role": "resin",
+      "descriptors": null,
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": null,
+      "source": "fixture_malformed",
+      "subgroup": "MALFORMED_STRUCTURE",
+      "verdict": "not_applicable"
+    },
+    {
+      "ad_in_domain": null,
+      "case_id": "malformed-wildcard-star-resin",
+      "characterization": "Structural admissibility (lexical/RDKit-parseability) precedes any numeric descriptor computation in the gate's own pipeline; no facts snapshot exists to form a descriptor vector, so leverage is architecturally undefined here. This is an ordering fact about the two checks, not a defect in either.",
+      "declared_role": "resin",
+      "descriptors": null,
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": null,
+      "source": "fixture_malformed",
+      "subgroup": "MALFORMED_STRUCTURE",
+      "verdict": "not_applicable"
+    },
+    {
+      "ad_in_domain": null,
+      "case_id": "malformed-wildcard-tilde-resin",
+      "characterization": "Structural admissibility (lexical/RDKit-parseability) precedes any numeric descriptor computation in the gate's own pipeline; no facts snapshot exists to form a descriptor vector, so leverage is architecturally undefined here. This is an ordering fact about the two checks, not a defect in either.",
+      "declared_role": "resin",
+      "descriptors": null,
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": null,
+      "source": "fixture_malformed",
+      "subgroup": "MALFORMED_STRUCTURE",
+      "verdict": "not_applicable"
+    },
+    {
+      "ad_in_domain": null,
+      "case_id": "malformed-no-structure-no-role",
+      "characterization": "Structural admissibility (lexical/RDKit-parseability) precedes any numeric descriptor computation in the gate's own pipeline; no facts snapshot exists to form a descriptor vector, so leverage is architecturally undefined here. This is an ordering fact about the two checks, not a defect in either.",
+      "declared_role": null,
+      "descriptors": null,
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": null,
+      "source": "fixture_malformed",
+      "subgroup": "MALFORMED_STRUCTURE",
+      "verdict": "not_applicable"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "erl4221-cycloaliphatic-diepoxide",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "citation": "3,4-epoxycyclohexylmethyl 3,4-epoxycyclohexanecarboxylate (ERL-4221, Dow CAS 2386-87-0, PubChem CID 68563), C14H20O4 MW 252.30",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 252.31,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.1545,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "edr148-triethyleneglycol-diamine",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "citation": "4,7,10-trioxatridecane-1,13-diamine (Jeffamine EDR-148, CAS 929-59-9), C10H24N2O3 MW 220.31",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 192.26,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.122653,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "aep-aminoethylpiperazine",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "citation": "1-(2-aminoethyl)piperazine (AEP, CAS 140-31-8)",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 129.21,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 3
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.055115,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": false,
+      "case_id": "aspartic-ester-secondary-amine",
+      "characterization": "aspartic-ester-secondary-amine (T08_HELD_OUT): leverage-AD reports OUT-OF-DOMAIN (extrapolation warning) but the gate SCOREs it as structurally valid. The gate's substructure rule has no notion of numeric extrapolation risk (a chemically valid but unusually large or unusually amine-rich molecule can be structurally correct while sitting far outside the fixture's descriptor envelope). This is a genuine coverage gap: the gate would admit this molecule with no signal that its property predictions downstream (EEW, AHEW, Tg, etc., which DO use AD/extrapolation reasoning per the property modules) are entering extrapolation territory.",
+      "citation": "diethyl 2-(butylamino)succinate, monofunctional model of the Michael-adduct secondary amine in commercial polyaspartic marine topcoat hardeners",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 245.32,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 1
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.375421,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "dds-diaminodiphenylsulfone",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "citation": "4,4'-diaminodiphenyl sulfone (DDS, CAS 80-08-0)",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 248.3,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.245052,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "ddm-diaminodiphenylmethane",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "citation": "4,4'-diaminodiphenylmethane (DDM/MDA, CAS 101-77-9)",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 198.27,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.132692,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "detda-hindered-aromatic-diamine",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "citation": "diethyltoluenediamine (DETDA / Ethacure 100 congener, CAS 68479-98-1)",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 178.28,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": true,
+      "h_star": 0.324324,
+      "leverage_h": 0.10217,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "bdma-tertiary-amine-accelerator",
+      "characterization": "bdma-tertiary-amine-accelerator (T08_HELD_OUT): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "citation": "N,N-dimethylbenzylamine (BDMA, CAS 103-83-3), a cure accelerator/catalyst, not a stoichiometric hardener",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 135.21,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.151551,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HOSTILE_NULL",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "emi24-imidazole-latent-hardener",
+      "characterization": "emi24-imidazole-latent-hardener (T08_HELD_OUT): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "citation": "2-ethyl-4-methylimidazole (EMI-24, CAS 931-36-2), a latent curing agent that initiates anionic ring-opening, not stoichiometric N-H addition",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 110.16,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.116717,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HOSTILE_NULL",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": false,
+      "case_id": "dpg-diphenylguanidine-accelerator",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "citation": "1,3-diphenylguanidine (DPG, CAS 102-06-7), rubber/epoxy cure accelerator (US Patent 9,238,706), not a stoichiometric hardener",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 211.27,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.336291,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HOSTILE_NULL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": false,
+      "case_id": "dotg-di-o-tolylguanidine-accelerator",
+      "characterization": "AD and gate agree on accept/reject direction.",
+      "citation": "N,N'-di-o-tolylguanidine (DOTG, CAS 97-39-2), more active DPG analog, rubber/epoxy cure accelerator",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 239.32,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.434409,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HOSTILE_NULL",
+      "verdict": "conformant"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "erl4221-declared-hardener-mismatch",
+      "characterization": "erl4221-declared-hardener-mismatch (T08_HELD_OUT): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "citation": "same ERL-4221 diepoxide as above, adversarially declared as hardener",
+      "declared_role": "hardener",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 252.31,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.1545,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "divergent"
+    },
+    {
+      "ad_in_domain": true,
+      "case_id": "edr148-declared-resin-mismatch",
+      "characterization": "edr148-declared-resin-mismatch (T08_HELD_OUT): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "citation": "same EDR-148 diamine as above, adversarially declared as resin",
+      "declared_role": "resin",
+      "descriptors": {
+        "average_molecular_weight_g_mol": 192.26,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "gate_pass_all_hard": false,
+      "h_star": 0.324324,
+      "leverage_h": 0.122653,
+      "source": "t08_held_out_live_rdkit",
+      "subgroup": "HELD_OUT_REAL",
+      "verdict": "divergent"
+    }
+  ],
+  "oecd_principles_2004_2007": {
+    "citation_2004": "OECD (2004), \"The Report from the Expert Group on (Q)SARs on the Principles for the Validation of (Q)SARs\", OECD Series on Testing and Assessment No. 49, ENV/JM/MONO(2004)24, Organisation for Economic Co-operation and Development, Paris.",
+    "citation_2007": "OECD (2007), \"Guidance Document on the Validation of (Quantitative) Structure-Activity Relationship [(Q)SAR] Models\", OECD Series on Testing and Assessment No. 69, ENV/JM/MONO(2007)2, Organisation for Economic Co-operation and Development, Paris.",
+    "requirements": [
+      {
+        "evidence": "design_gate_result's endpoint is explicit and categorical: structural applicability admission (pass_all_hard boolean) for a declared molecule+role in two-part epoxy-amine coating chemistry, with six enumerated gate_reason values (mission.md, evidence/phase0/benchmark/benchmark-lock.v1.json).",
+        "gate_verdict": "conformant",
+        "id": "OECD-P1",
+        "principle": "a defined endpoint",
+        "requirement": "The model must state precisely what response it predicts/decides and under what conditions, so that different implementations of the same model can be compared."
+      },
+      {
+        "evidence": "Deterministic native Rust rule at amphora-molecule-capabilities/src/lib.rs, SHA-256 5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861 (mission.md); byte_stable_two_replay_rate observed 1.0/1.0 in the module's own Phase-0 KPI.",
+        "gate_verdict": "conformant",
+        "id": "OECD-P2",
+        "principle": "an unambiguous algorithm",
+        "requirement": "The computational procedure generating the endpoint must be transparent, reproducible and not a black box."
+      },
+      {
+        "evidence": "PRE-FIRE: no quantitative or published AD definition existed anywhere in the module; the only KPI (design-gate-structural-applicability-kpi.v1.json) measures categorical agreement against the module's own self-authored 42-record fixture, which is not an applicability-domain statement (it says nothing about NEW compounds outside the fixture). THIS FIRE implements a leverage/Williams-plot AD comparator (below) and finds it and the gate's decision surface answer different questions and diverge on 4/13 held-out probes (see comparator_results). The module itself still does not natively expose or consult an AD boundary -- this verdict stands until the module's own code does.",
+        "gate_verdict": "divergent",
+        "id": "OECD-P3",
+        "principle": "a defined domain of applicability",
+        "requirement": "The model must state, in a way that can be checked against a NEW compound, the region of chemical/descriptor space over which its decisions are expected to be reliable -- OECD (2007) Guidance Document 69 names leverage/Williams-plot and Tanimoto-distance range-checks as accepted implementations of this principle."
+      },
+      {
+        "evidence": "design-gate is a deterministic rule-based classifier, not a fitted regression QSAR, so classical R2/Q2 residual statistics do not apply (not_applicable in the strict statistical sense). It DOES report a categorical correctness rate (1.0, 42/42) but ONLY against its own self-authored CC0 fixture -- no independently-sourced external validation set existed before this fire. The 13 T-08 held-out probes (independently DSSE-signed, real cited molecules, never in the fixture) are the first external check on record and also score 1.0 (13/13) on the gate's OWN decision surface; that number is unchanged by this fire and is not being re-litigated here -- this fire's finding is narrower: no prior receipt reported that external number framed as an OECD P4 external-validation statistic.",
+        "gate_verdict": "divergent",
+        "id": "OECD-P4",
+        "principle": "appropriate measures of goodness-of-fit, robustness and predictivity",
+        "requirement": "A (Q)SAR model must report internal AND external validation statistics (not internal fit alone); for classifiers this is a confusion-matrix-style accuracy on a held-out or independently sourced set, not the training/fixture set itself."
+      },
+      {
+        "evidence": "gate_reason values are grounded in the mechanistic basis of two-part epoxy-amine cure chemistry (oxirane ring-opening by amine N-H addition), cited to Wicks, Jones, Pappas (2007) Organic Coatings: Science and Technology, 3rd ed., Wiley, ISBN 978-0-470-06806-7, Sec.15.2-15.4, and Ellis (1993) Chemistry and Technology of Epoxy Resins, Springer, ISBN 978-94-010-4652-8, Sec.6.2 (both cited in mission.md).",
+        "gate_verdict": "conformant",
+        "id": "OECD-P5",
+        "principle": "a mechanistic interpretation, where possible",
+        "requirement": "Decisions should be traceable to an established chemical/biological mechanism, not a purely statistical correlation."
+      }
+    ]
+  },
+  "proposed_followups": [
+    {
+      "case_id": "wrong-role-coating-dgeba",
+      "finding": "wrong-role-coating-dgeba (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "wrong-role-additive-glycidol",
+      "finding": "wrong-role-additive-glycidol (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "wrong-role-solvent-deta",
+      "finding": "wrong-role-solvent-deta (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "wrong-role-pigment-teta",
+      "finding": "wrong-role-pigment-teta (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "wrong-role-extender-toluene",
+      "finding": "wrong-role-extender-toluene (WRONG_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "missing-role-dgeba",
+      "finding": "missing-role-dgeba (MISSING_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "missing-role-deta",
+      "finding": "missing-role-deta (MISSING_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "missing-role-toluene",
+      "finding": "missing-role-toluene (MISSING_ROLE): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "mismatched-resin-ethanol",
+      "finding": "mismatched-resin-ethanol (MISMATCHED_RESIN): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "mismatched-resin-toluene",
+      "finding": "mismatched-resin-toluene (MISMATCHED_RESIN): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "mismatched-resin-water",
+      "finding": "mismatched-resin-water (MISMATCHED_RESIN): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "mismatched-resin-acetone",
+      "finding": "mismatched-resin-acetone (MISMATCHED_RESIN): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "mismatched-hardener-n-butane",
+      "finding": "mismatched-hardener-n-butane (MISMATCHED_HARDENER): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "mismatched-hardener-ethyl-acetate",
+      "finding": "mismatched-hardener-ethyl-acetate (MISMATCHED_HARDENER): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "mismatched-hardener-benzene",
+      "finding": "mismatched-hardener-benzene (MISMATCHED_HARDENER): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "mismatched-hardener-cyclohexane",
+      "finding": "mismatched-hardener-cyclohexane (MISMATCHED_HARDENER): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "aspartic-ester-secondary-amine",
+      "finding": "aspartic-ester-secondary-amine (T08_HELD_OUT): leverage-AD reports OUT-OF-DOMAIN (extrapolation warning) but the gate SCOREs it as structurally valid. The gate's substructure rule has no notion of numeric extrapolation risk (a chemically valid but unusually large or unusually amine-rich molecule can be structurally correct while sitting far outside the fixture's descriptor envelope). This is a genuine coverage gap: the gate would admit this molecule with no signal that its property predictions downstream (EEW, AHEW, Tg, etc., which DO use AD/extrapolation reasoning per the property modules) are entering extrapolation territory.",
+      "proposed_repair_criterion": "Candidate real repair: the gate (or a downstream property-scoring step) should surface this molecule's leverage/Williams AD extrapolation-warning status alongside its SCORED decision, so structurally-valid-but-numerically-extreme candidates carry an explicit extrapolation flag before entering property scoring. Acceptance check: a new evidence_scope or facts field (e.g. applicability_domain_flag) is populated for every SCORED decision and is byte-stable under two-replay."
+    },
+    {
+      "case_id": "bdma-tertiary-amine-accelerator",
+      "finding": "bdma-tertiary-amine-accelerator (T08_HELD_OUT): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "emi24-imidazole-latent-hardener",
+      "finding": "emi24-imidazole-latent-hardener (T08_HELD_OUT): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "erl4221-declared-hardener-mismatch",
+      "finding": "erl4221-declared-hardener-mismatch (T08_HELD_OUT): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    },
+    {
+      "case_id": "edr148-declared-resin-mismatch",
+      "finding": "edr148-declared-resin-mismatch (T08_HELD_OUT): leverage-AD reports IN-DOMAIN (its 3-descriptor vector falls within the numeric range spanned by the training compounds) but the gate FAILS it. Root cause: leverage/Williams AD is a pure numeric-range check on (MW, oxirane_ring_count, reactive_amine_hydrogen_count) and cannot see WHICH atoms carry those counts or whether the declared role matches the reactive chemistry -- it is blind to role-appropriateness and to accelerator-vs-hardener mechanism distinctions that the gate's substructure rule exists specifically to catch. This is expected divergence by construction, not an error in the gate: the two methods answer different questions (statistical similarity to training data vs mechanistic role-appropriateness).",
+      "proposed_repair_criterion": "Not a gate defect to repair (methods are non-equivalent by design); proposed follow-up is a DOCUMENTATION repair: mission.md should state explicitly that leverage/Williams AD in-domain status is NOT a proxy for role-appropriateness, citing this case as the worked example, so a future reader does not treat 'in-domain' as 'gate would accept'."
+    }
+  ],
+  "provenance": {
+    "atomic_weights_used": {
+      "C": 12.011,
+      "Cl": 35.45,
+      "H": 1.008,
+      "N": 14.007,
+      "O": 15.999,
+      "S": 32.06
+    },
+    "fixture_path": "amphora-molecule-design-gate/reference/phase0-design-gate-known-answer.v1.json",
+    "fixture_sha256": "45ed29ed699f6c089848d72496f136ef1148497b802a8095ca426ef54392930c",
+    "t08_receipt_path": "amphora-molecule-design-gate/evidence/phase0/repairs/T-08/done/t08-design-gate-live-runtime-adversarial-receipt.v1.dsse.json",
+    "t08_receipt_sha256": "49c2a8823f10d6c8ca00ff1bad06003c0f4b70421af9bc0a2096b82e96af1a8d"
+  },
+  "schema": "amphora.molecule-design-gate.wtdesigngate-ad-comparator.v1",
+  "summary": {
+    "n_conformant": 29,
+    "n_divergent": 21,
+    "n_fixture_malformed": 5,
+    "n_fixture_training": 37,
+    "n_not_applicable": 5,
+    "n_t08_held_out": 13,
+    "n_total": 55
+  }
+}

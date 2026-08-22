@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "34b45c7f8c354d65e8a68ba0a56fba366606ba317c3d22fd5a94c6be37348f36",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

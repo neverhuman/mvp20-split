@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-molecule-generator",
+    "molecule lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "26099aa35bc225fa810dfd934f3427f49b55a04c9661297441fbfc34b0908b90",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-molecule-generator",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

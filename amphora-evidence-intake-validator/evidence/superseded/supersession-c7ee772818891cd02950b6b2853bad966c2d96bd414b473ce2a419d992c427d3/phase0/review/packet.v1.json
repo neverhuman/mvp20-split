@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "fc4a2c0045c2d6f9d4ba40162218e3e74cd0ce1182acba07f3f0c6dcbd3b9bea",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-evidence-intake-validator",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

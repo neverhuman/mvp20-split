@@ -1,0 +1,66 @@
+{
+  "candidates": {
+    "A_genuine_pass": {
+      "failed_modules": 0,
+      "feasible": true,
+      "ranked": false
+    },
+    "B_genuine_fail_declared": {
+      "failed_modules": 0,
+      "feasible": false,
+      "ranked": false
+    },
+    "C_hidden_fail_undeclared": {
+      "failed_modules": 1,
+      "feasible": true,
+      "ranked": false
+    }
+  },
+  "declared_mechanism_works_as_positive_control": true,
+  "display_kpi_modules": [
+    "amphora-molecule-design-gate",
+    "amphora-molecule-novelty",
+    "amphora-molecule-property"
+  ],
+  "display_kpi_modules_not_hard_constrained": [
+    "amphora-molecule-novelty",
+    "amphora-molecule-property"
+  ],
+  "divergence_observed": true,
+  "final_sorted_order": [
+    {
+      "candidate_id": "aaa-hidden-fail-undeclared-C",
+      "current_rank": null,
+      "eligible_objectives": 0,
+      "failed_modules": 1,
+      "feasible": true,
+      "ranked": false
+    },
+    {
+      "candidate_id": "zzz-genuine-pass-A",
+      "current_rank": null,
+      "eligible_objectives": 0,
+      "failed_modules": 0,
+      "feasible": true,
+      "ranked": false
+    },
+    {
+      "candidate_id": "mmm-genuine-fail-declared-B",
+      "current_rank": null,
+      "eligible_objectives": 0,
+      "failed_modules": 0,
+      "feasible": false,
+      "ranked": false
+    }
+  ],
+  "hard_constraint_modules": [
+    "amphora-molecule-design-gate"
+  ],
+  "hidden_fail_feasible_matches_genuine_pass": true,
+  "hidden_fail_ranks_at_or_above_declared_fail": true,
+  "hidden_fail_visible_via_failed_modules_only": true,
+  "probe": "optimizer-ranking-boundary-feasibility-scope-v1",
+  "shipped_profile_id": "molecule-demo-v1",
+  "shipped_profile_path": "config/kpis/molecule-demo.json",
+  "shipped_profile_sha256": "aae3d941867cc67b3c1b796ae81ea4700f060a60dc72833f64ca867f4f7f8ac2"
+}

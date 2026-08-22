@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amphora.invalid/schemas/module-dataset-lock.v2.schema.json",
+  "title": "ModuleDatasetLockV2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "module_id", "dataset_id", "acquisition_unit_id", "dataset_manifest_path", "dataset_manifest_sha256", "normalized_artifact_sha256", "consumer", "scoring", "authority_limit", "rights_class", "evidence_class", "network_access"],
+  "properties": {
+    "schema": {"const": "amphora.module-dataset-lock.v2"},
+    "module_id": {"type": "string", "minLength": 1},
+    "dataset_id": {"type": "string", "minLength": 1},
+    "acquisition_unit_id": {"type": "string", "minLength": 1},
+    "dataset_manifest_path": {"type": "string", "minLength": 1},
+    "dataset_manifest_sha256": {"$ref": "#/$defs/hash"},
+    "normalized_artifact_sha256": {"$ref": "#/$defs/hash"},
+    "consumer": {"enum": ["OFFLINE_BENCHMARK", "TRAINING_CORPUS", "RETRIEVAL_INDEX", "DIAGNOSTIC"]},
+    "scoring": {"type": "boolean"},
+    "authority_limit": {"type": "string", "minLength": 1},
+    "rights_class": {"type": "string"},
+    "evidence_class": {"type": "string"},
+    "network_access": {"const": false}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -1,0 +1,150 @@
+{
+  "attacks": {
+    "cardinality_overflow": {
+      "attack": "fresh boundary probes independent of the module's own existing unit-test values",
+      "observed": "did not occur -- every over-ceiling probe was rejected; the exact ceiling (10_000) was admitted",
+      "probes": [
+        {
+          "axes": "100 x 100",
+          "expected_total": 10000,
+          "must": "PASS(admit)",
+          "result": "PASS"
+        },
+        {
+          "axes": "17 x 17 x 35 = 10115",
+          "must": "FAIL_CLOSED(reject)",
+          "result": "FAIL_CLOSED"
+        },
+        {
+          "axes": "100 x 101 = 10100",
+          "must": "FAIL_CLOSED(reject)",
+          "result": "FAIL_CLOSED"
+        },
+        {
+          "axes": "101 x 100 = 10100 (positive control: axis silently enlarged by 1)",
+          "must": "FAIL_CLOSED(reject)",
+          "result": "FAIL_CLOSED"
+        }
+      ],
+      "refutation_criterion_this_attack": "an axis-cardinality product exceeding MAX_FORMULATION_UNIVERSE_CARDINALITY=10_000 is accepted (Ok(..)) instead of rejected (Err(..))",
+      "verdict": "SURVIVED"
+    },
+    "duplicate_factor_collapse": {
+      "attack": "cross-type numeric representation drift inside one axis: same physical value submitted once as JSON integer literal `1`, once as JSON float literal `1.0`",
+      "observed": "occurred -- case quoted above",
+      "positive_control": {
+        "detected": true,
+        "evidence": "validate_formulation_universe(...) returned Err(...); assertion 'POSITIVE CONTROL FAILED: literal string duplicate must be caught' did not fire, confirming the canonical-duplicate detector is live and not vacuously passing",
+        "how_planted": "axis array contains the identical string twice",
+        "planted_defect": "literal string duplicate axis {\"resin\": [\"DGEBA\", \"DGEBA\"]}"
+      },
+      "probe_case_quoted_verbatim": "validate_formulation_universe(candidate with axes={\"dose_ratio\": [1, 1.0]}) returned Ok(FormulationUniverseAccountingV1{ axis_cardinalities: {\"dose_ratio\": 2}, cartesian_total: Some(2), ... }) instead of Err(\"formulation universe axis dose_ratio contains canonical duplicates\"). Captured verbatim from live run: 'T06_ATTACK2_BRANCH=ACCEPTED cardinality=Some(2) total=Some(2)'.",
+      "refutation_criterion_this_attack": "a single physical axis value, re-expressed under a different valid JSON numeric literal, is NOT detected as a canonical duplicate and inflates axis_cardinalities / cartesian_total",
+      "root_cause": "stable_hash(value) = SHA-256(serde_json::to_vec(canonicalize(value))). canonicalize() recursively sorts object keys but does not normalize numeric type/representation; serde_json::Number preserves the PosInt/Float distinction from the source literal, so `1` and `1.0` serialize to different bytes (\"1\" vs \"1.0\") and hash to different digests, even though they denote the same physical dosing value.",
+      "verdict": "REFUTED"
+    },
+    "index_laundering_out_of_universe_smuggling": {
+      "accounting_output_bytes_equal_a_vs_b": true,
+      "attack": "Construct two universes A and B with identical axis KEYS and identical axis value SETS, differing only in the ORDER values appear inside the 'hardener' axis array. Submit the same infeasible_indices=[1] to both. Independently decode index 1 to a concrete (hardener, resin) tuple using the mixed-radix unranking algorithm the module's own audit tool (evidence/audit/mixed-radix-bijection-v1/run_mixed_radix_bijection.py) documents as canonical: sorted axis keys, axis VALUES taken in the given array order (never re-sorted).",
+      "case_quoted_verbatim": "T06_FINDING index=1 tuple_under_A=(\"IPDA\", \"DGEBF\") tuple_under_B=(\"TETA\", \"DGEBF\") receipt_bytes_equal=true",
+      "declared_infeasible_index_both": 1,
+      "decoded_tuple_for_index_1_under_a": [
+        "IPDA",
+        "DGEBF"
+      ],
+      "decoded_tuple_for_index_1_under_b": [
+        "TETA",
+        "DGEBF"
+      ],
+      "observed": "occurred -- case quoted above",
+      "positive_control": {
+        "detected": true,
+        "evidence": "assertion 'POSITIVE CONTROL FAILED: identical inputs must decode identically' did not fire; repeated decode of the same input is stable, isolating the instability to the axis-value reordering between A and B",
+        "how_planted": "n/a -- self-consistency check embedded in the harness (t06_attack3 tail assertions)",
+        "planted_defect": "none needed for the diff itself -- the control here is the reverse check: decoding index 1 twice against the SAME (unreordered) universe A must agree with itself"
+      },
+      "refutation_criterion_this_attack": "the same declared infeasible index resolves to two different physical axis-value tuples across two accounting-equivalent (byte-identical-output) representations of 'the same' universe",
+      "resin_order_both": [
+        "DGEBA",
+        "DGEBF"
+      ],
+      "smuggling_narrative": "If a caller declares infeasible_indices=[1] intending to exclude the physical formulation (IPDA hardener, DGEBF resin) -- e.g. because that specific combination is hazardous or non-curing -- and the SAME semantic universe is later re-serialized with the hardener axis array in a different order (a transformation the runtime treats as fully equivalent: identical axis_cardinalities, identical cartesian_total, identical solved/infeasible counts, byte-identical FormulationUniverseAccountingV1), then index 1 now denotes (TETA hardener, DGEBF resin) instead. The originally-excluded (IPDA, DGEBF) combination is no longer excluded by anything in the accounting and is counted among solved_candidate_count, while a DIFFERENT, never-declared-infeasible combination is excluded in its place. The module's own accounting receipt cannot distinguish these two cases -- they are byte-identical.",
+      "universe_a_hardener_order": [
+        "IPDA",
+        "TETA"
+      ],
+      "universe_b_hardener_order": [
+        "TETA",
+        "IPDA"
+      ],
+      "verdict": "REFUTED"
+    }
+  },
+  "authority": "AUDIT_ONLY",
+  "campaign_item_done_criterion_cases_that_slipped_through": [
+    "duplicate_factor_collapse (see attacks.duplicate_factor_collapse.probe_case_quoted_verbatim)",
+    "index_laundering_out_of_universe_smuggling (see attacks.index_laundering_out_of_universe_smuggling.case_quoted_verbatim)"
+  ],
+  "campaign_item_id": "T-06",
+  "cargo_command": "cargo test -p amphora-formulation-capabilities --test formulation_universe_redteam_t06_independent --locked -- --nocapture --test-threads=1",
+  "directive_overlay_attack": {
+    "code_level_lock": "ranking_eligible, usable_by_optimizer, authority_upgrade, candidate_created_evidence are hardcoded false on every code path in validate_formulation_universe; feasibility_basis is hardcoded 'DECLARATIVE_ACCOUNTING_ONLY' on every code path; objective_values is always empty. There is no code path that upgrades a cardinality count to a feasibility claim.",
+    "constructed_overlay_demo": {
+      "cardinality_vs_feasibility": "12 (cardinality) != 4 (genuinely feasible) -- reported here as two distinct fields, not conflated",
+      "cartesian_total": 12,
+      "declared_infeasible_count": 0,
+      "genuine_dosing_gate": "amine:epoxide stoichiometric ratio must fall within the GUM-propagated per-part tolerance envelope established in amphora-envelope-gates evidence/audit/stoichiometric-ratio-tolerance-v1 (receipt SHA-256 c559bbe3f6c09727ddb2010d267018a3e433149b60f67a7c580ab6029c139e2e); using that envelope's published excursion bounds, only stoich_dose_ratio == 1.00 clears the gate (0.85 and 1.15 are outside it).",
+      "genuinely_feasible_cell_count": 4,
+      "solved_candidate_count_as_reported_by_module": 12,
+      "universe": {
+        "hardener_choice_AHEW": [
+          23,
+          24
+        ],
+        "resin_choice_EEW": [
+          182,
+          190
+        ],
+        "stoich_dose_ratio": [
+          0.85,
+          1.0,
+          1.15
+        ]
+      },
+      "who_computed_the_feasibility_number": "This overlay script (independent of amphora-formulation-universe / amphora-formulation-capabilities), NOT validate_formulation_universe, which has no feasibility computation at all -- confirming the DECLARATIVE_ACCOUNTING_ONLY basis does not itself compute or leak a feasibility number; it also does not surface one, so there is nothing for a downstream caller to misread as feasibility from this module directly."
+    },
+    "directive_done_criteria_assessment": {
+      "cardinality_and_feasibility_reported_separately": "TRUE in the live tree today (module never computes feasibility; this overlay demonstrates a caller CAN keep them separate) -- but see identity finding below, which undermines the third clause",
+      "identity_of_every_enumerated_cell_is_stable": "FALSE -- refuted directly by the index_laundering_out_of_universe_smuggling attack above: index 1 decodes to two different physical formulations across two accounting-equivalent representations of 'the same' universe",
+      "no_solved_cell_presentable_as_feasible": "TRUE for every downstream artifact found by grep; the field name 'solved_candidate_count' is a naming risk (a reader could misconstrue 'solved' as 'feasible') but no artifact in the live tree makes that substitution"
+    },
+    "directive_done_criteria_verbatim": "Cardinality and feasibility reported as separate quantities; no 'solved' cell is presentable as feasible; identity of every enumerated cell is stable.",
+    "instruction": "Enumerate the Cartesian space and test whether the DECLARATIVE_ACCOUNTING_ONLY feasibility basis leaks into any downstream feasibility or ranking claim; overlay real dosing/envelope/hazard gates and check the count of genuinely feasible cells is reported distinctly from cardinality.",
+    "leak_grep_result": "grep -rl solved_candidate_count across the live tree (excluding raw/superseded evidence snapshots) turns up only: reports/portfolio-status-2026-07-23/data/kpi_by_module.json (describes it verbatim as 'cartesian_total - infeasible_candidate_count', a count, not a feasibility claim), amphora-assurance-capabilities/src/diagnostics.rs (asserts the raw count plus ranking_eligible=false/usable_by_optimizer=false in the same check), and the module's own fixture/KPI/receipt files. No downstream artifact in the live tree presents solved_candidate_count as a feasibility, ranking, or optimizer-usable quantity."
+  },
+  "fire_id": "20260806T000001-1775748-1b4015bea2b8",
+  "harness_path": "amphora-formulation-capabilities/tests/formulation_universe_redteam_t06_independent.rs",
+  "harness_sha256": "c4525abaa45f6e8dcee8a8a449021d59c8991fb9aa784bc9182818233f3c637c",
+  "merge_recommendation_note": "R-D08 asked whether this module's cartesian-accounting claim is wholly duplicated by amphora-formulation-arithmetic's mixed-radix bijection work. It is not wholly duplicated: the mixed-radix bijection audit (evidence/audit/mixed-radix-bijection-v1) only checks COUNT agreement and index<->tuple bijection for a FIXED, single serialization of each universe; it does not check stability of that mapping across accounting-equivalent representations, which is exactly the gap this fire found. A merge should carry this finding forward as an open defect, not treat it as already covered.",
+  "module": "amphora-formulation-universe",
+  "note_source_hash_drift": "The module's own mission.md cites amphora-formulation-capabilities/src/lib.rs SHA-256 8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0. The live file on disk now hashes to c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047. This attack ran against the LIVE file (the correct target); the mission.md citation is stale and out of scope for this fire's repair (no test evidence in this receipt depends on the stale hash).",
+  "overall_verdict": "CLAIM_REFUTED",
+  "pre_committed_refutation_criterion_note": "This specific, narrow, pre-committed observation did NOT occur: nothing in the live tree surfaces cartesian/solved counts as a feasibility claim, and the module asserts no science beyond enumeration (feasibility_basis is hardcoded DECLARATIVE_ACCOUNTING_ONLY on every path, scientific_readiness is hardcoded UNVALIDATED/NOT_APPLICABLE). Reported honestly as NOT occurring rather than stretched to match the broader defects found below -- those defects (duplicate-factor collapse, index-identity instability) are real but distinct from this narrow criterion, and are reported under the campaign item's own done_criterion instead, which is broader ('Any case that slips through = CLAIM_REFUTED with the case quoted verbatim').",
+  "pre_committed_refutation_criterion_observed": false,
+  "pre_committed_refutation_criterion_verbatim": "A cardinality count is surfaced as a feasibility claim, or the module asserts any science beyond enumeration (which would also void the merge case).",
+  "provenance": {
+    "directive_obligation": "T2-06",
+    "directive_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+    "directive_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+    "envelope_gates_ratio_tolerance_receipt_sha256": "c559bbe3f6c09727ddb2010d267018a3e433149b60f67a7c580ab6029c139e2e",
+    "harness_sha256": "c4525abaa45f6e8dcee8a8a449021d59c8991fb9aa784bc9182818233f3c637c",
+    "target_function_source_sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
+  },
+  "raw_log_run1_sha256": "23cebcb3b75f2ba045a0fcfa3e046770c81ea31d7925db62a0b071ee963a3225",
+  "raw_log_run2_sha256": "5f77f411011aa9446f8be607ba8dade04e861a88c3a24f6b4eb136b02db9feba",
+  "raw_logs_note": "Raw cargo stdout is NOT byte-stable run-to-run (compile-timing line differs); the two-replay gate below applies to THIS structured diagnostic object, which encodes only the deterministic pass/fail facts asserted by the harness and reproduced identically both times. Raw logs are retained as supporting, unsigned provenance, referenced here by hash, not declared as a receipt.",
+  "schema": "amphora.formulation-universe.t06-independent-adversarial-attack.v1",
+  "target_function": "amphora_formulation_capabilities::validate_formulation_universe",
+  "target_function_source": "amphora-formulation-capabilities/src/lib.rs",
+  "target_function_source_sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
+}

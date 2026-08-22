@@ -1,0 +1,67 @@
+{
+  "license_text_diverges": {
+    "expected_rule": "license_text_matches_live_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Overwrote DR-LANG-RU-01's license_evidence_quote with a fabricated 'no restriction, no attribution' claim contradicting the recorded WebFetch evidence (which states a CC BY attribution-required license).",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-RU-01",
+        "reason": "DR-LANG-RU-01: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "literal_english_translation_query": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native ru query string 'эпоксидная смола отверждение амин кинетика данные elibrary' with its literal English gloss, while leaving language:'ru' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "ru query field contains no Cyrillic characters: 'epoxy resin cure amine kinetics data elibrary'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "missing_recorded_query": {
+    "expected_rule": "citation_has_recorded_query_and_result",
+    "expected_rule_fired": true,
+    "how_planted": "Scrubbed every occurrence of DR-LANG-RU-03's url (https://isp.viam.ru/corrosiontests) from a copy of this fire's search-record queries/results.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-RU-03",
+        "reason": "DR-LANG-RU-03: url https://isp.viam.ru/corrosiontests does not appear in any recorded search-record query/result this fire",
+        "rule": "citation_has_recorded_query_and_result"
+      }
+    ]
+  },
+  "native_citation_not_resolvable": {
+    "expected_rule": "native_script_citation_integrity",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced DR-LANG-RU-04's native_citation (Cyrillic institute name) with its bare Latin-script romanization.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-RU-04",
+        "reason": "DR-LANG-RU-04: native_citation 'TsNII KM Prometey' contains no Cyrillic characters",
+        "rule": "native_script_citation_integrity"
+      }
+    ]
+  },
+  "rediscovery_dropped": {
+    "expected_rule": "rediscovery_recall",
+    "expected_rule_fired": true,
+    "how_planted": "Injected a SYNTHETIC previously-supplied-candidate id ('SYNTHETIC-RU-PRIOR-CANDIDATE-NOT-REAL') into the checker's previously_supplied_ids list, since the real list is genuinely empty this fire (see manifest note) -- no disposition entry anywhere has rediscovers=='SYNTHETIC-RU-PRIOR-CANDIDATE-NOT-REAL', so this proves rule 5 is a real, non-vacuous check.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "SYNTHETIC-RU-PRIOR-CANDIDATE-NOT-REAL",
+        "reason": "previously-supplied candidate SYNTHETIC-RU-PRIOR-CANDIDATE-NOT-REAL was neither rediscovered (no disposition entry with rediscovers==SYNTHETIC-RU-PRIOR-CANDIDATE-NOT-REAL) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      }
+    ]
+  }
+}

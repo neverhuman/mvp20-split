@@ -1,0 +1,307 @@
+{
+  "schema": "amphora.data-catalog.v2",
+  "snapshot_id": "feedback-v3-2026-07-19",
+  "parent_snapshot": {
+    "snapshot_id": "feedback-v2-2026-07-19",
+    "catalog_path": "feedback/v2/catalog.json",
+    "catalog_sha256": "c7ad68a0977862b5f7797cc781088492e79af0554f01b9486cf8ca0f94c3eed4",
+    "immutable": true
+  },
+  "source_intents": [
+    {
+      "schema": "amphora.source-intent.v2",
+      "source_intent_id": "uci_secom_v3",
+      "original_label": "SECOM",
+      "canonical_label": "UCI SECOM",
+      "aliases": [],
+      "source_url": "https://archive.ics.uci.edu/dataset/179/secom",
+      "program_disposition": "Time-ordered missingness and process-control diagnostics only; no batch-release or manufacturing-qualification authority."
+    },
+    {
+      "schema": "amphora.source-intent.v2",
+      "source_intent_id": "pronto_v3",
+      "original_label": "PRONTO benchmark case study",
+      "canonical_label": "PRONTO process dataset",
+      "aliases": [],
+      "source_url": "https://zenodo.org/records/1341583",
+      "program_disposition": "Normalize only the ten timestamped Process Data CSV streams from the complete archive for audit controls; exclude multimedia and high-frequency streams."
+    },
+    {
+      "schema": "amphora.source-intent.v2",
+      "source_intent_id": "purformance_v3",
+      "original_label": "PURformance",
+      "canonical_label": "PURformance coating formulation data",
+      "aliases": [],
+      "source_url": "https://zenodo.org/records/13742098",
+      "program_disposition": "Study-held-out design-rule diagnostics only; retain negative and no-lift results and grant no formulation ranking authority."
+    },
+    {
+      "schema": "amphora.source-intent.v2",
+      "source_intent_id": "chebi_252_v3",
+      "original_label": "ChEBI release 252",
+      "canonical_label": "ChEBI release 252 three-star structures",
+      "aliases": [],
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/archive/rel252/SDF/",
+      "program_disposition": "Pinned curated identity, formula, mass, stereochemistry, fragment, and provenance audit corpus; no property-ranking or synthesis authority."
+    },
+    {
+      "schema": "amphora.source-intent.v2",
+      "source_intent_id": "omg_properties_v3",
+      "original_label": "Open Macromolecular Genome physical properties",
+      "canonical_label": "OMG computed physical-property package",
+      "aliases": ["OMG"],
+      "source_url": "https://zenodo.org/records/13863075",
+      "program_disposition": "Computed-property context and diagnostics only; never overrides measured support, applicability, or HSP policy."
+    }
+  ],
+  "acquisition_units": [
+    {
+      "schema": "amphora.acquisition-unit.v2",
+      "acquisition_unit_id": "uci_secom_archive_v3",
+      "source_intent_id": "uci_secom_v3",
+      "title": "Official UCI SECOM archive",
+      "filename": "secom.zip",
+      "source_url": "https://archive.ics.uci.edu/static/public/179/secom.zip",
+      "expected_sha256": "eea568baf3c2229096d7d294cf0b096b5502bd96d92c0b80a65b84714059be8e",
+      "expected_bytes": 1964989,
+      "cache_import_path": null,
+      "credential_ref": null,
+      "parser": "SECOM_ZIP",
+      "endpoint": "process_yield_label",
+      "unit": "binary_yield_label",
+      "identity_columns": ["timestamp"],
+      "condition_columns": ["timestamp", "missing_feature_count"],
+      "citation_column": null,
+      "value_column": "label",
+      "evidence_class": "EXTERNAL_MEASURED",
+      "rights_decision_id": "rights_uci_secom_archive_v3",
+      "consumers": [
+        {
+          "module_id": "amphora-process-qc-twin",
+          "consumer": "OFFLINE_BENCHMARK",
+          "scoring": false,
+          "authority_limit": "AUDIT_ONLY missingness, ordering, drift, and detector diagnostics; no batch-release authority."
+        }
+      ],
+      "blocked_reason": null
+    },
+    {
+      "schema": "amphora.acquisition-unit.v2",
+      "acquisition_unit_id": "pronto_process_archive_v3",
+      "source_intent_id": "pronto_v3",
+      "title": "Official PRONTO benchmark case-study archive",
+      "filename": "PRONTO benchmark case study.zip",
+      "source_url": "https://zenodo.org/api/records/1341583/files/PRONTO%20benchmark%20case%20study.zip/content",
+      "expected_sha256": "6879563fb7df5a71984c52157774f58b3f4725bd7ab0c717f7fcd57313f08961",
+      "expected_bytes": 1720560937,
+      "cache_import_path": null,
+      "credential_ref": null,
+      "parser": "PRONTO_PROCESS_ZIP",
+      "endpoint": "process_sensor_missingness",
+      "unit": "missing_sensor_fraction",
+      "identity_columns": ["archive_entry", "source_timestamp", "source_row_number"],
+      "condition_columns": ["condition_family", "source_timestamp", "timestamp_encoding", "time_segment"],
+      "citation_column": null,
+      "value_column": null,
+      "evidence_class": "EXTERNAL_MEASURED",
+      "rights_decision_id": "rights_pronto_process_archive_v3",
+      "consumers": [
+        {
+          "module_id": "amphora-process-qc-twin",
+          "consumer": "OFFLINE_BENCHMARK",
+          "scoring": false,
+          "authority_limit": "AUDIT_ONLY time, missingness, false-alarm, and missed-deviation controls; no manufacturing qualification."
+        }
+      ],
+      "blocked_reason": null
+    },
+    {
+      "schema": "amphora.acquisition-unit.v2",
+      "acquisition_unit_id": "purformance_experiment_v3",
+      "source_intent_id": "purformance_v3",
+      "title": "PURformance experiment archive",
+      "filename": "Experiment.zip",
+      "source_url": "https://zenodo.org/api/records/13742098/files/Experiment.zip/content",
+      "expected_sha256": "b6e89fe900b1aaf73beb882eeb07dfaf702e0818c9f443de6e84aaa8e32b0036",
+      "expected_bytes": 46183749,
+      "cache_import_path": null,
+      "credential_ref": null,
+      "parser": "ZIP_CSV_CORPUS",
+      "endpoint": "purformance_experiment_observation",
+      "unit": null,
+      "identity_columns": ["experiment_id", "sample_id"],
+      "condition_columns": ["run_id", "iteration"],
+      "citation_column": null,
+      "value_column": null,
+      "evidence_class": "EXTERNAL_MEASURED",
+      "rights_decision_id": "rights_purformance_experiment_v3",
+      "consumers": [
+        {
+          "module_id": "amphora-design-rule-score",
+          "consumer": "OFFLINE_BENCHMARK",
+          "scoring": false,
+          "authority_limit": "AUDIT_ONLY study-held-out transparent-baseline diagnostics; negative and no-lift outcomes retained."
+        }
+      ],
+      "blocked_reason": null
+    },
+    {
+      "schema": "amphora.acquisition-unit.v2",
+      "acquisition_unit_id": "purformance_evaluation_v3",
+      "source_intent_id": "purformance_v3",
+      "title": "PURformance evaluation archive",
+      "filename": "Evaluation.zip",
+      "source_url": "https://zenodo.org/api/records/13742098/files/Evaluation.zip/content",
+      "expected_sha256": "c02e82b4ab80ea2d970b6d1bda8bb47d4e0a01fc43a60b29c3718d15f692338c",
+      "expected_bytes": 57449170,
+      "cache_import_path": null,
+      "credential_ref": null,
+      "parser": "ZIP_CSV_CORPUS",
+      "endpoint": "purformance_published_evaluation",
+      "unit": null,
+      "identity_columns": ["sample_id", "iteration"],
+      "condition_columns": ["method", "split"],
+      "citation_column": null,
+      "value_column": null,
+      "evidence_class": "COMPUTED",
+      "rights_decision_id": "rights_purformance_evaluation_v3",
+      "consumers": [
+        {
+          "module_id": "amphora-design-rule-score",
+          "consumer": "DIAGNOSTIC",
+          "scoring": false,
+          "authority_limit": "Published-computation context only; no optimizer, ranking, or product authority."
+        }
+      ],
+      "blocked_reason": null
+    },
+    {
+      "schema": "amphora.acquisition-unit.v2",
+      "acquisition_unit_id": "chebi_release_252_3star_v3",
+      "source_intent_id": "chebi_252_v3",
+      "title": "ChEBI release 252 full three-star SDF",
+      "filename": "chebi_3_stars.sdf.gz",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/archive/rel252/SDF/chebi_3_stars.sdf.gz",
+      "expected_sha256": "8f17627476c66e899dabe3cd7ae1cbb94f7ee6c67f2ee91f077a77a19c940ad7",
+      "expected_bytes": 59482451,
+      "cache_import_path": null,
+      "credential_ref": null,
+      "parser": "CHEBI_SDF_GZIP",
+      "endpoint": "curated_molecule_structure",
+      "unit": "Da",
+      "identity_columns": ["INCHIKEY", "INCHI", "SMILES"],
+      "condition_columns": ["FORMULA", "STAR"],
+      "citation_column": null,
+      "value_column": "MASS",
+      "evidence_class": "EXTERNAL_MEASURED",
+      "rights_decision_id": "rights_chebi_release_252_3star_v3",
+      "consumers": [
+        {
+          "module_id": "amphora-molecule-property",
+          "consumer": "OFFLINE_BENCHMARK",
+          "scoring": false,
+          "authority_limit": "AUDIT_ONLY identity, formula, mass, stereochemistry, fragment, invalid-input, and provenance checks."
+        }
+      ],
+      "blocked_reason": null
+    },
+    {
+      "schema": "amphora.acquisition-unit.v2",
+      "acquisition_unit_id": "omg_physical_properties_v3",
+      "source_intent_id": "omg_properties_v3",
+      "title": "OMG computed physical-property package",
+      "filename": "OMG_PhysicalProperties-OMG_property_v1.0.zip",
+      "source_url": "https://zenodo.org/records/13863075/files/TheJacksonLab%2FOMG_PhysicalProperties-OMG_property_v1.0.zip?download=1",
+      "expected_sha256": "3e5af76bc6a1f8ea0f75b0dc260cb0b631ce589a0e2fa09f7e56da8475a71596",
+      "expected_bytes": 190463777,
+      "cache_import_path": "feedback/v2/raw/objects/3e5af76bc6a1f8ea0f75b0dc260cb0b631ce589a0e2fa09f7e56da8475a71596",
+      "credential_ref": null,
+      "parser": "ZIP_CSV_CORPUS",
+      "endpoint": "computed_physical_property",
+      "unit": null,
+      "identity_columns": ["smiles", "reaction_id"],
+      "condition_columns": [],
+      "citation_column": null,
+      "value_column": null,
+      "evidence_class": "COMPUTED",
+      "rights_decision_id": "rights_omg_physical_properties_v3",
+      "consumers": [
+        {
+          "module_id": "amphora-molecule-property",
+          "consumer": "DIAGNOSTIC",
+          "scoring": false,
+          "authority_limit": "Computed-property diagnostics only; no measured-property or ranking claim."
+        },
+        {
+          "module_id": "amphora-solvency-score",
+          "consumer": "DIAGNOSTIC",
+          "scoring": false,
+          "authority_limit": "Computed chi and property context only; measured support, temperature, OOD, baseline, and HSP policy remain binding."
+        }
+      ],
+      "blocked_reason": null
+    }
+  ],
+  "rights_decisions": [
+    {
+      "schema": "amphora.rights-decision.v2",
+      "rights_decision_id": "rights_uci_secom_archive_v3",
+      "acquisition_unit_id": "uci_secom_archive_v3",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "license": "CC-BY-4.0",
+      "basis": "Official UCI dataset record and hash-locked archive.",
+      "decision_receipt": null,
+      "promotion_eligible": false
+    },
+    {
+      "schema": "amphora.rights-decision.v2",
+      "rights_decision_id": "rights_pronto_process_archive_v3",
+      "acquisition_unit_id": "pronto_process_archive_v3",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "license": "CC-BY-4.0",
+      "basis": "Official Zenodo record 1341583 and archive checksum.",
+      "decision_receipt": null,
+      "promotion_eligible": false
+    },
+    {
+      "schema": "amphora.rights-decision.v2",
+      "rights_decision_id": "rights_purformance_experiment_v3",
+      "acquisition_unit_id": "purformance_experiment_v3",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "license": "CC-BY-4.0",
+      "basis": "Official Zenodo record 13742098 and file checksum.",
+      "decision_receipt": null,
+      "promotion_eligible": false
+    },
+    {
+      "schema": "amphora.rights-decision.v2",
+      "rights_decision_id": "rights_purformance_evaluation_v3",
+      "acquisition_unit_id": "purformance_evaluation_v3",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "license": "CC-BY-4.0",
+      "basis": "Official Zenodo record 13742098 and file checksum; computed results remain diagnostic.",
+      "decision_receipt": null,
+      "promotion_eligible": false
+    },
+    {
+      "schema": "amphora.rights-decision.v2",
+      "rights_decision_id": "rights_chebi_release_252_3star_v3",
+      "acquisition_unit_id": "chebi_release_252_3star_v3",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "license": "CC-BY-4.0",
+      "basis": "Official ChEBI release-252 SDF directory README, LICENSE, and SHA-256 pin.",
+      "decision_receipt": null,
+      "promotion_eligible": false
+    },
+    {
+      "schema": "amphora.rights-decision.v2",
+      "rights_decision_id": "rights_omg_physical_properties_v3",
+      "acquisition_unit_id": "omg_physical_properties_v3",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "license": "MIT",
+      "basis": "Official computed physical-property package, re-bound from the immutable feedback/v2 content object.",
+      "decision_receipt": null,
+      "promotion_eligible": false
+    }
+  ]
+}

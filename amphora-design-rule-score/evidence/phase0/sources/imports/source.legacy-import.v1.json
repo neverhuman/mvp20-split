@@ -1,0 +1,90 @@
+{
+  "schema": "amphora.module-source-census.v1",
+  "module_id": "amphora-design-rule-score",
+  "frozen_on": "2026-07-18",
+  "source_record": {
+    "doi": "10.5281/zenodo.13742098",
+    "record_url": "https://zenodo.org/records/13742098",
+    "version": "1.0",
+    "publication_date": "2024-11-20",
+    "license": "CC-BY-4.0"
+  },
+  "sources": [
+    {
+      "source_id": "purformance_experiment_v1",
+      "publisher": "Hochschule Niederrhein",
+      "study_id": "PURFORMANCE_LACQUER_V1",
+      "source_url": "https://zenodo.org/api/records/13742098/files/Experiment.zip/content",
+      "acquisition_status": "ACQUIRED_WHEN_FETCH_RECEIPT_EXISTS",
+      "local_manifest": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Experiment.zip",
+      "local_manifest_sha256": "b6e89fe900b1aaf73beb882eeb07dfaf702e0818c9f443de6e84aaa8e32b0036",
+      "license": "CC-BY-4.0",
+      "rights_status": "ACCEPTED",
+      "eligible_for_derivatives": true,
+      "restrictions": [
+        "one polyurethane lacquer study",
+        "directional hypothesis and LOCKED_INTERNAL ceiling",
+        "does not validate marine DGEBA formulation rules",
+        "preserve Cold_start then Iteration_1 through Iteration_4 acquisition chronology",
+        "Random_test directory is an untouched test partition"
+      ],
+      "fetch": {
+        "download_url": "https://zenodo.org/api/records/13742098/files/Experiment.zip/content",
+        "expected_sha256": "b6e89fe900b1aaf73beb882eeb07dfaf702e0818c9f443de6e84aaa8e32b0036",
+        "install_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Experiment.zip",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+        "license_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+        "license_install_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Experiment.LICENSE.txt",
+        "acquisition_record_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Experiment.acquisition.v1.json"
+      }
+    },
+    {
+      "source_id": "purformance_evaluation_v1",
+      "publisher": "Hochschule Niederrhein",
+      "study_id": "PURFORMANCE_LACQUER_V1",
+      "source_url": "https://zenodo.org/api/records/13742098/files/Evaluation.zip/content",
+      "acquisition_status": "ACQUIRED_WHEN_FETCH_RECEIPT_EXISTS",
+      "local_manifest": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Evaluation.zip",
+      "local_manifest_sha256": "c02e82b4ab80ea2d970b6d1bda8bb47d4e0a01fc43a60b29c3718d15f692338c",
+      "license": "CC-BY-4.0",
+      "rights_status": "ACCEPTED",
+      "eligible_for_derivatives": true,
+      "restrictions": [
+        "evaluation code is audit context only",
+        "new model-family selection is prohibited",
+        "only standardized ridge may be evaluated for Amphora"
+      ],
+      "fetch": {
+        "download_url": "https://zenodo.org/api/records/13742098/files/Evaluation.zip/content",
+        "expected_sha256": "c02e82b4ab80ea2d970b6d1bda8bb47d4e0a01fc43a60b29c3718d15f692338c",
+        "install_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Evaluation.zip",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+        "license_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+        "license_install_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Evaluation.LICENSE.txt",
+        "acquisition_record_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Evaluation.acquisition.v1.json"
+      }
+    },
+    {
+      "source_id": "purformance_readme_v1",
+      "publisher": "Hochschule Niederrhein",
+      "study_id": "PURFORMANCE_LACQUER_V1",
+      "source_url": "https://zenodo.org/api/records/13742098/files/Readme.txt/content",
+      "acquisition_status": "ACQUIRED_WHEN_FETCH_RECEIPT_EXISTS",
+      "local_manifest": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Readme.txt",
+      "local_manifest_sha256": "6f7bb1ecc50fe75349ae518ba672a9908768af9fd7055a56360181177fbc89ed",
+      "license": "CC-BY-4.0",
+      "rights_status": "ACCEPTED",
+      "eligible_for_derivatives": true,
+      "restrictions": ["record documentation only"],
+      "fetch": {
+        "download_url": "https://zenodo.org/api/records/13742098/files/Readme.txt/content",
+        "expected_sha256": "6f7bb1ecc50fe75349ae518ba672a9908768af9fd7055a56360181177fbc89ed",
+        "install_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Readme.txt",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+        "license_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+        "license_install_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Readme.LICENSE.txt",
+        "acquisition_record_path": "amphora-design-rule-score/reference/purformance/zenodo-13742098/Readme.acquisition.v1.json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1122 @@
+{
+  "alphas": [
+    0.01,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "anchor": {
+    "DDS": {
+      "contaminated_morgan": 0.39285714285714285,
+      "exact": true,
+      "signed": 0.39285714285714285
+    },
+    "DETA": {
+      "contaminated_morgan": 0.16666666666666666,
+      "exact": true,
+      "signed": 0.16666666666666666
+    },
+    "IPDA": {
+      "contaminated_morgan": 0.16666666666666666,
+      "exact": true,
+      "signed": 0.16666666666666666
+    },
+    "TETA": {
+      "contaminated_morgan": 0.15789473684210525,
+      "exact": true,
+      "signed": 0.15789473684210525
+    },
+    "m-XDA": {
+      "contaminated_morgan": 0.23809523809523808,
+      "exact": true,
+      "signed": 0.23809523809523808
+    }
+  },
+  "anchor_exact_all": true,
+  "candidates": {
+    "DDS": "NC1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)N",
+    "DETA": "NCCNCCN",
+    "IPDA": "CC1(CC(CC(C1)N)C)CN",
+    "TETA": "NCCNCCNCCN",
+    "m-XDA": "NCC1=CC=CC(=C1)CN"
+  },
+  "closes": [
+    "Tests the untested exchangeability precondition (calibration-set distinctness) shared by all four prior signed amphora-molecule-novelty audit receipts.",
+    "Corrects cross-family-concordance-v1's DDS family-count: reported 1/4 novel families at alpha=0.05 (maccs_166) is not reproducible once the corpus is deduplicated; true value is 0/4."
+  ],
+  "corpus": {
+    "contaminated_corpus_canonical_set_sha256": "25b7f35c26594d7be5454826c0f399d7716131214c3c314646930257cf560304",
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "deduped_corpus_canonical_set_sha256": "74513e30071335d097ee83315f5b21249da86ea6a5d61e98a27d07b631593dce",
+    "max_duplicate_group_size": 12,
+    "n_canonically_unique_structures": 350,
+    "n_duplicate_groups": 36,
+    "n_duplicate_rows": 129,
+    "n_rows_with_Tg": 443,
+    "rights": "CC-BY rights-clean OpenPoly benchmark (locked, read-only)",
+    "source": "OpenPoly final_polymer_properties_fromliterature.csv (Ma et al. 2023)",
+    "wildcard_cap": "'*'->'C' (methyl end-cap, reproduces signed featurization)"
+  },
+  "does_not_close": [
+    "Does not modify any prior signed receipt, the manifest, or the locked Phase-0 KPI.",
+    "Does not establish which of the 129 duplicate rows has the more accurate Tg (both often differ slightly per source, e.g. PLA 331.81K vs PDLA 330.81K) -- that is a separate curation question.",
+    "Does not extend the corpus beyond OpenPoly or add USPTO/ChEMBL prior-art coverage.",
+    "Morgan(r2,2048) family / fixed-0.40-cutoff verdicts for the 5 signed candidates are unchanged by this audit -- this closes a calibration-integrity gap, not the primary novelty screen."
+  ],
+  "drift_all_families": {
+    "atompair_2048": {
+      "DDS": {
+        "conformal_p_contaminated": 0.19144144144144143,
+        "conformal_p_deduped": 0.24786324786324787,
+        "isolated_count_contaminated": 84,
+        "isolated_count_deduped": 86,
+        "pct_change": 0.2947209653092007
+      },
+      "DETA": {
+        "conformal_p_contaminated": 0.0022522522522522522,
+        "conformal_p_deduped": 0.002849002849002849,
+        "isolated_count_contaminated": 0,
+        "isolated_count_deduped": 0,
+        "pct_change": 0.264957264957265
+      },
+      "IPDA": {
+        "conformal_p_contaminated": 0.009009009009009009,
+        "conformal_p_deduped": 0.011396011396011397,
+        "isolated_count_contaminated": 3,
+        "isolated_count_deduped": 3,
+        "pct_change": 0.264957264957265
+      },
+      "TETA": {
+        "conformal_p_contaminated": 0.0022522522522522522,
+        "conformal_p_deduped": 0.002849002849002849,
+        "isolated_count_contaminated": 0,
+        "isolated_count_deduped": 0,
+        "pct_change": 0.264957264957265
+      },
+      "m-XDA": {
+        "conformal_p_contaminated": 0.009009009009009009,
+        "conformal_p_deduped": 0.011396011396011397,
+        "isolated_count_contaminated": 3,
+        "isolated_count_deduped": 3,
+        "pct_change": 0.264957264957265
+      }
+    },
+    "maccs_166": {
+      "DDS": {
+        "conformal_p_contaminated": 0.04954954954954955,
+        "conformal_p_deduped": 0.08547008547008547,
+        "isolated_count_contaminated": 21,
+        "isolated_count_deduped": 29,
+        "pct_change": 0.7249417249417249
+      },
+      "DETA": {
+        "conformal_p_contaminated": 0.024774774774774775,
+        "conformal_p_deduped": 0.045584045584045586,
+        "isolated_count_contaminated": 10,
+        "isolated_count_deduped": 15,
+        "pct_change": 0.83993783993784
+      },
+      "IPDA": {
+        "conformal_p_contaminated": 0.006756756756756757,
+        "conformal_p_deduped": 0.017094017094017096,
+        "isolated_count_contaminated": 2,
+        "isolated_count_deduped": 5,
+        "pct_change": 1.52991452991453
+      },
+      "TETA": {
+        "conformal_p_contaminated": 0.024774774774774775,
+        "conformal_p_deduped": 0.045584045584045586,
+        "isolated_count_contaminated": 10,
+        "isolated_count_deduped": 15,
+        "pct_change": 0.83993783993784
+      },
+      "m-XDA": {
+        "conformal_p_contaminated": 0.0022522522522522522,
+        "conformal_p_deduped": 0.002849002849002849,
+        "isolated_count_contaminated": 0,
+        "isolated_count_deduped": 0,
+        "pct_change": 0.264957264957265
+      }
+    },
+    "morgan_r2_2048": {
+      "DDS": {
+        "conformal_p_contaminated": 0.11486486486486487,
+        "conformal_p_deduped": 0.15954415954415954,
+        "isolated_count_contaminated": 50,
+        "isolated_count_deduped": 55,
+        "pct_change": 0.38897268309033006
+      },
+      "DETA": {
+        "conformal_p_contaminated": 0.0045045045045045045,
+        "conformal_p_deduped": 0.005698005698005698,
+        "isolated_count_contaminated": 1,
+        "isolated_count_deduped": 1,
+        "pct_change": 0.264957264957265
+      },
+      "IPDA": {
+        "conformal_p_contaminated": 0.0045045045045045045,
+        "conformal_p_deduped": 0.005698005698005698,
+        "isolated_count_contaminated": 1,
+        "isolated_count_deduped": 1,
+        "pct_change": 0.264957264957265
+      },
+      "TETA": {
+        "conformal_p_contaminated": 0.0022522522522522522,
+        "conformal_p_deduped": 0.002849002849002849,
+        "isolated_count_contaminated": 0,
+        "isolated_count_deduped": 0,
+        "pct_change": 0.264957264957265
+      },
+      "m-XDA": {
+        "conformal_p_contaminated": 0.02252252252252252,
+        "conformal_p_deduped": 0.02849002849002849,
+        "isolated_count_contaminated": 9,
+        "isolated_count_deduped": 9,
+        "pct_change": 0.264957264957265
+      }
+    },
+    "toptorsion_2048": {
+      "DDS": {
+        "conformal_p_contaminated": 0.3581081081081081,
+        "conformal_p_deduped": 0.46438746438746437,
+        "isolated_count_contaminated": 158,
+        "isolated_count_deduped": 162,
+        "pct_change": 0.2967800892329193
+      },
+      "DETA": {
+        "conformal_p_contaminated": 0.02702702702702703,
+        "conformal_p_deduped": 0.03418803418803419,
+        "isolated_count_contaminated": 11,
+        "isolated_count_deduped": 11,
+        "pct_change": 0.264957264957265
+      },
+      "IPDA": {
+        "conformal_p_contaminated": 0.02702702702702703,
+        "conformal_p_deduped": 0.03418803418803419,
+        "isolated_count_contaminated": 11,
+        "isolated_count_deduped": 11,
+        "pct_change": 0.264957264957265
+      },
+      "TETA": {
+        "conformal_p_contaminated": 0.015765765765765764,
+        "conformal_p_deduped": 0.019943019943019943,
+        "isolated_count_contaminated": 6,
+        "isolated_count_deduped": 6,
+        "pct_change": 0.26495726495726507
+      },
+      "m-XDA": {
+        "conformal_p_contaminated": 0.05855855855855856,
+        "conformal_p_deduped": 0.07692307692307693,
+        "isolated_count_contaminated": 25,
+        "isolated_count_deduped": 26,
+        "pct_change": 0.3136094674556214
+      }
+    }
+  },
+  "drift_morgan_r2_2048": {
+    "DDS": {
+      "conformal_p_contaminated": 0.11486486486486487,
+      "conformal_p_deduped": 0.15954415954415954,
+      "isolated_count_contaminated": 50,
+      "isolated_count_deduped": 55,
+      "pct_change": 0.38897268309033006
+    },
+    "DETA": {
+      "conformal_p_contaminated": 0.0045045045045045045,
+      "conformal_p_deduped": 0.005698005698005698,
+      "isolated_count_contaminated": 1,
+      "isolated_count_deduped": 1,
+      "pct_change": 0.264957264957265
+    },
+    "IPDA": {
+      "conformal_p_contaminated": 0.0045045045045045045,
+      "conformal_p_deduped": 0.005698005698005698,
+      "isolated_count_contaminated": 1,
+      "isolated_count_deduped": 1,
+      "pct_change": 0.264957264957265
+    },
+    "TETA": {
+      "conformal_p_contaminated": 0.0022522522522522522,
+      "conformal_p_deduped": 0.002849002849002849,
+      "isolated_count_contaminated": 0,
+      "isolated_count_deduped": 0,
+      "pct_change": 0.264957264957265
+    },
+    "m-XDA": {
+      "conformal_p_contaminated": 0.02252252252252252,
+      "conformal_p_deduped": 0.02849002849002849,
+      "isolated_count_contaminated": 9,
+      "isolated_count_deduped": 9,
+      "pct_change": 0.264957264957265
+    }
+  },
+  "duplicate_groups_top10_by_size": [
+    {
+      "aliases": [
+        "PNIPAM",
+        "PNIPAAm",
+        "poly(N -isopropylacrylamide)",
+        "PNIPAm",
+        "Poly(N -isopropylacrylamide)",
+        "NIPAAm",
+        "NIPAM",
+        "poly(N-isopropylacrylamide)",
+        "PNIPAM",
+        "poly(NIPAAm)",
+        "pNIPAM",
+        "PNIPAAM"
+      ],
+      "canonical_smiles": "[C]CC([C])C(=O)NC(C)C",
+      "n_aliases": 12
+    },
+    {
+      "aliases": [
+        "PA6",
+        "PA",
+        "polyamide",
+        "nylon",
+        "polyamides",
+        "nylon 6",
+        "PA 6",
+        "polyamide 6",
+        "PA-6"
+      ],
+      "canonical_smiles": "[C]NCCCCCC([C])=O",
+      "n_aliases": 9
+    },
+    {
+      "aliases": [
+        "PS",
+        "polystyrene",
+        "polyethylene",
+        "sPS",
+        "Polystyrene",
+        "PSt",
+        "polystyrene (PS)",
+        "EPS"
+      ],
+      "canonical_smiles": "[C]CC([C])c1ccccc1",
+      "n_aliases": 8
+    },
+    {
+      "aliases": [
+        "PE",
+        "HDPE",
+        "LDPE",
+        "UHMWPE",
+        "LLDPE",
+        "high-density polyethylene",
+        "low-density polyethylene"
+      ],
+      "canonical_smiles": "[C]CC[C]",
+      "n_aliases": 7
+    },
+    {
+      "aliases": [
+        "PLA",
+        "PLLA",
+        "PDLA",
+        "poly(lactic acid)",
+        "polylactic acid",
+        "polylacticacid"
+      ],
+      "canonical_smiles": "[C]OC(C)C([C])=O",
+      "n_aliases": 6
+    },
+    {
+      "aliases": [
+        "PEO",
+        "PEG",
+        "POE",
+        "poly(ethylene glycol)",
+        "poly(ethylene oxide)",
+        "polyethylene glycol"
+      ],
+      "canonical_smiles": "[C]CCO[C]",
+      "n_aliases": 6
+    },
+    {
+      "aliases": [
+        "PP",
+        "polypropylene",
+        "iPP",
+        "isotactic polypropylene",
+        "Polypropylene"
+      ],
+      "canonical_smiles": "[C]CC([C])C",
+      "n_aliases": 5
+    },
+    {
+      "aliases": [
+        "PMMA",
+        "poly(methyl methacrylate)",
+        "MMA",
+        "polymethylmethacrylate"
+      ],
+      "canonical_smiles": "[C]CC([C])(C)C(=O)OC",
+      "n_aliases": 4
+    },
+    {
+      "aliases": [
+        "PCL",
+        "polycaprolactone",
+        "poly(\u03b5-caprolactone)",
+        "Polycaprolactone"
+      ],
+      "canonical_smiles": "[C]OCCCCCC([C])=O",
+      "n_aliases": 4
+    },
+    {
+      "aliases": [
+        "PVA",
+        "poly(vinyl alcohol)",
+        "PVOH",
+        "polyvinyl alcohol"
+      ],
+      "canonical_smiles": "[C]CC([C])O",
+      "n_aliases": 4
+    }
+  ],
+  "families": [
+    "morgan_r2_2048",
+    "maccs_166",
+    "atompair_2048",
+    "toptorsion_2048"
+  ],
+  "family_reference": {
+    "atompair_2048": "Carhart et al. 1985 DOI:10.1021/ci00046a002 (topological atom pairs)",
+    "maccs_166": "Durant et al. 2002 DOI:10.1021/ci010132r (166 substructure keys)",
+    "morgan_r2_2048": "Rogers&Hahn 2010 DOI:10.1021/ci100050t (circular/ECFP)",
+    "toptorsion_2048": "Nilakantan et al. 1987 DOI:10.1021/ci00054a008 (4-atom torsions)"
+  },
+  "flipped_candidates": [
+    "DDS",
+    "IPDA",
+    "m-XDA"
+  ],
+  "flips": {
+    "atompair_2048": {
+      "DDS": {
+        "contaminated_conformal_p": 0.19144144144144143,
+        "contaminated_novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": true
+        },
+        "deduped_conformal_p": 0.24786324786324787,
+        "deduped_novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": false
+        },
+        "flips_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "contaminated_conformal_p": 0.009009009009009009,
+        "contaminated_novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        },
+        "deduped_conformal_p": 0.011396011396011397,
+        "deduped_novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        },
+        "flips_by_alpha": {
+          "a0.01": true,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": false
+        }
+      },
+      "m-XDA": {
+        "contaminated_conformal_p": 0.009009009009009009,
+        "contaminated_novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        },
+        "deduped_conformal_p": 0.011396011396011397,
+        "deduped_novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        },
+        "flips_by_alpha": {
+          "a0.01": true,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": false
+        }
+      }
+    },
+    "maccs_166": {
+      "DDS": {
+        "contaminated_conformal_p": 0.04954954954954955,
+        "contaminated_novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        },
+        "deduped_conformal_p": 0.08547008547008547,
+        "deduped_novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": true,
+          "a0.2": true
+        },
+        "flips_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": false,
+          "a0.2": false
+        }
+      },
+      "IPDA": {
+        "contaminated_conformal_p": 0.006756756756756757,
+        "contaminated_novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        },
+        "deduped_conformal_p": 0.017094017094017096,
+        "deduped_novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        },
+        "flips_by_alpha": {
+          "a0.01": true,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": false
+        }
+      }
+    },
+    "morgan_r2_2048": {},
+    "toptorsion_2048": {}
+  },
+  "headline": "The 443-row OpenPoly calibration corpus used by all four prior signed novelty audits (fingerprint-coefficient-robustness-v1, conformal-anomaly-detection-v1, cross-family-concordance-v1, mondrian-conditional-coverage-v1) contains only 350 canonically-distinct structures: 129 of 443 rows (29.1%) are exact structural duplicates across 36 alias groups (max group size 12, e.g. PNIPAM/PNIPAAm/NIPAM aliases x12, PLA/PLLA/PDLA/poly(lactic acid) aliases x6), violating the Vovk-Gammerman-Shafer exchangeability precondition every prior receipt cites. Deduplicating and recomputing the identical per-family conformal pipeline flips 5 already-signed family/alpha novelty cells for 3 candidates (DDS, IPDA, m-XDA), including the specific signed fact cross-family-concordance-v1 reports as DDS's ONLY novel-calling family (maccs_166, alpha=0.05): that cell flips from NOVEL=True to NOVEL=False, so DDS's true cross-family count is 0/4 novel at alpha=0.05, not the signed 1/4.",
+  "hypothesis_evaluation": {
+    "h0": "The 443-row OpenPoly calibration corpus is exchangeable (443 distinct structures); prior signed per-family/per-alpha novelty verdicts are invariant to deduplication.",
+    "interpretation": "The calibration corpus is not exchangeable: 129/443 rows are re-listings of 36 already-present structures under different literature names. This is not a cosmetic issue -- deduplicating and rerunning the IDENTICAL signed pipeline changes already-signed alpha-threshold verdicts, including the one fact cross-family-concordance-v1 reports as DDS's sole novel-calling family. The core Morgan(r2,2048) family used by the original fixed-0.40 and primary conformal-anomaly-detection-v1 claims does NOT flip for any of the 5 candidates at any alpha in this check (drift_morgan_r2_2048 shows p moving 12-39% but no threshold crossing) -- so the headline 5/5-fixed-cut and morgan-family conformal verdicts survive. The cross-family UNANIMITY accounting does not: it is measurably wrong about which specific families call DDS novel.",
+    "verdict": "H0_REFUTED__CORPUS_CONTAINS_DUPLICATE_STRUCTURES__PRIOR_SIGNED_VERDICTS_FLIP"
+  },
+  "method": "Group corpus rows by canonical RDKit SMILES of the wildcard-capped PSMILES ('*'->'C'). For contaminated (n=443, as-signed) and deduped (n=350, first literature row per unique structure) corpora, recompute per family in {morgan_r2_2048, maccs_166, atompair_2048, toptorsion_2048}: LOO nonconformity alpha_i=1-NN_LOO(i); candidate alpha_x=1-max_j Tanimoto(x,corpus_j); smoothed-free conformal p=(#{alpha_i>=alpha_x}+1)/(n+1); NOVEL iff p<alpha for alpha in {0.01,0.05,0.10,0.20}. Report per family/alpha/candidate flips between contaminated and deduped verdicts.",
+  "n_flip_cells": 5,
+  "non_circularity": "Dedup key is canonical RDKit SMILES only (Chem.MolToSmiles), computed without reading Tg, Name semantics, or any novelty/alpha field, so it cannot import the answer. Corpus is the identical SHA-256-locked read-only OpenPoly CSV all four prior receipts use. The Morgan(r2,2048) lane on the untouched 443-row corpus must reproduce the independently-signed per-candidate NN Tanimoto to <1e-12 before any dedup-drift claim is trusted.",
+  "purpose": "Test the untested exchangeability precondition of the shared corpus-construction code inherited unmodified by all four prior amphora-molecule-novelty audit receipts: are the 443 calibration rows 443 distinct structures (as conformal validity requires) or a smaller set of unique structures replicated under literature aliases?",
+  "rdkit_version": "2026.03.2",
+  "results": {
+    "atompair_2048": {
+      "contaminated_443": {
+        "DDS": {
+          "alpha": 0.48484848484848486,
+          "conformal_p": 0.19144144144144143,
+          "isolated_count": 84,
+          "n": 443,
+          "nn_tanimoto": 0.5151515151515151,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.8285714285714285,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_tanimoto": 0.17142857142857143,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.7222222222222222,
+          "conformal_p": 0.009009009009009009,
+          "isolated_count": 3,
+          "n": 443,
+          "nn_tanimoto": 0.2777777777777778,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.821917808219178,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_tanimoto": 0.1780821917808219,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7258064516129032,
+          "conformal_p": 0.009009009009009009,
+          "isolated_count": 3,
+          "n": 443,
+          "nn_tanimoto": 0.27419354838709675,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "deduped_350": {
+        "DDS": {
+          "alpha": 0.48484848484848486,
+          "conformal_p": 0.24786324786324787,
+          "isolated_count": 86,
+          "n": 350,
+          "nn_tanimoto": 0.5151515151515151,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "DETA": {
+          "alpha": 0.8285714285714285,
+          "conformal_p": 0.002849002849002849,
+          "isolated_count": 0,
+          "n": 350,
+          "nn_tanimoto": 0.17142857142857143,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.7222222222222222,
+          "conformal_p": 0.011396011396011397,
+          "isolated_count": 3,
+          "n": 350,
+          "nn_tanimoto": 0.2777777777777778,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.821917808219178,
+          "conformal_p": 0.002849002849002849,
+          "isolated_count": 0,
+          "n": 350,
+          "nn_tanimoto": 0.1780821917808219,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7258064516129032,
+          "conformal_p": 0.011396011396011397,
+          "isolated_count": 3,
+          "n": 350,
+          "nn_tanimoto": 0.27419354838709675,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      }
+    },
+    "maccs_166": {
+      "contaminated_443": {
+        "DDS": {
+          "alpha": 0.4,
+          "conformal_p": 0.04954954954954955,
+          "isolated_count": 21,
+          "n": 443,
+          "nn_tanimoto": 0.6,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.024774774774774775,
+          "isolated_count": 10,
+          "n": 443,
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.5333333333333333,
+          "conformal_p": 0.006756756756756757,
+          "isolated_count": 2,
+          "n": 443,
+          "nn_tanimoto": 0.4666666666666667,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.024774774774774775,
+          "isolated_count": 10,
+          "n": 443,
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.631578947368421,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_tanimoto": 0.3684210526315789,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "deduped_350": {
+        "DDS": {
+          "alpha": 0.4,
+          "conformal_p": 0.08547008547008547,
+          "isolated_count": 29,
+          "n": 350,
+          "nn_tanimoto": 0.6,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.045584045584045586,
+          "isolated_count": 15,
+          "n": 350,
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.5333333333333333,
+          "conformal_p": 0.017094017094017096,
+          "isolated_count": 5,
+          "n": 350,
+          "nn_tanimoto": 0.4666666666666667,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.045584045584045586,
+          "isolated_count": 15,
+          "n": 350,
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.631578947368421,
+          "conformal_p": 0.002849002849002849,
+          "isolated_count": 0,
+          "n": 350,
+          "nn_tanimoto": 0.3684210526315789,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      }
+    },
+    "morgan_r2_2048": {
+      "contaminated_443": {
+        "DDS": {
+          "alpha": 0.6071428571428572,
+          "conformal_p": 0.11486486486486487,
+          "isolated_count": 50,
+          "n": 443,
+          "nn_tanimoto": 0.39285714285714285,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.0045045045045045045,
+          "isolated_count": 1,
+          "n": 443,
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.0045045045045045045,
+          "isolated_count": 1,
+          "n": 443,
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8421052631578947,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_tanimoto": 0.15789473684210525,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7619047619047619,
+          "conformal_p": 0.02252252252252252,
+          "isolated_count": 9,
+          "n": 443,
+          "nn_tanimoto": 0.23809523809523808,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "deduped_350": {
+        "DDS": {
+          "alpha": 0.6071428571428572,
+          "conformal_p": 0.15954415954415954,
+          "isolated_count": 55,
+          "n": 350,
+          "nn_tanimoto": 0.39285714285714285,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.005698005698005698,
+          "isolated_count": 1,
+          "n": 350,
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.005698005698005698,
+          "isolated_count": 1,
+          "n": 350,
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8421052631578947,
+          "conformal_p": 0.002849002849002849,
+          "isolated_count": 0,
+          "n": 350,
+          "nn_tanimoto": 0.15789473684210525,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7619047619047619,
+          "conformal_p": 0.02849002849002849,
+          "isolated_count": 9,
+          "n": 350,
+          "nn_tanimoto": 0.23809523809523808,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      }
+    },
+    "toptorsion_2048": {
+      "contaminated_443": {
+        "DDS": {
+          "alpha": 0.34615384615384615,
+          "conformal_p": 0.3581081081081081,
+          "isolated_count": 158,
+          "n": 443,
+          "nn_tanimoto": 0.6538461538461539,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "DETA": {
+          "alpha": 0.8181818181818181,
+          "conformal_p": 0.02702702702702703,
+          "isolated_count": 11,
+          "n": 443,
+          "nn_tanimoto": 0.18181818181818182,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8205128205128205,
+          "conformal_p": 0.02702702702702703,
+          "isolated_count": 11,
+          "n": 443,
+          "nn_tanimoto": 0.1794871794871795,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8461538461538461,
+          "conformal_p": 0.015765765765765764,
+          "isolated_count": 6,
+          "n": 443,
+          "nn_tanimoto": 0.15384615384615385,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7391304347826086,
+          "conformal_p": 0.05855855855855856,
+          "isolated_count": 25,
+          "n": 443,
+          "nn_tanimoto": 0.2608695652173913,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "deduped_350": {
+        "DDS": {
+          "alpha": 0.34615384615384615,
+          "conformal_p": 0.46438746438746437,
+          "isolated_count": 162,
+          "n": 350,
+          "nn_tanimoto": 0.6538461538461539,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "DETA": {
+          "alpha": 0.8181818181818181,
+          "conformal_p": 0.03418803418803419,
+          "isolated_count": 11,
+          "n": 350,
+          "nn_tanimoto": 0.18181818181818182,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8205128205128205,
+          "conformal_p": 0.03418803418803419,
+          "isolated_count": 11,
+          "n": 350,
+          "nn_tanimoto": 0.1794871794871795,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8461538461538461,
+          "conformal_p": 0.019943019943019943,
+          "isolated_count": 6,
+          "n": 350,
+          "nn_tanimoto": 0.15384615384615385,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7391304347826086,
+          "conformal_p": 0.07692307692307693,
+          "isolated_count": 26,
+          "n": 350,
+          "nn_tanimoto": 0.2608695652173913,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      }
+    }
+  },
+  "rights_posture": "AUDIT_ONLY. External corpus SHA-256-locked and rights-clean, read-only; no manifest, locked dataset, or signed Phase-0 KPI modified.",
+  "schema": "amphora.molecule-novelty.corpus-duplicate-exchangeability-receipt.v1",
+  "self_tests": [
+    {
+      "name": "csv_sha_locked",
+      "pass": true
+    },
+    {
+      "name": "anchor_morgan_reproduces_signed_nn_exact",
+      "pass": true
+    },
+    {
+      "name": "dedup_is_structure_only_label_free",
+      "pass": true
+    },
+    {
+      "name": "n_unique_less_than_n_all",
+      "pass": true
+    },
+    {
+      "name": "dupe_group_membership_consistent",
+      "pass": true
+    },
+    {
+      "name": "reproduces_prior_signed_dds_maccs_novel_a05_before_fix",
+      "pass": true
+    },
+    {
+      "name": "dds_maccs_a05_flips_after_dedup",
+      "pass": true
+    }
+  ],
+  "self_tests_all_pass": true,
+  "study_id": "molecule-novelty-corpus-duplicate-exchangeability-audit-v1",
+  "targeted_prior_claim_check": {
+    "dds_maccs_166_a05_novel_after_dedup": false,
+    "dds_maccs_166_a05_novel_reproduced_from_contaminated_corpus": true,
+    "dds_n_novel_of_4_families_a05_after_dedup": 0,
+    "dds_n_novel_of_4_families_a05_contaminated_reproduced": 1,
+    "flips": true,
+    "prior_signed_claim": "cross-family-concordance-v1 family_dependent_candidates_a05.DDS.n_novel = 1 (maccs_166 only)"
+  },
+  "theory_reference": {
+    "atom_pair": "Carhart et al. 1985, J Chem Inf Comput Sci 25:64, DOI:10.1021/ci00046a002",
+    "conformal_exchangeability": "Vovk, Gammerman, Shafer 2005, Algorithmic Learning in a Random World, Springer, ISBN 978-0-387-00152-4, sec. 2.1 (calibration draws must be exchangeable)",
+    "maccs": "Durant et al. 2002, J Chem Inf Comput Sci 42:1273, DOI:10.1021/ci010132r",
+    "morgan_ecfp": "Rogers&Hahn 2010, J Chem Inf Model 50:742, DOI:10.1021/ci100050t",
+    "tanimoto": "Bajusz, Racz, Heberger 2015, J Cheminform 7:20, DOI:10.1186/s13321-015-0069-3",
+    "topological_torsion": "Nilakantan et al. 1987, J Chem Inf Comput Sci 27:82, DOI:10.1021/ci00054a008"
+  }
+}

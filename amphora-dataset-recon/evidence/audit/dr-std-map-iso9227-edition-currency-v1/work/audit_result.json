@@ -1,0 +1,62 @@
+{
+  "schema": "amphora.dataset-recon.audit.dr-std-map-iso9227-edition-currency.v1",
+  "input_mapping_table_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/work/mapping-table.v2.json",
+  "input_mapping_table_sha256": "6e56cfcdf903c615351bcb853d21f4c7b8c77889d637459fd8d10be022f96dfa",
+  "refutation_criterion_verbatim": "A DR-STD-MAP mapping-table row citing a national EN-ISO adoption of a standard with proven live edition churn is left edition-unspecified AND flagged integrity_gap=false, while structurally identical rows for the SAME underlying ISO standard are flagged integrity_gap=true -- an internally inconsistent risk representation the table's own gap-flag-consistency methodology (established by DR-STD-MAP fire-2) exists to prevent.",
+  "violation_count": 3,
+  "violations": [
+    {
+      "standard_id": "DIN EN ISO 9227",
+      "reason": "Row cites 'DIN EN ISO 9227' with NO edition/year while carrying integrity_gap=false, yet live evidence (fetched this fire) proves this exact standard underwent edition churn including a full withdrawal-and-replace cycle since the row's own snapshot_date. Structurally identical rows for the same underlying ISO 9227 standard (UNE-EN ISO 9227, NP EN ISO 9227, CSN EN ISO 9227) are flagged integrity_gap=true in this same table -- an unprincipled inconsistency the DR-STD-MAP fire-2 gap-flag-consistency methodology exists to catch, extended here to a class of row fire-2 did not examine.",
+      "live_evidence": {
+        "checked_url": "https://www.dinmedia.de/en/standard/din-en-iso-9227/362099956",
+        "quote": "Current Status: WITHDRAWN. Edition Date: 2023-03. Successor Standard: DIN EN ISO 9227:2024-10. \"This document has been replaced by: DIN EN ISO 9227:2024-10\"",
+        "current_edition": "DIN EN ISO 9227:2024-10 (ISO 9227:2022 + Amd 1:2024; Deutsche Fassung EN ISO 9227:2022 + A1:2024)",
+        "edition_history_confirmed_live": [
+          "DIN EN ISO 9227:2017-07",
+          "DIN EN ISO 9227:2023-03 (replaced 2017-07; itself now WITHDRAWN)",
+          "DIN EN ISO 9227:2024-10 (current, replaced 2023-03)"
+        ],
+        "second_source_url": "https://webstore.ansi.org/standards/din/dineniso92272024de"
+      },
+      "row_comparability_rating": "identical_to_iso_by_direct_adoption_method_class_confirmed_astm_inferred",
+      "row_astm_iso_equiv": "DIN EN ISO 9227 IS the direct German/European adoption of ISO 9227 itself; method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)"
+    },
+    {
+      "standard_id": "NF EN ISO 9227",
+      "reason": "Row cites 'NF EN ISO 9227' with NO edition/year while carrying integrity_gap=false, yet live evidence (fetched this fire) proves this exact standard underwent edition churn including a full withdrawal-and-replace cycle since the row's own snapshot_date. Structurally identical rows for the same underlying ISO 9227 standard (UNE-EN ISO 9227, NP EN ISO 9227, CSN EN ISO 9227) are flagged integrity_gap=true in this same table -- an unprincipled inconsistency the DR-STD-MAP fire-2 gap-flag-consistency methodology exists to catch, extended here to a class of row fire-2 did not examine.",
+      "live_evidence": {
+        "checked_url": "https://www.boutique.afnor.org/fr-fr/norme/nf-en-iso-9227/essais-de-corrosion-en-atmospheres-artificielles-essais-aux-brouillards-sal/fa201512/340484",
+        "quote": "NF EN ISO 9227 ... published November 2022, with the current edition in force ... Additionally, there is an amendment NF EN ISO 9227/A1 dated 06/2024.",
+        "current_edition": "NF EN ISO 9227 (Nov 2022) + NF EN ISO 9227/A1 (06/2024)",
+        "edition_history_confirmed_live": [
+          "an earlier (pre-2022) NF EN ISO 9227 edition existed and was superseded (AFNOR product-family pattern; exact prior date not independently page-confirmed this fire -- see open_items)",
+          "NF EN ISO 9227 (2022-11), current base edition",
+          "NF EN ISO 9227/A1 (2024-06), amendment"
+        ],
+        "second_source_url": "https://norminfo.afnor.org/norme/nf-en-iso-9227/essais-de-corrosion-en-atmospheres-artificielles-essais-aux-brouillards-salins/193949"
+      },
+      "row_comparability_rating": "identical_to_iso_by_direct_adoption_method_class_confirmed_astm_inferred",
+      "row_astm_iso_equiv": "NF EN ISO 9227 IS the direct French/European adoption of ISO 9227; method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)"
+    },
+    {
+      "standard_id": "PN-EN ISO 9227",
+      "reason": "Row cites 'PN-EN ISO 9227' with NO edition/year while carrying integrity_gap=false, yet live evidence (fetched this fire) proves this exact standard underwent edition churn including a full withdrawal-and-replace cycle since the row's own snapshot_date. Structurally identical rows for the same underlying ISO 9227 standard (UNE-EN ISO 9227, NP EN ISO 9227, CSN EN ISO 9227) are flagged integrity_gap=true in this same table -- an unprincipled inconsistency the DR-STD-MAP fire-2 gap-flag-consistency methodology exists to catch, extended here to a class of row fire-2 did not examine.",
+      "live_evidence": {
+        "checked_url": "https://sklep.pkn.pl/pn-en-iso-9227-2023-02e.html",
+        "quote": "The current edition of PN-EN ISO 9227:2023-02 is available ... The previous edition PN-EN ISO 9227:2017-06 is also available ... though it has been superseded by the newer 2023 edition.",
+        "current_edition": "PN-EN ISO 9227:2023-02",
+        "edition_history_confirmed_live": [
+          "PN-EN ISO 9227:2017-06 (superseded)",
+          "PN-EN ISO 9227:2023-02 (current, supersedes 2017-06)"
+        ],
+        "second_source_url": "https://sklep.pkn.pl/pn-en-iso-9227-2017-06e.html"
+      },
+      "row_comparability_rating": "identical_to_iso_by_direct_adoption_method_class_confirmed_astm_inferred",
+      "row_astm_iso_equiv": "Direct Polish/European adoption of ISO 9227; method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)"
+    }
+  ],
+  "two_replay_byte_identical": true,
+  "runA_sha256": "4b55e7b8b1ffbb35c549f4377a48d0da6174f9d600e85c4f40f6be1b80feea89",
+  "runB_sha256": "4b55e7b8b1ffbb35c549f4377a48d0da6174f9d600e85c4f40f6be1b80feea89"
+}

@@ -1,0 +1,19 @@
+[package]
+name = "amphora-molecule-capabilities"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[features]
+default = []
+rdkit = ["amphora-rdkit-ffi/rdkit"]
+
+[dependencies]
+amphora-core = { path = "../amphora-core" }
+amphora-rdkit-ffi = { path = "../amphora-rdkit-ffi" }
+serde.workspace = true
+serde_json = "1"
+thiserror.workspace = true
+
+[dev-dependencies]
+sha2.workspace = true

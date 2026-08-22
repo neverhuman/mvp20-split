@@ -1,0 +1,230 @@
+{
+  "authority": "AUDIT_ONLY",
+  "baseline": {
+    "doi": "10.18434/M32189",
+    "license": "U.S. Government work; public domain",
+    "name": "NIST/SEMATECH e-Handbook of Statistical Methods (NIST Handbook 151)",
+    "retrieved": "2026-08-13",
+    "secondary_references_not_purchased": [
+      "Montgomery, D.C. (2020) Introduction to Statistical Quality Control, 8th ed., Ch. 9 -- cited by the prior receipt as its baseline; NOT purchased or independently verified by this cron; superseded here by the freely-available NIST/SEMATECH primary.",
+      "Lucas, J.M. and Saccucci, M.S. (1990) 'Exponentially Weighted Moving Average Control Schemes: Properties and Enhancements', Technometrics 32(1):1-12 -- cited by NIST 6.3.2.4 itself as the source of lambda-selection tables; NOT purchased."
+    ],
+    "section": "6.3.2 What are Variables Control Charts? (and subsections 6.3.2.1, 6.3.2.3.1, 6.3.2.4)",
+    "sources": {
+      "cusum_page": {
+        "bytes": 15404,
+        "local_path": "amphora-process-qc-twin/evidence/phase0/repairs/W-T-QC/work/nist-source-snapshots/nist_cusum.html",
+        "section": "6.3.2.3.1",
+        "sha256": "5bfdb198bdc448b5fd74a21127a2cd51f4a07eda005de736130ef43683df221e",
+        "url": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc3231.htm"
+      },
+      "ewma_page": {
+        "bytes": 11703,
+        "local_path": "amphora-process-qc-twin/evidence/phase0/repairs/W-T-QC/work/nist-source-snapshots/nist_ewma.html",
+        "section": "6.3.2.4",
+        "sha256": "1d331662a2a8fcf4ff13f7e6a78fbfec008823648230309bf1011b9018dc2a1f",
+        "url": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc324.htm"
+      },
+      "shewhart_page": {
+        "bytes": 20594,
+        "local_path": "amphora-process-qc-twin/evidence/phase0/repairs/W-T-QC/work/nist-source-snapshots/nist_arl.html",
+        "section": "6.3.2.1",
+        "sha256": "9a236a17d9bbd532d582e663b8f978f1f993bc6892db493f5af1c20033971200",
+        "url": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc321.htm"
+      },
+      "top_page": {
+        "bytes": 19243,
+        "local_path": "amphora-process-qc-twin/evidence/phase0/repairs/W-T-QC/work/nist-source-snapshots/nist_top.html",
+        "section": "6.3.2",
+        "sha256": "4033c6eeba1e792f4ae466aa87af8f3927ed82d6c0d1f02f6a2153ad311cb2e5",
+        "url": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc32.htm"
+      }
+    }
+  },
+  "campaign_item_id": "W-T-QC",
+  "claim_under_attack": {
+    "claim_text": "ARL performance is compared against the published theoretical values for these charts.",
+    "receipt_path": "amphora-process-qc-twin/evidence/phase0/kpis/"
+  },
+  "closes": [
+    "Supplies the first NIST/SEMATECH-primary (public-domain, DOI-cited) theoretical-ARL baseline comparison for this module, superseding reliance on unverifiable paid citations.",
+    "Identifies and evidences a specific citation/baseline-sourcing defect (R7) in the prior spc-arl-characterization-v1 receipt's CUSUM gate."
+  ],
+  "directive_obligation": "",
+  "directive_path": "none",
+  "directive_sha256": "",
+  "distinguishing_analysis": "All seven requirements above run in the KNOWN-parameter regime (mu, sigma, and chart design parameters are exactly specified inputs, not estimated from a finite baseline sample). In this regime a divergence between measured and published ARL can only be an implementation/citation defect -- there is no parameter-estimation step to blame. R7's divergence is therefore classified defect_class=citation_defect (a wrong number was carried as 'published' in the prior receipt), not implementation_defect (R6 shows the same computational engine that produced R7's 'measured' value tracks the real NIST table cleanly one row over, so the CUSUM arithmetic itself is not implicated) and not estimated_parameter_effect (no estimation occurs here at all). The ESTIMATED-parameter effect axis is already characterized elsewhere in this module and is not re-derived by this receipt: evidence/audit/mr-memory-detector-arl-degradation-v1/ and evidence/audit/ar1-estparam-drift-corpus-v1/ (both signed, both CLAIM_SURVIVED/CLAIM_REFUTED respectively, both cited in docs/mission.md) show that when mu,sigma ARE estimated from a finite m=20-50 baseline, ARL0 degrades sharply (guaranteed 5th-percentile retention as low as ~7.6-8.9% of the known-parameter value at the module's m=20-25 pilot baseline under MRbar/d2) and further degrades under AR(1) autocorrelation (false-alarm probability up to 0.62 against a 0.05 budget). That is the estimated-parameter-effect axis; R7 in this receipt is not that -- it is a citation error in a supposedly-known-parameter comparison.",
+  "does_not_close": [
+    "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+    "Does NOT re-derive or re-run the module's Markov-chain/Siegmund CUSUM solver; measured CUSUM/EWMA values are reused by citation (sha256-pinned) from the already two-replay-locked prior receipt.",
+    "Does NOT resolve which of R7's two indexing conventions Montgomery's own (unpurchased, unverified) Table 9.4 actually uses; only that neither documented reading of the freely available NIST table supports the prior receipt's asserted 38.0 figure.",
+    "The proposed repair (F1) is filed as a followup, not executed by this receipt (supersede-never-rewrite discipline; a repair fire should re-source every cell before superseding)."
+  ],
+  "flips_scientific_readiness": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-process-qc-twin",
+  "promotes_authority": false,
+  "proposed_followups": [
+    {
+      "finding": "The prior signed receipt evidence/audit/spc-arl-characterization-v1/ gate 'cusum_siegmund_vs_montgomery_table_9_4' asserts arl_published=38.0 at shift_sigma=0.5 (h=5,k=0.5); the freely-available, campaign-mandated primary baseline (NIST/SEMATECH e-Handbook 6.3.2.3.1, DOI 10.18434/M32189) tabulates 30.0 at that cell. 38.0196 (the harness's own recompute) vs the correct public value 30.0 is a 26.7pct divergence, exceeding the gate's own declared 6pct tolerance.",
+      "id": "F1",
+      "proposed_repair_criterion": "Re-source every arl_published comparator cell in evidence/audit/spc-arl-characterization-v1/ against the NIST/SEMATECH 6.3.2.3.1 table transcribed in this receipt's NIST_TABLE constant (primary), re-run the two-replay gate, and supersede spc-arl-characterization-v1 (never rewrite) if any cell's rel_err vs the corrected baseline exceeds tol_rel=0.06. File the correction under a new evidence/audit/spc-arl-characterization-v2/ with a supersedes block citing this receipt's R7 finding."
+    }
+  ],
+  "provenance": {
+    "prior_diagnostic_canonical_sha256": "9274356564a072cc397f6c6f2922b5a175660da0d7814a65708b50c0b9c342a6",
+    "prior_receipt_path": "amphora-process-qc-twin/evidence/audit/spc-arl-characterization-v1/spc-arl-characterization-receipt.v1.dsse.json",
+    "prior_receipt_sha256": "125421a104cdc56c0f1242d02381d886506f199c549757f862cc1981edbb7dde"
+  },
+  "purpose": "Determine whether the module's ARL characterization has ever been checked against a NAMED, freely-verifiable PUBLISHED baseline (as opposed to a self-referential comparison against the module's own fixture, or an unverifiable citation to a paid source this cron cannot purchase), per the NIST/SEMATECH e-Handbook of Statistical Methods, Section 6.3.2, mandated as primary baseline by campaign item W-T-QC.",
+  "requirements": [
+    {
+      "chart": "Shewhart Individuals, 3-sigma limits",
+      "defect_class": "not_applicable",
+      "id": "R1",
+      "measured_arl": 370.3983,
+      "measured_source": "this receipt: independent 1/p geometric recompute (erfc-based)",
+      "nist_citation": "NIST/SEMATECH 6.3.2.1 and 6.3.2.3.1",
+      "nist_text_or_derivation": "Verbatim: \"For a normal distribution, p = 0.0027 and the ARL is approximately 371.\" and \"Then the ARL = 1/0.0027 = 370.37. This says that when a process is in control one expects an out-of-control signal (false alarm) each 371 runs.\"",
+      "note": "Known-parameter regime: mu,sigma exactly known, no estimation involved.",
+      "parameters": {
+        "limit_sigma": 3.0
+      },
+      "published_arl": 370.37,
+      "published_source": "NIST 6.3.2.3.1 worked derivation (1/0.0027)",
+      "rel_err": 7.6e-05,
+      "shift_sigma": 0.0,
+      "tol_rel": 0.005,
+      "verdict": "conformant"
+    },
+    {
+      "chart": "Shewhart Individuals, 3-sigma limits",
+      "defect_class": "not_applicable",
+      "id": "R2",
+      "measured_arl": 43.8947,
+      "measured_source": "this receipt: independent 1/p geometric recompute (erfc-based)",
+      "nist_citation": "NIST/SEMATECH 6.3.2.3.1",
+      "nist_text_or_derivation": "Verbatim: \"When the means shifts up by 1 sigma... Entering normal distribution tables with z = 2 yields a probability of p = 0.02275... ARL = 1/0.02275 = 43.96.\" Table row 1.00, Shewhart column = 44.0 (rounded).",
+      "note": "",
+      "parameters": {
+        "limit_sigma": 3.0
+      },
+      "published_arl": 43.96,
+      "published_source": "NIST 6.3.2.3.1 worked derivation (1/0.02275)",
+      "rel_err": 0.001485,
+      "shift_sigma": 1.0,
+      "tol_rel": 0.01,
+      "verdict": "conformant"
+    },
+    {
+      "chart": "Shewhart Individuals, 3-sigma limits",
+      "defect_class": "not_applicable",
+      "id": "R3",
+      "measured_arl": 6.303,
+      "measured_source": "this receipt: independent 1/p geometric recompute (erfc-based)",
+      "nist_citation": "NIST/SEMATECH 6.3.2.3.1 table (row 2.00, Shewhart column)",
+      "nist_text_or_derivation": "Table entry: shift=2.00 -> Shewhart ARL=6.30.",
+      "note": "",
+      "parameters": {
+        "limit_sigma": 3.0
+      },
+      "published_arl": 6.3,
+      "published_source": "NIST 6.3.2.3.1 table",
+      "rel_err": 0.000476,
+      "shift_sigma": 2.0,
+      "tol_rel": 0.01,
+      "verdict": "conformant"
+    },
+    {
+      "chart": "Shewhart Individuals, 3-sigma limits",
+      "defect_class": "not_applicable",
+      "id": "R4",
+      "measured_arl": 155.2242,
+      "measured_source": "this receipt: independent 1/p geometric recompute (erfc-based)",
+      "nist_citation": "NIST/SEMATECH 6.3.2.3.1 table (row 0.50, Shewhart column)",
+      "nist_text_or_derivation": "Table entry: shift=0.50 -> Shewhart ARL=155.22.",
+      "note": "",
+      "parameters": {
+        "limit_sigma": 3.0
+      },
+      "published_arl": 155.22,
+      "published_source": "NIST 6.3.2.3.1 table",
+      "rel_err": 2.7e-05,
+      "shift_sigma": 0.5,
+      "tol_rel": 0.01,
+      "verdict": "conformant"
+    },
+    {
+      "chart": "EWMA, lambda=1.0, L=3.0 (limiting case)",
+      "defect_class": "not_applicable",
+      "id": "R5",
+      "measured_arl": 370.3983,
+      "measured_source": "prior signed receipt amphora-process-qc-twin/evidence/audit/spc-arl-characterization-v1/spc-arl-characterization-receipt.v1.dsse.json sha256=125421a104cdc56c0f1242d02381d886506f199c549757f862cc1981edbb7dde (diagnostic.canonical.json sha256=9274356564a072cc397f6c6f2922b5a175660da0d7814a65708b50c0b9c342a6), gate ewma_markov_limiting_case_known_answer",
+      "nist_citation": "NIST/SEMATECH 6.3.2.4",
+      "nist_text_or_derivation": "Verbatim: \"A value of lambda = 1 implies that only the most recent measurement influences the EWMA (degrades to Shewhart chart).\"",
+      "note": "",
+      "parameters": {
+        "L": 3.0,
+        "lambda": 1.0
+      },
+      "published_arl": 370.37,
+      "published_source": "NIST 6.3.2.3.1 prose (same ARL0 as R1, since lambda=1 EWMA IS the Shewhart chart)",
+      "rel_err": 7.6e-05,
+      "shift_sigma": 0.0,
+      "tol_rel": 0.005,
+      "verdict": "conformant"
+    },
+    {
+      "chart": "Standardized tabular CUSUM",
+      "defect_class": "not_applicable",
+      "id": "R6",
+      "measured_arl": 10.3362,
+      "measured_source": "prior signed receipt amphora-process-qc-twin/evidence/audit/spc-arl-characterization-v1/spc-arl-characterization-receipt.v1.dsse.json sha256=125421a104cdc56c0f1242d02381d886506f199c549757f862cc1981edbb7dde (diagnostic.canonical.json sha256=9274356564a072cc397f6c6f2922b5a175660da0d7814a65708b50c0b9c342a6), gate cusum_siegmund_vs_montgomery_table_9_4, per_shift[shift_sigma=1.0].arl_computed",
+      "nist_citation": "NIST/SEMATECH 6.3.2.3.1 table (row 1.00, h=5 column, k=0.5)",
+      "nist_text_or_derivation": "Table entry: shift=1.00 -> CUSUM(h=5,k=0.5) ARL=10.4.",
+      "note": "Corroborates: harness's independent CUSUM ARL engine tracks NIST's freely-available table under direct (unshifted) row indexing at this cell, isolating R7's divergence as cell-specific rather than a systematic indexing error.",
+      "parameters": {
+        "h": 5.0,
+        "k": 0.5
+      },
+      "published_arl": 10.4,
+      "published_source": "NIST 6.3.2.3.1 table",
+      "rel_err": 0.006135,
+      "shift_sigma": 1.0,
+      "tol_rel": 0.06,
+      "verdict": "conformant"
+    },
+    {
+      "chart": "Standardized tabular CUSUM",
+      "defect_class": "citation_defect",
+      "id": "R7",
+      "measured_arl": 38.0196,
+      "measured_source": "prior signed receipt amphora-process-qc-twin/evidence/audit/spc-arl-characterization-v1/spc-arl-characterization-receipt.v1.dsse.json sha256=125421a104cdc56c0f1242d02381d886506f199c549757f862cc1981edbb7dde (diagnostic.canonical.json sha256=9274356564a072cc397f6c6f2922b5a175660da0d7814a65708b50c0b9c342a6), gate cusum_siegmund_vs_montgomery_table_9_4, per_shift[shift_sigma=0.5].arl_computed",
+      "nist_citation": "NIST/SEMATECH 6.3.2.3.1 table (row 0.50, h=5 column, k=0.5)",
+      "nist_text_or_derivation": "Table entry: shift=0.50 -> CUSUM(h=5,k=0.5) ARL=30.0 (direct indexing, corroborated by R6's clean match at row 1.00 using the same indexing convention).",
+      "note": "DIVERGENT at 26.7pct vs the real NIST table value (30.0), which EXCEEDS the prior receipt's own declared 6pct tolerance for this gate. The prior receipt's stated 'arl_published'=38.0 at this cell (sourced to 'Montgomery Table 9.4', a paid textbook this cron does not hold and was instructed not to buy) does not equal any entry in the freely-available NIST/SEMATECH table at this row under either indexing convention documented on the NIST page. This is a known-parameter comparison (mu,sigma exactly specified, no baseline estimated from a finite sample) so the divergence CANNOT be an estimated-parameter effect; it is a citation/baseline-sourcing defect in the prior receipt's cusum_siegmund_vs_montgomery_table_9_4 gate, not a defect in the harness's CUSUM arithmetic itself (R6 shows the same 'arl_computed' engine tracks the real published table cleanly one row over).",
+      "parameters": {
+        "h": 5.0,
+        "k": 0.5
+      },
+      "published_arl": 30.0,
+      "published_source": "NIST 6.3.2.3.1 table",
+      "rel_err": 0.26732,
+      "shift_sigma": 0.5,
+      "tol_rel": 0.06,
+      "verdict": "divergent"
+    }
+  ],
+  "schema": "amphora.process-qc-twin.nist-sematech-arl-baseline-audit.v1",
+  "study_id": "w-t-qc-nist-sematech-arl-baseline-audit-v1",
+  "summary": {
+    "conformant": 6,
+    "divergent": 1,
+    "not_applicable": 0,
+    "total_requirements": 7
+  },
+  "verdict": "CLAIM_REFUTED",
+  "verdict_rationale": "The pinned claim ('ARL performance is compared against the published theoretical values for these charts') is refuted in the sense the campaign item demands: the module's only prior theory-baseline receipt (evidence/audit/spc-arl-characterization-v1/) cited exclusively paid sources (Montgomery 2020, Siegmund 1985) for its CUSUM comparison and never checked itself against the freely-available, campaign-mandated NIST/SEMATECH primary. When checked against that primary here, one of its own already-signed, already-passing gate cells (R7) diverges 26.7pct from the real public value -- outside its own declared 6pct tolerance -- in a regime (known-parameter) where that divergence cannot be excused as an estimated-parameter effect. The gate 'cusum_siegmund_vs_montgomery_table_9_4' reported passed=true with max_rel_err=3.03pct; against the correct NIST-primary baseline it would not have passed at that cell."
+}

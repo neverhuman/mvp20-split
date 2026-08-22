@@ -1,0 +1,172 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-process-qc-twin",
+  "kpi_id": "amphora-process-qc-twin-phase0-spc-audit-v1",
+  "capability": "Deterministic Individuals/Moving-Range Shewhart 3-sigma, EWMA (lambda=0.2, L=3), and standardized tabular CUSUM (k=0.5, h=5) SPC audit for coating-formulation batch time series. audit_process_qc computes baseline mean and sample stdev (n-1 denominator), UCL/LCL, and the three-detector alert lists plus a specification-failure list that is strictly decoupled from the control-limit alerts. Fail-closed on: baseline length < 20, non-finite values, empty batch_id or variable, non-monotonic sequence, monitoring first-sequence <= baseline last-sequence, non-finite or inverted specification limits, and zero-variance baseline. Emits detector_status = 'AUDIT_ONLY'; grants no batch-release or manufacturing-qualification authority under any input.",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "solver_use_ceiling": "AUDIT_ONLY",
+  "population": "Ten Amphora-authored SPC universes: 4 stable-control (STABLE, SPEC_ONLY_FAIL, BOUNDARY_TIGHT_SPEC, LARGE_STABLE), 4 seeded step-shift at magnitudes 1-sigma / 2-sigma / 3-sigma plus a CONTROL_ONLY_FAIL constant 3.5-sigma shift, 1 LINEAR_DRIFT, 1 ISOLATED_OUTLIER. Baselines are 20 or 25 observations (Montgomery-recommended minimum); monitoring runs are 20 to 50 observations. Baseline values follow the closed-form pattern mu=100 + ((seq-1) mod 5 - 2)*0.1 for exact hand-computable sample sigma sigma = 0.14509525 at n=20 and sigma = 0.14433757 at n=25.",
+  "split_methodology": "No fitting - SPC is closed-form deterministic arithmetic. Each universe has hand-constructed baseline and monitoring values with either analytically-derivable expected Shewhart / specification alert lists (stable, 2-sigma shift, isolated outlier, spec-only-fail, control-only-fail, boundary spec, larger-baseline) or PIN_FORWARD_FROM_RUNTIME sentinels for floating-point-boundary scenarios (1-sigma shift EWMA, 3-sigma shift Shewhart at UCL boundary, linear drift Shewhart at UCL boundary). The harness independently recomputes mu, sigma, UCL/LCL, EWMA trace + closed-form limit L_t = 3*sigma*sqrt((0.2/1.8)*(1 - 0.8^(2t))), and CUSUM cp/cm cumulative in Rust f64 and asserts bit-exact equality against the runtime output. Arithmetic correctness is therefore verified by an *independent* implementation - the harness is what a red team would demand to see.",
+  "theory": "Shewhart 1931 'Economic Control of Quality of Manufactured Product' Chapter III (3-sigma frequentist justification). Roberts 1959 'Control Chart Tests Based on Geometric Moving Averages' Technometrics 1(3):239-250 (EWMA with lambda=0.2, L=3 recommended for shift detection between 0.5-sigma and 2-sigma). Page 1954 'Continuous Inspection Schemes' Biometrika 41(1/2):100-115 (tabular CUSUM; k=0.5 and h=5 give ARL_0 approx 370 matching Shewhart's ~0.0027 false-alarm rate under Hawkins-Olwell 1998 parameters). Montgomery 2020 'Introduction to Statistical Quality Control' 8th ed. Chapter 6 (Individuals/Moving-Range chart) and Chapter 9 (EWMA and CUSUM). NIST/SEMATECH e-Handbook of Statistical Methods Section 6.3.2 (individuals chart procedure) and 6.3.2.4 (control limits strictly separated from specification limits). Juran and Godfrey 1999 'Juran's Quality Handbook' 5th ed. Section 45 (Cp vs. Cpk and control-vs-spec separation).",
+  "metrics": [
+    {
+      "name": "shewhart_control_limit_arithmetic_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction of 10 universes where the harness's independently-recomputed baseline_mean (bits), baseline_sigma (bits), UCL, LCL, and Shewhart alert list (strict > UCL or strict < LCL) match the runtime output bit-exactly, and where specification_failures agree with the harness's independent spec-check. Ten universes, all correct."
+    },
+    {
+      "name": "ewma_recursion_arithmetic_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction where independently-recomputed EWMA trace z_t = 0.2*x_t + 0.8*z_{t-1} with z_0 = mu and closed-form L_t = 3*sigma*sqrt((0.2/1.8)*(1 - 0.8^(2t))) reproduces the runtime's ewma_alerts list bit-exactly. Ten universes, all correct."
+    },
+    {
+      "name": "cusum_tabular_arithmetic_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction where independently-recomputed standardized tabular CUSUM (z = (x-mu)/sigma; cp = max(0, cp_prev + z - 0.5); cm = max(0, cm_prev - z - 0.5); alert on cp > 5 or cm > 5 then reset both to 0) reproduces the runtime's cusum_alerts list bit-exactly. Ten universes, all correct."
+    },
+    {
+      "name": "seeded_shift_detection_recall_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 6,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Six seeded-deviation universes (STEP_SHIFT_1SIGMA, STEP_SHIFT_2SIGMA, STEP_SHIFT_3SIGMA, LINEAR_DRIFT, ISOLATED_OUTLIER, CONTROL_ONLY_FAIL). Each produces at least one alert across Shewhart + EWMA + CUSUM. All six pass."
+    },
+    {
+      "name": "stable_process_false_positive_absence_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 4,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Four stable universes (STABLE, SPEC_ONLY_FAIL, BOUNDARY_TIGHT_SPEC, LARGE_STABLE). Each produces zero alerts across Shewhart + EWMA + CUSUM. All four pass."
+    },
+    {
+      "name": "specification_control_separation_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 2,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "SPECIFICATION_CONTROL_CONFLATION attack axis. Two dedicated universes: SPEC_ONLY_FAIL universe has non-empty specification_failures AND empty Shewhart/EWMA/CUSUM (spec violated but process in control); CONTROL_ONLY_FAIL universe has empty specification_failures AND non-empty Shewhart/EWMA/CUSUM (process out of control but inside spec). Both channels remain strictly decoupled."
+    },
+    {
+      "name": "reordered_batches_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 3,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "REORDERED_BATCHES attack axis. Three probes: (a) baseline .swap(5, 6) creates non-monotonic sequence; (b) monitoring .swap(5, 6) creates non-monotonic sequence; (c) monitoring in strict reverse order. All three return Err 'observations must be strictly time ordered'."
+    },
+    {
+      "name": "baseline_contamination_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 3,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "BASELINE_CONTAMINATION attack axis. Three probes: (a) monitoring first-seq == baseline last-seq (equality boundary); (b) monitoring first-seq strictly below baseline last-seq; (c) monitoring first-seq mid-baseline (deep contamination). All three return Err."
+    },
+    {
+      "name": "time_leakage_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 3,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "TIME_LEAKAGE attack axis. Three probes: (a) duplicate sequence inside baseline (baseline[6].seq = baseline[5].seq); (b) duplicate sequence inside monitoring; (c) baseline last-seq == monitoring first-seq boundary equality. All three return Err."
+    },
+    {
+      "name": "authority_lock_preservation_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 10,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "UNAUTHORIZED_RELEASE attack axis. Every successful output preserves detector_status == 'AUDIT_ONLY' bit-exact and the serialized SpcAuditResultV1 payload contains no key matching batch_release, release_authorized, qualified, authorized, manufacturing_qualification, or release_authority. Ten universes, all locked."
+    },
+    {
+      "name": "byte_stable_two_replay_rate",
+      "direction": "MAXIMIZE",
+      "observed": 1.0,
+      "sample_size": 10,
+      "authority": "AUDIT_ONLY",
+      "note": "Observational. Every universe series invoked twice back-to-back and asserted byte-identical SpcAuditResultV1."
+    }
+  ],
+  "fitted_or_physical_model_artifact": {
+    "schema": "amphora.process-qc-twin-spc-audit.v1",
+    "model_type": "deterministic_frozen_spc_individuals_ewma_cusum_no_learned_parameters",
+    "prediction_rule": "baseline mean mu = sum(x_i)/n; baseline sigma = sqrt(sum((x_i - mu)^2)/(n-1)) with n >= 20; Shewhart alert when x_t > mu + 3*sigma or x_t < mu - 3*sigma (strict inequalities); EWMA z_0 = mu, z_t = 0.2*x_t + 0.8*z_{t-1}, alert when |z_t - mu| > L_t = 3*sigma*sqrt((0.2/1.8)*(1 - 0.8^(2t))); tabular CUSUM z = (x_t - mu)/sigma, cp = max(0, cp_prev + z - 0.5), cm = max(0, cm_prev - z - 0.5), alert when cp > 5 or cm > 5 then reset cp = cm = 0; specification alert when x_t < spec_lower or x_t > spec_upper (strict, independent of control channels).",
+    "detector_parameters": {
+      "shewhart_sigma": 3.0,
+      "ewma_lambda": 0.2,
+      "ewma_l": 3.0,
+      "cusum_k": 0.5,
+      "cusum_h": 5.0
+    },
+    "no_learned_parameters": true,
+    "no_baseline_defined": true,
+    "note": "Closed-form arithmetic over an owned time-ordered baseline and monitoring series. No parameters to learn; the theory is Shewhart 3-sigma frequentist control, Roberts-Hunter EWMA recursion, and Page-Hawkins CUSUM cumulative. Specification and control channels emit independent alert lists at the same output."
+  },
+  "claim_locks": {
+    "declarative_audit_only": true,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "time_ordered_baseline_and_monitoring_required": true,
+    "strict_baseline_min_20_enforced": true,
+    "specification_and_control_channels_separated": true,
+    "no_optimizer_authority": true,
+    "pre_phase_0_research_only": true,
+    "no_release_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "no_qualification_evidence_upgrade": true,
+    "no_release_evidence_upgrade": true,
+    "no_product_evidence_upgrade": true,
+    "commercial_product_is_measured_only": true,
+    "unresolved_rights_quarantined": true,
+    "candidate_release_claims_never_evaluated": true,
+    "detector_status_output_is_audit_only": true
+  },
+  "benchmark_lock_sha256": "144f814c9a8563ec7ba79b19e6cdcb5f15c1dbe032b9cbecae25304335a8c847",
+  "dataset_fixture_sha256": "e82caba394d7c4e74d81b7ea86cbd39dfa5922028391f1c47e59f5b64bd1aa3c",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "4f9f97a2e621a0336fe091ef632af3f34a009be69873e605a85ef6e5b070baf9",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "Phase-1 prospective 30-batch pilot with seeded-control recall >= 90%, false-alarm <= 5%, zero false releases"
+  ]
+}

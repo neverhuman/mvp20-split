@@ -1,0 +1,104 @@
+{
+  "attack_1_leave_one_butina_cluster_out": {
+    "degradation_factor_vs_own_within_corpus": 0.9535355561477267,
+    "dist_thresh": 0.4,
+    "interpretation": "Fine Butina clusters are small chemical islands still densely surrounded by highly similar training neighbors from other nearby clusters; holding out one island barely perturbs local interpolation, so this proxy is WEAKER (0.95x, i.e. no degradation at all) than fire 1's leave-class-out (1.80x) and cannot be used as the fire's falsification attempt.",
+    "largest_cluster_sizes_top10": [
+      73,
+      33,
+      28,
+      20,
+      20,
+      19,
+      18,
+      17,
+      15,
+      15
+    ],
+    "method": "Butina 1999 J. Chem. Inf. Comput. Sci. 39(4):747-750, Tanimoto distance on Morgan r=2/512-bit fingerprints",
+    "min_cluster_size": 8,
+    "n_clusters": 411,
+    "n_eligible_clusters": 30,
+    "n_pooled_test": 469,
+    "n_singleton_clusters": 277,
+    "per_cluster": {
+      "0": {
+        "mae": 0.01772925363924673,
+        "n_test": 73
+      },
+      "1": {
+        "mae": 0.03561732792303041,
+        "n_test": 33
+      },
+      "10": {
+        "mae": 0.022443754421176527,
+        "n_test": 17
+      },
+      "12": {
+        "mae": 0.030469399933750432,
+        "n_test": 8
+      },
+      "13": {
+        "mae": 0.08319093207933329,
+        "n_test": 15
+      },
+      "14": {
+        "mae": 0.02491812536533334,
+        "n_test": 15
+      },
+      "15": {
+        "mae": 0.02202009525933346,
+        "n_test": 15
+      },
+      "17": {
+        "mae": 0.03115509583500001,
+        "n_test": 14
+      },
+      "18": {
+        "mae": 0.04901727788571418,
+        "n_test": 14
+      },
+      "19": {
+        "mae": 0.024169574978571386,
+        "n_test": 14
+      },
+      "2": {
+        "mae": 0.019683093669368566,
+        "n_test": 19
+      },
+      "21": {
+        "mae": 0.02285521222125038,
+        "n_test": 8
+      },
+      "22": {
+        "mae": 0.03017064081833339,
+        "n_test": 12
+      },
+      "23": {
+        "mae": 0.040745345012499934,
+        "n_test": 12
+      },
+      "27": {
+        "mae": 0.10998219270825751,
+        "n_test": 11
+      },
+      "3": {
+        "mae": 0.018371557190908962,
+        "n_test": 11
+      },
+      "31": {
+        "mae": 0.10911303679699995,
+        "n_test": 10
+      },
+      "33": {
+        "mae": 0.11240650480699994,
+        "n_test": 10
+      },
+      "34": {
+        "mae": 0.052399067737000225,
+        "n_test": 10
+      },
+      "35": {
+        "mae": 0.02554
+...
+WROTE diagnostic.out.json

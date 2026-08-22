@@ -1,0 +1,227 @@
+{
+  "schema": "mvp20.v5_evidence_intake_validator.v1",
+  "micro_version": "mvp20.14",
+  "retrieved": "2026-07-06",
+  "rule": "Evidence intake must pass machine validation before any returned package can be reviewed. The validator is a rule artifact only and accepts no narrative-only or computed-as-measured closure.",
+  "validator_scope": "manifest, sample registry, batch record, instrument raw file, QC table, panel photos, environment log, ratings, supplier declarations, and model update events",
+  "rules": [
+    {
+      "rule_id": "VAL-01",
+      "object_type": "dataset_manifest",
+      "display_name": "manifest",
+      "source_raw_schema_object_id": "RDA-01",
+      "required_fields": [
+        "file_hashes",
+        "dataset_id",
+        "protocol_id"
+      ],
+      "validation_checks": [
+        "hashes present",
+        "hashes match named objects"
+      ],
+      "rejection_rule": "Reject if any referenced object is missing a hash.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-02",
+      "object_type": "sample_registry",
+      "display_name": "sample registry",
+      "source_raw_schema_object_id": "RDA-02",
+      "required_fields": [
+        "sample_id",
+        "batch_id",
+        "lot_id",
+        "panel_id"
+      ],
+      "validation_checks": [
+        "IDs unique",
+        "sample IDs link to batch/control rows"
+      ],
+      "rejection_rule": "Reject orphan sample, panel, retain, or lot IDs.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-03",
+      "object_type": "batch_record",
+      "display_name": "batch record",
+      "source_raw_schema_object_id": "RDA-03",
+      "required_fields": [
+        "batch_id",
+        "mass",
+        "temperature",
+        "order_step"
+      ],
+      "validation_checks": [
+        "mass balance present",
+        "required process steps present"
+      ],
+      "rejection_rule": "Reject incomplete batch, temperature, mass, order, or deviation fields.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-04",
+      "object_type": "instrument_raw_file",
+      "display_name": "instrument raw file",
+      "source_raw_schema_object_id": "RDA-04",
+      "required_fields": [
+        "method_id",
+        "raw_file_hash",
+        "calibration_id"
+      ],
+      "validation_checks": [
+        "raw file present",
+        "calibration record present"
+      ],
+      "rejection_rule": "Reject summarized measurement packages without raw and calibration files.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-05",
+      "object_type": "qc_measurement_table",
+      "display_name": "QC table",
+      "source_raw_schema_object_id": "RDA-05",
+      "required_fields": [
+        "sample_id",
+        "method_id",
+        "value",
+        "unit",
+        "replicate"
+      ],
+      "validation_checks": [
+        "unit canonical",
+        "measured/computed status explicit"
+      ],
+      "rejection_rule": "Reject computed-as-measured QC values.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-06",
+      "object_type": "panel_photo_set",
+      "display_name": "panel photos",
+      "source_raw_schema_object_id": "RDA-06",
+      "required_fields": [
+        "panel_id",
+        "timepoint",
+        "photo_hash",
+        "scale_reference"
+      ],
+      "validation_checks": [
+        "photo hash present",
+        "timepoint links to test"
+      ],
+      "rejection_rule": "Reject ratings that require but lack panel photos.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-07",
+      "object_type": "environment_log",
+      "display_name": "environment log",
+      "source_raw_schema_object_id": "RDA-07",
+      "required_fields": [
+        "test_id",
+        "timestamp",
+        "temperature",
+        "humidity"
+      ],
+      "validation_checks": [
+        "time coverage complete",
+        "out-of-range flags present"
+      ],
+      "rejection_rule": "Reject application/corrosion runs without environment trace.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-08",
+      "object_type": "rating_sheet",
+      "display_name": "ratings",
+      "source_raw_schema_object_id": "RDA-08",
+      "required_fields": [
+        "panel_id",
+        "rater",
+        "method",
+        "score"
+      ],
+      "validation_checks": [
+        "panel IDs valid",
+        "rater and method present"
+      ],
+      "rejection_rule": "Reject unlabeled ratings or ratings tied to invalid controls.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-09",
+      "object_type": "supplier_declaration",
+      "display_name": "supplier declarations",
+      "source_raw_schema_object_id": "RDA-09",
+      "required_fields": [
+        "supplier",
+        "material",
+        "lot",
+        "declaration_type",
+        "signature_or_source"
+      ],
+      "validation_checks": [
+        "document hash present",
+        "scope covers material"
+      ],
+      "rejection_rule": "Reject unsigned, verbal, or out-of-scope supplier declarations.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    },
+    {
+      "rule_id": "VAL-10",
+      "object_type": "model_update_event",
+      "display_name": "model update events",
+      "source_raw_schema_object_id": "RDA-10",
+      "required_fields": [
+        "dataset_id",
+        "frozen_model_hash",
+        "baseline_id",
+        "metric",
+        "decision"
+      ],
+      "validation_checks": [
+        "baseline frozen",
+        "null/manual comparator present"
+      ],
+      "rejection_rule": "Reject model promotion or IP/FTO overclaim without owned data, frozen baselines, and counsel where required.",
+      "machine_executable": true,
+      "candidate_data_created": false,
+      "claim_upgrade_allowed_now": false,
+      "external_closure_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "validator_rule_count": 10,
+    "machine_executable_rules": 10,
+    "candidate_data_created_rows": 0,
+    "claim_upgrade_allowed_rows": 0,
+    "external_closure_claim_allowed_rows": 0
+  }
+}

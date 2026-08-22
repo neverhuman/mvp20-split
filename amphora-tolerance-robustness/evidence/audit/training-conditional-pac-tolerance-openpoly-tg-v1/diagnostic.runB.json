@@ -1,0 +1,304 @@
+{
+  "all_known_answer_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "base_learner_point_metrics": {
+    "proper_train_ridge_test_mae_K": 56.345817679244526,
+    "proper_train_ridge_test_rmse_K": 77.44593652932875
+  },
+  "closes": [
+    "Adds TRAINING-CONDITIONAL (PAC / tolerance-region) validity to the module UQ battery; all three prior signed receipts reported marginal coverage only.",
+    "Closes the training-conditional half of the conditional-coverage item left open by normalized-adaptive-conformal-openpoly-tg-v1 (does_not_close[2]): object-conditional coverage is indeed impossible distribution-free, but training-conditional coverage is attainable and is quantified here.",
+    "Supplies the exact calibration-size requirement table an epoxy-amine tolerance gate needs to size its calibration set for a stated (eps, delta) per-deployment guarantee."
+  ],
+  "dataset": {
+    "filter": "100<Tg(K)<700 and RDKit-parseable PSMILES",
+    "n_polymers_after_filter": 442,
+    "path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+    "sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3"
+  },
+  "does_not_close": [
+    "Does not establish wet-lab qualification, batch release, or human parity.",
+    "Object-conditional (per-x) coverage remains impossible distribution-free (Vovk 2012; Lei & Wasserman 2014); this receipt conditions on the calibration set, not on x.",
+    "The PAC correction is derived for the constant-width split-conformal band; its interaction with the normalized/adaptive and Mondrian variants already signed here is untested.",
+    "Training-conditional guarantees for full/jackknife+/CV+ conformal are weaker and different (Bian & Barber 2023); only split conformal is treated here.",
+    "OpenPoly Tg is a polymer benchmark used as a UQ-method testbed; it is NOT the DGEBA/amine coating target and carries no coating-property claim.",
+    "Exchangeability is enforced here by random re-partition; a real deployment faces covariate shift, for which weighted conformal (Tibshirani et al. 2019) is the untested next step."
+  ],
+  "empirical_replicate_study": {
+    "empirical_mean_rank_R": 297.01925,
+    "exact_finite_population_mean_coverage": 0.9552238805970149,
+    "exact_mean_rank_R": 297.07462686567163,
+    "fraction_of_calibration_draws_below_nominal": 0.4025,
+    "goodness_of_fit_vs_exact_law": {
+      "chi2": 10.080211511384224,
+      "dof": 13,
+      "min_expected_count": 104.96547515862153,
+      "p_value": 0.6873623990370201
+    },
+    "max_realized_coverage": 1.0,
+    "mean_realized_coverage": 0.9549110169491526,
+    "median_halfwidth_K": 180.8488680685671,
+    "min_realized_coverage": 0.8305084745762712,
+    "n_replicates": 4000,
+    "p05_realized_coverage": 0.9096045197740112,
+    "p50_realized_coverage": 0.96045197740113,
+    "sd_realized_coverage": 0.023765308908950688
+  },
+  "gates": {
+    "G1_shared_frozen_base_learner_matches_prior_signed_receipt": {
+      "here_test_mae_K": 56.345817679244526,
+      "here_test_rmse_K": 77.44593652932875,
+      "max_abs_diff": 2.1316282072803006e-14,
+      "passed": true,
+      "prior_receipt": "normalized-adaptive-conformal-openpoly-tg-v1",
+      "prior_test_mae_K": 56.345817679244504,
+      "prior_test_rmse_K": 77.44593652932875
+    },
+    "G2_KAT_wilks_one_sided_95_95_sample_size": {
+      "beta_ppf_check": 0.950492390111773,
+      "closed_form_check_0.05_pow_1_over_n": 0.950492390111773,
+      "computed_n": 59,
+      "passed": true,
+      "published_n": 59,
+      "reference": "Wilks 1941; Hahn & Meeker 1991 Table A.16 (one-sided, 95% content, 95% confidence)"
+    },
+    "G3_KAT_wilks_two_sided_95_95_sample_size": {
+      "beta_ppf_check": 0.9500060216120116,
+      "computed_n": 93,
+      "note": "two-sided distribution-free tolerance interval = (min, max) of the sample; content ~ Beta(n-1, 2)",
+      "passed": true,
+      "published_n": 93,
+      "reference": "Wilks 1941; Hahn & Meeker 1991 Table A.17 (two-sided, 95% content, 95% confidence)"
+    },
+    "G4_lei2018_marginal_coverage_sandwich": {
+      "expected_coverage": 0.9552238805970149,
+      "lower_1_minus_alpha": 0.95,
+      "passed": true,
+      "sandwich_holds": true,
+      "upper_1_minus_alpha_plus_1_over_n_plus_1": 0.9574626865671642
+    },
+    "G5_exact_law_cross_check_L1_vs_L2": {
+      "L1_expected_coverage": 0.9552238805970149,
+      "L2_implied_mean_coverage": 0.9552238805970149,
+      "closed_form_mean_R": 297.07462686567163,
+      "exact_mean_R_from_integer_pmf": 297.07462686567163,
+      "max_abs_diff": 0.0,
+      "note": "E[R] = k(N+1)/(n+1) under (L2) must reproduce E[C] = k/(n+1) of (L1)",
+      "passed": true
+    },
+    "G6_exact_pmf_sums_to_one": {
+      "passed": true,
+      "sum_pmf": 1.0,
+      "support_size": 178
+    },
+    "G7_conformal_rank_rule_matches_prior_receipts": {
+      "alpha": 0.050000000000000044,
+      "n_cal": 133,
+      "passed": true,
+      "prior_receipt_q_level": 0.9624060150375939,
+      "rank_k": 128
+    },
+    "G8_nonexchangeable_control_rejects": {
+      "bias_lambda": 1.5,
+      "control_chi2_p_value": 0.0,
+      "control_mean_coverage": 0.6218658192090395,
+      "exchangeable_mean_coverage": 0.9549110169491526,
+      "note": "the same GOF test must REJECT the exact law under a deliberately biased (low-residual-preferring) calibration sampler; otherwise the Q2 agreement is vacuous",
+      "passed": true
+    },
+    "G9_tie_sensitivity_of_exact_rank_law": {
+      "full_pool_gof_p_value": 0.6873623990370201,
+      "full_pool_mean_realized_coverage": 0.9549110169491526,
+      "note": "the exact rank law (L2) is exact only on a tie-free pool. The shipped 310-point holdout carries duplicate score values, so (L2) is exact on the tie-free subpool and approximate on the full pool. Gate passes only if NEITHER goodness-of-fit rejects, i.e. the ties are demonstrably non-material at this replicate count.",
+      "passed": true,
+      "tie_free_empirical_mean_rank_R": 291.26875,
+      "tie_free_exact_mean_coverage": 0.9552238805970149,
+      "tie_free_exact_mean_rank_R": 291.34328358208955,
+      "tie_free_mean_realized_coverage": 0.9547880116959064,
+      "tie_free_subpool_gof_p_value": 0.19851238980048128,
+      "tie_structure": {
+        "cause": "duplicate PSMILES/Tg rows in the source CSV map to an identical frozen-model residual",
+        "max_multiplicity": 3,
+        "n_distinct_scores": 304,
+        "n_duplicated_score_values": 5,
+        "n_holdout": 310,
+        "n_points_removed_for_tie_free_subpool": 6
+      }
+    }
+  },
+  "headline": "Training-conditional (PAC / Wilks-Wald tolerance-region) audit of this module's split-conformal intervals on OpenPoly Tg: marginal validity does NOT imply per-deployment validity -- at the shipped n_cal=133, P[coverage of the shipped interval < 0.95] = 0.3417 exactly (5th-pct coverage 0.9226); the exact finite-population rank law is confirmed empirically over 4000 calibration re-draws (chi2 p=0.6874) and rejected under a non-exchangeable control (p=0.0e+00); PAC repair costs 3 order statistics and x1.1684 median half-width.",
+  "lei2018_marginal_sandwich": {
+    "expected_coverage": 0.9552238805970149,
+    "lower_1_minus_alpha": 0.95,
+    "sandwich_holds": true,
+    "upper_1_minus_alpha_plus_1_over_n_plus_1": 0.9574626865671642
+  },
+  "module": "amphora-tolerance-robustness",
+  "non_circularity": "The frozen proper-train Ridge model, featurization, seed, 60/40 pool/test split and 50/50 proper-train/calibration partition are byte-identical to the three prior signed audit receipts of this module (gated in G1 against the signed normalized/adaptive receipt payload). The 310-point holdout universe is exactly the set of points the frozen model never saw, so the exchangeability premise of the tolerance-region laws holds by construction of the random re-partition rather than by assumption. The exact pmf is integer arithmetic, independent of the simulation it is used to test.",
+  "nonexchangeable_control": {
+    "bias_lambda": 1.5,
+    "fraction_of_draws_below_nominal": 1.0,
+    "goodness_of_fit_vs_exact_law": {
+      "chi2": 73249.10696592588,
+      "dof": 13,
+      "min_expected_count": 104.96547515862153,
+      "p_value": 0.0
+    },
+    "mean_realized_coverage": 0.6218658192090395,
+    "sampler": "calibration drawn without replacement with weight proportional to exp(-lambda * z(score)); preferentially low-residual points"
+  },
+  "observed_conclusions": [
+    "H0 'the shipped 0.95 split-conformal interval delivers >= 0.95 coverage on the calibration draw actually shipped' is REFUTED: under the exact Vovk-2012 law at n_cal=133, P[C < 0.95] = 0.3417, and the 5th percentile of training-conditional coverage is 0.9226 (2.74 coverage points below nominal).",
+    "The empirical replicate study reproduces the exact finite-population law: chi2=10.08 on 13 dof, p=0.6874 over 4000 independent calibration re-draws; empirical mean coverage 0.95491 vs exact 0.95522.",
+    "The exact rank law is strictly exact only on a tie-free pool; the shipped holdout carries 6 tied score points (5 duplicated values, max multiplicity 3, from duplicate source-CSV rows). Re-running the whole replicate study on the tie-free subpool (N=304) also fails to reject (chi2 p=0.1985; mean coverage 0.95479 vs exact 0.95522), so the ties are non-material at this replicate count.",
+    "The test is not vacuous: the deliberately non-exchangeable calibration sampler is rejected at p=0.000e+00 with mean coverage 0.6219 vs 0.9549 exchangeable.",
+    "Training-conditional (0.05,0.05)-PAC validity IS attainable at the shipped n_cal=133: rank must rise k=128 -> k'=131 (+3 order statistics, effective alpha'=0.02239), which lowers P[C<0.95] from 0.3417 to 0.0352. Price: median half-width 180.849 K -> 211.304 K (x1.1684, +30.455 K).",
+    "Published tolerance-region sample sizes reproduce exactly from the same machinery (Wilks one-sided 95/95 n=59, two-sided 95/95 n=93), and the module's shipped n_cal=133 clears the (0.05,0.05) corrected-rank requirement of n>=59."
+  ],
+  "pac_correction_at_shipped_n": {
+    "coverage_p05": 0.9534219105698889,
+    "effective_alpha_prime": 0.02238805970149249,
+    "empirical_fraction_of_draws_below_nominal": 0.083,
+    "empirical_mean_realized_coverage": 0.9772796610169492,
+    "empirical_p05_realized_coverage": 0.943502824858757,
+    "expected_coverage": 0.9776119402985075,
+    "median_halfwidth_K": 211.30430458184338,
+    "median_halfwidth_cost_K": 30.455436513276283,
+    "median_halfwidth_ratio_vs_nominal": 1.1684026935779848,
+    "prob_conditional_coverage_below_nominal": 0.03520904727436052,
+    "rank_inflation_ranks": 3,
+    "rank_k_prime": 131
+  },
+  "pac_sample_size_requirements": [
+    {
+      "delta_confidence": 0.05,
+      "eps_content_shortfall": 0.05,
+      "min_n_at_nominal_rank": null,
+      "min_n_with_corrected_rank": 59,
+      "shipped_n_cal": 133,
+      "shipped_n_clears_corrected_rank_requirement": true
+    },
+    {
+      "delta_confidence": 0.1,
+      "eps_content_shortfall": 0.05,
+      "min_n_at_nominal_rank": null,
+      "min_n_with_corrected_rank": 45,
+      "shipped_n_cal": 133,
+      "shipped_n_clears_corrected_rank_requirement": true
+    },
+    {
+      "delta_confidence": 0.2,
+      "eps_content_shortfall": 0.05,
+      "min_n_at_nominal_rank": 32,
+      "min_n_with_corrected_rank": 32,
+      "shipped_n_cal": 133,
+      "shipped_n_clears_corrected_rank_requirement": true
+    },
+    {
+      "delta_confidence": 0.05,
+      "eps_content_shortfall": 0.075,
+      "min_n_at_nominal_rank": 138,
+      "min_n_with_corrected_rank": 39,
+      "shipped_n_cal": 133,
+      "shipped_n_clears_corrected_rank_requirement": true
+    },
+    {
+      "delta_confidence": 0.05,
+      "eps_content_shortfall": 0.1,
+      "min_n_at_nominal_rank": 29,
+      "min_n_with_corrected_rank": 29,
+      "shipped_n_cal": 133,
+      "shipped_n_clears_corrected_rank_requirement": true
+    },
+    {
+      "delta_confidence": 0.1,
+      "eps_content_shortfall": 0.1,
+      "min_n_at_nominal_rank": 22,
+      "min_n_with_corrected_rank": 22,
+      "shipped_n_cal": 133,
+      "shipped_n_clears_corrected_rank_requirement": true
+    }
+  ],
+  "prior_signed_receipts": {
+    "jackknife_plus_cvplus": "55e070a18c95dd364f45cc37d1dae929bcb42512fd3d3509e19a56f06920b991",
+    "mondrian_conformal": "85d79cef88b1cdedccd85ebc7f47031007d50df8e21ab319b4160c67ba6d689a",
+    "normalized_adaptive_conformal": "6f55e1cf2c4192a68b12f46402a682c8f941e542b35e59c4cd33549cbb5d800f"
+  },
+  "protocol": {
+    "alpha": 0.050000000000000044,
+    "base_learner": "StandardScaler + Ridge(alpha=1, solver=cholesky)",
+    "conformal_rank_k": 128,
+    "featurization": {
+      "additional_features": [
+        "log10(molecular_weight)"
+      ],
+      "morgan_bits": 512,
+      "morgan_radius": 2
+    },
+    "gof_bins": 14,
+    "holdout_universe_N": 310,
+    "n_calibration": 133,
+    "n_eval_per_replicate": 177,
+    "n_proper_train": 132,
+    "n_replicates": 4000,
+    "n_test": 177,
+    "n_train_pool": 265,
+    "nonexchangeable_control_bias_lambda": 1.5,
+    "pac_delta": 0.05,
+    "pac_eps": 0.05,
+    "seed": 0,
+    "target_coverage": 0.95,
+    "train_pool_fraction": 0.6
+  },
+  "purpose": "Test whether this module's signed conformal receipts, all of which report MARGINAL coverage, license the per-deployment claim that a shipped interval covers at its nominal rate. Implements the classical distribution-free tolerance-region calibration (Wilks 1941 / Wald 1943) and its inductive-conformal form (Vovk 2012) as the training-conditional law, with an exact finite-population rank law for the empirical check.",
+  "run_type": "AUDIT_ONLY_REANALYSIS",
+  "schema": "amphora.tolerance-robustness.training-conditional-pac-tolerance.diagnostic.v1",
+  "study_id": "training-conditional-pac-tolerance-openpoly-tg-v1",
+  "theory_reference": {
+    "bian_barber_2023": "Bian & Barber, Electron. J. Stat. 17(2):2044-2066, doi:10.1214/23-EJS2145",
+    "exact_laws": {
+      "L1_infinite_population": "C | calibration ~ Beta(k, n+1-k), k = ceil((n+1)(1-alpha))",
+      "L2_finite_population": "P(R=j) = C(j-1,k-1)C(N-j,n-k)/C(N,n); covered eval count = R-k"
+    },
+    "hahn_meeker_1991": "Hahn & Meeker, Statistical Intervals, Wiley, ISBN 0-471-88769-2, Tables A.16/A.17",
+    "lei_2018": "Lei et al., JASA 113(523):1094-1111, doi:10.1080/01621459.2017.1307116",
+    "vovk_2012": "Vovk, ACML, PMLR 25:475-490 -- conditional validity of inductive conformal predictors",
+    "wald_1943": "Wald, Ann. Math. Statist. 14(1):45-55, doi:10.1214/aoms/1177731491",
+    "wilks_1941": "Wilks, Ann. Math. Statist. 12(1):91-96, doi:10.1214/aoms/1177731788"
+  },
+  "tie_sensitivity": {
+    "tie_free_empirical_mean_rank_R": 291.26875,
+    "tie_free_exact_mean_coverage": 0.9552238805970149,
+    "tie_free_exact_mean_rank_R": 291.34328358208955,
+    "tie_free_goodness_of_fit_vs_exact_law": {
+      "chi2": 17.017344653862235,
+      "dof": 13,
+      "min_expected_count": 116.81255379657473,
+      "p_value": 0.19851238980048128
+    },
+    "tie_free_mean_realized_coverage": 0.9547880116959064,
+    "tie_free_n_eval_per_replicate": 171,
+    "tie_free_subpool_N": 304,
+    "tie_structure": {
+      "cause": "duplicate PSMILES/Tg rows in the source CSV map to an identical frozen-model residual",
+      "max_multiplicity": 3,
+      "n_distinct_scores": 304,
+      "n_duplicated_score_values": 5,
+      "n_holdout": 310,
+      "n_points_removed_for_tie_free_subpool": 6
+    }
+  },
+  "training_conditional_law_shipped": {
+    "alpha": 0.050000000000000044,
+    "beta_shape_a": 128,
+    "beta_shape_b": 6,
+    "coverage_p05": 0.9225839363164557,
+    "coverage_p50": 0.9574744452126184,
+    "coverage_p95": 0.9801737210134785,
+    "expected_coverage": 0.9552238805970149,
+    "n_calibration": 133,
+    "prob_conditional_coverage_below_nominal": 0.3416678096789312,
+    "rank_k": 128,
+    "sd_coverage": 0.017799546089550564
+  }
+}

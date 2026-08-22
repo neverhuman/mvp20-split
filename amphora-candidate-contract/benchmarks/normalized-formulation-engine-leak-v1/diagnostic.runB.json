@@ -1,0 +1,52 @@
+{
+  "causality_isolated_same_candidate_id": true,
+  "clean": {
+    "candidate_file": "clean_formulation_candidate.json",
+    "candidate_file_sha256": "ede40bce8664b2f9587a0bca40a6892d640fb644f56b70883d9cbd284bfdca65",
+    "candidate_id": "Envelope-65-black-leaktest",
+    "formula_hash_echoed_into_normalized_formulation": "2a3eacef3b01779d718d8a05207fcc3efd7b94d8d04014a8d83dfef41ecfb912",
+    "full_result_sha256": "ab5fffa6548af9b430b030296125d24efc18626b4b8359bfae42b53bdca8a803",
+    "label": "clean",
+    "normalized_formulation_top_level_keys": [
+      "candidate_id",
+      "candidate_type",
+      "context",
+      "evidence_refs",
+      "formula_hash",
+      "formulation",
+      "input_hash",
+      "input_kind",
+      "molecule",
+      "normalized_recipe",
+      "original_bytes_sha256"
+    ],
+    "provenance_result_hash": "ec34b5d2a9beea971dc837640365f863294ff01d019b321770c03ee239a77e10"
+  },
+  "engine_entry_point": "amphora_engine::EnginePool::score (the exact function amphora-cli::control::shadow_run calls for every candidate in its --candidate input array, with no candidate_type/lane restriction)",
+  "harness": "amphora-candidate-contract/benchmarks/normalized-formulation-engine-leak-v1/rust_harness_main.rs",
+  "leak_confirmed": false,
+  "poison": {
+    "candidate_file": "poisoned_formulation_candidate_v2.json",
+    "candidate_file_sha256": "ac377cb5bf9d3a5e5bf7a122ae15c3ece0bb5894a3f22b15a4e4e18f54ab3c1b",
+    "candidate_id": "Envelope-65-black-leaktest",
+    "formula_hash_echoed_into_normalized_formulation": "2a3eacef3b01779d718d8a05207fcc3efd7b94d8d04014a8d83dfef41ecfb912",
+    "full_result_sha256": "40e20f8518772941ccd9ae69e6082402ea943dbfa7c7a1d858ad1846f673dbea",
+    "label": "poison",
+    "normalized_formulation_top_level_keys": [
+      "candidate_id",
+      "candidate_type",
+      "canonical_structure_hash",
+      "context",
+      "evidence_refs",
+      "formula_hash",
+      "formulation",
+      "input_hash",
+      "input_kind",
+      "molecule",
+      "normalized_recipe",
+      "original_bytes_sha256"
+    ],
+    "provenance_result_hash": "a3d4b23da52d6db977a1ffbc623ccd62dbd19f0caee9699c1518b7aebd4d1f9b"
+  },
+  "schema": "amphora.candidate-contract.normalized-formulation-engine-leak-diagnostic.v1"
+}

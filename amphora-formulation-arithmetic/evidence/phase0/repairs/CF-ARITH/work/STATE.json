@@ -1,0 +1,12 @@
+{
+  "schema": "amphora.repair-item-state.v1",
+  "item_id": "CF-ARITH",
+  "module": "amphora-formulation-arithmetic",
+  "status": "done",
+  "fires_used": 1,
+  "max_fires": 2,
+  "last_fire_id": "20260810T030001-371975-2a782a01b183",
+  "last_verdict": "CLAIM_SURVIVED",
+  "done_receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/CF-ARITH.done-receipt.v1.dsse.json",
+  "notes": "First fire built the candidate BOM (DGEBA-828/Ancamide 2353/zinc-phosphate+talc/xylene+n-butanol), landed 1:1 volume mix (0.99999...), 65.0% volume solids, 300.3 g/L VOC, and DFT 4.55-5.85 mils within charter bounds, all envelope numbers cited path+sha256 to the charter. Independent forward-recompute + exact-rational cross-check agree to <1e-9. Positive control (xylene density +40% mis-transcription) correctly detected by the same checker. pot_life_h explicitly out of scope for this module (kinetics, not mass-balance) -- deferred to amphora-cure-potlife; charter's pot_life_h cited for completeness only, not independently reproduced here, consistent with the campaign item's refutation_criterion which does not name pot-life among its falsifiable targets."
+}

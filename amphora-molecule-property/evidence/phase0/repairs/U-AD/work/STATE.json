@@ -1,0 +1,11 @@
+{
+  "campaign_item_id": "U-AD",
+  "campaign_item_status": "done",
+  "done_receipt": {
+    "fire_id": "20260812T100001-3029391-180dd41d2d64",
+    "path": "amphora-molecule-property/evidence/phase0/repairs/U-AD/done/u-ad-abstention-vs-error-frontier-kpi.v1.dsse.json",
+    "verdict": "CLAIM_SURVIVED"
+  },
+  "summary": "Single-fire completion. Sweep table for 5 AD thresholds x 3 evaluators (Tg cross-corpus OpenPoly<->Polyuniverse, density+RI RadonPy macro-bisection) with coverage/MAE/95pct-bootstrap-CI/n_admitted per cell, plus 5-canonical-amine and grammar-38 admission tables. Discovered en route: the design card's real AD instrument is 256-bit Bemis-Murcko-scaffold-NN (not R-C03's 512-bit raw-training-set-NN); original compute script not recoverable, so used a best-effort matching reproduction (documented, fidelity gap reported honestly, max delta 0.097 on IPDA). Positive control (shuffled AD-vs-error correlation) fired for all 3 evaluators. Tg AD-vs-error correlation significant (rho=-0.26,p<1e-7); density/RI directionally consistent but not significant at n_test=16.",
+  "no_further_fires_needed": true
+}

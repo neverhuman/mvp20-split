@@ -1,0 +1,207 @@
+{
+  "directive_attack": {
+    "consistent_constraints_control": {
+      "authorize_ok": true,
+      "hard_constraints_passed": true,
+      "rank_or_score_produced": false,
+      "status": "NO_ELIGIBLE_OBJECTIVES"
+    },
+    "contradictory_envelope_test": {
+      "actual_gate_value": true,
+      "composed_as_and_not_average": true,
+      "constraints": [
+        "amphora-candidate-contract.gates.risk_flag == true",
+        "amphora-candidate-contract.gates.risk_flag == false"
+      ],
+      "interpretation": "the failing contradictory constraint short-circuits the whole request to Err on first mismatch (strict AND / fail-closed); there is no partial-credit, averaged, or percentage-pass output anywhere in the return type or the loop logic",
+      "result": {
+        "authorize_ok": false,
+        "error": "optimizer hard constraint failed"
+      }
+    },
+    "n_registered_modules_fed": 29,
+    "objective_count_sweep": [
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 0,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 1,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 2,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 3,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 5,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      },
+      {
+        "authorize_ok": true,
+        "eligible_objective_count": 0,
+        "n_objectives_fed": 10,
+        "objective_values_len": 0,
+        "rank_or_score_produced": false,
+        "ranking_performed": false,
+        "solver_invoked": false,
+        "status": "NO_ELIGIBLE_OBJECTIVES"
+      }
+    ],
+    "type_evidence": "OptimizerAuthorizationV1 fields (amphora-core/src/lib.rs:566-577): status:String, hard_constraints_passed:bool, eligible_objective_count:usize, objective_values:BTreeMap<String,String>, ranking_performed:bool, solver_invoked:bool, usable_by_optimizer:bool, authority_upgrade:bool, candidate_created_evidence:bool -- no numeric rank/score field exists in the type signature at all; objective_values is BTreeMap<String,String> (string-valued), not a numeric score map",
+    "type_has_no_rank_or_score_field": true
+  },
+  "encoding_results": [
+    {
+      "authorize_error": null,
+      "authorize_ok": null,
+      "blocked": true,
+      "blocked_at": "serde_deserialization",
+      "case_id": "1-top-level-key",
+      "description": "extra top-level key carrying the smuggled objective alongside a schema-valid empty objectives array",
+      "parse_error": "unknown field `objectives_override`, expected one of `schema`, `request_source`, `objectives`, `hard_constraints` at line 1 column 60",
+      "parse_ok": false,
+      "raw_json": "{\"hard_constraints\":[],\"objectives\":[],\"objectives_override\":[{\"module_id\":\"amphora-optimizer-orchestrator\",\"objective_id\":\"smuggle-1\",\"path\":\"score\",\"section\":\"objective_values\"}],\"request_source\":\"CANDIDATE\",\"schema\":\"amphora.optimizer-authorization-request.v1\"}",
+      "reached_forbidden_path": false
+    },
+    {
+      "authorize_error": null,
+      "authorize_ok": null,
+      "blocked": true,
+      "blocked_at": "serde_deserialization",
+      "case_id": "2-array-container",
+      "description": "objectives value wrapped in an extra array layer (array-of-array container)",
+      "parse_error": "invalid type: map, expected a string at line 1 column 38",
+      "parse_ok": false,
+      "raw_json": "{\"hard_constraints\":[],\"objectives\":[[{\"module_id\":\"amphora-optimizer-orchestrator\",\"objective_id\":\"smuggle-2\",\"path\":\"score\",\"section\":\"objective_values\"}]],\"request_source\":\"CANDIDATE\",\"schema\":\"amphora.optimizer-authorization-request.v1\"}",
+      "reached_forbidden_path": false
+    },
+    {
+      "authorize_error": null,
+      "authorize_ok": null,
+      "blocked": true,
+      "blocked_at": "serde_deserialization",
+      "case_id": "3-deeper-nesting",
+      "description": "objective declaration nested one level deeper than the schema-valid array",
+      "parse_error": "invalid type: map, expected a sequence at line 1 column 36",
+      "parse_ok": false,
+      "raw_json": "{\"hard_constraints\":[],\"objectives\":{\"objectives\":[{\"module_id\":\"amphora-optimizer-orchestrator\",\"objective_id\":\"smuggle-3\",\"path\":\"score\",\"section\":\"objective_values\"}]},\"request_source\":\"CANDIDATE\",\"schema\":\"amphora.optimizer-authorization-request.v1\"}",
+      "reached_forbidden_path": false
+    },
+    {
+      "authorize_error": null,
+      "authorize_ok": null,
+      "blocked": true,
+      "blocked_at": "serde_deserialization",
+      "case_id": "4-key-case-variant",
+      "description": "capitalized key variant 'Objectives' in place of required 'objectives'",
+      "parse_error": "unknown field `Objectives`, expected one of `schema`, `request_source`, `objectives`, `hard_constraints` at line 1 column 13",
+      "parse_ok": false,
+      "raw_json": "{\"Objectives\":[{\"module_id\":\"amphora-optimizer-orchestrator\",\"objective_id\":\"smuggle-4\",\"path\":\"score\",\"section\":\"objective_values\"}],\"hard_constraints\":[],\"request_source\":\"CANDIDATE\",\"schema\":\"amphora.optimizer-authorization-request.v1\"}",
+      "reached_forbidden_path": false
+    },
+    {
+      "authorize_error": null,
+      "authorize_ok": null,
+      "blocked": true,
+      "blocked_at": "serde_deserialization",
+      "case_id": "5-alternate-key-name",
+      "description": "semantically-equivalent alternate key name 'objective_list' in place of 'objectives'",
+      "parse_error": "unknown field `objective_list`, expected one of `schema`, `request_source`, `objectives`, `hard_constraints` at line 1 column 39",
+      "parse_ok": false,
+      "raw_json": "{\"hard_constraints\":[],\"objective_list\":[{\"module_id\":\"amphora-optimizer-orchestrator\",\"objective_id\":\"smuggle-5\",\"path\":\"score\",\"section\":\"objective_values\"}],\"request_source\":\"CANDIDATE\",\"schema\":\"amphora.optimizer-authorization-request.v1\"}",
+      "reached_forbidden_path": false
+    },
+    {
+      "authorize_error": "optimizer constraint declaration is unknown, duplicate, or malformed",
+      "authorize_ok": false,
+      "blocked": true,
+      "blocked_at": "authorize_optimizer_request",
+      "case_id": "6-semantic-alt-field",
+      "description": "objective smuggled through the hard_constraints field by mislabeling section as objective_values",
+      "parse_error": null,
+      "parse_ok": true,
+      "raw_json": "{\"hard_constraints\":[{\"constraint_id\":\"smuggle-6\",\"expected\":1.0,\"module_id\":\"amphora-optimizer-orchestrator\",\"operator\":\"==\",\"path\":\"score\",\"section\":\"objective_values\"}],\"objectives\":[],\"request_source\":\"CANDIDATE\",\"schema\":\"amphora.optimizer-authorization-request.v1\"}",
+      "reached_forbidden_path": false
+    },
+    {
+      "authorize_error": null,
+      "authorize_ok": null,
+      "blocked": true,
+      "blocked_at": "serde_deserialization",
+      "case_id": "7-string-container",
+      "description": "objectives value provided as a JSON-encoded string instead of a real array",
+      "parse_error": "invalid type: string \"[{\\\"objective_id\\\":\\\"smuggle-7\\\",\\\"module_id\\\":\\\"amphora-optimizer-orchestrator\\\",\\\"section\\\":\\\"objective_values\\\",\\\"path\\\":\\\"score\\\"}]\", expected a sequence at line 1 column 173",
+      "parse_ok": false,
+      "raw_json": "{\"hard_constraints\":[],\"objectives\":\"[{\\\"objective_id\\\":\\\"smuggle-7\\\",\\\"module_id\\\":\\\"amphora-optimizer-orchestrator\\\",\\\"section\\\":\\\"objective_values\\\",\\\"path\\\":\\\"score\\\"}]\",\"request_source\":\"CANDIDATE\",\"schema\":\"amphora.optimizer-authorization-request.v1\"}",
+      "reached_forbidden_path": false
+    },
+    {
+      "authorize_error": null,
+      "authorize_ok": null,
+      "blocked": true,
+      "blocked_at": "serde_deserialization",
+      "case_id": "8-unicode-homoglyph-key",
+      "description": "unicode-homoglyph key: Cyrillic 'о' (U+043E) substituted for Latin 'o' in 'objectives'",
+      "parse_error": "unknown field `оbjectives`, expected one of `schema`, `request_source`, `objectives`, `hard_constraints` at line 1 column 119",
+      "parse_ok": false,
+      "raw_json": "{\"hard_constraints\":[],\"request_source\":\"CANDIDATE\",\"schema\":\"amphora.optimizer-authorization-request.v1\",\"оbjectives\":[{\"module_id\":\"amphora-optimizer-orchestrator\",\"objective_id\":\"smuggle-8\",\"path\":\"score\",\"section\":\"objective_values\"}]}",
+      "reached_forbidden_path": false
+    }
+  ],
+  "positive_control": {
+    "detected": true,
+    "evidence": "real authorize_optimizer_request() -> Err(Some(\"candidate objective injection is forbidden\")) [blocked]; mutant_authorize_with_defect() on the SAME input -> Ok(eligible_objective_count=1, ranking_performed=true, usable_by_optimizer=true) [forbidden path reached] -- the classifier used above (reached_forbidden_path) correctly distinguishes the two",
+    "how_planted": "mutant_authorize_with_defect() in this probe's own source: (1) omits the `if request.request_source == \"CANDIDATE\" && !request.objectives.is_empty() { return Err(...) }` guard present in amphora-core/src/lib.rs authorize_optimizer_request; (2) sets eligible_objective_count = req.objectives.len(), ranking_performed = eligible>0, usable_by_optimizer = eligible>0, objective_values populated from req.objectives, instead of the real function's hardcoded 0/false/false/empty-map literals",
+    "input": "identical directly-constructed OptimizerAuthorizationRequestV1: request_source=CANDIDATE, objectives=[{objective_id: direct-smuggle, module_id: amphora-optimizer-orchestrator, section: objective_values, path: score}]",
+    "mutant_function_result": {
+      "output": {
+        "eligible_objective_count": 1,
+        "objective_values_len": 1,
+        "ranking_performed": true,
+        "status": "MUTANT_RANKED",
+        "usable_by_optimizer": true
+      },
+      "reached_forbidden_path": true
+    },
+    "planted_defect": "CANDIDATE-objective-injection check removed AND eligible_objective_count/objective_values/ranking_performed/usable_by_optimizer computed from the request instead of hardcoded locked constants",
+    "real_function_result": {
+      "blocked": true,
+      "error": "candidate objective injection is forbidden"
+    }
+  }
+}

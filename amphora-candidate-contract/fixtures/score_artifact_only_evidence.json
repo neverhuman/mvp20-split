@@ -1,0 +1,47 @@
+{
+  "authority_tier": "EVIDENCE_ONLY",
+  "candidate_id": "fixture-evidence-pass",
+  "claim_locks": {
+    "artifact_presence_does_not_validate_candidate": true
+  },
+  "evidence_scope": "artifact_audit",
+  "explanations": [
+    "Artifact package validation is evidence-only and cannot be optimized as product performance."
+  ],
+  "gates": {
+    "artifact_schema_valid": true
+  },
+  "metrics": {
+    "artifact_count": 2,
+    "model_card": {
+      "can_optimize": false,
+      "current_pass": true,
+      "current_status": "SCORED",
+      "dataset_checksums": {},
+      "dataset_ids": [
+        "fixtures/evidence_package_candidate.json"
+      ],
+      "direction": "context",
+      "kpi_name": "artifact_audit",
+      "model_authority": "EVIDENCE_ONLY",
+      "score_semantics": "EVIDENCE_ONLY",
+      "unit": "normalized_0_1",
+      "validation_bar": "not optimizer-authorized objective"
+    }
+  },
+  "missing_inputs": [],
+  "module_id": "fixture-artifact-service",
+  "module_version": "0.1.0",
+  "objective_values": {
+    "artifact_count": 2
+  },
+  "schema_version": "amphora.score-envelope.v1",
+  "score_0_1": 0.0,
+  "score_semantics": "EVIDENCE_ONLY",
+  "source_refs": [
+    "fixtures/evidence_package_candidate.json"
+  ],
+  "status": "SCORED",
+  "uncertainty": {},
+  "usable_by_optimizer": false
+}

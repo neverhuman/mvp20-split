@@ -1,0 +1,560 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "ec1f05a8d3c79947646ccebb819f0425985ce03f2a48fbc279031afcc43072ec",
+  "payload_decoded": {
+    "acceptance": {
+      "command": "RDKIT_INCLUDE_DIR/RDKIT_LIB_DIR/BOOST_INCLUDE_DIR/LD_LIBRARY_PATH from /home/ubuntu/.local/share/amphora/rdkit-2026.03.2; flock -w 300 .cron.lock ~/.cargo/bin/cargo test --workspace --locked --features rdkit",
+      "exit_code": 0,
+      "failing_tests": [],
+      "suites": 62,
+      "tests_failed": 0,
+      "tests_ignored": 0,
+      "tests_passed": 378,
+      "toolchain": "1.96.0 (rust-toolchain.toml)"
+    },
+    "amphora_molecule_property_finding": {
+      "answer": "Yes - and it is the only one of the nine whose binding is broken twice over - but the repair is not a pure repair, and its dry run cannot be planned today.",
+      "chicken_and_egg_note": "amphora-phase0-reviewer refuses to review a module whose recorded benchmark does not reproduce (verify_recorded_benchmark), so no fresh review can be obtained against the broken authoritative tree. That is precisely why the ceremony rehearses in a scratch copy: the replacement receipt is deterministic, so the reviewer can verify and sign it there, and the authoritative tree is touched exactly once.",
+      "honest_caveats": [
+        "it has nothing to supersede on the review side: no independent-review receipt and no movement event exist, so the archive holds only the prior evaluation receipt and the prior benchmark result",
+        "because the tool demands dual identity, repairing it necessarily grants it its FIRST independent review - a state change beyond repair. Its phase does not change (PRE_PHASE_0 before and after), but it becomes promotable, which it never was",
+        "there is no smaller governed option: the tool will not, and should not, rewrite evidence on one signature"
+      ],
+      "question": "amphora-molecule-property has no independent-review receipt and no movement event, so verify_module_with_replay/verify_evaluation_result take the live re-execution branch. Can re-evaluate help it at all?",
+      "what_a_repair_would_do": "re-evaluate regenerates both from one live evaluation, so both checks pass at once. Once the mandatory fresh review is imported, review_exists becomes true and the live branch is skipped, so the repaired binding is as durable as the other eight - it no longer re-breaks when module-manifest.json or config/benchmark-lock.v1.json legitimately change.",
+      "why_its_binding_is_doubly_broken": "verify_evaluation_result checks metrics.benchmark_result_sha256 against the shipped bytes for every module. For a module with neither a review receipt nor a movement event it ALSO re-executes the locked benchmark and compares the live diagnostic with first_replay.diagnostic_receipt. amphora-molecule-property fails both: pinned fc5a505c7e88c931842abaaebe0d4b2373f1d580c9b7b1ff2523a46a0a25c923 vs actual d04b516c806f452556ccdc91250d6ee2474f09565ac1656a88cbf13776716f90, and the shipped bytes are the MODULE-HARNESS shape, which carries no comparable diagnostic.",
+      "why_no_dry_run_numbers": "the dry run refuses before it can compute the replacement hashes, because no review receipt exists for this module anywhere. Supplying another module's review reproduces the cross-module refusal recorded in the table. No review was fabricated: signing a review receipt asserting independent_reimplementation_passed would be a false attestation. A human obtains the real one in the step-1 rehearsal, exactly as for the other eight, and only then can this module be planned."
+    },
+    "authority": "AUDIT_ONLY",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "clean_git_status_proof": {
+      "claim": "no shipped Phase-0 benchmark result was touched by this repair",
+      "git_status_is_clean": true,
+      "git_status_porcelain_on_pathspec": "",
+      "method": "git status --porcelain on the pathspec */evidence/phase0/benchmark/result.v1.json"
+    },
+    "count_reconciliation": {
+      "already_pinned_at_9_by": "amphora-cli/src/phase0.rs::tests::source_ledger_historical_movement_and_status_are_read_only (asserts phase0_count 9, pre_phase0_count 20) - the test was already honest; the generated artifact was not",
+      "artifact_sha256_after": {
+        "config/program/data-activation-promotion-trajectory.v2.json": "93233d7ddd7bb51541d94388d667b453479c057583733e2d8e7e7a74d038b406",
+        "config/program/phase0-decision-report.v2.json": "4e9f8fdd0b780c5cdeb3c5ba95c360cd0f52eed332af57078910fd1847e4bb17",
+        "feedback/v2/reports/portfolio-status.txt": "83df96efe1cd7b70b632c1ee5516d8e1ef0a58db9ee57b8d1e828da96209b7da"
+      },
+      "authoritative": "the verifier",
+      "explanation": "The report still listed amphora-molecule-design-gate as PHASE_0. Its shipped evidence/phase0/benchmark/result.v1.json no longer hashes to the metrics.benchmark_result_sha256 pinned in its own signed evaluation receipt (pinned 3fd72f0fa08ae6e306a6718f0a618cab4abc876add5fd06521ac0022d0857761, actual 8873baa3d050984dbf58fadd8d78a12f03c586e436a1c243a268ff0c93945964), so verify_evaluation_result correctly returns EVALUATION_RESULT_MISMATCH and the module derives PRE_PHASE_0. The last report regeneration happened after 8 of the 9 modules had been clobbered but before amphora-molecule-design-gate was.",
+      "fix": "the stale artifact was regenerated through its own generator, `portfolio phase0 status --all --write-report`, which rewrote config/program/phase0-decision-report.v2.json, config/program/portfolio-progress-dashboard.v1.json, config/program/data-activation-promotion-trajectory.v2.json and feedback/v2/reports/portfolio-status.txt from the live verifier. No count was edited by hand and no verifier was relaxed.",
+      "honest_number": 9,
+      "honest_pre_phase0": 20,
+      "not_a_lowered_bar": "The count fell from a stale 10 to an honest 9 because the verifier is correctly refusing a module whose evaluated benchmark bytes no longer match its signed receipt. Repairing that binding through the WV-1 path (and then `promote`) is the only way to raise it again.",
+      "question": "config/program/phase0-decision-report.v2.json reported phase0_count 10 while the verifier derives 9.",
+      "report_now_agrees_with_verifier": true,
+      "report_phase0_after": 9,
+      "report_phase0_before": 10,
+      "report_phase0_modules_after": [
+        "amphora-candidate-contract",
+        "amphora-envelope-gates",
+        "amphora-formulation-arithmetic",
+        "amphora-formulation-universe",
+        "amphora-model-card-authority",
+        "amphora-process-qc-twin",
+        "amphora-run-provenance",
+        "amphora-solvency-score",
+        "amphora-tolerance-robustness"
+      ],
+      "report_phase0_modules_before": [
+        "amphora-candidate-contract",
+        "amphora-envelope-gates",
+        "amphora-formulation-arithmetic",
+        "amphora-formulation-universe",
+        "amphora-model-card-authority",
+        "amphora-molecule-design-gate",
+        "amphora-process-qc-twin",
+        "amphora-run-provenance",
+        "amphora-solvency-score",
+        "amphora-tolerance-robustness"
+      ],
+      "stale_artifact_sha256_before": {
+        "config/program/data-activation-promotion-trajectory.v2.json": "6e10ad0e970e16f5d033fb637c12e7c20576ed4e5f3c3a7a8193aa34ca9df4aa",
+        "config/program/phase0-decision-report.v2.json": "9467b62782321b4359922f50d646317b260df187093d9c8c96b1c5a7e25db965",
+        "feedback/v2/reports/portfolio-status.txt": "ffbf25da579d402be393e763688f3e21d23e326e35c7b35c01f19a966404350f"
+      },
+      "stale_by_exactly_one_module": "amphora-molecule-design-gate",
+      "verifier_phase0": 9,
+      "verifier_phase0_modules": [
+        "amphora-candidate-contract",
+        "amphora-envelope-gates",
+        "amphora-formulation-arithmetic",
+        "amphora-formulation-universe",
+        "amphora-model-card-authority",
+        "amphora-process-qc-twin",
+        "amphora-run-provenance",
+        "amphora-solvency-score",
+        "amphora-tolerance-robustness"
+      ],
+      "why": "phase0_count is not an independent fact. amphora-cli/src/phase0.rs::regenerate_report calls portfolio_status(), which calls verify_module_with_replay() for all 29 modules and writes the result to config/program/phase0-decision-report.v2.json. The report is a GENERATED artifact - control.rs::phase0_generated_file names it explicitly - and it is rewritten only when a mutating Phase-0 command runs (prepare / reissue / evaluate / review / promote / status --all --write-report). The B2 harness clobber changed shipped evidence WITHOUT going through any of those commands, so the report was never refreshed and kept describing a portfolio state that no longer existed on disk."
+    },
+    "date": "2026-08-04",
+    "does_not_establish": [
+      "does not establish that any module with a broken binding is scientifically invalid",
+      "does not establish any product performance, qualification, or superiority claim",
+      "does not re-promote or demote anything; phase is derived, never asserted",
+      "does not assert that a re-evaluation has been performed - none has"
+    ],
+    "exact_human_command": {
+      "step_0_read_the_plan": {
+        "command": "target/debug/amphora-tui portfolio phase0 re-evaluate --module <MODULE> --reason \"<why this binding is broken>\" --as-of <YYYY-MM-DDTHH:MM:SSZ> --evaluation-key /home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed --review <any existing signed review for <MODULE>> --dry-run",
+        "read_from_output": "new_evaluation_receipt_sha256 = <S>, new_benchmark_result_sha256, files_that_move, archive_root",
+        "where": "the authoritative workspace, /home/ubuntu/amphora/build/mvp20-split",
+        "writes": "nothing (the dry run is wrapped in prove_read_only)"
+      },
+      "step_1_rehearse_in_a_scratch_copy": {
+        "commands": [
+          "rsync -a --exclude target/ --exclude .git/ /home/ubuntu/amphora/build/mvp20-split/ /tmp/wv1-rehearse-<MODULE>/",
+          "cd /tmp/wv1-rehearse-<MODULE> && ~/.cargo/bin/cargo build --locked --features rdkit --bin amphora-tui --bin amphora-phase0-reviewer",
+          "mkdir -p /tmp/wv1-rehearse-<MODULE>-aside && mv <MODULE>/evidence/phase0/receipts/evaluation.v1.dsse.json <MODULE>/evidence/phase0/receipts/independent-review.v1.dsse.json <MODULE>/evidence/phase0/benchmark/result.v1.json <MODULE>/movement/events/*.json /tmp/wv1-rehearse-<MODULE>-aside/",
+          "printf '{\"schema\":\"amphora.module-movement-ledger.v1\",\"module_id\":\"<MODULE>\",\"events\":[]}\\n' > <MODULE>/movement/ledger.v1.json",
+          "AMPHORA_PHASE0_EVALUATOR_KEY_ID=phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178 AMPHORA_PHASE0_EVALUATOR_KEY=/home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed ./target/debug/amphora-tui portfolio phase0 evaluate --module <MODULE>",
+          "sha256sum <MODULE>/evidence/phase0/receipts/evaluation.v1.dsse.json   # MUST equal <S> from step 0"
+        ],
+        "if_the_hash_differs": "STOP. Do not proceed. A difference means the replacement receipt is not a deterministic function of the tree, and the governed command would refuse anyway.",
+        "note": "amphora-cli resolves its workspace root at compile time (env!(\"CARGO_MANIFEST_DIR\")), so the rehearsal needs its own build; a binary built from the authoritative tree would write to the authoritative tree.",
+        "where": "a scratch copy, e.g. /tmp/wv1-rehearse-<MODULE>"
+      },
+      "step_2_obtain_the_fresh_independent_review": {
+        "command": "/tmp/wv1-rehearse-<MODULE>/target/debug/amphora-phase0-reviewer --workspace /tmp/wv1-rehearse-<MODULE> --module <MODULE> --benchmark-executable /tmp/wv1-rehearse-<MODULE>/target/debug/amphora-tui --reviewer-key-id phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b --reviewer-key /home/ubuntu/.local/share/amphora/phase0/keys/internal-reviewer.ed25519.seed --output /home/ubuntu/wv1-reviews/<MODULE>.review.v1.dsse.json",
+        "produces": "a review receipt whose evaluation_receipt_hash == <S>, signed by the second, distinct trusted identity",
+        "where": "the scratch copy; the reviewer writes its receipt outside any repository"
+      },
+      "step_3_the_one_governed_command": {
+        "command": "flock -w 300 .cron.lock target/debug/amphora-tui portfolio phase0 re-evaluate --module <MODULE> --reason \"<why this binding is broken>\" --as-of <YYYY-MM-DDTHH:MM:SSZ> --evaluation-key /home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed --review /home/ubuntu/wv1-reviews/<MODULE>.review.v1.dsse.json",
+        "leaves_the_module_at": "PRE_PHASE_0, promotable - the prior movement event bound the prior receipt hash and was superseded with it",
+        "what_it_does_in_one_transaction": [
+          "refuses unless <MODULE> is in UNBOUND_BENCHMARK_RESULTS and its shipped result is in fact unbound from its signed receipt",
+          "refuses unless BOTH a fresh external evaluator key AND a fresh, distinct, trusted, signed independent-review receipt are supplied",
+          "refuses unless the supplied review binds the exact receipt this run will write",
+          "archives the prior evaluation receipt, independent-review receipt, benchmark result, movement event and movement ledger under <MODULE>/evidence/phase0/superseded/<sha256-of-prior-evaluation-receipt>/ with a supersession note",
+          "regenerates benchmark/result.v1.json through evaluate_signed(), the single legitimate writer, and writes the replacement evaluation receipt",
+          "re-binds the review through the existing import_review() path",
+          "restores the module byte-for-byte from a backup if any step fails"
+        ],
+        "where": "the authoritative workspace"
+      },
+      "step_4_re_derive_the_phase": {
+        "command": "flock -w 300 .cron.lock target/debug/amphora-tui portfolio phase0 promote --module <MODULE>",
+        "note": "phase is derived from a fresh movement event with two distinct trusted signatures; it is never asserted by the repair.",
+        "where": "the authoritative workspace"
+      },
+      "step_5_reconcile_the_guard": {
+        "note": "UNBOUND_BENCHMARK_RESULTS in amphora-cli/src/phase0.rs and the pinned counts in tests::source_ledger_historical_movement_and_status_are_read_only must be updated in the same change that repairs a module, or the regression guard shipped_benchmark_results_stay_bound_to_signed_evaluation_receipts will fail - by design."
+      },
+      "summary": "One governed command touches the authoritative repository. Everything before it happens in a scratch rehearsal copy and produces the fresh independent-review receipt that the governed command demands.",
+      "why_a_rehearsal_is_needed": "The fresh review receipt must bind evaluation_receipt_hash == sha256 of the receipt the repair will write, and amphora-phase0-reviewer only signs a receipt it has verified on disk. The replacement receipt is a deterministic function of the worktree (bundle bytes, parent hashes, claim locks, the two locked-benchmark replays, and a deterministic Ed25519 signature), so it can be produced in a copy first. `re-evaluate --dry-run` publishes that exact hash in advance, and the governed command refuses if the supplied review binds anything else - so a mismatch can only ever produce a refusal, never a bad write."
+    },
+    "executed_a_real_re_evaluation": false,
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "human_review_performed": false,
+    "modifies_benchmark_lock": false,
+    "modifies_existing_receipts": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_mission_front_matter": false,
+    "modifies_signed_phase0_kpi": false,
+    "module": "amphora-redteam-audit",
+    "negative_controls": {
+      "intact_binding": {
+        "refused": true,
+        "stderr": "Error: phase0 re-evaluate refuses amphora-solvency-score: only a module listed in UNBOUND_BENCHMARK_RESULTS - whose shipped benchmark result is already unbound from its own signed evaluation receipt - can be repaired"
+      },
+      "repository_local_key": {
+        "refused": true,
+        "stderr": "Error: repository-local Phase-0 private keys are forbidden"
+      }
+    },
+    "organizational_independence_asserted": false,
+    "per_module_dry_run": [
+      {
+        "actual_benchmark_result_sha256": "dc2cb1dca3f4eb3f3291165c4cdbd28627586dec73c7119c12350087f488743e",
+        "archive_root": "evidence/phase0/superseded/bcbc74367c98eba4fed85396cdfda1fdfe9eba2bb203676a55c3dda467ae0808",
+        "archived_movement_event_ids": [
+          "movement-088989afa75f92b7e3a6e488042e04c4b1cf3ca17ff19e5467309089f8827ffe"
+        ],
+        "binding_broken": true,
+        "blocking_refusals": [
+          "REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT: review binds bcbc74367c98eba4fed85396cdfda1fdfe9eba2bb203676a55c3dda467ae0808, this run writes 06a5763b7ddbd55563076013e9d0efbd0f0f2a880b7288bfadc9011c5313e8d0"
+        ],
+        "dry_run_planned": true,
+        "files_that_would_move": [
+          "evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "evidence/phase0/receipts/independent-review.v1.dsse.json",
+          "evidence/phase0/benchmark/result.v1.json",
+          "movement/events/088989afa75f92b7e3a6e488042e04c4b1cf3ca17ff19e5467309089f8827ffe.json",
+          "movement/ledger.v1.json"
+        ],
+        "module_id": "amphora-cro-protocol-packager",
+        "new_benchmark_result_sha256": "eb730ca75b0d140959bd977e3aa78b87b5278151d0269984efef57382ac37634",
+        "new_evaluation_failed_gates": [],
+        "new_evaluation_phase0_eligible": true,
+        "new_evaluation_receipt_sha256": "06a5763b7ddbd55563076013e9d0efbd0f0f2a880b7288bfadc9011c5313e8d0",
+        "pinned_benchmark_result_sha256": "9028beed25df43c5e1c453931d000636e9b2e128d1426101114bbbb829627909",
+        "prior_evaluation_receipt_sha256": "bcbc74367c98eba4fed85396cdfda1fdfe9eba2bb203676a55c3dda467ae0808",
+        "prior_independent_review_receipt_sha256": "06aa28b7188498eac75160539601a7768d436a022d2b846fc26e0c24d709b1b0",
+        "would_proceed": false
+      },
+      {
+        "actual_benchmark_result_sha256": "00dbbe9f58921b7dcc65afaa39b7f09a03e6b9647b9c17ed9342a8dca62b9738",
+        "archive_root": "evidence/phase0/superseded/c459c79c0576c097dd4bd2db5178725ab7c86784ed5f7c4035bf03d913f645c2",
+        "archived_movement_event_ids": [
+          "movement-f3207ae632cf724971f2d4532f07dc413203997fa496489cfe7cd3bf9d2fef56"
+        ],
+        "binding_broken": true,
+        "blocking_refusals": [
+          "REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT: review binds c459c79c0576c097dd4bd2db5178725ab7c86784ed5f7c4035bf03d913f645c2, this run writes ec9a14c69e6c1cb7424d09de6f8909cb4d10206746e4809cac946e716018a3c5"
+        ],
+        "dry_run_planned": true,
+        "files_that_would_move": [
+          "evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "evidence/phase0/receipts/independent-review.v1.dsse.json",
+          "evidence/phase0/benchmark/result.v1.json",
+          "movement/events/f3207ae632cf724971f2d4532f07dc413203997fa496489cfe7cd3bf9d2fef56.json",
+          "movement/ledger.v1.json"
+        ],
+        "module_id": "amphora-evidence-intake-validator",
+        "new_benchmark_result_sha256": "b34a9a5105366b2066c9940d78907bd40bba7d3078dd3db4f4a89e42ff88b941",
+        "new_evaluation_failed_gates": [],
+        "new_evaluation_phase0_eligible": true,
+        "new_evaluation_receipt_sha256": "ec9a14c69e6c1cb7424d09de6f8909cb4d10206746e4809cac946e716018a3c5",
+        "pinned_benchmark_result_sha256": "65fcd096abb99b8dde4050259afdce1b024a83d8dbd1a66de58d7646b5090467",
+        "prior_evaluation_receipt_sha256": "c459c79c0576c097dd4bd2db5178725ab7c86784ed5f7c4035bf03d913f645c2",
+        "prior_independent_review_receipt_sha256": "f22fbad0cd4dcc62bdef75db5517cd3f1c828f4f448929d2850770d17e8e05e7",
+        "would_proceed": false
+      },
+      {
+        "actual_benchmark_result_sha256": "3f2f6853f132f032a4b62a52ff3485d6f9b88b44affb3d50e84e8d310808ab11",
+        "archive_root": "evidence/phase0/superseded/332b44b8b2467ef03fe8990aaf0114a80784fec4f40f2e3a42b5a248341471e4",
+        "archived_movement_event_ids": [
+          "movement-fccdb9cbe8c822555d252b78deae91593a99113bdd0db049af33174c0d43103c"
+        ],
+        "binding_broken": true,
+        "blocking_refusals": [
+          "REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT: review binds 332b44b8b2467ef03fe8990aaf0114a80784fec4f40f2e3a42b5a248341471e4, this run writes bbbfea1985e79ed13578cfd00442645b83feaaea88327cb5d9f252f2052499f8"
+        ],
+        "dry_run_planned": true,
+        "files_that_would_move": [
+          "evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "evidence/phase0/receipts/independent-review.v1.dsse.json",
+          "evidence/phase0/benchmark/result.v1.json",
+          "movement/events/fccdb9cbe8c822555d252b78deae91593a99113bdd0db049af33174c0d43103c.json",
+          "movement/ledger.v1.json"
+        ],
+        "module_id": "amphora-known-answer-benchmarks",
+        "new_benchmark_result_sha256": "9299ac64db3de5a8c8baf5c8875577822aacf8564fe79978117e6f60ec049bb9",
+        "new_evaluation_failed_gates": [],
+        "new_evaluation_phase0_eligible": true,
+        "new_evaluation_receipt_sha256": "bbbfea1985e79ed13578cfd00442645b83feaaea88327cb5d9f252f2052499f8",
+        "pinned_benchmark_result_sha256": "abfbf104f49b4dc6423bedbfd0dc0ef82585bd712012f23e91bd8e8dc2181595",
+        "prior_evaluation_receipt_sha256": "332b44b8b2467ef03fe8990aaf0114a80784fec4f40f2e3a42b5a248341471e4",
+        "prior_independent_review_receipt_sha256": "533162d4139cd0609b404092115d50b3580eefb5065a13c466432bc0008ce3b5",
+        "would_proceed": false
+      },
+      {
+        "actual_benchmark_result_sha256": "8873baa3d050984dbf58fadd8d78a12f03c586e436a1c243a268ff0c93945964",
+        "archive_root": "evidence/phase0/superseded/ad0cb74d6bfa429ac326c32ef43e355bd379423866b5478eb5a7d5ab20e4b554",
+        "archived_movement_event_ids": [
+          "movement-9a754851e5a46da0de88efa0fcc2eeda5a5e9d106022af1b1b383f5a837834ad"
+        ],
+        "binding_broken": true,
+        "blocking_refusals": [
+          "REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT: review binds ad0cb74d6bfa429ac326c32ef43e355bd379423866b5478eb5a7d5ab20e4b554, this run writes b672f3e5d24d0a0006263917fd23c8a2f8c3122aa38a052d92f2f9bb90271392"
+        ],
+        "dry_run_planned": true,
+        "files_that_would_move": [
+          "evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "evidence/phase0/receipts/independent-review.v1.dsse.json",
+          "evidence/phase0/benchmark/result.v1.json",
+          "movement/events/9a754851e5a46da0de88efa0fcc2eeda5a5e9d106022af1b1b383f5a837834ad.json",
+          "movement/ledger.v1.json"
+        ],
+        "module_id": "amphora-molecule-design-gate",
+        "new_benchmark_result_sha256": "9a46aca2470925ec7354e32ccbd4a4b41d47b1b492aa35d523e6ad88fd28e15d",
+        "new_evaluation_failed_gates": [],
+        "new_evaluation_phase0_eligible": true,
+        "new_evaluation_receipt_sha256": "b672f3e5d24d0a0006263917fd23c8a2f8c3122aa38a052d92f2f9bb90271392",
+        "pinned_benchmark_result_sha256": "3fd72f0fa08ae6e306a6718f0a618cab4abc876add5fd06521ac0022d0857761",
+        "prior_evaluation_receipt_sha256": "ad0cb74d6bfa429ac326c32ef43e355bd379423866b5478eb5a7d5ab20e4b554",
+        "prior_independent_review_receipt_sha256": "a14724c25239968d01b1ae9e7897e78457124fbd502e28112cd14a1d7f09ea5c",
+        "would_proceed": false
+      },
+      {
+        "dry_run_planned": false,
+        "module_id": "amphora-molecule-property",
+        "refusal": "Error: supplied independent review belongs to a different module"
+      },
+      {
+        "actual_benchmark_result_sha256": "e1d95b6b338b10d5999d9d0af4e5b2e8f635eab72a888942e9a77439382eba17",
+        "archive_root": "evidence/phase0/superseded/598a1f1013f6ef6e8734fa1f7230572a6014eca420bc06be50319fa7a0881560",
+        "archived_movement_event_ids": [
+          "movement-571ac9f8efb320c46d03e75401db617796f85ed71ae7fa25fc95f5a7117a375c"
+        ],
+        "binding_broken": true,
+        "blocking_refusals": [
+          "REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT: review binds 598a1f1013f6ef6e8734fa1f7230572a6014eca420bc06be50319fa7a0881560, this run writes 1f61431d7f9d280a16521550b54f3b79e0dfbdbb77956fd9e2410d824489a49d"
+        ],
+        "dry_run_planned": true,
+        "files_that_would_move": [
+          "evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "evidence/phase0/receipts/independent-review.v1.dsse.json",
+          "evidence/phase0/benchmark/result.v1.json",
+          "movement/events/571ac9f8efb320c46d03e75401db617796f85ed71ae7fa25fc95f5a7117a375c.json",
+          "movement/ledger.v1.json"
+        ],
+        "module_id": "amphora-optimizer-orchestrator",
+        "new_benchmark_result_sha256": "35861a09cad17709ba35ca16af028538efc94c82974a036bd69f760e2e3da193",
+        "new_evaluation_failed_gates": [],
+        "new_evaluation_phase0_eligible": true,
+        "new_evaluation_receipt_sha256": "1f61431d7f9d280a16521550b54f3b79e0dfbdbb77956fd9e2410d824489a49d",
+        "pinned_benchmark_result_sha256": "cfeb75e14e319a36b0181d36127e219a6c2eb8ce3a7e2cc00bb6a9d23e490afd",
+        "prior_evaluation_receipt_sha256": "598a1f1013f6ef6e8734fa1f7230572a6014eca420bc06be50319fa7a0881560",
+        "prior_independent_review_receipt_sha256": "7f265539e0a75a18646dd0af2e052bd0c8eb65761db2f041a3b9d3e5a839e5f9",
+        "would_proceed": false
+      },
+      {
+        "actual_benchmark_result_sha256": "701482a26cbe704e06bdade4c3af3279e6fee066319c5041822f37ed8dbf9f1f",
+        "archive_root": "evidence/phase0/superseded/3039edd54345b1775ef73d56d00df10e76adc0b5c32251b8e12ef791f8546b3b",
+        "archived_movement_event_ids": [
+          "movement-01c49c5137475180e29f829d2b30858a808aedb03e3e99e35dded19f037add87"
+        ],
+        "binding_broken": true,
+        "blocking_refusals": [
+          "REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT: review binds 3039edd54345b1775ef73d56d00df10e76adc0b5c32251b8e12ef791f8546b3b, this run writes e093281f28e4f1fe930588c156deca5a68627c28b93733f3c0233a96cbd66382"
+        ],
+        "dry_run_planned": true,
+        "files_that_would_move": [
+          "evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "evidence/phase0/receipts/independent-review.v1.dsse.json",
+          "evidence/phase0/benchmark/result.v1.json",
+          "movement/events/01c49c5137475180e29f829d2b30858a808aedb03e3e99e35dded19f037add87.json",
+          "movement/ledger.v1.json"
+        ],
+        "module_id": "amphora-redteam-audit",
+        "new_benchmark_result_sha256": "79d157a958518d3869f8e1b5d0db25cd0c341f07421d8477f4acc360bcc6c09f",
+        "new_evaluation_failed_gates": [],
+        "new_evaluation_phase0_eligible": true,
+        "new_evaluation_receipt_sha256": "e093281f28e4f1fe930588c156deca5a68627c28b93733f3c0233a96cbd66382",
+        "pinned_benchmark_result_sha256": "2bba87aa9a2e5caffe6ede62685a953fa8d676b9b015a8d73640e1b3178d8e9c",
+        "prior_evaluation_receipt_sha256": "3039edd54345b1775ef73d56d00df10e76adc0b5c32251b8e12ef791f8546b3b",
+        "prior_independent_review_receipt_sha256": "8908f8422135fa0677ec4e57b125797cb8ad47d1864d5596f313eb3d5f794296",
+        "would_proceed": false
+      },
+      {
+        "actual_benchmark_result_sha256": "fc797aac97caa75ce25fba2f3c7b00742c7b3a601647982284c223121f0fc6e1",
+        "archive_root": "evidence/phase0/superseded/c7784d9d5466e75b5bf3ed819a9eac0c7bbe65afa23ecd080afbc4460d98a8ba",
+        "archived_movement_event_ids": [
+          "movement-97111459255d1f16ce84da070c9255891f351a2dcaf5d3835ac006c3cef10331"
+        ],
+        "binding_broken": true,
+        "blocking_refusals": [
+          "REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT: review binds c7784d9d5466e75b5bf3ed819a9eac0c7bbe65afa23ecd080afbc4460d98a8ba, this run writes ea6e888dc75e598d9e2b0e87da851663f7524e16a74c7daf3ba6271fe7ce2f0f"
+        ],
+        "dry_run_planned": true,
+        "files_that_would_move": [
+          "evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "evidence/phase0/receipts/independent-review.v1.dsse.json",
+          "evidence/phase0/benchmark/result.v1.json",
+          "movement/events/97111459255d1f16ce84da070c9255891f351a2dcaf5d3835ac006c3cef10331.json",
+          "movement/ledger.v1.json"
+        ],
+        "module_id": "amphora-report-packager",
+        "new_benchmark_result_sha256": "4b4753309e2ffde9bc76615564fab43cab4eaa6235b8747db76baa61f30dc4f7",
+        "new_evaluation_failed_gates": [],
+        "new_evaluation_phase0_eligible": true,
+        "new_evaluation_receipt_sha256": "ea6e888dc75e598d9e2b0e87da851663f7524e16a74c7daf3ba6271fe7ce2f0f",
+        "pinned_benchmark_result_sha256": "157200403ad396e73c9e2b85f21bb1c15b27ab09b913ebd1c571259a7380f7d0",
+        "prior_evaluation_receipt_sha256": "c7784d9d5466e75b5bf3ed819a9eac0c7bbe65afa23ecd080afbc4460d98a8ba",
+        "prior_independent_review_receipt_sha256": "3fe327cce2dc0c549714fecd61ce1ea7eb0f3a35a02d21cd968d967f0449c560",
+        "would_proceed": false
+      },
+      {
+        "actual_benchmark_result_sha256": "a6a680a1202d8b18b097a0d390bf877d93dc985b0f09a5fe52cc2ea16b498115",
+        "archive_root": "evidence/phase0/superseded/2a34aaefe832079e129598c8a5c7b3621e097500d1010938d30d31a261f355eb",
+        "archived_movement_event_ids": [
+          "movement-c87dd811d2aea9fa30993109f507b0ca5af48761a6524876041eaacb3a626fb8"
+        ],
+        "binding_broken": true,
+        "blocking_refusals": [
+          "REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT: review binds 2a34aaefe832079e129598c8a5c7b3621e097500d1010938d30d31a261f355eb, this run writes 68f9a45817f0349cd1473c5bf6a5af3927c4cab9fcc9cade8096b02520791631"
+        ],
+        "dry_run_planned": true,
+        "files_that_would_move": [
+          "evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "evidence/phase0/receipts/independent-review.v1.dsse.json",
+          "evidence/phase0/benchmark/result.v1.json",
+          "movement/events/c87dd811d2aea9fa30993109f507b0ca5af48761a6524876041eaacb3a626fb8.json",
+          "movement/ledger.v1.json"
+        ],
+        "module_id": "amphora-source-ledger",
+        "new_benchmark_result_sha256": "0a7e3e638971e6b326b1ab7ed77147fd0e4fe41986daedfc24c793fd0102d704",
+        "new_evaluation_failed_gates": [],
+        "new_evaluation_phase0_eligible": true,
+        "new_evaluation_receipt_sha256": "68f9a45817f0349cd1473c5bf6a5af3927c4cab9fcc9cade8096b02520791631",
+        "pinned_benchmark_result_sha256": "cdbfda048e73ef53971fd9860dc9ae0f9464fdd2214b550c76eaeb7d3211e965",
+        "prior_evaluation_receipt_sha256": "2a34aaefe832079e129598c8a5c7b3621e097500d1010938d30d31a261f355eb",
+        "prior_independent_review_receipt_sha256": "05ff75741404b5bbac6eddda97bc90424bf7ccd5c244bbc348f4bab876be22f5",
+        "would_proceed": false
+      }
+    ],
+    "phase": "PRE_PHASE_0",
+    "promotes_authority": false,
+    "provenance": {
+      "acceptance_log_sha256": "9b845f63350690ed48441d72e0e51571e4cb72b5bf725d23b357c3d87180cd77",
+      "amphora_cli_phase0_rs_sha256": "b39ac9bff01ccdcc5967a008f4f5b4bfd2078970ae728f505d872682d7528f05",
+      "dry_run_execution_notes": [
+        "the sweep ran with the binary built from this source; amphora-source-ledger was re-run afterwards (dry-run/RECHECK-amphora-source-ledger.json) and reproduced its sweep output byte-for-byte",
+        "amphora-evidence-intake-validator's first attempt aborted with ReadOnlyError because another agent wrote into the repository during its four-minute window; the tool was right to refuse, and the retry recorded here succeeded. Its --reason text drops one apostrophe relative to the other eight (shell quoting); --reason feeds only the supersession note prose and no hash",
+        "the concurrent-writer sensitivity is a property of prove_read_only, not of this tool",
+        "the same property applies to the acceptance run: phase0::tests::source_ledger_historical_movement_and_status_are_read_only hashes the whole worktree, so the acceptance log must be written OUTSIDE the repository and copied in afterwards. A first attempt that redirected the log straight into repairs/WV-1/work/ failed that test on its own growing bytes - the test was right, and the log is now produced at /home/ubuntu/wv1-acceptance-2026-08-04.log and copied in after the run"
+      ],
+      "dry_run_output_sha256": {
+        "NEGATIVE-CONTROL-amphora-solvency-score.err": "035a60700172c218d46f1d6da8f398bf1a387ee6a8eac25d00818383de52b4a1",
+        "NEGATIVE-CONTROL-amphora-solvency-score.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "NEGATIVE-CONTROL-repo-local-key.err": "905e23bfa7e62f35436c02d2e1df67e4b4f89392d119fa77df0ba989e1bb0426",
+        "NEGATIVE-CONTROL-repo-local-key.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "RECHECK-amphora-source-ledger.json": "76ec4ab5f70ecbcd13fdea769d767b948cd5db7c84fd10892727b8d13f392902",
+        "amphora-cro-protocol-packager.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-cro-protocol-packager.json": "a472e3e710cd2464154d14374a334c42d07f0efbebc05563a3c2571ecb670dfa",
+        "amphora-evidence-intake-validator.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-evidence-intake-validator.json": "fbefa7c1354c92b3614e33b6d94a362caa36cdec97e1a7370d6b117de5a997db",
+        "amphora-known-answer-benchmarks.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-known-answer-benchmarks.json": "fb01d6efacb825b0a204832be9ed5090faf1222294d58809f4813bd30c499024",
+        "amphora-molecule-design-gate.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-molecule-design-gate.json": "a42e8f73921aa1eac84e0c203fcd5763d86e652a685d789812f4d6d55796a01f",
+        "amphora-molecule-property.err": "509b7d459dd937daab002509fd245e278762037bce3fba16cebc1bdaf3601316",
+        "amphora-molecule-property.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-optimizer-orchestrator.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-optimizer-orchestrator.json": "8010d5076f2e4d6e08f55c0492f42554ca63cd43cebc67e1c1ff634905f1eb39",
+        "amphora-redteam-audit.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-redteam-audit.json": "e808913b6ca6b0f53ce82b8b33777d835419c6406991df51f3d91de1d7b6e55d",
+        "amphora-report-packager.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-report-packager.json": "84b0a232bdbe0a95f04f22734cec8e3c1547560a1b7b33bcdb8fba30a43ced3c",
+        "amphora-source-ledger.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "amphora-source-ledger.json": "76ec4ab5f70ecbcd13fdea769d767b948cd5db7c84fd10892727b8d13f392902"
+      },
+      "external_review_copies_used_for_the_dry_run": "the dry run needs a signed review only to reach the plan; the 8 modules that have one were given a copy of their own on-disk review at /home/ubuntu/wv1-dryrun-reviews/ (outside the repository, as the tool requires). Every one of them was refused with REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT, which is the correct answer."
+    },
+    "receipt_location_note": "amphora-cli has no evidence/ tree, so this receipt is filed under amphora-redteam-audit/evidence/phase0/repairs/WV-1/done/ as instructed. The engineering change itself is in amphora-cli/src/phase0.rs.",
+    "refusal_properties": [
+      {
+        "enforced_by": "require_repairable_binding(): refuses every module outside UNBOUND_BENCHMARK_RESULTS",
+        "negative_control": "NEGATIVE-CONTROL-amphora-solvency-score",
+        "property": "can only ever repair a KNOWN-BROKEN binding",
+        "second_dynamic_check": "plan_re_evaluation() refuses again if the shipped result still hashes to the pinned metrics.benchmark_result_sha256, so healthy evidence is unreachable even if the static list ever drifted",
+        "test": "phase0::tests::re_evaluate_refuses_every_module_with_an_intact_binding"
+      },
+      {
+        "enforced_by": "clap makes --evaluation-key and --review mandatory; load_supplied_review() refuses an unsigned review and any review whose evaluator and reviewer identities coincide (ModulePhase0ReviewReceiptV1::validate -> SameSigner); plan_re_evaluation() additionally requires the reviewer key to hold PHASE0_INTERNAL_REVIEWER in the trust store, the review signature to verify, the review to name this module, to be bound to the supplied evaluator identity, and to have accepted the module",
+        "property": "dual identity - both a fresh evaluation signature and a fresh independent-review signature",
+        "test": "phase0::tests::re_evaluate_refuses_a_single_signature"
+      },
+      {
+        "enforced_by": "load_evaluation_identity() calls the unchanged load_signing_key(), which refuses repository-local keys, symlinks, and non-0600/0700 modes; the review receipt must also be supplied from outside the repository",
+        "negative_control": "NEGATIVE-CONTROL-repo-local-key",
+        "property": "signing keys still come from outside the repository",
+        "test": "phase0::tests::re_evaluate_refuses_a_repository_local_signing_key"
+      },
+      {
+        "enforced_by": "plan_re_evaluation() computes the replacement receipt sha256 before any mutation and lists REVIEW_NOT_BOUND_TO_NEW_EVALUATION_RECEIPT as a blocking refusal; re_evaluate() bails on any blocking refusal before touching a single artifact",
+        "observed": "all 8 dry runs that could be planned reported exactly this refusal, because the on-disk reviews bind the superseded receipts",
+        "property": "the fresh review must bind the receipt this run will write"
+      },
+      {
+        "enforced_by": "RE_EVALUATION_WOULD_NOT_BE_PHASE0_ELIGIBLE is a blocking refusal",
+        "property": "a repair may not land a module in a failing state"
+      },
+      {
+        "enforced_by": "the dry-run dispatch is wrapped in amphora_core::prove_read_only(), and archive_superseded_evidence() is a pure computation when apply == false",
+        "property": "--dry-run writes nothing",
+        "test": "phase0::tests::re_evaluate_dry_run_moves_nothing"
+      },
+      {
+        "detail": "evaluate() still bails on an existing receipt; reissue() still refuses after any evaluation, review, or movement history; verify_evaluation_result, verify_module_with_replay, the REVIEW_BINDING_MISMATCH check, load_signing_key's repo-local refusal and the regression guard shipped_benchmark_results_stay_bound_to_signed_evaluation_receipts are unchanged. UNBOUND_BENCHMARK_RESULTS moved from the test module to module scope so that the guard and the repair path read the same list and cannot drift apart.",
+        "property": "no existing guard was weakened"
+      }
+    ],
+    "repair_item": "WV-1",
+    "repair_mode": "interactive-2026-08-04",
+    "repair_title": "governed Phase-0 re-evaluation path (build the tool; do not run the ceremony)",
+    "reviewer_reference": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+      "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+      "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+      "reviewer_signature_present": false,
+      "role": "PHASE0_INTERNAL_REVIEWER"
+    },
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR",
+      "signs_phase0_evaluation_or_review": false,
+      "used_for": "AUDIT_ONLY repair done-receipt under evidence/phase0/repairs/"
+    },
+    "tool": {
+      "archive_layout": {
+        "contents": [
+          "evaluation.v1.dsse.json (prior, byte-identical)",
+          "independent-review.v1.dsse.json (prior, when one exists)",
+          "result.v1.json (prior, byte-identical)",
+          "movement/events/<event>.json (prior, when one exists)",
+          "movement/ledger.v1.json (prior, when a movement event exists)",
+          "reevaluation-supersession-note.v1.json"
+        ],
+        "determinism": "the note embeds no clock reading; --as-of is supplied by the caller and validated to a fixed shape",
+        "note_records": [
+          "module_id, caller-supplied as_of, caller-supplied reason",
+          "prior evaluation receipt / review receipt / benchmark result sha256s",
+          "the pinned-vs-actual benchmark_result_sha256 mismatch that justifies the repair",
+          "the replacement receipt / result / review sha256s and both key ids",
+          "archived_artifacts map, authority_transferred=false, promotes_authority=false"
+        ],
+        "note_schema": "amphora.module-phase0-reevaluation-supersession.v1",
+        "root": "<module>/evidence/phase0/superseded/<sha256-of-prior-evaluation-receipt>/"
+      },
+      "command": "portfolio phase0 re-evaluate --module <M> --reason <text> --as-of <YYYY-MM-DDTHH:MM:SSZ> --evaluation-key <external key> --review <signed review path> [--dry-run]",
+      "entry_points": [
+        "Phase0Command::ReEvaluate (clap subcommand, name = \"re-evaluate\")",
+        "plan_re_evaluation() - every refusal, computed before any mutation",
+        "re_evaluate_dry_run() - dispatched inside prove_read_only()",
+        "re_evaluate() - the single governed mutation, backup + rollback",
+        "archive_superseded_evidence() - the archive+supersede move set",
+        "compose_evaluation() - the shared, write-free computation of the replacement bytes",
+        "evaluate_signed() - the single legitimate writer of benchmark/result.v1.json"
+      ],
+      "files_changed": {
+        "amphora-cli/src/phase0.rs": "b39ac9bff01ccdcc5967a008f4f5b4bfd2078970ae728f505d872682d7528f05"
+      },
+      "implemented_in": "amphora-cli/src/phase0.rs",
+      "movement_event_handling": {
+        "result": "the module lands at PRE_PHASE_0 / promotable and its phase must be re-derived by the existing `phase0 promote` command; the repair never mints a movement event",
+        "what": "the prior movement event and ledger are superseded into the same archive and the ledger is reset to zero events",
+        "why": "a movement event binds evaluation_receipt_hash. A replacement receipt therefore invalidates the prior movement claim, and verify_module_with_replay hard-bails (\"movement event binding or filename is invalid\") rather than merely failing a gate - which would break portfolio status for all 29 modules."
+      },
+      "rollback": "the module tree is copied to .phase0-reevaluate-backup-<module>-<prior-sha> before the first mutation and restored (and the decision report regenerated) if any step fails",
+      "single_writer_preserved": "evaluate() previously resolved the evaluator identity from the environment and then wrote the evidence inline. It now resolves the identity and delegates to evaluate_signed(), which holds the only write_json_immutable call for evidence/phase0/benchmark/result.v1.json. re_evaluate() calls the same evaluate_signed(); no second writer was introduced. The write-free half was factored into compose_evaluation(), so a dry run predicts byte-for-byte what the real run writes."
+    },
+    "trust_anchored_in_phase0_store": true
+  },
+  "reviewer_public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+  "signature": {
+    "payload": "ewogICJhY2NlcHRhbmNlIjogewogICAgImNvbW1hbmQiOiAiUkRLSVRfSU5DTFVERV9ESVIvUkRLSVRfTElCX0RJUi9CT09TVF9JTkNMVURFX0RJUi9MRF9MSUJSQVJZX1BBVEggZnJvbSAvaG9tZS91YnVudHUvLmxvY2FsL3NoYXJlL2FtcGhvcmEvcmRraXQtMjAyNi4wMy4yOyBmbG9jayAtdyAzMDAgLmNyb24ubG9jayB+Ly5jYXJnby9iaW4vY2FyZ28gdGVzdCAtLXdvcmtzcGFjZSAtLWxvY2tlZCAtLWZlYXR1cmVzIHJka2l0IiwKICAgICJleGl0X2NvZGUiOiAwLAogICAgImZhaWxpbmdfdGVzdHMiOiBbXSwKICAgICJzdWl0ZXMiOiA2MiwKICAgICJ0ZXN0c19mYWlsZWQiOiAwLAogICAgInRlc3RzX2lnbm9yZWQiOiAwLAogICAgInRlc3RzX3Bhc3NlZCI6IDM3OCwKICAgICJ0b29sY2hhaW4iOiAiMS45Ni4wIChydXN0LXRvb2xjaGFpbi50b21sKSIKICB9LAogICJhbXBob3JhX21vbGVjdWxlX3Byb3BlcnR5X2ZpbmRpbmciOiB7CiAgICAiYW5zd2VyIjogIlllcyAtIGFuZCBpdCBpcyB0aGUgb25seSBvbmUgb2YgdGhlIG5pbmUgd2hvc2UgYmluZGluZyBpcyBicm9rZW4gdHdpY2Ugb3ZlciAtIGJ1dCB0aGUgcmVwYWlyIGlzIG5vdCBhIHB1cmUgcmVwYWlyLCBhbmQgaXRzIGRyeSBydW4gY2Fubm90IGJlIHBsYW5uZWQgdG9kYXkuIiwKICAgICJjaGlja2VuX2FuZF9lZ2dfbm90ZSI6ICJhbXBob3JhLXBoYXNlMC1yZXZpZXdlciByZWZ1c2VzIHRvIHJldmlldyBhIG1vZHVsZSB3aG9zZSByZWNvcmRlZCBiZW5jaG1hcmsgZG9lcyBub3QgcmVwcm9kdWNlICh2ZXJpZnlfcmVjb3JkZWRfYmVuY2htYXJrKSwgc28gbm8gZnJlc2ggcmV2aWV3IGNhbiBiZSBvYnRhaW5lZCBhZ2FpbnN0IHRoZSBicm9rZW4gYXV0aG9yaXRhdGl2ZSB0cmVlLiBUaGF0IGlzIHByZWNpc2VseSB3aHkgdGhlIGNlcmVtb255IHJlaGVhcnNlcyBpbiBhIHNjcmF0Y2ggY29weTogdGhlIHJlcGxhY2VtZW50IHJlY2VpcHQgaXMgZGV0ZXJtaW5pc3RpYywgc28gdGhlIHJldmlld2VyIGNhbiB2ZXJpZnkgYW5kIHNpZ24gaXQgdGhlcmUsIGFuZCB0aGUgYXV0aG9yaXRhdGl2ZSB0cmVlIGlzIHRvdWNoZWQgZXhhY3RseSBvbmNlLiIsCiAgICAiaG9uZXN0X2NhdmVhdHMiOiBbCiAgICAgICJpdCBoYXMgbm90aGluZyB0byBzdXBlcnNlZGUgb24gdGhlIHJldmlldyBzaWRlOiBubyBpbmRlcGVuZGVudC1yZXZpZXcgcmVjZWlwdCBhbmQgbm8gbW92ZW1lbnQgZXZlbnQgZXhpc3QsIHNvIHRoZSBhcmNoaXZlIGhvbGRzIG9ubHkgdGhlIHByaW9yIGV2YWx1YXRpb24gcmVjZWlwdCBhbmQgdGhlIHByaW9yIGJlbmNobWFyayByZXN1bHQiLAogICAgICAiYmVjYXVzZSB0aGUgdG9vbCBkZW1hbmRzIGR1YWwgaWRlbnRpdHksIHJlcGFpcmluZyBpdCBuZWNlc3NhcmlseSBncmFudHMgaXQgaXRzIEZJUlNUIGluZGVwZW5kZW50IHJldmlldyAtIGEgc3RhdGUgY2hhbmdlIGJleW9uZCByZXBhaXIuIEl0cyBwaGFzZSBkb2VzIG5vdCBjaGFuZ2UgKFBSRV9QSEFTRV8wIGJlZm9yZSBhbmQgYWZ0ZXIpLCBidXQgaXQgYmVjb21lcyBwcm9tb3RhYmxlLCB3aGljaCBpdCBuZXZlciB3YXMiLAogICAgICAidGhlcmUgaXMgbm8gc21hbGxlciBnb3Zlcm5lZCBvcHRpb246IHRoZSB0b29sIHdpbGwgbm90LCBhbmQgc2hvdWxkIG5vdCwgcmV3cml0ZSBldmlkZW5jZSBvbiBvbmUgc2lnbmF0dXJlIgogICAgXSwKICAgICJxdWVzdGlvbiI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5IGhhcyBubyBpbmRlcGVuZGVudC1yZXZpZXcgcmVjZWlwdCBhbmQgbm8gbW92ZW1lbnQgZXZlbnQsIHNvIHZlcmlmeV9tb2R1bGVfd2l0aF9yZXBsYXkvdmVyaWZ5X2V2YWx1YXRpb25fcmVzdWx0IHRha2UgdGhlIGxpdmUgcmUtZXhlY3V0aW9uIGJyYW5jaC4gQ2FuIHJlLWV2YWx1YXRlIGhlbHAgaXQgYXQgYWxsPyIsCiAgICAid2hhdF9hX3JlcGFpcl93b3VsZF9kbyI6ICJyZS1ldmFsdWF0ZSByZWdlbmVyYXRlcyBib3RoIGZyb20gb25lIGxpdmUgZXZhbHVhdGlvbiwgc28gYm90aCBjaGVja3MgcGFzcyBhdCBvbmNlLiBPbmNlIHRoZSBtYW5kYXRvcnkgZnJlc2ggcmV2aWV3IGlzIGltcG9ydGVkLCByZXZpZXdfZXhpc3RzIGJlY29tZXMgdHJ1ZSBhbmQgdGhlIGxpdmUgYnJhbmNoIGlzIHNraXBwZWQsIHNvIHRoZSByZXBhaXJlZCBiaW5kaW5nIGlzIGFzIGR1cmFibGUgYXMgdGhlIG90aGVyIGVpZ2h0IC0gaXQgbm8gbG9uZ2VyIHJlLWJyZWFrcyB3aGVuIG1vZHVsZS1tYW5pZmVzdC5qc29uIG9yIGNvbmZpZy9iZW5jaG1hcmstbG9jay52MS5qc29uIGxlZ2l0aW1hdGVseSBjaGFuZ2UuIiwKICAgICJ3aHlfaXRzX2JpbmRpbmdfaXNfZG91Ymx5X2Jyb2tlbiI6ICJ2ZXJpZnlfZXZhbHVhdGlvbl9yZXN1bHQgY2hlY2tzIG1ldHJpY3MuYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYgYWdhaW5zdCB0aGUgc2hpcHBlZCBieXRlcyBmb3IgZXZlcnkgbW9kdWxlLiBGb3IgYSBtb2R1bGUgd2l0aCBuZWl0aGVyIGEgcmV2aWV3IHJlY2VpcHQgbm9yIGEgbW92ZW1lbnQgZXZlbnQgaXQgQUxTTyByZS1leGVjdXRlcyB0aGUgbG9ja2VkIGJlbmNobWFyayBhbmQgY29tcGFyZXMgdGhlIGxpdmUgZGlhZ25vc3RpYyB3aXRoIGZpcnN0X3JlcGxheS5kaWFnbm9zdGljX3JlY2VpcHQuIGFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkgZmFpbHMgYm90aDogcGlubmVkIGZjNWE1MDVjN2U4OGM5MzE4NDJhYmFhZWJlMGQ0YjIzNzNmMWQ1ODBjOWI3YjFmZjI1MjNhNDZhMGEyNWM5MjMgdnMgYWN0dWFsIGQwNGI1MTZjODA2ZjQ1MjU1NmNjZGM5MTI1MGQ2ZWUyNDc0ZjA5NTY1YWMxNjU2YTg4Y2JmMTM3NzY3MTZmOTAsIGFuZCB0aGUgc2hpcHBlZCBieXRlcyBhcmUgdGhlIE1PRFVMRS1IQVJORVNTIHNoYXBlLCB3aGljaCBjYXJyaWVzIG5vIGNvbXBhcmFibGUgZGlhZ25vc3RpYy4iLAogICAgIndoeV9ub19kcnlfcnVuX251bWJlcnMiOiAidGhlIGRyeSBydW4gcmVmdXNlcyBiZWZvcmUgaXQgY2FuIGNvbXB1dGUgdGhlIHJlcGxhY2VtZW50IGhhc2hlcywgYmVjYXVzZSBubyByZXZpZXcgcmVjZWlwdCBleGlzdHMgZm9yIHRoaXMgbW9kdWxlIGFueXdoZXJlLiBTdXBwbHlpbmcgYW5vdGhlciBtb2R1bGUncyByZXZpZXcgcmVwcm9kdWNlcyB0aGUgY3Jvc3MtbW9kdWxlIHJlZnVzYWwgcmVjb3JkZWQgaW4gdGhlIHRhYmxlLiBObyByZXZpZXcgd2FzIGZhYnJpY2F0ZWQ6IHNpZ25pbmcgYSByZXZpZXcgcmVjZWlwdCBhc3NlcnRpbmcgaW5kZXBlbmRlbnRfcmVpbXBsZW1lbnRhdGlvbl9wYXNzZWQgd291bGQgYmUgYSBmYWxzZSBhdHRlc3RhdGlvbi4gQSBodW1hbiBvYnRhaW5zIHRoZSByZWFsIG9uZSBpbiB0aGUgc3RlcC0xIHJlaGVhcnNhbCwgZXhhY3RseSBhcyBmb3IgdGhlIG90aGVyIGVpZ2h0LCBhbmQgb25seSB0aGVuIGNhbiB0aGlzIG1vZHVsZSBiZSBwbGFubmVkLiIKICB9LAogICJhdXRob3JpdHkiOiAiQVVESVRfT05MWSIsCiAgImF1dGhvcml0eV9jZWlsaW5nIjogIkVWSURFTkNFX09OTFkiLAogICJjbGVhbl9naXRfc3RhdHVzX3Byb29mIjogewogICAgImNsYWltIjogIm5vIHNoaXBwZWQgUGhhc2UtMCBiZW5jaG1hcmsgcmVzdWx0IHdhcyB0b3VjaGVkIGJ5IHRoaXMgcmVwYWlyIiwKICAgICJnaXRfc3RhdHVzX2lzX2NsZWFuIjogdHJ1ZSwKICAgICJnaXRfc3RhdHVzX3BvcmNlbGFpbl9vbl9wYXRoc3BlYyI6ICIiLAogICAgIm1ldGhvZCI6ICJnaXQgc3RhdHVzIC0tcG9yY2VsYWluIG9uIHRoZSBwYXRoc3BlYyAqL2V2aWRlbmNlL3BoYXNlMC9iZW5jaG1hcmsvcmVzdWx0LnYxLmpzb24iCiAgfSwKICAiY291bnRfcmVjb25jaWxpYXRpb24iOiB7CiAgICAiYWxyZWFkeV9waW5uZWRfYXRfOV9ieSI6ICJhbXBob3JhLWNsaS9zcmMvcGhhc2UwLnJzOjp0ZXN0czo6c291cmNlX2xlZGdlcl9oaXN0b3JpY2FsX21vdmVtZW50X2FuZF9zdGF0dXNfYXJlX3JlYWRfb25seSAoYXNzZXJ0cyBwaGFzZTBfY291bnQgOSwgcHJlX3BoYXNlMF9jb3VudCAyMCkgLSB0aGUgdGVzdCB3YXMgYWxyZWFkeSBob25lc3Q7IHRoZSBnZW5lcmF0ZWQgYXJ0aWZhY3Qgd2FzIG5vdCIsCiAgICAiYXJ0aWZhY3Rfc2hhMjU2X2FmdGVyIjogewogICAgICAiY29uZmlnL3Byb2dyYW0vZGF0YS1hY3RpdmF0aW9uLXByb21vdGlvbi10cmFqZWN0b3J5LnYyLmpzb24iOiAiOTMyMzNkN2RkZDdiYjUxNTQxZDk0Mzg4ZDY2N2I0NTM0NzljMDU3NTgzNzMzZTJkOGU3ZTdhNzRkMDM4YjQwNiIsCiAgICAgICJjb25maWcvcHJvZ3JhbS9waGFzZTAtZGVjaXNpb24tcmVwb3J0LnYyLmpzb24iOiAiNGU5ZjhmZGQwYjc4MGM1Y2RlYjNjNWJhOTVjMzYwY2QwZjUyZWVkMzMyYWY1NzA3ODkxMGZkMTg0N2U0YmIxNyIsCiAgICAgICJmZWVkYmFjay92Mi9yZXBvcnRzL3BvcnRmb2xpby1zdGF0dXMudHh0IjogIjgzZGY5NmVmZTFjZDdiNzBiNjMyYzFlZTU1MTZkOGUxZWYwYTU4ZGI5ZWU1N2I4ZDFlODI4ZGE5NjIwOWI3ZGEiCiAgICB9LAogICAgImF1dGhvcml0YXRpdmUiOiAidGhlIHZlcmlmaWVyIiwKICAgICJleHBsYW5hdGlvbiI6ICJUaGUgcmVwb3J0IHN0aWxsIGxpc3RlZCBhbXBob3JhLW1vbGVjdWxlLWRlc2lnbi1nYXRlIGFzIFBIQVNFXzAuIEl0cyBzaGlwcGVkIGV2aWRlbmNlL3BoYXNlMC9iZW5jaG1hcmsvcmVzdWx0LnYxLmpzb24gbm8gbG9uZ2VyIGhhc2hlcyB0byB0aGUgbWV0cmljcy5iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiBwaW5uZWQgaW4gaXRzIG93biBzaWduZWQgZXZhbHVhdGlvbiByZWNlaXB0IChwaW5uZWQgM2ZkNzJmMGZhMDhhZTZlMzA2YTY3MThmMGE2MThjYWI0YWJjODc2YWRkNWZkMDY1MjFhYzAwMjJkMDg1Nzc2MSwgYWN0dWFsIDg4NzNiYWEzZDA1MDk4NGRiZjU4ZmFkZDhkNzhhMTJmMDNjNTg2ZTQzNmExYzI0M2EyNjhmZjBjOTM5NDU5NjQpLCBzbyB2ZXJpZnlfZXZhbHVhdGlvbl9yZXN1bHQgY29ycmVjdGx5IHJldHVybnMgRVZBTFVBVElPTl9SRVNVTFRfTUlTTUFUQ0ggYW5kIHRoZSBtb2R1bGUgZGVyaXZlcyBQUkVfUEhBU0VfMC4gVGhlIGxhc3QgcmVwb3J0IHJlZ2VuZXJhdGlvbiBoYXBwZW5lZCBhZnRlciA4IG9mIHRoZSA5IG1vZHVsZXMgaGFkIGJlZW4gY2xvYmJlcmVkIGJ1dCBiZWZvcmUgYW1waG9yYS1tb2xlY3VsZS1kZXNpZ24tZ2F0ZSB3YXMuIiwKICAgICJmaXgiOiAidGhlIHN0YWxlIGFydGlmYWN0IHdhcyByZWdlbmVyYXRlZCB0aHJvdWdoIGl0cyBvd24gZ2VuZXJhdG9yLCBgcG9ydGZvbGlvIHBoYXNlMCBzdGF0dXMgLS1hbGwgLS13cml0ZS1yZXBvcnRgLCB3aGljaCByZXdyb3RlIGNvbmZpZy9wcm9ncmFtL3BoYXNlMC1kZWNpc2lvbi1yZXBvcnQudjIuanNvbiwgY29uZmlnL3Byb2dyYW0vcG9ydGZvbGlvLXByb2dyZXNzLWRhc2hib2FyZC52MS5qc29uLCBjb25maWcvcHJvZ3JhbS9kYXRhLWFjdGl2YXRpb24tcHJvbW90aW9uLXRyYWplY3RvcnkudjIuanNvbiBhbmQgZmVlZGJhY2svdjIvcmVwb3J0cy9wb3J0Zm9saW8tc3RhdHVzLnR4dCBmcm9tIHRoZSBsaXZlIHZlcmlmaWVyLiBObyBjb3VudCB3YXMgZWRpdGVkIGJ5IGhhbmQgYW5kIG5vIHZlcmlmaWVyIHdhcyByZWxheGVkLiIsCiAgICAiaG9uZXN0X251bWJlciI6IDksCiAgICAiaG9uZXN0X3ByZV9waGFzZTAiOiAyMCwKICAgICJub3RfYV9sb3dlcmVkX2JhciI6ICJUaGUgY291bnQgZmVsbCBmcm9tIGEgc3RhbGUgMTAgdG8gYW4gaG9uZXN0IDkgYmVjYXVzZSB0aGUgdmVyaWZpZXIgaXMgY29ycmVjdGx5IHJlZnVzaW5nIGEgbW9kdWxlIHdob3NlIGV2YWx1YXRlZCBiZW5jaG1hcmsgYnl0ZXMgbm8gbG9uZ2VyIG1hdGNoIGl0cyBzaWduZWQgcmVjZWlwdC4gUmVwYWlyaW5nIHRoYXQgYmluZGluZyB0aHJvdWdoIHRoZSBXVi0xIHBhdGggKGFuZCB0aGVuIGBwcm9tb3RlYCkgaXMgdGhlIG9ubHkgd2F5IHRvIHJhaXNlIGl0IGFnYWluLiIsCiAgICAicXVlc3Rpb24iOiAiY29uZmlnL3Byb2dyYW0vcGhhc2UwLWRlY2lzaW9uLXJlcG9ydC52Mi5qc29uIHJlcG9ydGVkIHBoYXNlMF9jb3VudCAxMCB3aGlsZSB0aGUgdmVyaWZpZXIgZGVyaXZlcyA5LiIsCiAgICAicmVwb3J0X25vd19hZ3JlZXNfd2l0aF92ZXJpZmllciI6IHRydWUsCiAgICAicmVwb3J0X3BoYXNlMF9hZnRlciI6IDksCiAgICAicmVwb3J0X3BoYXNlMF9iZWZvcmUiOiAxMCwKICAgICJyZXBvcnRfcGhhc2UwX21vZHVsZXNfYWZ0ZXIiOiBbCiAgICAgICJhbXBob3JhLWNhbmRpZGF0ZS1jb250cmFjdCIsCiAgICAgICJhbXBob3JhLWVudmVsb3BlLWdhdGVzIiwKICAgICAgImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYyIsCiAgICAgICJhbXBob3JhLWZvcm11bGF0aW9uLXVuaXZlcnNlIiwKICAgICAgImFtcGhvcmEtbW9kZWwtY2FyZC1hdXRob3JpdHkiLAogICAgICAiYW1waG9yYS1wcm9jZXNzLXFjLXR3aW4iLAogICAgICAiYW1waG9yYS1ydW4tcHJvdmVuYW5jZSIsCiAgICAgICJhbXBob3JhLXNvbHZlbmN5LXNjb3JlIiwKICAgICAgImFtcGhvcmEtdG9sZXJhbmNlLXJvYnVzdG5lc3MiCiAgICBdLAogICAgInJlcG9ydF9waGFzZTBfbW9kdWxlc19iZWZvcmUiOiBbCiAgICAgICJhbXBob3JhLWNhbmRpZGF0ZS1jb250cmFjdCIsCiAgICAgICJhbXBob3JhLWVudmVsb3BlLWdhdGVzIiwKICAgICAgImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYyIsCiAgICAgICJhbXBob3JhLWZvcm11bGF0aW9uLXVuaXZlcnNlIiwKICAgICAgImFtcGhvcmEtbW9kZWwtY2FyZC1hdXRob3JpdHkiLAogICAgICAiYW1waG9yYS1tb2xlY3VsZS1kZXNpZ24tZ2F0ZSIsCiAgICAgICJhbXBob3JhLXByb2Nlc3MtcWMtdHdpbiIsCiAgICAgICJhbXBob3JhLXJ1bi1wcm92ZW5hbmNlIiwKICAgICAgImFtcGhvcmEtc29sdmVuY3ktc2NvcmUiLAogICAgICAiYW1waG9yYS10b2xlcmFuY2Utcm9idXN0bmVzcyIKICAgIF0sCiAgICAic3RhbGVfYXJ0aWZhY3Rfc2hhMjU2X2JlZm9yZSI6IHsKICAgICAgImNvbmZpZy9wcm9ncmFtL2RhdGEtYWN0aXZhdGlvbi1wcm9tb3Rpb24tdHJhamVjdG9yeS52Mi5qc29uIjogIjZlMTBhZDBlOTcwZTE2ZjVkMDMzZmI2MzdjMTJlN2MyMDU3NmVkNGU1ZjNjM2E3YTgxOTNhYTM0Y2E5ZGY0YWEiLAogICAgICAiY29uZmlnL3Byb2dyYW0vcGhhc2UwLWRlY2lzaW9uLXJlcG9ydC52Mi5qc29uIjogIjk0NjdiNjI3ODIzMjFiNDM1OTkyMmY1MGQ2NDYzMTdiMjYwZGYxODcwOTNkOWM4Yzk2YjFjNWE3ZTI1ZGI5NjUiLAogICAgICAiZmVlZGJhY2svdjIvcmVwb3J0cy9wb3J0Zm9saW8tc3RhdHVzLnR4dCI6ICJmZmJmMjVkYTU3OWQ0MDJiZTM5M2U3NjM2ODhmM2UyMWQyM2UzMjZlMzVjN2IzNWMwMWYxOWE5NjY0MDQzNTBmIgogICAgfSwKICAgICJzdGFsZV9ieV9leGFjdGx5X29uZV9tb2R1bGUiOiAiYW1waG9yYS1tb2xlY3VsZS1kZXNpZ24tZ2F0ZSIsCiAgICAidmVyaWZpZXJfcGhhc2UwIjogOSwKICAgICJ2ZXJpZmllcl9waGFzZTBfbW9kdWxlcyI6IFsKICAgICAgImFtcGhvcmEtY2FuZGlkYXRlLWNvbnRyYWN0IiwKICAgICAgImFtcGhvcmEtZW52ZWxvcGUtZ2F0ZXMiLAogICAgICAiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljIiwKICAgICAgImFtcGhvcmEtZm9ybXVsYXRpb24tdW5pdmVyc2UiLAogICAgICAiYW1waG9yYS1tb2RlbC1jYXJkLWF1dGhvcml0eSIsCiAgICAgICJhbXBob3JhLXByb2Nlc3MtcWMtdHdpbiIsCiAgICAgICJhbXBob3JhLXJ1bi1wcm92ZW5hbmNlIiwKICAgICAgImFtcGhvcmEtc29sdmVuY3ktc2NvcmUiLAogICAgICAiYW1waG9yYS10b2xlcmFuY2Utcm9idXN0bmVzcyIKICAgIF0sCiAgICAid2h5IjogInBoYXNlMF9jb3VudCBpcyBub3QgYW4gaW5kZXBlbmRlbnQgZmFjdC4gYW1waG9yYS1jbGkvc3JjL3BoYXNlMC5yczo6cmVnZW5lcmF0ZV9yZXBvcnQgY2FsbHMgcG9ydGZvbGlvX3N0YXR1cygpLCB3aGljaCBjYWxscyB2ZXJpZnlfbW9kdWxlX3dpdGhfcmVwbGF5KCkgZm9yIGFsbCAyOSBtb2R1bGVzIGFuZCB3cml0ZXMgdGhlIHJlc3VsdCB0byBjb25maWcvcHJvZ3JhbS9waGFzZTAtZGVjaXNpb24tcmVwb3J0LnYyLmpzb24uIFRoZSByZXBvcnQgaXMgYSBHRU5FUkFURUQgYXJ0aWZhY3QgLSBjb250cm9sLnJzOjpwaGFzZTBfZ2VuZXJhdGVkX2ZpbGUgbmFtZXMgaXQgZXhwbGljaXRseSAtIGFuZCBpdCBpcyByZXdyaXR0ZW4gb25seSB3aGVuIGEgbXV0YXRpbmcgUGhhc2UtMCBjb21tYW5kIHJ1bnMgKHByZXBhcmUgLyByZWlzc3VlIC8gZXZhbHVhdGUgLyByZXZpZXcgLyBwcm9tb3RlIC8gc3RhdHVzIC0tYWxsIC0td3JpdGUtcmVwb3J0KS4gVGhlIEIyIGhhcm5lc3MgY2xvYmJlciBjaGFuZ2VkIHNoaXBwZWQgZXZpZGVuY2UgV0lUSE9VVCBnb2luZyB0aHJvdWdoIGFueSBvZiB0aG9zZSBjb21tYW5kcywgc28gdGhlIHJlcG9ydCB3YXMgbmV2ZXIgcmVmcmVzaGVkIGFuZCBrZXB0IGRlc2NyaWJpbmcgYSBwb3J0Zm9saW8gc3RhdGUgdGhhdCBubyBsb25nZXIgZXhpc3RlZCBvbiBkaXNrLiIKICB9LAogICJkYXRlIjogIjIwMjYtMDgtMDQiLAogICJkb2VzX25vdF9lc3RhYmxpc2giOiBbCiAgICAiZG9lcyBub3QgZXN0YWJsaXNoIHRoYXQgYW55IG1vZHVsZSB3aXRoIGEgYnJva2VuIGJpbmRpbmcgaXMgc2NpZW50aWZpY2FsbHkgaW52YWxpZCIsCiAgICAiZG9lcyBub3QgZXN0YWJsaXNoIGFueSBwcm9kdWN0IHBlcmZvcm1hbmNlLCBxdWFsaWZpY2F0aW9uLCBvciBzdXBlcmlvcml0eSBjbGFpbSIsCiAgICAiZG9lcyBub3QgcmUtcHJvbW90ZSBvciBkZW1vdGUgYW55dGhpbmc7IHBoYXNlIGlzIGRlcml2ZWQsIG5ldmVyIGFzc2VydGVkIiwKICAgICJkb2VzIG5vdCBhc3NlcnQgdGhhdCBhIHJlLWV2YWx1YXRpb24gaGFzIGJlZW4gcGVyZm9ybWVkIC0gbm9uZSBoYXMiCiAgXSwKICAiZXhhY3RfaHVtYW5fY29tbWFuZCI6IHsKICAgICJzdGVwXzBfcmVhZF90aGVfcGxhbiI6IHsKICAgICAgImNvbW1hbmQiOiAidGFyZ2V0L2RlYnVnL2FtcGhvcmEtdHVpIHBvcnRmb2xpbyBwaGFzZTAgcmUtZXZhbHVhdGUgLS1tb2R1bGUgPE1PRFVMRT4gLS1yZWFzb24gXCI8d2h5IHRoaXMgYmluZGluZyBpcyBicm9rZW4+XCIgLS1hcy1vZiA8WVlZWS1NTS1ERFRISDpNTTpTU1o+IC0tZXZhbHVhdGlvbi1rZXkgL2hvbWUvdWJ1bnR1Ly5sb2NhbC9zaGFyZS9hbXBob3JhL3BoYXNlMC9rZXlzL2V2YWx1YXRvci5lZDI1NTE5LnNlZWQgLS1yZXZpZXcgPGFueSBleGlzdGluZyBzaWduZWQgcmV2aWV3IGZvciA8TU9EVUxFPj4gLS1kcnktcnVuIiwKICAgICAgInJlYWRfZnJvbV9vdXRwdXQiOiAibmV3X2V2YWx1YXRpb25fcmVjZWlwdF9zaGEyNTYgPSA8Uz4sIG5ld19iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiwgZmlsZXNfdGhhdF9tb3ZlLCBhcmNoaXZlX3Jvb3QiLAogICAgICAid2hlcmUiOiAidGhlIGF1dGhvcml0YXRpdmUgd29ya3NwYWNlLCAvaG9tZS91YnVudHUvYW1waG9yYS9idWlsZC9tdnAyMC1zcGxpdCIsCiAgICAgICJ3cml0ZXMiOiAibm90aGluZyAodGhlIGRyeSBydW4gaXMgd3JhcHBlZCBpbiBwcm92ZV9yZWFkX29ubHkpIgogICAgfSwKICAgICJzdGVwXzFfcmVoZWFyc2VfaW5fYV9zY3JhdGNoX2NvcHkiOiB7CiAgICAgICJjb21tYW5kcyI6IFsKICAgICAgICAicnN5bmMgLWEgLS1leGNsdWRlIHRhcmdldC8gLS1leGNsdWRlIC5naXQvIC9ob21lL3VidW50dS9hbXBob3JhL2J1aWxkL212cDIwLXNwbGl0LyAvdG1wL3d2MS1yZWhlYXJzZS08TU9EVUxFPi8iLAogICAgICAgICJjZCAvdG1wL3d2MS1yZWhlYXJzZS08TU9EVUxFPiAmJiB+Ly5jYXJnby9iaW4vY2FyZ28gYnVpbGQgLS1sb2NrZWQgLS1mZWF0dXJlcyByZGtpdCAtLWJpbiBhbXBob3JhLXR1aSAtLWJpbiBhbXBob3JhLXBoYXNlMC1yZXZpZXdlciIsCiAgICAgICAgIm1rZGlyIC1wIC90bXAvd3YxLXJlaGVhcnNlLTxNT0RVTEU+LWFzaWRlICYmIG12IDxNT0RVTEU+L2V2aWRlbmNlL3BoYXNlMC9yZWNlaXB0cy9ldmFsdWF0aW9uLnYxLmRzc2UuanNvbiA8TU9EVUxFPi9ldmlkZW5jZS9waGFzZTAvcmVjZWlwdHMvaW5kZXBlbmRlbnQtcmV2aWV3LnYxLmRzc2UuanNvbiA8TU9EVUxFPi9ldmlkZW5jZS9waGFzZTAvYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uIDxNT0RVTEU+L21vdmVtZW50L2V2ZW50cy8qLmpzb24gL3RtcC93djEtcmVoZWFyc2UtPE1PRFVMRT4tYXNpZGUvIiwKICAgICAgICAicHJpbnRmICd7XCJzY2hlbWFcIjpcImFtcGhvcmEubW9kdWxlLW1vdmVtZW50LWxlZGdlci52MVwiLFwibW9kdWxlX2lkXCI6XCI8TU9EVUxFPlwiLFwiZXZlbnRzXCI6W119XFxuJyA+IDxNT0RVTEU+L21vdmVtZW50L2xlZGdlci52MS5qc29uIiwKICAgICAgICAiQU1QSE9SQV9QSEFTRTBfRVZBTFVBVE9SX0tFWV9JRD1waGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzggQU1QSE9SQV9QSEFTRTBfRVZBTFVBVE9SX0tFWT0vaG9tZS91YnVudHUvLmxvY2FsL3NoYXJlL2FtcGhvcmEvcGhhc2UwL2tleXMvZXZhbHVhdG9yLmVkMjU1MTkuc2VlZCAuL3RhcmdldC9kZWJ1Zy9hbXBob3JhLXR1aSBwb3J0Zm9saW8gcGhhc2UwIGV2YWx1YXRlIC0tbW9kdWxlIDxNT0RVTEU+IiwKICAgICAgICAic2hhMjU2c3VtIDxNT0RVTEU+L2V2aWRlbmNlL3BoYXNlMC9yZWNlaXB0cy9ldmFsdWF0aW9uLnYxLmRzc2UuanNvbiAgICMgTVVTVCBlcXVhbCA8Uz4gZnJvbSBzdGVwIDAiCiAgICAgIF0sCiAgICAgICJpZl90aGVfaGFzaF9kaWZmZXJzIjogIlNUT1AuIERvIG5vdCBwcm9jZWVkLiBBIGRpZmZlcmVuY2UgbWVhbnMgdGhlIHJlcGxhY2VtZW50IHJlY2VpcHQgaXMgbm90IGEgZGV0ZXJtaW5pc3RpYyBmdW5jdGlvbiBvZiB0aGUgdHJlZSwgYW5kIHRoZSBnb3Zlcm5lZCBjb21tYW5kIHdvdWxkIHJlZnVzZSBhbnl3YXkuIiwKICAgICAgIm5vdGUiOiAiYW1waG9yYS1jbGkgcmVzb2x2ZXMgaXRzIHdvcmtzcGFjZSByb290IGF0IGNvbXBpbGUgdGltZSAoZW52IShcIkNBUkdPX01BTklGRVNUX0RJUlwiKSksIHNvIHRoZSByZWhlYXJzYWwgbmVlZHMgaXRzIG93biBidWlsZDsgYSBiaW5hcnkgYnVpbHQgZnJvbSB0aGUgYXV0aG9yaXRhdGl2ZSB0cmVlIHdvdWxkIHdyaXRlIHRvIHRoZSBhdXRob3JpdGF0aXZlIHRyZWUuIiwKICAgICAgIndoZXJlIjogImEgc2NyYXRjaCBjb3B5LCBlLmcuIC90bXAvd3YxLXJlaGVhcnNlLTxNT0RVTEU+IgogICAgfSwKICAgICJzdGVwXzJfb2J0YWluX3RoZV9mcmVzaF9pbmRlcGVuZGVudF9yZXZpZXciOiB7CiAgICAgICJjb21tYW5kIjogIi90bXAvd3YxLXJlaGVhcnNlLTxNT0RVTEU+L3RhcmdldC9kZWJ1Zy9hbXBob3JhLXBoYXNlMC1yZXZpZXdlciAtLXdvcmtzcGFjZSAvdG1wL3d2MS1yZWhlYXJzZS08TU9EVUxFPiAtLW1vZHVsZSA8TU9EVUxFPiAtLWJlbmNobWFyay1leGVjdXRhYmxlIC90bXAvd3YxLXJlaGVhcnNlLTxNT0RVTEU+L3RhcmdldC9kZWJ1Zy9hbXBob3JhLXR1aSAtLXJldmlld2VyLWtleS1pZCBwaGFzZTAtaW50ZXJuYWwtcmV2aWV3ZXItNDcyMzNhZjE4ZTUxMWEzMDU1NDhkNGVlMzA2ZGEwMTg2MTJmNWI1YWNhMjAxZjk5ODY1MDRkM2Q3ZGIzMDExYiAtLXJldmlld2VyLWtleSAvaG9tZS91YnVudHUvLmxvY2FsL3NoYXJlL2FtcGhvcmEvcGhhc2UwL2tleXMvaW50ZXJuYWwtcmV2aWV3ZXIuZWQyNTUxOS5zZWVkIC0tb3V0cHV0IC9ob21lL3VidW50dS93djEtcmV2aWV3cy88TU9EVUxFPi5yZXZpZXcudjEuZHNzZS5qc29uIiwKICAgICAgInByb2R1Y2VzIjogImEgcmV2aWV3IHJlY2VpcHQgd2hvc2UgZXZhbHVhdGlvbl9yZWNlaXB0X2hhc2ggPT0gPFM+LCBzaWduZWQgYnkgdGhlIHNlY29uZCwgZGlzdGluY3QgdHJ1c3RlZCBpZGVudGl0eSIsCiAgICAgICJ3aGVyZSI6ICJ0aGUgc2NyYXRjaCBjb3B5OyB0aGUgcmV2aWV3ZXIgd3JpdGVzIGl0cyByZWNlaXB0IG91dHNpZGUgYW55IHJlcG9zaXRvcnkiCiAgICB9LAogICAgInN0ZXBfM190aGVfb25lX2dvdmVybmVkX2NvbW1hbmQiOiB7CiAgICAgICJjb21tYW5kIjogImZsb2NrIC13IDMwMCAuY3Jvbi5sb2NrIHRhcmdldC9kZWJ1Zy9hbXBob3JhLXR1aSBwb3J0Zm9saW8gcGhhc2UwIHJlLWV2YWx1YXRlIC0tbW9kdWxlIDxNT0RVTEU+IC0tcmVhc29uIFwiPHdoeSB0aGlzIGJpbmRpbmcgaXMgYnJva2VuPlwiIC0tYXMtb2YgPFlZWVktTU0tRERUSEg6TU06U1NaPiAtLWV2YWx1YXRpb24ta2V5IC9ob21lL3VidW50dS8ubG9jYWwvc2hhcmUvYW1waG9yYS9waGFzZTAva2V5cy9ldmFsdWF0b3IuZWQyNTUxOS5zZWVkIC0tcmV2aWV3IC9ob21lL3VidW50dS93djEtcmV2aWV3cy88TU9EVUxFPi5yZXZpZXcudjEuZHNzZS5qc29uIiwKICAgICAgImxlYXZlc190aGVfbW9kdWxlX2F0IjogIlBSRV9QSEFTRV8wLCBwcm9tb3RhYmxlIC0gdGhlIHByaW9yIG1vdmVtZW50IGV2ZW50IGJvdW5kIHRoZSBwcmlvciByZWNlaXB0IGhhc2ggYW5kIHdhcyBzdXBlcnNlZGVkIHdpdGggaXQiLAogICAgICAid2hhdF9pdF9kb2VzX2luX29uZV90cmFuc2FjdGlvbiI6IFsKICAgICAgICAicmVmdXNlcyB1bmxlc3MgPE1PRFVMRT4gaXMgaW4gVU5CT1VORF9CRU5DSE1BUktfUkVTVUxUUyBhbmQgaXRzIHNoaXBwZWQgcmVzdWx0IGlzIGluIGZhY3QgdW5ib3VuZCBmcm9tIGl0cyBzaWduZWQgcmVjZWlwdCIsCiAgICAgICAgInJlZnVzZXMgdW5sZXNzIEJPVEggYSBmcmVzaCBleHRlcm5hbCBldmFsdWF0b3Iga2V5IEFORCBhIGZyZXNoLCBkaXN0aW5jdCwgdHJ1c3RlZCwgc2lnbmVkIGluZGVwZW5kZW50LXJldmlldyByZWNlaXB0IGFyZSBzdXBwbGllZCIsCiAgICAgICAgInJlZnVzZXMgdW5sZXNzIHRoZSBzdXBwbGllZCByZXZpZXcgYmluZHMgdGhlIGV4YWN0IHJlY2VpcHQgdGhpcyBydW4gd2lsbCB3cml0ZSIsCiAgICAgICAgImFyY2hpdmVzIHRoZSBwcmlvciBldmFsdWF0aW9uIHJlY2VpcHQsIGluZGVwZW5kZW50LXJldmlldyByZWNlaXB0LCBiZW5jaG1hcmsgcmVzdWx0LCBtb3ZlbWVudCBldmVudCBhbmQgbW92ZW1lbnQgbGVkZ2VyIHVuZGVyIDxNT0RVTEU+L2V2aWRlbmNlL3BoYXNlMC9zdXBlcnNlZGVkLzxzaGEyNTYtb2YtcHJpb3ItZXZhbHVhdGlvbi1yZWNlaXB0Pi8gd2l0aCBhIHN1cGVyc2Vzc2lvbiBub3RlIiwKICAgICAgICAicmVnZW5lcmF0ZXMgYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uIHRocm91Z2ggZXZhbHVhdGVfc2lnbmVkKCksIHRoZSBzaW5nbGUgbGVnaXRpbWF0ZSB3cml0ZXIsIGFuZCB3cml0ZXMgdGhlIHJlcGxhY2VtZW50IGV2YWx1YXRpb24gcmVjZWlwdCIsCiAgICAgICAgInJlLWJpbmRzIHRoZSByZXZpZXcgdGhyb3VnaCB0aGUgZXhpc3RpbmcgaW1wb3J0X3JldmlldygpIHBhdGgiLAogICAgICAgICJyZXN0b3JlcyB0aGUgbW9kdWxlIGJ5dGUtZm9yLWJ5dGUgZnJvbSBhIGJhY2t1cCBpZiBhbnkgc3RlcCBmYWlscyIKICAgICAgXSwKICAgICAgIndoZXJlIjogInRoZSBhdXRob3JpdGF0aXZlIHdvcmtzcGFjZSIKICAgIH0sCiAgICAic3RlcF80X3JlX2Rlcml2ZV90aGVfcGhhc2UiOiB7CiAgICAgICJjb21tYW5kIjogImZsb2NrIC13IDMwMCAuY3Jvbi5sb2NrIHRhcmdldC9kZWJ1Zy9hbXBob3JhLXR1aSBwb3J0Zm9saW8gcGhhc2UwIHByb21vdGUgLS1tb2R1bGUgPE1PRFVMRT4iLAogICAgICAibm90ZSI6ICJwaGFzZSBpcyBkZXJpdmVkIGZyb20gYSBmcmVzaCBtb3ZlbWVudCBldmVudCB3aXRoIHR3byBkaXN0aW5jdCB0cnVzdGVkIHNpZ25hdHVyZXM7IGl0IGlzIG5ldmVyIGFzc2VydGVkIGJ5IHRoZSByZXBhaXIuIiwKICAgICAgIndoZXJlIjogInRoZSBhdXRob3JpdGF0aXZlIHdvcmtzcGFjZSIKICAgIH0sCiAgICAic3RlcF81X3JlY29uY2lsZV90aGVfZ3VhcmQiOiB7CiAgICAgICJub3RlIjogIlVOQk9VTkRfQkVOQ0hNQVJLX1JFU1VMVFMgaW4gYW1waG9yYS1jbGkvc3JjL3BoYXNlMC5ycyBhbmQgdGhlIHBpbm5lZCBjb3VudHMgaW4gdGVzdHM6OnNvdXJjZV9sZWRnZXJfaGlzdG9yaWNhbF9tb3ZlbWVudF9hbmRfc3RhdHVzX2FyZV9yZWFkX29ubHkgbXVzdCBiZSB1cGRhdGVkIGluIHRoZSBzYW1lIGNoYW5nZSB0aGF0IHJlcGFpcnMgYSBtb2R1bGUsIG9yIHRoZSByZWdyZXNzaW9uIGd1YXJkIHNoaXBwZWRfYmVuY2htYXJrX3Jlc3VsdHNfc3RheV9ib3VuZF90b19zaWduZWRfZXZhbHVhdGlvbl9yZWNlaXB0cyB3aWxsIGZhaWwgLSBieSBkZXNpZ24uIgogICAgfSwKICAgICJzdW1tYXJ5IjogIk9uZSBnb3Zlcm5lZCBjb21tYW5kIHRvdWNoZXMgdGhlIGF1dGhvcml0YXRpdmUgcmVwb3NpdG9yeS4gRXZlcnl0aGluZyBiZWZvcmUgaXQgaGFwcGVucyBpbiBhIHNjcmF0Y2ggcmVoZWFyc2FsIGNvcHkgYW5kIHByb2R1Y2VzIHRoZSBmcmVzaCBpbmRlcGVuZGVudC1yZXZpZXcgcmVjZWlwdCB0aGF0IHRoZSBnb3Zlcm5lZCBjb21tYW5kIGRlbWFuZHMuIiwKICAgICJ3aHlfYV9yZWhlYXJzYWxfaXNfbmVlZGVkIjogIlRoZSBmcmVzaCByZXZpZXcgcmVjZWlwdCBtdXN0IGJpbmQgZXZhbHVhdGlvbl9yZWNlaXB0X2hhc2ggPT0gc2hhMjU2IG9mIHRoZSByZWNlaXB0IHRoZSByZXBhaXIgd2lsbCB3cml0ZSwgYW5kIGFtcGhvcmEtcGhhc2UwLXJldmlld2VyIG9ubHkgc2lnbnMgYSByZWNlaXB0IGl0IGhhcyB2ZXJpZmllZCBvbiBkaXNrLiBUaGUgcmVwbGFjZW1lbnQgcmVjZWlwdCBpcyBhIGRldGVybWluaXN0aWMgZnVuY3Rpb24gb2YgdGhlIHdvcmt0cmVlIChidW5kbGUgYnl0ZXMsIHBhcmVudCBoYXNoZXMsIGNsYWltIGxvY2tzLCB0aGUgdHdvIGxvY2tlZC1iZW5jaG1hcmsgcmVwbGF5cywgYW5kIGEgZGV0ZXJtaW5pc3RpYyBFZDI1NTE5IHNpZ25hdHVyZSksIHNvIGl0IGNhbiBiZSBwcm9kdWNlZCBpbiBhIGNvcHkgZmlyc3QuIGByZS1ldmFsdWF0ZSAtLWRyeS1ydW5gIHB1Ymxpc2hlcyB0aGF0IGV4YWN0IGhhc2ggaW4gYWR2YW5jZSwgYW5kIHRoZSBnb3Zlcm5lZCBjb21tYW5kIHJlZnVzZXMgaWYgdGhlIHN1cHBsaWVkIHJldmlldyBiaW5kcyBhbnl0aGluZyBlbHNlIC0gc28gYSBtaXNtYXRjaCBjYW4gb25seSBldmVyIHByb2R1Y2UgYSByZWZ1c2FsLCBuZXZlciBhIGJhZCB3cml0ZS4iCiAgfSwKICAiZXhlY3V0ZWRfYV9yZWFsX3JlX2V2YWx1YXRpb24iOiBmYWxzZSwKICAiZmxpcHNfc2NpZW50aWZpY19yZWFkaW5lc3MiOiBmYWxzZSwKICAiZ2VuZXJhdGVkX29uX2hvc3QiOiAieGJhYmUyIiwKICAiaHVtYW5fcmV2aWV3X3BlcmZvcm1lZCI6IGZhbHNlLAogICJtb2RpZmllc19iZW5jaG1hcmtfbG9jayI6IGZhbHNlLAogICJtb2RpZmllc19leGlzdGluZ19yZWNlaXB0cyI6IGZhbHNlLAogICJtb2RpZmllc19sb2NrZWRfZGF0YXNldCI6IGZhbHNlLAogICJtb2RpZmllc19tYW5pZmVzdCI6IGZhbHNlLAogICJtb2RpZmllc19taXNzaW9uX2Zyb250X21hdHRlciI6IGZhbHNlLAogICJtb2RpZmllc19zaWduZWRfcGhhc2UwX2twaSI6IGZhbHNlLAogICJtb2R1bGUiOiAiYW1waG9yYS1yZWR0ZWFtLWF1ZGl0IiwKICAibmVnYXRpdmVfY29udHJvbHMiOiB7CiAgICAiaW50YWN0X2JpbmRpbmciOiB7CiAgICAgICJyZWZ1c2VkIjogdHJ1ZSwKICAgICAgInN0ZGVyciI6ICJFcnJvcjogcGhhc2UwIHJlLWV2YWx1YXRlIHJlZnVzZXMgYW1waG9yYS1zb2x2ZW5jeS1zY29yZTogb25seSBhIG1vZHVsZSBsaXN0ZWQgaW4gVU5CT1VORF9CRU5DSE1BUktfUkVTVUxUUyAtIHdob3NlIHNoaXBwZWQgYmVuY2htYXJrIHJlc3VsdCBpcyBhbHJlYWR5IHVuYm91bmQgZnJvbSBpdHMgb3duIHNpZ25lZCBldmFsdWF0aW9uIHJlY2VpcHQgLSBjYW4gYmUgcmVwYWlyZWQiCiAgICB9LAogICAgInJlcG9zaXRvcnlfbG9jYWxfa2V5IjogewogICAgICAicmVmdXNlZCI6IHRydWUsCiAgICAgICJzdGRlcnIiOiAiRXJyb3I6IHJlcG9zaXRvcnktbG9jYWwgUGhhc2UtMCBwcml2YXRlIGtleXMgYXJlIGZvcmJpZGRlbiIKICAgIH0KICB9LAogICJvcmdhbml6YXRpb25hbF9pbmRlcGVuZGVuY2VfYXNzZXJ0ZWQiOiBmYWxzZSwKICAicGVyX21vZHVsZV9kcnlfcnVuIjogWwogICAgewogICAgICAiYWN0dWFsX2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogImRjMmNiMWRjYTNmNGViM2YzMjkxMTY1YzRjZGJkMjg2Mjc1ODZkZWM3M2M3MTE5YzEyMzUwMDg3ZjQ4ODc0M2UiLAogICAgICAiYXJjaGl2ZV9yb290IjogImV2aWRlbmNlL3BoYXNlMC9zdXBlcnNlZGVkL2JjYmM3NDM2N2M5OGViYTRmZWQ4NTM5NmNkZmRhMWZkZmU5ZWJhMmJiMjAzNjc2YTU1YzNkZGE0NjdhZTA4MDgiLAogICAgICAiYXJjaGl2ZWRfbW92ZW1lbnRfZXZlbnRfaWRzIjogWwogICAgICAgICJtb3ZlbWVudC0wODg5ODlhZmE3NWY5MmI3ZTNhNmU0ODgwNDJlMDRjNGIxY2YzY2ExN2ZmMTllNTQ2NzMwOTA4OWY4ODI3ZmZlIgogICAgICBdLAogICAgICAiYmluZGluZ19icm9rZW4iOiB0cnVlLAogICAgICAiYmxvY2tpbmdfcmVmdXNhbHMiOiBbCiAgICAgICAgIlJFVklFV19OT1RfQk9VTkRfVE9fTkVXX0VWQUxVQVRJT05fUkVDRUlQVDogcmV2aWV3IGJpbmRzIGJjYmM3NDM2N2M5OGViYTRmZWQ4NTM5NmNkZmRhMWZkZmU5ZWJhMmJiMjAzNjc2YTU1YzNkZGE0NjdhZTA4MDgsIHRoaXMgcnVuIHdyaXRlcyAwNmE1NzYzYjdkZGJkNTU1NjMwNzYwMTNlOWQwZWZiZDBmMGYyYTg4MGI3Mjg4YmZhZGM5MDExYzUzMTNlOGQwIgogICAgICBdLAogICAgICAiZHJ5X3J1bl9wbGFubmVkIjogdHJ1ZSwKICAgICAgImZpbGVzX3RoYXRfd291bGRfbW92ZSI6IFsKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL3JlY2VpcHRzL2V2YWx1YXRpb24udjEuZHNzZS5qc29uIiwKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL3JlY2VpcHRzL2luZGVwZW5kZW50LXJldmlldy52MS5kc3NlLmpzb24iLAogICAgICAgICJldmlkZW5jZS9waGFzZTAvYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uIiwKICAgICAgICAibW92ZW1lbnQvZXZlbnRzLzA4ODk4OWFmYTc1ZjkyYjdlM2E2ZTQ4ODA0MmUwNGM0YjFjZjNjYTE3ZmYxOWU1NDY3MzA5MDg5Zjg4MjdmZmUuanNvbiIsCiAgICAgICAgIm1vdmVtZW50L2xlZGdlci52MS5qc29uIgogICAgICBdLAogICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtY3JvLXByb3RvY29sLXBhY2thZ2VyIiwKICAgICAgIm5ld19iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6ICJlYjczMGNhNzViMGQxNDA5NTliZDk3N2UzYWE3OGI4N2I1Mjc4MTUxZDAyNjk5ODRlZmVmNTczODJhYzM3NjM0IiwKICAgICAgIm5ld19ldmFsdWF0aW9uX2ZhaWxlZF9nYXRlcyI6IFtdLAogICAgICAibmV3X2V2YWx1YXRpb25fcGhhc2UwX2VsaWdpYmxlIjogdHJ1ZSwKICAgICAgIm5ld19ldmFsdWF0aW9uX3JlY2VpcHRfc2hhMjU2IjogIjA2YTU3NjNiN2RkYmQ1NTU2MzA3NjAxM2U5ZDBlZmJkMGYwZjJhODgwYjcyODhiZmFkYzkwMTFjNTMxM2U4ZDAiLAogICAgICAicGlubmVkX2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogIjkwMjhiZWVkMjVkZjQzYzVlMWM0NTM5MzFkMDAwNjM2ZTliMmUxMjhkMTQyNjEwMTExNGJiYmI4Mjk2Mjc5MDkiLAogICAgICAicHJpb3JfZXZhbHVhdGlvbl9yZWNlaXB0X3NoYTI1NiI6ICJiY2JjNzQzNjdjOThlYmE0ZmVkODUzOTZjZGZkYTFmZGZlOWViYTJiYjIwMzY3NmE1NWMzZGRhNDY3YWUwODA4IiwKICAgICAgInByaW9yX2luZGVwZW5kZW50X3Jldmlld19yZWNlaXB0X3NoYTI1NiI6ICIwNmFhMjhiNzE4ODQ5OGVhYzc1MTYwNTM5NjAxYTc3NjhkNDM2YTAyMmQyYjg0NmZjMjZlMGMyNGQ3MDliMWIwIiwKICAgICAgIndvdWxkX3Byb2NlZWQiOiBmYWxzZQogICAgfSwKICAgIHsKICAgICAgImFjdHVhbF9iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6ICIwMGRiYmU5ZjU4OTIxYjdkY2M2NWFmYWEzOWI3ZjA5YTAzZTZiOTY0N2I5YzE3ZWQ5MzQyYThkY2E2MmI5NzM4IiwKICAgICAgImFyY2hpdmVfcm9vdCI6ICJldmlkZW5jZS9waGFzZTAvc3VwZXJzZWRlZC9jNDU5Yzc5YzA1NzZjMDk3ZGQ0YmQyZGI1MTc4NzI1YWI3Yzg2Nzg0ZWQ1ZjdjNDAzNWJmMDNkOTEzZjY0NWMyIiwKICAgICAgImFyY2hpdmVkX21vdmVtZW50X2V2ZW50X2lkcyI6IFsKICAgICAgICAibW92ZW1lbnQtZjMyMDdhZTYzMmNmNzI0OTcxZjJkNDUzMmYwN2RjNDEzMjAzOTk3ZmE0OTY0ODljZmU3Y2QzYmY5ZDJmZWY1NiIKICAgICAgXSwKICAgICAgImJpbmRpbmdfYnJva2VuIjogdHJ1ZSwKICAgICAgImJsb2NraW5nX3JlZnVzYWxzIjogWwogICAgICAgICJSRVZJRVdfTk9UX0JPVU5EX1RPX05FV19FVkFMVUFUSU9OX1JFQ0VJUFQ6IHJldmlldyBiaW5kcyBjNDU5Yzc5YzA1NzZjMDk3ZGQ0YmQyZGI1MTc4NzI1YWI3Yzg2Nzg0ZWQ1ZjdjNDAzNWJmMDNkOTEzZjY0NWMyLCB0aGlzIHJ1biB3cml0ZXMgZWM5YTE0YzY5ZTZjMWNiNzQyNGQwOWRlNmY4OTA5Y2I0ZDEwMjA2NzQ2ZTQ4MDljYWM5NDZlNzE2MDE4YTNjNSIKICAgICAgXSwKICAgICAgImRyeV9ydW5fcGxhbm5lZCI6IHRydWUsCiAgICAgICJmaWxlc190aGF0X3dvdWxkX21vdmUiOiBbCiAgICAgICAgImV2aWRlbmNlL3BoYXNlMC9yZWNlaXB0cy9ldmFsdWF0aW9uLnYxLmRzc2UuanNvbiIsCiAgICAgICAgImV2aWRlbmNlL3BoYXNlMC9yZWNlaXB0cy9pbmRlcGVuZGVudC1yZXZpZXcudjEuZHNzZS5qc29uIiwKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL2JlbmNobWFyay9yZXN1bHQudjEuanNvbiIsCiAgICAgICAgIm1vdmVtZW50L2V2ZW50cy9mMzIwN2FlNjMyY2Y3MjQ5NzFmMmQ0NTMyZjA3ZGM0MTMyMDM5OTdmYTQ5NjQ4OWNmZTdjZDNiZjlkMmZlZjU2Lmpzb24iLAogICAgICAgICJtb3ZlbWVudC9sZWRnZXIudjEuanNvbiIKICAgICAgXSwKICAgICAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLWV2aWRlbmNlLWludGFrZS12YWxpZGF0b3IiLAogICAgICAibmV3X2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogImIzNGE5YTUxMDUzNjZiMjA2NmM5OTQwZDc4OTA3YmQ0MGJiYTdkMzA3OGRkM2RiNGY0YTg5ZTQyZmY4OGI5NDEiLAogICAgICAibmV3X2V2YWx1YXRpb25fZmFpbGVkX2dhdGVzIjogW10sCiAgICAgICJuZXdfZXZhbHVhdGlvbl9waGFzZTBfZWxpZ2libGUiOiB0cnVlLAogICAgICAibmV3X2V2YWx1YXRpb25fcmVjZWlwdF9zaGEyNTYiOiAiZWM5YTE0YzY5ZTZjMWNiNzQyNGQwOWRlNmY4OTA5Y2I0ZDEwMjA2NzQ2ZTQ4MDljYWM5NDZlNzE2MDE4YTNjNSIsCiAgICAgICJwaW5uZWRfYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYiOiAiNjVmY2QwOTZhYmI5OWI4ZGRlNDA1MDI1OWFmZGNlMWIwMjRhODNkOGRiZDFhNjZkZTU4ZDc2NDZiNTA5MDQ2NyIsCiAgICAgICJwcmlvcl9ldmFsdWF0aW9uX3JlY2VpcHRfc2hhMjU2IjogImM0NTljNzljMDU3NmMwOTdkZDRiZDJkYjUxNzg3MjVhYjdjODY3ODRlZDVmN2M0MDM1YmYwM2Q5MTNmNjQ1YzIiLAogICAgICAicHJpb3JfaW5kZXBlbmRlbnRfcmV2aWV3X3JlY2VpcHRfc2hhMjU2IjogImYyMmZiYWQwY2Q0ZGNjNjJiZGVmNzVkYjU1MTdjZDNmMWM4MjhmNGY0NDg5MjlkMjg1MDc3MGQxN2U4ZTA1ZTciLAogICAgICAid291bGRfcHJvY2VlZCI6IGZhbHNlCiAgICB9LAogICAgewogICAgICAiYWN0dWFsX2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogIjNmMmY2ODUzZjEzMmYwMzJhNGI2MmE1MmZmMzQ4NWQ2ZjliODhiNDRhZmZiM2Q1MGU4NGU4ZDMxMDgwOGFiMTEiLAogICAgICAiYXJjaGl2ZV9yb290IjogImV2aWRlbmNlL3BoYXNlMC9zdXBlcnNlZGVkLzMzMmI0NGI4YjI0NjdlZjAzZmU4OTkwYWFmMDExNGE4MDc4NGZlYzRmNDBmMmUzYTQyYjVhMjQ4MzQxNDcxZTQiLAogICAgICAiYXJjaGl2ZWRfbW92ZW1lbnRfZXZlbnRfaWRzIjogWwogICAgICAgICJtb3ZlbWVudC1mY2NkYjljYmU4YzgyMjU1NWQyNTJiNzhkZWFlOTE1OTNhOTkxMTNiZGQwZGIwNDlhZjMzMTc0YzBkNDMxMDNjIgogICAgICBdLAogICAgICAiYmluZGluZ19icm9rZW4iOiB0cnVlLAogICAgICAiYmxvY2tpbmdfcmVmdXNhbHMiOiBbCiAgICAgICAgIlJFVklFV19OT1RfQk9VTkRfVE9fTkVXX0VWQUxVQVRJT05fUkVDRUlQVDogcmV2aWV3IGJpbmRzIDMzMmI0NGI4YjI0NjdlZjAzZmU4OTkwYWFmMDExNGE4MDc4NGZlYzRmNDBmMmUzYTQyYjVhMjQ4MzQxNDcxZTQsIHRoaXMgcnVuIHdyaXRlcyBiYmJmZWExOTg1ZTc5ZWQxMzU3OGNmZDAwNDQyNjQ1YjgzZmVhYWVhODgzMjdjYjVkOWYyNTJmMjA1MjQ5OWY4IgogICAgICBdLAogICAgICAiZHJ5X3J1bl9wbGFubmVkIjogdHJ1ZSwKICAgICAgImZpbGVzX3RoYXRfd291bGRfbW92ZSI6IFsKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL3JlY2VpcHRzL2V2YWx1YXRpb24udjEuZHNzZS5qc29uIiwKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL3JlY2VpcHRzL2luZGVwZW5kZW50LXJldmlldy52MS5kc3NlLmpzb24iLAogICAgICAgICJldmlkZW5jZS9waGFzZTAvYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uIiwKICAgICAgICAibW92ZW1lbnQvZXZlbnRzL2ZjY2RiOWNiZThjODIyNTU1ZDI1MmI3OGRlYWU5MTU5M2E5OTExM2JkZDBkYjA0OWFmMzMxNzRjMGQ0MzEwM2MuanNvbiIsCiAgICAgICAgIm1vdmVtZW50L2xlZGdlci52MS5qc29uIgogICAgICBdLAogICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MiLAogICAgICAibmV3X2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogIjkyOTlhYzY0ZGIzZGU1YThjOGJhZjVjODg3NTU3NzgyMmFhY2Y4NTY0ZmU3OTk3ODExN2U2ZjYwZWMwNDliYjkiLAogICAgICAibmV3X2V2YWx1YXRpb25fZmFpbGVkX2dhdGVzIjogW10sCiAgICAgICJuZXdfZXZhbHVhdGlvbl9waGFzZTBfZWxpZ2libGUiOiB0cnVlLAogICAgICAibmV3X2V2YWx1YXRpb25fcmVjZWlwdF9zaGEyNTYiOiAiYmJiZmVhMTk4NWU3OWVkMTM1NzhjZmQwMDQ0MjY0NWI4M2ZlYWFlYTg4MzI3Y2I1ZDlmMjUyZjIwNTI0OTlmOCIsCiAgICAgICJwaW5uZWRfYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYiOiAiYWJmYmYxMDRmNDliNGRjNjQyM2JlZGJmZDBkYzBlZjgyNTg1YmQ3MTIwMTJmMjNlOTFiZDhlOGRjMjE4MTU5NSIsCiAgICAgICJwcmlvcl9ldmFsdWF0aW9uX3JlY2VpcHRfc2hhMjU2IjogIjMzMmI0NGI4YjI0NjdlZjAzZmU4OTkwYWFmMDExNGE4MDc4NGZlYzRmNDBmMmUzYTQyYjVhMjQ4MzQxNDcxZTQiLAogICAgICAicHJpb3JfaW5kZXBlbmRlbnRfcmV2aWV3X3JlY2VpcHRfc2hhMjU2IjogIjUzMzE2MmQ0MTM5Y2QwNjA5YjQwNDA5MjExNWQ1MGIzNTgwZWVmYjUwNjVhMTNjNDY2NDMyYmMwMDA4Y2UzYjUiLAogICAgICAid291bGRfcHJvY2VlZCI6IGZhbHNlCiAgICB9LAogICAgewogICAgICAiYWN0dWFsX2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogIjg4NzNiYWEzZDA1MDk4NGRiZjU4ZmFkZDhkNzhhMTJmMDNjNTg2ZTQzNmExYzI0M2EyNjhmZjBjOTM5NDU5NjQiLAogICAgICAiYXJjaGl2ZV9yb290IjogImV2aWRlbmNlL3BoYXNlMC9zdXBlcnNlZGVkL2FkMGNiNzRkNmJmYTQyOWFjMzI2YzMyZWY0M2UzNTViZDM3OTQyMzg2NmI1NDc4ZWI1YTdkNWFiMjBlNGI1NTQiLAogICAgICAiYXJjaGl2ZWRfbW92ZW1lbnRfZXZlbnRfaWRzIjogWwogICAgICAgICJtb3ZlbWVudC05YTc1NDg1MWU1YTQ2ZGEwZGU4OGVmYTBmY2MyZWVkYTVhNWU5ZDEwNjAyMmFmMWIxYjM4M2Y1YTgzNzgzNGFkIgogICAgICBdLAogICAgICAiYmluZGluZ19icm9rZW4iOiB0cnVlLAogICAgICAiYmxvY2tpbmdfcmVmdXNhbHMiOiBbCiAgICAgICAgIlJFVklFV19OT1RfQk9VTkRfVE9fTkVXX0VWQUxVQVRJT05fUkVDRUlQVDogcmV2aWV3IGJpbmRzIGFkMGNiNzRkNmJmYTQyOWFjMzI2YzMyZWY0M2UzNTViZDM3OTQyMzg2NmI1NDc4ZWI1YTdkNWFiMjBlNGI1NTQsIHRoaXMgcnVuIHdyaXRlcyBiNjcyZjNlNWQyNGQwYTAwMDYyNjM5MTdmZDIzYzhhMmY4YzMxMjJhYTM4YTA1MmQ5MmYyZjliYjkwMjcxMzkyIgogICAgICBdLAogICAgICAiZHJ5X3J1bl9wbGFubmVkIjogdHJ1ZSwKICAgICAgImZpbGVzX3RoYXRfd291bGRfbW92ZSI6IFsKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL3JlY2VpcHRzL2V2YWx1YXRpb24udjEuZHNzZS5qc29uIiwKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL3JlY2VpcHRzL2luZGVwZW5kZW50LXJldmlldy52MS5kc3NlLmpzb24iLAogICAgICAgICJldmlkZW5jZS9waGFzZTAvYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uIiwKICAgICAgICAibW92ZW1lbnQvZXZlbnRzLzlhNzU0ODUxZTVhNDZkYTBkZTg4ZWZhMGZjYzJlZWRhNWE1ZTlkMTA2MDIyYWYxYjFiMzgzZjVhODM3ODM0YWQuanNvbiIsCiAgICAgICAgIm1vdmVtZW50L2xlZGdlci52MS5qc29uIgogICAgICBdLAogICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtbW9sZWN1bGUtZGVzaWduLWdhdGUiLAogICAgICAibmV3X2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogIjlhNDZhY2EyNDcwOTI1ZWM3MzU0ZTMyY2NiZDRhNGI0MWQ0N2IxYjQ5MmFhMzVkNTIzZTZhZDg4ZmQyOGUxNWQiLAogICAgICAibmV3X2V2YWx1YXRpb25fZmFpbGVkX2dhdGVzIjogW10sCiAgICAgICJuZXdfZXZhbHVhdGlvbl9waGFzZTBfZWxpZ2libGUiOiB0cnVlLAogICAgICAibmV3X2V2YWx1YXRpb25fcmVjZWlwdF9zaGEyNTYiOiAiYjY3MmYzZTVkMjRkMGEwMDA2MjYzOTE3ZmQyM2M4YTJmOGMzMTIyYWEzOGEwNTJkOTJmMmY5YmI5MDI3MTM5MiIsCiAgICAgICJwaW5uZWRfYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYiOiAiM2ZkNzJmMGZhMDhhZTZlMzA2YTY3MThmMGE2MThjYWI0YWJjODc2YWRkNWZkMDY1MjFhYzAwMjJkMDg1Nzc2MSIsCiAgICAgICJwcmlvcl9ldmFsdWF0aW9uX3JlY2VpcHRfc2hhMjU2IjogImFkMGNiNzRkNmJmYTQyOWFjMzI2YzMyZWY0M2UzNTViZDM3OTQyMzg2NmI1NDc4ZWI1YTdkNWFiMjBlNGI1NTQiLAogICAgICAicHJpb3JfaW5kZXBlbmRlbnRfcmV2aWV3X3JlY2VpcHRfc2hhMjU2IjogImExNDcyNGMyNTIzOTk2OGQwMWIxYWU5ZTc4OTdlNzg0NTcxMjRmYmQ1MDJlMjgxMTJjZDE0YTFkN2YwOWVhNWMiLAogICAgICAid291bGRfcHJvY2VlZCI6IGZhbHNlCiAgICB9LAogICAgewogICAgICAiZHJ5X3J1bl9wbGFubmVkIjogZmFsc2UsCiAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eSIsCiAgICAgICJyZWZ1c2FsIjogIkVycm9yOiBzdXBwbGllZCBpbmRlcGVuZGVudCByZXZpZXcgYmVsb25ncyB0byBhIGRpZmZlcmVudCBtb2R1bGUiCiAgICB9LAogICAgewogICAgICAiYWN0dWFsX2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogImUxZDk1YjZiMzM4YjEwZDU5OTlkOWQwYWY0ZTViMmU4ZjYzNWVhYjcyYTg4ODk0MmU5YTc3NDM5MzgyZWJhMTciLAogICAgICAiYXJjaGl2ZV9yb290IjogImV2aWRlbmNlL3BoYXNlMC9zdXBlcnNlZGVkLzU5OGExZjEwMTNmNmVmNmU4NzM0ZmExZjcyMzA1NzJhNjAxNGVjYTQyMGJjMDZiZTUwMzE5ZmE3YTA4ODE1NjAiLAogICAgICAiYXJjaGl2ZWRfbW92ZW1lbnRfZXZlbnRfaWRzIjogWwogICAgICAgICJtb3ZlbWVudC01NzFhYzlmOGVmYjMyMGM0NmQwM2U3NTQwMWRiNjE3Nzk2Zjg1ZWQ3MWFlN2ZhMjVmYzk1ZjVhNzExN2EzNzVjIgogICAgICBdLAogICAgICAiYmluZGluZ19icm9rZW4iOiB0cnVlLAogICAgICAiYmxvY2tpbmdfcmVmdXNhbHMiOiBbCiAgICAgICAgIlJFVklFV19OT1RfQk9VTkRfVE9fTkVXX0VWQUxVQVRJT05fUkVDRUlQVDogcmV2aWV3IGJpbmRzIDU5OGExZjEwMTNmNmVmNmU4NzM0ZmExZjcyMzA1NzJhNjAxNGVjYTQyMGJjMDZiZTUwMzE5ZmE3YTA4ODE1NjAsIHRoaXMgcnVuIHdyaXRlcyAxZjYxNDMxZDdmOWQyODBhMTY1MjE1NTBiNTRmM2I3OWUwZGZiZGJiNzc5NTZmZDllMjQxMGQ4MjQ0ODlhNDlkIgogICAgICBdLAogICAgICAiZHJ5X3J1bl9wbGFubmVkIjogdHJ1ZSwKICAgICAgImZpbGVzX3RoYXRfd291bGRfbW92ZSI6IFsKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL3JlY2VpcHRzL2V2YWx1YXRpb24udjEuZHNzZS5qc29uIiwKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL3JlY2VpcHRzL2luZGVwZW5kZW50LXJldmlldy52MS5kc3NlLmpzb24iLAogICAgICAgICJldmlkZW5jZS9waGFzZTAvYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uIiwKICAgICAgICAibW92ZW1lbnQvZXZlbnRzLzU3MWFjOWY4ZWZiMzIwYzQ2ZDAzZTc1NDAxZGI2MTc3OTZmODVlZDcxYWU3ZmEyNWZjOTVmNWE3MTE3YTM3NWMuanNvbiIsCiAgICAgICAgIm1vdmVtZW50L2xlZGdlci52MS5qc29uIgogICAgICBdLAogICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtb3B0aW1pemVyLW9yY2hlc3RyYXRvciIsCiAgICAgICJuZXdfYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYiOiAiMzU4NjFhMDljYWQxNzcwOWJhMzVjYTE2YWYwMjg1MzhlZmM5NGM4Mjk3NGEwMzZiZDY5Zjc2MGUyZTNkYTE5MyIsCiAgICAgICJuZXdfZXZhbHVhdGlvbl9mYWlsZWRfZ2F0ZXMiOiBbXSwKICAgICAgIm5ld19ldmFsdWF0aW9uX3BoYXNlMF9lbGlnaWJsZSI6IHRydWUsCiAgICAgICJuZXdfZXZhbHVhdGlvbl9yZWNlaXB0X3NoYTI1NiI6ICIxZjYxNDMxZDdmOWQyODBhMTY1MjE1NTBiNTRmM2I3OWUwZGZiZGJiNzc5NTZmZDllMjQxMGQ4MjQ0ODlhNDlkIiwKICAgICAgInBpbm5lZF9iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6ICJjZmViNzVlMTRlMzE5YTM2YjAxODFkMzYxMjdlMjE5YTZjMmViOGNlM2E3ZTJjYzAwYmI2YTlkMjNlNDkwYWZkIiwKICAgICAgInByaW9yX2V2YWx1YXRpb25fcmVjZWlwdF9zaGEyNTYiOiAiNTk4YTFmMTAxM2Y2ZWY2ZTg3MzRmYTFmNzIzMDU3MmE2MDE0ZWNhNDIwYmMwNmJlNTAzMTlmYTdhMDg4MTU2MCIsCiAgICAgICJwcmlvcl9pbmRlcGVuZGVudF9yZXZpZXdfcmVjZWlwdF9zaGEyNTYiOiAiN2YyNjU1MzllMGE3NWExODY0NmRkMGFmMmUwNTJiZDBjOGViNjU3NjFkYjJmMDQxYTNiOWQzZTVhODM5ZTVmOSIsCiAgICAgICJ3b3VsZF9wcm9jZWVkIjogZmFsc2UKICAgIH0sCiAgICB7CiAgICAgICJhY3R1YWxfYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYiOiAiNzAxNDgyYTI2Y2JlNzA0ZTA2YmRhZGU0YzNhZjMyNzllNmZlZTA2NjMxOWM1MDQxODIyZjM3ZWQ4ZGJmOWYxZiIsCiAgICAgICJhcmNoaXZlX3Jvb3QiOiAiZXZpZGVuY2UvcGhhc2UwL3N1cGVyc2VkZWQvMzAzOWVkZDU0MzQ1YjE3NzVlZjczZDU2ZDAwZGYxMGU3NmFkYzBiNWMzMjI1MWI4ZTEyZWY3OTFmODU0NmIzYiIsCiAgICAgICJhcmNoaXZlZF9tb3ZlbWVudF9ldmVudF9pZHMiOiBbCiAgICAgICAgIm1vdmVtZW50LTAxYzQ5YzUxMzc0NzUxODBlMjlmODI5ZDJiMzA4NThhODA4YWVkYjAzZTNlOTllMzVkZGVkMTlmMDM3YWRkODciCiAgICAgIF0sCiAgICAgICJiaW5kaW5nX2Jyb2tlbiI6IHRydWUsCiAgICAgICJibG9ja2luZ19yZWZ1c2FscyI6IFsKICAgICAgICAiUkVWSUVXX05PVF9CT1VORF9UT19ORVdfRVZBTFVBVElPTl9SRUNFSVBUOiByZXZpZXcgYmluZHMgMzAzOWVkZDU0MzQ1YjE3NzVlZjczZDU2ZDAwZGYxMGU3NmFkYzBiNWMzMjI1MWI4ZTEyZWY3OTFmODU0NmIzYiwgdGhpcyBydW4gd3JpdGVzIGUwOTMyODFmMjhlNGYxZmU5MzA1ODhjMTU2ZGVjYTVhNjg2MjdjMjhiOTM3MzNmM2MwMjMzYTk2Y2JkNjYzODIiCiAgICAgIF0sCiAgICAgICJkcnlfcnVuX3BsYW5uZWQiOiB0cnVlLAogICAgICAiZmlsZXNfdGhhdF93b3VsZF9tb3ZlIjogWwogICAgICAgICJldmlkZW5jZS9waGFzZTAvcmVjZWlwdHMvZXZhbHVhdGlvbi52MS5kc3NlLmpzb24iLAogICAgICAgICJldmlkZW5jZS9waGFzZTAvcmVjZWlwdHMvaW5kZXBlbmRlbnQtcmV2aWV3LnYxLmRzc2UuanNvbiIsCiAgICAgICAgImV2aWRlbmNlL3BoYXNlMC9iZW5jaG1hcmsvcmVzdWx0LnYxLmpzb24iLAogICAgICAgICJtb3ZlbWVudC9ldmVudHMvMDFjNDljNTEzNzQ3NTE4MGUyOWY4MjlkMmIzMDg1OGE4MDhhZWRiMDNlM2U5OWUzNWRkZWQxOWYwMzdhZGQ4Ny5qc29uIiwKICAgICAgICAibW92ZW1lbnQvbGVkZ2VyLnYxLmpzb24iCiAgICAgIF0sCiAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1yZWR0ZWFtLWF1ZGl0IiwKICAgICAgIm5ld19iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6ICI3OWQxNTdhOTU4NTE4ZDM4NjlmOGUxYjVkMGRiMjVjZDBjMzQxZjA3NDIxZDg0NzdmNGFjYzM2MGJjYzZjMDlmIiwKICAgICAgIm5ld19ldmFsdWF0aW9uX2ZhaWxlZF9nYXRlcyI6IFtdLAogICAgICAibmV3X2V2YWx1YXRpb25fcGhhc2UwX2VsaWdpYmxlIjogdHJ1ZSwKICAgICAgIm5ld19ldmFsdWF0aW9uX3JlY2VpcHRfc2hhMjU2IjogImUwOTMyODFmMjhlNGYxZmU5MzA1ODhjMTU2ZGVjYTVhNjg2MjdjMjhiOTM3MzNmM2MwMjMzYTk2Y2JkNjYzODIiLAogICAgICAicGlubmVkX2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogIjJiYmE4N2FhOWEyZTVjYWZmZTZlZGU2MjY4NWE5NTNmYThkNjc2YjliMDE1YThkNzM2NDBlMWIzMTc4ZDhlOWMiLAogICAgICAicHJpb3JfZXZhbHVhdGlvbl9yZWNlaXB0X3NoYTI1NiI6ICIzMDM5ZWRkNTQzNDViMTc3NWVmNzNkNTZkMDBkZjEwZTc2YWRjMGI1YzMyMjUxYjhlMTJlZjc5MWY4NTQ2YjNiIiwKICAgICAgInByaW9yX2luZGVwZW5kZW50X3Jldmlld19yZWNlaXB0X3NoYTI1NiI6ICI4OTA4Zjg0MjIxMzVmYTA2NzdlYzRlNTdiMTI1Nzk3Y2I4YWQ0N2QxODY0ZDU1OTZmMzEzZWIzZDVmNzk0Mjk2IiwKICAgICAgIndvdWxkX3Byb2NlZWQiOiBmYWxzZQogICAgfSwKICAgIHsKICAgICAgImFjdHVhbF9iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6ICJmYzc5N2FhYzk3Y2FhNzVjZTI1ZmJhMmYzYzdiMDA3NDJjN2IzYTYwMTY0Nzk4MjI4NGMyMjMxMjFmMGZjNmUxIiwKICAgICAgImFyY2hpdmVfcm9vdCI6ICJldmlkZW5jZS9waGFzZTAvc3VwZXJzZWRlZC9jNzc4NGQ5ZDU0NjZlNzViNWJmM2VkODE5YTllYWMwYzdiYmU2NWFmYTIzZWNkMDgwYWZiYzQ0NjBkOThhOGJhIiwKICAgICAgImFyY2hpdmVkX21vdmVtZW50X2V2ZW50X2lkcyI6IFsKICAgICAgICAibW92ZW1lbnQtOTcxMTE0NTkyNTVkMWYxNmNlODRkYTA3MGM5MjU1ODkxZjM1MWEyZGNhZjVkMzgzNWFjMDA2YzNjZWYxMDMzMSIKICAgICAgXSwKICAgICAgImJpbmRpbmdfYnJva2VuIjogdHJ1ZSwKICAgICAgImJsb2NraW5nX3JlZnVzYWxzIjogWwogICAgICAgICJSRVZJRVdfTk9UX0JPVU5EX1RPX05FV19FVkFMVUFUSU9OX1JFQ0VJUFQ6IHJldmlldyBiaW5kcyBjNzc4NGQ5ZDU0NjZlNzViNWJmM2VkODE5YTllYWMwYzdiYmU2NWFmYTIzZWNkMDgwYWZiYzQ0NjBkOThhOGJhLCB0aGlzIHJ1biB3cml0ZXMgZWE2ZTg4OGRjNzVlNTk4ZDllMmIwZTg3ZGE4NTE2NjNmNzUyNGUxNmE3NGM3ZGFmM2JhNjI3MWZlN2NlMmYwZiIKICAgICAgXSwKICAgICAgImRyeV9ydW5fcGxhbm5lZCI6IHRydWUsCiAgICAgICJmaWxlc190aGF0X3dvdWxkX21vdmUiOiBbCiAgICAgICAgImV2aWRlbmNlL3BoYXNlMC9yZWNlaXB0cy9ldmFsdWF0aW9uLnYxLmRzc2UuanNvbiIsCiAgICAgICAgImV2aWRlbmNlL3BoYXNlMC9yZWNlaXB0cy9pbmRlcGVuZGVudC1yZXZpZXcudjEuZHNzZS5qc29uIiwKICAgICAgICAiZXZpZGVuY2UvcGhhc2UwL2JlbmNobWFyay9yZXN1bHQudjEuanNvbiIsCiAgICAgICAgIm1vdmVtZW50L2V2ZW50cy85NzExMTQ1OTI1NWQxZjE2Y2U4NGRhMDcwYzkyNTU4OTFmMzUxYTJkY2FmNWQzODM1YWMwMDZjM2NlZjEwMzMxLmpzb24iLAogICAgICAgICJtb3ZlbWVudC9sZWRnZXIudjEuanNvbiIKICAgICAgXSwKICAgICAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLXJlcG9ydC1wYWNrYWdlciIsCiAgICAgICJuZXdfYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYiOiAiNGI0NzUzMzA5ZTJmZmRlOWJjNzY2MTU1NjRmYWI0M2NhYjRlYWE2MjM1Yjg3NDdkYjc2YmFhNjFmMzBkYzRmNyIsCiAgICAgICJuZXdfZXZhbHVhdGlvbl9mYWlsZWRfZ2F0ZXMiOiBbXSwKICAgICAgIm5ld19ldmFsdWF0aW9uX3BoYXNlMF9lbGlnaWJsZSI6IHRydWUsCiAgICAgICJuZXdfZXZhbHVhdGlvbl9yZWNlaXB0X3NoYTI1NiI6ICJlYTZlODg4ZGM3NWU1OThkOWUyYjBlODdkYTg1MTY2M2Y3NTI0ZTE2YTc0YzdkYWYzYmE2MjcxZmU3Y2UyZjBmIiwKICAgICAgInBpbm5lZF9iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6ICIxNTcyMDA0MDNhZDM5NmU3M2M5ZTJiODVmMjFiYjFjMTViMjdhYjA5YjkxM2ViZDFjNTcxMjU5YTczODBmN2QwIiwKICAgICAgInByaW9yX2V2YWx1YXRpb25fcmVjZWlwdF9zaGEyNTYiOiAiYzc3ODRkOWQ1NDY2ZTc1YjViZjNlZDgxOWE5ZWFjMGM3YmJlNjVhZmEyM2VjZDA4MGFmYmM0NDYwZDk4YThiYSIsCiAgICAgICJwcmlvcl9pbmRlcGVuZGVudF9yZXZpZXdfcmVjZWlwdF9zaGEyNTYiOiAiM2ZlMzI3Y2NlMmRjMGM1NDk3MTRmZWNkNjFjZTFlYTdlYjBmM2EzNWEwMmQyMWNkOTY4ZDk2N2YwNDQ5YzU2MCIsCiAgICAgICJ3b3VsZF9wcm9jZWVkIjogZmFsc2UKICAgIH0sCiAgICB7CiAgICAgICJhY3R1YWxfYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYiOiAiYTZhNjgwYTEyMDJkOGIxOGIwOTdhMGQzOTBiZjg3N2Q5M2RjOTg1YjBmMDlhNWZlNTJjYzJlYTE2YjQ5ODExNSIsCiAgICAgICJhcmNoaXZlX3Jvb3QiOiAiZXZpZGVuY2UvcGhhc2UwL3N1cGVyc2VkZWQvMmEzNGFhZWZlODMyMDc5ZTEyOTU5OGM4YTVjN2IzNjIxZTA5NzUwMGQxMDEwOTM4ZDMwZDMxYTI2MWYzNTVlYiIsCiAgICAgICJhcmNoaXZlZF9tb3ZlbWVudF9ldmVudF9pZHMiOiBbCiAgICAgICAgIm1vdmVtZW50LWM4N2RkODExZDJhZWE5ZmEzMDk5MzEwOWY1MDdiMGNhNWFmNDg3NjFhNjUyNDg3NjA0MWVhYWNiM2E2MjZmYjgiCiAgICAgIF0sCiAgICAgICJiaW5kaW5nX2Jyb2tlbiI6IHRydWUsCiAgICAgICJibG9ja2luZ19yZWZ1c2FscyI6IFsKICAgICAgICAiUkVWSUVXX05PVF9CT1VORF9UT19ORVdfRVZBTFVBVElPTl9SRUNFSVBUOiByZXZpZXcgYmluZHMgMmEzNGFhZWZlODMyMDc5ZTEyOTU5OGM4YTVjN2IzNjIxZTA5NzUwMGQxMDEwOTM4ZDMwZDMxYTI2MWYzNTVlYiwgdGhpcyBydW4gd3JpdGVzIDY4ZjlhNDU4MTdmMDM0OWNkMTQ3M2M1YmY2YTVhZjM5MjdjNGNhYjlmY2M5Y2FkZTgwOTZiMDI1MjA3OTE2MzEiCiAgICAgIF0sCiAgICAgICJkcnlfcnVuX3BsYW5uZWQiOiB0cnVlLAogICAgICAiZmlsZXNfdGhhdF93b3VsZF9tb3ZlIjogWwogICAgICAgICJldmlkZW5jZS9waGFzZTAvcmVjZWlwdHMvZXZhbHVhdGlvbi52MS5kc3NlLmpzb24iLAogICAgICAgICJldmlkZW5jZS9waGFzZTAvcmVjZWlwdHMvaW5kZXBlbmRlbnQtcmV2aWV3LnYxLmRzc2UuanNvbiIsCiAgICAgICAgImV2aWRlbmNlL3BoYXNlMC9iZW5jaG1hcmsvcmVzdWx0LnYxLmpzb24iLAogICAgICAgICJtb3ZlbWVudC9ldmVudHMvYzg3ZGQ4MTFkMmFlYTlmYTMwOTkzMTA5ZjUwN2IwY2E1YWY0ODc2MWE2NTI0ODc2MDQxZWFhY2IzYTYyNmZiOC5qc29uIiwKICAgICAgICAibW92ZW1lbnQvbGVkZ2VyLnYxLmpzb24iCiAgICAgIF0sCiAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1zb3VyY2UtbGVkZ2VyIiwKICAgICAgIm5ld19iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6ICIwYTdlM2U2Mzg5NzFlNmIzMjZiMWFiN2VkNzcxNDdmZDBlNGZlNDE5ODZkYWVkZmMyNGM3OTNmZDAxMDJkNzA0IiwKICAgICAgIm5ld19ldmFsdWF0aW9uX2ZhaWxlZF9nYXRlcyI6IFtdLAogICAgICAibmV3X2V2YWx1YXRpb25fcGhhc2UwX2VsaWdpYmxlIjogdHJ1ZSwKICAgICAgIm5ld19ldmFsdWF0aW9uX3JlY2VpcHRfc2hhMjU2IjogIjY4ZjlhNDU4MTdmMDM0OWNkMTQ3M2M1YmY2YTVhZjM5MjdjNGNhYjlmY2M5Y2FkZTgwOTZiMDI1MjA3OTE2MzEiLAogICAgICAicGlubmVkX2JlbmNobWFya19yZXN1bHRfc2hhMjU2IjogImNkYmZkYTA0OGU3M2VmNTM5NzFmZDk4NjBkYzlhZTBmOTQ2NGZkZDIyMTRiNTUwYzc2ZWFlYjdkMzIxMWU5NjUiLAogICAgICAicHJpb3JfZXZhbHVhdGlvbl9yZWNlaXB0X3NoYTI1NiI6ICIyYTM0YWFlZmU4MzIwNzllMTI5NTk4YzhhNWM3YjM2MjFlMDk3NTAwZDEwMTA5MzhkMzBkMzFhMjYxZjM1NWViIiwKICAgICAgInByaW9yX2luZGVwZW5kZW50X3Jldmlld19yZWNlaXB0X3NoYTI1NiI6ICIwNWZmNzU3NDE0MDRiNWJiYWM2ZWRkZGE5N2JjOTA0MjRiZjdjY2Q1YzI0NGJiYzM0OGY0YmFiODc2YmUyMmY1IiwKICAgICAgIndvdWxkX3Byb2NlZWQiOiBmYWxzZQogICAgfQogIF0sCiAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAicHJvbW90ZXNfYXV0aG9yaXR5IjogZmFsc2UsCiAgInByb3ZlbmFuY2UiOiB7CiAgICAiYWNjZXB0YW5jZV9sb2dfc2hhMjU2IjogIjliODQ1ZjYzMzUwNjkwZWQ0ODQ0MWQ3MmUwZTUxNTcxZTRjYjcyYjViZjcyNWQyM2IzNTdjM2Q4NzE4MGNkNzciLAogICAgImFtcGhvcmFfY2xpX3BoYXNlMF9yc19zaGEyNTYiOiAiYjM5YWM5YmZmMDFjY2RjYzU5NjdhMDA4ZjRmNWI0YmZkMjA3ODk3MGFlNzI4ZjUwNWQ4NzI2ODJkNzUyOGYwNSIsCiAgICAiZHJ5X3J1bl9leGVjdXRpb25fbm90ZXMiOiBbCiAgICAgICJ0aGUgc3dlZXAgcmFuIHdpdGggdGhlIGJpbmFyeSBidWlsdCBmcm9tIHRoaXMgc291cmNlOyBhbXBob3JhLXNvdXJjZS1sZWRnZXIgd2FzIHJlLXJ1biBhZnRlcndhcmRzIChkcnktcnVuL1JFQ0hFQ0stYW1waG9yYS1zb3VyY2UtbGVkZ2VyLmpzb24pIGFuZCByZXByb2R1Y2VkIGl0cyBzd2VlcCBvdXRwdXQgYnl0ZS1mb3ItYnl0ZSIsCiAgICAgICJhbXBob3JhLWV2aWRlbmNlLWludGFrZS12YWxpZGF0b3IncyBmaXJzdCBhdHRlbXB0IGFib3J0ZWQgd2l0aCBSZWFkT25seUVycm9yIGJlY2F1c2UgYW5vdGhlciBhZ2VudCB3cm90ZSBpbnRvIHRoZSByZXBvc2l0b3J5IGR1cmluZyBpdHMgZm91ci1taW51dGUgd2luZG93OyB0aGUgdG9vbCB3YXMgcmlnaHQgdG8gcmVmdXNlLCBhbmQgdGhlIHJldHJ5IHJlY29yZGVkIGhlcmUgc3VjY2VlZGVkLiBJdHMgLS1yZWFzb24gdGV4dCBkcm9wcyBvbmUgYXBvc3Ryb3BoZSByZWxhdGl2ZSB0byB0aGUgb3RoZXIgZWlnaHQgKHNoZWxsIHF1b3RpbmcpOyAtLXJlYXNvbiBmZWVkcyBvbmx5IHRoZSBzdXBlcnNlc3Npb24gbm90ZSBwcm9zZSBhbmQgbm8gaGFzaCIsCiAgICAgICJ0aGUgY29uY3VycmVudC13cml0ZXIgc2Vuc2l0aXZpdHkgaXMgYSBwcm9wZXJ0eSBvZiBwcm92ZV9yZWFkX29ubHksIG5vdCBvZiB0aGlzIHRvb2wiLAogICAgICAidGhlIHNhbWUgcHJvcGVydHkgYXBwbGllcyB0byB0aGUgYWNjZXB0YW5jZSBydW46IHBoYXNlMDo6dGVzdHM6OnNvdXJjZV9sZWRnZXJfaGlzdG9yaWNhbF9tb3ZlbWVudF9hbmRfc3RhdHVzX2FyZV9yZWFkX29ubHkgaGFzaGVzIHRoZSB3aG9sZSB3b3JrdHJlZSwgc28gdGhlIGFjY2VwdGFuY2UgbG9nIG11c3QgYmUgd3JpdHRlbiBPVVRTSURFIHRoZSByZXBvc2l0b3J5IGFuZCBjb3BpZWQgaW4gYWZ0ZXJ3YXJkcy4gQSBmaXJzdCBhdHRlbXB0IHRoYXQgcmVkaXJlY3RlZCB0aGUgbG9nIHN0cmFpZ2h0IGludG8gcmVwYWlycy9XVi0xL3dvcmsvIGZhaWxlZCB0aGF0IHRlc3Qgb24gaXRzIG93biBncm93aW5nIGJ5dGVzIC0gdGhlIHRlc3Qgd2FzIHJpZ2h0LCBhbmQgdGhlIGxvZyBpcyBub3cgcHJvZHVjZWQgYXQgL2hvbWUvdWJ1bnR1L3d2MS1hY2NlcHRhbmNlLTIwMjYtMDgtMDQubG9nIGFuZCBjb3BpZWQgaW4gYWZ0ZXIgdGhlIHJ1biIKICAgIF0sCiAgICAiZHJ5X3J1bl9vdXRwdXRfc2hhMjU2IjogewogICAgICAiTkVHQVRJVkUtQ09OVFJPTC1hbXBob3JhLXNvbHZlbmN5LXNjb3JlLmVyciI6ICIwMzVhNjA3MDAxNzJjMjE4ZDQ2ZjFkNmRhOGYzOThiZjFhMzg3ZWU2YThlYWMyNWQwMDgxODM4M2RlNTJiNGExIiwKICAgICAgIk5FR0FUSVZFLUNPTlRST0wtYW1waG9yYS1zb2x2ZW5jeS1zY29yZS5qc29uIjogImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLAogICAgICAiTkVHQVRJVkUtQ09OVFJPTC1yZXBvLWxvY2FsLWtleS5lcnIiOiAiOTA1ZTIzYmZhN2U2MmYzNTQzNmMwMmQyZTFkZjY3ZTRiNGY4OTM5MmQxMTlmYTc3ZGYwYmE5ODllMWJiMDQyNiIsCiAgICAgICJORUdBVElWRS1DT05UUk9MLXJlcG8tbG9jYWwta2V5Lmpzb24iOiAiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsCiAgICAgICJSRUNIRUNLLWFtcGhvcmEtc291cmNlLWxlZGdlci5qc29uIjogIjc2ZWM0YWI1ZjcwZWNiY2QxM2ZkZWE3NjlkNzY3Yjk0OGNkNWRiN2M4NGZkMTA4OTI3MjdiOGQxM2YzOTI5MDIiLAogICAgICAiYW1waG9yYS1jcm8tcHJvdG9jb2wtcGFja2FnZXIuZXJyIjogImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLAogICAgICAiYW1waG9yYS1jcm8tcHJvdG9jb2wtcGFja2FnZXIuanNvbiI6ICJhNDcyZTNlNzEwY2QyNDY0MTU0ZDE0Mzc0YTMzNGM0MmQwN2YwZWZiZWJjMDU1NjNhM2MyNTcxZWNiNjcwZGZhIiwKICAgICAgImFtcGhvcmEtZXZpZGVuY2UtaW50YWtlLXZhbGlkYXRvci5lcnIiOiAiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsCiAgICAgICJhbXBob3JhLWV2aWRlbmNlLWludGFrZS12YWxpZGF0b3IuanNvbiI6ICJmYmVmYTdjMTM1NGM5MmIzNjE0ZTMzYjZkOTRhMzYyY2FhMzZjZGVjOTdlMWE3MzcwZDZiMTE3ZGU1YTk5N2RiIiwKICAgICAgImFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MuZXJyIjogImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLAogICAgICAiYW1waG9yYS1rbm93bi1hbnN3ZXItYmVuY2htYXJrcy5qc29uIjogImZiMDFkNmVmYWNiODI1YjBhMjA0ODMyYmU5ZWQ1MDkwZmFmMTIyMjI5NGQ1ODgwOWY0ODEzYmQzMGM0OTkwMjQiLAogICAgICAiYW1waG9yYS1tb2xlY3VsZS1kZXNpZ24tZ2F0ZS5lcnIiOiAiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsCiAgICAgICJhbXBob3JhLW1vbGVjdWxlLWRlc2lnbi1nYXRlLmpzb24iOiAiYTQyZThmNzM5MjFhYTFlYWM4NGUwYzIwM2ZjZDU3NjNkODZlNjUyYTY4NWQ3ODk4MTJmNGQ2ZDU1Nzk2YTAxZiIsCiAgICAgICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5LmVyciI6ICI1MDliN2Q0NTlkZDkzN2RhYWIwMDI1MDlmZDI0NWUyNzg3NjIwMzdiY2UzZmJhMTZjZWJjMWJkYWYzNjAxMzE2IiwKICAgICAgImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkuanNvbiI6ICJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwKICAgICAgImFtcGhvcmEtb3B0aW1pemVyLW9yY2hlc3RyYXRvci5lcnIiOiAiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsCiAgICAgICJhbXBob3JhLW9wdGltaXplci1vcmNoZXN0cmF0b3IuanNvbiI6ICI4MDEwZDUwNzZmMmU0ZDZlMDhmNTVjMDQ5MmY0MjU1NGNhNjNjZDQzY2ViYzY3ZTFjMWZmNjM0OTA1ZjFlYjM5IiwKICAgICAgImFtcGhvcmEtcmVkdGVhbS1hdWRpdC5lcnIiOiAiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsCiAgICAgICJhbXBob3JhLXJlZHRlYW0tYXVkaXQuanNvbiI6ICJlODA4OTEzYjZjYTZiMGY1M2NlODJiOGIzMzc3N2Q4MzU0MTljNjQwNjk5MWRmNTFmM2Q5MWRlMWQ3YjZlNTVkIiwKICAgICAgImFtcGhvcmEtcmVwb3J0LXBhY2thZ2VyLmVyciI6ICJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwKICAgICAgImFtcGhvcmEtcmVwb3J0LXBhY2thZ2VyLmpzb24iOiAiODRiMGEyMzJiZGJlMGE5NWYwNGYyMjczNGNlYzhlM2MxNTQ3NTYwYTFiN2IzM2JjZGI4ZmJhMzBhNDNjZWQzYyIsCiAgICAgICJhbXBob3JhLXNvdXJjZS1sZWRnZXIuZXJyIjogImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLAogICAgICAiYW1waG9yYS1zb3VyY2UtbGVkZ2VyLmpzb24iOiAiNzZlYzRhYjVmNzBlY2JjZDEzZmRlYTc2OWQ3NjdiOTQ4Y2Q1ZGI3Yzg0ZmQxMDg5MjcyN2I4ZDEzZjM5MjkwMiIKICAgIH0sCiAgICAiZXh0ZXJuYWxfcmV2aWV3X2NvcGllc191c2VkX2Zvcl90aGVfZHJ5X3J1biI6ICJ0aGUgZHJ5IHJ1biBuZWVkcyBhIHNpZ25lZCByZXZpZXcgb25seSB0byByZWFjaCB0aGUgcGxhbjsgdGhlIDggbW9kdWxlcyB0aGF0IGhhdmUgb25lIHdlcmUgZ2l2ZW4gYSBjb3B5IG9mIHRoZWlyIG93biBvbi1kaXNrIHJldmlldyBhdCAvaG9tZS91YnVudHUvd3YxLWRyeXJ1bi1yZXZpZXdzLyAob3V0c2lkZSB0aGUgcmVwb3NpdG9yeSwgYXMgdGhlIHRvb2wgcmVxdWlyZXMpLiBFdmVyeSBvbmUgb2YgdGhlbSB3YXMgcmVmdXNlZCB3aXRoIFJFVklFV19OT1RfQk9VTkRfVE9fTkVXX0VWQUxVQVRJT05fUkVDRUlQVCwgd2hpY2ggaXMgdGhlIGNvcnJlY3QgYW5zd2VyLiIKICB9LAogICJyZWNlaXB0X2xvY2F0aW9uX25vdGUiOiAiYW1waG9yYS1jbGkgaGFzIG5vIGV2aWRlbmNlLyB0cmVlLCBzbyB0aGlzIHJlY2VpcHQgaXMgZmlsZWQgdW5kZXIgYW1waG9yYS1yZWR0ZWFtLWF1ZGl0L2V2aWRlbmNlL3BoYXNlMC9yZXBhaXJzL1dWLTEvZG9uZS8gYXMgaW5zdHJ1Y3RlZC4gVGhlIGVuZ2luZWVyaW5nIGNoYW5nZSBpdHNlbGYgaXMgaW4gYW1waG9yYS1jbGkvc3JjL3BoYXNlMC5ycy4iLAogICJyZWZ1c2FsX3Byb3BlcnRpZXMiOiBbCiAgICB7CiAgICAgICJlbmZvcmNlZF9ieSI6ICJyZXF1aXJlX3JlcGFpcmFibGVfYmluZGluZygpOiByZWZ1c2VzIGV2ZXJ5IG1vZHVsZSBvdXRzaWRlIFVOQk9VTkRfQkVOQ0hNQVJLX1JFU1VMVFMiLAogICAgICAibmVnYXRpdmVfY29udHJvbCI6ICJORUdBVElWRS1DT05UUk9MLWFtcGhvcmEtc29sdmVuY3ktc2NvcmUiLAogICAgICAicHJvcGVydHkiOiAiY2FuIG9ubHkgZXZlciByZXBhaXIgYSBLTk9XTi1CUk9LRU4gYmluZGluZyIsCiAgICAgICJzZWNvbmRfZHluYW1pY19jaGVjayI6ICJwbGFuX3JlX2V2YWx1YXRpb24oKSByZWZ1c2VzIGFnYWluIGlmIHRoZSBzaGlwcGVkIHJlc3VsdCBzdGlsbCBoYXNoZXMgdG8gdGhlIHBpbm5lZCBtZXRyaWNzLmJlbmNobWFya19yZXN1bHRfc2hhMjU2LCBzbyBoZWFsdGh5IGV2aWRlbmNlIGlzIHVucmVhY2hhYmxlIGV2ZW4gaWYgdGhlIHN0YXRpYyBsaXN0IGV2ZXIgZHJpZnRlZCIsCiAgICAgICJ0ZXN0IjogInBoYXNlMDo6dGVzdHM6OnJlX2V2YWx1YXRlX3JlZnVzZXNfZXZlcnlfbW9kdWxlX3dpdGhfYW5faW50YWN0X2JpbmRpbmciCiAgICB9LAogICAgewogICAgICAiZW5mb3JjZWRfYnkiOiAiY2xhcCBtYWtlcyAtLWV2YWx1YXRpb24ta2V5IGFuZCAtLXJldmlldyBtYW5kYXRvcnk7IGxvYWRfc3VwcGxpZWRfcmV2aWV3KCkgcmVmdXNlcyBhbiB1bnNpZ25lZCByZXZpZXcgYW5kIGFueSByZXZpZXcgd2hvc2UgZXZhbHVhdG9yIGFuZCByZXZpZXdlciBpZGVudGl0aWVzIGNvaW5jaWRlIChNb2R1bGVQaGFzZTBSZXZpZXdSZWNlaXB0VjE6OnZhbGlkYXRlIC0+IFNhbWVTaWduZXIpOyBwbGFuX3JlX2V2YWx1YXRpb24oKSBhZGRpdGlvbmFsbHkgcmVxdWlyZXMgdGhlIHJldmlld2VyIGtleSB0byBob2xkIFBIQVNFMF9JTlRFUk5BTF9SRVZJRVdFUiBpbiB0aGUgdHJ1c3Qgc3RvcmUsIHRoZSByZXZpZXcgc2lnbmF0dXJlIHRvIHZlcmlmeSwgdGhlIHJldmlldyB0byBuYW1lIHRoaXMgbW9kdWxlLCB0byBiZSBib3VuZCB0byB0aGUgc3VwcGxpZWQgZXZhbHVhdG9yIGlkZW50aXR5LCBhbmQgdG8gaGF2ZSBhY2NlcHRlZCB0aGUgbW9kdWxlIiwKICAgICAgInByb3BlcnR5IjogImR1YWwgaWRlbnRpdHkgLSBib3RoIGEgZnJlc2ggZXZhbHVhdGlvbiBzaWduYXR1cmUgYW5kIGEgZnJlc2ggaW5kZXBlbmRlbnQtcmV2aWV3IHNpZ25hdHVyZSIsCiAgICAgICJ0ZXN0IjogInBoYXNlMDo6dGVzdHM6OnJlX2V2YWx1YXRlX3JlZnVzZXNfYV9zaW5nbGVfc2lnbmF0dXJlIgogICAgfSwKICAgIHsKICAgICAgImVuZm9yY2VkX2J5IjogImxvYWRfZXZhbHVhdGlvbl9pZGVudGl0eSgpIGNhbGxzIHRoZSB1bmNoYW5nZWQgbG9hZF9zaWduaW5nX2tleSgpLCB3aGljaCByZWZ1c2VzIHJlcG9zaXRvcnktbG9jYWwga2V5cywgc3ltbGlua3MsIGFuZCBub24tMDYwMC8wNzAwIG1vZGVzOyB0aGUgcmV2aWV3IHJlY2VpcHQgbXVzdCBhbHNvIGJlIHN1cHBsaWVkIGZyb20gb3V0c2lkZSB0aGUgcmVwb3NpdG9yeSIsCiAgICAgICJuZWdhdGl2ZV9jb250cm9sIjogIk5FR0FUSVZFLUNPTlRST0wtcmVwby1sb2NhbC1rZXkiLAogICAgICAicHJvcGVydHkiOiAic2lnbmluZyBrZXlzIHN0aWxsIGNvbWUgZnJvbSBvdXRzaWRlIHRoZSByZXBvc2l0b3J5IiwKICAgICAgInRlc3QiOiAicGhhc2UwOjp0ZXN0czo6cmVfZXZhbHVhdGVfcmVmdXNlc19hX3JlcG9zaXRvcnlfbG9jYWxfc2lnbmluZ19rZXkiCiAgICB9LAogICAgewogICAgICAiZW5mb3JjZWRfYnkiOiAicGxhbl9yZV9ldmFsdWF0aW9uKCkgY29tcHV0ZXMgdGhlIHJlcGxhY2VtZW50IHJlY2VpcHQgc2hhMjU2IGJlZm9yZSBhbnkgbXV0YXRpb24gYW5kIGxpc3RzIFJFVklFV19OT1RfQk9VTkRfVE9fTkVXX0VWQUxVQVRJT05fUkVDRUlQVCBhcyBhIGJsb2NraW5nIHJlZnVzYWw7IHJlX2V2YWx1YXRlKCkgYmFpbHMgb24gYW55IGJsb2NraW5nIHJlZnVzYWwgYmVmb3JlIHRvdWNoaW5nIGEgc2luZ2xlIGFydGlmYWN0IiwKICAgICAgIm9ic2VydmVkIjogImFsbCA4IGRyeSBydW5zIHRoYXQgY291bGQgYmUgcGxhbm5lZCByZXBvcnRlZCBleGFjdGx5IHRoaXMgcmVmdXNhbCwgYmVjYXVzZSB0aGUgb24tZGlzayByZXZpZXdzIGJpbmQgdGhlIHN1cGVyc2VkZWQgcmVjZWlwdHMiLAogICAgICAicHJvcGVydHkiOiAidGhlIGZyZXNoIHJldmlldyBtdXN0IGJpbmQgdGhlIHJlY2VpcHQgdGhpcyBydW4gd2lsbCB3cml0ZSIKICAgIH0sCiAgICB7CiAgICAgICJlbmZvcmNlZF9ieSI6ICJSRV9FVkFMVUFUSU9OX1dPVUxEX05PVF9CRV9QSEFTRTBfRUxJR0lCTEUgaXMgYSBibG9ja2luZyByZWZ1c2FsIiwKICAgICAgInByb3BlcnR5IjogImEgcmVwYWlyIG1heSBub3QgbGFuZCBhIG1vZHVsZSBpbiBhIGZhaWxpbmcgc3RhdGUiCiAgICB9LAogICAgewogICAgICAiZW5mb3JjZWRfYnkiOiAidGhlIGRyeS1ydW4gZGlzcGF0Y2ggaXMgd3JhcHBlZCBpbiBhbXBob3JhX2NvcmU6OnByb3ZlX3JlYWRfb25seSgpLCBhbmQgYXJjaGl2ZV9zdXBlcnNlZGVkX2V2aWRlbmNlKCkgaXMgYSBwdXJlIGNvbXB1dGF0aW9uIHdoZW4gYXBwbHkgPT0gZmFsc2UiLAogICAgICAicHJvcGVydHkiOiAiLS1kcnktcnVuIHdyaXRlcyBub3RoaW5nIiwKICAgICAgInRlc3QiOiAicGhhc2UwOjp0ZXN0czo6cmVfZXZhbHVhdGVfZHJ5X3J1bl9tb3Zlc19ub3RoaW5nIgogICAgfSwKICAgIHsKICAgICAgImRldGFpbCI6ICJldmFsdWF0ZSgpIHN0aWxsIGJhaWxzIG9uIGFuIGV4aXN0aW5nIHJlY2VpcHQ7IHJlaXNzdWUoKSBzdGlsbCByZWZ1c2VzIGFmdGVyIGFueSBldmFsdWF0aW9uLCByZXZpZXcsIG9yIG1vdmVtZW50IGhpc3Rvcnk7IHZlcmlmeV9ldmFsdWF0aW9uX3Jlc3VsdCwgdmVyaWZ5X21vZHVsZV93aXRoX3JlcGxheSwgdGhlIFJFVklFV19CSU5ESU5HX01JU01BVENIIGNoZWNrLCBsb2FkX3NpZ25pbmdfa2V5J3MgcmVwby1sb2NhbCByZWZ1c2FsIGFuZCB0aGUgcmVncmVzc2lvbiBndWFyZCBzaGlwcGVkX2JlbmNobWFya19yZXN1bHRzX3N0YXlfYm91bmRfdG9fc2lnbmVkX2V2YWx1YXRpb25fcmVjZWlwdHMgYXJlIHVuY2hhbmdlZC4gVU5CT1VORF9CRU5DSE1BUktfUkVTVUxUUyBtb3ZlZCBmcm9tIHRoZSB0ZXN0IG1vZHVsZSB0byBtb2R1bGUgc2NvcGUgc28gdGhhdCB0aGUgZ3VhcmQgYW5kIHRoZSByZXBhaXIgcGF0aCByZWFkIHRoZSBzYW1lIGxpc3QgYW5kIGNhbm5vdCBkcmlmdCBhcGFydC4iLAogICAgICAicHJvcGVydHkiOiAibm8gZXhpc3RpbmcgZ3VhcmQgd2FzIHdlYWtlbmVkIgogICAgfQogIF0sCiAgInJlcGFpcl9pdGVtIjogIldWLTEiLAogICJyZXBhaXJfbW9kZSI6ICJpbnRlcmFjdGl2ZS0yMDI2LTA4LTA0IiwKICAicmVwYWlyX3RpdGxlIjogImdvdmVybmVkIFBoYXNlLTAgcmUtZXZhbHVhdGlvbiBwYXRoIChidWlsZCB0aGUgdG9vbDsgZG8gbm90IHJ1biB0aGUgY2VyZW1vbnkpIiwKICAicmV2aWV3ZXJfcmVmZXJlbmNlIjogewogICAgImRlcml2ZXNfcGlubmVkX3RydXN0X3N0b3JlX2tleV9pZCI6IHRydWUsCiAgICAia2V5X2lkIjogInBoYXNlMC1pbnRlcm5hbC1yZXZpZXdlci00NzIzM2FmMThlNTExYTMwNTU0OGQ0ZWUzMDZkYTAxODYxMmY1YjVhY2EyMDFmOTk4NjUwNGQzZDdkYjMwMTFiIiwKICAgICJub3RlIjogIlJldmlld2VyIGtleSByZWZlcmVuY2VkIGZvciBwcm92ZW5hbmNlIG9ubHk7IG5vIGluZGVwZW5kZW50IGh1bWFuIHJldmlldyBwZXJmb3JtZWQuIiwKICAgICJwdWJsaWNfa2V5X2hleCI6ICIzM2QzYTVkYmNhZTUyYzQ0OWRmMzZjMDY3MGRmMGZhOWQ4YTYwODE5ZDE2NmMzM2I5NmQ2MmIyYmUxZGIwODNmIiwKICAgICJyZXZpZXdlcl9zaWduYXR1cmVfcHJlc2VudCI6IGZhbHNlLAogICAgInJvbGUiOiAiUEhBU0UwX0lOVEVSTkFMX1JFVklFV0VSIgogIH0sCiAgInNjaGVtYSI6ICJhbXBob3JhLnBoYXNlMC1yZXBhaXIuZG9uZS1yZWNlaXB0LnYxIiwKICAic2lnbmluZ19rZXkiOiB7CiAgICAiZGVyaXZlc19waW5uZWRfdHJ1c3Rfc3RvcmVfa2V5X2lkIjogdHJ1ZSwKICAgICJrZXlfaWQiOiAicGhhc2UwLWV2YWx1YXRvci0zZWY2YjM1Y2RiYmZlYTc0YTk2YTVjOWI5OGE1MTVkNTcxNThhMDllY2FmZjEwYWNmYTFmMTU5OTBiZTAwMTc4IiwKICAgICJwdWJsaWNfa2V5X2hleCI6ICI2Y2YwN2FiZjFhNTVhZGFhYzEzZTc4YWJjMzFjNTMxZDAzZDhmMGQ0MjMyMzQ2MzQ0YTczNjQxOGM3YjQ1NjY0IiwKICAgICJyb2xlIjogIlBIQVNFMF9FVkFMVUFUT1IiLAogICAgInNpZ25zX3BoYXNlMF9ldmFsdWF0aW9uX29yX3JldmlldyI6IGZhbHNlLAogICAgInVzZWRfZm9yIjogIkFVRElUX09OTFkgcmVwYWlyIGRvbmUtcmVjZWlwdCB1bmRlciBldmlkZW5jZS9waGFzZTAvcmVwYWlycy8iCiAgfSwKICAidG9vbCI6IHsKICAgICJhcmNoaXZlX2xheW91dCI6IHsKICAgICAgImNvbnRlbnRzIjogWwogICAgICAgICJldmFsdWF0aW9uLnYxLmRzc2UuanNvbiAocHJpb3IsIGJ5dGUtaWRlbnRpY2FsKSIsCiAgICAgICAgImluZGVwZW5kZW50LXJldmlldy52MS5kc3NlLmpzb24gKHByaW9yLCB3aGVuIG9uZSBleGlzdHMpIiwKICAgICAgICAicmVzdWx0LnYxLmpzb24gKHByaW9yLCBieXRlLWlkZW50aWNhbCkiLAogICAgICAgICJtb3ZlbWVudC9ldmVudHMvPGV2ZW50Pi5qc29uIChwcmlvciwgd2hlbiBvbmUgZXhpc3RzKSIsCiAgICAgICAgIm1vdmVtZW50L2xlZGdlci52MS5qc29uIChwcmlvciwgd2hlbiBhIG1vdmVtZW50IGV2ZW50IGV4aXN0cykiLAogICAgICAgICJyZWV2YWx1YXRpb24tc3VwZXJzZXNzaW9uLW5vdGUudjEuanNvbiIKICAgICAgXSwKICAgICAgImRldGVybWluaXNtIjogInRoZSBub3RlIGVtYmVkcyBubyBjbG9jayByZWFkaW5nOyAtLWFzLW9mIGlzIHN1cHBsaWVkIGJ5IHRoZSBjYWxsZXIgYW5kIHZhbGlkYXRlZCB0byBhIGZpeGVkIHNoYXBlIiwKICAgICAgIm5vdGVfcmVjb3JkcyI6IFsKICAgICAgICAibW9kdWxlX2lkLCBjYWxsZXItc3VwcGxpZWQgYXNfb2YsIGNhbGxlci1zdXBwbGllZCByZWFzb24iLAogICAgICAgICJwcmlvciBldmFsdWF0aW9uIHJlY2VpcHQgLyByZXZpZXcgcmVjZWlwdCAvIGJlbmNobWFyayByZXN1bHQgc2hhMjU2cyIsCiAgICAgICAgInRoZSBwaW5uZWQtdnMtYWN0dWFsIGJlbmNobWFya19yZXN1bHRfc2hhMjU2IG1pc21hdGNoIHRoYXQganVzdGlmaWVzIHRoZSByZXBhaXIiLAogICAgICAgICJ0aGUgcmVwbGFjZW1lbnQgcmVjZWlwdCAvIHJlc3VsdCAvIHJldmlldyBzaGEyNTZzIGFuZCBib3RoIGtleSBpZHMiLAogICAgICAgICJhcmNoaXZlZF9hcnRpZmFjdHMgbWFwLCBhdXRob3JpdHlfdHJhbnNmZXJyZWQ9ZmFsc2UsIHByb21vdGVzX2F1dGhvcml0eT1mYWxzZSIKICAgICAgXSwKICAgICAgIm5vdGVfc2NoZW1hIjogImFtcGhvcmEubW9kdWxlLXBoYXNlMC1yZWV2YWx1YXRpb24tc3VwZXJzZXNzaW9uLnYxIiwKICAgICAgInJvb3QiOiAiPG1vZHVsZT4vZXZpZGVuY2UvcGhhc2UwL3N1cGVyc2VkZWQvPHNoYTI1Ni1vZi1wcmlvci1ldmFsdWF0aW9uLXJlY2VpcHQ+LyIKICAgIH0sCiAgICAiY29tbWFuZCI6ICJwb3J0Zm9saW8gcGhhc2UwIHJlLWV2YWx1YXRlIC0tbW9kdWxlIDxNPiAtLXJlYXNvbiA8dGV4dD4gLS1hcy1vZiA8WVlZWS1NTS1ERFRISDpNTTpTU1o+IC0tZXZhbHVhdGlvbi1rZXkgPGV4dGVybmFsIGtleT4gLS1yZXZpZXcgPHNpZ25lZCByZXZpZXcgcGF0aD4gWy0tZHJ5LXJ1bl0iLAogICAgImVudHJ5X3BvaW50cyI6IFsKICAgICAgIlBoYXNlMENvbW1hbmQ6OlJlRXZhbHVhdGUgKGNsYXAgc3ViY29tbWFuZCwgbmFtZSA9IFwicmUtZXZhbHVhdGVcIikiLAogICAgICAicGxhbl9yZV9ldmFsdWF0aW9uKCkgLSBldmVyeSByZWZ1c2FsLCBjb21wdXRlZCBiZWZvcmUgYW55IG11dGF0aW9uIiwKICAgICAgInJlX2V2YWx1YXRlX2RyeV9ydW4oKSAtIGRpc3BhdGNoZWQgaW5zaWRlIHByb3ZlX3JlYWRfb25seSgpIiwKICAgICAgInJlX2V2YWx1YXRlKCkgLSB0aGUgc2luZ2xlIGdvdmVybmVkIG11dGF0aW9uLCBiYWNrdXAgKyByb2xsYmFjayIsCiAgICAgICJhcmNoaXZlX3N1cGVyc2VkZWRfZXZpZGVuY2UoKSAtIHRoZSBhcmNoaXZlK3N1cGVyc2VkZSBtb3ZlIHNldCIsCiAgICAgICJjb21wb3NlX2V2YWx1YXRpb24oKSAtIHRoZSBzaGFyZWQsIHdyaXRlLWZyZWUgY29tcHV0YXRpb24gb2YgdGhlIHJlcGxhY2VtZW50IGJ5dGVzIiwKICAgICAgImV2YWx1YXRlX3NpZ25lZCgpIC0gdGhlIHNpbmdsZSBsZWdpdGltYXRlIHdyaXRlciBvZiBiZW5jaG1hcmsvcmVzdWx0LnYxLmpzb24iCiAgICBdLAogICAgImZpbGVzX2NoYW5nZWQiOiB7CiAgICAgICJhbXBob3JhLWNsaS9zcmMvcGhhc2UwLnJzIjogImIzOWFjOWJmZjAxY2NkY2M1OTY3YTAwOGY0ZjViNGJmZDIwNzg5NzBhZTcyOGY1MDVkODcyNjgyZDc1MjhmMDUiCiAgICB9LAogICAgImltcGxlbWVudGVkX2luIjogImFtcGhvcmEtY2xpL3NyYy9waGFzZTAucnMiLAogICAgIm1vdmVtZW50X2V2ZW50X2hhbmRsaW5nIjogewogICAgICAicmVzdWx0IjogInRoZSBtb2R1bGUgbGFuZHMgYXQgUFJFX1BIQVNFXzAgLyBwcm9tb3RhYmxlIGFuZCBpdHMgcGhhc2UgbXVzdCBiZSByZS1kZXJpdmVkIGJ5IHRoZSBleGlzdGluZyBgcGhhc2UwIHByb21vdGVgIGNvbW1hbmQ7IHRoZSByZXBhaXIgbmV2ZXIgbWludHMgYSBtb3ZlbWVudCBldmVudCIsCiAgICAgICJ3aGF0IjogInRoZSBwcmlvciBtb3ZlbWVudCBldmVudCBhbmQgbGVkZ2VyIGFyZSBzdXBlcnNlZGVkIGludG8gdGhlIHNhbWUgYXJjaGl2ZSBhbmQgdGhlIGxlZGdlciBpcyByZXNldCB0byB6ZXJvIGV2ZW50cyIsCiAgICAgICJ3aHkiOiAiYSBtb3ZlbWVudCBldmVudCBiaW5kcyBldmFsdWF0aW9uX3JlY2VpcHRfaGFzaC4gQSByZXBsYWNlbWVudCByZWNlaXB0IHRoZXJlZm9yZSBpbnZhbGlkYXRlcyB0aGUgcHJpb3IgbW92ZW1lbnQgY2xhaW0sIGFuZCB2ZXJpZnlfbW9kdWxlX3dpdGhfcmVwbGF5IGhhcmQtYmFpbHMgKFwibW92ZW1lbnQgZXZlbnQgYmluZGluZyBvciBmaWxlbmFtZSBpcyBpbnZhbGlkXCIpIHJhdGhlciB0aGFuIG1lcmVseSBmYWlsaW5nIGEgZ2F0ZSAtIHdoaWNoIHdvdWxkIGJyZWFrIHBvcnRmb2xpbyBzdGF0dXMgZm9yIGFsbCAyOSBtb2R1bGVzLiIKICAgIH0sCiAgICAicm9sbGJhY2siOiAidGhlIG1vZHVsZSB0cmVlIGlzIGNvcGllZCB0byAucGhhc2UwLXJlZXZhbHVhdGUtYmFja3VwLTxtb2R1bGU+LTxwcmlvci1zaGE+IGJlZm9yZSB0aGUgZmlyc3QgbXV0YXRpb24gYW5kIHJlc3RvcmVkIChhbmQgdGhlIGRlY2lzaW9uIHJlcG9ydCByZWdlbmVyYXRlZCkgaWYgYW55IHN0ZXAgZmFpbHMiLAogICAgInNpbmdsZV93cml0ZXJfcHJlc2VydmVkIjogImV2YWx1YXRlKCkgcHJldmlvdXNseSByZXNvbHZlZCB0aGUgZXZhbHVhdG9yIGlkZW50aXR5IGZyb20gdGhlIGVudmlyb25tZW50IGFuZCB0aGVuIHdyb3RlIHRoZSBldmlkZW5jZSBpbmxpbmUuIEl0IG5vdyByZXNvbHZlcyB0aGUgaWRlbnRpdHkgYW5kIGRlbGVnYXRlcyB0byBldmFsdWF0ZV9zaWduZWQoKSwgd2hpY2ggaG9sZHMgdGhlIG9ubHkgd3JpdGVfanNvbl9pbW11dGFibGUgY2FsbCBmb3IgZXZpZGVuY2UvcGhhc2UwL2JlbmNobWFyay9yZXN1bHQudjEuanNvbi4gcmVfZXZhbHVhdGUoKSBjYWxscyB0aGUgc2FtZSBldmFsdWF0ZV9zaWduZWQoKTsgbm8gc2Vjb25kIHdyaXRlciB3YXMgaW50cm9kdWNlZC4gVGhlIHdyaXRlLWZyZWUgaGFsZiB3YXMgZmFjdG9yZWQgaW50byBjb21wb3NlX2V2YWx1YXRpb24oKSwgc28gYSBkcnkgcnVuIHByZWRpY3RzIGJ5dGUtZm9yLWJ5dGUgd2hhdCB0aGUgcmVhbCBydW4gd3JpdGVzLiIKICB9LAogICJ0cnVzdF9hbmNob3JlZF9pbl9waGFzZTBfc3RvcmUiOiB0cnVlCn0=",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "IILvftTI2+HolpktzQQlc1FbIfM1AldIsj0WsKYEpWT77Vne5iecjEquZiSlz+nv+ujCBql0z3UbrdsuBTH0Ag=="
+      }
+    ]
+  }
+}

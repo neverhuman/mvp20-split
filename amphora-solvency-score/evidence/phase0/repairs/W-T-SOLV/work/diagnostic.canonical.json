@@ -1,0 +1,2267 @@
+{
+  "campaign_item_id": "W-T-SOLV",
+  "classification_accuracy": 0.8933333333333333,
+  "fixture_path": "amphora-solvency-score/reference/phase0-solvency-known-answer.v1.json",
+  "formula_cited": "Ra^2 = 4*(dD1-dD2)^2 + (dP1-dP2)^2 + (dH1-dH2)^2; RED = Ra/R0 (Hansen, Hansen Solubility Parameters: A User's Handbook, 2nd ed. 2007, ISBN 9780849372483)",
+  "function_under_test": [
+    "amphora_solvency_score::hansen_ra_squared",
+    "amphora_solvency_score::hansen_red"
+  ],
+  "n_pairs": 75,
+  "n_pairs_prediction_matches_published_label": 67,
+  "n_polymers": 5,
+  "n_solvents": 15,
+  "per_pair": [
+    {
+      "computed_ra_mpa_half": 13.573871960498227,
+      "computed_red": 1.5082079956109142,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Huntsman Araldite GY-6010 TDS: no solubility in aliphatic hydrocarbons"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::n-hexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 14.9,
+        "dh": 0.0,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-hexane"
+    },
+    {
+      "computed_ra_mpa_half": 12.567020331009255,
+      "computed_red": 1.3963355923343617,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Hansen 2nd ed. Fig 5.1 DGEBA: cyclohexane outside sphere"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::cyclohexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 0.2,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "cyclohexane"
+    },
+    {
+      "computed_ra_mpa_half": 10.452272480183437,
+      "computed_red": 1.1613636089092707,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Huntsman Araldite GY-6010 TDS: good solvent"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::toluene",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": false,
+      "solvent_hsp_mpa_half": {
+        "dd": 18.0,
+        "dh": 2.0,
+        "dp": 1.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "toluene"
+    },
+    {
+      "computed_ra_mpa_half": 10.277159140540736,
+      "computed_red": 1.1419065711711929,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Dow DER-331 TDS: xylene compatible"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::p-xylene",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": false,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.6,
+        "dh": 3.1,
+        "dp": 1.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "p-xylene"
+    },
+    {
+      "computed_ra_mpa_half": 3.2999999999999994,
+      "computed_red": 0.3666666666666666,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Hansen 2nd ed. Fig 5.1 DGEBA: within sphere"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::dichloromethane",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.0,
+        "dh": 7.1,
+        "dp": 7.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dichloromethane"
+    },
+    {
+      "computed_ra_mpa_half": 7.555792479945437,
+      "computed_red": 0.8395324977717151,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Sigma-Aldrich DGEBA solubility chart: chloroform good"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::chloroform",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.8,
+        "dh": 5.7,
+        "dp": 3.1
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "chloroform"
+    },
+    {
+      "computed_ra_mpa_half": 6.109009739720503,
+      "computed_red": 0.6787788599689448,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Huntsman Araldite GY-6010 TDS: ester solvents dissolve"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::ethyl-acetate",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 7.2,
+        "dp": 5.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethyl-acetate"
+    },
+    {
+      "computed_ra_mpa_half": 3.8013155617496395,
+      "computed_red": 0.42236839574995994,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Huntsman Araldite GY-6010 TDS: acetone good solvent"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::acetone",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 7.0,
+        "dp": 10.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "acetone"
+    },
+    {
+      "computed_ra_mpa_half": 3.7013511046643472,
+      "computed_red": 0.41126123385159413,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Huntsman Araldite GY-6010 TDS: MEK preferred solvent"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::methyl-ethyl-ketone",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 5.1,
+        "dp": 9.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methyl-ethyl-ketone"
+    },
+    {
+      "computed_ra_mpa_half": 16.07762420259909,
+      "computed_red": 1.7864026891776765,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Dow DER-331 TDS: methanol poor solvent for DGEBA"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::methanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.1,
+        "dh": 22.3,
+        "dp": 12.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methanol"
+    },
+    {
+      "computed_ra_mpa_half": 12.918591254467335,
+      "computed_red": 1.4353990282741484,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Dow DER-331 TDS: ethanol at best partial solvent"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::ethanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 19.4,
+        "dp": 8.8
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethanol"
+    },
+    {
+      "computed_ra_mpa_half": 10.40768946500615,
+      "computed_red": 1.156409940556239,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Dow DER-331 TDS: butanol partial only"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::n-butanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 15.8,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-butanol"
+    },
+    {
+      "computed_ra_mpa_half": 5.047771785649584,
+      "computed_red": 0.5608635317388426,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Sigma-Aldrich DGEBA solubility chart: THF good solvent"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::tetrahydrofuran",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 8.0,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "tetrahydrofuran"
+    },
+    {
+      "computed_ra_mpa_half": 5.360037313302959,
+      "computed_red": 0.5955597014781066,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Hansen 2nd ed. Fig 5.1 DGEBA: DMF within sphere"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::dimethylformamide",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 11.3,
+        "dp": 13.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dimethylformamide"
+    },
+    {
+      "computed_ra_mpa_half": 35.92742684913574,
+      "computed_red": 3.991936316570638,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Universally documented: DGEBA insoluble in water"
+      ],
+      "pair_id": "epoxy-dgeba-linear-uncured::water",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 7.0,
+        "dp": 10.5,
+        "r0": 9.0
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ],
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 42.3,
+        "dp": 16.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "water"
+    },
+    {
+      "computed_ra_mpa_half": 14.874810923168067,
+      "computed_red": 1.729629177112566,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: PMMA insoluble in aliphatic"
+      ],
+      "pair_id": "polymethyl-methacrylate::n-hexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 14.9,
+        "dh": 0.0,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-hexane"
+    },
+    {
+      "computed_ra_mpa_half": 13.285330255586423,
+      "computed_red": 1.54480584367284,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: cyclohexane non-solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::cyclohexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 0.2,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "cyclohexane"
+    },
+    {
+      "computed_ra_mpa_half": 10.700467279516348,
+      "computed_red": 1.2442403813391103,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: PMMA soluble in toluene"
+      ],
+      "pair_id": "polymethyl-methacrylate::toluene",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": false,
+      "solvent_hsp_mpa_half": {
+        "dd": 18.0,
+        "dh": 2.0,
+        "dp": 1.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "toluene"
+    },
+    {
+      "computed_ra_mpa_half": 10.658799181896617,
+      "computed_red": 1.239395253708909,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: xylene good solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::p-xylene",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": false,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.6,
+        "dh": 3.1,
+        "dp": 1.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "p-xylene"
+    },
+    {
+      "computed_ra_mpa_half": 4.543126676640221,
+      "computed_red": 0.5282705437953745,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: DCM excellent solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::dichloromethane",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.0,
+        "dh": 7.1,
+        "dp": 7.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dichloromethane"
+    },
+    {
+      "computed_ra_mpa_half": 7.782030583337488,
+      "computed_red": 0.9048872771322661,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: chloroform standard PMMA solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::chloroform",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.8,
+        "dh": 5.7,
+        "dp": 3.1
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "chloroform"
+    },
+    {
+      "computed_ra_mpa_half": 7.647875521999559,
+      "computed_red": 0.8892878513952976,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: ethyl acetate compatible"
+      ],
+      "pair_id": "polymethyl-methacrylate::ethyl-acetate",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 7.2,
+        "dp": 5.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethyl-acetate"
+    },
+    {
+      "computed_ra_mpa_half": 6.220932405998319,
+      "computed_red": 0.7233642332556185,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: acetone excellent PMMA solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::acetone",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 7.0,
+        "dp": 10.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "acetone"
+    },
+    {
+      "computed_ra_mpa_half": 5.920304046246277,
+      "computed_red": 0.6884074472379392,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: MEK dissolves PMMA"
+      ],
+      "pair_id": "polymethyl-methacrylate::methyl-ethyl-ketone",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 5.1,
+        "dp": 9.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methyl-ethyl-ketone"
+    },
+    {
+      "computed_ra_mpa_half": 16.470579831930632,
+      "computed_red": 1.9151837013872828,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: methanol non-solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::methanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.1,
+        "dh": 22.3,
+        "dp": 12.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methanol"
+    },
+    {
+      "computed_ra_mpa_half": 13.261221663180205,
+      "computed_red": 1.5420025189744424,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: ethanol non-solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::ethanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 19.4,
+        "dp": 8.8
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethanol"
+    },
+    {
+      "computed_ra_mpa_half": 10.907336980216575,
+      "computed_red": 1.2682949976996019,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: butanol non-solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::n-butanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 15.8,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-butanol"
+    },
+    {
+      "computed_ra_mpa_half": 6.020797289396148,
+      "computed_red": 0.7000927080693196,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: THF excellent PMMA solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::tetrahydrofuran",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 8.0,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "tetrahydrofuran"
+    },
+    {
+      "computed_ra_mpa_half": 5.517245689653491,
+      "computed_red": 0.6415401964713362,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: DMF good solvent"
+      ],
+      "pair_id": "polymethyl-methacrylate::dimethylformamide",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 11.3,
+        "dp": 13.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dimethylformamide"
+    },
+    {
+      "computed_ra_mpa_half": 35.77331407627758,
+      "computed_red": 4.159687683288091,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Universally documented: PMMA insoluble in water"
+      ],
+      "pair_id": "polymethyl-methacrylate::water",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.6,
+        "dh": 7.5,
+        "dp": 10.5,
+        "r0": 8.6
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ],
+      "polymer_id": "polymethyl-methacrylate",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 42.3,
+        "dp": 16.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "water"
+    },
+    {
+      "computed_ra_mpa_half": 12.988456413292536,
+      "computed_red": 3.71098754665501,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: PVC insoluble in aliphatic"
+      ],
+      "pair_id": "polyvinyl-chloride::n-hexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 14.9,
+        "dh": 0.0,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-hexane"
+    },
+    {
+      "computed_ra_mpa_half": 11.38859078200635,
+      "computed_red": 3.253883080573243,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: cyclohexane non-solvent"
+      ],
+      "pair_id": "polyvinyl-chloride::cyclohexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 0.2,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "cyclohexane"
+    },
+    {
+      "computed_ra_mpa_half": 8.778382538941898,
+      "computed_red": 2.508109296840542,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: toluene marginal, classified non-solvent"
+      ],
+      "pair_id": "polyvinyl-chloride::toluene",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 18.0,
+        "dh": 2.0,
+        "dp": 1.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "toluene"
+    },
+    {
+      "computed_ra_mpa_half": 8.410112960002381,
+      "computed_red": 2.4028894171435375,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: xylene non-solvent for PVC"
+      ],
+      "pair_id": "polyvinyl-chloride::p-xylene",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.6,
+        "dh": 3.1,
+        "dp": 1.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "p-xylene"
+    },
+    {
+      "computed_ra_mpa_half": 2.6907248094147413,
+      "computed_red": 0.7687785169756404,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Brandrup PH VII/571: DCM standard PVC solvent"
+      ],
+      "pair_id": "polyvinyl-chloride::dichloromethane",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.0,
+        "dh": 7.1,
+        "dp": 7.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dichloromethane"
+    },
+    {
+      "computed_ra_mpa_half": 5.173006862551025,
+      "computed_red": 1.4780019607288644,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Brandrup PH VII/571: chloroform good PVC solvent"
+      ],
+      "pair_id": "polyvinyl-chloride::chloroform",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": false,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.8,
+        "dh": 5.7,
+        "dp": 3.1
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "chloroform"
+    },
+    {
+      "computed_ra_mpa_half": 5.393514624064718,
+      "computed_red": 1.541004178304205,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: ethyl acetate non-solvent for PVC"
+      ],
+      "pair_id": "polyvinyl-chloride::ethyl-acetate",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 7.2,
+        "dp": 5.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethyl-acetate"
+    },
+    {
+      "computed_ra_mpa_half": 6.265780079128215,
+      "computed_red": 1.7902228797509188,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: acetone non-solvent, only swelling"
+      ],
+      "pair_id": "polyvinyl-chloride::acetone",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 7.0,
+        "dp": 10.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "acetone"
+    },
+    {
+      "computed_ra_mpa_half": 5.643580423808984,
+      "computed_red": 1.6124515496597098,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Brandrup PH VII/571: MEK dissolves PVC"
+      ],
+      "pair_id": "polyvinyl-chloride::methyl-ethyl-ketone",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": false,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 5.1,
+        "dp": 9.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methyl-ethyl-ketone"
+    },
+    {
+      "computed_ra_mpa_half": 16.04618334682737,
+      "computed_red": 4.584623813379248,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: alcohols non-solvents"
+      ],
+      "pair_id": "polyvinyl-chloride::methanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.1,
+        "dh": 22.3,
+        "dp": 12.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methanol"
+    },
+    {
+      "computed_ra_mpa_half": 12.163058825805289,
+      "computed_red": 3.4751596645157967,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: ethanol non-solvent"
+      ],
+      "pair_id": "polyvinyl-chloride::ethanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 19.4,
+        "dp": 8.8
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethanol"
+    },
+    {
+      "computed_ra_mpa_half": 8.879752248796134,
+      "computed_red": 2.5370720710846095,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: butanol non-solvent"
+      ],
+      "pair_id": "polyvinyl-chloride::n-butanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 15.8,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-butanol"
+    },
+    {
+      "computed_ra_mpa_half": 3.3421549934136783,
+      "computed_red": 0.9549014266896224,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Brandrup PH VII/571: THF preferred PVC solvent"
+      ],
+      "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 8.0,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "tetrahydrofuran"
+    },
+    {
+      "computed_ra_mpa_half": 7.071067811865475,
+      "computed_red": 2.020305089104421,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Brandrup PH VII/571: DMF preferred PVC solvent"
+      ],
+      "pair_id": "polyvinyl-chloride::dimethylformamide",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": false,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 11.3,
+        "dp": 13.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dimethylformamide"
+    },
+    {
+      "computed_ra_mpa_half": 35.459977439361126,
+      "computed_red": 10.131422125531751,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Universally documented: PVC insoluble in water"
+      ],
+      "pair_id": "polyvinyl-chloride::water",
+      "polymer_hsp_mpa_half": {
+        "dd": 18.2,
+        "dh": 8.3,
+        "dp": 7.5,
+        "r0": 3.5
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ],
+      "polymer_id": "polyvinyl-chloride",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 42.3,
+        "dp": 16.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "water"
+    },
+    {
+      "computed_ra_mpa_half": 14.695917800532229,
+      "computed_red": 1.1571588819316716,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: PS insoluble in aliphatic"
+      ],
+      "pair_id": "polystyrene::n-hexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 14.9,
+        "dh": 0.0,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-hexane"
+    },
+    {
+      "computed_ra_mpa_half": 11.46516463030514,
+      "computed_red": 0.9027688685279638,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: cyclohexane theta solvent, dissolves PS"
+      ],
+      "pair_id": "polystyrene::cyclohexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 0.2,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "cyclohexane"
+    },
+    {
+      "computed_ra_mpa_half": 8.258934555982389,
+      "computed_red": 0.6503098075576684,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: toluene standard PS solvent"
+      ],
+      "pair_id": "polystyrene::toluene",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 18.0,
+        "dh": 2.0,
+        "dp": 1.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "toluene"
+    },
+    {
+      "computed_ra_mpa_half": 8.901685233707154,
+      "computed_red": 0.7009200971422956,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: xylene excellent PS solvent"
+      ],
+      "pair_id": "polystyrene::p-xylene",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.6,
+        "dh": 3.1,
+        "dp": 1.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "p-xylene"
+    },
+    {
+      "computed_ra_mpa_half": 9.16787870774914,
+      "computed_red": 0.7218802132085936,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: DCM good PS solvent"
+      ],
+      "pair_id": "polystyrene::dichloromethane",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.0,
+        "dh": 7.1,
+        "dp": 7.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dichloromethane"
+    },
+    {
+      "computed_ra_mpa_half": 7.632168761236874,
+      "computed_red": 0.6009581701761318,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: chloroform excellent"
+      ],
+      "pair_id": "polystyrene::chloroform",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.8,
+        "dh": 5.7,
+        "dp": 3.1
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "chloroform"
+    },
+    {
+      "computed_ra_mpa_half": 11.386834503056589,
+      "computed_red": 0.8966011419729598,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: ethyl acetate compatible"
+      ],
+      "pair_id": "polystyrene::ethyl-acetate",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 7.2,
+        "dp": 5.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethyl-acetate"
+    },
+    {
+      "computed_ra_mpa_half": 12.767536959022285,
+      "computed_red": 1.0053178707891564,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: acetone non-solvent, marginal"
+      ],
+      "pair_id": "polystyrene::acetone",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 7.0,
+        "dp": 10.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "acetone"
+    },
+    {
+      "computed_ra_mpa_half": 11.101351269102334,
+      "computed_red": 0.8741221471734122,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: MEK compatible with PS"
+      ],
+      "pair_id": "polystyrene::methyl-ethyl-ketone",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 5.1,
+        "dp": 9.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methyl-ethyl-ketone"
+    },
+    {
+      "computed_ra_mpa_half": 22.80372776543344,
+      "computed_red": 1.7955691153884599,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: alcohols non-solvents"
+      ],
+      "pair_id": "polystyrene::methanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.1,
+        "dh": 22.3,
+        "dp": 12.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methanol"
+    },
+    {
+      "computed_ra_mpa_half": 18.921152184790436,
+      "computed_red": 1.4898545027394046,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: ethanol non-solvent"
+      ],
+      "pair_id": "polystyrene::ethanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 19.4,
+        "dp": 8.8
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethanol"
+    },
+    {
+      "computed_ra_mpa_half": 15.640332477284492,
+      "computed_red": 1.2315222423058656,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: butanol non-solvent"
+      ],
+      "pair_id": "polystyrene::n-butanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 15.8,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-butanol"
+    },
+    {
+      "computed_ra_mpa_half": 9.731392500562292,
+      "computed_red": 0.7662513779970309,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: THF preferred PS solvent"
+      ],
+      "pair_id": "polystyrene::tetrahydrofuran",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 8.0,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "tetrahydrofuran"
+    },
+    {
+      "computed_ra_mpa_half": 13.12440474840669,
+      "computed_red": 1.0334176967249362,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Van Krevelen 4th ed Table 7.5: DMF marginal but dissolves PS"
+      ],
+      "pair_id": "polystyrene::dimethylformamide",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": false,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 11.3,
+        "dp": 13.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dimethylformamide"
+    },
+    {
+      "computed_ra_mpa_half": 41.01950755433322,
+      "computed_red": 3.229882484593167,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Universally documented: PS insoluble in water"
+      ],
+      "pair_id": "polystyrene::water",
+      "polymer_hsp_mpa_half": {
+        "dd": 21.3,
+        "dh": 4.3,
+        "dp": 5.8,
+        "r0": 12.7
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ],
+      "polymer_id": "polystyrene",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 42.3,
+        "dp": 16.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "water"
+    },
+    {
+      "computed_ra_mpa_half": 18.334939323597446,
+      "computed_red": 3.5950861418818523,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: nylon insoluble in aliphatic"
+      ],
+      "pair_id": "polyamide-nylon66::n-hexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 14.9,
+        "dh": 0.0,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-hexane"
+    },
+    {
+      "computed_ra_mpa_half": 17.515992692394,
+      "computed_red": 3.4345083710576474,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: cyclohexane non-solvent"
+      ],
+      "pair_id": "polyamide-nylon66::cyclohexane",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 0.2,
+        "dp": 0.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "cyclohexane"
+    },
+    {
+      "computed_ra_mpa_half": 15.246311029229332,
+      "computed_red": 2.989472750829281,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: toluene non-solvent for Nylon 66"
+      ],
+      "pair_id": "polyamide-nylon66::toluene",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 18.0,
+        "dh": 2.0,
+        "dp": 1.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "toluene"
+    },
+    {
+      "computed_ra_mpa_half": 14.547164672196434,
+      "computed_red": 2.8523852298424384,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: xylene non-solvent"
+      ],
+      "pair_id": "polyamide-nylon66::p-xylene",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.6,
+        "dh": 3.1,
+        "dp": 1.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "p-xylene"
+    },
+    {
+      "computed_ra_mpa_half": 7.978095010715277,
+      "computed_red": 1.5643323550422112,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: DCM non-solvent for Nylon 66"
+      ],
+      "pair_id": "polyamide-nylon66::dichloromethane",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.0,
+        "dh": 7.1,
+        "dp": 7.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dichloromethane"
+    },
+    {
+      "computed_ra_mpa_half": 11.228980363327741,
+      "computed_red": 2.201760855554459,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: chloroform non-solvent"
+      ],
+      "pair_id": "polyamide-nylon66::chloroform",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.8,
+        "dh": 5.7,
+        "dp": 3.1
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "chloroform"
+    },
+    {
+      "computed_ra_mpa_half": 9.282241108697832,
+      "computed_red": 1.8200472762152613,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: ester non-solvent"
+      ],
+      "pair_id": "polyamide-nylon66::ethyl-acetate",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 7.2,
+        "dp": 5.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethyl-acetate"
+    },
+    {
+      "computed_ra_mpa_half": 8.511756575466663,
+      "computed_red": 1.668971877542483,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: acetone non-solvent"
+      ],
+      "pair_id": "polyamide-nylon66::acetone",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 7.0,
+        "dp": 10.4
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "acetone"
+    },
+    {
+      "computed_ra_mpa_half": 9.944847912361455,
+      "computed_red": 1.949970178894403,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: MEK non-solvent"
+      ],
+      "pair_id": "polyamide-nylon66::methyl-ethyl-ketone",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 5.1,
+        "dp": 9.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methyl-ethyl-ketone"
+    },
+    {
+      "computed_ra_mpa_half": 9.284934033152847,
+      "computed_red": 1.8205753006182055,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: methanol non-solvent (partial swelling)"
+      ],
+      "pair_id": "polyamide-nylon66::methanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.1,
+        "dh": 22.3,
+        "dp": 12.3
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "methanol"
+    },
+    {
+      "computed_ra_mpa_half": 5.872818744010406,
+      "computed_red": 1.151533087060864,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: ethanol non-solvent"
+      ],
+      "pair_id": "polyamide-nylon66::ethanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.8,
+        "dh": 19.4,
+        "dp": 8.8
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "ethanol"
+    },
+    {
+      "computed_ra_mpa_half": 5.188448708429138,
+      "computed_red": 1.0173428840057133,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: butanol non-solvent"
+      ],
+      "pair_id": "polyamide-nylon66::n-butanol",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.0,
+        "dh": 15.8,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "n-butanol"
+    },
+    {
+      "computed_ra_mpa_half": 7.9145435749637505,
+      "computed_red": 1.5518712892085786,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: THF non-solvent for Nylon 66"
+      ],
+      "pair_id": "polyamide-nylon66::tetrahydrofuran",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 16.8,
+        "dh": 8.0,
+        "dp": 5.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "tetrahydrofuran"
+    },
+    {
+      "computed_ra_mpa_half": 5.032891812864646,
+      "computed_red": 0.9868415319342444,
+      "observed_compatible_published": true,
+      "observed_source": [
+        "Brandrup PH VII/571: DMF dissolves Nylon 66 at elevated T"
+      ],
+      "pair_id": "polyamide-nylon66::dimethylformamide",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": true,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 11.3,
+        "dp": 13.7
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "dimethylformamide"
+    },
+    {
+      "computed_ra_mpa_half": 28.617127738471584,
+      "computed_red": 5.61120151734737,
+      "observed_compatible_published": false,
+      "observed_source": [
+        "Brandrup PH VII/571: water non-solvent for Nylon 66 (swelling only)"
+      ],
+      "pair_id": "polyamide-nylon66::water",
+      "polymer_hsp_mpa_half": {
+        "dd": 17.4,
+        "dh": 14.6,
+        "dp": 9.9,
+        "r0": 5.1
+      },
+      "polymer_hsp_source": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ],
+      "polymer_id": "polyamide-nylon66",
+      "predicted_compatible_red_lt_1": false,
+      "prediction_matches_published_label": true,
+      "solvent_hsp_mpa_half": {
+        "dd": 15.5,
+        "dh": 42.3,
+        "dp": 16.0
+      },
+      "solvent_hsp_source": [
+        "Hansen 2nd ed. Table A.1"
+      ],
+      "solvent_id": "water"
+    }
+  ],
+  "schema": "amphora.solvency-score-hsp-numeric-validation.v1"
+}

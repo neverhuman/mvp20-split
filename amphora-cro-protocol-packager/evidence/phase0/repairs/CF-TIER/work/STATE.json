@@ -1,0 +1,41 @@
+{
+  "schema": "amphora.cro-protocol-packager.cf-tier-state.v1",
+  "campaign_item_id": "CF-TIER",
+  "module": "amphora-cro-protocol-packager",
+  "fires": [
+    {
+      "fire_id": "20260811T010002-3792091-02db64088081",
+      "outcome": "CLAIM_REFUTED",
+      "attack": "per-element evidence-tier crosswalk audit: enumerated all 12 BOM ingredient-choice lines + 12 BOM loading-level lines (blueprint.md Section 1) + 12 process parameters (blueprint.md Section 2, cro_protocol.md envelope-derived cure/mix/thinning section, capture_template.json process fields) and checked each for a MEASURED/MODELED/ASSUMED tag with a co-located confidence rating, plus a Dataset Ledger or commissioned-measurement cross-reference for any MODELED/ASSUMED element",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-TIER/attempts/cf-tier-evidence-tier-crosswalk-audit-receipt.v1.dsse.json",
+      "key_findings": [
+        "36/36 audited elements (12 ingredient choices, 12 loading levels, 12 process parameters) carry ZERO occurrence of the literal words MEASURED/MODELED/ASSUMED anywhere in their citation cell or source excerpt",
+        "the deliverable corpus already HAS an evidence-tier vocabulary (blueprint.md line 7: REAL-ARITHMETIC / RULE-CITED / MODELED-VALIDATED / CRO-GATED) but it is a coarser, receipt-level scheme, never applied per-BOM-line or per-process-parameter, and uses different tag names than CF-TIER's required MEASURED/MODELED/ASSUMED vocabulary",
+        "zero occurrences of the literal word confidence anywhere across blueprint.md + cro_protocol.md + capture_template.json",
+        "zero of the 14 live amphora-dataset-recon Dataset Ledger entries declare serves.module_gaps containing amphora-cro-protocol-packager -- the crosswalk gap is total in both directions, not just missing tags on the recipe side",
+        "this closely extends (does not repeat) sibling item CF-BOM fire 1's narrower finding of no line-level evidence tier -- CF-TIER additionally requires the specific MEASURED/MODELED/ASSUMED vocabulary, a co-located confidence rating, and the Dataset Ledger cross-reference, none of which exist under any naming"
+      ]
+    },
+    {
+      "fire_id": "20260811T020001-10136-2a8a486d963b",
+      "outcome": "CLAIM_REFUTED",
+      "repair_status": "fix_landed_refuted",
+      "attack": "repair + re-attack: tagged the 9/12 process parameters whose audit-script-matched text lives in files this module may write (cro_protocol.md, capture_template.json) with inline [TIER confidence=X ...] annotations, each within the ORIGINAL v1 script's 60-char match window, with commissioned_measurement xrefs for the MODELED/ASSUMED ones; authored a companion crosswalk file for all 36 elements; re-ran the byte-unmodified v1 audit script (sha256 301c5fd6db6bebdcaced0207ca29085f50cf0a9e2c53adcd4c4e70f079c2d089) twice (two-replay byte-identical, sha256 420151c4319d66dba3cf2d47520c0a29875027a25f48f292eec3822b3f7a27fa) against the repaired live corpus",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-TIER/attempts/cf-tier-crosswalk-repair-fire2-receipt.v1.dsse.json",
+      "key_findings": [
+        "9/36 elements flipped from failing to passing: process_parameter:{mix_ratio_tolerance_pct,dry_to_touch_h,functional_cure_h,recoat_window_h,thinning_limit_pct,dft_target_mil,profile_target_mil,relative_humidity_pct,application_method}",
+        "n_elements_failing_refutation_criterion dropped from 36/36 (fire 1) to 27/36 (fire 2), mechanically verified by the SAME unmodified fire-1 script, not a new/weaker checker",
+        "the remaining 27 (all 24 BOM ingredient_choice/loading_level elements + 3 process parameters: mix_ratio_by_volume, induction_time_min, pot_life_h) have their first regex-matched text inside amphora-report-packager/reference/mvp20/out/blueprint.md, a file amphora-cro-protocol-packager fires may not write -- confirmed by locating each element's exact source_excerpt in the fire-1 diagnostic before attempting any edit",
+        "still 0/14 live Dataset Ledger entries declare serves.module_gaps containing amphora-cro-protocol-packager, so this fire's MODELED/ASSUMED tags all used the commissioned_measurement xref form the refutation criterion also permits, rather than a Dataset Ledger citation",
+        "fire-1 evidence (diagnostic.canonical.json, sha256 aab7e5bc...) was transiently overwritten by running the unmodified script in place, then restored via git checkout and verified byte-identical before signing -- future fires re-running the v1 script in place must redirect OUTDIR or restore afterward the same way"
+      ]
+    }
+  ],
+  "next_fire_should": [
+    "CF-TIER's max_fires=2 is now exhausted. No further amphora-cro-protocol-packager-scoped fire can close the remaining 27/36 elements: it requires either (a) a report-packager-scoped campaign item to inline-tag blueprint.md's BOM citation cells and Section-1/Engine-verdict process-parameter prose (the same cross-module block CF-BOM's sibling item hit), (b) re-scoping the audit checker so the companion crosswalk file (evidence/phase0/dataset/cf-tier-crosswalk.v1.json) counts as the tag location for blueprint.md-sourced elements instead of requiring in-place text, or (c) at least one amphora-dataset-recon Dataset Ledger entry declaring serves.module_gaps including amphora-cro-protocol-packager.",
+    "if a report-packager-scoped item is opened, blueprint.md's BOM table citation cells need a short bracketed [TIER confidence=X] annotation per the same pattern used here in cro_protocol.md/capture_template.json, and the loading-level values need a MODELED tag + commissioned_measurement xref pointing at the gravimetric charge-order confirmation already described in cf-tier-crosswalk.v1.json"
+  ],
+  "last_updated_fire_id": "20260811T020001-10136-2a8a486d963b",
+  "campaign_item_status": "blocked",
+  "budget_exhausted": true
+}

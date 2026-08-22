@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "4cb9a970ed4dcec47f4ac6c2b74d11e6d8fed41df00a05ac09dcb95c262e4601",
+  "import_hashes": [],
+  "module_id": "amphora-model-card-authority",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

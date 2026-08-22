@@ -1,0 +1,32 @@
+{
+  "$id": "https://amphora.local/schemas/module-phase0-bundle.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "required": ["schema", "module_id", "module_class", "registry_manifest_hash", "source_lock_hash", "dataset_manifest_hash", "split_manifest_hash", "benchmark_lock_hash", "promotion_policy_hash", "claim_contract_hash", "technical_dossier_hash", "prior_art_hash", "disclosure_log_hash", "parents", "toolkit_versions", "applicability_domain", "claim_locks", "review_packet_blinded"],
+  "properties": {
+    "schema": {"const": "amphora.module-phase0-bundle.v1"},
+    "module_id": {"$ref": "#/$defs/module"},
+    "module_class": {"enum": ["DETERMINISTIC_CONTROL", "SCIENTIFIC_OR_EVIDENCE"]},
+    "registry_manifest_hash": {"$ref": "#/$defs/hash"},
+    "source_lock_hash": {"$ref": "#/$defs/hash"},
+    "dataset_manifest_hash": {"$ref": "#/$defs/hash"},
+    "split_manifest_hash": {"$ref": "#/$defs/hash"},
+    "benchmark_lock_hash": {"$ref": "#/$defs/hash"},
+    "promotion_policy_hash": {"$ref": "#/$defs/hash"},
+    "claim_contract_hash": {"$ref": "#/$defs/hash"},
+    "technical_dossier_hash": {"$ref": "#/$defs/hash"},
+    "prior_art_hash": {"$ref": "#/$defs/hash"},
+    "disclosure_log_hash": {"$ref": "#/$defs/hash"},
+    "parents": {"type": "object", "minProperties": 9, "additionalProperties": {"$ref": "#/$defs/hash"}, "propertyNames": {"pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"}},
+    "toolkit_versions": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "applicability_domain": {"$ref": "#/$defs/nonempty"},
+    "claim_locks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "review_packet_blinded": {"const": true}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "module": {"type": "string", "pattern": "^amphora-[a-z0-9-]+$"},
+    "nonempty": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "type": "object"
+}

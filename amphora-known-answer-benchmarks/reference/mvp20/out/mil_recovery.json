@@ -1,0 +1,115 @@
+{
+ "f160_density_recovery": {
+  "formula": "F160 Black (MIL-DTL-24441/38A)",
+  "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_38A.025630.pdf",
+  "sha256": "de79ccd06fb21a2ed2913ea2ad57c2ceb4db14f39c0d8261fea3eb65f2c6eef0",
+  "source_conflict": {
+   "status": "OPEN - source conflict pending authoritative /38B or NAVSEA/DLA confirmation",
+   "issue": "The public /38A Formula 160 black record and extracted table structure do not by themselves close the Component-B epoxy_resin/silica assignment with enough authority for known-answer recovery credit.",
+   "printed_or_extracted_values_under_review": {
+    "component_B_epoxy_resin_lb": 709.0,
+    "component_B_silica_lb": 62.0,
+    "component_B_black_iron_oxide_lb": 126.0,
+    "component_B_naphtha_lb": 147.0
+   },
+   "physical_reconciliation": "Epoxy 709 lb / silica 62 lb reconciles Component-B density near the reported 10.2-10.6 lb/gal range and gives a plausible epoxy-rich vehicle; the reversed reading gives an implausibly high density and stoichiometry. This is a provisional physical reconciliation, not an authoritative correction.",
+   "formula_161_comparison": "Formula 161 /39B yellow shows the same base architecture with yellow iron oxide replacing black iron oxide; it supports the reconciliation but does not resolve the /38A black authority conflict.",
+   "claim_limit": "Do not use Formula 160 black for strong known-answer recovery, qualification, or exact-reproduction claims until an authoritative /38B or NAVSEA/DLA-confirmed source closes the conflict."
+  },
+  "source_status": "provisional physical reconciliation pending authoritative /38B or NAVSEA/DLA confirmation",
+  "component_A": {
+   "recomputed_lb_gal": 8.22,
+   "reported_lb_gal": [
+    7.9,
+    8.3
+   ],
+   "within_pm0.3": true
+  },
+  "component_B": {
+   "recomputed_lb_gal": 10.24,
+   "reported_lb_gal": [
+    10.2,
+    10.6
+   ],
+   "within_pm0.3": true
+  },
+  "mixed_density_lb_gal": {
+   "from_BOM": 9.23,
+   "from_reported_components": 9.25,
+   "envelope_target": 9.1,
+   "note": "F160 black computes ~9.2-9.3 lb/gal (heavier than the 9.1 envelope target -- consistent with C-002: mineral-filled class sits slightly heavy)"
+  },
+  "approx_lines": {
+   "A": [],
+   "B": [],
+   "note": "black_iron_oxide density mapped to iron_oxide_red class (APPROX, same oxide family); polyamide/adduct -> reactive-polyamide class density (APPROX)"
+  },
+  "verdict": "PROVISIONAL_RECONCILIATION"
+ },
+ "architecture_recovery": {
+  "government_architecture": {
+   "chemistry": "two-component epoxy-polyamide (polyamide + polyamide adduct curative)",
+   "epoxy_EEW_range": [
+    175,
+    195
+   ],
+   "mix_ratio_by_volume": "1:1 (~102 gal each component)",
+   "curative_side": "Component A = polyamide + polyamide adduct + silica extender + mineral-spirits/butyl-alcohol solvents",
+   "epoxy_side": "Component B = epoxy resin + silica extender (bulk) + color iron oxide + naphtha",
+   "extender": "silica (magnesium-silicate/silica class), loaded mainly on the epoxy side",
+   "solvents": "aliphatic (mineral spirits/naphtha) + aromatic-class + n-butyl alcohol",
+   "pot_life_h": [
+    4,
+    6
+   ],
+   "voc_g_l_max": 340,
+   "color_role": "iron-oxide color pigment is identification-only; black/yellow are twins of one base"
+  },
+  "engine_lead": {
+   "id": "M00097",
+   "resin": "dgeba_828",
+   "resin_EEW": 188.5,
+   "hardener": "ancamide_350a",
+   "R": 0.7,
+   "solvents": [
+    "naphtha",
+    "n_butanol"
+   ],
+   "voc": 281.499,
+   "mix_ratio": 1.0,
+   "stoich_R": 0.7,
+   "silicate_extenders_used": [
+    "silica"
+   ]
+  },
+  "recovery_checks": {
+   "chemistry_epoxy_polyamide": true,
+   "epoxy_EEW_in_gov_band": true,
+   "one_to_one_by_volume": true,
+   "silicate_class_extender_present": true,
+   "solvent_families_match": true,
+   "voc_under_340": true,
+   "both_components_pigmented": true,
+   "sub_stoichiometric_like_gov_F160": true
+  },
+  "recovery_score_computed": "8/8",
+  "design_consistency_notes": {
+   "pot_life_gate_uses_class_precedent_4to6h": "design choice (cure card failed; class precedent cited)",
+   "black_yellow_colorway_twins": "design choice mirroring gov F160/F161 one-base-swapped-color pattern"
+  },
+  "honesty": "ENVELOPE-FORCED: epoxy-polyamide, 1:1 volume, solvent-borne, VOC<=340. INDEPENDENTLY RECOVERED by the zero-prior funnel and CONFIRMED against the government F160/F161 slash sheets on the 8 COMPUTED checks above (epoxy EEW in the 175-195 gov band = 188.5, reactive-polyamide curative, silicate-class extender = ['silica'], gov-precedent solvent families, sub-stoichiometric R matching gov F160's own R~0.78). The two pot-life/color items are DESIGN CHOICES consistent with the class, reported separately and NOT counted as recovery. DIVERGENCES (honest): the government uses SiO2 silica as the bulk extender loaded mainly on the epoxy side; the engine may use other silicate-class minerals split across both components; which side is labelled 'A' vs 'B' is inverted (chemically identical two-component epoxy/polyamide split)."
+ },
+ "f160_pvc_benchmark": {
+  "gov_F160_pvc_pct": 8.2,
+  "gov_F160_lambda": 0.16,
+  "gov_F160_R": 0.78,
+  "engine_lead_pvc_pct": 9.3,
+  "filled_commercial_spf_pvc_pct": [
+   33.8,
+   32.5,
+   33.8,
+   37.5
+  ],
+  "honesty": "The Navy's OWN qualified black primer (Formula 160) is RESIN-RICH: PVC ~8% (barrier by crosslink density + a modest silica extender, NOT by heavy filler). The 32-38% PVC figure is the FILLED anticorrosive-SPF style (Evonik commercial guides) -- a different, equally valid barrier philosophy. The engine lead sits BETWEEN, closer to the government primer. There are two legitimate barrier strategies; the blueprint follows the government's."
+ }
+}

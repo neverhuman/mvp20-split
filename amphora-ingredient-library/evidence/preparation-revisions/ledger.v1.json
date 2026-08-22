@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-9c822cd515f1182e407be1ce64cc9336e8a88abed7d2ee213610fabe61d1a04d",
+  "module_id": "amphora-ingredient-library",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-96b8d06e9a6aad96fe4cfb4cf94cd3aaad7cdadcad857da6189d655fe1082bcc.json",
+      "revision_id": "preparation-revision-96b8d06e9a6aad96fe4cfb4cf94cd3aaad7cdadcad857da6189d655fe1082bcc",
+      "sha256": "c67554a1c9cb292a81b8f945348e30c1729c992287b4052d2c7dc8be190ac7a7"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-9c822cd515f1182e407be1ce64cc9336e8a88abed7d2ee213610fabe61d1a04d.json",
+      "revision_id": "preparation-revision-9c822cd515f1182e407be1ce64cc9336e8a88abed7d2ee213610fabe61d1a04d",
+      "sha256": "73a54630247a1e3b09ec9cc72c8d5b11d10e4732d4470899daa62c29285ab9f0"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

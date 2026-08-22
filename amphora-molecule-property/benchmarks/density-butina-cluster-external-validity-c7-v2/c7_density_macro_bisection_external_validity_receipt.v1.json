@@ -1,0 +1,128 @@
+{
+  "all_gates_passed": true,
+  "attack_design": {
+    "attack_1_leave_one_butina_cluster_out": {
+      "degradation_factor": 0.9535355561477267,
+      "dist_thresh": 0.4,
+      "eligible_clusters_min_size_8": 30,
+      "method": "Butina 1999 J. Chem. Inf. Comput. Sci. 39(4):747-750, Tanimoto distance on Morgan r=2/512-bit fingerprints",
+      "n_clusters": 411,
+      "n_singleton_clusters": 277,
+      "pooled_mae_g_per_cm3": 0.03889946635031207,
+      "pooled_n_test": 469,
+      "status": "DOCUMENTED_NEGATIVE_RESULT_WEAKER_THAN_FIRE1",
+      "why_reported_despite_being_a_dead_end": "Full falsification-first transparency: this design was pre-registered as a candidate escalation over fire 1's leave-class-out and was actually EXECUTED, not discarded silently. It turned out weaker (0.95x, i.e. no measurable degradation) because fine Butina islands (median eligible-cluster size ~14) remain densely surrounded by highly similar training neighbors from adjacent clusters, so held-out molecules are not truly out-of-distribution in feature space. A negative/inconclusive attack design is recorded here rather than hidden."
+    },
+    "attack_2_hierarchical_macro_bisection": {
+      "method": "scipy average-linkage agglomerative clustering on the full n x n Tanimoto distance matrix (Sokal & Michener 1958 UPGMA-family average linkage; Murtagh & Contreras 2012 review), cut to 2 clusters (fcluster maxclust=2). Produces two large, internally-diverse macro-chemotype halves that are collectively maximally separated -- the within-corpus analogue of a true second-corpus split.",
+      "n_macro_a": 16,
+      "n_macro_b": 1061,
+      "note": "Average-linkage agglomerative clustering on the FULL 1077x1077 Tanimoto distance matrix (same Morgan r=2/512-bit fingerprints as the production RF), cut into exactly 2 macro-chemotypes (fcluster maxclust=2). Unlike fine Butina islands, this bisection groups the entire corpus into two large, internally-diverse regions that are collectively as mutually dissimilar as the clustering can make them -- structurally the closest within-corpus analogue available to a genuine second-corpus split. The resulting bisection is naturally imbalanced (16 vs 1061), which is itself a finding: RadonPy PI1070 contains one coherent minority macro-chemotype of 16 polymers occupying the upper tail of the density range (1.277-1.914 g/cm3) that is structurally distinct from the other 1061."
+    },
+    "pre_registered_refute_threshold": "held-out (or cross-macro-chemotype) MAE > 2x the apples-to-apples within-corpus MAE (same Morgan r=2/512-bit + log10(MW) features, same RandomForestRegressor(n_estimators=100), same seed=0) => REFUTED.",
+    "two_designs_tried_both_reported": true
+  },
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "C7",
+  "ceiling": "AUDIT_ONLY red-team/external-validity diagnostic. Documents that the shipped RadonPy density RF baseline's applicability domain is within-RadonPy-macro-chemotype-distribution ONLY and must not be presented as generalizing to structurally novel out-of-corpus polymer chemistry. Does not itself alter the shipped KPI receipt, module honesty ceiling, manifest, or authority ceiling.",
+  "claim_under_attack": {
+    "claim_text": "Within-corpus scaffold-safe performance (Tg RF LOSO MAE 51.24 K, density RF MAE 0.0566 g/cm3) transfers to out-of-corpus chemistry.",
+    "note": "Fire 1 already REFUTED this compound claim outright via the Tg half (true cross-corpus OpenPoly<->Polyuniverse Epoxy, 6.66x/16.60x degradation). This fire closes the remaining gap the campaign item's objective calls out explicitly: revisit density once a harder proxy is available, since no second rights-cleared density corpus exists yet to run a literal cross-corpus test.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json"
+  },
+  "data_availability_re_check": {
+    "conclusion": "A literal train-corpus-A/test-corpus-B swap for density remains BLOCKED_DATA. This fire instead escalates the WITHIN-corpus proxy methodology using RadonPy PI1070's own chemistry (n=1077, sha256 verified below), the module's only rights-cleared density corpus.",
+    "queue_entry_still_open": "amphora-molecule-property density-corpus gap, filed by fire 1 to /home/ubuntu/amphora-cron/data-acquisition-queue.jsonl, unfilled as of this fire",
+    "second_density_corpus_acquired_since_fire_1": false
+  },
+  "dsse_envelope": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzc2VkIjogdHJ1ZSwKICAiYXR0YWNrX2Rlc2lnbiI6IHsKICAgICJhdHRhY2tfMV9sZWF2ZV9vbmVfYnV0aW5hX2NsdXN0ZXJfb3V0IjogewogICAgICAiZGVncmFkYXRpb25fZmFjdG9yIjogMC45NTM1MzU1NTYxNDc3MjY3LAogICAgICAiZGlzdF90aHJlc2giOiAwLjQsCiAgICAgICJlbGlnaWJsZV9jbHVzdGVyc19taW5fc2l6ZV84IjogMzAsCiAgICAgICJtZXRob2QiOiAiQnV0aW5hIDE5OTkgSi4gQ2hlbS4gSW5mLiBDb21wdXQuIFNjaS4gMzkoNCk6NzQ3LTc1MCwgVGFuaW1vdG8gZGlzdGFuY2Ugb24gTW9yZ2FuIHI9Mi81MTItYml0IGZpbmdlcnByaW50cyIsCiAgICAgICJuX2NsdXN0ZXJzIjogNDExLAogICAgICAibl9zaW5nbGV0b25fY2x1c3RlcnMiOiAyNzcsCiAgICAgICJwb29sZWRfbWFlX2dfcGVyX2NtMyI6IDAuMDM4ODk5NDY2MzUwMzEyMDcsCiAgICAgICJwb29sZWRfbl90ZXN0IjogNDY5LAogICAgICAic3RhdHVzIjogIkRPQ1VNRU5URURfTkVHQVRJVkVfUkVTVUxUX1dFQUtFUl9USEFOX0ZJUkUxIiwKICAgICAgIndoeV9yZXBvcnRlZF9kZXNwaXRlX2JlaW5nX2FfZGVhZF9lbmQiOiAiRnVsbCBmYWxzaWZpY2F0aW9uLWZpcnN0IHRyYW5zcGFyZW5jeTogdGhpcyBkZXNpZ24gd2FzIHByZS1yZWdpc3RlcmVkIGFzIGEgY2FuZGlkYXRlIGVzY2FsYXRpb24gb3ZlciBmaXJlIDEncyBsZWF2ZS1jbGFzcy1vdXQgYW5kIHdhcyBhY3R1YWxseSBFWEVDVVRFRCwgbm90IGRpc2NhcmRlZCBzaWxlbnRseS4gSXQgdHVybmVkIG91dCB3ZWFrZXIgKDAuOTV4LCBpLmUuIG5vIG1lYXN1cmFibGUgZGVncmFkYXRpb24pIGJlY2F1c2UgZmluZSBCdXRpbmEgaXNsYW5kcyAobWVkaWFuIGVsaWdpYmxlLWNsdXN0ZXIgc2l6ZSB+MTQpIHJlbWFpbiBkZW5zZWx5IHN1cnJvdW5kZWQgYnkgaGlnaGx5IHNpbWlsYXIgdHJhaW5pbmcgbmVpZ2hib3JzIGZyb20gYWRqYWNlbnQgY2x1c3RlcnMsIHNvIGhlbGQtb3V0IG1vbGVjdWxlcyBhcmUgbm90IHRydWx5IG91dC1vZi1kaXN0cmlidXRpb24gaW4gZmVhdHVyZSBzcGFjZS4gQSBuZWdhdGl2ZS9pbmNvbmNsdXNpdmUgYXR0YWNrIGRlc2lnbiBpcyByZWNvcmRlZCBoZXJlIHJhdGhlciB0aGFuIGhpZGRlbi4iCiAgICB9LAogICAgImF0dGFja18yX2hpZXJhcmNoaWNhbF9tYWNyb19iaXNlY3Rpb24iOiB7CiAgICAgICJtZXRob2QiOiAic2NpcHkgYXZlcmFnZS1saW5rYWdlIGFnZ2xvbWVyYXRpdmUgY2x1c3RlcmluZyBvbiB0aGUgZnVsbCBuIHggbiBUYW5pbW90byBkaXN0YW5jZSBtYXRyaXggKFNva2FsICYgTWljaGVuZXIgMTk1OCBVUEdNQS1mYW1pbHkgYXZlcmFnZSBsaW5rYWdlOyBNdXJ0YWdoICYgQ29udHJlcmFzIDIwMTIgcmV2aWV3KSwgY3V0IHRvIDIgY2x1c3RlcnMgKGZjbHVzdGVyIG1heGNsdXN0PTIpLiBQcm9kdWNlcyB0d28gbGFyZ2UsIGludGVybmFsbHktZGl2ZXJzZSBtYWNyby1jaGVtb3R5cGUgaGFsdmVzIHRoYXQgYXJlIGNvbGxlY3RpdmVseSBtYXhpbWFsbHkgc2VwYXJhdGVkIC0tIHRoZSB3aXRoaW4tY29ycHVzIGFuYWxvZ3VlIG9mIGEgdHJ1ZSBzZWNvbmQtY29ycHVzIHNwbGl0LiIsCiAgICAgICJuX21hY3JvX2EiOiAxNiwKICAgICAgIm5fbWFjcm9fYiI6IDEwNjEsCiAgICAgICJub3RlIjogIkF2ZXJhZ2UtbGlua2FnZSBhZ2dsb21lcmF0aXZlIGNsdXN0ZXJpbmcgb24gdGhlIEZVTEwgMTA3N3gxMDc3IFRhbmltb3RvIGRpc3RhbmNlIG1hdHJpeCAoc2FtZSBNb3JnYW4gcj0yLzUxMi1iaXQgZmluZ2VycHJpbnRzIGFzIHRoZSBwcm9kdWN0aW9uIFJGKSwgY3V0IGludG8gZXhhY3RseSAyIG1hY3JvLWNoZW1vdHlwZXMgKGZjbHVzdGVyIG1heGNsdXN0PTIpLiBVbmxpa2UgZmluZSBCdXRpbmEgaXNsYW5kcywgdGhpcyBiaXNlY3Rpb24gZ3JvdXBzIHRoZSBlbnRpcmUgY29ycHVzIGludG8gdHdvIGxhcmdlLCBpbnRlcm5hbGx5LWRpdmVyc2UgcmVnaW9ucyB0aGF0IGFyZSBjb2xsZWN0aXZlbHkgYXMgbXV0dWFsbHkgZGlzc2ltaWxhciBhcyB0aGUgY2x1c3RlcmluZyBjYW4gbWFrZSB0aGVtIC0tIHN0cnVjdHVyYWxseSB0aGUgY2xvc2VzdCB3aXRoaW4tY29ycHVzIGFuYWxvZ3VlIGF2YWlsYWJsZSB0byBhIGdlbnVpbmUgc2Vjb25kLWNvcnB1cyBzcGxpdC4gVGhlIHJlc3VsdGluZyBiaXNlY3Rpb24gaXMgbmF0dXJhbGx5IGltYmFsYW5jZWQgKDE2IHZzIDEwNjEpLCB3aGljaCBpcyBpdHNlbGYgYSBmaW5kaW5nOiBSYWRvblB5IFBJMTA3MCBjb250YWlucyBvbmUgY29oZXJlbnQgbWlub3JpdHkgbWFjcm8tY2hlbW90eXBlIG9mIDE2IHBvbHltZXJzIG9jY3VweWluZyB0aGUgdXBwZXIgdGFpbCBvZiB0aGUgZGVuc2l0eSByYW5nZSAoMS4yNzctMS45MTQgZy9jbTMpIHRoYXQgaXMgc3RydWN0dXJhbGx5IGRpc3RpbmN0IGZyb20gdGhlIG90aGVyIDEwNjEuIgogICAgfSwKICAgICJwcmVfcmVnaXN0ZXJlZF9yZWZ1dGVfdGhyZXNob2xkIjogImhlbGQtb3V0IChvciBjcm9zcy1tYWNyby1jaGVtb3R5cGUpIE1BRSA+IDJ4IHRoZSBhcHBsZXMtdG8tYXBwbGVzIHdpdGhpbi1jb3JwdXMgTUFFIChzYW1lIE1vcmdhbiByPTIvNTEyLWJpdCArIGxvZzEwKE1XKSBmZWF0dXJlcywgc2FtZSBSYW5kb21Gb3Jlc3RSZWdyZXNzb3Iobl9lc3RpbWF0b3JzPTEwMCksIHNhbWUgc2VlZD0wKSA9PiBSRUZVVEVELiIsCiAgICAidHdvX2Rlc2lnbnNfdHJpZWRfYm90aF9yZXBvcnRlZCI6IHRydWUKICB9LAogICJhdXRob3JpdHkiOiAiQVVESVRfT05MWSIsCiAgImNhbXBhaWduX2l0ZW1faWQiOiAiQzciLAogICJjZWlsaW5nIjogIkFVRElUX09OTFkgcmVkLXRlYW0vZXh0ZXJuYWwtdmFsaWRpdHkgZGlhZ25vc3RpYy4gRG9jdW1lbnRzIHRoYXQgdGhlIHNoaXBwZWQgUmFkb25QeSBkZW5zaXR5IFJGIGJhc2VsaW5lJ3MgYXBwbGljYWJpbGl0eSBkb21haW4gaXMgd2l0aGluLVJhZG9uUHktbWFjcm8tY2hlbW90eXBlLWRpc3RyaWJ1dGlvbiBPTkxZIGFuZCBtdXN0IG5vdCBiZSBwcmVzZW50ZWQgYXMgZ2VuZXJhbGl6aW5nIHRvIHN0cnVjdHVyYWxseSBub3ZlbCBvdXQtb2YtY29ycHVzIHBvbHltZXIgY2hlbWlzdHJ5LiBEb2VzIG5vdCBpdHNlbGYgYWx0ZXIgdGhlIHNoaXBwZWQgS1BJIHJlY2VpcHQsIG1vZHVsZSBob25lc3R5IGNlaWxpbmcsIG1hbmlmZXN0LCBvciBhdXRob3JpdHkgY2VpbGluZy4iLAogICJjbGFpbV91bmRlcl9hdHRhY2siOiB7CiAgICAiY2xhaW1fdGV4dCI6ICJXaXRoaW4tY29ycHVzIHNjYWZmb2xkLXNhZmUgcGVyZm9ybWFuY2UgKFRnIFJGIExPU08gTUFFIDUxLjI0IEssIGRlbnNpdHkgUkYgTUFFIDAuMDU2NiBnL2NtMykgdHJhbnNmZXJzIHRvIG91dC1vZi1jb3JwdXMgY2hlbWlzdHJ5LiIsCiAgICAibm90ZSI6ICJGaXJlIDEgYWxyZWFkeSBSRUZVVEVEIHRoaXMgY29tcG91bmQgY2xhaW0gb3V0cmlnaHQgdmlhIHRoZSBUZyBoYWxmICh0cnVlIGNyb3NzLWNvcnB1cyBPcGVuUG9seTwtPlBvbHl1bml2ZXJzZSBFcG94eSwgNi42NngvMTYuNjB4IGRlZ3JhZGF0aW9uKS4gVGhpcyBmaXJlIGNsb3NlcyB0aGUgcmVtYWluaW5nIGdhcCB0aGUgY2FtcGFpZ24gaXRlbSdzIG9iamVjdGl2ZSBjYWxscyBvdXQgZXhwbGljaXRseTogcmV2aXNpdCBkZW5zaXR5IG9uY2UgYSBoYXJkZXIgcHJveHkgaXMgYXZhaWxhYmxlLCBzaW5jZSBubyBzZWNvbmQgcmlnaHRzLWNsZWFyZWQgZGVuc2l0eSBjb3JwdXMgZXhpc3RzIHlldCB0byBydW4gYSBsaXRlcmFsIGNyb3NzLWNvcnB1cyB0ZXN0LiIsCiAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvb3BlbnBvbHktZXhwZXJpbWVudGFsLXRnLW1sLWJhc2VsaW5lLWtwaS52MS5qc29uIgogIH0sCiAgImRhdGFfYXZhaWxhYmlsaXR5X3JlX2NoZWNrIjogewogICAgImNvbmNsdXNpb24iOiAiQSBsaXRlcmFsIHRyYWluLWNvcnB1cy1BL3Rlc3QtY29ycHVzLUIgc3dhcCBmb3IgZGVuc2l0eSByZW1haW5zIEJMT0NLRURfREFUQS4gVGhpcyBmaXJlIGluc3RlYWQgZXNjYWxhdGVzIHRoZSBXSVRISU4tY29ycHVzIHByb3h5IG1ldGhvZG9sb2d5IHVzaW5nIFJhZG9uUHkgUEkxMDcwJ3Mgb3duIGNoZW1pc3RyeSAobj0xMDc3LCBzaGEyNTYgdmVyaWZpZWQgYmVsb3cpLCB0aGUgbW9kdWxlJ3Mgb25seSByaWdodHMtY2xlYXJlZCBkZW5zaXR5IGNvcnB1cy4iLAogICAgInF1ZXVlX2VudHJ5X3N0aWxsX29wZW4iOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eSBkZW5zaXR5LWNvcnB1cyBnYXAsIGZpbGVkIGJ5IGZpcmUgMSB0byAvaG9tZS91YnVudHUvYW1waG9yYS1jcm9uL2RhdGEtYWNxdWlzaXRpb24tcXVldWUuanNvbmwsIHVuZmlsbGVkIGFzIG9mIHRoaXMgZmlyZSIsCiAgICAic2Vjb25kX2RlbnNpdHlfY29ycHVzX2FjcXVpcmVkX3NpbmNlX2ZpcmVfMSI6IGZhbHNlCiAgfSwKICAiZmlyZV9zZXF1ZW5jZSI6ICJDNyBmaXJlIDIgb2YgMyAobWF4X2ZpcmVzKTsgZXNjYWxhdGVzIGZpcmUgMSAodGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1jNy12MSkgd2hpY2ggbGVmdCBkZW5zaXR5IFNVUlZJVkVEIHVuZGVyIHRoZSBoYXJkZXN0IHByb3h5IHRoZW4gYXZhaWxhYmxlIChsZWF2ZS1wb2x5bWVyLWNsYXNzLW91dCwgMS44MHggPCAyeCBiYXIpIGFuZCBleHBsaWNpdGx5IGZsYWdnZWQgZGVuc2l0eSBmb3IgcmV2aXNpdC4iLAogICJnYXRlcyI6IHsKICAgICJib3RoX2RpcmVjdGlvbnNfY29tcHV0ZWQiOiB0cnVlLAogICAgImRlYWRfZW5kX2Rlc2lnbl9kb2N1bWVudGVkX25vdF9oaWRkZW4iOiB0cnVlLAogICAgInByaW1hcnlfYXR0YWNrX3VzZXNfcmVhbF9jaGVtaXN0cnlfbm9fc3ludGhldGljX2xhYmVscyI6IHRydWUsCiAgICAidHdvX3JlcGxheV9ieXRlX3N0YWJsZSI6IHRydWUKICB9LAogICJpbnB1dF9hcnRpZmFjdHMiOiB7CiAgICAiY29tcHV0ZV9kZW5zaXR5X2NsdXN0ZXJfZXh0ZXJuYWxfdmFsaWRpdHkucHlfc2hhMjU2IjogImY5YTJhNzFkY2JmZDIxNTllMTEyYzg1ZmEzMjhmYjAyYTQ1NmRmZTE3ZjU1YzkwNzQ3MDEzZjZiNmYyOTI2YTIiLAogICAgImRpYWdub3N0aWMuY2Fub25pY2FsLmpzb25fc2hhMjU2IjogIjRjZWRmNmExNDkxNDhkYWUzMzc5YjAwNzAwYmRhM2I2ODEyMTA2OTM1ZmNhMDc0NWVjMGU1YzhlNDU0Nzg5MmEiLAogICAgInJhZG9ucHlfcGkxMDcwX2Nzdl9zaGEyNTYiOiAiNGVlNDFkNTI2ZGIzZDAzZWI1YjgzMDEwNjcyYjRlNjNhNGQ1MWExMTQ4NzFhMjE4N2NhN2ZkNTdkMzA1NTZhNCIKICB9LAogICJtb2RpZmllc19ub19saXZlX2NvbmZpZyI6IHRydWUsCiAgIm1vZHVsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5IiwKICAib3ZlcmFsbF9yZWFzb25pbmciOiAiQ29tYmluZWQgd2l0aCBmaXJlIDEncyBvdXRyaWdodCBUZyByZWZ1dGF0aW9uICg2LjY2eC8xNi42MHgsIGJvdGggZGlyZWN0aW9ucywgdHJ1ZSBzZWNvbmQgY29ycHVzKSwgdGhlIGNvbXBvdW5kIGNsYWltICd3aXRoaW4tY29ycHVzIHNjYWZmb2xkLXNhZmUgcGVyZm9ybWFuY2UgdHJhbnNmZXJzIHRvIG91dC1vZi1jb3JwdXMgY2hlbWlzdHJ5JyBpcyBub3cgUkVGVVRFRCBmb3IgQk9USCBuYW1lZCBwcm9wZXJ0aWVzIHZpYSBnZW51aW5lbHkgZmFsc2lmeWluZyBhdHRhY2tzOiBUZyB2aWEgYSB0cnVlIGluZGVwZW5kZW50IHNlY29uZCBjb3JwdXMsIGRlbnNpdHkgdmlhIHRoZSBoYXJkZXN0IGF2YWlsYWJsZSBjaGVtaWNhbGx5LWNvaGVyZW50IHdpdGhpbi1jb3JwdXMgcHJveHkgKG1hY3JvLWNoZW1vdHlwZSBiaXNlY3Rpb24pIHNpbmNlIG5vIHNlY29uZCByaWdodHMtY2xlYXJlZCBkZW5zaXR5IGNvcnB1cyBleGlzdHMuIFRoZSBtb2R1bGUncyBob25lc3QgYXBwbGljYWJpbGl0eSBkb21haW4gZm9yIGJvdGggdGhlIE9wZW5Qb2x5IFRnIFJGIGJhc2VsaW5lIGFuZCB0aGUgUmFkb25QeSBkZW5zaXR5IFJGIGJhc2VsaW5lIGlzIHdpdGhpbi1jb3JwdXMgLyB3aXRoaW4tdHJhaW5pbmctbWFjcm8tY2hlbW90eXBlIE9OTFkuIiwKICAib3ZlcmFsbF92ZXJkaWN0IjogIkNMQUlNX1JFRlVURUQiLAogICJwcmltYXJ5X3Jlc3VsdCI6IHsKICAgICJkZWdyYWRhdGlvbl9mYWN0b3JfQSI6IDEzLjczNzczNzE3NjgxNDk2LAogICAgImRlZ3JhZGF0aW9uX2ZhY3Rvcl9CIjogNy41OTMzMzYxMTIzNjM4NTg1LAogICAgImRpcmVjdGlvbl9BX3RyYWluX21hY3JvX2ExNl90ZXN0X21hY3JvX2IxMDYxIjogewogICAgICAibWFlIjogMC41NjA0MzA3NDgwNjU1MjI3LAogICAgICAibl90ZXN0IjogMTA2MSwKICAgICAgIm5fdHJhaW4iOiAxNiwKICAgICAgIm51bGxfbWFlX3VzaW5nX3RyYWluX21lZGlhbiI6IDAuNjQxNzM1MzkzNTQ2MTgyOCwKICAgICAgInIyIjogLTEyLjE1MTY3NjE3NTA1MDIxMywKICAgICAgInRlc3RfeV9yYW5nZSI6IFsKICAgICAgICAwLjc0MjM1ODUwNywKICAgICAgICAxLjgxNTg5Njk4MgogICAgICBdLAogICAgICAidHJhaW5feV9yYW5nZSI6IFsKICAgICAgICAxLjI3NzQ1NDM0LAogICAgICAgIDEuOTE0NDgyNDg2CiAgICAgIF0KICAgIH0sCiAgICAiZGlyZWN0aW9uX0JfdHJhaW5fbWFjcm9fYjEwNjFfdGVzdF9tYWNyb19hMTYiOiB7CiAgICAgICJtYWUiOiAwLjMwOTc3MDAxNDAxMjcxOTMsCiAgICAgICJuX3Rlc3QiOiAxNiwKICAgICAgIm5fdHJhaW4iOiAxMDYxLAogICAgICAibnVsbF9tYWVfdXNpbmdfdHJhaW5fbWVkaWFuIjogMC42MTE3MTU4OTE2ODc1MDAxLAogICAgICAicjIiOiAtNS4wMTA0MzIyNzIzNDM3NjgsCiAgICAgICJ0ZXN0X3lfcmFuZ2UiOiBbCiAgICAgICAgMS4yNzc0NTQzNCwKICAgICAgICAxLjkxNDQ4MjQ4NgogICAgICBdLAogICAgICAidHJhaW5feV9yYW5nZSI6IFsKICAgICAgICAwLjc0MjM1ODUwNywKICAgICAgICAxLjgxNTg5Njk4MgogICAgICBdCiAgICB9LAogICAgInJlZnV0ZWRfQSI6IHRydWUsCiAgICAicmVmdXRlZF9CIjogdHJ1ZSwKICAgICJ3aXRoaW5fY29ycHVzX293bl9mZWF0dXJlc19tYWVfZ19wZXJfY20zIjogMC4wNDA3OTQ5ODI1MjUzMTM5OTQsCiAgICAid2l0aGluX2NvcnB1c19vd25fZmVhdHVyZXNfcjIiOiAwLjg0NDMzNzY5NjI1MjEyMTgKICB9LAogICJwcm9tb3Rlc19ub3RoaW5nIjogdHJ1ZSwKICAicHJvbW90aW9uX2Jsb2NrZWRfYnkiOiAiTk9UIHRoaXMgYXVkaXQncyBzY2llbmNlIChhbGwgZ2F0ZXMgcGFzcywgdHdvLXJlcGxheSBieXRlLXN0YWJsZSkgYW5kIE5PVCBrZXkgY3VzdG9keS4gUHJvbW90aW9uIG9mIGFueSBkb3duc3RyZWFtIGhvbmVzdHktY2VpbGluZyBjaGFuZ2UgcmVxdWlyZXMgdGhlIGh1bWFuIGR1YWwtaWRlbnRpdHkgUGhhc2UtMCBjZXJlbW9ueSBrZXlzIHRoaXMgY3JvbiBkb2VzIG5vdCBob2xkLiBNYW5pZmVzdCB1bnRvdWNoZWQgYXQgNjYvMTEuIiwKICAicmVjZWlwdF9pZCI6ICJjNy1maXJlMi1kZW5zaXR5LW1hY3JvLWJpc2VjdGlvbi1leHRlcm5hbC12YWxpZGl0eS00Y2VkZjZhMTQ5MTQ4ZGFlMzM3OWIwMDcwMGJkYTNiNiIsCiAgInJlY29tbWVuZGVkX2ZvbGxvd3VwcyI6IFsKICAgICJVcGRhdGUgcmFkb25weS1kZW5zaXR5LW1sLXZzLXZhbi1rcmV2ZWxlbi1waHlzaWNzLWtwaS52MS5qc29uJ3MgY2xhaW1fbG9ja3MgLyBjYXBhYmlsaXR5IHRleHQgKGh1bWFuLW93bmVkIGVkaXQpIHRvIGV4cGxpY2l0bHkgc3RhdGUgdGhlIGFwcGxpY2FiaWxpdHkgZG9tYWluIGlzIHdpdGhpbi1SYWRvblB5LW1hY3JvLWNoZW1vdHlwZS1kaXN0cmlidXRpb24gb25seSwgY2l0aW5nIHRoaXMgcmVjZWlwdCAoaXQgYWxyZWFkeSBwYXJ0aWFsbHkgbG9ja3MgdGhpcyB2aWEgbWxfY2FsaWJyYXRlZF9mb3JfcmFkb25weV9tZF9zaW11bGF0ZWRfY29udGV4dF9vbmx5LCBidXQgdGhhdCBsb2NrIGRvZXMgbm90IGFkZHJlc3MgdGhlIG1hY3JvLWNoZW1vdHlwZSBleHRyYXBvbGF0aW9uIGZhaWx1cmUgc3BlY2lmaWNhbGx5KS4iLAogICAgIlRoZSBzdGlsbC1vcGVuIGRlbnNpdHktY29ycHVzIGRhdGEtYWNxdWlzaXRpb24gYXNrIGZyb20gZmlyZSAxIHJlbWFpbnMgdGhlIG9ubHkgcGF0aCB0byBhIGxpdGVyYWwgc2Vjb25kLWNvcnB1cyB0ZXN0OyB0aGlzIGZpcmUncyBmaW5kaW5nIGRvZXMgbm90IHJlZHVjZSBpdHMgcHJpb3JpdHkuIiwKICAgICJDNyBoYXMgbm93IHByb2R1Y2VkIGdlbnVpbmVseSBmYWxzaWZ5aW5nLCBzaWduZWQgZXZpZGVuY2UgZm9yIEJPVEggbmFtZWQgcHJvcGVydGllcyAoVGcgZmlyZSAxLCBkZW5zaXR5IGZpcmUgMik7IHJlY29tbWVuZCBjYW1wYWlnbl9pdGVtX3N0YXR1cz1kb25lIHVubGVzcyB0aGUgbGF1bmNoZXIncyBkb25lX2NoZWNrIHJlcXVpcmVzIGEgbGl0ZXJhbCBzZWNvbmQgZGVuc2l0eSBjb3JwdXMgc3BlY2lmaWNhbGx5LiIKICBdLAogICJyaWdodHNfY2hlY2siOiAiUmFkb25QeSBQSTEwNzAgYWxyZWFkeSBleHRlbnNpdmVseSByaWdodHMtY2xlYXJlZCBhbmQgbG9hZC1iZWFyaW5nIGVsc2V3aGVyZSBpbiB0aGlzIG1vZHVsZSAoZS5nLiByYWRvbnB5LWRlbnNpdHktbWwtdnMtdmFuLWtyZXZlbGVuLXBoeXNpY3Mta3BpLnYxLmpzb24sIGZpcmUgMSkuIE5vIG5ldyBzb3VyY2UgdG91Y2hlZDsgbm8gcXVhcmFudGluZWQvQ09OVEVYVF9PTkxZIHNvdXJjZSBvcGVuZWQuIiwKICAic2NoZW1hIjogImFtcGhvcmEubW9sZWN1bGUtcHJvcGVydHkuYzctZGVuc2l0eS1tYWNyby1iaXNlY3Rpb24tZXh0ZXJuYWwtdmFsaWRpdHktcmVjZWlwdC52MSIsCiAgInNpZ25pbmdfa2V5IjogewogICAgImF1dGhvcml0eSI6ICJMT0NBTF9ERVZFTE9QTUVOVF9BVURJVF9PTkxZIiwKICAgICJrZXlfaWQiOiAibG9jYWwtOTAyODc3M2Y0OTU5MTE5MyIsCiAgICAibm90ZSI6ICJOT1QgaW4gY29uZmlnL3BoYXNlMC10cnVzdC1zdG9yZS52MS5qc29uOyBhdWRpdCBldmlkZW5jZSBvbmx5IiwKICAgICJwdWJsaWNfa2V5X2hleCI6ICI0YjcyMmY0NTE2ZTAzNWNlM2NiOTVjY2VjZmZlNDYzOGE2ODdkOTI0MWU2OTcwZjRjMWNmNWMyODViMmVkZjkzIiwKICAgICJ0cnVzdF9hbmNob3JlZCI6IGZhbHNlCiAgfSwKICAic3R1ZHlfaWQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS1jNy1maXJlMi1kZW5zaXR5LWJ1dGluYS1jbHVzdGVyLWV4dGVybmFsLXZhbGlkaXR5LXYxIiwKICAidHdvX3JlcGxheV9nYXRlIjogewogICAgImJ5dGVfaWRlbnRpY2FsIjogdHJ1ZSwKICAgICJjYW5vbmljYWxfc2hhMjU2IjogIjRjZWRmNmExNDkxNDhkYWUzMzc5YjAwNzAwYmRhM2I2ODEyMTA2OTM1ZmNhMDc0NWVjMGU1YzhlNDU0Nzg5MmEiLAogICAgInJ1bkJfc2hhMjU2IjogIjRjZWRmNmExNDkxNDhkYWUzMzc5YjAwNzAwYmRhM2I2ODEyMTA2OTM1ZmNhMDc0NWVjMGU1YzhlNDU0Nzg5MmEiCiAgfSwKICAidmVyZGljdCI6ICJSRUZVVEVEIiwKICAid2h5IjogIkJvdGggZGlyZWN0aW9ucyBvZiB0aGUgbWFjcm8tYmlzZWN0aW9uIGJsb3cgdGhyb3VnaCB0aGUgMnggdGhyZXNob2xkIGJ5IGEgd2lkZSBtYXJnaW46IHRyYWluaW5nIG9uIHRoZSBzbWFsbCAxNi1wb2x5bWVyIG1hY3JvLWNoZW1vdHlwZSBhbmQgY29sZC1wcmVkaWN0aW5nIHRoZSBvdGhlciAxMDYxIGdpdmVzIE1BRT0wLjU2MDQgZy9jbTMgKDEzLjc0eCB3aXRoaW4tY29ycHVzLCBSMj0tMTIuMTUpOyB0aGUgcmV2ZXJzZSAodHJhaW4gb24gdGhlIDEwNjEtcG9seW1lciBidWxrLCBjb2xkLXByZWRpY3QgdGhlIDE2LXBvbHltZXIgb3V0bGllciBtYWNyby1jaGVtb3R5cGUpIGdpdmVzIE1BRT0wLjMwOTggZy9jbTMgKDcuNTl4IHdpdGhpbi1jb3JwdXMsIFIyPS01LjAxKS4gQm90aCBSMiB2YWx1ZXMgYXJlIHN0cm9uZ2x5IG5lZ2F0aXZlICh3b3JzZSB0aGFuIHByZWRpY3RpbmcgdGhlIHRyYWluaW5nIG1lZGlhbiBpbiBhYnNvbHV0ZSB0ZXJtcyBvbmNlIGNvbXBhcmVkIHRvIHdpdGhpbi1jb3JwdXMgc2tpbGwpLCBhbmQgZGlyZWN0aW9uIEEncyBudWxsLWJhc2VsaW5lIGNvbXBhcmlzb24gc2hvd3MgdGhlIGNyb3NzLWNoZW1vdHlwZSBSRiAoTUFFIDAuNTYwKSBiYXJlbHkgYmVhdHMgZXZlbiB0aGUgbmFpdmUgdHJhaW4tbWVkaWFuIG51bGwgKDAuNjQyKSAtLSBlc3NlbnRpYWxseSBubyBleHRyYWN0YWJsZSBza2lsbCBvbmNlIHRoZSBtb2RlbCBtdXN0IGV4dHJhcG9sYXRlIG91dHNpZGUgaXRzIHRyYWluaW5nIG1hY3JvLWNoZW1vdHlwZSdzIGRlbnNpdHkgcmFuZ2UuIFRoaXMgZGlyZWN0bHkgcmVmdXRlcyB0aGUgJ3RyYW5zZmVycyB0byBvdXQtb2YtY29ycHVzIGNoZW1pc3RyeScgY2xhaW0gZm9yIGRlbnNpdHkgdW5kZXIgYSBnZW51aW5lbHkgZmFsc2lmeWluZywgY2hlbWljYWxseS1jb2hlcmVudCBoZWxkLW91dCBzcGxpdCwgY2xvc2luZyB0aGUgZ2FwIGZpcmUgMSBsZWZ0IG9wZW4gKGxlYXZlLWNsYXNzLW91dCBhdCAxLjgweCBTVVJWSVZFRCwgYnV0IHdhcyBmbGFnZ2VkIHRoZXJlIGFzIG5vdCBlcXVpdmFsZW50IHRvIGEgdHJ1ZSBzZWNvbmQtY29ycHVzIHRlc3QpLiIKfQ==",
+    "payloadType": "application/vnd.amphora.molecule-property.c7-density-macro-bisection-external-validity-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "t8Xm9PtmbHg79Z3WcArX9iblz2qTv9Qq5P0YJfOzk44dff7M5FVarFV2+0mkngXqN1ABOR/Ch5XfeX5rP4UpDg=="
+      }
+    ]
+  },
+  "fire_sequence": "C7 fire 2 of 3 (max_fires); escalates fire 1 (tg-density-external-validity-c7-v1) which left density SURVIVED under the hardest proxy then available (leave-polymer-class-out, 1.80x < 2x bar) and explicitly flagged density for revisit.",
+  "gates": {
+    "both_directions_computed": true,
+    "dead_end_design_documented_not_hidden": true,
+    "primary_attack_uses_real_chemistry_no_synthetic_labels": true,
+    "two_replay_byte_stable": true
+  },
+  "input_artifacts": {
+    "compute_density_cluster_external_validity.py_sha256": "f9a2a71dcbfd2159e112c85fa328fb02a456dfe17f55c90747013f6b6f2926a2",
+    "diagnostic.canonical.json_sha256": "4cedf6a149148dae3379b00700bda3b6812106935fca0745ec0e5c8e4547892a",
+    "radonpy_pi1070_csv_sha256": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4"
+  },
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "overall_reasoning": "Combined with fire 1's outright Tg refutation (6.66x/16.60x, both directions, true second corpus), the compound claim 'within-corpus scaffold-safe performance transfers to out-of-corpus chemistry' is now REFUTED for BOTH named properties via genuinely falsifying attacks: Tg via a true independent second corpus, density via the hardest available chemically-coherent within-corpus proxy (macro-chemotype bisection) since no second rights-cleared density corpus exists. The module's honest applicability domain for both the OpenPoly Tg RF baseline and the RadonPy density RF baseline is within-corpus / within-training-macro-chemotype ONLY.",
+  "overall_verdict": "CLAIM_REFUTED",
+  "primary_result": {
+    "degradation_factor_A": 13.73773717681496,
+    "degradation_factor_B": 7.5933361123638585,
+    "direction_A_train_macro_a16_test_macro_b1061": {
+      "mae": 0.5604307480655227,
+      "n_test": 1061,
+      "n_train": 16,
+      "null_mae_using_train_median": 0.6417353935461828,
+      "r2": -12.151676175050213,
+      "test_y_range": [
+        0.742358507,
+        1.815896982
+      ],
+      "train_y_range": [
+        1.27745434,
+        1.914482486
+      ]
+    },
+    "direction_B_train_macro_b1061_test_macro_a16": {
+      "mae": 0.3097700140127193,
+      "n_test": 16,
+      "n_train": 1061,
+      "null_mae_using_train_median": 0.6117158916875001,
+      "r2": -5.010432272343768,
+      "test_y_range": [
+        1.27745434,
+        1.914482486
+      ],
+      "train_y_range": [
+        0.742358507,
+        1.815896982
+      ]
+    },
+    "refuted_A": true,
+    "refuted_B": true,
+    "within_corpus_own_features_mae_g_per_cm3": 0.040794982525313994,
+    "within_corpus_own_features_r2": 0.8443376962521218
+  },
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass, two-replay byte-stable) and NOT key custody. Promotion of any downstream honesty-ceiling change requires the human dual-identity Phase-0 ceremony keys this cron does not hold. Manifest untouched at 66/11.",
+  "receipt_id": "c7-fire2-density-macro-bisection-external-validity-4cedf6a149148dae3379b00700bda3b6",
+  "recommended_followups": [
+    "Update radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json's claim_locks / capability text (human-owned edit) to explicitly state the applicability domain is within-RadonPy-macro-chemotype-distribution only, citing this receipt (it already partially locks this via ml_calibrated_for_radonpy_md_simulated_context_only, but that lock does not address the macro-chemotype extrapolation failure specifically).",
+    "The still-open density-corpus data-acquisition ask from fire 1 remains the only path to a literal second-corpus test; this fire's finding does not reduce its priority.",
+    "C7 has now produced genuinely falsifying, signed evidence for BOTH named properties (Tg fire 1, density fire 2); recommend campaign_item_status=done unless the launcher's done_check requires a literal second density corpus specifically."
+  ],
+  "rights_check": "RadonPy PI1070 already extensively rights-cleared and load-bearing elsewhere in this module (e.g. radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json, fire 1). No new source touched; no quarantined/CONTEXT_ONLY source opened.",
+  "schema": "amphora.molecule-property.c7-density-macro-bisection-external-validity-receipt.v1",
+  "signature": "t8Xm9PtmbHg79Z3WcArX9iblz2qTv9Qq5P0YJfOzk44dff7M5FVarFV2+0mkngXqN1ABOR/Ch5XfeX5rP4UpDg==",
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "note": "NOT in config/phase0-trust-store.v1.json; audit evidence only",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "trust_anchored": false
+  },
+  "study_id": "amphora-molecule-property-c7-fire2-density-butina-cluster-external-validity-v1",
+  "two_replay_gate": {
+    "byte_identical": true,
+    "canonical_sha256": "4cedf6a149148dae3379b00700bda3b6812106935fca0745ec0e5c8e4547892a",
+    "runB_sha256": "4cedf6a149148dae3379b00700bda3b6812106935fca0745ec0e5c8e4547892a"
+  },
+  "verdict": "REFUTED",
+  "why": "Both directions of the macro-bisection blow through the 2x threshold by a wide margin: training on the small 16-polymer macro-chemotype and cold-predicting the other 1061 gives MAE=0.5604 g/cm3 (13.74x within-corpus, R2=-12.15); the reverse (train on the 1061-polymer bulk, cold-predict the 16-polymer outlier macro-chemotype) gives MAE=0.3098 g/cm3 (7.59x within-corpus, R2=-5.01). Both R2 values are strongly negative (worse than predicting the training median in absolute terms once compared to within-corpus skill), and direction A's null-baseline comparison shows the cross-chemotype RF (MAE 0.560) barely beats even the naive train-median null (0.642) -- essentially no extractable skill once the model must extrapolate outside its training macro-chemotype's density range. This directly refutes the 'transfers to out-of-corpus chemistry' claim for density under a genuinely falsifying, chemically-coherent held-out split, closing the gap fire 1 left open (leave-class-out at 1.80x SURVIVED, but was flagged there as not equivalent to a true second-corpus test)."
+}

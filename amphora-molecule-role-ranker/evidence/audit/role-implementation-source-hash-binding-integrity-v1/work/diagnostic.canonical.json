@@ -1,0 +1,193 @@
+{
+  "baseline_commit_checked": "907e753",
+  "citations_checked": 11,
+  "claim_under_attack": {
+    "claim_text": "mission.md: \"The live checked implementation is native Rust at `amphora-molecule-capabilities/src/lib.rs` with SHA-256 `5968f518...861`.\" capability-profile.json#/evidence_inventory/automatic_demotion lists \"source hash mutation\" as a trigger, implying declared hashes are live and authoritative bindings, not stale citations.",
+    "refutation_criterion": "A refutation occurs if any recomputed sha256 (independently from the live working tree AND the git HEAD blob, so a genuine mismatch cannot be a transient uncommitted-edit artifact) differs from the value declared for that same file path in docs/mission.md or docs/capability-profile.json, OR if docs/capability-profile.json declares two different hashes for the same file path within itself.",
+    "verdict": "CLAIM_REFUTED"
+  },
+  "n_internal_self_contradictions_in_capability_profile_json": 1,
+  "n_mismatch_vs_declared": 4,
+  "purpose": "ROTATION-mode falsification attack (no campaign item) on the module's own hash-binding claims in docs/mission.md and docs/capability-profile.json. Cross-validates and extends a lead surfaced out-of-scope by an unrelated 2026-08-16 amphora-molecule-generator fire (amphora-molecule-generator/evidence/audit/molgen-implementation-hash-binding-integrity-v1), which found the shared file amphora-molecule-capabilities/src/lib.rs mis-hashed in 4 modules' docs including this one but scoped the fix to molgen only; this fire independently reproduces that finding for amphora-molecule-role-ranker (in scope here) and extends the audit to every other hash-bound source/config/dataset citation in this module's own docs, uncovering 2 additional stale citations (Cargo.toml, amphora-engine/src/lib.rs) and an internal self-contradiction within docs/capability-profile.json itself.",
+  "results": [
+    {
+      "actual_baseline_commit_907e753_sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
+      "actual_git_head_blob_sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
+      "actual_working_tree_sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
+      "cited_path": "amphora-molecule-capabilities/src/lib.rs",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:15 (implementation binding prose)",
+        "amphora-molecule-role-ranker/docs/mission.md:19 (checked artifacts list)",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/implementation/sha256",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/tests/0/sha256"
+      ],
+      "declared_sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": true,
+      "was_already_wrong_at_baseline_commit": true,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416",
+      "actual_git_head_blob_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416",
+      "actual_working_tree_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416",
+      "cited_path": "amphora-molecule-capabilities/Cargo.toml",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/implementation/version_source_sha256"
+      ],
+      "declared_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": true,
+      "was_already_wrong_at_baseline_commit": true,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+      "actual_git_head_blob_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+      "actual_working_tree_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+      "cited_path": "amphora-engine/src/lib.rs",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/runtime_integration/registry_sha256"
+      ],
+      "declared_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": true,
+      "was_already_wrong_at_baseline_commit": true,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "actual_git_head_blob_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "actual_working_tree_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "cited_path": "amphora-molecule-role-ranker/reference/mvp20/data/corrosion_series.json",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:25",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/datasets/0/hash",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/artifacts/0/sha256"
+      ],
+      "declared_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": false,
+      "was_already_wrong_at_baseline_commit": false,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "actual_git_head_blob_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "actual_working_tree_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "cited_path": "amphora-molecule-role-ranker/reference/mvp20/data/cure_verification_set.json",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:26",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/datasets/1/hash",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/artifacts/1/sha256"
+      ],
+      "declared_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": false,
+      "was_already_wrong_at_baseline_commit": false,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "actual_git_head_blob_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "actual_working_tree_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "cited_path": "amphora-molecule-role-ranker/reference/mvp20/data/facts.json",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:27",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/datasets/2/hash",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/artifacts/2/sha256"
+      ],
+      "declared_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": false,
+      "was_already_wrong_at_baseline_commit": false,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a",
+      "actual_git_head_blob_sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a",
+      "actual_working_tree_sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a",
+      "cited_path": "amphora-molecule-role-ranker/reference/mvp20/data/feedback_v1/dataset_context.json",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:28",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/artifacts/3/sha256"
+      ],
+      "declared_sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": false,
+      "was_already_wrong_at_baseline_commit": false,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6",
+      "actual_git_head_blob_sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6",
+      "actual_working_tree_sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6",
+      "cited_path": "amphora-molecule-role-ranker/reference/mvp20/data/molecule_library.json",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:29",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/datasets/3/hash",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/artifacts/4/sha256"
+      ],
+      "declared_sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": false,
+      "was_already_wrong_at_baseline_commit": false,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+      "actual_git_head_blob_sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+      "actual_working_tree_sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+      "cited_path": "amphora-molecule-role-ranker/reference/mvp20/data/role_fit_benchmark.v1.json",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:30",
+        "amphora-molecule-role-ranker/docs/capability-profile.json#/datasets/4/hash"
+      ],
+      "declared_sha256": "74c01721752ce42a55b3c76e586446954cdb3c3e701eaa9914ec2bd93c8312ee",
+      "internal_conflict": {
+        "capability_profile_json_self_contradicts": true,
+        "other_declared_at": "amphora-molecule-role-ranker/docs/capability-profile.json#/evidence_inventory/artifacts/5/sha256",
+        "other_declared_sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+        "other_matches_actual": true
+      },
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": true,
+      "was_already_wrong_at_baseline_commit": true,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+      "actual_git_head_blob_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+      "actual_working_tree_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+      "cited_path": "amphora-molecule-role-ranker/reference/phase0-role-known-answer.v1.json",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:33-34"
+      ],
+      "declared_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": false,
+      "was_already_wrong_at_baseline_commit": false,
+      "working_tree_matches_git_head": true
+    },
+    {
+      "actual_baseline_commit_907e753_sha256": "f2a21f74e03b6b20f53fb10d4cdb6f2b477ce2b9a6e5200947c1ed91ad3a136a",
+      "actual_git_head_blob_sha256": "f2a21f74e03b6b20f53fb10d4cdb6f2b477ce2b9a6e5200947c1ed91ad3a136a",
+      "actual_working_tree_sha256": "f2a21f74e03b6b20f53fb10d4cdb6f2b477ce2b9a6e5200947c1ed91ad3a136a",
+      "cited_path": "amphora-molecule-role-ranker/evidence/phase0/benchmark/result.v1.json",
+      "declared_at": [
+        "amphora-molecule-role-ranker/docs/mission.md:39-40"
+      ],
+      "declared_sha256": "f2a21f74e03b6b20f53fb10d4cdb6f2b477ce2b9a6e5200947c1ed91ad3a136a",
+      "live_uncommitted_drift_only": false,
+      "mismatch_vs_declared": false,
+      "was_already_wrong_at_baseline_commit": false,
+      "working_tree_matches_git_head": true
+    }
+  ],
+  "schema": "amphora.molecule-role-ranker.role-implementation-source-hash-binding-integrity.v1",
+  "summary": "4/11 hash-bound citations in this module's own docs mismatch the actual file content (confirmed against BOTH the live working tree and the git HEAD blob, ruling out uncommitted drift; all mismatches were already present at baseline commit 907e753, so this is a longstanding uncaught defect, not new drift). 1 file (role_fit_benchmark.v1.json) is bound to two different hashes within docs/capability-profile.json itself -- a self-contradiction independent of ground truth. The module's own capability-profile.json lists 'source hash mutation' as an automatic_demotion trigger; none of these mismatches were flagged or demoted.",
+  "target_artifacts": [
+    "amphora-molecule-role-ranker/docs/mission.md",
+    "amphora-molecule-role-ranker/docs/capability-profile.json"
+  ]
+}

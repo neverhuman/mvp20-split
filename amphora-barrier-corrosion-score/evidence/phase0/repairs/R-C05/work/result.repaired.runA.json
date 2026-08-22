@@ -1,0 +1,257 @@
+{
+  "acceptance_criterion": {
+    "both_directions_meet_floor": false,
+    "floor": 0.88,
+    "text": "Both directions (forward and reverse) reach >= 0.88 observed test coverage at the 0.90 target."
+  },
+  "any_direction_significantly_undercovers_at_0.05": true,
+  "attacks_claim": {
+    "repair_mechanism": "Mondrian (chloride-environment-class-stratified) conformal calibrator applied to the IDENTICAL held-out rows and IDENTICAL cal/test (marine-axis) partition as the refuting attack.",
+    "target_receipt": "corr-rate-conformal-domain-shift-v1/corr-rate-conformal-domain-shift-receipt.v1.dsse.json",
+    "target_statement": "REFUTED: reverse-direction (calibrate=marine, deploy=nonmarine) 0.90-target coverage 0.876307, p=3.1e-5."
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark": "corr-rate-conformal-mondrian-domain-shift-v1",
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "license": "NIST public data",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "fail_closed_checks": {
+    "all_pass": true,
+    "class_quantiles_derived_only_from_cal_rows": true,
+    "forward_cal_all_nonmarine": true,
+    "forward_cal_test_row_disjoint": true,
+    "forward_test_all_marine": true,
+    "reverse_cal_all_marine": true,
+    "reverse_cal_test_row_disjoint": true,
+    "reverse_test_all_nonmarine": true,
+    "train_disjoint_from_all_heldout": true
+  },
+  "forward_calibrate_nonmarine_deploy_marine": {
+    "base_model_test_r2": 0.334259,
+    "base_model_test_rmse_log10": 1.131188,
+    "coverage": {
+      "alpha_0.10": {
+        "binomial_pvalue_coverage_less_than_target": 0.001778,
+        "class_n_cal": {
+          "alkali": 480,
+          "halide": 253,
+          "organic_acid": 322,
+          "other": 415,
+          "other_acid": 662,
+          "salt_other": 71,
+          "sulfuric": 557,
+          "water": 13
+        },
+        "class_quantiles_log10": {
+          "alkali": 1.665737,
+          "halide": 1.579352,
+          "organic_acid": 1.633075,
+          "other": 1.611893,
+          "other_acid": 2.34528,
+          "salt_other": 1.981116,
+          "sulfuric": 1.934947,
+          "water": 1.860651
+        },
+        "class_used_own_quantile": {
+          "alkali": true,
+          "halide": true,
+          "organic_acid": true,
+          "other": true,
+          "other_acid": true,
+          "salt_other": true,
+          "sulfuric": true,
+          "water": true
+        },
+        "global_pooled_cal_quantile_log10": 1.886153,
+        "mean_interval_width_log10": 3.165879,
+        "meets_acceptance_floor_0.88": false,
+        "meets_target": false,
+        "n_covered": 909,
+        "n_strata": 8,
+        "n_strata_using_own_quantile": 8,
+        "n_test": 1043,
+        "observed_test_coverage": 0.871524,
+        "significantly_undercovers_at_0.05": true,
+        "target_coverage": 0.9
+      },
+      "alpha_0.20": {
+        "binomial_pvalue_coverage_less_than_target": 0.0,
+        "class_n_cal": {
+          "alkali": 480,
+          "halide": 253,
+          "organic_acid": 322,
+          "other": 415,
+          "other_acid": 662,
+          "salt_other": 71,
+          "sulfuric": 557,
+          "water": 13
+        },
+        "class_quantiles_log10": {
+          "alkali": 1.187099,
+          "halide": 1.212955,
+          "organic_acid": 1.311752,
+          "other": 1.153519,
+          "other_acid": 1.745291,
+          "salt_other": 1.6031,
+          "sulfuric": 1.462212,
+          "water": 1.860651
+        },
+        "class_used_own_quantile": {
+          "alkali": true,
+          "halide": true,
+          "organic_acid": true,
+          "other": true,
+          "other_acid": true,
+          "salt_other": true,
+          "sulfuric": true,
+          "water": true
+        },
+        "global_pooled_cal_quantile_log10": 1.390879,
+        "mean_interval_width_log10": 2.412803,
+        "meets_acceptance_floor_0.88": false,
+        "meets_target": false,
+        "n_covered": 749,
+        "n_strata": 8,
+        "n_strata_using_own_quantile": 8,
+        "n_test": 1043,
+        "observed_test_coverage": 0.718121,
+        "significantly_undercovers_at_0.05": true,
+        "target_coverage": 0.8
+      }
+    },
+    "direction": "calibrate_nonmarine_deploy_marine",
+    "n_cal": 2773,
+    "n_test": 1043
+  },
+  "module": "amphora-barrier-corrosion-score",
+  "mondrian_config": {
+    "classes": [
+      "halide",
+      "alkali",
+      "sulfuric",
+      "organic_acid",
+      "other_acid",
+      "water",
+      "salt_other",
+      "other"
+    ],
+    "conservative_floor": false,
+    "conservative_rule": "when enabled, a stratum's own quantile is clamped to max(own_quantile, pooled_direction_quantile) -- per-class information may only WIDEN the interval relative to the pooled/marginal baseline, never narrow it; never reads test data",
+    "fallback_rule": "class strata with < min_class_n calibration rows use the pooled (direction-level) cal quantile, never test data",
+    "min_class_n_for_own_quantile": 5,
+    "stratification_axis": "chloride_env_class"
+  },
+  "promotes_authority": false,
+  "repair_item": "R-C05",
+  "reverse_calibrate_marine_deploy_nonmarine": {
+    "base_model_test_r2": 0.166742,
+    "base_model_test_rmse_log10": 1.114373,
+    "coverage": {
+      "alpha_0.10": {
+        "binomial_pvalue_coverage_less_than_target": 0.0,
+        "class_n_cal": {
+          "alkali": 0,
+          "halide": 928,
+          "organic_acid": 0,
+          "other": 115,
+          "other_acid": 0,
+          "salt_other": 0,
+          "sulfuric": 0,
+          "water": 0
+        },
+        "class_quantiles_log10": {
+          "alkali": 1.720094,
+          "halide": 1.770277,
+          "organic_acid": 1.720094,
+          "other": 1.10299,
+          "other_acid": 1.720094,
+          "salt_other": 1.720094,
+          "sulfuric": 1.720094,
+          "water": 1.720094
+        },
+        "class_used_own_quantile": {
+          "alkali": false,
+          "halide": true,
+          "organic_acid": false,
+          "other": true,
+          "other_acid": false,
+          "salt_other": false,
+          "sulfuric": false,
+          "water": false
+        },
+        "global_pooled_cal_quantile_log10": 1.720094,
+        "mean_interval_width_log10": 3.264636,
+        "meets_acceptance_floor_0.88": false,
+        "meets_target": false,
+        "n_covered": 2376,
+        "n_strata": 8,
+        "n_strata_using_own_quantile": 2,
+        "n_test": 2773,
+        "observed_test_coverage": 0.856834,
+        "significantly_undercovers_at_0.05": true,
+        "target_coverage": 0.9
+      },
+      "alpha_0.20": {
+        "binomial_pvalue_coverage_less_than_target": 0.002841,
+        "class_n_cal": {
+          "alkali": 0,
+          "halide": 928,
+          "organic_acid": 0,
+          "other": 115,
+          "other_acid": 0,
+          "salt_other": 0,
+          "sulfuric": 0,
+          "water": 0
+        },
+        "class_quantiles_log10": {
+          "alkali": 1.42339,
+          "halide": 1.460984,
+          "organic_acid": 1.42339,
+          "other": 0.841345,
+          "other_acid": 1.42339,
+          "salt_other": 1.42339,
+          "sulfuric": 1.42339,
+          "water": 1.42339
+        },
+        "class_used_own_quantile": {
+          "alkali": false,
+          "halide": true,
+          "organic_acid": false,
+          "other": true,
+          "other_acid": false,
+          "salt_other": false,
+          "sulfuric": false,
+          "water": false
+        },
+        "global_pooled_cal_quantile_log10": 1.42339,
+        "mean_interval_width_log10": 2.679426,
+        "meets_acceptance_floor_0.88": false,
+        "meets_target": false,
+        "n_covered": 2159,
+        "n_strata": 8,
+        "n_strata_using_own_quantile": 2,
+        "n_test": 2773,
+        "observed_test_coverage": 0.778579,
+        "significantly_undercovers_at_0.05": true,
+        "target_coverage": 0.8
+      }
+    },
+    "direction": "calibrate_marine_deploy_nonmarine",
+    "n_cal": 1043,
+    "n_test": 2773
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-conformal-mondrian-domain-shift.v1",
+  "shared_train_split": {
+    "n_heldout_marine_rows": 1043,
+    "n_heldout_nonmarine_rows": 2773,
+    "n_heldout_rows": 3816,
+    "n_train_materials": 366,
+    "n_train_rows": 3883,
+    "note": "train materials IDENTICAL to corr-rate-conformal-v1 / corr-rate-conformal-domain-shift-v1 group_split (bucket 2,3,4); cal/test ASSIGNMENT of held-out rows (buckets 0+1) IDENTICAL to the refuting receipt (marine-axis partition); only the CALIBRATOR (pooled -> Mondrian chloride-class-stratified) changes."
+  }
+}

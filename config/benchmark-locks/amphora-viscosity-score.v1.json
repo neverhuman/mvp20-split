@@ -1,0 +1,29 @@
+{
+  "schema": "amphora.viscosity-benchmark-lock.v1",
+  "module_id": "amphora-viscosity-score",
+  "benchmark_id": "viscosity-rheology-sag-promotion-v1",
+  "dataset_sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749",
+  "split_sha256": "a6ef9b6c2d8d6d73bde295ed5e3b28ff1c35736fd68ad5cedc7fb3161c3f15ee",
+  "baselines": [
+    "family-temperature-median",
+    "composition-ridge",
+    "nearest-family",
+    "ideal-liquid-crowding",
+    "no-yield",
+    "majority-class"
+  ],
+  "hostile_nulls": ["family-shuffle", "temperature-shuffle", "lot-leakage"],
+  "thresholds": {
+    "apparent_viscosity_log_mae_max": 0.22314355131420976,
+    "ku_mae_max": 5.0,
+    "sag_index_mae_mil_max": 2.0,
+    "sag_balanced_accuracy_min": 0.8,
+    "unsafe_boundary_sensitivity_min": 0.9,
+    "interval_90_coverage_min": 0.85,
+    "interval_90_coverage_max": 0.95,
+    "theory_ku_mae_improvement_min": 1.0,
+    "theory_sag_balanced_accuracy_improvement_min": 0.05,
+    "paired_improvement_lower_95_min": 0.0
+  },
+  "immutable": true
+}

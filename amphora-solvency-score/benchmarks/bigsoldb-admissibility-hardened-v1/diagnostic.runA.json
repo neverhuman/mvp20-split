@@ -1,0 +1,141 @@
+{
+  "admissibility_audit": {
+    "constraint_citation": "IUPAC Gold Book amount/mole fraction definitional bound; a single physical quantity cannot have two internally-contradictory literature values at the same (solute,solvent,temperature) state point. Same threshold as amphora-molecule-property W2 fire.",
+    "contradiction_threshold_log10_units": 0.3,
+    "grouping_key": "(solute_canon RDKit-canonical SMILES, solvent_canon RDKit-canonical SMILES, temperature_K rounded to 0.1K) -- identical grouping already used by this module's locked run_v20_lso.py replicate-collapse step",
+    "n_groups_contradictory": 517,
+    "n_groups_total": 96924,
+    "n_groups_with_ge2_measurements": 3641,
+    "n_rows_dropped_as_inadmissible": 1193,
+    "n_rows_pre_admissibility_filter": 100983,
+    "n_solutes_touched_by_contradiction": 59,
+    "pct_contradictory_of_ge2_groups": 0.141994,
+    "pct_rows_dropped": 0.011814,
+    "reconciliation_with_w2": {
+      "note": "amphora-molecule-property's W2 fire flagged 90.3% (4134/4578) of (solute,solvent,temperature) duplicate groups in this SAME raw file (byte-identical sha256) as internally contradictory (>0.3 log10 units). Reproducing that check WITH temperature in the key (this module's own tbin=round(T,0.1K)) gives a materially different rate below. Reproducing it WITHOUT temperature in the key (solute+solvent only) gives a rate close to W2's figure, and the median temperature RANGE inside those groups is large -- consistent with W2's flagged 'contradictions' being solubility-vs-temperature curves (physically expected to span >0.3 log10 units over tens of K) rather than same-state-point measurement conflicts. This does not dispute W2's finding on its own corpus/pipeline; it establishes the correct, temperature-controlled admissibility definition for THIS module's temperature-resolved LSO model, which is what the exclusion below uses.",
+      "solute_solvent_only_key_temperature_dropped": {
+        "frac_ge2_groups_spanning_over_5K": 0.999239616006083,
+        "median_temperature_range_K_within_ge2_groups": 40.0,
+        "n_contradictory": 9021,
+        "n_groups_ge2": 10521,
+        "pct_contradictory_of_ge2": 0.857428
+      },
+      "temperature_controlled_solute_solvent_temperature_key": {
+        "n_contradictory": 517,
+        "n_groups_ge2": 3641,
+        "pct_contradictory_of_ge2": 0.141994
+      }
+    }
+  },
+  "authority": "AUDIT_ONLY / diagnostic -- attacks the signed BigSolDB LSO RMSE headline",
+  "benchmark": "amphora-solvency-score/bigsoldb-admissibility-hardened-v1",
+  "campaign_item_id": "W6",
+  "full_corpus_signed_comparator": {
+    "best_baseline_name": "b1_solvent_mean",
+    "best_baseline_rmse": 1.1686915142248226,
+    "model_rmse": 0.8770255643028615,
+    "model_rmse_ci95": [
+      0.8416341720920943,
+      0.9154344725058612
+    ],
+    "n_rows_modeled": 94532,
+    "n_solute_groups": 1372,
+    "raw_sha256": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0",
+    "receipt": "amphora-solvency-score/benchmarks/bigsoldb-v1/inhouse_benchmark_receipt.v1.dsse.json"
+  },
+  "lgb_params": {
+    "colsample_bytree": 0.8,
+    "deterministic": true,
+    "force_row_wise": true,
+    "learning_rate": 0.05,
+    "min_child_samples": 20,
+    "n_estimators": 3000,
+    "num_leaves": 127,
+    "num_threads": 8,
+    "objective": "regression",
+    "random_state": 20260724,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "verbose": -1
+  },
+  "lightgbm": "4.6.0",
+  "n_feature_reject": 2392,
+  "n_features": 433,
+  "n_folds": 5,
+  "n_rows_modeled": 94015,
+  "python": "3.12.3",
+  "raw_md5": "1e6d8a510387746e9faab5f39dc46317",
+  "raw_sha256": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0",
+  "rdkit": "2026.03.2",
+  "run_type": "ADMISSIBILITY_HARDENED_LEAVE_SOLUTE_OUT",
+  "seed": 20260724,
+  "sklearn": "1.7.2",
+  "splits": [
+    {
+      "baselines": {
+        "b0_global_mean": {
+          "frac_within_1log": 0.593458490666383,
+          "mae": 0.9581828156803432,
+          "n": 94015,
+          "r2": -0.0005347006183500369,
+          "rmse": 1.2168373723517534,
+          "rmse_ci95_cluster_bootstrap": [
+            1.1825431594331774,
+            1.2515924963387646
+          ]
+        },
+        "b1_solvent_mean": {
+          "frac_within_1log": 0.6228580545657608,
+          "mae": 0.9149185431688366,
+          "n": 94015,
+          "r2": 0.08017694547189658,
+          "rmse": 1.1667252776282553,
+          "rmse_ci95_cluster_bootstrap": [
+            1.1307416836052442,
+            1.2025207027490066
+          ]
+        },
+        "b2_solute_mean": {
+          "frac_within_1log": 0.593458490666383,
+          "mae": 0.9581828156803432,
+          "n": 94015,
+          "r2": -0.0005347006183500369,
+          "rmse": 1.2168373723517534,
+          "rmse_ci95_cluster_bootstrap": [
+            1.1825431594331774,
+            1.2515924963387646
+          ]
+        },
+        "b3_two_way_additive": {
+          "frac_within_1log": 0.6188693293623359,
+          "mae": 0.9225906695613874,
+          "n": 94015,
+          "r2": 0.0698548542990165,
+          "rmse": 1.1732534064105746,
+          "rmse_ci95_cluster_bootstrap": [
+            1.13669882487638,
+            1.2087304821671863
+          ]
+        }
+      },
+      "fold_assignment_sha256": "507d0408fb3fdbd1b5b1430ffe4a34dafd2b80462fb5c2fe1ab058ceefcecc15",
+      "group_column": "solute_canon",
+      "model": {
+        "frac_within_1log": 0.7787587087166942,
+        "mae": 0.6633348395987603,
+        "n": 94015,
+        "r2": 0.4836375681346714,
+        "rmse": 0.8741657376785225,
+        "rmse_ci95_cluster_bootstrap": [
+          0.8404785445796423,
+          0.9114412999049273
+        ]
+      },
+      "n_groups": 1372,
+      "n_rows": 94015,
+      "split": "leave_solute_out_admissible_only"
+    }
+  ],
+  "stage": "evaluation",
+  "wall_seconds": 202.2
+}

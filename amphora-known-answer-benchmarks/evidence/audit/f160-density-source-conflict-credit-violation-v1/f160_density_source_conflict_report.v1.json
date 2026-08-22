@@ -1,0 +1,148 @@
+{
+  "attacked_claim": {
+    "backs": [
+      "docs/mission.md Phase-0 KPI pinned_verified_pass_count_13_rate (floor 1.0, PASSED)",
+      "docs/mission.md Phase-0 KPI arithmetic_subset_6_of_6_pass_rate (floor 1.0, PASSED)",
+      "docs/mission.md Phase-0 KPI pinned_unverified_historical_count_1_rate (floor 1.0, PASSED)"
+    ],
+    "control_a_recorded": {
+      "actual": 8.22,
+      "expected": [
+        7.9,
+        8.3
+      ],
+      "status": "VERIFIED_PASS"
+    },
+    "control_b_recorded": {
+      "actual": 10.24,
+      "expected": [
+        10.2,
+        10.6
+      ],
+      "status": "VERIFIED_PASS"
+    },
+    "control_receipt_sha256_at_attack_time": "be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc",
+    "location": "amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json#controls[ARITH-MIL-F160-COMPONENT-A-DENSITY,ARITH-MIL-F160-COMPONENT-B-DENSITY]",
+    "mission_md_sha256_at_attack_time": "7e2cfd5d01342d106a7d332c3e70dcf61097627d433107fda680015069444092"
+  },
+  "contradiction": {
+    "component_density_treatment": "ARITH-MIL-F160-COMPONENT-A-DENSITY and ARITH-MIL-F160-COMPONENT-B-DENSITY are both computed from the SAME MIL-DTL-24441_38A 'Formula 160, Black' document (same source_artifact_sha256 as arithmetic_audit.json, whose own two Component-A/B rows cite the identical everyspec.com /38A URL that mil_recovery.json's OPEN source_conflict and known_reference_cards.json's no-credit policy both name), yet both controls carry status=VERIFIED_PASS in control_by_control_receipt.v1.json with no source_conflict field, no claim_limit, and no cross-reference to the sibling F160-BLACK disqualification anywhere in the control record -- a direct, undisclosed violation of the module's own stated policy that 'F160 black is held as a source-conflict check and receives no known-answer recovery credit until authoritative /38B or NAVSEA/DLA confirmation.'",
+    "f160_black_treatment": "control_by_control_receipt.v1.json status='UNVERIFIED', reason='Authoritative /38B or NAVSEA/DLA-confirmed historical artifact is absent.' -- correctly reflects the module's own no-recovery-credit policy for this disputed source."
+  },
+  "counterfactual_kpi_impact": {
+    "counterfactual_policy_consistent": {
+      "arithmetic_subset_pass": "4/6",
+      "arithmetic_subset_pass_rate_decimal": 0.6667,
+      "control_count": 14,
+      "unverified_count": 3,
+      "verified_pass_count": 11
+    },
+    "kpi_floor_breaches_if_policy_applied_consistently": {
+      "arithmetic_subset_6_of_6_pass_rate": {
+        "floor": 1.0,
+        "observed_would_be": 0.6667,
+        "verdict": "FAILS"
+      },
+      "pinned_unverified_historical_count_1_rate": {
+        "floor": 1.0,
+        "observed_would_be": false,
+        "verdict": "FAILS"
+      },
+      "pinned_verified_pass_count_13_rate": {
+        "floor": 1.0,
+        "observed_would_be": false,
+        "verdict": "FAILS"
+      }
+    },
+    "note": "Recomputed by mechanically applying the module's OWN documented F160-Black no-recovery-credit policy to reclassify both component-density controls UNVERIFIED, exactly as it is already applied to their sibling F160-BLACK control.",
+    "observed": {
+      "arithmetic_subset_pass": "6/6",
+      "control_count": 14,
+      "unverified_count": 1,
+      "verified_pass_count": 13
+    }
+  },
+  "does_not_close": [
+    "Does not establish that the module's engine-computed density values (8.22, 10.24 lb/gal) are themselves wrong -- only that the module's own generated artifacts say the source cannot authoritatively confirm them, and that disqualification is not propagated into the formal control status the way it is for the sibling F160-BLACK control.",
+    "Does not modify docs/mission.md, module-manifest.json, control_by_control_receipt.v1.json, or any signed Phase-0 KPI; flags them for human/repair-fire correction only.",
+    "Does not attack ARITH-MIL-F160-COMPONENT-A-DENSITY's underlying BOM independently (its raw masses are not disclosed in mil_recovery.json); the policy-consistency argument applies to it because it is drawn from the identical disqualified /38A source, independent of its own BOM composition."
+  ],
+  "falsification_criterion": {
+    "refuted_if": "the module's own generated artifacts (mil_recovery.json, known_reference_cards.json) explicitly declare the MIL-DTL-24441_38A 'Formula 160, Black' source an OPEN, unresolved table-assignment conflict that disqualifies it from known-answer recovery credit -- as they do, verbatim, for the sibling F160-BLACK control -- AND control_by_control_receipt.v1.json nonetheless grants unconditional, uncaveated VERIFIED_PASS credit to one or more OTHER controls sourced from the identical disputed document, with the disqualifying conflict undisclosed at the control level.",
+    "survives_if": "no control sourced from the disputed Formula-160-Black /38A document receives VERIFIED_PASS credit without the same conflict disclosure/caveat applied to F160-BLACK, or the module's own source_conflict status is not in fact OPEN/disqualifying."
+  },
+  "hypothesis_advanced": "Known answers expose arithmetic, unit, and applicability regressions (module mission). This audit checks whether the module applies its OWN documented evidentiary standard consistently across every control drawn from the same disputed source, rather than assuming a VERIFIED_PASS bit is honestly earned just because it is present.",
+  "independent_recompute": {
+    "conclusion": "The VERIFIED_PASS bit for ARITH-MIL-F160-COMPONENT-B-DENSITY is not robust to the very table-ordering ambiguity mil_recovery.json itself says is open and unresolved: the forward reading passes comfortably, but the alternative reading the source could not rule out overshoots the tolerance band by a large margin under illustrative literature class densities, corroborating mil_recovery.json's own qualitative admission that 'the reversed reading gives an implausibly high density' -- i.e. the PASS is contingent on a self-selected disambiguation of an admittedly unauthoritative source, exactly the situation the module's own policy says should earn NO recovery credit, not an uncaveated VERIFIED_PASS.",
+    "density_class_estimates_g_per_ml": {
+      "epoxy_resin": "1.16",
+      "iron_oxide": "5.17",
+      "naphtha": "0.76",
+      "silica": "2.65"
+    },
+    "forward_ordering_epoxy709_silica62": {
+      "in_band": true,
+      "recomputed_lb_gal": 10.2213,
+      "reported_band_with_margin_lb_gal": [
+        9.9,
+        10.9
+      ]
+    },
+    "method": "exact-rational (Fraction) volume-additive mixed-density recompute of Component B under BOTH candidate table orderings mil_recovery.json itself says the disputed /38A extraction cannot authoritatively resolve, using the raw masses mil_recovery.json transcribes (epoxy_resin/silica swapped, black_iron_oxide and naphtha held fixed) and illustrative published literature class-density point estimates for the same 4 ingredient classes the module's own approx_lines note documents substituting (epoxy resin 1.16 g/mL, silica 2.65 g/mL, iron oxide 5.17 g/mL, naphtha 0.76 g/mL); unit conversion via the exact NIST-water-density-anchored 8.34540445 lb/gal-per-g/mL constant.",
+    "raw_component_b_masses_lb": {
+      "component_B_black_iron_oxide_lb": 126.0,
+      "component_B_epoxy_resin_lb": 709.0,
+      "component_B_naphtha_lb": 147.0,
+      "component_B_silica_lb": 62.0
+    },
+    "reversed_ordering_epoxy62_silica709": {
+      "in_band": false,
+      "overshoot_as_pct_of_tolerance_band": 1756.9156,
+      "overshoot_lb_gal_above_band": 5.2707,
+      "recomputed_lb_gal": 16.1707,
+      "reported_band_with_margin_lb_gal": [
+        9.9,
+        10.9
+      ]
+    }
+  },
+  "mil_recovery_source_conflict_block": {
+    "approx_note": "black_iron_oxide density mapped to iron_oxide_red class (APPROX, same oxide family); polyamide/adduct -> reactive-polyamide class density (APPROX)",
+    "claim_limit": "Do not use Formula 160 black for strong known-answer recovery, qualification, or exact-reproduction claims until an authoritative /38B or NAVSEA/DLA-confirmed source closes the conflict.",
+    "component_a_block": {
+      "recomputed_lb_gal": 8.22,
+      "reported_lb_gal": [
+        7.9,
+        8.3
+      ],
+      "within_pm0.3": true
+    },
+    "component_b_block": {
+      "recomputed_lb_gal": 10.24,
+      "reported_lb_gal": [
+        10.2,
+        10.6
+      ],
+      "within_pm0.3": true
+    },
+    "issue": "The public /38A Formula 160 black record and extracted table structure do not by themselves close the Component-B epoxy_resin/silica assignment with enough authority for known-answer recovery credit.",
+    "mil_recovery_sha256": "99aec4b8279e0215a7b3ff36f6570cc12eae1c42731622ed7a3857acf6bb077d",
+    "physical_reconciliation": "Epoxy 709 lb / silica 62 lb reconciles Component-B density near the reported 10.2-10.6 lb/gal range and gives a plausible epoxy-rich vehicle; the reversed reading gives an implausibly high density and stoichiometry. This is a provisional physical reconciliation, not an authoritative correction.",
+    "status": "OPEN - source conflict pending authoritative /38B or NAVSEA/DLA confirmation"
+  },
+  "module_self_declared_policy": {
+    "f160_black_card_engine_verdict": "HOLD_SOURCE_CONFLICT_NOT_KNOWN_ANSWER",
+    "f160_black_card_expected_behavior": {
+      "behavior": "surface unresolved Formula 160 black source conflict and block known-answer credit",
+      "credit_limit": "provisional physical reconciliation pending authoritative /38B or NAVSEA/DLA confirmation",
+      "source_conflict_status": "OPEN - source conflict pending authoritative /38B or NAVSEA/DLA confirmation",
+      "variance_disclosure": "VS residual around 3.8 points is disclosed as variance, not top recovery proof"
+    },
+    "known_reference_cards_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+    "red_team_self_audit_quote": "F160 black is held as a source-conflict check and receives no known-answer recovery credit until authoritative /38B or NAVSEA/DLA confirmation."
+  },
+  "schema": "amphora.known-answer-benchmarks.f160-density-source-conflict-credit-violation-report.v1",
+  "verdict": {
+    "overall": "REFUTED"
+  }
+}

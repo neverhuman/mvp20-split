@@ -1,0 +1,5 @@
+GENERATED FROM CURRENT VALID MOVEMENTS
+Phase 1: 0/29
+Phase 0: 10/29
+Pre-Phase 0: 19/29
+Ranking enabled: false

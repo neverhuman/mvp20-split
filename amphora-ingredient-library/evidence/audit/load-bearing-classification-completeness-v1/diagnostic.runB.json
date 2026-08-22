@@ -1,0 +1,291 @@
+{
+  "authority": "AUDIT_ONLY",
+  "downstream_receipt_verification": [
+    {
+      "consumer_source_file": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/work/cf_arith_engine.py",
+      "receipt_exists": true,
+      "receipt_is_dsse_shaped": true,
+      "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/CF-ARITH.done-receipt.v1.dsse.json",
+      "receipt_sha256": "5c38f4206ce8b7a3f78af4a18b8696ef487e0095c70e28a35edc7ec457a378e3"
+    },
+    {
+      "consumer_source_file": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+      "receipt_exists": true,
+      "receipt_is_dsse_shaped": true,
+      "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+      "receipt_sha256": "be8ed5032b3e2f53830b1e4bd0abacd8675878c2161d72eb6f32a88d9c1f6f78"
+    },
+    {
+      "consumer_source_file": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py",
+      "receipt_exists": true,
+      "receipt_is_dsse_shaped": true,
+      "receipt_path": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/replay_receipt.v1.dsse.json",
+      "receipt_sha256": "f34a1f475945ff45aba4ed7f6db819693e6e2fc35f42cf2d82cec045360fb95d"
+    }
+  ],
+  "flagged_facts_reaching_signed_downstream_artifact": [
+    {
+      "catalog_unit": "g/cm3",
+      "catalog_value": 5.0,
+      "consuming_files": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py"
+      ],
+      "fact_key": "pigment.iron_oxide_red.density",
+      "genuine_numeric_consumption_hits": [
+        {
+          "content": "{\"id\": \"iron_oxide_red\", \"mass_g\": 55.0, \"density\": fv(\"pigment.iron_oxide_red.density\"), \"nonvol\": 1.0},",
+          "file": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+          "file_sha256": "79daeaa458ddf32bbd6656e8d28aee2ee7a7f66a28b367cb69c6925722bcb277",
+          "line": 114
+        },
+        {
+          "content": "\"iron_oxide_red_density\": fact(\"pigment.iron_oxide_red.density\"),   # 5.0",
+          "file": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py",
+          "file_sha256": "67b6685137ecb47efc1d6ccaa68fe1545025b43cca717d18c79fbeee94884228",
+          "line": 71
+        }
+      ],
+      "load_bearing_flag_in_facts_json": false,
+      "reached_signed_downstream_artifact": true,
+      "signed_downstream_consumers": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/replay_receipt.v1.dsse.json"
+      ]
+    },
+    {
+      "catalog_unit": "g/cm3",
+      "catalog_value": 2.85,
+      "consuming_files": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py"
+      ],
+      "fact_key": "pigment.mica.density",
+      "genuine_numeric_consumption_hits": [
+        {
+          "content": "{\"id\": \"mica_barrier\", \"mass_g\": 15.0, \"density\": fv(\"pigment.mica.density\"), \"nonvol\": 1.0},",
+          "file": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+          "file_sha256": "79daeaa458ddf32bbd6656e8d28aee2ee7a7f66a28b367cb69c6925722bcb277",
+          "line": 118
+        },
+        {
+          "content": "\"mica_density\": fact(\"pigment.mica.density\"),              # 2.85",
+          "file": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py",
+          "file_sha256": "67b6685137ecb47efc1d6ccaa68fe1545025b43cca717d18c79fbeee94884228",
+          "line": 75
+        }
+      ],
+      "load_bearing_flag_in_facts_json": false,
+      "reached_signed_downstream_artifact": true,
+      "signed_downstream_consumers": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/replay_receipt.v1.dsse.json"
+      ]
+    },
+    {
+      "catalog_unit": "g/cm3",
+      "catalog_value": 3.3,
+      "consuming_files": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/work/cf_arith_engine.py",
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py"
+      ],
+      "fact_key": "pigment.zinc_phosphate.density",
+      "genuine_numeric_consumption_hits": [
+        {
+          "content": "RHO_ZP, rho_zp_rec = fact(\"pigment.zinc_phosphate.density\")",
+          "file": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/work/cf_arith_engine.py",
+          "file_sha256": "f90b953a53014b2773afb0b59fbee08d3ad5cd67abd5ba8937541cd2f1a3a020",
+          "line": 85
+        },
+        {
+          "content": "{\"id\": \"zinc_phosphate_anticorrosive\", \"mass_g\": 30.0, \"density\": fv(\"pigment.zinc_phosphate.density\"), \"nonvol\": 1.0},",
+          "file": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+          "file_sha256": "79daeaa458ddf32bbd6656e8d28aee2ee7a7f66a28b367cb69c6925722bcb277",
+          "line": 115
+        },
+        {
+          "content": "\"zinc_phosphate_density\": fact(\"pigment.zinc_phosphate.density\"),   # 3.3",
+          "file": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py",
+          "file_sha256": "67b6685137ecb47efc1d6ccaa68fe1545025b43cca717d18c79fbeee94884228",
+          "line": 74
+        }
+      ],
+      "load_bearing_flag_in_facts_json": false,
+      "reached_signed_downstream_artifact": true,
+      "signed_downstream_consumers": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/CF-ARITH.done-receipt.v1.dsse.json",
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/replay_receipt.v1.dsse.json"
+      ]
+    }
+  ],
+  "gated_status_of_flagged_facts": {
+    "pigment.iron_oxide_red.density": {
+      "any_gated_independent_second_source_check_anywhere_in_module": false,
+      "appears_in_constant_crosscheck_v1_DENS_REF_gated_check": false,
+      "appears_in_constant_crosscheck_v1_PIG_REF_report_only_diagnostic": true,
+      "covered_by_pigment_density_second_source_verification_v1_scope": false
+    },
+    "pigment.mica.density": {
+      "any_gated_independent_second_source_check_anywhere_in_module": false,
+      "appears_in_constant_crosscheck_v1_DENS_REF_gated_check": false,
+      "appears_in_constant_crosscheck_v1_PIG_REF_report_only_diagnostic": true,
+      "covered_by_pigment_density_second_source_verification_v1_scope": false
+    },
+    "pigment.zinc_phosphate.density": {
+      "any_gated_independent_second_source_check_anywhere_in_module": false,
+      "appears_in_constant_crosscheck_v1_DENS_REF_gated_check": false,
+      "appears_in_constant_crosscheck_v1_PIG_REF_report_only_diagnostic": true,
+      "covered_by_pigment_density_second_source_verification_v1_scope": false
+    }
+  },
+  "headline": {
+    "n_load_bearing_keys_in_facts_json": 23,
+    "n_nonload_bearing_keys_in_facts_json": 60,
+    "n_nonload_bearing_keys_reaching_a_signed_downstream_artifact": 3,
+    "n_nonload_bearing_keys_with_genuine_downstream_code_consumption": 3,
+    "n_of_those_with_zero_gated_second_source_check_anywhere_in_module": 3,
+    "refuted_fact_keys": [
+      "pigment.iron_oxide_red.density",
+      "pigment.mica.density",
+      "pigment.zinc_phosphate.density"
+    ]
+  },
+  "inputs": {
+    "facts_json": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "search_root": "mvp20-split (whole tree, *.py and *.rs)"
+  },
+  "ledger_cross_check": [
+    {
+      "ledger_entries_found": 1,
+      "modules": [
+        "amphora-formulation-arithmetic"
+      ],
+      "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/CF-ARITH.done-receipt.v1.dsse.json",
+      "verdicts": [
+        "SURVIVED"
+      ]
+    },
+    {
+      "ledger_entries_found": 1,
+      "modules": [
+        "amphora-formulation-arithmetic"
+      ],
+      "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+      "verdicts": [
+        "REFUTED"
+      ]
+    },
+    {
+      "ledger_entries_found": 0,
+      "modules": [],
+      "receipt_path": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/replay_receipt.v1.dsse.json",
+      "verdicts": []
+    }
+  ],
+  "module": "amphora-ingredient-library",
+  "per_key_analysis": [
+    {
+      "catalog_unit": "g/cm3",
+      "catalog_value": 5.0,
+      "consuming_files": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py"
+      ],
+      "fact_key": "pigment.iron_oxide_red.density",
+      "genuine_numeric_consumption_hits": [
+        {
+          "content": "{\"id\": \"iron_oxide_red\", \"mass_g\": 55.0, \"density\": fv(\"pigment.iron_oxide_red.density\"), \"nonvol\": 1.0},",
+          "file": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+          "file_sha256": "79daeaa458ddf32bbd6656e8d28aee2ee7a7f66a28b367cb69c6925722bcb277",
+          "line": 114
+        },
+        {
+          "content": "\"iron_oxide_red_density\": fact(\"pigment.iron_oxide_red.density\"),   # 5.0",
+          "file": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py",
+          "file_sha256": "67b6685137ecb47efc1d6ccaa68fe1545025b43cca717d18c79fbeee94884228",
+          "line": 71
+        }
+      ],
+      "load_bearing_flag_in_facts_json": false,
+      "reached_signed_downstream_artifact": true,
+      "signed_downstream_consumers": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/replay_receipt.v1.dsse.json"
+      ]
+    },
+    {
+      "catalog_unit": "g/cm3",
+      "catalog_value": 2.85,
+      "consuming_files": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py"
+      ],
+      "fact_key": "pigment.mica.density",
+      "genuine_numeric_consumption_hits": [
+        {
+          "content": "{\"id\": \"mica_barrier\", \"mass_g\": 15.0, \"density\": fv(\"pigment.mica.density\"), \"nonvol\": 1.0},",
+          "file": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+          "file_sha256": "79daeaa458ddf32bbd6656e8d28aee2ee7a7f66a28b367cb69c6925722bcb277",
+          "line": 118
+        },
+        {
+          "content": "\"mica_density\": fact(\"pigment.mica.density\"),              # 2.85",
+          "file": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py",
+          "file_sha256": "67b6685137ecb47efc1d6ccaa68fe1545025b43cca717d18c79fbeee94884228",
+          "line": 75
+        }
+      ],
+      "load_bearing_flag_in_facts_json": false,
+      "reached_signed_downstream_artifact": true,
+      "signed_downstream_consumers": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/replay_receipt.v1.dsse.json"
+      ]
+    },
+    {
+      "catalog_unit": "g/cm3",
+      "catalog_value": 3.3,
+      "consuming_files": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/work/cf_arith_engine.py",
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py"
+      ],
+      "fact_key": "pigment.zinc_phosphate.density",
+      "genuine_numeric_consumption_hits": [
+        {
+          "content": "RHO_ZP, rho_zp_rec = fact(\"pigment.zinc_phosphate.density\")",
+          "file": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/work/cf_arith_engine.py",
+          "file_sha256": "f90b953a53014b2773afb0b59fbee08d3ad5cd67abd5ba8937541cd2f1a3a020",
+          "line": 85
+        },
+        {
+          "content": "{\"id\": \"zinc_phosphate_anticorrosive\", \"mass_g\": 30.0, \"density\": fv(\"pigment.zinc_phosphate.density\"), \"nonvol\": 1.0},",
+          "file": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+          "file_sha256": "79daeaa458ddf32bbd6656e8d28aee2ee7a7f66a28b367cb69c6925722bcb277",
+          "line": 115
+        },
+        {
+          "content": "\"zinc_phosphate_density\": fact(\"pigment.zinc_phosphate.density\"),   # 3.3",
+          "file": "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/formulation_dimensioned_audit.py",
+          "file_sha256": "67b6685137ecb47efc1d6ccaa68fe1545025b43cca717d18c79fbeee94884228",
+          "line": 74
+        }
+      ],
+      "load_bearing_flag_in_facts_json": false,
+      "reached_signed_downstream_artifact": true,
+      "signed_downstream_consumers": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/CF-ARITH.done-receipt.v1.dsse.json",
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/replay_receipt.v1.dsse.json"
+      ]
+    }
+  ],
+  "purpose": "Test whether facts.json's self-declared `load_bearing` boolean -- the sole gating predicate every prior external-verification KPI in this module has used to scope 'every load-bearing constant externally verified' -- actually matches real portfolio-wide downstream numeric consumption.",
+  "refutation_criterion": "PRE-REGISTERED: the completeness claim underlying hardener-tds-verified-constants-kpi.v1 (as extended by W-ING2) and pigment-density-second-source-verification-v1's own text (\"the LAST two load-bearing pigment density constants ... needing ... corroboration\") is REFUTED if >=1 facts.json key marked load_bearing=false is (a) genuinely consumed as a numeric input by code inside a DSSE-signed downstream artifact elsewhere in the portfolio, AND (b) never subject to any GATED (non-\"report only\") independent second-source check anywhere in this module's own audit trail. Observation: 3 such facts found (pigment.iron_oxide_red.density, pigment.mica.density, pigment.zinc_phosphate.density).",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ingredient-library.load-bearing-classification-completeness.v1",
+  "verdict": "CLAIM_REFUTED"
+}

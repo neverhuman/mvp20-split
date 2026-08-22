@@ -1,0 +1,711 @@
+{
+  "cee_empty_result_gap_note": "ship-hull-antifouling-standard-mapping-pl-cs is a genuine empty result this fire in BOTH languages (see gaps[] entry) -- honestly reported, not padded, and not silently converted into a fabricated candidate.",
+  "cee_no_empty_result_gap_this_fire": false,
+  "de_empty_result_gap_note": "din-eew-testdata-annex-de is a genuine empty result this fire (see gaps[] entry) -- honestly reported, not padded, and not silently converted into a fabricated candidate.",
+  "de_no_empty_result_gap_this_fire": false,
+  "fire_id": "20260810T140001-2033197-225224d5b207",
+  "gaps": [
+    {
+      "best_conditional": "DR-LANG-ZH-03",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-zh",
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "note": "603-epoxy Kissinger/Kamal DSC study rediscovered and enriched; paywalled, single-system, not RECOMMENDED-grade this fire."
+    },
+    {
+      "best_conditional": "DR-LANG-ZH-01",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-database-zh",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "National Materials Corrosion and Protection Science Data Center's own direct domain independently rediscovered; registration-gated, per-dataset terms unconfirmed."
+    },
+    {
+      "best_conditional": "DR-LANG-ZH-04",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-gbt-standard-mapping",
+      "module_gaps": [
+        "amphora-ip-fto-guard"
+      ],
+      "note": "GB/T 6822-2024 (current, 2025-06-01 effective) is the live marine antifouling/anticorrosive paint-system standard; no ASTM/ISO equivalence found despite an explicit search. GB/T 13351-1992 (DR-LANG-ZH-05) is its abolished 1992 lineage ancestor, retained for provenance only."
+    },
+    {
+      "best_conditional": "DR-LANG-ZH-06",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "zh-general-aggregator-access",
+      "module_gaps": [],
+      "note": "Wanfang (万方数据) is reachable and subscription-gated; CNKI (中国知网, DR-LANG-ZH-02) is REJECTED -- independently re-confirmed network-unreachable from this host both this fire and PROBE-WEB. Directive Section 4's 'CNKI/Wanfang-class' pairing therefore resolves to: Wanfang reachable, CNKI not, from xbabe1."
+    },
+    {
+      "best_conditional": "DR-LANG-JA-03",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-ja-amine-class",
+      "module_gaps": [
+        "amphora-cure-kinetics",
+        "amphora-cure-potlife-gate"
+      ],
+      "note": "Aromatic-amine fast-cure epoxy study (Network Polymer 32(4) 2011) rediscovers prior generic candidate C3 (J-STAGE) as a concrete instance; paywalled, single-group study, not RECOMMENDED-grade this fire."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-database-ja",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "Both ja national-materials-database candidates found (PoLyInfo, MatNavi DataSheet Collection No.18) are REJECTED on the rubric's rights-clarity floor -- MatNavi Service Terms of Use prohibit bulk/scripted acquisition regardless of registration status. This mirrors the zh fire's PoLyInfo-class rejection pattern (same underlying custodian, NIMS). No open ja corrosion dataset was found this fire."
+    },
+    {
+      "best_conditional": "DR-LANG-JA-05",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-jis-standard-mapping",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No ship-hull-specific JIS anti-corrosive-paint standard number (analogous to zh's GB/T 6822) was found despite an explicit search -- JIS K 5551/5552/5553 are structural/general-steel-scoped, not confirmed marine-hull-specific. JASNAOE's own ship-coating design guideline (P-49-18) is the best gap-fit match but its PDF failed to extract this fire (DR-LANG-JA-06) -- an honest evidence-quality gap, not a fabricated read."
+    },
+    {
+      "best_conditional": "DR-LANG-JA-04",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "salt-spray-standard-mapping-ja",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "JIS Z 2371:2015 confirmed explicitly aligned to ISO 9227:2012 (source states 'based on ISO 9227:2012... with technical modifications'); broadly method-class-comparable to ASTM B117 (both neutral-salt-spray). This directly satisfies the directive's standard-mapping requirement for the salt-spray test method."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open JIS K 7236 (epoxy equivalent weight) test-data annex was found -- an honest empty result for the directive's 'JIS test-data annexes' scope element, per rule 7. Standard method confirmed mapped to ISO 3001:1999 (title-and-scope level only). Note: the portfolio already computes EEW/AHEW internally via its own ChEBI+RDKit pipeline (amphora-molecule-property EEW/AHEW verification result, err 0.03) -- this ja finding is a standard-citation/mapping enrichment only, not a data gap requiring commissioning.",
+      "gap_id": "jis-eew-testdata-annex-ja",
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "note": "Empty result, honestly reported per directive rule 7 ('An empty result for a gap is a valid, reportable answer')."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": "DR-LANG-DE-06",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-de",
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "note": "TU Darmstadt open-access (CC BY-NC-ND) dissertation with primary DSC/Kissinger cure-kinetics data for epoxy-amine systems -- the first RECOMMENDED-grade candidate across the zh/ja/de DR-LANG fires. NonCommercial license clause is a real, disclosed caveat for this portfolio's commercial use (see disposition rights_note); suitable for engine-internal benchmarking without further clearance."
+    },
+    {
+      "best_conditional": "DR-LANG-DE-01",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-database-de",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "DECHEMA-Werkstoff-Tabelle (120,000+ material-medium combinations) found and evaluated; subscription/agreement-gated, coating-specific subset unconfirmed. Fraunhofer IFAM and GfKORR were also searched under this gap but both REJECTED (off_scope) -- neither is itself a dataset (a paid testing/consulting institute and a paid expert directory, respectively)."
+    },
+    {
+      "best_conditional": "DR-LANG-DE-04",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-din-standard-mapping",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "DIN EN ISO 12944 (esp. Part 9, offshore) is the general structural-steel coating-system standard, directly and identically adopted from ISO (not a separate DIN-only number, unlike zh's GB/T 6822). No ship-hull/watercraft-specific DIN antifouling standard number was found despite an explicit search -- mirrors the ja fire's identical JIS finding. The BAW-Merkblatt MKWAS (Bundesanstalt für Wasserbau watercraft corrosion-protection guideline) is the best gap-fit match by title but its PDF failed to extract this fire (DR-LANG-DE-07) -- an honest evidence-quality gap, not a fabricated read."
+    },
+    {
+      "best_conditional": "DR-LANG-DE-05",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "salt-spray-standard-mapping-de",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "DIN EN ISO 9227 is confirmed to BE the direct German/European adoption of ISO 9227 (not a separate national number). This directly satisfies the directive's standard-mapping requirement and converges exactly with the DR-LANG-JA fire's independent finding (JIS Z 2371 is also explicitly based on ISO 9227) -- two independent language-community searches this campaign both terminate at ISO 9227 as the underlying global baseline."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open DIN EN ISO 3001 (epoxy equivalent weight) test-data annex was found -- an honest empty result for the directive's 'DIN annexes' scope element, per rule 7. Standard method confirmed mapped to ISO 3001:1999 (direct DIN EN adoption, title-and-scope level only) -- same convergence pattern as the ja fire's JIS K 7236 finding (also ISO 3001:1999). Note: the portfolio already computes EEW/AHEW internally via its own ChEBI+RDKit pipeline (amphora-molecule-property EEW/AHEW verification result, err 0.03) -- this de finding is a standard-citation/mapping enrichment only, not a data gap requiring commissioning.",
+      "gap_id": "din-eew-testdata-annex-de",
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "note": "Empty result, honestly reported per directive rule 7 ('An empty result for a gap is a valid, reportable answer')."
+    },
+    {
+      "best_conditional": "DR-LANG-DE-08",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "seawater-cathodic-protection-coating-de",
+      "module_gaps": [
+        "amphora-owk-adhesion",
+        "amphora-public-corrosion-benchmark",
+        "amphora-zinc-galvanic-percolation"
+      ],
+      "note": "Kuron 1984, Werkstoffe und Korrosion 35(11) -- directly on-gap primary literature (cathodic protection + corrosion-protective coatings in seawater) confirmed to exist via DOI, but hard-paywalled (HTTP 402 Payment Required, the strongest-confidence access-denial signal recorded across the zh/ja/de campaign) -- content not evaluable this fire."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "de-institute-access-not-dataset",
+      "module_gaps": [],
+      "note": "Fraunhofer IFAM (research/testing institute) and GfKORR (expert-directory society) are both real, directive-named-class German corrosion-protection institutions and were both searched and evaluated, but neither publishes an open scientific dataset -- both REJECTED under the rubric's gap_fit floor (off_scope) rather than silently omitted. Mirrors the zh fire's 'zh-general-aggregator-access' disclosure pattern for a repository class that resolved to 'searched, found, not a dataset' rather than 'not searched'."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": "DR-LANG-RU-01",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-ru",
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "note": "CyberLeninka open-access (CC BY) NMR cure-kinetics study (Lundin, Ostapkovich, Yushkova, 2005) for epoxy resin ED-16 with amine hardeners -- the first RU-language RECOMMENDED-grade candidate, mirroring the de fire's TU Darmstadt dissertation as the campaign's second-ever dataset-ledger RECOMMENDED entry."
+    },
+    {
+      "best_conditional": "DR-LANG-RU-02",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "salt-spray-standard-mapping-ru",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "GOST 34388-2018 confirmed explicitly modified from ISO 9227:2012 (source states 'модифицирован на основе международного стандарта ISO 9227:2012'). This is the THIRD independent language-community confirmation this campaign that the underlying salt-spray baseline is ISO 9227 (ja's JIS Z 2371 and de's DIN EN ISO 9227 both converge on the same standard)."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open GOST test-data annex for the epoxy-equivalent-weight (EEW) method was found -- an honest empty result for the directive's 'GOST test-data annexes' scope element, per rule 7. Standard method confirmed mapped: GOST Р 56752-2015 (ИСО 3001:1999) -- the THIRD independent language-community convergence on ISO 3001:1999 for this exact method, after ja's JIS K 7236 and de's DIN EN ISO 3001. Note: the portfolio already computes EEW/AHEW internally via its own ChEBI+RDKit pipeline (amphora-molecule-property EEW/AHEW verification result, err 0.03) -- this ru finding is a standard-citation/mapping enrichment only, not a data gap requiring commissioning. Confidence caveat: the ISO-equivalence text was WebSearch-surfaced only -- both attempts to directly WebFetch the primary GOST Р 56752-2015 page failed this fire (docs.cntd.ru refused the connection, allgosts.ru returned a CAPTCHA challenge) -- disclosed, not silently treated as page-confirmed.",
+      "gap_id": "gost-eew-testdata-annex-ru",
+      "module_gaps": [
+        "amphora-molecule-property"
+      ]
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open Russian atmospheric/general corrosion database was found this fire -- an honest empty result. Both national-institute candidates found (VIAM's isp.viam.ru corrosion-testing center, DR-LANG-RU-03; TsNII KM Prometey, DR-LANG-RU-04) are REJECTED on the rubric's gap_fit floor -- neither publishes an open dataset, both are service/recommendation sources. This mirrors the ja fire's identical PoLyInfo/MatNavi rejection pattern for a distinct underlying reason (there, rights-clarity floor; here, gap_fit floor since no evaluable document was even located).",
+      "gap_id": "corrosion-database-ru",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ]
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No ship-hull-specific GOST antifouling/anticorrosive paint standard number (analogous to zh's GB/T 6822) was found despite two explicit searches -- honest negative result, the THIRD independent language-community confirmation of this exact null finding (ja's JIS search and de's DIN search each also found no ship-hull-specific national standard number; only the zh fire found one, GB/T 6822-2024). GOST 9.032 and GOST 9.401 are the general anti-corrosion coating-system standards referenced alongside ISO 12944 (mirrors ja's JIS K 5551 and de's DIN EN ISO 12944 general-scope findings). The Russian Maritime Register of Shipping (РС) publishes Appendix 52, an inspection/assessment guideline for ship coating condition -- a real, gap-relevant document, but an inspection methodology, not a distinct product performance standard number.",
+      "gap_id": "marine-coating-gost-standard-mapping",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ]
+    },
+    {
+      "best_conditional": "DR-LANG-RU-05",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "ru-general-aggregator-access",
+      "module_gaps": [],
+      "note": "eLIBRARY.ru / РИНЦ (DR-LANG-RU-05, the directive-named 'eLIBRARY/RSCI') is reachable (curl HTTP 302, independent of the WebFetch tool layer which itself timed out) and free to register for citation-index browsing, but full-text access to many journals is subscription-gated. docs.cntd.ru (DR-LANG-RU-06, a third-party GOST standards mirror) is REJECTED -- network-unreachable from this host via both WebFetch and raw curl this fire, a DIFFERENT failure mechanism (connection-refused/timeout) than the zh fire's CNKI TLS-certificate mismatch, not conflated with it. allgosts.ru (a second GOST mirror) is reachable but CAPTCHA-blocks automated access; vsegost.com (a third GOST mirror) is directly reachable and returned real standard content."
+    },
+    {
+      "best_conditional": "DR-LANG-KO-05",
+      "best_recommended": "DR-LANG-KO-04",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-ko",
+      "module_gaps": [
+        "amphora-cure-kinetics",
+        "amphora-cure-potlife-gate"
+      ],
+      "note": "DR-LANG-KO-04 (KRICT-authored, open-access epoxy/anhydride DSC cure-behavior study) is RECOMMENDED but anhydride-cured, not amine-cured -- hardener-class transferability is an open next_human_action, not assumed. DR-LANG-KO-05 (1998 conference abstract) is the only candidate directly on amine-hardener reaction-rate effects but is abstract-only."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": "DR-LANG-KO-02",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-database-ko",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "DR-LANG-KO-02 (data.go.kr rebar exploration test, 3,482 rows, fully open) is RECOMMENDED but adjacent-domain (concrete-embedded rebar, not coated-steel marine corrosion). No coherent Korean national atmospheric-corrosion database for coatings specifically was confirmed this fire -- KRISS and KIMS are untouched leads."
+    },
+    {
+      "best_conditional": "DR-LANG-KO-01",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "salt-spray-standard-mapping-ko",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "KS D ISO 9227:2005 confirmed as an identical adoption of ISO 9227:1990; broadly method-class-comparable to ASTM B117. Satisfies the directive's standard-mapping requirement for the salt-spray test method."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-ks-standard-mapping-ko",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No ship-hull-specific KS anti-corrosion-paint standard number was found despite two differently-phrased searches (queries 3 and 11) -- an honest empty result, mirroring the identical finding across the ja/de/ru fires for this exact sub-question. Surfaced only general zinc-rich shop-primer practitioner descriptions and Korean patent literature (not evaluated as dataset candidates)."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open KS M ISO 3001 (epoxy equivalent weight) test-data annex was found -- an honest empty result for the directive's 'KS standards annexes' scope element, per rule 7. Standard method confirmed mapped to ISO 3001:1999 (identical adoption) via the official e-나라 표준인증 government portal. Note: the portfolio already computes EEW/AHEW internally via its own ChEBI+RDKit pipeline (amphora-molecule-property EEW/AHEW verification result, err 0.03) -- this ko finding is a standard-citation/mapping enrichment only, not a data gap requiring commissioning.",
+      "gap_id": "ks-eew-testdata-annex-ko",
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "note": "Empty result, honestly reported per directive rule 7, mirrors the ja fire's identical JIS K7236 finding."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "ship-coating-dataset-ko-unresolved",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-owk-adhesion"
+      ],
+      "note": "해양환경공단_선박의_도장결함과_대책 (Korea Marine Environment Management Corporation, 'Ship Coating Defects and Countermeasures') is the single most gap-relevant title surfaced this fire -- directly on marine-hull coating defects -- but a stable data.go.kr detail-page URL could NOT be independently re-resolved across 3 separate queries this fire. Per this item's own refutation criterion ('a native-script citation that fails to resolve'), it is deliberately NOT scored as a disposition candidate and NOT added to dataset-ledger.v1.jsonl -- recorded honestly as an unresolved lead for a future fire, not fabricated or padded with a guessed URL."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": "DR-LANG-FR-04",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-database-fr",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "IFREMER/CNEXO's 1977 marine-corrosion bibliography cleared RECOMMENDED on the rubric's own mechanical formula (open access + no redundancy + high translation confidence + direct download all score maximally), but it is a CITATION INDEX, not primary measurement data -- disclosed prominently rather than presented as a usable dataset. CEFRACOR (the directive's other named-class French corrosion custodian) was also searched and REJECTED (off_scope) -- it is a paid professional society, not a dataset publisher."
+    },
+    {
+      "best_conditional": "DR-LANG-FR-01",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-nf-standard-mapping",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "NF EN ISO 12944 (esp. Partie 9, offshore) is the general structural-steel coating-system standard, directly and identically adopted from ISO -- a THIRD independent language-community confirmation (after de's DIN and the portfolio's own ASTM baseline) that ISO 12944 is the underlying global standard. No French-specific ship-hull antifouling standard number (analogous to zh's GB/T 6822 or de's BAW Merkblatt) was found despite an explicit search -- see ship-hull-antifouling-standard-mapping-fr empty result."
+    },
+    {
+      "best_conditional": "DR-LANG-FR-02",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "salt-spray-standard-mapping-fr",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "NF EN ISO 9227 confirmed as the direct French/European adoption of ISO 9227 (paid-purchase model directly confirmed via AFNOR boutique WebFetch). This is the THIRD independent language-community confirmation this campaign (after de's DIN EN ISO 9227 and ja's JIS Z 2371) that ISO 9227 is the de facto global salt-spray baseline underlying the portfolio's ASTM B117 usage."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open NF EN ISO 3001 (epoxy equivalent weight) test-data annex was found -- an honest empty result for the directive's 'NF annexes' scope element, per rule 7. Standard method confirmed mapped to ISO 3001:1999 (direct NF EN adoption, title-and-scope-and-method-principle level -- the fr search even surfaced the exact titration principle text). Note: the portfolio already computes EEW/AHEW internally via its own ChEBI+RDKit pipeline (amphora-molecule-property EEW/AHEW verification result, err 0.03) -- this fr finding is a standard-citation/mapping enrichment only, not a data gap requiring commissioning.",
+      "gap_id": "nf-eew-testdata-annex-fr",
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "note": "Empty result, honestly reported per directive rule 7 ('An empty result for a gap is a valid, reportable answer')."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "ship-hull-antifouling-standard-mapping-fr",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No French/AFNOR ship-hull-specific antifouling/anticorrosive paint standard number was found, only a general AFNOR pigment-property definition for 'pigment antisalissure' and the general NF EN ISO 12944 (already captured above) -- an honest negative result mirroring the identical de (BAW Merkblatt search) and ja (JIS ship-hull search) findings for this same scope element across three independent language communities."
+    },
+    {
+      "best_conditional": "DR-LANG-FR-05",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-anticorrosion-coating-photoaging-fr",
+      "module_gaps": [
+        "amphora-owk-adhesion",
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "Malajati 2009 (Clermont-Ferrand 2) is a directly on-gap PhD thesis on marine anti-corrosion coating photoaging mechanisms, but its full text is hosted on theses.hal.science, which is Anubis anti-bot-gated (confirmed by both WebFetch and raw curl from xbabe1) -- content and license terms beyond theses.fr's bibliographic metadata could not be confirmed this fire, an honest evidence-quality gap."
+    },
+    {
+      "best_conditional": "DR-LANG-FR-06",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "anticorrosion-primer-pigment-durability-fr",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-zinc-galvanic-percolation",
+        "amphora-owk-adhesion"
+      ],
+      "note": "Quach 2010 (Universite de Toulon/Hanoi cotutelle) is a directly on-gap PhD thesis on a DGEBA-polyamidoamine anticorrosion primer with zinc phosphate and iron oxide pigments, using EIS -- method-class-relevant to the portfolio's own EIS corrosion-benchmark work -- but same Anubis full-text block as FR-05; content confirmed only at the theses.fr abstract level this fire."
+    },
+    {
+      "best_conditional": "DR-LANG-FR-07",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-fr",
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "note": "Aouri 1992 (Universite Montpellier 2) is a DGEBA+TETA DSC dynamic-kinetics thesis, directly on-gap for cure-kinetics, but pre-digital-deposit era -- no PDF full-text link was even surfaced, and access/license terms are entirely unconfirmed. A second DSC/Kissinger-class HAL thesis pair (tel-00136381, tel-02416648) was also surfaced by query 9 but not individually disposition-scored this fire (candidate-count triage; open for a future fire)."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "fr-hal-antibot-access",
+      "module_gaps": [],
+      "note": "theses.hal.science (the full-text PDF host behind theses.fr's national metadata aggregator) is gated by an Anubis anti-bot JS challenge ('Making sure you're not a bot!') for BOTH WebFetch and raw curl from xbabe1 -- a host-level bot-gate, not a WebFetch-tool-specific block (independently reproduced both ways this fire). This is the SAME class of finding as PROBE-WEB's CNKI TLS-cert-mismatch block: a real, disclosed repository-class access failure that limits every fr thesis candidate (FR-05, FR-06, FR-07) to metadata-only evaluation via theses.fr, not full-text confirmation. theses.fr itself (the metadata aggregator, a distinct host) is fully reachable and was the actual source of every quoted fr thesis abstract this fire."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": "DR-LANG-IBERIAN-01",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "barrier-diffusion-dgeba-teta-rediscovery-iberian",
+      "module_gaps": [
+        "amphora-barrier-diffusion-timelag-fickian",
+        "amphora-barrier-water-uptake-hydrophilicity"
+      ],
+      "note": "REDISCOVERY of the exact SciELO/Polimeros source already anchoring amphora-redteam-audit's signed barrier-diffusion-timelag-fickian-ccby-v1 benchmark. Confirmed live: real article, real CC BY license, real DOI (10.1590/0104-1428.2106). Also surfaced a genuine, UNRESOLVED unit/magnitude discrepancy between the benchmark's cited phr13 point (D=2.17e-11 m2/s) and this fire's own WebFetch-summarized aggregate band (8e-14..3.94e-13 m2/s) -- flagged for human follow-up, not silently reconciled."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": "DR-LANG-IBERIAN-02",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-antifouling-pigment-coating-iberian",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-zinc-galvanic-percolation"
+      ],
+      "note": "LNEG (Portugal) institutional-repository article on antifouling-biocide marine paint schemes (aluminum substrate, adjacent-domain, disclosed). Open access at the repository-metadata level; the raw-PDF bitstream itself was not machine-readable this fire (font-stream binary only)."
+    },
+    {
+      "best_conditional": "DR-LANG-IBERIAN-03",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-protection-journal-access-iberian",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "Corrosao e Proteccao de Materiais (LNEG, Portugal's national corrosion journal) -- print edition suspended since 2018, journal-homepage access terms unclear despite individual back-catalogue articles carrying an explicit CC statement at the repository level (see IBERIAN-02)."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-adjacent-epoxy-systems-iberian",
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "note": "Two Spanish PhD theses (Imar 1994 UPV/EHU TGDDM/m-PDA, REJECTED -- no accessible full text anywhere; Morancho 1997 UPC epoxy+elastomer, RECOMMENDED -- see barrier-diffusion... no, see dataset-ledger DSL-03) on adjacent (non-DGEBA/non-marine-coating) epoxy-amine cure-kinetics systems. DSC/Kissinger-class methodology transferable; direct chemistry transferability disclosed as unconfirmed/adjacent, not conflated with the portfolio's own amine-hardener class."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open salt-spray test-data annex was found for UNE-EN ISO 9227 (Spain, AENOR) or NP EN ISO 9227 (Portugal, IPQ) -- both direct national adoptions of ISO 9227, paywalled at their respective standards-body stores. This is the FIFTH and SIXTH independent language-community confirmation this campaign (after zh/de/fr/ja) that ISO 9227 is the de facto global salt-spray baseline underlying the portfolio's own ASTM B117 usage.",
+      "gap_id": "salt-spray-standard-mapping-iberian",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "Empty result, honestly reported per directive rule 7."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open NP EN ISO 3001 (epoxy equivalent weight) test-data annex was found for Portugal -- confirmed mapped to ISO 3001:1999 (direct NP EN adoption) at the title/scope level only. The portfolio already computes EEW/AHEW internally via its own ChEBI+RDKit pipeline; this is a standard-citation/mapping enrichment only, not a data gap requiring commissioning.",
+      "gap_id": "eew-testdata-annex-iberian",
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "note": "Empty result, honestly reported per directive rule 7, matching the de/fr/ja precedent for this same directive scope element."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "ship-hull-antifouling-standard-mapping-iberian",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No Spanish/Portuguese/Brazilian ship-hull-specific antifouling/anticorrosive paint standard number was found, only academic/trade literature on antifouling paints and the general UNE-EN ISO 12944 / NP EN ISO 12944 / NBR-referenced ISO 12944 (already captured elsewhere) -- an honest negative result mirroring the identical de (BAW), fr (AFNOR), and ja (JIS) findings for this same scope element across five independent language communities now."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "pdf-text-extraction-and-tls-access-limitations-iberian",
+      "module_gaps": [],
+      "note": "Two distinct, disclosed access-path limitations this fire: (1) WebFetch's AI-summarization pipeline could not extract readable text from 2 raw scientific-PDF binaries (scielo.pt/pdf/cpm/v29n1/v29n1a01.pdf and a repositorio.lneg.pt bitstream API URL) -- same class of limitation as ja's JASNAOE and de's BAW Merkblatt PDF gaps; (2) www.tdx.cat (Tesis Doctorals en Xarxa) failed with a TLS certificate verification error ('unable to verify the first certificate') -- a NEW class of access failure not seen in prior DR-LANG fires (distinct from CNKI's cert-mismatch and HAL's Anubis bot-gate), worked around this fire via a Dialnet mirror record for the same thesis (DR-LANG-IBERIAN-05) rather than left as a dead end."
+    },
+    {
+      "best_conditional": "DR-LANG-CEE-01",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-pl-cs",
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "note": "Two primary cure-kinetics theses found (Opole University PhD on branched-polyamine crosslinking agents, pl; UTB Zlin bachelor's thesis on epoxy-resin curing kinetics, cs) -- neither content-confirmed this fire (SPA rendering blocked the pl thesis's license/PDF, PDF-binary extraction failed for the cs thesis). Both are CONDITIONAL-tier, honestly scored low pending human follow-up."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": "DR-LANG-CEE-06",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-protection-journal-pl-cs",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "Koroze a ochrana materialu (cs) confirmed CC BY-NC-ND 4.0 open access, 55+ year archive -- the first RECOMMENDED-grade candidate for this campaign item, and the second across the entire DR-LANG-* campaign (after DR-LANG-DE-06). Ochrona przed Korozja (pl) is the Polish national counterpart journal but its access model could not be confirmed this fire (CAPTCHA + two HTTP 403s + no explicit statement on the publisher's own page) -- scored CONDITIONAL, not equivalently RECOMMENDED, despite likely comparable real-world openness."
+    },
+    {
+      "best_conditional": "DR-LANG-CEE-02",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-standard-mapping-pl-cs",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "PN-EN ISO 12944-9 (pl) and CSN EN ISO 12944-9 (cs) both confirmed as direct national/European adoptions of ISO 12944-9 (offshore marine coating qualification) -- a FOURTH and now a fifth-counting independent language-community confirmation this campaign (after de and ja) that ISO 12944 is the global structural-coating baseline. No ship-hull/watercraft-specific PN or CSN antifouling standard number was found despite explicit searches in both languages (see ship-hull-antifouling-standard-mapping-pl-cs empty-result gap below) -- mirrors the identical de and ja findings."
+    },
+    {
+      "best_conditional": "DR-LANG-CEE-03",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "salt-spray-standard-mapping-pl-cs",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "PN-EN ISO 9227 (pl) confirmed as the direct Polish/European adoption of ISO 9227 (Czech CSN EN ISO 9227 not separately searched this fire, but ISO 9227 is expected to be an identical direct adoption per the established EN-adoption pattern) -- converges exactly with the de and ja fires' independent findings. This campaign has now independently confirmed ISO 9227 as the underlying global salt-spray baseline from THREE separate language communities (de, ja, pl)."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No ship-hull-specific PN (Polish) or CSN (Czech) antifouling/anticorrosive underwater-paint standard number was found in either language despite dedicated queries (only general IMO/MEPC biocide-regulation guidance and the general-scope PN-EN ISO / CSN EN ISO 12944 structural-steel standard, already captured above) -- an honest empty result per directive rule 7, mirroring the identical de and ja findings for DIN/JIS.",
+      "gap_id": "ship-hull-antifouling-standard-mapping-pl-cs",
+      "module_gaps": [
+        "amphora-owk-adhesion",
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "Empty result, honestly reported in both languages per directive rule 7 ('An empty result for a gap is a valid, reportable answer')."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "national-corrosion-testing-institute-pl-cs",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "SVUOM's 'Korozni mapy materialu CR' (Czech national atmospheric-corrosivity mapping product) was found and its existence confirmed via a KOM-journal article citation, but BOTH the custodian's own site (svuom.cz) and the describing article's PDF were unreachable/unextractable this fire -- svuom.cz confirmed network-blocked from this host by WebFetch AND raw curl (same diagnostic pattern PROBE-WEB recorded for CNKI). Lukasiewicz-IMP (pl) was also searched under this gap-adjacent institute class and REJECTED (off_scope) -- a research institute and house journal, not itself a dataset, mirroring the de fire's Fraunhofer/GfKORR finding."
+    },
+    {
+      "best_conditional": "DR-LANG-EU-05",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-database-nl",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "TU Delft's Liu et al. 2023 self-healing/corrosion-sensing MOF-coating record (DR-LANG-EU-05) is the best gap-fit find; TNO/NCC (EU-03) and Corrosielabs (EU-04) are both REJECTED off_scope -- contract-research institutes, not dataset publishers."
+    },
+    {
+      "best_conditional": "DR-LANG-EU-01",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-nen-standard-mapping",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "NEN-EN-ISO 12944 (esp. deel 9, offshore) is the general structural-steel coating-system standard, directly and identically adopted from ISO -- a further independent language-community confirmation (after de's DIN, fr's NF) that ISO 12944 is the underlying global standard. No Dutch-specific ship-hull antifouling standard number was found despite an explicit search -- see ship-hull-antifouling-standard-mapping-nl empty result."
+    },
+    {
+      "best_conditional": "DR-LANG-EU-02",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "salt-spray-standard-mapping-nl",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "NEN-EN-ISO 9227 confirmed as the direct Dutch/European adoption of ISO 9227 (paid-purchase model directly confirmed via NEN WebSearch). Further independent language-community confirmation (after ja/de/ru/fr) that ISO 9227 is the de facto global salt-spray baseline underlying the portfolio's ASTM B117 usage."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open NEN-EN-ISO 3001 (epoxy equivalent weight) test-data annex was found -- an honest empty result for the directive's 'NEN annexes' scope element, per rule 7. Standard method confirmed mapped to ISO 3001:1999/1997 (direct NEN-EN adoption, title-and-scope level only) -- same convergence pattern as the de/ja/ru/fr fires' identical DIN/JIS/GOST/NF EN ISO 3001 findings. Note: the portfolio already computes EEW/AHEW internally via its own ChEBI+RDKit pipeline (amphora-molecule-property EEW/AHEW verification result, err 0.03) -- this nl finding is a standard-citation/mapping enrichment only, not a data gap requiring commissioning.",
+      "gap_id": "nl-eew-testdata-annex",
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "note": "Empty result, honestly reported per directive rule 7 ('An empty result for a gap is a valid, reportable answer')."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "ship-hull-antifouling-standard-mapping-nl",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No Dutch/NEN ship-hull-specific antifouling/anticorrosive paint standard number was found, only the general NEN standards committee 'Verfwaren, metallieke en anorganische deklagen en corrosie' and the general NEN-EN-ISO 12944 (already captured above) -- an honest negative result mirroring the identical de/ja/fr findings for this same scope element across independent language communities."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-nl",
+      "module_gaps": [
+        "amphora-cure-kinetics",
+        "amphora-cure-potlife-gate"
+      ],
+      "note": "No dedicated Dutch-language amine-cure-kinetics dataset or thesis was found this fire despite a genuine native-nl query (surfaced only international English-language DSC/Kissinger literature, not a Dutch primary source) and an English TU-Delft-site-restricted follow-up (surfaced an unrelated bridge-design thesis, then the off-topic self-healing-coating record now filed under corrosion-database-nl instead). HONEST EMPTY RESULT, disclosed as a genuine miss, not padded."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "nl-repository-infrastructure-succession",
+      "module_gaps": [],
+      "note": "Repository-class finding: NARCIS (the former Dutch national research-information portal) was decommissioned 2023-07-03, superseded by 'The Netherlands Research Portal'. DANS EASY (the former Dutch national research-DATA archive) was decommissioned 2024-12-02, superseded by domain-specific DANS Data Stations (https://phys-techsciences.datastations.nl/ for materials/physical science). A direct browse of the Physical & Technical Sciences Data Station's homepage found NO corrosion/coating/epoxy dataset among its visible listing (all examples were climate/geography/topographic) -- an honest empty result, though the filtered ?q=search endpoint itself 404'd this fire (access-path limitation, disclosed, not conflated with a confirmed zero-result search)."
+    },
+    {
+      "best_conditional": "DR-LANG-EU-10",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-database-it",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "CNR-ICMATE's own MARECO marine-atmosphere exposure programme at Bonassola (DR-LANG-EU-10, part of the EFC Exposure Site Catalogue) independently rediscovered and evaluated; data-access/license terms unconfirmed (CORMAT-page re-fetch did not reproduce the finding). AIM (EU-08) and RINA (EU-09) both REJECTED off_scope -- neither is itself a dataset (a paid professional society and a paid classification-society consultancy, respectively)."
+    },
+    {
+      "best_conditional": "DR-LANG-EU-06",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-uni-standard-mapping",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "UNI EN ISO 12944 (esp. parte 9, offshore) is the general structural-steel coating-system standard, directly and identically adopted from ISO -- a further independent language-community confirmation. No Italian-specific ship-hull antifouling standard number was found despite an explicit search -- see ship-hull-antifouling-standard-mapping-it empty result."
+    },
+    {
+      "best_conditional": "DR-LANG-EU-07",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "salt-spray-standard-mapping-it",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "note": "UNI EN ISO 9227 confirmed as the direct Italian/European adoption of ISO 9227. Further independent language-community confirmation that ISO 9227 is the de facto global salt-spray baseline underlying the portfolio's ASTM B117 usage."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": "No open UNI EN ISO 3001 (epoxy equivalent weight) test-data annex was found -- an honest empty result for the directive's 'UNI annexes' scope element, per rule 7. Standard method confirmed mapped to ISO 3001:1999 (direct UNI-EN adoption, title-and-scope-and-method-principle level -- the it search even surfaced the exact TEABr/perchloric-acid titration principle text). Note: the portfolio already computes EEW/AHEW internally via its own ChEBI+RDKit pipeline (amphora-molecule-property EEW/AHEW verification result, err 0.03) -- this it finding is a standard-citation/mapping enrichment only, not a data gap requiring commissioning.",
+      "gap_id": "it-eew-testdata-annex",
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "note": "Empty result, honestly reported per directive rule 7 ('An empty result for a gap is a valid, reportable answer')."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "ship-hull-antifouling-standard-mapping-it",
+      "module_gaps": [
+        "amphora-ip-fto-guard",
+        "amphora-owk-adhesion"
+      ],
+      "note": "No Italian/UNI ship-hull-specific antifouling/anticorrosive paint standard number was found, only general antifouling-application practitioner pages -- an honest negative result mirroring the identical nl/de/ja/fr findings for this same scope element across independent language communities."
+    },
+    {
+      "best_conditional": null,
+      "best_recommended": "DR-LANG-EU-11",
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-it",
+      "module_gaps": [
+        "amphora-cure-kinetics",
+        "amphora-cure-potlife-gate"
+      ],
+      "note": "Basso (2022/23) Politecnico di Torino WebThesis (DR-LANG-EU-11, CC BY-NC-ND, open access) is the first RECOMMENDED-grade candidate this fire -- a biobased cardanol epoxy-amine cure-conversion study, methodologically adjacent (not DGEBA, not DSC/Kissinger) but directly relevant and openly licensed, mirroring the de fire's TU Darmstadt and ru fire's CyberLeninka RECOMMENDED precedents."
+    }
+  ],
+  "gaps_not_yet_searched_this_fire": [
+    "KRISS (한국표준과학연구원) and KIMS (재료연구소) -- named as Korean national corrosion-database leads, never queried directly",
+    "해양환경공단_선박의_도장결함과_대책 -- title real and highly gap-relevant, stable detail URL never resolved across 3 attempts",
+    "'제1종시설물 점검 진단 결과(철근부식도)' -- the exact rebar-CORROSION-DEGREE dataset (as opposed to the rebar-exploration-TEST dataset actually scored as DR-LANG-KO-02) was never independently resolved to its own URL",
+    "DR-LANG-KO-05's full paper text (behind DBpia subscription) -- abstract-page metadata only",
+    "A true external second-party spot-check of THIS fire's own ledger entries against live sources a second time -- open for a possible 2nd DR-LANG-KO fire (max_fires=2), per this item's own ATTACK SHAPE",
+    "theses.hal.science full-text for tel-00725456 (Malajati), tel-00647580 (Quach), tel-00136381, tel-02416648 -- all Anubis-antibot-blocked this fire, needs a real authenticated-browser or institutional-access retry [fr, carried forward]",
+    "1992MON20245 (Aouri) via SUDOC/ABES interlibrary loan -- pre-digital-deposit era, no PDF link surfaced this fire [fr, carried forward]",
+    "CEFRACOR's own technical conference proceedings ('journees techniques'), distinct from its paid-membership structure -- not searched [fr, carried forward]",
+    "Materiaux et Techniques (EDP Sciences journal) on its own publisher platform directly -- only searched via general web search this fire [fr, carried forward]",
+    "Peinture Actualites / Formule Verte trade press archives beyond the first page of results -- not exhausted [fr, carried forward]",
+    "IFREMER Archimer bibliography's own 219 pages of individual citations -- not read (no-acquisition discipline) [fr, carried forward]",
+    "scielo.pt/pdf/cpm/v29n1/v29n1a01.pdf and repositorio.lneg.pt Vol33No3 bitstream -- both need a real PDF-text-extraction path (curl + a real parser) [pt, carried forward]",
+    "www.tdx.cat TLS certificate failure -- not independently re-confirmed via raw curl from xbabe1 (the PROBE-WEB precedent for CNKI/HAL) [es, carried forward]",
+    "DGEBA/TETA D-value/unit discrepancy on the rediscovered Polimeros source (2.17e-11 m2/s cited vs. 8e-14..3.94e-13 m2/s WebFetch-summarized band) -- not resolved, needs full-text phr13-row isolation [pt, carried forward]",
+    "RCAAP (Portugal's national thesis aggregator) did not itself surface a directly on-gap record this fire -- worth a more targeted retry with different Portuguese query phrasing [pt, carried forward]",
+    "ABNT's own NBR catalog page for the Brazilian ISO-12944/9227 adoptions was not directly resolved (paywalled catalog, not attempted) [pt, carried forward]",
+    "CENIM's wider CSIC-network sister institutes (e.g. ICTP, IETcc) not individually searched [es, carried forward]",
+    "UPCommons (UPC's own repository, Morancho 1997's alternate open-access host) not itself fetched to independently confirm the exact CC license variant [es, carried forward]",
+    "BazTech PN-EN ISO 12944-9 offshore article -- CAPTCHA-blocked this fire, needs a non-WebFetch extraction path [pl, carried forward]",
+    "SVUOM corrosion-maps KOM-journal PDF (DOI 10.1515/kom-2015-0019) -- extraction failed this fire, needs a non-WebFetch text-extraction retry [cs, carried forward]",
+    "svuom.cz direct evaluation -- confirmed network-unreachable from xbabe1 (WebFetch + raw curl) this fire; needs a different egress path [cs, carried forward]",
+    "Opole University PhD dissertation full license/PDF -- blocked by JS-rendered SPA content this fire, needs a JS-capable fetch path [pl, carried forward]",
+    "UTB Zlin bachelor's thesis PDF -- extraction failed this fire, needs a non-WebFetch text-extraction retry [cs, carried forward]",
+    "VUT Brno DSpace resource on amine-epoxide curing molecular simulation -- found via WebSearch snippet only, not independently WebFetched or scored as a candidate this fire [cs, carried forward]",
+    "NUSL (invenio.nusl.cz) own search interface -- not directly queried with a filtered epoxy/corrosion search this fire, only reached via a general WebSearch snippet [cs, carried forward]",
+    "CSN EN ISO 9227 (Czech salt-spray standard) -- not separately searched this fire (PN-EN ISO 9227 was searched for pl; cs equivalent inferred but not independently confirmed) [cs, carried forward]",
+    "Slovak-language literature -- out of this item's pl+cs scope but Czechoslovak-era CS-prefix patents surfaced during cs queries suggest adjacent relevance for a future directive item"
+  ],
+  "it_empty_result_gap_note": "it-eew-testdata-annex and ship-hull-antifouling-standard-mapping-it are genuine empty results this fire (see gaps[] entries) -- honestly reported, not padded, and not silently converted into fabricated candidates.",
+  "it_no_empty_result_gap_this_fire": false,
+  "ja_empty_result_gap_note": "jis-eew-testdata-annex-ja is a genuine empty result this fire (see gaps[] entry) -- honestly reported, not padded, and not silently converted into a fabricated candidate.",
+  "ja_no_empty_result_gap_this_fire": false,
+  "ko_empty_result_gap_note": "ks-eew-testdata-annex-ko and marine-coating-ks-standard-mapping-ko are genuine empty results this fire (see gaps[] entries) -- honestly reported, not padded, and not silently converted into fabricated candidates.",
+  "ko_no_empty_result_gap_this_fire": false,
+  "nl_empty_result_gap_note": "nl-eew-testdata-annex, ship-hull-antifouling-standard-mapping-nl, and cure-kinetics-nl are genuine empty results this fire (see gaps[] entries) -- honestly reported, not padded, and not silently converted into fabricated candidates.",
+  "nl_no_empty_result_gap_this_fire": false,
+  "ru_empty_result_gap_note": "gost-eew-testdata-annex-ru, corrosion-database-ru, and marine-coating-gost-standard-mapping are all genuine empty results this fire (see gaps[] entries) -- honestly reported, not padded, and not silently converted into fabricated candidates.",
+  "ru_no_empty_result_gap_this_fire": false,
+  "run_id": "DR-LANG-EU-20260810T140001-2033197-225224d5b207",
+  "schema": "amphora.dataset-recon.coverage-map.v1",
+  "scope_note": "Merged: zh (DR-LANG-ZH) + ja (DR-LANG-JA) + de (DR-LANG-DE) + pl+cs (DR-LANG-CEE, this fire) language communities. Each gaps[] entry's gap_id and module_gaps disambiguate scope; no entry from any prior fire was removed or rewritten. + nl (Dutch) + it (Italian), DR-LANG-EU fire.",
+  "snapshot_date": "2026-08-10"
+}

@@ -1,0 +1,206 @@
+[
+  {
+    "candidate_id": "DR-DISP-Q03",
+    "confidence_flag": "MEDIUM",
+    "coverage": "~306 existing summary rows x ~40-60 frequency decades-points each => ~12k-18k complex impedance points across 6 coating systems x 4 baths x ~70 dates. Unlocks Brasher-Kingsbury-admissible water-uptake work after H0_REFUTED on 6/6 physical screens against the 0.01Hz-only summary.",
+    "date": "2026-08-10",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=10, provenance_measurement_quality=8, rights_clarity=10, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=8.6667 -> RECOMMENDED. Next action: Human to file a RISE data request to USBR for the raw frequency-resolved EIS sweeps behind catalog item 8048 (= B-ASK R-D02).",
+      "verdict": "RECOMMENDED"
+    },
+    "entry_type": "dataset_ledger_entry",
+    "estimated_records_and_coverage": "~306 existing summary rows x ~40-60 frequency decades-points each => ~12k-18k complex impedance points across 6 coating systems x 4 baths x ~70 dates. Unlocks Brasher-Kingsbury-admissible water-uptake work after H0_REFUTED on 6/6 physical screens against the 0.01Hz-only summary.",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "ledger_entry_id": "DR-DISP-Q03-DL",
+    "license_as_published": "license field: 'US Federal Government work, public domain (17 U.S.C. 105)'; license_verified=true.",
+    "module_gaps": [
+      "amphora-public-corrosion-benchmark"
+    ],
+    "name": "USBR RISE frequency-resolved raw EIS sweeps behind project 21019 / catalog item 8048",
+    "native_citation": null,
+    "next_human_action": "Human to file a RISE data request to USBR for the raw frequency-resolved EIS sweeps behind catalog item 8048 (= B-ASK R-D02).",
+    "publisher_custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "rank": null,
+    "recipe_elements": [
+      "frequency-resolved-eis-water-uptake-admissibility"
+    ],
+    "rubric_overall_score": 8.6667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.dataset-ledger.v1",
+    "schema_note": "8-key data-ask schema extended per module README",
+    "serves": {
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "recipe_elements": [
+        "frequency-resolved-eis-water-uptake-admissibility"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "url_or_doi": "https://data.usbr.gov/catalog/8048"
+  },
+  {
+    "candidate_id": "DR-DISP-Q04",
+    "confidence_flag": "MEDIUM",
+    "coverage": "6 of 306 published USBR-21019 EIS records (1.96%) have |phase|>90deg, physically impossible for a passive LTI two-terminal cell; localized to one source file, replicate 2/HAR bath.",
+    "date": "2026-08-10",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=10, provenance_measurement_quality=8, rights_clarity=10, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=8.6667 -> RECOMMENDED. Next action: Human to notify USBR of the passivity violation in item 128772 and request a corrected re-issue or documented phase convention (per queue line 4's own next_action).",
+      "verdict": "RECOMMENDED"
+    },
+    "entry_type": "dataset_ledger_entry",
+    "estimated_records_and_coverage": "6 of 306 published USBR-21019 EIS records (1.96%) have |phase|>90deg, physically impossible for a passive LTI two-terminal cell; localized to one source file, replicate 2/HAR bath.",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "ledger_entry_id": "DR-DISP-Q04-DL",
+    "license_as_published": "license field: 'US Federal Government work, public domain (17 U.S.C. 105)'; license_verified=true.",
+    "module_gaps": [
+      "amphora-public-corrosion-benchmark"
+    ],
+    "name": "USBR RISE erratum/corrected re-issue of catalog item 128772 (6/306 phase-impossible rows)",
+    "native_citation": null,
+    "next_human_action": "Human to notify USBR of the passivity violation in item 128772 and request a corrected re-issue or documented phase convention (per queue line 4's own next_action).",
+    "publisher_custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "rank": null,
+    "recipe_elements": [
+      "eis-passivity-erratum-correction"
+    ],
+    "rubric_overall_score": 8.6667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.dataset-ledger.v1",
+    "schema_note": "8-key data-ask schema extended per module README",
+    "serves": {
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "recipe_elements": [
+        "eis-passivity-erratum-correction"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "url_or_doi": "https://data.usbr.gov/catalog/8048/item/128772"
+  },
+  {
+    "candidate_id": "DR-DISP-Q13",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Explicit Krieger-Dougherty (1959) fit with a cited phi_m~=0.54; multi-point Phi sweep across mono/polydisperse conditions, multiple shear rates, >=2 temperatures. Full text confirmed via pdftotext extraction of the VTechWorks OA PDF.",
+    "date": "2026-08-10",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=10, provenance_measurement_quality=8, rights_clarity=5, uniqueness=10, integrity_risk=10, acquisition_cost_friction=10, overall=8.8333 -> RECOMMENDED. Next action: Human counsel review of whether CC BY-NC-ND permits internal, non-distributed, AUDIT_ONLY quantitative benchmarking (= B-ASK R-D03).",
+      "verdict": "RECOMMENDED"
+    },
+    "entry_type": "dataset_ledger_entry",
+    "estimated_records_and_coverage": "Explicit Krieger-Dougherty (1959) fit with a cited phi_m~=0.54; multi-point Phi sweep across mono/polydisperse conditions, multiple shear rates, >=2 temperatures. Full text confirmed via pdftotext extraction of the VTechWorks OA PDF.",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "ledger_entry_id": "DR-DISP-Q13-DL",
+    "license_as_published": "license field: 'CC BY-NC-ND...confirmed verbatim from the article's own copyright line'; license_verified=true. Rights wall (needs counsel confirmation this NC-ND scope permits internal AUDIT_ONLY benchmarking) not a data wall -- the dataset itself is in hand via an OA repository copy, matching the same rights-profile pattern already scored RECOMMENDED for DR-LANG-DE-06 (also CC BY-NC-ND).",
+    "module_gaps": [
+      "amphora-viscosity-score"
+    ],
+    "name": "Reynolds, Unterhalter, Francoeur, Bortner & Raeymaekers 2024, Advanced Engineering Materials 26(10):2301630 -- Krieger-Dougherty glass-microsphere-filled photopolymer eta(phi) sweep",
+    "native_citation": null,
+    "next_human_action": "Human counsel review of whether CC BY-NC-ND permits internal, non-distributed, AUDIT_ONLY quantitative benchmarking (= B-ASK R-D03).",
+    "publisher_custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "rank": null,
+    "recipe_elements": [
+      "krieger-dougherty-pigment-loading-benchmark"
+    ],
+    "rubric_overall_score": 8.8333,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.dataset-ledger.v1",
+    "schema_note": "8-key data-ask schema extended per module README",
+    "serves": {
+      "module_gaps": [
+        "amphora-viscosity-score"
+      ],
+      "recipe_elements": [
+        "krieger-dougherty-pigment-loading-benchmark"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "url_or_doi": "https://doi.org/10.1002/adem.202301630 ; https://hdl.handle.net/10919/140523"
+  },
+  {
+    "candidate_id": "DR-DISP-Q14",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Queue line 14 itself states this is the identical candidate_source sha256 as queue line 3 (c8a3902f7855e8c27c4e6698c40dda1d163c4a6c7d6c3dae1db83c6699724aa2), now also named as the unlock for 2 further stalled capabilities (within-instrument discrimination p=0.2554 at n=6; 3-instrument concordance Kendall W=0.492 weak/null at n=6).",
+    "date": "2026-08-10",
+    "disposition": {
+      "reason": "Inherits DR-DISP-Q03's verdict and rubric score verbatim -- this is a priority escalation of the identical underlying candidate (same sha256), NOT an independently distinct source; re-scoring it separately with the rubric would double-count one dataset as two candidates. Recorded here with its own candidate_id, as the closed-input-set manifest requires exactly one verdict per QUEUE LINE (14 lines = 14 manifest entries), while being explicit that no new acquisition value is being claimed beyond queue line 3's. Next action: Human: escalate the existing RISE data request citing 3 blocked capabilities, not 1 (per queue line 14's own next_action; = B-ASK R-D02).",
+      "verdict": "RECOMMENDED"
+    },
+    "entry_type": "dataset_ledger_entry",
+    "estimated_records_and_coverage": "Queue line 14 itself states this is the identical candidate_source sha256 as queue line 3 (c8a3902f7855e8c27c4e6698c40dda1d163c4a6c7d6c3dae1db83c6699724aa2), now also named as the unlock for 2 further stalled capabilities (within-instrument discrimination p=0.2554 at n=6; 3-instrument concordance Kendall W=0.492 weak/null at n=6).",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "ledger_entry_id": "DR-DISP-Q14-DL",
+    "license_as_published": "Same as DR-DISP-Q03: US Federal Government work, public domain (17 U.S.C. 105), license_verified=true.",
+    "module_gaps": [
+      "amphora-public-corrosion-benchmark"
+    ],
+    "name": "ESCALATION of queue line 3 (USBR RISE frequency-resolved EIS sweeps, project 21019/catalog 8048) -- same candidate, not a new source",
+    "native_citation": null,
+    "next_human_action": "Human: escalate the existing RISE data request citing 3 blocked capabilities, not 1 (per queue line 14's own next_action; = B-ASK R-D02).",
+    "publisher_custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "rank": null,
+    "recipe_elements": [
+      "frequency-resolved-eis-water-uptake-admissibility",
+      "eis-within-instrument-discrimination-power",
+      "eis-multi-instrument-concordance"
+    ],
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.dataset-ledger.v1",
+    "schema_note": "8-key data-ask schema extended per module README",
+    "serves": {
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "recipe_elements": [
+        "frequency-resolved-eis-water-uptake-admissibility",
+        "eis-within-instrument-discrimination-power",
+        "eis-multi-instrument-concordance"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "url_or_doi": "https://data.usbr.gov/catalog/8048"
+  }
+]

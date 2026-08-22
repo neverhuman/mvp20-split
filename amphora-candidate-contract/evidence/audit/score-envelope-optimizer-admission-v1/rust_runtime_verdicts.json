@@ -1,0 +1,674 @@
+{
+  "C01_missing_candidate_id": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_evidence_scope": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_explanations": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_missing_inputs": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_module_version": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_schema_version": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_score_0_1": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_score_semantics": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_source_refs": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C01_missing_uncertainty": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C02_score_above_one": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C03_score_below_zero": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C04_status_off_enum": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 1,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C05_score_semantics_off_enum": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C06_empty_evidence_scope": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C07_model_card_missing_kpi_name": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C08_drop_model_card": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "C09_bad_hash_pattern": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "E01_usable_by_optimizer_true": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E02_nonempty_objective_values": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E03_ranking_eligible_true": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_fto_not_performed": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_optimizer_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_patentability_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_procurement_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_product_performance_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_qualification_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_ranking_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_regulatory_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_release_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E04_missing_lock_no_safety_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E05_lock_set_false": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E06_solver_use_OBJECTIVE": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "E06_solver_use_RandD_OBJECTIVE": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F01_shipped_score_artifact_only_evidence": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F01_shipped_score_failed_gate": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 1,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F01_shipped_score_formulation_objective": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F01_shipped_score_molecule_objective": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F01_shipped_score_no_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 1,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F01_shipped_score_roadmap_generated_lead": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F02_registered_score_artifact_only_evidence": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F02_registered_score_failed_gate": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 1,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F02_registered_score_formulation_objective": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F02_registered_score_molecule_objective": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F02_registered_score_no_authority": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 1,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "F02_registered_score_roadmap_generated_lead": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "G00_gate_fully_populated": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_authority_receipt": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "G01_ablate_claim_boundary": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_formula_hash": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_ingredient_catalog_hash": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_ingredient_catalog_source_hash": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_input_hash": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_model_id": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_model_readiness_status": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_model_receipt_hash": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_normalization_version": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_prediction_status": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_primary_prediction": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_score_content_hash": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G01_ablate_solver_use": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "G02_escape_hatch_drop_trigger": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "G03_escape_hatch_bare_prediction": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "P01_base_conformant": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "P02_extra_metrics_keys": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "P03_roadmap_tier": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "P04_solver_disabled": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "P05_solver_constraint_only": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "P06_failed_gates_status": {
+    "detail": {
+      "feasible": true,
+      "non_scored_module_count": 1,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "ADMIT"
+  },
+  "R01_missing_authority_tier": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R01_missing_claim_locks": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R01_missing_gates": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R01_missing_metrics": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R01_missing_module_id": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R01_missing_objective_values": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R01_missing_status": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 1,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R01_missing_usable_by_optimizer": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R02_escalated_tier_OPTIMIZER": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R02_escalated_tier_PRODUCTION": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R02_escalated_tier_RANKING": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S01_drop_metrics_solver_use": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S02_drop_authority_receipt": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S03_drop_ranking_eligible": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S04_null_authority_receipt": {
+    "detail": {
+      "feasible": false,
+      "non_scored_module_count": 0,
+      "stable_within_process": true
+    },
+    "runtime_verdict": "REJECT"
+  }
+}

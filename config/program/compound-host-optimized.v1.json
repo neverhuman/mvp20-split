@@ -1,0 +1,22 @@
+{
+  "schema": "amphora.compound-execution-profile.v1",
+  "profile_id": "compound-host-optimized-v1",
+  "rdkit_profile": "host-optimized-znver2-avx2-lto-pgo",
+  "workers": [1, 2, 4, 8, 16, 32, 48, 64, 96, 128],
+  "batch_sizes": [32, 64, 128, 256, 512],
+  "cpu_features": [
+    "x86-64-v2",
+    "znver2",
+    "avx2",
+    "fma",
+    "bmi2",
+    "popcnt",
+    "pgo"
+  ],
+  "libraries": [
+    "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitChemReactions.so",
+    "artifacts/toolchains/rdkit-2026.03.2/lib/libRDKitGraphMol.so"
+  ],
+  "cache_profile": "campaign-only-cold-and-warm",
+  "deterministic_seed": 20260719
+}

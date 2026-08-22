@@ -1,0 +1,134 @@
+{
+  "campaign_item_id": "W-VISC2",
+  "clean": {
+    "fixed_einstein_2p5_fit": {
+      "eta_liquid_fit_pa_s": 7.316387,
+      "phi_max_fit": 0.089532,
+      "predicted_eta_pa_s": [
+        20.5554,
+        11.2125,
+        9.7098,
+        8.9232,
+        8.4083
+      ],
+      "r_squared": 0.796945
+    },
+    "free_intrinsic_3param_fit": {
+      "eta_liquid_fit_pa_s": 0.929077,
+      "intrinsic_viscosity_fit": 34.2402,
+      "phi_max_fit": 0.95,
+      "predicted_eta_pa_s": [
+        22.4834,
+        14.1197,
+        9.0634,
+        5.9373,
+        3.9637
+      ],
+      "r_squared": 0.997599
+    },
+    "label": "clean (W-VISC1 digitized values, unmodified)",
+    "monotonicity_check": {
+      "passed": true,
+      "rule": "apparent viscosity at fixed shear rate must strictly increase with solids wt.% for a rigid-filler suspension (confirmed true for all 9 published curves in Fig. 8, including excluded ones)",
+      "violations": []
+    },
+    "points": [
+      {
+        "eta_pa_s": 22.4,
+        "wt_pct": 20.0
+      },
+      {
+        "eta_pa_s": 14.1,
+        "wt_pct": 17.5
+      },
+      {
+        "eta_pa_s": 9.55,
+        "wt_pct": 15.0
+      },
+      {
+        "eta_pa_s": 5.92,
+        "wt_pct": 12.5
+      },
+      {
+        "eta_pa_s": 3.42,
+        "wt_pct": 10.0
+      }
+    ]
+  },
+  "defected": {
+    "fixed_einstein_2p5_fit": {
+      "eta_liquid_fit_pa_s": 6.546257,
+      "phi_max_fit": 0.089532,
+      "predicted_eta_pa_s": [
+        18.3917,
+        10.0323,
+        8.6878,
+        7.9839,
+        7.5232
+      ],
+      "r_squared": 0.634175
+    },
+    "free_intrinsic_3param_fit": {
+      "eta_liquid_fit_pa_s": 0.523054,
+      "intrinsic_viscosity_fit": 31.5459,
+      "phi_max_fit": 0.188958,
+      "predicted_eta_pa_s": [
+        22.7956,
+        11.3753,
+        6.227,
+        3.6657,
+        2.2879
+      ],
+      "r_squared": 0.865479
+    },
+    "label": "defected (planted 10x decimal-shift on 15.0 wt.% point: 9.55 -> 0.955 Pa.s)",
+    "monotonicity_check": {
+      "passed": false,
+      "rule": "apparent viscosity at fixed shear rate must strictly increase with solids wt.% for a rigid-filler suspension (confirmed true for all 9 published curves in Fig. 8, including excluded ones)",
+      "violations": [
+        {
+          "eta_higher": 0.955,
+          "eta_lower": 5.92,
+          "note": "higher solids loading produced LOWER apparent viscosity -- physically inadmissible for a rigid-filler suspension",
+          "wt_pct_higher": 15.0,
+          "wt_pct_lower": 12.5
+        }
+      ]
+    },
+    "points": [
+      {
+        "eta_pa_s": 22.4,
+        "wt_pct": 20.0
+      },
+      {
+        "eta_pa_s": 14.1,
+        "wt_pct": 17.5
+      },
+      {
+        "eta_pa_s": 0.955,
+        "wt_pct": 15.0
+      },
+      {
+        "eta_pa_s": 5.92,
+        "wt_pct": 12.5
+      },
+      {
+        "eta_pa_s": 3.42,
+        "wt_pct": 10.0
+      }
+    ]
+  },
+  "detection_summary": {
+    "fixed_einstein_r_squared_clean": 0.796945,
+    "fixed_einstein_r_squared_defected": 0.634175,
+    "free_intrinsic_r_squared_clean": 0.997599,
+    "free_intrinsic_r_squared_defected": 0.865479,
+    "monotonicity_check_detected": true
+  },
+  "planted_defect": {
+    "how_planted": "Copied the 5 digitized (wt_pct, eta_pa_s) points from run_kd_ccby_reachability_probe.py verbatim, then divided the eta_pa_s value of the wt_pct=15.0 point by 10 (9.55 -> 0.955), simulating a decimal-place / locale-typography misread of the kind independently documented elsewhere in this portfolio.",
+    "kind": "10x decimal-shift error on one digitized data point"
+  },
+  "purpose": "Positive control: show the benchmark harness fires on a defect planted in its own input, per the survival-receipt requirement.",
+  "schema": "amphora.viscosity-score.krieger-dougherty-positive-control.v1"
+}

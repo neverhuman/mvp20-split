@@ -1,0 +1,10 @@
+{
+  "campaign_item_id": "W-QC",
+  "fire_id": "20260805T030001-2371176-fd55a1ee7cbf",
+  "status": "done",
+  "last_updated_utc_fire": "20260805T030001",
+  "deliverable_1_mr_memory_detector_receipt": "COMPLETE: evidence/audit/mr-memory-detector-arl-degradation-v1/mr-memory-detector-arl-degradation-receipt.v1.dsse.json signed and self-verified this fire (two-replay bytes were already identical from a prior fire's staged run).",
+  "deliverable_2_phase0_kpi": "COMPLETE: evidence/phase0/kpis/arl-characterization-consolidated-kpi.v2.json supersedes v1 (built under V1-KPI-QC), folding in deliverable 1. RETRACTION-INDEX.md and docs/mission.md updated in the same fire.",
+  "done_receipt": "evidence/phase0/repairs/W-QC/done/w-qc-done-receipt.v1.dsse.json",
+  "next_action": "None -- both deliverables complete and the done receipt is banked. If a future fire re-touches this item, verify the done receipt still self-verifies before assuming re-work is needed."
+}

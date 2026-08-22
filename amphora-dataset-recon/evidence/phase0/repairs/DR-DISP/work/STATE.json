@@ -1,0 +1,39 @@
+{
+  "fires": [
+    {
+      "action": "built_closed_input_set_manifest_and_21_dispositions",
+      "dataset_ledger_append_line_range": [
+        11,
+        14
+      ],
+      "date": "2026-08-10",
+      "disposition_ledger_append_line_range": [
+        75,
+        96
+      ],
+      "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+      "post_fire_violation_count": 0,
+      "pre_fire_violation_count": 21,
+      "recommended_candidate_ids": [
+        "DR-DISP-Q03",
+        "DR-DISP-Q04",
+        "DR-DISP-Q13",
+        "DR-DISP-Q14"
+      ]
+    },
+    {
+      "action": "independent_cross_process_reattack",
+      "claim_verdict": "CLAIM_SURVIVED",
+      "current_state_violation_count": 0,
+      "dataset_ledger_line_count": 14,
+      "dataset_ledger_sha256": "a4e8b70e434ee99fe7704451b826c8e2d73bbaa16a6d196788149ff6b458d418",
+      "date": "2026-08-11",
+      "disposition_ledger_line_count": 96,
+      "disposition_ledger_sha256": "982c259a1ea75a30e5929a29bc05acfaa0bc83c24a004ec5fa0c41fc12aea942",
+      "fire_id": "20260811T000001-3347409-2b9da9195b6f"
+    }
+  ],
+  "item": "DR-DISP",
+  "next_fire_instructions": "DONE: independent cross-process re-attack (fire 2) confirmed 0 violations against the live ledger state and re-fired a fresh positive control. done/ receipt issued with repair_status=fix_confirmed. No further DR-DISP fires needed unless the closed input set or engine-discovered candidate population changes again.",
+  "schema": "amphora.dataset-recon.dr-disp-state.v1"
+}

@@ -1,0 +1,1 @@
+{"item_id":"T-01","status":"done","last_fire":"20260805T190001-72456-be7075e5af7e","verdict":"SURVIVED","note":"8-vector adversarial encoding injection attack executed via live-runtime probe against real amphora-engine EnginePool + pinned RDKit 2026.03.2; 0/8 typed-field leaks; done receipt at evidence/phase0/repairs/T-01/done/eight-vector-facts-injection-receipt.v1.dsse.json"}

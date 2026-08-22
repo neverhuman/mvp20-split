@@ -1,0 +1,96 @@
+{
+  "mode": "planted",
+  "n_checked": 11,
+  "n_supports": 10,
+  "n_does_not_support": 1,
+  "results": [
+    {
+      "key": "hardener.ancamide_2353.density",
+      "expected_value_checked": "1.01",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "note": "shares Evonik Americas guide PDF with the already-sampled ahew entry; density is a separate column in the same table row",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "hardener.ancamide_260a.density",
+      "expected_value_checked": "0.960",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "note": "same shared guide PDF, ANCAMIDE 260A row",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "hardener.ancamide_350a.density",
+      "expected_value_checked": ".97",
+      "text_file": "text_ancamide_350a.txt",
+      "note": "Ancamide 350A TDS, 'Specific Gravity @ 77F' field",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "hardener.versamid_115.density",
+      "expected_value_checked": "8.1",
+      "text_file": "text_versamid_115.txt",
+      "note": "TDS states Density as 8.1 lb/gal only; 0.97 g/mL is a unit conversion (8.1 lb/gal x 0.11983 = 0.9707), not a literal value in the source -- checked for the literal lb/gal figure, flagged as derived-unit-conversion in the finding",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "resin.dgeba_331.density",
+      "expected_value_checked": "1.16",
+      "text_file": "text_dgeba_331.txt",
+      "note": "Dow Epoxy Resins doc, D.E.R. 331 table row",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "resin.dgeba_828.density",
+      "expected_value_checked": "9.94",
+      "text_file": "text_dgeba_828.txt",
+      "note": "EPON 828 TDS, literal 'Density 1.16 g/mL' row",
+      "found_literal": false,
+      "verdict": "DOES_NOT_SUPPORT"
+    },
+    {
+      "key": "resin.dgeba_yd128.density",
+      "expected_value_checked": "1.17",
+      "text_file": "text_dgeba_yd128.txt",
+      "note": "Kukdo YD-128 TDS, 'Specific Gravity*1 (20C) 1.17' row",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "resin.solid_cut_1001x75.eew_on_nv",
+      "expected_value_checked": "450",
+      "text_file": "text_solidcut_1001x75.txt",
+      "note": "EPON 1001-X-75 TDS states range 450-550 g/eq on nonvolatiles; 500.0 is the undisclosed arithmetic midpoint -- checked for the literal range bound",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "solvent.mak.density",
+      "expected_value_checked": "0.818",
+      "text_file": "text_mak.txt",
+      "note": "Eastman MAK TDS, 'Specific Gravity @ 20C/20C 0.818'",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "solvent.mibk.density",
+      "expected_value_checked": "0.802",
+      "text_file": "text_mibk.txt",
+      "note": "Eastman MIBK TDS, 'Specific Gravity @ 20C/20C 0.802'",
+      "found_literal": true,
+      "verdict": "supports"
+    },
+    {
+      "key": "solvent.n_butanol.density",
+      "expected_value_checked": "0.81",
+      "text_file": "text_n_butanol.txt",
+      "note": "Eastman n-Butanol TDS, 'Specific Gravity @ 20C/20C 0.81'",
+      "found_literal": true,
+      "verdict": "supports"
+    }
+  ]
+}

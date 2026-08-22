@@ -1,0 +1,137 @@
+{
+  "attack_description": "New live-runtime Rust integration test (amphora-assurance-capabilities/tests/cf_packet_blueprint_citation_binding_probe.rs) against the REAL compiled CroProtocolPackageV2 (draft/validate/sign/verify_signature). Re-runs the T-02 attack shape (execution_authorized->true, strip each of the 8 claim locks, status drift off DRAFT_FOR_CRO_FEASIBILITY_REVIEW, one-byte signed-payload mutation, protocol_lock_sha256 not content-derived from locked_numeric_thresholds) against a packet shaped like a 'final assembly' instance whose candidate_binding carries a blueprint_citations array (path+sha256) -- the only free-form field the #[serde(deny_unknown_fields)] struct exposes. Adds 3 NEW probes: (i) cited blueprint sha256 does not match the real blueprint.md file's actual bytes; (ii) no blueprint citation present at all; (iii) locked_numeric_thresholds carry fabricated values unsupported by any real source, with a correctly self-derived (but source-blind) protocol_lock_sha256.",
+  "authority": "AUDIT_ONLY",
+  "blueprint_content_binding_gap_confirmed": true,
+  "campaign_item_id": "CF-PACKET",
+  "cargo_test_command": "cargo test -p amphora-assurance-capabilities --offline cf_packet_blueprint_citation_binding_probe",
+  "cargo_test_green": true,
+  "claim_under_attack": "The current CF-PACKET deliverable state is complete and accurate for its scope (finding a miss is CLAIM_REFUTED and is progress).",
+  "directive_context": {
+    "directive_id": "AMPHORA-DIRECTIVE-2026-08-09",
+    "directive_obligation": "CF-PACKET",
+    "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+    "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+    "obligation_section": "S7+S5"
+  },
+  "does_not_close": "Does not assert execution authority, safety, procurement, performance, qualification, ranking, or synthesis authority. Does not modify the master manifest, any signed Phase-0 KPI, or mission.md front matter. Does not repair the gap -- CF-PACKET's second and final fire (max_fires=2) is reserved for the repair attempt, per REPAIR-MODE rules.",
+  "fabricated_threshold_values_probe": {
+    "accepted_with_fabricated_values": true,
+    "probe": "fabricated_threshold_values_with_correct_citation_hash",
+    "sign_ok": true,
+    "validate_ok": true,
+    "verify_signature_ok": true
+  },
+  "finding": "CLAIM_REFUTED. The campaign item's own pre-registered refutation criterion names 'a cited blueprint sha256 that does not match the blueprint file' as a refuting observation. This probe constructed a CroProtocolPackageV2 'final assembly' packet whose candidate_binding carries a blueprint_citations entry {path: 'amphora-report-packager/reference/mvp20/out/blueprint.md', sha256: 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'} while the REAL file's sha256 is 'b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879' (cited_matches_real=False). validate()=True, sign()=True, verify_signature()=True: the mismatched citation was ACCEPTED end-to-end. Two further probes confirm the same root cause: a packet with NO blueprint citation at all is equally accepted (accepted_with_no_citation=True), and a packet whose locked_numeric_thresholds carry fabricated, unsupported values is accepted as long as protocol_lock_sha256 correctly re-derives from THAT map, regardless of whether the map's content has any relationship to the cited source (accepted_with_fabricated_values=True). CroProtocolPackageV2 (amphora-assurance-capabilities/src/lib.rs) has no field or validate() check binding locked_numeric_thresholds, or any blueprint citation inside candidate_binding, to the actual bytes of a blueprint artifact on disk: protocol_lock_sha256 only binds locked_numeric_thresholds to ITSELF (computed_protocol_lock_sha256), never to an external source file. This is a distinct gap from T-02 (packet-authored thresholds with an undereived lock hash) and W-CRO1 (the repair that fixed T-02): W-CRO1's repair makes the lock hash self-consistent with locked_numeric_thresholds, but self-consistency is not the same property as content-binding to a cited blueprint file, and nothing in the runtime tests or enforces the latter. The T-02/W-CRO1 attack shape re-run on this same final-assembly packet shape still correctly fails closed in all 12 other probes (n_t02_shape_slipped_through=0), so this is not a regression of those repairs -- it is a genuinely new, previously-untested clause of the CF-PACKET done_criterion that the deliverable does not meet.",
+  "harness_byte_identical_across_copies": true,
+  "harness_rs_sha256": "179cee79b1d72da613662d857413ad8dde052ab17809ec754d3aff621bcf1bbf",
+  "module": "amphora-cro-protocol-packager",
+  "n_t02_shape_slipped_through": 0,
+  "no_blueprint_citation_probe": {
+    "accepted_with_no_citation": true,
+    "probe": "no_blueprint_citation_present",
+    "sign_ok": true,
+    "validate_ok": true,
+    "verify_signature_ok": true
+  },
+  "probe_stdout_runA_sha256": "eeba2a6225ca2a8f5d5150c41394863b0fb98857a27e76093937d0e728b8b2de",
+  "probe_stdout_runB_sha256": "eeba2a6225ca2a8f5d5150c41394863b0fb98857a27e76093937d0e728b8b2de",
+  "real_blueprint_path": "amphora-report-packager/reference/mvp20/out/blueprint.md",
+  "real_blueprint_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+  "refutation_criterion_clause_tested": "a cited blueprint sha256 that does not match the blueprint file",
+  "refutation_criterion_observed": true,
+  "refutation_criterion_source": "docs/directives/2026-08-09-dataset-recon.index.json, obligations[] entry id=CF-PACKET, field refutation_criterion (pre-committed by the founder before this attack ran)",
+  "refutation_criterion_verbatim": "The assembled package validates with execution_authorized true, a claim lock stripped, a status other than DRAFT_FOR_CRO_FEASIBILITY_REVIEW, a protocol_lock_sha256 that does not recompute from the packet's own canonical locked numeric thresholds, or a cited blueprint sha256 that does not match the blueprint file.",
+  "repair_status": "not_attempted",
+  "run_type": "live_rust_runtime_probe",
+  "schema": "amphora.cro-protocol-packager.cf-packet-blueprint-citation-binding-audit.v1",
+  "source_hashes": {
+    "amphora-assurance-capabilities/src/lib.rs": "ae46b34766f092ddd332fa617a4348c3fda5e0c2b014f54a1662004c73ae7b5d",
+    "amphora-report-packager/reference/mvp20/out/blueprint.md": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879"
+  },
+  "study_id": "cf-packet-blueprint-citation-binding-v1",
+  "t02_w_cro1_attack_shape_holds_no_regression": true,
+  "t02_w_cro1_attack_shape_probes": [
+    {
+      "accepted": true,
+      "expected_accept": true,
+      "group": "control_correct_citation",
+      "probe": "correctly_cited_packet_round_trips",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_signature_ok": true
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_execution_authorized",
+      "probe": "execution_authorized_flipped_true_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_EXECUTION_AUTHORITY_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_PROCUREMENT_AUTHORITY_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_SAFETY_CLAIM_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_SYNTHESIS_CLAIM_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_PERFORMANCE_CLAIM_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_QUALIFICATION_CLAIM_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_NO_RANKING_AUTHORITY_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "probe": "stripped_UNMADE_DIGITAL_PROPOSAL_on_final_assembly"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_status_drift",
+      "probe": "status_drifted_from_draft_on_final_assembly"
+    },
+    {
+      "control_unmutated_signature_verifies": true,
+      "fail_closed": true,
+      "group": "t02_shape_one_byte_mutation",
+      "probe": "signed_final_assembly_payload_one_byte_flip"
+    },
+    {
+      "fail_closed": true,
+      "group": "w_cro1_shape_lock_hash_not_derived",
+      "probe": "protocol_lock_sha256_not_content_derived_on_final_assembly"
+    }
+  ],
+  "two_replay_byte_identical": true,
+  "verdict": "CLAIM_REFUTED",
+  "wrong_blueprint_citation_probe": {
+    "accepted_despite_mismatched_citation": true,
+    "cited_matches_real": false,
+    "cited_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "probe": "wrong_blueprint_sha256_citation",
+    "real_blueprint_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+    "sign_ok": true,
+    "validate_ok": true,
+    "verify_signature_ok": true
+  }
+}

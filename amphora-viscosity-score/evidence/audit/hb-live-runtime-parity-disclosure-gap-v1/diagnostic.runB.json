@@ -1,0 +1,62 @@
+{
+  "disclosure_scan": {
+    "hb_section_asserts_exact_equation_unqualified": true,
+    "hb_section_present_in_mission": true,
+    "kpi_has_any_parity_gap_disclosure": false,
+    "kpi_tokens_present": [],
+    "mission_has_any_parity_gap_disclosure": false,
+    "mission_tokens_present": [],
+    "tokens_checked": [
+      "hb-live-runtime-parity",
+      "live-runtime-parity",
+      "live runtime parity",
+      "guard-rail divergence",
+      "guard rail divergence",
+      "tau0 = +infinity",
+      "tau_0 = +infinity",
+      "tau0=+infinity",
+      "python oracle accepts",
+      "oracle silently accepts",
+      "is_finite check",
+      "not actually an is_finite",
+      "matches ... verbatim\" claim is false",
+      "verbatim\" claim is false"
+    ]
+  },
+  "does_not_close": [
+    "Does not modify the HB Phase-0 KPI, docs/mission.md, the hb-live-runtime-parity-v1 receipt, or the 66-receipt master manifest.",
+    "Does not re-run the live-Rust parity probe -- that evidence is taken as already-established (and independently re-verified here only at the DSSE-signature and ledger level).",
+    "Does not assert the KPI's four PASSED metrics are numerically wrong on their own stated scope (the 24 finite-input numeric points, which matched bit-for-bit) -- only that the already-signed finding about the guard-rail's non-verbatim behavior at tau0=+Infinity is undisclosed."
+  ],
+  "inputs_sha256": {
+    "hb_kpi": "a5e1c12b1cb97622a19ea5694b9ba8ba3a348af7de80e7fbf469817dedae0159",
+    "ledger": "99bed0b3cc14c3e5377f0224739a3c0381c4f60724bfadf4dfbb42730175ce6b",
+    "mission_md": "9bd28864021842af573a3af498b4a65c766219dfea7a7f5714ef8d9566fda0c8",
+    "parity_receipt": "855d47f03cadc2782a8be90141cc41606dccacc7b760ce1fdf83203d3c33a937"
+  },
+  "interpretation": "The hb-live-runtime-parity-v1 audit (2026-08-16, same day, ~12 hours prior) is a validly DSSE-signed CLAIM_REFUTED finding, confirmed both by re-verifying its Ed25519 signature against the pinned evaluator key and by locating its ledger line (fire_id 20260816T070001-3974882-875bdc64dfe1, verdict REFUTED). It found that the promoted Herschel-Bulkley KPI's evidentiary chain (run_hb_benchmark.py docstring, inherited unchanged across three prior fires) literally claims to match src/lib.rs:1227 'verbatim', but for tau0=+Infinity the claimed-verbatim Python oracle returns Ok while the live compiled Rust primitive correctly returns Err -- a real, mechanically demonstrated divergence in what the signed evidence chain asserts about itself, caught with a positive-control-validated comparator. Same-day, the standing herschel-bulkley-ccby-amorim2021-kpi.v1.json is still byte-identical to the exact file sha256 the parity finding was filed against, and carries zero token from this finding's vocabulary anywhere in its body; docs/mission.md's HB section still unqualifiedly asserts 'the module's exact HB equation ... reproduces the paper's own Fig.3 axis bounds' with no caveat about the guard-rail divergence, even though mission.md, via its own R-A03 Polyverse caveat elsewhere in the identical file, demonstrably knows how to and does attach inline disclosure caveats to standing prose once a repair lands. The disclosure mechanism is proven available in this exact document and is simply unused for this specific, already-signed, same-day refutation.",
+  "positive_control_file_capable_of_carrying_caveats": {
+    "note": "mission.md already carries an inline caveat elsewhere in the same file for a different, already-repaired finding (R-A03: '[Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]', appearing adjacent to every Polyverse-derived result) and the module has twice before (2026-08-03, 2026-08-15) landed REFUTED disclosure-currency audits of this exact shape. This proves the absence of an equivalent caveat for the HB guard-rail-divergence finding is a real gap, not a limitation of the document format -- the mechanism for inline disclosure exists in this exact file and is unused here.",
+    "ra03_caveat_pattern_present_in_mission_md": true
+  },
+  "purpose": "Documentation-completeness audit: has the already-signed, already-CLAIM_REFUTED hb-live-runtime-parity-v1 finding (fire_id 20260816T070001-3974882-875bdc64dfe1) -- that the promoted Herschel-Bulkley KPI's own claimed-verbatim Python oracle silently ACCEPTS a tau0=+Infinity input that the live compiled Rust primitive correctly REJECTS -- been incorporated as a disclosed caveat into the standing Phase-0 HB KPI and/or docs/mission.md prose, the same pattern this module already established for its Polyverse rights gap (R-A03), its FFW-vs-ML uncertainty gap, and its Arrhenius extrapolation-domain gap?",
+  "results": {
+    "disclosure_gap_confirmed": true,
+    "disclosure_mechanism_proven_available_and_unused": true,
+    "no_disclosure_in_kpi": true,
+    "no_disclosure_in_mission_prose": true,
+    "standing_kpi_unchanged_since_the_refutation": true,
+    "upstream_finding_is_genuine_signed_refutation": true
+  },
+  "schema": "amphora.viscosity-score.hb-live-runtime-parity-disclosure-audit-diagnostic.v1",
+  "upstream_finding_verification": {
+    "kpi_unchanged_since_refutation": true,
+    "kpi_under_attack_sha256_per_upstream_receipt": "a5e1c12b1cb97622a19ea5694b9ba8ba3a348af7de80e7fbf469817dedae0159",
+    "ledger_confirms_refuted": true,
+    "ledger_entry_found": true,
+    "parity_receipt_dsse_signature_valid": true,
+    "parity_receipt_fire_id": "20260816T070001-3974882-875bdc64dfe1",
+    "parity_receipt_verdict": "CLAIM_REFUTED"
+  },
+  "verdict": "REFUTED"
+}

@@ -1,0 +1,344 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-molecule-role-ranker-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "molecule"
+  ],
+  "ceilings": {
+    "authority_tier": "LIMITED_SANITY",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "AUDIT_ONLY"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 6,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.2.0",
+    "operational_readiness": "SHADOW",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "datasets": [
+    {
+      "dataset_id": "amphora-molecule-role-ranker/reference/mvp20/data/corrosion_series.json",
+      "hash": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "path": "amphora-molecule-role-ranker/reference/mvp20/data/corrosion_series.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-molecule-role-ranker/reference/mvp20/data/cure_verification_set.json",
+      "hash": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "path": "amphora-molecule-role-ranker/reference/mvp20/data/cure_verification_set.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-molecule-role-ranker/reference/mvp20/data/facts.json",
+      "hash": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "path": "amphora-molecule-role-ranker/reference/mvp20/data/facts.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-molecule-role-ranker/reference/mvp20/data/molecule_library.json",
+      "hash": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6",
+      "path": "amphora-molecule-role-ranker/reference/mvp20/data/molecule_library.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-molecule-role-ranker/reference/mvp20/data/role_fit_benchmark.v1.json",
+      "hash": "74c01721752ce42a55b3c76e586446954cdb3c3e701eaa9914ec2bd93c8312ee",
+      "path": "amphora-molecule-role-ranker/reference/mvp20/data/role_fit_benchmark.v1.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-role-ranker/reference/mvp20/data/corrosion_series.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-role-ranker/reference/mvp20/data/cure_verification_set.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-role-ranker/reference/mvp20/data/facts.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-role-ranker/reference/mvp20/data/feedback_v1/dataset_context.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-role-ranker/reference/mvp20/data/molecule_library.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-molecule-role-ranker/reference/mvp20/data/role_fit_benchmark.v1.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "No checked-in module-specific benchmark result artifact was identified.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "Independent expert role labels and candidate-bound grade evidence"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-molecule-capabilities/src/lib.rs",
+      "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
+      "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+    },
+    "known_contradictions": [
+      "Role-fit rules and declared evidence do not establish polyamide identity, marine qualification, synthesis feasibility, or performance."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-molecule-capabilities/src/lib.rs",
+      "scenario": "Keep measured-only and missing-class evidence from becoming qualification authority.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-molecule-role-ranker",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "molecule",
+        "dataset_id": "role-fit-benchmark.v1",
+        "model_id": "molecule-role-fit-v1",
+        "model_readiness_status": "R&D_RANKING_READY",
+        "solver_use": "R&D_OBJECTIVE",
+        "track_id": "molecule_role_fit"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-molecule-role-ranker-example",
+      "candidate_type": "molecule",
+      "molecule": {
+        "role": "resin",
+        "smiles": "CC"
+      }
+    },
+    "current_output": {
+      "authority_tier": "LIMITED_SANITY",
+      "candidate_id": "amphora-molecule-role-ranker-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {},
+      "metrics": {
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "role-fit benchmark pass",
+          "model_authority": "LIMITED_SANITY",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        }
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-molecule-role-ranker",
+      "module_version": "0.0.0-example",
+      "objective_values": {
+        "role_fit": null
+      },
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "role-fit benchmark pass",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1.",
+      "unit": "declared by locked benchmark",
+      "value_path": "objective_values.role_fit"
+    }
+  ],
+  "lane": "molecule",
+  "module_id": "amphora-molecule-role-ranker",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "objective_values.role_fit",
+    "non_blocking_claim_locks": [
+      "ambiguous_role_is_audit_only",
+      "role_rank_is_not_qualification_or_procurement_authority",
+      "feedback_v1_polymer_corpus_context_only",
+      "no_polyamide_marine_or_approval_claim_from_smiles_or_text",
+      "candidate_role_evidence_is_not_self_authorizing",
+      "defined_structure_does_not_establish_liquid_state",
+      "commercial_product_values_not_upgraded_from_defined_monomer"
+    ],
+    "objective": "objective_values.role_fit",
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PRE_PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 3,
+      "decision_value": 4,
+      "downstream_leverage": 5,
+      "effort": 3,
+      "evidence_gap": 4,
+      "external_delay": 3
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 6,
+    "score": 34
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

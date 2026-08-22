@@ -1,0 +1,171 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-redteam-audit",
+  "kpi_id": "amphora-redteam-audit-phase0-deterministic-control-diagnostic-v1",
+  "capability": "Deterministic meta-audit runtime. deterministic_control_diagnostic(module_id) dispatches to nine upstream module-specific diagnostics (amphora-evidence-intake-validator, amphora-source-ledger, amphora-redteam-audit, amphora-report-packager, amphora-formulation-arithmetic, amphora-formulation-universe, amphora-envelope-gates, amphora-cro-protocol-packager, amphora-optimizer-orchestrator), each of which embeds its reference fixture bytes via include_bytes! at compile time and asserts hardcoded expected_fixture_outcomes vs. observed_fixture_outcomes (BTreeMap equality), positive/negative control counts vs. locked thresholds, and zero_authority_assertions populated to true for every one of the ten REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS. Any drift of embedded bytes or any per-module invariant break causes passed = false and validate() failure. Unrecognized module_id fails closed with Err. Grants no batch-release, manufacturing-qualification, regulatory, safety, procurement, or optimizer authority under any input; solver_use_ceiling = DISABLED.",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "solver_use_ceiling": "DISABLED",
+  "population": "Nine dispatched module diagnostics with locked embedded fixture corpora (evidence-intake: 1 ACCEPT + 7 REJECT non-candidate fixture packages via v5_non_candidate_fixture_packages.json; source-ledger: 5 synthetic controls + current-ledger REJECT with 23 load-bearing + 9 distinct dual-source + 14 prose-waiver + 0 missing-URL entries across 162 source records; redteam-audit: 30,000 negative controls + 276 covered attack-axis pairs; report-packager: rendered-document + score-envelope + manifest triple-binding; formulation-arithmetic / formulation-universe / envelope-gates: 2 ACCEPT + 7-9 REJECT synthetic fixtures each; cro-protocol-packager: 1 ACCEPT + 9 REJECT protocol packets; optimizer-orchestrator: 2 ACCEPT + 10 REJECT authorization requests). Six unsupported-module-id probes for fail-closed coverage (empty string, whitespace, unknown id, underscore-variant, uppercase-variant, unicode-variant). All 24 REDTEAM_ATTACK_AXES cross-checked against benchmark-lock.v1.json attacks list.",
+  "split_methodology": "No fitting - deterministic control diagnostic is a pure function over compile-time embedded fixture bytes. Every expected outcome is hardcoded in the Rust runtime (e.g. evidence-intake accepted == 1 && rejected == 7; source-ledger load_bearing.len() == 23 && distinct_dual_source == 9 && prose_waivers == 14 && source_records.len() == 162 && incomplete_records == 0). Every observed outcome is computed from embedded bytes via amphora_core::parse_json_strict + BTreeMap comparison. Any drift of embedded bytes, any accidental fixture mutation, or any strict-JSON parse failure propagates as passed: false, which fails the gate. No hand-authored external fixture is required: the runtime IS the fixture corpus.",
+  "theory": "DSSE (Dead Simple Signing Envelope, in-toto Attestation v1.0, 2020) - signature envelope binding artifact bytes to signer identity. Ed25519 signature scheme (Bernstein, Duif, Lange, Schwabe & Yang, 'High-speed high-security signatures,' CHES 2011; standardized as RFC 8032, 2017) - EdDSA curve providing deterministic signatures with strong forgery resistance. SHA-256 hash-chained fixture integrity (NIST FIPS 180-4, 'Secure Hash Standard,' 2015). Merkle 1988 'A Digital Signature Based on a Conventional Encryption Function' Advances in Cryptology CRYPTO 87 - tamper-evident hash chains. Anderson 1980 'Computer Security Threat Monitoring and Surveillance' James P. Anderson Co. Technical Report - reference-monitor concept, foundational to policy-driven access-control audits. NIST SP 800-53 Rev. 5 (2020) AU-6 'Audit Record Review, Analysis, and Reporting' + CM-6 'Configuration Settings' - the meta-audit control catalog whose implementation this diagnostic mechanizes. NIST SP 800-88 Rev. 1 (2014) 'Guidelines for Media Sanitization' - integrity assurance methodology. OWASP ASVS 4.0 V14 'Configuration Verification' (Application Security Verification Standard, 2019) - adversarial-corpus policy validation methodology (locked corpus of known-bad inputs, assert every one rejected). Kerckhoffs 1883 'La Cryptographie Militaire' Journal des Sciences Militaires - principle that security must not depend on secrecy of design.",
+  "metrics": [
+    {
+      "name": "diagnostic_dispatch_ok_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 9,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Fraction of the 9 supported module IDs for which deterministic_control_diagnostic(module_id) returns Ok. Nine modules, all Ok."
+    },
+    {
+      "name": "diagnostic_passed_flag_true_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 9,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Fraction where returned DeterministicControlDiagnosticV1.passed == true. Primary tamper-detection metric. Any embedded-fixture drift, per-module invariant break, or count-threshold miss drops this below 1.0. Nine modules, all passed."
+    },
+    {
+      "name": "expected_equals_observed_fixture_outcomes_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 9,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction where expected_fixture_outcomes == observed_fixture_outcomes (BTreeMap equality). This is the direct fixture-integrity assertion. Nine modules, all match."
+    },
+    {
+      "name": "implementation_readiness_complete_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 9,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Fraction where implementation_readiness == 'COMPLETE' and schema == DETERMINISTIC_CONTROL_DIAGNOSTIC_SCHEMA bit-exact. Nine modules, all complete."
+    },
+    {
+      "name": "zero_authority_lock_coverage_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 9,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Fraction where every one of the 10 REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS (no_ranking_authority, no_optimizer_authority, no_release_authority, no_qualification_authority, no_patentability_authority, fto_not_performed, no_procurement_authority, no_regulatory_authority, no_safety_authority, no_product_performance_authority) appears in zero_authority_assertions mapped to true. Nine modules, all covered."
+    },
+    {
+      "name": "result_digest_byte_stable_across_replays_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 9,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Fraction where details['result_digest'] byte-identical across two back-to-back invocations. Nine modules, all stable."
+    },
+    {
+      "name": "positive_or_negative_control_counts_present_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 9,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Fraction where positive_control_count + negative_control_count >= 1. Confirms non-trivial fixture corpus for every dispatched diagnostic. Nine modules, all present."
+    },
+    {
+      "name": "unsupported_module_id_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 6,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Six unsupported-module-id probes: empty string, whitespace-only, unknown id 'amphora-does-not-exist', underscore-variant 'amphora-source_ledger', uppercase-variant 'AMPHORA-REDTEAM-AUDIT', unicode-variant 'АМФОРА'. All return Err('unsupported deterministic control diagnostic: ...')."
+    },
+    {
+      "name": "attack_axis_coverage_complete_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 24,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "REDTEAM_ATTACK_AXES.len() == 24 AND every module-specific axis (IDENTITY_OR_MODULE_SUBSTITUTION, REGISTRY_TAMPERING, REGISTRY_SUPERSESSION_TAMPERING, FOLDER_CONFINEMENT_ESCAPE, DSSE_FORGERY, DSSE_WRONG_ROLE, DSSE_LOCAL_SIGNER, DSSE_REVOKED_SIGNER, DSSE_SAME_SIGNER, FALSE_HUMAN_REVIEW, INCOMPLETE_POLICY, ALTERED_DIAGNOSTIC, NONDETERMINISTIC_DIAGNOSTIC, FALSE_EXECUTION_COMPLETION, UNEXECUTED_SCIENCE, RIGHTS_LAUNDERING, EVIDENCE_LAUNDERING, SOURCE_DUPLICATE, SOURCE_MISSING_FIELD, SOURCE_WAIVER_LAUNDERING, REPORT_SIGNATURE_DEFECT, REPORT_ENVELOPE_BINDING_DEFECT, REPORT_CLAIM_LOCK_DEFECT, AUTHORITY_ESCALATION) literally appears in the on-disk benchmark-lock.v1.json attacks array."
+    },
+    {
+      "name": "authority_envelope_preservation_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 15,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "For every returned DeterministicControlDiagnosticV1 and every unsupported-probe Err string, serialized JSON contains no key matching batch_release, release_authorized, qualified, authorized, manufacturing_qualification, release_authority. Nine successful results plus six probe errors = 15 samples, all locked."
+    },
+    {
+      "name": "byte_stable_two_replay_rate",
+      "direction": "MAXIMIZE",
+      "observed": 1.0,
+      "sample_size": 9,
+      "authority": "AUDIT_ONLY",
+      "note": "Observational. Every module invoked twice back-to-back and the full DeterministicControlDiagnosticV1 asserted byte-identical (strict superset of the result_digest gate)."
+    }
+  ],
+  "fitted_or_physical_model_artifact": {
+    "schema": "amphora.redteam-audit-deterministic-control-diagnostic.v1",
+    "model_type": "deterministic_meta_audit_locked_fixture_no_learned_parameters",
+    "prediction_rule": "For a given module_id in {amphora-evidence-intake-validator, amphora-source-ledger, amphora-redteam-audit, amphora-report-packager, amphora-formulation-arithmetic, amphora-formulation-universe, amphora-envelope-gates, amphora-cro-protocol-packager, amphora-optimizer-orchestrator}: dispatch to per-module diagnostic; parse embedded fixture bytes via strict JSON (fail-closed on trailing garbage or duplicate keys); compute observed_fixture_outcomes; compare to hardcoded expected_fixture_outcomes; assert per-module count invariants; populate zero_authority_assertions from REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS with all keys mapped to true; compute result_digest = stable_hash of the full struct payload; return DeterministicControlDiagnosticV1 with passed = (expected == observed AND all invariants met). Unrecognized module_id returns Err. Any embedded-byte drift changes observed_fixture_outcomes, which breaks expected == observed, which sets passed = false, which fails validate().",
+    "supported_module_id_count": 9,
+    "attack_axis_count_module_specific": 24,
+    "attack_axis_count_standard": 23,
+    "required_zero_authority_lock_count": 10,
+    "no_learned_parameters": true,
+    "no_baseline_defined": true,
+    "note": "Meta-audit over compile-time embedded fixture corpora. No parameters to learn; the theory is DSSE + Ed25519 + SHA-256 tamper-evident hash-chained fixture integrity plus locked-adversarial-corpus policy validation (OWASP ASVS 4.0 V14 methodology)."
+  },
+  "claim_locks": {
+    "declarative_audit_only": true,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_optimizer_authority": true,
+    "no_solver_authority": true,
+    "solver_use_ceiling_is_disabled": true,
+    "pre_phase_0_research_only": true,
+    "no_release_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "no_qualification_evidence_upgrade": true,
+    "no_release_evidence_upgrade": true,
+    "no_product_evidence_upgrade": true,
+    "unresolved_rights_quarantined": true,
+    "candidate_release_claims_never_evaluated": true,
+    "implementation_readiness_locked_to_complete_string": true,
+    "zero_authority_locks_enforced_across_all_dispatched_modules": true,
+    "unsupported_module_id_fail_closed_enforced": true,
+    "embedded_fixture_bytes_frozen_at_compile_time": true
+  },
+  "benchmark_lock_sha256": "4ffdfa1a40b426036160b4c2e25bdaaff978aa762ec98c8c3243d514bfbe71cf",
+  "dataset_fixture_sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+  "dataset_fixture_note": "SHA-256 of amphora-assurance-capabilities/src/diagnostics.rs - the runtime IS the fixture corpus (each per-module inner diagnostic embeds its reference bytes via include_bytes! at compile time)",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "701482a26cbe704e06bdade4c3af3279e6fee066319c5041822f37ed8dbf9f1f",
+  "populated_at": "2026-07-22",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "Phase-1 independent external adversarial-review corpus with mutation-based negative controls beyond the 30,000 embedded synthetic states"
+  ]
+}

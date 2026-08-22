@@ -1,0 +1,48 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-molecule-role-ranker/evidence/phase0",
+  "eligible_sources": [],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/feedback_v1/dataset_context.json",
+      "observed_sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/molecule_library.json",
+      "observed_sha256": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/role_fit_benchmark.v1.json",
+      "observed_sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    }
+  ],
+  "inventory_hash": "51261b022dbfcc854bd99bd811bd37ba0b2c01c48286b98705493cf09b1cd24e",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-molecule-role-ranker",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

@@ -1,0 +1,152 @@
+{
+  "authority": "AUDIT_ONLY",
+  "axis": "Attacks T-01's SURVIVED (2026-08-05T19:23:35Z) universal claim that the raw untyped /candidate/normalized_molecule/* candidate echo-back 'is never consumed as facts by any capability'. T-01 only probed amphora-molecule-capabilities::normalized_facts() (the Capability::evaluate() layer for candidate_type='molecule'). This study enumerates EVERY reader of /candidate/normalized_molecule/* (and its formulation twin /candidate/normalized_formulation/*) across the full 39-module workspace, classifies each, and where a consumer is found, reproduces the leak end-to-end against the REAL compiled amphora-tui release binary (rdkit feature, pinned RDKit C++ 2026.03.2).",
+  "campaign_item_id": "T-01B",
+  "claim_under_attack": "T-01 raw_untyped_candidate_echo_note (all 8 vectors): 'This subtree is never read by amphora-molecule-capabilities::normalized_facts() ... or by any Capability::evaluate() implementation for facts. It is disclosed here for completeness but is NOT a typed-field leak.' Campaign item T-01B's framing of the same disclosure: 'that subtree is never consumed as facts by any capability' (universal, portfolio-wide claim).",
+  "consumer_enumeration": [
+    {
+      "classification": "n/a-producer",
+      "role": "PRODUCER, not a consumer -- writes /candidate/normalized_molecule and /candidate/normalized_formulation into the engine result.",
+      "site": "amphora-engine/src/lib.rs:832-843 (candidate_payload construction)"
+    },
+    {
+      "classification": "cannot-reach",
+      "role": "Internal unit tests asserting host-recompute overwrites candidate-supplied SMILES (pinned_host_normalization_feeds_one_fact_record_to_molecule_modules). Not shipped capability code; asserts the OPPOSITE of a leak.",
+      "site": "amphora-engine/src/lib.rs:1580,1585 (#[cfg(test)] mod tests)"
+    },
+    {
+      "classification": "cannot-reach",
+      "note": "Dead fallback branch; documented for completeness of the sweep, not the finding.",
+      "role": "result.pointer(\"/candidate/candidate_id\").or_else(|| result.pointer(\"/candidate/normalized_molecule/candidate_id\")).or_else(|| result.pointer(\"/candidate/normalized_formulation/candidate_id\")) -- reads ONLY candidate_id (an attacker-declared identifier by design, not a scientific fact) and the fallback is structurally dead: /candidate/candidate_id is unconditionally set at amphora-engine/src/lib.rs:833/841 on every call, so the normalized_molecule fallback arm never fires in production. Feeds RankedCandidate.candidate_id (typed field) if it were ever reached.",
+      "site": "amphora-core/src/lib.rs:854-855 (fn rank_candidates, candidate_id fallback)"
+    },
+    {
+      "classification": "reaches-typed-field, reaches-signed-artifact, reaches-report",
+      "note": "THE CONFIRMED LEAK. Reproduced live end-to-end below.",
+      "role": "let normalized = result.pointer(\"/candidate/normalized_molecule\").or_else(|| result.pointer(\"/candidate/normalized_formulation\")); let hash = normalized.and_then(|v| v.get(\"canonical_structure_hash\").or_else(|| v.get(\"formula_hash\"))).and_then(Value::as_str).map(str::to_string); ... CandidateRecord { ..., canonical_structure_hash: hash, ... }",
+      "site": "amphora-cli/src/main.rs:257-263 (fn record_from)"
+    },
+    {
+      "classification": "reaches-typed-field, reaches-signed-artifact",
+      "note": "Generalizes the finding to ALL 8 of T-01's injection vectors, not just the one tested live here.",
+      "role": "Hashes the ENTIRE engine result object -- which structurally contains /candidate/normalized_molecule/* in full, including any attacker-injected keys anywhere in the candidate (all 8 of T-01's vectors, not just canonical_structure_hash) -- into the canonical /provenance/result_hash field. This is the SAME field read at amphora-cli/src/main.rs:279 into CandidateRecord.result_hash (typed), and at amphora-cli/src/control.rs:4276 into shadow-ranking receipt rows.",
+      "site": "amphora-engine/src/lib.rs:915 (result[\"provenance\"][\"result_hash\"] = stable_hash(&result))"
+    },
+    {
+      "classification": "reaches-signed-artifact",
+      "role": "artifact_hashes.insert(format!(\"result:{}\", candidate_id), stable_hash(result)) -- stable_hash(result) again hashes the whole result object (poisoned subtree included).",
+      "site": "amphora-cli/src/control.rs:4312-4315 (shadow ranking artifact_hashes)"
+    },
+    {
+      "classification": "reaches-signed-artifact",
+      "note": "Not independently re-run live in this fire (would require exercising the shadow-ranking CLI subcommand end-to-end); confirmed by direct source read of the signing call. Source-verified, not live-reproduced -- weighted accordingly below.",
+      "role": "signed_receipt() builds EvaluationReceiptV1 with the artifact_hashes map (containing the poison-carrying stable_hash(result) above) embedded in receipt.metrics, then calls receipt.sign(&identity.key_id, &identity.signing_key) -- a REAL Ed25519 signature -- and persist_receipt() writes it to disk.",
+      "site": "amphora-cli/src/control.rs:4337-4359 (fn control_receipt -> fn signed_receipt, line 4442)"
+    },
+    {
+      "classification": "reaches-signed-artifact",
+      "note": "Confirmed live below (provenance.json root_hash differs poison vs clean).",
+      "role": "snapshot() writes the whole RunState (including records: Vec<CandidateRecord>, poison included) to final-state.json; verify_run() folds stable_hash(&final_state) into provenance.json's root_hash, the value amphora-run-provenance signs and hash-chains.",
+      "site": "amphora-core/src/lib.rs:1150-1195 (RunArchive::snapshot -> final-state.json; verify_run)"
+    },
+    {
+      "classification": "reaches-report",
+      "note": "Confirmed live below: poison string appears verbatim in the printed report.",
+      "role": "println!(\"{}\", fs::read(path.join(\"final-state.json\"))) -- the module's own report/export command.",
+      "site": "amphora-cli/src/main.rs:1110-1120 (fn export, `amphora-tui export --format json`)"
+    }
+  ],
+  "consumers_cannot_reach": 3,
+  "consumers_examined_count": 9,
+  "consumers_with_positive_reach": 6,
+  "directive_obligation": "T2-01",
+  "directive_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+  "directive_ref": {
+    "doc": "AMPHORA-DIRECTIVE-2026-08-05",
+    "item_id": "T2-01",
+    "md_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+    "md_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+    "owner": "LOOP",
+    "section": "A.1"
+  },
+  "directive_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+  "directive_sha256_verified_now": true,
+  "does_not_close": [
+    "T-01's own, narrower finding (0/8 vectors reach MoleculeFactsV1 or property_results via Capability::evaluate()) is UNCHANGED by this receipt and is not retracted.",
+    "amphora-cli/src/control.rs:4337-4359 signed_receipt() reach is source-verified only, not independently re-run live in this fire (would require driving the shadow-ranking subcommand end-to-end with a real objective profile) -- flagged as a lower-confidence secondary finding.",
+    "The formulation-lane twin (formula_hash / normalized_formulation) was confirmed reachable by source-symmetry (identical clone-then-patch construction in normalized_candidate()) but the formulation lane itself is currently blocked at run_solver() ('only the molecule lane is live'), so it is not independently live-reproduced here.",
+    "This receipt does not certify a fix; amphora-cli/src/main.rs:257-263 remains unpatched. A repair item (e.g. R-01B) should either stop reading canonical_structure_hash/formula_hash from the untyped echo subtree, or re-derive CandidateRecord.canonical_structure_hash exclusively from /candidate/normalized_molecule/normalization/canonical_structure_hash (the host-recomputed value), matching the pattern amphora-molecule-capabilities already uses."
+  ],
+  "flips_scientific_readiness": false,
+  "founder_directive_done_criteria_met": false,
+  "founder_directive_done_criteria_met_note": "FALSE for the CLI/provenance path documented here: a candidate value (canonical_structure_hash) DOES reach a typed downstream field (CandidateRecord.canonical_structure_hash), contradicting the founder's own pre-committed done-criterion. T-01's narrower Capability::evaluate() finding (0/8 leaks into MoleculeFactsV1/property_results) is UNCHANGED and not retracted -- only the broader 'no capability anywhere ever consumes it' claim is refuted.",
+  "founder_directive_done_criteria_verbatim": "All eight vectors rejected or ignored; identity recomputed from host graph; no candidate value reaches a typed downstream field.",
+  "human_review_performed": false,
+  "live_reproduction": {
+    "binary": "target/release/amphora-tui",
+    "build_command": "RDKIT_INCLUDE_DIR=$P/include/rdkit RDKIT_LIB_DIR=$P/lib BOOST_INCLUDE_DIR=$P/include cargo build --release --bin amphora-tui -p amphora-cli --features rdkit (P=/home/ubuntu/.local/share/amphora/rdkit-2026.03.2)",
+    "byte_identical_to_injected_value": true,
+    "causality_isolated": true,
+    "causality_note": "candidate_id is IDENTICAL between clean_run and isolated_poison_run ('DGEBA-monomer'); the only input delta is the injected canonical_structure_hash top-level key. Output delta: CandidateRecord.canonical_structure_hash flips null -> exact attacker string (byte-for-byte), and /provenance/root_hash and /provenance/result_hash both change as a direct, sole consequence of that one injected key.",
+    "clean_run": {
+      "candidate_file": "clean_candidate.json",
+      "candidate_file_sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f",
+      "final_state_json_sha256": "daa633326272a2015aad09386ac1c76574d215d4d3c5e475e7edeef2a3b42a97",
+      "observed_candidate_record_canonical_structure_hash": null,
+      "observed_provenance_root_hash": "b0bcd3666693e6b5cad9b11e66bf7d206294c5f7b5af3b0e7ae53ee05f1da16d",
+      "observed_result_hash": "940deb676af8ca7c09a29222daafe29be23ab51a471f2d8f24086f9903872986",
+      "provenance_json_sha256": "d18543a7e221c92f941486f3300bf98506685797566a0a14408caf206e8e2e7e"
+    },
+    "cli_invocation": "amphora-tui inspect --candidate <file>.json --lane molecule --headless (Command::Inspect maps to run() with population=1, generations=0, workers=1 -- a single, unmutated pass through the exact production run() / run_solver() / record_from() path)",
+    "isolated_poison_run": {
+      "candidate_file": "isolated_poison_candidate.json",
+      "candidate_file_sha256": "f455641cc693ddddb44994eadca566d0adb29fe44fa9239a5c5c8f9f61e2f6b5",
+      "final_state_json_sha256": "a93f7e870032ecdab6dc72481abe05dd55e4569a9badc8bccd9effef36a293d9",
+      "observed_candidate_record_canonical_structure_hash": "POISON_HASH_deadbeefcafebabe0000000000000000000000000000000000000000",
+      "observed_provenance_root_hash": "8133ce7c99df69f1a48c3484051db32eded36fd835e0827d3467741e2570ef9d",
+      "observed_result_hash": "7df6a5c60e6aca8896887d9bf31cafa9e71e013412ddd3de9f8d7e1f83418545",
+      "provenance_json_sha256": "6a2dddecdb736d3bb3b8b1b2e5a301c302fe48af26733015fd36460a6df4d157"
+    },
+    "isolation_design": "Same candidate_id ('DGEBA-monomer', from the module's own fixture amphora-candidate-contract/fixtures/molecule_candidate.json) in both runs, so the only difference between clean_candidate.json and isolated_poison_candidate.json is a single injected top-level key: \"canonical_structure_hash\": \"POISON_HASH_deadbeef...\" (sibling of candidate_id/candidate_type/molecule, exactly T-01's own V1_top_level_key vector shape).",
+    "molecule_facts_v1_and_property_results_unaffected": "Consistent with T-01: normalization.molecule_facts_v1 and the property capability's property_results are NOT touched by this vector (host RDKit recompute still overwrites them). The leak is specifically in the CLI/provenance layer that reads the untyped echo sibling keys, not in any Capability::evaluate() path.",
+    "poisoned_export_report_run": {
+      "candidate_file": "poisoned_candidate.json",
+      "candidate_file_sha256": "037c52079bb6ab97264d60620995cd1df5481286b8cfc8e0582f997f1b247e97",
+      "export_command": "amphora-tui export --run <archive> --format json",
+      "export_report_sha256": "cdda26c2cd4adab3794b5eaaaab304976ce98a244b01c321ead49d3148a75800",
+      "poison_marker_present_in_export_report": true,
+      "quoted_excerpt": "{\"candidate_id\":\"DGEBA-monomer-T01B-poison\",...,\"candidate\":{...,\"canonical_structure_hash\":\"POISON_HASH_deadbeefcafebabe000...\",...}}"
+    },
+    "toolkit": "RDKit C++ 2026.03.2 (real compiled chemistry, not a stub; same pinned prefix T-01 used)"
+  },
+  "modifies_manifest": false,
+  "modifies_mission_or_capability_profile": false,
+  "modifies_pinned_fixture": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-candidate-contract",
+  "non_circularity": "Uses the REAL compiled release amphora-tui binary (target/release/amphora-tui), built with the rdkit feature against the pinned RDKit C++ 2026.03.2 toolkit at /home/ubuntu/.local/share/amphora/rdkit-2026.03.2 (same prefix and version T-01 used), invoked via its production CLI (`inspect` subcommand, which is `run()` with population=1/generations=0, i.e. the same run() function `run`/`demo` use) -- not a Python re-implementation and not a standalone harness reimplementing record_from() from scratch.",
+  "organizational_independence_asserted": false,
+  "promotes_authority": false,
+  "refutation_criterion_observed": true,
+  "refutation_criterion_statement": "REFUTATION OCCURRED. amphora-cli/src/main.rs:257-263 (fn record_from) reads result.pointer(\"/candidate/normalized_molecule\").get(\"canonical_structure_hash\") (falling back to .get(\"formula_hash\") for /candidate/normalized_formulation) and assigns it verbatim into CandidateRecord.canonical_structure_hash: Option<String> (amphora-core/src/lib.rs:211), a typed Rust struct field, Serialize/Deserialize derived. canonical_structure_hash/formula_hash are top-level sibling keys of candidate_id inside the candidate object, which amphora-engine's normalized_candidate() (amphora-engine/src/lib.rs:1111-1113) clones VERBATIM ('let mut output = candidate.value().clone();') before adding only input_kind/input_hash/original_bytes_sha256/normalization -- so any other top-level key the attacker supplies, including canonical_structure_hash, survives untouched into /candidate/normalized_molecule/canonical_structure_hash. This was reproduced live against the real, release-mode, rdkit-feature amphora-tui binary (see live_reproduction below): the typed CandidateRecord.canonical_structure_hash field changed from null (clean control) to the exact attacker-supplied string (byte-identical), with candidate_id held constant to isolate causality to the injected key alone.",
+  "refutation_criterion_verbatim": "T-01B done_criterion: 'A SINGLE consumer that promotes it to any of those [a typed field, a KPI, a signed receipt, a report, or a solver input] = CLAIM_REFUTED with the path quoted. Note that a report or receipt is enough: attacker-controlled text reaching a signed artifact is a finding even if no number changes.'",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.candidate-contract.normalized-molecule-consumer-sweep-receipt.v1",
+  "search_method": {
+    "distinct_files_containing_literal_string": 8,
+    "primary": "grep -rn \"normalized_molecule\" --include={*.rs,*.py,*.json,*.toml,*.md,*.jinja,*.tera,*.hbs} . (repo root, excluding target/ and .git/), repeated for the formulation twin key \"normalized_formulation\", across all 39 amphora-* module directories plus workspace-level amphora-core/amphora-engine/amphora-cli.",
+    "production_source_files_after_excluding_T01_audit_evidence": 3,
+    "raw_hit_count_normalized_molecule": 247,
+    "secondary": "grep -rn 'pointer(\"/candidate' and grep -rln 'CandidateRecord' and grep -rln 'final-state.json' and grep -rn 'stable_hash(&result)|stable_hash(result)' across the same scope, to catch indirect/whole-object consumption that would not literally contain the string \"normalized_molecule\" (e.g. hashing the entire engine result blob, which structurally contains the subtree, without naming it)."
+  },
+  "source_hashes": {
+    "amphora-candidate-contract/fixtures/molecule_candidate.json": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f",
+    "amphora-cli/src/control.rs": "fefe32ff07f0102b0db2b14a841cf694368460580a9a188bab07b72889a81452",
+    "amphora-cli/src/main.rs": "ab6a9782367c897cdc0b0591a64459f7332b03f296abd36329c2aa23073ed80f",
+    "amphora-core/src/lib.rs": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "amphora-engine/src/lib.rs": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
+  },
+  "study_id": "amphora-candidate-contract-normalized-molecule-consumer-sweep-v1",
+  "theory_reference": "Saltzer & Schroeder (1975) 'The Protection of Information in Computer Systems', Proceedings of the IEEE 63(9):1278-1308 -- complete mediation requires every access path to a protected resource to be checked; T-01 checked one access path (Capability::evaluate()) and the campaign item's universal restatement of that finding did not hold for a second, independently-existing access path (the CLI record_from()/provenance chain) to the SAME untyped subtree.",
+  "verdict": "REFUTED"
+}

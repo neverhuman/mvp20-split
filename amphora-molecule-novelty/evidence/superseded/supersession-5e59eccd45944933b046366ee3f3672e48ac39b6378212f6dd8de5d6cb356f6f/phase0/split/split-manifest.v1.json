@@ -1,0 +1,8 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "886bd010ba3f448684eec4014b24f6e976e088ad2422755ce16dbaee9c317d0d",
+  "import_hashes": [],
+  "module_id": "amphora-molecule-novelty",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

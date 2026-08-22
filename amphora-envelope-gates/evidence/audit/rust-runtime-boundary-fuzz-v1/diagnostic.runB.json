@@ -1,0 +1,278 @@
+{
+  "all_real_fail_closed_as_expected": true,
+  "n_fired_as_expected": 23,
+  "n_probes": 23,
+  "positive_control": {
+    "cases": [
+      {
+        "planted_defect_copy_detail": {
+          "margins": {
+            "c1": 329.0
+          },
+          "pass_all_hard": true
+        },
+        "planted_defect_copy_verdict": "PASS",
+        "planted_defect_slipped_through": true,
+        "probe": "pc_upper_is_infinity_on_registered_style_policy",
+        "real_runtime_correctly_rejected": true,
+        "real_runtime_verdict": "REJECT_ERR"
+      },
+      {
+        "planted_defect_copy_detail": {
+          "margins": {
+            "c1": "Infinity"
+          },
+          "pass_all_hard": true
+        },
+        "planted_defect_copy_verdict": "PASS",
+        "planted_defect_slipped_through": true,
+        "probe": "pc_both_bounds_infinite_value_free",
+        "real_runtime_correctly_rejected": true,
+        "real_runtime_verdict": "REJECT_ERR"
+      }
+    ],
+    "defect_detected": true,
+    "how_planted": "Local function evaluate_envelope_policy_planted_defect() in this harness's own src/main.rs; never touches amphora-formulation-capabilities/src/lib.rs.",
+    "planted_defect": "is_finite() guard on constraint.lower_inclusive / constraint.upper_inclusive removed from a hand-copied version of evaluate_envelope_policy, leaving only the lower>upper inversion check -- the exact confirmed T-03 Python-oracle defect class (non-finite bounds of the 'wide-open' sign pattern never trip an inversion comparison in IEEE 754)."
+  },
+  "probes": [
+    {
+      "detail": {
+        "error": "envelope policy contains inverted or non-finite bounds"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "kpi_subprobe_lower_gt_upper"
+    },
+    {
+      "detail": {
+        "error": "envelope policy contains inverted or non-finite bounds"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "kpi_subprobe_lower_is_nan"
+    },
+    {
+      "detail": {
+        "error": "envelope policy contains inverted or non-finite bounds"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "kpi_subprobe_upper_is_infinity"
+    },
+    {
+      "detail": {
+        "error": "envelope policy contains inverted or non-finite bounds"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "value_free_bypass_both_bounds_infinite"
+    },
+    {
+      "detail": {
+        "error": "envelope policy contains inverted or non-finite bounds"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "both_bounds_positive_infinity_degenerate"
+    },
+    {
+      "detail": {
+        "error": "unit mismatch for envelope feature mass.part_B_g"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "trusted_feature_value_nan"
+    },
+    {
+      "detail": {
+        "error": "unit mismatch for envelope feature mass.part_A_g"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "trusted_feature_value_infinite"
+    },
+    {
+      "detail": {
+        "error": "unit mismatch for envelope feature mass.part_A_g"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "unit_scale_substitution_kg_vs_g"
+    },
+    {
+      "detail": {
+        "error": "envelope policy contains duplicate constraints"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "duplicate_constraint_ids"
+    },
+    {
+      "detail": {
+        "error": "unknown envelope feature path volume.total_ml"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "unknown_feature_path"
+    },
+    {
+      "detail": {
+        "error": "envelope policy constraints must not be empty"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "empty_constraints"
+    },
+    {
+      "detail": {
+        "status": "ABSTAIN"
+      },
+      "expected_verdict": "ABSTAIN",
+      "fired_as_expected": true,
+      "observed_verdict": "ABSTAIN",
+      "probe": "non_authoritative_without_synthetic_flag"
+    },
+    {
+      "detail": {
+        "status": "ABSTAIN"
+      },
+      "expected_verdict": "ABSTAIN",
+      "fired_as_expected": true,
+      "observed_verdict": "ABSTAIN",
+      "probe": "wrong_schema"
+    },
+    {
+      "detail": {
+        "error": "trusted feature mass.part_B_g is absent"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "missing_trusted_feature"
+    },
+    {
+      "detail": {
+        "margins": {
+          "c1": 0.0
+        },
+        "pass_all_hard": true,
+        "status": "UNVALIDATED"
+      },
+      "expected_verdict": "PASS",
+      "fired_as_expected": true,
+      "observed_verdict": "PASS",
+      "probe": "at_lower_boundary_bit_exact"
+    },
+    {
+      "detail": {
+        "margins": {
+          "c1": -2.842170943040401e-14
+        },
+        "pass_all_hard": false,
+        "status": "FAILED_GATES"
+      },
+      "expected_verdict": "FAIL",
+      "fired_as_expected": true,
+      "observed_verdict": "FAIL",
+      "probe": "one_ulp_below_lower_boundary"
+    },
+    {
+      "detail": {
+        "margins": {
+          "c1": 0.0
+        },
+        "pass_all_hard": true,
+        "status": "UNVALIDATED"
+      },
+      "expected_verdict": "PASS",
+      "fired_as_expected": true,
+      "observed_verdict": "PASS",
+      "probe": "at_upper_boundary_bit_exact"
+    },
+    {
+      "detail": {
+        "margins": {
+          "c1": -2.842170943040401e-14
+        },
+        "pass_all_hard": false,
+        "status": "FAILED_GATES"
+      },
+      "expected_verdict": "FAIL",
+      "fired_as_expected": true,
+      "observed_verdict": "FAIL",
+      "probe": "one_ulp_above_upper_boundary"
+    },
+    {
+      "detail": {
+        "error": "envelope policy contains inverted or non-finite bounds"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "all_three_constraints_inverted_simultaneously"
+    },
+    {
+      "detail": {
+        "error": "envelope policy contains inverted or non-finite bounds"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "second_constraint_nan_bound_not_first"
+    },
+    {
+      "detail": {
+        "error": "unit mismatch for envelope feature mass.part_B_g"
+      },
+      "expected_verdict": "REJECT_ERR",
+      "fired_as_expected": true,
+      "observed_verdict": "REJECT_ERR",
+      "probe": "second_constraint_nan_value_not_first"
+    },
+    {
+      "detail": {
+        "margins": {
+          "c1": 0.0
+        },
+        "pass_all_hard": true,
+        "status": "UNVALIDATED"
+      },
+      "expected_verdict": "PASS",
+      "fired_as_expected": true,
+      "observed_verdict": "PASS",
+      "probe": "zero_width_envelope_exact_match"
+    },
+    {
+      "detail": {
+        "margins": {
+          "c1": 0.0
+        },
+        "pass_all_hard": true,
+        "status": "UNVALIDATED"
+      },
+      "expected_verdict": "PASS",
+      "fired_as_expected": true,
+      "observed_verdict": "PASS",
+      "probe": "extreme_finite_bounds_no_overflow_false_accept"
+    }
+  ],
+  "real_runtime": {
+    "crate": "amphora_formulation_capabilities",
+    "function": "evaluate_envelope_policy",
+    "src_path": "amphora-formulation-capabilities/src/lib.rs",
+    "src_sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
+  },
+  "schema": "amphora.envelope-gates.rust-runtime-boundary-fuzz.v1"
+}

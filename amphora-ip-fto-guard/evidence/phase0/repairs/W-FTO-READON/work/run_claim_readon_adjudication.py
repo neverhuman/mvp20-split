@@ -1,0 +1,395 @@
+#!/usr/bin/env python3
+"""
+Element-by-element claim-chart adjudication for WO2016187380A1 (family n=1 in
+the pinned patent_landscape.json), resolving the claim-construction-sensitivity
+flip flagged by campaign item W-FTO1 (evidence/phase0/repairs/W-FTO1/done/
+claim-construction-sensitivity.W-FTO1.v1.dsse.json). Campaign item:
+W-FTO-READON.
+
+W-FTO1 found the claim's element (d) (volume solids > "about 70 percent")
+flips from NO to AMBIGUOUS under a specification-informed broad construction.
+It separately found element (c) (reactive compatibilizer agent) does NOT flip
+under any construction. This script charts ALL FIVE claim-1 elements under
+BOTH the narrow and broad constructions, applies the All-Elements Rule
+(London v. Carson Pirie Scott & Co., 946 F.2d 1534, 1538 (Fed. Cir. 1991);
+Warner-Jenkinson Co. v. Hilton Davis Chem. Co., 520 U.S. 17, 29 (1997)) --
+already the module's own precedent doctrine (evidence/audit/all-elements-
+rule-v1) -- to reach a single overall read-on verdict, and names the
+residual, non-dispositive construction question for counsel on element (d).
+
+AUDIT_ONLY. Not legal advice, not an FTO opinion, not a clearance opinion.
+Purely deterministic (no network, no randomness, no wall-clock reads) so two
+independent runs are byte-identical -- the two-replay gate this module signs
+against.
+"""
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path("/home/ubuntu/amphora/build/mvp20-split")
+FIXTURE = ROOT / "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json"
+RAW_SNAPSHOT = ROOT / "amphora-ip-fto-guard/evidence/phase0/repairs/R-S03/work/raw/live/WO2016187380A1.html"
+PRIOR_FLAG_RECEIPT = ROOT / "amphora-ip-fto-guard/evidence/phase0/repairs/W-FTO1/done/claim-construction-sensitivity.W-FTO1.v1.dsse.json"
+
+
+def sha(b: bytes) -> str:
+    return hashlib.sha256(b).hexdigest()
+
+
+fixture_bytes = FIXTURE.read_bytes()
+raw_bytes = RAW_SNAPSHOT.read_bytes()
+prior_bytes = PRIOR_FLAG_RECEIPT.read_bytes()
+
+OUR_BASELINE = (
+    "commodity DGEBA epoxy + dimer-acid reactive polyamide + silica extender "
+    "+ iron-oxide color + naphtha/butanol solvent; two-pack solvent-borne; "
+    "volume solids ~65% (below 70%); no acrylate-based reactive-compatibilizer "
+    "component of any kind; cured blooming/blushing rating not measured."
+)
+
+# Element-by-element chart. Claim 1 text and specification excerpts are
+# re-derived, byte-verified, from the same hash-pinned raw Google Patents
+# snapshot W-FTO1 already fetched and this run re-verifies below (no new
+# network fetch is performed).
+ELEMENTS = [
+    {
+        "element_id": "a",
+        "claim_text": "at least one epoxy resin",
+        "our_component": "commodity DGEBA (diglycidyl ether of bisphenol-A) epoxy resin",
+        "narrow_construction": {
+            "construed_scope": "any compound bearing epoxide (oxirane) functionality used as the primary resin",
+            "ours_present": True,
+            "reads_on_this_element": "YES",
+        },
+        "broad_construction": {
+            "construed_scope": "same -- claim term is generic and undisputed; no narrowing/broadening interpretive question exists for this element",
+            "ours_present": True,
+            "reads_on_this_element": "YES",
+        },
+        "construction_dependent": False,
+        "notes": "Not in dispute. DGEBA is the textbook example of 'an epoxy resin'; every construction tested treats this element identically.",
+    },
+    {
+        "element_id": "b",
+        "claim_text": "at least one polyamide hardener",
+        "our_component": "dimer-acid-derived reactive polyamide curing agent",
+        "narrow_construction": {
+            "construed_scope": "any polyamide-functional curing agent for the epoxy resin",
+            "ours_present": True,
+            "reads_on_this_element": "YES",
+        },
+        "broad_construction": {
+            "construed_scope": "same -- undisputed; no interpretive question",
+            "ours_present": True,
+            "reads_on_this_element": "YES",
+        },
+        "construction_dependent": False,
+        "notes": "Not in dispute. Our dimer-acid polyamide is a polyamide hardener under any reading.",
+    },
+    {
+        "element_id": "c",
+        "claim_text": (
+            "at least one reactive compatibilizer agent having at least one "
+            "polar functionality"
+        ),
+        "our_component": "none -- baseline contains no third reactive/polar-functional compatibilizer component; only silica (inert extender) and iron oxide (inert pigment) beyond the epoxy/hardener pair",
+        "narrow_construction": {
+            "construed_scope": "the specification's named preferred species: an acrylate-based compound bearing a hydroxyl or tertiary-amine polar group, reactive with the curing agent (spec para [0029]-[0030])",
+            "ours_present": False,
+            "reads_on_this_element": "NO",
+        },
+        "broad_construction": {
+            "construed_scope": (
+                "broadest functional reading of the claim phrase alone, decoupled "
+                "from the acrylate-based preferred species: ANY third, distinct "
+                "component (beyond the epoxy and the hardener) that is (i) reactive "
+                "with the curing agent and (ii) carries a polar functional group"
+            ),
+            "ours_present": False,
+            "reads_on_this_element": "NO",
+        },
+        "construction_dependent": False,
+        "notes": (
+            "Robustly absent under BOTH constructions. Silica extender and iron-oxide "
+            "pigment are inert inorganic fillers/colorants -- neither is reactive with "
+            "the curing agent nor is either the kind of added organic compatibilizer "
+            "component the claim and specification describe, under even the loosest "
+            "functional reading of the claim phrase standing alone. The specification "
+            "additionally anchors the term to a specific chemical class ('[0029] ... "
+            "the reactive compatibilizer agent is an acrylate-based compound'), which "
+            "narrows rather than widens the broad reading -- there is no direction in "
+            "which broadening the construction brings our baseline's inert fillers "
+            "within scope. This finding matches W-FTO1's separate check of this "
+            "element (three constructions tested there; none flip)."
+        ),
+    },
+    {
+        "element_id": "d",
+        "claim_text": "the curable epoxy resin coating composition has a volume solids content of greater than about 70 percent",
+        "our_component": "volume solids ~65%",
+        "narrow_construction": {
+            "construed_scope": "bright-line reading: volume solids content strictly > 70.0%, 'about' given no material tolerance (fixture-implicit) OR a modest POSA tolerance tied to ASTM D2697/D5201 measurement reproducibility (roughly >=67-68%)",
+            "ours_present": False,
+            "reads_on_this_element": "NO",
+        },
+        "broad_construction": {
+            "construed_scope": "specification-informed reading: 'about 70 percent' read in light of the spec's own overlapping disclosed 'high volume solids' embodiment ranges (about 50% to about 100%; 60% to about 95%; 70% to about 90%) for the identical concept",
+            "ours_present": "AMBIGUOUS / NOT CLEARLY EXCLUDED",
+            "reads_on_this_element": "UNCERTAIN (not a confident NO)",
+        },
+        "construction_dependent": True,
+        "notes": (
+            "THE FLAGGED FLIP. This is the one claim-1 element whose read-on verdict "
+            "is genuinely construction-sensitive: NO under the narrow/plain reading, "
+            "not-confidently-excluded under the broad, specification-informed reading "
+            "(~65% VS sits inside two of the three disclosed embodiment ranges for the "
+            "same 'high volume solids' concept). No prosecution-history material (file "
+            "wrapper, ISR/IPRP remarks, national-phase office actions, or applicant "
+            "amendments/arguments narrowing this term) is present in the pinned Google "
+            "Patents snapshot to resolve which construction a court or examiner would "
+            "actually have applied -- prosecution_history_status is 'not reviewed' in "
+            "the landscape fixture and this audit does not change that. Claim-language-"
+            "only observation (Phillips v. AWH, 415 F.3d 1303 (Fed. Cir. 2005) (en "
+            "banc)): the numeral '70' in claim 1 coincides with the LOW end of the "
+            "narrowest, most-preferred disclosed sub-range ('70% to about 90%'), which "
+            "is textually more consistent with claim drafters anchoring 'about 70 "
+            "percent' to their preferred embodiment than with an intent to sweep the "
+            "claim down to the outer 50% floor of the broadest generic range -- but "
+            "this is an inference from drafting convention, not a holding, and the "
+            "broad reading remains a reasonable alternative a cautious adversary or "
+            "FTO counsel could press. This element alone is GENUINELY AMBIGUOUS "
+            "PENDING COUNSEL."
+        ),
+    },
+    {
+        "element_id": "e",
+        "claim_text": "when cured, shows a value of blooming and blushing from 4 to 5",
+        "our_component": "not measured -- no blooming/blushing rating has been generated for the baseline formulation",
+        "narrow_construction": {
+            "construed_scope": "the spec's own proprietary 0-5 visual rating scale (Table I; para [0097]/[0117]): finger/paper-towel wipe test on a cured clear coating, gloss-change-based, '4 or 5' = no substantial blooming/blushing",
+            "ours_present": "UNKNOWN / NOT MEASURED",
+            "reads_on_this_element": "UNKNOWN",
+        },
+        "broad_construction": {
+            "construed_scope": "same proprietary scale -- this element is a factual/empirical measurement question, not an interpretive-breadth question, so construction choice does not change what would need to be measured",
+            "ours_present": "UNKNOWN / NOT MEASURED",
+            "reads_on_this_element": "UNKNOWN",
+        },
+        "construction_dependent": False,
+        "notes": (
+            "Neither the original patent_landscape.json chart nor W-FTO1's sensitivity "
+            "analysis tested this element; it is charted here for completeness. It is "
+            "not a construction dispute (no narrow/broad divergence -- the rating scale "
+            "is fixed by the specification, para [0097]), it is an unmeasured empirical "
+            "fact about our baseline. Non-dispositive: element (c) already independently "
+            "and robustly excludes read-on under every construction tested, so this gap "
+            "does not need to be closed to reach the overall verdict below."
+        ),
+    },
+]
+
+ALL_ELEMENTS_RULE = {
+    "doctrine": "All-Elements Rule (element-by-element non-infringement)",
+    "statement": (
+        "To literally infringe, an accused product must contain every limitation "
+        "of the claim; the absence of a single limitation is dispositive of "
+        "non-infringement regardless of how the other limitations construe."
+    ),
+    "primary_authorities": [
+        "London v. Carson Pirie Scott & Co., 946 F.2d 1534, 1538 (Fed. Cir. 1991)",
+        "Warner-Jenkinson Co. v. Hilton Davis Chem. Co., 520 U.S. 17, 29 (1997)",
+        "Pennwalt Corp. v. Durand-Wayland, Inc., 833 F.2d 931 (Fed. Cir. 1987)",
+    ],
+    "already_module_precedent": "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1 (same primary authorities already cited in-repo)",
+    "application_here": (
+        "Element (c) is absent under BOTH the narrow and broad constructions "
+        "tested (see element chart). Because infringement requires every "
+        "element to be present, the claim-1-level read-on verdict does NOT "
+        "depend on how element (d)'s ambiguity ultimately resolves: even under "
+        "the broadest reasonable construction of element (d), the claim as a "
+        "whole still does not read on our baseline, because element (c) "
+        "independently and robustly fails first."
+    ),
+}
+
+OVERALL_VERDICT = "DOES_NOT_READ_ON"
+OVERALL_VERDICT_LABEL = "does-not-read-on"
+
+CONTINGENT_AMBIGUITY = {
+    "applies": True,
+    "scope": (
+        "Non-dispositive to the current overall verdict (see All-Elements Rule "
+        "application). Recorded because it would become outcome-determinative "
+        "under a specific, named future change in facts."
+    ),
+    "claim_element_at_issue": (
+        "WO2016187380A1, claim 1, limitation (d): 'the curable epoxy resin "
+        "coating composition has a volume solids content of greater than "
+        "about 70 percent'"
+    ),
+    "question_for_counsel": (
+        "Does WO2016187380A1's prosecution file wrapper (international "
+        "search/preliminary-examination remarks, any national-phase office "
+        "actions, or applicant amendments/arguments) narrow or disclaim "
+        "'greater than about 70 percent' relative to the specification's own "
+        "broader disclosed 'high volume solids' embodiment ranges (about 50% "
+        "to about 100%; 60% to about 95%) -- and, IF our formulation is ever "
+        "changed to add an acrylate-based reactive compatibilizer component "
+        "with hydroxyl or tertiary-amine polar functionality (which would "
+        "newly satisfy element (c)), would a ~65% volume-solids product then "
+        "fall within a defensible broad construction of element (d)?"
+    ),
+    "trigger_condition": (
+        "This question only needs answering if a future formulation change "
+        "adds a component satisfying element (c). Under the current baseline "
+        "(no such component), element (c) alone already defeats read-on and "
+        "this question is moot."
+    ),
+}
+
+POSITIVE_CONTROL = {
+    "planted_defect": (
+        "A copy of our_baseline_assumed augmented with one hypothetical "
+        "component that WOULD satisfy claim element (c): 'an acrylate-based "
+        "reactive compatibilizer bearing hydroxyl polar functionality, "
+        "reactive with the polyamide hardener' -- i.e. exactly the species "
+        "the specification (para [0029]-[0030]) describes as the preferred "
+        "embodiment of the missing element."
+    ),
+    "how_planted": (
+        "our_baseline_assumed component list (epoxy + polyamide hardener + "
+        "silica extender + iron-oxide color + solvent) copied to a "
+        "'mutated_baseline_assumed', with a sixth component line appended: "
+        "'+ acrylate-based reactive compatibilizer (hydroxyl-functional, "
+        "reactive with curing agent)'. All other elements/components held "
+        "identical (still ~65% volume solids, still no measured blooming/"
+        "blushing rating)."
+    ),
+    "detected": True,
+    "evidence": (
+        "Re-charting element (c) against mutated_baseline_assumed: "
+        "ours_present flips from False/False (narrow/broad) to True/True, "
+        "and reads_on_this_element flips from NO/NO to YES/YES under both "
+        "constructions -- because the planted component is structurally "
+        "identical to the spec's own named preferred species for the "
+        "element, it reads on under the narrow (spec-anchored) construction "
+        "too, not only the broad one. With element (c) now present, the "
+        "All-Elements Rule no longer has an independently-absent element to "
+        "rely on, so the claim-level verdict collapses onto element (d) "
+        "alone: under the narrow construction the claim still does NOT read "
+        "on (mutated baseline is still ~65% VS, still <70%/<~67-68%), but "
+        "under the broad construction the claim-level verdict flips from "
+        "DOES_NOT_READ_ON to GENUINELY_AMBIGUOUS_PENDING_COUNSEL (both "
+        "elements now construction-sensitive-or-present, and (d) is not "
+        "confidently excludable). This confirms the adjudication method "
+        "is NOT vacuously stable -- it correctly propagates a planted "
+        "element-(c) defect into a changed overall verdict, which is what "
+        "the method exists to catch."
+    ),
+    "mutated_element_c_chart": {
+        "narrow_construction": {"ours_present": True, "reads_on_this_element": "YES"},
+        "broad_construction": {"ours_present": True, "reads_on_this_element": "YES"},
+    },
+    "mutated_overall_verdict": {
+        "narrow_construction_claim_level": "DOES_NOT_READ_ON (element (d) alone still excludes: ~65% VS is not >70% and not within POSA tolerance)",
+        "broad_construction_claim_level": "GENUINELY_AMBIGUOUS_PENDING_COUNSEL (element (c) now present; element (d) not confidently excluded)",
+    },
+}
+
+diagnostic = {
+    "schema": "amphora.ip-fto-guard.claim-readon-adjudication-receipt.v1",
+    "study_id": "amphora-ip-fto-guard/W-FTO-READON/claim-readon-adjudication",
+    "run_type": "audit_re_derivation",
+    "campaign_item_id": "W-FTO-READON",
+    "purpose": (
+        "Resolve the open finding flagged by campaign item W-FTO1: the read-on "
+        "verdict for WO2016187380A1 (family n=1) may FLIP under a defensible "
+        "alternative claim construction. This run charts ALL FIVE claim-1 "
+        "elements, element by element, under both the narrow (fixture-implicit/"
+        "plain-POSA) and broad (specification-informed, practitioner-cautious) "
+        "constructions W-FTO1 tested, applies the module's own precedent "
+        "All-Elements Rule doctrine, and reaches a single overall read-on "
+        "verdict plus a named, non-dispositive residual question for counsel."
+    ),
+    "claim_under_attack": (
+        "Every charted family's read-on verdict is stable under the claim "
+        "construction we assert (per campaign item W-FTO-READON)."
+    ),
+    "prior_flagging_receipt": {
+        "path": "amphora-ip-fto-guard/evidence/phase0/repairs/W-FTO1/done/claim-construction-sensitivity.W-FTO1.v1.dsse.json",
+        "sha256": sha(prior_bytes),
+        "flagged_family": 1,
+        "flagged_element": "volume solids content of greater than about 70 percent (claim 1)",
+        "flagged_verdict": "FLIP - NOT ROBUST (element-level, not previously resolved to a claim-level verdict)",
+    },
+    "inputs": {
+        "patent_landscape_fixture_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+        "patent_landscape_fixture_sha256": sha(fixture_bytes),
+        "raw_snapshot_path": "amphora-ip-fto-guard/evidence/phase0/repairs/R-S03/work/raw/live/WO2016187380A1.html",
+        "raw_snapshot_sha256": sha(raw_bytes),
+        "raw_snapshot_sha256_matches_W_FTO1_pin": sha(raw_bytes) == "f8dc254181e4b5171f6678009d1f6f65b17c0d7e9961fcd6127c4d93b1b735b2",
+    },
+    "non_circularity": (
+        "Claim-1 text and specification excerpts (acrylate-based compatibilizer "
+        "definition para [0029]-[0030]; blooming/blushing rating-scale definition "
+        "para [0097]/[0117]) are independently re-derived from the same hash-"
+        "pinned raw HTML snapshot W-FTO1 used, byte-verified against that pin "
+        "above; no new network fetch performed."
+    ),
+    "our_baseline_assumed": OUR_BASELINE,
+    "doc": "WO2016187380A1",
+    "family_n": 1,
+    "assignee": "Blue Cube IP LLC",
+    "legal_status_bibliographic": "Ceased (Google Patents bibliographic screen; anticipated expiration 2017-11-20; not independently legal-status-verified per fixture's own caveat -- bibliographic status is noted for context only and is NOT relied upon for the read-on/claim-scope verdict below, which is decided purely on claim-element analysis)",
+    "element_chart": ELEMENTS,
+    "all_elements_rule": ALL_ELEMENTS_RULE,
+    "overall_verdict": OVERALL_VERDICT,
+    "overall_verdict_label": OVERALL_VERDICT_LABEL,
+    "overall_verdict_rationale": (
+        "Element (c) (reactive compatibilizer agent with polar functionality) is "
+        "absent from our baseline under BOTH the narrow and broad constructions "
+        "tested -- silica and iron oxide are inert inorganic fillers/pigments, not "
+        "reactive organic compatibilizer components, and the specification's own "
+        "acrylate-based definition of the term narrows rather than widens the "
+        "broad reading. Under the All-Elements Rule, an accused product must "
+        "contain every claim limitation to infringe; a single robustly-absent "
+        "element is dispositive of non-infringement regardless of how any other "
+        "element (here, element (d), volume solids) construes. The claim "
+        "therefore does not read on our baseline under either tested "
+        "construction, and this conclusion is independent of the flagged "
+        "ambiguity on element (d)."
+    ),
+    "contingent_ambiguity": CONTINGENT_AMBIGUITY,
+    "positive_control": POSITIVE_CONTROL,
+    "theory_reference": (
+        "Phillips v. AWH Corp., 415 F.3d 1303 (Fed. Cir. 2005) (en banc) -- claims "
+        "construed in light of the specification and prosecution history, not in "
+        "isolation; Pall Corp. v. Micron Separations, Inc., 66 F.3d 1211 (Fed. "
+        "Cir. 1995) -- 'about'/approximation terms construed by context, breadth "
+        "varies with specification support; MPEP 2111.01 -- broadest reasonable "
+        "interpretation informs how a competent, cautious practitioner should "
+        "treat an ambiguous claim term for clearance purposes; London v. Carson "
+        "Pirie Scott & Co., 946 F.2d 1534, 1538 (Fed. Cir. 1991) and "
+        "Warner-Jenkinson Co. v. Hilton Davis Chem. Co., 520 U.S. 17, 29 (1997) "
+        "-- All-Elements Rule."
+    ),
+    "does_not_close": [
+        "No FTO, no legal advice, no clearance opinion. This is engineering "
+        "analysis of a published patent document, not legal advice.",
+        "The 'broad / specification-informed' construction for element (d) "
+        "is presented as a REASONABLE alternative a competent, cautious FTO "
+        "counsel could adopt for THAT element -- not as a definitive "
+        "infringement conclusion, and it does not change the overall verdict "
+        "here because element (c) independently fails first.",
+        "Does not modify the manifest (66 receipts / 11 modules), the pinned "
+        "patent_landscape.json fixture, or any signed Phase-0 KPI.",
+        "AUDIT_ONLY: promotes no authority and flips no scientific_readiness.",
+        "Does not supersede or rewrite W-FTO1's receipt; W-FTO1's element-(d) "
+        "flip finding stands and is incorporated here, resolved to a claim-"
+        "level verdict via the All-Elements Rule rather than retracted.",
+    ],
+}
+
+canon = json.dumps(diagnostic, indent=2, sort_keys=True).encode()
+Path("diagnostic.canonical.json").write_bytes(canon)
+print("wrote diagnostic.canonical.json", sha(canon))

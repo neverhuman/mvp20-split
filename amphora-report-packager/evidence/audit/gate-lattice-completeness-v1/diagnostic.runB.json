@@ -1,0 +1,117 @@
+{
+  "closes": "Independent oracle proves the report-packager release predicate is a minimal irredundant strict conjunction of 4 gates (unique accept 1/16, 15 fail-closed), monotone fail-closed (0/all ordered-pair violations), with all 4 gates necessary, and that the authority-lock semantics are non-escalating (meet=GLB over the tier chain; join counter-model escalates; packaging path emits authority_lock_present exactly once and always false). 4 adversarial mutants all caught.",
+  "does_not_close": "Does not promote the module, flip scientific_readiness, run the Rust runtime, provide the missing signed score envelopes / report package, or certify any release gate true -- that needs the authorized Phase-1 pipeline and human dual-identity keys. Models the tier chain and packaging map from published lattice theory and observed source semantics; it is a structural proof, not legal/regulatory adjudication.",
+  "g0_runtime_binding": {
+    "authority_lock_present_insertions": 1,
+    "authority_lock_present_values": [
+      "false"
+    ],
+    "gate_set_extracted": [
+      "score_envelopes_valid",
+      "authority_lock_present",
+      "banned_claim_lint_pass",
+      "signed_report_package_present"
+    ],
+    "gate_set_parity": true,
+    "librs_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116",
+    "mission_anchor_matches_current_librs": false,
+    "mission_pinned_librs_sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+    "pass": true,
+    "shipped_all_false": true,
+    "shipped_release_gate_config": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "stale_mission_anchor_detected": true,
+    "structural_non_escalation_invariant": true
+  },
+  "g1_unique_accept": {
+    "accepting_configs": 1,
+    "all_reject_fail_closed": true,
+    "config_space": 16,
+    "pass": true,
+    "rejecting_configs": 15,
+    "runtime_parity_reject": true,
+    "runtime_shipped_config_decision": false,
+    "unique_accept": true
+  },
+  "g2_gate_necessity": {
+    "all_four_necessary": true,
+    "any_proper_subset_accepts": false,
+    "conjunction_minimal_irredundant": true,
+    "necessary_count": 4,
+    "pass": true,
+    "per_gate_necessary": {
+      "authority_lock_present": true,
+      "banned_claim_lint_pass": true,
+      "score_envelopes_valid": true,
+      "signed_report_package_present": true
+    }
+  },
+  "g3_antitone_monotonicity": {
+    "monotone_fail_closed": true,
+    "monotonicity_violations": 0,
+    "ordered_pairs_checked": 81,
+    "pass": true
+  },
+  "g4_authority_non_escalation": {
+    "join_counter_model_escalates": true,
+    "meet_is_glb": true,
+    "meet_non_escalating": true,
+    "most_restrictive_controls_equals_meet": true,
+    "pairs_checked": 25,
+    "pass": true,
+    "structural_invariant_no_emit_true": true,
+    "tiers": [
+      "QUARANTINED",
+      "AUDIT_ONLY",
+      "EVIDENCE_ONLY",
+      "RESEARCH_IP",
+      "PRODUCT"
+    ]
+  },
+  "g5_tamper_fail_closed": {
+    "all_mutants_caught": true,
+    "escalating_packager_still_rejects": true,
+    "join_swap_escalation_detected": true,
+    "nonmonotone_mutant_detected": true,
+    "pass": true,
+    "probe_count": 4,
+    "quorum3_accepts_gate_missing_config": true,
+    "strict_and_load_bearing": true
+  },
+  "gates": {
+    "all_pass": true,
+    "g0_runtime_binding": true,
+    "g1_unique_accept": true,
+    "g2_gate_necessity": true,
+    "g3_antitone_monotonicity": true,
+    "g4_authority_non_escalation": true,
+    "g5_tamper_fail_closed": true
+  },
+  "hypothesis": "The runtime honestly quarantines (all four release gates false) because inputs are absent; the release DECISION FUNCTION is a minimal strict-AND with a single accepting configuration, is antitone (no gate downgrade can upgrade the decision), and its authority-lock invariant is non-escalating -- so packaging can never strip locks or amplify a claim.",
+  "module": "amphora-report-packager",
+  "non_circularity": "Pure CPython; no import of the Rust runtime. Gate set and the authority_lock_present structural invariant read from primary lib.rs bytes; algebraic properties proved by exhaustive 2^4 / 16x16 / tier-pair enumeration; theory anchors are published standards.",
+  "purpose": "Independently prove the report-packager signed-deliverable-quarantine release predicate is a minimal (irredundant) strict conjunction of four gates with a unique accept, is monotone fail-closed, and that its authority-lock semantics are non-escalating (lattice meet / most-restrictive-controls), with the packaging path structurally unable to emit authority_lock_present=true.",
+  "run_type": "AUDIT_ONLY_INDEPENDENT_ORACLE",
+  "runtime_source_anchors": {
+    "impl": "amphora-assurance-capabilities/src/lib.rs::evaluate_report_packager",
+    "librs_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116",
+    "release_gates": [
+      "score_envelopes_valid",
+      "authority_lock_present",
+      "banned_claim_lint_pass",
+      "signed_report_package_present"
+    ]
+  },
+  "schema": "amphora.report-packager.gate-lattice-completeness-diagnostic.v1",
+  "study_id": "amphora-report-packager-gate-lattice-completeness-v1",
+  "theory_reference": {
+    "Anderson_1972": "Computer Security Technology Planning Study, ESD-TR-73-51 -- reference monitor, deny-by-default",
+    "Birkhoff_1967": "Lattice Theory, AMS Colloquium Publications vol.25, 3rd ed. -- meet/GLB",
+    "Denning_1976": "A Lattice Model of Secure Information Flow, CACM 19(5):236-243, doi:10.1145/360051.360056",
+    "Saltzer_Schroeder_1975": "The Protection of Information in Computer Systems, Proc. IEEE 63(9):1278-1308, doi:10.1109/PROC.1975.9939 -- fail-safe defaults, complete mediation"
+  }
+}

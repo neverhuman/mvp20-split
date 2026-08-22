@@ -1,0 +1,249 @@
+{
+  "declared_wall_clock_telemetry_exemption_search": {
+    "finding": "4 raw substring hits, none a mechanized field-exemption list: (1) mission.md's own hypothesis sentence being tested here, (2) an unrelated Monte Carlo RNG-source disclaimer in reference/mvp20/out/run_manifest.json ('no wall-clock RNG source is used'), and (3-4) a single unrelated boolean flag 'wall_clock_used': false inside a DIFFERENT prior study's diagnostic (anchor-necessity-reforge-resistance-v1), which records whether THAT harness used wall-clock timing, not a declaration of which run-provenance archive fields may vary. Zero hits define an allowlist, schema field, or code constant naming which manifest.json/final-state.json/provenance.json fields are permitted to diverge under the hypothesis. There is no mechanism, shipped or documented, by which an auditor (or verify_run, or replay --verify) can distinguish 'declared wall-clock telemetry' from any other diverging byte.",
+    "hits": [
+      {
+        "file": "amphora-run-provenance/docs/mission.md",
+        "needle": "wall-clock"
+      },
+      {
+        "file": "amphora-run-provenance/reference/mvp20/out/run_manifest.json",
+        "needle": "wall-clock"
+      },
+      {
+        "file": "amphora-run-provenance/evidence/audit/anchor-necessity-reforge-resistance-v1/diagnostic.canonical.json",
+        "needle": "wall_clock"
+      },
+      {
+        "file": "amphora-run-provenance/evidence/audit/anchor-necessity-reforge-resistance-v1/diagnostic.runB.json",
+        "needle": "wall_clock"
+      }
+    ],
+    "mechanized_exemption_list_hits": [],
+    "needles_searched": [
+      "wall_clock",
+      "wall-clock",
+      "volatile_field",
+      "replay_exempt",
+      "excluded_field",
+      "nondeterministic_field",
+      "timing_field",
+      "replay_diff",
+      "compare_run"
+    ],
+    "search_roots": [
+      "amphora-run-provenance",
+      "amphora-core",
+      "amphora-cli"
+    ]
+  },
+  "hypothesis_under_test": {
+    "source": "amphora-run-provenance/docs/mission.md, section 'Decision and falsifiable hypothesis'",
+    "text_verbatim": "This module supports the decision of whether a complete validated run can be replayed from hash-bound inputs. Its falsifiable hypothesis is that fixed-seed replay is byte-identical outside declared wall-clock telemetry."
+  },
+  "inputs": {
+    "archive_file_sha256": {
+      "run-A": {
+        "events.jsonl": "8876a196a7f37d96830c235da7081a043610a98f659b0078e3a9dba20061c49f",
+        "final-state.json": "7fb5c7e2f511ac4a8d071c74fc04f6dc54fa9c2ddefd7a80078c53ea8ccb0700",
+        "manifest.json": "6a18fb376059be752c3e28ae74960ef5c0f3aaa55fcace0ccd413636e9835929",
+        "provenance.json": "323ce0e31ee1580e6dbfc5d8f96c836004f5cfa0a5a24afa4e5b4ea56bf96447",
+        "snapshot-000011.json": "f4c73c6f520e93c9fe172a4eb68c75beae546877e5ee2cacd19dbe2deffc9059",
+        "snapshot-000021.json": "fad4137d7610b66728d692ddc1d2ee810c532a847a86406e38d8c5143fa2c6e8",
+        "snapshot-000022.json": "7fb5c7e2f511ac4a8d071c74fc04f6dc54fa9c2ddefd7a80078c53ea8ccb0700"
+      },
+      "run-B": {
+        "events.jsonl": "da3236106937623a2b55f6d524ee5afdae0db57e89b25914c1fe4bbc7a09ab2c",
+        "final-state.json": "47555a1b30b912bfdc7233640bae2a13c4cbca62d9accdbdd944df40b9daf7b9",
+        "manifest.json": "8690b783bc1c56b269d8bb4a72878c56774372bc16207e7fc317518b2cdfe543",
+        "provenance.json": "330edaf02f4224044df9d0baa33718c8ba05f3125d1870795b1622c3348b2179",
+        "snapshot-000011.json": "0eaa030d9818f141cc83a6955b8537beb2796f5217a5ad3c4af54e003eaf4e80",
+        "snapshot-000021.json": "b4348625957def0577265c51e48be649f82c9cd2d0834bd6ece4b7fa6df3710d",
+        "snapshot-000022.json": "47555a1b30b912bfdc7233640bae2a13c4cbca62d9accdbdd944df40b9daf7b9"
+      }
+    },
+    "cli_invocation": "./target/release/amphora-tui run --candidate amphora-candidate-contract/fixtures/molecule_candidate.json --population 4 --generations 1 --workers 1 --seed 20260815 --headless --jsonl",
+    "inputs_equal_precondition_checks": {
+      "amphora_cli_sha256": true,
+      "candidate_contract_value_hash": true,
+      "cargo_lock_sha256": true,
+      "generations": true,
+      "lane": true,
+      "objective_profile_hash": true,
+      "population": true,
+      "registry_hash": true,
+      "workers": true
+    },
+    "invoked_identically_twice": true,
+    "run_a_id": "run-1786813446666",
+    "run_b_id": "run-1786813479575"
+  },
+  "module": "amphora-run-provenance",
+  "positive_finding": "The underlying scientific content IS deterministic: after stripping run_id and the five named timing-telemetry field names (at_ms, started_at_ms, average_latency_ms, duration_ms, wall_clock_ms) by hand, all 22 real events (proposals, mutations, scores, rankings, result_hash values) are byte-identical between the two runs -- confirming the sha256-counter-v1 seeded RNG and scoring path genuinely replay deterministically at the content level. What is refuted is narrower and more consequential: the module's own root_hash/verify_run apparatus cannot witness that fact, because it hashes run_id (wall-clock-derived in production) and unlabelled real telemetry (average_latency_ms) into the SAME anchor it holds out as proof of byte-identical replay, with no declared separation.",
+  "refutation_criterion_observation_occurred": true,
+  "refutation_criterion_verbatim": "Two independent production `amphora-tui run` invocations (binary built from amphora-cli, workspace bin name amphora-tui) with identical --candidate, --seed, --population, --generations, --workers, --lane, and objective profile produce a DIFFERENT provenance.json root_hash (the module's sole content-addressable replay-identity anchor), and the divergent bytes are not confined to any field the module or its docs DECLARE as exempt wall-clock telemetry.",
+  "results": {
+    "all_five_hash_anchors_differ": true,
+    "events_jsonl_content_diff_count_after_stripping": 0,
+    "events_jsonl_content_diffs_after_stripping_run_id_and_timing_fields": [],
+    "events_jsonl_n_events": {
+      "a": 22,
+      "b": 22
+    },
+    "final_state_json_diff_count": 15,
+    "final_state_json_flat_diffs": [
+      {
+        "a": "run run-1786813446666 started: generation 0/1 | population 4 | workers 1 | active submodels 4/29",
+        "b": "run run-1786813479575 started: generation 0/1 | population 4 | workers 1 | active submodels 4/29",
+        "path": ".logs[0]"
+      },
+      {
+        "a": 0.0,
+        "b": 0.125,
+        "path": ".modules[0].average_latency_ms"
+      },
+      {
+        "a": 0.0,
+        "b": 0.125,
+        "path": ".modules[1].average_latency_ms"
+      },
+      {
+        "a": 0.0,
+        "b": 0.125,
+        "path": ".modules[2].average_latency_ms"
+      },
+      {
+        "a": 0.0,
+        "b": 0.125,
+        "path": ".modules[3].average_latency_ms"
+      },
+      {
+        "a": "run-1786813446666",
+        "b": "run-1786813479575",
+        "path": ".run_id"
+      },
+      {
+        "a": 1786813446730,
+        "b": 1786813479649,
+        "path": ".throughput.recent[0].at_ms"
+      },
+      {
+        "a": 1786813446745,
+        "b": 1786813479662,
+        "path": ".throughput.recent[1].at_ms"
+      },
+      {
+        "a": 1786813446761,
+        "b": 1786813479676,
+        "path": ".throughput.recent[2].at_ms"
+      },
+      {
+        "a": 1786813446777,
+        "b": 1786813479689,
+        "path": ".throughput.recent[3].at_ms"
+      },
+      {
+        "a": 1786813446808,
+        "b": 1786813479713,
+        "path": ".throughput.recent[4].at_ms"
+      },
+      {
+        "a": 1786813446815,
+        "b": 1786813479718,
+        "path": ".throughput.recent[5].at_ms"
+      },
+      {
+        "a": 1786813446822,
+        "b": 1786813479724,
+        "path": ".throughput.recent[6].at_ms"
+      },
+      {
+        "a": 1786813446828,
+        "b": 1786813479730,
+        "path": ".throughput.recent[7].at_ms"
+      },
+      {
+        "a": 1786813446700,
+        "b": 1786813479614,
+        "path": ".throughput.started_at_ms"
+      }
+    ],
+    "manifest_json_diff_count": 1,
+    "manifest_json_flat_diffs": [
+      {
+        "a": "run-1786813446666",
+        "b": "run-1786813479575",
+        "path": ".run_id"
+      }
+    ],
+    "provenance_json_field_compare": {
+      "event_chain_root": {
+        "a": "81b15c805b05854c321c51dfbd7d88da1ca9e06526f38d17a1d52cdb9e1a591c",
+        "b": "d8aac92f2d7357cc96c85bd50673f4737fbd850af1d44b56794eb857d45bce7a",
+        "equal": false
+      },
+      "events_sha256": {
+        "a": "8876a196a7f37d96830c235da7081a043610a98f659b0078e3a9dba20061c49f",
+        "b": "da3236106937623a2b55f6d524ee5afdae0db57e89b25914c1fe4bbc7a09ab2c",
+        "equal": false
+      },
+      "final_state_hash": {
+        "a": "0a4b9de9cd951f6a0d7fb6b3099d1070d3c0762c75f63ac0e8b804e52f3a8482",
+        "b": "0ddfb1d2a8ae3ffe5892a94849cbe2b1d3cd090744f3e469468f2bbd870066b8",
+        "equal": false
+      },
+      "manifest_sha256": {
+        "a": "6a18fb376059be752c3e28ae74960ef5c0f3aaa55fcace0ccd413636e9835929",
+        "b": "8690b783bc1c56b269d8bb4a72878c56774372bc16207e7fc317518b2cdfe543",
+        "equal": false
+      },
+      "root_hash": {
+        "a": "8d48eecb2e34a6d82683747640b3a08b8cc880ef3d45d77b02d2870d9e73c9b9",
+        "b": "8791e8ec68d5ebd273db999e21f7ed19591603f6558d16638999f7c6917ba946",
+        "equal": false
+      },
+      "run_id": {
+        "a": "run-1786813446666",
+        "b": "run-1786813479575",
+        "equal": false
+      }
+    }
+  },
+  "root_cause_source_read": {
+    "archive_path_keyed_by_run_id_not_scoring_run_id": {
+      "line": 558,
+      "src": "let archive_path = Path::new(\".amphora/runs\").join(&run_id);"
+    },
+    "archive_run_id_branch_header": {
+      "line": 498,
+      "src": "let run_id = if demo {"
+    },
+    "demo_mode_uses_deterministic_id": {
+      "line": 499,
+      "src": "scoring_run_id.clone()"
+    },
+    "deterministic_run_id_fn": {
+      "line": 438,
+      "src": "fn deterministic_run_id("
+    },
+    "file": "amphora-cli/src/main.rs",
+    "interpretation": "The module already contains a deterministic, seed-derived run identity function (deterministic_run_id, stable_hash over candidate+seed+population+generations+workers+lane+profile) and assigns it to scoring_run_id unconditionally. But the on-disk archive identity used for .amphora/runs/<run_id> (and therefore embedded byte-for-byte into manifest.json, into every event's run_id field in events.jsonl, and transitively into every provenance.json hash field) is scoring_run_id ONLY when demo==true. The production `run` subcommand (not `demo`) takes the else branch and uses format!(\"run-{}\", now_ms()) instead -- wall-clock milliseconds -- even though nothing about population/generations/candidate/seed prevented reusing the deterministic id it already computed one line earlier.",
+    "real_run_mode_uses_wallclock_now_ms": {
+      "line": 501,
+      "src": "format!(\"run-{}\", now_ms())"
+    },
+    "scoring_run_id_assignment": {
+      "line": 489,
+      "src": "let scoring_run_id = deterministic_run_id("
+    }
+  },
+  "schema": "amphora.run-provenance.fixed-seed-replay-determinism-diagnostic.v1",
+  "shipped_replay_command_capability": {
+    "finding": "`amphora-tui replay --run <path> --verify` only re-runs verify_run against the ONE archive named; the CLI ships no subcommand that compares two archives, or a fresh run against a prior one, for replay-determinism. The falsifiable hypothesis as stated is therefore not testable by any tool the module ships -- this harness is the first artifact in the module's history to actually exercise it.",
+    "fn": {
+      "line": 1075,
+      "src": "fn replay(path: &Path, verify: bool) -> Result<()> {"
+    }
+  },
+  "study_id": "fixed-seed-replay-determinism-v1"
+}

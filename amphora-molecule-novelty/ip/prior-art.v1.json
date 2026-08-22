@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "5d7fcace70c6476d04a18c36c8bdd85f0cbabe223fb045703776a486c82f74fc",
+  "module_id": "amphora-molecule-novelty",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

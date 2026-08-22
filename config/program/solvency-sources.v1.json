@@ -1,0 +1,17 @@
+{
+  "schema": "amphora.module-source-census.v1",
+  "module_id": "amphora-solvency-score",
+  "sources": [
+    {
+      "source_id": "solvency-source-landscape-v1",
+      "publisher": "Amphora",
+      "source_url": "local:amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+      "license": "MIXED_CONTEXT_ONLY",
+      "rights_status": "QUARANTINED_CONTEXT",
+      "eligible_for_derivatives": false,
+      "restrictions": ["Parameter and quantum-generator licenses unresolved; no scientific training rows"],
+      "local_manifest": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+      "local_manifest_sha256": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6"
+    }
+  ]
+}

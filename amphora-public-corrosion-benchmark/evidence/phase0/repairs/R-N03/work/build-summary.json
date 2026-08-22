@@ -1,0 +1,61 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "idx_v3": {
+    "core_sha256": "97802b95d1358b24f5a9507d82fdc4bc32820be3f80943ba13b8f5d64d1c5b76",
+    "file_sha256": "c7dea258068a166cb208606673467bfb52254b131b15379bd7d58ec86fb3eab4",
+    "path": "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+    "payload_sha256": "750b3a69fb96193d09f1e5b3b6576729a4fbfb01f4e346dafa98e7d5ed34eb9d"
+  },
+  "kpi_v3": {
+    "core_sha256": "30c5c0388e1127cfcba739f0ebd017615ce170216ca75247cf642951e9cefa30",
+    "file_sha256": "b1725c94c14191ff88923eba93c2455629af32e6d06d4429c4d95eedaf676f08",
+    "path": "evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json",
+    "payload_sha256": "e5800a762d2ace66a4ea473f63250710237a3c44ed72840bb4e8c3b3f993e162"
+  },
+  "n_h0_refuted": 5,
+  "n_receipts_enumerated": 8,
+  "receipts": [
+    {
+      "path": "evidence/audit/consolidated-kpi-staleness-v1/consolidated-kpi-staleness-receipt.v1.dsse.json",
+      "sha256": "aeaa6af745a35785fbb64e6dcd0fceb0b1ce26b2a6af10c754d567a55ef1367b",
+      "verdict": "H0_REFUTED"
+    },
+    {
+      "path": "evidence/audit/eis-brasher-kingsbury-water-uptake-admissibility-v1/eis-brasher-kingsbury-water-uptake-admissibility-receipt.v1.dsse.json",
+      "sha256": "db72894bd478bfb43e0654fb3fd2d4cec6881e0587a5cae3579e2f22e21cf171",
+      "verdict": "H0_REFUTED"
+    },
+    {
+      "path": "evidence/audit/eis-reproducibility-discrimination-power-v1/eis-reproducibility-discrimination-power-receipt.v1.dsse.json",
+      "sha256": "10b4427b541a2994126cee530a68e5598c971ee43ee6d53257c3ee81e7924702",
+      "verdict": null
+    },
+    {
+      "path": "evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json",
+      "sha256": "e48fdfed42169582dfcf72c4b0d45304ed6534d1a95e09e171ded364d18789cf",
+      "verdict": null
+    },
+    {
+      "path": "evidence/audit/kpi-surface-completeness-v1/kpi-surface-completeness-receipt.v1.dsse.json",
+      "sha256": "1a8eeb31c48a0ecaf6e6a49688c5304705a89dfb961694fc9d839186e5dbee0c",
+      "verdict": "H0_REFUTED"
+    },
+    {
+      "path": "evidence/audit/multi-instrument-concordance-v1/multi-instrument-concordance-receipt.v1.dsse.json",
+      "sha256": "bb1a11855a31e0338263fd85a15354ce5436a3b29e1f2a5202f3680693fc483a",
+      "verdict": null
+    },
+    {
+      "path": "evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json",
+      "sha256": "ad3589cf1254cb941c322285064d45fe411db80ad4eda32ce4a195b93c37d1a6",
+      "verdict": "H0_REFUTED"
+    },
+    {
+      "path": "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json",
+      "sha256": "469c8a1a090a904d0d3f281fd290a515023d967d724147c90444d8e226255549",
+      "verdict": "H0_REFUTED"
+    }
+  ],
+  "repair_item": "R-N03",
+  "self_verified": true
+}

@@ -1,0 +1,248 @@
+{
+  "claim_under_attack": {
+    "also_relied_on_by": "evidence/phase0/kpis/cure-potlife-arrhenius-kpi.v1.json metric held_out_temperature_extrapolation_mape (PASSED, observed 0.156, ceiling 0.25), evaluated only at the 30C leg",
+    "location": "amphora-cure-potlife-gate/docs/mission.md",
+    "quoted_text": "under 15% error across a 30-degree temperature range (10\u00b0C to 40\u00b0C)"
+  },
+  "declared_ceilings": {
+    "arrhenius_pot_life_mape_ceiling": 0.2,
+    "held_out_temperature_extrapolation_mape_ceiling": 0.25,
+    "mission_prose_pct_figure": 0.15
+  },
+  "does_not_close": [
+    "Does not establish whether a two-parameter model (VFT / free-fit Arrhenius, already explored in potlife-arrhenius-curvature-mechanism-v1) would close the 40C gap -- that receipt already found M1_free_arrhenius and VFT beat the incumbent out-of-sample.",
+    "Does not modify docs/mission.md or the signed KPI; flags them for human correction only.",
+    "Does not touch Phase-1 operational readiness, which remains BLOCKED regardless of this Phase-0 disclosure finding."
+  ],
+  "falsification_criterion": {
+    "refuted_if": "40C-leg MAPE breaches both mission.md's 15% figure and the KPI's own held_out_temperature_extrapolation_mape_ceiling, AND the residual sign is directionally consistent in >=10/12 systems, AND the prose remains unqualified despite a pre-existing signed sibling receipt already disclosing it.",
+    "survives_if": "40C-leg MAPE <=15% or residual signs are not directionally consistent (i.e. plausibly noise), or mission.md/KPI already qualify the claim."
+  },
+  "gas_constant_j_mol_k": 8.31446261815324,
+  "headline": "The standing mission.md claim 'under 15% error across a 30-degree temperature range (10\u00b0C to 40\u00b0C)' is falsified by the module's own locked known-answer fixture: the 40C held-out leg (n=12, same reference-anchor Arrhenius rule as the signed KPI) has MAPE=25.12%, breaching both the mission.md 15% figure and the KPI's own declared held_out_temperature_extrapolation_mape_ceiling (25%); the bias is unidirectional in 12/12 systems (systematic under-prediction of pot life at temperature, not noise). This exact 40C breach was already computed and signed in a sibling AUDIT_ONLY receipt (potlife-arrhenius-curvature-mechanism-v1, legs_breaching_kpi_ceiling=['40C']) predating this fixture's current mission.md text by a negative margin: mission.md/KPI files have NOT been amended since to qualify or retract the blanket 'under 15% error across a 30-degree temperature range (10\u00b0C to 40\u00b0C)' claim.",
+  "kpi_mtime_epoch": 1784622661.1233032,
+  "leg40_breaches_declared_ceiling": true,
+  "leg40_breaches_mission_prose_15pct": true,
+  "leg40_directional_consistency_ge_10_of_12": true,
+  "mission_md_mtime_epoch": 1784622711.8902335,
+  "per_leg": {
+    "10c": {
+      "breaches_declared_held_out_ceiling": false,
+      "breaches_mission_prose_15pct": false,
+      "directional_consistency": 0.6667,
+      "mape": 0.03445,
+      "n": 12,
+      "n_negative_bias": 8,
+      "n_positive_bias": 4
+    },
+    "30c": {
+      "breaches_declared_held_out_ceiling": false,
+      "breaches_mission_prose_15pct": true,
+      "directional_consistency": 1.0,
+      "mape": 0.156281,
+      "n": 12,
+      "n_negative_bias": 12,
+      "n_positive_bias": 0
+    },
+    "40c": {
+      "breaches_declared_held_out_ceiling": true,
+      "breaches_mission_prose_15pct": true,
+      "directional_consistency": 1.0,
+      "mape": 0.251237,
+      "n": 12,
+      "n_negative_bias": 12,
+      "n_positive_bias": 0
+    }
+  },
+  "per_system": [
+    {
+      "activation_energy_j_mol": 55000.0,
+      "actual_10c": 84.0,
+      "actual_30c": 21.0,
+      "actual_40c": 12.0,
+      "hardener_family": "aliphatic-polyamine",
+      "pred_10c": 82.2661,
+      "pred_30c": 17.6136,
+      "pred_40c": 8.7745,
+      "signed_pct_err_10c": -2.0641,
+      "signed_pct_err_30c": -16.1259,
+      "signed_pct_err_40c": -26.8789,
+      "system_id": "dgeba-teta"
+    },
+    {
+      "activation_energy_j_mol": 56000.0,
+      "actual_10c": 130.0,
+      "actual_30c": 31.0,
+      "actual_40c": 18.0,
+      "hardener_family": "aliphatic-polyamine",
+      "pred_10c": 125.6834,
+      "pred_30c": 26.1658,
+      "pred_40c": 12.8709,
+      "signed_pct_err_10c": -3.3205,
+      "signed_pct_err_30c": -15.5943,
+      "signed_pct_err_40c": -28.4952,
+      "system_id": "dgeba-deta"
+    },
+    {
+      "activation_energy_j_mol": 54000.0,
+      "actual_10c": 168.0,
+      "actual_30c": 42.0,
+      "actual_40c": 24.0,
+      "hardener_family": "aliphatic-polyamine",
+      "pred_10c": 161.5421,
+      "pred_30c": 35.5699,
+      "pred_40c": 17.9457,
+      "signed_pct_err_10c": -3.844,
+      "signed_pct_err_30c": -15.3098,
+      "signed_pct_err_40c": -25.2262,
+      "system_id": "dgeba-tepa"
+    },
+    {
+      "activation_energy_j_mol": 62000.0,
+      "actual_10c": 720.0,
+      "actual_30c": 155.0,
+      "actual_40c": 76.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "pred_10c": 748.2888,
+      "pred_30c": 131.6747,
+      "pred_40c": 60.0293,
+      "signed_pct_err_10c": 3.929,
+      "signed_pct_err_30c": -15.0486,
+      "signed_pct_err_40c": -21.0141,
+      "system_id": "dgeba-ipda"
+    },
+    {
+      "activation_energy_j_mol": 60000.0,
+      "actual_10c": 1080.0,
+      "actual_30c": 240.0,
+      "actual_40c": 125.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "pred_10c": 1082.0058,
+      "pred_30c": 201.3741,
+      "pred_40c": 94.1605,
+      "signed_pct_err_10c": 0.1857,
+      "signed_pct_err_30c": -16.0941,
+      "signed_pct_err_40c": -24.6716,
+      "system_id": "dgeba-pacm"
+    },
+    {
+      "activation_energy_j_mol": 58000.0,
+      "actual_10c": 460.0,
+      "actual_30c": 108.0,
+      "actual_40c": 58.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "pred_10c": 463.5709,
+      "pred_30c": 91.2496,
+      "pred_40c": 43.7624,
+      "signed_pct_err_10c": 0.7763,
+      "signed_pct_err_30c": -15.5096,
+      "signed_pct_err_40c": -24.5477,
+      "system_id": "dgeba-dach"
+    },
+    {
+      "activation_energy_j_mol": 58000.0,
+      "actual_10c": 260.0,
+      "actual_30c": 60.0,
+      "actual_40c": 32.0,
+      "hardener_family": "aromatic-amine",
+      "pred_10c": 260.7586,
+      "pred_30c": 51.3279,
+      "pred_40c": 24.6163,
+      "signed_pct_err_10c": 0.2918,
+      "signed_pct_err_30c": -14.4535,
+      "signed_pct_err_40c": -23.074,
+      "system_id": "dgeba-mxda"
+    },
+    {
+      "activation_energy_j_mol": 68000.0,
+      "actual_10c": 3200.0,
+      "actual_30c": 580.0,
+      "actual_40c": 280.0,
+      "hardener_family": "aromatic-amine",
+      "pred_10c": 3132.5153,
+      "pred_30c": 465.9119,
+      "pred_40c": 196.8571,
+      "signed_pct_err_10c": -2.1089,
+      "signed_pct_err_30c": -19.6704,
+      "signed_pct_err_40c": -29.6939,
+      "system_id": "dgeba-mpda"
+    },
+    {
+      "activation_energy_j_mol": 65000.0,
+      "actual_10c": 2400.0,
+      "actual_30c": 470.0,
+      "actual_40c": 240.0,
+      "hardener_family": "aromatic-amine",
+      "pred_10c": 2371.8479,
+      "pred_30c": 383.715,
+      "pred_40c": 168.408,
+      "signed_pct_err_10c": -1.173,
+      "signed_pct_err_30c": -18.3585,
+      "signed_pct_err_40c": -29.83,
+      "system_id": "dgeba-mda"
+    },
+    {
+      "activation_energy_j_mol": 52000.0,
+      "actual_10c": 500.0,
+      "actual_30c": 128.0,
+      "actual_40c": 74.0,
+      "hardener_family": "amidoamine-adduct",
+      "pred_10c": 467.1711,
+      "pred_30c": 108.7961,
+      "pred_40c": 56.2985,
+      "signed_pct_err_10c": -6.5658,
+      "signed_pct_err_30c": -15.003,
+      "signed_pct_err_40c": -23.921,
+      "system_id": "dgeba-amidoamine-adduct1"
+    },
+    {
+      "activation_energy_j_mol": 55000.0,
+      "actual_10c": 340.0,
+      "actual_30c": 84.0,
+      "actual_40c": 48.0,
+      "hardener_family": "amidoamine-adduct",
+      "pred_10c": 329.0645,
+      "pred_30c": 70.4543,
+      "pred_40c": 35.0981,
+      "signed_pct_err_10c": -3.2163,
+      "signed_pct_err_30c": -16.1259,
+      "signed_pct_err_40c": -26.8789,
+      "system_id": "dgeba-amidoamine-adduct2"
+    },
+    {
+      "activation_energy_j_mol": 48000.0,
+      "actual_10c": 42.0,
+      "actual_30c": 10.5,
+      "actual_40c": 6.2,
+      "hardener_family": "mannich-base",
+      "pred_10c": 36.177,
+      "pred_30c": 9.4244,
+      "pred_40c": 5.1303,
+      "signed_pct_err_10c": -13.8642,
+      "signed_pct_err_30c": -10.2441,
+      "signed_pct_err_40c": -17.2529,
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "pooled_mape_all_legs": 0.147323,
+  "prior_sibling_audit": {
+    "legs_breaching_kpi_ceiling_reported": [
+      "40C"
+    ],
+    "receipt": "evidence/audit/potlife-arrhenius-curvature-mechanism-v1/potlife-arrhenius-curvature-mechanism-receipt.v1.dsse.json",
+    "receipt_mtime_epoch": 1785424580.306687
+  },
+  "prose_claim_present_verbatim": true,
+  "prose_claim_still_unqualified": true,
+  "reference_temperature_k": 295.928,
+  "reproduces_signed_kpi_held_out_mape_at_30c": true,
+  "reproduces_signed_kpi_pooled_mape": true,
+  "run_type": "AUDIT_ONLY_DISCLOSURE_CONSISTENCY_DIAGNOSTIC",
+  "schema": "amphora.cure-potlife-gate.envelope-disclosure-gap-diagnostic.v1",
+  "standing_claim_files_postdate_prior_disclosure": true,
+  "theory_reference": {
+    "arrhenius": "Arrhenius S., Z Phys Chem 4:226 (1889)",
+    "gas_constant": "R = 8.31446261815324 J/(mol K), CODATA 2018 (exact, SI-2019)"
+  },
+  "verdict": "REFUTED"
+}

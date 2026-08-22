@@ -1,0 +1,93 @@
+{
+  "cohorts": [
+    {
+      "cohort": "A_DETERMINISTIC_CONTROLS",
+      "conditional_phase0_ceiling": 13,
+      "modules": [
+        "amphora-formulation-arithmetic",
+        "amphora-formulation-universe",
+        "amphora-envelope-gates",
+        "amphora-cro-protocol-packager",
+        "amphora-optimizer-orchestrator"
+      ],
+      "optimizer_objectives_authorized": false,
+      "scientific_outcome": "NOT_APPLICABLE"
+    },
+    {
+      "cohort": "B_DATA_BACKED_CONTROL_SHELLS",
+      "conditional_phase0_ceiling": 23,
+      "failed_scientific_diagnostic_may_be_locked_internal_only": true,
+      "modules": [
+        "amphora-known-answer-benchmarks",
+        "amphora-design-rule-score",
+        "amphora-ingredient-library",
+        "amphora-cure-potlife-gate",
+        "amphora-molecule-novelty",
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-public-corrosion-benchmark",
+        "amphora-sourceability-ehs",
+        "amphora-tolerance-robustness"
+      ],
+      "phase1_created": false
+    },
+    {
+      "cohort": "C_LONGER_LAG",
+      "conditional_phase0_ceiling": 29,
+      "modules": [
+        "amphora-molecule-generator",
+        "amphora-ip-fto-guard",
+        "amphora-process-qc-twin",
+        "amphora-barrier-corrosion-score",
+        "amphora-solvency-score",
+        "amphora-viscosity-score"
+      ],
+      "policy_weakening_permitted": false
+    }
+  ],
+  "conditional_end_state": {
+    "phase0": 22,
+    "phase1": 7,
+    "phase1_modules": [
+      "amphora-barrier-corrosion-score",
+      "amphora-cure-potlife-gate",
+      "amphora-viscosity-score",
+      "amphora-solvency-score",
+      "amphora-molecule-property",
+      "amphora-molecule-role-ranker",
+      "amphora-public-corrosion-benchmark"
+    ],
+    "promised": false
+  },
+  "current_state": {
+    "decision_report": "config/program/phase0-decision-report.v2.json",
+    "decision_report_sha256": "4e9f8fdd0b780c5cdeb3c5ba95c360cd0f52eed332af57078910fd1847e4bb17",
+    "module_count": 29,
+    "phase0": 9,
+    "phase1": 0,
+    "phase2": 0,
+    "pre_phase0": 20
+  },
+  "global_locks": {
+    "all_optimizer_objectives_disabled_until_separate_post_phase1_authorization": true,
+    "phase_changes_written_by_data_pipeline": false,
+    "public_computed_predicted_generated_weak_label_or_metadata_volume_is_not_independent_validation": true,
+    "signed_v1_controls_remain_authoritative_during_v2_shadowing": true
+  },
+  "issued_on": "2026-07-19",
+  "movement_gate": [
+    "current manifest profile policy dataset split and benchmark hashes",
+    "rights receipts",
+    "locked split and mandatory attacks",
+    "two byte-identical clean replays",
+    "accepted evaluator signature",
+    "different accepted independent-review signature",
+    "exactly one movement event"
+  ],
+  "parents": {
+    "feedback_v2_catalog_sha256": "c7ad68a0977862b5f7797cc781088492e79af0554f01b9486cf8ca0f94c3eed4",
+    "registry_manifest_sha256": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+  },
+  "schema": "amphora.data-activation-promotion-trajectory.v2",
+  "status": "CONDITIONAL_TRAJECTORY_NOT_AUTHORITY"
+}

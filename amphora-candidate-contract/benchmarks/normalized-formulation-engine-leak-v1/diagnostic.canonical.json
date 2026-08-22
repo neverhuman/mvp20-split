@@ -1,0 +1,51 @@
+{
+  "causality_isolated_same_candidate_id": true,
+  "clean": {
+    "candidate_file": "clean_formulation_candidate.json",
+    "candidate_file_sha256": "ede40bce8664b2f9587a0bca40a6892d640fb644f56b70883d9cbd284bfdca65",
+    "candidate_id": "Envelope-65-black-leaktest",
+    "formula_hash_echoed_into_normalized_formulation": "2a3eacef3b01779d718d8a05207fcc3efd7b94d8d04014a8d83dfef41ecfb912",
+    "full_result_sha256": "ab5fffa6548af9b430b030296125d24efc18626b4b8359bfae42b53bdca8a803",
+    "label": "clean",
+    "normalized_formulation_top_level_keys": [
+      "candidate_id",
+      "candidate_type",
+      "context",
+      "evidence_refs",
+      "formula_hash",
+      "formulation",
+      "input_hash",
+      "input_kind",
+      "molecule",
+      "normalized_recipe",
+      "original_bytes_sha256"
+    ],
+    "provenance_result_hash": "ec34b5d2a9beea971dc837640365f863294ff01d019b321770c03ee239a77e10"
+  },
+  "engine_entry_point": "amphora_engine::EnginePool::score (the exact function amphora-cli::control::shadow_run calls for every candidate in its --candidate input array, with no candidate_type/lane restriction)",
+  "harness": "amphora-candidate-contract/benchmarks/normalized-formulation-engine-leak-v1/rust_harness_main.rs",
+  "leak_confirmed": false,
+  "poison": {
+    "candidate_file": "poisoned_formulation_candidate.json",
+    "candidate_file_sha256": "a50adc010a89bbea00ccad46192acde14de4b6c4cf8cef916aab2287a8ce3b5d",
+    "candidate_id": "Envelope-65-black-leaktest",
+    "formula_hash_echoed_into_normalized_formulation": "2a3eacef3b01779d718d8a05207fcc3efd7b94d8d04014a8d83dfef41ecfb912",
+    "full_result_sha256": "e453096472602d51688f1b432b7e4c5b04e9e15d9b17a372d44016a5b610f36c",
+    "label": "poison",
+    "normalized_formulation_top_level_keys": [
+      "candidate_id",
+      "candidate_type",
+      "context",
+      "evidence_refs",
+      "formula_hash",
+      "formulation",
+      "input_hash",
+      "input_kind",
+      "molecule",
+      "normalized_recipe",
+      "original_bytes_sha256"
+    ],
+    "provenance_result_hash": "9228ff1ea233d8c10bcc142503d8e8a8a9403b1520e21f7c0f765ab66aae1d0a"
+  },
+  "schema": "amphora.candidate-contract.normalized-formulation-engine-leak-diagnostic.v1"
+}

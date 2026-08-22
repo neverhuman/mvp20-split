@@ -1,0 +1,51 @@
+{
+  "applicability_domain": [
+    "registered amphora-run-provenance contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "audit_execution_passed": true,
+  "benchmark_execution_complete": true,
+  "bundle_hash": "19b8e11a86370ecdb8a0a283cd2ded5e944d551a74e963af0ca7ae7d140eb81b",
+  "bundle_parent_hashes": {
+    "evidence/phase0/benchmark/benchmark-lock.v1.json": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360",
+    "evidence/phase0/dataset/dataset-manifest.v1.json": "06ce86d9a8e69fd3761be8b236274df85570f15e2e86f2b314bfc45efc43de18",
+    "evidence/phase0/promotion/policy.v1.json": "f3dfca41671e41c03e8216339af5c710b1af471776c21e94625f9eaa1749f290",
+    "evidence/phase0/raw/SHA256SUMS": "b0ec26a7c9ee893e16bceb45f6130f2607caed0dd3a085a90904e7b6061cef8a",
+    "evidence/phase0/sources/source-lock.v1.json": "8195ce6828f3e52fec732a60dbdb1413d564beed03e7071f3e62bab4e820dfa0",
+    "evidence/phase0/split/split-manifest.v1.json": "7ec2650109dd1f37d04cc7b6a13a404174477319313f799680641ab3d2f280d1",
+    "evidence/superseded/supersession-7974502d940328a1950eadc52c06064f0462d429cee6b183c8a63285edeafe65/supersession.v1.json": "8ee39316695da5cf30a850b9dcf09718568081eecc1802d3f9bfcada26e6ad67",
+    "ip/claim-contract.v1.json": "62257f5b79abc48a7550e785046ef30fd5e352c0b3ff971a90c1d0aeaf3fb590",
+    "ip/disclosure-log.v1.json": "75e21f71841efe26ad750bd0dd192b2abf3af287fd6799be58f2781ef1d020f0",
+    "ip/prior-art.v1.json": "06599cf22e413a60505407890fd984fe8b68ec9d8236d8da2191169ccc0b55d5",
+    "ip/technical-dossier.v1.json": "571f698d988c156f520d092f4a246ad4b9391698ada94bb31009d08accb02c39"
+  },
+  "claim_lock_hash": "9e6d0cbe7e8316b2513a17bfa7c552a76d2d0c631246fc433487e2d4b291512f",
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "failed_gates": [],
+  "metrics": {
+    "benchmark_execution_complete": true,
+    "benchmark_result_sha256": "792c1ce02d881d95affcc08f222d6bc0f6128c9b883f34029dda30474c4ad5fc",
+    "replay_identical": true,
+    "rights_gate_passed": true
+  },
+  "module_class": "DETERMINISTIC_CONTROL",
+  "module_id": "amphora-run-provenance",
+  "phase0_eligible": true,
+  "receipt_id": "phase0-evaluation-1e75bcd198dc141b2a13e99040ca170016833e7b04400aeea2d608fc7eab2f28",
+  "replay_hash": "bf1ba38c84267fc64e1af721d8ba80b3194fdf86498b82fee6b381201f15a7ff",
+  "retained_negative_results": [],
+  "schema": "amphora.module-phase0-evaluation-receipt.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "scientific_readiness": "NOT_APPLICABLE",
+  "signature": {
+    "payload": "eyJhcHBsaWNhYmlsaXR5X2RvbWFpbiI6WyJyZWdpc3RlcmVkIGFtcGhvcmEtcnVuLXByb3ZlbmFuY2UgY29udHJhY3QgYW5kIHN5bnRoZXRpYyBmaXh0dXJlcyIsImFic3RhaW4gb24gbWFsZm9ybWVkLCBzdGFsZSwgdW5hdXRob3JpemVkLCBvciBvdXQtb2YtY29udHJhY3QgaW5wdXQiXSwiYXVkaXRfZXhlY3V0aW9uX3Bhc3NlZCI6dHJ1ZSwiYmVuY2htYXJrX2V4ZWN1dGlvbl9jb21wbGV0ZSI6dHJ1ZSwiYnVuZGxlX2hhc2giOiIxOWI4ZTExYTg2MzcwZWNkYjhhMGEyODNjZDJkZWQ1ZTk0NGQ1NTFhNzRlOTYzYWYwY2E3YWU3ZDE0MGViODFiIiwiYnVuZGxlX3BhcmVudF9oYXNoZXMiOnsiZXZpZGVuY2UvcGhhc2UwL2JlbmNobWFyay9iZW5jaG1hcmstbG9jay52MS5qc29uIjoiOWQ4NWQxYzBjNTFkMmIzZmU4MjU3NGNjNjhmMjJiMGNiMmIxZWUzOTQwYmI5MzYyMTIwZmY3ZDMxODAyYzM2MCIsImV2aWRlbmNlL3BoYXNlMC9kYXRhc2V0L2RhdGFzZXQtbWFuaWZlc3QudjEuanNvbiI6IjA2Y2U4NmQ5YThlNjlmZDM3NjFiZThiMjM2Mjc0ZGY4NTU3MGYxNWUyZTg2ZjJiMzE0YmZjNDVlZmM0M2RlMTgiLCJldmlkZW5jZS9waGFzZTAvcHJvbW90aW9uL3BvbGljeS52MS5qc29uIjoiZjNkZmNhNDE2NzFlNDFjMDNlODIxNjMzOWFmNWM3MTBiMWFmNDcxNzc2YzIxZTk0NjI1ZjllYWExNzQ5ZjI5MCIsImV2aWRlbmNlL3BoYXNlMC9yYXcvU0hBMjU2U1VNUyI6ImIwZWMyNmE3YzllZTg5M2UxNmJjZWI0NWY2MTMwZjI2MDdjYWVkMGRkM2EwODVhOTA5MDRlN2I2MDYxY2VmOGEiLCJldmlkZW5jZS9waGFzZTAvc291cmNlcy9zb3VyY2UtbG9jay52MS5qc29uIjoiODE5NWNlNjgyOGYzZTUyZmVjNzMyYTYwZGJkYjE0MTNkNTY0YmVlZDAzZTcwNzFmM2U2MmJhYjRlODIwZGZhMCIsImV2aWRlbmNlL3BoYXNlMC9zcGxpdC9zcGxpdC1tYW5pZmVzdC52MS5qc29uIjoiN2VjMjY1MDEwOWRkMWYzN2QwNGNjN2I2YTEzYTQwNDE3NDQ3NzMxOTMxM2Y3OTk2ODA2NDFhYjNkMmYyODBkMSIsImV2aWRlbmNlL3N1cGVyc2VkZWQvc3VwZXJzZXNzaW9uLTc5NzQ1MDJkOTQwMzI4YTE5NTBlYWRjNTJjMDYwNjRmMDQ2MmQ0MjljZWU2YjE4M2M4YTYzMjg1ZWRlYWZlNjUvc3VwZXJzZXNzaW9uLnYxLmpzb24iOiI4ZWUzOTMxNjY5NWRhNWNmMzBhODUwYjlkY2YwOTcxODU2ODA4MWVlY2MxODAyZDNmOWJmY2FkYTI2ZTZhZDY3IiwiaXAvY2xhaW0tY29udHJhY3QudjEuanNvbiI6IjYyMjU3ZjViNzlhYmM0OGE3NTUwZTc4NTA0NmVmMzBmZDVlMzUyYzBiM2ZmOTcxYTkwYzFkMGFlYWYzZmI1OTAiLCJpcC9kaXNjbG9zdXJlLWxvZy52MS5qc29uIjoiNzVlMjFmNzE4NDFlZmUyNmFkNzUwYmQwZGQxOTJiMmFiZjNhZjI4N2ZkNjc5OWJlNThmMjc4MWVmMWQwMjBmMCIsImlwL3ByaW9yLWFydC52MS5qc29uIjoiMDY1OTljZjIyZTQxM2E2MDUwNTQwNzg5MGZkOTg0ZmU4YjY4ZWM5ZDgyMzZkOGRhMjE5MTE2OWNjYzBiNTVkNSIsImlwL3RlY2huaWNhbC1kb3NzaWVyLnYxLmpzb24iOiI1NzFmNjk4ZDk4OGMxNTZmNTIwZDA5MmY0YTI0NmFkNGI5MzkxNjk4YWRhOTRiYjMxMDA5ZDA4YWNjYjAyYzM5In0sImNsYWltX2xvY2tfaGFzaCI6IjllNmQwY2JlN2U4MzE2YjI1MTNhMTdiZmE3YzU1MmE3NmQyZDBjNjMxMjQ2ZmM0MzM0ODdlMmQ0YjI5MTUxMmYiLCJkZWNpc2lvbl91c2VfY2VpbGluZyI6IkFVRElUX09OTFkiLCJldmFsdWF0b3Jfa2V5X2lkIjoicGhhc2UwLWV2YWx1YXRvci0zZWY2YjM1Y2RiYmZlYTc0YTk2YTVjOWI5OGE1MTVkNTcxNThhMDllY2FmZjEwYWNmYTFmMTU5OTBiZTAwMTc4IiwiZmFpbGVkX2dhdGVzIjpbXSwibWV0cmljcyI6eyJiZW5jaG1hcmtfZXhlY3V0aW9uX2NvbXBsZXRlIjp0cnVlLCJiZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6Ijc5MmMxY2UwMmQ4ODFkOTVhZmZjYzA4ZjIyMmQ2YmMwZjYxMjhjOWI4ODNmMzQwMjlkZGEzMDQ3NGM0YWQ1ZmMiLCJyZXBsYXlfaWRlbnRpY2FsIjp0cnVlLCJyaWdodHNfZ2F0ZV9wYXNzZWQiOnRydWV9LCJtb2R1bGVfY2xhc3MiOiJERVRFUk1JTklTVElDX0NPTlRST0wiLCJtb2R1bGVfaWQiOiJhbXBob3JhLXJ1bi1wcm92ZW5hbmNlIiwicGhhc2UwX2VsaWdpYmxlIjp0cnVlLCJyZWNlaXB0X2lkIjoicGhhc2UwLWV2YWx1YXRpb24tMWU3NWJjZDE5OGRjMTQxYjJhMTNlOTkwNDBjYTE3MDAxNjgzM2U3YjA0NDAwYWVlYTJkNjA4ZmM3ZWFiMmYyOCIsInJlcGxheV9oYXNoIjoiYmYxYmEzOGM4NDI2N2ZjNjRlMWFmNzIxZDhiYTgwYjMxOTRmZGY4NjQ5OGI4MmZlZTZiMzgxMjAxZjE1YTdmZiIsInJldGFpbmVkX25lZ2F0aXZlX3Jlc3VsdHMiOltdLCJzY2hlbWEiOiJhbXBob3JhLm1vZHVsZS1waGFzZTAtZXZhbHVhdGlvbi1yZWNlaXB0LnYxIiwic2NpZW50aWZpY19vdXRjb21lIjoiTk9UX0FQUExJQ0FCTEUiLCJzY2llbnRpZmljX3JlYWRpbmVzcyI6Ik5PVF9BUFBMSUNBQkxFIn0=",
+    "payloadType": "application/vnd.amphora.module-phase0-evaluation-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "nKH8UIOmhw1RKKYYkC+9dv7q/q7KJEiXUrM4REhz06xY6phTCGWkz5obIp7Tsf2m7dEJzwbkRMrj00gxofwDDA=="
+      }
+    ]
+  }
+}

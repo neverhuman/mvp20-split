@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-71883a5b16c47eed8a0fe02c5eb4e998d529295d59c2d74f9653c8ed7d22a2e2",
+      "path": "events/71883a5b16c47eed8a0fe02c5eb4e998d529295d59c2d74f9653c8ed7d22a2e2.json",
+      "sha256": "6754068b0a7de4e522e1ca48fed1c6abb5a00c2f03063ad5ef211c9d85938651"
+    }
+  ],
+  "module_id": "amphora-solvency-score",
+  "schema": "amphora.module-movement-ledger.v1"
+}

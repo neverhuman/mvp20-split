@@ -1,0 +1,57 @@
+{
+  "checks": {
+    "acquisition_receipt_quarantined_flag": true,
+    "acquisition_receipt_raw_sha256": "3cd923b4d67399f9c201b06acb282ee82b3a85345e06ff74c0b9d6941265f811",
+    "ffw_input_csv_sha256": "3cd923b4d67399f9c201b06acb282ee82b3a85345e06ff74c0b9d6941265f811",
+    "manifest_quarantined_flag": true,
+    "manifest_raw_sha256": "3cd923b4d67399f9c201b06acb282ee82b3a85345e06ff74c0b9d6941265f811",
+    "manifest_rights_class": "CONTEXT_ONLY",
+    "ml_dataset_local_csv_sha256": "3cd923b4d67399f9c201b06acb282ee82b3a85345e06ff74c0b9d6941265f811",
+    "rights_decision_basis": "Custom license requires counsel; physically quarantine all derivatives.",
+    "rights_decision_license": "Georgia Tech Research Corporation General Public Use License Agreement",
+    "rights_decision_promotion_eligible": false,
+    "rights_decision_rights_class": "CONTEXT_ONLY"
+  },
+  "conclusion": {
+    "ffw_b3_and_ml_b4_fit_against_byte_identical_input_csv": true,
+    "fire1_asserted_no_rights_review_needed": true,
+    "fire1_claim_refuted_by_hash_evidence": true,
+    "fire1_human_action_needed_text": "Re-run the harness that produced polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json (FFW_B3) and the parent ML B4 HistGBM fit, with per-row prediction logging enabled, and sign the resulting (test_row_polymer_id, test_row_y_true, test_row_y_pred_B3, test_row_y_pred_B4) arrays as a new receipt. This is a pipeline re-run-and-persist gap, not a new external data acquisition -- no rights review is needed since it derives from the same already-cleared, non-quarantined model-fitting step, not the quarantined row-level CSV.",
+    "positive_control_on_comparison_logic": {
+      "detected": true,
+      "evidence": "sha_eq(real, planted_zero_hash) == False; comparison correctly reports mismatch",
+      "how_planted": "substituted the real hash string with '0'*64 in one operand of the equality check",
+      "planted_defect": "mismatched sha256 (64 zero chars) compared against real ffw_input_csv_sha256"
+    },
+    "quarantine_basis_text": "Custom license requires counsel; physically quarantine all derivatives.",
+    "quarantine_covers_derivatives_not_just_raw_file": true,
+    "reasoning": "Both signed lineage artifacts for R-C04's target claim -- the FFW physical-baseline receipt (input_csv_sha256) and the parent ML B4 HistGBM model receipt (dataset_local_csv_sha256) -- were fit against a CSV whose sha256 is byte-identical to the raw_sha256 recorded in this module's own quarantine acquisition-receipt.json and normalized-dataset manifest.json for the Polyverse melt-viscosity dataset (quarantined=true, rights_class=CONTEXT_ONLY). The rights decision's own basis text explicitly extends the quarantine to 'all derivatives', not just the raw file. Producing the per-row prediction arrays R-C04's pre-registered protocol needs (test_row_polymer_id, test_row_y_true, test_row_y_pred_B3, test_row_y_pred_B4) requires re-running the identical fitting step against this identical quarantined-raw-hash CSV and persisting a NEW derivative artifact -- exactly what 'physically quarantine all derivatives' covers. Fire 1's checkpoint receipt asserted the opposite ('no rights review is needed... not the quarantined row-level CSV') without checking the hash; that assertion is refuted by this comparison. The correct remediation path is therefore blocked on the same pending counsel review already flagged by R-A03/mission.md, not on an unblocked engineering re-run.",
+    "that_input_csv_is_the_quarantined_raw_object": true
+  },
+  "files_examined": {
+    "acquisition_receipt": {
+      "path": "amphora-viscosity-score/reference/mvp20/manifests/polyverse_melt_viscosity.acquisition-receipt.json",
+      "raw_file_sha256": "c8b768e982425f299520f95c2e88d26e92498cdbe8b4d94944d320d4cac396f2"
+    },
+    "ffw_receipt": {
+      "path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json",
+      "raw_file_sha256": "3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3"
+    },
+    "fire1_checkpoint_receipt": {
+      "path": "amphora-viscosity-score/evidence/phase0/repairs/R-C04/attempts/cluster-bootstrap-data-audit-v1/cluster-bootstrap-data-audit-v1-receipt.v1.dsse.json",
+      "raw_file_sha256": "45e0b9704c3ae2c88bc166700e2262ccbad8d6c7089976797d685cf8ea947b1c"
+    },
+    "ml_model_receipt": {
+      "path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json",
+      "raw_file_sha256": "29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff"
+    },
+    "normalized_dataset_manifest": {
+      "path": "amphora-viscosity-score/reference/mvp20/manifests/polyverse_melt_viscosity.json",
+      "raw_file_sha256": "4b347cdd1361a763d077c9b229c74481dc3766e6c23314b28645d7286cbd927d"
+    },
+    "rights_decision": {
+      "path": "amphora-viscosity-score/reference/mvp20/quarantine/feedback_v2/exclusions/polyverse_melt_viscosity-3cd923b4d67399f9.rights.json",
+      "raw_file_sha256": "ba27daefdb497fb7c55f64c5d2be397cc93144451c4005c46de586bd689d7dbf"
+    }
+  }
+}

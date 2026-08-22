@@ -1,0 +1,44 @@
+{
+  "schema": "amphora.benchmark-lock.v1",
+  "benchmark_id": "molecule-role-ranker-phase-1-lock-2026-07-17",
+  "module_id": "amphora-molecule-role-ranker",
+  "endpoints": [
+    "resin_hardener_ambiguous_out_of_domain_classification",
+    "calibrated_role_probability",
+    "ambiguous_and_out_of_domain_rejection"
+  ],
+  "baselines": [
+    "independently_double_labeled_expert_reference",
+    "reactive_group_structural_classifier",
+    "majority_class"
+  ],
+  "metrics": [
+    {"metric":"balanced_accuracy","direction":"maximize","unit":"fraction_0_1","threshold":0.90},
+    {"metric":"macro_f1","direction":"maximize","unit":"fraction_0_1","threshold":0.90},
+    {"metric":"expert_noninferiority_lower_bound","direction":"maximize","unit":"absolute_fraction","threshold":-0.05},
+    {"metric":"expected_calibration_error","direction":"minimize","unit":"absolute_fraction","threshold":0.10},
+    {"metric":"ambiguous_out_of_domain_rejection","direction":"maximize","unit":"fraction_0_1","threshold":0.95},
+    {"metric":"measured_only_claim_lock_preservation","direction":"maximize","unit":"fraction_0_1","threshold":1.0}
+  ],
+  "uncertainty_method": "pre-locked paired non-inferiority evaluation against independently double-labeled expert reference",
+  "thresholds": {
+    "minimum_truth_set_molecules": 300.0,
+    "minimum_balanced_accuracy": 0.90,
+    "minimum_macro_f1": 0.90,
+    "minimum_expert_noninferiority_lower_bound": -0.05,
+    "maximum_expected_calibration_error": 0.10,
+    "minimum_ambiguous_out_of_domain_rejection": 0.95,
+    "minimum_measured_only_claim_lock_preservation": 1.0
+  },
+  "exclusions": [
+    "commercial products, mixtures, and polydisperse grades from structure-derived role truth",
+    "unadjudicated labels",
+    "inferred or ambiguous roles from objective_values.role_fit"
+  ],
+  "dataset_hashes": {
+    "config/program/molecule-role-sources.v1.json": "c491c0906bd07d0a0a29dbeb2b7abf2755ceb593e66013843cdd8d1b206de063",
+    "amphora-molecule-role-ranker/reference/mvp20/data/role_fit_benchmark.v1.json": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+    "config/program/molecule-role-split.v1.json": "8d75b686d6479c3798a88c1b0030aea8e15aa4268b064e120025c59038b97df5"
+  },
+  "split_hash": "8d75b686d6479c3798a88c1b0030aea8e15aa4268b064e120025c59038b97df5"
+}

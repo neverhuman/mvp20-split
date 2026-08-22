@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-088989afa75f92b7e3a6e488042e04c4b1cf3ca17ff19e5467309089f8827ffe",
+      "path": "events/088989afa75f92b7e3a6e488042e04c4b1cf3ca17ff19e5467309089f8827ffe.json",
+      "sha256": "ea3025a4c3839c004ff16f9672e74e40165f204559875ef32336c447f4366646"
+    }
+  ],
+  "module_id": "amphora-cro-protocol-packager",
+  "schema": "amphora.module-movement-ledger.v1"
+}

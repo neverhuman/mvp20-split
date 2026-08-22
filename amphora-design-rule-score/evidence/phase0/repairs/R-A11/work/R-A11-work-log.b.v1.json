@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-03",
+  "module": "amphora-design-rule-score",
+  "original_decoded_payload_sha256": "cd54e22dc36c57687255951d36e102b6ca4720e0e8e7a572ed906ea2f0621a6d",
+  "original_sha256_pre_recorded": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+  "original_signature_valid_with_anchored_pubkey": false,
+  "original_signature_valid_with_embedded_pubkey": false,
+  "reattack": {
+    "dsse_verifies_against_trust_store": true,
+    "keyid_equals_pinned_trust_store_key_id": true,
+    "keyid_prefix_phase0_evaluator_3ef6b35": true,
+    "original_byte_intact": true,
+    "original_sha256_after_write": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+    "original_sha256_before": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+    "reloaded_payload_sha256_matches_two_replay_sha256": true,
+    "self_verified_with_seed_derived_pubkey": true
+  },
+  "reissue_file_sha256": "ec6ab882c45dabbd27abef5d6c40a08a39959d92cc7f10fc8bd6a140dd7390a5",
+  "reissue_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json",
+  "reissue_payload_two_replay_sha256": "309310d4514ad0bb31482d42e6512731afe1072b3de666c41f3b11a250952b8d",
+  "repair_item": "R-A11",
+  "repair_mode": "interactive-2026-08-03",
+  "retraction_index": {
+    "existed_before": false,
+    "path": "amphora-design-rule-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "sha256_after": "b55c13904cb76ad43c8c17ea5c270f62cc8189b0e11f0bb3a5346d0cab26d9d7",
+    "sha256_before": null
+  },
+  "target": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json"
+}

@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-dacaf301ea673d8d99244525fafa5ab562079dc724bdb97b456a79659b4cf1b0",
+  "module_id": "amphora-solvency-score",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-9c1993ff8e0044cb56beafc60da4dcd6ebff4d04919072440fbd9603f7050809.json",
+      "revision_id": "preparation-revision-9c1993ff8e0044cb56beafc60da4dcd6ebff4d04919072440fbd9603f7050809",
+      "sha256": "917d0dcf920e619130a2e15e2a70420ac696dce1c869e8dcf96e6cf974382526"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-dacaf301ea673d8d99244525fafa5ab562079dc724bdb97b456a79659b4cf1b0.json",
+      "revision_id": "preparation-revision-dacaf301ea673d8d99244525fafa5ab562079dc724bdb97b456a79659b4cf1b0",
+      "sha256": "1b96488852cbbb70ab77bc30ba694c6b9a27f56bf41a0efc7d9f5055db578e37"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

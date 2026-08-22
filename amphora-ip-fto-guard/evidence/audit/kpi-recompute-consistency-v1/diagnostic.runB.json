@@ -1,0 +1,107 @@
+{
+  "H0": "The module's 3 standing signed audit receipts faithfully reconstruct the same metric the live checked Rust runtime populates for metrics.unresolved_technical_categories.",
+  "H0_verdict": "REFUTED",
+  "consistency_checks": {
+    "live_matches_recompute_a_claim_chart": true,
+    "live_matches_recompute_b_families_unclear": false,
+    "live_matches_standing_audit_claims": false
+  },
+  "does_not_close": [
+    "Does not modify or supersede the pinned patent_landscape.json fixture, the manifest, or any signed Phase-0 KPI.",
+    "Does not itself correct the 3 standing receipts (supersede-never-rewrite; a fixture/receipt correction requires a separate campaign repair item).",
+    "Does not assert which of the two candidate definitions (claim_chart_categories vs families-UNCLEAR) is the 'correct' one -- only that they diverge and that the live runtime and 3 standing receipts currently disagree on which one 'unresolved_technical_categories' means.",
+    "Does not establish legal FTO, patentability, or counsel review status."
+  ],
+  "fail_closed_mutation_demo": {
+    "all_mutations_caught": true,
+    "description": "Corrupt the live-runtime value to a sentinel (999999) and confirm the consistency check fires (detects); confirm the REAL recompute-a value does not spuriously fire against itself (no false positive).",
+    "mutated_live_value": 999999,
+    "mutation_detected_as_inconsistent": true,
+    "real_recompute_a_self_consistent_no_false_positive": true
+  },
+  "fixture_sha_matches_all_standing_claims": true,
+  "hash_and_count_lock": {
+    "fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "fixture_sha256_matches_module_mission_pin": true
+  },
+  "headline": "KPI-recompute-consistency audit of amphora-ip-fto-guard's declared primary value path metrics.unresolved_technical_categories (pinned fixture SHA 52ada09074f435d5...): H0 'the module's standing signed audit receipts (landscape-integrity-v1, all-elements-rule-v1, cpc-coverage-v1) faithfully reconstruct the SAME metric the live checked Rust runtime populates' is REFUTED. Live runtime (AssuranceCapability::new + evaluate(), real compiled code path, 4 candidate scenarios, two-replay byte-identical) emits 75 (source: len(claim_chart_categories where not_fto==true) = 75); the 3 standing, unsuperseded audit receipts each assert unresolved_technical_categories_recomputed={'landscape-integrity-v1': 54, 'all-elements-rule-v1': 54} (source: count of families rows with reads_on_ours=='UNCLEAR / not FTO' = 54). Same pinned fixture SHA cited by all parties (True). The two source arrays (claim_chart_categories, 75 entries; families, 60 entries) are structurally distinct and were never reconciled after the 2026-08-03 R-B01 repair switched the live runtime onto claim_chart_categories -- all 3 standing receipts predate that repair (2026-07-27/28/29) and were never re-run against the repaired runtime.",
+  "inputs": {
+    "claim_chart_categories_count": 75,
+    "families_count": 60,
+    "fixture_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+    "fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "probe_harness": "/tmp/kpi_recompute_probe (standalone cargo bin, path deps: amphora-core, amphora-assurance-capabilities)",
+    "probe_main_rs_sha256": "13b08a51d79e1981e1c14df3fb7da714338ac3385d74a3573894a96ca4274ba8"
+  },
+  "live_runtime_probe": {
+    "distinct_values_across_scenarios": [
+      75
+    ],
+    "run1_sha256": "de608df1209c220fc07804a8e65434732a858c49d01ae4a21a6d6eded0a26b9b",
+    "run2_sha256": "de608df1209c220fc07804a8e65434732a858c49d01ae4a21a6d6eded0a26b9b",
+    "scenarios_run": [
+      "baseline-envelope65-like",
+      "counsel-signed-true",
+      "counsel-signed-false",
+      "unrelated-evidence-refs"
+    ],
+    "single_stable_value": 75,
+    "two_replay_byte_identical": true,
+    "values_by_scenario": {
+      "baseline-envelope65-like": 75,
+      "counsel-signed-false": 75,
+      "counsel-signed-true": 75,
+      "unrelated-evidence-refs": 75
+    }
+  },
+  "non_circularity": "Both candidate recomputations (a: claim_chart_categories not_fto count: 75; b: families UNCLEAR count: 54) are counted fresh in this script directly from fixture bytes on disk, not copied from any prior receipt. The live-runtime value is read from a freshly compiled, freshly executed standalone probe binary (path deps only, no re-implementation of evaluate_ip_fto_guard), run twice for byte-identical replay, independent of the R-B01 repair's own probe output (though found to agree with it -- 75 in both cases, 8 months... days apart under the same repaired code).",
+  "proposed_followups": [
+    {
+      "defect": "landscape-integrity-v1, all-elements-rule-v1, and cpc-coverage-v1 (all dated 2026-07-27..29, all pre-dating the 2026-08-03 R-B01 repair that first wired metrics.unresolved_technical_categories to the live runtime) each assert unresolved_technical_categories_recomputed=54 from a families-UNCLEAR count, but the repaired live runtime actually emits 75 from a claim_chart_categories count -- a live, mechanically verifiable disagreement on the value of the module's own declared 'primary value path' KPI, with no reconciling receipt and no RETRACTION-INDEX.md entry.",
+      "module": "amphora-ip-fto-guard",
+      "proposed_done_criterion": "Either (a) supersede the 3 pre-repair receipts' kpi_reconstruction sections with a corrected recompute against claim_chart_categories and add a RETRACTION-INDEX.md entry, or (b) if families-UNCLEAR is the intended semantic, file a repair against the R-B01 runtime fix in amphora-assurance-capabilities to recompute from families UNCLEAR instead of claim_chart_categories, reconciling docs/mission.md's KPI register description either way."
+    }
+  ],
+  "purpose": "Determine whether the 3 standing (non-superseded) AUDIT_ONLY receipts that reconstruct amphora-ip-fto-guard's declared primary KPI value path from the pinned fixture remain consistent with what the live, code-checked Rust runtime actually emits for that exact metric, post the 2026-08-03 R-B01 metric-schema-parity repair.",
+  "recomputation": {
+    "recompute_a_claim_chart_categories_not_fto_true": 75,
+    "recompute_a_equals_recompute_b": false,
+    "recompute_b_families_reads_on_ours_unclear": 54
+  },
+  "schema": "amphora.ip-fto-guard.kpi-recompute-consistency-diagnostic.v1",
+  "standing_audit_receipts": {
+    "all-elements-rule-v1": {
+      "asserted_fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+      "asserted_hypothesis_corroborated": true,
+      "asserted_unresolved_technical_categories_recomputed": 54,
+      "receipt_path": "amphora-ip-fto-guard/evidence/audit/all-elements-rule-v1/all-elements-rule-receipt.v1.dsse.json",
+      "receipt_sha256": "295f13616efdaeb2a44a7d06f98491d084785af4b85c412fccdf7956acddadd4"
+    },
+    "cpc-coverage-v1": {
+      "asserted_fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+      "asserted_hypothesis_corroborated": true,
+      "asserted_unresolved_technical_categories_recomputed": null,
+      "receipt_path": "amphora-ip-fto-guard/evidence/audit/cpc-coverage-v1/cpc-coverage-receipt.v1.dsse.json",
+      "receipt_sha256": "ddd8bffb433606b1605b12acfd74a128eb1f4df070228febea69f334781cfc4d"
+    },
+    "landscape-integrity-v1": {
+      "asserted_fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+      "asserted_hypothesis_corroborated": true,
+      "asserted_unresolved_technical_categories_recomputed": 54,
+      "receipt_path": "amphora-ip-fto-guard/evidence/audit/landscape-integrity-v1/landscape-integrity-receipt.v1.dsse.json",
+      "receipt_sha256": "22c1f0474c69df90111a14ab310ad238d53d4bc488f210d998716b5d972cb492"
+    }
+  },
+  "standing_claims_agree_with_each_other": true,
+  "standing_claims_asserting_the_metric": {
+    "all-elements-rule-v1": 54,
+    "landscape-integrity-v1": 54
+  },
+  "standing_receipts_absent_from_retraction_index": {
+    "all-elements-rule-v1": true,
+    "cpc-coverage-v1": true,
+    "landscape-integrity-v1": true
+  },
+  "study_id": "IP_FTO_GUARD_KPI_RECOMPUTE_CONSISTENCY_V1",
+  "theory_reference": "Metric consistency / single-source-of-truth principle for a declared 'primary value path' KPI (docs/mission.md: 'the primary value path is metrics.unresolved_technical_categories', 'populated by the live checked Rust runtime'); DSSE receipt supersession discipline per this module's own RETRACTION-INDEX.md ('Original artifacts are never rewritten' -- but also never left silently contradicted by a later live-runtime change without a reconciling receipt)."
+}

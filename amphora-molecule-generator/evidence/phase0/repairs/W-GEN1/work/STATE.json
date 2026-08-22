@@ -1,0 +1,8 @@
+{
+  "item_id": "W-GEN1",
+  "status": "done",
+  "fires": ["20260805T060001-3672586-df6ae9cbae6d"],
+  "done_receipt": "amphora-molecule-generator/evidence/phase0/repairs/W-GEN1/done/w-gen1-portfolio-ci-degeneracy-sweep-receipt.v1.dsse.json",
+  "verdict": "CLAIM_REFUTED",
+  "summary": "Portfolio sweep of 294 DSSE artifacts across 41 modules found a new k=n=24 degenerate percentile-bootstrap CI in amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json (fitted_loocv_accuracy_ci95=[1.0,1.0]; exact Clopper-Pearson [0.8575,1.0000]), outside the already-fixed molgen-deterministic-grammar-yield-v1 instance. Repair of the role-ranker instance is out of scope for this module-scoped item; not attempted here."
+}

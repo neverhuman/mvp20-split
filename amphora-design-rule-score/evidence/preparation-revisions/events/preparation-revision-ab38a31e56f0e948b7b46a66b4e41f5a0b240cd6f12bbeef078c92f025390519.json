@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "02503fa76dd11269d1ec3a237d15dd13abc89238acdc8f7901d815a50d0e01d7",
+  "module_id": "amphora-design-rule-score",
+  "parent_revision_id": null,
+  "revision_id": "preparation-revision-ab38a31e56f0e948b7b46a66b4e41f5a0b240cd6f12bbeef078c92f025390519",
+  "revision_number": 1,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-7ed82db4150906fef467c9eb9d17586b1ca1309e1969dde9daa0439999470381",
+  "supersession_path": "evidence/superseded/supersession-7ed82db4150906fef467c9eb9d17586b1ca1309e1969dde9daa0439999470381/supersession.v1.json",
+  "supersession_sha256": "3b5fb61aabcdaf496a1a6aff21f1a7da30ddda9024619e09d3224bf7253b4db8",
+  "unsigned_preparation_only": true
+}

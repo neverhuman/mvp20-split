@@ -1,0 +1,180 @@
+{
+  "all_gates_passed": true,
+  "clause_inventory": {
+    "structural_clauses": [
+      "len==11 (cardinality)",
+      "isinstance dict (type)"
+    ],
+    "total_independent_conjuncts": 13,
+    "value_clauses": [
+      "schema",
+      "accepted",
+      "signature_verified",
+      "revocation_checked",
+      "fresh",
+      "signature_algorithm",
+      "trust_store_status",
+      "candidate_id",
+      "candidate_contract_hash_v1",
+      "package_sha256",
+      "verifier_id"
+    ]
+  },
+  "closes": [
+    "First EXHAUSTIVE (not sampled) verification that the evidence-intake acceptance predicate is exactly the conjunction of its 11 value-clauses: 1 accepting row / 2047 rejecting rows over the full 2^11 lattice, zero gap combinations.",
+    "Establishes minimality: all 11 value-clauses plus the cardinality and dict-type structural guards are independently load-bearing (removing satisfaction of any single one flips accept->reject).",
+    "Prior benchmark sampled 17 shipped + 8 novel probes; this certifies the complete boolean structure the samples only spot-checked."
+  ],
+  "counts": {
+    "minimality_single_flip_probes": 11,
+    "positive_anchors": 3,
+    "structural_probes": 5,
+    "total_decisions_evaluated": 4115,
+    "truth_table_rows": 2048
+  },
+  "does_not_establish": [
+    "No wet-lab, product-qualification, legal, regulatory, supplier, or scientific authority. Structural completeness of an intake predicate is not evidence of coating performance.",
+    "Ceiling remains the pinned Rust runtime = Phase-1; this is an AUDIT_ONLY independent re-derivation, not a promotion."
+  ],
+  "g0_shipped_anchor_reproduction": {
+    "all_match": true,
+    "records": [
+      {
+        "match": true,
+        "oracle_package_sha256": "10b52299f7cf514efa5156d0c85bf98dc2088db3d8d00f09eb149ba1fcbb1fef",
+        "scenario_id": "baseline-primer-lab-measurement",
+        "shipped_package_sha256": "10b52299f7cf514efa5156d0c85bf98dc2088db3d8d00f09eb149ba1fcbb1fef"
+      },
+      {
+        "match": true,
+        "oracle_package_sha256": "27590e304c82e058783946f740230febb7aeca70e918cf75a79bedc860a71d54",
+        "scenario_id": "topcoat-thickness-measurement",
+        "shipped_package_sha256": "27590e304c82e058783946f740230febb7aeca70e918cf75a79bedc860a71d54"
+      },
+      {
+        "match": true,
+        "oracle_package_sha256": "5436647075373dad729c4ba1378acb1fa9d353961b951e2d9a3c57cf679d27bc",
+        "scenario_id": "adhesive-pull-off-strength",
+        "shipped_package_sha256": "5436647075373dad729c4ba1378acb1fa9d353961b951e2d9a3c57cf679d27bc"
+      }
+    ]
+  },
+  "g1_truth_table_completeness": {
+    "accept_iff_conjunction_for_every_row": true,
+    "k_value_clauses": 11,
+    "n_accepting_rows": 1,
+    "n_assignments_enumerated": 2048,
+    "n_expected": 2048,
+    "unique_accepting_row_is_all_pass": true
+  },
+  "g2_clause_minimality": {
+    "all_independent": true,
+    "records": [
+      {
+        "clause": "schema",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "accepted",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "signature_verified",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "revocation_checked",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "fresh",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "signature_algorithm",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "trust_store_status",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "candidate_id",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "candidate_contract_hash_v1",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "package_sha256",
+        "single_failure_rejects": true
+      },
+      {
+        "clause": "verifier_id",
+        "single_failure_rejects": true
+      }
+    ]
+  },
+  "g3_structural_clauses": {
+    "cardinality_10_field_rejects": true,
+    "cardinality_12_field_rejects": true,
+    "type_list_rejects": true,
+    "type_none_rejects": true,
+    "type_str_rejects": true
+  },
+  "g4_monotonicity": {
+    "acceptance_only_at_zero_violations": true,
+    "accepts_by_violation_count": {
+      "0": 1,
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "rows_by_violation_count": {
+      "0": 1,
+      "1": 11,
+      "10": 11,
+      "11": 1,
+      "2": 55,
+      "3": 165,
+      "4": 330,
+      "5": 462,
+      "6": 462,
+      "7": 330,
+      "8": 165,
+      "9": 55
+    }
+  },
+  "gates": {
+    "g0_anchors_reproduced": true,
+    "g1_completeness_2exp11": true,
+    "g2_all_clauses_independent": true,
+    "g3_structural_clauses_load_bearing": true,
+    "g4_monotone_accept_at_zero_violations": true
+  },
+  "live_authority_under_test": {
+    "fn": "host_receipt_valid / evaluate_evidence_intake",
+    "impl": "amphora-assurance-capabilities/src/lib.rs",
+    "note": "re-derived independently in CPython; Rust runtime not invoked"
+  },
+  "schema": "amphora.evidence-intake-predicate-completeness.v1",
+  "scientific_success_required_for_phase0": false,
+  "theory": [
+    "Anderson 1980 reference-monitor complete-verifiability",
+    "Saltzer & Schroeder 1975 economy-of-mechanism / fail-safe-defaults",
+    "NIST SP 800-53 Rev.5 SI-7 (2020)",
+    "NIST FIPS 186-5 EdDSA (2023); RFC 8032 Ed25519 (2017); RFC 5280 (2008)",
+    "NIST SP 800-207 Zero Trust (2020)",
+    "monotone k-literal conjunction accepts only the lattice top; full 2^k truth table is a decidable exhaustive verification",
+    "RFC 8785 JSON canonicalization (byte-hashing re-derived)"
+  ]
+}

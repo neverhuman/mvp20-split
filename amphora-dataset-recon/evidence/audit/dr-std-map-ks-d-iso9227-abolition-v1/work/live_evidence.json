@@ -1,0 +1,24 @@
+{
+  "standard_id": "KS D ISO 9227:2005",
+  "checked_url": "https://standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&topMenuId=502&upperMenuId=503&ksNo=KSDISO9227&tmprKsNo=KSDISO9227",
+  "source_authority": "국가기술표준원 (Korean Agency for Technology and Standards) via e-나라 표준인증 (standard.go.kr), Korea's official national standards registry -- primary source, not a reseller/aggregator",
+  "fetch_method": "raw curl (no JS execution) plus independent WebFetch cross-check, both against the live page this fire",
+  "raw_field_extractions": {
+    "표준번호 (standard number, with status suffix)": "KS D ISO9227 (폐지)",
+    "표준명(한글) (Korean title, with status suffix)": "인공대기에서의 부식 - 염수분무시험 (폐지)",
+    "표준분야 (field)": "(D) 금속",
+    "표준구분 (category)": "방법 (method)",
+    "제정일 (establishment date)": "2003-12-26",
+    "최종개정확인일 (last revision/confirmation date)": "2005-12-28",
+    "국제 표준 부합화 -- 대응 국제 표준 (corresponding international standard)": "ISO 9227:1990",
+    "대체 표준 (replacement standard, structured field)": "대체표준이 없습니다 (no replacement standard on file)",
+    "표준 이력사항 (standard history table)": [
+      {"변경일자": "2003-12-26", "구분": "제정", "고시번호": "2003-1673", "제정/개정/폐지사유": ""},
+      {"변경일자": "2005-12-28", "구분": "폐지", "고시번호": "2005-0989", "제정/개정/폐지사유": "KSD9502와 규격중복"}
+    ]
+  },
+  "interpretation": "KS D ISO 9227 was established 2003-12-26 (notification 2003-1673) as Korea's identical (IDT) adoption of ISO 9227:1990, then ABOLISHED 2005-12-28 (notification 2005-0989) with the stated reason 'KSD9502와 규격중복' (duplicate/overlapping with KS D 9502). The registry's own 대체 표준 (replacement-standard) field is empty ('no replacement standard on file'), meaning the abolition was a straight repeal-in-favor-of-the-existing-KS-D-9502-scope, not a renumbering. The standard has carried NO current legal text for approximately 21 years (2005-12-28 to snapshot date 2026-08-17).",
+  "cross_check": "The DR-STD-MAP table's OWN sibling row for 'KS D 9502' (source candidate_id DR-LANG-KO-01 family, standard_class KS) is already present in mapping-table.v3.json with integrity_gap=false and comparability_rating 'iso_direct_adoption_confirmed_mod_distinct_vintage' -- i.e. the table already knows KS D 9502 is the live, current Korean salt-spray standard. It never cross-referenced that KS D ISO 9227 (a separate row in the same table) is the exact standard KS D 9502 replaced.",
+  "snapshot_date": "2026-08-17",
+  "fire_id": "20260817T130001-3407163-2ada8f0e6fcd"
+}

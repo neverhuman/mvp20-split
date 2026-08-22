@@ -1,0 +1,27 @@
+{
+  "archive_root": "evidence/superseded/supersession-e13f28ee568b136a364b0a3ad84514f8c3977bd0b893e13b0a55e5707a5b2cb3",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "be36a0158e933f8cfb8e128d1abbc4aa6869c22e85b5be83a764554ecd3b1554",
+    "ip/disclosure-log.v1.json": "e2bcb592ea258174beaddea0666f3069554418b58fe3695a7a11167ece312496",
+    "ip/prior-art.v1.json": "db78717690565ea69fe1d327e5e7e4893ab442cf29534319163a611ad271ce92",
+    "ip/technical-dossier.v1.json": "868ee44a5654d4bc40c544470bca51471a102810417c31eb5dc4e22734640a39",
+    "phase0/benchmark/benchmark-lock.v1.json": "df2601b76e1f7036a9bb65cfacdd447aefb1b4fb15decd4009a795553100b17c",
+    "phase0/bundle.v1.json": "34c1c3423506f9e01e41a8027595b3cb94cd00d1f22704a1682a44efb8ac60a6",
+    "phase0/dataset/dataset-manifest.v1.json": "abe77e579e0e05f35d237ee57eabc119d793e20a0b4d0ee4ac36f6d0e8200227",
+    "phase0/kpis/tolerance-robustness-uncertainty-quarantine-kpi.v1.json": "dbabed26c100eb9ba4bfd4b95617ea9abfdf022a08c3f582075c35e3a4deae59",
+    "phase0/promotion/policy.v1.json": "cc6274b59a563588bc8e9f1a664b33a1d452fe873ed3edc1856a218b865491e3",
+    "phase0/raw/SHA256SUMS": "ada2e0d75db05f31e4dc2e0437c1dcd80fadedc368cc7aad77042993cea32deb",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "804be83117449b99bc26a32fb3575f8857331adb8f3b00506a1dbe0b9cff1ca9",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v2.json": "c015ee9bc5954a80b30ca2b9931f98a4786ec49c0b7ba31c998e960cb617e27c",
+    "phase0/split/split-manifest.v1.json": "607ed046c528567dbbdaf325a7d0df0ddc0e329beb73783869bad29cabaa1d18"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-tolerance-robustness",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-e13f28ee568b136a364b0a3ad84514f8c3977bd0b893e13b0a55e5707a5b2cb3",
+  "unsigned_preparation_only": true
+}

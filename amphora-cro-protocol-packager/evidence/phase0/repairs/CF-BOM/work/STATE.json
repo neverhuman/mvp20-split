@@ -1,0 +1,51 @@
+{
+  "schema": "amphora.cro-protocol-packager.cf-bom-state.v1",
+  "campaign_item_id": "CF-BOM",
+  "module": "amphora-cro-protocol-packager",
+  "fires": [
+    {
+      "fire_id": "20260810T180001-306987-68d9b75ae7b5",
+      "outcome": "CLAIM_REFUTED",
+      "attack": "formulation-completeness audit of blueprint.md Section 1 BOM table cross-referenced against amphora-source-ledger source_records.json",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-BOM/attempts/cf-bom-formulation-completeness-audit-receipt.v1.dsse.json",
+      "key_findings": [
+        "12/12 BOM lines: domestic-sourcing preference never flagged (domestic_taa_status always 'unknown / RFQ required')",
+        "12/12 BOM lines: no explicit line-level evidence tier label",
+        "8 companion evidence files cited by blueprint prose (funnel_results.json, arithmetic_audit.md, conflict_register.md, validation_cards.md, known_answer_report.md, discovery_annex.md, formulation_black.json, formulation_yellow.json) do not exist anywhere in the repo"
+      ]
+    },
+    {
+      "fire_id": "20260810T190001-927635-a573408232a4",
+      "outcome": "CLAIM_REFUTED",
+      "attack": "reconfirm fire-1 refutation by byte-hash comparison of live blueprint.md/source_records.json against fire-1-cited hashes; re-ran v1 checker logic and confirmed byte-identical finding lists; ran the attack shape's outstanding positive-control mutation test (deleted dgeba_828's EEW/TDS citation in an in-memory copy, confirmed the checker fires on it) plus a discrimination negative-control (synthetic fully-repaired copy correctly reports refuted=False)",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-BOM/attempts/cf-bom-formulation-completeness-audit-receipt.v2.dsse.json",
+      "key_findings": [
+        "deliverable and sourcing corpus are BYTE-IDENTICAL to fire 1 (b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879 / 87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c) -- no repair has landed since fire 1",
+        "positive control PASSED: deleting dgeba_828's EEW/TDS citation in a copy correctly flips line_complete_per_done_criteria to false and the checker fires on it",
+        "discrimination control PASSED: a synthetic fully-repaired copy (concrete domestic determination + explicit tier label on every line) correctly makes the SAME checker report refuted=False -- the checker is not hard-wired to always refute",
+        "STRUCTURAL BLOCKER identified: the deliverable (blueprint.md) is owned by amphora-report-packager and the sourcing corpus (source_records.json) is owned by amphora-source-ledger -- neither lives inside amphora-cro-protocol-packager. This fire's binding write-scope instruction restricts writes to amphora-cro-protocol-packager only, so the actual repair (domestic determinations, per-line tiers, 8 missing companion files) cannot be landed from within this module this fire"
+      ]
+    },
+    {
+      "fire_id": "20260810T200001-1412642-725b9f94d246",
+      "outcome": "CLAIM_REFUTED",
+      "final_fire_for_item": true,
+      "attack": "fire 3/3 (max_fires reached): reconfirmed byte-identity of blueprint.md/source_records.json vs fire-1 hashes (unchanged); added a NEW commercial-source-genuineness axis (silica/naphtha cite only a NOAA CAMEO government hazard-database page, not a named commercial supplier -- source_records.json self-declares supplier_status=\"chemical property source only; supplier not selected\" for both); positive control (planted the same defect pattern onto iron_oxide_black, a currently-passing line) detected=True; discrimination control (synthetic fully-repaired copy: domestic determination + confirmed supplier_status + named commercial URL + tier label on every line) discrimination_control_passed=True; reconfirmed all 3 prior grounds (domestic flag, line-level tier, 8 missing companion files) unchanged; filed a BLOCKED_DATA queue entry for the genuine supplier-RFQ sub-piece.",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-BOM/attempts/cf-bom-formulation-completeness-audit-receipt.v3.dsse.json",
+      "key_findings": [
+        "deliverable and sourcing corpus remain BYTE-IDENTICAL to fire 1 (b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879 / 87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c) -- no repair landed across all 3 fires",
+        "NEW: 3/12 BOM lines (silica x2, naphtha x1) cite only a government hazard-database page as their commercial source; sourcing corpus self-declares supplier_status=\"chemical property source only; supplier not selected\" for the matched records -- a distinct instantiation of the criterion's \"candidate commercial source\" clause not checked by fire 1/2",
+        "positive + discrimination controls both pass on the new axis specifically",
+        "domestic-sourcing/TAA sub-piece confirmed genuinely BLOCKED_DATA: blueprint.md Section 4 itself states these fields are to verify by supplier RFQ and are not claimed; queue entry filed with this fire_id",
+        "cross-module ownership blocker unchanged: repair still requires writes to amphora-report-packager and amphora-source-ledger, outside this fire's scope",
+        "campaign item CF-BOM has now used all 3 allotted fires without reaching done/; status blocked pending either a cross-module scope exception, those modules own campaigns picking up the repair, or real supplier RFQ responses"
+      ]
+    }
+  ],
+  "next_fire_should": [
+    "CF-BOM has exhausted its 3-fire budget without landing a repair. Any future work on this deliverable should come from a NEW campaign item scoped to amphora-report-packager and/or amphora-source-ledger (to apply the concrete fixes: per-line evidence tiers, a real named commercial supplier for silica/naphtha, the 8 missing companion files) plus real supplier RFQ responses for the domestic/TAA determinations (data-acquisition-queue.jsonl, fire_id 20260810T200001-1412642-725b9f94d246). A future cro-protocol-packager fire should re-run evidence/audit/cf-bom-formulation-completeness-v3/run_cf_bom_completeness_audit_v3.py (or a v4 superset) as the acceptance test once those land."
+  ],
+  "last_updated_fire_id": "20260810T200001-1412642-725b9f94d246",
+  "campaign_item_status": "blocked",
+  "budget_exhausted": true
+}

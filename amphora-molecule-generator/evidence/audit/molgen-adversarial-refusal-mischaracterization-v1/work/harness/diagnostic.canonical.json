@@ -1,0 +1,484 @@
+{
+  "adversarial_field_names_searched": [
+    "adversary_proposals",
+    "adversary_declared_proposal_count",
+    "adversary_declared_generation_status",
+    "candidate_declared_pinned_rdkit_available",
+    "candidate_declared_locked_reaction_grammar_available",
+    "candidate_declared_rights_cleared_corpus_available"
+  ],
+  "adversarial_field_occurrences_in_lib_rs": {
+    "adversary_declared_generation_status": 0,
+    "adversary_declared_proposal_count": 0,
+    "adversary_proposals": 0,
+    "candidate_declared_locked_reaction_grammar_available": 0,
+    "candidate_declared_pinned_rdkit_available": 0,
+    "candidate_declared_rights_cleared_corpus_available": 0
+  },
+  "adversarial_field_total_occurrences_in_lib_rs": 0,
+  "all_decision_relevant_outputs_identical_to_baseline": true,
+  "cases": [
+    {
+      "case_id": "S1_baseline_oxirane",
+      "decision_relevant_subset": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      },
+      "full_output": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "090e759f5187e6ea85e09bf3649d601ecb1059ba69aae70c239932e02fe35419",
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "parent_candidate_id": "generator-resin-oxirane",
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "original_bytes_sha256": "090e759f5187e6ea85e09bf3649d601ecb1059ba69aae70c239932e02fe35419",
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      }
+    },
+    {
+      "case_id": "S2_baseline_hardener_amine",
+      "decision_relevant_subset": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      },
+      "full_output": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "bcf658957623ca6c11bd9f3dad78d8e494b823bb26886f9f5bc1cd7358cb53c4",
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "parent_candidate_id": "generator-hardener-amine",
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "original_bytes_sha256": "bcf658957623ca6c11bd9f3dad78d8e494b823bb26886f9f5bc1cd7358cb53c4",
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      }
+    },
+    {
+      "case_id": "S3_adversarial_proposals_injection",
+      "decision_relevant_subset": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      },
+      "full_output": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "26984c851c57816439f7867ad439464013f517d46d1ee5fe3ee8df0e3ff61b67",
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "parent_candidate_id": "generator-adversarial-proposals",
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "original_bytes_sha256": "26984c851c57816439f7867ad439464013f517d46d1ee5fe3ee8df0e3ff61b67",
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      }
+    },
+    {
+      "case_id": "S4_adversarial_rdkit_grammar_declarations",
+      "decision_relevant_subset": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      },
+      "full_output": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "990bb0d3cbaa96f2262d0d020aa7c5bb7789464690bc27ddfe6e0b09e5e98393",
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "parent_candidate_id": "generator-adversarial-rdkit",
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "original_bytes_sha256": "990bb0d3cbaa96f2262d0d020aa7c5bb7789464690bc27ddfe6e0b09e5e98393",
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      }
+    },
+    {
+      "case_id": "S5_baseline_methane",
+      "decision_relevant_subset": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      },
+      "full_output": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "64e233e683ea58f1318eb84c12858ba4bab3f8f63a008ce8d5542c0361f2aeed",
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "parent_candidate_id": "generator-no-molecule",
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "original_bytes_sha256": "64e233e683ea58f1318eb84c12858ba4bab3f8f63a008ce8d5542c0361f2aeed",
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      }
+    },
+    {
+      "case_id": "S6_MEGA_adversarial_extreme",
+      "decision_relevant_subset": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      },
+      "full_output": {
+        "evidence_scope": "ROADMAP_DIAGNOSTIC_ONLY",
+        "explanations": [
+          "Generation remains a deterministic roadmap lineage diagnostic; it emits no leads or ranking objective."
+        ],
+        "gates": {
+          "deterministic_lineage_recorded": true,
+          "generation_authorized": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "b063b044e94a5548b138f6f2cc948f8817bc7995d4bee9f604c07ea819647e60",
+          "generation_status": "LOCKED_INTERNAL",
+          "lineage_diagnostic": {
+            "deterministic_seed": 20260819,
+            "parent_candidate_id": "generator-mega-adversarial",
+            "run_id": "molgen-w2-adversarial-refusal-probe"
+          },
+          "locked_reaction_grammar_available": false,
+          "original_bytes_sha256": "b063b044e94a5548b138f6f2cc948f8817bc7995d4bee9f604c07ea819647e60",
+          "pinned_rdkit_available": false,
+          "proposal_count": 0,
+          "ranking_quarantine": true,
+          "rights_cleared_corpus_available": false,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "pinned RDKit C++ 2026.03.2 boundary",
+          "locked atom-mapped reaction grammar",
+          "rights-cleared generation evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "scope": "No molecular proposals were generated or evaluated."
+        }
+      }
+    }
+  ],
+  "diffs": [],
+  "lib_rs_path": "amphora-molecule-capabilities/src/lib.rs",
+  "lib_rs_sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
+  "module_id": "amphora-molecule-generator",
+  "n_cases": 6,
+  "schema": "amphora.molecule-generator.molgen-adversarial-refusal-mischaracterization-diagnostic.v1"
+}

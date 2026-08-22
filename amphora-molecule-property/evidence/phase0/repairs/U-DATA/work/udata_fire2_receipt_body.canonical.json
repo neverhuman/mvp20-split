@@ -1,0 +1,134 @@
+{
+  "acquisition_queue_correction": {
+    "corrected_entry_appended_this_fire": true,
+    "fire_id": "20260812T130001-4081237-e414b4cfb3ed",
+    "original_line_not_deleted_append_only_ledger": true,
+    "original_line_sha256": "a3af40924acd3ab2f6b8253b251437af193c0d1d28011ff99b7df0d414b3019f",
+    "target_file_xbabe1": "/home/ubuntu/amphora-cron/data-acquisition-queue.jsonl"
+  },
+  "all_gates_passed": true,
+  "attack": {
+    "method": "Live re-fetch, this fire, of every citation underlying fire 1's 2 QUALIFYING_RECOMMENDED finds (entries n=1 Mendeley, n=3 IJTSRD/Zenodo) plus 3 genuine-Zenodo comparison entries (n=2, n=4, n=5), checking whether the claimed verbatim quote actually resolves at the claimed source URL/API.",
+    "observation": "Entry n=3 FIRED the refutation criterion: its citation ('Zenodo REST API record metadata.license field') does not resolve -- the DOI is not a Zenodo record at all, and the Zenodo record id its trailing digits coincide with (15748) is an unrelated paper with a different license (cc-zero, not cc-by-4.0). Entries n=2, n=4, n=5 (genuine 10.5281/zenodo.* DOIs) did NOT fire -- both title and license independently reverified byte-for-byte against a fresh live query.",
+    "refutation_criterion": "REFUTED if any VERIFIED_OPEN entry's cited source does not, when live-refetched, contain the claimed verbatim license text (i.e. the citation is fabricated or misattributed to the wrong record/system)."
+  },
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "U-DATA",
+  "ceiling": "AUDIT_ONLY. Documents a citation-provenance defect in a prior fire's search-record evidence and corrects the citation with a live-refetched, source-traceable replacement; does not acquire, cache, or ingest any external dataset, does not modify the AD gate or any shipped KPI, and does not modify the manifest.",
+  "checks": {
+    "doi_10.31142_ijtsrd15748_resolution": {
+      "citation_title_meta": "Characterization of Polymer Composite Materials Based on Epoxy Resin GELR 128 Modified with Epoxidized Sunflower Oil Cured by 4.4\u2019-Diaminodiphenylmethane",
+      "http_status": 200,
+      "is_zenodo_url": false,
+      "license_quote_verbatim_from_this_source": "Creative Commons Attribution License (CC BY 4.0) (http://creativecommons.org/licenses/by/4.0)",
+      "resolves_to": "https://www.ijtsrd.com/chemistry/polymer-chemistry/15748/characterization-of-polymer-composite-materials-based-on-epoxy-resin-gelr-128-modified-with-epoxidized-sunflower-oil-cured-by-44%E2%80%99-diaminodiphenylmethane/bach-trong-phuc"
+    },
+    "fire1_entry_n3_citation_mismatch": {
+      "conclusion": "Zenodo record 15748 is an unrelated 2014 robotics paper (Biogeography-Based Optimization for a 5-DOF robot), licensed cc-zero, not cc-by-4.0. It is neither the IJTSRD epoxy-amine article nor a match for fire-1's claimed quote. Fire-1's cited source for entry n=3 does not exist as described: fabricated/misattributed citation.",
+      "fire1_claimed_quote": "{'id': 'cc-by-4.0'}",
+      "fire1_claimed_source": "Zenodo REST API record metadata.license field",
+      "license_matches_fire1_claimed_quote": false,
+      "live_zenodo_record_15748_license_id": "cc-zero",
+      "live_zenodo_record_15748_title": "A Modified Biogeography Based Optimization (BBO) Algorithm for Time Optimal Motion Planning of 5 DOF PC-based Gryphon Robot",
+      "title_matches_ijtsrd_paper": false
+    },
+    "genuine_zenodo_entries_reverified_n2_n4_n5": {
+      "14227457": {
+        "http_status": 200,
+        "license_id": "cc-by-4.0",
+        "license_matches_fire1_record": true,
+        "queried_url": "https://zenodo.org/api/records/14227457",
+        "title": "EPOXY-TITANIUM OXIDE NANOCOMPOSITES: SYNTHESIS AND PROPERTIES",
+        "title_keyword_match": true
+      },
+      "15434211": {
+        "http_status": 200,
+        "license_id": "cc-by-sa-4.0",
+        "license_matches_fire1_record": true,
+        "queried_url": "https://zenodo.org/api/records/15434211",
+        "title": "CURE KINETICS AND SHRINKAGE MEASUREMENTS IN A FAST CURING EPOXY AMINE RESIN SYSTEM",
+        "title_keyword_match": true
+      },
+      "5867296": {
+        "http_status": 200,
+        "license_id": "cc-by-4.0",
+        "license_matches_fire1_record": true,
+        "queried_url": "https://zenodo.org/api/records/5867296",
+        "title": "Curing exotherm and processing temperature of a family of epoxy resins in the light of fabrication of composites",
+        "title_keyword_match": true
+      }
+    },
+    "zenodo_record_15748_live_requery": {
+      "http_status": 200,
+      "license_id": "cc-zero",
+      "queried_url": "https://zenodo.org/api/records/15748",
+      "title": "A Modified Biogeography Based Optimization (BBO) Algorithm for Time Optimal Motion Planning of 5 DOF PC-based Gryphon Robot"
+    }
+  },
+  "claim_under_attack": {
+    "claim_text": "Rights-clean training corpora exist that would widen the applicability domain to cover industrially relevant epoxy-amine chemistry.",
+    "narrower_claim_this_fire_actually_tests": "Every source in fire 1's search_record.json that is marked license_status VERIFIED_OPEN carries a license_quote_verbatim that genuinely traces to the source it is cited from -- i.e. the module's own done_criterion bar ('a licence you cannot quote is not verified') was actually met for all QUALIFYING_RECOMMENDED finds, not just asserted.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/"
+  },
+  "corrected_qualifying_find_n3": {
+    "correction_note": "Fire 1 (20260812T120001-3712582-97e3beba268d) cited this entry's license as 'Zenodo REST API record metadata.license field returned {\"id\": \"cc-by-4.0\"}'. That citation is FALSE: the DOI is an IJTSRD article, never a Zenodo record; the Zenodo record id implied by the DOI's trailing digits (15748) is an unrelated 2014 robotics paper licensed cc-zero. The underlying disposition (CC-BY-4.0, QUALIFYING_RECOMMENDED) happens to be directionally correct once re-grounded in the TRUE source (ijtsrd.com itself, which independently states the CC BY 4.0 grant), but the original citation did not verify what it claimed to verify.",
+    "disposition": "QUALIFYING_RECOMMENDED",
+    "license_quote_source": "https://doi.org/10.31142/ijtsrd15748 -> https://www.ijtsrd.com/chemistry/polymer-chemistry/15748/characterization-of-polymer-composite-materials-based-on-epoxy-resin-gelr-128-modified-with-epoxidized-sunflower-oil-cured-by-44%E2%80%99-diaminodiphenylmethane/bach-trong-phuc (fetched live this fire, HTTP 200)",
+    "license_quote_verbatim": "Creative Commons Attribution License (CC BY 4.0) (http://creativecommons.org/licenses/by/4.0)",
+    "license_status": "VERIFIED_OPEN",
+    "n": 3,
+    "query_used": "amine curing agent epoxy density (original Zenodo REST API /api/records sweep; the true source was mis-surfaced/mis-cited as a Zenodo record by fire 1)",
+    "source": "IJTSRD (International Journal of Trend in Scientific Research and Development), 10.31142/ijtsrd15748, 'Characterization of Polymer Composite Materials Based on Epoxy Resin GELR 128 Modified with Epoxidized Sunflower Oil Cured by 4,4'-Diaminodiphenylmethane (DDM/MDA)' -- CORRECTED registrant: this is an IJTSRD journal article, NOT a Zenodo record. 10.31142 is the IJTSRD DOI prefix; 10.5281 is Zenodo's."
+  },
+  "directive_ref": null,
+  "fire_id": "20260812T130001-4081237-e414b4cfb3ed",
+  "flips_scientific_readiness": false,
+  "gates": {
+    "corrected_entry_preserves_disposition_via_true_source": true,
+    "genuine_zenodo_entries_n2_n4_n5_reverified_unaffected": true,
+    "mendeley_entry_n1_reverified_unaffected": true,
+    "narrower_citation_provenance_claim_refuted_for_entry_n3": true,
+    "no_bulk_data_downloaded_this_fire": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "supersede_never_rewrite_original_receipt_byte_intact": true
+  },
+  "human_review_performed": false,
+  "mendeley_entry_n1_independently_reverified_this_fire": {
+    "companion_article_contains_cc_by_license_text": true,
+    "companion_article_pmc12528924_contains_dataset_doi_reference": true,
+    "conclusion": "Entry n=1 (Mendeley, DETA match) citation is genuine and independently confirmed; NOT corrected.",
+    "doi_resolves_to": "https://data.mendeley.com/datasets/bypjxzm3fn/1"
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "promotes_authority": false,
+  "proposed_followups": [
+    {
+      "defect": "U-DATA fire 1's citation-verification methodology treated a DOI's trailing numeric suffix as if it were interchangeable with a Zenodo record id without checking the DOI registrant prefix (10.31142 IJTSRD vs 10.5281 Zenodo) -- a reusable failure mode any future data-hunt fire could repeat against any non-Zenodo DOI that happens to end in digits.",
+      "module": "amphora-molecule-property",
+      "proposed_done_criterion": "A future data-hunt or ledger-audit fire adds a mechanical DOI-registrant-prefix check (resolve https://doi.org/<doi> and assert the final host matches the claimed citation system, e.g. zenodo.org for 'Zenodo REST API') to the standard search-record schema/tooling used by this module's U-* data campaign items, so this class of citation defect is caught mechanically rather than requiring a dedicated audit fire."
+    }
+  ],
+  "receipt_id": "u-data-fire2-citation-provenance-correction",
+  "schema": "amphora.molecule-property.rights-clean-epoxy-amine-data-hunt-provenance-correction-kpi.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "used_for": "AUDIT_ONLY U-DATA fire-2 citation-provenance correction under evidence/phase0/repairs/U-DATA/done/"
+  },
+  "supersedes": {
+    "reason": "Entry n=3 of the superseded receipt's search_record (and its mirrored acquisition-queue.jsonl line, sha256 a3af40924acd3ab2f6b8253b251437af193c0d1d28011ff99b7df0d414b3019f) cited a fabricated/misattributed 'Zenodo REST API' source for a non-Zenodo DOI. This receipt supersedes only that entry's citation with a corrected, live-refetched, source-traceable quote; all other content of the superseded receipt (16 other search_record entries, entry n=1, the 5 proposed_followups, the overall BLOCKED_DATA verdict) stands unmodified and is not retracted.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-property/evidence/phase0/repairs/U-DATA/done/u-data-domain-widening-search-record-kpi.v1.dsse.json",
+    "superseded_sha256": "99d8fe491918c3ea073d1417c55794c416cbc0293c81968c2e16b4179284faec"
+  },
+  "verdict": "CLAIM_REFUTED",
+  "why": "The narrower claim under test this fire -- that fire 1's 2 QUALIFYING_RECOMMENDED acquisition-queue entries were each verified against a real, traceable verbatim license quote from their named source, as the item's own done_criterion requires -- is REFUTED for entry n=3 (DDM/MDA, IJTSRD 10.31142/ijtsrd15748 / acquisition-queue.jsonl line 59). Fire 1 cited 'Zenodo REST API record metadata.license field' for a DOI that is not, and has never been, a Zenodo record; live re-query of the Zenodo record id apparently implied by the DOI's trailing digits returns a wholly unrelated 2014 robotics paper under a DIFFERENT license (cc-zero) than the one fire 1 quoted (cc-by-4.0). This is a genuine citation-provenance defect in a queued acquisition ask, of the same class this module has previously flagged elsewhere (ip-fto claim-chart provenance, source-ledger dual-source/query-traceability). It is corrected here, not merely flagged: the TRUE source (ijtsrd.com itself, fetched live this fire) is independently quoted verbatim, and it confirms the SAME underlying license grant (CC BY 4.0) -- so the disposition (QUALIFYING_RECOMMENDED) is preserved, but now for the right reason. Entries n=1 (Mendeley) and n=2/n=4/n=5 (genuine Zenodo DOIs) were independently re-verified and are NOT corrected; the defect is isolated to entry n=3, not systemic across the 17-source sweep."
+}

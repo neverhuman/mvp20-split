@@ -1,0 +1,12 @@
+{
+  "bundle_sha256": "dd42b3f506e7d48e720b10daa86864d4f80d0c5dcafa4460fa5924e98ec7e3d5",
+  "evaluation_receipt_sha256": null,
+  "human_review_performed": false,
+  "independence_scope": "CODE_PATH_AND_SIGNING_IDENTITY",
+  "module_id": "amphora-formulation-universe",
+  "required_independent_reimplementation": true,
+  "review_method": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION",
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

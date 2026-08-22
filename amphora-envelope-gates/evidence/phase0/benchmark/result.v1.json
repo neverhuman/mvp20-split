@@ -1,0 +1,1113 @@
+{
+  "benchmark_execution_complete": true,
+  "bundle_sha256": "cf34e0ca9a7e110e00a444f4b6a80e26eba72470142c401236f7476f10ae5b38",
+  "first_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-envelope-gates/reference/mvp20/data/corrosion_series.json": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+        "amphora-envelope-gates/reference/mvp20/data/cure_verification_set.json": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+        "amphora-envelope-gates/reference/mvp20/data/facts.json": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+        "config/benchmark-lock.v1.json": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+        "module-manifest.json": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+      },
+      "benchmark_lock_hash": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+      "claim_locks": {
+        "gate_pass_is_not_wet_lab_performance": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "CONSTRAINT_ONLY",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+          "deterministic_control_diagnostic": {
+            "details": {
+              "authority_upgrade_count": 0,
+              "candidate_created_evidence_count": 0,
+              "fixture_hashes": {
+                "above-upper-bound": "c3dd348d3f30edda8f923ad0784d53a34ac2397575c4103d8552a7f5b49912d5",
+                "below-lower-bound": "e77636d37f9481d964f244ec6e7b58280b617fd2ed4c2fc4355085e03aba956e",
+                "candidate-pass-authority-claim-injection": "7b8495522cf6b911ad9067aba78fdca4300096bd3493f257db4b39ce85cc2288",
+                "duplicate-constraints": "ac4160f9c02a4a967c047bee041f0e588c6e6256b60d4e20320176da1f05f83d",
+                "in-range": "70934f200d051deae4303b14473d98d8abd3fb0d5d97de6c22d671e7cffa6463",
+                "inclusive-boundaries": "a1cab218e641731fad03fee0fea33c7de97e11d892becd5f8c50a174ff3066f2",
+                "inverted-bounds": "125e82021a5bcf83d989d4602d923f5f24ab29d33108992107032a14686c0be5",
+                "missing-trusted-policy": "d2fe04bd6c48a796d8d03587cafce42182f2b49432d5f086f04ac05c1d4ac887",
+                "missing-trusted-snapshot": "1193a136887a68654962b69718f840f3c7ac148a7bdf6a655942faa5d5e335ef",
+                "unit-mismatch": "4c232e67244ff0c4b80cbbfb09026c039579825e7577efaedc47acf305008348",
+                "unknown-constraint": "ac317e04418919f7a0c8ab597a0590c1342cc526c2b9be5f4f6d5fb885a7d6e1"
+              },
+              "fixture_inputs": [
+                {
+                  "candidate_claims": null,
+                  "case_id": "in-range",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "inclusive-boundaries",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "lower",
+                        "feature_path": "mass.part_A_g",
+                        "lower_inclusive": 110.0,
+                        "unit": "g",
+                        "upper_inclusive": 110.0
+                      },
+                      {
+                        "constraint_id": "upper",
+                        "feature_path": "mass.part_B_g",
+                        "lower_inclusive": 40.0,
+                        "unit": "g",
+                        "upper_inclusive": 40.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.part_A_g": {
+                        "unit": "g",
+                        "value": 110.0
+                      },
+                      "mass.part_B_g": {
+                        "unit": "g",
+                        "value": 40.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "unit-mismatch",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "kg",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "unknown-constraint",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "candidate.pass_all_hard",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "duplicate-constraints",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      },
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "inverted-bounds",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 201.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "below-lower-bound",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 99.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "above-upper-bound",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 201.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "missing-trusted-policy",
+                  "policy": null,
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "missing-trusted-snapshot",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": null
+                },
+                {
+                  "candidate_claims": {
+                    "authority": "PRODUCT",
+                    "pass_all_hard": true,
+                    "performance_proven": true,
+                    "policy_signature": "candidate",
+                    "wet_lab_passed": true
+                  },
+                  "case_id": "candidate-pass-authority-claim-injection",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                }
+              ],
+              "fixture_results": {
+                "above-upper-bound": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": true,
+                  "margins": {
+                    "total-mass": -1.0
+                  },
+                  "objective_values": {},
+                  "pass_all_hard": false,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "FAILED_GATES",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "below-lower-bound": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": true,
+                  "margins": {
+                    "total-mass": -1.0
+                  },
+                  "objective_values": {},
+                  "pass_all_hard": false,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "FAILED_GATES",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "candidate-pass-authority-claim-injection": {
+                  "error": "candidate-supplied gate, authority, signature, and performance claims rejected"
+                },
+                "duplicate-constraints": {
+                  "error": "envelope policy contains duplicate constraints"
+                },
+                "in-range": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": true,
+                  "margins": {
+                    "total-mass": 50.0
+                  },
+                  "objective_values": {},
+                  "pass_all_hard": true,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "UNVALIDATED",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "inclusive-boundaries": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": true,
+                  "margins": {
+                    "lower": 0.0,
+                    "upper": 0.0
+                  },
+                  "objective_values": {},
+                  "pass_all_hard": true,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "UNVALIDATED",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "inverted-bounds": {
+                  "error": "envelope policy contains inverted or non-finite bounds"
+                },
+                "missing-trusted-policy": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": false,
+                  "margins": {},
+                  "objective_values": {},
+                  "pass_all_hard": false,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "ABSTAIN",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "missing-trusted-snapshot": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": false,
+                  "margins": {},
+                  "objective_values": {},
+                  "pass_all_hard": false,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "ABSTAIN",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "unit-mismatch": {
+                  "error": "unit mismatch for envelope feature mass.total_g"
+                },
+                "unknown-constraint": {
+                  "error": "unknown envelope feature path candidate.pass_all_hard"
+                }
+              },
+              "objective_value_count": 0,
+              "result_digest": "1262da50ac117bb87f52437cfc7cc3460c6fe71dcea7701f2c118b3dd17d698c",
+              "runtime_without_trusted_inputs_abstains": true,
+              "synthetic_policy_authoritative": false
+            },
+            "expected_fixture_outcomes": {
+              "above-upper-bound": "REJECT",
+              "below-lower-bound": "REJECT",
+              "candidate-pass-authority-claim-injection": "REJECT",
+              "duplicate-constraints": "REJECT",
+              "in-range": "ACCEPT",
+              "inclusive-boundaries": "ACCEPT",
+              "inverted-bounds": "REJECT",
+              "missing-trusted-policy": "REJECT",
+              "missing-trusted-snapshot": "REJECT",
+              "unit-mismatch": "REJECT",
+              "unknown-constraint": "REJECT"
+            },
+            "implementation_readiness": "COMPLETE",
+            "module_id": "amphora-envelope-gates",
+            "negative_control_count": 9,
+            "observed_fixture_outcomes": {
+              "above-upper-bound": "REJECT",
+              "below-lower-bound": "REJECT",
+              "candidate-pass-authority-claim-injection": "REJECT",
+              "duplicate-constraints": "REJECT",
+              "in-range": "ACCEPT",
+              "inclusive-boundaries": "ACCEPT",
+              "inverted-bounds": "REJECT",
+              "missing-trusted-policy": "REJECT",
+              "missing-trusted-snapshot": "REJECT",
+              "unit-mismatch": "REJECT",
+              "unknown-constraint": "REJECT"
+            },
+            "passed": true,
+            "positive_control_count": 2,
+            "schema": "amphora.deterministic-control-diagnostic.v1",
+            "zero_authority_assertions": {
+              "fto_not_performed": true,
+              "no_optimizer_authority": true,
+              "no_patentability_authority": true,
+              "no_procurement_authority": true,
+              "no_product_performance_authority": true,
+              "no_qualification_authority": true,
+              "no_ranking_authority": true,
+              "no_regulatory_authority": true,
+              "no_release_authority": true,
+              "no_safety_authority": true
+            }
+          },
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": true,
+          "observations": [],
+          "operational_readiness": "COMPLETE",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": null
+        }
+      },
+      "module_id": "amphora-envelope-gates",
+      "passed": true,
+      "receipt_id": "receipt-75c2794b635b9002cc5efc50",
+      "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "0ff4ce87e34fc64b6342da16aefef57bb95d4df00c4f8d6e539bb4dbfc84c464",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "legacy_local_receipt_authority": "NONE",
+  "module_id": "amphora-envelope-gates",
+  "replay_identical": true,
+  "schema": "amphora.module-phase0-benchmark-result.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "second_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-envelope-gates/reference/mvp20/data/corrosion_series.json": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+        "amphora-envelope-gates/reference/mvp20/data/cure_verification_set.json": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+        "amphora-envelope-gates/reference/mvp20/data/facts.json": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+        "config/benchmark-lock.v1.json": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+        "module-manifest.json": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+      },
+      "benchmark_lock_hash": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+      "claim_locks": {
+        "gate_pass_is_not_wet_lab_performance": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "CONSTRAINT_ONLY",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+          "deterministic_control_diagnostic": {
+            "details": {
+              "authority_upgrade_count": 0,
+              "candidate_created_evidence_count": 0,
+              "fixture_hashes": {
+                "above-upper-bound": "c3dd348d3f30edda8f923ad0784d53a34ac2397575c4103d8552a7f5b49912d5",
+                "below-lower-bound": "e77636d37f9481d964f244ec6e7b58280b617fd2ed4c2fc4355085e03aba956e",
+                "candidate-pass-authority-claim-injection": "7b8495522cf6b911ad9067aba78fdca4300096bd3493f257db4b39ce85cc2288",
+                "duplicate-constraints": "ac4160f9c02a4a967c047bee041f0e588c6e6256b60d4e20320176da1f05f83d",
+                "in-range": "70934f200d051deae4303b14473d98d8abd3fb0d5d97de6c22d671e7cffa6463",
+                "inclusive-boundaries": "a1cab218e641731fad03fee0fea33c7de97e11d892becd5f8c50a174ff3066f2",
+                "inverted-bounds": "125e82021a5bcf83d989d4602d923f5f24ab29d33108992107032a14686c0be5",
+                "missing-trusted-policy": "d2fe04bd6c48a796d8d03587cafce42182f2b49432d5f086f04ac05c1d4ac887",
+                "missing-trusted-snapshot": "1193a136887a68654962b69718f840f3c7ac148a7bdf6a655942faa5d5e335ef",
+                "unit-mismatch": "4c232e67244ff0c4b80cbbfb09026c039579825e7577efaedc47acf305008348",
+                "unknown-constraint": "ac317e04418919f7a0c8ab597a0590c1342cc526c2b9be5f4f6d5fb885a7d6e1"
+              },
+              "fixture_inputs": [
+                {
+                  "candidate_claims": null,
+                  "case_id": "in-range",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "inclusive-boundaries",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "lower",
+                        "feature_path": "mass.part_A_g",
+                        "lower_inclusive": 110.0,
+                        "unit": "g",
+                        "upper_inclusive": 110.0
+                      },
+                      {
+                        "constraint_id": "upper",
+                        "feature_path": "mass.part_B_g",
+                        "lower_inclusive": 40.0,
+                        "unit": "g",
+                        "upper_inclusive": 40.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.part_A_g": {
+                        "unit": "g",
+                        "value": 110.0
+                      },
+                      "mass.part_B_g": {
+                        "unit": "g",
+                        "value": 40.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "unit-mismatch",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "kg",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "unknown-constraint",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "candidate.pass_all_hard",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "duplicate-constraints",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      },
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "inverted-bounds",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 201.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "below-lower-bound",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 99.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "above-upper-bound",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 201.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "missing-trusted-policy",
+                  "policy": null,
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                },
+                {
+                  "candidate_claims": null,
+                  "case_id": "missing-trusted-snapshot",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": null
+                },
+                {
+                  "candidate_claims": {
+                    "authority": "PRODUCT",
+                    "pass_all_hard": true,
+                    "performance_proven": true,
+                    "policy_signature": "candidate",
+                    "wet_lab_passed": true
+                  },
+                  "case_id": "candidate-pass-authority-claim-injection",
+                  "policy": {
+                    "authoritative": false,
+                    "constraints": [
+                      {
+                        "constraint_id": "total-mass",
+                        "feature_path": "mass.total_g",
+                        "lower_inclusive": 100.0,
+                        "unit": "g",
+                        "upper_inclusive": 200.0
+                      }
+                    ],
+                    "fixture_only": true,
+                    "policy_id": "synthetic-mass-envelope-v1",
+                    "schema": "amphora.synthetic-envelope-policy.v1"
+                  },
+                  "snapshot": {
+                    "schema": "amphora.trusted-arithmetic-snapshot.v1",
+                    "trusted": true,
+                    "values": {
+                      "mass.total_g": {
+                        "unit": "g",
+                        "value": 150.0
+                      }
+                    }
+                  }
+                }
+              ],
+              "fixture_results": {
+                "above-upper-bound": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": true,
+                  "margins": {
+                    "total-mass": -1.0
+                  },
+                  "objective_values": {},
+                  "pass_all_hard": false,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "FAILED_GATES",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "below-lower-bound": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": true,
+                  "margins": {
+                    "total-mass": -1.0
+                  },
+                  "objective_values": {},
+                  "pass_all_hard": false,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "FAILED_GATES",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "candidate-pass-authority-claim-injection": {
+                  "error": "candidate-supplied gate, authority, signature, and performance claims rejected"
+                },
+                "duplicate-constraints": {
+                  "error": "envelope policy contains duplicate constraints"
+                },
+                "in-range": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": true,
+                  "margins": {
+                    "total-mass": 50.0
+                  },
+                  "objective_values": {},
+                  "pass_all_hard": true,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "UNVALIDATED",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "inclusive-boundaries": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": true,
+                  "margins": {
+                    "lower": 0.0,
+                    "upper": 0.0
+                  },
+                  "objective_values": {},
+                  "pass_all_hard": true,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "UNVALIDATED",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "inverted-bounds": {
+                  "error": "envelope policy contains inverted or non-finite bounds"
+                },
+                "missing-trusted-policy": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": false,
+                  "margins": {},
+                  "objective_values": {},
+                  "pass_all_hard": false,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "ABSTAIN",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "missing-trusted-snapshot": {
+                  "authority_upgrade": false,
+                  "fixture_validator_arithmetic_only": false,
+                  "margins": {},
+                  "objective_values": {},
+                  "pass_all_hard": false,
+                  "product_evidence_created": false,
+                  "qualification_evidence_created": false,
+                  "ranking_eligible": false,
+                  "release_evidence_created": false,
+                  "status": "ABSTAIN",
+                  "usable_by_optimizer": false,
+                  "wet_lab_evidence_created": false
+                },
+                "unit-mismatch": {
+                  "error": "unit mismatch for envelope feature mass.total_g"
+                },
+                "unknown-constraint": {
+                  "error": "unknown envelope feature path candidate.pass_all_hard"
+                }
+              },
+              "objective_value_count": 0,
+              "result_digest": "1262da50ac117bb87f52437cfc7cc3460c6fe71dcea7701f2c118b3dd17d698c",
+              "runtime_without_trusted_inputs_abstains": true,
+              "synthetic_policy_authoritative": false
+            },
+            "expected_fixture_outcomes": {
+              "above-upper-bound": "REJECT",
+              "below-lower-bound": "REJECT",
+              "candidate-pass-authority-claim-injection": "REJECT",
+              "duplicate-constraints": "REJECT",
+              "in-range": "ACCEPT",
+              "inclusive-boundaries": "ACCEPT",
+              "inverted-bounds": "REJECT",
+              "missing-trusted-policy": "REJECT",
+              "missing-trusted-snapshot": "REJECT",
+              "unit-mismatch": "REJECT",
+              "unknown-constraint": "REJECT"
+            },
+            "implementation_readiness": "COMPLETE",
+            "module_id": "amphora-envelope-gates",
+            "negative_control_count": 9,
+            "observed_fixture_outcomes": {
+              "above-upper-bound": "REJECT",
+              "below-lower-bound": "REJECT",
+              "candidate-pass-authority-claim-injection": "REJECT",
+              "duplicate-constraints": "REJECT",
+              "in-range": "ACCEPT",
+              "inclusive-boundaries": "ACCEPT",
+              "inverted-bounds": "REJECT",
+              "missing-trusted-policy": "REJECT",
+              "missing-trusted-snapshot": "REJECT",
+              "unit-mismatch": "REJECT",
+              "unknown-constraint": "REJECT"
+            },
+            "passed": true,
+            "positive_control_count": 2,
+            "schema": "amphora.deterministic-control-diagnostic.v1",
+            "zero_authority_assertions": {
+              "fto_not_performed": true,
+              "no_optimizer_authority": true,
+              "no_patentability_authority": true,
+              "no_procurement_authority": true,
+              "no_product_performance_authority": true,
+              "no_qualification_authority": true,
+              "no_ranking_authority": true,
+              "no_regulatory_authority": true,
+              "no_release_authority": true,
+              "no_safety_authority": true
+            }
+          },
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": true,
+          "observations": [],
+          "operational_readiness": "COMPLETE",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": null
+        }
+      },
+      "module_id": "amphora-envelope-gates",
+      "passed": true,
+      "receipt_id": "receipt-75c2794b635b9002cc5efc50",
+      "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "0ff4ce87e34fc64b6342da16aefef57bb95d4df00c4f8d6e539bb4dbfc84c464",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "amphora.purformance-chronology-split.v1",
+  "module_id": "amphora-design-rule-score",
+  "dataset_record": "10.5281/zenodo.13742098",
+  "frozen_on": "2026-07-18",
+  "seed": 20260717,
+  "unit": "ACQUISITION_STAGE",
+  "training_only_scaling": true,
+  "assignments": [
+    {
+      "source_prefix": "Experiment/Cold_start/",
+      "split": "TRAIN_CHRONOLOGY_0",
+      "outcome_access_before_freeze": false
+    },
+    {
+      "source_prefix": "Experiment/Iteration_1/",
+      "split": "TRAIN_CHRONOLOGY_1",
+      "outcome_access_before_freeze": false
+    },
+    {
+      "source_prefix": "Experiment/Iteration_2/",
+      "split": "TRAIN_CHRONOLOGY_2",
+      "outcome_access_before_freeze": false
+    },
+    {
+      "source_prefix": "Experiment/Iteration_3/",
+      "split": "TRAIN_CHRONOLOGY_3",
+      "outcome_access_before_freeze": false
+    },
+    {
+      "source_prefix": "Experiment/Iteration_4/",
+      "split": "TRAIN_CHRONOLOGY_4",
+      "outcome_access_before_freeze": false
+    },
+    {
+      "source_prefix": "Experiment/Random_test/",
+      "split": "SEALED_RANDOM_TEST",
+      "outcome_access_before_freeze": false
+    }
+  ],
+  "overlap_policy": "NO_FILE_OR_REPLICATE_MAY_APPEAR_IN_MULTIPLE_SPLITS",
+  "missing_input_policy": "EXCLUDE_BEFORE_ROW_IDS; NO_IMPUTATION",
+  "fixed_estimator": {
+    "family": "STANDARDIZED_RIDGE",
+    "l2_penalty": 1.0,
+    "seed": 20260717,
+    "post_outcome_feature_search": false
+  },
+  "authority": {
+    "evidence_status_ceiling": "LOCKED_INTERNAL",
+    "outputs": "DIRECTIONAL_HYPOTHESES_ONLY",
+    "optimizer_authority": false,
+    "marine_dgeba_transfer": false
+  }
+}

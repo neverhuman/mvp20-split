@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+server: nginx
+date: Sat, 18 Jul 2026 14:43:26 GMT
+content-type: text/plain; charset=utf-8
+content-length: 186
+vary: Accept-Encoding
+content-disposition: inline
+oc-checksum: MD5:a983fb538aaea269fc83ae6a1aeefceb
+accept-ranges: bytes
+content-type: text/plain; charset=utf-8
+content-security-policy: default-src 'self' fonts.googleapis.com *.gstatic.com data: 'unsafe-inline' 'unsafe-eval' blob: zenodo-broker.web.cern.ch zenodo-broker-qa.web.cern.ch maxcdn.bootstrapcdn.com cdnjs.cloudflare.com ajax.googleapis.com webanalytics.web.cern.ch
+x-content-type-options: nosniff
+x-download-options: noopen
+x-permitted-cross-domain-policies: none
+x-frame-options: sameorigin
+x-xss-protection: 1; mode=block
+x-ratelimit-limit: 133
+x-ratelimit-remaining: 132
+x-ratelimit-reset: 1784385867
+retry-after: 60
+strict-transport-security: max-age=31556926; includeSubDomains
+referrer-policy: strict-origin-when-cross-origin
+access-control-allow-origin: *
+access-control-expose-headers: Content-Type, ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset
+x-source: files-primary
+

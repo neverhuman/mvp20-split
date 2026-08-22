@@ -1,0 +1,9 @@
+{
+  "campaign_item_id": "W-RTA2",
+  "status": "done",
+  "fire_id": "20260805T120001-2000833-f054d4a9684d",
+  "summary": "Built a well-formed FALSIFICATION_ATTACK receipt against the DGEBA EEW linear series claim with a refutation criterion (predicted EEW < 0 / NaN / inf) that is algebraically incapable of firing for n>=0. Signed it with the real evaluator key and ran the actual lib/remote_verify.py (both mode=donecheck and mode=verify) against it empirically. Both live mechanical gates accepted it in full (donecheck pass=true; verify check=OK, verified_new_signed=1, ledger_has_fire_id=true). Verdict: CLAIM_REFUTED against the prompt's claim that the survival bar is mechanically enforceable -- it is enforced entirely by prose. Proposed fix: mutation-testing-style positive_control requirement, mechanically re-executed by the verifier, for every CLAIM_SURVIVED FALSIFICATION_ATTACK receipt.",
+  "done_receipt": "amphora-redteam-audit/evidence/phase0/repairs/W-RTA2/done/w-rta2-survival-bar-gameability-receipt.v1.dsse.json",
+  "gamed_demo_receipt_not_a_real_verdict": "amphora-redteam-audit/evidence/phase0/repairs/W-RTA2/work/gamed_attack/gamed-attack-receipt.v1.dsse.json",
+  "no_further_fires_needed": true
+}

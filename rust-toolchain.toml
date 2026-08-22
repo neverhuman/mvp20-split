@@ -1,0 +1,6 @@
+# Pinned so "stable" cannot mean different compilers on different hosts.
+# xbabe1 stable resolved to 1.92.0 while xbabe2 stable resolved to 1.96.0 on
+# 2026-08-04; both hosts have 1.96.0 installed explicitly, so this pin requires
+# no download. All portfolio builds happen on xbabe2.
+[toolchain]
+channel = "1.96.0"

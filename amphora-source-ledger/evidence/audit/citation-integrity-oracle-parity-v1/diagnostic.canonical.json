@@ -1,0 +1,265 @@
+{
+  "closes": "CORROBORATED: an independent non-runtime oracle reproduces all four shipped data/evidence content-address anchors byte-exact (facts.json, source_records.json, benchmark-lock, benchmark result.v1.json), re-derives the 83/23/9/14/0 + 162/0 counts and all four honest gate decisions with 100% parity, confirms every load-bearing constant is traceable (0 uncited), and fails closed on 6/6 adversarial tamper probes with no false alarm on clean input. Additionally DETECTS a stale self-referential pointer: mission.md pins runtime lib.rs at c0b2540f but the live file is 695ecb2e.",
+  "counts": {
+    "g0_content_addressable_anchors": 4,
+    "g0_content_addressable_matched": 4,
+    "g0_detected_stale_runtime_lib_pointer": true,
+    "g1_count_parity_checks": 7,
+    "g1_count_parity_matched": 7,
+    "g2_gate_parity_checks": 4,
+    "g2_gate_parity_matched": 4,
+    "g3_invariants": 7,
+    "g3_invariants_ok": 7,
+    "g4_clean_noop_no_false_alarm": true,
+    "g4_tamper_fail_closed": 6,
+    "g4_tamper_probes": 6
+  },
+  "derived_gates": {
+    "load_bearing_two_source_gate": false,
+    "load_bearing_two_source_or_waiver_gate": false,
+    "prose_waivers_rejected_gate": false,
+    "uncited_constants_rejected_gate": true
+  },
+  "derived_metrics": {
+    "cited_constant_count": 83,
+    "duplicate_record_id_count": 0,
+    "incomplete_source_record_count": 0,
+    "load_bearing_both_cover_count": 0,
+    "load_bearing_constant_count": 23,
+    "missing_url_count": 0,
+    "non_https_url_count": 0,
+    "prose_waiver_count": 14,
+    "required_field_count": 26,
+    "second_source_gap_count": 14,
+    "source_record_count": 162,
+    "two_source_count": 9,
+    "uncovered_load_bearing_count": 0
+  },
+  "does_not_close": "Does NOT close the module's Phase-1 gaps: 14 load-bearing constants still lack a controlled second source and 14 prose waivers still require controlled evidence. Does NOT re-exec the live Rust runtime and is not a Rust error-taxonomy parity proof. AUDIT_ONLY.",
+  "g0_checks": [
+    {
+      "anchor": "facts_sha256",
+      "match": true,
+      "pinned": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "recomputed": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+    },
+    {
+      "anchor": "records_sha256",
+      "match": true,
+      "pinned": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c",
+      "recomputed": "87174e555bdf31cd30d7d13da2dedb5cc6c14af33586fdd3981d97c0409da26c"
+    },
+    {
+      "anchor": "benchmark_lock_sha256",
+      "match": true,
+      "pinned": "4d9847b9b57364ba5e3a26233787f8c488789022a4e1fad746af0fab7f3711bd",
+      "recomputed": "4d9847b9b57364ba5e3a26233787f8c488789022a4e1fad746af0fab7f3711bd"
+    },
+    {
+      "anchor": "benchmark_result_sha256",
+      "match": true,
+      "pinned": "a6a680a1202d8b18b097a0d390bf877d93dc985b0f09a5fe52cc2ea16b498115",
+      "recomputed": "a6a680a1202d8b18b097a0d390bf877d93dc985b0f09a5fe52cc2ea16b498115"
+    }
+  ],
+  "g1_checks": [
+    {
+      "match": true,
+      "metric": "cited_constant_count",
+      "oracle": 83,
+      "runtime": 83
+    },
+    {
+      "match": true,
+      "metric": "load_bearing_constant_count",
+      "oracle": 23,
+      "runtime": 23
+    },
+    {
+      "match": true,
+      "metric": "two_source_count",
+      "oracle": 9,
+      "runtime": 9
+    },
+    {
+      "match": true,
+      "metric": "prose_waiver_count",
+      "oracle": 14,
+      "runtime": 14
+    },
+    {
+      "match": true,
+      "metric": "missing_url_count",
+      "oracle": 0,
+      "runtime": 0
+    },
+    {
+      "match": true,
+      "metric": "source_record_count",
+      "oracle": 162,
+      "runtime": 162
+    },
+    {
+      "match": true,
+      "metric": "incomplete_source_record_count",
+      "oracle": 0,
+      "runtime": 0
+    }
+  ],
+  "g2_checks": [
+    {
+      "gate": "uncited_constants_rejected_gate",
+      "match": true,
+      "oracle": true,
+      "runtime": true
+    },
+    {
+      "gate": "load_bearing_two_source_gate",
+      "match": true,
+      "oracle": false,
+      "runtime": false
+    },
+    {
+      "gate": "load_bearing_two_source_or_waiver_gate",
+      "match": true,
+      "oracle": false,
+      "runtime": false
+    },
+    {
+      "gate": "prose_waivers_rejected_gate",
+      "match": true,
+      "oracle": false,
+      "runtime": false
+    }
+  ],
+  "g3_checks": [
+    {
+      "detail": "load-bearing constants with neither second_url nor waiver",
+      "expect": 0,
+      "invariant": "every_load_bearing_traceable",
+      "ok": true,
+      "value": 0
+    },
+    {
+      "detail": "load-bearing with BOTH second_url and waiver",
+      "expect": 0,
+      "invariant": "clean_partition_no_overlap",
+      "ok": true,
+      "value": 0
+    },
+    {
+      "detail": "two_source + prose_waiver == load_bearing",
+      "expect": 23,
+      "invariant": "partition_sums_to_load_bearing",
+      "ok": true,
+      "value": 23
+    },
+    {
+      "detail": "load_bearing - two_source (missing controlled 2nd source)",
+      "expect": 14,
+      "invariant": "second_source_gap_equals_14",
+      "ok": true,
+      "value": 14
+    },
+    {
+      "detail": "cited constants whose URL is not https://",
+      "expect": 0,
+      "invariant": "all_urls_https",
+      "ok": true,
+      "value": 0
+    },
+    {
+      "detail": "duplicate source-record ids",
+      "expect": 0,
+      "invariant": "no_duplicate_record_ids",
+      "ok": true,
+      "value": 0
+    },
+    {
+      "detail": "incomplete source records",
+      "expect": 0,
+      "invariant": "all_records_26_required_fields",
+      "ok": true,
+      "value": 0
+    }
+  ],
+  "g4_probes": [
+    {
+      "detected": true,
+      "fail_closed": true,
+      "probe": "nulled_load_bearing_url_detected"
+    },
+    {
+      "detected": true,
+      "fail_closed": true,
+      "probe": "forged_second_source_drift_detected"
+    },
+    {
+      "detected": true,
+      "fail_closed": true,
+      "probe": "stripped_required_record_field_detected"
+    },
+    {
+      "detected": true,
+      "fail_closed": true,
+      "probe": "uncovered_load_bearing_promotion_detected"
+    },
+    {
+      "detected": true,
+      "fail_closed": true,
+      "probe": "byte_flip_facts_anchor_mismatch_detected"
+    },
+    {
+      "detected": true,
+      "fail_closed": true,
+      "probe": "duplicate_record_id_detected"
+    },
+    {
+      "clean_probe": true,
+      "detected": false,
+      "fail_closed": true,
+      "probe": "clean_noop_no_false_alarm"
+    }
+  ],
+  "gates": {
+    "all_pass": true,
+    "g0_content_addressable_anchors": true,
+    "g1_count_parity": true,
+    "g2_gate_parity": true,
+    "g3_integrity_invariants": true,
+    "g4_tamper_fail_closed": true
+  },
+  "hypothesis": "Hash-bound source records prevent uncited constants from entering calculations; drift in the fixtures is detected by content-addressable recompute and gate re-derivation.",
+  "module": "amphora-source-ledger",
+  "non_circularity": "No import/link/exec of evaluate_source_ledger (amphora-assurance-capabilities/src/lib.rs). Raw-byte parse + Python stdlib only; runtime lib hashed as an anchor, never called.",
+  "preconditions": {
+    "facts_entries": 83,
+    "required_record_fields": 26,
+    "source_records": 162
+  },
+  "purpose": "Independently re-derive amphora-source-ledger content-address anchors, citation-integrity counts, the four honest gate decisions, and a fresh adversarial tamper battery, without executing the live Rust runtime.",
+  "run_type": "AUDIT_ONLY_INDEPENDENT_ORACLE",
+  "runtime_pointer": {
+    "detected_stale_runtime_lib_pointer": true,
+    "live_runtime_lib_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116",
+    "matches_mission_pin": false,
+    "mission_pinned_runtime_lib_sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+  },
+  "runtime_source_anchors": {
+    "benchmark_result": "amphora-source-ledger/evidence/phase0/benchmark/result.v1.json",
+    "facts_fixture": "amphora-source-ledger/reference/mvp20/data/facts.json",
+    "records_fixture": "amphora-source-ledger/reference/mvp20/data/source_records.json",
+    "runtime_lib": "amphora-assurance-capabilities/src/lib.rs",
+    "runtime_lib_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116"
+  },
+  "schema": "amphora.source-ledger.citation-integrity-oracle-diagnostic.v1",
+  "study_id": "source-ledger-citation-integrity-oracle-parity-v1",
+  "theory_reference": [
+    "Anderson 1972/1980 reference-monitor (complete mediation, deny-by-default)",
+    "Haber & Stornetta 1991 J.Cryptology 3(2):99-111 (hash-binding)",
+    "ISO 690:2021 bibliographic references",
+    "PRISMA 2020 Page et al. BMJ 372:n71",
+    "CRAAP test Blakeslee 2004",
+    "Ioannidis 2005 PLoS Med 2(8):e124"
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "label_aware_checker_on_new_real_entries": [
+    {
+      "expected_value_checked": "114",
+      "found_label_adjacent": false,
+      "key": "hardener.ancamide_2353.ahew",
+      "matched_contexts": [],
+      "n_label_adjacent_occurrences": 0,
+      "note": "true citation: ANCAMIDE(R) 2353 row, WT/{H}=AHEW column, Evonik Americas curing-agent guide",
+      "product_label_required": "2353",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "DOES_NOT_SUPPORT"
+    },
+    {
+      "expected_value_checked": "120",
+      "found_label_adjacent": false,
+      "key": "hardener.ancamide_260a.ahew",
+      "matched_contexts": [],
+      "n_label_adjacent_occurrences": 0,
+      "note": "true citation: ANCAMIDE(R) 260A row, WT/{H}=AHEW column, same shared guide",
+      "product_label_required": "260A",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "DOES_NOT_SUPPORT"
+    },
+    {
+      "expected_value_checked": "170",
+      "found_label_adjacent": false,
+      "key": "hardener.ancamide_700b75.ahew",
+      "matched_contexts": [],
+      "n_label_adjacent_occurrences": 0,
+      "note": "true citation: ANCAMIDE(R) 700-B-75 row, WT/{H}=AHEW column, same shared guide",
+      "product_label_required": "700-B-75",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "DOES_NOT_SUPPORT"
+    },
+    {
+      "expected_value_checked": "0.960",
+      "found_label_adjacent": true,
+      "key": "hardener.ancamide_260a.density",
+      "matched_contexts": [
+        {
+          "context": "DE\u00ae 260A    Amide/ Imidazoline      7         40,000        0.960                350          120           65             12",
+          "pos": 212072
+        }
+      ],
+      "n_label_adjacent_occurrences": 1,
+      "note": "true citation: ANCAMIDE(R) 260A row, Specific Gravity column, same shared guide (not tested by the prior fire, which only tested the ancamide_2353.density entry from this doc)",
+      "product_label_required": "260A",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    }
+  ],
+  "label_aware_checker_on_new_wrongproduct_planted_entries": [
+    {
+      "expected_value_checked": "114",
+      "found_label_adjacent": false,
+      "key": "hardener.ancamide_2353.ahew",
+      "matched_contexts": [],
+      "n_label_adjacent_occurrences": 0,
+      "note": "PLANTED: swapped claimed product identity to ANCAMIDE(R) 2424 (real, different product row, same literal WT/{H}=114 value)",
+      "product_label_required": "2424",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "DOES_NOT_SUPPORT"
+    },
+    {
+      "expected_value_checked": "120",
+      "found_label_adjacent": false,
+      "key": "hardener.ancamide_260a.ahew",
+      "matched_contexts": [],
+      "n_label_adjacent_occurrences": 0,
+      "note": "PLANTED: swapped claimed product identity to ANCAMIDE(R) 261A (real, different product row, same literal WT/{H}=120 value)",
+      "product_label_required": "261A",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "DOES_NOT_SUPPORT"
+    },
+    {
+      "expected_value_checked": "170",
+      "found_label_adjacent": false,
+      "key": "hardener.ancamide_700b75.ahew",
+      "matched_contexts": [],
+      "n_label_adjacent_occurrences": 0,
+      "note": "PLANTED: swapped claimed product identity to ANCAMIDE(R) 702-B-75 (real, different product row, same literal WT/{H}=170 value)",
+      "product_label_required": "702-B-75",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "DOES_NOT_SUPPORT"
+    },
+    {
+      "expected_value_checked": "0.960",
+      "found_label_adjacent": true,
+      "key": "hardener.ancamide_260a.density",
+      "matched_contexts": [
+        {
+          "context": "DE\u00ae 260TN   Amide/ Imidazoline      7         35,000        0.960                350          120           65             27",
+          "pos": 213797
+        }
+      ],
+      "n_label_adjacent_occurrences": 1,
+      "note": "PLANTED: swapped claimed product identity to ANCAMIDE(R) 260TN (real, different product row, same literal Specific Gravity=0.960 value)",
+      "product_label_required": "260TN",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    }
+  ],
+  "label_aware_fix_also_insufficient": false,
+  "occurrence_census_control_entries": [
+    {
+      "expected": "0.818",
+      "key": "solvent.mak.density",
+      "raw_substring_occurrences": 1,
+      "textfile": "text_mak.txt"
+    },
+    {
+      "expected": "0.802",
+      "key": "solvent.mibk.density",
+      "raw_substring_occurrences": 1,
+      "textfile": "text_mibk.txt"
+    },
+    {
+      "expected": "0.81",
+      "key": "solvent.n_butanol.density",
+      "raw_substring_occurrences": 2,
+      "textfile": "text_n_butanol.txt"
+    }
+  ],
+  "occurrence_census_new_entries": [
+    {
+      "expected": "114",
+      "key": "hardener.ancamide_2353.ahew",
+      "raw_substring_occurrences": 4,
+      "textfile": "citation_extracts/text_hardener_ancamide_2353_ahew.txt"
+    },
+    {
+      "expected": "120",
+      "key": "hardener.ancamide_260a.ahew",
+      "raw_substring_occurrences": 19,
+      "textfile": "citation_extracts/text_hardener_ancamide_2353_ahew.txt"
+    },
+    {
+      "expected": "170",
+      "key": "hardener.ancamide_700b75.ahew",
+      "raw_substring_occurrences": 6,
+      "textfile": "citation_extracts/text_hardener_ancamide_2353_ahew.txt"
+    },
+    {
+      "expected": "0.960",
+      "key": "hardener.ancamide_260a.density",
+      "raw_substring_occurrences": 4,
+      "textfile": "citation_extracts/text_hardener_ancamide_2353_ahew.txt"
+    }
+  ],
+  "original_checker_on_control_single_product_entries": [
+    {
+      "expected_value_checked": "0.818",
+      "found_literal": true,
+      "key": "solvent.mak.density",
+      "note": "Eastman MAK TDS names exactly one product (MAK); no candidate wrong-product row exists in this document.",
+      "text_file": "text_mak.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "0.802",
+      "found_literal": true,
+      "key": "solvent.mibk.density",
+      "note": "Eastman MIBK TDS names exactly one product (MIBK); no candidate wrong-product row exists in this document.",
+      "text_file": "text_mibk.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "0.81",
+      "found_literal": true,
+      "key": "solvent.n_butanol.density",
+      "note": "Eastman n-Butanol TDS names exactly one product (n-Butanol); no candidate wrong-product row exists in this document.",
+      "text_file": "text_n_butanol.txt",
+      "verdict": "supports"
+    }
+  ],
+  "original_checker_on_new_real_entries": [
+    {
+      "expected_value_checked": "114",
+      "found_literal": true,
+      "key": "hardener.ancamide_2353.ahew",
+      "note": "true citation: ANCAMIDE(R) 2353 row, WT/{H}=AHEW column, Evonik Americas curing-agent guide",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "120",
+      "found_literal": true,
+      "key": "hardener.ancamide_260a.ahew",
+      "note": "true citation: ANCAMIDE(R) 260A row, WT/{H}=AHEW column, same shared guide",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "170",
+      "found_literal": true,
+      "key": "hardener.ancamide_700b75.ahew",
+      "note": "true citation: ANCAMIDE(R) 700-B-75 row, WT/{H}=AHEW column, same shared guide",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "0.960",
+      "found_literal": true,
+      "key": "hardener.ancamide_260a.density",
+      "note": "true citation: ANCAMIDE(R) 260A row, Specific Gravity column, same shared guide (not tested by the prior fire, which only tested the ancamide_2353.density entry from this doc)",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    }
+  ],
+  "original_checker_on_new_wrongproduct_planted_entries": [
+    {
+      "expected_value_checked": "114",
+      "found_literal": true,
+      "key": "hardener.ancamide_2353.ahew",
+      "note": "PLANTED: swapped claimed product identity to ANCAMIDE(R) 2424 (real, different product row, same literal WT/{H}=114 value)",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "120",
+      "found_literal": true,
+      "key": "hardener.ancamide_260a.ahew",
+      "note": "PLANTED: swapped claimed product identity to ANCAMIDE(R) 261A (real, different product row, same literal WT/{H}=120 value)",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "170",
+      "found_literal": true,
+      "key": "hardener.ancamide_700b75.ahew",
+      "note": "PLANTED: swapped claimed product identity to ANCAMIDE(R) 702-B-75 (real, different product row, same literal WT/{H}=170 value)",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "0.960",
+      "found_literal": true,
+      "key": "hardener.ancamide_260a.density",
+      "note": "PLANTED: swapped claimed product identity to ANCAMIDE(R) 260TN (real, different product row, same literal Specific Gravity=0.960 value)",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    }
+  ],
+  "refutation_confirmed": true,
+  "summary": {
+    "control_note": "Raw substring occurrence count only (not an exhaustive proof of zero ambiguity); each control document's TDS names exactly one commercial product, so even a >1 raw count reflects the same product's value appearing in more than one place on its own TDS (e.g. a units-conversion footnote), not a distinct sibling product row.",
+    "control_single_product_entries_raw_occurrence_counts": [
+      1,
+      1,
+      2
+    ],
+    "cumulative_confirmed_exposed_loadbearing_entries": 6,
+    "cumulative_confirmed_exposed_note": "2 confirmed by the prior fire (resin.dgeba_331.density, hardener.ancamide_2353.density) + 4 newly confirmed by this fire (hardener.ancamide_2353.ahew, hardener.ancamide_260a.ahew, hardener.ancamide_700b75.ahew, hardener.ancamide_260a.density) = 6 of 23 (26.1%) load-bearing facts.json constants whose cited mechanized-checker 'supports' verdict cannot discriminate the true product attribution from a real wrong-product sibling sharing the identical literal figure.",
+    "label_aware_checker_correctly_validates_real_n": 1,
+    "label_aware_checker_wrongly_validates_n": 1,
+    "label_aware_fix_also_insufficient": false,
+    "n_new_wrongproduct_entries_tested": 4,
+    "original_checker_correctly_validates_real_n": 4,
+    "original_checker_wrongly_validates_n": 4,
+    "refutation_confirmed": true
+  },
+  "table_row_confirmation": {
+    "control_confirming_column_is_real_and_varying": "ANCAMIDE(R) 220 row: WT/{H}=185 -- differs from all four values above, confirming this is a genuinely varying parsed field, not a mis-parsed constant.",
+    "rows_sharing_ahew_114": [
+      "ANCAMIDE(R) 2353   Modified Polyamide   9   3,000    1.01   330   114   60   65   4.5   131",
+      "ANCAMIDE(R) 2424   Modified Polyamide   9   14,000   1.00   327   114   60   60   3.0   129",
+      "ANCAMIDE(R) 2767   Modified Polyamide   7   2100     1.08   340   114   60   57   5     142"
+    ],
+    "rows_sharing_ahew_120": [
+      "ANCAMIDE(R) 260A    Amide/Imidazoline   7   40,000   0.960   350   120   65   120   10   NA",
+      "ANCAMIDE(R) 261A    Amide/Imidazoline   7   35,000-  0.96    320-  120   65   75    7    NA",
+      "ANCAMIDE(R) 260TN   Amide/Imidazoline   7   35,000   0.960   350   120   65   270   10   NA"
+    ],
+    "rows_sharing_ahew_170": [
+      "ANCAMIDE(R) 700-B-75   Adduct Solution   7      5,000       0.960   240   170   90",
+      "ANCAMIDE(R) 702-B-75   Adduct Solution   8 max   4,000-8,000 0.96    230-  170   90"
+    ],
+    "rows_sharing_density_0_960": [
+      "ANCAMIDE(R) 260A    ... 0.960 ...",
+      "ANCAMIDE(R) 260TN   ... 0.960 ...",
+      "ANCAMIDE(R) 375A    ... 0.960 ..."
+    ],
+    "table_title": "Curing Agent product-comparison table (polyamide/amidoamine section), Epoxy curing agents product guide (Americas)",
+    "textfile": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+    "wt_h_ahew_column_header_confirmed": "vertical header token 'WT/{H}' present directly above the polyamide table's data rows (confirmed at the ANCAMIDE 220 row, line ~1481 of the extract)."
+  }
+}

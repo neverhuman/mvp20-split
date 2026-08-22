@@ -1,0 +1,11 @@
+ase==3.28.0
+joblib==1.5.3
+numpy==2.4.6
+pandas==3.0.3
+pyarrow==21.0.0
+pymatgen==2026.5.4
+pymatgen-core==2026.7.16
+scikit-learn==1.9.0
+scipy==1.17.1
+spglib==2.7.0
+pytest==9.1.0

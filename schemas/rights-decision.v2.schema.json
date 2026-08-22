@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amphora.invalid/schemas/rights-decision.v2.schema.json",
+  "title": "RightsDecisionV2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "rights_decision_id", "acquisition_unit_id", "rights_class", "license", "basis", "decision_receipt", "promotion_eligible"],
+  "properties": {
+    "schema": {"const": "amphora.rights-decision.v2"},
+    "rights_decision_id": {"type": "string", "minLength": 1},
+    "acquisition_unit_id": {"type": "string", "minLength": 1},
+    "rights_class": {"enum": ["DERIVATIVE_ALLOWED", "CONTEXT_ONLY", "CREDENTIALED", "MANUAL_EXPORT", "UNRESOLVED", "PROHIBITED_BULK"]},
+    "license": {"type": "string", "minLength": 1},
+    "basis": {"type": "string", "minLength": 1},
+    "decision_receipt": {"type": ["string", "null"]},
+    "promotion_eligible": {"type": "boolean"}
+  }
+}

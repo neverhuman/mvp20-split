@@ -1,0 +1,112 @@
+{
+  "audit_id": "nist-baseline-fold-significance-v1",
+  "dataset": {
+    "csv_sha256": "9b6b82d0a562cfd68c5c452a8e75f0ae4c8bc21a72d89a7bc07049242e4c5cc5",
+    "environments": [
+      "Atmospheric Environments",
+      "Seawater",
+      "Sodium Chloride"
+    ],
+    "material_groups": [
+      "Aluminum and alloys",
+      "Carbon and alloy steels",
+      "Copper and alloys",
+      "Nickel and alloys",
+      "Stainless steels"
+    ],
+    "median_imputation": {
+      "concentration_vol_pct": 10.0,
+      "duration_hr": 13140.0,
+      "temperature_C": 32.0
+    },
+    "n_records_after_filter": 588,
+    "n_source_documents": 30,
+    "n_total_records_in_raw_csv": 24721,
+    "source": "NIST CORR-DATA Database v2017, doi:10.18434/M3TH4R"
+  },
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "Does not dispute the physical theory (Ridge regression, Hoerl & Kennard 1970) or the LOSD-CV split design; it disputes (a) whether the specific pinned Ridge MAE is independently reproducible from what is actually preserved in the repo, and (b) whether the beats-null effect is robust at the fold (independent-study) level LOSD-CV exists to certify, using an honest re-implementation of the KPI's own methodology.",
+    "Does not modify or supersede the signed NIST baseline KPI or its dataset; both remain independently valid artifacts, referenced by path + sha256. This audit's own independently-reproduced Ridge fit is DIFFERENT from (numerically stronger than) the signed fit, which is itself evidence the signed number is implementation-fragile.",
+    "Phase-1 would need the generating script committed to the module tree (not left in ephemeral scratch), per-fold (not only pooled) significance reporting, and ideally n_records >= 1000 with nonlinear ML (already flagged as awaiting in the target KPI)."
+  ],
+  "headline": "Independent reproducibility + fold-level significance audit of the NIST CORR-DATA marine steel baseline KPI's flagship '+0.0475 log10 (7.0%) Ridge-beats-NULL' claim. (T1) Re-derived from the raw published CSV alone (hash-pinned 9b6b82d0..., not the cached fixture): the filtered population reproduces EXACTLY (n=588 records / 30 source documents / 3 environments / 5 material groups). (T2) But the signed Ridge MAE does NOT reproduce: the generating script ('/tmp/corr_baseline.py' per receipt_meta) was never committed to the repo and no longer exists anywhere on this host; an honest re-implementation of the KPI's OWN stated methodology (identical features, [588,11] shape, alpha grid, LOSD-CV, seed=0) on the identical raw data gives MAE=0.5888 vs the signed 0.6331 (delta 0.0443) -- while the fitting-free NULL reproduces closely (0.6736 vs signed 0.6806, delta 0.0070). The specific pinned number is not independently auditable. (T3-T5) Using this audit's own (numerically STRONGER) reproduced Ridge fit, the beats-null effect is still NOT robust at the level LOSD-CV was built to certify -- one independent source-document study = one fold: Ridge beats NULL on only 17/30 folds (56.7%, binomial p=0.585, not distinguishable from a coin flip); the cluster-bootstrap 95% CI of the mean per-fold improvement is [-0.0329, 0.4846] (CROSSES ZERO); Wilcoxon signed-rank on the 30 paired fold MAEs gives p=0.2710. (T6) The pooled, record-weighted improvement figure is dominated by fold-size heterogeneity (top-3 largest source documents alone carry 54.9% of all 588 records) -- exactly the per-study methodology-bias risk LOSD-CV exists to guard against, and the null baseline is not held to the same fold-isolation standard as Ridge. Conclusion: H0 (a fold-robust, independently-reproducible beats-null effect) is H0 REFUTED -- on two independent grounds, neither of which depends on the other.",
+  "human_review_performed": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "n_tests_failed": 4,
+  "promotes_authority": false,
+  "schema": "amphora.public-corrosion-benchmark.audit.v1",
+  "scientific_success_asserted": false,
+  "target_claim": "evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json#fitted_or_physical_model_artifact.improvement_MAE_log10_reduction=0.0475 (Ridge beats per-material-group-median NULL on LOSD-CV)",
+  "tests": {
+    "T1_population_filter_reproduction": {
+      "n_environments": 3,
+      "n_material_groups": 5,
+      "n_records": 588,
+      "n_source_documents": 30,
+      "note": "Independent re-derivation from raw CORR-DATA_Database.csv (hash-pinned 9b6b82d0..., matches dataset_fixture_sha256 in the signed KPI), not from any cached fixture. n=588/30 docs/3 envs/5 material groups reproduces exactly -- the filtering step is genuinely reproducible.",
+      "pass": true,
+      "refutes_claim": false
+    },
+    "T2_ridge_fit_independent_auditability": {
+      "generating_script_path_in_receipt": "/tmp/corr_baseline.py",
+      "generating_script_present_in_repo_or_scratch": false,
+      "note": "The NULL baseline (global per-material-group median, no fitting choices) reproduces to within 0.0070 log10 units -- consistent with a faithful filter/target reproduction. The Ridge fit, by contrast, is off by 0.0443 log10 units under an honest re-implementation of the KPI's OWN stated methodology (same features, same [588,11] shape, same alpha grid, same LOSD-CV, same seed=0). The actual generating script (receipt_meta.sci_pipeline_module = 'python3 /tmp/corr_baseline.py') was run once in ephemeral scratch and never committed to the module tree; it no longer exists anywhere on this host. The specific pinned number (MAE=0.6331, improvement=+0.0475) is therefore NOT independently reproducible/auditable from what is actually preserved in the repository -- only the population and the (fitting-free) null are.",
+      "null_delta": 0.006976709260025027,
+      "refute_bar": "signed Ridge MAE reproduces from the stated methodology + raw data to within 5e-3 log10 units",
+      "refutes_claim": true,
+      "reproduced_null_MAE_log10": 0.6736173487910971,
+      "reproduced_ridge_MAE_log10": 0.5887844213182347,
+      "ridge_delta": 0.04434118799570097,
+      "signed_kpi_null_MAE_log10": 0.6805940580511222,
+      "signed_kpi_ridge_MAE_log10": 0.6331256093139357
+    },
+    "T3_fold_level_sign_test": {
+      "binom_p_two_sided": 0.5846647117286922,
+      "frac_folds_ridge_better": 0.5666666666666667,
+      "n_folds": 30,
+      "n_folds_null_better": 13,
+      "n_folds_ridge_better": 17,
+      "n_folds_tied": 0,
+      "refute_bar": "majority (>=~60%) of independent source-document folds should favor Ridge",
+      "refutes_claim": true
+    },
+    "T4_cluster_bootstrap_fold_level_ci": {
+      "boot_mean": 0.2147857164873396,
+      "ci95_hi": 0.48455454501742923,
+      "ci95_lo": -0.03294625736576469,
+      "mean_fold_improvement_log10": 0.21468403677742665,
+      "n_boot": 20000,
+      "refute_bar": "95% CI of mean per-fold (per-source-document) MAE improvement includes 0",
+      "refutes_claim": true
+    },
+    "T5_wilcoxon_signed_rank_fold_pairs": {
+      "n_nonzero_pairs": 30,
+      "p_value": 0.2710056286305189,
+      "refute_bar": "p > 0.05",
+      "refutes_claim": true,
+      "statistic": 178.0
+    },
+    "T6_aggregation_heterogeneity_diagnostic": {
+      "note": "The signed KPI's headline 0.0475 log10 improvement is POOLED (record-weighted across all 588 held-out predictions), NOT the mean of the 30 independent fold-level improvements the LOSD-CV split was designed to certify. The two diverge whenever fold size is heterogeneous, i.e. exactly the per-study methodology-bias risk LOSD-CV exists to guard against.",
+      "pooled_record_weighted_improvement_log10": 0.08483292747286242,
+      "size_weighted_recheck_matches_pooled": true,
+      "top3_docs_frac_of_all_records": 0.5493197278911565,
+      "top3_largest_docs": [
+        "125",
+        "89",
+        "25"
+      ],
+      "unweighted_fold_mean_improvement_log10": 0.21468403677742665
+    }
+  },
+  "tests_failed": [
+    "T2_ridge_fit_independent_auditability",
+    "T3_fold_level_sign_test",
+    "T4_cluster_bootstrap_fold_level_ci",
+    "T5_wilcoxon_signed_rank_fold_pairs"
+  ],
+  "verdict": "H0_REFUTED"
+}

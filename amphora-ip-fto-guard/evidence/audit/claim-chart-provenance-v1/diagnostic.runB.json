@@ -1,0 +1,398 @@
+{
+  "charted_row_count": 6,
+  "charted_rows_audited": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    26
+  ],
+  "does_not_close": [
+    "Does NOT establish FTO, patentability, procurement, or jurisdictional coverage.",
+    "Verifies textual-anchor fidelity of the charted element list against the real published claim only; does not perform a legal claim-construction or infringement analysis, and does not review dependent claims, prosecution history, or equivalents.",
+    "A defect found here is a landscape-fixture data-quality/provenance defect, not itself an FTO or infringement determination in either direction."
+  ],
+  "fail_closed_mutation_demo": {
+    "all_mutations_caught": true,
+    "mutations": [
+      {
+        "caught": true,
+        "mutation": "impossible_probe_element_injected_into_row26",
+        "violates": "element textual-anchor predicate"
+      },
+      {
+        "caught": true,
+        "matches_pin": false,
+        "mutated_sha256": "2ae2209a017f1229d7db6867b81f66bc11788627dab109de5f3ec1bc0da77a16",
+        "mutation": "single_trailing_byte_appended",
+        "violates": "pinned SHA-256 fixture lock"
+      },
+      {
+        "caught": true,
+        "matches_pin": false,
+        "mutated_sha256": "4f0c3aa07930e97295f4a5cb8b505a96f72a41e6b2a34378602125627d3dced3",
+        "mutation": "single_trailing_byte_appended_to_raw_snapshot",
+        "violates": "pinned SHA-256 raw-snapshot lock"
+      }
+    ]
+  },
+  "finding": "REFUTED: family 26 asserts independent_claim_chart element(s) [[\"polyurea topcoat\", \"low VOC coating system\"]] with zero textual support in the real, independently re-fetched claim-1 text, and (unlike family 3, which explicitly discloses 'EP claims did not render') carries no disclosed caveat that its element list departs from the actual rendered claim. This is a fabricated/unsupported claim element in one of only 6 rows across the entire 60-row landscape where a reads_on_ours conclusion is asserted against a specific charted claim rather than a bare CPC/IPC category screen -- it falsifies the landscape_method's 'preliminary independent-claim element charts' fidelity assertion for that row.",
+  "hash_and_count_lock": {
+    "family_count": 60,
+    "fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "raw_snapshot_sha256": {
+      "EP2653485A2.html": "54ea48f9eb65fbd93fdd1b479a4fd1c410ad1f1c74c96e22470b983c1c28cd0e",
+      "EP2931822A2.html": "b7831640e0c5585356d774043e62174e1d08c7f1947eab5a0f4b4c4ff05a1a15",
+      "EP3328938B1.html": "2be62772cd5b6e74c1c35f093638da55001879bd025bb54bc0252717fa567a11",
+      "US5059640A.html": "dbe292c5d6054a1e73ecc8903d5e4d5c515cc011640c6cbb55fdedb65edee4f2",
+      "WO2013159277A1.html": "14cfaa8dcc87f0065e2da9b85f159262adfd83fa95bd5f57f9df339c6e231d3a",
+      "WO2016187380A1.html": "f8dc254181e4b5171f6678009d1f6f65b17c0d7e9961fcd6127c4d93b1b735b2"
+    }
+  },
+  "headline": "Claim-chart provenance audit of the 6 charted (independent_claim_chart.charted=true) families in the pinned 60-family patent-landscape fixture: 5/6 PASS (every fixture element textually anchored in the real, independently re-fetched claim-1 text), 1/6 FAIL (fixture asserts at least one claim element with NO textual anchor in the actual published claim).",
+  "inputs": {
+    "family_count": 60,
+    "family_count_matches_pin": true,
+    "fixture_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+    "fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "fixture_sha256_matches_pin": true,
+    "raw_snapshot_count": 6,
+    "raw_snapshot_dir": "amphora-ip-fto-guard/evidence/audit/claim-chart-provenance-v1/raw"
+  },
+  "non_circularity": "Element anchors are literal English synonyms of the fixture's own plain-language element labels, fixed before reading the extracted claim text; the raw HTML snapshots are independently fetched from the fixture's own cited public url (patents.google.com), not derived from or compared against any other in-repo artifact.",
+  "purpose": "Independently re-derive the real, published claim-1 text of every family the pinned patent-landscape fixture marks independent_claim_chart.charted=true, from a hash-pinned cached snapshot of the exact url the fixture itself cites, and check whether every fixture-asserted claim element has a textual anchor in the real claim. Tests provenance fidelity of the ONLY 'charted, conclusive reads_on_ours' rows in the 60-row landscape.",
+  "results": {
+    "fail_count": 1,
+    "fail_rows": [
+      26
+    ],
+    "pass_count": 5,
+    "provenance_fidelity_rate": 0.833333,
+    "rows": [
+      {
+        "all_elements_supported": true,
+        "declared_claims_count": null,
+        "doc_read": "WO2016187380A1",
+        "element_results": [
+          {
+            "anchors_checked": [
+              "epoxy resin",
+              "epoxy"
+            ],
+            "element": "epoxy",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "polyamide hardener"
+            ],
+            "element": "polyamide hardener",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "reactive compatibilizer",
+              "polar functionality"
+            ],
+            "element": "reactive polar compatibilizer",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "volume solids",
+              "70 percent"
+            ],
+            "element": "VS >70%",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "blooming and blushing",
+              "4 to 5"
+            ],
+            "element": "blush rating 4-5",
+            "supported": true
+          }
+        ],
+        "extracted_claim1_text": "1 . a curable epoxy resin coating composition useful for preparing a coating comprising: (a) at least one epoxy resin; (b) at least one polyamide hardener; and (c) at least one reactive compatibilizer agent having at least one polar functionality; wherein the curable epoxy resin coating composition has a volume solids content of greater than about 70 percent; and wherein the curable epoxy resin coating composition, when cured, shows a value of blooming and blushing from 4 to 5.",
+        "fixture_key_elements": [
+          "epoxy",
+          "polyamide hardener",
+          "reactive polar compatibilizer",
+          "VS >70%",
+          "blush rating 4-5"
+        ],
+        "fixture_reads_on_ours": "NO",
+        "n": 1,
+        "raw_file": "WO2016187380A1.html",
+        "raw_snapshot_sha256": "f8dc254181e4b5171f6678009d1f6f65b17c0d7e9961fcd6127c4d93b1b735b2",
+        "raw_snapshot_sha256_matches_pin": true,
+        "status": "PASS",
+        "unsupported_elements": []
+      },
+      {
+        "all_elements_supported": true,
+        "declared_claims_count": 17,
+        "doc_read": "EP3328938B1",
+        "element_results": [
+          {
+            "anchors_checked": [
+              "ethylene diamine",
+              "hexamethylene diamine",
+              "diamine"
+            ],
+            "element": "specified diamine",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "straight chain monocarboxylic acid",
+              "acetic acid",
+              "propionic acid"
+            ],
+            "element": "straight-chain monoacid",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "hydroxystearic acid",
+              "lesquerolic acid",
+              "fatty acid"
+            ],
+            "element": "specific fatty acid",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "molar equivalent ratio",
+              "molar ratio"
+            ],
+            "element": "narrow molar ratio",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "particle size",
+              "1",
+              "10"
+            ],
+            "element": "1-10 um powder",
+            "supported": true
+          }
+        ],
+        "extracted_claim1_text": "a polyamide composition consisting essentially of a polyamide having groups derived from: a diamine selected from the group consisting of ethylene diamine and hexamethylene diamine; a straight chain monocarboxylic acid independently selected from the group consisting of: acetic acid, propionic acid, and combinations thereof; a fatty acid independently selected from the group consisting of: 12-hydroxystearic acid, lesquerolic acid and combinations thereof; wherein the diamine, the straight chain monocarboxylic acid and fatty acid have a molar equivalent ratio ranging from 1:1.75: 0.25 to 1:0.75:1.25; or 1:1.5:0.5 to 1:1:1; and a median particle size ranging from 1 \u00b5m to 10 \u00b5m.",
+        "fixture_key_elements": [
+          "specified diamine",
+          "straight-chain monoacid",
+          "specific fatty acid",
+          "narrow molar ratio",
+          "1-10 um powder"
+        ],
+        "fixture_reads_on_ours": "NO",
+        "n": 2,
+        "raw_file": "EP3328938B1.html",
+        "raw_snapshot_sha256": "2be62772cd5b6e74c1c35f093638da55001879bd025bb54bc0252717fa567a11",
+        "raw_snapshot_sha256_matches_pin": true,
+        "status": "PASS",
+        "unsupported_elements": []
+      },
+      {
+        "all_elements_supported": true,
+        "declared_claims_count": null,
+        "doc_read": "EP2931822 via US2015/0329739A1 family member (EP claims did not render)",
+        "element_results": [
+          {
+            "anchors_checked": [
+              "blend of at least two",
+              "two or more epoxy resins"
+            ],
+            "element": "blend of >=2 epoxies",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "chdm epoxy resin",
+              "chdm"
+            ],
+            "element": "one is a CHDM epoxy",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "2 weight percent total chlorine",
+              "2 wt",
+              "chlorine content"
+            ],
+            "element": "CHDM epoxy <2 wt% chlorine",
+            "supported": true
+          }
+        ],
+        "extracted_claim1_text": "1. a coating composition comprising a blend of at least two or more epoxy resins comprising (i) at least one chdm epoxy resin having less than about 2 weight percent total chlorine content; and (ii) at least one other epoxy resin other than the epoxy resin in component (i).",
+        "fixture_key_elements": [
+          "blend of >=2 epoxies",
+          "one is a CHDM epoxy",
+          "CHDM epoxy <2 wt% chlorine"
+        ],
+        "fixture_reads_on_ours": "NO (caveat: read US family claim, not EP)",
+        "n": 3,
+        "raw_file": "EP2931822A2.html",
+        "raw_snapshot_sha256": "b7831640e0c5585356d774043e62174e1d08c7f1947eab5a0f4b4c4ff05a1a15",
+        "raw_snapshot_sha256_matches_pin": true,
+        "status": "PASS",
+        "unsupported_elements": []
+      },
+      {
+        "all_elements_supported": true,
+        "declared_claims_count": null,
+        "doc_read": "WO2013159277A1",
+        "element_results": [
+          {
+            "anchors_checked": [
+              "epoxy compound"
+            ],
+            "element": "epoxy",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "chlorinated polyolefin based terpolymer",
+              "chlorinated polyolefin"
+            ],
+            "element": "chlorinated polyolefin terpolymer",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "curing agent"
+            ],
+            "element": "curing agent",
+            "supported": true
+          }
+        ],
+        "extracted_claim1_text": "1. a curable composition comprising, based on the total weight of the curable composition: a) from 1 wt.% to 20 wt.% an epoxy compound i selecting from aromatic epoxy compounds, alicyclic epoxy compounds, or a mixture thereof; b) from 1 wt.% to 20 wt.% a chlorinated polyolefin based terpolymer; and c) from 1 wt.%) to 40 wt.% a curing agent.",
+        "fixture_key_elements": [
+          "epoxy",
+          "chlorinated polyolefin terpolymer",
+          "curing agent"
+        ],
+        "fixture_reads_on_ours": "NO",
+        "n": 4,
+        "raw_file": "WO2013159277A1.html",
+        "raw_snapshot_sha256": "14cfaa8dcc87f0065e2da9b85f159262adfd83fa95bd5f57f9df339c6e231d3a",
+        "raw_snapshot_sha256_matches_pin": true,
+        "status": "PASS",
+        "unsupported_elements": []
+      },
+      {
+        "all_elements_supported": true,
+        "declared_claims_count": 15,
+        "doc_read": "US5059640A",
+        "element_results": [
+          {
+            "anchors_checked": [
+              "epoxy resin"
+            ],
+            "element": "epoxy base",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "zinc phosphate"
+            ],
+            "element": "Zn phosphate",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "zinc molybdate"
+            ],
+            "element": "Zn molybdate",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "zinc salt of a benzoic acid",
+              "zinc salt of benzoic acid"
+            ],
+            "element": "Zn salt of benzoic acid (all three)",
+            "supported": true
+          }
+        ],
+        "extracted_claim1_text": "1. a coating composition comprising about 100 parts by weight of an epoxy resin from about 0 to 1000 parts by weight of at least one organic solvent, from about 0-140 parts by weight of a tio 2 pigment, and from about 0.01 to 300 parts by weight of a combination of corrosion-inhibiting pigments consisting essentially of about: (a) 10-120 parts by weight of a zinc phosphate, (b) 40-260 parts by weight of zinc molybdate, and (c) 1-30 parts by weight of at least one zinc salt of a benzoic acid.",
+        "fixture_key_elements": [
+          "epoxy base",
+          "Zn phosphate",
+          "Zn molybdate",
+          "Zn salt of benzoic acid (all three)"
+        ],
+        "fixture_reads_on_ours": "NO",
+        "n": 5,
+        "raw_file": "US5059640A.html",
+        "raw_snapshot_sha256": "dbe292c5d6054a1e73ecc8903d5e4d5c515cc011640c6cbb55fdedb65edee4f2",
+        "raw_snapshot_sha256_matches_pin": true,
+        "status": "PASS",
+        "unsupported_elements": []
+      },
+      {
+        "all_elements_supported": false,
+        "declared_claims_count": 1,
+        "doc_read": "EP2653485A2",
+        "element_results": [
+          {
+            "anchors_checked": [
+              "epoxy primer composition",
+              "epoxy primer"
+            ],
+            "element": "epoxy primer",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "polyurea"
+            ],
+            "element": "polyurea topcoat",
+            "supported": false
+          },
+          {
+            "anchors_checked": [
+              "fast cur",
+              "dry-to-walk-on"
+            ],
+            "element": "fast cure",
+            "supported": true
+          },
+          {
+            "anchors_checked": [
+              "coating system",
+              "low voc"
+            ],
+            "element": "low VOC coating system",
+            "supported": false
+          }
+        ],
+        "extracted_claim1_text": "an epoxy primer composition comprising an epoxy-based binder system; said primer composition having a volume solids % determined according to iso 3233 with the modification that drying is carried out at 23 \u00b0c and 50 % relative humidity for 7 days of at least 82 %; and a \"dry-to-walk-on\" time which is less than 5 hours at 20 \u00b0c, the \"dry-to-walk-on\" time being determined by means of freshly painted panels (dft typically 50-150 \u00b5m) to which are applied a pressure of 5 kg/cm 2 for 3 minutes after the application of the primer layer; a teflon-coated steel block (base area 25 cm 2 ) is pressed towards the painted surface by means of a pneumatic compression machine with a mobile arm; if the paint is not \"dry-to-walk-on\", the paint will ooze out from underneath the pressure block resulting in visible indentation marks.",
+        "fixture_key_elements": [
+          "epoxy primer",
+          "polyurea topcoat",
+          "fast cure",
+          "low VOC coating system"
+        ],
+        "fixture_reads_on_ours": "NO",
+        "n": 26,
+        "raw_file": "EP2653485A2.html",
+        "raw_snapshot_sha256": "54ea48f9eb65fbd93fdd1b479a4fd1c410ad1f1c74c96e22470b983c1c28cd0e",
+        "raw_snapshot_sha256_matches_pin": true,
+        "status": "FAIL_FABRICATED_OR_UNSUPPORTED_ELEMENT",
+        "unsupported_elements": [
+          "polyurea topcoat",
+          "low VOC coating system"
+        ]
+      }
+    ]
+  },
+  "run_type": "AUDIT_ONLY_static_recompute_plus_cached_primary_source_snapshot",
+  "schema": "amphora.ip-fto-guard.claim-chart-provenance-diagnostic.v1",
+  "study_id": "ip-fto-guard-claim-chart-provenance-v1",
+  "theory_reference": "Primary-source re-derivation from the publicly published patent document itself (35 U.S.C. 112(b) claim definiteness; MPEP 9th ed. Rev. 07.2022 Sec. 2111 claim-construction-from-plain-language convention); Google Patents public bibliographic/claim-text rendering of the same USPTO/EPO/WIPO-published document already cited by each family's `url` field."
+}

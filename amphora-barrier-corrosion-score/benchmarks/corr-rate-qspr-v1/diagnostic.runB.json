@@ -1,0 +1,171 @@
+{
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-barrier-corrosion-score/corr-rate-qspr-v1",
+  "closes_gate": "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+  "cohort": {
+    "composition_coverage_pct": 69.996103,
+    "n_modeled": 7699,
+    "n_records_with_alloy_composition": 5389,
+    "n_unique_environments": 155,
+    "n_unique_materials": 612
+  },
+  "cross_validation": {
+    "environment_safe_leave_environment_out_5fold": {
+      "baseline_environment_mean": {
+        "mae": 1.040666,
+        "r2": -0.033954,
+        "rmse": 1.27366
+      },
+      "baseline_global_mean": {
+        "mae": 1.040666,
+        "r2": -0.033954,
+        "rmse": 1.27366
+      },
+      "baseline_material_mean": {
+        "mae": 1.061719,
+        "r2": -0.118098,
+        "rmse": 1.324472
+      },
+      "gbm": {
+        "mae": 0.918638,
+        "r2": 0.111969,
+        "rmse": 1.180366
+      }
+    },
+    "material_safe_leave_material_out_5fold": {
+      "baseline_environment_mean": {
+        "mae": 0.86814,
+        "r2": 0.233841,
+        "rmse": 1.096383
+      },
+      "baseline_global_mean": {
+        "mae": 1.024374,
+        "r2": -0.004427,
+        "rmse": 1.255342
+      },
+      "baseline_material_mean": {
+        "mae": 1.024374,
+        "r2": -0.004427,
+        "rmse": 1.255342
+      },
+      "gbm": {
+        "mae": 0.807025,
+        "r2": 0.315892,
+        "rmse": 1.036013
+      }
+    },
+    "random_5fold_leakage_reference": {
+      "baseline_environment_mean": {
+        "mae": 0.846902,
+        "r2": 0.27004,
+        "rmse": 1.070169
+      },
+      "baseline_global_mean": {
+        "mae": 1.02166,
+        "r2": -9.1e-05,
+        "rmse": 1.252629
+      },
+      "baseline_material_mean": {
+        "mae": 0.87131,
+        "r2": 0.208067,
+        "rmse": 1.114672
+      },
+      "gbm": {
+        "mae": 0.694937,
+        "r2": 0.460397,
+        "rmse": 0.92011
+      }
+    }
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "canonical_round_decimals": 6,
+    "omp_num_threads": "1",
+    "seed": 0
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (requires trust-anchored phase0-evaluator key)",
+    "coating-barrier authority (this is substrate corrosion, not coating barrier)",
+    "human / independent review"
+  ],
+  "features": {
+    "alloy_composition_elements_wt_pct": [
+      "fe",
+      "cr",
+      "ni",
+      "mo",
+      "cu",
+      "ti",
+      "zr",
+      "nb",
+      "ta",
+      "co",
+      "w",
+      "al",
+      "mn",
+      "si",
+      "c",
+      "pb",
+      "sn",
+      "ag",
+      "pt",
+      "au"
+    ],
+    "composition_reference": "ASM Handbook Vol.1/Vol.3; ASTM alloy specs (nominal wt%)",
+    "environment_chemistry_flags": [
+      "chloride",
+      "fluoride",
+      "bromide",
+      "halide",
+      "ox_acid",
+      "red_acid",
+      "org_acid",
+      "sulfuric",
+      "alkali",
+      "marine",
+      "salt",
+      "water",
+      "is_acid"
+    ],
+    "environment_reference": "aqueous corrosion chemistry keyword rules (halide/oxidizing/reducing/organic-acid/alkali/marine)",
+    "n_features": 35,
+    "other": [
+      "temperature_c",
+      "temperature_missing_flag"
+    ]
+  },
+  "headline_material_safe": {
+    "best_naive_baseline_r2": 0.233841,
+    "best_naive_baseline_rmse": 1.096383,
+    "error_reduction_vs_best_baseline_pct": 5.50631,
+    "gbm_mae": 0.807025,
+    "gbm_r2": 0.315892,
+    "gbm_rmse_log_units": 1.036013,
+    "interpretation": "Diagnostic. Group-safe (leave-material-out) corrosion-rate QSPR; modest positive skill over naive baselines. Random-CV R2 is inflated by material leakage (see indicator). No candidate/coating superiority claim.",
+    "leakage_indicator_random_r2_minus_material_safe_r2": 0.144505,
+    "rmse_cluster_bootstrap_ci95": [
+      0.989306,
+      1.076048
+    ]
+  },
+  "model": {
+    "estimator": "HistGradientBoostingRegressor",
+    "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "random_state": 0
+    },
+    "sklearn_version": "1.9.0"
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-qspr-diagnostic.v1",
+  "target": "log10(corrosion_rate_mm_per_year)",
+  "target_interpretation": "bare metal/alloy substrate corrosion rate in a chemical environment; NOT organic-coating barrier"
+}

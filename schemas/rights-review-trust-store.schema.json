@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authorization_status": {
+      "enum": [
+        "AUTHORIZED_RIGHTS_REVIEW_IDENTITIES",
+        "PENDING_EXTERNAL_RIGHTS_REVIEWER"
+      ]
+    },
+    "keys": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "algorithm": { "const": "Ed25519" },
+          "development": { "type": "boolean" },
+          "key_id": { "pattern": "^rights-reviewer-[0-9a-f]{64}$", "type": "string" },
+          "public_key_hex": { "pattern": "^[0-9a-f]{64}$", "type": "string" },
+          "revoked": { "type": "boolean" },
+          "rights_review_authorized": { "type": "boolean" },
+          "role": { "const": "RIGHTS_REVIEWER" }
+        },
+        "required": [
+          "key_id",
+          "algorithm",
+          "role",
+          "public_key_hex",
+          "rights_review_authorized",
+          "development",
+          "revoked"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema": { "const": "amphora.rights-review-trust-store.v1" }
+  },
+  "required": ["schema", "authorization_status", "keys"],
+  "title": "Amphora rights-review trust store v1",
+  "type": "object"
+}

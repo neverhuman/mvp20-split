@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "3236435ba944e785028367b55c60c4c528266495aa1b32af995199b0d654d3e6",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-formulation-arithmetic",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

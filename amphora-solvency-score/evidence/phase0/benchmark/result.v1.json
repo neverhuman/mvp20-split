@@ -1,0 +1,193 @@
+{
+  "benchmark_execution_complete": true,
+  "bundle_sha256": "250df3607956c175ddfce9cc5f487aef229c406374b18db4f0cfcf1c80ac9b87",
+  "first_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-solvency-score/benchmarks/bigsoldb-v1/evaluation_receipt.v20.canonical.json": "74d3a0f71e6512283de2bf32a16fc76a1543439dbbb0a92c73e986d4f187a9ae",
+        "amphora-solvency-score/reference/solvency/source-landscape.v1.json": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6",
+        "config/benchmark-lock.v1.json": "43de2cbf4bc63747f675587fc63111bc578d7ae803e73a3300e809448a93d209",
+        "config/benchmark-locks/amphora-solvency-score.v1.json": "97fa89d672767a94427f9f412ee4e92656751c3369d9afacd8411a17042f7afc",
+        "config/program/solvency-model-split.v1.json": "48b174964b9cb9c01b89425abc8a8f16f7a308624b7efdeacc83c3aa9f6f16cb",
+        "config/program/solvency-sources.v1.json": "e4a219a8156f4700bfccb318590a28fd2d6de6a7fb3f6a5967ad5917264eeed3",
+        "module-manifest.json": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f"
+      },
+      "benchmark_lock_hash": "43de2cbf4bc63747f675587fc63111bc578d7ae803e73a3300e809448a93d209",
+      "claim_locks": {
+        "no_fabricated_fallback_score": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_rank_authority": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "single_phase_fraction_is_not_probability": true,
+        "unpigmented_carrier_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "SHADOW",
+      "evidence_tier": "PUBLIC_RETROSPECTIVE",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "CHECKED_ARTIFACT_REPORTED_METRICS",
+          "deterministic_control_diagnostic": null,
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": true,
+          "observations": [
+            {
+              "json_path": "splits[0].split",
+              "value": "leave_solute_out"
+            },
+            {
+              "json_path": "splits[0].model.rmse",
+              "value": 0.8770255643028615
+            },
+            {
+              "json_path": "splits[0].model.rmse_ci95_cluster_bootstrap[0]",
+              "value": 0.8416341720920943
+            },
+            {
+              "json_path": "splits[0].model.rmse_ci95_cluster_bootstrap[1]",
+              "value": 0.9154344725058612
+            },
+            {
+              "json_path": "splits[0].model.r2",
+              "value": 0.48194739618244054
+            },
+            {
+              "json_path": "splits[0].baselines.b1_solvent_mean.rmse",
+              "value": 1.1686915142248226
+            },
+            {
+              "json_path": "n_rows_modeled",
+              "value": 94532
+            },
+            {
+              "json_path": "raw_sha256",
+              "value": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0"
+            }
+          ],
+          "operational_readiness": "READY",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": "MODEL_BEATS_BEST_BASELINE_ON_UNSEEN_SOLUTES_AUDIT_ONLY"
+        }
+      },
+      "module_id": "amphora-solvency-score",
+      "passed": true,
+      "receipt_id": "receipt-e86ec80f8212fc9df0d7c971",
+      "registry_manifest_hash": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "a08c354ad086f2cdb8fa3f634f20052bdedf37ce0f8ac0310bb84f3c016b709b",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "legacy_local_receipt_authority": "NONE",
+  "module_id": "amphora-solvency-score",
+  "replay_identical": true,
+  "schema": "amphora.module-phase0-benchmark-result.v1",
+  "scientific_outcome": "PASSED",
+  "second_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-solvency-score/benchmarks/bigsoldb-v1/evaluation_receipt.v20.canonical.json": "74d3a0f71e6512283de2bf32a16fc76a1543439dbbb0a92c73e986d4f187a9ae",
+        "amphora-solvency-score/reference/solvency/source-landscape.v1.json": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6",
+        "config/benchmark-lock.v1.json": "43de2cbf4bc63747f675587fc63111bc578d7ae803e73a3300e809448a93d209",
+        "config/benchmark-locks/amphora-solvency-score.v1.json": "97fa89d672767a94427f9f412ee4e92656751c3369d9afacd8411a17042f7afc",
+        "config/program/solvency-model-split.v1.json": "48b174964b9cb9c01b89425abc8a8f16f7a308624b7efdeacc83c3aa9f6f16cb",
+        "config/program/solvency-sources.v1.json": "e4a219a8156f4700bfccb318590a28fd2d6de6a7fb3f6a5967ad5917264eeed3",
+        "module-manifest.json": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f"
+      },
+      "benchmark_lock_hash": "43de2cbf4bc63747f675587fc63111bc578d7ae803e73a3300e809448a93d209",
+      "claim_locks": {
+        "no_fabricated_fallback_score": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_rank_authority": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "single_phase_fraction_is_not_probability": true,
+        "unpigmented_carrier_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "SHADOW",
+      "evidence_tier": "PUBLIC_RETROSPECTIVE",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "CHECKED_ARTIFACT_REPORTED_METRICS",
+          "deterministic_control_diagnostic": null,
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": true,
+          "observations": [
+            {
+              "json_path": "splits[0].split",
+              "value": "leave_solute_out"
+            },
+            {
+              "json_path": "splits[0].model.rmse",
+              "value": 0.8770255643028615
+            },
+            {
+              "json_path": "splits[0].model.rmse_ci95_cluster_bootstrap[0]",
+              "value": 0.8416341720920943
+            },
+            {
+              "json_path": "splits[0].model.rmse_ci95_cluster_bootstrap[1]",
+              "value": 0.9154344725058612
+            },
+            {
+              "json_path": "splits[0].model.r2",
+              "value": 0.48194739618244054
+            },
+            {
+              "json_path": "splits[0].baselines.b1_solvent_mean.rmse",
+              "value": 1.1686915142248226
+            },
+            {
+              "json_path": "n_rows_modeled",
+              "value": 94532
+            },
+            {
+              "json_path": "raw_sha256",
+              "value": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0"
+            }
+          ],
+          "operational_readiness": "READY",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": "MODEL_BEATS_BEST_BASELINE_ON_UNSEEN_SOLUTES_AUDIT_ONLY"
+        }
+      },
+      "module_id": "amphora-solvency-score",
+      "passed": true,
+      "receipt_id": "receipt-e86ec80f8212fc9df0d7c971",
+      "registry_manifest_hash": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "a08c354ad086f2cdb8fa3f634f20052bdedf37ce0f8ac0310bb84f3c016b709b",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

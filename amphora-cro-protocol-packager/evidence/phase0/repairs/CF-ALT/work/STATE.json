@@ -1,0 +1,32 @@
+{
+  "schema": "amphora.cro-protocol-packager.cf-alt-state.v1",
+  "campaign_item_id": "CF-ALT",
+  "module": "amphora-cro-protocol-packager",
+  "fires": [
+    {
+      "fire_id": "20260811T030001-523942-cc6bad6ad57c",
+      "outcome": "CLAIM_REFUTED",
+      "attack": "checked this module's own carried-candidate corpus (reference/mvp20/out/capture_template.json: candidates M00097/M00101/M00109) for evidence-indistinguishable pairs and whether each has a named discriminating experiment keyed to it",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-ALT/attempts/cf-alt-ranked-alternates-discriminating-experiment-audit-receipt.v1.dsse.json"
+    },
+    {
+      "fire_id": "20260811T040001-1070388-fa987b4c0efe",
+      "outcome": "CLAIM_SURVIVED",
+      "attack": "repair-mode fire 2/2 (final): added candidate_ranking (primary+ranked_alternates) and candidate_pairwise_discriminating_experiments to capture_template.json within this module's own write scope; re-attacked with a v2 checker (core evidence_indistinguishable/all_pairs/find_unresolved logic byte-identical to v1) that (a) regression-checks itself against the saved pre-repair snapshot and reproduces fire 1's exact finding, (b) runs the live acceptance test (n_unresolved=0, ranking valid), (c) positive-control-strips one pair's resolution and confirms it re-flags",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-ALT/done/cf-alt-ranked-alternates-discriminating-experiment-repair-receipt.v1.dsse.json",
+      "key_findings": [
+        "pre-repair capture_template.json sha256 28a642b8644cd8ac948da1f2548d4cf5ca3a2313bd58fb1f9471fcc97af8b65d (snapshot at evidence/phase0/repairs/CF-ALT/work/pre_repair_capture_template.snapshot.json)",
+        "post-repair capture_template.json sha256 4e3f2dca7ded443d327345e286d4e254a2d50301440575de90b02187b45da5be",
+        "all 3 pairs among M00097/M00101/M00109 now carry a pair-keyed named discriminating experiment (M00-id namespace, reusing this file's own decision_experiment/acceptance_gates/statistical_decision_rules infrastructure); candidate_ranking states primary=M00097, ranked_alternates=[M00101, M00109]",
+        "two-replay byte-stability gate PASS; positive control detected=true; regression check against untouched pre-repair snapshot reproduces fire 1's 3/3-unresolved finding exactly",
+        "residual out-of-scope findings NOT resolved by this repair (do not block done): M00098/Enhanced-65 absent from this module's own candidates list; the M00-id<->track-name (Envelope-65/Enhanced-65/Lineage-60/CRO-Robust-65) crosswalk remains unstructured; funnel_results.json and power_analysis.json still do not exist anywhere in the repo"
+      ]
+    }
+  ],
+  "next_fire_should": [
+    "CF-ALT is now DONE (max_fires=2 exhausted, criterion met on fire 2). No further CF-ALT fires are scheduled. If a future fire in this or another module wants to resolve the M00098/Enhanced-65 bookkeeping gap or the M00-id<->track-name crosswalk, treat those as new, separately-scoped items -- they are not part of CF-ALT's pre-committed refutation criterion."
+  ],
+  "last_updated_fire_id": "20260811T040001-1070388-fa987b4c0efe",
+  "campaign_item_status": "done",
+  "budget_exhausted": true
+}

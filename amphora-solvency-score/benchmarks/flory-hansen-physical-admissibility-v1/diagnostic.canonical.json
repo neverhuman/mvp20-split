@@ -1,0 +1,233 @@
+{
+  "admissibility_envelope_MPa_half": [
+    9.600000000000001,
+    59.875
+  ],
+  "admissibility_envelope_source": "Barton 1991 CRC Handbook of Solubility Parameters and Hansen 2007 Handbook of Solubility Parameters 2nd ed. Table A.1 -- the two references cited BY THESE SAME RECEIPTS as the coefficient source -- tabulate solvents/polymers within roughly [12, 47.9] MPa^0.5 (47.9, water, is the single most extreme value actually consumed as a Barton-table constant in these receipts). Envelope applies a further +/-20-25% margin for a deliberately conservative test.",
+  "attack_type": "physical_admissibility_audit_of_underlying_baseline_labels",
+  "claim_under_attack": {
+    "claim_text": "ML (HistGBM) beats classical Flory-Huggins theory (B1 pure Fedors 1974 group-contribution delta_p, 0 fitted params; B2 linear-rescaled, 2 fitted params) and classical Hansen 1967/2007 3-component theory (same Van Krevelen 1990 / Beerbower 1984 group contribution for delta_d/delta_p/delta_h), by R^2 gaps of +5029.7/+5390.0/+208.1 (Flory-Huggins pure), +0.835/+0.826/+0.914 (Flory-Huggins rescaled), and +2,041,132/+3,637,462/+... (Hansen pure) across chloroform/ethanol/water.",
+    "kpi_receipts": [
+      "amphora-solvency-score/evidence/phase0/kpis/omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json",
+      "amphora-solvency-score/evidence/phase0/kpis/omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json"
+    ],
+    "receipts": [
+      "amphora-solvency-score/reference/mvp20/data/omg_chi_flory_huggins_physical_baseline_receipt.v1.json",
+      "amphora-solvency-score/reference/mvp20/data/omg_chi_hansen_3component_physical_baseline_receipt.v1.json"
+    ]
+  },
+  "does_not_close": [
+    "a corrected re-derivation of delta_p/delta_d/delta_p/delta_h from raw OMG SMILES with a bug-fixed (non-degenerate) Fedors/Van Krevelen implementation, and a re-run of B1/B2 on the corrected values, to determine whether ML still wins against a VALID physical baseline (not attempted this fire -- flagged as W7 follow-on)",
+    "root-causing the exact line-level defect in the (unrecovered -- not checked into this module tree) Python script that produced these two receipts",
+    "human / independent review"
+  ],
+  "flory_huggins_b2_degeneracy": {
+    "chloroform": {
+      "b0_r2": -0.01998343626275645,
+      "b0_rmse": 0.2730223770314986,
+      "b2_collapsed_to_constant_predictor": true,
+      "b2_r2": -0.020016249132953856,
+      "b2_rmse": 0.2730267685615232,
+      "degenerate_slope": true,
+      "fitted_slope": 3.8331366621201303e-19,
+      "r2_matches_b0_to_4dp": true,
+      "rmse_matches_b0_to_4dp": true
+    },
+    "criterion_b_triggered_fh": true,
+    "ethanol": {
+      "b0_r2": -0.0005243553642548804,
+      "b0_rmse": 0.1479356667369883,
+      "b2_collapsed_to_constant_predictor": true,
+      "b2_r2": -0.0005281545637738638,
+      "b2_rmse": 0.14793594760800227,
+      "degenerate_slope": true,
+      "fitted_slope": -2.05726239373452e-19,
+      "r2_matches_b0_to_4dp": true,
+      "rmse_matches_b0_to_4dp": true
+    },
+    "water": {
+      "b0_r2": -5.054809970395091e-05,
+      "b0_rmse": 0.1918284722327496,
+      "b2_collapsed_to_constant_predictor": true,
+      "b2_r2": -5.271136740425675e-05,
+      "b2_rmse": 0.19182867971031878,
+      "degenerate_slope": true,
+      "fitted_slope": -1.5752668089328237e-18,
+      "r2_matches_b0_to_4dp": true,
+      "rmse_matches_b0_to_4dp": true
+    }
+  },
+  "flory_huggins_delta_p_admissibility": {
+    "criterion_a_triggered_fh_delta_p": true,
+    "max": {
+      "admissible_envelope_MPa_half": [
+        9.600000000000001,
+        59.875
+      ],
+      "exceeds_envelope": true,
+      "observed": 5155043623.842392,
+      "orders_of_magnitude_over_ceiling": 7.93
+    },
+    "mean": {
+      "admissible_envelope_MPa_half": [
+        9.600000000000001,
+        59.875
+      ],
+      "exceeds_envelope": true,
+      "observed": 209738.25602106913,
+      "orders_of_magnitude_over_ceiling": 3.54
+    },
+    "min_reported": 12.93680417474266,
+    "std_exceeds_mean_evidence_of_heavy_tail": true,
+    "std_reported": 32878719.970869992
+  },
+  "hansen_b2_degeneracy": {
+    "chloroform": {
+      "b0_r2": -0.01998343626275645,
+      "b0_rmse": 0.2730223770314986,
+      "b2_collapsed_to_constant_predictor": true,
+      "b2_r2": -0.020016249132953856,
+      "b2_rmse": 0.2730267685615232,
+      "degenerate_slope": true,
+      "fitted_slope": 3.232364632975384e-35,
+      "r2_matches_b0_to_4dp": true,
+      "rmse_matches_b0_to_4dp": true
+    },
+    "criterion_b_triggered_hansen": true,
+    "ethanol": {
+      "b0_r2": -0.0005243553642548804,
+      "b0_rmse": 0.1479356667369883,
+      "b2_collapsed_to_constant_predictor": true,
+      "b2_r2": -0.0005281545637738638,
+      "b2_rmse": 0.14793594760800227,
+      "degenerate_slope": true,
+      "fitted_slope": -1.7348252276954738e-35,
+      "r2_matches_b0_to_4dp": true,
+      "rmse_matches_b0_to_4dp": true
+    },
+    "water": {
+      "b0_r2": -5.054809970395091e-05,
+      "b0_rmse": 0.1918284722327496,
+      "b2_collapsed_to_constant_predictor": true,
+      "b2_r2": -5.271136740425675e-05,
+      "b2_rmse": 0.19182867971031878,
+      "degenerate_slope": true,
+      "fitted_slope": -1.328373369445623e-34,
+      "r2_matches_b0_to_4dp": true,
+      "rmse_matches_b0_to_4dp": true
+    }
+  },
+  "hansen_delta_d_p_h_total_admissibility": {
+    "delta_d": {
+      "criterion_a_triggered_hansen_delta_d": true,
+      "max": {
+        "admissible_envelope_MPa_half": [
+          9.600000000000001,
+          59.875
+        ],
+        "exceeds_envelope": true,
+        "observed": 5.333950808666931e+17,
+        "orders_of_magnitude_over_ceiling": 15.95
+      },
+      "mean": {
+        "admissible_envelope_MPa_half": [
+          9.600000000000001,
+          59.875
+        ],
+        "exceeds_envelope": true,
+        "observed": 21698603891773.465,
+        "orders_of_magnitude_over_ceiling": 11.56
+      },
+      "min_reported": 13.233082706766917,
+      "std_exceeds_mean_evidence_of_heavy_tail": true,
+      "std_reported": 3401978504946328.5
+    },
+    "delta_h": {
+      "criterion_a_triggered_hansen_delta_h": true,
+      "max": {
+        "admissible_envelope_MPa_half": [
+          9.600000000000001,
+          59.875
+        ],
+        "exceeds_envelope": true,
+        "observed": 3075314490.8249693,
+        "orders_of_magnitude_over_ceiling": 7.71
+      },
+      "mean": {
+        "admissible_envelope_MPa_half": [
+          9.600000000000001,
+          59.875
+        ],
+        "exceeds_envelope": true,
+        "observed": 125118.76210752562,
+        "orders_of_magnitude_over_ceiling": 3.32
+      },
+      "min_reported": 0.0,
+      "std_exceeds_mean_evidence_of_heavy_tail": true,
+      "std_reported": 19614267.39747431
+    },
+    "delta_p": {
+      "criterion_a_triggered_hansen_delta_p": true,
+      "max": {
+        "admissible_envelope_MPa_half": [
+          9.600000000000001,
+          59.875
+        ],
+        "exceeds_envelope": true,
+        "observed": 3.500065222015418e+17,
+        "orders_of_magnitude_over_ceiling": 15.77
+      },
+      "mean": {
+        "admissible_envelope_MPa_half": [
+          9.600000000000001,
+          59.875
+        ],
+        "exceeds_envelope": true,
+        "observed": 14238325693670.805,
+        "orders_of_magnitude_over_ceiling": 11.38
+      },
+      "min_reported": 0.0,
+      "std_exceeds_mean_evidence_of_heavy_tail": true,
+      "std_reported": 2232331545288941.5
+    },
+    "delta_total": {
+      "criterion_a_triggered_hansen_delta_total": true,
+      "max": {
+        "admissible_envelope_MPa_half": [
+          9.600000000000001,
+          59.875
+        ],
+        "exceeds_envelope": true,
+        "observed": 6.379771766108914e+17,
+        "orders_of_magnitude_over_ceiling": 16.03
+      },
+      "mean": {
+        "admissible_envelope_MPa_half": [
+          9.600000000000001,
+          59.875
+        ],
+        "exceeds_envelope": true,
+        "observed": 25953021585383.195,
+        "orders_of_magnitude_over_ceiling": 11.64
+      },
+      "min_reported": 13.233082706766917,
+      "std_exceeds_mean_evidence_of_heavy_tail": true,
+      "std_reported": 4069000107668832.5
+    }
+  },
+  "interpretation": "Both physical-baseline computations (Fedors 1974 delta_p for Flory-Huggins; Van Krevelen/Beerbower delta_d/delta_p/delta_h for Hansen) are not physically admissible representations of classical solubility-parameter theory: their own reported summary statistics violate the admissibility envelope defined by the receipts' own cited reference handbooks by many orders of magnitude, and the B2 'fairly rescaled physical theory' comparator is mathematically degenerate (collapsed to a constant predictor) as a direct, mechanically-traceable consequence. The claim that these two signed Phase-0 KPIs establish 'ML beats classical Flory-Huggins/Hansen theory' via a genuine physical baseline is REFUTED: the comparison was never made against admissible classical theory. This does NOT establish that ML is inferior to a correctly-computed classical baseline -- that comparison remains untested and is flagged as follow-on work. It also does not affect the module's live Rust runtime (mission.md: 'Retired Python implementation records have diagnostic provenance only and are not live authority') or the BigSolDB LSO claim (separately attacked under campaign items C1/W6); it is scoped strictly to the two OMG chi Flory-Huggins/Hansen physical-baseline-vs-ML KPI receipts.",
+  "mechanism": "chi_FH = V_s/(RT) x (delta_p - delta_s)^2 + 0.34 is quadratic in delta_p. A denominator collapse in the Fedors delta_p = sqrt(sum(dE_i)/sum(dV_i)) computation (sum(dV_i) -> ~0 for a nonzero subset of the 98,328 OMG polymer structures, most plausibly caused by SMARTS/group-matching failures on unusual ring/branching patterns in the 'methyl_terminated_product' polymer-analog SMILES) produces delta_p values up to 5.16e9 MPa^0.5 (Flory-Huggins receipt) and Hansen components up to 5.33e17 MPa^0.5 (Hansen receipt) -- 8 to 16 orders of magnitude beyond any physically real solubility parameter. Squaring these in chi_FH produces astronomically large predicted-chi values for the contaminated subset, which dominates the sum-of-squared-errors an OLS fit (B2's slope+intercept) minimizes, driving the fitted slope to ~1e-19 to 1e-35 (statistically zero) and collapsing B2 to the constant-mean predictor B0 -- explaining, mechanically, why the receipts report 'flory_huggins_rescaled_beats_pure' / 'hansen_rescaled_beats_pure' as trivially true (B2 == B0, both == R^2 ~ 0) rather than as a genuine finding that linearly-recalibrated classical theory cannot compete.",
+  "pre_registered_refutation_criteria": {
+    "criterion_a": "reported delta_p (FH) or any of delta_d/delta_p/delta_h/delta_total (Hansen) mean or max lies outside [9.600000000000001, 59.875] MPa^0.5",
+    "criterion_a_triggered": true,
+    "criterion_b": "B2 (linear-rescaled) fitted OLS slope has |slope| < 1e-10 for any solvent in either receipt, AND its R^2/RMSE match the B0 constant-mean baseline to 4 decimal places (i.e. B2 collapsed to a constant predictor)",
+    "criterion_b_triggered": true,
+    "verdict": "CLAIM_REFUTED"
+  },
+  "schema": "amphora.solvency-score.flory-hansen-physical-admissibility-audit.v1",
+  "self_framing_discrepancy": {
+    "discrepancy": "The KPI receipt's own 'HONEST FRAMING' note attributes the catastrophic R^2 (-5028.92) to the physical formula's outputs being 'in the wrong scale range' -- i.e. framed as a linear scale/units mismatch, fixable in principle by rescaling (which is exactly what B2 attempts). That framing is materially understated: this audit's admissibility check shows delta_p is not merely off-scale, it is physically impossible (mean 209,738 MPa^0.5 against a physically-real ceiling of ~48 MPa^0.5 -- a ~4,400x, not a small-multiple, deviation, driven by a denominator-collapse computational defect, not a unit convention choice). Because Pearson r (used by the receipt's fallback 'flory_huggins_pure_pearson_correlation_positive' gates, e.g. r=0.239 for chloroform, cited as evidence physical theory 'does capture SOME signal') is itself sensitive to high-leverage outliers, a Pearson r computed against a predictor with values spanning 12.9 to 5.16e9 cannot be assumed to reflect the bulk-sample physical relationship either -- it may be dominated by the same handful of pathological structures. This audit does not re-derive the r value and cannot confirm or rule out leverage-driven inflation; it is flagged as an open question for the W7 follow-on, not asserted as established.",
+    "kpi_receipt_gate": "flory_huggins_pure_R2_catastrophically_worse_than_constant_documented_chloroform",
+    "kpi_receipt_quoted_note": "HONESTLY DOCUMENTED: pure FH R\u00b2 (-5028.92) is much worse than constant R\u00b2 (-0.0200) for chloroform \u2014 the raw physical formula's magnitude prediction is off by orders of magnitude on the OMG chi scale. Passing this gate acknowledges the finding honestly. The RESCALED variant (B2) tries to fix this but recovers only to constant-baseline R\u00b2 (-0.0200) \u2014 the physical correlation is too weak to survive rescaling to a predictive fit. Full ML (R\u00b2 +0.8150) is required to capture OMG chi variance."
+  }
+}

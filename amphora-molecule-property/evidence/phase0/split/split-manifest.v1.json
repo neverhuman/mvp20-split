@@ -1,0 +1,30 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "6e4b3dea1067fb4fadd7de9589f29d27eabcffba341f5cd3d23f7fb7d30ec2f6",
+  "import_hashes": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "db1fb8a4c257c82740176aedeecd8c34a9ae1e6b6e824f08535e06fcc0c4abf6",
+      "source_path": "config/program/molecule-property-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "6d6be71599ef32e44682ab762d2f8603da633a597d00ba0cdec129dd2e670dfa",
+      "source_path": "config/program/molecule-property-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "cae7d558ccdcd2e5909c14a58e1a0f33f72eb2be5207f3caf8be18d9c2a1070d",
+      "source_path": "config/benchmark-locks/amphora-molecule-property.v1.json"
+    }
+  ],
+  "module_id": "amphora-molecule-property",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

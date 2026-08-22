@@ -1,0 +1,684 @@
+{
+  "acceptance_bar": {
+    "applicability_domain_fail_closed_rate_floor": 1.0,
+    "authority_lock_preservation_rate_floor": 1.0,
+    "candidate_property_evidence_injection_ignore_rate_floor": 1.0,
+    "mass_balance_absolute_agreement_rate_floor": 1.0,
+    "mass_balance_identity_rate_floor": 1.0,
+    "mass_order_drift_stability_rate_floor": 1.0,
+    "median_mass_balance_absolute_error_g_ceiling_reported_only": 0.0,
+    "positive_mass_ingredient_id_agreement_rate_floor": 1.0
+  },
+  "authority": {
+    "arithmetic_scope": "MASS_ONLY",
+    "dimensioned_property_arithmetic_available": false,
+    "optimizer_authority": false,
+    "scientific_readiness": "NOT_APPLICABLE"
+  },
+  "fixture_id": "amphora-formulation-arithmetic-phase0-known-answer-2026-07-21",
+  "formulations": [
+    {
+      "candidate": {
+        "candidate_id": "epoxy-primer-dgeba-teta-standard",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "additive-defoamer": {
+              "ingredient_id": "additive-defoamer",
+              "mass_g": 0.0
+            },
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 80.0
+            },
+            "solvent-mek": {
+              "ingredient_id": "solvent-mek",
+              "mass_g": 40.0
+            },
+            "titanium-dioxide-pigment": {
+              "ingredient_id": "titanium-dioxide-pigment",
+              "mass_g": 60.0
+            }
+          },
+          "part_B": {
+            "teta-hardener": {
+              "ingredient_id": "teta-hardener",
+              "mass_g": 12.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [
+        "part_A.additive-defoamer"
+      ],
+      "expected_part_a_g": 180.0,
+      "expected_part_b_g": 12.0,
+      "expected_positive_mass_ingredient_ids": [
+        "dgeba-resin",
+        "solvent-mek",
+        "teta-hardener",
+        "titanium-dioxide-pigment"
+      ],
+      "expected_total_g": 192.0,
+      "formulation_id": "epoxy-primer-dgeba-teta-standard",
+      "hardener_family": "aliphatic-polyamine",
+      "mix_ratio_by_mass": "192:12 by mass (approx 16:1)",
+      "source": "Ellis 1993 \u00a76.2 DGEBA+TETA laminate stoichiometry; Dow DER 331 + DEH 24 TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-primer-dgeba-deta-industrial",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "red-iron-oxide-pigment": {
+              "ingredient_id": "red-iron-oxide-pigment",
+              "mass_g": 40.0
+            },
+            "solvent-xylene": {
+              "ingredient_id": "solvent-xylene",
+              "mass_g": 30.0
+            },
+            "zinc-phosphate-pigment": {
+              "ingredient_id": "zinc-phosphate-pigment",
+              "mass_g": 20.0
+            }
+          },
+          "part_B": {
+            "deta-hardener": {
+              "ingredient_id": "deta-hardener",
+              "mass_g": 11.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 190.0,
+      "expected_part_b_g": 11.0,
+      "expected_positive_mass_ingredient_ids": [
+        "deta-hardener",
+        "dgeba-resin",
+        "red-iron-oxide-pigment",
+        "solvent-xylene",
+        "zinc-phosphate-pigment"
+      ],
+      "expected_total_g": 201.0,
+      "formulation_id": "epoxy-primer-dgeba-deta-industrial",
+      "hardener_family": "aliphatic-polyamine",
+      "mix_ratio_by_mass": "190:11 by mass",
+      "source": "Wicks/Jones/Pappas 2007 Chapter 25 industrial primer stoichiometry; Dow DER 331 + DEH 20 TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-adhesive-dgeba-tepa-neat",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            }
+          },
+          "part_B": {
+            "tepa-hardener": {
+              "ingredient_id": "tepa-hardener",
+              "mass_g": 15.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 100.0,
+      "expected_part_b_g": 15.0,
+      "expected_positive_mass_ingredient_ids": [
+        "dgeba-resin",
+        "tepa-hardener"
+      ],
+      "expected_total_g": 115.0,
+      "formulation_id": "epoxy-adhesive-dgeba-tepa-neat",
+      "hardener_family": "aliphatic-polyamine",
+      "mix_ratio_by_mass": "100:15 by mass",
+      "source": "Ellis 1993 \u00a76.3 DGEBA+TEPA adhesive; Huntsman Aradur 43 TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-primer-dgeba-ipda-4to1",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "additive-wetting-agent": {
+              "ingredient_id": "additive-wetting-agent",
+              "mass_g": 1.0
+            },
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "solvent-butyl-acetate": {
+              "ingredient_id": "solvent-butyl-acetate",
+              "mass_g": 25.0
+            }
+          },
+          "part_B": {
+            "ipda-hardener": {
+              "ingredient_id": "ipda-hardener",
+              "mass_g": 24.0
+            },
+            "solvent-mibk": {
+              "ingredient_id": "solvent-mibk",
+              "mass_g": 6.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 126.0,
+      "expected_part_b_g": 30.0,
+      "expected_positive_mass_ingredient_ids": [
+        "additive-wetting-agent",
+        "dgeba-resin",
+        "ipda-hardener",
+        "solvent-butyl-acetate",
+        "solvent-mibk"
+      ],
+      "expected_total_g": 156.0,
+      "formulation_id": "epoxy-primer-dgeba-ipda-4to1",
+      "hardener_family": "cycloaliphatic-amine",
+      "mix_ratio_by_mass": "126:30 by mass",
+      "source": "Huntsman Araldite GY-6010 + HY 2954 (IPDA) TDS mix ratio"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-topcoat-dgeba-pacm-marine",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "additive-flow-agent": {
+              "ingredient_id": "additive-flow-agent",
+              "mass_g": 2.0
+            },
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "solvent-mek": {
+              "ingredient_id": "solvent-mek",
+              "mass_g": 15.0
+            },
+            "solvent-xylene": {
+              "ingredient_id": "solvent-xylene",
+              "mass_g": 20.0
+            },
+            "titanium-dioxide-pigment": {
+              "ingredient_id": "titanium-dioxide-pigment",
+              "mass_g": 70.0
+            }
+          },
+          "part_B": {
+            "pacm-hardener": {
+              "ingredient_id": "pacm-hardener",
+              "mass_g": 30.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 207.0,
+      "expected_part_b_g": 30.0,
+      "expected_positive_mass_ingredient_ids": [
+        "additive-flow-agent",
+        "dgeba-resin",
+        "pacm-hardener",
+        "solvent-mek",
+        "solvent-xylene",
+        "titanium-dioxide-pigment"
+      ],
+      "expected_total_g": 237.0,
+      "formulation_id": "epoxy-topcoat-dgeba-pacm-marine",
+      "hardener_family": "cycloaliphatic-amine",
+      "mix_ratio_by_mass": "207:30 by mass",
+      "source": "Air Products Ancamine 2049 (PACM) marine topcoat TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-primer-dgeba-dach-clearcoat",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "solvent-mek": {
+              "ingredient_id": "solvent-mek",
+              "mass_g": 30.0
+            }
+          },
+          "part_B": {
+            "dach-hardener": {
+              "ingredient_id": "dach-hardener",
+              "mass_g": 15.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 130.0,
+      "expected_part_b_g": 15.0,
+      "expected_positive_mass_ingredient_ids": [
+        "dach-hardener",
+        "dgeba-resin",
+        "solvent-mek"
+      ],
+      "expected_total_g": 145.0,
+      "formulation_id": "epoxy-primer-dgeba-dach-clearcoat",
+      "hardener_family": "cycloaliphatic-amine",
+      "mix_ratio_by_mass": "130:15 by mass",
+      "source": "Momentive Heloxy DACH clearcoat TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-industrial-dgeba-mxda-tank-lining",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "additive-defoamer": {
+              "ingredient_id": "additive-defoamer",
+              "mass_g": 0.0
+            },
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "solvent-toluene": {
+              "ingredient_id": "solvent-toluene",
+              "mass_g": 40.0
+            },
+            "titanium-dioxide-pigment": {
+              "ingredient_id": "titanium-dioxide-pigment",
+              "mass_g": 50.0
+            }
+          },
+          "part_B": {
+            "mxda-hardener": {
+              "ingredient_id": "mxda-hardener",
+              "mass_g": 22.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [
+        "part_A.additive-defoamer"
+      ],
+      "expected_part_a_g": 190.0,
+      "expected_part_b_g": 22.0,
+      "expected_positive_mass_ingredient_ids": [
+        "dgeba-resin",
+        "mxda-hardener",
+        "solvent-toluene",
+        "titanium-dioxide-pigment"
+      ],
+      "expected_total_g": 212.0,
+      "formulation_id": "epoxy-industrial-dgeba-mxda-tank-lining",
+      "hardener_family": "aromatic-amine",
+      "mix_ratio_by_mass": "190:22 by mass",
+      "source": "Mitsubishi Gaskineide Nx-1052 (MXDA) tank lining TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-composite-dgeba-mpda-aerospace",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            }
+          },
+          "part_B": {
+            "mpda-hardener": {
+              "ingredient_id": "mpda-hardener",
+              "mass_g": 14.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 100.0,
+      "expected_part_b_g": 14.0,
+      "expected_positive_mass_ingredient_ids": [
+        "dgeba-resin",
+        "mpda-hardener"
+      ],
+      "expected_total_g": 114.0,
+      "formulation_id": "epoxy-composite-dgeba-mpda-aerospace",
+      "hardener_family": "aromatic-amine",
+      "mix_ratio_by_mass": "100:14 by mass",
+      "source": "Ellis 1993 \u00a76.4 DGEBA+MPDA aerospace composite; Aldrich MPDA + Epikote 828"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-laminate-dgeba-mda-high-temp",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "solvent-xylene": {
+              "ingredient_id": "solvent-xylene",
+              "mass_g": 20.0
+            }
+          },
+          "part_B": {
+            "mda-hardener": {
+              "ingredient_id": "mda-hardener",
+              "mass_g": 27.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 120.0,
+      "expected_part_b_g": 27.0,
+      "expected_positive_mass_ingredient_ids": [
+        "dgeba-resin",
+        "mda-hardener",
+        "solvent-xylene"
+      ],
+      "expected_total_g": 147.0,
+      "formulation_id": "epoxy-laminate-dgeba-mda-high-temp",
+      "hardener_family": "aromatic-amine",
+      "mix_ratio_by_mass": "120:27 by mass",
+      "source": "Ellis 1993 \u00a76.4 DGEBA+MDA high-Tg laminate; Epikote 828 + MDA TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-primer-dgeba-amidoamine-huntsman",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "red-iron-oxide-pigment": {
+              "ingredient_id": "red-iron-oxide-pigment",
+              "mass_g": 30.0
+            },
+            "solvent-xylene": {
+              "ingredient_id": "solvent-xylene",
+              "mass_g": 25.0
+            },
+            "talc-filler": {
+              "ingredient_id": "talc-filler",
+              "mass_g": 20.0
+            }
+          },
+          "part_B": {
+            "amidoamine-adduct-1-hardener": {
+              "ingredient_id": "amidoamine-adduct-1-hardener",
+              "mass_g": 50.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 175.0,
+      "expected_part_b_g": 50.0,
+      "expected_positive_mass_ingredient_ids": [
+        "amidoamine-adduct-1-hardener",
+        "dgeba-resin",
+        "red-iron-oxide-pigment",
+        "solvent-xylene",
+        "talc-filler"
+      ],
+      "expected_total_g": 225.0,
+      "formulation_id": "epoxy-primer-dgeba-amidoamine-huntsman",
+      "hardener_family": "amidoamine-adduct",
+      "mix_ratio_by_mass": "175:50 by mass",
+      "source": "Huntsman Aradur 3486 (amidoamine) primer TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-topcoat-dgeba-amidoamine-momentive",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "solvent-butyl-acetate": {
+              "ingredient_id": "solvent-butyl-acetate",
+              "mass_g": 20.0
+            },
+            "titanium-dioxide-pigment": {
+              "ingredient_id": "titanium-dioxide-pigment",
+              "mass_g": 40.0
+            }
+          },
+          "part_B": {
+            "amidoamine-adduct-2-hardener": {
+              "ingredient_id": "amidoamine-adduct-2-hardener",
+              "mass_g": 53.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 160.0,
+      "expected_part_b_g": 53.0,
+      "expected_positive_mass_ingredient_ids": [
+        "amidoamine-adduct-2-hardener",
+        "dgeba-resin",
+        "solvent-butyl-acetate",
+        "titanium-dioxide-pigment"
+      ],
+      "expected_total_g": 213.0,
+      "formulation_id": "epoxy-topcoat-dgeba-amidoamine-momentive",
+      "hardener_family": "amidoamine-adduct",
+      "mix_ratio_by_mass": "160:53 by mass",
+      "source": "Momentive Epikote 828 + Epikure 3125 (amidoamine) TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-primer-dgeba-mannich-fast-cure",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "carbon-black-pigment": {
+              "ingredient_id": "carbon-black-pigment",
+              "mass_g": 5.0
+            },
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "solvent-mek": {
+              "ingredient_id": "solvent-mek",
+              "mass_g": 20.0
+            }
+          },
+          "part_B": {
+            "mannich-base-hardener": {
+              "ingredient_id": "mannich-base-hardener",
+              "mass_g": 36.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 125.0,
+      "expected_part_b_g": 36.0,
+      "expected_positive_mass_ingredient_ids": [
+        "carbon-black-pigment",
+        "dgeba-resin",
+        "mannich-base-hardener",
+        "solvent-mek"
+      ],
+      "expected_total_g": 161.0,
+      "formulation_id": "epoxy-primer-dgeba-mannich-fast-cure",
+      "hardener_family": "mannich-base",
+      "mix_ratio_by_mass": "125:36 by mass",
+      "source": "Air Products Ancamine 2735 (Mannich) fast-cure primer TDS"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-white-topcoat-dgeba-teta-below-cpvc",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "additive-wetting-agent": {
+              "ingredient_id": "additive-wetting-agent",
+              "mass_g": 1.5
+            },
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "solvent-mek": {
+              "ingredient_id": "solvent-mek",
+              "mass_g": 20.0
+            },
+            "talc-filler": {
+              "ingredient_id": "talc-filler",
+              "mass_g": 15.0
+            },
+            "titanium-dioxide-pigment": {
+              "ingredient_id": "titanium-dioxide-pigment",
+              "mass_g": 40.0
+            }
+          },
+          "part_B": {
+            "teta-hardener": {
+              "ingredient_id": "teta-hardener",
+              "mass_g": 12.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 176.5,
+      "expected_part_b_g": 12.0,
+      "expected_positive_mass_ingredient_ids": [
+        "additive-wetting-agent",
+        "dgeba-resin",
+        "solvent-mek",
+        "talc-filler",
+        "teta-hardener",
+        "titanium-dioxide-pigment"
+      ],
+      "expected_total_g": 188.5,
+      "formulation_id": "epoxy-white-topcoat-dgeba-teta-below-cpvc",
+      "hardener_family": "aliphatic-polyamine",
+      "mix_ratio_by_mass": "176.5:12 by mass",
+      "source": "Wicks/Jones/Pappas 2007 Chapter 25 white topcoat below CPVC"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-red-primer-dgeba-deta-highly-pigmented",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "additive-defoamer": {
+              "ingredient_id": "additive-defoamer",
+              "mass_g": 0.0
+            },
+            "additive-flow-agent": {
+              "ingredient_id": "additive-flow-agent",
+              "mass_g": 1.0
+            },
+            "calcium-carbonate-filler": {
+              "ingredient_id": "calcium-carbonate-filler",
+              "mass_g": 40.0
+            },
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            },
+            "red-iron-oxide-pigment": {
+              "ingredient_id": "red-iron-oxide-pigment",
+              "mass_g": 80.0
+            },
+            "solvent-xylene": {
+              "ingredient_id": "solvent-xylene",
+              "mass_g": 30.0
+            }
+          },
+          "part_B": {
+            "deta-hardener": {
+              "ingredient_id": "deta-hardener",
+              "mass_g": 11.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [
+        "part_A.additive-defoamer"
+      ],
+      "expected_part_a_g": 251.0,
+      "expected_part_b_g": 11.0,
+      "expected_positive_mass_ingredient_ids": [
+        "additive-flow-agent",
+        "calcium-carbonate-filler",
+        "deta-hardener",
+        "dgeba-resin",
+        "red-iron-oxide-pigment",
+        "solvent-xylene"
+      ],
+      "expected_total_g": 262.0,
+      "formulation_id": "epoxy-red-primer-dgeba-deta-highly-pigmented",
+      "hardener_family": "aliphatic-polyamine",
+      "mix_ratio_by_mass": "251:11 by mass",
+      "source": "Wicks/Jones/Pappas 2007 Chapter 25 highly-pigmented anticorrosive primer"
+    },
+    {
+      "candidate": {
+        "candidate_id": "epoxy-neat-dgeba-ipda-clear-adhesive",
+        "candidate_type": "formulation",
+        "formulation": {
+          "part_A": {
+            "dgeba-resin": {
+              "ingredient_id": "dgeba-resin",
+              "mass_g": 100.0
+            }
+          },
+          "part_B": {
+            "ipda-hardener": {
+              "ingredient_id": "ipda-hardener",
+              "mass_g": 24.0
+            }
+          }
+        }
+      },
+      "expected_ignored_zero_mass_entries": [],
+      "expected_part_a_g": 100.0,
+      "expected_part_b_g": 24.0,
+      "expected_positive_mass_ingredient_ids": [
+        "dgeba-resin",
+        "ipda-hardener"
+      ],
+      "expected_total_g": 124.0,
+      "formulation_id": "epoxy-neat-dgeba-ipda-clear-adhesive",
+      "hardener_family": "cycloaliphatic-amine",
+      "mix_ratio_by_mass": "100:24 by mass",
+      "source": "Huntsman Araldite GY-6010 + HY 2954 clear adhesive minimum mix"
+    }
+  ],
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored two-part epoxy-amine coating formulation compilation from Wicks/Jones/Pappas 2007, Ellis 1993, and supplier technical data sheets for Phase-0 mass-balance-arithmetic controls only; no wet-lab formulations or CRO measurements checked in",
+    "source_id": "amphora_phase0_formulation_arithmetic_known_answer",
+    "source_url": "local:amphora-formulation-arithmetic/reference/phase0-formulation-arithmetic-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.formulation-arithmetic-phase0-known-answer.v1",
+  "toolkit_version": "2026.03.2"
+}

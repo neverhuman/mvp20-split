@@ -1,0 +1,13 @@
+{
+  "item": "X-SCHEMA-WATCH",
+  "fire": "20260814T100001-636676-50a308a040b8",
+  "status": "done",
+  "tempdir_sim_verdict": "guard mechanism detects and restores a planted RUNTIME->MODULE-HARNESS flip in its own working-tree, byte-identical worktree-vs-HEAD after restore",
+  "real_tree_census": {"RUNTIME": 10, "MODULE-HARNESS": 17, "total": 27},
+  "guard_log_lines_total": 1,
+  "guard_log_last_line": "2026-08-04T06:46:57+00:00 RESTORED_SCHEMA_FLIP amphora-solvency-score/evidence/phase0/benchmark/result.v1.json",
+  "unbound_benchmark_results_count": 9,
+  "unbound_benchmark_results": ["amphora-cro-protocol-packager","amphora-evidence-intake-validator","amphora-known-answer-benchmarks","amphora-molecule-design-gate","amphora-molecule-property","amphora-optimizer-orchestrator","amphora-redteam-audit","amphora-report-packager","amphora-source-ledger"],
+  "verdict": "CLAIM_REFUTED",
+  "note": "guard narrowly works for live in-flight flips (tempdir-proven, and its one real firing on 2026-08-04); but the general claim is false in practice: 9 modules including amphora-redteam-audit itself currently carry a schema flip that WAS silently committed pre-guard and remains unrepaired, invisible to the guard by construction (its restore precondition requires HEAD already RUNTIME-shape)."
+}

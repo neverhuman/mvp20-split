@@ -1,0 +1,8 @@
+{
+  "campaign_item_id": "W-T-PROV",
+  "done_receipt": "amphora-run-provenance/evidence/phase0/repairs/W-T-PROV/done/w-t-prov-done-receipt.v1.dsse.json",
+  "done_receipt_sha256": "d1006e68934f71b35281e0da5f881c18da769de52d4d058cecc066e7fc4653ff",
+  "fire_id": "20260813T140002-3929273-c76f6f94f6ac",
+  "outcome": "CLAIM_REFUTED",
+  "status": "done"
+}

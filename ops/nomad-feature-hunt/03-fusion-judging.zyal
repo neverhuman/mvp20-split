@@ -1,0 +1,38 @@
+<<<ZYAL v1:daemon id=nomad-feature-hunt-fusion>>>
+version: v1
+intent: daemon
+confirm: RUN_FOREVER
+id: nomad-feature-hunt-fusion
+
+job:
+  name: "NOMAD feature fusion, scoring, and judging"
+  objective: "Fuse only after both branches have valid receipts; promote only measured executable features."
+
+loop:
+  policy: bounded
+  max_iterations: 1
+  sleep: 2s
+  circuit_breaker:
+    max_consecutive_errors: 1
+    on_trip: halt
+engine:
+  command: "python3 -m nomad_feature_hunt.controller fusion --run-id ${RUN_ID:?RUN_ID_required}"
+
+deduplication:
+  gates: [canonical_formula, semantic_fingerprint, deterministic_64_structure_signature, exact_value_hash]
+  compare_existing_columns: 9969
+  preserve_failures: true
+
+scoring:
+  screen: { seeds: [1701, 2909, 4219], folds: 2, trees: 150, task_type: GPU }
+  confirmation: { top_nonoverlapping_batches: 5, folds: 5, trees: 400, task_type: GPU }
+  cpu_fallback: forbidden
+  controls: { atlas_winner_mean_rmsle: 0.05053309, existing_809_mean_rmsle: 0.05162068 }
+  tie_band: 0.0001
+  tie_break: smaller_set
+
+promotion:
+  repository_merge: forbidden
+  destination: promoted_features
+<<<END_ZYAL id=nomad-feature-hunt-fusion>>>
+ZYAL_ARM RUN_FOREVER id=nomad-feature-hunt-fusion

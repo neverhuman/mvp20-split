@@ -1,0 +1,134 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "da0efaff535f844721be13cdd5df0a301fe43d5de834f0a2172edb5dfc40c73d",
+  "payload_decoded": {
+    "authority": "AUDIT_ONLY",
+    "campaign_item_id": "T-05",
+    "claim_under_attack": {
+      "claim_text": "amphora-formulation-arithmetic has never received an adversarial verdict; its constructive SIGNED_RECEIPT-era receipts are untested claims.",
+      "mass_balance_identity_claim": "mass_balance_identity_rate observed 1.0 (15/15) at f64 bit precision",
+      "receipt_path": "amphora-formulation-arithmetic/docs/mission.md"
+    },
+    "date": "2026-08-05",
+    "directive_obligation": "T2-05",
+    "directive_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+    "directive_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-formulation-arithmetic",
+    "overall_verdict_reasoning": "Part 1 (mass-vs-volume-basis oracle) is a clean scope-mismatch negative result: this module's sole arithmetic identity is mass-only addition, so the ported R-A05 defect class has no target here. Part 2 (founder directive T2-05's EquivalentBalanceV1 attack) IS a genuine refutation: the pre-committed refutation_criterion's first disjunct ('any candidate-supplied constant enters the balance') is observed to occur. Per the assignment's own rule ('Any case that slips through = CLAIM_REFUTED with the case quoted verbatim'), the overall verdict for this fire is CLAIM_REFUTED. No positive_control is required for a refutation (only for a survival).",
+    "part_1_mass_volume_basis_oracle": {
+      "arithmetic_identities_enumerated_count": 15,
+      "arithmetic_identities_per_formulation": 1,
+      "conclusion": "The R-A05 defect class (mass-fraction-weighted averaging of a volume-basis percentage) CANNOT manifest in this module's KAT: no formulation record carries a volume-basis percentage, density, or volume field of any kind -- every quantity is a raw mass_g value and the sole identity is pure addition, not a weighted average. 0/15 formulations flagged; this is a scope-mismatch negative result (attack ported and run to completion, found no applicable target), not evidence the identity survived a genuine test of THAT defect class.",
+      "fixture_path": "amphora-formulation-arithmetic/reference/phase0-formulation-arithmetic-known-answer.v1.json",
+      "fixture_sha256": "31c9b84c9c8c847ad72cc133d929e795bdc36e02c6a638676eb41ee87f9fd202",
+      "invalid_basis_flagged_count": 0,
+      "mass_basis_identity_exact_pass_rate": 1.0,
+      "objective": "Port the exact-rational (fractions.Fraction) mass-vs-volume-basis oracle from amphora-known-answer-benchmarks R-A05 (evidence/phase0/repairs/R-A05/work/r_a05_repair.py) to this module's domain and recompute every arithmetic identity both ways.",
+      "result": "SCOPE_MISMATCH_NEGATIVE: the R-A05 defect class cannot manifest in this module's KAT identity (pure mass addition, no volume/density/percent-solids field exists anywhere in the fixture) -- ported, run to exhaustive completion (0/15 flagged), not evidence of survival of that specific defect class since it had no applicable target here."
+    },
+    "part_2_equivalent_balance_directive_attack": {
+      "cases_run": [
+        "BASELINE_VALID",
+        "NON_FINITE_MASS_0",
+        "NON_FINITE_MASS_1",
+        "NON_FINITE_MASS_2",
+        "NON_FINITE_MASS_3",
+        "NON_FINITE_MASS_4",
+        "NON_FINITE_OR_NONPOSITIVE_RATIO_0",
+        "NON_FINITE_OR_NONPOSITIVE_RATIO_1",
+        "NON_FINITE_OR_NONPOSITIVE_RATIO_2",
+        "NON_FINITE_OR_NONPOSITIVE_RATIO_3",
+        "NON_FINITE_OR_NONPOSITIVE_RATIO_4",
+        "NON_FINITE_OR_NONPOSITIVE_RATIO_5",
+        "ZERO_GROUP_RESIN_NO_OXIRANE",
+        "ZERO_GROUP_HARDENER_NO_AMINE_H",
+        "ZERO_GROUP_BOTH",
+        "INVERTED_RATIO_RECIPROCAL",
+        "ROLE_INVERSION_DUAL_ROLE_MOLECULES",
+        "CANDIDATE_SUPPLIED_CONSTANT_INJECTION",
+        "NEGATIVE_CONTROL_WRONG_TOOLKIT_STRING"
+      ],
+      "core_injection_case_result": {
+        "ahew_g_per_eq": 20.6,
+        "amine_hydrogen_equivalents": 99900.0,
+        "candidate_property_overrides_accepted_flag": false,
+        "eew_g_per_eq": 0.001001001001001001,
+        "epoxide_equivalents_n_e": 99900.0,
+        "hardener_mass_g": 2057940.0000000002,
+        "outcome": "OK_SCALAR_RETURNED",
+        "theoretical_hardener_phr": 2057940.0000000002,
+        "total_mass_g": 2058040.0000000002
+      },
+      "diagnostic_files": {
+        "diagnostic.runA.json": {
+          "path": "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/work/diagnostic.runA.json",
+          "sha256": "d75ba9e555b2bde7f9663a9ad801a81476ed125dcc4db3c993382c39b0035cc5"
+        },
+        "diagnostic.runB.json": {
+          "path": "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/work/diagnostic.runB.json",
+          "sha256": "d75ba9e555b2bde7f9663a9ad801a81476ed125dcc4db3c993382c39b0035cc5"
+        },
+        "two_replay_byte_identical": true
+      },
+      "founder_done_criteria_check": {
+        "all_override_paths_absent": false,
+        "all_override_paths_absent_evidence": "FALSE: CANDIDATE_SUPPLIED_CONSTANT_INJECTION case proves an override path exists -- see refutation_criterion_observation_explanation above.",
+        "full_record_recomputes_on_revalidation": true,
+        "full_record_recomputes_on_revalidation_evidence": "BASELINE_VALID front_door_recompute: n_e and phr independently recomputed from the RETURNED struct's own resin_mass_g/eew_g_per_eq/hardener_mass_g fields match the struct's own epoxide_equivalents/theoretical_hardener_phr fields exactly (bit-exact f64 equality) -- validate_against() in lib.rs additionally re-derives and equality-checks the whole record from host facts.",
+        "non_finite_and_inversion_rejected_with_reason": "PARTIAL",
+        "non_finite_and_inversion_rejected_with_reason_evidence": "Non-finite: 11/11 NaN/Inf/-Inf/0/negative mass-and-ratio probes correctly return Err(InvalidQuantity) with a named reason -- fully holds. 'Inversion': reciprocal-ratio inputs (2.0 vs 0.5) are, correctly, both ACCEPTED as distinct valid stoichiometry choices (equivalent_ratio has no independently verifiable 'correct direction' inside pure arithmetic, so rejecting it would itself be wrong) -- this is intended behavior, not a gap. But role-inversion on structurally ambiguous (dual_role=true) molecule pairs IS silently accepted in both argument orders with no check at all -- see ROLE_INVERSION_DUAL_ROLE_MOLECULES case.",
+        "zero_group_abstains": true,
+        "zero_group_abstains_evidence": "ZERO_GROUP_RESIN_NO_OXIRANE -> Err(NoOxirane); ZERO_GROUP_HARDENER_NO_AMINE_H -> Err(NoReactiveAmineHydrogen); ZERO_GROUP_BOTH -> Err(NoOxirane). All 3/3 fail closed."
+      },
+      "harness_cargo_toml_sha256": "bc1e355b75dc35ff5dc7576de62683c12d60c155de3af676bae41cff162656cb",
+      "harness_source_sha256": "152562bb0fccea7f2a95aea5c723dc18c3461b1856cb1a95f4046ffa3ed62533",
+      "method": "Standalone Rust probe crate at amphora-formulation-arithmetic/src/amphora_formulation_arithmetic/t05_harness/ (path-dependency on the real amphora-formulation-capabilities and amphora-rdkit-ffi crates, its own empty [workspace] table so it is NOT a root-workspace member) directly calling the LIVE EquivalentBalanceV1::from_host_facts at amphora-formulation-capabilities/src/lib.rs. Not a re-implementation or simulation: real compiled Rust, real struct, real function.",
+      "non_finite_and_zero_group_axes_all_failed_closed": true,
+      "objective": "Drive EquivalentBalanceV1 with inverted ratios, non-finite inputs, zero-group operands, mixed/incorrect unit provenance, and candidate MW/EEW/AHEW override attempts; check phr = 100*m_h/m_r and n_e = m_r/EEW recompute from host facts only.",
+      "target_function": "amphora_formulation_capabilities::EquivalentBalanceV1::from_host_facts",
+      "target_source_path": "amphora-formulation-capabilities/src/lib.rs"
+    },
+    "promotes_authority": false,
+    "refutation_criterion_observation_explanation": "The CANDIDATE_SUPPLIED_CONSTANT_INJECTION case shows the observation occurred: a hand-fabricated MoleculeFactsV1 record (average_molecular_weight_g_mol=1.0, oxirane_ring_count=999 -- neither value ever computed by RDKit) was deserialized from raw JSON reproducing only the two PUBLIC constants REACTIVE_ONTOLOGY_VERSION and REQUIRED_RDKIT_VERSION, then accepted by EquivalentBalanceV1::from_host_facts and returned a fully-computed scalar (eew_g_per_eq=0.001001..., hardener_mass_g=2057940.0, theoretical_hardener_phr=2057940.0) instead of failing closed. MoleculeFactsV1 is a plain pub-field struct with #[derive(Deserialize)] and carries NO cryptographic/host-attestation field binding it to a genuine RDKit invocation; the only gate inside from_host_facts is a string/bool equality check against two constants that are themselves public and trivially reproducible. This is a real, candidate-supplied constant entering the balance -- the exact observation the founder's refutation_criterion names.",
+    "refutation_criterion_observation_occurred": true,
+    "refutation_criterion_verbatim": "Any candidate-supplied constant enters the balance, or an inverted/non-finite case returns a scalar instead of failing closed.",
+    "repair_artifacts": {
+      "basis_audit_report_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/work/mass-volume-basis-audit.v1.json",
+      "basis_audit_report_sha256": "f0d5c8bb25cdc8f9a9e347d8b5c4e1cc317d785f1da0174bd364f732638c18f5",
+      "basis_audit_script_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/work/t05_mass_volume_basis_audit.py",
+      "basis_audit_script_sha256": "ee035510d9bc9935a9688776a2f7605fd3a69cdc03a0c8976d357df30734d319",
+      "harness_cargo_toml_sha256": "bc1e355b75dc35ff5dc7576de62683c12d60c155de3af676bae41cff162656cb",
+      "harness_crate_path": "amphora-formulation-arithmetic/src/amphora_formulation_arithmetic/t05_harness/",
+      "harness_diagnostic_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/work/diagnostic.runA.json",
+      "harness_diagnostic_sha256": "d75ba9e555b2bde7f9663a9ad801a81476ed125dcc4db3c993382c39b0035cc5",
+      "harness_main_rs_sha256": "152562bb0fccea7f2a95aea5c723dc18c3461b1856cb1a95f4046ffa3ed62533"
+    },
+    "repair_item": "T-05",
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "two_replay_sha256": "b4bc3fd3a7036354905c48bcddba063c00ea041d63e7b398ee4b655804033bcc",
+    "two_replay_sha256_gate": "PASS",
+    "verdict": "CLAIM_REFUTED"
+  },
+  "signature": {
+    "payload": "eyJhdXRob3JpdHkiOiJBVURJVF9PTkxZIiwiY2FtcGFpZ25faXRlbV9pZCI6IlQtMDUiLCJjbGFpbV91bmRlcl9hdHRhY2siOnsiY2xhaW1fdGV4dCI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYyBoYXMgbmV2ZXIgcmVjZWl2ZWQgYW4gYWR2ZXJzYXJpYWwgdmVyZGljdDsgaXRzIGNvbnN0cnVjdGl2ZSBTSUdORURfUkVDRUlQVC1lcmEgcmVjZWlwdHMgYXJlIHVudGVzdGVkIGNsYWltcy4iLCJtYXNzX2JhbGFuY2VfaWRlbnRpdHlfY2xhaW0iOiJtYXNzX2JhbGFuY2VfaWRlbnRpdHlfcmF0ZSBvYnNlcnZlZCAxLjAgKDE1LzE1KSBhdCBmNjQgYml0IHByZWNpc2lvbiIsInJlY2VpcHRfcGF0aCI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYy9kb2NzL21pc3Npb24ubWQifSwiZGF0ZSI6IjIwMjYtMDgtMDUiLCJkaXJlY3RpdmVfb2JsaWdhdGlvbiI6IlQyLTA1IiwiZGlyZWN0aXZlX3BhdGgiOiJkb2NzL2RpcmVjdGl2ZXMvMjAyNi0wOC0wNS1jbG9zaW5nLXRoZS1vcGVuLXBvcnRmb2xpby5tZCIsImRpcmVjdGl2ZV9zaGEyNTYiOiJkY2VkYjA0OGUxMTQyNTI5ZGU4NGFhNmQ3NDFhMDY1ZmRjMjllYmY3NDRlZjFiMmZlYjgxOTUxYzc0NTczYTZkIiwiZmxpcHNfc2NpZW50aWZpY19yZWFkaW5lc3MiOmZhbHNlLCJnZW5lcmF0ZWRfb25faG9zdCI6InhiYWJlMiIsIm1vZGlmaWVzX2V4aXN0aW5nX3JlY2VpcHRzIjpmYWxzZSwibW9kaWZpZXNfbWFuaWZlc3QiOmZhbHNlLCJtb2R1bGUiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMiLCJvdmVyYWxsX3ZlcmRpY3RfcmVhc29uaW5nIjoiUGFydCAxIChtYXNzLXZzLXZvbHVtZS1iYXNpcyBvcmFjbGUpIGlzIGEgY2xlYW4gc2NvcGUtbWlzbWF0Y2ggbmVnYXRpdmUgcmVzdWx0OiB0aGlzIG1vZHVsZSdzIHNvbGUgYXJpdGhtZXRpYyBpZGVudGl0eSBpcyBtYXNzLW9ubHkgYWRkaXRpb24sIHNvIHRoZSBwb3J0ZWQgUi1BMDUgZGVmZWN0IGNsYXNzIGhhcyBubyB0YXJnZXQgaGVyZS4gUGFydCAyIChmb3VuZGVyIGRpcmVjdGl2ZSBUMi0wNSdzIEVxdWl2YWxlbnRCYWxhbmNlVjEgYXR0YWNrKSBJUyBhIGdlbnVpbmUgcmVmdXRhdGlvbjogdGhlIHByZS1jb21taXR0ZWQgcmVmdXRhdGlvbl9jcml0ZXJpb24ncyBmaXJzdCBkaXNqdW5jdCAoJ2FueSBjYW5kaWRhdGUtc3VwcGxpZWQgY29uc3RhbnQgZW50ZXJzIHRoZSBiYWxhbmNlJykgaXMgb2JzZXJ2ZWQgdG8gb2NjdXIuIFBlciB0aGUgYXNzaWdubWVudCdzIG93biBydWxlICgnQW55IGNhc2UgdGhhdCBzbGlwcyB0aHJvdWdoID0gQ0xBSU1fUkVGVVRFRCB3aXRoIHRoZSBjYXNlIHF1b3RlZCB2ZXJiYXRpbScpLCB0aGUgb3ZlcmFsbCB2ZXJkaWN0IGZvciB0aGlzIGZpcmUgaXMgQ0xBSU1fUkVGVVRFRC4gTm8gcG9zaXRpdmVfY29udHJvbCBpcyByZXF1aXJlZCBmb3IgYSByZWZ1dGF0aW9uIChvbmx5IGZvciBhIHN1cnZpdmFsKS4iLCJwYXJ0XzFfbWFzc192b2x1bWVfYmFzaXNfb3JhY2xlIjp7ImFyaXRobWV0aWNfaWRlbnRpdGllc19lbnVtZXJhdGVkX2NvdW50IjoxNSwiYXJpdGhtZXRpY19pZGVudGl0aWVzX3Blcl9mb3JtdWxhdGlvbiI6MSwiY29uY2x1c2lvbiI6IlRoZSBSLUEwNSBkZWZlY3QgY2xhc3MgKG1hc3MtZnJhY3Rpb24td2VpZ2h0ZWQgYXZlcmFnaW5nIG9mIGEgdm9sdW1lLWJhc2lzIHBlcmNlbnRhZ2UpIENBTk5PVCBtYW5pZmVzdCBpbiB0aGlzIG1vZHVsZSdzIEtBVDogbm8gZm9ybXVsYXRpb24gcmVjb3JkIGNhcnJpZXMgYSB2b2x1bWUtYmFzaXMgcGVyY2VudGFnZSwgZGVuc2l0eSwgb3Igdm9sdW1lIGZpZWxkIG9mIGFueSBraW5kIC0tIGV2ZXJ5IHF1YW50aXR5IGlzIGEgcmF3IG1hc3NfZyB2YWx1ZSBhbmQgdGhlIHNvbGUgaWRlbnRpdHkgaXMgcHVyZSBhZGRpdGlvbiwgbm90IGEgd2VpZ2h0ZWQgYXZlcmFnZS4gMC8xNSBmb3JtdWxhdGlvbnMgZmxhZ2dlZDsgdGhpcyBpcyBhIHNjb3BlLW1pc21hdGNoIG5lZ2F0aXZlIHJlc3VsdCAoYXR0YWNrIHBvcnRlZCBhbmQgcnVuIHRvIGNvbXBsZXRpb24sIGZvdW5kIG5vIGFwcGxpY2FibGUgdGFyZ2V0KSwgbm90IGV2aWRlbmNlIHRoZSBpZGVudGl0eSBzdXJ2aXZlZCBhIGdlbnVpbmUgdGVzdCBvZiBUSEFUIGRlZmVjdCBjbGFzcy4iLCJmaXh0dXJlX3BhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvcmVmZXJlbmNlL3BoYXNlMC1mb3JtdWxhdGlvbi1hcml0aG1ldGljLWtub3duLWFuc3dlci52MS5qc29uIiwiZml4dHVyZV9zaGEyNTYiOiIzMWM5Yjg0YzljOGM4NDdhZDcyY2MxMzNkOTI5ZTc5NWJkYzM2ZTAyYzZhNjM4Njc2ZWI0MWVlODdmOWZkMjAyIiwiaW52YWxpZF9iYXNpc19mbGFnZ2VkX2NvdW50IjowLCJtYXNzX2Jhc2lzX2lkZW50aXR5X2V4YWN0X3Bhc3NfcmF0ZSI6MS4wLCJvYmplY3RpdmUiOiJQb3J0IHRoZSBleGFjdC1yYXRpb25hbCAoZnJhY3Rpb25zLkZyYWN0aW9uKSBtYXNzLXZzLXZvbHVtZS1iYXNpcyBvcmFjbGUgZnJvbSBhbXBob3JhLWtub3duLWFuc3dlci1iZW5jaG1hcmtzIFItQTA1IChldmlkZW5jZS9waGFzZTAvcmVwYWlycy9SLUEwNS93b3JrL3JfYTA1X3JlcGFpci5weSkgdG8gdGhpcyBtb2R1bGUncyBkb21haW4gYW5kIHJlY29tcHV0ZSBldmVyeSBhcml0aG1ldGljIGlkZW50aXR5IGJvdGggd2F5cy4iLCJyZXN1bHQiOiJTQ09QRV9NSVNNQVRDSF9ORUdBVElWRTogdGhlIFItQTA1IGRlZmVjdCBjbGFzcyBjYW5ub3QgbWFuaWZlc3QgaW4gdGhpcyBtb2R1bGUncyBLQVQgaWRlbnRpdHkgKHB1cmUgbWFzcyBhZGRpdGlvbiwgbm8gdm9sdW1lL2RlbnNpdHkvcGVyY2VudC1zb2xpZHMgZmllbGQgZXhpc3RzIGFueXdoZXJlIGluIHRoZSBmaXh0dXJlKSAtLSBwb3J0ZWQsIHJ1biB0byBleGhhdXN0aXZlIGNvbXBsZXRpb24gKDAvMTUgZmxhZ2dlZCksIG5vdCBldmlkZW5jZSBvZiBzdXJ2aXZhbCBvZiB0aGF0IHNwZWNpZmljIGRlZmVjdCBjbGFzcyBzaW5jZSBpdCBoYWQgbm8gYXBwbGljYWJsZSB0YXJnZXQgaGVyZS4ifSwicGFydF8yX2VxdWl2YWxlbnRfYmFsYW5jZV9kaXJlY3RpdmVfYXR0YWNrIjp7ImNhc2VzX3J1biI6WyJCQVNFTElORV9WQUxJRCIsIk5PTl9GSU5JVEVfTUFTU18wIiwiTk9OX0ZJTklURV9NQVNTXzEiLCJOT05fRklOSVRFX01BU1NfMiIsIk5PTl9GSU5JVEVfTUFTU18zIiwiTk9OX0ZJTklURV9NQVNTXzQiLCJOT05fRklOSVRFX09SX05PTlBPU0lUSVZFX1JBVElPXzAiLCJOT05fRklOSVRFX09SX05PTlBPU0lUSVZFX1JBVElPXzEiLCJOT05fRklOSVRFX09SX05PTlBPU0lUSVZFX1JBVElPXzIiLCJOT05fRklOSVRFX09SX05PTlBPU0lUSVZFX1JBVElPXzMiLCJOT05fRklOSVRFX09SX05PTlBPU0lUSVZFX1JBVElPXzQiLCJOT05fRklOSVRFX09SX05PTlBPU0lUSVZFX1JBVElPXzUiLCJaRVJPX0dST1VQX1JFU0lOX05PX09YSVJBTkUiLCJaRVJPX0dST1VQX0hBUkRFTkVSX05PX0FNSU5FX0giLCJaRVJPX0dST1VQX0JPVEgiLCJJTlZFUlRFRF9SQVRJT19SRUNJUFJPQ0FMIiwiUk9MRV9JTlZFUlNJT05fRFVBTF9ST0xFX01PTEVDVUxFUyIsIkNBTkRJREFURV9TVVBQTElFRF9DT05TVEFOVF9JTkpFQ1RJT04iLCJORUdBVElWRV9DT05UUk9MX1dST05HX1RPT0xLSVRfU1RSSU5HIl0sImNvcmVfaW5qZWN0aW9uX2Nhc2VfcmVzdWx0Ijp7ImFoZXdfZ19wZXJfZXEiOjIwLjYsImFtaW5lX2h5ZHJvZ2VuX2VxdWl2YWxlbnRzIjo5OTkwMC4wLCJjYW5kaWRhdGVfcHJvcGVydHlfb3ZlcnJpZGVzX2FjY2VwdGVkX2ZsYWciOmZhbHNlLCJlZXdfZ19wZXJfZXEiOjAuMDAxMDAxMDAxMDAxMDAxMDAxLCJlcG94aWRlX2VxdWl2YWxlbnRzX25fZSI6OTk5MDAuMCwiaGFyZGVuZXJfbWFzc19nIjoyMDU3OTQwLjAwMDAwMDAwMDIsIm91dGNvbWUiOiJPS19TQ0FMQVJfUkVUVVJORUQiLCJ0aGVvcmV0aWNhbF9oYXJkZW5lcl9waHIiOjIwNTc5NDAuMDAwMDAwMDAwMiwidG90YWxfbWFzc19nIjoyMDU4MDQwLjAwMDAwMDAwMDJ9LCJkaWFnbm9zdGljX2ZpbGVzIjp7ImRpYWdub3N0aWMucnVuQS5qc29uIjp7InBhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvVC0wNS93b3JrL2RpYWdub3N0aWMucnVuQS5qc29uIiwic2hhMjU2IjoiZDc1YmE5ZTU1NWIyYmRlN2Y5NjYzYTlhZDgwMWE4MTQ3NmVkMTI1ZGNjNGRiM2M5OTMzODJjMzliMDAzNWNjNSJ9LCJkaWFnbm9zdGljLnJ1bkIuanNvbiI6eyJwYXRoIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL2V2aWRlbmNlL3BoYXNlMC9yZXBhaXJzL1QtMDUvd29yay9kaWFnbm9zdGljLnJ1bkIuanNvbiIsInNoYTI1NiI6ImQ3NWJhOWU1NTViMmJkZTdmOTY2M2E5YWQ4MDFhODE0NzZlZDEyNWRjYzRkYjNjOTkzMzgyYzM5YjAwMzVjYzUifSwidHdvX3JlcGxheV9ieXRlX2lkZW50aWNhbCI6dHJ1ZX0sImZvdW5kZXJfZG9uZV9jcml0ZXJpYV9jaGVjayI6eyJhbGxfb3ZlcnJpZGVfcGF0aHNfYWJzZW50IjpmYWxzZSwiYWxsX292ZXJyaWRlX3BhdGhzX2Fic2VudF9ldmlkZW5jZSI6IkZBTFNFOiBDQU5ESURBVEVfU1VQUExJRURfQ09OU1RBTlRfSU5KRUNUSU9OIGNhc2UgcHJvdmVzIGFuIG92ZXJyaWRlIHBhdGggZXhpc3RzIC0tIHNlZSByZWZ1dGF0aW9uX2NyaXRlcmlvbl9vYnNlcnZhdGlvbl9leHBsYW5hdGlvbiBhYm92ZS4iLCJmdWxsX3JlY29yZF9yZWNvbXB1dGVzX29uX3JldmFsaWRhdGlvbiI6dHJ1ZSwiZnVsbF9yZWNvcmRfcmVjb21wdXRlc19vbl9yZXZhbGlkYXRpb25fZXZpZGVuY2UiOiJCQVNFTElORV9WQUxJRCBmcm9udF9kb29yX3JlY29tcHV0ZTogbl9lIGFuZCBwaHIgaW5kZXBlbmRlbnRseSByZWNvbXB1dGVkIGZyb20gdGhlIFJFVFVSTkVEIHN0cnVjdCdzIG93biByZXNpbl9tYXNzX2cvZWV3X2dfcGVyX2VxL2hhcmRlbmVyX21hc3NfZyBmaWVsZHMgbWF0Y2ggdGhlIHN0cnVjdCdzIG93biBlcG94aWRlX2VxdWl2YWxlbnRzL3RoZW9yZXRpY2FsX2hhcmRlbmVyX3BociBmaWVsZHMgZXhhY3RseSAoYml0LWV4YWN0IGY2NCBlcXVhbGl0eSkgLS0gdmFsaWRhdGVfYWdhaW5zdCgpIGluIGxpYi5ycyBhZGRpdGlvbmFsbHkgcmUtZGVyaXZlcyBhbmQgZXF1YWxpdHktY2hlY2tzIHRoZSB3aG9sZSByZWNvcmQgZnJvbSBob3N0IGZhY3RzLiIsIm5vbl9maW5pdGVfYW5kX2ludmVyc2lvbl9yZWplY3RlZF93aXRoX3JlYXNvbiI6IlBBUlRJQUwiLCJub25fZmluaXRlX2FuZF9pbnZlcnNpb25fcmVqZWN0ZWRfd2l0aF9yZWFzb25fZXZpZGVuY2UiOiJOb24tZmluaXRlOiAxMS8xMSBOYU4vSW5mLy1JbmYvMC9uZWdhdGl2ZSBtYXNzLWFuZC1yYXRpbyBwcm9iZXMgY29ycmVjdGx5IHJldHVybiBFcnIoSW52YWxpZFF1YW50aXR5KSB3aXRoIGEgbmFtZWQgcmVhc29uIC0tIGZ1bGx5IGhvbGRzLiAnSW52ZXJzaW9uJzogcmVjaXByb2NhbC1yYXRpbyBpbnB1dHMgKDIuMCB2cyAwLjUpIGFyZSwgY29ycmVjdGx5LCBib3RoIEFDQ0VQVEVEIGFzIGRpc3RpbmN0IHZhbGlkIHN0b2ljaGlvbWV0cnkgY2hvaWNlcyAoZXF1aXZhbGVudF9yYXRpbyBoYXMgbm8gaW5kZXBlbmRlbnRseSB2ZXJpZmlhYmxlICdjb3JyZWN0IGRpcmVjdGlvbicgaW5zaWRlIHB1cmUgYXJpdGhtZXRpYywgc28gcmVqZWN0aW5nIGl0IHdvdWxkIGl0c2VsZiBiZSB3cm9uZykgLS0gdGhpcyBpcyBpbnRlbmRlZCBiZWhhdmlvciwgbm90IGEgZ2FwLiBCdXQgcm9sZS1pbnZlcnNpb24gb24gc3RydWN0dXJhbGx5IGFtYmlndW91cyAoZHVhbF9yb2xlPXRydWUpIG1vbGVjdWxlIHBhaXJzIElTIHNpbGVudGx5IGFjY2VwdGVkIGluIGJvdGggYXJndW1lbnQgb3JkZXJzIHdpdGggbm8gY2hlY2sgYXQgYWxsIC0tIHNlZSBST0xFX0lOVkVSU0lPTl9EVUFMX1JPTEVfTU9MRUNVTEVTIGNhc2UuIiwiemVyb19ncm91cF9hYnN0YWlucyI6dHJ1ZSwiemVyb19ncm91cF9hYnN0YWluc19ldmlkZW5jZSI6IlpFUk9fR1JPVVBfUkVTSU5fTk9fT1hJUkFORSAtPiBFcnIoTm9PeGlyYW5lKTsgWkVST19HUk9VUF9IQVJERU5FUl9OT19BTUlORV9IIC0+IEVycihOb1JlYWN0aXZlQW1pbmVIeWRyb2dlbik7IFpFUk9fR1JPVVBfQk9USCAtPiBFcnIoTm9PeGlyYW5lKS4gQWxsIDMvMyBmYWlsIGNsb3NlZC4ifSwiaGFybmVzc19jYXJnb190b21sX3NoYTI1NiI6ImJjMWUzNTViNzVkYzM1ZmY1ZGM3NTc2ZGU2MjY4M2MxMmQ2MGMxNTVkZTNhZjY3NmJhZTQxY2ZmMTYyNjU2Y2IiLCJoYXJuZXNzX3NvdXJjZV9zaGEyNTYiOiIxNTI1NjJiYjBmY2NlYTdmMmE5NWFlYTVjNzIzZGMxOGMzNDYxYjE4NTZjYjFhOTVmNDA0NmZmYTNlZDYyNTMzIiwibWV0aG9kIjoiU3RhbmRhbG9uZSBSdXN0IHByb2JlIGNyYXRlIGF0IGFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYy9zcmMvYW1waG9yYV9mb3JtdWxhdGlvbl9hcml0aG1ldGljL3QwNV9oYXJuZXNzLyAocGF0aC1kZXBlbmRlbmN5IG9uIHRoZSByZWFsIGFtcGhvcmEtZm9ybXVsYXRpb24tY2FwYWJpbGl0aWVzIGFuZCBhbXBob3JhLXJka2l0LWZmaSBjcmF0ZXMsIGl0cyBvd24gZW1wdHkgW3dvcmtzcGFjZV0gdGFibGUgc28gaXQgaXMgTk9UIGEgcm9vdC13b3Jrc3BhY2UgbWVtYmVyKSBkaXJlY3RseSBjYWxsaW5nIHRoZSBMSVZFIEVxdWl2YWxlbnRCYWxhbmNlVjE6OmZyb21faG9zdF9mYWN0cyBhdCBhbXBob3JhLWZvcm11bGF0aW9uLWNhcGFiaWxpdGllcy9zcmMvbGliLnJzLiBOb3QgYSByZS1pbXBsZW1lbnRhdGlvbiBvciBzaW11bGF0aW9uOiByZWFsIGNvbXBpbGVkIFJ1c3QsIHJlYWwgc3RydWN0LCByZWFsIGZ1bmN0aW9uLiIsIm5vbl9maW5pdGVfYW5kX3plcm9fZ3JvdXBfYXhlc19hbGxfZmFpbGVkX2Nsb3NlZCI6dHJ1ZSwib2JqZWN0aXZlIjoiRHJpdmUgRXF1aXZhbGVudEJhbGFuY2VWMSB3aXRoIGludmVydGVkIHJhdGlvcywgbm9uLWZpbml0ZSBpbnB1dHMsIHplcm8tZ3JvdXAgb3BlcmFuZHMsIG1peGVkL2luY29ycmVjdCB1bml0IHByb3ZlbmFuY2UsIGFuZCBjYW5kaWRhdGUgTVcvRUVXL0FIRVcgb3ZlcnJpZGUgYXR0ZW1wdHM7IGNoZWNrIHBociA9IDEwMCptX2gvbV9yIGFuZCBuX2UgPSBtX3IvRUVXIHJlY29tcHV0ZSBmcm9tIGhvc3QgZmFjdHMgb25seS4iLCJ0YXJnZXRfZnVuY3Rpb24iOiJhbXBob3JhX2Zvcm11bGF0aW9uX2NhcGFiaWxpdGllczo6RXF1aXZhbGVudEJhbGFuY2VWMTo6ZnJvbV9ob3N0X2ZhY3RzIiwidGFyZ2V0X3NvdXJjZV9wYXRoIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1jYXBhYmlsaXRpZXMvc3JjL2xpYi5ycyJ9LCJwcm9tb3Rlc19hdXRob3JpdHkiOmZhbHNlLCJyZWZ1dGF0aW9uX2NyaXRlcmlvbl9vYnNlcnZhdGlvbl9leHBsYW5hdGlvbiI6IlRoZSBDQU5ESURBVEVfU1VQUExJRURfQ09OU1RBTlRfSU5KRUNUSU9OIGNhc2Ugc2hvd3MgdGhlIG9ic2VydmF0aW9uIG9jY3VycmVkOiBhIGhhbmQtZmFicmljYXRlZCBNb2xlY3VsZUZhY3RzVjEgcmVjb3JkIChhdmVyYWdlX21vbGVjdWxhcl93ZWlnaHRfZ19tb2w9MS4wLCBveGlyYW5lX3JpbmdfY291bnQ9OTk5IC0tIG5laXRoZXIgdmFsdWUgZXZlciBjb21wdXRlZCBieSBSREtpdCkgd2FzIGRlc2VyaWFsaXplZCBmcm9tIHJhdyBKU09OIHJlcHJvZHVjaW5nIG9ubHkgdGhlIHR3byBQVUJMSUMgY29uc3RhbnRzIFJFQUNUSVZFX09OVE9MT0dZX1ZFUlNJT04gYW5kIFJFUVVJUkVEX1JES0lUX1ZFUlNJT04sIHRoZW4gYWNjZXB0ZWQgYnkgRXF1aXZhbGVudEJhbGFuY2VWMTo6ZnJvbV9ob3N0X2ZhY3RzIGFuZCByZXR1cm5lZCBhIGZ1bGx5LWNvbXB1dGVkIHNjYWxhciAoZWV3X2dfcGVyX2VxPTAuMDAxMDAxLi4uLCBoYXJkZW5lcl9tYXNzX2c9MjA1Nzk0MC4wLCB0aGVvcmV0aWNhbF9oYXJkZW5lcl9waHI9MjA1Nzk0MC4wKSBpbnN0ZWFkIG9mIGZhaWxpbmcgY2xvc2VkLiBNb2xlY3VsZUZhY3RzVjEgaXMgYSBwbGFpbiBwdWItZmllbGQgc3RydWN0IHdpdGggI1tkZXJpdmUoRGVzZXJpYWxpemUpXSBhbmQgY2FycmllcyBOTyBjcnlwdG9ncmFwaGljL2hvc3QtYXR0ZXN0YXRpb24gZmllbGQgYmluZGluZyBpdCB0byBhIGdlbnVpbmUgUkRLaXQgaW52b2NhdGlvbjsgdGhlIG9ubHkgZ2F0ZSBpbnNpZGUgZnJvbV9ob3N0X2ZhY3RzIGlzIGEgc3RyaW5nL2Jvb2wgZXF1YWxpdHkgY2hlY2sgYWdhaW5zdCB0d28gY29uc3RhbnRzIHRoYXQgYXJlIHRoZW1zZWx2ZXMgcHVibGljIGFuZCB0cml2aWFsbHkgcmVwcm9kdWNpYmxlLiBUaGlzIGlzIGEgcmVhbCwgY2FuZGlkYXRlLXN1cHBsaWVkIGNvbnN0YW50IGVudGVyaW5nIHRoZSBiYWxhbmNlIC0tIHRoZSBleGFjdCBvYnNlcnZhdGlvbiB0aGUgZm91bmRlcidzIHJlZnV0YXRpb25fY3JpdGVyaW9uIG5hbWVzLiIsInJlZnV0YXRpb25fY3JpdGVyaW9uX29ic2VydmF0aW9uX29jY3VycmVkIjp0cnVlLCJyZWZ1dGF0aW9uX2NyaXRlcmlvbl92ZXJiYXRpbSI6IkFueSBjYW5kaWRhdGUtc3VwcGxpZWQgY29uc3RhbnQgZW50ZXJzIHRoZSBiYWxhbmNlLCBvciBhbiBpbnZlcnRlZC9ub24tZmluaXRlIGNhc2UgcmV0dXJucyBhIHNjYWxhciBpbnN0ZWFkIG9mIGZhaWxpbmcgY2xvc2VkLiIsInJlcGFpcl9hcnRpZmFjdHMiOnsiYmFzaXNfYXVkaXRfcmVwb3J0X3BhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvVC0wNS93b3JrL21hc3Mtdm9sdW1lLWJhc2lzLWF1ZGl0LnYxLmpzb24iLCJiYXNpc19hdWRpdF9yZXBvcnRfc2hhMjU2IjoiZjBkNWM4YmIyNWNkYzhmOWE5ZTM0N2Q4YjVjNGUxY2MzMTdkNzg1ZjFkYTAxNzRiZDM2NGY3MzI2MzhjMThmNSIsImJhc2lzX2F1ZGl0X3NjcmlwdF9wYXRoIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL2V2aWRlbmNlL3BoYXNlMC9yZXBhaXJzL1QtMDUvd29yay90MDVfbWFzc192b2x1bWVfYmFzaXNfYXVkaXQucHkiLCJiYXNpc19hdWRpdF9zY3JpcHRfc2hhMjU2IjoiZWUwMzU1MTBkOWJjOTkzNWE5Njg4Nzc2YTJmNzYwNWZkM2E2OWNkYzAzYTBjODk3NmQzNTdkZjMwNzM0ZDMxOSIsImhhcm5lc3NfY2FyZ29fdG9tbF9zaGEyNTYiOiJiYzFlMzU1Yjc1ZGMzNWZmNWRjNzU3NmRlNjI2ODNjMTJkNjBjMTU1ZGUzYWY2NzZiYWU0MWNmZjE2MjY1NmNiIiwiaGFybmVzc19jcmF0ZV9wYXRoIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL3NyYy9hbXBob3JhX2Zvcm11bGF0aW9uX2FyaXRobWV0aWMvdDA1X2hhcm5lc3MvIiwiaGFybmVzc19kaWFnbm9zdGljX3BhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvVC0wNS93b3JrL2RpYWdub3N0aWMucnVuQS5qc29uIiwiaGFybmVzc19kaWFnbm9zdGljX3NoYTI1NiI6ImQ3NWJhOWU1NTViMmJkZTdmOTY2M2E5YWQ4MDFhODE0NzZlZDEyNWRjYzRkYjNjOTkzMzgyYzM5YjAwMzVjYzUiLCJoYXJuZXNzX21haW5fcnNfc2hhMjU2IjoiMTUyNTYyYmIwZmNjZWE3ZjJhOTVhZWE1YzcyM2RjMThjMzQ2MWIxODU2Y2IxYTk1ZjQwNDZmZmEzZWQ2MjUzMyJ9LCJyZXBhaXJfaXRlbSI6IlQtMDUiLCJzY2hlbWEiOiJhbXBob3JhLnBoYXNlMC1yZXBhaXIuZG9uZS1yZWNlaXB0LnYxIiwic2lnbmluZ19rZXkiOnsiZGVyaXZlc19waW5uZWRfdHJ1c3Rfc3RvcmVfa2V5X2lkIjp0cnVlLCJrZXlfaWQiOiJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLCJwdWJsaWNfa2V5X2hleCI6IjZjZjA3YWJmMWE1NWFkYWFjMTNlNzhhYmMzMWM1MzFkMDNkOGYwZDQyMzIzNDYzNDRhNzM2NDE4YzdiNDU2NjQiLCJyb2xlIjoiUEhBU0UwX0VWQUxVQVRPUiJ9LCJ0cnVzdF9hbmNob3JlZF9pbl9waGFzZTBfc3RvcmUiOnRydWUsInR3b19yZXBsYXlfc2hhMjU2IjoiYjRiYzNmZDNhNzAzNjM1NDkwNWM0OGJjZGRiYTA2M2MwMGVhMDQxZDYzZTdiMzk4ZWU0YjY1NTgwNDAzM2JjYyIsInR3b19yZXBsYXlfc2hhMjU2X2dhdGUiOiJQQVNTIiwidmVyZGljdCI6IkNMQUlNX1JFRlVURUQifQ==",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "5j7Bhc/n1wKJb+johOIHravRjiFm8fATmjUtpjDZXf2o8iHWF6KmRuh8WZGogYUrLXXczNEwmFv0i2Blf2pzAg=="
+      }
+    ]
+  }
+}

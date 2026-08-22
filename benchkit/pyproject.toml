@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amphora-benchkit"
+version = "0.1.0"
+description = "Shared performance kit for Amphora benchmark fires: vectorized bootstrap, linalg ARL, RDKit bulk similarity, batched quadrature, wall-clock timing. Every function carries a bit-identity determinism contract against the original in-tree implementation."
+requires-python = ">=3.10"
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+full = ["pandas", "scipy"]
+test = ["pytest", "pandas", "scipy", "scikit-learn", "openpyxl"]
+
+[tool.setuptools]
+packages = ["amphora_benchkit"]

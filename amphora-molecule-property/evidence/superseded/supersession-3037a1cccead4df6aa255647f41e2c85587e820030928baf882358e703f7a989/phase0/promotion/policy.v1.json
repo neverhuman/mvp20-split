@@ -1,0 +1,24 @@
+{
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "local_development_keys_authorized": false,
+  "module_id": "amphora-molecule-property",
+  "required_distinct_roles": [
+    "PHASE0_EVALUATOR",
+    "PHASE0_INTERNAL_REVIEWER"
+  ],
+  "required_gates": [
+    "RIGHTS",
+    "LOCKED_SPLIT",
+    "LOCKED_BENCHMARK",
+    "TWO_REPLAYS",
+    "RED_TEAM",
+    "CLAIM_LOCKS",
+    "FOLDER_CONFINEMENT",
+    "EVALUATOR_SIGNATURE",
+    "INDEPENDENT_REVIEW_SIGNATURE"
+  ],
+  "schema": "amphora.module-phase0-promotion-policy.v1",
+  "scientific_success_required": false,
+  "target_phase": "PHASE_0",
+  "target_scientific_readiness": "LOCKED_INTERNAL"
+}

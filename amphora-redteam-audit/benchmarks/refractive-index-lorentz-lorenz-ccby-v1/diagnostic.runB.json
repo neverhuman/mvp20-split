@@ -1,0 +1,607 @@
+{
+  "authority": "AUDIT_ONLY",
+  "does_not": [
+    "does NOT promote amphora-molecule-property (or any module) to PHASE_0",
+    "does NOT add any PHASE_0 module; the live front-matter Phase-0 set (see phase0_reconciliation_redteam) is unchanged by this audit",
+    "does NOT modify any of the 66 signed receipts or the manifest",
+    "does NOT perform PHASE0_EVALUATOR / PHASE0_INTERNAL_REVIEWER signing (AUDIT_ONLY key only)"
+  ],
+  "honest_limitations": [
+    "Pure-liquid n_D at 20 C, sodium-D line only; NOT the cured epoxy-film RI (extendable to the resin via repeat-unit R_LL -- a Phase-1 step).",
+    "Requires a measured density rho (same input dependency as the Parachor model); an all-a-priori path would chain Fedors molar volume for rho (Phase-1).",
+    "Extended-conjugation exaltation (styrene) is OUT of the additive domain; reported, not hidden.",
+    "Eisenlohr is one refraction table; alternative sets (Vogel bond refractions) shift predictions by a fraction of a percent."
+  ],
+  "kpis": {
+    "baseline_const145_mape": 0.048598,
+    "baseline_null_mean_n_mape": 0.042384,
+    "core_baseline_null_mape": 0.040407,
+    "core_domain_mape": 0.001578,
+    "core_domain_rmse_n_units": 0.003082,
+    "core_frac_within_0.002_n": 0.6316,
+    "core_frac_within_0.005_n": 0.8947,
+    "core_lift_over_null": 0.9609,
+    "family_mape": {
+      "alcohol": 0.001437,
+      "aliphatic": 0.00034,
+      "aromatic": 0.002258,
+      "associating": 0.00094,
+      "conjugated": 0.01585,
+      "ester": 0.00082,
+      "ketone": 0.00236
+    },
+    "frac_within_0.005_n_all": 0.85,
+    "mean_n": 1.42315,
+    "overall_mape": 0.002292,
+    "overall_rmse_n_units": 0.006248,
+    "worst_case_all": {
+      "abs_error_n_units": 0.02452,
+      "abs_pct_error": 0.01585,
+      "family": "conjugated",
+      "id": "styrene"
+    },
+    "worst_case_core": {
+      "abs_error_n_units": 0.00748,
+      "abs_pct_error": 0.005,
+      "family": "aromatic",
+      "id": "p-xylene"
+    }
+  },
+  "n_solvents": 20,
+  "per_solvent": [
+    {
+      "M_g_mol": 74.12,
+      "abs_error_n_units": 0.00087,
+      "abs_pct_error": 0.00062,
+      "baseline_const145_abs_pct_error": 0.03623,
+      "baseline_null_abs_pct_error": 0.01704,
+      "family": "alcohol",
+      "group_detail": {
+        "C": 4,
+        "H": 10,
+        "O_hydroxyl": 1
+      },
+      "id": "1-butanol",
+      "molar_refraction_calc_cm3_mol": 22.197,
+      "n_D20_exp": 1.3993,
+      "n_D20_pred": 1.4002,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.00062,
+      "rho_20c_g_cm3": 0.8098,
+      "smiles": "CCCCO"
+    },
+    {
+      "M_g_mol": 60.1,
+      "abs_error_n_units": 0.00064,
+      "abs_pct_error": 0.00046,
+      "baseline_const145_abs_pct_error": 0.04648,
+      "baseline_null_abs_pct_error": 0.0271,
+      "family": "alcohol",
+      "group_detail": {
+        "C": 3,
+        "H": 8,
+        "O_hydroxyl": 1
+      },
+      "id": "1-propanol",
+      "molar_refraction_calc_cm3_mol": 17.579,
+      "n_D20_exp": 1.3856,
+      "n_D20_pred": 1.3862,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.00046,
+      "rho_20c_g_cm3": 0.8035,
+      "smiles": "CCCO"
+    },
+    {
+      "M_g_mol": 58.08,
+      "abs_error_n_units": 0.00551,
+      "abs_pct_error": 0.00406,
+      "baseline_const145_abs_pct_error": 0.06712,
+      "baseline_null_abs_pct_error": 0.04735,
+      "family": "ketone",
+      "group_detail": {
+        "C": 3,
+        "H": 6,
+        "O_carbonyl": 1
+      },
+      "id": "acetone",
+      "molar_refraction_calc_cm3_mol": 16.065,
+      "n_D20_exp": 1.3588,
+      "n_D20_pred": 1.3533,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.00406,
+      "rho_20c_g_cm3": 0.7845,
+      "smiles": "CC(=O)C"
+    },
+    {
+      "M_g_mol": 78.11,
+      "abs_error_n_units": 0.00107,
+      "abs_pct_error": 0.00072,
+      "baseline_const145_abs_pct_error": 0.03404,
+      "baseline_null_abs_pct_error": 0.05193,
+      "family": "aromatic",
+      "group_detail": {
+        "C": 6,
+        "H": 6,
+        "double_bond_CC": 3
+      },
+      "id": "benzene",
+      "molar_refraction_calc_cm3_mol": 26.307,
+      "n_D20_exp": 1.5011,
+      "n_D20_pred": 1.5022,
+      "n_double_bond_CC": 3,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.00072,
+      "rho_20c_g_cm3": 0.8765,
+      "smiles": "c1ccccc1"
+    },
+    {
+      "M_g_mol": 112.56,
+      "abs_error_n_units": 0.00049,
+      "abs_pct_error": 0.00032,
+      "baseline_const145_abs_pct_error": 0.04862,
+      "baseline_null_abs_pct_error": 0.06624,
+      "family": "aromatic",
+      "group_detail": {
+        "C": 6,
+        "Cl": 1,
+        "H": 5,
+        "double_bond_CC": 3
+      },
+      "id": "chlorobenzene",
+      "molar_refraction_calc_cm3_mol": 31.174,
+      "n_D20_exp": 1.5241,
+      "n_D20_pred": 1.5246,
+      "n_double_bond_CC": 3,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.00032,
+      "rho_20c_g_cm3": 1.1058,
+      "smiles": "Clc1ccccc1"
+    },
+    {
+      "M_g_mol": 84.16,
+      "abs_error_n_units": 0.00045,
+      "abs_pct_error": 0.00031,
+      "baseline_const145_abs_pct_error": 0.0164,
+      "baseline_null_abs_pct_error": 0.00242,
+      "family": "aliphatic",
+      "group_detail": {
+        "C": 6,
+        "H": 12
+      },
+      "id": "cyclohexane",
+      "molar_refraction_calc_cm3_mol": 27.708,
+      "n_D20_exp": 1.4266,
+      "n_D20_pred": 1.4262,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.00031,
+      "rho_20c_g_cm3": 0.7785,
+      "smiles": "C1CCCCC1"
+    },
+    {
+      "M_g_mol": 46.07,
+      "abs_error_n_units": 0.00137,
+      "abs_pct_error": 0.001,
+      "baseline_const145_abs_pct_error": 0.06531,
+      "baseline_null_abs_pct_error": 0.04558,
+      "family": "alcohol",
+      "group_detail": {
+        "C": 2,
+        "H": 6,
+        "O_hydroxyl": 1
+      },
+      "id": "ethanol",
+      "molar_refraction_calc_cm3_mol": 12.961,
+      "n_D20_exp": 1.3611,
+      "n_D20_pred": 1.3625,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.001,
+      "rho_20c_g_cm3": 0.7893,
+      "smiles": "CCO"
+    },
+    {
+      "M_g_mol": 88.11,
+      "abs_error_n_units": 0.00129,
+      "abs_pct_error": 0.00094,
+      "baseline_const145_abs_pct_error": 0.05654,
+      "baseline_null_abs_pct_error": 0.03698,
+      "family": "ester",
+      "group_detail": {
+        "C": 4,
+        "H": 8,
+        "O_carbonyl": 1,
+        "O_ether": 1
+      },
+      "id": "ethyl-acetate",
+      "molar_refraction_calc_cm3_mol": 22.326,
+      "n_D20_exp": 1.3724,
+      "n_D20_pred": 1.3737,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.00094,
+      "rho_20c_g_cm3": 0.9006,
+      "smiles": "CCOC(=O)C"
+    },
+    {
+      "M_g_mol": 106.17,
+      "abs_error_n_units": 0.00364,
+      "abs_pct_error": 0.00243,
+      "baseline_const145_abs_pct_error": 0.03068,
+      "baseline_null_abs_pct_error": 0.04864,
+      "family": "aromatic",
+      "group_detail": {
+        "C": 8,
+        "H": 10,
+        "double_bond_CC": 3
+      },
+      "id": "ethylbenzene",
+      "molar_refraction_calc_cm3_mol": 35.543,
+      "n_D20_exp": 1.4959,
+      "n_D20_pred": 1.4923,
+      "n_double_bond_CC": 3,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.00243,
+      "rho_20c_g_cm3": 0.867,
+      "smiles": "CCc1ccccc1"
+    },
+    {
+      "M_g_mol": 72.11,
+      "abs_error_n_units": 5e-05,
+      "abs_pct_error": 3e-05,
+      "baseline_const145_abs_pct_error": 0.05164,
+      "baseline_null_abs_pct_error": 0.03216,
+      "family": "ketone",
+      "group_detail": {
+        "C": 4,
+        "H": 8,
+        "O_carbonyl": 1
+      },
+      "id": "mek",
+      "molar_refraction_calc_cm3_mol": 20.683,
+      "n_D20_exp": 1.3788,
+      "n_D20_pred": 1.3788,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 3e-05,
+      "rho_20c_g_cm3": 0.8054,
+      "smiles": "CCC(=O)C"
+    },
+    {
+      "M_g_mol": 32.04,
+      "abs_error_n_units": 0.00488,
+      "abs_pct_error": 0.00367,
+      "baseline_const145_abs_pct_error": 0.09121,
+      "baseline_null_abs_pct_error": 0.071,
+      "family": "alcohol",
+      "group_detail": {
+        "C": 1,
+        "H": 4,
+        "O_hydroxyl": 1
+      },
+      "id": "methanol",
+      "molar_refraction_calc_cm3_mol": 8.343,
+      "n_D20_exp": 1.3288,
+      "n_D20_pred": 1.3337,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.00367,
+      "rho_20c_g_cm3": 0.7914,
+      "smiles": "CO"
+    },
+    {
+      "M_g_mol": 100.16,
+      "abs_error_n_units": 0.00418,
+      "abs_pct_error": 0.00299,
+      "baseline_const145_abs_pct_error": 0.03883,
+      "baseline_null_abs_pct_error": 0.01959,
+      "family": "ketone",
+      "group_detail": {
+        "C": 6,
+        "H": 12,
+        "O_carbonyl": 1
+      },
+      "id": "mibk",
+      "molar_refraction_calc_cm3_mol": 29.919,
+      "n_D20_exp": 1.3958,
+      "n_D20_pred": 1.3916,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.00299,
+      "rho_20c_g_cm3": 0.7965,
+      "smiles": "CC(=O)CC(C)C"
+    },
+    {
+      "M_g_mol": 116.16,
+      "abs_error_n_units": 0.00098,
+      "abs_pct_error": 0.0007,
+      "baseline_const145_abs_pct_error": 0.0401,
+      "baseline_null_abs_pct_error": 0.02083,
+      "family": "ester",
+      "group_detail": {
+        "C": 6,
+        "H": 12,
+        "O_carbonyl": 1,
+        "O_ether": 1
+      },
+      "id": "n-butyl-acetate",
+      "molar_refraction_calc_cm3_mol": 31.562,
+      "n_D20_exp": 1.3941,
+      "n_D20_pred": 1.3951,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.0007,
+      "rho_20c_g_cm3": 0.8825,
+      "smiles": "CCCCOC(=O)C"
+    },
+    {
+      "M_g_mol": 100.2,
+      "abs_error_n_units": 0.00025,
+      "abs_pct_error": 0.00018,
+      "baseline_const145_abs_pct_error": 0.04497,
+      "baseline_null_abs_pct_error": 0.02562,
+      "family": "aliphatic",
+      "group_detail": {
+        "C": 7,
+        "H": 16
+      },
+      "id": "n-heptane",
+      "molar_refraction_calc_cm3_mol": 34.526,
+      "n_D20_exp": 1.3876,
+      "n_D20_pred": 1.3873,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.00018,
+      "rho_20c_g_cm3": 0.6838,
+      "smiles": "CCCCCCC"
+    },
+    {
+      "M_g_mol": 86.18,
+      "abs_error_n_units": 0.00072,
+      "abs_pct_error": 0.00053,
+      "baseline_const145_abs_pct_error": 0.05462,
+      "baseline_null_abs_pct_error": 0.03509,
+      "family": "aliphatic",
+      "group_detail": {
+        "C": 6,
+        "H": 14
+      },
+      "id": "n-hexane",
+      "molar_refraction_calc_cm3_mol": 29.908,
+      "n_D20_exp": 1.3749,
+      "n_D20_pred": 1.3756,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.00053,
+      "rho_20c_g_cm3": 0.6606,
+      "smiles": "CCCCCC"
+    },
+    {
+      "M_g_mol": 106.17,
+      "abs_error_n_units": 0.00439,
+      "abs_pct_error": 0.00292,
+      "baseline_const145_abs_pct_error": 0.03686,
+      "baseline_null_abs_pct_error": 0.0547,
+      "family": "aromatic",
+      "group_detail": {
+        "C": 8,
+        "H": 10,
+        "double_bond_CC": 3
+      },
+      "id": "o-xylene",
+      "molar_refraction_calc_cm3_mol": 35.543,
+      "n_D20_exp": 1.5055,
+      "n_D20_pred": 1.5011,
+      "n_double_bond_CC": 3,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.00292,
+      "rho_20c_g_cm3": 0.8802,
+      "smiles": "Cc1ccccc1C"
+    },
+    {
+      "M_g_mol": 106.17,
+      "abs_error_n_units": 0.00748,
+      "abs_pct_error": 0.005,
+      "baseline_const145_abs_pct_error": 0.03062,
+      "baseline_null_abs_pct_error": 0.04857,
+      "family": "aromatic",
+      "group_detail": {
+        "C": 8,
+        "H": 10,
+        "double_bond_CC": 3
+      },
+      "id": "p-xylene",
+      "molar_refraction_calc_cm3_mol": 35.543,
+      "n_D20_exp": 1.4958,
+      "n_D20_pred": 1.4883,
+      "n_double_bond_CC": 3,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.005,
+      "rho_20c_g_cm3": 0.8611,
+      "smiles": "Cc1ccc(C)cc1"
+    },
+    {
+      "M_g_mol": 104.15,
+      "abs_error_n_units": 0.02452,
+      "abs_pct_error": 0.01585,
+      "baseline_const145_abs_pct_error": 0.06258,
+      "baseline_null_abs_pct_error": 0.07994,
+      "family": "conjugated",
+      "group_detail": {
+        "C": 8,
+        "H": 8,
+        "double_bond_CC": 4
+      },
+      "id": "styrene",
+      "molar_refraction_calc_cm3_mol": 35.076,
+      "n_D20_exp": 1.5468,
+      "n_D20_pred": 1.5223,
+      "n_double_bond_CC": 4,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.01585,
+      "rho_20c_g_cm3": 0.906,
+      "smiles": "C=Cc1ccccc1"
+    },
+    {
+      "M_g_mol": 92.14,
+      "abs_error_n_units": 0.00323,
+      "abs_pct_error": 0.00216,
+      "baseline_const145_abs_pct_error": 0.03133,
+      "baseline_null_abs_pct_error": 0.04927,
+      "family": "aromatic",
+      "group_detail": {
+        "C": 7,
+        "H": 8,
+        "double_bond_CC": 3
+      },
+      "id": "toluene",
+      "molar_refraction_calc_cm3_mol": 30.925,
+      "n_D20_exp": 1.4969,
+      "n_D20_pred": 1.4937,
+      "n_double_bond_CC": 3,
+      "n_triple_bond_CC": 0,
+      "pct_error": -0.00216,
+      "rho_20c_g_cm3": 0.8669,
+      "smiles": "Cc1ccccc1"
+    },
+    {
+      "M_g_mol": 18.015,
+      "abs_error_n_units": 0.00126,
+      "abs_pct_error": 0.00094,
+      "baseline_const145_abs_pct_error": 0.08777,
+      "baseline_null_abs_pct_error": 0.06763,
+      "family": "associating",
+      "group_detail": {
+        "H": 2,
+        "O_hydroxyl": 1
+      },
+      "id": "water",
+      "molar_refraction_calc_cm3_mol": 3.725,
+      "n_D20_exp": 1.333,
+      "n_D20_pred": 1.3343,
+      "n_double_bond_CC": 0,
+      "n_triple_bond_CC": 0,
+      "pct_error": 0.00094,
+      "rho_20c_g_cm3": 0.9982,
+      "smiles": "O"
+    }
+  ],
+  "phase0_reconciliation_redteam": {
+    "by_scientific_readiness": {
+      "LOCKED_INTERNAL": 4,
+      "NOT_APPLICABLE": 13
+    },
+    "externally_validated_science_modules": [
+      "amphora-solvency-score"
+    ],
+    "honest_reading": "PHASE_0 here = a reproducibility+rights+independence GOVERNANCE lock (byte-stable benchmark, rights-qualified data, two trust-anchored signatures). It is NOT scientific validation: NOT_APPLICABLE readiness modules are governance/infrastructure; LOCKED_INTERNAL modules passed an INTERNAL known-answer only. Exactly ONE module (amphora-solvency-score) carries EXTERNAL-data predictive validation behind its Phase-0. 'FULL Phase-0' is an engineering/governance milestone, never a count of validated science.",
+    "n_externally_validated_science": 1,
+    "n_modules_labelled_phase0_in_live_frontmatter": 17,
+    "phase0_modules": [
+      {
+        "module": "amphora-candidate-contract",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-cro-protocol-packager",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-envelope-gates",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-evidence-intake-validator",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-formulation-arithmetic",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-formulation-universe",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-known-answer-benchmarks",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-model-card-authority",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-molecule-design-gate",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-optimizer-orchestrator",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-process-qc-twin",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-redteam-audit",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-report-packager",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-run-provenance",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-solvency-score",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-source-ledger",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-tolerance-robustness",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      }
+    ]
+  },
+  "refraction_constants": {
+    "Br": 8.865,
+    "C": 2.418,
+    "Cl": 5.967,
+    "F": 0.997,
+    "H": 1.1,
+    "I": 13.9,
+    "N_primary": 2.322,
+    "N_secondary": 2.502,
+    "N_tertiary": 2.84,
+    "O_carbonyl": 2.211,
+    "O_ether": 1.643,
+    "O_hydroxyl": 1.525,
+    "S": 7.921,
+    "double_bond_CC": 1.733,
+    "triple_bond_CC": 2.398
+  },
+  "rights": {
+    "compilation_license": "CC0-1.0 self-authored",
+    "in_scope": "aromatic+aliphatic+ketone+ester+alcohol solvents = marine epoxy-amine thinner chemistries",
+    "refraction_constants_provenance": "published literature constants (Eisenlohr 1911; Vogel 1948; Van Krevelen ch.10)",
+    "truth_values": "tabulated physical constants (CRC/NIST) = non-copyrightable facts"
+  },
+  "schema": "amphora.redteam-audit.refractive-index-lorentz-lorenz-ccby-v1",
+  "target_capability": "refractive-index-lorentz-lorenz-group-contribution",
+  "target_module": "amphora-molecule-property",
+  "theory": "Lorentz-Lorenz (1880): (n^2-1)/(n^2+2) = R_LL*rho/M, with R_LL an ADDITIVE sum of Eisenlohr/Vogel atomic+bond refractions (Van Krevelen Properties of Polymers ch.10). n_pred = sqrt((1+2f)/(1-f)), f=R_LL*rho/M. R_LL constants are pure literature values (NOT fitted to this set) -> non-circular. Refractive index drives coating hiding-power/opacity via pigment-vs-binder RI contrast, gloss, and refractometric incoming QC; R_LL is also the electronic-polarization term of Clausius-Mossotti (n^2 ~ high-frequency permittivity), linking RI to film barrier physics.",
+  "verdict": {
+    "applicability_domain": "Lorentz-Lorenz additive molar refraction predicts refractive index of non-conjugated coating solvents (aromatics, aliphatics, ketones, esters, alcohols AND water) to <0.5%. It under-predicts liquids with EXTENDED conjugation (styrene: vinyl conjugated with the ring) because additivity omits optical exaltation. That is the honest domain of applicability. Unlike the Parachor surface-tension model, H-bonding alcohols and water are IN-domain here (RI is an electronic-polarizability property).",
+    "core_model_beats_null": true,
+    "graded_outcome": "VALIDATED_IN_DOMAIN",
+    "is_a_phase0_gate": false
+  }
+}

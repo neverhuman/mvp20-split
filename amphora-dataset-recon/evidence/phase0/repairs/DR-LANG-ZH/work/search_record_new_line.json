@@ -1,0 +1,154 @@
+{
+  "date": "2026-08-10",
+  "fire_id": "20260810T060001-1892882-de641a9ef68c",
+  "language_communities_touched": [
+    "zh"
+  ],
+  "next_run_should_extend": "Untouched this fire, open for a future DR-LANG-ZH or adjacent fire: (1) GB/T 10125-class salt-spray-test standard (ASTM B117/ISO 9227 comparability) not yet searched; (2) GB/T standards annex for amine-hardener/EEW test methods not yet searched; (3) corrdata.org.cn's per-dataset records not individually evaluated (registration-gated, not attempted -- no_acquisition discipline); (4) Wanfang's specific coatings-domain theses (several surfaced incidentally by query 1, e.g. D325476, D03173881) not individually evaluated for gap-fit; (5) CAS Institute of Metal Research's own journals (中国腐蚀与防护学报, 腐蚀科学与防护技术) not individually searched for gap-targeted articles; (6) escience.org.cn (National S&T Infrastructure metadata portal, surfaced incidentally, hosts reference-material/standard-substance metadata) not evaluated. None of these were converted to a fabricated 'no public source' commissioned-measurement entry -- they are disclosed as unsearched, not as searched-and-empty.",
+  "no_acquisition_attestation": "No dataset file, record set, table, standard full-text PDF, or bulk content was downloaded, cached, or scraped this fire. All WebFetch calls retrieved the tool's own evaluative summary of page content (titles, status, access-tier descriptions, license statements) -- never raw page bytes written to any file on xbabe1 or xbabe2. All WebSearch calls returned ranked result snippets only. Nothing beyond this ledger line, the disposition-ledger and coverage-map entries it supports, and this fire's signed receipt was written under mvp20-split.",
+  "purpose": "DR-LANG-ZH gap-targeted native-Chinese-language reconnaissance fire (directive obligation DR-LANG-ZH, AMPHORA-DIRECTIVE-2026-08-09 Section 4). Extends PROBE-WEB's tooling probe (search-record.v1.jsonl line 1, sha256 0fd12053ad9db240c027485f01ef3c4a625291da6f2b1639ee55592419f8f651) into a full gap-targeted sweep across CNKI/Wanfang-class indexes, GB/T standards annexes, and CAS/national-institute corrosion archives.",
+  "queries": [
+    {
+      "language": "zh",
+      "purpose": "extend PROBE-WEB's CNKI-biased query to the Wanfang-class aggregator by name",
+      "query": "环氧树脂 固化动力学 数据集 万方数据",
+      "query_gloss_en": "epoxy resin cure kinetics dataset Wanfang Data",
+      "result_summary": "9 results; multiple Wanfang (d.wanfangdata.com.cn) thesis/periodical links plus a BUAA fhclxb article (室温潜伏性中温固化环氧树脂体系的制备与性能)",
+      "sample_urls": [
+        "https://d.wanfangdata.com.cn/thesis/D325476",
+        "https://fhclxb.buaa.edu.cn/cn/article/doi/10.13801/j.cnki.fhclxb.20161219.001"
+      ],
+      "tool": "WebSearch"
+    },
+    {
+      "language": "zh",
+      "purpose": "target GB/T national-standard annex directly named by directive Section 4",
+      "query": "船舶防腐涂料 GB/T 标准 涂层",
+      "query_gloss_en": "marine anti-corrosion coating GB/T standard coating layer",
+      "result_summary": "8 results; std.samr.gov.cn GB/T 6822 revision-project page, GB/T 13351-1992 detail page, corrdata.org.cn industry articles on marine coating standards",
+      "sample_urls": [
+        "https://std.samr.gov.cn/gb/search/gbDetailed?id=DF56351998191B47E05397BE0A0AE248",
+        "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7844CD3A7E05397BE0A0AB82A"
+      ],
+      "tool": "WebSearch"
+    },
+    {
+      "language": "zh",
+      "purpose": "resolve C1's underlying entity to its own direct domain (previously only reached via the nbsdc.cn umbrella portal)",
+      "query": "国家材料腐蚀与防护科学数据中心",
+      "query_gloss_en": "National Materials Corrosion and Protection Science Data Center (proper-noun lookup)",
+      "result_summary": "7 results; corrdata.org.cn (the center's own direct site), baike.baidu.com background, USTB gjjxy.ustb.edu.cn hosting-institution page, mater-rep.com institutional-history article",
+      "sample_urls": [
+        "https://www.corrdata.org.cn/",
+        "https://gjjxy.ustb.edu.cn/jdpt/gjjpt/e56690da40c245c69ed89515eb9e70f1.htm"
+      ],
+      "tool": "WebSearch"
+    },
+    {
+      "language": "zh",
+      "purpose": "check whether the CAS institute itself (distinct from corrdata.org.cn's USTB custodianship) runs an independent corrosion archive",
+      "query": "中国科学院金属研究所 腐蚀 数据库",
+      "query_gloss_en": "Chinese Academy of Sciences Institute of Metal Research corrosion database",
+      "result_summary": "9 results; imr.cas.cn's own Materials Corrosion and Protection Center page, confirms imr.cas.cn and corrdata.org.cn are organizationally distinct but topically adjacent (imr.cas.cn co-publishes 中国腐蚀与防护学报 and hosts a National Metal Corrosion Control Engineering Technology Research Center)",
+      "sample_urls": [
+        "http://www.imr.cas.cn/yjtd/corrosion/",
+        "https://www.corrdata.org.cn/"
+      ],
+      "tool": "WebSearch"
+    },
+    {
+      "language": "zh",
+      "purpose": "second independent CNKI-biased native query (distinct wording from PROBE-WEB's) to test breadth of CNKI-adjacent surfacing",
+      "query": "环氧胺 固化动力学 数据集 中国知网",
+      "query_gloss_en": "epoxy-amine cure kinetics dataset CNKI",
+      "result_summary": "10 results; a CNKI-subdomain journal-submission portal (mete.cbpt.cnki.net) surfaced indirectly via search-engine indexing, plus an nbsdc.cn dataset entry (unrelated catalyst topic) -- confirms WebSearch can surface CNKI-hosted URLs via indexing even though direct WebFetch to www.cnki.net itself remains blocked (see cnki.net re-test below)",
+      "sample_urls": [
+        "https://mete.cbpt.cnki.net/portal/journal/portal/client/paper/a6b0c49773111f1733907ee89bc97270"
+      ],
+      "tool": "WebSearch"
+    },
+    {
+      "language": "zh",
+      "purpose": "evaluate a GB/T standard detail page's status and access terms",
+      "result_evidence_quote": "Standard Number: GB/T 13351-1992; Title: 船底防锈漆通用技术条件; Status: Abolished as of April 1, 2008; No full text download link is visible, nor are license/access terms explicitly stated.",
+      "tool": "WebFetch",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7844CD3A7E05397BE0A0AB82A"
+    },
+    {
+      "language": "zh",
+      "purpose": "evaluate access tiers/license terms of the National Materials Corrosion and Protection Science Data Center's own direct site",
+      "result_evidence_quote": "Custodian: operates under China's Ministry of Science and Technology national S&T resource platform system. Categories: basic corrosion knowledge, high-temperature corrosion data, natural-environment data, industrial-environment corrosion data, specialized materials, monitoring/testing data, standards and publications, laboratory/statistical data. Access: user registration/login portal present; 'open sharing' emphasized but specific download/license/commercial-use terms not detailed on this page.",
+      "tool": "WebFetch",
+      "url": "https://www.corrdata.org.cn/"
+    },
+    {
+      "language": "zh",
+      "purpose": "evaluate the GB/T 6822 revision-project record surfaced by the marine-coating GB/T query",
+      "result_evidence_quote": "Standard Number: 20230322-T-606; Title: 船体防污防锈漆体系 (Antifouling and anticorrosive paint systems for ship hull); Scope: applies to antifouling/anticorrosive paint systems below and at the waterline for steel ships; page footer states 版权所有 侵权必究 (copyright reserved); no open-access statement.",
+      "tool": "WebFetch",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=DF56351998191B47E05397BE0A0AE248"
+    },
+    {
+      "language": "zh",
+      "purpose": "confirm the finalized/published standard number and supersession chain for the revision project found above",
+      "query": "GB/T 6822-2024 船体防污防锈漆体系 代替",
+      "query_gloss_en": "GB/T 6822-2024 ship hull antifouling anticorrosive paint system supersedes",
+      "result_summary": "10 results; confirms GB/T 6822-2024 published 2024-11-28, implemented 2025-06-01, replaces GB/T 6822-2014, drafted under China State Shipbuilding Corporation 725 Research Institute (Xiamen)",
+      "sample_urls": [
+        "https://std.samr.gov.cn/gb/search/gbDetailed?id=28045D84DA7F9055E06397BE0A0A7C5C",
+        "https://www.hzeyun.com/detail/2597615.html"
+      ],
+      "tool": "WebSearch"
+    },
+    {
+      "language": "zh",
+      "purpose": "confirm GB/T 6822-2024's official detail record directly",
+      "result_evidence_quote": "Standard Number: GB/T 6822-2024; Title: 船体防污防锈漆体系; Publication Date: 2024-11-28; Implementation Date: 2025-06-01; Replaces: GB/T 6822-2014; page does not state whether full text is free or purchase-only.",
+      "tool": "WebFetch",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=28045D84DA7F9055E06397BE0A0A7C5C"
+    },
+    {
+      "language": "zh",
+      "purpose": "independently re-test CNKI reachability this fire (fresh call, not reused from PROBE-WEB) to rediscover-or-explain previously-supplied candidate C2",
+      "result_evidence_quote": "Hostname/IP does not match certificate's altnames: Host: www.cnki.net. is not in the cert's altnames: DNS:*.cdn.myqcloud.com, ... -- identical TLS certificate mismatch as PROBE-WEB's finding, confirming the network-level block from this host persists.",
+      "tool": "WebFetch",
+      "url": "https://www.cnki.net"
+    },
+    {
+      "language": "zh",
+      "purpose": "independently rediscover previously-supplied candidate C4 with a targeted native-title query and enrich its citation",
+      "query": "603环氧树脂体系固化动力学模型的建立与验证 复合材料学报",
+      "query_gloss_en": "603 epoxy resin system cure kinetics model establishment and validation, Acta Materiae Compositae Sinica (exact native title, targeted rediscovery of prior candidate C4)",
+      "result_summary": "10 results; rediscovers fhclxb.buaa.edu.cn/article/id/13902 directly plus enriches the citation: journal 复合材料学报 (Acta Materiae Compositae Sinica) 2018 Vol.35 No.1 pp.95-102, DOI 10.13801/j.cnki.fhclxb.20170328.001, method = non-isothermal DSC + Kissinger method + Kamal equation, two dominant reactions (double-peak DSC)",
+      "sample_urls": [
+        "https://fhclxb.buaa.edu.cn/article/id/13902"
+      ],
+      "tool": "WebSearch"
+    },
+    {
+      "language": "zh",
+      "purpose": "directive Section 4 mandates mapping foreign standards to ASTM/ISO analogues; check for a stated equivalence",
+      "query": "GB/T 6822-2024 ISO 等效采用 船体防污防锈漆",
+      "query_gloss_en": "GB/T 6822-2024 ISO equivalent-adoption ship hull antifouling anticorrosive paint",
+      "result_summary": "10 results, none stating an ISO/ASTM equivalence for GB/T 6822-2024; honest negative result -- no astm_iso_equiv found this fire, not fabricated",
+      "tool": "WebSearch"
+    },
+    {
+      "language": "zh",
+      "purpose": "evaluate Wanfang platform operator, indexed content classes, and access terms (directive-named Wanfang-class repository)",
+      "result_evidence_quote": "Operator: 北京万方数据股份有限公司 (Beijing Wanfang Data Co., Ltd.). Indexes: academic journals, dissertations/theses, conference proceedings, patents, standards, technical reports, legal/regulatory documents. Access: institutional-login and paid-membership (万方会员) tiers stated; no explicit free public full-text access statement.",
+      "tool": "WebFetch",
+      "url": "https://www.wanfangdata.com.cn"
+    }
+  ],
+  "repository_classes_touched": [
+    "commercial_aggregator (CNKI, zh; re-tested, still unreachable)",
+    "commercial_aggregator (Wanfang / 万方数据, zh; reachable, subscription-gated)",
+    "national_standards_body (全国标准信息公共服务平台 / SAMR std.samr.gov.cn, GB/T annex, zh)",
+    "national_science_data_center (国家材料腐蚀与防护科学数据中心 / corrdata.org.cn direct domain, zh)",
+    "cas_institute_archive (中国科学院金属研究所 / imr.cas.cn, zh)",
+    "university_journal_portal (BUAA fhclxb, zh; rediscovery of prior candidate C4)"
+  ],
+  "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+  "schema": "amphora.dataset-recon.search-record.v1"
+}

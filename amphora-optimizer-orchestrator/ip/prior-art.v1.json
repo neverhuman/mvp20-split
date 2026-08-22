@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "9de92b6ab1f362bfd6ef829772d781f47246c5b72b013f8c38af3ad68271a92e",
+  "module_id": "amphora-optimizer-orchestrator",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

@@ -1,0 +1,68 @@
+{
+  "candidate_id": "Envelope-65-black",
+  "candidate_type": "formulation",
+  "context": {
+    "benchmark_ids": [
+      "Lineage-60",
+      "Envelope-65",
+      "Enhanced-65"
+    ],
+    "dft_basis_mil": 5.0,
+    "jurisdiction": "US",
+    "target_spec": "v5 naval epoxy-polyamide screening envelope"
+  },
+  "evidence_refs": {
+    "authority_lock": "screening arithmetic and design rules only; no wet-lab performance or procurement claim",
+    "source_records": [
+      "data/facts.json",
+      "data/source_records.json"
+    ]
+  },
+  "formulation": {
+    "ingredient_property_keys": [
+      "resin.dgeba_828.eew",
+      "hardener.ancamide_350a.ahew",
+      "pigment.silica.density",
+      "solvent.n_butanol.density"
+    ],
+    "part_A": {
+      "defoamer": 0.5,
+      "dgeba_828": 100.0,
+      "dispersant": 1.2,
+      "iron_oxide_black": 3.5,
+      "naphtha": 8.4,
+      "silica": 22.0,
+      "thixotrope": 1.8
+    },
+    "part_B": {
+      "ancamide_350a": 37.13,
+      "dispersant": 0.8,
+      "n_butanol": 53.03,
+      "silica": 10.0,
+      "thixotrope": 1.2
+    },
+    "solvent_pairs": [
+      [
+        "naphtha",
+        "n_butanol"
+      ]
+    ],
+    "target_envelope": {
+      "dft_mil": 5.0,
+      "mix_ratio_by_volume": 1.0,
+      "voc_g_per_l_max": 340,
+      "volume_solids_pct": [
+        63,
+        67
+      ]
+    }
+  },
+  "molecule": {
+    "name": "DGEBA/polyamide screening formulation",
+    "role": "resin-curative system",
+    "source_refs": [
+      "out/formulation_black.json",
+      "out/funnel_results.json"
+    ]
+  }
+}

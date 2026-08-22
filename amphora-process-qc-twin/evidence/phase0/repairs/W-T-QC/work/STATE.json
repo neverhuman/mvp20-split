@@ -1,0 +1,12 @@
+{
+  "item_id": "W-T-QC",
+  "status": "done",
+  "fire_id": "20260813T210001-2897336-e678c4f75353",
+  "fires_used": 1,
+  "outcome": "CLAIM_REFUTED",
+  "done_receipt": "amphora-process-qc-twin/evidence/phase0/repairs/W-T-QC/done/w-t-qc-nist-sematech-arl-baseline-audit-receipt.v1.dsse.json",
+  "done_receipt_sha256": "9a50ef993a92f234e707018d72684ad20e33f60b30ef69daf0a0195c121a5c5d",
+  "summary": {"total_requirements": 7, "conformant": 6, "divergent": 1, "not_applicable": 0},
+  "followups_filed": ["F1: re-source every arl_published cell in evidence/audit/spc-arl-characterization-v1/ against NIST/SEMATECH primary and supersede if any cell exceeds tol_rel=0.06"],
+  "notes": "Deliverable (>=6 NIST/SEMATECH-primary ARL requirements, verdicts, divergence classification) complete in one fire. Repair of the identified citation defect (F1) is NOT executed here -- filed as a followup per supersede-never-rewrite discipline; a future repair fire should open a dedicated item to correct spc-arl-characterization-v1 (v2) if this campaign continues to track that."
+}

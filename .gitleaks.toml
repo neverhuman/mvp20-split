@@ -1,0 +1,18 @@
+title = "Amphora MVP20 handoff"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Exact non-credential domain identifiers used by evidence oracles"
+regexTarget = "match"
+regexes = [
+  '''(?:hardener\.versamid_115\.(?:ahew|density)|resin\.(?:dgeba_(?:331|828|yd128)\.(?:density|eew)|solid_cut_1001x75\.eew_on_nv))''',
+  '''dgeba-ipda-lascano-polym11030391''',
+  '''iter=200_depth=4_l2=1\.0''',
+  '''molecule_facts_v1''',
+  '''POISON_V5_ALTKEY_''',
+  '''idconv_api_response_sha256''',
+  '''epo-local-key\.(?:err|json)''',
+  '''sneemarquardt1974''',
+]

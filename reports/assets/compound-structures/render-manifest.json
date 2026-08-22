@@ -1,0 +1,129 @@
+{
+  "authoritative_molecule_facts": false,
+  "renderer": "RDKit Python report illustration only",
+  "renderer_version": "2026.03.2",
+  "schema": "amphora.report-structure-render-manifest.v1",
+  "source_manifest": "reports/data/epoxy-amine-20-audit-probes.v1.json",
+  "structures": [
+    {
+      "input_smiles": "c1ccccc1OCC2CO2",
+      "png_sha256": "0f1120cc3a354777a13699a7a119f9a037d77511c81f035a801b8a8add7b8bf4",
+      "proposal_id": "EA-P01",
+      "renderer_canonical_smiles": "c1ccc(OCC2CO2)cc1"
+    },
+    {
+      "input_smiles": "Cc1ccc(OCC2CO2)cc1",
+      "png_sha256": "c33313f8707cb37b93825c3f57e89eb08847ef2fd95b45d21668f8d57fb0b659",
+      "proposal_id": "EA-P02",
+      "renderer_canonical_smiles": "Cc1ccc(OCC2CO2)cc1"
+    },
+    {
+      "input_smiles": "CC(C)(C)c1ccc(OCC2CO2)cc1",
+      "png_sha256": "cda06adf8694b56af0bd7c8ab23263bf4cb80923d0336024673b2b1f017061d3",
+      "proposal_id": "EA-P03",
+      "renderer_canonical_smiles": "CC(C)(C)c1ccc(OCC2CO2)cc1"
+    },
+    {
+      "input_smiles": "c1cc(OCC2CO2)cc(OCC3CO3)c1",
+      "png_sha256": "fd8f223b622d6fc69f3abd6bdf2cefce8886757b139783381613a63322230bfd",
+      "proposal_id": "EA-P04",
+      "renderer_canonical_smiles": "c1cc(OCC2CO2)cc(OCC2CO2)c1"
+    },
+    {
+      "input_smiles": "c1cc(OCC2CO2)ccc1OCC3CO3",
+      "png_sha256": "5729bff3599b39265bacdf580ba60383d850d4a1ae6f969a17294ee894ca71f2",
+      "proposal_id": "EA-P05",
+      "renderer_canonical_smiles": "c1cc(OCC2CO2)ccc1OCC1CO1"
+    },
+    {
+      "input_smiles": "c1ccc(OCC2CO2)c(OCC3CO3)c1",
+      "png_sha256": "368da4dc980969f690422cdb9f7041d576bdc8581b0771993f7d4d9e594a9272",
+      "proposal_id": "EA-P06",
+      "renderer_canonical_smiles": "c1ccc(OCC2CO2)c(OCC2CO2)c1"
+    },
+    {
+      "input_smiles": "C1OC1COCCCCOCC2CO2",
+      "png_sha256": "548b29f23a823fa7c4d7bdec08fc55924c4d84396efc629c7bf6202683c83df9",
+      "proposal_id": "EA-P07",
+      "renderer_canonical_smiles": "C(CCOCC1CO1)COCC1CO1"
+    },
+    {
+      "input_smiles": "C1OC1COCCCCCCOCC2CO2",
+      "png_sha256": "12c62dc03210d1b48f978064f62a376d304aee01b3a79466e281329e609992f5",
+      "proposal_id": "EA-P08",
+      "renderer_canonical_smiles": "C(CCCOCC1CO1)CCOCC1CO1"
+    },
+    {
+      "input_smiles": "c1cc(OCC2CO2)ccc1Cc3ccc(OCC4CO4)cc3",
+      "png_sha256": "0751a30766d0140707e8d6adbc99f0b4d10a3348fd84c8f6fd3ed7657a33e3d0",
+      "proposal_id": "EA-P09",
+      "renderer_canonical_smiles": "c1cc(OCC2CO2)ccc1Cc1ccc(OCC2CO2)cc1"
+    },
+    {
+      "input_smiles": "CC(c1ccc(OCC2CO2)cc1)(c3ccc(OCC4CO4)cc3)C",
+      "png_sha256": "679993c3153923790b4d1a538e74e45d380c0e887b14c2c12a3b856ff42ac531",
+      "proposal_id": "EA-P10",
+      "renderer_canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    },
+    {
+      "input_smiles": "NCCN",
+      "png_sha256": "7eb11c0eac4238eb8846bd6aa9802e7afbfabac4ff1e3d1be2ab0f84b384622d",
+      "proposal_id": "EA-P11",
+      "renderer_canonical_smiles": "NCCN"
+    },
+    {
+      "input_smiles": "NCCNCCN",
+      "png_sha256": "55353ba619499f8c30c57f25c29efb0677e7a8f834fb7f5795672f18e20cb66a",
+      "proposal_id": "EA-P12",
+      "renderer_canonical_smiles": "NCCNCCN"
+    },
+    {
+      "input_smiles": "NCCNCCNCCN",
+      "png_sha256": "529ae43172f7d10fd42f36def873f32eb4a9ba48fcf2015f6cf7f37381db13c4",
+      "proposal_id": "EA-P13",
+      "renderer_canonical_smiles": "NCCNCCNCCN"
+    },
+    {
+      "input_smiles": "NCCCN",
+      "png_sha256": "02d6111b4cbce2995b715041c08571dbaca89e6fc8afc1d0690fe685dda86045",
+      "proposal_id": "EA-P14",
+      "renderer_canonical_smiles": "NCCCN"
+    },
+    {
+      "input_smiles": "NCCCCN",
+      "png_sha256": "48ccf1d7cee0259245b2ef9aad236a8f8fdd1a9b613ab343dc580d7612db6e15",
+      "proposal_id": "EA-P15",
+      "renderer_canonical_smiles": "NCCCCN"
+    },
+    {
+      "input_smiles": "NCCCCCCN",
+      "png_sha256": "ae88ce4a91dbb92688cce10af68e0c03c75ebeeaa07892fd9ad7beb9c6941dda",
+      "proposal_id": "EA-P16",
+      "renderer_canonical_smiles": "NCCCCCCN"
+    },
+    {
+      "input_smiles": "NCc1cccc(CN)c1",
+      "png_sha256": "0c835d72cabfbd4db6984d9e35547bc76687b7b328f12dd0310cdc6f000f5f9a",
+      "proposal_id": "EA-P17",
+      "renderer_canonical_smiles": "NCc1cccc(CN)c1"
+    },
+    {
+      "input_smiles": "NCc1ccc(CN)cc1",
+      "png_sha256": "fc4a523b872bd43eea4d286900af380bcf6f60c7d388e6378e49de1313057c90",
+      "proposal_id": "EA-P18",
+      "renderer_canonical_smiles": "NCc1ccc(CN)cc1"
+    },
+    {
+      "input_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "png_sha256": "acd0a751b173f488aa74480c750893cb922dd81cff96a97a9eed0026b48448c3",
+      "proposal_id": "EA-P19",
+      "renderer_canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "input_smiles": "NC1CCC(CC1)C2CCC(CC2)N",
+      "png_sha256": "1ca7484bb50ee28572ef8b76cd5886fb3fa4c98b62deb203431c841fb4f449cc",
+      "proposal_id": "EA-P20",
+      "renderer_canonical_smiles": "NC1CCC(C2CCC(N)CC2)CC1"
+    }
+  ]
+}

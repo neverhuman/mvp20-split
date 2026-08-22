@@ -1,0 +1,321 @@
+{
+  "audit_id": "nist-baseline-descriptive-boundary-provenance-v1",
+  "dataset": {
+    "csv_sha256": "9b6b82d0a562cfd68c5c452a8e75f0ae4c8bc21a72d89a7bc07049242e4c5cc5",
+    "material_groups": [
+      "Aluminum and alloys",
+      "Carbon and alloy steels",
+      "Copper and alloys",
+      "Nickel and alloys",
+      "Stainless steels"
+    ],
+    "n_seawater_records_after_filter": 142,
+    "n_seawater_source_documents": 11,
+    "n_total_records_in_raw_csv": 24721,
+    "note": "The KPI field name 'seawater_uncoated_substrate_baselines' implies Environment=='Seawater' only, narrower than the 588-record/3-environment population used for the (now-retracted) Ridge fit. Confirmed by T2 exact reproduction below.",
+    "source": "NIST CORR-DATA Database v2017, doi:10.18434/M3TH4R"
+  },
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, optimizer, or corrosion-rank authority.",
+    "Does not dispute or repeat the already-refuted Ridge-vs-NULL predictive claim (nist-baseline-fold-significance-v1, nist-baseline-material-group-extrapolation-v1); targets only the descriptive block those repairs left standing.",
+    "Does not establish which of the two columns (mm/yr or mils/yr) is correct for the breaching rows, only that the pinned raw CSV's own two independent unit columns disagree on the physical value for the exact rows the KPI selects as group boundary statistics -- a data-integrity defect in the source the certified claim depends on.",
+    "Does not modify or supersede any existing signed artifact."
+  ],
+  "headline": "Boundary-value unit-provenance audit of the NIST CORR-DATA marine steel KPI's seawater_uncoated_substrate_baselines -- the only claim surface this module's own retraction chain (R-A08, R-N03) left standing after two prior predictive-lift refutations. T1/T2: Seawater-only re-filtering reproduces n=142 records across 5 material groups, and all 30 reported n/min/p25/median/p75/max fields match the signed KPI bit-for-bit (max relative diff 1.40e-16) -- ruling out a filter/methodology mismatch as the explanation for what follows. T3: for each group, traced the specific raw-CSV row supplying the reported min_mm_yr and max_mm_yr, and cross-checked it against that row's own independently-tabulated mils/yr column via the exact 0.0254 mm/mil conversion (ambient rounding noise across all 142 dual-column records: median 1.60%). Found 2 boundary value(s) breaching the 20% bar: Aluminum and alloys min=675% disagreement; Nickel and alloys max=59% disagreement. Conclusion: H0 (the descriptive reference-rate block is internally unit-consistent at its own reported boundaries) is H0 REFUTED.",
+  "human_review_performed": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "n_tests_failed": 1,
+  "positive_control": null,
+  "prior_audit_relationship": "Distinct from nist-baseline-fold-significance-v1 and nist-baseline-material-group-extrapolation-v1, both of which attacked the Ridge-vs-NULL PREDICTIVE claim (successfully, H0_REFUTED both times, leading to R-A08/R-N03). Neither touched the descriptive block. This audit is the first to test it.",
+  "promotes_authority": false,
+  "schema": "amphora.public-corrosion-benchmark.audit.v1",
+  "scientific_success_asserted": false,
+  "target_claim": "evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json#fitted_or_physical_model_artifact.seawater_uncoated_substrate_baselines (the descriptive per-material-group reference-rate block; the ONLY claim surface RETRACTION-INDEX.md's R-N03 correction left standing -- 'descriptive reference rates remain valid' -- after retracting all predictive-lift claims across two prior repairs)",
+  "tests": {
+    "T1_population_reproduction": {
+      "n_material_groups": 5,
+      "n_seawater_records": 142,
+      "pass": true,
+      "refutes_claim": false
+    },
+    "T2_descriptive_stat_rederivation": {
+      "max_relative_diff_observed": 1.3989705451425863e-16,
+      "n_fields_mismatched": 0,
+      "note": "PASS here is a prerequisite sanity gate, not itself a positive claim about the KPI's validity -- it confirms this audit's filter matches the KPI builder's filter exactly, so T3's finding cannot be dismissed as a population/methodology mismatch.",
+      "per_group_field_diffs": {
+        "Aluminum and alloys": {
+          "max_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.28,
+            "signed": 0.28
+          },
+          "median_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.0014,
+            "signed": 0.0014
+          },
+          "min_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.0002,
+            "signed": 0.0002
+          },
+          "n": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 19,
+            "signed": 19
+          },
+          "p25_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.0009,
+            "signed": 0.0009
+          },
+          "p75_mm_yr": {
+            "match": true,
+            "relative_diff": 1.3989705451425863e-16,
+            "reproduced": 0.0015500000000000002,
+            "signed": 0.00155
+          }
+        },
+        "Carbon and alloy steels": {
+          "max_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 2.6,
+            "signed": 2.6
+          },
+          "median_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.1,
+            "signed": 0.1
+          },
+          "min_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.03,
+            "signed": 0.03
+          },
+          "n": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 44,
+            "signed": 44
+          },
+          "p25_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.08,
+            "signed": 0.08
+          },
+          "p75_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.15,
+            "signed": 0.15
+          }
+        },
+        "Copper and alloys": {
+          "max_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 1.0,
+            "signed": 1.0
+          },
+          "median_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.01,
+            "signed": 0.01
+          },
+          "min_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.0018,
+            "signed": 0.0018
+          },
+          "n": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 37,
+            "signed": 37
+          },
+          "p25_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.005,
+            "signed": 0.005
+          },
+          "p75_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.02,
+            "signed": 0.02
+          }
+        },
+        "Nickel and alloys": {
+          "max_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.043,
+            "signed": 0.043
+          },
+          "median_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.006,
+            "signed": 0.006
+          },
+          "min_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.001,
+            "signed": 0.001
+          },
+          "n": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 23,
+            "signed": 23
+          },
+          "p25_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.003,
+            "signed": 0.003
+          },
+          "p75_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.0215,
+            "signed": 0.0215
+          }
+        },
+        "Stainless steels": {
+          "max_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 1.9,
+            "signed": 1.9
+          },
+          "median_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.012,
+            "signed": 0.012
+          },
+          "min_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.003,
+            "signed": 0.003
+          },
+          "n": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 19,
+            "signed": 19
+          },
+          "p25_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.01,
+            "signed": 0.01
+          },
+          "p75_mm_yr": {
+            "match": true,
+            "relative_diff": 0.0,
+            "reproduced": 0.035,
+            "signed": 0.035
+          }
+        }
+      },
+      "refute_bar": "any of 30 reported fields (5 groups x n/min/p25/median/p75/max) differs from the signed KPI by >1e-9 relative, under Seawater-only re-filtering",
+      "refutes_claim": false
+    },
+    "T3_boundary_value_unit_provenance": {
+      "ambient_dual_column_rounding_noise": {
+        "median_relative_discrepancy": 0.016000000000000042,
+        "n_dual_column_pairs": 142,
+        "n_pairs_exceeding_20pct": 18
+      },
+      "breaches": [
+        {
+          "boundary": "min",
+          "group": "Aluminum and alloys",
+          "relative_discrepancy": 6.746999999999998
+        },
+        {
+          "boundary": "max",
+          "group": "Nickel and alloys",
+          "relative_discrepancy": 0.5948837209302328
+        }
+      ],
+      "note": "ambient_dual_column_rounding_noise characterizes ordinary independent sig-fig rounding across ALL 142 dual-column seawater records (median ~1.6%), showing the 20% refute bar is far outside normal noise and a breach requires a genuine data defect.",
+      "per_group_boundary_rows": {
+        "Aluminum and alloys": {
+          "max_mm_yr": 0.28,
+          "max_row_mils_yr_col": 11.0,
+          "max_row_reference": "226",
+          "max_row_relative_discrepancy": 0.002142857142857303,
+          "min_mm_yr": 0.0002,
+          "min_row_mils_yr_col": 0.061,
+          "min_row_reference": "150",
+          "min_row_relative_discrepancy": 6.746999999999998
+        },
+        "Carbon and alloy steels": {
+          "max_mm_yr": 2.6,
+          "max_row_mils_yr_col": 101.0,
+          "max_row_reference": "172",
+          "max_row_relative_discrepancy": 0.01330769230769238,
+          "min_mm_yr": 0.03,
+          "min_row_mils_yr_col": 1.3,
+          "min_row_reference": "149",
+          "min_row_relative_discrepancy": 0.10066666666666674
+        },
+        "Copper and alloys": {
+          "max_mm_yr": 1.0,
+          "max_row_mils_yr_col": 40.0,
+          "max_row_reference": "171",
+          "max_row_relative_discrepancy": 0.016000000000000014,
+          "min_mm_yr": 0.0018,
+          "min_row_mils_yr_col": 0.07,
+          "min_row_reference": "257",
+          "min_row_relative_discrepancy": 0.012222222222222159
+        },
+        "Nickel and alloys": {
+          "max_mm_yr": 0.043,
+          "max_row_mils_yr_col": 2.7,
+          "max_row_reference": "172",
+          "max_row_relative_discrepancy": 0.5948837209302328,
+          "min_mm_yr": 0.001,
+          "min_row_mils_yr_col": 0.04,
+          "min_row_reference": "227",
+          "min_row_relative_discrepancy": 0.015999999999999955
+        },
+        "Stainless steels": {
+          "max_mm_yr": 1.9,
+          "max_row_mils_yr_col": 75.0,
+          "max_row_reference": "60",
+          "max_row_relative_discrepancy": 0.002631578947368482,
+          "min_mm_yr": 0.003,
+          "min_row_mils_yr_col": 0.1,
+          "min_row_reference": "227",
+          "min_row_relative_discrepancy": 0.1533333333333333
+        }
+      },
+      "refute_bar": "the row supplying any group's reported min_mm_yr or max_mm_yr must not disagree with its own independently-tabulated mils/yr column (converted via the exact 0.0254 mm/mil factor) by more than 20% relative",
+      "refutes_claim": true
+    }
+  },
+  "tests_failed": [
+    "T3_boundary_value_unit_provenance"
+  ],
+  "verdict": "H0_REFUTED"
+}

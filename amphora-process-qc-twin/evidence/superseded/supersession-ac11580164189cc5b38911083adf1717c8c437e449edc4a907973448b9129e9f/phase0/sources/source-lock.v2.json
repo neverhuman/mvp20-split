@@ -1,0 +1,18 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-process-qc-twin/evidence/phase0",
+  "eligible_sources": [],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/capture_template.json",
+      "observed_sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    }
+  ],
+  "inventory_hash": "21d7596000b2eeaa0d06af2ce2834ef90c0c749a51e315eea2a8a2dcd0b32aef",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-process-qc-twin",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

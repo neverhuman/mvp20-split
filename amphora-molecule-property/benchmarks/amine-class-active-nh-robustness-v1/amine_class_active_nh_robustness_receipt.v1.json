@@ -1,0 +1,424 @@
+{
+  "amine_class_grid": [
+    {
+      "active_nh_computed": 5,
+      "active_nh_truth": 5,
+      "ahew_vs_lit_abs_pct": 0.16,
+      "class": "aliphatic 2x1' + 1x2'",
+      "classification_correct": true,
+      "formula": "C4H13N3",
+      "id": "deta",
+      "literature_ahew_ref_g_per_eq": 20.6,
+      "mw": 103.169,
+      "smiles": "NCCNCCN",
+      "theoretical_ahew_g_per_eq": 20.6338
+    },
+    {
+      "active_nh_computed": 6,
+      "active_nh_truth": 6,
+      "ahew_vs_lit_abs_pct": 0.3,
+      "class": "aliphatic 2x1' + 2x2'",
+      "classification_correct": true,
+      "formula": "C6H18N4",
+      "id": "teta",
+      "literature_ahew_ref_g_per_eq": 24.3,
+      "mw": 146.238,
+      "smiles": "NCCNCCNCCN",
+      "theoretical_ahew_g_per_eq": 24.373
+    },
+    {
+      "active_nh_computed": 7,
+      "active_nh_truth": 7,
+      "ahew_vs_lit_abs_pct": 0.21,
+      "class": "aliphatic 2x1' + 3x2'",
+      "classification_correct": true,
+      "formula": "C8H23N5",
+      "id": "tepa",
+      "literature_ahew_ref_g_per_eq": 27.1,
+      "mw": 189.307,
+      "smiles": "NCCNCCNCCNCCN",
+      "theoretical_ahew_g_per_eq": 27.0439
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.17,
+      "class": "aliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C2H8N2",
+      "id": "eda",
+      "literature_ahew_ref_g_per_eq": 15.0,
+      "mw": 60.1,
+      "smiles": "NCCN",
+      "theoretical_ahew_g_per_eq": 15.025
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.06,
+      "class": "cycloaliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C10H22N2",
+      "id": "ipda",
+      "literature_ahew_ref_g_per_eq": 42.6,
+      "mw": 170.3,
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "theoretical_ahew_g_per_eq": 42.575
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.16,
+      "class": "aliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C6H16N2",
+      "id": "hmda",
+      "literature_ahew_ref_g_per_eq": 29.1,
+      "mw": 116.208,
+      "smiles": "NCCCCCCN",
+      "theoretical_ahew_g_per_eq": 29.052
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.15,
+      "class": "araliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C8H12N2",
+      "id": "mxda",
+      "literature_ahew_ref_g_per_eq": 34.1,
+      "mw": 136.198,
+      "smiles": "NCc1cccc(CN)c1",
+      "theoretical_ahew_g_per_eq": 34.0495
+    },
+    {
+      "active_nh_computed": 2,
+      "active_nh_truth": 2,
+      "ahew_vs_lit_abs_pct": 0.07,
+      "class": "cyclic 2x2'",
+      "classification_correct": true,
+      "formula": "C4H10N2",
+      "id": "piperazine",
+      "literature_ahew_ref_g_per_eq": 43.1,
+      "mw": 86.138,
+      "smiles": "C1CNCCN1",
+      "theoretical_ahew_g_per_eq": 43.069
+    },
+    {
+      "active_nh_computed": 3,
+      "active_nh_truth": 3,
+      "ahew_vs_lit_abs_pct": 0.07,
+      "class": "1x1' + 1x2' + 1x3'(ring)",
+      "classification_correct": true,
+      "formula": "C6H15N3",
+      "id": "aep",
+      "literature_ahew_ref_g_per_eq": 43.1,
+      "mw": 129.207,
+      "smiles": "NCCN1CCNCC1",
+      "theoretical_ahew_g_per_eq": 43.069
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.17,
+      "class": "cycloaliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C6H14N2",
+      "id": "dach",
+      "literature_ahew_ref_g_per_eq": 28.5,
+      "mw": 114.192,
+      "smiles": "NC1CCCCC1N",
+      "theoretical_ahew_g_per_eq": 28.548
+    },
+    {
+      "active_nh_computed": 2,
+      "active_nh_truth": 2,
+      "ahew_vs_lit_abs_pct": 0.08,
+      "class": "aromatic 1x1' (exocyclic)",
+      "classification_correct": true,
+      "formula": "C6H7N",
+      "id": "aniline",
+      "literature_ahew_ref_g_per_eq": 46.6,
+      "mw": 93.129,
+      "smiles": "Nc1ccccc1",
+      "theoretical_ahew_g_per_eq": 46.5645
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.07,
+      "class": "aromatic 2x1'",
+      "classification_correct": true,
+      "formula": "C13H14N2",
+      "id": "mda",
+      "literature_ahew_ref_g_per_eq": 49.6,
+      "mw": 198.269,
+      "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "theoretical_ahew_g_per_eq": 49.5673
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.04,
+      "class": "aromatic 2x1' (sulfone)",
+      "classification_correct": true,
+      "formula": "C12H12N2O2S",
+      "id": "dds",
+      "literature_ahew_ref_g_per_eq": 62.1,
+      "mw": 248.307,
+      "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1",
+      "theoretical_ahew_g_per_eq": 62.0767
+    }
+  ],
+  "anchor_records": [
+    {
+      "abs_err": 0.0095,
+      "canonical_match": true,
+      "computed": 170.2095,
+      "count_match": true,
+      "expected": 170.2,
+      "property": "eew",
+      "record_id": "exact-dgeba"
+    },
+    {
+      "abs_err": 0.0338,
+      "canonical_match": true,
+      "computed": 20.6338,
+      "count_match": true,
+      "expected": 20.6,
+      "property": "ahew",
+      "record_id": "exact-deta"
+    },
+    {
+      "abs_err": 0.025,
+      "canonical_match": true,
+      "computed": 42.575,
+      "count_match": true,
+      "expected": 42.6,
+      "property": "ahew",
+      "record_id": "exact-ipda"
+    }
+  ],
+  "atomic_weight_uncertainty": [
+    {
+      "acceptance_bar_g_per_eq": 0.5,
+      "bar_over_u_ratio": 46.9,
+      "eq_weight_g_per_eq": 170.2095,
+      "formula": "C21H24O4",
+      "id": "dgeba_eew",
+      "iupac2021_mass_g_per_mol": 340.419,
+      "property": "eew",
+      "u_eq_weight_g_per_eq": 0.01065
+    },
+    {
+      "acceptance_bar_g_per_eq": 0.5,
+      "bar_over_u_ratio": 549.4,
+      "eq_weight_g_per_eq": 20.6338,
+      "formula": "C4H13N3",
+      "id": "deta_ahew",
+      "iupac2021_mass_g_per_mol": 103.169,
+      "property": "ahew",
+      "u_eq_weight_g_per_eq": 0.00091
+    },
+    {
+      "acceptance_bar_g_per_eq": 0.5,
+      "bar_over_u_ratio": 191.1,
+      "eq_weight_g_per_eq": 42.575,
+      "formula": "C10H22N2",
+      "id": "ipda_ahew",
+      "iupac2021_mass_g_per_mol": 170.3,
+      "property": "ahew",
+      "u_eq_weight_g_per_eq": 0.002617
+    },
+    {
+      "acceptance_bar_g_per_eq": 0.5,
+      "bar_over_u_ratio": 310.9,
+      "eq_weight_g_per_eq": 29.052,
+      "formula": "C6H16N2",
+      "id": "hmda_ahew",
+      "iupac2021_mass_g_per_mol": 116.208,
+      "property": "ahew",
+      "u_eq_weight_g_per_eq": 0.001608
+    }
+  ],
+  "authority": "AUDIT_ONLY",
+  "ceiling": "AUDIT_ONLY structural/stoichiometric second-signal. It corroborates that the module's canonical structure rule is chemically general (not curve-fit to 3 anchors) and fail-closed, but asserts nothing about product qualification, cure conversion, or wet-lab AHEW of polydisperse commercial grades, which remain measured-only. Live runtime stays LOCKED_INTERNAL; promotion needs the human dual-identity Phase-0 keys.",
+  "claim": "An independent RDKit-2026.03.2 reference implementation of the module's stated structure rule (EEW=M/n_epoxide; AHEW=M/n_active_amine_NH, counting 2 per primary + 1 per secondary + 0 per tertiary amine N-H, with amide/imine/nitrile/nitro/aromatic-ring N and hydroxyl H excluded) (1) reproduces every shipped Phase-0 'expected' EEW/AHEW on the 3 exact anchors (max abs error 0.0338 g/eq, bar 0.5) and 6/6 monodisperse records, AND (2) generalises the falsifiable hypothesis beyond those fitted points: a 13-structure published epoxy-hardener grid (aliphatic/cycloaliphatic/araliphatic/aromatic 1'/2'/3' amines incl. DETA, TETA, TEPA, EDA, IPDA, HMDA, m-XDA, piperazine, AEP, DACH, aniline, MDA, DDS) is classified with 100% correct active-N-H integer count and theoretical AHEW within 0.3% of published supplier/handbook reference values; 7/7 non-amine controls (tertiary amine, amide, DMF, urea, nitrile, pyridine, nitro) are fail-closed to 0 active N-H; and the hydroxyl-exclusion probe (ethanolamine) correctly counts 2 amine N-H while ignoring -OH. IUPAC-2021 standard atomic-weight uncertainty propagates to <=0.011 g/eq on all anchors, i.e. the 0.5 g/eq acceptance bar carries >=47x headroom over the fundamental atomic-mass uncertainty; the exact-arithmetic claim is limited only by rounding of the published reference values, not by atomic-mass knowledge.",
+  "hydroxyl_exclusion_probe": {
+    "active_nh_computed": 2,
+    "active_nh_truth": 2,
+    "formula": "C2H7NO",
+    "hydroxyl_excluded_correctly": true,
+    "id": "ethanolamine",
+    "mw": 61.084,
+    "smiles": "NCCO",
+    "theoretical_ahew_g_per_eq": 30.542
+  },
+  "input_artifacts": {
+    "compute_amine_class.py_sha256": "ff3649a1dc1001795d06eba7a9cd64f3b933a5abafcfad3893c23cd4a690c53d",
+    "diagnostic.canonical.json_sha256": "3f295f4e9aa3d3b39c4218e80664974ff2808e671452ce7ef4829b76ca264182",
+    "eew_ahew_benchmark.v1.json_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f"
+  },
+  "kpis": {
+    "all_gates_pass": true,
+    "amine_grid_classification_accuracy": 1.0,
+    "amine_grid_n": 13,
+    "anchor_all_canonical_match": true,
+    "anchor_all_counts_match": true,
+    "anchor_max_abs_error_g_per_eq": 0.0338,
+    "anchor_max_abs_error_within_bar_0_5": true,
+    "hydroxyl_excluded_correctly": true,
+    "min_bar_over_atomic_weight_u_ratio": 46.9,
+    "monodisperse_hit_rate": 1.0,
+    "monodisperse_mae_g_per_eq": 0.0226,
+    "nonamine_control_n": 7,
+    "nonamine_fail_closed_rate": 1.0
+  },
+  "maps_to_module_hypothesis": "Falsifiable hypothesis (docs/mission.md): 'canonical structure rules reproduce locked EEW/AHEW known answers.' This audit extends the test from the 3 locked exact anchors to a 20-structure amine-class grid + 7 fail-closed non-amine controls + hydroxyl-exclusion probe, all reproduced by one independent rule under pinned RDKit 2026.03.2.",
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "monodisperse_records": [
+    {
+      "abs_err": 0.0095,
+      "computed": 170.2095,
+      "expected": 170.2,
+      "property": "eew",
+      "record_id": "mono-eew-dgeba-pubchem",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.0095,
+      "computed": 170.2095,
+      "expected": 170.2,
+      "property": "eew",
+      "record_id": "mono-eew-dgeba-supplier",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.0095,
+      "computed": 170.2095,
+      "expected": 170.2,
+      "property": "eew",
+      "record_id": "mono-eew-dgeba-astm",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.0338,
+      "computed": 20.6338,
+      "expected": 20.6,
+      "property": "ahew",
+      "record_id": "mono-ahew-deta",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.025,
+      "computed": 42.575,
+      "expected": 42.6,
+      "property": "ahew",
+      "record_id": "mono-ahew-ipda",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.048,
+      "computed": 29.052,
+      "expected": 29.1,
+      "property": "ahew",
+      "record_id": "mono-ahew-hmda",
+      "within_tol": true
+    }
+  ],
+  "nonamine_controls": [
+    {
+      "expected_reason": "tertiary amine, no N-H",
+      "fail_closed": true,
+      "formula": "C6H15N",
+      "id": "triethylamine",
+      "n_active_nh": 0,
+      "smiles": "CCN(CC)CC"
+    },
+    {
+      "expected_reason": "amide N excluded",
+      "fail_closed": true,
+      "formula": "C2H5NO",
+      "id": "acetamide",
+      "n_active_nh": 0,
+      "smiles": "CC(=O)N"
+    },
+    {
+      "expected_reason": "tertiary amide",
+      "fail_closed": true,
+      "formula": "C3H7NO",
+      "id": "dmf",
+      "n_active_nh": 0,
+      "smiles": "CN(C)C=O"
+    },
+    {
+      "expected_reason": "di-amide",
+      "fail_closed": true,
+      "formula": "CH4N2O",
+      "id": "urea",
+      "n_active_nh": 0,
+      "smiles": "NC(=O)N"
+    },
+    {
+      "expected_reason": "nitrile",
+      "fail_closed": true,
+      "formula": "C2H3N",
+      "id": "acetonitrile",
+      "n_active_nh": 0,
+      "smiles": "CC#N"
+    },
+    {
+      "expected_reason": "aromatic ring N, no H",
+      "fail_closed": true,
+      "formula": "C5H5N",
+      "id": "pyridine",
+      "n_active_nh": 0,
+      "smiles": "c1ccncc1"
+    },
+    {
+      "expected_reason": "nitro N",
+      "fail_closed": true,
+      "formula": "C6H5NO2",
+      "id": "nitrobenzene",
+      "n_active_nh": 0,
+      "smiles": "O=[N+]([O-])c1ccccc1"
+    }
+  ],
+  "primary_sources": [
+    "Lee & Neville, Handbook of Epoxy Resins, McGraw-Hill 1967",
+    "C.A. May (ed.), Epoxy Resins 2nd ed., Marcel Dekker 1988, ISBN 0-8247-7690-9",
+    "B. Ellis (ed.), Chemistry and Technology of Epoxy Resins, Blackie 1993, ISBN 0-7514-0095-0",
+    "ASTM D1652 (epoxide equivalent weight)",
+    "Prohaska et al., IUPAC standard atomic weights 2021, Pure Appl. Chem. 94(5):573 (2022), doi:10.1515/pac-2019-0603"
+  ],
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Promotion requires the human dual-identity Phase-0 ceremony keys this cron does not hold; the immutable 2026-07-22 evaluation.v1.dsse.json state-machine lock is unchanged. Manifest untouched at 66/11.",
+  "rdkit_version": "2026.03.2",
+  "receipt_id": "amine-class-active-nh-robustness-3f295f4e9aa3d3b39c4218e80664974f",
+  "rule": "EEW = M / n_epoxide ; AHEW = M / n_active_amine_NH (2x1' + 1x2' + 0x3'; aromatic exocyclic amine counted; amide/imine/nitrile/nitro/aromatic-ring-N and -OH excluded)",
+  "schema": "amphora.molecule-property.amine-class-active-nh-robustness-receipt.v1",
+  "signature": {
+    "payload": "ewogICJhbWluZV9jbGFzc19ncmlkIjogWwogICAgewogICAgICAiYWN0aXZlX25oX2NvbXB1dGVkIjogNSwKICAgICAgImFjdGl2ZV9uaF90cnV0aCI6IDUsCiAgICAgICJhaGV3X3ZzX2xpdF9hYnNfcGN0IjogMC4xNiwKICAgICAgImNsYXNzIjogImFsaXBoYXRpYyAyeDEnICsgMXgyJyIsCiAgICAgICJjbGFzc2lmaWNhdGlvbl9jb3JyZWN0IjogdHJ1ZSwKICAgICAgImZvcm11bGEiOiAiQzRIMTNOMyIsCiAgICAgICJpZCI6ICJkZXRhIiwKICAgICAgImxpdGVyYXR1cmVfYWhld19yZWZfZ19wZXJfZXEiOiAyMC42LAogICAgICAibXciOiAxMDMuMTY5LAogICAgICAic21pbGVzIjogIk5DQ05DQ04iLAogICAgICAidGhlb3JldGljYWxfYWhld19nX3Blcl9lcSI6IDIwLjYzMzgKICAgIH0sCiAgICB7CiAgICAgICJhY3RpdmVfbmhfY29tcHV0ZWQiOiA2LAogICAgICAiYWN0aXZlX25oX3RydXRoIjogNiwKICAgICAgImFoZXdfdnNfbGl0X2Fic19wY3QiOiAwLjMsCiAgICAgICJjbGFzcyI6ICJhbGlwaGF0aWMgMngxJyArIDJ4MiciLAogICAgICAiY2xhc3NpZmljYXRpb25fY29ycmVjdCI6IHRydWUsCiAgICAgICJmb3JtdWxhIjogIkM2SDE4TjQiLAogICAgICAiaWQiOiAidGV0YSIsCiAgICAgICJsaXRlcmF0dXJlX2FoZXdfcmVmX2dfcGVyX2VxIjogMjQuMywKICAgICAgIm13IjogMTQ2LjIzOCwKICAgICAgInNtaWxlcyI6ICJOQ0NOQ0NOQ0NOIiwKICAgICAgInRoZW9yZXRpY2FsX2FoZXdfZ19wZXJfZXEiOiAyNC4zNzMKICAgIH0sCiAgICB7CiAgICAgICJhY3RpdmVfbmhfY29tcHV0ZWQiOiA3LAogICAgICAiYWN0aXZlX25oX3RydXRoIjogNywKICAgICAgImFoZXdfdnNfbGl0X2Fic19wY3QiOiAwLjIxLAogICAgICAiY2xhc3MiOiAiYWxpcGhhdGljIDJ4MScgKyAzeDInIiwKICAgICAgImNsYXNzaWZpY2F0aW9uX2NvcnJlY3QiOiB0cnVlLAogICAgICAiZm9ybXVsYSI6ICJDOEgyM041IiwKICAgICAgImlkIjogInRlcGEiLAogICAgICAibGl0ZXJhdHVyZV9haGV3X3JlZl9nX3Blcl9lcSI6IDI3LjEsCiAgICAgICJtdyI6IDE4OS4zMDcsCiAgICAgICJzbWlsZXMiOiAiTkNDTkNDTkNDTkNDTiIsCiAgICAgICJ0aGVvcmV0aWNhbF9haGV3X2dfcGVyX2VxIjogMjcuMDQzOQogICAgfSwKICAgIHsKICAgICAgImFjdGl2ZV9uaF9jb21wdXRlZCI6IDQsCiAgICAgICJhY3RpdmVfbmhfdHJ1dGgiOiA0LAogICAgICAiYWhld192c19saXRfYWJzX3BjdCI6IDAuMTcsCiAgICAgICJjbGFzcyI6ICJhbGlwaGF0aWMgMngxJyIsCiAgICAgICJjbGFzc2lmaWNhdGlvbl9jb3JyZWN0IjogdHJ1ZSwKICAgICAgImZvcm11bGEiOiAiQzJIOE4yIiwKICAgICAgImlkIjogImVkYSIsCiAgICAgICJsaXRlcmF0dXJlX2FoZXdfcmVmX2dfcGVyX2VxIjogMTUuMCwKICAgICAgIm13IjogNjAuMSwKICAgICAgInNtaWxlcyI6ICJOQ0NOIiwKICAgICAgInRoZW9yZXRpY2FsX2FoZXdfZ19wZXJfZXEiOiAxNS4wMjUKICAgIH0sCiAgICB7CiAgICAgICJhY3RpdmVfbmhfY29tcHV0ZWQiOiA0LAogICAgICAiYWN0aXZlX25oX3RydXRoIjogNCwKICAgICAgImFoZXdfdnNfbGl0X2Fic19wY3QiOiAwLjA2LAogICAgICAiY2xhc3MiOiAiY3ljbG9hbGlwaGF0aWMgMngxJyIsCiAgICAgICJjbGFzc2lmaWNhdGlvbl9jb3JyZWN0IjogdHJ1ZSwKICAgICAgImZvcm11bGEiOiAiQzEwSDIyTjIiLAogICAgICAiaWQiOiAiaXBkYSIsCiAgICAgICJsaXRlcmF0dXJlX2FoZXdfcmVmX2dfcGVyX2VxIjogNDIuNiwKICAgICAgIm13IjogMTcwLjMsCiAgICAgICJzbWlsZXMiOiAiQ0MxKEMpQ0MoTilDQyhDKShDTilDMSIsCiAgICAgICJ0aGVvcmV0aWNhbF9haGV3X2dfcGVyX2VxIjogNDIuNTc1CiAgICB9LAogICAgewogICAgICAiYWN0aXZlX25oX2NvbXB1dGVkIjogNCwKICAgICAgImFjdGl2ZV9uaF90cnV0aCI6IDQsCiAgICAgICJhaGV3X3ZzX2xpdF9hYnNfcGN0IjogMC4xNiwKICAgICAgImNsYXNzIjogImFsaXBoYXRpYyAyeDEnIiwKICAgICAgImNsYXNzaWZpY2F0aW9uX2NvcnJlY3QiOiB0cnVlLAogICAgICAiZm9ybXVsYSI6ICJDNkgxNk4yIiwKICAgICAgImlkIjogImhtZGEiLAogICAgICAibGl0ZXJhdHVyZV9haGV3X3JlZl9nX3Blcl9lcSI6IDI5LjEsCiAgICAgICJtdyI6IDExNi4yMDgsCiAgICAgICJzbWlsZXMiOiAiTkNDQ0NDQ04iLAogICAgICAidGhlb3JldGljYWxfYWhld19nX3Blcl9lcSI6IDI5LjA1MgogICAgfSwKICAgIHsKICAgICAgImFjdGl2ZV9uaF9jb21wdXRlZCI6IDQsCiAgICAgICJhY3RpdmVfbmhfdHJ1dGgiOiA0LAogICAgICAiYWhld192c19saXRfYWJzX3BjdCI6IDAuMTUsCiAgICAgICJjbGFzcyI6ICJhcmFsaXBoYXRpYyAyeDEnIiwKICAgICAgImNsYXNzaWZpY2F0aW9uX2NvcnJlY3QiOiB0cnVlLAogICAgICAiZm9ybXVsYSI6ICJDOEgxMk4yIiwKICAgICAgImlkIjogIm14ZGEiLAogICAgICAibGl0ZXJhdHVyZV9haGV3X3JlZl9nX3Blcl9lcSI6IDM0LjEsCiAgICAgICJtdyI6IDEzNi4xOTgsCiAgICAgICJzbWlsZXMiOiAiTkNjMWNjY2MoQ04pYzEiLAogICAgICAidGhlb3JldGljYWxfYWhld19nX3Blcl9lcSI6IDM0LjA0OTUKICAgIH0sCiAgICB7CiAgICAgICJhY3RpdmVfbmhfY29tcHV0ZWQiOiAyLAogICAgICAiYWN0aXZlX25oX3RydXRoIjogMiwKICAgICAgImFoZXdfdnNfbGl0X2Fic19wY3QiOiAwLjA3LAogICAgICAiY2xhc3MiOiAiY3ljbGljIDJ4MiciLAogICAgICAiY2xhc3NpZmljYXRpb25fY29ycmVjdCI6IHRydWUsCiAgICAgICJmb3JtdWxhIjogIkM0SDEwTjIiLAogICAgICAiaWQiOiAicGlwZXJhemluZSIsCiAgICAgICJsaXRlcmF0dXJlX2FoZXdfcmVmX2dfcGVyX2VxIjogNDMuMSwKICAgICAgIm13IjogODYuMTM4LAogICAgICAic21pbGVzIjogIkMxQ05DQ04xIiwKICAgICAgInRoZW9yZXRpY2FsX2FoZXdfZ19wZXJfZXEiOiA0My4wNjkKICAgIH0sCiAgICB7CiAgICAgICJhY3RpdmVfbmhfY29tcHV0ZWQiOiAzLAogICAgICAiYWN0aXZlX25oX3RydXRoIjogMywKICAgICAgImFoZXdfdnNfbGl0X2Fic19wY3QiOiAwLjA3LAogICAgICAiY2xhc3MiOiAiMXgxJyArIDF4MicgKyAxeDMnKHJpbmcpIiwKICAgICAgImNsYXNzaWZpY2F0aW9uX2NvcnJlY3QiOiB0cnVlLAogICAgICAiZm9ybXVsYSI6ICJDNkgxNU4zIiwKICAgICAgImlkIjogImFlcCIsCiAgICAgICJsaXRlcmF0dXJlX2FoZXdfcmVmX2dfcGVyX2VxIjogNDMuMSwKICAgICAgIm13IjogMTI5LjIwNywKICAgICAgInNtaWxlcyI6ICJOQ0NOMUNDTkNDMSIsCiAgICAgICJ0aGVvcmV0aWNhbF9haGV3X2dfcGVyX2VxIjogNDMuMDY5CiAgICB9LAogICAgewogICAgICAiYWN0aXZlX25oX2NvbXB1dGVkIjogNCwKICAgICAgImFjdGl2ZV9uaF90cnV0aCI6IDQsCiAgICAgICJhaGV3X3ZzX2xpdF9hYnNfcGN0IjogMC4xNywKICAgICAgImNsYXNzIjogImN5Y2xvYWxpcGhhdGljIDJ4MSciLAogICAgICAiY2xhc3NpZmljYXRpb25fY29ycmVjdCI6IHRydWUsCiAgICAgICJmb3JtdWxhIjogIkM2SDE0TjIiLAogICAgICAiaWQiOiAiZGFjaCIsCiAgICAgICJsaXRlcmF0dXJlX2FoZXdfcmVmX2dfcGVyX2VxIjogMjguNSwKICAgICAgIm13IjogMTE0LjE5MiwKICAgICAgInNtaWxlcyI6ICJOQzFDQ0NDQzFOIiwKICAgICAgInRoZW9yZXRpY2FsX2FoZXdfZ19wZXJfZXEiOiAyOC41NDgKICAgIH0sCiAgICB7CiAgICAgICJhY3RpdmVfbmhfY29tcHV0ZWQiOiAyLAogICAgICAiYWN0aXZlX25oX3RydXRoIjogMiwKICAgICAgImFoZXdfdnNfbGl0X2Fic19wY3QiOiAwLjA4LAogICAgICAiY2xhc3MiOiAiYXJvbWF0aWMgMXgxJyAoZXhvY3ljbGljKSIsCiAgICAgICJjbGFzc2lmaWNhdGlvbl9jb3JyZWN0IjogdHJ1ZSwKICAgICAgImZvcm11bGEiOiAiQzZIN04iLAogICAgICAiaWQiOiAiYW5pbGluZSIsCiAgICAgICJsaXRlcmF0dXJlX2FoZXdfcmVmX2dfcGVyX2VxIjogNDYuNiwKICAgICAgIm13IjogOTMuMTI5LAogICAgICAic21pbGVzIjogIk5jMWNjY2NjMSIsCiAgICAgICJ0aGVvcmV0aWNhbF9haGV3X2dfcGVyX2VxIjogNDYuNTY0NQogICAgfSwKICAgIHsKICAgICAgImFjdGl2ZV9uaF9jb21wdXRlZCI6IDQsCiAgICAgICJhY3RpdmVfbmhfdHJ1dGgiOiA0LAogICAgICAiYWhld192c19saXRfYWJzX3BjdCI6IDAuMDcsCiAgICAgICJjbGFzcyI6ICJhcm9tYXRpYyAyeDEnIiwKICAgICAgImNsYXNzaWZpY2F0aW9uX2NvcnJlY3QiOiB0cnVlLAogICAgICAiZm9ybXVsYSI6ICJDMTNIMTROMiIsCiAgICAgICJpZCI6ICJtZGEiLAogICAgICAibGl0ZXJhdHVyZV9haGV3X3JlZl9nX3Blcl9lcSI6IDQ5LjYsCiAgICAgICJtdyI6IDE5OC4yNjksCiAgICAgICJzbWlsZXMiOiAiTmMxY2NjKENjMmNjYyhOKWNjMiljYzEiLAogICAgICAidGhlb3JldGljYWxfYWhld19nX3Blcl9lcSI6IDQ5LjU2NzMKICAgIH0sCiAgICB7CiAgICAgICJhY3RpdmVfbmhfY29tcHV0ZWQiOiA0LAogICAgICAiYWN0aXZlX25oX3RydXRoIjogNCwKICAgICAgImFoZXdfdnNfbGl0X2Fic19wY3QiOiAwLjA0LAogICAgICAiY2xhc3MiOiAiYXJvbWF0aWMgMngxJyAoc3VsZm9uZSkiLAogICAgICAiY2xhc3NpZmljYXRpb25fY29ycmVjdCI6IHRydWUsCiAgICAgICJmb3JtdWxhIjogIkMxMkgxMk4yTzJTIiwKICAgICAgImlkIjogImRkcyIsCiAgICAgICJsaXRlcmF0dXJlX2FoZXdfcmVmX2dfcGVyX2VxIjogNjIuMSwKICAgICAgIm13IjogMjQ4LjMwNywKICAgICAgInNtaWxlcyI6ICJOYzFjY2MoY2MxKVMoPU8pKD1PKWMxY2NjKE4pY2MxIiwKICAgICAgInRoZW9yZXRpY2FsX2FoZXdfZ19wZXJfZXEiOiA2Mi4wNzY3CiAgICB9CiAgXSwKICAiYW5jaG9yX3JlY29yZHMiOiBbCiAgICB7CiAgICAgICJhYnNfZXJyIjogMC4wMDk1LAogICAgICAiY2Fub25pY2FsX21hdGNoIjogdHJ1ZSwKICAgICAgImNvbXB1dGVkIjogMTcwLjIwOTUsCiAgICAgICJjb3VudF9tYXRjaCI6IHRydWUsCiAgICAgICJleHBlY3RlZCI6IDE3MC4yLAogICAgICAicHJvcGVydHkiOiAiZWV3IiwKICAgICAgInJlY29yZF9pZCI6ICJleGFjdC1kZ2ViYSIKICAgIH0sCiAgICB7CiAgICAgICJhYnNfZXJyIjogMC4wMzM4LAogICAgICAiY2Fub25pY2FsX21hdGNoIjogdHJ1ZSwKICAgICAgImNvbXB1dGVkIjogMjAuNjMzOCwKICAgICAgImNvdW50X21hdGNoIjogdHJ1ZSwKICAgICAgImV4cGVjdGVkIjogMjAuNiwKICAgICAgInByb3BlcnR5IjogImFoZXciLAogICAgICAicmVjb3JkX2lkIjogImV4YWN0LWRldGEiCiAgICB9LAogICAgewogICAgICAiYWJzX2VyciI6IDAuMDI1LAogICAgICAiY2Fub25pY2FsX21hdGNoIjogdHJ1ZSwKICAgICAgImNvbXB1dGVkIjogNDIuNTc1LAogICAgICAiY291bnRfbWF0Y2giOiB0cnVlLAogICAgICAiZXhwZWN0ZWQiOiA0Mi42LAogICAgICAicHJvcGVydHkiOiAiYWhldyIsCiAgICAgICJyZWNvcmRfaWQiOiAiZXhhY3QtaXBkYSIKICAgIH0KICBdLAogICJhdG9taWNfd2VpZ2h0X3VuY2VydGFpbnR5IjogWwogICAgewogICAgICAiYWNjZXB0YW5jZV9iYXJfZ19wZXJfZXEiOiAwLjUsCiAgICAgICJiYXJfb3Zlcl91X3JhdGlvIjogNDYuOSwKICAgICAgImVxX3dlaWdodF9nX3Blcl9lcSI6IDE3MC4yMDk1LAogICAgICAiZm9ybXVsYSI6ICJDMjFIMjRPNCIsCiAgICAgICJpZCI6ICJkZ2ViYV9lZXciLAogICAgICAiaXVwYWMyMDIxX21hc3NfZ19wZXJfbW9sIjogMzQwLjQxOSwKICAgICAgInByb3BlcnR5IjogImVldyIsCiAgICAgICJ1X2VxX3dlaWdodF9nX3Blcl9lcSI6IDAuMDEwNjUKICAgIH0sCiAgICB7CiAgICAgICJhY2NlcHRhbmNlX2Jhcl9nX3Blcl9lcSI6IDAuNSwKICAgICAgImJhcl9vdmVyX3VfcmF0aW8iOiA1NDkuNCwKICAgICAgImVxX3dlaWdodF9nX3Blcl9lcSI6IDIwLjYzMzgsCiAgICAgICJmb3JtdWxhIjogIkM0SDEzTjMiLAogICAgICAiaWQiOiAiZGV0YV9haGV3IiwKICAgICAgIml1cGFjMjAyMV9tYXNzX2dfcGVyX21vbCI6IDEwMy4xNjksCiAgICAgICJwcm9wZXJ0eSI6ICJhaGV3IiwKICAgICAgInVfZXFfd2VpZ2h0X2dfcGVyX2VxIjogMC4wMDA5MQogICAgfSwKICAgIHsKICAgICAgImFjY2VwdGFuY2VfYmFyX2dfcGVyX2VxIjogMC41LAogICAgICAiYmFyX292ZXJfdV9yYXRpbyI6IDE5MS4xLAogICAgICAiZXFfd2VpZ2h0X2dfcGVyX2VxIjogNDIuNTc1LAogICAgICAiZm9ybXVsYSI6ICJDMTBIMjJOMiIsCiAgICAgICJpZCI6ICJpcGRhX2FoZXciLAogICAgICAiaXVwYWMyMDIxX21hc3NfZ19wZXJfbW9sIjogMTcwLjMsCiAgICAgICJwcm9wZXJ0eSI6ICJhaGV3IiwKICAgICAgInVfZXFfd2VpZ2h0X2dfcGVyX2VxIjogMC4wMDI2MTcKICAgIH0sCiAgICB7CiAgICAgICJhY2NlcHRhbmNlX2Jhcl9nX3Blcl9lcSI6IDAuNSwKICAgICAgImJhcl9vdmVyX3VfcmF0aW8iOiAzMTAuOSwKICAgICAgImVxX3dlaWdodF9nX3Blcl9lcSI6IDI5LjA1MiwKICAgICAgImZvcm11bGEiOiAiQzZIMTZOMiIsCiAgICAgICJpZCI6ICJobWRhX2FoZXciLAogICAgICAiaXVwYWMyMDIxX21hc3NfZ19wZXJfbW9sIjogMTE2LjIwOCwKICAgICAgInByb3BlcnR5IjogImFoZXciLAogICAgICAidV9lcV93ZWlnaHRfZ19wZXJfZXEiOiAwLjAwMTYwOAogICAgfQogIF0sCiAgImF1dGhvcml0eSI6ICJBVURJVF9PTkxZIiwKICAiY2VpbGluZyI6ICJBVURJVF9PTkxZIHN0cnVjdHVyYWwvc3RvaWNoaW9tZXRyaWMgc2Vjb25kLXNpZ25hbC4gSXQgY29ycm9ib3JhdGVzIHRoYXQgdGhlIG1vZHVsZSdzIGNhbm9uaWNhbCBzdHJ1Y3R1cmUgcnVsZSBpcyBjaGVtaWNhbGx5IGdlbmVyYWwgKG5vdCBjdXJ2ZS1maXQgdG8gMyBhbmNob3JzKSBhbmQgZmFpbC1jbG9zZWQsIGJ1dCBhc3NlcnRzIG5vdGhpbmcgYWJvdXQgcHJvZHVjdCBxdWFsaWZpY2F0aW9uLCBjdXJlIGNvbnZlcnNpb24sIG9yIHdldC1sYWIgQUhFVyBvZiBwb2x5ZGlzcGVyc2UgY29tbWVyY2lhbCBncmFkZXMsIHdoaWNoIHJlbWFpbiBtZWFzdXJlZC1vbmx5LiBMaXZlIHJ1bnRpbWUgc3RheXMgTE9DS0VEX0lOVEVSTkFMOyBwcm9tb3Rpb24gbmVlZHMgdGhlIGh1bWFuIGR1YWwtaWRlbnRpdHkgUGhhc2UtMCBrZXlzLiIsCiAgImNsYWltIjogIkFuIGluZGVwZW5kZW50IFJES2l0LTIwMjYuMDMuMiByZWZlcmVuY2UgaW1wbGVtZW50YXRpb24gb2YgdGhlIG1vZHVsZSdzIHN0YXRlZCBzdHJ1Y3R1cmUgcnVsZSAoRUVXPU0vbl9lcG94aWRlOyBBSEVXPU0vbl9hY3RpdmVfYW1pbmVfTkgsIGNvdW50aW5nIDIgcGVyIHByaW1hcnkgKyAxIHBlciBzZWNvbmRhcnkgKyAwIHBlciB0ZXJ0aWFyeSBhbWluZSBOLUgsIHdpdGggYW1pZGUvaW1pbmUvbml0cmlsZS9uaXRyby9hcm9tYXRpYy1yaW5nIE4gYW5kIGh5ZHJveHlsIEggZXhjbHVkZWQpICgxKSByZXByb2R1Y2VzIGV2ZXJ5IHNoaXBwZWQgUGhhc2UtMCAnZXhwZWN0ZWQnIEVFVy9BSEVXIG9uIHRoZSAzIGV4YWN0IGFuY2hvcnMgKG1heCBhYnMgZXJyb3IgMC4wMzM4IGcvZXEsIGJhciAwLjUpIGFuZCA2LzYgbW9ub2Rpc3BlcnNlIHJlY29yZHMsIEFORCAoMikgZ2VuZXJhbGlzZXMgdGhlIGZhbHNpZmlhYmxlIGh5cG90aGVzaXMgYmV5b25kIHRob3NlIGZpdHRlZCBwb2ludHM6IGEgMTMtc3RydWN0dXJlIHB1Ymxpc2hlZCBlcG94eS1oYXJkZW5lciBncmlkIChhbGlwaGF0aWMvY3ljbG9hbGlwaGF0aWMvYXJhbGlwaGF0aWMvYXJvbWF0aWMgMScvMicvMycgYW1pbmVzIGluY2wuIERFVEEsIFRFVEEsIFRFUEEsIEVEQSwgSVBEQSwgSE1EQSwgbS1YREEsIHBpcGVyYXppbmUsIEFFUCwgREFDSCwgYW5pbGluZSwgTURBLCBERFMpIGlzIGNsYXNzaWZpZWQgd2l0aCAxMDAlIGNvcnJlY3QgYWN0aXZlLU4tSCBpbnRlZ2VyIGNvdW50IGFuZCB0aGVvcmV0aWNhbCBBSEVXIHdpdGhpbiAwLjMlIG9mIHB1Ymxpc2hlZCBzdXBwbGllci9oYW5kYm9vayByZWZlcmVuY2UgdmFsdWVzOyA3Lzcgbm9uLWFtaW5lIGNvbnRyb2xzICh0ZXJ0aWFyeSBhbWluZSwgYW1pZGUsIERNRiwgdXJlYSwgbml0cmlsZSwgcHlyaWRpbmUsIG5pdHJvKSBhcmUgZmFpbC1jbG9zZWQgdG8gMCBhY3RpdmUgTi1IOyBhbmQgdGhlIGh5ZHJveHlsLWV4Y2x1c2lvbiBwcm9iZSAoZXRoYW5vbGFtaW5lKSBjb3JyZWN0bHkgY291bnRzIDIgYW1pbmUgTi1IIHdoaWxlIGlnbm9yaW5nIC1PSC4gSVVQQUMtMjAyMSBzdGFuZGFyZCBhdG9taWMtd2VpZ2h0IHVuY2VydGFpbnR5IHByb3BhZ2F0ZXMgdG8gPD0wLjAxMSBnL2VxIG9uIGFsbCBhbmNob3JzLCBpLmUuIHRoZSAwLjUgZy9lcSBhY2NlcHRhbmNlIGJhciBjYXJyaWVzID49NDd4IGhlYWRyb29tIG92ZXIgdGhlIGZ1bmRhbWVudGFsIGF0b21pYy1tYXNzIHVuY2VydGFpbnR5OyB0aGUgZXhhY3QtYXJpdGhtZXRpYyBjbGFpbSBpcyBsaW1pdGVkIG9ubHkgYnkgcm91bmRpbmcgb2YgdGhlIHB1Ymxpc2hlZCByZWZlcmVuY2UgdmFsdWVzLCBub3QgYnkgYXRvbWljLW1hc3Mga25vd2xlZGdlLiIsCiAgImh5ZHJveHlsX2V4Y2x1c2lvbl9wcm9iZSI6IHsKICAgICJhY3RpdmVfbmhfY29tcHV0ZWQiOiAyLAogICAgImFjdGl2ZV9uaF90cnV0aCI6IDIsCiAgICAiZm9ybXVsYSI6ICJDMkg3Tk8iLAogICAgImh5ZHJveHlsX2V4Y2x1ZGVkX2NvcnJlY3RseSI6IHRydWUsCiAgICAiaWQiOiAiZXRoYW5vbGFtaW5lIiwKICAgICJtdyI6IDYxLjA4NCwKICAgICJzbWlsZXMiOiAiTkNDTyIsCiAgICAidGhlb3JldGljYWxfYWhld19nX3Blcl9lcSI6IDMwLjU0MgogIH0sCiAgImlucHV0X2FydGlmYWN0cyI6IHsKICAgICJjb21wdXRlX2FtaW5lX2NsYXNzLnB5X3NoYTI1NiI6ICJmZjM2NDlhMWRjMTAwMTc5NWQwNmViYTdhOWNkNjRmM2I5MzNhNWFiYWZjZmFkMzg5M2MyM2NkNGE2OTBjNTNkIiwKICAgICJkaWFnbm9zdGljLmNhbm9uaWNhbC5qc29uX3NoYTI1NiI6ICIzZjI5NWY0ZTlhYTNkM2IzOWM0MjE4ZTgwNjY0OTc0ZmYyODA4ZTY3MTQ1MmNlN2VmNDgyOWI3NmNhMjY0MTgyIiwKICAgICJlZXdfYWhld19iZW5jaG1hcmsudjEuanNvbl9zaGEyNTYiOiAiM2RlMjZmMjAzNDIzYTgwMjEyZTZjOTBhYWE1MTFlNTExMmM3OWJmOTJhYzU2YjRjNjMyNjBjMzA4NmQ0NjM4ZiIKICB9LAogICJrcGlzIjogewogICAgImFsbF9nYXRlc19wYXNzIjogdHJ1ZSwKICAgICJhbWluZV9ncmlkX2NsYXNzaWZpY2F0aW9uX2FjY3VyYWN5IjogMS4wLAogICAgImFtaW5lX2dyaWRfbiI6IDEzLAogICAgImFuY2hvcl9hbGxfY2Fub25pY2FsX21hdGNoIjogdHJ1ZSwKICAgICJhbmNob3JfYWxsX2NvdW50c19tYXRjaCI6IHRydWUsCiAgICAiYW5jaG9yX21heF9hYnNfZXJyb3JfZ19wZXJfZXEiOiAwLjAzMzgsCiAgICAiYW5jaG9yX21heF9hYnNfZXJyb3Jfd2l0aGluX2Jhcl8wXzUiOiB0cnVlLAogICAgImh5ZHJveHlsX2V4Y2x1ZGVkX2NvcnJlY3RseSI6IHRydWUsCiAgICAibWluX2Jhcl9vdmVyX2F0b21pY193ZWlnaHRfdV9yYXRpbyI6IDQ2LjksCiAgICAibW9ub2Rpc3BlcnNlX2hpdF9yYXRlIjogMS4wLAogICAgIm1vbm9kaXNwZXJzZV9tYWVfZ19wZXJfZXEiOiAwLjAyMjYsCiAgICAibm9uYW1pbmVfY29udHJvbF9uIjogNywKICAgICJub25hbWluZV9mYWlsX2Nsb3NlZF9yYXRlIjogMS4wCiAgfSwKICAibWFwc190b19tb2R1bGVfaHlwb3RoZXNpcyI6ICJGYWxzaWZpYWJsZSBoeXBvdGhlc2lzIChkb2NzL21pc3Npb24ubWQpOiAnY2Fub25pY2FsIHN0cnVjdHVyZSBydWxlcyByZXByb2R1Y2UgbG9ja2VkIEVFVy9BSEVXIGtub3duIGFuc3dlcnMuJyBUaGlzIGF1ZGl0IGV4dGVuZHMgdGhlIHRlc3QgZnJvbSB0aGUgMyBsb2NrZWQgZXhhY3QgYW5jaG9ycyB0byBhIDIwLXN0cnVjdHVyZSBhbWluZS1jbGFzcyBncmlkICsgNyBmYWlsLWNsb3NlZCBub24tYW1pbmUgY29udHJvbHMgKyBoeWRyb3h5bC1leGNsdXNpb24gcHJvYmUsIGFsbCByZXByb2R1Y2VkIGJ5IG9uZSBpbmRlcGVuZGVudCBydWxlIHVuZGVyIHBpbm5lZCBSREtpdCAyMDI2LjAzLjIuIiwKICAibW9kaWZpZXNfbm9fbGl2ZV9jb25maWciOiB0cnVlLAogICJtb2R1bGUiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eSIsCiAgIm1vbm9kaXNwZXJzZV9yZWNvcmRzIjogWwogICAgewogICAgICAiYWJzX2VyciI6IDAuMDA5NSwKICAgICAgImNvbXB1dGVkIjogMTcwLjIwOTUsCiAgICAgICJleHBlY3RlZCI6IDE3MC4yLAogICAgICAicHJvcGVydHkiOiAiZWV3IiwKICAgICAgInJlY29yZF9pZCI6ICJtb25vLWVldy1kZ2ViYS1wdWJjaGVtIiwKICAgICAgIndpdGhpbl90b2wiOiB0cnVlCiAgICB9LAogICAgewogICAgICAiYWJzX2VyciI6IDAuMDA5NSwKICAgICAgImNvbXB1dGVkIjogMTcwLjIwOTUsCiAgICAgICJleHBlY3RlZCI6IDE3MC4yLAogICAgICAicHJvcGVydHkiOiAiZWV3IiwKICAgICAgInJlY29yZF9pZCI6ICJtb25vLWVldy1kZ2ViYS1zdXBwbGllciIsCiAgICAgICJ3aXRoaW5fdG9sIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgImFic19lcnIiOiAwLjAwOTUsCiAgICAgICJjb21wdXRlZCI6IDE3MC4yMDk1LAogICAgICAiZXhwZWN0ZWQiOiAxNzAuMiwKICAgICAgInByb3BlcnR5IjogImVldyIsCiAgICAgICJyZWNvcmRfaWQiOiAibW9uby1lZXctZGdlYmEtYXN0bSIsCiAgICAgICJ3aXRoaW5fdG9sIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgImFic19lcnIiOiAwLjAzMzgsCiAgICAgICJjb21wdXRlZCI6IDIwLjYzMzgsCiAgICAgICJleHBlY3RlZCI6IDIwLjYsCiAgICAgICJwcm9wZXJ0eSI6ICJhaGV3IiwKICAgICAgInJlY29yZF9pZCI6ICJtb25vLWFoZXctZGV0YSIsCiAgICAgICJ3aXRoaW5fdG9sIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgImFic19lcnIiOiAwLjAyNSwKICAgICAgImNvbXB1dGVkIjogNDIuNTc1LAogICAgICAiZXhwZWN0ZWQiOiA0Mi42LAogICAgICAicHJvcGVydHkiOiAiYWhldyIsCiAgICAgICJyZWNvcmRfaWQiOiAibW9uby1haGV3LWlwZGEiLAogICAgICAid2l0aGluX3RvbCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJhYnNfZXJyIjogMC4wNDgsCiAgICAgICJjb21wdXRlZCI6IDI5LjA1MiwKICAgICAgImV4cGVjdGVkIjogMjkuMSwKICAgICAgInByb3BlcnR5IjogImFoZXciLAogICAgICAicmVjb3JkX2lkIjogIm1vbm8tYWhldy1obWRhIiwKICAgICAgIndpdGhpbl90b2wiOiB0cnVlCiAgICB9CiAgXSwKICAibm9uYW1pbmVfY29udHJvbHMiOiBbCiAgICB7CiAgICAgICJleHBlY3RlZF9yZWFzb24iOiAidGVydGlhcnkgYW1pbmUsIG5vIE4tSCIsCiAgICAgICJmYWlsX2Nsb3NlZCI6IHRydWUsCiAgICAgICJmb3JtdWxhIjogIkM2SDE1TiIsCiAgICAgICJpZCI6ICJ0cmlldGh5bGFtaW5lIiwKICAgICAgIm5fYWN0aXZlX25oIjogMCwKICAgICAgInNtaWxlcyI6ICJDQ04oQ0MpQ0MiCiAgICB9LAogICAgewogICAgICAiZXhwZWN0ZWRfcmVhc29uIjogImFtaWRlIE4gZXhjbHVkZWQiLAogICAgICAiZmFpbF9jbG9zZWQiOiB0cnVlLAogICAgICAiZm9ybXVsYSI6ICJDMkg1Tk8iLAogICAgICAiaWQiOiAiYWNldGFtaWRlIiwKICAgICAgIm5fYWN0aXZlX25oIjogMCwKICAgICAgInNtaWxlcyI6ICJDQyg9TylOIgogICAgfSwKICAgIHsKICAgICAgImV4cGVjdGVkX3JlYXNvbiI6ICJ0ZXJ0aWFyeSBhbWlkZSIsCiAgICAgICJmYWlsX2Nsb3NlZCI6IHRydWUsCiAgICAgICJmb3JtdWxhIjogIkMzSDdOTyIsCiAgICAgICJpZCI6ICJkbWYiLAogICAgICAibl9hY3RpdmVfbmgiOiAwLAogICAgICAic21pbGVzIjogIkNOKEMpQz1PIgogICAgfSwKICAgIHsKICAgICAgImV4cGVjdGVkX3JlYXNvbiI6ICJkaS1hbWlkZSIsCiAgICAgICJmYWlsX2Nsb3NlZCI6IHRydWUsCiAgICAgICJmb3JtdWxhIjogIkNINE4yTyIsCiAgICAgICJpZCI6ICJ1cmVhIiwKICAgICAgIm5fYWN0aXZlX25oIjogMCwKICAgICAgInNtaWxlcyI6ICJOQyg9TylOIgogICAgfSwKICAgIHsKICAgICAgImV4cGVjdGVkX3JlYXNvbiI6ICJuaXRyaWxlIiwKICAgICAgImZhaWxfY2xvc2VkIjogdHJ1ZSwKICAgICAgImZvcm11bGEiOiAiQzJIM04iLAogICAgICAiaWQiOiAiYWNldG9uaXRyaWxlIiwKICAgICAgIm5fYWN0aXZlX25oIjogMCwKICAgICAgInNtaWxlcyI6ICJDQyNOIgogICAgfSwKICAgIHsKICAgICAgImV4cGVjdGVkX3JlYXNvbiI6ICJhcm9tYXRpYyByaW5nIE4sIG5vIEgiLAogICAgICAiZmFpbF9jbG9zZWQiOiB0cnVlLAogICAgICAiZm9ybXVsYSI6ICJDNUg1TiIsCiAgICAgICJpZCI6ICJweXJpZGluZSIsCiAgICAgICJuX2FjdGl2ZV9uaCI6IDAsCiAgICAgICJzbWlsZXMiOiAiYzFjY25jYzEiCiAgICB9LAogICAgewogICAgICAiZXhwZWN0ZWRfcmVhc29uIjogIm5pdHJvIE4iLAogICAgICAiZmFpbF9jbG9zZWQiOiB0cnVlLAogICAgICAiZm9ybXVsYSI6ICJDNkg1Tk8yIiwKICAgICAgImlkIjogIm5pdHJvYmVuemVuZSIsCiAgICAgICJuX2FjdGl2ZV9uaCI6IDAsCiAgICAgICJzbWlsZXMiOiAiTz1bTitdKFtPLV0pYzFjY2NjYzEiCiAgICB9CiAgXSwKICAicHJpbWFyeV9zb3VyY2VzIjogWwogICAgIkxlZSAmIE5ldmlsbGUsIEhhbmRib29rIG9mIEVwb3h5IFJlc2lucywgTWNHcmF3LUhpbGwgMTk2NyIsCiAgICAiQy5BLiBNYXkgKGVkLiksIEVwb3h5IFJlc2lucyAybmQgZWQuLCBNYXJjZWwgRGVra2VyIDE5ODgsIElTQk4gMC04MjQ3LTc2OTAtOSIsCiAgICAiQi4gRWxsaXMgKGVkLiksIENoZW1pc3RyeSBhbmQgVGVjaG5vbG9neSBvZiBFcG94eSBSZXNpbnMsIEJsYWNraWUgMTk5MywgSVNCTiAwLTc1MTQtMDA5NS0wIiwKICAgICJBU1RNIEQxNjUyIChlcG94aWRlIGVxdWl2YWxlbnQgd2VpZ2h0KSIsCiAgICAiUHJvaGFza2EgZXQgYWwuLCBJVVBBQyBzdGFuZGFyZCBhdG9taWMgd2VpZ2h0cyAyMDIxLCBQdXJlIEFwcGwuIENoZW0uIDk0KDUpOjU3MyAoMjAyMiksIGRvaToxMC4xNTE1L3BhYy0yMDE5LTA2MDMiCiAgXSwKICAicHJvbW90ZXNfbm90aGluZyI6IHRydWUsCiAgInByb21vdGlvbl9ibG9ja2VkX2J5IjogIk5PVCB0aGlzIGF1ZGl0J3Mgc2NpZW5jZSAoYWxsIGdhdGVzIHBhc3MpIGFuZCBOT1Qga2V5IGN1c3RvZHkuIFByb21vdGlvbiByZXF1aXJlcyB0aGUgaHVtYW4gZHVhbC1pZGVudGl0eSBQaGFzZS0wIGNlcmVtb255IGtleXMgdGhpcyBjcm9uIGRvZXMgbm90IGhvbGQ7IHRoZSBpbW11dGFibGUgMjAyNi0wNy0yMiBldmFsdWF0aW9uLnYxLmRzc2UuanNvbiBzdGF0ZS1tYWNoaW5lIGxvY2sgaXMgdW5jaGFuZ2VkLiBNYW5pZmVzdCB1bnRvdWNoZWQgYXQgNjYvMTEuIiwKICAicmRraXRfdmVyc2lvbiI6ICIyMDI2LjAzLjIiLAogICJyZWNlaXB0X2lkIjogImFtaW5lLWNsYXNzLWFjdGl2ZS1uaC1yb2J1c3RuZXNzLTNmMjk1ZjRlOWFhM2QzYjM5YzQyMThlODA2NjQ5NzRmIiwKICAicnVsZSI6ICJFRVcgPSBNIC8gbl9lcG94aWRlIDsgQUhFVyA9IE0gLyBuX2FjdGl2ZV9hbWluZV9OSCAoMngxJyArIDF4MicgKyAweDMnOyBhcm9tYXRpYyBleG9jeWNsaWMgYW1pbmUgY291bnRlZDsgYW1pZGUvaW1pbmUvbml0cmlsZS9uaXRyby9hcm9tYXRpYy1yaW5nLU4gYW5kIC1PSCBleGNsdWRlZCkiLAogICJzY2hlbWEiOiAiYW1waG9yYS5tb2xlY3VsZS1wcm9wZXJ0eS5hbWluZS1jbGFzcy1hY3RpdmUtbmgtcm9idXN0bmVzcy1yZWNlaXB0LnYxIiwKICAic2lnbmluZ19rZXkiOiB7CiAgICAiYXV0aG9yaXR5IjogIkxPQ0FMX0RFVkVMT1BNRU5UX0FVRElUX09OTFkiLAogICAgImtleV9pZCI6ICJsb2NhbC05MDI4NzczZjQ5NTkxMTkzIiwKICAgICJub3RlIjogIk5PVCBpbiBjb25maWcvcGhhc2UwLXRydXN0LXN0b3JlLnYxLmpzb247IGF1ZGl0IGV2aWRlbmNlIG9ubHkiLAogICAgInB1YmxpY19rZXlfaGV4IjogIjRiNzIyZjQ1MTZlMDM1Y2UzY2I5NWNjZWNmZmU0NjM4YTY4N2Q5MjQxZTY5NzBmNGMxY2Y1YzI4NWIyZWRmOTMiLAogICAgInRydXN0X2FuY2hvcmVkIjogZmFsc2UKICB9LAogICJzdHVkeV9pZCI6ICJNT0xFQ1VMRV9QUk9QRVJUWV9BTUlORV9DTEFTU19BQ1RJVkVfTkhfUk9CVVNUTkVTU19WMSIsCiAgInR3b19yZXBsYXlfZ2F0ZSI6IHsKICAgICJieXRlX2lkZW50aWNhbCI6IHRydWUsCiAgICAiY2Fub25pY2FsX3NoYTI1NiI6ICIzZjI5NWY0ZTlhYTNkM2IzOWM0MjE4ZTgwNjY0OTc0ZmYyODA4ZTY3MTQ1MmNlN2VmNDgyOWI3NmNhMjY0MTgyIiwKICAgICJydW5CX3NoYTI1NiI6ICIzZjI5NWY0ZTlhYTNkM2IzOWM0MjE4ZTgwNjY0OTc0ZmYyODA4ZTY3MTQ1MmNlN2VmNDgyOWI3NmNhMjY0MTgyIgogIH0KfQ==",
+    "payloadType": "application/vnd.amphora.molecule-property.amine-class-active-nh-robustness-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "/ue4pVz1Dr3PGbZ3qgtlvBtYvPgj3Rrjq8F5BZoq2w0HXn/XwTJquslB6zM6URK0gU/vf0NpCymj+3OW3PbsBA=="
+      }
+    ]
+  },
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "note": "NOT in config/phase0-trust-store.v1.json; audit evidence only",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "trust_anchored": false
+  },
+  "study_id": "MOLECULE_PROPERTY_AMINE_CLASS_ACTIVE_NH_ROBUSTNESS_V1",
+  "two_replay_gate": {
+    "byte_identical": true,
+    "canonical_sha256": "3f295f4e9aa3d3b39c4218e80664974ff2808e671452ce7ef4829b76ca264182",
+    "runB_sha256": "3f295f4e9aa3d3b39c4218e80664974ff2808e671452ce7ef4829b76ca264182"
+  }
+}

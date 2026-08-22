@@ -1,0 +1,94 @@
+{
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "C5",
+  "claim_under_attack": {
+    "claim_text": "the KPI's 'all gates pass' verdict is well-founded",
+    "receipt_path": "amphora-cure-potlife-gate/evidence/phase0/kpis/cure-potlife-arrhenius-kpi.v1.json"
+  },
+  "does_not_close": [
+    "does NOT claim the physics/arithmetic in the KPI is wrong",
+    "does NOT flip rights_gate_passed (requires each source ingested through amphora-source-ledger under a signed rights receipt -- a human step)",
+    "does NOT promote amphora-cure-potlife-gate to PHASE_0",
+    "does NOT modify source-lock.v2.json, dataset-manifest.v1.json, cure-sources.v1.json, the known-answer fixture, the signed KPI, the manifest, or any prior receipt",
+    "does NOT open, parse, or derive from any quarantined source's payload content -- rights metadata only"
+  ],
+  "facts": {
+    "dataset_manifest": {
+      "dataset_kind": "RIGHTS_QUALIFIED_EVIDENCE",
+      "path": "amphora-cure-potlife-gate/evidence/phase0/dataset/dataset-manifest.v1.json",
+      "rights_gate_passed": false,
+      "scientific_success_asserted": false,
+      "sha256": "7317cbb347e508eb74f8e1b7e8b704e36d878c8a1058f9b19fd6bc08c89348cc"
+    },
+    "known_answer_fixture": {
+      "appears_in_source_lock_eligible_sources": false,
+      "appears_in_source_lock_excluded_sources": false,
+      "matches_kpi_dataset_fixture_sha256": true,
+      "n_systems_total": 12,
+      "n_systems_with_pot_life_value_sourced_from_named_vendor_tds": 10,
+      "named_tds_sources_cited": [
+        "Air Products Ancamine 2049 (PACM) TDS 6h @ 25C",
+        "Air Products Ancamine 2735 (Mannich) TDS 15 min @ 25C",
+        "Aldrich MPDA + Epikote 828 15h @ 25C (Ellis 1993 Chapter 5)",
+        "Dow DER 331 + DEH 20 TDS; supplier gel time at nominal mass",
+        "Dow DER 331 + DEH 24 TDS; Ellis 1993 Chapter 5",
+        "Epikote 828 + MDA 12h @ 25C (Ellis 1993)",
+        "Huntsman Aradur 3486 (amidoamine) TDS 3h @ 25C",
+        "Huntsman Aradur 43 (TEPA) TDS",
+        "Huntsman Araldite GY 6010 + HY 2954 (IPDA) TDS 4h @ 25C",
+        "Mitsubishi Gaskineide Nx-1052 (MXDA) TDS 90 min @ 25C",
+        "Momentive EPI-CURE 3125 (amidoamine) TDS 2h @ 25C",
+        "Momentive Heloxy DACH TDS"
+      ],
+      "path": "amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+      "self_asserted_rights_block": {
+        "eligible_for_derivatives": true,
+        "license": "CC0-1.0",
+        "scope": "Amphora-authored two-part epoxy-amine cure kinetics compilation from Prime (Turi 1997), Kamal-Sourour (1973), Riccardi et al. (1984), Blanco et al. (2005), Ellis (1993), and supplier technical data sheets for Phase-0 Arrhenius-cure-rate controls only; no wet-lab measurements or CRO data checked in",
+        "source_id": "amphora_phase0_cure_potlife_arrhenius_known_answer",
+        "source_url": "local:amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+        "status": "ACCEPTED"
+      },
+      "sha256_observed": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1"
+    },
+    "kpi": {
+      "all_6_metrics_passed": true,
+      "dataset_fixture_sha256_field": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1",
+      "path": "amphora-cure-potlife-gate/evidence/phase0/kpis/cure-potlife-arrhenius-kpi.v1.json",
+      "phase0_deterministic_gates_passed": true,
+      "sha256": "54f19e3fc36cb712920ee0f207d88539bc1834fa93f9097e93e885f1e7c306a8"
+    },
+    "source_census": {
+      "do_not_benchmark_restriction_present": true,
+      "n_eligible_for_derivatives_false": 3,
+      "n_quarantined": 3,
+      "n_sources": 3,
+      "path": "config/program/cure-sources.v1.json",
+      "sha256": "a6fdac638c611b56852bdfd20baedd4e881831be45eb67693976030a7b316702",
+      "source_ids": [
+        "evonik_epoxy_curing_agent_guide",
+        "huntsman_versamid_eh_50",
+        "cardolite_epoxy_curing_agents"
+      ]
+    },
+    "source_lock": {
+      "n_eligible_sources": 0,
+      "n_excluded_sources": 7,
+      "path": "amphora-cure-potlife-gate/evidence/phase0/sources/source-lock.v2.json",
+      "rights_gate_passed": false,
+      "sha256": "fd9bec3b26cec6683c7f85dfd1495074f16c2ef327b97077c93251720039d3d6"
+    }
+  },
+  "findings": {
+    "contradiction_present": true,
+    "contradiction_statement": "The module's own source-lock declares rights_gate_passed=false with ZERO eligible_sources, and its own source census marks 100% (3/3) of in-tree cure TDS sources QUARANTINED / eligible_for_derivatives=false with an explicit restriction 'Do not train or benchmark until derivative-use eligibility is established'. Yet the signed Arrhenius KPI declares phase0_deterministic_gates_passed=true and all 6 of its metrics passed=true -- i.e. the module WAS benchmarked, on a dataset whose pot-life values for all 12/12 systems are sourced from named vendor TDS documents (Dow, Huntsman, Air Products, Momentive, Mitsubishi).",
+    "self_assertion_statement": "The KPI's dataset_fixture_sha256 field points, byte-for-byte, at reference/phase0-cure-potlife-known-answer.v1.json. That file carries its OWN in-file 'rights' block self-declaring license=CC0-1.0, eligible_for_derivatives=true, status=ACCEPTED -- a bare assertion with NO signed rights receipt, and the file appears in NEITHER source-lock.v2.json's eligible_sources (empty) NOR its excluded_sources list. It sits outside the rights-gate accounting entirely while its component numbers are drawn directly from named vendor TDS documents -- the exact category of material the module's own source census quarantines elsewhere in the same tree.",
+    "self_assertion_ungoverned": true,
+    "well_founded_verdict": "REFUTED",
+    "what_is_false": "The framing that 'all gates pass' therefore means the KPI is a well-founded, rights-clean Phase-0 artifact. The RIGHTS gate -- a precondition the module's own source-lock and source census both gate on -- is failing with zero ledgered eligible sources, on a dataset whose provenance numbers were never ingested through the module's own rights pipeline.",
+    "what_is_true": "The DETERMINISTIC PHYSICS gates (MAPE ceilings, applicability-domain fail-closed, authority-lock preservation) genuinely do pass -- this is NOT a claim that the arithmetic or physics is fabricated. Those gates are computed correctly on the numbers as given."
+  },
+  "method": "Reads only rights-metadata files (source-lock, dataset-manifest, source census) and the KPI/known-answer-fixture JSON already on disk. Opens, parses, or derives from NO quarantined source payload content.",
+  "schema": "amphora.cure-potlife-gate.rights-integrity-contradiction.diagnostic.v1",
+  "target_module": "amphora-cure-potlife-gate"
+}

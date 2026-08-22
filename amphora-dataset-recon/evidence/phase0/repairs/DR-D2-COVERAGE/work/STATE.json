@@ -1,0 +1,8 @@
+{
+  "item_id": "DR-D2-COVERAGE",
+  "status": "done",
+  "fire_id": "20260811T180001-3656034-78f17f5a8b86",
+  "outcome": "CLAIM_SURVIVED",
+  "done_receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-D2-COVERAGE/done/dr-d2-coverage-done-receipt.v1.dsse.json",
+  "notes": "Fire 1/2. Built and signed the full 31-obligation coverage table for AMPHORA-DIRECTIVE-2026-08-09 on fire 1; 0 unmapped, 0 orphan, 0 violations, 4-obligation DSSE spot-check all pass, positive control (DR-FRESH flip) detected. done_criterion met this fire -- no further fires needed unless a future audit finds a defect requiring repair (would become a fire-2 supersede)."
+}

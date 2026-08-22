@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "RIGHTS_QUALIFIED_EVIDENCE",
+  "missing_values_imputed": false,
+  "module_id": "amphora-tolerance-robustness",
+  "rights_gate_passed": false,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "c015ee9bc5954a80b30ca2b9931f98a4786ec49c0b7ba31c998e960cb617e27c"
+}

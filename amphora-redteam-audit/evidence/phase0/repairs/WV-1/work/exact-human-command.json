@@ -1,0 +1,50 @@
+{
+  "summary": "One governed command touches the authoritative repository. Everything before it happens in a scratch rehearsal copy and produces the fresh independent-review receipt that the governed command demands.",
+  "why_a_rehearsal_is_needed": "The fresh review receipt must bind evaluation_receipt_hash == sha256 of the receipt the repair will write, and amphora-phase0-reviewer only signs a receipt it has verified on disk. The replacement receipt is a deterministic function of the worktree (bundle bytes, parent hashes, claim locks, the two locked-benchmark replays, and a deterministic Ed25519 signature), so it can be produced in a copy first. `re-evaluate --dry-run` publishes that exact hash in advance, and the governed command refuses if the supplied review binds anything else - so a mismatch can only ever produce a refusal, never a bad write.",
+  "step_0_read_the_plan": {
+    "where": "the authoritative workspace, /home/ubuntu/amphora/build/mvp20-split",
+    "command": "target/debug/amphora-tui portfolio phase0 re-evaluate --module <MODULE> --reason \"<why this binding is broken>\" --as-of <YYYY-MM-DDTHH:MM:SSZ> --evaluation-key /home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed --review <any existing signed review for <MODULE>> --dry-run",
+    "writes": "nothing (the dry run is wrapped in prove_read_only)",
+    "read_from_output": "new_evaluation_receipt_sha256 = <S>, new_benchmark_result_sha256, files_that_move, archive_root"
+  },
+  "step_1_rehearse_in_a_scratch_copy": {
+    "where": "a scratch copy, e.g. /tmp/wv1-rehearse-<MODULE>",
+    "commands": [
+      "rsync -a --exclude target/ --exclude .git/ /home/ubuntu/amphora/build/mvp20-split/ /tmp/wv1-rehearse-<MODULE>/",
+      "cd /tmp/wv1-rehearse-<MODULE> && ~/.cargo/bin/cargo build --locked --features rdkit --bin amphora-tui --bin amphora-phase0-reviewer",
+      "mkdir -p /tmp/wv1-rehearse-<MODULE>-aside && mv <MODULE>/evidence/phase0/receipts/evaluation.v1.dsse.json <MODULE>/evidence/phase0/receipts/independent-review.v1.dsse.json <MODULE>/evidence/phase0/benchmark/result.v1.json <MODULE>/movement/events/*.json /tmp/wv1-rehearse-<MODULE>-aside/",
+      "printf '{\"schema\":\"amphora.module-movement-ledger.v1\",\"module_id\":\"<MODULE>\",\"events\":[]}\\n' > <MODULE>/movement/ledger.v1.json",
+      "AMPHORA_PHASE0_EVALUATOR_KEY_ID=phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178 AMPHORA_PHASE0_EVALUATOR_KEY=/home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed ./target/debug/amphora-tui portfolio phase0 evaluate --module <MODULE>",
+      "sha256sum <MODULE>/evidence/phase0/receipts/evaluation.v1.dsse.json   # MUST equal <S> from step 0"
+    ],
+    "note": "amphora-cli resolves its workspace root at compile time (env!(\"CARGO_MANIFEST_DIR\")), so the rehearsal needs its own build; a binary built from the authoritative tree would write to the authoritative tree.",
+    "if_the_hash_differs": "STOP. Do not proceed. A difference means the replacement receipt is not a deterministic function of the tree, and the governed command would refuse anyway."
+  },
+  "step_2_obtain_the_fresh_independent_review": {
+    "where": "the scratch copy; the reviewer writes its receipt outside any repository",
+    "command": "/tmp/wv1-rehearse-<MODULE>/target/debug/amphora-phase0-reviewer --workspace /tmp/wv1-rehearse-<MODULE> --module <MODULE> --benchmark-executable /tmp/wv1-rehearse-<MODULE>/target/debug/amphora-tui --reviewer-key-id phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b --reviewer-key /home/ubuntu/.local/share/amphora/phase0/keys/internal-reviewer.ed25519.seed --output /home/ubuntu/wv1-reviews/<MODULE>.review.v1.dsse.json",
+    "produces": "a review receipt whose evaluation_receipt_hash == <S>, signed by the second, distinct trusted identity"
+  },
+  "step_3_the_one_governed_command": {
+    "where": "the authoritative workspace",
+    "command": "flock -w 300 .cron.lock target/debug/amphora-tui portfolio phase0 re-evaluate --module <MODULE> --reason \"<why this binding is broken>\" --as-of <YYYY-MM-DDTHH:MM:SSZ> --evaluation-key /home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed --review /home/ubuntu/wv1-reviews/<MODULE>.review.v1.dsse.json",
+    "what_it_does_in_one_transaction": [
+      "refuses unless <MODULE> is in UNBOUND_BENCHMARK_RESULTS and its shipped result is in fact unbound from its signed receipt",
+      "refuses unless BOTH a fresh external evaluator key AND a fresh, distinct, trusted, signed independent-review receipt are supplied",
+      "refuses unless the supplied review binds the exact receipt this run will write",
+      "archives the prior evaluation receipt, independent-review receipt, benchmark result, movement event and movement ledger under <MODULE>/evidence/phase0/superseded/<sha256-of-prior-evaluation-receipt>/ with a supersession note",
+      "regenerates benchmark/result.v1.json through evaluate_signed(), the single legitimate writer, and writes the replacement evaluation receipt",
+      "re-binds the review through the existing import_review() path",
+      "restores the module byte-for-byte from a backup if any step fails"
+    ],
+    "leaves_the_module_at": "PRE_PHASE_0, promotable - the prior movement event bound the prior receipt hash and was superseded with it"
+  },
+  "step_4_re_derive_the_phase": {
+    "where": "the authoritative workspace",
+    "command": "flock -w 300 .cron.lock target/debug/amphora-tui portfolio phase0 promote --module <MODULE>",
+    "note": "phase is derived from a fresh movement event with two distinct trusted signatures; it is never asserted by the repair."
+  },
+  "step_5_reconcile_the_guard": {
+    "note": "UNBOUND_BENCHMARK_RESULTS in amphora-cli/src/phase0.rs and the pinned counts in tests::source_ledger_historical_movement_and_status_are_read_only must be updated in the same change that repairs a module, or the regression guard shipped_benchmark_results_stay_bound_to_signed_evaluation_receipts will fail - by design."
+  }
+}

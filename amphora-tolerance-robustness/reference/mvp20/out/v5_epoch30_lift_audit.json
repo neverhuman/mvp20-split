@@ -1,0 +1,165 @@
+{
+  "absolute_lift": -0.00508236620862626,
+  "artifact_hash": "14dbe7da49ca4328190ad2814e47b61b9990e612750d53ebb6ecc84e66f7f2a9",
+  "baseline_definition": "frozen nominal-only funnel candidate and design-rule score",
+  "baseline_metric": 0.08291977976434006,
+  "claim_boundary": "Simulation is not unseen laboratory evidence and cannot validate candidate wet-lab performance.",
+  "confidence_summary": {
+    "method": "descriptive_simulation_margin_summary",
+    "paired_confidence_test": false
+  },
+  "fold_results": [
+    {
+      "dominant_failures": {},
+      "draws": 200,
+      "failure_count": 0,
+      "failure_counts_by_gate": {},
+      "margin_metrics": {
+        "gate_10th_percentile_margin": {
+          "coverage": 0.814089231,
+          "lambda_below_cpvc": 0.760398752,
+          "mix_ratio": 1.0,
+          "pvc_window": 0.077568676,
+          "solvent_solve_feasibility": 1.0,
+          "stoichiometry": 0.386114727,
+          "voc": 0.166142027,
+          "volume_solids": 1.0,
+          "weight_per_gallon": 0.775024067,
+          "wet_film_thickness": 0.763313609
+        },
+        "margin_standard_deviation": 0.00379527,
+        "minimum_margin": 0.074994242,
+        "normalized_10th_percentile_gate_margin": 0.077568676
+      },
+      "pass_count": 200,
+      "pass_rate": 1.0,
+      "seed": 2001
+    },
+    {
+      "dominant_failures": {},
+      "draws": 200,
+      "failure_count": 0,
+      "failure_counts_by_gate": {},
+      "margin_metrics": {
+        "gate_10th_percentile_margin": {
+          "coverage": 0.814089231,
+          "lambda_below_cpvc": 0.760417616,
+          "mix_ratio": 1.0,
+          "pvc_window": 0.078015843,
+          "solvent_solve_feasibility": 1.0,
+          "stoichiometry": 0.391627423,
+          "voc": 0.166743957,
+          "volume_solids": 1.0,
+          "weight_per_gallon": 0.779298594,
+          "wet_film_thickness": 0.763313609
+        },
+        "margin_standard_deviation": 0.003722272,
+        "minimum_margin": 0.075457926,
+        "normalized_10th_percentile_gate_margin": 0.078015843
+      },
+      "pass_count": 200,
+      "pass_rate": 1.0,
+      "seed": 2027
+    },
+    {
+      "dominant_failures": {},
+      "draws": 200,
+      "failure_count": 0,
+      "failure_counts_by_gate": {},
+      "margin_metrics": {
+        "gate_10th_percentile_margin": {
+          "coverage": 0.814089231,
+          "lambda_below_cpvc": 0.760471239,
+          "mix_ratio": 1.0,
+          "pvc_window": 0.0785088,
+          "solvent_solve_feasibility": 1.0,
+          "stoichiometry": 0.427670701,
+          "voc": 0.16643661,
+          "volume_solids": 1.0,
+          "weight_per_gallon": 0.781666257,
+          "wet_film_thickness": 0.763313609
+        },
+        "margin_standard_deviation": 0.003847325,
+        "minimum_margin": 0.074446319,
+        "normalized_10th_percentile_gate_margin": 0.0785088
+      },
+      "pass_count": 200,
+      "pass_rate": 1.0,
+      "seed": 4242
+    },
+    {
+      "dominant_failures": {},
+      "draws": 200,
+      "failure_count": 0,
+      "failure_counts_by_gate": {},
+      "margin_metrics": {
+        "gate_10th_percentile_margin": {
+          "coverage": 0.814089231,
+          "lambda_below_cpvc": 0.760732445,
+          "mix_ratio": 1.0,
+          "pvc_window": 0.078139185,
+          "solvent_solve_feasibility": 1.0,
+          "stoichiometry": 0.414804969,
+          "voc": 0.166581874,
+          "volume_solids": 1.0,
+          "weight_per_gallon": 0.783849909,
+          "wet_film_thickness": 0.763313609
+        },
+        "margin_standard_deviation": 0.003668921,
+        "minimum_margin": 0.074337709,
+        "normalized_10th_percentile_gate_margin": 0.078139185
+      },
+      "pass_count": 200,
+      "pass_rate": 1.0,
+      "seed": 9001
+    },
+    {
+      "dominant_failures": {},
+      "draws": 200,
+      "failure_count": 0,
+      "failure_counts_by_gate": {},
+      "margin_metrics": {
+        "gate_10th_percentile_margin": {
+          "coverage": 0.814089231,
+          "lambda_below_cpvc": 0.761282696,
+          "mix_ratio": 1.0,
+          "pvc_window": 0.07768519,
+          "solvent_solve_feasibility": 1.0,
+          "stoichiometry": 0.406766434,
+          "voc": 0.166811683,
+          "volume_solids": 1.0,
+          "weight_per_gallon": 0.790159675,
+          "wet_film_thickness": 0.763313609
+        },
+        "margin_standard_deviation": 0.003797307,
+        "minimum_margin": 0.073595626,
+        "normalized_10th_percentile_gate_margin": 0.07768519
+      },
+      "pass_count": 200,
+      "pass_rate": 1.0,
+      "seed": 12001
+    }
+  ],
+  "group_count": 5,
+  "model_metric": 0.0778374135557138,
+  "model_registry": [
+    "frozen_nominal_only_funnel_baseline",
+    "robust_margin_selector"
+  ],
+  "nominal_baseline_margin": 0.08291977976434006,
+  "primary_metric": "normalized_10th_percentile_gate_margin",
+  "promotion_status": "UNSEEN_PERTURBATION_SIMULATION",
+  "relative_error_reduction": -0.005541899,
+  "robust_selected_margin": 0.0778374135557138,
+  "sample_count": 1000,
+  "schema": "amphora.lift_audit.v2",
+  "schema_version": "amphora.lift_audit.v2",
+  "source_hashes": {
+    "simulation_config_artifact": "fd43c4a20eba5e339faa42d078296932c91560a18200891292fb0715e3257c81"
+  },
+  "source_paths": [
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-tolerance-robustness/reference/mvp20/out/v5_epoch29_simulation_config.json"
+  ],
+  "split_policy": "registered seeds and draws; exact pass counts; perturbation simulation only",
+  "status": "simulation_only"
+}

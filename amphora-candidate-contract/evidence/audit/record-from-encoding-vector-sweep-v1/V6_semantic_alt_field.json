@@ -1,0 +1,18 @@
+{
+  "candidate_id": "DGEBA-monomer",
+  "candidate_type": "molecule",
+  "context": {
+    "dft_basis_mil": 5.0,
+    "target_spec": "resin EEW band for Envelope-65"
+  },
+  "declared_canonical_structure_hash": "POISON_V6_SEMALT_deadbeef00000000000000000000000000000000000000000006",
+  "evidence_refs": {},
+  "molecule": {
+    "name": "DGEBA monomer",
+    "role": "resin",
+    "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1",
+    "source_refs": [
+      "data/molecule_library.json"
+    ]
+  }
+}

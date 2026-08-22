@@ -1,0 +1,507 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "621728ace448bda7ccf41f4850e32b5830750948fe1397a81d9ca1198f7cceab",
+  "payload_decoded": {
+    "attack_shape": "Re-derive the arithmetic independently; perturb one ingredient density in a BOM copy and attack whether the re-computation breaches a target and the check fires; diff every envelope constant against the charter file.",
+    "authority": "AUDIT_ONLY",
+    "bom": {
+      "part_A": [
+        {
+          "density_g_ml": 1.16,
+          "density_key": "resin.dgeba_828.density",
+          "mass_g": 100.0,
+          "name": "resin.dgeba_828",
+          "nonvolatile": true,
+          "role": "epoxy resin (binder)"
+        },
+        {
+          "density_g_ml": 3.3,
+          "density_key": "pigment.zinc_phosphate.density",
+          "mass_g": 96.41647188591537,
+          "name": "pigment.zinc_phosphate",
+          "nonvolatile": true,
+          "role": "anti-corrosive inhibitive pigment"
+        },
+        {
+          "density_g_ml": 2.8,
+          "density_key": "pigment.talc.density",
+          "mass_g": 54.53861035970971,
+          "name": "pigment.talc",
+          "nonvolatile": true,
+          "role": "extender"
+        },
+        {
+          "density_g_ml": 0.87,
+          "density_key": "solvent.xylene.density",
+          "mass_g": 10.39076688733961,
+          "name": "solvent.xylene",
+          "nonvolatile": false,
+          "role": "diluent (VOC)"
+        },
+        {
+          "density_g_ml": 0.81,
+          "density_key": "solvent.n_butanol.density",
+          "mass_g": 2.418540568604909,
+          "name": "solvent.n_butanol",
+          "nonvolatile": false,
+          "role": "coalescing/coupling solvent (VOC)"
+        }
+      ],
+      "part_B": [
+        {
+          "density_g_ml": 1.01,
+          "density_key": "hardener.ancamide_2353.density",
+          "mass_g": 60.47745358090185,
+          "name": "hardener.ancamide_2353",
+          "nonvolatile": true,
+          "role": "polyamide curing agent"
+        },
+        {
+          "density_g_ml": 0.87,
+          "density_key": "solvent.xylene.density",
+          "mass_g": 62.60706544027185,
+          "name": "solvent.xylene",
+          "nonvolatile": false,
+          "role": "curing-agent-side diluent (VOC)"
+        },
+        {
+          "density_g_ml": 0.81,
+          "density_key": "solvent.n_butanol.density",
+          "mass_g": 14.57233419730465,
+          "name": "solvent.n_butanol",
+          "nonvolatile": false,
+          "role": "curing-agent-side diluent (VOC)"
+        }
+      ]
+    },
+    "campaign_item_id": "CF-ARITH",
+    "check_perturbed": {
+      "all_passed": false,
+      "dft_mils_per_coat": {
+        "charter_max": 6.0,
+        "charter_min": 4.5,
+        "observed_range": [
+          4.945652173913044,
+          6.358695652173913
+        ],
+        "passed": false
+      },
+      "mix_ratio_by_volume": {
+        "hi": 1.03,
+        "lo": 0.97,
+        "nominal": 1.0,
+        "observed": 1.1326534560922534,
+        "passed": false
+      },
+      "voc_g_per_l": {
+        "max": 340,
+        "observed": 326.41304347826093,
+        "passed": true
+      },
+      "volume_solids_pct": {
+        "max": 67,
+        "min": 63,
+        "observed": 70.65217391304348,
+        "passed": false
+      }
+    },
+    "check_real": {
+      "all_passed": true,
+      "dft_mils_per_coat": {
+        "charter_max": 6.0,
+        "charter_min": 4.5,
+        "observed_range": [
+          4.55,
+          5.8500000000000005
+        ],
+        "passed": true
+      },
+      "mix_ratio_by_volume": {
+        "hi": 1.03,
+        "lo": 0.97,
+        "nominal": 1.0,
+        "observed": 0.9999999999999998,
+        "passed": true
+      },
+      "voc_g_per_l": {
+        "max": 340,
+        "observed": 300.3,
+        "passed": true
+      },
+      "volume_solids_pct": {
+        "max": 67,
+        "min": 63,
+        "observed": 65.0,
+        "passed": true
+      }
+    },
+    "claim_under_attack": "The current CF-ARITH deliverable state is complete and accurate for its scope (finding a miss is CLAIM_REFUTED and is progress).",
+    "date": "2026-08-10",
+    "dft_arithmetic": {
+      "dft_mils_per_coat_charter": {
+        "max": 6.0,
+        "min": 4.5
+      },
+      "formula": "DFT = WFT_mils * (volume_solids_pct/100)",
+      "observed_dft_range_mils": [
+        4.55,
+        5.8500000000000005
+      ],
+      "passed": true,
+      "wft_mils_charter": {
+        "max": 9.0,
+        "min": 7.0
+      }
+    },
+    "directive_obligation": "CF-ARITH",
+    "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+    "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+    "exact_rational_cross_check": {
+      "mix_ratio_exact": 0.9999999999999998,
+      "volume_solids_pct_exact": 65.0
+    },
+    "flips_scientific_readiness": false,
+    "forward_recompute_real": {
+      "V_A_ml": 149.83134714205963,
+      "V_B_ml": 149.83134714205966,
+      "mix_ratio_A_over_B": 0.9999999999999998,
+      "rows": [
+        {
+          "density_g_ml": 1.16,
+          "density_key": "resin.dgeba_828.density",
+          "density_used_g_ml": 1.16,
+          "mass_g": 100.0,
+          "name": "resin.dgeba_828",
+          "nonvolatile": true,
+          "part": "part_A",
+          "role": "epoxy resin (binder)",
+          "volume_ml": 86.20689655172414
+        },
+        {
+          "density_g_ml": 3.3,
+          "density_key": "pigment.zinc_phosphate.density",
+          "density_used_g_ml": 3.3,
+          "mass_g": 96.41647188591537,
+          "name": "pigment.zinc_phosphate",
+          "nonvolatile": true,
+          "part": "part_A",
+          "role": "anti-corrosive inhibitive pigment",
+          "volume_ml": 29.21711269270163
+        },
+        {
+          "density_g_ml": 2.8,
+          "density_key": "pigment.talc.density",
+          "density_used_g_ml": 2.8,
+          "mass_g": 54.53861035970971,
+          "name": "pigment.talc",
+          "nonvolatile": true,
+          "part": "part_A",
+          "role": "extender",
+          "volume_ml": 19.478075128467754
+        },
+        {
+          "density_g_ml": 0.87,
+          "density_key": "solvent.xylene.density",
+          "density_used_g_ml": 0.87,
+          "mass_g": 10.39076688733961,
+          "name": "solvent.xylene",
+          "nonvolatile": false,
+          "part": "part_A",
+          "role": "diluent (VOC)",
+          "volume_ml": 11.943410215332886
+        },
+        {
+          "density_g_ml": 0.81,
+          "density_key": "solvent.n_butanol.density",
+          "density_used_g_ml": 0.81,
+          "mass_g": 2.418540568604909,
+          "name": "solvent.n_butanol",
+          "nonvolatile": false,
+          "part": "part_A",
+          "role": "coalescing/coupling solvent (VOC)",
+          "volume_ml": 2.985852553833221
+        },
+        {
+          "density_g_ml": 1.01,
+          "density_key": "hardener.ancamide_2353.density",
+          "density_used_g_ml": 1.01,
+          "mass_g": 60.47745358090185,
+          "name": "hardener.ancamide_2353",
+          "nonvolatile": true,
+          "part": "part_B",
+          "role": "polyamide curing agent",
+          "volume_ml": 59.87866691178401
+        },
+        {
+          "density_g_ml": 0.87,
+          "density_key": "solvent.xylene.density",
+          "density_used_g_ml": 0.87,
+          "mass_g": 62.60706544027185,
+          "name": "solvent.xylene",
+          "nonvolatile": false,
+          "part": "part_B",
+          "role": "curing-agent-side diluent (VOC)",
+          "volume_ml": 71.96214418422052
+        },
+        {
+          "density_g_ml": 0.81,
+          "density_key": "solvent.n_butanol.density",
+          "density_used_g_ml": 0.81,
+          "mass_g": 14.57233419730465,
+          "name": "solvent.n_butanol",
+          "nonvolatile": false,
+          "part": "part_B",
+          "role": "curing-agent-side diluent (VOC)",
+          "volume_ml": 17.990536046055123
+        }
+      ],
+      "solids_volume_ml": 194.78075128467754,
+      "total_volume_ml": 299.6626942841193,
+      "voc_g_per_l": 300.3,
+      "voc_mass_g": 89.98870709352103,
+      "volume_solids_pct": 65.0
+    },
+    "generated_on_host": "xbabe2",
+    "independent_agreement": {
+      "agrees_within_1e-9": true,
+      "mix_ratio_float_vs_exact_abs_diff": 0.0,
+      "volume_solids_pct_float_vs_exact_abs_diff": 0.0
+    },
+    "method": {
+      "charter_citation": {
+        "path": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+        "sha256": "bb1a01b1a2a6128da1531e7a8d4ed01769dbbf02ce6952c6982be3ee153e53e2"
+      },
+      "design_parameters": {
+        "pigment_volume_concentration": 0.25,
+        "pigment_zp_vol_frac_of_pigment": 0.6,
+        "resin_basis_g": 100.0,
+        "solvent_split_fraction_to_part_A": 0.14234349919743164,
+        "solvent_xylene_vol_frac_of_solvent": 0.8,
+        "stoichiometric_equivalence_ratio": 1.0,
+        "stoichiometric_hardener_mass_g": 60.47745358090185
+      },
+      "engine_script_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/work/cf_arith_engine.py",
+      "engine_script_sha256": "f90b953a53014b2773afb0b59fbee08d3ad5cd67abd5ba8937541cd2f1a3a020",
+      "envelope_citations": {
+        "dft_mils_per_coat": {
+          "json_pointer": "/fixed_constraints/dft_mils_per_coat",
+          "path": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+          "sha256": "bb1a01b1a2a6128da1531e7a8d4ed01769dbbf02ce6952c6982be3ee153e53e2",
+          "value": {
+            "max": 6.0,
+            "min": 4.5
+          }
+        },
+        "mix_ratio_by_volume": {
+          "json_pointer": "/fixed_constraints/mix_ratio_by_volume",
+          "path": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+          "sha256": "bb1a01b1a2a6128da1531e7a8d4ed01769dbbf02ce6952c6982be3ee153e53e2",
+          "value": {
+            "A": 1,
+            "B": 1,
+            "engine_tolerance_pct": 3,
+            "kind": "nominal"
+          }
+        },
+        "pot_life_h": {
+          "json_pointer": "/performance_envelope/pot_life_h",
+          "path": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+          "sha256": "bb1a01b1a2a6128da1531e7a8d4ed01769dbbf02ce6952c6982be3ee153e53e2",
+          "value": {
+            "condition": "73F / 50% RH",
+            "min": 1.5
+          }
+        },
+        "voc_g_per_l": {
+          "json_pointer": "/fixed_constraints/voc_g_per_l",
+          "path": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+          "sha256": "bb1a01b1a2a6128da1531e7a8d4ed01769dbbf02ce6952c6982be3ee153e53e2",
+          "value": {
+            "design_to": 320,
+            "max": 340,
+            "method": "EPA Method 24 equivalent"
+          }
+        },
+        "volume_solids_pct": {
+          "json_pointer": "/fixed_constraints/volume_solids_pct",
+          "path": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+          "sha256": "bb1a01b1a2a6128da1531e7a8d4ed01769dbbf02ce6952c6982be3ee153e53e2",
+          "value": {
+            "max": 67,
+            "min": 63,
+            "target": 65,
+            "tol": 2
+          }
+        },
+        "wft_mils": {
+          "json_pointer": "/performance_envelope/wft_mils",
+          "path": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+          "sha256": "bb1a01b1a2a6128da1531e7a8d4ed01769dbbf02ce6952c6982be3ee153e53e2",
+          "value": {
+            "max": 9.0,
+            "min": 7.0
+          }
+        }
+      },
+      "facts_citation": {
+        "path": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+        "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+      },
+      "ingredient_citations": {
+        "hardener.ancamide_2353.ahew": {
+          "grade": "SUPPLIER_GUIDE",
+          "load_bearing": true,
+          "note": "",
+          "retrieved": "2026-07-07",
+          "second_url": "https://www.biesterfeld.com/fileadmin/documents/product/Epoxy_Curing_Agents_Product_Guide_EMEA.pdf",
+          "single_source_waiver": null,
+          "unit": "g/eq",
+          "url": "https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf",
+          "value": 114.0
+        },
+        "hardener.ancamide_2353.density": {
+          "grade": "SUPPLIER_GUIDE",
+          "load_bearing": true,
+          "note": "",
+          "retrieved": "2026-07-07",
+          "second_url": null,
+          "single_source_waiver": "guide value (both regions list 1.01)",
+          "unit": "g/mL",
+          "url": "https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf",
+          "value": 1.01
+        },
+        "pigment.talc.density": {
+          "grade": "SUPPLIER_GUIDE",
+          "load_bearing": true,
+          "note": "",
+          "retrieved": "2026-07-07",
+          "second_url": null,
+          "single_source_waiver": "ASTM D281-cited supplier page; mineral density well-established",
+          "unit": "g/cm3",
+          "url": "https://digitalfire.com/material/silverline+303+talc",
+          "value": 2.8
+        },
+        "pigment.zinc_phosphate.density": {
+          "grade": "DISTRIBUTOR",
+          "load_bearing": false,
+          "note": "",
+          "retrieved": "2026-07-07",
+          "second_url": null,
+          "single_source_waiver": null,
+          "unit": "g/cm3",
+          "url": "https://admin.heubach.com/wp-content/uploads/2022/08/Tds-ac_zp10-01_02-EU.pdf",
+          "value": 3.3
+        },
+        "resin.dgeba_828.density": {
+          "grade": "TDS",
+          "load_bearing": true,
+          "note": "",
+          "retrieved": "2026-07-07",
+          "second_url": "https://spacematdb.com/spacemat/manudatasheets/Epon828.pdf",
+          "single_source_waiver": null,
+          "unit": "g/mL",
+          "url": "https://miller-stephenson.com/wp-content/uploads/2024/06/EPON-828_TDS.pdf",
+          "value": 1.16
+        },
+        "resin.dgeba_828.eew": {
+          "grade": "TDS",
+          "load_bearing": true,
+          "note": "EPON 828 class, EEW 185-192 (midpoint used; band carried by Monte Carlo)",
+          "retrieved": "2026-07-07",
+          "second_url": "https://spacematdb.com/spacemat/manudatasheets/Epon828.pdf",
+          "single_source_waiver": null,
+          "unit": "g/eq",
+          "url": "https://miller-stephenson.com/wp-content/uploads/2024/06/EPON-828_TDS.pdf",
+          "value": 188.5
+        },
+        "solvent.n_butanol.density": {
+          "grade": "TDS",
+          "load_bearing": true,
+          "note": "",
+          "retrieved": "2026-07-07",
+          "second_url": "https://www.dow.com/documents/327/327-00014-01-butanol-tds.pdf",
+          "single_source_waiver": null,
+          "unit": "g/mL",
+          "url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?product=71000115",
+          "value": 0.81
+        },
+        "solvent.xylene.density": {
+          "grade": "DISTRIBUTOR",
+          "load_bearing": true,
+          "note": "SDS range 0.86-0.88; 2nd source SG 0.867@20C",
+          "retrieved": "2026-07-07",
+          "second_url": "https://www.scribd.com/document/689886120/Xylene-Technical-Data-Sheet",
+          "single_source_waiver": null,
+          "unit": "g/mL",
+          "url": "https://www.marathonpetroleum.com/content/documents/Operations/MPC_SDS_Sheets/Marathon_Petroleum_Xylene/Marathon_Petroleum_Xylene.pdf",
+          "value": 0.87
+        }
+      },
+      "summary": "A candidate 2K epoxy-polyamide BOM (DGEBA-828 resin / Ancamide 2353 polyamide curing agent / zinc-phosphate+talc pigment / xylene+n-butanol solvent blend) is built from real cited amphora-ingredient-library facts. The hardener mass is set to the exact EEW/AHEW stoichiometric equivalence (1.000x, no excess amine). Pigment loading (PVC) and a solvent A/B split fraction are solved algebraically so the mixed system lands the charter's 1:1-by-volume mix ratio and target volume-solids %. The resulting BOM is then INDEPENDENTLY re-derived by a forward_recompute() function that only ever sees the final (name, mass_g, density_g_ml, nonvolatile) row table -- it has no knowledge of the PVC/stoichiometry/solvent-split design algebra used to build that table -- exactly as a bench chemist reading the BOM off a page would recompute volume-solids%, VOC g/L, and mix ratio. A second, exact-rational (fractions.Fraction) recompute of the same forward summation cross-checks the float result to rule out rounding masking a bound violation."
+    },
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-formulation-arithmetic",
+    "objective_verbatim": "Signed artifact showing the mass balance and EEW/AHEW stoichiometry by which the candidate formulation lands the 1:1 volume mix ratio, 65\u00b12% volume solids, \u2264340 g/L VOC, pot-life and DFT targets -- every envelope number cited by path+sha256 to amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json, never restated freehand (thresholds are never relaxed, so the charter file is the only permitted source of them). Independent re-computation must reproduce the shown arithmetic.",
+    "overall_verdict_reasoning": "CLAIM_SURVIVED: the shown mass-balance and EEW/AHEW stoichiometry, independently re-computed by a forward summation function blind to the design algebra (and cross-checked exact-rationally), lands the 1:1 volume mix (observed 0.99999999...), 65% volume solids (exactly 65.0 by construction, mid-band of the 63-67 charter window), and 300.3 g/L VOC (under both the 340 g/L cap and the 320 g/L design_to target) -- and the DFT arithmetic (WFT x volume-solids fraction) lands 4.55-5.85 mils inside the charter's 4.5-6.0 mil window. Every envelope number used is read live from the charter JSON at runtime (json_pointer + charter sha256 cited per constant in envelope_citations above) -- none is retyped as a literal anywhere in the engine script. The positive control (xylene density mis-transcribed +40% in a BOM copy, masses untouched) is correctly detected: the identical checker fires on the perturbed run (check_perturbed.all_passed=False) while passing clean on the real run (check_real.all_passed=True), proving the checker is not vacuous. pot_life_h is explicitly out of scope for this module's mass-balance/stoichiometry arithmetic (a kinetics quantity, not a mass-balance one) and is not computed or asserted here -- see pot_life_scope_note; the campaign item's refutation_criterion does not name pot-life among its falsifiable targets.",
+    "positive_control": {
+      "detected": true,
+      "evidence": {
+        "perturbed_mix_ratio": 1.1326534560922534,
+        "perturbed_run_all_passed": false,
+        "perturbed_voc_g_per_l": 326.41304347826093,
+        "perturbed_volume_solids_pct": 70.65217391304348,
+        "real_run_all_passed": true,
+        "which_checks_failed": [
+          "mix_ratio_by_volume",
+          "volume_solids_pct",
+          "dft_mils_per_coat"
+        ]
+      },
+      "how_planted": "density_overrides dict passed to forward_recompute() for ('part_A','solvent.xylene') and ('part_B','solvent.xylene'); BOM masses (the weighed batch quantities) are untouched -- only the mass->volume conversion constant is perturbed.",
+      "planted_defect": "solvent.xylene.density mis-transcribed from 0.87 g/mL to 1.2180 g/mL (+40%) in both parts of a BOM copy"
+    },
+    "pot_life_scope_note": "pot_life_h is a reaction-kinetics property (Arrhenius/isoconversional cure kinetics), not a mass-balance or EEW/AHEW stoichiometry quantity. This module's authority_ceiling is REAL_ARITHMETIC over mass/volume/stoichiometry only; no pot-life number is asserted or derived here. The stoichiometric ratio landed above (1.000 x equivalents, i.e. EEW/AHEW-balanced, no excess amine) is the input amphora-cure-potlife's own signed class-conditional model would consume for this hardener's amine class -- that model, not this one, is the authority for any pot-life number. Charter's pot_life_h.min is cited above for completeness; it is NOT independently reproduced by this receipt and the campaign item's refutation_criterion does not name it.",
+    "promotes_authority": false,
+    "refutation_criterion_observation_occurred": false,
+    "refutation_criterion_verbatim": "The shown mass-balance and stoichiometry, independently re-computed, fails to land the 1:1 volume mix, 65\u00b12% volume solids, or \u2264340 g/L VOC targets as cited from the charter, or any envelope number in the blueprint differs from that file.",
+    "repair_item": "CF-ARITH",
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "scope_limits": [
+      "AUDIT_ONLY: grants no product qualification, procurement, safety, synthesis, regulatory, or freedom-to-operate authority.",
+      "The formulation is a candidate blueprint for CRO-packet execution, not a released or qualified product.",
+      "Ingredient facts (resin.dgeba_828, hardener.ancamide_2353, pigment densities, solvent densities) carry their own per-field rights/grade provenance in amphora-ingredient-library/reference/mvp20/data/facts.json (cited above); this receipt does not re-verify those rights, only their arithmetic use.",
+      "Pot-life is NOT computed or asserted by this receipt; deferred to amphora-cure-potlife's own signed class-conditional model.",
+      "PVC (25%), pigment ZP/talc volume split (60/40), and solvent xylene/n-butanol volume split (80/20) are DESIGN CHOICES within realistic marine anti-corrosive primer ranges, not measured or literature-fixed constants -- they are the free parameters solved to land the charter targets, and are reported in design_parameters for audit."
+    ],
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "two_replay": {
+      "byte_identical": true,
+      "diagnostic_canonical_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/work/diagnostic.canonical.json",
+      "diagnostic_canonical_sha256": "8f7a4fa806fc83620a207f16a0dfef70086c733d8ca9693326017280f6c75e8f",
+      "diagnostic_runB_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/work/diagnostic.runB.json",
+      "diagnostic_runB_sha256": "8f7a4fa806fc83620a207f16a0dfef70086c733d8ca9693326017280f6c75e8f"
+    },
+    "two_replay_sha256": "62bf536725aaa1210d85bfa46ce2a820709c8cc23673f6be65bdfd0574494afd",
+    "two_replay_sha256_gate": "PASS",
+    "verdict": "CLAIM_SURVIVED"
+  },
+  "signature": {
+    "payload": "eyJhdHRhY2tfc2hhcGUiOiJSZS1kZXJpdmUgdGhlIGFyaXRobWV0aWMgaW5kZXBlbmRlbnRseTsgcGVydHVyYiBvbmUgaW5ncmVkaWVudCBkZW5zaXR5IGluIGEgQk9NIGNvcHkgYW5kIGF0dGFjayB3aGV0aGVyIHRoZSByZS1jb21wdXRhdGlvbiBicmVhY2hlcyBhIHRhcmdldCBhbmQgdGhlIGNoZWNrIGZpcmVzOyBkaWZmIGV2ZXJ5IGVudmVsb3BlIGNvbnN0YW50IGFnYWluc3QgdGhlIGNoYXJ0ZXIgZmlsZS4iLCJhdXRob3JpdHkiOiJBVURJVF9PTkxZIiwiYm9tIjp7InBhcnRfQSI6W3siZGVuc2l0eV9nX21sIjoxLjE2LCJkZW5zaXR5X2tleSI6InJlc2luLmRnZWJhXzgyOC5kZW5zaXR5IiwibWFzc19nIjoxMDAuMCwibmFtZSI6InJlc2luLmRnZWJhXzgyOCIsIm5vbnZvbGF0aWxlIjp0cnVlLCJyb2xlIjoiZXBveHkgcmVzaW4gKGJpbmRlcikifSx7ImRlbnNpdHlfZ19tbCI6My4zLCJkZW5zaXR5X2tleSI6InBpZ21lbnQuemluY19waG9zcGhhdGUuZGVuc2l0eSIsIm1hc3NfZyI6OTYuNDE2NDcxODg1OTE1MzcsIm5hbWUiOiJwaWdtZW50LnppbmNfcGhvc3BoYXRlIiwibm9udm9sYXRpbGUiOnRydWUsInJvbGUiOiJhbnRpLWNvcnJvc2l2ZSBpbmhpYml0aXZlIHBpZ21lbnQifSx7ImRlbnNpdHlfZ19tbCI6Mi44LCJkZW5zaXR5X2tleSI6InBpZ21lbnQudGFsYy5kZW5zaXR5IiwibWFzc19nIjo1NC41Mzg2MTAzNTk3MDk3MSwibmFtZSI6InBpZ21lbnQudGFsYyIsIm5vbnZvbGF0aWxlIjp0cnVlLCJyb2xlIjoiZXh0ZW5kZXIifSx7ImRlbnNpdHlfZ19tbCI6MC44NywiZGVuc2l0eV9rZXkiOiJzb2x2ZW50Lnh5bGVuZS5kZW5zaXR5IiwibWFzc19nIjoxMC4zOTA3NjY4ODczMzk2MSwibmFtZSI6InNvbHZlbnQueHlsZW5lIiwibm9udm9sYXRpbGUiOmZhbHNlLCJyb2xlIjoiZGlsdWVudCAoVk9DKSJ9LHsiZGVuc2l0eV9nX21sIjowLjgxLCJkZW5zaXR5X2tleSI6InNvbHZlbnQubl9idXRhbm9sLmRlbnNpdHkiLCJtYXNzX2ciOjIuNDE4NTQwNTY4NjA0OTA5LCJuYW1lIjoic29sdmVudC5uX2J1dGFub2wiLCJub252b2xhdGlsZSI6ZmFsc2UsInJvbGUiOiJjb2FsZXNjaW5nL2NvdXBsaW5nIHNvbHZlbnQgKFZPQykifV0sInBhcnRfQiI6W3siZGVuc2l0eV9nX21sIjoxLjAxLCJkZW5zaXR5X2tleSI6ImhhcmRlbmVyLmFuY2FtaWRlXzIzNTMuZGVuc2l0eSIsIm1hc3NfZyI6NjAuNDc3NDUzNTgwOTAxODUsIm5hbWUiOiJoYXJkZW5lci5hbmNhbWlkZV8yMzUzIiwibm9udm9sYXRpbGUiOnRydWUsInJvbGUiOiJwb2x5YW1pZGUgY3VyaW5nIGFnZW50In0seyJkZW5zaXR5X2dfbWwiOjAuODcsImRlbnNpdHlfa2V5Ijoic29sdmVudC54eWxlbmUuZGVuc2l0eSIsIm1hc3NfZyI6NjIuNjA3MDY1NDQwMjcxODUsIm5hbWUiOiJzb2x2ZW50Lnh5bGVuZSIsIm5vbnZvbGF0aWxlIjpmYWxzZSwicm9sZSI6ImN1cmluZy1hZ2VudC1zaWRlIGRpbHVlbnQgKFZPQykifSx7ImRlbnNpdHlfZ19tbCI6MC44MSwiZGVuc2l0eV9rZXkiOiJzb2x2ZW50Lm5fYnV0YW5vbC5kZW5zaXR5IiwibWFzc19nIjoxNC41NzIzMzQxOTczMDQ2NSwibmFtZSI6InNvbHZlbnQubl9idXRhbm9sIiwibm9udm9sYXRpbGUiOmZhbHNlLCJyb2xlIjoiY3VyaW5nLWFnZW50LXNpZGUgZGlsdWVudCAoVk9DKSJ9XX0sImNhbXBhaWduX2l0ZW1faWQiOiJDRi1BUklUSCIsImNoZWNrX3BlcnR1cmJlZCI6eyJhbGxfcGFzc2VkIjpmYWxzZSwiZGZ0X21pbHNfcGVyX2NvYXQiOnsiY2hhcnRlcl9tYXgiOjYuMCwiY2hhcnRlcl9taW4iOjQuNSwib2JzZXJ2ZWRfcmFuZ2UiOls0Ljk0NTY1MjE3MzkxMzA0NCw2LjM1ODY5NTY1MjE3MzkxM10sInBhc3NlZCI6ZmFsc2V9LCJtaXhfcmF0aW9fYnlfdm9sdW1lIjp7ImhpIjoxLjAzLCJsbyI6MC45Nywibm9taW5hbCI6MS4wLCJvYnNlcnZlZCI6MS4xMzI2NTM0NTYwOTIyNTM0LCJwYXNzZWQiOmZhbHNlfSwidm9jX2dfcGVyX2wiOnsibWF4IjozNDAsIm9ic2VydmVkIjozMjYuNDEzMDQzNDc4MjYwOTMsInBhc3NlZCI6dHJ1ZX0sInZvbHVtZV9zb2xpZHNfcGN0Ijp7Im1heCI6NjcsIm1pbiI6NjMsIm9ic2VydmVkIjo3MC42NTIxNzM5MTMwNDM0OCwicGFzc2VkIjpmYWxzZX19LCJjaGVja19yZWFsIjp7ImFsbF9wYXNzZWQiOnRydWUsImRmdF9taWxzX3Blcl9jb2F0Ijp7ImNoYXJ0ZXJfbWF4Ijo2LjAsImNoYXJ0ZXJfbWluIjo0LjUsIm9ic2VydmVkX3JhbmdlIjpbNC41NSw1Ljg1MDAwMDAwMDAwMDAwMDVdLCJwYXNzZWQiOnRydWV9LCJtaXhfcmF0aW9fYnlfdm9sdW1lIjp7ImhpIjoxLjAzLCJsbyI6MC45Nywibm9taW5hbCI6MS4wLCJvYnNlcnZlZCI6MC45OTk5OTk5OTk5OTk5OTk4LCJwYXNzZWQiOnRydWV9LCJ2b2NfZ19wZXJfbCI6eyJtYXgiOjM0MCwib2JzZXJ2ZWQiOjMwMC4zLCJwYXNzZWQiOnRydWV9LCJ2b2x1bWVfc29saWRzX3BjdCI6eyJtYXgiOjY3LCJtaW4iOjYzLCJvYnNlcnZlZCI6NjUuMCwicGFzc2VkIjp0cnVlfX0sImNsYWltX3VuZGVyX2F0dGFjayI6IlRoZSBjdXJyZW50IENGLUFSSVRIIGRlbGl2ZXJhYmxlIHN0YXRlIGlzIGNvbXBsZXRlIGFuZCBhY2N1cmF0ZSBmb3IgaXRzIHNjb3BlIChmaW5kaW5nIGEgbWlzcyBpcyBDTEFJTV9SRUZVVEVEIGFuZCBpcyBwcm9ncmVzcykuIiwiZGF0ZSI6IjIwMjYtMDgtMTAiLCJkZnRfYXJpdGhtZXRpYyI6eyJkZnRfbWlsc19wZXJfY29hdF9jaGFydGVyIjp7Im1heCI6Ni4wLCJtaW4iOjQuNX0sImZvcm11bGEiOiJERlQgPSBXRlRfbWlscyAqICh2b2x1bWVfc29saWRzX3BjdC8xMDApIiwib2JzZXJ2ZWRfZGZ0X3JhbmdlX21pbHMiOls0LjU1LDUuODUwMDAwMDAwMDAwMDAwNV0sInBhc3NlZCI6dHJ1ZSwid2Z0X21pbHNfY2hhcnRlciI6eyJtYXgiOjkuMCwibWluIjo3LjB9fSwiZGlyZWN0aXZlX29ibGlnYXRpb24iOiJDRi1BUklUSCIsImRpcmVjdGl2ZV9wYXRoIjoiZG9jcy9kaXJlY3RpdmVzLzIwMjYtMDgtMDktZGF0YXNldC1yZWNvbm5haXNzYW5jZS1tdWx0aWxpbmd1YWwubWQiLCJkaXJlY3RpdmVfc2hhMjU2IjoiOTdmYWQ1ZDE2MzZmNWNjYjEwNjU2MmMyZDk0MDUzNTY1MWMyMTZkMzU3ZGQ1Mjc2MDg4ZjJkYjEyYmRiYTIwNyIsImV4YWN0X3JhdGlvbmFsX2Nyb3NzX2NoZWNrIjp7Im1peF9yYXRpb19leGFjdCI6MC45OTk5OTk5OTk5OTk5OTk4LCJ2b2x1bWVfc29saWRzX3BjdF9leGFjdCI6NjUuMH0sImZsaXBzX3NjaWVudGlmaWNfcmVhZGluZXNzIjpmYWxzZSwiZm9yd2FyZF9yZWNvbXB1dGVfcmVhbCI6eyJWX0FfbWwiOjE0OS44MzEzNDcxNDIwNTk2MywiVl9CX21sIjoxNDkuODMxMzQ3MTQyMDU5NjYsIm1peF9yYXRpb19BX292ZXJfQiI6MC45OTk5OTk5OTk5OTk5OTk4LCJyb3dzIjpbeyJkZW5zaXR5X2dfbWwiOjEuMTYsImRlbnNpdHlfa2V5IjoicmVzaW4uZGdlYmFfODI4LmRlbnNpdHkiLCJkZW5zaXR5X3VzZWRfZ19tbCI6MS4xNiwibWFzc19nIjoxMDAuMCwibmFtZSI6InJlc2luLmRnZWJhXzgyOCIsIm5vbnZvbGF0aWxlIjp0cnVlLCJwYXJ0IjoicGFydF9BIiwicm9sZSI6ImVwb3h5IHJlc2luIChiaW5kZXIpIiwidm9sdW1lX21sIjo4Ni4yMDY4OTY1NTE3MjQxNH0seyJkZW5zaXR5X2dfbWwiOjMuMywiZGVuc2l0eV9rZXkiOiJwaWdtZW50LnppbmNfcGhvc3BoYXRlLmRlbnNpdHkiLCJkZW5zaXR5X3VzZWRfZ19tbCI6My4zLCJtYXNzX2ciOjk2LjQxNjQ3MTg4NTkxNTM3LCJuYW1lIjoicGlnbWVudC56aW5jX3Bob3NwaGF0ZSIsIm5vbnZvbGF0aWxlIjp0cnVlLCJwYXJ0IjoicGFydF9BIiwicm9sZSI6ImFudGktY29ycm9zaXZlIGluaGliaXRpdmUgcGlnbWVudCIsInZvbHVtZV9tbCI6MjkuMjE3MTEyNjkyNzAxNjN9LHsiZGVuc2l0eV9nX21sIjoyLjgsImRlbnNpdHlfa2V5IjoicGlnbWVudC50YWxjLmRlbnNpdHkiLCJkZW5zaXR5X3VzZWRfZ19tbCI6Mi44LCJtYXNzX2ciOjU0LjUzODYxMDM1OTcwOTcxLCJuYW1lIjoicGlnbWVudC50YWxjIiwibm9udm9sYXRpbGUiOnRydWUsInBhcnQiOiJwYXJ0X0EiLCJyb2xlIjoiZXh0ZW5kZXIiLCJ2b2x1bWVfbWwiOjE5LjQ3ODA3NTEyODQ2Nzc1NH0seyJkZW5zaXR5X2dfbWwiOjAuODcsImRlbnNpdHlfa2V5Ijoic29sdmVudC54eWxlbmUuZGVuc2l0eSIsImRlbnNpdHlfdXNlZF9nX21sIjowLjg3LCJtYXNzX2ciOjEwLjM5MDc2Njg4NzMzOTYxLCJuYW1lIjoic29sdmVudC54eWxlbmUiLCJub252b2xhdGlsZSI6ZmFsc2UsInBhcnQiOiJwYXJ0X0EiLCJyb2xlIjoiZGlsdWVudCAoVk9DKSIsInZvbHVtZV9tbCI6MTEuOTQzNDEwMjE1MzMyODg2fSx7ImRlbnNpdHlfZ19tbCI6MC44MSwiZGVuc2l0eV9rZXkiOiJzb2x2ZW50Lm5fYnV0YW5vbC5kZW5zaXR5IiwiZGVuc2l0eV91c2VkX2dfbWwiOjAuODEsIm1hc3NfZyI6Mi40MTg1NDA1Njg2MDQ5MDksIm5hbWUiOiJzb2x2ZW50Lm5fYnV0YW5vbCIsIm5vbnZvbGF0aWxlIjpmYWxzZSwicGFydCI6InBhcnRfQSIsInJvbGUiOiJjb2FsZXNjaW5nL2NvdXBsaW5nIHNvbHZlbnQgKFZPQykiLCJ2b2x1bWVfbWwiOjIuOTg1ODUyNTUzODMzMjIxfSx7ImRlbnNpdHlfZ19tbCI6MS4wMSwiZGVuc2l0eV9rZXkiOiJoYXJkZW5lci5hbmNhbWlkZV8yMzUzLmRlbnNpdHkiLCJkZW5zaXR5X3VzZWRfZ19tbCI6MS4wMSwibWFzc19nIjo2MC40Nzc0NTM1ODA5MDE4NSwibmFtZSI6ImhhcmRlbmVyLmFuY2FtaWRlXzIzNTMiLCJub252b2xhdGlsZSI6dHJ1ZSwicGFydCI6InBhcnRfQiIsInJvbGUiOiJwb2x5YW1pZGUgY3VyaW5nIGFnZW50Iiwidm9sdW1lX21sIjo1OS44Nzg2NjY5MTE3ODQwMX0seyJkZW5zaXR5X2dfbWwiOjAuODcsImRlbnNpdHlfa2V5Ijoic29sdmVudC54eWxlbmUuZGVuc2l0eSIsImRlbnNpdHlfdXNlZF9nX21sIjowLjg3LCJtYXNzX2ciOjYyLjYwNzA2NTQ0MDI3MTg1LCJuYW1lIjoic29sdmVudC54eWxlbmUiLCJub252b2xhdGlsZSI6ZmFsc2UsInBhcnQiOiJwYXJ0X0IiLCJyb2xlIjoiY3VyaW5nLWFnZW50LXNpZGUgZGlsdWVudCAoVk9DKSIsInZvbHVtZV9tbCI6NzEuOTYyMTQ0MTg0MjIwNTJ9LHsiZGVuc2l0eV9nX21sIjowLjgxLCJkZW5zaXR5X2tleSI6InNvbHZlbnQubl9idXRhbm9sLmRlbnNpdHkiLCJkZW5zaXR5X3VzZWRfZ19tbCI6MC44MSwibWFzc19nIjoxNC41NzIzMzQxOTczMDQ2NSwibmFtZSI6InNvbHZlbnQubl9idXRhbm9sIiwibm9udm9sYXRpbGUiOmZhbHNlLCJwYXJ0IjoicGFydF9CIiwicm9sZSI6ImN1cmluZy1hZ2VudC1zaWRlIGRpbHVlbnQgKFZPQykiLCJ2b2x1bWVfbWwiOjE3Ljk5MDUzNjA0NjA1NTEyM31dLCJzb2xpZHNfdm9sdW1lX21sIjoxOTQuNzgwNzUxMjg0Njc3NTQsInRvdGFsX3ZvbHVtZV9tbCI6Mjk5LjY2MjY5NDI4NDExOTMsInZvY19nX3Blcl9sIjozMDAuMywidm9jX21hc3NfZyI6ODkuOTg4NzA3MDkzNTIxMDMsInZvbHVtZV9zb2xpZHNfcGN0Ijo2NS4wfSwiZ2VuZXJhdGVkX29uX2hvc3QiOiJ4YmFiZTIiLCJpbmRlcGVuZGVudF9hZ3JlZW1lbnQiOnsiYWdyZWVzX3dpdGhpbl8xZS05Ijp0cnVlLCJtaXhfcmF0aW9fZmxvYXRfdnNfZXhhY3RfYWJzX2RpZmYiOjAuMCwidm9sdW1lX3NvbGlkc19wY3RfZmxvYXRfdnNfZXhhY3RfYWJzX2RpZmYiOjAuMH0sIm1ldGhvZCI6eyJjaGFydGVyX2NpdGF0aW9uIjp7InBhdGgiOiJhbXBob3JhLWVudmVsb3BlLWdhdGVzL3JlZmVyZW5jZS9tdnAyMC9jaGFydGVyL3Y1X3JlcXVpcmVtZW50cy5qc29uIiwic2hhMjU2IjoiYmIxYTAxYjFhMmE2MTI4ZGExNTMxZTdhOGQ0ZWQwMTc2OWRiYmYwMmNlNjk1MmM2OTgyYmUzZWUxNTNlNTNlMiJ9LCJkZXNpZ25fcGFyYW1ldGVycyI6eyJwaWdtZW50X3ZvbHVtZV9jb25jZW50cmF0aW9uIjowLjI1LCJwaWdtZW50X3pwX3ZvbF9mcmFjX29mX3BpZ21lbnQiOjAuNiwicmVzaW5fYmFzaXNfZyI6MTAwLjAsInNvbHZlbnRfc3BsaXRfZnJhY3Rpb25fdG9fcGFydF9BIjowLjE0MjM0MzQ5OTE5NzQzMTY0LCJzb2x2ZW50X3h5bGVuZV92b2xfZnJhY19vZl9zb2x2ZW50IjowLjgsInN0b2ljaGlvbWV0cmljX2VxdWl2YWxlbmNlX3JhdGlvIjoxLjAsInN0b2ljaGlvbWV0cmljX2hhcmRlbmVyX21hc3NfZyI6NjAuNDc3NDUzNTgwOTAxODV9LCJlbmdpbmVfc2NyaXB0X3BhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvQ0YtQVJJVEgvd29yay9jZl9hcml0aF9lbmdpbmUucHkiLCJlbmdpbmVfc2NyaXB0X3NoYTI1NiI6ImY5MGI5NTNhNTMwMTRiMjc3M2FmYjBiNTlmYmVlMDhkM2FkNWNkNjdhYmQ1YmE4OTM3NTQxY2QyZjFhM2EwMjAiLCJlbnZlbG9wZV9jaXRhdGlvbnMiOnsiZGZ0X21pbHNfcGVyX2NvYXQiOnsianNvbl9wb2ludGVyIjoiL2ZpeGVkX2NvbnN0cmFpbnRzL2RmdF9taWxzX3Blcl9jb2F0IiwicGF0aCI6ImFtcGhvcmEtZW52ZWxvcGUtZ2F0ZXMvcmVmZXJlbmNlL212cDIwL2NoYXJ0ZXIvdjVfcmVxdWlyZW1lbnRzLmpzb24iLCJzaGEyNTYiOiJiYjFhMDFiMWEyYTYxMjhkYTE1MzFlN2E4ZDRlZDAxNzY5ZGJiZjAyY2U2OTUyYzY5ODJiZTNlZTE1M2U1M2UyIiwidmFsdWUiOnsibWF4Ijo2LjAsIm1pbiI6NC41fX0sIm1peF9yYXRpb19ieV92b2x1bWUiOnsianNvbl9wb2ludGVyIjoiL2ZpeGVkX2NvbnN0cmFpbnRzL21peF9yYXRpb19ieV92b2x1bWUiLCJwYXRoIjoiYW1waG9yYS1lbnZlbG9wZS1nYXRlcy9yZWZlcmVuY2UvbXZwMjAvY2hhcnRlci92NV9yZXF1aXJlbWVudHMuanNvbiIsInNoYTI1NiI6ImJiMWEwMWIxYTJhNjEyOGRhMTUzMWU3YThkNGVkMDE3NjlkYmJmMDJjZTY5NTJjNjk4MmJlM2VlMTUzZTUzZTIiLCJ2YWx1ZSI6eyJBIjoxLCJCIjoxLCJlbmdpbmVfdG9sZXJhbmNlX3BjdCI6Mywia2luZCI6Im5vbWluYWwifX0sInBvdF9saWZlX2giOnsianNvbl9wb2ludGVyIjoiL3BlcmZvcm1hbmNlX2VudmVsb3BlL3BvdF9saWZlX2giLCJwYXRoIjoiYW1waG9yYS1lbnZlbG9wZS1nYXRlcy9yZWZlcmVuY2UvbXZwMjAvY2hhcnRlci92NV9yZXF1aXJlbWVudHMuanNvbiIsInNoYTI1NiI6ImJiMWEwMWIxYTJhNjEyOGRhMTUzMWU3YThkNGVkMDE3NjlkYmJmMDJjZTY5NTJjNjk4MmJlM2VlMTUzZTUzZTIiLCJ2YWx1ZSI6eyJjb25kaXRpb24iOiI3M0YgLyA1MCUgUkgiLCJtaW4iOjEuNX19LCJ2b2NfZ19wZXJfbCI6eyJqc29uX3BvaW50ZXIiOiIvZml4ZWRfY29uc3RyYWludHMvdm9jX2dfcGVyX2wiLCJwYXRoIjoiYW1waG9yYS1lbnZlbG9wZS1nYXRlcy9yZWZlcmVuY2UvbXZwMjAvY2hhcnRlci92NV9yZXF1aXJlbWVudHMuanNvbiIsInNoYTI1NiI6ImJiMWEwMWIxYTJhNjEyOGRhMTUzMWU3YThkNGVkMDE3NjlkYmJmMDJjZTY5NTJjNjk4MmJlM2VlMTUzZTUzZTIiLCJ2YWx1ZSI6eyJkZXNpZ25fdG8iOjMyMCwibWF4IjozNDAsIm1ldGhvZCI6IkVQQSBNZXRob2QgMjQgZXF1aXZhbGVudCJ9fSwidm9sdW1lX3NvbGlkc19wY3QiOnsianNvbl9wb2ludGVyIjoiL2ZpeGVkX2NvbnN0cmFpbnRzL3ZvbHVtZV9zb2xpZHNfcGN0IiwicGF0aCI6ImFtcGhvcmEtZW52ZWxvcGUtZ2F0ZXMvcmVmZXJlbmNlL212cDIwL2NoYXJ0ZXIvdjVfcmVxdWlyZW1lbnRzLmpzb24iLCJzaGEyNTYiOiJiYjFhMDFiMWEyYTYxMjhkYTE1MzFlN2E4ZDRlZDAxNzY5ZGJiZjAyY2U2OTUyYzY5ODJiZTNlZTE1M2U1M2UyIiwidmFsdWUiOnsibWF4Ijo2NywibWluIjo2MywidGFyZ2V0Ijo2NSwidG9sIjoyfX0sIndmdF9taWxzIjp7Impzb25fcG9pbnRlciI6Ii9wZXJmb3JtYW5jZV9lbnZlbG9wZS93ZnRfbWlscyIsInBhdGgiOiJhbXBob3JhLWVudmVsb3BlLWdhdGVzL3JlZmVyZW5jZS9tdnAyMC9jaGFydGVyL3Y1X3JlcXVpcmVtZW50cy5qc29uIiwic2hhMjU2IjoiYmIxYTAxYjFhMmE2MTI4ZGExNTMxZTdhOGQ0ZWQwMTc2OWRiYmYwMmNlNjk1MmM2OTgyYmUzZWUxNTNlNTNlMiIsInZhbHVlIjp7Im1heCI6OS4wLCJtaW4iOjcuMH19fSwiZmFjdHNfY2l0YXRpb24iOnsicGF0aCI6ImFtcGhvcmEtaW5ncmVkaWVudC1saWJyYXJ5L3JlZmVyZW5jZS9tdnAyMC9kYXRhL2ZhY3RzLmpzb24iLCJzaGEyNTYiOiIwYWYyNDU2YTQ0MzY5MjA5M2ZjNGE4OTE3NGU1Y2M4N2RhODYzMjMxMDhiMTRjM2FhMjBjYzNhZjE1OWYwNmZiIn0sImluZ3JlZGllbnRfY2l0YXRpb25zIjp7ImhhcmRlbmVyLmFuY2FtaWRlXzIzNTMuYWhldyI6eyJncmFkZSI6IlNVUFBMSUVSX0dVSURFIiwibG9hZF9iZWFyaW5nIjp0cnVlLCJub3RlIjoiIiwicmV0cmlldmVkIjoiMjAyNi0wNy0wNyIsInNlY29uZF91cmwiOiJodHRwczovL3d3dy5iaWVzdGVyZmVsZC5jb20vZmlsZWFkbWluL2RvY3VtZW50cy9wcm9kdWN0L0Vwb3h5X0N1cmluZ19BZ2VudHNfUHJvZHVjdF9HdWlkZV9FTUVBLnBkZiIsInNpbmdsZV9zb3VyY2Vfd2FpdmVyIjpudWxsLCJ1bml0IjoiZy9lcSIsInVybCI6Imh0dHBzOi8vcHJvZHVjdHMuZXZvbmlrLmNvbS9hc3NldHMvOTAvNDEvRXBveHlfY3VyaW5nX2FnZW50c19wcm9kdWN0X2d1aWRlX0FtZXJpY2FzX0VOX0Fzc2V0XzgxOTA0MS5wZGYiLCJ2YWx1ZSI6MTE0LjB9LCJoYXJkZW5lci5hbmNhbWlkZV8yMzUzLmRlbnNpdHkiOnsiZ3JhZGUiOiJTVVBQTElFUl9HVUlERSIsImxvYWRfYmVhcmluZyI6dHJ1ZSwibm90ZSI6IiIsInJldHJpZXZlZCI6IjIwMjYtMDctMDciLCJzZWNvbmRfdXJsIjpudWxsLCJzaW5nbGVfc291cmNlX3dhaXZlciI6Imd1aWRlIHZhbHVlIChib3RoIHJlZ2lvbnMgbGlzdCAxLjAxKSIsInVuaXQiOiJnL21MIiwidXJsIjoiaHR0cHM6Ly9wcm9kdWN0cy5ldm9uaWsuY29tL2Fzc2V0cy85MC80MS9FcG94eV9jdXJpbmdfYWdlbnRzX3Byb2R1Y3RfZ3VpZGVfQW1lcmljYXNfRU5fQXNzZXRfODE5MDQxLnBkZiIsInZhbHVlIjoxLjAxfSwicGlnbWVudC50YWxjLmRlbnNpdHkiOnsiZ3JhZGUiOiJTVVBQTElFUl9HVUlERSIsImxvYWRfYmVhcmluZyI6dHJ1ZSwibm90ZSI6IiIsInJldHJpZXZlZCI6IjIwMjYtMDctMDciLCJzZWNvbmRfdXJsIjpudWxsLCJzaW5nbGVfc291cmNlX3dhaXZlciI6IkFTVE0gRDI4MS1jaXRlZCBzdXBwbGllciBwYWdlOyBtaW5lcmFsIGRlbnNpdHkgd2VsbC1lc3RhYmxpc2hlZCIsInVuaXQiOiJnL2NtMyIsInVybCI6Imh0dHBzOi8vZGlnaXRhbGZpcmUuY29tL21hdGVyaWFsL3NpbHZlcmxpbmUrMzAzK3RhbGMiLCJ2YWx1ZSI6Mi44fSwicGlnbWVudC56aW5jX3Bob3NwaGF0ZS5kZW5zaXR5Ijp7ImdyYWRlIjoiRElTVFJJQlVUT1IiLCJsb2FkX2JlYXJpbmciOmZhbHNlLCJub3RlIjoiIiwicmV0cmlldmVkIjoiMjAyNi0wNy0wNyIsInNlY29uZF91cmwiOm51bGwsInNpbmdsZV9zb3VyY2Vfd2FpdmVyIjpudWxsLCJ1bml0IjoiZy9jbTMiLCJ1cmwiOiJodHRwczovL2FkbWluLmhldWJhY2guY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIyLzA4L1Rkcy1hY196cDEwLTAxXzAyLUVVLnBkZiIsInZhbHVlIjozLjN9LCJyZXNpbi5kZ2ViYV84MjguZGVuc2l0eSI6eyJncmFkZSI6IlREUyIsImxvYWRfYmVhcmluZyI6dHJ1ZSwibm90ZSI6IiIsInJldHJpZXZlZCI6IjIwMjYtMDctMDciLCJzZWNvbmRfdXJsIjoiaHR0cHM6Ly9zcGFjZW1hdGRiLmNvbS9zcGFjZW1hdC9tYW51ZGF0YXNoZWV0cy9FcG9uODI4LnBkZiIsInNpbmdsZV9zb3VyY2Vfd2FpdmVyIjpudWxsLCJ1bml0IjoiZy9tTCIsInVybCI6Imh0dHBzOi8vbWlsbGVyLXN0ZXBoZW5zb24uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDI0LzA2L0VQT04tODI4X1REUy5wZGYiLCJ2YWx1ZSI6MS4xNn0sInJlc2luLmRnZWJhXzgyOC5lZXciOnsiZ3JhZGUiOiJURFMiLCJsb2FkX2JlYXJpbmciOnRydWUsIm5vdGUiOiJFUE9OIDgyOCBjbGFzcywgRUVXIDE4NS0xOTIgKG1pZHBvaW50IHVzZWQ7IGJhbmQgY2FycmllZCBieSBNb250ZSBDYXJsbykiLCJyZXRyaWV2ZWQiOiIyMDI2LTA3LTA3Iiwic2Vjb25kX3VybCI6Imh0dHBzOi8vc3BhY2VtYXRkYi5jb20vc3BhY2VtYXQvbWFudWRhdGFzaGVldHMvRXBvbjgyOC5wZGYiLCJzaW5nbGVfc291cmNlX3dhaXZlciI6bnVsbCwidW5pdCI6ImcvZXEiLCJ1cmwiOiJodHRwczovL21pbGxlci1zdGVwaGVuc29uLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyNC8wNi9FUE9OLTgyOF9URFMucGRmIiwidmFsdWUiOjE4OC41fSwic29sdmVudC5uX2J1dGFub2wuZGVuc2l0eSI6eyJncmFkZSI6IlREUyIsImxvYWRfYmVhcmluZyI6dHJ1ZSwibm90ZSI6IiIsInJldHJpZXZlZCI6IjIwMjYtMDctMDciLCJzZWNvbmRfdXJsIjoiaHR0cHM6Ly93d3cuZG93LmNvbS9kb2N1bWVudHMvMzI3LzMyNy0wMDAxNC0wMS1idXRhbm9sLXRkcy5wZGYiLCJzaW5nbGVfc291cmNlX3dhaXZlciI6bnVsbCwidW5pdCI6ImcvbUwiLCJ1cmwiOiJodHRwczovL3Byb2R1Y3RjYXRhbG9nLmVhc3RtYW4uY29tL3Rkcy9Qcm9kRGF0YXNoZWV0LmFzcHg/cHJvZHVjdD03MTAwMDExNSIsInZhbHVlIjowLjgxfSwic29sdmVudC54eWxlbmUuZGVuc2l0eSI6eyJncmFkZSI6IkRJU1RSSUJVVE9SIiwibG9hZF9iZWFyaW5nIjp0cnVlLCJub3RlIjoiU0RTIHJhbmdlIDAuODYtMC44ODsgMm5kIHNvdXJjZSBTRyAwLjg2N0AyMEMiLCJyZXRyaWV2ZWQiOiIyMDI2LTA3LTA3Iiwic2Vjb25kX3VybCI6Imh0dHBzOi8vd3d3LnNjcmliZC5jb20vZG9jdW1lbnQvNjg5ODg2MTIwL1h5bGVuZS1UZWNobmljYWwtRGF0YS1TaGVldCIsInNpbmdsZV9zb3VyY2Vfd2FpdmVyIjpudWxsLCJ1bml0IjoiZy9tTCIsInVybCI6Imh0dHBzOi8vd3d3Lm1hcmF0aG9ucGV0cm9sZXVtLmNvbS9jb250ZW50L2RvY3VtZW50cy9PcGVyYXRpb25zL01QQ19TRFNfU2hlZXRzL01hcmF0aG9uX1BldHJvbGV1bV9YeWxlbmUvTWFyYXRob25fUGV0cm9sZXVtX1h5bGVuZS5wZGYiLCJ2YWx1ZSI6MC44N319LCJzdW1tYXJ5IjoiQSBjYW5kaWRhdGUgMksgZXBveHktcG9seWFtaWRlIEJPTSAoREdFQkEtODI4IHJlc2luIC8gQW5jYW1pZGUgMjM1MyBwb2x5YW1pZGUgY3VyaW5nIGFnZW50IC8gemluYy1waG9zcGhhdGUrdGFsYyBwaWdtZW50IC8geHlsZW5lK24tYnV0YW5vbCBzb2x2ZW50IGJsZW5kKSBpcyBidWlsdCBmcm9tIHJlYWwgY2l0ZWQgYW1waG9yYS1pbmdyZWRpZW50LWxpYnJhcnkgZmFjdHMuIFRoZSBoYXJkZW5lciBtYXNzIGlzIHNldCB0byB0aGUgZXhhY3QgRUVXL0FIRVcgc3RvaWNoaW9tZXRyaWMgZXF1aXZhbGVuY2UgKDEuMDAweCwgbm8gZXhjZXNzIGFtaW5lKS4gUGlnbWVudCBsb2FkaW5nIChQVkMpIGFuZCBhIHNvbHZlbnQgQS9CIHNwbGl0IGZyYWN0aW9uIGFyZSBzb2x2ZWQgYWxnZWJyYWljYWxseSBzbyB0aGUgbWl4ZWQgc3lzdGVtIGxhbmRzIHRoZSBjaGFydGVyJ3MgMToxLWJ5LXZvbHVtZSBtaXggcmF0aW8gYW5kIHRhcmdldCB2b2x1bWUtc29saWRzICUuIFRoZSByZXN1bHRpbmcgQk9NIGlzIHRoZW4gSU5ERVBFTkRFTlRMWSByZS1kZXJpdmVkIGJ5IGEgZm9yd2FyZF9yZWNvbXB1dGUoKSBmdW5jdGlvbiB0aGF0IG9ubHkgZXZlciBzZWVzIHRoZSBmaW5hbCAobmFtZSwgbWFzc19nLCBkZW5zaXR5X2dfbWwsIG5vbnZvbGF0aWxlKSByb3cgdGFibGUgLS0gaXQgaGFzIG5vIGtub3dsZWRnZSBvZiB0aGUgUFZDL3N0b2ljaGlvbWV0cnkvc29sdmVudC1zcGxpdCBkZXNpZ24gYWxnZWJyYSB1c2VkIHRvIGJ1aWxkIHRoYXQgdGFibGUgLS0gZXhhY3RseSBhcyBhIGJlbmNoIGNoZW1pc3QgcmVhZGluZyB0aGUgQk9NIG9mZiBhIHBhZ2Ugd291bGQgcmVjb21wdXRlIHZvbHVtZS1zb2xpZHMlLCBWT0MgZy9MLCBhbmQgbWl4IHJhdGlvLiBBIHNlY29uZCwgZXhhY3QtcmF0aW9uYWwgKGZyYWN0aW9ucy5GcmFjdGlvbikgcmVjb21wdXRlIG9mIHRoZSBzYW1lIGZvcndhcmQgc3VtbWF0aW9uIGNyb3NzLWNoZWNrcyB0aGUgZmxvYXQgcmVzdWx0IHRvIHJ1bGUgb3V0IHJvdW5kaW5nIG1hc2tpbmcgYSBib3VuZCB2aW9sYXRpb24uIn0sIm1vZGlmaWVzX2V4aXN0aW5nX3JlY2VpcHRzIjpmYWxzZSwibW9kaWZpZXNfbWFuaWZlc3QiOmZhbHNlLCJtb2R1bGUiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMiLCJvYmplY3RpdmVfdmVyYmF0aW0iOiJTaWduZWQgYXJ0aWZhY3Qgc2hvd2luZyB0aGUgbWFzcyBiYWxhbmNlIGFuZCBFRVcvQUhFVyBzdG9pY2hpb21ldHJ5IGJ5IHdoaWNoIHRoZSBjYW5kaWRhdGUgZm9ybXVsYXRpb24gbGFuZHMgdGhlIDE6MSB2b2x1bWUgbWl4IHJhdGlvLCA2NVx1MDBiMTIlIHZvbHVtZSBzb2xpZHMsIFx1MjI2NDM0MCBnL0wgVk9DLCBwb3QtbGlmZSBhbmQgREZUIHRhcmdldHMgLS0gZXZlcnkgZW52ZWxvcGUgbnVtYmVyIGNpdGVkIGJ5IHBhdGgrc2hhMjU2IHRvIGFtcGhvcmEtZW52ZWxvcGUtZ2F0ZXMvcmVmZXJlbmNlL212cDIwL2NoYXJ0ZXIvdjVfcmVxdWlyZW1lbnRzLmpzb24sIG5ldmVyIHJlc3RhdGVkIGZyZWVoYW5kICh0aHJlc2hvbGRzIGFyZSBuZXZlciByZWxheGVkLCBzbyB0aGUgY2hhcnRlciBmaWxlIGlzIHRoZSBvbmx5IHBlcm1pdHRlZCBzb3VyY2Ugb2YgdGhlbSkuIEluZGVwZW5kZW50IHJlLWNvbXB1dGF0aW9uIG11c3QgcmVwcm9kdWNlIHRoZSBzaG93biBhcml0aG1ldGljLiIsIm92ZXJhbGxfdmVyZGljdF9yZWFzb25pbmciOiJDTEFJTV9TVVJWSVZFRDogdGhlIHNob3duIG1hc3MtYmFsYW5jZSBhbmQgRUVXL0FIRVcgc3RvaWNoaW9tZXRyeSwgaW5kZXBlbmRlbnRseSByZS1jb21wdXRlZCBieSBhIGZvcndhcmQgc3VtbWF0aW9uIGZ1bmN0aW9uIGJsaW5kIHRvIHRoZSBkZXNpZ24gYWxnZWJyYSAoYW5kIGNyb3NzLWNoZWNrZWQgZXhhY3QtcmF0aW9uYWxseSksIGxhbmRzIHRoZSAxOjEgdm9sdW1lIG1peCAob2JzZXJ2ZWQgMC45OTk5OTk5OS4uLiksIDY1JSB2b2x1bWUgc29saWRzIChleGFjdGx5IDY1LjAgYnkgY29uc3RydWN0aW9uLCBtaWQtYmFuZCBvZiB0aGUgNjMtNjcgY2hhcnRlciB3aW5kb3cpLCBhbmQgMzAwLjMgZy9MIFZPQyAodW5kZXIgYm90aCB0aGUgMzQwIGcvTCBjYXAgYW5kIHRoZSAzMjAgZy9MIGRlc2lnbl90byB0YXJnZXQpIC0tIGFuZCB0aGUgREZUIGFyaXRobWV0aWMgKFdGVCB4IHZvbHVtZS1zb2xpZHMgZnJhY3Rpb24pIGxhbmRzIDQuNTUtNS44NSBtaWxzIGluc2lkZSB0aGUgY2hhcnRlcidzIDQuNS02LjAgbWlsIHdpbmRvdy4gRXZlcnkgZW52ZWxvcGUgbnVtYmVyIHVzZWQgaXMgcmVhZCBsaXZlIGZyb20gdGhlIGNoYXJ0ZXIgSlNPTiBhdCBydW50aW1lIChqc29uX3BvaW50ZXIgKyBjaGFydGVyIHNoYTI1NiBjaXRlZCBwZXIgY29uc3RhbnQgaW4gZW52ZWxvcGVfY2l0YXRpb25zIGFib3ZlKSAtLSBub25lIGlzIHJldHlwZWQgYXMgYSBsaXRlcmFsIGFueXdoZXJlIGluIHRoZSBlbmdpbmUgc2NyaXB0LiBUaGUgcG9zaXRpdmUgY29udHJvbCAoeHlsZW5lIGRlbnNpdHkgbWlzLXRyYW5zY3JpYmVkICs0MCUgaW4gYSBCT00gY29weSwgbWFzc2VzIHVudG91Y2hlZCkgaXMgY29ycmVjdGx5IGRldGVjdGVkOiB0aGUgaWRlbnRpY2FsIGNoZWNrZXIgZmlyZXMgb24gdGhlIHBlcnR1cmJlZCBydW4gKGNoZWNrX3BlcnR1cmJlZC5hbGxfcGFzc2VkPUZhbHNlKSB3aGlsZSBwYXNzaW5nIGNsZWFuIG9uIHRoZSByZWFsIHJ1biAoY2hlY2tfcmVhbC5hbGxfcGFzc2VkPVRydWUpLCBwcm92aW5nIHRoZSBjaGVja2VyIGlzIG5vdCB2YWN1b3VzLiBwb3RfbGlmZV9oIGlzIGV4cGxpY2l0bHkgb3V0IG9mIHNjb3BlIGZvciB0aGlzIG1vZHVsZSdzIG1hc3MtYmFsYW5jZS9zdG9pY2hpb21ldHJ5IGFyaXRobWV0aWMgKGEga2luZXRpY3MgcXVhbnRpdHksIG5vdCBhIG1hc3MtYmFsYW5jZSBvbmUpIGFuZCBpcyBub3QgY29tcHV0ZWQgb3IgYXNzZXJ0ZWQgaGVyZSAtLSBzZWUgcG90X2xpZmVfc2NvcGVfbm90ZTsgdGhlIGNhbXBhaWduIGl0ZW0ncyByZWZ1dGF0aW9uX2NyaXRlcmlvbiBkb2VzIG5vdCBuYW1lIHBvdC1saWZlIGFtb25nIGl0cyBmYWxzaWZpYWJsZSB0YXJnZXRzLiIsInBvc2l0aXZlX2NvbnRyb2wiOnsiZGV0ZWN0ZWQiOnRydWUsImV2aWRlbmNlIjp7InBlcnR1cmJlZF9taXhfcmF0aW8iOjEuMTMyNjUzNDU2MDkyMjUzNCwicGVydHVyYmVkX3J1bl9hbGxfcGFzc2VkIjpmYWxzZSwicGVydHVyYmVkX3ZvY19nX3Blcl9sIjozMjYuNDEzMDQzNDc4MjYwOTMsInBlcnR1cmJlZF92b2x1bWVfc29saWRzX3BjdCI6NzAuNjUyMTczOTEzMDQzNDgsInJlYWxfcnVuX2FsbF9wYXNzZWQiOnRydWUsIndoaWNoX2NoZWNrc19mYWlsZWQiOlsibWl4X3JhdGlvX2J5X3ZvbHVtZSIsInZvbHVtZV9zb2xpZHNfcGN0IiwiZGZ0X21pbHNfcGVyX2NvYXQiXX0sImhvd19wbGFudGVkIjoiZGVuc2l0eV9vdmVycmlkZXMgZGljdCBwYXNzZWQgdG8gZm9yd2FyZF9yZWNvbXB1dGUoKSBmb3IgKCdwYXJ0X0EnLCdzb2x2ZW50Lnh5bGVuZScpIGFuZCAoJ3BhcnRfQicsJ3NvbHZlbnQueHlsZW5lJyk7IEJPTSBtYXNzZXMgKHRoZSB3ZWlnaGVkIGJhdGNoIHF1YW50aXRpZXMpIGFyZSB1bnRvdWNoZWQgLS0gb25seSB0aGUgbWFzcy0+dm9sdW1lIGNvbnZlcnNpb24gY29uc3RhbnQgaXMgcGVydHVyYmVkLiIsInBsYW50ZWRfZGVmZWN0Ijoic29sdmVudC54eWxlbmUuZGVuc2l0eSBtaXMtdHJhbnNjcmliZWQgZnJvbSAwLjg3IGcvbUwgdG8gMS4yMTgwIGcvbUwgKCs0MCUpIGluIGJvdGggcGFydHMgb2YgYSBCT00gY29weSJ9LCJwb3RfbGlmZV9zY29wZV9ub3RlIjoicG90X2xpZmVfaCBpcyBhIHJlYWN0aW9uLWtpbmV0aWNzIHByb3BlcnR5IChBcnJoZW5pdXMvaXNvY29udmVyc2lvbmFsIGN1cmUga2luZXRpY3MpLCBub3QgYSBtYXNzLWJhbGFuY2Ugb3IgRUVXL0FIRVcgc3RvaWNoaW9tZXRyeSBxdWFudGl0eS4gVGhpcyBtb2R1bGUncyBhdXRob3JpdHlfY2VpbGluZyBpcyBSRUFMX0FSSVRITUVUSUMgb3ZlciBtYXNzL3ZvbHVtZS9zdG9pY2hpb21ldHJ5IG9ubHk7IG5vIHBvdC1saWZlIG51bWJlciBpcyBhc3NlcnRlZCBvciBkZXJpdmVkIGhlcmUuIFRoZSBzdG9pY2hpb21ldHJpYyByYXRpbyBsYW5kZWQgYWJvdmUgKDEuMDAwIHggZXF1aXZhbGVudHMsIGkuZS4gRUVXL0FIRVctYmFsYW5jZWQsIG5vIGV4Y2VzcyBhbWluZSkgaXMgdGhlIGlucHV0IGFtcGhvcmEtY3VyZS1wb3RsaWZlJ3Mgb3duIHNpZ25lZCBjbGFzcy1jb25kaXRpb25hbCBtb2RlbCB3b3VsZCBjb25zdW1lIGZvciB0aGlzIGhhcmRlbmVyJ3MgYW1pbmUgY2xhc3MgLS0gdGhhdCBtb2RlbCwgbm90IHRoaXMgb25lLCBpcyB0aGUgYXV0aG9yaXR5IGZvciBhbnkgcG90LWxpZmUgbnVtYmVyLiBDaGFydGVyJ3MgcG90X2xpZmVfaC5taW4gaXMgY2l0ZWQgYWJvdmUgZm9yIGNvbXBsZXRlbmVzczsgaXQgaXMgTk9UIGluZGVwZW5kZW50bHkgcmVwcm9kdWNlZCBieSB0aGlzIHJlY2VpcHQgYW5kIHRoZSBjYW1wYWlnbiBpdGVtJ3MgcmVmdXRhdGlvbl9jcml0ZXJpb24gZG9lcyBub3QgbmFtZSBpdC4iLCJwcm9tb3Rlc19hdXRob3JpdHkiOmZhbHNlLCJyZWZ1dGF0aW9uX2NyaXRlcmlvbl9vYnNlcnZhdGlvbl9vY2N1cnJlZCI6ZmFsc2UsInJlZnV0YXRpb25fY3JpdGVyaW9uX3ZlcmJhdGltIjoiVGhlIHNob3duIG1hc3MtYmFsYW5jZSBhbmQgc3RvaWNoaW9tZXRyeSwgaW5kZXBlbmRlbnRseSByZS1jb21wdXRlZCwgZmFpbHMgdG8gbGFuZCB0aGUgMToxIHZvbHVtZSBtaXgsIDY1XHUwMGIxMiUgdm9sdW1lIHNvbGlkcywgb3IgXHUyMjY0MzQwIGcvTCBWT0MgdGFyZ2V0cyBhcyBjaXRlZCBmcm9tIHRoZSBjaGFydGVyLCBvciBhbnkgZW52ZWxvcGUgbnVtYmVyIGluIHRoZSBibHVlcHJpbnQgZGlmZmVycyBmcm9tIHRoYXQgZmlsZS4iLCJyZXBhaXJfaXRlbSI6IkNGLUFSSVRIIiwic2NoZW1hIjoiYW1waG9yYS5waGFzZTAtcmVwYWlyLmRvbmUtcmVjZWlwdC52MSIsInNjb3BlX2xpbWl0cyI6WyJBVURJVF9PTkxZOiBncmFudHMgbm8gcHJvZHVjdCBxdWFsaWZpY2F0aW9uLCBwcm9jdXJlbWVudCwgc2FmZXR5LCBzeW50aGVzaXMsIHJlZ3VsYXRvcnksIG9yIGZyZWVkb20tdG8tb3BlcmF0ZSBhdXRob3JpdHkuIiwiVGhlIGZvcm11bGF0aW9uIGlzIGEgY2FuZGlkYXRlIGJsdWVwcmludCBmb3IgQ1JPLXBhY2tldCBleGVjdXRpb24sIG5vdCBhIHJlbGVhc2VkIG9yIHF1YWxpZmllZCBwcm9kdWN0LiIsIkluZ3JlZGllbnQgZmFjdHMgKHJlc2luLmRnZWJhXzgyOCwgaGFyZGVuZXIuYW5jYW1pZGVfMjM1MywgcGlnbWVudCBkZW5zaXRpZXMsIHNvbHZlbnQgZGVuc2l0aWVzKSBjYXJyeSB0aGVpciBvd24gcGVyLWZpZWxkIHJpZ2h0cy9ncmFkZSBwcm92ZW5hbmNlIGluIGFtcGhvcmEtaW5ncmVkaWVudC1saWJyYXJ5L3JlZmVyZW5jZS9tdnAyMC9kYXRhL2ZhY3RzLmpzb24gKGNpdGVkIGFib3ZlKTsgdGhpcyByZWNlaXB0IGRvZXMgbm90IHJlLXZlcmlmeSB0aG9zZSByaWdodHMsIG9ubHkgdGhlaXIgYXJpdGhtZXRpYyB1c2UuIiwiUG90LWxpZmUgaXMgTk9UIGNvbXB1dGVkIG9yIGFzc2VydGVkIGJ5IHRoaXMgcmVjZWlwdDsgZGVmZXJyZWQgdG8gYW1waG9yYS1jdXJlLXBvdGxpZmUncyBvd24gc2lnbmVkIGNsYXNzLWNvbmRpdGlvbmFsIG1vZGVsLiIsIlBWQyAoMjUlKSwgcGlnbWVudCBaUC90YWxjIHZvbHVtZSBzcGxpdCAoNjAvNDApLCBhbmQgc29sdmVudCB4eWxlbmUvbi1idXRhbm9sIHZvbHVtZSBzcGxpdCAoODAvMjApIGFyZSBERVNJR04gQ0hPSUNFUyB3aXRoaW4gcmVhbGlzdGljIG1hcmluZSBhbnRpLWNvcnJvc2l2ZSBwcmltZXIgcmFuZ2VzLCBub3QgbWVhc3VyZWQgb3IgbGl0ZXJhdHVyZS1maXhlZCBjb25zdGFudHMgLS0gdGhleSBhcmUgdGhlIGZyZWUgcGFyYW1ldGVycyBzb2x2ZWQgdG8gbGFuZCB0aGUgY2hhcnRlciB0YXJnZXRzLCBhbmQgYXJlIHJlcG9ydGVkIGluIGRlc2lnbl9wYXJhbWV0ZXJzIGZvciBhdWRpdC4iXSwic2lnbmluZ19rZXkiOnsiZGVyaXZlc19waW5uZWRfdHJ1c3Rfc3RvcmVfa2V5X2lkIjp0cnVlLCJrZXlfaWQiOiJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLCJwdWJsaWNfa2V5X2hleCI6IjZjZjA3YWJmMWE1NWFkYWFjMTNlNzhhYmMzMWM1MzFkMDNkOGYwZDQyMzIzNDYzNDRhNzM2NDE4YzdiNDU2NjQiLCJyb2xlIjoiUEhBU0UwX0VWQUxVQVRPUiJ9LCJ0cnVzdF9hbmNob3JlZF9pbl9waGFzZTBfc3RvcmUiOnRydWUsInR3b19yZXBsYXkiOnsiYnl0ZV9pZGVudGljYWwiOnRydWUsImRpYWdub3N0aWNfY2Fub25pY2FsX3BhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvQ0YtQVJJVEgvd29yay9kaWFnbm9zdGljLmNhbm9uaWNhbC5qc29uIiwiZGlhZ25vc3RpY19jYW5vbmljYWxfc2hhMjU2IjoiOGY3YTRmYTgwNmZjODM2MjBhMjA3ZjE2YTBkZmVmNzAwODZjNzMzZDhjYTk2OTMzMjYwMTcyODBmNmM3NWU4ZiIsImRpYWdub3N0aWNfcnVuQl9wYXRoIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL2V2aWRlbmNlL3BoYXNlMC9yZXBhaXJzL0NGLUFSSVRIL3dvcmsvZGlhZ25vc3RpYy5ydW5CLmpzb24iLCJkaWFnbm9zdGljX3J1bkJfc2hhMjU2IjoiOGY3YTRmYTgwNmZjODM2MjBhMjA3ZjE2YTBkZmVmNzAwODZjNzMzZDhjYTk2OTMzMjYwMTcyODBmNmM3NWU4ZiJ9LCJ0d29fcmVwbGF5X3NoYTI1NiI6IjYyYmY1MzY3MjVhYWExMjEwZDg1YmZhNDZjZTJhODIwNzA5YzhjYzIzNjczZjZiZTY1YmRmZDA1NzQ0OTRhZmQiLCJ0d29fcmVwbGF5X3NoYTI1Nl9nYXRlIjoiUEFTUyIsInZlcmRpY3QiOiJDTEFJTV9TVVJWSVZFRCJ9",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "q1nT23HR6u2Cs4KmvQGM2fmslfoD4LuCb1o3X0tyQ5sngLQQqkJyhs0aEZJxJ+bscGCMeORXQK67tWAVSFwbDg=="
+      }
+    ]
+  }
+}

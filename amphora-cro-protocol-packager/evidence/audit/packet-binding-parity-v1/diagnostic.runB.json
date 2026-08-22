@@ -1,0 +1,135 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "closes": [
+    "First independent (non-runtime) verification that the CRO signed-packet binding contract is self-consistent: hashes, rendering, and signature all reproduce from published primitives.",
+    "Quantifies fail-closed behavior of candidate+formula binding under a 12-probe tamper battery spanning hash-binding, rendering, signature, and completeness."
+  ],
+  "does_not_close": [
+    "Reason-level parity with the Rust runtime's internal error taxonomy (Phase-1: differential harness against CroProtocolPackageV2::validate).",
+    "Any CRO acceptance, wet-lab execution, product qualification, or release authority -- packet integrity is not evidence of any of these.",
+    "No promotion, no manifest edit, no scientific_readiness flip (module remains NOT_APPLICABLE / infrastructure lane)."
+  ],
+  "fixture": {
+    "fixture_id": "cro-known-answer-150g-v1",
+    "fixture_sha256": "72e1f99bb6c0748d9c7b0f5376b8d2c63e7932288e8e5a3e8387e23d25a7323e",
+    "path": "amphora-cro-protocol-packager/reference/mvp20/fixtures/known-answer-protocol-package.v1.json"
+  },
+  "flips_scientific_readiness": false,
+  "gates": {
+    "G1_candidate_sha256_binding": {
+      "canonicalization": "RFC 8785 JCS (compact sorted-key UTF-8 JSON) over payload.candidate",
+      "passed": true,
+      "recomputed": "968f86dc63cdc780f7fde25ad7d8bed9c9ce657dd07f792338b6ecdbbaff5b7f",
+      "shipped": "968f86dc63cdc780f7fde25ad7d8bed9c9ce657dd07f792338b6ecdbbaff5b7f"
+    },
+    "G2_formula_sha256_binding": {
+      "canonicalization": "RFC 8785 JCS over payload.recipe_steps",
+      "passed": true,
+      "recomputed": "7d3967d4c902a46b34f8ce8dcf3d6d8f68001d113e877f407e87cf543ab9f849",
+      "shipped": "7d3967d4c902a46b34f8ce8dcf3d6d8f68001d113e877f407e87cf543ab9f849"
+    },
+    "G3_rendering_byte_exact": {
+      "derived_sha256": "af9e67a30233c248856915a09c75b12b6b07c7b396cd0f1a96b3c6e88b912009",
+      "note": "human-readable CRO packet is a deterministic injective function of the structured numeric recipe (no ambiguous/non-numeric text)",
+      "passed": true,
+      "shipped_sha256": "af9e67a30233c248856915a09c75b12b6b07c7b396cd0f1a96b3c6e88b912009"
+    },
+    "G4_ed25519_signature": {
+      "algorithm": "Ed25519",
+      "key_id": "cro-fixture-141941a2b72f61ecbe7b0b5fb7871d95bebe0013ea9b3006ab7c8775c5382256",
+      "passed": true,
+      "signed_message": "RFC 8785 JCS of payload"
+    },
+    "G5_completeness_accepts_valid": {
+      "passed": true,
+      "reasons": []
+    },
+    "G6_tamper_battery_all_fail_closed": {
+      "n_probes": 12,
+      "n_rejected": 12,
+      "passed": true,
+      "probes": [
+        {
+          "kind": "formula_binding",
+          "probe": "recipe_amount_mutated_breaks_formula_hash",
+          "rejected": true
+        },
+        {
+          "kind": "rendering",
+          "probe": "recipe_amount_mutated_breaks_rendering",
+          "rejected": true
+        },
+        {
+          "kind": "signature",
+          "probe": "recipe_amount_mutated_breaks_signature",
+          "rejected": true
+        },
+        {
+          "kind": "candidate_binding",
+          "probe": "candidate_id_mutated_breaks_candidate_hash",
+          "rejected": true
+        },
+        {
+          "kind": "signature",
+          "probe": "formula_sha256_substituted_breaks_signature",
+          "rejected": true
+        },
+        {
+          "kind": "completeness",
+          "probe": "emptied_controls_fails_completeness",
+          "rejected": true
+        },
+        {
+          "kind": "completeness",
+          "probe": "emptied_required_outputs_fails_completeness",
+          "rejected": true
+        },
+        {
+          "kind": "completeness",
+          "probe": "emptied_custody_fails_completeness",
+          "rejected": true
+        },
+        {
+          "kind": "completeness",
+          "probe": "flipped_no_release_authority_fails_completeness",
+          "rejected": true
+        },
+        {
+          "kind": "completeness",
+          "probe": "injected_results_fails_completeness",
+          "rejected": true
+        },
+        {
+          "kind": "completeness",
+          "probe": "ranking_eligible_true_fails_completeness",
+          "rejected": true
+        },
+        {
+          "kind": "completeness",
+          "probe": "nonnumeric_amount_fails_completeness",
+          "rejected": true
+        }
+      ]
+    }
+  },
+  "headline": "Independent (non-runtime) re-derivation of the CRO signed-packet binding contract reproduces candidate_sha256, formula_sha256, the byte-exact canonical rendering, and the Ed25519 signature of the known-answer fixture, and confirms 12/12 tamper probes fail closed -- corroborating that candidate+formula binding yields an unambiguous, fully-numeric, tamper-evident CRO lab packet.",
+  "human_review_performed": false,
+  "modifies_benchmark_lock": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-cro-protocol-packager",
+  "non_circularity": "Oracle is a fresh Python implementation over CPython stdlib json/hashlib and off-the-shelf cryptography 41.0.7 Ed25519; it consumes only the on-disk fixture bytes and never the shipped Rust runtime. The rendering re-derivation was authored from published formatting, not copied from runtime output.",
+  "promotes_authority": false,
+  "purpose": "Provide a second independent decider of the packet-binding hypothesis using only published primitives (FIPS 180-4, RFC 8032, RFC 8785), without invoking the Rust runtime, so the module's central claim is cross-checked rather than self-attested.",
+  "run_type": "INDEPENDENT_BINDING_VERIFIER_VS_SIGNED_FIXTURE",
+  "schema": "amphora.cro-protocol-packager.packet-binding-parity-diagnostic.v1",
+  "study_id": "packet-binding-parity-v1",
+  "theory_reference": [
+    "NIST FIPS 180-4 (2015) SHA-256",
+    "IETF RFC 8032 (2017) Edwards-Curve Digital Signature Algorithm (Ed25519); Bernstein et al. CHES 2011",
+    "IETF RFC 8785 (2020) JSON Canonicalization Scheme (JCS)",
+    "in-toto Attestation / DSSE v1.0 (2020) signed-packet envelope model"
+  ]
+}

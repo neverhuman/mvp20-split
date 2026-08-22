@@ -1,0 +1,239 @@
+{
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "C5",
+  "ccby_dataset": {
+    "dataset_sha256": "f84076b5582f906f55a11156ff62fcd28047ffa03eadea1c05791216302846d8",
+    "n_systems": 3,
+    "ported_from": "amphora-redteam-audit/benchmarks/cure-kinetics-isoconversional-crossmethod-ccby-v1/dataset.multi.ccby.json (byte-identical copy)",
+    "systems": {
+      "dgeba-bdge-ipda-prepreg-ma14164673": {
+        "amine_class": "cycloaliphatic",
+        "doi": "10.3390/ma14164673",
+        "kissinger_recovery_abs_err_kJ_per_mol": 1.397335,
+        "methods": {
+          "kissinger": {
+            "ea_kJ_per_mol": 68.552665,
+            "r2": 0.987207
+          },
+          "ozawa_flynn_wall": {
+            "ea_kJ_per_mol": 71.857788,
+            "r2": 0.989345
+          },
+          "starink": {
+            "ea_kJ_per_mol": 68.778162,
+            "r2": 0.987304
+          }
+        },
+        "n_heating_rates": 3,
+        "reported_kissinger_ea_kJ_per_mol": 69.95,
+        "scope_tier": "CORE_DGEBA_AMINE"
+      },
+      "dgeba-ipda-lascano-polym11030391": {
+        "amine_class": "cycloaliphatic",
+        "doi": "10.3390/polym11030391",
+        "kissinger_recovery_abs_err_kJ_per_mol": 0.038964,
+        "methods": {
+          "kissinger": {
+            "ea_kJ_per_mol": 57.261036,
+            "r2": 0.993794
+          },
+          "ozawa_flynn_wall": {
+            "ea_kJ_per_mol": 60.298359,
+            "r2": 0.995134
+          },
+          "starink": {
+            "ea_kJ_per_mol": 57.461016,
+            "r2": 0.993856
+          }
+        },
+        "n_heating_rates": 4,
+        "reported_kissinger_ea_kJ_per_mol": 57.3,
+        "scope_tier": "CORE_DGEBA_AMINE"
+      },
+      "multifunctional-epoxy-dds-molecules31040640": {
+        "amine_class": "aromatic",
+        "doi": "10.3390/molecules31040640",
+        "kissinger_recovery_abs_err_kJ_per_mol": 1.036941,
+        "methods": {
+          "kissinger": {
+            "ea_kJ_per_mol": 63.656621,
+            "r2": 0.999667
+          },
+          "ozawa_flynn_wall": {
+            "ea_kJ_per_mol": 68.182224,
+            "r2": 0.999772
+          },
+          "starink": {
+            "ea_kJ_per_mol": 63.927231,
+            "r2": 0.999673
+          }
+        },
+        "n_heating_rates": 5,
+        "reported_kissinger_ea_kJ_per_mol": 64.693562,
+        "scope_tier": "GENERALIZATION_EPOXY_AMINE"
+      }
+    }
+  },
+  "chemistry_match": {
+    "ccby_dataset_doi": "10.3390/polym11030391",
+    "ccby_dataset_system_id": "dgeba-ipda-lascano-polym11030391",
+    "match_basis": "Both are DGEBA epoxy resin cured with isophorone diamine (IPDA), a cycloaliphatic diamine hardener. Confound noted: the two systems use DIFFERENT manufacturers' commercial IPDA-based hardener packages (Huntsman HY 2954 TDS for the potlife fixture vs Resoltech 1074 ECO for the CC-BY Lascano 2019 dataset) -- generic chemistry match, NOT proven identical formulation/stoichiometry/catalyst package.",
+    "potlife_fixture_activation_energy_source": "Blanco et al. Polymer 46:7989 (2005) DGEBA/IPDA Ea = 62 kJ/mol",
+    "potlife_fixture_hardener_family": "cycloaliphatic-amine",
+    "potlife_fixture_pot_life_source": "Huntsman Araldite GY 6010 + HY 2954 (IPDA) TDS 4h @ 25C",
+    "potlife_fixture_system_id": "dgeba-ipda"
+  },
+  "claim_under_attack": {
+    "cited_aggregate_mape_all_12_systems": 0.1473336045156335,
+    "cited_lift_over_constant_baseline": 0.8051198523013198,
+    "claim_text": "Arrhenius with published Ea (MAPE 14.7%, lift 0.805 over constant-mean) is the strongest defensible temperature-correction for pot-life.",
+    "receipt_path": "amphora-cure-potlife-gate/evidence/phase0/kpis/cure-potlife-arrhenius-kpi.v1.json"
+  },
+  "coverage_gap": {
+    "coverage_fraction": 0.083333,
+    "n_potlife_kpi_systems": 12,
+    "n_with_independent_rights_clean_crosscheck": 1,
+    "note": "Only 1 of the 12 systems in the signed Arrhenius KPI (dgeba-ipda) has ANY independently-reproducible, rights-clean (CC-BY), non-circular raw-data Ea cross-check available in-tree. The other 11 systems' published Ea and supplier-TDS pot-life values remain UNVERIFIED against raw physical measurements by this or any prior audit."
+  },
+  "does_not_close": [
+    "does NOT recompute or change the signed KPI's 12-system/36-point aggregate MAPE (14.73%) -- only 1/12 systems has an independent cross-check to test against",
+    "does NOT establish statistical significance of the per-system MAPE difference (n=3 held-out points per Ea source; well within plausible measurement/formulation noise)",
+    "does NOT promote amphora-cure-potlife-gate to PHASE_0",
+    "does NOT flip rights_gate_passed",
+    "does NOT modify the signed Arrhenius KPI, the known-answer fixture, the manifest, or any prior receipt"
+  ],
+  "falsification_criterion": "REFUTED if any CC-BY-derived reaction-Ea (Kissinger/OFW-Doyle/Starink), substituted into the identical Arrhenius pot-life formula for the one chemistry-matched system (dgeba-ipda), breaches the module's own pre-registered held_out_temperature_extrapolation_mape_ceiling=0.25 or per-point worst-case 0.40. SURVIVED if all three stay within both ceilings.",
+  "head_to_head_pot_life_prediction": {
+    "current_cited_pot_life_ea": {
+      "Ea_kJ_per_mol": 62.0,
+      "held_out_mape": 0.133306,
+      "passes_held_out_extrapolation_ceiling_0p25": true,
+      "passes_per_point_worst_case_ceiling_0p40": true,
+      "per_temperature_abs_pct_error": [
+        0.03929,
+        0.150486,
+        0.210141
+      ],
+      "predicted_pot_life_min": [
+        748.288758,
+        131.674736,
+        60.029275
+      ],
+      "published_pot_life_min": [
+        720.0,
+        155.0,
+        76.0
+      ],
+      "worst_case_abs_pct_error": 0.210141
+    },
+    "kissinger_ccby_reaction_ea": {
+      "Ea_kJ_per_mol": 57.261036,
+      "held_out_mape": 0.093237,
+      "passes_held_out_extrapolation_ceiling_0p25": true,
+      "passes_per_point_worst_case_ceiling_0p40": true,
+      "per_temperature_abs_pct_error": [
+        0.047229,
+        0.110598,
+        0.121884
+      ],
+      "predicted_pot_life_min": [
+        685.995448,
+        137.85728,
+        66.736788
+      ],
+      "published_pot_life_min": [
+        720.0,
+        155.0,
+        76.0
+      ],
+      "worst_case_abs_pct_error": 0.121884
+    },
+    "ozawa_flynn_wall_ccby_reaction_ea": {
+      "Ea_kJ_per_mol": 60.298359,
+      "held_out_mape": 0.107749,
+      "passes_held_out_extrapolation_ceiling_0p25": true,
+      "passes_per_point_worst_case_ceiling_0p40": true,
+      "per_temperature_abs_pct_error": [
+        0.007355,
+        0.136373,
+        0.179521
+      ],
+      "predicted_pot_life_min": [
+        725.295331,
+        133.862158,
+        62.35644
+      ],
+      "published_pot_life_min": [
+        720.0,
+        155.0,
+        76.0
+      ],
+      "worst_case_abs_pct_error": 0.179521
+    },
+    "starink_ccby_reaction_ea": {
+      "Ea_kJ_per_mol": 57.461016,
+      "held_out_mape": 0.093949,
+      "passes_held_out_extrapolation_ceiling_0p25": true,
+      "passes_per_point_worst_case_ceiling_0p40": true,
+      "per_temperature_abs_pct_error": [
+        0.043727,
+        0.112319,
+        0.125801
+      ],
+      "predicted_pot_life_min": [
+        688.516202,
+        137.590609,
+        66.439147
+      ],
+      "published_pot_life_min": [
+        720.0,
+        155.0,
+        76.0
+      ],
+      "worst_case_abs_pct_error": 0.125801
+    }
+  },
+  "honest_caveat_check": {
+    "assumed_caveat_in_campaign_item": "Kissinger recovers reaction Ea, higher than gel/pot-life Ea",
+    "assumed_direction_confirmed_on_this_system": false,
+    "assumed_direction_reversed_on_this_system": true,
+    "observed_direction_this_system": "REVERSED: all three CC-BY reaction-Ea estimates for dgeba-ipda are LOWER than the currently cited pot-life Ea (62.0 kJ/mol, Blanco et al. 2005), not higher. Reported plainly, not papered over -- see chemistry_match confound above for the likely explanation (different commercial IPDA hardener packages, not a universal physics violation)."
+  },
+  "ported_estimator": {
+    "kissinger": "ln(beta/Tp^2) = C - Ea/(R*Tp); Ea = -R*slope (Anal. Chem. 1957, 29, 1702)",
+    "ozawa_flynn_wall": "ln(beta) = C - 1.0516*Ea/(R*Tp); Ea = -R*slope/1.0516 (Doyle exp-integral approx; ASTM E698 basis)",
+    "ported_from": "amphora-redteam-audit/benchmarks/cure-kinetics-isoconversional-crossmethod-ccby-v1/isoconversional_crossmethod_audit.py (frozen, signed AUDIT_ONLY, byte-identical math re-derived here, not re-fetched)",
+    "starink": "ln(beta/Tp^1.92) = C - 1.0008*Ea/(R*Tp); Ea = -R*slope/1.0008 (Starink, Thermochim. Acta 2003, 404, 163)"
+  },
+  "provenance_check": {
+    "fixture_hash_matches_kpi_pointer": true,
+    "potlife_known_answer_fixture_path": "amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+    "potlife_known_answer_fixture_sha256_observed": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1",
+    "potlife_kpi_dataset_fixture_sha256_claimed": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1"
+  },
+  "reaction_ea_vs_pot_life_ea_gap": {
+    "kissinger_ccby_reaction_ea": {
+      "direction": "reaction_Ea_LOWER_than_cited_pot_life_Ea",
+      "reaction_ea_minus_cited_pot_life_ea_kJ_per_mol": -4.738964,
+      "relative_pct_of_cited_pot_life_ea": -7.64349
+    },
+    "ozawa_flynn_wall_ccby_reaction_ea": {
+      "direction": "reaction_Ea_LOWER_than_cited_pot_life_Ea",
+      "reaction_ea_minus_cited_pot_life_ea_kJ_per_mol": -1.701641,
+      "relative_pct_of_cited_pot_life_ea": -2.744582
+    },
+    "starink_ccby_reaction_ea": {
+      "direction": "reaction_Ea_LOWER_than_cited_pot_life_Ea",
+      "reaction_ea_minus_cited_pot_life_ea_kJ_per_mol": -4.538984,
+      "relative_pct_of_cited_pot_life_ea": -7.320942
+    }
+  },
+  "result_summary": {
+    "all_three_alternative_ea_beat_current_on_matched_system": true,
+    "all_three_alternative_ea_within_module_ceilings": true,
+    "any_alternative_ea_beats_current_on_matched_system": true
+  },
+  "schema": "amphora.cure-potlife-gate.kissinger-ozawa-baseline-headtohead.diagnostic.v1",
+  "target_module": "amphora-cure-potlife-gate",
+  "verdict": "CLAIM_SURVIVED__NO_CEILING_BREACH"
+}

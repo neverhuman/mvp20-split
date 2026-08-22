@@ -1,0 +1,41 @@
+{
+  "authority": "AUDIT_ONLY",
+  "axes_unmediated_or_structurally_limited": [
+    "FAILING_DETERMINISTIC_DIAGNOSTIC",
+    "FALSE_MOVEMENT_CLAIM",
+    "STALE_PARENT",
+    "STRIPPED_MISSION_LOCKS"
+  ],
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "hypothesis": "H0: the outer 23-axis portfolio-governance attack block declared in amphora-redteam-audit's Phase-0 benchmark lock is completely mediated and fail-closed under the live Phase-0 reference monitor, including against an adversary holding the evaluator signing identity.",
+  "module_id": "amphora-redteam-audit",
+  "mutants_killed_of_total": [
+    20,
+    24
+  ],
+  "oracle_result_sha256": "2796aea60d0fdd9aae3b701d0fbae89314f5c02425ad031f77e2a3c8a0d712f2",
+  "oracle_script_sha256": "f64c479e11f707916a8bbaad9175823524c92b16ffb07d7c98bd277fbf84a561",
+  "outer_axes_probed": 23,
+  "phase0_promotion_effect": "NONE",
+  "portfolio_artifacts_mutated": 0,
+  "receipt_id": "redteam-audit-governance-axis-live-corpus-2796aea60d0fdd9a",
+  "replay_count": 2,
+  "replay_hash": "2796aea60d0fdd9aae3b701d0fbae89314f5c02425ad031f77e2a3c8a0d712f2",
+  "reviewed_workspace_is_scratch_copy": true,
+  "reviewer_public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+  "schema": "amphora.redteam-audit.independent-oracle-receipt.v1",
+  "scientific_readiness": "NOT_APPLICABLE",
+  "signature": {
+    "payload": "eyJhdXRob3JpdHkiOiJBVURJVF9PTkxZIiwiYXhlc191bm1lZGlhdGVkX29yX3N0cnVjdHVyYWxseV9saW1pdGVkIjpbIkZBSUxJTkdfREVURVJNSU5JU1RJQ19ESUFHTk9TVElDIiwiRkFMU0VfTU9WRU1FTlRfQ0xBSU0iLCJTVEFMRV9QQVJFTlQiLCJTVFJJUFBFRF9NSVNTSU9OX0xPQ0tTIl0sImV2YWx1YXRvcl9rZXlfaWQiOiJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLCJldmFsdWF0b3JfcHVibGljX2tleV9oZXgiOiI2Y2YwN2FiZjFhNTVhZGFhYzEzZTc4YWJjMzFjNTMxZDAzZDhmMGQ0MjMyMzQ2MzQ0YTczNjQxOGM3YjQ1NjY0IiwiaHlwb3RoZXNpcyI6IkgwOiB0aGUgb3V0ZXIgMjMtYXhpcyBwb3J0Zm9saW8tZ292ZXJuYW5jZSBhdHRhY2sgYmxvY2sgZGVjbGFyZWQgaW4gYW1waG9yYS1yZWR0ZWFtLWF1ZGl0J3MgUGhhc2UtMCBiZW5jaG1hcmsgbG9jayBpcyBjb21wbGV0ZWx5IG1lZGlhdGVkIGFuZCBmYWlsLWNsb3NlZCB1bmRlciB0aGUgbGl2ZSBQaGFzZS0wIHJlZmVyZW5jZSBtb25pdG9yLCBpbmNsdWRpbmcgYWdhaW5zdCBhbiBhZHZlcnNhcnkgaG9sZGluZyB0aGUgZXZhbHVhdG9yIHNpZ25pbmcgaWRlbnRpdHkuIiwibW9kdWxlX2lkIjoiYW1waG9yYS1yZWR0ZWFtLWF1ZGl0IiwibXV0YW50c19raWxsZWRfb2ZfdG90YWwiOlsyMCwyNF0sIm9yYWNsZV9yZXN1bHRfc2hhMjU2IjoiMjc5NmFlYTYwZDBmZGQ5YWFlM2I3MDFkMGZiYWU4OTMxNGY1YzAyNDI1YWQwMzFmNzdlMmEzYzhhMGQ3MTJmMiIsIm9yYWNsZV9zY3JpcHRfc2hhMjU2IjoiZjY0YzQ3OWUxMWY3MDc5MTZhOGJiYWFkOTE3NTgyMzUyNGM5MmIxNmZmYjA3ZDdjOThiZDI3N2ZiZjg0YTU2MSIsIm91dGVyX2F4ZXNfcHJvYmVkIjoyMywicGhhc2UwX3Byb21vdGlvbl9lZmZlY3QiOiJOT05FIiwicG9ydGZvbGlvX2FydGlmYWN0c19tdXRhdGVkIjowLCJyZWNlaXB0X2lkIjoicmVkdGVhbS1hdWRpdC1nb3Zlcm5hbmNlLWF4aXMtbGl2ZS1jb3JwdXMtMjc5NmFlYTYwZDBmZGQ5YSIsInJlcGxheV9jb3VudCI6MiwicmVwbGF5X2hhc2giOiIyNzk2YWVhNjBkMGZkZDlhYWUzYjcwMWQwZmJhZTg5MzE0ZjVjMDI0MjVhZDAzMWY3N2UyYTNjOGEwZDcxMmYyIiwicmV2aWV3ZWRfd29ya3NwYWNlX2lzX3NjcmF0Y2hfY29weSI6dHJ1ZSwicmV2aWV3ZXJfcHVibGljX2tleV9oZXgiOiIzM2QzYTVkYmNhZTUyYzQ0OWRmMzZjMDY3MGRmMGZhOWQ4YTYwODE5ZDE2NmMzM2I5NmQ2MmIyYmUxZGIwODNmIiwic2NoZW1hIjoiYW1waG9yYS5yZWR0ZWFtLWF1ZGl0LmluZGVwZW5kZW50LW9yYWNsZS1yZWNlaXB0LnYxIiwic2NpZW50aWZpY19yZWFkaW5lc3MiOiJOT1RfQVBQTElDQUJMRSIsInN1YmplY3RfdW5kZXJfdGVzdCI6ImFtcGhvcmEtcGhhc2UwLXJldmlld2VyIChsaXZlIFJ1c3QgcmVmZXJlbmNlIG1vbml0b3IsIHJlbGVhc2UgYnVpbGQpIiwidmVyZGljdCI6IkhZUE9USEVTSVNfUEFSVElBTExZX1JFRlVURUQifQ==",
+    "payloadType": "application/vnd.amphora.redteam-audit-independent-oracle-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "f1aNk73iFkr0yaQLQ3dxxv74w/SOcTszcfXvg22bqWoNDAyVdr5SNwzgxGoHHh6eV2lH1S0Nmt34PT58AptdBQ=="
+      }
+    ]
+  },
+  "subject_under_test": "amphora-phase0-reviewer (live Rust reference monitor, release build)",
+  "verdict": "HYPOTHESIS_PARTIALLY_REFUTED"
+}

@@ -1,0 +1,419 @@
+{
+  "authority": "AUDIT_ONLY",
+  "checks": {
+    "g0": [
+      {
+        "check": "empty_tree_mth_equals_fips180_4_sha256_empty",
+        "fips_kat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "mth_empty": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "pass": true,
+        "runtime_empty_event_chain_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "check": "last_leaf_equals_shipped_runtime_event_chain_root",
+        "n_events": 0,
+        "pass": true,
+        "reconstructed_last_leaf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "empty",
+        "shipped_runtime_event_chain_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "check": "last_leaf_equals_shipped_runtime_event_chain_root",
+        "n_events": 3,
+        "pass": true,
+        "reconstructed_last_leaf": "4ff236b7f72e6ba883b7107ce2ebe267eb06e701a983ab237e24ccb51ddeda6f",
+        "scenario": "small",
+        "shipped_runtime_event_chain_root": "4ff236b7f72e6ba883b7107ce2ebe267eb06e701a983ab237e24ccb51ddeda6f"
+      },
+      {
+        "check": "last_leaf_equals_shipped_runtime_event_chain_root",
+        "n_events": 12,
+        "pass": true,
+        "reconstructed_last_leaf": "aa0877830d04f68310e61eb193898ca262bbe6348b64ee5b195ea0738e79dd62",
+        "scenario": "complex",
+        "shipped_runtime_event_chain_root": "aa0877830d04f68310e61eb193898ca262bbe6348b64ee5b195ea0738e79dd62"
+      }
+    ],
+    "g1": [
+      {
+        "differs_from_linear_chain_root": true,
+        "merkle_root_rfc6962": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "n_leaves": 0,
+        "pass": true,
+        "scenario": "empty",
+        "split_k": null,
+        "structural_recompose_matches": true
+      },
+      {
+        "differs_from_linear_chain_root": true,
+        "merkle_root_rfc6962": "0914f9c528b67656d128c5cd3c32ed0a03ad1fbf0747b1753096894701a9bac0",
+        "n_leaves": 3,
+        "pass": true,
+        "scenario": "small",
+        "split_k": 2,
+        "structural_recompose_matches": true
+      },
+      {
+        "differs_from_linear_chain_root": true,
+        "merkle_root_rfc6962": "f755de4dc0c36c8c065804608e3b55fb55eb8fe7953202b42057360bea9dd153",
+        "n_leaves": 12,
+        "pass": true,
+        "scenario": "complex",
+        "split_k": 8,
+        "structural_recompose_matches": true
+      }
+    ],
+    "g2": [
+      {
+        "leaf_index": 0,
+        "linear_chain_suffix_reveal": 3,
+        "merkle_audit_path_len": 2,
+        "n_leaves": 3,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "small"
+      },
+      {
+        "leaf_index": 1,
+        "linear_chain_suffix_reveal": 2,
+        "merkle_audit_path_len": 2,
+        "n_leaves": 3,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "small"
+      },
+      {
+        "leaf_index": 2,
+        "linear_chain_suffix_reveal": 1,
+        "merkle_audit_path_len": 1,
+        "n_leaves": 3,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "small"
+      },
+      {
+        "leaf_index": 0,
+        "linear_chain_suffix_reveal": 12,
+        "merkle_audit_path_len": 4,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 1,
+        "linear_chain_suffix_reveal": 11,
+        "merkle_audit_path_len": 4,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 2,
+        "linear_chain_suffix_reveal": 10,
+        "merkle_audit_path_len": 4,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 3,
+        "linear_chain_suffix_reveal": 9,
+        "merkle_audit_path_len": 4,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 4,
+        "linear_chain_suffix_reveal": 8,
+        "merkle_audit_path_len": 4,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 5,
+        "linear_chain_suffix_reveal": 7,
+        "merkle_audit_path_len": 4,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 6,
+        "linear_chain_suffix_reveal": 6,
+        "merkle_audit_path_len": 4,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 7,
+        "linear_chain_suffix_reveal": 5,
+        "merkle_audit_path_len": 4,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 8,
+        "linear_chain_suffix_reveal": 4,
+        "merkle_audit_path_len": 3,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 9,
+        "linear_chain_suffix_reveal": 3,
+        "merkle_audit_path_len": 3,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 10,
+        "linear_chain_suffix_reveal": 2,
+        "merkle_audit_path_len": 3,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      },
+      {
+        "leaf_index": 11,
+        "linear_chain_suffix_reveal": 1,
+        "merkle_audit_path_len": 3,
+        "n_leaves": 12,
+        "pass": true,
+        "reconstructs_merkle_root": true,
+        "scenario": "complex"
+      }
+    ],
+    "g3": [
+      {
+        "consistency_proof_len": 2,
+        "new_size": 3,
+        "old_size": 1,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "small"
+      },
+      {
+        "consistency_proof_len": 1,
+        "new_size": 3,
+        "old_size": 2,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "small"
+      },
+      {
+        "consistency_proof_len": 4,
+        "new_size": 12,
+        "old_size": 1,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 3,
+        "new_size": 12,
+        "old_size": 2,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 5,
+        "new_size": 12,
+        "old_size": 3,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 2,
+        "new_size": 12,
+        "old_size": 4,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 5,
+        "new_size": 12,
+        "old_size": 5,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 4,
+        "new_size": 12,
+        "old_size": 6,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 5,
+        "new_size": 12,
+        "old_size": 7,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 1,
+        "new_size": 12,
+        "old_size": 8,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 4,
+        "new_size": 12,
+        "old_size": 9,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 3,
+        "new_size": 12,
+        "old_size": 10,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      },
+      {
+        "consistency_proof_len": 4,
+        "new_size": 12,
+        "old_size": 11,
+        "pass": true,
+        "reconstructs_new_root": true,
+        "reconstructs_old_root": true,
+        "scenario": "complex"
+      }
+    ],
+    "g4": [
+      {
+        "detected": true,
+        "genuine_root": "f755de4dc0c36c8c065804608e3b55fb55eb8fe7953202b42057360bea9dd153",
+        "leaf_index": 5,
+        "pass": true,
+        "probe": "single_leaf_mutation_inclusion",
+        "reconstructed_with_tampered_leaf": "0b838743fc9b12ed346afc7e68e5506a611b7aecc8a655df847ea6607a615723"
+      },
+      {
+        "consistency_new_root_reconstructs_tampered": true,
+        "detected": true,
+        "genuine_prefix_root": "43703fd43976f71206bfeaae53bf430213d42e304af46e2c3f74972617381319",
+        "mutated_index": 2,
+        "old_prefix_root_diverged_from_genuine": true,
+        "old_size": 8,
+        "pass": true,
+        "probe": "history_rewrite_old_leaf_consistency",
+        "tampered_prefix_root": "356d2b8b6529f0929bf897ee4301122a0289ef103a0887575fc4d6148d64025b"
+      },
+      {
+        "detected": true,
+        "genuine_root": "f755de4dc0c36c8c065804608e3b55fb55eb8fe7953202b42057360bea9dd153",
+        "pass": true,
+        "probe": "leaf_swap_reorder_inclusion",
+        "reconstructed_after_swap": "1a254d0906523f0003f95b0b70e20828b962a2df6a8ac25347fe1630aeb0c427",
+        "root_also_changed": true,
+        "swapped": [
+          3,
+          7
+        ]
+      },
+      {
+        "detected": true,
+        "pass": true,
+        "probe": "forged_membership_no_valid_path"
+      }
+    ]
+  },
+  "closes": "Provides the RFC 6962 Merkle-tree alternative baseline for amphora-run-provenance provenance auditing, with verified O(log n) inclusion + consistency proofs over the genuine runtime leaves and fail-closed tamper detection; quantifies the audit-scaling gap versus the shipped linear chain.",
+  "counts": {
+    "g0_parity_checks": 4,
+    "g0_pass": 4,
+    "g1_merkle_roots": 3,
+    "g1_pass": 3,
+    "g2_inclusion_proofs": 15,
+    "g2_pass": 15,
+    "g3_consistency_proofs": 13,
+    "g3_pass": 13,
+    "g4_fail_closed": 4,
+    "g4_tamper_probes": 4
+  },
+  "does_not_close": "Does NOT change the shipped Haber-Stornetta linear-chain scheme (that remains the checked runtime and satisfies the module's byte-identical-replay hypothesis). Does NOT run the live Rust runtime. A Phase-1 promotion would require implementing and re-locking a Merkle-tree provenance mode in amphora-core Rust and human dual-identity ceremony keys this cron does not hold.",
+  "gates": {
+    "G0_leaf_parity_and_empty_kat": true,
+    "G1_merkle_roots_structural": true,
+    "G2_inclusion_proofs_reconstruct_root": true,
+    "G3_consistency_proofs_reconstruct_both_roots": true,
+    "G4_tamper_fail_closed": true,
+    "all_pass": true
+  },
+  "hypothesis": "Over the identical leaf set the RFC 6962 Merkle tree yields O(log n) inclusion proofs and O(log n) append-only consistency proofs that reconstruct the tree roots exactly and fail closed under any single-leaf tamper, whereas the shipped linear chain requires O(n) suffix reveal for the same audit.",
+  "merkle_roots_rfc6962": {
+    "complex": "f755de4dc0c36c8c065804608e3b55fb55eb8fe7953202b42057360bea9dd153",
+    "empty": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "small": "0914f9c528b67656d128c5cd3c32ed0a03ad1fbf0747b1753096894701a9bac0"
+  },
+  "module": "amphora-run-provenance",
+  "non_circularity": "Leaves are not fabricated: they are the runtime event_hashes built by the sibling parity oracle's PyRunArchive, and the last leaf of each archive reproduces the SHIPPED runtime event_chain_root anchor byte-exact (G0). The Merkle scheme is an alternative baseline, not the shipped scheme; roots differ from the linear-chain roots for n>0 (recorded in G1).",
+  "preconditions": {
+    "changes_shipped_scheme": false,
+    "reused_runtime_leaves_from_parity_oracle": true,
+    "runs_live_rust_runtime": false
+  },
+  "proof_size_comparison": {
+    "claim": "Merkle inclusion/consistency proofs are O(log n); the linear chain audit is O(n). At n=12 the deepest Merkle audit path is 4 nodes vs 12 for the linear-chain suffix reveal.",
+    "max_linear_chain_suffix_reveal": 12,
+    "max_merkle_consistency_proof_len": 5,
+    "max_merkle_inclusion_path_len": 4,
+    "n_max": 12
+  },
+  "purpose": "Implement the published RFC 6962 Merkle-tree tamper-evident-log baseline over the shipped module's genuine runtime event-hash leaves, and quantify the audit/consistency-proof scaling trade-off against the shipped Haber-Stornetta linear hash chain.",
+  "run_type": "THEORY_BASELINE_COMPARISON",
+  "runtime_source_anchors": {
+    "shipped_diagnostic_sha256": "7fd3a136387e02f804e11d4f5940f1daa94c87cb7a95e703710a960a27f5b80b",
+    "shipped_scheme": "Haber-Stornetta linear hash chain (event_chain_root == last event_hash)",
+    "sibling_parity_oracle_sha256": "1deff3c1dd12e360fe7252d91ab69a31fc99786939333d9c74c170a55e815ced"
+  },
+  "schema": "amphora.run-provenance.merkle-rfc6962-baseline-diagnostic.v1",
+  "study_id": "run-provenance-merkle-rfc6962-baseline-v1",
+  "theory_reference": [
+    "RFC 6962 (Laurie/Langley/Kasper 2013) Certificate Transparency, s2.1/s2.1.1/s2.1.2, DOI 10.17487/RFC6962",
+    "Crosby & Wallach 2009, USENIX Security, Efficient Data Structures for Tamper-Evident Logging",
+    "Merkle 1980, IEEE S&P, Protocols for Public Key Cryptosystems",
+    "Haber & Stornetta 1991, J. Cryptology 3(2):99-111 (linear-chain baseline compared against)",
+    "NIST FIPS 180-4 (2015) SHA-256"
+  ]
+}

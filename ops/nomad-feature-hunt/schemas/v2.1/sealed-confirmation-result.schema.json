@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nomad-feature-hunt/v2.1/sealed-confirmation-result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "receipt_type", "seeds", "folds", "trees", "task_type", "opened_once", "fold_hashes", "controls", "views", "winners", "confirmed_mean_rmsle", "compact_alternative"],
+  "properties": {
+    "schema_version": {"const": "2.1"},
+    "receipt_type": {"const": "sealed_confirmation_result"},
+    "seeds": {"const": [7919, 104729]},
+    "folds": {"const": 5},
+    "trees": {"const": 400},
+    "task_type": {"const": "GPU"},
+    "opened_once": {"const": true},
+    "fold_hashes": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "controls": {"type": "array", "minItems": 6},
+    "views": {"type": "array", "minItems": 2},
+    "winners": {"type": "object", "required": ["formation_energy_ev_natom", "bandgap_energy_ev"]},
+    "confirmed_mean_rmsle": {"type": "number", "minimum": 0},
+    "compact_alternative": {"type": "object"}
+  }
+}

@@ -1,0 +1,955 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch30_lift_audit.json",
+      "artifact_sha256": "5daada4f00b4ca6cb99a92cf0d7cb733d1118fc46630d6cf55e996aa2e3547b8",
+      "authority": "NO_PROMOTION_INFERRED",
+      "benchmark_id": "amphora-public-corrosion-benchmark-checked-current",
+      "observations": [
+        {
+          "json_path": "status",
+          "value": "failed"
+        },
+        {
+          "json_path": "promotion_status",
+          "value": "NO_LIFT_DETECTED_CURRENT_DATA"
+        },
+        {
+          "json_path": "primary_metric",
+          "value": "grouped_accuracy_on_median_derived_endpoint_label"
+        },
+        {
+          "json_path": "model_metric",
+          "value": 0.666667
+        },
+        {
+          "json_path": "baseline_metric",
+          "value": 0.666667
+        },
+        {
+          "json_path": "absolute_lift",
+          "value": 0.0
+        }
+      ],
+      "reported_result_status": "failed",
+      "status": "CHECKED_ARTIFACT_REPORTED_STATUS"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-public-corrosion-benchmark-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "formulation"
+  ],
+  "ceilings": {
+    "authority_tier": "EVIDENCE_ONLY",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "AUDIT_ONLY"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 38,
+    "checked_benchmark_status": "CHECKED_ARTIFACT_REPORTED_STATUS",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "AUDIT",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "datasets": [
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/locks/corr_data_database-013d9c5d7d4b9433.json",
+      "hash": "670facbd4e90d79c1bd6b8eb69259e8d5cd1dc2731943edbf8d3ca67e22c9cb0",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/locks/corr_data_database-013d9c5d7d4b9433.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv",
+      "hash": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128758_2-e-p-1k-2-s_erosion.csv",
+      "hash": "c72f611d6eea10598dc705c621c161ab86f94ab9f3cf0001787f98966743b16a",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128758_2-e-p-1k-2-s_erosion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128759_2-e-p-1k-2-s_impact.csv",
+      "hash": "d319386d740e5def9db8a53591731a2e756e6ad21763a1f13aba63e8c20716a1",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128759_2-e-p-1k-2-s_impact.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128760_2-e-p-1k-2-s_rust_creep.csv",
+      "hash": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128760_2-e-p-1k-2-s_rust_creep.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128761_2-e-p-1k-2-s_wet_dry_adhesion.csv",
+      "hash": "db5667c619b03afca704f062e8b64e766219f24837038dde50548c88e7ff0995",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128761_2-e-p-1k-2-s_wet_dry_adhesion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv",
+      "hash": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128763_2-e-p-2k-2-s_erosion.csv",
+      "hash": "6ae2777bf20721935ecf83d74f973304374919e25170c5fefeb1b6741c409657",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128763_2-e-p-2k-2-s_erosion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128764_2-e-p-2k-2-s_impact.csv",
+      "hash": "cba0d127347507e2fce6a6dd8e7ddd8bb9872944246a464ed285ec0f34272f36",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128764_2-e-p-2k-2-s_impact.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128765_2-e-p-2k-2-s_rust_creep.csv",
+      "hash": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128765_2-e-p-2k-2-s_rust_creep.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128766_2-e-p-2k-2-s_wet_dry_adhesion.csv",
+      "hash": "673129010365ef3984c2e2a287ff14b1c9d315d9107e446cc86e367d10ab1b42",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128766_2-e-p-2k-2-s_wet_dry_adhesion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv",
+      "hash": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128768_2-z-p-1k-2-s_erosion.csv",
+      "hash": "2d17de08d48b96921874302e746f6a024c22b3708c935273a8112252f7de3f11",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128768_2-z-p-1k-2-s_erosion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128769_2-z-p-1k-2-s_impact.csv",
+      "hash": "b3580e3f7ea033d52e082526517002b4c6b9e03eeb68e6b783363091255b1c86",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128769_2-z-p-1k-2-s_impact.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128770_2-z-p-1k-2-s_rust_creep.csv",
+      "hash": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128770_2-z-p-1k-2-s_rust_creep.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128771_2-z-p-1k-2-s_wet_dry_adhesion.csv",
+      "hash": "716904a260db91ea3b3d4395fa66d3f08e2466433b6e10047a1bb0e5797609d8",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128771_2-z-p-1k-2-s_wet_dry_adhesion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv",
+      "hash": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128773_2-z-p-2k-2-s_erosion.csv",
+      "hash": "ff17e7606af558480b067ca067d69c3f0651dbc2f1c7d5593726d917a7179424",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128773_2-z-p-2k-2-s_erosion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128774_2-z-p-2k-2-s_impact.csv",
+      "hash": "5e6b2f93d87e182bdf5b9c905bd43ce405c92a1c865e4f7a7449f6f594056a96",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128774_2-z-p-2k-2-s_impact.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128775_2-z-p-2k-2-s_rust_creep.csv",
+      "hash": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128775_2-z-p-2k-2-s_rust_creep.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128776_2-z-p-2k-2-s_wet_dry_adhesion.csv",
+      "hash": "1d69b9371aa99b72b2d24da151023f1f9822607fd7f9002c65f5acc29478efe5",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128776_2-z-p-2k-2-s_wet_dry_adhesion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv",
+      "hash": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128778_3-d-p-2k-2-s_erosion.csv",
+      "hash": "bec75f2d7330c51b7ea2a8949c8db60ff92948bf3bce10d467a527e53dfa5d73",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128778_3-d-p-2k-2-s_erosion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128780_3-d-p-2k-2-s_impact.csv",
+      "hash": "edecd4849f1c610c5cf107d76bb852da6013d8d15352672112b9b1adc09e78fa",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128780_3-d-p-2k-2-s_impact.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128781_3-d-p-2k-2-s_rust_creep.csv",
+      "hash": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128781_3-d-p-2k-2-s_rust_creep.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128782_3-d-p-2k-2-s_wet_dry_adhesion.csv",
+      "hash": "f05baa3cfa3e94bd6ad734d777b5934c67530f30d0d27139ded712e3840a062d",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128782_3-d-p-2k-2-s_wet_dry_adhesion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv",
+      "hash": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128785_3-z-p-2k-2-s_erosion.csv",
+      "hash": "6ecc53e3b62a05c5b819cb7a6710c8b5cd3be92f414ea0742dceb7b8b15a17f9",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128785_3-z-p-2k-2-s_erosion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128786_3-z-p-2k-2-s_impact.csv",
+      "hash": "1fa8be3d29843f163e94a28fe991a1527c4669b879981d980563777481800531",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128786_3-z-p-2k-2-s_impact.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128787_3-z-p-2k-2-s_rust_creep.csv",
+      "hash": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128787_3-z-p-2k-2-s_rust_creep.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128788_3-z-p-2k-2-s_wet_dry_adhesion.csv",
+      "hash": "b22fdbebd467a22c040885c1531d757585bad5cfdc8fac5b0ccc968b1f07b5b4",
+      "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128788_3-z-p-2k-2-s_wet_dry_adhesion.csv",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/feedback_v1/dataset_context.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "a7fa933ae5a147c4503bbfd525948b86d6dfb527023b6dac3c16e550ff74cc05"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128758_2-e-p-1k-2-s_erosion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "c72f611d6eea10598dc705c621c161ab86f94ab9f3cf0001787f98966743b16a"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128759_2-e-p-1k-2-s_impact.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "d319386d740e5def9db8a53591731a2e756e6ad21763a1f13aba63e8c20716a1"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128760_2-e-p-1k-2-s_rust_creep.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128761_2-e-p-1k-2-s_wet_dry_adhesion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "db5667c619b03afca704f062e8b64e766219f24837038dde50548c88e7ff0995"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128763_2-e-p-2k-2-s_erosion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "6ae2777bf20721935ecf83d74f973304374919e25170c5fefeb1b6741c409657"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128764_2-e-p-2k-2-s_impact.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "cba0d127347507e2fce6a6dd8e7ddd8bb9872944246a464ed285ec0f34272f36"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128765_2-e-p-2k-2-s_rust_creep.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128766_2-e-p-2k-2-s_wet_dry_adhesion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "673129010365ef3984c2e2a287ff14b1c9d315d9107e446cc86e367d10ab1b42"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128768_2-z-p-1k-2-s_erosion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "2d17de08d48b96921874302e746f6a024c22b3708c935273a8112252f7de3f11"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128769_2-z-p-1k-2-s_impact.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "b3580e3f7ea033d52e082526517002b4c6b9e03eeb68e6b783363091255b1c86"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128770_2-z-p-1k-2-s_rust_creep.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128771_2-z-p-1k-2-s_wet_dry_adhesion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "716904a260db91ea3b3d4395fa66d3f08e2466433b6e10047a1bb0e5797609d8"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128773_2-z-p-2k-2-s_erosion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "ff17e7606af558480b067ca067d69c3f0651dbc2f1c7d5593726d917a7179424"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128774_2-z-p-2k-2-s_impact.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "5e6b2f93d87e182bdf5b9c905bd43ce405c92a1c865e4f7a7449f6f594056a96"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128775_2-z-p-2k-2-s_rust_creep.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128776_2-z-p-2k-2-s_wet_dry_adhesion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "1d69b9371aa99b72b2d24da151023f1f9822607fd7f9002c65f5acc29478efe5"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128778_3-d-p-2k-2-s_erosion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "bec75f2d7330c51b7ea2a8949c8db60ff92948bf3bce10d467a527e53dfa5d73"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128780_3-d-p-2k-2-s_impact.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "edecd4849f1c610c5cf107d76bb852da6013d8d15352672112b9b1adc09e78fa"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128781_3-d-p-2k-2-s_rust_creep.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128782_3-d-p-2k-2-s_wet_dry_adhesion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "f05baa3cfa3e94bd6ad734d777b5934c67530f30d0d27139ded712e3840a062d"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128785_3-z-p-2k-2-s_erosion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "6ecc53e3b62a05c5b819cb7a6710c8b5cd3be92f414ea0742dceb7b8b15a17f9"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128786_3-z-p-2k-2-s_impact.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "1fa8be3d29843f163e94a28fe991a1527c4669b879981d980563777481800531"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128787_3-z-p-2k-2-s_rust_creep.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128788_3-z-p-2k-2-s_wet_dry_adhesion.csv",
+        "rights": {
+          "evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+          "gap": "A checked rights-ledger entry binds this SHA-256 as public/open official government data with stated use limits.",
+          "status": "KNOWN"
+        },
+        "sha256": "b22fdbebd467a22c040885c1531d757585bad5cfdc8fac5b0ccc968b1f07b5b4"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/feedback_v1_nist_benchmark.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "e318214998d2691f5866324b84e13ed361d89a388daeb27d3f39ce2beb14fc20"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_corrosion_benchmark_model_card.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "1572d664af8ad654f55743ee5c4729025b2a8859adfcb6c8ae95abd87a2687b6"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "671dacef8517464182a3fb7508a6bcf3f8814a3d414e8634d154b87c59b011ed"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_public_corrosion_dataset_manifest.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "b59bc8fff1b65e287945e52b19f4849f252e018b62e9626bed0814584f3d9a5a"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_public_eis_feature_table.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "58082a5356a51f74cf38fe5175de18435995de998ac23473437ffa19623059c4"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_unseen_benchmark.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "d58316fad1db07e3f01ec4ec136e98d786cb7c799ba51cd643df9fe601ad6ed0"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch30_lift_audit.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "5daada4f00b4ca6cb99a92cf0d7cb733d1118fc46630d6cf55e996aa2e3547b8"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch30_lift_audit.json",
+      "artifact_sha256": "5daada4f00b4ca6cb99a92cf0d7cb733d1118fc46630d6cf55e996aa2e3547b8",
+      "gap": "The observations are transcribed checked-artifact fields, not an independent validation or promotion conclusion.",
+      "observations": [
+        {
+          "json_path": "status",
+          "value": "failed"
+        },
+        {
+          "json_path": "promotion_status",
+          "value": "NO_LIFT_DETECTED_CURRENT_DATA"
+        },
+        {
+          "json_path": "primary_metric",
+          "value": "grouped_accuracy_on_median_derived_endpoint_label"
+        },
+        {
+          "json_path": "model_metric",
+          "value": 0.666667
+        },
+        {
+          "json_path": "baseline_metric",
+          "value": 0.666667
+        },
+        {
+          "json_path": "absolute_lift",
+          "value": 0.0
+        }
+      ],
+      "reported_result_status": "failed",
+      "status": "CHECKED_ARTIFACT_REPORTED_STATUS"
+    },
+    "external_dependencies": [
+      "At least 30 independent systems including 10 locked external systems"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-formulation-capabilities/src/lib.rs",
+      "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
+      "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+    },
+    "known_contradictions": [
+      "The checked public-system audit reports no lift on current data and contains no owned candidate wet-lab validation."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-formulation-capabilities/src/lib.rs",
+      "scenario": "Keep the grouped unseen benchmark deterministic and not promoted.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-public-corrosion-benchmark",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "formulation",
+        "dataset_id": "public-corrosion-six-system-benchmark.v1",
+        "model_id": "corrosion-eis-v1",
+        "model_readiness_status": "MODEL_READINESS_ONLY",
+        "solver_use": "AUDIT_ONLY",
+        "track_id": "corrosion_eis"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-formulation-capabilities/src/lib.rs",
+        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-public-corrosion-benchmark-example",
+      "candidate_type": "formulation",
+      "formulation": {
+        "application": {
+          "dft_mil": 5.0,
+          "relative_humidity_pct": 50.0,
+          "substrate": "steel",
+          "surface_preparation": "declared",
+          "temperature_C": 25.0
+        },
+        "basis": "mass_g_per_batch",
+        "batch_mass_g": 137.13,
+        "ingredient_catalog_version": "facts.v2",
+        "process": {
+          "application_method": null,
+          "induction_time_min": null,
+          "mix_order": null,
+          "pot_age_h": 0.0
+        },
+        "recipe": {
+          "part_A": {
+            "dgeba_828": {
+              "ingredient_id": "dgeba_828",
+              "mass_g": 100.0
+            }
+          },
+          "part_B": {
+            "ancamide_350a": {
+              "ingredient_id": "ancamide_350a",
+              "mass_g": 37.13
+            }
+          }
+        }
+      }
+    },
+    "current_output": {
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_id": "amphora-public-corrosion-benchmark-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {},
+      "metrics": {
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "paired baseline lift",
+          "model_authority": "EVIDENCE_ONLY",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        },
+        "unseen_benchmark": null
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-public-corrosion-benchmark",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "paired baseline lift",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "At least 30 independent systems, including 10 locked external systems; at least 10 percentage-point baseline lift with paired 95% confidence lower bound above zero.",
+      "unit": "declared by locked benchmark",
+      "value_path": "metrics.unseen_benchmark"
+    }
+  ],
+  "lane": "formulation",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "metrics.unseen_benchmark",
+    "non_blocking_claim_locks": [
+      "benchmark_only_status",
+      "feedback_v1_nist_corr_data_context_only",
+      "no_candidate_corrosion_validation",
+      "no_owned_candidate_wet_lab_data"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PRE_PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 3,
+      "decision_value": 5,
+      "downstream_leverage": 5,
+      "effort": 3,
+      "evidence_gap": 5,
+      "external_delay": 3
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 1,
+    "score": 40
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

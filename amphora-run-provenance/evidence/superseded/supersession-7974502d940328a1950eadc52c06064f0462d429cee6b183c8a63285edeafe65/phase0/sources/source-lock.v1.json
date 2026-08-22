@@ -1,0 +1,20 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-run-provenance/evidence/phase0",
+  "imported_locks": [],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-run-provenance",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "eb68f96019b42e0617a08243d391c1aaf1104de62e1f797ca266b9533cd3e8c6",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/run_manifest.json",
+      "observed_sha256": "eb68f96019b42e0617a08243d391c1aaf1104de62e1f797ca266b9533cd3e8c6",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

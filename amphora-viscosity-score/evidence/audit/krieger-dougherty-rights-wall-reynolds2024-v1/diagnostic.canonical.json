@@ -1,0 +1,17 @@
+{
+  "blocking_license": "CC BY-NC-ND",
+  "blocking_source_doi": "10.1002/adem.202301630",
+  "campaign_item_id": "C9",
+  "claim_under_attack": "KRIEGER_DOUGHERTY (src/lib.rs:1208) benchmarkable-against-real-data-with-current-in-tree-assets",
+  "does_not_close": "Does not benchmark KRIEGER_DOUGHERTY. Does not extract, transcribe, or derive from Reynolds et al. 2024's data. Does not resolve the CC BY-NC-ND commercial/derivative-use ambiguity (human legal call). Does not modify the C9 fire-1 HERSCHEL_BULKLEY receipt or verdict. Does not modify the master manifest or any mission.md.",
+  "finding_lock_sha256": "5d0d8eed5ac4add3ace8868259de9a5ee80692cfbfa2c62a5ea11861add20e98",
+  "n_access_blocked_no_license_determined": 4,
+  "n_cc_by_confirmed_but_unusable": 2,
+  "n_rights_blocked_usable_content_found": 1,
+  "n_sources_checked_this_fire": 7,
+  "refutation_criterion": "The claim under attack ('KRIEGER_DOUGHERTY is benchmarkable against real data with current in-tree assets') would be REFUTED (in the affirmative, i.e. shown benchmarkable) by locating a CC BY / CC0 eta-vs-phi dataset for a filled resin system with >= 4 phi points spanning a meaningful range, and SURVIVED-as-benchmarked by running the module's exact KRIEGER_DOUGHERTY equation against it. Neither occurred: a real eta-vs-phi dataset with an explicit Krieger-Dougherty phi_max fit was located (Reynolds et al. 2024) but its CC BY-NC-ND license blocks derivative/commercial use, so the benchmark cannot be run without a human rights decision. This is a genuine finding, not a failure to search: it demonstrates the claim's benchmarkability is gated on a resolvable-but-unresolved rights question, not on data non-existence.",
+  "schema": "amphora.viscosity-score.krieger-dougherty-rights-wall-diagnostic.v1",
+  "scope_of_this_run": "C9 fire 2: continuation of fire 1's unbenchmarked-KRIEGER_DOUGHERTY data sweep. Attempts to locate a rights-clean (CC BY / CC0) pigment- or filler-loading viscosity ladder (eta vs phi, fittable phi_max) in an epoxy or model resin system, per the C9 objective's explicit allowance for a model system if no epoxy-specific dataset exists.",
+  "usable_content_found": true,
+  "verdict": "BLOCKED_RIGHTS"
+}

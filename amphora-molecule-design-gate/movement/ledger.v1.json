@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-9a754851e5a46da0de88efa0fcc2eeda5a5e9d106022af1b1b383f5a837834ad",
+      "path": "events/9a754851e5a46da0de88efa0fcc2eeda5a5e9d106022af1b1b383f5a837834ad.json",
+      "sha256": "af73c5db6c927dd82755def79fafd846bd1bdff07c6dd82fc71dfd975fb9c5e9"
+    }
+  ],
+  "module_id": "amphora-molecule-design-gate",
+  "schema": "amphora.module-movement-ledger.v1"
+}

@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-public-corrosion-benchmark",
+    "formulation lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "34b45c7f8c354d65e8a68ba0a56fba366606ba317c3d22fd5a94c6be37348f36",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

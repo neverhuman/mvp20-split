@@ -1,0 +1,50 @@
+{
+  "schema": "amphora.design-rule-benchmark-lock.v1",
+  "module_id": "amphora-design-rule-score",
+  "benchmark_id": "PURFORMANCE_DIRECTIONAL_RIDGE_20260718_V1",
+  "locked_on": "2026-07-18",
+  "status": "LOCKED_INTERNAL_EVALUATION_NOT_EXECUTED",
+  "parent_hashes": {
+    "module_manifest": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+    "source_census": "bfdfd79abf49f3d49fb3b3ad7fe697bdbc154c55c12f022b129802070583dfcd",
+    "chronology_split": "221eab2b17ef44653d01a50b56ee60e937941c7932e19e9fe1c3885d36d9fa17",
+    "experiment_archive": "b6e89fe900b1aaf73beb882eeb07dfaf702e0818c9f443de6e84aaa8e32b0036",
+    "evaluation_archive": "c02e82b4ab80ea2d970b6d1bda8bb47d4e0a01fc43a60b29c3718d15f692338c",
+    "readme": "6f7bb1ecc50fe75349ae518ba672a9908768af9fd7055a56360181177fbc89ed",
+    "experiment_acquisition_receipt": "dea1153aff27ff62a09e13ee9ab36233768de7f88ea7b3d296bd542e38c65971",
+    "evaluation_acquisition_receipt": "113b91ca8de1f8e828eb6e829cc5efcc1f81705d973e209f91373655fc582b75",
+    "readme_acquisition_receipt": "041a129f8d31b1dbdf89004f0d264cbc6d291ed485e6cb4d43f2bf09ea2ad382",
+    "license_bytes": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+  },
+  "dataset_scope": {
+    "doi": "10.5281/zenodo.13742098",
+    "material_family": "POLYURETHANE_LACQUER",
+    "endpoints": ["CUPPING_TEST", "GLOSS_60_DEG", "HIDING_POWER", "SCRATCH_HARDNESS"],
+    "training_partitions": ["Cold_start", "Iteration_1", "Iteration_2", "Iteration_3", "Iteration_4"],
+    "sealed_test_partition": "Random_test"
+  },
+  "estimator": {
+    "family": "STANDARDIZED_RIDGE",
+    "l2_penalty": 1.0,
+    "seed": 20260717,
+    "training_only_scaling": true,
+    "missing_input_imputation": false,
+    "post_outcome_feature_search": false,
+    "alternate_model_family_allowed": false
+  },
+  "required_attacks": [
+    "TRAIN_TEST_FILE_OVERLAP",
+    "REPLICATE_OVERLAP",
+    "OUTCOME_FEATURE_LEAKAGE",
+    "RANDOM_TEST_LABEL_ACCESS",
+    "ARCHIVE_MUTATION",
+    "CLAIM_LOCK_STRIPPING"
+  ],
+  "authority": {
+    "evidence_status_ceiling": "LOCKED_INTERNAL",
+    "output_ceiling": "DIRECTIONAL_HYPOTHESES_ONLY",
+    "marine_dgeba_rules_validated": false,
+    "optimizer_authority": false,
+    "product_performance_authority": false
+  }
+}

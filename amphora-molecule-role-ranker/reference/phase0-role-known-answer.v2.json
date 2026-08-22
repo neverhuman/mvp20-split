@@ -1,0 +1,915 @@
+{
+  "acceptance_bar": {
+    "ambiguous_rejection_rate": 1.0,
+    "fitted_model_baseline_agreement_rate": 1.0,
+    "measured_only_lock_preservation_rate": 1.0,
+    "out_of_domain_rejection_rate": 1.0,
+    "reported_expected_calibration_error_ceiling": 0.1,
+    "structural_inference_agreement_rate": 1.0,
+    "unauthorized_objective_boundary_rate": 1.0
+  },
+  "authority": {
+    "commercial_product_authority": false,
+    "optimizer_authority": false,
+    "phase1_scientific_readiness_asserted": false,
+    "scientific_readiness": "LOCKED_INTERNAL"
+  },
+  "fitted_model_artifact": {
+    "applicability_domain": {
+      "allowed_roles": [
+        "resin",
+        "hardener"
+      ],
+      "exclude_dual_role": true,
+      "molecular_weight_g_mol": {
+        "max": 1000.0,
+        "min": 40.0
+      }
+    },
+    "coefficients": [
+      0.0398277,
+      0.112292,
+      0.609159,
+      -0.821644,
+      0.986325,
+      -0.986325
+    ],
+    "feature_order": [
+      "intercept",
+      "molecular_weight_g_mol",
+      "oxirane_ring_count",
+      "reactive_amine_hydrogen_count",
+      "has_oxirane",
+      "has_reactive_amine_hydrogen"
+    ],
+    "schema": "amphora.molecule-role-logistic-regression.v1",
+    "standardization": {
+      "means": {
+        "has_oxirane": 0.5,
+        "has_reactive_amine_hydrogen": 0.5,
+        "molecular_weight_g_mol": 164.035,
+        "oxirane_ring_count": 0.875,
+        "reactive_amine_hydrogen_count": 2.25
+      },
+      "scales": {
+        "has_oxirane": 0.5,
+        "has_reactive_amine_hydrogen": 0.5,
+        "molecular_weight_g_mol": 84.8282,
+        "oxirane_ring_count": 1.09211,
+        "reactive_amine_hydrogen_count": 2.41954
+      }
+    },
+    "training_provenance": {
+      "toolkit": "scikit-learn 1.7.2, numpy",
+      "training_accuracy": 1.0,
+      "training_method": "scikit_learn_logistic_regression_L2_lbfgs_C1_over_zscored_structural_features",
+      "training_record_ids": [
+        "resin-dgeba",
+        "resin-diglycidyl-resorcinol",
+        "resin-egdge",
+        "resin-bdgde",
+        "resin-tmp-triglycidyl",
+        "resin-glycidol",
+        "resin-phenyl-glycidyl-ether",
+        "resin-butyl-glycidyl-ether",
+        "resin-cyclohexene-oxide",
+        "resin-styrene-oxide",
+        "resin-epichlorohydrin",
+        "resin-tgddm",
+        "hardener-deta",
+        "hardener-teta",
+        "hardener-tepa",
+        "hardener-ipda",
+        "hardener-hmda",
+        "hardener-mxda",
+        "hardener-pacm",
+        "hardener-dach",
+        "hardener-mpda",
+        "hardener-benzylamine",
+        "hardener-eda",
+        "hardener-taea"
+      ]
+    }
+  },
+  "fixture_id": "amphora-molecule-role-ranker-phase0-known-answer-2026-08-03-v2",
+  "records": [
+    {
+      "canonical_structure_sha256": "9c7d62bbf54d6a8ad0f9b52593b6d9a3f8db6c854fb25c2392e8cf1ea83def85",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 340.42,
+        "dual_role": false,
+        "formula": "C21H24O4",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-dgeba",
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "sources": [
+        "PubChem CID 2286"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "55e74e76e75671a4e7cda2147dfaae894790810a85a4c6e4836ef64ba5bb5772",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 222.24,
+        "dual_role": false,
+        "formula": "C12H14O4",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-diglycidyl-resorcinol",
+      "smiles": "C1OC1COc1cccc(OCC2CO2)c1",
+      "sources": [
+        "PubChem CID 65221"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "3599b06d81c16ab3162f5bb98205148908bf1d58a6c6e9d0a3475991052806a9",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 174.19,
+        "dual_role": false,
+        "formula": "C8H14O4",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-egdge",
+      "smiles": "C1OC1COCCOCC2CO2",
+      "sources": [
+        "PubChem CID 78035"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "a484d7d139a9ede65f3905da27767b374df48e65ba47af1eec0cbb6cd9fafcf1",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 202.25,
+        "dual_role": false,
+        "formula": "C10H18O4",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-bdgde",
+      "smiles": "C1OC1COCCCCOCC2CO2",
+      "sources": [
+        "PubChem CID 8103"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "53e088e15f918f9d7a55628dcad0c4016b298f2451c71c5604e52e394aae943c",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 302.36,
+        "dual_role": false,
+        "formula": "C15H26O6",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 3,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-tmp-triglycidyl",
+      "smiles": "CCC(COCC1CO1)(COCC2CO2)COCC3CO3",
+      "sources": [
+        "PubChem CID 79102"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "70ee4a8c0ddc88773c652985c87bc1339ec3812b6b5d8564e8fa7a0106cd2410",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 74.08,
+        "dual_role": false,
+        "formula": "C3H6O2",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-glycidol",
+      "smiles": "OCC1CO1",
+      "sources": [
+        "PubChem CID 7291"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "8490b4b8c431203011f2765a8f0b2e49fe288b4759ad8a5ab196a3013458e223",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 150.17,
+        "dual_role": false,
+        "formula": "C9H10O2",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-phenyl-glycidyl-ether",
+      "smiles": "C1OC1COc1ccccc1",
+      "sources": [
+        "PubChem CID 7583"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "29f7dad58bd0f763314936d000a6db0128eef9a3d82ae2cc895fa1bfc53ec3a4",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 130.19,
+        "dual_role": false,
+        "formula": "C7H14O2",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-butyl-glycidyl-ether",
+      "smiles": "CCCCOCC1CO1",
+      "sources": [
+        "PubChem CID 8110"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "78d4812342a7f88534719c2c2b467b0e7b72f0ecfbe8e31818f971d57d8d8a2b",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 98.14,
+        "dual_role": false,
+        "formula": "C6H10O",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-cyclohexene-oxide",
+      "smiles": "C1CCC2OC2C1",
+      "sources": [
+        "PubChem CID 11555"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "149ce983206981d2db7cc875ca46a5e22035ab95462bde05ea1d83bb588920c0",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 120.15,
+        "dual_role": false,
+        "formula": "C8H8O",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-styrene-oxide",
+      "smiles": "C1OC1c1ccccc1",
+      "sources": [
+        "PubChem CID 7276"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "8a7f3be34cd7ec404661e657fa72b1f710c126d648fd3087ab7593f210ef7db3",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 92.52,
+        "dual_role": false,
+        "formula": "C3H5ClO",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-epichlorohydrin",
+      "smiles": "ClCC1CO1",
+      "sources": [
+        "PubChem CID 7835"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "ed217aab5459fada1cab62c9aade4c54d711e48dfff54ca89faf32bb06fd7405",
+      "class": "resin",
+      "facts": {
+        "average_molecular_weight_g_mol": 422.53,
+        "dual_role": false,
+        "formula": "C25H30N2O4",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 4,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "resin-tgddm",
+      "smiles": "C1OC1CN(CC2CO2)c1ccc(Cc2ccc(N(CC3CO3)CC4CO4)cc2)cc1",
+      "sources": [
+        "PubChem CID 71727"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "907c5669df3591158dff663a75d79f76be4441127337b110a9d1c10ca4f3c72b",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 103.17,
+        "dual_role": false,
+        "formula": "C4H13N3",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 5
+      },
+      "record_id": "hardener-deta",
+      "smiles": "NCCNCCN",
+      "sources": [
+        "PubChem CID 8102"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "1a0f38aa9bcb8cc011e5326313d1007cc689f610dc085c880e1f071f5b52ffd2",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 146.24,
+        "dual_role": false,
+        "formula": "C6H18N4",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 6
+      },
+      "record_id": "hardener-teta",
+      "smiles": "NCCNCCNCCN",
+      "sources": [
+        "PubChem CID 5288"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "d9f3a2c8dec5330d433291ecbcec3f197ca8b0f3c998d3656203be95ed3466b0",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 189.3,
+        "dual_role": false,
+        "formula": "C8H23N5",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 7
+      },
+      "record_id": "hardener-tepa",
+      "smiles": "NCCNCCNCCNCCN",
+      "sources": [
+        "PubChem CID 21764"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "bf3967386a926eaacd6a3d379839b34f9956f0b553d005cefed17d87f4e0869c",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 170.3,
+        "dual_role": false,
+        "formula": "C10H22N2",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "record_id": "hardener-ipda",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "sources": [
+        "PubChem CID 6461"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "aece2e97a54d8057b5ecfd13b5243e8b29ca3505cd8d5e083dd6ab3b16814c76",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 116.21,
+        "dual_role": false,
+        "formula": "C6H16N2",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "record_id": "hardener-hmda",
+      "smiles": "NCCCCCCN",
+      "sources": [
+        "PubChem CID 13866"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "c7c63df1a42eac8a5cd97ff6f04ce2673b0997633d1dccc16b84f1cd36e2b0d6",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 136.19,
+        "dual_role": false,
+        "formula": "C8H12N2",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "record_id": "hardener-mxda",
+      "smiles": "NCc1cccc(CN)c1",
+      "sources": [
+        "PubChem CID 12143"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "5cc56acdc03c885dfd64f905dae9cc01a8c98ad09586bd3426a940eb72459248",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 210.36,
+        "dual_role": false,
+        "formula": "C13H26N2",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "record_id": "hardener-pacm",
+      "smiles": "NC1CCC(CC2CCC(N)CC2)CC1",
+      "sources": [
+        "PubChem CID 62790"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "a2fb6105521cbf7ad95959f7b15dd3e843e21cfdbe5a9580786a0c52e2b49387",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 114.19,
+        "dual_role": false,
+        "formula": "C6H14N2",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "record_id": "hardener-dach",
+      "smiles": "NC1CCCCC1N",
+      "sources": [
+        "PubChem CID 8929"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "169075cfd2c61e05c15321f6ed8c56cc205d0b9edf0b5bebde5bb8296686d941",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 108.14,
+        "dual_role": false,
+        "formula": "C6H8N2",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "record_id": "hardener-mpda",
+      "smiles": "Nc1cccc(N)c1",
+      "sources": [
+        "PubChem CID 7935"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "3629899e49926052ee7a9041ee97200456a821397c82c79085f889a3679ab54b",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 107.15,
+        "dual_role": false,
+        "formula": "C7H9N",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "record_id": "hardener-benzylamine",
+      "smiles": "NCc1ccccc1",
+      "sources": [
+        "PubChem CID 7504"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "dcc73bf631f9be42113cee3ffcf0bb8889cf63dd94af75ebee2dd18d532966b2",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 60.1,
+        "dual_role": false,
+        "formula": "C2H8N2",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "record_id": "hardener-eda",
+      "smiles": "NCCN",
+      "sources": [
+        "PubChem CID 3301"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "2260fe81257287dce4e8094c464daad898b7d8b53be985560e2b76bdc3df8d5e",
+      "class": "hardener",
+      "facts": {
+        "average_molecular_weight_g_mol": 146.24,
+        "dual_role": false,
+        "formula": "C6H18N4",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 6
+      },
+      "record_id": "hardener-taea",
+      "smiles": "NCCN(CCN)CCN",
+      "sources": [
+        "PubChem CID 12933"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "e03cbb98233c039fdc6864a827b994114b75bf7769d6697c6ca013d5ebcf220b",
+      "class": "ambiguous",
+      "facts": {
+        "average_molecular_weight_g_mol": 73.09,
+        "dual_role": true,
+        "formula": "C3H7NO",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "record_id": "ambiguous-glycidyl-amine",
+      "smiles": "NCC1CO1",
+      "sources": [
+        "PubChem CID 15099"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "b398fbb2bfc6d2f43e554401e3616e705da29c43c550e74d329e6b7062d66aff",
+      "class": "ambiguous",
+      "facts": {
+        "average_molecular_weight_g_mol": 149.19,
+        "dual_role": true,
+        "formula": "C9H11NO",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 1
+      },
+      "record_id": "ambiguous-n-glycidyl-aniline",
+      "smiles": "c1ccc(NCC2CO2)cc1",
+      "sources": [
+        "PubChem CID 15272"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "57444d16668e0e7d893d4171ed091d6810b58b401c409e240150a2e767cdf84e",
+      "class": "ambiguous",
+      "facts": {
+        "average_molecular_weight_g_mol": 142.2,
+        "dual_role": true,
+        "formula": "C7H14N2O",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 1
+      },
+      "record_id": "ambiguous-glycidyl-piperazine",
+      "smiles": "C1CN(CC2CO2)CCN1",
+      "sources": [
+        "PubChem CID 79107"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "9438a032cc2619579b74ca47f401b992a6117cd4e62a47dcbb449a98433caa49",
+      "class": "ambiguous",
+      "facts": {
+        "average_molecular_weight_g_mol": 117.15,
+        "dual_role": true,
+        "formula": "C5H11NO2",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "record_id": "ambiguous-2aminoethyl-glycidyl-ether",
+      "smiles": "NCCOCC1CO1",
+      "sources": [
+        "PubChem CID 21149"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "cc569941e98033aa55c3107c698ed4b3a593a48e57ed6484f67d5b9633e60776",
+      "class": "ambiguous",
+      "facts": {
+        "average_molecular_weight_g_mol": 131.17,
+        "dual_role": true,
+        "formula": "C6H13NO2",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "record_id": "ambiguous-3aminopropyl-glycidyl-ether",
+      "smiles": "NCCCOCC1CO1",
+      "sources": [
+        "PubChem CID 21150"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "04eb4a33595f76d96df27dfd97d38646b81b5a60c9f0d163c0aa9b095486213f",
+      "class": "ambiguous",
+      "facts": {
+        "average_molecular_weight_g_mol": 117.15,
+        "dual_role": true,
+        "formula": "C5H11NO2",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 1
+      },
+      "record_id": "ambiguous-hydroxyethyl-glycidyl-amine",
+      "smiles": "OCCNCC1CO1",
+      "sources": [
+        "PubChem CID 21151"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "90b4853e06e722c63b4270463cf558684d7a1e77605d3ad36489d6146e42ab87",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 58.12,
+        "dual_role": false,
+        "formula": "C4H10",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-nbutane",
+      "smiles": "CCCC",
+      "sources": [
+        "PubChem CID 7843"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "ab1de819ede91df490e6441934decfa9041b49f91d6bbadbba4df634ccff57fa",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 46.07,
+        "dual_role": false,
+        "formula": "C2H6O",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-ethanol",
+      "smiles": "CCO",
+      "sources": [
+        "PubChem CID 702"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "b9f52fe46cc71f297b12000fe61e4538205fad3ad843f91c8c28afecc0374892",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 59.07,
+        "dual_role": false,
+        "formula": "C2H5NO",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-acetamide",
+      "smiles": "CC(=O)N",
+      "sources": [
+        "PubChem CID 178"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "de84a3a5e7d86fb53fe767b079b6e324b7f486e3ee690b86b06fd5d7231fb01c",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 58.08,
+        "dual_role": false,
+        "formula": "C3H6O",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-acetone",
+      "smiles": "CC(C)=O",
+      "sources": [
+        "PubChem CID 180"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "a21c4f64dcc59dd2ede88d9a0768c55c266cb330970fe499e6a6d2e8cef5ad95",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 84.16,
+        "dual_role": false,
+        "formula": "C6H12",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-cyclohexane",
+      "smiles": "C1CCCCC1",
+      "sources": [
+        "PubChem CID 8078"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "5da1ba726f54707457f9b345ee903af6b90813f94b68ff79693d596e75457e77",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 92.14,
+        "dual_role": false,
+        "formula": "C7H8",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-toluene",
+      "smiles": "Cc1ccccc1",
+      "sources": [
+        "PubChem CID 1140"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "9c7d62bbf54d6a8ad0f9b52593b6d9a3f8db6c854fb25c2392e8cf1ea83def85",
+      "claim_lock": "commercial_product_is_measured_only",
+      "class": "measured_product_only",
+      "facts": {
+        "average_molecular_weight_g_mol": 340.42,
+        "dual_role": false,
+        "formula": "C21H24O4",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "measured_lower_bound_eew_g_per_eq": 180.0,
+      "record_id": "commercial-dgeba-tds1",
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "sources": [
+        "https://www.olin.com/products/epoxy-resins"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "9c7d62bbf54d6a8ad0f9b52593b6d9a3f8db6c854fb25c2392e8cf1ea83def85",
+      "claim_lock": "commercial_product_is_measured_only",
+      "class": "measured_product_only",
+      "facts": {
+        "average_molecular_weight_g_mol": 340.42,
+        "dual_role": false,
+        "formula": "C21H24O4",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "measured_lower_bound_eew_g_per_eq": 185.0,
+      "record_id": "commercial-dgeba-tds2",
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "sources": [
+        "https://www.huntsman.com/products/araldite-gy-6010"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "9c7d62bbf54d6a8ad0f9b52593b6d9a3f8db6c854fb25c2392e8cf1ea83def85",
+      "claim_lock": "commercial_product_is_measured_only",
+      "class": "measured_product_only",
+      "facts": {
+        "average_molecular_weight_g_mol": 340.42,
+        "dual_role": false,
+        "formula": "C21H24O4",
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "measured_lower_bound_eew_g_per_eq": 190.0,
+      "record_id": "commercial-dgeba-tds3",
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "sources": [
+        "https://www.momentive.com/en-us/products/epoxy-resins"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "d1519fa7f10932f4721e5c54874e3580b9fc94f8fecb49319113d64b36e5e295",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 211.268,
+        "dual_role": false,
+        "formula": "C13H13N3",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-guanidine-dpg-accelerator",
+      "smiles": "c1ccccc1NC(=N)Nc2ccccc2",
+      "sources": [
+        "PubChem CID 7593 (1,3-diphenylguanidine, CAS 102-06-7)",
+        "US Patent 9,238,706 (guanidine derivatives as epoxy curing accelerators)"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "efc12393353236c38eb3fa1e99180593f53b311262abccd6b6e33c10dc7941af",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 239.322,
+        "dual_role": false,
+        "formula": "C15H17N3",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-guanidine-dotg-accelerator",
+      "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C",
+      "sources": [
+        "PubChem CID 7261 (N,N'-di-o-tolylguanidine, CAS 97-39-2)"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "9303fbf4422cb921245d185ba3de68bb37e31036140ef3dd6184114e18deefff",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 59.072,
+        "dual_role": false,
+        "formula": "CH5N3",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-guanidine",
+      "smiles": "NC(=N)N",
+      "sources": [
+        "PubChem CID 3520 (guanidine, CAS 113-00-8)"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "9dcb44e6d17a22a4621bee041a17c284299087d7b90e1a92f6447fd0162c629f",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 84.082,
+        "dual_role": false,
+        "formula": "C2H4N4",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-guanidine-dicy-latent-hardener",
+      "smiles": "NC(=NC#N)N",
+      "sources": [
+        "PubChem CID 10005 (dicyandiamide/cyanoguanidine, CAS 461-58-5)",
+        "Lee & Neville, Handbook of Epoxy Resins, McGraw-Hill 1967 (latent DGEBA hardener; cure is catalytic/elevated-temperature, not RT 1:1 amine-epoxide addition)"
+      ]
+    },
+    {
+      "canonical_structure_sha256": "7d31d402177520acf539ba4bb06f5060d4ce56468afeb0aff175bb037abab6fd",
+      "class": "out_of_domain",
+      "facts": {
+        "average_molecular_weight_g_mol": 101.113,
+        "dual_role": false,
+        "formula": "C2H7N5",
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "record_id": "ood-guanidine-biguanide",
+      "smiles": "NC(=N)NC(=N)N",
+      "sources": [
+        "PubChem CID 7939 (biguanide, CAS 461-71-2)"
+      ]
+    }
+  ],
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored Phase-0 role-classification structural controls only",
+    "source_id": "amphora_phase0_role_known_answer_controls",
+    "source_url": "local:amphora-molecule-role-ranker/reference/phase0-role-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.molecule-role-ranker-phase0-known-answer.v2",
+  "supersedes": {
+    "reason": "R-N02 coordinated C=N categorical fix (repair_mode interactive-2026-08-03): the 39 v1 records are carried over byte-identical; 5 guanidine-class out_of_domain records (DPG CAS 102-06-7, DOTG CAS 97-39-2, guanidine CAS 113-00-8, dicyandiamide CAS 461-58-5, biguanide CAS 461-71-2) are appended per the follow-ups of the two 2026-08-03 refuting receipts (amine-nh-guanidine-conjugation-gap-v1, role-guanidine-accelerator-domain-probe-v1) so the amidine/guanidine chemotype is regression-guarded going forward. Facts derive from the post-fix production RDKit FFI (bridge.cc count_reactive_amine_hydrogens with the amidine/guanidine-carbon exclusion). The v1 KPI arithmetic (1.0 on 39 records) stands -- v1 records are untouched by the bug; what R-N02 repairs is the generalization inference. The quantitative question whether guanidine N-H is exactly 0 in an AHEW sense stays explicitly OPEN; class assignments here are categorical only.",
+    "repair_item": "R-N02",
+    "repair_mode": "interactive-2026-08-03",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-role-ranker/reference/phase0-role-known-answer.v1.json",
+    "superseded_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f"
+  },
+  "toolkit_version": "2026.03.2"
+}

@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "382e3c79ab2808510ec69da5947ae68a127dc00ce70e2f87260af4cbd910f145",
+  "import_hashes": [],
+  "module_id": "amphora-redteam-audit",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

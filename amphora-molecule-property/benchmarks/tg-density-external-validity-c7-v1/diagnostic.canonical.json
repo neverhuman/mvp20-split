@@ -1,0 +1,177 @@
+{
+  "all_gates_passed": true,
+  "campaign_item_id": "C7",
+  "degradation_refute_threshold": 2.0,
+  "density": {
+    "data_availability_note": "No second rights-cleared polymer-density corpus exists in this module: OpenPoly has no Density column and Polyuniverse Epoxy has no density column (verified against both raw CSV headers). A literal cross-corpus swap (the objective's primary request) is currently BLOCKED_DATA for density; leave-polymer-class-out on RadonPy's own authentic class labels is the hardest available proxy for out-of-distribution chemistry generalization.",
+    "degradation_factor_leave_class_out_vs_own_within_corpus": 1.803992653831988,
+    "leave_polymer_class_out": {
+      "eligible_classes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        15,
+        16
+      ],
+      "min_class_size": 8,
+      "n_pooled_test": 1059,
+      "per_class": {
+        "1": {
+          "mae": 0.12940838521031453,
+          "n_test": 83
+        },
+        "10": {
+          "mae": 0.05840669972018309,
+          "n_test": 50
+        },
+        "11": {
+          "mae": 0.0658859654150001,
+          "n_test": 11
+        },
+        "13": {
+          "mae": 0.043078386697435675,
+          "n_test": 261
+        },
+        "15": {
+          "mae": 0.07816642764174994,
+          "n_test": 40
+        },
+        "16": {
+          "mae": 0.09160047945560605,
+          "n_test": 11
+        },
+        "2": {
+          "mae": 0.08638223546478259,
+          "n_test": 161
+        },
+        "3": {
+          "mae": 0.07891607318819058,
+          "n_test": 162
+        },
+        "4": {
+          "mae": 0.08381837091153398,
+          "n_test": 118
+        },
+        "5": {
+          "mae": 0.22922319760003027,
+          "n_test": 8
+        },
+        "6": {
+          "mae": 0.11946349126354777,
+          "n_test": 9
+        },
+        "7": {
+          "mae": 0.07144920070643425,
+          "n_test": 67
+        },
+        "8": {
+          "mae": 0.12799299139310613,
+          "n_test": 11
+        },
+        "9": {
+          "mae": 0.03710000138755508,
+          "n_test": 67
+        }
+      },
+      "pooled_mae": 0.07359384878887076,
+      "pooled_null_mae_train_median": 0.15362969216383376,
+      "pooled_r2": 0.6843678975618499
+    },
+    "n_polymers": 1077,
+    "official_shipped_headline": {
+      "note": "different featurization (Van Krevelen 24-group) than this script's Morgan-fp; own_features_within below is the apples-to-apples baseline for the degradation factor.",
+      "random_60_20_20_split_null_mae_g_per_cm3": 0.12677565217018127,
+      "random_60_20_20_split_test_mae_g_per_cm3": 0.056644705523222164,
+      "source_receipt": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json"
+    },
+    "own_features_within_corpus_5fold": {
+      "mae": 0.040794982525313994,
+      "n": 1077,
+      "null_mae": 0.1380798145510678,
+      "r2": 0.8443376962521218
+    },
+    "radonpy_csv_sha256": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4",
+    "refuted": false
+  },
+  "gates": {
+    "density_loco_eligible_classes_at_least_5": true,
+    "density_loco_pooled_n_at_least_500": true,
+    "tg_direction_A_data_gathered": true,
+    "tg_direction_B_data_gathered": true
+  },
+  "seed": 0,
+  "study_id": "amphora-molecule-property-c7-tg-density-external-validity-attack-v1",
+  "tg": {
+    "degradation_factor_A_vs_own_within_corpus": 6.664730972378266,
+    "degradation_factor_B_vs_own_within_corpus": 16.59532571140167,
+    "direction_A_train_openpoly_test_polyuniverse": {
+      "mae": 253.58008302058136,
+      "n_test": 5000,
+      "n_train": 443,
+      "null_mae_using_train_median": 227.9417922626,
+      "pearson_r": 0.1290259438763676,
+      "r2": -92.93916993212326,
+      "test_y_median": 117.84243000000001,
+      "test_y_range": [
+        22.772299,
+        237.03786
+      ],
+      "train_y_median": 346.3458937,
+      "train_y_range": [
+        146.0,
+        589.0
+      ]
+    },
+    "direction_B_train_polyuniverse_test_openpoly": {
+      "mae": 231.65066270670428,
+      "n_test": 443,
+      "n_train": 5000,
+      "null_mae_using_train_median": 220.55035016794577,
+      "pearson_r": 0.02455125727878324,
+      "r2": -6.79936550224655,
+      "test_y_median": 346.3458937,
+      "test_y_range": [
+        146.0,
+        589.0
+      ],
+      "train_y_median": 117.84243000000001,
+      "train_y_range": [
+        22.772299,
+        237.03786
+      ]
+    },
+    "n_openpoly": 443,
+    "n_polyuniverse_sample": 5000,
+    "official_shipped_headline": {
+      "openpoly_null_holdout_mae_K": 52.46160125732422,
+      "openpoly_rf_holdout_mae_K": 42.20672417382652,
+      "openpoly_rf_loso_mae_K": 51.237491607666016,
+      "source_receipt": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json"
+    },
+    "openpoly_csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "polyuniverse_csv_sha256": "9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45",
+    "refuted_A": true,
+    "refuted_B": true,
+    "within_openpoly_kfold_own_features": {
+      "mae": 38.048059864911984,
+      "n": 443,
+      "null_mae": 71.82254220959368,
+      "r2": 0.5652406655970126
+    },
+    "within_polyuniverse_kfold_own_features": {
+      "mae": 13.958789766178,
+      "n": 5000,
+      "null_mae": 20.8842436268,
+      "r2": 0.5429693222585177
+    }
+  }
+}

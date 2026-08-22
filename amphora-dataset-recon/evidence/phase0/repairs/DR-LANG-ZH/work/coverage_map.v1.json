@@ -1,0 +1,58 @@
+{
+  "fire_id": "20260810T060001-1892882-de641a9ef68c",
+  "gaps": [
+    {
+      "best_conditional": "DR-LANG-ZH-03",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "cure-kinetics-zh",
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "note": "603-epoxy Kissinger/Kamal DSC study rediscovered and enriched; paywalled, single-system, not RECOMMENDED-grade this fire."
+    },
+    {
+      "best_conditional": "DR-LANG-ZH-01",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "corrosion-database-zh",
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "note": "National Materials Corrosion and Protection Science Data Center's own direct domain independently rediscovered; registration-gated, per-dataset terms unconfirmed."
+    },
+    {
+      "best_conditional": "DR-LANG-ZH-04",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "marine-coating-gbt-standard-mapping",
+      "module_gaps": [
+        "amphora-ip-fto-guard"
+      ],
+      "note": "GB/T 6822-2024 (current, 2025-06-01 effective) is the live marine antifouling/anticorrosive paint-system standard; no ASTM/ISO equivalence found despite an explicit search. GB/T 13351-1992 (DR-LANG-ZH-05) is its abolished 1992 lineage ancestor, retained for provenance only."
+    },
+    {
+      "best_conditional": "DR-LANG-ZH-06",
+      "best_recommended": null,
+      "commissioned_measurement_candidate": null,
+      "gap_id": "zh-general-aggregator-access",
+      "module_gaps": [],
+      "note": "Wanfang (万方数据) is reachable and subscription-gated; CNKI (中国知网, DR-LANG-ZH-02) is REJECTED -- independently re-confirmed network-unreachable from this host both this fire and PROBE-WEB. Directive Section 4's 'CNKI/Wanfang-class' pairing therefore resolves to: Wanfang reachable, CNKI not, from xbabe1."
+    }
+  ],
+  "gaps_not_yet_searched_this_fire": [
+    "GB/T 10125-class salt-spray-test standard (ASTM B117/ISO 9227 comparability)",
+    "GB/T standards annex for amine-hardener/EEW test methods",
+    "corrdata.org.cn per-dataset records (registration-gated, not attempted)",
+    "Wanfang coatings-domain theses surfaced incidentally (D325476, D03173881) -- not individually gap-evaluated",
+    "CAS Institute of Metal Research's own journals (中国腐蚀与防护学报, 腐蚀科学与防护技术) -- not individually searched",
+    "escience.org.cn (National S&T Infrastructure metadata portal) -- surfaced incidentally, not evaluated"
+  ],
+  "no_empty_result_gap_this_fire": true,
+  "no_empty_result_gap_this_fire_note": "No genuine empty-result gap was encountered this fire -- every gap-targeted query returned at least one live, independently-verifiable candidate. The commissioned-measurement conversion mechanism (directive Section 2 / Section 8.C) was therefore not exercised this fire because it was not triggered; this is disclosed rather than fabricated. The unsearched items above are NOT empty results -- they are honestly flagged as not yet attempted.",
+  "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+  "schema": "amphora.dataset-recon.coverage-map.v1",
+  "scope_note": "zh (Chinese) language community only, per DR-LANG-ZH item scope.",
+  "snapshot_date": "2026-08-10"
+}

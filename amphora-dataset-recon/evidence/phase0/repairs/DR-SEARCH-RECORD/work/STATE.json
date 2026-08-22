@@ -1,0 +1,8 @@
+{
+  "campaign_item_id": "DR-SEARCH-RECORD",
+  "claim_verdict": "CLAIM_SURVIVED",
+  "done_receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-SEARCH-RECORD/done/dr-search-record-receipt.v1.dsse.json",
+  "fire_id": "20260811T130001-901567-3c3ce4f3224f",
+  "search_record_lines_total": 14,
+  "status": "done"
+}

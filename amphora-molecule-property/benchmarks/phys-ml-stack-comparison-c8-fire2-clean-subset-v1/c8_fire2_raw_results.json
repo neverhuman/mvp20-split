@@ -1,0 +1,78 @@
+{
+  "attack": "C8 fire 2: clean-only (zero-contamination) dielectric physics-vs-ML-vs-stack pipeline on RadonPy PI1070, escalating fire 1's contaminated-train/clean-test-slice (n=20) probe into a fully clean train+calib+test pipeline (n_clean=113).",
+  "pre_registered_refute_criterion": {
+    "criterion_a": "ML test R2 <= 0 on the clean-only pipeline (no better than predicting the mean)",
+    "criterion_b": "paired bootstrap (n_boot=2000, seed=0) 90%% CI of (physics_MAE - ML_MAE) on the clean test set includes zero",
+    "logic": "EITHER criterion refutes the claim that ML's apparent large advantage over Onsager physics (shipped KPI, fire-1 full-population: physics R2=-1.67 vs ML R2=+0.64) is real predictive skill rather than an artifact of scoring against 89.5%-corrupted labels at large n."
+  },
+  "population": {
+    "total_radonpy_dielectric_rows": 1075,
+    "physically_valid_rows_eps_static_ge_n2": 113,
+    "violation_rows_excluded": 962,
+    "fraction_clean": 0.10511627906976745
+  },
+  "split": "clean-only plain random 60/20/20 (seed=0), n_train=67, n_calib=22, n_test=24 -- RF retrained FROM SCRATCH on clean-train only (fire 1's RF was trained on the full 89.5%-corrupted population and only test-sliced to n=20 clean rows)",
+  "physics_clean_only": {
+    "MAE": 19.887546403521394,
+    "RMSE": 26.46505450764722,
+    "R2": -1.0405349777711903,
+    "pearson_r": -0.29124936954685154,
+    "n": 24
+  },
+  "ml_clean_only": {
+    "MAE": 13.056624833276937,
+    "RMSE": 18.76846567549229,
+    "R2": -0.02625668447651175,
+    "pearson_r": 0.6310904740893654,
+    "n": 24
+  },
+  "stack_clean_only": {
+    "MAE": 14.522128739742584,
+    "RMSE": 18.968126197028056,
+    "R2": -0.04820763516393378,
+    "pearson_r": 0.641967561392906,
+    "n": 24
+  },
+  "stack_weights_clean_only": {
+    "w_rf": 0.8307026502591619,
+    "w_physics": -0.04871579502371679,
+    "intercept": 9.662519815428226
+  },
+  "paired_bootstrap_physics_minus_ml_mae": {
+    "n_boot": 2000,
+    "point_estimate": 6.830921570244458,
+    "ci90_lo": -0.40165565626212735,
+    "ci90_hi": 13.918536931816268,
+    "includes_zero": true
+  },
+  "criterion_a_ml_r2_le_0": true,
+  "criterion_b_ci_includes_zero": true,
+  "verdict": "REFUTED",
+  "comparison_to_fire1": {
+    "fire1_full_population_contaminated_train_and_test": {
+      "physics_MAE": 9.627206210912188,
+      "physics_R2": -1.672170143117905,
+      "ml_MAE": 1.466589416518702,
+      "ml_R2": 0.6427238530481524
+    },
+    "fire1_contaminated_train_clean_test_slice_n20": {
+      "physics_MAE": 28.120446145676784,
+      "physics_R2": -0.9865622319026621,
+      "ml_MAE": 10.240509886364913,
+      "ml_R2": 0.47513726838508663,
+      "n": 20
+    },
+    "fire2_clean_train_and_test_this_fire": {
+      "physics_MAE": 19.887546403521394,
+      "physics_R2": -1.0405349777711903,
+      "ml_MAE": 13.056624833276937,
+      "ml_R2": -0.02625668447651175,
+      "n": 24
+    },
+    "interpretation": "Training the RF from scratch on ONLY the physically-valid rows (n_train=67) rather than the full 89.5%-corrupted population removes the large-n advantage that let ML fit the corrupted majority's low-variance near-electronic-limit values. This isolates whether ML's edge over physics reflects genuine chemical-structure-to-dielectric-constant skill or simply exploiting the corrupted population's homogeneity."
+  },
+  "cited_receipt_sha256": {
+    "fire1_c8_receipt": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7",
+    "mixed_dielectric_ml_kpi": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "planted_defect": "fabricated churn_confirmed=True for DIN EN ISO 12944",
+  "violation_count": 1,
+  "violations": [
+    {
+      "standard_id": "DIN EN ISO 12944",
+      "reason": "Row cites 'DIN EN ISO 12944' with NO edition/year while carrying integrity_gap=false, yet live evidence (fetched this fire) proves this exact standard underwent edition churn since the row's own snapshot_date -- the same defect class the DR-STD-MAP ISO-9227 edition-currency audits found 3/3 times.",
+      "live_evidence": {
+        "checked_url": "FABRICATED-FOR-POSITIVE-CONTROL-ONLY",
+        "quote": "FABRICATED: 'Current Status: WITHDRAWN. Edition Date: 2018-04. Successor Standard: DIN EN ISO 12944:2025-06.' -- planted defect, not a real citation; mirrors the true DIN EN ISO 9227 discovery structurally.",
+        "current_edition_confirmed_live": "FABRICATED: DIN EN ISO 12944:2025-06",
+        "churn_confirmed": true
+      },
+      "row_comparability_rating": "identical_to_iso_by_direct_adoption_astm_unconfirmed",
+      "row_astm_iso_equiv": "DIN EN ISO 12944 IS the direct German/European-language adoption of ISO 12944 itself. No specific ASTM single-standard equivalent confirmed this fire. (ISO 12944's own scope: protective paint/coating systems.)"
+    }
+  ],
+  "two_replay_byte_identical": true
+}

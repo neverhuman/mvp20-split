@@ -1,0 +1,135 @@
+{
+  "aggregate": {
+    "monotone_null_reproduces_no_series_optimum": true,
+    "monotone_null_spearman_rho_mean": 0.2,
+    "monotone_null_spearman_rho_values": [
+      0.0,
+      0.4
+    ],
+    "n_strict_in_class_series": 2
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark": "barrier-null-char-v1",
+  "determinism": {
+    "float_round_decimals": 6,
+    "no_random": true,
+    "no_timestamp": true,
+    "stdlib_only": true
+  },
+  "hostile_null_definition": "solids-only == PVC-only == monotone-increasing in filler loading within a single-resin ladder; measured against observed Rc ranking by Spearman rho with exact permutation p.",
+  "input_dataset": {
+    "path": "amphora-barrier-corrosion-score/reference/mvp20/data/corrosion_series.json",
+    "schema": "mvp20.corrosion_series.v4",
+    "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+  },
+  "module": "amphora-barrier-corrosion-score",
+  "named_baseline": {
+    "citation": "Bacon, Smith, Rugg, Ind. Eng. Chem. 1948, 40(1), 161-167",
+    "doi": "10.1021/ie50457a041",
+    "name": "Bacon-Smith-Rugg 1948 electrolytic-resistance protective-merit tiers",
+    "tier_boundaries_ohm_cm2": {
+      "good_ge": 100000000.0,
+      "poor_lt": 1000000.0
+    }
+  },
+  "per_series": [
+    {
+      "bacon_smith_rugg_1948_tier": [
+        "INTERMEDIATE",
+        "GOOD",
+        "POOR",
+        "GOOD"
+      ],
+      "cite": "Asperti et al., Materials 17(12):3028 (2024), DOI 10.3390/ma17123028",
+      "doi": "10.3390/ma17123028",
+      "duration": "1000 h",
+      "id": "asperti2024",
+      "in_class": "epoxy-amine",
+      "is_monotone_in_loading": false,
+      "levels": [
+        0.0,
+        1.0,
+        3.0,
+        5.0
+      ],
+      "metric": "coating resistance Rc (ohm.cm2) @1000h, 3.5% NaCl",
+      "monotone_null_exact_perm_p_two_sided": 1.0,
+      "monotone_null_matches_observed_optimum": false,
+      "monotone_null_predicted_best_level": 5.0,
+      "monotone_null_spearman_rho": 0.0,
+      "n_good": 2,
+      "n_intermediate": 1,
+      "n_permutations_enumerated": 24,
+      "n_poor": 1,
+      "observed_optimum_level": 1.0,
+      "ranking_headroom_to_perfect": 1.0,
+      "rc_ohm_cm2": [
+        2000000.0,
+        400000000.0,
+        700000.0,
+        100000000.0
+      ],
+      "test_method": "EIS in 3.5% NaCl",
+      "use_limit": "within-study direction or bibliographic anchor only; no cross-study pooling",
+      "variable": "nanoclay Cloisite 30B wt%"
+    },
+    {
+      "bacon_smith_rugg_1948_tier": [
+        "GOOD",
+        "GOOD",
+        "GOOD",
+        "GOOD",
+        "GOOD"
+      ],
+      "cite": "Zhu et al., Materials 15(3):1194 (2022), DOI 10.3390/ma15031194",
+      "doi": "visible from PMC article metadata",
+      "duration": "60 h",
+      "id": "zhu2022",
+      "in_class": "epoxy-amine",
+      "is_monotone_in_loading": false,
+      "levels": [
+        0.0,
+        0.2,
+        0.5,
+        0.7,
+        1.0
+      ],
+      "metric": "Rc (ohm.cm2) @60h, CO2-sat 3.5% NaCl",
+      "monotone_null_exact_perm_p_two_sided": 0.516667,
+      "monotone_null_matches_observed_optimum": false,
+      "monotone_null_predicted_best_level": 1.0,
+      "monotone_null_spearman_rho": 0.4,
+      "n_good": 5,
+      "n_intermediate": 0,
+      "n_permutations_enumerated": 120,
+      "n_poor": 0,
+      "observed_optimum_level": 0.7,
+      "ranking_headroom_to_perfect": 0.6,
+      "rc_ohm_cm2": [
+        1212000000.0,
+        7477000000.0,
+        15590000000.0,
+        18720000000.0,
+        4333000000.0
+      ],
+      "test_method": "EIS in CO2-saturated 3.5% NaCl",
+      "use_limit": "within-study direction or bibliographic anchor only; no cross-study pooling",
+      "variable": "graphene wt% in fixed 35% mica/epoxy"
+    }
+  ],
+  "promotes_authority": false,
+  "rights": {
+    "rights_class": "OPEN_ACCESS_CC_BY_4_0",
+    "sources": [
+      "asperti2024 (MDPI Materials, CC BY 4.0)",
+      "zhu2022 (MDPI Materials, CC BY 4.0)"
+    ],
+    "use_limit_respected": "within-study direction only; NO cross-study pooling"
+  },
+  "schema": "amphora.barrier-corrosion-score.null-characterization.v1",
+  "verdict": {
+    "does_not_establish": "A validated POSITIVE barrier ranking model. No zero-parameter a-priori model reproduces the intermediate optimum (driven by dispersion/percolation, a formulation-processing variable). Closing that needs >=3 pooled, protocol-controlled formulation->Rc series with dispersion/PVC metadata -- the standing DATA wall.",
+    "finding": "On both strict in-class epoxy-amine EIS series the observed within-study barrier ranking is NON-MONOTONE in filler loading (optimum at an intermediate level), so the solids-only and PVC-only hostile nulls (both monotone-in-loading) FAIL to reproduce the ordering (Spearman [0.0, 0.4] ; neither significant). This establishes non-trivial ranking headroom for a barrier-aware score -- a necessary precondition for the module's falsifiable hypothesis -- and quantifies it.",
+    "scope_honesty": "Organic epoxy-amine coating-barrier EIS, correct module scope (unlike the substrate-corrosion corr-rate-qspr-v1 diagnostic)."
+  }
+}

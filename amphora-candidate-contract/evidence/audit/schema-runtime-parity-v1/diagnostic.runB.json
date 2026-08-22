@@ -1,0 +1,389 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "closes": [
+    "First independent execution of the canonical JSON Schema over the candidate-contract corpus (prior KPI exercised the Rust runtime only).",
+    "Quantifies exactly where schema/runtime parity holds (structural) and where it does not (lexical/resource), refuting the unqualified parity hypothesis and proving the runtime front door is irreplaceable by the schema."
+  ],
+  "confusion_summary": {
+    "parse_parity_both_reject": 2,
+    "structural_agree": 16,
+    "structural_disagree": 0,
+    "structural_disagreements": [],
+    "superset_runtime_reject_schema_accept": 6
+  },
+  "corpus": {
+    "manifest_sha256": "d4626cf8dbeb110de2179f6884e85c7b8b1cc8d4b856beee37cbced157716259",
+    "n_cases": 24,
+    "n_lexical_resource_superset": 6,
+    "n_parse_parity": 2,
+    "n_structural": 16
+  },
+  "divergence_notes": [
+    {
+      "case": "S13_chem_v2_field_with_optin",
+      "note": "Both oracles REJECT, but for different reasons: schema forbids chemistry-v2 keys categorically ('false' subschema), while the runtime returns ChemistryNormalizationUnavailable (a lane that would open once the pinned RDKit normalization boundary is present). Reason-divergence flagged for Phase-1; verdict-parity holds today."
+    }
+  ],
+  "does_not_close": [
+    "Schema/runtime parity over an exhaustive or fuzz-generated mutation space (Phase-1: libFuzzer/AFL differential harness).",
+    "Reason-level parity on the chemistry-v2 lane (blocked on pinned RDKit normalization boundary).",
+    "No promotion, no manifest edit, no scientific_readiness flip, no wet-lab/qualification/release authority."
+  ],
+  "gates": {
+    "G1_structural_layer_parity": {
+      "n": 16,
+      "note": "For every structural-layer case schema_verdict == runtime_verdict.",
+      "passed": true
+    },
+    "G2_positives_both_accept": {
+      "n": 3,
+      "note": "3/3 real coating candidates (molecule/formulation/evidence_package) accepted by both oracles.",
+      "passed": true
+    },
+    "G3_runtime_reject_superset_on_lexical_resource_layer": {
+      "n": 6,
+      "note": "Runtime REJECTS non-finite/duplicate-key/oversize/over-deep/over-wide inputs that the schema-over-permissive-parser ACCEPTS.",
+      "passed": true
+    },
+    "G4_parse_layer_parity": {
+      "n": 2,
+      "note": "Non-UTF-8 and trailing-comma inputs reject at the parse layer under both oracles (no schema value produced).",
+      "passed": true
+    },
+    "G5_runtime_matches_independent_expectation": {
+      "n": 24,
+      "note": "Actual Rust runtime verdict equals the corpus's independently-declared expectation for all cases.",
+      "passed": true
+    }
+  },
+  "headline": "Structural-layer schema/runtime parity CORROBORATED (16/16); lexical/resource-layer parity REFUTED - runtime is a strict reject-superset over 6 input classes the schema-over-permissive-parser accepts.",
+  "hypothesis": {
+    "interpretation": "On the STRUCTURAL layer (candidate object / candidate_id / candidate_type / payload binding / chemistry-v2 gate) the declarative JSON Schema and the Rust runtime are byte-for-byte equivalent deciders over the corpus. On the LEXICAL/RESOURCE layer the equivalence FAILS in a bounded, security-relevant direction: the runtime is a strict REJECT-superset, refusing 6 classes of input (IEEE-754 non-finite numbers, duplicate keys, >8 MiB size, >64 nesting depth, >100000 collection width) that a conformant JSON-Schema validator over a permissive RFC-8259-superset parser ACCEPTS. JSON Schema validates already-parsed values and cannot express these lexical/resource constraints; the runtime front door is therefore NECESSARY and not replaceable by schema validation alone.",
+    "lexical_resource_layer": "REFUTED",
+    "statement": "runtime and JSON Schema accept and reject the same finite typed corpus",
+    "structural_layer": "CORROBORATED",
+    "verdict": "PARTIALLY_REFUTED"
+  },
+  "module": "amphora-candidate-contract",
+  "non_circularity": "Two independently-authored deciders: Oracle A is the on-disk declarative JSON Schema enforced by an off-the-shelf validator (jsonschema 4.26.0) over CPython json; Oracle B is the compiled Rust amphora-core contract runtime. Neither oracle was fitted to the other; the corpus expectations were declared in a third artifact (build_corpus.py).",
+  "oracle_A_declarative": {
+    "artifact": "amphora-candidate-contract/schemas/candidate-envelope.schema.json",
+    "deployment_model": "parse-then-validate (the realistic schema-only front door)",
+    "dialect": "https://json-schema.org/draft/2020-12/schema",
+    "parser": "CPython stdlib json (permissive: accepts NaN/Infinity, last-key-wins on duplicate keys)",
+    "schema_sha256": "8404575f5a913ee6208b6e384c89a9bf82f1f40914a96cd6780d3d6263ae03d7",
+    "validator": "jsonschema==4.26.0"
+  },
+  "oracle_B_runtime": {
+    "amphora_core_contract_sha256": "27075d51e3c8a016aad478c61d6ab638d50bb53b064680dca811cdbc84017a81",
+    "artifact": "amphora-core::CandidateEnvelope::from_bytes",
+    "caps": {
+      "max_collection_entries": 100000,
+      "max_json_bytes": 8388608,
+      "max_json_depth": 64
+    }
+  },
+  "per_case": [
+    {
+      "group": "N_SUPERSET",
+      "n_bytes": 86,
+      "name": "N01_nonfinite_nan",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidJson",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "231c127185cd2d31f95db4bde874cefd5c9bd543f2bcc140df621a7e7c69cfa3"
+    },
+    {
+      "group": "N_SUPERSET",
+      "n_bytes": 91,
+      "name": "N02_nonfinite_infinity",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidJson",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "1ab6648e1dbd8420ad8eb48ff81979b0da6c11425904f4ea54f22b28799aaa45"
+    },
+    {
+      "group": "N_SUPERSET",
+      "n_bytes": 93,
+      "name": "N03_duplicate_keys",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidJson",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "087d57d7af846962d2d92df20d06a036203b8b696ca3d4a3e9851cf538911786"
+    },
+    {
+      "group": "N_SUPERSET",
+      "n_bytes": 8388755,
+      "name": "N04_oversize_gt_8mib",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:RequestTooLarge",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "8197eafbb4c925240c6bfc42f007a11cefc9f52c3b0c3c3711707bb3d52ac267"
+    },
+    {
+      "group": "N_SUPERSET",
+      "n_bytes": 699,
+      "name": "N05_overdeep_nesting_100",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidJson",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "2d435ddf6834e6f5802e3e4421125dd514b35846c701acca8b32cf2f39b8293c"
+    },
+    {
+      "group": "N_SUPERSET",
+      "n_bytes": 588980,
+      "name": "N06_overwide_collection_100001",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidJson",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "0812838696d75fb801a05a0377e6af5ebeec0479967a2a17ae5e6ead451e06ad"
+    },
+    {
+      "group": "N_PARSE",
+      "n_bytes": 75,
+      "name": "N07_trailing_comma",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidJson",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "json_decode:Expecting property name enclosed in double quotes",
+      "schema_stage": "PARSE",
+      "schema_verdict": "N/A_PARSE",
+      "sha256": "bdb25e6d419c78421a8527144129da65a985ab54070aa19bf53808f88f47fc9d"
+    },
+    {
+      "group": "N_PARSE",
+      "n_bytes": 75,
+      "name": "N08_non_utf8",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidUtf8",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "non_utf8",
+      "schema_stage": "DECODE",
+      "schema_verdict": "N/A_PARSE",
+      "sha256": "248687e0d8ca6a5d7e9dbe2071d07ae72fc09bc236df6fb2201494a9f2bbd9c5"
+    },
+    {
+      "group": "S",
+      "n_bytes": 391,
+      "name": "P1_positive_molecule",
+      "runtime_expected": "ACCEPT",
+      "runtime_variant": "Ok",
+      "runtime_verdict": "ACCEPT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f"
+    },
+    {
+      "group": "S",
+      "n_bytes": 1543,
+      "name": "P2_positive_formulation",
+      "runtime_expected": "ACCEPT",
+      "runtime_variant": "Ok",
+      "runtime_verdict": "ACCEPT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "de617b7311530cb2d6701860daba9db9b37a0ea0d0733ed4e969b8db617f614f"
+    },
+    {
+      "group": "S",
+      "n_bytes": 1778,
+      "name": "P3_positive_evidence_package",
+      "runtime_expected": "ACCEPT",
+      "runtime_variant": "Ok",
+      "runtime_verdict": "ACCEPT",
+      "schema_reason": "schema_valid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "ACCEPT",
+      "sha256": "da26a9f8c7c59cbc4eb47f099db22808bb83dd804161005d2aefc3323f61f5fb"
+    },
+    {
+      "group": "S",
+      "n_bytes": 7,
+      "name": "S01_top_level_array",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:CandidateNotObject",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "a615eeaee21de5179de080de8c3052c8da901138406ba71c38c032845f7d54f4"
+    },
+    {
+      "group": "S",
+      "n_bytes": 7,
+      "name": "S02_top_level_string",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:CandidateNotObject",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "5aa762ae383fbb727af3c7a36d4940a5b8c40a989452d2304fc958ff3f354e7a"
+    },
+    {
+      "group": "S",
+      "n_bytes": 55,
+      "name": "S03_candidate_id_missing",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidCandidateId",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "3b5534d0ecc7e2a21adfe03e007a0df5577af5af1a2a422d783ddd5b5d13f66f"
+    },
+    {
+      "group": "S",
+      "n_bytes": 73,
+      "name": "S04_candidate_id_empty",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidCandidateId",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "0b868efcb333dad9909e9a85e5715c840aa0b0eae53a209e3bb0ba2e24b7e959"
+    },
+    {
+      "group": "S",
+      "n_bytes": 72,
+      "name": "S05_candidate_id_integer",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidCandidateId",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "7bb7195dbc2ed56d52d5b3e427201274d35e8ab8624f61b5a5f09082a7422e88"
+    },
+    {
+      "group": "S",
+      "n_bytes": 46,
+      "name": "S06_candidate_type_missing",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidCandidateType",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "d0a81d2e5e99d5b5778a4d864a86d2508ee02525e32ad80d2938808badadcf8e"
+    },
+    {
+      "group": "S",
+      "n_bytes": 72,
+      "name": "S07_candidate_type_unknown",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:InvalidCandidateType",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "3b72cb453e55b61ca808b099707e0386e67b6cd4dbd86b5701daa3a47ec5802f"
+    },
+    {
+      "group": "S",
+      "n_bytes": 48,
+      "name": "S08_molecule_payload_missing",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:PayloadMismatch",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "6b6c0ee2cb453f8d2f9cd7012ef6c424429f792df3821624b910e5a1c55822fc"
+    },
+    {
+      "group": "S",
+      "n_bytes": 51,
+      "name": "S09_formulation_payload_missing",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:PayloadMismatch",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "e9ad63f9da747490e50af7efd5b409d35d7e449ae67371265404754f228ec5dd"
+    },
+    {
+      "group": "S",
+      "n_bytes": 56,
+      "name": "S10_evidence_payload_missing",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:PayloadMismatch",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "177f7f3d96164bb9ad042856da0b0d389470d28a24ac6620e8508fd76a321ef8"
+    },
+    {
+      "group": "S",
+      "n_bytes": 63,
+      "name": "S11_molecule_payload_not_object",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:PayloadMismatch",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "5eed89e7fe02e58dd52dab3d9281eb2eb96188ade477607b158b4d38b5bd6901"
+    },
+    {
+      "group": "S",
+      "n_bytes": 102,
+      "name": "S12_chem_v2_field_no_optin",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:PayloadMismatch",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "524cd58f7919492dad2577bf8cdea83d8884cfb6e6e59450864d28327dd11216"
+    },
+    {
+      "group": "S",
+      "n_bytes": 151,
+      "name": "S13_chem_v2_field_with_optin",
+      "runtime_expected": "REJECT",
+      "runtime_variant": "Err:ChemistryNormalizationUnavailable",
+      "runtime_verdict": "REJECT",
+      "schema_reason": "schema_invalid",
+      "schema_stage": "VALIDATE",
+      "schema_verdict": "REJECT",
+      "sha256": "1236f42683ec93d33e734d4e02dc3632975bfe880f490a76de6055cdf68378a7"
+    }
+  ],
+  "purpose": "Independently test the module falsifiable hypothesis by running the canonical JSON Schema (draft 2020-12) and the Rust runtime over one byte-identical typed corpus and cross-tabulating their accept/reject verdicts.",
+  "run_type": "DIFFERENTIAL_SCHEMA_VS_RUNTIME",
+  "schema": "amphora.candidate-contract.schema-runtime-parity.v1",
+  "study_id": "schema-runtime-parity-v1",
+  "theory_reference": [
+    "IETF RFC 8259 (2017) The JavaScript Object Notation (JSON) Data Interchange Format",
+    "JSON Schema draft 2020-12 (2020-12-08) Core + Validation vocabularies",
+    "IETF RFC 8785 (2020) JSON Canonicalization Scheme (JCS)",
+    "IEEE 754-2019 non-finite (NaN/Infinity) semantics",
+    "CWE-400 Uncontrolled Resource Consumption; CWE-121 Stack-based Buffer Overflow (depth/width/size caps)",
+    "NIST FIPS 180-4 (2015) SHA-256"
+  ]
+}

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nomad-crystal360"
+version = "1.0.0"
+description = "Physically interpretable periodic-crystal features for NOMAD 2018"
+requires-python = ">=3.12"
+dependencies = [
+  "ase==3.28.0",
+  "joblib==1.5.3",
+  "numpy==2.4.6",
+  "pandas==3.0.3",
+  "pyarrow==21.0.0",
+  "pymatgen==2026.5.4",
+  "pymatgen-core==2026.7.16",
+  "scikit-learn==1.9.0",
+  "scipy==1.17.1",
+  "spglib==2.7.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.0"]
+
+[tool.setuptools.packages.find]
+include = ["nomad_crystal360*", "nomad_feature_hunt*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/crystal360"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

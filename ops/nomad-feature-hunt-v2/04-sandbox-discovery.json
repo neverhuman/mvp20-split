@@ -1,0 +1,12 @@
+{
+  "runbook_version": "2.0",
+  "name": "sandbox-discovery",
+  "phases": ["execution", "discovery"],
+  "smoke_structures": 16,
+  "invariance_real_structures": 64,
+  "full_rows": {"train": 2400, "test": 600},
+  "column_quarantine": true,
+  "sandbox": {"network": "none", "read_only": true, "plugin_limit_bytes": 20480},
+  "discovery": {"folds": 2, "trees": 150, "seeds": [1701, 2909, 4219], "gpu_processes": 2},
+  "agent_feedback": "categorical_only"
+}

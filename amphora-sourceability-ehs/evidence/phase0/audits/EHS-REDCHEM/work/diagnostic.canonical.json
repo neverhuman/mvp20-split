@@ -1,0 +1,586 @@
+{
+  "all_content_variants_ok_and_byte_identical_to_baseline": true,
+  "all_remain_explicit_evidence_gap": true,
+  "module_id": "amphora-sourceability-ehs",
+  "n_byte_identical_to_baseline": 14,
+  "n_cases": 14,
+  "n_evaluate_ok": 14,
+  "n_remains_explicit_evidence_gap": 14,
+  "per_case": [
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "baseline_known_good",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "malformed_chemistry_nonexistent_ingredient_id",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "mixture_dot_separated_smiles_fragment",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "polymer_repeat_unit_notation",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "unit_ambiguity_conflicting_mass_units",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "zero_mass_ingredient",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "negative_mass_ingredient",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "out_of_domain_non_coating_formulation",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "group_source_time_leakage_spoofed_split_group",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "mutated_source_hash_reference",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "computed_value_mislabeled_as_measured",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "spoofed_identity_colliding_candidate_id",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "stripped_unknown_claim_locks",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    },
+    {
+      "byte_identical_to_baseline_result": true,
+      "case_id": "authority_escalation_batch_release",
+      "error": null,
+      "evaluate_ok": true,
+      "remains_explicit_evidence_gap": true,
+      "result": {
+        "evidence_scope": "sourceability_ehs_prescreen",
+        "explanations": [
+          "Public sourceability material is quarantined prescreen evidence and cannot close procurement or regulatory claims."
+        ],
+        "gates": {
+          "current_document_present": false,
+          "exact_grade_source_present": false,
+          "procurement_ready": false,
+          "signed_declaration_present": false,
+          "source_hashes_verified": true
+        },
+        "metrics": {
+          "artifact_hashes": {
+            "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+          },
+          "public_corpus_rights": "QUARANTINED",
+          "public_source_record_count": 21,
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED",
+          "sourceability_status": "UNRESOLVED",
+          "supply_probability": null
+        },
+        "missing_inputs": [
+          "candidate-, formula-, issuer-, grade-, and lot-bound supplier evidence"
+        ],
+        "objective_values": {},
+        "score_0_1": 0.0,
+        "source_refs": [
+          "amphora-sourceability-ehs/reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json#sha256=b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0"
+        ],
+        "status": "FAILED_GATES",
+        "uncertainty": {}
+      }
+    }
+  ],
+  "schema": "amphora.sourceability-ehs.audit.ehs-redchem.diagnostic.v1"
+}

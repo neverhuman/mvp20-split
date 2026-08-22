@@ -1,0 +1,13 @@
+{
+  "label": "fire1_signed_deliverable",
+  "refutation_criterion_fired": true,
+  "row_count": 41,
+  "violation_count": 1,
+  "violations": [
+    {
+      "detail": "GOST Р 56752-2015: comparability_rating/astm_iso_equiv/methodological_deltas text states weak/unreachable/pattern-inference-only evidence (same evidentiary class as rows this campaign DID flag integrity_gap=true), but this row is signed with integrity_gap=false -- inconsistent application of the table's own gap-declaration convention",
+      "limb": 5,
+      "rule": "gap_flag_consistency_with_own_stated_evidence"
+    }
+  ]
+}

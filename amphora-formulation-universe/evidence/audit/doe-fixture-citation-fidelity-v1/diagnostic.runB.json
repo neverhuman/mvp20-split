@@ -1,0 +1,50 @@
+{
+  "command": "cargo test --workspace --locked -p amphora-formulation-capabilities --test formulation_universe_doe_citation_fidelity_v1 -- --nocapture",
+  "fire_id": "20260817T050001-3280050-bf83a9be45cd",
+  "fixture_examined": {
+    "path": "amphora-formulation-universe/reference/phase0-formulation-universe-known-answer.v1.json",
+    "sha256": "cb3cdb8bd40ebfeadd929ab42fed7df4596375aa1d00b24242755479676029b3"
+  },
+  "kpi_json_sha256_at_test_time": "5f23bf9b9f73d513607509ab953ee8f3c852ea692e7dcd95842a6bc2e30f5df0",
+  "lib_rs_under_test_sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
+  "mission_md_sha256_at_test_time": "850e989ad1a1cc9b2d61bc664028cb67a07abcb77e60442b9e9b4c1d7811d779",
+  "module": "amphora-formulation-universe",
+  "parsed": {
+    "doe_citation_fidelity_mismatches": [
+      {
+        "claimed_k": 5,
+        "claimed_p": 1,
+        "design_type": "2^(k-p)_fractional_factorial",
+        "expected_cartesian_total_in_fixture": 32,
+        "finding": "fixture/citation claims a 2^(k-p) fractional-factorial design but expected_cartesian_total equals the FULL 2^k space, not the fraction; the live runtime returns that same full total, confirming validate_formulation_universe has no generator/defining-relation/aliasing logic and cannot represent or verify a genuine fractional design",
+        "full_unfractionated_total_2_pow_k": 32,
+        "genuine_fraction_total_2_pow_k_minus_p": 16,
+        "nominal_source": "Montgomery 2017 8th ed. \u00a78.2 (2^(5-1) half-fraction)",
+        "runtime_returned_cartesian_total": 32,
+        "universe_id": "2^(5-1)-half-fraction-screening"
+      }
+    ],
+    "failed": 0,
+    "fractional_entries_examined": 1,
+    "ignored": 0,
+    "individual_tests": [
+      [
+        "doe_fixture_citation_fidelity_audit",
+        "ok"
+      ],
+      [
+        "doe_fixture_design_type_field_is_never_consumed_by_runtime",
+        "ok"
+      ],
+      [
+        "doe_fixture_positive_control_parser_reads_well_formed_labels",
+        "ok"
+      ]
+    ],
+    "passed": 3,
+    "test_result_status": "ok"
+  },
+  "schema": "amphora.formulation-universe.doe-citation-fidelity-diagnostic.v1",
+  "study_id": "doe-fixture-citation-fidelity-v1",
+  "test_file_sha256": "147db9a4955239b72a2deb1309e7a1078d48ef8f6102ebcfa43ce60408014c0e"
+}

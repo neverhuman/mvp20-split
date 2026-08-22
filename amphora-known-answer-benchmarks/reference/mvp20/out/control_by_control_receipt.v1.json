@@ -1,0 +1,126 @@
+{
+  "schema": "amphora.known-answer-control-receipt.v1",
+  "receipt_id": "known-answer-reconciliation-20260717",
+  "generated_on": "2026-07-17",
+  "control_count": 14,
+  "verified_pass_count": 13,
+  "verified_fail_count": 0,
+  "unverified_count": 1,
+  "aggregate_status": "INCOMPLETE",
+  "claim_limit": "The six arithmetic checks are a 6/6 subset. This receipt is not a 14/14 claim and does not validate candidate performance.",
+  "controls": [
+    {
+      "control_id": "ARITH-A221-X70P1-VOLUME-SOLIDS",
+      "expected": 42.5,
+      "actual": 43.7,
+      "tolerance": {"kind": "ABSOLUTE", "value": 2.0, "unit": "percentage_point"},
+      "source_artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "ARITH-A221-X70P1-DENSITY",
+      "expected": 1.37,
+      "actual": 1.369,
+      "tolerance": {"kind": "ABSOLUTE", "value": 0.06, "unit": "g_per_ml"},
+      "source_artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "ARITH-A702B75P1-VOLUME-SOLIDS",
+      "expected": 62.0,
+      "actual": 60.7,
+      "tolerance": {"kind": "ABSOLUTE", "value": 2.0, "unit": "percentage_point"},
+      "source_artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "ARITH-A702B75P1-DENSITY",
+      "expected": 1.41,
+      "actual": 1.448,
+      "tolerance": {"kind": "ABSOLUTE", "value": 0.06, "unit": "g_per_ml"},
+      "source_artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "ARITH-MIL-F160-COMPONENT-A-DENSITY",
+      "expected": [7.9, 8.3],
+      "actual": 8.22,
+      "tolerance": {"kind": "RANGE_WITH_ABSOLUTE_MARGIN", "value": 0.3, "unit": "lb_per_gal"},
+      "source_artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "ARITH-MIL-F160-COMPONENT-B-DENSITY",
+      "expected": [10.2, 10.6],
+      "actual": 10.24,
+      "tolerance": {"kind": "RANGE_WITH_ABSOLUTE_MARGIN", "value": 0.3, "unit": "lb_per_gal"},
+      "source_artifact_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "F160-BLACK",
+      "expected": "PASS",
+      "actual": "HOLD_SOURCE_CONFLICT_NOT_KNOWN_ANSWER",
+      "tolerance": {"kind": "EXACT_STATUS", "value": "PASS"},
+      "source_artifact_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "status": "UNVERIFIED",
+      "unverified_reason": "Authoritative /38B or NAVSEA/DLA-confirmed historical artifact is absent."
+    },
+    {
+      "control_id": "F161-YELLOW",
+      "expected": "PASS",
+      "actual": "PASS",
+      "tolerance": {"kind": "EXACT_STATUS", "value": "PASS"},
+      "source_artifact_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "EVONIK-SPF-A702B75P1",
+      "expected": "PASS",
+      "actual": "PASS",
+      "tolerance": {"kind": "EXACT_STATUS", "value": "PASS"},
+      "source_artifact_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "NCP-TYPE-IV-ANCHOR",
+      "expected": "PASS",
+      "actual": "PASS",
+      "tolerance": {"kind": "EXACT_STATUS", "value": "PASS"},
+      "source_artifact_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "INTL-F150-ANCHOR",
+      "expected": "PASS",
+      "actual": "PASS",
+      "tolerance": {"kind": "EXACT_STATUS", "value": "PASS"},
+      "source_artifact_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "NEG-CONTROL-1",
+      "expected": "PASS_EXPECTED_REJECTION",
+      "actual": "PASS_EXPECTED_REJECTION",
+      "tolerance": {"kind": "EXACT_STATUS", "value": "PASS_EXPECTED_REJECTION"},
+      "source_artifact_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "NEG-CONTROL-2",
+      "expected": "PASS_EXPECTED_REJECTION",
+      "actual": "PASS_EXPECTED_REJECTION",
+      "tolerance": {"kind": "EXACT_STATUS", "value": "PASS_EXPECTED_REJECTION"},
+      "source_artifact_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "control_id": "NEG-CONTROL-3",
+      "expected": "PASS_EXPECTED_REJECTION",
+      "actual": "PASS_EXPECTED_REJECTION",
+      "tolerance": {"kind": "EXACT_STATUS", "value": "PASS_EXPECTED_REJECTION"},
+      "source_artifact_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "status": "VERIFIED_PASS"
+    }
+  ]
+}

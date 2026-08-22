@@ -1,0 +1,1651 @@
+{
+  "acceptance_bar": {
+    "authority_lock_preservation_rate_floor": 1.0,
+    "candidate_gate_pass_injection_ignore_rate_floor": 1.0,
+    "envelope_bound_inversion_fail_closed_rate_floor": 1.0,
+    "envelope_gate_correctness_rate_floor": 1.0,
+    "envelope_policy_substitution_fail_closed_rate_floor": 1.0,
+    "inclusive_boundary_correctness_rate_floor": 1.0,
+    "trusted_feature_substitution_fail_closed_rate_floor": 1.0
+  },
+  "authority": {
+    "commercial_product_authority": false,
+    "constraint_only": true,
+    "fixture_validator_arithmetic_only": true,
+    "optimizer_authority": false,
+    "scientific_readiness": "NOT_APPLICABLE"
+  },
+  "envelopes": [
+    {
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "hardener_family": "aliphatic-polyamine",
+      "nominal_part_a_g": 180.0,
+      "nominal_part_b_g": 20.0,
+      "nominal_ratio_by_mass": "180.0:20.0",
+      "nominal_source": "Wicks/Jones/Pappas 2007 \u00a725.4 aliphatic-amine primer nominal 9:1 by mass; Dow DER 331 + DEH 24 TDS",
+      "nominal_total_g": 200.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 171.0,
+            "unit": "g",
+            "upper_inclusive": 189.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 19.0,
+            "unit": "g",
+            "upper_inclusive": 21.0
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 190.0,
+            "unit": "g",
+            "upper_inclusive": 210.0
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-teta-primer-9to1-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-teta-primer-9to1-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 180.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 20.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 200.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-teta-primer-9to1-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 171.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 20.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 191.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-teta-primer-9to1-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 189.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 20.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 209.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-teta-primer-9to1-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 170.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 20.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 190.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-teta-primer-9to1-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 378.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 2.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 380.0
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Wicks/Jones/Pappas 2007 \u00a724.3 typical QC band \u00b15% by mass per part; total via additive propagation"
+    },
+    {
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "hardener_family": "aliphatic-polyamine",
+      "nominal_part_a_g": 170.0,
+      "nominal_part_b_g": 10.0,
+      "nominal_ratio_by_mass": "170.0:10.0",
+      "nominal_source": "Wicks/Jones/Pappas 2007 \u00a725.4 industrial primer example; Dow DER 331 + DEH 20 TDS",
+      "nominal_total_g": 180.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 161.5,
+            "unit": "g",
+            "upper_inclusive": 178.5
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 9.5,
+            "unit": "g",
+            "upper_inclusive": 10.5
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 171.0,
+            "unit": "g",
+            "upper_inclusive": 189.0
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-deta-industrial-primer-17to1-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-deta-industrial-primer-17to1-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 170.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 10.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 180.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-deta-industrial-primer-17to1-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 161.5
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 10.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 171.5
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-deta-industrial-primer-17to1-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 178.5
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 10.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 188.5
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-deta-industrial-primer-17to1-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 161.49
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 10.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 171.49
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-deta-industrial-primer-17to1-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 357.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 1.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 358.0
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Wicks/Jones/Pappas 2007 \u00a724.3 typical QC \u00b15% by mass per part"
+    },
+    {
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "hardener_family": "aliphatic-polyamine",
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 15.0,
+      "nominal_ratio_by_mass": "100.0:15.0",
+      "nominal_source": "Ellis 1993 \u00a76.3 DGEBA+TEPA adhesive; Huntsman Aradur 43 TDS 100:15",
+      "nominal_total_g": 115.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 95.0,
+            "unit": "g",
+            "upper_inclusive": 105.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 14.25,
+            "unit": "g",
+            "upper_inclusive": 15.75
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 109.25,
+            "unit": "g",
+            "upper_inclusive": 120.75
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-tepa-adhesive-neat-100to15-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-tepa-adhesive-neat-100to15-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 100.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 15.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 115.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-tepa-adhesive-neat-100to15-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 95.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 15.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 110.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-tepa-adhesive-neat-100to15-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 105.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 15.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 120.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-tepa-adhesive-neat-100to15-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 94.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 15.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 109.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-tepa-adhesive-neat-100to15-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 210.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 1.5
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 211.5
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Ellis 1993 \u00a76.3 recommended mix tolerance \u00b15% by mass per part"
+    },
+    {
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "hardener_family": "cycloaliphatic-amine",
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 24.0,
+      "nominal_ratio_by_mass": "100.0:24.0",
+      "nominal_source": "Huntsman Araldite GY-6010 + HY 2954 (IPDA) TDS 100:24 nominal by mass",
+      "nominal_total_g": 124.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 95.0,
+            "unit": "g",
+            "upper_inclusive": 105.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 22.8,
+            "unit": "g",
+            "upper_inclusive": 25.2
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 117.8,
+            "unit": "g",
+            "upper_inclusive": 130.2
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-ipda-marine-primer-100to24-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-ipda-marine-primer-100to24-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 100.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 24.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 124.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-ipda-marine-primer-100to24-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 95.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 24.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 119.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-ipda-marine-primer-100to24-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 105.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 24.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 129.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-ipda-marine-primer-100to24-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 94.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 24.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 118.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-ipda-marine-primer-100to24-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 210.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 2.4000000000000004
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 212.4
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Huntsman GY-6010 + HY 2954 TDS 'weigh within \u00b15% by mass'"
+    },
+    {
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "hardener_family": "cycloaliphatic-amine",
+      "nominal_part_a_g": 200.0,
+      "nominal_part_b_g": 30.0,
+      "nominal_ratio_by_mass": "200.0:30.0",
+      "nominal_source": "Air Products Ancamine 2049 (PACM) marine topcoat TDS 100:30 by mass",
+      "nominal_total_g": 230.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 190.0,
+            "unit": "g",
+            "upper_inclusive": 210.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 28.5,
+            "unit": "g",
+            "upper_inclusive": 31.5
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 218.5,
+            "unit": "g",
+            "upper_inclusive": 241.5
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-pacm-marine-topcoat-100to30-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-pacm-marine-topcoat-100to30-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 200.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 30.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 230.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-pacm-marine-topcoat-100to30-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 190.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 30.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 220.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-pacm-marine-topcoat-100to30-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 210.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 30.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 240.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-pacm-marine-topcoat-100to30-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 189.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 30.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 219.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-pacm-marine-topcoat-100to30-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 420.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 3.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 423.0
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Air Products Ancamine 2049 TDS 'ratio \u00b15% by weight'"
+    },
+    {
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "hardener_family": "aromatic-amine",
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 22.0,
+      "nominal_ratio_by_mass": "100.0:22.0",
+      "nominal_source": "Mitsubishi Gaskineide Nx-1052 (MXDA) tank lining TDS 100:22 by mass",
+      "nominal_total_g": 122.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 95.0,
+            "unit": "g",
+            "upper_inclusive": 105.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 20.9,
+            "unit": "g",
+            "upper_inclusive": 23.1
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 115.9,
+            "unit": "g",
+            "upper_inclusive": 128.1
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-mxda-tank-lining-100to22-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-mxda-tank-lining-100to22-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 100.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 22.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 122.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-mxda-tank-lining-100to22-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 95.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 22.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 117.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-mxda-tank-lining-100to22-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 105.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 22.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 127.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-mxda-tank-lining-100to22-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 94.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 22.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 116.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-mxda-tank-lining-100to22-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 210.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 2.2
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 212.2
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Mitsubishi Gaskineide TDS mix tolerance \u00b15% by mass per part"
+    },
+    {
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "hardener_family": "aromatic-amine",
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 14.0,
+      "nominal_ratio_by_mass": "100.0:14.0",
+      "nominal_source": "Ellis 1993 \u00a76.4 DGEBA+MPDA aerospace composite 100:14 by mass",
+      "nominal_total_g": 114.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 95.0,
+            "unit": "g",
+            "upper_inclusive": 105.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 13.3,
+            "unit": "g",
+            "upper_inclusive": 14.7
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 108.3,
+            "unit": "g",
+            "upper_inclusive": 119.7
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-mpda-aerospace-composite-100to14-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-mpda-aerospace-composite-100to14-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 100.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 14.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 114.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-mpda-aerospace-composite-100to14-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 95.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 14.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 109.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-mpda-aerospace-composite-100to14-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 105.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 14.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 119.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-mpda-aerospace-composite-100to14-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 94.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 14.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 108.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-mpda-aerospace-composite-100to14-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 210.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 1.4000000000000001
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 211.4
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Ellis 1993 \u00a76.4 mix precision \u00b15% by mass per part"
+    },
+    {
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "hardener_family": "amidoamine-adduct",
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 50.0,
+      "nominal_ratio_by_mass": "100.0:50.0",
+      "nominal_source": "Huntsman Aradur 3486 amidoamine primer TDS 100:50 by mass",
+      "nominal_total_g": 150.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 95.0,
+            "unit": "g",
+            "upper_inclusive": 105.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 47.5,
+            "unit": "g",
+            "upper_inclusive": 52.5
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 142.5,
+            "unit": "g",
+            "upper_inclusive": 157.5
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-amidoamine-huntsman-100to50-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-amidoamine-huntsman-100to50-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 100.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 50.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 150.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-amidoamine-huntsman-100to50-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 95.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 50.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 145.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-amidoamine-huntsman-100to50-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 105.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 50.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 155.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-amidoamine-huntsman-100to50-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 94.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 50.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 144.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-amidoamine-huntsman-100to50-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 210.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 5.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 215.0
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Huntsman Aradur 3486 TDS mix ratio \u00b15% by weight per part"
+    },
+    {
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "hardener_family": "amidoamine-adduct",
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 53.0,
+      "nominal_ratio_by_mass": "100.0:53.0",
+      "nominal_source": "Momentive Epikote 828 + Epikure 3125 amidoamine TDS 100:53 by mass",
+      "nominal_total_g": 153.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 95.0,
+            "unit": "g",
+            "upper_inclusive": 105.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 50.35,
+            "unit": "g",
+            "upper_inclusive": 55.65
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 145.35,
+            "unit": "g",
+            "upper_inclusive": 160.65
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-amidoamine-momentive-100to53-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-amidoamine-momentive-100to53-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 100.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 53.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 153.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-amidoamine-momentive-100to53-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 95.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 53.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 148.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-amidoamine-momentive-100to53-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 105.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 53.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 158.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-amidoamine-momentive-100to53-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 94.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 53.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 147.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-amidoamine-momentive-100to53-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 210.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 5.300000000000001
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 215.3
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Momentive Epikure 3125 TDS mix ratio \u00b15% by weight per part"
+    },
+    {
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "hardener_family": "mannich-base",
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 36.0,
+      "nominal_ratio_by_mass": "100.0:36.0",
+      "nominal_source": "Air Products Ancamine 2735 (Mannich) fast-cure primer TDS 100:36 by mass",
+      "nominal_total_g": 136.0,
+      "policy": {
+        "authoritative": false,
+        "constraints": [
+          {
+            "constraint_id": "part_A_mass_within_tolerance",
+            "feature_path": "mass.part_A_g",
+            "lower_inclusive": 95.0,
+            "unit": "g",
+            "upper_inclusive": 105.0
+          },
+          {
+            "constraint_id": "part_B_mass_within_tolerance",
+            "feature_path": "mass.part_B_g",
+            "lower_inclusive": 34.2,
+            "unit": "g",
+            "upper_inclusive": 37.8
+          },
+          {
+            "constraint_id": "total_mass_within_tolerance",
+            "feature_path": "mass.total_g",
+            "lower_inclusive": 129.2,
+            "unit": "g",
+            "upper_inclusive": 142.8
+          }
+        ],
+        "fixture_only": true,
+        "policy_id": "dgeba-mannich-fast-cure-100to36-policy-v1",
+        "schema": "amphora.synthetic-envelope-policy.v1"
+      },
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "test_cases": [
+        {
+          "case_id": "dgeba-mannich-fast-cure-100to36-nominal",
+          "expected_pass_all_hard": true,
+          "expected_reason": "masses at nominal target; all three margins strictly positive",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 100.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 36.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 136.0
+              }
+            }
+          },
+          "subgroup": "NOMINAL"
+        },
+        {
+          "case_id": "dgeba-mannich-fast-cure-100to36-at-lower-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at lower inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 95.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 36.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 131.0
+              }
+            }
+          },
+          "subgroup": "AT_LOWER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-mannich-fast-cure-100to36-at-upper-boundary",
+          "expected_pass_all_hard": true,
+          "expected_reason": "part_A_g at upper inclusive bound: margin exactly 0.0 f64 bit-exact; total stays within propagated tolerance",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 105.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 36.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 141.0
+              }
+            }
+          },
+          "subgroup": "AT_UPPER_BOUNDARY"
+        },
+        {
+          "case_id": "dgeba-mannich-fast-cure-100to36-just-below-lower",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g is 0.01 g below the lower inclusive bound; margin < 0; must fail",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 94.99
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 36.0
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 130.99
+              }
+            }
+          },
+          "subgroup": "JUST_BELOW_LOWER"
+        },
+        {
+          "case_id": "dgeba-mannich-fast-cure-100to36-wildly-out",
+          "expected_pass_all_hard": false,
+          "expected_reason": "part_A_g at 2x upper and part_B_g at 10% of nominal; grossly out of envelope on multiple constraints",
+          "snapshot": {
+            "schema": "amphora.trusted-arithmetic-snapshot.v1",
+            "trusted": true,
+            "values": {
+              "mass.part_A_g": {
+                "unit": "g",
+                "value": 210.0
+              },
+              "mass.part_B_g": {
+                "unit": "g",
+                "value": 3.6
+              },
+              "mass.total_g": {
+                "unit": "g",
+                "value": 213.6
+              }
+            }
+          },
+          "subgroup": "WILDLY_OUT"
+        }
+      ],
+      "tolerance_source": "Air Products Ancamine 2735 TDS mix ratio \u00b15% by weight per part"
+    }
+  ],
+  "fixture_id": "amphora-envelope-gates-phase0-known-answer-2026-07-21",
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored two-part epoxy-amine coating formulation envelope compilation from Wicks/Jones/Pappas 2007 Chapters 24-25, Ellis 1993 Chapter 6, and supplier technical data sheets for Phase-0 constraint-envelope controls only; no wet-lab measurements or CRO data checked in",
+    "source_id": "amphora_phase0_envelope_gates_known_answer",
+    "source_url": "local:amphora-envelope-gates/reference/phase0-envelope-gates-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.envelope-gates-phase0-known-answer.v1",
+  "toolkit_version": "2026.03.2"
+}

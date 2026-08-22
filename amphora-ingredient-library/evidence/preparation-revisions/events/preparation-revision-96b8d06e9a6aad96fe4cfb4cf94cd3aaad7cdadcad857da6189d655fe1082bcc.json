@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "93c45e3679ba3b23ee4e60be39c0418e039f2906558481755025fb13458e0914",
+  "module_id": "amphora-ingredient-library",
+  "parent_revision_id": null,
+  "revision_id": "preparation-revision-96b8d06e9a6aad96fe4cfb4cf94cd3aaad7cdadcad857da6189d655fe1082bcc",
+  "revision_number": 1,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-a0fdc17f8243b987edff06a6a709ef2e0bba0201406365da39dcfaf67d60bbf8",
+  "supersession_path": "evidence/superseded/supersession-a0fdc17f8243b987edff06a6a709ef2e0bba0201406365da39dcfaf67d60bbf8/supersession.v1.json",
+  "supersession_sha256": "18165f54f33646c701dcf2a2ff551f9473fcfc3abc2a380dde724d2b5015208c",
+  "unsigned_preparation_only": true
+}

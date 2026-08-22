@@ -1,0 +1,51 @@
+{
+  "applicability_domain": [
+    "registered amphora-molecule-design-gate contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "audit_execution_passed": true,
+  "benchmark_execution_complete": true,
+  "bundle_hash": "878879c45528e10207ba803b18dd5e7b428a84e1c9f04a10ee58ce3fb35e9d45",
+  "bundle_parent_hashes": {
+    "evidence/phase0/benchmark/benchmark-lock.v1.json": "8de16b52253b206893b3fd03d0e3530d25004ee73f539cead1f942f3cc39a6e1",
+    "evidence/phase0/dataset/dataset-manifest.v1.json": "97f868007cb066af365376499eff2f79a0a8bf5fc48ff51781e52907c0984677",
+    "evidence/phase0/promotion/policy.v1.json": "3d6ae4b692737b5af880013d3ea0596b930fdeb6a0a94e6925b2b2b920738795",
+    "evidence/phase0/raw/SHA256SUMS": "5f7764ca0f5f4f700e94cfc0571dab07db44549beba37a980f7da58441f8d568",
+    "evidence/phase0/sources/source-lock.v1.json": "6cfd2411bf8ce87c85b16c865b2a35dec98321aaa4dbaa921cf0a5b2368e9492",
+    "evidence/phase0/split/split-manifest.v1.json": "af6674b09f010bda5c18fb733663c4cb2fa2cefe13338d8392eab479e6784903",
+    "evidence/superseded/supersession-2cf340436904628672b59b1711d53a546d1a189903086182bfda68ad01ca0b34/supersession.v1.json": "bdbde094fce1f3793b9b917b80715cf80926a30ebfacdf055b619b7a77489252",
+    "ip/claim-contract.v1.json": "4bcd831a4c94b0fb651a54db54f0a3fd073e2cd6d66ddc019f42ba45cee0d7e1",
+    "ip/disclosure-log.v1.json": "f56bf09d209c215a48caca7dfbf67cfb49175eccc0ac280444fe6b3ad205e9b3",
+    "ip/prior-art.v1.json": "7ebf61f5f8d2f95d45959074884669b31cbb945c985dcf91abd6af3eec0a34ad",
+    "ip/technical-dossier.v1.json": "cb5756715d2ff497de1653c5677f29e7077f34949dce4cc6e985f60a7ec081f7"
+  },
+  "claim_lock_hash": "aa6ef323ef6e1e5ec82073ee291a0377678918d562344f095be807b3059fde11",
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "failed_gates": [],
+  "metrics": {
+    "benchmark_execution_complete": true,
+    "benchmark_result_sha256": "3fd72f0fa08ae6e306a6718f0a618cab4abc876add5fd06521ac0022d0857761",
+    "replay_identical": true,
+    "rights_gate_passed": true
+  },
+  "module_class": "DETERMINISTIC_CONTROL",
+  "module_id": "amphora-molecule-design-gate",
+  "phase0_eligible": true,
+  "receipt_id": "phase0-evaluation-ebac1802d975ad6897f63a56f20d70a7bdecfec3be7cb1e8fe9011bf1b3c1baf",
+  "replay_hash": "13dc9326f1395234dfb132de6407d99f10700e38398fb61339eebcffe1629e8a",
+  "retained_negative_results": [],
+  "schema": "amphora.module-phase0-evaluation-receipt.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "scientific_readiness": "NOT_APPLICABLE",
+  "signature": {
+    "payload": "eyJhcHBsaWNhYmlsaXR5X2RvbWFpbiI6WyJyZWdpc3RlcmVkIGFtcGhvcmEtbW9sZWN1bGUtZGVzaWduLWdhdGUgY29udHJhY3QgYW5kIHN5bnRoZXRpYyBmaXh0dXJlcyIsImFic3RhaW4gb24gbWFsZm9ybWVkLCBzdGFsZSwgdW5hdXRob3JpemVkLCBvciBvdXQtb2YtY29udHJhY3QgaW5wdXQiXSwiYXVkaXRfZXhlY3V0aW9uX3Bhc3NlZCI6dHJ1ZSwiYmVuY2htYXJrX2V4ZWN1dGlvbl9jb21wbGV0ZSI6dHJ1ZSwiYnVuZGxlX2hhc2giOiI4Nzg4NzljNDU1MjhlMTAyMDdiYTgwM2IxOGRkNWU3YjQyOGE4NGUxYzlmMDRhMTBlZTU4Y2UzZmIzNWU5ZDQ1IiwiYnVuZGxlX3BhcmVudF9oYXNoZXMiOnsiZXZpZGVuY2UvcGhhc2UwL2JlbmNobWFyay9iZW5jaG1hcmstbG9jay52MS5qc29uIjoiOGRlMTZiNTIyNTNiMjA2ODkzYjNmZDAzZDBlMzUzMGQyNTAwNGVlNzNmNTM5Y2VhZDFmOTQyZjNjYzM5YTZlMSIsImV2aWRlbmNlL3BoYXNlMC9kYXRhc2V0L2RhdGFzZXQtbWFuaWZlc3QudjEuanNvbiI6Ijk3Zjg2ODAwN2NiMDY2YWYzNjUzNzY0OTllZmYyZjc5YTBhOGJmNWZjNDhmZjUxNzgxZTUyOTA3YzA5ODQ2NzciLCJldmlkZW5jZS9waGFzZTAvcHJvbW90aW9uL3BvbGljeS52MS5qc29uIjoiM2Q2YWU0YjY5MjczN2I1YWY4ODAwMTNkM2VhMDU5NmI5MzBmZGViNmEwYTk0ZTY5MjViMmIyYjkyMDczODc5NSIsImV2aWRlbmNlL3BoYXNlMC9yYXcvU0hBMjU2U1VNUyI6IjVmNzc2NGNhMGY1ZjRmNzAwZTk0Y2ZjMDU3MWRhYjA3ZGI0NDU0OWJlYmEzN2E5ODBmN2RhNTg0NDFmOGQ1NjgiLCJldmlkZW5jZS9waGFzZTAvc291cmNlcy9zb3VyY2UtbG9jay52MS5qc29uIjoiNmNmZDI0MTFiZjhjZTg3Yzg1YjE2Yzg2NWIyYTM1ZGVjOTgzMjFhYWE0ZGJhYTkyMWNmMGE1YjIzNjhlOTQ5MiIsImV2aWRlbmNlL3BoYXNlMC9zcGxpdC9zcGxpdC1tYW5pZmVzdC52MS5qc29uIjoiYWY2Njc0YjA5ZjAxMGJkYTVjMThmYjczMzY2M2M0Y2IyZmEyY2VmZTEzMzM4ZDgzOTJlYWI0NzllNjc4NDkwMyIsImV2aWRlbmNlL3N1cGVyc2VkZWQvc3VwZXJzZXNzaW9uLTJjZjM0MDQzNjkwNDYyODY3MmI1OWIxNzExZDUzYTU0NmQxYTE4OTkwMzA4NjE4MmJmZGE2OGFkMDFjYTBiMzQvc3VwZXJzZXNzaW9uLnYxLmpzb24iOiJiZGJkZTA5NGZjZTFmMzc5M2I5YjkxN2I4MDcxNWNmODA5MjZhMzBlYmZhY2RmMDU1YjYxOWI3YTc3NDg5MjUyIiwiaXAvY2xhaW0tY29udHJhY3QudjEuanNvbiI6IjRiY2Q4MzFhNGM5NGIwZmI2NTFhNTRkYjU0ZjBhM2ZkMDczZTJjZDZkNjZkZGMwMTlmNDJiYTQ1Y2VlMGQ3ZTEiLCJpcC9kaXNjbG9zdXJlLWxvZy52MS5qc29uIjoiZjU2YmYwOWQyMDljMjE1YTQ4Y2FjYTdkZmJmNjdjZmI0OTE3NWVjY2MwYWMyODA0NDRmZTZiM2FkMjA1ZTliMyIsImlwL3ByaW9yLWFydC52MS5qc29uIjoiN2ViZjYxZjVmOGQyZjk1ZDQ1OTU5MDc0ODg0NjY5YjMxY2JiOTQ1Yzk4NWRjZjkxYWJkNmFmM2VlYzBhMzRhZCIsImlwL3RlY2huaWNhbC1kb3NzaWVyLnYxLmpzb24iOiJjYjU3NTY3MTVkMmZmNDk3ZGUxNjUzYzU2NzdmMjllNzA3N2YzNDk0OWRjZTRjYzZlOTg1ZjYwYTdlYzA4MWY3In0sImNsYWltX2xvY2tfaGFzaCI6ImFhNmVmMzIzZWY2ZTFlNWVjODIwNzNlZTI5MWEwMzc3Njc4OTE4ZDU2MjM0NGYwOTViZTgwN2IzMDU5ZmRlMTEiLCJkZWNpc2lvbl91c2VfY2VpbGluZyI6IkFVRElUX09OTFkiLCJldmFsdWF0b3Jfa2V5X2lkIjoicGhhc2UwLWV2YWx1YXRvci0zZWY2YjM1Y2RiYmZlYTc0YTk2YTVjOWI5OGE1MTVkNTcxNThhMDllY2FmZjEwYWNmYTFmMTU5OTBiZTAwMTc4IiwiZmFpbGVkX2dhdGVzIjpbXSwibWV0cmljcyI6eyJiZW5jaG1hcmtfZXhlY3V0aW9uX2NvbXBsZXRlIjp0cnVlLCJiZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiI6IjNmZDcyZjBmYTA4YWU2ZTMwNmE2NzE4ZjBhNjE4Y2FiNGFiYzg3NmFkZDVmZDA2NTIxYWMwMDIyZDA4NTc3NjEiLCJyZXBsYXlfaWRlbnRpY2FsIjp0cnVlLCJyaWdodHNfZ2F0ZV9wYXNzZWQiOnRydWV9LCJtb2R1bGVfY2xhc3MiOiJERVRFUk1JTklTVElDX0NPTlRST0wiLCJtb2R1bGVfaWQiOiJhbXBob3JhLW1vbGVjdWxlLWRlc2lnbi1nYXRlIiwicGhhc2UwX2VsaWdpYmxlIjp0cnVlLCJyZWNlaXB0X2lkIjoicGhhc2UwLWV2YWx1YXRpb24tZWJhYzE4MDJkOTc1YWQ2ODk3ZjYzYTU2ZjIwZDcwYTdiZGVjZmVjM2JlN2NiMWU4ZmU5MDExYmYxYjNjMWJhZiIsInJlcGxheV9oYXNoIjoiMTNkYzkzMjZmMTM5NTIzNGRmYjEzMmRlNjQwN2Q5OWYxMDcwMGUzODM5OGZiNjEzMzllZWJjZmZlMTYyOWU4YSIsInJldGFpbmVkX25lZ2F0aXZlX3Jlc3VsdHMiOltdLCJzY2hlbWEiOiJhbXBob3JhLm1vZHVsZS1waGFzZTAtZXZhbHVhdGlvbi1yZWNlaXB0LnYxIiwic2NpZW50aWZpY19vdXRjb21lIjoiTk9UX0FQUExJQ0FCTEUiLCJzY2llbnRpZmljX3JlYWRpbmVzcyI6Ik5PVF9BUFBMSUNBQkxFIn0=",
+    "payloadType": "application/vnd.amphora.module-phase0-evaluation-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "TBaLY4962Eu0pkc15g7gEqilEwFt4tD2dYF3SOdRc3u3TLJwunaIFTRsX1/uZdC1Lo19RrOGr3e+J7yFci1BAg=="
+      }
+    ]
+  }
+}

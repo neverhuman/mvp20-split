@@ -1,0 +1,30 @@
+{
+  "archive_root": "evidence/superseded/supersession-ed36fedff518d97c3a86d09501c60dd941c52cd6d7b00107b8024e53123727e6",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "6102d55e2255da952f43e6d4668b222aff5ef6f6f0ad99eb51aac889357dbb82",
+    "ip/disclosure-log.v1.json": "95f4323ccb9cad359efe7101a5cee37c4827fbcc6e4f8c62572be0ae4a2e1ff3",
+    "ip/prior-art.v1.json": "dd7eb59504a3dd7d1099bee6733e1f7147435291484816facb1e1a28e76e0d04",
+    "ip/technical-dossier.v1.json": "0bf406382802266a44adbcd687fb7b22baaa179a499a70cea91d7aae2ed6fd89",
+    "phase0/benchmark/benchmark-lock.v1.json": "a4158a58d8268482fde28263a6338b0f919e527efe4d39811c4b60ba99b99e2b",
+    "phase0/bundle.v1.json": "64852c3a09379ee6c754834f81e0400f519de4030e8282aca0de4f12362fafe3",
+    "phase0/dataset/dataset-manifest.v1.json": "afc1829b85bf914112d126bd89b4962d98b2532c95316d6fb73df625a148dc66",
+    "phase0/kpis/design-rule-score-rule-authority-quarantine-kpi.v1.json": "9b3ae8fe3a6fa1c17b772fd3005d4c4a8b41b63ca846bfc10f3cebd73bd46a84",
+    "phase0/promotion/policy.v1.json": "c936770be0c82a0c775a8c0fce6d95bb1db9b6c112d347937fb5f72ac906bb25",
+    "phase0/raw/SHA256SUMS": "8a6ec5d9d138e201c8ca2a2ea451d81e221e2804437ebe5af9b4b1745b228407",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "5b2b9c5797a03e4fd8cf84b019f41a37873a2864b1a3430e585cbc794b35c2e7",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/imports/benchmark.legacy-import.v1.json": "b80c3d964438d1987f5630ca1a42d754220bd9536006ba4d5973ea683e6afacb",
+    "phase0/sources/imports/source.legacy-import.v1.json": "bfdfd79abf49f3d49fb3b3ad7fe697bdbc154c55c12f022b129802070583dfcd",
+    "phase0/sources/imports/split.legacy-import.v1.json": "221eab2b17ef44653d01a50b56ee60e937941c7932e19e9fe1c3885d36d9fa17",
+    "phase0/sources/source-lock.v2.json": "f206afc7a13cf7462277c81f18769a21b43fe79b81dcbaac98a0fbbc42fb5125",
+    "phase0/split/split-manifest.v1.json": "250c01eda0f049cacb17c20b6f5a0d963711698e3d20573898a6cb665dab2709"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-design-rule-score",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-ed36fedff518d97c3a86d09501c60dd941c52cd6d7b00107b8024e53123727e6",
+  "unsigned_preparation_only": true
+}

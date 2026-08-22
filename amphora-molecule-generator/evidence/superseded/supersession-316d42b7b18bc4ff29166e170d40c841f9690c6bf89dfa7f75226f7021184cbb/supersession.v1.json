@@ -1,0 +1,26 @@
+{
+  "archive_root": "evidence/superseded/supersession-316d42b7b18bc4ff29166e170d40c841f9690c6bf89dfa7f75226f7021184cbb",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "26099aa35bc225fa810dfd934f3427f49b55a04c9661297441fbfc34b0908b90",
+    "ip/disclosure-log.v1.json": "57a108096748c5fddd3d9168747e798d8ad8949846f1b5bdbc4679c64551fdcc",
+    "ip/prior-art.v1.json": "da5f44cfb07933ba32be1a8b9c3fbf7fcda97fbe7834e7e5a4e71e128df499c0",
+    "ip/technical-dossier.v1.json": "f90823106b2cca1c92fec50d36678e1ca60828c4307de19888e2c04d57f82a58",
+    "phase0/benchmark/benchmark-lock.v1.json": "73f0cc9b06f6cf4238c9b6e83bd248516c507d03dd587aedb5391988b2d11166",
+    "phase0/bundle.v1.json": "40180a32cd1c9f56e28eb7032fae51b12f516639385635cf7547fcceb2930192",
+    "phase0/dataset/dataset-manifest.v1.json": "6ee7f1421e2bd828627d6dccb1be5d91d92d4eba5e8733571930f38f27759159",
+    "phase0/promotion/policy.v1.json": "523da78f07a8048c3497c8146ac96d1514a8d632e84861e917fc739a4cee47cb",
+    "phase0/raw/SHA256SUMS": "943ab0e14615ef38babfb39aee58818693c58d3dc841cff64381d925998e98a0",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "b1506853e8cfc310ec4b4ab5f7a09681fce443c227629bc6e5e6d14bbc7e5820",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v1.json": "fe445074d40fd3007c4c1d2301866c774a9f1a91af2ed914d4c3c9ba88a55192",
+    "phase0/split/split-manifest.v1.json": "8c4fe1595e966f8d1ddfab380fc8016ffa1cc151b043deabb3f5b4b8598dbf67"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-molecule-generator",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-316d42b7b18bc4ff29166e170d40c841f9690c6bf89dfa7f75226f7021184cbb",
+  "unsigned_preparation_only": true
+}

@@ -1,0 +1,358 @@
+{
+  "G1_dataset_integrity": {
+    "dataset_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+    "dataset_sha256_matches_signed_correlation_receipt": true,
+    "n_rows_total": 25,
+    "n_rows_usable_both_endpoints": 25,
+    "passed": true,
+    "rows_excluded_fail_closed": []
+  },
+  "G2_directional_concordance": {
+    "directional_concordance_established": true,
+    "kendall_tau": 0.4271760465,
+    "kendall_tau_p_two_sided": 0.003738996142,
+    "n": 25,
+    "passed": true,
+    "spearman_permutation_p_one_sided": 0.001799910004,
+    "spearman_rho": 0.5667572791
+  },
+  "G3_fixed_ratio_h0": {
+    "c_hat_fold_tfs_over_gel": 4.753774308,
+    "fold_ratio_max": 15.0,
+    "fold_ratio_min": 2.142857143,
+    "fold_ratio_span": 7.0,
+    "log10_ratio_sd": 0.2195806609,
+    "loo_geometric_mean_fold_error": 1.518511637,
+    "loo_max_fold_error": 3.310141525,
+    "max_fold_error_vs_c_hat": 3.155387494,
+    "n_inside_1p5x_band": 15,
+    "n_outside_1p5x_band": 10
+  },
+  "G4_power_law_alternative": {
+    "bootstrap_b_ci95": [
+      0.1651395315,
+      0.7247239404
+    ],
+    "bootstrap_p_b_ge_1_one_sided": 4.999750012e-05,
+    "fixed_ratio_slope_inside_ci": false,
+    "intercept_a_log10": 0.7632296825,
+    "p_slope_zero_two_sided": 0.001501576989,
+    "r_squared": 0.3606944695,
+    "residual_sd_log10": 0.1661859399,
+    "slope_b": 0.4531375967,
+    "slope_se_ols": 0.1257913181
+  },
+  "G5_loo_model_comparison": {
+    "M1_beats_M0": false,
+    "M2_beats_M1": true,
+    "loo_rmse_log10": {
+      "M0_null_predict_mean": 0.2076647232,
+      "M1_fixed_ratio": 0.2241085736,
+      "M2_power_law": 0.1764794126
+    },
+    "winner": "M2_power_law"
+  },
+  "G6_semenov_direction": {
+    "ci95_excludes_1": true,
+    "direction_matches_semenov_if_h0_refuted": true,
+    "observed_slope_b": 0.4531375967,
+    "semenov_prediction": "log-log slope b < 1 (bulk exotherm stretches the fast end of the gel axis)"
+  },
+  "G7_fail_closed_scope": {
+    "imputation_used": false,
+    "passed": true,
+    "rows_excluded": [],
+    "verdict_depends_only_on_rows_with_both_endpoints": true
+  },
+  "authority": "AUDIT_ONLY",
+  "claim_locks": {
+    "flips_scientific_readiness": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_prior_signed_receipt": false,
+    "modifies_signed_phase0_kpi": false,
+    "promotes_authority": false
+  },
+  "closes": [
+    "Quantifies the previously untested gel<->TFS cross-endpoint relation on the locked panel",
+    "Converts the dataset's narrative honesty disclosure (directional-only mapping) into a signed, replayable statistical result",
+    "Establishes whether a single fold-ratio ever licenses absolute film-set predictions from bulk gel data (it does not, if H0 refuted)"
+  ],
+  "constants": {
+    "band_fold": 1.5,
+    "n_bootstrap": 20000,
+    "n_permutations": 20000,
+    "numpy_version": "1.26.4",
+    "python_version": "3.12.3",
+    "scipy_version": "1.16.3",
+    "seed": 20260731
+  },
+  "dataset": {
+    "basis": "Evonik product-guide known-answer set: DGEBA-class epoxy (EEW~190) x polyamide/amidoamine at supplier phr; gel 150 g @25C; thin-film set (Beck-Koller) @25C; verification-only, never used for candidate generation.",
+    "n_rows": 25,
+    "n_used": 25,
+    "path": "amphora-cure-potlife-gate/reference/mvp20/data/cure_verification_set.json",
+    "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+  },
+  "directional_concordance": true,
+  "does_not_close": [
+    "No pot-life (viscosity-doubling) endpoint is present in this panel; the mapping tested is gel->thin-film-set",
+    "Single temperature (25 C) and single supplier basis; no cross-supplier generalization claimed",
+    "Semenov direction gate is consistency-only: mass-varied gel data would be needed to identify the exotherm magnitude",
+    "No authority promotion; scientific_readiness stays UNVALIDATED; PRE_PHASE_0 unchanged"
+  ],
+  "gates_summary": {
+    "G1": true,
+    "G2": true,
+    "G3_h0_fixed_ratio": "REFUTED",
+    "G4_slope_ci_excludes_1": true,
+    "G5_loo_winner": "M2_power_law",
+    "G6_direction_matches_semenov": true,
+    "G7": true
+  },
+  "headline": "Cross-endpoint iso-conversional reduction H0 (thin-film set time = c x bulk gel time) REFUTED on the locked n=25 Evonik panel: fold ratio spans 2.142857143x-15.0x (10/25 systems outside the module's 1.5x band around the best single ratio), log-log slope b=0.4531375967 (95% bootstrap CI [0.1651395315, 0.7247239404]), while directional concordance (Spearman rho=0.5667572791, permutation p=0.001799910004) HOLDS -- quantifying the dataset's standing honesty disclosure that bulk gel maps application endpoints directionally, not absolutely.",
+  "module": "amphora-cure-potlife-gate",
+  "non_circularity": "No quantity in this harness is fitted to, or derived from, the module's signed Arrhenius KPI, the temperature-scaling known-answer set, or any prior receipt's estimates. Both endpoints come from the same locked supplier dataset; the tested H0 is a parameter-free structural prediction (slope exactly 1 in log-log space) of single-rate-constant kinetics, with only the offset c estimated from data.",
+  "per_system": [
+    {
+      "fold_error_vs_c_hat": 1.440537669,
+      "fold_ratio_tfs_over_gel": 3.3,
+      "gel_h": 3.333333333,
+      "gel_min": 200.0,
+      "hardener": "ancamide_350a",
+      "inside_1p5x_band": true,
+      "tfs_h": 11.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.051795831,
+      "fold_ratio_tfs_over_gel": 5.0,
+      "gel_h": 2.0,
+      "gel_min": 120.0,
+      "hardener": "ancamide_260a",
+      "inside_1p5x_band": true,
+      "tfs_h": 10.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.084194141,
+      "fold_ratio_tfs_over_gel": 4.384615385,
+      "gel_h": 1.083333333,
+      "gel_min": 65.0,
+      "hardener": "ancamide_2353",
+      "inside_1p5x_band": true,
+      "tfs_h": 4.75
+    },
+    {
+      "fold_error_vs_c_hat": 1.736955997,
+      "fold_ratio_tfs_over_gel": 2.736842105,
+      "gel_h": 4.75,
+      "gel_min": 285.0,
+      "hardener": "ancamide_2426",
+      "inside_1p5x_band": false,
+      "tfs_h": 13.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.367334581,
+      "fold_ratio_tfs_over_gel": 6.5,
+      "gel_h": 1.0,
+      "gel_min": 60.0,
+      "hardener": "ancamide_805",
+      "inside_1p5x_band": true,
+      "tfs_h": 6.5
+    },
+    {
+      "fold_error_vs_c_hat": 1.131851026,
+      "fold_ratio_tfs_over_gel": 4.2,
+      "gel_h": 1.666666667,
+      "gel_min": 100.0,
+      "hardener": "ancamide_2050",
+      "inside_1p5x_band": true,
+      "tfs_h": 7.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.282078526,
+      "fold_ratio_tfs_over_gel": 3.707865169,
+      "gel_h": 1.483333333,
+      "gel_min": 89.0,
+      "hardener": "ancamide_2445",
+      "inside_1p5x_band": true,
+      "tfs_h": 5.5
+    },
+    {
+      "fold_error_vs_c_hat": 1.122418934,
+      "fold_ratio_tfs_over_gel": 4.235294118,
+      "gel_h": 2.833333333,
+      "gel_min": 170.0,
+      "hardener": "ancamide_375a",
+      "inside_1p5x_band": true,
+      "tfs_h": 12.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.844688073,
+      "fold_ratio_tfs_over_gel": 8.769230769,
+      "gel_h": 1.083333333,
+      "gel_min": 65.0,
+      "hardener": "ancamide_400",
+      "inside_1p5x_band": false,
+      "tfs_h": 9.5
+    },
+    {
+      "fold_error_vs_c_hat": 2.427221149,
+      "fold_ratio_tfs_over_gel": 11.53846154,
+      "gel_h": 0.8666666667,
+      "gel_min": 52.0,
+      "hardener": "ancamide_351a",
+      "inside_1p5x_band": false,
+      "tfs_h": 10.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.178011331,
+      "fold_ratio_tfs_over_gel": 5.6,
+      "gel_h": 1.25,
+      "gel_min": 75.0,
+      "hardener": "ancamide_261a",
+      "inside_1p5x_band": true,
+      "tfs_h": 7.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.107153507,
+      "fold_ratio_tfs_over_gel": 5.263157895,
+      "gel_h": 0.95,
+      "gel_min": 57.0,
+      "hardener": "ancamide_2767",
+      "inside_1p5x_band": true,
+      "tfs_h": 5.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.577693747,
+      "fold_ratio_tfs_over_gel": 7.5,
+      "gel_h": 0.5333333333,
+      "gel_min": 32.0,
+      "hardener": "ancamide_2864",
+      "inside_1p5x_band": false,
+      "tfs_h": 4.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.188443577,
+      "fold_ratio_tfs_over_gel": 4.0,
+      "gel_h": 2.0,
+      "gel_min": 120.0,
+      "hardener": "ancamide_910",
+      "inside_1p5x_band": true,
+      "tfs_h": 8.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.31294719,
+      "fold_ratio_tfs_over_gel": 3.620689655,
+      "gel_h": 0.4833333333,
+      "gel_min": 29.0,
+      "hardener": "ancamide_2832",
+      "inside_1p5x_band": true,
+      "tfs_h": 1.75
+    },
+    {
+      "fold_error_vs_c_hat": 1.471406334,
+      "fold_ratio_tfs_over_gel": 3.230769231,
+      "gel_h": 2.166666667,
+      "gel_min": 130.0,
+      "hardener": "ancamide_2634",
+      "inside_1p5x_band": true,
+      "tfs_h": 7.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.584591436,
+      "fold_ratio_tfs_over_gel": 3.0,
+      "gel_h": 1.0,
+      "gel_min": 60.0,
+      "hardener": "ancamide_2424",
+      "inside_1p5x_band": false,
+      "tfs_h": 3.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.267673149,
+      "fold_ratio_tfs_over_gel": 3.75,
+      "gel_h": 1.2,
+      "gel_min": 72.0,
+      "hardener": "ancamide_2444",
+      "inside_1p5x_band": true,
+      "tfs_h": 4.5
+    },
+    {
+      "fold_error_vs_c_hat": 1.471406334,
+      "fold_ratio_tfs_over_gel": 3.230769231,
+      "gel_h": 2.166666667,
+      "gel_min": 130.0,
+      "hardener": "ancamide_2482",
+      "inside_1p5x_band": true,
+      "tfs_h": 7.0
+    },
+    {
+      "fold_error_vs_c_hat": 2.218428011,
+      "fold_ratio_tfs_over_gel": 2.142857143,
+      "gel_h": 2.333333333,
+      "gel_min": 140.0,
+      "hardener": "ancamide_2652",
+      "inside_1p5x_band": false,
+      "tfs_h": 5.0
+    },
+    {
+      "fold_error_vs_c_hat": 1.056394291,
+      "fold_ratio_tfs_over_gel": 4.5,
+      "gel_h": 2.0,
+      "gel_min": 120.0,
+      "hardener": "ancamide_2769",
+      "inside_1p5x_band": true,
+      "tfs_h": 9.0
+    },
+    {
+      "fold_error_vs_c_hat": 2.278890968,
+      "fold_ratio_tfs_over_gel": 10.83333333,
+      "gel_h": 0.6,
+      "gel_min": 36.0,
+      "hardener": "ancamide_2830",
+      "inside_1p5x_band": false,
+      "tfs_h": 6.5
+    },
+    {
+      "fold_error_vs_c_hat": 1.577693747,
+      "fold_ratio_tfs_over_gel": 7.5,
+      "gel_h": 1.333333333,
+      "gel_min": 80.0,
+      "hardener": "ancamide_3200",
+      "inside_1p5x_band": false,
+      "tfs_h": 10.0
+    },
+    {
+      "fold_error_vs_c_hat": 3.155387494,
+      "fold_ratio_tfs_over_gel": 15.0,
+      "gel_h": 0.6666666667,
+      "gel_min": 40.0,
+      "hardener": "ancamide_3201",
+      "inside_1p5x_band": false,
+      "tfs_h": 10.0
+    },
+    {
+      "fold_error_vs_c_hat": 2.139198439,
+      "fold_ratio_tfs_over_gel": 2.222222222,
+      "gel_h": 4.5,
+      "gel_min": 270.0,
+      "hardener": "ancamide_260tn",
+      "inside_1p5x_band": false,
+      "tfs_h": 10.0
+    }
+  ],
+  "phase1_requirement": "Absolute film-set or pot-life prediction from bulk gel data would require mass-varied gel measurements (>=3 masses per system) or isothermal DSC conversion curves to separate the kinetic ratio g(a_set)/g(a_gel) from the Semenov self-heating term.",
+  "purpose": "Test whether the thin-film set endpoint (Beck-Koller, 25 C) is reducible to the bulk 150 g gel endpoint via a single system-independent iso-conversional time ratio, as single-rate-constant cure kinetics predicts for two fixed-conversion events at fixed temperature; and whether any deviation is in the direction the Semenov self-heating confound predicts.",
+  "reduction_h0_verdict": "REFUTED",
+  "run_type": "AUDIT_ONLY_THEORY_AXIS",
+  "schema": "amphora.cure-potlife-gate.gel-tfs-crossendpoint-diagnostic.v1",
+  "theory_reference": {
+    "beck_koller_method": "ASTM D5895 (mechanical drying-time recorder)",
+    "enns_gillham_1983_ttt": "doi:10.1002/app.1983.070280810",
+    "flory_1941": "doi:10.1021/ja01856a061",
+    "frank_kamenetskii_1939": "Acta Physicochim URSS 10:365 (1939)",
+    "horie_1970": "doi:10.1002/pol.1970.150080605",
+    "kamal_sourour_1973": "doi:10.1002/pen.760130110",
+    "semenov_1928": "doi:10.1007/BF01340021",
+    "stockmayer_1943": "doi:10.1063/1.1723803"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "attacked_receipt_signed_date": "2026-07-29",
+  "attacked_receipt_two_replay_sha256": "aed83340...",
+  "calibrated_uncertainty_comparison": {
+    "bias_as_multiple_of_as_applied_halfwidth": 0.69,
+    "bias_as_multiple_of_at_nominal_halfwidth": 19.48,
+    "coverage_spreading_v1_wft_as_applied_with_dft_control_mc_ci95_halfwidth_um": 36.16376408686857,
+    "coverage_spreading_v1_wft_at_nominal_dft_mc_ci95_halfwidth_um": 1.2731562083295955,
+    "interpretation": "The at_nominal_dft interval is the module's own claim for pure formulation-arithmetic precision (excludes operator DFT-control variance): the LAMBDA bias is ~29x that interval's half-width. Even against the wider as_applied_with_dft_control interval (which folds in an UNRELATED +/-20% operator DFT-control tolerance), the LAMBDA bias is still a majority-sized, wholly separate, systematic (unidirectional) effect that the module's error budget has no term for at all -- GUM (JCGM 100:2008 sec 3.2.3, 6.3.1) requires known systematic effects to be corrected before an expanded uncertainty is reported as a coverage interval for the measurand; this one is neither corrected nor disclosed.",
+    "lambda_bias_um": 24.8049
+  },
+  "campaign_item_id": "X-COV-CPVC",
+  "claim_under_attack": {
+    "claim_text": "COVERAGE_SPREADING_ENGINE_READY__KNOWN_ANSWER_BATTERY_PASS__1604_ANCHOR_EXACT -- the WFT/TC/PC/dry-film-areal-mass engine, with its GUM LPU + Monte Carlo calibrated intervals, correctly and completely converts a formulated recipe's volume solids + target DFT into the applied-film arithmetic for the module's declared applicability domain (solvent-borne two-component epoxy-amine marine-coating R&D, which the module's own sibling receipts treat as including anti-corrosion pigmented / inhibitive primers).",
+    "receipt_path": "amphora-formulation-arithmetic/evidence/audit/coverage-spreading-v1/coverage-spreading-receipt.v1.dsse.json"
+  },
+  "composed_case": {
+    "cpvc": 0.4183,
+    "pvc_below_cpvc_control_case": {
+      "dft_actual_um": 127.0,
+      "dft_divergence_pct": 0.0,
+      "lambda_film_volume_factor": 1.0,
+      "lambda_raw_pvc_over_cpvc_ratio": 0.83672,
+      "note": "below-CPVC control: film_volume_factor clamps LAMBDA to 1 exactly (raw PVC/CPVC ratio 0.8368 has no physical amplification meaning below CPVC -- binder fully fills the interstitial space, no voids), so film-build divergence is exactly zero -- confirms the +19.5% overshoot above is specifically the CPVC/porosity effect, not a reimplementation bug",
+      "pvc": 0.35
+    },
+    "pvc_overshoot_case": {
+      "coverage_spreading_v1_signed_wft_um_at_this_dft_target": 190.2992411121276,
+      "dft_actual_um_after_lambda_amplification": 151.8049,
+      "dft_overshoot_pct": 19.5314,
+      "dft_target_um": 127.0,
+      "dry_film_density_actual_g_cm3": 1.620595,
+      "dry_film_density_error_pct": -16.34,
+      "dry_film_density_voidfree_g_cm3_signed": 1.937119897049003,
+      "lambda_film_volume_factor": 1.195314,
+      "lambda_raw_pvc_over_cpvc_ratio": 1.195314,
+      "pvc": 0.5
+    },
+    "rho_b_ideal_mix_g_per_cm3": 1.085889,
+    "rho_p_g_per_cm3": 5.0,
+    "system": "iron_oxide_red anticorrosive primer, DGEBA-331 + Ancamide 350A stoichiometric binder (same system reduced-pvc-porosity-v1's case_study names; cpvc/binder-density independently reproduced above, not merely copied)"
+  },
+  "control_clean": true,
+  "coverage_spreading_v1_ka_battery_has_pvc_cpvc_case": false,
+  "coverage_spreading_v1_ka_battery_ids": [
+    "KA1_1604_rule_external_unit_identity",
+    "KA2_full_solids_definition",
+    "KA3_half_solids_definition",
+    "KA4_closure_WFT_times_VS_eq_DFT",
+    "KA5_closure_TC_times_DFT_eq_1000VS",
+    "KA6_practical_loss_definition",
+    "KA7_areal_mass_definition",
+    "KA8_intensive_scale_invariance",
+    "KA9_hostile_null_zero_dft_and_zero_solids_fail_closed"
+  ],
+  "coverage_spreading_v1_scope_discloses_pvc_cpvc_boundary": false,
+  "overall_verdict": "CLAIM_REFUTED",
+  "overall_verdict_reasoning": "coverage-spreading-v1's WFT/TC engine (KA4 closure: WFT*VS_frac==DFT exactly) assumes void-free close packing with zero PVC/CPVC awareness -- confirmed by direct inspection: none of its 9 known-answer-battery cases and no field in applied_spec/does_not_close reference PVC, CPVC, or porosity. The module's OWN sibling receipt reduced-pvc-porosity-v1 (signed two days later) already established that above CPVC a real dry film's volume is amplified by LAMBDA=PVC/CPVC, and named exactly this iron-oxide-red-primer-at-PVC-0.50 case as its worked in-domain example -- but that finding was never propagated back into coverage-spreading-v1 as a repair, supersession, or disclosed scope caveat. Applying coverage-spreading-v1's own signed WFT prescription (190.30 um, unchanged) to this in-domain porous primer at its own declared 127 um DFT target delivers an actual film build of 151.8 um, a 19.5% overshoot -- roughly 29x the receipt's own at_nominal_dft calibrated 95% interval half-width (0.67% relative) and a wholly unmodeled systematic effect even against the wider as-applied interval. The below-CPVC control case shows zero divergence (LAMBDA=1 exactly), confirming the bias is the CPVC/porosity effect specifically, not an artifact of this reimplementation. The claim 'COVERAGE_SPREADING_ENGINE_READY' as currently signed overclaims: it is READY only for the (undisclosed) below-CPVC subset of the module's own declared applicability domain.",
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "control_divergence_pct": 0.0,
+      "dft_overshoot_pct": 19.5314
+    },
+    "how_planted": "n/a",
+    "planted_defect": "none needed -- this is a REFUTED verdict with self-evidencing composition of two already-signed in-tree receipts; a below-CPVC control case is included anyway for rigor"
+  },
+  "prior_fires_on_this_module": {
+    "CF-ARITH_2026-08-10": "candidate BOM VOC/volume-solids re-derivation -- SURVIVED (self-referential fixture)",
+    "T-05_2026-08-05": "EquivalentBalanceV1 host-fact authority bypass -- REFUTED (unrelated arithmetic surface)",
+    "W-T-ARITH_2026-08-13": "dimensioned VOC vs EPA Method 24 -- REFUTED (water/exempt-solvent exclusion); its R8 followup flagged but did NOT test that the module's symmetric GUM/MC intervals have no CPVC/porosity awareness",
+    "gap_this_fire_closes": "no prior fire composed coverage-spreading-v1 with its own sibling reduced-pvc-porosity-v1 finding, nor touched the WFT/TC/coverage arithmetic surface at all"
+  },
+  "proposed_followups": [
+    {
+      "finding": "coverage-spreading-v1's WFT/TC/PC/areal-mass formulas have no PVC/CPVC term and silently mis-predict film build by exactly LAMBDA for any porous (PVC>=CPVC) in-domain formulation.",
+      "proposed_repair_criterion": "add an explicit PVC/CPVC-aware branch to the coverage engine (multiply void-free DFT by LAMBDA when PVC>=CPVC, matching reduced-pvc-porosity-v1's already-signed closed form), add a PVC>=CPVC known-answer case to the battery so the gap cannot silently regress, and either disclose the below-CPVC restriction explicitly in does_not_close or close the gap before the receipt is cited as covering pigmented anti-corrosion primers."
+    }
+  ],
+  "reproduces_coverage_spreading_v1_point_estimates": {
+    "theoretical_coverage_m2_per_L": {
+      "match": true,
+      "reimpl": 5.2548817019,
+      "signed": 5.254881701870701
+    },
+    "volume_solids_frac": {
+      "match": true,
+      "reimpl": 0.6673699761,
+      "signed": 0.6673699761375791
+    },
+    "wet_film_thickness_um": {
+      "match": true,
+      "reimpl": 190.2992411121,
+      "signed": 190.2992411121276
+    }
+  },
+  "reproduces_reduced_pvc_porosity_v1_case_study": {
+    "binder_ideal_mix_density_g_cm3": {
+      "match": true,
+      "reimpl": 1.085889,
+      "signed": 1.085889
+    },
+    "cpvc": {
+      "match": true,
+      "reimpl": 0.4183,
+      "signed": 0.4183
+    },
+    "lambda_pvc050": {
+      "match": true,
+      "reimpl": 1.195314,
+      "signed": 1.195314
+    }
+  },
+  "run_type": "X-COV-CPVC_SIBLING_RECEIPT_COMPOSITION_AUDIT",
+  "schema": "amphora.formulation-arithmetic.coverage-cpvc-crosscheck.v1",
+  "sibling_receipt_used_as_baseline": {
+    "finding_reused": "Above CPVC, real dry-film volume is amplified by LAMBDA=PVC/CPVC vs void-free packing (Asbeck & Van Loo 1949 DOI 10.1021/ie50475a042; Bierwagen & Hay 1975 DOI 10.1016/0300-9440(75)80047-4); case study names iron-oxide-red anticorrosive primer at PVC 0.50 (CPVC 0.4183) as the worked in-domain example.",
+    "path": "amphora-formulation-arithmetic/evidence/audit/reduced-pvc-porosity-v1/reduced-pvc-porosity-receipt.v1.dsse.json",
+    "signed_date": "2026-07-31",
+    "two_replay_sha256": "a98c7281..."
+  },
+  "target_module": "amphora-formulation-arithmetic"
+}

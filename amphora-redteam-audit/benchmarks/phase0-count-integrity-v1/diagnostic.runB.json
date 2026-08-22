@@ -1,0 +1,510 @@
+{
+  "authority": "AUDIT_ONLY",
+  "decision_report": {
+    "file": "config/program/phase0-decision-report.v2.json",
+    "file_sha256": "1b0f864afcec23a2db2cb2f7095574656448ab900eee76a42ecdfbacbc1afea5",
+    "reported_module_count": 29,
+    "reported_phase0_count": 16,
+    "reported_pre_phase0_count": 13,
+    "status": "EXECUTION_INCOMPLETE"
+  },
+  "does_not": [
+    "does not modify any signed receipt, benchmark, or the decision report",
+    "does not promote, demote, or re-sign any module",
+    "does not run any phase0 ceremony; emits no secret key material"
+  ],
+  "modules": [
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-barrier-corrosion-score",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": "bf6f0100a99d4b2094d0e912e674b00b8d5fc57861c41b91303c7286790edd19",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "bf6f0100a99d4b2094d0e912e674b00b8d5fc57861c41b91303c7286790edd19",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-candidate-contract",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "9028beed25df43c5e1c453931d000636e9b2e128d1426101114bbbb829627909",
+      "benchmark_binding_matches_disk": false,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "dc2cb1dca3f4eb3f3291165c4cdbd28627586dec73c7119c12350087f488743e",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-cro-protocol-packager",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-cure-potlife-gate",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-design-rule-score",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": "60dfcce33408921922d08dabaa0da0517d530fed34252507bed6897fbacb1965",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "60dfcce33408921922d08dabaa0da0517d530fed34252507bed6897fbacb1965",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-envelope-gates",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "65fcd096abb99b8dde4050259afdce1b024a83d8dbd1a66de58d7646b5090467",
+      "benchmark_binding_matches_disk": false,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "00dbbe9f58921b7dcc65afaa39b7f09a03e6b9647b9c17ed9342a8dca62b9738",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-evidence-intake-validator",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "7d25d1bc039b06a910cd99170456e85bc52b0c7bb0abdcfaf3b779e617aa1935",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "7d25d1bc039b06a910cd99170456e85bc52b0c7bb0abdcfaf3b779e617aa1935",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-formulation-arithmetic",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "4d875109fa6ff999de81cffc89c1a6e3f24700a77263845a4a9bf943d23892f9",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "4d875109fa6ff999de81cffc89c1a6e3f24700a77263845a4a9bf943d23892f9",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-formulation-universe",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-ingredient-library",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-ip-fto-guard",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": "abfbf104f49b4dc6423bedbfd0dc0ef82585bd712012f23e91bd8e8dc2181595",
+      "benchmark_binding_matches_disk": false,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "3f2f6853f132f032a4b62a52ff3485d6f9b88b44affb3d50e84e8d310808ab11",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-known-answer-benchmarks",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "2b4a0650374a91820ed52ca1ff9e1fb1974e550570ba8076b2a7317e1675ddbf",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "2b4a0650374a91820ed52ca1ff9e1fb1974e550570ba8076b2a7317e1675ddbf",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-model-card-authority",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "3fd72f0fa08ae6e306a6718f0a618cab4abc876add5fd06521ac0022d0857761",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "3fd72f0fa08ae6e306a6718f0a618cab4abc876add5fd06521ac0022d0857761",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-molecule-design-gate",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "IMMUTABLE_ORD_ACQUISITION_ABSENT",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-molecule-generator",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-molecule-novelty",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": "fc5a505c7e88c931842abaaebe0d4b2373f1d580c9b7b1ff2523a46a0a25c923",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: current module diagnostic differs from the evaluated bytes"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": "fc5a505c7e88c931842abaaebe0d4b2373f1d580c9b7b1ff2523a46a0a25c923",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-molecule-property",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-molecule-role-ranker",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": "cfeb75e14e319a36b0181d36127e219a6c2eb8ce3a7e2cc00bb6a9d23e490afd",
+      "benchmark_binding_matches_disk": false,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "e1d95b6b338b10d5999d9d0af4e5b2e8f635eab72a888942e9a77439382eba17",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-optimizer-orchestrator",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "5fb9d00bb31361109f59082007a78d7603743d62891a58f3028912f676b59a8b",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "5fb9d00bb31361109f59082007a78d7603743d62891a58f3028912f676b59a8b",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-process-qc-twin",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "ff45578dd25d0c5a2e452ebfd7c194724a2a19225121f228feb48ca18eb31177",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: current module diagnostic differs from the evaluated bytes"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": "ff45578dd25d0c5a2e452ebfd7c194724a2a19225121f228feb48ca18eb31177",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-public-corrosion-benchmark",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "2bba87aa9a2e5caffe6ede62685a953fa8d676b9b015a8d73640e1b3178d8e9c",
+      "benchmark_binding_matches_disk": false,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "701482a26cbe704e06bdade4c3af3279e6fee066319c5041822f37ed8dbf9f1f",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-redteam-audit",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "157200403ad396e73c9e2b85f21bb1c15b27ab09b913ebd1c571259a7380f7d0",
+      "benchmark_binding_matches_disk": false,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "fc797aac97caa75ce25fba2f3c7b00742c7b3a601647982284c223121f0fc6e1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-report-packager",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": "792c1ce02d881d95affcc08f222d6bc0f6128c9b883f34029dda30474c4ad5fc",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "792c1ce02d881d95affcc08f222d6bc0f6128c9b883f34029dda30474c4ad5fc",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-run-provenance",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-solvency-score",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": "cdbfda048e73ef53971fd9860dc9ae0f9464fdd2214b550c76eaeb7d3211e965",
+      "benchmark_binding_matches_disk": false,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "a6a680a1202d8b18b097a0d390bf877d93dc985b0f09a5fe52cc2ea16b498115",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-source-ledger",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-sourceability-ehs",
+      "signed_payload_binds_this_receipt": null
+    },
+    {
+      "attested_benchmark_result_sha256": "767dbcbe1d56ca7c9a7fd8064687ecba6c7337f5752264f56f874ac9465f3a03",
+      "benchmark_binding_matches_disk": true,
+      "decision_report_failed_gates": [],
+      "decision_report_phase": "PHASE_0",
+      "disk_benchmark_result_sha256": "767dbcbe1d56ca7c9a7fd8064687ecba6c7337f5752264f56f874ac9465f3a03",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "evaluator_key_trust_anchored": true,
+      "evaluator_signature_valid": true,
+      "has_evaluation_receipt": true,
+      "module_id": "amphora-tolerance-robustness",
+      "signed_payload_binds_this_receipt": true
+    },
+    {
+      "attested_benchmark_result_sha256": null,
+      "benchmark_binding_matches_disk": null,
+      "decision_report_failed_gates": [
+        "SOURCE_LOCK_INVALID: missing field `authorization_overlay_path`",
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "decision_report_phase": "PRE_PHASE_0",
+      "disk_benchmark_result_sha256": null,
+      "evaluator_key_id": null,
+      "evaluator_key_trust_anchored": null,
+      "evaluator_signature_valid": null,
+      "has_evaluation_receipt": false,
+      "module_id": "amphora-viscosity-score",
+      "signed_payload_binds_this_receipt": null
+    }
+  ],
+  "question": "For every module the decision report calls PHASE_0, does its signed evaluation receipt still bind to the on-disk benchmark result AND carry a valid trust-anchored PHASE0_EVALUATOR signature? i.e. is the '16 PHASE_0' headline defensible today?",
+  "schema": "amphora.redteam-audit.phase0-count-integrity-v1.diagnostic.v1",
+  "trust_anchor_key_presence": {
+    "roles": {
+      "PHASE0_EVALUATOR": {
+        "derived_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "derives_pinned_key_id": true,
+        "pinned_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "seed_present": true
+      },
+      "PHASE0_INTERNAL_REVIEWER": {
+        "derived_key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+        "derives_pinned_key_id": true,
+        "pinned_key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+        "seed_present": true
+      }
+    },
+    "seed_dir": "/home/ubuntu/.local/share/amphora/phase0/keys"
+  },
+  "trust_store": {
+    "file": "config/phase0-trust-store.v1.json",
+    "file_sha256": "fc4fa87f70e58befc39b386a0975c9520a44b1d944c7c4a896d6c16b7437b233",
+    "pinned_evaluator_key_ids": [
+      "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+    ]
+  },
+  "verdict": {
+    "all_defensible_modules_are_infrastructure_or_control": true,
+    "defensible_phase0_count": 9,
+    "defensible_phase0_modules": [
+      "amphora-candidate-contract",
+      "amphora-envelope-gates",
+      "amphora-formulation-arithmetic",
+      "amphora-formulation-universe",
+      "amphora-model-card-authority",
+      "amphora-molecule-design-gate",
+      "amphora-process-qc-twin",
+      "amphora-run-provenance",
+      "amphora-tolerance-robustness"
+    ],
+    "drifted_phase0_modules_would_fail_reverification": [
+      "amphora-cro-protocol-packager",
+      "amphora-evidence-intake-validator",
+      "amphora-known-answer-benchmarks",
+      "amphora-optimizer-orchestrator",
+      "amphora-redteam-audit",
+      "amphora-report-packager",
+      "amphora-source-ledger"
+    ],
+    "finding": "The decision report claims 16 PHASE_0 modules, but only 9 are defensible today. 7 PHASE_0 modules carry a validly-signed evaluation receipt whose attested benchmark_result_sha256 no longer matches the benchmark result.v1.json on disk (the file was overwritten after signing); the phase0-reviewer bails on exactly this condition ('recorded benchmark is not bound to the evaluation receipt'), so each would FAIL re-verification. The evaluation RECEIPTS are intact and their trust-anchored PHASE0_EVALUATOR signatures verify; the corruption is post-signing drift of the bound benchmark file, not a forged badge. Separately, the two pinned trust-anchor Ed25519 keys ARE present on the host and re-derive the exact pinned key_ids (earlier 'keys absent' claim is stale) \u2014 so the only thing between a passing science benchmark and a real science Phase-0 is running the evaluate/review ceremony (a governance action), NOT a missing key and NOT missing science.",
+    "indefensible_other_phase0_modules": [],
+    "n_phase0_modules_failing_benchmark_binding": 7,
+    "n_phase0_modules_failing_other_checks": 0,
+    "phase0_claimed_modules": [
+      "amphora-candidate-contract",
+      "amphora-cro-protocol-packager",
+      "amphora-envelope-gates",
+      "amphora-evidence-intake-validator",
+      "amphora-formulation-arithmetic",
+      "amphora-formulation-universe",
+      "amphora-known-answer-benchmarks",
+      "amphora-model-card-authority",
+      "amphora-molecule-design-gate",
+      "amphora-optimizer-orchestrator",
+      "amphora-process-qc-twin",
+      "amphora-redteam-audit",
+      "amphora-report-packager",
+      "amphora-run-provenance",
+      "amphora-source-ledger",
+      "amphora-tolerance-robustness"
+    ],
+    "recommendation": "Report the honest defensible Phase-0 count as 9 (all infrastructure / trust-kernel / deterministic-control), NOT 16. To restore the 7 drifted badges, re-run the evaluate+review ceremony for those modules (regenerates result.v1.json and re-signs) \u2014 a governance step, since evaluate mints an immutable receipt. Do NOT present the 16 figure to founders.",
+    "reported_phase0_count": 16,
+    "trust_anchored_signing_keys_present_on_host": true,
+    "zero_science_capability_modules_at_defensible_phase0": true
+  }
+}

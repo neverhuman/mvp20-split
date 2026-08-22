@@ -1,0 +1,21 @@
+{
+  "authority": "AUDIT_ONLY",
+  "canonical_diagnostic_sha256": "f47de3e2456e3fca85a98ddcc07b6305f00300e67d9b0bb524d806dae7aab73e",
+  "kpis": {
+    "all_gates_pass": true,
+    "fail_closed_rate": 1.0,
+    "hansen_mae_chi_units": 0.6558380331,
+    "hansen_pearson_r": 0.8692336903,
+    "hildebrand_mae_chi_units": 1.7297636534,
+    "hildebrand_pearson_r": 0.459784888,
+    "mae_ratio_hildebrand_over_hansen": 2.6374860348,
+    "water_subset_hansen_mae": 1.2235362966,
+    "water_subset_hildebrand_mae": 4.2664178256
+  },
+  "module": "amphora-solvency-score",
+  "receipt_id": "hildebrand-vs-hansen-chi-baseline-578ec0df5b730e0af66818e71b19c2a009de34f92698e681b4b6f0f0c7972931",
+  "receipt_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/reference/mvp20/data/hildebrand_vs_hansen_chi_baseline_receipt.v1.json",
+  "receipt_sha256": "fe02ada5408e3b25035a20765aa9530f2eeb657b933e60a7ca4b17e4df9a82fd",
+  "schema": "amphora.solvency-score.phase0-kpi.hildebrand-vs-hansen-chi-baseline.v1",
+  "two_replay_sha256_gate": "PASS"
+}

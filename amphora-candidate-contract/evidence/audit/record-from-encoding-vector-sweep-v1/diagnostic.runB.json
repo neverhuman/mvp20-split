@@ -1,0 +1,170 @@
+{
+  "clean_control": {
+    "candidate_file_sha256": "ec66e7a1c346e605c176d83486446ad036cce8dd4ce2a4dce055c72041b522a7",
+    "exit_code": 0,
+    "final_state_sha256": "684b25be1849f1b2cb9c1a762558391ab6f7f3736b5b5790f825ad7a2b7835ab",
+    "label": "clean",
+    "observed_canonical_structure_hash": null,
+    "observed_result_hash": "44d2bbf3d44cdd436e355dd0c31dbd5ee7701c654e59c6d04616c7688241c14c",
+    "run_dir_name": "run-1787076484476",
+    "stderr_tail": ""
+  },
+  "leaked_vectors": [
+    "V1_top_level_key",
+    "V7_string_container"
+  ],
+  "non_leaked_vectors": [
+    "V2_array_container",
+    "V3_deep_nesting",
+    "V4_key_case_variant",
+    "V5_alternate_key_name",
+    "V6_semantic_alt_field",
+    "V8_unicode_homoglyph_key"
+  ],
+  "per_vector": [
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "injected_marker_prefix": "POISON_V1_TOPLEVEL_",
+      "observed_canonical_structure_hash": "POISON_V1_TOPLEVEL_deadbeef00000000000000000000000000000000000000000001",
+      "observed_result_hash_differs_from_clean": true,
+      "run_detail": {
+        "candidate_file_sha256": "e5b169b54278a4291e8f993b14adecc624ddda6e9e7e755358780f9b055bb059",
+        "exit_code": 0,
+        "final_state_sha256": "9c586bf2dde06da7e62bf38c9d413504e145cd9565ed2e07f1e16cc5988defb9",
+        "label": "V1_top_level_key",
+        "observed_canonical_structure_hash": "POISON_V1_TOPLEVEL_deadbeef00000000000000000000000000000000000000000001",
+        "observed_result_hash": "18df7aa085b0f2795512027a9166ee78e8e1bea8cd1e90d0f5659e2dc0589c24",
+        "run_dir_name": "run-1787076484616",
+        "stderr_tail": ""
+      },
+      "typed_field_leak_detected": true,
+      "vector_id": "V1_top_level_key"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "injected_marker_prefix": "POISON_V2_ARRAY_",
+      "observed_canonical_structure_hash": null,
+      "observed_result_hash_differs_from_clean": true,
+      "run_detail": {
+        "candidate_file_sha256": "e27ff04a841016a51bbe98eff3ba2f2c518ad1acac2b0a58273722aa73979b2b",
+        "exit_code": 0,
+        "final_state_sha256": "05d8efa80eacf8bf99124d0882fd3bb2f11d8323b8453f16170513ad208b343d",
+        "label": "V2_array_container",
+        "observed_canonical_structure_hash": null,
+        "observed_result_hash": "fb082c6b10118e34bddce94283788369be3cb69e489147b8103bde839d073fb2",
+        "run_dir_name": "run-1787076484722",
+        "stderr_tail": ""
+      },
+      "typed_field_leak_detected": false,
+      "vector_id": "V2_array_container"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "injected_marker_prefix": "POISON_V3_DEEPNEST_",
+      "observed_canonical_structure_hash": null,
+      "observed_result_hash_differs_from_clean": true,
+      "run_detail": {
+        "candidate_file_sha256": "7e79d47df593aedd7af15d19c396bfc7bc6e4c931846441849d83a06dc4e7d2f",
+        "exit_code": 0,
+        "final_state_sha256": "d0f7f6e96388d20b586b793587abe0e72df526ee713db7921c2e1dc6a8901375",
+        "label": "V3_deep_nesting",
+        "observed_canonical_structure_hash": null,
+        "observed_result_hash": "3d08cd9d91957348a972222bf984c365adb754aeedfdec328259cb1ff6c5f45a",
+        "run_dir_name": "run-1787076484846",
+        "stderr_tail": ""
+      },
+      "typed_field_leak_detected": false,
+      "vector_id": "V3_deep_nesting"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "injected_marker_prefix": "POISON_V4_KEYCASE_",
+      "observed_canonical_structure_hash": null,
+      "observed_result_hash_differs_from_clean": true,
+      "run_detail": {
+        "candidate_file_sha256": "2e0d0ff9a41660470a98e158d0028e90ef4140ba68ded290efb279db977113d6",
+        "exit_code": 0,
+        "final_state_sha256": "d032103e2b40b036e574e8896d98867144a872f0116e92a53f0ace0c68c12d6a",
+        "label": "V4_key_case_variant",
+        "observed_canonical_structure_hash": null,
+        "observed_result_hash": "06ae071c10772b9739650c0a81f58ef409f2ee09a0179816b85b596fdce01c60",
+        "run_dir_name": "run-1787076484961",
+        "stderr_tail": ""
+      },
+      "typed_field_leak_detected": false,
+      "vector_id": "V4_key_case_variant"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "injected_marker_prefix": "POISON_V5_ALTKEY_",
+      "observed_canonical_structure_hash": null,
+      "observed_result_hash_differs_from_clean": true,
+      "run_detail": {
+        "candidate_file_sha256": "96da37fee926da50b582cdf4d641c1ec42a60e350ca34e397a9f0f84130ee4a8",
+        "exit_code": 0,
+        "final_state_sha256": "9fbde8c00d29862e838315a9f7aa2a95311e50684a14af1a12d62bca891bed83",
+        "label": "V5_alternate_key_name",
+        "observed_canonical_structure_hash": null,
+        "observed_result_hash": "c3c762f35ff9937eb17be01027bfd234dfb9075690142a1fb7b1d924dacf0376",
+        "run_dir_name": "run-1787076485065",
+        "stderr_tail": ""
+      },
+      "typed_field_leak_detected": false,
+      "vector_id": "V5_alternate_key_name"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "injected_marker_prefix": "POISON_V6_SEMALT_",
+      "observed_canonical_structure_hash": null,
+      "observed_result_hash_differs_from_clean": true,
+      "run_detail": {
+        "candidate_file_sha256": "dd8f987c7d970508bf4490413fde94e08b872296e6dabee581828c0d276b90da",
+        "exit_code": 0,
+        "final_state_sha256": "0ae4cf4ebee7dd9351ccb5c2728561b6482996fafac76534d73460c2eca3f7fd",
+        "label": "V6_semantic_alt_field",
+        "observed_canonical_structure_hash": null,
+        "observed_result_hash": "3d237b0d3f9077f769ed616c8d4e5c25d77e47cec187ed7b03333ac0f1dea0b5",
+        "run_dir_name": "run-1787076485174",
+        "stderr_tail": ""
+      },
+      "typed_field_leak_detected": false,
+      "vector_id": "V6_semantic_alt_field"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "injected_marker_prefix": "POISON_V7_STRWRAP_",
+      "observed_canonical_structure_hash": "{\"embedded\": \"POISON_V7_STRWRAP_deadbeef00000000000000000000000000000000000000000007\"}",
+      "observed_result_hash_differs_from_clean": true,
+      "run_detail": {
+        "candidate_file_sha256": "6d50c856561d5ef5671ee5e346cc9b1842345e8d54f6e08664654d608aacd1fb",
+        "exit_code": 0,
+        "final_state_sha256": "d6ff5ec14a275a636d79764dbb4a5a29effc10e922fe37c28f1336056c396c74",
+        "label": "V7_string_container",
+        "observed_canonical_structure_hash": "{\"embedded\": \"POISON_V7_STRWRAP_deadbeef00000000000000000000000000000000000000000007\"}",
+        "observed_result_hash": "ba60abfd1b3f3603134afdb05bf7d19521fc664b994e0d0b8185742b9ea4dcf3",
+        "run_dir_name": "run-1787076485281",
+        "stderr_tail": ""
+      },
+      "typed_field_leak_detected": true,
+      "vector_id": "V7_string_container"
+    },
+    {
+      "candidate_accepted_by_contract_layer": true,
+      "injected_marker_prefix": "POISON_V8_HOMOGLYPH_",
+      "observed_canonical_structure_hash": null,
+      "observed_result_hash_differs_from_clean": true,
+      "run_detail": {
+        "candidate_file_sha256": "aa80c114678d7ee12c301389790722bbad5a31c8bfa47608ef7db994ed401833",
+        "exit_code": 0,
+        "final_state_sha256": "7a2a32f14e911ca14c5f7f61c9f49b7348e2ca52c846d9c21a495d0c23aa504a",
+        "label": "V8_unicode_homoglyph_key",
+        "observed_canonical_structure_hash": null,
+        "observed_result_hash": "42b029994aa073cf58dd4c69d6e50d4412391f27ba8658528344605c9919b1c0",
+        "run_dir_name": "run-1787076485390",
+        "stderr_tail": ""
+      },
+      "typed_field_leak_detected": false,
+      "vector_id": "V8_unicode_homoglyph_key"
+    }
+  ]
+}

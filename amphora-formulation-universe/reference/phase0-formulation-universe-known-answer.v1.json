@@ -1,0 +1,314 @@
+{
+  "acceptance_bar": {
+    "authority_lock_preservation_rate_floor": 1.0,
+    "axis_order_determinism_rate_floor": 1.0,
+    "candidate_feasibility_claim_ignore_rate_floor": 1.0,
+    "cartesian_canonical_duplication_fail_closed_rate_floor": 1.0,
+    "cartesian_cardinality_overflow_fail_closed_rate_floor": 1.0,
+    "cartesian_identity_correctness_rate_floor": 1.0,
+    "cartesian_product_arithmetic_correctness_rate_floor": 1.0,
+    "infeasible_index_laundering_fail_closed_rate_floor": 1.0
+  },
+  "authority": {
+    "constraint_only": true,
+    "feasibility_basis": "DECLARATIVE_ACCOUNTING_ONLY",
+    "optimizer_authority": false,
+    "scientific_readiness": "NOT_APPLICABLE"
+  },
+  "fixture_id": "amphora-formulation-universe-phase0-known-answer-2026-07-21",
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored Design-of-Experiments universe compilation from Montgomery 2017 Design and Analysis of Experiments 8th ed. and Wicks/Jones/Pappas 2007 \u00a724.5 for Phase-0 Cartesian-accounting controls only",
+    "source_id": "amphora_phase0_formulation_universe_known_answer",
+    "source_url": "local:amphora-formulation-universe/reference/phase0-formulation-universe-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.formulation-universe-phase0-known-answer.v1",
+  "toolkit_version": "2026.03.2",
+  "universes": [
+    {
+      "axes": {
+        "hardener_choice": [
+          "IPDA",
+          "TETA"
+        ],
+        "resin_choice": [
+          "DGEBA",
+          "DGEBF"
+        ],
+        "solvent_choice": [
+          "toluene",
+          "MEK"
+        ]
+      },
+      "design_type": "2^k_full_factorial",
+      "expected_cartesian_total": 8,
+      "expected_infeasible_candidate_count": 0,
+      "expected_solved_candidate_count": 8,
+      "industrial_context": "Three-factor two-level screen: resin identity \u00d7 hardener identity \u00d7 solvent identity",
+      "infeasible_indices": [],
+      "nominal_source": "Montgomery 2017 8th ed. Example 6.1 (2^3 full factorial)",
+      "universe_id": "2^3-full-factorial-basic"
+    },
+    {
+      "axes": {
+        "hardener_choice": [
+          "IPDA",
+          "TETA"
+        ],
+        "pigment_choice": [
+          "TiO2",
+          "carbon-black"
+        ],
+        "resin_choice": [
+          "DGEBA",
+          "DGEBF"
+        ],
+        "solvent_choice": [
+          "toluene",
+          "MEK"
+        ]
+      },
+      "design_type": "2^k_full_factorial",
+      "expected_cartesian_total": 16,
+      "expected_infeasible_candidate_count": 0,
+      "expected_solved_candidate_count": 16,
+      "industrial_context": "Four-factor two-level adhesive-primer screen",
+      "infeasible_indices": [],
+      "nominal_source": "Montgomery 2017 8th ed. \u00a76.3 (2^4 full factorial)",
+      "universe_id": "2^4-full-factorial-adhesive-screen"
+    },
+    {
+      "axes": {
+        "hardener_grade": [
+          "fast",
+          "medium",
+          "slow"
+        ],
+        "resin_grade": [
+          "low_MW",
+          "med_MW",
+          "high_MW"
+        ]
+      },
+      "design_type": "3^k_full_factorial",
+      "expected_cartesian_total": 9,
+      "expected_infeasible_candidate_count": 0,
+      "expected_solved_candidate_count": 9,
+      "industrial_context": "Two-factor three-level mix-ratio screen",
+      "infeasible_indices": [],
+      "nominal_source": "Montgomery 2017 8th ed. \u00a75.1 (3^2 full factorial)",
+      "universe_id": "3^2-full-factorial-mix-ratio-screen"
+    },
+    {
+      "axes": {
+        "hardener_choice": [
+          "IPDA",
+          "TETA",
+          "PACM"
+        ],
+        "resin_choice": [
+          "DGEBA",
+          "DGEBF",
+          "TGDDM"
+        ],
+        "solvent_choice": [
+          "toluene",
+          "MEK",
+          "MIBK"
+        ]
+      },
+      "design_type": "3^k_full_factorial",
+      "expected_cartesian_total": 27,
+      "expected_infeasible_candidate_count": 0,
+      "expected_solved_candidate_count": 27,
+      "industrial_context": "Three-factor three-level full-formulation screen (27 cells)",
+      "infeasible_indices": [],
+      "nominal_source": "Montgomery 2017 8th ed. \u00a75.3 (3^3 factorial)",
+      "universe_id": "3^3-full-factorial-full-formulation"
+    },
+    {
+      "axes": {
+        "additive_choice": [
+          "defoamer",
+          "wetting-agent"
+        ],
+        "hardener_choice": [
+          "IPDA",
+          "TETA"
+        ],
+        "pigment_choice": [
+          "TiO2",
+          "carbon-black"
+        ],
+        "resin_choice": [
+          "DGEBA",
+          "DGEBF"
+        ],
+        "solvent_choice": [
+          "toluene",
+          "MEK"
+        ]
+      },
+      "design_type": "2^(k-p)_fractional_factorial",
+      "expected_cartesian_total": 32,
+      "expected_infeasible_candidate_count": 0,
+      "expected_solved_candidate_count": 32,
+      "industrial_context": "Enumerating the full 2^5 space; downstream design selects half-fraction",
+      "infeasible_indices": [],
+      "nominal_source": "Montgomery 2017 8th ed. \u00a78.2 (2^(5-1) half-fraction)",
+      "universe_id": "2^(5-1)-half-fraction-screening"
+    },
+    {
+      "axes": {
+        "hardener_choice": [
+          "IPDA",
+          "TETA",
+          "PACM"
+        ],
+        "resin_choice": [
+          "DGEBA",
+          "DGEBF",
+          "TGDDM",
+          "novolac"
+        ],
+        "solvent_choice": [
+          "toluene",
+          "MEK"
+        ]
+      },
+      "design_type": "mixed_level_factorial",
+      "expected_cartesian_total": 24,
+      "expected_infeasible_candidate_count": 0,
+      "expected_solved_candidate_count": 24,
+      "industrial_context": "Four-resin three-hardener two-solvent screening (24 cells)",
+      "infeasible_indices": [],
+      "nominal_source": "Wicks/Jones/Pappas 2007 \u00a724.5 mixed-level formulation factorial",
+      "universe_id": "mixed-4x3x2-formulation-screen"
+    },
+    {
+      "axes": {
+        "hardener_choice": [
+          "IPDA",
+          "TETA"
+        ],
+        "resin_choice": [
+          "DGEBA",
+          "DGEBF"
+        ],
+        "solvent_choice": [
+          "toluene",
+          "MEK"
+        ]
+      },
+      "design_type": "2^k_full_factorial_with_infeasibility",
+      "expected_cartesian_total": 8,
+      "expected_infeasible_candidate_count": 2,
+      "expected_solved_candidate_count": 6,
+      "industrial_context": "2^3 screen with two corner cells excluded a priori due to declared resin-hardener incompatibility",
+      "infeasible_indices": [
+        0,
+        7
+      ],
+      "nominal_source": "Wicks/Jones/Pappas 2007 \u00a724.5 with corner-cell exclusions",
+      "universe_id": "2^3-with-two-infeasible-compatibility-exclusions"
+    },
+    {
+      "axes": {
+        "hardener_choice": [
+          "IPDA",
+          "TETA",
+          "PACM"
+        ],
+        "resin_choice": [
+          "DGEBA",
+          "DGEBF",
+          "TGDDM"
+        ],
+        "solvent_choice": [
+          "toluene",
+          "MEK",
+          "MIBK"
+        ]
+      },
+      "design_type": "3^k_full_factorial_with_infeasibility",
+      "expected_cartesian_total": 27,
+      "expected_infeasible_candidate_count": 5,
+      "expected_solved_candidate_count": 22,
+      "industrial_context": "3^3 screen with five cells excluded due to solvent-solute mismatch",
+      "infeasible_indices": [
+        3,
+        9,
+        15,
+        21,
+        25
+      ],
+      "nominal_source": "Montgomery 2017 8th ed. \u00a75.3 with declared subset exclusion",
+      "universe_id": "3^3-with-five-infeasible-solvent-compatibility"
+    },
+    {
+      "axes": {
+        "hardener_grade": [
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "resin_grade": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "design_type": "mixed_level_factorial_with_infeasibility",
+      "expected_cartesian_total": 25,
+      "expected_infeasible_candidate_count": 3,
+      "expected_solved_candidate_count": 22,
+      "industrial_context": "Two-factor five-level grade-compatibility screen with three excluded pairs",
+      "infeasible_indices": [
+        0,
+        12,
+        24
+      ],
+      "nominal_source": "Wicks/Jones/Pappas 2007 \u00a724.5 grade-compatibility restrictions",
+      "universe_id": "5x5-with-three-infeasible-mix-ratio-restriction"
+    },
+    {
+      "axes": {
+        "hardener_choice": [
+          "IPDA",
+          "TETA"
+        ],
+        "pigment_choice": [
+          "TiO2",
+          "carbon-black"
+        ],
+        "resin_choice": [
+          "DGEBA",
+          "DGEBF"
+        ],
+        "solvent_choice": [
+          "toluene",
+          "MEK"
+        ]
+      },
+      "design_type": "2^k_full_factorial_with_infeasibility",
+      "expected_cartesian_total": 16,
+      "expected_infeasible_candidate_count": 4,
+      "expected_solved_candidate_count": 12,
+      "industrial_context": "2^4 screen (16 cells) with four corner cells excluded due to industrial incompatibility",
+      "infeasible_indices": [
+        0,
+        1,
+        14,
+        15
+      ],
+      "nominal_source": "Montgomery 2017 8th ed. \u00a76.3 with corner cell exclusions",
+      "universe_id": "2^4-with-fully-infeasible-edge-cases"
+    }
+  ]
+}

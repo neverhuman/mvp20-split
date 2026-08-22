@@ -1,0 +1,384 @@
+{
+  "acceptance": {
+    "a_clopper_pearson_matches_refuting_receipt": true,
+    "aggregate_intdiv1_parity_with_superseded_receipt": true,
+    "all_pass": true,
+    "b_corrected_yield_matches_refuting_receipt": true,
+    "c_family_diversity_matches_refuting_receipt": true,
+    "structures_unchanged": true
+  },
+  "clopper_pearson": {
+    "alpha": 0.05,
+    "closed_form_agrees_to_1e_12": true,
+    "closed_form_boundary_crosscheck_lower": 0.907487239,
+    "corrected_ci_4dp": [
+      0.9075,
+      1.0
+    ],
+    "corrected_ci_lower": 0.907487,
+    "corrected_ci_upper": 1.0,
+    "derivation": "At the all-success boundary k=n the percentile bootstrap is degenerate: every resample of 38 identical successes yields feasible_fraction exactly 1.0, so the percentile interval collapses to [1,1] with probability 1 regardless of n and carries zero information about sampling uncertainty. The admissible exact interval inverts the binomial tail: lower solves P(X>=k | p)=alpha/2, i.e. p^n = alpha/2, giving p = (0.025)^(1/38) = 0.907487; upper is 1.0 because no p<1 is excluded from above when all trials succeed.",
+    "k": 38,
+    "lower_bound_gap_vs_superseded": 0.092513,
+    "matches_refuting_receipt_to_4dp": true,
+    "matches_spec_target_4dp": true,
+    "method": "exact binomial Clopper-Pearson (1934), scipy.stats.beta.ppf",
+    "n": 38,
+    "point_estimate": 1.0,
+    "refuting_receipt_clopper_pearson_lower": 0.907487,
+    "refuting_receipt_clopper_pearson_upper": 1.0,
+    "superseded_reported_ci": [
+      1.0,
+      1.0
+    ]
+  },
+  "corrected_difunctional_yield": {
+    "amine_site_histogram_over_accepted": {
+      "2": 29,
+      "3": 3,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+    },
+    "corrected_valid_unique_difunctional_feasible_yield": 29,
+    "derivation": "Re-derived directly from the superseded receipt's own hash-locked diagnostic.canonical.json amine_sites table (sha256 below), applying the receipt's own stated gate definition difunctional == amine_sites==2. All 38 accepted proposals carry difunctional_hardener=true, but 9 of them carry amine_sites in {3,4,5,6,7,8,9}; the boolean gate therefore did not implement its stated definition. Excluding those 9 leaves 29 genuinely difunctional accepted proposals. Structures are unchanged -- this is a label/count correction, not a re-enumeration.",
+    "matches_refuting_receipt_amine_counts": true,
+    "matches_refuting_receipt_mismatch_set": true,
+    "matches_refuting_receipt_yield": true,
+    "mislabeled_proposals": [
+      {
+        "active_nh": 5,
+        "amine_sites": 3,
+        "canonical_smiles": "NCCNCCN",
+        "difunctional_under_stated_definition": false,
+        "family": "F1_polyethyleneamine",
+        "feasible_sa_below_6": true,
+        "name": "DETA",
+        "receipt_difunctional_hardener_flag": true
+      },
+      {
+        "active_nh": 3,
+        "amine_sites": 3,
+        "canonical_smiles": "NCCN1CCCNCC1",
+        "difunctional_under_stated_definition": false,
+        "family": "F3_cycloaliphatic",
+        "feasible_sa_below_6": true,
+        "name": "homopiperazine-N,N'",
+        "receipt_difunctional_hardener_flag": true
+      },
+      {
+        "active_nh": 3,
+        "amine_sites": 3,
+        "canonical_smiles": "NCCN1CCNCC1",
+        "difunctional_under_stated_definition": false,
+        "family": "F3_cycloaliphatic",
+        "feasible_sa_below_6": true,
+        "name": "piperazine-bis(aminoethyl)/AEP",
+        "receipt_difunctional_hardener_flag": true
+      },
+      {
+        "active_nh": 6,
+        "amine_sites": 4,
+        "canonical_smiles": "NCCNCCNCCN",
+        "difunctional_under_stated_definition": false,
+        "family": "F1_polyethyleneamine",
+        "feasible_sa_below_6": true,
+        "name": "TETA",
+        "receipt_difunctional_hardener_flag": true
+      },
+      {
+        "active_nh": 7,
+        "amine_sites": 5,
+        "canonical_smiles": "NCCNCCNCCNCCN",
+        "difunctional_under_stated_definition": false,
+        "family": "F1_polyethyleneamine",
+        "feasible_sa_below_6": true,
+        "name": "TEPA",
+        "receipt_difunctional_hardener_flag": true
+      },
+      {
+        "active_nh": 8,
+        "amine_sites": 6,
+        "canonical_smiles": "NCCNCCNCCNCCNCCN",
+        "difunctional_under_stated_definition": false,
+        "family": "F1_polyethyleneamine",
+        "feasible_sa_below_6": true,
+        "name": "PEHA",
+        "receipt_difunctional_hardener_flag": true
+      },
+      {
+        "active_nh": 9,
+        "amine_sites": 7,
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCN",
+        "difunctional_under_stated_definition": false,
+        "family": "F1_polyethyleneamine",
+        "feasible_sa_below_6": true,
+        "name": "ethyleneamine-k6",
+        "receipt_difunctional_hardener_flag": true
+      },
+      {
+        "active_nh": 10,
+        "amine_sites": 8,
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCNCCN",
+        "difunctional_under_stated_definition": false,
+        "family": "F1_polyethyleneamine",
+        "feasible_sa_below_6": true,
+        "name": "ethyleneamine-k7",
+        "receipt_difunctional_hardener_flag": true
+      },
+      {
+        "active_nh": 11,
+        "amine_sites": 9,
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCNCCNCCN",
+        "difunctional_under_stated_definition": false,
+        "family": "F1_polyethyleneamine",
+        "feasible_sa_below_6": true,
+        "name": "ethyleneamine-k8",
+        "receipt_difunctional_hardener_flag": true
+      }
+    ],
+    "n_accepted_proposals": 38,
+    "n_flagged_difunctional_in_superseded_receipt": 38,
+    "n_mislabeled": 9,
+    "refuting_receipt_corrected_yield": 29,
+    "refuting_receipt_n_mismatches": 9,
+    "stated_definition_of_difunctional": "amine_sites == 2",
+    "superseded_claimed_yield": 38
+  },
+  "family_resolved_diversity": {
+    "adjacent_homolog_saturation": {
+      "F1_polyethyleneamine": {
+        "adjacent_tanimoto": [
+          0.36363636363636365,
+          0.9090909090909091,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "n_adjacent_pairs": 7,
+        "n_saturated_ge_0p99": 5,
+        "order_by_heavy_atom_count": [
+          "NCCN",
+          "NCCNCCN",
+          "NCCNCCNCCN",
+          "NCCNCCNCCNCCN",
+          "NCCNCCNCCNCCNCCN",
+          "NCCNCCNCCNCCNCCNCCN",
+          "NCCNCCNCCNCCNCCNCCNCCN",
+          "NCCNCCNCCNCCNCCNCCNCCNCCN"
+        ],
+        "saturated_fraction": 0.7142857142857143
+      },
+      "F2_alpha_omega_diamine": {
+        "adjacent_tanimoto": [
+          0.75,
+          0.875,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "n_adjacent_pairs": 9,
+        "n_saturated_ge_0p99": 7,
+        "order_by_heavy_atom_count": [
+          "NCCCN",
+          "NCCCCN",
+          "NCCCCCN",
+          "NCCCCCCN",
+          "NCCCCCCCN",
+          "NCCCCCCCCN",
+          "NCCCCCCCCCN",
+          "NCCCCCCCCCCN",
+          "NCCCCCCCCCCCN",
+          "NCCCCCCCCCCCCN"
+        ],
+        "saturated_fraction": 0.7777777777777778
+      }
+    },
+    "aggregate": {
+      "n_pairs": 703,
+      "parity_with_superseded_receipt_6dp": true,
+      "recomputed_intdiv1": 0.7680979235095,
+      "recomputed_mean_pairwise_tanimoto": 0.23190207649050001,
+      "superseded_receipt_reported_intdiv1": 0.768098
+    },
+    "combined_adjacent_pairs_n": 16,
+    "combined_adjacent_pairs_saturated": 12,
+    "cross_family_homolog_vs_ring_mean_tanimoto": 0.10538435321223348,
+    "derivation": "The superseded diversity receipt's headline IntDiv_1=0.7681 is reproduced exactly (parity self-test), confirming the same instrument is used here at finer resolution. Partitioning the same 38 molecules by the grammar's own family label shows the aggregate is carried by CROSS-family contrast (homolog-bloc vs ring-bearing mean Tanimoto 0.1054); WITHIN the two linear chain-homolog families -- 18/38 = 47.4% of the accepted set -- the same ECFP-r2/2048 Tanimoto instrument is near-blind: F1_polyethyleneamine IntDiv_1=0.1851 and F2_alpha_omega_diamine IntDiv_1=0.0870, with 12 of 16 chain-length-adjacent neighbour pairs fingerprint-saturated at Tanimoto>=0.99 (indistinguishable). Once a linear repeat-unit chain exceeds ~2x the fingerprint radius, further repeat units add no new substructure environments, so ECFP similarity saturates toward 1.0.",
+    "family_resolution_decision_rule_evaluation": [
+      {
+        "adjacent_saturated_fraction": 0.7142857142857143,
+        "adjacent_saturation_ge_0p50": true,
+        "family": "F1_polyethyleneamine",
+        "fraction_of_accepted_set": 0.21052631578947367,
+        "intdiv1": 0.18506493506493515,
+        "intdiv1_le_0p25": true,
+        "n": 8,
+        "violates_decision_rule": true
+      },
+      {
+        "adjacent_saturated_fraction": 0.7777777777777778,
+        "adjacent_saturation_ge_0p50": true,
+        "family": "F2_alpha_omega_diamine",
+        "fraction_of_accepted_set": 0.2631578947368421,
+        "intdiv1": 0.08703703703703702,
+        "intdiv1_le_0p25": true,
+        "n": 10,
+        "violates_decision_rule": true
+      },
+      {
+        "adjacent_saturated_fraction": null,
+        "adjacent_saturation_ge_0p50": null,
+        "family": "F3_cycloaliphatic",
+        "fraction_of_accepted_set": 0.2631578947368421,
+        "intdiv1": 0.7484599748041226,
+        "intdiv1_le_0p25": false,
+        "n": 10,
+        "violates_decision_rule": false
+      },
+      {
+        "adjacent_saturated_fraction": null,
+        "adjacent_saturation_ge_0p50": null,
+        "family": "F4_bridged_bisaniline",
+        "fraction_of_accepted_set": 0.18421052631578946,
+        "intdiv1": 0.6092561481981322,
+        "intdiv1_le_0p25": false,
+        "n": 7,
+        "violates_decision_rule": false
+      }
+    ],
+    "homolog_bloc": {
+      "families": [
+        "F1_polyethyleneamine",
+        "F2_alpha_omega_diamine"
+      ],
+      "fraction_of_accepted_set": 0.47368421052631576,
+      "intdiv1": 0.3848002034276544,
+      "mean_pairwise_tanimoto": 0.6151997965723456,
+      "n_members": 18,
+      "n_pairs": 153
+    },
+    "instrument": {
+      "intdiv1_definition": "1 - mean pairwise Tanimoto over all C(n,2) distinct pairs",
+      "n_bits": 2048,
+      "note": "identical instrument to both superseded and refuting receipts",
+      "radius": 2,
+      "tanimoto": "binary Tanimoto coefficient",
+      "type": "Morgan/ECFP"
+    },
+    "matches_refuting_receipt_F1_intdiv1_4dp": true,
+    "matches_refuting_receipt_F2_intdiv1_4dp": true,
+    "matches_refuting_receipt_combined_saturation": true,
+    "matches_refuting_receipt_homolog_fraction": true,
+    "matches_spec_target_F1_0p1851": true,
+    "matches_spec_target_F2_0p0870": true,
+    "per_family_resolved": {
+      "F1_polyethyleneamine": {
+        "fraction_of_accepted_set": 0.21052631578947367,
+        "intdiv1": 0.18506493506493515,
+        "mean_pairwise_tanimoto": 0.8149350649350648,
+        "n": 8,
+        "n_pairs": 28
+      },
+      "F2_alpha_omega_diamine": {
+        "fraction_of_accepted_set": 0.2631578947368421,
+        "intdiv1": 0.08703703703703702,
+        "mean_pairwise_tanimoto": 0.912962962962963,
+        "n": 10,
+        "n_pairs": 45
+      },
+      "F3_cycloaliphatic": {
+        "fraction_of_accepted_set": 0.2631578947368421,
+        "intdiv1": 0.7484599748041226,
+        "mean_pairwise_tanimoto": 0.25154002519587737,
+        "n": 10,
+        "n_pairs": 45
+      },
+      "F4_bridged_bisaniline": {
+        "fraction_of_accepted_set": 0.18421052631578946,
+        "intdiv1": 0.6092561481981322,
+        "mean_pairwise_tanimoto": 0.3907438518018677,
+        "n": 7,
+        "n_pairs": 21
+      },
+      "F5_xylylenediamine": {
+        "fraction_of_accepted_set": 0.07894736842105263,
+        "intdiv1": 0.521078431372549,
+        "mean_pairwise_tanimoto": 0.478921568627451,
+        "n": 3,
+        "n_pairs": 3
+      }
+    },
+    "refuting_receipt_values": {
+      "F1_adjacent_saturated_fraction": 0.7142857142857143,
+      "F1_intdiv1": 0.18506493506493515,
+      "F2_adjacent_saturated_fraction": 0.7777777777777778,
+      "F2_intdiv1": 0.08703703703703702,
+      "combined_adjacent_pairs_n": 16,
+      "combined_adjacent_pairs_tanimoto_ge_0p99": 12,
+      "cross_bloc_homolog_vs_ring_mean_tanimoto": 0.10538435321223348,
+      "homolog_bloc_fraction_of_accepted_set": 0.47368421052631576
+    }
+  },
+  "generated_on_host": "xbabe2",
+  "inputs_sha256": {
+    "refuting_a_ci_inadmissibility_receipt": "2230719ec7c5a208fbcc474fdaa663132fbe2db17455043e57db3d3faf1a7142",
+    "refuting_b_functionality_mislabel_receipt": "fb200b132fd908d0a87b14db72053464754692a7e32ff3314ba913310a6151dc",
+    "refuting_c_homolog_saturation_receipt": "30d24304277874a331a104025f9e5fc168967240ab000dd775e8940041652466",
+    "source_diagnostic": "55afc806360e6abeab30bbc7e71ed94e8ef4a5ee6e1f67a0b02358c699dc01a8",
+    "superseded_grammar_yield_receipt": "a7bedf57ece42bee60fabb4a1b7069a205b1297735356f21cc4e71dc64c98b0a",
+    "superseded_scaffold_diversity_receipt": "f74b5bcc37eb4306109984178e305d3aa84b4d4f24527d5a984f32125cff9fb7"
+  },
+  "module": "amphora-molecule-generator",
+  "observed_notes": [
+    "Refuting receipt (c) prose field 'claim' states '6/7 and 7/9' chain-adjacent saturated pairs for F1/F2, while its own results block reports per_family_decision_rule_evaluation[0].adjacent_pairs_tanimoto_ge_0p99_fraction=0.7142857 (= 5/7) and its hypothesis_evaluation.evidence text says '5/7'. This repair independently recomputes 5/7 for F1 and 7/9 for F2 (12/16 combined), matching the refuting receipt's RESULTS block and its evidence text; the '6/7' in that receipt's claim prose is a transcription slip in the refuted artifact's narrative and does not affect any numeric verdict. No existing artifact is modified to correct it."
+  ],
+  "rdkit_version": "2026.03.2",
+  "re_attack": {
+    "a_ci_inadmissibility": {
+      "check": "recompute exact Clopper-Pearson 95% CI at k=38,n=38 and compare to the superseded reported bootstrap CI under the refuting receipt's a-priori rule (REFUTED if reported_lower - cp_lower > 0.02)",
+      "gap_threshold": 0.02,
+      "observed_cp_ci": [
+        0.907487,
+        1.0
+      ],
+      "observed_lower_gap": 0.092513,
+      "original_finding_reproduced": true,
+      "post_fix_gap": 0.0,
+      "result_after_fix": "SUPERSEDED_VALUE_ADMISSIBLE -- this receipt publishes [0.9075,1.0000]; gap vs published lower is 0.0"
+    },
+    "b_functionality_mislabel": {
+      "check": "re-derive difunctional yield from the hash-locked amine_sites table under the stated definition amine_sites==2 (REFUTED if any accepted proposal with amine_sites!=2 is flagged difunctional_hardener=true)",
+      "observed_corrected_yield": 29,
+      "observed_n_mismatches": 9,
+      "original_finding_reproduced": true,
+      "post_fix_n_mismatches": 0,
+      "result_after_fix": "CORRECTED -- this receipt publishes 29/38 and enumerates all 9 mislabeled proposals with their amine-site counts; 0 remaining proposals claimed difunctional with amine_sites!=2"
+    },
+    "c_homolog_fingerprint_saturation": {
+      "check": "re-evaluate the superseded receipt's own Morgan r2/2048 Tanimoto instrument WITHIN each family (REFUTED if any family >=15% of the set has IntDiv_1<=0.25 AND >=50% adjacent-neighbour saturation at Tanimoto>=0.99)",
+      "observed_F1_intdiv1": 0.18506493506493515,
+      "observed_F2_intdiv1": 0.08703703703703702,
+      "observed_violating_families": [
+        "F1_polyethyleneamine",
+        "F2_alpha_omega_diamine"
+      ],
+      "original_finding_reproduced": true,
+      "post_fix_undisclosed_violating_families": 0,
+      "result_after_fix": "DISCLOSED -- the aggregate IntDiv_1=0.7681 is retained ONLY as a cross-family statement; the within-family near-degeneracy of the two homolog series (47.4% of the set) is published alongside it, so the corrected claim no longer asserts what the rule refutes"
+    }
+  },
+  "repair_item": "R-A06",
+  "repair_mode": "interactive-2026-08-03",
+  "schema": "amphora.molecule-generator.r-a06-repair-diagnostic.v1",
+  "scipy_version": "1.16.3"
+}

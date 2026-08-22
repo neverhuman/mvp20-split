@@ -1,0 +1,358 @@
+{
+  "$id": "https://amphora.local/schemas/module-capability-profile.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Amphora module capability profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "module_id",
+    "lane",
+    "audit_date",
+    "phase",
+    "candidate_types",
+    "normalization_owner",
+    "current_state",
+    "input_formats",
+    "normalization_policy",
+    "examples",
+    "paths",
+    "ceilings",
+    "datasets",
+    "benchmarks",
+    "evidence_inventory",
+    "kpis",
+    "phase_gates",
+    "dependencies",
+    "consumers",
+    "priority",
+    "automatic_demotion"
+  ],
+  "properties": {
+    "$schema": {"type": "string", "minLength": 1},
+    "schema": {"const": "amphora.module-capability-profile.v1"},
+    "module_id": {"type": "string", "pattern": "^amphora-[a-z0-9-]+$"},
+    "lane": {"enum": ["molecule", "formulation", "performance", "infrastructure"]},
+    "audit_date": {"type": "string", "format": "date"},
+    "phase": {"enum": ["PRE_PHASE_0", "PHASE_0", "PHASE_1", "PHASE_2"]},
+    "candidate_types": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["molecule", "formulation", "evidence_package"]}
+    },
+    "normalization_owner": {"const": "amphora-candidate-contract"},
+    "current_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operational_readiness", "scientific_readiness", "runtime_integration", "implementation_version", "adapter_registered", "checked_artifact_count", "checked_benchmark_status"],
+      "properties": {
+        "operational_readiness": {"enum": ["AUDIT", "BLOCKED", "COMPLETE", "GATED", "OPEN", "READY", "ROADMAP", "SHADOW"]},
+        "scientific_readiness": {"enum": ["UNVALIDATED", "LOCKED_INTERNAL", "INDEPENDENTLY_VALIDATED", "PROSPECTIVELY_REPLICATED", "NOT_APPLICABLE"]},
+        "runtime_integration": {"type": "string", "minLength": 1},
+        "implementation_version": {"type": "string", "minLength": 1},
+        "adapter_registered": {"type": "boolean"},
+        "checked_artifact_count": {"type": "integer", "minimum": 0},
+        "checked_benchmark_status": {"enum": ["NO_CHECKED_BENCHMARK_RESULT", "CHECKED_ARTIFACT_REPORTED_STATUS", "CHECKED_ARTIFACT_REPORTED_METRICS"]}
+      }
+    },
+    "input_formats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current", "target", "unsupported_fail_closed", "target_formats_are_runtime_supported"],
+      "properties": {
+        "current": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "target": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "unsupported_fail_closed": {"const": true},
+        "target_formats_are_runtime_supported": {"type": "boolean"}
+      }
+    },
+    "normalization_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["original_byte_hash", "normalized_structure_or_formula_hash", "toolkit_and_version", "stereochemistry", "isotopes", "charge", "fragments", "mixtures", "polymers", "commercial_grades"],
+      "properties": {
+        "original_byte_hash": {"type": "string", "minLength": 1},
+        "normalized_structure_or_formula_hash": {"type": "string", "minLength": 1},
+        "toolkit_and_version": {"type": "string", "minLength": 1},
+        "stereochemistry": {"type": "string", "minLength": 1},
+        "isotopes": {"type": "string", "minLength": 1},
+        "charge": {"type": "string", "minLength": 1},
+        "fragments": {"type": "string", "minLength": 1},
+        "mixtures": {"type": "string", "minLength": 1},
+        "polymers": {"type": "string", "minLength": 1},
+        "commercial_grades": {"type": "string", "minLength": 1}
+      }
+    },
+    "examples": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current_input", "current_output"],
+      "properties": {
+        "current_input": {"type": "object"},
+        "current_output": {"type": "object"}
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["objective", "metric", "gate", "uncertainty", "evidence_gap", "claim_locks", "non_blocking_claim_locks"],
+      "properties": {
+        "objective": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/valuePath"}]},
+        "metric": {"$ref": "#/$defs/valuePath"},
+        "gate": {"$ref": "#/$defs/valuePath"},
+        "uncertainty": {"$ref": "#/$defs/valuePath"},
+        "evidence_gap": {"$ref": "#/$defs/valuePath"},
+        "claim_locks": {"$ref": "#/$defs/valuePath"},
+        "non_blocking_claim_locks": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "ceilings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority_tier", "solver_use", "model_readiness", "ranking_eligible", "product_claim_ready"],
+      "properties": {
+        "authority_tier": {"enum": ["REAL_ARITHMETIC", "RULE_CITED", "LIMITED_SANITY", "MODELED_DIRECTIONAL", "CRO_GATED", "EVIDENCE_ONLY", "ROADMAP"]},
+        "solver_use": {"enum": ["DISABLED", "AUDIT_ONLY", "CONSTRAINT_ONLY", "OBJECTIVE", "R&D_OBJECTIVE"]},
+        "model_readiness": {"enum": ["NOT_PROVEN", "MODEL_READINESS_ONLY", "R&D_RANKING_READY", "COMPUTATIONAL_VALIDATED", "NOT_APPLICABLE"]},
+        "ranking_eligible": {"type": "boolean"},
+        "product_claim_ready": {"const": false}
+      }
+    },
+    "datasets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dataset_id", "version", "hash", "rights", "path", "status"],
+        "properties": {
+          "dataset_id": {"type": "string", "minLength": 1},
+          "version": {"type": ["string", "null"]},
+          "hash": {"oneOf": [{"type": "null"}, {"type": "string", "pattern": "^(sha256:)?[0-9a-fA-F]{64}$"}]},
+          "rights": {"enum": ["KNOWN", "UNRESOLVED", "PUBLIC_DOMAIN", "PERMISSIVE", "LICENSED", "INTERNAL_OWNED"]},
+          "path": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/repoPath"}]},
+          "status": {"enum": ["NOT_CHECKED_IN", "CHECKED_IN_UNVALIDATED"]}
+        }
+      }
+    },
+    "benchmarks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["benchmark_id", "status", "artifact_path", "artifact_sha256", "reported_result_status", "observations", "authority"],
+        "properties": {
+          "benchmark_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["NOT_PASSED", "PASSED", "BLOCKED", "NOT_APPLICABLE", "CHECKED_ARTIFACT_REPORTED_STATUS", "CHECKED_ARTIFACT_REPORTED_METRICS"]},
+          "artifact_path": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/repoPath"}]},
+          "artifact_sha256": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]},
+          "reported_result_status": {"type": ["string", "null"]},
+          "observations": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/evidenceObservation"}},
+          "authority": {"enum": ["NO_PROMOTION_INFERRED", "PROMOTION_REQUIRES_LOCKED_RECEIPT"]}
+        }
+      }
+    },
+    "evidence_inventory": {"$ref": "#/$defs/evidenceInventory"},
+    "kpis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "metric_class", "value_path", "unit", "direction", "population", "split", "baseline", "target", "confidence_interval", "failure_threshold", "evidence_source", "promotion_phase"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "metric_class": {"type": "string", "minLength": 1},
+          "value_path": {"type": "string", "minLength": 1},
+          "unit": {"type": "string", "minLength": 1},
+          "direction": {"enum": ["maximize", "minimize", "context"]},
+          "population": {"type": "string", "minLength": 1},
+          "split": {"type": "string", "minLength": 1},
+          "baseline": {"type": "string", "minLength": 1},
+          "target": {"type": "string", "minLength": 1},
+          "confidence_interval": {"type": "string", "minLength": 1},
+          "failure_threshold": {"type": "string", "minLength": 1},
+          "evidence_source": {"type": "string", "minLength": 1},
+          "promotion_phase": {"enum": ["PHASE_0", "PHASE_1", "PHASE_2"]}
+        }
+      }
+    },
+    "phase_gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["phase_0", "phase_1", "phase_2"],
+      "properties": {
+        "phase_0": {"$ref": "#/$defs/nonEmptyStrings"},
+        "phase_1": {"$ref": "#/$defs/nonEmptyStrings"},
+        "phase_2": {"$ref": "#/$defs/nonEmptyStrings"}
+      }
+    },
+    "dependencies": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^amphora-"}},
+    "consumers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^amphora-"}},
+    "priority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ladder", "rank", "factors", "score", "p0_override"],
+      "properties": {
+        "ladder": {"enum": ["scientific_opportunity", "infrastructure_assurance"]},
+        "rank": {"type": "integer", "minimum": 1},
+        "score": {"type": "integer"},
+        "p0_override": {"type": "boolean"},
+        "factors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["decision_value", "evidence_gap", "authority_risk_reduction", "downstream_leverage", "effort", "external_delay"],
+          "properties": {
+            "decision_value": {"$ref": "#/$defs/factor"},
+            "evidence_gap": {"$ref": "#/$defs/factor"},
+            "authority_risk_reduction": {"$ref": "#/$defs/factor"},
+            "downstream_leverage": {"$ref": "#/$defs/factor"},
+            "effort": {"$ref": "#/$defs/factor"},
+            "external_delay": {"$ref": "#/$defs/factor"}
+          }
+        }
+      }
+    },
+    "automatic_demotion": {"$ref": "#/$defs/nonEmptyStrings"}
+  },
+  "$defs": {
+    "factor": {"type": "integer", "minimum": 0, "maximum": 5},
+    "nonEmptyStrings": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "valuePath": {"type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)*$"},
+    "moduleId": {"type": "string", "pattern": "^amphora-[a-z0-9-]+$"},
+    "repoPath": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evidenceFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/repoPath"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "evidenceImplementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "version", "version_source_path", "version_source_sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/repoPath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "version": {"type": "string", "minLength": 1},
+        "version_source_path": {"$ref": "#/$defs/repoPath"},
+        "version_source_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "evidenceAdapterPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["track_id", "candidate_type", "model_id", "dataset_id", "solver_use", "model_readiness_status"],
+      "properties": {
+        "track_id": {"type": "string", "minLength": 1},
+        "candidate_type": {"enum": ["molecule", "formulation", "evidence_package"]},
+        "model_id": {"type": "string", "minLength": 1},
+        "dataset_id": {"type": "string", "minLength": 1},
+        "solver_use": {"enum": ["DISABLED", "AUDIT_ONLY", "CONSTRAINT_ONLY", "OBJECTIVE", "R&D_OBJECTIVE"]},
+        "model_readiness_status": {"enum": ["NOT_PROVEN", "MODEL_READINESS_ONLY", "R&D_RANKING_READY", "COMPUTATIONAL_VALIDATED", "NOT_APPLICABLE"]}
+      }
+    },
+    "evidenceRuntime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adapter_registered", "registry_path", "registry_sha256", "adapter_policy"],
+      "properties": {
+        "adapter_registered": {"type": "boolean"},
+        "registry_path": {"enum": ["science/adapters.py", "amphora-engine/src/lib.rs", "amphora-formulation-capabilities/src/lib.rs"]},
+        "registry_sha256": {"$ref": "#/$defs/sha256"},
+        "adapter_policy": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/evidenceAdapterPolicy"}]}
+      },
+      "allOf": [{
+        "if": {"properties": {"adapter_registered": {"const": true}}},
+        "then": {"properties": {"adapter_policy": {"$ref": "#/$defs/evidenceAdapterPolicy"}}},
+        "else": {"properties": {"adapter_policy": {"type": "null"}}}
+      }]
+    },
+    "evidenceRights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence_path", "gap"],
+      "properties": {
+        "status": {"enum": ["KNOWN", "UNRESOLVED"]},
+        "evidence_path": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/repoPath"}]},
+        "gap": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidenceArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "kind", "rights"],
+      "properties": {
+        "path": {"$ref": "#/$defs/repoPath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "kind": {"enum": ["dataset", "output_artifact", "input_fixture"]},
+        "rights": {"$ref": "#/$defs/evidenceRights"}
+      }
+    },
+    "evidenceObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["json_path", "value"],
+      "properties": {
+        "json_path": {"type": "string", "minLength": 1},
+        "value": {"type": ["string", "number", "integer", "boolean", "null"]}
+      }
+    },
+    "evidenceBenchmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "artifact_path", "artifact_sha256", "reported_result_status", "observations", "gap"],
+      "properties": {
+        "status": {"enum": ["NO_CHECKED_BENCHMARK_RESULT", "CHECKED_ARTIFACT_REPORTED_STATUS", "CHECKED_ARTIFACT_REPORTED_METRICS"]},
+        "artifact_path": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/repoPath"}]},
+        "artifact_sha256": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]},
+        "reported_result_status": {"type": ["string", "null"]},
+        "observations": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/evidenceObservation"}},
+        "gap": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidenceRedTeam": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "selector", "scenario"],
+      "properties": {
+        "path": {"$ref": "#/$defs/repoPath"},
+        "selector": {"type": "string", "pattern": "^test_[a-z0-9_]+$"},
+        "scenario": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidenceInventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry", "implementation", "tests", "runtime_integration", "artifacts", "artifact_gap", "current_benchmark", "known_contradictions", "external_dependencies", "focused_acceptance_command", "red_team_fixture"],
+      "properties": {
+        "registry": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "module_id"],
+          "properties": {
+            "path": {"const": "../../config/module-evidence-inventory.json"},
+            "module_id": {"$ref": "#/$defs/moduleId"}
+          }
+        },
+        "implementation": {"$ref": "#/$defs/evidenceImplementation"},
+        "tests": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/evidenceFile"}},
+        "runtime_integration": {"$ref": "#/$defs/evidenceRuntime"},
+        "artifacts": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/evidenceArtifact"}},
+        "artifact_gap": {"type": "string", "minLength": 1},
+        "current_benchmark": {"$ref": "#/$defs/evidenceBenchmark"},
+        "known_contradictions": {"$ref": "#/$defs/nonEmptyStrings"},
+        "external_dependencies": {"$ref": "#/$defs/nonEmptyStrings"},
+        "focused_acceptance_command": {"type": "string", "pattern": "^rtk cargo test --workspace --locked$"},
+        "red_team_fixture": {"$ref": "#/$defs/evidenceRedTeam"}
+      }
+    }
+  }
+}

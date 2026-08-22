@@ -1,0 +1,218 @@
+{
+  "attack_description": "The promoted KPI's 5-fold GroupKFold(family) naturally isolates the 2 largest of 17 families (stainless_steel n=1976, nickel_alloy n=1888, 53.1%% of the classified cohort) into their own solo folds and packs the remaining 15 families into only 3 folds, so the reported R2 is a SAMPLE-weighted (per-row) out-of-fold statistic dominated by whichever families are large. This re-runs the identical feature engineering, HistGBM model, and seed with true Leave-One-Family-Out (n_splits=n_families=17, one family held out per fold) and reports the FAMILY-weighted (unweighted per family) mean R2 alongside the sample-weighted OOF R2, to test whether the KPI's claimed 'generalizes across metallurgical families' capability holds broadly across families, not just in the row-weighted aggregate.",
+  "attacks_claim": "evidence/phase0/kpis/corr-rate-family-safe-qspr-kpi.v1.dsse.json: GroupKFold(group=metallurgical_family, 5-fold) HistGBM R2=0.132087 on the NIST CORR-DATA classified subset (n=7282, 17 families), 'the module's strongest rights-clean empirical claim', capability string 'Leave-metallurgical-family-out ... corrosion-rate QSPR generalization estimate'.",
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-barrier-corrosion-score/corr-rate-family-lofo-v1",
+  "cohort": {
+    "classified_subset_n": 7282,
+    "n_families": 17
+  },
+  "comparison_to_promoted_kpi": {
+    "kpi_sample_weighted_5fold_family_safe_r2": 0.132087,
+    "lofo_family_weighted_mean_r2": 0.015964,
+    "lofo_sample_weighted_oof_r2": 0.151171,
+    "note": "kpi number is sample-weighted (row-count-weighted, 5 folds, 2 giant families solo); lofo_sample_weighted_oof_r2 is the directly comparable per-row OOF statistic under true 17-way LOFO; lofo_family_weighted_mean_r2 treats every family as one equally-weighted unit, which is the honest reading of a 'generalizes across families' claim."
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "canonical_round_decimals": 6,
+    "omp_num_threads": "1",
+    "seed": 0
+  },
+  "min_eligible_n_test": 20,
+  "model": {
+    "estimator": "HistGradientBoostingRegressor",
+    "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "random_state": 0
+    },
+    "sklearn_version": "1.7.2"
+  },
+  "modifies_manifest": false,
+  "promotes_authority": false,
+  "refutation_criterion": "REFUTED if (a) family-count-weighted (unweighted-per-family) mean LOFO R2 over families with n_test>=20 <= 0.0, OR (b) a majority (>50%) of those eligible families individually score LOFO R2 <= 0.0. SURVIVED if family-weighted mean R2 > 0.0 AND a majority of eligible families individually score R2 > 0.0, even if reduced relative to the sample-weighted 5-fold family-safe KPI number (some reduction from a strictly harder per-family test is expected and is not itself a refutation).",
+  "results": {
+    "eligible_families_n_test_ge_min": 15,
+    "excluded_families_below_min": [
+      "chromium",
+      "molybdenum"
+    ],
+    "family_weighted_mean_r2": 0.015964,
+    "frac_eligible_families_r2_positive": 0.733333,
+    "majority_of_eligible_families_positive": true,
+    "n_eligible_families_r2_nonpositive": 4,
+    "n_eligible_families_r2_positive": 11,
+    "per_family_lofo": [
+      {
+        "baseline_global_mean_rmse": 1.379497,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "stainless_steel",
+        "mae": 0.994442,
+        "n_test": 1976,
+        "r2": 0.165932,
+        "rmse": 1.259858
+      },
+      {
+        "baseline_global_mean_rmse": 1.140217,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "nickel_alloy",
+        "mae": 0.88719,
+        "n_test": 1888,
+        "r2": 0.117892,
+        "rmse": 1.070787
+      },
+      {
+        "baseline_global_mean_rmse": 1.140339,
+        "beats_global_mean_baseline_rmse": false,
+        "family": "titanium",
+        "mae": 0.942409,
+        "n_test": 658,
+        "r2": -0.025655,
+        "rmse": 1.141631
+      },
+      {
+        "baseline_global_mean_rmse": 1.224297,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "carbon_steel_cast_iron",
+        "mae": 0.950676,
+        "n_test": 561,
+        "r2": 0.129143,
+        "rmse": 1.135448
+      },
+      {
+        "baseline_global_mean_rmse": 1.267109,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "copper_alloy",
+        "mae": 0.737615,
+        "n_test": 486,
+        "r2": 0.398284,
+        "rmse": 0.9814
+      },
+      {
+        "baseline_global_mean_rmse": 0.856239,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "precious_metal",
+        "mae": 0.677916,
+        "n_test": 319,
+        "r2": 0.018248,
+        "rmse": 0.848247
+      },
+      {
+        "baseline_global_mean_rmse": 1.242448,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "lead",
+        "mae": 0.990807,
+        "n_test": 307,
+        "r2": 0.021778,
+        "rmse": 1.215441
+      },
+      {
+        "baseline_global_mean_rmse": 0.942993,
+        "beats_global_mean_baseline_rmse": false,
+        "family": "tantalum_niobium",
+        "mae": 0.994148,
+        "n_test": 266,
+        "r2": -0.661557,
+        "rmse": 1.182135
+      },
+      {
+        "baseline_global_mean_rmse": 0.89667,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "zirconium_hafnium",
+        "mae": 0.653689,
+        "n_test": 259,
+        "r2": 0.129669,
+        "rmse": 0.817076
+      },
+      {
+        "baseline_global_mean_rmse": 1.456851,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "cobalt_alloy",
+        "mae": 0.997691,
+        "n_test": 256,
+        "r2": 0.158163,
+        "rmse": 1.218545
+      },
+      {
+        "baseline_global_mean_rmse": 1.960547,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "aluminum",
+        "mae": 1.280449,
+        "n_test": 120,
+        "r2": 0.375939,
+        "rmse": 1.449622
+      },
+      {
+        "baseline_global_mean_rmse": 0.716214,
+        "beats_global_mean_baseline_rmse": false,
+        "family": "zinc",
+        "mae": 0.819253,
+        "n_test": 60,
+        "r2": -0.799023,
+        "rmse": 0.954617
+      },
+      {
+        "baseline_global_mean_rmse": 2.002737,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "magnesium",
+        "mae": 1.601583,
+        "n_test": 57,
+        "r2": -0.708122,
+        "rmse": 1.852626
+      },
+      {
+        "baseline_global_mean_rmse": 1.184663,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "tin",
+        "mae": 0.523342,
+        "n_test": 37,
+        "r2": 0.606616,
+        "rmse": 0.73421
+      },
+      {
+        "baseline_global_mean_rmse": 1.325728,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "carbide_cermet",
+        "mae": 0.827343,
+        "n_test": 24,
+        "r2": 0.312156,
+        "rmse": 0.944348
+      },
+      {
+        "baseline_global_mean_rmse": 3.185641,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "chromium",
+        "mae": 1.801044,
+        "n_test": 6,
+        "r2": -0.290832,
+        "rmse": 2.698595
+      },
+      {
+        "baseline_global_mean_rmse": 0.661889,
+        "beats_global_mean_baseline_rmse": true,
+        "family": "molybdenum",
+        "mae": 0.570947,
+        "n_test": 2,
+        "r2": -1.729075,
+        "rmse": 0.577346
+      }
+    ],
+    "sample_weighted_oof": {
+      "mae": 0.921011,
+      "r2": 0.151171,
+      "rmse": 1.144952
+    }
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-family-lofo-attack.v1",
+  "scope_honesty": "Diagnostic on bare metal/alloy substrate corrosion (NIST CORR-DATA), same scope ceiling as corr-rate-qspr-v1 and corr-rate-family-safe-v1: NOT organic-coating barrier performance. No candidate/coating superiority claim.",
+  "verdict": "CLAIM_SURVIVED"
+}

@@ -1,0 +1,162 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-sourceability-ehs/evidence/phase0",
+  "eligible_sources": [],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/basf_n_butanol_sds.pdf",
+      "observed_sha256": "8c6515360cbd93d713eed892bd3187a2eee808adac2e9a222d7d7304b59a0fa9",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/byk_a_530.html",
+      "observed_sha256": "0126cd5c899573355e5e53ef553455bf6a81240c07eea4d816edf9e22fdc96e5",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/byk_disperbyk_110.html",
+      "observed_sha256": "a1a4c0cf56d7a5dfb540d400ee1d2153a0ff59bbe012621e978506a5813bb44b",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/byk_ghs_sds.html",
+      "observed_sha256": "c2387516a067c43d2785ba3991b12407b268b515a92eed4a1790b35c9966ecb9",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/dla_qpd_24441.html",
+      "observed_sha256": "98de9b235df7320f95056c2efedacfcbae9ff5ee2084e70b99e11ba5507fa83d",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/ecfr_pfas_api.json",
+      "observed_sha256": "8349e6b2e643521c8e02e70559547793ea9192bf312e7a3e9c04b71a557b4991",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/elementis_bentone_38.html",
+      "observed_sha256": "33b333255efc050be918c3352655e3eb6a90ecedf5daf2edfbb128e3b681c84a",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/epa_comptox.html",
+      "observed_sha256": "42e170f7892b9b97e0bceda2662618d32bb6e85c47d1c90241c2695b93cd1898",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/epa_tsca_inventory.html",
+      "observed_sha256": "739a8ecc8d7d0c333beb4a70a33191316688e74eb5fc4ca042908c2a18f1321c",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/evonik_ancamide_350a.html",
+      "observed_sha256": "c1a53fbda98c0f652de34a3bf1ef952077fdba31dc42f5c02930b19ec8571c0f",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/far_taa.html",
+      "observed_sha256": "1c7b4dc3da976b30824810720c0e49ecf848782cce7164c993bad52c950db7ed",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/fisher_naphtha_sds.pdf",
+      "observed_sha256": "1662e7760684df30bbe73367ad18825468dc0ece7453c62086ac8108c6984f42",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/heubach_zp10.pdf",
+      "observed_sha256": "92bd35e75c1ba4c1eeea9c8e7d91eaf6c9ae1942a7b41b020e9a0b3e324ed478",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/imerys_document_finder.html",
+      "observed_sha256": "ee7c1ad929d2e37e14afdea03da1663fe3dbeda8933ac8d1c5eab2d892d29dce",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/imerys_mica.html",
+      "observed_sha256": "4a3269fbb86d03ab3506397c9de836710a9cc056cd1f04795c5d29f5f0028567",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/imerys_talc.html",
+      "observed_sha256": "e1923246b7e6505a479930886b1fe61c310a2b5bf1b79278ac9b90e9c2ea5de7",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_318.html",
+      "observed_sha256": "305b5fe43a907f23ab936f5e85dd8b295f2b5f96eb74bcf7fcf57f1c8f09baf9",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/lanxess_bayferrox_920.html",
+      "observed_sha256": "5a02e7004ff2d0df47f97dec0bd15cb57bac50f33ec75d07eb9aa7d9f5d54ca5",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/olin_epoxy_stewardship.pdf",
+      "observed_sha256": "2eef5fd84f806e40ef411feb1d1ca91d9990cca777dabf5a445fc073feb8970a",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_minusil.html",
+      "observed_sha256": "08f9c750badbacca69ef00d5e060de736f3d62ba862cb419aa86576094fe6195",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/public_sourceability/envelope65/raw/ussilica_tds_finder.html",
+      "observed_sha256": "0d85b67ce5a8253335102ed0ca86713cb31c3f568135002759e59578ac091a74",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/v5_epoch30_bom_line_source_packet_matrix.json",
+      "observed_sha256": "3962c50d3f5679cbce54f2ed7e7cfa121f3e17e2e81ab92929ab32136420493c",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/v5_epoch30_public_bom_sourceability_manifest.json",
+      "observed_sha256": "b6925dfad96ced53bfc463fd09f8417992ae975e4a92b53689fb4c28fbb25fa0",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/v5_epoch30_public_ehs_regulatory_prescreen.json",
+      "observed_sha256": "7b5ccb002415b8dda49994db42e9a8471542317dec03589140dc771d8d6caa0a",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/v5_epoch30_unresolved_supplier_declaration_gap_register.json",
+      "observed_sha256": "cbef70c1757bda50e03d318b6289e3a97051f69afba368489b37a2a3effc3377",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    }
+  ],
+  "inventory_hash": "66b8024991a2cfe3c03da26b3c2e922dd78d360a03986c7edc2eb72402f487b4",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-sourceability-ehs",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

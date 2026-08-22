@@ -1,0 +1,12 @@
+{
+  "campaign_item_id": "W-D-DESIGN",
+  "done_receipt": "evidence/phase0/repairs/W-D-DESIGN/done/w-d-design-done-receipt.v2.dsse.json",
+  "fire_id": "20260813T020001-2126520-6a7df36eb7b9",
+  "n_qualifying_finds": 2,
+  "n_repository_classes_swept": 8,
+  "n_sources_swept": 13,
+  "next_action": "None required for this item's done_criterion (max_fires=2 reached, criterion met). Follow-up transcription/digitization/author-contact work is filed in proposed_followups[] of the v2 done receipt, not owed by this item.",
+  "prior_fire_id": "20260813T010001-1531359-466e20213039",
+  "status": "done",
+  "supersedes_receipt": "amphora-design-rule-score/evidence/phase0/repairs/W-D-DESIGN/done/w-d-design-done-receipt.v1.dsse.json"
+}

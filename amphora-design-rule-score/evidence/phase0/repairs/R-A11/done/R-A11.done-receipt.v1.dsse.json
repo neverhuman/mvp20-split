@@ -1,0 +1,65 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "8ebd3746ee2443aea813241a0d5bb8b84709d4fe93a51ff7efb19e9e30278434",
+  "payload_decoded": {
+    "action": "Anchored signature-identity re-issue of amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json as amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json; original untouched.",
+    "authority": "AUDIT_ONLY",
+    "date": "2026-08-03",
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-design-rule-score",
+    "promotes_authority": false,
+    "reattack_observed_results": {
+      "dsse_verifies_against_trust_store": true,
+      "keyid_equals_pinned_trust_store_key_id": true,
+      "keyid_prefix_phase0_evaluator_3ef6b35": true,
+      "original_byte_intact": true,
+      "original_sha256_after_write": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+      "original_sha256_before": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+      "reloaded_payload_sha256_matches_two_replay_sha256": true,
+      "self_verified_with_seed_derived_pubkey": true
+    },
+    "repair_artifacts": {
+      "anchored_reissue_file_sha256": "ec6ab882c45dabbd27abef5d6c40a08a39959d92cc7f10fc8bd6a140dd7390a5",
+      "anchored_reissue_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json",
+      "anchored_reissue_payload_canonical_sha256": "309310d4514ad0bb31482d42e6512731afe1072b3de666c41f3b11a250952b8d",
+      "retraction_index": {
+        "existed_before": false,
+        "path": "amphora-design-rule-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+        "sha256_after": "b55c13904cb76ad43c8c17ea5c270f62cc8189b0e11f0bb3a5346d0cab26d9d7",
+        "sha256_before": null
+      },
+      "work_log": "amphora-design-rule-score/evidence/phase0/repairs/R-A11/work/R-A11-work-log.b.v1.json"
+    },
+    "repair_item": "R-A11",
+    "repair_mode": "interactive-2026-08-03",
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "supersedes": {
+      "reason": "signature-identity re-issue only - scientific content unchanged, re-verified byte-intact",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json",
+      "superseded_sha256": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "two_replay_sha256_gate": "PASS"
+  },
+  "signature": {
+    "payload": "eyJhY3Rpb24iOiJBbmNob3JlZCBzaWduYXR1cmUtaWRlbnRpdHkgcmUtaXNzdWUgb2YgYW1waG9yYS1kZXNpZ24tcnVsZS1zY29yZS9iZW5jaG1hcmtzL2d1dGgtZ29sZC1waHlzaWNhbC1iYXNlbGluZS12MS9waHlzaWNhbF9iYXNlbGluZV9yZWNlaXB0LnYxLmpzb24gYXMgYW1waG9yYS1kZXNpZ24tcnVsZS1zY29yZS9iZW5jaG1hcmtzL2d1dGgtZ29sZC1waHlzaWNhbC1iYXNlbGluZS12MS9waHlzaWNhbF9iYXNlbGluZV9yZWNlaXB0LnYxLmFuY2hvcmVkLXJlaXNzdWUudjEuanNvbjsgb3JpZ2luYWwgdW50b3VjaGVkLiIsImF1dGhvcml0eSI6IkFVRElUX09OTFkiLCJkYXRlIjoiMjAyNi0wOC0wMyIsImZsaXBzX3NjaWVudGlmaWNfcmVhZGluZXNzIjpmYWxzZSwiZ2VuZXJhdGVkX29uX2hvc3QiOiJ4YmFiZTIiLCJtb2RpZmllc19leGlzdGluZ19yZWNlaXB0cyI6ZmFsc2UsIm1vZGlmaWVzX21hbmlmZXN0IjpmYWxzZSwibW9kdWxlIjoiYW1waG9yYS1kZXNpZ24tcnVsZS1zY29yZSIsInByb21vdGVzX2F1dGhvcml0eSI6ZmFsc2UsInJlYXR0YWNrX29ic2VydmVkX3Jlc3VsdHMiOnsiZHNzZV92ZXJpZmllc19hZ2FpbnN0X3RydXN0X3N0b3JlIjp0cnVlLCJrZXlpZF9lcXVhbHNfcGlubmVkX3RydXN0X3N0b3JlX2tleV9pZCI6dHJ1ZSwia2V5aWRfcHJlZml4X3BoYXNlMF9ldmFsdWF0b3JfM2VmNmIzNSI6dHJ1ZSwib3JpZ2luYWxfYnl0ZV9pbnRhY3QiOnRydWUsIm9yaWdpbmFsX3NoYTI1Nl9hZnRlcl93cml0ZSI6IjVhNmI0ODJiMzUyOTkzNjY0NjE3NzVlZmZiMDQ2ZTYzOWMyYTQ2YzgzYjE2NWY3OTliNDEwODQxY2Y0MTRmZmQiLCJvcmlnaW5hbF9zaGEyNTZfYmVmb3JlIjoiNWE2YjQ4MmIzNTI5OTM2NjQ2MTc3NWVmZmIwNDZlNjM5YzJhNDZjODNiMTY1Zjc5OWI0MTA4NDFjZjQxNGZmZCIsInJlbG9hZGVkX3BheWxvYWRfc2hhMjU2X21hdGNoZXNfdHdvX3JlcGxheV9zaGEyNTYiOnRydWUsInNlbGZfdmVyaWZpZWRfd2l0aF9zZWVkX2Rlcml2ZWRfcHVia2V5Ijp0cnVlfSwicmVwYWlyX2FydGlmYWN0cyI6eyJhbmNob3JlZF9yZWlzc3VlX2ZpbGVfc2hhMjU2IjoiZWM2YWI4ODJjNDVkYWJiZDI3YWJlZjVkNmM0MGEwOGEzOTk1OWQ5MmNjN2YxMGZjOGJkNmExNDBkZDczOTBhNSIsImFuY2hvcmVkX3JlaXNzdWVfcGF0aCI6ImFtcGhvcmEtZGVzaWduLXJ1bGUtc2NvcmUvYmVuY2htYXJrcy9ndXRoLWdvbGQtcGh5c2ljYWwtYmFzZWxpbmUtdjEvcGh5c2ljYWxfYmFzZWxpbmVfcmVjZWlwdC52MS5hbmNob3JlZC1yZWlzc3VlLnYxLmpzb24iLCJhbmNob3JlZF9yZWlzc3VlX3BheWxvYWRfY2Fub25pY2FsX3NoYTI1NiI6IjMwOTMxMGQ0NTE0YWQwYmIzMTQ4MmQ0MmU2NTEyNzMxYWZlMTA3MmIzZGU2NjZjNDFmM2IxMWEyNTA5NTJiOGQiLCJyZXRyYWN0aW9uX2luZGV4Ijp7ImV4aXN0ZWRfYmVmb3JlIjpmYWxzZSwicGF0aCI6ImFtcGhvcmEtZGVzaWduLXJ1bGUtc2NvcmUvZXZpZGVuY2UvcGhhc2UwL2twaXMvUkVUUkFDVElPTi1JTkRFWC5tZCIsInNoYTI1Nl9hZnRlciI6ImI1NWMxMzkwNGNiNzZhZDQzYzhjMTdlYTVjMjcwZjYyY2M4MTg5YjBlMTFmMGJiM2E1MzQ2ZDBjYWIyNmQ5ZDciLCJzaGEyNTZfYmVmb3JlIjpudWxsfSwid29ya19sb2ciOiJhbXBob3JhLWRlc2lnbi1ydWxlLXNjb3JlL2V2aWRlbmNlL3BoYXNlMC9yZXBhaXJzL1ItQTExL3dvcmsvUi1BMTEtd29yay1sb2cuYi52MS5qc29uIn0sInJlcGFpcl9pdGVtIjoiUi1BMTEiLCJyZXBhaXJfbW9kZSI6ImludGVyYWN0aXZlLTIwMjYtMDgtMDMiLCJzY2hlbWEiOiJhbXBob3JhLnBoYXNlMC1yZXBhaXIuZG9uZS1yZWNlaXB0LnYxIiwic2lnbmluZ19rZXkiOnsiZGVyaXZlc19waW5uZWRfdHJ1c3Rfc3RvcmVfa2V5X2lkIjp0cnVlLCJrZXlfaWQiOiJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLCJwdWJsaWNfa2V5X2hleCI6IjZjZjA3YWJmMWE1NWFkYWFjMTNlNzhhYmMzMWM1MzFkMDNkOGYwZDQyMzIzNDYzNDRhNzM2NDE4YzdiNDU2NjQiLCJyb2xlIjoiUEhBU0UwX0VWQUxVQVRPUiJ9LCJzdXBlcnNlZGVzIjp7InJlYXNvbiI6InNpZ25hdHVyZS1pZGVudGl0eSByZS1pc3N1ZSBvbmx5IC0gc2NpZW50aWZpYyBjb250ZW50IHVuY2hhbmdlZCwgcmUtdmVyaWZpZWQgYnl0ZS1pbnRhY3QiLCJzdXBlcnNlZGVkX2RlbGV0ZWRfb3JfbW9kaWZpZWQiOmZhbHNlLCJzdXBlcnNlZGVkX3BhdGgiOiJhbXBob3JhLWRlc2lnbi1ydWxlLXNjb3JlL2JlbmNobWFya3MvZ3V0aC1nb2xkLXBoeXNpY2FsLWJhc2VsaW5lLXYxL3BoeXNpY2FsX2Jhc2VsaW5lX3JlY2VpcHQudjEuanNvbiIsInN1cGVyc2VkZWRfc2hhMjU2IjoiNWE2YjQ4MmIzNTI5OTM2NjQ2MTc3NWVmZmIwNDZlNjM5YzJhNDZjODNiMTY1Zjc5OWI0MTA4NDFjZjQxNGZmZCJ9LCJ0cnVzdF9hbmNob3JlZF9pbl9waGFzZTBfc3RvcmUiOnRydWUsInR3b19yZXBsYXlfc2hhMjU2X2dhdGUiOiJQQVNTIn0=",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "Z1auqCPxHyR7seQuc76ljRtdJh1NlKx5dSR0ruwX9t3Q8RKut08JV8MGryX2KaBqSaUODf1Bsf/RtdFhRnIPAg=="
+      }
+    ]
+  }
+}

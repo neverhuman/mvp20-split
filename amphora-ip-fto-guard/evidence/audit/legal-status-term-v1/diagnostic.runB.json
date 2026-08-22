@@ -1,0 +1,698 @@
+{
+  "as_of_date": "2026-07-30",
+  "authority": "AUDIT_ONLY",
+  "checkA_status_lattice": {
+    "basis_consistent": true,
+    "clearance_language_clean": false,
+    "clearance_language_hits": [
+      {
+        "n": 5,
+        "pattern": "public domain"
+      }
+    ],
+    "distinct_legal_status_basis_strings": [
+      "Google Patents/public bibliographic screen; not legal status verification"
+    ],
+    "family_status_verified_false_count": 60,
+    "family_status_verified_true_count": 0,
+    "interpretation": "Every status string resolves to exactly one a-priori lattice node. No node - including EXPIRED_FEE_LAPSE - can support a clearance conclusion: 37 CFR 1.378 revival, 35 U.S.C. 286 six-year damages tail, and Paris Art. 4bis independence each independently defeat it.",
+    "lattice_nodes": [
+      "JURISDICTION_SPLIT",
+      "ACTIVE_GRANTED",
+      "EXPIRED_FEE_LAPSE",
+      "LIKELY_TERM_EXPIRED_UNVERIFIED",
+      "LAPSED_PRE_TERM",
+      "UNVERIFIED_CATEGORY_SCREEN"
+    ],
+    "lattice_totality": true,
+    "no_node_supports_clearance": true,
+    "status_node_histogram": {
+      "ACTIVE_GRANTED": 1,
+      "EXPIRED_FEE_LAPSE": 1,
+      "JURISDICTION_SPLIT": 1,
+      "LAPSED_PRE_TERM": 2,
+      "LIKELY_TERM_EXPIRED_UNVERIFIED": 4,
+      "UNVERIFIED_CATEGORY_SCREEN": 51
+    },
+    "unmapped_rows": [],
+    "verified_status_basis_violations": []
+  },
+  "checkB_grounding_severability": {
+    "H0_directional_holds": false,
+    "H0_directional_verdict": "REFUTED",
+    "H0_holds": false,
+    "H0_strict_holds": false,
+    "H0_strict_verdict": "REFUTED",
+    "H0_verdict": "REFUTED",
+    "detail": [
+      {
+        "charted": true,
+        "clauses": [
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "no distinct reactive polar compatibilizer",
+            "status_direction": null
+          },
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "our VS ~65% (<70%)",
+            "status_direction": null
+          },
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "Two independent limitations missing",
+            "status_direction": null
+          }
+        ],
+        "clearance_directional_status_clause_present": false,
+        "doc": "WO2016187380A1",
+        "n": 1,
+        "reads_on_ours": "NO",
+        "severable": true,
+        "severed_mixed_clause_rewrites": [],
+        "status_clause_present": false,
+        "surviving_element_clauses": [
+          "no distinct reactive polar compatibilizer",
+          "our VS ~65% (<70%)",
+          "Two independent limitations missing"
+        ],
+        "why": "no distinct reactive polar compatibilizer; our VS ~65% (<70%). Two independent limitations missing."
+      },
+      {
+        "charted": true,
+        "clauses": [
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "claims a specific micronized polyamide RHEOLOGY additive, not a curing agent",
+            "status_direction": null
+          },
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "our dimer-acid liquid polyamide curative is different chemistry",
+            "status_direction": null
+          },
+          {
+            "class": "MIXED",
+            "clause": "The ONLY live-granted family here",
+            "status_direction": "ADVERSE_OR_NEUTRAL"
+          }
+        ],
+        "clearance_directional_status_clause_present": false,
+        "doc": "EP3328938B1",
+        "n": 2,
+        "reads_on_ours": "NO",
+        "severable": true,
+        "severed_mixed_clause_rewrites": [
+          {
+            "after_status_strip": "The ONLY - family here",
+            "counted_as_surviving_ground": false,
+            "original": "The ONLY live-granted family here"
+          }
+        ],
+        "status_clause_present": true,
+        "surviving_element_clauses": [
+          "claims a specific micronized polyamide RHEOLOGY additive, not a curing agent",
+          "our dimer-acid liquid polyamide curative is different chemistry"
+        ],
+        "why": "claims a specific micronized polyamide RHEOLOGY additive, not a curing agent; our dimer-acid liquid polyamide curative is different chemistry. The ONLY live-granted family here."
+      },
+      {
+        "charted": true,
+        "clauses": [
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "we use standard DGEBA only, no CHDM epoxy",
+            "status_direction": null
+          }
+        ],
+        "clearance_directional_status_clause_present": false,
+        "doc": "EP2931822 via US2015/0329739A1 family member (EP claims did ",
+        "n": 3,
+        "reads_on_ours": "NO (caveat: read US family claim, not EP)",
+        "severable": true,
+        "severed_mixed_clause_rewrites": [],
+        "status_clause_present": false,
+        "surviving_element_clauses": [
+          "we use standard DGEBA only, no CHDM epoxy"
+        ],
+        "why": "we use standard DGEBA only, no CHDM epoxy."
+      },
+      {
+        "charted": true,
+        "clauses": [
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "no chlorinated polyolefin terpolymer in our primer",
+            "status_direction": null
+          }
+        ],
+        "clearance_directional_status_clause_present": false,
+        "doc": "WO2013159277A1",
+        "n": 4,
+        "reads_on_ours": "NO",
+        "severable": true,
+        "severed_mixed_clause_rewrites": [],
+        "status_clause_present": false,
+        "surviving_element_clauses": [
+          "no chlorinated polyolefin terpolymer in our primer"
+        ],
+        "why": "no chlorinated polyolefin terpolymer in our primer."
+      },
+      {
+        "charted": true,
+        "clauses": [
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "primary has no zinc phosphate",
+            "status_direction": null
+          },
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "Enhanced-65 has zinc phosphate alone, with no molybdate/benzoate",
+            "status_direction": null
+          },
+          {
+            "class": "STATUS_GROUNDED",
+            "clause": "also EXPIRED",
+            "status_direction": "CLEARANCE_DIRECTIONAL"
+          }
+        ],
+        "clearance_directional_status_clause_present": true,
+        "doc": "US5059640A",
+        "n": 5,
+        "reads_on_ours": "NO",
+        "severable": true,
+        "severed_mixed_clause_rewrites": [],
+        "status_clause_present": true,
+        "surviving_element_clauses": [
+          "primary has no zinc phosphate",
+          "Enhanced-65 has zinc phosphate alone, with no molybdate/benzoate"
+        ],
+        "why": "primary has no zinc phosphate; Enhanced-65 has zinc phosphate alone, with no molybdate/benzoate; also EXPIRED."
+      },
+      {
+        "charted": true,
+        "clauses": [
+          {
+            "class": "ELEMENT_GROUNDED",
+            "clause": "baseline is a standalone epoxy-polyamide primer decision package, not a primer/polyurea topcoat system",
+            "status_direction": null
+          }
+        ],
+        "clearance_directional_status_clause_present": false,
+        "doc": "EP2653485A2",
+        "n": 26,
+        "reads_on_ours": "NO",
+        "severable": true,
+        "severed_mixed_clause_rewrites": [],
+        "status_clause_present": false,
+        "surviving_element_clauses": [
+          "baseline is a standalone epoxy-polyamide primer decision package, not a primer/polyurea topcoat system"
+        ],
+        "why": "baseline is a standalone epoxy-polyamide primer decision package, not a primer/polyurea topcoat system"
+      }
+    ],
+    "hypothesis_H0_directional": "No non-read carries a CLEARANCE-DIRECTIONAL status clause (expired/ceased/lapsed/abandoned) in `why` - i.e. no verdict is even rhetorically supported by status that would favour the reader. This is the doctrinally load-bearing form: an ADVERSE status remark ('the only live-granted family here') cannot do clearance work even in principle.",
+    "hypothesis_H0_strict": "No non-read ('NO') carries ANY legal-status clause in its grounding field `why`.",
+    "interpretation": "H0_strict is the strong form: a non-read must rest ONLY on a missing claim element (All-Elements Rule). Severability is the weaker decisive form: strike every status clause and ask whether an independently sufficient element-grounded clause survives. A REFUTED H0 with CORROBORATED severability means the defect is co-mingled RATIONALE TEXT, not a load-bearing status-clearance: no verdict changes when the status clause is struck.",
+    "no_row_count": 6,
+    "non_severable_rows": [],
+    "rows_with_clearance_directional_status_clause": [
+      5
+    ],
+    "rows_with_status_clause": [
+      2,
+      5
+    ],
+    "severability_holds": true,
+    "severability_verdict": "CORROBORATED",
+    "severable_rows": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      26
+    ]
+  },
+  "checkC_term_arithmetic": {
+    "all_consistent": true,
+    "as_of_date": "2026-07-30",
+    "detail": [
+      {
+        "annotated_expiry_year": null,
+        "basis": "nominal 20y term (PCT Art. 11(3) + 35 U.S.C. 154(a)(2)) runs no earlier than 2034; as-of 2026-07-30 is 8y before that floor, so 'Ceased' CANNOT be term expiry - it is a pre-term lapse/withdrawal, excusable under PCT Art. 48(2) / EPC Art. 122 / 37 CFR 1.378",
+        "consistent": true,
+        "doc": "WO2016187380A1",
+        "implied_filing_year_bracket": [
+          2014,
+          2016
+        ],
+        "kind": "PCT_INTERNATIONAL",
+        "n": 1,
+        "nominal_term_run_by_as_of": false,
+        "publication_year": 2016,
+        "robustness_margin_years": 8,
+        "status_is_pre_term_lapse_not_term_expiry": true,
+        "statutory_expiry_bracket": [
+          2034,
+          2036
+        ]
+      },
+      {
+        "annotated_expiry_year": 2036,
+        "basis": "EPC Art. 63(1) 20y term back-solves an earliest filing year of 2016 from the annotated ~2036 expiry; grant 2023-05-17 post-dates it with 7y pendency => internally consistent",
+        "consistent": true,
+        "doc": "EP3328938B1",
+        "grant_date": "2023-05-17",
+        "implied_earliest_filing_year_EPC_63_1": 2016,
+        "implied_pendency_years": 7,
+        "kind": "EP_GRANTED",
+        "n": 2,
+        "nominal_term_run_by_as_of": false,
+        "robustness_margin_years": 10,
+        "statutory_expiry_bracket": [
+          2036,
+          2036
+        ]
+      },
+      {
+        "annotated_expiry_year": null,
+        "basis": "nominal 20y term (PCT Art. 11(3) + 35 U.S.C. 154(a)(2)) runs no earlier than 2031; as-of 2026-07-30 is 5y before that floor, so 'Ceased' CANNOT be term expiry - it is a pre-term lapse/withdrawal, excusable under PCT Art. 48(2) / EPC Art. 122 / 37 CFR 1.378",
+        "consistent": true,
+        "doc": "WO2013159277A1",
+        "implied_filing_year_bracket": [
+          2011,
+          2013
+        ],
+        "kind": "PCT_INTERNATIONAL",
+        "n": 4,
+        "nominal_term_run_by_as_of": false,
+        "publication_year": 2013,
+        "robustness_margin_years": 5,
+        "status_is_pre_term_lapse_not_term_expiry": true,
+        "statutory_expiry_bracket": [
+          2031,
+          2033
+        ]
+      },
+      {
+        "annotated_expiry_year": 2003,
+        "basis": "annotated expiry 2003 precedes the 2008 term floor => NOT term expiry; consistent with a 37 CFR 1.362 maintenance lapse at [1994.5, 1998.5, 2002.5] (revivable under 35 U.S.C. 41(c)(1))",
+        "consistent": true,
+        "damages_tail_closed_by_as_of": true,
+        "damages_tail_closes": 2009,
+        "doc": "US5059640A",
+        "grant_year_bracket": [
+          1991,
+          1991
+        ],
+        "kind": "US_PRE_URAA",
+        "maintenance_fee_due_years": [
+          1994.5,
+          1998.5,
+          2002.5
+        ],
+        "n": 5,
+        "nominal_term_run_by_as_of": true,
+        "patent_number": 5059640,
+        "robustness_margin_years": 15,
+        "statutory_expiry_bracket": [
+          2008,
+          2011
+        ]
+      },
+      {
+        "annotated_expiry_year": null,
+        "basis": "nominal 20y term (PCT Art. 11(3) + 35 U.S.C. 154(a)(2)) runs no earlier than 2027; as-of 2026-07-30 is 1y before that floor, so 'public bibliographic status only; counsel verification required' CANNOT be term expiry - it is a pre-term lapse/withdrawal, excusable under PCT Art. 48(2) / EPC Art. 122 / 37 CFR 1.378",
+        "consistent": true,
+        "doc": "WO2009019296A1",
+        "implied_filing_year_bracket": [
+          2007,
+          2009
+        ],
+        "kind": "PCT_INTERNATIONAL",
+        "n": 27,
+        "nominal_term_run_by_as_of": false,
+        "publication_year": 2009,
+        "robustness_margin_years": 1,
+        "status_is_pre_term_lapse_not_term_expiry": false,
+        "statutory_expiry_bracket": [
+          2027,
+          2029
+        ]
+      },
+      {
+        "annotated_expiry_year": null,
+        "basis": "nominal 20y term (PCT Art. 11(3) + 35 U.S.C. 154(a)(2)) runs no earlier than 2032; as-of 2026-07-30 is 6y before that floor, so 'public bibliographic status only; counsel verification required' CANNOT be term expiry - it is a pre-term lapse/withdrawal, excusable under PCT Art. 48(2) / EPC Art. 122 / 37 CFR 1.378",
+        "consistent": true,
+        "doc": "WO2014093115A2",
+        "implied_filing_year_bracket": [
+          2012,
+          2014
+        ],
+        "kind": "PCT_INTERNATIONAL",
+        "n": 28,
+        "nominal_term_run_by_as_of": false,
+        "publication_year": 2014,
+        "robustness_margin_years": 6,
+        "status_is_pre_term_lapse_not_term_expiry": false,
+        "statutory_expiry_bracket": [
+          2032,
+          2034
+        ]
+      },
+      {
+        "annotated_expiry_year": null,
+        "basis": "nominal 20y term (PCT Art. 11(3) + 35 U.S.C. 154(a)(2)) runs no earlier than 2036; as-of 2026-07-30 is 10y before that floor, so 'public bibliographic status only; counsel verification required' CANNOT be term expiry - it is a pre-term lapse/withdrawal, excusable under PCT Art. 48(2) / EPC Art. 122 / 37 CFR 1.378",
+        "consistent": true,
+        "doc": "WO2018010615A1",
+        "implied_filing_year_bracket": [
+          2016,
+          2018
+        ],
+        "kind": "PCT_INTERNATIONAL",
+        "n": 29,
+        "nominal_term_run_by_as_of": false,
+        "publication_year": 2018,
+        "robustness_margin_years": 10,
+        "status_is_pre_term_lapse_not_term_expiry": false,
+        "statutory_expiry_bracket": [
+          2036,
+          2038
+        ]
+      },
+      {
+        "annotated_expiry_year": null,
+        "basis": "no year annotated; bracket recorded only",
+        "consistent": true,
+        "damages_tail_closed_by_as_of": true,
+        "damages_tail_closes": 2015,
+        "doc": "US4865653A",
+        "grant_year_bracket": [
+          1989,
+          1989
+        ],
+        "kind": "US_PRE_URAA",
+        "maintenance_fee_due_years": [
+          1992.5,
+          1996.5,
+          2000.5
+        ],
+        "n": 30,
+        "nominal_term_run_by_as_of": true,
+        "patent_number": 4865653,
+        "robustness_margin_years": 17,
+        "statutory_expiry_bracket": [
+          2006,
+          2009
+        ]
+      },
+      {
+        "annotated_expiry_year": null,
+        "basis": "no year annotated; bracket recorded only",
+        "consistent": true,
+        "damages_tail_closed_by_as_of": true,
+        "damages_tail_closes": 1991,
+        "doc": "US3178319A",
+        "grant_year_bracket": [
+          1965,
+          1965
+        ],
+        "kind": "US_PRE_URAA",
+        "maintenance_fee_due_years": [
+          1968.5,
+          1972.5,
+          1976.5
+        ],
+        "n": 31,
+        "nominal_term_run_by_as_of": true,
+        "patent_number": 3178319,
+        "robustness_margin_years": 41,
+        "statutory_expiry_bracket": [
+          1982,
+          1985
+        ]
+      },
+      {
+        "annotated_expiry_year": null,
+        "basis": "no year annotated; bracket recorded only",
+        "consistent": true,
+        "damages_tail_closed_by_as_of": true,
+        "damages_tail_closes": 1981,
+        "doc": "US2705223A",
+        "grant_year_bracket": [
+          1955,
+          1955
+        ],
+        "kind": "US_PRE_URAA",
+        "maintenance_fee_due_years": [
+          1958.5,
+          1962.5,
+          1966.5
+        ],
+        "n": 35,
+        "nominal_term_run_by_as_of": true,
+        "patent_number": 2705223,
+        "robustness_margin_years": 51,
+        "statutory_expiry_bracket": [
+          1972,
+          1975
+        ]
+      },
+      {
+        "annotated_expiry_year": null,
+        "basis": "no year annotated; bracket recorded only",
+        "consistent": true,
+        "damages_tail_closed_by_as_of": true,
+        "damages_tail_closes": 1987,
+        "doc": "US2986539A",
+        "grant_year_bracket": [
+          1961,
+          1961
+        ],
+        "kind": "US_PRE_URAA",
+        "maintenance_fee_due_years": [
+          1964.5,
+          1968.5,
+          1972.5
+        ],
+        "n": 36,
+        "nominal_term_run_by_as_of": true,
+        "patent_number": 2986539,
+        "robustness_margin_years": 45,
+        "statutory_expiry_bracket": [
+          1978,
+          1981
+        ]
+      }
+    ],
+    "inconsistent_rows": [],
+    "jurisdiction_split_rows": [
+      {
+        "doc": "EP2931822 via US2015/0329739A1 family member (EP claims did ",
+        "n": 3,
+        "reads_on_ours": "NO (caveat: read US family claim, not EP)",
+        "status": "EP shown Active; US member Ceased"
+      }
+    ],
+    "paris_4bis_note": "Paris Convention Art. 4bis: patents granted in different countries for the same invention are INDEPENDENT. A ceased US member therefore cannot clear a live EP sibling; family status is not a scalar.",
+    "rows_evaluated": 11,
+    "section_156_note": "35 U.S.C. 156 restricts Patent Term Extension to products subject to a regulatory review period (drug/device/food-or-color additive/veterinary). A marine anticorrosive coating is not eligible, so the upper term bracket cannot be extended.",
+    "section_156_pte_available": false,
+    "uspto_anchor_provenance": "Grant years bracketed from USPTO 'Issue Years and Patent Numbers Since 1836'. The anchor table is transcribed and flagged for human spot-verification; every conclusion is reported with its robustness margin so a +/-2 year anchor error cannot flip it."
+  },
+  "checkD_status_non_elevation": {
+    "converted_to_non_read_on_expiry_alone": [],
+    "damages_tail_note": "35 U.S.C. 286 leaves a six-year damages tail after expiry. All provably-expired rows here closed their tail before the as-of date, but the fixture's own unread_or_partial list flags 'continuations and terminal disclaimers', whose members can carry later-expiring terms - so the family-level tail is NOT provably closed and is held unresolved, not cleared.",
+    "every_row_not_fto_true": true,
+    "held_unclear_despite_certain_expiry": [
+      30,
+      31,
+      35,
+      36
+    ],
+    "non_elevation_holds": true,
+    "not_fto_true_count": 60,
+    "provably_term_expired_count": 5,
+    "provably_term_expired_rows": [
+      {
+        "doc": "US5059640A",
+        "n": 5,
+        "not_fto": true,
+        "reads_on_ours": "NO",
+        "statutory_expiry_bracket": [
+          2008,
+          2011
+        ]
+      },
+      {
+        "doc": "US4865653A",
+        "n": 30,
+        "not_fto": true,
+        "reads_on_ours": "UNCLEAR / not FTO",
+        "statutory_expiry_bracket": [
+          2006,
+          2009
+        ]
+      },
+      {
+        "doc": "US3178319A",
+        "n": 31,
+        "not_fto": true,
+        "reads_on_ours": "UNCLEAR / not FTO",
+        "statutory_expiry_bracket": [
+          1982,
+          1985
+        ]
+      },
+      {
+        "doc": "US2705223A",
+        "n": 35,
+        "not_fto": true,
+        "reads_on_ours": "UNCLEAR / not FTO",
+        "statutory_expiry_bracket": [
+          1972,
+          1975
+        ]
+      },
+      {
+        "doc": "US2986539A",
+        "n": 36,
+        "not_fto": true,
+        "reads_on_ours": "UNCLEAR / not FTO",
+        "statutory_expiry_bracket": [
+          1978,
+          1981
+        ]
+      }
+    ],
+    "unread_or_partial_declared": [
+      "dependent claims",
+      "foreign counterparts not surfaced by Google Patents",
+      "prosecution histories/file wrappers",
+      "doctrine-of-equivalents analysis",
+      "continuations and terminal disclaimers",
+      "supplier-specific additive grade patents"
+    ]
+  },
+  "checkE_authority_envelope": {
+    "envelope_clean": true,
+    "forbidden_legal_closure_key_hits": [],
+    "scanned_keys": [
+      "fto_cleared",
+      "freedom_to_operate",
+      "legal_opinion",
+      "counsel_opinion",
+      "batch_release",
+      "release_authorized",
+      "authorized_by",
+      "qualified",
+      "patentability_conclusion",
+      "clearance_granted",
+      "manufacturing_qualification"
+    ]
+  },
+  "does_not_close": [
+    "No FTO, no legal advice, no clearance. Term arithmetic is applied to the fixture's own annotations; it determines no patent's actual legal status in any jurisdiction.",
+    "Grant dates are bracketed to a YEAR from the USPTO issue-year table, not read from official register data; day-level term dates are not determined. Every conclusion is reported with a robustness margin so a +/-2 year anchor error cannot flip it.",
+    "Continuations, divisionals, terminal disclaimers and foreign counterparts (which the fixture itself lists as unread) can carry later-expiring terms; the family-level 35 U.S.C. 286 damages tail is therefore held UNRESOLVED, not closed.",
+    "Sec. 154(b) PTA and any Sec. 156 PTE determinations require official register data not present in the fixture; PTA can only lengthen the bracket, and Sec. 156 is unavailable to a coating, so the reported bounds remain conservative.",
+    "Does not modify the manifest (66 receipts / 11 modules), the pinned fixture, or any signed Phase-0 KPI.",
+    "AUDIT_ONLY: promotes no authority and flips no scientific_readiness."
+  ],
+  "fail_closed_mutation_demo": {
+    "all_mutations_caught": true,
+    "mutations": [
+      {
+        "caught": true,
+        "caught_by": "checkB_severability + checkD_non_elevation",
+        "mutation": "convert_certainly_expired_row_to_non_read_on_expiry_alone"
+      },
+      {
+        "caught": true,
+        "caught_by": "checkA_basis_consistency",
+        "mutation": "assert_family_status_verified_without_verification_basis"
+      },
+      {
+        "caught": true,
+        "caught_by": "checkA_clearance_lexicon",
+        "mutation": "inject_clearance_language_into_status"
+      },
+      {
+        "caught": true,
+        "caught_by": "checkC_term_arithmetic",
+        "mutation": "annotate_expiry_beyond_statutory_term_bracket"
+      },
+      {
+        "caught": true,
+        "caught_by": "checkD_not_fto_invariant",
+        "mutation": "strip_not_fto_from_expired_row"
+      }
+    ]
+  },
+  "finding": {
+    "defect_id": "IPFTO-TEMPORAL-001",
+    "description": "Exactly one non-read row (n=5, US5059640A) co-mingles a CLEARANCE-FAVOURABLE legal-status clause ('also EXPIRED') into `why`, the grounding field for the All-Elements-Rule verdict. A second row (n=2, EP3328938B1) carries a status remark in `why` ('The ONLY live-granted family here'), but that status is ADVERSE to the reader and therefore cannot do clearance work in either direction. Legal status cannot ground a non-read: 35 U.S.C. 41(c)(1)/37 C.F.R. 1.378 permit revival of a lapsed patent, 35 U.S.C. 286 leaves a six-year damages tail after expiry, and Paris Art. 4bis makes foreign members independent. The severability test shows the verdict does not depend on the status clause - an independently sufficient missing-element clause survives its removal - so the defect is rationale hygiene, not a leaked clearance.",
+    "fixture_modified_by_this_run": false,
+    "recommended_remediation": "Move status remarks out of `why` and into `design_around`/`status`, where the other rows already keep them. This is a FIXTURE edit and is NOT performed here: the fixture is SHA-pinned into a signed Phase-0 KPI and may only be changed under the human dual-identity ceremony.",
+    "rows_any_status_clause": [
+      2,
+      5
+    ],
+    "rows_clearance_directional": [
+      5
+    ],
+    "severity": "COSMETIC_NOT_LOAD_BEARING"
+  },
+  "hash_and_count_lock": {
+    "family_count_matches_pin": true,
+    "fixture_sha256_matches_pin": true,
+    "sweep_count_matches_pin": true
+  },
+  "headline": "Legal-status / patent-term temporal severability audit of the pinned landscape (SHA 52ada090..., 60 families / 6 sweeps), as-of 2026-07-30: status lattice TOTAL (60/60 rows mapped, 0 clearance-language hits, family_status_verified false 60/60). CORE RESULT - H0 'no non-read is grounded on legal status' is REFUTED at 1/6 NO rows (row(s) [5] co-mingle a clearance-favourable status clause into the grounding field `why`; the strict form H0_strict, which also counts ADVERSE status remarks, is REFUTED at 2/6), while SEVERABILITY is CORROBORATED 6/6: striking every status clause leaves an independently sufficient element-grounded clause in each case, so no verdict is load-bearing on expiry. Term arithmetic under 35 U.S.C. 154(a)(2)/154(c)(1)/41(b)/286 and EPC Art. 63(1)/PCT Art. 11(3): 11/11 status-bearing rows statutorily consistent (35 U.S.C. 156 PTE unavailable to a coating). Non-elevation holds: 5 rows are provably past nominal term yet 4 of them remain UNCLEAR rather than being converted to non-reads; not_fto true 60/60; authority envelope clean; 5/5 hostile status-to-clearance mutations caught.",
+  "inputs": {
+    "as_of_date": "2026-07-30",
+    "cpc_ipc_sweeps": 6,
+    "families": 60,
+    "fixture_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+    "fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "pinned_fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+  },
+  "kpi_reconstruction": {
+    "H0_directional_no_clearance_favourable_status_grounding": false,
+    "H0_strict_no_status_clause_in_any_non_read": false,
+    "authority_envelope_clean": true,
+    "clearance_language_clean": false,
+    "fail_closed_mutation_catch_rate": 1.0,
+    "not_fto_rate": 1.0,
+    "severability_rate": 1.0,
+    "status_lattice_totality_rate": 1.0,
+    "status_non_elevation_holds": true,
+    "term_arithmetic_consistency_rate": 1.0
+  },
+  "module": "amphora-ip-fto-guard",
+  "non_circularity": "The Rust runtime is NOT invoked. An independent CPython harness re-derives statutory term brackets directly from patent_landscape.json against 35 U.S.C. 154/41/286/156, EPC Art. 63/86/122, PCT Art. 11/21/24/48, Paris Art. 4bis and the USPTO issue-year table - not against module output. The fixture SHA-256 is checked against the KPI-pinned value. The as-of date is a pinned constant, not wall-clock.",
+  "purpose": "Close the TEMPORAL gap left open by the module's three prior signed audits (structural integrity, All-Elements-Rule doctrine, CPC/IPC classification): independently re-derive, from published patent-term statutes and treaties, whether the pinned landscape ever lets legal status (expiry, cease, lapse) do clearance work it is legally incapable of doing, and whether its expiry annotations survive statutory term arithmetic.",
+  "run_type": "LEGAL_STATUS_PATENT_TERM_TEMPORAL_SEVERABILITY_AUDIT",
+  "schema": "amphora.ip-fto-guard.legal-status-term-diagnostic.v1",
+  "study_id": "IP_FTO_GUARD_LEGAL_STATUS_TERM_SEVERABILITY_V1",
+  "theory_reference": {
+    "framework": "U.S. patent term & maintenance statutes + PCT/EPC/Paris term provisions",
+    "note": "Statutes applied ONLY as arithmetic and as structural predicates on the fixture's own annotations. This is not legal advice and performs no FTO; no legal conclusion about any patent is reached or implied.",
+    "primary_authorities": [
+      "35 U.S.C. Sec. 154(a)(2) - term: 20 years from earliest U.S. non-provisional / PCT filing",
+      "35 U.S.C. Sec. 154(b) - Patent Term Adjustment (extends only; 20y-from-filing is a lower bound)",
+      "35 U.S.C. Sec. 154(c)(1) - URAA (Pub. L. 103-465, eff. 1995-06-08) transitional term: greater of 17y from grant or 20y from filing",
+      "35 U.S.C. Sec. 41(b) + 37 C.F.R. Sec. 1.362 - maintenance fees at 3.5/7.5/11.5 years from grant",
+      "35 U.S.C. Sec. 41(c)(1) + 37 C.F.R. Sec. 1.378 - reinstatement of an unintentionally lapsed patent",
+      "35 U.S.C. Sec. 286 - six-year limitation on recovery for past infringement",
+      "35 U.S.C. Sec. 156 - Patent Term Extension limited to regulatory-review products (not coatings)",
+      "MPEP 9th ed. Rev. 07.2022 Sec. 2701 (Patent Term); Sec. 2710 et seq. (PTA)",
+      "Paris Convention for the Protection of Industrial Property (1883; Stockholm Act 1967) Art. 4bis - independence of patents",
+      "Patent Cooperation Treaty (Washington 1970, as amended) Art. 11(3), 21(2)(a), 22/39, 24(2), 48(2)",
+      "European Patent Convention Art. 63(1) (term), Art. 86 (renewal fees), Art. 122 (re-establishment of rights)",
+      "USPTO, 'Issue Years and Patent Numbers Since 1836' - first utility patent number per calendar year"
+    ]
+  }
+}

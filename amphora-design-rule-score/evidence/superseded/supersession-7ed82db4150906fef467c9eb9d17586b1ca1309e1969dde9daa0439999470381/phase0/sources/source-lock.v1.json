@@ -1,0 +1,69 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-design-rule-score/evidence/phase0",
+  "imported_locks": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "bfdfd79abf49f3d49fb3b3ad7fe697bdbc154c55c12f022b129802070583dfcd",
+      "source_path": "config/program/design-rule-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "221eab2b17ef44653d01a50b56ee60e937941c7932e19e9fe1c3885d36d9fa17",
+      "source_path": "config/program/design-rule-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "b80c3d964438d1987f5630ca1a42d754220bd9536006ba4d5973ea683e6afacb",
+      "source_path": "config/benchmark-locks/amphora-design-rule-score.v1.json"
+    }
+  ],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-design-rule-score",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "1e8b042565945168d6f51f172036d021303390a01fb27f4ab51ce5ae273d7442",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/locks/bigsoldb_solubility-879f55f39db977e2.json",
+      "observed_sha256": "1e8b042565945168d6f51f172036d021303390a01fb27f4ab51ce5ae273d7442",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

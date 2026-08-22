@@ -1,0 +1,51 @@
+{
+  "input_mapping_table_row_count": 42,
+  "input_mapping_table_sha256": "35f97c3f1b76a7a352e70105ecfeefb7eee50f45c91cf49e761315ddb3191f54",
+  "runA_sha256": "d8bda03e93af6cf7a88d75c0e1ee6887035cf53202171238d3f6957be7f65ece",
+  "runB_sha256": "d8bda03e93af6cf7a88d75c0e1ee6887035cf53202171238d3f6957be7f65ece",
+  "two_replay_byte_identical": true,
+  "violation_count": 1,
+  "violations": [
+    {
+      "live_evidence": {
+        "checked_url": "https://standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&topMenuId=502&upperMenuId=503&ksNo=KSDISO9227&tmprKsNo=KSDISO9227",
+        "cross_check": "The DR-STD-MAP table's OWN sibling row for 'KS D 9502' (source candidate_id DR-LANG-KO-01 family, standard_class KS) is already present in mapping-table.v3.json with integrity_gap=false and comparability_rating 'iso_direct_adoption_confirmed_mod_distinct_vintage' -- i.e. the table already knows KS D 9502 is the live, current Korean salt-spray standard. It never cross-referenced that KS D ISO 9227 (a separate row in the same table) is the exact standard KS D 9502 replaced.",
+        "fetch_method": "raw curl (no JS execution) plus independent WebFetch cross-check, both against the live page this fire",
+        "fire_id": "20260817T130001-3407163-2ada8f0e6fcd",
+        "interpretation": "KS D ISO 9227 was established 2003-12-26 (notification 2003-1673) as Korea's identical (IDT) adoption of ISO 9227:1990, then ABOLISHED 2005-12-28 (notification 2005-0989) with the stated reason 'KSD9502와 규격중복' (duplicate/overlapping with KS D 9502). The registry's own 대체 표준 (replacement-standard) field is empty ('no replacement standard on file'), meaning the abolition was a straight repeal-in-favor-of-the-existing-KS-D-9502-scope, not a renumbering. The standard has carried NO current legal text for approximately 21 years (2005-12-28 to snapshot date 2026-08-17).",
+        "raw_field_extractions": {
+          "국제 표준 부합화 -- 대응 국제 표준 (corresponding international standard)": "ISO 9227:1990",
+          "대체 표준 (replacement standard, structured field)": "대체표준이 없습니다 (no replacement standard on file)",
+          "제정일 (establishment date)": "2003-12-26",
+          "최종개정확인일 (last revision/confirmation date)": "2005-12-28",
+          "표준 이력사항 (standard history table)": [
+            {
+              "고시번호": "2003-1673",
+              "구분": "제정",
+              "변경일자": "2003-12-26",
+              "제정/개정/폐지사유": ""
+            },
+            {
+              "고시번호": "2005-0989",
+              "구분": "폐지",
+              "변경일자": "2005-12-28",
+              "제정/개정/폐지사유": "KSD9502와 규격중복"
+            }
+          ],
+          "표준구분 (category)": "방법 (method)",
+          "표준명(한글) (Korean title, with status suffix)": "인공대기에서의 부식 - 염수분무시험 (폐지)",
+          "표준번호 (standard number, with status suffix)": "KS D ISO9227 (폐지)",
+          "표준분야 (field)": "(D) 금속"
+        },
+        "snapshot_date": "2026-08-17",
+        "source_authority": "국가기술표준원 (Korean Agency for Technology and Standards) via e-나라 표준인증 (standard.go.kr), Korea's official national standards registry -- primary source, not a reseller/aggregator",
+        "standard_id": "KS D ISO 9227:2005"
+      },
+      "reason": "Row is signed with a comparability_rating implying live method-class comparability, but the standard's own official registry (standard.go.kr) marks it 폐지 (abolished) as of 2005-12-28, notification 2005-0989, reason 'KSD9502와 규격중복'. This is the same violation class the table's own GB/T 13351-1992 row correctly discloses via comparability_rating='not_applicable_abolished'.",
+      "signed_astm_iso_equiv": "ISO 9227:1990 (identical adoption, per KSA); broadly method-class-comparable to ASTM B117. (ISO 9227's own scope: salt spray corrosion tests.)",
+      "signed_comparability_rating": "method_class_confirmed_iso_explicit_astm_inferred",
+      "signed_integrity_gap": false,
+      "standard_id": "KS D ISO 9227:2005"
+    }
+  ]
+}

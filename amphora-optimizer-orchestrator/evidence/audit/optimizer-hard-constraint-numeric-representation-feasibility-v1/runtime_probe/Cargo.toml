@@ -1,0 +1,18 @@
+[package]
+name = "optimizer-numeric-representation-feasibility-probe"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace. Nothing is added to,
+# built into, or written inside the workspace by this probe.
+[workspace]
+
+# LIVE harness: links the real Rust runtime crate and calls the real public
+# entry point amphora_core::rank_candidates over a synthetic-but-schema-valid
+# KpiProfile and synthetic score envelopes. Not a re-implementation of
+# rank_candidates, authorize_optimizer_request, comparison_passes, or the
+# sort comparator.
+[dependencies]
+amphora-core = { path = "../../../../../amphora-core" }
+serde_json = { version = "=1.0.150", features = ["float_roundtrip"] }

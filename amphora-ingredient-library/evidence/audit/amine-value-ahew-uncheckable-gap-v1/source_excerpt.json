@@ -1,0 +1,39 @@
+{
+  "source_document": {
+    "title": "Evonik AMERICAS Epoxy Curing Agents, Diluents, Accelerators, Adhesion Promoters product guide",
+    "url": "https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf",
+    "note": "This is the EXACT url already cited as the load-bearing citation for hardener.ancamide_220x70.ahew (url field), hardener.ancamide_2353.ahew (url field) and hardener.ancamide_260a.ahew (url field) in the live reference/mvp20/data/facts.json -- not a new/untrusted source.",
+    "fetched_pdf_sha256": "7ac384ec33f861350bee5ffd919a84afa4743cab14682b6942b01b7910524339",
+    "extraction_method": "pdftotext -layout, then row-anchored grep on the AMIDOAMINES product table (Curing Agent / Type / Color / Viscosity / Specific Gravity / Amine Value (mg KOH/g) / WT/{H} Equivalent [=AHEW, g/eq] / Use Level / Gel Time / Thin Film Set Time / Glass Transition Temp / Typical Cure Schedule columns, header confirmed at pdftotext line ~795-853)",
+    "column_order_validation": "AHEW (WT/{H} Equivalent) column extracted for ancamide_350a (the in-catalog cross-check row) reads 100 g/eq, byte-identical to reference/mvp20/data/facts.json hardener.ancamide_350a.ahew=100.0 and amine_value=380.0 (row: AV=380, AHEW=100) -- confirms correct column mapping before trusting the 3 target rows below."
+  },
+  "target_rows_raw_text": {
+    "hardener.ancamide_220x70": "ANCAMIDE® 220-X-70   Amide Solution   7   1,100   0.940   170   264   709   NA   ambient temp   Ancamide® 220-X-70 is a 70wt% solution of Ancamide® 220 in xylene.",
+    "hardener.ancamide_2353": "ANCAMIDE® 2353   Modified Polyamide   9   3,000   1.01   330   114   60   65   4.5   131   ambient temp   Excellent high-gloss film formation and fast dry with no induction time.",
+    "hardener.ancamide_260a": "ANCAMIDE® 260A   Amide/ Imidazoline   7   40,000   0.960   350   120   65   120   10   NA   ambient temp   Standard medium-viscosity polyamide. 1:1 volume ratios with standard liquid epoxy resin possible."
+  },
+  "extracted_amine_value_mgKOH_g": {
+    "hardener.ancamide_220x70": 170.0,
+    "hardener.ancamide_2353": 330.0,
+    "hardener.ancamide_260a": 350.0
+  },
+  "catalog_ahew_cross_check": {
+    "hardener.ancamide_220x70": {
+      "facts_json_ahew_g_eq": 264.0,
+      "extracted_pdf_ahew_g_eq": 264.0,
+      "match": true,
+      "basis_note": "Both AV and AHEW are on the same 70wt% xylene-solution basis (facts.json single_source_waiver: 'Evonik product TDS direct read (solution basis)') -- consistent basis for the ratio."
+    },
+    "hardener.ancamide_2353": {
+      "facts_json_ahew_g_eq": 114.0,
+      "extracted_pdf_ahew_g_eq": 114.0,
+      "match": true
+    },
+    "hardener.ancamide_260a": {
+      "facts_json_ahew_g_eq": 120.0,
+      "extracted_pdf_ahew_g_eq": 120.0,
+      "match": true,
+      "basis_note": "facts.json uses the US value (120); EMEA guide reports 110 (pre-existing disclosed regional conflict, not touched by this audit)."
+    }
+  }
+}

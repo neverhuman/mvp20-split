@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "9154658358db6642494029ab50cadc6840bf5dfd931afeec1353451180b01674",
+  "import_hashes": [],
+  "module_id": "amphora-report-packager",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

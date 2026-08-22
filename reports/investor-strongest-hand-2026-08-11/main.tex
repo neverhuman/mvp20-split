@@ -1,0 +1,308 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[paperwidth=13.333in,paperheight=7.5in,top=13mm,bottom=12mm,left=16mm,right=16mm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{ragged2e}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do\-\do\_\do\.}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+% ==== Amphora colour system (forked from portfolio-status main.tex) ====
+\definecolor{Navy}{HTML}{102A43}
+\definecolor{Blue}{HTML}{1666A8}
+\definecolor{Cyan}{HTML}{2D9CDB}
+\definecolor{Teal}{HTML}{168C86}
+\definecolor{Green}{HTML}{23856D}
+\definecolor{DeltaGreen}{HTML}{006300}
+\definecolor{Orange}{HTML}{E56B2F}
+\definecolor{Amber}{HTML}{D99A1D}
+\definecolor{Red}{HTML}{B54747}
+\definecolor{Ink}{HTML}{243B53}
+\definecolor{Muted}{HTML}{627D98}
+\definecolor{Line}{HTML}{D9E2EC}
+\definecolor{Panel}{HTML}{F4F7FA}
+\definecolor{PaleBlue}{HTML}{EAF3FA}
+\definecolor{PaleGreen}{HTML}{EAF7F2}
+\definecolor{PaleAmber}{HTML}{FBEED4}
+\definecolor{PaleRed}{HTML}{FAECEC}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt}
+\setlist[itemize]{leftmargin=4.5mm,itemsep=1.6pt,topsep=2pt}
+\renewcommand{\arraystretch}{1.22}
+\hypersetup{colorlinks=true,linkcolor=Blue,urlcolor=Blue,
+  pdftitle={Amphora --- Our Strongest Hand (2026-08-11)},pdfauthor={Amphora Engineering}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\fontsize{6.8}{8}\selectfont\color{Muted}%
+  Every number traces to a DSSE-signed, byte-stable evidence receipt on xbabe2; 129 loop-era receipts verify against the trust-anchored Phase-0 key. AUDIT-ONLY --- pre-Phase-0; no product qualification or procurement claims.}
+\fancyfoot[R]{\fontsize{6.8}{8}\selectfont\color{Muted}\thepage\ / \pageref{LastPage}}
+
+% ==== macros ====
+\newcommand{\eyebrow}[1]{{\fontsize{8.5}{10}\selectfont\bfseries\color{Cyan}\MakeUppercase{#1}}\par\vspace{1.2mm}}
+\newcommand{\slidetitle}[2]{\eyebrow{#1}{\fontsize{23}{26}\selectfont\bfseries\color{Navy}#2}\par\vspace{1.2mm}{\color{Cyan}\rule{20mm}{1.3pt}}\par\vspace{3mm}}
+\newcommand{\stattile}[4]{%
+  \begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=#4,left=3mm,right=3mm,top=2.6mm,bottom=2.6mm,height=31mm,valign=top]
+  {\fontsize{7.4}{8.6}\selectfont\color{Muted}\MakeUppercase{#1}}\par\vspace{1.6mm}
+  {\fontsize{21}{22}\selectfont\bfseries\color{Navy}#2}\par\vspace{1.4mm}
+  {\fontsize{7.8}{9.4}\selectfont\color{Ink}#3}
+  \end{tcolorbox}}
+\newcommand{\kv}[2]{{\bfseries\color{Navy}#1.}\ {\color{Ink}#2}}
+\newcommand{\rcpt}[1]{{\fontsize{6.6}{7.6}\selectfont\color{Muted}\path{#1}}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+\begin{document}
+
+% ================================================================ SLIDE 1
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[Navy] (current page.south west) rectangle (current page.north east);
+  \fill[Blue!28!Navy] ([xshift=-52mm,yshift=30mm]current page.north east) circle (46mm);
+  \fill[Cyan!22!Navy] ([xshift=-18mm,yshift=-6mm]current page.north east) circle (27mm);
+  \fill[Blue!16!Navy] ([xshift=30mm,yshift=-24mm]current page.south west) circle (34mm);
+  \node[anchor=west,text width=200mm] at ([xshift=20mm,yshift=6mm]current page.west) {%
+    {\fontsize{9.5}{11}\selectfont\bfseries\color{Cyan}AMPHORA COATING IP\quad/\quad INVESTOR BRIEFING\par}
+    \vspace{7mm}
+    {\fontsize{40}{44}\selectfont\bfseries\color{white}Our\hspace{0.32em}Strongest\hspace{0.32em}Hand\par}
+    \vspace{4mm}
+    {\fontsize{13}{17}\selectfont\color{Line}Six materials-property engines, measured against published best practice.\\
+     Every number on the pages that follow is quoted from a signed evidence receipt\\
+     and was attacked by our own adversarial audit loop before it reached this deck.\par}
+    \vspace{9mm}
+    {\fontsize{9.5}{12}\selectfont\color{Muted!60!white}11 August 2026\quad/\quad mvp20-split\quad/\quad master manifest \ttfamily f5623b31\ldots ad6bf08\par}
+  };
+  \node[anchor=south west] at ([xshift=20mm,yshift=10mm]current page.south west)
+    {\fontsize{7.5}{9}\selectfont\color{Muted!70!white}AUDIT-ONLY \,/\, PRE-PHASE-0 \,/\, NO PRODUCT QUALIFICATION CLAIMS \,/\, SOURCE: PORTFOLIO STATUS 2026-08-03};
+\end{tikzpicture}
+\newpage
+
+% ================================================================ SLIDE 2
+\slidetitle{02 / headline}{Five properties beat best practice; one reproduces it exactly}
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Hansen interaction $\chi$}{$-$62.1\%}{error vs.\ Hildebrand--Scott single-$\delta$ --- with \textbf{zero} fitted parameters}{PaleBlue}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Polymer density}{$-$57.3\%}{MAE vs.\ Van Krevelen 1990 group contribution (n=1{,}077)}{PaleBlue}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Glass transition $T_g$}{$-$27.2\%}{MAE vs.\ Van Krevelen Ridge; scaffold-safe LOSO-CV, single-corpus (n=441)}{PaleBlue}
+\end{minipage}
+
+\vspace{2mm}
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Solubility --- BigSolDB}{$-$25.0\%}{RMSE vs.\ best naive baseline; leave-solute-out, 1{,}372 solutes}{PaleBlue}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Refractive index}{$-$19.3\%}{MAE vs.\ Lorentz--Lorenz on real MD density (n=1{,}223)}{PaleBlue}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Cure kinetics $E_a$}{$\Delta$ 0.039}{kJ/mol, best-lab error vs.\ published Kissinger values; all 3 laboratories within 1.40 kJ/mol (3 DOIs)}{PaleGreen}
+\end{minipage}
+
+\vspace{4mm}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=Panel,left=4mm,right=4mm,top=3mm,bottom=3mm]
+\kv{Why these six}{they are the comparisons our own red team could not kill. Out of 54 adversarial verdicts across the portfolio, 40 claims were refuted and retracted --- these survived, against \emph{named, published} baselines, with the split methodology and sample sizes printed next to every bar. What follows is the surviving hand, not the whole portfolio.}
+\end{tcolorbox}
+
+\vfill
+\begin{center}
+{\fontsize{9.5}{12}\selectfont\color{Muted}%
+\textbf{\color{Navy}40} modules in the mvp20-split monorepo \quad·\quad
+\textbf{\color{Navy}370} signed evidence receipts \quad·\quad
+\textbf{\color{Navy}182} autonomous audit fires \quad·\quad
+\textbf{\color{Navy}54} adversarial verdicts \quad·\quad
+\textbf{\color{Navy}0} unreceipted numbers in this deck}
+\end{center}
+\vspace{2mm}
+\newpage
+
+% ================================================================ SLIDE 3
+\slidetitle{03 / evidence}{Amphora vs.\ published best practice}
+{\fontsize{9}{11}\selectfont\color{Muted}Lower is better on all error panels. Only genuinely defensible published baselines appear here; every value is quoted from a signed receipt (portfolio status 2026-08-03, \S 05).}\par\vspace{1mm}
+\begin{center}
+  \includegraphics[width=0.93\textwidth]{figs/lift_panels.pdf}
+\end{center}
+\newpage
+
+% ================================================================ SLIDE 4
+\slidetitle{04 / foundation}{The deterministic chemistry layer is accurate to spec}
+{\fontsize{9}{11}\selectfont\color{Muted}Audited implementations of named physical methods, scored against measured public reference data under pre-registered acceptance gates (red-team benchmark series, July 2026). These are accuracy audits against measured truth, not model-vs-model comparisons.}\par\vspace{2.5mm}
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Refractive index (liquids)}{0.16\%}{MAPE, Lorentz--Lorenz vs.\ CRC/NIST measured values; 96\% lift over null (n=19)}{Panel}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Boiling point / volatility}{1.45\%}{MAPE vs.\ NIST WebBook, 18/18 within $\pm$5\%; evaporation-order Spearman 0.967}{Panel}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Hildebrand $\delta$}{1.48\%}{MAPE vs.\ calorimetric references, 100\% within $\pm$5\% (Fedors groups, n=17)}{Panel}
+\end{minipage}
+
+\vspace{2mm}
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Flash point + GHS class}{2.34 K}{MAE --- better than the correlation's own published $\approx$2.9 K; 13/13 within $\pm$5 K, GHS 11/13}{Panel}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Molar volume $\to$ density}{2.38\%}{median error, 67/69 solvents strictly out-of-sample, r = 0.936 (Fedors 1974)}{Panel}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\textwidth}
+  \stattile{Epoxy stoichiometry}{$\pm$0.03}{g/eq --- EEW/AHEW exact vs.\ PubChem / ASTM D1652; 300-molecule truth set, 300/300 triple-source agreement}{Panel}
+\end{minipage}
+
+\vspace{3.5mm}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=PaleBlue,left=4mm,right=4mm,top=3mm,bottom=3mm]
+\kv{Why this layer matters}{every formulation decision downstream rests on these primitives. They are deterministic, replayable, and audited against measured data with negative controls --- the ML engines on the previous page are built \emph{on top of} chemistry that is provably right.}
+\end{tcolorbox}
+\newpage
+
+% ================================================================ SLIDE 5
+\slidetitle{05 / method}{These numbers were attacked before you saw them}
+\begin{minipage}[t]{0.56\textwidth}\vspace{0pt}
+\kv{The falsification loop}{an autonomous audit system whose only job is to \emph{break} our claims. Over four days it fired 182 times and returned 54 adversarial verdicts across 15 modules. It refuted 40 of our own published claims --- each retraction is signed and public inside the company --- and could not refute the results in this deck.}
+
+\vspace{2.5mm}
+\includegraphics[width=\linewidth]{figs/verdicts.pdf}
+
+\vspace{2.5mm}
+\kv{Why refutations make the survivors valuable}{an audit that always succeeds is generating paper, not information. Ours returns ``your claim is wrong'' 40 times out of 54 --- so a claim that survives it has been earned, not asserted.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.40\textwidth}\vspace{0pt}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=PaleBlue,left=3.5mm,right=3.5mm,top=3mm,bottom=3mm]
+{\bfseries\color{Navy}Every verdict must pass three machine checks}\par\vspace{1.5mm}
+{\fontsize{8.8}{11.4}\selectfont\color{Ink}
+\begin{itemize}
+  \item \textbf{Content-hash attribution} --- evidence must be new, SHA-256-attributed to the exact run that claims it.
+  \item \textbf{Ed25519 DSSE signature} --- each receipt verifies against the pinned Phase-0 trust key.
+  \item \textbf{Ledger binding} --- the verdict must appear in the append-only falsification ledger under its fire id.
+\end{itemize}}
+\end{tcolorbox}
+\vspace{2mm}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=Panel,left=3.5mm,right=3.5mm,top=3mm,bottom=3mm]
+{\fontsize{8.8}{11.4}\selectfont\color{Ink}
+\kv{Replayable}{signed receipts carry a two-replay byte-stability gate: re-running a benchmark must reproduce the canonical body byte-for-byte.}\par\vspace{1mm}
+\kv{Anchored}{129 loop-era receipts verify against the trust-anchored Phase-0 key; the verification procedure is published and takes an afternoon to re-run independently.}}
+\end{tcolorbox}
+\end{minipage}
+\newpage
+
+% ================================================================ SLIDE 6
+\slidetitle{06 / flagship}{Solvency engine --- survived a directed attempt to kill it}
+\begin{minipage}[t]{0.555\textwidth}\vspace{0pt}
+\kv{The result}{solubility prediction on BigSolDB at RMSE \textbf{0.877} log units [95\% CI 0.842--0.915] vs.\ \textbf{1.169} for the best naive baseline --- $-$25.0\% --- under a \emph{leave-solute-out} split: every test solute is completely unseen, 1{,}372 solutes, 94{,}532 measurement groups. The receipt anchors it inside the \textbf{published solute-extrapolation state-of-the-art band} (RMSE 0.83--0.99, Attia et al.\ 2025).}
+
+\vspace{2mm}
+\kv{The attack it survived}{the red team excised all 517 genuinely contradictory duplicate measurement groups from the corpus and re-ran the locked protocol from scratch. The result moved to within 0.041 of the locked threshold --- and held. Graded \textbf{STRONG}: the attack had a real path to refutation and failed.}
+
+\vspace{2mm}
+\kv{The bonus result}{Hansen interaction parameter $\chi$ predicted \emph{a priori} --- zero fitted parameters --- at MAE 0.656 vs.\ 1.730 for the Hildebrand--Scott single-$\delta$ treatment on all 8 published pairs ($-$62.1\%).}
+
+\vspace{3mm}
+\includegraphics[width=\linewidth]{figs/flagship_solubility.pdf}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.40\textwidth}\vspace{0pt}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=PaleGreen,left=3.5mm,right=3.5mm,top=3mm,bottom=3mm]
+{\bfseries\color{Navy}Module scorecard}\par\vspace{1.5mm}
+{\fontsize{8.8}{12.4}\selectfont\color{Ink}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{31mm}Y@{}}
+Status & Phase-0, LOCKED-INTERNAL \\
+Composite score & 79.2 --- highest of 40 modules \\
+Signed receipts & 21 on disk, 20 verify \\
+Attack record & 1 STRONG survival; 2 stale KPI claims retracted \& re-issued \\
+\end{tabularx}}
+\end{tcolorbox}
+\vspace{2mm}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=Panel,left=3.5mm,right=3.5mm,top=2.6mm,bottom=2.6mm]
+{\fontsize{7.6}{9.4}\selectfont\color{Muted}RECEIPTS\par}
+\rcpt{amphora-solvency-score/benchmarks/bigsoldb-v1/evaluation_receipt.v20.canonical.json}\par
+\rcpt{amphora-solvency-score/evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json}\par
+\rcpt{amphora-solvency-score/evidence/phase0/kpis/hildebrand-vs-hansen-chi-baseline-v1-kpi.v1.json}
+\end{tcolorbox}
+\end{minipage}
+\newpage
+
+% ================================================================ SLIDE 7
+\slidetitle{07 / depth}{Physics-grounded results that survived directed attack}
+{\fontsize{9}{11}\selectfont\color{Muted}Each survival below is graded STRONG in the audit: the attack had a genuine path to refutation and did not find one.}\par\vspace{2mm}
+\begin{tabularx}{\textwidth}{@{}p{40mm}YY@{}}
+\toprule
+\textbf{\color{Navy}Claim} & \textbf{\color{Navy}What the attack did} & \textbf{\color{Navy}Outcome} \\
+\midrule
+Amine H2-direction reactivity rule & Independent kinetic Monte Carlo parameterised with published non-ideal reactivity ratios (Girard-Reydet et al.\ 1995); any single reversal across hardener $\times$ ratio would refute & \textbf{0 of 6 reversed} \\
+Guth--Gold reinforcement concordance & Nested train-refit bootstrap, 5{,}000 reps, refitting the 5-parameter physical model on every resample; hostile null control \emph{did} collapse to chance & Concordance \textbf{C=0.711}, CI excludes chance \\
+VHR temperature envelope & Re-derived by a coefficient-disjoint method (Clausius--Clapeyron + Watson from measured anchors); four independent refutation routes & Bias found: \textbf{+5--11\%} --- too small to unseat \\
+Rheology benchmark gates & Fired the module's gates on a control arm with literal transcription errors & Gates caught it at \textbf{13--1500$\times$} the bounds \\
+Candidate novelty (5/5 novel) & Re-featurised every candidate as dimer and tetramer under the locked fingerprint & \textbf{Verdict unchanged}; margin quantified \\
+\bottomrule
+\end{tabularx}
+\vspace{3mm}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=Panel,left=4mm,right=4mm,top=3mm,bottom=3mm]
+\kv{Pattern}{where Amphora wins, it wins \emph{with} physics --- a-priori Hansen vectors, real activation energies, physical admissibility gates --- not against it. The property engines and the physical checks reinforce each other.}
+\end{tcolorbox}
+\newpage
+
+% ================================================================ SLIDE 8
+\slidetitle{08 / straight talk}{What we are not claiming --- yet}
+\begin{minipage}[t]{0.485\textwidth}\vspace{0pt}
+{\fontsize{9.6}{13}\selectfont\color{Ink}
+\begin{itemize}
+  \item \textbf{Scope of the splits.} Solubility and $T_g$ use group-safe splits (leave-solute-out, scaffold LOSO). Density and refractive index (polymer ML) use random/source-stratified splits and demonstrate \emph{within-chemotype} performance. The $T_g$ lift is single-corpus: cross-corpus transfer was tested, failed, and is queued behind a second rights-clean corpus.
+  \item \textbf{Signing tiers.} The solvency engine carries trust-anchored Phase-0 signatures; most other receipts are signed with the audit-only development key --- byte-stable and replayable, but the trust root is the founder-signed manifest.
+  \item \textbf{Hansen comparator vintage.} The $-$62\% is against the classical single-$\delta$ treatment; a head-to-head against a modern group-contribution method is queued, not run.
+  \item \textbf{Pre-Phase-0.} Promotion requires a human dual-signature ceremony plus external replication; the loop deliberately cannot grant it to itself. Zero modules have been promoted.
+\end{itemize}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\vspace{0pt}
+{\fontsize{9.6}{13}\selectfont\color{Ink}
+\begin{itemize}
+  \item \textbf{Two external blockers, both human-shaped.} A USBR rights confirmation (packaged, signed, waiting to be sent) gates the corrosion evidence chain; a CC BY-NC-ND licence wall gates one rheology dataset --- counsel, not code.
+  \item \textbf{Where we lost, we say so.} On melt viscosity, classical polymer physics currently beats our ML arm. That result is published internally with the same signatures as our wins.
+\end{itemize}}
+\vspace{1.5mm}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=PaleAmber,left=3.5mm,right=3.5mm,top=3mm,bottom=3mm]
+{\fontsize{9.2}{12}\selectfont\color{Ink}\kv{Why we lead with this}{your diligence will find every item on this page inside our own signed audit trail --- finding it there first is the point.}}
+\end{tcolorbox}
+\end{minipage}
+\newpage
+
+% ================================================================ SLIDE 9
+\slidetitle{09 / verify}{Check any number in this deck yourself}
+\begin{minipage}[t]{0.475\textwidth}\vspace{0pt}
+{\fontsize{9.4}{12.6}\selectfont\color{Ink}
+\begin{enumerate}[leftmargin=5mm,itemsep=2pt]
+  \item Every quantitative claim cites a repository-relative receipt path; resolve it against \rcpt{/home/ubuntu/amphora/build/mvp20-split/} on the evidence host.
+  \item Each receipt is a DSSE envelope: recompute the pre-authentication encoding and verify the Ed25519 signature against \rcpt{config/phase0-trust-store.v1.json}.
+  \item Replay the science: signed receipts carry a two-replay SHA-256 byte-stability gate.
+  \item Audit the adversarial record: \rcpt{logs/falsification-ledger.jsonl} is append-only, one line per verdict; \rcpt{logs/claims-requiring-retraction.jsonl} is the machine-readable retraction list.
+\end{enumerate}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.475\textwidth}\vspace{0pt}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=Panel,left=3.5mm,right=3.5mm,top=3mm,bottom=3mm]
+{\fontsize{7.6}{9.4}\selectfont\color{Muted}PRINCIPAL PUBLISHED BASELINES\par}\vspace{1mm}
+{\fontsize{8.2}{11}\selectfont\color{Ink}
+Van Krevelen \& te Nijenhuis, \emph{Properties of Polymers}, 4th ed., Elsevier 1990 (T$_g$ Table 6.6; density Ch.~4; solubility Ch.~7) \,·\, Hansen, \emph{Hansen Solubility Parameters}, 2nd ed., CRC 2007 \,·\, Hildebrand \& Scott, \emph{The Solubility of Nonelectrolytes}, Reinhold 1950 \,·\, Kissinger, \emph{Anal.\ Chem.}\ \textbf{29}:1702 (1957) \,·\, Guth \& Gold, \emph{Phys.\ Rev.}\ \textbf{53}:322 (1938) \,·\, Krasnov et al., BigSolDB 2.0, \emph{Sci.\ Data} \textbf{12} (2025), CC-BY-4.0 \,·\, Attia et al., \emph{Nat.\ Commun.}\ (2025) \,·\, Catoire \& Naudet, \emph{J.\ Phys.\ Chem.\ Ref.\ Data} \textbf{33}:1083 (2004) \,·\, Fedors, \emph{Polym.\ Eng.\ Sci.}\ \textbf{14}:147 (1974) \,·\, Joback \& Reid, \emph{Chem.\ Eng.\ Commun.}\ \textbf{57}:233 (1987) \,·\, Girard-Reydet et al., \emph{Macromolecules} \textbf{28}(23):7599 (1995) \,·\, NIST WebBook; GESTIS; CRC Handbook \,·\, ASTM D1652, D2196, E698; ISO 5725.}
+\end{tcolorbox}
+\vspace{2mm}
+\begin{tcolorbox}[enhanced,boxrule=0pt,arc=2.5mm,colback=PaleBlue,left=3.5mm,right=3.5mm,top=3mm,bottom=3mm]
+{\fontsize{8.8}{11.6}\selectfont\color{Ink}\kv{Provenance of this deck}{compiled from Portfolio Status 2026-08-03 (adversarial audit edition), master manifest \rcpt{f5623b3171d65de2dc805b740aef71ad6163554dcf9b5b394d84181b3ad6bf08}. Figures are re-plots of receipt-quoted values; nothing here is new analysis.}}
+\end{tcolorbox}
+\end{minipage}
+
+\end{document}

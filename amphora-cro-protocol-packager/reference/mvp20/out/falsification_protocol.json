@@ -1,0 +1,148 @@
+{
+  "barrier_card_verdict": "MODELED-DIRECTIONAL",
+  "barrier_index_deltas": {
+    "Enhanced-65_minus_Envelope-65": 0.015,
+    "Lineage-60_minus_Envelope-65": 0.0172,
+    "interpretation": "barrier-index deltas are too close to claim performance separation; the CRO pairwise result decides"
+  },
+  "decision_rule": {
+    "inconclusive": "If controls fail, replicate scatter ties the decisive pair, the lab deviates materially, or the measured rank only matches a hostile null, the outcome is INCONCLUSIVE/FAIL-CLOSED, not success.",
+    "key_pairwise": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+    "power_caveat": "n=4 rank has low power; the decisive, adequately-powered test is the key pairwise bet above, not the full 4-item correlation -- stated honestly, not oversold.",
+    "primary": "PASS only if the measured immersion rank has Kendall tau >= 0.5 with the LOCKED rank AND a strictly higher tau than BOTH hostile nulls (solids-only, PVC-only).",
+    "third_party_hold": "this locked rank + rule is registered with a third party BEFORE any panels are cut; the team may not re-demote-to-survive.",
+    "tie_rule": "two tracks are TIED if their |Z|@0.01Hz overlap within replicate scatter (6 panels/track/arm default if budget allows; 3 panels/track/arm minimum floor); ties are excluded from tau, not narrated as agreement."
+  },
+  "falsification": "The bench (B117 comparative screen + D5894 + D870 + 60-90 d immersion/ISO 16773 EIS, ONE protocol, all tracks side-by-side, 6 panels/track/arm default and >=3 minimum floor) measures the true rank. The engine demonstrates value ONLY if it satisfies the decision rule above -- beating BOTH obvious nulls, not a strawman slash sheet. If not, the claim is honestly disproven.",
+  "hash_matches": true,
+  "hash_recomputed_from_locked_payload": "1bc2b361e80ea2ec3e98a0f34a88b363032fde77cc512f83974115599bd99df1",
+  "honesty": "The zinc-phosphate track's barrier effect is genuinely UNCERTAIN (non-monotonic literature): that uncertainty is exactly why the Enhanced-65>Envelope-65 bet is falsifiable and not tautological. No cross-study pooling is performed (invalid).",
+  "hostile_nulls": {
+    "beats_pvc_null": true,
+    "beats_solids_null": true,
+    "non_obvious_calls_vs_pvc": [
+      "Enhanced-65 > CRO-Robust-65",
+      "Enhanced-65 > Envelope-65",
+      "CRO-Robust-65 > Envelope-65"
+    ],
+    "pvc_only": [
+      "Lineage-60",
+      "Envelope-65",
+      "CRO-Robust-65",
+      "Enhanced-65"
+    ],
+    "solids_only": [
+      "Lineage-60",
+      "CRO-Robust-65",
+      "Enhanced-65",
+      "Envelope-65"
+    ]
+  },
+  "key_falsifiable_bet": "Enhanced-65 (PVC ~11, zinc phosphate) OUT-BARRIERS Envelope-65 (lower PVC, no inhibitor) -- the OPPOSITE of a 'lower-PVC-is-better' heuristic; if the bench shows the lower-PVC track wins, the engine is FALSIFIED.",
+  "key_pairwise_bet": {
+    "decision_rule": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+    "must_hold": true,
+    "pair": [
+      "Enhanced-65",
+      "Envelope-65"
+    ],
+    "tie_handling": "no model promotion if noisy/tied within replicate scatter"
+  },
+  "locked_payload": {
+    "decision_rule": {
+      "key_pairwise": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+      "power_caveat": "n=4 rank has low power; the decisive, adequately-powered test is the key pairwise bet above, not the full 4-item correlation -- stated honestly, not oversold.",
+      "primary": "PASS only if the measured immersion rank has Kendall tau >= 0.5 with the LOCKED rank AND a strictly higher tau than BOTH hostile nulls (solids-only, PVC-only).",
+      "third_party_hold": "this locked rank + rule is registered with a third party BEFORE any panels are cut; the team may not re-demote-to-survive.",
+      "tie_rule": "two tracks are TIED if their |Z|@0.01Hz overlap within replicate scatter (6 panels/track/arm default if budget allows; 3 panels/track/arm minimum floor); ties are excluded from tau, not narrated as agreement."
+    },
+    "hostile_nulls": {
+      "pvc_only": [
+        "Lineage-60",
+        "Envelope-65",
+        "CRO-Robust-65",
+        "Enhanced-65"
+      ],
+      "solids_only": [
+        "Lineage-60",
+        "CRO-Robust-65",
+        "Enhanced-65",
+        "Envelope-65"
+      ]
+    },
+    "panel_plan": {
+      "b117_scope": "comparative corrosion screen only; not a standalone natural-environment predictor",
+      "control_track": "Lineage-60",
+      "corrosion_arms": [
+        "ASTM B117 + D1654",
+        "ASTM D5894",
+        "ISO 16773 EIS",
+        "ASTM D870 immersion"
+      ],
+      "default_panels_per_track_per_corrosion_arm_if_budget_allows": 6,
+      "minimum_panels_per_track_per_corrosion_arm": 3,
+      "randomization": "blind randomized panel IDs before surface prep; CRO returns randomization seed and map",
+      "tracks": [
+        "Lineage-60",
+        "Enhanced-65",
+        "CRO-Robust-65",
+        "Envelope-65"
+      ]
+    },
+    "predicted_rank": [
+      "Lineage-60",
+      "Enhanced-65",
+      "CRO-Robust-65",
+      "Envelope-65"
+    ],
+    "protocol_id": "mvp20-barrier-rank-2026-07-03",
+    "timestamp_utc": "2026-07-03T00:00:00Z",
+    "weights": {
+      "crosslink": 0.4,
+      "hydrophilic_penalty": 0.1,
+      "porosity_penalty": 0.15,
+      "tortuosity": 0.35
+    }
+  },
+  "locked_rank_hash": "1bc2b361e80ea2ec3e98a0f34a88b363032fde77cc512f83974115599bd99df1",
+  "panel_plan": {
+    "b117_scope": "comparative corrosion screen only; not a standalone natural-environment predictor",
+    "control_track": "Lineage-60",
+    "corrosion_arms": [
+      "ASTM B117 + D1654",
+      "ASTM D5894",
+      "ISO 16773 EIS",
+      "ASTM D870 immersion"
+    ],
+    "default_panels_per_track_per_corrosion_arm_if_budget_allows": 6,
+    "minimum_panels_per_track_per_corrosion_arm": 3,
+    "randomization": "blind randomized panel IDs before surface prep; CRO returns randomization seed and map",
+    "tracks": [
+      "Lineage-60",
+      "Enhanced-65",
+      "CRO-Robust-65",
+      "Envelope-65"
+    ]
+  },
+  "predicted_rank_best_to_worst": [
+    "Lineage-60",
+    "Enhanced-65",
+    "CRO-Robust-65",
+    "Envelope-65"
+  ],
+  "protocol_id": "mvp20-barrier-rank-2026-07-03",
+  "protocol_timestamp_utc": "2026-07-03T00:00:00Z",
+  "rank_authority": "non-authorizing; the barrier card is MODELED-DIRECTIONAL and never grants corrosion rank authority",
+  "retrieved": "2026-07-03",
+  "schema": "mvp20.falsification_protocol.v1",
+  "third_party_registration": {
+    "acceptable_evidence": [
+      "OSF/private registry URL",
+      "notarized hash receipt",
+      "signed CRO lab-order ID with hash"
+    ],
+    "field": "REQUIRED BEFORE PANEL CUT: third party repository/OSF/notary URL or signed lab-order ID",
+    "status": "required_before_panels"
+  },
+  "uncertainty_status": "a priori pre-registered power analysis on file (out/power_analysis.json, CF-TEST fire 2/2 repair): statistical power and 95% confidence-interval half-width for the key_pairwise_bet's eis_log10_abs_z_0p01hz gap are quantified as a function of an assumed, literature-cited replicate-scatter sigma range (Floyd et al. 2009, doi:10.1016/j.porgcoat.2009.04.009); no bench data has been collected on any MVP20 track or candidate yet, so no measured/calibrated posterior interval from THIS system exists -- that requires the commissioned CRO bench work named in decision_experiment and remains future, external work."
+}

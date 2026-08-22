@@ -1,0 +1,208 @@
+{
+  "authority": "AUDIT_ONLY",
+  "does_not": [
+    "does not modify any existing signed receipt or the manifest",
+    "does not promote or demote any module",
+    "does not assert legal advice; it applies the tree's own rights_class field"
+  ],
+  "findings": [
+    {
+      "headline_classification": "HONEST_DIAGNOSTIC",
+      "manifest_hash_matches_disk": true,
+      "manifest_kpi_summary": "Polyverse diffusivity conformal + AD \u2014 cross-source diagnostic coverage collapse to 0.552 (documents exchangeability failure); within-source (ncomm 2023, n=83) coverage \u03b1=0.10 0.928 PASSED despite base learner test R\u00b2 -0.456; hostile-null 0.892, inflation 1.50\u00d7",
+      "manifest_receipt_sha256": "22a2594cdd28214c711a9b5e7f061d5b17681ef72f5ba276a58ba172677053b0",
+      "module": "amphora-barrier-corrosion-score",
+      "polyverse_reference_strings": [
+        "This diagnostic HONESTLY demonstrates the failure mode: when scaffold-safe splits mix sources with distinct target distributions, marginal coverage collapses below nominal. This is the exact scenario the parent Polyverse-diffusivity receipt flagged via its LOSO analysis (npj held-out R\u00b2=-1.02). Below we restrict the pipeline to a single source (ncomm 2023) where exchangeability holds and demonstrate the coverage guarantee is recovered.",
+        "amphora.barrier-corrosion-score.polyverse-diffusivity-conformal-and-applicability-domain-receipt.v1",
+        "application/vnd.amphora.polyverse-diffusivity-conformal-ad-receipt.v1+json",
+        "polyverse-diffusivity-a80af3c7c749fca6514044cbcd66a08f42c15c4f425e6c260cc6b428708e2f84",
+        "polyverse-diffusivity-conformal-ad-622450a4a5fbe705570eb1999071fbfe592d5a19fe54346cdd4f07ac5612d04a"
+      ],
+      "receipt_file": "polyverse_diffusivity_conformal_and_applicability_domain_receipt.v1.json",
+      "receipt_file_sha256": "22a2594cdd28214c711a9b5e7f061d5b17681ef72f5ba276a58ba172677053b0",
+      "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/polyverse_diffusivity_conformal_and_applicability_domain_receipt.v1.json",
+      "self_declares_context_only_rights": false
+    },
+    {
+      "headline_classification": "COMPARISON",
+      "manifest_hash_matches_disk": true,
+      "manifest_kpi_summary": "Named-baseline benchmark: constant R\u00b2 -0.004, Arrhenius -0.048, Vrentas-Duda-like -0.061, Morgan Ridge -0.064, full HistGBM +0.269. ML beats every non-ML baseline; physical baselines fail on ncomm 2023 subset (n=165 test).",
+      "manifest_receipt_sha256": "b5d0641af3e9dda01548d29fafe1de7e2bff91d5f7f03e0c13ddc7810c604b6a",
+      "module": "amphora-barrier-corrosion-score",
+      "polyverse_reference_strings": [
+        "amphora.barrier-corrosion-score.polyverse-diffusivity-named-baseline-benchmark-receipt.v1",
+        "application/vnd.amphora.polyverse-diffusivity-named-baseline-receipt.v1+json",
+        "polyverse-diffusivity-named-baseline-bb77694abfb8e8e9ca71923de244582274888141b47e74ee9a5aa3073bebccec"
+      ],
+      "receipt_file": "polyverse_diffusivity_named_baseline_benchmark_receipt.v1.json",
+      "receipt_file_sha256": "b5d0641af3e9dda01548d29fafe1de7e2bff91d5f7f03e0c13ddc7810c604b6a",
+      "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/polyverse_diffusivity_named_baseline_benchmark_receipt.v1.json",
+      "self_declares_context_only_rights": false
+    },
+    {
+      "headline_classification": "HONEST_DIAGNOSTIC",
+      "manifest_hash_matches_disk": true,
+      "manifest_kpi_summary": "LOSO R\u00b2=0.293, random 0.911 (leakage indicator)",
+      "manifest_receipt_sha256": "5985e5a68515cd227937688e621a2e2d2e9e68e491728bafc8ca997d150135bd",
+      "module": "amphora-barrier-corrosion-score",
+      "polyverse_reference_strings": [
+        "amphora.barrier-corrosion-score.polyverse-solvent-diffusivity-model-receipt.v1",
+        "application/vnd.amphora.polyverse-solvent-diffusivity-model-receipt.v1+json",
+        "feedback/v1/external_data/polyverse_selected/raw/master_solvent_diffusivity_dataset.csv",
+        "polyverse-diffusivity-a80af3c7c749fca6514044cbcd66a08f42c15c4f425e6c260cc6b428708e2f84"
+      ],
+      "receipt_file": "polyverse_solvent_diffusivity_model_receipt.v1.json",
+      "receipt_file_sha256": "5985e5a68515cd227937688e621a2e2d2e9e68e491728bafc8ca997d150135bd",
+      "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/polyverse_solvent_diffusivity_model_receipt.v1.json",
+      "self_declares_context_only_rights": false
+    },
+    {
+      "headline_classification": "HONEST_DIAGNOSTIC",
+      "manifest_hash_matches_disk": true,
+      "manifest_kpi_summary": "polymer-safe R\u00b2=-0.078 (honest leakage)",
+      "manifest_receipt_sha256": "0da7dd6a75b2c07423cec83fee408bf559021f690d1a327495eada8e95431449",
+      "module": "amphora-barrier-corrosion-score",
+      "polyverse_reference_strings": [
+        "amphora.barrier-corrosion-score.polyverse-uptake-sorption-model-receipt.v1",
+        "application/vnd.amphora.polyverse-uptake-sorption-model-receipt.v1+json",
+        "feedback/v1/external_data/polyverse_selected/raw/master_uptake_sorption_dataset.csv",
+        "polyverse-uptake-sorption-a5fcab7abd43e0ae008eb24761fd1cca15bc4f578cd4d0b25e8d8ccf01caa82f"
+      ],
+      "receipt_file": "polyverse_solvent_uptake_sorption_model_receipt.v1.json",
+      "receipt_file_sha256": "0da7dd6a75b2c07423cec83fee408bf559021f690d1a327495eada8e95431449",
+      "relative_path": "amphora-barrier-corrosion-score/reference/mvp20/data/polyverse_solvent_uptake_sorption_model_receipt.v1.json",
+      "self_declares_context_only_rights": false
+    },
+    {
+      "headline_classification": "POSITIVE_CAPABILITY",
+      "manifest_hash_matches_disk": true,
+      "manifest_kpi_summary": "scaffold-safe R\u00b2=0.625",
+      "manifest_receipt_sha256": "1f9404fd986da8c72b6c697e0d37d4eb6e5cf3d379de300ca376fc90dc1bbe33",
+      "module": "amphora-solvency-score",
+      "polyverse_reference_strings": [
+        "amphora.solvency-score.polyverse-cohesive-energy-density-model-receipt.v1",
+        "application/vnd.amphora.polyverse-cohesive-energy-density-model-receipt.v1+json",
+        "feedback/v1/external_data/polyverse_selected/raw/Cohesive_energy_density_2025_06_23.csv",
+        "polyverse-ced-3f57d74b1a402cdedca100c6c59fd28810eb1cd5c8bb92a4ac4a63e204d64ff6"
+      ],
+      "receipt_file": "polyverse_cohesive_energy_density_model_receipt.v1.json",
+      "receipt_file_sha256": "1f9404fd986da8c72b6c697e0d37d4eb6e5cf3d379de300ca376fc90dc1bbe33",
+      "relative_path": "amphora-solvency-score/reference/mvp20/data/polyverse_cohesive_energy_density_model_receipt.v1.json",
+      "self_declares_context_only_rights": false
+    },
+    {
+      "headline_classification": "POSITIVE_CAPABILITY",
+      "manifest_hash_matches_disk": true,
+      "manifest_kpi_summary": "Polyverse melt viscosity polymer-safe conformal + AD \u2014 marginal coverage \u03b1=0.10 0.897 (target 0.90, PASSED); worst-AD-quintile coverage 0.379 (HONEST: conditional coverage fails in low-AD stratum); polymer-safe test R\u00b2 +0.453 (vs parent source-safe R\u00b2 0.944 \u2014 quantifies co-representation gap); hostile-null inflation 1.15\u00d7",
+      "manifest_receipt_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+      "module": "amphora-viscosity-score",
+      "polyverse_reference_strings": [
+        "amphora.viscosity-score.polyverse-melt-viscosity-conformal-and-applicability-domain-receipt.v1",
+        "application/vnd.amphora.polyverse-melt-viscosity-conformal-ad-receipt.v1+json",
+        "polyverse-melt-viscosity-ca3c510dfe436526972a2866108aed414ae061bc193fa1cc4d2fc20ab48644ac",
+        "polyverse-melt-viscosity-conformal-ad-36683bfed9e723a31c59872ad253b08b4ffd4a947c8d384c0a8fdb2c6962e915"
+      ],
+      "receipt_file": "polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json",
+      "receipt_file_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+      "relative_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json",
+      "self_declares_context_only_rights": false
+    },
+    {
+      "headline_classification": "COMPARISON",
+      "manifest_hash_matches_disk": true,
+      "manifest_kpi_summary": "HONEST Fox-Flory-Whitten physical vs ML: FFW+Arrhenius B3 R\u00b2 +0.597, FFW linear Mw only B2 R\u00b2 +0.592, ML full HistGBM B4 R\u00b2 +0.454. PHYSICS BEATS ML by +0.144 R\u00b2 on polymer-safe test.",
+      "manifest_receipt_sha256": "3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3",
+      "module": "amphora-viscosity-score",
+      "polyverse_reference_strings": [
+        "HistGradientBoostingRegressor with same hyperparameters as parent Polyverse melt viscosity receipt.",
+        "amphora.viscosity-score.polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-receipt.v1",
+        "application/vnd.amphora.polyverse-melt-viscosity-ffw-baseline-receipt.v1+json",
+        "polyverse-melt-viscosity-ffw-baseline-c062d2ac6b51e0bf77b99ca2b27da910fd08db0afc22fddbba8ce71bdb8ea8f4"
+      ],
+      "receipt_file": "polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json",
+      "receipt_file_sha256": "3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3",
+      "relative_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json",
+      "self_declares_context_only_rights": false
+    },
+    {
+      "headline_classification": "POSITIVE_CAPABILITY",
+      "manifest_hash_matches_disk": true,
+      "manifest_kpi_summary": "source-safe R\u00b2=0.944",
+      "manifest_receipt_sha256": "29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff",
+      "module": "amphora-viscosity-score",
+      "polyverse_reference_strings": [
+        "Polyverse-selected polymer property database, curated from published literature",
+        "amphora.viscosity-score.polyverse-melt-viscosity-model-receipt.v1",
+        "application/vnd.amphora.polyverse-melt-viscosity-model-receipt.v1+json",
+        "feedback/v1/external_data/polyverse_selected/raw/melt_viscosity_dataset.csv",
+        "polyverse-melt-viscosity-ca3c510dfe436526972a2866108aed414ae061bc193fa1cc4d2fc20ab48644ac"
+      ],
+      "receipt_file": "polyverse_melt_viscosity_model_receipt.v1.json",
+      "receipt_file_sha256": "29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff",
+      "relative_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json",
+      "self_declares_context_only_rights": false
+    }
+  ],
+  "manifest_audited": {
+    "file": "amphora-molecule-property/reference/mvp20/data/amphora_coating_scientific_receipts_manifest.v1.json",
+    "file_sha256": "f5623b3171d65de2dc805b740aef71ad6163554dcf9b5b394d84181b3ad6bf08",
+    "n_receipts_indexed": 66
+  },
+  "program_self_knowledge_license_labels": {
+    "eis_corrosion": "MIXED_CONTEXT_ONLY",
+    "solvency": "MIXED_CONTEXT_ONLY",
+    "viscosity": "MIXED_CONTEXT_ONLY"
+  },
+  "question": "Do signed KPI receipts in the coating scientific-receipts manifest score models on data the tree's own rights ledger classes CONTEXT_ONLY (not a lawful basis for a scored KPI)?",
+  "rights_ledger": {
+    "context_only_units": [
+      "pi1m_structures",
+      "polyverse_cohesive_energy",
+      "polyverse_diffusivity",
+      "polyverse_melt_viscosity",
+      "polyverse_sorption",
+      "polyverse_thermoset_mechanics"
+    ],
+    "derivative_allowed_examples": [
+      "bigsoldb_density",
+      "bigsoldb_solubility",
+      "corr_data_checksum",
+      "corr_data_database",
+      "omg_physical_properties",
+      "omg_structure_reaction",
+      "openpoly_counts",
+      "openpoly_model_results"
+    ],
+    "file": "feedback/v2/reports/rights-report.json",
+    "file_sha256": "2b99ead08532d4d304aefe5f4933cb86cf54aadcd97e4053f30694fffc269a69",
+    "polyverse_context_only_units": [
+      "polyverse_cohesive_energy",
+      "polyverse_diffusivity",
+      "polyverse_melt_viscosity",
+      "polyverse_sorption",
+      "polyverse_thermoset_mechanics"
+    ],
+    "polyverse_license": "Georgia Tech Research Corporation General Public Use License Agreement"
+  },
+  "schema": "amphora.redteam-audit.rights-integrity-v1.diagnostic.v1",
+  "verdict": {
+    "all_implicated_modules_are_pre_phase0": true,
+    "finding": "8 of the 66 signed manifest receipts derive a scored KPI from polyverse_* data the tree's own rights ledger classes CONTEXT_ONLY (Georgia Tech General Public Use License Agreement). None of the 8 self-declares that rights class. 3 present a POSITIVE capability KPI (CED R^2, melt viscosity R^2, melt-viscosity conformal PASS) that a founder would read as a validated, scoring-eligible capability. The three implicated modules (solvency-score, viscosity-score, barrier-corrosion-score) rest their current scored KPIs entirely on CONTEXT_ONLY data and have NO rights-clean in-tree substitute for melt-viscosity / diffusivity / sorption measurements.",
+    "implicated_modules": [
+      "amphora-barrier-corrosion-score",
+      "amphora-solvency-score",
+      "amphora-viscosity-score"
+    ],
+    "n_polyverse_scored_signed_receipts": 8,
+    "n_positive_capability_kpis_on_context_only_data": 3,
+    "n_scoring_on_context_only_data": 8,
+    "n_without_any_rights_self_declaration": 8,
+    "positive_capability_receipts": [
+      "polyverse_cohesive_energy_density_model_receipt.v1.json",
+      "polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json",
+      "polyverse_melt_viscosity_model_receipt.v1.json"
+    ],
+    "recommendation": "Do NOT present the polyverse-derived KPIs to founders as scoring-eligible capability. Either (a) re-acquire the measurements under a DERIVATIVE_ALLOWED licence, or (b) re-scope these receipts as CONTEXT_ONLY diagnostics and annotate the manifest KPI summaries accordingly. The 66-receipt headline should be reported as 58 rights-clean-scored + 8 context-only-scored."
+  }
+}

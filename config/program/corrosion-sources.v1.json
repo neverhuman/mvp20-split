@@ -1,0 +1,73 @@
+{
+  "schema": "amphora.module-source-census.v1",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "frozen_on": "2026-07-17",
+  "sources": [
+    {
+      "source_id": "usbr_21019",
+      "publisher": "Bureau of Reclamation",
+      "study_id": "USBR_ST_21019",
+      "source_url": "https://data.usbr.gov/catalog/8048",
+      "acquisition_status": "ACQUIRED",
+      "local_manifest": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_public_corrosion_dataset_manifest.json",
+      "local_manifest_sha256": "b59bc8fff1b65e287945e52b19f4849f252e018b62e9626bed0814584f3d9a5a",
+      "derived_observation_table": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_public_eis_feature_table.json",
+      "derived_observation_table_sha256": "58082a5356a51f74cf38fe5175de18435995de998ac23473437ffa19623059c4",
+      "license": "USBR public/open official government dataset; explicit benchmark derivative permission recorded in the bound epoch-29 rights ledger",
+      "rights_status": "ACCEPTED",
+      "eligible_for_derivatives": true,
+      "restrictions": [
+        "PUBLIC_RETROSPECTIVE and SHADOW maximum",
+        "not owned candidate data",
+        "no product qualification or superiority claim"
+      ],
+      "expected_systems": 6,
+      "expected_rows": 1072
+    },
+    {
+      "source_id": "usbr_19168",
+      "publisher": "Bureau of Reclamation",
+      "study_id": "USBR_ST_19168",
+      "source_url": "https://data.usbr.gov/catalog/4640/item/11562",
+      "acquisition_status": "NOT_ACQUIRED",
+      "local_manifest": null,
+      "local_manifest_sha256": null,
+      "license": "No explicit derivative-use eligibility record is checked in",
+      "rights_status": "QUARANTINED",
+      "eligible_for_derivatives": false,
+      "restrictions": ["Acquire official XLSX and establish explicit derivative-use eligibility before parsing"],
+      "expected_systems": null,
+      "expected_rows": null
+    },
+    {
+      "source_id": "usbr_22014",
+      "publisher": "Bureau of Reclamation",
+      "study_id": "USBR_ST_22014",
+      "source_url": "https://data.usbr.gov/catalog/8052/item/128792",
+      "acquisition_status": "NOT_ACQUIRED",
+      "local_manifest": null,
+      "local_manifest_sha256": null,
+      "license": "No explicit derivative-use eligibility record is checked in",
+      "rights_status": "QUARANTINED",
+      "eligible_for_derivatives": false,
+      "restrictions": ["Acquire official CSV and establish explicit derivative-use eligibility before parsing"],
+      "expected_systems": null,
+      "expected_rows": null
+    },
+    {
+      "source_id": "usbr_23016",
+      "publisher": "Bureau of Reclamation",
+      "study_id": "USBR_ST_23016",
+      "source_url": "https://data.usbr.gov/catalog/8134",
+      "acquisition_status": "NOT_ACQUIRED",
+      "local_manifest": null,
+      "local_manifest_sha256": null,
+      "license": "No explicit derivative-use eligibility record is checked in",
+      "rights_status": "QUARANTINED",
+      "eligible_for_derivatives": false,
+      "restrictions": ["Acquire five official field EIS CSVs and establish explicit derivative-use eligibility before parsing"],
+      "expected_systems": null,
+      "expected_rows": null
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "attack_type": "harder_held_out_split_scaffold_safe_plus_leakage_positive_control",
+  "authority": "AUDIT_ONLY / diagnostic -- no candidate-performance claim, no promotion",
+  "benchmark": "amphora-solvency-score/bigsoldb-scaffold-safe-generalization-v1",
+  "campaign_item_id": "W-SCAFFOLD",
+  "lgb_params": {
+    "colsample_bytree": 0.8,
+    "deterministic": true,
+    "force_row_wise": true,
+    "learning_rate": 0.05,
+    "min_child_samples": 20,
+    "n_estimators": 3000,
+    "num_leaves": 127,
+    "num_threads": 8,
+    "objective": "regression",
+    "random_state": 20260724,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "verbose": -1
+  },
+  "lgb_params_leaky_positive_control_note": "n_estimators capped to 500 for the leaky arm only (identical all other params/seed) -- leakage collapses the early-stopping validation loss near-instantly so the full 3000-round budget only burns wall-clock; capping does not change the qualitative leakage signal.",
+  "lightgbm": "4.6.0",
+  "n_descriptors_per_molecule": 216,
+  "n_feature_reject": 2392,
+  "n_features": 433,
+  "n_folds": 5,
+  "n_rows_modeled": 94532,
+  "n_singleton_solute_scaffolds": 607,
+  "n_unique_solute_scaffolds": 753,
+  "n_unique_solutes": 1445,
+  "python": "3.12.3",
+  "raw_md5": "1e6d8a510387746e9faab5f39dc46317",
+  "raw_sha256": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0",
+  "rdkit": "2026.03.2",
+  "seed": 20260724,
+  "sklearn": "1.7.2",
+  "splits": [
+    {
+      "baselines": {
+        "b0_global_mean": {
+          "frac_within_1log": 0.5844475944653662,
+          "mae": 0.9746354434525467,
+          "n": 94532,
+          "r2": -0.025952736629365702,
+          "rmse": 1.2342098253131535,
+          "rmse_ci95_cluster_bootstrap": [
+            1.1989377735260858,
+            1.269000981841389
+          ]
+        },
+        "b1_solvent_mean": {
+          "frac_within_1log": 0.6102801167858503,
+          "mae": 0.9354935679043839,
+          "n": 94532,
+          "r2": 0.05077354262119249,
+          "rmse": 1.1871626911332487,
+          "rmse_ci95_cluster_bootstrap": [
+            1.1509738492232122,
+            1.2230475126765064
+          ]
+        },
+        "b2_solute_mean": {
+          "frac_within_1log": 0.5844475944653662,
+          "mae": 0.9746354434525467,
+          "n": 94532,
+          "r2": -0.025952736629365702,
+          "rmse": 1.2342098253131535,
+          "rmse_ci95_cluster_bootstrap": [
+            1.1989377735260858,
+            1.269000981841389
+          ]
+        },
+        "b3_two_way_additive": {
+          "frac_within_1log": 0.6059218042567596,
+          "mae": 0.942190301361893,
+          "n": 94532,
+          "r2": 0.04141119483872979,
+          "rmse": 1.1930028981563643,
+          "rmse_ci95_cluster_bootstrap": [
+            1.1555102081241804,
+            1.2292012355686188
+          ]
+        }
+      },
+      "fold_assignment_sha256": "37cb0a2aa587f796f156a748f1744d58941f6ec3e02155fa98824573a2f5036b",
+      "group_column": "solute_scaffold",
+      "leaky_positive_control": false,
+      "model": {
+        "frac_within_1log": 0.751047264418398,
+        "mae": 0.7082346894500443,
+        "n": 94532,
+        "r2": 0.43517644855502824,
+        "rmse": 0.9157601077297898,
+        "rmse_ci95_cluster_bootstrap": [
+          0.8821131331023874,
+          0.9509798170309807
+        ]
+      },
+      "n_groups": 723,
+      "n_rows": 94532,
+      "split": "leave_scaffold_out"
+    },
+    {
+      "baselines": {
+        "b0_global_mean": {
+          "frac_within_1log": 0.5928468666694876,
+          "mae": 0.9593313931337618,
+          "n": 94532,
+          "r2": -3.0992987687161744e-05,
+          "rmse": 1.2185182897097377,
+          "rmse_ci95_cluster_bootstrap": [
+            1.1845878338231892,
+            1.2530044482550107
+          ]
+        },
+        "b1_solvent_mean": {
+          "frac_within_1log": 0.624857191215673,
+          "mae": 0.9109582990996042,
+          "n": 94532,
+          "r2": 0.09065888972536507,
+          "rmse": 1.1619534641368088,
+          "rmse_ci95_cluster_bootstrap": [
+            1.126631250552,
+            1.197349957241056
+          ]
+        },
+        "b2_solute_mean": {
+          "frac_within_1log": 0.858640460373207,
+          "mae": 0.5410770836773674,
+          "n": 94532,
+          "r2": 0.6230837778265681,
+          "rmse": 0.7480794713332545,
+          "rmse_ci95_cluster_bootstrap": [
+            0.7281347866854833,
+            0.7674942608914831
+          ]
+        },
+        "b3_two_way_additive": {
+          "frac_within_1log": 0.8906507849193924,
+          "mae": 0.49020816096686365,
+          "n": 94532,
+          "r2": 0.6923927601287823,
+          "rmse": 0.6758084204842542,
+          "rmse_ci95_cluster_bootstrap": [
+            0.6563617739076602,
+            0.6938363642554327
+          ]
+        }
+      },
+      "fold_assignment_sha256": "c738fa322c4039da01ecced34c14b6095ef3d5ed99b400a6de77f0e806d89063",
+      "group_column": "solute_canon",
+      "leaky_positive_control": true,
+      "model": {
+        "frac_within_1log": 0.9970274616003046,
+        "mae": 0.12722256205641538,
+        "n": 94532,
+        "r2": 0.9752857162837425,
+        "rmse": 0.1915575775575996,
+        "rmse_ci95_cluster_bootstrap": [
+          0.18448011388804136,
+          0.19868199646934082
+        ]
+      },
+      "n_groups": 1372,
+      "n_rows": 94532,
+      "split": "leaky_no_group_protection_positive_control"
+    }
+  ],
+  "standing_claim": {
+    "leave_solute_out_best_baseline_rmse": 1.1686915142248226,
+    "leave_solute_out_error_reduction_pct": 24.96,
+    "leave_solute_out_model_rmse": 0.8770255643028615,
+    "leave_solute_out_model_rmse_ci95": [
+      0.8416341720920943,
+      0.9154344725058612
+    ],
+    "receipt": "amphora-solvency-score/benchmarks/bigsoldb-v1/inhouse_benchmark_receipt.v1.dsse.json"
+  },
+  "wall_seconds": 217.2
+}

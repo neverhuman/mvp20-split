@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amphora.invalid/schemas/model-output.v1.json",
+  "title": "Amphora detailed model execution receipt",
+  "type": "object",
+  "required": [
+    "schema",
+    "candidate_id",
+    "model_id",
+    "model_version",
+    "formula_hash",
+    "ingredient_catalog_hash",
+    "ingredient_catalog_source_hash",
+    "normalization_version",
+    "normalized_formula",
+    "input_hash",
+    "feature_hash",
+    "feature_generation_version",
+    "feature_values",
+    "selected_model",
+    "model_hash",
+    "training_dataset",
+    "split_policy",
+    "held_out_predictions",
+    "uncertainty_method",
+    "primary_prediction",
+    "prediction_status",
+    "applicability_domain",
+    "subgroup_metrics",
+    "baseline_metrics",
+    "seed",
+    "draw_receipts",
+    "source_hashes",
+    "artifact_hashes",
+    "gate_margins",
+    "solver_use",
+    "promotion_status",
+    "model_readiness_status",
+    "authority_receipt",
+    "claim_boundary",
+    "model_receipt_hash",
+    "artifact_hash"
+  ],
+  "properties": {
+    "schema": {"const": "amphora.model-output.v1"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "model_id": {"type": "string", "minLength": 1},
+    "input_kind": {"enum": ["formulation", "molecule"]},
+    "model_version": {"type": "string", "minLength": 1},
+    "formula_hash": {"$ref": "#/$defs/sha256"},
+    "ingredient_catalog_hash": {"$ref": "#/$defs/sha256"},
+    "ingredient_catalog_source_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "normalization_version": {"type": "string", "minLength": 1},
+    "normalized_formula": {"type": "object"},
+    "normalized_input": {"type": "object"},
+    "input_hash": {"$ref": "#/$defs/sha256"},
+    "feature_hash": {"$ref": "#/$defs/sha256"},
+    "feature_generation_version": {"type": "string", "minLength": 1},
+    "feature_values": {"type": "object"},
+    "selected_model": {
+      "type": "object",
+      "required": ["family", "hyperparameters"],
+      "properties": {
+        "family": {"type": "string", "minLength": 1},
+        "hyperparameters": {"type": "object"}
+      }
+    },
+    "model_hash": {"$ref": "#/$defs/sha256"},
+    "training_dataset": {
+      "type": "object",
+      "required": ["dataset_id", "dataset_version"],
+      "properties": {
+        "dataset_id": {"type": "string", "minLength": 1},
+        "dataset_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "split_policy": {"type": "string", "minLength": 1},
+    "held_out_predictions": {"type": "array", "items": {"type": "object"}},
+    "uncertainty_method": {"type": "string", "minLength": 1},
+    "primary_prediction": {
+      "type": "object",
+      "required": ["value", "unit", "lower_95", "upper_95"],
+      "properties": {
+        "value": {"type": ["number", "null"]},
+        "unit": {"type": "string", "minLength": 1},
+        "lower_95": {"type": ["number", "null"]},
+        "upper_95": {"type": ["number", "null"]}
+      }
+    },
+    "prediction_status": {
+      "enum": ["IN_DOMAIN", "OUT_OF_DOMAIN", "INCONCLUSIVE", "INSUFFICIENT_INPUT", "NOT_RUN"]
+    },
+    "applicability_domain": {"type": "object"},
+    "subgroup_metrics": {"type": "object"},
+    "baseline_metrics": {"type": "object"},
+    "seed": {"type": ["integer", "null"]},
+    "draw_receipts": {"type": "array", "items": {"type": "object"}},
+    "source_hashes": {"$ref": "#/$defs/hashMap"},
+    "artifact_hashes": {"$ref": "#/$defs/hashMap"},
+    "gate_margins": {"type": "object"},
+    "solver_use": {"enum": ["DISABLED", "AUDIT_ONLY", "CONSTRAINT_ONLY", "OBJECTIVE", "R&D_OBJECTIVE"]},
+    "promotion_status": {"type": "string", "minLength": 1},
+    "model_readiness_status": {
+      "enum": ["NOT_PROVEN", "MODEL_READINESS_ONLY", "R&D_RANKING_READY"]
+    },
+    "authority_receipt": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "model_receipt_hash": {"$ref": "#/$defs/sha256"},
+    "artifact_hash": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hashMap": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    }
+  }
+}

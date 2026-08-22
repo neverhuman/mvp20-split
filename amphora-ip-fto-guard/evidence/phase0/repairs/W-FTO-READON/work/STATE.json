@@ -1,0 +1,15 @@
+{
+  "campaign_item_id": "W-FTO-READON",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260814T030001-1179006-760e1f09c485",
+      "outcome": "CLAIM_SURVIVED",
+      "summary": "Element-by-element claim chart of WO2016187380A1 claim 1 (5 elements) under narrow and broad constructions, resolving the flip W-FTO1 flagged on element (d) (volume solids >70%). Element (c) (reactive compatibilizer agent, polar functionality) is robustly absent under BOTH constructions -- our baseline has no acrylate-based reactive/polar third component, only inert silica extender and iron-oxide pigment. Under the All-Elements Rule (London v. Carson Pirie Scott, 946 F.2d 1534; Warner-Jenkinson v. Hilton Davis, 520 U.S. 17), a single robustly-absent element is dispositive of non-infringement regardless of any other element's construction, so the claim-level read-on verdict does not depend on how element (d)'s genuine ambiguity resolves. Overall verdict: DOES-NOT-READ-ON. Element (d) alone remains genuinely-ambiguous-pending-counsel (non-dispositive); named the specific claim element and the specific counsel question, with the trigger condition under which it would become dispositive (a future formulation change adding an acrylate-based reactive compatibilizer).",
+      "receipt": "amphora-ip-fto-guard/evidence/phase0/repairs/W-FTO-READON/done/claim-readon-adjudication.W-FTO-READON.v1.dsse.json",
+      "positive_control": "Planted a hypothetical acrylate-based reactive compatibilizer (hydroxyl-functional) into a copy of our_baseline_assumed -- exactly the spec's named preferred species for missing element (c). Detected: element (c) flips NO/NO to YES/YES under both constructions, and the claim-level verdict under the broad construction correctly flips from DOES_NOT_READ_ON to GENUINELY_AMBIGUOUS_PENDING_COUNSEL, proving the adjudication method is not vacuously stable."
+    }
+  ],
+  "done_criterion_met": true,
+  "note": "done_criterion is 'element-by-element claim chart under BOTH constructions with a per-element reads-on verdict, an overall verdict, and -- if ambiguous -- the specific claim element and specific counsel question named verbatim'. Satisfied: 5/5 elements charted under narrow+broad constructions, overall verdict DOES_NOT_READ_ON via All-Elements Rule, contingent (non-dispositive) ambiguity on element (d) named with claim element text and counsel question verbatim in the receipt's contingent_ambiguity block."
+}

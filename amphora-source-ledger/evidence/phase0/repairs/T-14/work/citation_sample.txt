@@ -1,0 +1,12 @@
+hardener.ancamide_220x70.ahew|264.0|g/eq|https://products.evonik.com/assets/s_/us/Ancamide_220X70_us_TDS_EN_EN_TDS_PV_52041880_en_US_US.pdf
+hardener.ancamide_2353.ahew|114.0|g/eq|https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf
+hardener.ancamide_260a.ahew|120.0|g/eq|https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf
+hardener.ancamide_350a.ahew|100.0|g/eq|https://crosslinkers-web.panpage.de/en2/crosslinkers/ancamide/usa/ancamide_350a_us.pdf
+hardener.ancamide_700b75.ahew|170.0|g/eq|https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf
+hardener.versamid_115.ahew|198.0|g/eq|https://tamtranco.com/UserFiles/File/Dong%20ran/Dong%20ran%20cho%20Epoxy/Versamid%20115/TDS-Versamid%20115_TI.pdf
+pigment.barytes.density|4.45|g/cm3|https://www.20microns.com/products/barytes
+pigment.talc.density|2.8|g/cm3|https://digitalfire.com/material/silverline+303+talc
+resin.dgeba_331.eew|187.0|g/eq|https://www.nmt.edu/academics/mtls/faculty/mccoy/docs2/chemistry/DowEpoxyResins.pdf
+resin.dgeba_828.eew|188.5|g/eq|https://miller-stephenson.com/wp-content/uploads/2024/06/EPON-828_TDS.pdf
+resin.dgeba_yd128.eew|187.0|g/eq|https://5.imimg.com/data5/HR/FD/MY-117280/standard-liquid-epoxy-resin-yd-128.pdf
+solvent.xylene.density|0.87|g/mL|https://www.marathonpetroleum.com/content/documents/Operations/MPC_SDS_Sheets/Marathon_Petroleum_Xylene/Marathon_Petroleum_Xylene.pdf

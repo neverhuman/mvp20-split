@@ -1,0 +1,15 @@
+{
+  "campaign_item_id": "W-CRO1",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260806T070002-2060362-d299e800ccb0",
+      "outcome": "CLAIM_SURVIVED",
+      "summary": "Repaired protocol_lock_sha256 binding in CroProtocolPackageV2::validate() (amphora-assurance-capabilities/src/lib.rs): now recomputed from canonical locked_numeric_thresholds content via new computed_protocol_lock_sha256(), mismatches rejected as CroProtocolPackageError::Binding. Re-ran T-02's exact byte-unmodified probe (harness sha256 7d3959863564d7a8fd04abb15e66bd9e74db6fea182d97f9fc6066ef364f3c01): the previously-accepted attacker vector (protocol_lock_sha256='a'*64, content-undereived) now fails closed (validate_ok=false, sign_ok=false, verify_signature_ok=false, packet_authored_threshold_accepted=false), with 0 regressions across the other 34 T-02 probes (19 directive minus (d), 16 encoding/path combinations). cargo test green in amphora-assurance-capabilities crate and full workspace. mission.md prose updated (2 stale lib.rs sha256 refs corrected to ae46b34766f092ddd332fa617a4348c3fda5e0c2b014f54a1662004c73ae7b5d, repair note appended); front-matter untouched. RETRACTION-INDEX.md created with the T-02 -> W-CRO1 supersession row.",
+      "done_receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/W-CRO1/done/w-cro1-protocol-lock-content-binding-repair-receipt.v1.dsse.json",
+      "lib_rs_sha256_pre_fix": "d80e09105f43c25ebf0851460c54d49246d3906056f3dbce2b6ff3a78469b7ca",
+      "lib_rs_sha256_post_fix": "ae46b34766f092ddd332fa617a4348c3fda5e0c2b014f54a1662004c73ae7b5d"
+    }
+  ],
+  "next_action": "None -- done_criterion met this fire. If a future fire re-opens this item (e.g. a new bypass of computed_protocol_lock_sha256 is found), continue from the repaired baseline above rather than re-deriving the T-02 attack from scratch."
+}

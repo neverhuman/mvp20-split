@@ -1,0 +1,12 @@
+{
+  "applicability_domain": [
+    "registered amphora-report-packager contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_contract_sha256": "457152403c16da9239e8942b134d0f910249756a5472fdf6984a9883d323aabf",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-report-packager",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

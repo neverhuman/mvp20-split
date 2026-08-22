@@ -1,0 +1,361 @@
+        ISO-9001
+        ISO-14001
+                                                                                                    KUKDO
+                                                                                                     December 1,
+YD-128              Standard Liquid Epoxy Resin                                                         2004
+
+
+
+General Description          EPOKUKDO YD-128 is a liquid type standard Epoxy Resin derived from
+                             Bisphenol-A. It has excellent adhesion, chemical resistance, heat resistance, etc. Due
+                             to its special properties, YD-128 is generally used in many fields. YD-128 is the
+                             most standard liquid resin for general use.
+
+
+Resin Properties             Item                                      YD-128                  Test Method
+
+                             EEW(g/eq)                                 184-190                   KD-AS-001
+                             Viscosity(cps at 25°C)                  11,500-13,500               KD-AS-005
+                             Hy-Cl(wt.%)                               0.05 max.                 KD-AS-010
+                             Specific Gravity*1 (20°C)                     1.17                  KD-AS-040
+                             Color(G)                                  0.5 max.                  KD-AS-025
+                             *1 Reference data
+
+
+
+                             EPOKUKDO YD-128 is cured together with the various hardeners (Polyamide resin,
+Usage of YD-128
+                             Aromatic Polyamine, Aliphatic Polyamine and Anhydride Compound). Depending
+                             on diluents and other additives, different physical properties after curing can be
+                             obtained. Generally, YD-128, clear liquid form of the standard Epoxy Resins is
+                             widely used in many fields such as:
+
+
+                             1. Paints :
+                             Electrodeposition coating, Ambient curing coating, Clear coating, Anti-corrosion
+                             coating
+                             2. Electrical and Electronic fields :
+                             Casting, Dipping, Encapsulation, Laminates, Condenser and Resistor coating
+                             3. Civil Construction and Buildings :
+                             Cementing concrete structure, Water proof, Anti-corrosion road pavement, Repair
+                             bond for joint, Grouting material.
+                             4. Adhesive :
+                             Metal, Glass, Wood, and Stone adhesives.
+                             5. Filament winding, Glass fiber reinforcement resin.
+                             6. Stabilizer for polyvinyl chloride.
+
+
+
+
+               For literature and technical assistance, visit our website at www.kukdo.com
+       ISO-9001
+       ISO-14001
+                                                                                                                           KUKDO
+                                                                                                                           December 1,
+YD-128             Standard Liquid Epoxy Resin                                                                                2004
+
+
+
+Relation Between            Viscosity is reduced according to the increase of temperature.
+Temperature and             Temperature and Viscosity relationship of YD -128 is as follows.
+Viscosity
+
+                                                   100000
+                                 Viscosity (cps)
+
+
+
+                                                   10000
+
+
+
+
+                                                     1000
+
+
+
+
+                                                                10     20    30          40    50       60     70        80
+                                                                                                    o
+                                                                                  Temperature ( C )
+
+Properties of Cured
+YD-128 and DOMIDE                                                    YD-128 / Domide cured properties
+(HARDENER)                                                      Hardener
+                                                                             G - 1034          G - 0331       G - 0240        G- A0533
+                              Test Item
+
+                              MixingYD-128/Do mide
+                                                                            65 / 35 phr       70 / 30 phr    75 / 25 phr      70 / 30 phr
+                              Ratios.
+
+                              Pot-Life(at 20o C, 200g)                       120 min           130 min        90 min           100 min
+
+                              Flexural Strength                                   8.55           3.44           4.97             8.53
+                                                            2
+                              Compressive Strength                                8.17           5.76           6.27             6.23
+                                                            2
+                              Tensile Strength                                    5.43           3.08           1.62             3.36
+                                                            2
+                              Adhesive Strength                                   109            116                -             64
+                                                            2
+                              Impact Strength                                     4.18           1.68           1.14             1.90
+                                                            2
+                              H.D.T (o C)                                         58.0           46.0               -            48.0
+
+                              Hardness, M Scale                                   48.0        Shore D85             -            46.5
+
+                              Water                                               0.145         0.201          0.123               -
+
+                            Caution : The above mixing ratio is generally used. According to the curing
+
+                                                    condition, increase of hardener in few more percent range is safety.
+
+
+
+
+              For literature and technical assistance, visit our website at www.kukdo.com
+       ISO-9001
+       ISO-14001
+                                                                                                     KUKDO
+                                                                                                     December 1,
+YD-128             Standard Liquid Epoxy Resin                                                          2004
+
+
+
+
+                                                                                o
+                                                    180                       20 C on 100g Scale
+Exotherm Profile                                                               1. YD-128+TETA
+                                                    150                        2. YD-128+Epomate B002
+(YD-128) & Each Type
+                                                                               3. YD-128+G-0331
+Hardeners                                                                      4. YD-128+G-1034
+                                                    120
+                                  Temperature( C)
+                                 o
+
+
+
+
+                                                    90
+
+
+                                                    60
+
+
+                                                    30
+
+
+                                                     0
+                                                          0   30   60   90     120     150     180       210
+
+                                                                        Time(min)
+
+
+
+
+                            The choice of hardener is the most important. Cured Epoxy Resin makes different
+
+                            physical properties according to various hardeners. And exotherm profile(pot life),
+
+                            curing condition and operation condition can be decided by the choice of hardener.
+
+
+
+
+              For literature and technical assistance, visit our website at www.kukdo.com
+        ISO-9001
+        ISO-14001
+                                                                                                        KUKDO
+                                                                                                        December 1,
+YD-128               Standard Liquid Epoxy Resin                                                           2004
+
+
+
+Characteristics of           Heat cure : 90o C 2hrs + 150o C 4hrs
+Cured "YD -128 &                 Curing Agents (Hardeners)                    DAM            HHPA            MNA
+HARDENERS”                       Adding Amount                   PHR            27              75            90
+
+                                                    Type
+                                                                 Unit        YD-128          YD-128         YD-128
+                                 Item
+                                 Pot-Life                        Min            30            40 *2          120 *2
+
+                                 Flexural Strength              Kg/cm2        1,012           1,138          1,177
+
+                                 Tensile Strength                     -        609             779            614
+
+                                 Compressive      Strength            -       1,250           1,190          1,341
+
+                                 Impact Strength (Charpy)     Kg cm/cm2        5.9             7.7            7.2
+
+                                 Adhesive strength             Kg/cm2           64              89            89
+
+                                 Hardness (Rockwell)           M Scale        112.4            105           111.0
+                                                                  o
+                                 H.D.T.                               C        168             124            128
+
+                                                             ohmcm20o C      3.4×1016        1.0×1017      3.2×1016
+                                 Volume Resistivity
+                                                             ohmcm100o C        -            2.6×1015      2.6×1015
+
+                                                             ohmcm20o C      2.0×1017        4.3×1017      2.0×1017
+                                Surface Resistivity
+                                                             ohmcm100o C        -            3.1×1017      2.0×1015
+
+                                                              60 Hz 20o C      4.5             3.4            3.7
+
+                                Dielectric Constant           103 Hz 20o C     4.4             3.4            3.6
+
+                                                              106 Hz 20o C     3.8             3.2            3.5
+
+                                                              60 Hz 20o C    0.9×10-2        5.4×10-3       1.5×10-3
+                                 Dissipation Factor
+                                                              103 Hz 20o C   2.0×10-2        1.3×10-2       3.9×10-3
+                                Tan ø
+                                                              106 Hz 20o C   3.2×10-2        1.4×10-2       2.3×10-2
+
+                                 Arc-Resistance                   Sec          135             120            70
+
+                                 Dielectric Strength           KV/mm           22.3            21.7          17.0
+
+                                 Water Absorption                 %            0.17            0.11          0.13
+
+                                *1 On 200g scale
+
+                                 *2 BDMA, 0.5% added
+
+
+
+
+               For literature and technical assistance, visit our website at www.kukdo.com
+        ISO-9001
+        ISO-14001
+                                                                                                                            KUKDO
+                                                                                                                            December 1,
+YD-128               Standard Liquid Epoxy Resin                                                                               2004
+
+
+
+Characteristics of           Room temperature curing :
+Cured "YD -128 &             The ratios of hundred parts resins to different parts hardeners(TETA, Polyamide) by
+HARDENERS”
+                             weight being cured after 7 days at 20o C
+
+                            Curing Agents                -                         TETA                        Domide(A.V: 350)
+
+                            Adding Amount               PHR                            10                                       50
+
+                                             Type
+                                                        Unit         YD-115 YD-127 YD-128 YD-115 YD-127 YD-128
+                            Item
+                            Pot-Life                    Min              50            50            50        130           130     130
+                                                                 2
+                           Flexural Strength          Kg/cm              630           450           470       410           580     780
+
+                           Tensile Strength              -               360           230           250       380           370     400
+
+                           Compressive Strength          -            1020          1115         1160          520           642     636
+                            Impact Strength          Kg cm/cm2           1.8           1.1           1.2       2.3           2.0     2.1
+                           Adhesive strength
+                                                      Kg/cm2             62            40            42        77               62    65
+                            (Iapshear)
+                            Hardness                                 P             P             P             M            M        M
+                                                     (M,P)Scale
+                            (Rockwell)                                        57            60            61           72       77           80
+                                                         o
+                            H.D.T.after14 days               C           46            54            55        39               42    43
+
+                            Volume                  Ohmcm20o C 1.7×1015 1.0×1016 0.7×1016                          -            -        -
+
+                            Resistivity             ohmcm100o C 1.2×1010 3.5×1011 1.5×1011                         -            -        -
+
+                            Surface                 ohmcm 20o C 5.6×1014 3.5×1014 2.2×1016                         -            -        -
+
+                            Resistivity             ohmcm100o C 2×1014             4.4×1011 1.9×1012               -            -        -
+
+                                                     60 Hz 20o C         4.1           4.1           5.5           -            -        -
+                            Dielectric
+                                                    103Hz 20o C          4.0           4.1           5.2           -            -        -
+                            Constant
+                                                    106Hz 20o C          3.3           3.9           4.3           -            -        -
+
+                                                     60 Hz 20o C 1.2×10-2 3.0×10-2 1.2×10-2                        -            -        -
+                            Tanø Dissipation
+                                                    103Hz 20o C 1.0×10-2 5.3×10-3 0.8×10-1                         -            -        -
+                            Factor
+                                                    104Hz 20o C 1.9×10-2 1.9×10-2 2.1×10-2                         -            -        -
+
+                            Arc-Resistance               sec              -             -             -            -            -        -
+
+                           Dielectric Strength        KV/mm               -             -             -            -            -        -
+
+                           Water Absorption              %                -            0.40          0.41          -            -        -
+
+                               Test method depends on JIS-K-0911 and ASTM with 100gr scale.
+
+
+
+               For literature and technical assistance, visit our website at www.kukdo.com
+       ISO-9001
+       ISO-14001
+                                                                                                KUKDO
+                                                                                                December 1,
+YD-128             Standard Liquid Epoxy Resin                                                     2004
+
+
+
+Chemical Resistance           Hardener                        TETA               DDM                MNA
+of Cured "YD-128 &            Adding Amount                   10PHR             30PHR          80PHR*1
+HARDENER"
+                                                           25o C 24Hrs        90o C 24Hrs     90o C 24Hrs
+                              Curing Conditions
+                                                           + 100o C 1Hr      + 150o C 1Hrs    + 100o C 3Hr
+
+                                                Day
+                                                         10 days 30 days 10 days 30 days 10 days      30 days
+                              Chemical name
+                              Hydrochloric Acid 10%        0.66    1.51      0.36    0.77    0.11         0.32
+
+                              Hydrochloric Acid 37%        1.01    1.38      1.21    3.24    0.22         0.97
+
+                              Sulfuric Acid        10%     0.87    1.42      0.43    0.98    0.25         0.56
+
+                              Nitric Acid          5%      1.21    2.30      2.94    4.28    0.29         0.98
+
+                              Nitric Acid          40%     6.38       x      1.07      x     0.32         1.62
+
+                              Acetic Acid          10%     2.80    6.09      0.25    0.73    0.28         0.46
+
+                              Citric Acid          25%     1.10    1.16      0.32    0.65    0.40         0.89
+
+                              Ammonia              28%     0.39    1.03      0.43    0.92    0.51         1.21
+
+                              Caustic Soda         25%     0.05    0.08      0.20    0.34    0.31         0.88
+
+                              Acetone                      0.26    1.47      2.96    6.58    3.81         9.31
+
+                              Ethyl alcohol                0.26    0.29      0.02    0.20    0.22         0.39
+
+                              Benzene                      0.03    0.07      0.08    0.22    0.93         1.72
+
+                               Gasoline                    0.02    0.03      0.07    0.18    0.17         0.51
+
+                                *1 BDMA 0.5 PHR added
+
+                                 x : Broken down
+
+
+
+
+Packaging
+                            20kg Can or 200Kg D/M (Net weight)
+
+                            Bulk in Tank
+
+
+
+
+              For literature and technical assistance, visit our website at www.kukdo.com
+

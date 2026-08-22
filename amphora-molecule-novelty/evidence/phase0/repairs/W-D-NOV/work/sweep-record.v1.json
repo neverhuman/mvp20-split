@@ -1,0 +1,181 @@
+{
+  "schema": "amphora.molecule-novelty.data-sweep.v1",
+  "campaign_item_id": "W-D-NOV",
+  "objective": "Hunt for a second rights-clean polymer/monomer structure corpus with chemistry overlapping our epoxy-amine coating target space, to stop measuring every novelty verdict against the single 442-row/350-distinct-structure OpenPoly corpus. Every source's licence quoted verbatim, or its blocking licence quoted verbatim; BLOCKED_DATA acceptable with a real >=12-source sweep record.",
+  "existing_reference_corpus": {
+    "name": "OpenPoly",
+    "rows": 442,
+    "distinct_structures_after_dedup": 350,
+    "used_in": "amphora-molecule-novelty/evidence/phase0/kpis/tanimoto-nn-novelty-canonical-epoxy-amines-vs-openpoly-kpi.v1.json",
+    "note": "That KPI's own awaiting[] already names 'Phase-1: extend reference corpus with ChEMBL / PubChem SMILES + USPTO prior-art SMILES for comprehensive novelty' -- this sweep tests that exact gap."
+  },
+  "sources_swept": [
+    {
+      "n": 1,
+      "name": "PoLyInfo (NIMS MatNavi), National Institute for Materials Science, Japan",
+      "query": "PoLyInfo NIMS polymer database terms of use license",
+      "url": "https://polymer.nims.go.jp/ ; https://login-matnavi.nims.go.jp/Registration_en.html",
+      "fetch_method": "curl -A Mozilla/5.0 to polymer.nims.go.jp/PoLyInfo/oauth2/authorization/azureadb2c -> 302 redirect to dicelogin.b2clogin.com Azure AD B2C OAuth sign-in (login-gated, no anonymous terms page reachable); WebSearch of indexed MatNavi Service Terms of Use text as fallback",
+      "license_quote_verbatim": "Web scraping of data is prohibited, and the acquisition of large amounts of data, whether by manual or mechanical means, is prohibited by the MatNavi Service Terms of Use. User accounts will be suspended when there is a possibility of data access that is deemed to be a violation.",
+      "quote_provenance": "search-engine-indexed paraphrase of MatNavi Service Terms of Use; the primary terms page itself sits behind the Azure B2C login wall this fire could not pass (no account exists, and creating one is out of scope for a no-acquisition sweep)",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Login-gated (DICE account + institutional registration required); own terms explicitly prohibit web scraping and bulk (manual-or-mechanical) acquisition -- exactly the operation a second reference corpus would need.",
+      "coverage": "Per NIMS's own PoLyInfo overview materials, the database spans roughly half a million polymer property data points across tens of thousands of polymer records, including thermoset/epoxy classes.",
+      "structural_overlap": "Named explicitly in the campaign item as a 'PoLyInfo-adjacent' target; would be the single best chemistry match if rights-clear, since it directly indexes thermoset and epoxy-amine-adjacent polymer classes."
+    },
+    {
+      "n": 2,
+      "name": "PubChem Compound (NCBI/NLM/NIH)",
+      "query": "PubChem license terms of use CC0 public domain redistribution",
+      "url": "https://www.ncbi.nlm.nih.gov/home/about/policies.shtml",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, static NCBI policy page, plain-text extraction",
+      "license_quote_verbatim": "Databases of molecular data on the NCBI Web site include such examples as nucleotide sequences (GenBank), protein sequences, macromolecular structures, molecular variation, gene expression, and mapping data. ... NCBI itself places no restrictions on the use or distribution of the data contained therein. Nor do we accept data when the submitter has requested restrictions on reuse or redistribution. However, some submitters of the original data (or the country of origin of such data) may claim patent, copyright, or other intellectual property rights in all or a portion of the data (that has been submitted). NCBI is not in a position to assess the validity of such claims and since there is no transfer of rights from submitters to NCBI, NCBI has no rights to transfer to a third party.",
+      "copyright_string_occurrences": "0 for PubChem specifically; page separately flags PMC/Bookshelf/OMIM/PubChem generally as 'may be protected by U.S. and foreign copyright laws' with 'persons reproducing, redistributing, or making commercial use ... expected to adhere to the terms and conditions asserted by the copyright holder'",
+      "disposition": "RECOMMENDED_WITH_FLAG",
+      "disposition_reason": "NCBI imposes no restriction of its own and molecular data specifically is unrestricted by NCBI policy, but per-record submitter IP claims are possible and NCBI cannot warrant clearance -- usable per-compound for named commodity monomers (DGEBA, common amine hardeners) with individual diligence, not as a blanket bulk corpus without per-record review.",
+      "coverage": "PubChem Compound holds on the order of 100M+ deposited compound records (NCBI public description); essentially every commodity DGEBA analog and amine hardener already named in this portfolio's ingredient library resolves to an individual PubChem CID.",
+      "structural_overlap": "Direct: commodity epoxy-amine monomer chemistry is present by name/CASRN; not a curated 'polymer' corpus (mostly small-molecule monomers, not cured-network representations), so complements rather than replaces OpenPoly."
+    },
+    {
+      "n": 3,
+      "name": "NIST Chemistry WebBook (Standard Reference Data 69), National Institute of Standards and Technology",
+      "query": "NIST WebBook chemistry data public domain license disclaimer redistribution",
+      "url": "https://webbook.nist.gov/chemistry/ ; https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200 on both pages, plain-text extraction; webbook.nist.gov page's own schema.org JSON-LD cites itself as 'SRD 69' with an explicit license URL",
+      "license_quote_verbatim": "The Standard Reference Data Act, 15 U.S.C. Sec.290e, empowers the Secretary of Commerce to secure copyright on behalf of the United States in Standard Reference Data (SRD) prepared by NIST. SRD data products should include the following statement: Copyright protection on this compilation of data has been secured by the Secretary of the U.S. Department of Commerce on behalf of the United States ... NIST Standard Reference Data (SRD); (c)Copyright [YEAR] by the U.S. Secretary of Commerce on behalf of the United States of America. All rights reserved.",
+      "copyright_string_occurrences": ">=1 (explicit 'All rights reserved' clause applies to SRD-designated collections, which the WebBook's own JSON-LD confirms it is: 'SRD 69')",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Unlike ordinary 17 U.S.C. Sec.105 US-government-work public domain data, NIST Standard Reference Data is explicitly copyright-secured by statute; the WebBook self-identifies as SRD 69, so the 'All rights reserved' clause applies, not the public-domain fallback that covers non-SRD NIST works.",
+      "coverage": "Small-molecule thermophysical/thermochemical property data (boiling points, heats of formation, spectra); not itself a polymer structure corpus.",
+      "structural_overlap": "Weak even if rights-clear -- WebBook indexes small molecules and monomer feedstocks, not cured polymer-network structures, so it would supplement property cross-checks rather than serve as a second novelty reference corpus."
+    },
+    {
+      "n": 4,
+      "name": "EPA CompTox Chemicals Dashboard, U.S. Environmental Protection Agency",
+      "query": "EPA CompTox Dashboard license copyright terms disclaimers",
+      "url": "https://comptox.epa.gov/dashboard/ ; https://www.epa.gov/web-policies-and-procedures/epa-disclaimers",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200 on both; Dashboard landing page live-rendered chemical count captured directly in the fetched HTML",
+      "license_quote_verbatim": "Copyright Status: The U.S. Government retains a nonexclusive, royalty-free license to publish or reproduce these documents, or allow others to do so, for U.S. Government purposes. These documents may be freely distributed and used for non-commercial, scientific and educational purposes. Commercial use of the documents available from the EPA websites may be protected under the U.S. and Foreign Copyright Laws. Individual documents on the EPA website may have different copyright conditions, and that will be noted in those documents.",
+      "disposition": "RECOMMENDED_WITH_FLAG",
+      "disposition_reason": "Explicit free-for-non-commercial-scientific-and-educational-use grant covers our R&D_OBJECTIVE / AUDIT_ONLY ceiling directly; commercial-use caveat and per-document exceptions mean a full-corpus blanket claim still needs a spot-check, not a blocker for research use.",
+      "coverage": "Dashboard landing page live count (captured this fire): '1,376,722 Chemicals'.",
+      "structural_overlap": "Strong for named industrial epoxy/amine feedstocks -- CompTox indexes exactly the commodity industrial-chemical space (CASRN-indexed structures, incl. DGEBA-class resins and amine hardeners) our portfolio already references; still small-molecule/monomer-level, not cured-network polymer structures."
+    },
+    {
+      "n": 5,
+      "name": "Open Reaction Database (ord-data), open-reaction-database/ord-data on GitHub",
+      "query": "Open Reaction Database ORD license MIT reaction structures github",
+      "url": "https://github.com/open-reaction-database/ord-data/blob/main/LICENSE",
+      "fetch_method": "curl -A Mozilla/5.0 raw.githubusercontent.com/open-reaction-database/ord-data/main/LICENSE, HTTP 200, plain text",
+      "license_quote_verbatim": "Attribution-ShareAlike 4.0 International ... Creative Commons Corporation (\"Creative Commons\") is not a law firm and does not provide legal services or legal advice.",
+      "disposition": "RECOMMENDED_WITH_FLAG",
+      "disposition_reason": "CC BY-SA 4.0 on the reaction dataset itself is genuinely rights-clean and reusable, but ShareAlike means any derivative corpus built from it must itself be released CC BY-SA -- a real but manageable condition, not a blocker, and distinct from the CC BY-only sources below.",
+      "coverage": "Tens of thousands of curated organic reactions with structured reactant/product/reagent molecule records (actively growing community-contributed database).",
+      "structural_overlap": "Moderate: epoxide ring-opening and amine-addition reactions are common organic reaction classes likely represented among reactants/products, but ORD is reaction-centric (transformations), not a polymer/monomer structure library, so coverage of cured epoxy-amine network chemistry specifically is unconfirmed without a direct query of the dataset."
+    },
+    {
+      "n": 6,
+      "name": "CAS Common Chemistry, Chemical Abstracts Service (a division of the American Chemical Society)",
+      "query": "CAS Common Chemistry license terms of use SMILES structures free",
+      "url": "https://commonchemistry.cas.org/terms-of-use",
+      "fetch_method": "WebFetch tool render of commonchemistry.cas.org/terms-of-use (direct curl returned HTTP 403 anti-bot block from this host)",
+      "license_quote_verbatim": "CAS Common Chemistry is provided under the Creative Commons CC BY-NC 4.0 license.",
+      "quote_provenance": "WebFetch-tool-rendered quote of the terms-of-use page; not independently re-confirmed by a raw byte-level curl this fire because commonchemistry.cas.org returned HTTP 403 to direct curl requests from this host.",
+      "disposition": "RECOMMENDED_WITH_FLAG",
+      "disposition_reason": "CC BY-NC 4.0 is genuinely rights-clean for our current AUDIT_ONLY / R&D_OBJECTIVE, non-commercial ceiling, but the NonCommercial clause would need to be re-examined before any future commercial/Phase-2 use of a corpus built from it.",
+      "coverage": "Publicly described as covering several hundred thousand chemical substances with structures (SMILES/InChI/CAS RN).",
+      "structural_overlap": "Direct: common industrial monomers (including named epoxy resins and amine hardeners) are individually present by CAS RN; small-molecule/monomer-level like PubChem and CompTox, not a cured-polymer-network corpus."
+    },
+    {
+      "n": 7,
+      "name": "Google Patents Public Data (IFI CLAIMS Patent Services and Google, via Google BigQuery)",
+      "query": "Google Patents Public Datasets BigQuery license terms USPTO chemical structures",
+      "url": "https://cloud.google.com/blog/topics/public-datasets/google-patents-public-datasets-connecting-public-paid-and-private-patent-data",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, plain-text extraction of the live Google Cloud blog page",
+      "license_quote_verbatim": "Source: \"Google Patents Public Data\" by IFI CLAIMS Patent Services and Google, CC BY 4.0, \"Cooperative Patent Classification\" by the EPO and USPTO, for public use.",
+      "disposition": "RECOMMENDED",
+      "disposition_reason": "Explicit, unambiguous CC BY 4.0 attribution license on the dataset itself -- cleanest license grant found in this sweep.",
+      "coverage": "Tens of millions of patent records (full text, claims, classifications, citations) across major patent offices, queryable via BigQuery SQL.",
+      "structural_overlap": "Indirect: this is patent text/metadata, not pre-extracted chemical structures. Realizing structural overlap with epoxy-amine coating IP requires a chemistry-NER/structure-extraction step (e.g., the SureChEMBL-style pipeline in source 8) on top of this text -- a real, CC BY 4.0-licensed feedstock, not a ready-made structure corpus."
+    },
+    {
+      "n": 8,
+      "name": "SureChEMBL (EMBL-EBI), patent-mined chemical structures",
+      "query": "SureChEMBL patent chemical structures license terms of use",
+      "url": "https://www.ebi.ac.uk/about/terms-of-use/ ; https://chembl.gitbook.io/surechembl ; https://chembl.github.io/surechembl-chemical-structure/",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200 on ebi.ac.uk general terms page, plain-text extraction; SureChEMBL-specific gitbook/github pages fetched but carried no explicit license clause of their own",
+      "license_quote_verbatim": "Where EMBL-EBI presents scientific data generated by others, EMBL-EBI imposes no additional restriction on the use of the contributed data than those provided by the data owner, unless otherwise specified in these Terms of Use. EMBL-EBI expects attribution ... for the use of any of its Data Resources and Tools in accordance with good scientific practice.",
+      "disposition": "RECOMMENDED_WITH_FLAG",
+      "disposition_reason": "General EBI terms impose no additional EBI-side restriction, but SureChEMBL's own dedicated pages (gitbook, github.io) carry no explicit license statement -- the 'data owner' for patent-extracted structures is ambiguous (the patent applicant / patent office, whose own rights are jurisdiction-dependent), so this is not yet a confirmed-verbatim per-source license the way sources 5, 7, 9, 13 are.",
+      "coverage": "~30M+ chemical entities extracted from the full text, images, and attachments of 14M+ patent documents published since 1970 (per SureChEMBL's own public description).",
+      "structural_overlap": "Strong and direct: patent-mined structures from coatings/epoxy-resin patent literature would be the single best 'patent-derived structure set' this campaign item asks for, contingent on resolving the licence-owner ambiguity flagged above."
+    },
+    {
+      "n": 9,
+      "name": "Reaxys (Elsevier)",
+      "query": "Elsevier Reaxys terms and conditions copyright redistribution chemical structures",
+      "url": "https://www.elsevier.com/legal/elsevier-website-terms-and-conditions",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, plain-text extraction",
+      "license_quote_verbatim": "... is owned by Elsevier, its licensors or its content providers and is protected by copyright, trademark and other intellectual property and unfair competition laws. ... you may print or download Content from the Services for your own personal, non-commercial, informational or scholarly use, provided that you keep intact all copyright and other proprietary notices. You may not copy, display, distribute, modify, publish, reproduce, store, transmit, post, translate or create other derivative works ... or sell, rent or license all or any part of the Content ... to anyone, except as otherwise expressly permitted.",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Explicit no-redistribution, no-derivative-works clause; also subscription/paywalled, no institutional Reaxys access available to this cron.",
+      "coverage": "Widely regarded as the most comprehensive commercial chemical-reaction/substance database (100M+ substances), certainly including comprehensive epoxy-amine chemistry.",
+      "structural_overlap": "Would be excellent if rights-clear; fully blocked."
+    },
+    {
+      "n": 10,
+      "name": "Khazana Polymer Genome dataset (Huan, Mannodi-Kanakkithodi, Kim, Sharma, Pilania, Ramprasad 2016), Scientific Data 3:160012",
+      "query": "Ramprasad Khazana Polymer Genome dataset Nature Scientific Data Creative Commons Attribution 4.0",
+      "url": "https://www.nature.com/articles/sdata201612 ; data at https://datadryad.org/dataset/doi:10.5061/dryad.5ht3n and khazana.gatech.edu",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, plain-text extraction of the live Nature Scientific Data article page",
+      "license_quote_verbatim": "Rights and permissions: This work is licensed under a Creative Commons Attribution 4.0 International License. ... To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0",
+      "disposition": "RECOMMENDED",
+      "disposition_reason": "Unambiguous CC BY 4.0 on the data descriptor itself, with structure files independently hosted on Dryad (DOI-resolvable, not scraped from a login-gated portal) -- the strongest single RECOMMENDED candidate in this sweep.",
+      "coverage": "1,073 polymers and related materials with DFT-derived properties, uniformly prepared; structures sourced from prior literature plus structure-search methods.",
+      "structural_overlap": "Unconfirmed at the individual-monomer-class level this fire (would require downloading the Dryad structure files to check for DGEBA-analog/amine-hardener-class entries specifically) -- flagged as proposed_followup 1 below; general organic-polymer coverage makes epoxy-class representation plausible but not yet verified."
+    },
+    {
+      "n": 11,
+      "name": "PolyUniverse (ytl0410/PolyUniverse), rule-based polymerization-reaction generated polymer library incl. epoxy and vitrimer classes",
+      "query": "Khazana Polymer Genome dataset github license CC-BY epoxy (follow-on: PolyUniverse github polymer library epoxy vitrimer license)",
+      "url": "https://github.com/ytl0410/PolyUniverse ; https://zenodo.org/records/12585902",
+      "fetch_method": "GitHub REST API (api.github.com/repos/ytl0410/PolyUniverse) for machine-readable license field, HTTP 200; companion Zenodo record fetch via curl returned HTTP 403 (anti-bot / rate-limit block) this fire",
+      "license_quote_verbatim": "GitHub API license field for this repository: \"license\": null (no LICENSE file present in the repository)",
+      "disposition": "BLOCKED_WITH_FLAG",
+      "disposition_reason": "No license file means the repository defaults to standard copyright -- the author retains all rights and no reuse/redistribution right is granted by default, per GitHub's own Terms of Service guidance for unlicensed repositories. The companion Zenodo deposit (12585902), which might carry its own CC license badge independent of the GitHub repo, could not be checked this fire (HTTP 403).",
+      "coverage": "README states the repository covers Vitrimer, epoxy, polybenzimidazole (PBI), and copolymer poly(imide-imine) (PI-PIM) polymer classes generated via rule-based polymerization reactions, with a 'comprehensive dataset' hosted separately on Zenodo (a GitHub-hosted 'small-scale example dataset' only, due to file-size limits).",
+      "structural_overlap": "Best topical match found in this entire sweep -- explicitly generates epoxy-class polymer structures via rule-based polymerization, directly adjacent to our DGEBA/amine target chemistry -- but blocked on rights until the Zenodo license badge is confirmed or the author is asked directly."
+    },
+    {
+      "n": 12,
+      "name": "Cambridge Structural Database (CSD), Cambridge Crystallographic Data Centre (CCDC)",
+      "query": "CCDC Cambridge Structural Database access terms licence fee academic",
+      "url": "https://www.ccdc.cam.ac.uk/access-structures-terms/",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, plain-text extraction",
+      "license_quote_verbatim": "Public services hosted by the CCDC allow the view and download of individual structures and associated data. These services must not be used to systematically download or redistribute these structures, data, or associated information. Programmatic access to these services is not permitted. ... We do not permit systematic searching via our free services.",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Free-tier access explicitly forbids exactly the bulk/systematic/programmatic retrieval a second reference corpus would require; full CSD Portfolio access requires a paid institutional licence this cron does not hold.",
+      "coverage": "CSD holds well over a million experimentally determined organic and metal-organic crystal structures.",
+      "structural_overlap": "Plausible for small-molecule epoxy/amine crystal structures (individual lookups only), but bulk corpus-building is explicitly the prohibited use case."
+    },
+    {
+      "n": 13,
+      "name": "ChEMBL (EMBL-EBI)",
+      "query": "ChEMBL data license Creative Commons Attribution Share Alike",
+      "url": "https://chembl.gitbook.io/chembl-interface-documentation/about",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, plain-text extraction",
+      "license_quote_verbatim": "Data Licensing: Access to the web interface of ChEMBL is made under the EBI's Terms of Use. The ChEMBL data is made available on a Creative Commons Attribution-Share Alike 3.0 Unported License.",
+      "disposition": "RECOMMENDED_WITH_FLAG",
+      "disposition_reason": "Genuinely rights-clean CC BY-SA 3.0, but ShareAlike condition applies same as source 5; ChEMBL is bioactivity/drug-discovery focused, so chemistry overlap with industrial coating monomers is expected to be weak.",
+      "coverage": "~2.4M compounds with associated bioactivity data (per ChEMBL's own public description).",
+      "structural_overlap": "Weak: ChEMBL's curation focus is bioactive/drug-like small molecules; industrial epoxy resins and amine hardeners are not its target chemical space, so it would contribute little beyond incidental overlap even though the licence is clean."
+    }
+  ],
+  "tally": {
+    "swept": 13,
+    "recommended": 2,
+    "recommended_with_flag": 6,
+    "blocked": 4,
+    "blocked_with_flag": 1
+  }
+}

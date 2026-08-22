@@ -1,0 +1,351 @@
+{
+  "L_authority_lattice_meet": {
+    "L1_supremum_below_optimize_and_rank": true,
+    "L2_most_restrictive_wins_status_dominates_ceiling": true,
+    "L3_scored_slice_cases": [
+      {
+        "auth_ceiling_rank": 0,
+        "authority_ceiling": "ROADMAP",
+        "grant_rank": 0,
+        "meet_below_ceiling": true,
+        "semantics": "ROADMAP",
+        "solver_use_ceiling": "DISABLED"
+      },
+      {
+        "auth_ceiling_rank": 0,
+        "authority_ceiling": "ROADMAP",
+        "grant_rank": 0,
+        "meet_below_ceiling": true,
+        "semantics": "ROADMAP",
+        "solver_use_ceiling": "ENABLED"
+      },
+      {
+        "auth_ceiling_rank": 1,
+        "authority_ceiling": "EVIDENCE_ONLY",
+        "grant_rank": 1,
+        "meet_below_ceiling": true,
+        "semantics": "EVIDENCE_ONLY",
+        "solver_use_ceiling": "DISABLED"
+      },
+      {
+        "auth_ceiling_rank": 1,
+        "authority_ceiling": "EVIDENCE_ONLY",
+        "grant_rank": 1,
+        "meet_below_ceiling": true,
+        "semantics": "AUDIT_CONSTRAINT",
+        "solver_use_ceiling": "ENABLED"
+      },
+      {
+        "auth_ceiling_rank": 1,
+        "authority_ceiling": "AUDIT",
+        "grant_rank": 1,
+        "meet_below_ceiling": true,
+        "semantics": "EVIDENCE_ONLY",
+        "solver_use_ceiling": "DISABLED"
+      },
+      {
+        "auth_ceiling_rank": 1,
+        "authority_ceiling": "AUDIT",
+        "grant_rank": 1,
+        "meet_below_ceiling": true,
+        "semantics": "AUDIT_CONSTRAINT",
+        "solver_use_ceiling": "ENABLED"
+      },
+      {
+        "auth_ceiling_rank": 1,
+        "authority_ceiling": "PRODUCT",
+        "grant_rank": 1,
+        "meet_below_ceiling": true,
+        "semantics": "EVIDENCE_ONLY",
+        "solver_use_ceiling": "DISABLED"
+      },
+      {
+        "auth_ceiling_rank": 1,
+        "authority_ceiling": "PRODUCT",
+        "grant_rank": 1,
+        "meet_below_ceiling": true,
+        "semantics": "AUDIT_CONSTRAINT",
+        "solver_use_ceiling": "ENABLED"
+      }
+    ],
+    "L3_scored_slice_meet_below_ceiling": true,
+    "L3_scored_slice_monotone_tighter_ceiling_no_higher_grant": true,
+    "codomain": [
+      "AUDIT_CONSTRAINT",
+      "ERROR",
+      "EVIDENCE_ONLY",
+      "INSUFFICIENT_INPUT",
+      "NO_AUTHORITY",
+      "ROADMAP"
+    ],
+    "codomain_is_constraint_tier_only": true,
+    "constraint_ceiling_rank": 1,
+    "deterministic_two_replay": true,
+    "grant_rank_legend": {
+      "AUDIT_CONSTRAINT": 1,
+      "ERROR": 0,
+      "EVIDENCE_ONLY": 1,
+      "INSUFFICIENT_INPUT": 0,
+      "NO_AUTHORITY": 0,
+      "OPTIMIZE": 2,
+      "RANK": 3,
+      "ROADMAP": 0
+    },
+    "input_domain_size": 56,
+    "max_grant_rank_over_domain": 1,
+    "real_manifest_domain": {
+      "below_ceiling": true,
+      "cases": 145,
+      "max_grant_rank": 1,
+      "rows": 29
+    },
+    "refuted_non_property_naive_single_axis_monotonicity": {
+      "expected": false,
+      "holds": false,
+      "note": "Reported honestly: SCORED on a ROADMAP module yields ROADMAP (rank 0) while FAILED_GATES yields AUDIT_CONSTRAINT (rank 1); the codomain is a 2-D constraint lattice, not a chain. Neither output grants ranking/optimization authority, so this is not an escalation -- the correct meet property is L3 on the SCORED slice.",
+      "violations": [
+        {
+          "authority_ceiling": "ROADMAP",
+          "grant_less": 1,
+          "grant_more": 0,
+          "less_perm": "FAILED_GATES",
+          "more_perm": "SCORED",
+          "solver_use_ceiling": "DISABLED"
+        },
+        {
+          "authority_ceiling": "ROADMAP",
+          "grant_less": 1,
+          "grant_more": 0,
+          "less_perm": "FAILED_GATES",
+          "more_perm": "SCORED",
+          "solver_use_ceiling": "ENABLED"
+        }
+      ]
+    },
+    "status_ceiling_invariance": {
+      "ERROR": {
+        "ceiling_invariant": true,
+        "distinct_outputs": [
+          "ERROR"
+        ]
+      },
+      "FAILED_GATES": {
+        "ceiling_invariant": true,
+        "distinct_outputs": [
+          "AUDIT_CONSTRAINT"
+        ]
+      },
+      "INSUFFICIENT_INPUT": {
+        "ceiling_invariant": true,
+        "distinct_outputs": [
+          "INSUFFICIENT_INPUT"
+        ]
+      },
+      "NO_AUTHORITY": {
+        "ceiling_invariant": true,
+        "distinct_outputs": [
+          "NO_AUTHORITY"
+        ]
+      }
+    }
+  },
+  "N_clause_necessity_completeness": {
+    "all_clauses_independently_necessary": true,
+    "atomic_clause_count": 26,
+    "conclusion": "acceptance == exact irredundant conjunction of 26 atomic clauses; each is load-bearing (single-clause knockout flips accept->reject) and the full conjunction is jointly sufficient",
+    "joint_sufficiency_real_manifest_accepted": true,
+    "joint_sufficiency_reason": "ok",
+    "single_clause_knockouts": [
+      {
+        "accepted_after_knockout": false,
+        "clause": "structural_policy_and_modules_present",
+        "necessary": true,
+        "reject_reason": "manifest structurally invalid"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "schema_is_module_manifest_v2",
+        "necessary": true,
+        "reject_reason": "trust policy is not fail-closed"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "policy_present_normalization_owner",
+        "necessary": true,
+        "reject_reason": "policy missing required field normalization_owner"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "policy_present_authority_resolution",
+        "necessary": true,
+        "reject_reason": "policy missing required field authority_resolution"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "policy_present_rust_final_ranking_enforcement",
+        "necessary": true,
+        "reject_reason": "policy missing required field rust_final_ranking_enforcement"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "policy_present_unknown_module_policy",
+        "necessary": true,
+        "reject_reason": "policy missing required field unknown_module_policy"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "policy_present_unknown_true_claim_lock_policy",
+        "necessary": true,
+        "reject_reason": "policy missing required field unknown_true_claim_lock_policy"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "policy_present_product_claim_ready",
+        "necessary": true,
+        "reject_reason": "policy missing required field product_claim_ready"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "value_normalization_owner_is_candidate_contract",
+        "necessary": true,
+        "reject_reason": "trust policy is not fail-closed"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "value_authority_resolution_is_minimum_privilege",
+        "necessary": true,
+        "reject_reason": "trust policy is not fail-closed"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "value_rust_final_ranking_enforcement_is_true",
+        "necessary": true,
+        "reject_reason": "trust policy is not fail-closed"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "value_unknown_module_policy_is_REJECT",
+        "necessary": true,
+        "reject_reason": "trust policy is not fail-closed"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "value_unknown_true_claim_lock_policy_is_BLOCK",
+        "necessary": true,
+        "reject_reason": "trust policy is not fail-closed"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "value_product_claim_ready_is_false",
+        "necessary": true,
+        "reject_reason": "trust policy is not fail-closed"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "mandatory_claim_locks_nonempty",
+        "necessary": true,
+        "reject_reason": "mandatory pre-Phase-0 locks are absent"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "row_required_project",
+        "necessary": true,
+        "reject_reason": "module row missing required field project"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "row_required_authority_ceiling",
+        "necessary": true,
+        "reject_reason": "module row missing required field authority_ceiling"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "row_required_solver_use_ceiling",
+        "necessary": true,
+        "reject_reason": "module row missing required field solver_use_ceiling"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "row_required_model_readiness_ceiling",
+        "necessary": true,
+        "reject_reason": "module row missing required field model_readiness_ceiling"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "row_required_ranking_eligible",
+        "necessary": true,
+        "reject_reason": "module row missing required field ranking_eligible"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "row_required_candidate_types",
+        "necessary": true,
+        "reject_reason": "module row missing required field candidate_types"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "row_required_readiness",
+        "necessary": true,
+        "reject_reason": "module row missing required field readiness"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "cardinality_exactly_29_low",
+        "necessary": true,
+        "reject_reason": "must contain exactly 29 canonical module identities"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "cardinality_exactly_29_high",
+        "necessary": true,
+        "reject_reason": "must contain exactly 29 canonical module identities"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "identity_set_is_canonical_29",
+        "necessary": true,
+        "reject_reason": "must contain exactly 29 canonical module identities"
+      },
+      {
+        "accepted_after_knockout": false,
+        "clause": "no_row_ranking_eligible",
+        "necessary": true,
+        "reject_reason": "cannot contain ranking-eligible modules"
+      }
+    ]
+  },
+  "closes": "Second signed authority receipt for amphora-model-card-authority: proves the minimum-privilege authority-resolution operator is a monotone meet whose reachable authority is bounded strictly below OPTIMIZE/RANK over its entire finite input domain (Denning 1976), and that the manifest acceptance gate is a complete, irredundant conjunction with every atomic clause independently necessary (Saltzer-Schroeder complete mediation).",
+  "counts": {
+    "atomic_clauses": 26,
+    "clause_knockouts": 26,
+    "lattice_input_domain_cases": 56,
+    "lattice_real_domain_cases": 145,
+    "monotonicity_pairs_checked": 32,
+    "total_decisions": 228
+  },
+  "does_not_close": "No product qualification, batch release, procurement, legal FTO, regulatory compliance, or wet-lab performance. AUDIT_ONLY; does not promote authority, does not flip scientific_readiness, does not modify the portfolio manifest, module-manifest, any locked dataset, or a signed Phase-0 KPI. Ceiling is the native Rust front door (Phase-1).",
+  "gates": {
+    "L_authority_lattice_meet_below_grant_ceiling": true,
+    "N_clause_necessity_complete_conjunction": true,
+    "all_pass": true
+  },
+  "hypothesis": "minimum-privilege authority-resolution is a monotone meet confined below OPTIMIZE, and its manifest gate is a complete conjunction with no redundant clause",
+  "module": "amphora-model-card-authority",
+  "non_circularity": "Live authority is native Rust (amphora-engine, amphora-core); this oracle independently transcribes the same policy in CPython with no shared code path and exercises it over the real manifest bytes. It establishes lattice-ceiling and clause-necessity properties NOT covered by the prior point-mutation tamper receipt (least-privilege-authority-parity-v1).",
+  "purpose": "Prove (L) the authority-resolution operator's reachable authority is bounded strictly below any rank/optimize grant over its entire finite input domain, and (N) every atomic clause of validate_manifest is independently necessary (irredundant exact conjunction).",
+  "run_type": "AUDIT_ONLY_NON_RUNTIME_ORACLE",
+  "runtime_source_anchors": {
+    "amphora-core/src/capability.rs_sha256": "7b358ffa2ed2ca3a090f73c2cc04abe1c42ec0c94e4f7fcf0ec31d6e11f0418a",
+    "amphora-engine/src/lib.rs_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+    "module-manifest.json_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f"
+  },
+  "schema": "amphora.model-card-authority-authority-lattice-completeness.v1",
+  "study_id": "authority-lattice-completeness-v1",
+  "theory_reference": {
+    "canonical_bytes": "RFC 8785 JSON Canonicalization",
+    "deny_by_default": "NIST SP 800-207 Zero Trust Architecture (2020)",
+    "lattice_model_of_secure_information_flow": "Denning, CACM 19(5):236-243, 1976; DOI 10.1145/360051.360056",
+    "least_privilege_fail_safe_complete_mediation": "Saltzer & Schroeder, Proc. IEEE 63(9):1278-1308, 1975; DOI 10.1109/PROC.1975.9939",
+    "nist_ac6_least_privilege": "NIST SP 800-53 Rev.5 AC-6 (2020)"
+  }
+}

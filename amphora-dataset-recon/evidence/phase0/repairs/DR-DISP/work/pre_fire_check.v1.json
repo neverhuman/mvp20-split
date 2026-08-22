@@ -1,0 +1,92 @@
+{
+  "candidate_count": 65,
+  "clean": false,
+  "schema": "amphora.dataset-recon.dr-disp-completeness-check.v1",
+  "violation_count": 21,
+  "violations": [
+    {
+      "candidate_id": "DR-DISP-BASK-R-D01",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-BASK-R-D02",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-BASK-R-D03",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-BASK-R-D04",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-BASK-R-D05",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-BASK-R-D06",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-ORB-UMLIP",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q01",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q02",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q03",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q04",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q05",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q06",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q07",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q08",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q09",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q10",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q11",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q12",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q13",
+      "kind": "manifest_candidate_missing_disposition"
+    },
+    {
+      "candidate_id": "DR-DISP-Q14",
+      "kind": "manifest_candidate_missing_disposition"
+    }
+  ]
+}

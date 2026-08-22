@@ -1,0 +1,354 @@
+{
+  "absolute_lift_pp": 0.0,
+  "artifact_version": "v5_epoch29-unseen-benchmark.v1",
+  "baseline_metrics": {
+    "latest_impedance": {
+      "accuracy": 0.666667,
+      "balanced_accuracy": 0.666667,
+      "confidence_interval_95": {
+        "lower": 0.299993,
+        "method": "wilson_95",
+        "upper": 0.903229
+      },
+      "n": 6
+    },
+    "majority_label": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "confidence_interval_95": {
+        "lower": 0.0,
+        "method": "wilson_95",
+        "upper": 0.390334
+      },
+      "n": 6
+    }
+  },
+  "baseline_value": 0.666667,
+  "benchmark_type": "GROUPED_UNSEEN_PUBLIC_SYSTEMS",
+  "claim_boundary": "Public benchmark/model-readiness only; labels cannot validate a formulation candidate or replace owned wet-lab evidence.",
+  "feature_generation_version": "mvp20.29-public-eis-features.v1",
+  "feature_table_sha256": "58082a5356a51f74cf38fe5175de18435995de998ac23473437ffa19623059c4",
+  "folds": {
+    "baseline_latest_impedance": {
+      "accuracy": 0.666667,
+      "balanced_accuracy": 0.666667,
+      "confidence_interval_95": {
+        "lower": 0.299993,
+        "method": "wilson_95",
+        "upper": 0.903229
+      },
+      "folds": [
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": true,
+          "held_out_system": "2-E-P-1K-2-S",
+          "predicted_label": "higher_endpoint_risk",
+          "score": 0.90399782154,
+          "threshold_from_training_fold": 0.657397837488
+        },
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": true,
+          "held_out_system": "2-E-P-2K-2-S",
+          "predicted_label": "higher_endpoint_risk",
+          "score": 0.790039121381,
+          "threshold_from_training_fold": 0.657397837488
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": true,
+          "held_out_system": "2-Z-P-1K-2-S",
+          "predicted_label": "lower_endpoint_risk",
+          "score": 0.657397837488,
+          "threshold_from_training_fold": 0.790039121381
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": false,
+          "held_out_system": "2-Z-P-2K-2-S",
+          "predicted_label": "higher_endpoint_risk",
+          "score": 1.0,
+          "threshold_from_training_fold": 0.727211749658
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": true,
+          "held_out_system": "3-D-P-2K-2-S",
+          "predicted_label": "lower_endpoint_risk",
+          "score": 0.0,
+          "threshold_from_training_fold": 0.73584013133
+        },
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": false,
+          "held_out_system": "3-Z-P-2K-2-S",
+          "predicted_label": "lower_endpoint_risk",
+          "score": 0.205174958345,
+          "threshold_from_training_fold": 0.790039121381
+        }
+      ],
+      "n": 6
+    },
+    "baseline_majority_label": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "confidence_interval_95": {
+        "lower": 0.0,
+        "method": "wilson_95",
+        "upper": 0.390334
+      },
+      "folds": [
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": false,
+          "held_out_system": "2-E-P-1K-2-S",
+          "predicted_label": "lower_endpoint_risk"
+        },
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": false,
+          "held_out_system": "2-E-P-2K-2-S",
+          "predicted_label": "lower_endpoint_risk"
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": false,
+          "held_out_system": "2-Z-P-1K-2-S",
+          "predicted_label": "higher_endpoint_risk"
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": false,
+          "held_out_system": "2-Z-P-2K-2-S",
+          "predicted_label": "higher_endpoint_risk"
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": false,
+          "held_out_system": "3-D-P-2K-2-S",
+          "predicted_label": "higher_endpoint_risk"
+        },
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": false,
+          "held_out_system": "3-Z-P-2K-2-S",
+          "predicted_label": "lower_endpoint_risk"
+        }
+      ],
+      "n": 6
+    },
+    "primary": {
+      "accuracy": 0.666667,
+      "balanced_accuracy": 0.666667,
+      "confidence_interval_95": {
+        "lower": 0.299993,
+        "method": "wilson_95",
+        "upper": 0.903229
+      },
+      "folds": [
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": true,
+          "feature_scaling_from_training_fold": {
+            "degradation_slope_risk": {
+              "invert": false,
+              "max": 0.0034906679692440967,
+              "min": 0.0010771271285202081
+            },
+            "latest_log10_Z_0.01": {
+              "invert": true,
+              "max": 10.462191948481333,
+              "min": 8.830296751125731
+            },
+            "replicate_variance_risk": {
+              "invert": false,
+              "max": 0.3497224710264666,
+              "min": 0.013478548980491167
+            }
+          },
+          "held_out_system": "2-E-P-1K-2-S",
+          "predicted_label": "higher_endpoint_risk",
+          "score": 0.704448477073,
+          "threshold_from_training_fold": 0.46840900961
+        },
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": true,
+          "feature_scaling_from_training_fold": {
+            "degradation_slope_risk": {
+              "invert": false,
+              "max": 0.0034906679692440967,
+              "min": 0.0010771271285202081
+            },
+            "latest_log10_Z_0.01": {
+              "invert": true,
+              "max": 10.462191948481333,
+              "min": 8.830296751125731
+            },
+            "replicate_variance_risk": {
+              "invert": false,
+              "max": 0.6155578804171491,
+              "min": 0.013478548980491167
+            }
+          },
+          "held_out_system": "2-E-P-2K-2-S",
+          "predicted_label": "higher_endpoint_risk",
+          "score": 0.450412630173,
+          "threshold_from_training_fold": 0.450312818747
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": true,
+          "feature_scaling_from_training_fold": {
+            "degradation_slope_risk": {
+              "invert": false,
+              "max": 0.0034906679692440967,
+              "min": 0.0014265878456469273
+            },
+            "latest_log10_Z_0.01": {
+              "invert": true,
+              "max": 10.462191948481333,
+              "min": 8.830296751125731
+            },
+            "replicate_variance_risk": {
+              "invert": false,
+              "max": 0.6155578804171491,
+              "min": 0.013478548980491167
+            }
+          },
+          "held_out_system": "2-Z-P-1K-2-S",
+          "predicted_label": "lower_endpoint_risk",
+          "score": 0.399623626841,
+          "threshold_from_training_fold": 0.450312818747
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": false,
+          "feature_scaling_from_training_fold": {
+            "degradation_slope_risk": {
+              "invert": false,
+              "max": 0.0034906679692440967,
+              "min": 0.0010771271285202081
+            },
+            "latest_log10_Z_0.01": {
+              "invert": true,
+              "max": 10.462191948481333,
+              "min": 8.98696224509104
+            },
+            "replicate_variance_risk": {
+              "invert": false,
+              "max": 0.6155578804171491,
+              "min": 0.013478548980491167
+            }
+          },
+          "held_out_system": "2-Z-P-2K-2-S",
+          "predicted_label": "higher_endpoint_risk",
+          "score": 0.637843063461,
+          "threshold_from_training_fold": 0.459464214745
+        },
+        {
+          "actual_label": "lower_endpoint_risk",
+          "correct": true,
+          "feature_scaling_from_training_fold": {
+            "degradation_slope_risk": {
+              "invert": false,
+              "max": 0.0034906679692440967,
+              "min": 0.0010771271285202081
+            },
+            "latest_log10_Z_0.01": {
+              "invert": true,
+              "max": 10.127367919341216,
+              "min": 8.830296751125731
+            },
+            "replicate_variance_risk": {
+              "invert": false,
+              "max": 0.6155578804171491,
+              "min": 0.12768725947760995
+            }
+          },
+          "held_out_system": "3-D-P-2K-2-S",
+          "predicted_label": "lower_endpoint_risk",
+          "score": 0.237390053379,
+          "threshold_from_training_fold": 0.404886198124
+        },
+        {
+          "actual_label": "higher_endpoint_risk",
+          "correct": false,
+          "feature_scaling_from_training_fold": {
+            "degradation_slope_risk": {
+              "invert": false,
+              "max": 0.0027608058821616973,
+              "min": 0.0010771271285202081
+            },
+            "latest_log10_Z_0.01": {
+              "invert": true,
+              "max": 10.462191948481333,
+              "min": 8.830296751125731
+            },
+            "replicate_variance_risk": {
+              "invert": false,
+              "max": 0.6155578804171491,
+              "min": 0.013478548980491167
+            }
+          },
+          "held_out_system": "3-Z-P-2K-2-S",
+          "predicted_label": "lower_endpoint_risk",
+          "score": 0.450312818747,
+          "threshold_from_training_fold": 0.462965854231
+        }
+      ],
+      "n": 6
+    }
+  },
+  "group_count": 6,
+  "model_card_reference": "reference/mvp20/out/v5_epoch29_corrosion_benchmark_model_card.json",
+  "primary_metric": "held_out_accuracy",
+  "primary_model": "interpretable_eis_risk_score",
+  "primary_value": 0.666667,
+  "promotion_policy": {
+    "minimum_independent_systems": 10,
+    "must_strictly_beat_both_baselines": true
+  },
+  "promotion_status": "NOT_PROMOTED",
+  "sample_count": 6,
+  "schema": "amphora.unseen_benchmark.v1",
+  "schema_version": "amphora.unseen_benchmark.v1",
+  "source_hashes": {
+    "manifest_path": "reference/mvp20/out/v5_epoch29_public_corrosion_dataset_manifest.json",
+    "manifest_sha256": "b59bc8fff1b65e287945e52b19f4849f252e018b62e9626bed0814584f3d9a5a",
+    "raw_file_sha256": {
+      "data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f",
+      "data/public_corrosion_datasets/usbr_21019/raw/128758_2-e-p-1k-2-s_erosion.csv": "c72f611d6eea10598dc705c621c161ab86f94ab9f3cf0001787f98966743b16a",
+      "data/public_corrosion_datasets/usbr_21019/raw/128759_2-e-p-1k-2-s_impact.csv": "d319386d740e5def9db8a53591731a2e756e6ad21763a1f13aba63e8c20716a1",
+      "data/public_corrosion_datasets/usbr_21019/raw/128760_2-e-p-1k-2-s_rust_creep.csv": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a",
+      "data/public_corrosion_datasets/usbr_21019/raw/128761_2-e-p-1k-2-s_wet_dry_adhesion.csv": "db5667c619b03afca704f062e8b64e766219f24837038dde50548c88e7ff0995",
+      "data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba",
+      "data/public_corrosion_datasets/usbr_21019/raw/128763_2-e-p-2k-2-s_erosion.csv": "6ae2777bf20721935ecf83d74f973304374919e25170c5fefeb1b6741c409657",
+      "data/public_corrosion_datasets/usbr_21019/raw/128764_2-e-p-2k-2-s_impact.csv": "cba0d127347507e2fce6a6dd8e7ddd8bb9872944246a464ed285ec0f34272f36",
+      "data/public_corrosion_datasets/usbr_21019/raw/128765_2-e-p-2k-2-s_rust_creep.csv": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735",
+      "data/public_corrosion_datasets/usbr_21019/raw/128766_2-e-p-2k-2-s_wet_dry_adhesion.csv": "673129010365ef3984c2e2a287ff14b1c9d315d9107e446cc86e367d10ab1b42",
+      "data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b",
+      "data/public_corrosion_datasets/usbr_21019/raw/128768_2-z-p-1k-2-s_erosion.csv": "2d17de08d48b96921874302e746f6a024c22b3708c935273a8112252f7de3f11",
+      "data/public_corrosion_datasets/usbr_21019/raw/128769_2-z-p-1k-2-s_impact.csv": "b3580e3f7ea033d52e082526517002b4c6b9e03eeb68e6b783363091255b1c86",
+      "data/public_corrosion_datasets/usbr_21019/raw/128770_2-z-p-1k-2-s_rust_creep.csv": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a",
+      "data/public_corrosion_datasets/usbr_21019/raw/128771_2-z-p-1k-2-s_wet_dry_adhesion.csv": "716904a260db91ea3b3d4395fa66d3f08e2466433b6e10047a1bb0e5797609d8",
+      "data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525",
+      "data/public_corrosion_datasets/usbr_21019/raw/128773_2-z-p-2k-2-s_erosion.csv": "ff17e7606af558480b067ca067d69c3f0651dbc2f1c7d5593726d917a7179424",
+      "data/public_corrosion_datasets/usbr_21019/raw/128774_2-z-p-2k-2-s_impact.csv": "5e6b2f93d87e182bdf5b9c905bd43ce405c92a1c865e4f7a7449f6f594056a96",
+      "data/public_corrosion_datasets/usbr_21019/raw/128775_2-z-p-2k-2-s_rust_creep.csv": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446",
+      "data/public_corrosion_datasets/usbr_21019/raw/128776_2-z-p-2k-2-s_wet_dry_adhesion.csv": "1d69b9371aa99b72b2d24da151023f1f9822607fd7f9002c65f5acc29478efe5",
+      "data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf",
+      "data/public_corrosion_datasets/usbr_21019/raw/128778_3-d-p-2k-2-s_erosion.csv": "bec75f2d7330c51b7ea2a8949c8db60ff92948bf3bce10d467a527e53dfa5d73",
+      "data/public_corrosion_datasets/usbr_21019/raw/128780_3-d-p-2k-2-s_impact.csv": "edecd4849f1c610c5cf107d76bb852da6013d8d15352672112b9b1adc09e78fa",
+      "data/public_corrosion_datasets/usbr_21019/raw/128781_3-d-p-2k-2-s_rust_creep.csv": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93",
+      "data/public_corrosion_datasets/usbr_21019/raw/128782_3-d-p-2k-2-s_wet_dry_adhesion.csv": "f05baa3cfa3e94bd6ad734d777b5934c67530f30d0d27139ded712e3840a062d",
+      "data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311",
+      "data/public_corrosion_datasets/usbr_21019/raw/128785_3-z-p-2k-2-s_erosion.csv": "6ecc53e3b62a05c5b819cb7a6710c8b5cd3be92f414ea0742dceb7b8b15a17f9",
+      "data/public_corrosion_datasets/usbr_21019/raw/128786_3-z-p-2k-2-s_impact.csv": "1fa8be3d29843f163e94a28fe991a1527c4669b879981d980563777481800531",
+      "data/public_corrosion_datasets/usbr_21019/raw/128787_3-z-p-2k-2-s_rust_creep.csv": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f",
+      "data/public_corrosion_datasets/usbr_21019/raw/128788_3-z-p-2k-2-s_wet_dry_adhesion.csv": "b22fdbebd467a22c040885c1531d757585bad5cfdc8fac5b0ccc968b1f07b5b4"
+    }
+  },
+  "split_policy": "leave_one_coating_system_out; all EIS and endpoint rows stay within sample_system groups"
+}
+

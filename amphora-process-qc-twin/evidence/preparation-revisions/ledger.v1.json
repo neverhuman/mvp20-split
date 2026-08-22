@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-64570a6ad513f2e19c35e2fd965b8031bbcfcb1b41971bc0ba12b21c645296e2",
+  "module_id": "amphora-process-qc-twin",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-2cff7818d1e803ca120338ec25bbfdc19440f359c0d7afab1a0539feb8ad2992.json",
+      "revision_id": "preparation-revision-2cff7818d1e803ca120338ec25bbfdc19440f359c0d7afab1a0539feb8ad2992",
+      "sha256": "4689b0e24ab8d4290d347b2cbd2a2ad07568dd56c29a2add14671681329050fd"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-64570a6ad513f2e19c35e2fd965b8031bbcfcb1b41971bc0ba12b21c645296e2.json",
+      "revision_id": "preparation-revision-64570a6ad513f2e19c35e2fd965b8031bbcfcb1b41971bc0ba12b21c645296e2",
+      "sha256": "2a9fe75291f23fca045eb45a88d7204b5c8fe13942e9d3debead5d439132a46d"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

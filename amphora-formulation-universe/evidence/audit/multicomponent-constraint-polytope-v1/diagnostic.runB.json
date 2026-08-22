@@ -1,0 +1,560 @@
+{
+  "acceptance_all_perfect": true,
+  "anchor_dataset": {
+    "license": "CC0-1.0",
+    "path": "amphora-formulation-universe/reference/mvp20/data/formulation_multicomponent_constraint_anchors.v1.json",
+    "rights_status": "ACCEPTED",
+    "sha256": "2017f08d29a93e437d041280f190a5ea661e58efdd3f45ca1d4f4dd77cf6261c"
+  },
+  "authority": "AUDIT_ONLY",
+  "axis": "THEORY",
+  "does_not": [
+    "promote authority or flip scientific_readiness",
+    "modify the portfolio manifest (66 receipts / 11 modules)",
+    "modify any locked dataset or the signed Phase-0 KPI",
+    "modify the live Rust engine"
+  ],
+  "failclosed_probe_pass": 14,
+  "failclosed_probe_total": 14,
+  "failclosed_probes": [
+    {
+      "detail": "RegionError: PVC band must satisfy 0 <= lower <= upper < 1",
+      "expected": "REJECT",
+      "probe_id": "pvc_band_inverted",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: empty constrained region",
+      "expected": "REJECT",
+      "probe_id": "pvc_band_empties_region",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: empty constrained region",
+      "expected": "REJECT",
+      "probe_id": "stoich_band_empties_region",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: stoich band must satisfy 0 < lower <= upper",
+      "expected": "REJECT",
+      "probe_id": "stoich_band_zero_lower",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: density must be strictly positive",
+      "expected": "REJECT",
+      "probe_id": "zero_density",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: density must be strictly positive",
+      "expected": "REJECT",
+      "probe_id": "negative_density",
+      "rejected": true
+    },
+    {
+      "detail": "TypeError: numeric constants must be decimal strings",
+      "expected": "REJECT",
+      "probe_id": "float_density_not_string",
+      "rejected": true
+    },
+    {
+      "detail": "ValueError: non-finite constant",
+      "expected": "REJECT",
+      "probe_id": "nan_ahew",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: EEW/AHEW must be strictly positive",
+      "expected": "REJECT",
+      "probe_id": "zero_eew",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: unknown component in PVC role list: zinc_dust",
+      "expected": "REJECT",
+      "probe_id": "unknown_pigment_component",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: component assigned to both pigment and binder",
+      "expected": "REJECT",
+      "probe_id": "component_in_both_roles",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: stoich denominator may vanish: epoxy component lower bound must be strictly positive",
+      "expected": "REJECT",
+      "probe_id": "epoxy_lower_bound_zero_denominator",
+      "rejected": true
+    },
+    {
+      "detail": "RegionError: pvc_band requires non-empty pigment_components",
+      "expected": "REJECT",
+      "probe_id": "empty_pigment_list",
+      "rejected": true
+    },
+    {
+      "detail": "ValueError: Invalid literal for Fraction: 'abc'",
+      "expected": "REJECT",
+      "probe_id": "nonnumeric_band",
+      "rejected": true
+    }
+  ],
+  "gates": [
+    {
+      "cases": [
+        {
+          "agree": true,
+          "band": [
+            "3/25",
+            "1/5"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 16,
+          "ratio": "pvc",
+          "region_id": "marine-primer-4c-pvc-stoich",
+          "test_points": 107
+        },
+        {
+          "agree": true,
+          "band": [
+            "9/10",
+            "11/10"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 49,
+          "ratio": "stoich",
+          "region_id": "marine-primer-4c-pvc-stoich",
+          "test_points": 107
+        },
+        {
+          "agree": true,
+          "band": [
+            "3/20",
+            "1/4"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 91,
+          "ratio": "pvc",
+          "region_id": "hb-barrier-topcoat-5c-pvc-stoich",
+          "test_points": 465
+        },
+        {
+          "agree": true,
+          "band": [
+            "17/20",
+            "23/20"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 160,
+          "ratio": "stoich",
+          "region_id": "hb-barrier-topcoat-5c-pvc-stoich",
+          "test_points": 465
+        },
+        {
+          "agree": true,
+          "band": [
+            "1/10",
+            "1/5"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 6,
+          "ratio": "pvc",
+          "region_id": "solventfree-tanklining-3c-pvc-stoich",
+          "test_points": 12
+        },
+        {
+          "agree": true,
+          "band": [
+            "19/20",
+            "21/20"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 6,
+          "ratio": "stoich",
+          "region_id": "solventfree-tanklining-3c-pvc-stoich",
+          "test_points": 12
+        },
+        {
+          "agree": true,
+          "band": [
+            "1/1",
+            "21/20"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 42,
+          "ratio": "stoich",
+          "region_id": "stoich-band-only-4c",
+          "test_points": 80
+        },
+        {
+          "agree": true,
+          "band": [
+            "7/50",
+            "9/50"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 31,
+          "ratio": "pvc",
+          "region_id": "pvc-band-only-4c",
+          "test_points": 107
+        },
+        {
+          "agree": true,
+          "band": [
+            "1/1",
+            "1/1"
+          ],
+          "denominator_positive_everywhere": true,
+          "exact_equivalence": true,
+          "points_exactly_on_band_boundary": 3,
+          "ratio": "stoich",
+          "region_id": "stoich-equality-3c",
+          "test_points": 5
+        }
+      ],
+      "gate_id": "G1_ratio_band_linearization_exact_equivalence",
+      "pass": true,
+      "source": "Asbeck & Van Loo 1949 doi:10.1021/ie50475a042 (PVC); Lee & Neville 1967 ISBN 978-0-07-036997-9 (stoich); Cornell 2002 ISBN 0-471-07916-2 (ratio constraints)"
+    },
+    {
+      "cases": [
+        {
+          "agree": true,
+          "all_distinct": true,
+          "all_extreme_rank_certified": true,
+          "all_feasible": true,
+          "brute_force_vertices": 14,
+          "double_description_vertices": 14,
+          "region_id": "marine-primer-4c-pvc-stoich",
+          "set_equal": true
+        },
+        {
+          "agree": true,
+          "all_distinct": true,
+          "all_extreme_rank_certified": true,
+          "all_feasible": true,
+          "brute_force_vertices": 30,
+          "double_description_vertices": 30,
+          "region_id": "hb-barrier-topcoat-5c-pvc-stoich",
+          "set_equal": true
+        },
+        {
+          "agree": true,
+          "all_distinct": true,
+          "all_extreme_rank_certified": true,
+          "all_feasible": true,
+          "brute_force_vertices": 4,
+          "double_description_vertices": 4,
+          "region_id": "solventfree-tanklining-3c-pvc-stoich",
+          "set_equal": true
+        },
+        {
+          "agree": true,
+          "all_distinct": true,
+          "all_extreme_rank_certified": true,
+          "all_feasible": true,
+          "brute_force_vertices": 12,
+          "double_description_vertices": 12,
+          "region_id": "stoich-band-only-4c",
+          "set_equal": true
+        },
+        {
+          "agree": true,
+          "all_distinct": true,
+          "all_extreme_rank_certified": true,
+          "all_feasible": true,
+          "brute_force_vertices": 14,
+          "double_description_vertices": 14,
+          "region_id": "pvc-band-only-4c",
+          "set_equal": true
+        },
+        {
+          "agree": true,
+          "all_distinct": true,
+          "all_extreme_rank_certified": true,
+          "all_feasible": true,
+          "brute_force_vertices": 2,
+          "double_description_vertices": 2,
+          "region_id": "stoich-equality-3c",
+          "set_equal": true
+        }
+      ],
+      "gate_id": "G2_dual_method_vertex_enumeration_parity",
+      "pass": true,
+      "source": "Snee 1979 doi:10.1080/03610927908827762 (basic feasible solutions); Motzkin et al. 1953 ISBN 978-0-691-07935-6 (double description)"
+    },
+    {
+      "cases": [
+        {
+          "agree": true,
+          "h0_vertex_completeness_refuted_here": true,
+          "ma_band_feasible": 0,
+          "ma_box_screened": 12,
+          "ma_box_vertices_cut_off_by_bands": 12,
+          "ma_feasible_all_remain_extreme": true,
+          "ma_raw_candidates": 12,
+          "missing_vertices_all_have_band_row_active": true,
+          "region_id": "marine-primer-4c-pvc-stoich",
+          "true_vertices": 14,
+          "true_vertices_missing_from_ma": 14
+        },
+        {
+          "agree": true,
+          "h0_vertex_completeness_refuted_here": true,
+          "ma_band_feasible": 2,
+          "ma_box_screened": 25,
+          "ma_box_vertices_cut_off_by_bands": 23,
+          "ma_feasible_all_remain_extreme": true,
+          "ma_raw_candidates": 25,
+          "missing_vertices_all_have_band_row_active": true,
+          "region_id": "hb-barrier-topcoat-5c-pvc-stoich",
+          "true_vertices": 30,
+          "true_vertices_missing_from_ma": 28
+        },
+        {
+          "agree": true,
+          "h0_vertex_completeness_refuted_here": true,
+          "ma_band_feasible": 0,
+          "ma_box_screened": 6,
+          "ma_box_vertices_cut_off_by_bands": 6,
+          "ma_feasible_all_remain_extreme": true,
+          "ma_raw_candidates": 6,
+          "missing_vertices_all_have_band_row_active": true,
+          "region_id": "solventfree-tanklining-3c-pvc-stoich",
+          "true_vertices": 4,
+          "true_vertices_missing_from_ma": 4
+        },
+        {
+          "agree": true,
+          "h0_vertex_completeness_refuted_here": true,
+          "ma_band_feasible": 0,
+          "ma_box_screened": 12,
+          "ma_box_vertices_cut_off_by_bands": 12,
+          "ma_feasible_all_remain_extreme": true,
+          "ma_raw_candidates": 12,
+          "missing_vertices_all_have_band_row_active": true,
+          "region_id": "stoich-band-only-4c",
+          "true_vertices": 12,
+          "true_vertices_missing_from_ma": 12
+        },
+        {
+          "agree": true,
+          "h0_vertex_completeness_refuted_here": true,
+          "ma_band_feasible": 4,
+          "ma_box_screened": 12,
+          "ma_box_vertices_cut_off_by_bands": 8,
+          "ma_feasible_all_remain_extreme": true,
+          "ma_raw_candidates": 12,
+          "missing_vertices_all_have_band_row_active": true,
+          "region_id": "pvc-band-only-4c",
+          "true_vertices": 14,
+          "true_vertices_missing_from_ma": 10
+        },
+        {
+          "agree": true,
+          "h0_vertex_completeness_refuted_here": true,
+          "ma_band_feasible": 0,
+          "ma_box_screened": 6,
+          "ma_box_vertices_cut_off_by_bands": 6,
+          "ma_feasible_all_remain_extreme": true,
+          "ma_raw_candidates": 6,
+          "missing_vertices_all_have_band_row_active": true,
+          "region_id": "stoich-equality-3c",
+          "true_vertices": 2,
+          "true_vertices_missing_from_ma": 2
+        }
+      ],
+      "gate_id": "G3_mclean_anderson_vertex_completeness_h0",
+      "h0": "MA bound-only candidate generation remains vertex-complete under multicomponent linear constraints",
+      "h0_refuted": true,
+      "pass": true,
+      "regions_refuting_h0": 6,
+      "source": "Snee & Marquardt 1974 doi:10.1080/00401706.1974.10489209; McLean & Anderson 1966 doi:10.1080/00401706.1966.10490377",
+      "total_true_vertices_missing_from_ma": 70
+    },
+    {
+      "cases": [
+        {
+          "agree": true,
+          "face_centroids_on_hyperplane_and_feasible": true,
+          "faces_with_vertices": 9,
+          "overall_centroid": [
+            "11471986334565097399910851437480593/27645995516522362120391628159589500",
+            "882552132243205500146535333719/9351710956963166890618732569840",
+            "29399092807757146950320489/85253836494687500974257000",
+            "5991061952107121/41084014978314000"
+          ],
+          "overall_centroid_feasible": true,
+          "overall_centroid_strictly_interior_to_nondegenerate_faces": true,
+          "region_id": "marine-primer-4c-pvc-stoich"
+        },
+        {
+          "agree": true,
+          "face_centroids_on_hyperplane_and_feasible": true,
+          "faces_with_vertices": 11,
+          "overall_centroid": [
+            "835094237679770433049393315687887250564309127723/2424743012959701436320423028366578486346213706250",
+            "2050684882271122683083226594677080211/12253684605153871625146203568928946000",
+            "250640416837555546821015904801/1873605390036955301638610650000",
+            "63766671005673775885495786031/290684522027074041703878413850",
+            "14520374768027/107478263525625"
+          ],
+          "overall_centroid_feasible": true,
+          "overall_centroid_strictly_interior_to_nondegenerate_faces": true,
+          "region_id": "hb-barrier-topcoat-5c-pvc-stoich"
+        },
+        {
+          "agree": true,
+          "face_centroids_on_hyperplane_and_feasible": true,
+          "faces_with_vertices": 4,
+          "overall_centroid": [
+            "15787186056181875599701375/27589233674358083094561444",
+            "28569269435977413208635217/220713869394864664756491552",
+            "21949037169810748916748445/73571289798288221585497184"
+          ],
+          "overall_centroid_feasible": true,
+          "overall_centroid_strictly_interior_to_nondegenerate_faces": true,
+          "region_id": "solventfree-tanklining-3c-pvc-stoich"
+        },
+        {
+          "agree": true,
+          "face_centroids_on_hyperplane_and_feasible": true,
+          "faces_with_vertices": 8,
+          "overall_centroid": [
+            "51921882641/118740779640",
+            "5067569581/49968434400",
+            "24142523/82353600",
+            "13848323/82353600"
+          ],
+          "overall_centroid_feasible": true,
+          "overall_centroid_strictly_interior_to_nondegenerate_faces": true,
+          "region_id": "stoich-band-only-4c"
+        },
+        {
+          "agree": true,
+          "face_centroids_on_hyperplane_and_feasible": true,
+          "faces_with_vertices": 9,
+          "overall_centroid": [
+            "934485752068373/2461755535285500",
+            "153733969211479/1198276448335200",
+            "44135001569293569863493/122527249414802691440800",
+            "166558307441/1262789514000"
+          ],
+          "overall_centroid_feasible": true,
+          "overall_centroid_strictly_interior_to_nondegenerate_faces": true,
+          "region_id": "pvc-band-only-4c"
+        },
+        {
+          "agree": true,
+          "face_centroids_on_hyperplane_and_feasible": true,
+          "faces_with_vertices": 2,
+          "overall_centroid": [
+            "2771/4660",
+            "119153/885400",
+            "1029/3800"
+          ],
+          "overall_centroid_feasible": true,
+          "overall_centroid_strictly_interior_to_nondegenerate_faces": true,
+          "region_id": "stoich-equality-3c"
+        }
+      ],
+      "gate_id": "G4_piepel_conaev_centroid_conformance",
+      "pass": true,
+      "source": "Piepel 1988 doi:10.1080/00224065.1988.11979094"
+    },
+    {
+      "cases": [
+        {
+          "affine_dimension_exact": 3,
+          "agree": true,
+          "box_only_vertices": 12,
+          "constrained_vertices": 14,
+          "expected_dim": 3,
+          "region_id": "marine-primer-4c-pvc-stoich",
+          "vertices_with_band_row_active": 14
+        },
+        {
+          "affine_dimension_exact": 4,
+          "agree": true,
+          "box_only_vertices": 25,
+          "constrained_vertices": 30,
+          "expected_dim": 4,
+          "region_id": "hb-barrier-topcoat-5c-pvc-stoich",
+          "vertices_with_band_row_active": 28
+        },
+        {
+          "affine_dimension_exact": 2,
+          "agree": true,
+          "box_only_vertices": 6,
+          "constrained_vertices": 4,
+          "expected_dim": 2,
+          "region_id": "solventfree-tanklining-3c-pvc-stoich",
+          "vertices_with_band_row_active": 4
+        },
+        {
+          "affine_dimension_exact": 3,
+          "agree": true,
+          "box_only_vertices": 12,
+          "constrained_vertices": 12,
+          "expected_dim": 3,
+          "region_id": "stoich-band-only-4c",
+          "vertices_with_band_row_active": 12
+        },
+        {
+          "affine_dimension_exact": 3,
+          "agree": true,
+          "box_only_vertices": 12,
+          "constrained_vertices": 14,
+          "expected_dim": 3,
+          "region_id": "pvc-band-only-4c",
+          "vertices_with_band_row_active": 10
+        },
+        {
+          "affine_dimension_exact": 1,
+          "agree": true,
+          "box_only_vertices": 6,
+          "constrained_vertices": 2,
+          "expected_dim": 1,
+          "region_id": "stoich-equality-3c",
+          "vertices_with_band_row_active": 2
+        }
+      ],
+      "gate_id": "G5_affine_dimension_and_box_relaxation_comparison",
+      "pass": true,
+      "source": "Snee 1979 doi:10.1080/03610927908827762; prior increment simplex-mixture-geometry-v1 (box-only)"
+    }
+  ],
+  "gates_pass": 5,
+  "gates_total": 5,
+  "headline": {
+    "affine_dimensions_all_as_declared": true,
+    "conaev_centroid_conformance": true,
+    "dual_method_vertex_parity": true,
+    "ratio_band_linearization_exact": true,
+    "regions_evaluated": 6,
+    "regions_refuting_h0": 6,
+    "snee_marquardt_h0_vertex_completeness_refuted": true,
+    "total_constrained_vertices": 76,
+    "total_true_vertices_missing_from_ma": 70
+  },
+  "interpretation": "Real coating windows add multicomponent linear constraints (PVC band, amine-H:epoxide stoichiometric band) to the box-bounded mixture simplex. Both ratio bands linearize exactly to half-space pairs, and the constrained region's extreme-vertex set is certified by two independent published enumeration paths in exact rational arithmetic. The Snee-Marquardt caveat that honestly could NOT fire in the box-only increment now fires: the McLean-Anderson bound-only candidate set is vertex-incomplete the moment a band constraint binds, with every missing vertex lying on a band facet. Piepel 1988 CONAEV centroid identities hold exactly, and the degenerate 1:1 stoichiometry region collapses to the declared lower affine dimension.",
+  "module": "amphora-formulation-universe",
+  "schema": "amphora.formulation-universe.multicomponent-constraint-polytope-diagnostic.v1",
+  "toolkit": {
+    "arithmetic": "exact rational (fractions.Fraction); no float in any decision",
+    "network": "none",
+    "python": "3.12.3",
+    "randomness": "none"
+  }
+}

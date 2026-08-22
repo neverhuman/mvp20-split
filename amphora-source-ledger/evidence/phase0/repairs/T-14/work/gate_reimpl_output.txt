@@ -1,0 +1,86 @@
+=== BASELINE (real facts.json + source_records.json, unmodified) ===
+{
+  "status": "FAILED_GATES",
+  "score": 0.0,
+  "metrics": {
+    "cited_constant_count": 83,
+    "load_bearing_constant_count": 23,
+    "two_source_count": 9,
+    "prose_waiver_count": 14,
+    "missing_url_count": 0,
+    "source_record_count": 162,
+    "incomplete_source_record_count": 0
+  },
+  "gates": {
+    "uncited_constants_rejected": true,
+    "load_bearing_two_source": false,
+    "load_bearing_two_source_or_waiver": false,
+    "prose_waivers_rejected": false
+  }
+}
+
+=== PLANTED DEFECT A: swap AHEW=264 citation to a resolving-but-non-supporting URL ===
+{
+  "status": "FAILED_GATES",
+  "score": 0.0,
+  "metrics": {
+    "cited_constant_count": 83,
+    "load_bearing_constant_count": 23,
+    "two_source_count": 9,
+    "prose_waiver_count": 14,
+    "missing_url_count": 0,
+    "source_record_count": 162,
+    "incomplete_source_record_count": 0
+  },
+  "gates": {
+    "uncited_constants_rejected": true,
+    "load_bearing_two_source": false,
+    "load_bearing_two_source_or_waiver": false,
+    "prose_waivers_rejected": false
+  }
+}
+uncited_constants_rejected still True despite wrong-support citation: True
+
+=== PLANTED DEFECT B: swap AHEW=264 citation to a non-existent domain (never resolves) ===
+{
+  "status": "FAILED_GATES",
+  "score": 0.0,
+  "metrics": {
+    "cited_constant_count": 83,
+    "load_bearing_constant_count": 23,
+    "two_source_count": 9,
+    "prose_waiver_count": 14,
+    "missing_url_count": 0,
+    "source_record_count": 162,
+    "incomplete_source_record_count": 0
+  },
+  "gates": {
+    "uncited_constants_rejected": true,
+    "load_bearing_two_source": false,
+    "load_bearing_two_source_or_waiver": false,
+    "prose_waivers_rejected": false
+  }
+}
+uncited_constants_rejected still True despite dead-domain citation: True
+
+=== PLANTED DEFECT C: append a fully-populated but semantically garbage/malformed source record ===
+{
+  "status": "FAILED_GATES",
+  "score": 0.0,
+  "metrics": {
+    "cited_constant_count": 83,
+    "load_bearing_constant_count": 23,
+    "two_source_count": 9,
+    "prose_waiver_count": 14,
+    "missing_url_count": 0,
+    "source_record_count": 163,
+    "incomplete_source_record_count": 0
+  },
+  "gates": {
+    "uncited_constants_rejected": true,
+    "load_bearing_two_source": false,
+    "load_bearing_two_source_or_waiver": false,
+    "prose_waivers_rejected": false
+  }
+}
+incomplete_source_record_count unchanged (0 -> 0) despite appended malformed record: True

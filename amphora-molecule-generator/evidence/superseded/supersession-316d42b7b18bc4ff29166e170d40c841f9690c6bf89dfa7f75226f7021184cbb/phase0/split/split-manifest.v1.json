@@ -1,0 +1,8 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "6ee7f1421e2bd828627d6dccb1be5d91d92d4eba5e8733571930f38f27759159",
+  "import_hashes": [],
+  "module_id": "amphora-molecule-generator",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

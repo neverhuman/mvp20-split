@@ -1,0 +1,107 @@
+{
+  "defect_input": {
+    "family_weighted_mean_r2": -0.050088295824307405,
+    "majority_positive": false,
+    "n_eligible": 15,
+    "n_eligible_positive": 0,
+    "per_family_r2": [
+      {
+        "family": "stainless_steel",
+        "n_test": 1976,
+        "r2": -0.05387163868711986
+      },
+      {
+        "family": "nickel_alloy",
+        "n_test": 1888,
+        "r2": -0.0788840984584338
+      },
+      {
+        "family": "titanium",
+        "n_test": 658,
+        "r2": -0.05125448923418552
+      },
+      {
+        "family": "carbon_steel_cast_iron",
+        "n_test": 561,
+        "r2": -0.05832338140507165
+      },
+      {
+        "family": "copper_alloy",
+        "n_test": 486,
+        "r2": -0.03874921032390133
+      },
+      {
+        "family": "precious_metal",
+        "n_test": 319,
+        "r2": -0.051655330101079366
+      },
+      {
+        "family": "lead",
+        "n_test": 307,
+        "r2": -0.02794713707668728
+      },
+      {
+        "family": "tantalum_niobium",
+        "n_test": 266,
+        "r2": -0.06185512235507029
+      },
+      {
+        "family": "zirconium_hafnium",
+        "n_test": 259,
+        "r2": -0.06955693712777222
+      },
+      {
+        "family": "cobalt_alloy",
+        "n_test": 256,
+        "r2": -0.009233270643317582
+      },
+      {
+        "family": "aluminum",
+        "n_test": 120,
+        "r2": -0.11191590262084672
+      },
+      {
+        "family": "zinc",
+        "n_test": 60,
+        "r2": -0.02311397195596432
+      },
+      {
+        "family": "magnesium",
+        "n_test": 57,
+        "r2": -0.05928975837901573
+      },
+      {
+        "family": "tin",
+        "n_test": 37,
+        "r2": -0.04956253134451938
+      },
+      {
+        "family": "carbide_cermet",
+        "n_test": 24,
+        "r2": -0.0061116576516260235
+      },
+      {
+        "family": "chromium",
+        "n_test": 6,
+        "r2": -0.0022703412801394762
+      },
+      {
+        "family": "molybdenum",
+        "n_test": 2,
+        "r2": -0.9136583249408017
+      }
+    ],
+    "refuted": true
+  },
+  "detected": true,
+  "how_planted": "np.random.RandomState(12345).shuffle(yc) applied to a copy of the identical yc array used by corr_rate_family_lofo.py's real run; Xc and famc untouched.",
+  "planted_defect": "full random permutation (numpy RandomState seed=12345) of the log10(corrosion_rate) label vector yc across all 7282 classified rows -- a classic hostile-null y-shuffle -- while every X feature (composition vector, environment features, temperature) and every family assignment is left byte-identical to the real input.",
+  "real_input": {
+    "family_weighted_mean_r2": 0.015964121188495453,
+    "majority_positive": true,
+    "n_eligible": 15,
+    "n_eligible_positive": 11,
+    "refuted": false
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-family-lofo-positive-control.v1"
+}

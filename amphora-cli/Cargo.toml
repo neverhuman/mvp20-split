@@ -1,0 +1,36 @@
+[package]
+name = "amphora-cli"
+version.workspace = true
+edition.workspace = true
+default-run = "amphora-tui"
+
+[[bin]]
+name = "amphora-tui"
+path = "src/main.rs"
+
+[features]
+default = []
+rdkit = ["amphora-engine/rdkit", "amphora-rdkit-ffi/rdkit"]
+
+[dependencies]
+amphora-core = { path = "../amphora-core" }
+amphora-assurance-capabilities = { path = "../amphora-assurance-capabilities" }
+amphora-cure-potlife-gate = { path = "../amphora-cure-potlife-gate" }
+amphora-formulation-capabilities = { path = "../amphora-formulation-capabilities" }
+amphora-viscosity-score = { path = "../amphora-viscosity-score" }
+amphora-solvency-score = { path = "../amphora-solvency-score" }
+amphora-barrier-corrosion-score = { path = "../amphora-barrier-corrosion-score" }
+amphora-engine = { path = "../amphora-engine" }
+amphora-ord-codec = { path = "../amphora-ord-codec" }
+amphora-rdkit-ffi = { path = "../amphora-rdkit-ffi" }
+amphora-tui = { path = "../amphora-tui" }
+anyhow.workspace = true
+base64.workspace = true
+clap.workspace = true
+csv = "1"
+ed25519-dalek.workspace = true
+flate2.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+zip = { version = "2", default-features = false, features = ["deflate"] }

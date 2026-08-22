@@ -1,0 +1,191 @@
+{
+  "schema": "amphora.model-card-authority.live-runtime-corpus.v1",
+  "module_id": "amphora-model-card-authority",
+  "registry_probes": {
+    "unknown_module": "no-such-module",
+    "unknown_lane": "no-such-lane"
+  },
+  "cases": {
+    "F1_valid_formulation_seed0": {
+      "kind": "campaign_score",
+      "seed": 0,
+      "run_id": "mca-live-A",
+      "module_id": "amphora-model-card-authority",
+      "candidate": {
+        "candidate_id": "Envelope-65-black-canonical",
+        "candidate_type": "formulation",
+        "formulation": {
+          "recipe": {
+            "part_A": {
+              "defoamer": {"ingredient_id": "defoamer", "mass_g": 0.5},
+              "dgeba_828": {"ingredient_id": "dgeba_828", "mass_g": 100.0},
+              "dispersant": {"ingredient_id": "dispersant", "mass_g": 1.2},
+              "iron_oxide_black": {"ingredient_id": "iron_oxide_black", "mass_g": 3.5},
+              "naphtha": {"ingredient_id": "naphtha", "mass_g": 8.4},
+              "silica": {"ingredient_id": "silica", "mass_g": 22.0},
+              "thixotrope": {"ingredient_id": "thixotrope", "mass_g": 1.8}
+            },
+            "part_B": {
+              "ancamide_350a": {"ingredient_id": "ancamide_350a", "mass_g": 37.13},
+              "dispersant": {"ingredient_id": "dispersant", "mass_g": 0.8},
+              "n_butanol": {"ingredient_id": "n_butanol", "mass_g": 53.03},
+              "silica": {"ingredient_id": "silica", "mass_g": 10.0},
+              "thixotrope": {"ingredient_id": "thixotrope", "mass_g": 1.2}
+            }
+          },
+          "basis": "mass_g_per_batch",
+          "batch_mass_g": 239.56,
+          "ingredient_catalog_version": "facts.v2",
+          "application": {
+            "dft_mil": 5.0,
+            "temperature_C": 25.0,
+            "relative_humidity_pct": 50.0,
+            "substrate": "steel",
+            "surface_preparation": "declared"
+          },
+          "process": {
+            "application_method": null,
+            "induction_time_min": null,
+            "mix_order": null,
+            "pot_age_h": 0.0
+          }
+        }
+      }
+    },
+    "F2_same_candidate_new_seed_new_runid": {
+      "kind": "campaign_score",
+      "seed": 20260731,
+      "run_id": "mca-live-B",
+      "module_id": "amphora-model-card-authority",
+      "candidate": {
+        "candidate_id": "Envelope-65-black-canonical",
+        "candidate_type": "formulation",
+        "formulation": {
+          "recipe": {
+            "part_A": {
+              "defoamer": {"ingredient_id": "defoamer", "mass_g": 0.5},
+              "dgeba_828": {"ingredient_id": "dgeba_828", "mass_g": 100.0},
+              "dispersant": {"ingredient_id": "dispersant", "mass_g": 1.2},
+              "iron_oxide_black": {"ingredient_id": "iron_oxide_black", "mass_g": 3.5},
+              "naphtha": {"ingredient_id": "naphtha", "mass_g": 8.4},
+              "silica": {"ingredient_id": "silica", "mass_g": 22.0},
+              "thixotrope": {"ingredient_id": "thixotrope", "mass_g": 1.8}
+            },
+            "part_B": {
+              "ancamide_350a": {"ingredient_id": "ancamide_350a", "mass_g": 37.13},
+              "dispersant": {"ingredient_id": "dispersant", "mass_g": 0.8},
+              "n_butanol": {"ingredient_id": "n_butanol", "mass_g": 53.03},
+              "silica": {"ingredient_id": "silica", "mass_g": 10.0},
+              "thixotrope": {"ingredient_id": "thixotrope", "mass_g": 1.2}
+            }
+          },
+          "basis": "mass_g_per_batch",
+          "batch_mass_g": 239.56,
+          "ingredient_catalog_version": "facts.v2",
+          "application": {
+            "dft_mil": 5.0,
+            "temperature_C": 25.0,
+            "relative_humidity_pct": 50.0,
+            "substrate": "steel",
+            "surface_preparation": "declared"
+          },
+          "process": {
+            "application_method": null,
+            "induction_time_min": null,
+            "mix_order": null,
+            "pot_age_h": 0.0
+          }
+        }
+      }
+    },
+    "E1_evidence_package_wrong_type": {
+      "kind": "campaign_score",
+      "seed": 0,
+      "run_id": "mca-live-E",
+      "module_id": "amphora-model-card-authority",
+      "candidate": {
+        "candidate_id": "fixture-evidence-pass",
+        "candidate_type": "evidence_package",
+        "context": {
+          "jurisdiction": "US",
+          "target_spec": "v5 evidence intake dry-run"
+        },
+        "evidence_refs": {
+          "evidence_package": {
+            "all_samples_linked": true,
+            "authority_or_procurement_claim_made": false,
+            "calibration_files": ["cal/cal-001.json"],
+            "calibration_present": true,
+            "computed_values_claimed_measured": false,
+            "calculated_vs_measured_flags": {"eis_impedance": "measured"},
+            "controls_valid": true,
+            "accepted_cro_packet_id": "CRO-PACKET-001",
+            "analysis_version": "analysis.v1",
+            "deviations": [],
+            "execution_date": "2026-07-11",
+            "feature_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "file_hashes": {"manifest.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+            "formula_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "has_manifest_hash": true,
+            "ip_fto_claim_made": false,
+            "narrative_only": false,
+            "lab_package_signature": "LAB-SIGNATURE-001",
+            "manifest_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "model_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "operator_id": "operator-001",
+            "permitted_use": "internal-r-and-d",
+            "physical_validation_claim_made": false,
+            "raw_file_present": true,
+            "raw_files": ["raw/eis-001.csv"],
+            "sample_links": ["batch-1/sample-1/panel-1"],
+            "source_license": "laboratory-owned",
+            "supplier_closure_claim_made": false
+          },
+          "package_id": "FIX-PASS-001"
+        }
+      }
+    },
+    "X1_malformed_missing_payload": {
+      "kind": "campaign_score",
+      "seed": 0,
+      "run_id": "mca-live-X1",
+      "module_id": "amphora-model-card-authority",
+      "candidate": {
+        "candidate_id": "mca-malformed-probe",
+        "candidate_type": "formulation"
+      }
+    },
+    "X2_unknown_campaign_module": {
+      "kind": "campaign_score",
+      "seed": 0,
+      "run_id": "mca-live-X2",
+      "module_id": "amphora-model-card-authorityx",
+      "candidate": {
+        "candidate_id": "mca-unknown-module-probe",
+        "candidate_type": "formulation",
+        "formulation": {
+          "recipe": {
+            "part_A": {"dgeba_828": {"ingredient_id": "dgeba_828", "mass_g": 100.0}},
+            "part_B": {"ancamide_350a": {"ingredient_id": "ancamide_350a", "mass_g": 37.13}}
+          },
+          "basis": "mass_g_per_batch",
+          "batch_mass_g": 137.13,
+          "ingredient_catalog_version": "facts.v2",
+          "application": {
+            "dft_mil": 5.0,
+            "temperature_C": 25.0,
+            "relative_humidity_pct": 50.0,
+            "substrate": "steel",
+            "surface_preparation": "declared"
+          },
+          "process": {
+            "application_method": null,
+            "induction_time_min": null,
+            "mix_order": null,
+            "pot_age_h": 0.0
+          }
+        }
+      }
+    }
+  }
+}

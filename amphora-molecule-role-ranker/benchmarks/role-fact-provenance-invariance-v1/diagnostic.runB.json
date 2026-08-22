@@ -1,0 +1,89 @@
+{
+  "claim_locks": {
+    "measured_only_lock_preserved": true,
+    "no_objective_emitted": true,
+    "promotes_authority": false
+  },
+  "closes": [],
+  "comparison_to_prior_baseline": {
+    "role-parsimony-conformal-v1": "That receipt trusted the fixture handles as ground truth; this one proves the handles are structurally faithful (parity 39/39) and the role verdict cannot be flipped by re-encoding the SMILES. The 24 in-domain resin/hardener assignments and the 12 fail-closed hostile nulls are reproduced from raw structure alone."
+  },
+  "deterministic_role_rule": {
+    "abstain": "both (dual-functional) or neither (out-of-domain)",
+    "hardener": "has_reactive_amine_hydrogen and not has_oxirane",
+    "mechanism": "epoxy-amine SN2 ring-opening: epoxide electrophile=>resin, amine N-H nucleophile=>hardener; dual or none=>ABSTAIN (fail-closed)",
+    "parameters": 0,
+    "resin": "has_oxirane and not has_reactive_amine_hydrogen"
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent)",
+    "PHASE_1_INDEPENDENT_EVALUATION (needs external double-labelled expert reference)",
+    "RDKit_C++_CEILING (SMARTS matcher is RDKit; a fully independent Phase-1 would cross-check a second cheminformatics toolkit)"
+  ],
+  "encoding_invariance": {
+    "disagreements": [],
+    "encodings_per_molecule": "canonical + kekule + every-heavy-atom-rooted + explicit-H",
+    "total_variant_evaluations": 549,
+    "verdict": "ROLE_VERDICT_INVARIANT_UNDER_SMILES_REENCODING"
+  },
+  "fact_provenance_parity": {
+    "mismatches": [],
+    "records_checked": 39,
+    "records_matching_all_four_handles": 39,
+    "verdict": "ALL_DECLARED_HANDLES_INDEPENDENTLY_REPRODUCED_FROM_STRUCTURE"
+  },
+  "fail_closed": {
+    "all_hostile_abstained": true,
+    "dual_functional_ambiguous": {
+      "abstained": 6,
+      "n": 6
+    },
+    "out_of_domain_solvents": {
+      "abstained": 6,
+      "n": 6
+    }
+  },
+  "fixture": {
+    "n_records": 39,
+    "path": "amphora-molecule-role-ranker/reference/phase0-role-known-answer.v1.json",
+    "rights": "CC0-1.0",
+    "sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f"
+  },
+  "interpretation": "All four reactive-function handles were re-derived from raw SMILES for 39/39 records with byte-exact agreement to the declared facts, so the parsimony benchmark's inputs are structurally faithful, not asserted. The zero-parameter role rule assigned the expected verdict for 39/39 records and stayed invariant across 549 deterministic SMILES re-encodings, closing an encoding-evasion path: a molecule cannot change its resin/hardener/ABSTAIN role by being written differently. All 12 hostile nulls (dual-functional glycidyl-amines + non-reactive solvents) fail-closed to ABSTAIN. Validation only; no candidate, product, or promotion claim.",
+  "per_class_counts": {
+    "ambiguous": 6,
+    "hardener": 12,
+    "measured_product_only": 3,
+    "out_of_domain": 6,
+    "resin": 12
+  },
+  "primary_references": [
+    "Weininger, D. (1988) SMILES 1. JCICS 28(1):31-36. doi:10.1021/ci00057a005",
+    "Weininger, Weininger, Weininger (1989) SMILES 2 canonicalization. JCICS 29(2):97-101. doi:10.1021/ci00062a008",
+    "Daylight Theory Manual, SMARTS substructure specification (Daylight CIS).",
+    "Landrum, G. RDKit: open-source cheminformatics (pinned 2026.03.2).",
+    "May, C.A. (ed.) Epoxy Resins: Chemistry and Technology, 2nd ed. ISBN 978-0824776909 (amine-epoxide ring-opening)."
+  ],
+  "purpose": "Independently re-derive the four reactive-function handles from raw SMILES via RDKit SMARTS (never reading the fixture facts), gate them against the declared facts, and prove the zero-parameter deterministic role verdict is invariant across a deterministic SMILES-encoding sweep.",
+  "role_verdict_vs_expected": {
+    "failures": [],
+    "records_checked": 39,
+    "records_role_matches_expected": 39,
+    "role_verdict_counts": {
+      "ABSTAIN": 12,
+      "hardener": 12,
+      "resin": 15
+    }
+  },
+  "schema": "amphora.molecule-role-ranker.role-fact-provenance-invariance.v1",
+  "smarts_handles": {
+    "amine_h_count_rule": "sum of GetTotalNumHs over matched amine nitrogens",
+    "oxirane": "[OX2r3]",
+    "reactive_amine_nitrogen": "[NX3;H1,H2;!$([NX3]C=[O,S,N]);!$([NX3][a]=*);!$([N+]);!$([NX3]N=*)]"
+  },
+  "toolkit": {
+    "python": "3.12.3",
+    "rdkit_version": "2026.03.2"
+  },
+  "verdict": "FACT_PROVENANCE_AND_ENCODING_INVARIANCE_CORROBORATED"
+}

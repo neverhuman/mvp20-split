@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "783b3e9d86de166572a94a79f35b2a56dee4a0e78f14d4411e6a9f133f4dd893",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-solvency-score",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-cceb8136cbf9b6c11176568db55f63de9f8fff5e4821edd49a71f02ea030f860",
+  "module_id": "amphora-design-rule-score",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-ab38a31e56f0e948b7b46a66b4e41f5a0b240cd6f12bbeef078c92f025390519.json",
+      "revision_id": "preparation-revision-ab38a31e56f0e948b7b46a66b4e41f5a0b240cd6f12bbeef078c92f025390519",
+      "sha256": "09e3cd89ee0f5404800914bff34903df999d35df196c1392c476ea348668e628"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-cceb8136cbf9b6c11176568db55f63de9f8fff5e4821edd49a71f02ea030f860.json",
+      "revision_id": "preparation-revision-cceb8136cbf9b6c11176568db55f63de9f8fff5e4821edd49a71f02ea030f860",
+      "sha256": "4d9da628b5be050f543c7e1c1665f4a5c5c43255b6ea76153538bfbe8e395957"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

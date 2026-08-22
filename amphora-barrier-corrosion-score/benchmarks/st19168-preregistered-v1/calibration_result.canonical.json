@@ -1,0 +1,276 @@
+{
+  "alpha": 0.05,
+  "empirical_power_probe_alt_arm": {
+    "full_gate_clopper_pearson_95ci": [
+      0.0,
+      0.218
+    ],
+    "full_gate_empirical_power": 0.0,
+    "full_gate_pass_count": 0,
+    "per_draw": [
+      {
+        "seed": 190168700,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.422222,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168701,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.333333,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168702,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.022222,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168703,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.333333,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168704,
+        "step1_pass": true,
+        "step2_pass": false,
+        "step3_pass": null,
+        "tau_locked": 0.644444,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168705,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.377778,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168706,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.333333,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168707,
+        "step1_pass": true,
+        "step2_pass": false,
+        "step3_pass": null,
+        "tau_locked": 0.6,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168708,
+        "step1_pass": true,
+        "step2_pass": false,
+        "step3_pass": null,
+        "tau_locked": 0.6,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168709,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.377778,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168710,
+        "step1_pass": true,
+        "step2_pass": false,
+        "step3_pass": null,
+        "tau_locked": 0.733333,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168711,
+        "step1_pass": true,
+        "step2_pass": false,
+        "step3_pass": null,
+        "tau_locked": 0.644444,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168712,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.377778,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168713,
+        "step1_pass": true,
+        "step2_pass": true,
+        "step3_pass": false,
+        "tau_locked": 0.6,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168714,
+        "step1_pass": true,
+        "step2_pass": false,
+        "step3_pass": null,
+        "tau_locked": 0.511111,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      }
+    ],
+    "step1_clopper_pearson_95ci": [
+      0.2127,
+      0.7341
+    ],
+    "step1_empirical_power": 0.4667,
+    "step1_primary_pass_count": 7
+  },
+  "k_replicates_per_arm": 15,
+  "n_systems_per_draw": 10,
+  "schema": "amphora.barrier-corrosion-score.st19168-preregistered-calibration.v1",
+  "target_population_tau_alt_arm": 0.5,
+  "type1_error_probe_null_arm": {
+    "clopper_pearson_95ci": [
+      0.0,
+      0.218
+    ],
+    "empirical_type1_rate": 0.0,
+    "false_positive_count": 0,
+    "k": 15,
+    "nominal_alpha": 0.05,
+    "per_draw": [
+      {
+        "seed": 190168500,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.466667,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168501,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": -0.066667,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168502,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": -0.022222,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168503,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.111111,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168504,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.066667,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168505,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.111111,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168506,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.2,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168507,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.333333,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168508,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": -0.022222,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168509,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": -0.022222,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168510,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": -0.066667,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168511,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": -0.022222,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168512,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": 0.288889,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168513,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": -0.422222,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      },
+      {
+        "seed": 190168514,
+        "step1_pass": false,
+        "step2_pass": null,
+        "step3_pass": null,
+        "tau_locked": -0.066667,
+        "verdict": "LOCKED_KPI_NOT_SUPPORTED"
+      }
+    ],
+    "within_ci_of_nominal_alpha": true
+  }
+}

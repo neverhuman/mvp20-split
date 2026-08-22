@@ -1,0 +1,29 @@
+{
+  "archive_root": "evidence/superseded/supersession-732a0e2aeaf3d5cf6ad3a09f1f3ab84a14f98098e00d52d7d8a2d16181138471",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "c7e168901d37455cb03a25555488924aa58651b3cfd2324a707c4e58770c01f9",
+    "ip/disclosure-log.v1.json": "5bc799bbfa7a121506677b5c61013af8f727b628775dfc349feadc459b242afa",
+    "ip/prior-art.v1.json": "6625989a6161d665eb6b00e5bf5ac5a916ff35d816ae1563e5bd800d057634a4",
+    "ip/technical-dossier.v1.json": "59c29fb73ab74edefcf99e5ca873d1742571896d2f7472e429e31cd50ba772e4",
+    "phase0/benchmark/benchmark-lock.v1.json": "6a349b375dcdd557ccbef1bc8a1d5f36c037cc1b4b6f5553b04025001731de71",
+    "phase0/bundle.v1.json": "3ef5f44a19a5a3ed9349e275caf3b7aa2670560f1abed26350d5e665bbfc8f8c",
+    "phase0/dataset/dataset-manifest.v1.json": "ff573d1f98f64c06a3f3470f3631216f02bc71c26852842310c0e3e24904feba",
+    "phase0/promotion/policy.v1.json": "87a210ee493cd27c1ff8595887c343e8c2f795bfe1ef0f11ca2fa159cbbd1f44",
+    "phase0/raw/SHA256SUMS": "98566dc27906ca5a18bdc86ec5cd22cd62dce4631733fb5140a8ef443c9ed108",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "a9401eb6f914763a4482836f90388cd495189b4951f09a18c234fb3572b9fb75",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/imports/benchmark.legacy-import.v1.json": "3ce4a1697e4ebfc160e97ab37a10831dd027275ac6f1cdf3223329dbc7a5aa8e",
+    "phase0/sources/imports/source.legacy-import.v1.json": "f6466bbce86ab02eb6dd833d2d34852b6793c6f98c7c6eace40cc59fe0ff7583",
+    "phase0/sources/imports/split.legacy-import.v1.json": "a6ef9b6c2d8d6d73bde295ed5e3b28ff1c35736fd68ad5cedc7fb3161c3f15ee",
+    "phase0/sources/source-lock.v1.json": "1dfcba57f32ac502ac7749ee619e966133cb50abc72e5d0cd446f522198a6cf3",
+    "phase0/split/split-manifest.v1.json": "59f661a7bb2cbe747f685a730fadfef06427415d74c6f8d42981034560416cb5"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-viscosity-score",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-732a0e2aeaf3d5cf6ad3a09f1f3ab84a14f98098e00d52d7d8a2d16181138471",
+  "unsigned_preparation_only": true
+}

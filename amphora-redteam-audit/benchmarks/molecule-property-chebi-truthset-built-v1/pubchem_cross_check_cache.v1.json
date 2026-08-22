@@ -1,0 +1,1712 @@
+{
+  "10079874": {
+    "InChIKey": "OPGSFDUODIJJGF-JBUZINEHSA-N",
+    "MolecularFormula": "C59H84N2O18",
+    "MolecularWeight": "1109.3"
+  },
+  "10219": {
+    "InChIKey": "AUVVAXYIELKVAI-CKBKHPSWSA-N",
+    "MolecularFormula": "C29H40N2O4",
+    "MolecularWeight": "480.6"
+  },
+  "10235": {
+    "InChIKey": "ANJTVLIZGCUXLD-DTWKUNHWSA-N",
+    "MolecularFormula": "C11H14N2O",
+    "MolecularWeight": "190.24"
+  },
+  "107807": {
+    "InChIKey": "IPVQLZZIHOAWMC-QXKUPLGCSA-N",
+    "MolecularFormula": "C19H32N2O5",
+    "MolecularWeight": "368.5"
+  },
+  "108010": {
+    "InChIKey": "SILQDLDAWPQMEL-YFKPBYRVSA-N",
+    "MolecularFormula": "C7H15N3O2",
+    "MolecularWeight": "173.21"
+  },
+  "108079": {
+    "InChIKey": "OEEZRBUCLFMTLD-YFKPBYRVSA-N",
+    "MolecularFormula": "C8H14N2O4",
+    "MolecularWeight": "202.21"
+  },
+  "10836": {
+    "InChIKey": "MYWUZJCMWCOHBA-VIFPVBQESA-N",
+    "MolecularFormula": "C10H15N",
+    "MolecularWeight": "149.23"
+  },
+  "10873133": {
+    "InChIKey": "QTARRKFUMCSVOF-LBPRGKRZSA-N",
+    "MolecularFormula": "C20H25N3O6",
+    "MolecularWeight": "403.4"
+  },
+  "1131": {
+    "InChIKey": "HZSAJDVWZRBGIF-UHFFFAOYSA-O",
+    "MolecularFormula": "C12H18N4O4PS+",
+    "MolecularWeight": "345.34"
+  },
+  "1132": {
+    "InChIKey": "AYEKOFBPNLCAJY-UHFFFAOYSA-O",
+    "MolecularFormula": "C12H19N4O7P2S+",
+    "MolecularWeight": "425.32"
+  },
+  "114835": {
+    "InChIKey": "XDSSPSLGNGIIHP-UHFFFAOYSA-N",
+    "MolecularFormula": "C4H9NO2Se",
+    "MolecularWeight": "182.09"
+  },
+  "118984375": {
+    "InChIKey": "PBGKTOXHQIOBKM-FHFVDXKLSA-N",
+    "MolecularFormula": "C257H383N65O77S6",
+    "MolecularWeight": "5808"
+  },
+  "119570": {
+    "InChIKey": "FASDKYOPVNHBLU-ZETCQYMHSA-N",
+    "MolecularFormula": "C10H17N3S",
+    "MolecularWeight": "211.33"
+  },
+  "11966312": {
+    "InChIKey": "VMTHAXKUEKKCEY-PNPVFPMQSA-N",
+    "MolecularFormula": "C31H50N7O18P3S",
+    "MolecularWeight": "933.8"
+  },
+  "123600": {
+    "InChIKey": "NDAUXUAQIAJITI-LBPRGKRZSA-N",
+    "MolecularFormula": "C13H21NO3",
+    "MolecularWeight": "239.31"
+  },
+  "126451": {
+    "InChIKey": "BBNDPXOGORGETN-AUUYWEPGSA-N",
+    "MolecularFormula": "C19H16O6",
+    "MolecularWeight": "340.3"
+  },
+  "129211": {
+    "InChIKey": "DRHKJLXJIQTDTD-OAHLLOKOSA-N",
+    "MolecularFormula": "C20H28N2O5S",
+    "MolecularWeight": "408.5"
+  },
+  "134601": {
+    "InChIKey": "IAOZJIPTCAWIRG-QWRGUYRKSA-N",
+    "MolecularFormula": "C14H18N2O5",
+    "MolecularWeight": "294.30"
+  },
+  "135398513": {
+    "InChIKey": "MKUXAQIIEYXACX-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H11N5O3",
+    "MolecularWeight": "225.20"
+  },
+  "135398645": {
+    "InChIKey": "QYNUQALWYRSVHF-OLZOCXBDSA-N",
+    "MolecularFormula": "C20H23N7O6",
+    "MolecularWeight": "457.4"
+  },
+  "135398662": {
+    "InChIKey": "WBFYVDCHGVNRBH-UHFFFAOYSA-N",
+    "MolecularFormula": "C14H14N6O3",
+    "MolecularWeight": "314.30"
+  },
+  "135398720": {
+    "InChIKey": "CRXOALRUOMUPMC-UMMCILCDSA-N",
+    "MolecularFormula": "C9H18N5O14P3",
+    "MolecularWeight": "513.19"
+  },
+  "135398722": {
+    "InChIKey": "WTMBWYHMZCVPRJ-WJBIZLLUSA-N",
+    "MolecularFormula": "C30H43N6O16P",
+    "MolecularWeight": "774.7"
+  },
+  "135398731": {
+    "InChIKey": "PHBDHXOBFUBCJD-KQYNXXCUSA-N",
+    "MolecularFormula": "C11H18N5O13P3",
+    "MolecularWeight": "521.21"
+  },
+  "135398748": {
+    "InChIKey": "JNTOCHDNEULJHD-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H15N5O3",
+    "MolecularWeight": "253.26"
+  },
+  "135527764": {
+    "InChIKey": "YWTYJOPNNQFBPC-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H10ClN5O2",
+    "MolecularWeight": "255.66"
+  },
+  "135922733": {
+    "InChIKey": "LVNZJTSOSZDVPZ-RRMAJTJESA-M",
+    "MolecularFormula": "C68H97CoN21O21P2-2",
+    "MolecularWeight": "1665.5"
+  },
+  "137333722": {
+    "InChIKey": "JXFJDYCRCSOLAG-SKTDGYGZSA-N",
+    "MolecularFormula": "C14H32N9O8PS",
+    "MolecularWeight": "517.5"
+  },
+  "138365": {
+    "InChIKey": "OTXANOLOOUNVSR-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H19NO3",
+    "MolecularWeight": "225.28"
+  },
+  "14039": {
+    "InChIKey": "OFLXLNCGODUUOT-UHFFFAOYSA-N",
+    "MolecularFormula": "C2H6N2O",
+    "MolecularWeight": "74.08"
+  },
+  "14052": {
+    "InChIKey": "AEUTYOVWOVBAKS-UWVGGRQHSA-N",
+    "MolecularFormula": "C10H24N2O2",
+    "MolecularWeight": "204.31"
+  },
+  "1531": {
+    "InChIKey": "UXFQFBNBSPQBJW-UHFFFAOYSA-N",
+    "MolecularFormula": "C4H11NO2",
+    "MolecularWeight": "105.14"
+  },
+  "15541": {
+    "InChIKey": "UNFWWIHTNXNPBV-WXKVUWSESA-N",
+    "MolecularFormula": "C14H24N2O7",
+    "MolecularWeight": "332.35"
+  },
+  "15623": {
+    "InChIKey": "CEIXWJHURKEBMQ-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H15NO2",
+    "MolecularWeight": "193.24"
+  },
+  "15894949": {
+    "InChIKey": "IGDAEYVCCNGPNW-VKHMYHEASA-N",
+    "MolecularFormula": "C4H8NO2Se",
+    "MolecularWeight": "181.08"
+  },
+  "160502": {
+    "InChIKey": "VYJUHRAQPIBWNV-LBPRGKRZSA-N",
+    "MolecularFormula": "C18H17NO4",
+    "MolecularWeight": "311.3"
+  },
+  "160597": {
+    "InChIKey": "VZTUKBKUWSHDFM-CYBMUJFWSA-N",
+    "MolecularFormula": "C17H15NO2",
+    "MolecularWeight": "265.31"
+  },
+  "16129620": {
+    "InChIKey": "WGWPRVFKDLAUQJ-UHFFFAOYSA-N",
+    "MolecularFormula": "C149H246N44O42S",
+    "MolecularWeight": "3357.9"
+  },
+  "16132265": {
+    "InChIKey": "IDLFZVILOHSSID-OVLDLUHVSA-N",
+    "MolecularFormula": "C207H308N56O58S",
+    "MolecularWeight": "4541"
+  },
+  "16132283": {
+    "InChIKey": "MASNOZXLGMXCHN-ZLPAWPGGSA-N",
+    "MolecularFormula": "C153H225N43O49S",
+    "MolecularWeight": "3482.7"
+  },
+  "16133648": {
+    "InChIKey": "VDXZNPDIRNWWCW-JFTDCZMZSA-N",
+    "MolecularFormula": "C131H229N39O31",
+    "MolecularWeight": "2846.5"
+  },
+  "16133751": {
+    "InChIKey": "ZOEFCCMDUURGSE-SQKVDDBVSA-N",
+    "MolecularFormula": "C136H210N40O31S",
+    "MolecularWeight": "2933.4"
+  },
+  "1615": {
+    "InChIKey": "SHXWCVYOXRDMCX-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H15NO2",
+    "MolecularWeight": "193.24"
+  },
+  "16220016": {
+    "InChIKey": "BBBFJLBPOGFECG-VJVYQDLKSA-N",
+    "MolecularFormula": "C145H240N44O48S2",
+    "MolecularWeight": "3431.9"
+  },
+  "162265": {
+    "InChIKey": "DLNKOYKMWOXYQA-APPZFPTMSA-N",
+    "MolecularFormula": "C9H13NO",
+    "MolecularWeight": "151.21"
+  },
+  "16231": {
+    "InChIKey": "XSDQTOBWRPYKKA-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H8ClN7O",
+    "MolecularWeight": "229.63"
+  },
+  "1646": {
+    "InChIKey": "SNKZJIOFVMKAOJ-UHFFFAOYSA-N",
+    "MolecularFormula": "C3H9NO3S",
+    "MolecularWeight": "139.18"
+  },
+  "16486": {
+    "InChIKey": "IADUEWIQBXOCDZ-VKHMYHEASA-N",
+    "MolecularFormula": "C4H7NO2",
+    "MolecularWeight": "101.10"
+  },
+  "165580": {
+    "InChIKey": "UOZODPSAJZTQNH-LSWIJEOBSA-N",
+    "MolecularFormula": "C23H45N5O14",
+    "MolecularWeight": "615.6"
+  },
+  "1669": {
+    "InChIKey": "DIVQKHQLANKJQO-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H13NO2",
+    "MolecularWeight": "167.20"
+  },
+  "17134": {
+    "InChIKey": "PJSFRIWCGOHTNF-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H14N4O4S",
+    "MolecularWeight": "310.33"
+  },
+  "1833": {
+    "InChIKey": "JTEJPPKMYBDEMY-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H14N2O",
+    "MolecularWeight": "190.24"
+  },
+  "185992": {
+    "InChIKey": "UIQSKEDQPSEGAU-UWTATZPHSA-N",
+    "MolecularFormula": "C2H8NO3P",
+    "MolecularWeight": "125.06"
+  },
+  "189008": {
+    "InChIKey": "MMFKFJORZBJVNF-UWVGGRQHSA-N",
+    "MolecularFormula": "C12H20N4O3",
+    "MolecularWeight": "268.31"
+  },
+  "1978": {
+    "InChIKey": "GOEMGAFJFRBGGG-UHFFFAOYSA-N",
+    "MolecularFormula": "C18H28N2O4",
+    "MolecularWeight": "336.4"
+  },
+  "199402": {
+    "InChIKey": "WQVJHHACXVLGBL-GOVYWFKWSA-N",
+    "MolecularFormula": "C56H98N16O13",
+    "MolecularWeight": "1203.5"
+  },
+  "20056682": {
+    "InChIKey": "UNTJYOFZBHSHIU-HXYRURAXSA-N",
+    "MolecularFormula": "C13H23NO9",
+    "MolecularWeight": "337.32"
+  },
+  "205586": {
+    "InChIKey": "MTXSIJUGVMTTMU-JTQLQIEISA-N",
+    "MolecularFormula": "C10H14N2",
+    "MolecularWeight": "162.23"
+  },
+  "2083": {
+    "InChIKey": "NDAUXUAQIAJITI-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H21NO3",
+    "MolecularWeight": "239.31"
+  },
+  "2088": {
+    "InChIKey": "OGSPWJRAVKPPFI-UHFFFAOYSA-N",
+    "MolecularFormula": "C4H13NO7P2",
+    "MolecularWeight": "249.10"
+  },
+  "21138": {
+    "InChIKey": "AQHHHDLHHXJYJD-CQSZACIVSA-N",
+    "MolecularFormula": "C16H21NO2",
+    "MolecularWeight": "259.34"
+  },
+  "2130": {
+    "InChIKey": "DKNWSYNQZKUICI-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H17N",
+    "MolecularWeight": "151.25"
+  },
+  "21327": {
+    "InChIKey": "FPIGOBKNDYAZTP-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H9NO4",
+    "MolecularWeight": "195.17"
+  },
+  "2141": {
+    "InChIKey": "JKOQGQFVAUAYPM-UHFFFAOYSA-N",
+    "MolecularFormula": "C5H15N2O3PS",
+    "MolecularWeight": "214.23"
+  },
+  "2145": {
+    "InChIKey": "ROBVIMPUHSLWNV-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H16N2O2",
+    "MolecularWeight": "232.28"
+  },
+  "2162": {
+    "InChIKey": "HTIQEAQVCYTUBX-UHFFFAOYSA-N",
+    "MolecularFormula": "C20H25ClN2O5",
+    "MolecularWeight": "408.9"
+  },
+  "2170": {
+    "InChIKey": "QWGDMFLQWFTERH-UHFFFAOYSA-N",
+    "MolecularFormula": "C17H16ClN3O",
+    "MolecularWeight": "313.8"
+  },
+  "220401": {
+    "InChIKey": "NNJPGOLRFBJNIW-HNNXBMFYSA-N",
+    "MolecularFormula": "C21H25NO5",
+    "MolecularWeight": "371.4"
+  },
+  "2216": {
+    "InChIKey": "IEJXVRYNEISIKR-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H10Cl2N4",
+    "MolecularWeight": "245.11"
+  },
+  "2249": {
+    "InChIKey": "METKIMKYRPQLGS-UHFFFAOYSA-N",
+    "MolecularFormula": "C14H22N2O3",
+    "MolecularWeight": "266.34"
+  },
+  "2284": {
+    "InChIKey": "KPYSYYIEGFHWSV-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H12ClNO2",
+    "MolecularWeight": "213.66"
+  },
+  "2315": {
+    "InChIKey": "HDWIHXWEUNVBIY-UHFFFAOYSA-N",
+    "MolecularFormula": "C15H14F3N3O4S2",
+    "MolecularWeight": "421.4"
+  },
+  "2343": {
+    "InChIKey": "NDTSRXAMMQDVSW-UHFFFAOYSA-N",
+    "MolecularFormula": "C15H14ClN3O4S3",
+    "MolecularWeight": "431.9"
+  },
+  "23657835": {
+    "InChIKey": "OQTDHDDYVKUSEW-NQYRMHKHSA-M",
+    "MolecularFormula": "C55H73CoN11O15+",
+    "MolecularWeight": "1187.2"
+  },
+  "2369": {
+    "InChIKey": "NWIUTZDMDHAVTP-UHFFFAOYSA-N",
+    "MolecularFormula": "C18H29NO3",
+    "MolecularWeight": "307.4"
+  },
+  "2405": {
+    "InChIKey": "VHYCDWMUTMEGQY-UHFFFAOYSA-N",
+    "MolecularFormula": "C18H31NO4",
+    "MolecularWeight": "325.4"
+  },
+  "2435": {
+    "InChIKey": "XYLJNLCSTIOKRM-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H10BrN5",
+    "MolecularWeight": "292.13"
+  },
+  "2468": {
+    "InChIKey": "XSEUMFJMFFMCIU-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H15N5",
+    "MolecularWeight": "157.22"
+  },
+  "2471": {
+    "InChIKey": "MAEIEVLCKWDQJH-UHFFFAOYSA-N",
+    "MolecularFormula": "C17H20N2O5S",
+    "MolecularWeight": "364.4"
+  },
+  "2482": {
+    "InChIKey": "IUWVALYLNVXWKX-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H15NO2",
+    "MolecularWeight": "193.24"
+  },
+  "25077406": {
+    "InChIKey": "PCJGZPGTCUMMOT-ISULXFBGSA-N",
+    "MolecularFormula": "C78H121N21O20",
+    "MolecularWeight": "1672.9"
+  },
+  "25077649": {
+    "InChIKey": "RWHUEXWOYVBUCI-UHFFFAOYSA-N",
+    "MolecularFormula": "C66H83N17O13",
+    "MolecularWeight": "1322.5"
+  },
+  "25077993": {
+    "InChIKey": "HHXHVIJIIXKSOE-QILQGKCVSA-N",
+    "MolecularFormula": "C66H86N18O12",
+    "MolecularWeight": "1323.5"
+  },
+  "25674": {
+    "InChIKey": "GGLZPLKKBSSKCX-YFKPBYRVSA-N",
+    "MolecularFormula": "C6H13NO2S",
+    "MolecularWeight": "163.24"
+  },
+  "2583": {
+    "InChIKey": "LWAFSWPYPHEXKX-UHFFFAOYSA-N",
+    "MolecularFormula": "C16H24N2O3",
+    "MolecularWeight": "292.37"
+  },
+  "2585": {
+    "InChIKey": "OGHNVEJMJSYVRP-UHFFFAOYSA-N",
+    "MolecularFormula": "C24H26N2O4",
+    "MolecularWeight": "406.5"
+  },
+  "26934": {
+    "InChIKey": "DLNKOYKMWOXYQA-VXNVDRBHSA-N",
+    "MolecularFormula": "C9H13NO",
+    "MolecularWeight": "151.21"
+  },
+  "2720": {
+    "InChIKey": "JBMKAUGHUNFTOL-UHFFFAOYSA-N",
+    "MolecularFormula": "C7H6ClN3O4S2",
+    "MolecularWeight": "295.7"
+  },
+  "2723601": {
+    "InChIKey": "WYWHKKSPHMUBEB-UHFFFAOYSA-N",
+    "MolecularFormula": "C5H5N5S",
+    "MolecularWeight": "167.19"
+  },
+  "2732": {
+    "InChIKey": "JIVPVXMEBJLZRO-UHFFFAOYSA-N",
+    "MolecularFormula": "C14H11ClN2O4S",
+    "MolecularWeight": "338.8"
+  },
+  "27447": {
+    "InChIKey": "ZAIPMKNFIOOWCQ-UEKVPHQBSA-N",
+    "MolecularFormula": "C16H17N3O4S",
+    "MolecularWeight": "347.4"
+  },
+  "2756": {
+    "InChIKey": "AQIXAKUUQRKLND-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H16N6S",
+    "MolecularWeight": "252.34"
+  },
+  "2761171": {
+    "InChIKey": "AEOCXXJPGCBFJA-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H10N2S",
+    "MolecularWeight": "166.25"
+  },
+  "2803": {
+    "InChIKey": "GJSURZIOUXUGAL-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H9Cl2N3",
+    "MolecularWeight": "230.09"
+  },
+  "281241": {
+    "InChIKey": "KMMKKNKMHUQJAW-UHFFFAOYSA-N",
+    "MolecularFormula": "C3H10NO3P",
+    "MolecularWeight": "139.09"
+  },
+  "28523": {
+    "InChIKey": "REJLGAUYTKNVJM-SGXCCWNXSA-N",
+    "MolecularFormula": "C50H83NO21",
+    "MolecularWeight": "1034.2"
+  },
+  "2907": {
+    "InChIKey": "CMSMOCZEIVJLDB-UHFFFAOYSA-N",
+    "MolecularFormula": "C7H15Cl2N2O2P",
+    "MolecularWeight": "261.08"
+  },
+  "2955": {
+    "InChIKey": "MQJKPEGWNLWLTK-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H12N2O2S",
+    "MolecularWeight": "248.30"
+  },
+  "2973": {
+    "InChIKey": "UBQYURCVBFRUQT-UHFFFAOYSA-N",
+    "MolecularFormula": "C25H48N6O8",
+    "MolecularWeight": "560.7"
+  },
+  "3001055": {
+    "InChIKey": "VMXUWOKSQNHOCA-UKTHLTGXSA-N",
+    "MolecularFormula": "C13H22N4O3S",
+    "MolecularWeight": "314.41"
+  },
+  "3019": {
+    "InChIKey": "GDLBFKVLRPITMI-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H7ClN2O2S",
+    "MolecularWeight": "230.67"
+  },
+  "3033053": {
+    "InChIKey": "VTMVHDZWSFQSQP-VBNZEHGJSA-N",
+    "MolecularFormula": "C16H23NO",
+    "MolecularWeight": "245.36"
+  },
+  "3033637": {
+    "InChIKey": "SGXXNSQHWDMGGP-IZZDOVSWSA-N",
+    "MolecularFormula": "C12H21N5O2S2",
+    "MolecularWeight": "331.5"
+  },
+  "3081372": {
+    "InChIKey": "ORWYRWWVDCYOMK-HBZPZAIKSA-N",
+    "MolecularFormula": "C62H89N17O14",
+    "MolecularWeight": "1296.5"
+  },
+  "3081545": {
+    "InChIKey": "XZNUGFQTQHRASN-XQENGBIVSA-N",
+    "MolecularFormula": "C21H41N5O11",
+    "MolecularWeight": "539.6"
+  },
+  "3105": {
+    "InChIKey": "OCUJLLGVOUDECM-UHFFFAOYSA-N",
+    "MolecularFormula": "C19H29NO5",
+    "MolecularWeight": "351.4"
+  },
+  "31477": {
+    "InChIKey": "BQIPXWYNLPYNHW-UHFFFAOYSA-N",
+    "MolecularFormula": "C17H27NO4",
+    "MolecularWeight": "309.4"
+  },
+  "3157": {
+    "InChIKey": "RUZYUOTYCVRMRZ-UHFFFAOYSA-N",
+    "MolecularFormula": "C23H25N5O5",
+    "MolecularWeight": "451.5"
+  },
+  "32872": {
+    "InChIKey": "HOQADATXFBOEGG-UHFFFAOYSA-N",
+    "MolecularFormula": "C15H24NO4PS",
+    "MolecularWeight": "345.4"
+  },
+  "3324": {
+    "InChIKey": "GGXKWVWZWMLJEH-UHFFFAOYSA-N",
+    "MolecularFormula": "C14H19N5O4",
+    "MolecularWeight": "321.33"
+  },
+  "3325": {
+    "InChIKey": "XUFQPHANEAPEMJ-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H15N7O2S3",
+    "MolecularWeight": "337.5"
+  },
+  "3337": {
+    "InChIKey": "DBGIVFWFUFKIQN-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H16F3N",
+    "MolecularWeight": "231.26"
+  },
+  "3341": {
+    "InChIKey": "TVURRHSHRRELCG-UHFFFAOYSA-N",
+    "MolecularFormula": "C16H16ClNO3",
+    "MolecularWeight": "305.75"
+  },
+  "33478": {
+    "InChIKey": "ZEMIJUDPLILVNQ-ZXFNITATSA-N",
+    "MolecularFormula": "C22H29N3O6S",
+    "MolecularWeight": "463.5"
+  },
+  "33613": {
+    "InChIKey": "LSQZJLSUYDQPKJ-NJBDSQKTSA-N",
+    "MolecularFormula": "C16H19N3O5S",
+    "MolecularWeight": "365.4"
+  },
+  "33624": {
+    "InChIKey": "BLJRIMJGRPQVNF-JTQLQIEISA-N",
+    "MolecularFormula": "C13H24N4O3S",
+    "MolecularWeight": "316.42"
+  },
+  "3366": {
+    "InChIKey": "XRECTZIEBJDKEO-UHFFFAOYSA-N",
+    "MolecularFormula": "C4H4FN3O",
+    "MolecularWeight": "129.09"
+  },
+  "3518": {
+    "InChIKey": "ACGDKVXYNVEAGU-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H22N4",
+    "MolecularWeight": "198.31"
+  },
+  "3526": {
+    "InChIKey": "RONFGUROBZGJKP-UHFFFAOYSA-N",
+    "MolecularFormula": "C18H41N7",
+    "MolecularWeight": "355.6"
+  },
+  "3532": {
+    "InChIKey": "QTDZOWFRBNTPQR-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H9NO2",
+    "MolecularWeight": "127.14"
+  },
+  "35330": {
+    "InChIKey": "FZGVEKPRDOIXJY-UHFFFAOYSA-N",
+    "MolecularFormula": "C28H31NO5",
+    "MolecularWeight": "461.5"
+  },
+  "36119": {
+    "InChIKey": "URWAJWIAIPFPJE-YFMIWBNJSA-N",
+    "MolecularFormula": "C19H37N5O7",
+    "MolecularWeight": "447.5"
+  },
+  "3637": {
+    "InChIKey": "RPTUSVTUFVMDQK-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H8N4",
+    "MolecularWeight": "160.18"
+  },
+  "3639": {
+    "InChIKey": "JZUFKLXOESDKRF-UHFFFAOYSA-N",
+    "MolecularFormula": "C7H8ClN3O4S2",
+    "MolecularWeight": "297.7"
+  },
+  "3647": {
+    "InChIKey": "DMDGGSIALPNSEE-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H8F3N3O4S2",
+    "MolecularWeight": "331.3"
+  },
+  "36811": {
+    "InChIKey": "JRWZLRBJNMZMFE-UHFFFAOYSA-N",
+    "MolecularFormula": "C18H23NO3",
+    "MolecularWeight": "301.4"
+  },
+  "3690": {
+    "InChIKey": "HOMGKSMUEGBAAB-UHFFFAOYSA-N",
+    "MolecularFormula": "C7H15Cl2N2O2P",
+    "MolecularWeight": "261.08"
+  },
+  "3698": {
+    "InChIKey": "RNLQIBCLLYYYFJ-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H9N3O",
+    "MolecularWeight": "187.20"
+  },
+  "3702": {
+    "InChIKey": "NDDAHWYSQHTHNT-UHFFFAOYSA-N",
+    "MolecularFormula": "C16H16ClN3O3S",
+    "MolecularWeight": "365.8"
+  },
+  "3767": {
+    "InChIKey": "QRXWMOHMRWLFEY-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H7N3O",
+    "MolecularWeight": "137.14"
+  },
+  "37768": {
+    "InChIKey": "LKCWBDHBTVXHDL-RMDFUYIESA-N",
+    "MolecularFormula": "C22H43N5O13",
+    "MolecularWeight": "585.6"
+  },
+  "38103": {
+    "InChIKey": "RDLPVSKMFDYCOR-UEKVPHQBSA-N",
+    "MolecularFormula": "C16H19N3O4S",
+    "MolecularWeight": "349.4"
+  },
+  "3821": {
+    "InChIKey": "YQEZLKZALYSWHR-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H16ClNO",
+    "MolecularWeight": "237.72"
+  },
+  "38521": {
+    "InChIKey": "HPBNRIOWIXYZFK-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H19N3O2",
+    "MolecularWeight": "213.28"
+  },
+  "3878": {
+    "InChIKey": "PYZRQGJRPPTADH-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H7Cl2N5",
+    "MolecularWeight": "256.09"
+  },
+  "38854": {
+    "InChIKey": "VHCNQEUWZYOAEV-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H10N4O",
+    "MolecularWeight": "202.21"
+  },
+  "38945": {
+    "InChIKey": "BUJAGSGYPOAWEI-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H16N2O",
+    "MolecularWeight": "192.26"
+  },
+  "39468": {
+    "InChIKey": "IXHBTMCLRNMKHZ-LBPRGKRZSA-N",
+    "MolecularFormula": "C17H25NO3",
+    "MolecularWeight": "291.4"
+  },
+  "39836": {
+    "InChIKey": "KCWZGJVSDFYRIX-YFKPBYRVSA-N",
+    "MolecularFormula": "C7H15N5O4",
+    "MolecularWeight": "233.23"
+  },
+  "4075": {
+    "InChIKey": "KBOPZPXVLCULAV-UHFFFAOYSA-N",
+    "MolecularFormula": "C7H7NO3",
+    "MolecularWeight": "153.14"
+  },
+  "4091": {
+    "InChIKey": "XZWYZXLIPXDOLR-UHFFFAOYSA-N",
+    "MolecularFormula": "C4H11N5",
+    "MolecularWeight": "129.16"
+  },
+  "4171": {
+    "InChIKey": "IUBSYMUCCVWXPE-UHFFFAOYSA-N",
+    "MolecularFormula": "C15H25NO3",
+    "MolecularWeight": "267.36"
+  },
+  "41774": {
+    "InChIKey": "XUFXOAAUWZOOIT-UGEKTDRHSA-N",
+    "MolecularFormula": "C25H43NO18",
+    "MolecularWeight": "645.6"
+  },
+  "4178": {
+    "InChIKey": "VLPIATFUUWWMKC-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H17NO",
+    "MolecularWeight": "179.26"
+  },
+  "4195": {
+    "InChIKey": "PTKSEFOSCHHMPD-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H18N2O4",
+    "MolecularWeight": "254.28"
+  },
+  "4201": {
+    "InChIKey": "ZIMGGGWCDYVHOY-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H15N5O",
+    "MolecularWeight": "209.25"
+  },
+  "4266": {
+    "InChIKey": "ZJQHPWUVQPJPQT-UHFFFAOYSA-N",
+    "MolecularFormula": "C4H6N2O2",
+    "MolecularWeight": "114.10"
+  },
+  "42785": {
+    "InChIKey": "YFGBQHOOROIVKG-UHFFFAOYSA-N",
+    "MolecularFormula": "C27H35N5O7S",
+    "MolecularWeight": "573.7"
+  },
+  "43507": {
+    "InChIKey": "SLAYUXIURFNXPG-CRAIPNDOSA-N",
+    "MolecularFormula": "C20H21N7O6S2",
+    "MolecularWeight": "519.6"
+  },
+  "43815": {
+    "InChIKey": "AHOUBRCZNHFOSL-YOEHRIQHSA-N",
+    "MolecularFormula": "C19H20FNO3",
+    "MolecularWeight": "329.4"
+  },
+  "439201": {
+    "InChIKey": "QXZGBUJJYSLZLT-FDISYFBBSA-N",
+    "MolecularFormula": "C50H73N15O11",
+    "MolecularWeight": "1060.2"
+  },
+  "439233": {
+    "InChIKey": "NRXIKWMTVXPVEF-BYPYZUCNSA-N",
+    "MolecularFormula": "C6H10N2O4",
+    "MolecularWeight": "174.15"
+  },
+  "439299": {
+    "InChIKey": "VGGGPCQERPFHOB-MCIONIFRSA-N",
+    "MolecularFormula": "C16H24N2O4",
+    "MolecularWeight": "308.37"
+  },
+  "439302": {
+    "InChIKey": "XNOPRXBHLZRZKH-DSZYJQQASA-N",
+    "MolecularFormula": "C43H66N12O12S2",
+    "MolecularWeight": "1007.2"
+  },
+  "439498": {
+    "InChIKey": "ZUKPVRWZDMRIEO-VKHMYHEASA-N",
+    "MolecularFormula": "C5H10N2O3S",
+    "MolecularWeight": "178.21"
+  },
+  "439500": {
+    "InChIKey": "KOSRFJWDECSPRO-WDSKDSINSA-N",
+    "MolecularFormula": "C10H16N2O7",
+    "MolecularWeight": "276.24"
+  },
+  "439518": {
+    "InChIKey": "QFAADIRHLBXJJS-ZAZJUGBXSA-N",
+    "MolecularFormula": "C21H38N4O8",
+    "MolecularWeight": "474.5"
+  },
+  "439560": {
+    "InChIKey": "JGSMDVGTXBPWIM-HKEUSBCWSA-N",
+    "MolecularFormula": "C12H25N3O7",
+    "MolecularWeight": "323.34"
+  },
+  "439585": {
+    "InChIKey": "YFBBUHJJUXXZOF-UWVGGRQHSA-N",
+    "MolecularFormula": "C13H23N3O4",
+    "MolecularWeight": "285.34"
+  },
+  "439605": {
+    "InChIKey": "HKXLAGBDJVHRQG-YFKPBYRVSA-N",
+    "MolecularFormula": "C6H15N3O",
+    "MolecularWeight": "145.20"
+  },
+  "439647": {
+    "InChIKey": "MQUQNUAYKLCRME-INIZCTEOSA-N",
+    "MolecularFormula": "C17H18ClNO3S",
+    "MolecularWeight": "351.8"
+  },
+  "439661": {
+    "InChIKey": "JMACEDIUUMWDIC-UHFFFAOYSA-N",
+    "MolecularFormula": "C7H16N4O",
+    "MolecularWeight": "172.23"
+  },
+  "439934": {
+    "InChIKey": "JOZGBZPOJJCPEP-XGNJAFTASA-N",
+    "MolecularFormula": "C6H15N2O7P",
+    "MolecularWeight": "258.17"
+  },
+  "439943": {
+    "InChIKey": "FIOHTMQGSFVHEZ-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H11NO4",
+    "MolecularWeight": "161.16"
+  },
+  "440048": {
+    "InChIKey": "SGNZKKOMSOPYFR-KQYNXXCUSA-N",
+    "MolecularFormula": "C10H15N5O13P2S",
+    "MolecularWeight": "507.27"
+  },
+  "440139": {
+    "InChIKey": "MBZWIPOSTWTKSV-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H16N2O3",
+    "MolecularWeight": "188.22"
+  },
+  "440169": {
+    "InChIKey": "PCEJMSIIDXUDSN-IUYQGCFVSA-N",
+    "MolecularFormula": "C5H12N2O2",
+    "MolecularWeight": "132.16"
+  },
+  "440315": {
+    "InChIKey": "NVOIXARBSSLBAS-KQYNXXCUSA-N",
+    "MolecularFormula": "C10H14N5O7P",
+    "MolecularWeight": "347.22"
+  },
+  "440336": {
+    "InChIKey": "UOKVQQMBGVMXPU-CJPDYEHRSA-O",
+    "MolecularFormula": "C15H20N5O6S+",
+    "MolecularWeight": "398.4"
+  },
+  "440568": {
+    "InChIKey": "RRUVJGASJONMDY-UHFFFAOYSA-O",
+    "MolecularFormula": "C14H23N4O8P2S+",
+    "MolecularWeight": "469.37"
+  },
+  "440649": {
+    "InChIKey": "ZWUKRGPVMMTMAF-UHFFFAOYSA-O",
+    "MolecularFormula": "C16H25N4O10P2S+",
+    "MolecularWeight": "527.4"
+  },
+  "440744": {
+    "InChIKey": "LSTOUSIIVKMJBU-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H12N2O5",
+    "MolecularWeight": "252.22"
+  },
+  "440745": {
+    "InChIKey": "OTDQYOVYQQZAJL-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H12N2O4",
+    "MolecularWeight": "224.21"
+  },
+  "440756": {
+    "InChIKey": "RTTXIBKRJFIBBG-UHFFFAOYSA-N",
+    "MolecularFormula": "C2H8NO4P",
+    "MolecularWeight": "141.06"
+  },
+  "440758": {
+    "InChIKey": "XCADVMZZFPIERR-KQYNXXCUSA-N",
+    "MolecularFormula": "C10H14N5O10PSe",
+    "MolecularWeight": "474.19"
+  },
+  "440849": {
+    "InChIKey": "FQWRAVYMZULPNK-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H14N4O3",
+    "MolecularWeight": "190.20"
+  },
+  "441021": {
+    "InChIKey": "YLZRFVZUZIJABA-YFKPBYRVSA-N",
+    "MolecularFormula": "C6H12N2O3",
+    "MolecularWeight": "160.17"
+  },
+  "441037": {
+    "InChIKey": "CERZMXAJYMMUDR-QBTAGHCHSA-N",
+    "MolecularFormula": "C9H17NO8",
+    "MolecularWeight": "267.23"
+  },
+  "441038": {
+    "InChIKey": "MSFSPUZXLOGKHJ-PGYHGBPZSA-N",
+    "MolecularFormula": "C9H17NO7",
+    "MolecularWeight": "251.23"
+  },
+  "441063": {
+    "InChIKey": "MLNXJBWXCQOCIN-URLMMPGGSA-N",
+    "MolecularFormula": "C35H38N2O6",
+    "MolecularWeight": "582.7"
+  },
+  "441084": {
+    "InChIKey": "LXWBXEWUSAABOA-VXSYNFHWSA-N",
+    "MolecularFormula": "C16H22N4O9S",
+    "MolecularWeight": "446.4"
+  },
+  "441328": {
+    "InChIKey": "HSHGZXNAXBPPDL-HZGVNTEJSA-N",
+    "MolecularFormula": "C10H12N2O5S",
+    "MolecularWeight": "272.28"
+  },
+  "441350": {
+    "InChIKey": "NHTGHBARYWONDQ-JTQLQIEISA-N",
+    "MolecularFormula": "C10H13NO3",
+    "MolecularWeight": "195.21"
+  },
+  "441397": {
+    "InChIKey": "PFOLLRNADZZWEX-FFGRCDKISA-N",
+    "MolecularFormula": "C21H27N3O7S",
+    "MolecularWeight": "465.5"
+  },
+  "441441": {
+    "InChIKey": "DSBZQNMJXKJWTO-VKHMYHEASA-N",
+    "MolecularFormula": "C6H10N2O5",
+    "MolecularWeight": "190.15"
+  },
+  "441445": {
+    "InChIKey": "UYDZYCPIQSRXKU-CIUDSAMLSA-N",
+    "MolecularFormula": "C12H18N2O5",
+    "MolecularWeight": "270.28"
+  },
+  "441457": {
+    "InChIKey": "DLNKOYKMWOXYQA-IONNQARKSA-N",
+    "MolecularFormula": "C9H13NO",
+    "MolecularWeight": "151.21"
+  },
+  "442159": {
+    "InChIKey": "BZIKDLPHKDIUHH-PCYHDRSOSA-N",
+    "MolecularFormula": "C29H37N3O3",
+    "MolecularWeight": "475.6"
+  },
+  "442195": {
+    "InChIKey": "DTGZHCFJNDAHEN-OZEXIGSWSA-N",
+    "MolecularFormula": "C28H38N2O4",
+    "MolecularWeight": "466.6"
+  },
+  "442502": {
+    "InChIKey": "DOAGKNAZGHOTJU-PALKDTOHSA-N",
+    "MolecularFormula": "C30H49N3O2",
+    "MolecularWeight": "483.7"
+  },
+  "442625": {
+    "InChIKey": "APKLQIQRPUDADG-GFCCVEGCSA-N",
+    "MolecularFormula": "C12H20N2O",
+    "MolecularWeight": "208.30"
+  },
+  "442630": {
+    "InChIKey": "AMSCMASJCYVAIF-QCVMBYIASA-N",
+    "MolecularFormula": "C28H50N2O4",
+    "MolecularWeight": "478.7"
+  },
+  "442651": {
+    "InChIKey": "POCJOGNVFHPZNS-ZJUUUORDSA-N",
+    "MolecularFormula": "C10H19NO",
+    "MolecularWeight": "169.26"
+  },
+  "443051": {
+    "InChIKey": "RQKDPSTWKKMBPM-XLPZGREQSA-N",
+    "MolecularFormula": "C10H17N3O11P2",
+    "MolecularWeight": "417.20"
+  },
+  "443052": {
+    "InChIKey": "DLHNIFPAUZVLLA-XLPZGREQSA-N",
+    "MolecularFormula": "C10H18N3O14P3",
+    "MolecularWeight": "497.18"
+  },
+  "443060": {
+    "InChIKey": "VESRDXZDAAOUHS-KXRJSVEISA-N",
+    "MolecularFormula": "C40H63NO10",
+    "MolecularWeight": "717.9"
+  },
+  "443143": {
+    "InChIKey": "JFMCQBGTUJUOAB-VXGBXAGGSA-N",
+    "MolecularFormula": "C13H24N2O",
+    "MolecularWeight": "224.34"
+  },
+  "443218": {
+    "InChIKey": "FNJVIEZDTMREOQ-UHFFFAOYSA-N",
+    "MolecularFormula": "C7H7NO4",
+    "MolecularWeight": "169.13"
+  },
+  "443234": {
+    "InChIKey": "CWNMDMYGRVHXDR-KQYNXXCUSA-N",
+    "MolecularFormula": "C10H11N5O4",
+    "MolecularWeight": "265.23"
+  },
+  "443372": {
+    "InChIKey": "JWZZKOKVBUJMES-NSHDSACASA-N",
+    "MolecularFormula": "C11H17NO3",
+    "MolecularWeight": "211.26"
+  },
+  "443387": {
+    "InChIKey": "DXVUYOAEDJXBPY-NFFDBFGFSA-N",
+    "MolecularFormula": "C19H23N3O4S",
+    "MolecularWeight": "389.5"
+  },
+  "444": {
+    "InChIKey": "SNPPWIUOZRMYNY-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H18ClNO",
+    "MolecularWeight": "239.74"
+  },
+  "4440": {
+    "InChIKey": "AMKVXSZCKVJAGH-UHFFFAOYSA-N",
+    "MolecularFormula": "C17H25N3O2S",
+    "MolecularWeight": "335.5"
+  },
+  "445434": {
+    "InChIKey": "ZYZCGGRZINLQBL-GWRQVWKTSA-N",
+    "MolecularFormula": "C49H74N10O12",
+    "MolecularWeight": "995.2"
+  },
+  "446596": {
+    "InChIKey": "MINDHVHHQZYEEK-HBBNESRFSA-N",
+    "MolecularFormula": "C26H44O9",
+    "MolecularWeight": "500.6"
+  },
+  "4485": {
+    "InChIKey": "HYIMSNHJOBLJNT-UHFFFAOYSA-N",
+    "MolecularFormula": "C17H18N2O6",
+    "MolecularWeight": "346.3"
+  },
+  "4497": {
+    "InChIKey": "UIAGMCDKSXEBJQ-UHFFFAOYSA-N",
+    "MolecularFormula": "C21H26N2O7",
+    "MolecularWeight": "418.4"
+  },
+  "4507": {
+    "InChIKey": "PVHUJELLJLJGLN-UHFFFAOYSA-N",
+    "MolecularFormula": "C18H20N2O6",
+    "MolecularWeight": "360.4"
+  },
+  "4543": {
+    "InChIKey": "PHVGLTMQBUFIQQ-UHFFFAOYSA-N",
+    "MolecularFormula": "C19H21N",
+    "MolecularWeight": "263.4"
+  },
+  "45485025": {
+    "InChIKey": "KVYNYRIOAYQBFK-AIIPJEMGSA-N",
+    "MolecularFormula": "C28H38N8O4",
+    "MolecularWeight": "550.7"
+  },
+  "4636": {
+    "InChIKey": "WYWIFABBXFUGLM-UHFFFAOYSA-N",
+    "MolecularFormula": "C16H24N2O",
+    "MolecularWeight": "260.37"
+  },
+  "4723": {
+    "InChIKey": "NRNCYVBFPDDJNE-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H8N2O2",
+    "MolecularWeight": "176.17"
+  },
+  "4762": {
+    "InChIKey": "OOBHFESNSZDWIU-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H15NO",
+    "MolecularWeight": "177.24"
+  },
+  "4771": {
+    "InChIKey": "DHHVAGZRUROJKS-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H15N",
+    "MolecularWeight": "149.23"
+  },
+  "47965": {
+    "InChIKey": "BOEGTKLJZSQCCD-UEKVPHQBSA-N",
+    "MolecularFormula": "C16H17N3O5S",
+    "MolecularWeight": "363.4"
+  },
+  "4828": {
+    "InChIKey": "JZQKKSLKJUAGIC-UHFFFAOYSA-N",
+    "MolecularFormula": "C14H20N2O2",
+    "MolecularWeight": "248.32"
+  },
+  "4893": {
+    "InChIKey": "IENZQIKPVFGBNW-UHFFFAOYSA-N",
+    "MolecularFormula": "C19H21N5O4",
+    "MolecularWeight": "383.4"
+  },
+  "4906": {
+    "InChIKey": "MVFGUOIZUNYYSO-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H20N2O",
+    "MolecularWeight": "220.31"
+  },
+  "4908": {
+    "InChIKey": "INDBQLZJXZLFIT-UHFFFAOYSA-N",
+    "MolecularFormula": "C15H21N3O",
+    "MolecularWeight": "259.35"
+  },
+  "4913": {
+    "InChIKey": "REQCZEXYDRLIBE-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H21N3O",
+    "MolecularWeight": "235.33"
+  },
+  "4914": {
+    "InChIKey": "MFDFERRIHVXMIY-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H20N2O2",
+    "MolecularWeight": "236.31"
+  },
+  "4946": {
+    "InChIKey": "AQHHHDLHHXJYJD-UHFFFAOYSA-N",
+    "MolecularFormula": "C16H21NO2",
+    "MolecularWeight": "259.34"
+  },
+  "4976": {
+    "InChIKey": "BWPIARFWQZKAIA-UHFFFAOYSA-N",
+    "MolecularFormula": "C19H21N",
+    "MolecularWeight": "263.4"
+  },
+  "49787001": {
+    "InChIKey": "GGJFWMOVUFBSIN-AIRLBKTGSA-O",
+    "MolecularFormula": "C15H23N6O5Se+",
+    "MolecularWeight": "446.4"
+  },
+  "49787007": {
+    "InChIKey": "YYIUHLPAZILPSG-SMILAEQMSA-N",
+    "MolecularFormula": "C10H18N2O2",
+    "MolecularWeight": "198.26"
+  },
+  "4993": {
+    "InChIKey": "WKSAUQYGYAYLPV-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H13ClN4",
+    "MolecularWeight": "248.71"
+  },
+  "5": {
+    "InChIKey": "HIQNVODXENYOFK-UHFFFAOYSA-N",
+    "MolecularFormula": "C3H8NO5P",
+    "MolecularWeight": "169.07"
+  },
+  "51039": {
+    "InChIKey": "QYIYFLOTGYLRGG-GPCCPHFNSA-N",
+    "MolecularFormula": "C15H14ClN3O4S",
+    "MolecularWeight": "367.8"
+  },
+  "511": {
+    "InChIKey": "IWLROWZYZPNOFC-UHFFFAOYSA-O",
+    "MolecularFormula": "C12H20N4O10P3S+",
+    "MolecularWeight": "505.30"
+  },
+  "5215": {
+    "InChIKey": "SEEPANYCNGTZFQ-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H10N4O2S",
+    "MolecularWeight": "250.28"
+  },
+  "528": {
+    "InChIKey": "FCXZBWSIAGGPCB-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H11NO4",
+    "MolecularWeight": "161.16"
+  },
+  "5280444": {
+    "InChIKey": "LJJHXRRUVASJDX-WWQRDVDESA-N",
+    "MolecularFormula": "C13H18N6O3",
+    "MolecularWeight": "306.32"
+  },
+  "5280673": {
+    "InChIKey": "KACPVQQHDVBVFC-OIFXTYEKSA-N",
+    "MolecularFormula": "C7H7NO5",
+    "MolecularWeight": "185.13"
+  },
+  "5280965": {
+    "InChIKey": "APKFDSVGJQXUKY-INPOYWNPSA-N",
+    "MolecularFormula": "C47H73NO17",
+    "MolecularWeight": "924.1"
+  },
+  "5281006": {
+    "InChIKey": "WDLWHQDACQUCJR-ZAMMOSSLSA-N",
+    "MolecularFormula": "C18H19N3O5S",
+    "MolecularWeight": "389.4"
+  },
+  "5281099": {
+    "InChIKey": "NCXMLFZGDNKEPB-BQGNJOPGSA-N",
+    "MolecularFormula": "C33H47NO13",
+    "MolecularWeight": "665.7"
+  },
+  "5281381": {
+    "InChIKey": "SAHHMCVYMGARBT-HEESEWQSSA-N",
+    "MolecularFormula": "C16H20N2O",
+    "MolecularWeight": "256.34"
+  },
+  "5281689": {
+    "InChIKey": "CXQRNYIKPJXYLU-ZHBVTVBMSA-N",
+    "MolecularFormula": "C9H17N",
+    "MolecularWeight": "139.24"
+  },
+  "5281802": {
+    "InChIKey": "FZVQFYVMVHEMPU-UHFFFAOYSA-N",
+    "MolecularFormula": "C26H29NO6",
+    "MolecularWeight": "451.5"
+  },
+  "5281875": {
+    "InChIKey": "IQVNEKKDSLOHHK-FNCQTZNRSA-N",
+    "MolecularFormula": "C25H24F6N4",
+    "MolecularWeight": "494.5"
+  },
+  "5282242": {
+    "InChIKey": "UNJFKXSSGBWRBZ-BJCIPQKHSA-N",
+    "MolecularFormula": "C15H14N4O6S2",
+    "MolecularWeight": "410.4"
+  },
+  "5284549": {
+    "InChIKey": "IAVUPMFITXYVAF-XPUUQOCRSA-N",
+    "MolecularFormula": "C10H16N2O4S3",
+    "MolecularWeight": "324.4"
+  },
+  "5298": {
+    "InChIKey": "PVYJZLYGTZKPJE-UHFFFAOYSA-N",
+    "MolecularFormula": "C25H22N4O8",
+    "MolecularWeight": "506.5"
+  },
+  "5311065": {
+    "InChIKey": "NFLWUMRGJYTJIN-PNIOQBSNSA-N",
+    "MolecularFormula": "C46H64N14O12S2",
+    "MolecularWeight": "1069.2"
+  },
+  "5324346": {
+    "InChIKey": "CJOFXWAVKWHTFT-XSFVSMFZSA-N",
+    "MolecularFormula": "C15H21F3N2O2",
+    "MolecularWeight": "318.33"
+  },
+  "53262278": {
+    "InChIKey": "HHJTWTPUPVQKNA-WNCZHHJSSA-N",
+    "MolecularFormula": "C24H47NO7",
+    "MolecularWeight": "461.6"
+  },
+  "5326875": {
+    "InChIKey": "UTQCSTJVMLODHM-RHCAYAJFSA-N",
+    "MolecularFormula": "C20H28N7O9PS",
+    "MolecularWeight": "573.5"
+  },
+  "5328": {
+    "InChIKey": "VACCAVUAMIDAGB-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H10N4O2S2",
+    "MolecularWeight": "270.3"
+  },
+  "5329": {
+    "InChIKey": "JLKIGFTWXXRPMT-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H11N3O3S",
+    "MolecularWeight": "253.28"
+  },
+  "5340": {
+    "InChIKey": "JNMRHUJNCSQMMB-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H9N3O2S2",
+    "MolecularWeight": "255.3"
+  },
+  "5362124": {
+    "InChIKey": "XPCFTKFZXHTYIP-PMACEKPBSA-N",
+    "MolecularFormula": "C24H28N2O5",
+    "MolecularWeight": "424.5"
+  },
+  "5362129": {
+    "InChIKey": "HDACQVRGBOVJII-JBDAPHQKSA-N",
+    "MolecularFormula": "C23H32N2O5",
+    "MolecularWeight": "416.5"
+  },
+  "5379": {
+    "InChIKey": "XUBOMFCQGDBHNK-UHFFFAOYSA-N",
+    "MolecularFormula": "C19H22FN3O4",
+    "MolecularWeight": "375.4"
+  },
+  "5388962": {
+    "InChIKey": "GBXSMTUPTTWBMN-XIRDDKMYSA-N",
+    "MolecularFormula": "C20H28N2O5",
+    "MolecularWeight": "376.4"
+  },
+  "5401": {
+    "InChIKey": "VCKUSRYTPJJLNI-UHFFFAOYSA-N",
+    "MolecularFormula": "C19H25N5O4",
+    "MolecularWeight": "387.4"
+  },
+  "5403": {
+    "InChIKey": "XWTYSIMOBUGWOL-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H19NO3",
+    "MolecularWeight": "225.28"
+  },
+  "54459": {
+    "InChIKey": "HPMRFMKYPGXPEP-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H12N2O2",
+    "MolecularWeight": "204.22"
+  },
+  "5460769": {
+    "InChIKey": "OYVAGSVQBOHSSS-UAPAGMARSA-O",
+    "MolecularFormula": "C55H84N17O21S3+",
+    "MolecularWeight": "1415.6"
+  },
+  "5462314": {
+    "InChIKey": "GINJFDRNADDBIN-FXQIFTODSA-N",
+    "MolecularFormula": "C11H22N3O6P",
+    "MolecularWeight": "323.28"
+  },
+  "5462501": {
+    "InChIKey": "LZFZMUMEGBBDTC-QEJZJMRPSA-N",
+    "MolecularFormula": "C18H24N2O5",
+    "MolecularWeight": "348.4"
+  },
+  "5464366": {
+    "InChIKey": "IHIIRQILYAXIOH-NUVDETJMSA-N",
+    "MolecularFormula": "C39H42N2O18",
+    "MolecularWeight": "826.8"
+  },
+  "5464391": {
+    "InChIKey": "DHQWPIXFALDZDJ-LPEZYDJLSA-N",
+    "MolecularFormula": "C35H36N2O14",
+    "MolecularWeight": "708.7"
+  },
+  "5479145": {
+    "InChIKey": "WPICPWIIIBCXCV-NJGWPHBESA-N",
+    "MolecularFormula": "C40H44N2O18",
+    "MolecularWeight": "840.8"
+  },
+  "5479539": {
+    "InChIKey": "DKOQGJHPHLTOJR-WHRDSVKCSA-N",
+    "MolecularFormula": "C22H22N6O5S2",
+    "MolecularWeight": "514.6"
+  },
+  "5481173": {
+    "InChIKey": "ORFOPKXBNMVMKC-DWVKKRMSSA-N",
+    "MolecularFormula": "C22H22N6O7S2",
+    "MolecularWeight": "546.6"
+  },
+  "5484727": {
+    "InChIKey": "VXFJYXUZANRPDJ-WTNASJBWSA-N",
+    "MolecularFormula": "C24H34N2O5",
+    "MolecularWeight": "430.5"
+  },
+  "5486953": {
+    "InChIKey": "LYDBAPNRLUDIAS-GPQHGYBDSA-N",
+    "MolecularFormula": "C27H29N3O13S",
+    "MolecularWeight": "635.6"
+  },
+  "54892": {
+    "InChIKey": "JSDRRTOADPPCHY-HSQYWUDLSA-N",
+    "MolecularFormula": "C25H30N2O5",
+    "MolecularWeight": "438.5"
+  },
+  "56330": {
+    "InChIKey": "HHHKFGXWKKUNCY-FHWLQOOXSA-N",
+    "MolecularFormula": "C22H31N3O5",
+    "MolecularWeight": "417.5"
+  },
+  "56927672": {
+    "InChIKey": "HXCHCVDVKSCDHU-LHTKNVSWSA-N",
+    "MolecularFormula": "C55H74IN3O21S4",
+    "MolecularWeight": "1368.4"
+  },
+  "5775": {
+    "InChIKey": "MRBDMNSDAVCSSF-UHFFFAOYSA-N",
+    "MolecularFormula": "C17H19N3O",
+    "MolecularWeight": "281.35"
+  },
+  "5826": {
+    "InChIKey": "KWTSXDURSIMDCE-QMMMGPOBSA-N",
+    "MolecularFormula": "C9H13N",
+    "MolecularWeight": "135.21"
+  },
+  "5852": {
+    "InChIKey": "VVNCNSJFMMFHPL-VKHMYHEASA-N",
+    "MolecularFormula": "C5H11NO2S",
+    "MolecularWeight": "149.21"
+  },
+  "5906": {
+    "InChIKey": "WXFIGDLSSYIKKV-RCOVLWMOSA-N",
+    "MolecularFormula": "C9H13NO2",
+    "MolecularWeight": "167.20"
+  },
+  "5939": {
+    "InChIKey": "XNCOSPRUTUOJCJ-UHFFFAOYSA-N",
+    "MolecularFormula": "C2H7N5",
+    "MolecularWeight": "101.11"
+  },
+  "5987": {
+    "InChIKey": "IIACRCGMVDHOTQ-UHFFFAOYSA-N",
+    "MolecularFormula": "H3NO3S",
+    "MolecularWeight": "97.10"
+  },
+  "60172": {
+    "InChIKey": "SUPKOOSCJHTBAH-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H12N5O4P",
+    "MolecularWeight": "273.19"
+  },
+  "6041": {
+    "InChIKey": "SONNWYBIRXJNDC-VIFPVBQESA-N",
+    "MolecularFormula": "C9H13NO2",
+    "MolecularWeight": "167.20"
+  },
+  "60464": {
+    "InChIKey": "DZZWHBIBMUVIIW-DTORHVGOSA-N",
+    "MolecularFormula": "C19H22F2N4O3",
+    "MolecularWeight": "392.4"
+  },
+  "60613": {
+    "InChIKey": "VWFCHDSQECPREK-LURJTMIESA-N",
+    "MolecularFormula": "C8H14N3O6P",
+    "MolecularWeight": "279.19"
+  },
+  "6082": {
+    "InChIKey": "WJAJPNHVVFWKKL-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H17NO3",
+    "MolecularWeight": "211.26"
+  },
+  "60947": {
+    "InChIKey": "COKMIXFXJJXBQG-NRFANRHFSA-N",
+    "MolecularFormula": "C22H36N2O5S",
+    "MolecularWeight": "440.6"
+  },
+  "6178111": {
+    "InChIKey": "SSOLNOMRVKKSON-UHFFFAOYSA-N",
+    "MolecularFormula": "C11H16ClN5",
+    "MolecularWeight": "253.73"
+  },
+  "62258": {
+    "InChIKey": "PUAQLLVFLMYYJJ-ZETCQYMHSA-N",
+    "MolecularFormula": "C9H11NO",
+    "MolecularWeight": "149.19"
+  },
+  "63": {
+    "InChIKey": "PCEJMSIIDXUDSN-UHFFFAOYSA-N",
+    "MolecularFormula": "C5H12N2O2",
+    "MolecularWeight": "132.16"
+  },
+  "6307": {
+    "InChIKey": "AGMMTXLNIQSRCG-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H12ClN3O3S",
+    "MolecularWeight": "289.74"
+  },
+  "6324668": {
+    "InChIKey": "CFMYXEVWODSLAX-QYIGHCJRSA-N",
+    "MolecularFormula": "C11H17N3O8",
+    "MolecularWeight": "319.27"
+  },
+  "6325284": {
+    "InChIKey": "ATSKDYKYMQVTGH-POBNKHOBSA-N",
+    "MolecularFormula": "C30H34N2O19",
+    "MolecularWeight": "726.6"
+  },
+  "6326972": {
+    "InChIKey": "FDKWRPBBCBCIGA-UHFFFAOYSA-N",
+    "MolecularFormula": "C3H6NO2Se",
+    "MolecularWeight": "167.06"
+  },
+  "6335986": {
+    "InChIKey": "WYUSVOMTXWRGEK-HBWVYFAYSA-N",
+    "MolecularFormula": "C15H17N5O6S2",
+    "MolecularWeight": "427.5"
+  },
+  "638793": {
+    "InChIKey": "XLXSAKCOAKORKW-AQJXLSMYSA-N",
+    "MolecularFormula": "C55H75N17O13",
+    "MolecularWeight": "1182.3"
+  },
+  "6435415": {
+    "InChIKey": "DHSUYTOATWAVLW-WFVMDLQDSA-N",
+    "MolecularFormula": "C16H26N2O5S",
+    "MolecularWeight": "358.5"
+  },
+  "6477011": {
+    "InChIKey": "YIWJEBPTHXRHQF-LLMLIWGDSA-N",
+    "MolecularFormula": "C25H31N3O4",
+    "MolecularWeight": "437.5"
+  },
+  "65028": {
+    "InChIKey": "VSZGPKBBMSAYNT-RRFJBIMHSA-N",
+    "MolecularFormula": "C16H28N2O4",
+    "MolecularWeight": "312.40"
+  },
+  "652": {
+    "InChIKey": "KCEGBPIYGIWCDH-UHFFFAOYSA-N",
+    "MolecularFormula": "C9H20N2O2",
+    "MolecularWeight": "188.27"
+  },
+  "6526396": {
+    "InChIKey": "LTINZAODLRIQIX-FBXRGJNPSA-N",
+    "MolecularFormula": "C21H27N5O9S2",
+    "MolecularWeight": "557.6"
+  },
+  "6536774": {
+    "InChIKey": "XAKKNLNAJBNLPC-MAYKBZFQSA-N",
+    "MolecularFormula": "C20H25FN8O6S2",
+    "MolecularWeight": "556.6"
+  },
+  "6537446": {
+    "InChIKey": "JUVHVMCKLDZLGN-TVNFHGJBSA-N",
+    "MolecularFormula": "C21H26N8O6S2",
+    "MolecularWeight": "550.6"
+  },
+  "65576": {
+    "InChIKey": "XYNPYHXGMWJBLV-VXPJTDKGSA-N",
+    "MolecularFormula": "C27H45NO2",
+    "MolecularWeight": "415.7"
+  },
+  "657181": {
+    "InChIKey": "GFIJNRVAKGFPGQ-LIJARHBVSA-N",
+    "MolecularFormula": "C59H84N16O12",
+    "MolecularWeight": "1209.4"
+  },
+  "66895": {
+    "InChIKey": "ABBQGOCHXSPKHJ-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H13N5O2S",
+    "MolecularWeight": "291.33"
+  },
+  "68134": {
+    "InChIKey": "JMQMNWIBUCGUDO-WHFBIAKZSA-N",
+    "MolecularFormula": "C7H14N2O4S2",
+    "MolecularWeight": "254.3"
+  },
+  "6857423": {
+    "InChIKey": "ZBGPYVZLYBDXKO-HILBYHGXSA-N",
+    "MolecularFormula": "C21H41N5O7",
+    "MolecularWeight": "475.6"
+  },
+  "68617": {
+    "InChIKey": "VGKDLMBJGBXTGI-SJCJKPOMSA-N",
+    "MolecularFormula": "C17H17Cl2N",
+    "MolecularWeight": "306.2"
+  },
+  "68844": {
+    "InChIKey": "HCRKCZRJWPKOAR-JTQLQIEISA-N",
+    "MolecularFormula": "C12H21N3O5S3",
+    "MolecularWeight": "383.5"
+  },
+  "6915944": {
+    "InChIKey": "RTXOFQZKPXMALH-GHXIOONMSA-N",
+    "MolecularFormula": "C14H13N5O5S2",
+    "MolecularWeight": "395.4"
+  },
+  "6917698": {
+    "InChIKey": "DCSUBABJRXZOMT-IRLDBZIGSA-N",
+    "MolecularFormula": "C23H29ClFN3O4",
+    "MolecularWeight": "465.9"
+  },
+  "6926": {
+    "InChIKey": "ZMCHBSMFKQYNKA-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H7NO3S",
+    "MolecularWeight": "173.19"
+  },
+  "70678548": {
+    "InChIKey": "ISIJQGZVIFYXMD-QMUWONGRSA-M",
+    "MolecularFormula": "C58H84CoN16O11-2",
+    "MolecularWeight": "1240.3"
+  },
+  "70678549": {
+    "InChIKey": "VCICJZVAXMFZQF-QMUWONGRSA-M",
+    "MolecularFormula": "C58H85CoN16O14P-2",
+    "MolecularWeight": "1320.3"
+  },
+  "70678550": {
+    "InChIKey": "ZMSCGGBZRFSSTL-NQYRMHKHSA-M",
+    "MolecularFormula": "C55H77CoN15O11-2",
+    "MolecularWeight": "1183.2"
+  },
+  "7099": {
+    "InChIKey": "WDVSHHCDHLJJJR-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H11N3",
+    "MolecularWeight": "209.25"
+  },
+  "7102": {
+    "InChIKey": "DMVOXQPQNTYEKQ-UHFFFAOYSA-N",
+    "MolecularFormula": "C12H11N",
+    "MolecularWeight": "169.22"
+  },
+  "71296128": {
+    "InChIKey": "MLGUXXSGWWCJQW-KBPBESRZSA-N",
+    "MolecularFormula": "C14H12O4",
+    "MolecularWeight": "244.24"
+  },
+  "71447": {
+    "InChIKey": "SOROUYSPFADXSN-SUWVAFIASA-N",
+    "MolecularFormula": "C24H23N3O6S",
+    "MolecularWeight": "481.5"
+  },
+  "72193633": {
+    "InChIKey": "LRLXAXGCQUOKIO-LHYVIZPNSA-N",
+    "MolecularFormula": "C29H40N8O5",
+    "MolecularWeight": "580.7"
+  },
+  "72392": {
+    "InChIKey": "SYJXFKPQNSDJLI-HKEUSBCWSA-N",
+    "MolecularFormula": "C12H26N4O6",
+    "MolecularWeight": "322.36"
+  },
+  "72429": {
+    "InChIKey": "GDBQQVLCIARPGH-ULQDDVLXSA-N",
+    "MolecularFormula": "C20H38N6O4",
+    "MolecularWeight": "426.6"
+  },
+  "73357": {
+    "InChIKey": "IUAYMJGZBVDSGL-XNNAEKOYSA-N",
+    "MolecularFormula": "C60H92N12O10",
+    "MolecularWeight": "1141.4"
+  },
+  "7408": {
+    "InChIKey": "RQEUFEKYXDPUSK-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H11N",
+    "MolecularWeight": "121.18"
+  },
+  "7935": {
+    "InChIKey": "WZCQRUWWHSTZEM-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H8N2",
+    "MolecularWeight": "108.14"
+  },
+  "8102": {
+    "InChIKey": "BMVXCPBXGZKUPN-UHFFFAOYSA-N",
+    "MolecularFormula": "C6H15N",
+    "MolecularWeight": "101.19"
+  },
+  "8143": {
+    "InChIKey": "IOQPZZOEVPZRBK-UHFFFAOYSA-N",
+    "MolecularFormula": "C8H19N",
+    "MolecularWeight": "129.24"
+  },
+  "8249": {
+    "InChIKey": "ICFJFFQQTFMIBG-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H15N5",
+    "MolecularWeight": "205.26"
+  },
+  "8378": {
+    "InChIKey": "PGBHMTALBVVCIT-VCIWKGPPSA-N",
+    "MolecularFormula": "C23H46N6O13",
+    "MolecularWeight": "614.6"
+  },
+  "854067": {
+    "InChIKey": "YRCWQPVGYLYSOX-VIFPVBQESA-N",
+    "MolecularFormula": "C9H13NO2",
+    "MolecularWeight": "167.20"
+  },
+  "8612": {
+    "InChIKey": "VDANGULDQQJODZ-UHFFFAOYSA-N",
+    "MolecularFormula": "C13H19ClN2O2",
+    "MolecularWeight": "270.75"
+  },
+  "86583337": {
+    "InChIKey": "KKMQGSAQSNGBOY-RKLWJJNISA-N",
+    "MolecularFormula": "C19H28N8O6",
+    "MolecularWeight": "464.5"
+  },
+  "88513": {
+    "InChIKey": "UCNNZELZXFXXJQ-BZSNNMDCSA-N",
+    "MolecularFormula": "C21H33N3O5",
+    "MolecularWeight": "407.5"
+  },
+  "89": {
+    "InChIKey": "VCKPUUFAIGNJHC-UHFFFAOYSA-N",
+    "MolecularFormula": "C10H12N2O4",
+    "MolecularWeight": "224.21"
+  },
+  "91588": {
+    "InChIKey": "IBRKLUSXDYATLG-LURJTMIESA-N",
+    "MolecularFormula": "C10H13NO2",
+    "MolecularWeight": "179.22"
+  },
+  "9444": {
+    "InChIKey": "NMUSYJAQQFHJEW-KVTDHHQDSA-N",
+    "MolecularFormula": "C8H12N4O5",
+    "MolecularWeight": "244.20"
+  },
+  "9543319": {
+    "InChIKey": "KACPVQQHDVBVFC-OIFXTYEKSA-L",
+    "MolecularFormula": "C7H5NO5-2",
+    "MolecularWeight": "183.12"
+  },
+  "9548610": {
+    "InChIKey": "KSIJECNNZVKMJG-UHFFFAOYSA-M",
+    "MolecularFormula": "C6H10NO3-",
+    "MolecularWeight": "144.15"
+  },
+  "9552079": {
+    "InChIKey": "GHXZTYHSJHQHIJ-UHFFFAOYSA-N",
+    "MolecularFormula": "C22H30Cl2N10",
+    "MolecularWeight": "505.4"
+  },
+  "9571080": {
+    "InChIKey": "QDUIJCOKQCCXQY-WHJQOFBOSA-N",
+    "MolecularFormula": "C19H17N9O5S2",
+    "MolecularWeight": "515.5"
+  },
+  "9576089": {
+    "InChIKey": "XUHLIQGRKRUKPH-DYEAUMGKSA-N",
+    "MolecularFormula": "C6H11NO3S",
+    "MolecularWeight": "177.22"
+  },
+  "96356": {
+    "InChIKey": "RJXQSIKBGKVNRT-UHFFFAOYSA-N",
+    "MolecularFormula": "C4H11Cl2N2O2P",
+    "MolecularWeight": "221.02"
+  },
+  "9679": {
+    "InChIKey": "DVNYTAVYBRSTGK-UHFFFAOYSA-N",
+    "MolecularFormula": "C4H6N4O",
+    "MolecularWeight": "126.12"
+  },
+  "97535": {
+    "InChIKey": "FXEUKVKGTKDDIQ-UWVGGRQHSA-N",
+    "MolecularFormula": "C16H19N5O10S",
+    "MolecularWeight": "473.4"
+  },
+  "9830520": {
+    "InChIKey": "ZINFAXPQMLDEEJ-GFVOIPPFSA-N",
+    "MolecularFormula": "C19H22N8O6S2",
+    "MolecularWeight": "522.6"
+  },
+  "99735": {
+    "InChIKey": "RANONBLIHMVXAJ-UHFFFAOYSA-N",
+    "MolecularFormula": "C7H15Cl2N2O3P",
+    "MolecularWeight": "277.08"
+  }
+}

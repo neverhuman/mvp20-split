@@ -1,0 +1,153 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-molecule-role-ranker",
+  "kpi_id": "amphora-molecule-role-ranker-phase0-known-answer-v1",
+  "capability": "Binary role classification (epoxy resin vs. amine hardener) from RDKit-normalized MoleculeFactsV1, with deterministic structural inference plus a frozen fitted logistic-regression baseline",
+  "authority_ceiling": "LIMITED_SANITY",
+  "solver_use_ceiling": "AUDIT_ONLY",
+  "population": "Defined, single-component monodisperse epoxy resins and amine hardeners in the applicability domain molecular_weight_g_mol in [40.0, 1000.0]; dual-functional glycidylamines and no-reactive-group molecules are hostile-null out-of-scope; commercial polydisperse grades remain MEASURED_ONLY",
+  "split_methodology": "Structural-ground-truth held-out: 24 in-domain resin/hardener training records with 6 dual-functional ambiguous, 6 out-of-domain, and 3 commercial-grade hostile nulls held out; per-record source citations from PubChem CIDs and supplier TDSs",
+  "theory": "Two-part epoxy-amine cure chemistry: primary functional groups define role. has_oxirane=true → epoxy resin; has_reactive_amine_hydrogen=true → amine hardener; both → ambiguous; neither → out_of_domain. Fitted logistic regression over z-scored structural features (intercept, molecular_weight_g_mol, oxirane_ring_count, reactive_amine_hydrogen_count, has_oxirane, has_reactive_amine_hydrogen) reproduces the same rule with linearly-separable coefficients.",
+  "metrics": [
+    {
+      "name": "structural_inference_agreement_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "sample_size": 24,
+      "passed": true,
+      "authority": "LIMITED_SANITY"
+    },
+    {
+      "name": "ambiguous_rejection_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "sample_size": 6,
+      "passed": true,
+      "authority": "AUDIT_ONLY"
+    },
+    {
+      "name": "out_of_domain_rejection_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "sample_size": 6,
+      "passed": true,
+      "authority": "AUDIT_ONLY"
+    },
+    {
+      "name": "measured_only_lock_preservation_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "sample_size": 3,
+      "passed": true,
+      "authority": "AUDIT_ONLY"
+    },
+    {
+      "name": "unauthorized_objective_boundary_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "sample_size": 39,
+      "passed": true,
+      "authority": "AUDIT_ONLY"
+    },
+    {
+      "name": "fitted_model_baseline_agreement_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "sample_size": 24,
+      "passed": true,
+      "authority": "LIMITED_SANITY"
+    },
+    {
+      "name": "expected_calibration_error",
+      "direction": "MINIMIZE",
+      "reported_ceiling": 0.10,
+      "observed": 0.0019924703593823217,
+      "sample_size": 24,
+      "passed_reporting_only": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Reported observationally at Phase-0. Phase-1 lock at config/benchmark-locks/amphora-molecule-role-ranker.v1.json will gate at threshold with an independently double-labeled expert reference."
+    }
+  ],
+  "fitted_model_artifact": {
+    "schema": "amphora.molecule-role-logistic-regression.v1",
+    "feature_order": [
+      "intercept",
+      "molecular_weight_g_mol",
+      "oxirane_ring_count",
+      "reactive_amine_hydrogen_count",
+      "has_oxirane",
+      "has_reactive_amine_hydrogen"
+    ],
+    "coefficients": [
+      0.0398277,
+      0.112292,
+      0.609159,
+      -0.821644,
+      0.986325,
+      -0.986325
+    ],
+    "standardization": {
+      "means": {
+        "molecular_weight_g_mol": 164.035,
+        "oxirane_ring_count": 0.875,
+        "reactive_amine_hydrogen_count": 2.25,
+        "has_oxirane": 0.5,
+        "has_reactive_amine_hydrogen": 0.5
+      },
+      "scales": {
+        "molecular_weight_g_mol": 84.8282,
+        "oxirane_ring_count": 1.09211,
+        "reactive_amine_hydrogen_count": 2.41954,
+        "has_oxirane": 0.5,
+        "has_reactive_amine_hydrogen": 0.5
+      }
+    },
+    "applicability_domain": {
+      "allowed_roles": ["resin", "hardener"],
+      "molecular_weight_g_mol": {"min": 40.0, "max": 1000.0},
+      "exclude_dual_role": true
+    },
+    "training_provenance": {
+      "training_method": "scikit_learn_logistic_regression_L2_lbfgs_C1_over_zscored_structural_features",
+      "toolkit": "scikit-learn 1.7.2, numpy",
+      "training_records_labeled_resin": 12,
+      "training_records_labeled_hardener": 12,
+      "training_accuracy": 1.0,
+      "training_data_scope": "amphora-molecule-role-ranker/reference/phase0-role-known-answer.v1.json records with class in {resin, hardener}"
+    }
+  },
+  "claim_locks": {
+    "role_rank_is_not_qualification_or_procurement_authority": true,
+    "ambiguous_role_is_audit_only": true,
+    "commercial_product_is_measured_only": true,
+    "polydisperse_grade_is_measured_only": true,
+    "no_optimizer_authority": true,
+    "no_release_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true
+  },
+  "benchmark_lock_sha256": "6960c8cf8f4296aeed47e445148d127f6f5ff51921adb6393780313f84809170",
+  "dataset_fixture_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "f2a21f74e03b6b20f53fb10d4cdb6f2b477ce2b9a6e5200947c1ed91ad3a136a",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "authorized-engine-evidence-context binding the fitted model artifact to Phase-1 receipts before the module can populate objective_values.role_fit at runtime"
+  ]
+}

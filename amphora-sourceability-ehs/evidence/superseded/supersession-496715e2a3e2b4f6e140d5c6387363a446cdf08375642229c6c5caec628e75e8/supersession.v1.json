@@ -1,0 +1,26 @@
+{
+  "archive_root": "evidence/superseded/supersession-496715e2a3e2b4f6e140d5c6387363a446cdf08375642229c6c5caec628e75e8",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "a2c850087f2e1b5f97cb7a7a7ff98b9c4bb3c7409650c8aac4c9b93fd7d0a4ac",
+    "ip/disclosure-log.v1.json": "71eba08673a3b10ea613983bb77aa39b4d6d29635f278efd60c4fcf1c53b6806",
+    "ip/prior-art.v1.json": "3eb73904bb339e64f07301b406b177bdf399b438eafb55fa724b98e808da8738",
+    "ip/technical-dossier.v1.json": "fa4a29efcf170f08798dfca15de822d3dd6424555f008f0ef901c63a7cf2cde4",
+    "phase0/benchmark/benchmark-lock.v1.json": "161332c7d1c9abb45db9ba1ec92717381134888cb53c799118750cb29db8e7e0",
+    "phase0/bundle.v1.json": "9e057a4425038dbae6f8000e749a764d76517355e3438568bbc3ebd9cb6353ad",
+    "phase0/dataset/dataset-manifest.v1.json": "20166283160742d3e9cf31381ef37b88a8fb96d596f4685c6f771556a9eef44e",
+    "phase0/promotion/policy.v1.json": "e8f53aad0b79f0863598e3624d2dd766cdc430f25bb1d93c88d2921530e4663e",
+    "phase0/raw/SHA256SUMS": "18a2b2492d27fbb78080356d518b29c9efa04687fa5cfc1d13f07c87b108e168",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "4038a15f67f5cd270c4c4f816ce17784d68f1ceecf934c4c7df484b1633c673d",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v1.json": "74821caca213fa9cdcb2e1b6fdd6fd15bcca7fc6e74d95eb1ec18159e0491e7c",
+    "phase0/split/split-manifest.v1.json": "67a71f5073781c4d9c6c85f221c537b3ece232b614f0b90683d0ad7e8d50af47"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-sourceability-ehs",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-496715e2a3e2b4f6e140d5c6387363a446cdf08375642229c6c5caec628e75e8",
+  "unsigned_preparation_only": true
+}

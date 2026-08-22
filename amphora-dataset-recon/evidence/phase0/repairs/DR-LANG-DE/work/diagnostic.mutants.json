@@ -1,0 +1,67 @@
+{
+  "license_text_diverges": {
+    "expected_rule": "license_text_matches_live_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Overwrote DR-LANG-DE-01's license_evidence_quote with a fabricated 'fully open, no subscription' claim contradicting the recorded WebFetch evidence (which states a subscription/agreement-gated access model).",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-DE-01",
+        "reason": "DR-LANG-DE-01: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "literal_english_translation_query": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native de query string 'Epoxidharz Amin Härter Härtungskinetik Datensatz' with its literal English gloss, while leaving language:'de' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "de query field is a literal English translation or contains no German marker vocabulary: 'epoxy resin amine hardener cure kinetics dataset'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "missing_recorded_query": {
+    "expected_rule": "citation_has_recorded_query_and_result",
+    "expected_rule_fired": true,
+    "how_planted": "Scrubbed every occurrence of DR-LANG-DE-01's url (https://ac.dechema.de/dwt+.html) from a copy of this fire's search-record queries/results.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-DE-01",
+        "reason": "DR-LANG-DE-01: url https://ac.dechema.de/dwt+.html does not appear in any recorded search-record query/result this fire",
+        "rule": "citation_has_recorded_query_and_result"
+      }
+    ]
+  },
+  "native_citation_not_verbatim": {
+    "expected_rule": "native_citation_verbatim_in_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced DR-LANG-DE-06's native_citation (the exact German dissertation title) with an English paraphrase, simulating a silently-translated/paraphrased citation.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-DE-06",
+        "reason": "DR-LANG-DE-06: native_citation 'Modifiers and new flame retardants for epoxy resin formulations' does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "native_citation_verbatim_in_evidence"
+      }
+    ]
+  },
+  "rediscovery_dropped": {
+    "expected_rule": "rediscovery_recall",
+    "expected_rule_fired": true,
+    "how_planted": "Injected a SYNTHETIC previously-supplied candidate id ('DE-PRIOR-TEST') into the checker's previously_supplied_ids input -- since this fire genuinely found zero real prior de candidates (see intake_manifest), a synthetic id is required to prove this rule is a real, non-vacuous check rather than one that trivially never fires on an empty input list.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DE-PRIOR-TEST",
+        "reason": "previously-supplied candidate DE-PRIOR-TEST was neither rediscovered (no disposition entry with rediscovers==DE-PRIOR-TEST) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      }
+    ]
+  }
+}

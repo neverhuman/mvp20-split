@@ -1,0 +1,786 @@
+{
+  "authority": "AUDIT_ONLY",
+  "baseline_known_answer": {
+    "all_exact": true,
+    "lane": "morgan_r2_2048/tanimoto",
+    "per_candidate": [
+      {
+        "abs_delta": 0.0,
+        "candidate": "IPDA",
+        "exact": true,
+        "nn_tanimoto": 0.16666666666666666,
+        "signed_receipt_nn": 0.16666666666666666
+      },
+      {
+        "abs_delta": 0.0,
+        "candidate": "DDS",
+        "exact": true,
+        "nn_tanimoto": 0.39285714285714285,
+        "signed_receipt_nn": 0.39285714285714285
+      },
+      {
+        "abs_delta": 0.0,
+        "candidate": "DETA",
+        "exact": true,
+        "nn_tanimoto": 0.16666666666666666,
+        "signed_receipt_nn": 0.16666666666666666
+      },
+      {
+        "abs_delta": 0.0,
+        "candidate": "TETA",
+        "exact": true,
+        "nn_tanimoto": 0.15789473684210525,
+        "signed_receipt_nn": 0.15789473684210525
+      },
+      {
+        "abs_delta": 0.0,
+        "candidate": "m-XDA",
+        "exact": true,
+        "nn_tanimoto": 0.23809523809523808,
+        "signed_receipt_nn": 0.23809523809523808
+      }
+    ]
+  },
+  "closes": [
+    "Fingerprint-choice sensitivity of the signed novelty verdict",
+    "Similarity-coefficient sensitivity (Tanimoto vs Dice) of the 0.40-threshold classification"
+  ],
+  "coefficients": [
+    "tanimoto",
+    "dice",
+    "cosine"
+  ],
+  "corpus": {
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "n_members": 443,
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "scoring": false,
+    "source": "OpenPoly literature dataset (Ma et al. 2023), experimental-Tg external-validation family",
+    "structure_set_sha256": "25b7f35c26594d7be5454826c0f399d7716131214c3c314646930257cf560304",
+    "wildcard_cap": "'*'->'C' (methyl end-cap)"
+  },
+  "does_not_close": [
+    "USPTO/legal prior-art novelty",
+    "comprehensive prior-art corpus (ChEMBL/PubChem/USPTO)",
+    "exact reconstruction of the prior 442-member LOO calibration distribution (featurization detail; candidate NN is reproduced exactly, reference-side LOO is internally recomputed per fingerprint)"
+  ],
+  "fail_closed": {
+    "all_controls_non_novel": true,
+    "mutation_exact_member_flips_to_non_novel": true,
+    "mutation_member_nn": 1.0,
+    "positive_controls": [
+      {
+        "classified_non_novel": true,
+        "control": "polyethersulfone",
+        "expected": "NON_NOVEL",
+        "found": true,
+        "nn_tanimoto": 1.0
+      },
+      {
+        "classified_non_novel": true,
+        "control": "poly(p-xylylene)",
+        "expected": "NON_NOVEL",
+        "found": true,
+        "nn_tanimoto": 1.0
+      },
+      {
+        "classified_non_novel": true,
+        "control": "PEI",
+        "expected": "NON_NOVEL",
+        "found": true,
+        "nn_tanimoto": 1.0
+      }
+    ]
+  },
+  "fingerprints": [
+    "morgan_r2_2048",
+    "morgan_r3_2048",
+    "rdkit_topological",
+    "maccs_166",
+    "atompair_2048",
+    "torsion_2048"
+  ],
+  "headline": "Baseline Morgan(r2,2048)/Tanimoto reproduces every signed-receipt candidate NN EXACTLY. The signed 5/5-NOVEL DGEBA epoxy-amine verdict is ROBUST within the declared ECFP/Morgan-Tanimoto family (radius 2 & 3: max candidate NN = 0.3929 < 0.40), but is NOT representation-invariant: the 0.40 Bajusz-Racz-Heberger cutoff does not transfer to MACCS/path/torsion fingerprints or Dice/Cosine coefficients (worst-case max NN = 0.7907). Documents that the novelty threshold is coupled to the Morgan/Tanimoto representation and DDS is the consistent borderline candidate.",
+  "hypothesis_evaluation": {
+    "interpretation": "Corroborated WITHIN the declared ECFP/Morgan-Tanimoto representation (radius 2 & 3 both 5/5 novel; candidate NN reproduced exactly). NOT representation-invariant: the 0.40 cutoff is coupled to the Morgan/Tanimoto choice and must not be read as fingerprint-agnostic novelty. Ceiling unchanged - structural corpus-distance only, NOT USPTO prior-art novelty or patentability; corpus is OpenPoly-only.",
+    "signed_claim": "5/5 canonical DGEBA epoxy-amine hardeners NOVEL (NN Tanimoto < 0.40) vs OpenPoly corpus",
+    "verdict": "CORROBORATED_WITHIN_DECLARED_ECFP_TANIMOTO_FAMILY__THRESHOLD_IS_REPRESENTATION_SPECIFIC"
+  },
+  "module": "amphora-molecule-novelty",
+  "non_circularity": "Baseline lane reproduces the independently-signed per-candidate NN Tanimoto to <1e-12 before any extension; corpus is the SHA-locked rights-clean OpenPoly CSV, not re-derived from the receipt.",
+  "novelty_threshold": {
+    "novel_T_lt": 0.4,
+    "source": "Bajusz-Racz-Heberger 2015 J Cheminform 7:20"
+  },
+  "purpose": "AUDIT_ONLY second signal: test whether the signed Phase-0 novelty verdict is an artifact of one fingerprint/coefficient choice, and delimit the representation scope of the 0.40 threshold across published alternatives.",
+  "rdkit_version": "2026.03.2",
+  "rights_posture": {
+    "corpus": "DERIVATIVE_ALLOWED rights-clean OpenPoly (non-scoring reference)",
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_signed_phase0_kpi": false
+  },
+  "robustness_grid": [
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.39285714285714285,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.11286681715575621
+        },
+        "DETA": {
+          "nn": 0.16666666666666666,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.002257336343115124
+        },
+        "IPDA": {
+          "nn": 0.16666666666666666,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.002257336343115124
+        },
+        "TETA": {
+          "nn": 0.15789473684210525,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "m-XDA": {
+          "nn": 0.23809523809523808,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.020316027088036117
+        }
+      },
+      "coefficient": "tanimoto",
+      "corpus_loo_nn_mean": 0.7089627035108604,
+      "corpus_loo_nn_median": 0.6666666666666666,
+      "fingerprint": "morgan_r2_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.5641025641025641,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.11286681715575621
+        },
+        "DETA": {
+          "nn": 0.2857142857142857,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.002257336343115124
+        },
+        "IPDA": {
+          "nn": 0.2857142857142857,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.002257336343115124
+        },
+        "TETA": {
+          "nn": 0.2727272727272727,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "m-XDA": {
+          "nn": 0.38461538461538464,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.020316027088036117
+        }
+      },
+      "coefficient": "dice",
+      "corpus_loo_nn_mean": 0.8030976581244248,
+      "corpus_loo_nn_median": 0.8,
+      "fingerprint": "morgan_r2_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.5734146386569556,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.11286681715575621
+        },
+        "DETA": {
+          "nn": 0.28603877677367767,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "IPDA": {
+          "nn": 0.300964632714423,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "TETA": {
+          "nn": 0.2727272727272727,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "m-XDA": {
+          "nn": 0.3892494720807615,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.01805869074492099
+        }
+      },
+      "coefficient": "cosine",
+      "corpus_loo_nn_mean": 0.8072498652344107,
+      "corpus_loo_nn_median": 0.8001976040538967,
+      "fingerprint": "morgan_r2_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.3333333333333333,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.12866817155756208
+        },
+        "DETA": {
+          "nn": 0.15,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        },
+        "IPDA": {
+          "nn": 0.13513513513513514,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "TETA": {
+          "nn": 0.13636363636363635,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "m-XDA": {
+          "nn": 0.18518518518518517,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.022573363431151242
+        }
+      },
+      "coefficient": "tanimoto",
+      "corpus_loo_nn_mean": 0.6574787134707368,
+      "corpus_loo_nn_median": 0.5666666666666667,
+      "fingerprint": "morgan_r3_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.5,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.12866817155756208
+        },
+        "DETA": {
+          "nn": 0.2608695652173913,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        },
+        "IPDA": {
+          "nn": 0.23809523809523808,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "TETA": {
+          "nn": 0.24,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "m-XDA": {
+          "nn": 0.3125,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.022573363431151242
+        }
+      },
+      "coefficient": "dice",
+      "corpus_loo_nn_mean": 0.7589866088511769,
+      "corpus_loo_nn_median": 0.723404255319149,
+      "fingerprint": "morgan_r3_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.5095101710852533,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.11060948081264109
+        },
+        "DETA": {
+          "nn": 0.26111648393354675,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "IPDA": {
+          "nn": 0.2525381361380527,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "TETA": {
+          "nn": 0.24174688920761409,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.002257336343115124
+        },
+        "m-XDA": {
+          "nn": 0.31814238148788887,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.020316027088036117
+        }
+      },
+      "coefficient": "cosine",
+      "corpus_loo_nn_mean": 0.7642604903366158,
+      "corpus_loo_nn_median": 0.7280252083092641,
+      "fingerprint": "morgan_r3_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.4972067039106145,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.12641083521444696
+        },
+        "DETA": {
+          "nn": 0.38461538461538464,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.05191873589164785
+        },
+        "IPDA": {
+          "nn": 0.3546099290780142,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.03837471783295711
+        },
+        "TETA": {
+          "nn": 0.29411764705882354,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.01805869074492099
+        },
+        "m-XDA": {
+          "nn": 0.40404040404040403,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.06997742663656885
+        }
+      },
+      "coefficient": "tanimoto",
+      "corpus_loo_nn_mean": 0.8390806406592066,
+      "corpus_loo_nn_median": 1.0,
+      "fingerprint": "rdkit_topological"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.664179104477612,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.12641083521444696
+        },
+        "DETA": {
+          "nn": 0.5555555555555556,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.05191873589164785
+        },
+        "IPDA": {
+          "nn": 0.5235602094240838,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.03837471783295711
+        },
+        "TETA": {
+          "nn": 0.45454545454545453,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.01805869074492099
+        },
+        "m-XDA": {
+          "nn": 0.5755395683453237,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.06997742663656885
+        }
+      },
+      "coefficient": "dice",
+      "corpus_loo_nn_mean": 0.8937166833731961,
+      "corpus_loo_nn_median": 1.0,
+      "fingerprint": "rdkit_topological"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.6724886142830077,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.11060948081264109
+        },
+        "DETA": {
+          "nn": 0.5590169943749475,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.040632054176072234
+        },
+        "IPDA": {
+          "nn": 0.5692855849765747,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.045146726862302484
+        },
+        "TETA": {
+          "nn": 0.472455591261534,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.01805869074492099
+        },
+        "m-XDA": {
+          "nn": 0.6150208053525901,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.0654627539503386
+        }
+      },
+      "coefficient": "cosine",
+      "corpus_loo_nn_mean": 0.900372604104297,
+      "corpus_loo_nn_median": 1.0,
+      "fingerprint": "rdkit_topological"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.6,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.04740406320541761
+        },
+        "DETA": {
+          "nn": 0.5384615384615384,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.022573363431151242
+        },
+        "IPDA": {
+          "nn": 0.4666666666666667,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "TETA": {
+          "nn": 0.5384615384615384,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.022573363431151242
+        },
+        "m-XDA": {
+          "nn": 0.3684210526315789,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        }
+      },
+      "coefficient": "tanimoto",
+      "corpus_loo_nn_mean": 0.8821194434656815,
+      "corpus_loo_nn_median": 0.9375,
+      "fingerprint": "maccs_166"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.75,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.04740406320541761
+        },
+        "DETA": {
+          "nn": 0.7,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.022573363431151242
+        },
+        "IPDA": {
+          "nn": 0.6363636363636364,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.004514672686230248
+        },
+        "TETA": {
+          "nn": 0.7,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.022573363431151242
+        },
+        "m-XDA": {
+          "nn": 0.5384615384615384,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.0
+        }
+      },
+      "coefficient": "dice",
+      "corpus_loo_nn_mean": 0.9310499190540402,
+      "corpus_loo_nn_median": 0.967741935483871,
+      "fingerprint": "maccs_166"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.7503664793768668,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.03611738148984198
+        },
+        "DETA": {
+          "nn": 0.7237468644557459,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.024830699774266364
+        },
+        "IPDA": {
+          "nn": 0.6559297999321455,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        },
+        "TETA": {
+          "nn": 0.7237468644557459,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.024830699774266364
+        },
+        "m-XDA": {
+          "nn": 0.5645344869818583,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.0
+        }
+      },
+      "coefficient": "cosine",
+      "corpus_loo_nn_mean": 0.9336201836591408,
+      "corpus_loo_nn_median": 0.9682458365518541,
+      "fingerprint": "maccs_166"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.5151515151515151,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.18961625282167044
+        },
+        "DETA": {
+          "nn": 0.17142857142857143,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "IPDA": {
+          "nn": 0.2777777777777778,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        },
+        "TETA": {
+          "nn": 0.1780821917808219,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "m-XDA": {
+          "nn": 0.27419354838709675,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        }
+      },
+      "coefficient": "tanimoto",
+      "corpus_loo_nn_mean": 0.7709759763864851,
+      "corpus_loo_nn_median": 0.7874015748031497,
+      "fingerprint": "atompair_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.68,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.18961625282167044
+        },
+        "DETA": {
+          "nn": 0.2926829268292683,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "IPDA": {
+          "nn": 0.43478260869565216,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        },
+        "TETA": {
+          "nn": 0.3023255813953488,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "m-XDA": {
+          "nn": 0.43037974683544306,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        }
+      },
+      "coefficient": "dice",
+      "corpus_loo_nn_mean": 0.8489578383575037,
+      "corpus_loo_nn_median": 0.8810572687224669,
+      "fingerprint": "atompair_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.6834257143762642,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.1873589164785553
+        },
+        "DETA": {
+          "nn": 0.29277002188455997,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "IPDA": {
+          "nn": 0.45643546458763845,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        },
+        "TETA": {
+          "nn": 0.304909610991814,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.0
+        },
+        "m-XDA": {
+          "nn": 0.43041423101055837,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.006772009029345372
+        }
+      },
+      "coefficient": "cosine",
+      "corpus_loo_nn_mean": 0.8525592091292205,
+      "corpus_loo_nn_median": 0.8814764755799085,
+      "fingerprint": "atompair_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.6538461538461539,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.35665914221218964
+        },
+        "DETA": {
+          "nn": 0.18181818181818182,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.024830699774266364
+        },
+        "IPDA": {
+          "nn": 0.1794871794871795,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.024830699774266364
+        },
+        "TETA": {
+          "nn": 0.15384615384615385,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.013544018058690745
+        },
+        "m-XDA": {
+          "nn": 0.2608695652173913,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.056433408577878104
+        }
+      },
+      "coefficient": "tanimoto",
+      "corpus_loo_nn_mean": 0.7622358876881399,
+      "corpus_loo_nn_median": 0.8888888888888888,
+      "fingerprint": "torsion_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.7906976744186046,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.35665914221218964
+        },
+        "DETA": {
+          "nn": 0.3076923076923077,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.024830699774266364
+        },
+        "IPDA": {
+          "nn": 0.30434782608695654,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.024830699774266364
+        },
+        "TETA": {
+          "nn": 0.26666666666666666,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.013544018058690745
+        },
+        "m-XDA": {
+          "nn": 0.41379310344827586,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.056433408577878104
+        }
+      },
+      "coefficient": "dice",
+      "corpus_loo_nn_mean": 0.8332066842372606,
+      "corpus_loo_nn_median": 0.9411764705882353,
+      "fingerprint": "torsion_2048"
+    },
+    {
+      "candidates": {
+        "DDS": {
+          "nn": 0.7926290870042667,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.34988713318284426
+        },
+        "DETA": {
+          "nn": 0.3333333333333333,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.029345372460496615
+        },
+        "IPDA": {
+          "nn": 0.35355339059327373,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.03160270880361174
+        },
+        "TETA": {
+          "nn": 0.27386127875258304,
+          "novel_below_0_40": true,
+          "percentile_in_corpus_loo_nn": 0.013544018058690745
+        },
+        "m-XDA": {
+          "nn": 0.41602514716892186,
+          "novel_below_0_40": false,
+          "percentile_in_corpus_loo_nn": 0.05191873589164785
+        }
+      },
+      "coefficient": "cosine",
+      "corpus_loo_nn_mean": 0.8384076308072073,
+      "corpus_loo_nn_median": 0.9417632186960222,
+      "fingerprint": "torsion_2048"
+    }
+  ],
+  "robustness_summary": {
+    "global_worst_case_max_nn": 0.7906976744186046,
+    "per_candidate_worst_case_max_nn_tanimoto_dice_lanes": {
+      "DDS": 0.7906976744186046,
+      "DETA": 0.7,
+      "IPDA": 0.6363636363636364,
+      "TETA": 0.7,
+      "m-XDA": 0.5755395683453237
+    },
+    "tier1_declared_family": {
+      "all_five_candidates_novel": true,
+      "interpretation": "KPI verdict survives within the ECFP/Morgan-Tanimoto family it declares.",
+      "lanes": "morgan_r2_2048 & morgan_r3_2048 / tanimoto",
+      "max_candidate_nn": 0.39285714285714285
+    },
+    "tier2_cross_representation": {
+      "interpretation": "EXPECTED non-invariance: the 0.40 threshold is representation-specific (Bajusz 2015). Path/torsion/MACCS fingerprints and Dice/Cosine coefficients systematically inflate similarity; DDS (aromatic-sulfone motif) is the first and most consistent to exceed 0.40, matching the signed KPI's own scaffold-motif caveat.",
+      "invariant_across_all_18_lanes": false,
+      "per_candidate_novel_lane_count": {
+        "DDS": {
+          "novel_lanes": 2,
+          "total_lanes": 18
+        },
+        "DETA": {
+          "novel_lanes": 13,
+          "total_lanes": 18
+        },
+        "IPDA": {
+          "novel_lanes": 11,
+          "total_lanes": 18
+        },
+        "TETA": {
+          "novel_lanes": 13,
+          "total_lanes": 18
+        },
+        "m-XDA": {
+          "novel_lanes": 9,
+          "total_lanes": 18
+        }
+      },
+      "total_lanes": 18
+    }
+  },
+  "self_tests": [
+    {
+      "name": "dice_ge_tanimoto_identity",
+      "pass": true
+    },
+    {
+      "name": "cosine_between_tanimoto_and_one",
+      "pass": true
+    },
+    {
+      "name": "self_similarity_equals_one",
+      "pass": true
+    }
+  ],
+  "self_tests_all_pass": true,
+  "study_id": "molecule-novelty-fingerprint-coefficient-robustness-v1",
+  "theory_reference": [
+    "Rogers-Hahn 2010 J Chem Inf Model 50:742",
+    "Bajusz-Racz-Heberger 2015 J Cheminform 7:20",
+    "Willett-Barnard-Downs 1998 J Chem Inf Comput Sci 38:983",
+    "Durant 2002 J Chem Inf Comput Sci 42:1273",
+    "Carhart-Smith-Venkataraghavan 1985 J Chem Inf Comput Sci 25:64",
+    "Nilakantan 1987 J Chem Inf Comput Sci 27:82"
+  ]
+}

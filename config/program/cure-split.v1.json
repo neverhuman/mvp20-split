@@ -1,0 +1,7 @@
+{
+  "schema": "amphora.split-manifest.v1",
+  "split_id": "cure-rights-and-condition-quarantine-2026-07-17",
+  "dataset_hash": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+  "assignment_method": "source/family blocked; every current vendor row is quarantined because rights and required measured conditions are incomplete",
+  "assignments": []
+}

@@ -1,0 +1,11 @@
+{
+  "campaign_item_id": "W-D-CRO",
+  "external_candidate_all_gates_passed": true,
+  "external_candidate_ingested": true,
+  "final_fire_for_item": true,
+  "harness_script_sha256": "276b6beee0e72919f48e0a99f2c9168aa6bdb81b6e36a7a33a5995f20894c47c",
+  "last_fire_sequence": 2,
+  "last_verdict": "CLAIM_SURVIVED",
+  "max_fires": 2,
+  "notes": "Fire 2/2 (FINAL). CLAIM_SURVIVED. S12 (Wei et al. 2024 CC BY 4.0) ingested and tested end-to-end via the module's own independent binding-parity harness + 12-probe tamper battery positive control. Item closed."
+}

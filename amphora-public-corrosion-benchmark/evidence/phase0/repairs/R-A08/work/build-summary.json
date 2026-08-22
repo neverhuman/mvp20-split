@@ -1,0 +1,23 @@
+{
+  "cons_v2": {
+    "core_sha256": "9fce74f08fd7fbe05dc49afb86a8041e511fed79d37c8034a2cd8fdf3314ee04",
+    "file_sha256": "4632e46083304a444ffbda2030be0004b28698b5751a935db96b371e6960c4dd",
+    "path": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json",
+    "payload_sha256": "97fe880733991e16395d3bac8506c2bba51acfbc7bb1b212bcb2938ef3d9fb34"
+  },
+  "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "kpi_v2": {
+    "core_sha256": "4e6023ccd87335007ab499307300e99cb469572e568f368eb03296b281b443ff",
+    "file_sha256": "67b4136a975446b4346d97fda999807209473e6d6a3ff189dd6d2f7a86b92156",
+    "path": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json",
+    "payload_sha256": "9689e79d83f11e4fd5aee0fdb3cb3dfc8609a29382a7a95729854952aaf153e5"
+  },
+  "n_audit_receipts_indexed": 8,
+  "n_h0_refuted": 5,
+  "post_intact": {
+    "cons_v1_intact": true,
+    "fold_diag_intact": true,
+    "fold_script_intact": true,
+    "kpi_v1_intact": true
+  }
+}

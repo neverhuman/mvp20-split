@@ -1,0 +1,71 @@
+{
+  "schema": "amphora.molecule-generator.hardener-stoichiometric-envelope.v1",
+  "envelope_id": "molgen-hardener-stoichiometric-envelope-v1",
+  "purpose": "Hash-lockable reference envelope for testing whether the amphora-molecule-generator deterministic-grammar hardener universe covers the STOICHIOMETRIC design axis (AHEW / amine value / mix-ratio phr) that governs two-part marine epoxy-amine formulation. Anchors are (a) commercial amidoamine/polyamide hardener AHEW values already shipped as facts in amphora-ingredient-library, and (b) definitional known-answer amines whose active-N-H counts are hand-checkable from structure.",
+  "authority": "AUDIT_ONLY",
+  "scope": "marine anti-corrosion two-part epoxy-amine (DGEBA + amine hardener)",
+  "instrument_definitions": {
+    "ahew_g_per_eq": "AHEW = M / n_activeH, where n_activeH is the count of hydrogens bonded to epoxy-reactive (non-amide, non-aromatic-ring) nitrogen. Lee & Neville 1967, Handbook of Epoxy Resins, McGraw-Hill (LCCN 66-23992).",
+    "amine_value_mgKOH_per_g": "AV = 56105.6 * n_basicN / M (mg KOH per g). ASTM D2074 total amine value; 56105.6 mg/mol = molar mass of KOH x 1000.",
+    "mix_ratio_phr": "phr = 100 * AHEW / EEW at 1:1 epoxide:amine-hydrogen stoichiometry (parts hardener per hundred parts resin by mass).",
+    "identity_band": "AHEW * AV = 56105.6 * n_basicN / n_activeH, hence AHEW*AV in [28052.8, 56105.6] for any amine whose nitrogens are primary (2H) through secondary (1H). All-primary amines sit exactly on the 28052.8 floor."
+  },
+  "commercial_anchors": {
+    "note": "Numeric AHEW values re-read from amphora-ingredient-library/reference/mvp20/data/facts.json entries already shipped in this repository. No new external data was acquired or redistributed; these are design-envelope anchor scalars only.",
+    "source_module": "amphora-ingredient-library",
+    "source_file": "reference/mvp20/data/facts.json",
+    "entries": [
+      {"fact_key": "hardener.ancamide_350a.ahew", "product": "Ancamide 350A", "chemistry_class": "amidoamine", "ahew_g_per_eq": 100.0, "grade": "TDS", "amine_value_mgKOH_per_g": 380.0},
+      {"fact_key": "hardener.ancamide_2353.ahew", "product": "Ancamide 2353", "chemistry_class": "polyamide/amidoamine", "ahew_g_per_eq": 114.0, "grade": "SUPPLIER_GUIDE", "amine_value_mgKOH_per_g": null},
+      {"fact_key": "hardener.ancamide_260a.ahew", "product": "Ancamide 260A", "chemistry_class": "polyamide", "ahew_g_per_eq": 120.0, "grade": "SUPPLIER_GUIDE", "amine_value_mgKOH_per_g": null, "note": "US 120 vs EMEA 110 regional conflict flagged upstream; US value used"},
+      {"fact_key": "hardener.ancamide_700b75.ahew", "product": "Ancamide 700-B-75", "chemistry_class": "polyamide solution", "ahew_g_per_eq": 170.0, "grade": "SUPPLIER_GUIDE", "amine_value_mgKOH_per_g": 240.0, "marine_qualification": "supplier guide marks MIL-P-24441 / Ships approved"},
+      {"fact_key": "hardener.versamid_115.ahew", "product": "Versamid 115", "chemistry_class": "polyamide", "ahew_g_per_eq": 198.0, "grade": "TDS", "amine_value_mgKOH_per_g": 238.0},
+      {"fact_key": "hardener.ancamide_220x70.ahew", "product": "Ancamide 220-X-70", "chemistry_class": "polyamide solution", "ahew_g_per_eq": 264.0, "grade": "TDS", "amine_value_mgKOH_per_g": null}
+    ],
+    "design_envelope_ahew_g_per_eq": [100.0, 264.0]
+  },
+  "known_answer_amines": {
+    "note": "Definitional known-answer set. expected_active_nh is hand-checkable from the structure; AHEW is then the exact definitional quotient M/n_activeH with M re-derived by RDKit from IUPAC 2021 standard atomic weights. These test the INSTRUMENT, not any commercial product claim.",
+    "entries": [
+      {"name": "diethylenetriamine (DETA)", "smiles": "NCCNCCN", "expected_active_nh": 5, "expected_basic_n": 3},
+      {"name": "triethylenetetramine (TETA)", "smiles": "NCCNCCNCCN", "expected_active_nh": 6, "expected_basic_n": 4},
+      {"name": "tetraethylenepentamine (TEPA)", "smiles": "NCCNCCNCCNCCN", "expected_active_nh": 7, "expected_basic_n": 5},
+      {"name": "isophoronediamine (IPDA)", "smiles": "CC1(C)CC(N)CC(C)(CN)C1", "expected_active_nh": 4, "expected_basic_n": 2},
+      {"name": "m-xylylenediamine (MXDA)", "smiles": "NCc1cccc(CN)c1", "expected_active_nh": 4, "expected_basic_n": 2},
+      {"name": "4,4'-diaminodiphenylmethane (MDA/DDM)", "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1", "expected_active_nh": 4, "expected_basic_n": 2},
+      {"name": "4,4'-diaminodiphenylsulfone (DDS)", "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1", "expected_active_nh": 4, "expected_basic_n": 2},
+      {"name": "1,3-bis(aminomethyl)cyclohexane (1,3-BAC)", "smiles": "NCC1CCCC(CN)C1", "expected_active_nh": 4, "expected_basic_n": 2}
+    ]
+  },
+  "fail_closed_decoys": {
+    "note": "Non-hardener or non-active-hydrogen structures that the AHEW instrument MUST reject (n_activeH = 0 => AHEW undefined) or classify as non-difunctional.",
+    "entries": [
+      {"name": "DGEBA (epoxide resin, not a hardener)", "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1", "expected_active_nh": 0},
+      {"name": "triethylamine (tertiary amine, catalytic not co-reactive)", "smiles": "CCN(CC)CC", "expected_active_nh": 0},
+      {"name": "benzamide (amide N-H, not epoxy-reactive at ambient)", "smiles": "NC(=O)c1ccccc1", "expected_active_nh": 0},
+      {"name": "pyridine (aromatic ring nitrogen, no N-H)", "smiles": "c1ccncc1", "expected_active_nh": 0},
+      {"name": "N,N-dimethylbenzylamine (tertiary accelerator)", "smiles": "CN(C)Cc1ccccc1", "expected_active_nh": 0},
+      {"name": "N-methylaniline (secondary, monofunctional)", "smiles": "CNc1ccccc1", "expected_active_nh": 1}
+    ]
+  },
+  "dgeba_reference": {
+    "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+    "eew_monomeric_g_per_eq": 170.21,
+    "eew_monomeric_provenance": "amphora-molecule-property DGEBA oligomer EEW series receipt, EEW(n) = 170.21 + 142.18n at n=0",
+    "eew_technical_liquid_g_per_eq": 190.0,
+    "eew_technical_note": "typical technical liquid DGEBA EEW used only as a second phr reference point"
+  },
+  "adduct_closure_operator": {
+    "definition": "k mol diamine + 1 mol DGEBA -> one amine-terminated adduct; the two DGEBA epoxide groups each consume one active N-H. M_adduct = k*M_amine + M_DGEBA; n_activeH_adduct = k*n_activeH_amine - 2; AHEW_adduct = M_adduct / n_activeH_adduct.",
+    "citation": "Lee & Neville 1967, Handbook of Epoxy Resins, McGraw-Hill (amine-epoxy adduct curing agents); Ellis (ed.) 1993, Chemistry and Technology of Epoxy Resins, Blackie/Chapman & Hall, ISBN 978-0-7514-0095-4.",
+    "k_values_evaluated": [2, 3],
+    "status": "ANALYTIC_PROJECTION_ONLY -- this operator is NOT implemented as a generator production rule; it is evaluated here to quantify what capability would be required to close the measured envelope gap."
+  },
+  "rights_posture": {
+    "new_external_data_acquired": false,
+    "redistributes_third_party_dataset": false,
+    "commercial_anchor_basis": "numeric scalars already shipped in amphora-ingredient-library facts.json (TDS / SUPPLIER_GUIDE grade), used as design-envelope anchors",
+    "known_answer_basis": "definitional identity AHEW = M/n_activeH; molar masses re-derived by RDKit from IUPAC 2021 standard atomic weights",
+    "in_scope": "marine anti-corrosion two-part epoxy-amine only"
+  }
+}

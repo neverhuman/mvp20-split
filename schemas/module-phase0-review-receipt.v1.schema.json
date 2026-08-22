@@ -1,0 +1,31 @@
+{
+  "$id": "https://amphora.local/schemas/module-phase0-review-receipt.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "required": ["schema", "review_id", "module_id", "bundle_hash", "evaluation_receipt_hash", "evaluator_key_id", "reviewer_key_id", "review_method", "independence_scope", "human_review_performed", "independent_reimplementation_passed", "parent_hashes_current", "claim_locks_preserved", "zero_authority_affirmed", "accepted_for_phase0", "findings"],
+  "properties": {
+    "schema": {"const": "amphora.module-phase0-review-receipt.v1"},
+    "review_id": {"type": "string", "minLength": 1},
+    "module_id": {"$ref": "#/$defs/module"},
+    "bundle_hash": {"$ref": "#/$defs/hash"},
+    "evaluation_receipt_hash": {"$ref": "#/$defs/hash"},
+    "evaluator_key_id": {"$ref": "#/$defs/key"},
+    "reviewer_key_id": {"$ref": "#/$defs/key"},
+    "review_method": {"const": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION"},
+    "independence_scope": {"const": "CODE_PATH_AND_SIGNING_IDENTITY"},
+    "human_review_performed": {"const": false},
+    "independent_reimplementation_passed": {"type": "boolean"},
+    "parent_hashes_current": {"type": "boolean"},
+    "claim_locks_preserved": {"type": "boolean"},
+    "zero_authority_affirmed": {"type": "boolean"},
+    "accepted_for_phase0": {"type": "boolean"},
+    "findings": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "signature": {"type": "object"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "key": {"type": "string", "minLength": 1, "not": {"pattern": "^(local|dev)-"}},
+    "module": {"type": "string", "pattern": "^amphora-[a-z0-9-]+$"}
+  },
+  "type": "object"
+}

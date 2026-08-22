@@ -1,0 +1,1061 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "39babe8f08f3d02e6714ddfa412c6932c4197adda3d6ed2d3839e6f6d738f1bc",
+  "payload_decoded": {
+    "acceptance": {
+      "all_rows_evidence_backed": true,
+      "anchors_confirmed": {
+        "mixed_and_external_dielectric_RETRACTED_by_W3": true,
+        "multi_target_4_properties_REFUTED_by_W7": true,
+        "openpoly_dielectric_baseline_STANDS_0_of_295_violations": true,
+        "tg_density_ri_stand_within_corpus_only": true,
+        "van_krevelen_ridge_fit_REFUTED_by_W8": true
+      },
+      "n_rows": 21,
+      "zero_dangling_paths": true
+    },
+    "action": "definitive per-KPI status index for the amphora-molecule-property evidence/phase0/kpis surface: every live KPI receipt classified STANDS / STANDS-WITHIN-CORPUS-ONLY / REFUTED / RETRACTED from signed verdict receipts, with every citation path resolved and sha256-pinned",
+    "authority": "AUDIT_ONLY",
+    "citation_integrity": {
+      "all_cited_paths_resolve": true,
+      "all_cited_shas_match_pinned": true,
+      "pinned_shas_cross_checked_against": [
+        "W3 kpi_surface_dispositions[].sha256 (openpoly-dielectric cf94eb..., external-validation-dielectric 335f30..., mixed-dielectric da54f0..., c8-fire1 0115fc...)",
+        "claims-requiring-retraction.jsonl superseded_by_receipt_sha256 (c55b90... = c8_fire3_final)",
+        "W8 claim_under_attack.kpi_sha256 (ba2423... = van-krevelen-ridge-fit KPI)",
+        "W3 retraction_list_lines_sha256 (9fb68d... = logs/claims-requiring-retraction.jsonl)"
+      ],
+      "receipts_cited": {
+        "C7_FINAL": {
+          "path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+          "sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+        },
+        "C7_FIRE1": {
+          "path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json",
+          "sha256": "fdb17d3d6614b405226565c7fe8b90191e396404dea6ec6d24b7444a43e86a30"
+        },
+        "C7_FIRE2": {
+          "path": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+          "sha256": "1ba393b905e0a0463bd1b2c3ae5f6e3a538b31c341e3d6ca955b0d3936f8968a"
+        },
+        "C8_FINAL": {
+          "path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+          "sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57"
+        },
+        "C8_FIRE1": {
+          "path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v1/c8_phys_ml_stack_comparison_receipt.v1.json",
+          "sha256": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7"
+        },
+        "C8_FIRE2": {
+          "path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+          "sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7"
+        },
+        "C8_FIRE2_REISSUE": {
+          "path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json",
+          "sha256": "2c57343a35c892c50891ecf91914996cf5707e99cce9c48e2cf11e214a4da190"
+        },
+        "RETRACT_LIST": {
+          "path": "logs/claims-requiring-retraction.jsonl",
+          "sha256": "9fb68dde1d1eb8bc3057edbb3deed6361cfa08dea029985188e4d8b23b311404"
+        },
+        "W2_FIRE3": {
+          "path": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+          "sha256": "25bfc6401b8b39f518fde063e1cc35c11b3f1660ffe3e71b0fb387eb59b4fef2"
+        },
+        "W3": {
+          "path": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+          "sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+        },
+        "W7": {
+          "path": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+          "sha256": "24bc32043db26138d618746912f540b32bc6fbe13074892006d11803388f904c"
+        },
+        "W8": {
+          "path": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+          "sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+        }
+      }
+    },
+    "count_discrepancy_note": "Repair spec said 22 KPI files; the live evidence/phase0/kpis/ surface holds exactly 21 .json KPI receipts (all dated 2026-07-23). The only other KPI file in the module evidence tree is the pre-existing superseded property-eew-ahew-kpi.v1.json (2026-07-22) under evidence/superseded/, documented in the appendix row.",
+    "date": "2026-08-03",
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "kpi_status_index": {
+      "appendix_superseded_kpi": {
+        "evidence": [
+          {
+            "detail": "moved under evidence/superseded/supersession-1bac03f7... on 2026-07-22, before the 21 live KPIs were written on 2026-07-23",
+            "receipt_path": "amphora-molecule-property/evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1/phase0/kpis/property-eew-ahew-kpi.v1.json",
+            "role": "supersession_directory"
+          }
+        ],
+        "kpi_file": "amphora-molecule-property/evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1/phase0/kpis/property-eew-ahew-kpi.v1.json",
+        "kpi_sha256": "5f3b758d7f68df396a3ad861a2f99bb47fd22384d9814cd3f7fd3bbcc4bc6b74",
+        "rationale": "Documented for completeness: the repair spec counted 22 KPI files; the live surface holds exactly 21. This pre-existing superseded EEW/AHEW KPI is the only other KPI-named receipt in the module evidence tree and the nearest candidate for the 22nd.",
+        "status": "SUPERSEDED-PRE-EXISTING (not part of the live KPI surface)"
+      },
+      "date": "2026-08-03",
+      "index_id": "kpi-status-index",
+      "kpi_dir": "amphora-molecule-property/evidence/phase0/kpis/",
+      "module": "amphora-molecule-property",
+      "n_live_kpi_files": 21,
+      "rows": [
+        {
+          "evidence": [
+            {
+              "detail": "W3 kpi_surface_dispositions: NOT_RETRACTED_LABELS_ADMISSIBLE -- trains/evaluates entirely on OpenPoly's own dielectric column; 0/295 violations under OpenPoly's internally-consistent DFT decomposition; headline numbers remain citable AS-IS scoped to the OpenPoly literature population",
+              "receipt_path": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+              "receipt_sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b",
+              "role": "explicit_not_retracted_disposition"
+            },
+            {
+              "detail": "C8 population control isolates the label defect to RadonPy PI1070's MD fluctuation-formula route; does NOT implicate OpenPoly's dielectric column",
+              "receipt_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+              "receipt_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+              "role": "label_admissibility_control"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+          "kpi_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139",
+          "rationale": "STANDS. Scaffold-safe holdout MAE=0.4040 R2=0.5649 on n=295 OpenPoly polymers; own claim lock already restricts to baseline_valid_on_openpoly_scaffold_distribution_only. Explicitly examined and not retracted by W3.",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "overall_verdict CLAIM_REFUTED for 'within-corpus performance transfers to out-of-corpus chemistry': Tg cross-corpus (OpenPoly<->Polyuniverse, both directions) 6.66x/16.60x degradation, worse than predict-the-median null (anti-predictive)",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+              "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+              "role": "refutes_transfer_claim"
+            },
+            {
+              "detail": "original cross-corpus experiment (science correct; signature format fixed by fire 3)",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json",
+              "receipt_sha256": "fdb17d3d6614b405226565c7fe8b90191e396404dea6ec6d24b7444a43e86a30",
+              "role": "fire1_experiment"
+            },
+            {
+              "detail": "24/167 (14.4%) evaluable OpenPoly rows with both Tg and Tm violate Tg<Tm (Boyer-Beaman); corpus feeds this KPI",
+              "receipt_path": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+              "receipt_sha256": "25bfc6401b8b39f518fde063e1cc35c11b3f1660ffe3e71b0fb387eb59b4fef2",
+              "role": "label_integrity_caveat"
+            },
+            {
+              "detail": "C7 fires 1 and 3 ledger entries naming this KPI as the attacked claim",
+              "ledger_lines": [
+                {
+                  "campaign_item_id": "C7",
+                  "line": 9,
+                  "line_sha256": "c5e57d0ab41285ac09e044460d78b2d7c7c1136f229da6740359d5ef22706309",
+                  "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json",
+                  "ts": "2026-08-01T05:13:33+00:00",
+                  "verdict": "REFUTED"
+                },
+                {
+                  "campaign_item_id": "C7",
+                  "line": 11,
+                  "line_sha256": "0872b7211c887008843a67d6d0f7fd12468dc5468a1453233b27a65a81f84c45",
+                  "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+                  "ts": "2026-08-01T17:04:10+00:00",
+                  "verdict": "REFUTED"
+                }
+              ],
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "ledger_entries"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+          "kpi_sha256": "a77572d6f36a960a5ab5aed62fdac6bd8cb3e7d7f39d7b63be16ee5ca6481878",
+          "rationale": "Within-corpus scaffold-safe numbers (holdout + 212-fold LOSO-CV on OpenPoly) remain valid as measured and were not attacked; any reading that the model transfers out-of-corpus is REFUTED by C7. Carries W2 label-integrity caveat on the OpenPoly Tg/Tm axis.",
+          "status": "STANDS-WITHIN-CORPUS-ONLY"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names openpoly-water-contact-angle-ml-baseline-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            },
+            {
+              "detail": "listed as a dependent KPI of openpoly_properties; the W2 violation is on the Tg/Tm ordering axis, not the contact-angle column",
+              "receipt_path": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+              "receipt_sha256": "25bfc6401b8b39f518fde063e1cc35c11b3f1660ffe3e71b0fb387eb59b4fef2",
+              "role": "corpus_level_caveat"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/openpoly-water-contact-angle-ml-baseline-kpi.v1.json",
+          "kpi_sha256": "974e39c709a50296cda415bf61b75efa25fff8f7f8ef5e64b363ff123bd68965",
+          "rationale": "STANDS on the OpenPoly scaffold distribution per its own claim locks; no receipt refutes it. Corpus-level W2 caveat noted (different label axis).",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names openpoly-water-uptake-ml-baseline-audit-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            },
+            {
+              "detail": "dependent KPI of openpoly_properties; W2 violation axis is Tg/Tm ordering",
+              "receipt_path": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+              "receipt_sha256": "25bfc6401b8b39f518fde063e1cc35c11b3f1660ffe3e71b0fb387eb59b4fef2",
+              "role": "corpus_level_caveat"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/openpoly-water-uptake-ml-baseline-audit-kpi.v1.json",
+          "kpi_sha256": "194f5c73d977b6a1cc07dded862dc51d9e205286a78244649ac07f131bc38364",
+          "rationale": "STANDS as an honest negative-finding audit (negative_finding_honestly_documented claim lock); no receipt refutes it.",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "kpi_surface_dispositions: RETRACT -- evaluates against RadonPy static_dielectric_const where 89.5% of the target column is physically inadmissible (eps_static<n^2); MAE/R2 not interpretable as external-validity measurement",
+              "receipt_path": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+              "receipt_sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b",
+              "role": "superseding_retraction_receipt"
+            },
+            {
+              "detail": "zero-contamination clean-subset retrain: all arms R2<=0",
+              "receipt_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+              "receipt_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+              "role": "underlying_refutation"
+            },
+            {
+              "detail": "consolidated NO_COMPETENT_MODEL verdict for dielectric constant",
+              "receipt_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+              "receipt_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+              "role": "underlying_refutation"
+            },
+            {
+              "detail": "W3 ledger entry",
+              "ledger_lines": [
+                {
+                  "campaign_item_id": "W3",
+                  "line": 23,
+                  "line_sha256": "9a0c26790476ee5829563a54c5fe4d83884b2a43d095d41b49bc4a78103384b9",
+                  "receipt": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+                  "ts": "2026-08-02T04:05:55+00:00",
+                  "verdict": "REFUTED"
+                }
+              ],
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "ledger_entries"
+            },
+            {
+              "detail": "retraction list line 1 (file sha pinned inside W3: 9fb68dde...)",
+              "line": 1,
+              "line_sha256": "4a75f41517efb6132b2c360997cf77a53015c98bf195413ece8b880cb406ebb4",
+              "receipt_path": "logs/claims-requiring-retraction.jsonl",
+              "role": "machine_readable_retraction"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+          "kpi_sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520",
+          "rationale": "RETRACTED by W3 (superseding retraction receipt; disposition RETRACT). File remains on disk for audit trail; headline numbers must not be cited.",
+          "retracted_by": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+          "status": "RETRACTED"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "kpi_surface_dispositions: RETRACT -- pools 1077 RadonPy rows (89.5% corrupted) for train+eval; apparent R2=0.6991/0.7001 is an artifact of the corrupted majority (clean-only RF collapses to R2=-0.0263); conformal PI-coverage fraction remains a mechanically valid statement about interval calibration on the corrupted target, but point-skill numbers are withdrawn",
+              "receipt_path": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+              "receipt_sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b",
+              "role": "superseding_retraction_receipt"
+            },
+            {
+              "detail": "clean-subset collapse result",
+              "receipt_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+              "receipt_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+              "role": "underlying_refutation"
+            },
+            {
+              "detail": "NO_COMPETENT_MODEL consolidated verdict",
+              "receipt_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+              "receipt_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+              "role": "underlying_refutation"
+            },
+            {
+              "detail": "W3 ledger entry",
+              "ledger_lines": [
+                {
+                  "campaign_item_id": "W3",
+                  "line": 23,
+                  "line_sha256": "9a0c26790476ee5829563a54c5fe4d83884b2a43d095d41b49bc4a78103384b9",
+                  "receipt": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+                  "ts": "2026-08-02T04:05:55+00:00",
+                  "verdict": "REFUTED"
+                }
+              ],
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "ledger_entries"
+            },
+            {
+              "detail": "retraction list line 2",
+              "line": 2,
+              "line_sha256": "2fa889393bbffb58cd282e1435688761d7afa8a555e736215a15ea81afc6135b",
+              "receipt_path": "logs/claims-requiring-retraction.jsonl",
+              "role": "machine_readable_retraction"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+          "kpi_sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4",
+          "rationale": "RETRACTED by W3 (superseding retraction receipt; disposition RETRACT). File remains on disk for audit trail.",
+          "retracted_by": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+          "status": "RETRACTED"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "macro-chemotype bisection of RadonPy PI1070: refractive_index cross-macro degradation 9.92x/3.13x (both directions clear the pre-registered 2x bar, R2 negative) -- REFUTED for out-of-distribution generalization",
+              "receipt_path": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+              "receipt_sha256": "24bc32043db26138d618746912f540b32bc6fbe13074892006d11803388f904c",
+              "role": "refutes_ood_generalization"
+            },
+            {
+              "detail": "RadonPy refractive-index axis is clean (n>=1 satisfied for 99.996% of polyomics rows)",
+              "receipt_path": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+              "receipt_sha256": "25bfc6401b8b39f518fde063e1cc35c11b3f1660ffe3e71b0fb387eb59b4fef2",
+              "role": "label_axis_clean"
+            },
+            {
+              "detail": "RI is one of the 3 properties whose receipt-backed {physics, ML, stack} triplet survives within-corpus",
+              "receipt_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+              "receipt_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+              "role": "within_corpus_triplet"
+            },
+            {
+              "detail": "W7 ledger entry",
+              "ledger_lines": [
+                {
+                  "campaign_item_id": "",
+                  "line": 33,
+                  "line_sha256": "15738ad961f94136e8f40b93fb582ccc104e25dc35436c08bdf5bac1fe0b64f4",
+                  "receipt": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+                  "ts": "2026-08-02T14:05:08+00:00",
+                  "verdict": "REFUTED"
+                }
+              ],
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "ledger_entries"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+          "kpi_sha256": "5ab0e74898476cafb02ee23ec54f78bb890a19027ee826bffba10dd6001a367e",
+          "rationale": "Within-corpus mixed-dataset RI numbers (MAE=0.0304, R2=+0.638) stand as measured on admissible labels; W7 refutes any out-of-macro-chemotype generalization reading, so validity is within-corpus only.",
+          "status": "STANDS-WITHIN-CORPUS-ONLY"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "verdict REFUTED: single-task RF R2>0 on refractive_index (+0.893) and thermal_conductivity (+0.542) under 60/20/20 random split does NOT generalize -- macro-bisection degradation RI 9.92x/3.13x, TC 4.52x/1.86x against a pre-registered 2x OR-across-directions bar",
+              "receipt_path": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+              "receipt_sha256": "24bc32043db26138d618746912f540b32bc6fbe13074892006d11803388f904c",
+              "role": "refuting_receipt"
+            },
+            {
+              "detail": "W7 ledger entry naming this KPI as the attacked claim",
+              "ledger_lines": [
+                {
+                  "campaign_item_id": "",
+                  "line": 33,
+                  "line_sha256": "15738ad961f94136e8f40b93fb582ccc104e25dc35436c08bdf5bac1fe0b64f4",
+                  "receipt": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+                  "ts": "2026-08-02T14:05:08+00:00",
+                  "verdict": "REFUTED"
+                }
+              ],
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "ledger_entries"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+          "kpi_sha256": "a72aa3f4629a755b735b0e10df2046473ac8e8d9a66dc7e3cc59164914767dd6",
+          "rationale": "REFUTED by W7 for the two properties never before attacked with a group-safe split. The KPI's honest core finding (naive multi-task underperforms single-task) was not the attacked claim, but its positive single-task R2 numbers are refuted as generalization evidence.",
+          "refuted_by": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+          "status": "REFUTED"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "density verdict: macro-bisection is the governing out-of-distribution probe -- 13.74x/7.59x degradation both directions (R2 -12.15/-5.01); leave-class-out 1.80x retained as granularity evidence only",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+              "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+              "role": "refutes_transfer_claim"
+            },
+            {
+              "detail": "hierarchical macro-bisection density attack",
+              "receipt_path": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+              "receipt_sha256": "1ba393b905e0a0463bd1b2c3ae5f6e3a538b31c341e3d6ca955b0d3936f8968a",
+              "role": "fire2_experiment"
+            },
+            {
+              "detail": "the founder-table claim attached to this KPI ('table buildable entirely from receipt-backed numbers') is CLAIM_REFUTED via the dielectric cell; the density {physics, ML, stack} triplet itself is carried forward receipt-backed and survives within-corpus",
+              "receipt_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+              "receipt_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+              "role": "attached_claim_refuted"
+            },
+            {
+              "detail": "C7 fire2/fire3 and C8 fires 1-3 ledger entries naming this KPI",
+              "ledger_lines": [
+                {
+                  "campaign_item_id": "C7",
+                  "line": 10,
+                  "line_sha256": "c3e2d702d3d281cdddfcde9d9761f526b8d0676697270d7e1e4f7b3ade10d44b",
+                  "receipt": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+                  "ts": "2026-08-01T16:25:30+00:00",
+                  "verdict": "REFUTED"
+                },
+                {
+                  "campaign_item_id": "C7",
+                  "line": 11,
+                  "line_sha256": "0872b7211c887008843a67d6d0f7fd12468dc5468a1453233b27a65a81f84c45",
+                  "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+                  "ts": "2026-08-01T17:04:10+00:00",
+                  "verdict": "REFUTED"
+                },
+                {
+                  "campaign_item_id": "C8",
+                  "line": 12,
+                  "line_sha256": "4c4a7811b29257d276d77567dc2ac05d9978948e782cc314a8ced6e74ffc4651",
+                  "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v1/c8_phys_ml_stack_comparison_receipt.v1.json",
+                  "ts": "2026-08-01T18:18:28+00:00",
+                  "verdict": "REFUTED"
+                },
+                {
+                  "campaign_item_id": "C8",
+                  "line": 13,
+                  "line_sha256": "e60347c39e09252e0b94bff543ce1750e59882f72eb4332e86c8e4f23a97a388",
+                  "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+                  "ts": "2026-08-01T19:04:53+00:00",
+                  "verdict": "REFUTED"
+                },
+                {
+                  "campaign_item_id": "C8",
+                  "line": 14,
+                  "line_sha256": "7c6a0ff3f99fefc3bdb83082560c1e2638d7c1e72318c276f86c036163861204",
+                  "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+                  "ts": "2026-08-01T20:02:47+00:00",
+                  "verdict": "REFUTED"
+                }
+              ],
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "ledger_entries"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+          "kpi_sha256": "c8bae23b8deeb8f79edca0af1be6c4457c8abec0cdb5e94eb874e6a7ba18701a",
+          "rationale": "Within-corpus density numbers (ML MAE=0.0566 R2=+0.7196 vs VK physics) stand as measured; own claim lock already scopes to ml_calibrated_for_radonpy_md_simulated_context_only. Out-of-macro-chemotype transfer is REFUTED by C7; the C8 founder-table claim attached to this KPI is refuted on the dielectric cell.",
+          "status": "STANDS-WITHIN-CORPUS-ONLY"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "density transfer refuted (13.74x/7.59x macro-bisection) -- applies equally to the stacked density model",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+              "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+              "role": "scopes_to_within_corpus"
+            },
+            {
+              "detail": "density stack triplet receipt-backed and survives within-corpus",
+              "receipt_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+              "receipt_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+              "role": "within_corpus_triplet"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/stacked-ml-van-krevelen-density-radonpy-kpi.v1.json",
+          "kpi_sha256": "0dc1b6f663d9edb75652bf221712b01f4847b7f62f3620e12e57af7c8adcf751",
+          "rationale": "Stack test R2=+0.8019 vs RF-only +0.7186 stands as a within-corpus result on RadonPy PI1070; C7's density transfer refutation bounds it to within-corpus/within-macro-chemotype use.",
+          "status": "STANDS-WITHIN-CORPUS-ONLY"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "Tg cross-corpus transfer (OpenPoly<->Polyuniverse) anti-predictive both directions; honest applicability domain for Tg models is within-corpus only",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+              "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+              "role": "scopes_to_within_corpus"
+            },
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+          "kpi_sha256": "447f5ca832054c0e606b89eb7dfdbd38db3f3a85377c299d982122a3316221e4",
+          "rationale": "Conformal coverage + AD attestation on the Polyuniverse Epoxy 1M computed space stands; own claim lock already scopes AD to that space, and C7 confirms nothing transfers beyond it.",
+          "status": "STANDS-WITHIN-CORPUS-ONLY"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            },
+            {
+              "detail": "its honest finding (4/5 canonical amines gated out-of-domain; in-AD MAE 35 C on n=1) is consistent with C7's within-corpus-only conclusion",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+              "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+              "role": "consistency"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json",
+          "kpi_sha256": "94fba60037e20a4763d2881d8aa3efd46298e094eedd8a67216e58a2ea9d32f9",
+          "rationale": "STANDS as an honest external-validation/AD-boundary documentation; it claims domain limitation, not transfer, and no receipt refutes it.",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "cross-corpus Tg transfer refuted; baseline hierarchy is a within-corpus comparison on the Polyuniverse scaffold-safe test set (n=10,279)",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+              "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+              "role": "scopes_to_within_corpus"
+            },
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json",
+          "kpi_sha256": "74d534f3f2f17e8cc2ec5dc91b10cfa22a9e9d78f800d02d74e1eec5f83c26e2",
+          "rationale": "7-baseline head-to-head on the fixed Polyuniverse test set stands as measured; C7 bounds its meaning to within-corpus.",
+          "status": "STANDS-WITHIN-CORPUS-ONLY"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "cross-corpus Tg transfer refuted; VK-vs-ML comparison is on the same within-corpus Polyuniverse test set",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+              "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+              "role": "scopes_to_within_corpus"
+            },
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json",
+          "kpi_sha256": "dcc4af575760d227bc34f29a7cbbea450f1a48d484d9e93c5fdb74296a3869d5",
+          "rationale": "Physical-baseline-vs-ML comparison on the Polyuniverse test set stands as measured, within-corpus only per C7.",
+          "status": "STANDS-WITHIN-CORPUS-ONLY"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "verdict REFUTED: 2/24 fitted Y_gi sign-reversed vs an all-positive published column (vinyl_CH2 -3125 vs +2000; nitrile -2844 vs +5500), both in the bottom third of training support; Spearman rho=-0.52 confirms under-determination is NOT resolved at n=807 -- falsifies claim locks 24_group_structure_confirmed_correct_at_scale and prior_ridge_receipt_under_determination_hypothesis_now_resolved",
+              "receipt_path": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+              "receipt_sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed",
+              "role": "refuting_receipt"
+            },
+            {
+              "detail": "W8 ledger entry naming this KPI as the attacked claim",
+              "ledger_lines": [
+                {
+                  "campaign_item_id": "",
+                  "line": 45,
+                  "line_sha256": "23334f8104403c7a146242345574ed893d49c3a9a07dc418e89b1ca4a297ef01",
+                  "receipt": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+                  "ts": "2026-08-03T02:09:18+00:00",
+                  "verdict": "REFUTED"
+                }
+              ],
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "ledger_entries"
+            },
+            {
+              "detail": "this repair independently re-ran the sign-flip count from the KPI's own stored coefficient table and reproduced 2/24 (vinyl_CH2, nitrile); see reattack_observed_results in this receipt",
+              "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-A09/work/reattack_diagnostic.json",
+              "role": "reattack_reproduction"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+          "kpi_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979",
+          "rationale": "REFUTED by W8. The test MAE=22.0 K number is a genuine within-split measurement, but the KPI's headline claim (structure confirmed correct / under-determination resolved) is falsified by its own coefficient table.",
+          "refuted_by": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+          "status": "REFUTED"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            },
+            {
+              "detail": "W8 explicitly relies on this receipt's own diagnosis ('the under-determination mechanism the module's own prior 15-polymer receipt diagnosed') and finds it NOT resolved at n=807 -- corroborating, not refuting, this KPI's honest finding",
+              "receipt_path": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+              "receipt_sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed",
+              "role": "corroborates"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-kpi.v1.json",
+          "kpi_sha256": "645b4a7e4cc3c5a8f3a5b679ff6336c8f212ee4206a0d9fc86089804044f4803",
+          "rationale": "STANDS as an honest diagnostic: LOO-CV MAE 121.4 K worse than published-Y_gi baseline 81.3 K, fitted values explicitly declared artifacts (claim lock fitted_Ygi_values_are_artifacts_not_meaningful_group_contributions).",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-kpi.v1.json",
+          "kpi_sha256": "bd49b1b3bc72b99109e3c2ef021bd6c950f8b3c957e8c88b3e4fe3354d4f128b",
+          "rationale": "STANDS: corrected published-Y_gi formula reduces MAE 243 K -> 81.3 K on the 15-polymer panel; declarative corrected-physical-formula result, no receipt refutes it.",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json",
+          "kpi_sha256": "e8e6da561ef1236ddef1de1f05505b02890e48ad0b4c72b751edf5e3af4c2fde",
+          "rationale": "STANDS as an honest negative finding: the simplified 18-group formula produces uniform ~250 C predictions and is documented as broken by this KPI itself.",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-kpi.v1.json",
+          "kpi_sha256": "7680f16bed40bd843ceb301ec056482d942ddc0150497497387508963e4964e1",
+          "rationale": "STANDS as an honest negative finding: LOO rescaling worsens MAE (81.3 K -> 90.0 K); errors documented as structural, not linear-correctable.",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            },
+            {
+              "detail": "W8 refutes physical interpretability of the same fitted Y_gi coefficients (2/24 sign-reversed); the empirical MAE comparison here (dataset-specific, per its own claim lock) is unaffected as a measurement",
+              "receipt_path": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+              "receipt_sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed",
+              "role": "coefficient_interpretability_caveat"
+            },
+            {
+              "detail": "OpenPoly Tg/Tm ordering violations (14.4% of evaluable rows) caveat the external target labels",
+              "receipt_path": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+              "receipt_sha256": "25bfc6401b8b39f518fde063e1cc35c11b3f1660ffe3e71b0fb387eb59b4fef2",
+              "role": "label_integrity_caveat"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+          "kpi_sha256": "b73bf0e81d967d837cf9195ad56dec7c9b93cdf8613ec0d1d6272d3ca3e4579a",
+          "rationale": "STANDS as a dataset-specific comparison (its own claim lock: not_a_scientific_replacement... only_a_dataset_specific_comparison): Ridge MAE 70.42 K beats published VK 91.34 K and marginally beats null 71.39 K (R2=-0.03, generalization documented as modest). Carries W8 coefficient-interpretability and W2 label caveats.",
+          "status": "STANDS"
+        },
+        {
+          "evidence": [
+            {
+              "detail": "negative evidence pinned by the ledger_grep re-attack block in this receipt",
+              "observed": "grep of all 61 ledger lines: no entry names coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json as an attacked claim; no verdict receipt under benchmarks/ or evidence/audit/ targets it",
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "no_refuting_receipt"
+            },
+            {
+              "detail": "the card's Tg arm inherits C7's within-corpus-only scoping; the card itself already gates 4/5 candidates out-of-domain",
+              "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+              "receipt_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+              "role": "inherited_scoping"
+            },
+            {
+              "detail": "2026-08-03 guanidine-conjugation refutation targets benchmarks/amine-class-active-nh-robustness receipt, NOT this KPI; its probe reproduced the shipped rule byte-for-byte on all previously-validated records (zero regression), so the 5 canonical amines here (IPDA, m-XDA, DDS, TETA, DETA -- none guanidine-class) are unaffected",
+              "ledger_lines": [
+                {
+                  "campaign_item_id": "",
+                  "line": 59,
+                  "line_sha256": "e2de73572ff92b16cd150b22c5e3e84d0184570e744a2fb6c6082d976727444a",
+                  "receipt": "amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json",
+                  "ts": "2026-08-03T18:08:49+00:00",
+                  "verdict": "REFUTED"
+                }
+              ],
+              "receipt_path": "logs/falsification-ledger.jsonl",
+              "role": "ledger_entries"
+            }
+          ],
+          "kpi_file": "amphora-molecule-property/evidence/phase0/kpis/coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+          "kpi_sha256": "e3e9c9fa8b4ebf06cabb887a71647c03180becd6239b16dd0e7f7909de0d1e9f",
+          "rationale": "STANDS as a declarative integration demo (claim lock declarative_integration_demo_only) with honest AD gating (4/5 out-of-domain); no receipt refutes it.",
+          "status": "STANDS"
+        }
+      ],
+      "status_counts": {
+        "REFUTED": 2,
+        "RETRACTED": 2,
+        "STANDS": 10,
+        "STANDS-WITHIN-CORPUS-ONLY": 7
+      },
+      "status_vocabulary": [
+        "STANDS",
+        "STANDS-WITHIN-CORPUS-ONLY",
+        "REFUTED",
+        "RETRACTED"
+      ]
+    },
+    "kpi_status_index_canonical_sha256": "96855a7cb335afcc05965ca72b367f45c49a0cd790a3ec21e70eca30bc16f721",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-molecule-property",
+    "promotes_authority": false,
+    "reattack_observed_results": {
+      "ledger_grep": {
+        "kpi_files_named_as_attacked_claims": [
+          "<whole-kpi-surface>",
+          "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+          "openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+          "openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+          "radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+          "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json"
+        ],
+        "ledger_total_lines_at_read": 61,
+        "module_lines": [
+          {
+            "campaign_item_id": "C7",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+            "line": 9,
+            "line_sha256": "c5e57d0ab41285ac09e044460d78b2d7c7c1136f229da6740359d5ef22706309",
+            "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json",
+            "ts": "2026-08-01T05:13:33+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "C7",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json (density RF MAE 0.0566 g/cm3 transfers to out-of-corpus chemistry)",
+            "line": 10,
+            "line_sha256": "c3e2d702d3d281cdddfcde9d9761f526b8d0676697270d7e1e4f7b3ade10d44b",
+            "receipt": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+            "ts": "2026-08-01T16:25:30+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "C7",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+            "line": 11,
+            "line_sha256": "0872b7211c887008843a67d6d0f7fd12468dc5468a1453233b27a65a81f84c45",
+            "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+            "ts": "2026-08-01T17:04:10+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "C8",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json (claim: a founder-facing per-property physics-vs-ML-vs-stack table can be buil",
+            "line": 12,
+            "line_sha256": "4c4a7811b29257d276d77567dc2ac05d9978948e782cc314a8ced6e74ffc4651",
+            "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v1/c8_phys_ml_stack_comparison_receipt.v1.json",
+            "ts": "2026-08-01T18:18:28+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "C8",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json (claim: founder-facing physics-vs-ML-vs-stack table buildable entirely from re",
+            "line": 13,
+            "line_sha256": "e60347c39e09252e0b94bff543ce1750e59882f72eb4332e86c8e4f23a97a388",
+            "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+            "ts": "2026-08-01T19:04:53+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "C8",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json (claim: founder-facing physics-vs-ML-vs-stack table buildable entirely from re",
+            "line": 14,
+            "line_sha256": "7c6a0ff3f99fefc3bdb83082560c1e2638d7c1e72318c276f86c036163861204",
+            "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+            "ts": "2026-08-01T20:02:47+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "W2",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/ (claim: label data underlying this portfolios ML claims is physically admissible)",
+            "line": 20,
+            "line_sha256": "08bc1cbaa6b2e98fc9dbbe58099c9afc0a8d0898224d8f03a57f51eccdc59103",
+            "receipt": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/w2_fire1_corpus_admissibility_audit_receipt.v1.json",
+            "ts": "2026-08-02T01:07:46+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "W2",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/ (claim: label data underlying this portfolios ML claims is physically admissible)",
+            "line": 21,
+            "line_sha256": "674febcb088ffeaa876b08e392693f4cfbfc076ef7e05b90d3ca4e5f9aefc230",
+            "receipt": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/w2_fire2_corpus_admissibility_audit_receipt.v1.json",
+            "ts": "2026-08-02T02:03:59+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "W2",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/ (claim: label data underlying this portfolios ML claims is physically admissible)",
+            "line": 22,
+            "line_sha256": "a973c777e8b70f10d0ed6833276517a92324673209e3a2e9983c33b0c139dd83",
+            "receipt": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+            "ts": "2026-08-02T03:04:45+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "W3",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+            "line": 23,
+            "line_sha256": "9a0c26790476ee5829563a54c5fe4d83884b2a43d095d41b49bc4a78103384b9",
+            "receipt": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+            "ts": "2026-08-02T04:05:55+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/multi-target-ml-radonpy-4-properties-audit-kpi.v1.json (refractive_index R2=0.893, thermal_conductivity R2=0.542 under 60/20/20 rando",
+            "line": 33,
+            "line_sha256": "15738ad961f94136e8f40b93fb582ccc104e25dc35436c08bdf5bac1fe0b64f4",
+            "receipt": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+            "ts": "2026-08-02T14:05:08+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "",
+            "claim": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json (claim: data-driven Ridge Y_gi calibration confirms the Van Krevelen",
+            "line": 45,
+            "line_sha256": "23334f8104403c7a146242345574ed893d49c3a9a07dc418e89b1ca4a297ef01",
+            "receipt": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+            "ts": "2026-08-03T02:09:18+00:00",
+            "verdict": "REFUTED"
+          },
+          {
+            "campaign_item_id": "",
+            "claim": "amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/amine_class_active_nh_robustness_receipt.v1.json (amine-hardener structure-rule generalization: 100% correc",
+            "line": 59,
+            "line_sha256": "e2de73572ff92b16cd150b22c5e3e84d0184570e744a2fb6c6082d976727444a",
+            "receipt": "amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json",
+            "ts": "2026-08-03T18:08:49+00:00",
+            "verdict": "REFUTED"
+          }
+        ],
+        "note": "ledger is append-only and shared; per-line sha256 pins each cited entry independently of later appends"
+      },
+      "verdict_reextraction": {
+        "C7_FINAL.density_governing_attack": "attack_2_hierarchical_macro_bisection (fire 2)",
+        "C7_FINAL.overall_verdict": "CLAIM_REFUTED",
+        "C7_FINAL.tg_verdict": "REFUTED",
+        "C8_FINAL.verdict": "CLAIM_REFUTED",
+        "W2_FIRE3.verdict": "REFUTED",
+        "W3.verdict": "CLAIM_REFUTED",
+        "W7.verdict": "REFUTED",
+        "W8.verdict": "REFUTED"
+      },
+      "w3_dielectric_retraction_recheck": {
+        "conclusion": "W3 RETRACT dispositions still bind byte-exactly to the on-disk KPI files; retraction stands",
+        "dispositions_rechecked": [
+          {
+            "byte_intact": true,
+            "current_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139",
+            "disposition": "NOT_RETRACTED_LABELS_ADMISSIBLE",
+            "file": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+            "w3_recorded_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+          },
+          {
+            "byte_intact": true,
+            "current_sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520",
+            "disposition": "RETRACT",
+            "file": "amphora-molecule-property/evidence/phase0/kpis/external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+            "w3_recorded_sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520"
+          },
+          {
+            "byte_intact": true,
+            "current_sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4",
+            "disposition": "RETRACT",
+            "file": "amphora-molecule-property/evidence/phase0/kpis/mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+            "w3_recorded_sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4"
+          },
+          {
+            "byte_intact": true,
+            "current_sha256": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7",
+            "disposition": "SUPERSEDED_BY_C8_FIRE3",
+            "file": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v1/c8_phys_ml_stack_comparison_receipt.v1.json",
+            "w3_recorded_sha256": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7"
+          }
+        ],
+        "method": "re-verify W3 DSSE Ed25519 signature over PAE(payloadType, payload) against its embedded evaluator public key; re-hash all 4 kpi_surface_dispositions targets and the machine-readable retraction list against the shas W3 recorded",
+        "retraction_list_line_count": 5,
+        "retraction_list_line_sha256": {
+          "line1_external_validation_dielectric": "4a75f41517efb6132b2c360997cf77a53015c98bf195413ece8b880cb406ebb4",
+          "line2_mixed_dielectric_conformal": "2fa889393bbffb58cd282e1435688761d7afa8a555e736215a15ea81afc6135b"
+        },
+        "retraction_list_sha256_matches_w3": true,
+        "w3_signature_valid": true,
+        "w3_verdict": "CLAIM_REFUTED"
+      },
+      "w8_vk_ridge_sign_flip_reattack": {
+        "conclusion": "independently reproduced W8: 2/24 fitted Y_gi sign-reversed (vinyl_CH2, nitrile) against an all-positive published column; REFUTED verdict re-confirmed",
+        "method": "re-run W8's core physical-admissibility check directly on the KPI's own stored fitted-vs-published Y_gi table: count sign reversals vs the 100%-positive published baseline; recompute Spearman rho(n_train, |ratio-1|)",
+        "n_groups": 24,
+        "n_published_negative": 0,
+        "n_sign_flipped": 2,
+        "reproduces_w8_finding": true,
+        "sign_flipped_groups": [
+          "nitrile",
+          "vinyl_CH2"
+        ],
+        "sign_flipped_support_rank_ascending": {
+          "nitrile": 9,
+          "vinyl_CH2": 7
+        },
+        "spearman_rho_n_train_vs_abs_relative_deviation": -0.523126,
+        "w8_receipt_sign_flipped_groups": [
+          "nitrile",
+          "vinyl_CH2"
+        ],
+        "w8_receipt_verdict": "REFUTED"
+      }
+    },
+    "receipt_id": "r-a09-kpi-status-index",
+    "repair_artifacts": {
+      "done_receipt": "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json",
+      "retraction_index_md": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md (R-A09 section appended; file is append-only, prior bytes preserved as prefix)",
+      "retraction_index_md_sha256_before_append": "4dd0409b70a5981c483eada5126aeadc92bfdb647af5ede4b0eeb97cc73ce34a",
+      "work_dir": "amphora-molecule-property/evidence/phase0/repairs/R-A09/work/"
+    },
+    "repair_item": "R-A09",
+    "repair_mode": "interactive-2026-08-03",
+    "schema": "amphora.phase0-repair.kpi-status-index.v1",
+    "signing_key": {
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR",
+      "signs_phase0_evaluation_or_review": false,
+      "used_for": "AUDIT_ONLY repair done-receipt under evidence/phase0/repairs/"
+    },
+    "supersedes": {
+      "reason": "The 21 live KPI receipt files, all dated 2026-07-23, presented headline claims with no reference to the 12 subsequent falsification-ledger refutations against this module (C7 x3, C8 x3, W2 x3, W3, W7, W8). This index supersedes that unannotated status presentation ONLY. No KPI file is modified or deleted; superseded_sha256 is the sha256 of the newline-joined 'filename:sha256' listing of the 21 files in sorted order (each per-file sha also recorded below).",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-property/evidence/phase0/kpis/ (unannotated 21-file KPI status surface as dated 2026-07-23)",
+      "superseded_sha256": "408273c46004441113ebb34a509218248f0514b13c93749e7379332fcd8edf20",
+      "surface_listing": [
+        {
+          "file": "coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+          "sha256": "e3e9c9fa8b4ebf06cabb887a71647c03180becd6239b16dd0e7f7909de0d1e9f"
+        },
+        {
+          "file": "external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+          "sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520"
+        },
+        {
+          "file": "external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+          "sha256": "b73bf0e81d967d837cf9195ad56dec7c9b93cdf8613ec0d1d6272d3ca3e4579a"
+        },
+        {
+          "file": "mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+          "sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4"
+        },
+        {
+          "file": "mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+          "sha256": "5ab0e74898476cafb02ee23ec54f78bb890a19027ee826bffba10dd6001a367e"
+        },
+        {
+          "file": "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+          "sha256": "a72aa3f4629a755b735b0e10df2046473ac8e8d9a66dc7e3cc59164914767dd6"
+        },
+        {
+          "file": "openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+          "sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+        },
+        {
+          "file": "openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+          "sha256": "a77572d6f36a960a5ab5aed62fdac6bd8cb3e7d7f39d7b63be16ee5ca6481878"
+        },
+        {
+          "file": "openpoly-water-contact-angle-ml-baseline-kpi.v1.json",
+          "sha256": "974e39c709a50296cda415bf61b75efa25fff8f7f8ef5e64b363ff123bd68965"
+        },
+        {
+          "file": "openpoly-water-uptake-ml-baseline-audit-kpi.v1.json",
+          "sha256": "194f5c73d977b6a1cc07dded862dc51d9e205286a78244649ac07f131bc38364"
+        },
+        {
+          "file": "polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+          "sha256": "447f5ca832054c0e606b89eb7dfdbd38db3f3a85377c299d982122a3316221e4"
+        },
+        {
+          "file": "polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json",
+          "sha256": "94fba60037e20a4763d2881d8aa3efd46298e094eedd8a67216e58a2ea9d32f9"
+        },
+        {
+          "file": "polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json",
+          "sha256": "74d534f3f2f17e8cc2ec5dc91b10cfa22a9e9d78f800d02d74e1eec5f83c26e2"
+        },
+        {
+          "file": "polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json",
+          "sha256": "dcc4af575760d227bc34f29a7cbbea450f1a48d484d9e93c5fdb74296a3869d5"
+        },
+        {
+          "file": "radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+          "sha256": "c8bae23b8deeb8f79edca0af1be6c4457c8abec0cdb5e94eb874e6a7ba18701a"
+        },
+        {
+          "file": "stacked-ml-van-krevelen-density-radonpy-kpi.v1.json",
+          "sha256": "0dc1b6f663d9edb75652bf221712b01f4847b7f62f3620e12e57af7c8adcf751"
+        },
+        {
+          "file": "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+          "sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979"
+        },
+        {
+          "file": "van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-kpi.v1.json",
+          "sha256": "645b4a7e4cc3c5a8f3a5b679ff6336c8f212ee4206a0d9fc86089804044f4803"
+        },
+        {
+          "file": "van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-kpi.v1.json",
+          "sha256": "7680f16bed40bd843ceb301ec056482d942ddc0150497497387508963e4964e1"
+        },
+        {
+          "file": "van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-kpi.v1.json",
+          "sha256": "bd49b1b3bc72b99109e3c2ef021bd6c950f8b3c957e8c88b3e4fe3354d4f128b"
+        },
+        {
+          "file": "van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json",
+          "sha256": "e8e6da561ef1236ddef1de1f05505b02890e48ad0b4c72b751edf5e3af4c2fde"
+        }
+      ]
+    },
+    "trust_anchored_in_phase0_store": true,
+    "two_replay_sha256_gate": "PASS"
+  },
+  "signature": {
+    "payload": "ewogICJhY2NlcHRhbmNlIjogewogICAgImFsbF9yb3dzX2V2aWRlbmNlX2JhY2tlZCI6IHRydWUsCiAgICAiYW5jaG9yc19jb25maXJtZWQiOiB7CiAgICAgICJtaXhlZF9hbmRfZXh0ZXJuYWxfZGllbGVjdHJpY19SRVRSQUNURURfYnlfVzMiOiB0cnVlLAogICAgICAibXVsdGlfdGFyZ2V0XzRfcHJvcGVydGllc19SRUZVVEVEX2J5X1c3IjogdHJ1ZSwKICAgICAgIm9wZW5wb2x5X2RpZWxlY3RyaWNfYmFzZWxpbmVfU1RBTkRTXzBfb2ZfMjk1X3Zpb2xhdGlvbnMiOiB0cnVlLAogICAgICAidGdfZGVuc2l0eV9yaV9zdGFuZF93aXRoaW5fY29ycHVzX29ubHkiOiB0cnVlLAogICAgICAidmFuX2tyZXZlbGVuX3JpZGdlX2ZpdF9SRUZVVEVEX2J5X1c4IjogdHJ1ZQogICAgfSwKICAgICJuX3Jvd3MiOiAyMSwKICAgICJ6ZXJvX2RhbmdsaW5nX3BhdGhzIjogdHJ1ZQogIH0sCiAgImFjdGlvbiI6ICJkZWZpbml0aXZlIHBlci1LUEkgc3RhdHVzIGluZGV4IGZvciB0aGUgYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eSBldmlkZW5jZS9waGFzZTAva3BpcyBzdXJmYWNlOiBldmVyeSBsaXZlIEtQSSByZWNlaXB0IGNsYXNzaWZpZWQgU1RBTkRTIC8gU1RBTkRTLVdJVEhJTi1DT1JQVVMtT05MWSAvIFJFRlVURUQgLyBSRVRSQUNURUQgZnJvbSBzaWduZWQgdmVyZGljdCByZWNlaXB0cywgd2l0aCBldmVyeSBjaXRhdGlvbiBwYXRoIHJlc29sdmVkIGFuZCBzaGEyNTYtcGlubmVkIiwKICAiYXV0aG9yaXR5IjogIkFVRElUX09OTFkiLAogICJjaXRhdGlvbl9pbnRlZ3JpdHkiOiB7CiAgICAiYWxsX2NpdGVkX3BhdGhzX3Jlc29sdmUiOiB0cnVlLAogICAgImFsbF9jaXRlZF9zaGFzX21hdGNoX3Bpbm5lZCI6IHRydWUsCiAgICAicGlubmVkX3NoYXNfY3Jvc3NfY2hlY2tlZF9hZ2FpbnN0IjogWwogICAgICAiVzMga3BpX3N1cmZhY2VfZGlzcG9zaXRpb25zW10uc2hhMjU2IChvcGVucG9seS1kaWVsZWN0cmljIGNmOTRlYi4uLiwgZXh0ZXJuYWwtdmFsaWRhdGlvbi1kaWVsZWN0cmljIDMzNWYzMC4uLiwgbWl4ZWQtZGllbGVjdHJpYyBkYTU0ZjAuLi4sIGM4LWZpcmUxIDAxMTVmYy4uLikiLAogICAgICAiY2xhaW1zLXJlcXVpcmluZy1yZXRyYWN0aW9uLmpzb25sIHN1cGVyc2VkZWRfYnlfcmVjZWlwdF9zaGEyNTYgKGM1NWI5MC4uLiA9IGM4X2ZpcmUzX2ZpbmFsKSIsCiAgICAgICJXOCBjbGFpbV91bmRlcl9hdHRhY2sua3BpX3NoYTI1NiAoYmEyNDIzLi4uID0gdmFuLWtyZXZlbGVuLXJpZGdlLWZpdCBLUEkpIiwKICAgICAgIlczIHJldHJhY3Rpb25fbGlzdF9saW5lc19zaGEyNTYgKDlmYjY4ZC4uLiA9IGxvZ3MvY2xhaW1zLXJlcXVpcmluZy1yZXRyYWN0aW9uLmpzb25sKSIKICAgIF0sCiAgICAicmVjZWlwdHNfY2l0ZWQiOiB7CiAgICAgICJDN19GSU5BTCI6IHsKICAgICAgICAicGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvdGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1jNy12My1maW5hbC9jN19maW5hbF90Z19kZW5zaXR5X2V4dGVybmFsX3ZhbGlkaXR5X3ZlcmRpY3RfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogIjk1OGY0ZDY5YTEwZWU3OWY1ZjlmMTI5YWE4NDc1YmU4N2QxMjRlYzcyNmYxOWQyZDlkNmVlYWJkYmM0ZTllMDgiCiAgICAgIH0sCiAgICAgICJDN19GSVJFMSI6IHsKICAgICAgICAicGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvdGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1jNy12MS9jN190Z19kZW5zaXR5X2V4dGVybmFsX3ZhbGlkaXR5X3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICJmZGIxN2QzZDY2MTRiNDA1MjI2NTY1YzdmZThiOTAxOTFlMzk2NDA0ZGVhNmVjNmQyNGI3NDQ0YTQzZTg2YTMwIgogICAgICB9LAogICAgICAiQzdfRklSRTIiOiB7CiAgICAgICAgInBhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL2RlbnNpdHktYnV0aW5hLWNsdXN0ZXItZXh0ZXJuYWwtdmFsaWRpdHktYzctdjIvYzdfZGVuc2l0eV9tYWNyb19iaXNlY3Rpb25fZXh0ZXJuYWxfdmFsaWRpdHlfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogIjFiYTM5M2I5MDVlMGEwNDYzYmQxYjJjM2FlNWY2ZTNhNTM4YjMxYzM0MWUzZDZjYTk1NWIwZDM5MzZmODk2OGEiCiAgICAgIH0sCiAgICAgICJDOF9GSU5BTCI6IHsKICAgICAgICAicGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLWM4LXYzLWZpbmFsL2M4X2ZpcmUzX2ZpbmFsX2NvbnNvbGlkYXRlZF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiYzU1YjkwMjAxNTM0ZWE0ZTY4YTRkNDc1YzUwMTU5MWZmNTFkMTEyYWNhNmExOGM3YTFhYjJiZTZlNGRiNmI1NyIKICAgICAgfSwKICAgICAgIkM4X0ZJUkUxIjogewogICAgICAgICJwYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tYzgtdjEvYzhfcGh5c19tbF9zdGFja19jb21wYXJpc29uX3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICIwMTE1ZmM4YmViMmEwMTkzOGY2OTI2NGVkYjFjNjEzNmQ2MDIxNzE1Y2M3MmUyZWUyNTUzZmNmYWJhMzUxY2Q3IgogICAgICB9LAogICAgICAiQzhfRklSRTIiOiB7CiAgICAgICAgInBhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC1maXJlMi1jbGVhbi1zdWJzZXQtdjEvYzhfZmlyZTJfZGllbGVjdHJpY19jbGVhbl9zdWJzZXRfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogImRhOTBmNjQyOTliMGNhZDYyNzhiNGVmMzJiMTY3MzM2ZTZkM2IxMGEyNmY1NzA5MDZjYmRmNTY4ZWY0NDA0ZTciCiAgICAgIH0sCiAgICAgICJDOF9GSVJFMl9SRUlTU1VFIjogewogICAgICAgICJwYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tYzgtZmlyZTItY2xlYW4tc3Vic2V0LXYxL2M4X2ZpcmUyX2RpZWxlY3RyaWNfY2xlYW5fc3Vic2V0X3JlY2VpcHQudjEuYW5jaG9yZWQtcmVpc3N1ZS52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogIjJjNTczNDNhMzVjODkyYzUwODkxZWNmOTE5MTQ5OTZjZjU3MDdlOTljY2U5YzQ4ZTJjZjExZTIxNGE0ZGExOTAiCiAgICAgIH0sCiAgICAgICJSRVRSQUNUX0xJU1QiOiB7CiAgICAgICAgInBhdGgiOiAibG9ncy9jbGFpbXMtcmVxdWlyaW5nLXJldHJhY3Rpb24uanNvbmwiLAogICAgICAgICJzaGEyNTYiOiAiOWZiNjhkZGUxZDFlYjhiYzMwNTdlZGJiM2RlZWQ2MzYxY2ZhMDhkZWEwMjk5ODUxODhlNGQ4YjIzYjMxMTQwNCIKICAgICAgfSwKICAgICAgIlcyX0ZJUkUzIjogewogICAgICAgICJwYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvY29ycHVzLWFkbWlzc2liaWxpdHktYXVkaXQtdjEvY29ycHVzLWFkbWlzc2liaWxpdHktYXVkaXQtcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiMjViZmM2NDAxYjhiMzlmNTE4ZmRlMDYzZTFjYzM1YzExYjNmMTY2MGZmZTNlNzFiMGZiMzg3ZWI1OWI0ZmVmMiIKICAgICAgfSwKICAgICAgIlczIjogewogICAgICAgICJwYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvZGllbGVjdHJpYy1yZXRyYWN0aW9uLXYxL2RpZWxlY3RyaWMtcmV0cmFjdGlvbi1zdXBlcnNlZGluZy1rcGktcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiMGQ0ODgwYzY0NTJhZmI2ZDM5N2JiOWMzNzYyNjMwYWRlZDU5ODA2M2I4ZjdhNTc5MDY2YzgwNTQ3OTM5MGI3YiIKICAgICAgfSwKICAgICAgIlc3IjogewogICAgICAgICJwYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvbXVsdGl0YXJnZXQtbWFjcm8tYmlzZWN0aW9uLWV4dGVybmFsLXZhbGlkaXR5LXc3LXYxL211bHRpdGFyZ2V0LW1hY3JvLWJpc2VjdGlvbi1leHRlcm5hbC12YWxpZGl0eS1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICIyNGJjMzIwNDNkYjI2MTM4ZDYxODc0NjkxMmY1NDBiMzJiYzZmYmUxMzA3NDg5MjAwNmQxMTgwMzM4OGY5MDRjIgogICAgICB9LAogICAgICAiVzgiOiB7CiAgICAgICAgInBhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC92ay1yaWRnZS15Z2ktYWRtaXNzaWJpbGl0eS13OC12MS92ay1yaWRnZS15Z2ktYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICIwYjIyZmVjNmEwNDEyODdmNTQ3MzQ0OWQwYzA4Zjg1ZWJlMjA0NDlmODJjNDYzOGNhODYyN2MyOTY0M2UwZmVkIgogICAgICB9CiAgICB9CiAgfSwKICAiY291bnRfZGlzY3JlcGFuY3lfbm90ZSI6ICJSZXBhaXIgc3BlYyBzYWlkIDIyIEtQSSBmaWxlczsgdGhlIGxpdmUgZXZpZGVuY2UvcGhhc2UwL2twaXMvIHN1cmZhY2UgaG9sZHMgZXhhY3RseSAyMSAuanNvbiBLUEkgcmVjZWlwdHMgKGFsbCBkYXRlZCAyMDI2LTA3LTIzKS4gVGhlIG9ubHkgb3RoZXIgS1BJIGZpbGUgaW4gdGhlIG1vZHVsZSBldmlkZW5jZSB0cmVlIGlzIHRoZSBwcmUtZXhpc3Rpbmcgc3VwZXJzZWRlZCBwcm9wZXJ0eS1lZXctYWhldy1rcGkudjEuanNvbiAoMjAyNi0wNy0yMikgdW5kZXIgZXZpZGVuY2Uvc3VwZXJzZWRlZC8sIGRvY3VtZW50ZWQgaW4gdGhlIGFwcGVuZGl4IHJvdy4iLAogICJkYXRlIjogIjIwMjYtMDgtMDMiLAogICJmbGlwc19zY2llbnRpZmljX3JlYWRpbmVzcyI6IGZhbHNlLAogICJnZW5lcmF0ZWRfb25faG9zdCI6ICJ4YmFiZTIiLAogICJrcGlfc3RhdHVzX2luZGV4IjogewogICAgImFwcGVuZGl4X3N1cGVyc2VkZWRfa3BpIjogewogICAgICAiZXZpZGVuY2UiOiBbCiAgICAgICAgewogICAgICAgICAgImRldGFpbCI6ICJtb3ZlZCB1bmRlciBldmlkZW5jZS9zdXBlcnNlZGVkL3N1cGVyc2Vzc2lvbi0xYmFjMDNmNy4uLiBvbiAyMDI2LTA3LTIyLCBiZWZvcmUgdGhlIDIxIGxpdmUgS1BJcyB3ZXJlIHdyaXR0ZW4gb24gMjAyNi0wNy0yMyIsCiAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2Uvc3VwZXJzZWRlZC9zdXBlcnNlc3Npb24tMWJhYzAzZjdjZTM3MzUzNjkzZTIxYjVhY2YzZDg1NjI2YTM0MDUyZDcxNTRmNTVkNzI0OTAxZThlYTY4N2ZmMS9waGFzZTAva3Bpcy9wcm9wZXJ0eS1lZXctYWhldy1rcGkudjEuanNvbiIsCiAgICAgICAgICAicm9sZSI6ICJzdXBlcnNlc3Npb25fZGlyZWN0b3J5IgogICAgICAgIH0KICAgICAgXSwKICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2Uvc3VwZXJzZWRlZC9zdXBlcnNlc3Npb24tMWJhYzAzZjdjZTM3MzUzNjkzZTIxYjVhY2YzZDg1NjI2YTM0MDUyZDcxNTRmNTVkNzI0OTAxZThlYTY4N2ZmMS9waGFzZTAva3Bpcy9wcm9wZXJ0eS1lZXctYWhldy1rcGkudjEuanNvbiIsCiAgICAgICJrcGlfc2hhMjU2IjogIjVmM2I3NThkN2Y2OGRmMzk2YTNhZDg2MWEyZjk5YmI0N2ZkMjIzODRkOTgxNGNkM2Y3ZmQzYmJjYzRiYzZiNzQiLAogICAgICAicmF0aW9uYWxlIjogIkRvY3VtZW50ZWQgZm9yIGNvbXBsZXRlbmVzczogdGhlIHJlcGFpciBzcGVjIGNvdW50ZWQgMjIgS1BJIGZpbGVzOyB0aGUgbGl2ZSBzdXJmYWNlIGhvbGRzIGV4YWN0bHkgMjEuIFRoaXMgcHJlLWV4aXN0aW5nIHN1cGVyc2VkZWQgRUVXL0FIRVcgS1BJIGlzIHRoZSBvbmx5IG90aGVyIEtQSS1uYW1lZCByZWNlaXB0IGluIHRoZSBtb2R1bGUgZXZpZGVuY2UgdHJlZSBhbmQgdGhlIG5lYXJlc3QgY2FuZGlkYXRlIGZvciB0aGUgMjJuZC4iLAogICAgICAic3RhdHVzIjogIlNVUEVSU0VERUQtUFJFLUVYSVNUSU5HIChub3QgcGFydCBvZiB0aGUgbGl2ZSBLUEkgc3VyZmFjZSkiCiAgICB9LAogICAgImRhdGUiOiAiMjAyNi0wOC0wMyIsCiAgICAiaW5kZXhfaWQiOiAia3BpLXN0YXR1cy1pbmRleCIsCiAgICAia3BpX2RpciI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzLyIsCiAgICAibW9kdWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkiLAogICAgIm5fbGl2ZV9rcGlfZmlsZXMiOiAyMSwKICAgICJyb3dzIjogWwogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIlczIGtwaV9zdXJmYWNlX2Rpc3Bvc2l0aW9uczogTk9UX1JFVFJBQ1RFRF9MQUJFTFNfQURNSVNTSUJMRSAtLSB0cmFpbnMvZXZhbHVhdGVzIGVudGlyZWx5IG9uIE9wZW5Qb2x5J3Mgb3duIGRpZWxlY3RyaWMgY29sdW1uOyAwLzI5NSB2aW9sYXRpb25zIHVuZGVyIE9wZW5Qb2x5J3MgaW50ZXJuYWxseS1jb25zaXN0ZW50IERGVCBkZWNvbXBvc2l0aW9uOyBoZWFkbGluZSBudW1iZXJzIHJlbWFpbiBjaXRhYmxlIEFTLUlTIHNjb3BlZCB0byB0aGUgT3BlblBvbHkgbGl0ZXJhdHVyZSBwb3B1bGF0aW9uIiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L2RpZWxlY3RyaWMtcmV0cmFjdGlvbi12MS9kaWVsZWN0cmljLXJldHJhY3Rpb24tc3VwZXJzZWRpbmcta3BpLXJlY2VpcHQudjEuZHNzZS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogIjBkNDg4MGM2NDUyYWZiNmQzOTdiYjljMzc2MjYzMGFkZWQ1OTgwNjNiOGY3YTU3OTA2NmM4MDU0NzkzOTBiN2IiLAogICAgICAgICAgICAicm9sZSI6ICJleHBsaWNpdF9ub3RfcmV0cmFjdGVkX2Rpc3Bvc2l0aW9uIgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJDOCBwb3B1bGF0aW9uIGNvbnRyb2wgaXNvbGF0ZXMgdGhlIGxhYmVsIGRlZmVjdCB0byBSYWRvblB5IFBJMTA3MCdzIE1EIGZsdWN0dWF0aW9uLWZvcm11bGEgcm91dGU7IGRvZXMgTk9UIGltcGxpY2F0ZSBPcGVuUG9seSdzIGRpZWxlY3RyaWMgY29sdW1uIiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLWM4LXYzLWZpbmFsL2M4X2ZpcmUzX2ZpbmFsX2NvbnNvbGlkYXRlZF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiYzU1YjkwMjAxNTM0ZWE0ZTY4YTRkNDc1YzUwMTU5MWZmNTFkMTEyYWNhNmExOGM3YTFhYjJiZTZlNGRiNmI1NyIsCiAgICAgICAgICAgICJyb2xlIjogImxhYmVsX2FkbWlzc2liaWxpdHlfY29udHJvbCIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJrcGlfZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL29wZW5wb2x5LWRpZWxlY3RyaWMtY29uc3RhbnQtbWwtYmFzZWxpbmUta3BpLnYxLmpzb24iLAogICAgICAgICJrcGlfc2hhMjU2IjogImNmOTRlYjE4NWZiOGZkODgyMzI4OTg3ZjY0ODRmODY5ODEyNTE1N2I3NDlkMzlkNjYwYjcxMWY0ZTA2OGQxMzkiLAogICAgICAgICJyYXRpb25hbGUiOiAiU1RBTkRTLiBTY2FmZm9sZC1zYWZlIGhvbGRvdXQgTUFFPTAuNDA0MCBSMj0wLjU2NDkgb24gbj0yOTUgT3BlblBvbHkgcG9seW1lcnM7IG93biBjbGFpbSBsb2NrIGFscmVhZHkgcmVzdHJpY3RzIHRvIGJhc2VsaW5lX3ZhbGlkX29uX29wZW5wb2x5X3NjYWZmb2xkX2Rpc3RyaWJ1dGlvbl9vbmx5LiBFeHBsaWNpdGx5IGV4YW1pbmVkIGFuZCBub3QgcmV0cmFjdGVkIGJ5IFczLiIsCiAgICAgICAgInN0YXR1cyI6ICJTVEFORFMiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZXZpZGVuY2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAib3ZlcmFsbF92ZXJkaWN0IENMQUlNX1JFRlVURUQgZm9yICd3aXRoaW4tY29ycHVzIHBlcmZvcm1hbmNlIHRyYW5zZmVycyB0byBvdXQtb2YtY29ycHVzIGNoZW1pc3RyeSc6IFRnIGNyb3NzLWNvcnB1cyAoT3BlblBvbHk8LT5Qb2x5dW5pdmVyc2UsIGJvdGggZGlyZWN0aW9ucykgNi42NngvMTYuNjB4IGRlZ3JhZGF0aW9uLCB3b3JzZSB0aGFuIHByZWRpY3QtdGhlLW1lZGlhbiBudWxsIChhbnRpLXByZWRpY3RpdmUpIiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvdGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1jNy12My1maW5hbC9jN19maW5hbF90Z19kZW5zaXR5X2V4dGVybmFsX3ZhbGlkaXR5X3ZlcmRpY3RfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogIjk1OGY0ZDY5YTEwZWU3OWY1ZjlmMTI5YWE4NDc1YmU4N2QxMjRlYzcyNmYxOWQyZDlkNmVlYWJkYmM0ZTllMDgiLAogICAgICAgICAgICAicm9sZSI6ICJyZWZ1dGVzX3RyYW5zZmVyX2NsYWltIgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJvcmlnaW5hbCBjcm9zcy1jb3JwdXMgZXhwZXJpbWVudCAoc2NpZW5jZSBjb3JyZWN0OyBzaWduYXR1cmUgZm9ybWF0IGZpeGVkIGJ5IGZpcmUgMykiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy90Zy1kZW5zaXR5LWV4dGVybmFsLXZhbGlkaXR5LWM3LXYxL2M3X3RnX2RlbnNpdHlfZXh0ZXJuYWxfdmFsaWRpdHlfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogImZkYjE3ZDNkNjYxNGI0MDUyMjY1NjVjN2ZlOGI5MDE5MWUzOTY0MDRkZWE2ZWM2ZDI0Yjc0NDRhNDNlODZhMzAiLAogICAgICAgICAgICAicm9sZSI6ICJmaXJlMV9leHBlcmltZW50IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICIyNC8xNjcgKDE0LjQlKSBldmFsdWFibGUgT3BlblBvbHkgcm93cyB3aXRoIGJvdGggVGcgYW5kIFRtIHZpb2xhdGUgVGc8VG0gKEJveWVyLUJlYW1hbik7IGNvcnB1cyBmZWVkcyB0aGlzIEtQSSIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC12MS9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICIyNWJmYzY0MDFiOGIzOWY1MThmZGUwNjNlMWNjMzVjMTFiM2YxNjYwZmZlM2U3MWIwZmIzODdlYjU5YjRmZWYyIiwKICAgICAgICAgICAgInJvbGUiOiAibGFiZWxfaW50ZWdyaXR5X2NhdmVhdCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiQzcgZmlyZXMgMSBhbmQgMyBsZWRnZXIgZW50cmllcyBuYW1pbmcgdGhpcyBLUEkgYXMgdGhlIGF0dGFja2VkIGNsYWltIiwKICAgICAgICAgICAgImxlZGdlcl9saW5lcyI6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICJDNyIsCiAgICAgICAgICAgICAgICAibGluZSI6IDksCiAgICAgICAgICAgICAgICAibGluZV9zaGEyNTYiOiAiYzVlNTdkMGFiNDEyODVhYzA5ZTA0NDQ2MGQ3OGIyZDdjN2MxMTM2ZjIyOWRhNjc0MDM1OWQ1ZWYyMjcwNjMwOSIsCiAgICAgICAgICAgICAgICAicmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvdGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1jNy12MS9jN190Z19kZW5zaXR5X2V4dGVybmFsX3ZhbGlkaXR5X3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAgICAgICAidHMiOiAiMjAyNi0wOC0wMVQwNToxMzozMyswMDowMCIsCiAgICAgICAgICAgICAgICAidmVyZGljdCI6ICJSRUZVVEVEIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgImNhbXBhaWduX2l0ZW1faWQiOiAiQzciLAogICAgICAgICAgICAgICAgImxpbmUiOiAxMSwKICAgICAgICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICIwODcyYjcyMTFjODg3MDA4ODQzYTY3ZDZkMGY3ZmQxMjQ2OGRjNTQ2OGExNDUzMjMzYjI3YTY1YTgxZjg0YzQ1IiwKICAgICAgICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy90Zy1kZW5zaXR5LWV4dGVybmFsLXZhbGlkaXR5LWM3LXYzLWZpbmFsL2M3X2ZpbmFsX3RnX2RlbnNpdHlfZXh0ZXJuYWxfdmFsaWRpdHlfdmVyZGljdF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAgICAgInRzIjogIjIwMjYtMDgtMDFUMTc6MDQ6MTArMDA6MDAiLAogICAgICAgICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAibG9ncy9mYWxzaWZpY2F0aW9uLWxlZGdlci5qc29ubCIsCiAgICAgICAgICAgICJyb2xlIjogImxlZGdlcl9lbnRyaWVzIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvb3BlbnBvbHktZXhwZXJpbWVudGFsLXRnLW1sLWJhc2VsaW5lLWtwaS52MS5qc29uIiwKICAgICAgICAia3BpX3NoYTI1NiI6ICJhNzc1NzJkNmYzNmE5NjBhNWFiNWFlZDYyZmRhYzZiZDhjYjNlN2Q3ZjM5ZDdiNjNiZTE2ZWU1Y2E2NDgxODc4IiwKICAgICAgICAicmF0aW9uYWxlIjogIldpdGhpbi1jb3JwdXMgc2NhZmZvbGQtc2FmZSBudW1iZXJzIChob2xkb3V0ICsgMjEyLWZvbGQgTE9TTy1DViBvbiBPcGVuUG9seSkgcmVtYWluIHZhbGlkIGFzIG1lYXN1cmVkIGFuZCB3ZXJlIG5vdCBhdHRhY2tlZDsgYW55IHJlYWRpbmcgdGhhdCB0aGUgbW9kZWwgdHJhbnNmZXJzIG91dC1vZi1jb3JwdXMgaXMgUkVGVVRFRCBieSBDNy4gQ2FycmllcyBXMiBsYWJlbC1pbnRlZ3JpdHkgY2F2ZWF0IG9uIHRoZSBPcGVuUG9seSBUZy9UbSBheGlzLiIsCiAgICAgICAgInN0YXR1cyI6ICJTVEFORFMtV0lUSElOLUNPUlBVUy1PTkxZIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIm5lZ2F0aXZlIGV2aWRlbmNlIHBpbm5lZCBieSB0aGUgbGVkZ2VyX2dyZXAgcmUtYXR0YWNrIGJsb2NrIGluIHRoaXMgcmVjZWlwdCIsCiAgICAgICAgICAgICJvYnNlcnZlZCI6ICJncmVwIG9mIGFsbCA2MSBsZWRnZXIgbGluZXM6IG5vIGVudHJ5IG5hbWVzIG9wZW5wb2x5LXdhdGVyLWNvbnRhY3QtYW5nbGUtbWwtYmFzZWxpbmUta3BpLnYxLmpzb24gYXMgYW4gYXR0YWNrZWQgY2xhaW07IG5vIHZlcmRpY3QgcmVjZWlwdCB1bmRlciBiZW5jaG1hcmtzLyBvciBldmlkZW5jZS9hdWRpdC8gdGFyZ2V0cyBpdCIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAibG9ncy9mYWxzaWZpY2F0aW9uLWxlZGdlci5qc29ubCIsCiAgICAgICAgICAgICJyb2xlIjogIm5vX3JlZnV0aW5nX3JlY2VpcHQiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogImxpc3RlZCBhcyBhIGRlcGVuZGVudCBLUEkgb2Ygb3BlbnBvbHlfcHJvcGVydGllczsgdGhlIFcyIHZpb2xhdGlvbiBpcyBvbiB0aGUgVGcvVG0gb3JkZXJpbmcgYXhpcywgbm90IHRoZSBjb250YWN0LWFuZ2xlIGNvbHVtbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC12MS9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICIyNWJmYzY0MDFiOGIzOWY1MThmZGUwNjNlMWNjMzVjMTFiM2YxNjYwZmZlM2U3MWIwZmIzODdlYjU5YjRmZWYyIiwKICAgICAgICAgICAgInJvbGUiOiAiY29ycHVzX2xldmVsX2NhdmVhdCIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJrcGlfZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL29wZW5wb2x5LXdhdGVyLWNvbnRhY3QtYW5nbGUtbWwtYmFzZWxpbmUta3BpLnYxLmpzb24iLAogICAgICAgICJrcGlfc2hhMjU2IjogIjk3NGUzOWM3MDlhNTAyOTZjZGE0MTViZjYxYjc1ZWZhMjVmZmY4ZjdmOGVmNWU2NGIzNjNmZjEyM2JkNjg5NjUiLAogICAgICAgICJyYXRpb25hbGUiOiAiU1RBTkRTIG9uIHRoZSBPcGVuUG9seSBzY2FmZm9sZCBkaXN0cmlidXRpb24gcGVyIGl0cyBvd24gY2xhaW0gbG9ja3M7IG5vIHJlY2VpcHQgcmVmdXRlcyBpdC4gQ29ycHVzLWxldmVsIFcyIGNhdmVhdCBub3RlZCAoZGlmZmVyZW50IGxhYmVsIGF4aXMpLiIsCiAgICAgICAgInN0YXR1cyI6ICJTVEFORFMiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZXZpZGVuY2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAibmVnYXRpdmUgZXZpZGVuY2UgcGlubmVkIGJ5IHRoZSBsZWRnZXJfZ3JlcCByZS1hdHRhY2sgYmxvY2sgaW4gdGhpcyByZWNlaXB0IiwKICAgICAgICAgICAgIm9ic2VydmVkIjogImdyZXAgb2YgYWxsIDYxIGxlZGdlciBsaW5lczogbm8gZW50cnkgbmFtZXMgb3BlbnBvbHktd2F0ZXItdXB0YWtlLW1sLWJhc2VsaW5lLWF1ZGl0LWtwaS52MS5qc29uIGFzIGFuIGF0dGFja2VkIGNsYWltOyBubyB2ZXJkaWN0IHJlY2VpcHQgdW5kZXIgYmVuY2htYXJrcy8gb3IgZXZpZGVuY2UvYXVkaXQvIHRhcmdldHMgaXQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJub19yZWZ1dGluZ19yZWNlaXB0IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJkZXBlbmRlbnQgS1BJIG9mIG9wZW5wb2x5X3Byb3BlcnRpZXM7IFcyIHZpb2xhdGlvbiBheGlzIGlzIFRnL1RtIG9yZGVyaW5nIiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L2NvcnB1cy1hZG1pc3NpYmlsaXR5LWF1ZGl0LXYxL2NvcnB1cy1hZG1pc3NpYmlsaXR5LWF1ZGl0LXJlY2VpcHQudjEuZHNzZS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogIjI1YmZjNjQwMWI4YjM5ZjUxOGZkZTA2M2UxY2MzNWMxMWIzZjE2NjBmZmUzZTcxYjBmYjM4N2ViNTliNGZlZjIiLAogICAgICAgICAgICAicm9sZSI6ICJjb3JwdXNfbGV2ZWxfY2F2ZWF0IgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvb3BlbnBvbHktd2F0ZXItdXB0YWtlLW1sLWJhc2VsaW5lLWF1ZGl0LWtwaS52MS5qc29uIiwKICAgICAgICAia3BpX3NoYTI1NiI6ICIxOTRmNWM3M2Q5NzdiNmExY2MwN2RkZWQ4NjJkYzUxZDllMjA1Mjg2YTc4MjQ0NjQ5YWMwN2YxMzFiYzM4MzY0IiwKICAgICAgICAicmF0aW9uYWxlIjogIlNUQU5EUyBhcyBhbiBob25lc3QgbmVnYXRpdmUtZmluZGluZyBhdWRpdCAobmVnYXRpdmVfZmluZGluZ19ob25lc3RseV9kb2N1bWVudGVkIGNsYWltIGxvY2spOyBubyByZWNlaXB0IHJlZnV0ZXMgaXQuIiwKICAgICAgICAic3RhdHVzIjogIlNUQU5EUyIKICAgICAgfSwKICAgICAgewogICAgICAgICJldmlkZW5jZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJrcGlfc3VyZmFjZV9kaXNwb3NpdGlvbnM6IFJFVFJBQ1QgLS0gZXZhbHVhdGVzIGFnYWluc3QgUmFkb25QeSBzdGF0aWNfZGllbGVjdHJpY19jb25zdCB3aGVyZSA4OS41JSBvZiB0aGUgdGFyZ2V0IGNvbHVtbiBpcyBwaHlzaWNhbGx5IGluYWRtaXNzaWJsZSAoZXBzX3N0YXRpYzxuXjIpOyBNQUUvUjIgbm90IGludGVycHJldGFibGUgYXMgZXh0ZXJuYWwtdmFsaWRpdHkgbWVhc3VyZW1lbnQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvZGllbGVjdHJpYy1yZXRyYWN0aW9uLXYxL2RpZWxlY3RyaWMtcmV0cmFjdGlvbi1zdXBlcnNlZGluZy1rcGktcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiMGQ0ODgwYzY0NTJhZmI2ZDM5N2JiOWMzNzYyNjMwYWRlZDU5ODA2M2I4ZjdhNTc5MDY2YzgwNTQ3OTM5MGI3YiIsCiAgICAgICAgICAgICJyb2xlIjogInN1cGVyc2VkaW5nX3JldHJhY3Rpb25fcmVjZWlwdCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiemVyby1jb250YW1pbmF0aW9uIGNsZWFuLXN1YnNldCByZXRyYWluOiBhbGwgYXJtcyBSMjw9MCIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC1maXJlMi1jbGVhbi1zdWJzZXQtdjEvYzhfZmlyZTJfZGllbGVjdHJpY19jbGVhbl9zdWJzZXRfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogImRhOTBmNjQyOTliMGNhZDYyNzhiNGVmMzJiMTY3MzM2ZTZkM2IxMGEyNmY1NzA5MDZjYmRmNTY4ZWY0NDA0ZTciLAogICAgICAgICAgICAicm9sZSI6ICJ1bmRlcmx5aW5nX3JlZnV0YXRpb24iCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogImNvbnNvbGlkYXRlZCBOT19DT01QRVRFTlRfTU9ERUwgdmVyZGljdCBmb3IgZGllbGVjdHJpYyBjb25zdGFudCIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC12My1maW5hbC9jOF9maXJlM19maW5hbF9jb25zb2xpZGF0ZWRfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogImM1NWI5MDIwMTUzNGVhNGU2OGE0ZDQ3NWM1MDE1OTFmZjUxZDExMmFjYTZhMThjN2ExYWIyYmU2ZTRkYjZiNTciLAogICAgICAgICAgICAicm9sZSI6ICJ1bmRlcmx5aW5nX3JlZnV0YXRpb24iCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIlczIGxlZGdlciBlbnRyeSIsCiAgICAgICAgICAgICJsZWRnZXJfbGluZXMiOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgImNhbXBhaWduX2l0ZW1faWQiOiAiVzMiLAogICAgICAgICAgICAgICAgImxpbmUiOiAyMywKICAgICAgICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICI5YTBjMjY3OTA0NzZlZTU4Mjk1NjNhNTRjNWZlNGQ4Mzg4NGIyYTQzZDA5NWQ0MWI0OWJjNGE3ODEwMzM4NGI5IiwKICAgICAgICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvZGllbGVjdHJpYy1yZXRyYWN0aW9uLXYxL2RpZWxlY3RyaWMtcmV0cmFjdGlvbi1zdXBlcnNlZGluZy1rcGktcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICAgICAgICAgInRzIjogIjIwMjYtMDgtMDJUMDQ6MDU6NTUrMDA6MDAiLAogICAgICAgICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAibG9ncy9mYWxzaWZpY2F0aW9uLWxlZGdlci5qc29ubCIsCiAgICAgICAgICAgICJyb2xlIjogImxlZGdlcl9lbnRyaWVzIgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJyZXRyYWN0aW9uIGxpc3QgbGluZSAxIChmaWxlIHNoYSBwaW5uZWQgaW5zaWRlIFczOiA5ZmI2OGRkZS4uLikiLAogICAgICAgICAgICAibGluZSI6IDEsCiAgICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICI0YTc1ZjQxNTE3ZWZiNjEzMmIyYzM2MDk5N2NmNzdhNTMwMTVjOThiZjE5NTQxM2VjZThiODgwY2I0MDZlYmI0IiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJsb2dzL2NsYWltcy1yZXF1aXJpbmctcmV0cmFjdGlvbi5qc29ubCIsCiAgICAgICAgICAgICJyb2xlIjogIm1hY2hpbmVfcmVhZGFibGVfcmV0cmFjdGlvbiIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJrcGlfZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL2V4dGVybmFsLXZhbGlkYXRpb24tZGllbGVjdHJpYy1tbC1vcGVucG9seS10by1yYWRvbnB5LWtwaS52MS5qc29uIiwKICAgICAgICAia3BpX3NoYTI1NiI6ICIzMzVmMzA4M2YwYTVlMTkzMzA1YTk4NDI2ZTMwNzVhZDVjMjA4MzdmNWFkOWZjMzgyZDg1NjgxMjRmMjdhNTIwIiwKICAgICAgICAicmF0aW9uYWxlIjogIlJFVFJBQ1RFRCBieSBXMyAoc3VwZXJzZWRpbmcgcmV0cmFjdGlvbiByZWNlaXB0OyBkaXNwb3NpdGlvbiBSRVRSQUNUKS4gRmlsZSByZW1haW5zIG9uIGRpc2sgZm9yIGF1ZGl0IHRyYWlsOyBoZWFkbGluZSBudW1iZXJzIG11c3Qgbm90IGJlIGNpdGVkLiIsCiAgICAgICAgInJldHJhY3RlZF9ieSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L2RpZWxlY3RyaWMtcmV0cmFjdGlvbi12MS9kaWVsZWN0cmljLXJldHJhY3Rpb24tc3VwZXJzZWRpbmcta3BpLXJlY2VpcHQudjEuZHNzZS5qc29uIiwKICAgICAgICAic3RhdHVzIjogIlJFVFJBQ1RFRCIKICAgICAgfSwKICAgICAgewogICAgICAgICJldmlkZW5jZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJrcGlfc3VyZmFjZV9kaXNwb3NpdGlvbnM6IFJFVFJBQ1QgLS0gcG9vbHMgMTA3NyBSYWRvblB5IHJvd3MgKDg5LjUlIGNvcnJ1cHRlZCkgZm9yIHRyYWluK2V2YWw7IGFwcGFyZW50IFIyPTAuNjk5MS8wLjcwMDEgaXMgYW4gYXJ0aWZhY3Qgb2YgdGhlIGNvcnJ1cHRlZCBtYWpvcml0eSAoY2xlYW4tb25seSBSRiBjb2xsYXBzZXMgdG8gUjI9LTAuMDI2Myk7IGNvbmZvcm1hbCBQSS1jb3ZlcmFnZSBmcmFjdGlvbiByZW1haW5zIGEgbWVjaGFuaWNhbGx5IHZhbGlkIHN0YXRlbWVudCBhYm91dCBpbnRlcnZhbCBjYWxpYnJhdGlvbiBvbiB0aGUgY29ycnVwdGVkIHRhcmdldCwgYnV0IHBvaW50LXNraWxsIG51bWJlcnMgYXJlIHdpdGhkcmF3biIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9kaWVsZWN0cmljLXJldHJhY3Rpb24tdjEvZGllbGVjdHJpYy1yZXRyYWN0aW9uLXN1cGVyc2VkaW5nLWtwaS1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICIwZDQ4ODBjNjQ1MmFmYjZkMzk3YmI5YzM3NjI2MzBhZGVkNTk4MDYzYjhmN2E1NzkwNjZjODA1NDc5MzkwYjdiIiwKICAgICAgICAgICAgInJvbGUiOiAic3VwZXJzZWRpbmdfcmV0cmFjdGlvbl9yZWNlaXB0IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJjbGVhbi1zdWJzZXQgY29sbGFwc2UgcmVzdWx0IiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLWM4LWZpcmUyLWNsZWFuLXN1YnNldC12MS9jOF9maXJlMl9kaWVsZWN0cmljX2NsZWFuX3N1YnNldF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiZGE5MGY2NDI5OWIwY2FkNjI3OGI0ZWYzMmIxNjczMzZlNmQzYjEwYTI2ZjU3MDkwNmNiZGY1NjhlZjQ0MDRlNyIsCiAgICAgICAgICAgICJyb2xlIjogInVuZGVybHlpbmdfcmVmdXRhdGlvbiIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiTk9fQ09NUEVURU5UX01PREVMIGNvbnNvbGlkYXRlZCB2ZXJkaWN0IiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLWM4LXYzLWZpbmFsL2M4X2ZpcmUzX2ZpbmFsX2NvbnNvbGlkYXRlZF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiYzU1YjkwMjAxNTM0ZWE0ZTY4YTRkNDc1YzUwMTU5MWZmNTFkMTEyYWNhNmExOGM3YTFhYjJiZTZlNGRiNmI1NyIsCiAgICAgICAgICAgICJyb2xlIjogInVuZGVybHlpbmdfcmVmdXRhdGlvbiIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiVzMgbGVkZ2VyIGVudHJ5IiwKICAgICAgICAgICAgImxlZGdlcl9saW5lcyI6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICJXMyIsCiAgICAgICAgICAgICAgICAibGluZSI6IDIzLAogICAgICAgICAgICAgICAgImxpbmVfc2hhMjU2IjogIjlhMGMyNjc5MDQ3NmVlNTgyOTU2M2E1NGM1ZmU0ZDgzODg0YjJhNDNkMDk1ZDQxYjQ5YmM0YTc4MTAzMzg0YjkiLAogICAgICAgICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9kaWVsZWN0cmljLXJldHJhY3Rpb24tdjEvZGllbGVjdHJpYy1yZXRyYWN0aW9uLXN1cGVyc2VkaW5nLWtwaS1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICAgICAidHMiOiAiMjAyNi0wOC0wMlQwNDowNTo1NSswMDowMCIsCiAgICAgICAgICAgICAgICAidmVyZGljdCI6ICJSRUZVVEVEIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXSwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJsb2dzL2ZhbHNpZmljYXRpb24tbGVkZ2VyLmpzb25sIiwKICAgICAgICAgICAgInJvbGUiOiAibGVkZ2VyX2VudHJpZXMiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogInJldHJhY3Rpb24gbGlzdCBsaW5lIDIiLAogICAgICAgICAgICAibGluZSI6IDIsCiAgICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICIyZmE4ODkzOTNiYmZmYjU4Y2QyODJlMTQzNTY4ODc2MWQ3YWZhOGE1NTVlNzM2MjE1YTE1ZWE4MWFmYzYxMzViIiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJsb2dzL2NsYWltcy1yZXF1aXJpbmctcmV0cmFjdGlvbi5qc29ubCIsCiAgICAgICAgICAgICJyb2xlIjogIm1hY2hpbmVfcmVhZGFibGVfcmV0cmFjdGlvbiIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJrcGlfZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL21peGVkLW9wZW5wb2x5LXJhZG9ucHktZGllbGVjdHJpYy1jb25mb3JtYWwta3BpLnYxLmpzb24iLAogICAgICAgICJrcGlfc2hhMjU2IjogImRhNTRmMGUwNzNmNDA0OTlhMjRhYzc2YTk2MDUzZjE0NGRiZGUxNDI1YzBlYmIzMjI1OGZlMDQ3YzkyMDg2YzQiLAogICAgICAgICJyYXRpb25hbGUiOiAiUkVUUkFDVEVEIGJ5IFczIChzdXBlcnNlZGluZyByZXRyYWN0aW9uIHJlY2VpcHQ7IGRpc3Bvc2l0aW9uIFJFVFJBQ1QpLiBGaWxlIHJlbWFpbnMgb24gZGlzayBmb3IgYXVkaXQgdHJhaWwuIiwKICAgICAgICAicmV0cmFjdGVkX2J5IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvZGllbGVjdHJpYy1yZXRyYWN0aW9uLXYxL2RpZWxlY3RyaWMtcmV0cmFjdGlvbi1zdXBlcnNlZGluZy1rcGktcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICJzdGF0dXMiOiAiUkVUUkFDVEVEIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIm1hY3JvLWNoZW1vdHlwZSBiaXNlY3Rpb24gb2YgUmFkb25QeSBQSTEwNzA6IHJlZnJhY3RpdmVfaW5kZXggY3Jvc3MtbWFjcm8gZGVncmFkYXRpb24gOS45MngvMy4xM3ggKGJvdGggZGlyZWN0aW9ucyBjbGVhciB0aGUgcHJlLXJlZ2lzdGVyZWQgMnggYmFyLCBSMiBuZWdhdGl2ZSkgLS0gUkVGVVRFRCBmb3Igb3V0LW9mLWRpc3RyaWJ1dGlvbiBnZW5lcmFsaXphdGlvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9tdWx0aXRhcmdldC1tYWNyby1iaXNlY3Rpb24tZXh0ZXJuYWwtdmFsaWRpdHktdzctdjEvbXVsdGl0YXJnZXQtbWFjcm8tYmlzZWN0aW9uLWV4dGVybmFsLXZhbGlkaXR5LXJlY2VpcHQudjEuZHNzZS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogIjI0YmMzMjA0M2RiMjYxMzhkNjE4NzQ2OTEyZjU0MGIzMmJjNmZiZTEzMDc0ODkyMDA2ZDExODAzMzg4ZjkwNGMiLAogICAgICAgICAgICAicm9sZSI6ICJyZWZ1dGVzX29vZF9nZW5lcmFsaXphdGlvbiIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiUmFkb25QeSByZWZyYWN0aXZlLWluZGV4IGF4aXMgaXMgY2xlYW4gKG4+PTEgc2F0aXNmaWVkIGZvciA5OS45OTYlIG9mIHBvbHlvbWljcyByb3dzKSIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC12MS9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICIyNWJmYzY0MDFiOGIzOWY1MThmZGUwNjNlMWNjMzVjMTFiM2YxNjYwZmZlM2U3MWIwZmIzODdlYjU5YjRmZWYyIiwKICAgICAgICAgICAgInJvbGUiOiAibGFiZWxfYXhpc19jbGVhbiIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiUkkgaXMgb25lIG9mIHRoZSAzIHByb3BlcnRpZXMgd2hvc2UgcmVjZWlwdC1iYWNrZWQge3BoeXNpY3MsIE1MLCBzdGFja30gdHJpcGxldCBzdXJ2aXZlcyB3aXRoaW4tY29ycHVzIiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLWM4LXYzLWZpbmFsL2M4X2ZpcmUzX2ZpbmFsX2NvbnNvbGlkYXRlZF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiYzU1YjkwMjAxNTM0ZWE0ZTY4YTRkNDc1YzUwMTU5MWZmNTFkMTEyYWNhNmExOGM3YTFhYjJiZTZlNGRiNmI1NyIsCiAgICAgICAgICAgICJyb2xlIjogIndpdGhpbl9jb3JwdXNfdHJpcGxldCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiVzcgbGVkZ2VyIGVudHJ5IiwKICAgICAgICAgICAgImxlZGdlcl9saW5lcyI6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICIiLAogICAgICAgICAgICAgICAgImxpbmUiOiAzMywKICAgICAgICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICIxNTczOGFkOTYxZjk0MTM2ZThmNDBiOTNmYjU4MmNjYzEwNGUyNWRjMzU0MzZjMDhiZGY1YmFjMWZlMGI2NGY0IiwKICAgICAgICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvbXVsdGl0YXJnZXQtbWFjcm8tYmlzZWN0aW9uLWV4dGVybmFsLXZhbGlkaXR5LXc3LXYxL211bHRpdGFyZ2V0LW1hY3JvLWJpc2VjdGlvbi1leHRlcm5hbC12YWxpZGl0eS1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICAgICAidHMiOiAiMjAyNi0wOC0wMlQxNDowNTowOCswMDowMCIsCiAgICAgICAgICAgICAgICAidmVyZGljdCI6ICJSRUZVVEVEIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXSwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJsb2dzL2ZhbHNpZmljYXRpb24tbGVkZ2VyLmpzb25sIiwKICAgICAgICAgICAgInJvbGUiOiAibGVkZ2VyX2VudHJpZXMiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAia3BpX2ZpbGUiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy9taXhlZC1vcGVucG9seS1yYWRvbnB5LXJlZnJhY3RpdmUtaW5kZXgtY29uZm9ybWFsLWtwaS52MS5qc29uIiwKICAgICAgICAia3BpX3NoYTI1NiI6ICI1YWIwZTc0ODk4NDc2Y2FmYjAyZWUyM2VjNTRmNzhiYjg5MGExOTAyN2VlODI2YmZmYmExMGRkNjAwMWEzNjdlIiwKICAgICAgICAicmF0aW9uYWxlIjogIldpdGhpbi1jb3JwdXMgbWl4ZWQtZGF0YXNldCBSSSBudW1iZXJzIChNQUU9MC4wMzA0LCBSMj0rMC42MzgpIHN0YW5kIGFzIG1lYXN1cmVkIG9uIGFkbWlzc2libGUgbGFiZWxzOyBXNyByZWZ1dGVzIGFueSBvdXQtb2YtbWFjcm8tY2hlbW90eXBlIGdlbmVyYWxpemF0aW9uIHJlYWRpbmcsIHNvIHZhbGlkaXR5IGlzIHdpdGhpbi1jb3JwdXMgb25seS4iLAogICAgICAgICJzdGF0dXMiOiAiU1RBTkRTLVdJVEhJTi1DT1JQVVMtT05MWSIKICAgICAgfSwKICAgICAgewogICAgICAgICJldmlkZW5jZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJ2ZXJkaWN0IFJFRlVURUQ6IHNpbmdsZS10YXNrIFJGIFIyPjAgb24gcmVmcmFjdGl2ZV9pbmRleCAoKzAuODkzKSBhbmQgdGhlcm1hbF9jb25kdWN0aXZpdHkgKCswLjU0MikgdW5kZXIgNjAvMjAvMjAgcmFuZG9tIHNwbGl0IGRvZXMgTk9UIGdlbmVyYWxpemUgLS0gbWFjcm8tYmlzZWN0aW9uIGRlZ3JhZGF0aW9uIFJJIDkuOTJ4LzMuMTN4LCBUQyA0LjUyeC8xLjg2eCBhZ2FpbnN0IGEgcHJlLXJlZ2lzdGVyZWQgMnggT1ItYWNyb3NzLWRpcmVjdGlvbnMgYmFyIiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L211bHRpdGFyZ2V0LW1hY3JvLWJpc2VjdGlvbi1leHRlcm5hbC12YWxpZGl0eS13Ny12MS9tdWx0aXRhcmdldC1tYWNyby1iaXNlY3Rpb24tZXh0ZXJuYWwtdmFsaWRpdHktcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiMjRiYzMyMDQzZGIyNjEzOGQ2MTg3NDY5MTJmNTQwYjMyYmM2ZmJlMTMwNzQ4OTIwMDZkMTE4MDMzODhmOTA0YyIsCiAgICAgICAgICAgICJyb2xlIjogInJlZnV0aW5nX3JlY2VpcHQiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIlc3IGxlZGdlciBlbnRyeSBuYW1pbmcgdGhpcyBLUEkgYXMgdGhlIGF0dGFja2VkIGNsYWltIiwKICAgICAgICAgICAgImxlZGdlcl9saW5lcyI6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICIiLAogICAgICAgICAgICAgICAgImxpbmUiOiAzMywKICAgICAgICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICIxNTczOGFkOTYxZjk0MTM2ZThmNDBiOTNmYjU4MmNjYzEwNGUyNWRjMzU0MzZjMDhiZGY1YmFjMWZlMGI2NGY0IiwKICAgICAgICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvbXVsdGl0YXJnZXQtbWFjcm8tYmlzZWN0aW9uLWV4dGVybmFsLXZhbGlkaXR5LXc3LXYxL211bHRpdGFyZ2V0LW1hY3JvLWJpc2VjdGlvbi1leHRlcm5hbC12YWxpZGl0eS1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICAgICAidHMiOiAiMjAyNi0wOC0wMlQxNDowNTowOCswMDowMCIsCiAgICAgICAgICAgICAgICAidmVyZGljdCI6ICJSRUZVVEVEIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXSwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJsb2dzL2ZhbHNpZmljYXRpb24tbGVkZ2VyLmpzb25sIiwKICAgICAgICAgICAgInJvbGUiOiAibGVkZ2VyX2VudHJpZXMiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAia3BpX2ZpbGUiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy9tdWx0aS10YXJnZXQtbWwtcmFkb25weS00LXByb3BlcnRpZXMtYXVkaXQta3BpLnYxLmpzb24iLAogICAgICAgICJrcGlfc2hhMjU2IjogImE3MmFhM2Y0NjI5YTc1NWI3MzViMGUxMGRmMjA0NjQ3M2FjOGU4ZDlhNjZkYzdlM2NjNTkxNjQ5MTQ3NjdkZDYiLAogICAgICAgICJyYXRpb25hbGUiOiAiUkVGVVRFRCBieSBXNyBmb3IgdGhlIHR3byBwcm9wZXJ0aWVzIG5ldmVyIGJlZm9yZSBhdHRhY2tlZCB3aXRoIGEgZ3JvdXAtc2FmZSBzcGxpdC4gVGhlIEtQSSdzIGhvbmVzdCBjb3JlIGZpbmRpbmcgKG5haXZlIG11bHRpLXRhc2sgdW5kZXJwZXJmb3JtcyBzaW5nbGUtdGFzaykgd2FzIG5vdCB0aGUgYXR0YWNrZWQgY2xhaW0sIGJ1dCBpdHMgcG9zaXRpdmUgc2luZ2xlLXRhc2sgUjIgbnVtYmVycyBhcmUgcmVmdXRlZCBhcyBnZW5lcmFsaXphdGlvbiBldmlkZW5jZS4iLAogICAgICAgICJyZWZ1dGVkX2J5IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvbXVsdGl0YXJnZXQtbWFjcm8tYmlzZWN0aW9uLWV4dGVybmFsLXZhbGlkaXR5LXc3LXYxL211bHRpdGFyZ2V0LW1hY3JvLWJpc2VjdGlvbi1leHRlcm5hbC12YWxpZGl0eS1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgInN0YXR1cyI6ICJSRUZVVEVEIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogImRlbnNpdHkgdmVyZGljdDogbWFjcm8tYmlzZWN0aW9uIGlzIHRoZSBnb3Zlcm5pbmcgb3V0LW9mLWRpc3RyaWJ1dGlvbiBwcm9iZSAtLSAxMy43NHgvNy41OXggZGVncmFkYXRpb24gYm90aCBkaXJlY3Rpb25zIChSMiAtMTIuMTUvLTUuMDEpOyBsZWF2ZS1jbGFzcy1vdXQgMS44MHggcmV0YWluZWQgYXMgZ3JhbnVsYXJpdHkgZXZpZGVuY2Ugb25seSIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3RnLWRlbnNpdHktZXh0ZXJuYWwtdmFsaWRpdHktYzctdjMtZmluYWwvYzdfZmluYWxfdGdfZGVuc2l0eV9leHRlcm5hbF92YWxpZGl0eV92ZXJkaWN0X3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICI5NThmNGQ2OWExMGVlNzlmNWY5ZjEyOWFhODQ3NWJlODdkMTI0ZWM3MjZmMTlkMmQ5ZDZlZWFiZGJjNGU5ZTA4IiwKICAgICAgICAgICAgInJvbGUiOiAicmVmdXRlc190cmFuc2Zlcl9jbGFpbSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiaGllcmFyY2hpY2FsIG1hY3JvLWJpc2VjdGlvbiBkZW5zaXR5IGF0dGFjayIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL2RlbnNpdHktYnV0aW5hLWNsdXN0ZXItZXh0ZXJuYWwtdmFsaWRpdHktYzctdjIvYzdfZGVuc2l0eV9tYWNyb19iaXNlY3Rpb25fZXh0ZXJuYWxfdmFsaWRpdHlfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogIjFiYTM5M2I5MDVlMGEwNDYzYmQxYjJjM2FlNWY2ZTNhNTM4YjMxYzM0MWUzZDZjYTk1NWIwZDM5MzZmODk2OGEiLAogICAgICAgICAgICAicm9sZSI6ICJmaXJlMl9leHBlcmltZW50IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJ0aGUgZm91bmRlci10YWJsZSBjbGFpbSBhdHRhY2hlZCB0byB0aGlzIEtQSSAoJ3RhYmxlIGJ1aWxkYWJsZSBlbnRpcmVseSBmcm9tIHJlY2VpcHQtYmFja2VkIG51bWJlcnMnKSBpcyBDTEFJTV9SRUZVVEVEIHZpYSB0aGUgZGllbGVjdHJpYyBjZWxsOyB0aGUgZGVuc2l0eSB7cGh5c2ljcywgTUwsIHN0YWNrfSB0cmlwbGV0IGl0c2VsZiBpcyBjYXJyaWVkIGZvcndhcmQgcmVjZWlwdC1iYWNrZWQgYW5kIHN1cnZpdmVzIHdpdGhpbi1jb3JwdXMiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tYzgtdjMtZmluYWwvYzhfZmlyZTNfZmluYWxfY29uc29saWRhdGVkX3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICJjNTViOTAyMDE1MzRlYTRlNjhhNGQ0NzVjNTAxNTkxZmY1MWQxMTJhY2E2YTE4YzdhMWFiMmJlNmU0ZGI2YjU3IiwKICAgICAgICAgICAgInJvbGUiOiAiYXR0YWNoZWRfY2xhaW1fcmVmdXRlZCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiQzcgZmlyZTIvZmlyZTMgYW5kIEM4IGZpcmVzIDEtMyBsZWRnZXIgZW50cmllcyBuYW1pbmcgdGhpcyBLUEkiLAogICAgICAgICAgICAibGVkZ2VyX2xpbmVzIjogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIkM3IiwKICAgICAgICAgICAgICAgICJsaW5lIjogMTAsCiAgICAgICAgICAgICAgICAibGluZV9zaGEyNTYiOiAiYzNlMmQ3MDJkM2QyODFjZGRkZmNkZTlkOTc2MWY1MjZiOGQwNjc2Njk3MjcwZDdlMWU0ZjdiM2FkZTEwZDQ0YiIsCiAgICAgICAgICAgICAgICAicmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvZGVuc2l0eS1idXRpbmEtY2x1c3Rlci1leHRlcm5hbC12YWxpZGl0eS1jNy12Mi9jN19kZW5zaXR5X21hY3JvX2Jpc2VjdGlvbl9leHRlcm5hbF92YWxpZGl0eV9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAgICAgInRzIjogIjIwMjYtMDgtMDFUMTY6MjU6MzArMDA6MDAiLAogICAgICAgICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIkM3IiwKICAgICAgICAgICAgICAgICJsaW5lIjogMTEsCiAgICAgICAgICAgICAgICAibGluZV9zaGEyNTYiOiAiMDg3MmI3MjExYzg4NzAwODg0M2E2N2Q2ZDBmN2ZkMTI0NjhkYzU0NjhhMTQ1MzIzM2IyN2E2NWE4MWY4NGM0NSIsCiAgICAgICAgICAgICAgICAicmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvdGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1jNy12My1maW5hbC9jN19maW5hbF90Z19kZW5zaXR5X2V4dGVybmFsX3ZhbGlkaXR5X3ZlcmRpY3RfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgICAgICJ0cyI6ICIyMDI2LTA4LTAxVDE3OjA0OjEwKzAwOjAwIiwKICAgICAgICAgICAgICAgICJ2ZXJkaWN0IjogIlJFRlVURUQiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICJDOCIsCiAgICAgICAgICAgICAgICAibGluZSI6IDEyLAogICAgICAgICAgICAgICAgImxpbmVfc2hhMjU2IjogIjRjNGE3ODExYjI5MjU3ZDI3NmQ3NzU2N2RjMmFjMDVkOTk3ODk0OGU3ODJjYzMxNGE4Y2VkNmU3NGZmYzQ2NTEiLAogICAgICAgICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC12MS9jOF9waHlzX21sX3N0YWNrX2NvbXBhcmlzb25fcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgICAgICJ0cyI6ICIyMDI2LTA4LTAxVDE4OjE4OjI4KzAwOjAwIiwKICAgICAgICAgICAgICAgICJ2ZXJkaWN0IjogIlJFRlVURUQiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICJDOCIsCiAgICAgICAgICAgICAgICAibGluZSI6IDEzLAogICAgICAgICAgICAgICAgImxpbmVfc2hhMjU2IjogImU2MDM0N2MzOWUwOTI1MmUwYjk0YmZmNTQzY2UxNzUwZTU5ODgyZjcyZWI0MzMyZTg2YzhlNGYyM2E5N2EzODgiLAogICAgICAgICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC1maXJlMi1jbGVhbi1zdWJzZXQtdjEvYzhfZmlyZTJfZGllbGVjdHJpY19jbGVhbl9zdWJzZXRfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgICAgICJ0cyI6ICIyMDI2LTA4LTAxVDE5OjA0OjUzKzAwOjAwIiwKICAgICAgICAgICAgICAgICJ2ZXJkaWN0IjogIlJFRlVURUQiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICJDOCIsCiAgICAgICAgICAgICAgICAibGluZSI6IDE0LAogICAgICAgICAgICAgICAgImxpbmVfc2hhMjU2IjogIjdjNmEwZmYzZjk5ZmVmYzNiZGI4MzA4MjU2MGMxZTI2MzhkN2MxZTcyMzE4YzI3NmY4NmMwMzYxNjM4NjEyMDQiLAogICAgICAgICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC12My1maW5hbC9jOF9maXJlM19maW5hbF9jb25zb2xpZGF0ZWRfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICAgICAgICJ0cyI6ICIyMDI2LTA4LTAxVDIwOjAyOjQ3KzAwOjAwIiwKICAgICAgICAgICAgICAgICJ2ZXJkaWN0IjogIlJFRlVURUQiCiAgICAgICAgICAgICAgfQogICAgICAgICAgICBdLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJsZWRnZXJfZW50cmllcyIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJrcGlfZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL3JhZG9ucHktZGVuc2l0eS1tbC12cy12YW4ta3JldmVsZW4tcGh5c2ljcy1rcGkudjEuanNvbiIsCiAgICAgICAgImtwaV9zaGEyNTYiOiAiYzhiYWUyM2I4ZGVlYjhmNzllZGNhMGFmMWJlNmM0NDU3YzhhYmVjMGNkYjVlOTRlYjg3NGU2YTdiYTE4NzAxYSIsCiAgICAgICAgInJhdGlvbmFsZSI6ICJXaXRoaW4tY29ycHVzIGRlbnNpdHkgbnVtYmVycyAoTUwgTUFFPTAuMDU2NiBSMj0rMC43MTk2IHZzIFZLIHBoeXNpY3MpIHN0YW5kIGFzIG1lYXN1cmVkOyBvd24gY2xhaW0gbG9jayBhbHJlYWR5IHNjb3BlcyB0byBtbF9jYWxpYnJhdGVkX2Zvcl9yYWRvbnB5X21kX3NpbXVsYXRlZF9jb250ZXh0X29ubHkuIE91dC1vZi1tYWNyby1jaGVtb3R5cGUgdHJhbnNmZXIgaXMgUkVGVVRFRCBieSBDNzsgdGhlIEM4IGZvdW5kZXItdGFibGUgY2xhaW0gYXR0YWNoZWQgdG8gdGhpcyBLUEkgaXMgcmVmdXRlZCBvbiB0aGUgZGllbGVjdHJpYyBjZWxsLiIsCiAgICAgICAgInN0YXR1cyI6ICJTVEFORFMtV0lUSElOLUNPUlBVUy1PTkxZIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogImRlbnNpdHkgdHJhbnNmZXIgcmVmdXRlZCAoMTMuNzR4LzcuNTl4IG1hY3JvLWJpc2VjdGlvbikgLS0gYXBwbGllcyBlcXVhbGx5IHRvIHRoZSBzdGFja2VkIGRlbnNpdHkgbW9kZWwiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy90Zy1kZW5zaXR5LWV4dGVybmFsLXZhbGlkaXR5LWM3LXYzLWZpbmFsL2M3X2ZpbmFsX3RnX2RlbnNpdHlfZXh0ZXJuYWxfdmFsaWRpdHlfdmVyZGljdF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiOTU4ZjRkNjlhMTBlZTc5ZjVmOWYxMjlhYTg0NzViZTg3ZDEyNGVjNzI2ZjE5ZDJkOWQ2ZWVhYmRiYzRlOWUwOCIsCiAgICAgICAgICAgICJyb2xlIjogInNjb3Blc190b193aXRoaW5fY29ycHVzIgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJkZW5zaXR5IHN0YWNrIHRyaXBsZXQgcmVjZWlwdC1iYWNrZWQgYW5kIHN1cnZpdmVzIHdpdGhpbi1jb3JwdXMiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tYzgtdjMtZmluYWwvYzhfZmlyZTNfZmluYWxfY29uc29saWRhdGVkX3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICJjNTViOTAyMDE1MzRlYTRlNjhhNGQ0NzVjNTAxNTkxZmY1MWQxMTJhY2E2YTE4YzdhMWFiMmJlNmU0ZGI2YjU3IiwKICAgICAgICAgICAgInJvbGUiOiAid2l0aGluX2NvcnB1c190cmlwbGV0IgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvc3RhY2tlZC1tbC12YW4ta3JldmVsZW4tZGVuc2l0eS1yYWRvbnB5LWtwaS52MS5qc29uIiwKICAgICAgICAia3BpX3NoYTI1NiI6ICIwZGMxYjZmNjYzZDllZGI3NTY1MmJmMjIxNzEyYjAxZjQ4NDdiN2Y2MmYzNjIwZTEyZTU3YWY3YzhhZGNmNzUxIiwKICAgICAgICAicmF0aW9uYWxlIjogIlN0YWNrIHRlc3QgUjI9KzAuODAxOSB2cyBSRi1vbmx5ICswLjcxODYgc3RhbmRzIGFzIGEgd2l0aGluLWNvcnB1cyByZXN1bHQgb24gUmFkb25QeSBQSTEwNzA7IEM3J3MgZGVuc2l0eSB0cmFuc2ZlciByZWZ1dGF0aW9uIGJvdW5kcyBpdCB0byB3aXRoaW4tY29ycHVzL3dpdGhpbi1tYWNyby1jaGVtb3R5cGUgdXNlLiIsCiAgICAgICAgInN0YXR1cyI6ICJTVEFORFMtV0lUSElOLUNPUlBVUy1PTkxZIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIlRnIGNyb3NzLWNvcnB1cyB0cmFuc2ZlciAoT3BlblBvbHk8LT5Qb2x5dW5pdmVyc2UpIGFudGktcHJlZGljdGl2ZSBib3RoIGRpcmVjdGlvbnM7IGhvbmVzdCBhcHBsaWNhYmlsaXR5IGRvbWFpbiBmb3IgVGcgbW9kZWxzIGlzIHdpdGhpbi1jb3JwdXMgb25seSIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3RnLWRlbnNpdHktZXh0ZXJuYWwtdmFsaWRpdHktYzctdjMtZmluYWwvYzdfZmluYWxfdGdfZGVuc2l0eV9leHRlcm5hbF92YWxpZGl0eV92ZXJkaWN0X3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICI5NThmNGQ2OWExMGVlNzlmNWY5ZjEyOWFhODQ3NWJlODdkMTI0ZWM3MjZmMTlkMmQ5ZDZlZWFiZGJjNGU5ZTA4IiwKICAgICAgICAgICAgInJvbGUiOiAic2NvcGVzX3RvX3dpdGhpbl9jb3JwdXMiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIm5lZ2F0aXZlIGV2aWRlbmNlIHBpbm5lZCBieSB0aGUgbGVkZ2VyX2dyZXAgcmUtYXR0YWNrIGJsb2NrIGluIHRoaXMgcmVjZWlwdCIsCiAgICAgICAgICAgICJvYnNlcnZlZCI6ICJncmVwIG9mIGFsbCA2MSBsZWRnZXIgbGluZXM6IG5vIGVudHJ5IG5hbWVzIHBvbHl1bml2ZXJzZS1lcG94eS10Zy1jb25mb3JtYWwtY292ZXJhZ2UtYW5kLWFwcGxpY2FiaWxpdHktZG9tYWluLWtwaS52MS5qc29uIGFzIGFuIGF0dGFja2VkIGNsYWltOyBubyB2ZXJkaWN0IHJlY2VpcHQgdW5kZXIgYmVuY2htYXJrcy8gb3IgZXZpZGVuY2UvYXVkaXQvIHRhcmdldHMgaXQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJub19yZWZ1dGluZ19yZWNlaXB0IgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvcG9seXVuaXZlcnNlLWVwb3h5LXRnLWNvbmZvcm1hbC1jb3ZlcmFnZS1hbmQtYXBwbGljYWJpbGl0eS1kb21haW4ta3BpLnYxLmpzb24iLAogICAgICAgICJrcGlfc2hhMjU2IjogIjQ0N2Y1Y2E4MzIwNTRjMGU2MDZiODllYjdkZmRiZDM4ZGIzZjNhODUzNzdjMjk5ZDk4MjEyMmEzMzE2MjIxZTQiLAogICAgICAgICJyYXRpb25hbGUiOiAiQ29uZm9ybWFsIGNvdmVyYWdlICsgQUQgYXR0ZXN0YXRpb24gb24gdGhlIFBvbHl1bml2ZXJzZSBFcG94eSAxTSBjb21wdXRlZCBzcGFjZSBzdGFuZHM7IG93biBjbGFpbSBsb2NrIGFscmVhZHkgc2NvcGVzIEFEIHRvIHRoYXQgc3BhY2UsIGFuZCBDNyBjb25maXJtcyBub3RoaW5nIHRyYW5zZmVycyBiZXlvbmQgaXQuIiwKICAgICAgICAic3RhdHVzIjogIlNUQU5EUy1XSVRISU4tQ09SUFVTLU9OTFkiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZXZpZGVuY2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAibmVnYXRpdmUgZXZpZGVuY2UgcGlubmVkIGJ5IHRoZSBsZWRnZXJfZ3JlcCByZS1hdHRhY2sgYmxvY2sgaW4gdGhpcyByZWNlaXB0IiwKICAgICAgICAgICAgIm9ic2VydmVkIjogImdyZXAgb2YgYWxsIDYxIGxlZGdlciBsaW5lczogbm8gZW50cnkgbmFtZXMgcG9seXVuaXZlcnNlLWVwb3h5LXRnLWV4dGVybmFsLXZhbGlkYXRpb24tNS1jYW5vbmljYWwtZXBveHktYW1pbmVzLWtwaS52MS5qc29uIGFzIGFuIGF0dGFja2VkIGNsYWltOyBubyB2ZXJkaWN0IHJlY2VpcHQgdW5kZXIgYmVuY2htYXJrcy8gb3IgZXZpZGVuY2UvYXVkaXQvIHRhcmdldHMgaXQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJub19yZWZ1dGluZ19yZWNlaXB0IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJpdHMgaG9uZXN0IGZpbmRpbmcgKDQvNSBjYW5vbmljYWwgYW1pbmVzIGdhdGVkIG91dC1vZi1kb21haW47IGluLUFEIE1BRSAzNSBDIG9uIG49MSkgaXMgY29uc2lzdGVudCB3aXRoIEM3J3Mgd2l0aGluLWNvcnB1cy1vbmx5IGNvbmNsdXNpb24iLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy90Zy1kZW5zaXR5LWV4dGVybmFsLXZhbGlkaXR5LWM3LXYzLWZpbmFsL2M3X2ZpbmFsX3RnX2RlbnNpdHlfZXh0ZXJuYWxfdmFsaWRpdHlfdmVyZGljdF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiOTU4ZjRkNjlhMTBlZTc5ZjVmOWYxMjlhYTg0NzViZTg3ZDEyNGVjNzI2ZjE5ZDJkOWQ2ZWVhYmRiYzRlOWUwOCIsCiAgICAgICAgICAgICJyb2xlIjogImNvbnNpc3RlbmN5IgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvcG9seXVuaXZlcnNlLWVwb3h5LXRnLWV4dGVybmFsLXZhbGlkYXRpb24tNS1jYW5vbmljYWwtZXBveHktYW1pbmVzLWtwaS52MS5qc29uIiwKICAgICAgICAia3BpX3NoYTI1NiI6ICI5NGZiYTYwMDM3ZTIwYTQ3NjNkMjg4MWQ4YWEzZWZkNDYyOThlMDk0ZWVkZDhhNjcyMTZlNThhMmVhOWQzMmY5IiwKICAgICAgICAicmF0aW9uYWxlIjogIlNUQU5EUyBhcyBhbiBob25lc3QgZXh0ZXJuYWwtdmFsaWRhdGlvbi9BRC1ib3VuZGFyeSBkb2N1bWVudGF0aW9uOyBpdCBjbGFpbXMgZG9tYWluIGxpbWl0YXRpb24sIG5vdCB0cmFuc2ZlciwgYW5kIG5vIHJlY2VpcHQgcmVmdXRlcyBpdC4iLAogICAgICAgICJzdGF0dXMiOiAiU1RBTkRTIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogImNyb3NzLWNvcnB1cyBUZyB0cmFuc2ZlciByZWZ1dGVkOyBiYXNlbGluZSBoaWVyYXJjaHkgaXMgYSB3aXRoaW4tY29ycHVzIGNvbXBhcmlzb24gb24gdGhlIFBvbHl1bml2ZXJzZSBzY2FmZm9sZC1zYWZlIHRlc3Qgc2V0IChuPTEwLDI3OSkiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy90Zy1kZW5zaXR5LWV4dGVybmFsLXZhbGlkaXR5LWM3LXYzLWZpbmFsL2M3X2ZpbmFsX3RnX2RlbnNpdHlfZXh0ZXJuYWxfdmFsaWRpdHlfdmVyZGljdF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiOTU4ZjRkNjlhMTBlZTc5ZjVmOWYxMjlhYTg0NzViZTg3ZDEyNGVjNzI2ZjE5ZDJkOWQ2ZWVhYmRiYzRlOWUwOCIsCiAgICAgICAgICAgICJyb2xlIjogInNjb3Blc190b193aXRoaW5fY29ycHVzIgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJuZWdhdGl2ZSBldmlkZW5jZSBwaW5uZWQgYnkgdGhlIGxlZGdlcl9ncmVwIHJlLWF0dGFjayBibG9jayBpbiB0aGlzIHJlY2VpcHQiLAogICAgICAgICAgICAib2JzZXJ2ZWQiOiAiZ3JlcCBvZiBhbGwgNjEgbGVkZ2VyIGxpbmVzOiBubyBlbnRyeSBuYW1lcyBwb2x5dW5pdmVyc2UtZXBveHktdGctbmFtZWQtYmFzZWxpbmUtYmVuY2htYXJrLWtwaS52MS5qc29uIGFzIGFuIGF0dGFja2VkIGNsYWltOyBubyB2ZXJkaWN0IHJlY2VpcHQgdW5kZXIgYmVuY2htYXJrcy8gb3IgZXZpZGVuY2UvYXVkaXQvIHRhcmdldHMgaXQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJub19yZWZ1dGluZ19yZWNlaXB0IgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvcG9seXVuaXZlcnNlLWVwb3h5LXRnLW5hbWVkLWJhc2VsaW5lLWJlbmNobWFyay1rcGkudjEuanNvbiIsCiAgICAgICAgImtwaV9zaGEyNTYiOiAiNzRkNTM0ZjNmMmYxN2U4Y2MyZWM1ZGM5MWIxMGNmYTIyYTllOWQ3OGY4MDBkMDJkNzRlMWVlYzVmODNjMjZlMiIsCiAgICAgICAgInJhdGlvbmFsZSI6ICI3LWJhc2VsaW5lIGhlYWQtdG8taGVhZCBvbiB0aGUgZml4ZWQgUG9seXVuaXZlcnNlIHRlc3Qgc2V0IHN0YW5kcyBhcyBtZWFzdXJlZDsgQzcgYm91bmRzIGl0cyBtZWFuaW5nIHRvIHdpdGhpbi1jb3JwdXMuIiwKICAgICAgICAic3RhdHVzIjogIlNUQU5EUy1XSVRISU4tQ09SUFVTLU9OTFkiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZXZpZGVuY2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiY3Jvc3MtY29ycHVzIFRnIHRyYW5zZmVyIHJlZnV0ZWQ7IFZLLXZzLU1MIGNvbXBhcmlzb24gaXMgb24gdGhlIHNhbWUgd2l0aGluLWNvcnB1cyBQb2x5dW5pdmVyc2UgdGVzdCBzZXQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy90Zy1kZW5zaXR5LWV4dGVybmFsLXZhbGlkaXR5LWM3LXYzLWZpbmFsL2M3X2ZpbmFsX3RnX2RlbnNpdHlfZXh0ZXJuYWxfdmFsaWRpdHlfdmVyZGljdF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgICAicmVjZWlwdF9zaGEyNTYiOiAiOTU4ZjRkNjlhMTBlZTc5ZjVmOWYxMjlhYTg0NzViZTg3ZDEyNGVjNzI2ZjE5ZDJkOWQ2ZWVhYmRiYzRlOWUwOCIsCiAgICAgICAgICAgICJyb2xlIjogInNjb3Blc190b193aXRoaW5fY29ycHVzIgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJuZWdhdGl2ZSBldmlkZW5jZSBwaW5uZWQgYnkgdGhlIGxlZGdlcl9ncmVwIHJlLWF0dGFjayBibG9jayBpbiB0aGlzIHJlY2VpcHQiLAogICAgICAgICAgICAib2JzZXJ2ZWQiOiAiZ3JlcCBvZiBhbGwgNjEgbGVkZ2VyIGxpbmVzOiBubyBlbnRyeSBuYW1lcyBwb2x5dW5pdmVyc2UtZXBveHktdGctdmFuLWtyZXZlbGVuLXBoeXNpY2FsLWJhc2VsaW5lLXZzLW1sLWtwaS52MS5qc29uIGFzIGFuIGF0dGFja2VkIGNsYWltOyBubyB2ZXJkaWN0IHJlY2VpcHQgdW5kZXIgYmVuY2htYXJrcy8gb3IgZXZpZGVuY2UvYXVkaXQvIHRhcmdldHMgaXQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJub19yZWZ1dGluZ19yZWNlaXB0IgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvcG9seXVuaXZlcnNlLWVwb3h5LXRnLXZhbi1rcmV2ZWxlbi1waHlzaWNhbC1iYXNlbGluZS12cy1tbC1rcGkudjEuanNvbiIsCiAgICAgICAgImtwaV9zaGEyNTYiOiAiZGNjNGFmNTc1NzYwZDIyN2JjMzRmMjlhN2NiYmVhNDUwZjFhNDhkNDg0ZDllOTNjNWZkYjc0Mjk2YTM4NjlkNSIsCiAgICAgICAgInJhdGlvbmFsZSI6ICJQaHlzaWNhbC1iYXNlbGluZS12cy1NTCBjb21wYXJpc29uIG9uIHRoZSBQb2x5dW5pdmVyc2UgdGVzdCBzZXQgc3RhbmRzIGFzIG1lYXN1cmVkLCB3aXRoaW4tY29ycHVzIG9ubHkgcGVyIEM3LiIsCiAgICAgICAgInN0YXR1cyI6ICJTVEFORFMtV0lUSElOLUNPUlBVUy1PTkxZIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogInZlcmRpY3QgUkVGVVRFRDogMi8yNCBmaXR0ZWQgWV9naSBzaWduLXJldmVyc2VkIHZzIGFuIGFsbC1wb3NpdGl2ZSBwdWJsaXNoZWQgY29sdW1uICh2aW55bF9DSDIgLTMxMjUgdnMgKzIwMDA7IG5pdHJpbGUgLTI4NDQgdnMgKzU1MDApLCBib3RoIGluIHRoZSBib3R0b20gdGhpcmQgb2YgdHJhaW5pbmcgc3VwcG9ydDsgU3BlYXJtYW4gcmhvPS0wLjUyIGNvbmZpcm1zIHVuZGVyLWRldGVybWluYXRpb24gaXMgTk9UIHJlc29sdmVkIGF0IG49ODA3IC0tIGZhbHNpZmllcyBjbGFpbSBsb2NrcyAyNF9ncm91cF9zdHJ1Y3R1cmVfY29uZmlybWVkX2NvcnJlY3RfYXRfc2NhbGUgYW5kIHByaW9yX3JpZGdlX3JlY2VpcHRfdW5kZXJfZGV0ZXJtaW5hdGlvbl9oeXBvdGhlc2lzX25vd19yZXNvbHZlZCIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC92ay1yaWRnZS15Z2ktYWRtaXNzaWJpbGl0eS13OC12MS92ay1yaWRnZS15Z2ktYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICIwYjIyZmVjNmEwNDEyODdmNTQ3MzQ0OWQwYzA4Zjg1ZWJlMjA0NDlmODJjNDYzOGNhODYyN2MyOTY0M2UwZmVkIiwKICAgICAgICAgICAgInJvbGUiOiAicmVmdXRpbmdfcmVjZWlwdCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiVzggbGVkZ2VyIGVudHJ5IG5hbWluZyB0aGlzIEtQSSBhcyB0aGUgYXR0YWNrZWQgY2xhaW0iLAogICAgICAgICAgICAibGVkZ2VyX2xpbmVzIjogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIiIsCiAgICAgICAgICAgICAgICAibGluZSI6IDQ1LAogICAgICAgICAgICAgICAgImxpbmVfc2hhMjU2IjogIjIzMzM0ZjgxMDQ0MDNjN2ExNDYyNDIzNDU1NzRlZDg5M2Q0OWMzYTlhMDdkYzQxOGU4OWIxY2E0YTI5N2VmMDEiLAogICAgICAgICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC92ay1yaWRnZS15Z2ktYWRtaXNzaWJpbGl0eS13OC12MS92ay1yaWRnZS15Z2ktYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICAgICAidHMiOiAiMjAyNi0wOC0wM1QwMjowOToxOCswMDowMCIsCiAgICAgICAgICAgICAgICAidmVyZGljdCI6ICJSRUZVVEVEIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXSwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJsb2dzL2ZhbHNpZmljYXRpb24tbGVkZ2VyLmpzb25sIiwKICAgICAgICAgICAgInJvbGUiOiAibGVkZ2VyX2VudHJpZXMiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogInRoaXMgcmVwYWlyIGluZGVwZW5kZW50bHkgcmUtcmFuIHRoZSBzaWduLWZsaXAgY291bnQgZnJvbSB0aGUgS1BJJ3Mgb3duIHN0b3JlZCBjb2VmZmljaWVudCB0YWJsZSBhbmQgcmVwcm9kdWNlZCAyLzI0ICh2aW55bF9DSDIsIG5pdHJpbGUpOyBzZWUgcmVhdHRhY2tfb2JzZXJ2ZWRfcmVzdWx0cyBpbiB0aGlzIHJlY2VpcHQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvUi1BMDkvd29yay9yZWF0dGFja19kaWFnbm9zdGljLmpzb24iLAogICAgICAgICAgICAicm9sZSI6ICJyZWF0dGFja19yZXByb2R1Y3Rpb24iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAia3BpX2ZpbGUiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy92YW4ta3JldmVsZW4tcmlkZ2UtZml0LW9uLTEwMDAtcG9seXVuaXZlcnNlLXBvbHltZXJzLWtwaS52MS5qc29uIiwKICAgICAgICAia3BpX3NoYTI1NiI6ICJiYTI0MjMwYzhkMTFlNDE0ZjA3NzlkYWY0MzNhNWFmZTZlMzc1YzBkNTk0MDM1ZGIxMzQxYTU0NTQwOWNjOTc5IiwKICAgICAgICAicmF0aW9uYWxlIjogIlJFRlVURUQgYnkgVzguIFRoZSB0ZXN0IE1BRT0yMi4wIEsgbnVtYmVyIGlzIGEgZ2VudWluZSB3aXRoaW4tc3BsaXQgbWVhc3VyZW1lbnQsIGJ1dCB0aGUgS1BJJ3MgaGVhZGxpbmUgY2xhaW0gKHN0cnVjdHVyZSBjb25maXJtZWQgY29ycmVjdCAvIHVuZGVyLWRldGVybWluYXRpb24gcmVzb2x2ZWQpIGlzIGZhbHNpZmllZCBieSBpdHMgb3duIGNvZWZmaWNpZW50IHRhYmxlLiIsCiAgICAgICAgInJlZnV0ZWRfYnkiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC92ay1yaWRnZS15Z2ktYWRtaXNzaWJpbGl0eS13OC12MS92ay1yaWRnZS15Z2ktYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgInN0YXR1cyI6ICJSRUZVVEVEIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIm5lZ2F0aXZlIGV2aWRlbmNlIHBpbm5lZCBieSB0aGUgbGVkZ2VyX2dyZXAgcmUtYXR0YWNrIGJsb2NrIGluIHRoaXMgcmVjZWlwdCIsCiAgICAgICAgICAgICJvYnNlcnZlZCI6ICJncmVwIG9mIGFsbCA2MSBsZWRnZXIgbGluZXM6IG5vIGVudHJ5IG5hbWVzIHZhbi1rcmV2ZWxlbi1yaWRnZS1yZXR1bmVkLVlnaS1vbi0xNS1jYW5vbmljYWwtaG9tb3BvbHltZXJzLWtwaS52MS5qc29uIGFzIGFuIGF0dGFja2VkIGNsYWltOyBubyB2ZXJkaWN0IHJlY2VpcHQgdW5kZXIgYmVuY2htYXJrcy8gb3IgZXZpZGVuY2UvYXVkaXQvIHRhcmdldHMgaXQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJub19yZWZ1dGluZ19yZWNlaXB0IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJXOCBleHBsaWNpdGx5IHJlbGllcyBvbiB0aGlzIHJlY2VpcHQncyBvd24gZGlhZ25vc2lzICgndGhlIHVuZGVyLWRldGVybWluYXRpb24gbWVjaGFuaXNtIHRoZSBtb2R1bGUncyBvd24gcHJpb3IgMTUtcG9seW1lciByZWNlaXB0IGRpYWdub3NlZCcpIGFuZCBmaW5kcyBpdCBOT1QgcmVzb2x2ZWQgYXQgbj04MDcgLS0gY29ycm9ib3JhdGluZywgbm90IHJlZnV0aW5nLCB0aGlzIEtQSSdzIGhvbmVzdCBmaW5kaW5nIiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L3ZrLXJpZGdlLXlnaS1hZG1pc3NpYmlsaXR5LXc4LXYxL3ZrLXJpZGdlLXlnaS1hZG1pc3NpYmlsaXR5LWF1ZGl0LXJlY2VpcHQudjEuZHNzZS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogIjBiMjJmZWM2YTA0MTI4N2Y1NDczNDQ5ZDBjMDhmODVlYmUyMDQ0OWY4MmM0NjM4Y2E4NjI3YzI5NjQzZTBmZWQiLAogICAgICAgICAgICAicm9sZSI6ICJjb3Jyb2JvcmF0ZXMiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAia3BpX2ZpbGUiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy92YW4ta3JldmVsZW4tcmlkZ2UtcmV0dW5lZC1ZZ2ktb24tMTUtY2Fub25pY2FsLWhvbW9wb2x5bWVycy1rcGkudjEuanNvbiIsCiAgICAgICAgImtwaV9zaGEyNTYiOiAiNjQ1YjRhN2U0Y2MzYzVhOGYzYTViNjc5ZmY2MzM2YzhmMjEyZWU0MjA2YTBkOWZjODYwODk4MDQwNDRmNDgwMyIsCiAgICAgICAgInJhdGlvbmFsZSI6ICJTVEFORFMgYXMgYW4gaG9uZXN0IGRpYWdub3N0aWM6IExPTy1DViBNQUUgMTIxLjQgSyB3b3JzZSB0aGFuIHB1Ymxpc2hlZC1ZX2dpIGJhc2VsaW5lIDgxLjMgSywgZml0dGVkIHZhbHVlcyBleHBsaWNpdGx5IGRlY2xhcmVkIGFydGlmYWN0cyAoY2xhaW0gbG9jayBmaXR0ZWRfWWdpX3ZhbHVlc19hcmVfYXJ0aWZhY3RzX25vdF9tZWFuaW5nZnVsX2dyb3VwX2NvbnRyaWJ1dGlvbnMpLiIsCiAgICAgICAgInN0YXR1cyI6ICJTVEFORFMiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZXZpZGVuY2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAibmVnYXRpdmUgZXZpZGVuY2UgcGlubmVkIGJ5IHRoZSBsZWRnZXJfZ3JlcCByZS1hdHRhY2sgYmxvY2sgaW4gdGhpcyByZWNlaXB0IiwKICAgICAgICAgICAgIm9ic2VydmVkIjogImdyZXAgb2YgYWxsIDYxIGxlZGdlciBsaW5lczogbm8gZW50cnkgbmFtZXMgdmFuLWtyZXZlbGVuLXRnLWNvcnJlY3RlZC1mb3JtdWxhLW9uLTE1LWNhbm9uaWNhbC1ob21vcG9seW1lcnMta3BpLnYxLmpzb24gYXMgYW4gYXR0YWNrZWQgY2xhaW07IG5vIHZlcmRpY3QgcmVjZWlwdCB1bmRlciBiZW5jaG1hcmtzLyBvciBldmlkZW5jZS9hdWRpdC8gdGFyZ2V0cyBpdCIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAibG9ncy9mYWxzaWZpY2F0aW9uLWxlZGdlci5qc29ubCIsCiAgICAgICAgICAgICJyb2xlIjogIm5vX3JlZnV0aW5nX3JlY2VpcHQiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAia3BpX2ZpbGUiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy92YW4ta3JldmVsZW4tdGctY29ycmVjdGVkLWZvcm11bGEtb24tMTUtY2Fub25pY2FsLWhvbW9wb2x5bWVycy1rcGkudjEuanNvbiIsCiAgICAgICAgImtwaV9zaGEyNTYiOiAiYmQ0OWIxYjNiYzcyYjk5MTA5ZTNjMmVmMDIxYmQ2Yzk1MGY4YjNjOTU3ZThjODhiM2U0ZmUzMzU0ZDRmMTI4YiIsCiAgICAgICAgInJhdGlvbmFsZSI6ICJTVEFORFM6IGNvcnJlY3RlZCBwdWJsaXNoZWQtWV9naSBmb3JtdWxhIHJlZHVjZXMgTUFFIDI0MyBLIC0+IDgxLjMgSyBvbiB0aGUgMTUtcG9seW1lciBwYW5lbDsgZGVjbGFyYXRpdmUgY29ycmVjdGVkLXBoeXNpY2FsLWZvcm11bGEgcmVzdWx0LCBubyByZWNlaXB0IHJlZnV0ZXMgaXQuIiwKICAgICAgICAic3RhdHVzIjogIlNUQU5EUyIKICAgICAgfSwKICAgICAgewogICAgICAgICJldmlkZW5jZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImRldGFpbCI6ICJuZWdhdGl2ZSBldmlkZW5jZSBwaW5uZWQgYnkgdGhlIGxlZGdlcl9ncmVwIHJlLWF0dGFjayBibG9jayBpbiB0aGlzIHJlY2VpcHQiLAogICAgICAgICAgICAib2JzZXJ2ZWQiOiAiZ3JlcCBvZiBhbGwgNjEgbGVkZ2VyIGxpbmVzOiBubyBlbnRyeSBuYW1lcyB2YW4ta3JldmVsZW4tdGctZXh0ZXJuYWwtdmFsaWRhdGlvbi0xNS1jYW5vbmljYWwtaG9tb3BvbHltZXJzLWtwaS52MS5qc29uIGFzIGFuIGF0dGFja2VkIGNsYWltOyBubyB2ZXJkaWN0IHJlY2VpcHQgdW5kZXIgYmVuY2htYXJrcy8gb3IgZXZpZGVuY2UvYXVkaXQvIHRhcmdldHMgaXQiLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJub19yZWZ1dGluZ19yZWNlaXB0IgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImtwaV9maWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvdmFuLWtyZXZlbGVuLXRnLWV4dGVybmFsLXZhbGlkYXRpb24tMTUtY2Fub25pY2FsLWhvbW9wb2x5bWVycy1rcGkudjEuanNvbiIsCiAgICAgICAgImtwaV9zaGEyNTYiOiAiZThlNmRhNTYxZWYxMjM2ZGRlZjFkZTFmMDU1MDViMDI4OTBlNDhhZDBiNGM3MmI3NTFlZGY1ZTNhZjRjMmZkZSIsCiAgICAgICAgInJhdGlvbmFsZSI6ICJTVEFORFMgYXMgYW4gaG9uZXN0IG5lZ2F0aXZlIGZpbmRpbmc6IHRoZSBzaW1wbGlmaWVkIDE4LWdyb3VwIGZvcm11bGEgcHJvZHVjZXMgdW5pZm9ybSB+MjUwIEMgcHJlZGljdGlvbnMgYW5kIGlzIGRvY3VtZW50ZWQgYXMgYnJva2VuIGJ5IHRoaXMgS1BJIGl0c2VsZi4iLAogICAgICAgICJzdGF0dXMiOiAiU1RBTkRTIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIm5lZ2F0aXZlIGV2aWRlbmNlIHBpbm5lZCBieSB0aGUgbGVkZ2VyX2dyZXAgcmUtYXR0YWNrIGJsb2NrIGluIHRoaXMgcmVjZWlwdCIsCiAgICAgICAgICAgICJvYnNlcnZlZCI6ICJncmVwIG9mIGFsbCA2MSBsZWRnZXIgbGluZXM6IG5vIGVudHJ5IG5hbWVzIHZhbi1rcmV2ZWxlbi10Zy1MT08tcmVzY2FsZWQtMTUtY2Fub25pY2FsLWhvbW9wb2x5bWVycy1rcGkudjEuanNvbiBhcyBhbiBhdHRhY2tlZCBjbGFpbTsgbm8gdmVyZGljdCByZWNlaXB0IHVuZGVyIGJlbmNobWFya3MvIG9yIGV2aWRlbmNlL2F1ZGl0LyB0YXJnZXRzIGl0IiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJsb2dzL2ZhbHNpZmljYXRpb24tbGVkZ2VyLmpzb25sIiwKICAgICAgICAgICAgInJvbGUiOiAibm9fcmVmdXRpbmdfcmVjZWlwdCIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJrcGlfZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL3Zhbi1rcmV2ZWxlbi10Zy1MT08tcmVzY2FsZWQtMTUtY2Fub25pY2FsLWhvbW9wb2x5bWVycy1rcGkudjEuanNvbiIsCiAgICAgICAgImtwaV9zaGEyNTYiOiAiNzY4MGYxNmJlZDQwYmQ4NDNjZWIzMDFlYzA1NjQ4MmQ5NDJkZGMwMTUwNDk3NDk3Mzg3NTA4OTYzZTQ5NjRlMSIsCiAgICAgICAgInJhdGlvbmFsZSI6ICJTVEFORFMgYXMgYW4gaG9uZXN0IG5lZ2F0aXZlIGZpbmRpbmc6IExPTyByZXNjYWxpbmcgd29yc2VucyBNQUUgKDgxLjMgSyAtPiA5MC4wIEspOyBlcnJvcnMgZG9jdW1lbnRlZCBhcyBzdHJ1Y3R1cmFsLCBub3QgbGluZWFyLWNvcnJlY3RhYmxlLiIsCiAgICAgICAgInN0YXR1cyI6ICJTVEFORFMiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZXZpZGVuY2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAibmVnYXRpdmUgZXZpZGVuY2UgcGlubmVkIGJ5IHRoZSBsZWRnZXJfZ3JlcCByZS1hdHRhY2sgYmxvY2sgaW4gdGhpcyByZWNlaXB0IiwKICAgICAgICAgICAgIm9ic2VydmVkIjogImdyZXAgb2YgYWxsIDYxIGxlZGdlciBsaW5lczogbm8gZW50cnkgbmFtZXMgZXh0ZXJuYWwtdmFsaWRhdGlvbi1wb2x5dW5pdmVyc2UtcmlkZ2Utb24tb3BlbnBvbHktdGcta3BpLnYxLmpzb24gYXMgYW4gYXR0YWNrZWQgY2xhaW07IG5vIHZlcmRpY3QgcmVjZWlwdCB1bmRlciBiZW5jaG1hcmtzLyBvciBldmlkZW5jZS9hdWRpdC8gdGFyZ2V0cyBpdCIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAibG9ncy9mYWxzaWZpY2F0aW9uLWxlZGdlci5qc29ubCIsCiAgICAgICAgICAgICJyb2xlIjogIm5vX3JlZnV0aW5nX3JlY2VpcHQiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIlc4IHJlZnV0ZXMgcGh5c2ljYWwgaW50ZXJwcmV0YWJpbGl0eSBvZiB0aGUgc2FtZSBmaXR0ZWQgWV9naSBjb2VmZmljaWVudHMgKDIvMjQgc2lnbi1yZXZlcnNlZCk7IHRoZSBlbXBpcmljYWwgTUFFIGNvbXBhcmlzb24gaGVyZSAoZGF0YXNldC1zcGVjaWZpYywgcGVyIGl0cyBvd24gY2xhaW0gbG9jaykgaXMgdW5hZmZlY3RlZCBhcyBhIG1lYXN1cmVtZW50IiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L3ZrLXJpZGdlLXlnaS1hZG1pc3NpYmlsaXR5LXc4LXYxL3ZrLXJpZGdlLXlnaS1hZG1pc3NpYmlsaXR5LWF1ZGl0LXJlY2VpcHQudjEuZHNzZS5qc29uIiwKICAgICAgICAgICAgInJlY2VpcHRfc2hhMjU2IjogIjBiMjJmZWM2YTA0MTI4N2Y1NDczNDQ5ZDBjMDhmODVlYmUyMDQ0OWY4MmM0NjM4Y2E4NjI3YzI5NjQzZTBmZWQiLAogICAgICAgICAgICAicm9sZSI6ICJjb2VmZmljaWVudF9pbnRlcnByZXRhYmlsaXR5X2NhdmVhdCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAiT3BlblBvbHkgVGcvVG0gb3JkZXJpbmcgdmlvbGF0aW9ucyAoMTQuNCUgb2YgZXZhbHVhYmxlIHJvd3MpIGNhdmVhdCB0aGUgZXh0ZXJuYWwgdGFyZ2V0IGxhYmVscyIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC12MS9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICIyNWJmYzY0MDFiOGIzOWY1MThmZGUwNjNlMWNjMzVjMTFiM2YxNjYwZmZlM2U3MWIwZmIzODdlYjU5YjRmZWYyIiwKICAgICAgICAgICAgInJvbGUiOiAibGFiZWxfaW50ZWdyaXR5X2NhdmVhdCIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJrcGlfZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL2V4dGVybmFsLXZhbGlkYXRpb24tcG9seXVuaXZlcnNlLXJpZGdlLW9uLW9wZW5wb2x5LXRnLWtwaS52MS5qc29uIiwKICAgICAgICAia3BpX3NoYTI1NiI6ICJiNzNiZjBlODFkOTY3ZDgzN2NmOTE5NWFkNTZkZWM3YzliOTNjZGY4NjEzZWMwZDFkNjI3MmQzY2EzZTQ1NzlhIiwKICAgICAgICAicmF0aW9uYWxlIjogIlNUQU5EUyBhcyBhIGRhdGFzZXQtc3BlY2lmaWMgY29tcGFyaXNvbiAoaXRzIG93biBjbGFpbSBsb2NrOiBub3RfYV9zY2llbnRpZmljX3JlcGxhY2VtZW50Li4uIG9ubHlfYV9kYXRhc2V0X3NwZWNpZmljX2NvbXBhcmlzb24pOiBSaWRnZSBNQUUgNzAuNDIgSyBiZWF0cyBwdWJsaXNoZWQgVksgOTEuMzQgSyBhbmQgbWFyZ2luYWxseSBiZWF0cyBudWxsIDcxLjM5IEsgKFIyPS0wLjAzLCBnZW5lcmFsaXphdGlvbiBkb2N1bWVudGVkIGFzIG1vZGVzdCkuIENhcnJpZXMgVzggY29lZmZpY2llbnQtaW50ZXJwcmV0YWJpbGl0eSBhbmQgVzIgbGFiZWwgY2F2ZWF0cy4iLAogICAgICAgICJzdGF0dXMiOiAiU1RBTkRTIgogICAgICB9LAogICAgICB7CiAgICAgICAgImV2aWRlbmNlIjogWwogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIm5lZ2F0aXZlIGV2aWRlbmNlIHBpbm5lZCBieSB0aGUgbGVkZ2VyX2dyZXAgcmUtYXR0YWNrIGJsb2NrIGluIHRoaXMgcmVjZWlwdCIsCiAgICAgICAgICAgICJvYnNlcnZlZCI6ICJncmVwIG9mIGFsbCA2MSBsZWRnZXIgbGluZXM6IG5vIGVudHJ5IG5hbWVzIGNvYXRpbmctY2FuZGlkYXRlLWRlc2lnbi1jYXJkLTUtY2Fub25pY2FsLWVwb3h5LWFtaW5lcy1rcGkudjEuanNvbiBhcyBhbiBhdHRhY2tlZCBjbGFpbTsgbm8gdmVyZGljdCByZWNlaXB0IHVuZGVyIGJlbmNobWFya3MvIG9yIGV2aWRlbmNlL2F1ZGl0LyB0YXJnZXRzIGl0IiwKICAgICAgICAgICAgInJlY2VpcHRfcGF0aCI6ICJsb2dzL2ZhbHNpZmljYXRpb24tbGVkZ2VyLmpzb25sIiwKICAgICAgICAgICAgInJvbGUiOiAibm9fcmVmdXRpbmdfcmVjZWlwdCIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJkZXRhaWwiOiAidGhlIGNhcmQncyBUZyBhcm0gaW5oZXJpdHMgQzcncyB3aXRoaW4tY29ycHVzLW9ubHkgc2NvcGluZzsgdGhlIGNhcmQgaXRzZWxmIGFscmVhZHkgZ2F0ZXMgNC81IGNhbmRpZGF0ZXMgb3V0LW9mLWRvbWFpbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3RnLWRlbnNpdHktZXh0ZXJuYWwtdmFsaWRpdHktYzctdjMtZmluYWwvYzdfZmluYWxfdGdfZGVuc2l0eV9leHRlcm5hbF92YWxpZGl0eV92ZXJkaWN0X3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAgICJyZWNlaXB0X3NoYTI1NiI6ICI5NThmNGQ2OWExMGVlNzlmNWY5ZjEyOWFhODQ3NWJlODdkMTI0ZWM3MjZmMTlkMmQ5ZDZlZWFiZGJjNGU5ZTA4IiwKICAgICAgICAgICAgInJvbGUiOiAiaW5oZXJpdGVkX3Njb3BpbmciCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZGV0YWlsIjogIjIwMjYtMDgtMDMgZ3VhbmlkaW5lLWNvbmp1Z2F0aW9uIHJlZnV0YXRpb24gdGFyZ2V0cyBiZW5jaG1hcmtzL2FtaW5lLWNsYXNzLWFjdGl2ZS1uaC1yb2J1c3RuZXNzIHJlY2VpcHQsIE5PVCB0aGlzIEtQSTsgaXRzIHByb2JlIHJlcHJvZHVjZWQgdGhlIHNoaXBwZWQgcnVsZSBieXRlLWZvci1ieXRlIG9uIGFsbCBwcmV2aW91c2x5LXZhbGlkYXRlZCByZWNvcmRzICh6ZXJvIHJlZ3Jlc3Npb24pLCBzbyB0aGUgNSBjYW5vbmljYWwgYW1pbmVzIGhlcmUgKElQREEsIG0tWERBLCBERFMsIFRFVEEsIERFVEEgLS0gbm9uZSBndWFuaWRpbmUtY2xhc3MpIGFyZSB1bmFmZmVjdGVkIiwKICAgICAgICAgICAgImxlZGdlcl9saW5lcyI6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICIiLAogICAgICAgICAgICAgICAgImxpbmUiOiA1OSwKICAgICAgICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICJlMmRlNzM1NzJmZjkyYjE2Y2QxNTBiMjJjNWUzZTg0ZDAxODQ1NzBlNzQ0YTJmYjZjNjA4MmQ5NzY3Mjc0NDRhIiwKICAgICAgICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvYW1pbmUtbmgtZ3VhbmlkaW5lLWNvbmp1Z2F0aW9uLWdhcC12MS9hbWluZS1uaC1ndWFuaWRpbmUtY29uanVnYXRpb24tZ2FwLXJlY2VpcHQudjEuZHNzZS5qc29uIiwKICAgICAgICAgICAgICAgICJ0cyI6ICIyMDI2LTA4LTAzVDE4OjA4OjQ5KzAwOjAwIiwKICAgICAgICAgICAgICAgICJ2ZXJkaWN0IjogIlJFRlVURUQiCiAgICAgICAgICAgICAgfQogICAgICAgICAgICBdLAogICAgICAgICAgICAicmVjZWlwdF9wYXRoIjogImxvZ3MvZmFsc2lmaWNhdGlvbi1sZWRnZXIuanNvbmwiLAogICAgICAgICAgICAicm9sZSI6ICJsZWRnZXJfZW50cmllcyIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJrcGlfZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL2NvYXRpbmctY2FuZGlkYXRlLWRlc2lnbi1jYXJkLTUtY2Fub25pY2FsLWVwb3h5LWFtaW5lcy1rcGkudjEuanNvbiIsCiAgICAgICAgImtwaV9zaGEyNTYiOiAiZTNlOWM5ZmE4YjRlYmYwNmNhYmI4ODdhNzE2NDdjMDMxODBiZWNkNjIzOWIxNmRkMGU3Zjc5MDlkZTBkMWU5ZiIsCiAgICAgICAgInJhdGlvbmFsZSI6ICJTVEFORFMgYXMgYSBkZWNsYXJhdGl2ZSBpbnRlZ3JhdGlvbiBkZW1vIChjbGFpbSBsb2NrIGRlY2xhcmF0aXZlX2ludGVncmF0aW9uX2RlbW9fb25seSkgd2l0aCBob25lc3QgQUQgZ2F0aW5nICg0LzUgb3V0LW9mLWRvbWFpbik7IG5vIHJlY2VpcHQgcmVmdXRlcyBpdC4iLAogICAgICAgICJzdGF0dXMiOiAiU1RBTkRTIgogICAgICB9CiAgICBdLAogICAgInN0YXR1c19jb3VudHMiOiB7CiAgICAgICJSRUZVVEVEIjogMiwKICAgICAgIlJFVFJBQ1RFRCI6IDIsCiAgICAgICJTVEFORFMiOiAxMCwKICAgICAgIlNUQU5EUy1XSVRISU4tQ09SUFVTLU9OTFkiOiA3CiAgICB9LAogICAgInN0YXR1c192b2NhYnVsYXJ5IjogWwogICAgICAiU1RBTkRTIiwKICAgICAgIlNUQU5EUy1XSVRISU4tQ09SUFVTLU9OTFkiLAogICAgICAiUkVGVVRFRCIsCiAgICAgICJSRVRSQUNURUQiCiAgICBdCiAgfSwKICAia3BpX3N0YXR1c19pbmRleF9jYW5vbmljYWxfc2hhMjU2IjogIjk2ODU1YTdjYjMzNWFmY2MwNTk2NWNhNzJiMzY3ZjQ1YzQ5YTBjZDc5MGEzZWMyMWU3MGVjYTMwYmMxNmY3MjEiLAogICJtb2RpZmllc19leGlzdGluZ19yZWNlaXB0cyI6IGZhbHNlLAogICJtb2RpZmllc19tYW5pZmVzdCI6IGZhbHNlLAogICJtb2R1bGUiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eSIsCiAgInByb21vdGVzX2F1dGhvcml0eSI6IGZhbHNlLAogICJyZWF0dGFja19vYnNlcnZlZF9yZXN1bHRzIjogewogICAgImxlZGdlcl9ncmVwIjogewogICAgICAia3BpX2ZpbGVzX25hbWVkX2FzX2F0dGFja2VkX2NsYWltcyI6IFsKICAgICAgICAiPHdob2xlLWtwaS1zdXJmYWNlPiIsCiAgICAgICAgIm11bHRpLXRhcmdldC1tbC1yYWRvbnB5LTQtcHJvcGVydGllcy1hdWRpdC1rcGkudjEuanNvbiIsCiAgICAgICAgIm9wZW5wb2x5LWRpZWxlY3RyaWMtY29uc3RhbnQtbWwtYmFzZWxpbmUta3BpLnYxLmpzb24iLAogICAgICAgICJvcGVucG9seS1leHBlcmltZW50YWwtdGctbWwtYmFzZWxpbmUta3BpLnYxLmpzb24iLAogICAgICAgICJyYWRvbnB5LWRlbnNpdHktbWwtdnMtdmFuLWtyZXZlbGVuLXBoeXNpY3Mta3BpLnYxLmpzb24iLAogICAgICAgICJ2YW4ta3JldmVsZW4tcmlkZ2UtZml0LW9uLTEwMDAtcG9seXVuaXZlcnNlLXBvbHltZXJzLWtwaS52MS5qc29uIgogICAgICBdLAogICAgICAibGVkZ2VyX3RvdGFsX2xpbmVzX2F0X3JlYWQiOiA2MSwKICAgICAgIm1vZHVsZV9saW5lcyI6IFsKICAgICAgICB7CiAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICJDNyIsCiAgICAgICAgICAiY2xhaW0iOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy9vcGVucG9seS1leHBlcmltZW50YWwtdGctbWwtYmFzZWxpbmUta3BpLnYxLmpzb24iLAogICAgICAgICAgImxpbmUiOiA5LAogICAgICAgICAgImxpbmVfc2hhMjU2IjogImM1ZTU3ZDBhYjQxMjg1YWMwOWUwNDQ0NjBkNzhiMmQ3YzdjMTEzNmYyMjlkYTY3NDAzNTlkNWVmMjI3MDYzMDkiLAogICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3RnLWRlbnNpdHktZXh0ZXJuYWwtdmFsaWRpdHktYzctdjEvYzdfdGdfZGVuc2l0eV9leHRlcm5hbF92YWxpZGl0eV9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgInRzIjogIjIwMjYtMDgtMDFUMDU6MTM6MzMrMDA6MDAiLAogICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIkM3IiwKICAgICAgICAgICJjbGFpbSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL29wZW5wb2x5LWV4cGVyaW1lbnRhbC10Zy1tbC1iYXNlbGluZS1rcGkudjEuanNvbiAoZGVuc2l0eSBSRiBNQUUgMC4wNTY2IGcvY20zIHRyYW5zZmVycyB0byBvdXQtb2YtY29ycHVzIGNoZW1pc3RyeSkiLAogICAgICAgICAgImxpbmUiOiAxMCwKICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICJjM2UyZDcwMmQzZDI4MWNkZGRmY2RlOWQ5NzYxZjUyNmI4ZDA2NzY2OTcyNzBkN2UxZTRmN2IzYWRlMTBkNDRiIiwKICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9kZW5zaXR5LWJ1dGluYS1jbHVzdGVyLWV4dGVybmFsLXZhbGlkaXR5LWM3LXYyL2M3X2RlbnNpdHlfbWFjcm9fYmlzZWN0aW9uX2V4dGVybmFsX3ZhbGlkaXR5X3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAidHMiOiAiMjAyNi0wOC0wMVQxNjoyNTozMCswMDowMCIsCiAgICAgICAgICAidmVyZGljdCI6ICJSRUZVVEVEIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImNhbXBhaWduX2l0ZW1faWQiOiAiQzciLAogICAgICAgICAgImNsYWltIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvb3BlbnBvbHktZXhwZXJpbWVudGFsLXRnLW1sLWJhc2VsaW5lLWtwaS52MS5qc29uIiwKICAgICAgICAgICJsaW5lIjogMTEsCiAgICAgICAgICAibGluZV9zaGEyNTYiOiAiMDg3MmI3MjExYzg4NzAwODg0M2E2N2Q2ZDBmN2ZkMTI0NjhkYzU0NjhhMTQ1MzIzM2IyN2E2NWE4MWY4NGM0NSIsCiAgICAgICAgICAicmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvdGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1jNy12My1maW5hbC9jN19maW5hbF90Z19kZW5zaXR5X2V4dGVybmFsX3ZhbGlkaXR5X3ZlcmRpY3RfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICJ0cyI6ICIyMDI2LTA4LTAxVDE3OjA0OjEwKzAwOjAwIiwKICAgICAgICAgICJ2ZXJkaWN0IjogIlJFRlVURUQiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICJDOCIsCiAgICAgICAgICAiY2xhaW0iOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy9yYWRvbnB5LWRlbnNpdHktbWwtdnMtdmFuLWtyZXZlbGVuLXBoeXNpY3Mta3BpLnYxLmpzb24gKGNsYWltOiBhIGZvdW5kZXItZmFjaW5nIHBlci1wcm9wZXJ0eSBwaHlzaWNzLXZzLU1MLXZzLXN0YWNrIHRhYmxlIGNhbiBiZSBidWlsIiwKICAgICAgICAgICJsaW5lIjogMTIsCiAgICAgICAgICAibGluZV9zaGEyNTYiOiAiNGM0YTc4MTFiMjkyNTdkMjc2ZDc3NTY3ZGMyYWMwNWQ5OTc4OTQ4ZTc4MmNjMzE0YThjZWQ2ZTc0ZmZjNDY1MSIsCiAgICAgICAgICAicmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLWM4LXYxL2M4X3BoeXNfbWxfc3RhY2tfY29tcGFyaXNvbl9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgInRzIjogIjIwMjYtMDgtMDFUMTg6MTg6MjgrMDA6MDAiLAogICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIkM4IiwKICAgICAgICAgICJjbGFpbSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL3JhZG9ucHktZGVuc2l0eS1tbC12cy12YW4ta3JldmVsZW4tcGh5c2ljcy1rcGkudjEuanNvbiAoY2xhaW06IGZvdW5kZXItZmFjaW5nIHBoeXNpY3MtdnMtTUwtdnMtc3RhY2sgdGFibGUgYnVpbGRhYmxlIGVudGlyZWx5IGZyb20gcmUiLAogICAgICAgICAgImxpbmUiOiAxMywKICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICJlNjAzNDdjMzllMDkyNTJlMGI5NGJmZjU0M2NlMTc1MGU1OTg4MmY3MmViNDMzMmU4NmM4ZTRmMjNhOTdhMzg4IiwKICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tYzgtZmlyZTItY2xlYW4tc3Vic2V0LXYxL2M4X2ZpcmUyX2RpZWxlY3RyaWNfY2xlYW5fc3Vic2V0X3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAidHMiOiAiMjAyNi0wOC0wMVQxOTowNDo1MyswMDowMCIsCiAgICAgICAgICAidmVyZGljdCI6ICJSRUZVVEVEIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImNhbXBhaWduX2l0ZW1faWQiOiAiQzgiLAogICAgICAgICAgImNsYWltIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvcmFkb25weS1kZW5zaXR5LW1sLXZzLXZhbi1rcmV2ZWxlbi1waHlzaWNzLWtwaS52MS5qc29uIChjbGFpbTogZm91bmRlci1mYWNpbmcgcGh5c2ljcy12cy1NTC12cy1zdGFjayB0YWJsZSBidWlsZGFibGUgZW50aXJlbHkgZnJvbSByZSIsCiAgICAgICAgICAibGluZSI6IDE0LAogICAgICAgICAgImxpbmVfc2hhMjU2IjogIjdjNmEwZmYzZjk5ZmVmYzNiZGI4MzA4MjU2MGMxZTI2MzhkN2MxZTcyMzE4YzI3NmY4NmMwMzYxNjM4NjEyMDQiLAogICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC12My1maW5hbC9jOF9maXJlM19maW5hbF9jb25zb2xpZGF0ZWRfcmVjZWlwdC52MS5qc29uIiwKICAgICAgICAgICJ0cyI6ICIyMDI2LTA4LTAxVDIwOjAyOjQ3KzAwOjAwIiwKICAgICAgICAgICJ2ZXJkaWN0IjogIlJFRlVURUQiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICJXMiIsCiAgICAgICAgICAiY2xhaW0iOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy8gKGNsYWltOiBsYWJlbCBkYXRhIHVuZGVybHlpbmcgdGhpcyBwb3J0Zm9saW9zIE1MIGNsYWltcyBpcyBwaHlzaWNhbGx5IGFkbWlzc2libGUpIiwKICAgICAgICAgICJsaW5lIjogMjAsCiAgICAgICAgICAibGluZV9zaGEyNTYiOiAiMDhiYzFjYmFhNmIyZTk4ZmM5ZGJiZTU4MDk5YzlhZmMwYThkMDg5ODIyNGQ4ZjAzYTU3ZjUxZWNjZGM1OTEwMyIsCiAgICAgICAgICAicmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L2NvcnB1cy1hZG1pc3NpYmlsaXR5LWF1ZGl0LXYxL3cyX2ZpcmUxX2NvcnB1c19hZG1pc3NpYmlsaXR5X2F1ZGl0X3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAidHMiOiAiMjAyNi0wOC0wMlQwMTowNzo0NiswMDowMCIsCiAgICAgICAgICAidmVyZGljdCI6ICJSRUZVVEVEIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImNhbXBhaWduX2l0ZW1faWQiOiAiVzIiLAogICAgICAgICAgImNsYWltIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvIChjbGFpbTogbGFiZWwgZGF0YSB1bmRlcmx5aW5nIHRoaXMgcG9ydGZvbGlvcyBNTCBjbGFpbXMgaXMgcGh5c2ljYWxseSBhZG1pc3NpYmxlKSIsCiAgICAgICAgICAibGluZSI6IDIxLAogICAgICAgICAgImxpbmVfc2hhMjU2IjogIjY3NGZlYmNiMDg4ZmZlYWE4NzZiMDhlMzkyNjkzZjRjZmJmYzA3NmVmN2UwNWI5MGQzY2E0ZTVmOWFlZmMyMzAiLAogICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9jb3JwdXMtYWRtaXNzaWJpbGl0eS1hdWRpdC12MS93Ml9maXJlMl9jb3JwdXNfYWRtaXNzaWJpbGl0eV9hdWRpdF9yZWNlaXB0LnYxLmpzb24iLAogICAgICAgICAgInRzIjogIjIwMjYtMDgtMDJUMDI6MDM6NTkrMDA6MDAiLAogICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIlcyIiwKICAgICAgICAgICJjbGFpbSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzLyAoY2xhaW06IGxhYmVsIGRhdGEgdW5kZXJseWluZyB0aGlzIHBvcnRmb2xpb3MgTUwgY2xhaW1zIGlzIHBoeXNpY2FsbHkgYWRtaXNzaWJsZSkiLAogICAgICAgICAgImxpbmUiOiAyMiwKICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICJhOTczYzc3N2U4YjcwZjEwZDBlZDY4MzMyNzY1MTdhOTIzMjQ2NzMyMDllM2EyZTk5ODNjMzNiMGMxMzlkZDgzIiwKICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvY29ycHVzLWFkbWlzc2liaWxpdHktYXVkaXQtdjEvY29ycHVzLWFkbWlzc2liaWxpdHktYXVkaXQtcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICAgInRzIjogIjIwMjYtMDgtMDJUMDM6MDQ6NDUrMDA6MDAiLAogICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIlczIiwKICAgICAgICAgICJjbGFpbSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL29wZW5wb2x5LWRpZWxlY3RyaWMtY29uc3RhbnQtbWwtYmFzZWxpbmUta3BpLnYxLmpzb24iLAogICAgICAgICAgImxpbmUiOiAyMywKICAgICAgICAgICJsaW5lX3NoYTI1NiI6ICI5YTBjMjY3OTA0NzZlZTU4Mjk1NjNhNTRjNWZlNGQ4Mzg4NGIyYTQzZDA5NWQ0MWI0OWJjNGE3ODEwMzM4NGI5IiwKICAgICAgICAgICJyZWNlaXB0IjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvYXVkaXQvZGllbGVjdHJpYy1yZXRyYWN0aW9uLXYxL2RpZWxlY3RyaWMtcmV0cmFjdGlvbi1zdXBlcnNlZGluZy1rcGktcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICAgInRzIjogIjIwMjYtMDgtMDJUMDQ6MDU6NTUrMDA6MDAiLAogICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIiIsCiAgICAgICAgICAiY2xhaW0iOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy9tdWx0aS10YXJnZXQtbWwtcmFkb25weS00LXByb3BlcnRpZXMtYXVkaXQta3BpLnYxLmpzb24gKHJlZnJhY3RpdmVfaW5kZXggUjI9MC44OTMsIHRoZXJtYWxfY29uZHVjdGl2aXR5IFIyPTAuNTQyIHVuZGVyIDYwLzIwLzIwIHJhbmRvIiwKICAgICAgICAgICJsaW5lIjogMzMsCiAgICAgICAgICAibGluZV9zaGEyNTYiOiAiMTU3MzhhZDk2MWY5NDEzNmU4ZjQwYjkzZmI1ODJjY2MxMDRlMjVkYzM1NDM2YzA4YmRmNWJhYzFmZTBiNjRmNCIsCiAgICAgICAgICAicmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L211bHRpdGFyZ2V0LW1hY3JvLWJpc2VjdGlvbi1leHRlcm5hbC12YWxpZGl0eS13Ny12MS9tdWx0aXRhcmdldC1tYWNyby1iaXNlY3Rpb24tZXh0ZXJuYWwtdmFsaWRpdHktcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICAgInRzIjogIjIwMjYtMDgtMDJUMTQ6MDU6MDgrMDA6MDAiLAogICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJjYW1wYWlnbl9pdGVtX2lkIjogIiIsCiAgICAgICAgICAiY2xhaW0iOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy92YW4ta3JldmVsZW4tcmlkZ2UtZml0LW9uLTEwMDAtcG9seXVuaXZlcnNlLXBvbHltZXJzLWtwaS52MS5qc29uIChjbGFpbTogZGF0YS1kcml2ZW4gUmlkZ2UgWV9naSBjYWxpYnJhdGlvbiBjb25maXJtcyB0aGUgVmFuIEtyZXZlbGVuIiwKICAgICAgICAgICJsaW5lIjogNDUsCiAgICAgICAgICAibGluZV9zaGEyNTYiOiAiMjMzMzRmODEwNDQwM2M3YTE0NjI0MjM0NTU3NGVkODkzZDQ5YzNhOWEwN2RjNDE4ZTg5YjFjYTRhMjk3ZWYwMSIsCiAgICAgICAgICAicmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL2F1ZGl0L3ZrLXJpZGdlLXlnaS1hZG1pc3NpYmlsaXR5LXc4LXYxL3ZrLXJpZGdlLXlnaS1hZG1pc3NpYmlsaXR5LWF1ZGl0LXJlY2VpcHQudjEuZHNzZS5qc29uIiwKICAgICAgICAgICJ0cyI6ICIyMDI2LTA4LTAzVDAyOjA5OjE4KzAwOjAwIiwKICAgICAgICAgICJ2ZXJkaWN0IjogIlJFRlVURUQiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiY2FtcGFpZ25faXRlbV9pZCI6ICIiLAogICAgICAgICAgImNsYWltIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9hbWluZS1jbGFzcy1hY3RpdmUtbmgtcm9idXN0bmVzcy12MS9hbWluZV9jbGFzc19hY3RpdmVfbmhfcm9idXN0bmVzc19yZWNlaXB0LnYxLmpzb24gKGFtaW5lLWhhcmRlbmVyIHN0cnVjdHVyZS1ydWxlIGdlbmVyYWxpemF0aW9uOiAxMDAlIGNvcnJlYyIsCiAgICAgICAgICAibGluZSI6IDU5LAogICAgICAgICAgImxpbmVfc2hhMjU2IjogImUyZGU3MzU3MmZmOTJiMTZjZDE1MGIyMmM1ZTNlODRkMDE4NDU3MGU3NDRhMmZiNmM2MDgyZDk3NjcyNzQ0NGEiLAogICAgICAgICAgInJlY2VpcHQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9hdWRpdC9hbWluZS1uaC1ndWFuaWRpbmUtY29uanVnYXRpb24tZ2FwLXYxL2FtaW5lLW5oLWd1YW5pZGluZS1jb25qdWdhdGlvbi1nYXAtcmVjZWlwdC52MS5kc3NlLmpzb24iLAogICAgICAgICAgInRzIjogIjIwMjYtMDgtMDNUMTg6MDg6NDkrMDA6MDAiLAogICAgICAgICAgInZlcmRpY3QiOiAiUkVGVVRFRCIKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJub3RlIjogImxlZGdlciBpcyBhcHBlbmQtb25seSBhbmQgc2hhcmVkOyBwZXItbGluZSBzaGEyNTYgcGlucyBlYWNoIGNpdGVkIGVudHJ5IGluZGVwZW5kZW50bHkgb2YgbGF0ZXIgYXBwZW5kcyIKICAgIH0sCiAgICAidmVyZGljdF9yZWV4dHJhY3Rpb24iOiB7CiAgICAgICJDN19GSU5BTC5kZW5zaXR5X2dvdmVybmluZ19hdHRhY2siOiAiYXR0YWNrXzJfaGllcmFyY2hpY2FsX21hY3JvX2Jpc2VjdGlvbiAoZmlyZSAyKSIsCiAgICAgICJDN19GSU5BTC5vdmVyYWxsX3ZlcmRpY3QiOiAiQ0xBSU1fUkVGVVRFRCIsCiAgICAgICJDN19GSU5BTC50Z192ZXJkaWN0IjogIlJFRlVURUQiLAogICAgICAiQzhfRklOQUwudmVyZGljdCI6ICJDTEFJTV9SRUZVVEVEIiwKICAgICAgIlcyX0ZJUkUzLnZlcmRpY3QiOiAiUkVGVVRFRCIsCiAgICAgICJXMy52ZXJkaWN0IjogIkNMQUlNX1JFRlVURUQiLAogICAgICAiVzcudmVyZGljdCI6ICJSRUZVVEVEIiwKICAgICAgIlc4LnZlcmRpY3QiOiAiUkVGVVRFRCIKICAgIH0sCiAgICAidzNfZGllbGVjdHJpY19yZXRyYWN0aW9uX3JlY2hlY2siOiB7CiAgICAgICJjb25jbHVzaW9uIjogIlczIFJFVFJBQ1QgZGlzcG9zaXRpb25zIHN0aWxsIGJpbmQgYnl0ZS1leGFjdGx5IHRvIHRoZSBvbi1kaXNrIEtQSSBmaWxlczsgcmV0cmFjdGlvbiBzdGFuZHMiLAogICAgICAiZGlzcG9zaXRpb25zX3JlY2hlY2tlZCI6IFsKICAgICAgICB7CiAgICAgICAgICAiYnl0ZV9pbnRhY3QiOiB0cnVlLAogICAgICAgICAgImN1cnJlbnRfc2hhMjU2IjogImNmOTRlYjE4NWZiOGZkODgyMzI4OTg3ZjY0ODRmODY5ODEyNTE1N2I3NDlkMzlkNjYwYjcxMWY0ZTA2OGQxMzkiLAogICAgICAgICAgImRpc3Bvc2l0aW9uIjogIk5PVF9SRVRSQUNURURfTEFCRUxTX0FETUlTU0lCTEUiLAogICAgICAgICAgImZpbGUiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy9vcGVucG9seS1kaWVsZWN0cmljLWNvbnN0YW50LW1sLWJhc2VsaW5lLWtwaS52MS5qc29uIiwKICAgICAgICAgICJ3M19yZWNvcmRlZF9zaGEyNTYiOiAiY2Y5NGViMTg1ZmI4ZmQ4ODIzMjg5ODdmNjQ4NGY4Njk4MTI1MTU3Yjc0OWQzOWQ2NjBiNzExZjRlMDY4ZDEzOSIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJieXRlX2ludGFjdCI6IHRydWUsCiAgICAgICAgICAiY3VycmVudF9zaGEyNTYiOiAiMzM1ZjMwODNmMGE1ZTE5MzMwNWE5ODQyNmUzMDc1YWQ1YzIwODM3ZjVhZDlmYzM4MmQ4NTY4MTI0ZjI3YTUyMCIsCiAgICAgICAgICAiZGlzcG9zaXRpb24iOiAiUkVUUkFDVCIsCiAgICAgICAgICAiZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL2V4dGVybmFsLXZhbGlkYXRpb24tZGllbGVjdHJpYy1tbC1vcGVucG9seS10by1yYWRvbnB5LWtwaS52MS5qc29uIiwKICAgICAgICAgICJ3M19yZWNvcmRlZF9zaGEyNTYiOiAiMzM1ZjMwODNmMGE1ZTE5MzMwNWE5ODQyNmUzMDc1YWQ1YzIwODM3ZjVhZDlmYzM4MmQ4NTY4MTI0ZjI3YTUyMCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJieXRlX2ludGFjdCI6IHRydWUsCiAgICAgICAgICAiY3VycmVudF9zaGEyNTYiOiAiZGE1NGYwZTA3M2Y0MDQ5OWEyNGFjNzZhOTYwNTNmMTQ0ZGJkZTE0MjVjMGViYjMyMjU4ZmUwNDdjOTIwODZjNCIsCiAgICAgICAgICAiZGlzcG9zaXRpb24iOiAiUkVUUkFDVCIsCiAgICAgICAgICAiZmlsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL21peGVkLW9wZW5wb2x5LXJhZG9ucHktZGllbGVjdHJpYy1jb25mb3JtYWwta3BpLnYxLmpzb24iLAogICAgICAgICAgInczX3JlY29yZGVkX3NoYTI1NiI6ICJkYTU0ZjBlMDczZjQwNDk5YTI0YWM3NmE5NjA1M2YxNDRkYmRlMTQyNWMwZWJiMzIyNThmZTA0N2M5MjA4NmM0IgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImJ5dGVfaW50YWN0IjogdHJ1ZSwKICAgICAgICAgICJjdXJyZW50X3NoYTI1NiI6ICIwMTE1ZmM4YmViMmEwMTkzOGY2OTI2NGVkYjFjNjEzNmQ2MDIxNzE1Y2M3MmUyZWUyNTUzZmNmYWJhMzUxY2Q3IiwKICAgICAgICAgICJkaXNwb3NpdGlvbiI6ICJTVVBFUlNFREVEX0JZX0M4X0ZJUkUzIiwKICAgICAgICAgICJmaWxlIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvYmVuY2htYXJrcy9waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tYzgtdjEvYzhfcGh5c19tbF9zdGFja19jb21wYXJpc29uX3JlY2VpcHQudjEuanNvbiIsCiAgICAgICAgICAidzNfcmVjb3JkZWRfc2hhMjU2IjogIjAxMTVmYzhiZWIyYTAxOTM4ZjY5MjY0ZWRiMWM2MTM2ZDYwMjE3MTVjYzcyZTJlZTI1NTNmY2ZhYmEzNTFjZDciCiAgICAgICAgfQogICAgICBdLAogICAgICAibWV0aG9kIjogInJlLXZlcmlmeSBXMyBEU1NFIEVkMjU1MTkgc2lnbmF0dXJlIG92ZXIgUEFFKHBheWxvYWRUeXBlLCBwYXlsb2FkKSBhZ2FpbnN0IGl0cyBlbWJlZGRlZCBldmFsdWF0b3IgcHVibGljIGtleTsgcmUtaGFzaCBhbGwgNCBrcGlfc3VyZmFjZV9kaXNwb3NpdGlvbnMgdGFyZ2V0cyBhbmQgdGhlIG1hY2hpbmUtcmVhZGFibGUgcmV0cmFjdGlvbiBsaXN0IGFnYWluc3QgdGhlIHNoYXMgVzMgcmVjb3JkZWQiLAogICAgICAicmV0cmFjdGlvbl9saXN0X2xpbmVfY291bnQiOiA1LAogICAgICAicmV0cmFjdGlvbl9saXN0X2xpbmVfc2hhMjU2IjogewogICAgICAgICJsaW5lMV9leHRlcm5hbF92YWxpZGF0aW9uX2RpZWxlY3RyaWMiOiAiNGE3NWY0MTUxN2VmYjYxMzJiMmMzNjA5OTdjZjc3YTUzMDE1Yzk4YmYxOTU0MTNlY2U4Yjg4MGNiNDA2ZWJiNCIsCiAgICAgICAgImxpbmUyX21peGVkX2RpZWxlY3RyaWNfY29uZm9ybWFsIjogIjJmYTg4OTM5M2JiZmZiNThjZDI4MmUxNDM1Njg4NzYxZDdhZmE4YTU1NWU3MzYyMTVhMTVlYTgxYWZjNjEzNWIiCiAgICAgIH0sCiAgICAgICJyZXRyYWN0aW9uX2xpc3Rfc2hhMjU2X21hdGNoZXNfdzMiOiB0cnVlLAogICAgICAidzNfc2lnbmF0dXJlX3ZhbGlkIjogdHJ1ZSwKICAgICAgInczX3ZlcmRpY3QiOiAiQ0xBSU1fUkVGVVRFRCIKICAgIH0sCiAgICAidzhfdmtfcmlkZ2Vfc2lnbl9mbGlwX3JlYXR0YWNrIjogewogICAgICAiY29uY2x1c2lvbiI6ICJpbmRlcGVuZGVudGx5IHJlcHJvZHVjZWQgVzg6IDIvMjQgZml0dGVkIFlfZ2kgc2lnbi1yZXZlcnNlZCAodmlueWxfQ0gyLCBuaXRyaWxlKSBhZ2FpbnN0IGFuIGFsbC1wb3NpdGl2ZSBwdWJsaXNoZWQgY29sdW1uOyBSRUZVVEVEIHZlcmRpY3QgcmUtY29uZmlybWVkIiwKICAgICAgIm1ldGhvZCI6ICJyZS1ydW4gVzgncyBjb3JlIHBoeXNpY2FsLWFkbWlzc2liaWxpdHkgY2hlY2sgZGlyZWN0bHkgb24gdGhlIEtQSSdzIG93biBzdG9yZWQgZml0dGVkLXZzLXB1Ymxpc2hlZCBZX2dpIHRhYmxlOiBjb3VudCBzaWduIHJldmVyc2FscyB2cyB0aGUgMTAwJS1wb3NpdGl2ZSBwdWJsaXNoZWQgYmFzZWxpbmU7IHJlY29tcHV0ZSBTcGVhcm1hbiByaG8obl90cmFpbiwgfHJhdGlvLTF8KSIsCiAgICAgICJuX2dyb3VwcyI6IDI0LAogICAgICAibl9wdWJsaXNoZWRfbmVnYXRpdmUiOiAwLAogICAgICAibl9zaWduX2ZsaXBwZWQiOiAyLAogICAgICAicmVwcm9kdWNlc193OF9maW5kaW5nIjogdHJ1ZSwKICAgICAgInNpZ25fZmxpcHBlZF9ncm91cHMiOiBbCiAgICAgICAgIm5pdHJpbGUiLAogICAgICAgICJ2aW55bF9DSDIiCiAgICAgIF0sCiAgICAgICJzaWduX2ZsaXBwZWRfc3VwcG9ydF9yYW5rX2FzY2VuZGluZyI6IHsKICAgICAgICAibml0cmlsZSI6IDksCiAgICAgICAgInZpbnlsX0NIMiI6IDcKICAgICAgfSwKICAgICAgInNwZWFybWFuX3Job19uX3RyYWluX3ZzX2Fic19yZWxhdGl2ZV9kZXZpYXRpb24iOiAtMC41MjMxMjYsCiAgICAgICJ3OF9yZWNlaXB0X3NpZ25fZmxpcHBlZF9ncm91cHMiOiBbCiAgICAgICAgIm5pdHJpbGUiLAogICAgICAgICJ2aW55bF9DSDIiCiAgICAgIF0sCiAgICAgICJ3OF9yZWNlaXB0X3ZlcmRpY3QiOiAiUkVGVVRFRCIKICAgIH0KICB9LAogICJyZWNlaXB0X2lkIjogInItYTA5LWtwaS1zdGF0dXMtaW5kZXgiLAogICJyZXBhaXJfYXJ0aWZhY3RzIjogewogICAgImRvbmVfcmVjZWlwdCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9yZXBhaXJzL1ItQTA5L2RvbmUvUi1BMDkuZG9uZS1yZWNlaXB0LnYxLmRzc2UuanNvbiIsCiAgICAicmV0cmFjdGlvbl9pbmRleF9tZCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2V2aWRlbmNlL3BoYXNlMC9rcGlzL1JFVFJBQ1RJT04tSU5ERVgubWQgKFItQTA5IHNlY3Rpb24gYXBwZW5kZWQ7IGZpbGUgaXMgYXBwZW5kLW9ubHksIHByaW9yIGJ5dGVzIHByZXNlcnZlZCBhcyBwcmVmaXgpIiwKICAgICJyZXRyYWN0aW9uX2luZGV4X21kX3NoYTI1Nl9iZWZvcmVfYXBwZW5kIjogIjRkZDA0MDliNzBhNTk4MWM0ODNlYWRhNTEyNmFlYWRjOTJiZmRiNjQ3YWY1ZWRlNGIwZWViOTdjYzczY2UzNGEiLAogICAgIndvcmtfZGlyIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvUi1BMDkvd29yay8iCiAgfSwKICAicmVwYWlyX2l0ZW0iOiAiUi1BMDkiLAogICJyZXBhaXJfbW9kZSI6ICJpbnRlcmFjdGl2ZS0yMDI2LTA4LTAzIiwKICAic2NoZW1hIjogImFtcGhvcmEucGhhc2UwLXJlcGFpci5rcGktc3RhdHVzLWluZGV4LnYxIiwKICAic2lnbmluZ19rZXkiOiB7CiAgICAia2V5X2lkIjogInBoYXNlMC1ldmFsdWF0b3ItM2VmNmIzNWNkYmJmZWE3NGE5NmE1YzliOThhNTE1ZDU3MTU4YTA5ZWNhZmYxMGFjZmExZjE1OTkwYmUwMDE3OCIsCiAgICAicHVibGljX2tleV9oZXgiOiAiNmNmMDdhYmYxYTU1YWRhYWMxM2U3OGFiYzMxYzUzMWQwM2Q4ZjBkNDIzMjM0NjM0NGE3MzY0MThjN2I0NTY2NCIsCiAgICAicm9sZSI6ICJQSEFTRTBfRVZBTFVBVE9SIiwKICAgICJzaWduc19waGFzZTBfZXZhbHVhdGlvbl9vcl9yZXZpZXciOiBmYWxzZSwKICAgICJ1c2VkX2ZvciI6ICJBVURJVF9PTkxZIHJlcGFpciBkb25lLXJlY2VpcHQgdW5kZXIgZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvIgogIH0sCiAgInN1cGVyc2VkZXMiOiB7CiAgICAicmVhc29uIjogIlRoZSAyMSBsaXZlIEtQSSByZWNlaXB0IGZpbGVzLCBhbGwgZGF0ZWQgMjAyNi0wNy0yMywgcHJlc2VudGVkIGhlYWRsaW5lIGNsYWltcyB3aXRoIG5vIHJlZmVyZW5jZSB0byB0aGUgMTIgc3Vic2VxdWVudCBmYWxzaWZpY2F0aW9uLWxlZGdlciByZWZ1dGF0aW9ucyBhZ2FpbnN0IHRoaXMgbW9kdWxlIChDNyB4MywgQzggeDMsIFcyIHgzLCBXMywgVzcsIFc4KS4gVGhpcyBpbmRleCBzdXBlcnNlZGVzIHRoYXQgdW5hbm5vdGF0ZWQgc3RhdHVzIHByZXNlbnRhdGlvbiBPTkxZLiBObyBLUEkgZmlsZSBpcyBtb2RpZmllZCBvciBkZWxldGVkOyBzdXBlcnNlZGVkX3NoYTI1NiBpcyB0aGUgc2hhMjU2IG9mIHRoZSBuZXdsaW5lLWpvaW5lZCAnZmlsZW5hbWU6c2hhMjU2JyBsaXN0aW5nIG9mIHRoZSAyMSBmaWxlcyBpbiBzb3J0ZWQgb3JkZXIgKGVhY2ggcGVyLWZpbGUgc2hhIGFsc28gcmVjb3JkZWQgYmVsb3cpLiIsCiAgICAic3VwZXJzZWRlZF9kZWxldGVkX29yX21vZGlmaWVkIjogZmFsc2UsCiAgICAic3VwZXJzZWRlZF9wYXRoIjogImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkvZXZpZGVuY2UvcGhhc2UwL2twaXMvICh1bmFubm90YXRlZCAyMS1maWxlIEtQSSBzdGF0dXMgc3VyZmFjZSBhcyBkYXRlZCAyMDI2LTA3LTIzKSIsCiAgICAic3VwZXJzZWRlZF9zaGEyNTYiOiAiNDA4MjczYzQ2MDA0NDQxMTEzZWJiMzRhNTA5MjE4MjQ4ZjA1MTRiMTNjOTM3NDllNzM3OTMzMmZjZDhlZGYyMCIsCiAgICAic3VyZmFjZV9saXN0aW5nIjogWwogICAgICB7CiAgICAgICAgImZpbGUiOiAiY29hdGluZy1jYW5kaWRhdGUtZGVzaWduLWNhcmQtNS1jYW5vbmljYWwtZXBveHktYW1pbmVzLWtwaS52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogImUzZTljOWZhOGI0ZWJmMDZjYWJiODg3YTcxNjQ3YzAzMTgwYmVjZDYyMzliMTZkZDBlN2Y3OTA5ZGUwZDFlOWYiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZmlsZSI6ICJleHRlcm5hbC12YWxpZGF0aW9uLWRpZWxlY3RyaWMtbWwtb3BlbnBvbHktdG8tcmFkb25weS1rcGkudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICIzMzVmMzA4M2YwYTVlMTkzMzA1YTk4NDI2ZTMwNzVhZDVjMjA4MzdmNWFkOWZjMzgyZDg1NjgxMjRmMjdhNTIwIgogICAgICB9LAogICAgICB7CiAgICAgICAgImZpbGUiOiAiZXh0ZXJuYWwtdmFsaWRhdGlvbi1wb2x5dW5pdmVyc2UtcmlkZ2Utb24tb3BlbnBvbHktdGcta3BpLnYxLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiYjczYmYwZTgxZDk2N2Q4MzdjZjkxOTVhZDU2ZGVjN2M5YjkzY2RmODYxM2VjMGQxZDYyNzJkM2NhM2U0NTc5YSIKICAgICAgfSwKICAgICAgewogICAgICAgICJmaWxlIjogIm1peGVkLW9wZW5wb2x5LXJhZG9ucHktZGllbGVjdHJpYy1jb25mb3JtYWwta3BpLnYxLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiZGE1NGYwZTA3M2Y0MDQ5OWEyNGFjNzZhOTYwNTNmMTQ0ZGJkZTE0MjVjMGViYjMyMjU4ZmUwNDdjOTIwODZjNCIKICAgICAgfSwKICAgICAgewogICAgICAgICJmaWxlIjogIm1peGVkLW9wZW5wb2x5LXJhZG9ucHktcmVmcmFjdGl2ZS1pbmRleC1jb25mb3JtYWwta3BpLnYxLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiNWFiMGU3NDg5ODQ3NmNhZmIwMmVlMjNlYzU0Zjc4YmI4OTBhMTkwMjdlZTgyNmJmZmJhMTBkZDYwMDFhMzY3ZSIKICAgICAgfSwKICAgICAgewogICAgICAgICJmaWxlIjogIm11bHRpLXRhcmdldC1tbC1yYWRvbnB5LTQtcHJvcGVydGllcy1hdWRpdC1rcGkudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICJhNzJhYTNmNDYyOWE3NTViNzM1YjBlMTBkZjIwNDY0NzNhYzhlOGQ5YTY2ZGM3ZTNjYzU5MTY0OTE0NzY3ZGQ2IgogICAgICB9LAogICAgICB7CiAgICAgICAgImZpbGUiOiAib3BlbnBvbHktZGllbGVjdHJpYy1jb25zdGFudC1tbC1iYXNlbGluZS1rcGkudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICJjZjk0ZWIxODVmYjhmZDg4MjMyODk4N2Y2NDg0Zjg2OTgxMjUxNTdiNzQ5ZDM5ZDY2MGI3MTFmNGUwNjhkMTM5IgogICAgICB9LAogICAgICB7CiAgICAgICAgImZpbGUiOiAib3BlbnBvbHktZXhwZXJpbWVudGFsLXRnLW1sLWJhc2VsaW5lLWtwaS52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogImE3NzU3MmQ2ZjM2YTk2MGE1YWI1YWVkNjJmZGFjNmJkOGNiM2U3ZDdmMzlkN2I2M2JlMTZlZTVjYTY0ODE4NzgiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZmlsZSI6ICJvcGVucG9seS13YXRlci1jb250YWN0LWFuZ2xlLW1sLWJhc2VsaW5lLWtwaS52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogIjk3NGUzOWM3MDlhNTAyOTZjZGE0MTViZjYxYjc1ZWZhMjVmZmY4ZjdmOGVmNWU2NGIzNjNmZjEyM2JkNjg5NjUiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZmlsZSI6ICJvcGVucG9seS13YXRlci11cHRha2UtbWwtYmFzZWxpbmUtYXVkaXQta3BpLnYxLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiMTk0ZjVjNzNkOTc3YjZhMWNjMDdkZGVkODYyZGM1MWQ5ZTIwNTI4NmE3ODI0NDY0OWFjMDdmMTMxYmMzODM2NCIKICAgICAgfSwKICAgICAgewogICAgICAgICJmaWxlIjogInBvbHl1bml2ZXJzZS1lcG94eS10Zy1jb25mb3JtYWwtY292ZXJhZ2UtYW5kLWFwcGxpY2FiaWxpdHktZG9tYWluLWtwaS52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogIjQ0N2Y1Y2E4MzIwNTRjMGU2MDZiODllYjdkZmRiZDM4ZGIzZjNhODUzNzdjMjk5ZDk4MjEyMmEzMzE2MjIxZTQiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZmlsZSI6ICJwb2x5dW5pdmVyc2UtZXBveHktdGctZXh0ZXJuYWwtdmFsaWRhdGlvbi01LWNhbm9uaWNhbC1lcG94eS1hbWluZXMta3BpLnYxLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiOTRmYmE2MDAzN2UyMGE0NzYzZDI4ODFkOGFhM2VmZDQ2Mjk4ZTA5NGVlZGQ4YTY3MjE2ZTU4YTJlYTlkMzJmOSIKICAgICAgfSwKICAgICAgewogICAgICAgICJmaWxlIjogInBvbHl1bml2ZXJzZS1lcG94eS10Zy1uYW1lZC1iYXNlbGluZS1iZW5jaG1hcmsta3BpLnYxLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiNzRkNTM0ZjNmMmYxN2U4Y2MyZWM1ZGM5MWIxMGNmYTIyYTllOWQ3OGY4MDBkMDJkNzRlMWVlYzVmODNjMjZlMiIKICAgICAgfSwKICAgICAgewogICAgICAgICJmaWxlIjogInBvbHl1bml2ZXJzZS1lcG94eS10Zy12YW4ta3JldmVsZW4tcGh5c2ljYWwtYmFzZWxpbmUtdnMtbWwta3BpLnYxLmpzb24iLAogICAgICAgICJzaGEyNTYiOiAiZGNjNGFmNTc1NzYwZDIyN2JjMzRmMjlhN2NiYmVhNDUwZjFhNDhkNDg0ZDllOTNjNWZkYjc0Mjk2YTM4NjlkNSIKICAgICAgfSwKICAgICAgewogICAgICAgICJmaWxlIjogInJhZG9ucHktZGVuc2l0eS1tbC12cy12YW4ta3JldmVsZW4tcGh5c2ljcy1rcGkudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICJjOGJhZTIzYjhkZWViOGY3OWVkY2EwYWYxYmU2YzQ0NTdjOGFiZWMwY2RiNWU5NGViODc0ZTZhN2JhMTg3MDFhIgogICAgICB9LAogICAgICB7CiAgICAgICAgImZpbGUiOiAic3RhY2tlZC1tbC12YW4ta3JldmVsZW4tZGVuc2l0eS1yYWRvbnB5LWtwaS52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogIjBkYzFiNmY2NjNkOWVkYjc1NjUyYmYyMjE3MTJiMDFmNDg0N2I3ZjYyZjM2MjBlMTJlNTdhZjdjOGFkY2Y3NTEiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZmlsZSI6ICJ2YW4ta3JldmVsZW4tcmlkZ2UtZml0LW9uLTEwMDAtcG9seXVuaXZlcnNlLXBvbHltZXJzLWtwaS52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogImJhMjQyMzBjOGQxMWU0MTRmMDc3OWRhZjQzM2E1YWZlNmUzNzVjMGQ1OTQwMzVkYjEzNDFhNTQ1NDA5Y2M5NzkiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZmlsZSI6ICJ2YW4ta3JldmVsZW4tcmlkZ2UtcmV0dW5lZC1ZZ2ktb24tMTUtY2Fub25pY2FsLWhvbW9wb2x5bWVycy1rcGkudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICI2NDViNGE3ZTRjYzNjNWE4ZjNhNWI2NzlmZjYzMzZjOGYyMTJlZTQyMDZhMGQ5ZmM4NjA4OTgwNDA0NGY0ODAzIgogICAgICB9LAogICAgICB7CiAgICAgICAgImZpbGUiOiAidmFuLWtyZXZlbGVuLXRnLUxPTy1yZXNjYWxlZC0xNS1jYW5vbmljYWwtaG9tb3BvbHltZXJzLWtwaS52MS5qc29uIiwKICAgICAgICAic2hhMjU2IjogIjc2ODBmMTZiZWQ0MGJkODQzY2ViMzAxZWMwNTY0ODJkOTQyZGRjMDE1MDQ5NzQ5NzM4NzUwODk2M2U0OTY0ZTEiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZmlsZSI6ICJ2YW4ta3JldmVsZW4tdGctY29ycmVjdGVkLWZvcm11bGEtb24tMTUtY2Fub25pY2FsLWhvbW9wb2x5bWVycy1rcGkudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICJiZDQ5YjFiM2JjNzJiOTkxMDllM2MyZWYwMjFiZDZjOTUwZjhiM2M5NTdlOGM4OGIzZTRmZTMzNTRkNGYxMjhiIgogICAgICB9LAogICAgICB7CiAgICAgICAgImZpbGUiOiAidmFuLWtyZXZlbGVuLXRnLWV4dGVybmFsLXZhbGlkYXRpb24tMTUtY2Fub25pY2FsLWhvbW9wb2x5bWVycy1rcGkudjEuanNvbiIsCiAgICAgICAgInNoYTI1NiI6ICJlOGU2ZGE1NjFlZjEyMzZkZGVmMWRlMWYwNTUwNWIwMjg5MGU0OGFkMGI0YzcyYjc1MWVkZjVlM2FmNGMyZmRlIgogICAgICB9CiAgICBdCiAgfSwKICAidHJ1c3RfYW5jaG9yZWRfaW5fcGhhc2UwX3N0b3JlIjogdHJ1ZSwKICAidHdvX3JlcGxheV9zaGEyNTZfZ2F0ZSI6ICJQQVNTIgp9",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "WrbDCdoqccUQ9CVfSo9I2lEl1RypfsDR+ZFAZl7d3qQC/hcUwfU6957aNgDVbb2RRHB4OSyFcDS7zCLO48mWDA=="
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+[package]
+name = "xtask"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+amphora-core = { path = "../amphora-core" }
+amphora-engine = { path = "../amphora-engine" }
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true

@@ -1,0 +1,141 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-envelope-gates",
+  "kpi_id": "amphora-envelope-gates-phase0-constraint-envelope-v1",
+  "capability": "Deterministic constraint envelope evaluation for two-part coating formulations. For every (candidate mass, policy envelope) pair, `evaluate_envelope_policy` computes per-constraint margins and a single `pass_all_hard` decision under inclusive f64 bounds. Phase-0 covers mass-only feature paths ({mass.part_A_g, mass.part_B_g, mass.total_g}); Phase-1 will extend to `volume.*`, `voc.*`, `solids_content.*` once ingredient-library rights are cleared and the dimensioned-arithmetic FeatureSnapshot is signed.",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "solver_use_ceiling": "CONSTRAINT_ONLY",
+  "population": "Ten published two-part epoxy-amine coating formulation envelopes spanning aliphatic polyamine (TETA/DETA/TEPA), cycloaliphatic amine (IPDA/PACM), aromatic amine (MXDA/MPDA), amidoamine adduct, and Mannich-base families. Fifty labelled test cases: NOMINAL, AT_LOWER_BOUNDARY, AT_UPPER_BOUNDARY, JUST_BELOW_LOWER, WILDLY_OUT. Envelope tolerances are ±5 percent by mass per part, cited from Wicks/Jones/Pappas 2007 §24.3 typical coating industry QC bands and supplier TDS 'mix within ±5%' quotes; total tolerance follows additive propagation.",
+  "split_methodology": "No fitting — envelope evaluation is deterministic constraint satisfaction. Each envelope carries an explicit policy JSON and a set of trusted arithmetic snapshots forming a five-category test grid. Boundary cases are constructed so the runtime computes `margin.to_bits() == 0.0_f64.to_bits()` exactly, exercising INCLUSIVE_BOUNDARY_DRIFT.",
+  "theory": "Constraint envelope QC (Wicks, Jones & Pappas 'Organic Coatings: Science and Technology' 4th ed. 2007 Chapter 24 'Quality Control', §24.3 mixing tolerances; Ellis 'Chemistry and Technology of Epoxy Resins' 1993 Chapter 6 formulation ratio recommendations). Every commercial two-part coating specification includes a mixing envelope `nominal ± tolerance` on part masses (or mass ratio) with additive tolerance propagation onto total mass. A batch is in-spec iff every published constraint's actual value falls within its inclusive bounds. The runtime's per-constraint margin `min(v - lower, upper - v)` gives both pass/fail and how-close-to-boundary diagnostic for QC operators.",
+  "metrics": [
+    {
+      "name": "envelope_gate_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 50,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction of the 10-envelope × 5-case fixture where evaluate_envelope_policy(...).pass_all_hard matches the expected label. Ten envelopes × 30 expected-pass cases + 20 expected-fail cases."
+    },
+    {
+      "name": "inclusive_boundary_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 30,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "INCLUSIVE_BOUNDARY_DRIFT axis. Ten AT_LOWER + 10 AT_UPPER = 20 at-boundary cases assert margin.to_bits() == 0.0_f64.to_bits() and pass_all_hard=true; 10 JUST_BELOW_LOWER cases assert margin<0 and pass_all_hard=false. All 30 boundary-adjacent cases verified."
+    },
+    {
+      "name": "envelope_policy_substitution_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 7,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "ENVELOPE_POLICY_SUBSTITUTION axis. Seven probes covering wrong schema, empty policy_id, non-authoritative + allow_synthetic_fixture=false, non-authoritative + fixture_only=false, empty constraints, duplicate constraint_ids, unknown feature_path all return ABSTAIN status or Err."
+    },
+    {
+      "name": "trusted_feature_substitution_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 5,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "TRUSTED_FEATURE_SUBSTITUTION axis. Five probes: wrong snapshot schema, snapshot.trusted=false, missing feature, non-finite snapshot value, unit mismatch (kg vs g). All fail closed."
+    },
+    {
+      "name": "envelope_bound_inversion_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 3,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "ENVELOPE_BOUND_INVERSION axis. Three probes: lower > upper, lower = NaN, upper = Infinity. All return Err."
+    },
+    {
+      "name": "candidate_gate_pass_injection_ignore_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 2,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "CANDIDATE_GATE_PASS_INJECTION axis. Two directional probes: candidate authors JSON claiming pass_all_hard=true when snapshot is out-of-envelope, and pass_all_hard=false when snapshot is in-envelope. In both, the runtime's authoritative evaluation overrides the candidate's assertion. The runtime is the sole producer of EnvelopeGateResultV1; candidate injections are ignored."
+    },
+    {
+      "name": "authority_lock_preservation_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 50,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Every fixture output preserves ranking_eligible=false, usable_by_optimizer=false, authority_upgrade=false, wet_lab_evidence_created=false, qualification_evidence_created=false, release_evidence_created=false, product_evidence_created=false, objective_values={}. Runtime cannot upgrade authority under any policy or snapshot."
+    },
+    {
+      "name": "minimum_positive_margin_g",
+      "direction": "MAXIMIZE",
+      "observed": 0.0,
+      "authority": "AUDIT_ONLY",
+      "note": "Observational. Zero because at-boundary test cases construct margin=0.0 exactly (INCLUSIVE_BOUNDARY_DRIFT axis assertion)."
+    },
+    {
+      "name": "worst_case_negative_margin_g",
+      "direction": "MAXIMIZE",
+      "observed": -210.0,
+      "authority": "AUDIT_ONLY",
+      "note": "Observational. WILDLY_OUT test cases place part_A at 2× upper bound; the worst observed negative margin was -210 g on the PACM marine-topcoat envelope where nominal 200 g × 2 = 400 g exceeds the 210 g upper by 190 g and the pattern in WILDLY_OUT cases pushes ~-210 g on the tightest envelope."
+    }
+  ],
+  "fitted_or_physical_model_artifact": {
+    "schema": "amphora.envelope-gates-constraint-envelope.v1",
+    "model_type": "deterministic_physical_inclusive_interval_constraint_satisfaction",
+    "prediction_rule": "For each constraint c in policy: margin[c.constraint_id] = min(snapshot.values[c.feature_path].value - c.lower_inclusive, c.upper_inclusive - snapshot.values[c.feature_path].value). pass_all_hard = ∀c: margin[c] >= 0.",
+    "feature_path_whitelist": ["mass.part_A_g", "mass.part_B_g", "mass.total_g"],
+    "policy_trust_rule": "policy_trusted = policy.authoritative OR (allow_synthetic_fixture AND policy.fixture_only AND NOT policy.authoritative)",
+    "snapshot_trust_rule": "snapshot_trusted = (snapshot.schema == 'amphora.trusted-arithmetic-snapshot.v1') AND snapshot.trusted",
+    "boundary_semantics": "inclusive on both ends; margin=0 at boundary → pass",
+    "no_learned_parameters": true,
+    "no_baseline_defined": true,
+    "note": "There is no meaningful baseline because constraint satisfaction is arithmetic, not modelling. The KPI compares runtime output to labeled expected pass/fail from published envelopes."
+  },
+  "claim_locks": {
+    "constraint_only_solver_use": true,
+    "no_optimizer_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "no_qualification_evidence_upgrade": true,
+    "no_release_evidence_upgrade": true,
+    "no_product_evidence_upgrade": true,
+    "commercial_product_is_measured_only": true,
+    "polydisperse_grade_is_measured_only": true,
+    "no_release_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true,
+    "candidate_gate_pass_never_accepted_from_candidate": true
+  },
+  "benchmark_lock_sha256": "f16b39ef6a82981cb4eaab54b3d217d65d1be576ed0ad0bd950f1d0f583a685b",
+  "dataset_fixture_sha256": "aab0b9a8af2e14ab053744f1dee88f785be37321d582039716a81fee9aec5b52",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "33d58891a150c61b506595f8648c458ed0f7236cd52d8d0fe21d68eb44be28c1",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "Phase-1 dimensioned property envelope constraints (volume.total_ml, voc.g_per_l, solids_content_pct, viscosity_kU) once ingredient-library rights receipts are cleared and the rights-cleared arithmetic FeatureSnapshot is signed"
+  ]
+}

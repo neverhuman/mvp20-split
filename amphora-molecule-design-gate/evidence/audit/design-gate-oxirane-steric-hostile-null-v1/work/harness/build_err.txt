@@ -1,0 +1,9 @@
+   Compiling cxx v1.0.199
+   Compiling serde_jcs v0.2.0
+   Compiling amphora-rdkit-ffi v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi)
+   Compiling amphora-core v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-core)
+   Compiling amphora-molecule-capabilities v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-capabilities)
+   Compiling oxirane-steric-hostile-null-harness v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-design-gate/evidence/audit/design-gate-oxirane-steric-hostile-null-v1/work/harness)
+    Finished `release` profile [optimized] target(s) in 13.01s
+     Running `target/release/oxirane-steric-hostile-null-harness`
+target/release/oxirane-steric-hostile-null-harness: symbol lookup error: target/release/oxirane-steric-hostile-null-harness: undefined symbol: _ZN5RDKit2v211SmilesParse13MolFromSmilesERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS1_18SmilesParserParamsE

@@ -1,0 +1,237 @@
+{
+  "acceptance_gates": {
+    "G1_known_answer_kissinger_within_0p5kJ": true,
+    "G2_known_answer_starink_within_1p0kJ": true,
+    "G3_known_answer_ofw_bias_ge_starink_bias": true,
+    "G4_every_core_all_methods_plausible_40_90kJ": true,
+    "G5_every_core_all_methods_r2_ge_0p98": true,
+    "G6_every_core_crossmethod_spread_le_8kJ": true,
+    "G7_every_core_kissinger_matches_reported_within_2kJ": true,
+    "G8_ge2_independent_core_dgeba_sources": true,
+    "G9_every_source_ccby_commercial_derivative_inscope": true
+  },
+  "aggregate_kpi": {
+    "core_max_crossmethod_spread_kJ_per_mol": 3.305123,
+    "core_median_crossmethod_spread_kJ_per_mol": 3.171223,
+    "core_min_r2_any_method": 0.987207,
+    "known_answer_kissinger_abs_error_kJ_per_mol": 1e-06,
+    "known_answer_ofw_abs_error_kJ_per_mol": 0.585829,
+    "known_answer_starink_abs_error_kJ_per_mol": 0.100403,
+    "n_independent_core_dgeba_sources": 2
+  },
+  "all_acceptance_gates_pass": true,
+  "authority": "AUDIT_ONLY",
+  "capability": "Method-robustness of the cure-kinetics activation-energy estimate: recover the cure Ea of rights-clean (CC-BY-4.0) two-part epoxy-amine DSC datasets with THREE independent peak-based isoconversional estimators (Kissinger, Ozawa-Flynn-Wall/Doyle, Starink) from raw (heating-rate, peak-temperature) pairs alone, and quantify (a) each method's accuracy against a first-principles synthetic ground truth and (b) their mutual agreement on real data.",
+  "dataset": {
+    "dataset_id": "ccby-epoxy-amine-dsc-kissinger-multisystem-v1",
+    "dataset_sha256": "f84076b5582f906f55a11156ff62fcd28047ffa03eadea1c05791216302846d8",
+    "independent_core_dois": [
+      "10.3390/ma14164673",
+      "10.3390/polym11030391"
+    ],
+    "n_core_dgeba_systems": 2,
+    "n_generalization_systems": 1,
+    "n_systems": 3
+  },
+  "does_not": [
+    "does NOT promote amphora-cure-potlife-gate to PHASE_0",
+    "does NOT sign a trust-anchored phase0 evaluation/review receipt",
+    "does NOT flip rights_gate_passed on the cure-potlife source-lock",
+    "does NOT modify any of the 66 signed receipts or the manifest",
+    "does NOT change the Phase-0 count or n_receipts_indexed (still 66/11)",
+    "does NOT assert Amphora wet-lab measurement or product qualification"
+  ],
+  "gas_constant_J_per_mol_K": 8.314462618,
+  "known_answer_first_principles": {
+    "abs_error_kJ_per_mol": {
+      "kissinger": 1e-06,
+      "ozawa_flynn_wall": 0.585829,
+      "starink": 0.100403
+    },
+    "ground_truth_Ea_kJ_per_mol": 60.0,
+    "ground_truth_pre_exponential_A_per_min": 100000000000000.0,
+    "reaction_model": "first-order (n=1) exact DSC peak condition",
+    "recovered": {
+      "kissinger": {
+        "ea_kJ_per_mol": 60.000001,
+        "r2": 1.0
+      },
+      "ozawa_flynn_wall": {
+        "ea_kJ_per_mol": 60.585829,
+        "r2": 1.0
+      },
+      "starink": {
+        "ea_kJ_per_mol": 60.100403,
+        "r2": 1.0
+      }
+    },
+    "signed_bias_kJ_per_mol": {
+      "kissinger": 1e-06,
+      "ozawa_flynn_wall": 0.585829,
+      "starink": 0.100403
+    },
+    "synthetic_peaks": [
+      {
+        "heating_rate_K_per_min": 2.0,
+        "peak_temperature_K": 215.996889
+      },
+      {
+        "heating_rate_K_per_min": 5.0,
+        "peak_temperature_K": 221.730344
+      },
+      {
+        "heating_rate_K_per_min": 10.0,
+        "peak_temperature_K": 226.267671
+      },
+      {
+        "heating_rate_K_per_min": 20.0,
+        "peak_temperature_K": 230.988754
+      }
+    ]
+  },
+  "non_circularity": "For every system the estimator consumes ONLY the raw (heating_rate, peak_temperature) pairs. Each paper's reported Kissinger Ea is read ONLY as a validation target, never as an input. Recovering each paper's Kissinger Ea from its raw peaks is therefore a genuine method-fidelity test, not a tautology.",
+  "physics_note": "On synthetic first-order peaks with a known Ea, Kissinger is exact by construction, Starink recovers to well under 1 kJ/mol, and OFW/Doyle carries the expected small positive bias - reproducing the textbook accuracy ordering (Starink > OFW/Doyle). On the three independent real epoxy-amine systems the three methods agree within a small spread and each lands in the 40-90 kJ/mol amine-cured-epoxy band, so the recovered cure Ea is a property of the data, not of one linear model.",
+  "redteam_phase0_snapshot": {
+    "headline": "'FULL Phase-0' is FALSE. 0 of 29 modules have scientific_readiness=VALIDATED. Phase-0 is a GOVERNANCE gate (scientific_success_required=false) blocked on two human trust-anchored signatures that this AUDIT_ONLY key cannot supply. The founder's skepticism is correct.",
+    "lane_histogram": {
+      "formulation": 8,
+      "infrastructure": 12,
+      "molecule": 5,
+      "performance": 4
+    },
+    "module_manifest_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+    "n_modules": 29,
+    "n_modules_scientific_readiness_VALIDATED": 0,
+    "phase0_promotion_facts": {
+      "blocking_gates": [
+        "EVALUATOR_SIGNATURE",
+        "INDEPENDENT_REVIEW_SIGNATURE"
+      ],
+      "human_review_performed": false,
+      "local_development_keys_authorized_for_promotion": false,
+      "note": "Verified from amphora-solvency-score/evidence/phase0/promotion/policy.v1.json this run.",
+      "phase0_target_scientific_readiness": "LOCKED_INTERNAL (NOT 'VALIDATED')",
+      "scientific_success_required_for_phase0": false
+    },
+    "policy_product_claim_ready": false,
+    "scientific_readiness_histogram": {
+      "UNVALIDATED": 29
+    }
+  },
+  "relation_to_cure_potlife": "Hardens the cure-kinetics basis of the cure-potlife capability with independent-method triangulation on top of the existing single-estimator anchors. Does NOT by itself satisfy the pot-life Phase-0 gate (gel/pot-life apparent Ea differs from the peak reaction Ea, and isothermal ambient cure is water-catalysed vs non-isothermal DSC) and does NOT flip rights_gate_passed (each source must be ingested through the module source-ledger under a signed rights receipt).",
+  "schema": "amphora.redteam-audit.cure-kinetics-isoconversional-crossmethod-ccby.diagnostic.v1",
+  "systems": [
+    {
+      "all_methods_plausible_40_90kJ": true,
+      "amine_class": "cycloaliphatic",
+      "cross_method": {
+        "ea_mean_kJ_per_mol": 58.340137,
+        "ea_spread_kJ_per_mol": 3.037323,
+        "ea_stdev_kJ_per_mol": 1.387077,
+        "min_r2": 0.993794
+      },
+      "doi": "10.3390/polym11030391",
+      "external_fidelity_vs_reported_kissinger": {
+        "kissinger_abs_error_kJ_per_mol": 0.038964,
+        "ofw_abs_diff_kJ_per_mol": 2.998359,
+        "reported_kissinger_ea_kJ_per_mol": 57.3,
+        "starink_abs_diff_kJ_per_mol": 0.161016
+      },
+      "methods": {
+        "kissinger": {
+          "ea_kJ_per_mol": 57.261036,
+          "r2": 0.993794
+        },
+        "ozawa_flynn_wall": {
+          "ea_kJ_per_mol": 60.298359,
+          "r2": 0.995134
+        },
+        "starink": {
+          "ea_kJ_per_mol": 57.461016,
+          "r2": 0.993856
+        }
+      },
+      "n_heating_rates": 4,
+      "rights_clean_ccby_commercial_derivative_inscope": true,
+      "scope_tier": "CORE_DGEBA_AMINE",
+      "system_id": "dgeba-ipda-lascano-polym11030391"
+    },
+    {
+      "all_methods_plausible_40_90kJ": true,
+      "amine_class": "cycloaliphatic",
+      "cross_method": {
+        "ea_mean_kJ_per_mol": 69.729538,
+        "ea_spread_kJ_per_mol": 3.305123,
+        "ea_stdev_kJ_per_mol": 1.507713,
+        "min_r2": 0.987207
+      },
+      "doi": "10.3390/ma14164673",
+      "external_fidelity_vs_reported_kissinger": {
+        "kissinger_abs_error_kJ_per_mol": 1.397335,
+        "ofw_abs_diff_kJ_per_mol": 1.907788,
+        "reported_kissinger_ea_kJ_per_mol": 69.95,
+        "starink_abs_diff_kJ_per_mol": 1.171838
+      },
+      "methods": {
+        "kissinger": {
+          "ea_kJ_per_mol": 68.552665,
+          "r2": 0.987207
+        },
+        "ozawa_flynn_wall": {
+          "ea_kJ_per_mol": 71.857788,
+          "r2": 0.989345
+        },
+        "starink": {
+          "ea_kJ_per_mol": 68.778162,
+          "r2": 0.987304
+        }
+      },
+      "n_heating_rates": 3,
+      "rights_clean_ccby_commercial_derivative_inscope": true,
+      "scope_tier": "CORE_DGEBA_AMINE",
+      "system_id": "dgeba-bdge-ipda-prepreg-ma14164673"
+    },
+    {
+      "all_methods_plausible_40_90kJ": true,
+      "amine_class": "aromatic",
+      "cross_method": {
+        "ea_mean_kJ_per_mol": 65.255359,
+        "ea_spread_kJ_per_mol": 4.525603,
+        "ea_stdev_kJ_per_mol": 2.072553,
+        "min_r2": 0.999667
+      },
+      "doi": "10.3390/molecules31040640",
+      "external_fidelity_vs_reported_kissinger": {
+        "kissinger_abs_error_kJ_per_mol": 1.036941,
+        "ofw_abs_diff_kJ_per_mol": 3.488662,
+        "reported_kissinger_ea_kJ_per_mol": 64.693562,
+        "starink_abs_diff_kJ_per_mol": 0.766331
+      },
+      "methods": {
+        "kissinger": {
+          "ea_kJ_per_mol": 63.656621,
+          "r2": 0.999667
+        },
+        "ozawa_flynn_wall": {
+          "ea_kJ_per_mol": 68.182224,
+          "r2": 0.999772
+        },
+        "starink": {
+          "ea_kJ_per_mol": 63.927231,
+          "r2": 0.999673
+        }
+      },
+      "n_heating_rates": 5,
+      "rights_clean_ccby_commercial_derivative_inscope": true,
+      "scope_tier": "GENERALIZATION_EPOXY_AMINE",
+      "system_id": "multifunctional-epoxy-dds-molecules31040640"
+    }
+  ],
+  "target_module": "amphora-cure-potlife-gate",
+  "theory": {
+    "kissinger": "ln(beta/Tp^2) = C - Ea/(R*Tp);  Ea = -R*slope  (differential peak method, Anal. Chem. 1957, 29, 1702)",
+    "ozawa_flynn_wall": "ln(beta) = C - 1.0516*Ea/(R*Tp);  Ea = -R*slope/1.0516  (Doyle exp-integral approx; ASTM E698 basis)",
+    "starink": "ln(beta/Tp^1.92) = C - 1.0008*Ea/(R*Tp);  Ea = -R*slope/1.0008  (Starink, Thermochim. Acta 2003, 404, 163 - most accurate linear form)"
+  },
+  "verdict": "CROSS_METHOD_ROBUST__KNOWN_ANSWER_PASS"
+}

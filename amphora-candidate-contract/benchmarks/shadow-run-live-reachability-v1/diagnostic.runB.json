@@ -1,0 +1,113 @@
+{
+  "both_receipts_decision_use_ceiling": [
+    "SHADOW",
+    "SHADOW"
+  ],
+  "both_receipts_ed25519_verified": true,
+  "both_receipts_evidence_tier": [
+    "SYNTHETIC_DIAGNOSTIC",
+    "SYNTHETIC_DIAGNOSTIC"
+  ],
+  "candidate_id_held_constant": true,
+  "clean": {
+    "artifact_hashes": {
+      "result:Envelope-65-black-leaktest": "c5c85f0bcc3bb63bb8d5533f2e42f57dcb94208589ade7f5fc404c7bca16ed9f"
+    },
+    "decision_use_ceiling": "SHADOW",
+    "ed25519_signature_verifies": true,
+    "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+    "full_file_sha256": "eec96cab966fe5960bbcee73032429933025d60f9e52b3a5f5a73d055fc195f3",
+    "module_id": "amphora-optimizer-orchestrator",
+    "passed": true,
+    "payload_sha256": "665c76343237dce5a6f9e57f42f21945ff4c436816a255280654b755ac47fb8b",
+    "raw_receipt_excl_signature": {
+      "applicability_limits": [
+        "digital phase-1 applicability only"
+      ],
+      "artifact_hashes": {
+        "result:Envelope-65-black-leaktest": "c5c85f0bcc3bb63bb8d5533f2e42f57dcb94208589ade7f5fc404c7bca16ed9f"
+      },
+      "benchmark_lock_hash": "43de2cbf4bc63747f675587fc63111bc578d7ae803e73a3300e809448a93d209",
+      "claim_locks": {
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "SHADOW",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "shadow run",
+        "details": {
+          "candidate_count": 1,
+          "production_pareto_affected": false,
+          "worker_replay_equal": true
+        },
+        "source_genesis_hash": "ba095bf86ad67e2ab3025c29971404a2044a4523c7b70727cc28c8bc30f47a47"
+      },
+      "module_id": "amphora-optimizer-orchestrator",
+      "passed": true,
+      "receipt_id": "receipt-5a313358f37f3510e6c656aa",
+      "registry_manifest_hash": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "receipt_id": "receipt-5a313358f37f3510e6c656aa",
+    "signing_keyid": "local-8b11ea1565c463a0",
+    "signing_pubkey_matches_declared_identity": true
+  },
+  "clean_candidate_sha256": "ede40bce8664b2f9587a0bca40a6892d640fb644f56b70883d9cbd284bfdca65",
+  "leak_confirmed": true,
+  "poison": {
+    "artifact_hashes": {
+      "result:Envelope-65-black-leaktest": "e8b7d40e030217faad944cd701ab5c88d7001aaf1b57e9a2dfb1f93601da613d"
+    },
+    "decision_use_ceiling": "SHADOW",
+    "ed25519_signature_verifies": true,
+    "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+    "full_file_sha256": "377e273975ca4a0bbfdfc6808e7669618f821a9d665ad908b0564b7bb27b2c41",
+    "module_id": "amphora-optimizer-orchestrator",
+    "passed": true,
+    "payload_sha256": "afc1bd4108145652c55acad7c8ecf812da6d0e8d9f86a6631aedc4c2bad02050",
+    "raw_receipt_excl_signature": {
+      "applicability_limits": [
+        "digital phase-1 applicability only"
+      ],
+      "artifact_hashes": {
+        "result:Envelope-65-black-leaktest": "e8b7d40e030217faad944cd701ab5c88d7001aaf1b57e9a2dfb1f93601da613d"
+      },
+      "benchmark_lock_hash": "43de2cbf4bc63747f675587fc63111bc578d7ae803e73a3300e809448a93d209",
+      "claim_locks": {
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "SHADOW",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "shadow run",
+        "details": {
+          "candidate_count": 1,
+          "production_pareto_affected": false,
+          "worker_replay_equal": true
+        },
+        "source_genesis_hash": "ba095bf86ad67e2ab3025c29971404a2044a4523c7b70727cc28c8bc30f47a47"
+      },
+      "module_id": "amphora-optimizer-orchestrator",
+      "passed": true,
+      "receipt_id": "receipt-f294ee912d2cffc51ff139cd",
+      "registry_manifest_hash": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "receipt_id": "receipt-f294ee912d2cffc51ff139cd",
+    "signing_keyid": "local-8b11ea1565c463a0",
+    "signing_pubkey_matches_declared_identity": true
+  },
+  "poison_candidate_sha256": "ac377cb5bf9d3a5e5bf7a122ae15c3ece0bb5894a3f22b15a4e4e18f54ab3c1b",
+  "run_label": "runB",
+  "schema": "amphora.candidate-contract.shadow-run-live-reachability-diagnostic.v1"
+}

@@ -1,0 +1,515 @@
+{
+  "attack_on_convention_choice": {
+    "question": "Is the active-hydrogen (active_NH) convention genuinely the product-relevant one for epoxy-amine stoichiometry, vs the amine-centre (nitrogen-atom) convention?",
+    "refutation_criterion": "Would REFUTE if a published, citable, epoxy-formulation-authoritative source defines AHEW, mix-ratio phr, or Flory-Stockmayer network functionality f in terms of nitrogen-atom count rather than N-H hydrogen count for primary/secondary amine hardeners.",
+    "sources_checked": [
+      {
+        "citation": "Lee, H. & Neville, K. 1967, Handbook of Epoxy Resins, McGraw-Hill (LCCN 66-23992)",
+        "finding": "Defines amine hydrogen equivalent weight (AHEW) as MW / (number of active hydrogens), explicitly hydrogen-count based, not nitrogen-count based; this is the basis already cited by the module's own in-tree reference file."
+      },
+      {
+        "citation": "Ellis, B. (ed.) 1993, Chemistry and Technology of Epoxy Resins, Blackie/Chapman & Hall, ISBN 978-0-7514-0095-4, ch.3",
+        "finding": "Stoichiometric mix ratio for amine curing agents is computed from the amine hydrogen equivalent weight (active-H basis); a tertiary amine (0 active H) can be a catalytic accelerator present in a formulation without contributing to the crosslink stoichiometry despite being a nitrogen centre -- consistent with active-H, inconsistent with amine-centre."
+      },
+      {
+        "citation": "Flory, P.J. 1953, Principles of Polymer Chemistry, Cornell Univ. Press, ch. IX",
+        "finding": "Network functionality f in the Flory-Stockmayer gelation criterion is the number of INDEPENDENT reactive groups per monomer capable of forming a bond with the co-reactant -- for an amine reacting with epoxide, each N-H is one independently-reacting group, not each nitrogen atom; a tertiary N with 0 active H contributes f=0 from that centre even though it is a nitrogen atom."
+      },
+      {
+        "citation": "ASTM D2074-07(2019) Standard Test Methods for Total, Primary, Secondary, and Tertiary Amine Values",
+        "finding": "Total amine value (titration, nitrogen-basicity basis) is DELIBERATELY a distinct, separately-named quantity from AHEW/functionality in this standard -- confirming amine-centre and active-hydrogen are recognized in the standards literature as two different, non-interchangeable measurements, not competing definitions of the same thing."
+      }
+    ],
+    "verdict_on_convention_choice": "SURVIVES: no source found that defines epoxy-amine reaction stoichiometry, AHEW, mix ratio, or Flory-Stockmayer functionality on a nitrogen-atom-count basis; all four checked sources are unanimous and internally consistent with the active-hydrogen convention. The nitrogen-atom count is the correct basis only for ASTM D2074 amine VALUE (a titration quantity), which the receipt already scopes conventionA to and does not conflate with functionality."
+  },
+  "independent_implementation_note": "Bond-type enumeration (no SMARTS string), operating on the no-H parse for topology and GetTotalNumHs for hydrogen counts -- structurally distinct from both R-A06v2 implementations (explicit per-atom rule loop; SMARTS substructure query).",
+  "rdkit_version": "2026.03.2",
+  "step1_instrument_validation": {
+    "decoy_detail": [
+      {
+        "expected_active_nh": 0,
+        "match": true,
+        "measured_active_nh": 0,
+        "name": "DGEBA (epoxide resin, not a hardener)",
+        "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+      },
+      {
+        "expected_active_nh": 0,
+        "match": true,
+        "measured_active_nh": 0,
+        "name": "triethylamine (tertiary amine, catalytic not co-reactive)",
+        "smiles": "CCN(CC)CC"
+      },
+      {
+        "expected_active_nh": 0,
+        "match": true,
+        "measured_active_nh": 0,
+        "name": "benzamide (amide N-H, not epoxy-reactive at ambient)",
+        "smiles": "NC(=O)c1ccccc1"
+      },
+      {
+        "expected_active_nh": 0,
+        "match": true,
+        "measured_active_nh": 0,
+        "name": "pyridine (aromatic ring nitrogen, no N-H)",
+        "smiles": "c1ccncc1"
+      },
+      {
+        "expected_active_nh": 0,
+        "match": true,
+        "measured_active_nh": 0,
+        "name": "N,N-dimethylbenzylamine (tertiary accelerator)",
+        "smiles": "CN(C)Cc1ccccc1"
+      },
+      {
+        "expected_active_nh": 1,
+        "match": true,
+        "measured_active_nh": 1,
+        "name": "N-methylaniline (secondary, monofunctional)",
+        "smiles": "CNc1ccccc1"
+      }
+    ],
+    "fail_closed_decoys_6_of_6": true,
+    "instrument_validated_before_any_count_asserted": true,
+    "known_answer_amines_8_of_8": true,
+    "known_answer_detail": [
+      {
+        "expected_active_nh": 5,
+        "expected_basic_n": 3,
+        "match": true,
+        "measured_active_nh": 5,
+        "measured_amine_centres": 3,
+        "name": "diethylenetriamine (DETA)",
+        "smiles": "NCCNCCN"
+      },
+      {
+        "expected_active_nh": 6,
+        "expected_basic_n": 4,
+        "match": true,
+        "measured_active_nh": 6,
+        "measured_amine_centres": 4,
+        "name": "triethylenetetramine (TETA)",
+        "smiles": "NCCNCCNCCN"
+      },
+      {
+        "expected_active_nh": 7,
+        "expected_basic_n": 5,
+        "match": true,
+        "measured_active_nh": 7,
+        "measured_amine_centres": 5,
+        "name": "tetraethylenepentamine (TEPA)",
+        "smiles": "NCCNCCNCCNCCN"
+      },
+      {
+        "expected_active_nh": 4,
+        "expected_basic_n": 2,
+        "match": true,
+        "measured_active_nh": 4,
+        "measured_amine_centres": 2,
+        "name": "isophoronediamine (IPDA)",
+        "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+      },
+      {
+        "expected_active_nh": 4,
+        "expected_basic_n": 2,
+        "match": true,
+        "measured_active_nh": 4,
+        "measured_amine_centres": 2,
+        "name": "m-xylylenediamine (MXDA)",
+        "smiles": "NCc1cccc(CN)c1"
+      },
+      {
+        "expected_active_nh": 4,
+        "expected_basic_n": 2,
+        "match": true,
+        "measured_active_nh": 4,
+        "measured_amine_centres": 2,
+        "name": "4,4'-diaminodiphenylmethane (MDA/DDM)",
+        "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1"
+      },
+      {
+        "expected_active_nh": 4,
+        "expected_basic_n": 2,
+        "match": true,
+        "measured_active_nh": 4,
+        "measured_amine_centres": 2,
+        "name": "4,4'-diaminodiphenylsulfone (DDS)",
+        "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1"
+      },
+      {
+        "expected_active_nh": 4,
+        "expected_basic_n": 2,
+        "match": true,
+        "measured_active_nh": 4,
+        "measured_amine_centres": 2,
+        "name": "1,3-bis(aminomethyl)cyclohexane (1,3-BAC)",
+        "smiles": "NCC1CCCC(CN)C1"
+      }
+    ]
+  },
+  "step2_positive_control": {
+    "control_real_input_does_not_false_fire": true,
+    "detected": true,
+    "evidence": "independent instrument measured active_nh=2 on the mutated structure vs ground-truth expectation 4; mismatch correctly flagged",
+    "expected_active_nh_ground_truth": 4,
+    "how_planted": "field: known_answer_amines entry 'MDA/DDM' smiles; value before='Nc1ccc(Cc2ccc(N)cc2)cc1' (expected_active_nh=4), value after='Nc1ccc(Cc2ccc(C)cc2)cc1'",
+    "measured_active_nh_on_planted_input": 2,
+    "planted_defect": "MDA/DDM canonical SMILES Nc1ccc(Cc2ccc(N)cc2)cc1 mutated by replacing the second primary amine -NH2 with -CH3: Nc1ccc(Cc2ccc(C)cc2)cc1 (same defect class as the 2026-08-03 amphora-molecule-novelty fire's demethylated-IPDA finding: a missing/altered substituent that silently changes functionality)"
+  },
+  "step3_rederivation_vs_r_a06v2": {
+    "headline_reproduced": true,
+    "mismatches_vs_r_a06v2_diagnostic": [],
+    "n_accepted_proposals": 38,
+    "n_active_nh_eq_2_conventionB": 0,
+    "n_active_nh_eq_4_conventionB": 29,
+    "n_mismatches": 0,
+    "n_two_centre_conventionA": 29,
+    "per_proposal": [
+      {
+        "canonical_smiles": "CC(C)(c1ccc(N)cc1)c1ccc(N)cc1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F4_bridged_bisaniline",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "4,4'-isopropylidenedianiline"
+      },
+      {
+        "canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "IPDA"
+      },
+      {
+        "canonical_smiles": "NC1CCC(N)CC1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,4-DACH"
+      },
+      {
+        "canonical_smiles": "NC1CCCC(N)C1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,3-DACH"
+      },
+      {
+        "canonical_smiles": "NC1CCCCC1N",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,2-DACH"
+      },
+      {
+        "canonical_smiles": "NCC1CCC(CN)C1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,3-cyclopentane-bis(aminomethyl)"
+      },
+      {
+        "canonical_smiles": "NCC1CCC(CN)CC1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,4-BAC"
+      },
+      {
+        "canonical_smiles": "NCC1CCCC(CN)C1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,3-BAC"
+      },
+      {
+        "canonical_smiles": "NCC1CCCCC1CN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,2-BAC"
+      },
+      {
+        "canonical_smiles": "NCCCCCCCCCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,12-diaminoalkane(C12)"
+      },
+      {
+        "canonical_smiles": "NCCCCCCCCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,11-diaminoalkane(C11)"
+      },
+      {
+        "canonical_smiles": "NCCCCCCCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,10-diaminoalkane(C10)"
+      },
+      {
+        "canonical_smiles": "NCCCCCCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,9-diaminoalkane(C9)"
+      },
+      {
+        "canonical_smiles": "NCCCCCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,8-diaminoalkane(C8)"
+      },
+      {
+        "canonical_smiles": "NCCCCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,7-diaminoalkane(C7)"
+      },
+      {
+        "canonical_smiles": "NCCCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,6-diaminoalkane(C6)"
+      },
+      {
+        "canonical_smiles": "NCCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,5-diaminoalkane(C5)"
+      },
+      {
+        "canonical_smiles": "NCCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,4-diaminoalkane(C4)"
+      },
+      {
+        "canonical_smiles": "NCCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F2_alpha_omega_diamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "1,3-diaminoalkane(C3)"
+      },
+      {
+        "canonical_smiles": "NCCN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F1_polyethyleneamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "EDA"
+      },
+      {
+        "canonical_smiles": "NCCN1CCCNCC1",
+        "diagnostic_active_nh": 3,
+        "diagnostic_amine_sites": 3,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 3,
+        "independent_amine_centres": 3,
+        "name": "homopiperazine-N,N'"
+      },
+      {
+        "canonical_smiles": "NCCN1CCNCC1",
+        "diagnostic_active_nh": 3,
+        "diagnostic_amine_sites": 3,
+        "family": "F3_cycloaliphatic",
+        "independent_active_nh": 3,
+        "independent_amine_centres": 3,
+        "name": "piperazine-bis(aminoethyl)/AEP"
+      },
+      {
+        "canonical_smiles": "NCCNCCN",
+        "diagnostic_active_nh": 5,
+        "diagnostic_amine_sites": 3,
+        "family": "F1_polyethyleneamine",
+        "independent_active_nh": 5,
+        "independent_amine_centres": 3,
+        "name": "DETA"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCN",
+        "diagnostic_active_nh": 6,
+        "diagnostic_amine_sites": 4,
+        "family": "F1_polyethyleneamine",
+        "independent_active_nh": 6,
+        "independent_amine_centres": 4,
+        "name": "TETA"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCNCCN",
+        "diagnostic_active_nh": 7,
+        "diagnostic_amine_sites": 5,
+        "family": "F1_polyethyleneamine",
+        "independent_active_nh": 7,
+        "independent_amine_centres": 5,
+        "name": "TEPA"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCNCCNCCN",
+        "diagnostic_active_nh": 8,
+        "diagnostic_amine_sites": 6,
+        "family": "F1_polyethyleneamine",
+        "independent_active_nh": 8,
+        "independent_amine_centres": 6,
+        "name": "PEHA"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCN",
+        "diagnostic_active_nh": 9,
+        "diagnostic_amine_sites": 7,
+        "family": "F1_polyethyleneamine",
+        "independent_active_nh": 9,
+        "independent_amine_centres": 7,
+        "name": "ethyleneamine-k6"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCNCCN",
+        "diagnostic_active_nh": 10,
+        "diagnostic_amine_sites": 8,
+        "family": "F1_polyethyleneamine",
+        "independent_active_nh": 10,
+        "independent_amine_centres": 8,
+        "name": "ethyleneamine-k7"
+      },
+      {
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCNCCNCCN",
+        "diagnostic_active_nh": 11,
+        "diagnostic_amine_sites": 9,
+        "family": "F1_polyethyleneamine",
+        "independent_active_nh": 11,
+        "independent_amine_centres": 9,
+        "name": "ethyleneamine-k8"
+      },
+      {
+        "canonical_smiles": "NCc1ccc(CN)cc1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F5_xylylenediamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "p-XDA/PXDA"
+      },
+      {
+        "canonical_smiles": "NCc1cccc(CN)c1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F5_xylylenediamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "m-XDA/MXDA"
+      },
+      {
+        "canonical_smiles": "NCc1ccccc1CN",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F5_xylylenediamine",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "o-XDA"
+      },
+      {
+        "canonical_smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F4_bridged_bisaniline",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "benzidine(4,4'-diaminobiphenyl)"
+      },
+      {
+        "canonical_smiles": "Nc1ccc(C(=O)c2ccc(N)cc2)cc1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F4_bridged_bisaniline",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "4,4'-diaminobenzophenone"
+      },
+      {
+        "canonical_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F4_bridged_bisaniline",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "MDA/DDM(methylene)"
+      },
+      {
+        "canonical_smiles": "Nc1ccc(Oc2ccc(N)cc2)cc1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F4_bridged_bisaniline",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "4,4'-oxydianiline(ODA)"
+      },
+      {
+        "canonical_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F4_bridged_bisaniline",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "DDS(sulfone)"
+      },
+      {
+        "canonical_smiles": "Nc1ccc(Sc2ccc(N)cc2)cc1",
+        "diagnostic_active_nh": 4,
+        "diagnostic_amine_sites": 2,
+        "family": "F4_bridged_bisaniline",
+        "independent_active_nh": 4,
+        "independent_amine_centres": 2,
+        "name": "4,4'-thiodianiline"
+      }
+    ],
+    "two_centre_set_equals_tetrafunctional_set": true
+  },
+  "study_id": "v-a06v2-independent-functionality-convention-rederivation",
+  "verdict": "CLAIM_SURVIVED"
+}

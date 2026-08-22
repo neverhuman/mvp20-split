@@ -1,0 +1,12 @@
+{
+  "algorithm_reproduced": "singletons-then-pairs-then-ascending-masks-popcount-gte-3-v1",
+  "all_masks_nonzero_by_construction": true,
+  "axis_count": 24,
+  "conclusion": "Independent re-derivation confirms zero of the 30,000 generated masks equal 0 -- this is a structural property of the singleton/pair/ascending-popcount>=3 generation scheme, not an emergent property of any real defense. Since `rejected := mask != 0` and `granted` is a hardcoded constant unrelated to mask, `all_negative_states_rejected` and `authority_granted_count == 0` are mathematical certainties for this algorithm on any invocation, independent of whatever real DSSE forgery, registry tampering, or authority-escalation state exists elsewhere in the system at the time of the run.",
+  "independent_python_corpus_sha256": "874b87aa1500edc08d498a0351025d51869171b24138b2c2a5a02f58d9e53eae",
+  "live_rust_corpus_sha256_from_empirical_probe_run": "874b87aa1500edc08d498a0351025d51869171b24138b2c2a5a02f58d9e53eae",
+  "masks_generated": 30000,
+  "matches_live_rust_corpus_sha256": true,
+  "unique_masks": 30000,
+  "zero_mask_count": 0
+}

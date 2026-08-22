@@ -1,0 +1,87 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-cure-potlife-gate/evidence/phase0",
+  "imported_locks": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "a6fdac638c611b56852bdfd20baedd4e881831be45eb67693976030a7b316702",
+      "source_path": "config/program/cure-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "1fcde86723524843ba3a3bffb7ea65cd54dd9328198e2fc0d8133e7a0d894a0d",
+      "source_path": "config/program/cure-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "ee65072e9b7759a5faa39e186eff0aee48c1ee6848de0a26396b98591bad7318",
+      "source_path": "config/benchmark-locks/amphora-cure-potlife-gate.v1.json"
+    }
+  ],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-cure-potlife-gate",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "5f464c738e9e261069964f6624feefad990a35bdb4d656ffaeb3518f02d48443",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_epoch29_unseen_benchmark.json",
+      "observed_sha256": "5f464c738e9e261069964f6624feefad990a35bdb4d656ffaeb3518f02d48443",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "79e7ed9933482c5434aa5050ac9063a2cbb647e2fad0cb0f6aebbdd44a055af4",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_epoch30_lift_audit.json",
+      "observed_sha256": "79e7ed9933482c5434aa5050ac9063a2cbb647e2fad0cb0f6aebbdd44a055af4",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "2944d9fbc67dfb9a6ce7ad1a026b94d8b8f9c49e54f30e442c8ea2f93b188417",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/pot-life/source-landscape.v1.json",
+      "observed_sha256": "2944d9fbc67dfb9a6ce7ad1a026b94d8b8f9c49e54f30e442c8ea2f93b188417",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

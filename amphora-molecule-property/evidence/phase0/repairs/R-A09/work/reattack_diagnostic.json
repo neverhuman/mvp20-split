@@ -1,0 +1,207 @@
+{
+  "ledger_grep": {
+    "kpi_files_named_as_attacked_claims": [
+      "<whole-kpi-surface>",
+      "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+      "openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+      "openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+      "radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+      "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json"
+    ],
+    "ledger_total_lines_at_read": 61,
+    "module_lines": [
+      {
+        "campaign_item_id": "C7",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+        "line": 9,
+        "line_sha256": "c5e57d0ab41285ac09e044460d78b2d7c7c1136f229da6740359d5ef22706309",
+        "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json",
+        "ts": "2026-08-01T05:13:33+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "C7",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json (density RF MAE 0.0566 g/cm3 transfers to out-of-corpus chemistry)",
+        "line": 10,
+        "line_sha256": "c3e2d702d3d281cdddfcde9d9761f526b8d0676697270d7e1e4f7b3ade10d44b",
+        "receipt": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+        "ts": "2026-08-01T16:25:30+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "C7",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+        "line": 11,
+        "line_sha256": "0872b7211c887008843a67d6d0f7fd12468dc5468a1453233b27a65a81f84c45",
+        "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+        "ts": "2026-08-01T17:04:10+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "C8",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json (claim: a founder-facing per-property physics-vs-ML-vs-stack table can be buil",
+        "line": 12,
+        "line_sha256": "4c4a7811b29257d276d77567dc2ac05d9978948e782cc314a8ced6e74ffc4651",
+        "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v1/c8_phys_ml_stack_comparison_receipt.v1.json",
+        "ts": "2026-08-01T18:18:28+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "C8",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json (claim: founder-facing physics-vs-ML-vs-stack table buildable entirely from re",
+        "line": 13,
+        "line_sha256": "e60347c39e09252e0b94bff543ce1750e59882f72eb4332e86c8e4f23a97a388",
+        "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+        "ts": "2026-08-01T19:04:53+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "C8",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json (claim: founder-facing physics-vs-ML-vs-stack table buildable entirely from re",
+        "line": 14,
+        "line_sha256": "7c6a0ff3f99fefc3bdb83082560c1e2638d7c1e72318c276f86c036163861204",
+        "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+        "ts": "2026-08-01T20:02:47+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "W2",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/ (claim: label data underlying this portfolios ML claims is physically admissible)",
+        "line": 20,
+        "line_sha256": "08bc1cbaa6b2e98fc9dbbe58099c9afc0a8d0898224d8f03a57f51eccdc59103",
+        "receipt": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/w2_fire1_corpus_admissibility_audit_receipt.v1.json",
+        "ts": "2026-08-02T01:07:46+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "W2",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/ (claim: label data underlying this portfolios ML claims is physically admissible)",
+        "line": 21,
+        "line_sha256": "674febcb088ffeaa876b08e392693f4cfbfc076ef7e05b90d3ca4e5f9aefc230",
+        "receipt": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/w2_fire2_corpus_admissibility_audit_receipt.v1.json",
+        "ts": "2026-08-02T02:03:59+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "W2",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/ (claim: label data underlying this portfolios ML claims is physically admissible)",
+        "line": 22,
+        "line_sha256": "a973c777e8b70f10d0ed6833276517a92324673209e3a2e9983c33b0c139dd83",
+        "receipt": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+        "ts": "2026-08-02T03:04:45+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "W3",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+        "line": 23,
+        "line_sha256": "9a0c26790476ee5829563a54c5fe4d83884b2a43d095d41b49bc4a78103384b9",
+        "receipt": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+        "ts": "2026-08-02T04:05:55+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/multi-target-ml-radonpy-4-properties-audit-kpi.v1.json (refractive_index R2=0.893, thermal_conductivity R2=0.542 under 60/20/20 rando",
+        "line": 33,
+        "line_sha256": "15738ad961f94136e8f40b93fb582ccc104e25dc35436c08bdf5bac1fe0b64f4",
+        "receipt": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+        "ts": "2026-08-02T14:05:08+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "",
+        "claim": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json (claim: data-driven Ridge Y_gi calibration confirms the Van Krevelen",
+        "line": 45,
+        "line_sha256": "23334f8104403c7a146242345574ed893d49c3a9a07dc418e89b1ca4a297ef01",
+        "receipt": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+        "ts": "2026-08-03T02:09:18+00:00",
+        "verdict": "REFUTED"
+      },
+      {
+        "campaign_item_id": "",
+        "claim": "amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/amine_class_active_nh_robustness_receipt.v1.json (amine-hardener structure-rule generalization: 100% correc",
+        "line": 59,
+        "line_sha256": "e2de73572ff92b16cd150b22c5e3e84d0184570e744a2fb6c6082d976727444a",
+        "receipt": "amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json",
+        "ts": "2026-08-03T18:08:49+00:00",
+        "verdict": "REFUTED"
+      }
+    ],
+    "note": "ledger is append-only and shared; per-line sha256 pins each cited entry independently of later appends"
+  },
+  "verdict_reextraction": {
+    "C7_FINAL.density_governing_attack": "attack_2_hierarchical_macro_bisection (fire 2)",
+    "C7_FINAL.overall_verdict": "CLAIM_REFUTED",
+    "C7_FINAL.tg_verdict": "REFUTED",
+    "C8_FINAL.verdict": "CLAIM_REFUTED",
+    "W2_FIRE3.verdict": "REFUTED",
+    "W3.verdict": "CLAIM_REFUTED",
+    "W7.verdict": "REFUTED",
+    "W8.verdict": "REFUTED"
+  },
+  "w3_dielectric_retraction_recheck": {
+    "conclusion": "W3 RETRACT dispositions still bind byte-exactly to the on-disk KPI files; retraction stands",
+    "dispositions_rechecked": [
+      {
+        "byte_intact": true,
+        "current_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139",
+        "disposition": "NOT_RETRACTED_LABELS_ADMISSIBLE",
+        "file": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+        "w3_recorded_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+      },
+      {
+        "byte_intact": true,
+        "current_sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520",
+        "disposition": "RETRACT",
+        "file": "amphora-molecule-property/evidence/phase0/kpis/external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+        "w3_recorded_sha256": "335f3083f0a5e193305a98426e3075ad5c20837f5ad9fc382d8568124f27a520"
+      },
+      {
+        "byte_intact": true,
+        "current_sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4",
+        "disposition": "RETRACT",
+        "file": "amphora-molecule-property/evidence/phase0/kpis/mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+        "w3_recorded_sha256": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4"
+      },
+      {
+        "byte_intact": true,
+        "current_sha256": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7",
+        "disposition": "SUPERSEDED_BY_C8_FIRE3",
+        "file": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v1/c8_phys_ml_stack_comparison_receipt.v1.json",
+        "w3_recorded_sha256": "0115fc8beb2a01938f69264edb1c6136d6021715cc72e2ee2553fcfaba351cd7"
+      }
+    ],
+    "method": "re-verify W3 DSSE Ed25519 signature over PAE(payloadType, payload) against its embedded evaluator public key; re-hash all 4 kpi_surface_dispositions targets and the machine-readable retraction list against the shas W3 recorded",
+    "retraction_list_line_count": 5,
+    "retraction_list_line_sha256": {
+      "line1_external_validation_dielectric": "4a75f41517efb6132b2c360997cf77a53015c98bf195413ece8b880cb406ebb4",
+      "line2_mixed_dielectric_conformal": "2fa889393bbffb58cd282e1435688761d7afa8a555e736215a15ea81afc6135b"
+    },
+    "retraction_list_sha256_matches_w3": true,
+    "w3_signature_valid": true,
+    "w3_verdict": "CLAIM_REFUTED"
+  },
+  "w8_vk_ridge_sign_flip_reattack": {
+    "conclusion": "independently reproduced W8: 2/24 fitted Y_gi sign-reversed (vinyl_CH2, nitrile) against an all-positive published column; REFUTED verdict re-confirmed",
+    "method": "re-run W8's core physical-admissibility check directly on the KPI's own stored fitted-vs-published Y_gi table: count sign reversals vs the 100%-positive published baseline; recompute Spearman rho(n_train, |ratio-1|)",
+    "n_groups": 24,
+    "n_published_negative": 0,
+    "n_sign_flipped": 2,
+    "reproduces_w8_finding": true,
+    "sign_flipped_groups": [
+      "nitrile",
+      "vinyl_CH2"
+    ],
+    "sign_flipped_support_rank_ascending": {
+      "nitrile": 9,
+      "vinyl_CH2": 7
+    },
+    "spearman_rho_n_train_vs_abs_relative_deviation": -0.523126,
+    "w8_receipt_sign_flipped_groups": [
+      "nitrile",
+      "vinyl_CH2"
+    ],
+    "w8_receipt_verdict": "REFUTED"
+  }
+}

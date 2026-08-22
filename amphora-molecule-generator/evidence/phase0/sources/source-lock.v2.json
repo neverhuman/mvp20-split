@@ -1,0 +1,42 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-molecule-generator/evidence/phase0",
+  "eligible_sources": [],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/feedback_v1/dataset_context.json",
+      "observed_sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/quarantine/feedback_v2/objects/fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17.jsonl.gz",
+      "observed_sha256": "fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17",
+      "reason": "ContextOnly material remains quarantined and cannot satisfy a Phase-0 gate"
+    }
+  ],
+  "inventory_hash": "c7d0fcad81a5c314712311630929379a3921e16bd51908ffc7059de367b4821e",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-molecule-generator",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

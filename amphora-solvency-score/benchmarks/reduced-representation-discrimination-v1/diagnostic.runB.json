@@ -1,0 +1,74 @@
+{
+  "all_gates_pass": true,
+  "auroc_per_polymer_mean": {
+    "bagley_volume_dependent": 0.931788,
+    "hansen_red": 0.980593,
+    "n_polymers_scored": 5,
+    "teas_fractional": 0.895873
+  },
+  "auroc_pooled": {
+    "bagley_volume_dependent": 0.922078,
+    "hansen_red": 0.948773,
+    "teas_fractional": 0.808081
+  },
+  "bootstrap": {
+    "gap_hansen_minus_bagley_ci95": [
+      -0.047625,
+      0.109017
+    ],
+    "gap_hansen_minus_bagley_frac_positive": 0.7496,
+    "gap_hansen_minus_bagley_mean": 0.02673,
+    "gap_hansen_minus_teas_ci95": [
+      0.044094,
+      0.24749
+    ],
+    "gap_hansen_minus_teas_frac_positive": 0.9974,
+    "gap_hansen_minus_teas_mean": 0.140689,
+    "n_boot_effective_hansen_bagley": 5000,
+    "n_boot_effective_hansen_teas": 5000,
+    "n_boot_requested": 5000,
+    "seed": 20260729
+  },
+  "fail_closed": {
+    "closed": 18,
+    "fail_closed_rate": 1.0,
+    "probes_total": 18
+  },
+  "fail_closed_rate": 1.0,
+  "fixture": {
+    "license": "CC0-1.0",
+    "majority_class_base_rate": 0.56,
+    "n_compatible": 33,
+    "n_incompatible": 42,
+    "n_pairs": 75,
+    "n_polymers": 5,
+    "n_solvents": 15,
+    "path": "amphora-solvency-score/reference/phase0-solvency-known-answer.v1.json",
+    "sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238"
+  },
+  "gates": {
+    "G1_hansen_reproduction_67_of_75": true,
+    "G2_hansen_auroc_meets_reported_ceiling": true,
+    "G3_teas_simplex_valid": true,
+    "G4_bagley_dv_identity": true,
+    "G5_all_three_auroc_beat_random": true,
+    "G6_fail_closed_full": true,
+    "G7_bootstrap_populated": true
+  },
+  "interpretation": "Independent from-scratch scoring of all 75 CC0 fixture pairs under three published representations of Hansen solubility space. Full Hansen RED reproduces the shipped 67/75 headline exactly and gives pooled AUROC 0.9488. The Teas (1968) fractional representation -- which discards total cohesive-energy magnitude and the interaction radius R -- gives AUROC 0.8081; the Bagley (1971) volume-dependent (dV,dH) representation -- which merges the dispersion and polar axes and drops Hansen's factor-of-4 weighting -- gives AUROC 0.9221. Paired pinned-seed bootstrap (n=5000, seed=20260729): the Hansen-minus-Teas AUROC gap 95% CI is [0.044094, 0.24749] (strictly positive (Hansen better)); the Hansen-minus-Bagley gap 95% CI is [-0.047625, 0.109017] (straddles zero (noninferior)). These are threshold-free rankings so no cutoff was tuned. Applicability domain: every non-physical probe (NaN / +Inf / negative HSP / non-numeric / undefined Teas simplex) fails closed. This is a self-authored CC0 fixture, NOT external validation; the externally-validated science remains the separate BigSolDB leave-solute-out benchmark.",
+  "physical_baseline": {
+    "bagley_volume_dependent": "Bagley, Nielsen, Scigliano, J. Paint Technol. 43(555):35-42 (1971)",
+    "full_hansen_red": "Hansen 2nd ed. CRC 2007 ISBN 978-0-8493-7248-3 Eq. 1.9 (k=4, cutoff=1.0)",
+    "teas_fractional": "Teas, J. Paint Technol. 40(525):19-25 (1968)"
+  },
+  "reproduction": {
+    "hansen_accuracy": 0.893333,
+    "hansen_correct_of_n": "67/75",
+    "matches_shipped_headline_67_75": true
+  },
+  "schema": "amphora.solvency-score.reduced-representation-discrimination-diagnostic.v1",
+  "verdicts": {
+    "bagley_vs_hansen": "NONINFERIOR_WITHIN_BOOTSTRAP_CI",
+    "teas_vs_hansen": "REDUCED_REP_DEGRADES_DISCRIMINATION"
+  }
+}

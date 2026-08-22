@@ -1,0 +1,60 @@
+{
+  "schema": "amphora.model-source-landscape.v1",
+  "module_id": "amphora-viscosity-score",
+  "updated_on": "2026-07-17",
+  "fto_status": "FTO NOT PERFORMED",
+  "sources": [
+    {
+      "source_id": "grunberg-nissan-1949",
+      "source_url": "https://doi.org/10.1038/164799b0",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "LINK_ONLY_METHOD_ANCHOR",
+      "rights_status": "CONTEXT_ONLY",
+      "applicability": "Liquid-mixture log-viscosity theory",
+      "eligible_for_derivatives": false
+    },
+    {
+      "source_id": "krieger-dougherty-1959",
+      "source_url": "https://doi.org/10.1122/1.548848",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "LINK_ONLY_METHOD_ANCHOR",
+      "rights_status": "CONTEXT_ONLY",
+      "applicability": "Suspension crowding theory",
+      "eligible_for_derivatives": false
+    },
+    {
+      "source_id": "astm-d562",
+      "source_url": "https://store.astm.org/d0562-10r23.html",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "PURCHASE_REQUIRED_NO_REDISTRIBUTION",
+      "rights_status": "METHOD_REFERENCE_ONLY",
+      "applicability": "Separate KU measurement head",
+      "eligible_for_derivatives": false
+    },
+    {
+      "source_id": "astm-d4400",
+      "source_url": "https://store.astm.org/d4400-18.html",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "PURCHASE_REQUIRED_NO_REDISTRIBUTION",
+      "rights_status": "METHOD_REFERENCE_ONLY",
+      "applicability": "Separate sag-index measurement head",
+      "eligible_for_derivatives": false
+    }
+  ],
+  "patents": [
+    {
+      "family": "US4840980A",
+      "use": "OUT_OF_DOMAIN_CHALLENGE_CONTEXT_ONLY",
+      "claim_family_notes": "Rheology formulation examples are quarantined from model training and do not establish freedom to operate."
+    },
+    {
+      "family": "US20220162454A1",
+      "use": "OUT_OF_DOMAIN_CHALLENGE_CONTEXT_ONLY",
+      "claim_family_notes": "Example values require rights and legal review before any reuse; no FTO conclusion is generated."
+    }
+  ]
+}

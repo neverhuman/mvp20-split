@@ -1,0 +1,14 @@
+{
+  "campaign_item_id": "W-SOLV-COV",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260814T060001-2670169-d74f421d5261",
+      "date": "2026-08-14",
+      "action": "Wrote benchmarks/ml-vs-physics-coverage-scope-v1/{run_coverage_scope.py,sign_coverage_scope.py}. Reused V1-SOLV's identical seed-0 corpus/split/ML-arm to compute ML r2 on the physics-REJECTED (abstained) test subset vs the physics-RETURNED (covered) subset, per family per solvent (6 arms). Pre-registered refutation criterion: gap > 0.15 abs R2 AND n_abstained >= 50, majority >= 4/6 arms to REFUTE. Result: 0/6 arms flagged (gaps 0.015-0.107, all < 0.15). Positive control (permuted ML predictions on abstained subset) detected: true (gap 1.51). Characterised rejection causes: fedors REJECTED_UNCOVERED_FRAGMENT dominated by O+S (thioether/sulfoxide-adjacent), S-only, O-only, N-only, Si, B fragments; hansen REJECTED_VK_CONSTANTS_UNAVAILABLE dominated by imine_N (513/551) and thiol_SH (36/551) groups lacking Hoftyzer/VK constants. any-arm physics coverage = fedors_coverage_rate = 0.8554 (hansen coverage is a strict subset of fedors coverage by construction). Signed to done/ (CLAIM_SURVIVED + positive_control satisfies done_criterion; no supersedes block needed since framing survives)."
+    }
+  ],
+  "receipt": "amphora-solvency-score/evidence/phase0/repairs/W-SOLV-COV/done/ml-vs-physics-coverage-scope-receipt.v1.dsse.json",
+  "verdict": "CLAIM_SURVIVED",
+  "notes": "Campaign item objective fully met in one fire: characterisation + abstained-vs-covered ML error + any-arm coverage + explicit verdict + positive control, all in the signed receipt. done_criterion satisfied; campaign_item_status=done."
+}

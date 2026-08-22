@@ -1,0 +1,28 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-viscosity-score/evidence/phase0",
+  "eligible_sources": [
+    {
+      "declared_sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/rheology/source-landscape.v1.json",
+      "observed_sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749",
+      "rights_receipt_path": "reference/rheology/source-landscape.v1.json",
+      "rights_receipt_sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/quarantine/feedback_v2/objects/5978b9aa7a0b1d10734a0ce6fc1cb46eda39ad585ce3157494c36e18324bfe1b.jsonl.gz",
+      "observed_sha256": "5978b9aa7a0b1d10734a0ce6fc1cb46eda39ad585ce3157494c36e18324bfe1b",
+      "reason": "ContextOnly material remains quarantined and cannot satisfy a Phase-0 gate"
+    }
+  ],
+  "inventory_hash": "a8f65da844644dd1c8f3878ade142bdbf51aa8557249df9439540f2d9d618307",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-viscosity-score",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

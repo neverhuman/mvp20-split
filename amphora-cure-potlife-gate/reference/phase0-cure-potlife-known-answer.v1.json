@@ -1,0 +1,180 @@
+{
+  "acceptance_bar": {
+    "applicability_domain_fail_closed_rate_floor": 1.0,
+    "arrhenius_over_constant_baseline_lift_floor": 0.3,
+    "arrhenius_pot_life_mape_ceiling": 0.2,
+    "authority_lock_preservation_rate_floor": 1.0,
+    "held_out_temperature_extrapolation_mape_ceiling": 0.25,
+    "per_system_within_40_percent_rate_floor": 0.8
+  },
+  "authority": {
+    "commercial_product_authority": false,
+    "constraint_only": true,
+    "cro_gated_promotion": true,
+    "optimizer_authority": false,
+    "scientific_readiness": "LOCKED_INTERNAL"
+  },
+  "fixture_id": "amphora-cure-potlife-gate-phase0-known-answer-2026-07-21",
+  "reference_temperature": {
+    "note": "Coating industry standard reference (73\u00b0F / 22.78\u00b0C / 295.93 K) per ASTM D2196 rotational viscosity and Navy prime pot-life spec",
+    "value_c": 22.78,
+    "value_f": 73.0,
+    "value_k": 295.928
+  },
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored two-part epoxy-amine cure kinetics compilation from Prime (Turi 1997), Kamal-Sourour (1973), Riccardi et al. (1984), Blanco et al. (2005), Ellis (1993), and supplier technical data sheets for Phase-0 Arrhenius-cure-rate controls only; no wet-lab measurements or CRO data checked in",
+    "source_id": "amphora_phase0_cure_potlife_arrhenius_known_answer",
+    "source_url": "local:amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.cure-potlife-gate-phase0-known-answer.v1",
+  "systems": [
+    {
+      "activation_energy_j_mol": 55000.0,
+      "activation_energy_source": "Prime R.B. (Turi 1997 Table 8-1) DGEBA/TETA Ea = 55 kJ/mol",
+      "hardener_family": "aliphatic-polyamine",
+      "pot_life_min_10c": 84.0,
+      "pot_life_min_22_78c": 30.0,
+      "pot_life_min_30c": 21.0,
+      "pot_life_min_40c": 12.0,
+      "pot_life_source": "Dow DER 331 + DEH 24 TDS; Ellis 1993 Chapter 5",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-teta"
+    },
+    {
+      "activation_energy_j_mol": 56000.0,
+      "activation_energy_source": "Kamal & Sourour Polym Eng Sci 13:59 (1973) DGEBA/DETA Ea = 56 kJ/mol",
+      "hardener_family": "aliphatic-polyamine",
+      "pot_life_min_10c": 130.0,
+      "pot_life_min_22_78c": 45.0,
+      "pot_life_min_30c": 31.0,
+      "pot_life_min_40c": 18.0,
+      "pot_life_source": "Dow DER 331 + DEH 20 TDS; supplier gel time at nominal mass",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-deta"
+    },
+    {
+      "activation_energy_j_mol": 54000.0,
+      "activation_energy_source": "Prime R.B. (Turi 1997) TEPA family Ea ~54 kJ/mol",
+      "hardener_family": "aliphatic-polyamine",
+      "pot_life_min_10c": 168.0,
+      "pot_life_min_22_78c": 60.0,
+      "pot_life_min_30c": 42.0,
+      "pot_life_min_40c": 24.0,
+      "pot_life_source": "Huntsman Aradur 43 (TEPA) TDS",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-tepa"
+    },
+    {
+      "activation_energy_j_mol": 62000.0,
+      "activation_energy_source": "Blanco et al. Polymer 46:7989 (2005) DGEBA/IPDA Ea = 62 kJ/mol",
+      "hardener_family": "cycloaliphatic-amine",
+      "pot_life_min_10c": 720.0,
+      "pot_life_min_22_78c": 240.0,
+      "pot_life_min_30c": 155.0,
+      "pot_life_min_40c": 76.0,
+      "pot_life_source": "Huntsman Araldite GY 6010 + HY 2954 (IPDA) TDS 4h @ 25C",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-ipda"
+    },
+    {
+      "activation_energy_j_mol": 60000.0,
+      "activation_energy_source": "Prime R.B. (Turi 1997) PACM family Ea ~60 kJ/mol",
+      "hardener_family": "cycloaliphatic-amine",
+      "pot_life_min_10c": 1080.0,
+      "pot_life_min_22_78c": 360.0,
+      "pot_life_min_30c": 240.0,
+      "pot_life_min_40c": 125.0,
+      "pot_life_source": "Air Products Ancamine 2049 (PACM) TDS 6h @ 25C",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-pacm"
+    },
+    {
+      "activation_energy_j_mol": 58000.0,
+      "activation_energy_source": "Prime R.B. (Turi 1997) cycloaliphatic diamine Ea ~58 kJ/mol",
+      "hardener_family": "cycloaliphatic-amine",
+      "pot_life_min_10c": 460.0,
+      "pot_life_min_22_78c": 160.0,
+      "pot_life_min_30c": 108.0,
+      "pot_life_min_40c": 58.0,
+      "pot_life_source": "Momentive Heloxy DACH TDS",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-dach"
+    },
+    {
+      "activation_energy_j_mol": 58000.0,
+      "activation_energy_source": "Riccardi et al. J Appl Polym Sci 29:2481 (1984) MXDA-type Ea ~58 kJ/mol",
+      "hardener_family": "aromatic-amine",
+      "pot_life_min_10c": 260.0,
+      "pot_life_min_22_78c": 90.0,
+      "pot_life_min_30c": 60.0,
+      "pot_life_min_40c": 32.0,
+      "pot_life_source": "Mitsubishi Gaskineide Nx-1052 (MXDA) TDS 90 min @ 25C",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-mxda"
+    },
+    {
+      "activation_energy_j_mol": 68000.0,
+      "activation_energy_source": "Prime R.B. (Turi 1997) MPDA Ea ~68 kJ/mol",
+      "hardener_family": "aromatic-amine",
+      "pot_life_min_10c": 3200.0,
+      "pot_life_min_22_78c": 900.0,
+      "pot_life_min_30c": 580.0,
+      "pot_life_min_40c": 280.0,
+      "pot_life_source": "Aldrich MPDA + Epikote 828 15h @ 25C (Ellis 1993 Chapter 5)",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-mpda"
+    },
+    {
+      "activation_energy_j_mol": 65000.0,
+      "activation_energy_source": "Riccardi et al. J Appl Polym Sci 29:2481 (1984) MDA Ea = 65 kJ/mol",
+      "hardener_family": "aromatic-amine",
+      "pot_life_min_10c": 2400.0,
+      "pot_life_min_22_78c": 720.0,
+      "pot_life_min_30c": 470.0,
+      "pot_life_min_40c": 240.0,
+      "pot_life_source": "Epikote 828 + MDA 12h @ 25C (Ellis 1993)",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-mda"
+    },
+    {
+      "activation_energy_j_mol": 52000.0,
+      "activation_energy_source": "Prime R.B. (Turi 1997) amidoamine adduct Ea ~52 kJ/mol",
+      "hardener_family": "amidoamine-adduct",
+      "pot_life_min_10c": 500.0,
+      "pot_life_min_22_78c": 180.0,
+      "pot_life_min_30c": 128.0,
+      "pot_life_min_40c": 74.0,
+      "pot_life_source": "Huntsman Aradur 3486 (amidoamine) TDS 3h @ 25C",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-amidoamine-adduct1"
+    },
+    {
+      "activation_energy_j_mol": 55000.0,
+      "activation_energy_source": "Kamal-Sourour framework Ea ~55 kJ/mol for amidoamine",
+      "hardener_family": "amidoamine-adduct",
+      "pot_life_min_10c": 340.0,
+      "pot_life_min_22_78c": 120.0,
+      "pot_life_min_30c": 84.0,
+      "pot_life_min_40c": 48.0,
+      "pot_life_source": "Momentive EPI-CURE 3125 (amidoamine) TDS 2h @ 25C",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-amidoamine-adduct2"
+    },
+    {
+      "activation_energy_j_mol": 48000.0,
+      "activation_energy_source": "Prime R.B. (Turi 1997) Mannich base Ea ~48 kJ/mol",
+      "hardener_family": "mannich-base",
+      "pot_life_min_10c": 42.0,
+      "pot_life_min_22_78c": 15.0,
+      "pot_life_min_30c": 10.5,
+      "pot_life_min_40c": 6.2,
+      "pot_life_source": "Air Products Ancamine 2735 (Mannich) TDS 15 min @ 25C",
+      "resin": "DGEBA (diglycidyl ether of bisphenol A)",
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "toolkit_version": "2026.03.2"
+}

@@ -1,0 +1,182 @@
+{
+  "all_gates_passed": true,
+  "closes": "byte-binding representation-invariance + tamper/avalanche completeness gap left open by host-receipt-oracle-parity-v1 (decision parity) and predicate-completeness-v1 (boolean clauses)",
+  "corpus": {
+    "domain": "epoxy-amine / DGEBA-amine coating lab evidence",
+    "n_packages": 6,
+    "packages": [
+      "baseline-primer-lab-measurement",
+      "topcoat-thickness-measurement",
+      "adhesive-pull-off-strength",
+      "dgeba-eew-titration",
+      "teta-ahew-value",
+      "brookfield-viscosity"
+    ]
+  },
+  "counts": {
+    "n_encodings": 42,
+    "n_mutations": 97,
+    "n_packages": 6,
+    "total_decisions_evaluated": 145
+  },
+  "date": "2026-07-30",
+  "does_not_establish": [
+    "product qualification",
+    "batch release",
+    "legal freedom to operate",
+    "regulatory compliance",
+    "wet-lab performance",
+    "scientific readiness"
+  ],
+  "g0_shipped_anchor_reproduction": {
+    "pass": true,
+    "records": [
+      {
+        "match": true,
+        "oracle_package_sha256": "10b52299f7cf514efa5156d0c85bf98dc2088db3d8d00f09eb149ba1fcbb1fef",
+        "scenario_id": "baseline-primer-lab-measurement",
+        "shipped_anchor_sha256": "10b52299f7cf514efa5156d0c85bf98dc2088db3d8d00f09eb149ba1fcbb1fef",
+        "shipped_package_sha256_match": true,
+        "shipped_status": "SCORED"
+      },
+      {
+        "match": true,
+        "oracle_package_sha256": "27590e304c82e058783946f740230febb7aeca70e918cf75a79bedc860a71d54",
+        "scenario_id": "topcoat-thickness-measurement",
+        "shipped_anchor_sha256": "27590e304c82e058783946f740230febb7aeca70e918cf75a79bedc860a71d54",
+        "shipped_package_sha256_match": true,
+        "shipped_status": "SCORED"
+      },
+      {
+        "match": true,
+        "oracle_package_sha256": "5436647075373dad729c4ba1378acb1fa9d353961b951e2d9a3c57cf679d27bc",
+        "scenario_id": "adhesive-pull-off-strength",
+        "shipped_anchor_sha256": "5436647075373dad729c4ba1378acb1fa9d353961b951e2d9a3c57cf679d27bc",
+        "shipped_package_sha256_match": true,
+        "shipped_status": "SCORED"
+      }
+    ]
+  },
+  "g1_canonicalization_invariance": {
+    "disagreements": 0,
+    "pass": true,
+    "property": "reorder/reformat/unicode-escape/whitespace cannot change package_sha256 -> accept decision preserved",
+    "records": [
+      {
+        "accept_preserved_all_encodings": true,
+        "invariant": true,
+        "n_encodings": 7,
+        "package_sha256": "10b52299f7cf514efa5156d0c85bf98dc2088db3d8d00f09eb149ba1fcbb1fef",
+        "scenario_id": "baseline-primer-lab-measurement",
+        "unique_hashes": 1
+      },
+      {
+        "accept_preserved_all_encodings": true,
+        "invariant": true,
+        "n_encodings": 7,
+        "package_sha256": "27590e304c82e058783946f740230febb7aeca70e918cf75a79bedc860a71d54",
+        "scenario_id": "topcoat-thickness-measurement",
+        "unique_hashes": 1
+      },
+      {
+        "accept_preserved_all_encodings": true,
+        "invariant": true,
+        "n_encodings": 7,
+        "package_sha256": "5436647075373dad729c4ba1378acb1fa9d353961b951e2d9a3c57cf679d27bc",
+        "scenario_id": "adhesive-pull-off-strength",
+        "unique_hashes": 1
+      },
+      {
+        "accept_preserved_all_encodings": true,
+        "invariant": true,
+        "n_encodings": 7,
+        "package_sha256": "3378769f6dbbdf9501d59b901219b2bde090472dba9fd6abbd21da7df2935999",
+        "scenario_id": "dgeba-eew-titration",
+        "unique_hashes": 1
+      },
+      {
+        "accept_preserved_all_encodings": true,
+        "invariant": true,
+        "n_encodings": 7,
+        "package_sha256": "7239d945ac6e5ce8dc3d044b9aee0aa40a468031ffe07cd1b371fd1fba02ab15",
+        "scenario_id": "teta-ahew-value",
+        "unique_hashes": 1
+      },
+      {
+        "accept_preserved_all_encodings": true,
+        "invariant": true,
+        "n_encodings": 7,
+        "package_sha256": "a47ae4f5750170f155930bbec74f13dbd00058b0ffcad43eead223eaebdf67b7",
+        "scenario_id": "brookfield-viscosity",
+        "unique_hashes": 1
+      }
+    ],
+    "total_encodings_checked": 42
+  },
+  "g2_tamper_completeness": {
+    "contract_hash_still_binds_after_mutation": 0,
+    "hash_collisions": 0,
+    "pass": true,
+    "property": "every single-atom semantic mutation changes package_sha256 AND flips decision ACCEPT->FAILED_GATES; zero silent accept",
+    "records": [
+      {
+        "n_mutations": 12,
+        "scenario_id": "baseline-primer-lab-measurement"
+      },
+      {
+        "n_mutations": 14,
+        "scenario_id": "topcoat-thickness-measurement"
+      },
+      {
+        "n_mutations": 17,
+        "scenario_id": "adhesive-pull-off-strength"
+      },
+      {
+        "n_mutations": 16,
+        "scenario_id": "dgeba-eew-titration"
+      },
+      {
+        "n_mutations": 14,
+        "scenario_id": "teta-ahew-value"
+      },
+      {
+        "n_mutations": 24,
+        "scenario_id": "brookfield-viscosity"
+      }
+    ],
+    "silent_accepts": 0,
+    "total_mutations": 97
+  },
+  "g3_avalanche": {
+    "band": [
+      0.3,
+      0.7
+    ],
+    "max_bitflip_fraction": 0.59375,
+    "mean_bitflip_fraction": 0.5069668170103093,
+    "min_bitflip_fraction": 0.4140625,
+    "n_measured": 97,
+    "pass": true
+  },
+  "gates": {
+    "G0_shipped_anchors": true,
+    "G1_invariance": true,
+    "G2_tamper_completeness": true,
+    "G3_avalanche": true
+  },
+  "generated_on_host": "xbabe2",
+  "live_authority_under_test": {
+    "oracle_is_runtime": false,
+    "rust_canonical_hash": "amphora-core stable_hash + canonicalize",
+    "rust_predicate": "amphora-assurance-capabilities/src/lib.rs host_receipt_valid / evaluate_evidence_intake"
+  },
+  "module_id": "amphora-evidence-intake-validator",
+  "schema": "amphora.evidence-intake-canonicalization-invariance-tamper.v1",
+  "scope_note": "canonicalization is nominal/type-exact NOT numeric-normalizing; int 110, float 110.0, string '110' are DISTINCT bindings (exercised as detected changes in G2). Matches shipped Rust semantics and portfolio packager-canonicalization finding.",
+  "theory": [
+    "RFC 8785 JSON Canonicalization Scheme (2020) canonical-form invariance",
+    "NIST FIPS 180-4 SHA-256 (2015) avalanche/diffusion",
+    "NIST SP 800-53 Rev.5 SI-7 information integrity (2020)",
+    "NIST FIPS 186-5 EdDSA (2023); RFC 8032 Ed25519 (2017)"
+  ]
+}

@@ -1,0 +1,1720 @@
+{
+  "schema": "amphora.rust-state.v1",
+  "run_id": "run-1900000005000",
+  "generation": 1,
+  "generations": 1,
+  "phase": "COMPLETE",
+  "scoring_completed": 4,
+  "scoring_total": 4,
+  "rejected_candidates": 0,
+  "worker_failures": 0,
+  "throughput": {
+    "attempted": 8,
+    "valid": 8,
+    "scored": 8,
+    "survivors": 0,
+    "solutions": 0,
+    "started_at_ms": 1900000005043,
+    "recent": [
+      {
+        "at_ms": 1900000005075,
+        "attempted": 1,
+        "valid": 1,
+        "scored": 0,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1900000005089,
+        "attempted": 2,
+        "valid": 2,
+        "scored": 1,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1900000005105,
+        "attempted": 3,
+        "valid": 3,
+        "scored": 2,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1900000005119,
+        "attempted": 4,
+        "valid": 4,
+        "scored": 3,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1900000005142,
+        "attempted": 5,
+        "valid": 4,
+        "scored": 4,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1900000005152,
+        "attempted": 6,
+        "valid": 5,
+        "scored": 4,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1900000005158,
+        "attempted": 7,
+        "valid": 6,
+        "scored": 4,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1900000005169,
+        "attempted": 8,
+        "valid": 7,
+        "scored": 4,
+        "survivors": 0,
+        "solutions": 0
+      }
+    ]
+  },
+  "active_workers": 1,
+  "registered_modules": 29,
+  "active_modules": 4,
+  "modules": [
+    {
+      "module_id": "amphora-molecule-property",
+      "authority_tier": "REAL_ARITHMETIC",
+      "readiness": "MODEL_READINESS_ONLY",
+      "active": true,
+      "attempted_count": 8,
+      "scored_count": 0,
+      "failed_count": 0,
+      "insufficient_count": 8,
+      "last_status": "INSUFFICIENT_INPUT",
+      "last_score": null,
+      "average_latency_ms": 0.125,
+      "last_latency_ms": 0
+    },
+    {
+      "module_id": "amphora-molecule-role-ranker",
+      "authority_tier": "LIMITED_SANITY",
+      "readiness": "MODEL_READINESS_ONLY",
+      "active": true,
+      "attempted_count": 8,
+      "scored_count": 0,
+      "failed_count": 0,
+      "insufficient_count": 8,
+      "last_status": "INSUFFICIENT_INPUT",
+      "last_score": null,
+      "average_latency_ms": 0.125,
+      "last_latency_ms": 0
+    },
+    {
+      "module_id": "amphora-molecule-novelty",
+      "authority_tier": "LIMITED_SANITY",
+      "readiness": "MODEL_READINESS_ONLY",
+      "active": true,
+      "attempted_count": 8,
+      "scored_count": 0,
+      "failed_count": 0,
+      "insufficient_count": 8,
+      "last_status": "INSUFFICIENT_INPUT",
+      "last_score": null,
+      "average_latency_ms": 0.125,
+      "last_latency_ms": 0
+    },
+    {
+      "module_id": "amphora-molecule-design-gate",
+      "authority_tier": "REAL_ARITHMETIC",
+      "readiness": "MODEL_READINESS_ONLY",
+      "active": true,
+      "attempted_count": 8,
+      "scored_count": 0,
+      "failed_count": 8,
+      "insufficient_count": 0,
+      "last_status": "FAILED_GATES",
+      "last_score": null,
+      "average_latency_ms": 0.125,
+      "last_latency_ms": 0
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "TETA-hardener-B",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "TETA-hardener-B-m3e348640b677",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "TETA-hardener-B-m3e348640b677-m3e7f1b37e33d",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "TETA-hardener-B-m8f5cc338b716",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "TETA-hardener-B-m8f5cc338b716-m83cb90827c80",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "TETA-hardener-B-meac632950a37",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "TETA-hardener-B-meac632950a37-mb97ca48b2221",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "TETA-hardener-B-meb3591eb7c77",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    }
+  ],
+  "history": [
+    {
+      "generation": 0,
+      "best_feasible_score": null,
+      "mean_feasible_score": null,
+      "feasible_count": 0,
+      "ranked_count": 0,
+      "top10": []
+    },
+    {
+      "generation": 1,
+      "best_feasible_score": null,
+      "mean_feasible_score": null,
+      "feasible_count": 0,
+      "ranked_count": 0,
+      "top10": []
+    }
+  ],
+  "records": [
+    {
+      "candidate_id": "TETA-hardener-B",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "TETA-hardener-B",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "amine hardener for Envelope-65"
+        },
+        "evidence_refs": {},
+        "molecule": {
+          "name": "Triethylenetetramine",
+          "role": "hardener",
+          "smiles": "NCCNCCNCCN",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [],
+      "generation": 0,
+      "mutation_id": null,
+      "lifecycle_status": "SCORED",
+      "result_hash": "a91820a56b3b3ae39fd4e254442b775b5179c51383ac318c8c5ae1380f1e1d09",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "TETA-hardener-B-m8f5cc338b716",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "TETA-hardener-B-m8f5cc338b716",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "amine hardener for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "8f5cc338b716",
+          "parent_ids": [
+            "TETA-hardener-B"
+          ]
+        },
+        "molecule": {
+          "name": "Triethylenetetramine",
+          "role": "hardener",
+          "smiles": "NCCNCCNCCN",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "TETA-hardener-B"
+      ],
+      "generation": 0,
+      "mutation_id": "8f5cc338b716",
+      "lifecycle_status": "SCORED",
+      "result_hash": "213297eb236c1c88f14f8291c4d9e65c69d8fed38ba7b68834b0c40b8cc2530e",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "TETA-hardener-B-meac632950a37",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "TETA-hardener-B-meac632950a37",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "amine hardener for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "eac632950a37",
+          "parent_ids": [
+            "TETA-hardener-B"
+          ]
+        },
+        "molecule": {
+          "name": "Triethylenetetramine",
+          "role": "hardener",
+          "smiles": "NCCNCCNCCN",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "TETA-hardener-B"
+      ],
+      "generation": 0,
+      "mutation_id": "eac632950a37",
+      "lifecycle_status": "SCORED",
+      "result_hash": "0129f8a38efdf25ff1c5c244cfc43d8b8f0f179e1fcecbc67b69eef06b867ac5",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "TETA-hardener-B-m3e348640b677",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "TETA-hardener-B-m3e348640b677",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "amine hardener for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "3e348640b677",
+          "parent_ids": [
+            "TETA-hardener-B"
+          ]
+        },
+        "molecule": {
+          "name": "Triethylenetetramine",
+          "role": "hardener",
+          "smiles": "NCCNCCNCCN",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "TETA-hardener-B"
+      ],
+      "generation": 0,
+      "mutation_id": "3e348640b677",
+      "lifecycle_status": "SCORED",
+      "result_hash": "1069dac7391977d65e0cbcfb7f3980491e54e6a306573469a60fc766c5a50314",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "TETA-hardener-B-meb3591eb7c77",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "TETA-hardener-B-meb3591eb7c77",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "amine hardener for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "eb3591eb7c77",
+          "parent_ids": [
+            "TETA-hardener-B"
+          ]
+        },
+        "molecule": {
+          "name": "Triethylenetetramine",
+          "role": "hardener",
+          "smiles": "NCCNCCNCCN",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "TETA-hardener-B"
+      ],
+      "generation": 1,
+      "mutation_id": "eb3591eb7c77",
+      "lifecycle_status": "SCORED",
+      "result_hash": "3bd11e29ff881d23691044c745edf6293a866ac883e28fd27425f363c7424643",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "TETA-hardener-B-m3e348640b677-m3e7f1b37e33d",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "TETA-hardener-B-m3e348640b677-m3e7f1b37e33d",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "amine hardener for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "3e7f1b37e33d",
+          "parent_ids": [
+            "TETA-hardener-B-m3e348640b677"
+          ]
+        },
+        "molecule": {
+          "name": "Triethylenetetramine",
+          "role": "hardener",
+          "smiles": "NCCNCCNCCN",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "TETA-hardener-B-m3e348640b677"
+      ],
+      "generation": 1,
+      "mutation_id": "3e7f1b37e33d",
+      "lifecycle_status": "SCORED",
+      "result_hash": "45aeaf4006c68329e526a187b40070d5ed0eb0839ace62f2a1a105855395ba97",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "TETA-hardener-B-m8f5cc338b716-m83cb90827c80",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "TETA-hardener-B-m8f5cc338b716-m83cb90827c80",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "amine hardener for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "83cb90827c80",
+          "parent_ids": [
+            "TETA-hardener-B-m8f5cc338b716"
+          ]
+        },
+        "molecule": {
+          "name": "Triethylenetetramine",
+          "role": "hardener",
+          "smiles": "NCCNCCNCCN",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "TETA-hardener-B-m8f5cc338b716"
+      ],
+      "generation": 1,
+      "mutation_id": "83cb90827c80",
+      "lifecycle_status": "SCORED",
+      "result_hash": "28214e9734d5b985009db096444b9b474cb6638cfd18e1e6cb82c30134f18bf8",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "TETA-hardener-B-meac632950a37-mb97ca48b2221",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "TETA-hardener-B-meac632950a37-mb97ca48b2221",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "amine hardener for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "b97ca48b2221",
+          "parent_ids": [
+            "TETA-hardener-B-meac632950a37"
+          ]
+        },
+        "molecule": {
+          "name": "Triethylenetetramine",
+          "role": "hardener",
+          "smiles": "NCCNCCNCCN",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "TETA-hardener-B-meac632950a37"
+      ],
+      "generation": 1,
+      "mutation_id": "b97ca48b2221",
+      "lifecycle_status": "SCORED",
+      "result_hash": "61e9d8ff0fedb119c178b34c4dbec182082fe4462dbd4f6280fc6b728f3c6dbe",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    }
+  ],
+  "objective_ready": false,
+  "finished": true,
+  "logs": [
+    "run run-1900000005000 started: generation 0/1 | population 4 | workers 1 | active submodels 4/29",
+    "generation 0/1: scoring 4/4 valid candidates",
+    "generation 0/1 complete: attempted 4 | valid 4 | scored 4",
+    "generation 1/1: proposing 4 mutations",
+    "generation 1/1: 4 valid proposals; scoring with 1 workers",
+    "generation 1/1 complete: attempted 8 | valid 8 | scored 8 | survivors 0 | solutions 0"
+  ]
+}

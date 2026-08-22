@@ -1,0 +1,1019 @@
+{
+  "amphora-assurance-capabilities": [],
+  "amphora-barrier-corrosion-score": [
+    {
+      "filename": "polyverse-diffusivity-named-baseline-benchmark-kpi.v1.json",
+      "kpi_id": "amphora-barrier-corrosion-score-phase0-polyverse-diffusivity-named-baseline-benchmark-v1",
+      "capability": "Head-to-head 8-baseline benchmark for polymer-solvent diffusivity \u2014 directly answering the red-team challenge 'does your ML actually beat classical Arrhenius / Vrentas-Duda-like physical scaling laws?'. Same polymer-safe ncomm 2023 within-source restriction as prior conformal+AD receipt. HONEST FINDING: full HistGBM R\u00b2 = +0.2688 beats every non-ML baseline; the simplified Vrentas-Duda-like physica",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "b0_constant_r2": -0.003674689150109378,
+        "b1_arrhenius_T_only_r2": -0.04780045140985223,
+        "b2_T_and_wf_r2": 0.06231912729582423,
+        "b3_vrentas_duda_like_r2": -0.06069541165519787,
+        "b4_morgan_ridge_r2": -0.06426638988417377,
+        "b5_descriptor_HistGBM_r2": -0.3581250776118572,
+        "b6_full_ml_r2": 0.2687574242898706,
+        "b7_hostile_null_r2": -0.14983579455227947,
+        "hostile_null_close_to_constant": false,
+        "ml_beats_arrhenius_gap": 0.3165578756997228,
+        "ml_beats_constant_gap": 0.27243211343998,
+        "ml_beats_hostile_null_gap": 0.41859321884215006,
+        "ml_beats_morgan_ridge_gap": 0.33302381417404436,
+        "ml_beats_vrentas_duda_gap": 0.32945283594506847
+      }
+    },
+    {
+      "filename": "polyverse-diffusivity-within-source-conformal-coverage-and-applicability-domain-kpi.v1.json",
+      "kpi_id": "amphora-barrier-corrosion-score-phase0-polyverse-diffusivity-within-source-conformal-coverage-and-applicability-domain-v1",
+      "capability": "Distribution-free calibrated prediction intervals + applicability-domain audit + honest cross-source failure-mode diagnostic for polymer-solvent diffusivity (log10 cm\u00b2/s) \u2014 the direct thermodynamic driver of coating barrier performance against corrosion permeants. Data: Polyverse master diffusivity dataset (820 valid (polymer, solvent, T, wf) measurements from 2 literature sources). Two protocols ",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "cross_source_naive_coverage_alpha_010": 0.551779935275081,
+        "hostile_null_coverage_alpha_010": 0.891566265060241,
+        "hostile_null_width_inflation": 1.4977820438122749,
+        "median_interval_width_alpha_010_log10_cm2_per_s": 5.110150204655689,
+        "test_r2_within_source_alpha_010": -0.45611326872978486,
+        "test_rmse_within_source_alpha_010": 1.380598441368857,
+        "within_source_conformal_coverage_alpha_010": 0.927710843373494,
+        "within_source_conformal_coverage_alpha_020": 0.8674698795180723,
+        "worst_ad_quintile_coverage_alpha_010": 0.9
+      }
+    }
+  ],
+  "amphora-bridge": [],
+  "amphora-candidate-contract": [
+    {
+      "filename": "candidate-contract-strict-json-integrity-kpi.v1.json",
+      "kpi_id": "amphora-candidate-contract-phase0-strict-json-integrity-v1",
+      "capability": "Deterministic foundation candidate-envelope runtime that is the platform's single input surface for every downstream module. CandidateEnvelope::from_bytes(bytes) or from_value(value) enforces: (a) parse_json_strict with MAX_JSON_BYTES=8_388_608 (8 MiB) request-size limit, MAX_JSON_DEPTH=64 nesting limit, MAX_COLLECTION_ENTRIES=100_000 array/object entry cap, valid UTF-8, no non-finite numbers (NaN",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-cli": [],
+  "amphora-core": [],
+  "amphora-cro-protocol-packager": [
+    {
+      "filename": "cro-protocol-packager-signed-packet-kpi.v1.json",
+      "kpi_id": "amphora-cro-protocol-packager-phase0-signed-packet-v1",
+      "capability": "Deterministic candidate- and formula-bound CRO feasibility packet drafter, validator, and Ed25519 DSSE signer/verifier. CroProtocolPackageV2::draft constructs an unsigned packet with SHA-256 bindings to (a) the canonical candidate JSON and (b) the equivalent_balance record, populates all 8 REQUIRED_CRO_CLAIM_LOCKS to true, hardcodes execution_authorized=false / ranking_eligible=false / authority_c",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-cure-potlife-gate": [
+    {
+      "filename": "cure-potlife-arrhenius-kpi.v1.json",
+      "kpi_id": "amphora-cure-potlife-gate-phase0-arrhenius-v1",
+      "capability": "Deterministic Arrhenius rate-constant scaling of two-part epoxy-amine pot-life across temperature. pot_life(T) = pot_life_ref / effective_cure_rate(T, Ea, T_ref). Phase-0 covers pure Arrhenius temperature dependence with published Ea per resin+hardener chemistry family. Phase-1 (BLOCKED operationally) will require 36 owned independently-mixed CRO runs at multi-temperature per Navy prime charter.",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-design-rule-score": [
+    {
+      "filename": "purformance-scratch-hardness-conformal-coverage-kpi.v1.json",
+      "kpi_id": "amphora-design-rule-score-phase0-purformance-scratch-hardness-conformal-coverage-v1",
+      "capability": "Distribution-free calibrated prediction intervals for real experimental coating scratch hardness (Erichsen 435 nano-scratch, Purformance HTE dataset, N=86 2K-polyurethane lacquer formulations). Implements the jackknife+ conformal prediction algorithm (Barber, Cand\u00e8s, Ramdas, Tibshirani 2021 Ann. Statist. 49 (1): 486-507) nested inside three-fold leave-one-iteration-out cross-validation. Emits \u03b1\u2208{0",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {}
+    },
+    {
+      "filename": "purformance-scratch-hardness-named-baseline-benchmark-kpi.v1.json",
+      "kpi_id": "amphora-design-rule-score-phase0-purformance-scratch-hardness-named-baseline-benchmark-v1",
+      "capability": "7-baseline named-baseline benchmark for coating scratch hardness on real experimental Purformance HTE 2K polyurethane lacquer data (86 formulations, LOIO CV). Directly answers the red-team challenge 'does your ML beat classical coating chemistry Rule 1 (hardness ~ crosslink density)?'. HONEST FINDING: physical Vernetzung-only baseline (Wicks-Jones-Pappas 2007 Rule 1) barely beats constant (R\u00b2 = +0",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 12,
+      "n_deterministic_gates_passed": 12,
+      "observed_kpi_summary": {
+        "b0_constant_r2": -0.012077602648787211,
+        "b1_vernetzung_only_r2": 0.01555969403074553,
+        "b2_linear_all_features_r2": 0.33407754475739593,
+        "b3_features_plus_interactions_ridge_r2": 0.46818102279657925,
+        "b4_ridge_r2": 0.33497799840045617,
+        "b5_histgbm_r2": 0.8555368650266766,
+        "b6_hostile_null_r2": -0.41665062543838594,
+        "hostile_null_r2_close_to_constant_r2": false,
+        "ml_beats_constant_r2_gap": 0.8676144676754638,
+        "ml_beats_hostile_null_r2_gap": 1.2721874904650625,
+        "ml_beats_linear_all_features_r2_gap": 0.5214593202692807,
+        "ml_beats_ridge_polynomial_r2_gap": 0.38735584223009734,
+        "ml_beats_vernetzung_only_r2_gap": 0.839977170995931,
+        "vernetzung_only_beats_constant": true
+      }
+    }
+  ],
+  "amphora-engine": [],
+  "amphora-envelope-gates": [
+    {
+      "filename": "envelope-gates-constraint-envelope-kpi.v1.json",
+      "kpi_id": "amphora-envelope-gates-phase0-constraint-envelope-v1",
+      "capability": "Deterministic constraint envelope evaluation for two-part coating formulations. For every (candidate mass, policy envelope) pair, `evaluate_envelope_policy` computes per-constraint margins and a single `pass_all_hard` decision under inclusive f64 bounds. Phase-0 covers mass-only feature paths ({mass.part_A_g, mass.part_B_g, mass.total_g}); Phase-1 will extend to `volume.*`, `voc.*`, `solids_conten",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-evidence-intake-validator": [
+    {
+      "filename": "evidence-intake-validator-host-receipt-integrity-kpi.v1.json",
+      "kpi_id": "amphora-evidence-intake-validator-phase0-host-receipt-integrity-v1",
+      "capability": "Deterministic evidence-intake validator that admits an evidence_package if and only if the FeatureSnapshot carries a host-verified Ed25519 signature receipt with all 11 required fields matching the candidate identity and package SHA-256 bit-exact. evaluate_evidence_intake(candidate, features) computes stable_hash(candidate.evidence_refs.evidence_package), looks up features[HOST_VERIFIED_RECEIPT_FE",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-formulation-arithmetic": [
+    {
+      "filename": "formulation-arithmetic-mass-balance-kpi.v1.json",
+      "kpi_id": "amphora-formulation-arithmetic-phase0-mass-balance-v1",
+      "capability": "Deterministic two-part mass balance for coating formulations. `total_g = part_A_g + part_B_g` is a physical identity, not a hypothesis. Phase-0 covers mass-only arithmetic on positive-mass ingredient contributions with lexicographic ingredient_id summation and byte-deterministic diagnostic output. Phase-1 will extend to dimensioned property arithmetic (density, EEW, AHEW, VOC) once ingredient-libr",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-formulation-capabilities": [],
+  "amphora-formulation-universe": [
+    {
+      "filename": "formulation-universe-cartesian-accounting-kpi.v1.json",
+      "kpi_id": "amphora-formulation-universe-phase0-cartesian-accounting-v1",
+      "capability": "Deterministic Cartesian search-space accounting for coating-formulation Design-of-Experiments enumeration. For every candidate universe (registered axes + optional infeasible indices), validate_formulation_universe computes cartesian_total (product of axis cardinalities), infeasible_candidate_count (deduplicated, in-range check), and solved_candidate_count = cartesian_total - infeasible_candidate_",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-ingredient-library": [],
+  "amphora-ip-fto-guard": [
+    {
+      "filename": "ip-fto-guard-technical-landscape-kpi.v1.json",
+      "kpi_id": "amphora-ip-fto-guard-phase0-technical-landscape-v1",
+      "capability": "Deterministic technical patent-landscape prescreen with explicit legal-advice disclaimer. evaluate_ip_fto_guard(candidate) reads the compile-time-embedded patent_landscape.json (60 patent families spanning DGEBA epoxy + polyamide + curing agent + anticorrosive pigment + high-solids-process anchor classes; 6 CPC/IPC classification sweeps including C09D163/00, C09D5/08, C09D7/61, C08G59/50, B05D, an",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-known-answer-benchmarks": [],
+  "amphora-model-card-authority": [],
+  "amphora-molecule-capabilities": [],
+  "amphora-molecule-design-gate": [
+    {
+      "filename": "design-gate-structural-applicability-kpi.v1.json",
+      "kpi_id": "amphora-molecule-design-gate-phase0-structural-applicability-v1",
+      "capability": "Deterministic structural-applicability gate for coating-formulation molecule candidates. For every declared candidate (SMILES + role + optional RDKit-normalized MoleculeFactsV1), design_gate_result computes four boolean gates (explicit_role, valid_single_component, role_appropriate_reactivity, pass_all_hard) plus a categorical gate_reason across six defined values. Phase-0 covers the mechanistic e",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-molecule-generator": [
+    {
+      "filename": "molecule-generator-roadmap-diagnostic-quarantine-kpi.v1.json",
+      "kpi_id": "amphora-molecule-generator-phase0-roadmap-diagnostic-quarantine-v1",
+      "capability": "Deterministic molecule-generator roadmap-diagnostic quarantine runtime. generator_result(candidate, context) never invokes RDKit and never emits a molecular proposal. Always returns status='INSUFFICIENT_INPUT' with evidence_scope='ROADMAP_DIAGNOSTIC_ONLY'. Pinned metrics: generation_status='LOCKED_INTERNAL', proposal_count=0, pinned_rdkit_available=false, locked_reaction_grammar_available=false, r",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-molecule-novelty": [
+    {
+      "filename": "tanimoto-nn-novelty-canonical-epoxy-amines-vs-openpoly-kpi.v1.json",
+      "kpi_id": "amphora-molecule-novelty-phase0-tanimoto-nn-novelty-canonical-epoxy-amines-v1",
+      "capability": "Rogers-Hahn 2010 Morgan/ECFP (radius=2, 2048 bits) Tanimoto nearest-neighbor novelty analysis of 5 canonical DGEBA-based epoxy amine hardener candidates against 442 openpoly literature polymers as reference corpus. Leave-one-out on reference calibrates the 'known-polymer' NN Tanimoto distribution (median 0.9417, mean 0.7763). REAL FINDING: 5/5 candidates classified NOVEL (NN Tanimoto 0.1579-0.3929",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "max_candidate_nn_tanimoto": 0.39285714285714285,
+        "median_candidate_nn_tanimoto": 0.16666666666666666,
+        "min_candidate_nn_tanimoto": 0.15789473684210525,
+        "n_candidate_scaffold_matches": 2,
+        "n_candidates": 5,
+        "n_candidates_novel": 5,
+        "n_reference_polymers": 442,
+        "reference_LOO_NN_median": 0.9417077175697866,
+        "reference_LOO_NN_p5": 0.3201764705882353
+      }
+    }
+  ],
+  "amphora-molecule-property": [
+    {
+      "filename": "coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-coating-candidate-design-card-5-canonical-epoxy-amines-v1",
+      "capability": "END-TO-END integration demo: coating candidate design card for 5 canonical DGEBA-based epoxy-amine formulations (IPDA, m-XDA, DDS, TETA, DETA). Each candidate receives Tg prediction (ML + Van Krevelen physical), Hansen 3-component \u03b4_d/\u03b4_p/\u03b4_h partial parameters, Hansen chi vs 3 solvents (water, ethanol, chloroform), applicability domain Tanimoto score, and a chemistry-motivated composite marine-co",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 8,
+      "n_deterministic_gates_passed": 8,
+      "observed_kpi_summary": {
+        "n_candidates_evaluated": 5,
+        "n_gated_to_zero_by_ad": 4,
+        "n_in_ad": 1,
+        "n_out_ad": 4,
+        "top_ranked_AD": 0.34210526315789475,
+        "top_ranked_Tg_ML_C": 122.88322948806938,
+        "top_ranked_amine": "IPDA",
+        "top_ranked_chi_water": 2.8684631252307757,
+        "top_ranked_composite": 0.6449011073337758
+      }
+    },
+    {
+      "filename": "external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-external-validation-dielectric-ml-openpoly-to-radonpy-v1",
+      "capability": "Independent external validation of Push #23 dielectric ML methodology (295 OpenPoly literature training polymers) on RadonPy PI1070 (1077 MD-simulated test polymers, Fujimoto et al. 2023). REAL RED-TEAM FINDING: distribution shift is severe (train \u03b5r median 4.45 vs test \u03b5r median 1.27). Best external model = Ridge, MAE = 4.0386 vs NULL 4.7387 = marginal +0.70 lift. Pearson r = +0.188. External MAE",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 12,
+      "n_deterministic_gates_passed": 12,
+      "observed_kpi_summary": {
+        "MAE_deterioration_ratio": 8.996311322874249,
+        "best_external_MAE": 4.038634300231934,
+        "best_external_R2": 0.02478688955307007,
+        "best_external_model": "Ridge",
+        "best_external_pearson_r": 0.18811710275381827,
+        "lift_over_null": 0.7000541687011719,
+        "n_test_radonpy": 1077,
+        "n_train_openpoly": 295,
+        "null_baseline_MAE_on_radonpy": 4.7386884689331055,
+        "push_23_within_openpoly_MAE": 0.40401245717412304,
+        "test_eps_median": 1.273879739,
+        "train_eps_median": 4.45
+      }
+    },
+    {
+      "filename": "external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-external-validation-polyuniverse-ridge-on-openpoly-tg-v1",
+      "capability": "External validation of Push #20 Ridge Y_gi on independent OpenPoly experimental Tg. Applies the Ridge coefficients trained on 807 MD-simulated Polyuniverse Epoxy polymers to 442 literature-published EXPERIMENTAL Tg polymers from OpenPoly (Ma et al. 2023). KEY FINDING: Push #20 Ridge MAE = 70.42 K BEATS published Van Krevelen 1990 baseline MAE = 91.34 K by 20.92 K (+22.9% relative). Also marginally",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "n_external_polymers": 442,
+        "null_median_MAE_K": 71.38838834660633,
+        "pct_within_100K": 74.8868778280543,
+        "pct_within_50K": 43.21266968325792,
+        "published_vk_MAE_K": 91.33528326361476,
+        "push_20_ridge_MAE_K": 70.41754628962593,
+        "ridge_beats_null_K": 0.9708420569804019,
+        "ridge_beats_published_K": 20.917736973988823,
+        "ridge_pearson_r": 0.26421049716456596
+      }
+    },
+    {
+      "filename": "mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-mixed-openpoly-radonpy-dielectric-conformal-v1",
+      "capability": "Mixed-dataset (OpenPoly + RadonPy PI1070) dielectric constant ML with split-conformal PI. n_combined = 1372 polymers (OpenPoly 295 literature + RadonPy 1077 MD-simulated), source-stratified 60/20/20 split. Random Forest base predictor + Papadopoulos et al 2002 split-conformal. REAL POSITIVE FINDING: overall test MAE = 1.0826, R\u00b2 = +0.6991. RadonPy test MAE = 1.1263 (vs Push #33 openpoly-only = 4.0",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 13,
+      "n_deterministic_gates_passed": 13,
+      "observed_kpi_summary": {
+        "n_calib": 274,
+        "n_combined": 1372,
+        "n_test": 275,
+        "n_train": 823,
+        "openpoly_coverage_95": 1.0,
+        "openpoly_test_MAE": 0.9227030945662923,
+        "openpoly_test_R2": -0.8060373582856251,
+        "overall_coverage_95": 0.9745454545454545,
+        "overall_test_MAE": 1.0826395003138072,
+        "overall_test_R2": 0.6991167304973129,
+        "radonpy_MAE_improvement_over_push_33": 2.9123084668667216,
+        "radonpy_MAE_improvement_relative_pct": 72.11122004038523,
+        "radonpy_coverage_95": 0.9675925925925926,
+        "radonpy_test_MAE": 1.1263258333652117,
+        "radonpy_test_R2": 0.7001462849340689
+      }
+    },
+    {
+      "filename": "mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-mixed-openpoly-radonpy-refractive-index-conformal-v1",
+      "capability": "Mixed OpenPoly + RadonPy refractive index ML with split-conformal PI. n_combined = 1223 polymers (148 literature + 1075 MD-simulated), source-stratified 60/20/20 split. RandomForest base + Papadopoulos et al 2002 split-conformal. REAL POSITIVE FINDING: overall test MAE = 0.0304 RI units, R\u00b2 = +0.6381, Pearson r = +0.8047. 95% PI coverage = 0.9634, PI width = 0.2264 RI units. RadonPy R\u00b2 = +0.7901, ",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "n_calib": 244,
+        "n_combined": 1223,
+        "n_test": 246,
+        "n_train": 733,
+        "openpoly_coverage_95": 0.8387096774193549,
+        "openpoly_test_MAE": 0.06620627939996258,
+        "openpoly_test_R2": -0.2528073432093545,
+        "overall_coverage_95": 0.9634146341463414,
+        "overall_test_MAE": 0.030416862706321816,
+        "overall_test_R2": 0.6381207317871478,
+        "radonpy_coverage_95": 0.9813953488372092,
+        "radonpy_test_MAE": 0.025256528206308505,
+        "radonpy_test_R2": 0.7900627524156147
+      }
+    },
+    {
+      "filename": "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-multi-target-ml-radonpy-4-properties-audit-v1",
+      "capability": "Multi-target Random Forest on 1068 RadonPy PI1070 polymers with 4 co-reported MD-simulated properties (density, static_dielectric_const, refractive_index, thermal_conductivity). Caruana 1997 multitask methodology; sklearn native multi-output. REAL HONEST FINDING: multi-task DEGRADES 3/4 properties vs single-task RF. Only dielectric_const marginally benefits (+0.5% MAE lift). Multi-task R\u00b2 per prop",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 8,
+      "n_deterministic_gates_passed": 8,
+      "observed_kpi_summary": {
+        "multi_task_MAE_per_property": {
+          "density": 0.09124195716500791,
+          "refractive_index": 0.05088107105721665,
+          "static_dielectric_const": 1.8164849140667065,
+          "thermal_conductivity": 0.034642589927666306
+        },
+        "multi_task_R2_per_property": {
+          "density": 0.4699373213682694,
+          "refractive_index": 0.42185520022927037,
+          "static_dielectric_const": 0.3919681184500553,
+          "thermal_conductivity": 0.1819275794498022
+        },
+        "n_multi_task_beats_single_task": 1,
+        "n_polymers": 1068,
+        "n_targets": 4,
+        "single_task_MAE_per_property": {
+          "density": 0.05551611086460358,
+          "refractive_index": 0.02048474632563185,
+          "static_dielectric_const": 1.8256407077308305,
+          "thermal_conductivity": 0.02461998435149133
+        },
+        "single_task_R2_per_property": {
+          "density": 0.746828141253135,
+          "refractive_index": 0.8925382908965608,
+          "static_dielectric_const": 0.3891657236558348,
+          "thermal_conductivity": 0.5419252833436438
+        }
+      }
+    },
+    {
+      "filename": "openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-openpoly-dielectric-constant-ml-baseline-v1",
+      "capability": "OpenPoly literature dielectric constant ML baseline: 295 polymers \u00d7 111 raw Bemis-Murcko scaffolds. Rigorously tests Ridge, Random Forest, HistGradientBoostingRegressor on Morgan fingerprints (radius=2, 512 bits) + log10(MW). REAL POSITIVE LIFT: best model (RandomForest) achieves scaffold-safe holdout test MAE = 0.4040 vs NULL 0.7027 (+42.5% relative improvement), test R\u00b2 = +0.565, and LOSO-CV R\u00b2 ",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "best_LOSO_CV_MAE": 0.42733511328697205,
+        "best_LOSO_CV_R2": 0.6591328382492065,
+        "best_LOSO_model": "RandomForest",
+        "best_holdout_model": "RandomForest",
+        "best_holdout_test_MAE": 0.40401245717412304,
+        "best_holdout_test_R2": 0.5648522019228827,
+        "improvement_LOSO_pct": 45.169366737158704,
+        "improvement_holdout_pct": 42.50666555917994,
+        "n_polymers": 295,
+        "n_scaffolds_raw": 111,
+        "null_LOSO_MAE": 0.7793729305267334,
+        "null_holdout_MAE": 0.702711820602417
+      }
+    },
+    {
+      "filename": "openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-openpoly-experimental-tg-ml-baseline-v1",
+      "capability": "OpenPoly experimental Tg ML baseline: 441 polymers \u00d7 212 raw Bemis-Murcko scaffolds. Rigorously tests Ridge / Random Forest / HistGradientBoostingRegressor on Morgan fingerprints (radius=2, 512 bits) + log10(MW) under scaffold-safe 80/20 held-out AND 212-fold LOSO-CV. Direct apples-to-apples comparison with Push #25 physics-Ridge baseline (MAE = 70.42 K on same polymers). Best ML model = RandomFor",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 13,
+      "n_deterministic_gates_passed": 13,
+      "observed_kpi_summary": {
+        "ML_beats_physics_LOSO_K": 19.180054681959916,
+        "ML_beats_physics_relative_pct": 27.237607233675458,
+        "best_LOSO_MAE_K": 51.237491607666016,
+        "best_LOSO_R2": 0.4049065113067627,
+        "best_LOSO_model": "RandomForest",
+        "best_holdout_model": "RandomForest",
+        "best_holdout_test_MAE_K": 42.20672417382652,
+        "best_holdout_test_R2": 0.001093728084713419,
+        "n_polymers": 441,
+        "n_scaffolds_raw": 212,
+        "null_LOSO_MAE_K": 73.2569351196289,
+        "null_holdout_MAE_K": 52.46160125732422,
+        "push_25_physics_ridge_MAE_K": 70.41754628962593
+      }
+    },
+    {
+      "filename": "openpoly-water-contact-angle-ml-baseline-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-openpoly-water-contact-angle-ml-baseline-v1",
+      "capability": "OpenPoly literature water contact angle ML baseline: 173 polymers \u00d7 66 raw Bemis-Murcko scaffolds. Rigorously tests Ridge / Random Forest / HistGradientBoostingRegressor on Morgan fingerprints (radius=2, 512 bits) + log10(MW) features under scaffold-safe 80/20 held-out AND 66-fold LOSO-CV. Best model = RandomForest, holdout test MAE = 15.5463\u00b0 (NULL 14.0893\u00b0, -10.3% relative), R\u00b2 = -0.262. Hydroph",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "best_LOSO_MAE_deg": 14.729339599609375,
+        "best_LOSO_R2": 0.07809239625930786,
+        "best_LOSO_model": "RandomForest",
+        "best_holdout_model": "RandomForest",
+        "best_holdout_test_MAE_deg": 15.546349615858952,
+        "best_holdout_test_R2": -0.2616434734191795,
+        "hydrophobic_classification_accuracy": 0.7105263157894737,
+        "improvement_LOSO_pct": 5.952020089768236,
+        "improvement_holdout_pct": -10.341277892057343,
+        "n_polymers": 173,
+        "n_scaffolds_raw": 66,
+        "null_LOSO_MAE_deg": 15.661516189575195,
+        "null_holdout_MAE_deg": 14.089332580566406
+      }
+    },
+    {
+      "filename": "openpoly-water-uptake-ml-baseline-audit-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-openpoly-water-uptake-ml-baseline-audit-v1",
+      "capability": "OpenPoly literature dataset water uptake ML baseline audit. Rigorously tests Ridge, Random Forest, and HistGradientBoostingRegressor on Morgan (radius=2, 512 bits) fingerprints + log10(MW) features against NULL median baseline under BOTH Bemis-Murcko scaffold-safe 80/20 split AND 55-fold Leave-One-Scaffold-Out CV. HONEST negative finding: all 3 models fail to beat NULL under both evaluations, refl",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "LOSO_best_ml_MAE_log10": 0.8116878271102905,
+        "LOSO_null_MAE_log10": 0.7874007225036621,
+        "holdout_best_ml_MAE_log10": 0.9718492114186248,
+        "holdout_null_MAE_log10": 0.812232255935669,
+        "honest_negative_finding": true,
+        "n_models_evaluated": 3,
+        "n_polymers": 129,
+        "n_scaffolds_raw": 55
+      }
+    },
+    {
+      "filename": "polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-v1",
+      "capability": "Distribution-free calibrated prediction intervals plus quantitative applicability-domain attestation for epoxy-amine coating glass transition temperature (Tg, K) on the Polyuniverse Epoxy 1M dataset (N=96,504 scaffold-safe sampled polymers, 1,842 unique Bemis-Murcko amine scaffolds). Implements the split-conformal algorithm (Papadopoulos-Proedrou-Vovk-Gammerman 2002) with GroupKFold scaffold-safe ",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "ad_binary_coverage_inside": 0.9029780857838546,
+        "ad_binary_coverage_outside": 0.9068825910931174,
+        "ad_binary_r2_inside": 0.7789341787035202,
+        "ad_binary_r2_outside": 0.77340361343467,
+        "conformal_marginal_coverage_alpha_010": 0.9048545578363654,
+        "conformal_marginal_coverage_alpha_020": 0.8134059733437105,
+        "hostile_null_marginal_coverage_alpha_010": 0.9025197003599572,
+        "hostile_null_width_inflation": 2.2119281121451246,
+        "median_interval_width_K_alpha_010": 37.469448471936516,
+        "test_r2_alpha_010": 0.779281777050388,
+        "test_rmse_K_alpha_010": 11.350216697802775,
+        "worst_ad_quintile_coverage_alpha_010": 0.8787286063569683
+      }
+    },
+    {
+      "filename": "polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-v1",
+      "capability": "External validation of the Polyuniverse Epoxy Tg model on 5 canonical DGEBA-based epoxy-amine coating formulations (IPDA, m-XDA, DDS, TETA, DETA) with published experimental Tg from May 1988 Epoxy Resins Ch. 6. Strongest red-team defense: predict on published external data the model has NEVER seen. HONEST FINDINGS: (1) Polyuniverse Tg units are \u00b0C not K (labeling error in prior receipts corrected ",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "in_ad_subset": {
+          "ad_threshold": 0.3,
+          "ml_MAE_C_in_ad": 35.116770511930625,
+          "ml_MAE_less_than_25_C_in_ad": false,
+          "ml_RMSE_C_in_ad": 35.116770511930625,
+          "n_in_ad": 1,
+          "vk_MAE_C_in_ad": 93.37649079043467
+        },
+        "ml_MAE_C": 39.11947866164949,
+        "ml_MAE_less_than_50_C": true,
+        "ml_RMSE_C": 57.29050383568316,
+        "ml_beats_vk_on_MAE_by_C_K": 69.9583350719927,
+        "ml_beats_vk_on_RMSE_by_C_K": 59.98029097651271,
+        "ml_pearson_r_across_5": 0.07689902196238095,
+        "ml_spearman_r_across_5": -0.3,
+        "vk_MAE_C": 109.07781373364219,
+        "vk_RMSE_C": 117.27079481219587,
+        "vk_pearson_r_across_5": 0.4171361614070001,
+        "vk_spearman_r_across_5": 0.0
+      }
+    },
+    {
+      "filename": "polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-polyuniverse-epoxy-tg-named-baseline-benchmark-v1",
+      "capability": "Head-to-head named-baseline benchmark for the Polyuniverse Epoxy Tg predictor. Directly answers the standard red-team challenge 'does your ML model actually beat simpler baselines?'. 7 named baselines evaluated on the identical scaffold-safe test set (n=10,279 polymers, 1,842 unique Bemis-Murcko amine scaffolds, 60/20/20 partition): constant mean, MW-only linear regression, 5-descriptor Ridge, Mor",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "b0_constant_r2": -0.07842617831106402,
+        "b1_mw_only_r2": -0.07619628031201198,
+        "b2_basic_descriptors_r2": 0.01985775652810906,
+        "b3_morgan_ridge_r2": 0.6972521749097137,
+        "b4_descriptor_only_gbm_r2": 0.30092589497016486,
+        "b5_full_histgbm_r2": 0.8313275584157028,
+        "b6_hostile_null_r2": -0.07926046122521613,
+        "hostile_null_r2_near_zero": false,
+        "ml_beats_every_baseline": true,
+        "ml_rmse_reduction_vs_constant_pct": 60.451787872299235
+      }
+    },
+    {
+      "filename": "polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-v1",
+      "capability": "Van Krevelen 1990 / Bicerano 2002 physical group-contribution Tg baseline vs full ML comparison for epoxy-amine coating polymers. Third KPI on the same Polyuniverse Epoxy 1M scaffold-safe test set (n=10,279), directly answering the standard red-team challenge 'does your ML actually beat the published first-principles formula?'. HONEST finding: the simplified 18-group Van Krevelen formula (0 fitted",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 9,
+      "n_deterministic_gates_passed": 9,
+      "observed_kpi_summary": {
+        "b7_van_krevelen_physical_raw_r2": -27.10424799020969,
+        "b7_van_krevelen_physical_raw_rmse_K": 128.07696927556307,
+        "b8_van_krevelen_linear_rescaled_r2": -0.04200240205645156,
+        "b8_van_krevelen_linear_rescaled_rmse_K": 24.66149598849222,
+        "full_ml_r2": 0.8313275584157028,
+        "full_ml_rmse_K": 9.922180504246796,
+        "ml_beats_van_krevelen_raw_r2_gap": 27.93557554862539,
+        "ml_beats_van_krevelen_rescaled_r2_gap": 0.8733299604721544,
+        "van_krevelen_rescaled_beats_raw_r2_gap": 27.06224558815324
+      }
+    },
+    {
+      "filename": "radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-radonpy-density-ml-vs-van-krevelen-physics-v1",
+      "capability": "Head-to-head ML vs Van Krevelen 1990 Ch. 4 physics baseline for polymer density on RadonPy PI1070 (1077 MD-simulated polymers, Fujimoto et al. 2023). 60/20/20 seed=0 split, Random Forest + split-conformal PI (Papadopoulos et al 2002). REAL POSITIVE FINDING: ML test MAE = 0.0566 g/cm\u00b3 (R\u00b2 = +0.7196, r = +0.8520) BEATS Van Krevelen physics MAE = 0.1327 g/cm\u00b3 (+57.3% relative). Van Krevelen physics c",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "ml_beats_null_MAE_reduction": 0.07013094664695911,
+        "ml_beats_vk_physics_MAE_reduction": 0.07609781480622028,
+        "ml_test_MAE_g_per_cm3": 0.056644705523222164,
+        "ml_test_R2": 0.719560629296023,
+        "ml_test_coverage_95": 0.9305555555555556,
+        "ml_test_pearson_r": 0.8519561806582714,
+        "n_polymers": 1077,
+        "null_baseline_MAE_g_per_cm3": 0.12677565217018127,
+        "target_median_g_per_cm3": 1.1271311044692993,
+        "vk_physics_test_MAE_g_per_cm3": 0.13274252032944245,
+        "vk_physics_test_R2": 0.026234044178977123,
+        "vk_physics_test_pearson_r": 0.7938319893983672
+      }
+    },
+    {
+      "filename": "stacked-ml-van-krevelen-density-radonpy-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-stacked-ml-van-krevelen-density-radonpy-v1",
+      "capability": "Wolpert 1992 stacked generalization of Random Forest + Van Krevelen 1990 Ch. 4 physics for polymer density on RadonPy PI1070 (n=1077). Meta-learner: Ridge on [RF_pred, VK_pred] fit on CALIB set. REAL FINDING: stack test R\u00b2 = +0.8019 vs RF-only R\u00b2 = +0.7186 (+0.0833 lift). Pearson r = +0.8998 vs +0.8515. Stack MAE = 0.0569 matches RF within 5%. Interpretable weights: w_RF = +0.6350, w_VK = +0.2879.",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 9,
+      "n_deterministic_gates_passed": 9,
+      "observed_kpi_summary": {
+        "meta_w_rf": 0.635007853495727,
+        "meta_w_vk": 0.28785944175707473,
+        "n_polymers": 1077,
+        "rf_only_test_MAE": 0.05669343870539142,
+        "rf_only_test_R2": 0.7185606329928325,
+        "stack_r2_lift_over_rf_only": 0.0833215631603228,
+        "stack_test_MAE": 0.05690323154368101,
+        "stack_test_R2": 0.8018821961531553,
+        "stack_test_pearson_r": 0.8997819416228531,
+        "vk_only_test_MAE": 0.13274252032944245,
+        "vk_only_test_R2": 0.026234044178977123
+      }
+    },
+    {
+      "filename": "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-v1",
+      "capability": "Ridge regression fit of Y_gi values on 807 scaffold-safe train polymers from Polyuniverse Epoxy, with 168 scaffold-safe held-out test polymers. Directly resolves the Phase-1 question flagged in the prior 15-polymer Ridge receipt. MAJOR FINDING: data-driven Y_gi calibration achieves test MAE = 22.0 K (matching Bicerano's ~30 K target), BEATING the published Y_gi baseline MAE = 54.6 K by 32.6 K. Con",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 8,
+      "n_deterministic_gates_passed": 8,
+      "observed_kpi_summary": {
+        "baseline_test_MAE_K": 54.559722860262006,
+        "best_test_MAE_K": 21.97699108541857,
+        "fitted_beats_published": true,
+        "improvement_K": 32.58273177484344,
+        "reaches_bicerano_target_30K": true
+      }
+    },
+    {
+      "filename": "van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-v1",
+      "capability": "Ridge regression retuning of Y_gi values on 15 canonical polymers with LOO-CV. HONEST FINDING: best LOO-CV MAE = 121.4 K (at \u03b1=0.0001) is WORSE than the published-Y_gi baseline MAE = 81.3 K by +40.1 K. But full-data (no-CV) MAE at same alpha reaches ~33 K \u2014 matching Bicerano's published target. SCIENTIFIC DIAGNOSIS: the 24-group STRUCTURE is not fundamentally wrong (achieves Bicerano-quality on fi",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 6,
+      "n_deterministic_gates_passed": 6,
+      "observed_kpi_summary": {
+        "best_loo_MAE_K": 121.4326394827954,
+        "diagnosis": "structure_right_calibration_under_determined_by_n_15",
+        "improvement": -40.1326394827954,
+        "prior_baseline_MAE_K": 81.3
+      }
+    },
+    {
+      "filename": "van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-v1",
+      "capability": "LOO-CV rescaling test of corrected Van Krevelen Tg formula on 15 canonical homopolymers. HONEST FINDING: LOO rescaling WORSENS MAE (81.3 K \u2192 90.0 K, \u0394 = -8.7 K), confirming that the corrected VK 24-group formula's errors are STRUCTURAL (per-polymer specific) rather than linear-correctable. Simple 2-parameter rescaling cannot address per-polymer biases; only the full Bicerano 40-group table with se",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 6,
+      "n_deterministic_gates_passed": 6,
+      "observed_kpi_summary": {
+        "MAE_reduction_K": -8.659926674318442,
+        "loo_rescaled_MAE_K": 89.95525732896978,
+        "loo_rescaled_R2": -0.15931724006152614,
+        "loo_rescaled_RMSE_K": 99.5268194289591,
+        "loo_rescaled_pearson_r": -0.10213951965206278,
+        "raw_MAE_K": 81.29533065465134,
+        "raw_R2": -0.1789655574157818,
+        "raw_RMSE_K": 100.36667510300744,
+        "raw_pearson_r": 0.3110650002390228
+      }
+    },
+    {
+      "filename": "van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-v1",
+      "capability": "CORRECTED Van Krevelen Tg formula using published Y_gi values (K\u00b7g/mol) from Van Krevelen 1990 Ch. 6 Table 6.6, replacing the broken simplified formula with +250\u00b0C offset used in prior receipts. Tested on the same 15 canonical homopolymers. Result: MAE reduced from 243 K to 81.3 K, R\u00b2 improved from -6.88 to -0.1790. 6/15 within 50 K; 9/15 within 100 K. Still 2-3\u00d7 worse than published Bicerano 40-g",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 7,
+      "n_deterministic_gates_passed": 7,
+      "observed_kpi_summary": {
+        "fraction_within_100K": 0.6,
+        "fraction_within_50K": 0.4,
+        "mae_K": 81.29533065465134,
+        "n_within_100K": 9,
+        "n_within_50K": 6,
+        "pearson_r": 0.3110650002390228,
+        "r2": -0.1789655574157818,
+        "rmse_K": 100.36667510300744,
+        "spearman_r": 0.3094817116592037
+      }
+    },
+    {
+      "filename": "van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json",
+      "kpi_id": "amphora-molecule-property-phase0-van-krevelen-tg-external-validation-15-canonical-homopolymers-v1",
+      "capability": "External validation of the simplified Van Krevelen 18-group Tg formula (used in prior molecule-property physical baseline receipts) on 15 canonical homopolymers with published experimental Tg from Bicerano 2002 / Van Krevelen 1990. HONEST FINDING: the formula produces uniform ~250 \u00b0C predictions (MAE 242.7 \u00b0C, R\u00b2 -6.8835) because the empirical offset dominates. Positive ranking correlation preserv",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 9,
+      "n_deterministic_gates_passed": 9,
+      "observed_kpi_summary": {
+        "fraction_within_100C": 0.0,
+        "fraction_within_50C": 0.0,
+        "mae_C": 242.66158025579776,
+        "n_within_100C": 0,
+        "n_within_50C": 0,
+        "pearson_r": 0.6322341342332366,
+        "r2": -6.883521305298944,
+        "rmse_C": 259.53689301337647,
+        "spearman_r": 0.6923088000700106
+      }
+    }
+  ],
+  "amphora-molecule-role-ranker": [
+    {
+      "filename": "portfolio-integrated-candidate-decision-card-v2-5-canonical-epoxy-amines-kpi.v1.json",
+      "kpi_id": "amphora-molecule-role-ranker-phase0-portfolio-integrated-candidate-decision-card-v2-v1",
+      "capability": "Portfolio-integrated coating candidate decision card v2 for 5 canonical DGEBA epoxy amine hardeners (IPDA, DDS, DETA, TETA, m-XDA). Integrates 5 portfolio predictors (Tg openpoly ML; dielectric mixed openpoly+RadonPy ML; refractive index mixed ML; density stacked RF+Van Krevelen physics; water contact angle openpoly ML) with per-predictor Tanimoto NN applicability domain. REAL END-TO-END FINDING: ",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "n_candidates": 5,
+        "n_candidates_all_ad_passed": 1,
+        "n_candidates_zero_ad_passed": 3,
+        "n_predictors_integrated": 5,
+        "ranked_candidates": [
+          {
+            "composite": 0.06318220730180531,
+            "n_ad_passed": 5,
+            "name": "DDS"
+          },
+          {
+            "composite": 0.0376809472937009,
+            "n_ad_passed": 3,
+            "name": "m-XDA"
+          },
+          {
+            "composite": 0.013123987025742048,
+            "n_ad_passed": 0,
+            "name": "IPDA"
+          },
+          {
+            "composite": 0.004686661644400906,
+            "n_ad_passed": 0,
+            "name": "TETA"
+          },
+          {
+            "composite": 0.000972449230371992,
+            "n_ad_passed": 0,
+            "name": "DETA"
+          }
+        ],
+        "top_ranked_candidate": "DDS",
+        "top_ranked_composite_score": 0.06318220730180531
+      }
+    },
+    {
+      "filename": "role-classification-kpi.v1.json",
+      "kpi_id": "amphora-molecule-role-ranker-phase0-known-answer-v1",
+      "capability": "Binary role classification (epoxy resin vs. amine hardener) from RDKit-normalized MoleculeFactsV1, with deterministic structural inference plus a frozen fitted logistic-regression baseline",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-optimizer-orchestrator": [
+    {
+      "filename": "optimizer-orchestrator-authorization-kpi.v1.json",
+      "kpi_id": "amphora-optimizer-orchestrator-phase0-authorization-v1",
+      "capability": "Deterministic fail-closed optimizer authorization gate. authorize_optimizer_request(request, envelopes, policy) enforces the quarantined_optimizer_policy at Phase-0 (ranking_enabled=false, solver_enabled=false, authority_expansion_allowed=false, decision_use_ceiling='AUDIT_ONLY', required_claim_locks == REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS) and rejects: (a) CANDIDATE-sourced requests with any objec",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-ord-codec": [],
+  "amphora-phase0-reviewer": [],
+  "amphora-process-qc-twin": [],
+  "amphora-public-corrosion-benchmark": [
+    {
+      "filename": "nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json",
+      "kpi_id": "amphora-public-corrosion-benchmark-phase0-nist-corr-data-marine-steel-baseline-v1",
+      "capability": "NIST CORR-DATA (2017 doi:10.18434/M3TH4R) marine steel corrosion baseline. Extracts 588 numeric corrosion rate records from 30 unique source documents in seawater, sodium chloride, and marine atmospheric environments across 5 coating-substrate material groups (carbon steel, stainless, copper, aluminum, nickel alloys). Fits a Ridge regression baseline on log10(mm/yr) target with environment + mater",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "best_ridge_LOSD_CV_MAE_log10": 0.6331256093139357,
+        "improvement_over_null_log10": 0.047468448737186475,
+        "n_LOSD_CV_folds": 30,
+        "n_records": 588,
+        "n_source_documents": 30,
+        "null_baseline_MAE_log10": 0.6805940580511222,
+        "seawater_carbon_steel_median_mm_yr": 0.1,
+        "seawater_stainless_median_mm_yr": 0.012
+      }
+    }
+  ],
+  "amphora-rdkit-ffi": [],
+  "amphora-redteam-audit": [
+    {
+      "filename": "redteam-audit-deterministic-control-diagnostic-kpi.v1.json",
+      "kpi_id": "amphora-redteam-audit-phase0-deterministic-control-diagnostic-v1",
+      "capability": "Deterministic meta-audit runtime. deterministic_control_diagnostic(module_id) dispatches to nine upstream module-specific diagnostics (amphora-evidence-intake-validator, amphora-source-ledger, amphora-redteam-audit, amphora-report-packager, amphora-formulation-arithmetic, amphora-formulation-universe, amphora-envelope-gates, amphora-cro-protocol-packager, amphora-optimizer-orchestrator), each of w",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-report-packager": [
+    {
+      "filename": "report-packager-signed-deliverable-quarantine-kpi.v1.json",
+      "kpi_id": "amphora-report-packager-phase0-signed-deliverable-quarantine-v1",
+      "capability": "Deterministic report-packager quarantine runtime. evaluate_report_packager counts the 4 compile-time-embedded REPORT_ARTIFACTS (CUSTOMER_FACING.tex, FOUNDER_FACING.tex, blueprint.md, f718_style_datasheet.md) and honestly returns status='INSUFFICIENT_INPUT' because signed score envelopes and a deterministic report package are not yet available. Pinned metrics.generated_document_count=4, metrics.sig",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-run-provenance": [
+    {
+      "filename": "run-provenance-hash-chain-integrity-kpi.v1.json",
+      "kpi_id": "amphora-run-provenance-phase0-hash-chain-integrity-v1",
+      "capability": "Deterministic hash-chained run-archive integrity foundation. RunArchive::create(base, run_id, manifest) creates a per-run directory with manifest.json + empty events.jsonl. RunArchive::append(event_type, candidate_id, generation, payload) appends one line-delimited JSON event with event_hash = stable_hash({schema, sequence, run_id, event_type, candidate_id, generation, payload, previous_event_hash",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-solvency-score": [
+    {
+      "filename": "hansen-chi-external-validation-8-published-polymer-solvent-pairs-kpi.v1.json",
+      "kpi_id": "amphora-solvency-score-phase0-hansen-chi-external-validation-8-published-polymer-solvent-pairs-v1",
+      "capability": "External validation of Hansen 3-component chi baseline on 8 canonical polymer-solvent chi values from published primary literature (Van Krevelen 1990 Table 7.6; Bawn 1949; Sakurada 1954; Krigbaum 1959; Malcolm-Rowlinson 1957). 5 polymers \u00d7 3 solvents. HONEST FINDING: Hansen predictions correlate STRONGLY (Pearson r=+0.8692) with experimental chi and 75% (6/8) predictions are within factor of 3, in",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 9,
+      "n_deterministic_gates_passed": 9,
+      "observed_kpi_summary": {
+        "fraction_within_factor_of_3": 0.75,
+        "mae_chi_units": 0.6558380330449105,
+        "mae_less_than_1_5_chi_units": true,
+        "n_within_factor_of_3": 6,
+        "pearson_r": 0.8692336903365135,
+        "spearman_r": 0.7425282823862205
+      }
+    },
+    {
+      "filename": "omg-chi-3-solvent-conformal-coverage-and-applicability-domain-kpi.v1.json",
+      "kpi_id": "amphora-solvency-score-phase0-omg-chi-3-solvent-conformal-coverage-and-applicability-domain-v1",
+      "capability": "Distribution-free calibrated Flory-Huggins chi prediction intervals + quantitative applicability-domain attestation for coating solvent selection. Three canonical solvents (water, ethanol, chloroform) evaluated per-polymer on the Open Macromolecular Genome (OMG) PhysicalProperties dataset (Xie, Rodriguez, Jackson et al 2024; TheJacksonLab v1.0), 98,506 scaffold-safe sampled polymers, 7,298 unique ",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 24,
+      "n_deterministic_gates_passed": 24,
+      "observed_kpi_summary": {}
+    },
+    {
+      "filename": "omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json",
+      "kpi_id": "amphora-solvency-score-phase0-omg-chi-flory-huggins-physical-baseline-vs-ml-v1",
+      "capability": "Flory-Huggins physical chi baseline vs ML comparison across 3 canonical coating solvents (water, ethanol, chloroform). Second KPI for amphora-solvency-score, addressing the standard red-team challenge 'does your ML actually beat classical Flory-Huggins theory?'. Physical baseline: chi_FH = V_s/(RT) \u00d7 (\u03b4_p - \u03b4_s)\u00b2 + 0.34 (Flory 1953, Huggins 1942, Hildebrand 1950, Fedors 1974 group contribution for",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 20,
+      "n_deterministic_gates_passed": 20,
+      "observed_kpi_summary": {}
+    },
+    {
+      "filename": "omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json",
+      "kpi_id": "amphora-solvency-score-phase0-omg-chi-hansen-3component-physical-baseline-vs-ml-v1",
+      "capability": "Hansen 3-component (\u03b4_d dispersion, \u03b4_p polar, \u03b4_h H-bond) chi baseline vs ML comparison for OMG chi 3-solvent. Third KPI for amphora-solvency-score, directly extending and improving my prior simplified 1-component Flory-Huggins receipt which had catastrophic R\u00b2 = -207 to -5389. Hansen 1967/2007 formula: chi = V_s/(RT) \u00d7 R_a\u00b2/4 + 0.34 with R_a\u00b2 = 4(\u0394\u03b4_d)\u00b2 + (\u0394\u03b4_p)\u00b2 + (\u0394\u03b4_h)\u00b2. Group contribution fo",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 20,
+      "n_deterministic_gates_passed": 20,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-source-ledger": [
+    {
+      "filename": "source-ledger-dual-source-integrity-kpi.v1.json",
+      "kpi_id": "amphora-source-ledger-phase0-dual-source-integrity-v1",
+      "capability": "Deterministic dual-source citation-ledger audit runtime. evaluate_source_ledger loads the compile-time-embedded facts.json (83 cited constants across coating-industry technical references, 23 marked load_bearing) and source_records.json (162 source records with 26 required per-record fields including retrieved-date, revision_date, url_status, license_use_limit, candidate_grade, supplier_status, PF",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-sourceability-ehs": [
+    {
+      "filename": "sourceability-ehs-public-prescreen-kpi.v1.json",
+      "kpi_id": "amphora-sourceability-ehs-phase0-public-prescreen-v1",
+      "capability": "Deterministic public EHS / sourceability prescreen with strict quarantine of every procurement and regulatory closure claim. evaluate_sourceability loads the compile-time-embedded v5_epoch30_public_bom_sourceability_manifest.json (21 public regulatory / EHS / TDS / SDS source records with SHA-256 byte-count and use-limit metadata), independently verifies summary.all_sources_have_sha256, and pins s",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ],
+  "amphora-tolerance-robustness": [
+    {
+      "filename": "bootstrap-95-percent-ci-on-push-20-ridge-ygi-kpi.v1.json",
+      "kpi_id": "amphora-tolerance-robustness-phase0-bootstrap-95pct-ci-on-push-20-ridge-ygi-v1",
+      "capability": "Efron 1979 nonparametric bootstrap 95% CI on all 24 Push #20 Ridge Y_gi coefficients. 1000 resamples of the 1000 Polyuniverse Epoxy training set (seed=0), Ridge re-fit at \u03b1=0.0001. Results: 24/24 Push #20 estimates within 95% CI (100% self-consistency), 4/24 published Van Krevelen 1990 values within CI (quantifies textbook disagreement), 17/24 groups reliable (rel HW < 50%), 11/24 groups highly re",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "n_bootstrap_samples": 1000,
+        "n_groups": 24,
+        "n_highly_reliable_25pct_halfwidth": 11,
+        "n_published_within_CI": 4,
+        "n_push_20_within_CI": 24,
+        "n_reliable_50pct_halfwidth": 17,
+        "n_training_polymers": 1000
+      }
+    },
+    {
+      "filename": "bootstrap-prediction-interval-coverage-openpoly-tg-kpi.v1.json",
+      "kpi_id": "amphora-tolerance-robustness-phase0-bootstrap-prediction-interval-coverage-openpoly-tg-v1",
+      "capability": "Bootstrap prediction interval coverage audit: 1000 bootstrap Ridge fits \u00d7 1000 Polyuniverse training polymers, applied to 442 openpoly experimental Tg polymers. HONEST NEGATIVE FINDING: bootstrap 95% PI achieves only 25.1% coverage \u2014 well below 95% nominal. This is a real red-team-defensible quantification of the limitations of parameter-only bootstrap on a linear model with distribution shift and",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "coverage_95_deviation": -0.698868778280543,
+        "coverage_95_pi": 0.251131221719457,
+        "coverage_95_pi_target": 0.95,
+        "honest_negative_finding": true,
+        "mean_pi_95_width_K": 51.559707756430164,
+        "median_prediction_MAE_K": 70.90672635258468,
+        "n_bootstrap_samples": 1000,
+        "n_test_polymers": 442,
+        "n_train_polymers": 1000
+      }
+    },
+    {
+      "filename": "conformalized-quantile-regression-openpoly-tg-kpi.v1.json",
+      "kpi_id": "amphora-tolerance-robustness-phase0-conformalized-quantile-regression-openpoly-tg-v1",
+      "capability": "Conformalized Quantile Regression (Romano-Patterson-Cand\u00e8s 2019 NeurIPS) on 442 openpoly experimental Tg polymers. Base predictor: two quantile GBM models (\u03b1 = 0.025 / 0.975). 60/20/20 seed=0 train/calibration/test split. REAL FINDING: at 95% target, empirical coverage = 1.0000 (conservatively over-covers by +0.0500). Mean PI = 388.87 K, adaptive (max/min ratio 1.33). At 90%/80%/68% targets, achie",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "conformal_Q_hat_K": 58.28055889694815,
+        "empirical_coverage_95": 1.0,
+        "empirical_coverage_at_68pct_target": 0.6629213483146067,
+        "empirical_coverage_at_80pct_target": 0.797752808988764,
+        "empirical_coverage_at_90pct_target": 0.8876404494382022,
+        "max_pi_width_K": 471.10980835449766,
+        "mean_pi_width_K": 388.8669731504064,
+        "min_pi_width_K": 354.9981071814434,
+        "n_calibration": 88,
+        "n_polymers": 442,
+        "n_test": 89,
+        "n_train": 265,
+        "pi_width_max_over_min_ratio": 1.327076958508143,
+        "target_coverage": 0.95,
+        "test_mae_K": 51.84976541921773
+      }
+    },
+    {
+      "filename": "split-conformal-on-rf-ml-openpoly-tg-kpi.v1.json",
+      "kpi_id": "amphora-tolerance-robustness-phase0-split-conformal-on-rf-ml-openpoly-tg-v1",
+      "capability": "Split-conformal (Papadopoulos et al 2002) on RandomForestRegressor ML base predictor on 442 openpoly experimental Tg polymers. 60/20/20 seed=0 train/calibration/test split. REAL POSITIVE FINDING: empirical coverage = 0.9663 on target 0.95 (deviation +0.0163). PI width = 343.49 K, +8.4% tighter than Push #29 physics-Ridge conformal. Test MAE = 48.62 K, R\u00b2 = +0.408. Demonstrates conformal wrapper is",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "conformal_qhat_K": 171.74477976958684,
+        "empirical_coverage_95": 0.9662921348314607,
+        "n_calibration": 88,
+        "n_polymers": 442,
+        "n_test": 89,
+        "n_train": 265,
+        "pi_width_K": 343.4895595391737,
+        "pi_width_reduction_over_push_29_K": 31.420518319811492,
+        "pi_width_reduction_over_push_29_pct": 8.380814540714928,
+        "target_coverage": 0.95,
+        "test_mae_K": 48.6220020231134,
+        "test_pearson_r": 0.6473129863804995,
+        "test_r2": 0.4080882995317969
+      }
+    },
+    {
+      "filename": "split-conformal-prediction-openpoly-tg-kpi.v1.json",
+      "kpi_id": "amphora-tolerance-robustness-phase0-split-conformal-prediction-openpoly-tg-v1",
+      "capability": "Split-conformal prediction (Papadopoulos-Proedrou-Vovk-Gammerman 2002) on 442 openpoly experimental Tg polymers. Base predictor: Push #20 Ridge Y_gi (frozen). 50/50 deterministic calibration/test split (seed=0). Nonconformity = absolute residual. REAL POSITIVE FINDING: empirical coverage = 0.9683 on nominal 95% target (deviation +0.0183). LIFT over Push #28 bootstrap PI = +0.7172 (+71.7pp). PI wid",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 11,
+      "n_deterministic_gates_passed": 11,
+      "observed_kpi_summary": {
+        "conformal_qhat_K": 187.45503892949256,
+        "coverage_at_68pct_target": 0.6606334841628959,
+        "coverage_at_80pct_target": 0.7239819004524887,
+        "coverage_at_90pct_target": 0.8868778280542986,
+        "coverage_lift_over_push_28": 0.7171945701357466,
+        "empirical_coverage_95": 0.9683257918552036,
+        "mean_pi_width_K": 374.9100778589852,
+        "n_calibration": 221,
+        "n_polymers": 442,
+        "n_test": 221,
+        "target_coverage": 0.95
+      }
+    }
+  ],
+  "amphora-tui": [],
+  "amphora-viscosity-score": [
+    {
+      "filename": "polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-vs-ml-kpi.v1.json",
+      "kpi_id": "amphora-viscosity-score-phase0-polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-vs-ml-v1",
+      "capability": "Fox-Flory-Whitten (1948-1954) physical scaling-law baseline vs ML comparison for polymer melt viscosity. Second KPI on the same polymer-safe test set as the prior conformal+AD receipt, directly answering the standard red-team challenge 'does your ML actually beat the classical \u03b7 ~ Mw^3.4 scaling law?'. HONEST FINDING: physical baseline B3 (log \u03b7 = a + b \u00d7 log Mw + c \u00d7 1/T) at R\u00b2 +0.5972 BEATS full",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 10,
+      "n_deterministic_gates_passed": 10,
+      "observed_kpi_summary": {
+        "b0_constant_r2": -0.0009111338608740471,
+        "b1_ffw_pure_r2": 0.3550221097816937,
+        "b2_ffw_linear_mw_only_r2": 0.592331623243917,
+        "b3_beats_b4_by_r2": 0.1435575102463662,
+        "b3_ffw_linear_mw_and_T_r2": 0.5971547184970754,
+        "b4_full_ml_histgbm_r2": 0.45359720825070915,
+        "fitted_mw_slope_b2": 2.1106877257887304
+      }
+    },
+    {
+      "filename": "polyverse-melt-viscosity-polymer-safe-conformal-coverage-and-applicability-domain-kpi.v1.json",
+      "kpi_id": "amphora-viscosity-score-phase0-polyverse-melt-viscosity-polymer-safe-conformal-coverage-and-applicability-domain-v1",
+      "capability": "Distribution-free calibrated prediction intervals + applicability-domain audit + honest polymer-safe vs source-safe R\u00b2 gap documentation for polymer melt viscosity \u2014 the primary rheological property governing coating application (spray, brush, dip) and self-leveling. Data: Polyverse melt viscosity (1,380 (polymer SMILES, Mn, Mw, PDI, T, shear) measurements across 67 unique polymers). Polymer-safe ",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": 13,
+      "n_deterministic_gates_passed": 13,
+      "observed_kpi_summary": {
+        "hostile_null_marginal_coverage_alpha_010": 0.8974358974358975,
+        "hostile_null_width_inflation": 1.15152048979306,
+        "median_interval_width_log10_Pa_s_alpha_010": 6.547938830928284,
+        "median_interval_width_log10_Pa_s_alpha_020": 4.419995049884621,
+        "parent_source_safe_r2_from_parent_receipt": 0.944,
+        "polymer_safe_marginal_coverage_alpha_010": 0.8974358974358975,
+        "polymer_safe_marginal_coverage_alpha_020": 0.8102564102564103,
+        "polymer_safe_test_r2": 0.4534544258291535,
+        "r2_gap_polymer_safe_minus_source_safe": -0.49054557417084643
+      }
+    },
+    {
+      "filename": "viscosity-arrhenius-kpi.v1.json",
+      "kpi_id": "amphora-viscosity-score-phase0-arrhenius-v1",
+      "capability": "Deterministic Arrhenius temperature dependence of pure-solvent Newtonian viscosity (Svante Arrhenius 1889); \u03b7(T) = \u03b7_ref \u00b7 exp[(E_a/R)\u00b7(1/T \u2212 1/T_ref)]. Phase-0 covers pure Newtonian solvents only; Phase-1 will extend to formulation blends (Grunberg-Nissan), pigment crowding (Krieger-Dougherty), non-Newtonian yield flow (Herschel-Bulkley), and Krebs KU + sag with wet-lab data.",
+      "phase0_deterministic_gates_passed": true,
+      "n_deterministic_gates_defined": null,
+      "n_deterministic_gates_passed": null,
+      "observed_kpi_summary": {}
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "f50f24a0b134d3b8776f40b52cd436a137eec60b4fa62896b93df12617d085e1",
+  "payload_decoded": {
+    "acceptance": {
+      "command": "RDKIT_INCLUDE_DIR/RDKIT_LIB_DIR/BOOST_INCLUDE_DIR/LD_LIBRARY_PATH from /home/ubuntu/.local/share/amphora/rdkit-2026.03.2; flock -w 300 .cron.lock ~/.cargo/bin/cargo test --workspace --locked --features rdkit",
+      "exit_code": 0,
+      "log_sha256": "29c6152c46fbc87c014fa934ca3016b8a005c02801f85ae32d8f7e047e5b634c",
+      "suites": 62,
+      "tests_failed": 0,
+      "tests_ignored": 0,
+      "tests_passed": 372,
+      "toolchain": "1.96.0 (rust-toolchain.toml)"
+    },
+    "authority": "AUDIT_ONLY",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "clean_git_status_proof": {
+      "claim": "running the full acceptance suite no longer mutates any shipped Phase-0 benchmark result",
+      "git_status_is_clean": true,
+      "git_status_porcelain_on_pathspec": "",
+      "method": "sha256sum of all 27 */evidence/phase0/benchmark/result.v1.json captured before the run and compared after, plus git status --porcelain on the same pathspec",
+      "sha256_diff_before_vs_after": "IDENTICAL"
+    },
+    "collateral_damage_found": {
+      "modules_with_destroyed_evaluated_bytes": [
+        "amphora-cro-protocol-packager",
+        "amphora-evidence-intake-validator",
+        "amphora-known-answer-benchmarks",
+        "amphora-molecule-design-gate",
+        "amphora-molecule-property",
+        "amphora-optimizer-orchestrator",
+        "amphora-redteam-audit",
+        "amphora-report-packager",
+        "amphora-source-ledger"
+      ],
+      "no_synthesis_performed": "No attempt was made to synthesize bytes to hit the pinned hashes. Restoring these modules to PHASE_0 requires a fresh evaluation through the authority path, which is a promotion ceremony and is out of scope for this repair.",
+      "recovery_attempted": true,
+      "recovery_failure_cause": "The recorded diagnostics were produced under an earlier config/benchmark-lock.v1.json and module-manifest.json (e.g. 940ee9ad.../25b7b7f0... vs the current 43de2cbf.../571813ee...), so the live locked diagnostic no longer reproduces the evaluated bytes. This drift is legitimate and is tolerated by the verifier for already-promoted modules, but it makes byte recovery impossible.",
+      "recovery_method": "Faithful CPython re-derivation of execute_locked_benchmark() + the evaluate() result envelope + write_json_immutable canonicalization (to_vec_pretty(canonicalize(value)) + b'\\n'), re-run against the live `benchmark run --locked --all` output.",
+      "recovery_method_validated_on_control": {
+        "meaning": "the re-derivation is byte-faithful, so the failures below are a genuine loss of the evaluated bytes, not a defect in the recovery method",
+        "module": "amphora-solvency-score",
+        "regenerated_sha256_equals_pinned_sha256": true
+      },
+      "recovery_result": "FAILED for all 9 modules",
+      "searched_for_backups": [
+        "whole-tree find for */evidence/phase0/benchmark/result.v1.json outside mvp20-split on xbabe2: none",
+        "git history of the mvp20-split repository: the first commit already contains the clobbered bytes",
+        "module-local evidence/phase0/raw/objects and evidence/phase0/review/packet.v1.json: no embedded copy",
+        "veox investor package tarballs: contain no Phase-0 benchmark results"
+      ],
+      "statement": "The harness writer did not merely produce a rejected shape - it destroyed the evaluated bytes for 9 modules that had already been evaluated under the authority path. Those bytes are pinned by signed receipts and are not recoverable from this repository."
+    },
+    "date": "2026-08-04",
+    "defect": "Two writers produced <module>/evidence/phase0/benchmark/result.v1.json in incompatible shapes. The runtime evaluator writes the RUNTIME envelope and pins its exact SHA-256 into the immutable signed Phase-0 evaluation receipt; the per-module KPI integration harnesses overwrote the same path with the MODULE-HARNESS report shape, destroying the evaluated bytes and silently dropping the module out of phase0_count.",
+    "does_not_establish": [
+      "does not establish that the 8 promoted modules with destroyed benchmark bytes are scientifically invalid - only that their Phase-0 evidence binding is broken",
+      "does not establish any product performance, qualification, or superiority claim",
+      "does not re-promote or demote anything; phase is derived, never asserted"
+    ],
+    "fix": {
+      "change": "All 27 per-module Phase-0 KPI integration tests now round-trip their byte-stability artifact through env!(\"CARGO_TARGET_TMPDIR\") (target/tmp/<module>-phase0-kpi-result.v1.json). Two-replay byte-stability semantics are unchanged: each test still serializes the report twice, asserts the two serializations are byte-identical, writes, and asserts the read-back bytes are identical.",
+      "files_changed": {
+        "amphora-cli/src/phase0.rs": "400232e300d28990ec08df7abd159684eb86f2cdabe1894eb3fd5a0acc47de9d",
+        "per_module_kpi_tests_changed": 27
+      },
+      "option_b_rejected_because": "The harness cannot emit the RUNTIME envelope honestly. The envelope is not merely a shape: verify_evaluation_result requires the file to hash to the value already pinned in the immutable signed evaluation receipt. Only the evaluator that produced those bytes can reproduce them, so any harness-written RUNTIME envelope would either fail the hash gate or be a forgery.",
+      "option_chosen": "(a) module harnesses stop writing the shared evidence path",
+      "verifier_hardened_by": "new governance test amphora-cli/src/phase0.rs::tests::shipped_benchmark_results_stay_bound_to_signed_evaluation_receipts, which recomputes, for every module holding a signed evaluation receipt, whether the shipped benchmark result still hashes to the pinned metrics.benchmark_result_sha256, and fails if that set changes in either direction",
+      "verifier_not_weakened": true
+    },
+    "flips_scientific_readiness": false,
+    "follow_up_required": [
+      "amphora-cro-protocol-packager, amphora-evidence-intake-validator, amphora-known-answer-benchmarks, amphora-molecule-design-gate, amphora-optimizer-orchestrator, amphora-redteam-audit, amphora-report-packager, amphora-source-ledger each need a fresh authority-path evaluation (reissue -> evaluate -> independent review -> movement) before they can derive PHASE_0 again; their existing signed evaluation receipts must not be deleted",
+      "amphora-molecule-property has a destroyed binding too but was never independently reviewed, so its phase is unaffected",
+      "/home/ubuntu/amphora-autocommit-guard.sh restores RUNTIME-shape flips; with this repair in place no flip should ever occur again, so any RESTORED_SCHEMA_FLIP line in logs/autocommit-guard.log after 2026-08-04 indicates a new writer regression"
+    ],
+    "generated_on_host": "xbabe2",
+    "human_review_performed": false,
+    "modifies_benchmark_lock": false,
+    "modifies_existing_receipts": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_mission_front_matter": false,
+    "modifies_signed_phase0_kpi": false,
+    "module": "amphora-redteam-audit",
+    "organizational_independence_asserted": false,
+    "phase": "PRE_PHASE_0",
+    "portfolio_count_reconciliation": {
+      "count_derived_two_independent_ways": {
+        "agree": true,
+        "amphora-cli verifier (portfolio phase0 status --all)": 9,
+        "independent CPython re-derivation (work/b2_diagnostic.py)": 9
+      },
+      "count_if_destroyed_bindings_were_restored": 17,
+      "honest_derived_phase0_count": 9,
+      "honest_derived_pre_phase0_count": 20,
+      "new_pinned_assertion": 9,
+      "new_pinned_pre_phase0_assertion": 20,
+      "not_a_lowered_bar": "The verifier was not relaxed. The count fell because the verifier is correctly refusing modules whose evaluated benchmark bytes no longer match their signed receipt.",
+      "per_module_reasons": [
+        {
+          "module_id": "amphora-barrier-corrosion-score",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-candidate-contract",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-cro-protocol-packager",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-cure-potlife-gate",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-design-rule-score",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-envelope-gates",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-evidence-intake-validator",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-formulation-arithmetic",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-formulation-universe",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-ingredient-library",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-ip-fto-guard",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-known-answer-benchmarks",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-model-card-authority",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-molecule-design-gate",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-molecule-generator",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-molecule-novelty",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-molecule-property",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-molecule-role-ranker",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-optimizer-orchestrator",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-process-qc-twin",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-public-corrosion-benchmark",
+          "phase": "PRE_PHASE_0",
+          "reason": "INDEPENDENT_REVIEW_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-redteam-audit",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-report-packager",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-run-provenance",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-solvency-score",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-source-ledger",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_RESULT_MISMATCH_BENCHMARK_BYTES_DESTROYED_BY_HARNESS_WRITER"
+        },
+        {
+          "module_id": "amphora-sourceability-ehs",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        },
+        {
+          "module_id": "amphora-tolerance-robustness",
+          "phase": "PHASE_0",
+          "reason": "EVALUATED_REVIEWED_AND_MOVED_WITH_INTACT_BENCHMARK_BINDING"
+        },
+        {
+          "module_id": "amphora-viscosity-score",
+          "phase": "PRE_PHASE_0",
+          "reason": "EVALUATION_SIGNATURE_ABSENT"
+        }
+      ],
+      "phase0_modules": [
+        "amphora-candidate-contract",
+        "amphora-envelope-gates",
+        "amphora-formulation-arithmetic",
+        "amphora-formulation-universe",
+        "amphora-model-card-authority",
+        "amphora-process-qc-twin",
+        "amphora-run-provenance",
+        "amphora-solvency-score",
+        "amphora-tolerance-robustness"
+      ],
+      "previous_assertion_location": "amphora-cli/src/phase0.rs::tests::source_ledger_historical_movement_and_status_are_read_only",
+      "previous_assertion_status": "STALE - described a portfolio state destroyed before this repair",
+      "previous_pinned_assertion": 16
+    },
+    "promotes_authority": false,
+    "provenance": {
+      "acceptance_log_sha256": "29c6152c46fbc87c014fa934ca3016b8a005c02801f85ae32d8f7e047e5b634c",
+      "amphora_cli_phase0_rs_sha256": "400232e300d28990ec08df7abd159684eb86f2cdabe1894eb3fd5a0acc47de9d",
+      "harness_sha256": {
+        "work/b2_diagnostic.py": "5581520b951d83ab4f734714afc10184d314499542e6d0470ac7ac5f63917ec5",
+        "work/regen_runtime_results.py": "c1e5d411bb32a41426508d69c8134c935fb1fc9c83c9676b8c2005443319cfe7"
+      }
+    },
+    "receipt_location_note": "amphora-cli has no evidence/ tree, so this receipt is filed under amphora-redteam-audit/evidence/phase0/repairs/B2/done/ as instructed. The engineering change itself is in amphora-cli/src/phase0.rs and in 27 per-module Phase-0 KPI integration tests across 8 crates.",
+    "repair_item": "B2",
+    "repair_mode": "interactive-2026-08-04",
+    "reproducibility": {
+      "byte_identical": true,
+      "canonical_diagnostic_sha256": "7bf014d06f14acb7096779dab06c8969ce9c5ea26ebce278e28e660939e48523",
+      "replay_method": "work/b2_diagnostic.py re-derives both writers, the per-module shipped-bytes-vs-signed-receipt binding, and the honest Phase-0 phase for all 29 modules from the tree alone, with no clock and no environment input",
+      "runB_diagnostic_sha256": "7bf014d06f14acb7096779dab06c8969ce9c5ea26ebce278e28e660939e48523",
+      "two_replay_sha256": "7bf014d06f14acb7096779dab06c8969ce9c5ea26ebce278e28e660939e48523",
+      "two_replay_sha256_gate": "PASS"
+    },
+    "reviewer_reference": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+      "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+      "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+      "reviewer_signature_present": false,
+      "role": "PHASE0_INTERNAL_REVIEWER"
+    },
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR",
+      "signs_phase0_evaluation_or_review": false,
+      "used_for": "AUDIT_ONLY repair done-receipt under evidence/phase0/repairs/"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "writers": {
+      "module_harness_writers": {
+        "call": "fs::write(&result_path, &first_bytes).expect(\"write result artifact\")",
+        "count": 27,
+        "covers_modules": 27,
+        "files": [
+          "amphora-assurance-capabilities/tests/cro_protocol_packager_phase0_kpi.rs",
+          "amphora-assurance-capabilities/tests/evidence_intake_validator_phase0_kpi.rs",
+          "amphora-assurance-capabilities/tests/ip_fto_guard_phase0_kpi.rs",
+          "amphora-assurance-capabilities/tests/known_answer_benchmarks_phase0_kpi.rs",
+          "amphora-assurance-capabilities/tests/optimizer_orchestrator_phase0_kpi.rs",
+          "amphora-assurance-capabilities/tests/redteam_audit_phase0_kpi.rs",
+          "amphora-assurance-capabilities/tests/report_packager_phase0_kpi.rs",
+          "amphora-assurance-capabilities/tests/source_ledger_phase0_kpi.rs",
+          "amphora-assurance-capabilities/tests/sourceability_ehs_phase0_kpi.rs",
+          "amphora-core/tests/candidate_contract_phase0_kpi.rs",
+          "amphora-core/tests/run_provenance_phase0_kpi.rs",
+          "amphora-cure-potlife-gate/tests/cure_potlife_phase0_kpi.rs",
+          "amphora-formulation-capabilities/tests/design_rule_score_phase0_kpi.rs",
+          "amphora-formulation-capabilities/tests/envelope_gates_phase0_kpi.rs",
+          "amphora-formulation-capabilities/tests/formulation_arithmetic_phase0_kpi.rs",
+          "amphora-formulation-capabilities/tests/formulation_universe_phase0_kpi.rs",
+          "amphora-formulation-capabilities/tests/ingredient_library_phase0_kpi.rs",
+          "amphora-formulation-capabilities/tests/process_qc_twin_phase0_kpi.rs",
+          "amphora-formulation-capabilities/tests/public_corrosion_benchmark_phase0_kpi.rs",
+          "amphora-formulation-capabilities/tests/tolerance_robustness_phase0_kpi.rs",
+          "amphora-molecule-capabilities/tests/design_gate_phase0_kpi.rs",
+          "amphora-molecule-capabilities/tests/molecule_generator_phase0_kpi.rs",
+          "amphora-molecule-capabilities/tests/molecule_novelty_phase0_kpi.rs",
+          "amphora-molecule-capabilities/tests/property_phase0_kpi.rs",
+          "amphora-molecule-capabilities/tests/role_ranker_phase0_kpi.rs",
+          "amphora-solvency-score/tests/solvency_phase0_kpi.rs",
+          "amphora-viscosity-score/tests/viscosity_phase0_kpi.rs"
+        ],
+        "shape": "MODULE_HARNESS: {module_id, benchmark_id, benchmark_lock_sha256, dataset_fixture_sha256, kpi, records, benchmark_execution_complete, first_replay{diagnostic_receipt, diagnostic_sha256}, second_replay}; no first_replay.execution_passed and no diagnostic_receipt.metrics.details"
+      },
+      "runtime_authority_writer": {
+        "binding": "the exact bytes are hashed into the immutable signed evaluation receipt as metrics.benchmark_result_sha256 and re-checked by verify_evaluation_result(); this is why an overwrite is fatal",
+        "call": "write_json_immutable(phase0_dir.join(\"benchmark/result.v1.json\"), &result)",
+        "covers_modules": 19,
+        "covers_modules_note": "every module that holds evidence/phase0/receipts/evaluation.v1.dsse.json",
+        "file": "amphora-cli/src/phase0.rs",
+        "function": "evaluate",
+        "shape": "RUNTIME: {schema, module_id, bundle_sha256, first_replay, second_replay, replay_identical, benchmark_execution_complete, legacy_local_receipt_authority, scientific_outcome}; first_replay/second_replay come from execute_locked_benchmark() and carry execution_passed, exit_code, scientific_passed, diagnostic_receipt, diagnostic_sha256, stderr_sha256"
+      },
+      "verifier_path_that_rejects_the_harness_shape": [
+        "amphora-cli/src/phase0.rs::verify_module_with_replay",
+        "amphora-cli/src/phase0.rs::verify_evaluation_result",
+        "amphora-cli/src/phase0.rs::verify_deterministic_diagnostic",
+        "amphora-cli/src/phase0.rs::benchmark_execution_complete"
+      ]
+    }
+  },
+  "reviewer_public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+  "signature": {
+    "payload": "ewogICJhY2NlcHRhbmNlIjogewogICAgImNvbW1hbmQiOiAiUkRLSVRfSU5DTFVERV9ESVIvUkRLSVRfTElCX0RJUi9CT09TVF9JTkNMVURFX0RJUi9MRF9MSUJSQVJZX1BBVEggZnJvbSAvaG9tZS91YnVudHUvLmxvY2FsL3NoYXJlL2FtcGhvcmEvcmRraXQtMjAyNi4wMy4yOyBmbG9jayAtdyAzMDAgLmNyb24ubG9jayB+Ly5jYXJnby9iaW4vY2FyZ28gdGVzdCAtLXdvcmtzcGFjZSAtLWxvY2tlZCAtLWZlYXR1cmVzIHJka2l0IiwKICAgICJleGl0X2NvZGUiOiAwLAogICAgImxvZ19zaGEyNTYiOiAiMjljNjE1MmM0NmZiYzg3YzAxNGZhOTM0Y2EzMDE2YjhhMDA1YzAyODAxZjg1YWUzMmQ4ZjdlMDQ3ZTViNjM0YyIsCiAgICAic3VpdGVzIjogNjIsCiAgICAidGVzdHNfZmFpbGVkIjogMCwKICAgICJ0ZXN0c19pZ25vcmVkIjogMCwKICAgICJ0ZXN0c19wYXNzZWQiOiAzNzIsCiAgICAidG9vbGNoYWluIjogIjEuOTYuMCAocnVzdC10b29sY2hhaW4udG9tbCkiCiAgfSwKICAiYXV0aG9yaXR5IjogIkFVRElUX09OTFkiLAogICJhdXRob3JpdHlfY2VpbGluZyI6ICJFVklERU5DRV9PTkxZIiwKICAiY2xlYW5fZ2l0X3N0YXR1c19wcm9vZiI6IHsKICAgICJjbGFpbSI6ICJydW5uaW5nIHRoZSBmdWxsIGFjY2VwdGFuY2Ugc3VpdGUgbm8gbG9uZ2VyIG11dGF0ZXMgYW55IHNoaXBwZWQgUGhhc2UtMCBiZW5jaG1hcmsgcmVzdWx0IiwKICAgICJnaXRfc3RhdHVzX2lzX2NsZWFuIjogdHJ1ZSwKICAgICJnaXRfc3RhdHVzX3BvcmNlbGFpbl9vbl9wYXRoc3BlYyI6ICIiLAogICAgIm1ldGhvZCI6ICJzaGEyNTZzdW0gb2YgYWxsIDI3ICovZXZpZGVuY2UvcGhhc2UwL2JlbmNobWFyay9yZXN1bHQudjEuanNvbiBjYXB0dXJlZCBiZWZvcmUgdGhlIHJ1biBhbmQgY29tcGFyZWQgYWZ0ZXIsIHBsdXMgZ2l0IHN0YXR1cyAtLXBvcmNlbGFpbiBvbiB0aGUgc2FtZSBwYXRoc3BlYyIsCiAgICAic2hhMjU2X2RpZmZfYmVmb3JlX3ZzX2FmdGVyIjogIklERU5USUNBTCIKICB9LAogICJjb2xsYXRlcmFsX2RhbWFnZV9mb3VuZCI6IHsKICAgICJtb2R1bGVzX3dpdGhfZGVzdHJveWVkX2V2YWx1YXRlZF9ieXRlcyI6IFsKICAgICAgImFtcGhvcmEtY3JvLXByb3RvY29sLXBhY2thZ2VyIiwKICAgICAgImFtcGhvcmEtZXZpZGVuY2UtaW50YWtlLXZhbGlkYXRvciIsCiAgICAgICJhbXBob3JhLWtub3duLWFuc3dlci1iZW5jaG1hcmtzIiwKICAgICAgImFtcGhvcmEtbW9sZWN1bGUtZGVzaWduLWdhdGUiLAogICAgICAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eSIsCiAgICAgICJhbXBob3JhLW9wdGltaXplci1vcmNoZXN0cmF0b3IiLAogICAgICAiYW1waG9yYS1yZWR0ZWFtLWF1ZGl0IiwKICAgICAgImFtcGhvcmEtcmVwb3J0LXBhY2thZ2VyIiwKICAgICAgImFtcGhvcmEtc291cmNlLWxlZGdlciIKICAgIF0sCiAgICAibm9fc3ludGhlc2lzX3BlcmZvcm1lZCI6ICJObyBhdHRlbXB0IHdhcyBtYWRlIHRvIHN5bnRoZXNpemUgYnl0ZXMgdG8gaGl0IHRoZSBwaW5uZWQgaGFzaGVzLiBSZXN0b3JpbmcgdGhlc2UgbW9kdWxlcyB0byBQSEFTRV8wIHJlcXVpcmVzIGEgZnJlc2ggZXZhbHVhdGlvbiB0aHJvdWdoIHRoZSBhdXRob3JpdHkgcGF0aCwgd2hpY2ggaXMgYSBwcm9tb3Rpb24gY2VyZW1vbnkgYW5kIGlzIG91dCBvZiBzY29wZSBmb3IgdGhpcyByZXBhaXIuIiwKICAgICJyZWNvdmVyeV9hdHRlbXB0ZWQiOiB0cnVlLAogICAgInJlY292ZXJ5X2ZhaWx1cmVfY2F1c2UiOiAiVGhlIHJlY29yZGVkIGRpYWdub3N0aWNzIHdlcmUgcHJvZHVjZWQgdW5kZXIgYW4gZWFybGllciBjb25maWcvYmVuY2htYXJrLWxvY2sudjEuanNvbiBhbmQgbW9kdWxlLW1hbmlmZXN0Lmpzb24gKGUuZy4gOTQwZWU5YWQuLi4vMjViN2I3ZjAuLi4gdnMgdGhlIGN1cnJlbnQgNDNkZTJjYmYuLi4vNTcxODEzZWUuLi4pLCBzbyB0aGUgbGl2ZSBsb2NrZWQgZGlhZ25vc3RpYyBubyBsb25nZXIgcmVwcm9kdWNlcyB0aGUgZXZhbHVhdGVkIGJ5dGVzLiBUaGlzIGRyaWZ0IGlzIGxlZ2l0aW1hdGUgYW5kIGlzIHRvbGVyYXRlZCBieSB0aGUgdmVyaWZpZXIgZm9yIGFscmVhZHktcHJvbW90ZWQgbW9kdWxlcywgYnV0IGl0IG1ha2VzIGJ5dGUgcmVjb3ZlcnkgaW1wb3NzaWJsZS4iLAogICAgInJlY292ZXJ5X21ldGhvZCI6ICJGYWl0aGZ1bCBDUHl0aG9uIHJlLWRlcml2YXRpb24gb2YgZXhlY3V0ZV9sb2NrZWRfYmVuY2htYXJrKCkgKyB0aGUgZXZhbHVhdGUoKSByZXN1bHQgZW52ZWxvcGUgKyB3cml0ZV9qc29uX2ltbXV0YWJsZSBjYW5vbmljYWxpemF0aW9uICh0b192ZWNfcHJldHR5KGNhbm9uaWNhbGl6ZSh2YWx1ZSkpICsgYidcXG4nKSwgcmUtcnVuIGFnYWluc3QgdGhlIGxpdmUgYGJlbmNobWFyayBydW4gLS1sb2NrZWQgLS1hbGxgIG91dHB1dC4iLAogICAgInJlY292ZXJ5X21ldGhvZF92YWxpZGF0ZWRfb25fY29udHJvbCI6IHsKICAgICAgIm1lYW5pbmciOiAidGhlIHJlLWRlcml2YXRpb24gaXMgYnl0ZS1mYWl0aGZ1bCwgc28gdGhlIGZhaWx1cmVzIGJlbG93IGFyZSBhIGdlbnVpbmUgbG9zcyBvZiB0aGUgZXZhbHVhdGVkIGJ5dGVzLCBub3QgYSBkZWZlY3QgaW4gdGhlIHJlY292ZXJ5IG1ldGhvZCIsCiAgICAgICJtb2R1bGUiOiAiYW1waG9yYS1zb2x2ZW5jeS1zY29yZSIsCiAgICAgICJyZWdlbmVyYXRlZF9zaGEyNTZfZXF1YWxzX3Bpbm5lZF9zaGEyNTYiOiB0cnVlCiAgICB9LAogICAgInJlY292ZXJ5X3Jlc3VsdCI6ICJGQUlMRUQgZm9yIGFsbCA5IG1vZHVsZXMiLAogICAgInNlYXJjaGVkX2Zvcl9iYWNrdXBzIjogWwogICAgICAid2hvbGUtdHJlZSBmaW5kIGZvciAqL2V2aWRlbmNlL3BoYXNlMC9iZW5jaG1hcmsvcmVzdWx0LnYxLmpzb24gb3V0c2lkZSBtdnAyMC1zcGxpdCBvbiB4YmFiZTI6IG5vbmUiLAogICAgICAiZ2l0IGhpc3Rvcnkgb2YgdGhlIG12cDIwLXNwbGl0IHJlcG9zaXRvcnk6IHRoZSBmaXJzdCBjb21taXQgYWxyZWFkeSBjb250YWlucyB0aGUgY2xvYmJlcmVkIGJ5dGVzIiwKICAgICAgIm1vZHVsZS1sb2NhbCBldmlkZW5jZS9waGFzZTAvcmF3L29iamVjdHMgYW5kIGV2aWRlbmNlL3BoYXNlMC9yZXZpZXcvcGFja2V0LnYxLmpzb246IG5vIGVtYmVkZGVkIGNvcHkiLAogICAgICAidmVveCBpbnZlc3RvciBwYWNrYWdlIHRhcmJhbGxzOiBjb250YWluIG5vIFBoYXNlLTAgYmVuY2htYXJrIHJlc3VsdHMiCiAgICBdLAogICAgInN0YXRlbWVudCI6ICJUaGUgaGFybmVzcyB3cml0ZXIgZGlkIG5vdCBtZXJlbHkgcHJvZHVjZSBhIHJlamVjdGVkIHNoYXBlIC0gaXQgZGVzdHJveWVkIHRoZSBldmFsdWF0ZWQgYnl0ZXMgZm9yIDkgbW9kdWxlcyB0aGF0IGhhZCBhbHJlYWR5IGJlZW4gZXZhbHVhdGVkIHVuZGVyIHRoZSBhdXRob3JpdHkgcGF0aC4gVGhvc2UgYnl0ZXMgYXJlIHBpbm5lZCBieSBzaWduZWQgcmVjZWlwdHMgYW5kIGFyZSBub3QgcmVjb3ZlcmFibGUgZnJvbSB0aGlzIHJlcG9zaXRvcnkuIgogIH0sCiAgImRhdGUiOiAiMjAyNi0wOC0wNCIsCiAgImRlZmVjdCI6ICJUd28gd3JpdGVycyBwcm9kdWNlZCA8bW9kdWxlPi9ldmlkZW5jZS9waGFzZTAvYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uIGluIGluY29tcGF0aWJsZSBzaGFwZXMuIFRoZSBydW50aW1lIGV2YWx1YXRvciB3cml0ZXMgdGhlIFJVTlRJTUUgZW52ZWxvcGUgYW5kIHBpbnMgaXRzIGV4YWN0IFNIQS0yNTYgaW50byB0aGUgaW1tdXRhYmxlIHNpZ25lZCBQaGFzZS0wIGV2YWx1YXRpb24gcmVjZWlwdDsgdGhlIHBlci1tb2R1bGUgS1BJIGludGVncmF0aW9uIGhhcm5lc3NlcyBvdmVyd3JvdGUgdGhlIHNhbWUgcGF0aCB3aXRoIHRoZSBNT0RVTEUtSEFSTkVTUyByZXBvcnQgc2hhcGUsIGRlc3Ryb3lpbmcgdGhlIGV2YWx1YXRlZCBieXRlcyBhbmQgc2lsZW50bHkgZHJvcHBpbmcgdGhlIG1vZHVsZSBvdXQgb2YgcGhhc2UwX2NvdW50LiIsCiAgImRvZXNfbm90X2VzdGFibGlzaCI6IFsKICAgICJkb2VzIG5vdCBlc3RhYmxpc2ggdGhhdCB0aGUgOCBwcm9tb3RlZCBtb2R1bGVzIHdpdGggZGVzdHJveWVkIGJlbmNobWFyayBieXRlcyBhcmUgc2NpZW50aWZpY2FsbHkgaW52YWxpZCAtIG9ubHkgdGhhdCB0aGVpciBQaGFzZS0wIGV2aWRlbmNlIGJpbmRpbmcgaXMgYnJva2VuIiwKICAgICJkb2VzIG5vdCBlc3RhYmxpc2ggYW55IHByb2R1Y3QgcGVyZm9ybWFuY2UsIHF1YWxpZmljYXRpb24sIG9yIHN1cGVyaW9yaXR5IGNsYWltIiwKICAgICJkb2VzIG5vdCByZS1wcm9tb3RlIG9yIGRlbW90ZSBhbnl0aGluZzsgcGhhc2UgaXMgZGVyaXZlZCwgbmV2ZXIgYXNzZXJ0ZWQiCiAgXSwKICAiZml4IjogewogICAgImNoYW5nZSI6ICJBbGwgMjcgcGVyLW1vZHVsZSBQaGFzZS0wIEtQSSBpbnRlZ3JhdGlvbiB0ZXN0cyBub3cgcm91bmQtdHJpcCB0aGVpciBieXRlLXN0YWJpbGl0eSBhcnRpZmFjdCB0aHJvdWdoIGVudiEoXCJDQVJHT19UQVJHRVRfVE1QRElSXCIpICh0YXJnZXQvdG1wLzxtb2R1bGU+LXBoYXNlMC1rcGktcmVzdWx0LnYxLmpzb24pLiBUd28tcmVwbGF5IGJ5dGUtc3RhYmlsaXR5IHNlbWFudGljcyBhcmUgdW5jaGFuZ2VkOiBlYWNoIHRlc3Qgc3RpbGwgc2VyaWFsaXplcyB0aGUgcmVwb3J0IHR3aWNlLCBhc3NlcnRzIHRoZSB0d28gc2VyaWFsaXphdGlvbnMgYXJlIGJ5dGUtaWRlbnRpY2FsLCB3cml0ZXMsIGFuZCBhc3NlcnRzIHRoZSByZWFkLWJhY2sgYnl0ZXMgYXJlIGlkZW50aWNhbC4iLAogICAgImZpbGVzX2NoYW5nZWQiOiB7CiAgICAgICJhbXBob3JhLWNsaS9zcmMvcGhhc2UwLnJzIjogIjQwMDIzMmUzMDBkMjg5OTBlYzA4ZGY3YWJkMTU5Njg0ZWI4NmYyY2RhYmUxODk0ZWIzZmQ1YTBhY2M0N2RlOWQiLAogICAgICAicGVyX21vZHVsZV9rcGlfdGVzdHNfY2hhbmdlZCI6IDI3CiAgICB9LAogICAgIm9wdGlvbl9iX3JlamVjdGVkX2JlY2F1c2UiOiAiVGhlIGhhcm5lc3MgY2Fubm90IGVtaXQgdGhlIFJVTlRJTUUgZW52ZWxvcGUgaG9uZXN0bHkuIFRoZSBlbnZlbG9wZSBpcyBub3QgbWVyZWx5IGEgc2hhcGU6IHZlcmlmeV9ldmFsdWF0aW9uX3Jlc3VsdCByZXF1aXJlcyB0aGUgZmlsZSB0byBoYXNoIHRvIHRoZSB2YWx1ZSBhbHJlYWR5IHBpbm5lZCBpbiB0aGUgaW1tdXRhYmxlIHNpZ25lZCBldmFsdWF0aW9uIHJlY2VpcHQuIE9ubHkgdGhlIGV2YWx1YXRvciB0aGF0IHByb2R1Y2VkIHRob3NlIGJ5dGVzIGNhbiByZXByb2R1Y2UgdGhlbSwgc28gYW55IGhhcm5lc3Mtd3JpdHRlbiBSVU5USU1FIGVudmVsb3BlIHdvdWxkIGVpdGhlciBmYWlsIHRoZSBoYXNoIGdhdGUgb3IgYmUgYSBmb3JnZXJ5LiIsCiAgICAib3B0aW9uX2Nob3NlbiI6ICIoYSkgbW9kdWxlIGhhcm5lc3NlcyBzdG9wIHdyaXRpbmcgdGhlIHNoYXJlZCBldmlkZW5jZSBwYXRoIiwKICAgICJ2ZXJpZmllcl9oYXJkZW5lZF9ieSI6ICJuZXcgZ292ZXJuYW5jZSB0ZXN0IGFtcGhvcmEtY2xpL3NyYy9waGFzZTAucnM6OnRlc3RzOjpzaGlwcGVkX2JlbmNobWFya19yZXN1bHRzX3N0YXlfYm91bmRfdG9fc2lnbmVkX2V2YWx1YXRpb25fcmVjZWlwdHMsIHdoaWNoIHJlY29tcHV0ZXMsIGZvciBldmVyeSBtb2R1bGUgaG9sZGluZyBhIHNpZ25lZCBldmFsdWF0aW9uIHJlY2VpcHQsIHdoZXRoZXIgdGhlIHNoaXBwZWQgYmVuY2htYXJrIHJlc3VsdCBzdGlsbCBoYXNoZXMgdG8gdGhlIHBpbm5lZCBtZXRyaWNzLmJlbmNobWFya19yZXN1bHRfc2hhMjU2LCBhbmQgZmFpbHMgaWYgdGhhdCBzZXQgY2hhbmdlcyBpbiBlaXRoZXIgZGlyZWN0aW9uIiwKICAgICJ2ZXJpZmllcl9ub3Rfd2Vha2VuZWQiOiB0cnVlCiAgfSwKICAiZmxpcHNfc2NpZW50aWZpY19yZWFkaW5lc3MiOiBmYWxzZSwKICAiZm9sbG93X3VwX3JlcXVpcmVkIjogWwogICAgImFtcGhvcmEtY3JvLXByb3RvY29sLXBhY2thZ2VyLCBhbXBob3JhLWV2aWRlbmNlLWludGFrZS12YWxpZGF0b3IsIGFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MsIGFtcGhvcmEtbW9sZWN1bGUtZGVzaWduLWdhdGUsIGFtcGhvcmEtb3B0aW1pemVyLW9yY2hlc3RyYXRvciwgYW1waG9yYS1yZWR0ZWFtLWF1ZGl0LCBhbXBob3JhLXJlcG9ydC1wYWNrYWdlciwgYW1waG9yYS1zb3VyY2UtbGVkZ2VyIGVhY2ggbmVlZCBhIGZyZXNoIGF1dGhvcml0eS1wYXRoIGV2YWx1YXRpb24gKHJlaXNzdWUgLT4gZXZhbHVhdGUgLT4gaW5kZXBlbmRlbnQgcmV2aWV3IC0+IG1vdmVtZW50KSBiZWZvcmUgdGhleSBjYW4gZGVyaXZlIFBIQVNFXzAgYWdhaW47IHRoZWlyIGV4aXN0aW5nIHNpZ25lZCBldmFsdWF0aW9uIHJlY2VpcHRzIG11c3Qgbm90IGJlIGRlbGV0ZWQiLAogICAgImFtcGhvcmEtbW9sZWN1bGUtcHJvcGVydHkgaGFzIGEgZGVzdHJveWVkIGJpbmRpbmcgdG9vIGJ1dCB3YXMgbmV2ZXIgaW5kZXBlbmRlbnRseSByZXZpZXdlZCwgc28gaXRzIHBoYXNlIGlzIHVuYWZmZWN0ZWQiLAogICAgIi9ob21lL3VidW50dS9hbXBob3JhLWF1dG9jb21taXQtZ3VhcmQuc2ggcmVzdG9yZXMgUlVOVElNRS1zaGFwZSBmbGlwczsgd2l0aCB0aGlzIHJlcGFpciBpbiBwbGFjZSBubyBmbGlwIHNob3VsZCBldmVyIG9jY3VyIGFnYWluLCBzbyBhbnkgUkVTVE9SRURfU0NIRU1BX0ZMSVAgbGluZSBpbiBsb2dzL2F1dG9jb21taXQtZ3VhcmQubG9nIGFmdGVyIDIwMjYtMDgtMDQgaW5kaWNhdGVzIGEgbmV3IHdyaXRlciByZWdyZXNzaW9uIgogIF0sCiAgImdlbmVyYXRlZF9vbl9ob3N0IjogInhiYWJlMiIsCiAgImh1bWFuX3Jldmlld19wZXJmb3JtZWQiOiBmYWxzZSwKICAibW9kaWZpZXNfYmVuY2htYXJrX2xvY2siOiBmYWxzZSwKICAibW9kaWZpZXNfZXhpc3RpbmdfcmVjZWlwdHMiOiBmYWxzZSwKICAibW9kaWZpZXNfbG9ja2VkX2RhdGFzZXQiOiBmYWxzZSwKICAibW9kaWZpZXNfbWFuaWZlc3QiOiBmYWxzZSwKICAibW9kaWZpZXNfbWlzc2lvbl9mcm9udF9tYXR0ZXIiOiBmYWxzZSwKICAibW9kaWZpZXNfc2lnbmVkX3BoYXNlMF9rcGkiOiBmYWxzZSwKICAibW9kdWxlIjogImFtcGhvcmEtcmVkdGVhbS1hdWRpdCIsCiAgIm9yZ2FuaXphdGlvbmFsX2luZGVwZW5kZW5jZV9hc3NlcnRlZCI6IGZhbHNlLAogICJwaGFzZSI6ICJQUkVfUEhBU0VfMCIsCiAgInBvcnRmb2xpb19jb3VudF9yZWNvbmNpbGlhdGlvbiI6IHsKICAgICJjb3VudF9kZXJpdmVkX3R3b19pbmRlcGVuZGVudF93YXlzIjogewogICAgICAiYWdyZWUiOiB0cnVlLAogICAgICAiYW1waG9yYS1jbGkgdmVyaWZpZXIgKHBvcnRmb2xpbyBwaGFzZTAgc3RhdHVzIC0tYWxsKSI6IDksCiAgICAgICJpbmRlcGVuZGVudCBDUHl0aG9uIHJlLWRlcml2YXRpb24gKHdvcmsvYjJfZGlhZ25vc3RpYy5weSkiOiA5CiAgICB9LAogICAgImNvdW50X2lmX2Rlc3Ryb3llZF9iaW5kaW5nc193ZXJlX3Jlc3RvcmVkIjogMTcsCiAgICAiaG9uZXN0X2Rlcml2ZWRfcGhhc2UwX2NvdW50IjogOSwKICAgICJob25lc3RfZGVyaXZlZF9wcmVfcGhhc2UwX2NvdW50IjogMjAsCiAgICAibmV3X3Bpbm5lZF9hc3NlcnRpb24iOiA5LAogICAgIm5ld19waW5uZWRfcHJlX3BoYXNlMF9hc3NlcnRpb24iOiAyMCwKICAgICJub3RfYV9sb3dlcmVkX2JhciI6ICJUaGUgdmVyaWZpZXIgd2FzIG5vdCByZWxheGVkLiBUaGUgY291bnQgZmVsbCBiZWNhdXNlIHRoZSB2ZXJpZmllciBpcyBjb3JyZWN0bHkgcmVmdXNpbmcgbW9kdWxlcyB3aG9zZSBldmFsdWF0ZWQgYmVuY2htYXJrIGJ5dGVzIG5vIGxvbmdlciBtYXRjaCB0aGVpciBzaWduZWQgcmVjZWlwdC4iLAogICAgInBlcl9tb2R1bGVfcmVhc29ucyI6IFsKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1iYXJyaWVyLWNvcnJvc2lvbi1zY29yZSIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fU0lHTkFUVVJFX0FCU0VOVCIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1jYW5kaWRhdGUtY29udHJhY3QiLAogICAgICAgICJwaGFzZSI6ICJQSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRFRF9SRVZJRVdFRF9BTkRfTU9WRURfV0lUSF9JTlRBQ1RfQkVOQ0hNQVJLX0JJTkRJTkciCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtY3JvLXByb3RvY29sLXBhY2thZ2VyIiwKICAgICAgICAicGhhc2UiOiAiUFJFX1BIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVElPTl9SRVNVTFRfTUlTTUFUQ0hfQkVOQ0hNQVJLX0JZVEVTX0RFU1RST1lFRF9CWV9IQVJORVNTX1dSSVRFUiIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1jdXJlLXBvdGxpZmUtZ2F0ZSIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fU0lHTkFUVVJFX0FCU0VOVCIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1kZXNpZ24tcnVsZS1zY29yZSIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fU0lHTkFUVVJFX0FCU0VOVCIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1lbnZlbG9wZS1nYXRlcyIsCiAgICAgICAgInBoYXNlIjogIlBIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVEVEX1JFVklFV0VEX0FORF9NT1ZFRF9XSVRIX0lOVEFDVF9CRU5DSE1BUktfQklORElORyIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1ldmlkZW5jZS1pbnRha2UtdmFsaWRhdG9yIiwKICAgICAgICAicGhhc2UiOiAiUFJFX1BIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVElPTl9SRVNVTFRfTUlTTUFUQ0hfQkVOQ0hNQVJLX0JZVEVTX0RFU1RST1lFRF9CWV9IQVJORVNTX1dSSVRFUiIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljIiwKICAgICAgICAicGhhc2UiOiAiUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFURURfUkVWSUVXRURfQU5EX01PVkVEX1dJVEhfSU5UQUNUX0JFTkNITUFSS19CSU5ESU5HIgogICAgICB9LAogICAgICB7CiAgICAgICAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLWZvcm11bGF0aW9uLXVuaXZlcnNlIiwKICAgICAgICAicGhhc2UiOiAiUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFURURfUkVWSUVXRURfQU5EX01PVkVEX1dJVEhfSU5UQUNUX0JFTkNITUFSS19CSU5ESU5HIgogICAgICB9LAogICAgICB7CiAgICAgICAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLWluZ3JlZGllbnQtbGlicmFyeSIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fU0lHTkFUVVJFX0FCU0VOVCIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1pcC1mdG8tZ3VhcmQiLAogICAgICAgICJwaGFzZSI6ICJQUkVfUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFUSU9OX1NJR05BVFVSRV9BQlNFTlQiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MiLAogICAgICAgICJwaGFzZSI6ICJQUkVfUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFUSU9OX1JFU1VMVF9NSVNNQVRDSF9CRU5DSE1BUktfQllURVNfREVTVFJPWUVEX0JZX0hBUk5FU1NfV1JJVEVSIgogICAgICB9LAogICAgICB7CiAgICAgICAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLW1vZGVsLWNhcmQtYXV0aG9yaXR5IiwKICAgICAgICAicGhhc2UiOiAiUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFURURfUkVWSUVXRURfQU5EX01PVkVEX1dJVEhfSU5UQUNUX0JFTkNITUFSS19CSU5ESU5HIgogICAgICB9LAogICAgICB7CiAgICAgICAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLW1vbGVjdWxlLWRlc2lnbi1nYXRlIiwKICAgICAgICAicGhhc2UiOiAiUFJFX1BIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVElPTl9SRVNVTFRfTUlTTUFUQ0hfQkVOQ0hNQVJLX0JZVEVTX0RFU1RST1lFRF9CWV9IQVJORVNTX1dSSVRFUiIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1tb2xlY3VsZS1nZW5lcmF0b3IiLAogICAgICAgICJwaGFzZSI6ICJQUkVfUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFUSU9OX1NJR05BVFVSRV9BQlNFTlQiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtbW9sZWN1bGUtbm92ZWx0eSIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fU0lHTkFUVVJFX0FCU0VOVCIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eSIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fUkVTVUxUX01JU01BVENIX0JFTkNITUFSS19CWVRFU19ERVNUUk9ZRURfQllfSEFSTkVTU19XUklURVIiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtbW9sZWN1bGUtcm9sZS1yYW5rZXIiLAogICAgICAgICJwaGFzZSI6ICJQUkVfUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFUSU9OX1NJR05BVFVSRV9BQlNFTlQiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtb3B0aW1pemVyLW9yY2hlc3RyYXRvciIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fUkVTVUxUX01JU01BVENIX0JFTkNITUFSS19CWVRFU19ERVNUUk9ZRURfQllfSEFSTkVTU19XUklURVIiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtcHJvY2Vzcy1xYy10d2luIiwKICAgICAgICAicGhhc2UiOiAiUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFURURfUkVWSUVXRURfQU5EX01PVkVEX1dJVEhfSU5UQUNUX0JFTkNITUFSS19CSU5ESU5HIgogICAgICB9LAogICAgICB7CiAgICAgICAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLXB1YmxpYy1jb3Jyb3Npb24tYmVuY2htYXJrIiwKICAgICAgICAicGhhc2UiOiAiUFJFX1BIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiSU5ERVBFTkRFTlRfUkVWSUVXX1NJR05BVFVSRV9BQlNFTlQiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtcmVkdGVhbS1hdWRpdCIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fUkVTVUxUX01JU01BVENIX0JFTkNITUFSS19CWVRFU19ERVNUUk9ZRURfQllfSEFSTkVTU19XUklURVIiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibW9kdWxlX2lkIjogImFtcGhvcmEtcmVwb3J0LXBhY2thZ2VyIiwKICAgICAgICAicGhhc2UiOiAiUFJFX1BIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVElPTl9SRVNVTFRfTUlTTUFUQ0hfQkVOQ0hNQVJLX0JZVEVTX0RFU1RST1lFRF9CWV9IQVJORVNTX1dSSVRFUiIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1ydW4tcHJvdmVuYW5jZSIsCiAgICAgICAgInBoYXNlIjogIlBIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVEVEX1JFVklFV0VEX0FORF9NT1ZFRF9XSVRIX0lOVEFDVF9CRU5DSE1BUktfQklORElORyIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1zb2x2ZW5jeS1zY29yZSIsCiAgICAgICAgInBoYXNlIjogIlBIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVEVEX1JFVklFV0VEX0FORF9NT1ZFRF9XSVRIX0lOVEFDVF9CRU5DSE1BUktfQklORElORyIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1zb3VyY2UtbGVkZ2VyIiwKICAgICAgICAicGhhc2UiOiAiUFJFX1BIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVElPTl9SRVNVTFRfTUlTTUFUQ0hfQkVOQ0hNQVJLX0JZVEVTX0RFU1RST1lFRF9CWV9IQVJORVNTX1dSSVRFUiIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS1zb3VyY2VhYmlsaXR5LWVocyIsCiAgICAgICAgInBoYXNlIjogIlBSRV9QSEFTRV8wIiwKICAgICAgICAicmVhc29uIjogIkVWQUxVQVRJT05fU0lHTkFUVVJFX0FCU0VOVCIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS10b2xlcmFuY2Utcm9idXN0bmVzcyIsCiAgICAgICAgInBoYXNlIjogIlBIQVNFXzAiLAogICAgICAgICJyZWFzb24iOiAiRVZBTFVBVEVEX1JFVklFV0VEX0FORF9NT1ZFRF9XSVRIX0lOVEFDVF9CRU5DSE1BUktfQklORElORyIKICAgICAgfSwKICAgICAgewogICAgICAgICJtb2R1bGVfaWQiOiAiYW1waG9yYS12aXNjb3NpdHktc2NvcmUiLAogICAgICAgICJwaGFzZSI6ICJQUkVfUEhBU0VfMCIsCiAgICAgICAgInJlYXNvbiI6ICJFVkFMVUFUSU9OX1NJR05BVFVSRV9BQlNFTlQiCiAgICAgIH0KICAgIF0sCiAgICAicGhhc2UwX21vZHVsZXMiOiBbCiAgICAgICJhbXBob3JhLWNhbmRpZGF0ZS1jb250cmFjdCIsCiAgICAgICJhbXBob3JhLWVudmVsb3BlLWdhdGVzIiwKICAgICAgImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYyIsCiAgICAgICJhbXBob3JhLWZvcm11bGF0aW9uLXVuaXZlcnNlIiwKICAgICAgImFtcGhvcmEtbW9kZWwtY2FyZC1hdXRob3JpdHkiLAogICAgICAiYW1waG9yYS1wcm9jZXNzLXFjLXR3aW4iLAogICAgICAiYW1waG9yYS1ydW4tcHJvdmVuYW5jZSIsCiAgICAgICJhbXBob3JhLXNvbHZlbmN5LXNjb3JlIiwKICAgICAgImFtcGhvcmEtdG9sZXJhbmNlLXJvYnVzdG5lc3MiCiAgICBdLAogICAgInByZXZpb3VzX2Fzc2VydGlvbl9sb2NhdGlvbiI6ICJhbXBob3JhLWNsaS9zcmMvcGhhc2UwLnJzOjp0ZXN0czo6c291cmNlX2xlZGdlcl9oaXN0b3JpY2FsX21vdmVtZW50X2FuZF9zdGF0dXNfYXJlX3JlYWRfb25seSIsCiAgICAicHJldmlvdXNfYXNzZXJ0aW9uX3N0YXR1cyI6ICJTVEFMRSAtIGRlc2NyaWJlZCBhIHBvcnRmb2xpbyBzdGF0ZSBkZXN0cm95ZWQgYmVmb3JlIHRoaXMgcmVwYWlyIiwKICAgICJwcmV2aW91c19waW5uZWRfYXNzZXJ0aW9uIjogMTYKICB9LAogICJwcm9tb3Rlc19hdXRob3JpdHkiOiBmYWxzZSwKICAicHJvdmVuYW5jZSI6IHsKICAgICJhY2NlcHRhbmNlX2xvZ19zaGEyNTYiOiAiMjljNjE1MmM0NmZiYzg3YzAxNGZhOTM0Y2EzMDE2YjhhMDA1YzAyODAxZjg1YWUzMmQ4ZjdlMDQ3ZTViNjM0YyIsCiAgICAiYW1waG9yYV9jbGlfcGhhc2UwX3JzX3NoYTI1NiI6ICI0MDAyMzJlMzAwZDI4OTkwZWMwOGRmN2FiZDE1OTY4NGViODZmMmNkYWJlMTg5NGViM2ZkNWEwYWNjNDdkZTlkIiwKICAgICJoYXJuZXNzX3NoYTI1NiI6IHsKICAgICAgIndvcmsvYjJfZGlhZ25vc3RpYy5weSI6ICI1NTgxNTIwYjk1MWQ4M2FiNGY3MzQ3MTRhZmMxMDE4NGQzMTQ0OTk1NDJlNmQwNDcwYWM3YWM1ZjYzOTE3ZWM1IiwKICAgICAgIndvcmsvcmVnZW5fcnVudGltZV9yZXN1bHRzLnB5IjogImMxZTVkNDExYmIzMmE0MTQyNjUwOGQ2OWM4MTM0YzkzNWZiMWZjOWM4M2M5Njc2YjhjMjAwNTQ0MzMxOWNmZTciCiAgICB9CiAgfSwKICAicmVjZWlwdF9sb2NhdGlvbl9ub3RlIjogImFtcGhvcmEtY2xpIGhhcyBubyBldmlkZW5jZS8gdHJlZSwgc28gdGhpcyByZWNlaXB0IGlzIGZpbGVkIHVuZGVyIGFtcGhvcmEtcmVkdGVhbS1hdWRpdC9ldmlkZW5jZS9waGFzZTAvcmVwYWlycy9CMi9kb25lLyBhcyBpbnN0cnVjdGVkLiBUaGUgZW5naW5lZXJpbmcgY2hhbmdlIGl0c2VsZiBpcyBpbiBhbXBob3JhLWNsaS9zcmMvcGhhc2UwLnJzIGFuZCBpbiAyNyBwZXItbW9kdWxlIFBoYXNlLTAgS1BJIGludGVncmF0aW9uIHRlc3RzIGFjcm9zcyA4IGNyYXRlcy4iLAogICJyZXBhaXJfaXRlbSI6ICJCMiIsCiAgInJlcGFpcl9tb2RlIjogImludGVyYWN0aXZlLTIwMjYtMDgtMDQiLAogICJyZXByb2R1Y2liaWxpdHkiOiB7CiAgICAiYnl0ZV9pZGVudGljYWwiOiB0cnVlLAogICAgImNhbm9uaWNhbF9kaWFnbm9zdGljX3NoYTI1NiI6ICI3YmYwMTRkMDZmMTRhY2I3MDk2Nzc5ZGFiMDZjODk2OWNlOWM1ZWEyNmViY2UyNzhlMjhlNjYwOTM5ZTQ4NTIzIiwKICAgICJyZXBsYXlfbWV0aG9kIjogIndvcmsvYjJfZGlhZ25vc3RpYy5weSByZS1kZXJpdmVzIGJvdGggd3JpdGVycywgdGhlIHBlci1tb2R1bGUgc2hpcHBlZC1ieXRlcy12cy1zaWduZWQtcmVjZWlwdCBiaW5kaW5nLCBhbmQgdGhlIGhvbmVzdCBQaGFzZS0wIHBoYXNlIGZvciBhbGwgMjkgbW9kdWxlcyBmcm9tIHRoZSB0cmVlIGFsb25lLCB3aXRoIG5vIGNsb2NrIGFuZCBubyBlbnZpcm9ubWVudCBpbnB1dCIsCiAgICAicnVuQl9kaWFnbm9zdGljX3NoYTI1NiI6ICI3YmYwMTRkMDZmMTRhY2I3MDk2Nzc5ZGFiMDZjODk2OWNlOWM1ZWEyNmViY2UyNzhlMjhlNjYwOTM5ZTQ4NTIzIiwKICAgICJ0d29fcmVwbGF5X3NoYTI1NiI6ICI3YmYwMTRkMDZmMTRhY2I3MDk2Nzc5ZGFiMDZjODk2OWNlOWM1ZWEyNmViY2UyNzhlMjhlNjYwOTM5ZTQ4NTIzIiwKICAgICJ0d29fcmVwbGF5X3NoYTI1Nl9nYXRlIjogIlBBU1MiCiAgfSwKICAicmV2aWV3ZXJfcmVmZXJlbmNlIjogewogICAgImRlcml2ZXNfcGlubmVkX3RydXN0X3N0b3JlX2tleV9pZCI6IHRydWUsCiAgICAia2V5X2lkIjogInBoYXNlMC1pbnRlcm5hbC1yZXZpZXdlci00NzIzM2FmMThlNTExYTMwNTU0OGQ0ZWUzMDZkYTAxODYxMmY1YjVhY2EyMDFmOTk4NjUwNGQzZDdkYjMwMTFiIiwKICAgICJub3RlIjogIlJldmlld2VyIGtleSByZWZlcmVuY2VkIGZvciBwcm92ZW5hbmNlIG9ubHk7IG5vIGluZGVwZW5kZW50IGh1bWFuIHJldmlldyBwZXJmb3JtZWQuIiwKICAgICJwdWJsaWNfa2V5X2hleCI6ICIzM2QzYTVkYmNhZTUyYzQ0OWRmMzZjMDY3MGRmMGZhOWQ4YTYwODE5ZDE2NmMzM2I5NmQ2MmIyYmUxZGIwODNmIiwKICAgICJyZXZpZXdlcl9zaWduYXR1cmVfcHJlc2VudCI6IGZhbHNlLAogICAgInJvbGUiOiAiUEhBU0UwX0lOVEVSTkFMX1JFVklFV0VSIgogIH0sCiAgInNjaGVtYSI6ICJhbXBob3JhLnBoYXNlMC1yZXBhaXIuZG9uZS1yZWNlaXB0LnYxIiwKICAic2lnbmluZ19rZXkiOiB7CiAgICAiZGVyaXZlc19waW5uZWRfdHJ1c3Rfc3RvcmVfa2V5X2lkIjogdHJ1ZSwKICAgICJrZXlfaWQiOiAicGhhc2UwLWV2YWx1YXRvci0zZWY2YjM1Y2RiYmZlYTc0YTk2YTVjOWI5OGE1MTVkNTcxNThhMDllY2FmZjEwYWNmYTFmMTU5OTBiZTAwMTc4IiwKICAgICJwdWJsaWNfa2V5X2hleCI6ICI2Y2YwN2FiZjFhNTVhZGFhYzEzZTc4YWJjMzFjNTMxZDAzZDhmMGQ0MjMyMzQ2MzQ0YTczNjQxOGM3YjQ1NjY0IiwKICAgICJyb2xlIjogIlBIQVNFMF9FVkFMVUFUT1IiLAogICAgInNpZ25zX3BoYXNlMF9ldmFsdWF0aW9uX29yX3JldmlldyI6IGZhbHNlLAogICAgInVzZWRfZm9yIjogIkFVRElUX09OTFkgcmVwYWlyIGRvbmUtcmVjZWlwdCB1bmRlciBldmlkZW5jZS9waGFzZTAvcmVwYWlycy8iCiAgfSwKICAidHJ1c3RfYW5jaG9yZWRfaW5fcGhhc2UwX3N0b3JlIjogdHJ1ZSwKICAid3JpdGVycyI6IHsKICAgICJtb2R1bGVfaGFybmVzc193cml0ZXJzIjogewogICAgICAiY2FsbCI6ICJmczo6d3JpdGUoJnJlc3VsdF9wYXRoLCAmZmlyc3RfYnl0ZXMpLmV4cGVjdChcIndyaXRlIHJlc3VsdCBhcnRpZmFjdFwiKSIsCiAgICAgICJjb3VudCI6IDI3LAogICAgICAiY292ZXJzX21vZHVsZXMiOiAyNywKICAgICAgImZpbGVzIjogWwogICAgICAgICJhbXBob3JhLWFzc3VyYW5jZS1jYXBhYmlsaXRpZXMvdGVzdHMvY3JvX3Byb3RvY29sX3BhY2thZ2VyX3BoYXNlMF9rcGkucnMiLAogICAgICAgICJhbXBob3JhLWFzc3VyYW5jZS1jYXBhYmlsaXRpZXMvdGVzdHMvZXZpZGVuY2VfaW50YWtlX3ZhbGlkYXRvcl9waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1hc3N1cmFuY2UtY2FwYWJpbGl0aWVzL3Rlc3RzL2lwX2Z0b19ndWFyZF9waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1hc3N1cmFuY2UtY2FwYWJpbGl0aWVzL3Rlc3RzL2tub3duX2Fuc3dlcl9iZW5jaG1hcmtzX3BoYXNlMF9rcGkucnMiLAogICAgICAgICJhbXBob3JhLWFzc3VyYW5jZS1jYXBhYmlsaXRpZXMvdGVzdHMvb3B0aW1pemVyX29yY2hlc3RyYXRvcl9waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1hc3N1cmFuY2UtY2FwYWJpbGl0aWVzL3Rlc3RzL3JlZHRlYW1fYXVkaXRfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtYXNzdXJhbmNlLWNhcGFiaWxpdGllcy90ZXN0cy9yZXBvcnRfcGFja2FnZXJfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtYXNzdXJhbmNlLWNhcGFiaWxpdGllcy90ZXN0cy9zb3VyY2VfbGVkZ2VyX3BoYXNlMF9rcGkucnMiLAogICAgICAgICJhbXBob3JhLWFzc3VyYW5jZS1jYXBhYmlsaXRpZXMvdGVzdHMvc291cmNlYWJpbGl0eV9laHNfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtY29yZS90ZXN0cy9jYW5kaWRhdGVfY29udHJhY3RfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtY29yZS90ZXN0cy9ydW5fcHJvdmVuYW5jZV9waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1jdXJlLXBvdGxpZmUtZ2F0ZS90ZXN0cy9jdXJlX3BvdGxpZmVfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtZm9ybXVsYXRpb24tY2FwYWJpbGl0aWVzL3Rlc3RzL2Rlc2lnbl9ydWxlX3Njb3JlX3BoYXNlMF9rcGkucnMiLAogICAgICAgICJhbXBob3JhLWZvcm11bGF0aW9uLWNhcGFiaWxpdGllcy90ZXN0cy9lbnZlbG9wZV9nYXRlc19waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1mb3JtdWxhdGlvbi1jYXBhYmlsaXRpZXMvdGVzdHMvZm9ybXVsYXRpb25fYXJpdGhtZXRpY19waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1mb3JtdWxhdGlvbi1jYXBhYmlsaXRpZXMvdGVzdHMvZm9ybXVsYXRpb25fdW5pdmVyc2VfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtZm9ybXVsYXRpb24tY2FwYWJpbGl0aWVzL3Rlc3RzL2luZ3JlZGllbnRfbGlicmFyeV9waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1mb3JtdWxhdGlvbi1jYXBhYmlsaXRpZXMvdGVzdHMvcHJvY2Vzc19xY190d2luX3BoYXNlMF9rcGkucnMiLAogICAgICAgICJhbXBob3JhLWZvcm11bGF0aW9uLWNhcGFiaWxpdGllcy90ZXN0cy9wdWJsaWNfY29ycm9zaW9uX2JlbmNobWFya19waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1mb3JtdWxhdGlvbi1jYXBhYmlsaXRpZXMvdGVzdHMvdG9sZXJhbmNlX3JvYnVzdG5lc3NfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtbW9sZWN1bGUtY2FwYWJpbGl0aWVzL3Rlc3RzL2Rlc2lnbl9nYXRlX3BoYXNlMF9rcGkucnMiLAogICAgICAgICJhbXBob3JhLW1vbGVjdWxlLWNhcGFiaWxpdGllcy90ZXN0cy9tb2xlY3VsZV9nZW5lcmF0b3JfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtbW9sZWN1bGUtY2FwYWJpbGl0aWVzL3Rlc3RzL21vbGVjdWxlX25vdmVsdHlfcGhhc2UwX2twaS5ycyIsCiAgICAgICAgImFtcGhvcmEtbW9sZWN1bGUtY2FwYWJpbGl0aWVzL3Rlc3RzL3Byb3BlcnR5X3BoYXNlMF9rcGkucnMiLAogICAgICAgICJhbXBob3JhLW1vbGVjdWxlLWNhcGFiaWxpdGllcy90ZXN0cy9yb2xlX3Jhbmtlcl9waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS1zb2x2ZW5jeS1zY29yZS90ZXN0cy9zb2x2ZW5jeV9waGFzZTBfa3BpLnJzIiwKICAgICAgICAiYW1waG9yYS12aXNjb3NpdHktc2NvcmUvdGVzdHMvdmlzY29zaXR5X3BoYXNlMF9rcGkucnMiCiAgICAgIF0sCiAgICAgICJzaGFwZSI6ICJNT0RVTEVfSEFSTkVTUzoge21vZHVsZV9pZCwgYmVuY2htYXJrX2lkLCBiZW5jaG1hcmtfbG9ja19zaGEyNTYsIGRhdGFzZXRfZml4dHVyZV9zaGEyNTYsIGtwaSwgcmVjb3JkcywgYmVuY2htYXJrX2V4ZWN1dGlvbl9jb21wbGV0ZSwgZmlyc3RfcmVwbGF5e2RpYWdub3N0aWNfcmVjZWlwdCwgZGlhZ25vc3RpY19zaGEyNTZ9LCBzZWNvbmRfcmVwbGF5fTsgbm8gZmlyc3RfcmVwbGF5LmV4ZWN1dGlvbl9wYXNzZWQgYW5kIG5vIGRpYWdub3N0aWNfcmVjZWlwdC5tZXRyaWNzLmRldGFpbHMiCiAgICB9LAogICAgInJ1bnRpbWVfYXV0aG9yaXR5X3dyaXRlciI6IHsKICAgICAgImJpbmRpbmciOiAidGhlIGV4YWN0IGJ5dGVzIGFyZSBoYXNoZWQgaW50byB0aGUgaW1tdXRhYmxlIHNpZ25lZCBldmFsdWF0aW9uIHJlY2VpcHQgYXMgbWV0cmljcy5iZW5jaG1hcmtfcmVzdWx0X3NoYTI1NiBhbmQgcmUtY2hlY2tlZCBieSB2ZXJpZnlfZXZhbHVhdGlvbl9yZXN1bHQoKTsgdGhpcyBpcyB3aHkgYW4gb3ZlcndyaXRlIGlzIGZhdGFsIiwKICAgICAgImNhbGwiOiAid3JpdGVfanNvbl9pbW11dGFibGUocGhhc2UwX2Rpci5qb2luKFwiYmVuY2htYXJrL3Jlc3VsdC52MS5qc29uXCIpLCAmcmVzdWx0KSIsCiAgICAgICJjb3ZlcnNfbW9kdWxlcyI6IDE5LAogICAgICAiY292ZXJzX21vZHVsZXNfbm90ZSI6ICJldmVyeSBtb2R1bGUgdGhhdCBob2xkcyBldmlkZW5jZS9waGFzZTAvcmVjZWlwdHMvZXZhbHVhdGlvbi52MS5kc3NlLmpzb24iLAogICAgICAiZmlsZSI6ICJhbXBob3JhLWNsaS9zcmMvcGhhc2UwLnJzIiwKICAgICAgImZ1bmN0aW9uIjogImV2YWx1YXRlIiwKICAgICAgInNoYXBlIjogIlJVTlRJTUU6IHtzY2hlbWEsIG1vZHVsZV9pZCwgYnVuZGxlX3NoYTI1NiwgZmlyc3RfcmVwbGF5LCBzZWNvbmRfcmVwbGF5LCByZXBsYXlfaWRlbnRpY2FsLCBiZW5jaG1hcmtfZXhlY3V0aW9uX2NvbXBsZXRlLCBsZWdhY3lfbG9jYWxfcmVjZWlwdF9hdXRob3JpdHksIHNjaWVudGlmaWNfb3V0Y29tZX07IGZpcnN0X3JlcGxheS9zZWNvbmRfcmVwbGF5IGNvbWUgZnJvbSBleGVjdXRlX2xvY2tlZF9iZW5jaG1hcmsoKSBhbmQgY2FycnkgZXhlY3V0aW9uX3Bhc3NlZCwgZXhpdF9jb2RlLCBzY2llbnRpZmljX3Bhc3NlZCwgZGlhZ25vc3RpY19yZWNlaXB0LCBkaWFnbm9zdGljX3NoYTI1Niwgc3RkZXJyX3NoYTI1NiIKICAgIH0sCiAgICAidmVyaWZpZXJfcGF0aF90aGF0X3JlamVjdHNfdGhlX2hhcm5lc3Nfc2hhcGUiOiBbCiAgICAgICJhbXBob3JhLWNsaS9zcmMvcGhhc2UwLnJzOjp2ZXJpZnlfbW9kdWxlX3dpdGhfcmVwbGF5IiwKICAgICAgImFtcGhvcmEtY2xpL3NyYy9waGFzZTAucnM6OnZlcmlmeV9ldmFsdWF0aW9uX3Jlc3VsdCIsCiAgICAgICJhbXBob3JhLWNsaS9zcmMvcGhhc2UwLnJzOjp2ZXJpZnlfZGV0ZXJtaW5pc3RpY19kaWFnbm9zdGljIiwKICAgICAgImFtcGhvcmEtY2xpL3NyYy9waGFzZTAucnM6OmJlbmNobWFya19leGVjdXRpb25fY29tcGxldGUiCiAgICBdCiAgfQp9",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "/viJiidUMzN0FJXUVtJ3Fx88q6HnquDhAkRslvyXhZNU6w5eON+3cnYayMPgbkFQml8Te8S+P3NZdB4deODTCQ=="
+      }
+    ]
+  }
+}

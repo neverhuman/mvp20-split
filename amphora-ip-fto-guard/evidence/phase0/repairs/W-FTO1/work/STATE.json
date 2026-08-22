@@ -1,0 +1,14 @@
+{
+  "campaign_item_id": "W-FTO1",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260805T070002-3973910-a48ab34968fc",
+      "outcome": "CLAIM_REFUTED",
+      "summary": "Claim-construction sensitivity analysis over all 6 claim-charted families (n=1,2,3,4,5,26). Family n=1 (WO2016187380A1) flips: fixture treats claim 1's hedge-qualified 'volume solids content of greater than about 70 percent' as a bare 70% threshold; the specification's own disclosed high-volume-solids embodiment ranges (about 50-100%, 60-95%) support a reasonable broader construction under which ~65% VS is not confidently excluded. Families n=2,3,4,5 robust across narrow/plain/broad constructions. Family n=26 excluded as moot (prior REFUTED provenance defect, fabricated claim element, already on ledger).",
+      "receipt": "amphora-ip-fto-guard/evidence/phase0/repairs/W-FTO1/done/claim-construction-sensitivity.W-FTO1.v1.dsse.json"
+    }
+  ],
+  "done_criterion_met": true,
+  "note": "done_criterion is 'signed sensitivity analysis with explicit flip/no-flip verdict per family', satisfied regardless of overall REFUTED/SURVIVED outcome. Overall claim outcome: CLAIM_REFUTED (1 of 5 tested families flips)."
+}

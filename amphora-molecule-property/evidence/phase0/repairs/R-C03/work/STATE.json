@@ -1,0 +1,37 @@
+{
+  "all_three_deliverables_landed": true,
+  "campaign_item_id": "R-C03",
+  "campaign_item_status": "done",
+  "consolidated_done_receipt": {
+    "fire_id": "20260812T030001-3760089-46bea74696ba",
+    "path": "amphora-molecule-property/evidence/phase0/repairs/R-C03/done/rc03-consolidated-done-receipt.v1.dsse.json",
+    "sha256": "32525aee09ea8c802c070a725ff46d43738e260d1fff25c8a296086136dd851e"
+  },
+  "deliverable_1_superseding_multitarget_kpi": {
+    "notes": "Group-safe macro-bisection numbers published as headline; random-split numbers demoted to reference.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-C03/attempts/rc03-d1-group-safe-headline-superseding-kpi.v1.dsse.json",
+    "status": "landed",
+    "verdict": "CLAIM_SURVIVED"
+  },
+  "deliverable_2_ad_gate": {
+    "diagnostic_sha256_referenced_in_receipt": "see input_artifacts.diagnostic.out.json_sha256 in the signed receipt",
+    "notes": "AD gate (Tanimoto NN-distance threshold, calibrated per-training-set via within-corpus CV/LOO to guarantee >=90% coverage by construction, OR training-label-range check) demonstrated on all 4 C7 failing legs (tg_A, tg_B, density_A, density_B). All 4 pass the pre-registered 90% abstention / 90% coverage bar: abstention 93.75-100%, coverage 90.0-93.75%. Positive control (Tanimoto threshold disabled, tau->1.1) collapses abstention to 0.0% on all 4 legs, confirming the harness is sensitive. Training-label-range component measured 0 marginal abstentions for the RF model family (reported honestly, not hidden). Gate is a DEMONSTRATION only -- not wired into any shipped serving predictor code path.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-C03/attempts/rc03-d2-ad-gate-tg-density-demonstration.v1.dsse.json",
+    "status": "landed",
+    "verdict": "CLAIM_SURVIVED"
+  },
+  "deliverable_3_constrained_vk_refit": {
+    "baseline_full24_test_MAE_K_this_sample": 216.5961713445663,
+    "n_real_sign_flips": 0,
+    "orig_kpi_baseline_full24_test_MAE_K": 54.559722860262006,
+    "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-C03/attempts/rc03-d3-constrained-nnls-vk-refit.v1.dsse.json",
+    "status": "landed",
+    "test_MAE_K": 21.3498605242278,
+    "verdict": "CLAIM_SURVIVED"
+  },
+  "fire_1_completed": "20260812T010002-3011212-04feeb0e21c9",
+  "fire_2_completed": "20260812T020001-3408292-5203b6effc8c",
+  "fire_3_completed": "20260812T030001-3760089-46bea74696ba",
+  "next_step": "Assemble consolidated done/ receipt tying d1+d2+d3 together, superseding the original KPI, and update RETRACTION-INDEX.md.",
+  "remaining_fires_available": "max_fires=5, 2 used (fire1 d1, fire2 d2). 3 fires remain for d3 + final done-receipt assembly."
+}

@@ -1,0 +1,11 @@
+{
+  "event_chain_root": "05330ae8c79513ae4bcaf76a5436ec75ae32e21473bed304671008b56bfe0f29",
+  "events_sha256": "061258590aed73ecb951cdba314055fe0750ead0d5d53e95049a96e5facff9e3",
+  "final_state_hash": "2ec07e22346110b520954e68f93e37f7e5461a1bf508b5f3b120f24ea98e261b",
+  "manifest_sha256": "ecb61e8d52b5e40cdcd482ab2de3bf797fda7b5265b2a9945cb9a78b1001b941",
+  "promotion_receipt_eligible": false,
+  "root_hash": "c511b5d7ccd4bc48f6331f5535437888de8d08b8f1d324dd256bcfd90ad22b3b",
+  "run_id": "run-1800000000000",
+  "schema": "amphora.run-provenance.v1",
+  "signature_status": "UNSIGNED_CONTROLLED_KEY_REQUIRED"
+}

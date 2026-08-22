@@ -1,0 +1,102 @@
+[
+  {
+    "ahew_g_per_eq": 42.575,
+    "candidate_id": "canon-ipda",
+    "novelty_score": 0.875
+  },
+  {
+    "ahew_g_per_eq": 62.07675,
+    "candidate_id": "canon-dds",
+    "novelty_score": 0.8888888888888888
+  },
+  {
+    "ahew_g_per_eq": 20.6338,
+    "candidate_id": "canon-deta",
+    "novelty_score": 0.6363636363636364
+  },
+  {
+    "ahew_g_per_eq": 24.373,
+    "candidate_id": "canon-teta",
+    "novelty_score": 0.6666666666666667
+  },
+  {
+    "ahew_g_per_eq": 34.0495,
+    "candidate_id": "canon-mxda",
+    "novelty_score": 0.8235294117647058
+  },
+  {
+    "ahew_g_per_eq": 15.025,
+    "candidate_id": "gen-eda",
+    "novelty_score": 0.0
+  },
+  {
+    "ahew_g_per_eq": 27.043857142857142,
+    "candidate_id": "gen-tepa",
+    "novelty_score": 0.6666666666666667
+  },
+  {
+    "ahew_g_per_eq": 29.047,
+    "candidate_id": "gen-peha",
+    "novelty_score": 0.6666666666666667
+  },
+  {
+    "ahew_g_per_eq": 22.0385,
+    "candidate_id": "gen-c4-diaminobutane",
+    "novelty_score": 0.5
+  },
+  {
+    "ahew_g_per_eq": 29.052,
+    "candidate_id": "gen-c6-diaminohexane",
+    "novelty_score": 0.5555555555555556
+  },
+  {
+    "ahew_g_per_eq": 36.0655,
+    "candidate_id": "gen-c8-diaminooctane",
+    "novelty_score": 0.5555555555555556
+  },
+  {
+    "ahew_g_per_eq": 43.079,
+    "candidate_id": "gen-c10-diaminodecane",
+    "novelty_score": 0.5555555555555556
+  },
+  {
+    "ahew_g_per_eq": 50.0925,
+    "candidate_id": "gen-c12-diaminododecane",
+    "novelty_score": 0.5555555555555556
+  },
+  {
+    "ahew_g_per_eq": 28.548,
+    "candidate_id": "gen-14-dach",
+    "novelty_score": 0.85
+  },
+  {
+    "ahew_g_per_eq": 35.5615,
+    "candidate_id": "gen-13-bac",
+    "novelty_score": 0.8235294117647058
+  },
+  {
+    "ahew_g_per_eq": 43.068999999999996,
+    "candidate_id": "gen-aep",
+    "novelty_score": 0.7894736842105263
+  },
+  {
+    "ahew_g_per_eq": 56.58075,
+    "candidate_id": "gen-isopropylidenedianiline",
+    "novelty_score": 0.6956521739130435
+  },
+  {
+    "ahew_g_per_eq": 49.56725,
+    "candidate_id": "gen-mda-ddm",
+    "novelty_score": 0.88
+  },
+  {
+    "ahew_g_per_eq": 46.0605,
+    "candidate_id": "gen-benzidine",
+    "novelty_score": 0.8636363636363636
+  },
+  {
+    "ahew_g_per_eq": 34.0495,
+    "candidate_id": "gen-pxda",
+    "novelty_score": 0.7692307692307692
+  }
+]

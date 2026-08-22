@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "d17683ee5ad91d81c4df757ffe05abd22184be304c5d871d2bcb1278e56fe1b3",
+  "module_id": "amphora-model-card-authority",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

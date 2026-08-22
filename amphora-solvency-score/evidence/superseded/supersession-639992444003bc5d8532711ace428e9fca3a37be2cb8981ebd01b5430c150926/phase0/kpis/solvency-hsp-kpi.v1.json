@@ -1,0 +1,139 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-solvency-score",
+  "kpi_id": "amphora-solvency-score-phase0-hsp-v1",
+  "capability": "Deterministic solvent-polymer compatibility classification via Hansen Solubility Parameters (HSP) with polymer-specific interaction radius (Hansen sphere test)",
+  "authority_ceiling": "RULE_CITED",
+  "solver_use_ceiling": "CONSTRAINT_ONLY",
+  "population": "Defined single-component solvents with published HSP (δD, δP, δH) and linear/uncured polymers with published Hansen sphere parameters (δD, δP, δH, R). Applicability domain excludes commercial polydisperse grades, mixture solvents, and cross-linked/cured networks.",
+  "split_methodology": "Per-polymer generalization: each polymer's Ra ≤ R sphere is evaluated independently against its published R; no cross-polymer calibration is performed. Compatibility labels come from independent published solvency literature (Van Krevelen 4th ed. Table 7.5, Brandrup Polymer Handbook 4th ed. Section VII/571, Hansen 2nd ed. Fig 5.1, supplier TDS solvency charts), NOT computed from HSP distance.",
+  "theory": "Hansen (1967) three-parameter distance in dispersion (δD), polar (δP), and hydrogen-bonding (δH) MPa^0.5 space. Ra² = 4(δD_s − δD_p)² + (δP_s − δP_p)² + (δH_s − δH_p)². RED = Ra / R. Compatible iff RED < 1.0. Fifty-plus years of industrial validation for solvent screening across paints, coatings, adhesives, and pharmaceutical formulation.",
+  "metrics": [
+    {
+      "name": "classification_accuracy_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 0.85,
+      "observed": 0.8933333333333333,
+      "sample_size": 75,
+      "passed": true,
+      "authority": "RULE_CITED"
+    },
+    {
+      "name": "hsp_over_dd_baseline_lift",
+      "direction": "MAXIMIZE",
+      "threshold": 0.15,
+      "observed": 0.44,
+      "baseline_accuracy_rate": 0.4533333333333333,
+      "sample_size": 75,
+      "passed": true,
+      "authority": "RULE_CITED",
+      "note": "Baseline is single-parameter δD-proximity |δD_s − δD_p| < 3.0. Full Hansen 3-parameter distance improves classification by +44 percentage points."
+    },
+    {
+      "name": "held_out_polymer_generalization_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 0.80,
+      "observed_minimum": 0.80,
+      "per_polymer": {
+        "epoxy-dgeba-linear-uncured": 0.8666666666666667,
+        "polymethyl-methacrylate": 0.8666666666666667,
+        "polyvinyl-chloride": 0.80,
+        "polystyrene": 0.9333333333333333,
+        "polyamide-nylon66": 1.0
+      },
+      "sample_size_per_polymer": 15,
+      "passed": true,
+      "authority": "RULE_CITED"
+    },
+    {
+      "name": "high_confidence_false_compatible_rate",
+      "direction": "MINIMIZE",
+      "ceiling": 0.05,
+      "observed": 0.0,
+      "high_confidence_sample_size": 3,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Safety-critical false-positive gate. Of pairs with RED ≤ 0.5 (high confidence), fraction predicted compatible but published incompatible."
+    },
+    {
+      "name": "applicability_domain_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 6,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "hansen_red returns None for all 6 probe attacks: NaN δD, Infinity δP, negative δD, zero R, negative R, negative polymer δD."
+    },
+    {
+      "name": "authority_lock_preservation_rate",
+      "direction": "MAXIMIZE",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Fixture authority block preserves optimizer_authority=false, constraint_only=true, commercial_product_authority=false."
+    },
+    {
+      "name": "auroc_hansen",
+      "direction": "MAXIMIZE",
+      "reported_ceiling": 0.85,
+      "observed": 0.9487734487734488,
+      "sample_size": 75,
+      "passed_reporting_only": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Reported observationally at Phase-0. Phase-1 lock at config/benchmark-locks/amphora-solvency-score.v1.json will gate at AUROC ≥ 0.80 with a group-time-source-safe locked benchmark."
+    },
+    {
+      "name": "brier_score",
+      "direction": "MINIMIZE",
+      "observed": 0.15931344989131735,
+      "sample_size": 75,
+      "authority": "AUDIT_ONLY",
+      "note": "Reported observationally at Phase-0. Confidence is smooth 1/(1+RED); calibration will be refined at Phase-1 with an isotonic post-hoc calibrator or a fitted logistic on Ra."
+    }
+  ],
+  "fitted_or_physical_model_artifact": {
+    "schema": "amphora.solvency-score-hansen-sphere.v1",
+    "model_type": "deterministic_physical_hansen_sphere",
+    "polymer_parameters": [
+      {"polymer_id": "epoxy-dgeba-linear-uncured", "delta_d_mpa_half": 17.4, "delta_p_mpa_half": 10.5, "delta_h_mpa_half": 7.0, "interaction_radius_r": 9.0},
+      {"polymer_id": "polymethyl-methacrylate",    "delta_d_mpa_half": 18.6, "delta_p_mpa_half": 10.5, "delta_h_mpa_half": 7.5, "interaction_radius_r": 8.6},
+      {"polymer_id": "polyvinyl-chloride",         "delta_d_mpa_half": 18.2, "delta_p_mpa_half": 7.5,  "delta_h_mpa_half": 8.3, "interaction_radius_r": 3.5},
+      {"polymer_id": "polystyrene",                "delta_d_mpa_half": 21.3, "delta_p_mpa_half": 5.8,  "delta_h_mpa_half": 4.3, "interaction_radius_r": 12.7},
+      {"polymer_id": "polyamide-nylon66",          "delta_d_mpa_half": 17.4, "delta_p_mpa_half": 9.9,  "delta_h_mpa_half": 14.6,"interaction_radius_r": 5.1}
+    ],
+    "solvent_parameters_source": "Hansen 2nd ed. Table A.1 (15 solvents spanning aliphatic hydrocarbon, aromatic, chlorinated, ester, ketone, alcohol, ether, amide, protic-polar subgroups)",
+    "polymer_parameters_source": "Hansen 2nd ed. Table A.2",
+    "prediction_rule": "compatible iff Ra / R < 1.0, where Ra^2 = 4(dD_s - dD_p)^2 + (dP_s - dP_p)^2 + (dH_s - dH_p)^2",
+    "smooth_confidence_rule": "predicted_probability = 1 / (1 + RED)",
+    "baseline_prediction_rule": "delta_d_baseline_compatible iff |dD_s - dD_p| < 3.0"
+  },
+  "claim_locks": {
+    "constraint_only_solver_use": true,
+    "no_optimizer_authority": true,
+    "commercial_grade_is_measured_only": true,
+    "polydisperse_grade_is_measured_only": true,
+    "no_release_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true
+  },
+  "benchmark_lock_sha256": "a6ed5b17ec7ce0bc164c8b22578a3162fe61e35ae4796727d5427d2b69cea70b",
+  "dataset_fixture_sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "8693e59ad9524889f0ebbcb928648a4b7c7485dc11454ffe302800b53e667f15",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "eventual full-contract evaluate_locked_benchmark run once the dataset, split, and model artifact hash chain is signed"
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "all_gates_pass": false,
+  "authority": "AUDIT_ONLY",
+  "benchmark_data_path": "amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json",
+  "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "claim_under_attack": {
+    "asserted_gates": {
+      "all_gates_pass": true,
+      "amine_grid_classification_accuracy": 1.0,
+      "amine_grid_n": 13,
+      "anchor_all_canonical_match": true,
+      "anchor_all_counts_match": true,
+      "anchor_max_abs_error_g_per_eq": 0.0338,
+      "anchor_max_abs_error_within_bar_0_5": true,
+      "hydroxyl_excluded_correctly": true,
+      "min_bar_over_atomic_weight_u_ratio": 46.9,
+      "monodisperse_hit_rate": 1.0,
+      "monodisperse_mae_g_per_eq": 0.0226,
+      "nonamine_control_n": 7,
+      "nonamine_fail_closed_rate": 1.0
+    },
+    "receipt_path": "amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/amine_class_active_nh_robustness_receipt.v1.json",
+    "receipt_sha256": "74e2c759c1f56ba435ad2807be1f2bdc37c479d68fca81934569901072ba6519"
+  },
+  "gates": {
+    "all_gates_consistent_for_refutation": false,
+    "attack_fires_on_all_probes": false,
+    "n_probe_molecules": 3,
+    "n_probes_extended_rule_flips_to_zero": 0,
+    "n_probes_shipped_rule_counts_as_active_amine": 0,
+    "n_regression_records_checked": 26,
+    "regression_all_match_shipped_vs_extended": true,
+    "shipped_fn_verbatim_extracted_and_hashed": true
+  },
+  "primary_sources": [
+    "Lee & Neville, Handbook of Epoxy Resins, McGraw-Hill 1967 (already cited by target receipt)",
+    "C.A. May (ed.), Epoxy Resins 2nd ed., Marcel Dekker 1988, ISBN 0-8247-7690-9 (already cited by target receipt)",
+    "B. Ellis (ed.), Chemistry and Technology of Epoxy Resins, Blackie 1993, ISBN 0-7514-0095-0 (already cited by target receipt)",
+    "General physical-organic chemistry: amide/amidine/guanidine resonance delocalization reducing nitrogen nucleophilicity is textbook material (e.g. amide resonance and guanidine 'Y-aromaticity'); dicyandiamide's requirement for elevated cure temperature/catalysis (vs RT stoichiometric addition for simple aliphatic polyamines) is standard epoxy-formulation knowledge documented across general epoxy resin handbooks including the 3 above."
+  ],
+  "probe_molecules": [
+    {
+      "canonical_smiles": "N=C(N)N",
+      "extended_rule_flips_to_zero": false,
+      "formula": "CH5N3",
+      "id": "guanidine",
+      "mw": 59.072,
+      "n_active_nh_EXTENDED_RULE": 0,
+      "n_active_nh_SHIPPED_RULE": 0,
+      "note": "CAS 113-00-8; simplest guanidine; textbook 'Y-aromatic' resonance-delocalized system (all 3 N lone pairs conjugated); known organic-chemistry superbase precisely because the neutral form is heavily delocalized",
+      "shipped_counts_guanidine_nh_as_active": false,
+      "smiles": "NC(=N)N",
+      "theoretical_ahew_EXTENDED_RULE": null,
+      "theoretical_ahew_SHIPPED_RULE": null
+    },
+    {
+      "canonical_smiles": "N#CN=C(N)N",
+      "extended_rule_flips_to_zero": false,
+      "formula": "C2H4N4",
+      "id": "dicyandiamide",
+      "mw": 84.082,
+      "n_active_nh_EXTENDED_RULE": 0,
+      "n_active_nh_SHIPPED_RULE": 0,
+      "note": "CAS 461-58-5 (cyanoguanidine / DICY); the dominant commercial latent one-part DGEBA epoxy curing agent, discussed in Lee & Neville 1967 / May 1988 / Ellis 1993 (this receipt's own cited handbooks) as requiring elevated cure temperature and catalysts precisely because it does NOT cure via simple 1:1 amine+epoxide ring-opening addition the way aliphatic polyamines do",
+      "shipped_counts_guanidine_nh_as_active": false,
+      "smiles": "NC(=NC#N)N",
+      "theoretical_ahew_EXTENDED_RULE": null,
+      "theoretical_ahew_SHIPPED_RULE": null
+    },
+    {
+      "canonical_smiles": "N=C(N)NC(=N)N",
+      "extended_rule_flips_to_zero": false,
+      "formula": "C2H7N5",
+      "id": "biguanide",
+      "mw": 101.113,
+      "n_active_nh_EXTENDED_RULE": 0,
+      "n_active_nh_SHIPPED_RULE": 0,
+      "note": "CAS 461-71-2; bis-guanidine (metformin core); fully conjugated push-pull system across both guanidine units",
+      "shipped_counts_guanidine_nh_as_active": false,
+      "smiles": "NC(=N)NC(=N)N",
+      "theoretical_ahew_EXTENDED_RULE": null,
+      "theoretical_ahew_SHIPPED_RULE": null
+    }
+  ],
+  "rdkit_version_detected": "2026.03.2",
+  "rdkit_version_pin": "2026.03.2",
+  "regression_guard_records": [
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 5,
+      "n_active_nh_SHIPPED": 5,
+      "property": "ahew",
+      "record_id": "exact-deta",
+      "smiles": "NCCNCCN"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "exact-ipda",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 5,
+      "n_active_nh_SHIPPED": 5,
+      "property": "ahew",
+      "record_id": "mono-ahew-deta",
+      "smiles": "NCCNCCN"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "mono-ahew-ipda",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "mono-ahew-hmda",
+      "smiles": "NCCCCCCN"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 5,
+      "n_active_nh_SHIPPED": 5,
+      "property": "ahew",
+      "record_id": "deta",
+      "smiles": "NCCNCCN"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 6,
+      "n_active_nh_SHIPPED": 6,
+      "property": "ahew",
+      "record_id": "teta",
+      "smiles": "NCCNCCNCCN"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 7,
+      "n_active_nh_SHIPPED": 7,
+      "property": "ahew",
+      "record_id": "tepa",
+      "smiles": "NCCNCCNCCNCCN"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "eda",
+      "smiles": "NCCN"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "ipda",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "hmda",
+      "smiles": "NCCCCCCN"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "mxda",
+      "smiles": "NCc1cccc(CN)c1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 2,
+      "n_active_nh_SHIPPED": 2,
+      "property": "ahew",
+      "record_id": "piperazine",
+      "smiles": "C1CNCCN1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 3,
+      "n_active_nh_SHIPPED": 3,
+      "property": "ahew",
+      "record_id": "aep",
+      "smiles": "NCCN1CCNCC1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "dach",
+      "smiles": "NC1CCCCC1N"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 2,
+      "n_active_nh_SHIPPED": 2,
+      "property": "ahew",
+      "record_id": "aniline",
+      "smiles": "Nc1ccccc1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "mda",
+      "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 4,
+      "n_active_nh_SHIPPED": 4,
+      "property": "ahew",
+      "record_id": "dds",
+      "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 0,
+      "n_active_nh_SHIPPED": 0,
+      "property": "ahew",
+      "record_id": "triethylamine",
+      "smiles": "CCN(CC)CC"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 0,
+      "n_active_nh_SHIPPED": 0,
+      "property": "ahew",
+      "record_id": "acetamide",
+      "smiles": "CC(=O)N"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 0,
+      "n_active_nh_SHIPPED": 0,
+      "property": "ahew",
+      "record_id": "dmf",
+      "smiles": "CN(C)C=O"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 0,
+      "n_active_nh_SHIPPED": 0,
+      "property": "ahew",
+      "record_id": "urea",
+      "smiles": "NC(=O)N"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 0,
+      "n_active_nh_SHIPPED": 0,
+      "property": "ahew",
+      "record_id": "acetonitrile",
+      "smiles": "CC#N"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 0,
+      "n_active_nh_SHIPPED": 0,
+      "property": "ahew",
+      "record_id": "pyridine",
+      "smiles": "c1ccncc1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 0,
+      "n_active_nh_SHIPPED": 0,
+      "property": "ahew",
+      "record_id": "nitrobenzene",
+      "smiles": "O=[N+]([O-])c1ccccc1"
+    },
+    {
+      "match": true,
+      "n_active_nh_EXTENDED": 2,
+      "n_active_nh_SHIPPED": 2,
+      "property": "ahew",
+      "record_id": "ethanolamine",
+      "smiles": "NCCO"
+    }
+  ],
+  "scope_note": "This does NOT reopen or contradict any of the 13 already-tested amine structures, the 3 exact anchors, or the 6 monodisperse records -- all 24 regression-guard records are confirmed byte-identical between shipped and extended rule. The refutation is scoped precisely to the guanidine/amidine conjugation chemotype, a real gap in the fail-closed control suite (the receipt's 7 nonamine_controls test tertiary-amine/amide/DMF/urea/nitrile/pyridine/nitro but never a conjugated-but-formally-amine nitrogen).",
+  "shipped_n_active_amine_nh_source_extracted_verbatim": "def n_active_amine_nh(mol):\n    \"\"\"Count amine N-H able to add across an epoxide (module's AHEW rule).\"\"\"\n    total = 0\n    for a in mol.GetAtoms():\n        if a.GetSymbol() != \"N\":\n            continue\n        h = a.GetTotalNumHs()\n        if h == 0:\n            continue\n        if a.GetIsAromatic():          # pyrrole/imidazole ring N-H: not an amine hardener\n            continue\n        if a.GetFormalCharge() != 0:   # ammonium / nitro / N-oxide\n            continue\n        # exclude imine / nitrile / azo / N=O (any multiple bond ON the N)\n        if any(b.GetBondTypeAsDouble() > 1.0 for b in a.GetBonds()):\n            continue\n        # exclude amide / thioamide / amidine / guanidine: N bonded to a carbon\n        # that is =O, =S or =N. R-N02 (repair_mode interactive-2026-08-03):\n        # the C=N case is the minimal symmetric extension adopted verbatim from\n        # evidence/audit/amine-nh-guanidine-conjugation-gap-v1 -- same N-lone-\n        # pair delocalization mechanism, same exclusion. Categorical\n        # classification only; the quantitative AHEW question for guanidine\n        # N-H is explicitly left open.\n        is_amide = False\n        for nb in a.GetNeighbors():\n            if nb.GetSymbol() == \"C\":\n                for b in nb.GetBonds():\n                    o = b.GetOtherAtom(nb)\n                    if b.GetBondTypeAsDouble() == 2.0 and o.GetSymbol() in (\"O\", \"S\", \"N\"):\n                        is_amide = True\n        if is_amide:\n            continue\n        total += h\n    return total\n",
+  "shipped_n_active_amine_nh_source_sha256": "6af029de1add4ace1f051bad327ee5de3349756c80cb5a4af092b4835db731d4",
+  "study_id": "MOLECULE_PROPERTY_AMINE_NH_GUANIDINE_CONJUGATION_GAP_V1",
+  "target_source_file": "amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/compute_amine_class.py",
+  "target_source_file_sha256": "b1d846ef4b3b103c500ec2b28a7918aeec685bd4ffe555e5f8181a2174ede15a",
+  "verdict": "SURVIVED",
+  "why": "The shipped n_active_amine_nh() excludes amide N (neighbor carbon double-bonded to O or S) on the stated physical principle that resonance delocalization of the N lone pair into an adjacent pi-acceptor removes its nucleophilicity. Amidine/guanidine N (neighbor carbon double-bonded to N, not O/S) undergoes the identical delocalization mechanism, yet the shipped rule does not exclude it: guanidine, dicyandiamide (DICY -- the dominant commercial latent DGEBA epoxy curing agent, discussed in this receipt's own cited handbooks), and biguanide all have their amine NH2 groups counted as fully active (identical treatment to an ordinary aliphatic primary amine), producing a confident finite theoretical_ahew (e.g. dicyandiamide 84.082/4=21.02 g/eq) for a curing-agent class whose bulk amine nitrogens are not ordinary nucleophiles and which is well documented to require elevated temperature / catalytic acceleration rather than RT stoichiometric amine-epoxide addition. A minimal, symmetric extension of the SAME exclusion logic already in the shipped code (treating C=N exactly as C=O/C=S are already treated) flips all 3 probes to n_active_nh=0, while leaving every one of the 3 anchors + 6 monodisperse + 13 amine-grid + 7 nonamine-control + 1 hydroxyl-probe records (24 total) byte-identical to the shipped rule's output -- proving this is a strict generalization, not a re-fit or a different rule that happens to also work. The amine-class robustness receipt's generalization claim (100% correct active-N-H classification for the amine-hardener structure class) is therefore REFUTED for the guanidine/amidine subclass, which is real, in-scope (DGEBA + amine hardeners), and textbook-major (DICY)."
+}

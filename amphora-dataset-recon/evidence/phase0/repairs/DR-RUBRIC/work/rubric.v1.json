@@ -1,0 +1,161 @@
+{
+  "schema": "amphora.dataset-recon.evaluation-rubric.v1",
+  "campaign_item_id": "DR-RUBRIC",
+  "directive_obligation": "DR-RUBRIC",
+  "directive_source_heading": "## 6. Dataset Evaluation Dimensions (floor, not ceiling)",
+  "framing": "AUDIT-ONLY. This rubric scores candidate DATA SOURCES for evaluation purposes only. It grants no acquisition, procurement, or promotion authority. Applying it never requires downloading, caching, or bulk-fetching the candidate dataset -- every input attribute is observable from abstracts, data descriptors, license pages, or already-recorded search-record.v1.jsonl / disposition-ledger.v1.jsonl entries.",
+  "purpose": "Publish a deterministic, second-party-reproducible scoring rule for the six directive-mandated dimensions, so any evaluator (human or a later fire) presented with the same candidate facts computes the identical score, verdict, and rank.",
+  "determinism_contract": [
+    "Every dimension score is either a single table lookup or a fixed-formula sum of table lookups over a closed, enumerated vocabulary of categorical attribute values.",
+    "No dimension score depends on wall-clock time, random draws, hash-randomized iteration order, or any state external to the candidate record and this rubric document.",
+    "Canonical serialization of any rubric output MUST use JSON with sort_keys=True and no floating-point value carrying more than 4 decimal digits, so byte-for-byte comparison across replays is meaningful.",
+    "Ties in overall_score are broken by ascending candidate_id -- an explicit, stated rule, not sort-implementation-dependent behavior."
+  ],
+  "dimensions": [
+    {
+      "key": "gap_fit",
+      "directive_quote": "Gap fit -- which module gap or recipe element the dataset addresses, and whether it meets the stated minimum n and measurement class.",
+      "input_fields": ["gap_match_class", "meets_minimum_n_and_measurement_class"],
+      "scoring_rule": {
+        "type": "sum_of_table_lookups",
+        "max_score": 10,
+        "tables": {
+          "gap_match_class": {
+            "named_module_gap": 6,
+            "adjacent_domain": 3,
+            "off_scope": 0
+          },
+          "meets_minimum_n_and_measurement_class": {
+            "yes": 4,
+            "unknown": 2,
+            "no": 0
+          }
+        },
+        "formula": "gap_fit = tables.gap_match_class[candidate.gap_match_class] + tables.meets_minimum_n_and_measurement_class[candidate.meets_minimum_n_and_measurement_class]"
+      }
+    },
+    {
+      "key": "provenance_measurement_quality",
+      "directive_quote": "Provenance & measurement quality -- who measured, under what standard, with what instrumentation and uncertainty reporting; primary experimental data ranked above compilations, compilations above extracted/estimated values.",
+      "input_fields": ["data_class", "standard_and_uncertainty_disclosed"],
+      "scoring_rule": {
+        "type": "sum_of_table_lookups",
+        "max_score": 10,
+        "tables": {
+          "data_class": {
+            "primary_experimental": 6,
+            "compilation_of_primary": 3,
+            "extracted_or_estimated": 0
+          },
+          "standard_and_uncertainty_disclosed": {
+            "published_standard_and_uncertainty": 4,
+            "standard_named_no_uncertainty": 2,
+            "neither_stated": 0
+          }
+        },
+        "formula": "provenance_measurement_quality = tables.data_class[candidate.data_class] + tables.standard_and_uncertainty_disclosed[candidate.standard_and_uncertainty_disclosed]"
+      }
+    },
+    {
+      "key": "rights_clarity",
+      "directive_quote": "Rights clarity -- license as published, redistribution terms, and the specific human action needed to clear it.",
+      "input_fields": ["rights_tier"],
+      "scoring_rule": {
+        "type": "table_lookup",
+        "max_score": 10,
+        "tables": {
+          "rights_tier": {
+            "open_no_restriction": 10,
+            "open_with_attribution": 8,
+            "agreement_gated_named_terms": 5,
+            "paywalled_unclear_bulk_rights": 2,
+            "quarantined_or_prohibited": 0
+          }
+        },
+        "formula": "rights_clarity = tables.rights_tier[candidate.rights_tier]"
+      }
+    },
+    {
+      "key": "uniqueness",
+      "directive_quote": "Uniqueness -- whether the dataset supplies evidence unavailable in any already-held or already-recommended source; overlap declared to prevent double-counting and leakage.",
+      "input_fields": ["redundancy_class"],
+      "scoring_rule": {
+        "type": "table_lookup",
+        "max_score": 10,
+        "tables": {
+          "redundancy_class": {
+            "no_known_portfolio_overlap": 10,
+            "partial_overlap_adds_coverage": 6,
+            "mostly_redundant": 2,
+            "fully_redundant": 0
+          }
+        },
+        "formula": "uniqueness = tables.redundancy_class[candidate.redundancy_class]"
+      }
+    },
+    {
+      "key": "integrity_risk",
+      "directive_quote": "Integrity risk -- translation/unit/locale hazards, digitization quality, known errata, version instability.",
+      "input_fields": ["translation_confidence", "integrity_flags"],
+      "scoring_rule": {
+        "type": "table_lookup_with_deductions",
+        "max_score": 10,
+        "min_score": 0,
+        "note": "Higher score means LOWER integrity risk / higher confidence in the record as published.",
+        "tables": {
+          "translation_confidence": {
+            "native_script_verified_high": 10,
+            "machine_translated_medium": 6,
+            "machine_translated_low_or_unverified": 3,
+            "no_translation_attempted_unknown": 0
+          }
+        },
+        "flag_vocabulary": [
+          "locale_unit_convention_unverified",
+          "digitization_quality_concern",
+          "known_errata",
+          "version_instability"
+        ],
+        "deduction_per_flag": 2,
+        "formula": "integrity_risk = max(0, tables.translation_confidence[candidate.translation_confidence] - 2 * len(candidate.integrity_flags))"
+      }
+    },
+    {
+      "key": "acquisition_cost_friction",
+      "directive_quote": "Acquisition cost & friction -- free/open vs. request-gated vs. commercial, estimated lead time, and the single next human action that unblocks it.",
+      "input_fields": ["reachability"],
+      "scoring_rule": {
+        "type": "table_lookup",
+        "max_score": 10,
+        "tables": {
+          "reachability": {
+            "reachable_direct_open_download": 10,
+            "reachable_agreement_process_required": 6,
+            "reachable_index_only_dataset_unclear": 4,
+            "unreachable_network_blocked": 0
+          }
+        },
+        "formula": "acquisition_cost_friction = tables.reachability[candidate.reachability]"
+      }
+    }
+  ],
+  "weighting": {
+    "scheme": "equal",
+    "rationale": "Directive Section 6 states the six dimensions as a floor, not a ceiling, and assigns no explicit relative weight. Equal weighting (1/6 each) is the only weighting a second party can reproduce without an undisclosed judgment call; any future re-weighting must be published as rubric v2 and re-run under the same two-replay gate, never silently substituted.",
+    "formula": "overall_score = round( (gap_fit + provenance_measurement_quality + rights_clarity + uniqueness + integrity_risk + acquisition_cost_friction) / 6.0, 4)"
+  },
+  "verdict_rule": {
+    "type": "floor_then_threshold",
+    "formula": [
+      "if rights_clarity == 0 or acquisition_cost_friction == 0 or gap_fit == 0: verdict = REJECTED",
+      "elif overall_score >= 7.0 and rights_clarity >= 5 and acquisition_cost_friction >= 4: verdict = RECOMMENDED",
+      "else: verdict = CONDITIONAL"
+    ],
+    "rationale": "A hard floor of 0 on any of gap_fit / rights_clarity / acquisition_cost_friction is disqualifying regardless of the other five dimensions (a source that does not address a real gap, or cannot legally be used, or cannot currently be reached, is not actionable no matter how good its other properties are). RECOMMENDED additionally requires the composite to clear 7.0 AND both rights and acquisition to individually clear their own floors, so a high composite cannot mask a single bad disqualifying-adjacent dimension."
+  },
+  "rank_rule": {
+    "sort_key": ["-overall_score", "candidate_id"],
+    "description": "Sort candidates by overall_score descending; break exact ties by candidate_id ascending (lexicographic). rank is the 1-indexed position in this sorted order."
+  },
+  "second_party_reproducibility_statement": "Every table above is a closed enumeration: a second party who is handed only this document plus a candidate's raw categorical attribute values (gap_match_class, meets_minimum_n_and_measurement_class, data_class, standard_and_uncertainty_disclosed, rights_tier, redundancy_class, translation_confidence, integrity_flags, reachability) can compute the identical six dimension scores, overall_score, verdict, and rank using only table lookups and the four arithmetic formulas above -- no access to scorer.py, no subjective re-judgment, and no candidate-specific special-casing. independent_reference_check.py in this same directory is exactly that second party: it re-implements the six formulas directly from this JSON file in a code path that never imports scorer.py, and its output must match scorer.py's output exactly."
+}

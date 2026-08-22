@@ -1,0 +1,102 @@
+{
+ "n_formulas": 4,
+ "n_checks": 6,
+ "n_pass": 6,
+ "rows": [
+  {
+   "id": "A221-X70P1",
+   "url": "https://products.evonik.com/assets/em/ea/Ancamide_221_EMEA_TDS_EN_EN_TDS_PV_52041324_en_GB_EMEA.pdf",
+   "checks": [
+    {
+     "metric": "volume_solids_%",
+     "recomputed": 43.7,
+     "reported": 42.5,
+     "delta": 1.2,
+     "bar": 2.0,
+     "pass": true
+    },
+    {
+     "metric": "density_g/mL",
+     "recomputed": 1.369,
+     "reported": 1.37,
+     "delta": -0.001,
+     "bar": 0.06,
+     "pass": true
+    }
+   ],
+   "approx": [
+    "der_671x75"
+   ]
+  },
+  {
+   "id": "A702B75P1",
+   "url": "https://products.evonik.com/assets/s_/us/Ancamide_702B75_us_TDS_EN_EN_TDS_PV_52042312_en_US_US.pdf",
+   "checks": [
+    {
+     "metric": "volume_solids_%",
+     "recomputed": 60.7,
+     "reported": 62.0,
+     "delta": -1.31,
+     "bar": 2.0,
+     "pass": true
+    },
+    {
+     "metric": "density_g/mL",
+     "recomputed": 1.448,
+     "reported": 1.41,
+     "delta": 0.038,
+     "bar": 0.06,
+     "pass": true
+    }
+   ],
+   "approx": [
+    "ancamide_702b75",
+    "ancamine_k54",
+    "antiterra_u",
+    "bentone_sd2"
+   ]
+  },
+  {
+   "id": "MIL F160 Black \u2014 Component A",
+   "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_38A.025630.pdf",
+   "checks": [
+    {
+     "metric": "density_lb/gal",
+     "recomputed": 8.22,
+     "reported": [
+      7.9,
+      8.3
+     ],
+     "delta": "in-range",
+     "bar": "\u00b10.3",
+     "pass": true
+    }
+   ],
+   "approx": [
+    "polyamide/adduct\u2192class",
+    "iron_oxide\u2192class"
+   ]
+  },
+  {
+   "id": "MIL F160 Black \u2014 Component B",
+   "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_38A.025630.pdf",
+   "checks": [
+    {
+     "metric": "density_lb/gal",
+     "recomputed": 10.24,
+     "reported": [
+      10.2,
+      10.6
+     ],
+     "delta": "in-range",
+     "bar": "\u00b10.3",
+     "pass": true
+    }
+   ],
+   "approx": [
+    "silica/naphtha\u2192class"
+   ]
+  }
+ ],
+ "mixed_density_note": "F160 mixed (1:1 vol) ~9.23 lb/gal vs envelope 9.1 (C-002)."
+}

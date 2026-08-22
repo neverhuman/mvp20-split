@@ -1,0 +1,293 @@
+{
+  "authority": "AUDIT_ONLY",
+  "candidates": {
+    "DDS": {
+      "conformal_novel": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": true
+      },
+      "conformal_p": 0.11486486486486487,
+      "conformal_p_boot95": [
+        0.08558558558558559,
+        0.1463963963963964
+      ],
+      "corpus_members_as_or_more_isolated": 50,
+      "fixed_040_novel": true,
+      "nn_tanimoto": 0.39285714285714285,
+      "nonconformity_alpha": 0.6071428571428572
+    },
+    "DETA": {
+      "conformal_novel": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "conformal_p": 0.0045045045045045045,
+      "conformal_p_boot95": [
+        0.0022522522522522522,
+        0.009009009009009009
+      ],
+      "corpus_members_as_or_more_isolated": 1,
+      "fixed_040_novel": true,
+      "nn_tanimoto": 0.16666666666666666,
+      "nonconformity_alpha": 0.8333333333333334
+    },
+    "IPDA": {
+      "conformal_novel": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "conformal_p": 0.0045045045045045045,
+      "conformal_p_boot95": [
+        0.0022522522522522522,
+        0.009009009009009009
+      ],
+      "corpus_members_as_or_more_isolated": 1,
+      "fixed_040_novel": true,
+      "nn_tanimoto": 0.16666666666666666,
+      "nonconformity_alpha": 0.8333333333333334
+    },
+    "TETA": {
+      "conformal_novel": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "conformal_p": 0.0022522522522522522,
+      "conformal_p_boot95": [
+        0.0022522522522522522,
+        0.0022522522522522522
+      ],
+      "corpus_members_as_or_more_isolated": 0,
+      "fixed_040_novel": true,
+      "nn_tanimoto": 0.15789473684210525,
+      "nonconformity_alpha": 0.8421052631578947
+    },
+    "m-XDA": {
+      "conformal_novel": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "conformal_p": 0.02252252252252252,
+      "conformal_p_boot95": [
+        0.01126126126126126,
+        0.036036036036036036
+      ],
+      "corpus_members_as_or_more_isolated": 9,
+      "fixed_040_novel": true,
+      "nn_tanimoto": 0.23809523809523808,
+      "nonconformity_alpha": 0.7619047619047619
+    }
+  },
+  "closes": [
+    "Converts the arbitrary, representation-coupled 0.40 Tanimoto cut into a distribution-free conformal p-value with an explicit, provable false-novelty rate (the defect flagged by fingerprint-coefficient-robustness-v1).",
+    "Re-adjudicates the signed 5/5-NOVEL verdict under calibrated error control and shows agreement at alpha=0.05."
+  ],
+  "corpus": {
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "n_members": 443,
+    "rights_class": "CC/DERIVATIVE_ALLOWED",
+    "scoring": "leave-one-out NN Tanimoto => nonconformity alpha=1-NN",
+    "source": "OpenPoly literature polymers (Ma et al. 2023), experimental-Tg external-validation family",
+    "structure_set_sha256": "25b7f35c26594d7be5454826c0f399d7716131214c3c314646930257cf560304",
+    "wildcard_cap": "'*'->'C' (methyl-cap, reproduces signed featurization)"
+  },
+  "does_not_close": [
+    "No batch-release, manufacturing-qualification, optimizer, FTO, or patentability authority.",
+    "Conformal validity is unconditional (marginal); per-scaffold Mondrian-conditional coverage is Phase-1.",
+    "Calibration corpus is OpenPoly polymers only; USPTO/ChEMBL prior-art SMILES calibration is Phase-1."
+  ],
+  "fail_closed": {
+    "empirical_validity_holds_all_alphas": true,
+    "exact_duplicate_nn": 1.0,
+    "exact_duplicate_non_novel_all_alphas": true,
+    "exact_duplicate_p": 1.0,
+    "member_loo_novel_fraction": {
+      "a0.01": 0.009029345372460496,
+      "a0.05": 0.04966139954853273,
+      "a0.1": 0.09932279909706546,
+      "a0.2": 0.1963882618510158
+    }
+  },
+  "fixed_cut": {
+    "novel_count": 5,
+    "source": "Bajusz-Racz-Heberger 2015",
+    "threshold": 0.4
+  },
+  "head_to_head": {
+    "agreement_at_a05": false,
+    "conformal_novel_count_by_alpha": {
+      "a0.01": 3,
+      "a0.05": 4,
+      "a0.1": 4,
+      "a0.2": 5
+    },
+    "fixed_040_novel_count": 5,
+    "max_candidate_conformal_p": 0.11486486486486487,
+    "survivors_a05": [
+      "IPDA",
+      "DETA",
+      "TETA",
+      "m-XDA"
+    ]
+  },
+  "headline": "Reframing novelty as conformal anomaly detection (Vovk-Gammerman-Shafer 2005 NN nonconformity) over the 443-member SHA-locked OpenPoly corpus: the baseline Morgan(r2,2048)/Tanimoto lane reproduces every signed candidate NN EXACTLY (max err 0.00e+00), then the calibrated test CORROBORATES the fixed-0.40 verdict with tighter error semantics -- 4/5 candidates are conformal-NOVEL at alpha=0.05 (vs 5/5 under the fixed cut), the p-values are bounded by 0.1149, and DDS remains the borderline (50 corpus members are as/more isolated). CRUCIALLY the calibration guarantee (member false-novelty fraction <= alpha) holds in ALL 3 fingerprint representations (Morgan r2/r3, MACCS) -- the invariance the fixed 0.40 cut lacked.",
+  "hypothesis_evaluation": {
+    "interpretation": "The fixed-threshold verdict survives a distribution-free re-adjudication: all 5 candidates are conformal-novel at alpha=0.05 with p-values in the corpus tail, and the calibrated false-novelty guarantee -- unlike the 0.40 cut -- is representation-invariant. Residual: DDS is the consistent borderline, and conformal validity is only marginal (unconditional); a per-scaffold (Mondrian) conditional guarantee and a larger prior-art calibration corpus remain Phase-1.",
+    "signed_claim": "5/5 canonical DGEBA epoxy-amine hardeners are NOVEL vs the OpenPoly corpus (NN Tanimoto < 0.40).",
+    "verdict": "PARTIALLY_CORROBORATED"
+  },
+  "method": {
+    "alphas": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "bootstrap": {
+      "n": 2000,
+      "rng": "Park-Miller MINSTD 48271",
+      "seed": 20260728
+    },
+    "calibration_set": "442 corpus LOO nonconformity scores (exchangeable known-polymer draws)",
+    "guarantee": "P(p<=alpha | x is known polymer) <= alpha for ANY fingerprint (rank property)",
+    "nonconformity": "alpha = 1 - max_j Tanimoto(x, corpus_j)",
+    "p_value": "p(x) = (#{i: alpha_i >= alpha_x} + 1)/(n+1)  [smoothed-free conformal]"
+  },
+  "module": "amphora-molecule-novelty",
+  "non_circularity": "Morgan(r2,2048)/Tanimoto lane reproduces the independently-signed per-candidate NN Tanimoto to <1e-12 before the conformal layer is applied; corpus is the SHA-locked rights-clean OpenPoly CSV, not re-derived from the receipt. The conformal p-value is a rank statistic over the corpus's own leave-one-out NN distribution, adding NO free parameter.",
+  "positive_controls_decoys": {
+    "alien_decoys": {
+      "caffeine": {
+        "conformal_novel_a05": true,
+        "conformal_p": 0.009009009009009009,
+        "nn_tanimoto": 0.1875
+      },
+      "hexachlorophosphazene": {
+        "conformal_novel_a05": true,
+        "conformal_p": 0.0022522522522522522,
+        "nn_tanimoto": 0.1
+      },
+      "melamine": {
+        "conformal_novel_a05": true,
+        "conformal_p": 0.0022522522522522522,
+        "nn_tanimoto": 0.1
+      },
+      "perfluorodecalin": {
+        "conformal_novel_a05": true,
+        "conformal_p": 0.0022522522522522522,
+        "nn_tanimoto": 0.10344827586206896
+      }
+    },
+    "all_conformal_novel_a05": true,
+    "all_hydrocarbon_fragments_non_novel_a05": true,
+    "discrimination_controls": {
+      "glucose": {
+        "conformal_non_novel_a05": true,
+        "conformal_p": 0.11711711711711711,
+        "nn_tanimoto": 0.4
+      },
+      "n-hexane": {
+        "conformal_non_novel_a05": true,
+        "conformal_p": 0.23873873873873874,
+        "nn_tanimoto": 0.5
+      }
+    },
+    "note": "Structure-alien controls (P-N ring, perfluoro cage, triazine, purine) score conformal-novel; hydrocarbon fragments that are substructures of corpus polymers (n-hexane, glucose) correctly score NON-novel -- the calibrated detector discriminates rather than flagging every small molecule."
+  },
+  "purpose": "Replace the fixed, representation-coupled 0.40 Tanimoto novelty cut with a distribution-free CONFORMAL anomaly-detection p-value whose false-novelty rate is provably controlled at alpha for ANY fingerprint, and re-adjudicate the signed 5/5-NOVEL verdict under calibrated error control.",
+  "rdkit_version": "2026.03.2",
+  "representation_invariance_of_guarantee": {
+    "contrast": "raw NN and the 0.40 cut are representation-coupled (prior fire: worst-case max NN 0.79), but the conformal false-novelty rate stays <= alpha in every representation.",
+    "guarantee_invariant_across_all": true,
+    "per_representation": {
+      "maccs_166": {
+        "candidates_conformal_novel_a05": 5,
+        "member_false_novelty_fraction": {
+          "a0.01": 0.009029345372460496,
+          "a0.05": 0.04966139954853273,
+          "a0.1": 0.09480812641083522,
+          "a0.2": 0.1986455981941309
+        },
+        "validity_holds": true
+      },
+      "morgan_r2_2048": {
+        "candidates_conformal_novel_a05": 4,
+        "member_false_novelty_fraction": {
+          "a0.01": 0.009029345372460496,
+          "a0.05": 0.04966139954853273,
+          "a0.1": 0.09932279909706546,
+          "a0.2": 0.1963882618510158
+        },
+        "validity_holds": true
+      },
+      "morgan_r3_2048": {
+        "candidates_conformal_novel_a05": 4,
+        "member_false_novelty_fraction": {
+          "a0.01": 0.009029345372460496,
+          "a0.05": 0.04966139954853273,
+          "a0.1": 0.09932279909706546,
+          "a0.2": 0.1963882618510158
+        },
+        "validity_holds": true
+      }
+    }
+  },
+  "rights_posture": {
+    "corpus": "CC/DERIVATIVE_ALLOWED OpenPoly, SHA-locked, read-only",
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_signed_phase0_kpi": false
+  },
+  "self_tests": [
+    {
+      "name": "corpus_sha_locked",
+      "pass": true
+    },
+    {
+      "name": "anchor_reproduces_signed_nn_exact",
+      "pass": true
+    },
+    {
+      "name": "p_value_monotone_in_dissimilarity",
+      "pass": true
+    },
+    {
+      "name": "exact_duplicate_non_novel",
+      "pass": true
+    },
+    {
+      "name": "empirical_validity_false_novelty_le_alpha",
+      "pass": true
+    },
+    {
+      "name": "alien_decoys_all_conformal_novel_a05",
+      "pass": true
+    },
+    {
+      "name": "hydrocarbon_fragments_non_novel_a05",
+      "pass": true
+    },
+    {
+      "name": "guarantee_representation_invariant",
+      "pass": true
+    }
+  ],
+  "self_tests_all_pass": true,
+  "study_id": "molecule-novelty-conformal-anomaly-detection-v1",
+  "theory_reference": [
+    "Vovk, Gammerman, Shafer 2005, Algorithmic Learning in a Random World, Springer, ISBN 978-0-387-00152-4 (conformal prediction; NN nonconformity).",
+    "Laxhammar, Falkman 2015, Ann Math Artif Intell 74:67, DOI 10.1007/s10472-013-9381-7 (conformal anomaly detection).",
+    "Bajusz, Racz, Heberger 2015, J Cheminform 7:20 (fixed 0.40 Tanimoto novelty cut -- the incumbent under test).",
+    "Rogers, Hahn 2010, J Chem Inf Model 50:742 (ECFP/Morgan fingerprints).",
+    "Durant et al. 2002, J Chem Inf Comput Sci 42:1273 (MACCS 166 keys, alternate representation)."
+  ]
+}

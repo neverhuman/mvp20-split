@@ -1,0 +1,330 @@
+{
+ "tier1_arithmetic_audit": {
+  "spf": "A702B75P1",
+  "url": "https://products.evonik.com/assets/s_/us/Ancamide_702B75_us_TDS_EN_EN_TDS_PV_52042312_en_US_US.pdf",
+  "recomputed": {
+   "volume_solids_pct": 60.7,
+   "density_g_ml": 1.448,
+   "voc_g_l": 334.0
+  },
+  "reported": {
+   "volume_solids_pct": 62.0,
+   "density_g_ml": 1.41,
+   "voc_g_l": 320
+  },
+  "delta": {
+   "vs_pts": -1.31,
+   "density_g_ml": 0.038,
+   "voc_g_l": 14.0
+  },
+  "bars": {
+   "vs_abs_pts": 1.5,
+   "density_g_ml": 0.05
+  },
+  "pass_vs": true,
+  "pass_density": true,
+  "approx_lines": [
+   "ancamide_702b75",
+   "ancamine_k54",
+   "antiterra_u",
+   "bentone_sd2"
+  ],
+  "note": "trade-name additive/filler lines use APPROX class constants (flagged); the three dominant mass lines (resin, fillers, solvents) are ledger-cited."
+ },
+ "tier2_class_recovery": {
+  "lead": {
+   "id": "M00097",
+   "resin": "dgeba_828",
+   "hardener": "ancamide_350a",
+   "stoich_R": 0.7,
+   "extender_signature": "silica+silica"
+  },
+  "lead_derived": {
+   "mix_ratio_by_volume": 1.0,
+   "volume_solids_pct": 65.0,
+   "voc_g_per_l": 281.499,
+   "weight_lb_per_gal": 9.161,
+   "density_g_ml": 1.098,
+   "pvc_pct": 9.326,
+   "cpvc_pct": 53.778,
+   "lambda_pvc_cpvc": 0.173,
+   "stoichiometric_ratio": 0.7,
+   "coverage_ft2_gal_at_dft": 208.542,
+   "wft_mils_at_dft": 7.692,
+   "dft_basis_mil": 5.0,
+   "total_mass_g": 239.567,
+   "volume_A_ml": 109.115,
+   "volume_B_ml": 109.115
+  },
+  "anchors": {
+   "INTL-F150-TYPEIII": {
+    "volume_solids_pct": 61,
+    "vs_tol": 2,
+    "voc_g_l": 330,
+    "mix_vol": 1.0,
+    "pot_life_h": 4,
+    "touch_dry_h_77F": 2,
+    "hard_dry_h_77F": 6,
+    "dft_dry_mils": 3,
+    "flash_point_F": 99,
+    "induction_h_60_70F": 1.5
+   },
+   "NCP-24441-TYPEIV": {
+    "volume_solids_pct": 66.5,
+    "vs_tol": 2.0,
+    "weight_solids_pct": 79.2,
+    "weight_lb_per_gal": 11.2,
+    "voc_lb_gal_max": 2.8,
+    "mix_vol": 1.0,
+    "pot_life_h_77F": 5,
+    "mixed_viscosity_ku": [
+     90,
+     105
+    ],
+    "dft_mils": [
+     4.0,
+     6.0
+    ],
+    "recoat_self_h": 12,
+    "topcoat_h": 6
+   }
+  },
+  "family_match": {
+   "dgeba_epoxy": true,
+   "reactive_polyamide": true,
+   "one_to_one_by_volume": true,
+   "both_components_pigmented": true,
+   "solvents_precedent": true,
+   "primary_no_functional_zinc": true,
+   "enhanced_zinc_optional": true
+  },
+  "envelope_position": "lead VS 65.0% / VOC ~281 g/L sits inside the customer envelope; public F160/F161 black/yellow remain at 60.2+/-2% solids, a major lineage-vs-envelope variance.",
+  "honesty": "1:1, ~65% solids, solvent-borne and epoxy-polyamide are ENVELOPE-FORCED. What the funnel independently DERIVED: the specific resin/hardener grade pairing (DGEBA-828-class + reactive-polyamide curative), HAP-compliant government-precedent solvent families, the silica barrier-extender pack, non-functional color twins, and the sub-stoichiometric band. Zinc phosphate is NOT in the primary package; it is isolated in Enhanced-65 as a functional optional variant requiring bench evidence."
+ },
+ "tier3_negative_controls": [
+  {
+   "control": "over-pigmented (talc 300 phr)",
+   "rejected": true,
+   "by": [
+    "lambda_below_cpvc",
+    "pvc_window",
+    "weight_per_gal"
+   ],
+   "expected_gate": "lambda_below_cpvc/pvc_window"
+  },
+  {
+   "control": "stoichiometry R=1.3",
+   "rejected": true,
+   "by": [
+    "pvc_window",
+    "stoichiometry"
+   ],
+   "expected_gate": "stoichiometry"
+  },
+  {
+   "control": "80% volume-solids demand",
+   "rejected": true,
+   "by": [
+    "coverage",
+    "volume_solids",
+    "wft"
+   ],
+   "expected_gate": "volume_solids"
+  }
+ ],
+ "blindness_note": "Known material actuals are used only for post-hoc comparison; they are never used for candidate generation or feasibility-band assignment.",
+ "blind_known_material_examples": [
+  {
+   "id": "SPF-A702B75P1",
+   "check": "SPF A702B75P1 arithmetic recompute",
+   "prediction": {
+    "volume_solids_pct": 60.7,
+    "density_g_ml": 1.448,
+    "voc_g_l": 334.0
+   },
+   "actual": {
+    "volume_solids_pct": 62.0,
+    "density_g_ml": 1.41,
+    "voc_g_l": 320
+   },
+   "delta_or_result": {
+    "delta": {
+     "vs_pts": -1.31,
+     "density_g_ml": 0.038,
+     "voc_g_l": 14.0
+    },
+    "bars": {
+     "vs_abs_pts": 1.5,
+     "density_g_ml": 0.05
+    }
+   },
+   "prediction_summary": "VS 60.7%, density 1.448 g/mL, VOC 334.0 g/L",
+   "actual_summary": "VS 62.0%, density 1.41 g/mL, VOC 320 g/L",
+   "delta_result_summary": "Delta VS -1.31 pts, density 0.038 g/mL, VOC 14.0 g/L; registered bars VS +/-1.5 pts, density +/-0.05 g/mL",
+   "verdict": "PASS_ON_REGISTERED_BARS",
+   "source": "https://products.evonik.com/assets/s_/us/Ancamide_702B75_us_TDS_EN_EN_TDS_PV_52042312_en_US_US.pdf",
+   "caveat": "Trade-name additive/filler lines use flagged APPROX class constants; VOC delta is reported, not a pass/fail bar."
+  },
+  {
+   "id": "NAVAL-CLASS-RECOVERY",
+   "check": "Naval-class recovery vs public Type IV / F150 anchors",
+   "prediction": {
+    "lead_id": "M00097",
+    "family": "dgeba_828 + ancamide_350a",
+    "mix_ratio_by_volume": 1.0,
+    "volume_solids_pct": 65.0,
+    "voc_g_l": 281.0,
+    "pot_life_precedent_lower_h": 4.0,
+    "lead_ku_proxy": 86.0
+   },
+   "actual": {
+    "INTL-F150-TYPEIII": {
+     "mix_vol": 1.0,
+     "volume_solids_pct": 61,
+     "vs_tol": 2,
+     "voc_g_l": 330,
+     "pot_life_h": 4,
+     "mixed_viscosity_ku": null
+    },
+    "NCP-24441-TYPEIV": {
+     "mix_vol": 1.0,
+     "volume_solids_pct": 66.5,
+     "vs_tol": 2.0,
+     "voc_g_l_est_from_lb_gal_max": 336.0,
+     "pot_life_h": 5,
+     "mixed_viscosity_ku": [
+      90,
+      105
+     ]
+    }
+   },
+   "delta_or_result": {
+    "one_to_one_mix_recovered": true,
+    "vs_inside_public_anchor_span": true,
+    "voc_below_340_g_l": true,
+    "pot_life_precedent_h": [
+     4,
+     5
+    ],
+    "lead_ku_proxy": 86.0,
+    "ncp_public_ku_band": [
+     90,
+     105
+    ]
+   },
+   "prediction_summary": "M00097 dgeba_828+ancamide_350a, 1:1 vol, 65.0% VS, 281 g/L VOC, pot-life precedent lower bound 4 h, KU proxy 86.0",
+   "actual_summary": "F150: 1:1, 61+/-2% VS, 330 g/L VOC, 4 h pot life; NCP: 1:1, 66.5+/-2.0% VS, ~336 g/L VOC max, 5 h, KU 90-105",
+   "delta_result_summary": "1:1=True; VS inside public anchor span 59.0-68.5%=True; VOC <=340=True",
+   "verdict": "RECOVERED_CLASS_ENVELOPE_AND_PRECEDENT",
+   "source": "https://marinecoatings.brand.akzonobel.com/m/6ac84c1a5a068129/original/Formula_150_Primer_MIL_DTL_24441_eng_usa_A4_20150204.pdf ; https://www.ncpcoatings.com/documents/MIL-DTL-24441,%20Type%20IV.pdf",
+   "caveat": "1:1 and solids are envelope constraints; the comparison is class/envelope recovery only, not QPL or wet-lab performance evidence."
+  },
+  {
+   "id": "NEG-CONTROL-1",
+   "check": "over-pigmented (talc 300 phr)",
+   "prediction": {
+    "predicted_rejection": true,
+    "expected_gate": "lambda_below_cpvc/pvc_window"
+   },
+   "actual": {
+    "computed_rejected": true,
+    "computed_failed_gates": [
+     "lambda_below_cpvc",
+     "pvc_window",
+     "weight_per_gal"
+    ]
+   },
+   "delta_or_result": {
+    "correct_gate_hit": true,
+    "expected_gate": "lambda_below_cpvc/pvc_window",
+    "failed_gates": [
+     "lambda_below_cpvc",
+     "pvc_window",
+     "weight_per_gal"
+    ]
+   },
+   "prediction_summary": "Reject by lambda_below_cpvc/pvc_window",
+   "actual_summary": "Rejected=True via lambda_below_cpvc, pvc_window, weight_per_gal",
+   "delta_result_summary": "Correct expected gate hit=True",
+   "verdict": "PASS_CORRECT_GATE",
+   "source": "engine.known_answers tier3_negative_controls",
+   "caveat": "Synthetic negative-control gate check; not evidence of material performance."
+  },
+  {
+   "id": "NEG-CONTROL-2",
+   "check": "stoichiometry R=1.3",
+   "prediction": {
+    "predicted_rejection": true,
+    "expected_gate": "stoichiometry"
+   },
+   "actual": {
+    "computed_rejected": true,
+    "computed_failed_gates": [
+     "pvc_window",
+     "stoichiometry"
+    ]
+   },
+   "delta_or_result": {
+    "correct_gate_hit": true,
+    "expected_gate": "stoichiometry",
+    "failed_gates": [
+     "pvc_window",
+     "stoichiometry"
+    ]
+   },
+   "prediction_summary": "Reject by stoichiometry",
+   "actual_summary": "Rejected=True via pvc_window, stoichiometry",
+   "delta_result_summary": "Correct expected gate hit=True",
+   "verdict": "PASS_CORRECT_GATE",
+   "source": "engine.known_answers tier3_negative_controls",
+   "caveat": "Synthetic negative-control gate check; not evidence of material performance."
+  },
+  {
+   "id": "NEG-CONTROL-3",
+   "check": "80% volume-solids demand",
+   "prediction": {
+    "predicted_rejection": true,
+    "expected_gate": "volume_solids"
+   },
+   "actual": {
+    "computed_rejected": true,
+    "computed_failed_gates": [
+     "coverage",
+     "volume_solids",
+     "wft"
+    ]
+   },
+   "delta_or_result": {
+    "correct_gate_hit": true,
+    "expected_gate": "volume_solids",
+    "failed_gates": [
+     "coverage",
+     "volume_solids",
+     "wft"
+    ]
+   },
+   "prediction_summary": "Reject by volume_solids",
+   "actual_summary": "Rejected=True via coverage, volume_solids, wft",
+   "delta_result_summary": "Correct expected gate hit=True",
+   "verdict": "PASS_CORRECT_GATE",
+   "source": "engine.known_answers tier3_negative_controls",
+   "caveat": "Synthetic negative-control gate check; not evidence of material performance."
+  }
+ ],
+ "known_reference_cards_path": "out/known_reference_cards.json",
+ "known_reference_cards_summary": {
+  "check_label": "Known-Control Recovery Check",
+  "positive_known_reference_count": 5,
+  "negative_control_count": 3,
+  "check_scope": "Pass/fail validation checks for known controls and negative controls; not evidence ranks and never mixed with candidate feasibility bands."
+ },
+ "coverage_identity_selftest": {
+  "at_dft_6.0": 173.8,
+  "at_dft_4.5": 231.7,
+  "envelope_range": [
+   175,
+   230
+  ],
+  "consistent": true
+ }
+}

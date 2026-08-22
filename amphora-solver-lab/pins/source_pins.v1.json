@@ -1,0 +1,42 @@
+{
+ "schema": "amphora.solver-lab.source-pins.v1",
+ "note": "sha256 pins over the already-signed KPI/receipt/fixture JSON this crate's oracles are allowed to read. A mismatch means the source was tampered with or superseded; the oracle refuses (fail-closed). Pinned 2026-08-03 on xbabe2.",
+ "pins": [
+  {
+   "logical_id": "ingredient_library_facts",
+   "rel_path": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+   "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+  },
+  {
+   "logical_id": "ghs_clp_hazard_prescreen_kpi",
+   "rel_path": "amphora-sourceability-ehs/evidence/phase0/kpis/ghs-clp-public-hazard-prescreen-5-canonical-epoxy-amines-kpi.v1.json",
+   "sha256": "86528e37afc02d4010fac0051b256078222803ee194fb9d1131caca5a035f102"
+  },
+  {
+   "logical_id": "coating_candidate_design_card_kpi",
+   "rel_path": "amphora-molecule-property/evidence/phase0/kpis/coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+   "sha256": "e3e9c9fa8b4ebf06cabb887a71647c03180becd6239b16dd0e7f7909de0d1e9f"
+  },
+  {
+   "logical_id": "formulation_universe_known_answer",
+   "rel_path": "amphora-formulation-universe/reference/phase0-formulation-universe-known-answer.v1.json",
+   "sha256": "cb3cdb8bd40ebfeadd929ab42fed7df4596375aa1d00b24242755479676029b3"
+  },
+  {
+   "logical_id": "envelope_gates_known_answer",
+   "rel_path": "amphora-envelope-gates/reference/phase0-envelope-gates-known-answer.v1.json",
+   "sha256": "aab0b9a8af2e14ab053744f1dee88f785be37321d582039716a81fee9aec5b52"
+  },
+  {
+   "logical_id": "rn01_fire1_cid_attribution_audit_receipt",
+   "rel_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+   "sha256": "39a84e3a0c17c6ca62982853ce0a833cb6edcfc7ba3d7a82dd2bc04f9d5178c0"
+  },
+  {
+   "logical_id": "rn01_fire2_superseding_hazard_receipt",
+   "rel_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json",
+   "sha256": "1f658452c27d9738bd3af1f93433a5489ffb57b6b3f2682ceb39d5b6e1a10d61",
+   "note": "R-N01 fire-2 superseding hazard-card receipt (CAS-correct CIDs); P3 hazard source when present"
+  }
+ ]
+}

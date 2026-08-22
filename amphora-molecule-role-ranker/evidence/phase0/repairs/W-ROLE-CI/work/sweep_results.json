@@ -1,0 +1,30 @@
+{
+  "distinct_artifacts_outside_this_module": [
+    {
+      "distinct_artifact_dirs": [
+        "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1",
+        "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1",
+        "amphora-molecule-generator/evidence/phase0/repairs/R-A06/work",
+        "amphora-molecule-generator/evidence/phase0/repairs/W-GEN1/work"
+      ],
+      "module": "amphora-molecule-generator",
+      "n_hits_total": 124,
+      "sample_fields": [
+        "all_ci_fields_examined[12].ci",
+        "all_ci_fields_examined[14].ci",
+        "all_ci_fields_examined[20].ci",
+        "all_ci_fields_examined[22].ci",
+        "all_ci_fields_examined[26].ci",
+        "all_ci_fields_examined[27].ci",
+        "already_known_instance_degenerate_fields[0].ci",
+        "already_known_instance_degenerate_fields[1].ci",
+        "already_known_instance_degenerate_fields[2].ci",
+        "already_known_instance_degenerate_fields[3].ci"
+      ]
+    }
+  ],
+  "n_degenerate_hits": 130,
+  "n_json_files_found": 7176,
+  "n_json_files_parsed": 7170,
+  "n_parse_errors": 6
+}

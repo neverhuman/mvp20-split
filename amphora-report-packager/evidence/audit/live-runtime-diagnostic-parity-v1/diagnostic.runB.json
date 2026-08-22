@@ -1,0 +1,138 @@
+{
+  "closes": "The live-execution gap: all three prior receipts for this module audited SOURCE BYTES only and explicitly disclaimed any dependency on the live Rust runtime; none demonstrated that the compiled binary actually rejects the forged signature, the envelope mismatch, the stripped lock, or the NFKC-obfuscated banned claim, or that the KPI path actually quarantines.",
+  "does_not_close": "Does not promote authority, does not flip scientific_readiness, does not test hostile inputs beyond the runtime's compiled-in mutant battery and the four mediation deny paths (the acceptance predicate is not publicly parameterizable), and does not make the module's scientific claim externally validated.",
+  "g1_live_diagnostic": {
+    "canonical_parity_byte_exact": true,
+    "fixture_sha256_from_disk": "2cb9ef66221150fc392a8be1bc8570b13bc93804249df11937e426d2d02d333c",
+    "fixture_sha256_live": "2cb9ef66221150fc392a8be1bc8570b13bc93804249df11937e426d2d02d333c",
+    "fixture_sha256_match": true,
+    "live_diagnostic_is_ok": true,
+    "live_passed": true,
+    "negative_control_count": 5,
+    "observed_equals_expected_live": true,
+    "outcome_labels": [
+      "forged-signature",
+      "legacy-documents",
+      "normalized-banned-claim",
+      "score-envelope-mismatch",
+      "signed-known-answer",
+      "stripped-authority-lock"
+    ],
+    "positive_control_count": 1,
+    "predicted_passed": true,
+    "result_digest_live": "6124ba7a6f04c7d9aeae320b2f22631dc77987099e5eab3f53f3bb0bcaa2a876",
+    "result_digest_match": true,
+    "result_digest_predicted": "6124ba7a6f04c7d9aeae320b2f22631dc77987099e5eab3f53f3bb0bcaa2a876"
+  },
+  "g2_live_evaluation": {
+    "artifact_hash_parity": true,
+    "canonical_parity_byte_exact": true,
+    "context_invariant_live": true,
+    "context_invariant_recheck": true,
+    "generated_document_count_live": 4,
+    "generated_document_count_predicted": 4,
+    "objective_values_empty_live": true,
+    "release_gates_all_false_live": true,
+    "run_a_is_ok": true,
+    "run_b_is_ok": true,
+    "status_live": "INSUFFICIENT_INPUT",
+    "status_predicted": "INSUFFICIENT_INPUT"
+  },
+  "g3_live_mediation": {
+    "cases": {
+      "empty_module": {
+        "display_live": "capability input is invalid: unsupported assurance capability module ID: ",
+        "display_predicted": "capability input is invalid: unsupported assurance capability module ID: ",
+        "live_is_err": true,
+        "match": true
+      },
+      "unknown_module": {
+        "display_live": "capability input is invalid: unsupported assurance capability module ID: unknown-module",
+        "display_predicted": "capability input is invalid: unsupported assurance capability module ID: unknown-module",
+        "live_is_err": true,
+        "match": true
+      },
+      "whitespace_module": {
+        "display_live": "capability input is invalid: unsupported assurance capability module ID:  amphora-report-packager",
+        "display_predicted": "capability input is invalid: unsupported assurance capability module ID:  amphora-report-packager",
+        "live_is_err": true,
+        "match": true
+      },
+      "wrong_candidate_type": {
+        "display_live": "candidate type is not accepted by this capability",
+        "display_predicted": "candidate type is not accepted by this capability",
+        "live_is_err": true,
+        "match": true
+      }
+    },
+    "deny_paths_fail_closed_with_display_parity": 4,
+    "deny_paths_tested": 4
+  },
+  "g4_descriptor_projection": {
+    "authority_ceiling_evidence_only": true,
+    "canonical_parity_byte_exact": true,
+    "descriptor_live": {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "candidate_types": [
+        "evidence_package"
+      ],
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "banned_claim_lint_required",
+        "human_deliverables_downstream_only"
+      ],
+      "project": "amphora-report-packager",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    "descriptor_predicted": {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "candidate_types": [
+        "evidence_package"
+      ],
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "banned_claim_lint_required",
+        "human_deliverables_downstream_only"
+      ],
+      "project": "amphora-report-packager",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    "ranking_eligible_false": true,
+    "solver_use_ceiling_disabled": true
+  },
+  "gates": {
+    "all_pass": true,
+    "g0_two_replay_byte_stability": true,
+    "g1_live_diagnostic_oracle_parity": true,
+    "g2_live_evaluation_oracle_parity": true,
+    "g3_live_mediation_fail_closed": true,
+    "g4_descriptor_projection_parity": true
+  },
+  "ground_truth": {
+    "probe_output_path": "runtime_ground_truth.v1.json",
+    "probe_stdout_sha256_run_a": "9097afae564a079be82b393fc3a72819a966b12c6d8d7ab3e002ce6309c73656",
+    "probe_stdout_sha256_run_b": "9097afae564a079be82b393fc3a72819a966b12c6d8d7ab3e002ce6309c73656"
+  },
+  "hypothesis": "H0 (falsifiable): the COMPILED runtime disagrees with the audited source semantics on at least one of: the 6-control diagnostic battery (1 ACCEPT / 5 REJECT with live Ed25519 + NFKC + stable_hash), the internal result_digest, the quarantined INSUFFICIENT_INPUT KPI result, execution-context invariance, the 4 mediation deny paths, or the descriptor projection. Any disagreement falsifies the three prior STATIC receipts' implicit assumption that source bytes = executed behavior.",
+  "module": "amphora-report-packager",
+  "non_circularity": "The probe links and executes the real Rust runtime and contains no decision logic; the oracle is pure CPython, shares no code with the runtime, never reads probe output, and re-derives every prediction from primary artifact bytes plus independent implementations of SHA-256, Ed25519, NFKC, and the JSON canonicaliser. Comparison happens only here, in the runner.",
+  "purpose": "First LIVE Rust harness for amphora-report-packager: execute the compiled runtime's public diagnostic, evaluation, and mediation surfaces and require byte parity with an independent CPython oracle derived only from primary artifact bytes and published primitives.",
+  "run_type": "live_rust_runtime_vs_independent_cpython_oracle",
+  "runtime_source_anchors": {
+    "assurance_diagnostics_rs_sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "assurance_lib_rs_sha256": "695ecb2e8d52039279b732635600d5bf207cbcf51891f7169f70da711f01f116",
+    "core_capability_rs_sha256": "7b358ffa2ed2ca3a090f73c2cc04abe1c42ec0c94e4f7fcf0ec31d6e11f0418a",
+    "core_phase0_rs_sha256": "123c552fedcae880df4d0e5b2d7fbe8ba629ecbc16fb16426b0653ebeb4f5df9",
+    "fixture_sha256": "2cb9ef66221150fc392a8be1bc8570b13bc93804249df11937e426d2d02d333c",
+    "probe_cargo_toml_sha256": "0cc0e0f2e24113e08aaa82bee5f15299569847c68e87a44bc779007bb16962ff",
+    "probe_main_rs_sha256": "ee99742fb3b9059db975edf55de28870e511dcd5b96a0337460820c633a70378"
+  },
+  "schema": "amphora.report-packager.live-runtime-diagnostic-parity-diagnostic.v1",
+  "study_id": "amphora-report-packager-live-runtime-diagnostic-parity-v1",
+  "theory_reference": "Differential testing (McKeeman, Digital Tech. J. 10(1), 1998); N-version discrepancy detection (Avizienis & Chen, COMPSAC 1977); complete mediation / reference monitor (Anderson, ESD-TR-73-51, 1972); fail-safe defaults (Saltzer & Schroeder, Proc. IEEE 63(9), 1975); Ed25519 (RFC 8032, 2017); Unicode NFKC (UAX #15); SHA-256 (FIPS 180-4).",
+  "verdict": "H0 REFUTED: live runtime == independent oracle byte-for-byte on all compared surfaces; source-equals-behavior gap closed for the diagnostic, KPI, mediation, and descriptor surfaces."
+}

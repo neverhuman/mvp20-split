@@ -1,0 +1,316 @@
+{
+  "closed_delivered_count": 5,
+  "closed_mixed_count": 1,
+  "closed_not_delivered_count": 10,
+  "closed_obligation_audit": [
+    {
+      "basis": "already-delivered (non-attack implementation obligation)",
+      "campaign_items": [],
+      "id": "A1-FIRE-INSPECTION",
+      "per_item": [],
+      "verdict": "delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-01",
+        "T-01B"
+      ],
+      "id": "T2-01",
+      "per_item": [
+        {
+          "campaign_item": "T-01",
+          "founder_done_criteria_met_inferred": true,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_SURVIVED",
+          "n_fires": 1
+        },
+        {
+          "campaign_item": "T-01B",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "mixed"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-02"
+      ],
+      "id": "T2-02",
+      "per_item": [
+        {
+          "campaign_item": "T-02",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-03"
+      ],
+      "id": "T2-03",
+      "per_item": [
+        {
+          "campaign_item": "T-03",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-04"
+      ],
+      "id": "T2-04",
+      "per_item": [
+        {
+          "campaign_item": "T-04",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-05"
+      ],
+      "id": "T2-05",
+      "per_item": [
+        {
+          "campaign_item": "T-05",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-06"
+      ],
+      "id": "T2-06",
+      "per_item": [
+        {
+          "campaign_item": "T-06",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-08"
+      ],
+      "id": "T2-08",
+      "per_item": [
+        {
+          "campaign_item": "T-08",
+          "founder_done_criteria_met_inferred": true,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_SURVIVED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-09"
+      ],
+      "id": "T2-09",
+      "per_item": [
+        {
+          "campaign_item": "T-09",
+          "founder_done_criteria_met_inferred": true,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_SURVIVED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-10"
+      ],
+      "id": "T2-10",
+      "per_item": [
+        {
+          "campaign_item": "T-10",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-12"
+      ],
+      "id": "T2-12",
+      "per_item": [
+        {
+          "campaign_item": "T-12",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-13"
+      ],
+      "id": "T2-13",
+      "per_item": [
+        {
+          "campaign_item": "T-13",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "T-14"
+      ],
+      "id": "T2-14",
+      "per_item": [
+        {
+          "campaign_item": "T-14",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "V-A06v2"
+      ],
+      "id": "V2-A06v2",
+      "per_item": [
+        {
+          "campaign_item": "V-A06v2",
+          "founder_done_criteria_met_inferred": true,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_SURVIVED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "delivered"
+    },
+    {
+      "basis": "campaign-item last-fire-outcome (ledger/campaign.json)",
+      "campaign_items": [
+        "V-B02"
+      ],
+      "id": "V2-B02",
+      "per_item": [
+        {
+          "campaign_item": "V-B02",
+          "founder_done_criteria_met_inferred": false,
+          "item_status": "done",
+          "last_fire_outcome": "CLAIM_REFUTED",
+          "n_fires": 1
+        }
+      ],
+      "verdict": "not_delivered"
+    },
+    {
+      "basis": "already-delivered (non-attack implementation obligation)",
+      "campaign_items": [],
+      "id": "X-HEARTBEAT",
+      "per_item": [],
+      "verdict": "delivered"
+    }
+  ],
+  "n_closed_by_naive_flag": 16,
+  "n_obligations_total": 46,
+  "orphans": [],
+  "orphans_count": 0,
+  "schema": "amphora.redteam-audit.d-coverage-closed-obligation-audit.v1",
+  "spot_checks": [
+    {
+      "delivered_verdict": "DELIVERED",
+      "obligation_id": "T2-01",
+      "receipt_directive_obligation_field": "T2-01",
+      "receipt_founder_done_criteria_met": true,
+      "receipt_path": "amphora-candidate-contract/evidence/phase0/repairs/T-01/done/eight-vector-facts-injection-receipt.v1.dsse.json",
+      "receipt_refutation_criterion_observed": false,
+      "receipt_sha256": "ab731fec78464330d5a0c026c2299fab2d6c365c137096b095bc8d43f6a5dbd0",
+      "receipt_verdict_field": "SURVIVED"
+    },
+    {
+      "delivered_verdict": "NOT_DELIVERED",
+      "obligation_id": "T2-04",
+      "receipt_directive_obligation_field": "T2-04",
+      "receipt_founder_done_criteria_met": false,
+      "receipt_path": "amphora-evidence-intake-validator/evidence/phase0/repairs/T-04/done/t04-adversarial-forgery-done.v1.dsse.json",
+      "receipt_refutation_criterion_observed": null,
+      "receipt_sha256": "efff1ab6dd36beeb4b2f9cd2776b9b6ac1d35992742183c4b904c4d0ef922ecd",
+      "receipt_verdict_field": "CLAIM_REFUTED"
+    },
+    {
+      "delivered_verdict": "NOT_DELIVERED",
+      "obligation_id": "T2-05",
+      "receipt_directive_obligation_field": "T2-05",
+      "receipt_founder_done_criteria_met": false,
+      "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/done/T-05.done-receipt.v1.dsse.json",
+      "receipt_refutation_criterion_observed": true,
+      "receipt_sha256": "73162ca48e1687616a9284833e03dc98ebb75004aebce1ada8bdc962b2fa4190",
+      "receipt_verdict_field": "CLAIM_REFUTED"
+    },
+    {
+      "delivered_verdict": "NOT_DELIVERED",
+      "obligation_id": "T2-13",
+      "receipt_directive_obligation_field": "T2-13",
+      "receipt_founder_done_criteria_met": false,
+      "receipt_path": "amphora-run-provenance/evidence/phase0/repairs/T-13/done/real-archive-tamper-scale-receipt.v1.dsse.json",
+      "receipt_refutation_criterion_observed": true,
+      "receipt_sha256": "f61f018d7602ec43fa84abae5c0a54fefdd4418fb531be10b8f32fde18c4d986",
+      "receipt_verdict_field": "CLAIM_REFUTED"
+    }
+  ],
+  "unmapped": [],
+  "unmapped_count": 0
+}

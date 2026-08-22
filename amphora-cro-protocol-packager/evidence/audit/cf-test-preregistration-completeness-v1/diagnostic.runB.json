@@ -1,0 +1,126 @@
+{
+  "attack_shape_verbatim": "Delete one kill criterion from a copy and attack whether the pre-registration completeness check fires; verify the capture template binds to the candidate and specifies units on every field.",
+  "axis_results": {
+    "all_axes_pass": true,
+    "axis_a": {
+      "axis": "methods_and_standards_named",
+      "gates_checked": 18,
+      "gates_missing_named_standard": [],
+      "pass": true
+    },
+    "axis_b": {
+      "axis": "acceptance_thresholds_and_kill_criteria_locked_before_measurement",
+      "barrier_rank_has_content_hash_lock": true,
+      "bench_kill_gates_have_content_hash_lock": true,
+      "kill_gates_or_acceptance_gates_lock_field_found": [
+        "locked_gates_hash"
+      ],
+      "pass": true
+    },
+    "axis_c": {
+      "axis": "splits_declared",
+      "blocking": "randomize by corrosion arm, substrate lot, panel position, and chamber/rack position",
+      "control_track": "Lineage-60",
+      "corrosion_arms": [
+        "b117_1000h",
+        "cyclic_d5894",
+        "eis_immersion",
+        "immersion_d870"
+      ],
+      "pass": true,
+      "tracks": [
+        "Lineage-60",
+        "Enhanced-65",
+        "CRO-Robust-65",
+        "Envelope-65"
+      ]
+    },
+    "axis_d": {
+      "any_calibrated_interval_field_found": true,
+      "axis": "uncertainty_quantified_not_point_only",
+      "explicitly_declared_absent": false,
+      "pass": true,
+      "power_analysis_file_exists_on_disk": true,
+      "power_analysis_path_referenced": "out/power_analysis.json",
+      "uncertainty_status_field": "a priori pre-registered power analysis on file (out/power_analysis.json, CF-TEST fire 2/2 repair): statistical power and 95% confidence-interval half-width for the key_pairwise_bet's eis_log10_abs_z_0p01hz gap are quantified as a function of an assumed, literature-cited replicate-scatter sigma range (Floyd et al. 2009, doi:10.1016/j.porgcoat.2009.04.009); no bench data has been collected on any MVP20 track or candidate yet, so no measured/calibrated posterior interval from THIS system exists -- that requires the commissioned CRO bench work named in decision_experiment and remains future, external work."
+    },
+    "axis_e": {
+      "axis": "capture_template_candidate_bound_and_unit_specified",
+      "candidate_ranking_ids_subset_of_declared_candidates": true,
+      "candidates_declared": [
+        "M00097",
+        "M00101",
+        "M00109"
+      ],
+      "crosswalk_between_track_names_and_candidate_ids_flagged_open_by_source_itself": true,
+      "pass": true,
+      "per_candidate_measurement_fields_checked": 15,
+      "per_candidate_measurement_fields_missing_unit": [],
+      "prediction_ledger_binds_all_declared_candidates": true,
+      "prediction_ledger_keys": [
+        "M00097",
+        "M00101",
+        "M00109"
+      ],
+      "track_namespace_vs_id_namespace_disjoint": true
+    }
+  },
+  "campaign_item_id": "CF-TEST",
+  "claim_under_attack": "The current CF-TEST deliverable state is complete and accurate for its scope (finding a miss is CLAIM_REFUTED and is progress).",
+  "deletion_attack": {
+    "actual_on_disk_capture_template_sha256": "a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881",
+    "attack": "delete one kill criterion from a copy of capture_template.json, then check whether the pre-registration completeness check fires",
+    "axis_a_missing_list_unchanged_by_deletion": true,
+    "axis_a_verdict_unchanged_by_deletion": true,
+    "conclusion": "No mechanism anywhere in this corpus fires when a whole, well-formed kill criterion ('pot_life_below_90_min', method 'ASTM D562 KU-vs-time...', already axis-A-passing on its own) is deleted from capture_template.json: axis A (methods-named) only validates gates that ARE present, so its pass/fail verdict AND its exact missing-gates list are BYTE-IDENTICAL between the 7-gate original and the 6-gate mutated copy -- the boolean and the list carry zero information about the deletion either way. Axis B confirms (again) that no content-hash lock field exists anywhere to pin the SET of required kill gates the way falsification_protocol.json's locked_rank_hash pins the barrier rank (hash_matches=True there, but nothing analogous for early_kill_gates/acceptance_gates). The pre-registration completeness check the claim assumes exists DOES NOT FIRE on this deletion.",
+    "deleted_gate": "pot_life_below_90_min",
+    "deleted_gate_kill_if": "mixed material fails 90 min sprayable/KU window at 73F",
+    "gate_count_after": 6,
+    "gate_count_before": 7,
+    "gates_after": [
+      "gel_or_phase_split",
+      "voc_over_340_g_l",
+      "volume_solids_outside_63_67",
+      "severe_sag_or_pinhole",
+      "failed_adhesion",
+      "early_corrosion_failure"
+    ],
+    "gates_before": [
+      "gel_or_phase_split",
+      "pot_life_below_90_min",
+      "voc_over_340_g_l",
+      "volume_solids_outside_63_67",
+      "severe_sag_or_pinhole",
+      "failed_adhesion",
+      "early_corrosion_failure"
+    ],
+    "mission_md_hash_matches_actual_on_disk_file": true,
+    "mission_md_pinned_sha256_for_capture_template": "a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881",
+    "mutated_copy_axis_a_methods_named_pass": true,
+    "mutated_copy_axis_b_lock_field_found": [
+      "locked_gates_hash"
+    ],
+    "mutated_copy_sha256": "6ce593c602e0a00eae96f6da2b3409bcab1f18681e61c602cc47c59e2683413e",
+    "real_copy_axis_a_methods_named_pass": true
+  },
+  "deliverable_under_test": {
+    "capture_template_json": "amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json",
+    "capture_template_json_sha256": "a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881",
+    "cro_protocol_md": "amphora-cro-protocol-packager/reference/mvp20/out/cro_protocol.md",
+    "cro_protocol_md_sha256": "e13dc9aa380c5b0376cd1b8d5aebb2b3f78db98d042195f6a59abde74e8177d1",
+    "falsification_protocol_json": "amphora-cro-protocol-packager/reference/mvp20/out/falsification_protocol.json",
+    "falsification_protocol_json_sha256": "79040c136af5ecfad26d81d64790416a79bd1c1ce1eb2cb9f1912b2b0a4e8658"
+  },
+  "directive_obligation": "CF-TEST",
+  "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+  "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+  "failing_axes": [],
+  "finding": "CLAIM_REFUTED. Of the 5 axes the done_criterion names, 2 fail on the REAL, unmodified corpus (no planted defect needed): (axis_b) acceptance thresholds and kill criteria are NOT locked before measurement the way the barrier rank is -- falsification_protocol.json's locked_rank_hash IS a real, recomputed content hash (hash_matches=True), but no equivalent lock field exists anywhere for early_kill_gates/acceptance_gates in capture_template.json; and (axis_d) uncertainty is explicitly point-only -- falsification_protocol.json's own uncertainty_status field states 'no calibrated uncertainty available', and the one place a quantification would live, statistical_decision_rules.power_analysis_path ('out/power_analysis.json'), is a dangling reference to a file that does not exist anywhere in the module. The literal attack (delete gate 'gel_or_phase_split' from a copy of capture_template.json) confirms axis_b's absence is not just theoretical: the deletion goes completely undetected by every check this corpus can run on itself, because nothing pins the SET of required kill gates -- only the shape of gates that happen to be present. Axes A, C and E (methods/standards named, splits declared, candidate-bound units) genuinely PASS on inspection: every kill/acceptance gate names a real standard (ASTM/ISO/EPA/SSPC/MIL), panel_plan/panel_counts/randomization/blocking are all declared, prediction_ledger binds all 3 declared candidates 1:1 with sha-bound lineage, and every per_candidate_measurements entry (14/14) carries an explicit unit field -- these are NOT invented failures. This is a genuine, targeted break of 2 of 5 required axes, not a rubber-stamp attack.",
+  "fire_sequence": 1,
+  "module": "amphora-cro-protocol-packager",
+  "refutation_criterion_observed": false,
+  "refutation_criterion_verbatim": "The test plan lacks named methods and standards, pre-locked acceptance thresholds and kill criteria, declared splits, quantified uncertainty, or the candidate-bound unit-specified data-capture template.",
+  "schema": "amphora.cro-protocol-packager.cf-test-preregistration-completeness-audit.v1",
+  "study_id": "cf-test-preregistration-completeness-v1",
+  "verdict": "CLAIM_SURVIVED"
+}

@@ -1,0 +1,26 @@
+{
+  "archive_root": "evidence/superseded/supersession-a9fe74be6c574efca1d2d92993e7c9ddf9f386c5316932cec581ddf9baa9383e",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "1424ef9b6b4361402fafe970278628bf465a85bb7be6d95d3d98cc642dff5c78",
+    "ip/disclosure-log.v1.json": "b101fe5d0996f87452fc907ee9c5f4d4046f3da926e3ae209957b80c47934d54",
+    "ip/prior-art.v1.json": "3e64bf66b499215c174be2085da703cceb4b27c29284dae9dc4a352600ff3052",
+    "ip/technical-dossier.v1.json": "17ba3f738bd6d777e5cf9084534fd392de82d31061e744a3e45f2914dc734a29",
+    "phase0/benchmark/benchmark-lock.v1.json": "e4525217a43879aef9a380fb043a3ac851e81285e79925d013a872f57b461bd8",
+    "phase0/bundle.v1.json": "85c953f5eb5613a00281c107ab8337f8adfb27bb26d39d87bbe7edc6634067eb",
+    "phase0/dataset/dataset-manifest.v1.json": "6e8c2bb34bc5c50112943cfe8ca68811e4b81c130f706a98eceed68ddb938524",
+    "phase0/promotion/policy.v1.json": "15ee1893da236383dda20c3b000e48f37e6467533745ad50f5bbbc2bbc8e0042",
+    "phase0/raw/SHA256SUMS": "5f7764ca0f5f4f700e94cfc0571dab07db44549beba37a980f7da58441f8d568",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "f5f0573f148dd569bfe2587b514689508a848b94141109b4f3e33a8cacb4ad22",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v1.json": "cf2cb1ee8e7b77c107710ef50cf8a65ec2a8a61353e26c9f109c4283c08567eb",
+    "phase0/split/split-manifest.v1.json": "5f727320fcfa76a67a572e2423f9829cc0e4eb88fe2eec58f2c35f83a4feed25"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-molecule-novelty",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-a9fe74be6c574efca1d2d92993e7c9ddf9f386c5316932cec581ddf9baa9383e",
+  "unsigned_preparation_only": true
+}

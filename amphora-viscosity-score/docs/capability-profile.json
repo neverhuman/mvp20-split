@@ -1,0 +1,236 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "rights binding loss",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": "config/benchmark-locks/amphora-viscosity-score.v1.json",
+      "artifact_sha256": "22dec8ece71c7d9078188b1ac69e2896ebcbc39fad3c051f39ee1db028919718",
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "viscosity-rheology-sag-promotion-v1",
+      "observations": [],
+      "reported_result_status": "AUTOMATIC_DEMOTION_NO_ELIGIBLE_DATA",
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "formulation"
+  ],
+  "ceilings": {
+    "authority_tier": "LIMITED_SANITY",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "DISABLED"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 3,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "SHADOW",
+    "runtime_integration": "Native Rust theory slice accepts only host-bound signed artifacts, receipts, observations, raw hashes, rights, methods, and applicability admission.",
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "datasets": [
+    {
+      "dataset_id": "viscosity-source-landscape-v1",
+      "hash": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749",
+      "path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": "1"
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "No owned multi-family, multi-temperature rheology promotion dataset or independent review exists.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+        "rights": {
+          "evidence_path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+          "gap": "Known method and patent-context status; no source is admitted as training authority.",
+          "status": "KNOWN"
+        },
+        "sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "config/program/viscosity-split.v1.json",
+        "rights": {
+          "evidence_path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+          "gap": "Empty formulation-family split records that owned measurements are absent.",
+          "status": "KNOWN"
+        },
+        "sha256": "a6ef9b6c2d8d6d73bde295ed5e3b28ff1c35736fd68ad5cedc7fb3161c3f15ee"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "config/benchmark-locks/amphora-viscosity-score.v1.json",
+        "rights": {
+          "evidence_path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+          "gap": "Theory heads, baselines, uncertainty gates, and hostile nulls are locked but not passed.",
+          "status": "KNOWN"
+        },
+        "sha256": "3ce4a1697e4ebfc160e97ab37a10831dd027275ac6f1cdf3223329dbc7a5aa8e"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "Locked execution auto-demotes because owned measurements and independent review are absent.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "At least 30 unique formulations across three families at 18.3, 22.8, and 35 C with full flow curves, KU, D4400 sag, duplicates, lots, and locked process history"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-viscosity-score/src/lib.rs",
+      "sha256": "55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-viscosity-score/Cargo.toml",
+      "version_source_sha256": "1ba6a8c99f8f8010ec0f86db243310a011b6fd042e45f1e6b159c4d3abdd0126"
+    },
+    "known_contradictions": [
+      "Theory computation is implemented, but KU and D4400 heads remain unpromoted and exact_ku_prediction remains null."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-viscosity-score/src/lib.rs",
+      "scenario": "Verify liquid mixing, temperature response, crowding, yield flow, sag threshold, and malformed-input abstention.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-viscosity-score",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "formulation",
+        "dataset_id": "rheology-promotion-data-not-yet-available.v1",
+        "model_id": "viscosity-rheology-v1",
+        "model_readiness_status": "MODEL_READINESS_ONLY",
+        "solver_use": "DISABLED",
+        "track_id": "viscosity_rheology_sag"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-viscosity-score/src/lib.rs",
+        "sha256": "55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "viscosity-example",
+      "candidate_type": "formulation"
+    },
+    "current_output": {
+      "authority": "SHADOW",
+      "computed_apparent_viscosity_pa_s": null,
+      "estimated_ku": null,
+      "estimated_sag_index_mil": null,
+      "exact_ku_prediction": null
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON plus host FeatureSnapshot"
+    ],
+    "target": [
+      "candidate-bound measured rheology observation bundle"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "all six declared baselines",
+      "confidence_interval": "family-temperature clustered confidence bounds",
+      "direction": "context",
+      "evidence_source": "signed locked evaluation receipt",
+      "failure_threshold": "any locked gate or hostile null failure",
+      "metric_class": "promotion_bundle",
+      "name": "locked viscosity KU and sag gates",
+      "population": "owned multi-family rheology dataset",
+      "promotion_phase": "PHASE_1",
+      "split": "formulation-family and temperature held out",
+      "target": "all thresholds in immutable benchmark lock",
+      "unit": "boolean",
+      "value_path": "metrics.locked_gate_passed"
+    }
+  ],
+  "lane": "performance",
+  "module_id": "amphora-viscosity-score",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only with lot binding",
+    "fragments": "reject unless formulation policy permits",
+    "isotopes": "preserve and declare",
+    "mixtures": "exact positive-mass formulation only",
+    "normalized_structure_or_formula_hash": "owned by amphora-candidate-contract",
+    "original_byte_hash": "required at host evidence intake",
+    "polymers": "exact grade and lot required",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates.host_verified_artifact_and_receipt",
+    "metric": "metrics.computed_apparent_viscosity_pa_s",
+    "non_blocking_claim_locks": [
+      "no_rank_authority",
+      "exact_ku_prediction_remains_null"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty.apparent_viscosity_90"
+  },
+  "phase": "PRE_PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "Signed artifact and candidate-bound observations remain fail-closed"
+    ],
+    "phase_1": [
+      "All owned-data thresholds and baselines pass with confidence bounds"
+    ],
+    "phase_2": [
+      "Independent review and prospective replication pass without raising authority ceiling"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 2,
+      "decision_value": 5,
+      "downstream_leverage": 5,
+      "effort": 4,
+      "evidence_gap": 5,
+      "external_delay": 4
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 3,
+    "score": 36
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

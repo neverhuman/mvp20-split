@@ -1,0 +1,206 @@
+{
+  "also_feeds": [
+    "amphora-formulation-arithmetic",
+    "amphora-solvency-score"
+  ],
+  "authority": "AUDIT_ONLY",
+  "dataset": {
+    "n_blend_predictions": 45,
+    "n_compositions": 11,
+    "n_interior_blends": 9,
+    "rights": {
+      "attribution": "Nain A.K. et al. Excess Thermodynamic Properties and FTIR Studies of Binary Mixtures of Toluene with 2-Propanol or 2-Methyl-1-Propanol. Molecules 2024;29(19):4706.",
+      "doi": "10.3390/molecules29194706",
+      "in_scope": true,
+      "license": "CC-BY-4.0",
+      "pmc": "PMC11477799",
+      "publisher": "MDPI (all research articles CC BY 4.0)",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "values_provenance": "text-stated dynamic-viscosity table (11 comp x 5 T)"
+    },
+    "role": "external non-circular validation (text-stated Table 3 values)",
+    "system": "toluene (1) + 2-propanol / isopropanol (2)",
+    "temperatures_K": [
+      293.15,
+      298.15,
+      303.15,
+      308.15,
+      313.15
+    ],
+    "viscosity_units": "mPa.s (dynamic)"
+  },
+  "does_not": [
+    "does NOT promote amphora-viscosity-score or any module to PHASE_0",
+    "does NOT sign a trust-anchored phase0 evaluation/review receipt",
+    "does NOT modify any of the 66 signed receipts or the manifest",
+    "does NOT score on CONTEXT_ONLY polyverse data (unlike the 3 prior receipts)",
+    "does NOT claim an a-priori blend-viscosity MAGNITUDE (explicitly refuted)"
+  ],
+  "does_not_close": "Does NOT promote amphora-viscosity-score to PHASE_0; single-system science is not human-parity. Closes the specific gap: 'is component->blend viscosity predictable a-priori?' -> NO for associating blends.",
+  "fitted_parameters": {
+    "grunberg_nissan": "ONE per pair (d12), fit to interior points; explicitly NOT a-priori",
+    "kendall_monroe": "ZERO (a-priori; uses only the two measured pure endpoints)"
+  },
+  "grunberg_nissan_oneparam": {
+    "acceptance_bar_MAPE_pct": 5.0,
+    "d12_sign": "NEGATIVE (viscosity below log-linear: H-bond disruption)",
+    "global_d12_all_temperatures": -1.563449,
+    "global_residual_MAPE_pct": 2.9935
+  },
+  "honest_limitations": [
+    "SINGLE binary system (toluene+2-propanol); one chemistry class (aromatic + secondary alcohol). n_systems = 1 -> NOT promotable; a cross-pair d12 model needs many rights-clean binaries.",
+    "The NON-associating contrast case (e.g. toluene+n-heptane, benzene+cyclohexane) where Kendall-Monroe is expected to VALIDATE was NOT tested -- no rights-clean CC-BY table was fetchable this run (candidates were ACS/Springer paywalled). Claim is scoped to the associating case only.",
+    "Grunberg-Nissan d12 is FIT to interior points, so its low residual is an interpolation quality, not an a-priori prediction. It is reported to size the value of one measured datum, not as autonomous science.",
+    "Densities were tabulated only at 298.15 K, so the full Eyring excess Gibbs activation energy (needs molar volumes at all T) is reported by sign only via the log-viscosity excess, not as an absolute kJ/mol curve."
+  ],
+  "hypothesis_test": {
+    "H0_zero_param_apriori_magnitude_accurate": "zero-parameter Kendall-Monroe reproduces blend viscosity within MAPE <= 10%",
+    "detail": "Kendall-Monroe global MAPE 33.87% (bar 10%); all 45 points over-predict -> systematic negative deviation from log-linear.",
+    "result": "REFUTED"
+  },
+  "independent_cross_source_data_integrity": {
+    "fixture_isopropanol_25C": 2.038,
+    "fixture_toluene_25C": 0.56,
+    "isopropanol_pct_diff_paper_vs_fixture": 0.3435,
+    "max_abs_pct_diff": 1.25,
+    "paper_isopropanol_25C": 2.045,
+    "paper_toluene_25C": 0.567,
+    "toluene_pct_diff_paper_vs_fixture": 1.25
+  },
+  "kendall_monroe_apriori": {
+    "acceptance_bar_MAPE_pct": 10.0,
+    "all_45_points_overpredict": true,
+    "global_MAPE_pct": 33.8748,
+    "global_max_abs_pct_err": 55.7578,
+    "n_points": 45
+  },
+  "known_answer_battery": {
+    "all_pass": true,
+    "checks": [
+      {
+        "check": "endpoint_x1_1_reproduces_pure_toluene",
+        "detail": "KM at x1=1 == 0.567 mPa.s exactly",
+        "pass": true
+      },
+      {
+        "check": "endpoint_x1_0_reproduces_pure_2propanol",
+        "detail": "KM at x1=0 == 2.045 mPa.s exactly",
+        "pass": true
+      },
+      {
+        "check": "equal_component_viscosity_gives_same_mixture",
+        "detail": "eta1=eta2=1.234 -> eta_mix=1.234 for every composition",
+        "pass": true
+      },
+      {
+        "check": "half_half_geometric_mean_1_and_100_is_10",
+        "detail": "KM 50/50 of 1 and 100 mPa.s == 10 (geometric mean)",
+        "pass": true
+      },
+      {
+        "check": "grunberg_nissan_d12_zero_equals_kendall_monroe",
+        "detail": "d12=0 reduces Grunberg-Nissan to log-linear exactly",
+        "pass": true
+      },
+      {
+        "check": "grunberg_nissan_recovers_injected_d12",
+        "detail": "least-squares recovers d12=-1.5 from synthetic data to 1e-12",
+        "pass": true
+      },
+      {
+        "check": "monotone_between_endpoints",
+        "detail": "KM strictly decreases from pure 2-propanol to pure toluene",
+        "pass": true
+      }
+    ],
+    "n_checks": 7,
+    "n_pass": 7
+  },
+  "marine_relevance": "Marine epoxy thinners are multi-solvent blends (aromatic + ketone + alcohol). This result says a formulator CANNOT hit an airless-spray viscosity target for an alcohol-containing blend from pure-component data alone -- the blend runs ~10-25% thinner than log-linear -- and must anchor at least one measured mid-composition viscosity per associating pair. That is a concrete, testable formulation rule.",
+  "new_axis_justification": "grep of all 66 signed receipts + prior AUDIT axes for blend|mixing rule|Kendall|Grunberg|Refutas found ZERO hits: every prior viscosity artifact is a PURE-component Arrhenius fit or a CONTEXT_ONLY-quarantined polyverse MELT model. Component->mixture viscosity is the untouched, decision-relevant piece for a thinner blend.",
+  "non_circularity": "Kendall-Monroe consumes ONLY the measured pure toluene and pure 2-propanol viscosity (x1=0, x1=1 rows) at each temperature. The 9 interior blend viscosities are the validation target and are NEVER an input to the zero-parameter prediction.",
+  "per_temperature": [
+    {
+      "grunberg_nissan_d12_fit": -1.739544,
+      "grunberg_nissan_residual_MAPE_pct": 2.7088,
+      "kendall_monroe_MAPE_pct": 38.269,
+      "kendall_monroe_all_overpredict": true,
+      "kendall_monroe_max_abs_pct_err": 55.7578,
+      "pure_2propanol_eta_mPas": 2.414,
+      "pure_toluene_eta_mPas": 0.596,
+      "rank_spearman_pred_vs_meas": 1.0,
+      "temperature_K": 293.15
+    },
+    {
+      "grunberg_nissan_d12_fit": -1.726517,
+      "grunberg_nissan_residual_MAPE_pct": 3.0716,
+      "kendall_monroe_MAPE_pct": 37.9853,
+      "kendall_monroe_all_overpredict": true,
+      "kendall_monroe_max_abs_pct_err": 54.7575,
+      "pure_2propanol_eta_mPas": 2.045,
+      "pure_toluene_eta_mPas": 0.567,
+      "rank_spearman_pred_vs_meas": 1.0,
+      "temperature_K": 298.15
+    },
+    {
+      "grunberg_nissan_d12_fit": -1.548629,
+      "grunberg_nissan_residual_MAPE_pct": 3.6552,
+      "kendall_monroe_MAPE_pct": 33.4594,
+      "kendall_monroe_all_overpredict": true,
+      "kendall_monroe_max_abs_pct_err": 48.8703,
+      "pure_2propanol_eta_mPas": 1.791,
+      "pure_toluene_eta_mPas": 0.522,
+      "rank_spearman_pred_vs_meas": 1.0,
+      "temperature_K": 303.15
+    },
+    {
+      "grunberg_nissan_d12_fit": -1.439796,
+      "grunberg_nissan_residual_MAPE_pct": 2.378,
+      "kendall_monroe_MAPE_pct": 30.6902,
+      "kendall_monroe_all_overpredict": true,
+      "kendall_monroe_max_abs_pct_err": 43.4328,
+      "pure_2propanol_eta_mPas": 1.55,
+      "pure_toluene_eta_mPas": 0.498,
+      "rank_spearman_pred_vs_meas": 1.0,
+      "temperature_K": 308.15
+    },
+    {
+      "grunberg_nissan_d12_fit": -1.36276,
+      "grunberg_nissan_residual_MAPE_pct": 3.154,
+      "kendall_monroe_MAPE_pct": 28.9704,
+      "kendall_monroe_all_overpredict": true,
+      "kendall_monroe_max_abs_pct_err": 41.5142,
+      "pure_2propanol_eta_mPas": 1.327,
+      "pure_toluene_eta_mPas": 0.483,
+      "rank_spearman_pred_vs_meas": 1.0,
+      "temperature_K": 313.15
+    }
+  ],
+  "phase0_reconciliation_redteam": "Re-verified live this run from module-manifest.json: histogram of scientific_readiness = {UNVALIDATED: 29}; 0/29 modules VALIDATED; every module is ranking_eligible=false. 'FULL Phase-0' is a GOVERNANCE state (promotion needs 2 trusted human-key signatures), NOT a validated-science state. This increment adds real, non-circular, rights-clean science under AUDIT_ONLY and changes no authority, readiness flag, or receipt count.",
+  "pure_component_arrhenius_sanity": {
+    "2-propanol": {
+      "activation_energy_J_mol": 22496.792,
+      "r_squared": 0.998783
+    },
+    "toluene": {
+      "activation_energy_J_mol": 8415.712,
+      "r_squared": 0.979867
+    }
+  },
+  "schema": "amphora.redteam-audit.viscosity-blend-mixing-rule-ccby.v1",
+  "target_capability": "Predict the dynamic viscosity of a formulated marine-coating solvent BLEND (thinner) from its pure-component viscosities and composition -- the application-rheology property that sets the airless-spray window, sag resistance and achievable film build. This is the blend-level counterpart to the module's existing pure-solvent Arrhenius fixture.",
+  "target_kpi_id": "blend-viscosity-mixing-rule-marine-thinner",
+  "target_module": "amphora-viscosity-score",
+  "theory": "Arrhenius (1887) / Kendall-Monroe (1917) zero-parameter log-linear mole-fraction mixing: ln eta_mix = sum_i x_i ln eta_i. Grunberg & Nissan (1949) one-parameter interaction extension: + x1 x2 d12. The excess ln-viscosity x1 x2 d12 equals the Eyring excess Gibbs energy of activation of viscous flow divided by RT (sign convention: negative for H-bond-disrupting aromatic+alcohol blends).",
+  "validity_gates": {
+    "V1_kendall_monroe_zero_param_refuted_on_magnitude": true,
+    "V2_rank_order_preserved_all_temperatures_spearman_ge_0999": true,
+    "V3_one_param_grunberg_nissan_recovers_within_bar": true,
+    "V4_all_points_systematically_overpredict_sign_consistent": true,
+    "V5_known_answer_battery_all_pass": true,
+    "V6_independent_cross_source_pure_component_agreement_within_2pct": true,
+    "V7_non_circularity_interior_blends_never_input_to_zero_param_model": true,
+    "V8_rights_gate_ccby_derivative_allowed_in_scope_marine_thinner": true
+  },
+  "verdict": "BLEND_VISCOSITY_MIXING_RULE_ESTABLISHED :: KENDALL_MONROE_ZERO_PARAM_REFUTED_ON_MAGNITUDE (global MAPE 33.9%, all 45 blend points over-predict across all 5 T -> systematic negative deviation for this associating aromatic+alcohol marine thinner) :: RANK_ORDER_VALIDATED (Spearman +1.0 every T) :: GRUNBERG_NISSAN_ONE_PARAM_VALIDATED (residual MAPE 3.0%, d12=-1.56). TRUSTWORTHY OUTPUT = one measured interaction datum (d12) per associating pair; pure-component-only blend prediction OVER-predicts spray/sag viscosity and is NOT trustworthy for alcohol-containing thinners. For the module: blend viscosity needs >=1 measured mid-composition point per associating pair, or a group-contribution d12 (future work, data-blocked)."
+}

@@ -1,0 +1,99 @@
+{
+  "entries": [
+    {
+      "audit_id": "consolidated-kpi-staleness-v1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "headline": "Staleness/self-consistency audit of the module's own remediation artifact, audit-verdicts-consolidated-kpi.v1.json (built one fire prior, 2026-08-01, specifically to fix 'KPI surface does not reflect audit verdicts'). Real Ed25519 verification (T1) against the pinned Phase-0 evaluator key confirms 6 signed audit receipts exist under evidence/audit/ (excl. superseded); the consolidated KPI's own index claims only 4. Set-diff (T3) finds 2 receipt(s) on disk absent from the index: kpi-surface-completeness-v1, nist-baseline-fold-significance-v1. (T4) One of those, nist-baseline-fold-significance-v1, targets the exact KPI artifact (nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json) that the consolidated KPI's own honest_headline still describes as '...modest but real, and the module's only externally-validated positive result' -- and returns H0_REFUTED (pinned Ridge MAE not independently reproducible from what the repo preserves; beats-null effect not fold-robust). (T5) The referenced KPI file's hash is unchanged, ruling out an edited-file explanation -- this is a pure indexing gap. Conclusion: H0 (the consolidated-KPI remains a complete, current census whose headline accurately reflects the module's strongest current evidence) is H0 REFUTED. The remediation artifact exhibits the identical defect, within roughly 24 hours, that it was built to cure -- a manually-maintained snapshot with no mechanism forcing re-indexing when new audits land is not durable evidence surface hygiene.",
+      "n_tests_failed": 2,
+      "receipt_path": "evidence/audit/consolidated-kpi-staleness-v1/consolidated-kpi-staleness-receipt.v1.dsse.json",
+      "receipt_sha256": "aeaa6af745a35785fbb64e6dcd0fceb0b1ce26b2a6af10c754d567a55ef1367b",
+      "signature_verified_against_pinned_phase0_evaluator_key": true,
+      "verdict": "H0_REFUTED",
+      "verdict_note": null
+    },
+    {
+      "audit_id": "eis-brasher-kingsbury-water-uptake-admissibility-v1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "headline": "First physical-admissibility audit of the Brasher-Kingsbury (1954) coating water-uptake law against this module's single-frequency EIS substrate (USBR-21019, 306 records, 6 coating systems x 4 baths). H0 REFUTED on 6 of 6 independent physical screens. (T0) 6/306 records (1.96%) carry |phase| > 90 deg and are IMPOSSIBLE for any passive cell -- a previously undetected integrity defect localized to 1 source file(s). (T1) median dissipation factor 0.74: only 14.3% of records are capacitance-dominated, so no coating capacitance can be read at 0.01 Hz. (T2) log10 C_eff is Spearman -0.9921 with log10|Z| -- rank-redundant, zero new information. (T3) only 51.1% of derived water uptakes are physically plausible; 26.1% are negative and 3.0% exceed the film volume (max 3.83). (T4) only 1/36 series are monotone; the weak aggregate time drift (post-anchor rho +0.157, perm p=0.01065) is not system-robust (95% CI [-0.19, 0.50]), so no Fickian uptake trajectory is identified. (T5) panel-to-panel reproducibility propagates to sigma(phi_v)=0.67 volume fraction, 2.2x the entire 0-30 vol% physical range. Conclusion: the module's declared Kramers-Kronig / equivalent-circuit abstention is now quantitatively EVIDENCED, not merely asserted; |Z| remains the only defensible single-frequency descriptor.",
+      "n_tests_failed": 6,
+      "receipt_path": "evidence/audit/eis-brasher-kingsbury-water-uptake-admissibility-v1/eis-brasher-kingsbury-water-uptake-admissibility-receipt.v1.dsse.json",
+      "receipt_sha256": "db72894bd478bfb43e0654fb3fd2d4cec6881e0587a5cae3579e2f22e21cf171",
+      "signature_verified_against_pinned_phase0_evaluator_key": true,
+      "verdict": "H0_REFUTED",
+      "verdict_note": null
+    },
+    {
+      "audit_id": "eis-reproducibility-discrimination-power-v1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "headline": "First within-EIS reproducibility & discrimination-power audit of USBR-21019 (6 systems x 4 baths, replicate + temporal structure previously unused): ISO-5725 endpoint reproducibility sigma_R=1.026 decades (late-window between-panel 0.836 + repeatability 0.594), pooled between-system barrier spread 0.982 decades (SNR 0.96, F=0.9). Against a parametric hostile null (all systems identical, noise only) the single-date EIS endpoint does NOT separate the six within-bath systems above its measurement-noise floor (p=0.2554); the 80%-power minimum detectable |Z| difference is 4.06 decades (1 panel) / 2.87 (2 panels). The dominant term is between-PANEL reproducibility, which time-averaging cannot reduce -- only more replicate panels can. The prior audits' '12-20 systems' target is recovered only under the strong aggregate effect (r~0.77 -> n=11); at the observed within-bath effect (r~0.30) n~90 systems are required. Verdict: EIS_WITHIN_INSTRUMENT_DISCRIMINATION_NOT_ESTABLISHED.",
+      "n_tests_failed": null,
+      "receipt_path": "evidence/audit/eis-reproducibility-discrimination-power-v1/eis-reproducibility-discrimination-power-receipt.v1.dsse.json",
+      "receipt_sha256": "10b4427b541a2994126cee530a68e5598c971ee43ee6d53257c3ee81e7924702",
+      "signature_verified_against_pinned_phase0_evaluator_key": true,
+      "verdict": null,
+      "verdict_note": "receipt payload carries no explicit verdict field; result characterized by its own headline (negative / underpowered / null per pre-registered bars)"
+    },
+    {
+      "audit_id": "eis-rustcreep-crossmodality-v1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "headline": "Cross-instrument test on rights-clean USBR-21019 public data (6 coating systems x 4 baths, 24 paired cells): the pooled |Z|-vs-rustcreep Spearman is confounded and sign-reversed (rho=+0.32); after stratifying on exposure bath the published ISO-16773 low-frequency barrier metric recovers the physically-expected NEGATIVE association with independent scribe rust-creep (mean within-env rho=-0.30, 83% of cluster-bootstraps negative), but at n=6 systems it is underpowered (stratified-permutation p=0.096, 95% CI [-0.70, 0.50] crosses zero). Corroborates the module's model-readiness-only boundary; 20/24 endpoint cells sit in the ISO very-good barrier band (area-caveated).",
+      "n_tests_failed": null,
+      "receipt_path": "evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json",
+      "receipt_sha256": "e48fdfed42169582dfcf72c4b0d45304ed6534d1a95e09e171ded364d18789cf",
+      "signature_verified_against_pinned_phase0_evaluator_key": true,
+      "verdict": null,
+      "verdict_note": "receipt payload carries no explicit verdict field; result characterized by its own headline (negative / underpowered / null per pre-registered bars)"
+    },
+    {
+      "audit_id": "kpi-surface-completeness-v1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "headline": "Across 29 modules with an evidence tree, 162 signed verdict receipts exist under evidence/audit/ or benchmarks/, of which 157 (96.91%) are not referenced anywhere in that module's own evidence/phase0/kpis/ surface -- including 51 findings this audit's heuristic classifies as NEGATIVE (refutation/erratum/underpowered/null/inadmissible language in a verdict field). The claim as stated is FALSE for essentially the whole portfolio, not just the module C10 examined. amphora-public-corrosion-benchmark itself now shows 0 unindexed (post-C10 repair), which is used below as a ground-truth sanity check on the detector.",
+      "n_tests_failed": null,
+      "receipt_path": "evidence/audit/kpi-surface-completeness-v1/kpi-surface-completeness-receipt.v1.dsse.json",
+      "receipt_sha256": "1a8eeb31c48a0ecaf6e6a49688c5304705a89dfb961694fc9d839186e5dbee0c",
+      "signature_verified_against_pinned_phase0_evaluator_key": true,
+      "verdict": "H0_REFUTED",
+      "verdict_note": null
+    },
+    {
+      "audit_id": "multi-instrument-concordance-v1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "headline": "Multi-instrument concordance on rights-clean USBR-21019 (6 vinyl coating systems, 3 physically-independent corrosion instruments: EIS barrier, scribe rust-creep resistance, wet pull-off adhesion): Kendall's W=0.492 (Friedman chi2=7.38, df=5, chi2 p=0.194; exact-MC permutation p=0.202 over 200000 perms), mean pairwise Spearman=+0.238, leave-one-system-out W in [0.244, 0.689]. WEAK_OR_NULL_CONCORDANCE: the independent instruments positively co-order coating quality, but at n=6 the omnibus remains underpowered at 0.05 -- integrating a third instrument extends the prior single-pair test while confirming the module's model-readiness-only boundary.",
+      "n_tests_failed": null,
+      "receipt_path": "evidence/audit/multi-instrument-concordance-v1/multi-instrument-concordance-receipt.v1.dsse.json",
+      "receipt_sha256": "bb1a11855a31e0338263fd85a15354ce5436a3b29e1f2a5202f3680693fc483a",
+      "signature_verified_against_pinned_phase0_evaluator_key": true,
+      "verdict": null,
+      "verdict_note": "receipt payload carries no explicit verdict field; result characterized by its own headline (negative / underpowered / null per pre-registered bars)"
+    },
+    {
+      "audit_id": "nist-baseline-fold-significance-v1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "headline": "Independent reproducibility + fold-level significance audit of the NIST CORR-DATA marine steel baseline KPI's flagship '+0.0475 log10 (7.0%) Ridge-beats-NULL' claim. (T1) Re-derived from the raw published CSV alone (hash-pinned 9b6b82d0..., not the cached fixture): the filtered population reproduces EXACTLY (n=588 records / 30 source documents / 3 environments / 5 material groups). (T2) But the signed Ridge MAE does NOT reproduce: the generating script ('/tmp/corr_baseline.py' per receipt_meta) was never committed to the repo and no longer exists anywhere on this host; an honest re-implementation of the KPI's OWN stated methodology (identical features, [588,11] shape, alpha grid, LOSD-CV, seed=0) on the identical raw data gives MAE=0.5888 vs the signed 0.6331 (delta 0.0443) -- while the fitting-free NULL reproduces closely (0.6736 vs signed 0.6806, delta 0.0070). The specific pinned number is not independently auditable. (T3-T5) Using this audit's own (numerically STRONGER) reproduced Ridge fit, the beats-null effect is still NOT robust at the level LOSD-CV was built to certify -- one independent source-document study = one fold: Ridge beats NULL on only 17/30 folds (56.7%, binomial p=0.585, not distinguishable from a coin flip); the cluster-bootstrap 95% CI of the mean per-fold improvement is [-0.0329, 0.4846] (CROSSES ZERO); Wilcoxon signed-rank on the 30 paired fold MAEs gives p=0.2710. (T6) The pooled, record-weighted improvement figure is dominated by fold-size heterogeneity (top-3 largest source documents alone carry 54.9% of all 588 records) -- exactly the per-study methodology-bias risk LOSD-CV exists to guard against, and the null baseline is not held to the same fold-isolation standard as Ridge. Conclusion: H0 (a fold-robust, independently-reproducible beats-null effect) is H0 REFUTED -- on two independent grounds, neither of which depends on the other.",
+      "n_tests_failed": 4,
+      "receipt_path": "evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json",
+      "receipt_sha256": "ad3589cf1254cb941c322285064d45fe411db80ad4eda32ce4a195b93c37d1a6",
+      "signature_verified_against_pinned_phase0_evaluator_key": true,
+      "verdict": "H0_REFUTED",
+      "verdict_note": null
+    },
+    {
+      "audit_id": "nist-baseline-material-group-extrapolation-v1",
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "headline": "Leave-one-material-group-out (LOMO-CV) extrapolation audit of the NIST CORR-DATA marine steel baseline KPI's '+0.0475 log10 (7.0%) Ridge-beats-NULL' claim, on the same hash-pinned raw CSV (n=588 records / 30 source documents / 3 environments / 5 material groups, reproduces exactly). Held out each of the 5 material groups in turn (Aluminum, Carbon/alloy steels, Copper, Nickel, Stainless -- corrosion-rate medians spanning nearly 3 orders of magnitude, 0.006-0.10 mm/yr), refitting Ridge on the other four with an extrapolation-honest NULL (training-only median, never touching the held-out group's own labels). Pooled across all 588 held-out predictions: Ridge-LOMO MAE=1.0728 vs NULL-LOMO MAE=0.8106, a NEGATIVE improvement of -0.2622 log10 units (vs the signed in-domain LOSD claim of +0.0475) -- -552% of the claimed in-domain improvement is retained under group-safe extrapolation. Per-group: Ridge beats the extrapolation-honest NULL on only 2/5 held-out groups; the worst case is Carbon and alloy steels, where Ridge MAE exceeds NULL MAE by 0.6587 log10 units (Ridge is WORSE than a naive constant). 3/5 groups show Ridge strictly worse than NULL. This demonstrates the model's in-domain 'beats-null' advantage is substantially or wholly material-group memorization via the one-hot dummy (interpolation among five already-seen categories with very different baseline rate levels), not a transferable physical relationship the environment/temperature/concentration/duration terms encode -- exactly the distinction LOSD-CV, which keeps all five groups present in every training fold, cannot detect. Conclusion: H0 (the beats-null effect reflects group-transferable predictive information, not group-identity memorization) is H0 REFUTED.",
+      "n_tests_failed": 4,
+      "receipt_path": "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json",
+      "receipt_sha256": "469c8a1a090a904d0d3f281fd290a515023d967d724147c90444d8e226255549",
+      "signature_verified_against_pinned_phase0_evaluator_key": true,
+      "verdict": "H0_REFUTED",
+      "verdict_note": null
+    }
+  ],
+  "enumeration": {
+    "enumerated_at": "2026-08-03",
+    "method": "glob('evidence/audit/*/*.dsse.json') relative to module root, evidence/superseded/ excluded by construction",
+    "n_h0_refuted": 5,
+    "n_receipts_on_disk": 8,
+    "n_signature_verified": 8
+  }
+}

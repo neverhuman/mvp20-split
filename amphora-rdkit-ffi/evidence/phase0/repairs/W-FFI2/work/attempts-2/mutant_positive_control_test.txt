@@ -1,0 +1,70 @@
+    Updating crates.io index
+     Locking 44 packages to latest compatible versions
+      Adding generic-array v0.14.7 (available: v0.14.9)
+      Adding sha2 v0.10.9 (available: v0.11.0)
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.24
+   Compiling find-msvc-tools v0.1.9
+   Compiling shlex v2.0.1
+   Compiling version_check v0.9.5
+   Compiling hashbrown v0.17.1
+   Compiling equivalent v1.0.2
+   Compiling typenum v1.20.1
+   Compiling scratch v1.0.9
+   Compiling unicode-width v0.2.2
+   Compiling cxxbridge-flags v1.0.198
+   Compiling termcolor v1.4.1
+   Compiling serde_core v1.0.229
+   Compiling cc v1.4.0
+   Compiling generic-array v0.14.7
+   Compiling serde v1.0.229
+   Compiling thiserror v2.0.19
+   Compiling foldhash v0.2.0
+   Compiling cfg-if v1.0.4
+   Compiling codespan-reporting v0.13.1
+   Compiling indexmap v2.14.0
+   Compiling cpufeatures v0.2.17
+   Compiling syn v3.0.3
+   Compiling link-cplusplus v1.0.12
+   Compiling cxx v1.0.198
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling digest v0.10.7
+   Compiling sha2 v0.10.9
+   Compiling cxx-build v1.0.198
+   Compiling serde_derive v1.0.229
+   Compiling thiserror-impl v2.0.19
+   Compiling cxxbridge-macro v1.0.198
+   Compiling amphora-rdkit-ffi v0.1.0 (/tmp/wffi2-mutant-fire2)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 28.77s
+     Running unittests src/lib.rs (target/debug/deps/amphora_rdkit_ffi-c77f7c30cd16d232)
+
+running 9 tests
+test tests::fingerprint_record_and_tanimoto_are_deterministic ... ok
+test tests::native_record_builds_deterministic_versioned_facts ... ok
+test tests::unsupported_components_and_polymers_fail_before_backend_use ... ok
+test tests::pinned_native_backend_scores_dicyandiamide_functionality_four ... ok
+test tests::pinned_native_backend_dicyandiamide_score_is_tautomer_representation_invariant ... FAILED
+test tests::pinned_native_backend_matches_reactive_ontology_controls ... ok
+test tests::pinned_native_backend_excludes_guanidine_class_amine_hydrogens ... ok
+test tests::pinned_native_fingerprints_replay_and_preserve_stereochemistry ... ok
+test tests::native_identity_preserves_isotope_charge_and_stereochemistry ... ok
+
+failures:
+
+---- tests::pinned_native_backend_dicyandiamide_score_is_tautomer_representation_invariant stdout ----
+
+thread 'tests::pinned_native_backend_dicyandiamide_score_is_tautomer_representation_invariant' (2519982) panicked at src/lib.rs:561:13:
+assertion `left == right` failed: dicyandiamide tautomer N=C(N)NC#N must score functionality 4 regardless of which nitrogen carries the formal C=N
+  left: 0
+ right: 4
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::pinned_native_backend_dicyandiamide_score_is_tautomer_representation_invariant
+
+test result: FAILED. 8 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--lib`

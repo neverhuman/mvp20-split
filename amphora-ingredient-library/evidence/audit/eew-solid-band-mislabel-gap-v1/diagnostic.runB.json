@@ -1,0 +1,129 @@
+{
+  "attacked_claim": {
+    "constant": "resin.solid_cut_1001x75.eew_on_nv",
+    "quoted_headline": "All 4 catalog EEW constants fall inside the structure-derived epoxy-oligomer admissibility band ... fail-closed mutation tests confirm gross-error detection.",
+    "receipt": "amphora-ingredient-library/evidence/audit/constant-crosscheck-v1/constant-crosscheck-receipt.v1.dsse.json",
+    "sub_check": "check1_dgeba_eew_admissibility, resin_class=solid_type1_epoxy"
+  },
+  "authority": "AUDIT_ONLY",
+  "checkA_band_width_comparison": {
+    "cc_v1_band_is_wider_by_ratio": 2.843,
+    "cc_v1_band_strictly_wider_than_true_band": true,
+    "cc_v1_band_width_g_per_eq": 284.3,
+    "cc_v1_selfcomputed_band_g_per_eq": [
+      383.5,
+      667.8
+    ],
+    "cc_v1_selfcomputed_n_window": [
+      1.5,
+      3.5
+    ],
+    "true_band_implied_n_window": [
+      1.9679,
+      2.6713
+    ],
+    "true_manufacturer_band_width_g_per_eq": 100.0,
+    "true_manufacturer_tds_band_g_per_eq": [
+      450.0,
+      550.0
+    ],
+    "true_manufacturer_tds_source": "Hexion HCD-4022 (as transcribed in facts.json's own single_source_waiver note for resin.solid_cut_1001x75.eew_on_nv); independent of run_crosscheck.py's invented n-window."
+  },
+  "checkB_catalog_value_status": {
+    "catalog_value_g_per_eq": 500.0,
+    "note": "The catalog value itself (500.0) is a safe midpoint of the true TDS band and so passes under either band; this check targets the BAND's own claimed provenance and detection power, not this single value.",
+    "within_cc_v1_selfcomputed_band": true,
+    "within_true_manufacturer_band": true
+  },
+  "checkC_undetected_gap_zones": {
+    "gap_hi_zone_g_per_eq": [
+      550.0,
+      667.8
+    ],
+    "gap_lo_zone_g_per_eq": [
+      383.5,
+      450.0
+    ],
+    "gap_zones_nonempty": true
+  },
+  "checkD_mutation_replay_against_cc_v1_own_predicate": {
+    "method": "Each probe value is tested with constant-crosscheck-v1's OWN admissibility predicate (eew_to_n + 1.5<=n<=3.5), replayed verbatim from run_crosscheck.py.",
+    "n_probes_demonstrating_missed_detection": 4,
+    "probe_values": [
+      {
+        "demonstrates_missed_detection": true,
+        "flagged_by_cc_v1_predicate": false,
+        "implied_n": 1.7569,
+        "in_selfcomputed_cc_v1_band": true,
+        "in_undetected_gap_zone": true,
+        "outside_true_manufacturer_band": true,
+        "probe_eew_g_per_eq": 420.0
+      },
+      {
+        "demonstrates_missed_detection": true,
+        "flagged_by_cc_v1_predicate": false,
+        "implied_n": 1.6162,
+        "in_selfcomputed_cc_v1_band": true,
+        "in_undetected_gap_zone": true,
+        "outside_true_manufacturer_band": true,
+        "probe_eew_g_per_eq": 400.0
+      },
+      {
+        "demonstrates_missed_detection": true,
+        "flagged_by_cc_v1_predicate": false,
+        "implied_n": 3.023,
+        "in_selfcomputed_cc_v1_band": true,
+        "in_undetected_gap_zone": true,
+        "outside_true_manufacturer_band": true,
+        "probe_eew_g_per_eq": 600.0
+      },
+      {
+        "demonstrates_missed_detection": true,
+        "flagged_by_cc_v1_predicate": false,
+        "implied_n": 3.3746,
+        "in_selfcomputed_cc_v1_band": true,
+        "in_undetected_gap_zone": true,
+        "outside_true_manufacturer_band": true,
+        "probe_eew_g_per_eq": 650.0
+      }
+    ]
+  },
+  "closes": [
+    "Demonstrates that constant-crosscheck-v1's solid-resin EEW admissibility band is looser than the manufacturer TDS band already recorded in-repo for the identical fact, and that this gap is not merely theoretical: constant-crosscheck-v1's own predicate fails to flag realistic wrong-grade EEW values inside the gap."
+  ],
+  "does_not_close": [
+    "Does not show the catalog VALUE (500.0) is wrong -- it is well inside both bands.",
+    "Does not affect the liquid-DGEBA sub-check (3/4 constants), whose n in [0,0.2] band is tight and literature-anchored.",
+    "Does not modify facts.json, the module manifest, or any locked dataset.",
+    "Gap probe values are illustrative EEW numbers, not verified transcriptions of a real competing product's TDS; they demonstrate the admissibility predicate's detection power, not an actual catalog error."
+  ],
+  "flips_scientific_readiness": false,
+  "headline": "constant-crosscheck-v1's solid-resin EEW admissibility band [[383.5, 667.8]] is 2.84x wider than the manufacturer TDS band [[450.0, 550.0]] already cited in-repo for the identical fact (resin.solid_cut_1001x75.eew_on_nv); 4/4 realistic gap-zone probe values are admitted by constant-crosscheck-v1's own predicate without being flagged, refuting its fail-closed gross-error-detection claim for the solid-resin EEW sub-check.",
+  "human_review_performed": false,
+  "hypothesis": "constant-crosscheck-v1's solid_type1_epoxy admissibility band ([1.5<=n<=3.5], EEW [383.5,667.8]) is claimed structure-derived and fail-closed. If the manufacturer-published TDS band already cited in-repo for this exact fact (Hexion HCD-4022, 450-550 g/eq NV) is strictly narrower, and physically-real EEW values exist that fall inside constant-crosscheck-v1's band but outside the true TDS band without being flagged, the fail-closed gross-error-detection claim is refuted for this constant family.",
+  "inputs": {
+    "fact_key": "resin.solid_cut_1001x75.eew_on_nv",
+    "fact_note_field_used": "single_source_waiver",
+    "fact_note_raw": "Hexion HCD-4022 direct read (450-550 on nonvolatiles)",
+    "facts_json_rel": "reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_module_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ingredient-library",
+  "non_circularity": "The true manufacturer TDS band used for comparison is read from facts.json's own single_source_waiver note field (populated at catalog-authoring time from the Hexion HCD-4022 TDS), which is a different provenance channel than run_crosscheck.py's hardcoded [1.5,3.5] n-window (invented at audit-authoring time); comparing the two is a genuine in-repo cross-check, not a self-referential re-read of the audit script's own constants.",
+  "promotes_authority": false,
+  "purpose": "Falsification attack on constant-crosscheck-v1 Check-1's claim that the solid-epoxy EEW admissibility band is structure-derived and that its fail-closed mutation tests confirm gross-error detection, by comparing constant-crosscheck-v1's self-computed band against the manufacturer TDS band already recorded in facts.json's own single_source_waiver note for the identical fact.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ingredient-library.eew-solid-band-mislabel-gap.v1",
+  "theory_reference": {
+    "eew_oligomer_series": "Ellis 1993 (ISBN 978-0-7514-0095-6); Lee & Neville 1967, Handbook of Epoxy Resins -- cited by constant-crosscheck-v1 as the basis for its band, but does not tabulate the [1.5,3.5] n-window used for the solid-resin class.",
+    "manufacturer_tds_band": "Hexion HCD-4022 EPON Resin 1001-X-75, EEW 450-550 g/eq on nonvolatiles (as transcribed into facts.json's single_source_waiver note at catalog-authoring time)."
+  },
+  "verdict": {
+    "band_gap_confirmed": true,
+    "explanation": "constant-crosscheck-v1's solid_type1_epoxy admissibility band is 284.3 g/eq wide (2.84x wider than the 100 g/eq manufacturer TDS band already cited in-repo for the same fact). 4 of 4 physically-real probe EEW values fall inside constant-crosscheck-v1's own admissible band, outside the true manufacturer band, and are NOT flagged by constant-crosscheck-v1's own predicate -- directly contradicting its headline claim that 'fail-closed mutation tests confirm gross-error detection' for this constant family. The band's [1.5,3.5] n-window is not sourced from the cited literature (Ellis 1993 / Lee & Neville 1967 tabulate no such range); it is wider than the manufacturer spec its own inline comment cites as justification."
+  }
+}

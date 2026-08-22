@@ -1,0 +1,139 @@
+{
+  "amphora_ip_fto_guard_manifest_index": 10,
+  "blocking_defect_git_provenance": {
+    "blocking_artifact_last_commit": "142e582459f0fc4c1e2c62bc8841c0013548a192 2026-08-11T08:30:04+00:00",
+    "config_inventory_last_commit": "907e75360f2c5698b99934c2bee61bdc462e3825 2026-08-03T23:23:44+00:00",
+    "git_status_porcelain": "",
+    "interpretation": "empty git status + commits predating this fire by days confirms this is a stable pre-existing condition, not a concurrent agent's in-flight edit"
+  },
+  "blocking_defect_independently_confirmed": {
+    "declared_sha256": "b2fa8de6b50f8605dbe5a412af5d818e8792be864af7ea6e3ef10320959504b6",
+    "module": "amphora-cro-protocol-packager",
+    "observed_sha256": "79040c136af5ecfad26d81d64790416a79bd1c1ce1eb2cb9f1912b2b0a4e8658",
+    "path": "amphora-cro-protocol-packager/reference/mvp20/out/falsification_protocol.json"
+  },
+  "blocking_module": "amphora-cro-protocol-packager",
+  "blocking_module_manifest_index": 2,
+  "claim_under_attack": "amphora-ip-fto-guard/docs/mission.md's Phase-0 readiness paragraph asserts that all required_gates in evidence/phase0/promotion/policy.v1.json -- including FOLDER_CONFINEMENT, CLAIM_LOCKS, and MODULE_INVARIANTS, whose declared required_review_method is AUTOMATED_INDEPENDENT_REIMPLEMENTATION -- 'are passing' for amphora-ip-fto-guard, i.e. that the live compiled automated-reimplementation checker (cargo xtask audit) currently confirms this module's folder-confinement, claim-lock, and bundle-invariant gates.",
+  "does_not_close": [
+    "Does not establish that amphora-ip-fto-guard's OWN artifacts are individually wrong -- the isolated re-derivation above shows they would pass audit_bound_module_metadata and audit_phase0_module_layout if reached.",
+    "Does not modify config/module-evidence-inventory.json or the blocking module's artifact (amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json) -- both are outside amphora-ip-fto-guard's folder confinement; filed as a maintainer followup, not repaired in this fire.",
+    "Does not establish FTO, patentability, or any legal opinion.",
+    "Scoped to the FOLDER_CONFINEMENT / CLAIM_LOCKS / MODULE_INVARIANTS gates and their designated AUTOMATED_INDEPENDENT_REIMPLEMENTATION checker; does not re-examine RIGHTS, RED_TEAM, TWO_REPLAYS, or the other required_gates already covered by prior receipts in this module's audit history."
+  ],
+  "headline": null,
+  "live_runtime": {
+    "byte_identical_across_replays": false,
+    "command": "cargo xtask audit",
+    "run1": {
+      "returncode": 1,
+      "stdout_stderr": "Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s\n     Running `target/debug/xtask audit`\nError: \"cure/pot-life artifact SHA-256 mismatch for amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json: declared dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d, observed a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881\""
+    },
+    "run2": {
+      "returncode": 1,
+      "stdout_stderr": "Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s\n     Running `target/debug/xtask audit`\nError: Changed { before: \"fb38352182f3e0c415552bfd46facaf2f7c9933747f710a84c0096d9d143a737\", after: \"80213c0b43c8606139324d7188f7c275cd9aaf7caaf9f7d48425e7bb27ae8da0\" }"
+    }
+  },
+  "manifest_module_count": 29,
+  "module": "amphora-ip-fto-guard",
+  "own_module_isolated_rederivation": {
+    "description": "Independent re-derivation, from live file bytes only (does NOT invoke the blocked shared xtask binary), of what audit_bound_module_metadata + audit_phase0_module_layout would find for amphora-ip-fto-guard's OWN artifacts if the live checker's control flow ever reached them.",
+    "findings": {
+      "all_bundle_parents_fresh": true,
+      "bundle_parent_checks": [
+        {
+          "declared": "a58cf06f6ac0bc8f5139a76444dbf839e1a76d52f33df3e810558be69d066da4",
+          "match": true,
+          "observed": "a58cf06f6ac0bc8f5139a76444dbf839e1a76d52f33df3e810558be69d066da4",
+          "path": "evidence/phase0/benchmark/benchmark-lock.v1.json"
+        },
+        {
+          "declared": "7b4c7a1814544da598a48a4d226f49db91434f0a7c5faf815c79ff92874e343e",
+          "match": true,
+          "observed": "7b4c7a1814544da598a48a4d226f49db91434f0a7c5faf815c79ff92874e343e",
+          "path": "evidence/phase0/dataset/dataset-manifest.v1.json"
+        },
+        {
+          "declared": "2aee2a9d67090bec22ffd885f3059748a41a451509bf83796a982a45d86a37ce",
+          "match": true,
+          "observed": "2aee2a9d67090bec22ffd885f3059748a41a451509bf83796a982a45d86a37ce",
+          "path": "evidence/phase0/promotion/policy.v1.json"
+        },
+        {
+          "declared": "5f7764ca0f5f4f700e94cfc0571dab07db44549beba37a980f7da58441f8d568",
+          "match": true,
+          "observed": "5f7764ca0f5f4f700e94cfc0571dab07db44549beba37a980f7da58441f8d568",
+          "path": "evidence/phase0/raw/SHA256SUMS"
+        },
+        {
+          "declared": "9827b7a1fb5cb11834cdc8d8195c9e54b8c8afd65aa5d0a35c445c4969f7861f",
+          "match": true,
+          "observed": "9827b7a1fb5cb11834cdc8d8195c9e54b8c8afd65aa5d0a35c445c4969f7861f",
+          "path": "evidence/phase0/sources/source-lock.v2.json"
+        },
+        {
+          "declared": "068112a4f14046661d34e6dfdef206ed16488e6eec69dad3730efa3446a1a29e",
+          "match": true,
+          "observed": "068112a4f14046661d34e6dfdef206ed16488e6eec69dad3730efa3446a1a29e",
+          "path": "evidence/phase0/split/split-manifest.v1.json"
+        },
+        {
+          "declared": "b25ca6c91a5532e8e916bd761b6ecf341835028866853dc29e0b1dbc8bae0818",
+          "match": true,
+          "observed": "b25ca6c91a5532e8e916bd761b6ecf341835028866853dc29e0b1dbc8bae0818",
+          "path": "evidence/superseded/supersession-d64bad96da05edfc01864dc811be55b920efb171d9a3cc6e97188ed74cf4b396/supersession.v1.json"
+        },
+        {
+          "declared": "9168aabfe13cbb15ea5da6d87e2bad626af59fe43fb3b7929e5419f8d0835d62",
+          "match": true,
+          "observed": "9168aabfe13cbb15ea5da6d87e2bad626af59fe43fb3b7929e5419f8d0835d62",
+          "path": "ip/claim-contract.v1.json"
+        },
+        {
+          "declared": "edc2589e4d6e320257a23475effa084d1ddae76b6386b0282bb451f80b5179fe",
+          "match": true,
+          "observed": "edc2589e4d6e320257a23475effa084d1ddae76b6386b0282bb451f80b5179fe",
+          "path": "ip/disclosure-log.v1.json"
+        },
+        {
+          "declared": "dcc1de908c27885a11ed8b0c0df5ae556bc17bf4b960b646667b501a56e9229b",
+          "match": true,
+          "observed": "dcc1de908c27885a11ed8b0c0df5ae556bc17bf4b960b646667b501a56e9229b",
+          "path": "ip/prior-art.v1.json"
+        },
+        {
+          "declared": "204a5e2842a7f4090c71cfcb39c4fc373f7f4ae9cff911480d5caa473826a2c8",
+          "match": true,
+          "observed": "204a5e2842a7f4090c71cfcb39c4fc373f7f4ae9cff911480d5caa473826a2c8",
+          "path": "ip/technical-dossier.v1.json"
+        }
+      ],
+      "derived_phase": "PRE_PHASE_0",
+      "exactly_one_source_lock": true,
+      "identity_abstention_locks_ok": true,
+      "movement_event_count": 0,
+      "own_inventory_artifact_checks": [
+        {
+          "declared": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+          "match": true,
+          "observed": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+          "path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json"
+        }
+      ],
+      "own_inventory_artifacts_match": true,
+      "parents_nonempty": true,
+      "profile_registry_binding_ok": true,
+      "report_phase_matches_derived_phase": true,
+      "required_files_present": true
+    },
+    "own_bound_metadata_checks_would_pass": true,
+    "own_module_layout_checks_would_pass": true
+  },
+  "reaches_amphora_ip_fto_guard_gate_code": false,
+  "refutation_criterion": "REFUTED if a live, reproducible run of `cargo xtask audit` (the workspace's own AUTOMATED_INDEPENDENT_REIMPLEMENTATION checker) terminates with an error at a module whose manifest index is strictly less than amphora-ip-fto-guard's index, because xtask's audit() function (Rust `?`-propagation, statically confirmed) only calls audit_phase0_module_layout() -- which contains the actual FOLDER_CONFINEMENT / CLAIM_LOCKS / MODULE_INVARIANTS bundle-parent-hash checks -- AFTER its `for module in modules` loop completes for every module. An earlier error therefore means amphora-ip-fto-guard's own gate-validation code is never executed in that run, so 'gates are passing' is not currently demonstrable by the designated checker, regardless of whether this module's own artifacts would individually satisfy that code if it were reached. SURVIVES only if the checker completes (rc=0) or fails strictly after amphora-ip-fto-guard's index.",
+  "results": {
+    "H0_verdict": "REFUTED"
+  },
+  "study_id": "xtask-audit-gate-reachability-v1",
+  "xtask_src_sha256": "dbcc9599167b0e9643b6417b1d097d725ec63d151e67542c2c8bcf4b700fc694"
+}

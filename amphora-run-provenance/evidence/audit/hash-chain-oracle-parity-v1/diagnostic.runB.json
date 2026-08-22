@@ -1,0 +1,292 @@
+{
+  "authority": "AUDIT_ONLY",
+  "closes": "Independent non-runtime CPython re-derivation reproduces all 14 content-addressable shipped run-provenance hash anchors byte-exact (including diagnostic_sha256 = stable_hash of a nested object, proving canonical-JSON parity, the bundle raw hash, the benchmark-lock hash, and every bundle parent-binding child file hash), verify_run returns Ok(root_hash) for all 3 published positive archives (0/3/12 events) with root_hash matching an independent 5-field recompute, signature_status pinned UNSIGNED_CONTROLLED_KEY_REQUIRED and promotion_receipt_eligible pinned false, and all 10 tamper probes fail closed with the correct RunArchiveError variant (Exists/Integrity/Io). Additionally the audit DETECTS that the KPI's benchmark_result_sha256 is a stale self-referential pointer at result.v1.json (a result file cannot embed its own hash, so the pointer drifts on regeneration) -- corroborating both that the append-only Haber-Stornetta hash-chained run archive is a self-consistent, implementation-independent, content-addressable integrity foundation AND that an independent front door surfaces provenance-pointer drift.",
+  "counts": {
+    "g0_anchors_checked": 15,
+    "g0_anchors_matched": 14,
+    "g0_content_addressable_anchors": 14,
+    "g0_content_addressable_matched": 14,
+    "g0_stale_self_referential_pointers": 1,
+    "g1_positive_archives": 3,
+    "g3_fail_closed": 10,
+    "g3_tamper_probes": 10
+  },
+  "does_not_close": [
+    "Does NOT execute the live Rust runtime; live re-exec parity (RunArchive create/append/final_state/verify_run and full RunArchiveError taxonomy incl. Json/Contract via parse_json_strict duplicate-key/NaN rejection) is the Phase-1 ceiling.",
+    "Grants no batch-release, manufacturing-qualification, regulatory, safety, or product-performance authority.",
+    "Does not promote the module or flip scientific_readiness."
+  ],
+  "g0_detected_stale_self_referential_pointers": [
+    {
+      "anchor": "benchmark_result_sha256",
+      "expected": "e1027610672259a2f40437c1819fd69197f13b6ad6cab14e4879b856d6a5ffb3",
+      "recomputed": "792c1ce02d881d95affcc08f222d6bc0f6128c9b883f34029dda30474c4ad5fc"
+    }
+  ],
+  "g0_shipped_anchor_reproduction": [
+    {
+      "anchor": "diagnostic_sha256_stable_hash_of_diagnostic_receipt",
+      "expected": "3d2ce808d69efbec0d6fb29eec4b945bff5ff3bd3c14bad1cfae3f10cfc37fd7",
+      "kind": "stable_hash_canonical_json",
+      "match": true,
+      "recomputed": "3d2ce808d69efbec0d6fb29eec4b945bff5ff3bd3c14bad1cfae3f10cfc37fd7",
+      "self_referential": false
+    },
+    {
+      "anchor": "benchmark_lock_sha256",
+      "expected": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360",
+      "self_referential": false
+    },
+    {
+      "anchor": "benchmark_result_sha256",
+      "expected": "e1027610672259a2f40437c1819fd69197f13b6ad6cab14e4879b856d6a5ffb3",
+      "kind": "raw_file_sha256",
+      "match": false,
+      "recomputed": "792c1ce02d881d95affcc08f222d6bc0f6128c9b883f34029dda30474c4ad5fc",
+      "self_referential": true
+    },
+    {
+      "anchor": "bundle_sha256",
+      "expected": "19b8e11a86370ecdb8a0a283cd2ded5e944d551a74e963af0ca7ae7d140eb81b",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "19b8e11a86370ecdb8a0a283cd2ded5e944d551a74e963af0ca7ae7d140eb81b",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::evidence/phase0/benchmark/benchmark-lock.v1.json",
+      "expected": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "9d85d1c0c51d2b3fe82574cc68f22b0cb2b1ee3940bb9362120ff7d31802c360",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::evidence/phase0/dataset/dataset-manifest.v1.json",
+      "expected": "06ce86d9a8e69fd3761be8b236274df85570f15e2e86f2b314bfc45efc43de18",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "06ce86d9a8e69fd3761be8b236274df85570f15e2e86f2b314bfc45efc43de18",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::evidence/phase0/promotion/policy.v1.json",
+      "expected": "f3dfca41671e41c03e8216339af5c710b1af471776c21e94625f9eaa1749f290",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "f3dfca41671e41c03e8216339af5c710b1af471776c21e94625f9eaa1749f290",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::evidence/phase0/raw/SHA256SUMS",
+      "expected": "b0ec26a7c9ee893e16bceb45f6130f2607caed0dd3a085a90904e7b6061cef8a",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "b0ec26a7c9ee893e16bceb45f6130f2607caed0dd3a085a90904e7b6061cef8a",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::evidence/phase0/sources/source-lock.v1.json",
+      "expected": "8195ce6828f3e52fec732a60dbdb1413d564beed03e7071f3e62bab4e820dfa0",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "8195ce6828f3e52fec732a60dbdb1413d564beed03e7071f3e62bab4e820dfa0",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::evidence/phase0/split/split-manifest.v1.json",
+      "expected": "7ec2650109dd1f37d04cc7b6a13a404174477319313f799680641ab3d2f280d1",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "7ec2650109dd1f37d04cc7b6a13a404174477319313f799680641ab3d2f280d1",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::evidence/superseded/supersession-7974502d940328a1950eadc52c06064f0462d429cee6b183c8a63285edeafe65/supersession.v1.json",
+      "expected": "8ee39316695da5cf30a850b9dcf09718568081eecc1802d3f9bfcada26e6ad67",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "8ee39316695da5cf30a850b9dcf09718568081eecc1802d3f9bfcada26e6ad67",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::ip/claim-contract.v1.json",
+      "expected": "62257f5b79abc48a7550e785046ef30fd5e352c0b3ff971a90c1d0aeaf3fb590",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "62257f5b79abc48a7550e785046ef30fd5e352c0b3ff971a90c1d0aeaf3fb590",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::ip/disclosure-log.v1.json",
+      "expected": "75e21f71841efe26ad750bd0dd192b2abf3af287fd6799be58f2781ef1d020f0",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "75e21f71841efe26ad750bd0dd192b2abf3af287fd6799be58f2781ef1d020f0",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::ip/prior-art.v1.json",
+      "expected": "06599cf22e413a60505407890fd984fe8b68ec9d8236d8da2191169ccc0b55d5",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "06599cf22e413a60505407890fd984fe8b68ec9d8236d8da2191169ccc0b55d5",
+      "self_referential": false
+    },
+    {
+      "anchor": "bundle_parent::ip/technical-dossier.v1.json",
+      "expected": "571f698d988c156f520d092f4a246ad4b9391698ada94bb31009d08accb02c39",
+      "kind": "raw_file_sha256",
+      "match": true,
+      "recomputed": "571f698d988c156f520d092f4a246ad4b9391698ada94bb31009d08accb02c39",
+      "self_referential": false
+    }
+  ],
+  "g1_positive_archives": [
+    {
+      "event_chain_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "events_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final_state_hash": "d0a3d037bb097448d5e092bed4682a7a77a26f3c78322b0bfbb52f24a69bc175",
+      "manifest_sha256": "5dfe87284fd91bfae3c38674848d5cf55713f19063172dce7a551a311316c7b9",
+      "n_events": 0,
+      "promotion_receipt_eligible": false,
+      "root_hash": "e4ec838dd547381714afed4a498c1c472b89a02b675f86f09608814a1ebd31d1",
+      "root_hash_matches_independent_recompute": true,
+      "scenario": "empty",
+      "signature_status": "UNSIGNED_CONTROLLED_KEY_REQUIRED",
+      "verify_run_ok": true
+    },
+    {
+      "event_chain_root": "4ff236b7f72e6ba883b7107ce2ebe267eb06e701a983ab237e24ccb51ddeda6f",
+      "events_sha256": "50189121aadf69b20774a519206552a525bf3d3e51277974ec8ad0c73b814c82",
+      "final_state_hash": "03d9371cdfcee92f9ea25342a6f6e727e15dbace4ab1d080c0eb0f3e69dba03b",
+      "manifest_sha256": "6cd40dbe05400db0cd1576cc4553709393f0e6cc97fa7b6026554ca45138c07b",
+      "n_events": 3,
+      "promotion_receipt_eligible": false,
+      "root_hash": "e07e68d5383735278c5d7f2fc63296602f064270311bab78ec471133da935408",
+      "root_hash_matches_independent_recompute": true,
+      "scenario": "small",
+      "signature_status": "UNSIGNED_CONTROLLED_KEY_REQUIRED",
+      "verify_run_ok": true
+    },
+    {
+      "event_chain_root": "aa0877830d04f68310e61eb193898ca262bbe6348b64ee5b195ea0738e79dd62",
+      "events_sha256": "ffe56680b3c7db207902faa24c0055fadb150728f3a0ae1e95d3087e7bc91f7e",
+      "final_state_hash": "5e3aab004c85bc2a63eb248ad439e949f395c7a84f3338b3c8c1139e9c2f5a0d",
+      "manifest_sha256": "1dec971a234fe0f400f734ee4c7c6c3f5a88f53e69abd0a1fcb22cff4e04933c",
+      "n_events": 12,
+      "promotion_receipt_eligible": false,
+      "root_hash": "a97a538c5a02ee9891f3a1cd300a2cbeda59c347a2948996a956e96359897566",
+      "root_hash_matches_independent_recompute": true,
+      "scenario": "complex",
+      "signature_status": "UNSIGNED_CONTROLLED_KEY_REQUIRED",
+      "verify_run_ok": true
+    }
+  ],
+  "g3_tamper_probes": [
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "tampered_manifest_bytes"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "appended_extra_events_line"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "tampered_final_state"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "tampered_provenance_root_hash"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "tampered_provenance_events_sha256"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "sequence_gap"
+    },
+    {
+      "expected_variant": "Integrity",
+      "fail_closed": true,
+      "observed_variant": "Integrity",
+      "probe": "mutated_event_payload"
+    },
+    {
+      "expected_variant": "Io",
+      "fail_closed": true,
+      "observed_variant": "Io",
+      "probe": "missing_provenance"
+    },
+    {
+      "expected_variant": "Io",
+      "fail_closed": true,
+      "observed_variant": "Io",
+      "probe": "missing_manifest"
+    },
+    {
+      "expected_variant": "Exists",
+      "fail_closed": true,
+      "observed_variant": "Exists",
+      "probe": "duplicate_create"
+    }
+  ],
+  "gates": {
+    "all_pass": true,
+    "g0_content_addressable_anchors_reproduced": true,
+    "g0_only_self_referential_pointers_mismatch": true,
+    "g1_positive_verify_run_ok_rate_1": true,
+    "g1_root_hash_matches_independent_recompute": true,
+    "g2_promotion_receipt_eligible_pinned_false": true,
+    "g2_signature_status_pinned_unsigned": true,
+    "g3_tamper_probes_all_fail_closed": true
+  },
+  "hypothesis": "The run-provenance integrity claim -- content-addressable, append-only, Haber-Stornetta hash-chained run archive where any single-bit mutation of any artifact fails verify_run -- is reproducible by an independent implementation that shares no code with the Rust runtime, and that independent implementation reproduces the shipped canonical-JSON hash anchors bit-exact.",
+  "module": "amphora-run-provenance",
+  "non_circularity": "The oracle imports NO amphora Rust/Python runtime code; it re-implements canonicalize/stable_hash/RunArchive/verify_run from the primary literature and the published algorithm spec, then reproduces anchors the Rust runtime emitted (diagnostic_sha256 is stable_hash of a nested object, so matching it proves canonical-JSON parity, not mere file-copy).",
+  "preconditions": {
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "flips_scientific_readiness": false,
+    "modifies_locked_dataset": false,
+    "modifies_module_manifest": false,
+    "modifies_portfolio_manifest": false,
+    "modifies_signed_phase0_kpi": false,
+    "promotes_authority": false,
+    "runs_live_rust_runtime": false,
+    "scientific_success_required_for_phase0": false
+  },
+  "purpose": "Independently re-derive (in non-runtime CPython) the published deterministic hash-chained run-archive algorithm of amphora-run-provenance and confirm (a) byte-exact reproduction of the shipped Rust runtime hash anchors, (b) self-consistent verify_run over the 3 published positive archives, and (c) fail-closed behavior with the correct RunArchiveError variant on all 10 tamper probes.",
+  "run_type": "INDEPENDENT_NON_RUNTIME_ORACLE_REDERIVATION",
+  "runtime_source_anchors": {
+    "amphora_cli_src_main_rs_sha256": "ab6a9782367c897cdc0b0591a64459f7332b03f296abd36329c2aa23073ed80f",
+    "amphora_core_src_lib_rs_sha256": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "phase0_kpi_sha256": "ce28ef84b36179c90b8798144825d04e5cd62e16d4b3eaa40997b8fa3ebdc9ce"
+  },
+  "schema": "amphora.run-provenance.hash-chain-oracle-parity-diagnostic.v1",
+  "study_id": "run-provenance-hash-chain-oracle-parity-v1",
+  "theory_reference": [
+    "Haber & Stornetta 1991, How to time-stamp a digital document, J. Cryptology 3(2):99-111",
+    "Merkle 1980, Protocols for public key cryptosystems, IEEE S&P",
+    "RFC 6962 (2013) Certificate Transparency (append-only tamper-evident log)",
+    "NIST FIPS 180-4 (2015) Secure Hash Standard (SHA-256)",
+    "NIST SP 800-92 (2006) Guide to Computer Security Log Management",
+    "ISO/IEC 27001:2022 Annex A.12.4 Logging and monitoring"
+  ]
+}

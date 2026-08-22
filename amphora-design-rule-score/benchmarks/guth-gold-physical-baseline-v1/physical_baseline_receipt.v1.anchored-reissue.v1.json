@@ -1,0 +1,75 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "309310d4514ad0bb31482d42e6512731afe1072b3de666c41f3b11a250952b8d",
+  "payload_decoded": {
+    "authority": "AUDIT_ONLY",
+    "carried_scientific_content": {
+      "finding": "Guth-Gold reinforced-network physical baseline (5 parameters) on Purformance HTE 2K-PUR scratch hardness, LOIO over 3 DoE iterations (n_formulations=86): pooled LOIO R2=0.33452768734121086 (MAE=1.8345537252922586). Paired bootstrap Delta-R2: beats B0 constant (point 0.34660528998999807, CI95 [0.13398962246170368, 0.5473290530875347], excludes zero) and B1 Vernetzung-only (point 0.3189679933104653, CI95 [0.09861306883060056, 0.5239252822306681], excludes zero); statistically indistinguishable from B2 linear-all-4 and from default HistGBM (REF_ml_minus_P1_physical CI95 [-0.06954454794690591, 0.17121731476924518] includes zero). Hostile-null y-shuffle collapses physical R2 to -0.09714248221590638, confirming no exchangeability leakage.",
+      "original_internal_canonical_sha256": "cd54e22dc36c57687255951d36e102b6ca4720e0e8e7a572ed906ea2f0621a6d",
+      "receipt_id": "purformance-scratch-hardness-guth-gold-physical-baseline",
+      "unchanged": true
+    },
+    "claim": "Anchored re-issue of the DSSE signature identity for amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json. The scientific content of the original receipt is carried forward UNCHANGED and is bound below by the sha256 of the original file bytes and of its decoded DSSE payload; the original file remains in place, un-deleted and un-modified.",
+    "date": "2026-08-03",
+    "derivation": "Corrected value = the signing identity ONLY. Full derivation: (1) read original file, sha256(original bytes) == superseded_sha256 recorded before any write; (2) base64-decode original DSSE payload, record sha256 as original_decoded_payload_sha256; (3) verify the original envelope cryptographically (results embedded above) and diagnose why strict trust-store verification fails; (4) re-attest the identical scientific content under the anchored PHASE0_EVALUATOR key whose seed-derived key_id and public key byte-match the pinned entry in config/phase0-trust-store.v1.json; (5) two-replay canonical-serialization gate on this payload (json.dumps sort_keys=True separators=(',',':'), serialized twice, asserted byte-equal); (6) after writing, re-verify the original file sha256 is byte-intact and DSSE-verify this re-issue against the trust store. No scientific number was altered, re-derived, or re-interpreted; every value's derivation remains the original receipt's derivation, byte-intact at superseded_sha256.",
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-design-rule-score",
+    "original_decoded_payload_sha256": "cd54e22dc36c57687255951d36e102b6ca4720e0e8e7a572ed906ea2f0621a6d",
+    "original_file_sha256": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+    "original_signature_record": {
+      "defect": "keyid 'phase0-evaluator-audit-3ef6b35cdbbfea74a96a5c9b98a515d5' is malformed: non-canonical '-audit-' variant prefix plus truncation of the key-id hash to 32 hex chars (pinned id is 64 hex chars: phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178). Strict trust-store key_id lookup fails even though the embedded public key matches the anchored evaluator public key.",
+      "embedded_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "keyid": "phase0-evaluator-audit-3ef6b35cdbbfea74a96a5c9b98a515d5",
+      "payloadType": "application/vnd.amphora.design-rule-score-guth-gold-physical-baseline-receipt.v1+json",
+      "sig_b64": "QVeH4QDk2XQvDnx+CFiTTSjcTiRV4Rrhly5KVjmhL4/XSLx2oO/aFgZzdFuL0vUt/uqbFpbnxg0TT3uWDiYhAA==",
+      "signature_cryptographically_valid_with_anchored_evaluator_public_key": false,
+      "signature_cryptographically_valid_with_embedded_public_key": false,
+      "strict_trust_store_lookup_of_original_keyid_succeeds": false
+    },
+    "promotes_authority": false,
+    "reattack_at_signing_time": {
+      "check": "sha256(original file) equals pre-recorded value; seed-derived key matches pinned trust-store evaluator entry",
+      "original_sha256_reverified": true,
+      "seed_derived_key_matches_trust_store": true
+    },
+    "reissue_kind": "SIGNATURE_IDENTITY_REISSUE",
+    "repair_item": "R-A11",
+    "repair_mode": "interactive-2026-08-03",
+    "schema": "amphora.design-rule-score.purformance-scratch-hardness-guth-gold-physical-baseline-receipt.anchored-reissue.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "supersedes": {
+      "reason": "signature-identity re-issue only - scientific content unchanged, re-verified byte-intact",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json",
+      "superseded_sha256": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "trust_store": {
+      "path": "config/phase0-trust-store.v1.json",
+      "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "pinned_evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "seed_derived_key_matches_pinned_entry": true,
+      "sha256": "fc4fa87f70e58befc39b386a0975c9520a44b1d944c7c4a896d6c16b7437b233"
+    },
+    "two_replay_sha256_gate": "PASS"
+  },
+  "signature": {
+    "payload": "eyJhdXRob3JpdHkiOiJBVURJVF9PTkxZIiwiY2FycmllZF9zY2llbnRpZmljX2NvbnRlbnQiOnsiZmluZGluZyI6Ikd1dGgtR29sZCByZWluZm9yY2VkLW5ldHdvcmsgcGh5c2ljYWwgYmFzZWxpbmUgKDUgcGFyYW1ldGVycykgb24gUHVyZm9ybWFuY2UgSFRFIDJLLVBVUiBzY3JhdGNoIGhhcmRuZXNzLCBMT0lPIG92ZXIgMyBEb0UgaXRlcmF0aW9ucyAobl9mb3JtdWxhdGlvbnM9ODYpOiBwb29sZWQgTE9JTyBSMj0wLjMzNDUyNzY4NzM0MTIxMDg2IChNQUU9MS44MzQ1NTM3MjUyOTIyNTg2KS4gUGFpcmVkIGJvb3RzdHJhcCBEZWx0YS1SMjogYmVhdHMgQjAgY29uc3RhbnQgKHBvaW50IDAuMzQ2NjA1Mjg5OTg5OTk4MDcsIENJOTUgWzAuMTMzOTg5NjIyNDYxNzAzNjgsIDAuNTQ3MzI5MDUzMDg3NTM0N10sIGV4Y2x1ZGVzIHplcm8pIGFuZCBCMSBWZXJuZXR6dW5nLW9ubHkgKHBvaW50IDAuMzE4OTY3OTkzMzEwNDY1MywgQ0k5NSBbMC4wOTg2MTMwNjg4MzA2MDA1NiwgMC41MjM5MjUyODIyMzA2NjgxXSwgZXhjbHVkZXMgemVybyk7IHN0YXRpc3RpY2FsbHkgaW5kaXN0aW5ndWlzaGFibGUgZnJvbSBCMiBsaW5lYXItYWxsLTQgYW5kIGZyb20gZGVmYXVsdCBIaXN0R0JNIChSRUZfbWxfbWludXNfUDFfcGh5c2ljYWwgQ0k5NSBbLTAuMDY5NTQ0NTQ3OTQ2OTA1OTEsIDAuMTcxMjE3MzE0NzY5MjQ1MThdIGluY2x1ZGVzIHplcm8pLiBIb3N0aWxlLW51bGwgeS1zaHVmZmxlIGNvbGxhcHNlcyBwaHlzaWNhbCBSMiB0byAtMC4wOTcxNDI0ODIyMTU5MDYzOCwgY29uZmlybWluZyBubyBleGNoYW5nZWFiaWxpdHkgbGVha2FnZS4iLCJvcmlnaW5hbF9pbnRlcm5hbF9jYW5vbmljYWxfc2hhMjU2IjoiY2Q1NGUyMmRjMzZjNTc2ODcyNTU5NTFkMzZlMTAyYjZjYTQ3MjBlMGU4ZTdhNTcyZWQ5MDZlYTJmMDYyMWE2ZCIsInJlY2VpcHRfaWQiOiJwdXJmb3JtYW5jZS1zY3JhdGNoLWhhcmRuZXNzLWd1dGgtZ29sZC1waHlzaWNhbC1iYXNlbGluZSIsInVuY2hhbmdlZCI6dHJ1ZX0sImNsYWltIjoiQW5jaG9yZWQgcmUtaXNzdWUgb2YgdGhlIERTU0Ugc2lnbmF0dXJlIGlkZW50aXR5IGZvciBhbXBob3JhLWRlc2lnbi1ydWxlLXNjb3JlL2JlbmNobWFya3MvZ3V0aC1nb2xkLXBoeXNpY2FsLWJhc2VsaW5lLXYxL3BoeXNpY2FsX2Jhc2VsaW5lX3JlY2VpcHQudjEuanNvbi4gVGhlIHNjaWVudGlmaWMgY29udGVudCBvZiB0aGUgb3JpZ2luYWwgcmVjZWlwdCBpcyBjYXJyaWVkIGZvcndhcmQgVU5DSEFOR0VEIGFuZCBpcyBib3VuZCBiZWxvdyBieSB0aGUgc2hhMjU2IG9mIHRoZSBvcmlnaW5hbCBmaWxlIGJ5dGVzIGFuZCBvZiBpdHMgZGVjb2RlZCBEU1NFIHBheWxvYWQ7IHRoZSBvcmlnaW5hbCBmaWxlIHJlbWFpbnMgaW4gcGxhY2UsIHVuLWRlbGV0ZWQgYW5kIHVuLW1vZGlmaWVkLiIsImRhdGUiOiIyMDI2LTA4LTAzIiwiZGVyaXZhdGlvbiI6IkNvcnJlY3RlZCB2YWx1ZSA9IHRoZSBzaWduaW5nIGlkZW50aXR5IE9OTFkuIEZ1bGwgZGVyaXZhdGlvbjogKDEpIHJlYWQgb3JpZ2luYWwgZmlsZSwgc2hhMjU2KG9yaWdpbmFsIGJ5dGVzKSA9PSBzdXBlcnNlZGVkX3NoYTI1NiByZWNvcmRlZCBiZWZvcmUgYW55IHdyaXRlOyAoMikgYmFzZTY0LWRlY29kZSBvcmlnaW5hbCBEU1NFIHBheWxvYWQsIHJlY29yZCBzaGEyNTYgYXMgb3JpZ2luYWxfZGVjb2RlZF9wYXlsb2FkX3NoYTI1NjsgKDMpIHZlcmlmeSB0aGUgb3JpZ2luYWwgZW52ZWxvcGUgY3J5cHRvZ3JhcGhpY2FsbHkgKHJlc3VsdHMgZW1iZWRkZWQgYWJvdmUpIGFuZCBkaWFnbm9zZSB3aHkgc3RyaWN0IHRydXN0LXN0b3JlIHZlcmlmaWNhdGlvbiBmYWlsczsgKDQpIHJlLWF0dGVzdCB0aGUgaWRlbnRpY2FsIHNjaWVudGlmaWMgY29udGVudCB1bmRlciB0aGUgYW5jaG9yZWQgUEhBU0UwX0VWQUxVQVRPUiBrZXkgd2hvc2Ugc2VlZC1kZXJpdmVkIGtleV9pZCBhbmQgcHVibGljIGtleSBieXRlLW1hdGNoIHRoZSBwaW5uZWQgZW50cnkgaW4gY29uZmlnL3BoYXNlMC10cnVzdC1zdG9yZS52MS5qc29uOyAoNSkgdHdvLXJlcGxheSBjYW5vbmljYWwtc2VyaWFsaXphdGlvbiBnYXRlIG9uIHRoaXMgcGF5bG9hZCAoanNvbi5kdW1wcyBzb3J0X2tleXM9VHJ1ZSBzZXBhcmF0b3JzPSgnLCcsJzonKSwgc2VyaWFsaXplZCB0d2ljZSwgYXNzZXJ0ZWQgYnl0ZS1lcXVhbCk7ICg2KSBhZnRlciB3cml0aW5nLCByZS12ZXJpZnkgdGhlIG9yaWdpbmFsIGZpbGUgc2hhMjU2IGlzIGJ5dGUtaW50YWN0IGFuZCBEU1NFLXZlcmlmeSB0aGlzIHJlLWlzc3VlIGFnYWluc3QgdGhlIHRydXN0IHN0b3JlLiBObyBzY2llbnRpZmljIG51bWJlciB3YXMgYWx0ZXJlZCwgcmUtZGVyaXZlZCwgb3IgcmUtaW50ZXJwcmV0ZWQ7IGV2ZXJ5IHZhbHVlJ3MgZGVyaXZhdGlvbiByZW1haW5zIHRoZSBvcmlnaW5hbCByZWNlaXB0J3MgZGVyaXZhdGlvbiwgYnl0ZS1pbnRhY3QgYXQgc3VwZXJzZWRlZF9zaGEyNTYuIiwiZmxpcHNfc2NpZW50aWZpY19yZWFkaW5lc3MiOmZhbHNlLCJnZW5lcmF0ZWRfb25faG9zdCI6InhiYWJlMiIsIm1vZGlmaWVzX2V4aXN0aW5nX3JlY2VpcHRzIjpmYWxzZSwibW9kaWZpZXNfbWFuaWZlc3QiOmZhbHNlLCJtb2R1bGUiOiJhbXBob3JhLWRlc2lnbi1ydWxlLXNjb3JlIiwib3JpZ2luYWxfZGVjb2RlZF9wYXlsb2FkX3NoYTI1NiI6ImNkNTRlMjJkYzM2YzU3Njg3MjU1OTUxZDM2ZTEwMmI2Y2E0NzIwZTBlOGU3YTU3MmVkOTA2ZWEyZjA2MjFhNmQiLCJvcmlnaW5hbF9maWxlX3NoYTI1NiI6IjVhNmI0ODJiMzUyOTkzNjY0NjE3NzVlZmZiMDQ2ZTYzOWMyYTQ2YzgzYjE2NWY3OTliNDEwODQxY2Y0MTRmZmQiLCJvcmlnaW5hbF9zaWduYXR1cmVfcmVjb3JkIjp7ImRlZmVjdCI6ImtleWlkICdwaGFzZTAtZXZhbHVhdG9yLWF1ZGl0LTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1JyBpcyBtYWxmb3JtZWQ6IG5vbi1jYW5vbmljYWwgJy1hdWRpdC0nIHZhcmlhbnQgcHJlZml4IHBsdXMgdHJ1bmNhdGlvbiBvZiB0aGUga2V5LWlkIGhhc2ggdG8gMzIgaGV4IGNoYXJzIChwaW5uZWQgaWQgaXMgNjQgaGV4IGNoYXJzOiBwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgpLiBTdHJpY3QgdHJ1c3Qtc3RvcmUga2V5X2lkIGxvb2t1cCBmYWlscyBldmVuIHRob3VnaCB0aGUgZW1iZWRkZWQgcHVibGljIGtleSBtYXRjaGVzIHRoZSBhbmNob3JlZCBldmFsdWF0b3IgcHVibGljIGtleS4iLCJlbWJlZGRlZF9wdWJsaWNfa2V5X2hleCI6IjZjZjA3YWJmMWE1NWFkYWFjMTNlNzhhYmMzMWM1MzFkMDNkOGYwZDQyMzIzNDYzNDRhNzM2NDE4YzdiNDU2NjQiLCJrZXlpZCI6InBoYXNlMC1ldmFsdWF0b3ItYXVkaXQtM2VmNmIzNWNkYmJmZWE3NGE5NmE1YzliOThhNTE1ZDUiLCJwYXlsb2FkVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5hbXBob3JhLmRlc2lnbi1ydWxlLXNjb3JlLWd1dGgtZ29sZC1waHlzaWNhbC1iYXNlbGluZS1yZWNlaXB0LnYxK2pzb24iLCJzaWdfYjY0IjoiUVZlSDRRRGsyWFF2RG54K0NGaVRUU2pjVGlSVjRScmhseTVLVmptaEw0L1hTTHgyb08vYUZnWnpkRnVMMHZVdC91cWJGcGJueGcwVFQzdVdEaVloQUE9PSIsInNpZ25hdHVyZV9jcnlwdG9ncmFwaGljYWxseV92YWxpZF93aXRoX2FuY2hvcmVkX2V2YWx1YXRvcl9wdWJsaWNfa2V5IjpmYWxzZSwic2lnbmF0dXJlX2NyeXB0b2dyYXBoaWNhbGx5X3ZhbGlkX3dpdGhfZW1iZWRkZWRfcHVibGljX2tleSI6ZmFsc2UsInN0cmljdF90cnVzdF9zdG9yZV9sb29rdXBfb2Zfb3JpZ2luYWxfa2V5aWRfc3VjY2VlZHMiOmZhbHNlfSwicHJvbW90ZXNfYXV0aG9yaXR5IjpmYWxzZSwicmVhdHRhY2tfYXRfc2lnbmluZ190aW1lIjp7ImNoZWNrIjoic2hhMjU2KG9yaWdpbmFsIGZpbGUpIGVxdWFscyBwcmUtcmVjb3JkZWQgdmFsdWU7IHNlZWQtZGVyaXZlZCBrZXkgbWF0Y2hlcyBwaW5uZWQgdHJ1c3Qtc3RvcmUgZXZhbHVhdG9yIGVudHJ5Iiwib3JpZ2luYWxfc2hhMjU2X3JldmVyaWZpZWQiOnRydWUsInNlZWRfZGVyaXZlZF9rZXlfbWF0Y2hlc190cnVzdF9zdG9yZSI6dHJ1ZX0sInJlaXNzdWVfa2luZCI6IlNJR05BVFVSRV9JREVOVElUWV9SRUlTU1VFIiwicmVwYWlyX2l0ZW0iOiJSLUExMSIsInJlcGFpcl9tb2RlIjoiaW50ZXJhY3RpdmUtMjAyNi0wOC0wMyIsInNjaGVtYSI6ImFtcGhvcmEuZGVzaWduLXJ1bGUtc2NvcmUucHVyZm9ybWFuY2Utc2NyYXRjaC1oYXJkbmVzcy1ndXRoLWdvbGQtcGh5c2ljYWwtYmFzZWxpbmUtcmVjZWlwdC5hbmNob3JlZC1yZWlzc3VlLnYxIiwic2lnbmluZ19rZXkiOnsiZGVyaXZlc19waW5uZWRfdHJ1c3Rfc3RvcmVfa2V5X2lkIjp0cnVlLCJrZXlfaWQiOiJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLCJwdWJsaWNfa2V5X2hleCI6IjZjZjA3YWJmMWE1NWFkYWFjMTNlNzhhYmMzMWM1MzFkMDNkOGYwZDQyMzIzNDYzNDRhNzM2NDE4YzdiNDU2NjQiLCJyb2xlIjoiUEhBU0UwX0VWQUxVQVRPUiJ9LCJzdXBlcnNlZGVzIjp7InJlYXNvbiI6InNpZ25hdHVyZS1pZGVudGl0eSByZS1pc3N1ZSBvbmx5IC0gc2NpZW50aWZpYyBjb250ZW50IHVuY2hhbmdlZCwgcmUtdmVyaWZpZWQgYnl0ZS1pbnRhY3QiLCJzdXBlcnNlZGVkX2RlbGV0ZWRfb3JfbW9kaWZpZWQiOmZhbHNlLCJzdXBlcnNlZGVkX3BhdGgiOiJhbXBob3JhLWRlc2lnbi1ydWxlLXNjb3JlL2JlbmNobWFya3MvZ3V0aC1nb2xkLXBoeXNpY2FsLWJhc2VsaW5lLXYxL3BoeXNpY2FsX2Jhc2VsaW5lX3JlY2VpcHQudjEuanNvbiIsInN1cGVyc2VkZWRfc2hhMjU2IjoiNWE2YjQ4MmIzNTI5OTM2NjQ2MTc3NWVmZmIwNDZlNjM5YzJhNDZjODNiMTY1Zjc5OWI0MTA4NDFjZjQxNGZmZCJ9LCJ0cnVzdF9hbmNob3JlZF9pbl9waGFzZTBfc3RvcmUiOnRydWUsInRydXN0X3N0b3JlIjp7InBhdGgiOiJjb25maWcvcGhhc2UwLXRydXN0LXN0b3JlLnYxLmpzb24iLCJwaW5uZWRfZXZhbHVhdG9yX2tleV9pZCI6InBoYXNlMC1ldmFsdWF0b3ItM2VmNmIzNWNkYmJmZWE3NGE5NmE1YzliOThhNTE1ZDU3MTU4YTA5ZWNhZmYxMGFjZmExZjE1OTkwYmUwMDE3OCIsInBpbm5lZF9ldmFsdWF0b3JfcHVibGljX2tleV9oZXgiOiI2Y2YwN2FiZjFhNTVhZGFhYzEzZTc4YWJjMzFjNTMxZDAzZDhmMGQ0MjMyMzQ2MzQ0YTczNjQxOGM3YjQ1NjY0Iiwic2VlZF9kZXJpdmVkX2tleV9tYXRjaGVzX3Bpbm5lZF9lbnRyeSI6dHJ1ZSwic2hhMjU2IjoiZmM0ZmE4N2Y3MGU1OGJlZmMzOWIzODZhMDk3NWM5NTIwYTQ0YjFkOTQ0YzdjNGE4OTZkNmMxNmI3NDM3YjIzMyJ9LCJ0d29fcmVwbGF5X3NoYTI1Nl9nYXRlIjoiUEFTUyJ9",
+    "payloadType": "application/vnd.amphora.design-rule-score-guth-gold-physical-baseline-receipt.anchored-reissue.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "nzCMq6v+wOVIOdpkciAoiDXsvlB+ezIyeVuG7c9lto7st7VBLR0WDzRZoqTaeYoV34nSyVfNgPPfRocfnhWJBA=="
+      }
+    ]
+  }
+}

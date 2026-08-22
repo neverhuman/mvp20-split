@@ -1,0 +1,38 @@
+{
+  "schema": "amphora.cro-protocol-packager.cf-proc-state.v1",
+  "campaign_item_id": "CF-PROC",
+  "module": "amphora-cro-protocol-packager",
+  "fires": [
+    {
+      "fire_id": "20260810T210001-1853175-cf9bb09229fe",
+      "outcome": "CLAIM_REFUTED",
+      "attack": "mixing/induction/application crosswalk audit: envelope's own process/application requirements (amphora-envelope-gates v5_requirements.json performance_envelope + fixed_constraints) crosswalked against the CF-PROC deliverable corpus (amphora-report-packager blueprint.md Section 2 + process prose, amphora-cro-protocol-packager cro_protocol.md, capture_template.json)",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-PROC/attempts/cf-proc-mixing-induction-application-crosswalk-receipt.v1.dsse.json",
+      "key_findings": [
+        "5/10 audited envelope process parameters missing from the deliverable corpus: dry_to_touch_h (envelope's own 2h target -- only the differing MIL-cited 3h set-to-touch appears), functional_cure_h (6h target, never stated as such), recoat_window_h (6h target, never stated), mix_ratio_by_volume engine_tolerance_pct (3% tolerance band on the 1:1 ratio never stated), thinning_limit_numeric (done_criteria names 'thinning limits' verbatim; only qualitative language exists, no numeric % / fl-oz / VOC-headroom-derived cap anywhere)",
+        "scale-sensitive-step clause of the refutation criterion does NOT independently fire: blueprint.md Q2 already flags dispersion heat, tip speed, and grind temperature as scale-sensitive for the pilot path -- the refutation rests entirely on the WFT/coverage/cure-schedule omission clause",
+        "positive control PASSED: stripping every induction-time-with-value mention (and bare 'induction' token) from a copy, per the attack shape's literal instruction, correctly flips induction_min from found to missing (detected=True)",
+        "discrimination control PASSED: a synthetic fully-patched copy adding explicit dry-to-touch/functional-cure/recoat/mix-ratio-tolerance/thinning-limit language makes the SAME checker report zero of the 5 previously-missing keys as still missing -- the checker is not hard-wired to always refute",
+        "STRUCTURAL BLOCKER (same pattern as sibling item CF-BOM against the same file): the deliverable text with the gaps (blueprint.md Section 2 and its process prose) is owned by amphora-report-packager, outside this fire's amphora-cro-protocol-packager write-scope confinement -- repair cannot land from this module alone",
+        "no external data required to repair: all 5 missing values already exist in amphora-envelope-gates v5_requirements.json and only need to be quoted into blueprint.md's process/application section, plus a derived numeric thinning limit stated explicitly"
+      ]
+    },
+    {
+      "fire_id": "20260810T220001-2379296-db20bff7d785",
+      "outcome": "CLAIM_SURVIVED",
+      "attack": "re-ran fire-1's identical crosswalk script against a corpus repaired within amphora-cro-protocol-packager's own write scope (cro_protocol.md + capture_template.json additions, blueprint.md untouched)",
+      "receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-PROC/done/cf-proc-mixing-induction-application-crosswalk-repair-receipt.v1.dsse.json",
+      "key_findings": [
+        "Fire-1's cross-module-blocker diagnosis was incorrect: the crosswalk script concatenates blueprint.md + cro_protocol.md + capture_template.json, so stating the 5 envelope-sourced values in this module's own files (no blueprint.md edit) satisfies the same acceptance test.",
+        "Re-run of the byte-identical fire-1 script (sha256 7963ba58d473aa612b797b63f4585140aea36c71f9349c2837cd1635203feb87) against the repaired corpus: 0/10 missing, scale-sensitive clause still flagged, positive control still detects the induction-strip defect -- verdict flips to CLAIM_SURVIVED.",
+        "No external data was required; all added values are envelope-sourced (amphora-envelope-gates v5_requirements.json), same source fire 1 already cited."
+      ]
+    }
+  ],
+  "next_fire_should": [
+    "None -- CF-PROC done_criterion met and max_fires=2 reached."
+  ],
+  "last_updated_fire_id": "20260810T220001-2379296-db20bff7d785",
+  "campaign_item_status": "done",
+  "budget_exhausted": true
+}

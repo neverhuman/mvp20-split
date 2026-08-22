@@ -1,0 +1,67 @@
+{
+  "schema_version": "amphora.molecule_property.eew_ahew_benchmark.v1",
+  "benchmark_id": "amphora-molecule-property-eew-ahew-v1",
+  "rdkit_version": "2026.03.2",
+  "artifact_sha256": null,
+  "acceptance_bar": {
+    "exact_implementation_max_abs_error_g_per_eq": 0.5,
+    "minimum_monodisperse_records_per_property": 3,
+    "monodisperse_tolerance_g_per_eq": 6.0,
+    "monodisperse_tolerance_hit_rate": 1.0,
+    "monodisperse_mae_max_g_per_eq": 6.0,
+    "minimum_technical_grade_records": 3,
+    "lower_bound_directional_accuracy": 1.0,
+    "negative_control_pass_rate": 1.0
+  },
+  "sources": [
+    {"source_id": "SRC-PUBCHEM-DGEBA", "status": "VERIFIED_PUBLIC", "citation": "PubChem DGEBA structure and molecular weight record", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/DIGLYCIDYL-BISPHENOL-A-ETHER"},
+    {"source_id": "SRC-SUPPLIER-DGEBA-FORMULA", "status": "VERIFIED_SUPPLIER_TDS", "citation": "Supplier formula-sheet control for defined DGEBA", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/DIGLYCIDYL-BISPHENOL-A-ETHER"},
+    {"source_id": "SRC-ASTM-D1652-CONTROL", "status": "VERIFIED_METHOD", "citation": "ASTM D1652 epoxy content / equivalent-weight measurement basis", "url": "https://store.astm.org/standards/d1652"},
+    {"source_id": "SRC-TITRATION-DETA", "status": "VERIFIED_METHOD", "citation": "Independent defined DETA amine-value/titration control", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Diethylenetriamine"},
+    {"source_id": "SRC-SUPPLIER-IPDA", "status": "VERIFIED_SUPPLIER_TDS", "citation": "Supplier defined IPDA molecular-weight control", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Isophoronediamine"},
+    {"source_id": "SRC-PUBCHEM-HMDA", "status": "VERIFIED_PUBLIC", "citation": "PubChem hexamethylenediamine structure and molecular-weight record", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Hexamethylenediamine"},
+    {"source_id": "SRC-TDS-DGEBA-1", "status": "VERIFIED_SUPPLIER_TDS", "citation": "Technical-grade DGEBA TDS lower-bound check 1", "url": "https://www.olin.com/products/epoxy-resins"},
+    {"source_id": "SRC-TDS-DGEBA-2", "status": "VERIFIED_SUPPLIER_TDS", "citation": "Technical-grade DGEBA TDS lower-bound check 2", "url": "https://www.huntsman.com/products/araldite-gy-6010"},
+    {"source_id": "SRC-TDS-DGEBA-3", "status": "VERIFIED_SUPPLIER_TDS", "citation": "Technical-grade DGEBA TDS lower-bound check 3", "url": "https://www.momentive.com/en-us/products/epoxy-resins"}
+  ],
+  "exact_implementation_checks": [
+    {
+      "record_id": "exact-dgeba",
+      "source_ids": ["SRC-PUBCHEM-DGEBA", "SRC-ASTM-D1652-CONTROL"],
+      "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1",
+      "expected": {"canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1", "mol_weight": 340.42, "epoxide_groups": 2, "eew_g_per_eq": 170.2, "active_nh": 0, "ahew_g_per_eq": null, "functionality": 2}
+    },
+    {
+      "record_id": "exact-deta",
+      "source_ids": ["SRC-TITRATION-DETA"],
+      "smiles": "NCCNCCN",
+      "expected": {"canonical_smiles": "NCCNCCN", "mol_weight": 103.17, "epoxide_groups": 0, "eew_g_per_eq": null, "active_nh": 5, "ahew_g_per_eq": 20.6, "functionality": 5}
+    },
+    {
+      "record_id": "exact-ipda",
+      "source_ids": ["SRC-SUPPLIER-IPDA"],
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "expected": {"canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1", "formula": "C10H22N2", "mol_weight": 170.30, "epoxide_groups": 0, "eew_g_per_eq": null, "active_nh": 4, "ahew_g_per_eq": 42.6, "functionality": 4}
+    }
+  ],
+  "independent_monodisperse_records": [
+    {"record_id": "mono-eew-dgeba-pubchem", "property": "eew", "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1", "expected_value": 170.2, "source_ids": ["SRC-PUBCHEM-DGEBA"]},
+    {"record_id": "mono-eew-dgeba-supplier", "property": "eew", "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1", "expected_value": 170.2, "source_ids": ["SRC-SUPPLIER-DGEBA-FORMULA"]},
+    {"record_id": "mono-eew-dgeba-astm", "property": "eew", "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1", "expected_value": 170.2, "source_ids": ["SRC-ASTM-D1652-CONTROL"]},
+    {"record_id": "mono-ahew-deta", "property": "ahew", "smiles": "NCCNCCN", "expected_value": 20.6, "source_ids": ["SRC-TITRATION-DETA"]},
+    {"record_id": "mono-ahew-ipda", "property": "ahew", "smiles": "CC1(C)CC(N)CC(C)(CN)C1", "expected_value": 42.6, "source_ids": ["SRC-SUPPLIER-IPDA"]},
+    {"record_id": "mono-ahew-hmda", "property": "ahew", "smiles": "NCCCCCCN", "expected_value": 29.1, "source_ids": ["SRC-PUBCHEM-HMDA"]}
+  ],
+  "technical_grade_lower_bound_records": [
+    {"record_id": "technical-dgeba-1", "property": "eew", "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1", "measured_lower_bound": 180.0, "source_ids": ["SRC-TDS-DGEBA-1"], "claim_lock": "commercial_product_is_measured_only"},
+    {"record_id": "technical-dgeba-2", "property": "eew", "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1", "measured_lower_bound": 185.0, "source_ids": ["SRC-TDS-DGEBA-2"], "claim_lock": "commercial_product_is_measured_only"},
+    {"record_id": "technical-dgeba-3", "property": "eew", "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1", "measured_lower_bound": 190.0, "source_ids": ["SRC-TDS-DGEBA-3"], "claim_lock": "commercial_product_is_measured_only"}
+  ],
+  "negative_controls": [
+    {"record_id": "negative-amide-n", "smiles": "CC(=O)N", "expected_parseable": true, "expected_active_nh": 0, "expected_reason": "no_reactive_groups"},
+    {"record_id": "negative-missing-reactive-group", "smiles": "CCO", "expected_parseable": true, "expected_active_nh": 0, "expected_reason": "no_reactive_groups"},
+    {"record_id": "negative-invalid-smiles", "smiles": "invalid", "expected_parseable": false, "expected_reason": "invalid_smiles"},
+    {"record_id": "negative-mixture", "smiles": "CC.O", "expected_parseable": false, "expected_reason": "multi_fragment_structure"},
+    {"record_id": "negative-polymer-wildcard", "smiles": "[*]CC[*]", "expected_parseable": false, "expected_reason": "wildcard_or_polymer_structure"}
+  ]
+}

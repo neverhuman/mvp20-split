@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-97111459255d1f16ce84da070c9255891f351a2dcaf5d3835ac006c3cef10331",
+      "path": "events/97111459255d1f16ce84da070c9255891f351a2dcaf5d3835ac006c3cef10331.json",
+      "sha256": "61610061635c2d368eb606801ac6b845ffde1e0707b7a94b99504aeea20d9ee5"
+    }
+  ],
+  "module_id": "amphora-report-packager",
+  "schema": "amphora.module-movement-ledger.v1"
+}

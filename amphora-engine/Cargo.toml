@@ -1,0 +1,21 @@
+[package]
+name = "amphora-engine"
+version.workspace = true
+edition.workspace = true
+
+[features]
+default = []
+rdkit = ["amphora-molecule-capabilities/rdkit", "amphora-rdkit-ffi/rdkit"]
+
+[dependencies]
+amphora-assurance-capabilities = { path = "../amphora-assurance-capabilities" }
+amphora-core = { path = "../amphora-core" }
+amphora-formulation-capabilities = { path = "../amphora-formulation-capabilities" }
+amphora-molecule-capabilities = { path = "../amphora-molecule-capabilities" }
+amphora-rdkit-ffi = { path = "../amphora-rdkit-ffi" }
+anyhow.workspace = true
+rayon.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true

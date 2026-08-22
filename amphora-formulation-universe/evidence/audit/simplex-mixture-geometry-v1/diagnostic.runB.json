@@ -1,0 +1,1333 @@
+{
+  "acceptance_all_perfect": true,
+  "anchor_dataset": {
+    "license": "CC0-1.0",
+    "path": "amphora-formulation-universe/reference/mvp20/data/formulation_mixture_region_anchors.v1.json",
+    "rights_status": "ACCEPTED",
+    "sha256": "c47fe3017af605b6149c5041bba24748c046bb26143413c896cf01edd5fe5b21"
+  },
+  "authority": "AUDIT_ONLY",
+  "axis": "THEORY",
+  "does_not": [
+    "promote authority or flip scientific_readiness",
+    "modify the portfolio manifest (66 receipts / 11 modules)",
+    "modify any locked dataset or the signed Phase-0 KPI",
+    "modify the live Rust engine"
+  ],
+  "failclosed_probe_pass": 12,
+  "failclosed_probe_total": 12,
+  "failclosed_probes": [
+    {
+      "detail": "BoundError: inconsistent region: sum(lower) > 1",
+      "expected": "REJECT",
+      "probe_id": "sum_lower_exceeds_one",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: inconsistent region: sum(upper) < 1",
+      "expected": "REJECT",
+      "probe_id": "sum_upper_below_one",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: lower bound exceeds upper bound",
+      "expected": "REJECT",
+      "probe_id": "lower_exceeds_upper",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: negative lower bound",
+      "expected": "REJECT",
+      "probe_id": "negative_lower_bound",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: upper bound exceeds unity",
+      "expected": "REJECT",
+      "probe_id": "upper_exceeds_one",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: a mixture region requires q >= 2 components",
+      "expected": "REJECT",
+      "probe_id": "single_component_region",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: non-numeric bound",
+      "expected": "REJECT",
+      "probe_id": "non_numeric_bound",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: duplicate component name",
+      "expected": "REJECT",
+      "probe_id": "duplicate_component_name",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: non-finite bound",
+      "expected": "REJECT",
+      "probe_id": "nan_bound",
+      "rejected": true
+    },
+    {
+      "detail": "BoundError: bound vector length mismatch",
+      "expected": "REJECT",
+      "probe_id": "bound_vector_length_mismatch",
+      "rejected": true
+    },
+    {
+      "detail": "ValueError: simplex-lattice requires degree m >= 1",
+      "expected": "REJECT",
+      "probe_id": "lattice_degree_zero",
+      "rejected": true
+    },
+    {
+      "detail": "ValueError: simplex-lattice requires q >= 2 components",
+      "expected": "REJECT",
+      "probe_id": "lattice_single_component",
+      "rejected": true
+    }
+  ],
+  "gates": [
+    {
+      "cases": [
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 3,
+          "distinct_points": 3,
+          "enumerated_points": 3,
+          "expected_points_anchor": 3,
+          "m": 2,
+          "q": 2
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 4,
+          "distinct_points": 4,
+          "enumerated_points": 4,
+          "expected_points_anchor": 4,
+          "m": 3,
+          "q": 2
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 3,
+          "distinct_points": 3,
+          "enumerated_points": 3,
+          "expected_points_anchor": 3,
+          "m": 1,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 6,
+          "distinct_points": 6,
+          "enumerated_points": 6,
+          "expected_points_anchor": 6,
+          "m": 2,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 10,
+          "distinct_points": 10,
+          "enumerated_points": 10,
+          "expected_points_anchor": 10,
+          "m": 3,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 15,
+          "distinct_points": 15,
+          "enumerated_points": 15,
+          "expected_points_anchor": 15,
+          "m": 4,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 4,
+          "distinct_points": 4,
+          "enumerated_points": 4,
+          "expected_points_anchor": 4,
+          "m": 1,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 10,
+          "distinct_points": 10,
+          "enumerated_points": 10,
+          "expected_points_anchor": 10,
+          "m": 2,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 20,
+          "distinct_points": 20,
+          "enumerated_points": 20,
+          "expected_points_anchor": 20,
+          "m": 3,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 35,
+          "distinct_points": 35,
+          "enumerated_points": 35,
+          "expected_points_anchor": 35,
+          "m": 4,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 15,
+          "distinct_points": 15,
+          "enumerated_points": 15,
+          "expected_points_anchor": 15,
+          "m": 2,
+          "q": 5
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 35,
+          "distinct_points": 35,
+          "enumerated_points": 35,
+          "expected_points_anchor": 35,
+          "m": 3,
+          "q": 5
+        },
+        {
+          "agree": true,
+          "all_points_close_to_unity": true,
+          "closed_form_C(q+m-1,m)": 21,
+          "distinct_points": 21,
+          "enumerated_points": 21,
+          "expected_points_anchor": 21,
+          "m": 2,
+          "q": 6
+        }
+      ],
+      "gate_id": "G1_scheffe1958_simplex_lattice_point_count",
+      "pass": true,
+      "source": "Scheffe 1958 doi:10.1111/j.2517-6161.1958.tb00299.x"
+    },
+    {
+      "cases": [
+        {
+          "canonical_terms": 3,
+          "closed_form_terms_C(q+m-1,m)": 3,
+          "degree_m": 1,
+          "exact_determinant": "-1/1",
+          "lattice_points": 3,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 3,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 4,
+          "closed_form_terms_C(q+m-1,m)": 4,
+          "degree_m": 1,
+          "exact_determinant": "1/1",
+          "lattice_points": 4,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 4,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 5,
+          "closed_form_terms_C(q+m-1,m)": 5,
+          "degree_m": 1,
+          "exact_determinant": "1/1",
+          "lattice_points": 5,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 5,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 6,
+          "closed_form_terms_C(q+m-1,m)": 6,
+          "degree_m": 2,
+          "exact_determinant": "1/64",
+          "lattice_points": 6,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 3,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 10,
+          "closed_form_terms_C(q+m-1,m)": 10,
+          "degree_m": 2,
+          "exact_determinant": "-1/4096",
+          "lattice_points": 10,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 4,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 15,
+          "closed_form_terms_C(q+m-1,m)": 15,
+          "degree_m": 2,
+          "exact_determinant": "-1/1048576",
+          "lattice_points": 15,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 5,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 21,
+          "closed_form_terms_C(q+m-1,m)": 21,
+          "degree_m": 2,
+          "exact_determinant": "-1/1073741824",
+          "lattice_points": 21,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 6,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 10,
+          "closed_form_terms_C(q+m-1,m)": 10,
+          "degree_m": 3,
+          "exact_determinant": "-512/387420489",
+          "lattice_points": 10,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 3,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 20,
+          "closed_form_terms_C(q+m-1,m)": 20,
+          "degree_m": 3,
+          "exact_determinant": "262144/109418989131512359209",
+          "lattice_points": 20,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 4,
+          "saturated": true
+        },
+        {
+          "canonical_terms": 35,
+          "closed_form_terms_C(q+m-1,m)": 35,
+          "degree_m": 3,
+          "exact_determinant": "-1073741824/147808829414345923316083210206383297601",
+          "lattice_points": 35,
+          "model_matrix_square": true,
+          "nonsingular": true,
+          "q": 5,
+          "saturated": true
+        }
+      ],
+      "claim": "the {q,m} simplex-lattice is saturated for the degree-m Scheffe canonical polynomial: the model matrix is square and exactly nonsingular over the rationals",
+      "gate_id": "G2_scheffe1958_canonical_saturation",
+      "pass": true
+    },
+    {
+      "cases": [
+        {
+          "agree": true,
+          "closed_form_2^q-1": 7,
+          "distinct_points": 7,
+          "enumerated_points": 7,
+          "expected_points_anchor": 7,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "closed_form_2^q-1": 15,
+          "distinct_points": 15,
+          "enumerated_points": 15,
+          "expected_points_anchor": 15,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "closed_form_2^q-1": 31,
+          "distinct_points": 31,
+          "enumerated_points": 31,
+          "expected_points_anchor": 31,
+          "q": 5
+        },
+        {
+          "agree": true,
+          "closed_form_2^q-1": 63,
+          "distinct_points": 63,
+          "enumerated_points": 63,
+          "expected_points_anchor": 63,
+          "q": 6
+        }
+      ],
+      "gate_id": "G3_scheffe1963_simplex_centroid_point_count",
+      "pass": true,
+      "source": "Scheffe 1963 doi:10.1111/j.2517-6161.1963.tb00506.x"
+    },
+    {
+      "cases": [
+        {
+          "agree": true,
+          "degree": "linear",
+          "enumerated_terms": 3,
+          "expected_terms_anchor": 3,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "degree": "linear",
+          "enumerated_terms": 4,
+          "expected_terms_anchor": 4,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "degree": "linear",
+          "enumerated_terms": 5,
+          "expected_terms_anchor": 5,
+          "q": 5
+        },
+        {
+          "agree": true,
+          "degree": "quadratic",
+          "enumerated_terms": 6,
+          "expected_terms_anchor": 6,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "degree": "quadratic",
+          "enumerated_terms": 10,
+          "expected_terms_anchor": 10,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "degree": "quadratic",
+          "enumerated_terms": 15,
+          "expected_terms_anchor": 15,
+          "q": 5
+        },
+        {
+          "agree": true,
+          "degree": "special_cubic",
+          "enumerated_terms": 7,
+          "expected_terms_anchor": 7,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "degree": "special_cubic",
+          "enumerated_terms": 14,
+          "expected_terms_anchor": 14,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "degree": "special_cubic",
+          "enumerated_terms": 25,
+          "expected_terms_anchor": 25,
+          "q": 5
+        },
+        {
+          "agree": true,
+          "degree": "full_cubic",
+          "enumerated_terms": 10,
+          "expected_terms_anchor": 10,
+          "q": 3
+        },
+        {
+          "agree": true,
+          "degree": "full_cubic",
+          "enumerated_terms": 20,
+          "expected_terms_anchor": 20,
+          "q": 4
+        },
+        {
+          "agree": true,
+          "degree": "full_cubic",
+          "enumerated_terms": 35,
+          "expected_terms_anchor": 35,
+          "q": 5
+        }
+      ],
+      "gate_id": "G4_scheffe_canonical_term_count",
+      "pass": true,
+      "source": "Scheffe 1958 / Cornell 2002 ISBN 0-471-07916-2"
+    },
+    {
+      "cases": [
+        {
+          "agree": true,
+          "cartesian_exceeds_module_ceiling": false,
+          "cartesian_grid_points": 125,
+          "closed_form_C(q+m-1,m)": 15,
+          "closure_feasible_fraction_exact": "3/25",
+          "closure_feasible_percent": 12.0,
+          "closure_feasible_points": 15,
+          "grid_steps_m": 4,
+          "lattice_exceeds_module_ceiling": false,
+          "q": 3,
+          "scheffe_lattice_points": 15
+        },
+        {
+          "agree": true,
+          "cartesian_exceeds_module_ceiling": false,
+          "cartesian_grid_points": 1331,
+          "closed_form_C(q+m-1,m)": 66,
+          "closure_feasible_fraction_exact": "6/121",
+          "closure_feasible_percent": 4.958678,
+          "closure_feasible_points": 66,
+          "grid_steps_m": 10,
+          "lattice_exceeds_module_ceiling": false,
+          "q": 3,
+          "scheffe_lattice_points": 66
+        },
+        {
+          "agree": true,
+          "cartesian_exceeds_module_ceiling": false,
+          "cartesian_grid_points": 625,
+          "closed_form_C(q+m-1,m)": 35,
+          "closure_feasible_fraction_exact": "7/125",
+          "closure_feasible_percent": 5.6,
+          "closure_feasible_points": 35,
+          "grid_steps_m": 4,
+          "lattice_exceeds_module_ceiling": false,
+          "q": 4,
+          "scheffe_lattice_points": 35
+        },
+        {
+          "agree": true,
+          "cartesian_exceeds_module_ceiling": false,
+          "cartesian_grid_points": 6561,
+          "closed_form_C(q+m-1,m)": 165,
+          "closure_feasible_fraction_exact": "55/2187",
+          "closure_feasible_percent": 2.514861,
+          "closure_feasible_points": 165,
+          "grid_steps_m": 8,
+          "lattice_exceeds_module_ceiling": false,
+          "q": 4,
+          "scheffe_lattice_points": 165
+        },
+        {
+          "agree": true,
+          "cartesian_exceeds_module_ceiling": false,
+          "cartesian_grid_points": 7776,
+          "closed_form_C(q+m-1,m)": 126,
+          "closure_feasible_fraction_exact": "7/432",
+          "closure_feasible_percent": 1.62037,
+          "closure_feasible_points": 126,
+          "grid_steps_m": 5,
+          "lattice_exceeds_module_ceiling": false,
+          "q": 5,
+          "scheffe_lattice_points": 126
+        },
+        {
+          "agree": true,
+          "cartesian_exceeds_module_ceiling": true,
+          "cartesian_grid_points": 161051,
+          "closed_form_C(q+m-1,m)": 1001,
+          "closure_feasible_fraction_exact": "91/14641",
+          "closure_feasible_percent": 0.621542,
+          "closure_feasible_points": 1001,
+          "grid_steps_m": 10,
+          "lattice_exceeds_module_ceiling": false,
+          "q": 5,
+          "scheffe_lattice_points": 1001
+        },
+        {
+          "agree": true,
+          "cartesian_exceeds_module_ceiling": true,
+          "cartesian_grid_points": 15625,
+          "closed_form_C(q+m-1,m)": 126,
+          "closure_feasible_fraction_exact": "126/15625",
+          "closure_feasible_percent": 0.8064,
+          "closure_feasible_points": 126,
+          "grid_steps_m": 4,
+          "lattice_exceeds_module_ceiling": false,
+          "q": 6,
+          "scheffe_lattice_points": 126
+        },
+        {
+          "agree": true,
+          "cartesian_exceeds_module_ceiling": true,
+          "cartesian_grid_points": 117649,
+          "closed_form_C(q+m-1,m)": 462,
+          "closure_feasible_fraction_exact": "66/16807",
+          "closure_feasible_percent": 0.392694,
+          "closure_feasible_points": 462,
+          "grid_steps_m": 6,
+          "lattice_exceeds_module_ceiling": false,
+          "q": 6,
+          "scheffe_lattice_points": 462
+        }
+      ],
+      "cases_where_lattice_fits_ceiling_but_cartesian_does_not": 3,
+      "claim": "mixed-radix Cartesian enumeration over q closed composition axes is a strict superset of the mixture-feasible set; the closure-feasible survivors are exactly the Scheffe {q,m} simplex-lattice",
+      "gate_id": "G5_cartesian_closure_waste_vs_scheffe_lattice",
+      "module_cardinality_ceiling": 10000,
+      "pass": true,
+      "worst_case": {
+        "m": 6,
+        "q": 6
+      },
+      "worst_case_closure_feasible_percent": 0.392694
+    },
+    {
+      "cases": [
+        {
+          "agree": true,
+          "all_vertices_extreme": true,
+          "all_vertices_feasible": true,
+          "components": [
+            "dgeba_resin",
+            "amine_hardener",
+            "pigment_tio2_zno",
+            "solvent_xylene_mibk"
+          ],
+          "consistent_piepel1983": true,
+          "declared_lower_bounds_tightened": 0,
+          "declared_upper_bounds_tightened": 0,
+          "double_description_vertices": 12,
+          "lower": [
+            "3/10",
+            "2/25",
+            "3/20",
+            "1/20"
+          ],
+          "mclean_anderson_nonvertex_candidates": 0,
+          "mclean_anderson_raw_candidates": 12,
+          "mclean_anderson_screened_vertices": 12,
+          "method_parity_MA_vs_DD": true,
+          "observed_vertex_range_lower": [
+            "3/10",
+            "2/25",
+            "3/20",
+            "1/20"
+          ],
+          "observed_vertex_range_upper": [
+            "1/2",
+            "1/5",
+            "2/5",
+            "1/4"
+          ],
+          "piepel_implied_lower": [
+            "3/10",
+            "2/25",
+            "3/20",
+            "1/20"
+          ],
+          "piepel_implied_upper": [
+            "1/2",
+            "1/5",
+            "2/5",
+            "1/4"
+          ],
+          "piepel_range_identity_holds": true,
+          "q": 4,
+          "region_id": "marine-primer-4c",
+          "sum_lower": "29/50",
+          "sum_upper": "27/20",
+          "upper": [
+            "1/2",
+            "1/5",
+            "2/5",
+            "1/4"
+          ],
+          "vertices": [
+            [
+              "3/10",
+              "2/25",
+              "37/100",
+              "1/4"
+            ],
+            [
+              "3/10",
+              "2/25",
+              "2/5",
+              "11/50"
+            ],
+            [
+              "3/10",
+              "1/5",
+              "1/4",
+              "1/4"
+            ],
+            [
+              "3/10",
+              "1/5",
+              "2/5",
+              "1/10"
+            ],
+            [
+              "7/20",
+              "1/5",
+              "2/5",
+              "1/20"
+            ],
+            [
+              "2/5",
+              "1/5",
+              "3/20",
+              "1/4"
+            ],
+            [
+              "47/100",
+              "2/25",
+              "2/5",
+              "1/20"
+            ],
+            [
+              "1/2",
+              "2/25",
+              "17/100",
+              "1/4"
+            ],
+            [
+              "1/2",
+              "2/25",
+              "37/100",
+              "1/20"
+            ],
+            [
+              "1/2",
+              "1/10",
+              "3/20",
+              "1/4"
+            ],
+            [
+              "1/2",
+              "1/5",
+              "3/20",
+              "3/20"
+            ],
+            [
+              "1/2",
+              "1/5",
+              "1/4",
+              "1/20"
+            ]
+          ],
+          "vertices_distinct": true
+        },
+        {
+          "agree": true,
+          "all_vertices_extreme": true,
+          "all_vertices_feasible": true,
+          "components": [
+            "dgeba_resin",
+            "amine_hardener",
+            "pigment_tio2",
+            "glass_flake_filler",
+            "solvent_xylene_mibk"
+          ],
+          "consistent_piepel1983": true,
+          "declared_lower_bounds_tightened": 0,
+          "declared_upper_bounds_tightened": 0,
+          "double_description_vertices": 26,
+          "lower": [
+            "1/4",
+            "3/50",
+            "1/20",
+            "1/20",
+            "1/20"
+          ],
+          "mclean_anderson_nonvertex_candidates": 0,
+          "mclean_anderson_raw_candidates": 26,
+          "mclean_anderson_screened_vertices": 26,
+          "method_parity_MA_vs_DD": true,
+          "observed_vertex_range_lower": [
+            "1/4",
+            "3/50",
+            "1/20",
+            "1/20",
+            "1/20"
+          ],
+          "observed_vertex_range_upper": [
+            "9/20",
+            "9/50",
+            "1/5",
+            "3/10",
+            "1/4"
+          ],
+          "piepel_implied_lower": [
+            "1/4",
+            "3/50",
+            "1/20",
+            "1/20",
+            "1/20"
+          ],
+          "piepel_implied_upper": [
+            "9/20",
+            "9/50",
+            "1/5",
+            "3/10",
+            "1/4"
+          ],
+          "piepel_range_identity_holds": true,
+          "q": 5,
+          "region_id": "hb-barrier-topcoat-5c",
+          "sum_lower": "23/50",
+          "sum_upper": "69/50",
+          "upper": [
+            "9/20",
+            "9/50",
+            "1/5",
+            "3/10",
+            "1/4"
+          ],
+          "vertices": [
+            [
+              "1/4",
+              "3/50",
+              "7/50",
+              "3/10",
+              "1/4"
+            ],
+            [
+              "1/4",
+              "3/50",
+              "1/5",
+              "6/25",
+              "1/4"
+            ],
+            [
+              "1/4",
+              "3/50",
+              "1/5",
+              "3/10",
+              "19/100"
+            ],
+            [
+              "1/4",
+              "3/20",
+              "1/20",
+              "3/10",
+              "1/4"
+            ],
+            [
+              "1/4",
+              "9/50",
+              "1/20",
+              "27/100",
+              "1/4"
+            ],
+            [
+              "1/4",
+              "9/50",
+              "1/20",
+              "3/10",
+              "11/50"
+            ],
+            [
+              "1/4",
+              "9/50",
+              "1/5",
+              "3/25",
+              "1/4"
+            ],
+            [
+              "1/4",
+              "9/50",
+              "1/5",
+              "3/10",
+              "7/100"
+            ],
+            [
+              "27/100",
+              "9/50",
+              "1/5",
+              "3/10",
+              "1/20"
+            ],
+            [
+              "8/25",
+              "9/50",
+              "1/5",
+              "1/20",
+              "1/4"
+            ],
+            [
+              "17/50",
+              "3/50",
+              "1/20",
+              "3/10",
+              "1/4"
+            ],
+            [
+              "39/100",
+              "3/50",
+              "1/5",
+              "3/10",
+              "1/20"
+            ],
+            [
+              "21/50",
+              "9/50",
+              "1/20",
+              "3/10",
+              "1/20"
+            ],
+            [
+              "11/25",
+              "3/50",
+              "1/5",
+              "1/20",
+              "1/4"
+            ],
+            [
+              "9/20",
+              "3/50",
+              "1/20",
+              "19/100",
+              "1/4"
+            ],
+            [
+              "9/20",
+              "3/50",
+              "1/20",
+              "3/10",
+              "7/50"
+            ],
+            [
+              "9/20",
+              "3/50",
+              "7/50",
+              "3/10",
+              "1/20"
+            ],
+            [
+              "9/20",
+              "3/50",
+              "19/100",
+              "1/20",
+              "1/4"
+            ],
+            [
+              "9/20",
+              "3/50",
+              "1/5",
+              "1/20",
+              "6/25"
+            ],
+            [
+              "9/20",
+              "3/50",
+              "1/5",
+              "6/25",
+              "1/20"
+            ],
+            [
+              "9/20",
+              "3/20",
+              "1/20",
+              "3/10",
+              "1/20"
+            ],
+            [
+              "9/20",
+              "9/50",
+              "1/20",
+              "7/100",
+              "1/4"
+            ],
+            [
+              "9/20",
+              "9/50",
+              "1/20",
+              "27/100",
+              "1/20"
+            ],
+            [
+              "9/20",
+              "9/50",
+              "7/100",
+              "1/20",
+              "1/4"
+            ],
+            [
+              "9/20",
+              "9/50",
+              "1/5",
+              "1/20",
+              "3/25"
+            ],
+            [
+              "9/20",
+              "9/50",
+              "1/5",
+              "3/25",
+              "1/20"
+            ]
+          ],
+          "vertices_distinct": true
+        },
+        {
+          "agree": true,
+          "all_vertices_extreme": true,
+          "all_vertices_feasible": true,
+          "components": [
+            "dgeba_resin",
+            "amine_hardener",
+            "talc_filler"
+          ],
+          "consistent_piepel1983": true,
+          "declared_lower_bounds_tightened": 0,
+          "declared_upper_bounds_tightened": 0,
+          "double_description_vertices": 6,
+          "lower": [
+            "11/20",
+            "3/20",
+            "1/20"
+          ],
+          "mclean_anderson_nonvertex_candidates": 0,
+          "mclean_anderson_raw_candidates": 6,
+          "mclean_anderson_screened_vertices": 6,
+          "method_parity_MA_vs_DD": true,
+          "observed_vertex_range_lower": [
+            "11/20",
+            "3/20",
+            "1/20"
+          ],
+          "observed_vertex_range_upper": [
+            "3/4",
+            "3/10",
+            "1/4"
+          ],
+          "piepel_implied_lower": [
+            "11/20",
+            "3/20",
+            "1/20"
+          ],
+          "piepel_implied_upper": [
+            "3/4",
+            "3/10",
+            "1/4"
+          ],
+          "piepel_range_identity_holds": true,
+          "q": 3,
+          "region_id": "solventfree-tanklining-3c",
+          "sum_lower": "3/4",
+          "sum_upper": "13/10",
+          "upper": [
+            "3/4",
+            "3/10",
+            "1/4"
+          ],
+          "vertices": [
+            [
+              "11/20",
+              "1/5",
+              "1/4"
+            ],
+            [
+              "11/20",
+              "3/10",
+              "3/20"
+            ],
+            [
+              "3/5",
+              "3/20",
+              "1/4"
+            ],
+            [
+              "13/20",
+              "3/10",
+              "1/20"
+            ],
+            [
+              "3/4",
+              "3/20",
+              "1/10"
+            ],
+            [
+              "3/4",
+              "1/5",
+              "1/20"
+            ]
+          ],
+          "vertices_distinct": true
+        },
+        {
+          "agree": true,
+          "all_vertices_extreme": true,
+          "all_vertices_feasible": true,
+          "components": [
+            "dgeba_resin",
+            "amine_hardener",
+            "filler",
+            "solvent"
+          ],
+          "consistent_piepel1983": true,
+          "declared_lower_bounds_tightened": 0,
+          "declared_upper_bounds_tightened": 3,
+          "double_description_vertices": 4,
+          "lower": [
+            "2/5",
+            "1/10",
+            "1/10",
+            "1/10"
+          ],
+          "mclean_anderson_nonvertex_candidates": 0,
+          "mclean_anderson_raw_candidates": 4,
+          "mclean_anderson_screened_vertices": 4,
+          "method_parity_MA_vs_DD": true,
+          "observed_vertex_range_lower": [
+            "2/5",
+            "1/10",
+            "1/10",
+            "1/10"
+          ],
+          "observed_vertex_range_upper": [
+            "7/10",
+            "2/5",
+            "2/5",
+            "2/5"
+          ],
+          "piepel_implied_lower": [
+            "2/5",
+            "1/10",
+            "1/10",
+            "1/10"
+          ],
+          "piepel_implied_upper": [
+            "7/10",
+            "2/5",
+            "2/5",
+            "2/5"
+          ],
+          "piepel_range_identity_holds": true,
+          "q": 4,
+          "region_id": "upper-tightening-4c",
+          "sum_lower": "7/10",
+          "sum_upper": "12/5",
+          "upper": [
+            "9/10",
+            "3/5",
+            "1/2",
+            "2/5"
+          ],
+          "vertices": [
+            [
+              "2/5",
+              "1/10",
+              "1/10",
+              "2/5"
+            ],
+            [
+              "2/5",
+              "1/10",
+              "2/5",
+              "1/10"
+            ],
+            [
+              "2/5",
+              "2/5",
+              "1/10",
+              "1/10"
+            ],
+            [
+              "7/10",
+              "1/10",
+              "1/10",
+              "1/10"
+            ]
+          ],
+          "vertices_distinct": true
+        },
+        {
+          "agree": true,
+          "all_vertices_extreme": true,
+          "all_vertices_feasible": true,
+          "components": [
+            "dgeba_resin",
+            "amine_hardener",
+            "talc_filler"
+          ],
+          "consistent_piepel1983": true,
+          "declared_lower_bounds_tightened": 3,
+          "declared_upper_bounds_tightened": 0,
+          "double_description_vertices": 3,
+          "lower": [
+            "3/5",
+            "3/20",
+            "1/20"
+          ],
+          "mclean_anderson_nonvertex_candidates": 0,
+          "mclean_anderson_raw_candidates": 3,
+          "mclean_anderson_screened_vertices": 3,
+          "method_parity_MA_vs_DD": true,
+          "observed_vertex_range_lower": [
+            "33/50",
+            "9/50",
+            "2/25"
+          ],
+          "observed_vertex_range_upper": [
+            "7/10",
+            "11/50",
+            "3/25"
+          ],
+          "piepel_implied_lower": [
+            "33/50",
+            "9/50",
+            "2/25"
+          ],
+          "piepel_implied_upper": [
+            "7/10",
+            "11/50",
+            "3/25"
+          ],
+          "piepel_range_identity_holds": true,
+          "q": 3,
+          "region_id": "lower-tightening-3c",
+          "sum_lower": "4/5",
+          "sum_upper": "26/25",
+          "upper": [
+            "7/10",
+            "11/50",
+            "3/25"
+          ],
+          "vertices": [
+            [
+              "33/50",
+              "11/50",
+              "3/25"
+            ],
+            [
+              "7/10",
+              "9/50",
+              "3/25"
+            ],
+            [
+              "7/10",
+              "11/50",
+              "2/25"
+            ]
+          ],
+          "vertices_distinct": true
+        },
+        {
+          "agree": true,
+          "all_vertices_extreme": true,
+          "all_vertices_feasible": true,
+          "components": [
+            "dgeba_resin",
+            "amine_hardener",
+            "talc_filler"
+          ],
+          "consistent_piepel1983": true,
+          "declared_lower_bounds_tightened": 0,
+          "declared_upper_bounds_tightened": 3,
+          "double_description_vertices": 1,
+          "lower": [
+            "3/5",
+            "1/4",
+            "3/20"
+          ],
+          "mclean_anderson_nonvertex_candidates": 0,
+          "mclean_anderson_raw_candidates": 1,
+          "mclean_anderson_screened_vertices": 1,
+          "method_parity_MA_vs_DD": true,
+          "observed_vertex_range_lower": [
+            "3/5",
+            "1/4",
+            "3/20"
+          ],
+          "observed_vertex_range_upper": [
+            "3/5",
+            "1/4",
+            "3/20"
+          ],
+          "piepel_implied_lower": [
+            "3/5",
+            "1/4",
+            "3/20"
+          ],
+          "piepel_implied_upper": [
+            "3/5",
+            "1/4",
+            "3/20"
+          ],
+          "piepel_range_identity_holds": true,
+          "q": 3,
+          "region_id": "degenerate-singlepoint-3c",
+          "sum_lower": "1/1",
+          "sum_upper": "7/5",
+          "upper": [
+            "4/5",
+            "7/20",
+            "1/4"
+          ],
+          "vertices": [
+            [
+              "3/5",
+              "1/4",
+              "3/20"
+            ]
+          ],
+          "vertices_distinct": true
+        }
+      ],
+      "gate_id": "G6_extreme_vertices_dual_method_parity_and_piepel_range",
+      "mclean_anderson_nonvertex_candidates_total": 0,
+      "mclean_anderson_overgeneration_corollary": "Not a failed reproduction: with single-component (box) bounds only, every McLean-Anderson candidate pins q-1 components to a declared bound and is therefore necessarily an extreme point of {x: sum(x)=1, l<=x<=u}. The Snee & Marquardt 1974 over-generation caveat is vacuous for box-only regions and can only bite once additional multi-component linear constraints (e.g. a pigment-volume-concentration or amine-hydrogen:epoxide equivalent ratio band) are imposed. Observed: 0 non-vertex candidates across all regions, exactly as the corollary predicts.",
+      "mclean_anderson_overgeneration_observed": false,
+      "pass": true,
+      "sources": [
+        "McLean & Anderson 1966 doi:10.1080/00401706.1966.10490377",
+        "Snee & Marquardt 1974 doi:10.1080/00401706.1974.10489209",
+        "Piepel 1983 doi:10.1080/00401706.1983.10487825",
+        "Motzkin et al. 1953 ISBN 978-0-691-07935-6"
+      ]
+    }
+  ],
+  "gates_pass": 6,
+  "gates_total": 6,
+  "headline": {
+    "canonical_saturation_exact_nonsingular": true,
+    "canonical_term_counts_reproduced": true,
+    "cartesian_closure_superset_quantified": true,
+    "cases_where_lattice_fits_module_ceiling_but_cartesian_does_not": 3,
+    "extreme_vertex_dual_method_parity": true,
+    "mclean_anderson_nonvertex_candidates_total": 0,
+    "mclean_anderson_overgeneration_observed": false,
+    "regions_evaluated": 6,
+    "scheffe_lattice_counts_reproduced": true,
+    "simplex_centroid_counts_reproduced": true,
+    "total_extreme_vertices": 52,
+    "worst_case_closure_feasible_percent": 0.392694,
+    "worst_case_qm": {
+      "m": 6,
+      "q": 6
+    }
+  },
+  "interpretation": "The Phase-0 Cartesian (mixed-radix) universe is the correct model for CATEGORICAL formulation axes but is a strict, and severely wasteful, superset once composition axes are closed (sum(x)=1). Filtering the Cartesian grid by closure reproduces the Scheffe {q,m} simplex-lattice exactly, so the lattice generator is a loss-free replacement at a small fraction of the cardinality. For bounded coating regions the extreme-vertex set is confirmed by two independent published algorithms and pinned by the Piepel 1983 implied-bound range identity.",
+  "module": "amphora-formulation-universe",
+  "schema": "amphora.formulation-universe.simplex-mixture-geometry-diagnostic.v1",
+  "toolkit": {
+    "arithmetic": "exact rational (fractions.Fraction); no float in any decision",
+    "network": "none",
+    "python": "3.12.3",
+    "randomness": "none"
+  }
+}

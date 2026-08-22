@@ -1,0 +1,391 @@
+{
+  "all_language_communities_touched_to_date": [
+    "ar",
+    "cs",
+    "de",
+    "en",
+    "es",
+    "fr",
+    "hi",
+    "it",
+    "ja",
+    "ko",
+    "nl",
+    "pl",
+    "pt",
+    "ru",
+    "sv",
+    "tr",
+    "uk",
+    "zh"
+  ],
+  "all_repository_classes_touched_to_date_deduplicated": [
+    "academic_institutional_repository (Alma Mater Studiorum Bologna AMS Laurea, it; evidence-quality gap)",
+    "academic_institutional_repository (Politecnico di Torino WebThesis, it)",
+    "academic_institutional_repository (Politecnico di Torino WebThesis, it; live re-verify)",
+    "academic_institutional_repository (TU Darmstadt tuprints, de; open access)",
+    "academic_institutional_repository (TU Delft Repository, nl)",
+    "academic_institutional_repository (Uniwersytet Opolski repo.uni.opole.pl doctoral-thesis record, pl)",
+    "academic_institutional_repository (theses.hal.science / HAL, fr; FOUND ANTIBOT-GATED)",
+    "academic_journal_publisher (Materiaux et Techniques class search, fr; no primary hit)",
+    "academic_journal_publisher (Werkstoffe und Korrosion / Materials and Corrosion, Wiley, de)",
+    "applied_research_institute (TNO Coatings / Nederlandse Corrosie Centrum, nl; contract-research, REJECTED off_scope)",
+    "cas_institute_archive (中国科学院金属研究所 / imr.cas.cn, zh)",
+    "chemical_engineering_society_database (DECHEMA-Werkstoff-Tabelle / ac.dechema.de, de)",
+    "classification_society_consulting (RINA, it; REJECTED off_scope)",
+    "commercial_academic_aggregator (DBpia, ko)",
+    "commercial_aggregator (CNKI, zh; found UNREACHABLE)",
+    "commercial_aggregator (CNKI, zh; re-tested, still unreachable)",
+    "commercial_aggregator (Wanfang / 万方数据, zh; reachable, subscription-gated)",
+    "contract_testing_platform (Corrosielabs / Maritiem Praktijkonderzoek, nl; REJECTED off_scope)",
+    "engineering_society_journal (Ochrona przed Korozja, publisher SITPChem + Polskie Stowarzyszenie Korozyjne, pl)",
+    "general_web_search_engine",
+    "general_web_search_engine (commercial-vendor-only results, ar)",
+    "general_web_search_engine (international-English-publisher-only results, hi)",
+    "government_technical_institute (Bundesanstalt fuer Wasserbau / BAW-Merkblatt, de)",
+    "government_technical_institute (Turkish MEB, tr)",
+    "government_technical_institute (VIAM / ВИАМ corrosion-testing center, ru)",
+    "industry_technical_society (日本接着学会 / Japan Adhesion Society, ja)",
+    "industry_technical_society (日本船舶海洋工学会 / JASNAOE, ja)",
+    "industry_trade_journal (Farbe und Lack, de)",
+    "industry_trade_journal (Peinture Actualites / Formule Verte class search, fr; no primary hit)",
+    "institutional_repository (repositorio.lneg.pt, pt; UPCommons, es)",
+    "iso_standards_body (iso.org, cross-check via WebSearch)",
+    "national_academic_journal_aggregator (DergiPark / dergipark.org.tr, tr)",
+    "national_academic_text_repository (NRAT, uk)",
+    "national_academic_thesis_repository (DiVA / diva-portal.org, sv)",
+    "national_citation_index (KCI / 한국학술지인용색인, ko)",
+    "national_citation_index (eLIBRARY.ru / РИНЦ -- Russian Science Citation Index, ru)",
+    "national_civil_engineering_lab (LNEC, pt)",
+    "national_corrosion_engineering_journal (Koroze a ochrana materialu / KOM, Association of Czech and Slovak Corrosion Engineers, cs, via Sciendo)",
+    "national_corrosion_protection_society (CEFRACOR -- Centre Francais de l'AntiCorrosion, fr)",
+    "national_corrosion_protection_society (GfKORR / Gesellschaft fuer Korrosionsschutz e.V., de; expert directory, not a dataset)",
+    "national_corrosion_testing_institute (SVUOM s.r.o., cs; corrosion maps product)",
+    "national_energy_geology_lab_and_journal (LNEG / Corrosao e Proteccao de Materiais, pt)",
+    "national_grey_literature_repository (NUSL - Narodni uloziste sede literatury, cs)",
+    "national_library_dissertation_database (Vernadsky NBUV, uk)",
+    "national_marine_research_institute (IFREMER / Archimer, fr)",
+    "national_materials_database (NIMS MatNavi DataSheet Collection / データシート資料集, ja)",
+    "national_materials_database (NIMS PoLyInfo / 物質・材料研究機構, ja; rediscovery of previously-supplied candidate)",
+    "national_materials_institute (TsNII KM Prometey / ЦНИИ КМ «Прометей», ru; shipbuilding materials science)",
+    "national_metallurgy_corrosion_institute (CENIM/CSIC, es)",
+    "national_metallurgy_professional_society (AIM -- Associazione Italiana di Metallurgia, it; REJECTED off_scope)",
+    "national_open_data_portal (공공데이터포털 data.go.kr, ko)",
+    "national_repository_index (J-STAGE / ジーステージ, ja)",
+    "national_repository_index (J-STAGE, ja; reachability test only, not a native-script SERP)",
+    "national_research_council_institute (CNR-ICMATE / CORMAT / MARECO marine exposure site, it)",
+    "national_research_council_institute (CNR-ICMATE, it; second independent re-fetch)",
+    "national_research_data_infrastructure (DANS EASY -> DANS Data Stations, nl; FOUND EASY DECOMMISSIONED 2024-12-02)",
+    "national_research_information_portal (NARCIS, nl; FOUND DECOMMISSIONED 2023-07-03, superseded by Netherlands Research Portal)",
+    "national_research_institute (KRICT / 한국화학연구원, ko; directive-named KRICT-class institute)",
+    "national_science_data_center (CAS/NBSDC + partner National Materials Corrosion and Protection Science Data Center, zh)",
+    "national_science_data_center (国家材料腐蚀与防护科学数据中心 / corrdata.org.cn direct domain, zh)",
+    "national_science_repository (ScienceON / KISTI, ko)",
+    "national_standards_body (AENOR / UNE, es; IPQ / NP, pt; ABNT / NBR, br-pt)",
+    "national_standards_body (AFNOR / NF EN ISO, fr)",
+    "national_standards_body (DIN / Deutsches Institut fuer Normung, DIN EN ISO 12944 / 9227 / 3001, de)",
+    "national_standards_body (GOST / ГОСТ, ГОСТ Р 56752-2015, ГОСТ 34388-2018, ru)",
+    "national_standards_body (JIS / 日本産業規格, ja; K5551/K5552/K5553/Z2371/K7236)",
+    "national_standards_body (NEN / NEN-EN-ISO, nl)",
+    "national_standards_body (NEN, nl; live re-fetch)",
+    "national_standards_body (PKN / Polski Komitet Normalizacyjny, PN-EN ISO 12944 / 9227, pl)",
+    "national_standards_body (UNI / UNI-EN-ISO, it)",
+    "national_standards_body (UNI, it; live re-fetch across 3 editions)",
+    "national_standards_body (UNMZ adoption path / CSN EN ISO 12944, cs)",
+    "national_standards_body (全国标准信息公共服务平台 / SAMR std.samr.gov.cn, GB/T annex, zh)",
+    "national_standards_mirror (docs.cntd.ru, allgosts.ru, vsegost.com -- unofficial GOST full-text mirrors, ru)",
+    "national_standards_portal (e-나라 표준인증 / KATS official; kssn.net / 한국표준정보망 commercial mirror, ko)",
+    "national_technical_journal_index (BazTech / yadda.icm.edu.pl, pl)",
+    "national_thesis_aggregator (Dialnet/TESEO, es; TDX -- Tesis Doctorals en Xarxa, es/ca)",
+    "national_thesis_aggregator (theses.fr, fr)",
+    "open_access_literature_aggregator (CyberLeninka / КиберЛенинка, ru)",
+    "polytechnic_thesis_repository (UTB Zlin digilib.k.utb.cz, cs)",
+    "polytechnic_thesis_repository (VUT Brno DSpace, cs)",
+    "regional_open_access_index (SciELO Brasil + SciELO Portugal, pt)",
+    "research_institute (Fraunhofer IFAM Klebtechnik und Oberflaechen, de; services/testing, not a dataset)",
+    "research_institute (RISE, sv)",
+    "research_institute (Siec Badawcza Lukasiewicz - Instytut Mechaniki Precyzyjnej, pl; corrosion research center, not itself a dataset)",
+    "ship_classification_society (Russian Maritime Register of Shipping / Российский морской регистр судоходства, ru)",
+    "university_journal_portal (BUAA fhclxb, zh)",
+    "university_journal_portal (BUAA fhclxb, zh; rediscovery of prior candidate C4)"
+  ],
+  "auditability_statement": "This assembly is sufficient for a human to determine, for any dataset-ledger entry, which fire and which native-language query surfaced it (via fire_id -> search-record line -> queries[]), and for the next fire to extend rather than repeat: next_run_should_extend fields are preserved verbatim from every prior search-record line in the assembled list above, plus this fire's own extension list.",
+  "considered_and_excluded_or_deferred_beyond_named_twelve": {
+    "ar": {
+      "label": "Arabic",
+      "next_action": "None scheduled this campaign. Re-probe only if a future module gap or an engine-identified lead names a specific Arabic-language or Gulf-region source.",
+      "reasoning": "A native-Arabic query (epoxy marine anti-corrosion coating test data) surfaced exclusively commercial vendor/product pages (several from Chinese manufacturers exporting to Arabic-speaking markets, plus a test-chamber vendor) -- zero academic aggregator, national standards body, or research-institute domain in 6 results. This is a single-query probe, not an exhaustive search: Gulf-region materials science (Saudi KACST, UAE research centers) publishes predominantly in English in international journals, which is consistent with the absence of a distinct native Arabic-language academic repository surfacing here. Excluded from this campaign's active language-community list on this fire's evidence; not proven permanently absent -- a differently-worded query or a named Gulf research institute (e.g. KACST, ADNOC R&D) could still surface real activity in a future fire.",
+      "repository_classes_found": [],
+      "verdict": "CONSIDERED_NO_DISTINCT_ACTIVITY_FOUND_EXCLUDED_THIS_FIRE"
+    },
+    "hi": {
+      "label": "Hindi",
+      "next_action": "None scheduled this campaign. If a future fire identifies a named Indian national repository (e.g. CSIR-NML technical reports, Shodhganga thesis repository) it should be evaluated directly rather than via a language-community query, since the evidence indicates the relevant literature is English-language.",
+      "reasoning": "The native-Devanagari query hit a transient WebSearch tool error (disclosed, not retried a third time). A follow-up query explicitly biased toward Indian/Hindi sourcing ('...Hindi language materials science journal भारत') returned exclusively international English-language publisher venues (Springer, Wiley, ScienceDirect, Emerald) -- zero Hindi-language or India-national-repository domain in 8 results. India has real corrosion/materials-science research capacity (CSIR-NML, National Institute of Oceanography) but the evidence here indicates that capacity publishes in English in international venues rather than in a distinct Hindi-language repository, which is a genuine, checked finding, not an assumption. Excluded from this campaign's active language-community list on this fire's evidence.",
+      "repository_classes_found": [],
+      "verdict": "CONSIDERED_NO_DISTINCT_ACTIVITY_FOUND_EXCLUDED_THIS_FIRE"
+    },
+    "sv": {
+      "label": "Swedish",
+      "next_action": "Open a DR-LANG-SV item (or fold into a future DR-LANG-EU2-class fire) for a full gap-targeted native-Swedish sweep: DiVA thesis titles, SIS (Swedish Institute for Standards) EN ISO 12944/9227 adoption, RISE technical reports.",
+      "reasoning": "A first native-language query surfaced only commercial boat-epoxy vendor pages. A second, repository-targeted query (DiVA portal + avhandling/thesis terms) confirmed live, indexed academic infrastructure: diva-portal.org and kth.diva-portal.org serve full-text thesis PDFs, and RISE (Research Institutes of Sweden) maintains a named 'Marin korrosion' (marine corrosion) expertise area. Sweden has a real, distinct national repository class (DiVA) and a marine-industrial research base (RISE, Chalmers-adjacent shipbuilding heritage) that the directive's 'extends wherever research indicates activity' clause covers. NOT excluded: this is a genuine extension candidate, deferred to a future DR-LANG-SV fire because no gap-targeted native-Swedish sweep (JIS/DIN-analogue Swedish standards body SIS, specific DiVA thesis titles, RISE technical reports) has been run yet this campaign.",
+      "repository_classes_found": [
+        "national_academic_thesis_repository (DiVA / diva-portal.org, sv)",
+        "research_institute (RISE -- Research Institutes of Sweden, marine corrosion, sv)"
+      ],
+      "verdict": "CONSIDERED_ACTIVITY_CONFIRMED_DEFERRED"
+    },
+    "tr": {
+      "label": "Turkish",
+      "next_action": "Open a DR-LANG-TR item for a full gap-targeted native-Turkish sweep: YOK Tez Merkezi (ulusaltezmerkezi.yok.gov.tr) national thesis portal directly, TSE (Turk Standardlari Enstitusu) EN ISO 12944/9227 adoption, DergiPark coatings-domain journals by name.",
+      "reasoning": "A first native-language query surfaced only test-lab/vendor pages. A second, repository-targeted query (YOK Tez + thesis terms) surfaced dergipark.org.tr (DergiPark, Turkey's national academic-journal aggregator platform, hosting an on-topic article on epoxy-based polymeric coating corrosion/wear resistance in seawater-injection pipes) and a Turkish Ministry of National Education technical module on ship corrosion prevention. Turkey has a large shipbuilding industry (Tuzla shipyards) and a real national academic-publishing platform (DergiPark) distinct from the vendor-only first query. NOT excluded: deferred to a future DR-LANG-TR fire because the national thesis center (YOK Tez Merkezi search portal itself, ulusaltezmerkezi.yok.gov.tr) was not directly queried/evaluated this fire, only surfaced indirectly via DergiPark.",
+      "repository_classes_found": [
+        "national_academic_journal_aggregator (DergiPark / dergipark.org.tr, tr)",
+        "government_technical_institute (Turkish MEB maritime-technical modules, tr)"
+      ],
+      "verdict": "CONSIDERED_ACTIVITY_CONFIRMED_DEFERRED"
+    },
+    "uk": {
+      "label": "Ukrainian",
+      "next_action": "Open a DR-LANG-UK item for a full gap-targeted native-Ukrainian sweep: NBUV/IRBIS dissertation search by cure-kinetics/corrosion terms, DSTU (Ukrainian national standard) EN ISO 12944/9227 mapping, National Academy of Sciences of Ukraine materials-science institute archives.",
+      "reasoning": "A first native-language query surfaced only commercial vendor pages. A second, repository-targeted query (Vernadsky National Library + dissertation terms) confirmed live national infrastructure: nbuv.gov.ua (Vernadsky National Library of Ukraine, hosting a national dissertation-abstract database), the IRBIS bibliographic system, and NRAT (National Repository of Academic Texts, nrat.ukrintei.ua). This is a real, distinct national-repository class parallel to the directive's named GOST/eLIBRARY-class examples for Russian. NOT excluded: deferred to a future DR-LANG-UK fire because no specific matching dissertation title was confirmed and no DSTU (Ukrainian national standard) mapping was attempted this fire.",
+      "repository_classes_found": [
+        "national_library_dissertation_database (Vernadsky NBUV, uk)",
+        "national_academic_text_repository (NRAT / nrat.ukrintei.ua, uk)"
+      ],
+      "verdict": "CONSIDERED_ACTIVITY_CONFIRMED_DEFERRED"
+    }
+  },
+  "date": "2026-08-11",
+  "fire_id": "20260811T130001-901567-3c3ce4f3224f",
+  "named_twelve_language_communities_native_query_coverage": {
+    "cs": {
+      "distinct_from_english_gloss": true,
+      "label": "Czech",
+      "native_query_count": 8,
+      "sample_native_query": "epoxidová pryskyřice aminové tvrdidlo kinetika vytvrzování data",
+      "sample_query_gloss_en": "epoxy resin amine hardener curing kinetics data"
+    },
+    "de": {
+      "distinct_from_english_gloss": true,
+      "label": "German",
+      "native_query_count": 12,
+      "sample_native_query": "Epoxidharz Amin Härter Härtungskinetik Datensatz",
+      "sample_query_gloss_en": "epoxy resin amine hardener cure kinetics dataset"
+    },
+    "es": {
+      "distinct_from_english_gloss": true,
+      "label": "Spanish",
+      "native_query_count": 5,
+      "sample_native_query": "cinética de curado resina epoxi amina conjunto de datos DSC",
+      "sample_query_gloss_en": "epoxy resin amine cure kinetics dataset DSC"
+    },
+    "fr": {
+      "distinct_from_english_gloss": true,
+      "label": "French",
+      "native_query_count": 12,
+      "sample_native_query": "résine époxyde amine durcisseur cinétique de durcissement jeu de données",
+      "sample_query_gloss_en": "epoxy resin amine hardener cure kinetics dataset"
+    },
+    "it": {
+      "distinct_from_english_gloss": true,
+      "label": "Italian",
+      "native_query_count": 17,
+      "sample_native_query": "resina epossidica ammina indurente cinetica di indurimento set di dati",
+      "sample_query_gloss_en": "epoxy resin amine hardener cure kinetics dataset"
+    },
+    "ja": {
+      "distinct_from_english_gloss": true,
+      "label": "Japanese",
+      "native_query_count": 7,
+      "sample_native_query": "エポキシ樹脂 アミン硬化剤 硬化反応速度論 データ J-STAGE",
+      "sample_query_gloss_en": "epoxy resin amine hardener cure reaction kinetics data J-STAGE"
+    },
+    "ko": {
+      "distinct_from_english_gloss": true,
+      "label": "Korean",
+      "native_query_count": 14,
+      "sample_native_query": "에폭시 수지 아민 경화제 경화 반응 속도론 데이터",
+      "sample_query_gloss_en": "epoxy resin amine hardener cure reaction kinetics data"
+    },
+    "nl": {
+      "distinct_from_english_gloss": true,
+      "label": "Dutch",
+      "native_query_count": 14,
+      "sample_native_query": "epoxyhars amine uitharder uithardingskinetiek DSC dataset",
+      "sample_query_gloss_en": "epoxy resin amine hardener cure kinetics DSC dataset"
+    },
+    "pl": {
+      "distinct_from_english_gloss": true,
+      "label": "Polish",
+      "native_query_count": 9,
+      "sample_native_query": "żywica epoksydowa utwardzacz aminowy kinetyka utwardzania baza danych",
+      "sample_query_gloss_en": "epoxy resin amine hardener cure kinetics database"
+    },
+    "pt": {
+      "distinct_from_english_gloss": true,
+      "label": "Portuguese",
+      "native_query_count": 8,
+      "sample_native_query": "Polímeros SciELO difusão água DGEBA TETA coeficiente",
+      "sample_query_gloss_en": "Polimeros SciELO water diffusion DGEBA TETA coefficient"
+    },
+    "ru": {
+      "distinct_from_english_gloss": true,
+      "label": "Russian",
+      "native_query_count": 15,
+      "sample_native_query": "эпоксидная смола отверждение амин кинетика данные elibrary",
+      "sample_query_gloss_en": "epoxy resin cure amine kinetics data elibrary"
+    },
+    "zh": {
+      "distinct_from_english_gloss": true,
+      "label": "Chinese",
+      "native_query_count": 11,
+      "sample_native_query": "环氧树脂 固化动力学 数据集 CNKI",
+      "sample_query_gloss_en": "epoxy resin cure kinetics dataset CNKI"
+    }
+  },
+  "orphan_detection_audit": {
+    "attack_shape": "Strip one repository's query log from a copy and attack whether the audit detects a ledger entry with no matching search provenance; check the extension decisions exist and are reasoned.",
+    "positive_control": {
+      "detected": true,
+      "evidence": "run_orphan_checker() against the mutated copy returned violation_count=1, refutation_criterion_fired=True, flagging DR-LANG-DE-DSL-01 (language=de) as having no matching search provenance once its search-record line was stripped -- exactly the defect class this checker exists to catch. Against the REAL (unmutated) assembled search-record, the same checker returned violation_count=0 both replay runs (byte-identical diagnostic, sha256 5a557f3a0137b51e9c6d9ea68e4c35d2f0930b98a30d1eb3264deb63fe35f3cd).",
+      "how_planted": "copy.deepcopy() of the in-memory line list, then list.pop() on the one line whose fire_id matched the DR-LANG-DE fire; the real search-record.v1.jsonl file on disk is untouched by this mutation.",
+      "planted_defect": "Removed the entire DR-LANG-DE search-record.v1.jsonl line (fire_id 20260810T080001-2919803-f979e09ce9dd, language_communities_touched=['de']) from a COPY of the assembled search-record lines. The real on-disk ledger was never touched."
+    },
+    "real_result": {
+      "closed_input_set_entries_exempt": 4,
+      "engine_discovered_entries_checked": 10,
+      "refutation_criterion_fired": false,
+      "violation_count": 0,
+      "violations": []
+    },
+    "two_replay_gate": {
+      "byte_identical": true,
+      "gate": "PASS",
+      "runA_sha256": "5a557f3a0137b51e9c6d9ea68e4c35d2f0930b98a30d1eb3264deb63fe35f3cd",
+      "runB_sha256": "5a557f3a0137b51e9c6d9ea68e4c35d2f0930b98a30d1eb3264deb63fe35f3cd"
+    }
+  },
+  "purpose": "Human-auditable assembly of the full search record to date: what rubric was used, which language communities and repository classes were searched with which native-language query forms, and the considered-and-excluded-or-deferred decision for every language community beyond the twelve directive-named ones probed so far.",
+  "rubric_used": {
+    "path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "sha256": "446d88cbf20b1c109d62d355a5ea91e6f09a35792a4b7bde84814f6232a7426f",
+    "summary": "6 directive-mandated dimensions (gap_fit, provenance_measurement_quality, rights_clarity, uniqueness, integrity_risk, acquisition_cost_friction), each a deterministic table-lookup or fixed-formula sum over a closed categorical vocabulary; DR-RUBRIC's own receipt (CLAIM_SURVIVED) verified determinism, second-party re-implementability, and mutation-responsiveness."
+  },
+  "run_id": "DR-SEARCH-RECORD-20260811T130001-901567-3c3ce4f3224f",
+  "schema": "amphora.dataset-recon.search-record-assembly.v1",
+  "search_record_fires_assembled": [
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T020001-4093980-59cfaefb325c",
+      "languages": [
+        "en",
+        "zh"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T060001-1892882-de641a9ef68c",
+      "languages": [
+        "zh"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T070001-2413728-f647d0aacb23",
+      "languages": [
+        "ja"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T080001-2919803-f979e09ce9dd",
+      "languages": [
+        "de"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T090001-3307991-b3648fc59c25",
+      "languages": [
+        "ru"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T100002-3826207-0feb3e17adea",
+      "languages": [
+        "ko"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T110001-156068-0cc55c68d8dd",
+      "languages": [
+        "fr"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T120002-779591-d566098d9684",
+      "languages": [
+        "es",
+        "pt"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T130001-1342629-eb2ea88df3d7",
+      "languages": [
+        "pl",
+        "cs"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T140001-2033197-225224d5b207",
+      "languages": [
+        "nl",
+        "it"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T150001-2557725-bbd14dd7a478",
+      "languages": [
+        "nl",
+        "it"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T160002-3096524-741041e674fd",
+      "languages": [
+        "zh",
+        "ru",
+        "ko"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "fire_id": "20260810T170001-3732775-ad6a5dd6f225",
+      "languages": [
+        "ru",
+        "ko",
+        "cs"
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "fire_id": "20260811T130001-901567-3c3ce4f3224f",
+      "languages": [
+        "sv",
+        "tr",
+        "uk",
+        "ar",
+        "hi"
+      ]
+    }
+  ],
+  "total_search_record_lines_after_this_fire": 14
+}

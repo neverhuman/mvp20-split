@@ -1,0 +1,22 @@
+{
+  "$id": "https://amphora.local/schemas/module-phase0-supersession.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "required": ["schema", "supersession_id", "module_id", "reason", "archive_root", "archived_artifacts", "unsigned_preparation_only", "authority_transferred"],
+  "properties": {
+    "schema": {"const": "amphora.module-phase0-supersession.v1"},
+    "supersession_id": {"type": "string", "pattern": "^supersession-[0-9a-f]{64}$"},
+    "module_id": {"type": "string", "pattern": "^amphora-[a-z0-9-]+$"},
+    "reason": {"const": "STALE_UNSIGNED_PREPARATION_REISSUE"},
+    "archive_root": {"type": "string", "pattern": "^evidence/superseded/supersession-[0-9a-f]{64}$"},
+    "archived_artifacts": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {"pattern": "^(phase0|ip)/"},
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "unsigned_preparation_only": {"const": true},
+    "authority_transferred": {"const": false}
+  },
+  "type": "object"
+}

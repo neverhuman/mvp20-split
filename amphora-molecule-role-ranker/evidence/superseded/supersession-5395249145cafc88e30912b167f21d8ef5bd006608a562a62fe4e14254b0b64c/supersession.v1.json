@@ -1,0 +1,29 @@
+{
+  "archive_root": "evidence/superseded/supersession-5395249145cafc88e30912b167f21d8ef5bd006608a562a62fe4e14254b0b64c",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "270a7ee96c29b74252a1cc532f947fa70ab9e7221d011fda262902f526fa116f",
+    "ip/disclosure-log.v1.json": "9fbe76155d02b3de09d0977289c6b490eeeee9c9ef62fe508117cc82251fac3e",
+    "ip/prior-art.v1.json": "730408f1d9c688075b2f5500e82f223fc7ead98121ef22f58ba6ec061b1e25ea",
+    "ip/technical-dossier.v1.json": "532998d9fd24ffda0a3521966d1eb3dd90addf61dcc3883dde3b3bfdfe68eb58",
+    "phase0/benchmark/benchmark-lock.v1.json": "40fed93097632de15c73f0d2e6d72c1605ea8385bf55b36a0fa698b5f4d594c7",
+    "phase0/bundle.v1.json": "4cf20da479c64f3774e255370c00216126a1fa85841765c08d3c733e3373658f",
+    "phase0/dataset/dataset-manifest.v1.json": "bf21ac3280ac3ea4c8fd4792ffea4e80cd8990ee85f124e84593199a79ed4490",
+    "phase0/promotion/policy.v1.json": "9b0a9683da485b57c7e3b0a112b734c1a706ff7ff56d6b245af3b6af4bc8fc29",
+    "phase0/raw/SHA256SUMS": "798849b65e1cf66dadd28d2ce361a242d77d2f0a3bd70b6c4566946a54a960f8",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "d1ac68f03a95fc952c9bf19a22dff2a52cfec800a1d4338a01b034c422983266",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/imports/benchmark.legacy-import.v1.json": "1b06324df68f7024946ce7c8cf091e436e18d5274c5a82f607129596bb5247be",
+    "phase0/sources/imports/source.legacy-import.v1.json": "c491c0906bd07d0a0a29dbeb2b7abf2755ceb593e66013843cdd8d1b206de063",
+    "phase0/sources/imports/split.legacy-import.v1.json": "8d75b686d6479c3798a88c1b0030aea8e15aa4268b064e120025c59038b97df5",
+    "phase0/sources/source-lock.v1.json": "a992defaf6905e5d0fcdf5cb45c6af3886b99ccf1f38aabc57b55e3785df5a7f",
+    "phase0/split/split-manifest.v1.json": "6d72d921e37eb8f36fcb7f66548c6671cf48c3ea26c67af0eb8c0136144366ee"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-molecule-role-ranker",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-5395249145cafc88e30912b167f21d8ef5bd006608a562a62fe4e14254b0b64c",
+  "unsigned_preparation_only": true
+}

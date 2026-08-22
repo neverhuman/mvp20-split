@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "eb964035c63e1706815f7df6863fe19a101b56b37600e5700b015763a467d592",
+  "module_id": "amphora-process-qc-twin",
+  "parent_revision_id": "preparation-revision-2cff7818d1e803ca120338ec25bbfdc19440f359c0d7afab1a0539feb8ad2992",
+  "revision_id": "preparation-revision-64570a6ad513f2e19c35e2fd965b8031bbcfcb1b41971bc0ba12b21c645296e2",
+  "revision_number": 2,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-ac11580164189cc5b38911083adf1717c8c437e449edc4a907973448b9129e9f",
+  "supersession_path": "evidence/superseded/supersession-ac11580164189cc5b38911083adf1717c8c437e449edc4a907973448b9129e9f/supersession.v1.json",
+  "supersession_sha256": "ac7c659e3156f03f47389fd12a329072e7014790b4b8868afd04cd2c39facb95",
+  "unsigned_preparation_only": true
+}

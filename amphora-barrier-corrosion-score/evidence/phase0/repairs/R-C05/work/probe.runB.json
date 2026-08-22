@@ -1,0 +1,72 @@
+{
+  "ceiling_proof_reverse_leg": {
+    "classes_with_zero_marine_calibration_rows": [
+      "alkali",
+      "organic_acid",
+      "other_acid",
+      "salt_other",
+      "sulfuric",
+      "water"
+    ],
+    "conclusion": "6 of 8 chloride-environment classes have EXACTLY ZERO marine-calibration rows in the reverse leg. Any Mondrian-by-chloride-class calibrator (at any MIN_CLASS_N threshold, any granularity) can only ever assign a stratum-specific quantile to test rows in the 'halide' or 'other' classes (the only two with nonzero marine-cal mass); all other test rows are PROVABLY forced to the pooled/marginal quantile by construction, not by a tunable hyperparameter. Lowering MIN_CLASS_N from 5 towards 1 (tested: no change, zero-count classes are zero at any threshold) cannot reach these rows. This mechanism has a hard, provable ceiling, not merely an empirically-observed one.",
+    "fraction_test_rows_forced_to_pooled_fallback": 0.759106,
+    "n_classes_total": 8,
+    "n_classes_with_zero_marine_cal": 6,
+    "n_marine_cal_total": 1043,
+    "n_nonmarine_test_total": 2773,
+    "n_test_rows_forced_to_pooled_fallback_regardless_of_min_class_n": 2105,
+    "per_chloride_class": {
+      "alkali": {
+        "n_marine_cal_rows": 0,
+        "n_nonmarine_test_rows": 480
+      },
+      "halide": {
+        "n_marine_cal_rows": 928,
+        "n_nonmarine_test_rows": 253
+      },
+      "organic_acid": {
+        "n_marine_cal_rows": 0,
+        "n_nonmarine_test_rows": 322
+      },
+      "other": {
+        "n_marine_cal_rows": 115,
+        "n_nonmarine_test_rows": 415
+      },
+      "other_acid": {
+        "n_marine_cal_rows": 0,
+        "n_nonmarine_test_rows": 662
+      },
+      "salt_other": {
+        "n_marine_cal_rows": 0,
+        "n_nonmarine_test_rows": 71
+      },
+      "sulfuric": {
+        "n_marine_cal_rows": 0,
+        "n_nonmarine_test_rows": 557
+      },
+      "water": {
+        "n_marine_cal_rows": 0,
+        "n_nonmarine_test_rows": 13
+      }
+    }
+  },
+  "reweighted_conformal_probe_reverse_leg_alpha_0.10": {
+    "alpha": 0.1,
+    "binomial_pvalue_coverage_less_than_target": 0.0,
+    "domain_classifier": "LogisticRegression(C=1.0, max_iter=2000) on median-imputed pooled cal+test covariates, labeled by domain (no y, no test residuals used)",
+    "mean_interval_width_log10": 0.196912,
+    "mechanism": "likelihood_ratio_reweighted_split_conformal_tibshirani2019",
+    "meets_acceptance_floor_0.88": false,
+    "n_cal": 1043,
+    "n_covered": 177,
+    "n_infinite_intervals_te": 0,
+    "n_test": 2773,
+    "note": "DIAGNOSTIC ONLY -- not the pre-registered Mondrian mechanism; campaign item R-C05 pins Mondrian-by-chloride-class specifically.",
+    "observed_test_coverage": 0.06383,
+    "target_coverage": 0.9,
+    "weight_clip_range": [
+      0.001,
+      0.999
+    ]
+  }
+}

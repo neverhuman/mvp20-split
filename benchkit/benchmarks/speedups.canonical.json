@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "all_bit_identical": true,
+    "benchkit_version": "0.1.0",
+    "determinism_note": "wall-clock timings intentionally excluded from this canonical payload; see timings.v1.json",
+    "schema": "amphora.benchkit.speedup-bit-identity-diagnostic.v1"
+  },
+  "bootstrap_mean_ci_n30_B20000": {
+    "bit_identical": true,
+    "fixture": "OpenPoly Tg[:30] (hash-pinned corpus CSV)",
+    "fixture_sha256": "558e90f7b590a611a5a760744d8fb38e904237008420193ddf2fb6fd13896c86",
+    "original": "nist-baseline-fold-significance-v1/run_fold_significance.py::cluster_bootstrap_ci",
+    "original_file_sha256": "d6300bbd3fa6a8e3cb9d93838b668f10c68343b629ea0ec9e2b2da4910c42287"
+  },
+  "cluster_bootstrap_rmse_ci_600groups_B1000": {
+    "bit_identical": true,
+    "fixture": "OpenPoly Tg[:600], per-name groups, global-median predictor",
+    "fixture_sha256": "39ce74360fa8d2d8944e360f44b46e052850062852b70d0a0adc1c158119acf4",
+    "original": "bigsoldb-v1/run_benchmark_v2.py::cluster_bootstrap_ci",
+    "original_file_sha256": "1816232f0618dceaf09338c446c10e194f4807a2bf9c090608b80ccc22073e81"
+  },
+  "conditional_arls_m20_64x64": {
+    "bit_identical": true,
+    "fixture": "uw_nodes(m=20, 64, 64) -- the audit's own live grid (1 of 6 baselines)",
+    "grid_sha256": {
+      "cusum": "a3595c9fe48f164c15c19609396cd8a525fef38e5980a3c77905c65e8ff33609",
+      "ewma": "edf086107c757b4a9db989f0591920f665d8c163dd80b4fc401d8431df00840b",
+      "shewhart": "3f2e7a4c24e071d5a81fe86d7f84b4924d1abaa9218e59f5c59326cdf2c0ca89"
+    },
+    "original": "estparam-memory-detector-arl-degradation-v1/run_memory_estparam_arl.py::conditional_arls",
+    "original_file_sha256": "068c20b3940a05300c36616c91ad729074da03167ff266397fae75a1260bfe76"
+  },
+  "ewma_arl_N201": {
+    "adopted_file_sha256": "068c20b3940a05300c36616c91ad729074da03167ff266397fae75a1260bfe76",
+    "adopted_original": "estparam-memory-detector-arl-degradation-v1/run_memory_estparam_arl.py::ewma_arl (np.linalg.solve)",
+    "bit_identical_to_adopted_original": true,
+    "hand_rolled_cross_check_relative_error": 4.154601929108824e-14,
+    "note": "bit-identity contract is vs the adopted np.linalg.solve original; the hand-rolled Gauss-Jordan differs only in floating-point elimination order (erf vs ndtr, manual pivoting vs LAPACK dgesv) and is cross-checked by relative error, exactly as the original characterization script cross-validates methods.",
+    "replaced_file_sha256": "719872c4af3af12a176c9d22b3e0db102d2edf05cd10c6ad7595da1a74ad8b18",
+    "replaced_hand_rolled": "spc-arl-characterization-v1/run_arl_characterization.py::ewma_arl (pure-Python Gauss-Jordan)"
+  },
+  "ewma_arl_N601": {
+    "hand_rolled_cross_check_relative_error": 4.9111678417478834e-14,
+    "replaced_hand_rolled": "spc-arl-characterization-v1 ewma_arl, m=300 (N=601)"
+  },
+  "mean_pairwise_tanimoto_741fps": {
+    "bit_identical": true,
+    "fixture": "all 741 parseable OpenPoly corpus fps (morgan_r2_2048, novelty-audit construction)",
+    "n_pairs": 274170,
+    "original": "molgen-scaffold-diversity-v1/run_molgen_diversity.py::mean_pairwise_tanimoto",
+    "original_file_sha256": "0208b1b56b6151ec01b95822d3615639df3b7f1e492fc0d28d849f1b642757b4"
+  },
+  "nn_max_tanimoto_241x500": {
+    "bit_identical": true,
+    "fixture": "OpenPoly corpus fps: 241 queries vs 500 references",
+    "original": "conformal-anomaly-detection-v1/run_novelty_conformal.py::nn_similarity",
+    "original_file_sha256": "6744292c3444c52e230faee28cf55dda9919f81a50893c913ec7df49d74c633c"
+  }
+}

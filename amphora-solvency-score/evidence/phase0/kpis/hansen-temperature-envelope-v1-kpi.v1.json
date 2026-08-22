@@ -1,0 +1,43 @@
+{
+  "authority": "AUDIT_ONLY",
+  "canonical_diagnostic_sha256": "2f6718338836113d0278d10770ccc9901c3e16b5e453573a7263fefbccf944eb",
+  "kpis": {
+    "acc_delta_40c_minus_25c_ci95": [
+      -0.04,
+      0.0
+    ],
+    "acc_delta_5c_minus_25c_ci95": [
+      -0.04,
+      0.0
+    ],
+    "aggregate_divergence_statistically_resolvable_at_n75": false,
+    "all_gates_pass": true,
+    "alpha_free_lower_bound_flips": 0,
+    "auroc_range_at_alpha_1e-3": [
+      0.94733,
+      0.952381
+    ],
+    "baseline_25c_auroc": 0.948773,
+    "baseline_25c_correct_of_75": 67,
+    "flipped_pair_ids": [
+      "polyamide-nylon66::dimethylformamide",
+      "polyamide-nylon66::n-butanol",
+      "polystyrene::acetone",
+      "polyvinyl-chloride::dichloromethane",
+      "polyvinyl-chloride::tetrahydrofuran"
+    ],
+    "flips_removed_by_co_scaling_R": 5,
+    "h0_verdict": "REFUTED",
+    "kendall_tau_b_vs_25c_min_at_alpha_1e-3": 0.990631,
+    "s3_r_co_scaled_flips": 0,
+    "smallest_common_alpha_that_breaks_invariance_per_k": 0.000261,
+    "temperature_law_max_relative_error": 0.0,
+    "worst_case_verdict_flips_over_declared_scenarios": 5
+  },
+  "module": "amphora-solvency-score",
+  "receipt_id": "hansen-temperature-envelope-d160f617159b54d09ce95a6dd13cae998dbfdb94f49d092e410f2a82f575475c",
+  "receipt_path": "amphora-solvency-score/reference/mvp20/data/hansen_temperature_envelope_receipt.v1.json",
+  "receipt_sha256": "23fcbe534be21359fa4d305ad1082858dcce88f49228596237661aaf8f0cd1ad",
+  "schema": "amphora.solvency-score.phase0-kpi.hansen-temperature-envelope.v1",
+  "two_replay_sha256_gate": "PASS"
+}

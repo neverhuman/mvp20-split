@@ -1,0 +1,9 @@
+{
+  "item_id": "W-ASSUR1",
+  "status": "done",
+  "fire_id": "20260805T160001-3438060-e1fcf08b84ee",
+  "date": "2026-08-05",
+  "summary": "Fixed normalized_key_skeleton's NFKC->recompose bug (switched to NFKD) so U+00FC and other precomposed-diacritic homoglyphs fold to their ASCII base letter instead of being silently dropped. Added V1..V5 regression tests. cargo test green in crate and workspace. Re-ran V-B01's own 5 probes (verbatim bodies) plus the original A1..A8: 13/13 detected on the repaired build. Positive control: same harness against a byte-verified copy of the pre-fix crate reproduces V-B01's exact finding (V1, V2 slip).",
+  "done_receipt": "amphora-assurance-capabilities/evidence/phase0/repairs/W-ASSUR1/done/repair-receipt.W-ASSUR1.v1.dsse.json",
+  "no_further_fires_needed": true
+}

@@ -1,0 +1,82 @@
+{
+  "audit_id": "consolidated-kpi-staleness-v1",
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "Does not dispute any individual audit's own statistics; it disputes whether the hand-built consolidated-KPI index remains complete/current as new audits land.",
+    "Does not modify or re-sign audit-verdicts-consolidated-kpi.v1.json, the NIST KPI, or any of the six independently-valid evidence/audit/ receipts; all remain referenced by path + sha256.",
+    "Phase-1 fix would be a build-time or pre-commit check that fails if evidence/audit/*/*.dsse.json (excl. superseded) is not a subset of any *-consolidated-kpi audit_verdicts_index in the same module, rather than relying on a human/agent to remember to rebuild the index by hand."
+  ],
+  "headline": "Staleness/self-consistency audit of the module's own remediation artifact, audit-verdicts-consolidated-kpi.v1.json (built one fire prior, 2026-08-01, specifically to fix 'KPI surface does not reflect audit verdicts'). Real Ed25519 verification (T1) against the pinned Phase-0 evaluator key confirms 6 signed audit receipts exist under evidence/audit/ (excl. superseded); the consolidated KPI's own index claims only 4. Set-diff (T3) finds 2 receipt(s) on disk absent from the index: kpi-surface-completeness-v1, nist-baseline-fold-significance-v1. (T4) One of those, nist-baseline-fold-significance-v1, targets the exact KPI artifact (nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json) that the consolidated KPI's own honest_headline still describes as '...modest but real, and the module's only externally-validated positive result' -- and returns H0_REFUTED (pinned Ridge MAE not independently reproducible from what the repo preserves; beats-null effect not fold-robust). (T5) The referenced KPI file's hash is unchanged, ruling out an edited-file explanation -- this is a pure indexing gap. Conclusion: H0 (the consolidated-KPI remains a complete, current census whose headline accurately reflects the module's strongest current evidence) is H0 REFUTED. The remediation artifact exhibits the identical defect, within roughly 24 hours, that it was built to cure -- a manually-maintained snapshot with no mechanism forcing re-indexing when new audits land is not durable evidence surface hygiene.",
+  "human_review_performed": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "n_tests_failed": 2,
+  "promotes_authority": false,
+  "schema": "amphora.public-corrosion-benchmark.audit.v1",
+  "scientific_success_asserted": false,
+  "target_claim": "amphora-public-corrosion-benchmark/evidence/phase0/kpis/audit-verdicts-consolidated-kpi.v1.json#audit_verdicts_index,honest_headline (claims to be a complete, current index of this module's signed audit verdicts, and characterizes the NIST bare-substrate result as 'modest but real, and the module's only externally-validated positive result')",
+  "tests": {
+    "T1_pinned_key_signature_verification": {
+      "all_verified_against_pinned_phase0_evaluator_key": true,
+      "consolidated_kpi_verified_against_pinned_key": true,
+      "n_receipts_checked": 6,
+      "note": "Every real evidence/audit/*/*.dsse.json (excl. superseded) Ed25519-verified against the PAE construction and the actual pinned Phase-0 evaluator seed's derived public key, not merely against its own embedded key.",
+      "pass": true,
+      "pinned_evaluator_keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+    },
+    "T2_consolidated_kpi_claimed_index": {
+      "indexed_audit_ids": [
+        "eis-brasher-kingsbury-water-uptake-admissibility-v1",
+        "eis-reproducibility-discrimination-power-v1",
+        "eis-rustcreep-crossmodality-v1",
+        "multi-instrument-concordance-v1"
+      ],
+      "n_audits_indexed_claimed": 4
+    },
+    "T3_completeness_set_diff": {
+      "found_audit_ids_on_disk": [
+        "eis-brasher-kingsbury-water-uptake-admissibility-v1",
+        "eis-reproducibility-discrimination-power-v1",
+        "eis-rustcreep-crossmodality-v1",
+        "kpi-surface-completeness-v1",
+        "multi-instrument-concordance-v1",
+        "nist-baseline-fold-significance-v1"
+      ],
+      "missing_from_index": [
+        "kpi-surface-completeness-v1",
+        "nist-baseline-fold-significance-v1"
+      ],
+      "n_found_on_disk": 6,
+      "n_missing": 2,
+      "refute_bar": "every real pinned-key-verified evidence/audit/ receipt appears in audit_verdicts_index",
+      "refutes_claim": true
+    },
+    "T4_missing_audit_contradicts_headline": {
+      "honest_headline_calls_nist_result_modest_but_real_positive": true,
+      "missing_audits_referencing_nist_kpi": [
+        {
+          "audit_id": "nist-baseline-fold-significance-v1",
+          "contradicts_consolidated_honest_headline": true,
+          "receipt_path": "evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json",
+          "target_claim": "evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json#fitted_or_physical_model_artifact.improvement_MAE_log10_reduction=0.0475 (Ridge beats per-material-group-median NULL on LOSD-CV)",
+          "verdict": "H0_REFUTED"
+        }
+      ],
+      "n_contradicting": 1,
+      "refute_bar": "no un-indexed audit both (a) targets the same KPI the headline characterizes and (b) returns a verdict inconsistent with that characterization",
+      "refutes_claim": true
+    },
+    "T5_referenced_kpi_hash_unchanged": {
+      "matches": true,
+      "nist_kpi_current_sha256": "bfbc32fe02df1d0bf8c7611ad8ab28c57f960eede7e640cda1db0b16078ab888",
+      "nist_kpi_sha256_in_consolidated_receipt": "bfbc32fe02df1d0bf8c7611ad8ab28c57f960eede7e640cda1db0b16078ab888",
+      "note": "Confirms the gap is a missing cross-reference (staleness of the index), not an edited/rotated KPI file breaking a stored hash pointer."
+    }
+  },
+  "tests_failed": [
+    "T3_completeness_set_diff",
+    "T4_missing_audit_contradicts_headline"
+  ],
+  "verdict": "H0_REFUTED"
+}

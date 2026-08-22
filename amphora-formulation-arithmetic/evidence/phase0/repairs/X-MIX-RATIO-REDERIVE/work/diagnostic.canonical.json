@@ -1,0 +1,214 @@
+{
+  "attack_description": "Independent from-scratch reimplementation of PHR=100*AHEW/EEW, Rv=PHR*(rho_A/rho_B) (Ellis 1993 equivalents algebra), and their full-chain GUM LPU combined standard uncertainty (JCGM 100:2008 sec.5.1 eq.10, covariance-aware: ratio_by_volume's uncertainty carries the AHEW/EEW terms through the PHR chain, not just the two density terms), reading facts.json LIVE rather than trusting the receipt's cited values, for all 3 hardener systems (ancamide_350a, versamid_115, ancamide_2353) x DGEBA DER-331 the receipt worked. Cross-checked with an independent 400k-draw Monte Carlo (own RNG seed, not a byte-replay of the receipt's MC). Positive control: the same reproduction re-run with the volume-ratio density term inverted (rho_B/rho_A instead of rho_A/rho_B) -- the exact convention-confusion defect class the receipt's own KA4 probe exists to catch -- to confirm this check has the power to detect a defect of the kind it is being trusted to rule out.",
+  "defect_all_fire": true,
+  "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+  "independent_monte_carlo_crosscheck": {
+    "all_pass": true,
+    "checks": [
+      {
+        "hardener_id": "ancamide_350a",
+        "independent_mc_std": 0.8400353312,
+        "pass": true,
+        "quantity": "phr_std",
+        "receipt_lpu_u_c": 0.8399688699202221,
+        "rel_diff": 7.9e-05
+      },
+      {
+        "hardener_id": "ancamide_350a",
+        "independent_mc_std": 1.0495217095,
+        "pass": true,
+        "quantity": "rv_std",
+        "receipt_lpu_u_c": 1.0671120413534103,
+        "rel_diff": 0.016484
+      },
+      {
+        "hardener_id": "versamid_115",
+        "independent_mc_std": 1.6632699558,
+        "pass": true,
+        "quantity": "phr_std",
+        "receipt_lpu_u_c": 1.6629291214241286,
+        "rel_diff": 0.000205
+      },
+      {
+        "hardener_id": "versamid_115",
+        "independent_mc_std": 2.0780529849,
+        "pass": true,
+        "quantity": "rv_std",
+        "receipt_lpu_u_c": 2.112646299319038,
+        "rel_diff": 0.016374
+      },
+      {
+        "hardener_id": "ancamide_2353",
+        "independent_mc_std": 1.0789267941,
+        "pass": true,
+        "quantity": "phr_std",
+        "receipt_lpu_u_c": 1.0791759361981048,
+        "rel_diff": 0.000231
+      },
+      {
+        "hardener_id": "ancamide_2353",
+        "independent_mc_std": 1.4037226702,
+        "pass": true,
+        "quantity": "rv_std",
+        "receipt_lpu_u_c": 1.4195660294795323,
+        "rel_diff": 0.011161
+      }
+    ],
+    "n": 400000,
+    "seed": 987654321,
+    "tol_rel": 0.02
+  },
+  "mc_all_pass": true,
+  "module": "amphora-formulation-arithmetic",
+  "observed_result": "The real (undefected) re-derivation reproduces all 3 hardener systems' phr_by_weight and ratio_by_volume point estimates AND full-chain LPU combined uncertainties to <1e-6 relative, using facts.json values read live rather than trusted from the receipt. The independent Monte Carlo cross-check (own seed) confirms the LPU standard uncertainty within the declared 2% Monte-Carlo-noise budget for all 6 (system x quantity) probes. The positive control confirms this reproduction has the power to detect the convention-confusion defect class its target claim exists to rule out: inverting the density ratio moves ratio_by_volume.point by 14.85-19.59% (matches the receipt's own convention_confusion.worst_case_abs_index_deviation_pct figures almost exactly, since that is precisely what this defect computes).",
+  "positive_control": {
+    "detected": true,
+    "evidence": [
+      {
+        "defected_value": 44.7169463397,
+        "field": "ratio_by_volume.point",
+        "fires": true,
+        "hardener_id": "ancamide_350a",
+        "receipt_value": 63.95060367164673,
+        "rel_err": 0.300758
+      },
+      {
+        "defected_value": 88.5395537525,
+        "field": "ratio_by_volume.point",
+        "fires": true,
+        "hardener_id": "versamid_115",
+        "receipt_value": 126.62219526986051,
+        "rel_err": 0.300758
+      },
+      {
+        "defected_value": 53.0794763046,
+        "field": "ratio_by_volume.point",
+        "fires": true,
+        "hardener_id": "ancamide_2353",
+        "receipt_value": 70.01641340604647,
+        "rel_err": 0.2419
+      }
+    ],
+    "how_planted": "compute_system(hid, defect_swap_density_ratio=True) inverts density_ratio and its two partial derivatives in this script's own reproduction of the receipt's formula, applied to the SAME live facts.json inputs used for the real check above.",
+    "planted_defect": "ratio_by_volume computed as PHR*(rho_B/rho_A) instead of PHR*(rho_A/rho_B) -- the weight-spec-poured-by-volume convention confusion the receipt's own KA4/convention_confusion probe names and quantifies (worst_case_abs_index_deviation_pct ~15-20% in the receipt itself)."
+  },
+  "real_all_pass": true,
+  "real_undefected_rederivation": {
+    "all_pass": true,
+    "checks": [
+      {
+        "field": "phr_by_weight",
+        "hardener_id": "ancamide_350a",
+        "mine": 53.4759358289,
+        "pass": true,
+        "receipt": 53.475935828877006,
+        "rel_err": 0.0,
+        "subfield": "point"
+      },
+      {
+        "field": "phr_by_weight",
+        "hardener_id": "ancamide_350a",
+        "mine": 0.8399688699,
+        "pass": true,
+        "receipt": 0.8399688699202221,
+        "rel_err": 0.0,
+        "subfield": "u_c_lpu"
+      },
+      {
+        "field": "ratio_by_volume_per_100_resin",
+        "hardener_id": "ancamide_350a",
+        "mine": 63.9506036716,
+        "pass": true,
+        "receipt": 63.95060367164673,
+        "rel_err": 0.0,
+        "subfield": "point"
+      },
+      {
+        "field": "ratio_by_volume_per_100_resin",
+        "hardener_id": "ancamide_350a",
+        "mine": 1.0671120414,
+        "pass": true,
+        "receipt": 1.0671120413534103,
+        "rel_err": 0.0,
+        "subfield": "u_c_lpu"
+      },
+      {
+        "field": "phr_by_weight",
+        "hardener_id": "versamid_115",
+        "mine": 105.8823529412,
+        "pass": true,
+        "receipt": 105.88235294117646,
+        "rel_err": 0.0,
+        "subfield": "point"
+      },
+      {
+        "field": "phr_by_weight",
+        "hardener_id": "versamid_115",
+        "mine": 1.6629291214,
+        "pass": true,
+        "receipt": 1.6629291214241286,
+        "rel_err": 0.0,
+        "subfield": "u_c_lpu"
+      },
+      {
+        "field": "ratio_by_volume_per_100_resin",
+        "hardener_id": "versamid_115",
+        "mine": 126.6221952699,
+        "pass": true,
+        "receipt": 126.62219526986051,
+        "rel_err": 0.0,
+        "subfield": "point"
+      },
+      {
+        "field": "ratio_by_volume_per_100_resin",
+        "hardener_id": "versamid_115",
+        "mine": 2.1126462993,
+        "pass": true,
+        "receipt": 2.112646299319038,
+        "rel_err": 0.0,
+        "subfield": "u_c_lpu"
+      },
+      {
+        "field": "phr_by_weight",
+        "hardener_id": "ancamide_2353",
+        "mine": 60.9625668449,
+        "pass": true,
+        "receipt": 60.962566844919785,
+        "rel_err": 0.0,
+        "subfield": "point"
+      },
+      {
+        "field": "phr_by_weight",
+        "hardener_id": "ancamide_2353",
+        "mine": 1.0791759362,
+        "pass": true,
+        "receipt": 1.0791759361981048,
+        "rel_err": 0.0,
+        "subfield": "u_c_lpu"
+      },
+      {
+        "field": "ratio_by_volume_per_100_resin",
+        "hardener_id": "ancamide_2353",
+        "mine": 70.016413406,
+        "pass": true,
+        "receipt": 70.01641340604647,
+        "rel_err": 0.0,
+        "subfield": "point"
+      },
+      {
+        "field": "ratio_by_volume_per_100_resin",
+        "hardener_id": "ancamide_2353",
+        "mine": 1.4195660295,
+        "pass": true,
+        "receipt": 1.4195660294795323,
+        "rel_err": 0.0,
+        "subfield": "u_c_lpu"
+      }
+    ]
+  },
+  "refutation_criterion": "Would REFUTE if: (a) any independently re-derived point estimate or LPU combined uncertainty deviates from the signed receipt's value by more than 1e-6 relative for the real (undefected) formula, OR (b) the independent Monte Carlo standard deviation deviates from the receipt's LPU u_c by more than 2% relative (would indicate a linearization or covariance-handling bug), OR (c) the positive-control defect (density-ratio inversion) fails to move ratio_by_volume.point by more than 1e-6 relative (would mean this check has no power to catch the failure mode it exists to catch, per the 2026-08-05 loop self-correction on unfalsifiable attacks).",
+  "study_id": "formulation-arithmetic-mix-ratio-conversion-independent-rederivation-v1",
+  "target_claim": "amphora-formulation-arithmetic/evidence/audit/mix-ratio-conversion-v1/mix-ratio-conversion-receipt.v1.dsse.json :: MIX_RATIO_CONVERSION_ENGINE_READY__KNOWN_ANSWER_BATTERY_PASS__PRIMER_REPRODUCED",
+  "target_receipt_envelope_sha256": "1a597605d325dab2faaf8daaca14c0ccd84d4fbb4130a5667aa553f5656d4f41",
+  "verdict": "CLAIM_SURVIVED__MIX_RATIO_LPU_REDERIVATION_MATCHES"
+}

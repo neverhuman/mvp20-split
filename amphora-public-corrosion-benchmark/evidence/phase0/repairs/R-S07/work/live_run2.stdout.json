@@ -1,0 +1,32 @@
+{
+  "extra_in_index_not_on_disk": [],
+  "gate": "PASS",
+  "identity_key": "receipt_path",
+  "index_kpi_id": "amphora-public-corrosion-benchmark-phase0-audit-verdicts-consolidated-v3",
+  "index_path": "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+  "indexed_receipt_paths": [
+    "evidence/audit/consolidated-kpi-staleness-v1/consolidated-kpi-staleness-receipt.v1.dsse.json",
+    "evidence/audit/eis-brasher-kingsbury-water-uptake-admissibility-v1/eis-brasher-kingsbury-water-uptake-admissibility-receipt.v1.dsse.json",
+    "evidence/audit/eis-reproducibility-discrimination-power-v1/eis-reproducibility-discrimination-power-receipt.v1.dsse.json",
+    "evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json",
+    "evidence/audit/kpi-surface-completeness-v1/kpi-surface-completeness-receipt.v1.dsse.json",
+    "evidence/audit/multi-instrument-concordance-v1/multi-instrument-concordance-receipt.v1.dsse.json",
+    "evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json",
+    "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json"
+  ],
+  "missing_from_index": [],
+  "module_root": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark",
+  "n_indexed_receipt_paths": 8,
+  "n_on_disk_receipts": 8,
+  "on_disk_receipt_paths": [
+    "evidence/audit/consolidated-kpi-staleness-v1/consolidated-kpi-staleness-receipt.v1.dsse.json",
+    "evidence/audit/eis-brasher-kingsbury-water-uptake-admissibility-v1/eis-brasher-kingsbury-water-uptake-admissibility-receipt.v1.dsse.json",
+    "evidence/audit/eis-reproducibility-discrimination-power-v1/eis-reproducibility-discrimination-power-receipt.v1.dsse.json",
+    "evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json",
+    "evidence/audit/kpi-surface-completeness-v1/kpi-surface-completeness-receipt.v1.dsse.json",
+    "evidence/audit/multi-instrument-concordance-v1/multi-instrument-concordance-receipt.v1.dsse.json",
+    "evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json",
+    "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json"
+  ],
+  "schema": "amphora.public-corrosion-benchmark.check-index-completeness.v1"
+}

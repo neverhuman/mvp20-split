@@ -1,0 +1,43 @@
+{
+  "detected": true,
+  "planted_defect": {
+    "field": "amphora-molecule-role-ranker/reference/phase0-role-known-answer.v1.json -> records[record_id=hardener-deta].facts.reactive_amine_hydrogen_count",
+    "how_planted": "deep-copied the real fixture in memory, changed hardener-deta's reactive_amine_hydrogen_count from 5 (correct, RDKit-verified: 2 primary N-H2 sites + 1 pre-existing secondary N-H site) to 4 (as if the internal secondary N-H were missed by a labeling error). The on-disk fixture file was never touched -- both runs pass in-memory byte strings to the harness's fixture_override_bytes parameter.",
+    "real_fixture_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+    "tampered_fixture_sha256": "62de6f00d03a4ac6bd86d9346752d02dc9bf0bef81cde63ad995fd65d37b822f"
+  },
+  "purpose": "Demonstrates the harness's structural-integrity gate (functionality_rederivation_agrees_with_fixture) fires on a planted defect of the kind the attack exists to catch, since the direction-reversal criterion itself has no reachable positive control for this g>>f-dominated system (see r_crit bisection: no reversal found across the full r in [1e-4, 1.0] range).",
+  "r_crit_no_positive_control_available_note": "the direction-reversal criterion was independently checked to be unreachable for ANY r in the full physically-meaningful [1e-4, 1.0] range (see r_crit_bisection in diagnostic.canonical.json: reversal_found_in_range=false for both DETA and TETA) -- a topologically-forced g>>f result, not a weak attack; this is why the positive control targets the harness's OTHER live falsifying mechanism (structural-integrity gate) instead.",
+  "run_against_real_input": {
+    "expected": "must NOT fire (rederivation_agrees=True, verdict corroborates)",
+    "fired": false,
+    "fixture_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+    "rederivation_agrees": true,
+    "verdict": "H2_SURVIVED_UNDER_DETA_TETA_REACTIVITY_TEMPERATURE_SWEEP"
+  },
+  "run_against_tampered_input": {
+    "expected": "MUST fire (rederivation_agrees=False, verdict=INFRASTRUCTURE_FAILED)",
+    "fired": true,
+    "fixture_sha256": "62de6f00d03a4ac6bd86d9346752d02dc9bf0bef81cde63ad995fd65d37b822f",
+    "hardener_site_structure_deta": {
+      "g": 4,
+      "g_fixture": 4,
+      "g_rederived": 5,
+      "h_per_site": [
+        1,
+        2,
+        2
+      ],
+      "has_preexisting_secondary": true,
+      "m_h": 103.17,
+      "n_primary": 2,
+      "n_secondary_pre": 1,
+      "rederivation_agrees": false,
+      "rid_h": "hardener-deta",
+      "smiles": "NCCNCCN"
+    },
+    "rederivation_agrees": false,
+    "verdict": "INFRASTRUCTURE_FAILED"
+  },
+  "schema": "amphora.molecule-role-ranker.r-s05-positive-control.v1"
+}

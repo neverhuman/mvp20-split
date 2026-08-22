@@ -1,0 +1,213 @@
+{
+  "class_ea_literature_kj_mol": {
+    "aliphatic-polyamine": {
+      "central": 55.0,
+      "hi": 58.0,
+      "lo": 50.0
+    },
+    "amidoamine-adduct": {
+      "central": 53.0,
+      "hi": 58.0,
+      "lo": 48.0
+    },
+    "aromatic-amine": {
+      "central": 65.0,
+      "hi": 75.0,
+      "lo": 58.0
+    },
+    "cycloaliphatic-amine": {
+      "central": 60.0,
+      "hi": 65.0,
+      "lo": 57.0
+    },
+    "mannich-base": {
+      "central": 46.0,
+      "hi": 50.0,
+      "lo": 42.0
+    }
+  },
+  "gas_constant_j_mol_k": 8.31446261815324,
+  "gate_A_class_consistency": {
+    "all_pass": true,
+    "definition": "each per-system Ea lies within its independently published amine-class Ea range",
+    "n_pass": 12,
+    "n_total": 12
+  },
+  "gate_B_parsimony_robustness": {
+    "ceiling": 0.2,
+    "class_collapsed_passes_ceiling": true,
+    "definition": "held-out MAPE using 5 literature class Ea constants (not 12 tuned Ea) stays <= 0.20",
+    "ea_degrees_of_freedom_class": 5,
+    "ea_degrees_of_freedom_per_system": 12,
+    "mape_class_collapsed_ea": 0.1542671474,
+    "mape_delta_class_minus_persystem": 0.0069444849,
+    "mape_per_system_ea": 0.1473226624
+  },
+  "held_out_temperatures_c": [
+    10.0,
+    30.0,
+    40.0
+  ],
+  "n_held_out_points": 36,
+  "n_systems": 12,
+  "per_system": [
+    {
+      "ea_class_central_kj_mol": 55.0,
+      "ea_class_range_kj_mol": [
+        50.0,
+        58.0
+      ],
+      "ea_per_system_kj_mol": 55.0,
+      "hardener_family": "aliphatic-polyamine",
+      "mape_class_collapsed_ea": 0.1502298022,
+      "mape_per_system_ea": 0.1502298022,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-teta"
+    },
+    {
+      "ea_class_central_kj_mol": 55.0,
+      "ea_class_range_kj_mol": [
+        50.0,
+        58.0
+      ],
+      "ea_per_system_kj_mol": 56.0,
+      "hardener_family": "aliphatic-polyamine",
+      "mape_class_collapsed_ea": 0.155765145,
+      "mape_per_system_ea": 0.1580331949,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-deta"
+    },
+    {
+      "ea_class_central_kj_mol": 55.0,
+      "ea_class_range_kj_mol": [
+        50.0,
+        58.0
+      ],
+      "ea_per_system_kj_mol": 54.0,
+      "hardener_family": "aliphatic-polyamine",
+      "mape_class_collapsed_ea": 0.1502298022,
+      "mape_per_system_ea": 0.1479333271,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-tepa"
+    },
+    {
+      "ea_class_central_kj_mol": 60.0,
+      "ea_class_range_kj_mol": [
+        57.0,
+        65.0
+      ],
+      "ea_per_system_kj_mol": 62.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "mape_class_collapsed_ea": 0.1032541673,
+      "mape_per_system_ea": 0.1333055457,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-ipda"
+    },
+    {
+      "ea_class_central_kj_mol": 60.0,
+      "ea_class_range_kj_mol": [
+        57.0,
+        65.0
+      ],
+      "ea_per_system_kj_mol": 60.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "mape_class_collapsed_ea": 0.1365047417,
+      "mape_per_system_ea": 0.1365047417,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-pacm"
+    },
+    {
+      "ea_class_central_kj_mol": 60.0,
+      "ea_class_range_kj_mol": [
+        57.0,
+        65.0
+      ],
+      "ea_per_system_kj_mol": 58.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "mape_class_collapsed_ea": 0.1650598635,
+      "mape_per_system_ea": 0.1361117779,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-dach"
+    },
+    {
+      "ea_class_central_kj_mol": 65.0,
+      "ea_class_range_kj_mol": [
+        58.0,
+        75.0
+      ],
+      "ea_per_system_kj_mol": 58.0,
+      "hardener_family": "aromatic-amine",
+      "mape_class_collapsed_ea": 0.2276871881,
+      "mape_per_system_ea": 0.1260640779,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-mxda"
+    },
+    {
+      "ea_class_central_kj_mol": 65.0,
+      "ea_class_range_kj_mol": [
+        58.0,
+        75.0
+      ],
+      "ea_per_system_kj_mol": 68.0,
+      "hardener_family": "aromatic-amine",
+      "mape_class_collapsed_ea": 0.1649012064,
+      "mape_per_system_ea": 0.1715772001,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-mpda"
+    },
+    {
+      "ea_class_central_kj_mol": 65.0,
+      "ea_class_range_kj_mol": [
+        58.0,
+        75.0
+      ],
+      "ea_per_system_kj_mol": 65.0,
+      "hardener_family": "aromatic-amine",
+      "mape_class_collapsed_ea": 0.1645384198,
+      "mape_per_system_ea": 0.1645384198,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-mda"
+    },
+    {
+      "ea_class_central_kj_mol": 53.0,
+      "ea_class_range_kj_mol": [
+        48.0,
+        58.0
+      ],
+      "ea_per_system_kj_mol": 52.0,
+      "hardener_family": "amidoamine-adduct",
+      "mape_class_collapsed_ea": 0.1542029838,
+      "mape_per_system_ea": 0.1516325529,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-amidoamine-adduct1"
+    },
+    {
+      "ea_class_central_kj_mol": 53.0,
+      "ea_class_range_kj_mol": [
+        48.0,
+        58.0
+      ],
+      "ea_per_system_kj_mol": 55.0,
+      "hardener_family": "amidoamine-adduct",
+      "mape_class_collapsed_ea": 0.1490803257,
+      "mape_per_system_ea": 0.1540704246,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-amidoamine-adduct2"
+    },
+    {
+      "ea_class_central_kj_mol": 46.0,
+      "ea_class_range_kj_mol": [
+        42.0,
+        50.0
+      ],
+      "ea_per_system_kj_mol": 48.0,
+      "hardener_family": "mannich-base",
+      "mape_class_collapsed_ea": 0.1297521229,
+      "mape_per_system_ea": 0.1378708846,
+      "per_system_ea_within_class_range": true,
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "reference_temperature_k": 295.928,
+  "schema": "amphora.cure-potlife-gate.amine-class-parsimony-diagnostic.v1"
+}

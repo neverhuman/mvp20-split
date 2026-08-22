@@ -1,0 +1,146 @@
+{
+  "all_fail_closed_checks_pass": true,
+  "authority": "AUDIT_ONLY",
+  "base_model_group_safe_test": {
+    "note": "single leave-material-out split; conformal COVERAGE does not depend on this R2 (distribution-free guarantee)",
+    "test_r2": 0.25759,
+    "test_rmse_log10": 1.081707
+  },
+  "benchmark": "corr-rate-conformal-v1",
+  "cohort": {
+    "group_disjoint_train_cal_test": true,
+    "n_cal": 2809,
+    "n_cal_materials": 123,
+    "n_modeled": 7699,
+    "n_test": 1007,
+    "n_test_materials": 123,
+    "n_train": 3883,
+    "n_train_materials": 366,
+    "n_unique_materials": 612
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "license": "NIST public data",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "float_round_decimals": 6,
+    "no_timestamp": true,
+    "omp_num_threads": "1",
+    "seed": 0,
+    "sklearn_histgbm_early_stopping": false
+  },
+  "fail_closed_checks": {
+    "base_model_test_r2_reported": true,
+    "cal_test_material_disjoint": true,
+    "fixed_conformal_meets_target_alpha_0.10": true,
+    "fixed_conformal_meets_target_alpha_0.20": true,
+    "hostile_null_coverage_holds": true,
+    "hostile_null_width_inflates": true,
+    "train_cal_material_disjoint": true,
+    "train_test_material_disjoint": true
+  },
+  "hostile_null_shuffled_labels_alpha_0.10": {
+    "definition": "train labels permuted (fixed seed) -> deliberately broken base learner; conformal coverage must STILL meet target because the guarantee needs only exchangeability, not base-learner skill (Lei 2018)",
+    "meets_target_0.90": true,
+    "null_mean_interval_width_log10": 4.073324,
+    "observed_test_coverage": 0.904667,
+    "real_mean_interval_width_log10": 3.721302,
+    "shuffled_model_test_r2": -0.059867,
+    "width_inflates_over_real_signal": true,
+    "width_inflation_ratio_null_over_real": 1.094596
+  },
+  "methods": {
+    "exchangeability": "GROUP-safe: train/cal/test disjoint by MATERIAL (leave-material-out); cal and test are disjoint alloys",
+    "mondrian_conformal": "Vovk-Lindsay-Nouretdinov-Gammerman 2003; Bostrom-Johansson 2021 Mach.Learn.110:489",
+    "normalized_conformal": "Papadopoulos-Gammerman-Vovk 2008; Lei et al 2018 sec5, score=|y-mu(x)|/sigma(x)",
+    "split_conformal": "Papadopoulos-Proedrou-Vovk-Gammerman 2002; Vovk-Gammerman-Shafer 2005; Lei-G'Sell-Rinaldo-Tibshirani-Wasserman 2018 JASA 113(523):1094"
+  },
+  "module": "amphora-barrier-corrosion-score",
+  "mondrian_by_magnitude_tercile_alpha_0.10": {
+    "per_stratum": {
+      "high": {
+        "conformal_quantile_log10": 2.059075,
+        "coverage": 0.914842,
+        "n_cal": 937,
+        "n_test": 411
+      },
+      "low": {
+        "conformal_quantile_log10": 2.166913,
+        "coverage": 0.899628,
+        "n_cal": 901,
+        "n_test": 269
+      },
+      "mid": {
+        "conformal_quantile_log10": 1.33661,
+        "coverage": 0.95107,
+        "n_cal": 971,
+        "n_test": 327
+      }
+    },
+    "rationale": "rate-magnitude terciles stress conditional coverage; a global interval typically under-covers the high-rate tail",
+    "tercile_thresholds_log10": [
+      -1.60206,
+      -0.478862
+    ],
+    "worst_stratum_coverage": 0.899628
+  },
+  "mondrian_by_marine_chloride_alpha_0.10": {
+    "per_stratum": {
+      "marine_or_chloride": {
+        "conformal_quantile_log10": 1.688808,
+        "coverage": 0.875,
+        "n_cal": 699,
+        "n_test": 344
+      },
+      "other": {
+        "conformal_quantile_log10": 1.897757,
+        "coverage": 0.911011,
+        "n_cal": 2110,
+        "n_test": 663
+      }
+    },
+    "rationale": "marine/chloride environments are the in-scope coating context; category-conditional coverage guards against marginal coverage hiding a stratum failure",
+    "worst_stratum_coverage": 0.875,
+    "worst_stratum_meets_soft_floor_0.80": true
+  },
+  "promotes_authority": false,
+  "schema": "amphora.barrier-corrosion-score.corr-rate-conformal.v1",
+  "split_conformal_fixed": {
+    "alpha_0.10": {
+      "conformal_quantile_log10": 1.860651,
+      "mean_interval_width_log10": 3.721302,
+      "meets_target": true,
+      "observed_test_coverage": 0.904667,
+      "target_coverage": 0.9
+    },
+    "alpha_0.20": {
+      "conformal_quantile_log10": 1.404845,
+      "mean_interval_width_log10": 2.80969,
+      "meets_target": true,
+      "observed_test_coverage": 0.810328,
+      "target_coverage": 0.8
+    }
+  },
+  "split_conformal_normalized": {
+    "adaptive_vs_fixed_mean_width_ratio_alpha_0.10": 1.415202,
+    "alpha_0.10": {
+      "mean_interval_width_log10": 5.266394,
+      "median_interval_width_log10": 5.11645,
+      "meets_target": true,
+      "observed_test_coverage": 0.961271,
+      "target_coverage": 0.9
+    }
+  },
+  "target": "log10(corrosion_rate_mm_per_year)",
+  "target_interpretation": "bare metal/alloy SUBSTRATE corrosion rate; NOT organic epoxy-amine COATING-barrier performance (scope ceiling held)",
+  "verdict": {
+    "does_not_establish": "A validated organic COATING-barrier ranking. This is a calibrated environmental-severity (substrate corrosion-rate) uncertainty model only; it grants no coating-barrier, batch-release, optimizer, or product-performance authority.",
+    "finding": "Group-safe (leave-material-out) split conformal delivers distribution-free marginal coverage at the 0.90 and 0.80 targets on the rights-clean NIST CORR-DATA corrosion-rate model; the coverage guarantee holds even when the base learner is destroyed by label shuffling (intervals simply inflate), which is the red-team defence that coverage does not depend on R2. Mondrian category- and magnitude-conditional coverage is reported to expose any stratum where the marginal guarantee hides under-coverage.",
+    "relation_to_point_baseline": "Extends corr-rate-qspr-v1 (point estimate + cluster-bootstrap RMSE CI) with per-prediction calibrated intervals; same features and HistGBM config.",
+    "scope_honesty": "Bare-metal/alloy substrate corrosion (same ceiling as corr-rate-qspr-v1), restricted to leave-material-out AD; first calibrated interval receipt for the module on a RIGHTS-CLEAN dataset (the prior Polyverse conformal work is CONTEXT_ONLY / rights-quarantined and not scored)."
+  }
+}

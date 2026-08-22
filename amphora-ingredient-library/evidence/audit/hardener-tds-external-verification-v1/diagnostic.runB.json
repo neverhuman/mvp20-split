@@ -1,0 +1,297 @@
+{
+  "authority": "AUDIT_ONLY",
+  "checkA_undisclosed_coverage_gap": {
+    "all_load_bearing_density_facts": [
+      "hardener.ancamide_2353.density",
+      "hardener.ancamide_260a.density",
+      "hardener.ancamide_350a.density",
+      "hardener.versamid_115.density",
+      "pigment.barytes.density",
+      "pigment.talc.density",
+      "resin.dgeba_331.density",
+      "resin.dgeba_828.density",
+      "resin.dgeba_yd128.density",
+      "solvent.mak.density",
+      "solvent.mibk.density",
+      "solvent.n_butanol.density",
+      "solvent.xylene.density"
+    ],
+    "n_all_load_bearing_density_facts": 13,
+    "n_undisclosed_gap_closed": 4,
+    "prior_covered_by_constant_crosscheck_v1": [
+      "resin.dgeba_331.density",
+      "resin.dgeba_828.density",
+      "resin.dgeba_yd128.density",
+      "solvent.mak.density",
+      "solvent.mibk.density",
+      "solvent.n_butanol.density",
+      "solvent.xylene.density"
+    ],
+    "prior_diagnostic_only_documented_exclusion": [
+      "pigment.barytes.density",
+      "pigment.talc.density"
+    ],
+    "undisclosed_gap_closed_by_this_receipt": [
+      "hardener.ancamide_2353.density",
+      "hardener.ancamide_260a.density",
+      "hardener.ancamide_350a.density",
+      "hardener.versamid_115.density"
+    ]
+  },
+  "checkB_external_tds_reverification": {
+    "all_within_gate": false,
+    "failing_comparisons": [
+      {
+        "abs_pct_deviation": 9.0909,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_note": "US 120 vs EMEA 110 -- REGIONAL CONFLICT FLAGGED; US value used, band widened in MC",
+        "catalog_unit": "g/eq",
+        "catalog_value": 120.0,
+        "external_ref_value": 110.0,
+        "external_source": "Evonik Ancamide 260A EMEA TDS, Equivalent Wt/{H} = 110 (the regional-conflict document facts.json's own note field names)",
+        "external_source_url": "https://products.evonik.com/assets/em/ea/Ancamide_260A_EMEA_TDS_EN_EN_TDS_PV_52041955_en_GB_EMEA.pdf",
+        "fact_key": "hardener.ancamide_260a.ahew",
+        "pct_deviation": 9.0909,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_260a.ahew__EMEA_region",
+        "same_url_as_catalog_citation": false,
+        "within_gate": false
+      }
+    ],
+    "gate_pct": 3.0,
+    "n_independent_source_comparisons": 3,
+    "n_total_comparisons": 9,
+    "n_transcription_fidelity_comparisons": 6,
+    "n_within_gate": 8,
+    "per_comparison": [
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "TDS",
+        "catalog_load_bearing": true,
+        "catalog_note": "",
+        "catalog_unit": "g/mL",
+        "catalog_value": 0.97,
+        "external_ref_value": 0.97,
+        "external_source": "Evonik Ancamide 350A US TDS, Specific Gravity @ 77F = .97",
+        "external_source_url": "https://crosslinkers-web.panpage.de/en2/crosslinkers/ancamide/usa/ancamide_350a_us.pdf",
+        "fact_key": "hardener.ancamide_350a.density",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_350a.density",
+        "same_url_as_catalog_citation": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "TDS",
+        "catalog_load_bearing": true,
+        "catalog_note": "",
+        "catalog_unit": "g/eq",
+        "catalog_value": 100.0,
+        "external_ref_value": 100.0,
+        "external_source": "Evonik Ancamide 350A US TDS, Equivalent Wt/{H} = 100",
+        "external_source_url": "https://crosslinkers-web.panpage.de/en2/crosslinkers/ancamide/usa/ancamide_350a_us.pdf",
+        "fact_key": "hardener.ancamide_350a.ahew",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_350a.ahew",
+        "same_url_as_catalog_citation": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "TDS",
+        "catalog_load_bearing": false,
+        "catalog_note": "",
+        "catalog_unit": "mgKOH/g",
+        "catalog_value": 380.0,
+        "external_ref_value": 380.0,
+        "external_source": "Evonik Ancamide 350A US TDS, Amine Value = 380",
+        "external_source_url": "https://crosslinkers-web.panpage.de/en2/crosslinkers/ancamide/usa/ancamide_350a_us.pdf",
+        "fact_key": "hardener.ancamide_350a.amine_value",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_350a.amine_value",
+        "same_url_as_catalog_citation": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_note": "",
+        "catalog_unit": "g/mL",
+        "catalog_value": 1.01,
+        "external_ref_value": 1.01,
+        "external_source": "Evonik Ancamide 2353 US TDS, Specific Gravity @ 77F = 1.01",
+        "external_source_url": "https://products.evonik.com/assets/s_/us/Ancamide_2353_us_TDS_EN_EN_TDS_PV_52041310_en_US_US.pdf",
+        "fact_key": "hardener.ancamide_2353.density",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_2353.density",
+        "same_url_as_catalog_citation": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_note": "",
+        "catalog_unit": "g/eq",
+        "catalog_value": 114.0,
+        "external_ref_value": 114.0,
+        "external_source": "Evonik Ancamide 2353 US TDS, Equivalent Wt/{H} = 114",
+        "external_source_url": "https://products.evonik.com/assets/s_/us/Ancamide_2353_us_TDS_EN_EN_TDS_PV_52041310_en_US_US.pdf",
+        "fact_key": "hardener.ancamide_2353.ahew",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_2353.ahew",
+        "same_url_as_catalog_citation": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_note": "",
+        "catalog_unit": "g/mL",
+        "catalog_value": 0.96,
+        "external_ref_value": 0.96,
+        "external_source": "Evonik Ancamide 260A EMEA TDS, Specific Gravity @ 21C = 0.96 (independent doc, matches Americas guide table SG=0.960 too)",
+        "external_source_url": "https://products.evonik.com/assets/em/ea/Ancamide_260A_EMEA_TDS_EN_EN_TDS_PV_52041955_en_GB_EMEA.pdf",
+        "fact_key": "hardener.ancamide_260a.density",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_260a.density",
+        "same_url_as_catalog_citation": false,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 0.0,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_note": "US 120 vs EMEA 110 -- REGIONAL CONFLICT FLAGGED; US value used, band widened in MC",
+        "catalog_unit": "g/eq",
+        "catalog_value": 120.0,
+        "external_ref_value": 120.0,
+        "external_source": "Evonik AMERICAS Epoxy Curing Agents product guide table, Ancamide 260A Equivalent column = 120 (the region the catalog value was drawn from)",
+        "external_source_url": "https://products.evonik.com/assets/90/41/Epoxy_curing_agents_product_guide_Americas_EN_Asset_819041.pdf",
+        "fact_key": "hardener.ancamide_260a.ahew",
+        "pct_deviation": 0.0,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_260a.ahew__US_region",
+        "same_url_as_catalog_citation": true,
+        "within_gate": true
+      },
+      {
+        "abs_pct_deviation": 9.0909,
+        "catalog_grade": "SUPPLIER_GUIDE",
+        "catalog_load_bearing": true,
+        "catalog_note": "US 120 vs EMEA 110 -- REGIONAL CONFLICT FLAGGED; US value used, band widened in MC",
+        "catalog_unit": "g/eq",
+        "catalog_value": 120.0,
+        "external_ref_value": 110.0,
+        "external_source": "Evonik Ancamide 260A EMEA TDS, Equivalent Wt/{H} = 110 (the regional-conflict document facts.json's own note field names)",
+        "external_source_url": "https://products.evonik.com/assets/em/ea/Ancamide_260A_EMEA_TDS_EN_EN_TDS_PV_52041955_en_GB_EMEA.pdf",
+        "fact_key": "hardener.ancamide_260a.ahew",
+        "pct_deviation": 9.0909,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.ancamide_260a.ahew__EMEA_region",
+        "same_url_as_catalog_citation": false,
+        "within_gate": false
+      },
+      {
+        "abs_pct_deviation": 1.0204,
+        "catalog_grade": "TDS",
+        "catalog_load_bearing": true,
+        "catalog_note": "",
+        "catalog_unit": "g/mL",
+        "catalog_value": 0.97,
+        "external_ref_value": 0.98,
+        "external_source": "BASF Corporation Safety Data Sheet, Versamid(R) 115, rev. 2014/12/23, Section 9: Density approx. 0.98 g/cm3 (25C), Relative density 0.98 (25C)",
+        "external_source_url": "https://www.miller-stephenson.com/wp-content/uploads/sds/V115.pdf",
+        "fact_key": "hardener.versamid_115.density",
+        "pct_deviation": -1.0204,
+        "retrieved": "2026-08-02",
+        "row_id": "hardener.versamid_115.density",
+        "same_url_as_catalog_citation": false,
+        "within_gate": true
+      }
+    ]
+  },
+  "checkC_regional_conflict_note_verification": {
+    "catalog_disclosed_note_verified_accurate": true,
+    "catalog_matches_us_region": true,
+    "catalog_note": "US 120 vs EMEA 110 -- REGIONAL CONFLICT FLAGGED; US value used, band widened in MC",
+    "catalog_shipped_ahew": 120.0,
+    "catalog_vs_emea_pct_deviation": 9.0909,
+    "catalog_vs_emea_within_gate": false,
+    "emea_region_source_value": 110.0,
+    "us_region_source_value": 120.0
+  },
+  "checkD_fail_closed_mutation_demo": {
+    "gross_corruptions_flagged": true,
+    "mutations": [
+      {
+        "flagged": false,
+        "mutation": "baseline",
+        "pct_deviation_vs_basf_sds": -1.0204,
+        "value": 0.97
+      },
+      {
+        "flagged": true,
+        "mutation": "digit_insert_9.7",
+        "pct_deviation_vs_basf_sds": 889.7959,
+        "value": 9.7
+      },
+      {
+        "flagged": true,
+        "mutation": "decimal_slip_0.097",
+        "pct_deviation_vs_basf_sds": -90.102,
+        "value": 0.097
+      },
+      {
+        "flagged": true,
+        "mutation": "transpose_0.79",
+        "pct_deviation_vs_basf_sds": -19.3878,
+        "value": 0.79
+      }
+    ],
+    "reference": "BASF SDS 0.98 g/cm3",
+    "target": "hardener.versamid_115.density"
+  },
+  "closes": [
+    "Extends constant-crosscheck-v1's Check-2 density second-source discipline to the 4 load-bearing hardener density facts (ancamide_2353/260a/350a, versamid_115) that had ZERO independent coverage in any of the module's four prior signed receipts, with no stated exclusion reason (unlike the pigment-density exclusion, which IS documented).",
+    "Independently verifies, against a document the catalog does not itself cite, that the catalog's own self-disclosed regional-conflict note for ancamide_260a.ahew (\"US 120 vs EMEA 110\") is empirically accurate rather than an unverified claim.",
+    "Re-derives amine_value and AHEW for ancamide_350a and ancamide_2353 as a byproduct, corroborating the amine-value<->AHEW admissibility band inputs used by amine-value-ahew-consistency-v1."
+  ],
+  "does_not_close": [
+    "Three of five comparisons re-fetch the SAME url the catalog already cites -- a transcription/link-rot check, NOT a supplier-independent measured lock.",
+    "Does not resolve the versamid_115 brand-lineage risk the catalog's own note flags (Cognis -> BASF -> Huntsman/Gabriel); only shows the BASF-era value is within gate of the shipped value, not that a current Huntsman-era TDS agrees.",
+    "Gate is a point-transcription tolerance (3%), not a physical admissibility bound; does NOT establish product qualification or supplier closure."
+  ],
+  "flips_scientific_readiness": false,
+  "headline": "Closed an undisclosed gap: 4/13 load-bearing hardener density facts (plus 2 AHEW and 1 amine-value facts checked as byproducts) had ZERO independent coverage across the module's four prior signed receipts. External live manufacturer-TDS re-verification: 8/9 comparisons within the 3.0% gate (6 transcription-fidelity re-fetches of the catalog's own cited source, 3 genuinely independent second-source comparisons). The catalog's own self-disclosed ancamide_260a regional-conflict note (US 120 vs EMEA 110) verified EMPIRICALLY ACCURATE against live-refetched regional documents.",
+  "human_review_performed": false,
+  "hypothesis": "Every shipped load-bearing hardener density/AHEW/amine-value constant matches, within a 3% gate, the primary manufacturer literature it is drawn from (transcription fidelity + link-rot check), and, where a genuinely independent document exists (BASF Versamid 115 SDS; Ancamide 260A EMEA regional TDS), the catalog's own disclosed uncertainty notes are empirically accurate.",
+  "inputs": {
+    "facts_json_rel": "reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "gate_pct": 3.0
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_module_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ingredient-library",
+  "non_circularity": "Three comparisons (350A x3 facts, 2353 x2 facts) re-fetch the SAME url already cited in facts.json -- disclosed as transcription/link-rot checks, not independent corroboration. Two comparisons (versamid_115 density vs BASF SDS; ancamide_260a AHEW vs the EMEA document) are against a document the catalog does NOT cite as its primary source for that fact -- genuine independent second-source checks.",
+  "promotes_authority": false,
+  "purpose": "External live manufacturer-TDS re-verification of load-bearing hardener density/AHEW/amine-value facts that none of the four prior signed audit receipts in this module ever checked (an undisclosed coverage gap in constant-crosscheck-v1's Check-2 density second-source discipline).",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ingredient-library-hardener-tds-external-verification.v1",
+  "theory_reference": {
+    "gate_pct": 3.0,
+    "method": "Same Daniel-style manufacturer-literature second-source discipline as constant-crosscheck-v1 Check-2 (CRC Handbook vs supplier TDS density gate)."
+  }
+}

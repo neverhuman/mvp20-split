@@ -1,0 +1,82 @@
+{
+  "acquired_at": "2026-07-10T19:50:12Z",
+  "manifest_sha256": "f5d367ed0338b73ed53876c24eca831cba438662417e811d472bc65103a59aa4",
+  "schema_version": "amphora.feedback_v1.dataset_context.v1",
+  "source_count": 1,
+  "sources": [
+    {
+      "access_status": "public_direct",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "BigSolDBv2.0.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:48Z",
+          "url": "https://zenodo.org/records/15094979/files/BigSolDBv2.0.csv?download=1"
+        },
+        {
+          "filename": "BigSolDBv2.0_densities.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://zenodo.org/records/15094979/files/BigSolDBv2.0_densities.csv?download=1"
+        }
+      ],
+      "checksum_pass_count": 2,
+      "claim_locks": {
+        "dataset_is_benchmark_context_only": true,
+        "does_not_change_red_or_fallback_rules": true
+      },
+      "download_count": 2,
+      "id": "bigsoldb_v2",
+      "license": "CC-BY-4.0",
+      "local_raw_path": "feedback/v1/external_data/bigsoldb_v2/raw",
+      "profiles": [
+        {
+          "columns": 12,
+          "file": "BigSolDBv2.0.csv",
+          "headers": [
+            "SMILES_Solute",
+            "Temperature_K",
+            "Solvent",
+            "SMILES_Solvent",
+            "Solubility(mole_fraction)",
+            "Solubility(mol/L)",
+            "LogS(mol/L)",
+            "Compound_Name",
+            "CAS",
+            "PubChem_CID",
+            "FDA_Approved",
+            "Source"
+          ],
+          "kind": "csv",
+          "rows": 103944
+        },
+        {
+          "columns": 4,
+          "file": "BigSolDBv2.0_densities.csv",
+          "headers": [
+            "Solvent",
+            "Temperature_K",
+            "Density_g/cm^3",
+            "Source"
+          ],
+          "kind": "csv",
+          "rows": 2210
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://zenodo.org/records/15094979",
+      "target_repos": [
+        "amphora-solvency-score",
+        "amphora-design-rule-score",
+        "amphora-source-ledger",
+        "amphora-known-answer-benchmarks"
+      ]
+    }
+  ]
+}

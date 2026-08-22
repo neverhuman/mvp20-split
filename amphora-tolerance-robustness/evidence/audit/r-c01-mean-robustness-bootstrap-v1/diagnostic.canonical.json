@@ -1,0 +1,48 @@
+{
+  "attack": "bootstrap-mean-robustness-audit-r-c01",
+  "input_receipt": "amphora-tolerance-robustness/evidence/phase0/repairs/R-C01/done/r-c01-pac-corrected-scaffold-repair-done-receipt.v1.dsse.json",
+  "input_receipt_claim": "mean(coverage_scaffold_safe_pac_repaired) over identical 60-seed protocol >= 0.90",
+  "input_receipt_reported_verdict": "CLAIM_SURVIVED",
+  "n_seeds": 60,
+  "positive_control": {
+    "detected": true,
+    "evidence": "degraded mean=0.7258, 95% bootstrap CI=[0.7051042026880766, 0.7444019927340072], frac_below_threshold=1.0000",
+    "how_planted": "vals * 0.80 applied elementwise to the exact 60 values extracted from the receipt's per_seed_table before bootstrapping",
+    "planted_defect": "each of the 60 real coverage_scaffold_safe_pac_repaired values multiplied by 0.80 (simulating a materially degraded repair), clipped to [0,1]",
+    "result": {
+      "ci95_bootstrap_percentile": [
+        0.7051042026880766,
+        0.7444019927340072
+      ],
+      "ci95_normal_approx": [
+        0.705869333899465,
+        0.745742246161867
+      ],
+      "ci_lower_excludes_threshold_from_below": false,
+      "frac_bootstrap_resamples_below_threshold": 1.0,
+      "n_boot": 100000,
+      "point_estimate_mean": 0.725805790030666,
+      "se_normal_approx": 0.010171661291429084,
+      "std": 0.07878934956993494
+    }
+  },
+  "real": {
+    "ci95_bootstrap_percentile": [
+      0.8811467401438469,
+      0.9303206608205487
+    ],
+    "ci95_normal_approx": [
+      0.8823366673743309,
+      0.9321778077023335
+    ],
+    "ci_lower_excludes_threshold_from_below": false,
+    "frac_bootstrap_resamples_below_threshold": 0.27617,
+    "n_boot": 100000,
+    "point_estimate_mean": 0.9072572375383322,
+    "se_normal_approx": 0.012714576614286353,
+    "std": 0.09848668696241866
+  },
+  "seed_rng": 1729,
+  "threshold": 0.9,
+  "verdict_on_real_claim": "NOT_ROBUST_CI_STRADDLES_THRESHOLD"
+}

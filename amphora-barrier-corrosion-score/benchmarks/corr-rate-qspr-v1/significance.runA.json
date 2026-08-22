@@ -1,0 +1,74 @@
+{
+  "addendum_to": "diagnostic.canonical.json (leave-material-out corrosion-rate QSPR)",
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-barrier-corrosion-score/corr-rate-qspr-v1",
+  "cohort": {
+    "n_modeled": 7699,
+    "n_unique_environments": 155,
+    "n_unique_materials": 612
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "canonical_round_decimals": 6,
+    "n_bootstrap": 2000,
+    "n_permutations": 100,
+    "omp_num_threads": "1",
+    "seed": 0
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (requires trust-anchored phase0-evaluator key)",
+    "coating-barrier authority (substrate corrosion, not organic coating barrier)",
+    "human / independent organizational review"
+  ],
+  "host_env": {
+    "numpy": "1.26.4",
+    "python": "3.12.3",
+    "sklearn": "1.7.2"
+  },
+  "point_estimates_this_host": {
+    "baseline_leave_material_out_r2": 0.229268,
+    "baseline_leave_material_out_rmse": 1.09965,
+    "best_naive_baseline": "per_environment_mean",
+    "error_reduction_vs_baseline_pct": 6.527742,
+    "gbm_leave_material_out_mae": 0.796797,
+    "gbm_leave_material_out_r2": 0.326607,
+    "gbm_leave_material_out_rmse": 1.027868
+  },
+  "reproducibility_note_prior_diagnostic": "The existing signed diagnostic.canonical.json attests sklearn 1.9.0 and byte-hash e3bea4fc...; this host runs sklearn 1.7.2. The SCIENCE reproduces (leave-material-out R^2 ~0.32 either way) but the byte-stable two-replay gate is environment-pinned and does NOT reproduce cross-version. This significance addendum is pinned to and byte-stable on THIS host env (recorded below).",
+  "schema": "amphora.barrier-corrosion-score.corr-rate-qspr-significance.v1",
+  "target": "log10(corrosion_rate_mm_per_year)",
+  "test_1_paired_cluster_bootstrap_delta_rmse": {
+    "bootstrap_fraction_delta_gt_0": 1.0,
+    "cluster_unit": "material",
+    "delta_rmse_ci95": [
+      0.029631,
+      0.111783
+    ],
+    "delta_rmse_ci95_excludes_zero": true,
+    "delta_rmse_point": 0.07237,
+    "n_bootstrap": 2000
+  },
+  "test_2_label_permutation_null_r2": {
+    "empirical_p_value_one_sided": 0.009901,
+    "n_null_ge_observed": 0,
+    "n_permutations": 100,
+    "null_r2_max": -0.041555,
+    "null_r2_mean": -0.060407,
+    "null_r2_p95": -0.045676,
+    "null_r2_std": 0.008608,
+    "observed_leave_material_out_r2": 0.326607,
+    "p_value_resolution_floor": 0.009901
+  },
+  "verdict": {
+    "interpretation": "SIGNAL_CONFIRMED means the leave-material-out GBM (a) beats the strongest naive baseline with a paired material-cluster bootstrap 95% CI on Delta-RMSE that excludes zero, AND (b) achieves a leave-material-out R^2 beyond its own label-permutation null (p<=0.05). This establishes real, group-safe substrate-corrosion predictive skill. It does NOT create organic epoxy-amine coating-barrier authority; scope stays AUDIT_ONLY diagnostic.",
+    "model_reliably_beats_baseline_ci95": true,
+    "overall": "SIGNAL_CONFIRMED",
+    "skill_exceeds_permutation_null_p_le_0_05": true
+  }
+}

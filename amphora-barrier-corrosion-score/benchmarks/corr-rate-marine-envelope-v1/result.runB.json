@@ -1,0 +1,218 @@
+{
+  "attack_description": "Every prior attack on this claim varied only the CV grouping axis (material string, then metallurgical family, then true leave-one-family-out); none varied the ENVIRONMENT axis, even though this module's own docs/mission.md states its applicability domain is marine-coating R&D. This holds out ALL classified rows whose environment string is genuinely seawater/sea-water immersion (n=186, 2.55% of the classified cohort, 8 of 17 metallurgical families represented, all 8 also present in the non-marine training set) as a single domain-shift test set, training on the remaining 7096 non-marine classified rows with identical feature engineering, HistGBM hyperparameters, and seed=0 copied verbatim from corr-rate-family-safe-v1/corr_rate_family_safe.py and corr-rate-family-lofo-v1/corr_rate_family_lofo.py.",
+  "attacks_claim": "evidence/phase0/kpis/corr-rate-family-safe-qspr-kpi.v1.dsse.json: GroupKFold(group=metallurgical_family, 5-fold) HistGBM R2=0.132087 on the NIST CORR-DATA classified subset (n=7282, 17 families), 'the module's strongest rights-clean empirical claim'; and the narrow CLAIM_SURVIVED verdict of corr-rate-family-lofo-v1 (family-weighted mean LOFO R2=0.015964).",
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-barrier-corrosion-score/corr-rate-marine-envelope-v1",
+  "cohort": {
+    "classified_subset_n": 7282,
+    "families_marine_unseen_in_nonmarine_train": [],
+    "marine_families": [
+      "aluminum",
+      "carbon_steel_cast_iron",
+      "copper_alloy",
+      "lead",
+      "nickel_alloy",
+      "stainless_steel",
+      "tin",
+      "titanium"
+    ],
+    "n_marine_families": 8,
+    "n_nonmarine_rows": 7096,
+    "n_true_marine_seawater_rows": 186
+  },
+  "data_integrity_finding_marine_atmospheric_conflation": {
+    "description": "The deployed env_features() marine flag is has('seawater','sea water','marine','atmospheric'), conflating atmospheric exposure with seawater immersion. This is a secondary finding, quantified via the patched ablation above, and does NOT itself determine the refutation verdict (which is judged on the deployed feature set, matching production behavior).",
+    "n_atmospheric_rows_in_classified_cohort": 313,
+    "n_atmospheric_rows_incorrectly_flagged_marine": 313,
+    "n_rows_with_deployed_marine_flag_set": 499,
+    "n_true_seawater_rows": 186,
+    "pct_of_deployed_marine_flag_that_is_actually_atmospheric": 62.7255
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "canonical_round_decimals": 6,
+    "omp_num_threads": "1",
+    "seed": 0
+  },
+  "model": {
+    "estimator": "HistGradientBoostingRegressor",
+    "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "random_state": 0
+    },
+    "sklearn_version": "1.7.2"
+  },
+  "modifies_manifest": false,
+  "promotes_authority": false,
+  "refutation_criterion": "REFUTED if (a) marine-envelope (train=all non-marine classified rows, test=all true-seawater classified rows, deployed env_features as-is) gbm.r2 <= 0.0, OR (b) marine-envelope error_reduction_vs_best_baseline_pct <= 0.0. SURVIVED otherwise, even if reduced relative to the family-safe/LOFO within-domain numbers.",
+  "results": {
+    "marine_envelope_deployed_features": {
+      "baseline_family_mean": {
+        "mae": 1.021032,
+        "r2": -0.637328,
+        "rmse": 1.168663
+      },
+      "baseline_global_mean": {
+        "mae": 1.037158,
+        "r2": -0.7993,
+        "rmse": 1.225105
+      },
+      "error_reduction_vs_best_baseline_pct": 5.870238,
+      "gbm": {
+        "mae": 0.903877,
+        "r2": -0.45074,
+        "rmse": 1.10006
+      },
+      "n_test": 186,
+      "n_train": 7096,
+      "per_family": [
+        {
+          "family": "copper_alloy",
+          "mean_abs_err_log10": 0.811755,
+          "n_test": 41,
+          "r2": -0.882326,
+          "rmse": 1.141326
+        },
+        {
+          "family": "carbon_steel_cast_iron",
+          "mean_abs_err_log10": 1.358906,
+          "n_test": 38,
+          "r2": -16.030178,
+          "rmse": 1.404758
+        },
+        {
+          "family": "stainless_steel",
+          "mean_abs_err_log10": 0.637813,
+          "n_test": 30,
+          "r2": -0.936008,
+          "rmse": 0.823335
+        },
+        {
+          "family": "aluminum",
+          "mean_abs_err_log10": 0.718011,
+          "n_test": 21,
+          "r2": 0.381735,
+          "rmse": 0.893442
+        },
+        {
+          "family": "lead",
+          "mean_abs_err_log10": 0.892728,
+          "n_test": 18,
+          "r2": -5.15042,
+          "rmse": 0.935476
+        },
+        {
+          "family": "nickel_alloy",
+          "mean_abs_err_log10": 0.764345,
+          "n_test": 18,
+          "r2": -3.04838,
+          "rmse": 0.839486
+        },
+        {
+          "family": "titanium",
+          "mean_abs_err_log10": 0.976083,
+          "n_test": 18,
+          "r2": 0.113312,
+          "rmse": 1.288562
+        },
+        {
+          "family": "tin",
+          "mean_abs_err_log10": 0.795658,
+          "n_test": 2,
+          "r2": null,
+          "rmse": 0.795658
+        }
+      ]
+    },
+    "marine_envelope_patched_no_atmospheric_conflation": {
+      "baseline_family_mean": {
+        "mae": 1.021032,
+        "r2": -0.637328,
+        "rmse": 1.168663
+      },
+      "baseline_global_mean": {
+        "mae": 1.037158,
+        "r2": -0.7993,
+        "rmse": 1.225105
+      },
+      "error_reduction_vs_best_baseline_pct": 8.91193,
+      "gbm": {
+        "mae": 0.87199,
+        "r2": -0.358497,
+        "rmse": 1.064513
+      },
+      "n_test": 186,
+      "n_train": 7096,
+      "per_family": [
+        {
+          "family": "copper_alloy",
+          "mean_abs_err_log10": 0.989167,
+          "n_test": 41,
+          "r2": -0.978847,
+          "rmse": 1.170222
+        },
+        {
+          "family": "carbon_steel_cast_iron",
+          "mean_abs_err_log10": 0.65967,
+          "n_test": 38,
+          "r2": -3.595925,
+          "rmse": 0.729757
+        },
+        {
+          "family": "stainless_steel",
+          "mean_abs_err_log10": 0.740804,
+          "n_test": 30,
+          "r2": -1.255205,
+          "rmse": 0.88862
+        },
+        {
+          "family": "aluminum",
+          "mean_abs_err_log10": 1.222315,
+          "n_test": 21,
+          "r2": -0.510688,
+          "rmse": 1.396582
+        },
+        {
+          "family": "lead",
+          "mean_abs_err_log10": 0.258671,
+          "n_test": 18,
+          "r2": 0.133275,
+          "rmse": 0.351173
+        },
+        {
+          "family": "nickel_alloy",
+          "mean_abs_err_log10": 1.203731,
+          "n_test": 18,
+          "r2": -11.243676,
+          "rmse": 1.459919
+        },
+        {
+          "family": "titanium",
+          "mean_abs_err_log10": 1.18803,
+          "n_test": 18,
+          "r2": 0.148822,
+          "rmse": 1.262496
+        },
+        {
+          "family": "tin",
+          "mean_abs_err_log10": 0.483164,
+          "n_test": 2,
+          "r2": null,
+          "rmse": 0.483164
+        }
+      ]
+    }
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-marine-envelope-attack.v1",
+  "scope_honesty": "Diagnostic on bare metal/alloy substrate corrosion (NIST CORR-DATA), same scope ceiling as corr-rate-qspr-v1, corr-rate-family-safe-v1, and corr-rate-family-lofo-v1: NOT organic-coating barrier performance. No candidate/coating superiority claim; no batch-release, manufacturing-qualification, optimizer, or product-performance authority.",
+  "verdict": "CLAIM_REFUTED"
+}

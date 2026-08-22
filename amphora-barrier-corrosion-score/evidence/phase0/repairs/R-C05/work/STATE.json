@@ -1,0 +1,50 @@
+{
+  "item": "R-C05",
+  "last_fire_fire_id": "20260812T090002-2576123-87df1529555a",
+  "fires_completed": 3,
+  "status_after_this_fire": "done_rescoped",
+  "acceptance_criterion": "Both directions (forward, reverse) of the EXACT domain-shift protocol (cal=marine/test=non-marine and reverse) must reach >= 0.88 observed coverage at the 0.90 target, using a Mondrian calibrator stratified by chloride-environment class.",
+  "original_refuted_numbers": {
+    "forward_0.90_target_coverage": 0.922339,
+    "reverse_0.90_target_coverage": 0.876307,
+    "reverse_needs_n_covered_out_of_2773": 2441,
+    "reverse_had_n_covered": 2430
+  },
+  "fire1_summary": "Naive per-class Mondrian: worse both directions (REJECTED). Conservative-floor Mondrian (per-class quantile clamped >= pooled): reverse 0.876307 -> 0.877389 (2433/2773), still 8 rows short of 2441. Coarse 2-class variant: identical result.",
+  "fire2_summary": {
+    "structural_ceiling_proof": "Exact accounting: reverse leg marine-calibration data (n=1043) has 6 of 8 chloride-environment classes at EXACTLY ZERO rows (alkali, organic_acid, other_acid, salt_other, sulfuric, water); only halide (928) and other (115) are nonzero. 2105 of 2773 (75.9%) nonmarine test rows fall in zero-cal classes and are PROVABLY forced to the pooled fallback quantile regardless of MIN_CLASS_N threshold or class granularity -- this closes off the hyperparameter space fire 1 left unexplored (lower MIN_CLASS_N cannot help: zero is zero at any threshold).",
+    "reweighted_conformal_probe": "Likelihood-ratio reweighted split conformal (Tibshirani et al 2019), run as a supplementary diagnostic (NOT a substitute for the pinned Mondrian mechanism): FAILED much worse (observed coverage 0.0638 vs floor 0.88). Domain classifier (logistic regression on covariates) achieves AUC=1.0 distinguishing marine-cal from nonmarine-test rows -- near-total positivity/overlap violation, same root cause as the ceiling proof. Confirms this is not a Mondrian-specific limitation: the reverse-direction covariate shift is severe enough that no calibration-side reweighting fix (of the two tried) can plausibly close the gap.",
+    "verdict": "CLAIM_REFUTED, repair_status=in_progress. Mondrian-by-chloride-class mechanism space now EXHAUSTIVELY shown incapable (empirically fire1 + analytically fire2)."
+  },
+  "recommendation_for_next_fire": [
+    "Fire 3 is the FINAL permitted fire (max_fires=3): the re-scope hatch becomes available (len(fires)>=max_fires-1=2 satisfied once fire 2's ledger record lands).",
+    "STRONG RECOMMENDATION: invoke the re-scope hatch. Two independent calibration-side mechanisms (Mondrian stratification, likelihood-ratio reweighting) have now failed this exact acceptance floor, the second failing an order of magnitude worse due to a provable near-total covariate-support mismatch (76% of reverse-leg test rows in chloride classes with zero marine-calibration representation; domain-classifier AUC=1.0). Do not attempt a third calibration mechanism against a shift this severe -- diminishing information value.",
+    "Re-scope deliverable: report the per-environment-class coverage table (chloride_env_class x direction) as the new claim, stating plainly which classes have marine-calibration support and which do not, and which chloride classes in the deployed (nonmarine) population are and are not covered by any calibration mechanism tried. This is the honest, information-preserving outcome the campaign item's own hatch anticipates for exactly this failure mode.",
+    "Do not re-try naive per-class Mondrian, conservative-floor Mondrian (any granularity, any MIN_CLASS_N), or likelihood-ratio reweighting with the same domain-classifier design -- all now shown either insufficient or degenerate for this reverse leg."
+  ],
+  "artifacts_fire1": [
+    "evidence/phase0/repairs/R-C05/work/mondrian_domain_shift_conformal.py",
+    "evidence/phase0/repairs/R-C05/attempts/r-c05-mondrian-repair-checkpoint-fire1.v1.dsse.json"
+  ],
+  "artifacts_fire2": [
+    "evidence/phase0/repairs/R-C05/work/reweighted_probe.py",
+    "evidence/phase0/repairs/R-C05/work/probe.runA.json",
+    "evidence/phase0/repairs/R-C05/work/probe.runB.json",
+    "evidence/phase0/repairs/R-C05/attempts/r-c05-mondrian-repair-checkpoint-fire2.v1.dsse.json"
+  ],
+  "original_refuting_receipt_cited": {
+    "path": "amphora-barrier-corrosion-score/benchmarks/corr-rate-conformal-domain-shift-v1/corr-rate-conformal-domain-shift-receipt.v1.dsse.json",
+    "envelope_sha256": "6cfa98626ac5f9e3dce9f2a1011a4d46ab6542c642d11492d787cc1d9366c3fb",
+    "harness_script": "amphora-barrier-corrosion-score/benchmarks/corr-rate-conformal-domain-shift-v1/domain_shift_conformal.py",
+    "harness_sha256": "382dd05855890a3105d0cc085d2b7f8dc0a088cf9e0a29123fb185aef205ae14",
+    "seed": 0,
+    "threshold": "0.90 target coverage, one-sided exact binomial p<0.05 significance"
+  },
+  "fire3_summary": {
+    "action": "Invoked the pre-registered re-scope hatch (final permitted fire, max_fires=3 exhausted).",
+    "acceptance_reconfirmed_not_met": "Reverse-leg pooled 0.876307 and conservative-Mondrian 0.877389 both < 0.88, reconfirmed on a fresh identical-protocol run (two-replay byte-stable).",
+    "new_claim": "Per-chloride-environment-class coverage table, both directions, both calibrators. Only 2/8 reverse-leg classes (halide, other; 24.1% of test rows) have any marine-calibration support; both clear 0.88 individually. Remaining 6 classes (76% of test rows) have zero marine-calibration rows and fall back to pooled quantile with no calibration-side fix available.",
+    "receipt": "amphora-barrier-corrosion-score/evidence/phase0/repairs/R-C05/done/r-c05-per-environment-coverage-rescope-receipt.v1.dsse.json",
+    "verdict": "CLAIM_REFUTED, repair_status=rescoped, campaign_item_status=done (rescope resolution)"
+  }
+}

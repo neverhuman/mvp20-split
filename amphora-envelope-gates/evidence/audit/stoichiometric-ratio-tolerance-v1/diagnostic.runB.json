@@ -1,0 +1,408 @@
+{
+  "acceptance_bar_floors": {
+    "all_met": true,
+    "g1_nominal_ratio_re_derivation_floor": 1.0,
+    "g2_interval_corner_invariant_floor": 1.0,
+    "g3_metrology_ordering_required": true,
+    "g4_gap_demonstrated_all_envelopes": true,
+    "g5_ratio_tamper_fail_closed_floor": 1.0
+  },
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "closes": "Quantifies, from published metrology, the exact ratio tolerance the per-part envelope induces and proves the ratio-gate gap is real under the shipped contract for all 10 envelopes.",
+  "does_not_close": "Does not add a ratio constraint to any policy, does not modify the runtime, benchmark-lock, locked dataset, KPI, or manifest, and makes no wet-lab / cure / Tg performance claim. Remediation (an explicit mass.part_A_g/mass.part_B_g ratio constraint per envelope) requires a human Phase-0 fixture/lock revision this cron cannot perform.",
+  "fixture": {
+    "n_envelopes": 10,
+    "path": "reference/phase0-envelope-gates-known-answer.v1.json",
+    "rights": {
+      "eligible_for_derivatives": true,
+      "license": "CC0-1.0",
+      "scope": "Amphora-authored two-part epoxy-amine coating formulation envelope compilation from Wicks/Jones/Pappas 2007 Chapters 24-25, Ellis 1993 Chapter 6, and supplier technical data sheets for Phase-0 constraint-envelope controls only; no wet-lab measurements or CRO data checked in",
+      "source_id": "amphora_phase0_envelope_gates_known_answer",
+      "source_url": "local:amphora-envelope-gates/reference/phase0-envelope-gates-known-answer.v1.json",
+      "status": "ACCEPTED"
+    },
+    "sha256": "aab0b9a8af2e14ab053744f1dee88f785be37321d582039716a81fee9aec5b52"
+  },
+  "gates": {
+    "G1_nominal_ratio_re_derivation": {
+      "n_consistent": 10,
+      "n_envelopes": 10,
+      "passed": true
+    },
+    "G2_interval_ratio_corner_invariant": {
+      "high_excursion_pct": 10.5263157895,
+      "low_excursion_pct": -9.5238095238,
+      "passed": true
+    },
+    "G3_gum_metrology_ordering": {
+      "ordering": "GUM_RSS < first_order_linear_sum < interval_high",
+      "passed": true,
+      "values_pct": [
+        7.0710678119,
+        10.0,
+        10.5263157895
+      ]
+    },
+    "G4_per_part_membership_ratio_gap": {
+      "gap_definition": "(part_A=+5%, part_B=-5%) corner PASSES all three hard gates yet mix ratio is +10.5263% off nominal (>+/-5% intent)",
+      "n_envelopes": 10,
+      "n_gap_exhibited": 10,
+      "passed": true
+    },
+    "G5_ratio_tamper_battery_fail_closed": {
+      "n_fail_closed": 6,
+      "n_probes": 6,
+      "passed": true,
+      "probes": [
+        {
+          "detail": "b<=0 rejected",
+          "fail_closed": true,
+          "probe": "ratio_zero_part_B"
+        },
+        {
+          "detail": "b<=0 rejected",
+          "fail_closed": true,
+          "probe": "ratio_negative_part_B"
+        },
+        {
+          "detail": "non-finite rejected",
+          "fail_closed": true,
+          "probe": "ratio_nan_part_A"
+        },
+        {
+          "detail": "non-finite rejected",
+          "fail_closed": true,
+          "probe": "ratio_inf_part_A"
+        },
+        {
+          "detail": "oracle rejects untrusted",
+          "fail_closed": true,
+          "probe": "untrusted_snapshot_corner"
+        },
+        {
+          "detail": "oracle rejects absent feature",
+          "fail_closed": true,
+          "probe": "missing_part_B_feature"
+        }
+      ]
+    }
+  },
+  "headline": "Per-part +/-5% mass envelopes INDUCE a stoichiometric mix-ratio tolerance of +10.5263%/-9.5238% (exact interval arithmetic; GUM RSS combined 7.0711%), r0-invariant across all 10 epoxy-amine envelopes. The (A_hi,B_lo) corner passes all three shipped hard gates while the mix ratio is 2.1x outside the +/-5% QC intent: the 3-constraint envelope policy does not bound the chemically load-bearing ratio.",
+  "metrology_constants": {
+    "excursion_invariant_across_envelopes": true,
+    "first_order_linear_sum_pct": 10.0,
+    "gum_rss_combined_rel_std_uncertainty_pct": 7.0710678119,
+    "interval_ratio_high_excursion_pct": 10.5263157895,
+    "interval_ratio_high_factor": 1.1052631579,
+    "interval_ratio_low_excursion_pct": -9.5238095238,
+    "interval_ratio_low_factor": 0.9047619048,
+    "note": "Excursion is r0-independent: (1+p)/(1-p) and (1-p)/(1+p) do not depend on the nominal ratio. Exact high-side excursion (10.5263%) EXCEEDS the first-order linear estimate (10.0%) because A/B is convex in B (JCGM 100:2008 F.2.4).",
+    "per_part_band_fraction": 0.05
+  },
+  "module": "amphora-envelope-gates",
+  "non_circularity": "Ratio r=A/B, interval corners [A_lo/B_hi, A_hi/B_lo], and the GUM RSS u_r/r=sqrt((u_A/A)^2+(u_B/B)^2) are first-principles published metrology authored here; only on-disk fixture bytes are consumed. The shipped constraint-envelope-oracle-v1 evaluate_gate is reused only to confirm the ratio-drifted corner PASSES under the actual contract.",
+  "per_envelope": [
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 9.9473684211,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aliphatic-polyamine",
+      "interval_ratio_high": 9.9473684211,
+      "interval_ratio_low": 8.1428571429,
+      "nominal_part_a_g": 180.0,
+      "nominal_part_b_g": 20.0,
+      "nominal_ratio_r0": 9.0,
+      "part_a_band_g": [
+        171.0,
+        189.0
+      ],
+      "part_b_band_g": [
+        19.0,
+        21.0
+      ],
+      "r0_from_published_string": 9.0,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 18.7894736842,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aliphatic-polyamine",
+      "interval_ratio_high": 18.7894736842,
+      "interval_ratio_low": 15.380952381,
+      "nominal_part_a_g": 170.0,
+      "nominal_part_b_g": 10.0,
+      "nominal_ratio_r0": 17.0,
+      "part_a_band_g": [
+        161.5,
+        178.5
+      ],
+      "part_b_band_g": [
+        9.5,
+        10.5
+      ],
+      "r0_from_published_string": 17.0,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 7.3684210526,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aliphatic-polyamine",
+      "interval_ratio_high": 7.3684210526,
+      "interval_ratio_low": 6.0317460317,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 15.0,
+      "nominal_ratio_r0": 6.6666666667,
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        14.25,
+        15.75
+      ],
+      "r0_from_published_string": 6.6666666667,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 4.6052631579,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "interval_ratio_high": 4.6052631579,
+      "interval_ratio_low": 3.7698412698,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 24.0,
+      "nominal_ratio_r0": 4.1666666667,
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        22.8,
+        25.2
+      ],
+      "r0_from_published_string": 4.1666666667,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 7.3684210526,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "cycloaliphatic-amine",
+      "interval_ratio_high": 7.3684210526,
+      "interval_ratio_low": 6.0317460317,
+      "nominal_part_a_g": 200.0,
+      "nominal_part_b_g": 30.0,
+      "nominal_ratio_r0": 6.6666666667,
+      "part_a_band_g": [
+        190.0,
+        210.0
+      ],
+      "part_b_band_g": [
+        28.5,
+        31.5
+      ],
+      "r0_from_published_string": 6.6666666667,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 5.023923445,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aromatic-amine",
+      "interval_ratio_high": 5.023923445,
+      "interval_ratio_low": 4.1125541126,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 22.0,
+      "nominal_ratio_r0": 4.5454545455,
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        20.9,
+        23.1
+      ],
+      "r0_from_published_string": 4.5454545455,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 7.8947368421,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "aromatic-amine",
+      "interval_ratio_high": 7.8947368421,
+      "interval_ratio_low": 6.462585034,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 14.0,
+      "nominal_ratio_r0": 7.1428571429,
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        13.3,
+        14.7
+      ],
+      "r0_from_published_string": 7.1428571429,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 2.2105263158,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "amidoamine-adduct",
+      "interval_ratio_high": 2.2105263158,
+      "interval_ratio_low": 1.8095238095,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 50.0,
+      "nominal_ratio_r0": 2.0,
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        47.5,
+        52.5
+      ],
+      "r0_from_published_string": 2.0,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 2.0854021847,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "amidoamine-adduct",
+      "interval_ratio_high": 2.0854021847,
+      "interval_ratio_low": 1.7070979335,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 53.0,
+      "nominal_ratio_r0": 1.8867924528,
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        50.35,
+        55.65
+      ],
+      "r0_from_published_string": 1.8867924528,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    },
+    {
+      "corner_A_hi_B_lo_verdict": "PASS",
+      "corner_binding_margin": 0.0,
+      "corner_ratio": 3.0701754386,
+      "corner_ratio_excursion_pct": 10.5263157895,
+      "env_ok": true,
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "g1_nominal_ratio_consistent": true,
+      "g2_high_matches_invariant": true,
+      "g2_low_matches_invariant": true,
+      "g4_gap_exhibited": true,
+      "hardener_family": "mannich-base",
+      "interval_ratio_high": 3.0701754386,
+      "interval_ratio_low": 2.5132275132,
+      "nominal_part_a_g": 100.0,
+      "nominal_part_b_g": 36.0,
+      "nominal_ratio_r0": 2.7777777778,
+      "part_a_band_g": [
+        95.0,
+        105.0
+      ],
+      "part_b_band_g": [
+        34.2,
+        37.8
+      ],
+      "r0_from_published_string": 2.7777777778,
+      "ratio_excursion_high_pct": 10.5263157895,
+      "ratio_excursion_low_pct": -9.5238095238
+    }
+  ],
+  "purpose": "Derive from first-principles metrology the stoichiometric mix-ratio tolerance INDUCED by the shipped per-part +/-5% mass envelopes, and quantify the per-part-membership -> ratio-gate gap for two-part epoxy-amine coatings.",
+  "run_type": "independent_non_runtime_theory_axis",
+  "schema": "amphora.envelope-gates.stoichiometric-ratio-tolerance-diagnostic.v1",
+  "study_id": "stoichiometric-ratio-tolerance-v1",
+  "theory_reference": [
+    "JCGM 100:2008 (GUM) Evaluation of measurement data -- Guide to the expression of uncertainty in measurement; Law of Propagation of Uncertainty, 5.1.2, F.2.4 (quotient of independent inputs).",
+    "Moore, R.E., Interval Analysis, Prentice-Hall, 1966 (exact worst-case endpoints of a quotient over independent intervals).",
+    "Wicks, Jones, Pappas, Wicks, 'Organic Coatings: Science and Technology', 3rd ed., Wiley 2007, Ch.24-25 (two-part epoxy-amine QC mix tolerance, +/-5% by mass).",
+    "Ellis, B. (ed.), 'Chemistry and Technology of Epoxy Resins', Blackie 1993, Ch.6 (stoichiometric amine:epoxide balance).",
+    "May, C.A. (ed.), 'Epoxy Resins: Chemistry and Technology', 2nd ed., Marcel Dekker 1988, Ch.4 (off-stoichiometry effect on network)."
+  ]
+}

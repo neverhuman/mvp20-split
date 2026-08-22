@@ -1,0 +1,469 @@
+{
+  "authority_changes": false,
+  "module_count": 29,
+  "modules": [
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-barrier-corrosion-score",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-candidate-contract",
+      "movement_event": "movement-b84d5030684c428bb9eecd7da361cab7ccb69b15c14225f09b9655b374bf384c",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "NOT_APPLICABLE",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-cro-protocol-packager",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-cure-potlife-gate",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-design-rule-score",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-envelope-gates",
+      "movement_event": "movement-a4c0caea439dafe4194e4fded16f52e2750194b66e886ca471aa3688c88471a9",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "NOT_APPLICABLE",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-evidence-intake-validator",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-formulation-arithmetic",
+      "movement_event": "movement-32ca87ca5d25764cf99b59085d36e6fd81c3f4a1258c2a85f678608c2357fa7d",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "NOT_APPLICABLE",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-formulation-universe",
+      "movement_event": "movement-125c1b04091072e77a7f3d88f211cc0f2e76907e1be090a5e5175a704cefe77a",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "NOT_APPLICABLE",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-ingredient-library",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-ip-fto-guard",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-known-answer-benchmarks",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-model-card-authority",
+      "movement_event": "movement-ff3c50af971e6ab63064a5ed84774f3ed6be8c44d5066245a0ae4b8579d84f58",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "NOT_APPLICABLE",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-molecule-design-gate",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "IMMUTABLE_ORD_ACQUISITION_ABSENT",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-molecule-generator",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-molecule-novelty",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-molecule-property",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-molecule-role-ranker",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-optimizer-orchestrator",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-process-qc-twin",
+      "movement_event": "movement-b1d92aa9ba4b5d67e64eb2bcc3d397505b4ad795c6bacb577ffe549f37fbdc4f",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "LOCKED_INTERNAL",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: current module diagnostic differs from the evaluated bytes"
+      ],
+      "module_id": "amphora-public-corrosion-benchmark",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-redteam-audit",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-report-packager",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-run-provenance",
+      "movement_event": "movement-1475dbe70b2887617d14e5d9a56fe961032f64b245e5aa5370d0cee4c4fe14f7",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "NOT_APPLICABLE",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-solvency-score",
+      "movement_event": "movement-71883a5b16c47eed8a0fe02c5eb4e998d529295d59c2d74f9653c8ed7d22a2e2",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "LOCKED_INTERNAL",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt"
+      ],
+      "module_id": "amphora-source-ledger",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "NOT_APPLICABLE"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-sourceability-ehs",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": true,
+      "failed_gates": [],
+      "module_id": "amphora-tolerance-robustness",
+      "movement_event": "movement-4bce858437ddc5e152910c74c154716a5008380513216c8511ab3e8a629cc985",
+      "phase": "PHASE_0",
+      "phase0_eligible": true,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": true,
+      "scientific_readiness": "LOCKED_INTERNAL",
+      "target_status": "LOCKED_INTERNAL"
+    },
+    {
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evaluation_signed": false,
+      "failed_gates": [
+        "SOURCE_LOCK_INVALID: missing field `authorization_overlay_path`",
+        "RIGHTS_OR_LICENSE_INCOMPLETE",
+        "EVALUATION_SIGNATURE_ABSENT"
+      ],
+      "module_id": "amphora-viscosity-score",
+      "movement_event": null,
+      "phase": "PRE_PHASE_0",
+      "phase0_eligible": false,
+      "prepared": true,
+      "promotable": false,
+      "review_signed": false,
+      "scientific_readiness": "UNVALIDATED",
+      "target_status": "LOCKED_INTERNAL"
+    }
+  ],
+  "phase0_count": 9,
+  "pre_phase0_count": 20,
+  "schema": "amphora.module-evidence-decision-report.v2",
+  "status": "EXECUTION_INCOMPLETE",
+  "status_rule": "current phase is derived only from the latest valid module-local movement event with two distinct trusted signatures"
+}

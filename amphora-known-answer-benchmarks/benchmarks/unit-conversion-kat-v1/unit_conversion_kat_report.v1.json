@@ -1,0 +1,205 @@
+{
+  "aggregate_status": "PASS",
+  "all_positive_exact": true,
+  "all_traps_rejected": true,
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "LIMITED_SANITY",
+  "cross_check_existing_arith_controls": {
+    "F160_compA_implied_gml": "0.984973",
+    "F160_compA_lbgal": 8.22,
+    "F160_compB_implied_gml": "1.227023",
+    "F160_compB_lbgal": 10.24,
+    "note": "The two live MIL-DTL-24441 F-160 lb/gal controls in this module (8.22 and 10.24 lb/gal) imply g/mL densities via the NIST-exact factor 8.345404; this battery locks that factor so a future edit to the conversion constant is caught as a known-answer regression."
+  },
+  "fail_closed_flag_rate": "1.000000",
+  "fail_closed_results": [
+    {
+      "abs_error": "0.015404",
+      "correct_exact": "8.345404",
+      "correctly_flagged": true,
+      "id": "TRAP-WATER-833",
+      "wrong_value": 8.33
+    },
+    {
+      "abs_error": "1.677009",
+      "correct_exact": "8.345404",
+      "correctly_flagged": true,
+      "id": "TRAP-IMPERIAL-GAL",
+      "wrong_value": 10.022413
+    },
+    {
+      "abs_error": "974.600000",
+      "correct_exact": "25.400000",
+      "correctly_flagged": true,
+      "id": "TRAP-MIL-AS-MM",
+      "wrong_value": 1000.0
+    }
+  ],
+  "methodology": "FIPS 140-3 Sec 7.4 Known-Answer Test (2019); NIST SP 811 (2008); NIST HB 44; 1959 international yard-and-pound; BIPM SI. Exact rational re-derivation; float-free gate.",
+  "module_id": "amphora-known-answer-benchmarks",
+  "n_fail_closed": 3,
+  "n_fail_closed_correctly_flagged": 3,
+  "n_positive": 14,
+  "n_positive_pass": 14,
+  "positive_pass_rate": "1.000000",
+  "positive_results": [
+    {
+      "decimals": 6,
+      "exact_rational": "24580596/2945405",
+      "id": "DENS-GML-TO-LBGAL",
+      "independently_derived": "8.345404",
+      "input": 1.0,
+      "input_unit": "g/mL",
+      "match": true,
+      "output_unit": "lb/US_gal",
+      "pinned_expected": "8.345404"
+    },
+    {
+      "decimals": 6,
+      "exact_rational": "736351250/6145149",
+      "id": "VOC-LBGAL-TO-GL",
+      "independently_derived": "119.826427",
+      "input": 1.0,
+      "input_unit": "lb/US_gal",
+      "match": true,
+      "output_unit": "g/L",
+      "pinned_expected": "119.826427"
+    },
+    {
+      "decimals": 3,
+      "exact_rational": "2061783500/6145149",
+      "id": "VOC-2P8-LBGAL-TO-GL",
+      "independently_derived": "335.514",
+      "input": 2.8,
+      "input_unit": "lb/US_gal",
+      "match": true,
+      "output_unit": "g/L",
+      "pinned_expected": "335.514"
+    },
+    {
+      "decimals": 1,
+      "exact_rational": "127/5",
+      "id": "DFT-1MIL-TO-UM",
+      "independently_derived": "25.4",
+      "input": 1.0,
+      "input_unit": "mil",
+      "match": true,
+      "output_unit": "um",
+      "pinned_expected": "25.4"
+    },
+    {
+      "decimals": 1,
+      "exact_rational": "127/1",
+      "id": "DFT-5MIL-TO-UM",
+      "independently_derived": "127.0",
+      "input": 5.0,
+      "input_unit": "mil",
+      "match": true,
+      "output_unit": "um",
+      "pinned_expected": "127.0"
+    },
+    {
+      "decimals": 6,
+      "exact_rational": "500/127",
+      "id": "DFT-100UM-TO-MIL",
+      "independently_derived": "3.937008",
+      "input": 100.0,
+      "input_unit": "um",
+      "match": true,
+      "output_unit": "mil",
+      "pinned_expected": "3.937008"
+    },
+    {
+      "decimals": 6,
+      "exact_rational": "9625/6",
+      "id": "COVERAGE-1MIL-100VS-FT2GAL",
+      "independently_derived": "1604.166667",
+      "input": 1.0,
+      "input_unit": "mil_at_100pct_volume_solids",
+      "match": true,
+      "output_unit": "ft2/US_gal",
+      "pinned_expected": "1604.166667"
+    },
+    {
+      "decimals": 3,
+      "exact_rational": "1000/1",
+      "id": "COVERAGE-1UM-100VS-M2L",
+      "independently_derived": "1000.000",
+      "input": 1.0,
+      "input_unit": "um_at_100pct_volume_solids",
+      "match": true,
+      "output_unit": "m2/L",
+      "pinned_expected": "1000.000"
+    },
+    {
+      "decimals": 6,
+      "exact_rational": "5000/127",
+      "id": "COVERAGE-1604-FT2GAL-TO-M2L",
+      "independently_derived": "39.370079",
+      "input": 1604.166667,
+      "input_unit": "ft2/US_gal",
+      "match": true,
+      "output_unit": "m2/L",
+      "pinned_expected": "39.370079"
+    },
+    {
+      "decimals": 2,
+      "exact_rational": "5963/20",
+      "id": "TEMP-25C-TO-K",
+      "independently_derived": "298.15",
+      "input": 25.0,
+      "input_unit": "degC",
+      "match": true,
+      "output_unit": "K",
+      "pinned_expected": "298.15"
+    },
+    {
+      "decimals": 1,
+      "exact_rational": "77/1",
+      "id": "TEMP-25C-TO-F",
+      "independently_derived": "77.0",
+      "input": 25.0,
+      "input_unit": "degC",
+      "match": true,
+      "output_unit": "degF",
+      "pinned_expected": "77.0"
+    },
+    {
+      "decimals": 6,
+      "exact_rational": "45359237/100000000",
+      "id": "MASS-1LB-TO-KG",
+      "independently_derived": "0.453592",
+      "input": 1.0,
+      "input_unit": "lb",
+      "match": true,
+      "output_unit": "kg",
+      "pinned_expected": "0.453592"
+    },
+    {
+      "decimals": 6,
+      "exact_rational": "473176473/125000000",
+      "id": "VOL-1GAL-TO-L",
+      "independently_derived": "3.785412",
+      "input": 1.0,
+      "input_unit": "US_gal",
+      "match": true,
+      "output_unit": "L",
+      "pinned_expected": "3.785412"
+    },
+    {
+      "decimals": 6,
+      "exact_rational": "145161/1562500",
+      "id": "AREA-1FT2-TO-M2",
+      "independently_derived": "0.092903",
+      "input": 1.0,
+      "input_unit": "ft2",
+      "match": true,
+      "output_unit": "m2",
+      "pinned_expected": "0.092903"
+    }
+  ],
+  "schema": "amphora.known-answer.unit-conversion-kat-report.v1",
+  "scientific_claim": "Deterministic unit-conversion arithmetic reproduces exact primary-source defining constants; regressions in the conversion factors are detected. NOT a candidate performance or qualification claim.",
+  "vector_set_id": "unit-conversion-kat-v1",
+  "vectors_file_sha256": "ad196c31f844d09cd9239d28802a42159b3c8bc53964e694d3024b4febcbb44f"
+}

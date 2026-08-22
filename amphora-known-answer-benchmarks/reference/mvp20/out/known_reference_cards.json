@@ -1,0 +1,614 @@
+{
+ "schema": "mvp20.known_reference_cards.v2",
+ "title": "Known Reference Cards",
+ "generated_utc": "2026-07-03T00:00:00Z",
+ "check_label": "Known-Control Recovery Check",
+ "check_scope": "Pass/fail validation checks for known controls and negative controls; not evidence ranks and never mixed with candidate feasibility bands.",
+ "positive_known_reference_count": 5,
+ "negative_control_count": 3,
+ "red_team_self_audit": [
+  "Known actuals are post-hoc checks and are not used to generate unknown candidates or assign feasibility bands.",
+  "Known-control checks are not candidate evidence ranks.",
+  "F160 black is held as a source-conflict check and receives no known-answer recovery credit until authoritative /38B or NAVSEA/DLA confirmation.",
+  "F161 full-BOM checks disclose VS residuals as variance, not top recovery proof.",
+  "Partial-TDS anchors are visibly marked class checks and cannot receive full-BOM recovery credit.",
+  "Negative controls are expected-rejection checks and carry no recovery score."
+ ],
+ "cards": [
+  {
+   "display_order": 1,
+   "id": "F160-BLACK",
+   "name": "F160 black public formula",
+   "control_type": "positive_known_reference",
+   "expected_behavior": {
+    "behavior": "surface unresolved Formula 160 black source conflict and block known-answer credit",
+    "credit_limit": "provisional physical reconciliation pending authoritative /38B or NAVSEA/DLA confirmation",
+    "source_conflict_status": "OPEN - source conflict pending authoritative /38B or NAVSEA/DLA confirmation",
+    "variance_disclosure": "VS residual around 3.8 points is disclosed as variance, not top recovery proof"
+   },
+   "engine_result": {
+    "verdict": "HOLD_SOURCE_CONFLICT_NOT_KNOWN_ANSWER",
+    "predicted_metrics": {
+     "volume_solids_pct": 64.044,
+     "voc_g_per_l": 284.707,
+     "weight_lb_per_gal": 9.236,
+     "density_g_ml": 1.107,
+     "pvc_pct": 8.175,
+     "lambda_pvc_cpvc": 0.155,
+     "stoichiometric_ratio": 0.78,
+     "mix_ratio_by_volume": 0.976,
+     "coverage_ft2_gal_at_dft": 205.476,
+     "wft_mils_at_dft": 7.807
+    },
+    "reported_actuals": {
+     "published_volume_solids_pct": 60.2,
+     "voc_g_l_mixed_max": 340,
+     "pot_life_h_mixed_73F": 6,
+     "epoxy_vehicle_EEW_range": [
+      175,
+      190
+     ]
+    },
+    "partial_data_status": "",
+    "prediction_residuals": {
+     "volume_solids_pts": 3.844,
+     "voc_margin_g_l": 55.293,
+     "mix_ratio_delta_from_1_to_1": -0.024
+    },
+    "model_outputs": {
+     "arithmetic": "provisional physical reconciliation only; authoritative /38B or NAVSEA/DLA confirmation required",
+     "solvency": "government-precedent solvent family recovered",
+     "cure_potlife": "reported pot-life captured as an actual; pot-life model still has no rank authority",
+     "barrier_corrosion": "lineage/control context only; not a corrosion performance rank",
+     "sourcing_robustness": "authority formula source, not supplier procurement closure"
+    }
+   },
+   "pass_fail": "HOLD",
+   "validates": [
+    "source-conflict surfacing",
+    "fail-closed evidence handling"
+   ],
+   "does_not_validate": [
+    "known-answer recovery",
+    "top recovery proof",
+    "candidate performance",
+    "corrosion performance",
+    "pot life",
+    "qualification",
+    "procurement readiness"
+   ],
+   "evidence_tier": "Tier 1 public authority formula with unresolved source conflict",
+   "evidence_completeness": {
+    "badge": "PROVISIONAL SOURCE-CONFLICT",
+    "full_bom": true,
+    "full_bom_credit": false,
+    "partial_tds_class_check_only": false,
+    "source_conflict_hold": true
+   },
+   "source_ids": [
+    "SRC-F160",
+    "DATA:mil_formula_sheets.f160_black_38A"
+   ],
+   "source_urls": [
+    "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_38A.025630.pdf"
+   ],
+   "red_team_caveat": "Do not use Formula 160 black for strong known-answer recovery, qualification, or exact-reproduction claims until an authoritative /38B or NAVSEA/DLA-confirmed source closes the conflict.",
+   "residuals_disclosed": {
+    "volume_solids_pts": 3.844,
+    "voc_margin_g_l": 55.293,
+    "mix_ratio_delta_from_1_to_1": -0.024
+   },
+   "source_conflict": {
+    "status": "OPEN - source conflict pending authoritative /38B or NAVSEA/DLA confirmation",
+    "issue": "The public /38A Formula 160 black record and extracted table structure do not by themselves close the Component-B epoxy_resin/silica assignment with enough authority for known-answer recovery credit.",
+    "printed_or_extracted_values_under_review": {
+     "component_B_epoxy_resin_lb": 709.0,
+     "component_B_silica_lb": 62.0,
+     "component_B_black_iron_oxide_lb": 126.0,
+     "component_B_naphtha_lb": 147.0
+    },
+    "physical_reconciliation": "Epoxy 709 lb / silica 62 lb reconciles Component-B density near the reported 10.2-10.6 lb/gal range and gives a plausible epoxy-rich vehicle; the reversed reading gives an implausibly high density and stoichiometry. This is a provisional physical reconciliation, not an authoritative correction.",
+    "formula_161_comparison": "Formula 161 /39B yellow shows the same base architecture with yellow iron oxide replacing black iron oxide; it supports the reconciliation but does not resolve the /38A black authority conflict.",
+    "claim_limit": "Do not use Formula 160 black for strong known-answer recovery, qualification, or exact-reproduction claims until an authoritative /38B or NAVSEA/DLA-confirmed source closes the conflict."
+   }
+  },
+  {
+   "display_order": 2,
+   "id": "F161-YELLOW",
+   "name": "F161 yellow public formula",
+   "control_type": "positive_known_reference",
+   "expected_behavior": {
+    "behavior": "recompute available full-BOM arithmetic and disclose residuals",
+    "credit_limit": "formula parsing / density / VOC envelope only",
+    "variance_disclosure": "VS residual around 4.0 points is disclosed as variance, not top recovery proof"
+   },
+   "engine_result": {
+    "verdict": "RECOVERED_FULL_BOM_ARITHMETIC_WITH_REPORTED_VS_VARIANCE",
+    "predicted_metrics": {
+     "volume_solids_pct": 64.156,
+     "voc_g_per_l": 283.822,
+     "weight_lb_per_gal": 9.208,
+     "density_g_ml": 1.103,
+     "pvc_pct": 8.62,
+     "lambda_pvc_cpvc": 0.151,
+     "stoichiometric_ratio": 0.78,
+     "mix_ratio_by_volume": 0.97,
+     "coverage_ft2_gal_at_dft": 205.835,
+     "wft_mils_at_dft": 7.793
+    },
+    "reported_actuals": {
+     "published_volume_solids_pct": 60.2,
+     "voc_g_l_mixed_max": 340,
+     "pot_life_h_mixed_73F": 4,
+     "epoxy_vehicle_EEW_range": [
+      175,
+      195
+     ]
+    },
+    "partial_data_status": "",
+    "prediction_residuals": {
+     "volume_solids_pts": 3.956,
+     "voc_margin_g_l": 56.178,
+     "mix_ratio_delta_from_1_to_1": -0.03
+    },
+    "model_outputs": {
+     "arithmetic": "full public BOM reconstructed with cited class constants",
+     "solvency": "government-precedent solvent family recovered",
+     "cure_potlife": "reported pot-life captured as an actual; pot-life model still has no rank authority",
+     "barrier_corrosion": "lineage/control context only; not a corrosion performance rank",
+     "sourcing_robustness": "authority formula source, not supplier procurement closure"
+    }
+   },
+   "pass_fail": "PASS",
+   "validates": [
+    "formula parsing",
+    "density/VOC envelope arithmetic",
+    "known-control sanity check"
+   ],
+   "does_not_validate": [
+    "top recovery proof",
+    "candidate performance",
+    "corrosion performance",
+    "pot life",
+    "qualification",
+    "procurement readiness"
+   ],
+   "evidence_tier": "Tier 1 public authority formula with full BOM",
+   "evidence_completeness": {
+    "badge": "KNOWN FULL-BOM",
+    "full_bom": true,
+    "full_bom_credit": true,
+    "partial_tds_class_check_only": false,
+    "source_conflict_hold": false
+   },
+   "source_ids": [
+    "SRC-F161",
+    "DATA:mil_formula_sheets.f161_yellow_39B"
+   ],
+   "source_urls": [
+    "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_39B.025632.pdf"
+   ],
+   "red_team_caveat": "Full-BOM recovery uses public formula constants and class substitutions; it is not authority authorization, corrosion proof, or a wet-lab performance rank.",
+   "residuals_disclosed": {
+    "volume_solids_pts": 3.956,
+    "voc_margin_g_l": 56.178,
+    "mix_ratio_delta_from_1_to_1": -0.03
+   }
+  },
+  {
+   "display_order": 3,
+   "id": "EVONIK-SPF-A702B75P1",
+   "name": "Evonik SPF A702B75P1",
+   "control_type": "positive_known_reference",
+   "expected_behavior": {
+    "behavior": "recompute available full-BOM arithmetic and disclose residuals",
+    "credit_limit": "formula parsing / density / VOC envelope only"
+   },
+   "engine_result": {
+    "verdict": "PASS_ON_REGISTERED_BARS",
+    "predicted_metrics": {
+     "volume_solids_pct": 60.7,
+     "density_g_ml": 1.448,
+     "voc_g_l": 334.0
+    },
+    "reported_actuals": {
+     "volume_solids_pct": 62.0,
+     "density_g_ml": 1.41,
+     "voc_g_l": 320
+    },
+    "partial_data_status": "",
+    "prediction_residuals": {
+     "vs_pts": -1.31,
+     "density_g_ml": 0.038,
+     "voc_g_l": 14.0
+    },
+    "model_outputs": {
+     "arithmetic": "registered VS and density recompute passed; VOC reported as residual only",
+     "solvency": "xylene/n-butanol/PM supplier SPF solvent set recognized as known coating solvent family",
+     "cure_potlife": "reported pot-life actual exists; cure model remains failed/demoted for candidate ranking",
+     "barrier_corrosion": "supplier anticorrosive primer context only; not a corrosion rank input",
+     "sourcing_robustness": "supplier TDS source, exact grade still requires current SDS/TDS/RFQ for procurement"
+    }
+   },
+   "pass_fail": "PASS",
+   "validates": [
+    "formula parsing",
+    "density/VOC envelope arithmetic",
+    "known-control sanity check"
+   ],
+   "does_not_validate": [
+    "top recovery proof",
+    "candidate performance",
+    "corrosion performance",
+    "pot life",
+    "qualification",
+    "procurement readiness"
+   ],
+   "evidence_tier": "Tier 1 supplier SPF full-BOM arithmetic audit",
+   "evidence_completeness": {
+    "badge": "KNOWN FULL-BOM",
+    "full_bom": true,
+    "full_bom_credit": true,
+    "partial_tds_class_check_only": false,
+    "source_conflict_hold": false
+   },
+   "source_ids": [
+    "DATA:known_answers.spf_arithmetic_audit.A702B75P1"
+   ],
+   "source_urls": [
+    "https://products.evonik.com/assets/s_/us/Ancamide_702B75_us_TDS_EN_EN_TDS_PV_52042312_en_US_US.pdf"
+   ],
+   "red_team_caveat": "Trade-name additive/filler lines use flagged approximate class constants; this is a post-hoc check and never a candidate ranking input.",
+   "residuals_disclosed": {
+    "vs_pts": -1.31,
+    "density_g_ml": 0.038,
+    "voc_g_l": 14.0
+   }
+  },
+  {
+   "display_order": 4,
+   "id": "NCP-TYPE-IV-ANCHOR",
+   "name": "NCP MIL-DTL-24441 Type IV anchor",
+   "control_type": "positive_known_reference",
+   "expected_behavior": {
+    "behavior": "recover the known epoxy-polyamide class envelope only",
+    "credit_limit": "partial-TDS anchor; no full-BOM reconstruction credit"
+   },
+   "engine_result": {
+    "verdict": "RECOVERED_PARTIAL_TDS_CLASS_ANCHOR",
+    "predicted_metrics": {
+     "volume_solids_pct": 65.0,
+     "voc_g_per_l": 281.499,
+     "weight_lb_per_gal": 9.161,
+     "density_g_ml": 1.098,
+     "pvc_pct": 9.326,
+     "lambda_pvc_cpvc": 0.173,
+     "stoichiometric_ratio": 0.7,
+     "mix_ratio_by_volume": 1.0,
+     "coverage_ft2_gal_at_dft": 208.542,
+     "wft_mils_at_dft": 7.692
+    },
+    "reported_actuals": {
+     "volume_solids_pct": 66.5,
+     "vs_tol": 2.0,
+     "weight_solids_pct": 79.2,
+     "weight_lb_per_gal": 11.2,
+     "voc_lb_gal_max": 2.8,
+     "mix_vol": 1.0,
+     "pot_life_h_77F": 5,
+     "mixed_viscosity_ku": [
+      90,
+      105
+     ],
+     "dft_mils": [
+      4.0,
+      6.0
+     ],
+     "recoat_self_h": 12,
+     "topcoat_h": 6
+    },
+    "partial_data_status": "Partial public TDS anchor: reported property envelope is available, but no full BOM is in the corpus; cannot receive full-BOM recovery credit.",
+    "prediction_residuals": {
+     "volume_solids_pts": -1.5,
+     "voc_margin_g_l": 54.501,
+     "mix_ratio_delta_from_reported": 0.0
+    },
+    "model_outputs": {
+     "arithmetic": "candidate lead compared to 1:1 Type-IV/F150 property envelope",
+     "solvency": "solvent-borne epoxy-polyamide class recovered",
+     "cure_potlife": "reported pot-life used only as public precedent; cure model remains demoted",
+     "barrier_corrosion": "class anchor only; no side-by-side corrosion ranking",
+     "sourcing_robustness": "public TDS/product page is not an exact lot or procurement package"
+    }
+   },
+   "pass_fail": "PASS",
+   "validates": [
+    "class-envelope recovery",
+    "1:1 epoxy-polyamide precedent check"
+   ],
+   "does_not_validate": [
+    "full-BOM reconstruction",
+    "corrosion performance",
+    "pot life",
+    "qualification",
+    "procurement readiness"
+   ],
+   "evidence_tier": "Tier 2 public partial-TDS class anchor",
+   "evidence_completeness": {
+    "badge": "KNOWN PARTIAL-TDS",
+    "full_bom": false,
+    "full_bom_credit": false,
+    "partial_tds_class_check_only": true,
+    "source_conflict_hold": false
+   },
+   "source_ids": [
+    "SRC-COMM-NCP-TYPEIV",
+    "DATA:known_answers.naval_class_anchors.NCP-24441-TYPEIV"
+   ],
+   "source_urls": [
+    "https://www.ncpcoatings.com/documents/MIL-DTL-24441,%20Type%20IV.pdf"
+   ],
+   "red_team_caveat": "Partial-TDS anchors support class recovery only; they cannot be treated as full formulation reconstruction or corrosion superiority evidence.",
+   "residuals_disclosed": {
+    "volume_solids_pts": -1.5,
+    "voc_margin_g_l": 54.501,
+    "mix_ratio_delta_from_reported": 0.0
+   }
+  },
+  {
+   "display_order": 5,
+   "id": "INTL-F150-ANCHOR",
+   "name": "International Formula 150 anchor",
+   "control_type": "positive_known_reference",
+   "expected_behavior": {
+    "behavior": "recover the known epoxy-polyamide class envelope only",
+    "credit_limit": "partial-TDS anchor; no full-BOM reconstruction credit"
+   },
+   "engine_result": {
+    "verdict": "PARTIAL_TDS_CLASS_ANCHOR_WITH_VARIANCE",
+    "predicted_metrics": {
+     "volume_solids_pct": 65.0,
+     "voc_g_per_l": 281.499,
+     "weight_lb_per_gal": 9.161,
+     "density_g_ml": 1.098,
+     "pvc_pct": 9.326,
+     "lambda_pvc_cpvc": 0.173,
+     "stoichiometric_ratio": 0.7,
+     "mix_ratio_by_volume": 1.0,
+     "coverage_ft2_gal_at_dft": 208.542,
+     "wft_mils_at_dft": 7.692
+    },
+    "reported_actuals": {
+     "volume_solids_pct": 61,
+     "vs_tol": 2,
+     "voc_g_l": 330,
+     "mix_vol": 1.0,
+     "pot_life_h": 4,
+     "touch_dry_h_77F": 2,
+     "hard_dry_h_77F": 6,
+     "dft_dry_mils": 3,
+     "flash_point_F": 99,
+     "induction_h_60_70F": 1.5
+    },
+    "partial_data_status": "Partial public TDS anchor: reported property envelope is available, but no full BOM is in the corpus; cannot receive full-BOM recovery credit.",
+    "prediction_residuals": {
+     "volume_solids_pts": 4.0,
+     "voc_margin_g_l": 48.501,
+     "mix_ratio_delta_from_reported": 0.0
+    },
+    "model_outputs": {
+     "arithmetic": "candidate lead compared to 1:1 Type-IV/F150 property envelope",
+     "solvency": "solvent-borne epoxy-polyamide class recovered",
+     "cure_potlife": "reported pot-life used only as public precedent; cure model remains demoted",
+     "barrier_corrosion": "class anchor only; no side-by-side corrosion ranking",
+     "sourcing_robustness": "public TDS/product page is not an exact lot or procurement package"
+    }
+   },
+   "pass_fail": "PASS",
+   "validates": [
+    "class-envelope recovery",
+    "1:1 epoxy-polyamide precedent check"
+   ],
+   "does_not_validate": [
+    "full-BOM reconstruction",
+    "corrosion performance",
+    "pot life",
+    "qualification",
+    "procurement readiness"
+   ],
+   "evidence_tier": "Tier 2 public partial-TDS class anchor",
+   "evidence_completeness": {
+    "badge": "KNOWN PARTIAL-TDS",
+    "full_bom": false,
+    "full_bom_credit": false,
+    "partial_tds_class_check_only": true,
+    "source_conflict_hold": false
+   },
+   "source_ids": [
+    "DATA:known_answers.naval_class_anchors.INTL-F150-TYPEIII"
+   ],
+   "source_urls": [
+    "https://marinecoatings.brand.akzonobel.com/m/6ac84c1a5a068129/original/Formula_150_Primer_MIL_DTL_24441_eng_usa_A4_20150204.pdf"
+   ],
+   "red_team_caveat": "Partial-TDS anchors support class recovery only; they cannot be treated as full formulation reconstruction or corrosion superiority evidence.",
+   "residuals_disclosed": {
+    "volume_solids_pts": 4.0,
+    "voc_margin_g_l": 48.501,
+    "mix_ratio_delta_from_reported": 0.0
+   }
+  },
+  {
+   "display_order": 6,
+   "id": "NEG-CONTROL-1",
+   "name": "over-pigmented (talc 300 phr)",
+   "control_type": "negative_control",
+   "expected_behavior": {
+    "behavior": "reject deliberately bad formulation by the registered gate",
+    "expected_gate": "lambda_below_cpvc/pvc_window"
+   },
+   "engine_result": {
+    "verdict": "PASS_EXPECTED_REJECTION",
+    "predicted_metrics": {
+     "expected_rejection": true,
+     "expected_gate": "lambda_below_cpvc/pvc_window"
+    },
+    "reported_actuals": {},
+    "partial_data_status": "Synthetic deliberately bad formulation; expected behavior is rejection by the registered gate.",
+    "prediction_residuals": {
+     "correct_expected_gate_hit": true,
+     "computed_failed_gates": [
+      "lambda_below_cpvc",
+      "pvc_window",
+      "weight_per_gal"
+     ]
+    },
+    "model_outputs": {
+     "arithmetic": "gate run completed on the bad formulation",
+     "solvency": "not applicable to negative-control rank",
+     "cure_potlife": "not applicable",
+     "barrier_corrosion": "not applicable",
+     "sourcing_robustness": "not applicable"
+    }
+   },
+   "pass_fail": "PASS",
+   "validates": [
+    "fail-closed gate behavior",
+    "negative-control rejection"
+   ],
+   "does_not_validate": [
+    "candidate performance",
+    "candidate corrosion",
+    "candidate pot life",
+    "candidate sourcing"
+   ],
+   "evidence_tier": "Tier 3 synthetic negative-control gate check",
+   "evidence_completeness": {
+    "badge": "NEGATIVE CONTROL",
+    "full_bom": false,
+    "full_bom_credit": false,
+    "partial_tds_class_check_only": false,
+    "source_conflict_hold": false
+   },
+   "source_ids": [
+    "engine.known_answers.tier3_negative_controls"
+   ],
+   "source_urls": [],
+   "red_team_caveat": "A negative control proving rejection is a guardrail check, not evidence that any surviving candidate performs in a wet lab."
+  },
+  {
+   "display_order": 7,
+   "id": "NEG-CONTROL-2",
+   "name": "stoichiometry R=1.3",
+   "control_type": "negative_control",
+   "expected_behavior": {
+    "behavior": "reject deliberately bad formulation by the registered gate",
+    "expected_gate": "stoichiometry"
+   },
+   "engine_result": {
+    "verdict": "PASS_EXPECTED_REJECTION",
+    "predicted_metrics": {
+     "expected_rejection": true,
+     "expected_gate": "stoichiometry"
+    },
+    "reported_actuals": {},
+    "partial_data_status": "Synthetic deliberately bad formulation; expected behavior is rejection by the registered gate.",
+    "prediction_residuals": {
+     "correct_expected_gate_hit": true,
+     "computed_failed_gates": [
+      "pvc_window",
+      "stoichiometry"
+     ]
+    },
+    "model_outputs": {
+     "arithmetic": "gate run completed on the bad formulation",
+     "solvency": "not applicable to negative-control rank",
+     "cure_potlife": "not applicable",
+     "barrier_corrosion": "not applicable",
+     "sourcing_robustness": "not applicable"
+    }
+   },
+   "pass_fail": "PASS",
+   "validates": [
+    "fail-closed gate behavior",
+    "negative-control rejection"
+   ],
+   "does_not_validate": [
+    "candidate performance",
+    "candidate corrosion",
+    "candidate pot life",
+    "candidate sourcing"
+   ],
+   "evidence_tier": "Tier 3 synthetic negative-control gate check",
+   "evidence_completeness": {
+    "badge": "NEGATIVE CONTROL",
+    "full_bom": false,
+    "full_bom_credit": false,
+    "partial_tds_class_check_only": false,
+    "source_conflict_hold": false
+   },
+   "source_ids": [
+    "engine.known_answers.tier3_negative_controls"
+   ],
+   "source_urls": [],
+   "red_team_caveat": "A negative control proving rejection is a guardrail check, not evidence that any surviving candidate performs in a wet lab."
+  },
+  {
+   "display_order": 8,
+   "id": "NEG-CONTROL-3",
+   "name": "80% volume-solids demand",
+   "control_type": "negative_control",
+   "expected_behavior": {
+    "behavior": "reject deliberately bad formulation by the registered gate",
+    "expected_gate": "volume_solids"
+   },
+   "engine_result": {
+    "verdict": "PASS_EXPECTED_REJECTION",
+    "predicted_metrics": {
+     "expected_rejection": true,
+     "expected_gate": "volume_solids"
+    },
+    "reported_actuals": {},
+    "partial_data_status": "Synthetic deliberately bad formulation; expected behavior is rejection by the registered gate.",
+    "prediction_residuals": {
+     "correct_expected_gate_hit": true,
+     "computed_failed_gates": [
+      "coverage",
+      "volume_solids",
+      "wft"
+     ]
+    },
+    "model_outputs": {
+     "arithmetic": "gate run completed on the bad formulation",
+     "solvency": "not applicable to negative-control rank",
+     "cure_potlife": "not applicable",
+     "barrier_corrosion": "not applicable",
+     "sourcing_robustness": "not applicable"
+    }
+   },
+   "pass_fail": "PASS",
+   "validates": [
+    "fail-closed gate behavior",
+    "negative-control rejection"
+   ],
+   "does_not_validate": [
+    "candidate performance",
+    "candidate corrosion",
+    "candidate pot life",
+    "candidate sourcing"
+   ],
+   "evidence_tier": "Tier 3 synthetic negative-control gate check",
+   "evidence_completeness": {
+    "badge": "NEGATIVE CONTROL",
+    "full_bom": false,
+    "full_bom_credit": false,
+    "partial_tds_class_check_only": false,
+    "source_conflict_hold": false
+   },
+   "source_ids": [
+    "engine.known_answers.tier3_negative_controls"
+   ],
+   "source_urls": [],
+   "red_team_caveat": "A negative control proving rejection is a guardrail check, not evidence that any surviving candidate performs in a wet lab."
+  }
+ ]
+}

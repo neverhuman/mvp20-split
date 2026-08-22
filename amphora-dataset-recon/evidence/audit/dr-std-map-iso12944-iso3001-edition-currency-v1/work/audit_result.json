@@ -1,0 +1,26 @@
+{
+  "schema": "amphora.dataset-recon.audit.dr-std-map-iso12944-iso3001-edition-currency.v1",
+  "input_mapping_table_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/work/mapping-table.v4.json",
+  "input_mapping_table_sha256": "11e381abd4928f7fb3b17c0e8dba2bf334747e72c4685d6e3dffd7fbff0adafc",
+  "rows_examined": [
+    "DIN EN ISO 12944",
+    "DIN EN ISO 3001",
+    "KS M ISO 3001",
+    "NEN-EN-ISO 12944",
+    "NEN-EN-ISO 3001",
+    "NF EN ISO 12944",
+    "NF EN ISO 3001",
+    "PN-EN ISO 12944",
+    "UNI EN ISO 12944",
+    "UNI EN ISO 3001",
+    "ČSN EN ISO 12944",
+    "ČSN EN ISO 3001"
+  ],
+  "rows_examined_count": 12,
+  "refutation_criterion_verbatim": "A DR-STD-MAP mapping-table row citing a national EN-ISO adoption of ISO 12944 or ISO 3001, carrying integrity_gap=false and no edition/year, is left misrepresenting risk if live evidence (fetched this fire) proves that row's underlying standard has undergone edition churn since the row's snapshot_date -- the same defect class the DR-STD-MAP ISO-9227 edition-currency audits (2026-08-15, 2026-08-17) found and corrected 3 times running.",
+  "violation_count": 0,
+  "violations": [],
+  "two_replay_byte_identical": true,
+  "runA_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "runB_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+}

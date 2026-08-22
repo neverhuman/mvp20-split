@@ -1,0 +1,175 @@
+{
+  "schema": "amphora.known-answer.regression-kernel-kat-vectors.v1",
+  "vector_set_id": "regression-kernel-kat-v1",
+  "module_id": "amphora-known-answer-benchmarks",
+  "authority_ceiling": "LIMITED_SANITY",
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "scope": "The shared NUMERIC KERNEL under the portfolio's coating-science estimators: ordinary least squares (Kissinger / Ozawa-Flynn-Wall / Starink activation energies, Arrhenius pot-life, Joback and Fedors group-contribution regressions, Guth-Gold reinforcement fits), sample variance and regression standard error (SPC ARL, bootstrap), and the order-statistic quantile that every split/Mondrian conformal interval in the portfolio is built from.",
+  "purpose": "Extend the module's known-answer battery onto the REGRESSION / STATISTICS KERNEL axis, complementary to unit-conversion-kat-v1, physical-constants-kat-v1 and molar-mass-kat-v1. Those three lock units, constants and molar masses. None of them locks the FLOATING-POINT ESTIMATOR ARITHMETIC that turns locked inputs into every Ea, every slope, every calibrated interval the portfolio ships. A conditioning loss, a degrees-of-freedom slip, a one-pass variance cancellation, or a quantile-convention substitution silently changes a shipped number without changing a single input byte, and no existing receipt would catch it.",
+  "non_circularity": "The verifier re-derives every certified answer independently: Block A and Block C answers are recomputed as EXACT RATIONALS with fractions.Fraction; Block B data AND certified coefficients are regenerated from the published generating rule (never read from the pins); Block D quantiles are recomputed from the published quantile definitions; Block E is recomputed at 80 significant decimal digits with decimal.Decimal. A vector PASSES only if the independently re-derived value equals the pinned value. The pins are the thing under test, not the source of truth.",
+  "gate_arithmetic": "Blocks A, C, D decide PASS/FAIL in exact rational arithmetic only. Block B decides in exact rational arithmetic; its float64 comparison is a reported diagnostic and a fail-closed trap, never a positive gate. Block E decides by comparing 80-digit Decimal results rounded to the pinned decimals against the pinned decimal strings. No float64 value enters any positive pass/fail decision, so replays are byte-stable by construction.",
+  "primary_sources": [
+    "FIPS 140-3 Section 7.4, Known-Answer Test methodology (NIST, 2019)",
+    "Wampler, R.H. (1970). A report on the accuracy of some widely used least squares computer programs. Journal of the American Statistical Association 65(330):549-563. DOI 10.2307/2284581. (Generating rule for the exactly-constructed ill-conditioned polynomial designs distributed as NIST StRD Wampler1 and Wampler2.)",
+    "Chan, T.F., Golub, G.H., LeVeque, R.J. (1983). Algorithms for computing the sample variance: analysis and recommendations. The American Statistician 37(3):242-247. DOI 10.1080/00031305.1983.10483115. (Shift sensitivity of the one-pass textbook variance formula; two-pass recommendation.)",
+    "Hyndman, R.J., Fan, Y. (1996). Sample quantiles in statistical packages. The American Statistician 50(4):361-365. DOI 10.1080/00031305.1996.10473566. (Types 1, 2, 6, 7 sample-quantile definitions.)",
+    "Vovk, V., Gammerman, A., Shafer, G. (2005). Algorithmic Learning in a Random World. Springer. ISBN 978-0-387-00152-4. (Split-conformal validity: the ceil((n+1)(1-alpha))-th order statistic of the calibration scores.)",
+    "Lei, J., G'Sell, M., Rinaldo, A., Tibshirani, R.J., Wasserman, L. (2018). Distribution-free predictive inference for regression. JASA 113(523):1094-1111. DOI 10.1080/01621459.2017.1307116. (Same finite-sample rank.)",
+    "Kissinger, H.E. (1957). Reaction kinetics in differential thermal analysis. Analytical Chemistry 29(11):1702-1706. DOI 10.1021/ac60131a045. (Block E estimator: ln(beta/Tp^2) vs 1/Tp, slope = -Ea/R.)"
+  ],
+  "block_A_exact_rational_ols": {
+    "description": "Simple ordinary least squares on small designs whose slope, intercept, coefficient of determination and residual sum of squares are EXACT RATIONALS. Certifies the two-pass centred OLS kernel (slope = Sxy/Sxx) that every Arrhenius/Kissinger/Guth-Gold fit in the portfolio calls.",
+    "certified_by": "fractions.Fraction exact rational re-derivation inside the verifier",
+    "cases": [
+      {
+        "case_id": "A1_exact_line",
+        "note": "Perfectly collinear integer design; degenerate-but-exact control. Mirrors an Arrhenius ln(k) vs 1/T fit with zero residual.",
+        "x": ["1", "2", "3", "4", "5"],
+        "y": ["3", "5", "7", "9", "11"],
+        "expected_slope": "2",
+        "expected_intercept": "1",
+        "expected_r2": "1",
+        "expected_ss_res": "0"
+      },
+      {
+        "case_id": "A2_exact_thirds",
+        "note": "Non-terminating-decimal slope 1/3. Any implementation that rounds intermediates to a fixed decimal precision drifts; exact rational does not.",
+        "x": ["0", "1", "2", "3"],
+        "y": ["1", "4/3", "5/3", "2"],
+        "expected_slope": "1/3",
+        "expected_intercept": "1",
+        "expected_r2": "1",
+        "expected_ss_res": "0"
+      },
+      {
+        "case_id": "A3_noncollinear_residual",
+        "note": "Genuine scatter with unequal x spacing, so slope, intercept, r2 and the residual sum of squares are all non-trivial exact rationals. This is the case that actually exercises Sxy/Sxx, the intercept back-substitution and the 1 - SSres/SStot identity together.",
+        "x": ["1", "2", "3", "4", "6"],
+        "y": ["2", "3", "5", "4", "6"],
+        "expected_slope": "55/74",
+        "expected_intercept": "60/37",
+        "expected_r2": "121/148",
+        "expected_ss_res": "135/74"
+      }
+    ]
+  },
+  "block_B_wampler_ill_conditioned_polynomial": {
+    "description": "Exactly-constructed ill-conditioned degree-5 polynomial regression designs from Wampler (1970), distributed as NIST StRD Wampler1 and Wampler2. Both the design and the certified coefficient vector follow from the generating rule alone, so the certified answer needs no external data file and cannot be corrupted by a transcription error.",
+    "generating_rule": "x = 0, 1, ..., 20 (21 points). y_i = sum_{j=0..5} c_j * x_i^j with the exact coefficient vector c below. Because y is generated with zero error, the certified least-squares solution is exactly c and the certified residual sum of squares is exactly 0.",
+    "coverage_note": "ONLY the two noiseless Wampler designs are covered. Wampler3/4/5 add specific published pseudo-random perturbations that cannot be regenerated from a rule, so they are deliberately OUT OF SCOPE for this battery rather than approximated.",
+    "cases": [
+      {
+        "case_id": "B1_wampler1",
+        "coefficients": ["1", "1", "1", "1", "1", "1"],
+        "degree": 5,
+        "n_points": 21,
+        "expected_certified_beta": ["1", "1", "1", "1", "1", "1"],
+        "expected_ss_res": "0"
+      },
+      {
+        "case_id": "B2_wampler2",
+        "coefficients": ["1", "1/10", "1/100", "1/1000", "1/10000", "1/100000"],
+        "degree": 5,
+        "n_points": 21,
+        "expected_certified_beta": ["1", "1/10", "1/100", "1/1000", "1/10000", "1/100000"],
+        "expected_ss_res": "0"
+      }
+    ]
+  },
+  "block_C_shift_invariance_variance": {
+    "description": "Sample variance is exactly invariant to an additive shift of the data. Chan, Golub & LeVeque (1983) show the one-pass textbook formula (sum(x^2) - (sum x)^2/n)/(n-1) loses all significant digits under large shifts, while the two-pass centred formula does not. The portfolio's SPC control limits, bootstrap resamples and regression standard errors all depend on this kernel.",
+    "base_data": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    "exact_sample_variance": "55/6",
+    "shift_exponents": [0, 3, 6, 8, 9, 10],
+    "certified_property": "For every shift C = 10^k, the exact sample variance of {C + x_i} equals 55/6 identically. The verifier re-derives this as an exact rational at every shift."
+  },
+  "block_D_quantile_convention": {
+    "description": "Every split-conformal and Mondrian-conformal interval in this portfolio is the ceil((n+1)(1-alpha))-th smallest calibration score (Vovk 2005; Lei et al. 2018). That is NOT the default sample quantile of any mainstream numerical library: numpy.quantile, pandas.quantile and R's quantile() default to Hyndman-Fan Type 7. This block pins the conformal rank and the Type 1 / Type 2 / Type 6 / Type 7 quantiles on a rank-index score vector so that a silent substitution is caught.",
+    "hyndman_fan_types_covered": [1, 2, 6, 7],
+    "hyndman_fan_types_not_covered": [3, 4, 5, 8, 9],
+    "coverage_note": "Types 3, 4, 5, 8 and 9 are deliberately excluded rather than pinned from memory.",
+    "score_vector_rule": "Calibration scores are taken as the rank indices 1, 2, ..., n, so the k-th order statistic is exactly k and any rank error is read directly in units of ranks.",
+    "cases": [
+      {"case_id": "D1_n30_a10", "n": 30, "alpha": "1/10", "expected_conformal_rank_k": 28, "expected_conformal_quantile": "28", "expected_hf1_at_1_minus_alpha": "27", "expected_hf6_at_1_minus_alpha": "279/10", "expected_hf7_at_1_minus_alpha": "271/10"},
+      {"case_id": "D2_n36_a10", "n": 36, "alpha": "1/10", "expected_conformal_rank_k": 34, "expected_conformal_quantile": "34", "expected_hf1_at_1_minus_alpha": "33", "expected_hf6_at_1_minus_alpha": "333/10", "expected_hf7_at_1_minus_alpha": "65/2"},
+      {"case_id": "D3_n68_a10", "n": 68, "alpha": "1/10", "expected_conformal_rank_k": 63, "expected_conformal_quantile": "63", "expected_hf1_at_1_minus_alpha": "62", "expected_hf6_at_1_minus_alpha": "621/10", "expected_hf7_at_1_minus_alpha": "613/10"},
+      {"case_id": "D4_n75_a10", "n": 75, "alpha": "1/10", "expected_conformal_rank_k": 69, "expected_conformal_quantile": "69", "expected_hf1_at_1_minus_alpha": "68", "expected_hf6_at_1_minus_alpha": "342/5", "expected_hf7_at_1_minus_alpha": "338/5"},
+      {"case_id": "D5_n36_a20", "n": 36, "alpha": "1/5", "expected_conformal_rank_k": 30, "expected_conformal_quantile": "30", "expected_hf1_at_1_minus_alpha": "29", "expected_hf6_at_1_minus_alpha": "148/5", "expected_hf7_at_1_minus_alpha": "29"}
+    ],
+    "calibration_size_provenance": "n = 30, 36, 68 and 75 are the calibration-set sizes actually used by shipped portfolio conformal receipts (pot-life gate n = 36 at 90% and 80%; tolerance-robustness and Hansen-sphere scale n = 68 and n = 75; n = 30 as the smallest routinely used split). The rank deficits reported are therefore the real magnitude of the error, not a synthetic illustration.",
+    "structural_identity_under_test": "The conformal quantile equals the Hyndman-Fan Type 1 (inverse-ECDF) quantile evaluated at the ADJUSTED level p = ceil((n+1)(1-alpha))/n, and does NOT equal Type 1, Type 6 or Type 7 evaluated at the nominal level 1-alpha."
+  },
+  "block_E_kissinger_coating_cross_check": {
+    "description": "Ties the abstract kernel certification to a real shipped coating number. The portfolio's rights-clean Kissinger activation energy for a DGEBA / isophorone-diamine two-part epoxy-amine system is recomputed here at 80 significant decimal digits from the raw DSC peak data alone, and must reproduce the shipped float64 fit to every pinned decimal.",
+    "rights": {
+      "license": "CC-BY-4.0",
+      "attribution": "Lascano D., Quiles-Carrillo L., Balart R., Boronat T., Montanes N. Kinetic Analysis of the Curing of a Partially Biobased Epoxy Resin Using Dynamic Differential Scanning Calorimetry. Polymers (Basel). 2019;11(3):391.",
+      "doi": "10.3390/polym11030391",
+      "pmc_id": "PMC6473346",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "in_scope": true,
+      "scope_note": "Epoxy: Resoltech 1070 ECO (DGEBA-based). Hardener: Resoltech 1074 ECO, active species isophorone diamine (IPDA), a cycloaliphatic diamine. Directly in scope for marine anti-corrosion two-part epoxy-amine cure physics."
+    },
+    "estimator": "Kissinger (1957): ln(beta/Tp^2) = -Ea/(R*Tp) + ln(A*R/Ea). OLS of y = ln(beta/Tp^2) on x = 1/Tp; slope = -Ea/R; se via df = n-2.",
+    "gas_constant_J_per_mol_K": "8.314462618",
+    "raw_records": [
+      {"heating_rate_K_per_min": "2.5", "peak_temperature_K": "351.5"},
+      {"heating_rate_K_per_min": "5.0", "peak_temperature_K": "361.9"},
+      {"heating_rate_K_per_min": "10.0", "peak_temperature_K": "373.2"},
+      {"heating_rate_K_per_min": "20.0", "peak_temperature_K": "388.9"}
+    ],
+    "shipped_float64_values_under_test": {
+      "source": "amphora-redteam-audit/benchmarks/cure-kinetics-kissinger-ccby-anchor-v1/diagnostic.canonical.json (read-only; not modified by this battery)",
+      "slope_K": "-6886.919678",
+      "intercept": "8.832818",
+      "r2": "0.993794",
+      "ea_kJ_per_mol": "57.261036",
+      "se_ea_kJ_per_mol": "3.199755"
+    },
+    "decimal_precision_digits": 80
+  },
+  "fail_closed_traps": [
+    {
+      "trap_id": "T1_naive_normal_equations_wampler1",
+      "block": "B",
+      "description": "Solve Wampler1 by forming the normal equations X'X in float64 and eliminating with partial pivoting, the textbook approach. Must NOT reproduce the certified all-ones coefficient vector to 8 significant digits.",
+      "must_not_match_certified_to_significant_digits": 8
+    },
+    {
+      "trap_id": "T2_one_pass_variance_shift_1e9",
+      "block": "C",
+      "description": "One-pass textbook variance (sum(x^2) - (sum x)^2/n)/(n-1) in float64 on the base data shifted by 1e9. Must NOT equal the exact 55/6.",
+      "must_not_equal_exact": "55/6"
+    },
+    {
+      "trap_id": "T3_one_pass_variance_negative",
+      "block": "C",
+      "description": "One-pass textbook variance in float64 at shift 1e10 must return a value that is either negative or otherwise not equal to 55/6. A NEGATIVE sample variance is physically impossible and is the loudest possible signature of catastrophic cancellation.",
+      "must_not_equal_exact": "55/6"
+    },
+    {
+      "trap_id": "T4_type7_substituted_for_conformal_quantile",
+      "block": "D",
+      "description": "Substituting the library-default Hyndman-Fan Type 7 quantile at the nominal level 1-alpha for the conformal ceil((n+1)(1-alpha))-th order statistic must NOT reproduce the conformal quantile at any pinned portfolio calibration size. Type 7 sits BELOW the conformal rank, so the substitution is anti-conservative: the resulting interval is too narrow and the finite-sample coverage guarantee is void.",
+      "must_not_equal_conformal_quantile": true
+    },
+    {
+      "trap_id": "T5_hf1_at_nominal_level",
+      "block": "D",
+      "description": "Using Hyndman-Fan Type 1 at the NOMINAL level 1-alpha instead of the adjusted level ceil((n+1)(1-alpha))/n must NOT reproduce the conformal quantile. This is the subtle version of T4: the right quantile TYPE at the wrong LEVEL, off by exactly one rank.",
+      "must_not_equal_conformal_quantile": true
+    },
+    {
+      "trap_id": "T6_kissinger_se_wrong_dof",
+      "block": "E",
+      "description": "Computing the regression standard error of the Kissinger slope with df = n instead of df = n-2 must NOT reproduce the shipped se_Ea = 3.199755 kJ/mol. With n = 4 heating rates this halves the effective degrees of freedom and shrinks the reported uncertainty, which would falsely tighten a pot-life or cure gate.",
+      "must_not_equal_shipped": "3.199755"
+    },
+    {
+      "trap_id": "T7_kissinger_uncentred_r2",
+      "block": "E",
+      "description": "Computing r2 as 1 - SSres/sum(y^2) (uncentred total sum of squares, the no-intercept form) instead of 1 - SSres/sum((y-ybar)^2) must NOT reproduce the shipped r2 = 0.993794. The uncentred form is inflated toward 1 and would let a bad Kissinger fit pass a linearity gate.",
+      "must_not_equal_shipped": "0.993794"
+    }
+  ]
+}

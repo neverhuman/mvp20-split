@@ -1,0 +1,185 @@
+{
+  "campaign_item_id": "V1-REAL-SL",
+  "closes": "Independently re-derived, from the REAL amphora-ingredient-library facts.json (sha256 0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb, byte-identical to the amphora-source-ledger embedded mirror), that all 83 cited constants carry a resolvable primary URL (0 uncited outright); of the 23 load-bearing constants, 9 carry an independently resolvable second source (honest strict coverage 39.13%) and 14 are covered only by an unverified prose waiver, enumerated by key above as the real portfolio-hygiene gap list. Recomputed counts reproduce the two prior signed oracle receipts (citation-integrity-oracle-parity-v1, citation-integrity-loadbearing-completeness-v1) bit-exact. The 6 named recently-added hardener-density / solid-resin-EEW entries all carry resolvable primary URLs; none introduces a new uncited constant. Byte-tamper of the real corpus is detected.",
+  "corpus_anchors": {
+    "ledger_mirror_path": "amphora-source-ledger/reference/mvp20/data/facts.json",
+    "ledger_mirror_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "mirror_matches_real_corpus": true,
+    "real_corpus_path": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+    "real_corpus_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+  },
+  "counts": {
+    "entries_total": 83,
+    "load_bearing_count": 23,
+    "load_bearing_totally_uncovered_gap": 0,
+    "load_bearing_with_both": 0,
+    "load_bearing_with_independent_second_source": 9,
+    "load_bearing_with_waiver_only": 14,
+    "uncited_count": 0
+  },
+  "coverage": {
+    "loose_coverage_note": "23/23 load-bearing constants carry either an independent second source or a recorded prose waiver (the weaker standard used by the completeness oracle's exhaustiveness invariant; NOT authoritative for score/gates).",
+    "loose_coverage_pct": 100.0,
+    "primary_citation_coverage_pct": 100.0,
+    "primary_citation_note": "83/83 constants carry a resolvable primary URL; 0 constants are uncited outright.",
+    "strict_honest_coverage_note": "9/23 load-bearing constants carry an independent, resolvable second source (matches the live Rust load_bearing_two_source_or_waiver_gate semantics, which does NOT treat a prose waiver as controlled evidence). This is the honest coverage number: it is the figure the runtime's own FAILED_GATES / score_0_1=0.0 status is computed from.",
+    "strict_honest_coverage_pct": 39.13
+  },
+  "does_not_close": "Does not verify that cited URLs are currently live/resolvable over the network (URL-format presence only, consistent with the module's own runtime semantics which never performs live HTTP resolution). Does not close the 14 load-bearing second-source gaps or replace the 14 prose waivers with controlled evidence. Does not re-exec the live Rust runtime.",
+  "enumerated_corroborated": {
+    "load_bearing_independent_second_source_keys": [
+      "hardener.ancamide_2353.ahew",
+      "hardener.ancamide_260a.ahew",
+      "hardener.ancamide_350a.ahew",
+      "resin.dgeba_331.density",
+      "resin.dgeba_331.eew",
+      "resin.dgeba_828.density",
+      "resin.dgeba_828.eew",
+      "solvent.n_butanol.density",
+      "solvent.xylene.density"
+    ]
+  },
+  "enumerated_gaps": {
+    "load_bearing_totally_uncovered_keys": [],
+    "load_bearing_waiver_only_keys": [
+      "hardener.ancamide_220x70.ahew",
+      "hardener.ancamide_2353.density",
+      "hardener.ancamide_260a.density",
+      "hardener.ancamide_350a.density",
+      "hardener.ancamide_700b75.ahew",
+      "hardener.versamid_115.ahew",
+      "hardener.versamid_115.density",
+      "pigment.barytes.density",
+      "pigment.talc.density",
+      "resin.dgeba_yd128.density",
+      "resin.dgeba_yd128.eew",
+      "resin.solid_cut_1001x75.eew_on_nv",
+      "solvent.mak.density",
+      "solvent.mibk.density"
+    ],
+    "uncited_keys_missing_url": []
+  },
+  "falsification_checks": {
+    "all_falsification_checks_survived": true,
+    "f1_mirror_freshness_held": true,
+    "f2_load_bearing_uncited_keys": [],
+    "f2_no_load_bearing_constant_totally_uncited": true,
+    "f3_counts_match_prior_signed_oracles": true,
+    "f3_detail": {
+      "cited_constant_count": {
+        "match": true,
+        "prior_signed": 83,
+        "recomputed": 83
+      },
+      "load_bearing_constant_count": {
+        "match": true,
+        "prior_signed": 23,
+        "recomputed": 23
+      },
+      "missing_url_count": {
+        "match": true,
+        "prior_signed": 0,
+        "recomputed": 0
+      },
+      "prose_waiver_count": {
+        "match": true,
+        "prior_signed": 14,
+        "recomputed": 14
+      },
+      "two_source_count": {
+        "match": true,
+        "prior_signed": 9,
+        "recomputed": 9
+      }
+    },
+    "f4_named_recent_additions_all_resolvable": true,
+    "f5_byte_tamper_of_real_corpus_detected": true
+  },
+  "gates": {
+    "all_pass": true,
+    "counts_reproduce_prior_signed_oracles": true,
+    "mirror_fresh": true,
+    "named_additions_resolvable": true,
+    "no_totally_uncited_load_bearing": true,
+    "tamper_fail_closed": true
+  },
+  "hypothesis": "hash-bound source records prevent uncited constants from entering calculations",
+  "module": "amphora-source-ledger",
+  "named_recent_additions_status": {
+    "hardener.ancamide_220x70.density": {
+      "grade": "TDS",
+      "has_prose_waiver": false,
+      "has_second_source": false,
+      "has_url": true,
+      "load_bearing": false,
+      "present": true,
+      "retrieved": "2026-07-07"
+    },
+    "hardener.ancamide_2353.density": {
+      "grade": "SUPPLIER_GUIDE",
+      "has_prose_waiver": true,
+      "has_second_source": false,
+      "has_url": true,
+      "load_bearing": true,
+      "present": true,
+      "retrieved": "2026-07-07"
+    },
+    "hardener.ancamide_260a.density": {
+      "grade": "SUPPLIER_GUIDE",
+      "has_prose_waiver": true,
+      "has_second_source": false,
+      "has_url": true,
+      "load_bearing": true,
+      "present": true,
+      "retrieved": "2026-07-07"
+    },
+    "hardener.ancamide_350a.density": {
+      "grade": "TDS",
+      "has_prose_waiver": true,
+      "has_second_source": false,
+      "has_url": true,
+      "load_bearing": true,
+      "present": true,
+      "retrieved": "2026-07-07"
+    },
+    "hardener.ancamide_700b75.density": {
+      "grade": "SUPPLIER_GUIDE",
+      "has_prose_waiver": false,
+      "has_second_source": false,
+      "has_url": true,
+      "load_bearing": false,
+      "present": true,
+      "retrieved": "2026-07-07"
+    },
+    "hardener.versamid_115.density": {
+      "grade": "TDS",
+      "has_prose_waiver": true,
+      "has_second_source": false,
+      "has_url": true,
+      "load_bearing": true,
+      "present": true,
+      "retrieved": "2026-07-07"
+    },
+    "resin.solid_cut_1001x75.eew_on_nv": {
+      "grade": "TDS",
+      "has_prose_waiver": true,
+      "has_second_source": false,
+      "has_url": true,
+      "load_bearing": true,
+      "present": true,
+      "retrieved": "2026-07-07"
+    }
+  },
+  "non_circularity": "re-parses amphora-ingredient-library/reference/mvp20/data/facts.json raw bytes with stdlib only; never imports, links, or executes evaluate_source_ledger",
+  "purpose": "Re-run the module's uncited-constant-rejection / dual-source-citation predicate directly against the REAL amphora-ingredient-library facts.json corpus (not the module's own 5-replicate KPI benchmark), report resolvable-citation counts per constant, and enumerate every constant that is not independently corroborated.",
+  "run_type": "AUDIT_ONLY_NON_RUNTIME_ORACLE",
+  "schema": "amphora.source-ledger.v1-real-sl.real-corpus-uncited-constant-coverage-diagnostic.v1",
+  "study_id": "amphora-source-ledger-v1-real-sl-real-corpus-citation-coverage",
+  "theory_reference": [
+    "Anderson 1972/1980 reference-monitor (ESD-TR-73-51)",
+    "Haber & Stornetta 1991 J.Cryptology 3(2):99-111",
+    "ISO 690:2021 bibliographic references",
+    "PRISMA 2020 Page et al. BMJ 372:n71",
+    "Ioannidis 2005 PLoS Med 2(8):e124"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "archive_root": "evidence/superseded/supersession-e6356a037b2cf3b78265a533179f955ef7d1196080271c3284a9efd7385ceb20",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "2d3ed0823248babc1ff48cd286717e3b147ca74c990e62f44156b9faa5b61514",
+    "ip/disclosure-log.v1.json": "3363cc9333ef5aa31cd2ebd0dca95ef08949e0792e97da1dbafe2a9a781f404e",
+    "ip/prior-art.v1.json": "8aeb780ffa51eb4ad039cc79f38287d58c60bb22ee12a8a6c9666ee9b194ac24",
+    "ip/technical-dossier.v1.json": "bc0fdd5de7e1386299a8c89787d84793293c9d2cc347a9d3a20d56f678b653c5",
+    "phase0/benchmark/benchmark-lock.v1.json": "ec72e5e29291737eb303598f783a48cee54e81db73b0803ae7a1bfdd86212644",
+    "phase0/bundle.v1.json": "ae9fdecec14eea5095572742dbbad6010dcc4cc6df6740e6a93b1e6c2322f322",
+    "phase0/dataset/dataset-manifest.v1.json": "79ba45de486d06134b55772fd234423a23ef21c2182ee1bcd6c0773b20d5da07",
+    "phase0/promotion/policy.v1.json": "ce0a33abe07715637e5cfdd02eb8f1a35c81eafc912ca3c4e248c176ab3251cd",
+    "phase0/raw/SHA256SUMS": "8ba82d8f9c19fa34052a1fb0affda849a7030d0eaec0aea6cead9a26cb7029cf",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "afaf8875cc46275366f0f7ceddd1f4dd6418d501e5dc5b6cae897c42a3f61a9f",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v1.json": "dbe5a70f460134ba21787ab94d6c9769ceb9e1ab827a1aef0c50f6494e9d9cce",
+    "phase0/split/split-manifest.v1.json": "00b0841c965110912370da682e24344c49e806508a6598b36e69572d6a64072c"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-process-qc-twin",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-e6356a037b2cf3b78265a533179f955ef7d1196080271c3284a9efd7385ceb20",
+  "unsigned_preparation_only": true
+}

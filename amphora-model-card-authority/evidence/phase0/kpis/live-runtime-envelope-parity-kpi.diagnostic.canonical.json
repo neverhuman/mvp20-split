@@ -1,0 +1,152 @@
+{
+  "authority_ceiling": "AUDIT_ONLY",
+  "awaiting": [
+    "Phase-1: extend live-runtime differential parity to candidate-contract-owned parse-error Display strings once amphora-candidate-contract publishes a signed oracle for that surface.",
+    "Human dual-identity ceremony for any Phase-0/Phase-1 promotion of this module (unchanged governance; this KPI does not request or assert promotion)."
+  ],
+  "campaign_item_id": "V1-KPI-MCA",
+  "capability": "Live differential parity between the shipped compiled-Rust amphora-engine registry/scoring front door and an independent CPython minimum-privilege oracle that predicts the full authority envelope, module-owned error-taxonomy Display strings, and registry identity from module-manifest.json plus the published least-privilege spec, executed over a locked corpus and compared canonical-JSON byte for byte. This is a determinism/correctness parity check, not a fitted statistical model and not a product-performance claim.",
+  "claim_locks": {
+    "consolidation_only_no_new_data_fit": true,
+    "flips_scientific_readiness": false,
+    "fto_not_performed": true,
+    "human_review_performed": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_module_manifest": false,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_evidence_upgrade": true,
+    "no_product_performance_authority": true,
+    "no_qualification_authority": true,
+    "no_qualification_evidence_upgrade": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_release_evidence_upgrade": true,
+    "no_safety_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "organizational_independence_asserted": false,
+    "pre_phase_0_research_only": true,
+    "promotes_authority": false,
+    "small_corpus_not_a_statistical_power_claim": true,
+    "unresolved_rights_quarantined": true
+  },
+  "does_not_close": "Candidate-contract parse-error Display strings are recorded but owned and audited by amphora-candidate-contract; no scientific, product, or legal authority is asserted; Phase-0/Phase-1 promotion still requires the human dual-identity ceremony and a locked independent benchmark.",
+  "fitted_or_physical_model_artifact": {
+    "model_type": "live_compiled_rust_vs_independent_cpython_oracle_differential_parity_audit",
+    "no_baseline_defined": true,
+    "no_learned_parameters": true,
+    "note": "There is no meaningful baseline because this is a cross-implementation differential parity check (McKeeman 1998), not a fitted or physical model. The KPI compares live compiled-Rust runtime output to an independent CPython oracle's prediction, byte for byte.",
+    "schema": "amphora.model-card-authority.live-runtime-envelope-parity.v1"
+  },
+  "kpi_id": "amphora-model-card-authority-phase0-live-runtime-envelope-parity-v1",
+  "metrics": [
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "g0_probe_two_replay_byte_stability_rate",
+      "note": "2 independent executions of the compiled release probe over the corpus produced byte-identical stdout (reproducibility.byte_identical=true in the source receipt).",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 2
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "g1_registry_identity_parity_rate",
+      "note": "Module registry identity for all 29 canonical modules in module-manifest.json matched the independent oracle byte for byte; no_default_lane_reaches_module=True.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 29
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "g2_live_envelope_byte_parity_rate",
+      "note": "3 corpus cases, full ScoreEnvelope output (18 fields/case) from the live compiled Rust runtime matched the independent CPython oracle canonical-JSON byte for byte.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 3,
+      "sample_size_note": "18 fields/case"
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "g3_error_taxonomy_byte_parity_rate",
+      "note": "4 module-owned error-taxonomy Display strings for malformed/out-of-domain/unknown-module inputs matched the oracle's predicted taxonomy byte for byte.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 4
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "g4_seed_runid_invariance_rate",
+      "note": "Corpus-level gate over 5 corpus cases: the granted authority envelope is invariant to seed and run identity. The source receipt does not itemize a finer per-case seed-perturbation count, so no sub-corpus n is asserted here.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 5
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "g5_fail_closed_no_grant_rate",
+      "note": "3 lane-reachability rows and 7 claim locks per envelope audited fail-closed; granted level clamped to ['MODEL_READINESS_ONLY'] for every envelope with zero unauthorized grants.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 3
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "reverification_byte_parity_today",
+      "note": "FALSIFICATION PROBE (this receipt, run live today): the full live_rust_differential_audit runner was re-executed against current on-disk sources. Refutation criterion: the fresh diagnostic sha256 differs from the original 2026-07-17 audit's canonical_diagnostic_sha256 (7803ec8d0798a76b2482261036d44917932dfa2174563f92ad0f04861f196df0), which would indicate the compiled runtime, oracle, or runtime source anchors drifted since the audit. Observed: fresh diagnostic sha256=7803ec8d0798a76b2482261036d44917932dfa2174563f92ad0f04861f196df0, identical to the original. Runtime source anchors confirmed byte-unchanged on disk: amphora-engine/src/lib.rs, amphora-core/src/capability.rs, module-manifest.json all match the hashes anchored in the original receipt. The refutation criterion did NOT occur.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 1
+    }
+  ],
+  "module_id": "amphora-model-card-authority",
+  "phase0_deterministic_gates_passed": true,
+  "phase0_promotion_receipts_referenced": {
+    "evaluation_decision_use_ceiling": "AUDIT_ONLY",
+    "evaluation_phase0_eligible": true,
+    "evaluation_receipt_path": "evidence/phase0/receipts/evaluation.v1.dsse.json",
+    "evaluation_receipt_sha256": "23272019fb92ec2eaf3a577b826f68a38f79ce954934c11c5e0062e4f6a91872",
+    "independent_review_accepted_for_phase0": true,
+    "independent_review_independence_scope": "CODE_PATH_AND_SIGNING_IDENTITY",
+    "independent_review_receipt_path": "evidence/phase0/receipts/independent-review.v1.dsse.json",
+    "independent_review_receipt_sha256": "f408baf2c487f9756c5a3cb77f6b4b3a81c43df7234f00cc10811c55e8fbecc2",
+    "note": "These two receipts already exist in this module and are referenced by path and sha256, not modified or re-signed by this KPI."
+  },
+  "populated_at": "2026-08-04",
+  "population": "One locked corpus (live_corpus.v1.json) of 5 corpus cases exercised against the full 29-module canonical registry in module-manifest.json. 3 of the 5 cases are scored for full ScoreEnvelope byte parity (18 envelope fields each = 54 field comparisons); 4 cases exercise the module-owned error-taxonomy Display-string rows; 3 cases exercise lane-reachability; every envelope carries 7 audited claim locks. This is a small, hand-curated differential-testing corpus (McKeeman 1998), not a sampled or powered statistical population -- the KPI floor is exact byte parity (1.0), not a confidence interval.",
+  "reverification": {
+    "all_gates_passed_on_rerun": true,
+    "byte_identical_to_original_audit": true,
+    "performed_at_fire_date": "2026-08-04",
+    "rerun_diagnostic_path": "/tmp/mca_kpi_rerun_diagnostic.json",
+    "rerun_diagnostic_sha256": "7803ec8d0798a76b2482261036d44917932dfa2174563f92ad0f04861f196df0",
+    "runner_path": "evidence/audit/live-runtime-envelope-parity-v1/run_live_parity.py"
+  },
+  "schema": "amphora.module-phase0-kpi.v1",
+  "solver_use_ceiling": "DISABLED",
+  "source_audit_binding": {
+    "audit_date": "2026-07-17",
+    "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "original_canonical_diagnostic_sha256": "7803ec8d0798a76b2482261036d44917932dfa2174563f92ad0f04861f196df0",
+    "receipt_path": "evidence/audit/live-runtime-envelope-parity-v1/live-runtime-envelope-parity-receipt.v1.dsse.json",
+    "receipt_sha256": "f394db86dbc997c090d899f0657559c3c8550a4904401b017b2c71f3dbe0b96c",
+    "study_id": "amphora-model-card-authority-live-runtime-envelope-parity-v1"
+  },
+  "split_methodology": "No fitting, no train/test split. The CPython oracle is pure Python with zero Rust linkage, predicting envelope bytes from module-manifest.json plus the published minimum-privilege spec; ground truth is stdout of a separately compiled release binary linking the real amphora-engine crate as a path dependency (no logic copied). Agreement is a cross-implementation differential check in the sense of McKeeman 1998, not a self-comparison. Every run executes the compiled probe twice (two-replay) and requires byte-identical stdout before any gate is evaluated.",
+  "theory": "Saltzer & Schroeder 1975, Proc. IEEE 63(9), DOI 10.1109/PROC.1975.9939 -- least privilege, fail-safe defaults. McKeeman 1998, Digital Technical Journal 10(1):100-107 -- differential testing. Denning 1976, CACM 19(5), DOI 10.1145/360051.360056 -- lattice model of secure information flow, carried from the sibling authority-lattice-completeness-v1 audit that this live-runtime probe closes the gap named in."
+}

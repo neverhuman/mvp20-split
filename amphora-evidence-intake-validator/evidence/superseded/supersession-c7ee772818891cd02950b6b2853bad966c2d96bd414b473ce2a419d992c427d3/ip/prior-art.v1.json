@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "47a22d56dc8261ea14f94ed618b1b62136d3e6bba20926ab1c7e22ac9cb23964",
+  "module_id": "amphora-evidence-intake-validator",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

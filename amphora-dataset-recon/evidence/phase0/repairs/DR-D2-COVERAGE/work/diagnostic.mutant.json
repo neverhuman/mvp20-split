@@ -1,0 +1,433 @@
+{
+  "directive_id": "AMPHORA-DIRECTIVE-2026-08-09",
+  "num_obligations": 31,
+  "orphan": [],
+  "refutation_criterion_observed_overall": true,
+  "rows": [
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/PROBE-WEB/done/**/*.json",
+      "id": "PROBE-WEB",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/PROBE-WEB/done/probe-web-receipt.v1.dsse.json"
+      ],
+      "section": "meta"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/done/**/*.json",
+      "id": "DR-RUBRIC",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/done/dr-rubric-receipt.v1.dsse.json"
+      ],
+      "section": "S6+S2"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-GAP/done/**/*.json",
+      "id": "DR-GAP",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-GAP/done/dr-gap-receipt.v1.dsse.json"
+      ],
+      "section": "S3"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-ZH/done/**/*.json",
+      "id": "DR-LANG-ZH",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-ZH/done/dr-lang-zh-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-JA/done/**/*.json",
+      "id": "DR-LANG-JA",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-JA/done/dr-lang-ja-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-DE/done/**/*.json",
+      "id": "DR-LANG-DE",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-DE/done/dr-lang-de-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-RU/done/**/*.json",
+      "id": "DR-LANG-RU",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-RU/done/dr-lang-ru-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-KO/done/**/*.json",
+      "id": "DR-LANG-KO",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-KO/done/dr-lang-ko-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-FR/done/**/*.json",
+      "id": "DR-LANG-FR",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-FR/done/dr-lang-fr-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-IBERIAN/done/**/*.json",
+      "id": "DR-LANG-IBERIAN",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-IBERIAN/done/dr-lang-iberian-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-CEE/done/**/*.json",
+      "id": "DR-LANG-CEE",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-CEE/done/dr-lang-cee-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-EU/done/**/*.json",
+      "id": "DR-LANG-EU",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 2,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-EU/done/dr-lang-eu-fire2-spotcheck-receipt.v1.dsse.json",
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-EU/done/dr-lang-eu-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/done/**/*.json",
+      "id": "DR-STD-MAP",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 2,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/done/dr-std-map-fire2-receipt.v1.dsse.json",
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/done/dr-std-map-receipt.v1.dsse.json"
+      ],
+      "section": "S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-DISP/done/**/*.json",
+      "id": "DR-DISP",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-DISP/done/dr-disp-fire2-reattack-receipt.v1.dsse.json"
+      ],
+      "section": "S8B+S2"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-COVERAGE/done/**/*.json",
+      "id": "DR-COVERAGE",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-COVERAGE/done/dr-coverage-fire2-repair-receipt.v1.dsse.json"
+      ],
+      "section": "S8C"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-SEARCH-RECORD/done/**/*.json",
+      "id": "DR-SEARCH-RECORD",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-SEARCH-RECORD/done/dr-search-record-receipt.v1.dsse.json"
+      ],
+      "section": "S8D+S4"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/done/**/*.json",
+      "id": "DR-ANNEX",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/done/dr-annex-done-receipt.v1.dsse.json"
+      ],
+      "section": "S9"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "done",
+      "closed_supported": false,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-FRESH/done/**/*.json",
+      "id": "DR-FRESH",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "S10"
+    },
+    {
+      "campaign_module": "amphora-formulation-arithmetic",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/**/*.json",
+      "id": "CF-ARITH",
+      "index_module": "amphora-formulation-arithmetic",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/CF-ARITH.done-receipt.v1.dsse.json"
+      ],
+      "section": "S7"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "blocked",
+      "closed_supported": null,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-BOM/done/**/*.json",
+      "id": "CF-BOM",
+      "index_module": "amphora-cro-protocol-packager",
+      "owner": "LOOP",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "S7"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-PROC/done/**/*.json",
+      "id": "CF-PROC",
+      "index_module": "amphora-cro-protocol-packager",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-PROC/done/cf-proc-mixing-induction-application-crosswalk-repair-receipt.v1.dsse.json"
+      ],
+      "section": "S7"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "blocked",
+      "closed_supported": null,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-TIER/done/**/*.json",
+      "id": "CF-TIER",
+      "index_module": "amphora-cro-protocol-packager",
+      "owner": "LOOP",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "S7+S1"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-ALT/done/**/*.json",
+      "id": "CF-ALT",
+      "index_module": "amphora-cro-protocol-packager",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-ALT/done/cf-alt-ranked-alternates-discriminating-experiment-repair-receipt.v1.dsse.json"
+      ],
+      "section": "S7"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-TEST/done/**/*.json",
+      "id": "CF-TEST",
+      "index_module": "amphora-cro-protocol-packager",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-TEST/done/cf-test-preregistration-completeness-repair-receipt.v2.dsse.json"
+      ],
+      "section": "S7"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "done",
+      "closed_supported": true,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-RISK/done/**/*.json",
+      "id": "CF-RISK",
+      "index_module": "amphora-cro-protocol-packager",
+      "owner": "LOOP",
+      "receipt_count": 1,
+      "receipt_files": [
+        "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-RISK/done/cf-risk-known-failure-modes-repair-receipt.v2.dsse.json"
+      ],
+      "section": "S7"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "blocked",
+      "closed_supported": null,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-PACKET/done/**/*.json",
+      "id": "CF-PACKET",
+      "index_module": "amphora-cro-protocol-packager",
+      "owner": "LOOP",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "S7+S5"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "pending",
+      "closed_supported": null,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-D2-COVERAGE/done/**/*.json",
+      "id": "DR-D2-COVERAGE",
+      "index_module": "amphora-dataset-recon",
+      "owner": "LOOP",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "meta"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "blocked",
+      "closed_supported": null,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-RIGHTS/done/**/*.json",
+      "id": "DR-RIGHTS",
+      "index_module": null,
+      "owner": "HUMAN",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "S5+S8B"
+    },
+    {
+      "campaign_module": "amphora-dataset-recon",
+      "campaign_status": "blocked",
+      "closed_supported": null,
+      "done_check_glob": "amphora-dataset-recon/evidence/phase0/repairs/DR-ACQ/done/**/*.json",
+      "id": "DR-ACQ",
+      "index_module": null,
+      "owner": "HUMAN",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "S5"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "blocked",
+      "closed_supported": null,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-EXEC-REVIEW/done/**/*.json",
+      "id": "CF-EXEC-REVIEW",
+      "index_module": null,
+      "owner": "HUMAN",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "S5+S7"
+    },
+    {
+      "campaign_module": "amphora-cro-protocol-packager",
+      "campaign_status": "blocked",
+      "closed_supported": null,
+      "done_check_glob": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-LAB-EXEC/done/**/*.json",
+      "id": "CF-LAB-EXEC",
+      "index_module": "amphora-cro-protocol-packager",
+      "owner": "LAB",
+      "receipt_count": 0,
+      "receipt_files": [],
+      "section": "S1+S10"
+    }
+  ],
+  "unmapped": [],
+  "violations": [
+    {
+      "id": "DR-FRESH",
+      "reason": "closed status ('done') not supported by any receipt file at its done_check glob"
+    }
+  ]
+}

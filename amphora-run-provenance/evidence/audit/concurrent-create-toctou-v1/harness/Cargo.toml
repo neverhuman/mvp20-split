@@ -1,0 +1,20 @@
+[package]
+name = "rp-concurrent-create-toctou-harness"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace.
+[workspace]
+
+# LIVE harness: links the real Rust runtime crate and calls the real public
+# entry point RunArchive::create against a SHARED run_id from multiple
+# concurrent OS threads to probe whether the create-time duplicate-detection
+# invariant (KPI metric "duplicate_archive_create_rejected_via_exists_rate",
+# prediction_rule step 1: "verify base/run_id does not already exist (else
+# Exists)") holds under true concurrency, not just the shipped fixture's
+# sequential duplicate-create probe.
+[dependencies]
+amphora-core = { path = "../../../../../amphora-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "=1.0.150", features = ["float_roundtrip"] }

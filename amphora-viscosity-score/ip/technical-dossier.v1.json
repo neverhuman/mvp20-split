@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-viscosity-score",
+    "performance lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "b3a2e489fafe342515cfc98bd122feb61e34a13cc4399595c39a00511889bbcd",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-viscosity-score",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

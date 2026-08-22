@@ -1,0 +1,26 @@
+{
+  "archive_root": "evidence/superseded/supersession-6598ed2cdd80289922be1dba9060aa8e7e6c3ffa7131c17bd7ba08f344bd8c70",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "5f18321bf3812143c36d6576fe7e20b5ac95d79b79d1a5c94c2d14f5545e8eda",
+    "ip/disclosure-log.v1.json": "27b00865cee3da73a8804a25b22efea50b2ac6d837d693ac8c020c21010098a8",
+    "ip/prior-art.v1.json": "c42942a997dd70d7f8cc46c2f410700672a5b7fe752ea3b39fea78bf439f99f0",
+    "ip/technical-dossier.v1.json": "1bd78e558e10d229a05d551bed3113559736dda638185b68ac5e253ec987f074",
+    "phase0/benchmark/benchmark-lock.v1.json": "5a8362a5b3181c0036a8c1729d538f4f3be52fd2e1512fd960b6f96675394164",
+    "phase0/bundle.v1.json": "c46936b4d592fb5f76fc22dc132b258534503459b740041ef333b9c9fd1be2b9",
+    "phase0/dataset/dataset-manifest.v1.json": "2eae8d4f0f7a4949c99d81aeaf6c5576a5d7d311256d842961ca5f2e962fad58",
+    "phase0/promotion/policy.v1.json": "ce8b768d89656d675b23dc4a3ee0c030c41c87c3203b26adc91badb5ca3ed5eb",
+    "phase0/raw/SHA256SUMS": "9b9f89ea33d4ba93e0fd9037e855b862fccc4caa1c7613735e85da09d8b79265",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "81654a9ebe2a0968c5e5ff1c893a0b3c7d55d33c034b5def6311ce465f3053c0",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/source-lock.v1.json": "5ab176790662728b6b9273839f8257fb8d578f3662c192bd32b726dedeb6a229",
+    "phase0/split/split-manifest.v1.json": "701f9170c2569389cb9eeda3d9dbf0cfe206437e23530ac68aa546a87e5d3aae"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-source-ledger",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-6598ed2cdd80289922be1dba9060aa8e7e6c3ffa7131c17bd7ba08f344bd8c70",
+  "unsigned_preparation_only": true
+}

@@ -1,0 +1,44 @@
+{
+  "campaign_item_id": "R-S02",
+  "schema": "amphora.ip-fto-guard.r-s02-state.v1",
+  "total_rows_to_audit": 54,
+  "rows_audited_so_far": 54,
+  "rows_remaining": 0,
+  "next_batch_start_row_n": null,
+  "batches_completed": [
+    {
+      "batch": "1_of_3",
+      "rows": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "counts": {"faithful": 17, "misassigned": 1, "fabricated": 0},
+      "receipt": "amphora-ip-fto-guard/evidence/phase0/repairs/R-S02/attempts/cpc-category-screen-audit-batch1.R-S02.v1.dsse.json",
+      "fire_id": "20260812T150001-697004-87a45b133eb8",
+      "misassigned_rows": [19]
+    },
+    {
+      "batch": "2_of_3",
+      "rows": [24, 25, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42],
+      "counts": {"faithful": 18, "misassigned": 0, "fabricated": 0},
+      "receipt": "amphora-ip-fto-guard/evidence/phase0/repairs/R-S02/attempts/cpc-category-screen-audit-batch2.R-S02.v1.dsse.json",
+      "fire_id": "20260812T160001-1356894-a058b877d112",
+      "misassigned_rows": []
+    },
+    {
+      "batch": "3_of_3",
+      "rows": [43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
+      "counts": {"faithful": 18, "misassigned": 0, "fabricated": 0},
+      "receipt": "amphora-ip-fto-guard/evidence/phase0/repairs/R-S02/done/cpc-category-screen-audit-batch3-FINAL.R-S02.v1.dsse.json",
+      "fire_id": "20260812T170002-1705294-e13ed5fa16dd",
+      "misassigned_rows": []
+    }
+  ],
+  "cumulative_counts": {"faithful": 53, "misassigned": 1, "fabricated": 0},
+  "remaining_row_ns": [],
+  "all_54_rows_verdicted": true,
+  "note_for_next_fire": "R-S02 is COMPLETE: all 54 rows verdicted (53 faithful, 1 misassigned [row n=19], 0 fabricated). The done/ receipt has been filed. The pinned universal claim is CLAIM_REFUTED (row n=19's C08G59/50-for-a-reactive-diluent misassignment, found in batch1, stands unrepaired). Two open follow-up items remain filed against amphora-ip-fto-guard (not against R-S02, which is now done): (1) repair family n=19's cpc_ipc_class field via a superseding patch; (2) resolve whether the correct fix is C08G59/36 or the more specific C08G59/223 (di-epoxy branch) sibling discovered during batch3's row n=55 adjudication. Neither follow-up blocks R-S02's own done_criterion (all rows verdicted), but both should be picked up by a future repair-mode campaign item (e.g. a new R-series item) since R-S02 itself has exhausted its max_fires=3 budget and its scope was audit-only, not repair.",
+  "cpc_source_pinned": {
+    "zip": "CPCTitleList202608.zip",
+    "zip_sha256": "cd3a64318110395804de7df411e8036211fc3379d93b1a7deb77975777541f92",
+    "download_url": "https://www.cooperativepatentclassification.org/sites/default/files/cpc/bulk/CPCTitleList202608.zip",
+    "cached_local_copy": "/tmp/cpc_audit/ on xbabe2 (reused by batch2 and batch3 without re-downloading; hash-verified against zip_sha256 before reuse)"
+  }
+}

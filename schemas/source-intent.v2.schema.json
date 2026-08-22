@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amphora.invalid/schemas/source-intent.v2.schema.json",
+  "title": "SourceIntentV2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "source_intent_id", "original_label", "canonical_label", "aliases", "source_url", "program_disposition"],
+  "properties": {
+    "schema": {"const": "amphora.source-intent.v2"},
+    "source_intent_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]+$"},
+    "original_label": {"type": "string", "minLength": 1},
+    "canonical_label": {"type": "string", "minLength": 1},
+    "aliases": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "source_url": {"type": "string", "format": "uri"},
+    "program_disposition": {"type": "string", "minLength": 1}
+  }
+}

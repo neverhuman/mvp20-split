@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-b1d92aa9ba4b5d67e64eb2bcc3d397505b4ad795c6bacb577ffe549f37fbdc4f",
+      "path": "events/b1d92aa9ba4b5d67e64eb2bcc3d397505b4ad795c6bacb577ffe549f37fbdc4f.json",
+      "sha256": "bd1c0a0d54d2ad773b327240c6e0e371c3b0e47dc35c49458f6c2e3d80dbca0a"
+    }
+  ],
+  "module_id": "amphora-process-qc-twin",
+  "schema": "amphora.module-movement-ledger.v1"
+}

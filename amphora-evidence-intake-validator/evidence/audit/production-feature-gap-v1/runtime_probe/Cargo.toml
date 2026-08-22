@@ -1,0 +1,24 @@
+[package]
+name = "eiv-production-feature-gap-probe"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace. Nothing is added to,
+# built into, or written inside the workspace by this probe; CARGO_TARGET_DIR
+# is redirected to scratch by the runner.
+[workspace]
+
+# LIVE differential harness: links the real amphora-core and
+# amphora-assurance-capabilities crates and calls their real public entry
+# points (CandidateEnvelope::from_value, stable_hash, FeatureSnapshot,
+# AssuranceCapability::new(...).evaluate(...) via the Capability trait). This
+# is NOT a re-implementation and NOT a copy of the runtime logic. It does not
+# depend on amphora-engine because amphora-engine::execute() is a private
+# (non-pub) fn; the feature-building block this probe replicates is cited by
+# exact file:line and confirmed byte-identical against the live source at
+# signing time.
+[dependencies]
+amphora-core = { path = "../../../../../amphora-core" }
+amphora-assurance-capabilities = { path = "../../../../../amphora-assurance-capabilities" }
+serde_json = { version = "1", features = ["float_roundtrip"] }

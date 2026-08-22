@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "4f46c9361bdf60400a445e0ca247d095275b74d2f6e16efb353f578948392732",
+  "import_hashes": [],
+  "module_id": "amphora-cro-protocol-packager",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "amphora.model-source-landscape.v1",
+  "module_id": "amphora-solvency-score",
+  "updated_on": "2026-07-17",
+  "fto_status": "FTO NOT PERFORMED",
+  "sources": [
+    {
+      "source_id": "flory-1942",
+      "source_url": "https://doi.org/10.1063/1.1723621",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "LINK_ONLY_METHOD_ANCHOR",
+      "rights_status": "CONTEXT_ONLY",
+      "applicability": "Polymer-solution Gibbs energy",
+      "eligible_for_derivatives": false
+    },
+    {
+      "source_id": "michelsen-1982",
+      "source_url": "https://doi.org/10.1016/0378-3812(82)85001-2",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "LINK_ONLY_METHOD_ANCHOR",
+      "rights_status": "CONTEXT_ONLY",
+      "applicability": "Tangent-plane phase-stability minimization",
+      "eligible_for_derivatives": false
+    },
+    {
+      "source_id": "opencosmo-parameter-data-13856201",
+      "source_url": "https://zenodo.org/records/13856201",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "LICENSE_AND_QUANTUM_GENERATOR_REVIEW_REQUIRED",
+      "rights_status": "PLANNED_NOT_ACQUIRED",
+      "applicability": "Fixed-catalog solvent screening only; resin-solvent values remain computed until measured",
+      "eligible_for_derivatives": false
+    },
+    {
+      "source_id": "nist-thermoml",
+      "source_url": "https://www.nist.gov/mml/acmd/trc/thermoml/thermoml-archive",
+      "acquisition_date": null,
+      "raw_sha256": null,
+      "license": "NIST_TERMS_REVIEW_REQUIRED",
+      "rights_status": "PLANNED_NOT_ACQUIRED",
+      "applicability": "Solvent-pair checks; not resin compatibility authority",
+      "eligible_for_derivatives": false
+    }
+  ],
+  "patents": [
+    {
+      "family": "US8889043B2",
+      "use": "PRIOR_ART_ONLY",
+      "claim_family_notes": "No parameter reuse and no FTO conclusion."
+    },
+    {
+      "family": "US11066545B2",
+      "use": "PRIOR_ART_ONLY",
+      "claim_family_notes": "No parameter reuse and no FTO conclusion."
+    },
+    {
+      "family": "US12291608B2",
+      "use": "PRIOR_ART_ONLY",
+      "claim_family_notes": "No parameter reuse and no FTO conclusion."
+    },
+    {
+      "family": "EP2180012A1",
+      "use": "PRIOR_ART_ONLY",
+      "claim_family_notes": "No parameter reuse and no FTO conclusion."
+    }
+  ]
+}

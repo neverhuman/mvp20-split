@@ -1,0 +1,111 @@
+{
+  "acceptance_gates": {
+    "G1_kissinger_ea_recovery_within_2kJ": true,
+    "G2_kissinger_linearity_r2_ge_0p99": true,
+    "G3_within_multimethod_uncertainty_envelope": true,
+    "G4_reported_methods_mutually_consistent_spread_le_10kJ": true,
+    "G5_physically_plausible_dgeba_amine_40_90kJ": true,
+    "G6_regression_se_consistent_with_reported_within_1p5kJ": true,
+    "G7_physical_peak_shift_monotonic_in_heating_rate": true,
+    "G8_rights_gate_ccby_derivative_allowed_in_scope": true
+  },
+  "all_acceptance_gates_pass": true,
+  "authority": "AUDIT_ONLY",
+  "capability": "Recover the cure activation energy of an in-scope two-part DGEBA + cycloaliphatic-amine (IPDA) epoxy from raw non-isothermal DSC peak temperatures via the Kissinger method, on a genuinely rights-clean CC-BY-4.0 dataset, validated against the paper's independently reported Kissinger/KAS/FWO/Starink activation energies.",
+  "dataset": {
+    "dataset_id": "ccby-dgeba-cycloaliphaticamine-dsc-kissinger-polym11030391",
+    "dataset_sha256": "8332f822b526285d8300340ff3981ec53f493ba3df7b4b1a8d8a95a923b65b85",
+    "doi": "10.3390/polym11030391",
+    "in_scope": true,
+    "license": "CC-BY-4.0",
+    "n_heating_rates": 4,
+    "rights_class": "DERIVATIVE_ALLOWED"
+  },
+  "does_not": [
+    "does NOT promote amphora-cure-potlife-gate to PHASE_0",
+    "does NOT sign a trust-anchored phase0 evaluation/review receipt",
+    "does NOT modify any of the 66 signed receipts or the manifest",
+    "does NOT assert Amphora wet-lab measurement or product qualification"
+  ],
+  "kissinger_fit": {
+    "ea_kJ_per_mol": 57.261036,
+    "intercept": 8.832818,
+    "pre_exponential_A_per_min": 47213804.601463,
+    "r2": 0.993794,
+    "se_ea_kJ_per_mol": 3.199755,
+    "slope_K": -6886.919678
+  },
+  "leave_one_heating_rate_out": {
+    "folds": [
+      {
+        "ea_kJ_per_mol": 53.516251,
+        "left_out_heating_rate_K_per_min": 2.5
+      },
+      {
+        "ea_kJ_per_mol": 57.597321,
+        "left_out_heating_rate_K_per_min": 5.0
+      },
+      {
+        "ea_kJ_per_mol": 56.476569,
+        "left_out_heating_rate_K_per_min": 10.0
+      },
+      {
+        "ea_kJ_per_mol": 63.65286,
+        "left_out_heating_rate_K_per_min": 20.0
+      }
+    ],
+    "note": "n=4 endpoint removal has high leverage; spread reported honestly, not hard-gated.",
+    "spread_kJ_per_mol": 10.136609
+  },
+  "non_circularity": "Estimator consumes ONLY raw (beta, Tp). Paper Ea values are validation targets, never inputs. Recovered Ea and its regression SE independently reproduce the paper's reported Kissinger Ea and uncertainty.",
+  "physics_note": "Kissinger peak-based Ea sits at the low edge of the iso-conversional envelope (KAS/FWO/Starink 59.8-62.8), as expected: peak-only Kissinger underestimates the conversion-averaged apparent Ea. Cross-method spread 5.5 kJ/mol confirms internal consistency.",
+  "raw_inputs_used": [
+    {
+      "heating_rate_K_per_min": 2.5,
+      "peak_temperature_K": 351.5
+    },
+    {
+      "heating_rate_K_per_min": 5.0,
+      "peak_temperature_K": 361.9
+    },
+    {
+      "heating_rate_K_per_min": 10.0,
+      "peak_temperature_K": 373.2
+    },
+    {
+      "heating_rate_K_per_min": 20.0,
+      "peak_temperature_K": 388.9
+    }
+  ],
+  "recovery": {
+    "abs_error_kJ_per_mol": 0.038964,
+    "multimethod_uncertainty_envelope_kJ_per_mol": [
+      54.2,
+      65.9
+    ],
+    "recomputed_kissinger_ea_kJ_per_mol": 57.261036,
+    "reported_kissinger_ea_kJ_per_mol": 57.3
+  },
+  "reference_targets_kJ_per_mol": {
+    "FWO": {
+      "Ea": 62.8,
+      "uncertainty": 3.1
+    },
+    "KAS": {
+      "Ea": 59.8,
+      "uncertainty": 3.3
+    },
+    "Kissinger": {
+      "Ea": 57.3,
+      "uncertainty": 3.1
+    },
+    "Starink": {
+      "Ea": 60.0,
+      "uncertainty": 3.3
+    }
+  },
+  "relation_to_cure_potlife": "Supplies the FIRST rights-clean, in-scope kinetics anchor for the cycloaliphatic-amine reactivity class. Does NOT by itself satisfy the pot-life Phase-0 gate (gel/pot-life apparent Ea < reaction Ea) and does NOT flip rights_gate_passed (that needs the source ingested through the module source-ledger under a signed rights receipt).",
+  "schema": "amphora.redteam-audit.cure-kinetics-kissinger-ccby-anchor.diagnostic.v1",
+  "target_module": "amphora-cure-potlife-gate",
+  "theory": "Kissinger (1957): ln(beta/Tp^2) = -Ea/(R*Tp) + ln(A*R/Ea); Ea = -R*slope."
+}

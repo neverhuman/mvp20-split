@@ -1,0 +1,30 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "516d1f44f84f315ceba9b34f55bda118b8d19bb9d1d68ac3949b11782a696e58",
+  "import_hashes": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "bfdfd79abf49f3d49fb3b3ad7fe697bdbc154c55c12f022b129802070583dfcd",
+      "source_path": "config/program/design-rule-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "221eab2b17ef44653d01a50b56ee60e937941c7932e19e9fe1c3885d36d9fa17",
+      "source_path": "config/program/design-rule-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "b80c3d964438d1987f5630ca1a42d754220bd9536006ba4d5973ea683e6afacb",
+      "source_path": "config/benchmark-locks/amphora-design-rule-score.v1.json"
+    }
+  ],
+  "module_id": "amphora-design-rule-score",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

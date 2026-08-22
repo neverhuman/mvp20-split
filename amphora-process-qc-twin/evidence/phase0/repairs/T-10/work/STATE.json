@@ -1,0 +1,9 @@
+{
+  "campaign_item_id": "T-10",
+  "fire_id": "20260806T030002-115447-b5ba20ebfc36",
+  "status": "COMPLETE",
+  "fire_count": 1,
+  "summary": "Single-fire completion. Built and signed evidence/audit/ar1-estparam-drift-corpus-v1/ (AR(1) autocorrelation x estimated-parameter ARL degradation grid + 128-case tamper corpus). Verdict: CLAIM_REFUTED. All compute run synchronously in foreground (two full runs ~35-38s each); no background jobs, no stall.",
+  "v1_kpi_qc_status": "V1-KPI-QC is auto_blocked_max_fires (see attempts/v1-kpi-qc-checkpoint-fire-20260804T160002.v1.dsse.json); its unresolved deliverable_2 (mr-memory-detector run) was completed and signed under campaign item W-QC, whose done receipt at evidence/phase0/repairs/W-QC/done/w-qc-done-receipt.v1.dsse.json satisfies 'V1-KPI-QC either lands a verdict or is split into fitting sub-items with a RUN_SUMMARY'.",
+  "next_action_if_resumed": "None required -- item done_criterion met this fire. If a future fire wants to extend: non-normal (heavy-tailed) innovations, MA/ARMA structures, or larger tamper-corpus replicate counts per case remain open per does_not_close."
+}

@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-ingredient-library",
+    "formulation lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "33e2ba568c5e54ae5a0d026634227fd5c6e4f5459a6d2afad224d0438c485dd0",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-ingredient-library",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

@@ -1,0 +1,442 @@
+{
+  "all_gates_passed": false,
+  "authority": "AUDIT_ONLY",
+  "closes": [
+    "The exact (not simulated) type-I error of the shipped rank decision rule is now a signed number: 0.125000 primary, 0.125000 with the key-pairwise conjunct.",
+    "The granularity wall is established: at 4 tracks no tau>=c rule except exact rank identity can reach a 5%% level, so adding tracks -- not tightening c -- is the only fix.",
+    "The 'single most decisive' key-pairwise conjunct is shown to be logically implied by the primary rank rule (identical rejection regions, 3 vs 3 orderings), so it adds no type-I protection and cannot be the independent decisive test the protocol claims.",
+    "The 80%-power minimum detectable log10|Z| difference at the shipped 3- and 6-panel counts is quantified against a public-domain ISO-5725 precision floor.",
+    "The protocol's self-description as 'adequately powered' is refuted with an explicit required-n (19 panels/track/arm) rather than an adjective.",
+    "A specification-completeness gap list (alpha, power target, effect size, tie threshold, arm pinning, multiplicity) is enumerated from the shipped bytes."
+  ],
+  "does_not_close": [
+    "No promotion, no authority change, no manifest edit; scientific_readiness stays NOT_APPLICABLE and the packager's authority ceiling stays CRO_GATED.",
+    "sigma_R is imported from USBR-21019 (6 systems x 4 baths, mixed labs/baths); a single CRO running one protocol side-by-side may achieve a smaller between-panel sigma, which is why G5 reports the full sigma x delta grid rather than one number.",
+    "The shipped barrier_index deltas (e.g. 0.015 for the decisive pair) have NO published mapping to log10|Z| decades, so no target effect size can be asserted here -- that missing mapping is itself the binding power-specification gap.",
+    "Power is computed for the |Z|@0.01Hz endpoint only; B117/D1654 creep and D5894 arms have their own (unmeasured here) precision.",
+    "Rewriting the shipped protocol is out of scope for an AUDIT_ONLY run; this receipt states the required design, it does not re-issue the packet."
+  ],
+  "gates": {
+    "G1_kendall_exact_null_type_I": {
+      "attainable_exact_levels_of_tau_threshold_rules": {
+        "tau_ge_-0.333333333": {
+          "exact_level": 0.833333333,
+          "n_orderings": 20
+        },
+        "tau_ge_-0.666666667": {
+          "exact_level": 0.958333333,
+          "n_orderings": 23
+        },
+        "tau_ge_-1.0": {
+          "exact_level": 1.0,
+          "n_orderings": 24
+        },
+        "tau_ge_0.0": {
+          "exact_level": 0.625,
+          "n_orderings": 15
+        },
+        "tau_ge_0.333333333": {
+          "exact_level": 0.375,
+          "n_orderings": 9
+        },
+        "tau_ge_0.666666667": {
+          "exact_level": 0.166666667,
+          "n_orderings": 4
+        },
+        "tau_ge_1.0": {
+          "exact_level": 0.041666667,
+          "n_orderings": 1
+        }
+      },
+      "compound_rule_attains_conventional_0p05": false,
+      "exact_P_tau_ge_0p5": 0.166666667,
+      "exact_type_I_compound_rule_with_key_pairwise": 0.125,
+      "exact_type_I_primary_rule": 0.125,
+      "finest_attainable_level_1_over_n_factorial": 0.041666667,
+      "key_pairwise_conjunct_is_redundant_given_primary_rule": true,
+      "n_orderings_enumerated": 24,
+      "n_orderings_primary_passes_but_key_pairwise_fails": 0,
+      "n_tracks": 4,
+      "note": "At n=4 tracks the ONLY tau-threshold rule with exact level <= 0.05 is tau == 1 (exact rank identity, level 1/24 = 0.041667). The shipped tau >= 0.5 threshold cannot reach a 5% level at this many tracks -- it is a granularity wall, not a tuning choice.",
+      "null_hypothesis": "measured immersion rank uniform over all orderings of the shipped tracks",
+      "passed": false,
+      "passing_orderings_compound": [
+        [
+          "Lineage-60",
+          "Enhanced-65",
+          "CRO-Robust-65",
+          "Envelope-65"
+        ],
+        [
+          "Lineage-60",
+          "Enhanced-65",
+          "Envelope-65",
+          "CRO-Robust-65"
+        ],
+        [
+          "Enhanced-65",
+          "Lineage-60",
+          "CRO-Robust-65",
+          "Envelope-65"
+        ]
+      ],
+      "passing_orderings_primary": [
+        [
+          "Lineage-60",
+          "Enhanced-65",
+          "CRO-Robust-65",
+          "Envelope-65"
+        ],
+        [
+          "Lineage-60",
+          "Enhanced-65",
+          "Envelope-65",
+          "CRO-Robust-65"
+        ],
+        [
+          "Enhanced-65",
+          "Lineage-60",
+          "CRO-Robust-65",
+          "Envelope-65"
+        ]
+      ],
+      "primary_rule_attains_conventional_0p05": false,
+      "redundancy_note": "Every ordering that clears the primary rank rule ALSO satisfies the 'single most decisive' pairwise bet, so the conjunct removes zero orderings from the rejection region and contributes zero type-I protection: it is implied by the rank rule, not independent of it.",
+      "tau_null_distribution_vs_locked": {
+        "-0.333333333": 5,
+        "-0.666666667": 3,
+        "-1.0": 1,
+        "0.0": 6,
+        "0.333333333": 5,
+        "0.666666667": 3,
+        "1.0": 1
+      },
+      "theory": "Kendall 1938 exact permutation null of tau at n=4 (4! = 24 orderings, exhaustive)"
+    },
+    "G2_power_engine_known_answer": {
+      "cohen_kat_matches": true,
+      "cohen_medium_large_d": 0.8,
+      "cohen_n_per_group_for_80pct_power_computed": 26,
+      "cohen_n_per_group_published": 26,
+      "passed": true,
+      "power_at_n25": 0.79145129,
+      "power_at_n26": 0.807486615,
+      "theory": "Cohen 1988 (ISBN 0-8058-0283-5) Table 2.4.1 + independently signed USBR MDD figures",
+      "tolerance": 0.0001,
+      "usbr_mdd_abs_err_max": 4.58e-07,
+      "usbr_mdd_n1_published": 4.064114,
+      "usbr_mdd_n1_recomputed": 4.064113843,
+      "usbr_mdd_n2_published": 2.873762,
+      "usbr_mdd_n2_recomputed": 2.873762458
+    },
+    "G3_minimum_detectable_difference": {
+      "between_panel_variance_share": 0.664792662,
+      "mdd": {
+        "n_panels_3": {
+          "mdd_decades_exact_noncentral_t": 3.150007664,
+          "mdd_decades_normal_approx": 2.346417221,
+          "mdd_over_pooled_between_system_sd": 3.206646664
+        },
+        "n_panels_6": {
+          "mdd_decades_exact_noncentral_t": 1.841799441,
+          "mdd_decades_normal_approx": 1.659167529,
+          "mdd_over_pooled_between_system_sd": 1.874916084
+        }
+      },
+      "mdd_exceeds_observed_between_system_spread_at_default_n": true,
+      "note": "Between-PANEL reproducibility is 66.5% of the total endpoint variance, so it cannot be reduced by repeat measurements on the same panel -- only by more panels, which is exactly the axis the shipped panel plan caps at 6.",
+      "passed": false,
+      "pooled_between_system_sd_decades": 0.982337,
+      "shipped_panel_counts": {
+        "default_if_budget_allows": 6,
+        "minimum_floor": 3
+      },
+      "sigma_R_decades": 1.025763,
+      "sigma_between_panel_decades": 0.836354,
+      "sigma_repeatability_upper_bound_decades": 0.593887,
+      "sigma_source": "amphora-public-corrosion-benchmark USBR-21019 signed audit (public domain)",
+      "theory": "Cohen 1988 MDD + exact noncentral-t inversion; sigma from ISO 5725-2 decomposition"
+    },
+    "G4_decisive_pairwise_bet_power": {
+      "H0_shipped_pairwise_bet_is_adequately_powered": "REFUTED",
+      "P_decisive_pair_TIED_at_observed_spread": {
+        "n_3": 0.850295065,
+        "n_6": 0.676630343
+      },
+      "decisive_pair": [
+        "Enhanced-65",
+        "Envelope-65"
+      ],
+      "passed": false,
+      "power_at_observed_between_system_spread": {
+        "n_3": 0.147918906,
+        "n_6": 0.323115558
+      },
+      "power_grid": [
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.943658459,
+          "P_pair_declared_separated": 0.056341541,
+          "P_separated_and_correct_direction": 0.042403792,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 3,
+          "true_delta_log10Z_decades": 0.25
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.924491624,
+          "P_pair_declared_separated": 0.075508376,
+          "P_separated_and_correct_direction": 0.068177431,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 3,
+          "true_delta_log10Z_decades": 0.5
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.850295065,
+          "P_pair_declared_separated": 0.149704935,
+          "P_separated_and_correct_direction": 0.147918906,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 3,
+          "true_delta_log10Z_decades": 0.982337
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.846646357,
+          "P_pair_declared_separated": 0.153353643,
+          "P_separated_and_correct_direction": 0.151665165,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 3,
+          "true_delta_log10Z_decades": 1.0
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.555129306,
+          "P_pair_declared_separated": 0.444870694,
+          "P_separated_and_correct_direction": 0.444829897,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 3,
+          "true_delta_log10Z_decades": 2.0
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.236967782,
+          "P_pair_declared_separated": 0.763032218,
+          "P_separated_and_correct_direction": 0.7630319,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 3,
+          "true_delta_log10Z_decades": 3.0
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.933017024,
+          "P_pair_declared_separated": 0.066982976,
+          "P_separated_and_correct_direction": 0.057454873,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 6,
+          "true_delta_log10Z_decades": 0.25
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.880603202,
+          "P_pair_declared_separated": 0.119396798,
+          "P_separated_and_correct_direction": 0.116229086,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 6,
+          "true_delta_log10Z_decades": 0.5
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.676630343,
+          "P_pair_declared_separated": 0.323369657,
+          "P_separated_and_correct_direction": 0.323115558,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 6,
+          "true_delta_log10Z_decades": 0.982337
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.666957297,
+          "P_pair_declared_separated": 0.333042703,
+          "P_separated_and_correct_direction": 0.332813371,
+          "meets_80pct_power": false,
+          "n_panels_per_track_per_arm": 6,
+          "true_delta_log10Z_decades": 1.0
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.140120543,
+          "P_pair_declared_separated": 0.859879457,
+          "P_separated_and_correct_direction": 0.859879251,
+          "meets_80pct_power": true,
+          "n_panels_per_track_per_arm": 6,
+          "true_delta_log10Z_decades": 2.0
+        },
+        {
+          "P_pair_declared_TIED_by_shipped_tie_rule": 0.004988135,
+          "P_pair_declared_separated": 0.995011865,
+          "P_separated_and_correct_direction": 0.995011865,
+          "meets_80pct_power": true,
+          "n_panels_per_track_per_arm": 6,
+          "true_delta_log10Z_decades": 3.0
+        }
+      ],
+      "shipped_claim_under_test": "n=4 rank has low power; the decisive, adequately-powered test is the key pairwise bet above, not the full 4-item correlation -- stated honestly, not oversold.",
+      "theory": "shipped tie_rule formalised as a two-sided alpha=0.05 two-sample comparison of panel-mean log10|Z|@0.01Hz (ISO 16773); exact noncentral-t power"
+    },
+    "G5_inverse_design_n_required": {
+      "alpha": 0.05,
+      "headline_n_required_at_observed_spread_and_sigma_R": 19,
+      "n_required": {
+        "between_panel_only": {
+          "n_required_80pct": {
+            "0.25": 177,
+            "0.5": 45,
+            "0.982337": 13,
+            "1.0": 13,
+            "2.0": 4,
+            "3.0": 3
+          },
+          "sigma_decades": 0.836354
+        },
+        "full_sigma_R": {
+          "n_required_80pct": {
+            "0.25": 266,
+            "0.5": 68,
+            "0.982337": 19,
+            "1.0": 18,
+            "2.0": 6,
+            "3.0": 4
+          },
+          "sigma_decades": 1.025763
+        },
+        "repeatability_only": {
+          "n_required_80pct": {
+            "0.25": 90,
+            "0.5": 24,
+            "0.982337": 7,
+            "1.0": 7,
+            "2.0": 3,
+            "3.0": 3
+          },
+          "sigma_decades": 0.593887
+        }
+      },
+      "passed": false,
+      "power_target": 0.8,
+      "shipped_default_n": 6,
+      "shortfall_factor_vs_shipped_default": 3.166666667,
+      "theory": "Cohen 1988 inverse design; smallest integer n per track per arm reaching 80% power"
+    },
+    "G6_arm_multiplicity_endpoint_pinning": {
+      "arms": [
+        "ASTM B117 + D1654",
+        "ASTM D5894",
+        "ISO 16773 EIS",
+        "ASTM D870 immersion"
+      ],
+      "fwer_upper_bound_if_arm_chosen_post_hoc": 0.18549375,
+      "key_pairwise_names_an_arm": false,
+      "key_pairwise_text": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+      "n_corrosion_arms": 4,
+      "note": "The primary tau rule pins the immersion arm; the DECISIVE key-pairwise bet names only 'the measured data' and does not pin one of the 4 corrosion arms, so a post-hoc arm choice inflates its error rate to at most 0.1855.",
+      "passed": false,
+      "primary_rule_names_an_arm": true,
+      "primary_rule_text": "PASS only if the measured immersion rank has Kendall tau >= 0.5 with the LOCKED rank AND a strictly higher tau than BOTH hostile nulls (solids-only, PVC-only).",
+      "theory": "Sidak/Boole family-wise error bound under a free choice of endpoint arm; ICH E9 (1998) primary-endpoint pinning discipline"
+    },
+    "G7_specification_completeness": {
+      "absent": [
+        "declares_multiplicity_control",
+        "declares_power_target",
+        "declares_replicate_scatter_estimate",
+        "declares_significance_level_alpha",
+        "declares_target_effect_size_in_measurable_units",
+        "declares_tie_threshold_in_measurable_units",
+        "pins_arm_for_key_pairwise"
+      ],
+      "items": {
+        "declares_multiplicity_control": false,
+        "declares_power_target": false,
+        "declares_replicate_scatter_estimate": false,
+        "declares_significance_level_alpha": false,
+        "declares_target_effect_size_in_measurable_units": false,
+        "declares_tie_threshold_in_measurable_units": false,
+        "pins_arm_for_key_pairwise": false
+      },
+      "n_absent": 7,
+      "note": "The protocol quantifies its tie rule only as 'overlap within replicate scatter' with no numeric scatter, no alpha, no target effect size and no power target, so its own adequacy claim is not checkable from the packet it ships -- it becomes checkable only by importing an external ISO-5725 precision estimate, as done here.",
+      "passed": false,
+      "theory": "ICH E9 (1998) / ASTM E122 statistical-protocol specification completeness"
+    }
+  },
+  "gates_failed": [
+    "G1_kendall_exact_null_type_I",
+    "G3_minimum_detectable_difference",
+    "G4_decisive_pairwise_bet_power",
+    "G5_inverse_design_n_required",
+    "G6_arm_multiplicity_endpoint_pinning",
+    "G7_specification_completeness"
+  ],
+  "gates_passed": [
+    "G2_power_engine_known_answer"
+  ],
+  "headline": "First statistical-admissibility audit of the decision rule the CRO packager BINDS (prior packager audits only checked that the packet was bound correctly). Exhaustive Kendall-1938 enumeration of all 24 orderings gives the shipped primary rank rule an EXACT type-I error of 0.1250 (0.1250 with the key-pairwise conjunct) -- above 0.05, and at n=4 tracks the only tau-threshold rule that can reach 0.05 is exact rank identity (1/24 = 0.0417). Against the independently signed public-domain USBR-21019 ISO-5725 precision floor (sigma_R = 1.026 decades, 66% of it irreducible between-PANEL), the 80%-power minimum detectable log10|Z| difference is 3.15 decades at the shipped 3-panel floor and 1.84 decades at the 6-panel default -- both LARGER than the 0.982-decade pooled between-system spread actually observed in that dataset. At that spread the decisive Enhanced-65 > Envelope-65 bet has 0.148 power at n=3 and 0.323 at n=6, i.e. the shipped tie rule declares the decisive pair TIED with probability 0.677 and the protocol fail-closes to INCONCLUSIVE; reaching 80% power needs n=19 panels/track/arm, 3.2x the shipped default. H0 (the protocol's own 'the decisive, adequately-powered test is the key pairwise bet') is REFUTED: the packager binds, with full cryptographic integrity, a protocol that is underpowered by its own metric.",
+  "inputs": {
+    "decisive_pair": [
+      "Enhanced-65",
+      "Envelope-65"
+    ],
+    "hostile_null_pvc_only": [
+      "Lineage-60",
+      "Envelope-65",
+      "CRO-Robust-65",
+      "Enhanced-65"
+    ],
+    "hostile_null_solids_only": [
+      "Lineage-60",
+      "CRO-Robust-65",
+      "Enhanced-65",
+      "Envelope-65"
+    ],
+    "locked_rank": [
+      "Lineage-60",
+      "Enhanced-65",
+      "CRO-Robust-65",
+      "Envelope-65"
+    ],
+    "panel_plan_default": 6,
+    "panel_plan_min": 3,
+    "precision_dataset": {
+      "author": "Brian Baumgarten",
+      "catalog_item": "8048",
+      "license": "US Government work, public domain (17 U.S.C. 105)",
+      "project": "21019",
+      "provider": "US Bureau of Reclamation (USBR) RISE",
+      "publication_date": "2024-09-11",
+      "rights_clean": true,
+      "url": "https://data.usbr.gov/rise/api/catalog-record/8048"
+    },
+    "precision_receipt_sha256": "10b4427b541a2994126cee530a68e5598c971ee43ee6d53257c3ee81e7924702",
+    "shipped_capture_template_sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+    "shipped_falsification_protocol_sha256": "b2fa8de6b50f8605dbe5a412af5d818e8792be864af7ea6e3ef10320959504b6"
+  },
+  "module": "amphora-cro-protocol-packager",
+  "non_circularity": "Ranks, nulls, panel counts and rule text are parsed from the shipped protocol bytes; the noise scale is imported from a separately signed audit of a US-Government public-domain EIS dataset (USBR RISE 8048); the power arithmetic is validated against Cohen 1988's published tabulated n=26. No Amphora predictive model is consulted or trusted.",
+  "novelty_vs_prior_packager_audits": "packet-binding-parity, canonicalization-conformance and representation-invariance all audit the BINDING layer (JCS/SHA-256 injectivity, numeric canonicalisation, over-binding). This is the first audit of the SCIENTIFIC CONTENT the binding protects.",
+  "purpose": "Test whether the falsification protocol the packager binds and ships is a statistically admissible test -- exact type-I error of its rank rule and exact power of its self-declared decisive pairwise bet -- rather than whether the packet bytes are bound correctly (already closed by prior packager audits).",
+  "remediation_required_for_phase1": {
+    "declare_alpha_power_and_scatter_numerically": true,
+    "increase_panels_per_track_per_arm_to": 19,
+    "or_declare_target_effect_size_in_decades": true,
+    "or_increase_tracks_to_reach_0p05_rank_level": "n_tracks >= 5 (5! = 120 orderings)",
+    "pin_single_arm_for_key_pairwise_bet": true
+  },
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.cro-protocol-packager.decision-rule-power-adequacy-diagnostic.v1",
+  "study_id": "cro-protocol-packager-decision-rule-power-adequacy-v1",
+  "theory_reference": {
+    "corrosion_arms_cited_by_protocol": [
+      "ASTM B117 + D1654",
+      "ASTM D5894",
+      "ISO 16773 EIS",
+      "ASTM D870 immersion"
+    ],
+    "eis_metric": "ISO 16773-1:2016 .. ISO 16773-4:2016, |Z| at 0.01 Hz",
+    "endpoint_discipline": "ICH E9 (1998) primary-endpoint pinning; ASTM E122 sample size",
+    "power": "Cohen, J. (1988) Statistical Power Analysis, 2nd ed., ISBN 0-8058-0283-5",
+    "precision_model": "ISO 5725-2 repeatability/reproducibility decomposition",
+    "rank_null": "Kendall, M.G. (1938) Biometrika 30(1-2):81-93, DOI:10.1093/biomet/30.1-2.81",
+    "t_distribution": "Student (1908) Biometrika 6(1):1-25; noncentral-t exact power"
+  },
+  "verdict": "SHIPPED_DECISION_RULE_UNDERPOWERED_AND_ABOVE_NOMINAL_TYPE_I"
+}

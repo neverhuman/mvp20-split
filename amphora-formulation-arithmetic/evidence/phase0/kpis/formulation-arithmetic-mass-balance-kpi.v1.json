@@ -1,0 +1,133 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-formulation-arithmetic",
+  "kpi_id": "amphora-formulation-arithmetic-phase0-mass-balance-v1",
+  "capability": "Deterministic two-part mass balance for coating formulations. `total_g = part_A_g + part_B_g` is a physical identity, not a hypothesis. Phase-0 covers mass-only arithmetic on positive-mass ingredient contributions with lexicographic ingredient_id summation and byte-deterministic diagnostic output. Phase-1 will extend to dimensioned property arithmetic (density, EEW, AHEW, VOC) once ingredient-library rights are cleared.",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "solver_use_ceiling": "OBJECTIVE",
+  "population": "Two-part epoxy-amine coating formulations with published mixing ratios from Wicks/Jones/Pappas 2007 Chapter 25, Ellis 1993 Chapter 6, and supplier technical data sheets (Huntsman, Dow, Momentive, Air Products, Mitsubishi). Applicability domain excludes single-part formulations, dimensioned property computation, and non-finite/negative masses.",
+  "split_methodology": "No fitting — mass conservation is a physical identity. The 15 fixture formulations span aliphatic-polyamine (TETA/DETA/TEPA), cycloaliphatic-amine (IPDA/PACM/DACH), aromatic-amine (MXDA/MPDA/MDA), amidoamine-adduct, and Mannich-base hardener families, and include clear-adhesive, pigmented-primer, and pigmented-topcoat classes with varying pigment volume concentrations. Three formulations include zero-mass optional-additive hostile nulls (defoamer at mass = 0.0 g) to exercise the ignored-zero-mass path.",
+  "theory": "Mass conservation — the fundamental invariant of formulation chemistry (Wicks, Jones & Pappas, 'Organic Coatings: Science and Technology' 4th ed. 2007, Chapter 25; Ellis, 'Chemistry and Technology of Epoxy Resins' 1993, Chapter 6). For a two-part epoxy-amine coating, the total prepared mass equals the sum of Part A (resin + solvents + pigments + additives) and Part B (hardener + solvents + additives) masses. Ingredient IDs are lexicographically sorted within each part for byte-deterministic aggregation. Candidate-supplied scientific claims (density, EEW, AHEW, nonvolatile, oil_absorption, performance, evidence, feasibility) are recorded in `ignored_candidate_fields` and NEVER evaluated — the arithmetic module cannot be tricked into asserting scientific evidence.",
+  "metrics": [
+    {
+      "name": "mass_balance_identity_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 15,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction of fixture formulations where (part_A + part_B) - total_g = 0.0 at f64 bit precision. Mass conservation is a physical identity."
+    },
+    {
+      "name": "mass_balance_absolute_agreement_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 15,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction where |computed_total_g - published_expected_total_g| < 1e-9 g. Observed 15/15 with exact zero absolute error."
+    },
+    {
+      "name": "positive_mass_ingredient_id_agreement_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 15,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction where the module's lexicographically-sorted positive_mass_ingredient_ids exactly equals the expected published set."
+    },
+    {
+      "name": "mass_order_drift_stability_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 15,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "MASS_ORDER_DRIFT attack axis: for each formulation, ingredient keys are rotated into 3 different insertion orders; every permutation returns a byte-identical FormulationMassDiagnosticV1. Confirms lexicographic BTreeMap aggregation is order-invariant."
+    },
+    {
+      "name": "candidate_property_evidence_injection_ignore_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 15,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "CANDIDATE_PROPERTY_EVIDENCE_INJECTION attack axis: for each formulation, adversary injects 8 property claims (density, eew, ahew, nonvolatile, oil_absorption, performance, evidence, feasibility) under /formulation/. Every injection is recorded in ignored_candidate_fields and NEVER changes computed masses."
+    },
+    {
+      "name": "applicability_domain_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "probe_sample_size": 9,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Nine malformed candidates (missing formulation object, missing part_A, missing part_B, all-zero-mass, NaN mass, Infinity mass, negative mass, string-typed mass NUMERIC_TYPE_UNIT_CONFUSION, FINITE_SUM_OVERFLOW) all return ABSTAIN or Err."
+    },
+    {
+      "name": "authority_lock_preservation_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 15,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Every fixture output preserves arithmetic_scope=MASS_ONLY, scientific_readiness=UNVALIDATED, ranking_eligible=false, usable_by_optimizer=false, candidate_created_evidence=false, authority_upgrade=false, unresolved_legacy_data_accessed=false."
+    },
+    {
+      "name": "median_mass_balance_absolute_error_g",
+      "direction": "MINIMIZE",
+      "reported_ceiling": 0.0,
+      "observed": 0.0,
+      "sample_size": 15,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Reported observationally at Phase-0. Mass conservation is a physical identity so expected observed value is exactly 0.0 g. Observed 0.0 across all 15 formulations."
+    }
+  ],
+  "fitted_or_physical_model_artifact": {
+    "schema": "amphora.formulation-arithmetic-mass-balance.v1",
+    "model_type": "deterministic_physical_mass_conservation",
+    "prediction_rule": "validate_formulation_mass(candidate) → FormulationMassDiagnosticV1; part_a_mass_g = Σ mass_g in formulation.part_A (positive only, lexicographic ingredient_id order); part_b_mass_g = Σ mass_g in formulation.part_B; total_mass_g = part_a_mass_g + part_b_mass_g",
+    "aggregation_ordering": "lexicographic_ingredient_id_within_part_via_BTreeMap",
+    "zero_mass_handling": "recorded_in_ignored_zero_mass_entries_and_excluded_from_positive_sum",
+    "candidate_supplied_property_claims_handled": ["density", "eew", "ahew", "nonvolatile", "oil_absorption", "performance", "evidence", "feasibility"],
+    "candidate_supplied_property_claims_action": "recorded_in_ignored_candidate_fields_and_never_evaluated",
+    "arithmetic_scope": "MASS_ONLY",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "no_baseline_defined": true,
+    "note": "There is no meaningful baseline to compare against because mass conservation is a physical identity, not a hypothesis. The KPI compares computed to expected at f64 bit precision."
+  },
+  "claim_locks": {
+    "mass_only_arithmetic_scope": true,
+    "no_optimizer_authority": true,
+    "no_dimensioned_property_arithmetic_at_phase_0": true,
+    "no_scientific_readiness_claim": true,
+    "no_release_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true,
+    "candidate_supplied_scientific_claims_never_evaluated": true
+  },
+  "benchmark_lock_sha256": "1f9986d446d0eb42b6e034355d39f852a76430f1a4e961d3247df1a2b0ec5f39",
+  "dataset_fixture_sha256": "31c9b84c9c8c847ad72cc133d929e795bdc36e02c6a638676eb41ee87f9fd202",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "c5a4f9a8c273a56ae0feb34fd80c2bc1b489e55af95ddcaf6519d06b95fa0ed1",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "Phase-1 dimensioned property arithmetic (density, EEW, AHEW, VOC, nonvolatile) once ingredient-library rights receipts are cleared and rights-cleared arithmetic FeatureSnapshot is signed"
+  ]
+}

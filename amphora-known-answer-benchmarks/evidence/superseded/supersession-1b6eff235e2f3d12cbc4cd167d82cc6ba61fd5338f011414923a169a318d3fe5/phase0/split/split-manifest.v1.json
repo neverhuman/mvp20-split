@@ -1,0 +1,8 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "ae7751a79ec2f0be7e92b1721e2eb4cd651e050dddf46b0ba9d7b6ec234af7a3",
+  "import_hashes": [],
+  "module_id": "amphora-known-answer-benchmarks",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

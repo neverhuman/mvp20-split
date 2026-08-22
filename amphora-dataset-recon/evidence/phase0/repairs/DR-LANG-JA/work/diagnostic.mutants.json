@@ -1,0 +1,67 @@
+{
+  "license_text_diverges": {
+    "expected_rule": "license_text_matches_live_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Overwrote DR-LANG-JA-01's license_evidence_quote with a fabricated 'fully open, no registration' claim contradicting the recorded WebSearch/WebFetch evidence (which states registration + scraping-prohibited terms).",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-JA-01",
+        "reason": "DR-LANG-JA-01: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "literal_english_translation_query": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native ja query string 'エポキシ樹脂 アミン硬化剤 硬化反応速度論 データ J-STAGE' with its literal English gloss, while leaving language:'ja' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "ja query field contains no CJK characters: 'epoxy resin amine hardener cure reaction kinetics data J-STAGE'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "missing_recorded_query": {
+    "expected_rule": "citation_has_recorded_query_and_result",
+    "expected_rule_fired": true,
+    "how_planted": "Scrubbed every occurrence of DR-LANG-JA-02's url (https://dsc.nims.go.jp/) from a copy of this fire's search-record queries/results.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-JA-02",
+        "reason": "DR-LANG-JA-02: url https://dsc.nims.go.jp/ does not appear in any recorded search-record query/result this fire",
+        "rule": "citation_has_recorded_query_and_result"
+      }
+    ]
+  },
+  "native_citation_not_resolvable": {
+    "expected_rule": "native_script_citation_integrity",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced DR-LANG-JA-03's native_citation (native kanji/kana title) with its bare romanization.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-JA-03",
+        "reason": "DR-LANG-JA-03: native_citation 'Houkouzoku Amin Kouka Epokishi Jushi no Sokkouka ni Kansuru Kenkyuu' contains no CJK characters",
+        "rule": "native_script_citation_integrity"
+      }
+    ]
+  },
+  "rediscovery_dropped": {
+    "expected_rule": "rediscovery_recall",
+    "expected_rule_fired": true,
+    "how_planted": "Cleared DR-LANG-JA-01's rediscovers field (was 'polyinfo') to None, simulating a fresh search that silently fails to link back to the previously-supplied PoLyInfo candidate.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "polyinfo",
+        "reason": "previously-supplied candidate polyinfo was neither rediscovered (no disposition entry with rediscovers==polyinfo) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      }
+    ]
+  }
+}

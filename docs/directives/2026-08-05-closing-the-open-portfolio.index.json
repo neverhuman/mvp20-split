@@ -1,0 +1,748 @@
+{
+  "schema": "amphora.directive-index.v1",
+  "directive": {
+    "title": "Closing the Open Portfolio — Adversarial Coverage, Verification Debt, and the Lab-in-the-Loop Program",
+    "prepared": "2026-08-05",
+    "framing": "AUDIT-ONLY throughout: no product qualification, procurement, safety, synthesis, or freedom-to-operate authority is asserted or granted by this document.",
+    "host": "xbabe2",
+    "root": "/home/ubuntu/amphora/build/mvp20-split",
+    "docx_path": "docs/directives/2026-08-05-closing-the-open-portfolio.docx",
+    "docx_sha256": "650e48c503de0acdebb33e1adc956b6d695b7fd22500d8c44f62a507c9be9322",
+    "md_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+    "md_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+    "source_on_xbabe1": "/home/ubuntu/Amphora_Closing_The_Open_Portfolio.docx"
+  },
+  "owner_classes": {
+    "LOOP": "Autonomous — the hourly cron executes these.",
+    "HUMAN": "Governance/rights — the loop is FORBIDDEN from executing these; it files and tracks them only.",
+    "LAB": "Wet-lab experiment — requires contracted counterparties and signed candidate-bound returns."
+  },
+  "obligations": [
+    {
+      "id": "T2-01",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-candidate-contract",
+      "title": "Typed-payload override injection",
+      "attack": "Submit candidate envelopes that attempt to supply or overwrite molecular_weight, EEW, AHEW, group_count and canonical identity through eight vectors: top-level key, array container, deep nesting, key-case variant, alternate key name, semantic-alt field, string container, and unicode-homoglyph key.",
+      "done_criteria": "All eight vectors rejected or ignored; identity recomputed from host graph; no candidate value reaches a typed downstream field.",
+      "refutation_criterion": "Any single vector causes a candidate-supplied value to be accepted into MoleculeFactsV1 or to survive into an EquivalentBalance.",
+      "max_fires": 3,
+      "phase0_binding_gap": false,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-01"
+      ],
+      "status": "closed",
+      "note": "Merged into the pre-existing T-01 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim."
+    },
+    {
+      "id": "T2-02",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Packet authority and claim-lock integrity (Phase-0 gap)",
+      "attack": "Attempt to (a) set execution_authorized:true, (b) strip or null each of the eight mandatory claim locks in turn, (c) mutate a signed CroProtocolPackageV2 by one byte, (d) inject a packet-authored performance/decision threshold. Record the module's EVALUATION_RESULT_MISMATCH state alongside.",
+      "done_criteria": "Status stays DRAFT_FOR_CRO_FEASIBILITY_REVIEW; every mutation invalidates the package; every stripped lock fails closed; no packet-authored threshold is honored.",
+      "refutation_criterion": "Any mutation verifies, any lock is bypassable, or a packet-authored threshold is accepted.",
+      "max_fires": 3,
+      "phase0_binding_gap": true,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-02"
+      ],
+      "status": "closed",
+      "note": "Merged into the pre-existing T-02 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim. Also records EVALUATION_RESULT_MISMATCH state so the attack and the R-D07 ceremony share one evidence trail."
+    },
+    {
+      "id": "T2-03",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-envelope-gates",
+      "title": "Inclusive-margin and boundary gaming",
+      "attack": "Feed inputs that land exactly on 0, one ULP inside and outside every inclusive margin, plus NaN/±inf/denormal and unit-swapped values; probe the excursion-invariance theorem for a value-free bypass.",
+      "done_criteria": "Hard-constraint fail-closed on all invalid inputs; inclusive margins enforced deterministically; abstention on undecidable cases, never silent pass.",
+      "refutation_criterion": "Any invalid or boundary-gaming input yields a PASS or a non-abstaining scalar.",
+      "max_fires": 2,
+      "phase0_binding_gap": false,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-03"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-03 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim."
+    },
+    {
+      "id": "T2-04",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-evidence-intake-validator",
+      "title": "Intake spoofing and rights bypass (Phase-0 gap)",
+      "attack": "Present receipts that are (a) signed by a non-anchored/dev key, (b) structurally valid but hash-mismatched to their artifact, (c) stale/revoked, (d) rights-unresolved or quarantined. Record EVALUATION_RESULT_MISMATCH state.",
+      "done_criteria": "Every spoofed, mismatched, stale, or rights-unresolved receipt is rejected at intake with a typed reason; the pinned trust store is the only accepted anchor.",
+      "refutation_criterion": "Any of the four categories is admitted, or a name-based key check is shown to substitute for signature verification.",
+      "max_fires": 3,
+      "phase0_binding_gap": true,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-04"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-04 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim. Also records EVALUATION_RESULT_MISMATCH state so the attack and the R-D07 ceremony share one evidence trail."
+    },
+    {
+      "id": "T2-05",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-formulation-arithmetic",
+      "title": "Stoichiometric identity and mass-balance attack",
+      "attack": "Drive EquivalentBalanceV1 with inverted ratios, non-finite inputs, zero-group operands, mixed/incorrect unit provenance, and candidate MW/EEW/AHEW override attempts; check phr = 100·m_h/m_r and n_e = m_r/EEW recompute from host facts only.",
+      "done_criteria": "All override paths absent; zero-group abstains; non-finite and inversion rejected with reason; full record recomputes on revalidation.",
+      "refutation_criterion": "Any candidate-supplied constant enters the balance, or an inverted/non-finite case returns a scalar instead of failing closed.",
+      "max_fires": 3,
+      "phase0_binding_gap": false,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-05"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-05 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim."
+    },
+    {
+      "id": "T2-06",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-formulation-universe",
+      "title": "Accounting-vs-feasibility conflation (merge evidence)",
+      "attack": "Enumerate the Cartesian space and test whether the DECLARATIVE_ACCOUNTING_ONLY feasibility basis leaks into any downstream feasibility or ranking claim; overlay real dosing/envelope/hazard gates and check the count of genuinely feasible cells is reported distinctly from cardinality. This fire's finding feeds the R-D08 merge decision.",
+      "done_criteria": "Cardinality and feasibility reported as separate quantities; no 'solved' cell is presentable as feasible; identity of every enumerated cell is stable.",
+      "refutation_criterion": "A cardinality count is surfaced as a feasibility claim, or the module asserts any science beyond enumeration (which would also void the merge case).",
+      "max_fires": 2,
+      "phase0_binding_gap": false,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-06"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-06 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim."
+    },
+    {
+      "id": "T2-08",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-molecule-design-gate",
+      "title": "Structural-applicability bypass (Phase-0 gap)",
+      "attack": "Submit polymers, wildcard atoms, invalid valences, multi-component species, and a chemistry-changing mutation request; attempt to reach a non-fail-closed decision. Record EVALUATION_RESULT_MISMATCH state.",
+      "done_criteria": "Every out-of-domain input fails closed; mutation stays QUARANTINED_NO_STRUCTURE_CHANGE; no structure-changing operation is authorized.",
+      "refutation_criterion": "Any out-of-domain input passes, or a structure-changing mutation is admitted.",
+      "max_fires": 3,
+      "phase0_binding_gap": true,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-08"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-08 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim. Also records EVALUATION_RESULT_MISMATCH state so the attack and the R-D07 ceremony share one evidence trail."
+    },
+    {
+      "id": "T2-09",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-optimizer-orchestrator",
+      "title": "Unauthorized ranking / objective emission (Phase-0 gap)",
+      "attack": "Feed a full set of typed module envelopes and attempt to induce a RANK, a FINAL AGGREGATE SCORE, or an eligible objective under the signed zero-ranking policy; feed mutually contradictory envelopes and check the policy solver composes rather than averages. Record EVALUATION_RESULT_MISMATCH state.",
+      "done_criteria": "RANK: NONE and FINAL AGGREGATE SCORE: NOT AUTHORIZED under all inputs; solver composes PASS/FAIL/ABSTAIN/NOT_APPLICABLE without averaging; the module remains implementation-free policy enforcement.",
+      "refutation_criterion": "Any input yields a rank, an aggregate score, or an authorized objective; or the solver is shown to average scores.",
+      "max_fires": 3,
+      "phase0_binding_gap": true,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-09"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-09 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim. Also records EVALUATION_RESULT_MISMATCH state so the attack and the R-D07 ceremony share one evidence trail."
+    },
+    {
+      "id": "T2-10",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-process-qc-twin",
+      "title": "Adversarial drift + stall closeout",
+      "attack": "Run the 128-tamper adversarial process-drift corpus with tampers masked as sensor noise; verify byte-identical re-simulation over the 60 canonical paths. FIRST resolve the two live V1-KPI-QC background-wait stalls (diagnose or split the item) before spending the last budgeted fire.",
+      "done_criteria": "100% re-simulation determinism; drift/tamper detection on all 128; V1-KPI-QC either lands a verdict or is split into fitting sub-items with a RUN_SUMMARY.",
+      "refutation_criterion": "Any tamper is masked as noise, re-simulation diverges, or the item stalls a third time with no RUN_SUMMARY.",
+      "max_fires": 3,
+      "phase0_binding_gap": false,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-10"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-10 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim."
+    },
+    {
+      "id": "T2-12",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-report-packager",
+      "title": "Claim-lock and quarantine bypass (Phase-0 gap)",
+      "attack": "Attempt to package a report that (a) strips a claim lock, (b) reintroduces a legacy/retracted claim, (c) evades the prohibited-claim scan via encoding tricks, (d) clears the quarantine flag on quarantined evidence. Record EVALUATION_RESULT_MISMATCH state.",
+      "done_criteria": "Every prohibited claim is caught; quarantine flag cannot be cleared from within a packet; claim-lock binding survives all four vectors.",
+      "refutation_criterion": "Any prohibited claim, legacy claim, or quarantine bypass reaches a packaged report.",
+      "max_fires": 3,
+      "phase0_binding_gap": true,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-12"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-12 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim. Also records EVALUATION_RESULT_MISMATCH state so the attack and the R-D07 ceremony share one evidence trail."
+    },
+    {
+      "id": "T2-13",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-run-provenance",
+      "title": "Hash-chain and replay integrity",
+      "attack": "Break the Haber–Stornetta hash chain at a mid-point, diverge a replay input/output pair, tamper an event-chain entry, and attempt a root-hash recompute that reconciles a forged history.",
+      "done_criteria": "Any chain break, replay divergence, or event tamper is detected on the next replay; root_hash_recompute_match_rate = 1.000 only for untampered histories.",
+      "refutation_criterion": "A forged or diverged history verifies as intact.",
+      "max_fires": 2,
+      "phase0_binding_gap": false,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-13"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-13 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim."
+    },
+    {
+      "id": "T2-14",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": "amphora-source-ledger",
+      "title": "Resolve-vs-support citation attack (Phase-0 gap)",
+      "attack": "Insert citations whose URLs/DOIs resolve and DSSE-verify but do not actually support the claim they are attached to; attempt to bypass rights-quarantine; feed ISO-690-malformed records. Record EVALUATION_RESULT_MISMATCH state.",
+      "done_criteria": "Resolve-and-verify is shown to be insufficient — support is checked at the claim level; quarantined rights cannot be laundered; malformed records rejected.",
+      "refutation_criterion": "A resolving-but-non-supporting citation is accepted as support, or quarantined evidence enters promotion.",
+      "max_fires": 3,
+      "phase0_binding_gap": true,
+      "origin": "founder-directive",
+      "campaign_items": [
+        "T-14"
+      ],
+      "status": "in-progress",
+      "note": "Merged into the pre-existing T-14 item rather than filed as a duplicate; that item already carried a bespoke attack and the positive_control clause, and this directive's refutation_criterion is added verbatim. Also records EVALUATION_RESULT_MISMATCH state so the attack and the R-D07 ceremony share one evidence trail."
+    },
+    {
+      "id": "A1-NOTE-T07-T11",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": null,
+      "title": "T-07 and T-11 stay queued at lower priority",
+      "done_criteria": "Leave queued for a genuinely adversarial second pass; lower priority than the twelve zero-verdict modules.",
+      "campaign_items": [
+        "T-07",
+        "T-11"
+      ],
+      "status": "in-progress",
+      "note": "Directive states these modules have since picked up verdicts (model-card-authority via V1-KPI-MCA, redteam-audit via waves R/V1). Kept pending, ordered after the T2 block.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "V2-A06v2",
+      "refutation_criterion": "the repair reproduces numerically but fails a convention, propagation, or sufficiency check the repair did not test",
+      "methodology": "Each V2 item dispatches a separately-authored fire -- one that did not write the repair and cannot see its reasoning -- pre-committed to CLAIM_REFUTED if no repair receipt exists.",
+      "section": "A.2",
+      "owner": "LOOP",
+      "module": "amphora-molecule-generator",
+      "title": "Verify molecule-generator R-A06v2 against the AHEW functionality convention",
+      "done_criteria": "Re-derive amine_sites/active_nh from raw SMILES; escalate past the repair's own frame.",
+      "campaign_items": [
+        "V-A06v2"
+      ],
+      "status": "already-satisfied",
+      "note": "V-A06v2 landed CLAIM_SURVIVED at 2026-08-05T15:00 with a positive control, before this directive was reconciled. No new item needed.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "V2-A07v2",
+      "refutation_criterion": "the repair reproduces numerically but fails a convention, propagation, or sufficiency check the repair did not test",
+      "methodology": "Each V2 item dispatches a separately-authored fire -- one that did not write the repair and cannot see its reasoning -- pre-committed to CLAIM_REFUTED if no repair receipt exists.",
+      "section": "A.2",
+      "owner": "LOOP",
+      "module": "amphora-molecule-novelty",
+      "title": "Verify molecule-novelty R-A07v2 across all four fingerprint families",
+      "done_criteria": "Propagate the corrected IPDA structure into maccs_166, atompair_2048, toptorsion_2048 and morgan; diff against the shipped table.",
+      "campaign_items": [
+        "V-A07v2"
+      ],
+      "status": "in-progress",
+      "note": "Already pending as V-A07v2; directive_ref added.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "V2-B02",
+      "refutation_criterion": "the repair reproduces numerically but fails a convention, propagation, or sufficiency check the repair did not test",
+      "methodology": "Each V2 item dispatches a separately-authored fire -- one that did not write the repair and cannot see its reasoning -- pre-committed to CLAIM_REFUTED if no repair receipt exists.",
+      "section": "A.2",
+      "owner": "LOOP",
+      "module": "amphora-barrier-corrosion-score",
+      "title": "Verify barrier-corrosion R-B02 (barrier_index now computed)",
+      "done_criteria": "From-scratch re-implementation; metric non-null on every live path; record that n=3 remains below FEASIBILITY_FLOOR pending R-D01.",
+      "campaign_items": [
+        "V-B02"
+      ],
+      "status": "already-satisfied",
+      "note": "V-B02 is done. The n=3 FEASIBILITY_FLOOR caveat remains open and is carried by R-D01/C.2.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "V2-REMAINDER",
+      "refutation_criterion": "the repair reproduces numerically but fails a convention, propagation, or sufficiency check the repair did not test",
+      "methodology": "Each V2 item dispatches a separately-authored fire -- one that did not write the repair and cannot see its reasoning -- pre-committed to CLAIM_REFUTED if no repair receipt exists.",
+      "section": "A.2",
+      "owner": "LOOP",
+      "module": null,
+      "title": "One V2-* item per remaining unverified repair (directive says 12 more)",
+      "done_criteria": "Each a fresh-harness re-derivation with at least one novel probe never in the repair's set. Refutation for all: the repair reproduces numerically but fails a convention, propagation or sufficiency check the repair did not test.",
+      "campaign_items": [
+        "R-C01-V",
+        "R-C02-V",
+        "R-C03-V",
+        "R-C04-V",
+        "R-C05-V"
+      ],
+      "status": "reconciled-with-deviation",
+      "note": "DEVIATION FROM DIRECTIVE, recorded deliberately. The directive states '15 of 26 distinct repair items carry no independent verify'. That count comes from a V-* prefix scan which misses five existing verify items named R-C01-V..R-C05-V (status blocked, they verify R-C01..R-C05) and the R-Z99 batch audit covering eight more. Re-deriving from the live file, the genuinely unverified repair tokens are R-A02, R-A03, R-N01, R-S03 plus the human-owned R-D01/R-D03/R-D05/R-D08 -- about 8, not 15. Filing 15 new items would have duplicated existing work. Action taken: the five R-C0x-V items are unblocked as their parent repairs land, and V2-* items are filed only for genuinely unverified repairs.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "X-EHS-CID",
+      "section": "A.3",
+      "owner": "LOOP",
+      "module": "amphora-sourceability-ehs",
+      "title": "Land the superseding hazard-card receipt for the CID defect",
+      "done_criteria": "Fresh live PubChem fetch of CAS-correct CIDs for IPDA and m-XDA; re-derive H-statement sets; re-evaluate procurement gates; clear the caveat that currently propagates into solver-lab P3.",
+      "campaign_items": [
+        "X-EHS-CID"
+      ],
+      "status": "in-progress",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "X-LEDGER-TS",
+      "section": "A.3",
+      "owner": "LOOP",
+      "module": "amphora-redteam-audit",
+      "title": "Ship and prove the leading-backslash timestamp parser guard",
+      "done_criteria": "The append-only rows stay; the read path must tolerate them; regression test included.",
+      "campaign_items": [
+        "X-LEDGER-TS"
+      ],
+      "status": "in-progress",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "X-HEARTBEAT",
+      "section": "A.3",
+      "owner": "LOOP",
+      "module": null,
+      "title": "Cron-side heartbeat recording an attempted fire even when the agent never starts",
+      "done_criteria": "The three missing hours (and any future gap) are explained rather than observed.",
+      "campaign_items": [],
+      "status": "already-delivered",
+      "note": "Delivered in Wave W on 2026-08-05 before this directive was reconciled: the launcher writes logs/heartbeat.jsonl at start, after flock and before the HARD_STOP check. Verified writing hourly since 03:00 on 2026-08-05. Not re-filed.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "X-SCHEMA-WATCH",
+      "section": "A.3",
+      "owner": "LOOP",
+      "module": "amphora-redteam-audit",
+      "title": "Keep RESTORED_SCHEMA_FLIP under active log review",
+      "done_criteria": "It is the only failure mode invisible to the three verification checks, so the log needs watching, not trusting.",
+      "campaign_items": [
+        "X-SCHEMA-WATCH"
+      ],
+      "status": "in-progress",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "X-SOLVER-P3",
+      "section": "A.3",
+      "owner": "LOOP",
+      "module": "amphora-redteam-audit",
+      "title": "Solver-lab constraint relaxation with an explicit audit trail",
+      "done_criteria": "What was relaxed, by whom, under what authority -- so an EMPTY_FEASIBLE_SET becomes an actionable answer rather than a dead end.",
+      "campaign_items": [
+        "X-SOLVER-P3"
+      ],
+      "status": "in-progress",
+      "note": "Directive gates this behind X-EHS-CID, since P3's blocking set is provisional until the CID defect is fixed. Ordered after X-EHS-CID in the backlog.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-CREDENTIALS",
+      "section": "B.1",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Register the two trusted signer identities (blocks everything)",
+      "done_criteria": "Mint and prove possession of two distinct, non-revoked, non-development Ed25519 identities (PHASE0_EVALUATOR, PHASE0_INTERNAL_REVIEWER); add both public keys to config/phase0-trust-store.v1.json under the founder-signed master manifest; adopt the pre-loop triage policy (do NOT mass re-sign); fix external messaging so the quotable Phase-0 count is 9, not 17; and scope any portfolio-level statement to the 17 attacked modules, never the full 40 crates (12 are pure runtime, and solver-lab has no mission.md yet).",
+      "campaign_items": [
+        "B-CREDENTIALS"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Human ceremony. The loop deliberately does not hold these keys.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-CEREMONY-RD07",
+      "section": "B.2",
+      "owner": "HUMAN",
+      "module": "amphora-redteam-audit",
+      "title": "Run the R-D07 re-evaluation ceremony (restores 8 of 9 modules)",
+      "done_criteria": "Per module: dry-run to read the target receipt hash; rehearse in a scratch rsync copy to mint the matching review; obtain the fresh independent-review signature from the second identity; issue one governed command in the authoritative tree.",
+      "repairable_modules": [
+        "cro-protocol-packager",
+        "evidence-intake-validator",
+        "known-answer-benchmarks",
+        "molecule-design-gate",
+        "optimizer-orchestrator",
+        "redteam-audit",
+        "report-packager",
+        "source-ledger"
+      ],
+      "not_repairable": {
+        "module": "molecule-property",
+        "why": "no independent-review receipt and no movement event, so the ceremony's reconcile branch cannot restore it; it needs a full re-evaluation plus the C.6 lab validation. Do not let a summary round 8 up to 9."
+      },
+      "campaign_items": [
+        "R-D07"
+      ],
+      "status": "blocked",
+      "unblock_condition": "B-CREDENTIALS first. molecule-property is NOT restorable this way -- no review receipt, no movement event; route it through full re-evaluation plus C.6. Do not let a summary round 8 up to 9.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-MERGE-RD08",
+      "section": "B.3",
+      "owner": "HUMAN",
+      "module": "amphora-formulation-universe",
+      "title": "Decide R-D08 — the formulation-universe merge",
+      "done_criteria": "Merge decision taken, or withdrawn if T2-06 finds independent value.",
+      "campaign_items": [
+        "R-D08"
+      ],
+      "status": "blocked",
+      "unblock_condition": "HOLD until T2-06 (campaign item T-06) runs. The loop is forbidden from taking this portfolio-shape decision.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-ASK-R-D01",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Rights/data ask R-D01",
+      "done_criteria": "Send the prepared USBR ST-19168 RIGHTS-REVIEW-REQUEST to USBR RISE; confirm public-domain under 17 U.S.C. §105.",
+      "campaign_items": [
+        "R-D01"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Human action. Unlocks: The entire barrier-corrosion wet-panel campaign (C.2). Critical path — the package is written and signed, it needs a human to send it.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-ASK-R-D02",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Rights/data ask R-D02",
+      "done_criteria": "File/escalate the USBR RISE request for frequency-resolved raw EIS sweeps (queue #3/#14; rights already verified public-domain).",
+      "campaign_items": [
+        "R-D02"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Human action. Unlocks: public-corrosion-benchmark's move from a correctly-stated negative result to a positive one; feeds C.2.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-ASK-R-D03",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Rights/data ask R-D03",
+      "done_criteria": "Counsel question: does the Reynolds 2024 CC BY-NC-ND licence permit internal, non-distributed, AUDIT_ONLY quantitative benchmarking?",
+      "campaign_items": [
+        "R-D03"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Human action. Unlocks: viscosity-score's Krieger–Dougherty benchmark (C.4). A rights wall, not a data wall — the loop found the dataset and stopped.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-ASK-R-D04",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Rights/data ask R-D04",
+      "done_criteria": "Ratify or downgrade the cure fixture's self-asserted CC0 via a signed rights receipt (queue #7).",
+      "campaign_items": [
+        "R-D04"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Human action. Unlocks: cure-potlife-gate's structural integrity, independent of the science fix in C.3.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-ASK-R-D05",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Rights/data ask R-D05",
+      "done_criteria": "Contact PURformance authors re a sibling HTE release, or commission a DoE (queue #8).",
+      "campaign_items": [
+        "R-D05"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Human action. Unlocks: design-rule-score — n=58 single-formulator is the binding constraint no model can fix (C.8).",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-ASK-R-D06",
+      "section": "B.4",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Rights/data ask R-D06",
+      "done_criteria": "Confirm with RadonPy/PI1070 authors whether dielectric trajectories were production-converged; locate an OpenPoly-matched density field (queues #10/#11).",
+      "campaign_items": [
+        "R-D06"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Human action. Unlocks: molecule-property dielectric labels (currently 89.5% physically inadmissible) and the second density corpus (C.6).",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "B-COUNTERPARTIES",
+      "section": "B.5",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Contract the eight independent counterparties",
+      "done_criteria": "Contract laboratory; independent evaluator (PHASE0_EVALUATOR); independent reviewer (PHASE0_INTERNAL_REVIEWER); statistician; chemistry labeling; data curation; counsel; founder/owner. None may be collapsed into the portfolio team; the two signer roles must be distinct from each other and from the lab.",
+      "campaign_items": [
+        "B-COUNTERPARTIES"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Human action; gates every Section C experiment.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C0",
+      "section": "C.0",
+      "owner": "LAB",
+      "module": null,
+      "title": "Common transfer path, promotion gate, and kill/hold gate",
+      "done_criteria": "Transfer path: candidate-bound draft packet (execution_authorized:false) -> external execution at the contract lab (method, custody, deviations) -> signed candidate-bound raw return (with uncertainty) -> independent review by a distinct signer -> policy decision. A packet is a structured question, not an instruction to execute; a fixture is not independent validation; a similarity observation is not novelty.",
+      "promotion_gate": [
+        "Raw evidence complete and rights-eligible; custody unbroken.",
+        "Split and benchmark locks match the pre-registration byte-for-byte.",
+        "Predefined thresholds pass; uncertainty quantified (conformal + bootstrap, not point-only).",
+        "Evaluator and reviewer are distinct trusted signers; claim locks intact; exactly one valid movement event exists."
+      ],
+      "kill_hold_gate": [
+        "Rights failure, custody break, or split leakage.",
+        "Method mismatch vs the pre-registered protocol, or insufficient sample.",
+        "Baseline non-superiority, or a confidence interval that crosses the pre-registered floor.",
+        "Signer conflict, or any pressure to broaden the signed applicability domain."
+      ],
+      "on_failure": "On failure, no threshold is weakened and no fixture is substituted. The failure is recorded as a signed negative result and the module does not move. That is the correct outcome, not a setback.",
+      "campaign_items": [
+        "LAB-C0"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Policy that governs C.1-C.10; not itself an experiment.",
+      "note": "The eight promotion and kill/hold criteria were dropped from the first version of this index. They are the actual go/no-go rules for every Section C experiment, so their absence made the index unusable for the decision it exists to support.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C1",
+      "section": "C.1",
+      "owner": "LAB",
+      "module": "amphora-formulation-universe",
+      "title": "Formulation coverage — seed campaign (30 formulations / 3 families)",
+      "done_criteria": "30 candidate-bound records with resolved identity, units and rights; zero selection-by-prediction; byte-stable two-replay of the selection.",
+      "campaign_items": [
+        "LAB-C1"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Needs credentials (B.1) only — no R-D blocker. This is the substrate every other experiment binds to.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C2",
+      "section": "C.2",
+      "owner": "LAB",
+      "module": "amphora-barrier-corrosion-score",
+      "title": "Barrier-corrosion campaign (210 panels / 40 systems, incl. 10 untouched external)",
+      "done_criteria": "barrier_index computed and non-null on every real-data path; superiority over null-median on the group-safe split with a bootstrap CI excluding zero; conformal coverage >= target on the 10 untouched external systems.",
+      "campaign_items": [
+        "LAB-C2"
+      ],
+      "status": "blocked",
+      "unblock_condition": "R-D01 (critical path) and R-D02; C.1 seed set.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C3",
+      "section": "C.3",
+      "owner": "LAB",
+      "module": "amphora-cure-potlife-gate",
+      "title": "Cure / pot-life campaign (36 runs: 24 fit + 12 sealed holdouts)",
+      "done_criteria": "Arrhenius model beats Q10=2 on all measured legs including 40 C, within the 0.25 held-out and 0.40 per-point ceilings, on the sealed holdouts; stratified disclosure reported.",
+      "campaign_items": [
+        "LAB-C3"
+      ],
+      "status": "blocked",
+      "unblock_condition": "R-D04; C.1 seed chemistries.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C4",
+      "section": "C.4",
+      "owner": "LAB",
+      "module": "amphora-viscosity-score",
+      "title": "Viscosity / sag campaign (288 cells, three temperatures)",
+      "done_criteria": "HB and KD parameters recovered within pre-registered bounds; multi-temperature error quantified with conformal + bootstrap intervals; sag predictions gated on measured monotonic shear-thinning.",
+      "campaign_items": [
+        "LAB-C4"
+      ],
+      "status": "blocked",
+      "unblock_condition": "R-D03 for the phi-max ladder; C.1 formulation set. A locale/typography data-integrity control is mandatory (the digital campaign found a 13-169x literal-reading trap).",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C5",
+      "section": "C.5",
+      "owner": "LAB",
+      "module": "amphora-solvency-score",
+      "title": "Solvency / blend calibration campaign",
+      "done_criteria": "Measured-blend RMSE beats a modern group-contribution baseline on the locked split with a bootstrap CI excluding parity; Hansen parameters inside the admissible envelope [9.6, 59.9] MPa^0.5; degenerate-baseline check passes.",
+      "campaign_items": [
+        "LAB-C5"
+      ],
+      "status": "blocked",
+      "unblock_condition": "C.1 seed blends; no external R-D blocker.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C6",
+      "section": "C.6",
+      "owner": "LAB",
+      "module": "amphora-molecule-property",
+      "title": "Molecule-property validation + dielectric labels (>=300 eligible structures)",
+      "done_criteria": "Coherent-split MAEs within pre-registered bounds; a dielectric arm with R^2 > 0 on admissible rows (currently none exists); cross-corpus transfer non-degrading; exact toolkit + identity + mass + rights reconciliation clean.",
+      "campaign_items": [
+        "LAB-C6"
+      ],
+      "status": "blocked",
+      "unblock_condition": "R-D06. Feeds B.2's full re-evaluation of molecule-property, the one module the ceremony cannot restore.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C7",
+      "section": "C.7",
+      "owner": "LAB",
+      "module": "amphora-molecule-role-ranker",
+      "title": "Molecule-role blinded-label campaign",
+      "done_criteria": "Agreement above a pre-registered numeric threshold on the blinded held-out set; no reversal of the amine-direction rule; guanidine chemotype (DPG, DOTG) covered.",
+      "campaign_items": [
+        "LAB-C7"
+      ],
+      "status": "blocked",
+      "unblock_condition": "C.1 candidate set; labeler contracting.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C8",
+      "section": "C.8",
+      "owner": "LAB",
+      "module": "amphora-design-rule-score",
+      "title": "Design-rule second-formulator DoE",
+      "done_criteria": "Leak-free delta-R^2 CI excludes zero at the expanded n; cross-formulator transfer non-degrading; Guth-Gold concordance holds.",
+      "campaign_items": [
+        "LAB-C8"
+      ],
+      "status": "blocked",
+      "unblock_condition": "R-D05. n=58 single-formulator is the binding constraint no modelling choice can fix.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C9",
+      "section": "C.9",
+      "owner": "LAB",
+      "module": "amphora-redteam-audit",
+      "title": "Independent chemistry red-team (96 attacks + 32 valid controls)",
+      "done_criteria": "0 silent malicious acceptances, 32/32 valid controls accepted, 0 rank/objective emissions, 0 stripped locks, clean two-replay.",
+      "campaign_items": [
+        "LAB-C9"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Credentials (B.1); runs against the whole tree, so best after A.1/A.2 have hardened the modules. Payloads sealed by the reviewer; the agent that runs it did not author it.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "LAB-C10",
+      "section": "C.10",
+      "owner": "LAB",
+      "module": "amphora-process-qc-twin",
+      "title": "Process-QC prospective pilot (30 batches, seeded failures)",
+      "done_criteria": "Seeded failures detected above threshold with a bounded false-positive rate on nominal batches; determinism holds against measured shear histories.",
+      "campaign_items": [
+        "LAB-C10"
+      ],
+      "status": "blocked",
+      "unblock_condition": "Resolve the process-qc-twin stalls first (T2-10 / campaign item T-10); no external R-D blocker.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "A1-FIRE-INSPECTION",
+      "section": "A.1",
+      "owner": "LOOP",
+      "module": null,
+      "title": "A fire finishing materially faster than the median is opened for inspection",
+      "done_criteria": "Pre-commit: a fire that finishes materially faster than the 8m55s median is opened for inspection before its verdict is banked.",
+      "campaign_items": [],
+      "status": "already-delivered",
+      "note": "Implemented in the launcher as the FAST_FIRE log flag on 2026-08-05 (threshold: under half the measured 537s median over 223 fires; the directive's 8m55s and the live median agree to two seconds). Deliberately LOG ONLY -- an unexplained fast fire is a smell, not proof, so it must never downgrade a verdict on its own. Implemented before it was indexed, which is why it appears here retroactively.",
+      "origin": "founder-directive"
+    },
+    {
+      "id": "D-COVERAGE",
+      "section": "meta",
+      "owner": "LOOP",
+      "module": "amphora-redteam-audit",
+      "origin": "operator-derived",
+      "title": "Sign the founder-directive coverage table into the evidence tree",
+      "done_criteria": "Signed receipt carrying the full obligation-coverage table, the UNMAPPED and ORPHAN lists (reported even when empty), the directive cited by path + sha256, and a spot-check of >=3 closed obligations read from their actual receipts.",
+      "campaign_items": [
+        "D-COVERAGE"
+      ],
+      "status": "in-progress",
+      "note": "Added by the operator when binding the loop to this directive, so that progress against it is signed evidence rather than an assertion in a chat log. Not founder text."
+    },
+    {
+      "id": "U-MLIP",
+      "section": "C.6-adjacent",
+      "owner": "LOOP",
+      "module": "amphora-molecule-property",
+      "origin": "operator-derived",
+      "title": "Feasibility: can an MLIP supply physically-admissible dielectric and density labels?",
+      "done_criteria": "Signed feasibility receipt covering rights (licence quoted verbatim), chemistry coverage, a determinism verdict against the byte-identical two-replay boundary, and an explicit statement that computed labels cannot satisfy a Section C gate.",
+      "campaign_items": [
+        "U-MLIP"
+      ],
+      "status": "in-progress",
+      "note": "Raised by the founder alongside this directive (Orb-v3, arXiv:2504.06231). Scoped to the C.6 label gap. The honest finding recorded up front: Orb and this portfolio share no task, so a head-to-head benchmark would be a manufactured claim. Not founder directive text."
+    }
+  ]
+}

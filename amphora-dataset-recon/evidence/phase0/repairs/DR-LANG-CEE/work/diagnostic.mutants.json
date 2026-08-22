@@ -1,0 +1,67 @@
+{
+  "license_text_diverges": {
+    "expected_rule": "license_text_matches_live_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Overwrote DR-LANG-CEE-06's license_evidence_quote with a fabricated 'closed-access, no free archive' claim contradicting the recorded WebFetch evidence (which states CC BY-NC-ND 4.0 open access).",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-CEE-06",
+        "reason": "DR-LANG-CEE-06: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "literal_english_translation_query": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native pl query string 'żywica epoksydowa utwardzacz aminowy kinetyka utwardzania baza danych' with its literal English gloss, while leaving language:'pl' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "pl query field is a literal English translation or contains no pl marker vocabulary: 'epoxy resin amine hardener cure kinetics database'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "missing_recorded_query": {
+    "expected_rule": "citation_has_recorded_query_and_result",
+    "expected_rule_fired": true,
+    "how_planted": "Scrubbed every occurrence of DR-LANG-CEE-06's url (https://reference-global.com/journal/KOM) from a copy of this fire's search-record queries/results.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-CEE-06",
+        "reason": "DR-LANG-CEE-06: url https://reference-global.com/journal/KOM does not appear in any recorded search-record query/result this fire",
+        "rule": "citation_has_recorded_query_and_result"
+      }
+    ]
+  },
+  "native_citation_not_verbatim": {
+    "expected_rule": "native_citation_verbatim_in_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced DR-LANG-CEE-02's native_citation (the exact Polish article title) with an English paraphrase, simulating a silently-translated/paraphrased citation.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-CEE-02",
+        "reason": "DR-LANG-CEE-02: native_citation 'Qualification testing of protective paint systems for offshore marine structures' does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "native_citation_verbatim_in_evidence"
+      }
+    ]
+  },
+  "rediscovery_dropped": {
+    "expected_rule": "rediscovery_recall",
+    "expected_rule_fired": true,
+    "how_planted": "Injected a SYNTHETIC previously-supplied candidate id ('CEE-PRIOR-TEST') into the checker's previously_supplied_ids input -- since this fire genuinely found zero real prior pl/cs candidates (see intake_manifest), a synthetic id is required to prove this rule is a real, non-vacuous check rather than one that trivially never fires on an empty input list.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "CEE-PRIOR-TEST",
+        "reason": "previously-supplied candidate CEE-PRIOR-TEST was neither rediscovered (no disposition entry with rediscovers==CEE-PRIOR-TEST) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      }
+    ]
+  }
+}

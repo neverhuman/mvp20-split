@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-f3207ae632cf724971f2d4532f07dc413203997fa496489cfe7cd3bf9d2fef56",
+      "path": "events/f3207ae632cf724971f2d4532f07dc413203997fa496489cfe7cd3bf9d2fef56.json",
+      "sha256": "860524a737260e0613579a3dbfdedbd569af84b69248b7562b07750f82ffcdca"
+    }
+  ],
+  "module_id": "amphora-evidence-intake-validator",
+  "schema": "amphora.module-movement-ledger.v1"
+}

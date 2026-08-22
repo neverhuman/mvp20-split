@@ -1,0 +1,610 @@
+{
+  "acceptance_bar_floors": {
+    "all_met": true,
+    "floor_results": {
+      "fail_closed_probe_parity_rate_floor": true,
+      "novel_corpus_correct_rate_floor": true,
+      "positive_scenario_parity_rate_floor": true,
+      "quarantine_invariant_rate_floor": true
+    },
+    "published_floors": {
+      "fail_closed_probe_parity_rate_floor": 1.0,
+      "novel_corpus_correct_rate_floor": 1.0,
+      "positive_scenario_parity_rate_floor": 1.0,
+      "quarantine_invariant_rate_floor": 1.0
+    }
+  },
+  "authority": "AUDIT_ONLY",
+  "closes": [
+    "First independent (non-runtime) re-derivation of the optimizer-orchestrator deny-by-default authorization gate: reproduces all 5 shipped positive scenarios and all shipped fail-closed probes across the 6 module-specific attack axes at 100% decision parity vs the byte-stable Rust result.v1.json.",
+    "Supplies an independent adversarial policy corpus of novel probes (lexical source variants, typed comparison mismatches, nested-path traversal, duplicate/extra/renamed registry rows, and quarantined true-negatives) not present in the shipped harness -- the mission's named Phase-1 prerequisite -- with 100% expected fail-closed / accept-quarantined behaviour.",
+    "Confirms the quarantine authority-envelope invariant on every accepting case: zero rankable rows, eligible_objective_count=0, solver/ranking/optimizer locks preserved, no banned authority key emitted."
+  ],
+  "counts": {
+    "novel_accept_true_negatives": 6,
+    "novel_corpus_cases": 27,
+    "positive_scenarios": 5,
+    "shipped_probes": 28,
+    "total_cases": 60
+  },
+  "does_not_close": [
+    "Rust error-taxonomy / reason-string parity: the oracle matches accept/reject decisions, not the runtime's exact Err strings -- a Phase-1 differential harness.",
+    "No product qualification, batch release, procurement, FTO, regulatory, or wet-lab claim -- authorization is screening-envelope mediation only.",
+    "No promotion, no manifest edit, no scientific_readiness flip (module stays NOT_APPLICABLE / infrastructure lane, solver_use_ceiling DISABLED)."
+  ],
+  "g1_positive_scenario_parity": {
+    "authority_envelope_clean_rate": 1.0,
+    "positive_scenario_parity_rate": 1.0,
+    "quarantine_invariant_rate": 1.0,
+    "records": [
+      {
+        "authority_envelope_clean": true,
+        "decision_parity": true,
+        "oracle_accepts": true,
+        "quarantine_invariant_holds": true,
+        "scenario_id": "policy-empty-no-envelope",
+        "shipped_accepts": true
+      },
+      {
+        "authority_envelope_clean": true,
+        "decision_parity": true,
+        "oracle_accepts": true,
+        "quarantine_invariant_holds": true,
+        "scenario_id": "policy-single-scored-envelope",
+        "shipped_accepts": true
+      },
+      {
+        "authority_envelope_clean": true,
+        "decision_parity": true,
+        "oracle_accepts": true,
+        "quarantine_invariant_holds": true,
+        "scenario_id": "policy-hard-constraint-passes",
+        "shipped_accepts": true
+      },
+      {
+        "authority_envelope_clean": true,
+        "decision_parity": true,
+        "oracle_accepts": true,
+        "quarantine_invariant_holds": true,
+        "scenario_id": "policy-two-envelope-modules",
+        "shipped_accepts": true
+      },
+      {
+        "authority_envelope_clean": true,
+        "decision_parity": true,
+        "oracle_accepts": true,
+        "quarantine_invariant_holds": true,
+        "scenario_id": "policy-objective-declared-with-constraint",
+        "shipped_accepts": true
+      }
+    ],
+    "sample_size": 5
+  },
+  "g2_fail_closed_probe_parity": {
+    "per_axis": {
+      "duplicate_score_envelope_fail_closed_rate": {
+        "n": 3,
+        "parity": 1.0
+      },
+      "failed_or_no_authority_score_fail_closed_rate": {
+        "n": 7,
+        "parity": 1.0
+      },
+      "missing_optimizer_claim_lock_fail_closed_rate": {
+        "n": 3,
+        "parity": 1.0
+      },
+      "objective_constraint_injection_fail_closed_rate": {
+        "n": 3,
+        "parity": 1.0
+      },
+      "solver_ranking_escalation_fail_closed_rate": {
+        "n": 7,
+        "parity": 1.0
+      },
+      "unknown_objective_path_operator_fail_closed_rate": {
+        "n": 5,
+        "parity": 1.0
+      }
+    },
+    "probe_parity_rate": 1.0,
+    "probe_sample_size": 28,
+    "records": [
+      {
+        "axis": "objective_constraint_injection_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "candidate objective injection is forbidden",
+        "oracle_fail_closed": true,
+        "probe": "candidate_source_with_objectives",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "objective_constraint_injection_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "candidate objective injection is forbidden",
+        "oracle_fail_closed": true,
+        "probe": "candidate_source_with_objectives_and_constraint",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "objective_constraint_injection_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "unknown_request_source_string",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "unknown_objective_path_operator_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+        "oracle_fail_closed": true,
+        "probe": "constraint_operator_contains",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "unknown_objective_path_operator_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+        "oracle_fail_closed": true,
+        "probe": "constraint_operator_empty",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "unknown_objective_path_operator_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+        "oracle_fail_closed": true,
+        "probe": "objective_section_not_objective_values",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "unknown_objective_path_operator_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+        "oracle_fail_closed": true,
+        "probe": "constraint_section_not_gates",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "unknown_objective_path_operator_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+        "oracle_fail_closed": true,
+        "probe": "objective_empty_path",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "duplicate_score_envelope_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope module is unknown or duplicated",
+        "oracle_fail_closed": true,
+        "probe": "two_envelopes_same_module_id",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "duplicate_score_envelope_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+        "oracle_fail_closed": true,
+        "probe": "two_objectives_same_id",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "duplicate_score_envelope_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer constraint declaration is unknown, duplicate, or malformed",
+        "oracle_fail_closed": true,
+        "probe": "two_constraints_same_id",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "missing_optimizer_claim_lock_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "oracle_fail_closed": true,
+        "probe": "envelope_missing_no_ranking_authority_lock",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "missing_optimizer_claim_lock_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "oracle_fail_closed": true,
+        "probe": "envelope_no_optimizer_authority_lock_false",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "missing_optimizer_claim_lock_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "policy_required_claim_locks_trimmed",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "failed_or_no_authority_score_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer constraint envelope is not SCORED",
+        "oracle_fail_closed": true,
+        "probe": "envelope_status_failed_gates_with_constraint",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "failed_or_no_authority_score_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "oracle_fail_closed": true,
+        "probe": "envelope_ranking_eligible_true",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "failed_or_no_authority_score_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "oracle_fail_closed": true,
+        "probe": "envelope_authority_tier_ranking",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "failed_or_no_authority_score_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "oracle_fail_closed": true,
+        "probe": "envelope_authority_tier_optimizer",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "failed_or_no_authority_score_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "oracle_fail_closed": true,
+        "probe": "envelope_authority_tier_empty_whitespace",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "failed_or_no_authority_score_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "oracle_fail_closed": true,
+        "probe": "envelope_solver_use_ceiling_unsupported",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "failed_or_no_authority_score_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer envelope module is unknown or duplicated",
+        "oracle_fail_closed": true,
+        "probe": "envelope_module_id_not_registered",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "solver_ranking_escalation_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "policy_ranking_enabled_true",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "solver_ranking_escalation_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "policy_solver_enabled_true",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "solver_ranking_escalation_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "policy_authority_expansion_allowed_true",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "solver_ranking_escalation_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "policy_decision_use_ceiling_ranking",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "solver_ranking_escalation_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "policy_registered_modules_element_removed",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "solver_ranking_escalation_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "policy_schema_wrong_version",
+        "shipped_fail_closed": true
+      },
+      {
+        "axis": "solver_ranking_escalation_fail_closed_rate",
+        "decision_parity": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "oracle_fail_closed": true,
+        "probe": "request_schema_wrong_version",
+        "shipped_fail_closed": true
+      }
+    ]
+  },
+  "g3_novel_adversarial_corpus": {
+    "accept_quarantine_invariant_rate": 1.0,
+    "accept_true_negatives": 6,
+    "novel_corpus_correct_rate": 1.0,
+    "novel_corpus_size": 27,
+    "records": [
+      {
+        "case": "request_source_variant::'policy'",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "request_source_variant::'Policy'",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "request_source_variant::' POLICY'",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "request_source_variant::'POLICY '",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "request_source_variant::'CANDIDATE\\n'",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "request_source_variant::''",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "objective_module_unknown",
+        "correct": true,
+        "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "objective_path_dots_only_accepts_quarantined",
+        "correct": true,
+        "deny_reason": null,
+        "expected": "ACCEPT",
+        "got": "ACCEPT",
+        "quarantine_invariant_holds": true
+      },
+      {
+        "case": "constraint_module_no_envelope",
+        "correct": true,
+        "deny_reason": "optimizer constraint module envelope is absent",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "constraint_nested_path_missing",
+        "correct": true,
+        "deny_reason": "optimizer constraint path is absent or unknown",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "constraint_nested_path_present_accepts",
+        "correct": true,
+        "deny_reason": null,
+        "expected": "ACCEPT",
+        "got": "ACCEPT",
+        "quarantine_invariant_holds": true
+      },
+      {
+        "case": "numeric_operator_on_string_actual",
+        "correct": true,
+        "deny_reason": "optimizer hard constraint failed",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "numeric_operator_on_bool_actual",
+        "correct": true,
+        "deny_reason": "optimizer hard constraint failed",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "eq_bool_vs_number_typed_mismatch",
+        "correct": true,
+        "deny_reason": "optimizer hard constraint failed",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "numeric_constraint_true_accepts_quarantined",
+        "correct": true,
+        "deny_reason": null,
+        "expected": "ACCEPT",
+        "got": "ACCEPT",
+        "quarantine_invariant_holds": true
+      },
+      {
+        "case": "envelope_authority_tier_production",
+        "correct": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "envelope_solver_ceiling_production",
+        "correct": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "envelope_usable_by_optimizer_true",
+        "correct": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "envelope_objective_values_nonempty",
+        "correct": true,
+        "deny_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "policy_registered_modules_duplicate",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "policy_registered_modules_extra_unknown",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "policy_required_lock_renamed_same_len",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "policy_decision_ceiling_lowercase",
+        "correct": true,
+        "deny_reason": "optimizer registry policy is altered or incomplete",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "objective_id_whitespace_only",
+        "correct": true,
+        "deny_reason": "optimizer objective declaration is unknown, duplicate, or malformed",
+        "expected": "REJECT",
+        "got": "REJECT",
+        "quarantine_invariant_holds": null
+      },
+      {
+        "case": "constraint_neq_true_accepts_quarantined",
+        "correct": true,
+        "deny_reason": null,
+        "expected": "ACCEPT",
+        "got": "ACCEPT",
+        "quarantine_invariant_holds": true
+      },
+      {
+        "case": "envelope_extra_unknown_lock_accepts_quarantined",
+        "correct": true,
+        "deny_reason": null,
+        "expected": "ACCEPT",
+        "got": "ACCEPT",
+        "quarantine_invariant_holds": true
+      },
+      {
+        "case": "candidate_empty_objectives_with_constraint_accepts",
+        "correct": true,
+        "deny_reason": null,
+        "expected": "ACCEPT",
+        "got": "ACCEPT",
+        "quarantine_invariant_holds": true
+      }
+    ]
+  },
+  "g4_quarantine_invariant": {
+    "invariant_holds_cases": 11,
+    "invariant_rate": 1.0,
+    "note": "Every accepting authorization returns the frozen quarantine envelope with zero rankable rows and no banned authority key.",
+    "total_accepting_cases": 11
+  },
+  "gates": {
+    "all_pass": true,
+    "g1_positive_scenario_parity": true,
+    "g2_fail_closed_probe_parity": true,
+    "g3_novel_adversarial_corpus_correct": true,
+    "g4_quarantine_authority_envelope_invariant": true
+  },
+  "hypothesis": "The module's falsifiable hypothesis -- identity-bound policy prevents every unauthorized row from ranking -- holds under an independent re-implementation: the unauthorized-rank rate is zero on every probe and the quarantine authority envelope (eligible_objective_count=0, ranking_performed/solver_invoked/usable_by_optimizer=false, no banned authority key) is preserved on every accepting case.",
+  "module": "amphora-optimizer-orchestrator",
+  "non_circularity": "The oracle (ooo_oracle.py) is a standalone CPython re-implementation of the authorization contract from Anderson-1972 reference-monitor / Saltzer-Schroeder-1975 fail-safe-default / NIST SP 800-53 AC-3/AC-6 semantics. It does not import, FFI-call, or read amphora-core; parity is measured against the byte-stable shipped result.v1.json, whose decisions were produced by the independent Rust runtime.",
+  "preconditions": {
+    "optimizer_modules_count": 29,
+    "required_claim_locks_count": 10,
+    "shipped_positive_scenarios": 5,
+    "shipped_probe_axes": [
+      "duplicate_score_envelope_fail_closed_rate",
+      "failed_or_no_authority_score_fail_closed_rate",
+      "missing_optimizer_claim_lock_fail_closed_rate",
+      "objective_constraint_injection_fail_closed_rate",
+      "solver_ranking_escalation_fail_closed_rate",
+      "unknown_objective_path_operator_fail_closed_rate"
+    ]
+  },
+  "purpose": "Independently re-derive the amphora-optimizer-orchestrator deny-by-default authorization gate from published reference-monitor semantics (no Rust import), reproduce every shipped Phase-0 positive scenario and fail-closed probe at 100% decision parity, and exercise an independent adversarial policy corpus -- the artifact the mission names as the Phase-1 prerequisite.",
+  "run_type": "INDEPENDENT_NON_RUNTIME_ORACLE_PARITY",
+  "runtime_source_anchors": {
+    "amphora-assurance-capabilities/tests/optimizer_orchestrator_phase0_kpi.rs": "8e7c02a1676529b5fdd7bbe922632648000f612cc6fdb3addba2c42c758d3219",
+    "amphora-core/src/lib.rs": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "amphora-core/src/phase0.rs": "123c552fedcae880df4d0e5b2d7fbe8ba629ecbc16fb16426b0653ebeb4f5df9",
+    "evidence/phase0/benchmark/benchmark-lock.v1.json": "ed8e83682d62624618bcc818419f4b96ca7ddaaa6f64abf9b01c1e24fc5be27d",
+    "evidence/phase0/benchmark/result.v1.json": "e1d95b6b338b10d5999d9d0af4e5b2e8f635eab72a888942e9a77439382eba17"
+  },
+  "schema": "amphora.optimizer-orchestrator.authorization-oracle-parity-diagnostic.v1",
+  "study_id": "optimizer-authorization-oracle-parity-v1",
+  "theory_reference": [
+    "J.P. Anderson, Computer Security Technology Planning Study, ESD-TR-73-51 (1972) -- reference monitor.",
+    "Saltzer & Schroeder, The Protection of Information in Computer Systems, Proc. IEEE 63(9):1278-1308 (1975) -- fail-safe defaults, least privilege.",
+    "NIST SP 800-53 Rev.5 (2020) AC-3 access enforcement, AC-6 least privilege.",
+    "NIST SP 800-207 (2020) Zero Trust Architecture -- deny by default.",
+    "ISO/IEC 27001:2022 Annex A.5.15 access control."
+  ]
+}

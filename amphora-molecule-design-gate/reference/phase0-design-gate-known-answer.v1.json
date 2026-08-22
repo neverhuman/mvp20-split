@@ -1,0 +1,887 @@
+{
+  "acceptance_bar": {
+    "authority_lock_preservation_rate_floor": 1.0,
+    "explicit_role_correctness_rate_floor": 1.0,
+    "gate_decision_correctness_rate_floor": 1.0,
+    "gate_reason_attribution_correctness_rate_floor": 1.0,
+    "malformed_structure_fail_closed_rate_floor": 1.0,
+    "role_appropriate_reactivity_correctness_rate_floor": 1.0,
+    "valid_single_component_correctness_rate_floor": 1.0
+  },
+  "authority": {
+    "constraint_only": true,
+    "optimizer_authority": false,
+    "scientific_readiness": "NOT_APPLICABLE",
+    "structural_applicability_only": true
+  },
+  "fixture_id": "amphora-molecule-design-gate-phase0-known-answer-2026-07-21",
+  "records": [
+    {
+      "case_id": "resin-dgeba",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 340.42,
+        "formula": "C21H24O4",
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "sources": [
+        "PubChem CID 2286"
+      ],
+      "subgroup": "VALID_RESIN"
+    },
+    {
+      "case_id": "resin-phenyl-glycidyl-ether",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 150.17,
+        "formula": "C9H10O2",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "C1OC1COc1ccccc1",
+      "sources": [
+        "PubChem CID 7583"
+      ],
+      "subgroup": "VALID_RESIN"
+    },
+    {
+      "case_id": "resin-butyl-glycidyl-ether",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 130.19,
+        "formula": "C7H14O2",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "CCCCOCC1CO1",
+      "sources": [
+        "PubChem CID 8110"
+      ],
+      "subgroup": "VALID_RESIN"
+    },
+    {
+      "case_id": "resin-glycidol",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 74.08,
+        "formula": "C3H6O2",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "OCC1CO1",
+      "sources": [
+        "PubChem CID 7291"
+      ],
+      "subgroup": "VALID_RESIN"
+    },
+    {
+      "case_id": "resin-epichlorohydrin",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 92.52,
+        "formula": "C3H5ClO",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "ClCC1CO1",
+      "sources": [
+        "PubChem CID 7835"
+      ],
+      "subgroup": "VALID_RESIN"
+    },
+    {
+      "case_id": "resin-styrene-oxide",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 120.15,
+        "formula": "C8H8O",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "C1OC1c1ccccc1",
+      "sources": [
+        "PubChem CID 7276"
+      ],
+      "subgroup": "VALID_RESIN"
+    },
+    {
+      "case_id": "resin-cyclohexene-oxide",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 98.14,
+        "formula": "C6H10O",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "C1CCC2OC2C1",
+      "sources": [
+        "PubChem CID 11555"
+      ],
+      "subgroup": "VALID_RESIN"
+    },
+    {
+      "case_id": "resin-diglycidyl-resorcinol",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 222.24,
+        "formula": "C12H14O4",
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "C1OC1COc1cccc(OCC2CO2)c1",
+      "sources": [
+        "PubChem CID 65221"
+      ],
+      "subgroup": "VALID_RESIN"
+    },
+    {
+      "case_id": "hardener-deta",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 103.17,
+        "formula": "C4H13N3",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 5
+      },
+      "role": "hardener",
+      "smiles": "NCCNCCN",
+      "sources": [
+        "PubChem CID 8102"
+      ],
+      "subgroup": "VALID_HARDENER"
+    },
+    {
+      "case_id": "hardener-teta",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 146.24,
+        "formula": "C6H18N4",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 6
+      },
+      "role": "hardener",
+      "smiles": "NCCNCCNCCN",
+      "sources": [
+        "PubChem CID 5288"
+      ],
+      "subgroup": "VALID_HARDENER"
+    },
+    {
+      "case_id": "hardener-tepa",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 189.3,
+        "formula": "C8H23N5",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 7
+      },
+      "role": "hardener",
+      "smiles": "NCCNCCNCCNCCN",
+      "sources": [
+        "PubChem CID 21764"
+      ],
+      "subgroup": "VALID_HARDENER"
+    },
+    {
+      "case_id": "hardener-ipda",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 170.3,
+        "formula": "C10H22N2",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "role": "hardener",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "sources": [
+        "PubChem CID 6461"
+      ],
+      "subgroup": "VALID_HARDENER"
+    },
+    {
+      "case_id": "hardener-hmda",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 116.21,
+        "formula": "C6H16N2",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "role": "hardener",
+      "smiles": "NCCCCCCN",
+      "sources": [
+        "PubChem CID 13866"
+      ],
+      "subgroup": "VALID_HARDENER"
+    },
+    {
+      "case_id": "hardener-mxda",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 136.19,
+        "formula": "C8H12N2",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "role": "hardener",
+      "smiles": "NCc1cccc(CN)c1",
+      "sources": [
+        "PubChem CID 12143"
+      ],
+      "subgroup": "VALID_HARDENER"
+    },
+    {
+      "case_id": "hardener-pacm",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 210.36,
+        "formula": "C13H26N2",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "role": "hardener",
+      "smiles": "NC1CCC(CC2CCC(N)CC2)CC1",
+      "sources": [
+        "PubChem CID 62790"
+      ],
+      "subgroup": "VALID_HARDENER"
+    },
+    {
+      "case_id": "hardener-mpda",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 108.14,
+        "formula": "C6H8N2",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "role": "hardener",
+      "smiles": "Nc1cccc(N)c1",
+      "sources": [
+        "PubChem CID 7935"
+      ],
+      "subgroup": "VALID_HARDENER"
+    },
+    {
+      "case_id": "wrong-role-coating-dgeba",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_or_unsupported_role",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 340.42,
+        "formula": "C21H24O4",
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "coating",
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "sources": [
+        "PubChem CID 2286"
+      ],
+      "subgroup": "WRONG_ROLE"
+    },
+    {
+      "case_id": "wrong-role-additive-glycidol",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_or_unsupported_role",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 74.08,
+        "formula": "C3H6O2",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "additive",
+      "smiles": "OCC1CO1",
+      "sources": [
+        "PubChem CID 7291"
+      ],
+      "subgroup": "WRONG_ROLE"
+    },
+    {
+      "case_id": "wrong-role-solvent-deta",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_or_unsupported_role",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 103.17,
+        "formula": "C4H13N3",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 5
+      },
+      "role": "solvent",
+      "smiles": "NCCNCCN",
+      "sources": [
+        "PubChem CID 8102"
+      ],
+      "subgroup": "WRONG_ROLE"
+    },
+    {
+      "case_id": "wrong-role-pigment-teta",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_or_unsupported_role",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 146.24,
+        "formula": "C6H18N4",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 6
+      },
+      "role": "pigment",
+      "smiles": "NCCNCCNCCN",
+      "sources": [
+        "PubChem CID 5288"
+      ],
+      "subgroup": "WRONG_ROLE"
+    },
+    {
+      "case_id": "wrong-role-extender-toluene",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_or_unsupported_role",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 92.14,
+        "formula": "C7H8",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "extender",
+      "smiles": "Cc1ccccc1",
+      "sources": [
+        "PubChem CID 1140"
+      ],
+      "subgroup": "WRONG_ROLE"
+    },
+    {
+      "case_id": "missing-role-dgeba",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_or_unsupported_role",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 340.42,
+        "formula": "C21H24O4",
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": null,
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "sources": [
+        "PubChem CID 2286"
+      ],
+      "subgroup": "MISSING_ROLE"
+    },
+    {
+      "case_id": "missing-role-deta",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_or_unsupported_role",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 103.17,
+        "formula": "C4H13N3",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 5
+      },
+      "role": null,
+      "smiles": "NCCNCCN",
+      "sources": [
+        "PubChem CID 8102"
+      ],
+      "subgroup": "MISSING_ROLE"
+    },
+    {
+      "case_id": "missing-role-toluene",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_or_unsupported_role",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 92.14,
+        "formula": "C7H8",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": null,
+      "smiles": "Cc1ccccc1",
+      "sources": [
+        "PubChem CID 1140"
+      ],
+      "subgroup": "MISSING_ROLE"
+    },
+    {
+      "case_id": "mismatched-resin-ethanol",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "missing_role_appropriate_reactive_group",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 46.07,
+        "formula": "C2H6O",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "CCO",
+      "sources": [
+        "PubChem CID 702"
+      ],
+      "subgroup": "MISMATCHED_RESIN"
+    },
+    {
+      "case_id": "mismatched-resin-toluene",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "missing_role_appropriate_reactive_group",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 92.14,
+        "formula": "C7H8",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "Cc1ccccc1",
+      "sources": [
+        "PubChem CID 1140"
+      ],
+      "subgroup": "MISMATCHED_RESIN"
+    },
+    {
+      "case_id": "mismatched-resin-water",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "missing_role_appropriate_reactive_group",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 18.02,
+        "formula": "H2O",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "O",
+      "sources": [
+        "PubChem CID 962"
+      ],
+      "subgroup": "MISMATCHED_RESIN"
+    },
+    {
+      "case_id": "mismatched-resin-acetone",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "missing_role_appropriate_reactive_group",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 58.08,
+        "formula": "C3H6O",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "resin",
+      "smiles": "CC(C)=O",
+      "sources": [
+        "PubChem CID 180"
+      ],
+      "subgroup": "MISMATCHED_RESIN"
+    },
+    {
+      "case_id": "mismatched-hardener-n-butane",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "missing_role_appropriate_reactive_group",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 58.12,
+        "formula": "C4H10",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "hardener",
+      "smiles": "CCCC",
+      "sources": [
+        "PubChem CID 7843"
+      ],
+      "subgroup": "MISMATCHED_HARDENER"
+    },
+    {
+      "case_id": "mismatched-hardener-ethyl-acetate",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "missing_role_appropriate_reactive_group",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 88.11,
+        "formula": "C4H8O2",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "hardener",
+      "smiles": "CCOC(C)=O",
+      "sources": [
+        "PubChem CID 8857"
+      ],
+      "subgroup": "MISMATCHED_HARDENER"
+    },
+    {
+      "case_id": "mismatched-hardener-benzene",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "missing_role_appropriate_reactive_group",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 78.11,
+        "formula": "C6H6",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "hardener",
+      "smiles": "c1ccccc1",
+      "sources": [
+        "PubChem CID 241"
+      ],
+      "subgroup": "MISMATCHED_HARDENER"
+    },
+    {
+      "case_id": "mismatched-hardener-cyclohexane",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "missing_role_appropriate_reactive_group",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 84.16,
+        "formula": "C6H12",
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "role": "hardener",
+      "smiles": "C1CCCCC1",
+      "sources": [
+        "PubChem CID 8078"
+      ],
+      "subgroup": "MISMATCHED_HARDENER"
+    },
+    {
+      "case_id": "dual-func-glycidyl-amine-as-resin",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 73.09,
+        "formula": "C3H7NO",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "role": "resin",
+      "smiles": "NCC1CO1",
+      "sources": [
+        "PubChem CID 15099"
+      ],
+      "subgroup": "DUAL_FUNCTIONAL"
+    },
+    {
+      "case_id": "dual-func-glycidyl-amine-as-hardener",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 73.09,
+        "formula": "C3H7NO",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "role": "hardener",
+      "smiles": "NCC1CO1",
+      "sources": [
+        "PubChem CID 15099"
+      ],
+      "subgroup": "DUAL_FUNCTIONAL"
+    },
+    {
+      "case_id": "dual-func-n-glycidyl-aniline-as-resin",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 149.19,
+        "formula": "C9H11NO",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 1
+      },
+      "role": "resin",
+      "smiles": "c1ccc(NCC2CO2)cc1",
+      "sources": [
+        "PubChem CID 15272"
+      ],
+      "subgroup": "DUAL_FUNCTIONAL"
+    },
+    {
+      "case_id": "dual-func-n-glycidyl-aniline-as-hardener",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 149.19,
+        "formula": "C9H11NO",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 1
+      },
+      "role": "hardener",
+      "smiles": "c1ccc(NCC2CO2)cc1",
+      "sources": [
+        "PubChem CID 15272"
+      ],
+      "subgroup": "DUAL_FUNCTIONAL"
+    },
+    {
+      "case_id": "dual-func-aminoethyl-glycidyl-ether-as-resin",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_APPLICABILITY_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "expected_pass_all_hard": true,
+      "expected_role_appropriate_reactivity": true,
+      "expected_valid_single_component": true,
+      "facts": {
+        "average_molecular_weight_g_mol": 117.15,
+        "formula": "C5H11NO2",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 2
+      },
+      "role": "resin",
+      "smiles": "NCCOCC1CO1",
+      "sources": [
+        "PubChem CID 21149"
+      ],
+      "subgroup": "DUAL_FUNCTIONAL"
+    },
+    {
+      "case_id": "malformed-empty-structure-resin",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_REJECTION_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "empty_structure",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": false,
+      "facts": null,
+      "role": "resin",
+      "smiles": "",
+      "sources": [
+        "amphora-authored malformed test control"
+      ],
+      "subgroup": "MALFORMED_STRUCTURE"
+    },
+    {
+      "case_id": "malformed-multi-fragment-resin",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_REJECTION_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "multi_fragment_structure",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": false,
+      "facts": null,
+      "role": "resin",
+      "smiles": "CC.O",
+      "sources": [
+        "amphora-authored malformed test control"
+      ],
+      "subgroup": "MALFORMED_STRUCTURE"
+    },
+    {
+      "case_id": "malformed-wildcard-star-resin",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_REJECTION_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "wildcard_or_query_structure",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": false,
+      "facts": null,
+      "role": "resin",
+      "smiles": "C*CC",
+      "sources": [
+        "amphora-authored malformed test control"
+      ],
+      "subgroup": "MALFORMED_STRUCTURE"
+    },
+    {
+      "case_id": "malformed-wildcard-tilde-resin",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_REJECTION_ONLY",
+      "expected_explicit_role": true,
+      "expected_gate_reason": "wildcard_or_query_structure",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": false,
+      "facts": null,
+      "role": "resin",
+      "smiles": "C~C",
+      "sources": [
+        "amphora-authored malformed test control"
+      ],
+      "subgroup": "MALFORMED_STRUCTURE"
+    },
+    {
+      "case_id": "malformed-no-structure-no-role",
+      "expected_evidence_scope": "MOLECULE_STRUCTURAL_REJECTION_ONLY",
+      "expected_explicit_role": false,
+      "expected_gate_reason": "missing_structure",
+      "expected_pass_all_hard": false,
+      "expected_role_appropriate_reactivity": false,
+      "expected_valid_single_component": false,
+      "facts": null,
+      "role": null,
+      "smiles": null,
+      "sources": [
+        "amphora-authored malformed test control"
+      ],
+      "subgroup": "MALFORMED_STRUCTURE"
+    }
+  ],
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored labelled molecule compilation from PubChem records plus synthetic malformed controls, for Phase-0 structural-applicability-gate controls only",
+    "source_id": "amphora_phase0_design_gate_known_answer",
+    "source_url": "local:amphora-molecule-design-gate/reference/phase0-design-gate-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.molecule-design-gate-phase0-known-answer.v1",
+  "toolkit_version": "2026.03.2"
+}

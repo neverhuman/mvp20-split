@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-4bce858437ddc5e152910c74c154716a5008380513216c8511ab3e8a629cc985",
+      "path": "events/4bce858437ddc5e152910c74c154716a5008380513216c8511ab3e8a629cc985.json",
+      "sha256": "2c0eb9038cfa514af803fdf8d5d99fcd7b6c23f87996c73c5ded79fb73aa368d"
+    }
+  ],
+  "module_id": "amphora-tolerance-robustness",
+  "schema": "amphora.module-movement-ledger.v1"
+}

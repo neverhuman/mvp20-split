@@ -1,0 +1,8 @@
+{
+  "test_two_real_corrupt_rows_present_and_actually_corrupt": "PASS",
+  "test_naive_bare_parse_fails_on_real_corrupt_rows_positive_control": "PASS",
+  "test_guard_parses_real_corrupt_rows_correctly": "PASS",
+  "test_guard_clean_ts_strips_exactly_the_stray_backslash": "PASS",
+  "test_guard_is_idempotent_on_clean_rows": "PASS",
+  "test_sort_key_restores_chronological_order_despite_corruption": "PASS"
+}

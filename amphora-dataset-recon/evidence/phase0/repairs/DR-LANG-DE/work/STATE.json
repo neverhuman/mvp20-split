@@ -1,0 +1,19 @@
+{
+  "item_id": "DR-LANG-DE",
+  "fires_completed": 1,
+  "max_fires": 2,
+  "last_fire_id": "20260810T080001-2919803-f979e09ce9dd",
+  "status": "done_criterion_met_fire_1",
+  "done_receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-DE/done/dr-lang-de-receipt.v1.dsse.json",
+  "candidates_recorded": ["DR-LANG-DE-01","DR-LANG-DE-02","DR-LANG-DE-03","DR-LANG-DE-04","DR-LANG-DE-05","DR-LANG-DE-06","DR-LANG-DE-07","DR-LANG-DE-08"],
+  "dataset_ledger_entries": ["DR-LANG-DE-DSL-01 (DR-LANG-DE-06, RECOMMENDED, 9.0)"],
+  "open_for_a_future_fire_if_needed": [
+    "BAW Merkblatt MKWAS PDF extraction retry with a real text-capable parser",
+    "Kuron 1984 Werkstoffe und Korrosion -- institutional/Wiley access to clear HTTP 402",
+    "DECHEMA-Werkstoff-Tabelle per-medium drill-down (would require subscription)",
+    "GfKORR conference proceedings / working-group publications beyond the expert directory",
+    "DIN standard specifically for two-component epoxy-polyamide coating systems",
+    "Farbe und Lack archive beyond first page of results"
+  ],
+  "note": "Fire 1 of max 2 met the done_criterion in full (search-record + disposition-ledger + coverage-map + first-ever dataset-ledger entry, all DSSE-signed, two-replay + 5-mutant positive control passed). A second fire is only warranted if a future spot-check finds a real gap (CLAIM_REFUTED) or the operator wants deeper follow-up on the open items above."
+}

@@ -1,0 +1,114 @@
+{
+  "claim_under_attack": {
+    "kpi_gate": "hydrophobic_classification_accuracy_at_least_0_7",
+    "kpi_gate_floor": 0.7,
+    "kpi_gate_observed": 0.7105263157894737,
+    "kpi_gate_passed": true,
+    "kpi_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-water-contact-angle-ml-baseline-kpi.v1.json",
+    "kpi_sha256": "974e39c709a50296cda415bf61b75efa25fff8f7f8ef5e64b363ff123bd68965",
+    "mission_md_claim": "Hydrophobic-vs-hydrophilic classification works: 71% accuracy on held-out test is a useful screening signal even when regression MAE is modest -- the coating IP decision 'hydrophobic candidate: yes/no' is often what actually matters for anti-biofouling screening.",
+    "mission_md_location": "SCIENTIFIC INTERPRETATION, point 3 (section 'Empirical benchmark result -- OpenPoly water contact angle ML baseline')",
+    "mission_md_path": "amphora-molecule-property/docs/mission.md"
+  },
+  "method": "Independently reconstructed the tp/fp/fn/tn confusion matrix from the scientific receipt's own 38 per-molecule held_out_test_records (actual_hydrophobic vs predicted_hydrophobic booleans, theta>90deg threshold per Cassie 1948/Baier 1970), NOT from the pre-aggregated summary numbers in the KPI file, then computed: (1) the trivial majority-class-only baseline accuracy on the SAME 38 records; (2) balanced accuracy (average of per-class recall, corrects for class imbalance); (3) Matthews correlation coefficient (Matthews 1975, chance-corrected agreement for binary classification); (4) a two-sided Fisher exact test (Fisher 1922) on the 2x2 prediction-vs-actual table, testing the null hypothesis that predicted class is statistically independent of actual class.",
+  "n_held_out_test_records": 38,
+  "real_data_result": {
+    "balanced_accuracy": 0.5269360269360269,
+    "balanced_accuracy_minus_chance_0.5": 0.026936026936026924,
+    "confusion_matrix": {
+      "fn": 10,
+      "fp": 1,
+      "tn": 26,
+      "tp": 1
+    },
+    "fisher_exact_two_sided_p_value_prediction_independent_of_actual": 0.5007112375533428,
+    "kpi_published_accuracy": 0.7105263157894737,
+    "matthews_corrcoef": 0.10941465864829576,
+    "model_accuracy": 0.7105263157894737,
+    "model_accuracy_equals_majority_baseline_bitwise": true,
+    "model_accuracy_minus_majority_baseline_accuracy": 0.0,
+    "n_actual_negative_hydrophilic": 27,
+    "n_actual_positive_hydrophobic": 11,
+    "n_test": 38,
+    "recall_negative_hydrophilic": 0.9629629629629629,
+    "recall_positive_hydrophobic": 0.09090909090909091,
+    "rederived_accuracy_matches_kpi_published_accuracy": true,
+    "rederived_confusion_matrix_matches_kpi_published_confusion_matrix": true,
+    "significant_at_0.05": false,
+    "trivial_majority_class_baseline": "negative(not_hydrophobic)",
+    "trivial_majority_class_baseline_accuracy": 0.7105263157894737
+  },
+  "scientific_receipt_path": "amphora-molecule-property/reference/mvp20/data/openpoly_water_contact_angle_ml_baseline_receipt.v1.json",
+  "scientific_receipt_sha256_match": true,
+  "scientific_receipt_sha256_observed": "8e8e6c6a28dedc0e8771d5c8979da7071166e8401aaf763dc5e303447bf46078",
+  "scientific_receipt_sha256_pinned_in_kpi": "8e8e6c6a28dedc0e8771d5c8979da7071166e8401aaf763dc5e303447bf46078",
+  "self_check_pure_majority_guess": {
+    "planted_confusion_matrix": {
+      "fn": 11,
+      "fp": 0,
+      "tn": 27,
+      "tp": 0
+    },
+    "purpose": "Confirms the real observed result is checker-indistinguishable from an explicit 'always predict not-hydrophobic' rule applied to the SAME 38 test molecules, not merely numerically close to it.",
+    "real_vs_null_guess_accuracy_identical": true,
+    "result": {
+      "balanced_accuracy": 0.5,
+      "balanced_accuracy_minus_chance_0.5": 0.0,
+      "confusion_matrix": {
+        "fn": 11,
+        "fp": 0,
+        "tn": 27,
+        "tp": 0
+      },
+      "fisher_exact_two_sided_p_value_prediction_independent_of_actual": 1.0,
+      "matthews_corrcoef": 0.0,
+      "model_accuracy": 0.7105263157894737,
+      "model_accuracy_equals_majority_baseline_bitwise": true,
+      "model_accuracy_minus_majority_baseline_accuracy": 0.0,
+      "n_actual_negative_hydrophilic": 27,
+      "n_actual_positive_hydrophobic": 11,
+      "n_test": 38,
+      "recall_negative_hydrophilic": 1.0,
+      "recall_positive_hydrophobic": 0.0,
+      "significant_at_0.05": false,
+      "trivial_majority_class_baseline": "negative(not_hydrophobic)",
+      "trivial_majority_class_baseline_accuracy": 0.7105263157894737
+    }
+  },
+  "self_check_synthetic_informative_classifier": {
+    "detected_as_informative": true,
+    "expected": "accuracy clearly exceeds majority baseline; Fisher p < 0.05; balanced accuracy clearly > 0.5",
+    "planted_confusion_matrix": {
+      "fn": 3,
+      "fp": 3,
+      "tn": 24,
+      "tp": 8
+    },
+    "purpose": "Confirms the SAME checker (majority-baseline-equivalence + Fisher exact test) has real discriminating power and is not vacuously firing REFUTED on any input. Synthetic confusion matrix tp=8,fp=3,fn=3,tn=24 (n=38, same 11/27 base rate as the real data) simulates a classifier that genuinely tracks the label.",
+    "result": {
+      "balanced_accuracy": 0.8080808080808081,
+      "balanced_accuracy_minus_chance_0.5": 0.30808080808080807,
+      "confusion_matrix": {
+        "fn": 3,
+        "fp": 3,
+        "tn": 24,
+        "tp": 8
+      },
+      "fisher_exact_two_sided_p_value_prediction_independent_of_actual": 0.00041736781991691987,
+      "matthews_corrcoef": 0.6161616161616161,
+      "model_accuracy": 0.8421052631578947,
+      "model_accuracy_equals_majority_baseline_bitwise": false,
+      "model_accuracy_minus_majority_baseline_accuracy": 0.13157894736842102,
+      "n_actual_negative_hydrophilic": 27,
+      "n_actual_positive_hydrophobic": 11,
+      "n_test": 38,
+      "recall_negative_hydrophilic": 0.8888888888888888,
+      "recall_positive_hydrophobic": 0.7272727272727273,
+      "significant_at_0.05": true,
+      "trivial_majority_class_baseline": "negative(not_hydrophobic)",
+      "trivial_majority_class_baseline_accuracy": 0.7105263157894737
+    }
+  },
+  "study_id": "water-contact-angle-classification-majority-baseline-audit-v1",
+  "verdict": "CLAIM_REFUTED"
+}

@@ -1,0 +1,72 @@
+{
+  "license_text_diverges": {
+    "expected_rule": "license_text_matches_live_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Overwrote DR-LANG-ZH-01's license_evidence_quote with a fabricated 'fully open, no registration' claim that contradicts (and does not appear in) the actual recorded WebFetch evidence text (which states a registration/login-gated tier).",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-ZH-01",
+        "reason": "DR-LANG-ZH-01: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "literal_english_translation_query": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native zh query string '环氧树脂 固化动力学 数据集 万方数据' with its literal English gloss 'epoxy resin cure kinetics dataset wanfang data', while leaving language:'zh' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "zh query field contains no CJK characters: 'epoxy resin cure kinetics dataset wanfang data'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "missing_recorded_query": {
+    "expected_rule": "citation_has_recorded_query_and_result",
+    "expected_rule_fired": true,
+    "how_planted": "Deleted the corrdata.org.cn WebFetch query entry AND scrubbed its URL from every other query's sample_urls in the search-record copy, leaving DR-LANG-ZH-01's url uncited by any recorded query/result.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-ZH-01",
+        "reason": "DR-LANG-ZH-01: url https://www.corrdata.org.cn/ does not appear in any recorded search-record query/result this fire",
+        "rule": "citation_has_recorded_query_and_result"
+      },
+      {
+        "candidate_id": "DR-LANG-ZH-01",
+        "reason": "DR-LANG-ZH-01: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "native_citation_not_resolvable": {
+    "expected_rule": "native_script_citation_integrity",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced DR-LANG-ZH-03's native_citation (native hanzi title) with its bare romanization, so the native-script citation the checker needs to resolve is absent.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-ZH-03",
+        "reason": "DR-LANG-ZH-03: native_citation '603 Huanyang Shuzhi Tixi Guhua Donglixue Moxing de Jianli yu Yanzheng' contains no CJK characters",
+        "rule": "native_script_citation_integrity"
+      }
+    ]
+  },
+  "rediscovery_dropped": {
+    "expected_rule": "rediscovery_recall",
+    "expected_rule_fired": true,
+    "how_planted": "Cleared DR-LANG-ZH-01's rediscovers field (was 'C1') to None, simulating a fresh search that silently fails to link back to a previously-supplied candidate.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "C1",
+        "reason": "previously-supplied candidate C1 was neither rediscovered (no disposition entry with rediscovers==C1) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      }
+    ]
+  }
+}

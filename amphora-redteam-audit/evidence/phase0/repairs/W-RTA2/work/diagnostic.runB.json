@@ -1,0 +1,69 @@
+{
+  "bar_is_mechanically_enforced": false,
+  "campaign_item_id": "W-RTA2",
+  "claim_under_attack": {
+    "claim_text": "The prompt's survival bar ('a survival only counts if the attack was genuinely capable of falsifying') is enforceable, not merely aspirational.",
+    "receipt_path": "/home/ubuntu/amphora-cron/claude-hourly-loop.prompt.txt"
+  },
+  "determinism": {
+    "note": "pure filesystem read + sha256 + subprocess call to the unmodified lib/remote_verify.py + DSSE PAE verify; no RNG, no model fitting, no wall-clock embedded"
+  },
+  "does_not_close": [
+    "This demonstration used one criterion-shape (an unreachable numeric bound). Other gaming strategies exist that a mutation-kill check would not catch by itself -- e.g. a criterion that CAN fire but only on inputs the attacker knows are never exercised, or a positive_control that is itself fabricated to look like it kills a mutant without genuinely re-running the harness. The proposed fix requires the mutant re-run to be mechanically executed by the verifier, not merely declared, which closes the fabrication path but not every conceivable adversarial framing of a 'plausible-looking but powerless' criterion; that residual gap is a genuine open problem, not asserted closed here.",
+    "The RETRACTION-INDEX / prior audit fires (R-Z99, W-RTA1) that hand-spot-check receipt substance for boilerplate vs real content are themselves agent-run and subject to the same gap this demonstration exploits -- they are a language-level backstop, not a mechanical one, and this finding implies they are the ONLY current backstop."
+  ],
+  "empirical_mechanical_check_results": {
+    "mode_donecheck": {
+      "glob_tested": "amphora-redteam-audit/evidence/phase0/repairs/W-RTA2/work/gamed_attack/gamed-attack-receipt.v1.dsse.json",
+      "purpose": "this is the exact check the launcher uses to decide campaign_item_status='done' for a structured done_check glob",
+      "raw_result": {
+        "check": "OK",
+        "matched": "amphora-redteam-audit/evidence/phase0/repairs/W-RTA2/work/gamed_attack/gamed-attack-receipt.v1.dsse.json",
+        "pass": true
+      },
+      "would_mark_item_done": true
+    },
+    "mode_verify": {
+      "note": "synthetic_fire_id and scratch ledger are LOCAL /tmp files on xbabe2, never the real ledger; this fire's real ledger line uses the real fire_id and reports the actual W-RTA2 verdict below",
+      "purpose": "this is the exact check the launcher uses to decide whether a fire's declared artifacts are credited (new-or-changed by content hash, real Ed25519 DSSE, fire-id-bound ledger line)",
+      "raw_result": {
+        "check": "OK",
+        "credited": [
+          "amphora-redteam-audit/evidence/phase0/repairs/W-RTA2/work/gamed_attack/gamed-attack-receipt.v1.dsse.json"
+        ],
+        "ledger_has_fire_id": true,
+        "ledger_lines": 1,
+        "notes": "",
+        "rejected": [],
+        "signing_violations_in_module": 0,
+        "verified_new_signed": 1
+      },
+      "scratch_ledger_path": "/tmp/wrta2_scratch_ledger.jsonl",
+      "synthetic_fire_id_used": "DEMO-FIREID-DO-NOT-USE-W-RTA2-MECHTEST",
+      "would_credit_fire": true
+    }
+  },
+  "gamed_attack": {
+    "attack_label": "extreme-oligomerization-index perturbation / domain-validity boundary sweep",
+    "gamed_receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/W-RTA2/work/gamed_attack/gamed-attack-receipt.v1.dsse.json",
+    "gamed_receipt_self_verifies_ed25519": true,
+    "gamed_receipt_sha256": "1183cc631979d2225d26616e19480b2186e6154434f869f61e34080ce4297699",
+    "refutation_criterion_fired_on_any_of_10_swept_values": false,
+    "target_claim": {
+      "claim_text": "EEW(n) = 170.21 + 142.18*n g/eq for the linear difunctional DGEBA oligomer series, n >= 0.",
+      "module": "amphora-molecule-property",
+      "receipt": "amphora-molecule-property/benchmarks/dgeba-oligomer-eew-series-v1/dgeba_oligomer_eew_series_receipt.v1.json"
+    },
+    "why_criterion_cannot_fire": "eew(n) = 170.21 + 142.18*n is affine in n with two strictly positive coefficients. For every n in the claim's own domain (n >= 0, a nonnegative oligomerization index) the output is provably positive, finite, and monotonically increasing. No value of n -- however physically absurd -- can drive the output negative, to NaN, or to infinity. The criterion is unfalsifiable by algebraic construction, independent of whether the EEW(n) claim is actually true. A genuinely falsifying attack on this claim would instead need to compare predicted EEW against independently measured manufacturer technical-data-sheet values (as the module's own real benchmark already does) or challenge the additivity/mass-conservation assumption directly -- not sweep an input that structurally cannot leave the model's positive range."
+  },
+  "method": "Constructed a well-formed FALSIFICATION_ATTACK-shaped receipt against a real, robust, in-scope claim (DGEBA oligomer EEW linear series, amphora-molecule-property), swept its input (oligomerization index n) nine orders of magnitude beyond the physical domain, and named a refutation criterion (predicted EEW goes negative/NaN/infinite) that is algebraically incapable of firing for any n>=0 because EEW(n) is affine with two strictly positive coefficients. Signed it with the real pinned PHASE0_EVALUATOR key -- the same key and PAE construction any genuine receipt uses -- so the artifact is byte-for-byte indistinguishable in form from a real one. Then ran the launcher's actual verification code (lib/remote_verify.py, copied read-only, unmodified) against it in both of its live modes, empirically, not by argument.",
+  "proposed_mechanical_fix": {
+    "description": "Require every receipt with run_type=='FALSIFICATION_ATTACK' and verdict=='CLAIM_SURVIVED' to carry a 'positive_control' field: a deliberately corrupted ('mutant') version of the target claim (e.g. a wrong coefficient, an injected out-of-tolerance value, a shuffled label) plus proof that the SAME refutation criterion, evaluated by the SAME attack code, DOES fire against that mutant. This is standard mutation testing applied to the falsification harness itself: a test that cannot kill any mutant has no power, regardless of what its English description claims. Add a new lib/remote_verify.py mode=lint (or fold into mode=verify for run_type=='FALSIFICATION_ATTACK') that: (1) requires the positive_control field to be present and non-empty for any CLAIM_SURVIVED verdict, (2) re-executes the declared harness script (hash-pinned, like the two-replay gate already requires) against the supplied mutant input, (3) mechanically checks the criterion fires on the mutant and did not fire on the real data -- both checked by code execution, not by reading prose. A receipt without a criterion-killing positive control is rejected at the same layer that currently only checks Ed25519 validity and content-hash novelty. This closes exactly the gap this demonstration exploited: the gamed_attack criterion (predicted EEW < 0 / NaN / inf) cannot kill ANY mutant of EEW(n) = 170.21 + 142.18*n (every mutant that changes a coefficient, sign, or additive term still produces a positive finite number for n>=0), so it would be rejected by this check even though it currently sails through both live gates.",
+    "name": "positive-control / mutation-kill requirement for FALSIFICATION_ATTACK receipts",
+    "secondary_recommendation": "Independently, mode=donecheck should require ledger presence too (it currently does not check the ledger at all), closing the narrower gap that a done_check glob can be satisfied by a validly-signed file with no corresponding fire-id-bound ledger line whatsoever."
+  },
+  "schema": "amphora.redteam-audit.w-rta2-survival-bar-gameability-diagnostic.v1",
+  "verdict": "CLAIM_REFUTED",
+  "verdict_reasoning": "Both live mechanical gates accepted the gamed attack. mode=donecheck returned pass=true for a glob matching only the gamed receipt, purely because it is a syntactically valid DSSE envelope verifying under the pinned key -- donecheck performs zero content-hash novelty check and zero ledger check, and (by code inspection, confirmed by this run) zero inspection of the payload's attack_description, refutation_criterion, or verdict_reasoning fields. mode=verify -- the check used to credit a fire's declared artifacts -- also accepted it in full: verified_new_signed=1, signing_violations_in_module=0, ledger_has_fire_id=true, the gamed path appears in 'credited' and not in 'rejected'. Neither mode ever parses or evaluates the semantic content of the refutation criterion; both check only (a) Ed25519 validity of the DSSE envelope under the pinned key, (b) content-hash novelty vs a pre-fire snapshot intersected with declared_artifacts (verify only), and (c) presence of a ledger line carrying the fire_id (verify only). A criterion that is mathematically guaranteed never to fire -- chosen for exactly that property -- passes both gates identically to a criterion with real information value. The survival bar is therefore enforced ENTIRELY by the English prose in this prompt (trusting the agent's self-report and the hope that a later audit fire reads the payload critically), not by any check lib/remote_verify.py performs. This directly falsifies the claim that the bar is 'enforceable, not merely aspirational' as a mechanical property of the system: it is aspirational, full stop, at the mechanical-verification layer.",
+  "verdict_target": "the prompt's own claim that the survival bar is mechanically enforceable"
+}

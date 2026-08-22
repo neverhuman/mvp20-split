@@ -1,0 +1,72 @@
+{
+  "purpose": "Live production RDKit C++ FFI ground truth (oxirane_ring_count, reactive_amine_hydrogen_count) for 6 guanidine/amidine-class probes, to be diffed against role-flory-gelation-v1's local Python SMARTS re-derivation for the same SMILES.",
+  "results": [
+    {
+      "canonical_isomeric_smiles": "N=C(Nc1ccccc1)Nc1ccccc1",
+      "citation": "1,3-diphenylguanidine (DPG, CAS 102-06-7). Same molecule as role-guanidine-accelerator-domain-probe-v1's already-ledgered probe.",
+      "formula": "C13H13N3",
+      "id": "dpg-diphenylguanidine-accelerator",
+      "production_has_reactive_amine_hydrogen": false,
+      "production_oxirane_ring_count": 0,
+      "production_reactive_amine_hydrogen_count": 0,
+      "smiles": "c1ccccc1NC(=N)Nc2ccccc2"
+    },
+    {
+      "canonical_isomeric_smiles": "Cc1ccccc1NC(=N)Nc1ccccc1C",
+      "citation": "N,N'-di-o-tolylguanidine (DOTG, CAS 97-39-2). Same molecule as role-guanidine-accelerator-domain-probe-v1's already-ledgered probe.",
+      "formula": "C15H17N3",
+      "id": "dotg-di-o-tolylguanidine-accelerator",
+      "production_has_reactive_amine_hydrogen": false,
+      "production_oxirane_ring_count": 0,
+      "production_reactive_amine_hydrogen_count": 0,
+      "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C"
+    },
+    {
+      "canonical_isomeric_smiles": "N=C(N)N",
+      "citation": "Guanidine (CAS 113-00-8), the parent Y-delocalized structure; pinned regression control in amphora-rdkit-ffi::pinned_native_backend_excludes_guanidine_class_amine_hydrogens.",
+      "formula": "CH5N3",
+      "id": "guanidine",
+      "production_has_reactive_amine_hydrogen": false,
+      "production_oxirane_ring_count": 0,
+      "production_reactive_amine_hydrogen_count": 0,
+      "smiles": "NC(=N)N"
+    },
+    {
+      "canonical_isomeric_smiles": "N=C(N)NC(=N)N",
+      "citation": "Biguanide (CAS 56-03-1), same pinned regression control set.",
+      "formula": "C2H7N5",
+      "id": "biguanide",
+      "production_has_reactive_amine_hydrogen": false,
+      "production_oxirane_ring_count": 0,
+      "production_reactive_amine_hydrogen_count": 0,
+      "smiles": "NC(=N)NC(=N)N"
+    },
+    {
+      "canonical_isomeric_smiles": "N#CN=C(N)N",
+      "citation": "Dicyandiamide / cyanoguanidine (DICY, CAS 461-58-5), the sole named carve-out (W-FFI2, WO1993010168A1): a real functionality-4 stoichiometric hardener whose cyanamide-substituted imine nitrogen breaks the symmetric resonance the guanidine exclusion relies on.",
+      "formula": "C2H4N4",
+      "id": "dicyandiamide-narrow-exemption",
+      "production_has_reactive_amine_hydrogen": true,
+      "production_oxirane_ring_count": 0,
+      "production_reactive_amine_hydrogen_count": 4,
+      "smiles": "NC(=NC#N)N"
+    },
+    {
+      "canonical_isomeric_smiles": "CN=C(N)N",
+      "citation": "N-methylguanidine: adversarial narrowness control from the pinned amphora-rdkit-ffi test suite -- imine-N alkyl substituent, no nitrile, must stay excluded (reactive_amine_hydrogen_count == 0).",
+      "formula": "C2H7N3",
+      "id": "n-methylguanidine-narrowness-control",
+      "production_has_reactive_amine_hydrogen": false,
+      "production_oxirane_ring_count": 0,
+      "production_reactive_amine_hydrogen_count": 0,
+      "smiles": "CN=C(N)N"
+    }
+  ],
+  "schema": "amphora.molecule-role-ranker.role-flory-gelation-amine-smarts-parity-v1.live_ffi_ground_truth.v1",
+  "toolkit_provenance": {
+    "detected_version": "2026.03.2",
+    "exact_version_match": true,
+    "required_version": "2026.03.2",
+    "toolkit": "RDKit C++"
+  }
+}

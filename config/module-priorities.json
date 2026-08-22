@@ -1,0 +1,1425 @@
+{
+  "delivery_waves": [
+    {
+      "entries": [
+        {
+          "deliverable": "Schema/runtime parity, finite canonical hashing, and typed candidate payload enforcement.",
+          "module": "amphora-candidate-contract",
+          "prerequisites": []
+        },
+        {
+          "deliverable": "Validated nonempty artifact sets and replay-bound canonical input/output hashes.",
+          "module": "amphora-run-provenance",
+          "prerequisites": [
+            "amphora-candidate-contract"
+          ]
+        },
+        {
+          "deliverable": "Hash-bound cited-constant records with unresolved rights and mutation surfaced.",
+          "module": "amphora-source-ledger",
+          "prerequisites": [
+            "amphora-candidate-contract"
+          ]
+        },
+        {
+          "deliverable": "Minimum-privilege receipt evaluation across manifest, adapter, model card, portfolio, and envelope.",
+          "module": "amphora-model-card-authority",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Observed-byte hash verification with candidate/issuer binding and fail-closed signatures.",
+          "module": "amphora-evidence-intake-validator",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-source-ledger"
+          ]
+        },
+        {
+          "deliverable": "Malformed-envelope, unknown-lock, and authority-escalation regression corpus.",
+          "module": "amphora-redteam-audit",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-model-card-authority"
+          ]
+        },
+        {
+          "deliverable": "Python policy resolution plus Rust final rejection of spoofed or unauthorized ranking rows.",
+          "module": "amphora-optimizer-orchestrator",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-model-card-authority",
+            "amphora-redteam-audit"
+          ]
+        },
+        {
+          "deliverable": "Positive-mass-only cited-constant coverage with zero-mass ingredients ignored.",
+          "module": "amphora-ingredient-library",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-source-ledger"
+          ]
+        },
+        {
+          "deliverable": "Finite deterministic arithmetic separated from formulation fitness and objective eligibility.",
+          "module": "amphora-formulation-arithmetic",
+          "prerequisites": [
+            "amphora-ingredient-library"
+          ]
+        },
+        {
+          "deliverable": "Required formulation input and exact Cartesian solved/infeasible accounting.",
+          "module": "amphora-formulation-universe",
+          "prerequisites": [
+            "amphora-ingredient-library",
+            "amphora-formulation-arithmetic"
+          ]
+        },
+        {
+          "deliverable": "Consistent in-domain status, hard gates, and signed margins.",
+          "module": "amphora-envelope-gates",
+          "prerequisites": [
+            "amphora-formulation-arithmetic"
+          ]
+        },
+        {
+          "deliverable": "Single-component applicability rules and locked EEW/AHEW known answers.",
+          "module": "amphora-molecule-property",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-source-ledger"
+          ]
+        },
+        {
+          "deliverable": "Malformed, polymeric, mixture, and nonreactive structure rejection controls.",
+          "module": "amphora-molecule-design-gate",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-molecule-property"
+          ]
+        },
+        {
+          "deliverable": "Finite perturbation gates whose robust flag, objective, and receipt agree.",
+          "module": "amphora-tolerance-robustness",
+          "prerequisites": [
+            "amphora-formulation-arithmetic",
+            "amphora-envelope-gates"
+          ]
+        },
+        {
+          "deliverable": "Candidate-bound current public prescreen without supplier or procurement closure.",
+          "module": "amphora-sourceability-ehs",
+          "prerequisites": [
+            "amphora-evidence-intake-validator"
+          ]
+        },
+        {
+          "deliverable": "Finite nonnegative unit-normalized recipe packets bound to candidate and formula hashes.",
+          "module": "amphora-cro-protocol-packager",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-formulation-arithmetic"
+          ]
+        },
+        {
+          "deliverable": "Technical landscape output that always states FTO was not performed.",
+          "module": "amphora-ip-fto-guard",
+          "prerequisites": [
+            "amphora-evidence-intake-validator"
+          ]
+        },
+        {
+          "deliverable": "Validated-envelope packaging that preserves authority and every claim lock.",
+          "module": "amphora-report-packager",
+          "prerequisites": [
+            "amphora-run-provenance",
+            "amphora-redteam-audit"
+          ]
+        }
+      ],
+      "name": "Trust boundary",
+      "phase_claim": "NO_AUTOMATIC_PROMOTION",
+      "prerequisite_waves": [],
+      "wave": 0
+    },
+    {
+      "entries": [
+        {
+          "deliverable": "Versioned positive/negative controls for deterministic services.",
+          "module": "amphora-known-answer-benchmarks",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-source-ledger"
+          ]
+        },
+        {
+          "deliverable": "Reproducible labels, group identities, rights, hashes, hostile nulls, and locked external split.",
+          "module": "amphora-public-corrosion-benchmark",
+          "prerequisites": [
+            "amphora-evidence-intake-validator",
+            "amphora-source-ledger"
+          ]
+        },
+        {
+          "deliverable": "Complete family/source-held-out rows plus multi-temperature capture schema.",
+          "module": "amphora-cure-potlife-gate",
+          "prerequisites": [
+            "amphora-cro-protocol-packager",
+            "amphora-evidence-intake-validator"
+          ]
+        },
+        {
+          "deliverable": "Measured KU/sag schema across formulation families and temperatures.",
+          "module": "amphora-viscosity-score",
+          "prerequisites": [
+            "amphora-cro-protocol-packager",
+            "amphora-evidence-intake-validator"
+          ]
+        },
+        {
+          "deliverable": "Blinded four-track panel protocol with solids-only and PVC-only hostile nulls.",
+          "module": "amphora-barrier-corrosion-score",
+          "prerequisites": [
+            "amphora-public-corrosion-benchmark",
+            "amphora-cro-protocol-packager"
+          ]
+        },
+        {
+          "deliverable": "Deterministic lineage, validity, uniqueness, scaffold split, and synthesis-review manifests.",
+          "module": "amphora-molecule-generator",
+          "prerequisites": [
+            "amphora-candidate-contract",
+            "amphora-molecule-design-gate"
+          ]
+        },
+        {
+          "deliverable": "Frozen role-fit dataset with explicit resin/hardener labels and ambiguous-role controls.",
+          "module": "amphora-molecule-role-ranker",
+          "prerequisites": [
+            "amphora-molecule-property",
+            "amphora-molecule-design-gate"
+          ]
+        },
+        {
+          "deliverable": "Frozen canonical corpus and scaffold-aware distance controls.",
+          "module": "amphora-molecule-novelty",
+          "prerequisites": [
+            "amphora-candidate-contract"
+          ]
+        },
+        {
+          "deliverable": "Measured blend schema with group-held-out identities and calibration fields.",
+          "module": "amphora-solvency-score",
+          "prerequisites": [
+            "amphora-evidence-intake-validator",
+            "amphora-source-ledger"
+          ]
+        },
+        {
+          "deliverable": "Candidate/batch-bound prospective pilot schema and seeded-control plan without release authority.",
+          "module": "amphora-process-qc-twin",
+          "prerequisites": [
+            "amphora-evidence-intake-validator",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Eligible literature-series manifest with study-held-out split and named baseline.",
+          "module": "amphora-design-rule-score",
+          "prerequisites": [
+            "amphora-evidence-intake-validator",
+            "amphora-source-ledger"
+          ]
+        }
+      ],
+      "name": "Data foundation",
+      "phase_claim": "NO_AUTOMATIC_PROMOTION",
+      "prerequisite_waves": [
+        0
+      ],
+      "wave": 1
+    },
+    {
+      "entries": [
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-public-corrosion-benchmark",
+          "prerequisites": [
+            "amphora-public-corrosion-benchmark",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-cure-potlife-gate",
+          "prerequisites": [
+            "amphora-cure-potlife-gate",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-viscosity-score",
+          "prerequisites": [
+            "amphora-viscosity-score",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-barrier-corrosion-score",
+          "prerequisites": [
+            "amphora-barrier-corrosion-score",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-molecule-generator",
+          "prerequisites": [
+            "amphora-molecule-generator",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-molecule-role-ranker",
+          "prerequisites": [
+            "amphora-molecule-role-ranker",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-molecule-novelty",
+          "prerequisites": [
+            "amphora-molecule-novelty",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-solvency-score",
+          "prerequisites": [
+            "amphora-solvency-score",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-process-qc-twin",
+          "prerequisites": [
+            "amphora-process-qc-twin",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-tolerance-robustness",
+          "prerequisites": [
+            "amphora-tolerance-robustness",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-design-rule-score",
+          "prerequisites": [
+            "amphora-design-rule-score",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-molecule-property",
+          "prerequisites": [
+            "amphora-molecule-property",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-formulation-universe",
+          "prerequisites": [
+            "amphora-formulation-universe",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-ingredient-library",
+          "prerequisites": [
+            "amphora-ingredient-library",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-envelope-gates",
+          "prerequisites": [
+            "amphora-envelope-gates",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-formulation-arithmetic",
+          "prerequisites": [
+            "amphora-formulation-arithmetic",
+            "amphora-known-answer-benchmarks"
+          ]
+        },
+        {
+          "deliverable": "Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.",
+          "module": "amphora-molecule-design-gate",
+          "prerequisites": [
+            "amphora-molecule-design-gate",
+            "amphora-known-answer-benchmarks"
+          ]
+        }
+      ],
+      "name": "Human parity",
+      "phase_claim": "PHASE_1_ONLY_IF_LOCKED_GATES_PASS",
+      "prerequisite_waves": [
+        0,
+        1
+      ],
+      "wave": 2
+    },
+    {
+      "entries": [
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-molecule-generator",
+          "prerequisites": [
+            "amphora-molecule-generator",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-molecule-role-ranker",
+          "prerequisites": [
+            "amphora-molecule-role-ranker",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-molecule-novelty",
+          "prerequisites": [
+            "amphora-molecule-novelty",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-solvency-score",
+          "prerequisites": [
+            "amphora-solvency-score",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-cure-potlife-gate",
+          "prerequisites": [
+            "amphora-cure-potlife-gate",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-viscosity-score",
+          "prerequisites": [
+            "amphora-viscosity-score",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-barrier-corrosion-score",
+          "prerequisites": [
+            "amphora-barrier-corrosion-score",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-tolerance-robustness",
+          "prerequisites": [
+            "amphora-tolerance-robustness",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        },
+        {
+          "deliverable": "Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.",
+          "module": "amphora-process-qc-twin",
+          "prerequisites": [
+            "amphora-process-qc-twin",
+            "amphora-optimizer-orchestrator",
+            "amphora-cro-protocol-packager",
+            "amphora-run-provenance"
+          ]
+        }
+      ],
+      "name": "Closed-loop validation",
+      "phase_claim": "NO_AUTOMATIC_PROMOTION",
+      "prerequisite_waves": [
+        0,
+        1,
+        2
+      ],
+      "wave": 3
+    },
+    {
+      "entries": [
+        {
+          "deliverable": "Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded.",
+          "module": "amphora-public-corrosion-benchmark",
+          "prerequisites": [
+            "amphora-public-corrosion-benchmark",
+            "amphora-evidence-intake-validator",
+            "amphora-run-provenance",
+            "amphora-ip-fto-guard"
+          ]
+        },
+        {
+          "deliverable": "Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded.",
+          "module": "amphora-cure-potlife-gate",
+          "prerequisites": [
+            "amphora-cure-potlife-gate",
+            "amphora-evidence-intake-validator",
+            "amphora-run-provenance",
+            "amphora-ip-fto-guard"
+          ]
+        },
+        {
+          "deliverable": "Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded.",
+          "module": "amphora-viscosity-score",
+          "prerequisites": [
+            "amphora-viscosity-score",
+            "amphora-evidence-intake-validator",
+            "amphora-run-provenance",
+            "amphora-ip-fto-guard"
+          ]
+        },
+        {
+          "deliverable": "Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded.",
+          "module": "amphora-barrier-corrosion-score",
+          "prerequisites": [
+            "amphora-barrier-corrosion-score",
+            "amphora-evidence-intake-validator",
+            "amphora-run-provenance",
+            "amphora-ip-fto-guard"
+          ]
+        },
+        {
+          "deliverable": "Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded.",
+          "module": "amphora-molecule-generator",
+          "prerequisites": [
+            "amphora-molecule-generator",
+            "amphora-evidence-intake-validator",
+            "amphora-run-provenance",
+            "amphora-ip-fto-guard"
+          ]
+        },
+        {
+          "deliverable": "Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded.",
+          "module": "amphora-solvency-score",
+          "prerequisites": [
+            "amphora-solvency-score",
+            "amphora-evidence-intake-validator",
+            "amphora-run-provenance",
+            "amphora-ip-fto-guard"
+          ]
+        },
+        {
+          "deliverable": "Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded.",
+          "module": "amphora-process-qc-twin",
+          "prerequisites": [
+            "amphora-process-qc-twin",
+            "amphora-evidence-intake-validator",
+            "amphora-run-provenance",
+            "amphora-ip-fto-guard"
+          ]
+        }
+      ],
+      "name": "Defensible IP",
+      "phase_claim": "PHASE_2_ONLY_IF_ALL_REPLICATION_AND_IP_GATES_PASS",
+      "prerequisite_waves": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "wave": 4
+    }
+  ],
+  "formula": "3*decision_value + 3*evidence_gap + 2*authority_risk_reduction + 2*downstream_leverage - effort - external_delay",
+  "ladders": {
+    "infrastructure_assurance": [
+      "amphora-candidate-contract",
+      "amphora-model-card-authority",
+      "amphora-optimizer-orchestrator",
+      "amphora-evidence-intake-validator",
+      "amphora-run-provenance",
+      "amphora-redteam-audit",
+      "amphora-source-ledger",
+      "amphora-known-answer-benchmarks",
+      "amphora-sourceability-ehs",
+      "amphora-cro-protocol-packager",
+      "amphora-ip-fto-guard",
+      "amphora-report-packager"
+    ],
+    "scientific_opportunity": [
+      "amphora-public-corrosion-benchmark",
+      "amphora-cure-potlife-gate",
+      "amphora-viscosity-score",
+      "amphora-barrier-corrosion-score",
+      "amphora-molecule-generator",
+      "amphora-molecule-role-ranker",
+      "amphora-molecule-novelty",
+      "amphora-solvency-score",
+      "amphora-process-qc-twin",
+      "amphora-tolerance-robustness",
+      "amphora-design-rule-score",
+      "amphora-molecule-property",
+      "amphora-formulation-universe",
+      "amphora-ingredient-library",
+      "amphora-envelope-gates",
+      "amphora-formulation-arithmetic",
+      "amphora-molecule-design-gate"
+    ]
+  },
+  "modules": {
+    "amphora-barrier-corrosion-score": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "2/5: rates how much fail-closed work reduces unsupported authority; module basis: which barrier hypotheses merit blinded panel testing; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "5/5: rates proximity to a consequential R&D go/no-go decision; module basis: which barrier hypotheses merit blinded panel testing; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: which barrier hypotheses merit blinded panel testing; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "5/5: rates implementation and evaluation work still required (a score penalty); module basis: which barrier hypotheses merit blinded panel testing; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "5/5: rates the distance from a locked, independently reproducible evidence package; module basis: which barrier hypotheses merit blinded panel testing; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "5/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: which barrier hypotheses merit blinded panel testing; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 2,
+          "decision_value": 5,
+          "downstream_leverage": 5,
+          "effort": 5,
+          "evidence_gap": 5,
+          "external_delay": 5
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 4,
+        "score": 34
+      }
+    },
+    "amphora-candidate-contract": {
+      "dependencies": [],
+      "factor_rationales": {
+        "authority_risk_reduction": "5/5: rates how much fail-closed work reduces unsupported authority; module basis: whether candidate and score messages are canonical and safe to dispatch; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "5/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether candidate and score messages are canonical and safe to dispatch; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether candidate and score messages are canonical and safe to dispatch; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether candidate and score messages are canonical and safe to dispatch; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether candidate and score messages are canonical and safe to dispatch; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether candidate and score messages are canonical and safe to dispatch; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 5,
+          "decision_value": 5,
+          "downstream_leverage": 5,
+          "effort": 2,
+          "evidence_gap": 4,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 1,
+        "score": 45
+      }
+    },
+    "amphora-cro-protocol-packager": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "4/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "4/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "2/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 4,
+          "decision_value": 4,
+          "downstream_leverage": 3,
+          "effort": 4,
+          "evidence_gap": 4,
+          "external_delay": 2
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 10,
+        "score": 32
+      }
+    },
+    "amphora-cure-potlife-gate": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a formulation should proceed to multi-temperature CRO cure testing; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "5/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a formulation should proceed to multi-temperature CRO cure testing; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether a formulation should proceed to multi-temperature CRO cure testing; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "4/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a formulation should proceed to multi-temperature CRO cure testing; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "5/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a formulation should proceed to multi-temperature CRO cure testing; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "4/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a formulation should proceed to multi-temperature CRO cure testing; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 5,
+          "downstream_leverage": 5,
+          "effort": 4,
+          "evidence_gap": 5,
+          "external_delay": 4
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 2,
+        "score": 38
+      }
+    },
+    "amphora-design-rule-score": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "2/5: rates how much fail-closed work reduces unsupported authority; module basis: which within-study directional hypotheses deserve experiments; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "3/5: rates proximity to a consequential R&D go/no-go decision; module basis: which within-study directional hypotheses deserve experiments; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: which within-study directional hypotheses deserve experiments; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "4/5: rates implementation and evaluation work still required (a score penalty); module basis: which within-study directional hypotheses deserve experiments; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: which within-study directional hypotheses deserve experiments; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "3/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: which within-study directional hypotheses deserve experiments; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 2,
+          "decision_value": 3,
+          "downstream_leverage": 3,
+          "effort": 4,
+          "evidence_gap": 4,
+          "external_delay": 3
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 11,
+        "score": 24
+      }
+    },
+    "amphora-envelope-gates": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: whether deterministic formulation margins satisfy the declared screening envelope; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "2/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether deterministic formulation margins satisfy the declared screening envelope; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "2/5: rates the number and importance of dependent decisions unblocked; module basis: whether deterministic formulation margins satisfy the declared screening envelope; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether deterministic formulation margins satisfy the declared screening envelope; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "1/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether deterministic formulation margins satisfy the declared screening envelope; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "1/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether deterministic formulation margins satisfy the declared screening envelope; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 2,
+          "downstream_leverage": 2,
+          "effort": 2,
+          "evidence_gap": 1,
+          "external_delay": 1
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 15,
+        "score": 16
+      }
+    },
+    "amphora-evidence-intake-validator": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "5/5: rates how much fail-closed work reduces unsupported authority; module basis: whether observed evidence bytes may enter the accepted evidence store; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "5/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether observed evidence bytes may enter the accepted evidence store; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "4/5: rates the number and importance of dependent decisions unblocked; module basis: whether observed evidence bytes may enter the accepted evidence store; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether observed evidence bytes may enter the accepted evidence store; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether observed evidence bytes may enter the accepted evidence store; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether observed evidence bytes may enter the accepted evidence store; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 5,
+          "decision_value": 5,
+          "downstream_leverage": 4,
+          "effort": 2,
+          "evidence_gap": 4,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 4,
+        "score": 43
+      }
+    },
+    "amphora-formulation-arithmetic": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a declared two-part recipe has finite internally consistent formulation arithmetic; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "1/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a declared two-part recipe has finite internally consistent formulation arithmetic; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "2/5: rates the number and importance of dependent decisions unblocked; module basis: whether a declared two-part recipe has finite internally consistent formulation arithmetic; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a declared two-part recipe has finite internally consistent formulation arithmetic; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "1/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a declared two-part recipe has finite internally consistent formulation arithmetic; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "1/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a declared two-part recipe has finite internally consistent formulation arithmetic; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 1,
+          "downstream_leverage": 2,
+          "effort": 2,
+          "evidence_gap": 1,
+          "external_delay": 1
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 16,
+        "score": 13
+      }
+    },
+    "amphora-formulation-universe": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "2/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a declared formulation search space has been completely accounted; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "2/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a declared formulation search space has been completely accounted; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: whether a declared formulation search space has been completely accounted; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "3/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a declared formulation search space has been completely accounted; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "3/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a declared formulation search space has been completely accounted; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "2/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a declared formulation search space has been completely accounted; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 2,
+          "decision_value": 2,
+          "downstream_leverage": 3,
+          "effort": 3,
+          "evidence_gap": 3,
+          "external_delay": 2
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 13,
+        "score": 20
+      }
+    },
+    "amphora-ingredient-library": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "2/5: rates how much fail-closed work reduces unsupported authority; module basis: whether all positive-mass ingredients have cited constants for the requested calculation; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "2/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether all positive-mass ingredients have cited constants for the requested calculation; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: whether all positive-mass ingredients have cited constants for the requested calculation; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether all positive-mass ingredients have cited constants for the requested calculation; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "2/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether all positive-mass ingredients have cited constants for the requested calculation; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "1/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether all positive-mass ingredients have cited constants for the requested calculation; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 2,
+          "decision_value": 2,
+          "downstream_leverage": 3,
+          "effort": 2,
+          "evidence_gap": 2,
+          "external_delay": 1
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 14,
+        "score": 19
+      }
+    },
+    "amphora-ip-fto-guard": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "5/5: rates how much fail-closed work reduces unsupported authority; module basis: which technical patent categories require qualified counsel review; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "3/5: rates proximity to a consequential R&D go/no-go decision; module basis: which technical patent categories require qualified counsel review; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "2/5: rates the number and importance of dependent decisions unblocked; module basis: which technical patent categories require qualified counsel review; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: which technical patent categories require qualified counsel review; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "3/5: rates the distance from a locked, independently reproducible evidence package; module basis: which technical patent categories require qualified counsel review; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "2/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: which technical patent categories require qualified counsel review; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 5,
+          "decision_value": 3,
+          "downstream_leverage": 2,
+          "effort": 2,
+          "evidence_gap": 3,
+          "external_delay": 2
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 11,
+        "score": 28
+      }
+    },
+    "amphora-known-answer-benchmarks": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "4/5: rates how much fail-closed work reduces unsupported authority; module basis: whether deterministic services still match locked positive and negative controls; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether deterministic services still match locked positive and negative controls; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether deterministic services still match locked positive and negative controls; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether deterministic services still match locked positive and negative controls; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "3/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether deterministic services still match locked positive and negative controls; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether deterministic services still match locked positive and negative controls; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 4,
+          "decision_value": 4,
+          "downstream_leverage": 5,
+          "effort": 2,
+          "evidence_gap": 3,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 8,
+        "score": 37
+      }
+    },
+    "amphora-model-card-authority": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-run-provenance"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "5/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a model receipt may be used at a requested R&D authority level; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "5/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a model receipt may be used at a requested R&D authority level; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether a model receipt may be used at a requested R&D authority level; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "3/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a model receipt may be used at a requested R&D authority level; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a model receipt may be used at a requested R&D authority level; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a model receipt may be used at a requested R&D authority level; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 5,
+          "decision_value": 5,
+          "downstream_leverage": 5,
+          "effort": 3,
+          "evidence_gap": 4,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 2,
+        "score": 44
+      }
+    },
+    "amphora-molecule-design-gate": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a defined molecule passes structural applicability rules; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "1/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a defined molecule passes structural applicability rules; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "1/5: rates the number and importance of dependent decisions unblocked; module basis: whether a defined molecule passes structural applicability rules; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a defined molecule passes structural applicability rules; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "1/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a defined molecule passes structural applicability rules; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "1/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a defined molecule passes structural applicability rules; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 1,
+          "downstream_leverage": 1,
+          "effort": 2,
+          "evidence_gap": 1,
+          "external_delay": 1
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 17,
+        "score": 11
+      }
+    },
+    "amphora-molecule-generator": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: which valid, diverse molecular proposals enter expert review; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: which valid, diverse molecular proposals enter expert review; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: which valid, diverse molecular proposals enter expert review; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "5/5: rates implementation and evaluation work still required (a score penalty); module basis: which valid, diverse molecular proposals enter expert review; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "5/5: rates the distance from a locked, independently reproducible evidence package; module basis: which valid, diverse molecular proposals enter expert review; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "4/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: which valid, diverse molecular proposals enter expert review; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 4,
+          "downstream_leverage": 5,
+          "effort": 5,
+          "evidence_gap": 5,
+          "external_delay": 4
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 5,
+        "score": 34
+      }
+    },
+    "amphora-molecule-novelty": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a molecule expands the frozen corpus design space; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "3/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a molecule expands the frozen corpus design space; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether a molecule expands the frozen corpus design space; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a molecule expands the frozen corpus design space; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a molecule expands the frozen corpus design space; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "2/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a molecule expands the frozen corpus design space; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 3,
+          "downstream_leverage": 5,
+          "effort": 2,
+          "evidence_gap": 4,
+          "external_delay": 2
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 7,
+        "score": 33
+      }
+    },
+    "amphora-molecule-property": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "2/5: rates how much fail-closed work reduces unsupported authority; module basis: whether exact molecular properties are computable within a defined single-component domain; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "3/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether exact molecular properties are computable within a defined single-component domain; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "2/5: rates the number and importance of dependent decisions unblocked; module basis: whether exact molecular properties are computable within a defined single-component domain; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether exact molecular properties are computable within a defined single-component domain; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "3/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether exact molecular properties are computable within a defined single-component domain; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "2/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether exact molecular properties are computable within a defined single-component domain; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 2,
+          "decision_value": 3,
+          "downstream_leverage": 2,
+          "effort": 2,
+          "evidence_gap": 3,
+          "external_delay": 2
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 12,
+        "score": 22
+      }
+    },
+    "amphora-molecule-role-ranker": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a defined molecule fits an explicitly declared resin or hardener role; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a defined molecule fits an explicitly declared resin or hardener role; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether a defined molecule fits an explicitly declared resin or hardener role; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "3/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a defined molecule fits an explicitly declared resin or hardener role; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a defined molecule fits an explicitly declared resin or hardener role; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "3/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a defined molecule fits an explicitly declared resin or hardener role; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 4,
+          "downstream_leverage": 5,
+          "effort": 3,
+          "evidence_gap": 4,
+          "external_delay": 3
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 6,
+        "score": 34
+      }
+    },
+    "amphora-optimizer-orchestrator": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-model-card-authority"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "5/5: rates how much fail-closed work reduces unsupported authority; module basis: which centrally authorized objectives and constraints may reach Pareto selection; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "5/5: rates proximity to a consequential R&D go/no-go decision; module basis: which centrally authorized objectives and constraints may reach Pareto selection; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: which centrally authorized objectives and constraints may reach Pareto selection; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "4/5: rates implementation and evaluation work still required (a score penalty); module basis: which centrally authorized objectives and constraints may reach Pareto selection; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: which centrally authorized objectives and constraints may reach Pareto selection; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: which centrally authorized objectives and constraints may reach Pareto selection; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 5,
+          "decision_value": 5,
+          "downstream_leverage": 5,
+          "effort": 4,
+          "evidence_gap": 4,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 3,
+        "score": 43
+      }
+    },
+    "amphora-process-qc-twin": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: which batches require review without granting release authority; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: which batches require review without granting release authority; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: which batches require review without granting release authority; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "5/5: rates implementation and evaluation work still required (a score penalty); module basis: which batches require review without granting release authority; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: which batches require review without granting release authority; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "5/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: which batches require review without granting release authority; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 4,
+          "downstream_leverage": 3,
+          "effort": 5,
+          "evidence_gap": 4,
+          "external_delay": 5
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 9,
+        "score": 26
+      }
+    },
+    "amphora-public-corrosion-benchmark": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: whether public corrosion data can support a reproducible external benchmark; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "5/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether public corrosion data can support a reproducible external benchmark; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether public corrosion data can support a reproducible external benchmark; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "3/5: rates implementation and evaluation work still required (a score penalty); module basis: whether public corrosion data can support a reproducible external benchmark; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "5/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether public corrosion data can support a reproducible external benchmark; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "3/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether public corrosion data can support a reproducible external benchmark; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 5,
+          "downstream_leverage": 5,
+          "effort": 3,
+          "evidence_gap": 5,
+          "external_delay": 3
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 1,
+        "score": 40
+      }
+    },
+    "amphora-redteam-audit": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-model-card-authority"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "5/5: rates how much fail-closed work reduces unsupported authority; module basis: whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "3/5: rates implementation and evaluation work still required (a score penalty); module basis: whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 5,
+          "decision_value": 4,
+          "downstream_leverage": 5,
+          "effort": 3,
+          "evidence_gap": 4,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 6,
+        "score": 41
+      }
+    },
+    "amphora-report-packager": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-redteam-audit"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "4/5: rates how much fail-closed work reduces unsupported authority; module basis: whether validated envelopes can be packaged without stripping locks or escalating claims; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "3/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether validated envelopes can be packaged without stripping locks or escalating claims; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: whether validated envelopes can be packaged without stripping locks or escalating claims; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether validated envelopes can be packaged without stripping locks or escalating claims; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "2/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether validated envelopes can be packaged without stripping locks or escalating claims; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether validated envelopes can be packaged without stripping locks or escalating claims; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 4,
+          "decision_value": 3,
+          "downstream_leverage": 3,
+          "effort": 2,
+          "evidence_gap": 2,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 12,
+        "score": 27
+      }
+    },
+    "amphora-run-provenance": {
+      "dependencies": [
+        "amphora-candidate-contract"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "5/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a complete validated run can be replayed from hash-bound inputs; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a complete validated run can be replayed from hash-bound inputs; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether a complete validated run can be replayed from hash-bound inputs; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "2/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a complete validated run can be replayed from hash-bound inputs; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a complete validated run can be replayed from hash-bound inputs; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a complete validated run can be replayed from hash-bound inputs; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 5,
+          "decision_value": 4,
+          "downstream_leverage": 5,
+          "effort": 2,
+          "evidence_gap": 4,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 5,
+        "score": 42
+      }
+    },
+    "amphora-solvency-score": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "2/5: rates how much fail-closed work reduces unsupported authority; module basis: which solvent blends merit compatibility measurement; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: which solvent blends merit compatibility measurement; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: which solvent blends merit compatibility measurement; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "5/5: rates implementation and evaluation work still required (a score penalty); module basis: which solvent blends merit compatibility measurement; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "5/5: rates the distance from a locked, independently reproducible evidence package; module basis: which solvent blends merit compatibility measurement; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "5/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: which solvent blends merit compatibility measurement; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 2,
+          "decision_value": 4,
+          "downstream_leverage": 3,
+          "effort": 5,
+          "evidence_gap": 5,
+          "external_delay": 5
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 8,
+        "score": 27
+      }
+    },
+    "amphora-source-ledger": {
+      "dependencies": [
+        "amphora-candidate-contract"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "4/5: rates how much fail-closed work reduces unsupported authority; module basis: whether a scientific constant has a current traceable source and permitted use; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether a scientific constant has a current traceable source and permitted use; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether a scientific constant has a current traceable source and permitted use; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "3/5: rates implementation and evaluation work still required (a score penalty); module basis: whether a scientific constant has a current traceable source and permitted use; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether a scientific constant has a current traceable source and permitted use; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "0/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether a scientific constant has a current traceable source and permitted use; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 4,
+          "decision_value": 4,
+          "downstream_leverage": 5,
+          "effort": 3,
+          "evidence_gap": 4,
+          "external_delay": 0
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 7,
+        "score": 39
+      }
+    },
+    "amphora-sourceability-ehs": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "4/5: rates how much fail-closed work reduces unsupported authority; module basis: whether candidate-bound public evidence justifies further supplier diligence; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "4/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether candidate-bound public evidence justifies further supplier diligence; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: whether candidate-bound public evidence justifies further supplier diligence; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "3/5: rates implementation and evaluation work still required (a score penalty); module basis: whether candidate-bound public evidence justifies further supplier diligence; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "4/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether candidate-bound public evidence justifies further supplier diligence; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "2/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether candidate-bound public evidence justifies further supplier diligence; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 4,
+          "decision_value": 4,
+          "downstream_leverage": 3,
+          "effort": 3,
+          "evidence_gap": 4,
+          "external_delay": 2
+        },
+        "ladder": "infrastructure_assurance",
+        "p0_override": false,
+        "rank": 9,
+        "score": 33
+      }
+    },
+    "amphora-tolerance-robustness": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "3/5: rates how much fail-closed work reduces unsupported authority; module basis: whether declared input tolerances preserve all hard formulation gates; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "3/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether declared input tolerances preserve all hard formulation gates; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "3/5: rates the number and importance of dependent decisions unblocked; module basis: whether declared input tolerances preserve all hard formulation gates; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "3/5: rates implementation and evaluation work still required (a score penalty); module basis: whether declared input tolerances preserve all hard formulation gates; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "3/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether declared input tolerances preserve all hard formulation gates; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "2/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether declared input tolerances preserve all hard formulation gates; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 3,
+          "decision_value": 3,
+          "downstream_leverage": 3,
+          "effort": 3,
+          "evidence_gap": 3,
+          "external_delay": 2
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 10,
+        "score": 25
+      }
+    },
+    "amphora-viscosity-score": {
+      "dependencies": [
+        "amphora-candidate-contract",
+        "amphora-source-ledger"
+      ],
+      "factor_rationales": {
+        "authority_risk_reduction": "2/5: rates how much fail-closed work reduces unsupported authority; module basis: whether rheology and sag should be measured for a formulation; current locked independent promotion evidence is absent or incomplete.",
+        "decision_value": "5/5: rates proximity to a consequential R&D go/no-go decision; module basis: whether rheology and sag should be measured for a formulation; current locked independent promotion evidence is absent or incomplete.",
+        "downstream_leverage": "5/5: rates the number and importance of dependent decisions unblocked; module basis: whether rheology and sag should be measured for a formulation; current locked independent promotion evidence is absent or incomplete.",
+        "effort": "4/5: rates implementation and evaluation work still required (a score penalty); module basis: whether rheology and sag should be measured for a formulation; current locked independent promotion evidence is absent or incomplete.",
+        "evidence_gap": "5/5: rates the distance from a locked, independently reproducible evidence package; module basis: whether rheology and sag should be measured for a formulation; current locked independent promotion evidence is absent or incomplete.",
+        "external_delay": "4/5: rates dependency on CRO, supplier, counsel, or independent-lab turnaround (a score penalty); module basis: whether rheology and sag should be measured for a formulation; current locked independent promotion evidence is absent or incomplete."
+      },
+      "priority": {
+        "factors": {
+          "authority_risk_reduction": 2,
+          "decision_value": 5,
+          "downstream_leverage": 5,
+          "effort": 4,
+          "evidence_gap": 5,
+          "external_delay": 4
+        },
+        "ladder": "scientific_opportunity",
+        "p0_override": false,
+        "rank": 3,
+        "score": 36
+      }
+    }
+  },
+  "p0_override": "active authority escalation, schema-integrity defect, or silent runtime divergence",
+  "schema": "amphora.module-priorities.v1",
+  "tie_breaker": "declared ladder rank ascending"
+}

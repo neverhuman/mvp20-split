@@ -1,0 +1,283 @@
+{
+  "authority": "AUDIT_ONLY",
+  "bound_benchmark_result_sha256": "945f5b735992900ea58103e55acc35731a72bcad5bd5962a661440fdcd07cf60",
+  "ccby_rights_clean_anchor": {
+    "amine_class": "cycloaliphatic_amine",
+    "envelope_kj_mol": {
+      "max": 62.8,
+      "min": 57.3,
+      "n": 3
+    },
+    "hardener": "isophorone diamine (IPDA), cycloaliphatic",
+    "significance": "A genuinely rights-clean (CC-BY) IN-SCOPE DGEBA + cycloaliphatic-amine cure-kinetics dataset EXISTS in the open literature. The prior 'wall' finding (rights_clean n in-scope = 0) was scoped to the 26 IN-TREE datasets; it does not hold for the open literature. The cure-potlife unblock is therefore a bounded ACQUISITION+rights-review task, not an impossibility -- though this Ea dataset is cure-kinetics, not the gel-time/pot-life quantity the KPI ultimately needs.",
+    "source": "PMC6473346 (Polymers, MDPI, CC-BY), full text fetched this run",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6473346/"
+  },
+  "corroboration_kpis": {
+    "ccby_cycloaliphatic_bracket_rate": {
+      "ccby_envelope_kj_mol": [
+        57.3,
+        62.8
+      ],
+      "interpretation": "model cycloaliphatic Ea inside the directly-fetched CC-BY IPDA envelope",
+      "n_bracketed": 3,
+      "n_model_cycloaliphatic": 3,
+      "observed": 1.0
+    },
+    "family_reactivity_ordering": {
+      "interpretation": "cycloaliphatic apparent Ea <= aromatic apparent Ea (expected from amine nucleophilicity)",
+      "literature_medians_kj_mol": {
+        "aliphatic_primary_amine": 65.795,
+        "aromatic_amine": 59.7,
+        "cycloaliphatic_amine": 57.3
+      },
+      "model_cycloaliphatic_le_aromatic": true,
+      "model_medians_kj_mol": {
+        "aliphatic_primary_amine": 54.5,
+        "aromatic_amine": 65.0,
+        "cycloaliphatic_amine": 60.0
+      }
+    },
+    "union_envelope_containment_rate": {
+      "envelope_kj_mol": [
+        48.64,
+        76.8
+      ],
+      "interpretation": "fraction of the 12 model Ea inside the full independent literature range",
+      "n_contained": 11,
+      "n_model_systems": 12,
+      "observed": 0.9167
+    }
+  },
+  "does_not": [
+    "does NOT promote amphora-cure-potlife-gate (or any module) to PHASE_0",
+    "does NOT change the defensible Phase-0 count, which remains 10 (9 infrastructure/governance + amphora-solvency-score)",
+    "does NOT modify any of the 66 signed receipts or the manifest",
+    "does NOT assert rights_gate_passed; cure-potlife source-lock.v2 remains rights_gate_passed=false with empty sources",
+    "does NOT perform the PHASE0_EVALUATOR / PHASE0_INTERNAL_REVIEWER signatures (AUDIT_ONLY key custody only)"
+  ],
+  "honest_limitations": [
+    "Corroboration is of physical PLAUSIBILITY (Ea magnitude + family ordering), not absolute pot-life accuracy.",
+    "Only 3/10 literature records are directly-fetched CC-BY (the IPDA anchor); the rest are recorded from published abstracts/search returns and labelled SUPPORTING, lower-confidence.",
+    "Peak-exotherm Kissinger Ea (e.g. TETA 76.8) exceeds the model's apparent pot-life Ea -- consistent physics, but it means the union envelope is intentionally wide.",
+    "The rights-clean CC-BY anchor is cure-KINETICS (Ea), not the gel-time/pot-life quantity the Phase-0 KPI scores; it corroborates the temperature-scaling physics, not the pot-life labels."
+  ],
+  "independent_literature": [
+    {
+      "amine_class": "aliphatic_primary_amine",
+      "confidence": "SUPPORTING",
+      "directly_fetched_this_run": false,
+      "ea_kj_mol": 54.79,
+      "hardener": "amine (wind-turbine DGEBA)",
+      "license": "PUBLISHER_ABSTRACT",
+      "method": "Kissinger/Crane",
+      "source": "amine-DGEBA dynamic DSC (wind-turbine blade resin)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/pat.6498"
+    },
+    {
+      "amine_class": "aliphatic_primary_amine",
+      "confidence": "SUPPORTING",
+      "directly_fetched_this_run": false,
+      "ea_kj_mol": 76.8,
+      "hardener": "TETA (triethylenetetramine)",
+      "license": "PUBLISHER_ABSTRACT",
+      "method": "Kissinger (peak-exotherm)",
+      "note": "peak-exotherm (whole-reaction) Ea; expected to exceed the gel/pot-life apparent Ea",
+      "source": "DGEBA/TETA non-isothermal DSC, Mater. Sci. Forum 514-516, 1094",
+      "url": "https://www.scientific.net/MSF.514-516.1094"
+    },
+    {
+      "amine_class": "aromatic_amine",
+      "confidence": "SUPPORTING",
+      "directly_fetched_this_run": false,
+      "ea_kj_mol": 53.9,
+      "hardener": "aromatic diamine (PAN4-type)",
+      "license": "PUBLISHER_ABSTRACT",
+      "method": "Kissinger",
+      "source": "DGEBA/aromatic-diamine DSC",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0040603114004365"
+    },
+    {
+      "amine_class": "aromatic_amine",
+      "confidence": "SUPPORTING",
+      "directly_fetched_this_run": false,
+      "ea_kj_mol": 59.7,
+      "hardener": "aromatic diamine (GPPI-type)",
+      "license": "PUBLISHER_ABSTRACT",
+      "method": "Kissinger",
+      "source": "DGEBA/aromatic-diamine DSC",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0040603114004365"
+    },
+    {
+      "amine_class": "aromatic_amine",
+      "confidence": "SUPPORTING",
+      "directly_fetched_this_run": false,
+      "ea_kj_mol": 61.0,
+      "hardener": "aromatic diamine (dynamic DSC)",
+      "license": "PUBLISHER_ABSTRACT",
+      "method": "Kissinger",
+      "source": "DGEBA/aromatic-diamine dynamic DSC",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0040603114004365"
+    },
+    {
+      "amine_class": "cycloaliphatic_amine",
+      "confidence": "SUPPORTING",
+      "directly_fetched_this_run": false,
+      "ea_kj_mol": 48.64,
+      "hardener": "cycloaliphatic amine (generic)",
+      "license": "PUBLISHER_ABSTRACT",
+      "method": "Ozawa",
+      "source": "DGEBA/cycloaliphatic non-isothermal DSC (Ozawa/Kissinger, ASTM)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/pat.6498"
+    },
+    {
+      "amine_class": "cycloaliphatic_amine",
+      "confidence": "SUPPORTING",
+      "directly_fetched_this_run": false,
+      "ea_kj_mol": 51.92,
+      "hardener": "cycloaliphatic amine (generic)",
+      "license": "PUBLISHER_ABSTRACT",
+      "method": "Kissinger",
+      "source": "DGEBA/cycloaliphatic non-isothermal DSC (Ozawa/Kissinger, ASTM)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/pat.6498"
+    },
+    {
+      "amine_class": "cycloaliphatic_amine",
+      "confidence": "HIGH",
+      "directly_fetched_this_run": true,
+      "ea_kj_mol": 57.3,
+      "hardener": "IPDA (isophorone diamine, Resoltech 1074)",
+      "license": "CC-BY",
+      "method": "Kissinger",
+      "source": "Vidil/biobased DGEBA study, Polymers, PMC6473346",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6473346/"
+    },
+    {
+      "amine_class": "cycloaliphatic_amine",
+      "confidence": "HIGH",
+      "directly_fetched_this_run": true,
+      "ea_kj_mol": 59.8,
+      "hardener": "IPDA (isophorone diamine, Resoltech 1074)",
+      "license": "CC-BY",
+      "method": "Kissinger-Akahira-Sunose",
+      "source": "Polymers, PMC6473346",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6473346/"
+    },
+    {
+      "amine_class": "cycloaliphatic_amine",
+      "confidence": "HIGH",
+      "directly_fetched_this_run": true,
+      "ea_kj_mol": 62.8,
+      "hardener": "IPDA (isophorone diamine, Resoltech 1074)",
+      "license": "CC-BY",
+      "method": "Flynn-Wall-Ozawa",
+      "source": "Polymers, PMC6473346",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6473346/"
+    }
+  ],
+  "independent_literature_class_median_ea_kj_mol": {
+    "aliphatic_primary_amine": 65.795,
+    "aromatic_amine": 59.7,
+    "cycloaliphatic_amine": 57.3
+  },
+  "independent_literature_union_envelope_kj_mol": {
+    "max": 76.8,
+    "min": 48.64,
+    "n": 10
+  },
+  "model_class_median_ea_kj_mol": {
+    "aliphatic_primary_amine": 54.5,
+    "aromatic_amine": 65.0,
+    "cycloaliphatic_amine": 60.0
+  },
+  "model_systems": [
+    {
+      "ea_kj_mol": 56.0,
+      "hardener_family": "aliphatic-polyamine",
+      "system_id": "dgeba-deta"
+    },
+    {
+      "ea_kj_mol": 54.0,
+      "hardener_family": "aliphatic-polyamine",
+      "system_id": "dgeba-tepa"
+    },
+    {
+      "ea_kj_mol": 55.0,
+      "hardener_family": "aliphatic-polyamine",
+      "system_id": "dgeba-teta"
+    },
+    {
+      "ea_kj_mol": 52.0,
+      "hardener_family": "amidoamine-adduct",
+      "system_id": "dgeba-amidoamine-adduct1"
+    },
+    {
+      "ea_kj_mol": 55.0,
+      "hardener_family": "amidoamine-adduct",
+      "system_id": "dgeba-amidoamine-adduct2"
+    },
+    {
+      "ea_kj_mol": 65.0,
+      "hardener_family": "aromatic-amine",
+      "system_id": "dgeba-mda"
+    },
+    {
+      "ea_kj_mol": 68.0,
+      "hardener_family": "aromatic-amine",
+      "system_id": "dgeba-mpda"
+    },
+    {
+      "ea_kj_mol": 58.0,
+      "hardener_family": "aromatic-amine",
+      "system_id": "dgeba-mxda"
+    },
+    {
+      "ea_kj_mol": 58.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "system_id": "dgeba-dach"
+    },
+    {
+      "ea_kj_mol": 62.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "system_id": "dgeba-ipda"
+    },
+    {
+      "ea_kj_mol": 60.0,
+      "hardener_family": "cycloaliphatic-amine",
+      "system_id": "dgeba-pacm"
+    },
+    {
+      "ea_kj_mol": 48.0,
+      "hardener_family": "mannich-base",
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "out_of_union_envelope_systems": [
+    {
+      "ea_kj_mol": 48.0,
+      "envelope_kj_mol": [
+        48.64,
+        76.8
+      ],
+      "hardener_family": "mannich-base",
+      "shortfall_kj_mol": -0.64,
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "promotes_authority": false,
+  "question": "Are amphora-cure-potlife-gate's per-family apparent activation energies corroborated by DGEBA-amine cure Ea published in the open, rights-separate literature (including a directly-fetched CC-BY open-access dataset)?",
+  "schema": "amphora.redteam-audit.cure-potlife-external-ea-corroboration.v1",
+  "target_capability": "arrhenius-pot-life-temperature-scaling",
+  "target_kpi_id": "amphora-cure-potlife-gate-phase0-arrhenius-known-answer-v1",
+  "target_module": "amphora-cure-potlife-gate",
+  "theory": "Arrhenius (1889) rate-constant temperature scaling; amine-family reactivity ordering from nucleophilicity/sterics of the N-H addition to the oxirane (aliphatic primary amine fastest -> lowest Ea; aromatic diamine slowest -> highest Ea). Peak-exotherm Kissinger Ea (whole reaction) >= gel/pot-life apparent Ea at low conversion.",
+  "verdict": {
+    "graded_outcome": "CORROBORATED",
+    "is_a_phase0_gate": false,
+    "near_miss_note": "1/12 model systems (dgeba-mannich, 48.0 kJ/mol) falls 0.64 kJ/mol below the independent literature min (48.64) -- within rounding on the fastest-reacting (Mannich/phenalkamine) family, where open literature is sparse. Reported honestly, not tuned away.",
+    "physics_externally_corroborated": true,
+    "statement": "The cure-potlife Arrhenius model's per-family apparent activation energies are 11/12 contained within the independent open-literature envelope (the one miss is a 0.64 kJ/mol under-shoot on the Mannich system), are tightly bracketed for the cycloaliphatic family by a directly-fetched CC-BY dataset, and preserve the expected amine-family reactivity ordering. This independently CORROBORATES the model's physics on data outside its parameterisation lineage. It does NOT promote the module and does NOT satisfy the Phase-0 rights gate.",
+    "strict_all_contained": false,
+    "supplies_rights_clean_potlife_dataset": false
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "schema_version": "amphora.molecule_role_ranker.role_fit_benchmark.v1",
+  "benchmark_id": "amphora-molecule-role-ranker-role-fit-v1",
+  "rdkit_version": "2026.03.2",
+  "artifact_sha256": null,
+  "upstream_property_benchmark_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "source_artifacts": {
+    "molecule_library.json": "1f83a689db0997a5c226b3838ad0c1cb46e1b363004d526319c1761fc7ae8fe6"
+  },
+  "acceptance_bar": {
+    "exact_implementation_max_abs_error": 0.000001,
+    "role_fit_max_abs_error": 0.000001,
+    "top_role_selection_accuracy": 1.0,
+    "target_component_accuracy": 1.0,
+    "measured_only_claim_lock_rate": 1.0,
+    "amide_exclusion_accuracy": 1.0,
+    "measured_ranking_accuracy": 1.0,
+    "measured_role_selection_accuracy": 1.0,
+    "measured_only_record_status_accuracy": 1.0,
+    "declared_ranking_consistency_accuracy": 1.0,
+    "minimum_exact_control_count": 9,
+    "minimum_measured_only_control_count": 3
+  },
+  "required_control_ids": {
+    "exact_defined": ["exact-dgeba", "exact-dgebf", "exact-erl4221", "exact-deta", "exact-teta", "exact-tepa", "exact-ipda-library-structure", "exact-pacm", "exact-amino-amide-exclusion"],
+    "measured_only": ["measured-epon-828", "measured-ancamide-700b75", "measured-versamid-140"]
+  },
+  "role_fit_config": {
+    "resin": {
+      "eew_target_band_g_per_eq": [175.0, 195.0],
+      "preferred_functionality": 2,
+      "functionality_deviation_penalty": 0.3,
+      "viscosity_soft_cap_poise": 200.0,
+      "viscosity_penalty_span_poise": 800.0,
+      "missing_measured_viscosity_fit": 1.0,
+      "exact_defined_fit": 1.0,
+      "measured_only_fit": 0.6,
+      "weights": {
+        "eew_band_fit": 0.45,
+        "functionality_fit": 0.2,
+        "viscosity_fit": 0.2,
+        "liquid_defined_resin": 0.15
+      }
+    },
+    "hardener": {
+      "ahew_pairing_band_g_per_eq": [90.0, 350.0],
+      "evidence_defaults": {
+        "polyamide_class_fit": 0.35,
+        "marine_fit": 0.7,
+        "gov_precedent_fit": 0.7
+      },
+      "known_evidence_fit": 1.0,
+      "weights": {
+        "polyamide_class_fit": 0.35,
+        "ahew_pairing_fit": 0.3,
+        "gov_precedent_fit": 0.2,
+        "marine_fit": 0.15
+      }
+    }
+  },
+  "sources": [
+    {"source_id": "SRC-MOLECULE-LIBRARY", "status": "VERIFIED_LOCAL_ARTIFACT", "citation": "Versioned MVP20 molecule library", "path": "reference/mvp20/data/molecule_library.json"},
+    {"source_id": "SRC-PROPERTY-BENCHMARK", "status": "VERIFIED_LOCAL_ARTIFACT", "citation": "Versioned amphora-molecule-property EEW/AHEW benchmark", "path": "../amphora-molecule-property/reference/mvp20/data/eew_ahew_benchmark.v1.json"},
+    {"source_id": "SRC-PUBCHEM-DGEBA", "status": "VERIFIED_PUBLIC", "citation": "PubChem CID 2286", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/2286"},
+    {"source_id": "SRC-PUBCHEM-DGEBF", "status": "VERIFIED_PUBLIC", "citation": "PubChem CID 91511", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/91511"},
+    {"source_id": "SRC-PUBCHEM-ERL4221", "status": "VERIFIED_PUBLIC", "citation": "PubChem CID 16949", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/16949"},
+    {"source_id": "SRC-PUBCHEM-DETA", "status": "VERIFIED_PUBLIC", "citation": "PubChem CID 8111", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/8111"},
+    {"source_id": "SRC-PUBCHEM-TETA", "status": "VERIFIED_PUBLIC", "citation": "PubChem CID 5565", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5565"},
+    {"source_id": "SRC-PUBCHEM-TEPA", "status": "VERIFIED_PUBLIC", "citation": "PubChem CID 8197", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/8197"},
+    {"source_id": "SRC-PUBCHEM-IPDA-LIBRARY", "status": "VERIFIED_PUBLIC", "citation": "Molecule-library IPDA identity control, PubChem CID 17857", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/17857"},
+    {"source_id": "SRC-PUBCHEM-PACM", "status": "VERIFIED_PUBLIC", "citation": "PubChem CID 15660", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/15660"},
+    {"source_id": "SRC-METHOD-AMIDE-EXCLUSION", "status": "VERIFIED_METHOD", "citation": "Reactive amine N-H implementation control with amide N-H excluded", "path": "../amphora-molecule-property/src/amphora_molecule_property/support.py"},
+    {"source_id": "SRC-EPON828", "status": "VERIFIED_SUPPLIER_TDS", "citation": "EPON 828 measured EEW and viscosity reference", "path": "reference/mvp20/data/molecule_library.json"},
+    {"source_id": "SRC-EVONIK-GUIDE", "status": "VERIFIED_SUPPLIER_TDS", "citation": "Ancamide 700B75 measured polyamide guide reference", "path": "reference/mvp20/data/molecule_library.json"},
+    {"source_id": "SRC-VERSAMID140", "status": "VERIFIED_LOCAL_ARTIFACT", "citation": "Versamid 140 measured reactive-polyamide library reference; not conflated with the separate Versamid 115 ledger record", "path": "reference/mvp20/data/molecule_library.json"}
+  ],
+  "exact_defined_controls": [
+    {
+      "record_id": "exact-dgeba",
+      "name": "Bisphenol-A diglycidyl ether (DGEBA)",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-PUBCHEM-DGEBA"],
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "expected_role": "resin",
+      "expected_properties": {"mol_weight": 340.42, "epoxide_groups": 2, "eew_g_per_eq": 170.2, "active_nh": 0, "ahew_g_per_eq": null, "functionality": 2},
+      "expected_components": {"resin.eew_band_fit": 0.76, "resin.functionality_fit": 1.0, "hardener.ahew_pairing_fit": 0.0},
+      "expected_role_fits": {"resin": 0.892, "hardener": 0.3675}
+    },
+    {
+      "record_id": "exact-dgebf",
+      "name": "Bisphenol-F diglycidyl ether (DGEBF)",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-PUBCHEM-DGEBF"],
+      "smiles": "C1OC1COc1ccc(Cc2ccc(OCC3CO3)cc2)cc1",
+      "expected_role": "resin",
+      "expected_properties": {"mol_weight": 312.36, "epoxide_groups": 2, "eew_g_per_eq": 156.2, "active_nh": 0, "ahew_g_per_eq": null, "functionality": 2},
+      "expected_components": {"resin.eew_band_fit": 0.06, "resin.functionality_fit": 1.0, "hardener.ahew_pairing_fit": 0.0},
+      "expected_role_fits": {"resin": 0.577, "hardener": 0.3675}
+    },
+    {
+      "record_id": "exact-erl4221",
+      "name": "ERL-4221",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-PUBCHEM-ERL4221"],
+      "smiles": "O=C(OCC1CCC2OC2C1)C1CCC2OC2C1",
+      "expected_role": "resin",
+      "expected_properties": {"mol_weight": 252.31, "epoxide_groups": 2, "eew_g_per_eq": 126.2, "active_nh": 0, "ahew_g_per_eq": null, "functionality": 2},
+      "expected_components": {"resin.eew_band_fit": 0.0, "resin.functionality_fit": 1.0, "hardener.ahew_pairing_fit": 0.0},
+      "expected_role_fits": {"resin": 0.55, "hardener": 0.3675}
+    },
+    {
+      "record_id": "exact-deta",
+      "name": "Diethylenetriamine (DETA)",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-PUBCHEM-DETA"],
+      "smiles": "NCCNCCN",
+      "expected_role": "hardener",
+      "expected_properties": {"mol_weight": 103.17, "epoxide_groups": 0, "eew_g_per_eq": null, "active_nh": 5, "ahew_g_per_eq": 20.6, "functionality": 5},
+      "expected_components": {"resin.eew_band_fit": 0.0, "resin.functionality_fit": 0.1, "hardener.ahew_pairing_fit": 0.733},
+      "expected_role_fits": {"resin": 0.37, "hardener": 0.5874}
+    },
+    {
+      "record_id": "exact-teta",
+      "name": "Triethylenetetramine (TETA)",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-PUBCHEM-TETA"],
+      "smiles": "NCCNCCNCCN",
+      "expected_role": "hardener",
+      "expected_properties": {"mol_weight": 146.24, "epoxide_groups": 0, "eew_g_per_eq": null, "active_nh": 6, "ahew_g_per_eq": 24.4, "functionality": 6},
+      "expected_components": {"resin.eew_band_fit": 0.0, "resin.functionality_fit": 0.0, "hardener.ahew_pairing_fit": 0.748},
+      "expected_role_fits": {"resin": 0.35, "hardener": 0.5918}
+    },
+    {
+      "record_id": "exact-tepa",
+      "name": "Tetraethylenepentamine (TEPA)",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-PUBCHEM-TEPA"],
+      "smiles": "NCCNCCNCCNCCN",
+      "expected_role": "hardener",
+      "expected_properties": {"mol_weight": 189.31, "epoxide_groups": 0, "eew_g_per_eq": null, "active_nh": 7, "ahew_g_per_eq": 27.0, "functionality": 7},
+      "expected_components": {"resin.eew_band_fit": 0.0, "resin.functionality_fit": 0.0, "hardener.ahew_pairing_fit": 0.758},
+      "expected_role_fits": {"resin": 0.35, "hardener": 0.5948}
+    },
+    {
+      "record_id": "exact-ipda-library-structure",
+      "name": "Isophorone diamine (IPDA), molecule-library structure",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-PUBCHEM-IPDA-LIBRARY"],
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "expected_role": "hardener",
+      "expected_properties": {"mol_weight": 170.3, "epoxide_groups": 0, "eew_g_per_eq": null, "active_nh": 4, "ahew_g_per_eq": 42.6, "functionality": 4},
+      "expected_components": {"resin.eew_band_fit": 0.0, "resin.functionality_fit": 0.4, "hardener.ahew_pairing_fit": 0.818},
+      "expected_role_fits": {"resin": 0.43, "hardener": 0.6128}
+    },
+    {
+      "record_id": "exact-pacm",
+      "name": "4,4'-Methylenebis(cyclohexylamine) (PACM)",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-PUBCHEM-PACM"],
+      "smiles": "NC1CCC(CC2CCC(N)CC2)CC1",
+      "expected_role": "hardener",
+      "expected_properties": {"mol_weight": 210.36, "epoxide_groups": 0, "eew_g_per_eq": null, "active_nh": 4, "ahew_g_per_eq": 52.6, "functionality": 4},
+      "expected_components": {"resin.eew_band_fit": 0.0, "resin.functionality_fit": 0.4, "hardener.ahew_pairing_fit": 0.856},
+      "expected_role_fits": {"resin": 0.43, "hardener": 0.6243}
+    },
+    {
+      "record_id": "exact-amino-amide-exclusion",
+      "name": "N-(2-aminoethyl)acetamide implementation control",
+      "source_ids": ["SRC-METHOD-AMIDE-EXCLUSION", "SRC-PROPERTY-BENCHMARK"],
+      "smiles": "NCCNC(=O)C",
+      "expected_role": "hardener",
+      "expected_properties": {"mol_weight": 102.14, "epoxide_groups": 0, "eew_g_per_eq": null, "active_nh": 2, "ahew_g_per_eq": 51.1, "functionality": 2},
+      "expected_components": {"resin.eew_band_fit": 0.0, "resin.functionality_fit": 1.0, "hardener.ahew_pairing_fit": 0.85},
+      "expected_role_fits": {"resin": 0.55, "hardener": 0.6226},
+      "amide_nh_excluded": true
+    }
+  ],
+  "measured_only_commercial_controls": [
+    {
+      "record_id": "measured-epon-828",
+      "name": "EPON 828 technical-grade DGEBA resin",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-EPON828"],
+      "source_status": "MEASURED_PRODUCT_ONLY",
+      "structure_authority": "MEASURED_ONLY",
+      "idealized_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "measured_properties": {"eew_g_per_eq": [185.0, 192.0], "functionality": 2, "viscosity_poise_25c": [110.0, 150.0]},
+      "evidence": {},
+      "expected_role": "resin",
+      "expected_role_fit": 0.94,
+      "expected_target_band_fit": 1.0,
+      "expected_components": {"eew_band_fit": 1.0, "functionality_fit": 1.0, "viscosity_fit": 1.0, "measured_viscosity_status": "MEASURED", "viscosity_poise": 130.0}
+    },
+    {
+      "record_id": "measured-ancamide-700b75",
+      "name": "Ancamide 700B75 technical-grade polyamide",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-EVONIK-GUIDE"],
+      "source_status": "MEASURED_PRODUCT_ONLY",
+      "structure_authority": "MEASURED_ONLY",
+      "idealized_smiles": "NCCNCCN",
+      "measured_properties": {"ahew_g_per_eq": 170.0},
+      "evidence": {
+        "polyamide": {"status": "MEASURED_PRODUCT_ONLY", "value": true, "source_ids": ["SRC-EVONIK-GUIDE"]},
+        "marine": {"status": "MEASURED_PRODUCT_ONLY", "value": true, "source_ids": ["SRC-EVONIK-GUIDE"]}
+      },
+      "expected_role": "hardener",
+      "expected_role_fit": 0.94,
+      "expected_target_band_fit": 1.0,
+      "expected_components": {"polyamide_class_fit": 1.0, "ahew_pairing_fit": 1.0, "gov_precedent_fit": 0.7, "marine_fit": 1.0, "class_evidence_status": "MEASURED_PRODUCT_ONLY"}
+    },
+    {
+      "record_id": "measured-versamid-140",
+      "name": "Versamid 140 technical-grade reactive polyamide",
+      "source_ids": ["SRC-MOLECULE-LIBRARY", "SRC-VERSAMID140"],
+      "source_status": "MEASURED_PRODUCT_ONLY",
+      "structure_authority": "MEASURED_ONLY",
+      "idealized_smiles": "NCCNC(=O)C",
+      "measured_properties": {"ahew_g_per_eq": 97.0},
+      "evidence": {
+        "polyamide": {"status": "MEASURED_PRODUCT_ONLY", "value": true, "source_ids": ["SRC-VERSAMID140"]}
+      },
+      "expected_role": "hardener",
+      "expected_role_fit": 0.895,
+      "expected_target_band_fit": 1.0,
+      "expected_components": {"polyamide_class_fit": 1.0, "ahew_pairing_fit": 1.0, "gov_precedent_fit": 0.7, "marine_fit": 0.7, "class_evidence_status": "MEASURED_PRODUCT_ONLY"}
+    }
+  ],
+  "expected_rankings": {
+    "exact_top_roles": {
+      "exact-dgeba": "resin",
+      "exact-dgebf": "resin",
+      "exact-erl4221": "resin",
+      "exact-deta": "hardener",
+      "exact-teta": "hardener",
+      "exact-tepa": "hardener",
+      "exact-ipda-library-structure": "hardener",
+      "exact-pacm": "hardener",
+      "exact-amino-amide-exclusion": "hardener"
+    },
+    "measured_resin": ["measured-epon-828"],
+    "measured_hardener": ["measured-ancamide-700b75", "measured-versamid-140"]
+  }
+}

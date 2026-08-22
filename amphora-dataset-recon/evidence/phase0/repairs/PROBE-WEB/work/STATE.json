@@ -1,0 +1,17 @@
+{
+  "schema": "amphora.dataset-recon.probe-web-state.v1",
+  "campaign_item_id": "PROBE-WEB",
+  "status": "done",
+  "last_fire_id": "20260810T020001-4093980-59cfaefb325c",
+  "last_fire_date": "2026-08-10",
+  "done_receipt": "amphora-dataset-recon/evidence/phase0/repairs/PROBE-WEB/done/probe-web-receipt.v1.dsse.json",
+  "findings_for_next_fire": {
+    "WebSearch": "available, works for en and zh (native-script) queries",
+    "WebFetch": "available for most targets; FAILS on www.cnki.net (TLS cert mismatch, served cert is *.cdn.myqcloud.com)",
+    "raw_http_curl_xbabe1": "available, general outbound egress confirmed; ALSO fails identically on www.cnki.net (network-level, not tool-specific)",
+    "ja_native_script_roundtrip": "NOT YET DONE -- only a reachability curl to J-STAGE /-char/en was run this fire; a DR-LANG-JA fire should run a native-script WebSearch/WebFetch query against J-STAGE or NIMS/PoLyInfo",
+    "candidate_source_surfaced": "National Materials Corrosion and Protection Science Data Center (partner of nbsdc.cn / CAS NBSDC), zh, two-tier access (open + agreement-gated) -- mirrored to data-acquisition-queue.jsonl on xbabe1"
+  },
+  "max_fires": 2,
+  "fires_used": 1
+}

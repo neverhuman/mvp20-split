@@ -1,0 +1,405 @@
+{
+  "acceptance_bar": {
+    "applicability_domain_fail_closed_rate_floor": 1.0,
+    "arrhenius_mape_within_training_range_ceiling": 0.05,
+    "arrhenius_over_constant_baseline_lift_floor": 0.2,
+    "authority_lock_preservation_rate_floor": 1.0,
+    "held_out_temperature_extrapolation_mape_ceiling": 0.08,
+    "per_solvent_minimum_prediction_quality_rate_floor": 0.85,
+    "reported_r_squared_ceiling_only": 0.99
+  },
+  "authority": {
+    "commercial_formulation_authority": false,
+    "optimizer_authority": false,
+    "scientific_readiness": "LOCKED_INTERNAL",
+    "solver_use_disabled": true
+  },
+  "fixture_id": "amphora-viscosity-score-phase0-known-answer-2026-07-21",
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored pure-solvent viscosity compilation from CRC Handbook 100th ed., NIST Chemistry WebBook, and Yaws' Handbook of Thermodynamic and Physical Properties secondary tables for Phase-0 Arrhenius-viscosity controls only; no wet-lab measurements checked in",
+    "source_id": "amphora_phase0_viscosity_arrhenius_known_answer",
+    "source_url": "local:amphora-viscosity-score/reference/phase0-viscosity-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.viscosity-score-phase0-known-answer.v1",
+  "solvents": [
+    {
+      "fitted_activation_energy_j_mol": 15530.237,
+      "fitted_r_squared": 0.998923,
+      "formula": "H2O",
+      "smiles": "O",
+      "solvent_id": "water",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 viscosity of liquid water; NIST WebBook Reference fluid H2O"
+      ],
+      "viscosity_mpas_20c": 1.0016,
+      "viscosity_mpas_25c": 0.8905,
+      "viscosity_mpas_30c": 0.7972,
+      "viscosity_mpas_40c": 0.6527,
+      "viscosity_mpas_60c": 0.4665
+    },
+    {
+      "fitted_activation_energy_j_mol": 10815.319,
+      "fitted_r_squared": 0.999866,
+      "formula": "CH3OH",
+      "smiles": "CO",
+      "solvent_id": "methanol",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.183; Yaws' Handbook methanol dynamic viscosity"
+      ],
+      "viscosity_mpas_20c": 0.593,
+      "viscosity_mpas_25c": 0.544,
+      "viscosity_mpas_30c": 0.51,
+      "viscosity_mpas_40c": 0.449,
+      "viscosity_mpas_60c": 0.348
+    },
+    {
+      "fitted_activation_energy_j_mol": 14375.136,
+      "fitted_r_squared": 0.999972,
+      "formula": "C2H5OH",
+      "smiles": "CCO",
+      "solvent_id": "ethanol",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.183; Yaws' Handbook ethanol dynamic viscosity"
+      ],
+      "viscosity_mpas_20c": 1.2,
+      "viscosity_mpas_25c": 1.074,
+      "viscosity_mpas_30c": 0.983,
+      "viscosity_mpas_40c": 0.826,
+      "viscosity_mpas_60c": 0.591
+    },
+    {
+      "fitted_activation_energy_j_mol": 18484.026,
+      "fitted_r_squared": 0.999391,
+      "formula": "C4H9OH",
+      "smiles": "CCCCO",
+      "solvent_id": "n-butanol",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.183; Yaws' Handbook 1-butanol dynamic viscosity"
+      ],
+      "viscosity_mpas_20c": 2.948,
+      "viscosity_mpas_25c": 2.544,
+      "viscosity_mpas_30c": 2.253,
+      "viscosity_mpas_40c": 1.782,
+      "viscosity_mpas_60c": 1.187
+    },
+    {
+      "fitted_activation_energy_j_mol": 7307.553,
+      "fitted_r_squared": 0.999681,
+      "formula": "C3H6O",
+      "smiles": "CC(C)=O",
+      "solvent_id": "acetone",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180; Yaws' Handbook acetone dynamic viscosity"
+      ],
+      "viscosity_mpas_20c": 0.324,
+      "viscosity_mpas_25c": 0.306,
+      "viscosity_mpas_30c": 0.293,
+      "viscosity_mpas_40c": 0.269,
+      "viscosity_mpas_60c": 0.226
+    },
+    {
+      "fitted_activation_energy_j_mol": 8448.211,
+      "fitted_r_squared": 1.0,
+      "formula": "C4H8O",
+      "smiles": "CCC(C)=O",
+      "solvent_id": "methyl-ethyl-ketone",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180; Yaws' Handbook MEK dynamic viscosity"
+      ],
+      "viscosity_mpas_20c": 0.423,
+      "viscosity_mpas_25c": 0.398,
+      "viscosity_mpas_30c": 0.376,
+      "viscosity_mpas_40c": 0.339,
+      "viscosity_mpas_60c": 0.279
+    },
+    {
+      "fitted_activation_energy_j_mol": 8873.301,
+      "fitted_r_squared": 0.999809,
+      "formula": "C7H8",
+      "smiles": "Cc1ccccc1",
+      "solvent_id": "toluene",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 toluene; NIST WebBook"
+      ],
+      "viscosity_mpas_20c": 0.59,
+      "viscosity_mpas_25c": 0.56,
+      "viscosity_mpas_30c": 0.526,
+      "viscosity_mpas_40c": 0.47,
+      "viscosity_mpas_60c": 0.381
+    },
+    {
+      "fitted_activation_energy_j_mol": 9658.938,
+      "fitted_r_squared": 0.999391,
+      "formula": "C8H10",
+      "smiles": "Cc1ccc(C)cc1",
+      "solvent_id": "p-xylene",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 p-xylene; Yaws' Handbook"
+      ],
+      "viscosity_mpas_20c": 0.644,
+      "viscosity_mpas_25c": 0.605,
+      "viscosity_mpas_30c": 0.57,
+      "viscosity_mpas_40c": 0.505,
+      "viscosity_mpas_60c": 0.4
+    },
+    {
+      "fitted_activation_energy_j_mol": 8278.734,
+      "fitted_r_squared": 0.997295,
+      "formula": "C6H14",
+      "smiles": "CCCCCC",
+      "solvent_id": "n-hexane",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 n-hexane"
+      ],
+      "viscosity_mpas_20c": 0.32,
+      "viscosity_mpas_25c": 0.294,
+      "viscosity_mpas_30c": 0.279,
+      "viscosity_mpas_40c": 0.253,
+      "viscosity_mpas_60c": 0.213
+    },
+    {
+      "fitted_activation_energy_j_mol": 14221.198,
+      "fitted_r_squared": 0.996675,
+      "formula": "C6H12",
+      "smiles": "C1CCCCC1",
+      "solvent_id": "cyclohexane",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 cyclohexane"
+      ],
+      "viscosity_mpas_20c": 1.02,
+      "viscosity_mpas_25c": 0.898,
+      "viscosity_mpas_30c": 0.821,
+      "viscosity_mpas_40c": 0.679,
+      "viscosity_mpas_60c": 0.507
+    },
+    {
+      "fitted_activation_energy_j_mol": 6801.074,
+      "fitted_r_squared": 0.999975,
+      "formula": "CH2Cl2",
+      "smiles": "ClCCl",
+      "solvent_id": "dichloromethane",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 dichloromethane"
+      ],
+      "viscosity_mpas_20c": 0.432,
+      "viscosity_mpas_25c": 0.413,
+      "viscosity_mpas_30c": 0.394,
+      "viscosity_mpas_40c": 0.362,
+      "viscosity_mpas_60c": 0.309
+    },
+    {
+      "fitted_activation_energy_j_mol": 8805.689,
+      "fitted_r_squared": 0.999572,
+      "formula": "CHCl3",
+      "smiles": "ClC(Cl)Cl",
+      "solvent_id": "chloroform",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 chloroform"
+      ],
+      "viscosity_mpas_20c": 0.58,
+      "viscosity_mpas_25c": 0.542,
+      "viscosity_mpas_30c": 0.51,
+      "viscosity_mpas_40c": 0.457,
+      "viscosity_mpas_60c": 0.376
+    },
+    {
+      "fitted_activation_energy_j_mol": 9068.266,
+      "fitted_r_squared": 0.999732,
+      "formula": "C4H8O2",
+      "smiles": "CCOC(C)=O",
+      "solvent_id": "ethyl-acetate",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 ethyl acetate"
+      ],
+      "viscosity_mpas_20c": 0.455,
+      "viscosity_mpas_25c": 0.428,
+      "viscosity_mpas_30c": 0.406,
+      "viscosity_mpas_40c": 0.361,
+      "viscosity_mpas_60c": 0.291
+    },
+    {
+      "fitted_activation_energy_j_mol": 8941.003,
+      "fitted_r_squared": 0.990372,
+      "formula": "C4H8O",
+      "smiles": "C1CCOC1",
+      "solvent_id": "tetrahydrofuran",
+      "sources": [
+        "Yaws' Handbook THF dynamic viscosity; NIST WebBook"
+      ],
+      "viscosity_mpas_20c": 0.518,
+      "viscosity_mpas_25c": 0.463,
+      "viscosity_mpas_30c": 0.435,
+      "viscosity_mpas_40c": 0.395,
+      "viscosity_mpas_60c": 0.334
+    },
+    {
+      "fitted_activation_energy_j_mol": 11696.818,
+      "fitted_r_squared": 0.996246,
+      "formula": "C3H7NO",
+      "smiles": "CN(C)C=O",
+      "solvent_id": "dimethylformamide",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 DMF"
+      ],
+      "viscosity_mpas_20c": 0.924,
+      "viscosity_mpas_25c": 0.802,
+      "viscosity_mpas_30c": 0.749,
+      "viscosity_mpas_40c": 0.66,
+      "viscosity_mpas_60c": 0.52
+    },
+    {
+      "fitted_activation_energy_j_mol": 7910.478,
+      "fitted_r_squared": 0.998257,
+      "formula": "C4H10O",
+      "smiles": "CCOCC",
+      "solvent_id": "diethyl-ether",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 diethyl ether"
+      ],
+      "viscosity_mpas_20c": 0.242,
+      "viscosity_mpas_25c": 0.224,
+      "viscosity_mpas_30c": 0.213,
+      "viscosity_mpas_40c": 0.194,
+      "viscosity_mpas_60c": 0.164
+    },
+    {
+      "fitted_activation_energy_j_mol": 22399.542,
+      "fitted_r_squared": 0.999728,
+      "formula": "C3H8O",
+      "smiles": "CC(C)O",
+      "solvent_id": "isopropanol",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.183 2-propanol"
+      ],
+      "viscosity_mpas_20c": 2.431,
+      "viscosity_mpas_25c": 2.038,
+      "viscosity_mpas_30c": 1.774,
+      "viscosity_mpas_40c": 1.331,
+      "viscosity_mpas_60c": 0.807
+    },
+    {
+      "fitted_activation_energy_j_mol": 7738.656,
+      "fitted_r_squared": 0.999042,
+      "formula": "C5H12",
+      "smiles": "CCCCC",
+      "solvent_id": "n-pentane",
+      "sources": [
+        "Yaws' Handbook n-pentane dynamic viscosity"
+      ],
+      "viscosity_mpas_20c": 0.24,
+      "viscosity_mpas_25c": 0.224,
+      "viscosity_mpas_30c": 0.213,
+      "viscosity_mpas_40c": 0.194,
+      "viscosity_mpas_60c": 0.164
+    },
+    {
+      "fitted_activation_energy_j_mol": 9334.904,
+      "fitted_r_squared": 0.999673,
+      "formula": "C7H16",
+      "smiles": "CCCCCCC",
+      "solvent_id": "n-heptane",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 n-heptane"
+      ],
+      "viscosity_mpas_20c": 0.418,
+      "viscosity_mpas_25c": 0.386,
+      "viscosity_mpas_30c": 0.365,
+      "viscosity_mpas_40c": 0.325,
+      "viscosity_mpas_60c": 0.264
+    },
+    {
+      "fitted_activation_energy_j_mol": 9398.197,
+      "fitted_r_squared": 0.999967,
+      "formula": "C8H18",
+      "smiles": "CCCCCCCC",
+      "solvent_id": "n-octane",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 n-octane"
+      ],
+      "viscosity_mpas_20c": 0.545,
+      "viscosity_mpas_25c": 0.508,
+      "viscosity_mpas_30c": 0.478,
+      "viscosity_mpas_40c": 0.427,
+      "viscosity_mpas_60c": 0.343
+    },
+    {
+      "fitted_activation_energy_j_mol": 10490.339,
+      "fitted_r_squared": 0.999767,
+      "formula": "C6H6",
+      "smiles": "c1ccccc1",
+      "solvent_id": "benzene",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 benzene"
+      ],
+      "viscosity_mpas_20c": 0.652,
+      "viscosity_mpas_25c": 0.604,
+      "viscosity_mpas_30c": 0.564,
+      "viscosity_mpas_40c": 0.492,
+      "viscosity_mpas_60c": 0.389
+    },
+    {
+      "fitted_activation_energy_j_mol": 14521.357,
+      "fitted_r_squared": 0.999986,
+      "formula": "C2H6OS",
+      "smiles": "CS(=O)C",
+      "solvent_id": "dimethyl-sulfoxide",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 DMSO; Yaws' Handbook"
+      ],
+      "viscosity_mpas_20c": 2.198,
+      "viscosity_mpas_25c": 1.996,
+      "viscosity_mpas_30c": 1.802,
+      "viscosity_mpas_40c": 1.499,
+      "viscosity_mpas_60c": 1.075
+    },
+    {
+      "fitted_activation_energy_j_mol": 8321.869,
+      "fitted_r_squared": 0.999306,
+      "formula": "C2H3N",
+      "smiles": "CC#N",
+      "solvent_id": "acetonitrile",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 acetonitrile"
+      ],
+      "viscosity_mpas_20c": 0.369,
+      "viscosity_mpas_25c": 0.343,
+      "viscosity_mpas_30c": 0.325,
+      "viscosity_mpas_40c": 0.294,
+      "viscosity_mpas_60c": 0.245
+    },
+    {
+      "fitted_activation_energy_j_mol": 13876.714,
+      "fitted_r_squared": 0.999881,
+      "formula": "C4H8O2",
+      "smiles": "C1COCCO1",
+      "solvent_id": "1-4-dioxane",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.180 1,4-dioxane"
+      ],
+      "viscosity_mpas_20c": 1.313,
+      "viscosity_mpas_25c": 1.187,
+      "viscosity_mpas_30c": 1.087,
+      "viscosity_mpas_40c": 0.907,
+      "viscosity_mpas_60c": 0.663
+    },
+    {
+      "fitted_activation_energy_j_mol": 58008.347,
+      "fitted_r_squared": 0.99925,
+      "formula": "C3H8O3",
+      "smiles": "OCC(O)CO",
+      "solvent_id": "glycerol",
+      "sources": [
+        "CRC Handbook 100th ed. Table 6.183 glycerol dynamic viscosity"
+      ],
+      "viscosity_mpas_20c": 1412.0,
+      "viscosity_mpas_25c": 934.0,
+      "viscosity_mpas_30c": 623.0,
+      "viscosity_mpas_40c": 289.0,
+      "viscosity_mpas_60c": 81.3
+    }
+  ],
+  "toolkit_version": "2026.03.2"
+}

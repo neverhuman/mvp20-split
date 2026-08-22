@@ -1,0 +1,32 @@
+{
+  "campaign_item_id": "U-DATA",
+  "campaign_item_status": "blocked",
+  "fires": [
+    {
+      "fire_id": "20260812T120001-3712582-97e3beba268d",
+      "path": "amphora-molecule-property/evidence/phase0/repairs/U-DATA/done/u-data-domain-widening-search-record-kpi.v1.dsse.json",
+      "verdict": "BLOCKED_DATA",
+      "summary": "17-source rights-clean-corpus sweep; 2 QUALIFYING_RECOMMENDED CC-BY-4.0 finds (Mendeley 10.17632/bypjxzm3fn.1 = DETA match, IJTSRD 10.31142/ijtsrd15748 = MDA/DDM match); 3 queue entries appended; 4 proposed_followups filed."
+    },
+    {
+      "fire_id": "20260812T130001-4081237-e414b4cfb3ed",
+      "path": "amphora-molecule-property/evidence/phase0/repairs/U-DATA/done/u-data-fire2-citation-provenance-correction-kpi.v1.dsse.json",
+      "verdict": "CLAIM_REFUTED",
+      "summary": "Citation-provenance audit of fire 1's own search_record.json: entry n=3's 'Zenodo REST API' citation for DOI 10.31142/ijtsrd15748 is fabricated/misattributed. Entries n=1/n=2/n=4/n=5 independently reverified as correct. Corrected entry n=3; RETRACTION-INDEX.md updated; corrected queue line appended.",
+      "supersedes_sha256": "99d8fe491918c3ea073d1417c55794c416cbc0293c81968c2e16b4179284faec"
+    },
+    {
+      "fire_id": "20260812T140002-300165-ddcb265206f9",
+      "path": "amphora-molecule-property/evidence/phase0/repairs/U-DATA/done/u-data-fire3-structural-identity-provenance-correction-kpi.v1.dsse.json",
+      "verdict": "CLAIM_REFUTED",
+      "summary": "Structural-identity provenance audit of fire 1's qualifying_finds[0] (Epikure 3223 vs canonical DETA, Tanimoto=1.0000). Fire 1's own cited primary source (PMC12528924) describes the curing agent as 'a multifunctional amine resin hardener derived from diethylenetriamine' -- in tension with a bare exact-identity claim -- and fire 1 never reconciled this despite the source being already open for its license quote. No SMILES was ever extracted from the primary source; an independent distributor page separately calls the product 'unmodified', so two independent live sources disagree. Underlying identity claim not shown false (CAS 111-40-0 corroboration still favors DETA on balance) but the certainty framing was overclaimed. Corrected finding filed as TRADE_NAME_INFERENCE_NOT_SOURCE_VERIFIED with an SDS-based resolution path; RETRACTION-INDEX.md updated; corrected queue line appended (line 58 left byte-intact).",
+      "supersedes_sha256": "99d8fe491918c3ea073d1417c55794c416cbc0293c81968c2e16b4179284faec"
+    }
+  ],
+  "current_true_state": "Search+sweep done_criterion (>=12 sources, license quotes, queue appends, proposed_followups) was met in fire 1 and remains met. Fire 2 corrected a fabricated license citation (entry n=3). Fire 3 corrected an overclaimed structural-identity certainty framing (qualifying_finds[0], Epikure 3223/DETA) -- the primary source's own chemistry language was never checked against the exact-match claim, and disagrees with an independent distributor characterization; the underlying identity is still plausible on balance (CAS 111-40-0) but unresolved without an SDS check. The overall objective (an AD actually widened by rights-clean data) remains BLOCKED_DATA / requires a human acquisition step this cron does not perform: (1) resolve the Epikure-3223 amine-identity ambiguity via SDS or the study authors, (2) download the Mendeley CSV and the IJTSRD PDF under their CC-BY-4.0 grants, (3) hand-verify property rows, (4) re-ingest into the training corpus with provenance.",
+  "no_further_search_fires_needed": true,
+  "remaining_work_is_human_acquisition_not_more_search": true,
+  "max_fires": 3,
+  "fires_used": 3,
+  "item_exhausted_this_campaign_run": true
+}

@@ -1,0 +1,205 @@
+{
+  "$schema": "amphora.module-phase0-kpi.v1",
+  "audit_verdicts_index": [
+    {
+      "all_known_answer_gates_passed": true,
+      "authority": "AUDIT_ONLY",
+      "claim": "Independent ARL run-length characterization of the live process-QC detector stack: Shewhart geometric table reproduced to <=0.21%, two-sided CUSUM (k=0.5,h=5) Siegmund ARL matches Montgomery Table 9.4 to <=3.0% over 0..2-sigma, and an independent EWMA Markov-chain solver recovers the lambda->1 Shewhart limit. Known-parameter false-alarm budget (union <=0.20 expected/30 batches) sits inside the module's 5% target; estimated-parameter degradation (Quesenberry 1993) is the explicit Phase-1 gap.",
+      "does_not_close": [
+        "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+        "ARL results assume i.i.d. normal in-control data with KNOWN mu,sigma; the module estimates limits from a finite baseline, so real ARL0 is shorter and right-skewed (Quesenberry 1993) -- known-parameter figures are a BEST-CASE bound.",
+        "No prospective time-ordered 30-batch pilot is checked in; recall/false-alarm on OWNED synthetic universes is unchanged by this receipt.",
+        "Siegmund CUSUM ARL is an approximation (gated only over the module-relevant 0..2-sigma small-shift regime)."
+      ],
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "receipt_path": "evidence/audit/spc-arl-characterization-v1/spc-arl-characterization-receipt.v1.dsse.json",
+      "receipt_sha256": "125421a104cdc56c0f1242d02381d886506f199c549757f862cc1981edbb7dde",
+      "study_id": "spc-arl-characterization-v1"
+    },
+    {
+      "all_known_answer_gates_passed": true,
+      "authority": "AUDIT_ONLY",
+      "claim": "Estimated-parameter ARL0 degradation for the module's Shewhart Individuals chart (L=3), computed exactly over the joint sampling law of (Xbar,S) and cross-checked by pinned-seed Monte Carlo. At the module's m=20-30 pilot baseline the in-control run-length law is right-skewed and the GUARANTEED (5th-pct) ARL0 collapses far below the nominal 370.4, quantifying the Quesenberry-1993 finite-baseline penalty the prior known-parameter receipt flagged as a best-case bound.",
+      "does_not_close": [
+        "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+        "Covers only the Shewhart Individuals chart with the sample-S sigma estimator; the moving-range estimator (MR-bar/d2) has fewer effective degrees of freedom so degrades at least as much (conservative direction), and estimated-parameter EWMA (Jones 2002) / CUSUM guaranteed-ARL remain open.",
+        "Assumes i.i.d. normal in-control data; non-normality and autocorrelation are not modeled.",
+        "No prospective time-ordered 30-batch pilot is checked in; this is a theory characterization, not a recall/false-alarm measurement on real batches."
+      ],
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "receipt_path": "evidence/audit/estparam-arl-degradation-v1/estparam-arl-degradation-receipt.v1.dsse.json",
+      "receipt_sha256": "23cf6d54953269d9ab6b397c43027fd175b96aeb70092cb5328d7058e5be9355",
+      "study_id": "estparam-arl-degradation-v1"
+    },
+    {
+      "all_known_answer_gates_passed": true,
+      "authority": "AUDIT_ONLY",
+      "claim": "Moving-range (MRbar/d2) estimated-parameter ARL0 degradation for the module's Shewhart Individuals chart (L=3). The Individuals-chart textbook-default sigma estimator is the average moving range, sigma_hat=MRbar/d2, NOT the sample S used by the prior receipt. An exact closed-form MR sampling variance (adjacent moving-range correlation rho=-1/2) -- validated against pinned-seed correlated Monte Carlo -- yields a Patnaik effective df nu_eff(m) BELOW the S/c4 df (m-1), and the estimated-parameter guaranteed (5th-pct) in-control ARL0 for MR/d2 sits BELOW the S/c4 value at every finite baseline m. This quantifies the 'MR/d2 degrades at least as much (conservative direction)' assertion that estparam-arl-degradation-v1 left unquantified.",
+      "does_not_close": [
+        "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+        "Assumes i.i.d. normal in-control data; non-normality and autocorrelation (which bias MRbar and break the rho=-1/2 structure) are not modeled and remain open.",
+        "Estimated-parameter EWMA (Jones, Champ, Rigdon 2001) and CUSUM guaranteed-ARL under estimated parameters remain open Phase-1 gaps.",
+        "Covers the span-2 moving range (d2(2)); larger MR spans and the median-MR estimator are not characterized.",
+        "No prospective time-ordered 30-batch pilot is checked in; this is a theory characterization, not a recall/false-alarm measurement on real batches."
+      ],
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "receipt_path": "evidence/audit/moving-range-arl-degradation-v1/moving-range-arl-degradation-receipt.v1.dsse.json",
+      "receipt_sha256": "567f4523a2b59b862a58f9ec62258ccd1b7157b73f6787bab9fea89813756190",
+      "study_id": "moving-range-arl-degradation-v1"
+    },
+    {
+      "all_known_answer_gates_passed": true,
+      "authority": "AUDIT_ONLY",
+      "claim": "Estimated-parameter (Phase-II) run-length degradation of the EWMA(0.20,3) and two-sided CUSUM(0.5,5) arms of the live three-detector union, via the exact conditional reduction Y ~ N(-U/W, 1/W^2) (Jones-Champ-Rigdon 2001/2004) with Brook-Evans Markov-chain ARL solvers generalized to non-unit variance. The memory detectors degrade MORE than Shewhart: at a 30-observation baseline the guaranteed (5th-pct) ARL0 retains only 9.5% (EWMA) and 9.8% (CUSUM) of its known-parameter value versus 13.3% for Shewhart, and the guaranteed (95th-pct) union false-alarm count over the module's 30-batch KPI window rises from the known-parameter 0.199 to 1.73991 -- outside the locked budget of 1.5.",
+      "does_not_close": [
+        "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+        "Assumes i.i.d. normal in-control data; autocorrelation and non-normality are not modeled and remain open.",
+        "Uses sigma_hat = S/c4; the MRbar/d2 estimator actually defaulted to by Individuals charts is strictly worse (ARE 0.605), so the memory-arm guaranteed ARL0 reported here is an upper bound, not the operating value. The MRbar/d2 x EWMA/CUSUM cross is still open.",
+        "The two-sided CUSUM ARL uses the Lucas-Crosier 1/ARL = 1/ARL+ + 1/ARL- combination, which is an approximation (validated to <=6% against Montgomery Table 9.4, not exact).",
+        "The union false-alarm figure is a Bonferroni rate bound summing per-chart 30/ARL0; it does not model the strong positive dependence among the three charts (they read the same stream), so it is conservative by construction.",
+        "No prospective time-ordered 30-batch pilot is checked in; this is a theory characterization, not a false-alarm measurement on real batches.",
+        "Out-of-control (ARL1) performance under estimated parameters, and the recall >=90% half of the KPI, are not characterized here."
+      ],
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "receipt_path": "evidence/audit/estparam-memory-detector-arl-degradation-v1/estparam-memory-detector-arl-degradation-receipt.v1.dsse.json",
+      "receipt_sha256": "53e1b06fd731feee74059ee84807d6d3855f78a472a565b1498c0cbb8d6cbfe2",
+      "study_id": "estparam-memory-detector-arl-degradation-v1"
+    },
+    {
+      "all_known_answer_gates_passed": true,
+      "authority": "AUDIT_ONLY",
+      "claim": "Under the ACTUAL Individuals-chart default sigma estimator sigma_hat=MRbar/d2 (not S/c4), the guaranteed (95th-pct) union false-alarm count at the module's previously-reported sufficient baseline m=50 is 1.44946 (vs 1.10155 under S/c4), against the locked budget of 1.5. The smallest tabulated baseline meeting the budget under MR/d2 is m=50 (UNCHANGED from the S/c4-based claim of m=50). m=50 STILL MEETS the budget once MRbar/d2 replaces S/c4.",
+      "does_not_close": [
+        "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+        "Assumes i.i.d. normal in-control data; autocorrelation and non-normality are not modeled and remain open.",
+        "The union false-alarm figure is a per-node sum of 30/ARL0 across the three arms sharing one (U,W) draw; it is still a Bonferroni-style rate approximation of the union alarm event, not an exact union probability.",
+        "The Lucas-Crosier two-sided CUSUM 1/ARL=1/ARL+ +1/ARL- combination is an approximation (validated to <=6% against Montgomery Table 9.4 in the prior receipt).",
+        "The W sampling law is characterized by Monte Carlo (no closed form for MRbar/d2), so the reported percentiles carry MC sampling noise on top of the exact conditional-ARL formula; quantified by the grid-convergence gate.",
+        "No prospective time-ordered 30-batch pilot is checked in; this is a theory characterization, not a false-alarm measurement on real batches.",
+        "Out-of-control (ARL1) performance under MRbar/d2-estimated parameters, and the recall >=90% half of the KPI, are not characterized here.",
+        "Covers only the span-2 moving range d2(2); larger MR spans are not characterized."
+      ],
+      "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "receipt_path": "evidence/audit/mr-memory-detector-arl-degradation-v1/mr-memory-detector-arl-degradation-receipt.v1.dsse.json",
+      "receipt_sha256": "62e97a5293029d37458c892f92dbc34be0178e8fae8a3c35c89eeadbca1d1bbe",
+      "study_id": "mr-memory-detector-arl-degradation-v1"
+    }
+  ],
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json / PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json for full Phase-0 promotion (human dual-identity ceremony; out of this cron's authority).",
+    "Prospective time-ordered 30-batch pilot with seeded controls measuring realized recall/false-alarm/false-release rates -- all figures here are theory characterizations (i.i.d. normal in-control assumption), not measurements on real batches.",
+    "Out-of-control (ARL1) performance under estimated parameters, and the recall >=90% half of the module's locked KPI, remain uncharacterized by these five receipts.",
+    "Only the span-2 moving range d2(2) is characterized; larger MR spans remain open."
+  ],
+  "campaign_item_id": "W-QC",
+  "capability": "Consolidated index of this module's ARL (average run length) degradation characterization: known-parameter Shewhart/EWMA/CUSUM anchors validated against published tables, and estimated-parameter (finite-baseline) degradation of the guaranteed in-control run length and the three-detector union false-alarm rate, under both the sample-S/c4 and moving-range MRbar/d2 sigma estimators, now for BOTH the Shewhart-only and the full EWMA/CUSUM memory-detector stacks. This receipt fits no new model and runs no new statistical test: it indexes five already-signed AUDIT_ONLY receipts and restates their measured values.",
+  "claim_locks": {
+    "consolidation_only_no_new_data_fit": true,
+    "declarative_public_baseline_only": true,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "pre_phase_0_research_only": true
+  },
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "This receipt indexes and restates already-signed audit verdicts; it performs no new statistical test and fits no new model.",
+    "Does not modify, supersede-in-place, or re-sign any of the five indexed audit receipts, nor the superseded v1 KPI; all remain independently valid on disk and are referenced by path + sha256.",
+    "i.i.d. normal in-control data is assumed throughout the indexed receipts; autocorrelation and non-normality are not modeled."
+  ],
+  "estimated_parameter_memory_detectors_MR_d2": {
+    "claim_verdict": "SURVIVED",
+    "false_alarm_budget_per_30_batch": 1.5,
+    "guaranteed_arl0_retention_at_m30_vs_known_parameter": {
+      "cusum": 0.0805,
+      "ewma": 0.0763,
+      "shewhart": 0.0887
+    },
+    "m50_still_meets_budget_under_MRbar_d2": true,
+    "m50_union_fa_p95_MRbar_d2": 1.44946,
+    "m50_union_fa_p95_Sc4_prior_receipt": 1.10155,
+    "sigma_estimator": "MRbar/d2(2) -- the estimator the Individuals chart actually defaults to (operating estimator, not the S/c4 upper bound)",
+    "smallest_tabulated_m_meeting_criterion_MRbar_d2": 50,
+    "smallest_tabulated_m_meeting_criterion_Sc4_prior_receipt": 50,
+    "source": "mr-memory-detector-arl-degradation-v1"
+  },
+  "estimated_parameter_memory_detectors_S_c4": {
+    "CUSUM_m20_guaranteed_arl0_p05": 30.222,
+    "CUSUM_m300_guaranteed_arl0_p05": 227.824,
+    "CUSUM_m30_guaranteed_arl0_p05": 45.752,
+    "EWMA_m20_guaranteed_arl0_p05": 34.411,
+    "EWMA_m300_guaranteed_arl0_p05": 276.86,
+    "EWMA_m30_guaranteed_arl0_p05": 53.296,
+    "false_alarm_budget_per_30_batch": 1.5,
+    "guaranteed_arl0_retention_at_m30_vs_known_parameter": {
+      "cusum": 0.0983,
+      "ewma": 0.0952,
+      "shewhart": 0.1329
+    },
+    "m30_meets_locked_false_alarm_budget": false,
+    "sigma_estimator": "S/c4(m) (flagged by the source receipt as an UPPER BOUND, not the operating estimator -- see MRbar/d2 cross below, now CLOSED)",
+    "smallest_tabulated_m_meeting_fa_budget": 50,
+    "source": "estparam-memory-detector-arl-degradation-v1",
+    "union_false_alarms_per_30_batch_p95_by_m": {
+      "m100": 0.67757,
+      "m20": 2.66102,
+      "m30": 1.73991,
+      "m50": 1.10155
+    },
+    "worst_degrading_arm_at_m30": "ewma"
+  },
+  "estimated_parameter_shewhart_MR_d2": {
+    "asymptotic_relative_efficiency_vs_Sc4": 0.605,
+    "m20_guaranteed_arl0_p05": 21.481,
+    "m300_guaranteed_arl0_p05": 162.843,
+    "m30_guaranteed_arl0_p05": 33.85,
+    "sigma_estimator": "MRbar/d2(2)",
+    "smallest_tabulated_m_meeting_p05_ge_200": null,
+    "source": "moving-range-arl-degradation-v1"
+  },
+  "estimated_parameter_shewhart_S_c4": {
+    "m20_guaranteed_arl0_p05": 30.239,
+    "m20_median_arl0": 255.791,
+    "m300_guaranteed_arl0_p05": 191.095,
+    "m30_guaranteed_arl0_p05": 46.953,
+    "m30_median_arl0": 287.594,
+    "sigma_estimator": "S/c4(m)",
+    "smallest_tabulated_m_meeting_p05_ge_200": null,
+    "source": "estparam-arl-degradation-v1"
+  },
+  "honest_headline": "Known-parameter (infinite-baseline) reference: Shewhart ARL0=370.4, EWMA(0.2,3) ARL0=559.804, union false-alarm rate 0.1985 per 30 batches -- all Markov-chain/geometric solvers reproduce published anchors (Montgomery 2020 Table 9.4; Siegmund 1985; Shewhart 1931) to <=3.1% relative error. The MRbar/d2 x EWMA/CUSUM cross that v1 of this KPI left open under `awaiting` is now CLOSED (mr-memory-detector-arl-degradation-v1, SURVIVED): under sigma_hat=MRbar/d2 -- the estimator the Individuals chart actually defaults to, not the S/c4 upper bound the module previously reported under -- the guaranteed (5th-percentile) in-control run length at m=30 retains only {'cusum': 0.0805, 'ewma': 0.0763, 'shewhart': 0.0887} of the known-parameter value across the three detector arms (worse than the S/c4 figures {'cusum': 0.0983, 'ewma': 0.0952, 'shewhart': 0.1329}, as expected since MRbar/d2 has fewer effective degrees of freedom). The locked <=1.5-expected-false-alarm/30-batch union budget at the smallest previously-reported sufficient baseline m=50 is 1.44946 under MRbar/d2 (vs 1.10155 under S/c4) -- STILL inside the 1.5 budget, and the smallest tabulated baseline meeting the budget under MRbar/d2 is m=50, UNCHANGED from the S/c4-based figure. The module's m=20-25 pilot baseline remains roughly half the m=50 baseline this characterization shows is needed to meet the locked false-alarm budget, under either sigma estimator -- this is a decision-relevant gap for any prospective 30-batch pilot design, not a pass/fail on module correctness.",
+  "known_parameter_reference": {
+    "cusum_siegmund_max_rel_err_vs_montgomery_t9p4": 0.03031,
+    "ewma_arl0_lambda0p2_L3": 559.804,
+    "kpi_arl1_at_1sigma": {
+      "cusum_k0.5_h5": 10.336,
+      "ewma_lam0.2_L3": 10.836,
+      "shewhart_3sigma": 43.895
+    },
+    "kpi_union_false_alarms_per_30_batch_known_parameter": 0.1985,
+    "shewhart_arl0_3sigma": 370.4,
+    "shewhart_geometric_max_rel_err_vs_published": 0.00215,
+    "source": "spc-arl-characterization-v1"
+  },
+  "kpi_id": "amphora-process-qc-twin-phase0-arl-characterization-consolidated-v2",
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-process-qc-twin",
+  "n_audits_all_gates_passed": 5,
+  "n_audits_indexed": 5,
+  "phase": "PRE_PHASE_0",
+  "promotes_authority": false,
+  "schema": "amphora.process-qc-twin.arl-characterization-consolidated-kpi.v2",
+  "scientific_success_asserted": false,
+  "supersedes": {
+    "reason": "v1 indexed 4 signed receipts and explicitly listed a 5th (mr-memory-detector-arl-degradation-v1, the MRbar/d2 x EWMA/CUSUM cross) under `awaiting`, not yet signed. That receipt is now signed (campaign item W-QC). This is not a refutation of v1's content -- v1's four restated receipts remain independently valid and unchanged -- it is a completion supersession folding in the previously-awaited 5th result, per supersede-never-rewrite discipline.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "evidence/phase0/kpis/arl-characterization-consolidated-kpi.v1.json",
+    "superseded_sha256": "73a983ad41c1511fefc2c51abf2a3699d6c4cc16574b2421f51e0ef10d5e3f43"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "acquisition_queue_correction": {
+    "corrected_entry_appended_this_fire": true,
+    "fire_id": "20260812T140002-300165-ddcb265206f9",
+    "original_line58_sha256": "9c32bc479c79d1f524065fa1857450003741d061c4d0e9c337a4196c49ab05bf",
+    "original_line_not_deleted_append_only_ledger": true,
+    "target_file_xbabe1": "/home/ubuntu/amphora-cron/data-acquisition-queue.jsonl"
+  },
+  "all_gates_passed": true,
+  "attack": {
+    "method": "Live re-fetch, this fire (on xbabe2), of (a) the primary source PMC12528924 that fire 1 already cited for its license quote, checking its own chemical description of the curing agent; (b) an independent distributor product page never cited by fire 1; (c) PubChem's canonical DETA record, to confirm what 'canonical DETA' SMILES means.",
+    "observation": "FIRED: PMC12528924 (fire 1's own cited source) describes the curing agent as 'a multifunctional amine resin hardener derived from diethylenetriamine' -- hedge language in tension with a bare exact-identity claim -- and fire 1's receipt never mentions or reconciles this phrasing, despite it appearing on the exact page fire 1 quoted for licensing. Fire 1's own field name for the SMILES ('amine_smiles_public_chemistry_not_extracted_from_paywalled_data') independently confirms no structure was ever extracted from the source; the 'computed via RDKit... this fire' phrasing therefore describes a real bit-vector computation performed against an ASSUMED, not source-verified, structure -- an overclaim of evidentiary grounding, not a fabricated citation (the CAS 111-40-0/distributor-corroborated identity is independently plausible), but a genuine unresolved ambiguity presented as a settled fact.",
+    "refutation_criterion": "REFUTED if the primary source's own chemistry description of the study material is in tension with (does not affirmatively support) the bare 'Tanimoto=1.0000... computed via RDKit... this fire' framing fire 1 used, AND fire 1 never investigated or disclosed that tension despite already holding the source open."
+  },
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "U-DATA",
+  "ceiling": "AUDIT_ONLY. Documents a structural-identity evidentiary-provenance defect in a prior fire's qualifying-find and corrects the framing with an honestly-caveated replacement; does not acquire, cache, or ingest any external dataset, does not modify the AD gate or any shipped KPI, and does not modify the manifest.",
+  "checks": {
+    "contradiction": {
+      "independent_distributor_says": "Epikure 3223 is an unmodified aliphatic amine used in a variety of applications including epoxy curing agents.",
+      "primary_source_says": "a multifunctional amine resin hardener derived from diethylenetriamine, with the commercial brand name of Epikure 3223.",
+      "tension": "The primary source fire 1 already had open (for its license quote) describes the study material as 'derived from' diethylenetriamine -- ordinary usage for a modified/adducted product, not the parent amine itself -- while an independent distributor describes the same trade name as 'unmodified'. Fire 1 never read or reconciled the primary source's own chemistry language before asserting 'EXACT structural identity (Tanimoto=1.0000)... computed via RDKit Morgan r=2/2048-bit, this fire' -- a phrasing that implies a settled, source-grounded computation. No SMILES was ever extracted from PMC12528924 or from any primary documentation of the specific batch used in the study (fire 1's own field name admits this: 'amine_smiles_public_chemistry_not_extracted_from_paywalled_data'). The Tanimoto=1.0000 figure is therefore a computation against an ASSUMED structure (generic 'Epikure 3223 = DETA, CAS 111-40-0' trade-name identity), not a verified structural fact about the study's actual reagent."
+    },
+    "corrected_qualifying_find_0": {
+      "amine_name": "Epikure 3223 (Hexion; commercially identified as diethylenetriamine, CAS 111-40-0, per independent distributor literature -- see caveat)",
+      "amine_smiles_basis": "NCCNCCN (canonical DETA, PubChem CID 8111, live-refetched this fire: connectivity C(CNCCN)N). This SMILES was NEVER extracted from the primary study source or from any batch-specific documentation of the material actually used -- it is inferred solely from the commercial trade name 'Epikure 3223', corroborated by an independent distributor description ('an unmodified aliphatic amine', silmid.com, live-refetched this fire) but in tension with the primary study source's own description ('a multifunctional amine resin hardener derived from diethylenetriamine', PMC12528924, live-refetched this fire).",
+      "epoxy_name": "Epon 828 (Hexion; DGEBA)",
+      "next_action": "Before treating this as a settled DETA-AD-widening row: a human resolves the 'derived from' vs 'unmodified' discrepancy directly against Hexion's EPIKURE 3223 Safety Data Sheet (CAS 111-40-0 listed ingredient table) or by contacting the study authors, THEN downloads the Mendeley CSV under CC-BY-4.0 and hand-verifies Tg values. If the SDS confirms neat DETA (single listed CAS 111-40-0 ingredient, no adduct/resin co-reactant), the original Tanimoto=1.0 disposition stands on solid ground; if the SDS shows a modified/multi-component hardener, the AD-widening candidate must be re-scored against the TRUE structure, not assumed DETA.",
+      "structural_overlap_corrected": {
+        "best_match_vs_5_canonical_amines": {
+          "name": "DETA",
+          "tanimoto": 1.0
+        },
+        "caveat": "Tanimoto=1.0000 holds ONLY if the study's actual reagent is neat, unmodified DETA. The primary source's own wording ('derived from diethylenetriamine... multifunctional amine resin hardener') is not dispositive either way but is the kind of phrasing conventionally used for adducted/modified curing-agent products, and was never reconciled against the distributor's 'unmodified' characterization before fire 1 asserted an exact-match figure as if it were a verified computation.",
+        "confidence": "TRADE_NAME_INFERENCE_NOT_SOURCE_VERIFIED"
+      },
+      "supersedes_qualifying_finds_0_of": "u-data-domain-widening-search-record-kpi.v1.dsse.json"
+    },
+    "independent_distributor_silmid_live_refetch": {
+      "http_status": 200,
+      "product_description_verbatim": "Epikure 3223 is an unmodified aliphatic amine used in a variety of applications including epoxy curing agents.",
+      "url": "https://www.silmid.com/us/adhesives/epoxy-hardeners/epikure-3223-hardener-usq-can/"
+    },
+    "primary_source_pmc12528924_live_refetch": {
+      "amine_description_verbatim": "a multifunctional amine resin hardener derived from diethylenetriamine, with the commercial brand name of Epikure 3223.",
+      "cas_number_111_40_0_stated_in_article": false,
+      "http_status": 200,
+      "license_quote_verbatim": "CC BY license (http://creativecommons.org/licenses/by/4.0/).",
+      "mass_ratio_verbatim": "mass ratio between EPON 828 and EPIKURE 3223 was 100:12",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12528924/"
+    },
+    "pubchem_canonical_deta_live_refetch": {
+      "canonical_smiles": "C(CNCCN)N",
+      "cid": 8111,
+      "http_status": 200,
+      "iupac_name": "N'-(2-aminoethyl)ethane-1,2-diamine",
+      "matches_fire1_claimed_smiles_NCCNCCN": true
+    }
+  },
+  "claim_under_attack": {
+    "claim_text": "Rights-clean training corpora exist that would widen the applicability domain to cover industrially relevant epoxy-amine chemistry.",
+    "narrower_claim_this_fire_actually_tests": "Fire 1's qualifying_finds[0] structural_overlap assertion -- 'EXACT structural identity (Tanimoto=1.0000) to the canonical amine DETA... computed via RDKit Morgan r=2/2048-bit, this fire' -- was a genuine structural verification grounded in the primary source's own disclosed chemistry, not an unexamined trade-name assumption.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/"
+  },
+  "directive_ref": null,
+  "entries_not_in_scope_this_fire": "This fire audits ONLY qualifying_finds[0] (Epikure 3223/DETA structural claim). Fire 2's correction to entry n=3 (MDA/DDM citation) is untouched and remains valid. Entries n=2/n=4/n=5/n=6-17 of the 17-source sweep are untouched.",
+  "fire_id": "20260812T140002-300165-ddcb265206f9",
+  "flips_scientific_readiness": false,
+  "gates": {
+    "fire2_n3_correction_untouched": true,
+    "mendeley_license_citation_reverified_unaffected": true,
+    "narrower_structural_provenance_claim_refuted_for_qualifying_finds_0": true,
+    "no_bulk_data_downloaded_this_fire": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "supersede_never_rewrite_original_receipt_byte_intact": true,
+    "underlying_identity_claim_not_shown_false_only_overclaimed_certainty": true
+  },
+  "human_review_performed": false,
+  "mendeley_entry_n1_license_reverified_this_fire": {
+    "conclusion": "License citation for entry n=1 (CC BY 4.0) independently reconfirmed live this fire; NOT in dispute.",
+    "license_quote_verbatim": "CC BY license (http://creativecommons.org/licenses/by/4.0/)."
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "promotes_authority": false,
+  "proposed_followups": [
+    {
+      "defect": "The Mendeley 10.17632/bypjxzm3fn.1 / Epikure-3223 candidate row's amine identity (neat DETA vs a 'multifunctional amine resin hardener derived from' DETA) is UNRESOLVED: the primary study article and an independent distributor page give conflicting characterizations, and no batch-specific SDS or composition table has been checked.",
+      "module": "amphora-molecule-property",
+      "proposed_done_criterion": "A future fire or human obtains Hexion's EPIKURE 3223 Safety Data Sheet (section 3, composition/ingredients) or directly contacts the study authors, and confirms whether the CAS-listed ingredient(s) are solely 111-40-0 (neat DETA) or include an adduct/resin co-reactant; records the result against this receipt's sha256; and either confirms or corrects the Tanimoto=1.0000 AD-widening candidacy for DETA before any human acquisition/ingestion step treats it as settled."
+    },
+    {
+      "defect": "The U-DATA data-hunt tooling's 'computed via RDKit... this fire' phrasing does not distinguish between (a) a SMILES extracted/verified from the cited primary source and (b) a SMILES assumed from a commercial trade name and never checked against the source's own text -- a distinction this fire had to reconstruct by hand by re-reading a page fire 1 had already fetched.",
+      "module": "amphora-molecule-property",
+      "proposed_done_criterion": "A future data-hunt or ledger-audit fire adds a mandatory 'smiles_provenance' field (enum: SOURCE_EXTRACTED | TRADE_NAME_INFERENCE | SDS_CONFIRMED) to the standard qualifying_finds schema used by this module's U-* data campaign items, so a structural-identity claim cannot be phrased as 'computed... this fire' without disclosing whether the input structure itself was source-verified."
+    }
+  ],
+  "receipt_id": "u-data-fire3-structural-identity-provenance-correction",
+  "schema": "amphora.molecule-property.rights-clean-epoxy-amine-data-hunt-structural-provenance-correction-kpi.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "used_for": "AUDIT_ONLY U-DATA fire-3 structural-identity provenance correction under evidence/phase0/repairs/U-DATA/done/"
+  },
+  "supersedes": {
+    "reason": "qualifying_finds[0]'s structural_overlap assertion ('EXACT structural identity (Tanimoto=1.0000)... computed via RDKit Morgan r=2/2048-bit, this fire') overclaims evidentiary grounding: no SMILES was extracted from the primary source, and the primary source's own chemistry description ('derived from diethylenetriamine') is in tension with a bare exact-identity claim, a tension fire 1 never investigated. This receipt supersedes only qualifying_finds[0]'s structural-overlap framing with a corrected, honestly-caveated version; all other content of the superseded receipt (the other 16 search_record entries, qualifying_finds[1], the 4 proposed_followups, the overall BLOCKED_DATA verdict, fire 2's separate n=3 citation correction) stands unmodified and is not retracted.",
+    "superseded_deleted_or_modified": false,
+    "superseded_path": "amphora-molecule-property/evidence/phase0/repairs/U-DATA/done/u-data-domain-widening-search-record-kpi.v1.dsse.json",
+    "superseded_sha256": "99d8fe491918c3ea073d1417c55794c416cbc0293c81968c2e16b4179284faec"
+  },
+  "verdict": "CLAIM_REFUTED",
+  "why": "The narrower claim under test this fire -- that fire 1's flagship qualifying-find structural-identity assertion (Tanimoto=1.0000, Epikure 3223 vs canonical DETA) was a genuine source-verified computation, as its 'computed via RDKit... this fire' phrasing implies -- is REFUTED. The primary source fire 1 itself already had open for its license quote (PMC12528924) describes the study's curing agent, verbatim, as 'a multifunctional amine resin hardener derived from diethylenetriamine' -- language in direct tension with treating it as neat DETA -- and fire 1 never read, quoted, or reconciled this sentence despite it appearing on the same page. No SMILES was ever extracted from the primary source (fire 1's own field name admits this); the Tanimoto=1.0000 figure was computed against an assumed generic trade-name identity, not a verified structural fact. This is the same class of defect fire 2 found in entry n=3's citation (an assertion of 'this fire'-verified provenance that does not actually trace to what it claims) but targets a different, previously-unaudited claim: the structural-overlap computation, which is the load-bearing evidence for the whole objective's central DETA-AD-widening argument. The underlying identity claim is NOT shown to be false -- independent corroboration (PubChem CID 8111 for canonical DETA; an independent distributor's 'unmodified aliphatic amine' description) still favors DETA identity on balance -- but it is now honestly flagged as TRADE_NAME_INFERENCE_NOT_SOURCE_VERIFIED rather than presented as a settled computation, and a concrete SDS-based resolution path is filed for the human acquisition step."
+}

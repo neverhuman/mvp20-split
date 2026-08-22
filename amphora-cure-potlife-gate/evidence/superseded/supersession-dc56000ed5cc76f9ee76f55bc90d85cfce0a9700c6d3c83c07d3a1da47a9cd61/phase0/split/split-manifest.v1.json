@@ -1,0 +1,30 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "efa1a58b1711dd662348e29effd6df3ab59cffa66ef95d931006889b23230b11",
+  "import_hashes": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "a6fdac638c611b56852bdfd20baedd4e881831be45eb67693976030a7b316702",
+      "source_path": "config/program/cure-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "1fcde86723524843ba3a3bffb7ea65cd54dd9328198e2fc0d8133e7a0d894a0d",
+      "source_path": "config/program/cure-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "ee65072e9b7759a5faa39e186eff0aee48c1ee6848de0a26396b98591bad7318",
+      "source_path": "config/benchmark-locks/amphora-cure-potlife-gate.v1.json"
+    }
+  ],
+  "module_id": "amphora-cure-potlife-gate",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

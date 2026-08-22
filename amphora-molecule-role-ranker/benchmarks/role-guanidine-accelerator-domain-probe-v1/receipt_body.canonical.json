@@ -1,0 +1,146 @@
+{
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "claim_under_attack": {
+    "asserted": "1.0 (24/24), scored on the module's own self-authored 39-record CC0 fixture (sha 8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f), plus the module's own prior role-live-runtime-domain-probe-v1 SURVIVED verdict (which tested a zero-N-H tertiary-amine accelerator, BDMA, and an aromatic-N-H latent hardener, EMI-24, as hostile nulls and found both correctly fail closed to out_of_domain).",
+    "metric": "structural_inference_agreement_rate",
+    "receipt": "amphora-molecule-role-ranker/evidence/phase0/kpis/role-classification-kpi.v1.json"
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (this is an AUDIT_ONLY science-validation replay, not a Phase-0 evaluation/review signature).",
+    "Whether reactive_amine_hydrogen_count should be exactly 0 for guanidine N-H in a quantitative AHEW sense (mechanistic nucleophilicity question, out of scope).",
+    "Any change to the shipped bridge.cc, the KPI receipt, or the master manifest (66 receipts/11 modules unchanged)."
+  ],
+  "fire_id": "20260803T190001-3122084-a08778b76bbe",
+  "fire_sequence": "ROTATION fire. Prior fires on this module attacked: the flagship KPI's generalization via a 10-molecule live-RDKit-FFI probe (BDMA/EMI-24/DICY/ethers/aspartic-esters/sulfones/hindered-aromatics -- SURVIVED); the Macosko-Miller H2 sol-latitude direction rule via non-ideal reactivity-ratio Monte Carlo (SURVIVED); the fitted logistic model via honest LOOCV+conformal (parsimony-conformal, SURVIVED/noninferior); the Flory-Stockmayer gelation rule (SURVIVED); fact-provenance invariance (SURVIVED, 39/39). This fire escalates past the live-runtime-domain-probe-v1 hostile-null set by targeting a specific structural gap that set never covered: a real cure-accelerator chemotype with genuine non-aromatic N-H that neither of the two previously-tested accelerator/catalyst nulls (BDMA, EMI-24) exercised.",
+  "flips_scientific_readiness": false,
+  "gates_summary": {
+    "attack_fires_on_all_scored_probes": true,
+    "fixture_untouched": true,
+    "molecular_formula_mw_independently_cross_checked_against_published_values": true,
+    "real_production_ffi_not_reimplemented": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "two_replay_byte_stable_this_receipt": true
+  },
+  "headline_result": {
+    "disagreements": [
+      {
+        "expected_oxirane_ring_count": 0,
+        "expected_reactive_amine_hydrogen_count": 0,
+        "expected_role": "out_of_domain",
+        "id": "dpg-diphenylguanidine-accelerator",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 3,
+        "observed_role": "hardener",
+        "smiles": "c1ccccc1NC(=N)Nc2ccccc2"
+      },
+      {
+        "expected_oxirane_ring_count": 0,
+        "expected_reactive_amine_hydrogen_count": 0,
+        "expected_role": "out_of_domain",
+        "id": "dotg-di-o-tolylguanidine-accelerator",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 3,
+        "observed_role": "hardener",
+        "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C"
+      }
+    ],
+    "n_disagreements": 2,
+    "n_pass": 0,
+    "n_scored_probes": 2,
+    "verdict": "HYPOTHESIS_REFUTED"
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "bridge_cc_reference": "amphora-rdkit-ffi/src/bridge.cc::count_reactive_amine_hydrogens (lines ~66-89: excludes only is_carbonyl_carbon / is_sulfonyl_sulfur neighbors; no is_amidine/is_guanidine neighbor check exists)",
+    "fixture_sha256_unchanged": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+    "harness_cargo_toml_sha256": "674ba50b634f7201d51bf06dd11431bf2a6b531feea476539cf5f01d07f240b8",
+    "harness_main_rs_sha256": "5e735b0d006ded3cb65975c7f0e947bd9737a822c2e211c860288ac213995f9c"
+  },
+  "method": "Invoked the REAL production RDKit C++ FFI (amphora_rdkit_ffi::molecule_facts, pinned RDKit 2026.03.2, exact_version_match=true recorded in toolkit_provenance) -- not a Python re-derivation -- via a small Rust harness on two real, named, CAS-identified, industrially dominant guanidine-class cure accelerators: 1,3-diphenylguanidine (DPG, CAS 102-06-7) and N,N'-di-o-tolylguanidine (DOTG, CAS 97-39-2). Both are documented exclusively as catalytic accelerators (DPG/DOTG: dominant rubber-vulcanization secondary accelerators, boosting thiazole/thiuram/sulfenamide primary accelerators; DPG additionally documented in US Patent 9,238,706 'Use of guanidine derivatives as curing accelerators for epoxy resins' as a guanidine-class epoxy curing ACCELERATOR), never as a stoichiometric amine-hydrogen-consuming hardener in either industry. Verified computed molecular formula/MW against independently published values (DPG: C13H13N3, MW 211.26/211.268 observed; DOTG: C15H17N3, MW 239.32/239.322 observed) before scoring, confirming the SMILES correctly encode the named compounds. Pre-registered refute criterion: attack fires if either probe's observed_role is 'hardener' rather than 'out_of_domain' (the fail-closed behavior the module's own BDMA/EMI-24 probes established as correct for real accelerator/catalyst molecules).",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-role-ranker",
+  "objective": "Test whether amphora-rdkit-ffi/src/bridge.cc::count_reactive_amine_hydrogens (the live production RDKit C++ logic the role-ranker Rust runtime consumes byte-identically) and the module's deterministic role rule (has_oxirane=false & reactive_amine_hydrogen_count>0 => hardener) correctly fail closed on real, named, commercially dominant, coating/rubber-relevant cure ACCELERATOR molecules whose N-H is guanidine-type: neither absent (unlike BDMA, a tertiary amine with zero N-H) nor aromatic (unlike EMI-24, whose ring N-H is pyrrole-type). count_reactive_amine_hydrogens only excludes a nitrogen's hydrogens when its direct neighbor carbon is carbonyl/thiocarbonyl (is_carbonyl_carbon, C=O or C=S) or when a neighbor sulfur is sulfonyl (is_sulfonyl_sulfur); a guanidine/amidine neighbor carbon (C=N) triggers neither exclusion, so its N-H count as 'reactive amine hydrogen' with no structural signal that the molecule's real formulation role is catalytic, not stoichiometric.",
+  "organizational_independence_asserted": false,
+  "pre_registered_refute_criterion": "Attack fires (REFUTED) iff either probe's observed_role != 'out_of_domain'. Both probes (dpg-diphenylguanidine-accelerator, dotg-di-o-tolylguanidine-accelerator) observed_role == 'hardener'. Criterion met on 2/2 probes.",
+  "primary_sources": [
+    "1,3-Diphenylguanidine (DPG), CAS 102-06-7, C13H13N3, MW 211.26 -- rubber vulcanization secondary accelerator (widely documented industrial/CAS reference data).",
+    "US Patent 9,238,706, 'Use of guanidine derivatives as curing accelerators for epoxy resins' -- documents guanidine-class compounds (the DPG/DOTG chemotype) functioning as epoxy cure ACCELERATORS, not stoichiometric hardeners.",
+    "N,N'-di-o-tolylguanidine (DOTG), CAS 97-39-2, C15H17N3, MW 239.32 -- rubber vulcanization accelerator, more active analog of DPG, not a curing agent (widely documented industrial/CAS reference data)."
+  ],
+  "probes": [
+    {
+      "average_molecular_weight_g_mol": 211.268,
+      "canonical_isomeric_smiles": "N=C(Nc1ccccc1)Nc1ccccc1",
+      "citation": "1,3-diphenylguanidine (DPG, CAS 102-06-7), formula C13H13N3, MW 211.26. The dominant medium-speed secondary accelerator for natural/synthetic rubber vulcanization (boosts thiazole/thiuram/sulfenamide primary accelerators), and separately documented in the epoxy-curing patent literature specifically as a guanidine-class curing ACCELERATOR (US Patent 9,238,706, 'Use of guanidine derivatives as curing accelerators for epoxy resins') -- never described as a stoichiometric amine-hydrogen-consuming hardener in either industry.",
+      "expected_oxirane_ring_count": 0,
+      "expected_reactive_amine_hydrogen_count": 0,
+      "expected_role": "out_of_domain",
+      "formula": "C13H13N3",
+      "id": "dpg-diphenylguanidine-accelerator",
+      "note": "hostile-null: a real, commercially dominant catalytic accelerator with THREE non-aromatic, non-charged N-H hydrogens (two anilide-type N-H plus one guanidine =N-H), none adjacent to a carbonyl (C=O/C=S) or sulfonyl carbon/sulfur. The module's own prior hostile-null probes (BDMA: zero N-H; EMI-24: aromatic ring N-H) were both excluded by orthogonal mechanisms and never stress-tested count_reactive_amine_hydrogens' actual exclusion predicate, which checks only for a C=O/C=S (is_carbonyl_carbon) or -SO2- (is_sulfonyl_sulfur) neighbor -- never a C=N (guanidine/amidine) neighbor.",
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 3,
+      "observed_role": "hardener",
+      "pass": false,
+      "smiles": "c1ccccc1NC(=N)Nc2ccccc2"
+    },
+    {
+      "average_molecular_weight_g_mol": 239.322,
+      "canonical_isomeric_smiles": "Cc1ccccc1NC(=N)Nc1ccccc1C",
+      "citation": "N,N'-di-o-tolylguanidine (DOTG, CAS 97-39-2), formula C15H17N3, MW 239.32. A more active structural analog of DPG, documented exclusively as a rubber vulcanization accelerator/booster for thiazole-thiuram-sulfonamide systems -- not a curing agent -- included as a second, independent instance of the same guanidine-accelerator chemotype to show the gap is not a one-off artifact of the DPG structure.",
+      "expected_oxirane_ring_count": 0,
+      "expected_reactive_amine_hydrogen_count": 0,
+      "expected_role": "out_of_domain",
+      "formula": "C15H17N3",
+      "id": "dotg-di-o-tolylguanidine-accelerator",
+      "note": "second independent instance of the same non-aromatic guanidine N-H chemotype as dpg-diphenylguanidine-accelerator, ortho-methyl substituted; tests that the gap generalizes across substitution and is not specific to the unsubstituted phenyl ring.",
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 3,
+      "observed_role": "hardener",
+      "pass": false,
+      "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C"
+    }
+  ],
+  "promotes_authority": false,
+  "receipt_id": "role-guanidine-accelerator-domain-probe-2bafef83cdcfeb02c9afad0b36328d6e",
+  "recommended_followups": [
+    "Extend bridge.cc's is_carbonyl_carbon-style exclusion (or add a parallel is_amidine_or_guanidine_carbon check) so a nitrogen whose neighbor carbon bears a C=N double bond to another nitrogen is treated the same way as the existing C=O/C=S exclusion, OR add an explicit accelerator/catalyst denylist gate ahead of the has_reactive_amine_hydrogen role rule.",
+    "Add DPG- and DOTG-class guanidine accelerators to the module's own 39-record known-answer fixture and to role-live-runtime-domain-probe-v1's hostile-null probe set, alongside BDMA and EMI-24, so this chemotype is regression-guarded going forward."
+  ],
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "2bafef83cdcfeb02c9afad0b36328d6ebee326f4fa5898c915ca6755715575ff",
+    "determinism_basis": "no RNG, no wall-clock, fixed hardcoded probe list, serde_json BTreeMap key ordering => canonical byte order every run; two independent process invocations produced byte-identical stdout (sha256 equal).",
+    "fixture_disjointness": "neither probe SMILES canonicalizes to any of the 39 fixture records' canonical SMILES (phase0-role-known-answer.v1.json, sha 8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f).",
+    "harness_binary_provenance": "cargo build --release against amphora-rdkit-ffi (path dependency, feature=rdkit) compiled with cxx against the pinned RDKit 2026.03.2 prefix at /home/ubuntu/.local/share/amphora/rdkit-2026.03.2 (RDKIT_INCLUDE_DIR/RDKIT_LIB_DIR/BOOST_INCLUDE_DIR); backend_status().exact_version_match=true recorded in toolkit_provenance.",
+    "independent_runs": true,
+    "replays": 2,
+    "runB_diagnostic_sha256": "2bafef83cdcfeb02c9afad0b36328d6ebee326f4fa5898c915ca6755715575ff",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new external data source opened or acquired. Both probe molecules are constructed in-harness from CAS-identified public-domain chemical identity SMILES and evaluated purely structurally via the already-checked-in, already-licensed RDKit FFI backend; no dataset with UNRESOLVED or quarantined rights was read.",
+  "run_type": "SCIENCE_VALIDATION_REPLAY",
+  "schema": "amphora.molecule-role-ranker.role-guanidine-accelerator-domain-probe-v1-audit-receipt.v1",
+  "scope_note": "Does not assert a single 'correct' reactive_amine_hydrogen_count for guanidine N-H in the AHEW/quantitative sense (that mechanistic question, raised for the amine-class active-N-H rule in a sibling module, is out of scope here). The refutation is scoped to the CATEGORICAL role_fit classification: whether a real, documented, non-stoichiometric cure accelerator is silently promoted to 'hardener' stoichiometric status, which is sufficient to falsify the flagship KPI's implicit domain-generalization claim regardless of the unsettled guanidine-nucleophilicity mechanism question.",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY benchmark receipt under benchmarks/"
+  },
+  "verdict": "CLAIM_REFUTED",
+  "why": "Both real, named, CAS-verified guanidine-class cure accelerators (DPG, DOTG) are classified 'hardener' by the live production runtime (reactive_amine_hydrogen_count=3, has_oxirane=false) when their documented real-world formulation role in both the rubber and epoxy literatures is catalytic accelerator, not stoichiometric hardener. This is the exact failure mode the module's own prior hostile-null probes (BDMA, EMI-24) were designed to catch and correctly caught -- but via orthogonal exclusion paths (zero N-H; aromatic N-H) that do not cover the guanidine/amidine C=N chemotype. The flagship KPI's structural_inference_agreement_rate=1.0 and the live-runtime-domain-probe-v1 SURVIVED verdict do not bound this failure mode because neither the self-authored fixture nor the prior probe set contains a non-aromatic, non-charged, non-carbonyl-adjacent accelerator N-H case."
+}

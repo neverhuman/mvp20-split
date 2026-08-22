@@ -1,0 +1,225 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "C8",
+  "ceiling": "AUDIT_ONLY red-team comparison-table construction + falsification receipt. Documents which per-property phys/ML/stack triplets are honestly buildable from receipt-backed numbers (density: complete; Tg: complete, new stack built; dielectric: RadonPy-only, flagship ground-truth defect found; refractive index: RadonPy-only for physics/stack, full mixed population for ML) and which are not (OpenPoly physics arms for dielectric and RI, blocked on missing dipole/density data). Does not itself alter any shipped KPI receipt, module honesty ceiling, manifest, or authority ceiling.",
+  "claim_under_attack": {
+    "claim_text": "A founder-facing per-property physics-vs-ML-vs-stack comparison can be built entirely from receipt-backed numbers (no illustrative placeholders).",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json"
+  },
+  "fire_sequence": "C8 fire 1 of 4 (max_fires).",
+  "gates": {
+    "data_integrity_audit_uses_model_independent_thermodynamic_inequality_not_onsager_specific": true,
+    "openpoly_physics_gaps_honestly_documented_not_silently_dropped": true,
+    "reused_verbatim_featurization_from_shipped_generator_scripts": true,
+    "ri_ml_arm_bit_identical_reproduction_of_shipped_kpi_as_fidelity_check": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "two_replay_byte_stable_this_receipt": null
+  },
+  "headline_finding": {
+    "property": "dielectric_constant",
+    "summary": "The C8 objective assumed a physics-vs-ML dielectric comparison could be built by porting Onsager onto the same population the shipped mixed-openpoly-radonpy-dielectric-conformal-kpi trains/evaluates on. Testing this surfaced that RadonPy PI1070's 'static_dielectric_const' column -- the ground-truth label for 79% of that KPI's combined population (1077/1372) and the ONLY dielectric-plus-dipole-moment source in this module -- violates a model-independent thermodynamic inequality (eps_static >= eps_infinity = n^2, Frohlich 1949 Ch.2) in 962/1075 = 89.5% of rows. OpenPoly's own internally-consistent DFT decomposition (eps_Total >= eps_Electronic) has ZERO such violations across 295/295 rows, isolating the defect to RadonPy's MD fluctuation-formula route (known in the literature to under-converge for short simulations, especially in weakly-polar polymers). CONSEQUENCE: any physics-vs-ML dielectric comparison scored against this ground truth is comparing a sound physical theory (Onsager) against a majority-corrupted target, not against reality. This does not merely limit the physics arm's accuracy -- it undermines the shipped ML KPI's own training signal for the RadonPy 79% of its population.",
+    "type": "DECISIVE_DATA_INTEGRITY_REFUTATION"
+  },
+  "methodology_note": "All new computation reuses, verbatim, the psmiles_to_mol wildcard-capping convention, the 24-group Van Krevelen/Bicerano classifier, the Morgan512+log10(MW) featurization, and the RandomForestRegressor(n_est=300,max_depth=10,seed=0)+Ridge(alpha=1.0) Wolpert stacking pattern already used by this module's density stack (Push #38) and mixed-source conformal KPIs (Pushes #34/#39), as found in the still-present generator scripts under /tmp/*.py on the execution host (vk_external_validate.py, tg_ml_baseline.py, stack_density.py, mixed_ri.py, mixed_dk.py). As a fidelity check: this fire's fresh source-stratified-split RI-ML re-run reproduced the existing shipped mixed-RI KPI's overall test MAE/R2 (0.0304 / 0.6381) BIT-IDENTICALLY, confirming the reused code paths are functionally identical to what generated the receipts being cited, not a reinvention.",
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "objective": "Replace the founder report's fabricated SCHEMATIC F8 panel with a real, receipt-backed per-property {physics, ML, stack} comparison covering density, Tg, dielectric constant, and refractive index. Density and Tg's physics+ML arms already existed; Tg's stack arm and both physics arms for dielectric/RI were built fresh this fire by porting the frozen redteam-audit Onsager (dielectric-constant-onsager-ccby-v1) and Lorentz-Lorenz (refractive-index-lorentz-lorenz-ccby-v1) baselines from small-molecule solvents onto polymer repeat units, and reusing this module's own prior featurization/split code (found live under /tmp/*.py on the execution host) for full methodological parity with the already-shipped KPIs it cites.",
+  "openpoly_physics_gaps_filed_to_data_ask_queue": [
+    "dielectric physics (Onsager): OpenPoly has no molecular dipole-moment source anywhere in this module",
+    "refractive-index physics (Lorentz-Lorenz): OpenPoly has no measured or receipt-traceable density column"
+  ],
+  "per_property_comparison": {
+    "density": {
+      "cited_receipt_sha256": {
+        "radonpy_density_ml_vs_vk_kpi": "c8bae23b8deeb8f79edca0af1be6c4457c8abec0cdb5e94eb874e6a7ba18701a",
+        "stacked_density_kpi": "0dc1b6f663d9edb75652bf221712b01f4847b7f62f3620e12e57af7c8adcf751"
+      },
+      "ml": {
+        "method": "RandomForestRegressor(n_est=300, max_depth=10, seed=0), Morgan512+log10(MW)",
+        "test_MAE_g_per_cm3": 0.056644705523222164,
+        "test_R2": 0.719560629296023,
+        "test_pearson_r": 0.8519561806582714
+      },
+      "physics": {
+        "method": "Van Krevelen 1990 Ch.4 group contribution, rho = MW/(c*sum(V_i)), c=1.6",
+        "test_MAE_g_per_cm3": 0.13274252032944245,
+        "test_R2": 0.026234044178977123,
+        "test_pearson_r": 0.7938319893983672
+      },
+      "population": "RadonPy PI1070 (Fujimoto et al. 2023), n=1077, MD-simulated density at 300K",
+      "source": "cited verbatim from existing receipted KPIs \u2014 no recomputation this fire",
+      "split": "60/20/20 seed=0 (n_test=216)",
+      "stack": {
+        "method": "Wolpert 1992 stacked generalization, Ridge meta-learner on CALIB [RF_pred, VK_pred]",
+        "test_MAE_g_per_cm3": 0.05690323154368101,
+        "test_R2": 0.8018821961531553,
+        "test_pearson_r": 0.8997819416228531,
+        "weights": {
+          "intercept_g_per_cm3": 0.12501670225993688,
+          "note": "Ridge Meta-learner weights sum indicates relative reliance on base learners; positive weights mean both contribute constructively.",
+          "w_rf_random_forest": 0.635007853495727,
+          "w_vk_van_krevelen_physics": 0.28785944175707473
+        }
+      }
+    },
+    "dielectric": {
+      "DECISIVE_FINDING_data_integrity_audit": {
+        "claim_tested": "eps_static (RadonPy ground-truth label used by the shipped mixed-openpoly-radonpy-dielectric-conformal-kpi) is a physically valid zero-frequency dielectric constant",
+        "contrast": "OpenPoly's own internally-consistent DFT decomposition (eps_Total vs eps_Electronic) has 0/295 violations",
+        "interpretation": "RadonPy's MD fluctuation-formula static dielectric constant is under-converged for the large majority of (weakly-)polar polymers -- collapsing toward the electronic-only limit or below it -- and cannot serve as ground truth for a physics-vs-ML dielectric comparison as the C8 objective assumed. This is a property of the ground-truth LABELS, not of either predictor; it means the physics-vs-ML-vs-stack numbers below (like the existing shipped ML KPI they are compared to) are being scored against partially-invalid targets on ~90% of the RadonPy population.",
+        "observed": "962/1075 = 89.5% of RadonPy static_dielectric_const values VIOLATE this inequality",
+        "refute_criterion": "eps_static < n_measured^2 for a material is thermodynamically impossible (Frohlich 1949 Ch.2 / Debye 1929: eps(0) >= eps(optical) always, since static permittivity = electronic polarization + non-negative orientational polarization)",
+        "verdict": "REFUTED"
+      },
+      "cited_receipt_sha256": {
+        "mixed_dielectric_ml_kpi": "da54f0e073f40499a24ac76a96053f144dbde1425c0ebb32258fe047c92086c4"
+      },
+      "ml": {
+        "existing_shipped_KPI_for_context": {
+          "note": "mixed-openpoly-radonpy-dielectric-conformal-kpi, RadonPy per-source slice, DIFFERENT split/population than this fire's fresh RadonPy-only split",
+          "radonpy_test_MAE": 1.1263258333652117,
+          "radonpy_test_R2": 0.7001462849340689
+        },
+        "full_population_test_MAE": 1.466589416518702,
+        "full_population_test_R2": 0.6427238530481524,
+        "method": "RandomForestRegressor(n_est=300, max_depth=10, seed=0), Morgan512+log10(M), freshly trained on THIS split's train slice (RadonPy-only, NOT the mixed population the existing KPI trained on)",
+        "physically_valid_subset_test_MAE": 10.240509886364913,
+        "physically_valid_subset_test_R2": 0.47513726838508663
+      },
+      "openpoly_dielectric_physics_arm": "BLOCKED_DATA -- OpenPoly has no density column and no dipole-moment source anywhere in this module; Onsager cannot be honestly evaluated on OpenPoly polymers without either (filed to data-acquisition-queue.jsonl)",
+      "physics": {
+        "full_population_test_MAE": 9.627206210912188,
+        "full_population_test_R2": -1.672170143117905,
+        "method": "Onsager 1936 reaction-field equation; s=n_measured^2 (physics path, same convention as the frozen redteam-audit Onsager script), mu=qm_dipole_monomer (RadonPy QM-computed monomer dipole, Debye), T=per-row MD simulation temperature",
+        "physically_valid_subset_n": 20,
+        "physically_valid_subset_test_MAE": 28.120446145676784,
+        "physically_valid_subset_test_R2": -0.9865622319026621
+      },
+      "population": "RadonPy PI1070 only, n=1075 (mixed OpenPoly+RadonPy population used by the existing ML KPI is NOT usable for the physics arm: OpenPoly has no tabulated/computed molecular dipole moment source in this module)",
+      "split": "plain random 60/20/20 (seed=0), n_train=645, n_calib=215, n_test=215",
+      "stack": {
+        "full_population_test_MAE": 1.7849489965473224,
+        "full_population_test_R2": 0.5997037695358369,
+        "method": "Wolpert 1992 stacked generalization, Ridge meta-learner on CALIB [RF_pred, Onsager_pred] (NEW this fire)",
+        "weights": {
+          "intercept": -0.3165340512029564,
+          "w_physics": -0.043637691930135974,
+          "w_rf": 1.3444243628607424
+        }
+      }
+    },
+    "refractive_index": {
+      "cited_receipt_sha256": {
+        "mixed_ri_ml_kpi": "5ab0e74898476cafb02ee23ec54f78bb890a19027ee826bffba10dd6001a367e"
+      },
+      "ml_full_mixed_population": {
+        "existing_shipped_KPI_for_context": {
+          "overall_test_MAE": 0.030416862706321816,
+          "overall_test_R2": 0.6381207317871478
+        },
+        "method": "RandomForestRegressor(n_est=300, max_depth=10, seed=0), Morgan512+log10(MW), source-stratified split (fresh this fire)",
+        "overall_test_MAE": 0.030416862706321816,
+        "overall_test_R2": 0.6381207236617112,
+        "per_source": {
+          "openpoly": {
+            "MAE": 0.06620627939996258,
+            "R2": -0.25280741924515304,
+            "RMSE": 0.09439762181252816,
+            "n": 31,
+            "pearson_r": 0.3038575356411168
+          },
+          "radonpy": {
+            "MAE": 0.025256528206308505,
+            "R2": 0.7900627776866249,
+            "RMSE": 0.03550296953197774,
+            "n": 215,
+            "pearson_r": 0.8889821802941891
+          }
+        }
+      },
+      "ml_on_physics_comparable_subset": {
+        "test_MAE": 0.025295455893724016,
+        "test_R2": 0.789873992902531
+      },
+      "openpoly_ri_physics_arm": "BLOCKED_DATA -- same root cause as the dielectric OpenPoly gap: no measured or receipt-traceable density for OpenPoly polymers in this module (filed to data-acquisition-queue.jsonl)",
+      "physics": {
+        "element_coverage_failures_in_full_population": 16,
+        "method": "Lorentz-Lorenz molar refraction (Eisenlohr/Vogel atomic+bond increments, identical table to the frozen redteam-audit refractive-index-lorentz-lorenz-ccby-v1); rho = RadonPy MD-simulated density (real, measured -- NOT the VK density estimate)",
+        "test_MAE": 0.037698318719753196,
+        "test_R2": 0.5740882797621479,
+        "test_pearson_r": 0.7741464375363433
+      },
+      "population_ml_arm": "mixed OpenPoly (n=148) + RadonPy (n=1075) = 1223, source-stratified 60/20/20 seed=0 -- SAME methodology as the existing shipped mixed-RI KPI (fresh split this fire, not guaranteed row-identical)",
+      "population_physics_and_stack_arm": "RadonPy-only subset of the test split (n=211) -- OpenPoly has NO density column anywhere in this module, so Lorentz-Lorenz n=f(R,rho,M) cannot be evaluated on OpenPoly polymers without fabricating a density source",
+      "stack": {
+        "method": "Wolpert 1992 stacked generalization, Ridge meta-learner on CALIB [RF_pred, LorentzLorenz_pred] (NEW this fire, RadonPy-only subset)",
+        "test_MAE": 0.02757914456811504,
+        "test_R2": 0.8054440831265297,
+        "weights": {
+          "intercept": 0.16767985134643748,
+          "w_physics": 0.35975116321696027,
+          "w_rf": 0.5388788387523566
+        }
+      }
+    },
+    "tg": {
+      "cited_receipt_sha256": {
+        "tg_ml_kpi": "a77572d6f36a960a5ab5aed62fdac6bd8cb3e7d7f39d7b63be16ee5ca6481878",
+        "tg_physics_ext_validation_kpi": "b73bf0e81d967d837cf9195ad56dec7c9b93cdf8613ec0d1d6272d3ca3e4579a",
+        "tg_ridge_fit_receipt": "af6e164db810ab7a161b6d4f17833d67ccac0ef93df5b42feb81ee42e4340f92"
+      },
+      "existing_receipted_numbers_for_context": {
+        "ml_RF_LOSO_MAE_K": 51.237491607666016,
+        "ml_RF_holdout_MAE_K": 42.20672417382652,
+        "note": "These use scaffold-safe 80/20-holdout and 212-fold LOSO-CV splits from Pushes #20/#25/#39 respectively. The stack triplet below uses a FRESH, self-consistent plain-random 60/20/20 split (seed=0, matching this module's only prior stacking precedent, stack_density.py/Push #38) because per-polymer physics+ML predictions on a common calibration/test partition are required to fit and evaluate a meta-learner, and those per-row predictions were not persisted by the original LOSO/holdout runs.",
+        "physics_Ridge_Ygi_external_validation_MAE_K": 70.41754628962593,
+        "physics_published_VK_MAE_K": 91.33528326361476
+      },
+      "ml": {
+        "method": "RandomForestRegressor(n_est=300, max_depth=10, seed=0), Morgan512+log10(MW), freshly trained on THIS split's train slice",
+        "test_MAE_K": 48.77357149545335,
+        "test_R2": 0.404514080350345,
+        "test_pearson_r": 0.6443289656706651
+      },
+      "physics": {
+        "method": "Van Krevelen 24-group Ridge Y_gi (Push #20, fit on 807 MD-simulated Polyuniverse Epoxy polymers), zero refitting, pure inference on OpenPoly, THIS split's test slice",
+        "test_MAE_K": 80.29991663418947,
+        "test_R2": -0.24524148271747848,
+        "test_pearson_r": 0.04264489435169488
+      },
+      "population": "OpenPoly (Ma et al. 2023) experimental Tg, n=442 valid polymers",
+      "split": "plain random 60/20/20 (seed=0), n_train=265, n_calib=88, n_test=89",
+      "stack": {
+        "method": "Wolpert 1992 stacked generalization \u2014 Ridge meta-learner on CALIB [RF_pred, physics_pred] -> actual Tg, evaluated on TEST (NEW this fire)",
+        "test_MAE_K": 54.0483614596513,
+        "test_R2": 0.3629973842690055,
+        "test_pearson_r": 0.603325586197273,
+        "weights": {
+          "intercept": -100.19448279259461,
+          "w_physics": 0.4385363684413244,
+          "w_rf": 0.8279770958033215
+        }
+      }
+    }
+  },
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Manifest untouched at 66/11.",
+  "receipt_id": "c8-fire1-phys-ml-stack-comparison",
+  "recommended_followups": [
+    "File a human rights/acquisition ask for an experimental (non-MD) polymer static dielectric constant corpus to replace or validate RadonPy's under-converged static_dielectric_const column -- this is now the single highest-leverage data gap for the dielectric-property comparison.",
+    "Fire 2/3: extend the RI/dielectric physics arm to OpenPoly via a VK-density-ESTIMATE proxy (compounding a second physics model; explicitly flag reduced confidence) OR acquire a rights-clean OpenPoly density source.",
+    "Fire 2/3: consider re-running the shipped mixed-openpoly-radonpy-dielectric-conformal-kpi filtered to the physically-valid (eps_static>=n^2) subset only, to determine whether the shipped ML KPI's reported MAE/R2 are themselves inflated or deflated by training against corrupted labels.",
+    "C8 done_criterion is PARTIALLY met by this receipt: all 4 properties have a real physics-vs-ML-vs-stack comparison, but dielectric/RI physics coverage is RadonPy-only (not the full mixed population), and the dielectric arm's central finding is that the ground truth itself is compromised rather than a clean physics-vs-ML verdict. Recommend campaign_item_status=pending for a fire 2 to either acquire the missing OpenPoly density/dipole data or formally narrow C8's done_criterion to RadonPy-only scope."
+  ],
+  "rights_check": "No new source touched; reuses OpenPoly (Ma et al. 2023) and RadonPy PI1070 (Fujimoto et al. 2023), both already rights-cleared and load-bearing elsewhere in this module. No quarantined/CONTEXT_ONLY source opened. Ports theory (Onsager 1936, Lorentz-Lorenz/Eisenlohr) already signed AUDIT_ONLY in the frozen amphora-redteam-audit workshop; reads only, no modification.",
+  "schema": "amphora.molecule-property.c8-phys-ml-stack-comparison-receipt.v1",
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "note": "NOT in config/phase0-trust-store.v1.json; audit evidence only",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "trust_anchored": false
+  },
+  "study_id": "c8-phys-ml-stack-comparison"
+}

@@ -1,0 +1,1941 @@
+{
+  "campaign_item_id": "U-E2E",
+  "candidate_matrix": [
+    {
+      "candidate_id": "canon-ipda",
+      "canonical_isomeric_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "cas_or_note": "CAS 2855-13-2, C10H22N2, R-A07v2-corrected structure (supersedes stale C9H20N2 demethylated string)",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.125,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.875,
+            "scaffold_aware_distance": 0.8235294117647058
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 42.575,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C10H22N2",
+      "name": "IPDA (isophorone diamine)",
+      "provenance": "canonical_amine",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "source_family": "F3_cycloaliphatic"
+    },
+    {
+      "candidate_id": "canon-dds",
+      "canonical_isomeric_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "cas_or_note": "CAS 80-08-0, per R-N01 CAS-correct CID attribution",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.1111111111111111,
+            "nearest_structure_id": "tert-butyl-benzene-control",
+            "novelty_score": 0.8888888888888888,
+            "scaffold_aware_distance": 0.75
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 62.07675,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C12H12N2O2S",
+      "name": "DDS (4,4'-diaminodiphenyl sulfone)",
+      "provenance": "canonical_amine",
+      "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "source_family": "F4_bridged_bisaniline"
+    },
+    {
+      "candidate_id": "canon-deta",
+      "canonical_isomeric_smiles": "NCCNCCN",
+      "cas_or_note": "CAS 111-40-0",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.36363636363636365,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.6363636363636364,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 20.6338,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C4H13N3",
+      "name": "DETA (diethylenetriamine)",
+      "provenance": "canonical_amine",
+      "smiles": "NCCNCCN",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "candidate_id": "canon-teta",
+      "canonical_isomeric_smiles": "NCCNCCNCCN",
+      "cas_or_note": "CAS 112-24-3",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.3333333333333333,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.6666666666666667,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 24.373,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C6H18N4",
+      "name": "TETA (triethylenetetramine)",
+      "provenance": "canonical_amine",
+      "smiles": "NCCNCCNCCN",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "candidate_id": "canon-mxda",
+      "canonical_isomeric_smiles": "NCc1cccc(CN)c1",
+      "cas_or_note": "CAS 1477-55-0",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.17647058823529413,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.8235294117647058,
+            "scaffold_aware_distance": 0.5384615384615384
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 34.0495,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C8H12N2",
+      "name": "m-XDA (1,3-xylylenediamine)",
+      "provenance": "canonical_amine",
+      "smiles": "NCc1cccc(CN)c1",
+      "source_family": "F5_xylylenediamine"
+    },
+    {
+      "candidate_id": "gen-eda",
+      "canonical_isomeric_smiles": "NCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 19",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": true,
+            "maximum_tanimoto_similarity": 1.0,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.0,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 15.025,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C2H8N2",
+      "name": "EDA (ethylenediamine)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCN",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "candidate_id": "gen-tepa",
+      "canonical_isomeric_smiles": "NCCNCCNCCNCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 24",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.3333333333333333,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.6666666666666667,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 27.043857142857142,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C8H23N5",
+      "name": "TEPA (tetraethylenepentamine)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCNCCNCCNCCN",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "candidate_id": "gen-peha",
+      "canonical_isomeric_smiles": "NCCNCCNCCNCCNCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 25",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.3333333333333333,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.6666666666666667,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 29.047,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C10H28N6",
+      "name": "PEHA (pentaethylenehexamine)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCNCCNCCNCCNCCN",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "candidate_id": "gen-c4-diaminobutane",
+      "canonical_isomeric_smiles": "NCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 17",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.5,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.5,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 22.0385,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C4H12N2",
+      "name": "1,4-diaminobutane (C4)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCCCN",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "candidate_id": "gen-c6-diaminohexane",
+      "canonical_isomeric_smiles": "NCCCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 15",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.4444444444444444,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.5555555555555556,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 29.052,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C6H16N2",
+      "name": "1,6-diaminohexane (C6)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCCCCCN",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "candidate_id": "gen-c8-diaminooctane",
+      "canonical_isomeric_smiles": "NCCCCCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 13",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.4444444444444444,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.5555555555555556,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 36.0655,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C8H20N2",
+      "name": "1,8-diaminooctane (C8)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCCCCCCCN",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "candidate_id": "gen-c10-diaminodecane",
+      "canonical_isomeric_smiles": "NCCCCCCCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 11",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.4444444444444444,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.5555555555555556,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 43.079,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C10H24N2",
+      "name": "1,10-diaminodecane (C10)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCCCCCCCCCN",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "candidate_id": "gen-c12-diaminododecane",
+      "canonical_isomeric_smiles": "NCCCCCCCCCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 9",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.4444444444444444,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.5555555555555556,
+            "scaffold_aware_distance": 0.0
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 50.0925,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C12H28N2",
+      "name": "1,12-diaminododecane (C12)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCCCCCCCCCCCN",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "candidate_id": "gen-14-dach",
+      "canonical_isomeric_smiles": "NC1CCC(N)CC1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 2",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.15,
+            "nearest_structure_id": "cyclohexane-carboxylate-control",
+            "novelty_score": 0.85,
+            "scaffold_aware_distance": 0.5
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 28.548,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C6H14N2",
+      "name": "1,4-DACH (1,4-diaminocyclohexane)",
+      "provenance": "grammar_proposal",
+      "smiles": "NC1CCC(N)CC1",
+      "source_family": "F3_cycloaliphatic"
+    },
+    {
+      "candidate_id": "gen-13-bac",
+      "canonical_isomeric_smiles": "NCC1CCCC(CN)C1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 7",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.17647058823529413,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.8235294117647058,
+            "scaffold_aware_distance": 0.5384615384615384
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 35.5615,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C8H18N2",
+      "name": "1,3-BAC (1,3-bis(aminomethyl)cyclohexane)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCC1CCCC(CN)C1",
+      "source_family": "F3_cycloaliphatic"
+    },
+    {
+      "candidate_id": "gen-aep",
+      "canonical_isomeric_smiles": "NCCN1CCNCC1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 21 (mixed primary/secondary/tertiary N; active_NH != 2*centres)",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.21052631578947367,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.7894736842105263,
+            "scaffold_aware_distance": 0.9333333333333333
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 43.068999999999996,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C6H15N3",
+      "name": "AEP (1-(2-aminoethyl)piperazine)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCCN1CCNCC1",
+      "source_family": "F3_cycloaliphatic"
+    },
+    {
+      "candidate_id": "gen-isopropylidenedianiline",
+      "canonical_isomeric_smiles": "CC(C)(c1ccc(N)cc1)c1ccc(N)cc1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 0",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.30434782608695654,
+            "nearest_structure_id": "tert-butyl-benzene-control",
+            "novelty_score": 0.6956521739130435,
+            "scaffold_aware_distance": 0.7222222222222222
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 56.58075,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C15H18N2",
+      "name": "4,4'-isopropylidenedianiline",
+      "provenance": "grammar_proposal",
+      "smiles": "CC(C)(c1ccc(N)cc1)c1ccc(N)cc1",
+      "source_family": "F4_bridged_bisaniline"
+    },
+    {
+      "candidate_id": "gen-mda-ddm",
+      "canonical_isomeric_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 34, CAS 101-77-9",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.12,
+            "nearest_structure_id": "tert-butyl-benzene-control",
+            "novelty_score": 0.88,
+            "scaffold_aware_distance": 0.7222222222222222
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 49.56725,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C13H14N2",
+      "name": "MDA/DDM (4,4'-diaminodiphenylmethane)",
+      "provenance": "grammar_proposal",
+      "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "source_family": "F4_bridged_bisaniline"
+    },
+    {
+      "candidate_id": "gen-benzidine",
+      "canonical_isomeric_smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 32",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.13636363636363635,
+            "nearest_structure_id": "tert-butyl-benzene-control",
+            "novelty_score": 0.8636363636363636,
+            "scaffold_aware_distance": 0.6666666666666667
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 46.0605,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C12H12N2",
+      "name": "benzidine (4,4'-diaminobiphenyl)",
+      "provenance": "grammar_proposal",
+      "smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+      "source_family": "F4_bridged_bisaniline"
+    },
+    {
+      "candidate_id": "gen-pxda",
+      "canonical_isomeric_smiles": "NCc1ccc(CN)cc1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 29",
+      "cells": {
+        "design_gate": {
+          "gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+          "gates": {
+            "explicit_role": true,
+            "pass_all_hard": true,
+            "role_appropriate_reactivity": true,
+            "valid_single_component": true
+          },
+          "kind": "VALUE",
+          "source": "live capability(DESIGN_GATE_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "None -- deterministic categorical decision, byte-stable across replay.",
+          "value": "SCORED"
+        },
+        "ip_fto": {
+          "detail": "amphora-assurance-capabilities::evaluate_ip_fto_guard(candidate) takes a candidate argument but never reads its SMILES/structure -- the only use of `candidate` is a boolean counsel-signoff-assertion check (counsel_signoff_assertion_present), which the function explicitly ignores for scoring (boolean_counsel_assertion_ignored is recorded but never gates the result). The substantive output (fto_status: 'FTO NOT PERFORMED', family_count, sweep_count, unresolved_technical_categories) comes entirely from a fixed embedded patent-landscape artifact, identical for every candidate regardless of structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:1165 fn evaluate_ip_fto_guard() (read verbatim 2026-08-11)"
+        },
+        "novelty": {
+          "kind": "VALUE",
+          "source": "live capability(NOVELTY_ID).evaluate_authorized, embedded frozen novelty-corpus.v1.json, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "Distance is relative only to the frozen Phase-0 novelty-corpus.v1.json (sha256 b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838); not patent novelty, desirability, synthesis feasibility, or performance. status=LOCKED_INTERNAL_AUDIT.",
+          "value": {
+            "exact_structure_match": false,
+            "maximum_tanimoto_similarity": 0.23076923076923078,
+            "nearest_structure_id": "amine-ethylenediamine",
+            "novelty_score": 0.7692307692307692,
+            "scaffold_aware_distance": 0.5
+          }
+        },
+        "property_density": {
+          "detail": "No live density capability exists for an arbitrary candidate SMILES. 'density' appears in the checked Rust workspace only as (a) a fixed ingredient-library lookup key in amphora-solver-lab demo code and (b) an explicit entry on amphora-formulation-capabilities' IGNORED claims list (an untrusted candidate-supplied claim, never computed). No Joback-type or other group-contribution density model is wired to property_result().",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result; amphora-formulation-capabilities IGNORED claims list (read 2026-08-11)"
+        },
+        "property_eew_ahew": {
+          "kind": "VALUE",
+          "source": "live capability(PROPERTY_ID).evaluate_authorized via REAL RDKit C++ FFI 2026.03.2, this fire's harness",
+          "two_replay_byte_stable": true,
+          "uncertainty": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+          "value": {
+            "ahew_g_per_eq": 34.0495,
+            "eew_g_per_eq": null
+          }
+        },
+        "property_refractive_index": {
+          "detail": "No live refractive-index capability exists anywhere in the checked Rust workspace (zero occurrences of 'refractive' outside evidence/reference text). property_result() emits only formula, MW, oxirane/amine-H counts, and EEW/AHEW.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "workspace-wide grep for 'refractive' against non-evidence Rust source, 2026-08-11: zero live capability hits"
+        },
+        "property_tg": {
+          "detail": "No live Tg (glass transition) capability exists in the checked Rust runtime for a standalone hardener candidate. Tg in this portfolio is a NETWORK/formulation property requiring a resin+hardener pair AND a cure state (see DiBenedetto vitrification-cure-bounds and network-Tg-protocol receipts); amphora-molecule-capabilities::property_result() (PROPERTY_ID) computes only EEW/AHEW from a single molecule's RDKit facts and has no Tg field or code path at all.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-molecule-capabilities/src/lib.rs fn property_result (read 2026-08-11, no Tg field emitted)"
+        },
+        "solvency_chi_hsp": {
+          "detail": "Live amphora_solvency_score::evaluate() was actually called for this candidate (not merely reasoned about) with an empty FeatureSnapshot; it requires a pre-built VerifiedFormulationModelInputV2 host binding (a locked SolvencyModelArtifactV1 of characterized resin/solvent PairCoefficientV1 interaction terms + signed BenchmarkReceiptV1 + IndependentReviewV1) under FeatureSnapshot key 'verified_formulation_model.amphora-solvency-score'. No such binding exists for this or any of the 20 candidates -- they are standalone amine hardener structures, not characterized members of a locked resin/solvent pair table. No competent model applies to an uncharacterized single component.",
+          "kind": "ABSTAIN",
+          "observed_gates": {
+            "constraint_only": true,
+            "host_verified_artifact_and_receipt": false,
+            "in_applicability_domain": false
+          },
+          "observed_missing_inputs": [
+            "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+          ],
+          "observed_status": "INSUFFICIENT_INPUT",
+          "reason": "NO_COMPETENT_MODEL",
+          "source": "live amphora_solvency_score::evaluate(), this fire's harness (genuine call, not inferred)"
+        },
+        "sourceability_ehs_hazard": {
+          "detail": "amphora-assurance-capabilities::evaluate_sourceability() takes ZERO arguments -- it is structurally incapable of reading this candidate's SMILES/CAS. It always returns the same fixed prescreen (sourceability_status: UNRESOLVED, all gates false) from an embedded public-BOM manifest keyed by named commercial products (bom_keys), not by CAS/CID/structure. Directly confirmed by reading amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() -- 'fn evaluate_sourceability() -> ModuleResult', no candidate parameter.",
+          "kind": "ABSTAIN",
+          "reason": "NOT_IMPLEMENTED",
+          "source": "amphora-assurance-capabilities/src/lib.rs:976 fn evaluate_sourceability() (read verbatim 2026-08-11)"
+        }
+      },
+      "declared_role": "hardener",
+      "formula": "C8H12N2",
+      "name": "p-XDA (1,4-xylylenediamine)",
+      "provenance": "grammar_proposal",
+      "smiles": "NCc1ccc(CN)cc1",
+      "source_family": "F5_xylylenediamine"
+    }
+  ],
+  "candidate_matrix_source": "see done_receipt.candidate_matrix (this file mirrors it for U-E2E-B convenience)",
+  "canonical_diagnostic_sha256": "a811bdaf25458818e168133eadaad69ef9b82f816164bbc2b6f63486e4dfcb22",
+  "done_receipt": "amphora-molecule-design-gate/evidence/phase0/repairs/U-E2E/done/u-e2e-candidate-set-partial-matrix-receipt.v1.dsse.json",
+  "matrix_shape": {
+    "coverage_fraction_value_cells": 0.3333333333333333,
+    "honesty_note": "60/180 cells (0.333) carry a real computed value; the remaining 120 are honest ABSTAINs with a machine-readable reason. This LOW coverage is the correct and expected answer for a Pre-Phase-0 portfolio where most evaluator modules are audit-only fixed-artifact prescreens, not live per-molecule models. It was NOT inflated by relaxing any gate.",
+    "n_abstain_cells": 120,
+    "n_blank_cells": 0,
+    "n_candidates": 20,
+    "n_cells_total": 180,
+    "n_properties": 9,
+    "n_value_cells": 60,
+    "property_order": [
+      "design_gate",
+      "property_eew_ahew",
+      "property_tg",
+      "property_density",
+      "property_refractive_index",
+      "novelty",
+      "solvency_chi_hsp",
+      "sourceability_ehs_hazard",
+      "ip_fto"
+    ]
+  },
+  "module": "amphora-molecule-design-gate",
+  "next_part": "U-E2E-B (ranking + coverage-yield KPI, reads candidate_matrix below)",
+  "notes": "Part A complete on first fire: 20-candidate set (5 canonical amines + 15 R-A06v2- labelled grammar proposals) built, run through design-gate (20/20 SCORED) and every evaluator this portfolio has any entry point for (live: design-gate, property EEW/AHEW, novelty; genuinely-invoked-but-abstaining: solvency; structurally NOT_IMPLEMENTED: Tg/density/RI, sourceability-ehs, ip-fto). 180/180 cells filled, 0 blank. U-E2E-B should load candidate_matrix directly rather than recomputing.",
+  "part": "A of two",
+  "schema": "amphora.repair-item-state.v1",
+  "status": "done_part_a",
+  "toolkit_provenance": {
+    "detected_version": "2026.03.2",
+    "exact_version_match": true,
+    "required_version": "2026.03.2",
+    "toolkit": "RDKit C++"
+  }
+}

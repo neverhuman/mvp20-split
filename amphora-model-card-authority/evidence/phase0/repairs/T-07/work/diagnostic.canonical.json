@@ -1,0 +1,497 @@
+{
+  "baseline_sanity": {
+    "harness_can_reach_feasible_true": true,
+    "purpose": "proves the harness can reach feasible=true / ACCEPT when the card is genuinely compliant, so the escalation cases below are a real discriminator, not a vacuous always-block",
+    "site_a_verdict": "ACCEPT",
+    "site_b_feasible": true
+  },
+  "campaign_item_id": "T-07",
+  "cases_executed": 6,
+  "claim_under_attack": {
+    "claim_text": "amphora-model-card-authority has never received an adversarial verdict; its constructive SIGNED_RECEIPT-era receipts are untested claims.",
+    "non_blocking_claim_locks_under_attack": [
+      "authority_registry_is_binding",
+      "failed_cards_cannot_rank"
+    ],
+    "receipt_path": "amphora-model-card-authority/docs/mission.md"
+  },
+  "decoy_wrong_location_controls": [
+    {
+      "case_id": "C2_usable_by_optimizer_true",
+      "encoding_description": "top-level stays false; a decoy copy is nested at /metrics/usable_by_optimizer=true",
+      "encoding_id": "misplaced_nested_override",
+      "note": "authoritative field left compliant; decoy planted at a location the real code never reads; feasible=true here is CORRECT behavior, not an escalation"
+    },
+    {
+      "case_id": "C6_objective_values_claimed",
+      "encoding_description": "value smuggled under sibling key \"objectives\" (wrong name) while objective_values itself is left empty -- tests whether ANY reader is fooled by the near-miss key",
+      "encoding_id": "wrong_key_name_sibling",
+      "note": "authoritative field left compliant; decoy planted at a location the real code never reads; feasible=true here is CORRECT behavior, not an escalation"
+    }
+  ],
+  "does_not_close": "No product qualification, batch release, procurement, legal FTO, regulatory compliance, or wet-lab performance. AUDIT_ONLY; does not promote authority, does not flip scientific_readiness, does not modify the portfolio manifest, module-manifest.json, any locked dataset, or a signed Phase-0 KPI. In the current end-to-end production pipeline authority_tier for amphora-model-card-authority is always registry-derived from module-manifest.json (amphora-engine's NativeRegistry::envelope), never candidate- or attacker-controlled -- this finding is scoped to the amphora_core::rank_candidates / authorize_optimizer_request reference monitor's own robustness against a forged or corrupted engine-result.v1 JSON document reaching it directly, which is exactly the class of threat authority_registry_is_binding claims to defend against.",
+  "encodings_per_case": [
+    {
+      "blocked": 4,
+      "case_id": "C1_ranking_eligible_true",
+      "decoy_correctly_ignored": 0,
+      "genuine_escalation_bypass": 0,
+      "n_encodings": 4
+    },
+    {
+      "blocked": 3,
+      "case_id": "C2_usable_by_optimizer_true",
+      "decoy_correctly_ignored": 1,
+      "genuine_escalation_bypass": 0,
+      "n_encodings": 4
+    },
+    {
+      "blocked": 1,
+      "case_id": "C3_authority_tier_above_ceiling",
+      "decoy_correctly_ignored": 0,
+      "genuine_escalation_bypass": 3,
+      "n_encodings": 4
+    },
+    {
+      "blocked": 4,
+      "case_id": "C4_solver_use_ceiling_enabled",
+      "decoy_correctly_ignored": 0,
+      "genuine_escalation_bypass": 0,
+      "n_encodings": 4
+    },
+    {
+      "blocked": 4,
+      "case_id": "C5_claim_lock_spoofed_incomplete",
+      "decoy_correctly_ignored": 0,
+      "genuine_escalation_bypass": 0,
+      "n_encodings": 4
+    },
+    {
+      "blocked": 3,
+      "case_id": "C6_objective_values_claimed",
+      "decoy_correctly_ignored": 1,
+      "genuine_escalation_bypass": 0,
+      "n_encodings": 4
+    }
+  ],
+  "genuine_escalation_bypasses": [
+    {
+      "case_id": "C3_authority_tier_above_ceiling",
+      "encoding_description": "case-folded \"ranking\"",
+      "encoding_id": "lowercase_variant",
+      "field_pointer": "/authority_tier",
+      "mutated_envelope_verbatim": {
+        "authority_tier": "ranking",
+        "claim_locks": {
+          "fto_not_performed": true,
+          "no_optimizer_authority": true,
+          "no_patentability_authority": true,
+          "no_procurement_authority": true,
+          "no_product_performance_authority": true,
+          "no_qualification_authority": true,
+          "no_ranking_authority": true,
+          "no_regulatory_authority": true,
+          "no_release_authority": true,
+          "no_safety_authority": true
+        },
+        "gates": {},
+        "metrics": {
+          "authority_receipt": {
+            "ranking_eligible": false
+          },
+          "solver_use": "DISABLED"
+        },
+        "module_id": "amphora-model-card-authority",
+        "objective_values": {},
+        "status": "SCORED",
+        "usable_by_optimizer": false
+      },
+      "refutation_criterion": "site_b_feasible becomes true for ANY encoding whose string visually or semantically claims a forbidden RANKING/OPTIMIZER/PRODUCTION tier -- including near-miss encodings the exact-match denylist does not cover byte-for-byte",
+      "site_a_verdict": "ACCEPT",
+      "site_b_feasible": true
+    },
+    {
+      "case_id": "C3_authority_tier_above_ceiling",
+      "encoding_description": "trailing-space padded \"RANKING \"",
+      "encoding_id": "whitespace_padded",
+      "field_pointer": "/authority_tier",
+      "mutated_envelope_verbatim": {
+        "authority_tier": "RANKING ",
+        "claim_locks": {
+          "fto_not_performed": true,
+          "no_optimizer_authority": true,
+          "no_patentability_authority": true,
+          "no_procurement_authority": true,
+          "no_product_performance_authority": true,
+          "no_qualification_authority": true,
+          "no_ranking_authority": true,
+          "no_regulatory_authority": true,
+          "no_release_authority": true,
+          "no_safety_authority": true
+        },
+        "gates": {},
+        "metrics": {
+          "authority_receipt": {
+            "ranking_eligible": false
+          },
+          "solver_use": "DISABLED"
+        },
+        "module_id": "amphora-model-card-authority",
+        "objective_values": {},
+        "status": "SCORED",
+        "usable_by_optimizer": false
+      },
+      "refutation_criterion": "site_b_feasible becomes true for ANY encoding whose string visually or semantically claims a forbidden RANKING/OPTIMIZER/PRODUCTION tier -- including near-miss encodings the exact-match denylist does not cover byte-for-byte",
+      "site_a_verdict": "ACCEPT",
+      "site_b_feasible": true
+    },
+    {
+      "case_id": "C3_authority_tier_above_ceiling",
+      "encoding_description": "Latin I -> Cyrillic \u0406 homoglyph \"RANK\u0406NG\" (byte-distinct, visually identical)",
+      "encoding_id": "cyrillic_homoglyph",
+      "field_pointer": "/authority_tier",
+      "mutated_envelope_verbatim": {
+        "authority_tier": "RANK\u0406NG",
+        "claim_locks": {
+          "fto_not_performed": true,
+          "no_optimizer_authority": true,
+          "no_patentability_authority": true,
+          "no_procurement_authority": true,
+          "no_product_performance_authority": true,
+          "no_qualification_authority": true,
+          "no_ranking_authority": true,
+          "no_regulatory_authority": true,
+          "no_release_authority": true,
+          "no_safety_authority": true
+        },
+        "gates": {},
+        "metrics": {
+          "authority_receipt": {
+            "ranking_eligible": false
+          },
+          "solver_use": "DISABLED"
+        },
+        "module_id": "amphora-model-card-authority",
+        "objective_values": {},
+        "status": "SCORED",
+        "usable_by_optimizer": false
+      },
+      "refutation_criterion": "site_b_feasible becomes true for ANY encoding whose string visually or semantically claims a forbidden RANKING/OPTIMIZER/PRODUCTION tier -- including near-miss encodings the exact-match denylist does not cover byte-for-byte",
+      "site_a_verdict": "ACCEPT",
+      "site_b_feasible": true
+    }
+  ],
+  "hypothesis": "a failed or over-ceiling model card cannot be marked feasible/rank-eligible by the live reference monitor (amphora_core::authorize_optimizer_request / amphora_core::rank_candidates) under any alternate JSON encoding or nested-override placement of the same semantic escalation attempt",
+  "min_encodings_per_case": 4,
+  "module": "amphora-model-card-authority",
+  "n_blocked": 19,
+  "n_decoy_correctly_ignored": 2,
+  "n_genuine_escalation_bypass": 3,
+  "non_circularity": "Live authority is native Rust (amphora-core, linked as a real library dependency by the standalone runtime_probe crate -- this is not a re-implementation or transcription; the probe calls the actual compiled functions). Prior audits (least-privilege-authority-parity-v1, authority-lattice-completeness-v1) are independent Python re-derivations that only ever mutated one canonical-typed field at a time; this probe is the first to (a) call the live Rust reference monitor directly rather than transcribe it, and (b) vary the JSON ENCODING of each escalation attempt (string/int/nested/duplicate-key/case/whitespace/homoglyph) rather than only its native-typed value.",
+  "positive_control": {
+    "detected": true,
+    "evidence": "on the identical escalated input, the mutant (planted-defect) checker returns ACCEPT while the real amphora_core::rank_candidates / authorize_optimizer_request returns feasible=false / REJECT -- proving this harness's check is capable of firing on a ranking_eligible escalation when the guard that catches it is actually absent, i.e. the absence of an ESCALATED result above is not an artifact of a harness that can never detect anything",
+    "how_planted": "wrote a second, deliberately weaker checker (mutant_naive_check, defined in this probe file, no shared code with amphora-core) that evaluates objective_values/authority_tier/solver_use/claim_locks but never reads ranking_eligible or usable_by_optimizer, then ran it on the SAME input used for case C1's bool_direct encoding (/metrics/authority_receipt/ranking_eligible mutated true, everything else left at the compliant baseline)",
+    "mutant_naive_check_verdict": "ACCEPT",
+    "planted_defect": "mutant_naive_check() omits the ranking_eligible / usable_by_optimizer disjuncts that amphora-core's real authorize_optimizer_request (amphora-engine dependency amphora-core src/lib.rs, the `if envelope.ranking_eligible || envelope.usable_by_optimizer || ...` guard) enforces",
+    "real_amphora_core_site_a_verdict": "REJECT",
+    "real_amphora_core_site_b_feasible": false
+  },
+  "probe_summary_raw": {
+    "all_blocked": false,
+    "cases": 6,
+    "escalations_slipped_through": [
+      {
+        "case_id": "C2_usable_by_optimizer_true",
+        "encoding_id": "misplaced_nested_override",
+        "site_a_verdict": "ACCEPT",
+        "site_b_feasible": true
+      },
+      {
+        "case_id": "C3_authority_tier_above_ceiling",
+        "encoding_id": "lowercase_variant",
+        "site_a_verdict": "ACCEPT",
+        "site_b_feasible": true
+      },
+      {
+        "case_id": "C3_authority_tier_above_ceiling",
+        "encoding_id": "whitespace_padded",
+        "site_a_verdict": "ACCEPT",
+        "site_b_feasible": true
+      },
+      {
+        "case_id": "C3_authority_tier_above_ceiling",
+        "encoding_id": "cyrillic_homoglyph",
+        "site_a_verdict": "ACCEPT",
+        "site_b_feasible": true
+      },
+      {
+        "case_id": "C6_objective_values_claimed",
+        "encoding_id": "wrong_key_name_sibling",
+        "site_a_verdict": "ACCEPT",
+        "site_b_feasible": true
+      }
+    ],
+    "min_encodings_per_case": 4,
+    "record": "SUMMARY",
+    "total_case_encoding_combinations": 24
+  },
+  "result_table": [
+    {
+      "case_id": "C1_ranking_eligible_true",
+      "classification": "blocked",
+      "encoding_description": "canonical JSON boolean true",
+      "encoding_id": "bool_direct",
+      "field_pointer": "/metrics/authority_receipt/ranking_eligible",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C1_ranking_eligible_true",
+      "classification": "blocked",
+      "encoding_description": "JSON string \"true\" instead of boolean",
+      "encoding_id": "string_typed",
+      "field_pointer": "/metrics/authority_receipt/ranking_eligible",
+      "site_a_reason": "invalid type: string \"true\", expected a boolean",
+      "site_a_verdict_live_authorize_optimizer_request": "ENVELOPE_TYPE_REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C1_ranking_eligible_true",
+      "classification": "blocked",
+      "encoding_description": "JSON number 1 instead of boolean",
+      "encoding_id": "int_typed",
+      "field_pointer": "/metrics/authority_receipt/ranking_eligible",
+      "site_a_reason": "invalid type: integer `1`, expected a boolean",
+      "site_a_verdict_live_authorize_optimizer_request": "ENVELOPE_TYPE_REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C1_ranking_eligible_true",
+      "classification": "blocked",
+      "encoding_description": "object {value:true} instead of a bare boolean at the exact pointer",
+      "encoding_id": "nested_object_wrapper",
+      "field_pointer": "/metrics/authority_receipt/ranking_eligible",
+      "site_a_reason": "invalid type: map, expected a boolean",
+      "site_a_verdict_live_authorize_optimizer_request": "ENVELOPE_TYPE_REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C2_usable_by_optimizer_true",
+      "classification": "blocked",
+      "encoding_description": "canonical JSON boolean true",
+      "encoding_id": "bool_direct",
+      "field_pointer": "/usable_by_optimizer",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C2_usable_by_optimizer_true",
+      "classification": "blocked",
+      "encoding_description": "JSON string \"true\"",
+      "encoding_id": "string_typed",
+      "field_pointer": "/usable_by_optimizer",
+      "site_a_reason": "invalid type: string \"true\", expected a boolean",
+      "site_a_verdict_live_authorize_optimizer_request": "ENVELOPE_TYPE_REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C2_usable_by_optimizer_true",
+      "classification": "blocked",
+      "encoding_description": "JSON number 1",
+      "encoding_id": "int_typed",
+      "field_pointer": "/usable_by_optimizer",
+      "site_a_reason": "invalid type: integer `1`, expected a boolean",
+      "site_a_verdict_live_authorize_optimizer_request": "ENVELOPE_TYPE_REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C2_usable_by_optimizer_true",
+      "classification": "decoy_correctly_ignored",
+      "encoding_description": "top-level stays false; a decoy copy is nested at /metrics/usable_by_optimizer=true",
+      "encoding_id": "misplaced_nested_override",
+      "field_pointer": "/usable_by_optimizer",
+      "site_a_reason": null,
+      "site_a_verdict_live_authorize_optimizer_request": "ACCEPT",
+      "site_b_feasible_live_rank_candidates": true
+    },
+    {
+      "case_id": "C3_authority_tier_above_ceiling",
+      "classification": "blocked",
+      "encoding_description": "canonical forbidden tier string \"RANKING\"",
+      "encoding_id": "direct_forbidden",
+      "field_pointer": "/authority_tier",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C3_authority_tier_above_ceiling",
+      "classification": "genuine_escalation_bypass",
+      "encoding_description": "case-folded \"ranking\"",
+      "encoding_id": "lowercase_variant",
+      "field_pointer": "/authority_tier",
+      "site_a_reason": null,
+      "site_a_verdict_live_authorize_optimizer_request": "ACCEPT",
+      "site_b_feasible_live_rank_candidates": true
+    },
+    {
+      "case_id": "C3_authority_tier_above_ceiling",
+      "classification": "genuine_escalation_bypass",
+      "encoding_description": "trailing-space padded \"RANKING \"",
+      "encoding_id": "whitespace_padded",
+      "field_pointer": "/authority_tier",
+      "site_a_reason": null,
+      "site_a_verdict_live_authorize_optimizer_request": "ACCEPT",
+      "site_b_feasible_live_rank_candidates": true
+    },
+    {
+      "case_id": "C3_authority_tier_above_ceiling",
+      "classification": "genuine_escalation_bypass",
+      "encoding_description": "Latin I -> Cyrillic \u0406 homoglyph \"RANK\u0406NG\" (byte-distinct, visually identical)",
+      "encoding_id": "cyrillic_homoglyph",
+      "field_pointer": "/authority_tier",
+      "site_a_reason": null,
+      "site_a_verdict_live_authorize_optimizer_request": "ACCEPT",
+      "site_b_feasible_live_rank_candidates": true
+    },
+    {
+      "case_id": "C4_solver_use_ceiling_enabled",
+      "classification": "blocked",
+      "encoding_description": "canonical out-of-allowlist \"ENABLED\"",
+      "encoding_id": "direct_enabled",
+      "field_pointer": "/metrics/solver_use",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C4_solver_use_ceiling_enabled",
+      "classification": "blocked",
+      "encoding_description": "case-folded \"enabled\"",
+      "encoding_id": "lowercase_variant",
+      "field_pointer": "/metrics/solver_use",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C4_solver_use_ceiling_enabled",
+      "classification": "blocked",
+      "encoding_description": "leading-space padded \" DISABLED\" (attempts to pass as allowlisted by substring)",
+      "encoding_id": "whitespace_padded",
+      "field_pointer": "/metrics/solver_use",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C4_solver_use_ceiling_enabled",
+      "classification": "blocked",
+      "encoding_description": "Cyrillic-substituted lookalike of an allowlisted value \"D\u0406SABLED\"",
+      "encoding_id": "unicode_homoglyph",
+      "field_pointer": "/metrics/solver_use",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C5_claim_lock_spoofed_incomplete",
+      "classification": "blocked",
+      "encoding_description": "required lock key removed entirely from claim_locks",
+      "encoding_id": "dropped_key",
+      "field_pointer": "/claim_locks/no_ranking_authority",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C5_claim_lock_spoofed_incomplete",
+      "classification": "blocked",
+      "encoding_description": "lock value encoded as JSON string \"true\" not boolean",
+      "encoding_id": "string_typed_true",
+      "field_pointer": "/claim_locks/no_ranking_authority",
+      "site_a_reason": "invalid type: string \"true\", expected a boolean",
+      "site_a_verdict_live_authorize_optimizer_request": "ENVELOPE_TYPE_REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C5_claim_lock_spoofed_incomplete",
+      "classification": "blocked",
+      "encoding_description": "lock value encoded as JSON number 1",
+      "encoding_id": "int_typed_true",
+      "field_pointer": "/claim_locks/no_ranking_authority",
+      "site_a_reason": "invalid type: integer `1`, expected a boolean",
+      "site_a_verdict_live_authorize_optimizer_request": "ENVELOPE_TYPE_REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C5_claim_lock_spoofed_incomplete",
+      "classification": "blocked",
+      "encoding_description": "lock value wrapped as {granted:true} object instead of a bare boolean",
+      "encoding_id": "nested_wrapper",
+      "field_pointer": "/claim_locks/no_ranking_authority",
+      "site_a_reason": "invalid type: map, expected a boolean",
+      "site_a_verdict_live_authorize_optimizer_request": "ENVELOPE_TYPE_REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C6_objective_values_claimed",
+      "classification": "blocked",
+      "encoding_description": "direct numeric objective {score:0.9}",
+      "encoding_id": "numeric_direct",
+      "field_pointer": "/objective_values",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C6_objective_values_claimed",
+      "classification": "blocked",
+      "encoding_description": "string-valued objective {score:\"0.9\"}",
+      "encoding_id": "string_valued",
+      "field_pointer": "/objective_values",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C6_objective_values_claimed",
+      "classification": "blocked",
+      "encoding_description": "null-valued but key present {score:null}",
+      "encoding_id": "null_valued_key_present",
+      "field_pointer": "/objective_values",
+      "site_a_reason": "optimizer envelope attempts authority, score, solver, or lock escalation",
+      "site_a_verdict_live_authorize_optimizer_request": "REJECT",
+      "site_b_feasible_live_rank_candidates": false
+    },
+    {
+      "case_id": "C6_objective_values_claimed",
+      "classification": "decoy_correctly_ignored",
+      "encoding_description": "value smuggled under sibling key \"objectives\" (wrong name) while objective_values itself is left empty -- tests whether ANY reader is fooled by the near-miss key",
+      "encoding_id": "wrong_key_name_sibling",
+      "field_pointer": "/objective_values",
+      "site_a_reason": null,
+      "site_a_verdict_live_authorize_optimizer_request": "ACCEPT",
+      "site_b_feasible_live_rank_candidates": true
+    }
+  ],
+  "run_type": "LIVE_RUST_DIFFERENTIAL_PROBE",
+  "runtime_source_anchors": {
+    "amphora-core_src_lib.rs_sha256": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "module-manifest.json_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+    "probe_src_main.rs_sha256": "664598cf95051de96f2f161f7d89ff4400f58f61683ddcae50438a748b93441b"
+  },
+  "schema": "amphora.model-card-authority.authority-escalation-encoding-probe.v1",
+  "scope_note_failed_cards_cannot_rank": "The probe additionally asserts, on every one of the 24+2 live calls, that RankedCandidate.ranked is exactly false (see the assert!() in site_b_feasible in runtime_probe/src/main.rs); this never fired. `ranked` is a hardcoded `false` local variable in amphora_core::rank_candidates that is never reassigned for any input, so failed_cards_cannot_rank literally holds -- but only because ranking output is unconditionally disabled at the portfolio level for every module, not because model-card-authority-specific logic discriminates failed cards from passing ones. The escalation this fire found lives one layer down, in the `feasible` pre-condition gate that the authority_registry_is_binding claim actually governs.",
+  "sites_under_test": {
+    "site_A": "amphora_core::authorize_optimizer_request (typed OptimizerEnvelopeV1 reference monitor)",
+    "site_B": "amphora_core::rank_candidates (raw engine-result.v1 JSON ingestion boundary; internally calls the private optimizer_envelopes extractor then site A)"
+  },
+  "study_id": "authority-escalation-under-alternate-encodings-v1",
+  "total_case_encoding_combinations": 24,
+  "verdict": "CLAIM_REFUTED",
+  "verdict_reason": "3 of 24 case/encoding combinations are a GENUINE authority-escalation bypass: case C3_authority_tier_above_ceiling, encodings lowercase_variant (\"ranking\"), whitespace_padded (\"RANKING \"), and cyrillic_homoglyph (\"RANK\u0406NG\", Latin I replaced by Cyrillic \u0406, U+0406). In all three, the live amphora_core::rank_candidates / authorize_optimizer_request reference monitor returns feasible=true / ACCEPT for a card whose authority_tier field is a byte-distinct but semantically/visually equivalent encoding of the forbidden \"RANKING\" tier, because the monitor's forbidden-tier guard is an exact-byte-equality denylist match (`matches!(tier.as_str(), \"RANKING\" | \"OPTIMIZER\" | \"PRODUCTION\")`) with no case-folding, trimming, or Unicode normalization. This refutes authority_registry_is_binding: the registry's authority ceiling (this module's real authority_ceiling is EVIDENCE_ONLY) is not robustly bound against a spoofed or corrupted engine-result.v1 document claiming an above-ceiling tier under a trivial alternate encoding of the same forbidden string."
+}

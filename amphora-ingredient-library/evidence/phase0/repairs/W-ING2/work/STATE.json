@@ -1,0 +1,14 @@
+{
+  "campaign_item_id": "W-ING2",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260809T220002-2399580-ffa407483261",
+      "date": "2026-08-09",
+      "action": "Extended live-TDS verification from W-ING1 hardener densities to the 7 remaining load-bearing reactive constants (4 resin EEW, 3 hardener AHEW) plus 2 non-load-bearing amine-value facts as byproducts; 12 total comparisons (9 transcription-fidelity, 3 independent second-source of which 2 are search-snippet), 12/12 within the 3.0% gate, zero new divergences. Restated the pre-existing ancamide_260a.ahew regional finding (US=120 vs EMEA=110), stated the interval-bounding conservative rule for unknown-region calculations, and disclosed that the catalog's claimed mitigation (\"band widened in MC\") has zero implementing code in the live runtime. Signed superseding KPI landed in done/ with a supersedes block against hardener-tds-verified-constants-kpi.v1.json plus a positive_control block (two independent planted defects, both detected).",
+      "outcome": "CLAIM_SURVIVED",
+      "receipt": "amphora-ingredient-library/evidence/phase0/repairs/W-ING2/done/reactive-constant-tds-verified-superseding-kpi.v1.dsse.json"
+    }
+  ],
+  "done_criterion_met": true
+}

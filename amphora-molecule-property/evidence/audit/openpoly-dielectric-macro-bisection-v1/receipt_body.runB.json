@@ -1,0 +1,230 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "ceiling": "AUDIT_ONLY. Does not alter the shipped openpoly-dielectric-constant-ml-baseline-kpi.v1.json, any manifest, or any authority ceiling. Extends the module's falsification record: the C7/W7 macro-bisection external-validity methodology now covers OpenPoly dielectric constant (SURVIVED, corrected split) in addition to RadonPy density/refractive_index/thermal_conductivity (all REFUTED). Closes the exact gap the 2026-08-14 admissibility audit's own recommended_followups flagged as open.",
+  "claim_under_attack": {
+    "claim_text": "OpenPoly dielectric constant ML baseline: RandomForest scaffold-safe holdout test MAE=0.4040 vs NULL 0.7027 (+42.5%), test R2=+0.565, LOSO-CV R2=+0.659 under 111-fold raw-Bemis-Murcko-scaffold CV. 'REAL POSITIVE LIFT.'",
+    "kpi_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+    "kpi_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+  },
+  "degradation_refute_threshold": 2.0,
+  "featurization": {
+    "additional_features": [
+      "log10(MolWt+1)"
+    ],
+    "morgan_bits": 512,
+    "morgan_radius": 2
+  },
+  "fire_id": "20260817T210001-3496928-973f0cd42941",
+  "fire_sequence": "ROTATION fire. Identified openpoly-dielectric-constant-ml-baseline-kpi.v1.json (LOSO-CV R2=+0.659, scaffold-safe holdout MAE=0.4040 vs NULL 0.7027, status STANDS, this module's own '\"REAL POSITIVE LIFT\"' claim) as the strongest genuinely-positive standing claim with an explicitly open next-attack per the prior fire's own recommendation: the 2026-08-14 physical-admissibility audit (evidence/audit/openpoly-dielectric-admissibility-v1) survived and recorded in its recommended_followups that 'a harder scaffold-safe or macro-bisection external-validity attack, in the style of C7/W7, remains open for this KPI's MODEL claims'. This fire runs exactly that attack: hierarchical Tanimoto macro-bisection, identical clustering primitives to C7 fire2 (density, REFUTED 13.74x/7.59x) and W7 (refractive_index/thermal_conductivity, REFUTED). Discovered mid-fire that the naive fcluster(maxclust=2) cut C7/W7 used is DEGENERATE on this 295-molecule corpus (294 vs 1, a single Tanimoto outlier) -- see method_correction below -- and corrected the bisection to a balanced k=12 bin-packed cut before drawing any verdict.",
+  "flips_scientific_readiness": false,
+  "gates": {
+    "dataset_fixture_sha256_matches_target_kpi_pin": true,
+    "degenerate_naive_split_identified_and_corrected_before_verdict": true,
+    "positive_control_planted_and_detected": true,
+    "self_contained_no_external_pipeline_reproduction_risk": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "two_replay_byte_stable": true
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "compute_openpoly_dielectric_macro_bisection.py_sha256": "117b5af919bb545879f2e908607f563e778a36df8a5529dc31913212e15fe80e",
+    "dataset_fixture_path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+    "dataset_fixture_sha256_match": true,
+    "dataset_fixture_sha256_observed": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "dataset_fixture_sha256_pinned_in_kpi": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "target_kpi_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+    "target_kpi_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+  },
+  "method": "Independently re-featurized the exact 295-row OpenPoly dielectric-constant subset (Morgan r=2/512-bit + log10(MolWt+1), matching the KPI's own documented featurization) from the CSV pinned as the KPI's own dataset_fixture_sha256 (byte-verified match). Built the full 295x295 Tanimoto distance matrix and ran scipy average-linkage agglomerative clustering (UPGMA-family, Sokal & Michener 1958; Murtagh & Contreras 2012 review) -- the identical primitives C7 fire2 and W7 already used and this module's falsification ledger already treats as a validated attack design. scipy average-linkage agglomerative clustering (UPGMA-family, Sokal & Michener 1958; Murtagh & Contreras 2012 review) on the full n x n Tanimoto distance matrix over Morgan r=2/512-bit fingerprints -- same primitives as C7 fire2 (density) and W7 (refractive_index, thermal_conductivity). The naive fcluster(maxclust=2) cut used by C7/W7 is DEGENERATE on this 295-molecule OpenPoly corpus (294 vs 1 -- see degenerate_naive_2cut in real_data_result), so this fire cuts the same dendrogram at k=12 sub-clusters instead and greedily bin-packs the 12 intact sub-clusters (largest first, into whichever macro-side is currently smaller) into two macro-chemotype halves -- see balanced_macro_bisection() in the compute script. Applied to OpenPoly dielectric constant for the first time. Pre-registered refute criterion (identical threshold to C7 fire2 / W7): cross-macro-chemotype MAE (either direction) > 2.0x the own-features within-corpus 5-fold MAE.",
+  "method_correction_mid_fire": "The naive fcluster(Z, t=2, criterion='maxclust') cut -- what C7/W7 used verbatim on their (larger, n=1068-1077) RadonPy corpora -- produces a DEGENERATE split on this 295-molecule OpenPoly corpus: 294 vs 1 (see real_data_result.degenerate_naive_2cut). A single Tanimoto-distant outlier molecule peels off the entire dendrogram before any real bisection occurs. Training a RandomForest on n_train=1 is not a meaningful test of cross-chemotype generalization (R2 undefined for a 1-sample fit; a degradation verdict off that split would be an artifact of dendrogram topology, not a real falsification) -- reporting a REFUTED or SURVIVED verdict off it would itself have been the kind of weak-attack reasoning this loop's protocol explicitly warns against. Corrected before drawing any verdict: cut the SAME dendrogram at k=12 sub-clusters (sizes [120,93,51,11,5,5,4,2,1,1,1,1]) and greedily bin-packed the 12 intact sub-clusters into two macro-chemotype halves (148 vs 147, well balanced), preserving each sub-cluster's internal Tanimoto coherence while eliminating the outlier-driven degeneracy. All reported verdict numbers use the corrected k=12 bin-packed bisection; the degenerate naive 2-cut is retained in the receipt only for transparency, never for the verdict.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "Test whether openpoly-dielectric-constant-ml-baseline-kpi.v1.json's positive generalization claim (LOSO-CV R2=+0.659, holdout MAE=0.4040 vs NULL 0.7027) survives a harder, macro-chemotype-level held-out split -- the KPI's own shipped splits (raw Bemis-Murcko scaffold-safe 80/20 holdout, 111-fold LOSO-CV) hold out only ONE scaffold at a time, never a structurally distant cluster of scaffolds, which is exactly the gap that refuted the sibling Tg/density/RI/thermal-conductivity claims elsewhere in this module (C7, W7).",
+  "organizational_independence_asserted": false,
+  "positive_control": {
+    "corrupted_run_result": {
+      "degenerate_naive_2cut": {
+        "degenerate": true,
+        "note": "raw fcluster(maxclust=2) sizes on THIS run's molecule set, reported for transparency; NOT used for the verdict when degenerate.",
+        "sizes": [
+          1,
+          294
+        ]
+      },
+      "degradation_factor_A": 10.13451344289455,
+      "degradation_factor_B": 10.144984999632037,
+      "direction_A_train_macro_a_test_macro_b": {
+        "mae": 53.20962585034003,
+        "n_test": 147,
+        "n_train": 148,
+        "null_mae_using_train_median": 53.20962585034014,
+        "r2": -4389.9688966126605,
+        "test_y_range": [
+          3.06,
+          6.82
+        ],
+        "train_y_range": [
+          57.69,
+          57.69
+        ]
+      },
+      "direction_B_train_macro_b_test_macro_a": {
+        "mae": 53.264605067567565,
+        "n_test": 148,
+        "n_train": 147,
+        "null_mae_using_train_median": 53.33999999999999,
+        "r2": -5.620076163526584e+31,
+        "test_y_range": [
+          57.69,
+          57.69
+        ],
+        "train_y_range": [
+          3.06,
+          6.82
+        ]
+      },
+      "k_subclusters": 12,
+      "n_macro_a": 148,
+      "n_macro_b": 147,
+      "n_total": 295,
+      "own_features_within_corpus_5fold": {
+        "mae": 5.2503384745763055,
+        "n": 295,
+        "r2": 0.7911649612265805
+      },
+      "property_refuted": true,
+      "refuted_A": true,
+      "refuted_B": true,
+      "subcluster_sizes_at_k": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        5,
+        5,
+        11,
+        51,
+        93,
+        120
+      ]
+    },
+    "detected": true,
+    "evidence": "Real (uncorrupted) data: degradation_factor_A=1.4213, degradation_factor_B=1.4636 (both < 2.0x threshold, neither direction refuted; both directions retain positive R2: 0.0094 / 0.4504). Corrupted copy (macro-A y-values overwritten to a constant outside the real range): degradation_factor_A=10.1345, degradation_factor_B=10.1450 (both >> 2.0x threshold) -- confirming the harness fires on a defect of the exact kind (label/structure relationship broken for one macro-chemotype half) this attack exists to catch.",
+    "expected": "corrupted run's degradation_factor_A must exceed the 2.0x refute threshold (training on B, testing on the constant-overwritten A, must fail badly relative to within-corpus MAE)",
+    "how_planted": "y_corrupt[mask_a_probe] = real_y_max + 50.0, where mask_a_probe is the exact macro-A boolean mask returned by run() on the real, uncorrupted data (the corruption never touches the clustering step itself, only the labels fed into cross_group()); the full run() pipeline, including re-clustering, is then re-executed end-to-end on the corrupted labels, unmodified.",
+    "planted_defect": "Deep copy of the real 295-row Dielectric Constant Total labels with macro-group A's (n=148 of 295, from THIS run's own k=12 bin-packed balanced_macro_bisection, not the degenerate naive 2-cut) y-values overwritten to a constant 57.6900 (real range was [2.6100, 7.6900]), breaking any true structure-property relationship for that half while leaving macro-group B and all featurization/clustering code untouched."
+  },
+  "pre_registered_refute_criterion": "cross-macro-chemotype MAE (either direction) > 2.0x own-features within-corpus 5-fold MAE",
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Manifest untouched.",
+  "real_data_result": {
+    "degenerate_naive_2cut": {
+      "degenerate": true,
+      "note": "raw fcluster(maxclust=2) sizes on THIS run's molecule set, reported for transparency; NOT used for the verdict when degenerate.",
+      "sizes": [
+        1,
+        294
+      ]
+    },
+    "degradation_factor_A": 1.4212814423563123,
+    "degradation_factor_B": 1.4635526687882725,
+    "direction_A_train_macro_a_test_macro_b": {
+      "mae": 0.5850591836734693,
+      "n_test": 147,
+      "n_train": 148,
+      "null_mae_using_train_median": 0.6617687074829932,
+      "r2": 0.009421949485391212,
+      "test_y_range": [
+        3.06,
+        6.82
+      ],
+      "train_y_range": [
+        2.61,
+        7.69
+      ]
+    },
+    "direction_B_train_macro_b_test_macro_a": {
+      "mae": 0.6024597972972973,
+      "n_test": 148,
+      "n_train": 147,
+      "null_mae_using_train_median": 0.9242567567567569,
+      "r2": 0.4504243061622579,
+      "test_y_range": [
+        2.61,
+        7.69
+      ],
+      "train_y_range": [
+        3.06,
+        6.82
+      ]
+    },
+    "k_subclusters": 12,
+    "n_macro_a": 148,
+    "n_macro_b": 147,
+    "n_total": 295,
+    "own_features_within_corpus_5fold": {
+      "mae": 0.4116420338983053,
+      "n": 295,
+      "r2": 0.6763125230258575
+    },
+    "property_refuted": false,
+    "refuted_A": false,
+    "refuted_B": false,
+    "subcluster_sizes_at_k": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      4,
+      5,
+      5,
+      11,
+      51,
+      93,
+      120
+    ]
+  },
+  "receipt_id": "openpoly-dielectric-macro-bisection-v1",
+  "recommended_followups": [
+    "The degenerate-naive-2cut finding (a single Tanimoto outlier dominating a scipy fcluster(maxclust=2) top-level split on small-to-medium (n~300) corpora) may generalize to OTHER small OpenPoly-derived KPIs in this module (water_contact_angle n=173/174, water_uptake n=129) if a future fire ever attempts the same macro-bisection design on them -- worth checking cluster-size degeneracy BEFORE reporting a verdict, not after, on any future reuse of this method.",
+    "This SURVIVED result is scoped to the SAME within-OpenPoly-distribution applicability domain the KPI itself already discloses (claim_locks.baseline_valid_on_openpoly_scaffold_distribution_only); it does not test transfer to a categorically different corpus (e.g. RadonPy), which prior U-DATA fires already found rights-blocked for dielectric-relevant epoxy-amine chemistry."
+  ],
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened. This audit reads only the already-in-tree OpenPoly raw CSV (already consumed and pinned by sha256 in the target KPI itself) plus the target KPI receipt. No quarantined or CONTEXT_ONLY source was opened.",
+  "schema": "amphora.molecule-property.openpoly-dielectric-macro-bisection-external-validity-audit-receipt.v1",
+  "seed": 0,
+  "shipped_kpi_numbers_for_reference": {
+    "LOSO_CV_R2": 0.659,
+    "holdout_test_MAE": 0.404,
+    "holdout_test_R2": 0.565,
+    "split_methodology_shipped": "raw Bemis-Murcko scaffold-safe 80/20 holdout AND 111-fold LOSO-CV (single scaffold held out per fold)"
+  },
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY audit receipt under evidence/audit/"
+  },
+  "study_id": "amphora-molecule-property-openpoly-dielectric-macro-bisection-external-validity-v1",
+  "verdict": "SURVIVED",
+  "why": "Under the corrected, non-degenerate k=12 bin-packed macro-bisection (148 vs 147 molecules, both internally diverse macro-chemotype halves), openpoly-dielectric-constant-ml-baseline-kpi.v1.json's positive generalization claim SURVIVES: cross-macro-chemotype degradation factors are 1.42x (A->B) and 1.46x (B->A), both below the pre-registered 2.0x refute bar, and both directions retain positive out-of-macro-group R2 (+0.009 and +0.450) rather than collapsing to null-baseline-or-worse the way the sibling Tg/density/refractive_index/thermal_conductivity claims did under the identical attack design (C7, W7). The positive control confirms this is a genuinely falsifying test, not a test that cannot fail: planting the exact kind of defect this attack exists to catch (one macro-chemotype half's labels decoupled from structure) drives both degradation factors to >10x, ~7x past the refute threshold, on the SAME clustering/model/threshold pipeline used for the real-data verdict."
+}

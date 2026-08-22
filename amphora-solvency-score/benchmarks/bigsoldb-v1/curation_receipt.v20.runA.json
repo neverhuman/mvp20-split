@@ -1,0 +1,27 @@
+{
+  "benchmark": "amphora-solvency-score/bigsoldb-v1",
+  "citation": "Krasnov et al., Sci Data 12 (2025), doi:10.1038/s41597-025-05559-8",
+  "dataset": "BigSolDB v2.0 (Zenodo 18552681 family, CC-BY-4.0)",
+  "n_raw_rows": 103944,
+  "n_rows_after_reject": 100983,
+  "n_rows_after_replicate_collapse": 96924,
+  "n_unique_solutes": 1445,
+  "n_unique_solvents": 70,
+  "python": "3.12.3",
+  "raw_file": "feedback/v1/external_data/bigsoldb_v2/raw/BigSolDBv2.0.csv",
+  "raw_md5": "1e6d8a510387746e9faab5f39dc46317",
+  "raw_sha256": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0",
+  "rdkit": "2026.03.2",
+  "rejections_fail_closed": {
+    "missing_target": 2961,
+    "smiles_parse_fail": 0,
+    "temp_out_of_range_or_nan": 0
+  },
+  "replicate_spread_log_units": {
+    "max": 6.495804518142738,
+    "median": 0.0,
+    "p90": 0.0
+  },
+  "stage": "curation",
+  "target": "LogS(mol/L), replicate-median"
+}

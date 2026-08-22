@@ -1,0 +1,433 @@
+{
+  "campaign_item_id": "DR-GAP",
+  "framing": "AUDIT-ONLY",
+  "methodology": {
+    "modeled_assumed_recipe_elements_count": 0,
+    "pre_tier_0_definition_used": "phase == 'PRE_PHASE_0' as read verbatim from each module's docs/mission.md front-matter JSON, enumerated across all 29 amphora-* modules this fire",
+    "pre_tier_0_modules_count": 12,
+    "pre_tier_0_modules_found": [
+      "amphora-barrier-corrosion-score",
+      "amphora-cure-potlife-gate",
+      "amphora-design-rule-score",
+      "amphora-ingredient-library",
+      "amphora-ip-fto-guard",
+      "amphora-molecule-generator",
+      "amphora-molecule-novelty",
+      "amphora-molecule-property",
+      "amphora-molecule-role-ranker",
+      "amphora-public-corrosion-benchmark",
+      "amphora-viscosity-score",
+      "amphora-sourceability-ehs"
+    ],
+    "queue_asks_count": 14,
+    "queue_snapshot_line_count": 14,
+    "queue_snapshot_sha256": "8899cb8f8f4f908a5a0ceb232c1d3c5c185d8983d1a10226e23cf890abba95bc",
+    "source_categories": [
+      "every open data-acquisition-queue ask (data-acquisition-queue.jsonl on xbabe1, snapshot sha256 below)",
+      "every Pre-Tier-0 (phase == PRE_PHASE_0) module whose promotion blocker names a missing dataset or measurement class (mission.md 'External dependency or delay' bullets)",
+      "every lab-in-the-loop experiment specification referencing an external corpus, comparator, or label source (collapsed into the promotion-blocker rows this snapshot: no distinct spec document exists yet, declared not silent)",
+      "every MODELED/ASSUMED recipe element already published at the snapshot date (empty set this snapshot, declared as row R01)"
+    ],
+    "total_gap_rows": 26
+  },
+  "modeled_assumed_recipe_elements": {
+    "attestation": "A full-tree search of mvp20-split this fire (excluding .venv/ and target/ build artifacts) for any Candidate Formulation Package, recipe blueprint, bill-of-materials, or per-element evidence-tier crosswalk (Section 7 of AMPHORA-DIRECTIVE-2026-08-09) found none: no file anywhere in the tree carries a MODELED or ASSUMED per-element evidence tier tag outside this module's own audit/diagnostic fixtures. Mandate B (Candidate Formulation) has not run yet for this directive. This is consistent with, and confirms, the item's own stated module-serialization design: 'folding CF-TIER's later deltas into the register is DR-FRESH's run-2 obligation, not this item's -- module serialization means this register closes before CF-TIER exists.' Per directive rule 7 (RECON MODE) and Section 2, an empty result is a valid and reportable answer, not silent padding: there are zero MODELED/ASSUMED recipe elements published at this register's snapshot date to fold in, and this row states that explicitly rather than omitting the category.",
+    "finding": "EMPTY_SET",
+    "row_id": "R01",
+    "search_method": "grep -rl for tier/evidence-tier MODELED|ASSUMED markers plus a filename sweep for recipe/formulation-package/candidate-formulation/BOM-named files across the whole mvp20-split tree, run this fire; zero qualifying hits outside build tooling/dependency noise (ase/ turbomole test fixtures, sboms/ package metadata, unrelated to this portfolio).",
+    "snapshot_date": "2026-08-10",
+    "source_type": "modeled_or_assumed_recipe_element"
+  },
+  "module": "amphora-dataset-recon",
+  "rows": [
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: manufacturer TDS - factual equivalent-weight constant, cite-only; confirm redistribution terms",
+      "minimum_n": "3",
+      "missing_measurement_or_label_class": "Nominal amine-H:epoxide equivalents stoichiometric index r=(m_B*EEW)/(m_A*AHEW) cannot be computed for the 3 proprietary adduct hardeners (dgeba-amidoamine-huntsman-100to50, dgeba-amidoamine-momentive-100to53, dgeba-mannich-fast-cure-100to36) because their AHEW is not first-principles derivable from a molecular formula; the excursion-invariance theorem still holds value-free, but the nominal index and off-stoichiometry class need measured/published AHEW.",
+      "module": "amphora-envelope-gates",
+      "qualifying_dataset_requirements": "candidate_source: Supplier technical data sheets: Huntsman Aradur 3486, Momentive Epikure 3125, Air Products Ancamine 2735 (AHEW / amine value on TDS) | next_action: Human to transcribe TDS AHEW (g/eq) or amine value for the 3 adduct hardeners into a rights-clean CC0 fact table; then extend G1/G4 nominal-index coverage from 7/10 to 10/10. | license_verified: False | url_or_doi: https://www.huntsman.com (Aradur 3486 TDS); https://www.momentive.com (Epikure 3125 TDS); https://www.airproducts.com (Ancamine 2735 TDS)",
+      "row_id": "Q01",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 1,
+        "queue_line_sha256": "88e25524a84e0b039fdf8cdc6b88878862e83de3ac21f13b1d1dcf44ee25c03b"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "Named in source gap text: ASTM D1652; ASTM D4274 | source license/rights context: MDPI/CC-BY preferred (redistributable with attribution); supplier TDS = factual constants, cite-only, confirm redistribution; ASTM standards are PAID and NOT redistributable - only the numeric precision figures may be cited, the text may not be copied.",
+      "minimum_n": "30",
+      "missing_measurement_or_label_class": "dgeba-polydispersity-cross-titration-v1 proves the zero-parameter cross-titration identity OHV = 197.2874*(1 - 170.2095/EEW) is EXACTLY dispersity-invariant and refutes H0 that it survives epoxide-consuming end groups (12/16 defect rows breach the 1% bar, max 41.02% relative), turning the residual into a QC detector for non-ideal DGEBA. But it is validated only on SYNTHETIC Flory/Poisson/bimodal distributions and SYNTHETIC defect loadings. No rights-clean dataset of PAIRED ASTM D1652 (EEW) + ASTM D4274 (hydroxyl value) measurements on the same real DGEBA resin lots is held, so the detector's real-world false-positive rate is UNMEASURED and the parametric detection floors (0.9-7.9 mol% glycol) rest on ASSUMED 0.5-2% relative titration precision rather than quoted ASTM repeatability statements.",
+      "module": "amphora-molecule-property",
+      "qualifying_dataset_requirements": "candidate_source: Paired EEW + hydroxyl-value (and ideally total/hydrolyzable chlorine per ASTM D1726) determinations on the same DGEBA lots. Priority order: (1) open-access epoxy-resin characterization papers reporting both titrations per lot (search Polymers/MDPI, Polymer Testing, J. Appl. Polym. Sci. for CC-BY); (2) supplier TDS pairs that quote EEW band AND hydroxyl content for the Epon 828/1001F/1004F and DER 331/671/664 advancement ladder; (3) NIST/round-robin interlaboratory epoxy titration studies giving genuine D1652/D4274 repeatability sigma. | next_action: Human to locate >=10 real DGEBA lots with BOTH EEW and hydroxyl value measured, plus any published D1652/D4274 repeatability sigma. Then (a) replace the assumed 0.5-2% precision inputs with measured sigma to get a real detection floor, (b) measure the detector's false-positive rate on nominally-good lots, and (c) test whether observed residuals stratify by grade as the 17.25x liquid-to-semisolid sensitivity collapse predicts. | license_verified: False | url_or_doi: https://www.mdpi.com/search?q=epoxy+equivalent+weight+hydroxyl+value+DGEBA (CC-BY filter); ASTM D1652, ASTM D4274, ASTM D1726 precision-and-bias sections; supplier TDS: https://www.hexion.com (Epon 828/1001F/1004F), https://www.olin.com (DER 331/671/664)",
+      "row_id": "Q02",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 2,
+        "queue_line_sha256": "ff1c94f52701d04295beb08d2007586bcb2bb47280093c2453c844fa910d2820"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: US Federal Government work, public domain (17 U.S.C. 105) for the USBR route; CC-BY 4.0 required for the literature route",
+      "minimum_n": "~306 existing summary rows x ~40-60 frequency decades-points each => ~12k-18k complex impedance points across 6 coating systems x 4 baths x ~70 dates",
+      "missing_measurement_or_label_class": "eis-brasher-kingsbury-water-uptake-admissibility-v1 REFUTES H0 on all 6 physical screens: the USBR-21019 single-frequency 0.01 Hz EIS summary (|Z|, phase only) cannot support the Brasher-Kingsbury (1954) coating water-uptake law. Median dissipation factor 0.74 (only 14.3% of records capacitance-dominated, so no coating capacitance is readable at 0.01 Hz); log10 C_eff is Spearman -0.9921 with log10|Z| (rank-redundant, zero new information); 26.1% of derived uptakes are negative and 3.0% exceed the film volume; panel-to-panel reproducibility propagates to sigma(phi_v)=0.67 volume fraction, 2.2x the entire 0-30 vol% physical range. The module needs FREQUENCY-RESOLVED complex spectra Z'(f), Z''(f) with a high-frequency (>=1 kHz) coating-capacitance plateau, a pre-immersion dry C_0, plus specimen area and dry-film thickness, to unlock any water-uptake / equivalent-circuit / Kramers-Kronig capability. Note the Brasher-Kingsbury law is area- and thickness-free (capacitance RATIO only), so the missing USBR area does NOT explain the failure - the frequency resolution does.",
+      "module": "amphora-public-corrosion-benchmark",
+      "qualifying_dataset_requirements": "candidate_source: Rights-clean frequency-resolved EIS Bode/Nyquist sweeps on epoxy-amine or vinyl marine coatings over immersion time. Priority order: (1) USBR RISE - request the underlying full-sweep spectra behind project 21019, which are almost certainly retained but only the 0.01 Hz summary was published (public domain, 17 U.S.C. 105, same rights basis already cleared); (2) NIST Materials Data Repository / MGI corrosion sets; (3) CC-BY open-access EIS papers on DGEBA-amine marine primers with tabulated or digitizable spectra + stated DFT and specimen area. | next_action: Human to file a RISE data request to USBR for the raw frequency-resolved EIS sweeps (and specimen area + DFT) underlying catalog item 8048. Rights basis is already cleared and identical to the summary data this module has ingested, so this is an access ask, not a licensing ask. | license_verified: True | url_or_doi: https://data.usbr.gov/catalog/8048 (RISE project 21019, item 8048; contact publisher Bureau of Reclamation, author B. Baumgarten, pub. 2024-09-11)",
+      "row_id": "Q03",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 3,
+        "queue_line_sha256": "19fa17924979769e2357ed10cd8287b90dcbc9ce5813bae2a7bcce03ed49a904"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: US Federal Government work, public domain (17 U.S.C. 105)",
+      "minimum_n": "6 defective rows of 306 (1.96%); 1 of 6 source files affected",
+      "missing_measurement_or_label_class": "T0 passivity screen found 6/306 published USBR-21019 EIS records (1.96%) with |phase| > 90 deg (values +167.26, +134.70, +117.45, +105.45, -142.80, -116.72 deg). These are IMPOSSIBLE for any passive LTI two-terminal cell (Re{Z}>=0 requires phase in [-90,+90]) and violate the Kramers-Kronig prerequisite. All 6 are localized to source file 128772_2-z-p-2k-2-s_eis.csv, 5 of them in replicate 2 / HAR bath, so the defect is a cell-level acquisition fault rather than a global sign convention. This cron holds no authority to edit or re-issue upstream public bytes; the rows are reported, not repaired. No prior audit of this module detected them.",
+      "module": "amphora-public-corrosion-benchmark",
+      "qualifying_dataset_requirements": "candidate_source: US Bureau of Reclamation RISE - erratum / corrected re-issue of catalog item 128772, or confirmation of the sign/wrap convention used in the published Phi_0.01 column. | next_action: Human to notify USBR of the passivity violation in item 128772 and request either a corrected re-issue or a documented phase convention. Until resolved, these 6 rows must stay excluded from any impedance-derived quantity; the signed receipt already excludes them. | license_verified: True | url_or_doi: https://data.usbr.gov/catalog/8048/item/128772",
+      "row_id": "Q04",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 4,
+        "queue_line_sha256": "77511430fcab0379d9e40767c494f0e91d7c452e244f230268c8fbef0f2acb6f"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: USBR_RIGHTS_REVIEW_REQUIRED (pending); expected US Federal Government work, public domain (17 U.S.C. 105), same basis as catalog item 8048/project 21019",
+      "minimum_n": "10 coating systems (per catalog metadata; file unopened, no row-level count available pre-rights-clearance)",
+      "missing_measurement_or_label_class": "corrosion_series.json strict_validation_bar (>=3 strictly in-class, open table-read epoxy-amine/polyamide ordered side-by-side numeric series) is not met: strict_literature_count=2 (asperti2024, zhu2022), literature_bar_status=\"literature bar not met\", predictive_model_status=\"FAILED - no predictive corrosion model justified\". A rights-cleared, already-on-disk candidate for the 3rd series exists: reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx (ten inhibitive coating systems, USBR RISE catalog item 4640/item 11562, sha256 9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1), currently quarantined license=USBR_RIGHTS_REVIEW_REQUIRED, rights_status=ACQUIRED_UNTOUCHED_QUARANTINED_PENDING_RIGHTS_REVIEW, eligible_for_derivatives=false in reference/eis/source-landscape.v1.json. This consolidates and references the two existing amphora-public-corrosion-benchmark USBR RISE queue entries (same publisher data.usbr.gov, same public-domain rights basis) dated 2026-07: sha256 c8a3902f7855e8c27c4e6698c40dda1d163c4a6c7d6c3dae1db83c6699724aa2 (frequency-resolved EIS raw sweeps ask, catalog 8048/project 21019) and sha256 92b10b4a5c0f4d6669ac5cd7bef976374d7cc848ba49be0d753d665542c10cbc (erratum/re-issue ask, catalog 8048/item 128772). Full human-actionable package: amphora-barrier-corrosion-score/evidence/audit/st-19168-rights-review-v1/RIGHTS-REVIEW-REQUEST.md.",
+      "module": "amphora-barrier-corrosion-score",
+      "qualifying_dataset_requirements": "candidate_source: USBR RISE catalog item 4640 / item 11562, ST-19168 inhibitive coating system dataset, already acquired and on disk (untouched, quarantined pending rights review). Same publishing agency and data.usbr.gov RISE catalog as the two already rights-cleared amphora-public-corrosion-benchmark USBR-21019 asks (US Federal Government work, public domain, 17 U.S.C. 105) \u2014 this is expected to be a confirmation ask, not a new licensing negotiation. | next_action: Human to file a USBR RISE data-use confirmation request for catalog item 4640/item 11562 (or equivalent written confirmation of 17 U.S.C. 105 public-domain status and derivative-reuse permission), then flip reference/eis/source-landscape.v1.json license/rights_status/eligible_for_derivatives for source_id usbr-st-19168. Full instructions in amphora-barrier-corrosion-score/evidence/audit/st-19168-rights-review-v1/RIGHTS-REVIEW-REQUEST.md. Until then this cron will not open, parse, or derive from the quarantined xlsx. | license_verified: False | url_or_doi: https://data.usbr.gov/catalog/4640/item/11562",
+      "row_id": "Q05",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 5,
+        "queue_line_sha256": "6231a45ffcf6a47d456f9f71007f8b7afd6112ab5e40d62d55a4fd7366161fd8"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: CC-BY-4.0",
+      "minimum_n": "30",
+      "missing_measurement_or_label_class": "alam2022_pa450_pa3282 (Materials 15(7):2562, DOI 10.3390/ma15072562) Table 5/Table 6 EIS numeric values were transcribed via a single automated full-text read of the PMC mirror, not manually double-keyed against the primary PDF",
+      "module": "amphora-barrier-corrosion-score",
+      "qualifying_dataset_requirements": "candidate_source: same already-acquired CC-BY-4.0 asset; no new source, no rights action needed | next_action: human or independent second-pass spot-check of a sample of Table 5/Table 6 cells against the MDPI PDF before amphora-barrier-corrosion-score/reference/mvp20/data/literature_extractions/alam2022_pa450_pa3282.json is used beyond its existing within-study/bibliographic-anchor use_limit | license_verified: True | url_or_doi: 10.3390/ma15072562",
+      "row_id": "Q06",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 6,
+        "queue_line_sha256": "c23b5d1a8f7abf86f345136650644a1d01862815ef72d8e8fd68effbe79b3fb2"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: CC-BY-4.0 (existing Purformance dataset); license of any follow-on dataset unknown pending identification",
+      "minimum_n": "Unknown pending identification; need >=58 additional independent unique observations to materially sharpen the current wide bootstrap intervals",
+      "missing_measurement_or_label_class": "The module headline KPI (purformance-scratch-hardness-named-baseline-benchmark-kpi.v1.json, b5_histgbm_r2=0.8555 vs b1_vernetzung_only_r2=0.0156) is superseded by benchmarks/split-integrity-dedup-v1 (2026-07-30): the 86 raw Purformance rows are cumulative campaign snapshots holding only 58 unique observations, and leak-free re-evaluation collapses HistGBM to R2=-0.0469 (no skill vs constant-mean -0.0535). The leak-free honest headline is now P1 Guth-Gold 1938 physics (R2=0.2437, concordance C=0.7111, CI excludes chance) but the physics-beats-declared-Rule-1 significance claim is WITHDRAWN (paired CI on Guth-Gold minus Rule-1 concordance is [-0.0019,0.2144], includes zero) -- underpowered at n=58. Binding constraint is sample size, not model form; no further re-analysis of the existing 3 Purformance workbooks can supply new independent observations.",
+      "module": "amphora-design-rule-score",
+      "qualifying_dataset_requirements": "candidate_source: An independent 2K-PU (or equivalent 2K epoxy-amine) hardness DoE, ideally from a second formulator/instrument, to cross-validate the Purformance HTE dataset (Cordts et al. 2024 Chem. Mater., Zenodo 13742098) and grow n beyond 58 leak-free observations. Candidate routes: (1) contact Cordts/Sassmannshausen/Rendel/Klein/Reddemann/Berge (Zenodo 13742098 corresponding authors) for a follow-on or sibling HTE dataset; (2) search Zenodo/Figshare/PubChem-adjacent coatings-HTE repositories for CC-BY 2K-PU or 2K-epoxy scratch-hardness DoE releases; (3) an in-house wet-lab DoE campaign (outside this cron scope) sized per the existing n=58 power analysis in split-integrity-dedup-v1. | next_action: Human to (a) contact the Purformance dataset authors re: a follow-on/sibling HTE release, or (b) commission/locate an independent 2K-PU hardness DoE, then re-run the module split-integrity-dedup-v1 + dedup-superseding-kpi protocol pooling the new data to test whether the physics-beats-Rule-1 significance claim (currently withdrawn for insufficient power) becomes defensible at higher n. | license_verified: False | url_or_doi: https://zenodo.org/records/13742098 (existing Purformance dataset, corresponding-author contact for follow-on data)",
+      "row_id": "Q08",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 8,
+        "queue_line_sha256": "54f7dfe2ce52957dbc9f5c08315658c5e2ecc84a6045ef7d94cbe4568e322ae2"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: Unknown pending identification/rights review",
+      "minimum_n": "Unknown pending identification; need a second independent density corpus of meaningful size (RadonPy itself is n=1077) to run a true cross-corpus test analogous to the already-shipped OpenPoly<->RadonPy dielectric external-validation receipt",
+      "missing_measurement_or_label_class": "C7 external-validity attack found that neither OpenPoly (experimental Tg corpus, 443 polymers) nor Polyuniverse Epoxy (MD-simulated Tg corpus, 1M polymers) carries a density column, and RadonPy PI1070 is the ONLY rights-cleared polymer-density corpus in this module (verified against all three raw CSV headers). This makes a literal second-corpus cross-validation of the shipped RadonPy density RF baseline (MAE 0.0566 g/cm3, evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json) impossible with current rights-cleared data. The best available proxy (leave-polymer-class-out CV within RadonPy, amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/) survived a pre-registered 2x-degradation refute bar at 1.80x, but that is NOT proof of transfer to a genuinely independent density corpus/chemistry.",
+      "module": "amphora-molecule-property",
+      "qualifying_dataset_requirements": "candidate_source: An independent experimentally-measured or independently-MD-simulated polymer density dataset disjoint from RadonPy PI1070 (Fujimoto et al. 2023). Candidate routes: (1) PoLyInfo (NIMS) polymer density records if a redistribution-rights-cleared export can be obtained; (2) Bicerano 2002 Ch. 3 published density group-contribution table + worked examples (would need per-polymer literature density values, not just the GC formula, to serve as an eval set); (3) a second RadonPy-style or NIST polymer-property MD dataset if one exists with a different force-field/simulation protocol, to test simulation-protocol transfer even if not experimental. | next_action: Human to identify and rights-clear a second polymer-density corpus (PoLyInfo or equivalent), then re-run this fires leave-class-out attack script pattern as a literal train-corpus-A/test-corpus-B cross-corpus test for density, matching the rigor already achieved for Tg (OpenPoly<->Polyuniverse Epoxy, this same fire) and dielectric (OpenPoly<->RadonPy, prior fire). | license_verified: False | url_or_doi: https://polymer.nims.go.jp/ (PoLyInfo, rights TBD); Bicerano J. (2002) Prediction of Polymer Properties, 3rd ed., ISBN 0-8247-0712-0, Ch. 3",
+      "row_id": "Q09",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 9,
+        "queue_line_sha256": "16b7d16445adc85034f024394886e50721a9c31c894965ff68713413465b3060"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: Unknown pending identification/rights review",
+      "minimum_n": "Unknown pending identification; need enough independent experimental eps_s values to either validate a longer RadonPy re-run or replace it as ground truth for a meaningful fraction of the 1077-polymer population",
+      "missing_measurement_or_label_class": "C8 fire 1 found that RadonPy PI1070s static_dielectric_const column (the ONLY molecular-dipole-moment source in this module, via qm_dipole_monomer, and 79% of the shipped mixed-openpoly-radonpy-dielectric-conformal-kpi combined population) violates the model-independent thermodynamic inequality eps_static >= eps_infinity = n_measured^2 (Frohlich 1949 Ch.2) in 962/1075 = 89.5% of rows, vs 0/295 violations in OpenPolys own internally-consistent DFT eps_Total>=eps_Electronic decomposition. This means the shipped dielectric-constant ML KPI is trained/scored against a majority thermodynamically-invalid ground truth for its dominant data source, and a physics-vs-ML dielectric comparison built against it (Onsager 1936, ported from the frozen redteam-audit dielectric-constant-onsager-ccby-v1 benchmark) cannot honestly distinguish physics error from label error.",
+      "module": "amphora-molecule-property",
+      "qualifying_dataset_requirements": "candidate_source: An experimentally-measured (not short-trajectory MD fluctuation-formula) polymer static dielectric constant dataset, OR a RadonPy re-simulation with production-length trajectories sufficient for dipole-fluctuation-formula convergence (literature guidance: nanosecond-scale, box-size-dependent). Candidate routes: (1) PoLyInfo (NIMS) polymer dielectric-constant records if redistribution rights can be cleared; (2) contact RadonPy/PI1070 authors (Fujimoto et al. 2023) re: simulation length used for static_dielectric_const and whether a longer/converged re-run exists; (3) CRC Handbook / Bicerano 2002 Ch.11 tabulated experimental polymer dielectric constants as a small but rights-clean validation set. | next_action: Human to (a) confirm with RadonPy/PI1070 authors whether static_dielectric_const used production-converged trajectories, and (b) identify a rights-clean experimental dielectric-constant reference set to cross-check the 89.5%-violation finding in amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v1/c8_phys_ml_stack_comparison_receipt.v1.json before the shipped ML KPI is presented as a validated dielectric predictor. | license_verified: False | url_or_doi: https://polymer.nims.go.jp/ (PoLyInfo, rights TBD); RadonPy GitHub (github.com/RadonPy/RadonPy) simulation-protocol docs",
+      "row_id": "Q10",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 10,
+        "queue_line_sha256": "4b19997a3f357d3854689a2a6f854dcf627a307484d438510984f66ab41f152a"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: OpenPoly benchmark dataset license terms per upstream repo (already relied on elsewhere in this module for Tg/RI/dielectric ML baselines); density-specific availability unconfirmed",
+      "minimum_n": "Up to 741 OpenPoly polymers if a density field exists upstream that was not included in this modules current CSV export",
+      "missing_measurement_or_label_class": "C8 fire 1 found OpenPoly (Ma et al. 2023, 741 polymers) has NO density column anywhere in the raw CSV (final_polymer_properties_fromliterature.csv, 32 columns, confirmed by header inspection), which blocks the Lorentz-Lorenz refractive-index physics arm and (compounded) the Onsager dielectric physics arm from ever running on the OpenPoly half of the mixed-openpoly-radonpy population the shipped RI and dielectric ML KPIs train/evaluate on. RadonPy PI1070 has real MD-simulated density, so RI/dielectric physics in this module is currently RadonPy-only by data availability, not by choice.",
+      "module": "amphora-molecule-property",
+      "qualifying_dataset_requirements": "candidate_source: An OpenPoly-matched or literature polymer density source keyed to the same PSMILES/Name identifiers as final_polymer_properties_fromliterature.csv. Candidate routes: (1) the OpenPoly source repository (github.com/TheJacksonLab/OMG_PhysicalProperties) may have a fuller property table with density not included in this modules current CSV export -- re-check upstream; (2) Bicerano 2002 Ch.3 published density group-contribution table (already partially reused elsewhere in this module for RadonPy VK density) applied honestly to OpenPoly as a documented ESTIMATE, not a measurement, with reduced-confidence flagging; (3) PoLyInfo (NIMS) if rights-cleared. | next_action: Human to re-check the OpenPoly upstream repository for a density field not currently present in this modules feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv, or approve use of the VK group-contribution density ESTIMATE (already validated elsewhere in this module, MAE 0.13 g/cm3 on RadonPy) as a documented lower-confidence proxy for OpenPoly RI/dielectric physics arms in a future C8 fire. | license_verified: False | url_or_doi: https://github.com/TheJacksonLab/OMG_PhysicalProperties",
+      "row_id": "Q11",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 11,
+        "queue_line_sha256": "959c6730cdbb54650378850796d0f596e97aecb1605e81586709270676286b63"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: Unknown pending identification; MDPI articles are CC BY 4.0 by default so any supplementary data files found there would already be rights-clean",
+      "minimum_n": "Unknown pending identification; need at minimum ~5-8 phi points spanning a meaningful range (e.g. 0.05-0.40 volume fraction) at one temperature to fit/benchmark Krieger-Dougherty phi_max and intrinsic viscosity",
+      "missing_measurement_or_label_class": "C9 fire 1 benchmarked HERSCHEL_BULKLEY against a real CC-BY 4.0 epoxy-coating dataset (Amorim et al. 2021, SN Applied Sciences 3:236, doi:10.1007/s42452-021-04247-7), but KRIEGER_DOUGHERTY (src/lib.rs:1208, pigment/filler volume-fraction crowding viscosity) remains completely unbenchmarked in-tree. reference/rheology/source-landscape.v1.json already records the KD 1959 primary theory paper itself as CONTEXT_ONLY/LINK_ONLY_METHOD_ANCHOR (not eligible for derivatives) -- but that is the theory paper, not a data need. What is missing is an independent EXPERIMENTAL dataset of relative/apparent viscosity vs pigment or filler volume fraction (phi) at a known/fitted maximum packing fraction (phi_max), ideally for an in-scope epoxy-amine coating system (TiO2, CaCO3, talc, mica, silica, or zinc-dust filled epoxy). An extensive open-literature sweep this fire (MDPI Coatings/Polymers, RSC Advances, ACS Omega, Scientific Reports, Frontiers, SN Applied Sciences, arXiv) found qualitative discussion and phi_max theory but no rights-clean numeric eta-vs-phi table for an epoxy/coating pigment system.",
+      "module": "amphora-viscosity-score",
+      "qualifying_dataset_requirements": "candidate_source: Targeted search directions not yet exhausted: (1) MDPI Coatings/Polymers/Materials supplementary-information CSV/XLSX files (often contain raw eta-vs-loading tables even when the main text only shows a figure) -- check supplementary materials of zinc-rich epoxy primer papers (e.g. Coatings 12(10):1473, doi:10.3390/coatings12101473, which discusses zinc dust content but was not confirmed to contain a digitizable viscosity table -- MDPI page returned 403 to automated fetch this fire, needs a direct browser check); (2) Zenodo/Figshare dataset search for \"epoxy filler viscosity\" or \"pigment volume concentration rheology\" raw-data deposits (CC-BY/CC0 data papers, not just article PDFs); (3) ASTM D2196/D562 Krebs-Unit rheogram round-robin or reference-material data if a rights-clean public copy exists (the astm-d562/astm-d4400 entries in source-landscape.v1.json are PURCHASE_REQUIRED_NO_REDISTRIBUTION, so this is a dead end without a human purchase); (4) contact authors of relevant filled-epoxy rheology papers (e.g. Amorim et al. 2021, already CC-BY-cleared for HB) for a possible companion pigment-loading dataset. | next_action: Human (or a future cron fire with more search budget) to check MDPI Coatings 12(10):1473 supplementary files directly via browser (automated fetch got HTTP 403), and to run a Zenodo/Figshare dataset-specific search for epoxy or coating pigment-loading rheology raw data, since article-text search this fire surfaced discussion but not digitizable numeric eta-vs-phi tables. | license_verified: False | url_or_doi: https://doi.org/10.3390/coatings12101473 (zinc-rich epoxy primer, needs supplementary-file check); https://www.mdpi.com/search (Coatings/Polymers journals, CC BY 4.0 by default); https://zenodo.org and https://figshare.com (dataset search)",
+      "row_id": "Q12",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 12,
+        "queue_line_sha256": "5d21948f0f762cac5fdedc93a4d3b50300521ff330548f94f503f9877d4a1476"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: CC BY-NC-ND (Creative Commons Attribution-NonCommercial-NoDerivs) -- confirmed verbatim from the article's own copyright line, page 1. NOT CC BY.",
+      "minimum_n": "Unknown exact point count pending extraction (blocked); abstract/body indicate a multi-point Phi sweep across mono- and polydisperse conditions, multiple shear rates and at least 2 temperatures, almost certainly >8 phi points once digitized.",
+      "missing_measurement_or_label_class": "C9 fire 2: located a genuine eta-vs-phi Krieger-Dougherty dataset (Reynolds, Unterhalter, Francoeur, Bortner & Raeymaekers 2024, Advanced Engineering Materials 26(10):2301630, doi:10.1002/adem.202301630, via a Virginia Tech VTechWorks OA repository copy at https://hdl.handle.net/10919/140523) -- a UV-cure photopolymer resin (model system) filled with rigid glass microspheres, sweeping particle volume fraction Phi with an explicit Krieger and Dougherty (1959) fit and a cited maximum-packing-fraction bound (Phi_m ~= 0.54). This is exactly the KRIEGER_DOUGHERTY (src/lib.rs:1208) benchmark input the module needs, but it is rights-blocked, not missing.",
+      "module": "amphora-viscosity-score",
+      "qualifying_dataset_requirements": "candidate_source: Reynolds et al. 2024, Advanced Engineering Materials (Wiley-VCH), Editor's Choice article. Full text confirmed via pdftotext extraction of the VTechWorks PDF. | next_action: Human rights/legal review needed on two independent questions: (1) does CC BY-NC-ND permit an internal, non-distributed, AUDIT_ONLY quantitative benchmark receipt built from extracted data points (arguably fact-extraction, not adaptation of the article's expression), and (2) does 'non-commercial' cover an internal engineering audit trail inside a commercial coating-IP portfolio. If either is cleared, a follow-up C9 fire (3rd/final) can digitize the eta(phi) data from the PDF (tables/figures) and benchmark KRIEGER_DOUGHERTY against it. Alternative: contact the corresponding authors directly for explicit permission or a pointer to a more permissively licensed underlying dataset deposit. Also still open from fire 1/2: RSC Advances 5/62/50073 (bimodal silica nanospheres, silica-epoxy rheology) and De Gruyter 10.3139/217.3338 (glass microsphere epoxy rheology, explicit phi_max/critical-filler-load discussion) both returned HTTP 403/405 to automated fetch this fire and need a human browser check for content + license. | license_verified: True | url_or_doi: https://doi.org/10.1002/adem.202301630 ; OA copy: https://hdl.handle.net/10919/140523 ; corresponding authors mbortner@vt.edu, bart.raeymaekers@vt.edu",
+      "row_id": "Q13",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 13,
+        "queue_line_sha256": "bbe09e74ba94411c240f65a5e13b16c3f120fae37f9dfa6363bfbff91bea80f8"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "NO_FORMAL_MEASUREMENT_STANDARD_NAMED_IN_SOURCE_GAP_TEXT | source license/rights context: US Federal Government work, public domain (17 U.S.C. 105)",
+      "minimum_n": "~306 existing summary rows x ~40-60 frequency decades-points each => ~12k-18k complex impedance points across 6 coating systems x 4 baths x ~70 dates (unchanged from original ask; scope note only)",
+      "missing_measurement_or_label_class": "ESCALATION (campaign item C10, consolidating 4 signed audit verdicts against USBR-21019): the frequency-resolved EIS ask (queue entry sha256 c8a3902f7855e8c27c4e6698c40dda1d163c4a6c7d6c3dae1db83c6699724aa2, filed to unlock Brasher-Kingsbury-admissible water-uptake work after H0_REFUTED on 6/6 physical screens) is now ALSO the unlock for two further stalled capabilities discovered by subsequent audits on the same 6-system/4-bath single-frequency (0.01 Hz) USBR-21019 summary: (a) eis-reproducibility-discrimination-power-v1 found within-instrument EIS discrimination among the 6 coating systems is NOT established at the observed within-bath effect size (p=0.2554); closing this at a single frequency requires ~90 independent coating systems (vs ~11 under the optimistic aggregate effect), which is impractical -- frequency-resolved KK-validated spectra are the stated alternative unlock. (b) multi-instrument-concordance-v1 found 3-instrument (EIS/rustcreep/adhesion) concordance WEAK_OR_NULL (Kendall W=0.492, p=0.194-0.202) at n=6, needing ~12-20 systems OR frequency-resolved spectra to power a rank. All three blocked capabilities (water-uptake, within-instrument discrimination, multi-instrument concordance) share one root cause -- USBR-21019 published only a single 0.01 Hz |Z|,phase summary -- and one unlock: the underlying full-sweep Z prime(f), Z double-prime(f) spectra USBR almost certainly retained. This is a priority escalation of an existing ask, not a new source.",
+      "module": "amphora-public-corrosion-benchmark",
+      "qualifying_dataset_requirements": "candidate_source: Same as queue entry sha256 c8a3902f7855e8c27c4e6698c40dda1d163c4a6c7d6c3dae1db83c6699724aa2: USBR RISE full-sweep EIS spectra behind project 21019 / catalog item 8048 (public domain, 17 U.S.C. 105, rights basis already cleared and in-scope). Escalated priority: this single acquisition would unlock 3 of the module's 4 stalled coating-side audit capabilities simultaneously. | next_action: Human: escalate the existing RISE data request (queue sha256 c8a3902f7855e8c27c4e6698c40dda1d163c4a6c7d6c3dae1db83c6699724aa2) citing that it now blocks 3 named capabilities (water-uptake admissibility, within-instrument discrimination at n=6, multi-instrument concordance at n=6), not 1, per this consolidation. Reference amphora-public-corrosion-benchmark/evidence/phase0/kpis/audit-verdicts-consolidated-kpi.v1.json. | license_verified: True | url_or_doi: https://data.usbr.gov/catalog/8048 (RISE project 21019, item 8048; contact publisher Bureau of Reclamation, author B. Baumgarten, pub. 2024-09-11)",
+      "row_id": "Q14",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "path": "data-acquisition-queue.jsonl (xbabe1, mirrored read-only into this item's work/ as data-acquisition-queue.snapshot.jsonl)",
+        "queue_line_index_1based": 14,
+        "queue_line_sha256": "db9c45f3ae60730381be3fd53b6a2a4bd296afcdb02f9ce0e969d91cc219eb50"
+      },
+      "source_type": "data_acquisition_queue_ask"
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): Blinded four-track independent-panel comparison with Kendall tau >= 0.5 and superiority over solids-only and PVC-only hostile nulls; Phase 2 repeats with separate material lots and a separate laboratory. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE (qualitative target only: a blinded four-track panel; no numeric minimum panel/system count is stated in mission.md)",
+      "missing_measurement_or_label_class": "primary KPI: blinded Kendall tau at metrics.barrier_index. external dependency/delay stated in mission.md: Independent blinded corrosion panels and four-track comparison data.",
+      "module": "amphora-barrier-corrosion-score",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: Blinded four-track independent-panel comparison with Kendall tau >= 0.5 and superiority over solids-only and PVC-only hostile nulls; Phase 2 repeats with separate material lots and a separate laboratory. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B01",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-barrier-corrosion-score/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): At least 10 genuinely external complete rows with no family/source overlap, at least 80% within 1.5x, and at least 10-point baseline lift; promotion also requires multi-temperature CRO batches. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "10 genuinely external complete gel-time rows (no family/source overlap) plus 36 independently mixed owned coating pot-life CRO runs",
+      "missing_measurement_or_label_class": "primary KPI: within-1.5x rate at metrics.unseen_benchmark. external dependency/delay stated in mission.md: Genuinely external complete gel-time rows and multi-temperature CRO batches; thirty-six independently mixed, owned coating pot-life runs plus packet-bound independent review.",
+      "module": "amphora-cure-potlife-gate",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: At least 10 genuinely external complete rows with no family/source overlap, at least 80% within 1.5x, and at least 10-point baseline lift; promotion also requires multi-temperature CRO batches. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B02",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-cure-potlife-gate/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE (no numeric minimum study/series count stated in mission.md for the Phase-1 locked benchmark)",
+      "missing_measurement_or_label_class": "primary KPI: held-study directional accuracy at metrics.directional_score. external dependency/delay stated in mission.md: Eligible primary-study series with locked extraction and subgroup identifiers.",
+      "module": "amphora-design-rule-score",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B03",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-design-rule-score/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE (no numeric minimum record count stated in mission.md)",
+      "missing_measurement_or_label_class": "primary KPI: active ingredient coverage at metrics.ingredient_count. external dependency/delay stated in mission.md: Current supplier TDS/SDS/CoA records with grade, rights, and issuer binding.",
+      "module": "amphora-ingredient-library",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B04",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-ingredient-library/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE; NOTE this blocker is predominantly a counsel/legal-service dependency, not a pure dataset -- included per the directive's literal 'promotion blocker names a missing dataset or measurement class' test because 'current jurisdictional search' and 'claim charts' are themselves label/measurement classes (patent-landscape records), flagged here rather than silently dropped",
+      "missing_measurement_or_label_class": "primary KPI: unresolved category coverage at metrics.unresolved_technical_categories. external dependency/delay stated in mission.md: Qualified patent counsel, current jurisdictional search, and claim charts.",
+      "module": "amphora-ip-fto-guard",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B05",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-ip-fto-guard/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): At least 99% validity, 95% uniqueness, deterministic lineage, scaffold-held-out controls, and expert/synthesis-feasibility noninferiority before prospective closed-loop superiority is tested. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE as a row/sample count; rate targets only (>=99% validity, >=95% uniqueness) with no stated denominator size",
+      "missing_measurement_or_label_class": "primary KPI: chemical validity at metrics.generated_count. external dependency/delay stated in mission.md: Scaffold-held-out benchmark, expert review, and synthesis-feasibility controls.",
+      "module": "amphora-molecule-generator",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: At least 99% validity, 95% uniqueness, deterministic lineage, scaffold-held-out controls, and expert/synthesis-feasibility noninferiority before prospective closed-loop superiority is tested. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B06",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-molecule-generator/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE (no numeric minimum corpus size stated in mission.md)",
+      "missing_measurement_or_label_class": "primary KPI: novelty score at objective_values.novelty_score. external dependency/delay stated in mission.md: Frozen owned comparison corpus plus patent and synthesis review.",
+      "module": "amphora-molecule-novelty",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B07",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-molecule-novelty/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE at the mission-level gate (module-internal KPIs elsewhere in this module do carry numeric n, e.g. the AHEW TDS asks in Q01, but the headline Phase-1 promotion gate itself states no numeric minimum)",
+      "missing_measurement_or_label_class": "primary KPI: known-answer accuracy at metrics.property_results. external dependency/delay stated in mission.md: Independent defined-molecule controls and measured commercial-grade EEW/AHEW.",
+      "module": "amphora-molecule-property",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B08",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-molecule-property/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE (no numeric minimum label count stated in mission.md)",
+      "missing_measurement_or_label_class": "primary KPI: role-fit benchmark pass at objective_values.role_fit. external dependency/delay stated in mission.md: Independent expert role labels and candidate-bound grade evidence.",
+      "module": "amphora-molecule-role-ranker",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B09",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-molecule-role-ranker/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): At least 30 independent systems, including 10 locked external systems; at least 10 percentage-point baseline lift with paired 95% confidence lower bound above zero. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "30 independent coating systems, of which at least 10 must be locked external systems",
+      "missing_measurement_or_label_class": "primary KPI: paired baseline lift at metrics.unseen_benchmark. external dependency/delay stated in mission.md: At least 30 independent systems including 10 locked external systems.",
+      "module": "amphora-public-corrosion-benchmark",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: At least 30 independent systems, including 10 locked external systems; at least 10 percentage-point baseline lift with paired 95% confidence lower bound above zero. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B10",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-public-corrosion-benchmark/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): At least 30 formulations across families and three temperatures; external KU MAE <= 5 KU and sag balanced accuracy >= 0.80. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "30 formulations x 3 temperatures = 90 measured Krebs-Unit viscosity readings minimum",
+      "missing_measurement_or_label_class": "primary KPI: external KU MAE at metrics.class_anchor_ku_proxy. external dependency/delay stated in mission.md: At least 30 measured formulations across families and three temperatures.",
+      "module": "amphora-viscosity-score",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: At least 30 formulations across families and three temperatures; external KU MAE <= 5 KU and sag balanced accuracy >= 0.80. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B11",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-viscosity-score/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    },
+    {
+      "measurement_standard": "locked promotion-gate target (mission.md '## KPI register and promotion gates'): Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. | split discipline stated module-wide: group/time/source-safe splits, computed values labeled computed, candidate evidence kept separate from public context, subgroup reporting and calibrated intervals required wherever the locked KPI is empirical.",
+      "minimum_n": "NOT_SPECIFIED_IN_SOURCE (no numeric minimum declaration/lot count stated in mission.md)",
+      "missing_measurement_or_label_class": "primary KPI: evidence question accuracy at gates.sourceability_status. external dependency/delay stated in mission.md: Current candidate- and issuer-bound supplier declarations and lot evidence.",
+      "module": "amphora-sourceability-ehs",
+      "qualifying_dataset_requirements": "Must satisfy the locked target verbatim: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1. Must be genuinely external (no family/source overlap with training/reference data already held), group/time/source-safe split-compatible, and either a named-standard/expert-CRO/primary-literature/simple-physical/hostile-null baseline comparator per the module's stated promotion discipline, or the raw measurement rows a comparator would be built from.",
+      "row_id": "B12",
+      "snapshot_date": "2026-08-10",
+      "source_ref": {
+        "operational_readiness_field": "read directly from mission.md front-matter this fire",
+        "path": "amphora-sourceability-ehs/docs/mission.md, section '## KPI register and promotion gates'",
+        "phase_at_snapshot": "PRE_PHASE_0"
+      },
+      "source_type": "pre_tier0_promotion_blocker+lab_in_the_loop_spec",
+      "source_type_note": "Collapsed: this module's own locked promotion-gate target text is the only lab-in-the-loop experiment specification referencing an external corpus/comparator/label source currently published anywhere in the tree for this module (verified by a full-tree search this fire for a distinct test-plan/protocol document; none found outside mission.md and the generic evidence/phase0/promotion/policy.v1.json gate-name lists, which carry no dataset-specific content)."
+    }
+  ],
+  "schema": "amphora.dataset-recon.gap-register.v1",
+  "snapshot_date": "2026-08-10"
+}

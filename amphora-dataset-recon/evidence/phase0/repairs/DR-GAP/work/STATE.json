@@ -1,0 +1,19 @@
+{
+  "schema": "amphora.dataset-recon.dr-gap-state.v1",
+  "campaign_item_id": "DR-GAP",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260810T050001-1454665-a2c9f114184d",
+      "date": "2026-08-10",
+      "action": "Built gap-register.v1.json from the 4 declared source categories (14 data-acquisition-queue asks; Pre-Tier-0 promotion blockers; lab-in-the-loop specs collapsed into the blocker rows, declared; MODELED/ASSUMED recipe elements, empty set, declared). First build (25 rows) omitted amphora-sourceability-ehs. An independent from-scratch completeness checker (re-derives Pre-Tier-0 module set and queue-line set without trusting the builder) caught this and fired its refutation criterion -- genuine CLAIM_REFUTED finding. Repaired same fire (added row B12), rebuilt (26 rows), re-verified: checker no longer fires, two-replay byte-stability gate passes, and two planted-defect mutants (deleted row; blanked mandated fact) both correctly fire, proving the checker non-vacuous. Signed done receipt with the full corrected register embedded in the DSSE payload; independently re-verified signature against the pinned trust store in a separate process.",
+      "outcome": "CLAIM_REFUTED",
+      "done_criterion_met": true,
+      "done_receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-GAP/done/dr-gap-receipt.v1.dsse.json",
+      "gap_register_final_row_count": 26,
+      "notes_for_next_fire": "If DR-GAP gets a 2nd/3rd fire for any reason: (1) do NOT re-litigate the 12 Pre-Tier-0 modules or 14 queue asks already covered here -- extend, don't repeat; (2) DR-FRESH's run-2 obligation is to fold CF-TIER's later MODELED/ASSUMED recipe-element deltas into a SUPERSEDING register revision once a Candidate Formulation Package exists (none exists yet as of this fire); (3) 8 of 12 promotion-blocker rows honestly carry minimum_n=NOT_SPECIFIED_IN_SOURCE because the underlying mission.md gate states no numeric threshold -- that is a portfolio-level gap (each such module's promotion policy lacks a stated minimum n), not a register defect, and could itself be filed as an engine-identified gap per directive Section 3's fifth bullet in a future fire if useful."
+    }
+  ],
+  "max_fires": 3,
+  "fires_used": 1
+}

@@ -1,0 +1,149 @@
+{
+  "applicability_domain": {
+    "edge_fraction_used": 0.2,
+    "edge_row_leverages_desc": [
+      0.20409278362231573,
+      0.15125883435147153,
+      0.14081603911971294,
+      0.1338047565211533,
+      0.13003056302317206,
+      0.11263672112315512,
+      0.11159545110235483,
+      0.11155264099106446,
+      0.11066918930123255,
+      0.10995240974674787,
+      0.10942511046606383,
+      0.10927580862146656
+    ],
+    "k_edge": 12,
+    "k_interior": 46,
+    "max_leverage_observed": 0.20409278362231573,
+    "method": "OLS hat-matrix leverage (Hoaglin & Welsch 1978); Williams-plot / leverage-approach AD (Gramatica 2007 QSAR Comb. Sci. 26(5):694-701)",
+    "min_leverage_observed": 0.026839584887995798,
+    "n_rows_above_williams_threshold": 0,
+    "note_williams_threshold_vacuous": true,
+    "p_params_incl_intercept": 5,
+    "williams_plot_threshold_3p_over_n": 0.25862068965517243
+  },
+  "attack_axis": "edge-of-envelope / applicability-domain extrapolation (leverage-ranked held-out split), orthogonal to the prior four attacks' axes (test-resample CI, train-refit CI, cluster-count FPR calibration, post-hoc arm-selection winners-curse), all of which only ever scored within-DoE-envelope held-out rows",
+  "attacks_claim": "amphora-design-rule-score/evidence/phase0/kpis/purformance-scratch-hardness-dedup-superseding-kpi.v1.json :: guth_gold_directional_concordance_exceeds_chance_leak_free",
+  "attacks_parent_receipts": [
+    "benchmarks/split-integrity-dedup-v1/split-integrity-deduplication-receipt.v1.json",
+    "benchmarks/guth-gold-nested-refit-bootstrap-v1/guth-gold-nested-refit-bootstrap-receipt.v1.json",
+    "benchmarks/cluster-count-coverage-calibration-v1/cluster-count-coverage-calibration-receipt.v1.json",
+    "benchmarks/selection-effect-winners-curse-v1/selection-effect-winners-curse-receipt.v1.json"
+  ],
+  "claim_refuted": false,
+  "claim_scope": "Statistical-methodology audit only (applicability-domain / extrapolation robustness of a single already-surviving significance claim), restricted to the Purformance HTE 2K-PUR lacquer scratch-hardness leak-free 58-observation benchmark, normalized feature domain [0,1]^4. Does not modify or delete any prior receipt; reports whether the module's surviving significance claim generalizes to a genuinely unseen region of feature space, which the prior four attacks never tested. Grants no batch-release, qualification, optimizer, or product-performance authority. n=58 leak-free observations from a single formulator and a single instrument; a single rank-based interior/edge split (not cross-validated over multiple edge definitions beyond the reported sensitivity check); Phase-1 would still require a cross-formulator dataset and independent wet-lab validation.",
+  "claim_survives_this_attack": true,
+  "criterion_a_test_resample_ci_refutes": false,
+  "criterion_b_train_refit_ci_refutes": false,
+  "features": [
+    "Vernetzung",
+    "HDI-IPDI",
+    "Mattierungsmittel",
+    "Pigmentpaste"
+  ],
+  "honest_interpretation": "EDGE-OF-ENVELOPE / APPLICABILITY-DOMAIN EXTRAPOLATION ATTACK on guth_gold_directional_concordance_exceeds_chance_leak_free. All four prior attacks (test-resample CI, train-refit CI, cluster-count FPR calibration, winners-curse selection-stability) score the model only on held-out rows that remain inside the same DoE envelope as training. This attack instead identifies the 12/58 unique leak-free rows with the highest OLS hat-matrix leverage (top 20% by leverage, k=12, chosen a priori) as an extrapolation zone, refits Guth-Gold from scratch on the 46 interior rows only, and scores directional concordance exclusively on the 12 held-out edge rows (n_pairs=63 after excluding tied targets) -- a genuinely harder, previously untested regime that matches design-rule-score's actual use case of ranking NOVEL (out-of-envelope) candidates. DATA FACT: the classical Williams-plot threshold h*=3p/n=0.2586 admits ZERO of the 58 rows (max observed leverage 0.2041) -- this DoE is unusually leverage-uniform, so the split is rank-based (top-quintile) rather than threshold-based; this is reported, not concealed. POINT ESTIMATE on the extrapolation set: Guth-Gold C=0.8095 (vs constant-mean chance-equivalent B0 C=0.5000, linear-4-feature C=0.7302, fit-free Rule-1 C=0.6190); Guth-Gold remains the strongest arm out-of-envelope. UNCERTAINTY: (a) test-resample bootstrap (B=10000) 95% CI [0.6226, 0.9661]; (b) train-refit bootstrap (B=10000, propagating estimation uncertainty from the 5-parameter nonlinear fit on the interior data, 0/10000 fit failures) 95% CI [0.6349, 0.8571]. Both lower bounds exceeds 0.5 (chance): REFUTATION CRITERION criterion_a=False (CI_a lower<=0.5), criterion_b=False (CI_b lower<=0.5). VERDICT: claim SURVIVED this attack. SENSITIVITY (diagnostic, not part of the pre-registered criterion): point concordance stays clearly above chance across alternative edge fractions 15%/25%/30% (0.7714/0.7586/0.7769). POSITIVE CONTROL (planted defect = full target vector y permutation-shuffled once before interior/edge split and refit, identical pipeline otherwise): shuffled train-refit-bootstrap 95% CI [0.3864, 0.6061], lower bound does not exceed (control collapsed as required) 0.5 -- the identical machinery that reports Guth-Gold stable and significant out-of-envelope on real labels correctly reports chance-level performance on labels with the true relationship destroyed, so the real-data survival is not an artifact of a test that always passes.",
+  "input_zip_matches_locked_dataset_fixture": true,
+  "input_zip_sha256": "b6e89fe900b1aaf73beb882eeb07dfaf702e0818c9f443de6e84aaa8e32b0036",
+  "license": "CC-BY-4.0 (dataset)",
+  "n_observations_total": 58,
+  "point_estimates": {
+    "concordance_C": {
+      "B0_constant_mean": 0.5,
+      "B2_linear_all_4_features": 0.7301587301587301,
+      "D1_rule1_vernetzung_fitfree": 0.6190476190476191,
+      "P1_guth_gold_refit_on_interior": 0.8095238095238095
+    },
+    "guth_gold_fit_converged": true,
+    "guth_gold_theta": [
+      11.589047997801437,
+      0.1842658624427504,
+      0.021899215225975988,
+      0.1045206115265824,
+      3.0963561007467835e-17
+    ],
+    "n_pairs_edge_after_tie_exclusion": 63,
+    "parent_receipted_C_loio": 0.7111307420494699
+  },
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "shuffled_ci_excludes_chance": false,
+      "shuffled_point_estimate_C": 0.5833333333333334,
+      "shuffled_train_refit_bootstrap_ci95": [
+        0.38636363636363635,
+        0.6060606060606061
+      ]
+    },
+    "how_planted": "y_shuf = y.copy(); np.random.default_rng(0).shuffle(y_shuf); identical interior/edge index split and train-refit-bootstrap pipeline re-run on y_shuf in place of y",
+    "planted_defect": "full 58-row target vector y permutation-shuffled once (np.random.default_rng(0).shuffle) before the interior/edge leverage split and Guth-Gold refit"
+  },
+  "refutation_criterion": "guth_gold_directional_concordance_exceeds_chance_leak_free is REFUTED under this attack if EITHER the test-resample bootstrap 95% CI lower bound OR the train-refit bootstrap 95% CI lower bound is <= 0.5 (chance) on the held-out leverage-extrapolation set. Survives only if BOTH lower bounds exceed 0.5.",
+  "schema": "amphora.design-rule-score.applicability-domain-leverage-extrapolation-receipt.v1",
+  "sensitivity_alternate_edge_fractions_diagnostic_only": {
+    "edge_fraction_0.15": {
+      "concordance_C": 0.7714285714285715,
+      "fit_converged": true,
+      "k_edge": 9,
+      "n_pairs": 35
+    },
+    "edge_fraction_0.25": {
+      "concordance_C": 0.7586206896551724,
+      "fit_converged": true,
+      "k_edge": 14,
+      "n_pairs": 87
+    },
+    "edge_fraction_0.3": {
+      "concordance_C": 0.7769230769230769,
+      "fit_converged": true,
+      "k_edge": 17,
+      "n_pairs": 130
+    }
+  },
+  "target": "Kratzh\u00e4rte",
+  "target_unit": "N (Erichsen 435 nano-scratch)",
+  "test_resample_bootstrap": {
+    "ci95": [
+      0.6226415094339622,
+      0.9661016949152542
+    ],
+    "excludes_chance": true,
+    "interval": "95% percentile",
+    "method": "Efron-Tibshirani 1993 percentile bootstrap, resample edge rows w/ replacement, fixed fit",
+    "resamples": 10000,
+    "rng": "np.random.default_rng(0)"
+  },
+  "theory_references": [
+    "Guth & Gold 1938 Phys. Rev. 53:322 (Einstein-Guth-Gold filler reinforcement)",
+    "Guth 1945 J. Appl. Phys. 16:20-25",
+    "Hoaglin & Welsch 1978 Am. Statistician 32(1):17-22 (hat-matrix leverage)",
+    "Gramatica 2007 QSAR & Comb. Sci. 26(5):694-701 (leverage approach to applicability domain / Williams plot)",
+    "Hanley & McNeil 1982 Radiology 143(1):29-36 (AUC = pairwise concordance)",
+    "Efron & Tibshirani 1993 An Introduction to the Bootstrap (percentile CI)",
+    "Kohavi 1995 IJCAI; Varma & Simon 2006 BMC Bioinformatics 7:91 (nested resampling)",
+    "Wicks, Jones, Pappas 2007 Organic Coatings 3rd ed. Wiley Ch. 24 (Rule 1 baseline)",
+    "Kaufman, Rosset, Perlich 2012 ACM TKDD 6(4):15 (leakage; motivates leak-free protocol)",
+    "Cordts, Sassmannshausen, Rendel, Klein, Reddemann, Berge 2024 Chem. Mater. (Purformance, Zenodo 13742098)"
+  ],
+  "toolkit": {
+    "numpy_version": "1.26.4",
+    "pandas_version": "2.1.4",
+    "python_version": "3.12.3",
+    "scipy_version": "1.16.3",
+    "sklearn_version": "1.7.2"
+  },
+  "train_refit_bootstrap": {
+    "ci95": [
+      0.6349206349206349,
+      0.8571428571428571
+    ],
+    "excludes_chance": true,
+    "fit_failures": 0,
+    "interval": "95% percentile",
+    "method": "Kohavi 1995 / Varma & Simon 2006 nested resampling: resample 46 interior rows w/ replacement, refit Guth-Gold from scratch, score fixed 12-row edge set",
+    "resamples": 10000,
+    "rng": "np.random.default_rng(0)"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "attack": {
+    "attack_refutes_claim": true,
+    "description": "known-answer fixture with a banned regulatory/qualification claim ('Product Qualified') placed ONLY in payload.title (narrative stays clean); self-signed with a fresh, deterministic adversary Ed25519 key so the self-derived key_id clause is satisfied",
+    "expected_per_mission_red_team_dossier": "REJECT",
+    "hostile_fixture": {
+      "payload": {
+        "authoritative": false,
+        "authority_lock": {
+          "fto_not_performed": true,
+          "no_optimizer_authority": true,
+          "no_patentability_authority": true,
+          "no_procurement_authority": true,
+          "no_product_performance_authority": true,
+          "no_qualification_authority": true,
+          "no_ranking_authority": true,
+          "no_regulatory_authority": true,
+          "no_release_authority": true,
+          "no_safety_authority": true
+        },
+        "canonical_hash_manifest": {
+          "known-answer-report.md": "019134cac8675ffd20dcb017b7289216c0f5aa9df65282b76872708ec4eb7531"
+        },
+        "decision_use_ceiling": "AUDIT_ONLY",
+        "fixture_id": "report-known-answer-001",
+        "fixture_only": true,
+        "narrative": [
+          "This package is a non-authoritative deterministic renderer fixture."
+        ],
+        "ranking_eligible": false,
+        "rendered_document": "# Product Qualified Marine Coating — Audit Package\n\nThis package is a non-authoritative deterministic renderer fixture.\n\nScore envelope SHA-256: `9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2`\n\n## Authority lock\n\n- `fto_not_performed`: `true`\n- `no_optimizer_authority`: `true`\n- `no_patentability_authority`: `true`\n- `no_procurement_authority`: `true`\n- `no_product_performance_authority`: `true`\n- `no_qualification_authority`: `true`\n- `no_ranking_authority`: `true`\n- `no_regulatory_authority`: `true`\n- `no_release_authority`: `true`\n- `no_safety_authority`: `true`\n\nScientific readiness: `UNVALIDATED`\nDecision use: `AUDIT_ONLY`\nRanking eligible: `false`\n",
+        "scientific_readiness": "UNVALIDATED",
+        "score_envelope_sha256": "9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2",
+        "score_envelopes": [
+          {
+            "authority_tier": "EVIDENCE_ONLY",
+            "candidate_id": "fixture-candidate",
+            "claim_locks": {
+              "no_ranking_authority": true
+            },
+            "module_id": "amphora-report-packager",
+            "ranking_eligible": false,
+            "score_semantics": "EVIDENCE_ONLY",
+            "status": "SCORED"
+          }
+        ],
+        "title": "Product Qualified Marine Coating — Audit Package"
+      },
+      "schema": "amphora.report-package-known-answer.v1",
+      "signature": {
+        "algorithm": "Ed25519",
+        "key_id": "report-fixture-932caa4b7e5cc9efa7166bb6850af7f6734fc663bdfe17010e9f139cd9ec7403",
+        "public_key_hex": "cad2cb4eee0299442ad70ea63f4e9b78e89d24c12bed62cd4613b185102d0956",
+        "signature_hex": "959d2d683a8c4b000e516e733e79cf1a9550a8d05594648de6e9a5dd3bf74494dd983af3780df3cec4afb8221e4dec37172b25976175cbf4a4aea94f9d38730f"
+      }
+    },
+    "hostile_fixture_narrative": [
+      "This package is a non-authoritative deterministic renderer fixture."
+    ],
+    "hostile_fixture_rendered_document_first_line": "# Product Qualified Marine Coating — Audit Package",
+    "hostile_fixture_title": "Product Qualified Marine Coating — Audit Package",
+    "narrative_clean": true,
+    "observed": "ACCEPT",
+    "title_trips_banned_claim_lexicon": true
+  },
+  "authority": "AUDIT_ONLY",
+  "calibration": {
+    "calibration_pass": true,
+    "expected": {
+      "forged-signature": "REJECT",
+      "normalized-banned-claim-narrative": "REJECT",
+      "score-envelope-mismatch": "REJECT",
+      "signed-known-answer": "ACCEPT",
+      "stripped-authority-lock": "REJECT"
+    },
+    "observed": {
+      "forged-signature": "REJECT",
+      "normalized-banned-claim-narrative": "REJECT",
+      "score-envelope-mismatch": "REJECT",
+      "signed-known-answer": "ACCEPT",
+      "stripped-authority-lock": "REJECT"
+    },
+    "purpose": "prove this oracle is the SAME implementation validated byte-exact against the live compiled runtime in live-runtime-diagnostic-parity-v1 (unmodified fixture_accepted/render_report/contains_banned_claim), not a weakened stand-in"
+  },
+  "claim_under_attack": "amphora-report-packager/evidence/audit/live-runtime-diagnostic-parity-v1/live-runtime-diagnostic-parity-receipt.v1.dsse.json :: g1_outcome_labels/g1_positive_control_count+g1_negative_control_count (report_fixture_accepted genuinely polices banned/overclaim content in a known-answer report fixture) AND docs/mission.md red-team dossier clause 'regulatory, supplier, procurement, qualification, or release overclaim. Every such case must fail closed or remain an explicit evidence gap.'",
+  "module_id": "amphora-report-packager",
+  "runtime_source_anchors": {
+    "assurance_diagnostics_rs_sha256_prior_receipt": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "assurance_diagnostics_rs_sha256_today": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "fixture_path": "amphora-report-packager/reference/mvp20/fixtures/known-answer-package.v1.json",
+    "fixture_sha256": "2cb9ef66221150fc392a8be1bc8570b13bc93804249df11937e426d2d02d333c",
+    "runtime_unchanged_since_prior_live_validation": true
+  },
+  "schema": "amphora.report-packager.title-overclaim-attack.v1",
+  "study_id": "report-fixture-title-overclaim-v1",
+  "verdict": "CLAIM_REFUTED"
+}

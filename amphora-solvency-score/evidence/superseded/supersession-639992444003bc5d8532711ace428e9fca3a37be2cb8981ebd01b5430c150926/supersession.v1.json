@@ -1,0 +1,30 @@
+{
+  "archive_root": "evidence/superseded/supersession-639992444003bc5d8532711ace428e9fca3a37be2cb8981ebd01b5430c150926",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "138b19d969d432478158dca953dc7a50d42278f5c22400919c4f347a3728326a",
+    "ip/disclosure-log.v1.json": "8917959eb968533314f7e214e1774dce825a030778cbcb5b2226947754047a0f",
+    "ip/prior-art.v1.json": "d5a9fc46b0d81c9381b1b203d40b8dbb2f9ed1b7312fa6e618ec9af15ff0b68f",
+    "ip/technical-dossier.v1.json": "13168ffcb815ddde634eb4bcbdcb691d4eeabe9c9c902948872c839128f1d5cc",
+    "phase0/benchmark/benchmark-lock.v1.json": "a6ed5b17ec7ce0bc164c8b22578a3162fe61e35ae4796727d5427d2b69cea70b",
+    "phase0/bundle.v1.json": "09ee5a20757f2ade07ab8873f25dec379b3d506cb0e84ffc09a8eed0a68bd64f",
+    "phase0/dataset/dataset-manifest.v1.json": "10ce9c79aa93159e169f067df38fa5ea9a85f29b156da0d6146302cc21565f78",
+    "phase0/kpis/solvency-hsp-kpi.v1.json": "87e2520d012c31207c70639e14295bb1c0621559c34ff5316d8e6384e8a8ba7c",
+    "phase0/promotion/policy.v1.json": "8d31fb6c8de30031dd66165e383d4e76db90ee0e9e1f088f59c718675941c78b",
+    "phase0/raw/SHA256SUMS": "88188cddb391ee41e2c3ed939254569a23ffb2a531e2b49e0638e3d8bdbca2cf",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "fa0824c753c7309f3bfce4e16aac89bd9ef8a3689dc202b79e061ed88fb8be4f",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/imports/benchmark.legacy-import.v1.json": "97fa89d672767a94427f9f412ee4e92656751c3369d9afacd8411a17042f7afc",
+    "phase0/sources/imports/source.legacy-import.v1.json": "e4a219a8156f4700bfccb318590a28fd2d6de6a7fb3f6a5967ad5917264eeed3",
+    "phase0/sources/imports/split.legacy-import.v1.json": "48b174964b9cb9c01b89425abc8a8f16f7a308624b7efdeacc83c3aa9f6f16cb",
+    "phase0/sources/source-lock.v2.json": "fcc742cf09c9ae1b202269913194000d9ac9a54e5b065edaec55fafa05fe164a",
+    "phase0/split/split-manifest.v1.json": "d1a71fa91c02da70cebce47b8d47b9e2ef339ecd9817ad110631fade905853df"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-solvency-score",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-639992444003bc5d8532711ace428e9fca3a37be2cb8981ebd01b5430c150926",
+  "unsigned_preparation_only": true
+}

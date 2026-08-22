@@ -1,0 +1,253 @@
+{
+  "attack": {
+    "attack_fires_count_of_3": 3,
+    "attack_refutes_claim": true,
+    "description": "three known-answer fixtures, each with a clean title and a narrative that adds TWO hostile lines: a banned phrase from the 8-item lexicon split at its internal word boundary across two consecutive narrative array elements, drawn from three different phrases; each self-signed with a fresh, deterministic adversary Ed25519 key",
+    "expected_per_mission_red_team_dossier": "REJECT",
+    "half_lines_trip_banned_claim_lexicon_individually": {
+      "A_first": false,
+      "A_second": false,
+      "B_first": false,
+      "B_second": false,
+      "C_first": false,
+      "C_second": false
+    },
+    "hostile_fixtures": {
+      "A": {
+        "payload": {
+          "authoritative": false,
+          "authority_lock": {
+            "fto_not_performed": true,
+            "no_optimizer_authority": true,
+            "no_patentability_authority": true,
+            "no_procurement_authority": true,
+            "no_product_performance_authority": true,
+            "no_qualification_authority": true,
+            "no_ranking_authority": true,
+            "no_regulatory_authority": true,
+            "no_release_authority": true,
+            "no_safety_authority": true
+          },
+          "canonical_hash_manifest": {
+            "known-answer-report.md": "e2621e90f4abf2940dc2909f364ee6bf49ff108aa7d9bd3c4be2b60b6b61f002"
+          },
+          "decision_use_ceiling": "AUDIT_ONLY",
+          "fixture_id": "report-known-answer-001",
+          "fixture_only": true,
+          "narrative": [
+            "This package is a non-authoritative deterministic renderer fixture.",
+            "Independent evaluation of this coating system confirms it is regulatory",
+            "compliant for marine anti-corrosion service under the stated envelope."
+          ],
+          "ranking_eligible": false,
+          "rendered_document": "# Known-answer audit package\n\nThis package is a non-authoritative deterministic renderer fixture.\nIndependent evaluation of this coating system confirms it is regulatory\ncompliant for marine anti-corrosion service under the stated envelope.\n\nScore envelope SHA-256: `9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2`\n\n## Authority lock\n\n- `fto_not_performed`: `true`\n- `no_optimizer_authority`: `true`\n- `no_patentability_authority`: `true`\n- `no_procurement_authority`: `true`\n- `no_product_performance_authority`: `true`\n- `no_qualification_authority`: `true`\n- `no_ranking_authority`: `true`\n- `no_regulatory_authority`: `true`\n- `no_release_authority`: `true`\n- `no_safety_authority`: `true`\n\nScientific readiness: `UNVALIDATED`\nDecision use: `AUDIT_ONLY`\nRanking eligible: `false`\n",
+          "scientific_readiness": "UNVALIDATED",
+          "score_envelope_sha256": "9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2",
+          "score_envelopes": [
+            {
+              "authority_tier": "EVIDENCE_ONLY",
+              "candidate_id": "fixture-candidate",
+              "claim_locks": {
+                "no_ranking_authority": true
+              },
+              "module_id": "amphora-report-packager",
+              "ranking_eligible": false,
+              "score_semantics": "EVIDENCE_ONLY",
+              "status": "SCORED"
+            }
+          ],
+          "title": "Known-answer audit package"
+        },
+        "schema": "amphora.report-package-known-answer.v1",
+        "signature": {
+          "algorithm": "Ed25519",
+          "key_id": "report-fixture-4e4503061d3e2e4ba8d395ccd3c2d141dd30de68f81a055eb41514e5ef75e981",
+          "public_key_hex": "f9803920684e324289066f2929092342d859a8a6c83152e576e89b819fbd673b",
+          "signature_hex": "afdd6d6667fdfb8d027d7bdeb09df67bd15792f7b9cba01ce00f340e240f68dcd072553494f2cc6d374b716f0793e6909730c152fda1f1b94f6d7c892657c603"
+        }
+      },
+      "B": {
+        "payload": {
+          "authoritative": false,
+          "authority_lock": {
+            "fto_not_performed": true,
+            "no_optimizer_authority": true,
+            "no_patentability_authority": true,
+            "no_procurement_authority": true,
+            "no_product_performance_authority": true,
+            "no_qualification_authority": true,
+            "no_ranking_authority": true,
+            "no_regulatory_authority": true,
+            "no_release_authority": true,
+            "no_safety_authority": true
+          },
+          "canonical_hash_manifest": {
+            "known-answer-report.md": "b81e6b19b345631dcffb20339ee616aea0ea985a8510db386e9d13482eb36678"
+          },
+          "decision_use_ceiling": "AUDIT_ONLY",
+          "fixture_id": "report-known-answer-001",
+          "fixture_only": true,
+          "narrative": [
+            "This package is a non-authoritative deterministic renderer fixture.",
+            "The customer-facing summary states the deliverable is procurement",
+            "ready for immediate release to the field trial program."
+          ],
+          "ranking_eligible": false,
+          "rendered_document": "# Known-answer audit package\n\nThis package is a non-authoritative deterministic renderer fixture.\nThe customer-facing summary states the deliverable is procurement\nready for immediate release to the field trial program.\n\nScore envelope SHA-256: `9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2`\n\n## Authority lock\n\n- `fto_not_performed`: `true`\n- `no_optimizer_authority`: `true`\n- `no_patentability_authority`: `true`\n- `no_procurement_authority`: `true`\n- `no_product_performance_authority`: `true`\n- `no_qualification_authority`: `true`\n- `no_ranking_authority`: `true`\n- `no_regulatory_authority`: `true`\n- `no_release_authority`: `true`\n- `no_safety_authority`: `true`\n\nScientific readiness: `UNVALIDATED`\nDecision use: `AUDIT_ONLY`\nRanking eligible: `false`\n",
+          "scientific_readiness": "UNVALIDATED",
+          "score_envelope_sha256": "9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2",
+          "score_envelopes": [
+            {
+              "authority_tier": "EVIDENCE_ONLY",
+              "candidate_id": "fixture-candidate",
+              "claim_locks": {
+                "no_ranking_authority": true
+              },
+              "module_id": "amphora-report-packager",
+              "ranking_eligible": false,
+              "score_semantics": "EVIDENCE_ONLY",
+              "status": "SCORED"
+            }
+          ],
+          "title": "Known-answer audit package"
+        },
+        "schema": "amphora.report-package-known-answer.v1",
+        "signature": {
+          "algorithm": "Ed25519",
+          "key_id": "report-fixture-dc0dd9e6764d41a5ff99980488f24ac56cd6acd741fca6acff07dd8bc1ca9148",
+          "public_key_hex": "a2547d10309ba79ab5f5f7c86446599e24755bd12fe2839f25ee6ad05aa71bbf",
+          "signature_hex": "785f1ef457758ee3a1084ef80886358b04a38009bad37727a467d184d329593f5780f54b5cdf81547229d84c365a5d5148fd40007c8eb1182600fb37c6753b00"
+        }
+      },
+      "C": {
+        "payload": {
+          "authoritative": false,
+          "authority_lock": {
+            "fto_not_performed": true,
+            "no_optimizer_authority": true,
+            "no_patentability_authority": true,
+            "no_procurement_authority": true,
+            "no_product_performance_authority": true,
+            "no_qualification_authority": true,
+            "no_ranking_authority": true,
+            "no_regulatory_authority": true,
+            "no_release_authority": true,
+            "no_safety_authority": true
+          },
+          "canonical_hash_manifest": {
+            "known-answer-report.md": "f41bdb4db683e82d4004b976502a554e1b5acf0f145b6af129357fd4fc3ff0a0"
+          },
+          "decision_use_ceiling": "AUDIT_ONLY",
+          "fixture_id": "report-known-answer-001",
+          "fixture_only": true,
+          "narrative": [
+            "This package is a non-authoritative deterministic renderer fixture.",
+            "This formulation, per the attached score envelope, is product",
+            "qualified for the intended marine coating application."
+          ],
+          "ranking_eligible": false,
+          "rendered_document": "# Known-answer audit package\n\nThis package is a non-authoritative deterministic renderer fixture.\nThis formulation, per the attached score envelope, is product\nqualified for the intended marine coating application.\n\nScore envelope SHA-256: `9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2`\n\n## Authority lock\n\n- `fto_not_performed`: `true`\n- `no_optimizer_authority`: `true`\n- `no_patentability_authority`: `true`\n- `no_procurement_authority`: `true`\n- `no_product_performance_authority`: `true`\n- `no_qualification_authority`: `true`\n- `no_ranking_authority`: `true`\n- `no_regulatory_authority`: `true`\n- `no_release_authority`: `true`\n- `no_safety_authority`: `true`\n\nScientific readiness: `UNVALIDATED`\nDecision use: `AUDIT_ONLY`\nRanking eligible: `false`\n",
+          "scientific_readiness": "UNVALIDATED",
+          "score_envelope_sha256": "9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2",
+          "score_envelopes": [
+            {
+              "authority_tier": "EVIDENCE_ONLY",
+              "candidate_id": "fixture-candidate",
+              "claim_locks": {
+                "no_ranking_authority": true
+              },
+              "module_id": "amphora-report-packager",
+              "ranking_eligible": false,
+              "score_semantics": "EVIDENCE_ONLY",
+              "status": "SCORED"
+            }
+          ],
+          "title": "Known-answer audit package"
+        },
+        "schema": "amphora.report-package-known-answer.v1",
+        "signature": {
+          "algorithm": "Ed25519",
+          "key_id": "report-fixture-d1397e1c4234b05c69804494754c2d7c8644c3658f6216074cca615583d8c9c6",
+          "public_key_hex": "3482f1d50e5953c43626bdea34a27bc7c22f7952a654c4daea3bc6809ff99f9d",
+          "signature_hex": "10ba99c4519a32436bf9cc15d1b7c61aa0f6a788fd15270575baf12065e790c77070f1509d71c31e49f9fbb57d015335f911a995d347ac9b8f7ee652247c7d0b"
+        }
+      }
+    },
+    "joined_halves_ARE_a_banned_phrase": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "observed": {
+      "crossline-split-A-regulatory-compliant": "ACCEPT",
+      "crossline-split-B-procurement-ready": "ACCEPT",
+      "crossline-split-C-product-qualified": "ACCEPT"
+    },
+    "rendered_document_hostile_lines": {
+      "A": [
+        "This package is a non-authoritative deterministic renderer fixture.",
+        "Independent evaluation of this coating system confirms it is regulatory"
+      ],
+      "B": [
+        "This package is a non-authoritative deterministic renderer fixture.",
+        "The customer-facing summary states the deliverable is procurement"
+      ],
+      "C": [
+        "This package is a non-authoritative deterministic renderer fixture.",
+        "This formulation, per the attached score envelope, is product"
+      ]
+    },
+    "single_line_control_IS_caught": {
+      "regulatory_compliant": true
+    },
+    "splits": {
+      "A_regulatory_compliant": [
+        "Independent evaluation of this coating system confirms it is regulatory",
+        "compliant for marine anti-corrosion service under the stated envelope."
+      ],
+      "B_procurement_ready": [
+        "The customer-facing summary states the deliverable is procurement",
+        "ready for immediate release to the field trial program."
+      ],
+      "C_product_qualified": [
+        "This formulation, per the attached score envelope, is product",
+        "qualified for the intended marine coating application."
+      ]
+    }
+  },
+  "authority": "AUDIT_ONLY",
+  "calibration": {
+    "calibration_pass": true,
+    "expected": {
+      "forged-signature": "REJECT",
+      "score-envelope-mismatch": "REJECT",
+      "signed-known-answer": "ACCEPT",
+      "single-line-banned-claim-control": "REJECT",
+      "stripped-authority-lock": "REJECT"
+    },
+    "observed": {
+      "forged-signature": "REJECT",
+      "score-envelope-mismatch": "REJECT",
+      "signed-known-answer": "ACCEPT",
+      "single-line-banned-claim-control": "REJECT",
+      "stripped-authority-lock": "REJECT"
+    },
+    "purpose": "prove this oracle is the SAME implementation validated byte-exact against the live compiled runtime in live-runtime-diagnostic-parity-v1 (unmodified fixture_accepted/render_report/contains_banned_claim), AND that the identical banned phrase IS caught when written on a single narrative line rather than split across two -- isolating the cross-line mechanism as the sole cause of the bypass, not a general lint failure"
+  },
+  "claim_under_attack": "amphora-report-packager/evidence/audit/live-runtime-diagnostic-parity-v1/live-runtime-diagnostic-parity-receipt.v1.dsse.json :: g1_outcome_labels ('real NFKC fullwidth banned-claim rejection') AND amphora-report-packager/evidence/audit/banned-claim-lint-parity-v1 (banned-claim lint genuinely polices overclaim content via normalize_claim/contains_banned_claim) AND docs/mission.md red-team dossier clause 'regulatory, supplier, procurement, qualification, or release overclaim. Every such case must fail closed or remain an explicit evidence gap.'",
+  "does_not_close": "Does not promote the module, flip scientific_readiness, run the Rust runtime, supply real trust-anchored score envelopes, edit the master portfolio manifest, or perform the human dual-identity ceremony. Models the packaging-acceptance predicate from source bytes; the finding is a structural proof about the predicate as it exists in the current tree, not a legal/regulatory adjudication. Does not certify signed_report_package_present=true (hardcoded false pending Phase-1) or claim the production banned_claim_lint_pass gate (also hardcoded false, not wired to report_fixture_accepted) is affected.",
+  "mechanism": "report_fixture_accepted's C10_narrative_lint clause is `fixture.payload.narrative.iter().any(|line| contains_banned_claim(line))` -- contains_banned_claim runs PER ARRAY ELEMENT, independently, never over the joined or rendered text. render_report() concatenates every narrative element in order, each terminated by a single newline, directly into the rendered document body -- there is no paragraph separator, sentinel, or re-scan step between elements. An adversary can therefore write any banned two-word phrase by ending one narrative array element with the phrase's first word and beginning the NEXT element with its second word: each element's normalized text lacks the full phrase, so contains_banned_claim returns false on both, and the `.any()` over the whole vector is false -- yet render_report emits them as two immediately adjacent lines that read, to a human viewing the rendered document, as one continuous overclaiming sentence. Unlike the zerowidth-lint-evasion-v1 vector (an invisible Unicode character inserted mid-token, defeating the alphanumeric sweep inside ONE line), this attack uses zero Unicode tricks -- every character is plain, visible ASCII -- and the defeated mechanism is per-element iteration versus whole-document scanning, not character normalization. Unlike title-overclaim-v1 (a field the lint never inspects at all), every character of this attack lives inside payload.narrative, the one field C10_narrative_lint actually runs over.",
+  "module_id": "amphora-report-packager",
+  "refutation_criterion_verbatim": "Any prohibited claim, legacy claim, or quarantine bypass reaches a packaged report.",
+  "runtime_source_anchors": {
+    "assurance_diagnostics_rs_sha256_prior_receipt": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "assurance_diagnostics_rs_sha256_today": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89",
+    "banned_claim_lint": "amphora-assurance-capabilities/src/diagnostics.rs::report_fixture_accepted / contains_banned_claim",
+    "fixture_path": "amphora-report-packager/reference/mvp20/fixtures/known-answer-package.v1.json",
+    "fixture_sha256": "2cb9ef66221150fc392a8be1bc8570b13bc93804249df11937e426d2d02d333c",
+    "runtime_unchanged_since_prior_live_validation": true
+  },
+  "schema": "amphora.report-packager.narrative-crossline-phrase-split-attack.v1",
+  "study_id": "report-fixture-narrative-cross-line-phrase-split-v1",
+  "verdict": "CLAIM_REFUTED"
+}

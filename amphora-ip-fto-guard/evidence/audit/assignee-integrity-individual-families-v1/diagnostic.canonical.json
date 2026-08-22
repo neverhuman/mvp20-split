@@ -1,0 +1,210 @@
+{
+  "audited_ns": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "claim_under_attack": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json 'assignee' field for the 10 individual-patent-family rows (n=27..36) not covered by the prior R-S03 (6 claim-charted families) or R-S02 (54 category-screen rows, assignee='multiple') audits is a faithful bibliographic re-derivation of each row's own cited url.",
+  "corroborated_ns": [
+    33
+  ],
+  "counts": {
+    "audited": 10,
+    "corroborated_current_despite_live_mismatch": 1,
+    "match": 5,
+    "mismatch": 4
+  },
+  "extraction_method": "regex over html.split('<h2>Links</h2>')[0] for itemprop=assigneeCurrent / assigneeOriginal <dd> content; this boundary always precedes the page's Citations / Similar Documents / Legal Events tables, which list OTHER documents' assignees and are the demonstrated source of at least one fabrication (row n=29, see mismatch_detail).",
+  "fixture_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+  "fixture_sha256_matches_pin": true,
+  "fixture_sha256_observed": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+  "fixture_sha256_pinned_in_mission_and_manifest": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+  "headline": "4 of 10 audited individual-patent-family rows (n=27..36) carry a fixture 'assignee' field that does not match that row's own cited url's bibliographic assignee data, with no independently-corroborated M&A event explaining the discrepancy (contrast n=33, which DOES have such an event and is excluded from the mismatch count). This extends the R-A13/R-S03 fabrication pattern from claim-chart elements and one compound-label misattribution to plain wrong company names, at a 40% (4/10) error rate in this newly-audited slice.",
+  "mismatch_detail": {
+    "29": "Fixture assignee 'Elementis Specialties, Inc.' does not match WO2018010615A1's own bibliographic assignee (current=original='Deuchem Shanghai Chemical Co Ltd'). 'Elementis Specialties, Inc.' DOES appear on the same raw page, but only inside the Citations(4) table as the assignee of a DIFFERENT, merely-cited document (EP1162242A1, 'Rheological additives and paint and coating compositions...'). This is consistent with an extraction bug that read the wrong table on the page, not a typo.",
+    "31": "Fixture assignee 'Monsanto Company' does not match US3178319A's own bibliographic assignee (current=original='GERALDINE D HENRICKS', an individual, not a company). No occurrence of 'Monsanto' appears in this patent's own assignee fields.",
+    "34": "Fixture assignee 'International Paint LLC family' does not match US6391464B1's own bibliographic assignee (current=original='General Electric Co'; title 'Epoxy coatings and surfaces coated therewith' does match the claim1_gist domain, but the assignee chain is a GE/silicone -materials lineage with no International Paint entity in either the current or original assignee fields).",
+    "36": "Fixture assignee 'General Mills Inc.' does not match US2986539A's own bibliographic assignee (original='American Can Co', current='Primerica Inc'). No occurrence of 'General Mills' appears in this patent's own assignee fields, despite family n=35 (US2705223A, same claimed assignee 'General Mills Inc.') being a genuine, verified General Mills Inc. match."
+  },
+  "mismatch_ns": [
+    29,
+    31,
+    34,
+    36
+  ],
+  "raw_shasums": {
+    "n27_WO2009019296A1.html": "0ed253389d6952a3a23b9f7d475eb3d7aa909b8c246581d162537781447e538c",
+    "n28_WO2014093115A2.html": "c3486f531f812b6ead9da95eca50f7c65e09687ae4df40af0be2bcab2f47ba24",
+    "n29_WO2018010615A1.html": "d18bf0cc8639f3daf6f06a50c6696ca88a312b966ad88bc4f9733d867c01f216",
+    "n30_US4865653A.html": "be764de5488fa26b6c8339653932ef21e7bcba4de7b423429e5e2dd1adcdfad1",
+    "n31_US3178319A.html": "238a6477cd7c74eff3af0b2f1514a318ca9c0e423db43b67d0717308766fa2eb",
+    "n32_EP0398202A1.html": "7058dc3c760e1e0a9bc06592e5bad908e22575a21ccf6968f544b523449a0cdd",
+    "n33_EP1865013B1.html": "4fa5b2e397cff99c318f0ed9d3c8aace20a70973ed0cb476a4a131e1f4b9f436",
+    "n34_US6391464B1.html": "c6ffa848f6bbcf8adc5c2566ebf0cf0092c60adcf2491333049491ade0c84569",
+    "n35_US2705223A.html": "09e2fea6e590dc7e7cdd1374fe8af45b89412ebfc91d1bbb1eee243a4d040119",
+    "n36_US2986539A.html": "279811c4f7639e0670943421e208d24075787923cf9164b2826172f6f3a630e9"
+  },
+  "rows": [
+    {
+      "corroboration": null,
+      "doc_read": "WO2009019296A1",
+      "fixture_assignee": "Akzo Nobel Coatings International B.V.",
+      "live_assignee_current": [
+        "Akzo Nobel Coatings International BV"
+      ],
+      "live_assignee_original": [
+        "Akzo Nobel Coatings International BV"
+      ],
+      "n": 27,
+      "url": "https://patents.google.com/patent/WO2009019296A1/en",
+      "verdict": "match"
+    },
+    {
+      "corroboration": null,
+      "doc_read": "WO2014093115A2",
+      "fixture_assignee": "Dow Global Technologies LLC",
+      "live_assignee_current": [
+        "Dow Global Technologies LLC",
+        "Rohm and Haas Co"
+      ],
+      "live_assignee_original": [
+        "Dow Global Technologies LLC",
+        "Rohm and Haas Co"
+      ],
+      "n": 28,
+      "url": "https://patents.google.com/patent/WO2014093115A2/en",
+      "verdict": "match"
+    },
+    {
+      "corroboration": null,
+      "doc_read": "WO2018010615A1",
+      "fixture_assignee": "Elementis Specialties, Inc.",
+      "live_assignee_current": [
+        "Deuchem Shanghai Chemical Co Ltd"
+      ],
+      "live_assignee_original": [
+        "Deuchem Shanghai Chemical Co Ltd"
+      ],
+      "n": 29,
+      "url": "https://patents.google.com/patent/WO2018010615A1/en",
+      "verdict": "mismatch"
+    },
+    {
+      "corroboration": null,
+      "doc_read": "US4865653A",
+      "fixture_assignee": "Henkel Corporation",
+      "live_assignee_current": [
+        "Henkel Corp"
+      ],
+      "live_assignee_original": [
+        "Henkel Corp"
+      ],
+      "n": 30,
+      "url": "https://patents.google.com/patent/US4865653A/en",
+      "verdict": "match"
+    },
+    {
+      "corroboration": null,
+      "doc_read": "US3178319A",
+      "fixture_assignee": "Monsanto Company",
+      "live_assignee_current": [
+        "GERALDINE D HENRICKS"
+      ],
+      "live_assignee_original": [
+        "GERALDINE D HENRICKS"
+      ],
+      "n": 31,
+      "url": "https://patents.google.com/patent/US3178319A/en",
+      "verdict": "mismatch"
+    },
+    {
+      "corroboration": null,
+      "doc_read": "EP0398202A1",
+      "fixture_assignee": "Henkel KGaA",
+      "live_assignee_current": [
+        "Henkel Corp"
+      ],
+      "live_assignee_original": [
+        "Henkel Corp"
+      ],
+      "n": 32,
+      "url": "https://patents.google.com/patent/EP0398202A1/en",
+      "verdict": "match"
+    },
+    {
+      "corroboration": {
+        "event": "Air Products Performance Materials Division (incl. epoxy curing agents, ~40% of division revenue) sold to Evonik Industries AG, deal closed 2017-01-03, $3.8B.",
+        "fixture_assignee": "Evonik Operations GmbH family",
+        "live_assignee": "Air Products and Chemicals Inc",
+        "resolution": "corroborated_current_via_independent_ma_event; Google Patents' bibliographic field is stale, not the fixture.",
+        "sources": [
+          "https://www.prnewswire.com/news-releases/air-products-completes-38-billion-performance-materials-division-sale-to-evonik-300384611.html",
+          "https://cen.acs.org/articles/94/i20/Evonik-acquire-Air-Productsspecialties.html"
+        ]
+      },
+      "doc_read": "EP1865013B1",
+      "fixture_assignee": "Evonik Operations GmbH family",
+      "live_assignee_current": [
+        "Air Products and Chemicals Inc"
+      ],
+      "live_assignee_original": [
+        "Air Products and Chemicals Inc"
+      ],
+      "n": 33,
+      "url": "https://patents.google.com/patent/EP1865013B1/en",
+      "verdict": "corroborated_current_despite_live_mismatch"
+    },
+    {
+      "corroboration": null,
+      "doc_read": "US6391464B1",
+      "fixture_assignee": "International Paint LLC family",
+      "live_assignee_current": [
+        "General Electric Co"
+      ],
+      "live_assignee_original": [
+        "General Electric Co"
+      ],
+      "n": 34,
+      "url": "https://patents.google.com/patent/US6391464B1/en",
+      "verdict": "mismatch"
+    },
+    {
+      "corroboration": null,
+      "doc_read": "US2705223A",
+      "fixture_assignee": "General Mills Inc.",
+      "live_assignee_current": [
+        "General Mills Inc"
+      ],
+      "live_assignee_original": [
+        "General Mills Inc"
+      ],
+      "n": 35,
+      "url": "https://patents.google.com/patent/US2705223A/en",
+      "verdict": "match"
+    },
+    {
+      "corroboration": null,
+      "doc_read": "US2986539A",
+      "fixture_assignee": "General Mills Inc.",
+      "live_assignee_current": [
+        "Primerica Inc"
+      ],
+      "live_assignee_original": [
+        "American Can Co"
+      ],
+      "n": 36,
+      "url": "https://patents.google.com/patent/US2986539A/en",
+      "verdict": "mismatch"
+    }
+  ],
+  "schema": "amphora.ip-fto-guard.assignee-integrity-individual-families-diagnostic.v1",
+  "study_id": "assignee-integrity-individual-families-v1",
+  "verdict": "REFUTED"
+}

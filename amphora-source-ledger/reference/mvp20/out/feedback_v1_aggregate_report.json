@@ -1,0 +1,92 @@
+{
+  "blocked_source_dependency_warnings": [
+    {
+      "blocked_or_partial_sources": [
+        "nist_corr_data"
+      ],
+      "module_id": "amphora-barrier-corrosion-score"
+    },
+    {
+      "blocked_or_partial_sources": [
+        "nist_corr_data"
+      ],
+      "module_id": "amphora-public-corrosion-benchmark"
+    }
+  ],
+  "derived_row_counts": {
+    "nist_corr_reference.json": 24721,
+    "polymer_corpus_rows.jsonl": 836771,
+    "solvent_precedent_index.json": 269
+  },
+  "generated_at": "2026-07-10T20:51:29Z",
+  "manifest_hash": "6af21c2a58127f217b71cfdd9f25107fc1a7935c5d434e2f6ae725a8cae37685",
+  "module_artifact_usage": {
+    "amphora-barrier-corrosion-score": [
+      "nist_corr_reference.json",
+      "build_manifest.json"
+    ],
+    "amphora-design-rule-score": [
+      "solvent_precedent_index.json"
+    ],
+    "amphora-known-answer-benchmarks": [
+      "build_manifest.json"
+    ],
+    "amphora-molecule-generator": [
+      "polymer_corpus_rows.jsonl",
+      "build_manifest.json"
+    ],
+    "amphora-molecule-property": [
+      "polymer_corpus_rows.jsonl",
+      "build_manifest.json"
+    ],
+    "amphora-molecule-role-ranker": [
+      "polymer_corpus_rows.jsonl",
+      "build_manifest.json"
+    ],
+    "amphora-public-corrosion-benchmark": [
+      "nist_corr_reference.json",
+      "build_manifest.json"
+    ],
+    "amphora-solvency-score": [
+      "solvent_precedent_index.json"
+    ],
+    "amphora-source-ledger": [
+      "build_manifest.json"
+    ]
+  },
+  "schema_version": "amphora.feedback_v1.aggregate_report.v1",
+  "source_ids": [
+    "bigsoldb_v2",
+    "kaggle_neurips_open_polymer_prediction",
+    "nanomine",
+    "nist_corr_data",
+    "omg_physical_properties",
+    "omg_public_zips",
+    "openpoly_benchmark",
+    "pi1m_v2",
+    "point2_metadata",
+    "polyinfo",
+    "polymer_genome",
+    "polyomics",
+    "polyuniverse_epoxy",
+    "polyverse_selected",
+    "radonpy_pi1070"
+  ],
+  "source_statuses_used": {
+    "bigsoldb_v2": "ACQUIRED",
+    "kaggle_neurips_open_polymer_prediction": "BLOCKED_AFTER_ATTEMPTS",
+    "nanomine": "BLOCKED_AFTER_ATTEMPTS",
+    "nist_corr_data": "PARTIAL",
+    "omg_physical_properties": "ACQUIRED",
+    "omg_public_zips": "ACQUIRED",
+    "openpoly_benchmark": "ACQUIRED",
+    "pi1m_v2": "ACQUIRED",
+    "point2_metadata": "ACQUIRED",
+    "polyinfo": "BLOCKED_AFTER_ATTEMPTS",
+    "polymer_genome": "BLOCKED_AFTER_ATTEMPTS",
+    "polyomics": "PARTIAL",
+    "polyuniverse_epoxy": "ACQUIRED",
+    "polyverse_selected": "ACQUIRED",
+    "radonpy_pi1070": "ACQUIRED"
+  }
+}

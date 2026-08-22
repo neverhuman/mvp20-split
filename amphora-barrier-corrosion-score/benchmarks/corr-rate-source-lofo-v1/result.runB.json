@@ -1,0 +1,1981 @@
+{
+  "attack_description": "NIST CORR-DATA is a compilation of 220 distinct original literature sources (source_text field: corrosion handbooks, alloy-vendor bulletins, journal papers across decades). Most sources are family-specialized (e.g. Climax Molybdenum reports mostly molybdenum/nickel alloys; Haynes reports mostly cobalt/ nickel superalloys), so family-safe or per-family LOFO splits do not control for a model that has merely learned a source's own testing methodology / reporting convention rather than a transferable structure-composition-environment relationship. This re-runs the identical feature engineering, HistGBM model, and seed with true Leave-One-Source-Out (n_splits=n_sources in the classified subset, one source held out per fold) on the SAME classified cohort (n=7282, 17 families) used by the promoted KPI and corr-rate-family-lofo-v1, and reports the SOURCE-weighted (unweighted per source) mean R2 alongside the sample-weighted OOF R2.",
+  "attacks_claim": "evidence/phase0/kpis/corr-rate-family-safe-qspr-kpi.v1.dsse.json: GroupKFold(group=metallurgical_family, 5-fold) HistGBM R2=0.132087 on the NIST CORR-DATA classified subset (n=7282, 17 families), 'the module's strongest rights-clean empirical claim'; and, by extension, corr-rate-family-lofo-v1's CLAIM_SURVIVED verdict (family-weighted mean R2=0.015964).",
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-barrier-corrosion-score/corr-rate-source-lofo-v1",
+  "cohort": {
+    "classified_subset_n": 7282,
+    "n_families": 17,
+    "n_sources_in_classified_subset": 213
+  },
+  "comparison_to_promoted_kpi": {
+    "family_lofo_family_weighted_mean_r2": 0.015964,
+    "kpi_sample_weighted_5fold_family_safe_r2": 0.132087,
+    "loso_sample_weighted_oof_r2": 0.18711,
+    "loso_source_weighted_mean_r2": null,
+    "note": "kpi number is sample-weighted, 5-fold, grouped by metallurgical family; loso_sample_weighted_oof_r2 is the directly comparable per-row OOF statistic under true source-grouped LOSO; loso_source_weighted_mean_r2 treats every literature source as one equally-weighted unit -- the honest reading of whether the model transfers across independent data-collection provenance, not just across metallurgical families that happen to share a source."
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "canonical_round_decimals": 6,
+    "omp_num_threads": "1",
+    "seed": 0
+  },
+  "min_eligible_n_test": 20,
+  "model": {
+    "estimator": "HistGradientBoostingRegressor",
+    "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "random_state": 0
+    },
+    "sklearn_version": "1.7.2"
+  },
+  "modifies_manifest": false,
+  "promotes_authority": false,
+  "refutation_criterion": "REFUTED if (a) source-count-weighted (unweighted-per-source) mean LOSO R2 over sources with n_test>=20 in the classified subset <= 0.0, OR (b) a majority (>50%) of those eligible sources individually score LOSO R2 <= 0.0. SURVIVED if source-weighted mean R2 > 0.0 AND a majority of eligible sources individually score R2 > 0.0, even if reduced relative to the family-safe/LOFO numbers (some reduction from a different, potentially harder, axis is expected and is not itself a refutation).",
+  "results": {
+    "eligible_sources_n_test_ge_min": 83,
+    "excluded_sources_below_min_count": 130,
+    "frac_eligible_sources_r2_positive": 0.26506,
+    "majority_of_eligible_sources_positive": false,
+    "n_eligible_sources_r2_nonpositive": 61,
+    "n_eligible_sources_r2_positive": 22,
+    "per_source_loso": [
+      {
+        "baseline_global_mean_rmse": 1.40758,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.048701,
+        "n_test": 1174,
+        "r2": 0.10502,
+        "rmse": 1.260375,
+        "source": "A Guide to Corrosion Resistance, Climax Molybdenum Company, Greenwich, CT, 1981"
+      },
+      {
+        "baseline_global_mean_rmse": 0.958365,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.728226,
+        "n_test": 349,
+        "r2": 0.078228,
+        "rmse": 0.888511,
+        "source": "Haynes International, 1984"
+      },
+      {
+        "baseline_global_mean_rmse": 1.215328,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.910423,
+        "n_test": 269,
+        "r2": 0.111128,
+        "rmse": 1.110786,
+        "source": "N.D. Tomashov and P.M. Altovskii, Corrosion and Protection of Titanium, Government Scientific-Technical Publication of Machine-Building Literature (Russian translation), 1963; L.C. Covington and R.W. Schultz, Corrosion of Resistance of Titanium, TIMET Cor"
+      },
+      {
+        "baseline_global_mean_rmse": 0.733236,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.611077,
+        "n_test": 220,
+        "r2": -0.320824,
+        "rmse": 0.837031,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 711-715"
+      },
+      {
+        "baseline_global_mean_rmse": 0.849854,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.717611,
+        "n_test": 197,
+        "r2": -0.156572,
+        "rmse": 0.913555,
+        "source": "R.W. Schultz and J.S. Grauman, Fundamental Corrosion Characterization of High-Strength Titanium Alloys, in Industrial Applications of Titanium and Zirconium: Fourth Volume, STP 917, ASTM, Philadelphia, 1986, p 130-143; L.C. Covington and R.W. Schultz, Cor"
+      },
+      {
+        "baseline_global_mean_rmse": 1.133791,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.643474,
+        "n_test": 195,
+        "r2": 0.285182,
+        "rmse": 0.824093,
+        "source": "Corrosion Resistance of Nickel and Nickel-Containing Alloys in Caustic Soda and Other Alkalies, Corrosion Engineering Bulletin CEB-2, The International Nickel Company, Inc., 1973"
+      },
+      {
+        "baseline_global_mean_rmse": 1.258165,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.993159,
+        "n_test": 176,
+        "r2": -0.138303,
+        "rmse": 1.18918,
+        "source": "T.F. Degnan, Materials of Construction for Hydrofluoric Acid and Hydrogen Fluoride, in Process Industries Corrosion, B.J. Moniz and W.I. Pollock, Ed., NACE, USA, 1986"
+      },
+      {
+        "baseline_global_mean_rmse": 1.331283,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.183127,
+        "n_test": 162,
+        "r2": -0.122058,
+        "rmse": 1.391925,
+        "source": "Corrosion Resistance of Nickel-Containing Alloys in Phosphoric Acid, The International Nickel Company, 1976"
+      },
+      {
+        "baseline_global_mean_rmse": 1.149282,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.691743,
+        "n_test": 159,
+        "r2": 0.406052,
+        "rmse": 0.88195,
+        "source": "Inco Alloys International, 1979"
+      },
+      {
+        "baseline_global_mean_rmse": 1.270484,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.967784,
+        "n_test": 150,
+        "r2": -4.327565,
+        "rmse": 1.064737,
+        "source": "C.P. Larrabee and S.K. Coburn, The Atmospheric Corrosion of Steels as Influenced by Changes in Chemical Composition, in Metallic Corrosion\u0097First International Conference on Corrosion, Butterworths, 1962, p 276-284; as cited in Metals Handbook, Ninth Editi"
+      },
+      {
+        "baseline_global_mean_rmse": 0.936213,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.655545,
+        "n_test": 148,
+        "r2": 0.077817,
+        "rmse": 0.843217,
+        "source": "Haynes International, 1987"
+      },
+      {
+        "baseline_global_mean_rmse": 1.604306,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.488385,
+        "n_test": 127,
+        "r2": -0.439435,
+        "rmse": 1.808579,
+        "source": "Corrosion Handbook, Vol 3, Dieter Behrens, Ed., DECHEMA, Germany, 1988"
+      },
+      {
+        "baseline_global_mean_rmse": 1.324662,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.884072,
+        "n_test": 122,
+        "r2": -0.744762,
+        "rmse": 1.109044,
+        "source": "A.I. Asphahani and J.L. Nickerson, A Specialty Alloy for Applications in the Process Industries, Corrosion Reviews, Vol 10, (Nos. 1-2), 1992, p 1-30"
+      },
+      {
+        "baseline_global_mean_rmse": 1.14584,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.449775,
+        "n_test": 112,
+        "r2": 0.382865,
+        "rmse": 0.557674,
+        "source": "Lead for Corrosion Resistant Applications, The Plumbum Series, A Guide to the Use of Lead for Corrosion Resistance, Lead Industries Association, Inc."
+      },
+      {
+        "baseline_global_mean_rmse": 1.129895,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.720385,
+        "n_test": 99,
+        "r2": 0.076926,
+        "rmse": 0.916363,
+        "source": "P.E. Manning, J.D. Smith, and J.L. Nickerson, New Versatile Alloys for the Chemical Process Industry, Materials Performance, NACE, USA, June 1988, p 67-73"
+      },
+      {
+        "baseline_global_mean_rmse": 0.82975,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.404361,
+        "n_test": 88,
+        "r2": 0.257691,
+        "rmse": 0.677165,
+        "source": "M. Stern and C. Bishop, Corrosion and Electrochemical Behavior, in Columbium and Tantalum, F. Sisco and E. Epremian, Ed., John Wiley & Sons, New York, 1963, p 306"
+      },
+      {
+        "baseline_global_mean_rmse": 0.824642,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.587008,
+        "n_test": 83,
+        "r2": -0.708381,
+        "rmse": 0.691262,
+        "source": "Inco Alloys International, 1974"
+      },
+      {
+        "baseline_global_mean_rmse": 1.172039,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.843402,
+        "n_test": 82,
+        "r2": 0.229044,
+        "rmse": 1.028046,
+        "source": "Inco Alloys International, 1985"
+      },
+      {
+        "baseline_global_mean_rmse": 1.634402,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.674607,
+        "n_test": 76,
+        "r2": -0.911949,
+        "rmse": 0.814514,
+        "source": "M.H. Brown, Q.B. DeLong, and J.R. Aulb, Ind. Eng. Chem., Vol 39 (No. 7), 1947, p 839"
+      },
+      {
+        "baseline_global_mean_rmse": 1.318809,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.763183,
+        "n_test": 75,
+        "r2": 0.442579,
+        "rmse": 0.981858,
+        "source": "Corrosion Handbook, Vol 1, Dieter Behrens, Ed., DECHEMA, Germany, 1987"
+      },
+      {
+        "baseline_global_mean_rmse": 0.522767,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.472461,
+        "n_test": 73,
+        "r2": -0.330192,
+        "rmse": 0.574012,
+        "source": "Stock Metals, Ampco Metal Company, 1988"
+      },
+      {
+        "baseline_global_mean_rmse": 1.327015,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.196569,
+        "n_test": 68,
+        "r2": -0.234451,
+        "rmse": 1.461311,
+        "source": "H.E. Deverell and I.A. Franson, Practical Guide to Using the Newer Ferritic Stainless Steels, Materials Performance, NACE, USA, September 1989, p 52-57"
+      },
+      {
+        "baseline_global_mean_rmse": 1.328621,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.531482,
+        "n_test": 62,
+        "r2": 0.692401,
+        "rmse": 0.736156,
+        "source": "P.J. Gegner, Corrosion Resistance of Materials in Alkalies and Hypochlorides, Paper 27, Process Industries Corrosion Short Course, National Association of Corrosion Engineers, Houston, 1974"
+      },
+      {
+        "baseline_global_mean_rmse": 0.7639,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.517701,
+        "n_test": 57,
+        "r2": -0.604578,
+        "rmse": 0.721591,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 795"
+      },
+      {
+        "baseline_global_mean_rmse": 1.077306,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.8424,
+        "n_test": 56,
+        "r2": -0.319646,
+        "rmse": 0.980389,
+        "source": "Metals Handbook, 9th ed., Vol 13, Corrosion, ASM International, 1987, p 805"
+      },
+      {
+        "baseline_global_mean_rmse": 1.442407,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.268784,
+        "n_test": 56,
+        "r2": -0.929603,
+        "rmse": 1.48015,
+        "source": "R.C. Corbett and W.S. Morrison, Comparative Corrosion Resistance of Some High-Nickel, Chromium-Molybdenum Alloys, Materials Performance, NACE, USA, February, 1989, p 56-59"
+      },
+      {
+        "baseline_global_mean_rmse": 1.153825,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.936355,
+        "n_test": 49,
+        "r2": -0.07888,
+        "rmse": 1.127765,
+        "source": "Titanium, Teledyne Wah Chang Albany, 1988"
+      },
+      {
+        "baseline_global_mean_rmse": 2.370189,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.924519,
+        "n_test": 46,
+        "r2": -3.995769,
+        "rmse": 1.059743,
+        "source": "F. King and C.D. Litke, unpublished research, 1985; also Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 621"
+      },
+      {
+        "baseline_global_mean_rmse": 0.966001,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.664873,
+        "n_test": 46,
+        "r2": 0.23332,
+        "rmse": 0.834408,
+        "source": "Corrosion Resistance of Titanium, Technical Handbook, Imperial Metals Industries (Kynoch) Ltd., Birmingham, UK; T.F. Degnan, Materials for Handling Hydrofluoric, Nitric, and Sulfuric Acids, in Process Industries Corrosion, National Association of Corrosio"
+      },
+      {
+        "baseline_global_mean_rmse": 0.82257,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.706372,
+        "n_test": 43,
+        "r2": -1.175829,
+        "rmse": 0.85558,
+        "source": "Lead for Corrosion Resistant Applications: A Guide, Lead Industries Association, Inc. New York, p 72"
+      },
+      {
+        "baseline_global_mean_rmse": 0.784367,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.640612,
+        "n_test": 41,
+        "r2": -0.033509,
+        "rmse": 0.789739,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 723-724"
+      },
+      {
+        "baseline_global_mean_rmse": 1.037002,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.743753,
+        "n_test": 41,
+        "r2": 0.145095,
+        "rmse": 0.925412,
+        "source": "Inco Alloys International, 1987"
+      },
+      {
+        "baseline_global_mean_rmse": 1.140335,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.797506,
+        "n_test": 40,
+        "r2": 0.166769,
+        "rmse": 1.039344,
+        "source": "H.U. Schutt and R.J. Horvath, Crude Column Overhead Corrosion Problems Caused by Oxidized Sulfur Species, Materials Performance, NACE, USA, January 1988, p 44-48"
+      },
+      {
+        "baseline_global_mean_rmse": 0.57181,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.647124,
+        "n_test": 40,
+        "r2": -1.083928,
+        "rmse": 0.824125,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 649"
+      },
+      {
+        "baseline_global_mean_rmse": 0.38682,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.434615,
+        "n_test": 39,
+        "r2": -50.669092,
+        "rmse": 0.54209,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 798"
+      },
+      {
+        "baseline_global_mean_rmse": 1.254781,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.659364,
+        "n_test": 39,
+        "r2": -4.114572,
+        "rmse": 1.766119,
+        "source": "S.J. Pawel, Corrosion of Nickel-Based Alloys in Acidified Lithium Chloride Solutions, Corrosion, Vol 49, (No. 11), NACE, November 1993, p 929-933"
+      },
+      {
+        "baseline_global_mean_rmse": 1.818237,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.408518,
+        "n_test": 38,
+        "r2": -0.131586,
+        "rmse": 1.611727,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 661"
+      },
+      {
+        "baseline_global_mean_rmse": 0.516868,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.355912,
+        "n_test": 38,
+        "r2": -0.776349,
+        "rmse": 0.554798,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 802"
+      },
+      {
+        "baseline_global_mean_rmse": 1.172551,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.93592,
+        "n_test": 38,
+        "r2": 0.010016,
+        "rmse": 1.166138,
+        "source": "A. Robin, M.E. de Almeida, and C.A. Nunes, Corrosion Behavior of Niobium and Nb-25 wt% Ta Alloy in Sulfuric Acid Solutions, Corrosion, Vol 47 (No. 6), NACE, June 1991, p 443-448"
+      },
+      {
+        "baseline_global_mean_rmse": 1.337543,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.626338,
+        "n_test": 37,
+        "r2": 0.279648,
+        "rmse": 0.78199,
+        "source": "P.J. Gegner and W.L. Wilson, Corrosion, Vol 15 (No. 7), 1959"
+      },
+      {
+        "baseline_global_mean_rmse": 1.061704,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.890414,
+        "n_test": 35,
+        "r2": -0.096911,
+        "rmse": 1.061677,
+        "source": "S. Bernhardsson, Corrosion Performance of a High-Nickel Alloy, Materials & Design, Vol 10, (No. 4), July/August 1989, p 186-196"
+      },
+      {
+        "baseline_global_mean_rmse": 0.220348,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.943246,
+        "n_test": 35,
+        "r2": -36.40391,
+        "rmse": 1.047001,
+        "source": "Metals Handbook, Ninth Edition, Vol 1, Properties and Selection: Irons and Steels, American Society for Metals, Metals Park, OH, 1978, p 742"
+      },
+      {
+        "baseline_global_mean_rmse": 1.658351,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.810177,
+        "n_test": 34,
+        "r2": -0.115757,
+        "rmse": 1.130582,
+        "source": "J.S. Pettibone, Other Metals, in Corrosion Resistance of Metals and Alloys, 2nd Edition, F.L. LaQue and H.R. Copson, Ed., Reinhold Publishing, New York, 1963, p 628"
+      },
+      {
+        "baseline_global_mean_rmse": 0.621193,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.091029,
+        "n_test": 34,
+        "r2": -2.928288,
+        "rmse": 1.225463,
+        "source": "W.Z. Friend, Corrosion of Nickel and Nickel-Base Alloys, John Wiley & Sons, 1980, p 58"
+      },
+      {
+        "baseline_global_mean_rmse": 0.641227,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.816508,
+        "n_test": 33,
+        "r2": -1.686569,
+        "rmse": 1.027351,
+        "source": "Resistance of Nickel and High Nickel Alloys to Corrosion by Hydrochloric Acid, Hydrogen Chloride and Chlorine, Corrosion Engineering Bulletin CEB-3, The International Nickel Company, Inc., 1972"
+      },
+      {
+        "baseline_global_mean_rmse": 0.391373,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.264157,
+        "n_test": 33,
+        "r2": null,
+        "rmse": 0.354516,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 796"
+      },
+      {
+        "baseline_global_mean_rmse": 1.376468,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.073649,
+        "n_test": 32,
+        "r2": 0.103107,
+        "rmse": 1.300969,
+        "source": "R.M. Davison and James D. Redmond, Practical Guide to Using Duplex Stainless Steels, Materials Performance, NACE, USA, January 1990, p 57-62"
+      },
+      {
+        "baseline_global_mean_rmse": 2.512194,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.100023,
+        "n_test": 32,
+        "r2": -51.362987,
+        "rmse": 1.11068,
+        "source": "F.L. McGeary, E.T. Englehart, and P.J. Ging, Weathering of Aluminum, Mater. Protec., Vol 6 (No. 6), 1967, p 33; as cited in Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 599"
+      },
+      {
+        "baseline_global_mean_rmse": 0.627907,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.768599,
+        "n_test": 31,
+        "r2": -1.367992,
+        "rmse": 0.955487,
+        "source": "C.J. Slunder and W.K. Boyd, Zinc: Its Corrosion Resistance, Second Edition, T.K. Christman and J. Payer, Ed., International Lead Zinc Research Organization, New York, 1983, p 117"
+      },
+      {
+        "baseline_global_mean_rmse": 2.127097,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 2.441011,
+        "n_test": 30,
+        "r2": -5.52646,
+        "rmse": 2.585464,
+        "source": "I. Sekine, C. Okano, and M. Yuasa, The Corrosion Behaviour of Ferritic Stainless Steel in Oxalic Acid Solutions, Corrosion Science, Vol 30, (No. 4/5), Pergamon Press plc, UK, 1990, p 351-368"
+      },
+      {
+        "baseline_global_mean_rmse": 2.305706,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.454852,
+        "n_test": 30,
+        "r2": -1.982363,
+        "rmse": 0.557118,
+        "source": "Lead for Corrosion Resistant Applications: A Guide, Lead Industries Association, Inc. New York, p 46"
+      },
+      {
+        "baseline_global_mean_rmse": 1.538801,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.596713,
+        "n_test": 30,
+        "r2": -0.171483,
+        "rmse": 0.83796,
+        "source": "P. Crook, The Effects of Dilution upon the Corrosion and Wear Properties of Cobalt-Based Weld Overlays, Corrosion Science, Vol 35, (Nos. 1-4), Pergamon Press, Ltd., UK, 1993, p 647-653"
+      },
+      {
+        "baseline_global_mean_rmse": 0.992127,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.800467,
+        "n_test": 29,
+        "r2": -0.023457,
+        "rmse": 0.995712,
+        "source": "R.M. Davidson and J.D. Redmond, The Application of Ferritic and Duplex Stainless Steels, Second Symposium on Shell and Tube Heat Exchangers, W.R. Apblett, Jr., Ed., American Society for Metals, Metals Park, OH, 1982, p 82"
+      },
+      {
+        "baseline_global_mean_rmse": 0.988167,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.845947,
+        "n_test": 28,
+        "r2": -0.366192,
+        "rmse": 1.085667,
+        "source": "International Nickel Company; as cited in Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 333"
+      },
+      {
+        "baseline_global_mean_rmse": 2.160699,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.44572,
+        "n_test": 28,
+        "r2": -1.109686,
+        "rmse": 1.768178,
+        "source": "F.N. Smith and H. Van Droffelaar, The Corrosion Behaviour of Metals and Alloys in Hot Phosphoric Acid, Anti-Corrosion, May 1991, p 4-6"
+      },
+      {
+        "baseline_global_mean_rmse": 1.243321,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.484891,
+        "n_test": 26,
+        "r2": 0.394446,
+        "rmse": 0.658439,
+        "source": "R.P. Tracy and G.J. Shawhan, Practical Guide to Using Ni-P Electroless Nickel Coatings, Materials Performance, NACE, USA, July 1990, p 65-70"
+      },
+      {
+        "baseline_global_mean_rmse": 1.215641,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.118766,
+        "n_test": 25,
+        "r2": -0.148632,
+        "rmse": 1.292541,
+        "source": "Metals Handbook, Ninth Edition, Vol 3, Properties and Selection: Stainless Steels, Tool Materials and Special-Purpose Metals, American Society for Metals, Metals Park, OH, 1980, p 82"
+      },
+      {
+        "baseline_global_mean_rmse": 0.687462,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.466987,
+        "n_test": 25,
+        "r2": -3.997977,
+        "rmse": 0.541272,
+        "source": "M. Stern and C. Bishop, Corrosion and Electrochemical Behavior, in Columbium and Tantalum, F. Sisco and E. Epremian, Ed., John Wiley & Sons, New York, 1963, p 307"
+      },
+      {
+        "baseline_global_mean_rmse": 1.42067,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.059957,
+        "n_test": 25,
+        "r2": -2.469363,
+        "rmse": 1.168331,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 1174; and Ampco Metal Division, Ampco-Pittsburgh, unpublished research, 1951"
+      },
+      {
+        "baseline_global_mean_rmse": 1.167019,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.075009,
+        "n_test": 25,
+        "r2": -0.310655,
+        "rmse": 1.295485,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 634"
+      },
+      {
+        "baseline_global_mean_rmse": 1.027209,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.901101,
+        "n_test": 24,
+        "r2": -0.247701,
+        "rmse": 1.147343,
+        "source": "Metals Handbook, Ninth Edition, Vol 3, Properties and Selection: Stainless Steels, Tool Materials and Special-Purpose Metals, American Society for Metals, Metals Park, OH, 1980, p 85"
+      },
+      {
+        "baseline_global_mean_rmse": 0.383056,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.190947,
+        "n_test": 24,
+        "r2": -27.000352,
+        "rmse": 0.318306,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 803"
+      },
+      {
+        "baseline_global_mean_rmse": 1.453481,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.678454,
+        "n_test": 24,
+        "r2": -5.972794,
+        "rmse": 1.738494,
+        "source": "R. Jasinski, Corrosion of N80-Type Steel by CO2/Water Mixture, Corrosion, Vol 43, April 1987, p 216"
+      },
+      {
+        "baseline_global_mean_rmse": 0.56633,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.587501,
+        "n_test": 24,
+        "r2": -1.787576,
+        "rmse": 0.736862,
+        "source": "Inco Alloys International, 1980"
+      },
+      {
+        "baseline_global_mean_rmse": 1.250433,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.125707,
+        "n_test": 24,
+        "r2": -0.485814,
+        "rmse": 1.225167,
+        "source": "E.D. Thomas, K.E. Lucas, M.H. Peterson, and D.K. Christian, Effects of Electrolytic Chlorination on Marine Materials, Materials Performance, NACE, USA, July 1988, p 36-39"
+      },
+      {
+        "baseline_global_mean_rmse": 0.86771,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.46272,
+        "n_test": 23,
+        "r2": 0.254964,
+        "rmse": 0.668649,
+        "source": "Ampco Metal Division, Ampco-Pittsburgh, unpublished research, 1951; as cited in Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 1175"
+      },
+      {
+        "baseline_global_mean_rmse": 1.08935,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.842544,
+        "n_test": 23,
+        "r2": -1.007922,
+        "rmse": 1.008577,
+        "source": "Allegheny Ludlum Corporation, 1980"
+      },
+      {
+        "baseline_global_mean_rmse": 1.581266,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.281591,
+        "n_test": 23,
+        "r2": -4.872104,
+        "rmse": 1.39469,
+        "source": "S.W. Ciaraldi, M.R. Berry, and J.M. Johnson, Paper 98, presented at Corrosion/82, National Association of Corrosion Engineers, Houston, 1982"
+      },
+      {
+        "baseline_global_mean_rmse": 1.049998,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.882122,
+        "n_test": 23,
+        "r2": -0.500697,
+        "rmse": 0.97742,
+        "source": "S.W. Ciaraldi, M.R. Berry, and J.M. Johnson, Paper 98, presented at Corrosion/82, National Association of Corrosion Engineers, Houston, 1982; Corrosion Engineering Bulletin 6, International Nickel Company; as cited in Metals Handbook, Ninth Edition, Vol 1"
+      },
+      {
+        "baseline_global_mean_rmse": 1.568567,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.188212,
+        "n_test": 23,
+        "r2": -23.430761,
+        "rmse": 1.449838,
+        "source": "J.A. Colwell, C.J. Martin, and R.D. Mack, Evaluation of Full-Scale Sections of Bimetallic Tubing in Simulated Production Environments, Corrosion, Vol 45, (No. 5), NACE, May 1989, p 429-440"
+      },
+      {
+        "baseline_global_mean_rmse": 1.479854,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.703658,
+        "n_test": 23,
+        "r2": 0.677751,
+        "rmse": 0.825377,
+        "source": "F.L. LaQue and H.R. Copson, Corrosion Resistance of Metals and Alloys, Reinhold Publishing, New York, 1963"
+      },
+      {
+        "baseline_global_mean_rmse": 0.803424,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.074951,
+        "n_test": 23,
+        "r2": -1.725834,
+        "rmse": 1.317404,
+        "source": "Carpenter Technology Corp., 1987"
+      },
+      {
+        "baseline_global_mean_rmse": 1.173183,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.869806,
+        "n_test": 23,
+        "r2": -0.417861,
+        "rmse": 1.068936,
+        "source": "J.S. Pettibone, Other Metals, in Corrosion Resistance of Metals and Alloys, 2nd Edition, F.L. LaQue and H.R. Copson, Ed., Reinhold Publishing, New York, 1963, p 629"
+      },
+      {
+        "baseline_global_mean_rmse": 1.447182,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.127131,
+        "n_test": 22,
+        "r2": -0.00074,
+        "rmse": 1.368652,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 730"
+      },
+      {
+        "baseline_global_mean_rmse": 2.051425,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.296017,
+        "n_test": 22,
+        "r2": -0.146188,
+        "rmse": 1.812748,
+        "source": "H. Bala and S. Szymura, Corrosion Behaviour of Cu-Ni-Fe and Cu-Ni-Co Permanent Magnet Alloys, Materials Forum, 13, 1989, p 43-47"
+      },
+      {
+        "baseline_global_mean_rmse": 1.449389,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.029751,
+        "n_test": 22,
+        "r2": -0.444258,
+        "rmse": 1.411176,
+        "source": "Allegheny Ludlum Steel Corp."
+      },
+      {
+        "baseline_global_mean_rmse": 0.648305,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.781653,
+        "n_test": 21,
+        "r2": -1.390608,
+        "rmse": 0.926305,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 1161"
+      },
+      {
+        "baseline_global_mean_rmse": 0.951235,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.825925,
+        "n_test": 21,
+        "r2": -0.314322,
+        "rmse": 1.090457,
+        "source": "S.M. Wilhelm, Galvanic Corrosion in Oil and Gas Production: Part 1 - Laboratory Studies, Corrosion, Vol 48, (No. 8), NACE, USA, 1992, p 691-703"
+      },
+      {
+        "baseline_global_mean_rmse": 0.57786,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.509365,
+        "n_test": 20,
+        "r2": -0.103248,
+        "rmse": 0.603302,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 1158"
+      },
+      {
+        "baseline_global_mean_rmse": 2.579649,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 2.16364,
+        "n_test": 20,
+        "r2": -11.21889,
+        "rmse": 2.343957,
+        "source": "G. Trabanelli, A. Frifnani, G. Brunoro, C. Monticelli, and F. Zucchi, Mater. Perform., Vol 24 (No. 6), 1985, p 33; as cited in Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 1168"
+      },
+      {
+        "baseline_global_mean_rmse": 1.164486,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.870574,
+        "n_test": 20,
+        "r2": 0.20407,
+        "rmse": 1.02353,
+        "source": "Haynes International, 1982"
+      },
+      {
+        "baseline_global_mean_rmse": 0.386021,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.423296,
+        "n_test": 20,
+        "r2": -0.781281,
+        "rmse": 0.5152,
+        "source": "F.L. LaQue, Corrosion by Seawater, Behavior of Metals and Alloys in Seawater, in The Corrosion Handbook, H.H. Uhlig, Ed., John Wiley & Sons, 1948, p 383-430; S.C. Britton, Anti-Corrosion Manual, Scientific Surveys, Ltd., 1958; C.L. Baker, Ind. Eng. Chem.,"
+      },
+      {
+        "baseline_global_mean_rmse": 0.892717,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.88542,
+        "n_test": 20,
+        "r2": -0.830885,
+        "rmse": 1.149703,
+        "source": "N. Sridhar, Behavior of High-Performance Alloys in Sulfuric Acid, Materials Performance, NACE, USA, March 1988, p 40-46"
+      },
+      {
+        "baseline_global_mean_rmse": 1.031355,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.668013,
+        "n_test": 19,
+        "r2": 0.16606,
+        "rmse": 0.903476,
+        "source": "N.D. Tomashov and P.M. Altovskii, Corrosion and Protection of Titanium, Government Scientific-Technical Publication of Machine-Building Literature (Russian translation), 1963; Corrosion Resistance of Titanium, Technical Handbook, Imperial Metals Industrie"
+      },
+      {
+        "baseline_global_mean_rmse": 0.846649,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.709905,
+        "n_test": 19,
+        "r2": -0.249175,
+        "rmse": 0.867131,
+        "source": "Metals Handbook, Ninth Edition, Vol 2, Properties and Selection: Nonferrous Alloys and Pure Metals, American Society for Metals, Metals Park, OH, 1979, p 476-477"
+      },
+      {
+        "baseline_global_mean_rmse": 0.67322,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.589484,
+        "n_test": 19,
+        "r2": -1.109597,
+        "rmse": 0.726076,
+        "source": "R.W. Schultz, J.A. Hall, and T.L. Wardlaw, TI-CODE 12, An Improved Industrial Alloy, Paper presented at the Japan Titanium Society 30th Anniversary International Symposium, Japan Titanium Society, Aug 1982; as cited in Metals Handbook, Ninth Edition, Vol"
+      },
+      {
+        "baseline_global_mean_rmse": 1.20688,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.939333,
+        "n_test": 19,
+        "r2": -0.129003,
+        "rmse": 1.115292,
+        "source": "W.Z. Friend, Corrosion of Nickel and Nickel-Base Alloys, John Wiley & Sons, New York, 1980, p 393"
+      },
+      {
+        "baseline_global_mean_rmse": 0.704997,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.547421,
+        "n_test": 18,
+        "r2": -0.082169,
+        "rmse": 0.70124,
+        "source": "Metals Handbook, Ninth Edition, Vol 3, Properties and Selection: Stainless Steels, Tool Materials and Special-Purpose Metals, American Society for Metals, Metals Park, OH, 1980, p 80"
+      },
+      {
+        "baseline_global_mean_rmse": 0.891019,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.580879,
+        "n_test": 18,
+        "r2": -0.410774,
+        "rmse": 0.697098,
+        "source": "K. Tanno, M. Itoh, H. Sekiya, H. Yashiro, and K. Kumagai, The Corrosion Inhibition of Carbon Steel in Lithium Bromide Solution by Hydroxide and Molybdate at Moderate Temperatures, Corrosion Science, Vol 34, (No. 9), Pergamon Press Ltd., 1993, p 1445-1461"
+      },
+      {
+        "baseline_global_mean_rmse": 0.96643,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.018868,
+        "n_test": 18,
+        "r2": -1.52362,
+        "rmse": 1.133401,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 635"
+      },
+      {
+        "baseline_global_mean_rmse": 1.107678,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.976547,
+        "n_test": 18,
+        "r2": -0.136073,
+        "rmse": 1.105053,
+        "source": "R.O. Cassibba and S. Fernandez, Lead Corrosion Behaviour in Simulated Media of an Underground Repository, J. Nuclear Materials, 161, Elsevier Science Publishers B.V., The Netherlands, 1989, p 93-101"
+      },
+      {
+        "baseline_global_mean_rmse": 0.551009,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.43816,
+        "n_test": 18,
+        "r2": 0.205474,
+        "rmse": 0.481962,
+        "source": "R. Jasinski and K.D. Efird, Electrochemical Corrosion Probe for High Resistivity Hydrocarbon/Water Mixtures, Corrosion Engineering, Feb 1988, 658"
+      },
+      {
+        "baseline_global_mean_rmse": 0.390565,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.141553,
+        "n_test": 18,
+        "r2": null,
+        "rmse": 0.235624,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 797"
+      },
+      {
+        "baseline_global_mean_rmse": 0.428445,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.348821,
+        "n_test": 17,
+        "r2": -0.046742,
+        "rmse": 0.430017,
+        "source": "Metals Handbook, Ninth Edition, Vol 2, Properties and Selection: Nonferrous Alloys and Pure Metals, American Society for Metals, Metals Park, OH, 1979, p 476"
+      },
+      {
+        "baseline_global_mean_rmse": 1.237422,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.878721,
+        "n_test": 17,
+        "r2": -0.138632,
+        "rmse": 1.113991,
+        "source": "W.Z. Friend, Corrosion of Nickel and Nickel-Base Alloys, John Wiley & Sons, New York, 1980, p 71"
+      },
+      {
+        "baseline_global_mean_rmse": 1.580126,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.992109,
+        "n_test": 17,
+        "r2": -0.984884,
+        "rmse": 1.292611,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 804"
+      },
+      {
+        "baseline_global_mean_rmse": 2.091773,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.484984,
+        "n_test": 16,
+        "r2": -34.606215,
+        "rmse": 1.533583,
+        "source": "W.H. Ailor, Jr., Ten-Year Seawater Tests on Aluminum in Corrosion in Natural Environments (STP 558), ASTM, Philadelphia, 1974, p 117"
+      },
+      {
+        "baseline_global_mean_rmse": 1.674194,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.615622,
+        "n_test": 16,
+        "r2": 0.36125,
+        "rmse": 0.733024,
+        "source": "Lead for Corrosion Resistant Applications: A Guide, Lead Industries Association, Inc. New York, p 65"
+      },
+      {
+        "baseline_global_mean_rmse": 1.535676,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.755535,
+        "n_test": 16,
+        "r2": -0.304012,
+        "rmse": 0.960098,
+        "source": "R.D. Davies and F.P.A. Robinson, Effects of Vanadium and Other Elements on the Pitting Resistance of a Ferritic 18% Chromium Stainless Steel, Corrosion, Vol 45, (No. 4), NACE, April 1989, p 336-340"
+      },
+      {
+        "baseline_global_mean_rmse": 1.260339,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.896528,
+        "n_test": 16,
+        "r2": -15.311692,
+        "rmse": 0.925341,
+        "source": "Petroleum Engineer International, Oct 1986"
+      },
+      {
+        "baseline_global_mean_rmse": 2.03169,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.294595,
+        "n_test": 16,
+        "r2": -0.797443,
+        "rmse": 1.415944,
+        "source": "Inco Alloys International, 1986"
+      },
+      {
+        "baseline_global_mean_rmse": 1.101366,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.088783,
+        "n_test": 16,
+        "r2": -0.258732,
+        "rmse": 1.235653,
+        "source": "Metals Handbook, Ninth Edition, Vol 3, Properties and Selection: Stainless Steels, Tool Materials and Special-Purpose Metals, American Society for Metals, Metals Park, OH, 1980, p 81"
+      },
+      {
+        "baseline_global_mean_rmse": 1.489221,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.99963,
+        "n_test": 15,
+        "r2": -0.711804,
+        "rmse": 1.281058,
+        "source": "Allegheny Ludlum Corporation, 1986"
+      },
+      {
+        "baseline_global_mean_rmse": 1.230546,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.863988,
+        "n_test": 15,
+        "r2": 0.163748,
+        "rmse": 1.02557,
+        "source": "Jessop JS700 (UNS NO8700), Jessop Steel Company, Washington, PA, 1987"
+      },
+      {
+        "baseline_global_mean_rmse": 1.190575,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.35088,
+        "n_test": 15,
+        "r2": -0.131581,
+        "rmse": 0.418912,
+        "source": "Lead for Corrosion Resistant Applications: A Guide, Lead Industries Association, Inc. New York, p 52"
+      },
+      {
+        "baseline_global_mean_rmse": 0.674316,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.899254,
+        "n_test": 15,
+        "r2": -1.776685,
+        "rmse": 1.114939,
+        "source": "W.Z. Friend, Corrosion of Nickel and Nickel-Base Alloys, John Wiley & Sons, New York, 1980, p 401"
+      },
+      {
+        "baseline_global_mean_rmse": 3.235269,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 2.586228,
+        "n_test": 15,
+        "r2": -16.459575,
+        "rmse": 2.681946,
+        "source": "R. Udhayan, N. Muniyandi, and P.B. Mathur, Studies on Magnesium and Its Alloys in Battery Electrolytes, British Corrosion Journal, Vol 27, (No. 1), 1992, p 68-71"
+      },
+      {
+        "baseline_global_mean_rmse": 2.40989,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.328329,
+        "n_test": 14,
+        "r2": 0.059586,
+        "rmse": 1.644094,
+        "source": "K.L. Tseitlin and J.A. Strunkin, J. Appl. Chem. (USSR), Vol 29 (No. 11), 1956, p 1793"
+      },
+      {
+        "baseline_global_mean_rmse": 1.091087,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.359751,
+        "n_test": 14,
+        "r2": -0.681095,
+        "rmse": 0.431159,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 785"
+      },
+      {
+        "baseline_global_mean_rmse": 1.569563,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 2.173977,
+        "n_test": 14,
+        "r2": -626.065418,
+        "rmse": 2.279514,
+        "source": "M. Stern and C. Bishop, Corrosion and Electrochemical Behavior, in Columbium and Tantalum, F. Sisco and E. Epremian, Ed., John Wiley & Sons, New York, 1963, p 325"
+      },
+      {
+        "baseline_global_mean_rmse": 0.736683,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.591078,
+        "n_test": 14,
+        "r2": -0.447231,
+        "rmse": 0.727154,
+        "source": "Metals Handbook, Ninth Edition, Vol 3, Properties and Selection: Stainless Steels, Tool Materials and Special-Purpose Metals, American Society for Metals, Metals Park, OH, 1980, p 87"
+      },
+      {
+        "baseline_global_mean_rmse": 1.977281,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 2.745652,
+        "n_test": 13,
+        "r2": -2681.443975,
+        "rmse": 2.746164,
+        "source": "J.A. Carew and A. Abdullah, The Influence of Heat Treatment on the Corrosion Behaviour of Ferritic Stainless Steel Solar Panels in Hot Municipal Water, Corrosion Science, Vol 34 (No. 2), Pergamon Press Ltd., UK, 1992, p 217-231"
+      },
+      {
+        "baseline_global_mean_rmse": 0.402656,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.268475,
+        "n_test": 13,
+        "r2": -0.406943,
+        "rmse": 0.350998,
+        "source": "C.A. Farina, U. Grassini, and G. Faita, Materials for Urea Plants"
+      },
+      {
+        "baseline_global_mean_rmse": 1.614108,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.542663,
+        "n_test": 12,
+        "r2": null,
+        "rmse": 0.542663,
+        "source": "K. Takao and K. Terasaki, Chemical Resistance of Various Cemented Carbides, Nippon Tungsten Rev., Vol 10, 1977; Y. Masumoto, K. Takechi, and S. Imassato, Corrosion Resistance of Cemented Carbides, Nippon Tungsten Rev., Vol 19, 1986; as cited in Metals Han"
+      },
+      {
+        "baseline_global_mean_rmse": 1.381326,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.876566,
+        "n_test": 12,
+        "r2": -9.716665,
+        "rmse": 1.970766,
+        "source": "Metals Handbook, Ninth Edition, Vol 2, Properties and Selection: Nonferrous Alloys and Pure Metals, American Society for Metals, Metals Park, OH, 1979, p 598"
+      },
+      {
+        "baseline_global_mean_rmse": 0.398309,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.698841,
+        "n_test": 12,
+        "r2": -2.70871,
+        "rmse": 0.750595,
+        "source": "Cost-Effective Material Selection: Cast vs Wrought, Materials Performance, NACE, USA, July 1992, p 59-60"
+      },
+      {
+        "baseline_global_mean_rmse": 0.694064,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.408015,
+        "n_test": 12,
+        "r2": -0.111577,
+        "rmse": 0.607067,
+        "source": "T.A. Mozhi and R. Ray, Corrosion Resistance of Rapidly Solidified Alloys Compared to Their Conventional Wrought Counterparts, Materials Performance, NACE, USA, October 1990, p 50-54"
+      },
+      {
+        "baseline_global_mean_rmse": 0.673626,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.52284,
+        "n_test": 12,
+        "r2": -0.150999,
+        "rmse": 0.702621,
+        "source": "D.C. Agarwal, Duplex Alloy 255 in Marine Applications, Materials Performance, NACE, USA, October 1988, p 63-67"
+      },
+      {
+        "baseline_global_mean_rmse": 1.362594,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.80335,
+        "n_test": 12,
+        "r2": 0.421176,
+        "rmse": 1.036235,
+        "source": "R.M. Davidson and J.D. Redmond, The Application of Ferritic and Duplex Stainless Steels, Second Symposium on Shell and Tube Heat Exchangers, W.R. Apblett, Jr., Ed., American Society for Metals, Metals Park, OH, 1982, p 86"
+      },
+      {
+        "baseline_global_mean_rmse": 1.596768,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.133901,
+        "n_test": 12,
+        "r2": -341.984248,
+        "rmse": 1.135558,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 631"
+      },
+      {
+        "baseline_global_mean_rmse": 0.955246,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.911051,
+        "n_test": 12,
+        "r2": -0.459418,
+        "rmse": 1.110997,
+        "source": "S.C. Britton and R.M. Angles, J. Electrodep. Tech. Soc., Vol 27, 1951, p 293; S.C. Britton and R.M. Angles, Metallurgia, Vol 44, 1951, p 185; as cited in Metals Handbook, Ninth Edition, Vol 7, Powder Metallurgy, American Society for Metals, Metals Park, O"
+      },
+      {
+        "baseline_global_mean_rmse": 0.767722,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.238007,
+        "n_test": 12,
+        "r2": -1.230828,
+        "rmse": 0.251236,
+        "source": "H.M. Tawancy, I.M. Allam, and N.M. Abbas, Effect of Ni3Nb Precipitation on the Corrosion Resistance of Inconel Alloy 625, J. Materials Science Letters, Chapman & Hall, Ltd., UK, 1990, p 343-347"
+      },
+      {
+        "baseline_global_mean_rmse": 1.009905,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.794624,
+        "n_test": 12,
+        "r2": -0.439685,
+        "rmse": 0.928499,
+        "source": "F.M. Al-Kharafi, F.H. Al-Hajjar, and A. Katrib, Inhibition by Heterocyclic Compounds of Corrosion of Copper, Corrosion Science, Vol 30, (No. 8/9), Pergamon Press plc, UK, 1990, p 869-875"
+      },
+      {
+        "baseline_global_mean_rmse": 0.518723,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.241946,
+        "n_test": 11,
+        "r2": -6.404567,
+        "rmse": 1.354933,
+        "source": "R.I. Higgins, Corrosion of Cast Iron, J. Res., Feb 1956, p 165-177"
+      },
+      {
+        "baseline_global_mean_rmse": 0.608937,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.216504,
+        "n_test": 11,
+        "r2": -4.690479,
+        "rmse": 0.238469,
+        "source": "E. Julve and L.L. Gustems, The Atmospheric Corrosion of Zinc Electroplate and Steel in the Barcelona Metropolitan Area, Corrosion Science, Vol 35, (Nos. 5-8) Pergamon Press, Ltd., UK, 1993, p 1273-1278"
+      },
+      {
+        "baseline_global_mean_rmse": 0.961741,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.634117,
+        "n_test": 11,
+        "r2": -0.016674,
+        "rmse": 0.703153,
+        "source": "N.D. Tomashov and P.M. Altovskii, Corrosion and Protection of Titanium, Government Scientific-Technical Publication of Machine-Building Literature (Russian translation), 1963; L.C. Covington and R.W. Schultz, Corrosion Resistance of Titanium, TIMET Corpor"
+      },
+      {
+        "baseline_global_mean_rmse": 0.823766,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.492008,
+        "n_test": 11,
+        "r2": 0.312144,
+        "rmse": 0.663585,
+        "source": "Englehard Industries Division, Englehard Corporation; and Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 794"
+      },
+      {
+        "baseline_global_mean_rmse": 1.943408,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 2.616542,
+        "n_test": 11,
+        "r2": -10.177006,
+        "rmse": 2.942726,
+        "source": "S.R. Seagle, Pulp Paper, Vol 53 (No. 10), Sept 1979"
+      },
+      {
+        "baseline_global_mean_rmse": 0.686014,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.214901,
+        "n_test": 10,
+        "r2": -2.617662,
+        "rmse": 1.258548,
+        "source": "J.-E. Svensson and L.-G. Johansson, A Laboratory Study of the Initial Stages of the Atmospheric Corrosion of Zinc in the Presence of NaCl; Influence of SO2 and NO2,  Corrosion Science, Vol 34, (No. 5), Pergamon Press Ltd., UK, 1993, p 721-740"
+      },
+      {
+        "baseline_global_mean_rmse": 0.905693,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.922622,
+        "n_test": 10,
+        "r2": -1.064579,
+        "rmse": 1.081598,
+        "source": "Haynes International, 1986"
+      },
+      {
+        "baseline_global_mean_rmse": 2.639398,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.224004,
+        "n_test": 10,
+        "r2": -3.50817,
+        "rmse": 1.420805,
+        "source": "Z.A. Foroulis, Corrosion in Chlorine Environments, Anti-Corrosion, June 1988, p 4-12"
+      },
+      {
+        "baseline_global_mean_rmse": 0.68136,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.499048,
+        "n_test": 10,
+        "r2": 0.062824,
+        "rmse": 0.619759,
+        "source": "S.J. Bullard, D.E. Larson, and J.S. Dunning, Oxidation and Corrosion Resistance of Two Fe-8Cr-16Ni-Si-Cu Alloys, Corrosion, Vol 48, (No. 11), NACE, USA, 1992, p 891-897"
+      },
+      {
+        "baseline_global_mean_rmse": 0.501958,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.897163,
+        "n_test": 10,
+        "r2": -2.851765,
+        "rmse": 0.943232,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 629"
+      },
+      {
+        "baseline_global_mean_rmse": 1.150415,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.054396,
+        "n_test": 10,
+        "r2": -0.181995,
+        "rmse": 1.174479,
+        "source": "Metals Handbook, Ninth Edition, Vol 2, Properties and Selection: Nonferrous Alloys and Pure Metals, American Society for Metals, Metals Park, OH, 1979, p 601"
+      },
+      {
+        "baseline_global_mean_rmse": 1.31604,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.786308,
+        "n_test": 10,
+        "r2": -2.802181,
+        "rmse": 0.871725,
+        "source": "R. Ambat and E.S. Dwarakadasa, The Influence of pH on the Corrosion of Medium Strength Aerospace Alloys 8090, 2091 and 2014, Corrosion Science, Vol 33, (No. 5) Pergamon Press plc, UK, 1992, p 681-690"
+      },
+      {
+        "baseline_global_mean_rmse": 1.559794,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.477941,
+        "n_test": 9,
+        "r2": -34.183693,
+        "rmse": 1.499403,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 720"
+      },
+      {
+        "baseline_global_mean_rmse": 0.995481,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.877248,
+        "n_test": 9,
+        "r2": -0.200722,
+        "rmse": 1.011559,
+        "source": "W.Z. Friend, Corrosion of Nickel and Nickel-Base Alloys, John Wiley & Sons, New York, 1980, p 402"
+      },
+      {
+        "baseline_global_mean_rmse": 1.466457,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.585284,
+        "n_test": 9,
+        "r2": 0.271409,
+        "rmse": 0.738349,
+        "source": "Metals Handbook, Ninth Edition, Vol 2, Properties and Selection: Nonferrous Alloys and Pure Metals, American Society for Metals, Metals Park, OH, 1979, p 599"
+      },
+      {
+        "baseline_global_mean_rmse": 0.912997,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.856689,
+        "n_test": 9,
+        "r2": -0.15899,
+        "rmse": 0.970798,
+        "source": "J.R. Bryant and C.B. Chitwood, Paper 58, presented at Corrosion/83, National Association of Corrosion Engineers, Houston, 1983"
+      },
+      {
+        "baseline_global_mean_rmse": 0.695568,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.736298,
+        "n_test": 9,
+        "r2": -1.354974,
+        "rmse": 1.045442,
+        "source": "Metals Handbook, Ninth Edition, Vol 3, Properties and Selection: Stainless Steels, Tool Materials and Special-Purpose Metals, American Society for Metals, Metals Park, OH, 1980, p 88"
+      },
+      {
+        "baseline_global_mean_rmse": 1.328649,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.644928,
+        "n_test": 9,
+        "r2": -3.609875,
+        "rmse": 0.728802,
+        "source": "O. Lunder, J.E. Lein, T.Kr. Aune, and K. Nisancioglu, The Role of Mg17Al12 Phase in the Corrosion of Mg Alloy AZ91, Corrosion, Vol 45, (No. 9), NACE, September 1989, 741-748"
+      },
+      {
+        "baseline_global_mean_rmse": 0.538368,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.345678,
+        "n_test": 9,
+        "r2": 0.374538,
+        "rmse": 0.418348,
+        "source": "Allegheny Ludlum Corporation, 1982"
+      },
+      {
+        "baseline_global_mean_rmse": 1.57583,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.950911,
+        "n_test": 9,
+        "r2": -0.181646,
+        "rmse": 1.203444,
+        "source": "Inco Alloys International, 1984"
+      },
+      {
+        "baseline_global_mean_rmse": 1.190538,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.305462,
+        "n_test": 9,
+        "r2": -59.319849,
+        "rmse": 1.339927,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 636"
+      },
+      {
+        "baseline_global_mean_rmse": 1.028651,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.84488,
+        "n_test": 9,
+        "r2": -0.124844,
+        "rmse": 1.034984,
+        "source": "Carpenter Technology Corp., Specialty Steels Technical Data, 1986"
+      },
+      {
+        "baseline_global_mean_rmse": 0.514226,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.563298,
+        "n_test": 9,
+        "r2": -0.919792,
+        "rmse": 0.655689,
+        "source": "C.J. Slunder and W.K. Boyd, Zinc: Its Corrosion Resistance, Second Edition, T.K. Christman and J. Payer, Ed., International Lead Zinc Research Organization, New York, 1983, p 115"
+      },
+      {
+        "baseline_global_mean_rmse": 1.428633,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.384321,
+        "n_test": 9,
+        "r2": -0.710281,
+        "rmse": 1.606082,
+        "source": "C. Chakrabarty, M.M. Singh, and C.U. Agarwal, J. Electrochem. Soc., Vol 31, 1982, p 165-169"
+      },
+      {
+        "baseline_global_mean_rmse": 1.201031,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.928892,
+        "n_test": 9,
+        "r2": -140.067664,
+        "rmse": 1.935765,
+        "source": "S. Sankarapapavinasam, F. Pushpanaden, and M.F. Ahmed, Hydrazine and Substituted Hydrazines as Corrosion Inhibitors for Lead in Acetic Acid, British Corrosion Journal, Vol 24, (No. 1), 1989, p 39-42"
+      },
+      {
+        "baseline_global_mean_rmse": 0.649785,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.503643,
+        "n_test": 8,
+        "r2": -0.256208,
+        "rmse": 0.673791,
+        "source": "Lead for Corrosion Resistant Applications: A Guide, Lead Industries Association, New York, p 67"
+      },
+      {
+        "baseline_global_mean_rmse": 3.45688,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 2.540251,
+        "n_test": 8,
+        "r2": -0.643578,
+        "rmse": 2.790667,
+        "source": "R.F. Steigerwald, Metalloved. Term. Obrab. Met., No. 7, 1973, p 16-20; R.F. Steigerwald and M.A. Streicher, Paper presented at the Annual Meeting, St. Louis National Association of Corrosion Engineers, 1965; as cited in Metals Handbook, Ninth Edition, Vol"
+      },
+      {
+        "baseline_global_mean_rmse": 1.408561,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.297091,
+        "n_test": 8,
+        "r2": -37.637725,
+        "rmse": 1.314209,
+        "source": "M. Saxena, B.K. Prasad, T.K. Dan, Corrosion Characteristics of Aluminium Alloy Graphite Particulate Composite in Various Environments, J. Materials Science, 27, Chapman & Hall Ltd., UK, 1992, p 4805-4812"
+      },
+      {
+        "baseline_global_mean_rmse": 1.518288,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.139395,
+        "n_test": 8,
+        "r2": -1.153328,
+        "rmse": 1.424032,
+        "source": "R.M. Burns and W.W. Bradley, Protective Coatings for Metals, Third Edition, Reinhold Publishing, New York, 1967, p 211"
+      },
+      {
+        "baseline_global_mean_rmse": 0.38254,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.596898,
+        "n_test": 8,
+        "r2": -2.443917,
+        "rmse": 0.708571,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 575"
+      },
+      {
+        "baseline_global_mean_rmse": 0.396961,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.416667,
+        "n_test": 8,
+        "r2": -1.675473,
+        "rmse": 0.492278,
+        "source": "K. Tanno, M. Itoh, T. Takahashi, H. Yashiro, and N. Kumagai, The Corrosion of Carbon Steel in Lithium Bromide Solution at Moderate Temperatures, Corrosion Science, Vol 34, (No. 9), Pergamon Press Ltd., UK, 1993, p 1441-1445"
+      },
+      {
+        "baseline_global_mean_rmse": 0.592194,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.984871,
+        "n_test": 8,
+        "r2": -2.286406,
+        "rmse": 1.069742,
+        "source": "W.Z. Friend, Corrosion of Nickel and Nickel-Base Alloys, John Wiley & Sons, New York, 1980, p 67"
+      },
+      {
+        "baseline_global_mean_rmse": 0.780256,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.452777,
+        "n_test": 8,
+        "r2": -6.394419,
+        "rmse": 1.592379,
+        "source": "J.P. Carter et al., Corrosion, 40(5), May 1984"
+      },
+      {
+        "baseline_global_mean_rmse": 0.955711,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.647289,
+        "n_test": 8,
+        "r2": -1.552779,
+        "rmse": 0.841254,
+        "source": "D.E. Gluck, R.B. Herchenroeder, G.Y. Lai, and M.F. Rothman, Met. Prog., Sept 1985, p 35"
+      },
+      {
+        "baseline_global_mean_rmse": 2.00711,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.247435,
+        "n_test": 7,
+        "r2": -0.067143,
+        "rmse": 0.316584,
+        "source": "G.O. Hiers and E. Minarcik, Symposium on Atmospheric Corrosion of Nonferrous Metals, STP 175, ASTM, 1956, p 135; W.E. Boggs, R.H. Kachik, and G.E. Pellisier, J. Electrochem. Soc., Vol 110 (No. 1), 1963, p 4; as cited in Metals Handbook, Ninth Edition, Vol"
+      },
+      {
+        "baseline_global_mean_rmse": 3.247567,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.48316,
+        "n_test": 7,
+        "r2": -10.179917,
+        "rmse": 1.556136,
+        "source": "F.H. Stott, R. Prescott, P. Elliott, and M.H.J.H. Al'Atia, Assessment of the Degradation of Metals and Alloys in Air-2% Chorine at High Temperature, High Temperature Technology, Vol 6, (No. 3) Butterworth & Co. (Publishers) Ltd., UK, August 1988, p 115-12"
+      },
+      {
+        "baseline_global_mean_rmse": 0.442731,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.503128,
+        "n_test": 7,
+        "r2": -3.67334,
+        "rmse": 0.73655,
+        "source": "Lead for Corrosion Resistant Applications: A Guide, Lead Industries Association, New York, p 64"
+      },
+      {
+        "baseline_global_mean_rmse": 1.157884,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.096463,
+        "n_test": 7,
+        "r2": -6.060296,
+        "rmse": 1.202551,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 628"
+      },
+      {
+        "baseline_global_mean_rmse": 1.017022,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.64896,
+        "n_test": 6,
+        "r2": -0.087131,
+        "rmse": 0.781234,
+        "source": "M-C. Rsai, W-T. Tsai, and J-T. Lee, The Effect of Heat Treatment and Applied Potential on the Stress Corrosion Cracking of Alloy 600 in Thiosulfate Solution, Corrosion Science, Vol 34, (No. 5), Pergamon Press, Ltd., UK, 1993, p 741-757"
+      },
+      {
+        "baseline_global_mean_rmse": 1.944174,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.293238,
+        "n_test": 6,
+        "r2": -1.172574,
+        "rmse": 0.33152,
+        "source": "R.L. Kane, The Corrosion of Titanium, in The Corrosion of Light Metals, The Corrosion Monograph Series, John Wiley & Sons, 1967; F.M. Reinhart, Corrosion of Materials in Hydrospace, Part III, Titanium and Titanium Alloys, Technical Note N-921, U.S. Naval"
+      },
+      {
+        "baseline_global_mean_rmse": 0.325821,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.271941,
+        "n_test": 6,
+        "r2": -0.82678,
+        "rmse": 0.306396,
+        "source": "R.C. John, W.C. Fort III, and R.A. Tait, Prediction of Alloy Corrosion in the Shell Coal Gasification Process, Materials at High Temperature, Vol 11, (Nos. 1-4), 1993, p 124-132"
+      },
+      {
+        "baseline_global_mean_rmse": 0.240887,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.67952,
+        "n_test": 6,
+        "r2": -141.563896,
+        "rmse": 1.685442,
+        "source": "R. Ambat and E.S. Dwarakadasa, Effect of Chloride Ion Concentration during Corrosion of Medium Strength Aluminium Alloys 8090, 2091, and 2014, British Corrosion Journal, Vol 28, (No. 2), 1993, p 142-148"
+      },
+      {
+        "baseline_global_mean_rmse": 1.07846,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.883781,
+        "n_test": 6,
+        "r2": -4.853135,
+        "rmse": 0.967407,
+        "source": "Corrosion Resistance of Titanium, Technical Handbook, Imperial Metals Industries (Kynoch) Ltd., Birmingham, UK"
+      },
+      {
+        "baseline_global_mean_rmse": 0.780143,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.386731,
+        "n_test": 6,
+        "r2": -69.81298,
+        "rmse": 0.389412,
+        "source": "Physical and Corrosion Properties, in Source Book on Ductile Iron, A.H. Rauch, Ed., American Society for Metals, Metals Park, OH, 1977, 370"
+      },
+      {
+        "baseline_global_mean_rmse": 0.665647,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.557092,
+        "n_test": 6,
+        "r2": -0.766011,
+        "rmse": 0.585868,
+        "source": "J. Husbands and P.K. Whitcraft, High-Chromium Duplex Stainless Steel for Nitric Acid Production, Materials Performance, NACE, USA, July 1992, p 54-57"
+      },
+      {
+        "baseline_global_mean_rmse": 0.946779,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.286414,
+        "n_test": 6,
+        "r2": 0.112323,
+        "rmse": 0.410123,
+        "source": "P.A. Schweitzer, Tantalum, in Corrosion and Corrosion Protection Handbook, P.A. Schweitzer, Ed., Marcel Dekker, New York, 1983, p 182-183"
+      },
+      {
+        "baseline_global_mean_rmse": 2.018553,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.456068,
+        "n_test": 6,
+        "r2": -6.578619,
+        "rmse": 0.489505,
+        "source": "M.A. Pelensky, J.J. Jawarski, and A. Gallaccio, Air, Soil, and Sea Galvanic Corrosion Investigation at Panama Canal Zone, in Galvanic and Pitting Corrosion\u0097Field and Laboratory Studies (STP 576), ASTM, Philadelphia, 1967, p 94"
+      },
+      {
+        "baseline_global_mean_rmse": 1.289447,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.97664,
+        "n_test": 6,
+        "r2": -11.501177,
+        "rmse": 1.0766,
+        "source": "Z.A. Foroulis and R.J. Franco, High Temperature Internal Corrosion of an Acetone Plant Furnace Outlet Tube: Failure Analysis and Laboratory Stimulation, Materials Performance, Vol 25, Oct 1985, p 56"
+      },
+      {
+        "baseline_global_mean_rmse": 1.849383,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 2.097502,
+        "n_test": 6,
+        "r2": -5.81922,
+        "rmse": 2.139401,
+        "source": "Inco Alloys International, 1962"
+      },
+      {
+        "baseline_global_mean_rmse": 2.721416,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 2.928325,
+        "n_test": 6,
+        "r2": -187.131532,
+        "rmse": 2.936885,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 632"
+      },
+      {
+        "baseline_global_mean_rmse": 0.38992,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.114269,
+        "n_test": 6,
+        "r2": null,
+        "rmse": 0.11466,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 800"
+      },
+      {
+        "baseline_global_mean_rmse": 0.275784,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.584513,
+        "n_test": 6,
+        "r2": -4.493319,
+        "rmse": 0.64629,
+        "source": "Lead for Corrosion Resistant Applications: A Guide, Lead Industries Association, Inc. New York, p 62"
+      },
+      {
+        "baseline_global_mean_rmse": 1.002521,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.680475,
+        "n_test": 6,
+        "r2": -23.459408,
+        "rmse": 0.733859,
+        "source": "Haynes International, 1983"
+      },
+      {
+        "baseline_global_mean_rmse": 1.499658,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.583837,
+        "n_test": 6,
+        "r2": -0.735921,
+        "rmse": 1.773503,
+        "source": "R.W. Schutz, A Case for Titanium's Resistance to Microbiologically Influenced Corrosion, Materials Performance, NACE, USA, January 1991, p 58-61"
+      },
+      {
+        "baseline_global_mean_rmse": 1.612555,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 2.043088,
+        "n_test": 5,
+        "r2": null,
+        "rmse": 2.043088,
+        "source": "I. Sekine and K. Momoi, Corrosion Behavior of SUS 329J1 Stainless Steel in Formic Acid Solution, Corrosion, Vol 44, (No. 3), NACE, March 1988, p 136-142"
+      },
+      {
+        "baseline_global_mean_rmse": 1.233065,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.120388,
+        "n_test": 5,
+        "r2": -8.979717,
+        "rmse": 1.300896,
+        "source": "P.J. Gegner and W.L. Wilson, Corrosion, Vol 15 (No. 7), 1959; as cited in Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 1179"
+      },
+      {
+        "baseline_global_mean_rmse": 0.895737,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.415158,
+        "n_test": 5,
+        "r2": -0.001249,
+        "rmse": 0.506425,
+        "source": "P.J. Gegner, Corrosion Resistance of Materials in Alkalies and Hypochlorides, Paper 27, Process Industries Corrosion Short Course, National Association of Corrosion Engineers, Houston, 1974; F.L. LaQue and H.R. Copson, Corrosion Resistance of Metals and A"
+      },
+      {
+        "baseline_global_mean_rmse": 0.733025,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.231835,
+        "n_test": 5,
+        "r2": -2.202532,
+        "rmse": 0.275675,
+        "source": "Lead for Corrosion Resistant Applications: A Guide, Lead Industries Association, Inc. New York, p 63"
+      },
+      {
+        "baseline_global_mean_rmse": 1.105129,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.489234,
+        "n_test": 5,
+        "r2": -0.002272,
+        "rmse": 0.538365,
+        "source": "J. Rawers, W. Reitz, S. Bullard, and E.K. Roub, Surface and Corrosion Study of Laser-Processed Zirconium Alloys, Corrosion, Vol 47, (No. 10), October 1991, p 769-777"
+      },
+      {
+        "baseline_global_mean_rmse": 0.395344,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.800181,
+        "n_test": 5,
+        "r2": -6.382574,
+        "rmse": 0.860586,
+        "source": "Allegheny Ludlum Corporation, 1974"
+      },
+      {
+        "baseline_global_mean_rmse": 0.849983,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.302295,
+        "n_test": 5,
+        "r2": 0.260633,
+        "rmse": 0.343651,
+        "source": "F.L. LaQue, Corrosion by Seawater, Behavior of Metals and Alloys in Seawater, in The Corrosion Handbook, H.H. Uhlig, Ed., John Wiley & Sons, New York, 1948, p 383-430"
+      },
+      {
+        "baseline_global_mean_rmse": 0.555459,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.710996,
+        "n_test": 5,
+        "r2": -1.573864,
+        "rmse": 0.865203,
+        "source": "#NAME?"
+      },
+      {
+        "baseline_global_mean_rmse": 0.453331,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.329077,
+        "n_test": 5,
+        "r2": -1.963596,
+        "rmse": 0.404278,
+        "source": "F. Bellucci, Gavanic Corrosion Between Nonmetallic Composites and Metals: 1 Effect of Metal and of Temperature, Corrosion, Vol 47, (No. 10), NACE, October 1991, p 808-819"
+      },
+      {
+        "baseline_global_mean_rmse": 2.3106,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 2.07827,
+        "n_test": 4,
+        "r2": -6.572579,
+        "rmse": 2.230776,
+        "source": "J.B. Lee, J.F. Smith, et al., An Analytical Electron Microscope Examination of Sensitized AISI 430 Stainless Steel, Corrosion, Vol 41, Feb 1985, p 77"
+      },
+      {
+        "baseline_global_mean_rmse": 0.990374,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 1.247431,
+        "n_test": 4,
+        "r2": -30.388024,
+        "rmse": 1.393248,
+        "source": "Corrosion Engineering Bulletin, No. 6, International Nickel Company, Inc."
+      },
+      {
+        "baseline_global_mean_rmse": 0.246066,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.943701,
+        "n_test": 4,
+        "r2": -51.570135,
+        "rmse": 0.952807,
+        "source": "B.R.W. Hinton and L. Wilson, The Corrosion Inhibition of Zinc with Cerous Chloride, Corrosion Science, Vol 29, (No. 8.), Maxwell Pergamon Macmillan plc, UK, 1989, p 967-985"
+      },
+      {
+        "baseline_global_mean_rmse": 1.702979,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.539709,
+        "n_test": 4,
+        "r2": -0.055557,
+        "rmse": 1.57306,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 662"
+      },
+      {
+        "baseline_global_mean_rmse": 0.928461,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.333109,
+        "n_test": 4,
+        "r2": -5.66846,
+        "rmse": 0.374261,
+        "source": "H.B. Bomberger, P.J. Cambourelis, and G.E. Hutchinson, Corrosion Properties of Titanium in Marine Environments, J. Electrochem. Soc., Vol 101, 1954, p 442; as cited in Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH,"
+      },
+      {
+        "baseline_global_mean_rmse": 1.692413,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.945669,
+        "n_test": 4,
+        "r2": -0.769698,
+        "rmse": 0.964519,
+        "source": "N. Sridhar, J. Kolts, et al., A Duplex Stainless Steel for Chloride Environments, Journal of Metals, Vol 37, March 1985, p 33"
+      },
+      {
+        "baseline_global_mean_rmse": 0.988682,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.795924,
+        "n_test": 4,
+        "r2": -0.553277,
+        "rmse": 0.881271,
+        "source": "S.R. Seagle, Pulp Paper, Vol 53, (No. 10), Sept 1979; Resistance of Nickel and High Nickel Alloys to Corrosion by Hydrochloric Acid, Hydrogen Chloride and Chlorine, Corrosion Engineering Bulletin CEB-3, The International Nickel Company; as cited in Metals"
+      },
+      {
+        "baseline_global_mean_rmse": 1.126785,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.895638,
+        "n_test": 4,
+        "r2": -5.147121,
+        "rmse": 0.978782,
+        "source": "G.P. Marsh and K.J. Taylor, An Assessment of Carbon Steel Containers for Radioactive Waste Disposal, Corrosion Science, Vol 28, (No. 3), Pergamon Press plc, UK, 1988, p 289-320"
+      },
+      {
+        "baseline_global_mean_rmse": 1.490864,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.125247,
+        "n_test": 3,
+        "r2": -1.887391,
+        "rmse": 1.360919,
+        "source": "R.T. Webster, The Applications of Zirconium and Niobium, Second Symposium on Shell and Tube Heat Exchangers, W.R. Apblett, Jr., Ed., American Society for Metals, Metals Park, OH, 1982, p 60"
+      },
+      {
+        "baseline_global_mean_rmse": 0.645717,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.390524,
+        "n_test": 3,
+        "r2": 0.503096,
+        "rmse": 0.397446,
+        "source": "Metals Handbook, Ninth Edition, Vol 3, Properties and Selection: Stainless Steels, Tool Materials and Special-Purpose Metals, American Society for Metals, Metals Park, OH, 1980, p 84"
+      },
+      {
+        "baseline_global_mean_rmse": 0.212548,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.076523,
+        "n_test": 3,
+        "r2": null,
+        "rmse": 0.076523,
+        "source": "R.T. Webster, The Applications of Zirconium and Niobium, Second Symposium on Shell and Tube Heat Exchangers, W.R. Apblett, Jr., Ed., American Society for Metals, Metals Park, OH, 1982, p 62"
+      },
+      {
+        "baseline_global_mean_rmse": 2.857017,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 2.385245,
+        "n_test": 3,
+        "r2": -25.512303,
+        "rmse": 2.403682,
+        "source": "A. Davin and D. Coutsourdis, Cobalt, Vol 52, Sept 1971, p 160; as cited in Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 660"
+      },
+      {
+        "baseline_global_mean_rmse": 0.612919,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.362996,
+        "n_test": 3,
+        "r2": -0.092659,
+        "rmse": 0.370309,
+        "source": "B. Yang, D.A. Johnson, and S.H. Shim, Effect of Ozone on Corrosion of Metals Used in Cooling Towers, Corrosion, Vol 49, (No. 6), NACE, June 1993, p 499-513"
+      },
+      {
+        "baseline_global_mean_rmse": 0.766927,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.264785,
+        "n_test": 3,
+        "r2": 0.227204,
+        "rmse": 0.391399,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 805"
+      },
+      {
+        "baseline_global_mean_rmse": 1.375455,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.593043,
+        "n_test": 2,
+        "r2": -5.984046,
+        "rmse": 0.690915,
+        "source": "Allegheny Ludlum Corporation, 1984"
+      },
+      {
+        "baseline_global_mean_rmse": 0.661678,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.358468,
+        "n_test": 2,
+        "r2": -0.968841,
+        "rmse": 0.370206,
+        "source": "Stainless Steels, R.A. Lula, Ed., American Society for Metals, Metals Park, OH, p 79"
+      },
+      {
+        "baseline_global_mean_rmse": 0.596579,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.285784,
+        "n_test": 2,
+        "r2": -33.382717,
+        "rmse": 0.290033,
+        "source": "J.W. Graydon and D.W. Kirk, Corrosion of Carbon Steel in Aqueous Lithium Hydroxide, Corrosion, Vol 46, (No. 12), NACE, December 1990, p 1002-1006"
+      },
+      {
+        "baseline_global_mean_rmse": 1.006126,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.515978,
+        "n_test": 2,
+        "r2": 0.084511,
+        "rmse": 0.516287,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 807"
+      },
+      {
+        "baseline_global_mean_rmse": 2.393538,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.53339,
+        "n_test": 2,
+        "r2": -1.754169,
+        "rmse": 2.078735,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 627"
+      },
+      {
+        "baseline_global_mean_rmse": 2.011781,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 1.806158,
+        "n_test": 2,
+        "r2": -2479.06944,
+        "rmse": 1.806522,
+        "source": "J.W. Graydon and D.W. Kirk, Corrosion of Nickel and Stainless Steels in Concentrated Lithium Hydroxide Solutions, Corrosion, Vol 46, (No. 12), NACE, December 1990, p 1021-1028"
+      },
+      {
+        "baseline_global_mean_rmse": 0.689677,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.244643,
+        "n_test": 1,
+        "r2": null,
+        "rmse": 0.244643,
+        "source": "E.A. Baker and W.W. Kirk, Long-Term Atmospheric Corrosion Behavior of Various Grades of Stainless Steel in Rural, Industrial, and Marine Environments, Corrosion Testing and Evaluation: Silver Anniversary Volume, ASTM STP 1000, R. Baboian and S.W. Dean, Ed"
+      },
+      {
+        "baseline_global_mean_rmse": 0.787647,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.570481,
+        "n_test": 1,
+        "r2": null,
+        "rmse": 0.570481,
+        "source": "F. King, C.D. Litke and S.R. Ryan, A Mechanistic Study of the Uniform Corrosion of Copper in Compacted Na-Montmorillonite/Sand Mixtures, Corrosion Science, Vol 33, (No. 12), Pergamon Press Ltd., UK, 1992, p 1979-1995"
+      },
+      {
+        "baseline_global_mean_rmse": 0.309413,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.598107,
+        "n_test": 1,
+        "r2": null,
+        "rmse": 0.598107,
+        "source": "Metals Handbook, Ninth Edition, Vol 13, Corrosion, ASM International, Metals Park, OH, 1987, p 806"
+      },
+      {
+        "baseline_global_mean_rmse": 0.389653,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.484168,
+        "n_test": 1,
+        "r2": null,
+        "rmse": 0.484168,
+        "source": "H. Leidheiser, Jr., The Corrosion of Copper, Tin and Their Alloys, John Wiley & Sons, New York, 1971, p 90-96"
+      },
+      {
+        "baseline_global_mean_rmse": 0.243505,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.194447,
+        "n_test": 1,
+        "r2": null,
+        "rmse": 0.194447,
+        "source": "0"
+      },
+      {
+        "baseline_global_mean_rmse": 0.087534,
+        "beats_global_mean_baseline_rmse": false,
+        "mae": 0.425873,
+        "n_test": 1,
+        "r2": null,
+        "rmse": 0.425873,
+        "source": "J.A. Petit et al., Corros. Sci., Vol 21 (No. 4), 1981, p 279-299; V.P. Gupta, Process for Decreasing the Rate of Titanium Corrosion, U.S. Patent 4,321,231, 1982; R.W. Schultz and L.C. Covington, Hydrometallurgical Applications of Titanium, in Industrial A"
+      },
+      {
+        "baseline_global_mean_rmse": 0.610485,
+        "beats_global_mean_baseline_rmse": true,
+        "mae": 0.494632,
+        "n_test": 1,
+        "r2": null,
+        "rmse": 0.494632,
+        "source": ""
+      }
+    ],
+    "sample_weighted_oof": {
+      "mae": 0.877949,
+      "r2": 0.18711,
+      "rmse": 1.120451
+    },
+    "source_weighted_mean_r2": null
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-source-lofo-attack.v1",
+  "scope_honesty": "Diagnostic on bare metal/alloy substrate corrosion (NIST CORR-DATA), same scope ceiling as corr-rate-qspr-v1 and corr-rate-family-safe-v1: NOT organic-coating barrier performance. No candidate/coating superiority claim.",
+  "verdict": "CLAIM_REFUTED"
+}

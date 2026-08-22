@@ -1,0 +1,15 @@
+[package]
+name = "amphora-cure-potlife-gate"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+amphora-core = { path = "../amphora-core" }
+rayon.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+sha2.workspace = true

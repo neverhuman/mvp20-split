@@ -1,0 +1,185 @@
+{
+  "all_gates_passed": true,
+  "atomic_weight_uncertainty": {
+    "bar_g_per_eq": 0.5,
+    "headroom_factor": 59.2,
+    "u_M_g_per_mol": 0.0169,
+    "u_eew_g_per_eq": 0.00845
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "gates": {
+    "G1_monomer_anchor": {
+      "abs_err_g_per_eq": 0.0095,
+      "bar": 0.5,
+      "eew_n0_rule": 170.21,
+      "passed": true,
+      "shipped_expected": 170.2
+    },
+    "G2_oligomer_additivity_difunctionality": {
+      "M0_g_per_mol": 340.419,
+      "M_repeat_g_per_mol": 284.355,
+      "all_oligomers_exactly_2_epoxides": true,
+      "eew_slope_g_per_eq_per_n": 142.1775,
+      "max_additivity_deviation_g_per_mol": 0.0,
+      "passed": true,
+      "repeat_C18H20O3_theoretical": 284.3489,
+      "repeat_mass_spread_across_pairs_g_per_mol": 0.0
+    },
+    "G3_commercial_band_nbar_consistency": {
+      "monotone_increasing_nbar_with_eew": true,
+      "note": "Corroborative only: number-average EEW of a mixture requires MEASURED composition; this does NOT assert an exact EEW for commercial grades and does NOT overturn the module's commercial_product_claim_locked=true lock.",
+      "passed": true,
+      "rows": [
+        {
+          "eew_band": [
+            185.0,
+            192.0
+          ],
+          "grade": "Epon 828 / DER 331 (liquid)",
+          "nbar_published": [
+            0.1,
+            0.16
+          ],
+          "nbar_rule": [
+            0.104,
+            0.153
+          ],
+          "nonneg": true,
+          "overlaps_published": true
+        },
+        {
+          "eew_band": [
+            171.0,
+            175.0
+          ],
+          "grade": "DER 332 (near-monomer liquid)",
+          "nbar_published": [
+            0.0,
+            0.04
+          ],
+          "nbar_rule": [
+            0.006,
+            0.034
+          ],
+          "nonneg": true,
+          "overlaps_published": true
+        },
+        {
+          "eew_band": [
+            450.0,
+            560.0
+          ],
+          "grade": "Epon 1001F / DER 671 (semisolid)",
+          "nbar_published": [
+            1.9,
+            2.8
+          ],
+          "nbar_rule": [
+            1.968,
+            2.742
+          ],
+          "nonneg": true,
+          "overlaps_published": true
+        },
+        {
+          "eew_band": [
+            800.0,
+            950.0
+          ],
+          "grade": "Epon 1004F / DER 664 (solid)",
+          "nbar_published": [
+            4.4,
+            5.5
+          ],
+          "nbar_rule": [
+            4.43,
+            5.485
+          ],
+          "nonneg": true,
+          "overlaps_published": true
+        }
+      ]
+    },
+    "G4_failclosed_controls": {
+      "passed": true,
+      "rows": [
+        {
+          "correctly_excluded": true,
+          "expected_epoxide": 0,
+          "is_difunctional_dgeba_exact_anchor": false,
+          "n_epoxide": 0,
+          "name": "bisphenol-A (no epoxide, precursor)"
+        },
+        {
+          "correctly_excluded": true,
+          "expected_epoxide": 1,
+          "is_difunctional_dgeba_exact_anchor": false,
+          "n_epoxide": 1,
+          "name": "phenyl glycidyl ether (monofunctional)"
+        },
+        {
+          "correctly_excluded": true,
+          "expected_epoxide": 1,
+          "is_difunctional_dgeba_exact_anchor": false,
+          "n_epoxide": 1,
+          "name": "DGEBA mono-hydrolyzed (one epoxide opened to diol)"
+        },
+        {
+          "correctly_excluded": true,
+          "expected_epoxide": 0,
+          "is_difunctional_dgeba_exact_anchor": false,
+          "n_epoxide": 0,
+          "name": "fully advanced DGEBA-diol (both epoxides opened)"
+        }
+      ]
+    }
+  },
+  "maps_to_module_hypothesis": "Extends 'canonical structure rules reproduce locked EEW/AHEW known answers' from the single n=0 monomer to the pure-oligomer series (each oligomer is itself a single component with an exact EEW), and gives the mechanistic, mole-weighted account of commercial-grade EEW elevation without claiming an exact EEW for polydisperse mixtures.",
+  "module": "amphora-molecule-property",
+  "oligomers_built": {
+    "0": {
+      "eew_g_per_eq": 170.21,
+      "formula": "C21H24O4",
+      "molwt_g_per_mol": 340.419,
+      "n_epoxide": 2,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC2CO2)cc1"
+    },
+    "1": {
+      "eew_g_per_eq": 312.387,
+      "formula": "C39H44O7",
+      "molwt_g_per_mol": 624.774,
+      "n_epoxide": 2,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC3CO3)cc2)cc1"
+    },
+    "2": {
+      "eew_g_per_eq": 454.565,
+      "formula": "C57H64O10",
+      "molwt_g_per_mol": 909.129,
+      "n_epoxide": 2,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC(O)COc3ccc(cc3)C(C)(C)c3ccc(OCC4CO4)cc3)cc2)cc1"
+    },
+    "3": {
+      "eew_g_per_eq": 596.742,
+      "formula": "C75H84O13",
+      "molwt_g_per_mol": 1193.484,
+      "n_epoxide": 2,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC(O)COc3ccc(cc3)C(C)(C)c3ccc(OCC(O)COc4ccc(cc4)C(C)(C)c4ccc(OCC5CO5)cc4)cc3)cc2)cc1"
+    }
+  },
+  "primary_sources": [
+    "Lee & Neville 1967 Handbook of Epoxy Resins",
+    "May 1988 Epoxy Resins 2nd ed ISBN 0-8247-7690-9",
+    "Ellis 1993 Chemistry and Technology of Epoxy Resins ISBN 0-7514-0095-0",
+    "ASTM D1652",
+    "Prohaska et al. Pure Appl. Chem. 94(5):573 (2022) doi:10.1515/pac-2019-0603"
+  ],
+  "rdkit_version_detected": "2026.03.2",
+  "repeat_mass_from_each_pair": {
+    "1": 284.355,
+    "2": 284.355,
+    "3": 284.355
+  },
+  "rule": "EEW(n) = (M0 + n*M_repeat)/2 for the linear difunctional DGEBA oligomer series; number-average EEW_bar = 170.21 + 142.18*n_bar for a mixture.",
+  "study_id": "dgeba-oligomer-eew-series-v1"
+}

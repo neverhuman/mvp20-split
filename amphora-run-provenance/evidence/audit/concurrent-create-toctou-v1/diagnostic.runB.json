@@ -1,0 +1,66 @@
+{
+  "cross_execution_agreement": {
+    "both_executions_never_saw_more_than_one_winner_per_trial": true,
+    "both_executions_never_saw_zero_winners_per_trial": true,
+    "both_executions_saw_io_losers_in_every_race_trial": true,
+    "control_clean_in_both_executions": true,
+    "exists_error_fraction_of_losers_A": 0.0035714285714285713,
+    "exists_error_fraction_of_losers_B": 0.0,
+    "io_error_fraction_of_losers_A": 0.9964285714285714,
+    "io_error_fraction_of_losers_B": 1.0
+  },
+  "independent_live_execution_A": {
+    "control_no_archive_ever_lost_a_race_it_should_have_won": true,
+    "control_total_exists_errors": 0,
+    "control_total_io_errors": 0,
+    "control_total_ok": 320,
+    "control_total_other_errors": 0,
+    "n_threads_per_trial": 8,
+    "n_trials": 40,
+    "race_total_exists_errors": 1,
+    "race_total_io_errors": 279,
+    "race_total_ok": 40,
+    "race_total_other_errors": 0,
+    "race_trials_1ok_partial_io": 1,
+    "race_trials_exact_1ok_allrest_io": 39,
+    "race_trials_with_at_least_one_io_loser": 40,
+    "race_trials_with_more_than_one_ok": 0,
+    "race_trials_with_only_exists_losers": 0,
+    "race_trials_with_zero_ok": 0
+  },
+  "independent_live_execution_B": {
+    "control_no_archive_ever_lost_a_race_it_should_have_won": true,
+    "control_total_exists_errors": 0,
+    "control_total_io_errors": 0,
+    "control_total_ok": 320,
+    "control_total_other_errors": 0,
+    "n_threads_per_trial": 8,
+    "n_trials": 40,
+    "race_total_exists_errors": 0,
+    "race_total_io_errors": 280,
+    "race_total_ok": 40,
+    "race_total_other_errors": 0,
+    "race_trials_1ok_partial_io": 0,
+    "race_trials_exact_1ok_allrest_io": 40,
+    "race_trials_with_at_least_one_io_loser": 40,
+    "race_trials_with_more_than_one_ok": 0,
+    "race_trials_with_only_exists_losers": 0,
+    "race_trials_with_zero_ok": 0
+  },
+  "kpi_claim_under_test": {
+    "kpi_path": "amphora-run-provenance/evidence/phase0/kpis/run-provenance-hash-chain-integrity-kpi.v1.json",
+    "metric": "duplicate_archive_create_rejected_via_exists_rate",
+    "metric_previous_probe_methodology": "sequential (single-threaded) duplicate RunArchive::create call against an already-fully-formed archive",
+    "metric_previous_sample_size": 3,
+    "metric_previously_observed": 1.0,
+    "prediction_rule_step_1_verbatim": "verify base/run_id does not already exist (else Exists)"
+  },
+  "pinned_inputs": {
+    "race_raw_output.v1.json": "5054e69f1679bd09f3ed3e2afcccfbc0360b786374cdcea15ab94d14c0d7da75",
+    "race_raw_output_replicate.v1.json": "c1406c4ae7408811858410b03b96d6ece18ebe8e75cdd94569174d9d84a1a4cd"
+  },
+  "refutation_criterion": "Under genuine concurrent (barrier-synchronized, same-run_id) RunArchive::create calls, any losing thread returns a RunArchiveError variant other than Exists -- i.e. the categorical '(else Exists)' prediction and the 'duplicate_archive_create_rejected_via_exists' metric name do not hold under concurrency, only under the shipped fixture's sequential probe.",
+  "refutation_criterion_observed_execution_A": true,
+  "refutation_criterion_observed_execution_B": true,
+  "schema": "amphora.run-provenance.concurrent-create-toctou.diagnostic.v1"
+}

@@ -1,0 +1,317 @@
+{
+  "authority_change": false,
+  "benchmarks": {
+    "executed": 26,
+    "passed_or_not_applicable": 7,
+    "prepared": 29
+  },
+  "data": {
+    "acquired_units": 20,
+    "acquisition_units": 31,
+    "blocked_units": 10,
+    "normalized_rows": 1611624,
+    "normalized_units": 20,
+    "pending_units": 1,
+    "quarantine_bindings": 7
+  },
+  "external_work_orders": [
+    {
+      "blocker_age_days": null,
+      "due_date": null,
+      "modules": [
+        "amphora-molecule-property"
+      ],
+      "owner": "UNASSIGNED_IN_SOURCE",
+      "owner_candidates": [
+        "DATA_CURATOR",
+        "INDEPENDENT_CHEMISTRY_REVIEWER",
+        "INDEPENDENT_TOOLKIT_REPRODUCER"
+      ],
+      "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+      "work_order_id": "WO-MOL-PROPERTY-20260718"
+    },
+    {
+      "blocker_age_days": null,
+      "due_date": null,
+      "modules": [
+        "amphora-molecule-role-ranker"
+      ],
+      "owner": "UNASSIGNED_IN_SOURCE",
+      "owner_candidates": [
+        "CHEMISTRY_LABELER_A",
+        "CHEMISTRY_LABELER_B",
+        "BLINDED_ADJUDICATOR",
+        "INDEPENDENT_STATISTICIAN"
+      ],
+      "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+      "work_order_id": "WO-MOL-ROLE-20260718"
+    },
+    {
+      "blocker_age_days": null,
+      "due_date": null,
+      "modules": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "owner": "UNASSIGNED_IN_SOURCE",
+      "owner_candidates": [
+        "USBR_DATA_CUSTODIAN",
+        "INDEPENDENT_METHOD_REVIEWER",
+        "INDEPENDENT_STATISTICIAN"
+      ],
+      "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+      "work_order_id": "WO-PUBLIC-CORROSION-20260718"
+    },
+    {
+      "blocker_age_days": null,
+      "due_date": null,
+      "modules": [
+        "amphora-cure-potlife-gate",
+        "amphora-viscosity-score",
+        "amphora-barrier-corrosion-score",
+        "amphora-solvency-score"
+      ],
+      "owner": "UNASSIGNED_IN_SOURCE",
+      "owner_candidates": [
+        "PRIMARY_CRO",
+        "BLINDED_VERIFIER_SITE_A",
+        "BLINDED_VERIFIER_SITE_B",
+        "INDEPENDENT_STATISTICIAN",
+        "INDEPENDENT_SCIENTIFIC_REVIEWER"
+      ],
+      "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+      "work_order_id": "WO-CRO-COATINGS-20260717"
+    },
+    {
+      "blocker_age_days": null,
+      "due_date": null,
+      "modules": [
+        "amphora-design-rule-score"
+      ],
+      "owner": "UNASSIGNED_IN_SOURCE",
+      "owner_candidates": [
+        "INDEPENDENT_DATA_AUDITOR",
+        "INDEPENDENT_STATISTICIAN"
+      ],
+      "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+      "work_order_id": "WO-DESIGN-RULE-INTERNAL-20260718"
+    },
+    {
+      "blocker_age_days": null,
+      "due_date": null,
+      "modules": [
+        "amphora-process-qc-twin"
+      ],
+      "owner": "UNASSIGNED_IN_SOURCE",
+      "owner_candidates": [
+        "PILOT_MANUFACTURING_SITE",
+        "INDEPENDENT_QC_REVIEWER"
+      ],
+      "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+      "work_order_id": "WO-PROCESS-QC-20260718"
+    },
+    {
+      "blocker_age_days": null,
+      "due_date": null,
+      "modules": [
+        "amphora-molecule-generator"
+      ],
+      "owner": "UNASSIGNED_IN_SOURCE",
+      "owner_candidates": [
+        "REACTION_CHEMISTRY_CURATOR",
+        "INDEPENDENT_SYNTHESIS_REVIEWER",
+        "WET_LAB_SITE"
+      ],
+      "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+      "work_order_id": "WO-MOLECULE-GENERATOR-20260718"
+    },
+    {
+      "blocker_age_days": null,
+      "due_date": null,
+      "modules": [
+        "ALL_29_MODULES"
+      ],
+      "owner": "UNASSIGNED_IN_SOURCE",
+      "owner_candidates": [
+        "INDEPENDENT_EVIDENCE_REVIEWER",
+        "MANIFEST_POLICY_OWNER"
+      ],
+      "status": "ISSUED_AWAITING_COUNTERSIGNATURE_AND_EXECUTION",
+      "work_order_id": "WO-FINAL-STATUS-REVIEW-20260718"
+    }
+  ],
+  "failed_gates": [
+    "POINT2_SPLIT_IDENTITY_OVERLAP_REQUIRES_REGROUP_OR_EXCLUSION"
+  ],
+  "module_activations": {
+    "expected": 30,
+    "materialized": 30,
+    "rights_reviewed": 0
+  },
+  "modules": [
+    {
+      "module_id": "amphora-barrier-corrosion-score",
+      "next_evidence_changing_action": "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-candidate-contract",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-cro-protocol-packager",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-cure-potlife-gate",
+      "next_evidence_changing_action": "RIGHTS_OR_LICENSE_INCOMPLETE",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-design-rule-score",
+      "next_evidence_changing_action": "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-envelope-gates",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-evidence-intake-validator",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-formulation-arithmetic",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-formulation-universe",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-ingredient-library",
+      "next_evidence_changing_action": "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-ip-fto-guard",
+      "next_evidence_changing_action": "RIGHTS_OR_LICENSE_INCOMPLETE",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-known-answer-benchmarks",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-model-card-authority",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-molecule-design-gate",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-molecule-generator",
+      "next_evidence_changing_action": "RIGHTS_OR_LICENSE_INCOMPLETE",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-molecule-novelty",
+      "next_evidence_changing_action": "SCIENTIFIC_BENCHMARK_NOT_EXECUTED",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-molecule-property",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-molecule-role-ranker",
+      "next_evidence_changing_action": "RIGHTS_OR_LICENSE_INCOMPLETE",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-optimizer-orchestrator",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-process-qc-twin",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-public-corrosion-benchmark",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: current module diagnostic differs from the evaluated bytes",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-redteam-audit",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-report-packager",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-run-provenance",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-solvency-score",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-source-ledger",
+      "next_evidence_changing_action": "EVALUATION_RESULT_MISMATCH: recorded benchmark is not bound to the evaluation receipt",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-sourceability-ehs",
+      "next_evidence_changing_action": "RIGHTS_OR_LICENSE_INCOMPLETE",
+      "phase": "PRE_PHASE_0"
+    },
+    {
+      "module_id": "amphora-tolerance-robustness",
+      "next_evidence_changing_action": "PHASE1_BUNDLE_ABSENT",
+      "phase": "PHASE_0"
+    },
+    {
+      "module_id": "amphora-viscosity-score",
+      "next_evidence_changing_action": "SOURCE_LOCK_INVALID: missing field `authorization_overlay_path`",
+      "phase": "PRE_PHASE_0"
+    }
+  ],
+  "phase_counts": {
+    "phase0": 9,
+    "phase1": 0,
+    "pre_phase0": 20
+  },
+  "ranking_enabled": false,
+  "receipts_and_movements": {
+    "phase0_evaluations": 9,
+    "phase0_movements": 9,
+    "phase0_reviews": 9,
+    "phase1_evaluations": 0,
+    "phase1_movements": 0,
+    "phase1_reviews": 0
+  },
+  "schema": "amphora.portfolio-progress-dashboard.v1",
+  "split_and_leakage": {
+    "cross_dataset_identity_overlaps": 6369,
+    "point2_train_test_identity_overlaps": 25,
+    "status": "DIAGNOSTIC_OVERLAP_PRESENT_NO_SCORING_AUTHORITY"
+  }
+}

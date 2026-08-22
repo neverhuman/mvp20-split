@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "b2eddcf0146595e09589f25844071968e78251aff31d315042bf35eecac71dd0",
+  "module_id": "amphora-redteam-audit",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

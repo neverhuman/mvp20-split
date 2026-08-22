@@ -1,0 +1,374 @@
+{
+  "acceptance_bar_floors": {
+    "all_met": true,
+    "g1_known_answer_anchor_floor": 1.0,
+    "g2_containment_floor": 1.0,
+    "g3_coherence_floor": 1.0,
+    "g4_headroom_exceeds_band_required": true,
+    "g5_tamper_fail_closed_floor": 1.0
+  },
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "binding_envelope": {
+    "band_fraction_of_cliff_distance": 0.2691005385,
+    "binding_side": "amine_lean",
+    "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+    "headroom_band_pstar": 0.1858041618,
+    "shipped_band": 0.05
+  },
+  "closes": "Bounds the physical severity of the stoichiometric-index gap left open by stoichiometric-index-equivalents-v1: quantifies, in closed form, the distance between the shipped mass envelope and the nearest network-formation failure boundary, with known-answer anchors to Flory 1941 and Stockmayer 1943.",
+  "data_gap": {
+    "adduct_hardeners_without_first_principles_g": [
+      "dgeba-amidoamine-huntsman-100to50",
+      "dgeba-amidoamine-momentive-100to53",
+      "dgeba-mannich-fast-cure-100to36"
+    ],
+    "n_adduct_hardeners": 3,
+    "n_first_principles_hardeners": 7
+  },
+  "does_not_close": "Ideal-statistics assumptions (equal reactivity, no cycles, no etherification) mean the real gel conversion is >= the ideal one; no wet-lab cure, conversion, or Tg claim is made. The 3 adduct hardeners lack first-principles functionality g and remain an explicit data gap (already queued). Off-stoichiometry network QUALITY (crosslink density, Tg depression) inside the gelable window is not addressed here. Adding an index or gelability constraint to any shipped policy requires a human Phase-0 fixture/lock revision this cron cannot perform.",
+  "fixture": {
+    "n_envelopes": 10,
+    "path": "reference/phase0-envelope-gates-known-answer.v1.json",
+    "rights": {
+      "eligible_for_derivatives": true,
+      "license": "CC0-1.0",
+      "scope": "Amphora-authored two-part epoxy-amine coating formulation envelope compilation from Wicks/Jones/Pappas 2007 Chapters 24-25, Ellis 1993 Chapter 6, and supplier technical data sheets for Phase-0 constraint-envelope controls only; no wet-lab measurements or CRO data checked in",
+      "source_id": "amphora_phase0_envelope_gates_known_answer",
+      "source_url": "local:amphora-envelope-gates/reference/phase0-envelope-gates-known-answer.v1.json",
+      "status": "ACCEPTED"
+    },
+    "sha256": "aab0b9a8af2e14ab053744f1dee88f785be37321d582039716a81fee9aec5b52"
+  },
+  "gates": {
+    "G1_known_answer_anchors": {
+      "anchors": [
+        {
+          "anchor": "flory1941_f3_g3_r1_pgel_half",
+          "detail": "p_gel=0.5 vs 1/2 exact (Flory 1941)",
+          "passed": true
+        },
+        {
+          "anchor": "stockmayer1943_f2_g4_r1_pgel_invsqrt3",
+          "detail": "p_gel=0.5773502691896257 vs 1/sqrt(3) (Stockmayer 1943)",
+          "passed": true
+        },
+        {
+          "anchor": "carothers_f2_g2_degenerate_linear",
+          "detail": "K=1: window degenerate, gel only at r=1 AND p=1 (linear limit)",
+          "passed": true
+        },
+        {
+          "anchor": "window_reciprocal_symmetry_g3_to_g8",
+          "detail": "W_lo*W_hi=1 exact for f=2, g=3..8",
+          "passed": true
+        },
+        {
+          "anchor": "pgel_strictly_increasing_in_r_g4_grid",
+          "detail": "p_gel(r) strictly increasing on 59-point grid (f=2, g=4)",
+          "passed": true
+        }
+      ],
+      "n_anchors": 5,
+      "passed": true
+    },
+    "G2_gelability_containment_H0": {
+      "H0_refuted": true,
+      "n_corners_pass_shipped_oracle": 7,
+      "n_excursion_contained": 7,
+      "n_first_principles_envelopes": 7,
+      "n_verdict_eew_invariant": 7,
+      "passed": true
+    },
+    "G3_analytic_feasibility_coherence": {
+      "grid_points_agreeing": 287,
+      "grid_points_checked": 287,
+      "n_envelopes_coherent": 7,
+      "passed": true
+    },
+    "G4_gel_latitude_and_headroom": {
+      "min_headroom_pstar": 0.1858041618,
+      "n_headroom_exceeds_band": 7,
+      "n_sqrt_shift_invariant": 7,
+      "passed": true
+    },
+    "G5_tamper_battery_fail_closed": {
+      "n_fail_closed": 8,
+      "n_probes": 8,
+      "passed": true,
+      "probes": [
+        {
+          "detail": "f<2 cannot form a network",
+          "fail_closed": true,
+          "probe": "functionality_f1_rejected"
+        },
+        {
+          "detail": "g<2 cannot form a network",
+          "fail_closed": true,
+          "probe": "functionality_g1_rejected"
+        },
+        {
+          "detail": "(f-1)(g-1)=1 linear Carothers limit has no open window",
+          "fail_closed": true,
+          "probe": "degenerate_K1_window_rejected"
+        },
+        {
+          "detail": "non-finite index rejected",
+          "fail_closed": true,
+          "probe": "nonfinite_r_rejected"
+        },
+        {
+          "detail": "r<=0 rejected",
+          "fail_closed": true,
+          "probe": "nonpositive_r_rejected"
+        },
+        {
+          "detail": "non-finite functionality rejected",
+          "fail_closed": true,
+          "probe": "nonfinite_g_rejected"
+        },
+        {
+          "detail": "r=10 > W_hi=3 flagged non-gelable by BOTH derivations",
+          "fail_closed": true,
+          "probe": "out_of_window_detected"
+        },
+        {
+          "detail": "3 adduct envelopes excluded as explicit data gap",
+          "fail_closed": true,
+          "probe": "adducts_reported_not_silently_passed"
+        }
+      ]
+    }
+  },
+  "headline": "H0 REFUTED: the shipped +/-5% per-part mass envelope CANNOT defeat Flory-Stockmayer gelability for any of the 7 first-principles DGEBA+amine envelopes -- the full worst-case stoichiometric-index excursion (+10.5263%/-9.5238%) stays strictly inside the 1/((f-1)(g-1)) <= r <= (f-1)(g-1) window (7/7, verdict invariant over the commercial EEW 182-192 spec band). The documented envelope->index gap is therefore a conversion/Tg-quality concern, NOT a network-formation risk. The envelope shifts the gel-point epoxide conversion by exactly +5.1315%/-4.8810% (EEW/AHEW/g-invariant sqrt corollary), and the per-part band would have to grow to P* (binding envelope reported; minimum across 7) before touching the gelation cliff.",
+  "hypothesis_H0": "The shipped 3-constraint +/-5% per-part mass envelope can push a nominally-formulated two-part epoxy-amine coating outside the Flory-Stockmayer gelability window 1/((f-1)(g-1)) <= r <= (f-1)(g-1), i.e. the documented index gap is network-formation-threatening.",
+  "hypothesis_verdict": "H0 REFUTED",
+  "model_assumptions": "Ideal Flory-Stockmayer statistics: equal and independent reactivity of all amine hydrogens, no intramolecular cyclization, no etherification side reaction. Real epoxy-amine systems show primary/secondary substitution effects and cycles that DELAY the gel point (raise p_gel), so the ideal window used here is the conservative bound in the gelability direction; the containment verdict is additionally protected by the quantified headroom P*.",
+  "module": "amphora-envelope-gates",
+  "non_circularity": "Equations (1)-(4), both KAT anchors, the sqrt corner-shift corollary, and the closed-form headroom P* are published polymer physics re-derived here from first principles; g and AHEW derive purely from IUPAC-2021 atomic weights + published formulas; DGEBA f=2 / EEW=170.21 are portfolio-locked molar-mass facts. Only on-disk fixture bytes are consumed; the shipped constraint-envelope-oracle-v1 evaluate_gate is reused solely to re-confirm the excursion corners PASS the actual contract. Distinct from amphora-molecule-role-ranker's Flory/Macosko-Miller receipts, which rank molecule-level gelation capability; this study bounds the physical severity of the ENVELOPE tolerance gap.",
+  "per_envelope": [
+    {
+      "amine_functionality_g_active_H": 6,
+      "analytic_feasibility_coherent": true,
+      "branching_product_K": 5.0,
+      "corners_pass_shipped_oracle": true,
+      "envelope_id": "dgeba-teta-primer-9to1",
+      "excluded_data_gap": false,
+      "excursion_contained_in_window": true,
+      "gel_shift_matches_sqrt_invariant": true,
+      "gelability_window_r": [
+        0.2,
+        5.0
+      ],
+      "hardener": "TETA",
+      "hardener_family": "aliphatic-polyamine",
+      "headroom_band_pstar": 0.5901428148,
+      "headroom_binding_side": "amine_lean",
+      "headroom_exceeds_shipped_band": true,
+      "index_corner_amine_lean": 0.7020497354,
+      "index_corner_amine_rich": 0.8576286241,
+      "index_r0_pure_eew": 0.7759497076,
+      "p_gel_epoxide_amine_lean": 0.3747131531,
+      "p_gel_epoxide_amine_rich": 0.4141566429,
+      "p_gel_epoxide_nominal": 0.3939415458,
+      "verdict_invariant_over_commercial_eew_182_192": true
+    },
+    {
+      "amine_functionality_g_active_H": 5,
+      "analytic_feasibility_coherent": true,
+      "branching_product_K": 4.0,
+      "corners_pass_shipped_oracle": true,
+      "envelope_id": "dgeba-deta-industrial-primer-17to1",
+      "excluded_data_gap": false,
+      "excursion_contained_in_window": true,
+      "gel_shift_matches_sqrt_invariant": true,
+      "gelability_window_r": [
+        0.25,
+        4.0
+      ],
+      "hardener": "DETA",
+      "hardener_family": "aliphatic-polyamine",
+      "headroom_band_pstar": 0.3199502993,
+      "headroom_binding_side": "amine_lean",
+      "headroom_exceeds_shipped_band": true,
+      "index_corner_amine_lean": 0.43902701,
+      "index_corner_amine_rich": 0.5363183141,
+      "index_r0_pure_eew": 0.4852403794,
+      "p_gel_epoxide_amine_lean": 0.3312955667,
+      "p_gel_epoxide_amine_rich": 0.3661687842,
+      "p_gel_epoxide_nominal": 0.3482959874,
+      "verdict_invariant_over_commercial_eew_182_192": true
+    },
+    {
+      "amine_functionality_g_active_H": 7,
+      "analytic_feasibility_coherent": true,
+      "branching_product_K": 6.0,
+      "corners_pass_shipped_oracle": true,
+      "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+      "excluded_data_gap": false,
+      "excursion_contained_in_window": true,
+      "gel_shift_matches_sqrt_invariant": true,
+      "gelability_window_r": [
+        0.1666666667,
+        6.0
+      ],
+      "hardener": "TEPA",
+      "hardener_family": "aliphatic-polyamine",
+      "headroom_band_pstar": 0.6999009218,
+      "headroom_binding_side": "amine_lean",
+      "headroom_exceeds_shipped_band": true,
+      "index_corner_amine_lean": 0.8541654561,
+      "index_corner_amine_rich": 1.0434541998,
+      "index_r0_pure_eew": 0.9440776094,
+      "p_gel_epoxide_amine_lean": 0.3773074467,
+      "p_gel_epoxide_amine_rich": 0.4170240201,
+      "p_gel_epoxide_nominal": 0.3966689656,
+      "verdict_invariant_over_commercial_eew_182_192": true
+    },
+    {
+      "amine_functionality_g_active_H": 4,
+      "analytic_feasibility_coherent": true,
+      "branching_product_K": 3.0,
+      "corners_pass_shipped_oracle": true,
+      "envelope_id": "dgeba-ipda-marine-primer-100to24",
+      "excluded_data_gap": false,
+      "excursion_contained_in_window": true,
+      "gel_shift_matches_sqrt_invariant": true,
+      "gelability_window_r": [
+        0.3333333333,
+        3.0
+      ],
+      "hardener": "IPDA",
+      "hardener_family": "cycloaliphatic-amine",
+      "headroom_band_pstar": 0.4843338005,
+      "headroom_binding_side": "amine_lean",
+      "headroom_exceeds_shipped_band": true,
+      "index_corner_amine_lean": 0.8681124067,
+      "index_corner_amine_rich": 1.0604918874,
+      "index_r0_pure_eew": 0.95949266,
+      "p_gel_epoxide_amine_lean": 0.537931968,
+      "p_gel_epoxide_amine_rich": 0.5945563857,
+      "p_gel_epoxide_nominal": 0.5655359287,
+      "verdict_invariant_over_commercial_eew_182_192": true
+    },
+    {
+      "amine_functionality_g_active_H": 4,
+      "analytic_feasibility_coherent": true,
+      "branching_product_K": 3.0,
+      "corners_pass_shipped_oracle": true,
+      "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+      "excluded_data_gap": false,
+      "excursion_contained_in_window": true,
+      "gel_shift_matches_sqrt_invariant": true,
+      "gelability_window_r": [
+        0.3333333333,
+        3.0
+      ],
+      "hardener": "PACM",
+      "hardener_family": "cycloaliphatic-amine",
+      "headroom_band_pstar": 0.1858041618,
+      "headroom_binding_side": "amine_lean",
+      "headroom_exceeds_shipped_band": true,
+      "index_corner_amine_lean": 0.4392352068,
+      "index_corner_amine_rich": 0.5365726488,
+      "index_r0_pure_eew": 0.4854704918,
+      "p_gel_epoxide_amine_lean": 0.3826378648,
+      "p_gel_epoxide_amine_rich": 0.4229155348,
+      "p_gel_epoxide_nominal": 0.4022729139,
+      "verdict_invariant_over_commercial_eew_182_192": true
+    },
+    {
+      "amine_functionality_g_active_H": 4,
+      "analytic_feasibility_coherent": true,
+      "branching_product_K": 3.0,
+      "corners_pass_shipped_oracle": true,
+      "envelope_id": "dgeba-mxda-tank-lining-100to22",
+      "excluded_data_gap": false,
+      "excursion_contained_in_window": true,
+      "gel_shift_matches_sqrt_invariant": true,
+      "gelability_window_r": [
+        0.3333333333,
+        3.0
+      ],
+      "hardener": "MXDA",
+      "hardener_family": "aromatic-amine",
+      "headroom_band_pstar": 0.4635011215,
+      "headroom_binding_side": "amine_rich",
+      "headroom_exceeds_shipped_band": true,
+      "index_corner_amine_lean": 0.9950188766,
+      "index_corner_amine_rich": 1.2155216747,
+      "index_r0_pure_eew": 1.0997577057,
+      "p_gel_epoxide_amine_lean": 0.5759105476,
+      "p_gel_epoxide_amine_rich": 0.6365327105,
+      "p_gel_epoxide_nominal": 0.6054633778,
+      "verdict_invariant_over_commercial_eew_182_192": true
+    },
+    {
+      "amine_functionality_g_active_H": 4,
+      "analytic_feasibility_coherent": true,
+      "branching_product_K": 3.0,
+      "corners_pass_shipped_oracle": true,
+      "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+      "excluded_data_gap": false,
+      "excursion_contained_in_window": true,
+      "gel_shift_matches_sqrt_invariant": true,
+      "gelability_window_r": [
+        0.3333333333,
+        3.0
+      ],
+      "hardener": "MPDA",
+      "hardener_family": "aromatic-amine",
+      "headroom_band_pstar": 0.4511805221,
+      "headroom_binding_side": "amine_lean",
+      "headroom_exceeds_shipped_band": true,
+      "index_corner_amine_lean": 0.797452779,
+      "index_corner_amine_rich": 0.9741736165,
+      "index_r0_pure_eew": 0.8813951768,
+      "p_gel_epoxide_amine_lean": 0.515575012,
+      "p_gel_epoxide_amine_rich": 0.5698460659,
+      "p_gel_epoxide_nominal": 0.5420317263,
+      "verdict_invariant_over_commercial_eew_182_192": true
+    },
+    {
+      "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+      "excluded_data_gap": true,
+      "hardener": null,
+      "hardener_family": "amidoamine-adduct",
+      "note": "proprietary reactive adduct: no first-principles g (active amine-H) or AHEW -> gelation window requires supplier TDS functionality (data gap, already queued)"
+    },
+    {
+      "envelope_id": "dgeba-amidoamine-momentive-100to53",
+      "excluded_data_gap": true,
+      "hardener": null,
+      "hardener_family": "amidoamine-adduct",
+      "note": "proprietary reactive adduct: no first-principles g (active amine-H) or AHEW -> gelation window requires supplier TDS functionality (data gap, already queued)"
+    },
+    {
+      "envelope_id": "dgeba-mannich-fast-cure-100to36",
+      "excluded_data_gap": true,
+      "hardener": null,
+      "hardener_family": "mannich-base",
+      "note": "proprietary reactive adduct: no first-principles g (active amine-H) or AHEW -> gelation window requires supplier TDS functionality (data gap, already queued)"
+    }
+  ],
+  "purpose": "Bound the physical severity of the envelope->stoichiometric-index gap documented by stoichiometric-index-equivalents-v1: map the shipped +/-5% per-part mass envelope's worst-case index corners through the Flory-Stockmayer gelation criterion for DGEBA(f=2) + amine(g=active-H) stepwise networks and test H0 = 'the envelope can defeat gelability'.",
+  "run_type": "independent_non_runtime_theory_axis",
+  "schema": "amphora.envelope-gates.flory-stockmayer-gelation-window-diagnostic.v1",
+  "study_id": "flory-stockmayer-gelation-window-v1",
+  "theory_constants": {
+    "epoxide_functionality_f": 2,
+    "gel_conversion_shift_amine_lean_pct": -4.8810268789,
+    "gel_conversion_shift_amine_rich_pct": 5.1314966076,
+    "index_corner_factor_amine_lean": 0.9047619048,
+    "index_corner_factor_amine_rich": 1.1052631579,
+    "per_part_band_fraction": 0.05,
+    "shift_invariance_note": "p_gel scales as sqrt(r), so the envelope-induced gel-point conversion shift is EXACTLY sqrt of the index corner factor, independent of EEW, AHEW, g and the nominal masses -- the sqrt-corollary of the excursion-invariance theorem."
+  },
+  "theory_reference": [
+    "Flory, P.J., 'Molecular Size Distribution in Three Dimensional Polymers I-III', J. Am. Chem. Soc. 63 (1941) 3083-3100, DOI 10.1021/ja01856a061 (gel-point criterion, p_c=1/(f-1) anchors).",
+    "Stockmayer, W.H., 'Theory of Molecular Size Distribution and Gel Formation in Branched-Chain Polymers', J. Chem. Phys. 11 (1943) 45-55, DOI 10.1063/1.1723803 (A_f+B_g gel point p_A p_B (f-1)(g-1)=1).",
+    "Odian, G., 'Principles of Polymerization', 4th ed., Wiley 2004, Ch.2.10/2.12, ISBN 978-0471274001 (stoichiometric-imbalance form p_gel = sqrt(r/((f-1)(g-1))), gelability at full conversion).",
+    "Lee, H. & Neville, K., 'Handbook of Epoxy Resins', McGraw-Hill 1967, Ch.5-6 (amine-H functionality of epoxy hardeners; f=2 for DGEBA).",
+    "IUPAC 2021 conventional standard atomic weights (C 12.011, H 1.008, N 14.007); amphora KAT molar-mass DGEBA EEW=170.21 g/eq (n=0)."
+  ]
+}

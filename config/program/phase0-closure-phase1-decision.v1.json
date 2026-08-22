@@ -1,0 +1,51 @@
+{
+  "schema": "amphora.module-evidence-decision-report.v1",
+  "program_id": "PHASE0_CLOSURE_PHASE1_20260718",
+  "issued_on": "2026-07-18",
+  "module_count": 29,
+  "current_registry_sha256": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+  "status": "DECISION_COMPLETE_EXECUTION_INCOMPLETE",
+  "status_rule": "evidence_status is current and remains UNVALIDATED until signed evaluation plus independent-review receipts and manifest/profile/policy review; target_status is not authority",
+  "modules": [
+    {"module_id":"amphora-barrier-corrosion-score","evidence_status":"UNVALIDATED","target_status":"INDEPENDENTLY_VALIDATED","track":"PHASE_1_ATTEMPT","work_order":"WO-CRO-COATINGS-20260717"},
+    {"module_id":"amphora-candidate-contract","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-cro-protocol-packager","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-cure-potlife-gate","evidence_status":"UNVALIDATED","target_status":"INDEPENDENTLY_VALIDATED","track":"PHASE_1_ATTEMPT","work_order":"WO-CRO-COATINGS-20260717"},
+    {"module_id":"amphora-design-rule-score","evidence_status":"UNVALIDATED","target_status":"LOCKED_INTERNAL","track":"PHASE_0_CLOSURE","work_order":"WO-DESIGN-RULE-INTERNAL-20260718"},
+    {"module_id":"amphora-envelope-gates","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"PHASE_0_CLOSURE","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-evidence-intake-validator","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-formulation-arithmetic","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"PHASE_0_CLOSURE","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-formulation-universe","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"PHASE_0_CLOSURE","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-ingredient-library","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"PHASE_0_CLOSURE","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-ip-fto-guard","evidence_status":"UNVALIDATED","target_status":"LOCKED_INTERNAL","track":"INTERNAL_ONLY","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-known-answer-benchmarks","evidence_status":"UNVALIDATED","target_status":"LOCKED_INTERNAL","track":"INTERNAL_ONLY","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-model-card-authority","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-molecule-generator","evidence_status":"UNVALIDATED","target_status":"UNVALIDATED","track":"SEPARATE_OPERATIONAL_CAMPAIGN","work_order":"WO-MOLECULE-GENERATOR-20260718"},
+    {"module_id":"amphora-molecule-property","evidence_status":"UNVALIDATED","target_status":"INDEPENDENTLY_VALIDATED","track":"PHASE_1_ATTEMPT","work_order":"WO-MOL-PROPERTY-20260718"},
+    {"module_id":"amphora-molecule-role-ranker","evidence_status":"UNVALIDATED","target_status":"INDEPENDENTLY_VALIDATED","track":"PHASE_1_ATTEMPT","work_order":"WO-MOL-ROLE-20260718"},
+    {"module_id":"amphora-molecule-novelty","evidence_status":"UNVALIDATED","target_status":"LOCKED_INTERNAL","track":"PHASE_0_CLOSURE","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-molecule-design-gate","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"PHASE_0_CLOSURE","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-optimizer-orchestrator","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-process-qc-twin","evidence_status":"UNVALIDATED","target_status":"UNVALIDATED","track":"SEPARATE_OPERATIONAL_CAMPAIGN","work_order":"WO-PROCESS-QC-20260718"},
+    {"module_id":"amphora-public-corrosion-benchmark","evidence_status":"UNVALIDATED","target_status":"INDEPENDENTLY_VALIDATED","track":"PHASE_1_ATTEMPT","work_order":"WO-PUBLIC-CORROSION-20260718"},
+    {"module_id":"amphora-redteam-audit","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-report-packager","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-run-provenance","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-solvency-score","evidence_status":"UNVALIDATED","target_status":"INDEPENDENTLY_VALIDATED","track":"PHASE_1_ATTEMPT","work_order":"WO-CRO-COATINGS-20260717"},
+    {"module_id":"amphora-source-ledger","evidence_status":"UNVALIDATED","target_status":"NOT_APPLICABLE","track":"DETERMINISTIC_CONTROL","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-sourceability-ehs","evidence_status":"UNVALIDATED","target_status":"LOCKED_INTERNAL","track":"INTERNAL_ONLY","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-tolerance-robustness","evidence_status":"UNVALIDATED","target_status":"LOCKED_INTERNAL","track":"PHASE_0_CLOSURE","work_order":"WO-FINAL-STATUS-REVIEW-20260718"},
+    {"module_id":"amphora-viscosity-score","evidence_status":"UNVALIDATED","target_status":"INDEPENDENTLY_VALIDATED","track":"PHASE_1_ATTEMPT","work_order":"WO-CRO-COATINGS-20260717"}
+  ],
+  "attempt_limit": {
+    "phase_1_attempt_count": 7,
+    "promotions_promised": false
+  },
+  "activation_requirements": [
+    "signed evaluation receipt",
+    "independent-review receipt from a different trusted signer",
+    "current registry manifest profile and promotion policy hashes",
+    "complete source dataset split lock raw-data and rights hashes",
+    "claim-lock preservation"
+  ]
+}

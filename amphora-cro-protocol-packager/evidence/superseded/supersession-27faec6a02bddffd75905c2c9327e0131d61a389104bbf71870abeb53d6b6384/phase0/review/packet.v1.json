@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "e85abc5f59e334ea1c1f93244d171cac90bead3ae7cc91cbb68966f5fcf8d20a",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-cro-protocol-packager",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

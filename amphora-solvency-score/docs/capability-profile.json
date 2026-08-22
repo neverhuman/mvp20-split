@@ -1,0 +1,248 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "rights binding loss",
+    "incomplete pair matrix",
+    "non-convergent TPD",
+    "authority ceiling violation",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": "config/benchmark-locks/amphora-solvency-score.v1.json",
+      "artifact_sha256": "bcb42031c52a41e0e73fefc6c21dc6cc6fdf1591ffb9fc1525f1d4cb9ad5b768",
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "carrier-solvency-promotion-v1",
+      "observations": [],
+      "reported_result_status": "AUTOMATIC_DEMOTION_NO_ELIGIBLE_DATA",
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "formulation"
+  ],
+  "ceilings": {
+    "authority_tier": "RULE_CITED",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "CONSTRAINT_ONLY"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 4,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "READY",
+    "runtime_integration": "Native Rust unpigmented-carrier slice accepts only host-bound signed artifacts, receipts, observations, raw hashes, rights, methods, and applicability admission.",
+    "scientific_readiness": "LOCKED_INTERNAL"
+  },
+  "datasets": [
+    {
+      "dataset_id": "solvency-source-landscape-v1",
+      "hash": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6",
+      "path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+      "rights": "KNOWN",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": "1"
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "openCOSMO and quantum-generator licenses are unresolved and no owned 96-blend calibration dataset exists.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+        "rights": {
+          "evidence_path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+          "gap": "Known source and rights status; parameter downloads remain unacquired and ineligible.",
+          "status": "KNOWN"
+        },
+        "sha256": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "config/program/solvency-model-split.v1.json",
+        "rights": {
+          "evidence_path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+          "gap": "Empty group split records that promotion measurements are absent.",
+          "status": "KNOWN"
+        },
+        "sha256": "48b174964b9cb9c01b89425abc8a8f16f7a308624b7efdeacc83c3aa9f6f16cb"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "config/benchmark-locks/amphora-solvency-score.v1.json",
+        "rights": {
+          "evidence_path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+          "gap": "Group-held-out gates, baselines, and hostile nulls are locked but not passed.",
+          "status": "KNOWN"
+        },
+        "sha256": "97fa89d672767a94427f9f412ee4e92656751c3369d9afacd8411a17042f7afc"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "config/program/solvency-sources.v1.json",
+        "rights": {
+          "evidence_path": "amphora-solvency-score/reference/solvency/source-landscape.v1.json",
+          "gap": "The census binds quarantined context and grants no parameter reuse rights.",
+          "status": "KNOWN"
+        },
+        "sha256": "e4a219a8156f4700bfccb318590a28fd2d6de6a7fb3f6a5967ad5917264eeed3"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "Locked execution auto-demotes because measured blends, rights-cleared parameters, subgroup evidence, and independent review are absent.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "At least 96 unique blends, four held-out solvent-family groups, three resin/lot groups, 10/25/40 C duplicates with microscopy and turbidity, parameter rights, and independent review"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-solvency-score/src/lib.rs",
+      "sha256": "4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-solvency-score/Cargo.toml",
+      "version_source_sha256": "13c1f55c8447cd4341d87e9a7b995ff91274cdee77cde957bae1405d6ba36a26"
+    },
+    "known_contradictions": [
+      "The fixed-catalog carrier calculation cannot claim pigmented stability, drying, cure, shelf life, qualification, or a compatibility probability."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-solvency-score/src/lib.rs",
+      "scenario": "Verify critical Flory-Huggins behavior, permutation invariance, conservation, and strict unknown-field rejection.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-solvency-score",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "formulation",
+        "dataset_id": "carrier-solvency-promotion-data-not-yet-available.v1",
+        "model_id": "carrier-solvency-tpd-v1",
+        "model_readiness_status": "MODEL_READINESS_ONLY",
+        "solver_use": "CONSTRAINT_ONLY",
+        "track_id": "unpigmented_carrier_solvency"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-solvency-score/src/lib.rs",
+        "sha256": "4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "solvency-example",
+      "candidate_type": "formulation"
+    },
+    "current_output": {
+      "authority": "SHADOW",
+      "computed_single_phase_fraction": null,
+      "min_tpd_rt": null,
+      "minimum_hessian_eigenvalue": null,
+      "numeric_compatibility_prediction": null
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON plus host FeatureSnapshot"
+    ],
+    "target": [
+      "exact-component unpigmented carrier/resin observation bundle"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "HSP RED, constant-chi Flory-Huggins, UNIFAC-FV, and raw openCOSMO",
+      "confidence_interval": "clustered bootstrap by blend and family",
+      "direction": "context",
+      "evidence_source": "signed locked evaluation receipt",
+      "failure_threshold": "any subgroup, rights, convergence, or hostile-null failure",
+      "metric_class": "promotion_bundle",
+      "name": "locked carrier phase-stability gates",
+      "population": "owned held-out solvent-family and resin-lot blends",
+      "promotion_phase": "PHASE_1",
+      "split": "solvent-family and resin-lot grouped",
+      "target": "all thresholds and confidence improvements in immutable lock",
+      "unit": "boolean",
+      "value_path": "metrics.locked_gate_passed"
+    }
+  ],
+  "lane": "formulation",
+  "module_id": "amphora-solvency-score",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "exact grade and lot required",
+    "fragments": "every positive-mass component must be explicit",
+    "isotopes": "preserve and declare",
+    "mixtures": "ambiguous commercial mixtures abstain",
+    "normalized_structure_or_formula_hash": "owned by amphora-candidate-contract",
+    "original_byte_hash": "required at host evidence intake",
+    "polymers": "explicit resin oligomer distribution required",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded for every parameter generator"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates.host_verified_artifact_and_receipt",
+    "metric": "metrics.min_tpd_rt",
+    "non_blocking_claim_locks": [
+      "no_rank_authority",
+      "single_phase_fraction_is_not_probability",
+      "unpigmented_carrier_only"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty.min_tpd_parameter_90"
+  },
+  "phase": "PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "Resolve code, parameter, and quantum-generator licensing before parameter execution or redistribution"
+    ],
+    "phase_1": [
+      "All owned blend and baseline gates pass with subgroup confidence bounds"
+    ],
+    "phase_2": [
+      "Independent review and prospective replication pass without broadening applicability"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 2,
+      "decision_value": 4,
+      "downstream_leverage": 3,
+      "effort": 5,
+      "evidence_gap": 5,
+      "external_delay": 5
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 8,
+    "score": 27
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

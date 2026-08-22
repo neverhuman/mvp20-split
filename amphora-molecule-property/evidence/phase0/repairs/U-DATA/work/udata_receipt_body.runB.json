@@ -1,0 +1,352 @@
+{
+  "acquisition_queue_appends": {
+    "entries": [
+      {
+        "candidate_source": "Mendeley Data 10.17632/bypjxzm3fn.1 -- 'Data on mechanical and thermal properties of an amine-epoxy system at various post-curing temperatures' (Epikure 3223/DETA-derived amine + Epon 828/DGEBA)",
+        "estimated_records": "3-7 replicate specimens per property (Tg via DSC/DMA, flexural, CTE, TGA) across 3 post-cure temperatures (80/100/120C) for one DETA-derived/DGEBA formulation -- small but exact structural match (Tanimoto=1.0000 to canonical DETA, computed via RDKit Morgan r=2/2048-bit, this fire).",
+        "fire_id": "20260812T120001-3712582-97e3beba268d",
+        "gap": "AD>=0.30 admission gate (coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json, cross-referenced by U-AD's abstention-vs-error frontier KPI) excludes DETA -- one of the 5 canonical industrial amines -- because the current training corpora (OpenPoly, RadonPy PI1070) have near-zero DETA/DGEBA representation.",
+        "license": "This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/). -- quoted verbatim from the companion article host page (PMC12528924), confirmed live this fire.",
+        "license_verified": true,
+        "module": "amphora-molecule-property",
+        "next_action": "Human downloads the Mendeley Data CSV/XLSX under its CC-BY-4.0 license, hand-verifies Tg values against the published article table, and stages as a rights-cleared training row; then re-run the U-AD sweep to check whether DETA crosses the AD>=0.30 threshold once represented.",
+        "url_or_doi": "https://doi.org/10.17632/bypjxzm3fn.1"
+      },
+      {
+        "candidate_source": "Zenodo/IJTSRD 10.31142/ijtsrd15748 -- 'Characterization of Polymer Composite Materials Based on Epoxy Resin GELR 128 Modified with Epoxidized Sunflower Oil Cured by 4,4'-Diaminodiphenylmethane'",
+        "estimated_records": "Exact row count requires reading the CC-BY-4.0 full-text PDF (not yet done); amine (DDM) has EXACT structural identity (Tanimoto=1.0000) to grammar-38's 'MDA/DDM(methylene)' candidate, computed via RDKit Morgan r=2/2048-bit this fire.",
+        "fire_id": "20260812T120001-3712582-97e3beba268d",
+        "gap": "grammar-38 novel deployment candidate 'MDA/DDM(methylene)' has zero training-corpus representation in the module's AD instrument.",
+        "license": "Zenodo REST API record metadata.license field returned {'id': 'cc-by-4.0'}, confirmed live this fire.",
+        "license_verified": true,
+        "module": "amphora-molecule-property",
+        "next_action": "Human downloads the CC-BY-4.0 PDF, extracts the reported thermal/mechanical property table for the DDM-cured GELR-128 system, and files a data-ask receipt naming the exact table/page.",
+        "url_or_doi": "https://doi.org/10.31142/ijtsrd15748"
+      },
+      {
+        "candidate_source": "Zenodo 10.5281/zenodo.15434211 -- 'CURE KINETICS AND SHRINKAGE MEASUREMENTS IN A FAST CURING EPOXY AMINE RESIN SYSTEM'",
+        "estimated_records": "Not yet extracted (full text not read this fire).",
+        "fire_id": "20260812T120001-3712582-97e3beba268d",
+        "gap": "Rights-status ambiguity: a topically strong candidate (fast-curing epoxy-amine cure-kinetics/shrinkage dataset) carries a ShareAlike condition that was not previously catalogued as a blocking condition class for this module.",
+        "license": "Zenodo REST API record metadata.license field returned {'id': 'cc-by-sa-4.0'}, confirmed live this fire. ShareAlike requires derivative works (a retrained model, a repackaged training corpus) to be redistributed under the same CC-BY-SA-4.0 terms.",
+        "license_verified": true,
+        "module": "amphora-molecule-property",
+        "next_action": "Human/legal determines whether CC-BY-SA's copyleft propagation is compatible with the portfolio's LOCKED-INTERNAL formulation-confidentiality posture before this source is used for any derivative training corpus or model.",
+        "url_or_doi": "https://doi.org/10.5281/zenodo.15434211"
+      }
+    ],
+    "n_entries_appended": 3,
+    "target_file_xbabe1": "/home/ubuntu/amphora-cron/data-acquisition-queue.jsonl"
+  },
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "U-DATA",
+  "ceiling": "AUDIT_ONLY. Documents a rights-clean data-source search and files acquisition-queue asks + proposed_followups; does not acquire, cache, or ingest any external dataset, does not modify the AD gate or any shipped KPI, and does not modify the manifest.",
+  "claim_locks": {
+    "fto_not_performed": true,
+    "no_batch_release_authority": true,
+    "no_bulk_acquisition_performed": true,
+    "no_dataset_files_downloaded_or_cached_this_fire": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_solver_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true
+  },
+  "claim_under_attack": {
+    "claim_text": "Rights-clean training corpora exist that would widen the applicability domain to cover industrially relevant epoxy-amine chemistry.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/"
+  },
+  "directive_ref": null,
+  "flips_scientific_readiness": false,
+  "gates": {
+    "every_finding_filed_in_proposed_followups_with_module_defect_done_criterion": true,
+    "every_qualifying_find_appended_to_acquisition_queue_with_overlap_and_next_action": true,
+    "ge_12_named_sources_swept_with_query_and_license_quote": true,
+    "no_bulk_data_downloaded_this_fire": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "five_canonical_amines_receipt_sha256": "0aaf262d28bd4d55924c35e6acdd18d33d800a59e3a9c9695f6f7942e7bd077e",
+    "grammar38_diagnostic_sha256": "55afc806360e6abeab30bbc7e71ed94e8ef4a5ee6e1f67a0b02358c699dc01a8",
+    "search_record_json_sha256": "0e19c56979cfd3be37254b1317e6197961f76edfb1315fe053580ac11cf279c8",
+    "uad_done_receipt_sha256": "3d229e2f016a22d23b27c2aef17adcbf5be80b760ecb11988c69a5155425eba3"
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "Domain-widening data hunt: search for rights-clean (CC-BY / CC0 / public-domain / explicit permissive) corpora with measured or simulated Tg / density / refractive index / dielectric for amine-cured epoxy systems or their constituent monomers, reporting for each candidate: source+DOI, licence quoted verbatim, record count, property coverage, structural overlap with the 5 canonical amines + grammar-38, and the concrete next action.",
+  "organizational_independence_asserted": false,
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "proposed_followups": [
+    {
+      "defect": "AD gate (coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json) excludes DETA (one of the 5 canonical amines) despite a rights-clean CC-BY-4.0 Mendeley dataset (10.17632/bypjxzm3fn.1) containing a DETA-cured DGEBA system with measured Tg -- this row is not yet acquired/ingested.",
+      "module": "amphora-molecule-property",
+      "proposed_done_criterion": "A future fire acquires the Mendeley Data CSV under its CC-BY-4.0 license, hand-verifies >=1 Tg row for the Epikure-3223(DETA)/Epon-828(DGEBA) system against the published article, adds it to the training corpus with full provenance, and re-runs the U-AD sweep to show DETA's AD-admission status after the addition."
+    },
+    {
+      "defect": "grammar-38 novel hardener candidate 'MDA/DDM(methylene)' has zero training-corpus representation despite a rights-clean CC-BY-4.0 Zenodo record (doi 10.31142/ijtsrd15748) reporting a DDM-cured epoxy composite -- exact structural match (Tanimoto=1.0), full-text not yet read.",
+      "module": "amphora-molecule-property",
+      "proposed_done_criterion": "A future fire reads the CC-BY-4.0 full text, extracts the reported property table for the DDM-cured GELR-128 system, and files it as a rights-cleared candidate training row with a data-ask receipt naming the exact table/page cited."
+    },
+    {
+      "defect": "NIST ThermoML/TRC holdings were assumed public-domain by a prior informal reading of general NIST copyright policy; this fire found that TRC/ThermoML data is explicitly Standard Reference Data (SRD), a carved-out exception under 15 U.S.C. 290e, and the archive's own page states files are available 'with permission of the journal publishers' -- i.e. NOT a blanket rights-clean grant.",
+      "module": "amphora-molecule-property",
+      "proposed_done_criterion": "A future rights-review fire enumerates which specific ThermoML journal-cooperation agreements (if any) grant redistribution/derivative-training rights beyond read-access, or formally closes this as BLOCKED_RIGHTS if none do."
+    },
+    {
+      "defect": "PoLyInfo/NIMS MatNavi and PI1M are both topically relevant (amine/diamine-bearing polymer precursors) but contractually blocked for bulk ingestion (MatNavi Terms of Use ban bulk acquisition; PI1M README states 'Data for academic purpose only'), and this fire could not independently re-fetch a byte-exact quote of the MatNavi terms page (relied on an indexed search snippet).",
+      "module": "amphora-molecule-property",
+      "proposed_done_criterion": "A future fire (or a human) directly loads polymer.nims.go.jp's MatNavi Service Terms of Use page (post-login if required) and quotes the exact clause byte-for-byte, and separately obtains a written academic/commercial-use clarification from the PI1M authors before this cron treats either source as usable."
+    }
+  ],
+  "qualifying_finds": [
+    {
+      "amine_name": "Epikure 3223 (Hexion; DETA-derived commercial curative)",
+      "amine_smiles_public_chemistry_not_extracted_from_paywalled_data": "NCCNCCN",
+      "epoxy_name": "Epon 828 (Hexion; DGEBA)",
+      "n": "3-7 replicate specimens per property per post-cure condition (80C/100C/120C), post-cured below the fully-cured Tg (~153C)",
+      "next_action": "Human obtains the Mendeley Data CSV/XLSX (DOI 10.17632/bypjxzm3fn.1) under its CC-BY-4.0 license, verifies row-level Tg/mechanical values against the published article, and stages it as a rights-cleared DETA-DGEBA training row for a future AD-domain-widening fire.",
+      "overlap_note": "EXACT structural identity (Tanimoto=1.0000) to the canonical amine DETA, one of the 5 industrial amines the AD>=0.30 gate currently excludes per U-AD's finding (0/5 or 1/5 admitted depending on instrument fidelity).",
+      "property_coverage": [
+        "Tg (DSC, DMA)",
+        "flexural strength/modulus",
+        "storage modulus",
+        "CTE (TMA)",
+        "thermal degradation onset (TGA)"
+      ],
+      "source": "Mendeley Data 10.17632/bypjxzm3fn.1 (companion to PMC12528924 / ScienceDirect S2352340925008303)",
+      "structural_overlap": {
+        "best_match_vs_5_canonical_amines": {
+          "name": "DETA",
+          "tanimoto": 1.0
+        },
+        "best_match_vs_grammar38": {
+          "name": "DETA",
+          "tanimoto": 1.0
+        }
+      }
+    },
+    {
+      "amine_name": "4,4'-Diaminodiphenylmethane (DDM/MDA)",
+      "amine_smiles_public_chemistry_not_extracted_from_paywalled_data": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "epoxy_name": "GELR 128 epoxy resin, modified with epoxidized sunflower oil",
+      "n": "not disclosed in abstract-level metadata; full-text has the composite characterization table (not fetched -- would require the CC-BY-4.0-licensed PDF itself, not yet obtained)",
+      "next_action": "Human downloads the CC-BY-4.0 PDF (doi 10.31142/ijtsrd15748) and extracts the reported Tg/density/mechanical table for the DDM-cured system as a rights-cleared grammar-38-overlapping training row.",
+      "overlap_note": "EXACT structural identity (Tanimoto=1.0000) to grammar-38 member 'MDA/DDM(methylene)' -- a novel deployment-realistic hardener candidate from the module's own generator, not one of the 5 canonical amines.",
+      "property_coverage": [
+        "thermal/mechanical characterization of the cured composite (exact property list requires full-text read of the CC-BY PDF)"
+      ],
+      "source": "Zenodo 10.31142/ijtsrd15748",
+      "structural_overlap": {
+        "best_match_vs_5_canonical_amines": {
+          "name": "DDS",
+          "tanimoto": 0.3636
+        },
+        "best_match_vs_grammar38": {
+          "name": "MDA/DDM(methylene)",
+          "tanimoto": 1.0
+        }
+      }
+    }
+  ],
+  "receipt_id": "u-data-domain-widening-search-record",
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "schema": "amphora.molecule-property.rights-clean-epoxy-amine-data-hunt-kpi.v1",
+  "search_record": [
+    {
+      "disposition": "QUALIFYING_RECOMMENDED",
+      "license_quote_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12528924/ (companion article to the Mendeley dataset DOI 10.17632/bypjxzm3fn.1)",
+      "license_quote_verbatim": "This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).",
+      "license_status": "VERIFIED_OPEN",
+      "n": 1,
+      "query_used": "Mendeley Data epoxy amine glass transition temperature dataset license",
+      "source": "Mendeley Data 10.17632/bypjxzm3fn.1 (companion dataset to Elsevier Data-in-Brief-style article, PMC12528924 / ScienceDirect S2352340925008303, 'Data on mechanical and thermal properties of an amine-epoxy system at various post-curing temperatures')"
+    },
+    {
+      "disposition": "NEAR_MISS_logged_not_queued_amine_identity_not_verified_this_fire",
+      "license_quote_source": "Zenodo REST API record metadata.license field (live query this fire)",
+      "license_quote_verbatim": "{\"id\": \"cc-by-4.0\"}",
+      "license_status": "LICENSE_OPEN_BUT_CHEMISTRY_UNVERIFIED",
+      "n": 2,
+      "query_used": "amine curing agent epoxy density (Zenodo REST API, /api/records)",
+      "source": "Zenodo record 10.5281/zenodo.14227457, 'EPOXY-TITANIUM OXIDE NANOCOMPOSITES: SYNTHESIS AND PROPERTIES'"
+    },
+    {
+      "disposition": "QUALIFYING_RECOMMENDED",
+      "license_quote_source": "Zenodo REST API record metadata.license field (live query this fire)",
+      "license_quote_verbatim": "{\"id\": \"cc-by-4.0\"}",
+      "license_status": "VERIFIED_OPEN",
+      "n": 3,
+      "query_used": "amine curing agent epoxy density (Zenodo REST API, /api/records)",
+      "source": "Zenodo record 10.31142/ijtsrd15748, 'Characterization of Polymer Composite Materials Based on Epoxy Resin GELR 128 Modified with Epoxidized Sunflower Oil Cured by 4,4'-Diaminodiphenylmethane (DDM/MDA)'"
+    },
+    {
+      "disposition": "NEAR_MISS_logged_not_queued_cure_kinetics_not_Tg_density_RI_dielectric_and_amine_identity_not_confirmed",
+      "license_quote_source": "Zenodo REST API record metadata.license field (live query this fire)",
+      "license_quote_verbatim": "{\"id\": \"cc-by-4.0\"}",
+      "license_status": "LICENSE_OPEN_BUT_SCOPE_MISMATCH",
+      "n": 4,
+      "query_used": "amine curing agent epoxy density (Zenodo REST API, /api/records)",
+      "source": "Zenodo record 10.5281/zenodo.5867296, 'Curing exotherm and processing temperature of a family of epoxy resins in the light of fabrication of composites'"
+    },
+    {
+      "disposition": "CONDITIONAL_blocked_ShareAlike_would_require_any_derivative_corpus_or_retrained_model_to_be_relicensed_CC_BY_SA_conflicting_with_LOCKED_INTERNAL_formulation_confidentiality",
+      "license_quote_source": "Zenodo REST API record metadata.license field (live query this fire)",
+      "license_quote_verbatim": "{\"id\": \"cc-by-sa-4.0\"}",
+      "license_status": "BLOCKING_CONDITION",
+      "n": 5,
+      "query_used": "amine curing agent epoxy density (Zenodo REST API, /api/records)",
+      "source": "Zenodo record 10.5281/zenodo.15434211, 'CURE KINETICS AND SHRINKAGE MEASUREMENTS IN A FAST CURING EPOXY AMINE RESIN SYSTEM'"
+    },
+    {
+      "disposition": "NEAR_MISS_blocked_no_license_despite_strong_topical_match_MD_simulated_Tg_for_a_selection_of_epoxy_resins",
+      "license_quote_source": "Zenodo REST API record metadata.license field, record 11073749, fetched live this fire (access_right='open' i.e. viewable, but no reuse license field set -> default all-rights-reserved for redistribution/derivative use)",
+      "license_quote_verbatim": "\"license\": None",
+      "license_status": "BLOCKING_NO_LICENSE_GRANTED",
+      "n": 6,
+      "query_used": "epoxy amine glass transition (Zenodo REST API, /api/records)",
+      "source": "Zenodo record 10.5281/zenodo.11073749 (Suter, J.), 'LAMMPS input files and analysis for estimating the glass transition temperature using ensemble molecular dynamics of a selection of epoxy resins using different protocols for computing the density-temperature behaviour'"
+    },
+    {
+      "disposition": "NEAR_MISS_logged_not_queued_chemotype_mismatch_generic_polymer_backbones_not_diamine_hardeners_low_Tanimoto_relevance_expected",
+      "license_quote_source": "Dryad dataset record doi:10.5061/dryad.5ht3n (Dryad's standard CC0 waiver applies to all Dryad-hosted data; corroborated by khazana.gatech.edu/dataset/ dataset listing)",
+      "license_quote_verbatim": "CC0 1.0 Universal (Public Domain Dedication)",
+      "license_status": "VERIFIED_OPEN",
+      "n": 7,
+      "query_used": "Khazana Ramprasad polymer dielectric constant dataset license CC-BY",
+      "source": "Khazana (Ramprasad Research Group, khazana.gatech.edu / khazana.uconn.edu), DFT-computed dielectric constant / band gap / atomization energy dataset, 1073 polymers (A polymer dataset for accelerated property prediction and design, Scientific Data 2016, doi 10.1038/sdata.2016.12)"
+    },
+    {
+      "disposition": "BLOCKED_RIGHTS_bulk_ingestion_prohibited_by_own_terms",
+      "license_quote_source": "NIMS MatNavi Service Terms of Use, as summarized/quoted verbatim in indexed search result over polymer.nims.go.jp / mits.nims.go.jp (direct WebFetch of the terms page itself returned no usable license text this fire; quote sourced from the search snippet of the terms page, not independently re-fetched byte-for-byte -- flagged honestly)",
+      "license_quote_verbatim": "the acquisition of large amounts of data, whether by manual or mechanical means, is prohibited by the MatNavi Service Terms of Use",
+      "license_status": "BLOCKING",
+      "n": 8,
+      "query_used": "PoLyInfo NIMS polymer database license terms of use registration",
+      "source": "PoLyInfo / NIMS MatNavi polymer database"
+    },
+    {
+      "disposition": "BLOCKED_RIGHTS_academic_only_restriction_incompatible_with_a_commercial_coating_IP_portfolio",
+      "license_quote_source": "github.com/RUIMINMA1996/PI1M README.md (fetched live this fire); no OSI/Creative-Commons LICENSE file present in the repository",
+      "license_quote_verbatim": "Data for academic purpose only",
+      "license_status": "BLOCKING",
+      "n": 9,
+      "query_used": "Polymer Genome PI1M dataset generative license CC",
+      "source": "PI1M (github.com/RUIMINMA1996/PI1M), generative benchmark dataset, ~1,000,000 polymer p-SMILES (trained on ~12,000 PolyInfo-derived repeat units)"
+    },
+    {
+      "additional_note_source": "https://www.nist.gov/open/license (fetched live this fire); ThermoML/TRC holdings are SRD, so the general 'NIST works are public domain' rule does NOT apply to this specific archive",
+      "additional_note_verbatim": "Standard Reference Data (SRD) is an exception [to the general NIST public-domain rule] -- it receives copyright protection under 15 U.S.C. Sec. 290e",
+      "disposition": "BLOCKED_RIGHTS_per_publisher_permission_not_a_blanket_rights_clean_grant_also_scope_is_single_component_liquids_not_cured_network_Tg",
+      "license_quote_source": "https://www.nist.gov/mml/acmd/trc/thermoml/thermoml-archive (fetched live this fire)",
+      "license_quote_verbatim": "The ThermoML files corresponding to articles in the journals are available here with permission of the journal publishers.",
+      "license_status": "CONDITIONAL_NOT_PUBLIC_DOMAIN",
+      "n": 10,
+      "query_used": "NIST ThermoML epoxy amine thermophysical properties public domain",
+      "source": "NIST ThermoML Archive (Thermodynamics Research Center / TRC)"
+    },
+    {
+      "disposition": "NEAR_MISS_logged_not_queued_this_is_a_graph_data_schema_paper_not_a_populated_epoxy_amine_Tg_dataset",
+      "license_quote_source": "ACS Central Science publication page for doi 10.1021/acscentsci.3c00011 (open-access CC-BY-4.0 ACS AuthorChoice article)",
+      "license_quote_verbatim": "the publication permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained, under the Creative Commons Attribution 4.0 license",
+      "license_status": "VERIFIED_OPEN_BUT_NOT_A_POPULATED_CORPUS",
+      "n": 11,
+      "query_used": "CRIPT Community Resource Innovation Polymer Technology dataset license open",
+      "source": "CRIPT (Community Resource for Innovation in Polymer Technology) data-model paper, ACS Central Science, doi 10.1021/acscentsci.3c00011"
+    },
+    {
+      "disposition": "BLOCKED_RIGHTS_NonCommercial_clause_incompatible_with_commercial_coating_IP_portfolio_use",
+      "license_quote_source": "Figshare REST API article metadata.license field, fetched live this fire",
+      "license_quote_verbatim": "{'value': 10, 'name': 'CC BY-NC 4.0', 'url': 'https://creativecommons.org/licenses/by-nc/4.0/'}",
+      "license_status": "BLOCKING",
+      "n": 12,
+      "query_used": "epoxy amine glass transition temperature dataset (Figshare REST API, /v2/articles/search then /v2/articles/{id})",
+      "source": "Figshare/ACS record 33222290, 'Tailoring Epoxy Network Properties with Gradient Siloxane Hardener Substitution: From Aliphatic Amine Systems to Hybrid Architectures', doi 10.1021/acs.iecr.6c02194.s001"
+    },
+    {
+      "disposition": "NEAR_MISS_logged_not_queued_dynamic_covalent_imine_vitrimer_chemistry_not_the_permanent_epoxy_amine_addition_network_our_product_targets",
+      "license_quote_source": "Figshare REST API article metadata.license field, fetched live this fire",
+      "license_quote_verbatim": "{'value': 1, 'name': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}",
+      "license_status": "VERIFIED_OPEN_BUT_SCOPE_MISMATCH",
+      "n": 13,
+      "query_used": "epoxy amine glass transition temperature dataset (Figshare REST API)",
+      "source": "Figshare/Deakin University record 33180353, 'Substitution and stoichiometric effects on the static and dynamic properties of an epoxy imine vitrimer cured with an aromatic amine', doi 10.1016/j.polymer.2026.130577"
+    },
+    {
+      "disposition": "BLOCKED_RIGHTS_NonCommercial_clause",
+      "license_quote_source": "Figshare REST API article metadata.license field, fetched live this fire",
+      "license_quote_verbatim": "{'value': 10, 'name': 'CC BY-NC 4.0', 'url': 'https://creativecommons.org/licenses/by-nc/4.0/'}",
+      "license_status": "BLOCKING",
+      "n": 14,
+      "query_used": "bio-based amine hardener epoxy Tg density dataset Zenodo Figshare open (led to a broader Figshare API sweep of ACS Applied Polymer Materials SI)",
+      "source": "Figshare/ACS record 33037511, 'Synthesis and Thermal/Electrical Properties of Propynyl-Containing Difunctional Biomass-Based Epoxy Resins', doi 10.1021/acsapm.6c01904.s001"
+    },
+    {
+      "disposition": "NEAR_MISS_logged_not_queued_general_optical_materials_database_amine_cured_epoxy_network_entries_not_confirmed_present_this_fire",
+      "license_quote_source": "FAIRsharing.org record FAIRsharing.60127f for the Refractive Index Database",
+      "license_quote_verbatim": "Creative Commons CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "license_status": "VERIFIED_OPEN_BUT_SCOPE_UNCONFIRMED",
+      "n": 15,
+      "query_used": "\"epoxy amine\" refractive index dataset open access supplementary CC-BY",
+      "source": "refractiveindex.info database of optical constants (Polyanskiy, M., Scientific Data 2024, doi 10.1038/s41597-023-02898-2)"
+    },
+    {
+      "disposition": "BLOCKED_license_unverified_also_property_mismatch_solvolysis_degradation_products_not_Tg_density_RI_dielectric",
+      "license_quote_source": "https://research.birmingham.ac.uk/en/datasets/dataset-degradation-of-a-model-epoxy-resin-by-solvolysis-routes/ (fetched live this fire, license text not present on the landing page reachable without further navigation)",
+      "license_quote_verbatim": "Open Access (exact license terms not obtainable this fire -- WebFetch of research.birmingham.ac.uk and epapers.bham.ac.uk did not return a quotable license line)",
+      "license_status": "UNVERIFIED",
+      "n": 16,
+      "query_used": "Citrination epoxy resin dataset open license (this source surfaced incidentally in that sweep)",
+      "source": "University of Birmingham eData, 'Dataset: Degradation of a model epoxy resin by solvolysis routes' (companion to Polymer Degradation and Stability, 2015)"
+    },
+    {
+      "disposition": "NEAR_MISS_logged_license_not_independently_verified_honest_non_claim",
+      "license_quote_source": "N/A -- fetch blocked; MDPI journals are open-access CC-BY-4.0 by stated editorial policy, but this specific article's license line was NOT independently confirmed this fire and is NOT claimed as verified",
+      "license_quote_verbatim": "not obtained -- direct WebFetch of mdpi.com/2227-9717/9/1/42 returned HTTP 403 Forbidden this fire",
+      "license_status": "UNVERIFIED_THIS_FIRE",
+      "n": 17,
+      "query_used": "bio-based amine hardener epoxy Tg density dataset Zenodo Figshare open",
+      "source": "MDPI Processes 9(1):42, 'Evaluation of Novel Bio-Based Amino Curing Agent Systems for Epoxy Resins: Effect of Tryptophan and Guanine'"
+    }
+  ],
+  "search_record_summary": {
+    "done_criterion_ge_12_sources_met": true,
+    "n_blocked_or_near_miss": 8,
+    "n_qualifying_recommended": 2,
+    "n_sources_swept": 17
+  },
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "used_for": "AUDIT_ONLY U-DATA domain-widening data-hunt search-record KPI under evidence/phase0/repairs/U-DATA/done/"
+  },
+  "tanimoto_method": {
+    "fingerprint": "RDKit Morgan radius=2, 2048-bit (AllChem.GetMorganFingerprintAsBitVect)",
+    "honest_caveat": "This is NOT the same bit-width/convention as the AD gate's own pinned instrument (Morgan r=2/256-bit Tanimoto to nearest Bemis-Murcko scaffold representative, per U-AD sha256 3d229e2f016a22d23b27c2aef17adcbf5be80b760ecb11988c69a5155425eba3). It is used here only to establish EXACT-vs-not structural identity between a candidate dataset's named chemical and the 5-canonical-amine / grammar-38 SMILES already on file in-repo -- both fingerprints agree on Tanimoto=1.0 for an identical SMILES string regardless of bit-width/convention, so the exact-match findings below (DETA, MDA/DDM) are convention-independent."
+  },
+  "verdict": "BLOCKED_DATA",
+  "why": "The claim under attack ('rights-clean training corpora exist that would widen the AD') is SUPPORTED by concrete evidence: two independently-verified CC-BY-4.0 sources (Mendeley 10.17632/bypjxzm3fn.1, Zenodo 10.31142/ijtsrd15748) carry EXACT structural matches (Tanimoto=1.0000) to a currently-excluded canonical amine (DETA) and a currently-unrepresented grammar-38 novel candidate (MDA/DDM) respectively. However, the verdict is reported as BLOCKED_DATA rather than a bare affirmation because actually widening the AD requires a human/future-fire step this fire does not perform: downloading the licensed files, hand-verifying the property rows against the published source, and re-ingesting them into the training corpus with provenance -- i.e. forward motion on the underlying objective (a wider AD) is blocked on that acquisition step, even though the rights-clearance search itself succeeded. 15 of 17 swept sources were near-misses or blocked (chemotype mismatch, NC/SA licence conditions, unverifiable quotes, or explicit bulk-acquisition bans), each honestly recorded rather than silently dropped -- most notably, NIST ThermoML/TRC data was found to be Standard Reference Data (15 U.S.C. 290e carve-out), NOT covered by NIST's general public-domain policy as an earlier informal assumption might have implied, and is logged as BLOCKED_RIGHTS with a verbatim quote rather than assumed clean."
+}

@@ -1,0 +1,315 @@
+{
+  "schema": "amphora.pot-life-source-landscape.v1",
+  "track_id": "coating-pot-life-physics-v1",
+  "searched_on": "2026-07-17",
+  "search_status": "SATURATION_SEARCHED",
+  "search_status_note": "Saturation-searched is not exhaustive and is not a patentability, validity, infringement, or freedom-to-operate opinion.",
+  "stop_rule": "Stop after two successive search iterations add no new method family.",
+  "stop_rule_result": {
+    "last_method_family_added_in_iteration": 2,
+    "successive_no-new-family_iterations": [
+      5,
+      6
+    ],
+    "satisfied": true
+  },
+  "indexes": [
+    {
+      "index": "WIPO PATENTSCOPE",
+      "status": "SEARCHED",
+      "limitations": "Public web indexing returned sparse result pages; relevant WO publications were also family-checked in publication records."
+    },
+    {
+      "index": "EPO publication server / Espacenet",
+      "status": "SEARCHED",
+      "limitations": "Publication-server full text and indexed family records were used; this was not a legal-status review."
+    },
+    {
+      "index": "USPTO Patent Public Search",
+      "status": "SEARCHED",
+      "limitations": "The official basic-search surface was reached; full-text family records were cross-checked in publication mirrors."
+    },
+    {
+      "index": "J-PlatPat",
+      "status": "SEARCHED",
+      "limitations": "Classification and indexed Japanese publication records were used; machine translations are non-authoritative."
+    },
+    {
+      "index": "Crossref",
+      "status": "SEARCHED_WITH_API_ACCESS_LIMITATION",
+      "limitations": "DOI-specific API URLs were attempted but rejected by the browsing safety layer; DOI metadata was verified on publisher, NIST, university, and ASTM records."
+    },
+    {
+      "index": "Publisher and government research indexes",
+      "status": "SEARCHED",
+      "limitations": "Wiley, ACS/NIST, University of Minnesota, ASTM, Sandia, and OSTI records were reviewed."
+    }
+  ],
+  "query_log": [
+    {
+      "iteration": 1,
+      "queries": [
+        "site:patentscope.wipo.int epoxy pot life prediction viscosity temperature patent cure kinetics",
+        "site:worldwide.espacenet.com epoxy pot life prediction viscosity cure patent",
+        "site:ppubs.uspto.gov epoxy pot life monitoring viscosity cure patent",
+        "site:j-platpat.inpit.go.jp epoxy pot life cure kinetics viscosity patent"
+      ],
+      "new_method_families": [],
+      "decision": "Retained as office-surface and classification evidence; direct-office web indexing was too sparse for inclusion decisions by itself."
+    },
+    {
+      "iteration": 2,
+      "queries": [
+        "patent epoxy pot life prediction cure conversion viscosity temperature JP2000019090A",
+        "patent monitoring resin pot life acoustic viscosity epoxy",
+        "patent dielectric monitoring pot life epoxy resin cure",
+        "patent sprayability pot life coating viscosity airless spray epoxy"
+      ],
+      "new_method_families": [
+        "KINETICS_TO_CRITICAL_CURE_STATE",
+        "VISCOSITY_THRESHOLD_OR_TRAJECTORY",
+        "DIELECTRIC_CURE_MONITORING",
+        "ACOUSTIC_OR_ULTRASONIC_CURE_MONITORING",
+        "APPLICATION_OR_SPRAY_BOUNDARY"
+      ],
+      "decision": "Included representative families and separated cure-state proxies from application-specific working life."
+    },
+    {
+      "iteration": 3,
+      "queries": [
+        "Chern Poehlein epoxy amine hydroxyl autocatalytic kinetics DOI",
+        "Bidstrup Macosko chemorheology relations epoxy amine crosslinking DOI viscosity gel",
+        "NIST rheology conversion epoxy amine pre gel viscosity 2024 DOI",
+        "Sandia 828 DEA pre reaction kinetics viscosity conversion data"
+      ],
+      "new_method_families": [],
+      "decision": "Included physical-theory anchors; no new patent-method family."
+    },
+    {
+      "iteration": 4,
+      "queries": [
+        "patent pot life epoxy ultrasonic cure monitoring",
+        "patent pot life epoxy acoustic monitoring viscosity",
+        "patent working life thermosetting resin temperature viscosity prediction",
+        "patent application time coating spray fan viscosity reactive"
+      ],
+      "new_method_families": [],
+      "decision": "Results mapped to the already identified viscosity, acoustic, and application-boundary families."
+    },
+    {
+      "iteration": 5,
+      "queries": [
+        "JP2000019090A citations patent family pot life thermosetting resin critical conversion",
+        "US9156057B2 citations viscosity sprayable mixture pot life coating family",
+        "DE102004001725 patent pot life curing monitor dielectric temperature",
+        "epoxy pot life prediction calorimetry rheology dielectric acoustic application endpoint patent"
+      ],
+      "new_method_families": [],
+      "decision": "Backward/forward-chain and modality checks found no new method family."
+    },
+    {
+      "iteration": 6,
+      "queries": [
+        "AT520100A1 Method for determining the pot life",
+        "WO2012002340A1 resin pot life cure degree temperature",
+        "pot life dielectric polarization epoxy patent temperature",
+        "pot life epoxy spiral flow DSC cure conversion patent"
+      ],
+      "new_method_families": [],
+      "decision": "Second successive no-new-family iteration; the declared saturation stop rule was met."
+    },
+    {
+      "iteration": 7,
+      "queries": [
+        "Crossref DOI 10.1002/pen.760271104",
+        "Crossref DOI 10.1002/polb.1990.090280508",
+        "Crossref DOI 10.1021/acsapm.4c00607",
+        "Crossref DOI 10.1520/STP11664S"
+      ],
+      "new_method_families": [],
+      "decision": "DOI metadata was confirmed from authoritative publisher/government records after direct Crossref API access was unavailable."
+    }
+  ],
+  "method_family_chart": [
+    {
+      "method_family": "KINETICS_TO_CRITICAL_CURE_STATE",
+      "representative_family": "JP2000019090A / family 16203701",
+      "earliest_priority": "1998-07-02",
+      "elements_reviewed": [
+        "temperature- and cure-degree-dependent reaction expression",
+        "numerical integration to a predetermined cure degree",
+        "fluidity retention correlated to the critical cure degree"
+      ],
+      "program_treatment": "PRIOR_ART; no novelty assertion for integrating cure kinetics to a critical state"
+    },
+    {
+      "method_family": "VISCOSITY_THRESHOLD_OR_TRAJECTORY",
+      "representative_family": "US10011703B2 / WO2013134752A1 / family 49117418",
+      "earliest_priority": "2012-03-09",
+      "elements_reviewed": [
+        "initial and repeated viscosity measurement",
+        "viscosity doubling used as pot-life proxy",
+        "pot-life/cure-time ratio"
+      ],
+      "program_treatment": "PROXY CONTEXT ONLY; equivalent-viscosity doubling remains distinct from spray-property failure"
+    },
+    {
+      "method_family": "DIELECTRIC_CURE_MONITORING",
+      "representative_family": "US5436565A / family 25481703; DE102004001725-related SubCASE records",
+      "earliest_priority": "1992-09-14",
+      "elements_reviewed": [
+        "capacitance/impedance measurement of dielectric material",
+        "dielectric polarization combined with sample temperature",
+        "cure-monitor readout"
+      ],
+      "program_treatment": "FUTURE SENSOR LAYER; no dielectric parameters fitted without owned dielectric data"
+    },
+    {
+      "method_family": "ACOUSTIC_OR_ULTRASONIC_CURE_MONITORING",
+      "representative_family": "US6675112B1 and cure-monitoring references",
+      "earliest_priority": "not established in this preliminary landscape",
+      "elements_reviewed": [
+        "ultrasonic cure-monitoring modality described among known methods",
+        "acoustic response as cure-state context"
+      ],
+      "program_treatment": "FUTURE SENSOR LAYER; no acoustic inference in v1"
+    },
+    {
+      "method_family": "APPLICATION_OR_SPRAY_BOUNDARY",
+      "representative_family": "US9156057B2 / US20110274931A1",
+      "earliest_priority": "2008-12-23",
+      "elements_reviewed": [
+        "reactive coating pot mix and viscosity rise",
+        "spraying becomes ineffective at a formulation/equipment-dependent state",
+        "tip/orifice and atomization configuration affect application"
+      ],
+      "program_treatment": "APPLICATION ADAPTER IS CONFIGURATION-LOCKED; not transferable without calibration"
+    }
+  ],
+  "patent_records": [
+    {
+      "publication": "JP2000019090A",
+      "family_id": "16203701",
+      "priority_date": "1998-07-02",
+      "title": "Method for evaluating pot life of thermosetting resin",
+      "url": "https://patents.google.com/patent/JP2000019090A/en",
+      "claims_reviewed": "claims 1-2",
+      "inclusion": "INCLUDED_CLOSEST_METHOD_ART",
+      "reason": "Expressly claims calculating time to a predetermined cure degree using cure kinetics defined by temperature and degree of cure; claim 2 ties that state to flow retention.",
+      "forward_citations_reviewed": [
+        "WO2012002340A1 / US8758545B2",
+        "AT520100A1"
+      ],
+      "backward_citations_reviewed": [
+        "Kamal and Sourour, Polymer Engineering and Science 13 (1973) 59-64"
+      ]
+    },
+    {
+      "publication": "US9156057B2",
+      "family_id": "US13/141369 family",
+      "priority_date": "2008-12-23",
+      "title": "Method for controlling the viscosity of a sprayable mixture",
+      "url": "https://patents.google.com/patent/US9156057B2/en",
+      "claims_reviewed": "indexed description and family record; claim chart not completed",
+      "inclusion": "INCLUDED_APPLICATION_CONTEXT",
+      "reason": "Describes reactive spray pot mixtures, viscosity rise, spray ineffectiveness, clogging, and configuration-specific spray components."
+    },
+    {
+      "publication": "US10011703B2",
+      "family_id": "49117418",
+      "priority_date": "2012-03-09",
+      "title": "Water borne epoxy resin dispersions and epoxy hardener compositions",
+      "url": "https://patents.google.com/patent/US10011703B2/en",
+      "claims_reviewed": "claims 1-24; examples IV-V and tables 11-12",
+      "inclusion": "INCLUDED_VISCOSITY_PROXY_CONTEXT",
+      "reason": "Examples define a repeated-viscosity, viscosity-doubling proxy and separately measure cure time; claims are composition-focused."
+    },
+    {
+      "publication": "US5436565A",
+      "family_id": "25481703",
+      "priority_date": "1992-09-14",
+      "title": "Non-contacting capacitance probe for dielectric cure monitoring",
+      "url": "https://patents.google.com/patent/US5436565A/en",
+      "claims_reviewed": "claims 1-6 and cited-by chain",
+      "inclusion": "INCLUDED_DIELECTRIC_METHOD_CONTEXT",
+      "reason": "Claims apparatus for capacitance/impedance property measurement and the record identifies resin cure monitoring in its chain."
+    },
+    {
+      "publication": "EP3425005B1",
+      "family_id": "not charted",
+      "priority_date": "not charted",
+      "title": "Epoxy resin composition, molding material, and fiber-reinforced composite material",
+      "url": "https://patentimages.storage.googleapis.com/b1/e1/d1/4a0a1dba7d09b1/EP3425005B1.pdf",
+      "claims_reviewed": "pot-life evaluation examples; claims not charted",
+      "inclusion": "INCLUDED_VISCOSITY_TEST_CONTEXT",
+      "reason": "Uses initial and aged viscosity with a fixed multiplier as a pot-life criterion."
+    },
+    {
+      "publication": "EP4653505A1",
+      "family_id": "not charted",
+      "priority_date": "not charted",
+      "title": "Coating composition, material product thereof, kit, and use method",
+      "url": "https://data.epo.org/publication-server/rest/v1.2/publication-dates/2025-11-26/patents/EP4653505NWA1/document.pdf",
+      "claims_reviewed": "application and pot-life test description; claims not charted",
+      "inclusion": "INCLUDED_APPLICATION_ENDPOINT_CONTEXT",
+      "reason": "Defines pot life by loss of ability to apply a film and reports KU and spray properties."
+    }
+  ],
+  "paper_records": [
+    {
+      "title": "A kinetic model for curing reactions of epoxides with amines",
+      "doi": "10.1002/pen.760271104",
+      "url": "https://4spepublications.onlinelibrary.wiley.com/doi/abs/10.1002/pen.760271104",
+      "inclusion": "PHYSICAL_THEORY",
+      "use": "Hydrogen-bond donor/hydroxyl acceleration, epoxy-amine reaction network, and diffusion-controlled rate changes."
+    },
+    {
+      "title": "Chemorheology relations for epoxy-amine crosslinking",
+      "doi": "10.1002/polb.1990.090280508",
+      "url": "https://experts.umn.edu/en/publications/chemorheology-relations-for-epoxyamine-crosslinking/",
+      "inclusion": "PHYSICAL_THEORY",
+      "use": "Viscosity versus reaction extent, branching theory, network structure, and pre-/near-gel rheology."
+    },
+    {
+      "title": "Evaluating Models That Predict Epoxy Conversion Using Rheological Properties",
+      "doi": "10.1021/acsapm.4c00607",
+      "url": "https://www.nist.gov/publications/evaluating-models-predict-epoxy-conversion-using-rheological-properties",
+      "inclusion": "PHYSICAL_THEORY_AND_CLAIM_LIMIT",
+      "use": "Supports pre-gel divergence structure and warns that rheology-to-conversion models can be quantitatively inaccurate."
+    },
+    {
+      "title": "New Technique for Measuring Extended Viscosity Ranges—Gel Times, Pot Life, or Cure Monitoring",
+      "doi": "10.1520/STP11664S",
+      "url": "https://store.astm.org/stp11664s.html",
+      "inclusion": "MEASUREMENT_CONTEXT",
+      "use": "Repeated apparent-viscosity monitoring across cure, temperature, and sample geometry."
+    },
+    {
+      "title": "828/DEA: Pre-Reaction Kinetics",
+      "doi": null,
+      "url": "https://www.sandia.gov/polymer-properties/828-dea-pre-reaction-kinetics/",
+      "inclusion": "SOLVER_FIXTURE_ONLY_PENDING_DERIVATIVE_REVIEW",
+      "use": "Useful time/extent/viscosity series, not training evidence without a SHA-bound derivative-use review."
+    }
+  ],
+  "standard_records": [
+    {
+      "standard": "ISO 9514:2019",
+      "url": "https://www.iso.org/standard/77491.html",
+      "use": "Endpoint semantics: working life is tied to a specified property under specified conditions."
+    },
+    {
+      "standard": "ASTM D562-10(2023)",
+      "url": "https://store.astm.org/standards/d562",
+      "use": "Stormer/KU measurement context; KU is not treated as a linear viscosity unit."
+    }
+  ],
+  "rights_and_use": {
+    "public_patent_text": "CONTEXT_AND_PRIOR_ART_CHART_ONLY",
+    "supplier_documents": "QUARANTINED_UNLESS_DERIVATIVE_USE_ACCEPTED",
+    "sandia_data": "SOLVER_FIXTURE_ONLY_UNLESS_SHA_BOUND_DERIVATIVE_USE_REVIEW_ACCEPTS",
+    "owned_runs": "ONLY TRAINING_AND_LOCKED_EVALUATION SOURCE IN V1"
+  },
+  "differentiation_hypothesis": "The research hypothesis is a coating- and equipment-specific bridge from measured temperature and rheology to interval-censored first spray-property failure, with strict geometry/setup abstention. It is not a novelty or patentability conclusion.",
+  "fto_status": "FTO NOT PERFORMED"
+}

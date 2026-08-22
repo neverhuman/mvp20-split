@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "40180a32cd1c9f56e28eb7032fae51b12f516639385635cf7547fcceb2930192",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-molecule-generator",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

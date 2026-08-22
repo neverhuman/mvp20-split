@@ -1,0 +1,1554 @@
+{
+  "adduct_closure_projection": {
+    "anchors_recovered_under_best_k": 3,
+    "best_k": "k_2",
+    "by_k": {
+      "k_2": {
+        "ahew_adduct_max": 156.7218,
+        "ahew_adduct_min": 53.1793,
+        "families_reaching_band": [
+          "F2_alpha_omega_diamine",
+          "F3_cycloaliphatic",
+          "F4_bridged_bisaniline",
+          "F5_xylylenediamine"
+        ],
+        "fraction_in_band": 0.578947,
+        "n_in_commercial_band": 22,
+        "n_projected": 38,
+        "per_molecule": [
+          {
+            "ahew_adduct_g_per_eq": 76.7698,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "EDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 81.4455,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,3-diaminoalkane(C3)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 68.3446,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "DETA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 86.1212,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,4-diaminoalkane(C4)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 63.2895,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "TETA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 90.7968,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,5-diaminoalkane(C5)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 59.9194,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "TEPA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 94.8005,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,2-DACH"
+          },
+          {
+            "ahew_adduct_g_per_eq": 94.8005,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,3-DACH"
+          },
+          {
+            "ahew_adduct_g_per_eq": 94.8005,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,4-DACH"
+          },
+          {
+            "ahew_adduct_g_per_eq": 57.5122,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "PEHA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 95.4725,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,6-diaminoalkane(C6)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 55.7068,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "ethyleneamine-k6"
+          },
+          {
+            "ahew_adduct_g_per_eq": 54.3026,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "ethyleneamine-k7"
+          },
+          {
+            "ahew_adduct_g_per_eq": 99.4762,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,3-cyclopentane-bis(aminomethyl)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 100.1482,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": true,
+            "name": "1,7-diaminoalkane(C7)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 53.1793,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "ethyleneamine-k8"
+          },
+          {
+            "ahew_adduct_g_per_eq": 102.1358,
+            "family": "F5_xylylenediamine",
+            "in_commercial_band": true,
+            "name": "m-XDA/MXDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 102.1358,
+            "family": "F5_xylylenediamine",
+            "in_commercial_band": true,
+            "name": "o-XDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 102.1358,
+            "family": "F5_xylylenediamine",
+            "in_commercial_band": true,
+            "name": "p-XDA/PXDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 104.1518,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": true,
+            "name": "1,2-BAC"
+          },
+          {
+            "ahew_adduct_g_per_eq": 104.1518,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": true,
+            "name": "1,3-BAC"
+          },
+          {
+            "ahew_adduct_g_per_eq": 104.1518,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": true,
+            "name": "1,4-BAC"
+          },
+          {
+            "ahew_adduct_g_per_eq": 104.8238,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": true,
+            "name": "1,8-diaminoalkane(C8)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 109.4995,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": true,
+            "name": "1,9-diaminoalkane(C9)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 113.5032,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": true,
+            "name": "IPDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 149.7083,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": true,
+            "name": "piperazine-bis(aminoethyl)/AEP"
+          },
+          {
+            "ahew_adduct_g_per_eq": 114.1752,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": true,
+            "name": "1,10-diaminoalkane(C10)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 118.1505,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "benzidine(4,4'-diaminobiphenyl)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 118.8508,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": true,
+            "name": "1,11-diaminoalkane(C11)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 156.7218,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": true,
+            "name": "homopiperazine-N,N'"
+          },
+          {
+            "ahew_adduct_g_per_eq": 122.8262,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "MDA/DDM(methylene)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 123.4835,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "4,4'-oxydianiline(ODA)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 123.5265,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": true,
+            "name": "1,12-diaminoalkane(C12)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 127.4872,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "4,4'-diaminobenzophenone"
+          },
+          {
+            "ahew_adduct_g_per_eq": 128.8395,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "4,4'-thiodianiline"
+          },
+          {
+            "ahew_adduct_g_per_eq": 132.1775,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "4,4'-isopropylidenedianiline"
+          },
+          {
+            "ahew_adduct_g_per_eq": 139.5055,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "DDS(sulfone)"
+          }
+        ]
+      },
+      "k_3": {
+        "ahew_adduct_max": 110.0173,
+        "ahew_adduct_min": 45.9732,
+        "families_reaching_band": [
+          "F3_cycloaliphatic",
+          "F4_bridged_bisaniline"
+        ],
+        "fraction_in_band": 0.105263,
+        "n_in_commercial_band": 4,
+        "n_projected": 38,
+        "per_molecule": [
+          {
+            "ahew_adduct_g_per_eq": 52.0719,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "EDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 56.28,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,3-diaminoalkane(C3)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 49.9943,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "DETA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 60.4881,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,4-diaminoalkane(C4)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 48.6958,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "TETA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 64.6962,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,5-diaminoalkane(C5)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 47.8074,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "TEPA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 68.2995,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,2-DACH"
+          },
+          {
+            "ahew_adduct_g_per_eq": 68.2995,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,3-DACH"
+          },
+          {
+            "ahew_adduct_g_per_eq": 68.2995,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,4-DACH"
+          },
+          {
+            "ahew_adduct_g_per_eq": 47.1612,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "PEHA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 68.9043,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,6-diaminoalkane(C6)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 46.6702,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "ethyleneamine-k6"
+          },
+          {
+            "ahew_adduct_g_per_eq": 46.2843,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "ethyleneamine-k7"
+          },
+          {
+            "ahew_adduct_g_per_eq": 72.5076,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,3-cyclopentane-bis(aminomethyl)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 73.1124,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,7-diaminoalkane(C7)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 45.9732,
+            "family": "F1_polyethyleneamine",
+            "in_commercial_band": false,
+            "name": "ethyleneamine-k8"
+          },
+          {
+            "ahew_adduct_g_per_eq": 74.9013,
+            "family": "F5_xylylenediamine",
+            "in_commercial_band": false,
+            "name": "m-XDA/MXDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 74.9013,
+            "family": "F5_xylylenediamine",
+            "in_commercial_band": false,
+            "name": "o-XDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 74.9013,
+            "family": "F5_xylylenediamine",
+            "in_commercial_band": false,
+            "name": "p-XDA/PXDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 76.7157,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,2-BAC"
+          },
+          {
+            "ahew_adduct_g_per_eq": 76.7157,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,3-BAC"
+          },
+          {
+            "ahew_adduct_g_per_eq": 76.7157,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "1,4-BAC"
+          },
+          {
+            "ahew_adduct_g_per_eq": 77.3205,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,8-diaminoalkane(C8)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 81.5286,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,9-diaminoalkane(C9)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 85.1319,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": false,
+            "name": "IPDA"
+          },
+          {
+            "ahew_adduct_g_per_eq": 104.0057,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": true,
+            "name": "piperazine-bis(aminoethyl)/AEP"
+          },
+          {
+            "ahew_adduct_g_per_eq": 85.7367,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,10-diaminoalkane(C10)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 89.3145,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": false,
+            "name": "benzidine(4,4'-diaminobiphenyl)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 89.9448,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,11-diaminoalkane(C11)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 110.0173,
+            "family": "F3_cycloaliphatic",
+            "in_commercial_band": true,
+            "name": "homopiperazine-N,N'"
+          },
+          {
+            "ahew_adduct_g_per_eq": 93.5226,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": false,
+            "name": "MDA/DDM(methylene)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 94.1142,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": false,
+            "name": "4,4'-oxydianiline(ODA)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 94.1529,
+            "family": "F2_alpha_omega_diamine",
+            "in_commercial_band": false,
+            "name": "1,12-diaminoalkane(C12)"
+          },
+          {
+            "ahew_adduct_g_per_eq": 97.7175,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": false,
+            "name": "4,4'-diaminobenzophenone"
+          },
+          {
+            "ahew_adduct_g_per_eq": 98.9346,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": false,
+            "name": "4,4'-thiodianiline"
+          },
+          {
+            "ahew_adduct_g_per_eq": 101.9388,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "4,4'-isopropylidenedianiline"
+          },
+          {
+            "ahew_adduct_g_per_eq": 108.534,
+            "family": "F4_bridged_bisaniline",
+            "in_commercial_band": true,
+            "name": "DDS(sulfone)"
+          }
+        ]
+      }
+    },
+    "citation": "Lee & Neville 1967, Handbook of Epoxy Resins, McGraw-Hill (amine-epoxy adduct curing agents); Ellis (ed.) 1993, Chemistry and Technology of Epoxy Resins, Blackie/Chapman & Hall, ISBN 978-0-7514-0095-4.",
+    "commercial_band_g_per_eq": [
+      100.0,
+      264.0
+    ],
+    "m_dgeba_g_per_mol": 340.419,
+    "n_anchors": 6,
+    "operator": "k mol diamine + 1 mol DGEBA -> one amine-terminated adduct; the two DGEBA epoxide groups each consume one active N-H. M_adduct = k*M_amine + M_DGEBA; n_activeH_adduct = k*n_activeH_amine - 2; AHEW_adduct = M_adduct / n_activeH_adduct.",
+    "status": "ANALYTIC_PROJECTION_ONLY -- this operator is NOT implemented as a generator production rule; it is evaluated here to quantify what capability would be required to close the measured envelope gap."
+  },
+  "authority": "AUDIT_ONLY",
+  "closes": [],
+  "does_not_close": [
+    "Runtime remains LOCKED_INTERNAL; no proposal emission enabled.",
+    "No Phase-0 promotion; scientific_readiness stays UNVALIDATED.",
+    "AHEW/amine-value/phr are computed monodisperse structural quantities; commercial anchors are technical-grade measured values on polydisperse resins, so the comparison bounds capability, not product equivalence.",
+    "The amine-epoxy adduct closure is an ANALYTIC PROJECTION only -- it is not implemented as a generator production rule and no adduct product has been enumerated, validated, or synthesised.",
+    "Aryl amines are weakly basic and may under-titrate under ASTM D2074 conditions; the computed amine value is a structural upper bound for those members.",
+    "Stoichiometric envelope coverage is not a cure-kinetics, pot-life, property, FTO, or wet-lab performance claim."
+  ],
+  "envelope_coverage_test": {
+    "anchor_coverage_fraction": 0.0,
+    "commercial_envelope_g_per_eq": [
+      100.0,
+      264.0
+    ],
+    "generated_hull_g_per_eq": [
+      15.025,
+      62.0768
+    ],
+    "interval_overlap_fraction_of_commercial": 0.0,
+    "interval_overlap_g_per_eq": 0.0,
+    "n_anchors": 6,
+    "n_anchors_inside_generated_hull": 0,
+    "per_anchor": [
+      {
+        "ahew_g_per_eq": 100.0,
+        "chemistry_class": "amidoamine",
+        "inside_generated_hull": false,
+        "product": "Ancamide 350A",
+        "shortfall_g_per_eq": 37.9232
+      },
+      {
+        "ahew_g_per_eq": 114.0,
+        "chemistry_class": "polyamide/amidoamine",
+        "inside_generated_hull": false,
+        "product": "Ancamide 2353",
+        "shortfall_g_per_eq": 51.9232
+      },
+      {
+        "ahew_g_per_eq": 120.0,
+        "chemistry_class": "polyamide",
+        "inside_generated_hull": false,
+        "product": "Ancamide 260A",
+        "shortfall_g_per_eq": 57.9232
+      },
+      {
+        "ahew_g_per_eq": 170.0,
+        "chemistry_class": "polyamide solution",
+        "inside_generated_hull": false,
+        "product": "Ancamide 700-B-75",
+        "shortfall_g_per_eq": 107.9232
+      },
+      {
+        "ahew_g_per_eq": 198.0,
+        "chemistry_class": "polyamide",
+        "inside_generated_hull": false,
+        "product": "Versamid 115",
+        "shortfall_g_per_eq": 135.9232
+      },
+      {
+        "ahew_g_per_eq": 264.0,
+        "chemistry_class": "polyamide solution",
+        "inside_generated_hull": false,
+        "product": "Ancamide 220-X-70",
+        "shortfall_g_per_eq": 201.9232
+      }
+    ],
+    "shortfall_relative_to_commercial_floor": 0.379232,
+    "shortfall_to_commercial_floor_g_per_eq": 37.9232
+  },
+  "fail_closed_controls": [
+    {
+      "active_nh_matches": true,
+      "admitted_as_difunctional_hardener": false,
+      "ahew_g_per_eq": null,
+      "ahew_is_undefined": true,
+      "fail_closed": true,
+      "n_active_nh_expected": 0,
+      "n_active_nh_rederived": 0,
+      "name": "DGEBA (epoxide resin, not a hardener)",
+      "smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1"
+    },
+    {
+      "active_nh_matches": true,
+      "admitted_as_difunctional_hardener": false,
+      "ahew_g_per_eq": null,
+      "ahew_is_undefined": true,
+      "fail_closed": true,
+      "n_active_nh_expected": 0,
+      "n_active_nh_rederived": 0,
+      "name": "triethylamine (tertiary amine, catalytic not co-reactive)",
+      "smiles": "CCN(CC)CC"
+    },
+    {
+      "active_nh_matches": true,
+      "admitted_as_difunctional_hardener": false,
+      "ahew_g_per_eq": null,
+      "ahew_is_undefined": true,
+      "fail_closed": true,
+      "n_active_nh_expected": 0,
+      "n_active_nh_rederived": 0,
+      "name": "benzamide (amide N-H, not epoxy-reactive at ambient)",
+      "smiles": "NC(=O)c1ccccc1"
+    },
+    {
+      "active_nh_matches": true,
+      "admitted_as_difunctional_hardener": false,
+      "ahew_g_per_eq": null,
+      "ahew_is_undefined": true,
+      "fail_closed": true,
+      "n_active_nh_expected": 0,
+      "n_active_nh_rederived": 0,
+      "name": "pyridine (aromatic ring nitrogen, no N-H)",
+      "smiles": "c1ccncc1"
+    },
+    {
+      "active_nh_matches": true,
+      "admitted_as_difunctional_hardener": false,
+      "ahew_g_per_eq": null,
+      "ahew_is_undefined": true,
+      "fail_closed": true,
+      "n_active_nh_expected": 0,
+      "n_active_nh_rederived": 0,
+      "name": "N,N-dimethylbenzylamine (tertiary accelerator)",
+      "smiles": "CN(C)Cc1ccccc1"
+    },
+    {
+      "active_nh_matches": true,
+      "admitted_as_difunctional_hardener": false,
+      "ahew_g_per_eq": 107.156,
+      "ahew_is_undefined": false,
+      "fail_closed": true,
+      "n_active_nh_expected": 1,
+      "n_active_nh_rederived": 1,
+      "name": "N-methylaniline (secondary, monofunctional)",
+      "smiles": "CNc1ccccc1"
+    }
+  ],
+  "fail_closed_summary": {
+    "all_pass": true,
+    "n_pass": 6,
+    "n_total": 6
+  },
+  "generated_set_stoichiometry": {
+    "ahew_max_g_per_eq": 62.0768,
+    "ahew_median_g_per_eq": 34.0495,
+    "ahew_min_g_per_eq": 15.025,
+    "amine_value_max_mgKOH_per_g": 1867.0749,
+    "amine_value_min_mgKOH_per_g": 451.9051,
+    "identity_band_holds_for_all": true,
+    "n_exactly_on_all_primary_floor_28052p8": 29,
+    "n_molecules": 38,
+    "per_molecule": [
+      {
+        "ahew_g_per_eq": 15.025,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 1867.0749,
+        "canonical_smiles": "NCCN",
+        "family": "F1_polyethyleneamine",
+        "molar_mass_g_per_mol": 60.1,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "EDA",
+        "phr_at_eew_170p21": 8.8273,
+        "phr_at_eew_190": 7.9079
+      },
+      {
+        "ahew_g_per_eq": 18.5317,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 1513.7696,
+        "canonical_smiles": "NCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 74.127,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,3-diaminoalkane(C3)",
+        "phr_at_eew_170p21": 10.8876,
+        "phr_at_eew_190": 9.7536
+      },
+      {
+        "ahew_g_per_eq": 20.6338,
+        "ahew_times_av": 33663.36,
+        "amine_value_mgKOH_per_g": 1631.4668,
+        "canonical_smiles": "NCCNCCN",
+        "family": "F1_polyethyleneamine",
+        "molar_mass_g_per_mol": 103.169,
+        "n_active_nh": 5,
+        "n_basic_n": 3,
+        "n_primary_n": 2,
+        "n_secondary_n": 1,
+        "name": "DETA",
+        "phr_at_eew_170p21": 12.1226,
+        "phr_at_eew_190": 10.8599
+      },
+      {
+        "ahew_g_per_eq": 22.0385,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 1272.8997,
+        "canonical_smiles": "NCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 88.154,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,4-diaminoalkane(C4)",
+        "phr_at_eew_170p21": 12.9478,
+        "phr_at_eew_190": 11.5992
+      },
+      {
+        "ahew_g_per_eq": 24.373,
+        "ahew_times_av": 37403.733333,
+        "amine_value_mgKOH_per_g": 1534.6381,
+        "canonical_smiles": "NCCNCCNCCN",
+        "family": "F1_polyethyleneamine",
+        "molar_mass_g_per_mol": 146.238,
+        "n_active_nh": 6,
+        "n_basic_n": 4,
+        "n_primary_n": 2,
+        "n_secondary_n": 2,
+        "name": "TETA",
+        "phr_at_eew_170p21": 14.3194,
+        "phr_at_eew_190": 12.8279
+      },
+      {
+        "ahew_g_per_eq": 25.5453,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 1098.1611,
+        "canonical_smiles": "NCCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 102.181,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,5-diaminoalkane(C5)",
+        "phr_at_eew_170p21": 15.0081,
+        "phr_at_eew_190": 13.4449
+      },
+      {
+        "ahew_g_per_eq": 27.0439,
+        "ahew_times_av": 40075.428571,
+        "amine_value_mgKOH_per_g": 1481.8681,
+        "canonical_smiles": "NCCNCCNCCNCCN",
+        "family": "F1_polyethyleneamine",
+        "molar_mass_g_per_mol": 189.307,
+        "n_active_nh": 7,
+        "n_basic_n": 5,
+        "n_primary_n": 2,
+        "n_secondary_n": 3,
+        "name": "TEPA",
+        "phr_at_eew_170p21": 15.8885,
+        "phr_at_eew_190": 14.2336
+      },
+      {
+        "ahew_g_per_eq": 28.548,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 982.6538,
+        "canonical_smiles": "NC1CCCCC1N",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 114.192,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,2-DACH",
+        "phr_at_eew_170p21": 16.7722,
+        "phr_at_eew_190": 15.0253
+      },
+      {
+        "ahew_g_per_eq": 28.548,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 982.6538,
+        "canonical_smiles": "NC1CCCC(N)C1",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 114.192,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,3-DACH",
+        "phr_at_eew_170p21": 16.7722,
+        "phr_at_eew_190": 15.0253
+      },
+      {
+        "ahew_g_per_eq": 28.548,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 982.6538,
+        "canonical_smiles": "NC1CCC(N)CC1",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 114.192,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,4-DACH",
+        "phr_at_eew_170p21": 16.7722,
+        "phr_at_eew_190": 15.0253
+      },
+      {
+        "ahew_g_per_eq": 29.047,
+        "ahew_times_av": 42079.2,
+        "amine_value_mgKOH_per_g": 1448.6591,
+        "canonical_smiles": "NCCNCCNCCNCCNCCN",
+        "family": "F1_polyethyleneamine",
+        "molar_mass_g_per_mol": 232.376,
+        "n_active_nh": 8,
+        "n_basic_n": 6,
+        "n_primary_n": 2,
+        "n_secondary_n": 4,
+        "name": "PEHA",
+        "phr_at_eew_170p21": 17.0654,
+        "phr_at_eew_190": 15.2879
+      },
+      {
+        "ahew_g_per_eq": 29.052,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 965.6065,
+        "canonical_smiles": "NCCCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 116.208,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,6-diaminoalkane(C6)",
+        "phr_at_eew_170p21": 17.0683,
+        "phr_at_eew_190": 15.2905
+      },
+      {
+        "ahew_g_per_eq": 30.605,
+        "ahew_times_av": 43637.688889,
+        "amine_value_mgKOH_per_g": 1425.8353,
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCN",
+        "family": "F1_polyethyleneamine",
+        "molar_mass_g_per_mol": 275.445,
+        "n_active_nh": 9,
+        "n_basic_n": 7,
+        "n_primary_n": 2,
+        "n_secondary_n": 5,
+        "name": "ethyleneamine-k6",
+        "phr_at_eew_170p21": 17.9807,
+        "phr_at_eew_190": 16.1079
+      },
+      {
+        "ahew_g_per_eq": 31.8514,
+        "ahew_times_av": 44884.48,
+        "amine_value_mgKOH_per_g": 1409.1839,
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCNCCN",
+        "family": "F1_polyethyleneamine",
+        "molar_mass_g_per_mol": 318.514,
+        "n_active_nh": 10,
+        "n_basic_n": 8,
+        "n_primary_n": 2,
+        "n_secondary_n": 6,
+        "name": "ethyleneamine-k7",
+        "phr_at_eew_170p21": 18.713,
+        "phr_at_eew_190": 16.7639
+      },
+      {
+        "ahew_g_per_eq": 32.0547,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 875.1527,
+        "canonical_smiles": "NCC1CCC(CN)C1",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 128.219,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,3-cyclopentane-bis(aminomethyl)",
+        "phr_at_eew_170p21": 18.8325,
+        "phr_at_eew_190": 16.8709
+      },
+      {
+        "ahew_g_per_eq": 32.5587,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 861.6056,
+        "canonical_smiles": "NCCCCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 130.235,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,7-diaminoalkane(C7)",
+        "phr_at_eew_170p21": 19.1286,
+        "phr_at_eew_190": 17.1362
+      },
+      {
+        "ahew_g_per_eq": 32.8712,
+        "ahew_times_av": 45904.581818,
+        "amine_value_mgKOH_per_g": 1396.4993,
+        "canonical_smiles": "NCCNCCNCCNCCNCCNCCNCCNCCN",
+        "family": "F1_polyethyleneamine",
+        "molar_mass_g_per_mol": 361.583,
+        "n_active_nh": 11,
+        "n_basic_n": 9,
+        "n_primary_n": 2,
+        "n_secondary_n": 7,
+        "name": "ethyleneamine-k8",
+        "phr_at_eew_170p21": 19.3121,
+        "phr_at_eew_190": 17.3006
+      },
+      {
+        "ahew_g_per_eq": 34.0495,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 823.8829,
+        "canonical_smiles": "NCc1cccc(CN)c1",
+        "family": "F5_xylylenediamine",
+        "molar_mass_g_per_mol": 136.198,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "m-XDA/MXDA",
+        "phr_at_eew_170p21": 20.0044,
+        "phr_at_eew_190": 17.9208
+      },
+      {
+        "ahew_g_per_eq": 34.0495,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 823.8829,
+        "canonical_smiles": "NCc1ccccc1CN",
+        "family": "F5_xylylenediamine",
+        "molar_mass_g_per_mol": 136.198,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "o-XDA",
+        "phr_at_eew_170p21": 20.0044,
+        "phr_at_eew_190": 17.9208
+      },
+      {
+        "ahew_g_per_eq": 34.0495,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 823.8829,
+        "canonical_smiles": "NCc1ccc(CN)cc1",
+        "family": "F5_xylylenediamine",
+        "molar_mass_g_per_mol": 136.198,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "p-XDA/PXDA",
+        "phr_at_eew_170p21": 20.0044,
+        "phr_at_eew_190": 17.9208
+      },
+      {
+        "ahew_g_per_eq": 35.5615,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 788.8531,
+        "canonical_smiles": "NCC1CCCCC1CN",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 142.246,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,2-BAC",
+        "phr_at_eew_170p21": 20.8927,
+        "phr_at_eew_190": 18.7166
+      },
+      {
+        "ahew_g_per_eq": 35.5615,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 788.8531,
+        "canonical_smiles": "NCC1CCCC(CN)C1",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 142.246,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,3-BAC",
+        "phr_at_eew_170p21": 20.8927,
+        "phr_at_eew_190": 18.7166
+      },
+      {
+        "ahew_g_per_eq": 35.5615,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 788.8531,
+        "canonical_smiles": "NCC1CCC(CN)CC1",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 142.246,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,4-BAC",
+        "phr_at_eew_170p21": 20.8927,
+        "phr_at_eew_190": 18.7166
+      },
+      {
+        "ahew_g_per_eq": 36.0655,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 777.8292,
+        "canonical_smiles": "NCCCCCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 144.262,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,8-diaminoalkane(C8)",
+        "phr_at_eew_170p21": 21.1888,
+        "phr_at_eew_190": 18.9818
+      },
+      {
+        "ahew_g_per_eq": 39.5722,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 708.9008,
+        "canonical_smiles": "NCCCCCCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 158.289,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,9-diaminoalkane(C9)",
+        "phr_at_eew_170p21": 23.2491,
+        "phr_at_eew_190": 20.8275
+      },
+      {
+        "ahew_g_per_eq": 42.575,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 658.9031,
+        "canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 170.3,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "IPDA",
+        "phr_at_eew_170p21": 25.0132,
+        "phr_at_eew_190": 22.4079
+      },
+      {
+        "ahew_g_per_eq": 43.069,
+        "ahew_times_av": 56105.6,
+        "amine_value_mgKOH_per_g": 1302.691,
+        "canonical_smiles": "NCCN1CCNCC1",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 129.207,
+        "n_active_nh": 3,
+        "n_basic_n": 3,
+        "n_primary_n": 1,
+        "n_secondary_n": 1,
+        "name": "piperazine-bis(aminoethyl)/AEP",
+        "phr_at_eew_170p21": 25.3034,
+        "phr_at_eew_190": 22.6679
+      },
+      {
+        "ahew_g_per_eq": 43.079,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 651.1943,
+        "canonical_smiles": "NCCCCCCCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 172.316,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,10-diaminoalkane(C10)",
+        "phr_at_eew_170p21": 25.3093,
+        "phr_at_eew_190": 22.6732
+      },
+      {
+        "ahew_g_per_eq": 46.0605,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 609.0425,
+        "canonical_smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+        "family": "F4_bridged_bisaniline",
+        "molar_mass_g_per_mol": 184.242,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "benzidine(4,4'-diaminobiphenyl)",
+        "phr_at_eew_170p21": 27.061,
+        "phr_at_eew_190": 24.2424
+      },
+      {
+        "ahew_g_per_eq": 46.5857,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 602.1756,
+        "canonical_smiles": "NCCCCCCCCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 186.343,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,11-diaminoalkane(C11)",
+        "phr_at_eew_170p21": 27.3696,
+        "phr_at_eew_190": 24.5188
+      },
+      {
+        "ahew_g_per_eq": 47.7447,
+        "ahew_times_av": 56105.6,
+        "amine_value_mgKOH_per_g": 1175.1176,
+        "canonical_smiles": "NCCN1CCCNCC1",
+        "family": "F3_cycloaliphatic",
+        "molar_mass_g_per_mol": 143.234,
+        "n_active_nh": 3,
+        "n_basic_n": 3,
+        "n_primary_n": 1,
+        "n_secondary_n": 1,
+        "name": "homopiperazine-N,N'",
+        "phr_at_eew_170p21": 28.0504,
+        "phr_at_eew_190": 25.1288
+      },
+      {
+        "ahew_g_per_eq": 49.5673,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 565.9543,
+        "canonical_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+        "family": "F4_bridged_bisaniline",
+        "molar_mass_g_per_mol": 198.269,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "MDA/DDM(methylene)",
+        "phr_at_eew_170p21": 29.1212,
+        "phr_at_eew_190": 26.088
+      },
+      {
+        "ahew_g_per_eq": 50.0603,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 560.3807,
+        "canonical_smiles": "Nc1ccc(Oc2ccc(N)cc2)cc1",
+        "family": "F4_bridged_bisaniline",
+        "molar_mass_g_per_mol": 200.241,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "4,4'-oxydianiline(ODA)",
+        "phr_at_eew_170p21": 29.4109,
+        "phr_at_eew_190": 26.3475
+      },
+      {
+        "ahew_g_per_eq": 50.0925,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 560.02,
+        "canonical_smiles": "NCCCCCCCCCCCCN",
+        "family": "F2_alpha_omega_diamine",
+        "molar_mass_g_per_mol": 200.37,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "1,12-diaminoalkane(C12)",
+        "phr_at_eew_170p21": 29.4298,
+        "phr_at_eew_190": 26.3645
+      },
+      {
+        "ahew_g_per_eq": 53.063,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 528.6697,
+        "canonical_smiles": "Nc1ccc(C(=O)c2ccc(N)cc2)cc1",
+        "family": "F4_bridged_bisaniline",
+        "molar_mass_g_per_mol": 212.252,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "4,4'-diaminobenzophenone",
+        "phr_at_eew_170p21": 31.175,
+        "phr_at_eew_190": 27.9279
+      },
+      {
+        "ahew_g_per_eq": 54.0773,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 518.7542,
+        "canonical_smiles": "Nc1ccc(Sc2ccc(N)cc2)cc1",
+        "family": "F4_bridged_bisaniline",
+        "molar_mass_g_per_mol": 216.309,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "4,4'-thiodianiline",
+        "phr_at_eew_170p21": 31.7709,
+        "phr_at_eew_190": 28.4617
+      },
+      {
+        "ahew_g_per_eq": 56.5808,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 495.8011,
+        "canonical_smiles": "CC(C)(c1ccc(N)cc1)c1ccc(N)cc1",
+        "family": "F4_bridged_bisaniline",
+        "molar_mass_g_per_mol": 226.323,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "4,4'-isopropylidenedianiline",
+        "phr_at_eew_170p21": 33.2417,
+        "phr_at_eew_190": 29.7793
+      },
+      {
+        "ahew_g_per_eq": 62.0768,
+        "ahew_times_av": 28052.8,
+        "amine_value_mgKOH_per_g": 451.9051,
+        "canonical_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+        "family": "F4_bridged_bisaniline",
+        "molar_mass_g_per_mol": 248.307,
+        "n_active_nh": 4,
+        "n_basic_n": 2,
+        "n_primary_n": 2,
+        "n_secondary_n": 0,
+        "name": "DDS(sulfone)",
+        "phr_at_eew_170p21": 36.4707,
+        "phr_at_eew_190": 32.672
+      }
+    ],
+    "phr_at_eew_170p21_max": 36.4707,
+    "phr_at_eew_170p21_min": 8.8273
+  },
+  "hash_and_count_lock": {
+    "eew_reference_points_g_per_eq": [
+      170.21,
+      190.0
+    ],
+    "envelope_reference_path": "amphora-molecule-generator/reference/mvp20/data/hardener_stoichiometric_envelope.v1.json",
+    "envelope_reference_sha256": "b1a08e856cab233c69c09673ed0d96a40c38346753afae4ad415b5948edaa9a8",
+    "grammar_receipt_diagnostic_sha256": "55afc806360e6abeab30bbc7e71ed94e8ef4a5ee6e1f67a0b02358c699dc01a8",
+    "ingredient_library_facts_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "koh_constant_mg_per_mol": 56105.6,
+    "n_commercial_anchors": 6,
+    "n_fail_closed_decoys": 6,
+    "n_known_answer_amines": 8,
+    "n_proposals": 38
+  },
+  "headline": "Stoichiometric design-envelope coverage of the 38 deterministic-grammar hardener proposals: re-derived AHEW spans [15.025, 62.077] g/eq, while the six shipped commercial marine-epoxy hardener anchors span [100, 264] g/eq -- 0/6 anchors lie inside the generated hull and the interval overlap is 0.0000, so H0 (the grammar covers the formulation-relevant stoichiometric envelope) is REFUTED with a 37.923 g/eq shortfall to the commercial floor. Mechanism: the grammar couples molar mass to amine functionality (Spearman rho = 0.4073 between M and n_activeH over the 38), which pins AHEW = M/n_H into a narrow low band; within the dominant n_H = 4 di-primary stratum (29/38 members) the commercial floor would demand a 400 g/mol monomer, so the marginal bound max(M)/min(n_H) = 120.528 g/eq is never attained (realized frontier 62.077). Applying the published amine-DGEBA adduct closure (k mol amine : 1 mol DGEBA) analytically maps 22/38 members (k=2) into the commercial band and recovers 3/6 anchors, identifying one mass-adding, hydrogen-consuming production rule as the specific missing capability. Instrument self-tests 8/8 pass (definitional exactness plus the exact AHEW*AV = 56105.6*n_N/n_H identity), independent active-N-H re-derivation agrees with the shipped grammar column 38/38, and 6/6 non-hardener decoys fail closed.",
+  "hypothesis_evaluation": {
+    "actionable_consequence": "The generator's F1-F5 monomeric-diamine families are structurally incapable of reaching the amidoamine/polyamide AHEW band used by MIL-P-24441-class marine systems. The analytic adduct projection identifies one concrete missing production rule (k mol amine : 1 mol DGEBA adduct closure) that would map 22/38 of the existing universe into the commercial band without any new scaffold family.",
+    "decision_rule": "H0 is supported only if all six commercial AHEW anchors fall inside the generated set's AHEW hull.",
+    "evidence": "Generated hull [15.025, 62.077] g/eq is disjoint from the commercial envelope [100, 264] g/eq; interval overlap 0.0000; the highest-AHEW proposal (DDS-class, 62.077 g/eq) still falls 37.923 g/eq (37.92%) short of the lowest commercial anchor.",
+    "h0": "The deterministic-grammar hardener universe covers the stoichiometric design envelope (AHEW) spanned by the shipped commercial marine epoxy-amine hardeners.",
+    "n_anchors_inside_hull": 0,
+    "verdict": "H0_REFUTED"
+  },
+  "instrument_self_tests": [
+    {
+      "active_nh_matches": true,
+      "ahew_definitional_exact": true,
+      "ahew_g_per_eq": 20.6338,
+      "ahew_times_av": 33663.36,
+      "ahew_times_av_expected": 33663.36,
+      "all_pass": true,
+      "amine_value_mgKOH_per_g": 1631.4668,
+      "basic_n_matches": true,
+      "identity_band_holds": true,
+      "identity_product_exact": true,
+      "molar_mass_g_per_mol": 103.169,
+      "n_active_nh_expected": 5,
+      "n_active_nh_rederived": 5,
+      "n_basic_n_expected": 3,
+      "n_basic_n_rederived": 3,
+      "name": "diethylenetriamine (DETA)",
+      "smiles": "NCCNCCN"
+    },
+    {
+      "active_nh_matches": true,
+      "ahew_definitional_exact": true,
+      "ahew_g_per_eq": 24.373,
+      "ahew_times_av": 37403.733333,
+      "ahew_times_av_expected": 37403.733333,
+      "all_pass": true,
+      "amine_value_mgKOH_per_g": 1534.6381,
+      "basic_n_matches": true,
+      "identity_band_holds": true,
+      "identity_product_exact": true,
+      "molar_mass_g_per_mol": 146.238,
+      "n_active_nh_expected": 6,
+      "n_active_nh_rederived": 6,
+      "n_basic_n_expected": 4,
+      "n_basic_n_rederived": 4,
+      "name": "triethylenetetramine (TETA)",
+      "smiles": "NCCNCCNCCN"
+    },
+    {
+      "active_nh_matches": true,
+      "ahew_definitional_exact": true,
+      "ahew_g_per_eq": 27.0439,
+      "ahew_times_av": 40075.428571,
+      "ahew_times_av_expected": 40075.428571,
+      "all_pass": true,
+      "amine_value_mgKOH_per_g": 1481.8681,
+      "basic_n_matches": true,
+      "identity_band_holds": true,
+      "identity_product_exact": true,
+      "molar_mass_g_per_mol": 189.307,
+      "n_active_nh_expected": 7,
+      "n_active_nh_rederived": 7,
+      "n_basic_n_expected": 5,
+      "n_basic_n_rederived": 5,
+      "name": "tetraethylenepentamine (TEPA)",
+      "smiles": "NCCNCCNCCNCCN"
+    },
+    {
+      "active_nh_matches": true,
+      "ahew_definitional_exact": true,
+      "ahew_g_per_eq": 42.575,
+      "ahew_times_av": 28052.8,
+      "ahew_times_av_expected": 28052.8,
+      "all_pass": true,
+      "amine_value_mgKOH_per_g": 658.9031,
+      "basic_n_matches": true,
+      "identity_band_holds": true,
+      "identity_product_exact": true,
+      "molar_mass_g_per_mol": 170.3,
+      "n_active_nh_expected": 4,
+      "n_active_nh_rederived": 4,
+      "n_basic_n_expected": 2,
+      "n_basic_n_rederived": 2,
+      "name": "isophoronediamine (IPDA)",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "active_nh_matches": true,
+      "ahew_definitional_exact": true,
+      "ahew_g_per_eq": 34.0495,
+      "ahew_times_av": 28052.8,
+      "ahew_times_av_expected": 28052.8,
+      "all_pass": true,
+      "amine_value_mgKOH_per_g": 823.8829,
+      "basic_n_matches": true,
+      "identity_band_holds": true,
+      "identity_product_exact": true,
+      "molar_mass_g_per_mol": 136.198,
+      "n_active_nh_expected": 4,
+      "n_active_nh_rederived": 4,
+      "n_basic_n_expected": 2,
+      "n_basic_n_rederived": 2,
+      "name": "m-xylylenediamine (MXDA)",
+      "smiles": "NCc1cccc(CN)c1"
+    },
+    {
+      "active_nh_matches": true,
+      "ahew_definitional_exact": true,
+      "ahew_g_per_eq": 49.5673,
+      "ahew_times_av": 28052.8,
+      "ahew_times_av_expected": 28052.8,
+      "all_pass": true,
+      "amine_value_mgKOH_per_g": 565.9543,
+      "basic_n_matches": true,
+      "identity_band_holds": true,
+      "identity_product_exact": true,
+      "molar_mass_g_per_mol": 198.269,
+      "n_active_nh_expected": 4,
+      "n_active_nh_rederived": 4,
+      "n_basic_n_expected": 2,
+      "n_basic_n_rederived": 2,
+      "name": "4,4'-diaminodiphenylmethane (MDA/DDM)",
+      "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1"
+    },
+    {
+      "active_nh_matches": true,
+      "ahew_definitional_exact": true,
+      "ahew_g_per_eq": 62.0768,
+      "ahew_times_av": 28052.8,
+      "ahew_times_av_expected": 28052.8,
+      "all_pass": true,
+      "amine_value_mgKOH_per_g": 451.9051,
+      "basic_n_matches": true,
+      "identity_band_holds": true,
+      "identity_product_exact": true,
+      "molar_mass_g_per_mol": 248.307,
+      "n_active_nh_expected": 4,
+      "n_active_nh_rederived": 4,
+      "n_basic_n_expected": 2,
+      "n_basic_n_rederived": 2,
+      "name": "4,4'-diaminodiphenylsulfone (DDS)",
+      "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1"
+    },
+    {
+      "active_nh_matches": true,
+      "ahew_definitional_exact": true,
+      "ahew_g_per_eq": 35.5615,
+      "ahew_times_av": 28052.8,
+      "ahew_times_av_expected": 28052.8,
+      "all_pass": true,
+      "amine_value_mgKOH_per_g": 788.8531,
+      "basic_n_matches": true,
+      "identity_band_holds": true,
+      "identity_product_exact": true,
+      "molar_mass_g_per_mol": 142.246,
+      "n_active_nh_expected": 4,
+      "n_active_nh_rederived": 4,
+      "n_basic_n_expected": 2,
+      "n_basic_n_rederived": 2,
+      "name": "1,3-bis(aminomethyl)cyclohexane (1,3-BAC)",
+      "smiles": "NCC1CCCC(CN)C1"
+    }
+  ],
+  "instrument_self_tests_summary": {
+    "all_pass": true,
+    "n_pass": 8,
+    "n_total": 8
+  },
+  "mechanism_mass_functionality_coupling": {
+    "by_active_nh_stratum": [
+      {
+        "families": [
+          "F3_cycloaliphatic"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 300.0,
+        "max_ahew_g_per_eq": 47.7447,
+        "max_molar_mass_g_per_mol": 143.234,
+        "n_active_nh": 3,
+        "n_members": 2,
+        "stratum_reaches_commercial_floor": false
+      },
+      {
+        "families": [
+          "F1_polyethyleneamine",
+          "F2_alpha_omega_diamine",
+          "F3_cycloaliphatic",
+          "F4_bridged_bisaniline",
+          "F5_xylylenediamine"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 400.0,
+        "max_ahew_g_per_eq": 62.0768,
+        "max_molar_mass_g_per_mol": 248.307,
+        "n_active_nh": 4,
+        "n_members": 29,
+        "stratum_reaches_commercial_floor": false
+      },
+      {
+        "families": [
+          "F1_polyethyleneamine"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 500.0,
+        "max_ahew_g_per_eq": 20.6338,
+        "max_molar_mass_g_per_mol": 103.169,
+        "n_active_nh": 5,
+        "n_members": 1,
+        "stratum_reaches_commercial_floor": false
+      },
+      {
+        "families": [
+          "F1_polyethyleneamine"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 600.0,
+        "max_ahew_g_per_eq": 24.373,
+        "max_molar_mass_g_per_mol": 146.238,
+        "n_active_nh": 6,
+        "n_members": 1,
+        "stratum_reaches_commercial_floor": false
+      },
+      {
+        "families": [
+          "F1_polyethyleneamine"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 700.0,
+        "max_ahew_g_per_eq": 27.0439,
+        "max_molar_mass_g_per_mol": 189.307,
+        "n_active_nh": 7,
+        "n_members": 1,
+        "stratum_reaches_commercial_floor": false
+      },
+      {
+        "families": [
+          "F1_polyethyleneamine"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 800.0,
+        "max_ahew_g_per_eq": 29.047,
+        "max_molar_mass_g_per_mol": 232.376,
+        "n_active_nh": 8,
+        "n_members": 1,
+        "stratum_reaches_commercial_floor": false
+      },
+      {
+        "families": [
+          "F1_polyethyleneamine"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 900.0,
+        "max_ahew_g_per_eq": 30.605,
+        "max_molar_mass_g_per_mol": 275.445,
+        "n_active_nh": 9,
+        "n_members": 1,
+        "stratum_reaches_commercial_floor": false
+      },
+      {
+        "families": [
+          "F1_polyethyleneamine"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 1000.0,
+        "max_ahew_g_per_eq": 31.8514,
+        "max_molar_mass_g_per_mol": 318.514,
+        "n_active_nh": 10,
+        "n_members": 1,
+        "stratum_reaches_commercial_floor": false
+      },
+      {
+        "families": [
+          "F1_polyethyleneamine"
+        ],
+        "mass_required_to_reach_commercial_floor_g_per_mol": 1100.0,
+        "max_ahew_g_per_eq": 32.8712,
+        "max_molar_mass_g_per_mol": 361.583,
+        "n_active_nh": 11,
+        "n_members": 1,
+        "stratum_reaches_commercial_floor": false
+      }
+    ],
+    "interpretation": "AHEW = M / n_activeH, so within a fixed-n_H stratum the ceiling is purely a mass ceiling. The dominant stratum is n_H = 4 (di-primary difunctional amines), where reaching the 100 g/eq commercial floor would require a monomer of 400 g/mol -- far above the grammar's realized monomeric mass ceiling. The grammar's only route to higher mass is the F1 polyethyleneamine homologation, which adds an amine site with every added unit and therefore raises n_H in step with M, leaving AHEW flat; the moderate positive rank correlation between M and n_activeH (rho = 0.4073) is that homologation showing through. Consequently the decoupled marginal bound max(M)/min(n_H) is never realized by any single production. Closing the envelope requires a production rule that adds mass while CONSUMING active hydrogens -- exactly what an amine-epoxy adduct does.",
+    "marginal_bound_ahew_g_per_eq": 120.5277,
+    "marginal_bound_unattained": true,
+    "max_molar_mass_g_per_mol": 361.583,
+    "min_active_nh": 3,
+    "n_members_in_difunctional_primary_stratum_nh4": 29,
+    "realized_frontier_ahew_g_per_eq": 62.0768,
+    "spearman_rho_molar_mass_vs_active_nh": 0.407324
+  },
+  "module": "amphora-molecule-generator",
+  "non_circularity": "SMILES are read from the hash-locked prior grammar-yield receipt; molar mass, active-N-H count, basic-N count, AHEW, amine value and phr are all re-derived here from structure by RDKit. The shipped active_nh column is used only as an after-the-fact parity check and is never an input to any metric. The commercial envelope anchors originate in a different module (amphora-ingredient-library) and are independent of anything the generator produced. The AHEW*AV identity band [28052.8, 56105.6] is an exact algebraic consequence of the two instrument definitions, so it cross-checks the amine-value instrument against the AHEW instrument without any fitted parameter.",
+  "parity_vs_prior_receipt": {
+    "mismatched_names": [],
+    "n_active_nh_agreements": 38,
+    "n_molecules": 38,
+    "parity_complete": true
+  },
+  "purpose": "Test whether the deterministic-grammar hardener universe covers the STOICHIOMETRIC design envelope (AHEW / amine value / mix-ratio phr) of the commercial marine epoxy-amine hardeners already shipped in amphora-ingredient-library. The three prior generator receipts closed structural pillars (yield/feasibility, novelty, diversity); none tested formulation-functional coverage, which is what decides whether a proposed hardener can actually be used at 1:1 epoxide:amine-hydrogen stoichiometry.",
+  "rdkit_version": "2026.03.2",
+  "rights_posture": {
+    "commercial_anchor_basis": "numeric scalars already shipped in amphora-ingredient-library facts.json (TDS / SUPPLIER_GUIDE grade), used as design-envelope anchors",
+    "in_scope": "marine anti-corrosion two-part epoxy-amine only",
+    "known_answer_basis": "definitional identity AHEW = M/n_activeH; molar masses re-derived by RDKit from IUPAC 2021 standard atomic weights",
+    "new_external_data_acquired": false,
+    "redistributes_third_party_dataset": false
+  },
+  "schema": "amphora.molecule-generator.molgen-stoichiometric-envelope-coverage.v1",
+  "study_id": "molgen-stoichiometric-envelope-coverage-v1",
+  "theory_reference": {
+    "ahew_and_cure_stoichiometry": "Lee & Neville 1967, Handbook of Epoxy Resins, McGraw-Hill (LCCN 66-23992)",
+    "amine_value": "ASTM D2074 -- Standard Test Methods for Total, Primary, Secondary, and Tertiary Amine Values of Fatty Amines",
+    "atomic_weights": "IUPAC 2021 standard atomic weights (Prohaska et al. 2022, Pure Appl. Chem. 94(5):573-600) via RDKit",
+    "hardener_classes_and_adducts": "Ellis (ed.) 1993, Chemistry and Technology of Epoxy Resins, Blackie/Chapman & Hall, ISBN 978-0-7514-0095-4",
+    "rank_correlation": "Spearman 1904, Am. J. Psychol. 15(1):72-101",
+    "toolkit": "RDKit 2026.03.2"
+  }
+}

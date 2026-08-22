@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-32ca87ca5d25764cf99b59085d36e6fd81c3f4a1258c2a85f678608c2357fa7d",
+      "path": "events/32ca87ca5d25764cf99b59085d36e6fd81c3f4a1258c2a85f678608c2357fa7d.json",
+      "sha256": "a8ffa1eebd347d57f83637ad7cc7bd3ea6560b81de868bb6006257387241b9e2"
+    }
+  ],
+  "module_id": "amphora-formulation-arithmetic",
+  "schema": "amphora.module-movement-ledger.v1"
+}

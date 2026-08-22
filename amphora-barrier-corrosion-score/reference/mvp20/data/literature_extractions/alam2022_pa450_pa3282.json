@@ -1,0 +1,424 @@
+{
+  "application_context": "offshore / marine anti-corrosion coating on mild steel",
+  "article_number": 2562,
+  "cite": "Alam, Samad, Seikh, Mohammed, Al-Zahrani, Sherif, Materials (Basel) 15(7):2562 (2022)",
+  "curative_class": "amine-adduct / polyamide (polyaminoamine adduct PA-450 / Aradur 450 BD; polyamidoamine adduct PA-3282 / Aradur 3282 BD)",
+  "doi": "10.3390/ma15072562",
+  "extraction_confidence": "single-source-numeric / dual-source-license; internal consistency check passed (CPE dispersion exponents n all in physically valid [0,1] range across all 30 rows, both series show expected optimum-at-middle-formulation pattern matching authors' stated conclusion)",
+  "extraction_method": "AI-mediated single-pass full-text read of PMC HTML mirror (PMC8999854), license cross-checked independently against Europe PMC fullTextXML endpoint; numeric table values NOT independently double-keyed against the primary PDF/HTML by a second extraction pass",
+  "figure_table_page_evidence": "Table 5 (PA-450 / E-series) and Table 6 (PA-3282 / F-series), open numeric tables, not figure-scrape",
+  "id": "alam2022_pa450_pa3282",
+  "in_class": "epoxy-polyamide",
+  "issue": 7,
+  "journal": "Materials (Basel)",
+  "license": {
+    "captured_text_source_1_pmc": "This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/licenses/by/4.0/).",
+    "captured_text_source_2_europepmc_xml": "Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license",
+    "cross_source_agreement": true,
+    "cross_sourced": true,
+    "rights_clean": true,
+    "type": "CC-BY-4.0"
+  },
+  "materials_and_methods_summary": "DGEBA epoxy resin mixed separately with two commercial hardeners at three stoichiometric ratios each: E-0/E-1/E-2 (PA-450 series) and F-0/F-1/F-2 (PA-3282 series), applied to mild steel panels and exposed to saline immersion for up to 30 days with EIS measured at 1 h, 7, 14, 21, and 30 days.",
+  "pa3282_series": {
+    "columns": [
+      "sample",
+      "time",
+      "RS_ohm",
+      "YQ1",
+      "Q1_n",
+      "RP1_Mohm",
+      "YQ2",
+      "Q2_n",
+      "RP2_Mohm"
+    ],
+    "ranking_at_30d_by_RP2": {
+      "best_to_worst": [
+        "F-1",
+        "F-2",
+        "F-0"
+      ],
+      "monotonic": false,
+      "note": "authors state F-1 was the most effective in significantly improving corrosion resistance; matches RP2 ranking at 30 d (F-0 and F-2 both degraded, close)"
+    },
+    "rows": [
+      [
+        "F-0",
+        "1h",
+        318,
+        943,
+        0.98,
+        12.7,
+        7.78,
+        0.8,
+        21.9
+      ],
+      [
+        "F-1",
+        "1h",
+        352,
+        979,
+        0.98,
+        35.3,
+        4.09,
+        0.88,
+        75.7
+      ],
+      [
+        "F-2",
+        "1h",
+        285,
+        1.04,
+        0.98,
+        18.9,
+        2.91,
+        0.85,
+        41.6
+      ],
+      [
+        "F-0",
+        "7d",
+        424,
+        1.02,
+        0.98,
+        1.91,
+        0.00119,
+        0.63,
+        2.02
+      ],
+      [
+        "F-1",
+        "7d",
+        116,
+        954,
+        0.99,
+        38.4,
+        1.17,
+        0.21,
+        71.0
+      ],
+      [
+        "F-2",
+        "7d",
+        273,
+        1.12,
+        0.98,
+        0.00494,
+        0.00908,
+        0.57,
+        0.0043
+      ],
+      [
+        "F-0",
+        "14d",
+        315,
+        0.00103,
+        0.98,
+        1.73,
+        0.00235,
+        0.48,
+        2.69
+      ],
+      [
+        "F-1",
+        "14d",
+        292,
+        991,
+        0.98,
+        193,
+        387,
+        0.08,
+        247
+      ],
+      [
+        "F-2",
+        "14d",
+        246,
+        1.13,
+        0.97,
+        0.00523,
+        0.00168,
+        0.48,
+        0.0045
+      ],
+      [
+        "F-0",
+        "21d",
+        259,
+        963,
+        0.98,
+        0.00982,
+        0.0011,
+        0.6,
+        0.0027
+      ],
+      [
+        "F-1",
+        "21d",
+        346,
+        991,
+        0.98,
+        67.5,
+        5.62,
+        0.03,
+        21.5
+      ],
+      [
+        "F-2",
+        "21d",
+        210,
+        1.11,
+        0.98,
+        0.00758,
+        0.00117,
+        0.49,
+        0.0095
+      ],
+      [
+        "F-0",
+        "30d",
+        205,
+        944,
+        0.99,
+        1.57,
+        0.00709,
+        0.41,
+        0.0024
+      ],
+      [
+        "F-1",
+        "30d",
+        312,
+        981,
+        0.98,
+        2.16,
+        52.7,
+        0.33,
+        3.44
+      ],
+      [
+        "F-2",
+        "30d",
+        446,
+        1.15,
+        0.97,
+        0.00752,
+        0.00148,
+        0.55,
+        0.0029
+      ]
+    ],
+    "variable": "PA-3282 hardener stoichiometric ratio (F-0/F-1/F-2)"
+  },
+  "pa450_series": {
+    "columns": [
+      "sample",
+      "time",
+      "RS_ohm",
+      "YQ1",
+      "Q1_n",
+      "RP1_Mohm",
+      "YQ2",
+      "Q2_n",
+      "RP2_Mohm"
+    ],
+    "ranking_at_30d_by_RP2": {
+      "best_to_worst": [
+        "E-1",
+        "E-0",
+        "E-2"
+      ],
+      "monotonic": false,
+      "note": "authors state E-1 shows better corrosion resistance than E-0 and E-2; matches RP2 ranking at 30 d"
+    },
+    "rows": [
+      [
+        "E-0",
+        "1h",
+        612,
+        0.0316,
+        0.97,
+        27600,
+        3.34,
+        0.001,
+        296
+      ],
+      [
+        "E-1",
+        "1h",
+        440,
+        0.00165,
+        0.97,
+        99000,
+        3.3,
+        0.001,
+        293
+      ],
+      [
+        "E-2",
+        "1h",
+        371,
+        0.767,
+        0.72,
+        0.374,
+        0.0012,
+        0.94,
+        0.0094
+      ],
+      [
+        "E-0",
+        "7d",
+        354,
+        961,
+        0.98,
+        248,
+        2.3,
+        0.027,
+        133
+      ],
+      [
+        "E-1",
+        "7d",
+        108,
+        0.00141,
+        0.99,
+        432,
+        1.07,
+        0.051,
+        235
+      ],
+      [
+        "E-2",
+        "7d",
+        449,
+        0.00473,
+        0.68,
+        0.0016,
+        0.00495,
+        0.09,
+        0.0034
+      ],
+      [
+        "E-0",
+        "14d",
+        334,
+        972,
+        0.99,
+        437,
+        2.3,
+        0.073,
+        350
+      ],
+      [
+        "E-1",
+        "14d",
+        136,
+        0.00145,
+        0.99,
+        852,
+        1.9,
+        0.002,
+        316
+      ],
+      [
+        "E-2",
+        "14d",
+        478,
+        0.00136,
+        0.6,
+        0.0044,
+        0.00436,
+        0.08,
+        0.0018
+      ],
+      [
+        "E-0",
+        "21d",
+        846,
+        0.0109,
+        0.97,
+        174,
+        251,
+        0.06,
+        6.72
+      ],
+      [
+        "E-1",
+        "21d",
+        262,
+        1540,
+        0.98,
+        13.1,
+        251,
+        0.6,
+        6.82
+      ],
+      [
+        "E-2",
+        "21d",
+        196,
+        84100,
+        0.97,
+        0.0071,
+        0.00121,
+        0.62,
+        0.0021
+      ],
+      [
+        "E-0",
+        "30d",
+        620,
+        0.00106,
+        0.98,
+        6.85,
+        396,
+        0.64,
+        5.02
+      ],
+      [
+        "E-1",
+        "30d",
+        245,
+        0.00151,
+        0.98,
+        12.2,
+        424,
+        0.69,
+        6.69
+      ],
+      [
+        "E-2",
+        "30d",
+        780,
+        0.0044,
+        0.52,
+        0.0066,
+        89.6,
+        0.58,
+        0.0046
+      ]
+    ],
+    "variable": "PA-450 hardener stoichiometric ratio (E-0/E-1/E-2)"
+  },
+  "pmcid": "PMC8999854",
+  "pmid": "35407894",
+  "publication_date": "2022-03-31",
+  "publisher": "MDPI",
+  "resin_class": "epoxy (DGEBA)",
+  "retraction_correction_check": {
+    "checked": true,
+    "method": "web search for DOI + 'retraction'/'erratum'/'correction'; PMC page notice check",
+    "result": "no retraction, erratum, or correction notice found as of retrieval date"
+  },
+  "retrieved": "2026-08-01",
+  "schema": "amphora.literature-extraction.v1",
+  "supports_candidate_ranking": false,
+  "table_read": true,
+  "title": "Development and Characterization of PA 450 and PA 3282 Epoxy Coatings as Anti-Corrosion Materials for Offshore Applications",
+  "url_pmc_mirror": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8999854/",
+  "url_primary": "https://www.mdpi.com/1996-1944/15/7/2562",
+  "use_limit": "within-study direction or bibliographic anchor only; no cross-study pooling",
+  "volume": 15,
+  "why_flagged_as_third_strict_series": "Independently reproduces the asperti2024/zhu2022 pattern (in-class epoxy-amine/polyamide binder, open numeric EIS table, ordered formulation ladder with a directional/non-monotonic ranking claim made by the source authors) that the module's strict_validation_bar requires; this paper was absent from the prior systematic_search_ledger's five topic sweeps.",
+  "year": 2022
+}

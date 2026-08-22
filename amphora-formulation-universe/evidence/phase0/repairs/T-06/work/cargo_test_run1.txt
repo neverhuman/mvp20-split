@@ -1,0 +1,22 @@
+warning: unused import: `FormulationUniverseAccountingV1`
+  --> amphora-formulation-capabilities/tests/formulation_universe_redteam_t06_independent.rs:17:36
+   |
+17 |     validate_formulation_universe, FormulationUniverseAccountingV1,
+   |                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `amphora-formulation-capabilities` (test "formulation_universe_redteam_t06_independent") generated 1 warning (run `cargo fix --test "formulation_universe_redteam_t06_independent" -p amphora-formulation-capabilities` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.60s
+     Running tests/formulation_universe_redteam_t06_independent.rs (target/debug/deps/formulation_universe_redteam_t06_independent-5826081a2b0410e3)
+
+running 4 tests
+test t06_attack1_cardinality_overflow_fresh_boundaries ... ok
+test t06_attack2_diagnostic_which_branch ... T06_ATTACK2_BRANCH=ACCEPTED cardinality=Some(2) total=Some(2)
+ok
+test t06_attack2_duplicate_factor_numeric_type_evasion ... ok
+test t06_attack3_index_identity_instability_across_value_order ... T06_FINDING index=1 tuple_under_A=("IPDA", "DGEBF") tuple_under_B=("TETA", "DGEBF") receipt_bytes_equal=true
+ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

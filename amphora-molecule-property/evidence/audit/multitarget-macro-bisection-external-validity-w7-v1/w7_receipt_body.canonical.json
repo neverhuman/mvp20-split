@@ -1,0 +1,168 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "ceiling": "AUDIT_ONLY. Does not alter any shipped KPI receipt, manifest, or authority ceiling. Extends the module's falsification record: all 4 properties in multi-target-ml-radonpy-4-properties-audit-kpi.v1.json (density, static_dielectric_const, refractive_index, thermal_conductivity) are now documented as either label-inadmissible or failing group-safe external validity.",
+  "claim_under_attack": {
+    "claim_text": "single-task RF R2>0 on RadonPy PI1070 refractive_index (+0.893) and thermal_conductivity (+0.542) under a 60/20/20 deterministic random split generalizes.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/multi-target-ml-radonpy-4-properties-audit-kpi.v1.json"
+  },
+  "featurization": {
+    "additional_features": [
+      "log10(MolWt+1)"
+    ],
+    "morgan_bits": 512,
+    "morgan_radius": 2
+  },
+  "fire_sequence": "ROTATION fire, single-shot escalation of C7 fire 2's density macro-bisection method to the two never-before-attacked RadonPy PI1070 properties in the multi-target-ml-radonpy-4-properties-audit KPI.",
+  "flips_scientific_readiness": false,
+  "gates": {
+    "reuses_pre_validated_2x_refute_threshold": true,
+    "same_corpus_subset_as_shipped_kpi_n_1068": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "two_replay_byte_stable_this_receipt": true
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "compute_multitarget_macro_bisection.py_sha256": "5eb927ebc3a740bb26270cebcf56270b54e599329207c6acb119aa3b862213da",
+    "multitarget_kpi_sha256": "a72aa3f4629a755b735b0e10df2046473ac8e8d9a66dc7e3cc59164914767dd6",
+    "radonpy_pi1070_csv_sha256": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4"
+  },
+  "macro_bisection": {
+    "method": "scipy average-linkage agglomerative clustering on full n x n Tanimoto distance matrix (Sokal & Michener 1958 UPGMA-family; Murtagh & Contreras 2012 review), cut to 2 clusters (fcluster maxclust=2). Identical method to C7 fire 2 (density), applied on the same-corpus 4-property-complete subset (n=1068-ish) instead of the density-only subset (n=1077).",
+    "n_macro_a": 16,
+    "n_macro_b": 1052
+  },
+  "method": "Identical to C7 fire 2's primary attack: scipy average-linkage agglomerative clustering on the full n x n Tanimoto distance matrix (Morgan r=2/512-bit fingerprints), cut into 2 macro-chemotypes (fcluster maxclust=2). Bidirectional cross-group RandomForestRegressor (n_estimators=100, seed=0) train/test, compared against apples-to-apples own-features 5-fold within-corpus MAE. Row subset restricted to the 1068 RadonPy PI1070 polymers with ALL 4 co-reported properties present, matching the shipped multi-target KPI's population exactly.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "n_polymers_all_4_properties_present": 1068,
+  "objective": "Determine whether RadonPy PI1070 refractive_index and thermal_conductivity RF skill (shipped under a random 60/20/20 split in multi-target-ml-radonpy-4-properties-audit-kpi.v1.json) survives a genuinely out-of-distribution, chemically-coherent held-out split.",
+  "organizational_independence_asserted": false,
+  "pre_registered_refute_criterion": "held-out (cross-macro-chemotype) MAE, either direction, > 2x the apples-to-apples own-features within-corpus 5-fold MAE => REFUTED for that property. Identical criterion to C7 fire 2's density attack, applied here without modification to 2 new properties.",
+  "primary_result": {
+    "refractive_index": {
+      "degradation_factor_A": 9.922448512588657,
+      "degradation_factor_B": 3.1322555011379456,
+      "direction_A_train_macro_a16_test_macro_b1052": {
+        "mae": 0.19077473856671048,
+        "n_test": 1052,
+        "n_train": 16,
+        "null_mae_using_train_median": 0.22828996939163493,
+        "r2": -5.0002114358303205,
+        "test_y_range": [
+          1.322149613,
+          1.838878626
+        ],
+        "train_y_range": [
+          1.274131972,
+          1.474554484
+        ]
+      },
+      "direction_B_train_macro_b1052_test_macro_a16": {
+        "mae": 0.06022255732500009,
+        "n_test": 16,
+        "n_train": 1052,
+        "null_mae_using_train_median": 0.2067443396875,
+        "r2": -0.6000135510632414,
+        "test_y_range": [
+          1.274131972,
+          1.474554484
+        ],
+        "train_y_range": [
+          1.322149613,
+          1.838878626
+        ]
+      },
+      "own_features_within_corpus_5fold": {
+        "mae": 0.019226578835322115,
+        "n": 1068,
+        "r2": 0.8983032814424559
+      },
+      "property_refuted": true,
+      "refuted_A": true,
+      "refuted_B": true,
+      "shipped_multi_task_r2_random_60_20_20_split": 0.42185520022927037,
+      "shipped_single_task_r2_random_60_20_20_split": 0.8925382908965608
+    },
+    "thermal_conductivity": {
+      "degradation_factor_A": 4.516263414649325,
+      "degradation_factor_B": 1.8625964718151355,
+      "direction_A_train_macro_a16_test_macro_b1052": {
+        "mae": 0.10846006412761407,
+        "n_test": 1052,
+        "n_train": 16,
+        "null_mae_using_train_median": 0.12715379126425855,
+        "r2": -2.833517310143484,
+        "test_y_range": [
+          0.096200541,
+          0.618759937
+        ],
+        "train_y_range": [
+          0.082200976,
+          0.209551814
+        ]
+      },
+      "direction_B_train_macro_b1052_test_macro_a16": {
+        "mae": 0.04473107837812498,
+        "n_test": 16,
+        "n_train": 1052,
+        "null_mae_using_train_median": 0.11133129731250002,
+        "r2": -1.2427526601509622,
+        "test_y_range": [
+          0.082200976,
+          0.209551814
+        ],
+        "train_y_range": [
+          0.096200541,
+          0.618759937
+        ]
+      },
+      "own_features_within_corpus_5fold": {
+        "mae": 0.024015442450899576,
+        "n": 1068,
+        "r2": 0.6432064797670449
+      },
+      "property_refuted": true,
+      "refuted_A": true,
+      "refuted_B": false,
+      "shipped_multi_task_r2_random_60_20_20_split": 0.1819275794498022,
+      "shipped_single_task_r2_random_60_20_20_split": 0.5419252833436438
+    }
+  },
+  "prior_fire_context": "C7 fire 2/3 established that RadonPy PI1070 density (R2=0.747 single-task under the shipped 60/20/20 random split) collapses under hierarchical macro-bisection (degradation 13.74x/7.59x, REFUTED). C8/W2 separately found the static_dielectric_const LABEL ITSELF physically inadmissible (Frohlich eps_static>=n^2 violated in 89.5% of PI1070 rows), so density and dielectric -- 2 of the multi-target KPI's 4 properties -- are already known-broken by two independent attack types. This fire closes the remaining gap: the other 2 properties in that SAME KPI (refractive_index R2=0.893, thermal_conductivity R2=0.542), reported under the identical 60/20/20 non-group-safe random split, had never been attacked with any group-safe split. Applying the exact same, already-validated macro-bisection method (same corpus subset, same featurization, same RandomForestRegressor(seed=0), same 2x-degradation refute bar) is the direct, non-repeating escalation.",
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Manifest untouched at 66/11.",
+  "receipt_id": "w7-multitarget-macro-bisection-external-validity",
+  "recommended_followups": [
+    "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json should carry a superseding retraction note (same pattern as W3's dielectric-retraction-superseding-kpi-receipt) pointing founder-facing report generators away from citing refractive_index/thermal_conductivity R2 as evidence of out-of-corpus predictive skill.",
+    "Any downstream KPI or report row that cites refractive_index R2=0.893 or thermal_conductivity R2=0.542 (grep evidence/phase0/kpis/*.json and reports/) should be checked for whether it discloses the random-split caveat.",
+    "The macro-bisection method has now REFUTED all 4 RadonPy PI1070 multi-target properties (density C7, dielectric C8/W2 label-level, refractive_index + thermal_conductivity this fire); the module should consider whether ANY RadonPy PI1070 ML claim under the shipped 60/20/20 split is safe to cite without a group-safe re-evaluation."
+  ],
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "RadonPy PI1070 (feedback/v1/external_data/radonpy_pi1070/raw/PI1070.csv) is the same already-load-bearing, rights-cleared corpus used by C7, C8, and W2 fires in this module. No new corpus, no quarantined or CONTEXT_ONLY source opened.",
+  "schema": "amphora.molecule-property.multitarget-macro-bisection-external-validity-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY audit receipt under evidence/audit/"
+  },
+  "study_id": "amphora-molecule-property-w7-multitarget-macro-bisection-external-validity-v1",
+  "verdict": "REFUTED",
+  "why": "Both properties fail the pre-registered 2x within-corpus-MAE degradation bar under the minority-to-majority macro-chemotype direction (n_macro_a=16 vs n_macro_b=1052). refractive_index: training on the small macro-chemotype and cold-predicting the bulk gives 9.92x degradation (R2=-5.00, strongly negative); the reverse direction gives 3.13x (also >2x). thermal_conductivity: direction A gives 4.52x degradation (R2=-2.83); direction B gives 1.86x. Both directions clearing the bar for refractive_index, and direction A clearing it for thermal_conductivity, is sufficient under the pre-registered OR-across-directions criterion (identical to C7 fire 2's rule) to REFUTE both properties' claim to out-of-distribution generalization. Combined with C7 (density) and C8/W2 (dielectric label inadmissibility), ALL FOUR properties in multi-target-ml-radonpy-4-properties-audit-kpi.v1.json are now shown to fail a genuinely falsifying, chemically-coherent held-out test -- the KPI's entire shipped headline is built exclusively on a non-group-safe 60/20/20 random split that does not reflect out-of-corpus predictive skill for any of its 4 targets."
+}

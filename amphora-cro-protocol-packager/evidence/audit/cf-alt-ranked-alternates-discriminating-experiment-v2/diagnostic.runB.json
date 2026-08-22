@@ -1,0 +1,236 @@
+{
+  "attack_shape_verbatim": "Merge two curative alternates into one unexplained pick in a copy and attack whether the check fires; hunt for an evidence-indistinguishable pair shipped without a discriminating experiment.",
+  "campaign_item_id": "CF-ALT",
+  "claim_under_attack": "The current CF-ALT deliverable state is complete and accurate for its scope (finding a miss is CLAIM_REFUTED and is progress).",
+  "core_logic_unchanged_from_v1": "evidence_indistinguishable(), all_pairs(), find_unresolved() and all six comparison thresholds (corrosion tier, pot_life tier, mix ratio, stoichiometric ratio, volume solids, pvc_pct delta < 1.0) are byte-identical copies of v1's functions. The only change is that real_resolved_pair_experiments is now DERIVED from a live corpus field (candidate_pairwise_discriminating_experiments) instead of hardcoded to {}, and a ranking-validity check was added -- v1 had nothing to derive from and did not check ranking at all, so it could only ever report REFUTED regardless of any repair; v2 is required to serve as a genuine, re-runnable acceptance test.",
+  "deliverable_under_test": "amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json",
+  "directive_obligation": "CF-ALT",
+  "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+  "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+  "fire_sequence": 2,
+  "live_capture_template_sha256": "4e3f2dca7ded443d327345e286d4e254a2d50301440575de90b02187b45da5be",
+  "module": "amphora-cro-protocol-packager",
+  "pre_repair_snapshot_sha256": "28a642b8644cd8ac948da1f2548d4cf5ca3a2313bd58fb1f9471fcc97af8b65d",
+  "refutation_criterion_verbatim": "Any pair of evidence-indistinguishable candidates ships without ranked alternates and a named discriminating experiment.",
+  "repair_status": "fix_landed_survived",
+  "schema": "amphora.cro-protocol-packager.cf-alt-alternates-audit-diagnostic.v2",
+  "step_a_regression_against_pre_repair_snapshot": {
+    "candidates": [
+      "M00097",
+      "M00101",
+      "M00109"
+    ],
+    "criterion_fires": true,
+    "expected_n_unresolved": 3,
+    "label": "pre_repair_snapshot",
+    "matches_fire1_finding": true,
+    "n_unresolved": 3,
+    "note": "Confirms v2's derivation logic, run against the UNTOUCHED original bytes fire 1 audited, reproduces fire 1's exact finding (3 unresolved pairs, no ranking field) -- v2 generalizes v1, it is not gerrymandered to only pass on the repaired file.",
+    "pairs_evaluated": [
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00097",
+          "M00101"
+        ],
+        "pvc_pct_delta": 0.169,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      },
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00097",
+          "M00109"
+        ],
+        "pvc_pct_delta": 0.656,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      },
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00101",
+          "M00109"
+        ],
+        "pvc_pct_delta": 0.487,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      }
+    ],
+    "ranking": {
+      "present": false,
+      "reason": "candidate_ranking field absent",
+      "valid": false
+    },
+    "resolved_pair_keys": [],
+    "unresolved_evidence_indistinguishable_pairs": [
+      [
+        "M00097",
+        "M00101"
+      ],
+      [
+        "M00097",
+        "M00109"
+      ],
+      [
+        "M00101",
+        "M00109"
+      ]
+    ]
+  },
+  "step_b_live_repaired_acceptance_test": {
+    "candidates": [
+      "M00097",
+      "M00101",
+      "M00109"
+    ],
+    "criterion_fires": false,
+    "label": "live_repaired",
+    "n_unresolved": 0,
+    "pairs_evaluated": [
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00097",
+          "M00101"
+        ],
+        "pvc_pct_delta": 0.169,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      },
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00097",
+          "M00109"
+        ],
+        "pvc_pct_delta": 0.656,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      },
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00101",
+          "M00109"
+        ],
+        "pvc_pct_delta": 0.487,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      }
+    ],
+    "ranking": {
+      "present": true,
+      "primary": "M00097",
+      "ranked_alternates": [
+        "M00101",
+        "M00109"
+      ],
+      "reason": "",
+      "valid": true
+    },
+    "repair_holds": true,
+    "resolved_pair_keys": [
+      "M00097|M00101",
+      "M00097|M00109",
+      "M00101|M00109"
+    ],
+    "unresolved_evidence_indistinguishable_pairs": []
+  },
+  "step_c_positive_control": {
+    "candidates": [
+      "M00097",
+      "M00101",
+      "M00109"
+    ],
+    "criterion_fires": true,
+    "detected": true,
+    "evidence": "unresolved_evidence_indistinguishable_pairs == [['M00101', 'M00109']], matching exactly the single pair whose resolution was stripped.",
+    "how_planted": "deepcopy of the live repaired capture_template.json object, then dict.pop of the 'M00101|M00109' entry from candidate_pairwise_discriminating_experiments.pairs; all other pairs and candidate_ranking left intact",
+    "label": "positive_control_stripped_M00101_M00109",
+    "n_unresolved": 1,
+    "pairs_evaluated": [
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00097",
+          "M00101"
+        ],
+        "pvc_pct_delta": 0.169,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      },
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00097",
+          "M00109"
+        ],
+        "pvc_pct_delta": 0.656,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      },
+      {
+        "evidence_indistinguishable": true,
+        "pair": [
+          "M00101",
+          "M00109"
+        ],
+        "pvc_pct_delta": 0.487,
+        "same_corrosion_tier_demoted": true,
+        "same_mix_ratio_by_volume": true,
+        "same_pot_life_tier": true,
+        "same_stoichiometric_ratio": true,
+        "same_volume_solids_pct": true
+      }
+    ],
+    "planted_defect": "removed candidate_pairwise_discriminating_experiments.pairs['M00101|M00109']",
+    "ranking": {
+      "present": true,
+      "primary": "M00097",
+      "ranked_alternates": [
+        "M00101",
+        "M00109"
+      ],
+      "reason": "",
+      "valid": true
+    },
+    "resolved_pair_keys": [
+      "M00097|M00101",
+      "M00097|M00109"
+    ],
+    "unresolved_evidence_indistinguishable_pairs": [
+      [
+        "M00101",
+        "M00109"
+      ]
+    ]
+  },
+  "study_id": "cf-alt-ranked-alternates-discriminating-experiment-v2",
+  "verdict": "CLAIM_SURVIVED"
+}

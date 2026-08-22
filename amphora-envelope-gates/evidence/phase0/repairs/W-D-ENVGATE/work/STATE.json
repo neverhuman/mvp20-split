@@ -1,0 +1,19 @@
+{
+  "campaign_item_id": "W-D-ENVGATE",
+  "last_fire_id": "20260813T100001-2022794-5c1bc9465c86",
+  "status": "done",
+  "sources_swept_so_far": 13,
+  "explicit_tolerance_band_sources_found": 5,
+  "explicit_tolerance_band_sources_required": 5,
+  "receipt_this_fire": "amphora-envelope-gates/evidence/phase0/repairs/W-D-ENVGATE/done/w-d-envgate-sweep-rescore-done-1.v1.dsse.json",
+  "prior_attempt_receipt": "amphora-envelope-gates/evidence/phase0/repairs/W-D-ENVGATE/attempts/w-d-envgate-sweep-rescore-attempt-1.v1.dsse.json",
+  "verdict_this_fire": "CLAIM_REFUTED",
+  "done_criterion_met": true,
+  "checked_no_explicit_band_this_fire": ["Carboline Carboguard 890 TDS", "Tnemec Hi-Build Epoxoline Series 66 TDS"],
+  "qualifying_source_found_this_fire": "Hexion EPIKOTE Resin L 20 / EPIKURE Curing Agent 960 TDS -- 100:34 pbw nominal, +/-2pbw explicit mixing tolerance, boat-building application, independent of Gougeon Brothers.",
+  "next_fire_todo": [
+    "This item's done_criterion is now met; no further fires required against W-D-ENVGATE unless the launcher's independent done_check re-run disagrees.",
+    "Follow-up work is filed as proposed_followups in the done receipt, addressed to future campaign items (not this one): (1) verify/repair the 4 fixture citations that do not match their real named sources, (2) fix the internal id/data ratio defect on dgeba-pacm-marine-topcoat-100to30, (3) fix the G4 oracle docstring/implementation gap (claims a ratio-string-consistency check it never performs), (4) replace G3's single symmetric +/-5% assumption with a per-source or explicitly-asymmetric model.",
+    "The Wicks/Jones/Pappas 2007 Sec.24.3 primary source (the fixture's own uncited tolerance-model citation) remains unlocated over the open web across 2 fires; still recommended as a library/ILL follow-up if a future item wants to resolve proposed_followup #3 from fire 1."
+  ]
+}

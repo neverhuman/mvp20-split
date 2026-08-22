@@ -1,0 +1,925 @@
+{
+  "acceptance": {
+    "daniel_parity_10_of_10": true,
+    "known_answer_battery_pass": true,
+    "lpu_validated_by_mc_all_outputs": true,
+    "onset_closed_form_verified": true
+  },
+  "authority": "AUDIT_ONLY",
+  "axis": "theory (option B): Bierwagen reduced-PVC + above-CPVC porosity arithmetic",
+  "case_study": {
+    "binder_density_convention": "ASTM D2697-consistent ideal-mix nonvolatile density; NOT a cured-network density claim (see amphora-cured-network-density-apriori-refuted)",
+    "binder_ideal_mix_density_g_cm3": 1.085889,
+    "cpvc": 0.4183,
+    "points": {
+      "barrier_pvc_035": {
+        "dft_readthrough_error_pct_vs_voidfree": 0.0,
+        "dry_film_density_g_cm3": 2.455828,
+        "lambda": 0.83672,
+        "porosity_volfrac": 0.0,
+        "pvc": 0.35,
+        "voidfree_nv_density_g_cm3": 2.455828
+      },
+      "overshoot_pvc_050": {
+        "dft_readthrough_error_pct_vs_voidfree": 19.531437,
+        "dry_film_density_g_cm3": 2.545727,
+        "lambda": 1.195314,
+        "porosity_volfrac": 0.1634,
+        "pvc": 0.5,
+        "voidfree_nv_density_g_cm3": 3.042944
+      }
+    },
+    "system": "iron_oxide_red in DGEBA-331 + Ancamide 350A stoichiometric binder"
+  },
+  "closes": [
+    "adds reduced-PVC (LAMBDA), above-CPVC porosity, DFT amplification, and dry-film density to the dimensioned arithmetic surface",
+    "quantifies the porosity cliff at CPVC (first-order in PVC overshoot) and the exact above-CPVC misread of the coverage-spreading DFT arithmetic",
+    "carries the GUM+MC uncertainty chain from D281 oil absorption through Daniel CPVC onto porosity"
+  ],
+  "connects_to": [
+    "amphora-ingredient-library-oil-absorption-cpvc (Daniel CPVC inputs, 4b127f2d...)",
+    "amphora-formulation-arithmetic coverage-spreading-v1 (void-free WFT/DFT arithmetic this receipt bounds, ba579323...)",
+    "amphora-barrier-* (below-CPVC void-free premise of Fickian/tortuosity receipts)",
+    "amphora-zinc-galvanic-percolation (zinc-rich primers deliberately formulated above CPVC for particle contact)"
+  ],
+  "daniel_parity": {
+    "n_match": 10,
+    "non_circularity_note": "same Daniel formula as the signed ingredient receipt: provenance parity, NOT independent validation of CPVC",
+    "rows": [
+      {
+        "cpvc_receipt": 0.6365,
+        "cpvc_rederived_4dp": 0.6365,
+        "match": true,
+        "pigment": "barytes"
+      },
+      {
+        "cpvc_receipt": 0.4442,
+        "cpvc_rederived_4dp": 0.4442,
+        "match": true,
+        "pigment": "carbon_black"
+      },
+      {
+        "cpvc_receipt": 0.4934,
+        "cpvc_rederived_4dp": 0.4934,
+        "match": true,
+        "pigment": "iron_oxide_black"
+      },
+      {
+        "cpvc_receipt": 0.4183,
+        "cpvc_rederived_4dp": 0.4183,
+        "match": true,
+        "pigment": "iron_oxide_red"
+      },
+      {
+        "cpvc_receipt": 0.6254,
+        "cpvc_rederived_4dp": 0.6254,
+        "match": true,
+        "pigment": "iron_oxide_yellow"
+      },
+      {
+        "cpvc_receipt": 0.5142,
+        "cpvc_rederived_4dp": 0.5142,
+        "match": true,
+        "pigment": "mica"
+      },
+      {
+        "cpvc_receipt": 0.5405,
+        "cpvc_rederived_4dp": 0.5405,
+        "match": true,
+        "pigment": "silica"
+      },
+      {
+        "cpvc_receipt": 0.5352,
+        "cpvc_rederived_4dp": 0.5352,
+        "match": true,
+        "pigment": "talc"
+      },
+      {
+        "cpvc_receipt": 0.5733,
+        "cpvc_rederived_4dp": 0.5733,
+        "match": true,
+        "pigment": "wollastonite"
+      },
+      {
+        "cpvc_receipt": 0.5862,
+        "cpvc_rederived_4dp": 0.5862,
+        "match": true,
+        "pigment": "zinc_phosphate"
+      }
+    ]
+  },
+  "declared_application_parameter": {
+    "note": "declared supplier-spread band on D281 oil absorption for the uncertainty chain; a declared input like prior receipts' metering/DFT bands, not fitted and not a validated supplier statistic.",
+    "oa_rel_halfwidth_rectangular": 0.1
+  },
+  "does_not_close": [
+    "not a measured-porosity validation (no mercury-porosimetry or gas-permeation dataset in tree); geometric idealization assumes CPVC-invariant pigment packing above CPVC",
+    "binder density is the ideal-mix nonvolatile convention, not a cured-network density claim (see amphora-cured-network-density-apriori-refuted)",
+    "does not modify the live Rust engine (still MASS_ONLY), any locked dataset, the signed Phase-0 KPI, or the 66/11 manifest"
+  ],
+  "finding": "For the 10 in-tree Daniel-CPVC pigments (CPVC 0.4183-0.6365) the reduced-PVC arithmetic is exact and zero-parameter: below CPVC porosity is identically 0 (consistent with the barrier module's void-free Fickian assumption), and above CPVC porosity onsets FIRST-ORDER in relative PVC overshoot (pi = eps/(1+eps): a +5% PVC error at CPVC already creates 4.76 vol% air voids), so CPVC is a cliff, not a soft optimum. Above CPVC the module's void-free coverage/DFT arithmetic mis-reads film build by exactly LAMBDA and dry-film density by exactly 1/LAMBDA: an iron-oxide-red epoxy-polyamide primer formulated at PVC 0.50 (CPVC 0.4183, LAMBDA 1.195) delivers +19.5% DFT and -16.3% dry-film density versus the void-free arithmetic. Porosity uncertainty inherited from a declared +/-10% oil-absorption band is u(pi) ~= 0.02-0.05 at LAMBDA 1.2 (GUM LPU validated by 400k-draw MC on all 10 pigments), comparable to the porosity created by a 5% PVC overshoot -- so near CPVC, OA data quality and PVC metering discipline are co-equal load-bearing controls.",
+  "fitted_parameters": 0,
+  "inputs_provenance": {
+    "binder": {
+      "hardener": "hardener.ancamide_350a (rho 0.97 g/mL, AHEW 100)",
+      "ideal_mix_density_g_cm3": 1.085889,
+      "resin": "resin.dgeba_331 (rho 1.16 g/mL, EEW 187)",
+      "stoich_phr": 53.475936
+    },
+    "facts_json": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+    "facts_json_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+    "ingredient_diagnostic": "amphora-ingredient-library/evidence/audit/oil-absorption-cpvc-v1/diagnostic.canonical.json",
+    "ingredient_diagnostic_sha256": "153aa563c04ee198fc1395490c5db1714ad75d9bfe0f63d37dba23afc110a8ff",
+    "ingredient_receipt_sha256": "4b127f2df523888cc16c4cabdfe6e515f6e298106faa6b38a9729e237b37f1cc",
+    "rho_oil_g_per_mL": 0.935
+  },
+  "known_answer_battery": {
+    "ka10_hostile_nulls_fail_closed": true,
+    "ka11_daniel_parity_10_of_10": true,
+    "ka12_volume_bookkeeping_equals_closed_form": true,
+    "ka1_continuity_at_cpvc": true,
+    "ka2_pi_lambda_identity": true,
+    "ka3_below_cpvc_void_free": true,
+    "ka4_monotonicity": true,
+    "ka5_pvc1_limit": true,
+    "ka6_film_volume_amplification": true,
+    "ka7_mass_closure": true,
+    "ka8_density_homogeneity": true,
+    "ka9_scale_invariance": true
+  },
+  "known_answer_battery_pass": true,
+  "lpu_validated_by_mc_all_outputs": true,
+  "lpu_vs_mc": {
+    "lpu_validated_by_mc_all_outputs": true,
+    "mc_n": 400000,
+    "mc_seed": 20260731,
+    "rows": [
+      {
+        "lpu_over_mc_ratio": 0.999962,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "barytes",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.7638,
+        "u_porosity_lpu": 0.01749,
+        "u_porosity_mc": 0.017491
+      },
+      {
+        "lpu_over_mc_ratio": 0.99747,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "carbon_black",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.53304,
+        "u_porosity_lpu": 0.026743,
+        "u_porosity_mc": 0.026811
+      },
+      {
+        "lpu_over_mc_ratio": 0.998847,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "iron_oxide_black",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.59208,
+        "u_porosity_lpu": 0.024373,
+        "u_porosity_mc": 0.024402
+      },
+      {
+        "lpu_over_mc_ratio": 0.997501,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "iron_oxide_red",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.50196,
+        "u_porosity_lpu": 0.027982,
+        "u_porosity_mc": 0.028052
+      },
+      {
+        "lpu_over_mc_ratio": 0.999481,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "iron_oxide_yellow",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.75048,
+        "u_porosity_lpu": 0.018022,
+        "u_porosity_mc": 0.018031
+      },
+      {
+        "lpu_over_mc_ratio": 0.997478,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "mica",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.61704,
+        "u_porosity_lpu": 0.023377,
+        "u_porosity_mc": 0.023436
+      },
+      {
+        "lpu_over_mc_ratio": 0.998167,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "silica",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.6486,
+        "u_porosity_lpu": 0.022111,
+        "u_porosity_mc": 0.022152
+      },
+      {
+        "lpu_over_mc_ratio": 0.998754,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "talc",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.64224,
+        "u_porosity_lpu": 0.022362,
+        "u_porosity_mc": 0.02239
+      },
+      {
+        "lpu_over_mc_ratio": 0.998622,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "wollastonite",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.68796,
+        "u_porosity_lpu": 0.020532,
+        "u_porosity_mc": 0.020561
+      },
+      {
+        "lpu_over_mc_ratio": 0.998828,
+        "lpu_within_10pct_of_mc": true,
+        "pigment": "zinc_phosphate",
+        "porosity_point": 0.166667,
+        "pvc_eval_lambda_1p2": 0.70344,
+        "u_porosity_lpu": 0.019908,
+        "u_porosity_mc": 0.019932
+      }
+    ]
+  },
+  "module": "amphora-formulation-arithmetic",
+  "onset_sensitivity": {
+    "closed_form_verified": true,
+    "rows": [
+      {
+        "closed_form_eps_over_1_plus_eps": 0.009901,
+        "match": true,
+        "porosity_volfrac_exact": 0.009901,
+        "relative_pvc_overshoot": 0.01
+      },
+      {
+        "closed_form_eps_over_1_plus_eps": 0.019608,
+        "match": true,
+        "porosity_volfrac_exact": 0.019608,
+        "relative_pvc_overshoot": 0.02
+      },
+      {
+        "closed_form_eps_over_1_plus_eps": 0.047619,
+        "match": true,
+        "porosity_volfrac_exact": 0.047619,
+        "relative_pvc_overshoot": 0.05
+      },
+      {
+        "closed_form_eps_over_1_plus_eps": 0.090909,
+        "match": true,
+        "porosity_volfrac_exact": 0.090909,
+        "relative_pvc_overshoot": 0.1
+      },
+      {
+        "closed_form_eps_over_1_plus_eps": 0.166667,
+        "match": true,
+        "porosity_volfrac_exact": 0.166667,
+        "relative_pvc_overshoot": 0.2
+      }
+    ],
+    "statement": "porosity onset above CPVC is first-order in relative PVC overshoot: pi = eps/(1+eps); +5% PVC error at CPVC -> 4.76 vol% voids"
+  },
+  "reduced_pvc_ladder": [
+    {
+      "cpvc": 0.6365,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.590505,
+          "lambda_reduced_pvc": 0.235664,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.926916,
+          "lambda_reduced_pvc": 0.392773,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.263328,
+          "lambda_reduced_pvc": 0.549882,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.599739,
+          "lambda_reduced_pvc": 0.706991,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.45,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.93615,
+          "lambda_reduced_pvc": 0.864101,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.55,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.02121,
+          "dry_film_density_g_cm3": 3.204592,
+          "lambda_reduced_pvc": 1.02121,
+          "porosity_volfrac": 0.020769,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.178319,
+          "dry_film_density_g_cm3": 3.062814,
+          "lambda_reduced_pvc": 1.178319,
+          "porosity_volfrac": 0.151333,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "barytes",
+      "rho_p_g_cm3": 4.45
+    },
+    {
+      "cpvc": 0.4442,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.193005,
+          "lambda_reduced_pvc": 0.337686,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.264416,
+          "lambda_reduced_pvc": 0.56281,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.335828,
+          "lambda_reduced_pvc": 0.787933,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.013057,
+          "dry_film_density_g_cm3": 1.389101,
+          "lambda_reduced_pvc": 1.013057,
+          "porosity_volfrac": 0.012889,
+          "pvc": 0.45,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.238181,
+          "dry_film_density_g_cm3": 1.194211,
+          "lambda_reduced_pvc": 1.238181,
+          "porosity_volfrac": 0.192364,
+          "pvc": 0.55,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.463305,
+          "dry_film_density_g_cm3": 1.059288,
+          "lambda_reduced_pvc": 1.463305,
+          "porosity_volfrac": 0.316615,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.688429,
+          "dry_film_density_g_cm3": 0.960344,
+          "lambda_reduced_pvc": 1.688429,
+          "porosity_volfrac": 0.407733,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "carbon_black",
+      "rho_p_g_cm3": 1.8
+    },
+    {
+      "cpvc": 0.4934,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.643005,
+          "lambda_reduced_pvc": 0.304013,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.014416,
+          "lambda_reduced_pvc": 0.506688,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.385828,
+          "lambda_reduced_pvc": 0.709364,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.757239,
+          "lambda_reduced_pvc": 0.912039,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.45,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.114714,
+          "dry_film_density_g_cm3": 2.806683,
+          "lambda_reduced_pvc": 1.114714,
+          "porosity_volfrac": 0.102909,
+          "pvc": 0.55,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.31739,
+          "dry_film_density_g_cm3": 2.656816,
+          "lambda_reduced_pvc": 1.31739,
+          "porosity_volfrac": 0.240923,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.520065,
+          "dry_film_density_g_cm3": 2.546912,
+          "lambda_reduced_pvc": 1.520065,
+          "porosity_volfrac": 0.342133,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "iron_oxide_black",
+      "rho_p_g_cm3": 4.8
+    },
+    {
+      "cpvc": 0.4183,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.673005,
+          "lambda_reduced_pvc": 0.358594,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.064416,
+          "lambda_reduced_pvc": 0.597657,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.455828,
+          "lambda_reduced_pvc": 0.83672,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.075783,
+          "dry_film_density_g_cm3": 2.646667,
+          "lambda_reduced_pvc": 1.075783,
+          "porosity_volfrac": 0.070444,
+          "pvc": 0.45,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.314846,
+          "dry_film_density_g_cm3": 2.46314,
+          "lambda_reduced_pvc": 1.314846,
+          "porosity_volfrac": 0.239455,
+          "pvc": 0.55,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.553909,
+          "dry_film_density_g_cm3": 2.336084,
+          "lambda_reduced_pvc": 1.553909,
+          "porosity_volfrac": 0.356462,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.792972,
+          "dry_film_density_g_cm3": 2.242909,
+          "lambda_reduced_pvc": 1.792972,
+          "porosity_volfrac": 0.442267,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "iron_oxide_red",
+      "rho_p_g_cm3": 5.0
+    },
+    {
+      "cpvc": 0.6254,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.523005,
+          "lambda_reduced_pvc": 0.239846,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.814416,
+          "lambda_reduced_pvc": 0.399744,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.105828,
+          "lambda_reduced_pvc": 0.559642,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.397239,
+          "lambda_reduced_pvc": 0.719539,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.45,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.68865,
+          "lambda_reduced_pvc": 0.879437,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.55,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.039335,
+          "dry_film_density_g_cm3": 2.867277,
+          "lambda_reduced_pvc": 1.039335,
+          "porosity_volfrac": 0.037846,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.199232,
+          "dry_film_density_g_cm3": 2.727972,
+          "lambda_reduced_pvc": 1.199232,
+          "porosity_volfrac": 0.166133,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "iron_oxide_yellow",
+      "rho_p_g_cm3": 4.0
+    },
+    {
+      "cpvc": 0.5142,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.350505,
+          "lambda_reduced_pvc": 0.291715,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.526916,
+          "lambda_reduced_pvc": 0.486192,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.703328,
+          "lambda_reduced_pvc": 0.680669,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.879739,
+          "lambda_reduced_pvc": 0.875146,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.45,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.069623,
+          "dry_film_density_g_cm3": 1.922313,
+          "lambda_reduced_pvc": 1.069623,
+          "porosity_volfrac": 0.065091,
+          "pvc": 0.55,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.2641,
+          "dry_film_density_g_cm3": 1.766127,
+          "lambda_reduced_pvc": 1.2641,
+          "porosity_volfrac": 0.208923,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.458576,
+          "dry_film_density_g_cm3": 1.651591,
+          "lambda_reduced_pvc": 1.458576,
+          "porosity_volfrac": 0.3144,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "mica",
+      "rho_p_g_cm3": 2.85
+    },
+    {
+      "cpvc": 0.5405,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.320505,
+          "lambda_reduced_pvc": 0.277521,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.476916,
+          "lambda_reduced_pvc": 0.462535,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.633328,
+          "lambda_reduced_pvc": 0.647549,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.789739,
+          "lambda_reduced_pvc": 0.832562,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.45,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.017576,
+          "dry_film_density_g_cm3": 1.912535,
+          "lambda_reduced_pvc": 1.017576,
+          "porosity_volfrac": 0.017273,
+          "pvc": 0.55,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.20259,
+          "dry_film_density_g_cm3": 1.74836,
+          "lambda_reduced_pvc": 1.20259,
+          "porosity_volfrac": 0.168462,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.387604,
+          "dry_film_density_g_cm3": 1.627966,
+          "lambda_reduced_pvc": 1.387604,
+          "porosity_volfrac": 0.279333,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "silica",
+      "rho_p_g_cm3": 2.65
+    },
+    {
+      "cpvc": 0.5352,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.343005,
+          "lambda_reduced_pvc": 0.280269,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.514416,
+          "lambda_reduced_pvc": 0.467115,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.685828,
+          "lambda_reduced_pvc": 0.653961,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.857239,
+          "lambda_reduced_pvc": 0.840807,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.45,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.027653,
+          "dry_film_density_g_cm3": 1.974061,
+          "lambda_reduced_pvc": 1.027653,
+          "porosity_volfrac": 0.026909,
+          "pvc": 0.55,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.214499,
+          "dry_film_density_g_cm3": 1.811496,
+          "lambda_reduced_pvc": 1.214499,
+          "porosity_volfrac": 0.176615,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.401345,
+          "dry_film_density_g_cm3": 1.692283,
+          "lambda_reduced_pvc": 1.401345,
+          "porosity_volfrac": 0.2864,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "talc",
+      "rho_p_g_cm3": 2.8
+    },
+    {
+      "cpvc": 0.5733,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.358005,
+          "lambda_reduced_pvc": 0.261643,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.539416,
+          "lambda_reduced_pvc": 0.436072,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.720828,
+          "lambda_reduced_pvc": 0.610501,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.902239,
+          "lambda_reduced_pvc": 0.784929,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.45,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.08365,
+          "lambda_reduced_pvc": 0.959358,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.55,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.133787,
+          "dry_film_density_g_cm3": 1.997784,
+          "lambda_reduced_pvc": 1.133787,
+          "porosity_volfrac": 0.118,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.308216,
+          "dry_film_density_g_cm3": 1.870083,
+          "lambda_reduced_pvc": 1.308216,
+          "porosity_volfrac": 0.2356,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "wollastonite",
+      "rho_p_g_cm3": 2.9
+    },
+    {
+      "cpvc": 0.5862,
+      "grid": [
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.418005,
+          "lambda_reduced_pvc": 0.255885,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.15,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.639416,
+          "lambda_reduced_pvc": 0.426476,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.25,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 1.860828,
+          "lambda_reduced_pvc": 0.597066,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.35,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.082239,
+          "lambda_reduced_pvc": 0.767656,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.45,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.0,
+          "dry_film_density_g_cm3": 2.30365,
+          "lambda_reduced_pvc": 0.938246,
+          "porosity_volfrac": 0.0,
+          "pvc": 0.55,
+          "regime": "VOID_FREE_BARRIER"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.108837,
+          "dry_film_density_g_cm3": 2.277217,
+          "lambda_reduced_pvc": 1.108837,
+          "porosity_volfrac": 0.098154,
+          "pvc": 0.65,
+          "regime": "POROUS_ABOVE_CPVC"
+        },
+        {
+          "dft_amplification_vs_voidfree": 1.279427,
+          "dry_film_density_g_cm3": 2.146643,
+          "lambda_reduced_pvc": 1.279427,
+          "porosity_volfrac": 0.2184,
+          "pvc": 0.75,
+          "regime": "POROUS_ABOVE_CPVC"
+        }
+      ],
+      "pigment": "zinc_phosphate",
+      "rho_p_g_cm3": 3.3
+    }
+  ],
+  "schema": "amphora.formulation-arithmetic.reduced-pvc-porosity-diagnostic.v1",
+  "theory_reference": [
+    "Asbeck & Van Loo 1949, Ind. Eng. Chem. 41(7) 1470-1475, DOI 10.1021/ie50475a042",
+    "Bierwagen & Hay 1975, Prog. Org. Coat. 3(4) 281-303, DOI 10.1016/0300-9440(75)80047-4",
+    "Patton 1979, Paint Flow and Pigment Dispersion, 2nd ed., Wiley, ISBN 0-471-03272-7"
+  ],
+  "verdict": "REDUCED_PVC_POROSITY_ENGINE_READY_AUDIT_ONLY"
+}

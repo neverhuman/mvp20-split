@@ -1,0 +1,434 @@
+{
+  "acceptance": {
+    "bijection_injective_rate": 1.0,
+    "bijection_roundtrip_rate": 1.0,
+    "bijection_surjective_rate": 1.0,
+    "failclosed_probe_pass_rate": 1.0,
+    "identity_solved_plus_infeasible_eq_total_rate": 1.0,
+    "reproduces_expected_cartesian_total_rate": 1.0,
+    "reproduces_expected_infeasible_rate": 1.0,
+    "reproduces_expected_solved_rate": 1.0,
+    "two_way_count_agreement_rate": 1.0,
+    "value_tuple_bijection_rate": 1.0
+  },
+  "acceptance_all_perfect": true,
+  "authority": "AUDIT_ONLY",
+  "bijection_holds_all_universes": true,
+  "claim_locks": {
+    "enumeration_is_not_performance_evidence": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_release_or_qualification": true,
+    "no_superiority_claim": true,
+    "pre_phase_0_research_only": true
+  },
+  "claim_under_test": "Cartesian enumeration reports every solved and infeasible combination without silent loss.",
+  "failclosed_probe_pass": 9,
+  "failclosed_probe_total": 9,
+  "failclosed_probes": [
+    {
+      "probe": "infeasible_index_equals_total",
+      "rejected": true
+    },
+    {
+      "probe": "infeasible_index_far_out_of_range",
+      "rejected": true
+    },
+    {
+      "probe": "infeasible_index_negative",
+      "rejected": true
+    },
+    {
+      "probe": "infeasible_index_duplicate",
+      "rejected": true
+    },
+    {
+      "probe": "infeasible_index_float",
+      "rejected": true
+    },
+    {
+      "probe": "infeasible_index_bool",
+      "rejected": true
+    },
+    {
+      "probe": "empty_axis_zero_cardinality_no_positive_solved",
+      "rejected": true
+    },
+    {
+      "probe": "corrupted_place_weights_detected_by_two_way",
+      "rejected": true
+    },
+    {
+      "probe": "digit_overflow_breaks_roundtrip",
+      "rejected": true
+    }
+  ],
+  "method": {
+    "adds_over_rust_benchmark": "Rust Phase-0 benchmark verifies counts; this oracle proves the index<->tuple map is a bijection (injective=no duplication, surjective=no silent loss) and confirms N two independent arithmetic ways (direct product vs positional maximum-numeral identity N = sum_j (r_j-1)*w_j + 1).",
+    "arithmetic": "Python bignum (radix-agnostic), independent of Rust u64",
+    "axis_ordering": "BTreeMap parity: axes sorted by key",
+    "name": "mixed-radix positional numeral bijection oracle",
+    "primary_sources": [
+      "Knuth TAOCP Vol.2 3rd ed. (1997) ISBN 0-201-89684-2 sec.4.1 Positional Number Systems",
+      "Nijenhuis & Wilf, Combinatorial Algorithms 2nd ed. (1978) ISBN 0-12-519260-6 ch.1-3 ranking/unranking"
+    ]
+  },
+  "module": "amphora-formulation-universe",
+  "n_universes": 10,
+  "per_universe": [
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 8,
+      "cartesian_total_product": 8,
+      "derived_infeasible_count": 0,
+      "derived_solved_count": 8,
+      "design_type": "2^k_full_factorial",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        4,
+        2,
+        1
+      ],
+      "radices": [
+        2,
+        2,
+        2
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_choice",
+        "resin_choice",
+        "solvent_choice"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "2^3-full-factorial-basic",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 16,
+      "cartesian_total_product": 16,
+      "derived_infeasible_count": 0,
+      "derived_solved_count": 16,
+      "design_type": "2^k_full_factorial",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        8,
+        4,
+        2,
+        1
+      ],
+      "radices": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_choice",
+        "pigment_choice",
+        "resin_choice",
+        "solvent_choice"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "2^4-full-factorial-adhesive-screen",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 9,
+      "cartesian_total_product": 9,
+      "derived_infeasible_count": 0,
+      "derived_solved_count": 9,
+      "design_type": "3^k_full_factorial",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        3,
+        1
+      ],
+      "radices": [
+        3,
+        3
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_grade",
+        "resin_grade"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "3^2-full-factorial-mix-ratio-screen",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 27,
+      "cartesian_total_product": 27,
+      "derived_infeasible_count": 0,
+      "derived_solved_count": 27,
+      "design_type": "3^k_full_factorial",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        9,
+        3,
+        1
+      ],
+      "radices": [
+        3,
+        3,
+        3
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_choice",
+        "resin_choice",
+        "solvent_choice"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "3^3-full-factorial-full-formulation",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 32,
+      "cartesian_total_product": 32,
+      "derived_infeasible_count": 0,
+      "derived_solved_count": 32,
+      "design_type": "2^(k-p)_fractional_factorial",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "radices": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "additive_choice",
+        "hardener_choice",
+        "pigment_choice",
+        "resin_choice",
+        "solvent_choice"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "2^(5-1)-half-fraction-screening",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 24,
+      "cartesian_total_product": 24,
+      "derived_infeasible_count": 0,
+      "derived_solved_count": 24,
+      "design_type": "mixed_level_factorial",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        8,
+        2,
+        1
+      ],
+      "radices": [
+        3,
+        4,
+        2
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_choice",
+        "resin_choice",
+        "solvent_choice"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "mixed-4x3x2-formulation-screen",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 8,
+      "cartesian_total_product": 8,
+      "derived_infeasible_count": 2,
+      "derived_solved_count": 6,
+      "design_type": "2^k_full_factorial_with_infeasibility",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        4,
+        2,
+        1
+      ],
+      "radices": [
+        2,
+        2,
+        2
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_choice",
+        "resin_choice",
+        "solvent_choice"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "2^3-with-two-infeasible-compatibility-exclusions",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 27,
+      "cartesian_total_product": 27,
+      "derived_infeasible_count": 5,
+      "derived_solved_count": 22,
+      "design_type": "3^k_full_factorial_with_infeasibility",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        9,
+        3,
+        1
+      ],
+      "radices": [
+        3,
+        3,
+        3
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_choice",
+        "resin_choice",
+        "solvent_choice"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "3^3-with-five-infeasible-solvent-compatibility",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 25,
+      "cartesian_total_product": 25,
+      "derived_infeasible_count": 3,
+      "derived_solved_count": 22,
+      "design_type": "mixed_level_factorial_with_infeasibility",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        5,
+        1
+      ],
+      "radices": [
+        5,
+        5
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_grade",
+        "resin_grade"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "5x5-with-three-infeasible-mix-ratio-restriction",
+      "value_tuple_bijection": true
+    },
+    {
+      "bijection_injective_no_duplication": true,
+      "bijection_roundtrip_rank_unrank": true,
+      "bijection_surjective_no_silent_loss": true,
+      "cartesian_total_positional": 16,
+      "cartesian_total_product": 16,
+      "derived_infeasible_count": 4,
+      "derived_solved_count": 12,
+      "design_type": "2^k_full_factorial_with_infeasibility",
+      "identity_solved_plus_infeasible_eq_total": true,
+      "infeasible_indices_in_range": true,
+      "infeasible_indices_unique": true,
+      "place_weights": [
+        8,
+        4,
+        2,
+        1
+      ],
+      "radices": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reproduces_expected_cartesian_total": true,
+      "reproduces_expected_infeasible_count": true,
+      "reproduces_expected_solved_count": true,
+      "sorted_axis_keys": [
+        "hardener_choice",
+        "pigment_choice",
+        "resin_choice",
+        "solvent_choice"
+      ],
+      "two_way_count_agreement": true,
+      "universe_id": "2^4-with-fully-infeasible-edge-cases",
+      "value_tuple_bijection": true
+    }
+  ],
+  "reproduces_all_anchors": true,
+  "rights": {
+    "eligible_for_derivatives": true,
+    "fixture": "amphora-formulation-universe/reference/phase0-formulation-universe-known-answer.v1.json",
+    "fixture_sha256": "cb3cdb8bd40ebfeadd929ab42fed7df4596375aa1d00b24242755479676029b3",
+    "license": "CC0-1.0",
+    "note": "Self-authored CC0 DoE compilation; rights-clean for derivatives."
+  },
+  "schema": "amphora.formulation-universe.mixed-radix-bijection.v1"
+}

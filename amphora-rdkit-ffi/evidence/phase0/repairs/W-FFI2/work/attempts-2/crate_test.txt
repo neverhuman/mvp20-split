@@ -1,0 +1,23 @@
+   Compiling amphora-rdkit-ffi v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 26.55s
+     Running unittests src/lib.rs (target/debug/deps/amphora_rdkit_ffi-952912b2cf23e16d)
+
+running 9 tests
+test tests::fingerprint_record_and_tanimoto_are_deterministic ... ok
+test tests::native_record_builds_deterministic_versioned_facts ... ok
+test tests::unsupported_components_and_polymers_fail_before_backend_use ... ok
+test tests::pinned_native_fingerprints_replay_and_preserve_stereochemistry ... ok
+test tests::pinned_native_backend_scores_dicyandiamide_functionality_four ... ok
+test tests::pinned_native_backend_matches_reactive_ontology_controls ... ok
+test tests::native_identity_preserves_isotope_charge_and_stereochemistry ... ok
+test tests::pinned_native_backend_excludes_guanidine_class_amine_hydrogens ... ok
+test tests::pinned_native_backend_dicyandiamide_score_is_tautomer_representation_invariant ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+   Doc-tests amphora_rdkit_ffi
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

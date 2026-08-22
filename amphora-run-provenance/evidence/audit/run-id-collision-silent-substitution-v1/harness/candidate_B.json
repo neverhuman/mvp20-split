@@ -1,0 +1,17 @@
+{
+  "candidate_id": "TETA-hardener-B",
+  "candidate_type": "molecule",
+  "context": {
+    "dft_basis_mil": 5.0,
+    "target_spec": "amine hardener for Envelope-65"
+  },
+  "evidence_refs": {},
+  "molecule": {
+    "name": "Triethylenetetramine",
+    "role": "hardener",
+    "smiles": "NCCNCCNCCN",
+    "source_refs": [
+      "data/molecule_library.json"
+    ]
+  }
+}

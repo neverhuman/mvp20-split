@@ -1,0 +1,217 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "claim_locks": {
+    "flips_scientific_readiness": false,
+    "human_review_performed": false,
+    "modifies_manifest": false,
+    "no_live_model_calls": true,
+    "no_new_science": true,
+    "no_ranking_authority_granted": true,
+    "no_solver_authority_granted": true,
+    "oracles_read_only_signed_tree_artifacts": true,
+    "pre_phase_0_research_only": true,
+    "promotes_authority": false
+  },
+  "date": "2026-08-03",
+  "demo_id": "p3-hazard-constrained-hardener-selection",
+  "determinism": {
+    "floats": "f64_only",
+    "reductions": "ordered (candidates in sorted name order)",
+    "rng": "none (exhaustive enumeration)"
+  },
+  "generated_on_host": "xbabe2",
+  "pareto_status": "BLOCKED",
+  "problem": {
+    "constraints": {
+      "ad_tanimoto_min": 0.3,
+      "chi_water_min": 2.0,
+      "no_H317_skin_sensitiser": true,
+      "no_H351_carcinogen": true
+    },
+    "constraints_not_softened": "the empty feasible set is reported as-is; no constraint was relaxed to manufacture a winner",
+    "objective": "maximize predicted Tg (Tg_ML_C from the design-card KPI; Van Krevelen Tg reported alongside)",
+    "search": "exhaustive enumeration of the 5-candidate design space (degenerate DoE; no stochastic search needed)"
+  },
+  "results": {
+    "best_infeasible_by_predicted_tg": {
+      "blocking_constraints": [
+        "GHS_H317_SKIN_SENSITISER"
+      ],
+      "candidate": "IPDA",
+      "note": "NOT a recommendation; reported for transparency only - this candidate is infeasible under the stated constraints",
+      "predicted_tg_ml_c": 122.88322948806938
+    },
+    "blocking_summary": {
+      "H317_skin_sensitiser": [
+        "DDS",
+        "DETA",
+        "IPDA",
+        "TETA",
+        "m-XDA"
+      ],
+      "H351_suspected_carcinogen": [
+        "DDS"
+      ],
+      "ad_gate_failures": [
+        "DDS",
+        "DETA",
+        "TETA",
+        "m-XDA"
+      ],
+      "chi_water_failures": [],
+      "note": "every candidate carries H317 in the pinned GHS KPI; 4/5 additionally fail the AD-Tanimoto gate; DDS additionally carries H351"
+    },
+    "candidates": [
+      {
+        "ad_tanimoto": 0.25,
+        "blocking_constraints": [
+          "GHS_H317_SKIN_SENSITISER",
+          "GHS_H351_SUSPECTED_CARCINOGEN",
+          "AD_TANIMOTO_0.2500_BELOW_MIN_0.3"
+        ],
+        "candidate": "DDS",
+        "cas": "80-08-0",
+        "chi_water": 3.424543368410491,
+        "feasible": false,
+        "h_statement_codes": [
+          "H302",
+          "H317",
+          "H351",
+          "H373",
+          "H410"
+        ],
+        "predicted_tg_ml_c": 99.542817508103,
+        "predicted_tg_van_krevelen_c": 252.03999823347363
+      },
+      {
+        "ad_tanimoto": 0.2631578947368421,
+        "blocking_constraints": [
+          "GHS_H317_SKIN_SENSITISER",
+          "AD_TANIMOTO_0.2632_BELOW_MIN_0.3"
+        ],
+        "candidate": "DETA",
+        "cas": "111-40-0",
+        "chi_water": 2.697224899817443,
+        "feasible": false,
+        "h_statement_codes": [
+          "H302",
+          "H312",
+          "H314",
+          "H317",
+          "H411"
+        ],
+        "predicted_tg_ml_c": 99.63310724286275,
+        "predicted_tg_van_krevelen_c": 251.58480391714835
+      },
+      {
+        "ad_tanimoto": 0.34210526315789475,
+        "blocking_constraints": [
+          "GHS_H317_SKIN_SENSITISER"
+        ],
+        "candidate": "IPDA",
+        "cas": "2855-13-2",
+        "chi_water": 2.8684631252307757,
+        "feasible": false,
+        "h_statement_codes": [
+          "H302",
+          "H311",
+          "H314",
+          "H317",
+          "H332",
+          "H411"
+        ],
+        "predicted_tg_ml_c": 122.88322948806938,
+        "predicted_tg_van_krevelen_c": 251.37649079043467
+      },
+      {
+        "ad_tanimoto": 0.2894736842105263,
+        "blocking_constraints": [
+          "GHS_H317_SKIN_SENSITISER",
+          "AD_TANIMOTO_0.2895_BELOW_MIN_0.3"
+        ],
+        "candidate": "TETA",
+        "cas": "112-24-3",
+        "chi_water": 2.655661277913587,
+        "feasible": false,
+        "h_statement_codes": [
+          "H302",
+          "H312",
+          "H314",
+          "H317",
+          "H411"
+        ],
+        "predicted_tg_ml_c": 99.67876988426288,
+        "predicted_tg_van_krevelen_c": 251.52674265447737
+      },
+      {
+        "ad_tanimoto": 0.25,
+        "blocking_constraints": [
+          "GHS_H317_SKIN_SENSITISER",
+          "AD_TANIMOTO_0.2500_BELOW_MIN_0.3"
+        ],
+        "candidate": "m-XDA",
+        "cas": "1477-55-0",
+        "chi_water": 3.037539456095518,
+        "feasible": false,
+        "h_statement_codes": [
+          "H302",
+          "H311",
+          "H314",
+          "H317",
+          "H334",
+          "H335",
+          "H411"
+        ],
+        "predicted_tg_ml_c": 104.33531743154543,
+        "predicted_tg_van_krevelen_c": 251.8610330726768
+      }
+    ],
+    "feasible_set": [],
+    "n_candidates": 5,
+    "n_feasible": 0,
+    "verdict": "EMPTY_FEASIBLE_SET"
+  },
+  "rn01_correction_status": {
+    "action_taken": "USED_ORIGINAL_GHS_KPI_WITH_EXPLICIT_CAVEAT",
+    "campaign_item": "R-N01",
+    "caveat": "The GHS KPI used here has a documented CID-attribution defect for IPDA and m-XDA (2/5 cards cite the wrong chemical in one of three regulatory_sources entries); a superseding hazard-card receipt (R-N01 fires 2-3) is pending. Until it lands, the H-statement rows for IPDA and m-XDA carry a data-integrity caveat. The H-codes also cite ECHA CLP harmonised classification entries (e.g. IPDA Index 612-067-00-9) that are unaffected by the CID defect, but this demo makes no independent toxicological claim.",
+    "fire1_audit_finding": {
+      "mismatched_cid_candidates": [
+        "IPDA",
+        "m-XDA"
+      ],
+      "receipt_rel_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+      "receipt_sha256": "39a84e3a0c17c6ca62982853ce0a833cb6edcfc7ba3d7a82dd2bc04f9d5178c0",
+      "summary": "R-N01 fire 1 (2026-08-03) independently confirmed that the GHS KPI's 'PubChem CID GHS Classifications section' citations for IPDA (claimed CID 6944, actually 1-methyl-2-nitrobenzene; correct CID 17857) and m-XDA (claimed CID 15642, actually diethoxyphosphorylbenzene; correct CID 15133) resolve to chemically unrelated substances"
+    },
+    "scan_rule": "a *.dsse.json file under the R-N01 repair directory whose filename contains 'supersed', or contains both 'hazard' and 'receipt', is treated as a superseding hazard-card receipt; if one exists this demo refuses to use the original KPI",
+    "scanned_dsse_receipts": [
+      {
+        "rel_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+        "sha256": "39a84e3a0c17c6ca62982853ce0a833cb6edcfc7ba3d7a82dd2bc04f9d5178c0",
+        "superseding": false
+      }
+    ],
+    "superseding_hazard_receipt_found": false,
+    "verdict_robustness": "The EMPTY_FEASIBLE_SET verdict is robust for 4/5 candidates independently of the pending correction: DDS, DETA, TETA and m-XDA fail the AD-Tanimoto >= 0.30 gate on the unaffected design-card KPI (and DDS additionally carries H351 with a correctly-attributed CID). IPDA passes AD and chi_water, so IPDA's exclusion rests solely on H317 from the caveated GHS KPI; IPDA's verdict is therefore PROVISIONAL pending the R-N01 superseding receipt, and this demo must be re-derived when it lands (the supersession scan above enforces that re-derivation)."
+  },
+  "schema": "amphora.solver-lab.demo-p3-hazard-constrained-hardener-selection.diagnostic.v1",
+  "sources": [
+    {
+      "logical_id": "ghs_clp_hazard_prescreen_kpi",
+      "rel_path": "amphora-sourceability-ehs/evidence/phase0/kpis/ghs-clp-public-hazard-prescreen-5-canonical-epoxy-amines-kpi.v1.json",
+      "sha256": "86528e37afc02d4010fac0051b256078222803ee194fb9d1131caca5a035f102"
+    },
+    {
+      "logical_id": "coating_candidate_design_card_kpi",
+      "rel_path": "amphora-molecule-property/evidence/phase0/kpis/coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+      "sha256": "e3e9c9fa8b4ebf06cabb887a71647c03180becd6239b16dd0e7f7909de0d1e9f"
+    },
+    {
+      "logical_id": "rn01_fire1_cid_attribution_audit_receipt",
+      "rel_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+      "sha256": "39a84e3a0c17c6ca62982853ce0a833cb6edcfc7ba3d7a82dd2bc04f9d5178c0"
+    }
+  ]
+}

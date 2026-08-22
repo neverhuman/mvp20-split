@@ -1,0 +1,174 @@
+{
+  "campaign_item_id": "W-VISC1",
+  "central_density_fit_result": {
+    "fixed_einstein_intrinsic_viscosity_2p5": {
+      "eta_liquid_fit_pa_s": 7.316387,
+      "intrinsic_viscosity_fixed": 2.5,
+      "phi_max_fit": 0.089532,
+      "phi_max_pegged_at_search_lower_bound": true,
+      "predicted_eta_pa_s": [
+        20.5554,
+        11.2125,
+        9.7098,
+        8.9232,
+        8.4083
+      ],
+      "r_squared": 0.796945
+    },
+    "free_intrinsic_viscosity_3param": {
+      "eta_liquid_fit_pa_s": 0.929077,
+      "intrinsic_viscosity_fit": 34.2402,
+      "phi_max_fit": 0.95,
+      "phi_max_pegged_at_search_upper_bound": true,
+      "predicted_eta_pa_s": [
+        22.4834,
+        14.1197,
+        9.0634,
+        5.9373,
+        3.9637
+      ],
+      "r_squared": 0.997599
+    },
+    "phi_values": [
+      0.088646,
+      0.076239,
+      0.064249,
+      0.052655,
+      0.041439
+    ]
+  },
+  "claim_under_attack": "The Krieger-Dougherty implementation cannot be benchmarked against any rights-clean dataset currently reachable, and that is a signed finding rather than an open question.",
+  "density_assumption": {
+    "disclosure": "wt.%-to-phi conversion requires a particle/matrix density pair that Finke et al. 2021 does not itself publish; this is an added external assumption, not extracted from the CC-BY source, and its impact is sensitivity-tested below.",
+    "rho_matrix_araldite_ly556_g_cm3": {
+      "central": 1.175,
+      "range": [
+        1.15,
+        1.2
+      ],
+      "source": "Huntsman Araldite LY 556 technical data sheet (density @25C), not reported in the source paper"
+    },
+    "rho_particle_boehmite_g_cm3": {
+      "central": 3.02,
+      "range": [
+        3.01,
+        3.05
+      ],
+      "source": "mineralogical reference values for boehmite (gamma-AlOOH), not reported in the source paper"
+    }
+  },
+  "density_sensitivity_free_intrinsic_fit": {
+    "central": {
+      "eta_liquid_fit_pa_s": 0.929077,
+      "intrinsic_viscosity_fit": 34.2402,
+      "phi_max_fit": 0.95,
+      "phi_max_pegged_at_search_upper_bound": true,
+      "predicted_eta_pa_s": [
+        22.4834,
+        14.1197,
+        9.0634,
+        5.9373,
+        3.9637
+      ],
+      "r_squared": 0.997599
+    },
+    "high_phi_bracket": {
+      "eta_liquid_fit_pa_s": 0.927181,
+      "intrinsic_viscosity_fit": 33.4721,
+      "phi_max_fit": 0.95,
+      "phi_max_pegged_at_search_upper_bound": true,
+      "predicted_eta_pa_s": [
+        22.4828,
+        14.1209,
+        9.064,
+        5.9368,
+        3.9625
+      ],
+      "r_squared": 0.997607
+    },
+    "low_phi_bracket": {
+      "eta_liquid_fit_pa_s": 0.931461,
+      "intrinsic_viscosity_fit": 35.2576,
+      "phi_max_fit": 0.95,
+      "phi_max_pegged_at_search_upper_bound": true,
+      "predicted_eta_pa_s": [
+        22.4841,
+        14.1182,
+        9.0627,
+        5.9378,
+        3.9653
+      ],
+      "r_squared": 0.997588
+    }
+  },
+  "digitized_data_points_excluded": {
+    "reason": "bottom 4 of 9 curves cluster within ~1 Pa.s of one another at shear rate=10 1/s on a log-scale figure; pixel-centroid digitization could not separate them reliably from a single JPEG raster. Excluded rather than guessed.",
+    "wt_pct": [
+      7.5,
+      5.0,
+      2.5,
+      1.0
+    ]
+  },
+  "digitized_data_points_used": [
+    {
+      "digitization_note": "unambiguous, isolated marker",
+      "eta_pa_s": 22.4,
+      "wt_pct": 20.0
+    },
+    {
+      "digitization_note": "unambiguous, isolated marker",
+      "eta_pa_s": 14.1,
+      "wt_pct": 17.5
+    },
+    {
+      "digitization_note": "unambiguous, isolated marker",
+      "eta_pa_s": 9.55,
+      "wt_pct": 15.0
+    },
+    {
+      "digitization_note": "unambiguous, isolated marker",
+      "eta_pa_s": 5.92,
+      "wt_pct": 12.5
+    },
+    {
+      "digitization_note": "unambiguous, isolated marker",
+      "eta_pa_s": 3.42,
+      "wt_pct": 10.0
+    }
+  ],
+  "does_not_close": "Does not modify the C9 fire 1 HERSCHEL_BULKLEY receipt or KPI. Does not modify the C9 fire 2 Reynolds-2024 BLOCKED_RIGHTS receipt or verdict -- that finding is independently still true. Does not promote any KPI, flip phase, or touch the master manifest. Does not extract or reproduce any data from Reynolds et al. 2024. Does not claim KRIEGER_DOUGHERTY is validated; the achieved fit is explicitly flagged as underpowered.",
+  "fig8_source_image_sha256": "e0973c5b7b6a985e0243987529820cd139a8e56f7d2353a27d4e987eaff2120a",
+  "interpretation": "A genuinely rights-clean (CC BY 4.0), on-scope (real epoxy resin + rigid filler) dataset IS reachable and a KRIEGER_DOUGHERTY benchmark WAS run against it end-to-end -- this refutes the literal claim that no benchmark against a rights-clean dataset is possible. However the benchmark itself is weak: at the module's own standard Einstein intrinsic viscosity (2.5, matching the module's test fixture default), the fit is poor (R^2 ~= 0.80) and phi_max is pushed to the search floor (barely above the observed phi range, i.e. an uninformative fit). Freeing the intrinsic viscosity produces an excellent fit (R^2 ~= 0.998) but only at an intrinsic viscosity ~14x Einstein's spherical value, with phi_max simultaneously pegged at the opposite (upper) search bound -- a classic near-dilute identifiability failure: every tested loading (phi ~= 0.041-0.089) sits far below any physically plausible phi_max (0.5-0.74), so KRIEGER_DOUGHERTY's defining near-packing divergence is never actually probed by this dataset, and phi_max/intrinsic_viscosity cannot be separately determined from it. This non-identifiability is stable across the density-assumption sensitivity bracket (both brackets peg phi_max at the same search bound with a similarly large intrinsic viscosity), so it is not an artifact of the density assumption. Reynolds et al. 2024 (C9 fire 2) remains separately and unchangedly CC BY-NC-ND rights-blocked -- this fire does not touch that finding.",
+  "refutation_criterion": "The claim would be REFUTED (shown false) by locating a rights-clean (CC BY / CC0), on-scope, reachable dataset with >=4 solids-loading points and successfully running the module's exact KRIEGER_DOUGHERTY equation against it end-to-end (fit + goodness-of-fit reported). It would SURVIVE only if every reachable candidate remained rights-blocked, access-blocked, or contentless.",
+  "schema": "amphora.viscosity-score.krieger-dougherty-ccby-reachability-probe-diagnostic.v1",
+  "shear_rate_choice": {
+    "rationale": "lowest shear rate tested (leftmost point on each curve); best available proxy for KRIEGER_DOUGHERTY's implicit zero-shear/Newtonian assumption, though the source's own Fig. 8 confirms the system is measurably shear-thinning even at this rate (viscosity still falling with increasing shear rate out to 1000 1/s for every loading) -- so this is a proxy, not an exact zero-shear value, and is disclosed as such.",
+    "value_s_inv": 10
+  },
+  "sources_checked_this_fire": [
+    {
+      "doi_corrected": "10.1039/c5ra06914a",
+      "method": "Unpaywall API (api.unpaywall.org/v2/10.1039/c5ra06914a)",
+      "note": "C9 fire 2 left this DOI unresolved (queried the wrong DOI guess and hit HTTP 403). This fire re-identified the correct DOI via Crossref bibliographic search and queried Unpaywall directly.",
+      "result": "is_oa=false, oa_status=closed, oa_locations=[] (no repository or gold-OA copy). NOT a CC-BY article despite RSC Advances' partial gold-OA program -- this specific article is closed. Confirms and closes C9 fire 2's open lead; CLOSED, unusable.",
+      "source": "RSC Advances 5(62):50073-50081 (Guo, Zhu, Li, Huang, Zhang, Lu, Sun, Wong 2015, 'One-pot synthesis of bimodal silica nanospheres and their effects on the rheological and thermal-mechanical properties of silica-epoxy composites')"
+    },
+    {
+      "method": "Unpaywall API (api.unpaywall.org/v2/10.3139/217.3338)",
+      "result": "is_oa=false, oa_status=closed, best_oa_location=null. Confirms and closes C9 fire 2's open lead (previously left as 'requires human access'); CLOSED, unusable.",
+      "source": "De Gruyter 10.3139/217.3338 ('Influence of Glass Microsphere Filler on the Rheological Behavior of an Epoxy Resin', Materials Testing)"
+    },
+    {
+      "doi": "10.3390/ma14112752",
+      "license_finding_verbatim": "\u00a9 2021 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/licenses/by/4.0/).",
+      "method": "WebSearch located candidate; WebFetch full text via PMC mirror; direct image fetch of the CC-BY-licensed Fig. 8 raster from cdn.ncbi.nlm.nih.gov for digitization.",
+      "pmcid": "PMC8196971",
+      "result": "GENUINE ON-SCOPE, RIGHTS-CLEAN (CC BY 4.0, no NC/ND clause) HIT. This is the first reachable candidate found across C9 fire 1, C9 fire 2, and this fire that is BOTH an actual epoxy-resin system (not a model UV-cure resin) AND unambiguously permits derivative/commercial use. Fig. 8 plots apparent suspension viscosity vs. shear rate (10-1000 1/s) at 9 solids loadings (1.0-20 wt.%), T=40C. No raw numeric table is given anywhere in the article -- values exist only as plotted points on a log-log figure, requiring digitization (see digitization_method below).",
+      "source": "Finke, B.; Sangros Gimenez, C.; Kwade, A.; Schilde, C. (2021), 'Viscosity Model for Nanoparticulate Suspensions Based on Surface Interactions', Materials (Basel) 14(11):2752",
+      "system": "Boehmite (AlO(OH)) nanoparticles (Disperal HP 14, SASOL), x50,3=75nm, dispersed 1-20 wt.% in an uncured epoxy resin (Araldite LY 556, Huntsman) -- an on-scope DGEBA-type epoxy resin used with amine hardeners in coating formulations."
+    }
+  ],
+  "verdict": "CLAIM_REFUTED",
+  "verdict_scope": "Refutes only the narrow 'cannot be benchmarked against any rights-clean dataset' claim. Does NOT establish KRIEGER_DOUGHERTY as validated, benchmarked-well, or Phase-0-ready: the achieved benchmark is scientifically underpowered (dilute-regime non-identifiability) and should not be read as confirming or denying the equation's correctness near phi_max."
+}

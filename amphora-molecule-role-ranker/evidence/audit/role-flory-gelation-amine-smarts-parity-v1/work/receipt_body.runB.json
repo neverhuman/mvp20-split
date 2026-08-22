@@ -1,0 +1,205 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "",
+  "claim_locks": {
+    "measured_only_lock_preserved": true,
+    "no_objective_emitted": true,
+    "promotes_authority": false
+  },
+  "claim_under_attack": {
+    "claim_text": "\"Functionality is RE-DERIVED independently from SMILES with pinned RDKit SMARTS and cross-checked byte-for-byte against the fixture's stored facts (anti-circularity).\" (role-flory-gelation-v1/run_flory_gel.py docstring), gating a published verdict of HYPOTHESIS_CORROBORATED with functionality_rederivation.agreement_rate=1.0 and adequacy_vs_independent_identity.agreement_rate=1.0 on n=24.",
+    "refutation_criterion": "The local SMARTS-derived g (reactive amine-H count), or the resulting flory_grade computed by the target script's own flory_pair(STD_EPOXY_F=2, g) hardener-axis formula, disagrees with live production amphora_rdkit_ffi::molecule_facts ground truth for any real, named, cited molecule.",
+    "target_artifact": "amphora-molecule-role-ranker/benchmarks/role-flory-gelation-v1/replay_receipt.v1.dsse.json",
+    "target_artifact_sha256": "906fdb138f053c417b00a5bf4b02ee85f136cd411539a27f5b18baa767af0f8e",
+    "target_diagnostic_sha256": "9f6557d6c01039af30f4acd9b24501f35808b4448119aa12e7d2c26465e49b41",
+    "target_script_sha256": "c3c4e0296996e8bff3c5f391d8fb7e16ba1dc4f2a00ad7b06c275d3ef0000c7c"
+  },
+  "closes": [],
+  "date": "2026-08-17",
+  "does_not_close": [
+    "role-flory-gelation-v1's fixture-internal 24/24 agreement (unaffected; this attack used molecules outside that fixture)",
+    "the Flory-Stockmayer physical theory itself (Flory 1941, Stockmayer 1943) -- the defect is in this module's local amine-H SMARTS, not the gelation criterion",
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key present and used to sign this receipt, but does not constitute a human Phase-1 evaluation)",
+    "MANIFEST_UNCHANGED (master receipts manifest not edited)"
+  ],
+  "fire_id": "20260817T220001-4037107-75ade1628ef3",
+  "flips_scientific_readiness": false,
+  "generated_on_host": "xbabe2",
+  "human_review_performed": false,
+  "interpretation": "The refutation criterion is MET: on 3 of 6 real, named guanidine/amidine probes (guanidine, biguanide, n-methylguanidine), role-flory-gelation-v1's local SMARTS-based functionality re-derivation would report a 'network_former' Flory grade that directly contradicts the module's own live, freshly-reconfirmed production ground truth. The published verdict HYPOTHESIS_CORROBORATED and its rederivation.agreement_rate=1.0 are true ONLY of the 24-record fixture that happens to omit this chemotype; they do not establish that the re-derivation is 'anti-circular' or trustworthy outside that fixture, which is exactly the claim the docstring makes. This does not touch the flory-gelation fixture's own 24 scored records (all still score correctly) or the anchor cross-check (p_c=1/sqrt(3) still holds); it refutes the generalization claim, not the fixture-internal arithmetic.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-role-ranker",
+  "objective": "ROTATION-mode falsification attack on the strongest never-before-ledger-attacked standing artifact in amphora-molecule-role-ranker: role-flory-gelation-v1's Flory-Stockmayer network-adequacy sub-grade. Tests its 'anti-circularity' claim -- that its local Python SMARTS-based functionality re-derivation is a faithful stand-in for the module's own real production RDKit FFI ground truth -- against the guanidine/amidine N-H chemotype, already twice refuted against sibling artifacts in this module but never tested against this one because the flory-gelation fixture's 24 records contain zero guanidine-class molecules.",
+  "organizational_independence_asserted": false,
+  "phase0_gap_ledger": {
+    "MANIFEST_UNCHANGED": "master receipts manifest (66 receipts / 11 modules) NOT edited; requires human dual-identity Phase-0 ceremony keys.",
+    "SCOPE": "refutes the generalization/anti-circularity claim of role-flory-gelation-v1's re-derivation methodology outside its own fixture; does not touch the fixture-internal 24/24 agreement or the Flory-Stockmayer physical theory itself.",
+    "TARGET_UNCHANGED": "role-flory-gelation-v1/run_flory_gel.py, its diagnostic, and its replay_receipt.v1.dsse.json are left byte-intact; this is a new, separate artifact, not an edit or supersession."
+  },
+  "primary_references": [
+    "Flory, P.J. (1941) J. Am. Chem. Soc. 63(11):3083-3090. doi:10.1021/ja01856a061",
+    "Stockmayer, W.H. (1943) J. Chem. Phys. 11(2):45-55. doi:10.1063/1.1723803"
+  ],
+  "probes": [
+    {
+      "citation": "1,3-diphenylguanidine (DPG, CAS 102-06-7). Same molecule as role-guanidine-accelerator-domain-probe-v1's already-ledgered probe.",
+      "flory_grade_flip": false,
+      "g_amineH_mismatch": true,
+      "id": "dpg-diphenylguanidine-accelerator",
+      "production_ground_truth": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "non_network_former",
+        "g_amineH": 0,
+        "source": "live amphora_rdkit_ffi::molecule_facts (this fire, pinned RDKit 2026.03.2)"
+      },
+      "role_flory_gelation_v1_local_rederivation": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "non_network_former",
+        "g_amineH": 2,
+        "source": "role-flory-gelation-v1/run_flory_gel.py derive_functionality() (imported unmodified from the target script, this fire)"
+      },
+      "smiles": "c1ccccc1NC(=N)Nc2ccccc2"
+    },
+    {
+      "citation": "N,N'-di-o-tolylguanidine (DOTG, CAS 97-39-2). Same molecule as role-guanidine-accelerator-domain-probe-v1's already-ledgered probe.",
+      "flory_grade_flip": false,
+      "g_amineH_mismatch": true,
+      "id": "dotg-di-o-tolylguanidine-accelerator",
+      "production_ground_truth": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "non_network_former",
+        "g_amineH": 0,
+        "source": "live amphora_rdkit_ffi::molecule_facts (this fire, pinned RDKit 2026.03.2)"
+      },
+      "role_flory_gelation_v1_local_rederivation": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "non_network_former",
+        "g_amineH": 2,
+        "source": "role-flory-gelation-v1/run_flory_gel.py derive_functionality() (imported unmodified from the target script, this fire)"
+      },
+      "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C"
+    },
+    {
+      "citation": "Guanidine (CAS 113-00-8), the parent Y-delocalized structure; pinned regression control in amphora-rdkit-ffi::pinned_native_backend_excludes_guanidine_class_amine_hydrogens.",
+      "flory_grade_flip": true,
+      "g_amineH_mismatch": true,
+      "id": "guanidine",
+      "production_ground_truth": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "non_network_former",
+        "g_amineH": 0,
+        "source": "live amphora_rdkit_ffi::molecule_facts (this fire, pinned RDKit 2026.03.2)"
+      },
+      "role_flory_gelation_v1_local_rederivation": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "network_former",
+        "g_amineH": 4,
+        "source": "role-flory-gelation-v1/run_flory_gel.py derive_functionality() (imported unmodified from the target script, this fire)"
+      },
+      "smiles": "NC(=N)N"
+    },
+    {
+      "citation": "Biguanide (CAS 56-03-1), same pinned regression control set.",
+      "flory_grade_flip": true,
+      "g_amineH_mismatch": true,
+      "id": "biguanide",
+      "production_ground_truth": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "non_network_former",
+        "g_amineH": 0,
+        "source": "live amphora_rdkit_ffi::molecule_facts (this fire, pinned RDKit 2026.03.2)"
+      },
+      "role_flory_gelation_v1_local_rederivation": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "network_former",
+        "g_amineH": 5,
+        "source": "role-flory-gelation-v1/run_flory_gel.py derive_functionality() (imported unmodified from the target script, this fire)"
+      },
+      "smiles": "NC(=N)NC(=N)N"
+    },
+    {
+      "citation": "Dicyandiamide / cyanoguanidine (DICY, CAS 461-58-5), the sole named carve-out (W-FFI2, WO1993010168A1): a real functionality-4 stoichiometric hardener whose cyanamide-substituted imine nitrogen breaks the symmetric resonance the guanidine exclusion relies on.",
+      "flory_grade_flip": false,
+      "g_amineH_mismatch": false,
+      "id": "dicyandiamide-narrow-exemption",
+      "production_ground_truth": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "network_former",
+        "g_amineH": 4,
+        "source": "live amphora_rdkit_ffi::molecule_facts (this fire, pinned RDKit 2026.03.2)"
+      },
+      "role_flory_gelation_v1_local_rederivation": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "network_former",
+        "g_amineH": 4,
+        "source": "role-flory-gelation-v1/run_flory_gel.py derive_functionality() (imported unmodified from the target script, this fire)"
+      },
+      "smiles": "NC(=NC#N)N"
+    },
+    {
+      "citation": "N-methylguanidine: adversarial narrowness control from the pinned amphora-rdkit-ffi test suite -- imine-N alkyl substituent, no nitrile, must stay excluded (reactive_amine_hydrogen_count == 0).",
+      "flory_grade_flip": true,
+      "g_amineH_mismatch": true,
+      "id": "n-methylguanidine-narrowness-control",
+      "production_ground_truth": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "non_network_former",
+        "g_amineH": 0,
+        "source": "live amphora_rdkit_ffi::molecule_facts (this fire, pinned RDKit 2026.03.2)"
+      },
+      "role_flory_gelation_v1_local_rederivation": {
+        "f_epoxy": 0,
+        "flory_grade_vs_std_epoxy": "network_former",
+        "g_amineH": 4,
+        "source": "role-flory-gelation-v1/run_flory_gel.py derive_functionality() (imported unmodified from the target script, this fire)"
+      },
+      "smiles": "CN=C(N)N"
+    }
+  ],
+  "production_ground_truth_provenance": {
+    "cross_reference": "matches amphora-rdkit-ffi/src/lib.rs pinned regression guard pinned_native_backend_excludes_guanidine_class_amine_hydrogens and pinned_native_backend_scores_dicyandiamide_functionality_four exactly (DPG=0, DOTG=0, guanidine=0, biguanide=0, DICY=4, n-methylguanidine=0), independently reconfirmed live this fire, not merely cited from the existing test file.",
+    "harness_cargo_toml_sha256": "4ffe6e6153f4056624dd6cbdb1a1d4faedf461510069cb105834f4e30c8c38d0",
+    "harness_main_rs_sha256": "ab862acc7300c172df2dddddc6b8b23300f48594191203397f03fcbd8a4eacc2",
+    "method": "live RDKit C++ FFI call this fire (amphora_rdkit_ffi::molecule_facts, pinned RDKit 2026.03.2), via a fresh harness (evidence/audit/role-flory-gelation-amine-smarts-parity-v1/harness)",
+    "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+    }
+  },
+  "promotes_authority": false,
+  "receipt_id": "role-flory-gelation-amine-smarts-parity-086fc092cc4285e29c68426d190c6229",
+  "repair_mode": false,
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "086fc092cc4285e29c68426d190c622973d7b6b0cc151acd818445cf2d2c1e0a",
+    "determinism_basis": "The live-FFI harness invokes the real, compiled amphora-rdkit-ffi backend (pinned RDKit 2026.03.2, exact_version_match confirmed) directly; the local re-derivation imports role-flory-gelation-v1's own derive_functionality/flory_pair functions unmodified via importlib, so there is no hand-transcription of the target's SMARTS or gel-criterion arithmetic anywhere in this attack.",
+    "diagnostic_builder_sha256": "d50dbdba3bd89db24ccb360878401b5b6b271ff0cd8e8626fe5f73d852508098",
+    "harness_cargo_toml_sha256": "4ffe6e6153f4056624dd6cbdb1a1d4faedf461510069cb105834f4e30c8c38d0",
+    "harness_main_rs_sha256": "ab862acc7300c172df2dddddc6b8b23300f48594191203397f03fcbd8a4eacc2",
+    "live_ffi_ground_truth_sha256": "eb1a8079d180d7a5f6919b1103b43e047a1292efc8b43909da24a75608b871b4",
+    "runB_diagnostic_sha256": "086fc092cc4285e29c68426d190c622973d7b6b0cc151acd818445cf2d2c1e0a",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "run_type": "FALSIFICATION_ATTACK",
+  "schema": "amphora.molecule-role-ranker.role-flory-gelation-amine-smarts-parity-v1.receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY role-flory-gelation-amine-smarts-parity-v1 falsification receipt"
+  },
+  "summary": {
+    "finding": "5/6 probes: role-flory-gelation-v1's local Python SMARTS re-derivation disagrees with live production RDKit FFI ground truth on the reactive-amine-hydrogen count. The local SMARTS `!$(N=*)` excludes only the single nitrogen directly carrying the formal C=N double bond, not the broader Y-delocalized-resonance guanidine/amidine exclusion the real production backend implements after the R-N02/W-FFI2 repairs. 3/6 probes additionally FLIP the downstream Flory network-adequacy grade: guanidine, biguanide, and n-methylguanidine (the pinned production test suite's own adversarial narrowness control) are graded 'network_former' by the local re-derivation when live production ground truth (reactive_amine_hydrogen_count=0 for all three) says they cannot react with an epoxide at all, so the correct grade is 'non_network_former'. The flory-gelation fixture's 24 single-role records contain zero guanidine-class molecules, so this divergence between the module's own claimed 'anti-circular' re-derivation and its own real production ground truth has never been exercised, despite the module already knowing (from two prior REFUTED ledger entries) that this exact chemotype breaks naive amine-H SMARTS.",
+    "n_flory_grade_flip": 3,
+    "n_g_amineH_mismatch": 5,
+    "n_probes": 6
+  },
+  "verdict": "CLAIM_REFUTED"
+}

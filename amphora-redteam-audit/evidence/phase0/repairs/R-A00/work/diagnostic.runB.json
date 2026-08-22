@@ -1,0 +1,521 @@
+{
+  "claim_under_attack": {
+    "claim_text": "Every module with >=1 REFUTED ledger verdict has a RETRACTION-INDEX.md in evidence/phase0/kpis/ whose rows cite resolving receipt paths that exist.",
+    "receipt_path": "logs/falsification-ledger.jsonl"
+  },
+  "coverage": {
+    "amphora-barrier-corrosion-score": {
+      "dangling_paths": [],
+      "index_path": "amphora-barrier-corrosion-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "1dfa4408a219626d49b89939d32ecd22e296c8172ee2eb541ca76c857638f241",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 2,
+      "n_rows": 1,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "benchmarks/three-series-barrier-ranking-v1/three-series-barrier-ranking-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "87748769549f7d1c93f184ca790ba3d4b2c9060c22b755d45542a415d39f11dd"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-B02/done/barrier-index-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "8ffcd5595bbf0215c8c061b8c7be80fb620d59105926288817b6cb6243e6670f"
+        }
+      ]
+    },
+    "amphora-cure-potlife-gate": {
+      "dangling_paths": [],
+      "index_path": "amphora-cure-potlife-gate/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "63d8f324d6f4465eb439e1fca4d60f00bb645361ae3fd694f111abf4680873b3",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 5,
+      "n_rows": 2,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "docs/mission.md",
+          "resolved": true,
+          "resolved_sha256": "4e4f72c38097eeec63bb9c6de003bf2df7c6d4084d8caf690d508805060c57bc"
+        },
+        {
+          "cited_path": "evidence/audit/potlife-kpi-envelope-disclosure-gap-v1/potlife-kpi-envelope-disclosure-gap-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "59574ee067c9263e290383b67261a46a5d103360c15c065faf9d8c75ba457e9a"
+        },
+        {
+          "cited_path": "evidence/audit/potlife-q10-heuristic-ablation-v1/potlife-q10-heuristic-ablation-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "35631dd71698e754e7973736fe5046c39102d01c6043c737274c93691540f549"
+        },
+        {
+          "cited_path": "evidence/audit/rights-integrity-contradiction-v1/rights-integrity-contradiction-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "a3d24de9c42b19e69e1959790bfc2033b98e7d8aaa555bd2edee55726f567bf5"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "2459f265c6b63114a6b372394568fe9c5dcec51b2aff33be1e4f852321cc9d87"
+        }
+      ]
+    },
+    "amphora-design-rule-score": {
+      "dangling_paths": [],
+      "index_path": "amphora-design-rule-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "b55c13904cb76ad43c8c17ea5c270f62cc8189b0e11f0bb3a5346d0cab26d9d7",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 2,
+      "n_rows": 1,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json",
+          "resolved": true,
+          "resolved_sha256": "ec6ab882c45dabbd27abef5d6c40a08a39959d92cc7f10fc8bd6a140dd7390a5"
+        },
+        {
+          "cited_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json",
+          "resolved": true,
+          "resolved_sha256": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd"
+        }
+      ]
+    },
+    "amphora-ingredient-library": {
+      "dangling_paths": [],
+      "index_path": "amphora-ingredient-library/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "b304550f66bd8b5419ad040e4e5339bf727f774bcff0dea7f11af5ed3bff1b3b",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 3,
+      "n_rows": 2,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "evidence/audit/eew-solid-band-mislabel-gap-v1/eew-solid-band-mislabel-gap-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "31e7346be117f7152198755df3203717fdef41e3a69767ae94c065b9759231bc"
+        },
+        {
+          "cited_path": "evidence/audit/phase0-mission-evidence-parity-v1/phase0-mission-evidence-parity-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "f15a15693e51dca8f707e77671c97af3f0d7aaf7ede43f1f431854ea127e49d2"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "92406f0b563576cb8ceb9a6ccdee81ca09a25a79c832029516fbab73b2dece56"
+        }
+      ]
+    },
+    "amphora-ip-fto-guard": {
+      "dangling_paths": [],
+      "index_path": "amphora-ip-fto-guard/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "3860fa055385414c6de6c629e9d872efb7ab318a2de9ffbf7a610c47d188fc65",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 5,
+      "n_rows": 4,
+      "n_rows_with_no_receipt_path": 1,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "7d17fff3afe2d75e58a42af7f4b659c93fde3b3358b44ee7ccd445c3a190f6ae"
+        },
+        {
+          "cited_path": "amphora-ip-fto-guard/evidence/audit/claim-chart-provenance-v1/claim-chart-provenance-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "099d682faf024dcfaea27518de0b32adda3a6aed61ee6d711795fb18fb664c5e"
+        },
+        {
+          "cited_path": "amphora-ip-fto-guard/evidence/audit/counsel-assertion-detection-completeness-v1/counsel-assertion-detection-completeness-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "53624d327d48bb90812c90352c933bab46740be31c78be439c1f4d93284cecea"
+        },
+        {
+          "cited_path": "amphora-ip-fto-guard/evidence/audit/metric-schema-parity-v1/metric-schema-parity-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "5c7ac925944df036bb2154c7e4573dc0b752cb3a1bc0d3df022d3fd06285da5f"
+        },
+        {
+          "cited_path": "amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "7fccb21d3676e1b342f23475dc549db710da71f8bf0c53543d23add81603a1b5"
+        }
+      ]
+    },
+    "amphora-known-answer-benchmarks": {
+      "dangling_paths": [],
+      "index_path": "amphora-known-answer-benchmarks/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "0d0a559ae6e7718ae3b718e69007750d17adcec0343f33865121f688d117d7cb",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 2,
+      "n_rows": 1,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "amphora-known-answer-benchmarks/evidence/audit/arith-volume-solids-mass-basis-conflation-v1/receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "86fde264ea67cced89357c9aa086403e90e693a85ce45bb14a17ee0a6578a2ee"
+        },
+        {
+          "cited_path": "amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/done/R-A05.done-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "6733e5042489e57fd3ad7b1e83ec2774952dbfffadd0a031f007f81b1f408b00"
+        }
+      ]
+    },
+    "amphora-molecule-generator": {
+      "dangling_paths": [],
+      "index_path": "amphora-molecule-generator/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "383620a169c9af303df33f79c565972f62507dcf794cd3c3422184ab4b6795a6",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 4,
+      "n_rows": 3,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1/molgen-grammar-yield-ci-inadmissibility-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "2230719ec7c5a208fbcc474fdaa663132fbe2db17455043e57db3d3faf1a7142"
+        },
+        {
+          "cited_path": "amphora-molecule-generator/evidence/audit/molgen-hardener-functionality-mislabel-v1/molgen-hardener-functionality-mislabel-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "fb200b132fd908d0a87b14db72053464754692a7e32ff3314ba913310a6151dc"
+        },
+        {
+          "cited_path": "amphora-molecule-generator/evidence/audit/molgen-scaffold-diversity-homolog-fingerprint-saturation-v1/molgen-scaffold-diversity-homolog-fingerprint-saturation-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "30d24304277874a331a104025f9e5fc168967240ab000dd775e8940041652466"
+        },
+        {
+          "cited_path": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "89fc28d21f7224743a6e0a1d2a0750055058e6167e038eee7a65b90145ea4b52"
+        }
+      ]
+    },
+    "amphora-molecule-novelty": {
+      "dangling_paths": [],
+      "index_path": "amphora-molecule-novelty/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "c626ce9d82e3f9a17849860c7e252c26da43cf0b98e59c2bca48edfb3336f435",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 3,
+      "n_rows": 2,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "evidence/audit/candidate-structure-identity-audit-v1/candidate-structure-identity-audit-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "ea2e3a493d8f74c1c21844084f1c42a4a8e943a7919ad39983001ff0fc9ec0c4"
+        },
+        {
+          "cited_path": "evidence/audit/corpus-duplicate-exchangeability-audit-v1/corpus-duplicate-exchangeability-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "b727235c43f179f63617bd8f7fde92c5fb10900b25b5683b8311f81a816d6460"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "72496a149815075618fd22b4e6fc60cae4953d81f7100a67b394b01b59583198"
+        }
+      ]
+    },
+    "amphora-molecule-property": {
+      "dangling_paths": [],
+      "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "9f5e5ce3a8995bfba6afccf6093ba786679575c9cbcdedd2f4ebad22412fc77c",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 10,
+      "n_rows": 26,
+      "n_rows_with_no_receipt_path": 17,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json",
+          "resolved": true,
+          "resolved_sha256": "2c57343a35c892c50891ecf91914996cf5707e99cce9c48e2cf11e214a4da190"
+        },
+        {
+          "cited_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+          "resolved": true,
+          "resolved_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7"
+        },
+        {
+          "cited_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+          "resolved": true,
+          "resolved_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+        },
+        {
+          "cited_path": "amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "59c447c077a069c18a68fede5308d44c2e52dbc20ba4ba3cc4754f17ac3a4701"
+        },
+        {
+          "cited_path": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+        },
+        {
+          "cited_path": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "24bc32043db26138d618746912f540b32bc6fbe13074892006d11803388f904c"
+        },
+        {
+          "cited_path": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+        },
+        {
+          "cited_path": "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "bdd71b4044c6f4975e8fa6c9754251567c9f394264a24a1880d40065186737f3"
+        },
+        {
+          "cited_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "2edb3eab0bdec5447eed48753c4f202e7b3c8492e218172bd1aec7bce53eb1a8"
+        },
+        {
+          "cited_path": "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "07e00ec5f7bd9a172ac4da3d26e239d8699045d04a3eff4806434c779b022fbe"
+        }
+      ]
+    },
+    "amphora-molecule-role-ranker": {
+      "dangling_paths": [],
+      "index_path": "amphora-molecule-role-ranker/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "c71759a62d198df262977a03b394336ced82a5b6eeba43a5ffb87e1e352f8993",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 5,
+      "n_rows": 4,
+      "n_rows_with_no_receipt_path": 1,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "bdd71b4044c6f4975e8fa6c9754251567c9f394264a24a1880d40065186737f3"
+        },
+        {
+          "cited_path": "amphora-molecule-role-ranker/benchmarks/role-guanidine-accelerator-domain-probe-v1/replay_receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "414a68af76b1db0c658b1d08e757d187122f81874ae2d4612f96808340904099"
+        },
+        {
+          "cited_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "a0a7138cb001be6e896b18c7874ae4060f33bb32369fdb272971fd88f04ef7c9"
+        },
+        {
+          "cited_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "2edb3eab0bdec5447eed48753c4f202e7b3c8492e218172bd1aec7bce53eb1a8"
+        },
+        {
+          "cited_path": "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "07e00ec5f7bd9a172ac4da3d26e239d8699045d04a3eff4806434c779b022fbe"
+        }
+      ]
+    },
+    "amphora-public-corrosion-benchmark": {
+      "dangling_paths": [],
+      "index_path": "amphora-public-corrosion-benchmark/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "af7e1d3e6381d5f5c9a868c4ef0b0dff5af43c1f365e3edb091344aac51f0a4b",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 7,
+      "n_rows": 4,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "evidence/audit/consolidated-kpi-staleness-v1/consolidated-kpi-staleness-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "aeaa6af745a35785fbb64e6dcd0fceb0b1ce26b2a6af10c754d567a55ef1367b"
+        },
+        {
+          "cited_path": "evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "ad3589cf1254cb941c322285064d45fe411db80ad4eda32ce4a195b93c37d1a6"
+        },
+        {
+          "cited_path": "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "469c8a1a090a904d0d3f281fd290a515023d967d724147c90444d8e226255549"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "4632e46083304a444ffbda2030be0004b28698b5751a935db96b371e6960c4dd"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "67b4136a975446b4346d97fda999807209473e6d6a3ff189dd6d2f7a86b92156"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "c7dea258068a166cb208606673467bfb52254b131b15379bd7d58ec86fb3eab4"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "b1725c94c14191ff88923eba93c2455629af32e6d06d4429c4d95eedaf676f08"
+        }
+      ]
+    },
+    "amphora-solvency-score": {
+      "dangling_paths": [],
+      "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "82cb454b6276e53f643c6cdd4edf8dc5f86c97b2a256df841133152a09e2ba3c",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 4,
+      "n_rows": 8,
+      "n_rows_with_no_receipt_path": 6,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "benchmarks/flory-hansen-corrected-v1/compute_group_contribution.py",
+          "resolved": true,
+          "resolved_sha256": "4fbf6c0c5ea222b3e3c5e2be1826c642d3bfeb04650684ae0644dd8275f65fa9"
+        },
+        {
+          "cited_path": "evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "874e1dca3efb1a005e3c6fc4d2b791b6c9576c33b9886af4093fa551b7cf1b0f"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "96a83a27f7fc391661d366e3762b097723bd5d80ef6d39107824f3446d2b8a25"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-B03/done/flory-hansen-corrected-instrument-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "af90b2d53bb867fb391205695ae2b12e612920a3911e61e54339859f87359abe"
+        }
+      ]
+    },
+    "amphora-sourceability-ehs": {
+      "dangling_paths": [],
+      "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "d7f79f720417bea287f21315ca9647fd499124ad0a211838a874c62eee179d9f",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 4,
+      "n_rows": 8,
+      "n_rows_with_no_receipt_path": 1,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "6e4e0927390e6dc35fcd0eca694a6d53cdd4e756d3dee94697e3256795a12f09"
+        },
+        {
+          "cited_path": "evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json",
+          "resolved": true,
+          "resolved_sha256": "47863834bce63443243660895a1ce83739dc4b2eb3025ed74b0ff7cf2c903611"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "b738769e4e5fd2fbb7a024a46dc2d6b2db1a064b0166d8f5180b217d41230741"
+        },
+        {
+          "cited_path": "reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json",
+          "resolved": true,
+          "resolved_sha256": "1001f14d85dd064e85a3ec57e6b9e4981676720f82c6eb0435bf4695c35547a9"
+        }
+      ]
+    },
+    "amphora-tolerance-robustness": {
+      "dangling_paths": [],
+      "index_path": null,
+      "index_present": false,
+      "index_sha256": null,
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 0,
+      "n_rows": 0,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": []
+    },
+    "amphora-viscosity-score": {
+      "dangling_paths": [],
+      "index_path": "amphora-viscosity-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_present": true,
+      "index_sha256": "4ed6b2cd3e5eaa508aac3cb93be3b4a117977688afe8feaabeea45d769930c34",
+      "n_dangling": 0,
+      "n_receipt_paths_cited": 3,
+      "n_rows": 2,
+      "n_rows_with_no_receipt_path": 0,
+      "receipt_paths_cited": [
+        {
+          "cited_path": "evidence/audit/ffw-vs-ml-uncertainty-disclosure-gap-v1/ffw-vs-ml-uncertainty-disclosure-gap-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "d522b8ef86cab9d60077d7f7ff5e7254f168cbefc26b27bd34504ba784c911ca"
+        },
+        {
+          "cited_path": "evidence/audit/polyverse-rights-disclosure-gap-v1/polyverse-rights-disclosure-gap-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "f4e3afe9d95adb419eb72ec0e61ffd07cf65efe572179bce2330fb35165d1581"
+        },
+        {
+          "cited_path": "evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json",
+          "resolved": true,
+          "resolved_sha256": "2fb31dfbe96c5c8131fb317bcd6390846ee0e6c3365fa364b5e8bbe0a55a93ff"
+        }
+      ]
+    }
+  },
+  "item_id": "R-A00",
+  "ledger_snapshot": {
+    "line_count": 62,
+    "parse_errors": 0,
+    "path": "amphora-redteam-audit/evidence/phase0/repairs/R-A00/work/falsification-ledger.snapshot.jsonl",
+    "sha256": "1aee27907f5e5a2d28abe7eabbf1fac6dcf3864bd6e15ae569a8aaf734348bda"
+  },
+  "modules_with_refuted_verdict": [
+    "amphora-barrier-corrosion-score",
+    "amphora-cure-potlife-gate",
+    "amphora-design-rule-score",
+    "amphora-ingredient-library",
+    "amphora-ip-fto-guard",
+    "amphora-known-answer-benchmarks",
+    "amphora-molecule-generator",
+    "amphora-molecule-novelty",
+    "amphora-molecule-property",
+    "amphora-molecule-role-ranker",
+    "amphora-public-corrosion-benchmark",
+    "amphora-solvency-score",
+    "amphora-sourceability-ehs",
+    "amphora-tolerance-robustness",
+    "amphora-viscosity-score"
+  ],
+  "n_modules_with_refuted_verdict": 15,
+  "pre_registered_refutation_criteria": {
+    "any_dangling_receipt_path": false,
+    "any_module_missing_index": true,
+    "criterion": "CLAIM_REFUTED if any module with >=1 REFUTED ledger verdict lacks evidence/phase0/kpis/RETRACTION-INDEX.md, OR any receipt path cited in that file's refuted-by/superseded-by table columns fails to resolve to a file on disk (module-relative, falling back to repo-root for cross-module pointers). CLAIM_SURVIVED only if every such module has the index and every cited path resolves.",
+    "verdict": "CLAIM_REFUTED"
+  },
+  "schema": "amphora.redteam-audit.retraction-index-completeness-sweep.v1",
+  "summary_counts": {
+    "modules_index_missing": 1,
+    "modules_index_present": 14,
+    "modules_with_dangling_paths": 0,
+    "total_dangling_paths": 0,
+    "total_receipt_paths_cited": 59
+  }
+}

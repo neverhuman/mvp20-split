@@ -1,0 +1,118 @@
+{
+  "mission_md_current_sha256": "32a56a35f5976820440db2303d2f7b3db09c91a22c0b580d0351d9cb7909ff9d",
+  "mission_md_pre_repair_snapshot_sha256": "5de41beeb3304df7ac08c860d9ff7e058523e51c31fb02c5891025dbf74fe6a4",
+  "module_id": "amphora-solvency-score",
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "check_a_fired": true,
+      "check_a_front_matter_byte_identical_on_mutated_copy": {
+        "fm_current_sha256": "c0925cba796ff1d18435f7eef5b971a90fa8cea697aa371d77f12b2c55879421",
+        "fm_pre_sha256": "3f398d43814a393a9d3c2e21ba423a1a3218b7ccce9a45c5f0d0b0a132863905",
+        "item": "front_matter_byte_identical_to_pre_repair",
+        "method": "split docs/mission.md on '---' fences, extract front-matter JSON block, byte-compare current vs preserved R-A10/work/mission.md.pre-R-A10 snapshot",
+        "passed": false
+      },
+      "check_b_fired": true,
+      "check_b_w7_disclosure_on_mutated_copy": {
+        "failing_subchecks": [
+          "ceiling_59.9_in_prose"
+        ],
+        "item": "w7_void_disclosure_present_and_accurate",
+        "method": "count W7 REFUTATION NOTICE banners in mission.md; cross-check quoted ceiling/delta_p-max/delta_d-max/verdict against the live W7 audit receipt payload (not against the prose's own claims)",
+        "passed": false,
+        "w7_receipt_ceiling_MPa_half": 59.875,
+        "w7_receipt_fh_delta_p_max_observed": 5155043623.842392,
+        "w7_receipt_hansen_delta_d_max_observed": 5.333950808666931e+17,
+        "w7_receipt_verdict": "CLAIM_REFUTED"
+      }
+    },
+    "how_planted": "In-memory Python string.replace() on a copy of docs/mission.md's text; check_a input = plant_defect_front_matter_mismatch(mission_text); check_b input = plant_defect_w7_number(mission_text). Real docs/mission.md on disk is never modified by this diagnostic.",
+    "planted_defect": "Two independent defects planted into COPIES of the live mission.md text (never written back to disk): (A) front-matter phase field mutated from \"phase\":\"PHASE_0\" to \"phase\":\"PRE_PHASE_0_TAMPERED\", the exact defect class check_front_matter_byte_identical exists to catch; (B) the W7 disclosure's quoted physical-admissibility ceiling mutated from '59.9 MPa^0.5' to '12.3 MPa^0.5', the exact defect class check_w7_disclosure exists to catch (a silently-wrong number copied from the W7 receipt into the prose)."
+  },
+  "r_a10_done_receipt_sha256": "96a83a27f7fc391661d366e3762b097723bd5d80ef6d39107824f3446d2b8a25",
+  "real_input_all_passed": true,
+  "real_input_results": [
+    {
+      "fm_current_sha256": "3f398d43814a393a9d3c2e21ba423a1a3218b7ccce9a45c5f0d0b0a132863905",
+      "fm_pre_sha256": "3f398d43814a393a9d3c2e21ba423a1a3218b7ccce9a45c5f0d0b0a132863905",
+      "item": "front_matter_byte_identical_to_pre_repair",
+      "method": "split docs/mission.md on '---' fences, extract front-matter JSON block, byte-compare current vs preserved R-A10/work/mission.md.pre-R-A10 snapshot",
+      "passed": true
+    },
+    {
+      "front_matter": {
+        "operational_readiness": "READY",
+        "phase": "PHASE_0",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      "item": "prose_consistent_with_front_matter",
+      "method": "parse front-matter JSON (phase/scientific_readiness/operational_readiness), grep prose for stale contradictory tokens (Pre-Phase 0, PRE_PHASE_0, SHADOW, UNVALIDATED) and for the correct current values",
+      "passed": true,
+      "stale_token_hits": {
+        "PRE_PHASE_0": 0,
+        "Pre-Phase 0": 0,
+        "SHADOW": 0,
+        "UNVALIDATED": 0
+      }
+    },
+    {
+      "checks": {
+        "banner_count_is_3": true,
+        "ceiling_59.9_in_prose": true,
+        "ceiling_matches_receipt": true,
+        "fh_5.2e9_in_prose": true,
+        "fh_max_matches_receipt_magnitude": true,
+        "hansen_5.33e17_in_prose": true,
+        "hansen_max_matches_receipt_magnitude": true,
+        "prose_says_CLAIM_REFUTED": true,
+        "verdict_is_CLAIM_REFUTED": true
+      },
+      "item": "w7_void_disclosure_present_and_accurate",
+      "method": "count W7 REFUTATION NOTICE banners in mission.md; cross-check quoted ceiling/delta_p-max/delta_d-max/verdict against the live W7 audit receipt payload (not against the prose's own claims)",
+      "passed": true,
+      "w7_receipt_ceiling_MPa_half": 59.875,
+      "w7_receipt_fh_delta_p_max_observed": 5155043623.842392,
+      "w7_receipt_hansen_delta_d_max_observed": 5.333950808666931e+17,
+      "w7_receipt_verdict": "CLAIM_REFUTED"
+    },
+    {
+      "checks": {
+        "hardened_baseline_1.1667_in_prose": true,
+        "hardened_ci_in_prose": true,
+        "hardened_ci_matches_receipt": true,
+        "hardened_error_reduction_25.08_in_prose": true,
+        "hardened_n_94015_in_prose": true,
+        "hardened_receipt_path_cited": true,
+        "hardened_rmse_0.8742_in_prose": true,
+        "hardened_rmse_matches_receipt": true,
+        "headline_labeled_W6_hardened": true,
+        "signed_rmse_0.8770_in_prose": true,
+        "signed_rmse_matches_receipt": true
+      },
+      "item": "bigsoldb_headline_cites_w6_hardened_value",
+      "method": "cross-check the BigSolDB headline section's quoted RMSE/CI/baseline/n/error-reduction figures against the live W6 hardened-validation receipt payload",
+      "passed": true
+    },
+    {
+      "contradictions_found": [],
+      "item": "prose_sweep_vs_ledger_verdicts",
+      "n_claims_checked": 5,
+      "n_ledger_entries_for_module": 5,
+      "passed": true,
+      "per_item_notes": [
+        "C1 (REFUTED, signing-violation forensics on 4 flagged KPIs): mission.md does not reference 'hansen-temperature-envelope-v1-kpi' or SIGNING_VIOLATION text at all (False occurrences found) -- nothing to contradict.",
+        "W6 (SURVIVED, BigSolDB LSO headline holds under admissibility hardening): mission.md BigSolDB section quotes both 0.8770 and 0.8742 with W6-hardened label -- consistent=True.",
+        "W7 (REFUTED, Flory-Huggins/Hansen physical-baseline-vs-ML comparison void): 3 void banners present across the 3 affected sections -- consistent=True.",
+        "V1-SOLV (SURVIVED, W7b fair re-run: ML beats corrected physics baselines): mission.md carries a 'V1-SOLV CLOSURE' notice in all 3 affected sections referencing the closure receipt -- consistent=True.",
+        "V-B03 (SURVIVED, independent verify of R-B03 corrected group-contribution instrument): V-B03 itself is a verify-of-a-repair with no standalone numeric claim in mission.md to contradict; R-B03 is referenced 6 times consistently as 'corrected instrument' -- no contradiction found."
+      ]
+    }
+  ],
+  "repair_under_test": "R-A10",
+  "schema": "amphora.solvency-score.va10-verify-diagnostic.v1",
+  "verdict": "CLAIM_SURVIVED",
+  "verify_item": "V-A10",
+  "w6_receipt_sha256": "13b081836a33934a57c7b86043261f07522582b76b2c98f0efaa9e2f170df0c6",
+  "w7_receipt_sha256": "874e1dca3efb1a005e3c6fc4d2b791b6c9576c33b9886af4093fa551b7cf1b0f"
+}

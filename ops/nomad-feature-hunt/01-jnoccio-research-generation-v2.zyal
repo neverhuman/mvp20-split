@@ -1,0 +1,84 @@
+<<<ZYAL v2.1:daemon id=nomad-feature-hunt-zyal10-final>>>
+version: v2.1
+intent: bounded_campaign
+confirm: RUN_BOUNDED
+id: nomad-feature-hunt-zyal10-final
+
+job:
+  name: "NOMAD ZYAL ten-epoch multi-user final foundry"
+  objective: "Run exactly ten epochs and 360 stable roles against the frozen 10,800-column registry."
+
+loop:
+  policy: bounded
+  max_iterations: 1
+  epochs: 10
+  circuit_breaker:
+    max_consecutive_errors: 1
+    on_trip: halt_incomplete
+
+engine:
+  command: "python3 -m nomad_feature_hunt.v2.zyal_epochs run --run-id ${RUN_ID:?RUN_ID_required}"
+  resume_command: "python3 -m nomad_feature_hunt.v2.zyal_epochs resume --run-id ${RUN_ID:?RUN_ID_required}"
+
+fleet:
+  provider: jnoccio
+  model: jnoccio-router
+  roles: 360
+  roles_per_epoch: 36
+  attempts_max: 720
+  retry_failures: 1
+  worker_policy: "min(ready_jobs, router_eligible_slots)"
+  largest_ready_wave: 24
+  credential_owner: fusion
+  independent_key_processes: forbidden
+
+epoch_roles:
+  domain_architects: 10
+  domain_spec_builders: 10
+  target_exploiters: 6
+  cross_family_synthesizers: 4
+  bounded_plugin_writers: 2
+  adversarial_testers: 2
+  blind_judges: 2
+
+contracts:
+  prompt_bytes_max: 12288
+  output_bytes_max: 20480
+  plugin_bytes_max: 20480
+  json: strict_single_object
+  ids: controller_generated
+  nested_object_salvage: forbidden
+  credential_serialization: forbidden
+
+execution:
+  smoke_structures: 16
+  invariance_structures: 64
+  train_rows: 2400
+  test_rows: 600
+  per_column_quarantine: true
+
+reduction:
+  population: 24
+  generations: 10
+  confirmation_views_per_target_max: 8
+
+confirmation:
+  seeds: [7919, 104729]
+  folds: 5
+  trees: 400
+  task_type: GPU
+  open_runs: 1
+  controls: [current_champion, atlas_winner, existing_809]
+
+success:
+  new_executed_columns_min: 7000
+  novel_valid_columns_min: 3000
+  valid_columns_per_domain_min: 200
+  base_families_min: 160
+  current_champion_mean_rmsle: 0.0495014095
+  no_target_regression: true
+  delivery: promotion-inbox-only
+
+budgets: { cost_usd: 2000, minimum_attempt_debit_usd: 2.50, on_exhaust: stop_incomplete }
+<<<END_ZYAL id=nomad-feature-hunt-zyal10-final>>>
+ZYAL_ARM RUN_BOUNDED id=nomad-feature-hunt-zyal10-final

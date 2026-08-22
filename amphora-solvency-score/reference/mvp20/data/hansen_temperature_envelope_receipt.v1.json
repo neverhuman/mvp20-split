@@ -1,0 +1,548 @@
+{
+  "all_gates_pass": true,
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-solvency-score/hansen-temperature-envelope-v1",
+  "claim_locks": {
+    "authority_ceiling": "RULE_CITED",
+    "constraint_only": true,
+    "no_alpha_values_invented": true,
+    "no_product_or_optimizer_authority": true,
+    "scientific_readiness": "LOCKED_INTERNAL",
+    "self_authored_fixture_not_external_validation": true
+  },
+  "closes": [],
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent on host)",
+    "module promotion to PHASE_0 (requires human dual-identity ceremony keys)",
+    "portfolio manifest edit (66 receipts / 11 modules unchanged)",
+    "external solubility validation (this study uses only the CC0 self-authored fixture; the externally-validated science remains the separate BigSolDB leave-solute-out benchmark)",
+    "measured per-liquid thermal expansion coefficients (none present in the fixture; alpha is swept over a declared range, never fitted or invented)",
+    "any re-labelling of fixture pairs (the 25 C observation labels are untouched)"
+  ],
+  "edits_portfolio_manifest": false,
+  "envelope": {
+    "alpha_grid_per_k": [
+      0.0006,
+      0.0008,
+      0.001,
+      0.0012,
+      0.0015
+    ],
+    "alpha_treatment": "swept, not fitted; S0 is the alpha-independent lower bound",
+    "alpha_values_invented": false,
+    "n_temperature_points": 36,
+    "rationale": "ISO 12944-7 / IMO PSPC cold-end application (~5 C) to tropical topside service (~40 C) for marine two-part epoxy-amine coatings",
+    "t_high_c": 40.0,
+    "t_low_c": 5.0,
+    "t_step_c": 1.0
+  },
+  "fixture": {
+    "license": "CC0-1.0",
+    "n_pairs": 75,
+    "n_polymers": 5,
+    "n_solvents": 15,
+    "path": "amphora-solvency-score/reference/phase0-solvency-known-answer.v1.json",
+    "sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238"
+  },
+  "gates": {
+    "all_components_monotone_decreasing_in_T": true,
+    "all_reds_finite_over_envelope": true,
+    "alpha_free_case_leaves_dd_dp_exactly_fixed": true,
+    "baseline_25c_auroc_meets_acceptance_bar": true,
+    "baseline_25c_reproduces_shipped_67_of_75": true,
+    "envelope_covers_iso12944_application_window": true,
+    "fixture_sha256_matches_lock": true,
+    "fixture_shape_5x15_75_pairs": true,
+    "law_is_identity_at_reference_temperature": true,
+    "temperature_law_matches_published_derivatives": true
+  },
+  "headline_result": {
+    "baseline_25c": {
+      "accuracy": 0.893333,
+      "auroc": 0.948773,
+      "correct_of_75": 67,
+      "matches_shipped_headline": true
+    },
+    "bootstrap": {
+      "acc_delta_40c_minus_25c_ci95": [
+        -0.04,
+        0.0
+      ],
+      "acc_delta_5c_minus_25c_ci95": [
+        -0.04,
+        0.0
+      ],
+      "n_resamples": 5000,
+      "reference_scenario": "S1_common_alpha alpha=1.0e-03",
+      "seed": 20260731
+    },
+    "borderline_pairs": [
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "epoxy-dgeba-linear-uncured::chloroform",
+        "red_25c": 0.839532,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": false,
+        "pair_id": "epoxy-dgeba-linear-uncured::n-butanol",
+        "red_25c": 1.15641,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "epoxy-dgeba-linear-uncured::p-xylene",
+        "red_25c": 1.141907,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "epoxy-dgeba-linear-uncured::toluene",
+        "red_25c": 1.161364,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": true,
+        "observed_compatible": true,
+        "pair_id": "polyamide-nylon66::dimethylformamide",
+        "red_25c": 0.986842,
+        "verdict_boundary_crossing_temperature_c": 12.130122
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": false,
+        "pair_id": "polyamide-nylon66::ethanol",
+        "red_25c": 1.151533,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": false,
+        "pair_id": "polyamide-nylon66::n-butanol",
+        "red_25c": 1.017343,
+        "verdict_boundary_crossing_temperature_c": 47.04069
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polymethyl-methacrylate::chloroform",
+        "red_25c": 0.904887,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polymethyl-methacrylate::ethyl-acetate",
+        "red_25c": 0.889288,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": false,
+        "pair_id": "polymethyl-methacrylate::n-butanol",
+        "red_25c": 1.268295,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polymethyl-methacrylate::p-xylene",
+        "red_25c": 1.239395,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polymethyl-methacrylate::toluene",
+        "red_25c": 1.24424,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": true,
+        "observed_compatible": false,
+        "pair_id": "polystyrene::acetone",
+        "red_25c": 1.005318,
+        "verdict_boundary_crossing_temperature_c": 29.520342
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polystyrene::cyclohexane",
+        "red_25c": 0.902769,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polystyrene::dimethylformamide",
+        "red_25c": 1.033418,
+        "verdict_boundary_crossing_temperature_c": 54.759203
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polystyrene::ethyl-acetate",
+        "red_25c": 0.896601,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polystyrene::methyl-ethyl-ketone",
+        "red_25c": 0.874122,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": false,
+        "pair_id": "polystyrene::n-butanol",
+        "red_25c": 1.231522,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": false,
+        "pair_id": "polystyrene::n-hexane",
+        "red_25c": 1.157159,
+        "verdict_boundary_crossing_temperature_c": null
+      },
+      {
+        "crossing_inside_5_to_40c": false,
+        "observed_compatible": true,
+        "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+        "red_25c": 0.954901,
+        "verdict_boundary_crossing_temperature_c": -19.309341
+      }
+    ],
+    "headline": {
+      "alpha_free_bound_alone_refutes_h0": false,
+      "alpha_free_lower_bound_flips": 0,
+      "common_alpha_flip_counts_across_declared_grid": [
+        2
+      ],
+      "flip_count_sensitive_to_alpha_magnitude_within_grid": false,
+      "flipped_pair_ids": [
+        "polyamide-nylon66::dimethylformamide",
+        "polyamide-nylon66::n-butanol",
+        "polystyrene::acetone",
+        "polyvinyl-chloride::dichloromethane",
+        "polyvinyl-chloride::tetrahydrofuran"
+      ],
+      "h0": "every 25 C RED verdict is invariant over 5-40 C under Hansen's own temperature law",
+      "h0_verdict": "REFUTED",
+      "smallest_common_alpha_that_breaks_invariance_per_k": 0.000261,
+      "worst_case_max_abs_delta_red": 0.392252,
+      "worst_case_verdict_flips_over_declared_scenarios": 5
+    },
+    "interpretation": "amphora-solvency-score ships a Hansen RED verdict built from 25 C parameter tables and an interaction radius R that carries no temperature argument, yet marine two-part epoxy-amine coatings are applied near 5 C and serviced near 40 C. Applying Hansen & Beerbower's own published temperature law (1971; zero fitted parameters) across that envelope: the 25 C baseline reproduces the shipped 67/75 headline exactly and the law implementation matches the published derivatives to 0.0 relative error. H0 (verdict invariance) is REFUTED: worst case 5 of 75 verdicts flip inside 5-40 C, with max |dRED| 0.392252. Where the refutation does and does not rest on alpha is stated precisely: the assumption-free lower bound (S0 -- the alpha-independent 1.22e-3 hydrogen-bonding term acting alone, no thermal-expansion coefficient assumed) flips 0 verdicts, so the H-bonding term BY ITSELF does not refute H0; thermal expansion is necessary. But the refutation is not sensitive to WHICH alpha: invariance already breaks at alpha = 0.000261 1/K, far below any real organic liquid, and the common-alpha flip count is constant at [2] across the entire declared 6.0e-4 .. 1.5e-3 1/K range -- so no alpha value was tuned to produce the result. At alpha = 1.0e-3 1/K the RED of every pair scales between 0.975033 and 1.034313 of its 25 C value while the rank ordering is essentially preserved (min Kendall tau-b 0.990631, AUROC in [0.94733, 0.952381]) -- i.e. temperature moves the DECISION BOUNDARY, not the ranking. Mechanism: co-scaling R with the polymer's own Hansen-norm contraction (S3) leaves 0 flips, removing 5, which localises the drift to the temperature-invariant R rather than to the parameter law. Practical consequence for solvent selection: a fixed-R 25 C Hansen sphere is systematically more permissive at tropical application temperature and more restrictive in winter application, and the exposure is confined to pairs sitting within a few percent of RED = 1 -- e.g. polyamide-nylon66::dimethylformamide (RED 0.9868 at 25 C) crosses the boundary at 12.13 C and polystyrene::acetone (RED 1.0053) crosses at 29.52 C. Effect size is deliberately not overstated: the paired pinned-seed bootstrap CIs on the change in agreement with the 25 C label set are [-0.04, 0.0] at 5 C and [-0.04, 0.0] at 40 C, both straddling zero, so at n = 75 the AGGREGATE divergence is not resolvable -- the durable finding is the identified boundary-crossing pairs and the fixed-R mechanism, not a headline accuracy change. Note also that the fixture labels are 25 C observations, so off-25 C counts measure divergence from the shipped verdict set, not predictive error. Scope: self-authored CC0 fixture, LOCKED_INTERNAL, CONSTRAINT_ONLY -- this is a self-consistency falsification of the shipped rule, NOT external validation, and it does not re-label any pair.",
+    "label_temperature_caveat": {
+      "fixture_labels_observed_at_c": 25.0,
+      "note": "observed_compatible labels are 25 C observations, so the correct_of_75 counts reported at other temperatures measure DIVERGENCE of the temperature-corrected verdict from the 25 C label set, NOT predictive error at that temperature. No pair is re-labelled and no accuracy claim is made off 25 C."
+    },
+    "law_verification": {
+      "max_relative_error_vs_published_derivatives": 0.0,
+      "method": "central difference h=1e-4 K against the analytic right-hand sides"
+    },
+    "mechanism": {
+      "direction": "RED = Ra/R falls with rising T when R is held fixed, so a fixed-R Hansen sphere is systematically MORE PERMISSIVE hot and MORE RESTRICTIVE cold than its 25 C calibration",
+      "flips_removed_by_co_scaling_R": 5,
+      "question": "is the drift an artifact of holding the interaction radius R temperature-invariant while all three HSP components contract?",
+      "s3_flipped_pair_ids": [],
+      "s3_r_co_scaled_flips": 0
+    },
+    "scenario_summaries": {
+      "S0_alpha_free_lower_bound": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 67,
+        "alpha_polymer_per_k": 0.0,
+        "alpha_solvent_per_k": 0.0,
+        "auroc_max": 0.950938,
+        "auroc_min": 0.948052,
+        "endpoints": [
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.950938,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.992072,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948052,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.994234,
+            "temperature_c": 40.0
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.992072,
+        "max_abs_delta_red": 0.230289,
+        "n_verdict_flips_in_envelope": 0,
+        "red_ratio_max_over_envelope": 1.023855,
+        "red_ratio_min_over_envelope": 0.9825
+      },
+      "S1_common_alpha_1.0e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 66,
+        "alpha_polymer_per_k": 0.001,
+        "alpha_solvent_per_k": 0.001,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.88,
+            "auroc": 0.952381,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.990631,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.88,
+            "auroc": 0.94733,
+            "correct_of_75": 66,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.007418,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 30.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.999438,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.990631,
+        "max_abs_delta_red": 0.337959,
+        "n_verdict_flips_in_envelope": 2,
+        "red_ratio_max_over_envelope": 1.034313,
+        "red_ratio_min_over_envelope": 0.975033
+      },
+      "S2_solvent_only_alpha_1.5e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 64,
+        "alpha_polymer_per_k": 0.0,
+        "alpha_solvent_per_k": 0.0015,
+        "auroc_max": 0.951659,
+        "auroc_min": 0.944444,
+        "endpoints": [
+          {
+            "accuracy": 0.853333,
+            "auroc": 0.950938,
+            "correct_of_75": 64,
+            "kendall_tau_b_vs_25c": 0.933694,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.866667,
+            "auroc": 0.944444,
+            "correct_of_75": 65,
+            "kendall_tau_b_vs_25c": 0.96036,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyamide-nylon66::dimethylformamide",
+            "red_25c": 0.986842,
+            "red_at_flip_temperature": 1.039521,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polyamide-nylon66::n-butanol",
+            "red_25c": 1.017343,
+            "red_at_flip_temperature": 0.910975,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 5.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": false,
+            "pair_id": "polystyrene::acetone",
+            "red_25c": 1.005318,
+            "red_at_flip_temperature": 0.929594,
+            "verdict_25c": "incompatible",
+            "verdict_at_flip": "compatible"
+          },
+          {
+            "first_flip_temperature_c": 39.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyvinyl-chloride::dichloromethane",
+            "red_25c": 0.768779,
+            "red_at_flip_temperature": 1.006489,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          },
+          {
+            "first_flip_temperature_c": 28.0,
+            "flip_helps_accuracy": false,
+            "observed_compatible": true,
+            "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+            "red_25c": 0.954901,
+            "red_at_flip_temperature": 1.002756,
+            "verdict_25c": "compatible",
+            "verdict_at_flip": "incompatible"
+          }
+        ],
+        "interaction_radius_co_scaled": false,
+        "kendall_tau_b_vs_25c_min": 0.933694,
+        "max_abs_delta_red": 0.382224,
+        "n_verdict_flips_in_envelope": 5,
+        "red_ratio_max_over_envelope": 1.331338,
+        "red_ratio_min_over_envelope": 0.584501
+      },
+      "S3_mechanism_R_co_scaled_1.0e-03": {
+        "accuracy_correct_of_75_max": 67,
+        "accuracy_correct_of_75_min": 67,
+        "alpha_polymer_per_k": 0.001,
+        "alpha_solvent_per_k": 0.001,
+        "auroc_max": 0.952381,
+        "auroc_min": 0.94733,
+        "endpoints": [
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.952381,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.990631,
+            "temperature_c": 5.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.948773,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 1.0,
+            "temperature_c": 25.0
+          },
+          {
+            "accuracy": 0.893333,
+            "auroc": 0.94733,
+            "correct_of_75": 67,
+            "kendall_tau_b_vs_25c": 0.994955,
+            "temperature_c": 40.0
+          }
+        ],
+        "flips": [],
+        "interaction_radius_co_scaled": true,
+        "kendall_tau_b_vs_25c_min": 0.990631,
+        "max_abs_delta_red": 0.080719,
+        "n_verdict_flips_in_envelope": 0,
+        "red_ratio_max_over_envelope": 1.009978,
+        "red_ratio_min_over_envelope": 0.986848
+      }
+    }
+  },
+  "honest_limitations": [
+    "The alpha-free lower bound (S0) flips ZERO verdicts: the alpha-independent 1.22e-3 hydrogen-bonding term alone does NOT refute H0. Non-zero thermal expansion is necessary for the refutation.",
+    "The refutation is nevertheless not alpha-tuned: invariance breaks at alpha = 0.000261 1/K, far below any real organic liquid, and the common-alpha flip count is constant across the entire declared 6.0e-4 .. 1.5e-3 1/K grid.",
+    "Both paired-bootstrap CIs on the change in agreement with the 25 C label set straddle zero, so the AGGREGATE divergence is not statistically resolvable at n = 75. The durable findings are the identified boundary-crossing pairs and the fixed-R mechanism, not a headline accuracy change.",
+    "Fixture labels are 25 C observations, so off-25 C counts measure divergence from the shipped verdict set, not predictive error at that temperature.",
+    "R is treated as temperature-invariant in S0/S1/S2 because that is what the shipped rule does; S3 shows this is precisely where the drift originates. Whether R should co-scale is not settled by this study and would need external solubility data at two temperatures.",
+    "The fixture is self-authored CC0, not an external benchmark."
+  ],
+  "human_review_performed": false,
+  "module": "amphora-solvency-score",
+  "organizational_independence_asserted": false,
+  "physical_baseline": {
+    "constants": {
+      "T0_K": 298.15,
+      "c_d": 1.25,
+      "c_h": 0.5,
+      "c_p": 0.5,
+      "dh_term_per_k": 0.00122,
+      "factor_k": 4.0,
+      "red_cutoff": 1.0
+    },
+    "free_parameters_fitted": 0,
+    "integration": "exact for constant alpha over the envelope; T0 = 298.15 K",
+    "red_sphere": "Hansen 2007 handbook Eq. 1.9, Ra^2 = 4*ddD^2 + ddP^2 + ddH^2, RED = Ra/R",
+    "temperature_law": "Hansen & Beerbower 1971 (Kirk-Othmer Suppl. Vol., 2nd ed., pp. 889-910); d(dD)/dT = -1.25 a dD, d(dP)/dT = -0.50 a dP, d(dH)/dT = -(1.22e-3 + 0.50 a) dH"
+  },
+  "promotes_authority": false,
+  "provenance": {
+    "fixture_license": "CC0-1.0",
+    "primary_sources": [
+      "C. M. Hansen, Hansen Solubility Parameters: A User's Handbook, 2nd ed., CRC Press 2007, ISBN 978-0-8493-7248-3 (RED sphere Eq. 1.9; Tables A.1/A.2; Ch. 1 temperature dependence)",
+      "C. M. Hansen, A. Beerbower, 'Solubility Parameters', in Kirk-Othmer Encyclopedia of Chemical Technology, Suppl. Vol., 2nd ed., Wiley 1971, pp. 889-910 (origin of the d(dD)/dT, d(dP)/dT, d(dH)/dT relations applied here)",
+      "ISO 12944-7 (paint application execution / substrate temperature practice) and IMO Resolution MSC.215(82) PSPC (ballast-tank coating application conditions) as the basis for the 5-40 C marine application/service envelope"
+    ],
+    "scope": "marine anti-corrosion two-part epoxy-amine (DGEBA epoxy + reference polymers) vs coating-relevant solvents"
+  },
+  "purpose": "Falsification test of the temperature-invariance assumption implicit in amphora-solvency-score's shipped Hansen RED solvency verdict. The shipped rule scores every solvent-polymer pair from 25 C Hansen parameter tables with an interaction radius R that carries no temperature argument, yet marine two-part epoxy-amine coatings are applied near 5 C (ISO 12944-7 / IMO PSPC cold-end practice) and serviced near 40 C on tropical topsides. This harness applies Hansen & Beerbower's own published, zero-free-parameter HSP temperature law across that envelope on the module's CC0-1.0 Phase-0 known-answer fixture (5 polymers x 15 solvents = 75 labelled pairs) and asks whether the 25 C verdict survives its own physics. Three declared scenarios bracket the unknown thermal-expansion coefficient (alpha-free lower bound; common alpha swept 6.0e-4 .. 1.5e-3 1/K; solvent-only alpha) plus a mechanism counterfactual co-scaling R. No alpha value is invented or fitted.",
+  "receipt_id": "hansen-temperature-envelope-d160f617159b54d09ce95a6dd13cae998dbfdb94f49d092e410f2a82f575475c",
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "2f6718338836113d0278d10770ccc9901c3e16b5e453573a7263fefbccf944eb",
+    "determinism": "pure-stdlib, no wall-clock, no unpinned RNG; single pinned-seed paired bootstrap (seed 20260731)",
+    "fixture_sha256": "9b6b689fbd376200ef9277af7d5f48fee363f3a7e60c85b32642b2f1d694a238",
+    "harness_sha256": "ee87da003736ff6d6d7d1322533ab2bd72997af29baefe32c4008f8e4bff3241",
+    "independent_runs": true,
+    "replays": 2,
+    "runB_diagnostic_sha256": "2f6718338836113d0278d10770ccc9901c3e16b5e453573a7263fefbccf944eb",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "run_type": "SCIENCE_THEORY_BASELINE_REPLAY",
+  "schema": "amphora.solvency-score.hansen-temperature-envelope-receipt.v1",
+  "signature": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzcyI6IHRydWUsCiAgImF1dGhvcml0eSI6ICJBVURJVF9PTkxZIiwKICAiYmVuY2htYXJrIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUvaGFuc2VuLXRlbXBlcmF0dXJlLWVudmVsb3BlLXYxIiwKICAiY2xhaW1fbG9ja3MiOiB7CiAgICAiYXV0aG9yaXR5X2NlaWxpbmciOiAiUlVMRV9DSVRFRCIsCiAgICAiY29uc3RyYWludF9vbmx5IjogdHJ1ZSwKICAgICJub19hbHBoYV92YWx1ZXNfaW52ZW50ZWQiOiB0cnVlLAogICAgIm5vX3Byb2R1Y3Rfb3Jfb3B0aW1pemVyX2F1dGhvcml0eSI6IHRydWUsCiAgICAic2NpZW50aWZpY19yZWFkaW5lc3MiOiAiTE9DS0VEX0lOVEVSTkFMIiwKICAgICJzZWxmX2F1dGhvcmVkX2ZpeHR1cmVfbm90X2V4dGVybmFsX3ZhbGlkYXRpb24iOiB0cnVlCiAgfSwKICAiY2xvc2VzIjogW10sCiAgImRvZXNfbm90X2Nsb3NlIjogWwogICAgIkVWQUxVQVRJT05fU0lHTkFUVVJFX0FCU0VOVCAodHJ1c3QtYW5jaG9yZWQgcGhhc2UwLWV2YWx1YXRvciBrZXkgYWJzZW50IG9uIGhvc3QpIiwKICAgICJtb2R1bGUgcHJvbW90aW9uIHRvIFBIQVNFXzAgKHJlcXVpcmVzIGh1bWFuIGR1YWwtaWRlbnRpdHkgY2VyZW1vbnkga2V5cykiLAogICAgInBvcnRmb2xpbyBtYW5pZmVzdCBlZGl0ICg2NiByZWNlaXB0cyAvIDExIG1vZHVsZXMgdW5jaGFuZ2VkKSIsCiAgICAiZXh0ZXJuYWwgc29sdWJpbGl0eSB2YWxpZGF0aW9uICh0aGlzIHN0dWR5IHVzZXMgb25seSB0aGUgQ0MwIHNlbGYtYXV0aG9yZWQgZml4dHVyZTsgdGhlIGV4dGVybmFsbHktdmFsaWRhdGVkIHNjaWVuY2UgcmVtYWlucyB0aGUgc2VwYXJhdGUgQmlnU29sREIgbGVhdmUtc29sdXRlLW91dCBiZW5jaG1hcmspIiwKICAgICJtZWFzdXJlZCBwZXItbGlxdWlkIHRoZXJtYWwgZXhwYW5zaW9uIGNvZWZmaWNpZW50cyAobm9uZSBwcmVzZW50IGluIHRoZSBmaXh0dXJlOyBhbHBoYSBpcyBzd2VwdCBvdmVyIGEgZGVjbGFyZWQgcmFuZ2UsIG5ldmVyIGZpdHRlZCBvciBpbnZlbnRlZCkiLAogICAgImFueSByZS1sYWJlbGxpbmcgb2YgZml4dHVyZSBwYWlycyAodGhlIDI1IEMgb2JzZXJ2YXRpb24gbGFiZWxzIGFyZSB1bnRvdWNoZWQpIgogIF0sCiAgImVkaXRzX3BvcnRmb2xpb19tYW5pZmVzdCI6IGZhbHNlLAogICJlbnZlbG9wZSI6IHsKICAgICJhbHBoYV9ncmlkX3Blcl9rIjogWwogICAgICAwLjAwMDYsCiAgICAgIDAuMDAwOCwKICAgICAgMC4wMDEsCiAgICAgIDAuMDAxMiwKICAgICAgMC4wMDE1CiAgICBdLAogICAgImFscGhhX3RyZWF0bWVudCI6ICJzd2VwdCwgbm90IGZpdHRlZDsgUzAgaXMgdGhlIGFscGhhLWluZGVwZW5kZW50IGxvd2VyIGJvdW5kIiwKICAgICJhbHBoYV92YWx1ZXNfaW52ZW50ZWQiOiBmYWxzZSwKICAgICJuX3RlbXBlcmF0dXJlX3BvaW50cyI6IDM2LAogICAgInJhdGlvbmFsZSI6ICJJU08gMTI5NDQtNyAvIElNTyBQU1BDIGNvbGQtZW5kIGFwcGxpY2F0aW9uICh+NSBDKSB0byB0cm9waWNhbCB0b3BzaWRlIHNlcnZpY2UgKH40MCBDKSBmb3IgbWFyaW5lIHR3by1wYXJ0IGVwb3h5LWFtaW5lIGNvYXRpbmdzIiwKICAgICJ0X2hpZ2hfYyI6IDQwLjAsCiAgICAidF9sb3dfYyI6IDUuMCwKICAgICJ0X3N0ZXBfYyI6IDEuMAogIH0sCiAgImZpeHR1cmUiOiB7CiAgICAibGljZW5zZSI6ICJDQzAtMS4wIiwKICAgICJuX3BhaXJzIjogNzUsCiAgICAibl9wb2x5bWVycyI6IDUsCiAgICAibl9zb2x2ZW50cyI6IDE1LAogICAgInBhdGgiOiAiYW1waG9yYS1zb2x2ZW5jeS1zY29yZS9yZWZlcmVuY2UvcGhhc2UwLXNvbHZlbmN5LWtub3duLWFuc3dlci52MS5qc29uIiwKICAgICJzaGEyNTYiOiAiOWI2YjY4OWZiZDM3NjIwMGVmOTI3N2FmN2Q1ZjQ4ZmVlMzYzZjNhN2U2MGM4NWIzMjY0MmIyZjFkNjk0YTIzOCIKICB9LAogICJnYXRlcyI6IHsKICAgICJhbGxfY29tcG9uZW50c19tb25vdG9uZV9kZWNyZWFzaW5nX2luX1QiOiB0cnVlLAogICAgImFsbF9yZWRzX2Zpbml0ZV9vdmVyX2VudmVsb3BlIjogdHJ1ZSwKICAgICJhbHBoYV9mcmVlX2Nhc2VfbGVhdmVzX2RkX2RwX2V4YWN0bHlfZml4ZWQiOiB0cnVlLAogICAgImJhc2VsaW5lXzI1Y19hdXJvY19tZWV0c19hY2NlcHRhbmNlX2JhciI6IHRydWUsCiAgICAiYmFzZWxpbmVfMjVjX3JlcHJvZHVjZXNfc2hpcHBlZF82N19vZl83NSI6IHRydWUsCiAgICAiZW52ZWxvcGVfY292ZXJzX2lzbzEyOTQ0X2FwcGxpY2F0aW9uX3dpbmRvdyI6IHRydWUsCiAgICAiZml4dHVyZV9zaGEyNTZfbWF0Y2hlc19sb2NrIjogdHJ1ZSwKICAgICJmaXh0dXJlX3NoYXBlXzV4MTVfNzVfcGFpcnMiOiB0cnVlLAogICAgImxhd19pc19pZGVudGl0eV9hdF9yZWZlcmVuY2VfdGVtcGVyYXR1cmUiOiB0cnVlLAogICAgInRlbXBlcmF0dXJlX2xhd19tYXRjaGVzX3B1Ymxpc2hlZF9kZXJpdmF0aXZlcyI6IHRydWUKICB9LAogICJoZWFkbGluZV9yZXN1bHQiOiB7CiAgICAiYmFzZWxpbmVfMjVjIjogewogICAgICAiYWNjdXJhY3kiOiAwLjg5MzMzMywKICAgICAgImF1cm9jIjogMC45NDg3NzMsCiAgICAgICJjb3JyZWN0X29mXzc1IjogNjcsCiAgICAgICJtYXRjaGVzX3NoaXBwZWRfaGVhZGxpbmUiOiB0cnVlCiAgICB9LAogICAgImJvb3RzdHJhcCI6IHsKICAgICAgImFjY19kZWx0YV80MGNfbWludXNfMjVjX2NpOTUiOiBbCiAgICAgICAgLTAuMDQsCiAgICAgICAgMC4wCiAgICAgIF0sCiAgICAgICJhY2NfZGVsdGFfNWNfbWludXNfMjVjX2NpOTUiOiBbCiAgICAgICAgLTAuMDQsCiAgICAgICAgMC4wCiAgICAgIF0sCiAgICAgICJuX3Jlc2FtcGxlcyI6IDUwMDAsCiAgICAgICJyZWZlcmVuY2Vfc2NlbmFyaW8iOiAiUzFfY29tbW9uX2FscGhhIGFscGhhPTEuMGUtMDMiLAogICAgICAic2VlZCI6IDIwMjYwNzMxCiAgICB9LAogICAgImJvcmRlcmxpbmVfcGFpcnMiOiBbCiAgICAgIHsKICAgICAgICAiY3Jvc3NpbmdfaW5zaWRlXzVfdG9fNDBjIjogZmFsc2UsCiAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiB0cnVlLAogICAgICAgICJwYWlyX2lkIjogImVwb3h5LWRnZWJhLWxpbmVhci11bmN1cmVkOjpjaGxvcm9mb3JtIiwKICAgICAgICAicmVkXzI1YyI6IDAuODM5NTMyLAogICAgICAgICJ2ZXJkaWN0X2JvdW5kYXJ5X2Nyb3NzaW5nX3RlbXBlcmF0dXJlX2MiOiBudWxsCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiY3Jvc3NpbmdfaW5zaWRlXzVfdG9fNDBjIjogZmFsc2UsCiAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiBmYWxzZSwKICAgICAgICAicGFpcl9pZCI6ICJlcG94eS1kZ2ViYS1saW5lYXItdW5jdXJlZDo6bi1idXRhbm9sIiwKICAgICAgICAicmVkXzI1YyI6IDEuMTU2NDEsCiAgICAgICAgInZlcmRpY3RfYm91bmRhcnlfY3Jvc3NpbmdfdGVtcGVyYXR1cmVfYyI6IG51bGwKICAgICAgfSwKICAgICAgewogICAgICAgICJjcm9zc2luZ19pbnNpZGVfNV90b180MGMiOiBmYWxzZSwKICAgICAgICAib2JzZXJ2ZWRfY29tcGF0aWJsZSI6IHRydWUsCiAgICAgICAgInBhaXJfaWQiOiAiZXBveHktZGdlYmEtbGluZWFyLXVuY3VyZWQ6OnAteHlsZW5lIiwKICAgICAgICAicmVkXzI1YyI6IDEuMTQxOTA3LAogICAgICAgICJ2ZXJkaWN0X2JvdW5kYXJ5X2Nyb3NzaW5nX3RlbXBlcmF0dXJlX2MiOiBudWxsCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiY3Jvc3NpbmdfaW5zaWRlXzVfdG9fNDBjIjogZmFsc2UsCiAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiB0cnVlLAogICAgICAgICJwYWlyX2lkIjogImVwb3h5LWRnZWJhLWxpbmVhci11bmN1cmVkOjp0b2x1ZW5lIiwKICAgICAgICAicmVkXzI1YyI6IDEuMTYxMzY0LAogICAgICAgICJ2ZXJkaWN0X2JvdW5kYXJ5X2Nyb3NzaW5nX3RlbXBlcmF0dXJlX2MiOiBudWxsCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiY3Jvc3NpbmdfaW5zaWRlXzVfdG9fNDBjIjogdHJ1ZSwKICAgICAgICAib2JzZXJ2ZWRfY29tcGF0aWJsZSI6IHRydWUsCiAgICAgICAgInBhaXJfaWQiOiAicG9seWFtaWRlLW55bG9uNjY6OmRpbWV0aHlsZm9ybWFtaWRlIiwKICAgICAgICAicmVkXzI1YyI6IDAuOTg2ODQyLAogICAgICAgICJ2ZXJkaWN0X2JvdW5kYXJ5X2Nyb3NzaW5nX3RlbXBlcmF0dXJlX2MiOiAxMi4xMzAxMjIKICAgICAgfSwKICAgICAgewogICAgICAgICJjcm9zc2luZ19pbnNpZGVfNV90b180MGMiOiBmYWxzZSwKICAgICAgICAib2JzZXJ2ZWRfY29tcGF0aWJsZSI6IGZhbHNlLAogICAgICAgICJwYWlyX2lkIjogInBvbHlhbWlkZS1ueWxvbjY2OjpldGhhbm9sIiwKICAgICAgICAicmVkXzI1YyI6IDEuMTUxNTMzLAogICAgICAgICJ2ZXJkaWN0X2JvdW5kYXJ5X2Nyb3NzaW5nX3RlbXBlcmF0dXJlX2MiOiBudWxsCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiY3Jvc3NpbmdfaW5zaWRlXzVfdG9fNDBjIjogZmFsc2UsCiAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiBmYWxzZSwKICAgICAgICAicGFpcl9pZCI6ICJwb2x5YW1pZGUtbnlsb242Njo6bi1idXRhbm9sIiwKICAgICAgICAicmVkXzI1YyI6IDEuMDE3MzQzLAogICAgICAgICJ2ZXJkaWN0X2JvdW5kYXJ5X2Nyb3NzaW5nX3RlbXBlcmF0dXJlX2MiOiA0Ny4wNDA2OQogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogdHJ1ZSwKICAgICAgICAicGFpcl9pZCI6ICJwb2x5bWV0aHlsLW1ldGhhY3J5bGF0ZTo6Y2hsb3JvZm9ybSIsCiAgICAgICAgInJlZF8yNWMiOiAwLjkwNDg4NywKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogdHJ1ZSwKICAgICAgICAicGFpcl9pZCI6ICJwb2x5bWV0aHlsLW1ldGhhY3J5bGF0ZTo6ZXRoeWwtYWNldGF0ZSIsCiAgICAgICAgInJlZF8yNWMiOiAwLjg4OTI4OCwKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogZmFsc2UsCiAgICAgICAgInBhaXJfaWQiOiAicG9seW1ldGh5bC1tZXRoYWNyeWxhdGU6Om4tYnV0YW5vbCIsCiAgICAgICAgInJlZF8yNWMiOiAxLjI2ODI5NSwKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogdHJ1ZSwKICAgICAgICAicGFpcl9pZCI6ICJwb2x5bWV0aHlsLW1ldGhhY3J5bGF0ZTo6cC14eWxlbmUiLAogICAgICAgICJyZWRfMjVjIjogMS4yMzkzOTUsCiAgICAgICAgInZlcmRpY3RfYm91bmRhcnlfY3Jvc3NpbmdfdGVtcGVyYXR1cmVfYyI6IG51bGwKICAgICAgfSwKICAgICAgewogICAgICAgICJjcm9zc2luZ19pbnNpZGVfNV90b180MGMiOiBmYWxzZSwKICAgICAgICAib2JzZXJ2ZWRfY29tcGF0aWJsZSI6IHRydWUsCiAgICAgICAgInBhaXJfaWQiOiAicG9seW1ldGh5bC1tZXRoYWNyeWxhdGU6OnRvbHVlbmUiLAogICAgICAgICJyZWRfMjVjIjogMS4yNDQyNCwKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IHRydWUsCiAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiBmYWxzZSwKICAgICAgICAicGFpcl9pZCI6ICJwb2x5c3R5cmVuZTo6YWNldG9uZSIsCiAgICAgICAgInJlZF8yNWMiOiAxLjAwNTMxOCwKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogMjkuNTIwMzQyCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiY3Jvc3NpbmdfaW5zaWRlXzVfdG9fNDBjIjogZmFsc2UsCiAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiB0cnVlLAogICAgICAgICJwYWlyX2lkIjogInBvbHlzdHlyZW5lOjpjeWNsb2hleGFuZSIsCiAgICAgICAgInJlZF8yNWMiOiAwLjkwMjc2OSwKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogdHJ1ZSwKICAgICAgICAicGFpcl9pZCI6ICJwb2x5c3R5cmVuZTo6ZGltZXRoeWxmb3JtYW1pZGUiLAogICAgICAgICJyZWRfMjVjIjogMS4wMzM0MTgsCiAgICAgICAgInZlcmRpY3RfYm91bmRhcnlfY3Jvc3NpbmdfdGVtcGVyYXR1cmVfYyI6IDU0Ljc1OTIwMwogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogdHJ1ZSwKICAgICAgICAicGFpcl9pZCI6ICJwb2x5c3R5cmVuZTo6ZXRoeWwtYWNldGF0ZSIsCiAgICAgICAgInJlZF8yNWMiOiAwLjg5NjYwMSwKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogdHJ1ZSwKICAgICAgICAicGFpcl9pZCI6ICJwb2x5c3R5cmVuZTo6bWV0aHlsLWV0aHlsLWtldG9uZSIsCiAgICAgICAgInJlZF8yNWMiOiAwLjg3NDEyMiwKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogZmFsc2UsCiAgICAgICAgInBhaXJfaWQiOiAicG9seXN0eXJlbmU6Om4tYnV0YW5vbCIsCiAgICAgICAgInJlZF8yNWMiOiAxLjIzMTUyMiwKICAgICAgICAidmVyZGljdF9ib3VuZGFyeV9jcm9zc2luZ190ZW1wZXJhdHVyZV9jIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgImNyb3NzaW5nX2luc2lkZV81X3RvXzQwYyI6IGZhbHNlLAogICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogZmFsc2UsCiAgICAgICAgInBhaXJfaWQiOiAicG9seXN0eXJlbmU6Om4taGV4YW5lIiwKICAgICAgICAicmVkXzI1YyI6IDEuMTU3MTU5LAogICAgICAgICJ2ZXJkaWN0X2JvdW5kYXJ5X2Nyb3NzaW5nX3RlbXBlcmF0dXJlX2MiOiBudWxsCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiY3Jvc3NpbmdfaW5zaWRlXzVfdG9fNDBjIjogZmFsc2UsCiAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiB0cnVlLAogICAgICAgICJwYWlyX2lkIjogInBvbHl2aW55bC1jaGxvcmlkZTo6dGV0cmFoeWRyb2Z1cmFuIiwKICAgICAgICAicmVkXzI1YyI6IDAuOTU0OTAxLAogICAgICAgICJ2ZXJkaWN0X2JvdW5kYXJ5X2Nyb3NzaW5nX3RlbXBlcmF0dXJlX2MiOiAtMTkuMzA5MzQxCiAgICAgIH0KICAgIF0sCiAgICAiaGVhZGxpbmUiOiB7CiAgICAgICJhbHBoYV9mcmVlX2JvdW5kX2Fsb25lX3JlZnV0ZXNfaDAiOiBmYWxzZSwKICAgICAgImFscGhhX2ZyZWVfbG93ZXJfYm91bmRfZmxpcHMiOiAwLAogICAgICAiY29tbW9uX2FscGhhX2ZsaXBfY291bnRzX2Fjcm9zc19kZWNsYXJlZF9ncmlkIjogWwogICAgICAgIDIKICAgICAgXSwKICAgICAgImZsaXBfY291bnRfc2Vuc2l0aXZlX3RvX2FscGhhX21hZ25pdHVkZV93aXRoaW5fZ3JpZCI6IGZhbHNlLAogICAgICAiZmxpcHBlZF9wYWlyX2lkcyI6IFsKICAgICAgICAicG9seWFtaWRlLW55bG9uNjY6OmRpbWV0aHlsZm9ybWFtaWRlIiwKICAgICAgICAicG9seWFtaWRlLW55bG9uNjY6Om4tYnV0YW5vbCIsCiAgICAgICAgInBvbHlzdHlyZW5lOjphY2V0b25lIiwKICAgICAgICAicG9seXZpbnlsLWNobG9yaWRlOjpkaWNobG9yb21ldGhhbmUiLAogICAgICAgICJwb2x5dmlueWwtY2hsb3JpZGU6OnRldHJhaHlkcm9mdXJhbiIKICAgICAgXSwKICAgICAgImgwIjogImV2ZXJ5IDI1IEMgUkVEIHZlcmRpY3QgaXMgaW52YXJpYW50IG92ZXIgNS00MCBDIHVuZGVyIEhhbnNlbidzIG93biB0ZW1wZXJhdHVyZSBsYXciLAogICAgICAiaDBfdmVyZGljdCI6ICJSRUZVVEVEIiwKICAgICAgInNtYWxsZXN0X2NvbW1vbl9hbHBoYV90aGF0X2JyZWFrc19pbnZhcmlhbmNlX3Blcl9rIjogMC4wMDAyNjEsCiAgICAgICJ3b3JzdF9jYXNlX21heF9hYnNfZGVsdGFfcmVkIjogMC4zOTIyNTIsCiAgICAgICJ3b3JzdF9jYXNlX3ZlcmRpY3RfZmxpcHNfb3Zlcl9kZWNsYXJlZF9zY2VuYXJpb3MiOiA1CiAgICB9LAogICAgImludGVycHJldGF0aW9uIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUgc2hpcHMgYSBIYW5zZW4gUkVEIHZlcmRpY3QgYnVpbHQgZnJvbSAyNSBDIHBhcmFtZXRlciB0YWJsZXMgYW5kIGFuIGludGVyYWN0aW9uIHJhZGl1cyBSIHRoYXQgY2FycmllcyBubyB0ZW1wZXJhdHVyZSBhcmd1bWVudCwgeWV0IG1hcmluZSB0d28tcGFydCBlcG94eS1hbWluZSBjb2F0aW5ncyBhcmUgYXBwbGllZCBuZWFyIDUgQyBhbmQgc2VydmljZWQgbmVhciA0MCBDLiBBcHBseWluZyBIYW5zZW4gJiBCZWVyYm93ZXIncyBvd24gcHVibGlzaGVkIHRlbXBlcmF0dXJlIGxhdyAoMTk3MTsgemVybyBmaXR0ZWQgcGFyYW1ldGVycykgYWNyb3NzIHRoYXQgZW52ZWxvcGU6IHRoZSAyNSBDIGJhc2VsaW5lIHJlcHJvZHVjZXMgdGhlIHNoaXBwZWQgNjcvNzUgaGVhZGxpbmUgZXhhY3RseSBhbmQgdGhlIGxhdyBpbXBsZW1lbnRhdGlvbiBtYXRjaGVzIHRoZSBwdWJsaXNoZWQgZGVyaXZhdGl2ZXMgdG8gMC4wIHJlbGF0aXZlIGVycm9yLiBIMCAodmVyZGljdCBpbnZhcmlhbmNlKSBpcyBSRUZVVEVEOiB3b3JzdCBjYXNlIDUgb2YgNzUgdmVyZGljdHMgZmxpcCBpbnNpZGUgNS00MCBDLCB3aXRoIG1heCB8ZFJFRHwgMC4zOTIyNTIuIFdoZXJlIHRoZSByZWZ1dGF0aW9uIGRvZXMgYW5kIGRvZXMgbm90IHJlc3Qgb24gYWxwaGEgaXMgc3RhdGVkIHByZWNpc2VseTogdGhlIGFzc3VtcHRpb24tZnJlZSBsb3dlciBib3VuZCAoUzAgLS0gdGhlIGFscGhhLWluZGVwZW5kZW50IDEuMjJlLTMgaHlkcm9nZW4tYm9uZGluZyB0ZXJtIGFjdGluZyBhbG9uZSwgbm8gdGhlcm1hbC1leHBhbnNpb24gY29lZmZpY2llbnQgYXNzdW1lZCkgZmxpcHMgMCB2ZXJkaWN0cywgc28gdGhlIEgtYm9uZGluZyB0ZXJtIEJZIElUU0VMRiBkb2VzIG5vdCByZWZ1dGUgSDA7IHRoZXJtYWwgZXhwYW5zaW9uIGlzIG5lY2Vzc2FyeS4gQnV0IHRoZSByZWZ1dGF0aW9uIGlzIG5vdCBzZW5zaXRpdmUgdG8gV0hJQ0ggYWxwaGE6IGludmFyaWFuY2UgYWxyZWFkeSBicmVha3MgYXQgYWxwaGEgPSAwLjAwMDI2MSAxL0ssIGZhciBiZWxvdyBhbnkgcmVhbCBvcmdhbmljIGxpcXVpZCwgYW5kIHRoZSBjb21tb24tYWxwaGEgZmxpcCBjb3VudCBpcyBjb25zdGFudCBhdCBbMl0gYWNyb3NzIHRoZSBlbnRpcmUgZGVjbGFyZWQgNi4wZS00IC4uIDEuNWUtMyAxL0sgcmFuZ2UgLS0gc28gbm8gYWxwaGEgdmFsdWUgd2FzIHR1bmVkIHRvIHByb2R1Y2UgdGhlIHJlc3VsdC4gQXQgYWxwaGEgPSAxLjBlLTMgMS9LIHRoZSBSRUQgb2YgZXZlcnkgcGFpciBzY2FsZXMgYmV0d2VlbiAwLjk3NTAzMyBhbmQgMS4wMzQzMTMgb2YgaXRzIDI1IEMgdmFsdWUgd2hpbGUgdGhlIHJhbmsgb3JkZXJpbmcgaXMgZXNzZW50aWFsbHkgcHJlc2VydmVkIChtaW4gS2VuZGFsbCB0YXUtYiAwLjk5MDYzMSwgQVVST0MgaW4gWzAuOTQ3MzMsIDAuOTUyMzgxXSkgLS0gaS5lLiB0ZW1wZXJhdHVyZSBtb3ZlcyB0aGUgREVDSVNJT04gQk9VTkRBUlksIG5vdCB0aGUgcmFua2luZy4gTWVjaGFuaXNtOiBjby1zY2FsaW5nIFIgd2l0aCB0aGUgcG9seW1lcidzIG93biBIYW5zZW4tbm9ybSBjb250cmFjdGlvbiAoUzMpIGxlYXZlcyAwIGZsaXBzLCByZW1vdmluZyA1LCB3aGljaCBsb2NhbGlzZXMgdGhlIGRyaWZ0IHRvIHRoZSB0ZW1wZXJhdHVyZS1pbnZhcmlhbnQgUiByYXRoZXIgdGhhbiB0byB0aGUgcGFyYW1ldGVyIGxhdy4gUHJhY3RpY2FsIGNvbnNlcXVlbmNlIGZvciBzb2x2ZW50IHNlbGVjdGlvbjogYSBmaXhlZC1SIDI1IEMgSGFuc2VuIHNwaGVyZSBpcyBzeXN0ZW1hdGljYWxseSBtb3JlIHBlcm1pc3NpdmUgYXQgdHJvcGljYWwgYXBwbGljYXRpb24gdGVtcGVyYXR1cmUgYW5kIG1vcmUgcmVzdHJpY3RpdmUgaW4gd2ludGVyIGFwcGxpY2F0aW9uLCBhbmQgdGhlIGV4cG9zdXJlIGlzIGNvbmZpbmVkIHRvIHBhaXJzIHNpdHRpbmcgd2l0aGluIGEgZmV3IHBlcmNlbnQgb2YgUkVEID0gMSAtLSBlLmcuIHBvbHlhbWlkZS1ueWxvbjY2OjpkaW1ldGh5bGZvcm1hbWlkZSAoUkVEIDAuOTg2OCBhdCAyNSBDKSBjcm9zc2VzIHRoZSBib3VuZGFyeSBhdCAxMi4xMyBDIGFuZCBwb2x5c3R5cmVuZTo6YWNldG9uZSAoUkVEIDEuMDA1MykgY3Jvc3NlcyBhdCAyOS41MiBDLiBFZmZlY3Qgc2l6ZSBpcyBkZWxpYmVyYXRlbHkgbm90IG92ZXJzdGF0ZWQ6IHRoZSBwYWlyZWQgcGlubmVkLXNlZWQgYm9vdHN0cmFwIENJcyBvbiB0aGUgY2hhbmdlIGluIGFncmVlbWVudCB3aXRoIHRoZSAyNSBDIGxhYmVsIHNldCBhcmUgWy0wLjA0LCAwLjBdIGF0IDUgQyBhbmQgWy0wLjA0LCAwLjBdIGF0IDQwIEMsIGJvdGggc3RyYWRkbGluZyB6ZXJvLCBzbyBhdCBuID0gNzUgdGhlIEFHR1JFR0FURSBkaXZlcmdlbmNlIGlzIG5vdCByZXNvbHZhYmxlIC0tIHRoZSBkdXJhYmxlIGZpbmRpbmcgaXMgdGhlIGlkZW50aWZpZWQgYm91bmRhcnktY3Jvc3NpbmcgcGFpcnMgYW5kIHRoZSBmaXhlZC1SIG1lY2hhbmlzbSwgbm90IGEgaGVhZGxpbmUgYWNjdXJhY3kgY2hhbmdlLiBOb3RlIGFsc28gdGhhdCB0aGUgZml4dHVyZSBsYWJlbHMgYXJlIDI1IEMgb2JzZXJ2YXRpb25zLCBzbyBvZmYtMjUgQyBjb3VudHMgbWVhc3VyZSBkaXZlcmdlbmNlIGZyb20gdGhlIHNoaXBwZWQgdmVyZGljdCBzZXQsIG5vdCBwcmVkaWN0aXZlIGVycm9yLiBTY29wZTogc2VsZi1hdXRob3JlZCBDQzAgZml4dHVyZSwgTE9DS0VEX0lOVEVSTkFMLCBDT05TVFJBSU5UX09OTFkgLS0gdGhpcyBpcyBhIHNlbGYtY29uc2lzdGVuY3kgZmFsc2lmaWNhdGlvbiBvZiB0aGUgc2hpcHBlZCBydWxlLCBOT1QgZXh0ZXJuYWwgdmFsaWRhdGlvbiwgYW5kIGl0IGRvZXMgbm90IHJlLWxhYmVsIGFueSBwYWlyLiIsCiAgICAibGFiZWxfdGVtcGVyYXR1cmVfY2F2ZWF0IjogewogICAgICAiZml4dHVyZV9sYWJlbHNfb2JzZXJ2ZWRfYXRfYyI6IDI1LjAsCiAgICAgICJub3RlIjogIm9ic2VydmVkX2NvbXBhdGlibGUgbGFiZWxzIGFyZSAyNSBDIG9ic2VydmF0aW9ucywgc28gdGhlIGNvcnJlY3Rfb2ZfNzUgY291bnRzIHJlcG9ydGVkIGF0IG90aGVyIHRlbXBlcmF0dXJlcyBtZWFzdXJlIERJVkVSR0VOQ0Ugb2YgdGhlIHRlbXBlcmF0dXJlLWNvcnJlY3RlZCB2ZXJkaWN0IGZyb20gdGhlIDI1IEMgbGFiZWwgc2V0LCBOT1QgcHJlZGljdGl2ZSBlcnJvciBhdCB0aGF0IHRlbXBlcmF0dXJlLiBObyBwYWlyIGlzIHJlLWxhYmVsbGVkIGFuZCBubyBhY2N1cmFjeSBjbGFpbSBpcyBtYWRlIG9mZiAyNSBDLiIKICAgIH0sCiAgICAibGF3X3ZlcmlmaWNhdGlvbiI6IHsKICAgICAgIm1heF9yZWxhdGl2ZV9lcnJvcl92c19wdWJsaXNoZWRfZGVyaXZhdGl2ZXMiOiAwLjAsCiAgICAgICJtZXRob2QiOiAiY2VudHJhbCBkaWZmZXJlbmNlIGg9MWUtNCBLIGFnYWluc3QgdGhlIGFuYWx5dGljIHJpZ2h0LWhhbmQgc2lkZXMiCiAgICB9LAogICAgIm1lY2hhbmlzbSI6IHsKICAgICAgImRpcmVjdGlvbiI6ICJSRUQgPSBSYS9SIGZhbGxzIHdpdGggcmlzaW5nIFQgd2hlbiBSIGlzIGhlbGQgZml4ZWQsIHNvIGEgZml4ZWQtUiBIYW5zZW4gc3BoZXJlIGlzIHN5c3RlbWF0aWNhbGx5IE1PUkUgUEVSTUlTU0lWRSBob3QgYW5kIE1PUkUgUkVTVFJJQ1RJVkUgY29sZCB0aGFuIGl0cyAyNSBDIGNhbGlicmF0aW9uIiwKICAgICAgImZsaXBzX3JlbW92ZWRfYnlfY29fc2NhbGluZ19SIjogNSwKICAgICAgInF1ZXN0aW9uIjogImlzIHRoZSBkcmlmdCBhbiBhcnRpZmFjdCBvZiBob2xkaW5nIHRoZSBpbnRlcmFjdGlvbiByYWRpdXMgUiB0ZW1wZXJhdHVyZS1pbnZhcmlhbnQgd2hpbGUgYWxsIHRocmVlIEhTUCBjb21wb25lbnRzIGNvbnRyYWN0PyIsCiAgICAgICJzM19mbGlwcGVkX3BhaXJfaWRzIjogW10sCiAgICAgICJzM19yX2NvX3NjYWxlZF9mbGlwcyI6IDAKICAgIH0sCiAgICAic2NlbmFyaW9fc3VtbWFyaWVzIjogewogICAgICAiUzBfYWxwaGFfZnJlZV9sb3dlcl9ib3VuZCI6IHsKICAgICAgICAiYWNjdXJhY3lfY29ycmVjdF9vZl83NV9tYXgiOiA2NywKICAgICAgICAiYWNjdXJhY3lfY29ycmVjdF9vZl83NV9taW4iOiA2NywKICAgICAgICAiYWxwaGFfcG9seW1lcl9wZXJfayI6IDAuMCwKICAgICAgICAiYWxwaGFfc29sdmVudF9wZXJfayI6IDAuMCwKICAgICAgICAiYXVyb2NfbWF4IjogMC45NTA5MzgsCiAgICAgICAgImF1cm9jX21pbiI6IDAuOTQ4MDUyLAogICAgICAgICJlbmRwb2ludHMiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJhY2N1cmFjeSI6IDAuODkzMzMzLAogICAgICAgICAgICAiYXVyb2MiOiAwLjk1MDkzOCwKICAgICAgICAgICAgImNvcnJlY3Rfb2ZfNzUiOiA2NywKICAgICAgICAgICAgImtlbmRhbGxfdGF1X2JfdnNfMjVjIjogMC45OTIwNzIsCiAgICAgICAgICAgICJ0ZW1wZXJhdHVyZV9jIjogNS4wCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiYWNjdXJhY3kiOiAwLjg5MzMzMywKICAgICAgICAgICAgImF1cm9jIjogMC45NDg3NzMsCiAgICAgICAgICAgICJjb3JyZWN0X29mXzc1IjogNjcsCiAgICAgICAgICAgICJrZW5kYWxsX3RhdV9iX3ZzXzI1YyI6IDEuMCwKICAgICAgICAgICAgInRlbXBlcmF0dXJlX2MiOiAyNS4wCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiYWNjdXJhY3kiOiAwLjg5MzMzMywKICAgICAgICAgICAgImF1cm9jIjogMC45NDgwNTIsCiAgICAgICAgICAgICJjb3JyZWN0X29mXzc1IjogNjcsCiAgICAgICAgICAgICJrZW5kYWxsX3RhdV9iX3ZzXzI1YyI6IDAuOTk0MjM0LAogICAgICAgICAgICAidGVtcGVyYXR1cmVfYyI6IDQwLjAKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJpbnRlcmFjdGlvbl9yYWRpdXNfY29fc2NhbGVkIjogZmFsc2UsCiAgICAgICAgImtlbmRhbGxfdGF1X2JfdnNfMjVjX21pbiI6IDAuOTkyMDcyLAogICAgICAgICJtYXhfYWJzX2RlbHRhX3JlZCI6IDAuMjMwMjg5LAogICAgICAgICJuX3ZlcmRpY3RfZmxpcHNfaW5fZW52ZWxvcGUiOiAwLAogICAgICAgICJyZWRfcmF0aW9fbWF4X292ZXJfZW52ZWxvcGUiOiAxLjAyMzg1NSwKICAgICAgICAicmVkX3JhdGlvX21pbl9vdmVyX2VudmVsb3BlIjogMC45ODI1CiAgICAgIH0sCiAgICAgICJTMV9jb21tb25fYWxwaGFfMS4wZS0wMyI6IHsKICAgICAgICAiYWNjdXJhY3lfY29ycmVjdF9vZl83NV9tYXgiOiA2NywKICAgICAgICAiYWNjdXJhY3lfY29ycmVjdF9vZl83NV9taW4iOiA2NiwKICAgICAgICAiYWxwaGFfcG9seW1lcl9wZXJfayI6IDAuMDAxLAogICAgICAgICJhbHBoYV9zb2x2ZW50X3Blcl9rIjogMC4wMDEsCiAgICAgICAgImF1cm9jX21heCI6IDAuOTUyMzgxLAogICAgICAgICJhdXJvY19taW4iOiAwLjk0NzMzLAogICAgICAgICJlbmRwb2ludHMiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJhY2N1cmFjeSI6IDAuODgsCiAgICAgICAgICAgICJhdXJvYyI6IDAuOTUyMzgxLAogICAgICAgICAgICAiY29ycmVjdF9vZl83NSI6IDY2LAogICAgICAgICAgICAia2VuZGFsbF90YXVfYl92c18yNWMiOiAwLjk5MDYzMSwKICAgICAgICAgICAgInRlbXBlcmF0dXJlX2MiOiA1LjAKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJhY2N1cmFjeSI6IDAuODkzMzMzLAogICAgICAgICAgICAiYXVyb2MiOiAwLjk0ODc3MywKICAgICAgICAgICAgImNvcnJlY3Rfb2ZfNzUiOiA2NywKICAgICAgICAgICAgImtlbmRhbGxfdGF1X2JfdnNfMjVjIjogMS4wLAogICAgICAgICAgICAidGVtcGVyYXR1cmVfYyI6IDI1LjAKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJhY2N1cmFjeSI6IDAuODgsCiAgICAgICAgICAgICJhdXJvYyI6IDAuOTQ3MzMsCiAgICAgICAgICAgICJjb3JyZWN0X29mXzc1IjogNjYsCiAgICAgICAgICAgICJrZW5kYWxsX3RhdV9iX3ZzXzI1YyI6IDAuOTk0OTU1LAogICAgICAgICAgICAidGVtcGVyYXR1cmVfYyI6IDQwLjAKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJmbGlwcyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImZpcnN0X2ZsaXBfdGVtcGVyYXR1cmVfYyI6IDUuMCwKICAgICAgICAgICAgImZsaXBfaGVscHNfYWNjdXJhY3kiOiBmYWxzZSwKICAgICAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiB0cnVlLAogICAgICAgICAgICAicGFpcl9pZCI6ICJwb2x5YW1pZGUtbnlsb242Njo6ZGltZXRoeWxmb3JtYW1pZGUiLAogICAgICAgICAgICAicmVkXzI1YyI6IDAuOTg2ODQyLAogICAgICAgICAgICAicmVkX2F0X2ZsaXBfdGVtcGVyYXR1cmUiOiAxLjAwNzQxOCwKICAgICAgICAgICAgInZlcmRpY3RfMjVjIjogImNvbXBhdGlibGUiLAogICAgICAgICAgICAidmVyZGljdF9hdF9mbGlwIjogImluY29tcGF0aWJsZSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaXJzdF9mbGlwX3RlbXBlcmF0dXJlX2MiOiAzMC4wLAogICAgICAgICAgICAiZmxpcF9oZWxwc19hY2N1cmFjeSI6IGZhbHNlLAogICAgICAgICAgICAib2JzZXJ2ZWRfY29tcGF0aWJsZSI6IGZhbHNlLAogICAgICAgICAgICAicGFpcl9pZCI6ICJwb2x5c3R5cmVuZTo6YWNldG9uZSIsCiAgICAgICAgICAgICJyZWRfMjVjIjogMS4wMDUzMTgsCiAgICAgICAgICAgICJyZWRfYXRfZmxpcF90ZW1wZXJhdHVyZSI6IDAuOTk5NDM4LAogICAgICAgICAgICAidmVyZGljdF8yNWMiOiAiaW5jb21wYXRpYmxlIiwKICAgICAgICAgICAgInZlcmRpY3RfYXRfZmxpcCI6ICJjb21wYXRpYmxlIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImludGVyYWN0aW9uX3JhZGl1c19jb19zY2FsZWQiOiBmYWxzZSwKICAgICAgICAia2VuZGFsbF90YXVfYl92c18yNWNfbWluIjogMC45OTA2MzEsCiAgICAgICAgIm1heF9hYnNfZGVsdGFfcmVkIjogMC4zMzc5NTksCiAgICAgICAgIm5fdmVyZGljdF9mbGlwc19pbl9lbnZlbG9wZSI6IDIsCiAgICAgICAgInJlZF9yYXRpb19tYXhfb3Zlcl9lbnZlbG9wZSI6IDEuMDM0MzEzLAogICAgICAgICJyZWRfcmF0aW9fbWluX292ZXJfZW52ZWxvcGUiOiAwLjk3NTAzMwogICAgICB9LAogICAgICAiUzJfc29sdmVudF9vbmx5X2FscGhhXzEuNWUtMDMiOiB7CiAgICAgICAgImFjY3VyYWN5X2NvcnJlY3Rfb2ZfNzVfbWF4IjogNjcsCiAgICAgICAgImFjY3VyYWN5X2NvcnJlY3Rfb2ZfNzVfbWluIjogNjQsCiAgICAgICAgImFscGhhX3BvbHltZXJfcGVyX2siOiAwLjAsCiAgICAgICAgImFscGhhX3NvbHZlbnRfcGVyX2siOiAwLjAwMTUsCiAgICAgICAgImF1cm9jX21heCI6IDAuOTUxNjU5LAogICAgICAgICJhdXJvY19taW4iOiAwLjk0NDQ0NCwKICAgICAgICAiZW5kcG9pbnRzIjogWwogICAgICAgICAgewogICAgICAgICAgICAiYWNjdXJhY3kiOiAwLjg1MzMzMywKICAgICAgICAgICAgImF1cm9jIjogMC45NTA5MzgsCiAgICAgICAgICAgICJjb3JyZWN0X29mXzc1IjogNjQsCiAgICAgICAgICAgICJrZW5kYWxsX3RhdV9iX3ZzXzI1YyI6IDAuOTMzNjk0LAogICAgICAgICAgICAidGVtcGVyYXR1cmVfYyI6IDUuMAogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImFjY3VyYWN5IjogMC44OTMzMzMsCiAgICAgICAgICAgICJhdXJvYyI6IDAuOTQ4NzczLAogICAgICAgICAgICAiY29ycmVjdF9vZl83NSI6IDY3LAogICAgICAgICAgICAia2VuZGFsbF90YXVfYl92c18yNWMiOiAxLjAsCiAgICAgICAgICAgICJ0ZW1wZXJhdHVyZV9jIjogMjUuMAogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImFjY3VyYWN5IjogMC44NjY2NjcsCiAgICAgICAgICAgICJhdXJvYyI6IDAuOTQ0NDQ0LAogICAgICAgICAgICAiY29ycmVjdF9vZl83NSI6IDY1LAogICAgICAgICAgICAia2VuZGFsbF90YXVfYl92c18yNWMiOiAwLjk2MDM2LAogICAgICAgICAgICAidGVtcGVyYXR1cmVfYyI6IDQwLjAKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJmbGlwcyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImZpcnN0X2ZsaXBfdGVtcGVyYXR1cmVfYyI6IDUuMCwKICAgICAgICAgICAgImZsaXBfaGVscHNfYWNjdXJhY3kiOiBmYWxzZSwKICAgICAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiB0cnVlLAogICAgICAgICAgICAicGFpcl9pZCI6ICJwb2x5YW1pZGUtbnlsb242Njo6ZGltZXRoeWxmb3JtYW1pZGUiLAogICAgICAgICAgICAicmVkXzI1YyI6IDAuOTg2ODQyLAogICAgICAgICAgICAicmVkX2F0X2ZsaXBfdGVtcGVyYXR1cmUiOiAxLjAzOTUyMSwKICAgICAgICAgICAgInZlcmRpY3RfMjVjIjogImNvbXBhdGlibGUiLAogICAgICAgICAgICAidmVyZGljdF9hdF9mbGlwIjogImluY29tcGF0aWJsZSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaXJzdF9mbGlwX3RlbXBlcmF0dXJlX2MiOiA1LjAsCiAgICAgICAgICAgICJmbGlwX2hlbHBzX2FjY3VyYWN5IjogZmFsc2UsCiAgICAgICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogZmFsc2UsCiAgICAgICAgICAgICJwYWlyX2lkIjogInBvbHlhbWlkZS1ueWxvbjY2OjpuLWJ1dGFub2wiLAogICAgICAgICAgICAicmVkXzI1YyI6IDEuMDE3MzQzLAogICAgICAgICAgICAicmVkX2F0X2ZsaXBfdGVtcGVyYXR1cmUiOiAwLjkxMDk3NSwKICAgICAgICAgICAgInZlcmRpY3RfMjVjIjogImluY29tcGF0aWJsZSIsCiAgICAgICAgICAgICJ2ZXJkaWN0X2F0X2ZsaXAiOiAiY29tcGF0aWJsZSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaXJzdF9mbGlwX3RlbXBlcmF0dXJlX2MiOiA1LjAsCiAgICAgICAgICAgICJmbGlwX2hlbHBzX2FjY3VyYWN5IjogZmFsc2UsCiAgICAgICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogZmFsc2UsCiAgICAgICAgICAgICJwYWlyX2lkIjogInBvbHlzdHlyZW5lOjphY2V0b25lIiwKICAgICAgICAgICAgInJlZF8yNWMiOiAxLjAwNTMxOCwKICAgICAgICAgICAgInJlZF9hdF9mbGlwX3RlbXBlcmF0dXJlIjogMC45Mjk1OTQsCiAgICAgICAgICAgICJ2ZXJkaWN0XzI1YyI6ICJpbmNvbXBhdGlibGUiLAogICAgICAgICAgICAidmVyZGljdF9hdF9mbGlwIjogImNvbXBhdGlibGUiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAiZmlyc3RfZmxpcF90ZW1wZXJhdHVyZV9jIjogMzkuMCwKICAgICAgICAgICAgImZsaXBfaGVscHNfYWNjdXJhY3kiOiBmYWxzZSwKICAgICAgICAgICAgIm9ic2VydmVkX2NvbXBhdGlibGUiOiB0cnVlLAogICAgICAgICAgICAicGFpcl9pZCI6ICJwb2x5dmlueWwtY2hsb3JpZGU6OmRpY2hsb3JvbWV0aGFuZSIsCiAgICAgICAgICAgICJyZWRfMjVjIjogMC43Njg3NzksCiAgICAgICAgICAgICJyZWRfYXRfZmxpcF90ZW1wZXJhdHVyZSI6IDEuMDA2NDg5LAogICAgICAgICAgICAidmVyZGljdF8yNWMiOiAiY29tcGF0aWJsZSIsCiAgICAgICAgICAgICJ2ZXJkaWN0X2F0X2ZsaXAiOiAiaW5jb21wYXRpYmxlIgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgImZpcnN0X2ZsaXBfdGVtcGVyYXR1cmVfYyI6IDI4LjAsCiAgICAgICAgICAgICJmbGlwX2hlbHBzX2FjY3VyYWN5IjogZmFsc2UsCiAgICAgICAgICAgICJvYnNlcnZlZF9jb21wYXRpYmxlIjogdHJ1ZSwKICAgICAgICAgICAgInBhaXJfaWQiOiAicG9seXZpbnlsLWNobG9yaWRlOjp0ZXRyYWh5ZHJvZnVyYW4iLAogICAgICAgICAgICAicmVkXzI1YyI6IDAuOTU0OTAxLAogICAgICAgICAgICAicmVkX2F0X2ZsaXBfdGVtcGVyYXR1cmUiOiAxLjAwMjc1NiwKICAgICAgICAgICAgInZlcmRpY3RfMjVjIjogImNvbXBhdGlibGUiLAogICAgICAgICAgICAidmVyZGljdF9hdF9mbGlwIjogImluY29tcGF0aWJsZSIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJpbnRlcmFjdGlvbl9yYWRpdXNfY29fc2NhbGVkIjogZmFsc2UsCiAgICAgICAgImtlbmRhbGxfdGF1X2JfdnNfMjVjX21pbiI6IDAuOTMzNjk0LAogICAgICAgICJtYXhfYWJzX2RlbHRhX3JlZCI6IDAuMzgyMjI0LAogICAgICAgICJuX3ZlcmRpY3RfZmxpcHNfaW5fZW52ZWxvcGUiOiA1LAogICAgICAgICJyZWRfcmF0aW9fbWF4X292ZXJfZW52ZWxvcGUiOiAxLjMzMTMzOCwKICAgICAgICAicmVkX3JhdGlvX21pbl9vdmVyX2VudmVsb3BlIjogMC41ODQ1MDEKICAgICAgfSwKICAgICAgIlMzX21lY2hhbmlzbV9SX2NvX3NjYWxlZF8xLjBlLTAzIjogewogICAgICAgICJhY2N1cmFjeV9jb3JyZWN0X29mXzc1X21heCI6IDY3LAogICAgICAgICJhY2N1cmFjeV9jb3JyZWN0X29mXzc1X21pbiI6IDY3LAogICAgICAgICJhbHBoYV9wb2x5bWVyX3Blcl9rIjogMC4wMDEsCiAgICAgICAgImFscGhhX3NvbHZlbnRfcGVyX2siOiAwLjAwMSwKICAgICAgICAiYXVyb2NfbWF4IjogMC45NTIzODEsCiAgICAgICAgImF1cm9jX21pbiI6IDAuOTQ3MzMsCiAgICAgICAgImVuZHBvaW50cyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImFjY3VyYWN5IjogMC44OTMzMzMsCiAgICAgICAgICAgICJhdXJvYyI6IDAuOTUyMzgxLAogICAgICAgICAgICAiY29ycmVjdF9vZl83NSI6IDY3LAogICAgICAgICAgICAia2VuZGFsbF90YXVfYl92c18yNWMiOiAwLjk5MDYzMSwKICAgICAgICAgICAgInRlbXBlcmF0dXJlX2MiOiA1LjAKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJhY2N1cmFjeSI6IDAuODkzMzMzLAogICAgICAgICAgICAiYXVyb2MiOiAwLjk0ODc3MywKICAgICAgICAgICAgImNvcnJlY3Rfb2ZfNzUiOiA2NywKICAgICAgICAgICAgImtlbmRhbGxfdGF1X2JfdnNfMjVjIjogMS4wLAogICAgICAgICAgICAidGVtcGVyYXR1cmVfYyI6IDI1LjAKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJhY2N1cmFjeSI6IDAuODkzMzMzLAogICAgICAgICAgICAiYXVyb2MiOiAwLjk0NzMzLAogICAgICAgICAgICAiY29ycmVjdF9vZl83NSI6IDY3LAogICAgICAgICAgICAia2VuZGFsbF90YXVfYl92c18yNWMiOiAwLjk5NDk1NSwKICAgICAgICAgICAgInRlbXBlcmF0dXJlX2MiOiA0MC4wCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiZmxpcHMiOiBbXSwKICAgICAgICAiaW50ZXJhY3Rpb25fcmFkaXVzX2NvX3NjYWxlZCI6IHRydWUsCiAgICAgICAgImtlbmRhbGxfdGF1X2JfdnNfMjVjX21pbiI6IDAuOTkwNjMxLAogICAgICAgICJtYXhfYWJzX2RlbHRhX3JlZCI6IDAuMDgwNzE5LAogICAgICAgICJuX3ZlcmRpY3RfZmxpcHNfaW5fZW52ZWxvcGUiOiAwLAogICAgICAgICJyZWRfcmF0aW9fbWF4X292ZXJfZW52ZWxvcGUiOiAxLjAwOTk3OCwKICAgICAgICAicmVkX3JhdGlvX21pbl9vdmVyX2VudmVsb3BlIjogMC45ODY4NDgKICAgICAgfQogICAgfQogIH0sCiAgImhvbmVzdF9saW1pdGF0aW9ucyI6IFsKICAgICJUaGUgYWxwaGEtZnJlZSBsb3dlciBib3VuZCAoUzApIGZsaXBzIFpFUk8gdmVyZGljdHM6IHRoZSBhbHBoYS1pbmRlcGVuZGVudCAxLjIyZS0zIGh5ZHJvZ2VuLWJvbmRpbmcgdGVybSBhbG9uZSBkb2VzIE5PVCByZWZ1dGUgSDAuIE5vbi16ZXJvIHRoZXJtYWwgZXhwYW5zaW9uIGlzIG5lY2Vzc2FyeSBmb3IgdGhlIHJlZnV0YXRpb24uIiwKICAgICJUaGUgcmVmdXRhdGlvbiBpcyBuZXZlcnRoZWxlc3Mgbm90IGFscGhhLXR1bmVkOiBpbnZhcmlhbmNlIGJyZWFrcyBhdCBhbHBoYSA9IDAuMDAwMjYxIDEvSywgZmFyIGJlbG93IGFueSByZWFsIG9yZ2FuaWMgbGlxdWlkLCBhbmQgdGhlIGNvbW1vbi1hbHBoYSBmbGlwIGNvdW50IGlzIGNvbnN0YW50IGFjcm9zcyB0aGUgZW50aXJlIGRlY2xhcmVkIDYuMGUtNCAuLiAxLjVlLTMgMS9LIGdyaWQuIiwKICAgICJCb3RoIHBhaXJlZC1ib290c3RyYXAgQ0lzIG9uIHRoZSBjaGFuZ2UgaW4gYWdyZWVtZW50IHdpdGggdGhlIDI1IEMgbGFiZWwgc2V0IHN0cmFkZGxlIHplcm8sIHNvIHRoZSBBR0dSRUdBVEUgZGl2ZXJnZW5jZSBpcyBub3Qgc3RhdGlzdGljYWxseSByZXNvbHZhYmxlIGF0IG4gPSA3NS4gVGhlIGR1cmFibGUgZmluZGluZ3MgYXJlIHRoZSBpZGVudGlmaWVkIGJvdW5kYXJ5LWNyb3NzaW5nIHBhaXJzIGFuZCB0aGUgZml4ZWQtUiBtZWNoYW5pc20sIG5vdCBhIGhlYWRsaW5lIGFjY3VyYWN5IGNoYW5nZS4iLAogICAgIkZpeHR1cmUgbGFiZWxzIGFyZSAyNSBDIG9ic2VydmF0aW9ucywgc28gb2ZmLTI1IEMgY291bnRzIG1lYXN1cmUgZGl2ZXJnZW5jZSBmcm9tIHRoZSBzaGlwcGVkIHZlcmRpY3Qgc2V0LCBub3QgcHJlZGljdGl2ZSBlcnJvciBhdCB0aGF0IHRlbXBlcmF0dXJlLiIsCiAgICAiUiBpcyB0cmVhdGVkIGFzIHRlbXBlcmF0dXJlLWludmFyaWFudCBpbiBTMC9TMS9TMiBiZWNhdXNlIHRoYXQgaXMgd2hhdCB0aGUgc2hpcHBlZCBydWxlIGRvZXM7IFMzIHNob3dzIHRoaXMgaXMgcHJlY2lzZWx5IHdoZXJlIHRoZSBkcmlmdCBvcmlnaW5hdGVzLiBXaGV0aGVyIFIgc2hvdWxkIGNvLXNjYWxlIGlzIG5vdCBzZXR0bGVkIGJ5IHRoaXMgc3R1ZHkgYW5kIHdvdWxkIG5lZWQgZXh0ZXJuYWwgc29sdWJpbGl0eSBkYXRhIGF0IHR3byB0ZW1wZXJhdHVyZXMuIiwKICAgICJUaGUgZml4dHVyZSBpcyBzZWxmLWF1dGhvcmVkIENDMCwgbm90IGFuIGV4dGVybmFsIGJlbmNobWFyay4iCiAgXSwKICAiaHVtYW5fcmV2aWV3X3BlcmZvcm1lZCI6IGZhbHNlLAogICJtb2R1bGUiOiAiYW1waG9yYS1zb2x2ZW5jeS1zY29yZSIsCiAgIm9yZ2FuaXphdGlvbmFsX2luZGVwZW5kZW5jZV9hc3NlcnRlZCI6IGZhbHNlLAogICJwaHlzaWNhbF9iYXNlbGluZSI6IHsKICAgICJjb25zdGFudHMiOiB7CiAgICAgICJUMF9LIjogMjk4LjE1LAogICAgICAiY19kIjogMS4yNSwKICAgICAgImNfaCI6IDAuNSwKICAgICAgImNfcCI6IDAuNSwKICAgICAgImRoX3Rlcm1fcGVyX2siOiAwLjAwMTIyLAogICAgICAiZmFjdG9yX2siOiA0LjAsCiAgICAgICJyZWRfY3V0b2ZmIjogMS4wCiAgICB9LAogICAgImZyZWVfcGFyYW1ldGVyc19maXR0ZWQiOiAwLAogICAgImludGVncmF0aW9uIjogImV4YWN0IGZvciBjb25zdGFudCBhbHBoYSBvdmVyIHRoZSBlbnZlbG9wZTsgVDAgPSAyOTguMTUgSyIsCiAgICAicmVkX3NwaGVyZSI6ICJIYW5zZW4gMjAwNyBoYW5kYm9vayBFcS4gMS45LCBSYV4yID0gNCpkZEReMiArIGRkUF4yICsgZGRIXjIsIFJFRCA9IFJhL1IiLAogICAgInRlbXBlcmF0dXJlX2xhdyI6ICJIYW5zZW4gJiBCZWVyYm93ZXIgMTk3MSAoS2lyay1PdGhtZXIgU3VwcGwuIFZvbC4sIDJuZCBlZC4sIHBwLiA4ODktOTEwKTsgZChkRCkvZFQgPSAtMS4yNSBhIGRELCBkKGRQKS9kVCA9IC0wLjUwIGEgZFAsIGQoZEgpL2RUID0gLSgxLjIyZS0zICsgMC41MCBhKSBkSCIKICB9LAogICJwcm9tb3Rlc19hdXRob3JpdHkiOiBmYWxzZSwKICAicHJvdmVuYW5jZSI6IHsKICAgICJmaXh0dXJlX2xpY2Vuc2UiOiAiQ0MwLTEuMCIsCiAgICAicHJpbWFyeV9zb3VyY2VzIjogWwogICAgICAiQy4gTS4gSGFuc2VuLCBIYW5zZW4gU29sdWJpbGl0eSBQYXJhbWV0ZXJzOiBBIFVzZXIncyBIYW5kYm9vaywgMm5kIGVkLiwgQ1JDIFByZXNzIDIwMDcsIElTQk4gOTc4LTAtODQ5My03MjQ4LTMgKFJFRCBzcGhlcmUgRXEuIDEuOTsgVGFibGVzIEEuMS9BLjI7IENoLiAxIHRlbXBlcmF0dXJlIGRlcGVuZGVuY2UpIiwKICAgICAgIkMuIE0uIEhhbnNlbiwgQS4gQmVlcmJvd2VyLCAnU29sdWJpbGl0eSBQYXJhbWV0ZXJzJywgaW4gS2lyay1PdGhtZXIgRW5jeWNsb3BlZGlhIG9mIENoZW1pY2FsIFRlY2hub2xvZ3ksIFN1cHBsLiBWb2wuLCAybmQgZWQuLCBXaWxleSAxOTcxLCBwcC4gODg5LTkxMCAob3JpZ2luIG9mIHRoZSBkKGREKS9kVCwgZChkUCkvZFQsIGQoZEgpL2RUIHJlbGF0aW9ucyBhcHBsaWVkIGhlcmUpIiwKICAgICAgIklTTyAxMjk0NC03IChwYWludCBhcHBsaWNhdGlvbiBleGVjdXRpb24gLyBzdWJzdHJhdGUgdGVtcGVyYXR1cmUgcHJhY3RpY2UpIGFuZCBJTU8gUmVzb2x1dGlvbiBNU0MuMjE1KDgyKSBQU1BDIChiYWxsYXN0LXRhbmsgY29hdGluZyBhcHBsaWNhdGlvbiBjb25kaXRpb25zKSBhcyB0aGUgYmFzaXMgZm9yIHRoZSA1LTQwIEMgbWFyaW5lIGFwcGxpY2F0aW9uL3NlcnZpY2UgZW52ZWxvcGUiCiAgICBdLAogICAgInNjb3BlIjogIm1hcmluZSBhbnRpLWNvcnJvc2lvbiB0d28tcGFydCBlcG94eS1hbWluZSAoREdFQkEgZXBveHkgKyByZWZlcmVuY2UgcG9seW1lcnMpIHZzIGNvYXRpbmctcmVsZXZhbnQgc29sdmVudHMiCiAgfSwKICAicHVycG9zZSI6ICJGYWxzaWZpY2F0aW9uIHRlc3Qgb2YgdGhlIHRlbXBlcmF0dXJlLWludmFyaWFuY2UgYXNzdW1wdGlvbiBpbXBsaWNpdCBpbiBhbXBob3JhLXNvbHZlbmN5LXNjb3JlJ3Mgc2hpcHBlZCBIYW5zZW4gUkVEIHNvbHZlbmN5IHZlcmRpY3QuIFRoZSBzaGlwcGVkIHJ1bGUgc2NvcmVzIGV2ZXJ5IHNvbHZlbnQtcG9seW1lciBwYWlyIGZyb20gMjUgQyBIYW5zZW4gcGFyYW1ldGVyIHRhYmxlcyB3aXRoIGFuIGludGVyYWN0aW9uIHJhZGl1cyBSIHRoYXQgY2FycmllcyBubyB0ZW1wZXJhdHVyZSBhcmd1bWVudCwgeWV0IG1hcmluZSB0d28tcGFydCBlcG94eS1hbWluZSBjb2F0aW5ncyBhcmUgYXBwbGllZCBuZWFyIDUgQyAoSVNPIDEyOTQ0LTcgLyBJTU8gUFNQQyBjb2xkLWVuZCBwcmFjdGljZSkgYW5kIHNlcnZpY2VkIG5lYXIgNDAgQyBvbiB0cm9waWNhbCB0b3BzaWRlcy4gVGhpcyBoYXJuZXNzIGFwcGxpZXMgSGFuc2VuICYgQmVlcmJvd2VyJ3Mgb3duIHB1Ymxpc2hlZCwgemVyby1mcmVlLXBhcmFtZXRlciBIU1AgdGVtcGVyYXR1cmUgbGF3IGFjcm9zcyB0aGF0IGVudmVsb3BlIG9uIHRoZSBtb2R1bGUncyBDQzAtMS4wIFBoYXNlLTAga25vd24tYW5zd2VyIGZpeHR1cmUgKDUgcG9seW1lcnMgeCAxNSBzb2x2ZW50cyA9IDc1IGxhYmVsbGVkIHBhaXJzKSBhbmQgYXNrcyB3aGV0aGVyIHRoZSAyNSBDIHZlcmRpY3Qgc3Vydml2ZXMgaXRzIG93biBwaHlzaWNzLiBUaHJlZSBkZWNsYXJlZCBzY2VuYXJpb3MgYnJhY2tldCB0aGUgdW5rbm93biB0aGVybWFsLWV4cGFuc2lvbiBjb2VmZmljaWVudCAoYWxwaGEtZnJlZSBsb3dlciBib3VuZDsgY29tbW9uIGFscGhhIHN3ZXB0IDYuMGUtNCAuLiAxLjVlLTMgMS9LOyBzb2x2ZW50LW9ubHkgYWxwaGEpIHBsdXMgYSBtZWNoYW5pc20gY291bnRlcmZhY3R1YWwgY28tc2NhbGluZyBSLiBObyBhbHBoYSB2YWx1ZSBpcyBpbnZlbnRlZCBvciBmaXR0ZWQuIiwKICAicmVjZWlwdF9pZCI6ICJoYW5zZW4tdGVtcGVyYXR1cmUtZW52ZWxvcGUtZDE2MGY2MTcxNTliNTRkMDljZTk1YTZkZDEzY2FlOTk4ZGJmZGI5NGY0OWQwOTJlNDEwZjJhODJmNTc1NDc1YyIsCiAgInJlcHJvZHVjaWJpbGl0eSI6IHsKICAgICJjYW5vbmljYWxfZGlhZ25vc3RpY19zaGEyNTYiOiAiMmY2NzE4MzM4ODM2MTEzZDAyNzhkMTA3NzBjY2M5OTAxYzNlMTZiNWU0NTM1NzNhNzI2M2ZlZmJjY2Y5NDRlYiIsCiAgICAiZGV0ZXJtaW5pc20iOiAicHVyZS1zdGRsaWIsIG5vIHdhbGwtY2xvY2ssIG5vIHVucGlubmVkIFJORzsgc2luZ2xlIHBpbm5lZC1zZWVkIHBhaXJlZCBib290c3RyYXAgKHNlZWQgMjAyNjA3MzEpIiwKICAgICJmaXh0dXJlX3NoYTI1NiI6ICI5YjZiNjg5ZmJkMzc2MjAwZWY5Mjc3YWY3ZDVmNDhmZWUzNjNmM2E3ZTYwYzg1YjMyNjQyYjJmMWQ2OTRhMjM4IiwKICAgICJoYXJuZXNzX3NoYTI1NiI6ICJlZTg3ZGEwMDM3MzZmZjZkNmQ3ZDEzMjI1MzNhYjJiZDcyOTk3YWYyOWJhZWZlMzJjNDAwOGY4ZTRiZmYzMjQxIiwKICAgICJpbmRlcGVuZGVudF9ydW5zIjogdHJ1ZSwKICAgICJyZXBsYXlzIjogMiwKICAgICJydW5CX2RpYWdub3N0aWNfc2hhMjU2IjogIjJmNjcxODMzODgzNjExM2QwMjc4ZDEwNzcwY2NjOTkwMWMzZTE2YjVlNDUzNTczYTcyNjNmZWZiY2NmOTQ0ZWIiLAogICAgInR3b19yZXBsYXlfc2hhMjU2X2dhdGUiOiAiUEFTUyIKICB9LAogICJydW5fdHlwZSI6ICJTQ0lFTkNFX1RIRU9SWV9CQVNFTElORV9SRVBMQVkiLAogICJzY2hlbWEiOiAiYW1waG9yYS5zb2x2ZW5jeS1zY29yZS5oYW5zZW4tdGVtcGVyYXR1cmUtZW52ZWxvcGUtcmVjZWlwdC52MSIsCiAgInNpZ25pbmdfa2V5IjogewogICAgImF1dGhvcml0eSI6ICJMT0NBTF9ERVZFTE9QTUVOVF9BVURJVF9PTkxZIiwKICAgICJrZXlfaWQiOiAibG9jYWwtOTAyODc3M2Y0OTU5MTE5MyIsCiAgICAidHJ1c3RfYW5jaG9yZWRfaW5fcGhhc2UwX3N0b3JlIjogZmFsc2UKICB9Cn0=",
+    "payloadType": "application/vnd.amphora.hansen-temperature-envelope-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "t03GHEgFu9LYJuwYDaCkHMTSsHiwR4l2Iu9eb9RBRgRdt4kLYbJoyi0iUQTPVjXE0JwxHO5m0K3AAUKGuUaqAw=="
+      }
+    ]
+  },
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "trust_anchored_in_phase0_store": false
+  }
+}

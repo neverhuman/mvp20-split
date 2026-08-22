@@ -1,0 +1,390 @@
+{
+  "area_caveat": "USBR reports |Z| in ohm (not ohm.cm^2); ISO magnitude classes above assume the standard specimen area ~1 cm^2 and are PROVISIONAL. The rank-based corroboration statistics below are invariant to any constant area normalisation and do NOT rely on this caveat.",
+  "authority": "EVIDENCE_ONLY",
+  "data_source": {
+    "author": "Brian Baumgarten",
+    "catalog_item": "8048",
+    "license": "US Government work, public domain (17 U.S.C. 105)",
+    "project": "21019",
+    "provider": "US Bureau of Reclamation (USBR) RISE",
+    "publication_date": "2024-09-11",
+    "rights_clean": true,
+    "url": "https://data.usbr.gov/rise/api/catalog-record/8048"
+  },
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "n=6 coating systems: within-environment CI crosses zero; not significant at 0.05.",
+    "ISO magnitude classes provisional pending EIS specimen-area normalisation.",
+    "Phase-1 would require >= ~12-20 independent coating systems (or frequency-resolved spectra with Kramers-Kronig validation) to power a p<0.05 cross-modality rank."
+  ],
+  "environments": [
+    "BOR",
+    "DI",
+    "HAR",
+    "PRO"
+  ],
+  "headline": "Cross-instrument test on rights-clean USBR-21019 public data (6 coating systems x 4 baths, 24 paired cells): the pooled |Z|-vs-rustcreep Spearman is confounded and sign-reversed (rho=+0.32); after stratifying on exposure bath the published ISO-16773 low-frequency barrier metric recovers the physically-expected NEGATIVE association with independent scribe rust-creep (mean within-env rho=-0.30, 83% of cluster-bootstraps negative), but at n=6 systems it is underpowered (stratified-permutation p=0.096, 95% CI [-0.70, 0.50] crosses zero). Corroborates the module's model-readiness-only boundary; 20/24 endpoint cells sit in the ISO very-good barrier band (area-caveated).",
+  "human_review_performed": false,
+  "inputs": {
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128760_2-e-p-1k-2-s_rust_creep.csv": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128765_2-e-p-2k-2-s_rust_creep.csv": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128770_2-z-p-1k-2-s_rust_creep.csv": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128775_2-z-p-2k-2-s_rust_creep.csv": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128781_3-d-p-2k-2-s_rust_creep.csv": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128787_3-z-p-2k-2-s_rust_creep.csv": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f"
+  },
+  "interpretation": {
+    "meaning": "The environment is a genuine confound: the naive pooled correlation is sign-reversed. After stratifying on bath, the published EIS barrier metric recovers the physically-expected negative association with independent rust-creep, but at 6 coating systems the 95% CI crosses zero and the permutation p exceeds 0.05. This quantifies the discrimination HEADROOM and confirms the module's declared boundary: 6 public systems support model-readiness only and cannot establish a validated corrosion rank.",
+    "physically_predicted_direction_recovered_after_confound_control": true,
+    "significant_at_0p05": false,
+    "verdict": "DIRECTION_CONSISTENT_UNDERPOWERED"
+  },
+  "iso16773_endpoint_class_counts_area_caveated": {
+    "failed_lt_1e6": 1,
+    "good_or_fair_1e7_1e9": 2,
+    "poor_1e6_1e7": 1,
+    "very_good_barrier_ge_1e9": 20
+  },
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-public-corrosion-benchmark",
+  "n_coating_systems": 6,
+  "n_environments": 4,
+  "n_paired_cells": 24,
+  "non_circularity": "EIS |Z| (electrochemical) and scribe rust-creep width (visual/physical) are independent measurements on different panels; rank statistics are invariant to EIS cell-area normalisation.",
+  "panel": [
+    {
+      "endpoint_date": "2022-11-03",
+      "environment": "BOR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.963315,
+      "phase_deg_0p01Hz_endpoint": -70.27661,
+      "rustcreep_mm_mean": 0.464917,
+      "rustcreep_n": 12,
+      "system": "2-e-p-1k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-02",
+      "environment": "DI",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.219367,
+      "phase_deg_0p01Hz_endpoint": -61.885175,
+      "rustcreep_mm_mean": 0.020583,
+      "rustcreep_n": 12,
+      "system": "2-e-p-1k-2-s"
+    },
+    {
+      "endpoint_date": "2022-10-31",
+      "environment": "HAR",
+      "iso16773_class": "poor_1e6_1e7",
+      "log10_Z_0p01Hz_endpoint": 6.881074,
+      "phase_deg_0p01Hz_endpoint": -31.850433,
+      "rustcreep_mm_mean": 0.036854,
+      "rustcreep_n": 12,
+      "system": "2-e-p-1k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-03",
+      "environment": "PRO",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.884094,
+      "phase_deg_0p01Hz_endpoint": -38.75346,
+      "rustcreep_mm_mean": 0.427375,
+      "rustcreep_n": 12,
+      "system": "2-e-p-1k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-03",
+      "environment": "BOR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.744293,
+      "phase_deg_0p01Hz_endpoint": -51.51038,
+      "rustcreep_mm_mean": 0.391058,
+      "rustcreep_n": 12,
+      "system": "2-e-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-01",
+      "environment": "DI",
+      "iso16773_class": "good_or_fair_1e7_1e9",
+      "log10_Z_0p01Hz_endpoint": 8.717245,
+      "phase_deg_0p01Hz_endpoint": -26.06441,
+      "rustcreep_mm_mean": 0.075333,
+      "rustcreep_n": 12,
+      "system": "2-e-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2022-10-31",
+      "environment": "HAR",
+      "iso16773_class": "good_or_fair_1e7_1e9",
+      "log10_Z_0p01Hz_endpoint": 8.24252,
+      "phase_deg_0p01Hz_endpoint": -21.905091,
+      "rustcreep_mm_mean": 0.059592,
+      "rustcreep_n": 12,
+      "system": "2-e-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-03",
+      "environment": "PRO",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.987666,
+      "phase_deg_0p01Hz_endpoint": -69.99388,
+      "rustcreep_mm_mean": 0.552783,
+      "rustcreep_n": 12,
+      "system": "2-e-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-03",
+      "environment": "BOR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.501059,
+      "phase_deg_0p01Hz_endpoint": -47.24282,
+      "rustcreep_mm_mean": 0.226208,
+      "rustcreep_n": 12,
+      "system": "2-z-p-1k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-01",
+      "environment": "DI",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.003496,
+      "phase_deg_0p01Hz_endpoint": -35.4205,
+      "rustcreep_mm_mean": 0.00925,
+      "rustcreep_n": 12,
+      "system": "2-z-p-1k-2-s"
+    },
+    {
+      "endpoint_date": "2022-10-27",
+      "environment": "HAR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.027689,
+      "phase_deg_0p01Hz_endpoint": -35.573747,
+      "rustcreep_mm_mean": 0.007312,
+      "rustcreep_n": 12,
+      "system": "2-z-p-1k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-03",
+      "environment": "PRO",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 10.025306,
+      "phase_deg_0p01Hz_endpoint": -61.65535,
+      "rustcreep_mm_mean": 0.274417,
+      "rustcreep_n": 12,
+      "system": "2-z-p-1k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-03",
+      "environment": "BOR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.409933,
+      "phase_deg_0p01Hz_endpoint": -42.09856,
+      "rustcreep_mm_mean": 0.189183,
+      "rustcreep_n": 12,
+      "system": "2-z-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-01",
+      "environment": "DI",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.307712,
+      "phase_deg_0p01Hz_endpoint": -50.407065,
+      "rustcreep_mm_mean": 0.02075,
+      "rustcreep_n": 12,
+      "system": "2-z-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2022-10-31",
+      "environment": "HAR",
+      "iso16773_class": "failed_lt_1e6",
+      "log10_Z_0p01Hz_endpoint": 5.921166,
+      "phase_deg_0p01Hz_endpoint": -20.64818,
+      "rustcreep_mm_mean": 0.032917,
+      "rustcreep_n": 12,
+      "system": "2-z-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2022-11-03",
+      "environment": "PRO",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.466868,
+      "phase_deg_0p01Hz_endpoint": -34.32679,
+      "rustcreep_mm_mean": 0.270467,
+      "rustcreep_n": 12,
+      "system": "2-z-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2024-05-15",
+      "environment": "BOR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 10.897077,
+      "phase_deg_0p01Hz_endpoint": -71.02459,
+      "rustcreep_mm_mean": 0.185,
+      "rustcreep_n": 12,
+      "system": "3-d-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2024-05-15",
+      "environment": "DI",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.953706,
+      "phase_deg_0p01Hz_endpoint": -75.74632,
+      "rustcreep_mm_mean": 0.014167,
+      "rustcreep_n": 12,
+      "system": "3-d-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2024-05-15",
+      "environment": "HAR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 10.295555,
+      "phase_deg_0p01Hz_endpoint": -74.02584,
+      "rustcreep_mm_mean": 0.020833,
+      "rustcreep_n": 12,
+      "system": "3-d-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2024-05-15",
+      "environment": "PRO",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 10.702431,
+      "phase_deg_0p01Hz_endpoint": -67.81243,
+      "rustcreep_mm_mean": 0.2575,
+      "rustcreep_n": 12,
+      "system": "3-d-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2023-08-22",
+      "environment": "BOR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 10.356026,
+      "phase_deg_0p01Hz_endpoint": -46.00415,
+      "rustcreep_mm_mean": 0.115833,
+      "rustcreep_n": 12,
+      "system": "3-z-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2023-08-24",
+      "environment": "DI",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 10.585824,
+      "phase_deg_0p01Hz_endpoint": -67.85297,
+      "rustcreep_mm_mean": 0.010833,
+      "rustcreep_n": 12,
+      "system": "3-z-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2023-08-23",
+      "environment": "HAR",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.829635,
+      "phase_deg_0p01Hz_endpoint": -37.445254,
+      "rustcreep_mm_mean": 0.006667,
+      "rustcreep_n": 12,
+      "system": "3-z-p-2k-2-s"
+    },
+    {
+      "endpoint_date": "2023-08-22",
+      "environment": "PRO",
+      "iso16773_class": "very_good_barrier_ge_1e9",
+      "log10_Z_0p01Hz_endpoint": 9.737987,
+      "phase_deg_0p01Hz_endpoint": -14.20409,
+      "rustcreep_mm_mean": 0.119167,
+      "rustcreep_n": 12,
+      "system": "3-z-p-2k-2-s"
+    }
+  ],
+  "phase_angle_secondary": {
+    "per_environment_rho_phi_rc": {
+      "BOR": -0.314286,
+      "DI": 0.371429,
+      "HAR": 0.657143,
+      "PRO": -0.6
+    },
+    "verdict": "inconsistent sign across baths; phase angle not a reliable single-frequency barrier rank here"
+  },
+  "pooled_spearman_logZ_vs_rustcreep": {
+    "note": "CONFOUNDED by environment; sign is reversed (positive) because both |Z| and rust-creep rise together in aggressive baths.",
+    "p_two_sided": 0.126322,
+    "rho": 0.32087
+  },
+  "pooled_spearman_phase_vs_rustcreep": {
+    "p_two_sided": 0.470192,
+    "rho": -0.154783
+  },
+  "primary_result_within_environment": {
+    "cluster_bootstrap": {
+      "ci95": [
+        -0.7,
+        0.5
+      ],
+      "fraction_negative": 0.832166,
+      "median": -0.272727,
+      "n_boot": 9998,
+      "resample_unit": "coating_system",
+      "seed": 12345
+    },
+    "estimator": "mean over environments of within-environment Spearman rho(log10|Z|, rustcreep)",
+    "hostile_null": "stratified within-environment label permutation (systems shuffled within each bath)",
+    "mean_within_env_rho": -0.3,
+    "n_permutations": 50000,
+    "per_environment": {
+      "BOR": {
+        "n_systems": 6,
+        "rho_logZ_rc": -0.371429,
+        "rho_phi_rc": -0.314286
+      },
+      "DI": {
+        "n_systems": 6,
+        "rho_logZ_rc": -0.371429,
+        "rho_phi_rc": 0.371429
+      },
+      "HAR": {
+        "n_systems": 6,
+        "rho_logZ_rc": -0.6,
+        "rho_phi_rc": 0.657143
+      },
+      "PRO": {
+        "n_systems": 6,
+        "rho_logZ_rc": 0.142857,
+        "rho_phi_rc": -0.6
+      }
+    },
+    "perm_p_one_sided_negative": 0.095878,
+    "permutation_seed": 0
+  },
+  "promotes_authority": false,
+  "purpose": "First cross-instrument corroboration test for the public corrosion benchmark: does the published low-frequency EIS barrier metric |Z|_0.01Hz anti-correlate with an INDEPENDENT physical scribe rust-creep modality after controlling for the exposure-environment confound, versus a stratified hostile-permutation null.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.public-corrosion-benchmark.eis-rustcreep-crossmodality.v1",
+  "systems": [
+    "2-e-p-1k-2-s",
+    "2-e-p-2k-2-s",
+    "2-z-p-1k-2-s",
+    "2-z-p-2k-2-s",
+    "3-d-p-2k-2-s",
+    "3-z-p-2k-2-s"
+  ],
+  "theory_reference": {
+    "classification_thresholds_ohm_cm2": {
+      "failed": "<1e6",
+      "good_fair": "1e7-1e9",
+      "poor": "1e6-1e7",
+      "very_good": ">=1e9"
+    },
+    "eis_barrier_metric": "low-frequency impedance modulus |Z| at 0.01 Hz",
+    "predicted_sign": "negative (higher |Z| barrier -> lower rust-creep width)",
+    "standards": [
+      "ISO 16773-1:2016",
+      "ISO 16773-2:2016",
+      "ISO 16773-3:2016",
+      "ISO 16773-4:2016"
+    ]
+  }
+}

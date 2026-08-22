@@ -1,0 +1,161 @@
+{
+  "acquired_at": "2026-07-10T19:50:12Z",
+  "manifest_sha256": "f5d367ed0338b73ed53876c24eca831cba438662417e811d472bc65103a59aa4",
+  "schema_version": "amphora.feedback_v1.dataset_context.v1",
+  "source_count": 1,
+  "sources": [
+    {
+      "access_status": "public_direct",
+      "acquisition_status": "PARTIAL",
+      "attempts": [
+        {
+          "filename": "CORR-DATA_Database.zip",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://opendata.nist.gov/1851/CORR-DATA_Database.zip"
+        },
+        {
+          "filename": "CORR-DATA_Database.zip.sha256",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://opendata.nist.gov/1851/CORR-DATA_Database.zip.sha256"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "HEAD",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET_RANGE",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:50Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:52Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:56Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "bytes": 123984,
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 200,
+          "method": "DISCOVERY_GET",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:56Z",
+          "url": "https://catalog.data.gov/dataset/corr-data"
+        },
+        {
+          "error": "HTTP Error 404: Not Found",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 404,
+          "method": "DISCOVERY_API",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:56Z",
+          "url": "https://catalog.data.gov/api/3/action/package_show?id=corr-data"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:56Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt.sha256"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:59Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt.sha256"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:50:03Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt.sha256"
+        }
+      ],
+      "checksum_pass_count": 2,
+      "claim_locks": {
+        "no_candidate_corrosion_validation": true,
+        "public_corrosion_data_is_evidence_only": true
+      },
+      "download_count": 2,
+      "id": "nist_corr_data",
+      "license": "NIST open license",
+      "local_raw_path": "feedback/v1/external_data/nist_corr_data/raw",
+      "profiles": [
+        {
+          "file": "CORR-DATA_Database.zip",
+          "kind": "zip",
+          "member_count": 3,
+          "members_sample": [
+            "CORR-DATA_Database.csv",
+            "about-CORR-DATA_Database.txt",
+            "columnDefinitions.txt"
+          ],
+          "total_uncompressed_bytes": 5511842
+        },
+        {
+          "bytes": 64,
+          "file": "CORR-DATA_Database.zip.sha256",
+          "kind": "file"
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [
+        {
+          "filename": "CORR-DATA-fields.txt",
+          "reason": "download failed for CORR-DATA-fields.txt: HTTP Error 403: Forbidden"
+        }
+      ],
+      "source_url": "https://catalog.data.gov/dataset/corr-data",
+      "target_repos": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score",
+        "amphora-source-ledger",
+        "amphora-known-answer-benchmarks"
+      ]
+    }
+  ]
+}

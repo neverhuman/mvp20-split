@@ -1,0 +1,36 @@
+<<<ZYAL v1:daemon id=nomad-feature-hunt-sandbox>>>
+version: v1
+intent: daemon
+confirm: RUN_FOREVER
+id: nomad-feature-hunt-sandbox
+
+job:
+  name: "Declarative untrusted generator sandbox lanes"
+  objective: "Validate generated Python without exposing labels, secrets, host files, or the network."
+
+loop:
+  policy: bounded
+  max_iterations: 1
+  sleep: 2s
+  circuit_breaker:
+    max_consecutive_errors: 1
+    on_trip: halt
+engine:
+  command: "python3 -m nomad_feature_hunt.controller sandbox --run-id ${RUN_ID:?RUN_ID_required}"
+
+container:
+  image: nomad-feature-sandbox:2026-07-18
+  user: "65532:65532"
+  rootfs: read_only
+  network: none
+  capabilities: drop_all
+  no_new_privileges: true
+  inputs: [public_csv_fields, train_geometry, test_geometry]
+  forbidden_inputs: [training_targets, test_targets, credentials, browser_state]
+
+validation:
+  rows: { train: 2400, test: 600 }
+  require: [aligned_ids, identical_columns, finite, nonconstant_train, deterministic_rerun, no_exact_duplicates]
+  invariances: [translation, rotation, atom_permutation, periodic_wrapping, equivalent_cell]
+<<<END_ZYAL id=nomad-feature-hunt-sandbox>>>
+ZYAL_ARM RUN_FOREVER id=nomad-feature-hunt-sandbox

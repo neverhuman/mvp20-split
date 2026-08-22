@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "85c953f5eb5613a00281c107ab8337f8adfb27bb26d39d87bbe7edc6634067eb",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-molecule-novelty",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

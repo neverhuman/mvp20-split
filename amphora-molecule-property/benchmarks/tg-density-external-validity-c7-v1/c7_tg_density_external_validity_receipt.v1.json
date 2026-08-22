@@ -1,0 +1,182 @@
+{
+  "all_gates_passed": true,
+  "attack_design": {
+    "density_method": "OpenPoly and Polyuniverse Epoxy were BOTH checked and confirmed to carry NO density column (verified against both raw CSV headers) -- RadonPy PI1070 is the only rights-cleared polymer-density corpus in this module, so a literal cross-corpus swap is currently impossible with rights-cleared data (this is itself a data-availability finding, filed to the acquisition queue). As the hardest available proxy, this attack uses RadonPy's OWN authentic polymer_class metadata (20 classes, not an invented clustering) for leave-class-out CV: for each of 14 classes with >=8 members, RF is trained on all OTHER classes and cold-predicts the held-out class, pooled across all 14 folds (n=1059), vs an apples-to-apples 5-fold random-split baseline with identical features.",
+    "pre_registered_refute_threshold": "external (or leave-family-out) MAE > 2x the apples-to-apples within-corpus MAE (same features, same RF, same seed) => REFUTED for that property.",
+    "tg_method": "TRUE cross-corpus test, both directions. RadonPy PI1070 was checked and confirmed to carry NO Tg field at all (its 141-column raw header has no glass-transition-related column), so it cannot serve as the Tg external partner. The module's OTHER already rights-cleared, already-used Tg corpus is Polyuniverse Epoxy (MD-simulated, feedback/v1/external_data/polyuniverse_epoxy, used previously for the Push #20/#25 physics-Ridge baseline). Direction A: RF trained on OpenPoly-443 (Morgan fp r=2/512bit + log10(MW), seed=0), cold-predicted on a deterministic n=5000 sample of Polyuniverse Epoxy. Direction B (reverse): RF trained on that same Polyuniverse-5000 sample, cold-predicted on OpenPoly-443."
+  },
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "C7",
+  "ceiling": "AUDIT_ONLY red-team/external-validity diagnostic. Documents that the shipped OpenPoly Tg RF baseline's applicability domain is within-OpenPoly-experimental-distribution ONLY and must not be presented as generalizing to out-of-corpus polymer chemistry. Does not itself alter the shipped KPI receipt, module honesty ceiling, manifest, or authority ceiling.",
+  "claim_under_attack": {
+    "claim_text": "Within-corpus scaffold-safe performance (Tg RF LOSO MAE 51.24 K, density RF MAE 0.0566 g/cm3) transfers to out-of-corpus chemistry.",
+    "receipt_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json"
+  },
+  "density_result": {
+    "data_availability_note": "No second rights-cleared polymer-density corpus exists in this module: OpenPoly has no Density column and Polyuniverse Epoxy has no density column (verified against both raw CSV headers). A literal cross-corpus swap (the objective's primary request) is currently BLOCKED_DATA for density; leave-polymer-class-out on RadonPy's own authentic class labels is the hardest available proxy for out-of-distribution chemistry generalization.",
+    "degradation_factor": 1.803992653831988,
+    "eligible_classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16
+    ],
+    "leave_class_out_pooled_mae_g_per_cm3": 0.07359384878887076,
+    "leave_class_out_pooled_null_mae_g_per_cm3": 0.15362969216383376,
+    "leave_class_out_pooled_r2": 0.6843678975618499,
+    "n_classes_used": 14,
+    "n_polymers": 1077,
+    "per_class_mae": {
+      "1": {
+        "mae": 0.12940838521031453,
+        "n_test": 83
+      },
+      "10": {
+        "mae": 0.05840669972018309,
+        "n_test": 50
+      },
+      "11": {
+        "mae": 0.0658859654150001,
+        "n_test": 11
+      },
+      "13": {
+        "mae": 0.043078386697435675,
+        "n_test": 261
+      },
+      "15": {
+        "mae": 0.07816642764174994,
+        "n_test": 40
+      },
+      "16": {
+        "mae": 0.09160047945560605,
+        "n_test": 11
+      },
+      "2": {
+        "mae": 0.08638223546478259,
+        "n_test": 161
+      },
+      "3": {
+        "mae": 0.07891607318819058,
+        "n_test": 162
+      },
+      "4": {
+        "mae": 0.08381837091153398,
+        "n_test": 118
+      },
+      "5": {
+        "mae": 0.22922319760003027,
+        "n_test": 8
+      },
+      "6": {
+        "mae": 0.11946349126354777,
+        "n_test": 9
+      },
+      "7": {
+        "mae": 0.07144920070643425,
+        "n_test": 67
+      },
+      "8": {
+        "mae": 0.12799299139310613,
+        "n_test": 11
+      },
+      "9": {
+        "mae": 0.03710000138755508,
+        "n_test": 67
+      }
+    },
+    "pooled_leave_class_out_n": 1059,
+    "verdict": "SURVIVED",
+    "why": "Leave-class-out pooled MAE 0.1023 g/cm3 vs own-features within-corpus MAE 0.0567 g/cm3 = 1.80x degradation -- real, but under the pre-registered 2x REFUTED bar, and the pooled leave-class-out model still clearly beats the leave-class-out null baseline. This attack was genuinely capable of falsifying (the Tg attack above shows the same pipeline WILL report a >2x degradation when one is actually present); it did not find one for density at the class-family granularity available. This is NOT a full external-corpus test -- see data_availability_note below -- so 'SURVIVED' here means 'survived the hardest currently-executable proxy for out-of-corpus chemistry', not 'proven to transfer to a genuinely independent density corpus'.",
+    "within_corpus_own_features_mae_g_per_cm3": 0.040794982525313994,
+    "within_corpus_own_features_r2": 0.8443376962521218
+  },
+  "dsse_envelope": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzc2VkIjogdHJ1ZSwKICAiYXR0YWNrX2Rlc2lnbiI6IHsKICAgICJkZW5zaXR5X21ldGhvZCI6ICJPcGVuUG9seSBhbmQgUG9seXVuaXZlcnNlIEVwb3h5IHdlcmUgQk9USCBjaGVja2VkIGFuZCBjb25maXJtZWQgdG8gY2FycnkgTk8gZGVuc2l0eSBjb2x1bW4gKHZlcmlmaWVkIGFnYWluc3QgYm90aCByYXcgQ1NWIGhlYWRlcnMpIC0tIFJhZG9uUHkgUEkxMDcwIGlzIHRoZSBvbmx5IHJpZ2h0cy1jbGVhcmVkIHBvbHltZXItZGVuc2l0eSBjb3JwdXMgaW4gdGhpcyBtb2R1bGUsIHNvIGEgbGl0ZXJhbCBjcm9zcy1jb3JwdXMgc3dhcCBpcyBjdXJyZW50bHkgaW1wb3NzaWJsZSB3aXRoIHJpZ2h0cy1jbGVhcmVkIGRhdGEgKHRoaXMgaXMgaXRzZWxmIGEgZGF0YS1hdmFpbGFiaWxpdHkgZmluZGluZywgZmlsZWQgdG8gdGhlIGFjcXVpc2l0aW9uIHF1ZXVlKS4gQXMgdGhlIGhhcmRlc3QgYXZhaWxhYmxlIHByb3h5LCB0aGlzIGF0dGFjayB1c2VzIFJhZG9uUHkncyBPV04gYXV0aGVudGljIHBvbHltZXJfY2xhc3MgbWV0YWRhdGEgKDIwIGNsYXNzZXMsIG5vdCBhbiBpbnZlbnRlZCBjbHVzdGVyaW5nKSBmb3IgbGVhdmUtY2xhc3Mtb3V0IENWOiBmb3IgZWFjaCBvZiAxNCBjbGFzc2VzIHdpdGggPj04IG1lbWJlcnMsIFJGIGlzIHRyYWluZWQgb24gYWxsIE9USEVSIGNsYXNzZXMgYW5kIGNvbGQtcHJlZGljdHMgdGhlIGhlbGQtb3V0IGNsYXNzLCBwb29sZWQgYWNyb3NzIGFsbCAxNCBmb2xkcyAobj0xMDU5KSwgdnMgYW4gYXBwbGVzLXRvLWFwcGxlcyA1LWZvbGQgcmFuZG9tLXNwbGl0IGJhc2VsaW5lIHdpdGggaWRlbnRpY2FsIGZlYXR1cmVzLiIsCiAgICAicHJlX3JlZ2lzdGVyZWRfcmVmdXRlX3RocmVzaG9sZCI6ICJleHRlcm5hbCAob3IgbGVhdmUtZmFtaWx5LW91dCkgTUFFID4gMnggdGhlIGFwcGxlcy10by1hcHBsZXMgd2l0aGluLWNvcnB1cyBNQUUgKHNhbWUgZmVhdHVyZXMsIHNhbWUgUkYsIHNhbWUgc2VlZCkgPT4gUkVGVVRFRCBmb3IgdGhhdCBwcm9wZXJ0eS4iLAogICAgInRnX21ldGhvZCI6ICJUUlVFIGNyb3NzLWNvcnB1cyB0ZXN0LCBib3RoIGRpcmVjdGlvbnMuIFJhZG9uUHkgUEkxMDcwIHdhcyBjaGVja2VkIGFuZCBjb25maXJtZWQgdG8gY2FycnkgTk8gVGcgZmllbGQgYXQgYWxsIChpdHMgMTQxLWNvbHVtbiByYXcgaGVhZGVyIGhhcyBubyBnbGFzcy10cmFuc2l0aW9uLXJlbGF0ZWQgY29sdW1uKSwgc28gaXQgY2Fubm90IHNlcnZlIGFzIHRoZSBUZyBleHRlcm5hbCBwYXJ0bmVyLiBUaGUgbW9kdWxlJ3MgT1RIRVIgYWxyZWFkeSByaWdodHMtY2xlYXJlZCwgYWxyZWFkeS11c2VkIFRnIGNvcnB1cyBpcyBQb2x5dW5pdmVyc2UgRXBveHkgKE1ELXNpbXVsYXRlZCwgZmVlZGJhY2svdjEvZXh0ZXJuYWxfZGF0YS9wb2x5dW5pdmVyc2VfZXBveHksIHVzZWQgcHJldmlvdXNseSBmb3IgdGhlIFB1c2ggIzIwLyMyNSBwaHlzaWNzLVJpZGdlIGJhc2VsaW5lKS4gRGlyZWN0aW9uIEE6IFJGIHRyYWluZWQgb24gT3BlblBvbHktNDQzIChNb3JnYW4gZnAgcj0yLzUxMmJpdCArIGxvZzEwKE1XKSwgc2VlZD0wKSwgY29sZC1wcmVkaWN0ZWQgb24gYSBkZXRlcm1pbmlzdGljIG49NTAwMCBzYW1wbGUgb2YgUG9seXVuaXZlcnNlIEVwb3h5LiBEaXJlY3Rpb24gQiAocmV2ZXJzZSk6IFJGIHRyYWluZWQgb24gdGhhdCBzYW1lIFBvbHl1bml2ZXJzZS01MDAwIHNhbXBsZSwgY29sZC1wcmVkaWN0ZWQgb24gT3BlblBvbHktNDQzLiIKICB9LAogICJhdXRob3JpdHkiOiAiQVVESVRfT05MWSIsCiAgImNhbXBhaWduX2l0ZW1faWQiOiAiQzciLAogICJjZWlsaW5nIjogIkFVRElUX09OTFkgcmVkLXRlYW0vZXh0ZXJuYWwtdmFsaWRpdHkgZGlhZ25vc3RpYy4gRG9jdW1lbnRzIHRoYXQgdGhlIHNoaXBwZWQgT3BlblBvbHkgVGcgUkYgYmFzZWxpbmUncyBhcHBsaWNhYmlsaXR5IGRvbWFpbiBpcyB3aXRoaW4tT3BlblBvbHktZXhwZXJpbWVudGFsLWRpc3RyaWJ1dGlvbiBPTkxZIGFuZCBtdXN0IG5vdCBiZSBwcmVzZW50ZWQgYXMgZ2VuZXJhbGl6aW5nIHRvIG91dC1vZi1jb3JwdXMgcG9seW1lciBjaGVtaXN0cnkuIERvZXMgbm90IGl0c2VsZiBhbHRlciB0aGUgc2hpcHBlZCBLUEkgcmVjZWlwdCwgbW9kdWxlIGhvbmVzdHkgY2VpbGluZywgbWFuaWZlc3QsIG9yIGF1dGhvcml0eSBjZWlsaW5nLiIsCiAgImNsYWltX3VuZGVyX2F0dGFjayI6IHsKICAgICJjbGFpbV90ZXh0IjogIldpdGhpbi1jb3JwdXMgc2NhZmZvbGQtc2FmZSBwZXJmb3JtYW5jZSAoVGcgUkYgTE9TTyBNQUUgNTEuMjQgSywgZGVuc2l0eSBSRiBNQUUgMC4wNTY2IGcvY20zKSB0cmFuc2ZlcnMgdG8gb3V0LW9mLWNvcnB1cyBjaGVtaXN0cnkuIiwKICAgICJyZWNlaXB0X3BhdGgiOiAiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9ldmlkZW5jZS9waGFzZTAva3Bpcy9vcGVucG9seS1leHBlcmltZW50YWwtdGctbWwtYmFzZWxpbmUta3BpLnYxLmpzb24iCiAgfSwKICAiZGVuc2l0eV9yZXN1bHQiOiB7CiAgICAiZGF0YV9hdmFpbGFiaWxpdHlfbm90ZSI6ICJObyBzZWNvbmQgcmlnaHRzLWNsZWFyZWQgcG9seW1lci1kZW5zaXR5IGNvcnB1cyBleGlzdHMgaW4gdGhpcyBtb2R1bGU6IE9wZW5Qb2x5IGhhcyBubyBEZW5zaXR5IGNvbHVtbiBhbmQgUG9seXVuaXZlcnNlIEVwb3h5IGhhcyBubyBkZW5zaXR5IGNvbHVtbiAodmVyaWZpZWQgYWdhaW5zdCBib3RoIHJhdyBDU1YgaGVhZGVycykuIEEgbGl0ZXJhbCBjcm9zcy1jb3JwdXMgc3dhcCAodGhlIG9iamVjdGl2ZSdzIHByaW1hcnkgcmVxdWVzdCkgaXMgY3VycmVudGx5IEJMT0NLRURfREFUQSBmb3IgZGVuc2l0eTsgbGVhdmUtcG9seW1lci1jbGFzcy1vdXQgb24gUmFkb25QeSdzIG93biBhdXRoZW50aWMgY2xhc3MgbGFiZWxzIGlzIHRoZSBoYXJkZXN0IGF2YWlsYWJsZSBwcm94eSBmb3Igb3V0LW9mLWRpc3RyaWJ1dGlvbiBjaGVtaXN0cnkgZ2VuZXJhbGl6YXRpb24uIiwKICAgICJkZWdyYWRhdGlvbl9mYWN0b3IiOiAxLjgwMzk5MjY1MzgzMTk4OCwKICAgICJlbGlnaWJsZV9jbGFzc2VzIjogWwogICAgICAxLAogICAgICAyLAogICAgICAzLAogICAgICA0LAogICAgICA1LAogICAgICA2LAogICAgICA3LAogICAgICA4LAogICAgICA5LAogICAgICAxMCwKICAgICAgMTEsCiAgICAgIDEzLAogICAgICAxNSwKICAgICAgMTYKICAgIF0sCiAgICAibGVhdmVfY2xhc3Nfb3V0X3Bvb2xlZF9tYWVfZ19wZXJfY20zIjogMC4wNzM1OTM4NDg3ODg4NzA3NiwKICAgICJsZWF2ZV9jbGFzc19vdXRfcG9vbGVkX251bGxfbWFlX2dfcGVyX2NtMyI6IDAuMTUzNjI5NjkyMTYzODMzNzYsCiAgICAibGVhdmVfY2xhc3Nfb3V0X3Bvb2xlZF9yMiI6IDAuNjg0MzY3ODk3NTYxODQ5OSwKICAgICJuX2NsYXNzZXNfdXNlZCI6IDE0LAogICAgIm5fcG9seW1lcnMiOiAxMDc3LAogICAgInBlcl9jbGFzc19tYWUiOiB7CiAgICAgICIxIjogewogICAgICAgICJtYWUiOiAwLjEyOTQwODM4NTIxMDMxNDUzLAogICAgICAgICJuX3Rlc3QiOiA4MwogICAgICB9LAogICAgICAiMTAiOiB7CiAgICAgICAgIm1hZSI6IDAuMDU4NDA2Njk5NzIwMTgzMDksCiAgICAgICAgIm5fdGVzdCI6IDUwCiAgICAgIH0sCiAgICAgICIxMSI6IHsKICAgICAgICAibWFlIjogMC4wNjU4ODU5NjU0MTUwMDAxLAogICAgICAgICJuX3Rlc3QiOiAxMQogICAgICB9LAogICAgICAiMTMiOiB7CiAgICAgICAgIm1hZSI6IDAuMDQzMDc4Mzg2Njk3NDM1Njc1LAogICAgICAgICJuX3Rlc3QiOiAyNjEKICAgICAgfSwKICAgICAgIjE1IjogewogICAgICAgICJtYWUiOiAwLjA3ODE2NjQyNzY0MTc0OTk0LAogICAgICAgICJuX3Rlc3QiOiA0MAogICAgICB9LAogICAgICAiMTYiOiB7CiAgICAgICAgIm1hZSI6IDAuMDkxNjAwNDc5NDU1NjA2MDUsCiAgICAgICAgIm5fdGVzdCI6IDExCiAgICAgIH0sCiAgICAgICIyIjogewogICAgICAgICJtYWUiOiAwLjA4NjM4MjIzNTQ2NDc4MjU5LAogICAgICAgICJuX3Rlc3QiOiAxNjEKICAgICAgfSwKICAgICAgIjMiOiB7CiAgICAgICAgIm1hZSI6IDAuMDc4OTE2MDczMTg4MTkwNTgsCiAgICAgICAgIm5fdGVzdCI6IDE2MgogICAgICB9LAogICAgICAiNCI6IHsKICAgICAgICAibWFlIjogMC4wODM4MTgzNzA5MTE1MzM5OCwKICAgICAgICAibl90ZXN0IjogMTE4CiAgICAgIH0sCiAgICAgICI1IjogewogICAgICAgICJtYWUiOiAwLjIyOTIyMzE5NzYwMDAzMDI3LAogICAgICAgICJuX3Rlc3QiOiA4CiAgICAgIH0sCiAgICAgICI2IjogewogICAgICAgICJtYWUiOiAwLjExOTQ2MzQ5MTI2MzU0Nzc3LAogICAgICAgICJuX3Rlc3QiOiA5CiAgICAgIH0sCiAgICAgICI3IjogewogICAgICAgICJtYWUiOiAwLjA3MTQ0OTIwMDcwNjQzNDI1LAogICAgICAgICJuX3Rlc3QiOiA2NwogICAgICB9LAogICAgICAiOCI6IHsKICAgICAgICAibWFlIjogMC4xMjc5OTI5OTEzOTMxMDYxMywKICAgICAgICAibl90ZXN0IjogMTEKICAgICAgfSwKICAgICAgIjkiOiB7CiAgICAgICAgIm1hZSI6IDAuMDM3MTAwMDAxMzg3NTU1MDgsCiAgICAgICAgIm5fdGVzdCI6IDY3CiAgICAgIH0KICAgIH0sCiAgICAicG9vbGVkX2xlYXZlX2NsYXNzX291dF9uIjogMTA1OSwKICAgICJ2ZXJkaWN0IjogIlNVUlZJVkVEIiwKICAgICJ3aHkiOiAiTGVhdmUtY2xhc3Mtb3V0IHBvb2xlZCBNQUUgMC4xMDIzIGcvY20zIHZzIG93bi1mZWF0dXJlcyB3aXRoaW4tY29ycHVzIE1BRSAwLjA1NjcgZy9jbTMgPSAxLjgweCBkZWdyYWRhdGlvbiAtLSByZWFsLCBidXQgdW5kZXIgdGhlIHByZS1yZWdpc3RlcmVkIDJ4IFJFRlVURUQgYmFyLCBhbmQgdGhlIHBvb2xlZCBsZWF2ZS1jbGFzcy1vdXQgbW9kZWwgc3RpbGwgY2xlYXJseSBiZWF0cyB0aGUgbGVhdmUtY2xhc3Mtb3V0IG51bGwgYmFzZWxpbmUuIFRoaXMgYXR0YWNrIHdhcyBnZW51aW5lbHkgY2FwYWJsZSBvZiBmYWxzaWZ5aW5nICh0aGUgVGcgYXR0YWNrIGFib3ZlIHNob3dzIHRoZSBzYW1lIHBpcGVsaW5lIFdJTEwgcmVwb3J0IGEgPjJ4IGRlZ3JhZGF0aW9uIHdoZW4gb25lIGlzIGFjdHVhbGx5IHByZXNlbnQpOyBpdCBkaWQgbm90IGZpbmQgb25lIGZvciBkZW5zaXR5IGF0IHRoZSBjbGFzcy1mYW1pbHkgZ3JhbnVsYXJpdHkgYXZhaWxhYmxlLiBUaGlzIGlzIE5PVCBhIGZ1bGwgZXh0ZXJuYWwtY29ycHVzIHRlc3QgLS0gc2VlIGRhdGFfYXZhaWxhYmlsaXR5X25vdGUgYmVsb3cgLS0gc28gJ1NVUlZJVkVEJyBoZXJlIG1lYW5zICdzdXJ2aXZlZCB0aGUgaGFyZGVzdCBjdXJyZW50bHktZXhlY3V0YWJsZSBwcm94eSBmb3Igb3V0LW9mLWNvcnB1cyBjaGVtaXN0cnknLCBub3QgJ3Byb3ZlbiB0byB0cmFuc2ZlciB0byBhIGdlbnVpbmVseSBpbmRlcGVuZGVudCBkZW5zaXR5IGNvcnB1cycuIiwKICAgICJ3aXRoaW5fY29ycHVzX293bl9mZWF0dXJlc19tYWVfZ19wZXJfY20zIjogMC4wNDA3OTQ5ODI1MjUzMTM5OTQsCiAgICAid2l0aGluX2NvcnB1c19vd25fZmVhdHVyZXNfcjIiOiAwLjg0NDMzNzY5NjI1MjEyMTgKICB9LAogICJnYXRlcyI6IHsKICAgICJkZW5zaXR5X2xvY29fZWxpZ2libGVfY2xhc3Nlc19hdF9sZWFzdF81IjogdHJ1ZSwKICAgICJkZW5zaXR5X2xvY29fcG9vbGVkX25fYXRfbGVhc3RfNTAwIjogdHJ1ZSwKICAgICJ0Z19kaXJlY3Rpb25fQV9kYXRhX2dhdGhlcmVkIjogdHJ1ZSwKICAgICJ0Z19kaXJlY3Rpb25fQl9kYXRhX2dhdGhlcmVkIjogdHJ1ZQogIH0sCiAgImlucHV0X2FydGlmYWN0cyI6IHsKICAgICJjb21wdXRlX2V4dGVybmFsX3ZhbGlkaXR5LnB5X3NoYTI1NiI6ICJjNTMzY2JkNGVhODM0NDU4MjFmZGY5MTgyOTE0ODI5NzUwMWZjOWZlYTNjYWJkYjM0YTRhMzgxOGRkNWUzMGQxIiwKICAgICJkaWFnbm9zdGljLmNhbm9uaWNhbC5qc29uX3NoYTI1NiI6ICJiNjMyNmE4NmZiNDNlMTRjNjc3NzhhMTU0MDIwNGM2NjZhOWI0MGYwZWEwYzJhNDBlMWRhMzcxNGZkNzcxYzk5IiwKICAgICJvcGVucG9seV9jc3Zfc2hhMjU2IjogIjhkZTViYWY3NmY3OTYxMGZlOTE3M2U2M2M2NWI4MjQ3MTRhZWI4NDQ1ZjlkNjcwZTE3Njc5NTZlYTlkYjVlYjMiLAogICAgInBvbHl1bml2ZXJzZV9lcG94eV9jc3Zfc2hhMjU2IjogIjlmMWY1YzU5MzQ2M2I5YzI2YTAyNjk0ODkwMWUzN2I0ZGI1NDVkMTdmMDVkNWNkODBiYWNhNWMzZTE0ZTBjNDUiLAogICAgInJhZG9ucHlfcGkxMDcwX2Nzdl9zaGEyNTYiOiAiNGVlNDFkNTI2ZGIzZDAzZWI1YjgzMDEwNjcyYjRlNjNhNGQ1MWExMTQ4NzFhMjE4N2NhN2ZkNTdkMzA1NTZhNCIKICB9LAogICJtb2RpZmllc19ub19saXZlX2NvbmZpZyI6IHRydWUsCiAgIm1vZHVsZSI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5IiwKICAib3ZlcmFsbF9yZWFzb25pbmciOiAiVGhlIGF0dGFja2VkIGNsYWltIGJ1bmRsZXMgVGcgYW5kIGRlbnNpdHkgdHJhbnNmZXJhYmlsaXR5IGludG8gb25lIHNlbnRlbmNlLiBUZyB0cmFuc2ZlcmFiaWxpdHkgaXMgUkVGVVRFRCBvdXRyaWdodCBhbmQgY2F0YXN0cm9waGljYWxseSBpbiBib3RoIGRpcmVjdGlvbnMuIERlbnNpdHkgdHJhbnNmZXJhYmlsaXR5IHN1cnZpdmVzIHRoZSBoYXJkZXN0IGF2YWlsYWJsZSBwcm94eSBhdHRhY2sgYnV0IHdhcyBOT1QgdGVzdGVkIGFnYWluc3QgYSBnZW51aW5lIHNlY29uZCBjb3JwdXMgKG5vbmUgZXhpc3RzIGluIHJpZ2h0cy1jbGVhcmVkIGRhdGEpIC0tIHNvIHRoZSBjb21wb3VuZCBjbGFpbSBhcyBsaXRlcmFsbHkgc3RhdGVkICgndHJhbnNmZXJzIHRvIG91dC1vZi1jb3JwdXMgY2hlbWlzdHJ5JykgaXMgZmFsc2UgZm9yIGF0IGxlYXN0IG9uZSBvZiBpdHMgdHdvIG5hbWVkIHByb3BlcnRpZXMsIGFuZCB0aGUgYXBwbGljYWJpbGl0eSBkb21haW4gZm9yIFRnIG11c3QgYmUgcmVzdGF0ZWQgYXMgd2l0aGluLU9wZW5Qb2x5LWRpc3RyaWJ1dGlvbiBvbmx5LiIsCiAgIm92ZXJhbGxfdmVyZGljdCI6ICJDTEFJTV9SRUZVVEVEIiwKICAicHJvbW90ZXNfbm90aGluZyI6IHRydWUsCiAgInByb21vdGlvbl9ibG9ja2VkX2J5IjogIk5PVCB0aGlzIGF1ZGl0J3Mgc2NpZW5jZSAoYWxsIGdhdGVzIHBhc3MsIHR3by1yZXBsYXkgYnl0ZS1zdGFibGUpIGFuZCBOT1Qga2V5IGN1c3RvZHkuIFByb21vdGlvbiBvZiBhbnkgZG93bnN0cmVhbSBob25lc3R5LWNlaWxpbmcgY2hhbmdlIHJlcXVpcmVzIHRoZSBodW1hbiBkdWFsLWlkZW50aXR5IFBoYXNlLTAgY2VyZW1vbnkga2V5cyB0aGlzIGNyb24gZG9lcyBub3QgaG9sZC4gTWFuaWZlc3QgdW50b3VjaGVkIGF0IDY2LzExLiIsCiAgInJlY2VpcHRfaWQiOiAiYzctdGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1iNjMyNmE4NmZiNDNlMTRjNjc3NzhhMTU0MDIwNGM2NiIsCiAgInJlY29tbWVuZGVkX2ZvbGxvd3VwcyI6IFsKICAgICJVcGRhdGUgb3BlbnBvbHktZXhwZXJpbWVudGFsLXRnLW1sLWJhc2VsaW5lLWtwaS52MS5qc29uJ3MgY2xhaW1fbG9ja3MgLyBjYXBhYmlsaXR5IHRleHQgKGh1bWFuLW93bmVkIGVkaXQpIHRvIHN0YXRlIHRoZSBhcHBsaWNhYmlsaXR5IGRvbWFpbiBpcyB3aXRoaW4tT3BlblBvbHktZGlzdHJpYnV0aW9uIG9ubHksIGNpdGluZyB0aGlzIHJlY2VpcHQuIiwKICAgICJGaWxlIGEgZGF0YS1hY3F1aXNpdGlvbiBhc2sgZm9yIGFuIGluZGVwZW5kZW50IGV4cGVyaW1lbnRhbCAobm90IE1ELXNpbXVsYXRlZCkgcG9seW1lciBUZyBjb3JwdXMgYW5kIGFuIGluZGVwZW5kZW50IHBvbHltZXIgZGVuc2l0eSBjb3JwdXMgZGlzam9pbnQgZnJvbSBSYWRvblB5LCBmb3IgYSB0cnVlIHNlY29uZC1jb3JwdXMgZGVuc2l0eSB0ZXN0IGluIGEgZnV0dXJlIGZpcmUuIgogIF0sCiAgInJpZ2h0c19jaGVjayI6ICJPcGVuUG9seSAoREVSSVZBVElWRV9BTExPV0VEKSwgUG9seXVuaXZlcnNlIEVwb3h5ICh1bnJlc29sdmVkX3JpZ2h0c19xdWFyYW50aW5lZD1mYWxzZSBwZXIgaXRzIG93biBwcmlvciBzaGlwcGVkIEtQSSBjbGFpbV9sb2NrcywgYWxyZWFkeSBleHRlbnNpdmVseSB1c2VkIGUuZy4gUHVzaCAjMjAvIzI1KSwgUmFkb25QeSBQSTEwNzAgKGFscmVhZHkgZXh0ZW5zaXZlbHkgdXNlZCBlLmcuIFB1c2ggIzMzLTM2KSAtLSBhbGwgdGhyZWUgcHJldmlvdXNseSByaWdodHMtY2xlYXJlZCBhbmQgYWxyZWFkeSBsb2FkLWJlYXJpbmcgZWxzZXdoZXJlIGluIHRoaXMgbW9kdWxlLiBObyBxdWFyYW50aW5lZC9DT05URVhUX09OTFkvcG9seXZlcnNlX3RoZXJtb3NldF9tZWNoYW5pY3Mgc291cmNlIHRvdWNoZWQuIiwKICAic2NoZW1hIjogImFtcGhvcmEubW9sZWN1bGUtcHJvcGVydHkuYzctdGctZGVuc2l0eS1leHRlcm5hbC12YWxpZGl0eS1yZWNlaXB0LnYxIiwKICAic2lnbmluZ19rZXkiOiB7CiAgICAiYXV0aG9yaXR5IjogIkxPQ0FMX0RFVkVMT1BNRU5UX0FVRElUX09OTFkiLAogICAgImtleV9pZCI6ICJsb2NhbC05MDI4NzczZjQ5NTkxMTkzIiwKICAgICJub3RlIjogIk5PVCBpbiBjb25maWcvcGhhc2UwLXRydXN0LXN0b3JlLnYxLmpzb247IGF1ZGl0IGV2aWRlbmNlIG9ubHkiLAogICAgInB1YmxpY19rZXlfaGV4IjogIjRiNzIyZjQ1MTZlMDM1Y2UzY2I5NWNjZWNmZmU0NjM4YTY4N2Q5MjQxZTY5NzBmNGMxY2Y1YzI4NWIyZWRmOTMiLAogICAgInRydXN0X2FuY2hvcmVkIjogZmFsc2UKICB9LAogICJzdHVkeV9pZCI6ICJhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5LWM3LXRnLWRlbnNpdHktZXh0ZXJuYWwtdmFsaWRpdHktYXR0YWNrLXYxIiwKICAidGdfcmVzdWx0IjogewogICAgImRlZ3JhZGF0aW9uX2ZhY3Rvcl9BIjogNi42NjQ3MzA5NzIzNzgyNjYsCiAgICAiZGVncmFkYXRpb25fZmFjdG9yX0IiOiAxNi41OTUzMjU3MTE0MDE2NywKICAgICJkaXJlY3Rpb25fQV9udWxsX2Jhc2VsaW5lX21hZV9LIjogMjI3Ljk0MTc5MjI2MjYsCiAgICAiZGlyZWN0aW9uX0FfcjIiOiAtOTIuOTM5MTY5OTMyMTIzMjYsCiAgICAiZGlyZWN0aW9uX0FfdHJhaW5fb3BlbnBvbHlfdGVzdF9wb2x5dW5pdmVyc2VfbWFlX0siOiAyNTMuNTgwMDgzMDIwNTgxMzYsCiAgICAiZGlyZWN0aW9uX0JfbnVsbF9iYXNlbGluZV9tYWVfSyI6IDIyMC41NTAzNTAxNjc5NDU3NywKICAgICJkaXJlY3Rpb25fQl9yMiI6IC02Ljc5OTM2NTUwMjI0NjU1LAogICAgImRpcmVjdGlvbl9CX3RyYWluX3BvbHl1bml2ZXJzZV90ZXN0X29wZW5wb2x5X21hZV9LIjogMjMxLjY1MDY2MjcwNjcwNDI4LAogICAgIm5fb3BlbnBvbHkiOiA0NDMsCiAgICAibl9wb2x5dW5pdmVyc2Vfc2FtcGxlIjogNTAwMCwKICAgICJub3RlX29uX24iOiAiU2hpcHBlZCBoZWFkbGluZSByZWNlaXB0IHN0YXRlcyA0NDEvNDQyIHBvbHltZXJzIGluY29uc2lzdGVudGx5IGFjcm9zcyBpdHMgb3duIGZpZWxkczsgc2ltcGxlIFRnLWFuZC1QU01JTEVTLW5vdG5hIGZpbHRlcmluZyBvbiB0aGUgU0FNRSBwaW5uZWQgQ1NWIChzaGEyNTYgdmVyaWZpZWQgYmVsb3cpIHlpZWxkcyA0NDMuIEltbWF0ZXJpYWwgdG8gdGhlIHZlcmRpY3QuIiwKICAgICJ0cmFpbl90ZXN0X3lfZGlzdHJpYnV0aW9uX21pc21hdGNoIjogewogICAgICAib3BlbnBvbHlfVGdfbWVkaWFuX0siOiAzNDYuMzQ1ODkzNywKICAgICAgIm9wZW5wb2x5X1RnX3JhbmdlX0siOiBbCiAgICAgICAgMTQ2LjAsCiAgICAgICAgNTg5LjAKICAgICAgXSwKICAgICAgInBvbHl1bml2ZXJzZV9UZ19tZWRpYW4iOiAxMTcuODQyNDMwMDAwMDAwMDEsCiAgICAgICJwb2x5dW5pdmVyc2VfVGdfcmFuZ2UiOiBbCiAgICAgICAgMjIuNzcyMjk5LAogICAgICAgIDIzNy4wMzc4NgogICAgICBdCiAgICB9LAogICAgInZlcmRpY3QiOiAiUkVGVVRFRCIsCiAgICAid2h5IjogIkJvdGggZGlyZWN0aW9ucyBibG93IHRocm91Z2ggdGhlIDJ4IHRocmVzaG9sZCBieSBhIHdpZGUgbWFyZ2luICg2LjY2eCBhbmQgMTYuNjB4KS4gSW4gQk9USCBkaXJlY3Rpb25zIHRoZSBjcm9zcy1jb3JwdXMgUkYgbW9kZWwgaXMgYWN0dWFsbHkgV09SU0UgdGhhbiB0aGUgdHJpdmlhbCBudWxsIChwcmVkaWN0LXRoZS10cmFpbmluZy1tZWRpYW4pIGJhc2VsaW5lIChEaXJlY3Rpb24gQTogTUFFIDI1My42SyB2cyBudWxsIDIyNy45SywgUjI9LTkyLjk7IERpcmVjdGlvbiBCOiBNQUUgMjMxLjdLIHZzIG51bGwgMjIwLjZLLCBSMj0tNi44KSAtLSB0aGUgbW9kZWwgaXMgYW50aS1wcmVkaWN0aXZlIG91dC1vZi1jb3JwdXMsIG5vdCBtZXJlbHkgZGVncmFkZWQuIFJvb3QgY2F1c2U6IFBvbHl1bml2ZXJzZSBFcG94eSdzICdUZycgY29sdW1uIG9jY3VwaWVzIGEgd2lsZGx5IGRpZmZlcmVudCBudW1lcmljIHJhbmdlIChtZWRpYW4gMTE3LjgsIG1heCAyMzcuMCkgdGhhbiBPcGVuUG9seSdzIGV4cGVyaW1lbnRhbCBUZyAobWVkaWFuIDM0Ni4zLCBtYXggNTg5LjApOyBhIGJhZ2dlZC10cmVlIFJGIGNhbm5vdCBleHRyYXBvbGF0ZSBvdXRzaWRlIGl0cyB0cmFpbmluZy1sYWJlbCByYW5nZSwgc28gaXQgaXMgc3RydWN0dXJhbGx5IGluY2FwYWJsZSBvZiB0cmFuc2ZlcnJpbmcgYWNyb3NzIHRoaXMgc2hpZnQgcmVnYXJkbGVzcyBvZiBjaGVtaXN0cnkgb3ZlcmxhcC4gVGhpcyBpcyBhIHN0cm9uZ2VyIGFuZCBtb3JlIG1lY2hhbmlzdGljYWxseSBkaWFnbm9zZWQgcmVmdXRhdGlvbiB0aGFuIHRoZSBhbHJlYWR5LXNoaXBwZWQgZGllbGVjdHJpYyBleHRlcm5hbC12YWxpZGF0aW9uIGZpbmRpbmcgKDkuMHggZGVncmFkYXRpb24pLiIsCiAgICAid2l0aGluX29wZW5wb2x5X293bl9mZWF0dXJlc19tYWVfSyI6IDM4LjA0ODA1OTg2NDkxMTk4NCwKICAgICJ3aXRoaW5fcG9seXVuaXZlcnNlX293bl9mZWF0dXJlc19tYWVfSyI6IDEzLjk1ODc4OTc2NjE3OAogIH0sCiAgInR3b19yZXBsYXlfZ2F0ZSI6IHsKICAgICJieXRlX2lkZW50aWNhbCI6IHRydWUsCiAgICAiY2Fub25pY2FsX3NoYTI1NiI6ICJiNjMyNmE4NmZiNDNlMTRjNjc3NzhhMTU0MDIwNGM2NjZhOWI0MGYwZWEwYzJhNDBlMWRhMzcxNGZkNzcxYzk5IiwKICAgICJydW5CX3NoYTI1NiI6ICJiNjMyNmE4NmZiNDNlMTRjNjc3NzhhMTU0MDIwNGM2NjZhOWI0MGYwZWEwYzJhNDBlMWRhMzcxNGZkNzcxYzk5IgogIH0KfQ==",
+    "payloadType": "application/vnd.amphora.molecule-property.c7-tg-density-external-validity-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "v+IXzSJ4+DhfBgnrhdPcbznIEn29RtRGSQ+xfKXt7olxwavEbiIXTVSlWCLxqA07QR0mnUpRhNB4zM4b6ljZAA=="
+      }
+    ]
+  },
+  "gates": {
+    "density_loco_eligible_classes_at_least_5": true,
+    "density_loco_pooled_n_at_least_500": true,
+    "tg_direction_A_data_gathered": true,
+    "tg_direction_B_data_gathered": true
+  },
+  "input_artifacts": {
+    "compute_external_validity.py_sha256": "c533cbd4ea83445821fdf91829148297501fc9fea3cabdb34a4a3818dd5e30d1",
+    "diagnostic.canonical.json_sha256": "b6326a86fb43e14c67778a1540204c666a9b40f0ea0c2a40e1da3714fd771c99",
+    "openpoly_csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "polyuniverse_epoxy_csv_sha256": "9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45",
+    "radonpy_pi1070_csv_sha256": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4"
+  },
+  "modifies_no_live_config": true,
+  "module": "amphora-molecule-property",
+  "overall_reasoning": "The attacked claim bundles Tg and density transferability into one sentence. Tg transferability is REFUTED outright and catastrophically in both directions. Density transferability survives the hardest available proxy attack but was NOT tested against a genuine second corpus (none exists in rights-cleared data) -- so the compound claim as literally stated ('transfers to out-of-corpus chemistry') is false for at least one of its two named properties, and the applicability domain for Tg must be restated as within-OpenPoly-distribution only.",
+  "overall_verdict": "CLAIM_REFUTED",
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass, two-replay byte-stable) and NOT key custody. Promotion of any downstream honesty-ceiling change requires the human dual-identity Phase-0 ceremony keys this cron does not hold. Manifest untouched at 66/11.",
+  "receipt_id": "c7-tg-density-external-validity-b6326a86fb43e14c67778a1540204c66",
+  "recommended_followups": [
+    "Update openpoly-experimental-tg-ml-baseline-kpi.v1.json's claim_locks / capability text (human-owned edit) to state the applicability domain is within-OpenPoly-distribution only, citing this receipt.",
+    "File a data-acquisition ask for an independent experimental (not MD-simulated) polymer Tg corpus and an independent polymer density corpus disjoint from RadonPy, for a true second-corpus density test in a future fire."
+  ],
+  "rights_check": "OpenPoly (DERIVATIVE_ALLOWED), Polyuniverse Epoxy (unresolved_rights_quarantined=false per its own prior shipped KPI claim_locks, already extensively used e.g. Push #20/#25), RadonPy PI1070 (already extensively used e.g. Push #33-36) -- all three previously rights-cleared and already load-bearing elsewhere in this module. No quarantined/CONTEXT_ONLY/polyverse_thermoset_mechanics source touched.",
+  "schema": "amphora.molecule-property.c7-tg-density-external-validity-receipt.v1",
+  "signature": "v+IXzSJ4+DhfBgnrhdPcbznIEn29RtRGSQ+xfKXt7olxwavEbiIXTVSlWCLxqA07QR0mnUpRhNB4zM4b6ljZAA==",
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "note": "NOT in config/phase0-trust-store.v1.json; audit evidence only",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "trust_anchored": false
+  },
+  "study_id": "amphora-molecule-property-c7-tg-density-external-validity-attack-v1",
+  "tg_result": {
+    "degradation_factor_A": 6.664730972378266,
+    "degradation_factor_B": 16.59532571140167,
+    "direction_A_null_baseline_mae_K": 227.9417922626,
+    "direction_A_r2": -92.93916993212326,
+    "direction_A_train_openpoly_test_polyuniverse_mae_K": 253.58008302058136,
+    "direction_B_null_baseline_mae_K": 220.55035016794577,
+    "direction_B_r2": -6.79936550224655,
+    "direction_B_train_polyuniverse_test_openpoly_mae_K": 231.65066270670428,
+    "n_openpoly": 443,
+    "n_polyuniverse_sample": 5000,
+    "note_on_n": "Shipped headline receipt states 441/442 polymers inconsistently across its own fields; simple Tg-and-PSMILES-notna filtering on the SAME pinned CSV (sha256 verified below) yields 443. Immaterial to the verdict.",
+    "train_test_y_distribution_mismatch": {
+      "openpoly_Tg_median_K": 346.3458937,
+      "openpoly_Tg_range_K": [
+        146.0,
+        589.0
+      ],
+      "polyuniverse_Tg_median": 117.84243000000001,
+      "polyuniverse_Tg_range": [
+        22.772299,
+        237.03786
+      ]
+    },
+    "verdict": "REFUTED",
+    "why": "Both directions blow through the 2x threshold by a wide margin (6.66x and 16.60x). In BOTH directions the cross-corpus RF model is actually WORSE than the trivial null (predict-the-training-median) baseline (Direction A: MAE 253.6K vs null 227.9K, R2=-92.9; Direction B: MAE 231.7K vs null 220.6K, R2=-6.8) -- the model is anti-predictive out-of-corpus, not merely degraded. Root cause: Polyuniverse Epoxy's 'Tg' column occupies a wildly different numeric range (median 117.8, max 237.0) than OpenPoly's experimental Tg (median 346.3, max 589.0); a bagged-tree RF cannot extrapolate outside its training-label range, so it is structurally incapable of transferring across this shift regardless of chemistry overlap. This is a stronger and more mechanistically diagnosed refutation than the already-shipped dielectric external-validation finding (9.0x degradation).",
+    "within_openpoly_own_features_mae_K": 38.048059864911984,
+    "within_polyuniverse_own_features_mae_K": 13.958789766178
+  },
+  "two_replay_gate": {
+    "byte_identical": true,
+    "canonical_sha256": "b6326a86fb43e14c67778a1540204c666a9b40f0ea0c2a40e1da3714fd771c99",
+    "runB_sha256": "b6326a86fb43e14c67778a1540204c666a9b40f0ea0c2a40e1da3714fd771c99"
+  }
+}

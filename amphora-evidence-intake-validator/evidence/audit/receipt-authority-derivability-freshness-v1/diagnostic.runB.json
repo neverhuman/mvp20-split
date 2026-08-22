@@ -1,0 +1,542 @@
+{
+  "all_gates_passed": true,
+  "closes": "AUTHORITY gap left open by host-receipt-oracle-parity-v1 (decision parity), predicate-completeness-v1 (boolean structure) and canonicalization-invariance-tamper-v1 (byte binding): all three establish WHAT the predicate decides; none asks WHO SUPPLIES THE TRUTH of each accepting conjunct, nor whether the decision has any temporal (freshness / revocation) content.",
+  "corpus": {
+    "candidate_ids": [
+      "phase0-kpi-primer-lab",
+      "phase0-kpi-topcoat-dft",
+      "phase0-kpi-adhesive-pull",
+      "marine-salt-spray-iso9227",
+      "marine-eis-lowfreq-impedance",
+      "network-tg-dsc-midpoint",
+      "pull-off-adhesion-iso4624",
+      "dft-magnetic-gauge-iso2808"
+    ],
+    "n_additional_coating_packages": 5,
+    "n_candidates": 8,
+    "n_shipped_fixtures": 3,
+    "scope": "marine anti-corrosion two-part epoxy-amine (DGEBA + amine hardener) evidence packages; ISO 9227 / ISO 4624 / ISO 2808 / ASTM E1356 / ASTM D5464 measurement shapes"
+  },
+  "counts": {
+    "total_decisions_evaluated": 1018
+  },
+  "date": "2026-07-31",
+  "does_not_establish": [
+    "No wet-lab, product-qualification, batch-release, legal, regulatory or scientific authority. Front-door trust semantics are not evidence of coating performance.",
+    "Not a finding of an exploited vulnerability: no claim is made that any component with FeatureSnapshot write access is in fact hostile. The finding is that the predicate grants evidence-intake authority to any such component without cryptographic work.",
+    "The repaired predicate v2 is an AUDIT-ONLY proposal evaluated in CPython. It is NOT shipped, NOT wired into the Rust runtime, and does not promote authority or flip scientific_readiness."
+  ],
+  "g0_shipped_continuity": {
+    "anchors": [
+      {
+        "match": true,
+        "oracle_package_sha256": "10b52299f7cf514efa5156d0c85bf98dc2088db3d8d00f09eb149ba1fcbb1fef",
+        "scenario_id": "baseline-primer-lab-measurement",
+        "shipped_anchor_sha256": "10b52299f7cf514efa5156d0c85bf98dc2088db3d8d00f09eb149ba1fcbb1fef"
+      },
+      {
+        "match": true,
+        "oracle_package_sha256": "27590e304c82e058783946f740230febb7aeca70e918cf75a79bedc860a71d54",
+        "scenario_id": "topcoat-thickness-measurement",
+        "shipped_anchor_sha256": "27590e304c82e058783946f740230febb7aeca70e918cf75a79bedc860a71d54"
+      },
+      {
+        "match": true,
+        "oracle_package_sha256": "5436647075373dad729c4ba1378acb1fa9d353961b951e2d9a3c57cf679d27bc",
+        "scenario_id": "adhesive-pull-off-strength",
+        "shipped_anchor_sha256": "5436647075373dad729c4ba1378acb1fa9d353961b951e2d9a3c57cf679d27bc"
+      }
+    ],
+    "decisions": [
+      {
+        "class": "positive",
+        "oracle_accept": true,
+        "parity": true,
+        "record_id": "baseline-primer-lab-measurement",
+        "shipped_accept": true
+      },
+      {
+        "class": "positive",
+        "oracle_accept": true,
+        "parity": true,
+        "record_id": "topcoat-thickness-measurement",
+        "shipped_accept": true
+      },
+      {
+        "class": "positive",
+        "oracle_accept": true,
+        "parity": true,
+        "record_id": "adhesive-pull-off-strength",
+        "shipped_accept": true
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "no_host_receipt_feature",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "wrong_schema_string",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "accepted_false",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "signature_verified_false",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "revocation_unchecked",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "receipt_stale",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "wrong_signature_algorithm_es256",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "trust_store_untrusted",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "wrong_candidate_id",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "wrong_contract_hash",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "wrong_package_sha256",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "empty_verifier_id",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "receipt_has_twelfth_extra_field",
+        "shipped_accept": false
+      },
+      {
+        "class": "adversarial",
+        "oracle_accept": false,
+        "parity": true,
+        "record_id": "receipt_missing_one_required_field",
+        "shipped_accept": false
+      }
+    ],
+    "n_anchors_matched": 3,
+    "n_decision_parity": 17,
+    "n_shipped_records": 17,
+    "pass": true
+  },
+  "g1_conjunct_authority_partition": {
+    "attestation_deficit_fraction": 0.7273,
+    "candidate_binding_fraction": 0.2727,
+    "counts": {
+      "CANDIDATE_DERIVED": 3,
+      "CONSTANT_ASSERTED": 7,
+      "UNCONSTRAINED": 1
+    },
+    "n_conjuncts_requiring_key_material": 0,
+    "n_hash_operations_performed_by_predicate": 2,
+    "n_revocation_list_lookups_performed_by_predicate": 0,
+    "n_signature_verifications_performed_by_predicate": 0,
+    "n_trust_store_lookups_performed_by_predicate": 0,
+    "pass": true,
+    "per_field": [
+      {
+        "class": "CONSTANT_ASSERTED",
+        "field": "schema",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 0,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CONSTANT_ASSERTED",
+        "field": "accepted",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 0,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CONSTANT_ASSERTED",
+        "field": "signature_verified",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 0,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CONSTANT_ASSERTED",
+        "field": "revocation_checked",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 0,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CONSTANT_ASSERTED",
+        "field": "fresh",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 0,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CONSTANT_ASSERTED",
+        "field": "signature_algorithm",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 0,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CONSTANT_ASSERTED",
+        "field": "trust_store_status",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 0,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CANDIDATE_DERIVED",
+        "field": "candidate_id",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 56,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CANDIDATE_DERIVED",
+        "field": "candidate_contract_hash_v1",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 56,
+        "transplant_trials": 56
+      },
+      {
+        "class": "CANDIDATE_DERIVED",
+        "field": "package_sha256",
+        "n_distinct_accepting_values_fixed_candidate": 1,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 56,
+        "transplant_trials": 56
+      },
+      {
+        "class": "UNCONSTRAINED",
+        "field": "verifier_id",
+        "n_distinct_accepting_values_fixed_candidate": 4,
+        "publicly_computable_from_candidate_bytes": true,
+        "requires_key_material": false,
+        "transplant_flips": 0,
+        "transplant_trials": 56
+      }
+    ]
+  },
+  "g2_authoring_forgeability_h0": {
+    "adversary_model": "A3_authoring_emitter_zero_capability",
+    "distinguishing_information_bits": 0.0,
+    "forgery_success_rate": 1.0,
+    "h0": "an accepting host-verified receipt can only be produced by a party that actually verified an Ed25519 signature against a pinned trust store",
+    "h0_verdict": "REFUTED",
+    "n_forged_receipts_byte_identical_to_honest_receipt": 64,
+    "n_forgeries_accepted": 64,
+    "n_forgery_attempts": 64,
+    "pass": true,
+    "secret_key_bytes_required": 0,
+    "sha256_ops_per_forgery": 2,
+    "signature_operations_per_forgery": 0
+  },
+  "g3_temporal_freshness_semantics": {
+    "accept_after_verifier_key_revoked": true,
+    "accept_at_every_epoch": true,
+    "decision_depends_on_wall_clock": false,
+    "epoch_span_s": 3153600000,
+    "epoch_span_years": 100.0,
+    "n_distinct_decisions_across_epochs": 1,
+    "n_distinct_receipt_hashes_over_reissuances": 1,
+    "n_epochs_probed": 12,
+    "n_reissuances": 100,
+    "n_temporal_binding_fields_present": 0,
+    "pass": true,
+    "replay_distinguishing_entropy_bits": 0.0,
+    "revocation_effect_on_decision": 0.0,
+    "temporal_binding_fields_present": [],
+    "valid_replay_window_s": "unbounded"
+  },
+  "g4_adversary_class_power": {
+    "n_conjuncts_blocking_A1": 11,
+    "n_conjuncts_blocking_A2": 3,
+    "n_conjuncts_blocking_A3": 0,
+    "pass": true,
+    "per_conjunct_power": [
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": false,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "schema"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": false,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "accepted"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": false,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "signature_verified"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": false,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "revocation_checked"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": false,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "fresh"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": false,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "signature_algorithm"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": false,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "trust_store_status"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": true,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "candidate_id"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": true,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "candidate_contract_hash_v1"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": true,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "package_sha256"
+      },
+      {
+        "blocks_A1_field_flip": true,
+        "blocks_A2_cross_candidate_replay": false,
+        "blocks_A3_authoring_emitter": false,
+        "conjunct": "verifier_id"
+      }
+    ],
+    "predicate_power_vector": [
+      11,
+      3,
+      0
+    ],
+    "shipped_probe_classification": [
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "omit",
+        "probe_id": "no_host_receipt_feature"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "wrong_schema_string"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "accepted_false"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "signature_verified_false"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "revocation_unchecked"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "receipt_stale"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "wrong_signature_algorithm_es256"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "trust_store_untrusted"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "wrong_candidate_id"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "wrong_contract_hash"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "wrong_package_sha256"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "flip",
+        "probe_id": "empty_verifier_id"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "add",
+        "probe_id": "receipt_has_twelfth_extra_field"
+      },
+      {
+        "adversary_class": "A1_field_flip",
+        "mutation_kind": "remove",
+        "probe_id": "receipt_missing_one_required_field"
+      }
+    ],
+    "shipped_probes_in_A1": 14,
+    "shipped_probes_in_A3": 0,
+    "shipped_suite_size": 14
+  },
+  "g5_conservative_repair": {
+    "a3_forgeries_accepted_v1": 64,
+    "a3_forgeries_accepted_v2": 0,
+    "a3_forgery_attempts": 64,
+    "accept_after_revocation_v2": false,
+    "accept_at_window_boundary_t0_plus_max_age": true,
+    "accept_one_second_past_expiry": false,
+    "accept_with_unpinned_verifier_id_v2": false,
+    "honest_path_accepts": 8,
+    "honest_path_n": 8,
+    "n_distinct_receipt_bytes_over_epochs_v2": 12,
+    "n_epochs_accepting_v1": 12,
+    "n_epochs_accepting_v2": 5,
+    "pass": true,
+    "repair_spec": {
+      "added_fields": [
+        "issued_at",
+        "max_age_s",
+        "verifier_signature"
+      ],
+      "demo_seed_derivation": "sha256(b'amphora-eiv-repair-demo-verifier-v1')",
+      "demo_verifier_public_key_hex": "681f6623c86a5906a53a53b0ffb17fb952d87aa74f048e7d27279032f6259120",
+      "field_count_v1": 11,
+      "field_count_v2": 14,
+      "max_age_s": 86400,
+      "signature_verifications_v1": 0,
+      "signature_verifications_v2": 1,
+      "synthetic_issue_epoch": 1750000000,
+      "trust_store_lookups_v1": 0,
+      "trust_store_lookups_v2": 1
+    },
+    "shipped_decisions_preserved": 17,
+    "shipped_decisions_total": 17
+  },
+  "gates": {
+    "g0_shipped_anchor_and_decision_continuity": true,
+    "g1_conjunct_authority_partition_complete": true,
+    "g2_h0_authoring_forgeability_refuted": true,
+    "g3_zero_temporal_binding_confirmed": true,
+    "g4_adversary_class_power_quantified": true,
+    "g5_conservative_repair_validated": true
+  },
+  "generated_on_host": "xbabe2",
+  "live_authority_under_test": {
+    "canonical_hashing": "amphora-core/src/lib.rs :: canonicalize + stable_hash",
+    "oracle": "independent CPython re-derivation (AUDIT_ONLY); ceiling remains the pinned Rust runtime = Phase-1",
+    "runtime": "amphora-assurance-capabilities/src/lib.rs :: evaluate_evidence_intake, host_receipt_valid",
+    "runtime_modified": false
+  },
+  "module_id": "amphora-evidence-intake-validator",
+  "schema": "amphora.evidence-intake-receipt-authority-derivability-freshness.v1",
+  "scientific_success_required_for_phase0": false,
+  "scope_note": "The shipped predicate is verification-DELEGATING: the host trust kernel is expected to perform Ed25519 verification, revocation check and freshness check, and reports the outcome to the intake validator as an in-process FeatureSnapshot record. This audit measures the strength of that delegation channel, not the strength of the kernel's own cryptography.",
+  "theory": [
+    "Anderson 1972 ESD-TR-73-51 reference monitor (non-bypassable, tamper-proof)",
+    "Needham & Schroeder 1978 CACM 21(12):993 DOI 10.1145/359657.359659 (freshness needs nonce/timestamp)",
+    "Denning & Sacco 1981 CACM 24(8):533 DOI 10.1145/358722.358740 (timestamp + acceptance window)",
+    "ISO/IEC 9798-1:2010 entity authentication, timestamp variant",
+    "RFC 4949 (2007) Internet Security Glossary v2 (freshness, bearer token)",
+    "RFC 8032 (2017) Ed25519 EdDSA; FIPS 186-5 (2023)",
+    "RFC 8785 (2020) JSON Canonicalization Scheme",
+    "NIST SP 800-53 Rev.5 (2020) SI-7, IA-9, AC-3",
+    "NIST SP 800-207 (2020) Zero Trust Architecture",
+    "in-toto Attestation Framework v1.0 (2020); SLSA v1.0 (2023)"
+  ]
+}

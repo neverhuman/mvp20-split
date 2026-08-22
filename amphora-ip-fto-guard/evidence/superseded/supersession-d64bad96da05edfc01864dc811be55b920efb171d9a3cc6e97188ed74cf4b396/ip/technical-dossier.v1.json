@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-ip-fto-guard",
+    "infrastructure lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "58cb4216f99825f7ffdcb8b2af40be47a6339d7fabc106ec1709bfa0888156e2",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-ip-fto-guard",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

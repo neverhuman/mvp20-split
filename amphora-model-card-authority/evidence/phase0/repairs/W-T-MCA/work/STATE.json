@@ -1,0 +1,9 @@
+{
+  "campaign_item_id": "W-T-MCA",
+  "status": "done",
+  "last_fire_id": "20260813T170001-1086515-e1d7d0c40621",
+  "last_fire_date": "2026-08-13",
+  "summary": "Completed in a single fire. Enumerated the 9 Mitchell et al. (2019) model-card sections (DOI 10.1145/3287560.3287596), scored the live native-Rust model_card artifact (amphora-engine/src/lib.rs:270) against each using the score-envelope schema's own field contract plus the previously-captured live-runtime-envelope-parity-v1 ground truth: 0/9 conformant, 9/9 divergent, 0/9 not-applicable. Mapped 4 of the portfolio's already-REFUTED claims to specific requirement IDs the schema would have surfaced earlier. Filed 9 proposed_followups (one per divergent section). Verdict CLAIM_REFUTED, signed done receipt.",
+  "done_receipt": "amphora-model-card-authority/evidence/phase0/repairs/W-T-MCA/done/w-t-mca-mitchell-2019-conformance-done-receipt.v1.dsse.json",
+  "no_further_fires_needed": true
+}

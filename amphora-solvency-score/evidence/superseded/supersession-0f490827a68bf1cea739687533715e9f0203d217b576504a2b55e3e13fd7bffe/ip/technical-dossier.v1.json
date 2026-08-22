@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-solvency-score",
+    "formulation lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "bb1772d5ab0a40bc0b1ee0d65e45a80b345e27fdf95c9f8171724be2b3194826",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-solvency-score",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

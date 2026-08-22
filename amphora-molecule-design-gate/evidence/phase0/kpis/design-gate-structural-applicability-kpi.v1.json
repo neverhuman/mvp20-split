@@ -1,0 +1,141 @@
+{
+  "schema": "amphora.module-phase0-kpi.v1",
+  "module_id": "amphora-molecule-design-gate",
+  "kpi_id": "amphora-molecule-design-gate-phase0-structural-applicability-v1",
+  "capability": "Deterministic structural-applicability gate for coating-formulation molecule candidates. For every declared candidate (SMILES + role + optional RDKit-normalized MoleculeFactsV1), design_gate_result computes four boolean gates (explicit_role, valid_single_component, role_appropriate_reactivity, pass_all_hard) plus a categorical gate_reason across six defined values. Phase-0 covers the mechanistic epoxy-amine cure chemistry admission rule (Wicks/Jones/Pappas 2007 Ch. 15, Ellis 1993 Ch. 6): resin iff oxirane_ring_count > 0; hardener iff reactive_amine_hydrogen_count > 0. Phase-1 would extend to live RDKit-normalized inputs once the pinned RDKit C++ 2026.03.2 boundary is provisioned.",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "solver_use_ceiling": "CONSTRAINT_ONLY",
+  "population": "Forty-two labelled molecule test cases spanning eight subgroups: 8 valid resins, 8 valid hardeners, 5 wrong-role declarations, 3 missing-role cases, 4 mismatched-resin (role=resin but no oxirane), 4 mismatched-hardener (role=hardener but no active amine hydrogens), 5 dual-functional glycidylamines admitted as either role, and 5 malformed lexical cases (empty SMILES, multi-fragment mixture, wildcard *, wildcard ~, missing structure and role). Structural molecules cited via PubChem CIDs.",
+  "split_methodology": "No fitting — structural applicability is a mechanistic gate. The 42 test cases exhaustively partition the runtime's decision surface: 21 expected PASS cases (8 valid_resin + 8 valid_hardener + 5 dual_functional) and 21 expected FAIL cases (5 wrong_role + 3 missing_role + 4 mismatched_resin + 4 mismatched_hardener + 5 malformed_structure).",
+  "theory": "Structural applicability for role X iff the molecule carries reactive group Y — the mechanistic basis of two-part epoxy-amine cure chemistry. Wicks, Jones & Pappas 2007 'Organic Coatings: Science and Technology' 4th ed. Chapter 15 §15.2-15.4 defines epoxy resin reactivity via the terminal oxirane ring; Ellis 1993 'Chemistry and Technology of Epoxy Resins' Chapter 6 §6.2 defines amine hardener reactivity via primary/secondary N–H bonds. This is not a model to be trained — it is the reaction mechanism. Every supplier TDS embeds the same accept/reject filter before quoting mix ratios.",
+  "metrics": [
+    {
+      "name": "gate_decision_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 42,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction where evaluate(DESIGN_GATE_ID, ...).gates['pass_all_hard'] matches the expected label."
+    },
+    {
+      "name": "gate_reason_attribution_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 42,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Fraction where the categorical gate_reason exactly matches expected (six possible values: supported_single_component_with_role_appropriate_reactivity, missing_or_unsupported_role, missing_role_appropriate_reactive_group, empty_structure, multi_fragment_structure, wildcard_or_query_structure, missing_structure). A gate that reports 'fail' without a reason cannot be red-team-audited; this KPI verifies fine-grained reason correctness."
+    },
+    {
+      "name": "role_appropriate_reactivity_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 42,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Verifies gates['role_appropriate_reactivity'] agrees with expected (true iff role is valid AND matching reactive group present in facts)."
+    },
+    {
+      "name": "explicit_role_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 42,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Verifies gates['explicit_role'] agrees with expected (true iff molecule.role ∈ {resin, hardener})."
+    },
+    {
+      "name": "valid_single_component_correctness_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 42,
+      "passed": true,
+      "authority": "REAL_ARITHMETIC",
+      "note": "Verifies gates['valid_single_component'] agrees with expected (true iff structure_text returns Ok without any ObviousStructureIssue). Independent of RDKit facts."
+    },
+    {
+      "name": "malformed_structure_fail_closed_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 5,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "For the MALFORMED_STRUCTURE subgroup (empty SMILES, multi-fragment SMILES 'CC.O', wildcard '*', wildcard '~', missing structure), pass_all_hard must be false AND gate_reason must exactly match the ObviousStructureIssue category name. All five malformed probes correctly fail closed."
+    },
+    {
+      "name": "authority_lock_preservation_rate",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "observed": 1.0,
+      "sample_size": 42,
+      "passed": true,
+      "authority": "AUDIT_ONLY",
+      "note": "Every output preserves evidence_scope == 'MOLECULE_STRUCTURAL_APPLICABILITY_ONLY' (on SCORED path) or 'MOLECULE_STRUCTURAL_REJECTION_ONLY' (on FAILED_GATES path); score_0_1 == None; objective_values empty; structural_applicability_only == true on SCORED path."
+    },
+    {
+      "name": "byte_stable_two_replay_rate",
+      "direction": "MAXIMIZE",
+      "observed": 1.0,
+      "sample_size": 42,
+      "authority": "AUDIT_ONLY",
+      "note": "Observational. Every case invocation replayed twice back-to-back and asserted byte-identical ModuleResult via serde_json::to_vec equality."
+    }
+  ],
+  "fitted_or_physical_model_artifact": {
+    "schema": "amphora.molecule-design-gate-structural-applicability.v1",
+    "model_type": "deterministic_physical_structural_applicability_gate",
+    "gates": ["explicit_role", "valid_single_component", "role_appropriate_reactivity", "pass_all_hard"],
+    "reason_categories": [
+      "supported_single_component_with_role_appropriate_reactivity",
+      "missing_or_unsupported_role",
+      "missing_role_appropriate_reactive_group",
+      "empty_structure",
+      "multi_fragment_structure",
+      "wildcard_or_query_structure",
+      "missing_structure",
+      "positive_applicability_unavailable_without_rdkit_and_ontology"
+    ],
+    "prediction_rule": "explicit_role = role ∈ {resin, hardener}; valid_single_component = structure_text(candidate).is_ok(); role_appropriate_reactivity = (role == resin AND oxirane_ring_count > 0) OR (role == hardener AND reactive_amine_hydrogen_count > 0); pass_all_hard = explicit_role AND role_appropriate_reactivity AND valid_single_component AND facts present.",
+    "no_learned_parameters": true,
+    "no_baseline_defined": true,
+    "note": "Constraint satisfaction over structural predicates. No parameters to learn; theory is the epoxy-amine cure mechanism."
+  },
+  "claim_locks": {
+    "structural_applicability_only": true,
+    "no_optimizer_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "no_qualification_evidence_upgrade": true,
+    "no_release_evidence_upgrade": true,
+    "no_product_evidence_upgrade": true,
+    "commercial_product_is_measured_only": true,
+    "no_release_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_safety_authority": true,
+    "no_product_performance_authority": true,
+    "no_patentability_authority": true,
+    "fto_not_performed": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": true,
+    "gate_pass_does_not_imply_safety_synthesis_or_qualification": true
+  },
+  "benchmark_lock_sha256": "8de16b52253b206893b3fd03d0e3530d25004ee73f539cead1f942f3cc39a6e1",
+  "dataset_fixture_sha256": "45ed29ed699f6c089848d72496f136ef1148497b802a8095ca426ef54392930c",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "8873baa3d050984dbf58fadd8d78a12f03c586e436a1c243a268ff0c93945964",
+  "populated_at": "2026-07-21",
+  "phase0_deterministic_gates_passed": true,
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "Phase-1 live RDKit-normalized MoleculeFactsV1 once the pinned RDKit C++ 2026.03.2 boundary is provisioned across the workspace"
+  ]
+}

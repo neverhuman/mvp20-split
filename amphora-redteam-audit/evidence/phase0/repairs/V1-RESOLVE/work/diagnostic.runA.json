@@ -1,0 +1,2149 @@
+{
+  "distinct_superseded_by_targets": {
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json": {
+      "cited_path": "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "99661a6981ec0ba4c046b1d12aa8a88180af6443d27a32a633557e78f4cd2e3a",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-assurance-capabilities",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json",
+      "sha256": "7d17fff3afe2d75e58a42af7f4b659c93fde3b3358b44ee7ccd445c3a190f6ae"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-barrier-corrosion-score/evidence/phase0/repairs/R-B02/done/barrier-index-repair-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-B02/done/barrier-index-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "b497418c435e9e96cef77ec896c080e41dc3f3be73aa9ee26bce3895604b4f48",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-barrier-corrosion-score",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-barrier-corrosion-score/evidence/phase0/repairs/R-B02/done/barrier-index-repair-receipt.v1.dsse.json",
+      "sha256": "8ffcd5595bbf0215c8c061b8c7be80fb620d59105926288817b6cb6243e6670f"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/docs/mission.md": {
+      "cited_path": "docs/mission.md",
+      "dsse": {
+        "is_dsse": false
+      },
+      "exists": true,
+      "module": "amphora-cure-potlife-gate",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/docs/mission.md",
+      "sha256": "4e4f72c38097eeec63bb9c6de003bf2df7c6d4084d8caf690d508805060c57bc"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "4254608105e515ab4206af172123e466d91bbecf6dfa822e11bf192754c281df",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-cure-potlife-gate",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json",
+      "sha256": "2459f265c6b63114a6b372394568fe9c5dcec51b2aff33be1e4f852321cc9d87"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json": {
+      "cited_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "309310d4514ad0bb31482d42e6512731afe1072b3de666c41f3b11a250952b8d",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-design-rule-score",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json",
+      "sha256": "ec6ab882c45dabbd27abef5d6c40a08a39959d92cc7f10fc8bd6a140dd7390a5"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-ingredient-library/evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "65b73a7f4e7c1dfbf9d19b7b207ac932bf2829b845028e5e868ef67039c60615",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-ingredient-library",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-ingredient-library/evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json",
+      "sha256": "92406f0b563576cb8ceb9a6ccdee81ca09a25a79c832029516fbab73b2dece56"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json": {
+      "cited_path": "amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "f1db838716c11ffb2cff36ef126f91eaa553ec6eff66bae97f25d4fe3ed4da02",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-ip-fto-guard",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json",
+      "sha256": "7fccb21d3676e1b342f23475dc549db710da71f8bf0c53543d23add81603a1b5"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/done/R-A05.done-receipt.v1.dsse.json": {
+      "cited_path": "amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/done/R-A05.done-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "3b39f33d161cbb8e6ec758563acf38882f80d7e197ed99d7005cef1499469760",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-known-answer-benchmarks",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/done/R-A05.done-receipt.v1.dsse.json",
+      "sha256": "6733e5042489e57fd3ad7b1e83ec2774952dbfffadd0a031f007f81b1f408b00"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json": {
+      "cited_path": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "a7f1daed0394c5d160c5e3f5e68fb3af25a9e07f569b76749aba39ff739bd655",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-generator",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json",
+      "sha256": "89fc28d21f7224743a6e0a1d2a0750055058e6167e038eee7a65b90145ea4b52"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json": {
+      "cited_path": "amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "fe9a57d8c8878b3c92ebde90aa9f5c236ca600fc888cca4ccf18f370c767f4e7",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-generator",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json",
+      "sha256": "985d4aeb3effd6f9c8ffbc04b647b4ff8e283b785346e355e59741739a306f2f"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-novelty/evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "f41ccbb05fd3db8a0d4f6497dce1d8a6e848fad3f5186cdbe81a926005c890a3",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-novelty",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-novelty/evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json",
+      "sha256": "72496a149815075618fd22b4e6fc60cae4953d81f7100a67b394b01b59583198"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-novelty/evidence/phase0/repairs/R-A07v2/done/r-a07v2-four-family-ipda-propagation-repair-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A07v2/done/r-a07v2-four-family-ipda-propagation-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "e7b62d5454c3116c735b2da9074c0cd648605bdcc1a93e28d99f23a4dec5e398",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-novelty",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-novelty/evidence/phase0/repairs/R-A07v2/done/r-a07v2-four-family-ipda-propagation-repair-receipt.v1.dsse.json",
+      "sha256": "45b75c2a1a534d6ec0667e55e5ad130ecaa66bdaa60bb5cd12088a1af694328e"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json": {
+      "cited_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "210c0ed962e28cc20be82af740e34854ded8e22357c18e88a5768306f6df3095",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-property",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json",
+      "sha256": "2c57343a35c892c50891ecf91914996cf5707e99cce9c48e2cf11e214a4da190"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json": {
+      "cited_path": "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "5c76fef6ac16272f24cefd121007137d5098ecea2f1edbad98f9c526ae877232",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-property",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json",
+      "sha256": "2b56d672ffa08d1f6fc0e721f0c045d5d062fcb143bf7f568543780bbc40ec79"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json": {
+      "cited_path": "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "e0887195df6d7910382bbdd9e36e22dcd01f79dbe73e628ac7917f2d6a9942a7",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-property",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json",
+      "sha256": "8ce5964c6730ed841682120b1df7dbee71aefbef47a7bde4034cfc7a974a7654"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json": {
+      "cited_path": "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "c7a50c4a3233dcc92bd762d4c3b11747022ac3168bfce71a64e34dcc2f38a90e",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-property",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "sha256": "bdd71b4044c6f4975e8fa6c9754251567c9f394264a24a1880d40065186737f3"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1/phase0/kpis/property-eew-ahew-kpi.v1.json": {
+      "cited_path": "amphora-molecule-property/evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1/phase0/kpis/property-eew-ahew-kpi.v1.json",
+      "dsse": {
+        "is_dsse": false
+      },
+      "exists": true,
+      "module": "amphora-molecule-property",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1/phase0/kpis/property-eew-ahew-kpi.v1.json",
+      "sha256": "5f3b758d7f68df396a3ad861a2f99bb47fd22384d9814cd3f7fd3bbcc4bc6b74"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json": {
+      "cited_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "b1b7cad4d014f3ada5182fc8cd90fb6b9552722c24a31e53dd483e32b17219d7",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-role-ranker",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json",
+      "sha256": "a0a7138cb001be6e896b18c7874ae4060f33bb32369fdb272971fd88f04ef7c9"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json": {
+      "cited_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "dcf632bf30bc420ea6460a2253491911f79de36d5b1da68b5954f980206fa2a8",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-property",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "sha256": "2edb3eab0bdec5447eed48753c4f202e7b3c8492e218172bd1aec7bce53eb1a8"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "97fe880733991e16395d3bac8506c2bba51acfbc7bb1b212bcb2938ef3d9fb34",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-public-corrosion-benchmark",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json",
+      "sha256": "4632e46083304a444ffbda2030be0004b28698b5751a935db96b371e6960c4dd"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "9689e79d83f11e4fd5aee0fdb3cb3dfc8609a29382a7a95729854952aaf153e5",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-public-corrosion-benchmark",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json",
+      "sha256": "67b4136a975446b4346d97fda999807209473e6d6a3ff189dd6d2f7a86b92156"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "750b3a69fb96193d09f1e5b3b6576729a4fbfb01f4e346dafa98e7d5ed34eb9d",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-public-corrosion-benchmark",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json",
+      "sha256": "c7dea258068a166cb208606673467bfb52254b131b15379bd7d58ec86fb3eab4"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "e5800a762d2ace66a4ea473f63250710237a3c44ed72840bb4e8c3b3f993e162",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-public-corrosion-benchmark",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json",
+      "sha256": "b1725c94c14191ff88923eba93c2455629af32e6d06d4429c4d95eedaf676f08"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json": {
+      "cited_path": "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "087c1b452110fecd89f22bd2f7c817ce5feb19ed4d50cd2cf5dde26671170511",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-molecule-property",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "sha256": "07e00ec5f7bd9a172ac4da3d26e239d8699045d04a3eff4806434c779b022fbe"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/benchmarks/flory-hansen-corrected-v1/compute_group_contribution.py": {
+      "cited_path": "benchmarks/flory-hansen-corrected-v1/compute_group_contribution.py",
+      "dsse": {
+        "is_dsse": false
+      },
+      "exists": true,
+      "module": "amphora-solvency-score",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/benchmarks/flory-hansen-corrected-v1/compute_group_contribution.py",
+      "sha256": "4fbf6c0c5ea222b3e3c5e2be1826c642d3bfeb04650684ae0644dd8275f65fa9"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "714dd2be18b9bf0cc36182b98eb585efe645ad3b14007ff30de61371ea2343e5",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-solvency-score",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json",
+      "sha256": "96a83a27f7fc391661d366e3762b097723bd5d80ef6d39107824f3446d2b8a25"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/evidence/phase0/repairs/R-B03/done/flory-hansen-corrected-instrument-repair-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-B03/done/flory-hansen-corrected-instrument-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "9708fbf8f762fd9b36c90ca509aa8b3f03627e86dcf33ad66c6393b6afded8a2",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-solvency-score",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/evidence/phase0/repairs/R-B03/done/flory-hansen-corrected-instrument-repair-receipt.v1.dsse.json",
+      "sha256": "af90b2d53bb867fb391205695ae2b12e612920a3911e61e54339859f87359abe"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "bf858887eea8fea215d3bef1adeff05c3c4622fa79354221fb4ad8ade8a108b7",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-sourceability-ehs",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json",
+      "sha256": "b738769e4e5fd2fbb7a024a46dc2d6b2db1a064b0166d8f5180b217d41230741"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json": {
+      "cited_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "ad14fb7a68146a7115687d0e6fe70998b88ca976414a9255dfa7c01c7a47355a",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-sourceability-ehs",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json",
+      "sha256": "6e4e0927390e6dc35fcd0eca694a6d53cdd4e756d3dee94697e3256795a12f09"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json": {
+      "cited_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "038e440039c8ae14565172ec24ccdbd5a8c838339cdd2437950f3d84af7c0540",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-sourceability-ehs",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+      "sha256": "39a84e3a0c17c6ca62982853ce0a833cb6edcfc7ba3d7a82dd2bc04f9d5178c0"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json": {
+      "cited_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "392b162faeb0007c1ee8326dc835779861316b3971f5d1accc72a9a862d360df",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-sourceability-ehs",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json",
+      "sha256": "1f658452c27d9738bd3af1f93433a5489ffb57b6b3f2682ceb39d5b6e1a10d61"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/amphora-viscosity-score/evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json": {
+      "cited_path": "evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json",
+      "dsse": {
+        "is_dsse": true,
+        "keyids_present": [
+          "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+        ],
+        "payload_sha256": "5a032290c361446d32115f5a9c942cd92b695e24fe1c1973250f2b860b9bd196",
+        "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "verified_against_pinned_evaluator_key": true,
+        "verifies": true
+      },
+      "exists": true,
+      "module": "amphora-viscosity-score",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-viscosity-score/evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json",
+      "sha256": "2fb31dfbe96c5c8131fb317bcd6390846ee0e6c3365fa364b5e8bbe0a55a93ff"
+    },
+    "/home/ubuntu/amphora/build/mvp20-split/logs/claims-requiring-retraction.jsonl": {
+      "cited_path": "logs/claims-requiring-retraction.jsonl",
+      "dsse": {
+        "is_dsse": false
+      },
+      "exists": true,
+      "module": "amphora-tolerance-robustness",
+      "resolved_path": "/home/ubuntu/amphora/build/mvp20-split/logs/claims-requiring-retraction.jsonl",
+      "sha256": "9fb68dde1d1eb8bc3057edbb3deed6361cfa08dea029985188e4d8b23b311404"
+    }
+  },
+  "index_files_found": [
+    "amphora-assurance-capabilities/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-barrier-corrosion-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-cure-potlife-gate/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-design-rule-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-ingredient-library/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-ip-fto-guard/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-known-answer-benchmarks/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-molecule-generator/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-molecule-novelty/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-molecule-role-ranker/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-public-corrosion-benchmark/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-tolerance-robustness/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "amphora-viscosity-score/evidence/phase0/kpis/RETRACTION-INDEX.md"
+  ],
+  "item_id": "V1-RESOLVE",
+  "modules": {
+    "amphora-assurance-capabilities": {
+      "index_path": "amphora-assurance-capabilities/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "abcc511e25dc231b2bada747807dcef51b26710d3dc468462fe970098a88d1bc",
+      "n_rows": 2,
+      "rows": [
+        {
+          "claim_excerpt": "metrics.unresolved_technical_categories (declared PRIMARY Phase-1-gating KPI value path of amphora-ip-fto-guard) is populated by the live checked Rust runtime",
+          "index_path": "amphora-assurance-capabilities/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-assurance-capabilities",
+          "refuted_by_cell": "amphora-ip-fto-guard/evidence/audit/metric-schema-parity-v1/metric-schema-parity-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-ip-fto-guard/evidence/audit/metric-schema-parity-v1/metric-schema-parity-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "boolean_counsel_assertion_ignored implements a GENERAL Anderson-1980 reference monitor over candidate-supplied counsel-signoff assertions (pre-repair: single literal path, 8/8 false negatives)",
+          "index_path": "amphora-assurance-capabilities/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-assurance-capabilities",
+          "refuted_by_cell": "amphora-ip-fto-guard/evidence/audit/counsel-assertion-detection-completeness-v1/counsel-assertion-detection-completeness-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-ip-fto-guard/evidence/audit/counsel-assertion-detection-completeness-v1/counsel-assertion-detection-completeness-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-barrier-corrosion-score": {
+      "index_path": "amphora-barrier-corrosion-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "1dfa4408a219626d49b89939d32ecd22e296c8172ee2eb541ca76c857638f241",
+      "n_rows": 1,
+      "rows": [
+        {
+          "claim_excerpt": "`EisPredictionV1.barrier_index` / `metrics.barrier_index` is unconditionally `None` on every code path in `src/lib.rs`, so the locked primary KPI (blinded Kendall tau at `metrics.barrier_index`) is structurally unevaluab",
+          "index_path": "amphora-barrier-corrosion-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-barrier-corrosion-score",
+          "refuted_by_cell": "`benchmarks/three-series-barrier-ranking-v1/three-series-barrier-ranking-receipt.v1.dsse.json`",
+          "refuted_by_paths_cited": [
+            "benchmarks/three-series-barrier-ranking-v1/three-series-barrier-ranking-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-B02/done/barrier-index-repair-receipt.v1.dsse.json` (structural finding only; W1's statistical-infeasibility findings \u2014 all 3 in-class series below FEASIBILITY_FLOOR=6 \u2014 remain in force)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-B02/done/barrier-index-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-barrier-corrosion-score/evidence/phase0/repairs/R-B02/done/barrier-index-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-cure-potlife-gate": {
+      "index_path": "amphora-cure-potlife-gate/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "63d8f324d6f4465eb439e1fca4d60f00bb645361ae3fd694f111abf4680873b3",
+      "n_rows": 2,
+      "rows": [
+        {
+          "claim_excerpt": "docs/mission.md (pre-repair sha256 e8d12fa8d373e548151fa3d93920cd858ba84233c778bdbaf668d13c58ca706d): \"The Arrhenius model reproduces published epoxy-amine pot-life temperature-scaling to under 15% error across a 30-degr",
+          "index_path": "amphora-cure-potlife-gate/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-cure-potlife-gate",
+          "refuted_by_cell": "evidence/audit/potlife-kpi-envelope-disclosure-gap-v1/potlife-kpi-envelope-disclosure-gap-receipt.v1.dsse.json (per-leg MAPE 10\u00b0C 3.445% / 30\u00b0C 15.628% / 40\u00b0C 25.124%; 40\u00b0C breaches the 0.25 KPI ceiling; 12/12 under-prediction at 30/40\u00b0C) and evidence/audit/potlife-q10-heuristic-ablation-v1/potlife-q10-heuristic-ablation-receipt.v1.dsse.json (chemistry-blind Q10=2 ties pooled 15.27% vs 14.73% and ",
+          "refuted_by_paths_cited": [
+            "evidence/audit/potlife-kpi-envelope-disclosure-gap-v1/potlife-kpi-envelope-disclosure-gap-receipt.v1.dsse.json",
+            "evidence/audit/potlife-q10-heuristic-ablation-v1/potlife-q10-heuristic-ablation-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json + qualified prose now in docs/mission.md",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "docs/mission.md",
+            "evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/docs/mission.md",
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "implicit claim that the known-answer fixture's CC0-1.0 rights are settled (in-file self-assertion)",
+          "index_path": "amphora-cure-potlife-gate/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-cure-potlife-gate",
+          "refuted_by_cell": "evidence/audit/rights-integrity-contradiction-v1/rights-integrity-contradiction-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "evidence/audit/rights-integrity-contradiction-v1/rights-integrity-contradiction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "fixture-rights-under-review note in docs/mission.md + evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "docs/mission.md",
+            "evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/docs/mission.md",
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-design-rule-score": {
+      "index_path": "amphora-design-rule-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "b55c13904cb76ad43c8c17ea5c270f62cc8189b0e11f0bb3a5346d0cab26d9d7",
+      "n_rows": 1,
+      "rows": [
+        {
+          "claim_excerpt": "The DSSE signature identity of `amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json` (keyid `phase0-evaluator-audit-3ef6b35cdbbfea74a96a5c9b98a515d5`) is a trust-anchored",
+          "index_path": "amphora-design-rule-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-design-rule-score",
+          "refuted_by_cell": "`amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json` (its own signature/signing_key block records the defective identity; strict trust-store lookup fails)",
+          "refuted_by_paths_cited": [
+            "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json"
+          ],
+          "superseded_by_cell": "`amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json` (anchored re-issue, keyid `phase0-evaluator-3ef6b35...`; repair_item R-A11, repair_mode interactive-2026-08-03)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.anchored-reissue.v1.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-ingredient-library": {
+      "index_path": "amphora-ingredient-library/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "b304550f66bd8b5419ad040e4e5339bf727f774bcff0dea7f11af5ed3bff1b3b",
+      "n_rows": 2,
+      "rows": [
+        {
+          "claim_excerpt": "mission.md \"Current benchmark result\" cited `evidence/phase0/benchmark/result.v1.json` at SHA-256 `2afb9213103d34e7754a6699d3df9ee113ea08ba679506331d01cdc6ca9dd732` and a live Phase-0 KPI receipt at `evidence/phase0/kpis",
+          "index_path": "amphora-ingredient-library/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-ingredient-library",
+          "refuted_by_cell": "`evidence/audit/phase0-mission-evidence-parity-v1/phase0-mission-evidence-parity-receipt.v1.dsse.json` (2026-08-02T22:06)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/phase0-mission-evidence-parity-v1/phase0-mission-evidence-parity-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json` \u2014 mission prose corrected to the live two-run byte-stable SHA-256 `06229682503e25a26da0391dac29c4f44e8ad46948c4b9ad77f76101b109fc1e`; superseded KPI receipt location and reason (`STALE_UNSIGNED_PREPARATION_REISSUE`) disclosed in prose",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-ingredient-library/evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "constant-crosscheck-v1 Check-1 (`evidence/audit/constant-crosscheck-v1/constant-crosscheck-receipt.v1.dsse.json`): solid_type1_epoxy EEW admissibility band `[383.5, 667.8]` g/eq (n in `[1.5, 3.5]`) claimed structure-deri",
+          "index_path": "amphora-ingredient-library/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-ingredient-library",
+          "refuted_by_cell": "`evidence/audit/eew-solid-band-mislabel-gap-v1/eew-solid-band-mislabel-gap-receipt.v1.dsse.json` (2026-08-03T14:06; band 2.84x wider than manufacturer TDS; 4/4 gap-zone probes undetected)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/eew-solid-band-mislabel-gap-v1/eew-solid-band-mislabel-gap-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json` \u2014 solid_type1_epoxy band superseded by Hexion HCD-4022 TDS band `[450.0, 550.0]` g/eq (implied n `[1.9679, 2.6713]`); re-attack: all 4 probes (400/420/600/650 g/eq) now rejected, catalog value 500.0 and liquid-DGEBA sub-check unaffected",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-ingredient-library/evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-ip-fto-guard": {
+      "index_path": "amphora-ip-fto-guard/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "3860fa055385414c6de6c629e9d872efb7ab318a2de9ffbf7a610c47d188fc65",
+      "n_rows": 3,
+      "rows": [
+        {
+          "claim_excerpt": "patent_landscape.json family-26 EP2653485A2 independent claim chart asserted elements \"polyurea topcoat\" (fabricated) and \"low VOC coating system\" (unsupported) against claim 1",
+          "index_path": "amphora-ip-fto-guard/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-ip-fto-guard",
+          "refuted_by_cell": "amphora-ip-fto-guard/evidence/audit/claim-chart-provenance-v1/claim-chart-provenance-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-ip-fto-guard/evidence/audit/claim-chart-provenance-v1/claim-chart-provenance-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "metrics.unresolved_technical_categories is populated by the live checked runtime",
+          "index_path": "amphora-ip-fto-guard/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-ip-fto-guard",
+          "refuted_by_cell": "amphora-ip-fto-guard/evidence/audit/metric-schema-parity-v1/metric-schema-parity-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-ip-fto-guard/evidence/audit/metric-schema-parity-v1/metric-schema-parity-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "boolean_counsel_assertion_ignored is a general reference monitor (pre-repair: 8/8 false negatives vs alternate encodings)",
+          "index_path": "amphora-ip-fto-guard/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-ip-fto-guard",
+          "refuted_by_cell": "amphora-ip-fto-guard/evidence/audit/counsel-assertion-detection-completeness-v1/counsel-assertion-detection-completeness-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-ip-fto-guard/evidence/audit/counsel-assertion-detection-completeness-v1/counsel-assertion-detection-completeness-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-assurance-capabilities/evidence/phase0/repairs/R-B01/done/repair-receipt.R-B01.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-known-answer-benchmarks": {
+      "index_path": "amphora-known-answer-benchmarks/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "0d0a559ae6e7718ae3b718e69007750d17adcec0343f33865121f688d117d7cb",
+      "n_rows": 1,
+      "rows": [
+        {
+          "claim_excerpt": "ARITH-A221-X70P1-VOLUME-SOLIDS 'actual' = 43.7% in `amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json` (sha256 `be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc`; same",
+          "index_path": "amphora-known-answer-benchmarks/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-known-answer-benchmarks",
+          "refuted_by_cell": "`amphora-known-answer-benchmarks/evidence/audit/arith-volume-solids-mass-basis-conflation-v1/receipt.v1.dsse.json` (43.7 reproduces only via invalid mass-fraction weighting of volume-basis percentages; correct volume-weighted recompute = 42.4165)",
+          "refuted_by_paths_cited": [
+            "amphora-known-answer-benchmarks/evidence/audit/arith-volume-solids-mass-basis-conflation-v1/receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/done/R-A05.done-receipt.v1.dsse.json` (corrected actual 42.4165, 4dp-matched to the refuting recompute; full 2/2 volume-solids sweep incl. A702B75P1 delta explanation; repair_item R-A05, repair_mode interactive-2026-08-03)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/done/R-A05.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/done/R-A05.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-molecule-generator": {
+      "index_path": "amphora-molecule-generator/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "93443a56abeb884ab402d67ca626e9066f9d61f583137a62a328a82eb780c642",
+      "n_rows": 4,
+      "rows": [
+        {
+          "claim_excerpt": "`molgen-deterministic-grammar-yield-v1`: feasible_fraction bootstrap 95% CI = [1.0000, 1.0000] at k=n=38. **Corrected to exact Clopper-Pearson [0.9075, 1.0000]** (percentile bootstrap is degenerate at the all-success bou",
+          "index_path": "amphora-molecule-generator/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-generator",
+          "refuted_by_cell": "`amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1/molgen-grammar-yield-ci-inadmissibility-receipt.v1.dsse.json`",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1/molgen-grammar-yield-ci-inadmissibility-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`molgen-deterministic-grammar-yield-v1`: \"38 valid-unique-difunctional-feasible hardener proposals\" (yield 38/38). **Corrected to 29/38** -- 9 proposals flagged `difunctional_hardener=true` carry 3-9 amine sites (homopip",
+          "index_path": "amphora-molecule-generator/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-generator",
+          "refuted_by_cell": "`amphora-molecule-generator/evidence/audit/molgen-hardener-functionality-mislabel-v1/molgen-hardener-functionality-mislabel-receipt.v1.dsse.json`",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-generator/evidence/audit/molgen-hardener-functionality-mislabel-v1/molgen-hardener-functionality-mislabel-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`molgen-scaffold-diversity-v1`: hypothesis_evaluation verdict CORROBORATED_IN_AUDIT_INSTRUMENT on aggregate IntDiv_1 = 0.7681 (\"not trivially inflated variants of a single scaffold\"). **Corrected to family-resolved: cros",
+          "index_path": "amphora-molecule-generator/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-generator",
+          "refuted_by_cell": "`amphora-molecule-generator/evidence/audit/molgen-scaffold-diversity-homolog-fingerprint-saturation-v1/molgen-scaffold-diversity-homolog-fingerprint-saturation-receipt.v1.dsse.json`",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-generator/evidence/audit/molgen-scaffold-diversity-homolog-fingerprint-saturation-v1/molgen-scaffold-diversity-homolog-fingerprint-saturation-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`R-A06`: \"29/38 valid-unique-**DIFUNCTIONAL**-feasible hardener proposals\", where the gate used was `amine_sites == 2` (a count of nitrogen ATOMS). **Corrected: 0 of 38 are difunctional under the active-hydrogen function",
+          "index_path": "amphora-molecule-generator/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-generator",
+          "refuted_by_cell": "`amphora-molecule-generator/evidence/phase0/repairs/V-A06/done/v-a06-molecule-generator-repair-verify-receipt.v1.dsse.json` (verdict CLAIM_REFUTED; measured `n_amine_sites2_but_active_nh_ne_2` = 29 of 29 and `n_true_difunctional_active_h_eq_2_among_all_38` = 0)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-generator/evidence/phase0/repairs/V-A06/done/v-a06-molecule-generator-repair-verify-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-molecule-novelty": {
+      "index_path": "amphora-molecule-novelty/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "7749ce22f7282ee685a84a94b2a2cacf76353e06c540f1636c68054ee098a32d",
+      "n_rows": 3,
+      "rows": [
+        {
+          "claim_excerpt": "DDS cross-family novelty count at alpha=0.05 is 1/4 (maccs_166 only), computed on a 443-row calibration corpus treated as exchangeable (`evidence/audit/cross-family-concordance-v1/cross-family-concordance-receipt.v1.dsse",
+          "index_path": "amphora-molecule-novelty/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-novelty",
+          "refuted_by_cell": "`evidence/audit/corpus-duplicate-exchangeability-audit-v1/corpus-duplicate-exchangeability-receipt.v1.dsse.json` (corpus has only 350 canonically-unique structures; 129 dup rows / 36 alias groups; 5 signed family/alpha cells flip; DDS true count 0/4)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/corpus-duplicate-exchangeability-audit-v1/corpus-duplicate-exchangeability-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-novelty/evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "IPDA candidate_smiles `CC1(CC(CC(C1)N)C)CN` in the Phase-0 Tanimoto-NN novelty KPI represents isophorone diamine (`evidence/phase0/kpis/tanimoto-nn-novelty-canonical-epoxy-amines-vs-openpoly-kpi.v1.json`, sha256 `55f8c96",
+          "index_path": "amphora-molecule-novelty/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-novelty",
+          "refuted_by_cell": "`evidence/audit/candidate-structure-identity-audit-v1/candidate-structure-identity-audit-receipt.v1.dsse.json` (string canonicalizes to C9H20N2, a demethylated homolog; real isophorone diamine is CAS 2855-13-2, C10H22N2)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/candidate-structure-identity-audit-v1/candidate-structure-identity-audit-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json` (corrected canonical `CC1(C)CC(N)CC(C)(CN)C1`; recomputed NN 0.16666666666666666 vs deduped corpus, still NOVEL < 0.40)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-novelty/evidence/phase0/repairs/R-A07/done/r-a07-novelty-dedup-and-ipda-identity-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`R-A07`: `corrected_family_alpha_table_deduped_350` is \"recomputed ... under both corrections\". **False for three of the four fingerprint families**: the IPDA structural correction (C9H20N2 to real isophorone diamine C10",
+          "index_path": "amphora-molecule-novelty/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-novelty",
+          "refuted_by_cell": "`evidence/phase0/repairs/V-A07/done/v-a07-independent-verify-of-r-a07-receipt.v1.dsse.json` (verdict CLAIM_REFUTED; 11/11 self-tests passed and R-A07's 5 declared flip cells reproduced before the defect was found)",
+          "refuted_by_paths_cited": [
+            "evidence/phase0/repairs/V-A07/done/v-a07-independent-verify-of-r-a07-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A07v2/done/r-a07v2-four-family-ipda-propagation-repair-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A07v2/done/r-a07v2-four-family-ipda-propagation-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-novelty/evidence/phase0/repairs/R-A07v2/done/r-a07v2-four-family-ipda-propagation-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-molecule-property": {
+      "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "501fe8066e305fde547403830dbd9cba7d40b5d74561176a6d57f8caf253c16d",
+      "n_rows": 32,
+      "rows": [
+        {
+          "claim_excerpt": "The DSSE signature identity of `amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json` (keyid `local-9028773f49591193`) is a trust-anchore",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json` (its own signature/signing_key block records the defective identity; strict trust-store lookup fails)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json` (anchored re-issue, keyid `phase0-evaluator-3ef6b35...`; repair_item R-A11, repair_mode interactive-2026-08-03)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`openpoly-dielectric-constant-ml-baseline-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`openpoly-experimental-tg-ml-baseline-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`openpoly-water-contact-angle-ml-baseline-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`openpoly-water-uptake-ml-baseline-audit-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`multi-target-ml-radonpy-4-properties-audit-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`stacked-ml-van-krevelen-density-radonpy-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json`",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "none - no refuting receipt targets this KPI (ledger grep pinned in index receipt)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`property-eew-ahew-kpi.v1.json` (pre-existing supersession)",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "n/a - superseded 2026-07-22, before the live surface existed",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1/phase0/kpis/property-eew-ahew-kpi.v1.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1/phase0/kpis/property-eew-ahew-kpi.v1.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1/phase0/kpis/property-eew-ahew-kpi.v1.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/amine_class_active_nh_robustness_receipt.v1.json` (sha256 `74e2c759...`) generalizes its active-N-H structure rule to the amine-hardener structure",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json` (sha256 `59c447c0...`, verdict REFUTED; guanidine/DICY/biguanide counted 4/4/5 active N-H, yielding a confident finite theoretical AHEW e.g. DICY 21.02 g/eq)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json` (sha256 `bdd71b4044c6f4975e8fa6c9754251567c9f394264a24a1880d40065186737f3`) - coordinated with `amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json` (sha256 `07e00ec5f7bd9a172ac4da3d26e239d8699045d04a3eff4806434c779b022fbe`) and `amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json` (sha256 `2edb3eab0bdec5447eed48753c4",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+            "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+            "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "L885 / L887-889 / L956-959: dielectric section advertises \"REAL POSITIVE lift\", \"Directly delivers the coating IP prediction capability for POLYMER DIELECTRIC CONSTANT\", and \"`amphora-molecule-property` can now offer pol",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json` (W3, `CLAIM_REFUTED`) and `amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json` (`founder_f8_panel_row_text.dielectric_constant` = \"NO COMPETENT MODEL -- label integrity failure ...\")",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+            "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json` (repairs S7, S8, S9, S10, S11)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "L905 \"**MAJOR POSITIVE FINDING**\" and L938-940 \"**REAL predictive capability**\" presented without corpus scope",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json` (upholds the n=295 numbers ONLY \"scoped explicitly to the OpenPoly literature population\")",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json` (repairs S9, S10)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "L733 \"**MAJOR POSITIVE FINDING**: Ridge Y_gi fit BEATS the published-values baseline by 32.6 K ... reaching Bicerano-level accuracy\"; L771 \"The 24-group STRUCTURE is CONFIRMED CORRECT at scale\"; L773 \"The prior 'under-de",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json` (W8, `REFUTED`: 2/24 fitted Y_gi sign-reversed - vinyl_CH2 -3125.15 vs published +2000, nitrile -2843.55 vs published +5500; 13/24 deviate >50%; Spearman rho -0.523 between n_train and deviation)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json` (repairs S1, S2, S3, S4, S5, S6)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "L1102 \"RESOLVES the Push #20 Phase-1 hypothesis about applicability domain\"; L1108 \"confirms the 24-group structure captures ordinal Tg signal\"; L1126 \"Confirms Push #20's Ridge Y_gi calibration has real generalization v",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json` (W8) - this section applies the very coefficient table W8 refutes; the KPI's own numbers stand (index status STANDS) but the structural re-assertion does not",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json` (repairs S12, S13, S14)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "L1195-1204 \"ML strictly dominates the frozen physics-Ridge inference\" / \"**Portfolio priority**: ... the ML pipeline should be the primary predictor\" / \"**Positive R2 on rigorous LOSO-CV** confirms cross-scaffold general",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json` (C7 final, `CLAIM_REFUTED`: OpenPoly->Polyuniverse 6.66x degradation MAE 253.58 K R2 -92.94; reverse 16.60x MAE 231.65 K R2 -6.80; anti-predictive vs train-median null in both directions)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json` (repairs S15, S17)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "L1206-1209 \"**Portfolio-wide answer**: Combined with Push #23 (dielectric R2 +0.66) ... the `amphora-molecule-property` module now has a defended coating-IP Tg predictor\"",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json` + `amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json` + `amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json`",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+            "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+            "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json` (repair S16)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "L133-142 conformal/AD claim scope defers a \"cross-dataset transfer test to an independent experimental epoxy Tg dataset\" to Phase-1 as an open question",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json` (that test has since been run and FAILED)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json` (repair S-A)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "L204-210 and L283-288 claim scopes for the named-baseline and Van-Krevelen-vs-ML Polyuniverse KPIs omit the STANDS-WITHIN-CORPUS-ONLY status recorded in section R-A09 above",
+          "index_path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-property",
+          "refuted_by_cell": "`amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json` (governing cross-corpus refutation) plus section R-A09 of this index",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json` (repairs S-B, S-C)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-molecule-role-ranker": {
+      "index_path": "amphora-molecule-role-ranker/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "c71759a62d198df262977a03b394336ced82a5b6eeba43a5ffb87e1e352f8993",
+      "n_rows": 3,
+      "rows": [
+        {
+          "claim_excerpt": "`benchmarks/role-live-runtime-domain-probe-v1/replay_receipt.v1.dsse.json` (sha256 `00a14694...`) is signed under a trust-anchored Phase-0 key; fire 20260802T150002-1413344-9b251899480d SURVIVED verdict is portfolio-veri",
+          "index_path": "amphora-molecule-role-ranker/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-role-ranker",
+          "refuted_by_cell": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json (documents the wrong-key defect; local-dev signature verified, pinned-key verification fails)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json (anchored re-issue; SURVIVED verdict reinstated, re-attack byte-exact)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`benchmarks/role-reactivity-ratio-substitution-effect-v1/replay_receipt.v1.dsse.json` (sha256 `1ccc3b6c...`) is signed under a trust-anchored Phase-0 key; fire 20260803T030002-168451-6ef0580e79cf SURVIVED verdict is port",
+          "index_path": "amphora-molecule-role-ranker/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-role-ranker",
+          "refuted_by_cell": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json (documents the wrong-key defect)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json (anchored re-issue; SURVIVED verdict reinstated, re-attack byte-exact)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "The generalization inference from `amphora-molecule-role-ranker/evidence/phase0/kpis/role-classification-kpi.v1.json` (sha256 `88689040...`, `structural_inference_agreement_rate` 1.0) plus the prior `role-live-runtime-do",
+          "index_path": "amphora-molecule-role-ranker/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-molecule-role-ranker",
+          "refuted_by_cell": "`amphora-molecule-role-ranker/benchmarks/role-guanidine-accelerator-domain-probe-v1/replay_receipt.v1.dsse.json` (sha256 `414a68af...`, verdict CLAIM_REFUTED; DPG CAS 102-06-7 and DOTG CAS 97-39-2 classified `hardener` with `reactive_amine_hydrogen_count` 3 through the real FFI)",
+          "refuted_by_paths_cited": [
+            "amphora-molecule-role-ranker/benchmarks/role-guanidine-accelerator-domain-probe-v1/replay_receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json` (sha256 `2edb3eab0bdec5447eed48753c4f202e7b3c8492e218172bd1aec7bce53eb1a8`) - coordinated with `amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json` (sha256 `07e00ec5f7bd9a172ac4da3d26e239d8699045d04a3eff4806434c779b022fbe`) and `amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json` (sha256 `bdd71b4044c6f4975e8fa6c9754",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+            "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+            "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-public-corrosion-benchmark": {
+      "index_path": "amphora-public-corrosion-benchmark/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "af7e1d3e6381d5f5c9a868c4ef0b0dff5af43c1f365e3edb091344aac51f0a4b",
+      "n_rows": 4,
+      "rows": [
+        {
+          "claim_excerpt": "NIST CORR-DATA marine steel baseline: \"Ridge LOSD-CV MAE(log10)=0.6331 vs NULL 0.6806, +0.0475 log10 (7.0%) improvement, modest but real\" (`evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json`",
+          "index_path": "amphora-public-corrosion-benchmark/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-public-corrosion-benchmark",
+          "refuted_by_cell": "`evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json` (H0_REFUTED: pinned MAE not independently reproducible \u2014 generator never committed, honest re-implementation Ridge 0.5888 / null 0.6736; not fold-robust \u2014 17/30 folds, binomial p=0.585, cluster-bootstrap 95% CI [-0.0329, 0.4846] crosses zero, Wilcoxon p=0.2710)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v2.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "Consolidated audit-verdicts KPI claims to be a complete, current index of this module's signed audit verdicts and calls the NIST result \"modest but real, and the module's only externally-validated positive result\" (`evid",
+          "index_path": "amphora-public-corrosion-benchmark/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-public-corrosion-benchmark",
+          "refuted_by_cell": "`evidence/audit/consolidated-kpi-staleness-v1/consolidated-kpi-staleness-receipt.v1.dsse.json` (H0_REFUTED: indexed only 4 of then-6 signed receipts on disk; omitted the fold-significance audit refuting its own headline)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/consolidated-kpi-staleness-v1/consolidated-kpi-staleness-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json` (indexes all 8 signed receipts on disk at build time, each signature-verified)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-A08/done/audit-verdicts-consolidated-kpi.v2.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "NIST CORR-DATA marine steel baseline, R-A08 superseding KPI: in-domain-only correction (\u201cno statistically significant lift under LOSD-CV; descriptive reference rates remain valid\u201d) left the KPI's implicit group-transfer/",
+          "index_path": "amphora-public-corrosion-benchmark/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-public-corrosion-benchmark",
+          "refuted_by_cell": "`evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json` (H0_REFUTED: leave-one-material-group-out pooled improvement \u22120.2622 log10 \u2014 Ridge WORSE than the extrapolation-honest null; better on only 2/5 held-out groups, worst case Carbon and alloy steels +0.6587 log10 excess MAE; the beats-null effect was material-group memorizati",
+          "refuted_by_paths_cited": [
+            "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json` (corrected claim: no defensible predictive lift, in-domain or extrapolative)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "Consolidated audit-verdicts index v2 (R-A08) names the R-A08 v2 KPI as the current bare-substrate KPI and carries the LOMO extrapolation refutation only as a side note, not as part of the KPI's corrected claim (`evidence",
+          "index_path": "amphora-public-corrosion-benchmark/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-public-corrosion-benchmark",
+          "refuted_by_cell": "`evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json` (driver of the R-N03 supersession)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json` (re-enumerates all 8 signed receipts at build time, signature-verified, and points to the v3 KPI)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-N03/done/audit-verdicts-consolidated-kpi.v3.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-solvency-score": {
+      "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "82cb454b6276e53f643c6cdd4edf8dc5f86c97b2a256df841133152a09e2ba3c",
+      "n_rows": 7,
+      "rows": [
+        {
+          "claim_excerpt": "\"ML (HistGBM) beats classical Flory-Huggins theory\" (KPI `evidence/phase0/kpis/omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json`) \u2014 comparison void: delta_p to 5.2e9 MPa^0.5 vs 59.9 ceiling; B2 comparator degene",
+          "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-solvency-score",
+          "refuted_by_cell": "`evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json` (W7, `CLAIM_REFUTED`)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json`",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "\"ML beats classical Hansen 1967/2007 3-component theory\" (KPI `evidence/phase0/kpis/omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json`) \u2014 comparison void: Hansen components to 5.33e17 MPa^0.5 vs 59.9 ceiling;",
+          "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-solvency-score",
+          "refuted_by_cell": "same W7 receipt",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "same R-A10 receipt",
+          "superseded_by_exists": false,
+          "superseded_by_paths_cited": [],
+          "superseded_by_resolved_keys": [],
+          "superseded_by_verifies": false
+        },
+        {
+          "claim_excerpt": "mission.md prose \"Operational state is SHADOW; scientific state is UNVALIDATED, so the current phase is Pre-Phase 0\" (and the PRE_PHASE_0/SHADOW readiness passage) \u2014 contradicted the authoritative front-matter (PHASE_0 /",
+          "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-solvency-score",
+          "refuted_by_cell": "no refuting receipt \u2014 FOUNDER RULING 2026-08-03: front-matter is authoritative",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "same R-A10 receipt",
+          "superseded_by_exists": false,
+          "superseded_by_paths_cited": [],
+          "superseded_by_resolved_keys": [],
+          "superseded_by_verifies": false
+        },
+        {
+          "claim_excerpt": "Fedors 1974 delta_p behind `reference/mvp20/data/omg_chi_flory_huggins_physical_baseline_receipt.v1.json` (sha256 `87c49f22\u2026`) is a valid classical-theory instrument \u2014 refuted: delta_p to 5.155e9 MPa^0.5 (envelope [9.6, ",
+          "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-solvency-score",
+          "refuted_by_cell": "`evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json` (W7, `CLAIM_REFUTED`)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-B03/done/flory-hansen-corrected-instrument-repair-receipt.v1.dsse.json` \u2014 committed, tested instrument `benchmarks/flory-hansen-corrected-v1/compute_group_contribution.py` (explicit coverage \u2192 REJECTED, volume floor \u2192 ABSTAINED, envelope gate \u2192 ABSTAINED; seed-0 n=2500 OMG sample: zero out-of-envelope returns)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "benchmarks/flory-hansen-corrected-v1/compute_group_contribution.py",
+            "evidence/phase0/repairs/R-B03/done/flory-hansen-corrected-instrument-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/benchmarks/flory-hansen-corrected-v1/compute_group_contribution.py",
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/evidence/phase0/repairs/R-B03/done/flory-hansen-corrected-instrument-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "Van Krevelen/Hoftyzer delta_d/delta_p/delta_h behind `reference/mvp20/data/omg_chi_hansen_3component_physical_baseline_receipt.v1.json` (sha256 `f56e179c\u2026`) is a valid classical-theory instrument \u2014 refuted: components to",
+          "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-solvency-score",
+          "refuted_by_cell": "same W7 receipt",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "same R-B03 receipt",
+          "superseded_by_exists": false,
+          "superseded_by_paths_cited": [],
+          "superseded_by_resolved_keys": [],
+          "superseded_by_verifies": false
+        },
+        {
+          "claim_excerpt": "Instrument-validity premise of KPI `evidence/phase0/kpis/omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json` (sha256 `98b20b84\u2026`)",
+          "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-solvency-score",
+          "refuted_by_cell": "same W7 receipt",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "same R-B03 receipt (KPI claim-scope retraction indexed under R-A10 above)",
+          "superseded_by_exists": false,
+          "superseded_by_paths_cited": [],
+          "superseded_by_resolved_keys": [],
+          "superseded_by_verifies": false
+        },
+        {
+          "claim_excerpt": "Instrument-validity premise of KPI `evidence/phase0/kpis/omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json` (sha256 `3950f643\u2026`)",
+          "index_path": "amphora-solvency-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-solvency-score",
+          "refuted_by_cell": "same W7 receipt",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "same R-B03 receipt (KPI claim-scope retraction indexed under R-A10 above)",
+          "superseded_by_exists": false,
+          "superseded_by_paths_cited": [],
+          "superseded_by_resolved_keys": [],
+          "superseded_by_verifies": false
+        }
+      ]
+    },
+    "amphora-sourceability-ehs": {
+      "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "52dffb432f8a34ecb716eff4bae8e0cabff4827717b2851496912dbb2cfeb9ad",
+      "n_rows": 11,
+      "rows": [
+        {
+          "claim_excerpt": "toluene PEL 'OSHA Table Z-1' in kpis.pel_denominator_source + solvent_cards_ranked[toluene] (in reference/mvp20/data/vapor_hazard_ratio_inhalation_prescreen_receipt.v1.json; superseded byte-intact, toluene is Table Z-2: ",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json (+ kpi: evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json)",
+          "refuted_by_paths_cited": [
+            "evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json",
+            "reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json"
+          ],
+          "superseded_by_cell": "evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "toluene PEL 'OSHA Table Z-1' in kpis.solvent_envelopes[toluene].osha_pel_table_z1_name (in reference/mvp20/data/vhr_temperature_envelope_inhalation_prescreen_receipt.v1.json; superseded byte-intact, toluene is Table Z-2:",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json (+ kpi: evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json)",
+          "refuted_by_paths_cited": [
+            "evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json",
+            "reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json"
+          ],
+          "superseded_by_cell": "evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "all mixture PEL denominators 'OSHA Table Z-1' in kpis.pel_denominator_source (in reference/mvp20/data/mixture_additivity_raoult_osha_inhalation_prescreen_receipt.v1.json; superseded byte-intact, toluene is Table Z-2: TWA",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json (+ kpi: evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json)",
+          "refuted_by_paths_cited": [
+            "evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json",
+            "reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json"
+          ],
+          "superseded_by_cell": "evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json` (sha256 `1001f14d...`) is signed under a trust-anchored Phase-0 key; fire 20260802T170001-3280844-63859af6dae2 REFUTED verdict (toluene is OSHA Ta",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json (documents the wrong-key defect)",
+          "refuted_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json (anchored re-issue; REFUTED verdict reinstated, re-attack byte-exact)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`evidence/phase0/kpis/osha-table-z1-z2-attribution-audit-kpi.v1.json` (sha256 `47863834...`) is signed under a trust-anchored Phase-0 key",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "same batch receipt (KPI->receipt payload sha binding verified intact)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`reference/mvp20/data/vhr_temperature_envelope_crossmethod_audit_receipt.v1.json` (sha256 `d9f34de8...`) is signed under a trust-anchored Phase-0 key; fire 20260803T050002-2025413-7726cab611c9 SURVIVED verdict is portfol",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json (documents the wrong-key defect)",
+          "refuted_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json (anchored re-issue; CLAIM_SURVIVED verdict reinstated, re-attack byte-exact)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`evidence/phase0/kpis/vhr-temperature-envelope-crossmethod-audit-kpi.v1.json` (sha256 `f3a379ee...`) is signed under a trust-anchored Phase-0 key",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "same batch receipt (KPI->receipt payload sha binding verified intact)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`reference/mvp20/data/ghs_clp_cid_attribution_audit_receipt.v1.json` (sha256 `76a80a0d...`) is signed under a trust-anchored Phase-0 key",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "fire 20260803T210001-26108-aa59817794da (ledger REFUTED, but wrong-key signed, never portfolio-verifiable)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`evidence/phase0/kpis/ghs-clp-cid-attribution-audit-kpi.v1.json` (sha256 `b480634a...`) is signed under a trust-anchored Phase-0 key",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "same defect (sibling KPI, same wrong key)",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`reference/mvp20/data/ghs_clp_public_hazard_prescreen_5_canonical_epoxy_amines_receipt.v1.json` candidate_hazard_cards[IPDA/m-XDA].regulatory_sources cite PubChem CIDs 6944/15642, chemically unrelated substances; m-XDA's",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+          "refuted_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "`evidence/phase0/kpis/ghs-clp-public-hazard-prescreen-5-canonical-epoxy-amines-kpi.v1.json` (sibling KPI, same defect)",
+          "index_path": "amphora-sourceability-ehs/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-sourceability-ehs",
+          "refuted_by_cell": "same",
+          "refuted_by_paths_cited": [],
+          "superseded_by_cell": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/done/r-n01-fire2-ghs-clp-hazard-card-correction-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-tolerance-robustness": {
+      "index_path": "amphora-tolerance-robustness/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "1a2bdc3b90b5b64f495b52365c4b6a283823191922376985f82db30d78796c1b",
+      "n_rows": 2,
+      "rows": [
+        {
+          "claim_excerpt": "OpenPoly Tg split-conformal coverage 0.9683 (split-conformal-prediction-openpoly-tg-kpi.v1.json)",
+          "index_path": "amphora-tolerance-robustness/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": true,
+          "module": "amphora-tolerance-robustness",
+          "refuted_by_cell": "evidence/audit/repeated-scaffold-monte-carlo-conformal-openpoly-tg-v1/repeated-scaffold-monte-carlo-conformal-openpoly-tg-receipt.v1.dsse.json (2026-08-03; mean scaffold-safe coverage 0.8746 over 60 draws, CI [0.8497,0.8974] excludes 0.95; also takes down the jackknife+/CV+, Mondrian, normalized-adaptive and training-conditional-PAC cousins as robustness evidence)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/repeated-scaffold-monte-carlo-conformal-openpoly-tg-v1/repeated-scaffold-monte-carlo-conformal-openpoly-tg-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "PENDING \u2014 repair queued as campaign item R-C01 (scaffold-aware conformal, acceptance: mean >= 0.90 on the same 60-seed MC, honest re-scope hatch)",
+          "superseded_by_exists": false,
+          "superseded_by_paths_cited": [],
+          "superseded_by_resolved_keys": [],
+          "superseded_by_verifies": false
+        },
+        {
+          "claim_excerpt": "RadonPy eps_r conformal coverage (mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json, coverage claim)",
+          "index_path": "amphora-tolerance-robustness/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-tolerance-robustness",
+          "refuted_by_cell": "evidence/audit/conformal-coverage-attack-v1/conformal-coverage-attack-receipt.v1.dsse.json (2026-08-02, W5; admissible-subset coverage 0.6923, Wilson CI [0.5573,0.8009] excludes 0.95 \u2014 apparent 0.9558 propped up by 89.5% physically-inadmissible labels)",
+          "refuted_by_paths_cited": [
+            "evidence/audit/conformal-coverage-attack-v1/conformal-coverage-attack-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "dielectric label-integrity retraction chain in amphora-molecule-property (evidence/audit/dielectric-retraction-v1/, logs/claims-requiring-retraction.jsonl); coverage under admissibility stratification queued within R-C01 scope",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "logs/claims-requiring-retraction.jsonl"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/logs/claims-requiring-retraction.jsonl"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    },
+    "amphora-viscosity-score": {
+      "index_path": "amphora-viscosity-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "index_sha256": "4ed6b2cd3e5eaa508aac3cb93be3b4a117977688afe8feaabeea45d769930c34",
+      "n_rows": 2,
+      "rows": [
+        {
+          "claim_excerpt": "mission.md presented Polyverse melt-viscosity results (conformal+AD, FFW-vs-ML, parent source-safe R2 0.944) with zero rights caveat while the module rights decision is CONTEXT_ONLY / promotion_eligible=false / quarantin",
+          "index_path": "amphora-viscosity-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-viscosity-score",
+          "refuted_by_cell": "`evidence/audit/polyverse-rights-disclosure-gap-v1/polyverse-rights-disclosure-gap-receipt.v1.dsse.json`",
+          "refuted_by_paths_cited": [
+            "evidence/audit/polyverse-rights-disclosure-gap-v1/polyverse-rights-disclosure-gap-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json` (mission prose now carries \u201c[Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]\u201d adjacent to every Polyverse-derived result)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-viscosity-score/evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        },
+        {
+          "claim_excerpt": "FFW-beats-ML headline (R2 +0.5972 vs +0.4536) presented as documented-honestly with no interval disclosure despite resting on 13 independent test polymer chemistries",
+          "index_path": "amphora-viscosity-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+          "literal_pending": false,
+          "module": "amphora-viscosity-score",
+          "refuted_by_cell": "`evidence/audit/ffw-vs-ml-uncertainty-disclosure-gap-v1/ffw-vs-ml-uncertainty-disclosure-gap-receipt.v1.dsse.json`",
+          "refuted_by_paths_cited": [
+            "evidence/audit/ffw-vs-ml-uncertainty-disclosure-gap-v1/ffw-vs-ml-uncertainty-disclosure-gap-receipt.v1.dsse.json"
+          ],
+          "superseded_by_cell": "`evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json` (headline now carries \u201c[n=13 independent chemistries, no resampled interval - interval work queued as R-C04]\u201d)",
+          "superseded_by_exists": true,
+          "superseded_by_paths_cited": [
+            "evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_resolved_keys": [
+            "/home/ubuntu/amphora/build/mvp20-split/amphora-viscosity-score/evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json"
+          ],
+          "superseded_by_verifies": true
+        }
+      ]
+    }
+  },
+  "n_distinct_superseded_by_targets": 33,
+  "n_index_files": 16,
+  "schema": "amphora.redteam-audit.v1-resolve-retraction-resolution-sweep.v1",
+  "summary_counts": {
+    "n_rows_dangling_superseded_by_path": 0,
+    "n_rows_literal_pending": 1,
+    "n_rows_no_superseded_by_path_cited": 5,
+    "n_rows_total": 80
+  },
+  "trust_store": {
+    "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+  }
+}

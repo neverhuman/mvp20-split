@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "c7e168901d37455cb03a25555488924aa58651b3cfd2324a707c4e58770c01f9",
+  "module_id": "amphora-viscosity-score",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

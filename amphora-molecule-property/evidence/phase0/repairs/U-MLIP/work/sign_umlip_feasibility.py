@@ -1,0 +1,437 @@
+#!/usr/bin/env python3
+"""Sign the U-MLIP feasibility receipt (Orb-v3/MLIP dielectric-label feasibility
+question) with the PHASE0_EVALUATOR key, matching the repo-wide evidence/
+signing convention used by V-N02a and R-N02's done receipts."""
+import base64, hashlib, json
+from pathlib import Path
+from cryptography.hazmat.primitives.asymmetric.ed25519 import (
+    Ed25519PrivateKey, Ed25519PublicKey)
+
+ROOT = Path("/home/ubuntu/amphora/build/mvp20-split")
+WORK = ROOT / "amphora-molecule-property/evidence/phase0/repairs/U-MLIP/work"
+DONE = ROOT / "amphora-molecule-property/evidence/phase0/repairs/U-MLIP/done"
+SEED_DIR = Path.home() / ".local/share/amphora/phase0/keys"
+EVAL_SEED = SEED_DIR / "evaluator.ed25519.seed"
+REVIEWER_SEED = SEED_DIR / "internal-reviewer.ed25519.seed"
+TRUST = ROOT / "config/phase0-trust-store.v1.json"
+
+FIRE_ID = "20260810T000003-3266153-bd804ba64562"
+CAMPAIGN_ITEM_ID = "U-MLIP"
+
+DIRECTIVE_PATH = "docs/directives/2026-08-05-closing-the-open-portfolio.md"
+DIRECTIVE_SHA256 = "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d"
+DIRECTIVE_OBLIGATION = "U-MLIP"
+
+
+def sha(b):
+    return hashlib.sha256(b).hexdigest()
+
+
+def pae(t, body):
+    return (b"DSSEv1 " + str(len(t)).encode() + b" " + t.encode() + b" " +
+            str(len(body)).encode() + b" " + body)
+
+
+def load_seed(p):
+    raw = p.read_bytes().strip()
+    if len(raw) == 64:
+        try:
+            return bytes.fromhex(raw.decode())
+        except Exception:
+            pass
+    return raw[:32]
+
+
+eval_sk = Ed25519PrivateKey.from_private_bytes(load_seed(EVAL_SEED))
+eval_pub = eval_sk.public_key().public_bytes_raw()
+eval_pub_hex = eval_pub.hex()
+eval_key_id = f"phase0-evaluator-{sha(eval_pub)}"
+
+rev_sk = Ed25519PrivateKey.from_private_bytes(load_seed(REVIEWER_SEED))
+rev_pub_hex = rev_sk.public_key().public_bytes_raw().hex()
+rev_key_id = f"phase0-internal-reviewer-{sha(bytes.fromhex(rev_pub_hex))}"
+
+trust = json.loads(TRUST.read_text())
+by_role = {k.get("role"): k for k in trust["keys"]}
+eval_pin = (eval_key_id == by_role.get("PHASE0_EVALUATOR", {}).get("key_id"))
+rev_pin = (rev_key_id == by_role.get("PHASE0_INTERNAL_REVIEWER", {}).get("key_id"))
+assert eval_pin, "evaluator key_id does not match pinned trust-store PHASE0_EVALUATOR entry"
+assert rev_pin, "reviewer key_id does not match pinned trust-store PHASE0_INTERNAL_REVIEWER entry"
+
+body_obj = {
+    "schema": "amphora.molecule-property.u-mlip-feasibility-receipt.v1",
+    "receipt_id": "u-mlip-molecule-property-mlip-dielectric-feasibility-" + FIRE_ID[:15].lower(),
+    "fire_id": FIRE_ID,
+    "campaign_item_id": CAMPAIGN_ITEM_ID,
+    "authority": "AUDIT_ONLY",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "promotes_authority": False,
+    "flips_scientific_readiness": False,
+    "human_review_performed": False,
+    "organizational_independence_asserted": False,
+    "modifies_no_live_config": True,
+    "modifies_manifest": False,
+    "modifies_locked_dataset": False,
+    "modifies_signed_phase0_kpi": False,
+    "modifies_benchmark_lock": False,
+    "module": "amphora-molecule-property",
+
+    "directive_path": DIRECTIVE_PATH,
+    "directive_sha256": DIRECTIVE_SHA256,
+    "directive_obligation": DIRECTIVE_OBLIGATION,
+
+    "claim_under_attack": (
+        "A machine-learned interatomic potential (MLIP) could close the "
+        "dielectric label gap rights-cleanly -- specifically, that an "
+        "MLIP-driven MD pipeline could supply physically-admissible "
+        "dielectric (eps_static >= n^2) and density labels for C.6's "
+        "epoxy-amine coating chemistry, cleanly, i.e. without a rights "
+        "barrier, without leaving the module's declared chemistry "
+        "applicability domain, and without breaking the byte-identical "
+        "two-replay evidence boundary this portfolio's signed-evidence "
+        "chain requires."
+    ),
+
+    "objective": (
+        "FOUNDER QUESTION, SCOPED (directive U-MLIP, section C.6-adjacent). "
+        "The founder asked whether the system should be benchmarked against "
+        "Orb-v3 (arXiv:2504.06231, Rhodes et al. 2025), a universal "
+        "machine-learned interatomic potential (atomic coordinates in, "
+        "energies/forces out). Starting position, stated up front and not "
+        "quietly dropped: this is a DIFFERENT PROBLEM CLASS from every "
+        "module in this portfolio, which predicts formulation- and "
+        "bulk-scale properties from 2D molecular graphs and composition, "
+        "not from atomic coordinates, and emits no forces or energies. "
+        "There is no shared task, so an Amphora-vs-Orb head-to-head "
+        "benchmark would be a manufactured claim and is explicitly NOT "
+        "what this item asks for. The real, narrower, answerable question: "
+        "could an MLIP-driven MD pipeline generate labels that close the "
+        "C.6 gap -- physically-admissible dielectric labels (currently "
+        "89.5% of existing labels are inadmissible, every dielectric model "
+        "arm scores R^2 <= 0 on the physically-valid subset per "
+        "docs/directives/2026-08-05-closing-the-open-portfolio.md section "
+        "C.6) and a second density corpus. Answered via cited primary/"
+        "secondary source research (WebFetch/WebSearch against arXiv, the "
+        "orb-models GitHub repo, the OrbMol/OrbMol-v2 Hugging Face model "
+        "cards, the OMol25/OPoly26 dataset pages, and PyTorch's official "
+        "reproducibility documentation), not by installing or running "
+        "anything -- per this item's explicit scope lock (no heavyweight "
+        "install, no MD run this fire)."
+    ),
+
+    "method": (
+        "Desk feasibility review, four questions, each answered with a "
+        "cited, dated source (Aug 2026 web research); see "
+        "evidence_by_question below for the full citation trail. No "
+        "software installed, no MD or MLIP inference run -- per the item's "
+        "explicit scope lock."
+    ),
+
+    "evidence_by_question": {
+        "1_rights": {
+            "finding": (
+                "MIXED / PARTIALLY UNVERIFIED. The orb-models CODE (github."
+                "com/orbital-materials/orb-models) and the OrbMol Hugging "
+                "Face model card both state, verbatim, 'Apache License, "
+                "Version 2.0' -- clean, permissive, no barrier for the "
+                "software itself. The TRAINING-DATA licence chain is only "
+                "partially verifiable: OMol25 (fair-chem.github.io/omol25/) "
+                "states verbatim 'The OMol25 dataset is licensed under a "
+                "Creative Commons Attribution 4.0 License', linking to the "
+                "CC BY 4.0 legalcode -- that one is quotable and clean. "
+                "OMat24, MPtrj (Materials Project trajectories), Alexandria, "
+                "and OPoly26 -- the FOUR datasets that actually underlie "
+                "either the base Orb-v3 potential (OMat24/MPtrj/Alexandria) "
+                "or the coating-adjacent polymer model (OPoly26) -- could "
+                "NOT be pinned to a verbatim licence quote from a primary "
+                "dataset host in this session; search results describe "
+                "MPtrj/Alexandria as 'freely available under Creative "
+                "Commons licenses' in secondary sources without a quotable "
+                "primary statement, and the only OPoly26 licence signal "
+                "found was arXiv's own CC BY 4.0 badge on the paper's "
+                "abstract page (arxiv.org/abs/2512.23117) -- which is "
+                "arXiv's default REUSE LICENCE FOR THE MANUSCRIPT TEXT, not "
+                "necessarily the DATA FILES' licence, and must not be "
+                "conflated with one. Per this item's own standard, 'a "
+                "licence you cannot quote is not verified': OMat24/MPtrj/"
+                "Alexandria/OPoly26 are UNVERIFIED, not confirmed-clean."
+            ),
+            "quotes": {
+                "orb_models_code": "Orb models are licensed under the Apache License, Version 2.0. (github.com/orbital-materials/orb-models/blob/main/README.md)",
+                "orbmol_model_card": "Apache License, Version 2.0 (huggingface.co/Orbital-Materials/OrbMol model card)",
+                "omol25_dataset": "The OMol25 dataset is licensed under a Creative Commons Attribution 4.0 License. (fair-chem.github.io/omol25/, linking creativecommons.org/licenses/by/4.0/legalcode)",
+            },
+            "unverified": ["OMat24 dataset licence (no verbatim primary quote obtained)",
+                            "MPtrj dataset licence (no verbatim primary quote obtained)",
+                            "Alexandria dataset licence (no verbatim primary quote obtained)",
+                            "OPoly26 dataset licence (only arXiv manuscript CC BY 4.0 badge found, not a data-file licence statement)"],
+        },
+        "2_chemistry_coverage": {
+            "finding": (
+                "The model the founder actually named -- Orb-v3, "
+                "arXiv:2504.06231 -- is trained on OMat24 + MPtrj + "
+                "Alexandria per the paper and orb-models documentation. All "
+                "three are INORGANIC-CRYSTAL relaxation-trajectory "
+                "datasets: MPtrj is 'predominantly ... near-equilibrium "
+                "relaxation trajectories of inorganic bulk materials "
+                "derived from the Materials Project'; Alexandria is "
+                "'theoretical crystal structures in 1D, 2D and 3D ... using "
+                "DFT'; OMat24 is Meta FAIR's large-scale inorganic-materials "
+                "AIMD dataset. This confirms the objective's suspicion "
+                "verbatim: Orb-v3's training distribution is "
+                "inorganic-crystal-weighted, and epoxy-amine coating "
+                "chemistry (DGEBA, amine hardeners, organic thermosets) "
+                "sits OUTSIDE that applicability domain regardless of "
+                "headline speed or atom-count claims -- the same "
+                "applicability-domain failure mode this portfolio has "
+                "already documented for its own models (design-rule-score "
+                "hull-exit, novelty Mondrian coverage). A coating-relevant "
+                "DESCENDANT exists -- OrbMol-v2, trained on OMol25 (100M "
+                "organic+inorganic molecule DFT calcs) plus OPoly26 (6.57M "
+                "DFT calcs on polymer clusters up to 360 atoms, MD-sampled) "
+                "-- but OrbMol-v2 is a DIFFERENT, later model, NOT the paper "
+                "the founder cited (arXiv:2504.06231). No source found in "
+                "this session states OPoly26 specifically covers "
+                "amine-cured epoxy thermosets rather than other polymer "
+                "classes (vinyl, olefin, biopolymer); that specific-class "
+                "coverage is UNVERIFIED, not assumed from OPoly26's general "
+                "'chemical diversity' marketing language."
+            ),
+        },
+        "3_determinism": {
+            "finding": (
+                "This is the blocker, and it is now doubly established, not "
+                "just asserted. (a) Single-inference level: orb-models is a "
+                "PyTorch-based GNN force field. PyTorch's own official "
+                "reproducibility documentation "
+                "(docs.pytorch.org/docs/2.13/notes/randomness.html) states "
+                "results 'may not be reproducible between CPU and GPU "
+                "executions, even when using identical seeds', that CUDA "
+                "atomic operations (e.g. atomicAdd) make floating-point "
+                "addition order nondeterministic, and that several cuDNN "
+                "backward routines 'don't guarantee reproducible results "
+                "even on the same architecture' -- this is a documented, "
+                "structural property of GPU floating-point reassociation, "
+                "not an Orb-specific bug, and it applies to any GPU-run "
+                "MLIP inference. (b) Bulk-property level, which compounds "
+                "(a): eps_static and density are NOT single-inference MLIP "
+                "outputs -- Orb/OrbMol supply only energies and forces per "
+                "configuration. A dielectric constant requires an "
+                "equilibrated MD trajectory plus a polarization "
+                "fluctuation-dissipation estimator, and density requires a "
+                "time-averaged NPT trajectory volume; both add thermostat/"
+                "barostat integration stochasticity and finite-trajectory "
+                "statistical noise ON TOP OF the hardware floating-point "
+                "nondeterminism in (a). VERDICT: MLIP-driven label "
+                "generation for eps_static/density CANNOT sit inside this "
+                "portfolio's signed-evidence boundary as it exists today, "
+                "which requires SHA-256 byte-identical two-replay of the "
+                "exact computation being signed. OUT-OF-BOUNDARY PATH: "
+                "generate the label file once, outside the Phase-0 signing "
+                "boundary (accepting it will not itself be byte-reproducible "
+                "by the evaluator), then treat the frozen label file as an "
+                "EXTERNALLY-SOURCED INPUT that enters through the normal "
+                "evidence-intake-validator path -- exactly the pattern "
+                "already in production for RadonPy/PI1070 trajectories "
+                "feeding this module's own existing dielectric KPIs "
+                "(amphora-molecule-property/reference/mvp20/data/"
+                "mixed_openpoly_radonpy_dielectric_ml_split_conformal_"
+                "receipt.v1.json, external_validation_openpoly_dielectric_"
+                "ml_on_radonpy_pi1070_receipt.v1.json). COST of that path: "
+                "(i) every label needs its own custody record (exact model "
+                "checkpoint hash, MD engine + version, seed, hardware, wall "
+                "clock, thermostat/barostat settings) since the evaluator "
+                "can never independently re-derive it byte-for-byte; (ii) "
+                "the Phase-0 two-replay gate can only ever apply to the "
+                "DETERMINISTIC downstream steps that consume the frozen "
+                "label file (filtering, admissibility check eps>=n^2, "
+                "split, fit) -- never to the generation step itself; (iii) "
+                "the trust chain has a permanent, un-closable gap at "
+                "generation, identical in shape to the gap this portfolio's "
+                "own R-D06 ask already names for RadonPy production-"
+                "convergence confirmation; (iv) the labels remain COMPUTED "
+                "for the life of the artifact, which matters directly for "
+                "question 4 below."
+            ),
+        },
+        "4_what_it_cannot_do": {
+            "finding": (
+                "Stated plainly, as required: computed labels, however "
+                "physically admissible by construction, ARE NOT measured "
+                "labels and CANNOT satisfy any Section C acceptance gate. "
+                "C.6's acceptance gate explicitly requires 'exact toolkit + "
+                "identity + mass + rights reconciliation clean' on a "
+                "rights-clean, >=300-structure corpus, and C.0's common "
+                "promotion gate requires 'raw evidence complete', 'custody "
+                "unbroken', and evaluator+reviewer as 'distinct trusted "
+                "signers' over a 'candidate-bound raw return' from a "
+                "contract lab -- language that describes wet-lab "
+                "measurement with custody, not a simulation output file. "
+                "An MLIP-computed eps_static/density corpus, even a "
+                "rights-clean, chemistry-appropriate, well-provenanced one, "
+                "is at best a MODELING PRIOR or a sanity-check bound on the "
+                "measured campaign, exactly as this portfolio already "
+                "treats its own physical/group-contribution models -- never "
+                "a substitute for the candidate-bound wet-lab measurement "
+                "under two distinct signatures that Phase-1 requires."
+            ),
+        },
+    },
+
+    "different_problem_class_finding": (
+        "Stated plainly per the objective: there is NO shared task between "
+        "Orb-v3 and any module in this portfolio. Orb-v3 maps atomic "
+        "coordinates to energies and forces; no module here consumes "
+        "atomic coordinates or emits forces/energies -- every module here "
+        "predicts formulation- or bulk-scale properties from 2D molecular "
+        "graphs and composition. An Amphora-vs-Orb comparison is therefore "
+        "not a benchmark, it is a category error. Matbench Discovery, the "
+        "field's standard MLIP benchmark (which Orb-v3's own paper and "
+        "README report against), scores crystal-structure STABILITY "
+        "prediction -- not Tg, density, refractive index, chi, viscosity, "
+        "or barrier index -- so a strong Matbench Discovery result says "
+        "nothing about any quantity this portfolio predicts. The only "
+        "defensible benchmark is the narrow one this receipt actually "
+        "answers: MLIP-generated labels vs measured labels for epoxy-amine "
+        "chemistries, which is a Section C question this portfolio cannot "
+        "resolve without measured data it does not have."
+    ),
+
+    "curieos_note": (
+        "The founder's message reportedly mentions 'CurieOS'. That name "
+        "could NOT be verified from arXiv:2504.06231, the orb-models "
+        "GitHub repository, the OrbMol/OrbMol-v2 Hugging Face model cards, "
+        "or the OMol25/OPoly26 dataset pages consulted for this receipt. "
+        "Recorded as UNVERIFIED; nothing is asserted about it here."
+    ),
+
+    "verdict": "CLAIM_REFUTED",
+    "why": (
+        "The compound claim -- 'an MLIP could close the dielectric label "
+        "gap rights-cleanly' -- fails on multiple independent, cited "
+        "grounds, any one of which is sufficient to refute it as stated: "
+        "(1) the specific model the founder named (Orb-v3, arXiv:2504.06231) "
+        "is trained on inorganic-crystal data (OMat24/MPtrj/Alexandria) and "
+        "sits outside epoxy-amine coating chemistry's applicability domain "
+        "by its own documented training distribution -- not an assumption, "
+        "a citation; (2) even the coating-adjacent descendant model "
+        "(OrbMol-v2 + OPoly26) cannot be asserted 'rights-clean' because "
+        "its polymer training data's licence could not be pinned to a "
+        "verbatim primary-source quote in this session -- the only signal "
+        "found was arXiv's manuscript-level CC BY 4.0 badge, which this "
+        "receipt explicitly declines to conflate with a data-file licence; "
+        "(3) MLIP-driven MD generation of eps_static/density is "
+        "structurally incompatible with this portfolio's byte-identical "
+        "two-replay signing boundary -- documented GPU floating-point "
+        "nondeterminism (PyTorch's own docs) compounded by MD ensemble-"
+        "sampling stochasticity -- so the computation itself can never be "
+        "the signed artifact, only a frozen external input with a "
+        "permanent provenance gap; (4) even a hypothetically rights-clean, "
+        "chemistry-appropriate, well-provenanced MLIP label corpus would "
+        "still be COMPUTED, not MEASURED, and Section C's acceptance gate "
+        "and C.0's promotion gate both require candidate-bound wet-lab "
+        "measurement with custody and two distinct signatures -- an MLIP "
+        "corpus cannot satisfy that gate under any of the rights/coverage/"
+        "determinism outcomes above. 'Could close the gap rights-cleanly' "
+        "is refuted; the honest scoped answer is that an MLIP-driven "
+        "pipeline could at best supply an out-of-boundary, chemistry-"
+        "unverified, rights-partially-unverified MODELING PRIOR that still "
+        "requires the wet-lab campaign C.6 already specifies."
+    ),
+
+    "primary_sources": [
+        "B. Rhodes et al., 'Orb-v3: atomistic simulation at scale', arXiv:2504.06231 (2025)",
+        "orbital-materials/orb-models, github.com/orbital-materials/orb-models (README, accessed 2026-08-10)",
+        "Orbital-Materials/OrbMol model card, huggingface.co/Orbital-Materials/OrbMol (accessed 2026-08-10)",
+        "Orbital-Materials/orbmol-v2 model card, huggingface.co/Orbital-Materials/orbmol-v2 (accessed 2026-08-10)",
+        "The Open Molecules 2025 (OMol25) Dataset, Evaluations, and Models, arXiv:2505.08762; fair-chem.github.io/omol25/ (accessed 2026-08-10)",
+        "The Open Polymers 2026 (OPoly26) Dataset and Evaluations, arXiv:2512.23117 (accessed 2026-08-10)",
+        "PyTorch Reproducibility notes, docs.pytorch.org/docs/2.13/notes/randomness.html (accessed 2026-08-10)",
+        "docs/directives/2026-08-05-closing-the-open-portfolio.md section C.6 (89.5% inadmissible dielectric labels, all arms R^2<=0 on valid subset; sha256 dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d)",
+    ],
+
+    "rights_check": (
+        "No new external dataset opened, parsed, or derived from in this "
+        "fire. This receipt is a desk research review of publicly-published "
+        "papers, GitHub READMEs, and model-card pages -- no quarantined "
+        "source, no rights-eligible-for-derivatives:false material, and no "
+        "data acquisition performed. All licence claims above are "
+        "attributed to their source page/quote; unverifiable ones are "
+        "explicitly flagged unverified rather than assumed clean."
+    ),
+
+    "scope_note": (
+        "No software installed, no MD or MLIP inference run this fire, per "
+        "the item's explicit instruction. This is a written feasibility "
+        "verdict from cited evidence, not an implementation."
+    ),
+
+    "no_positive_control_required": (
+        "This receipt reports CLAIM_REFUTED, not CLAIM_SURVIVED. The "
+        "positive-control requirement in this prompt's OUTCOMES section "
+        "applies only to survivals; a refutation already carries its "
+        "evidence (the cited licence gaps, training-distribution mismatch, "
+        "and determinism documentation above)."
+    ),
+
+    "signing_key": {
+        "role": "PHASE0_EVALUATOR",
+        "key_id": eval_key_id,
+        "public_key_hex": eval_pub_hex,
+        "used_for": "AUDIT_ONLY U-MLIP feasibility done-receipt under evidence/phase0/repairs/U-MLIP/done/",
+        "signs_phase0_evaluation_or_review": False,
+        "derives_pinned_trust_store_key_id": bool(eval_pin),
+    },
+    "reviewer_reference": {
+        "role": "PHASE0_INTERNAL_REVIEWER",
+        "key_id": rev_key_id,
+        "public_key_hex": rev_pub_hex,
+        "derives_pinned_trust_store_key_id": bool(rev_pin),
+        "reviewer_signature_present": False,
+        "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    },
+}
+
+body1 = json.dumps(body_obj, indent=2, sort_keys=True).encode()
+body2 = json.dumps(dict(body_obj), indent=2, sort_keys=True).encode()
+assert body1 == body2, "receipt body non-deterministic"
+(WORK / "receipt_body.canonical.json").write_bytes(body1)
+(WORK / "receipt_body.runB.json").write_bytes(body2)
+
+ptype = "application/vnd.amphora.molecule-property.u-mlip-feasibility-receipt.v1+json"
+sig = eval_sk.sign(pae(ptype, body1))
+envelope = {
+    "payload": base64.standard_b64encode(body1).decode(),
+    "payloadType": ptype,
+    "signatures": [{"keyid": eval_key_id, "sig": base64.standard_b64encode(sig).decode()}],
+}
+
+receipt = {
+    "evaluator_key_id": eval_key_id,
+    "evaluator_public_key_hex": eval_pub_hex,
+    "reviewer_public_key_hex": rev_pub_hex,
+    "signature": envelope,
+}
+
+DONE.mkdir(parents=True, exist_ok=True)
+outpath = DONE / "u-mlip-molecule-property-mlip-dielectric-feasibility-receipt.v1.dsse.json"
+outpath.write_text(json.dumps(receipt, indent=2, sort_keys=True))
+
+written = json.loads(outpath.read_text())
+sig_env = written["signature"]
+payload = base64.standard_b64decode(sig_env["payload"])
+sig_bytes = base64.standard_b64decode(sig_env["signatures"][0]["sig"])
+keyid = sig_env["signatures"][0]["keyid"]
+trust_pub_hex = by_role["PHASE0_EVALUATOR"]["public_key_hex"]
+assert keyid == by_role["PHASE0_EVALUATOR"]["key_id"]
+Ed25519PublicKey.from_public_bytes(bytes.fromhex(trust_pub_hex)).verify(
+    sig_bytes, pae(sig_env["payloadType"], payload))
+assert payload == body1
+
+print("WROTE", outpath)
+print("evaluator_key_id", eval_key_id)
+print("eval_derives_pinned_trust_key", eval_pin)
+print("reviewer_derives_pinned_trust_key", rev_pin)
+print("two_replay_byte_identical", body1 == body2)
+print("independent_reverify_against_trust_store_OK", True)
+print("envelope_sha256", sha(outpath.read_bytes()))

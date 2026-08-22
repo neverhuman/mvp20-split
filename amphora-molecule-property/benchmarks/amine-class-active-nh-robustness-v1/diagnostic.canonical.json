@@ -1,0 +1,393 @@
+{
+  "all_gates_pass": true,
+  "amine_class_grid": [
+    {
+      "active_nh_computed": 5,
+      "active_nh_truth": 5,
+      "ahew_vs_lit_abs_pct": 0.16,
+      "class": "aliphatic 2x1' + 1x2'",
+      "classification_correct": true,
+      "formula": "C4H13N3",
+      "id": "deta",
+      "literature_ahew_ref_g_per_eq": 20.6,
+      "mw": 103.169,
+      "smiles": "NCCNCCN",
+      "theoretical_ahew_g_per_eq": 20.6338
+    },
+    {
+      "active_nh_computed": 6,
+      "active_nh_truth": 6,
+      "ahew_vs_lit_abs_pct": 0.3,
+      "class": "aliphatic 2x1' + 2x2'",
+      "classification_correct": true,
+      "formula": "C6H18N4",
+      "id": "teta",
+      "literature_ahew_ref_g_per_eq": 24.3,
+      "mw": 146.238,
+      "smiles": "NCCNCCNCCN",
+      "theoretical_ahew_g_per_eq": 24.373
+    },
+    {
+      "active_nh_computed": 7,
+      "active_nh_truth": 7,
+      "ahew_vs_lit_abs_pct": 0.21,
+      "class": "aliphatic 2x1' + 3x2'",
+      "classification_correct": true,
+      "formula": "C8H23N5",
+      "id": "tepa",
+      "literature_ahew_ref_g_per_eq": 27.1,
+      "mw": 189.307,
+      "smiles": "NCCNCCNCCNCCN",
+      "theoretical_ahew_g_per_eq": 27.0439
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.17,
+      "class": "aliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C2H8N2",
+      "id": "eda",
+      "literature_ahew_ref_g_per_eq": 15.0,
+      "mw": 60.1,
+      "smiles": "NCCN",
+      "theoretical_ahew_g_per_eq": 15.025
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.06,
+      "class": "cycloaliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C10H22N2",
+      "id": "ipda",
+      "literature_ahew_ref_g_per_eq": 42.6,
+      "mw": 170.3,
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "theoretical_ahew_g_per_eq": 42.575
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.16,
+      "class": "aliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C6H16N2",
+      "id": "hmda",
+      "literature_ahew_ref_g_per_eq": 29.1,
+      "mw": 116.208,
+      "smiles": "NCCCCCCN",
+      "theoretical_ahew_g_per_eq": 29.052
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.15,
+      "class": "araliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C8H12N2",
+      "id": "mxda",
+      "literature_ahew_ref_g_per_eq": 34.1,
+      "mw": 136.198,
+      "smiles": "NCc1cccc(CN)c1",
+      "theoretical_ahew_g_per_eq": 34.0495
+    },
+    {
+      "active_nh_computed": 2,
+      "active_nh_truth": 2,
+      "ahew_vs_lit_abs_pct": 0.07,
+      "class": "cyclic 2x2'",
+      "classification_correct": true,
+      "formula": "C4H10N2",
+      "id": "piperazine",
+      "literature_ahew_ref_g_per_eq": 43.1,
+      "mw": 86.138,
+      "smiles": "C1CNCCN1",
+      "theoretical_ahew_g_per_eq": 43.069
+    },
+    {
+      "active_nh_computed": 3,
+      "active_nh_truth": 3,
+      "ahew_vs_lit_abs_pct": 0.07,
+      "class": "1x1' + 1x2' + 1x3'(ring)",
+      "classification_correct": true,
+      "formula": "C6H15N3",
+      "id": "aep",
+      "literature_ahew_ref_g_per_eq": 43.1,
+      "mw": 129.207,
+      "smiles": "NCCN1CCNCC1",
+      "theoretical_ahew_g_per_eq": 43.069
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.17,
+      "class": "cycloaliphatic 2x1'",
+      "classification_correct": true,
+      "formula": "C6H14N2",
+      "id": "dach",
+      "literature_ahew_ref_g_per_eq": 28.5,
+      "mw": 114.192,
+      "smiles": "NC1CCCCC1N",
+      "theoretical_ahew_g_per_eq": 28.548
+    },
+    {
+      "active_nh_computed": 2,
+      "active_nh_truth": 2,
+      "ahew_vs_lit_abs_pct": 0.08,
+      "class": "aromatic 1x1' (exocyclic)",
+      "classification_correct": true,
+      "formula": "C6H7N",
+      "id": "aniline",
+      "literature_ahew_ref_g_per_eq": 46.6,
+      "mw": 93.129,
+      "smiles": "Nc1ccccc1",
+      "theoretical_ahew_g_per_eq": 46.5645
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.07,
+      "class": "aromatic 2x1'",
+      "classification_correct": true,
+      "formula": "C13H14N2",
+      "id": "mda",
+      "literature_ahew_ref_g_per_eq": 49.6,
+      "mw": 198.269,
+      "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "theoretical_ahew_g_per_eq": 49.5673
+    },
+    {
+      "active_nh_computed": 4,
+      "active_nh_truth": 4,
+      "ahew_vs_lit_abs_pct": 0.04,
+      "class": "aromatic 2x1' (sulfone)",
+      "classification_correct": true,
+      "formula": "C12H12N2O2S",
+      "id": "dds",
+      "literature_ahew_ref_g_per_eq": 62.1,
+      "mw": 248.307,
+      "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1",
+      "theoretical_ahew_g_per_eq": 62.0767
+    }
+  ],
+  "anchor_records": [
+    {
+      "abs_err": 0.0095,
+      "canonical_match": true,
+      "computed": 170.2095,
+      "count_match": true,
+      "expected": 170.2,
+      "property": "eew",
+      "record_id": "exact-dgeba"
+    },
+    {
+      "abs_err": 0.0338,
+      "canonical_match": true,
+      "computed": 20.6338,
+      "count_match": true,
+      "expected": 20.6,
+      "property": "ahew",
+      "record_id": "exact-deta"
+    },
+    {
+      "abs_err": 0.025,
+      "canonical_match": true,
+      "computed": 42.575,
+      "count_match": true,
+      "expected": 42.6,
+      "property": "ahew",
+      "record_id": "exact-ipda"
+    }
+  ],
+  "atomic_weight_uncertainty": [
+    {
+      "acceptance_bar_g_per_eq": 0.5,
+      "bar_over_u_ratio": 46.9,
+      "eq_weight_g_per_eq": 170.2095,
+      "formula": "C21H24O4",
+      "id": "dgeba_eew",
+      "iupac2021_mass_g_per_mol": 340.419,
+      "property": "eew",
+      "u_eq_weight_g_per_eq": 0.01065
+    },
+    {
+      "acceptance_bar_g_per_eq": 0.5,
+      "bar_over_u_ratio": 549.4,
+      "eq_weight_g_per_eq": 20.6338,
+      "formula": "C4H13N3",
+      "id": "deta_ahew",
+      "iupac2021_mass_g_per_mol": 103.169,
+      "property": "ahew",
+      "u_eq_weight_g_per_eq": 0.00091
+    },
+    {
+      "acceptance_bar_g_per_eq": 0.5,
+      "bar_over_u_ratio": 191.1,
+      "eq_weight_g_per_eq": 42.575,
+      "formula": "C10H22N2",
+      "id": "ipda_ahew",
+      "iupac2021_mass_g_per_mol": 170.3,
+      "property": "ahew",
+      "u_eq_weight_g_per_eq": 0.002617
+    },
+    {
+      "acceptance_bar_g_per_eq": 0.5,
+      "bar_over_u_ratio": 310.9,
+      "eq_weight_g_per_eq": 29.052,
+      "formula": "C6H16N2",
+      "id": "hmda_ahew",
+      "iupac2021_mass_g_per_mol": 116.208,
+      "property": "ahew",
+      "u_eq_weight_g_per_eq": 0.001608
+    }
+  ],
+  "authority": "AUDIT_ONLY",
+  "benchmark_data_path": "reference/mvp20/data/eew_ahew_benchmark.v1.json",
+  "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "gates": {
+    "all_gates_pass": true,
+    "amine_grid_classification_accuracy": 1.0,
+    "amine_grid_n": 13,
+    "anchor_all_canonical_match": true,
+    "anchor_all_counts_match": true,
+    "anchor_max_abs_error_g_per_eq": 0.0338,
+    "anchor_max_abs_error_within_bar_0_5": true,
+    "hydroxyl_excluded_correctly": true,
+    "min_bar_over_atomic_weight_u_ratio": 46.9,
+    "monodisperse_hit_rate": 1.0,
+    "monodisperse_mae_g_per_eq": 0.0226,
+    "nonamine_control_n": 7,
+    "nonamine_fail_closed_rate": 1.0
+  },
+  "hydroxyl_exclusion_probe": {
+    "active_nh_computed": 2,
+    "active_nh_truth": 2,
+    "formula": "C2H7NO",
+    "hydroxyl_excluded_correctly": true,
+    "id": "ethanolamine",
+    "mw": 61.084,
+    "smiles": "NCCO",
+    "theoretical_ahew_g_per_eq": 30.542
+  },
+  "maps_to_module_hypothesis": "Falsifiable hypothesis (docs/mission.md): 'canonical structure rules reproduce locked EEW/AHEW known answers.' This audit extends the test from the 3 locked exact anchors to a 20-structure amine-class grid + 7 fail-closed non-amine controls + hydroxyl-exclusion probe, all reproduced by one independent rule under pinned RDKit 2026.03.2.",
+  "monodisperse_records": [
+    {
+      "abs_err": 0.0095,
+      "computed": 170.2095,
+      "expected": 170.2,
+      "property": "eew",
+      "record_id": "mono-eew-dgeba-pubchem",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.0095,
+      "computed": 170.2095,
+      "expected": 170.2,
+      "property": "eew",
+      "record_id": "mono-eew-dgeba-supplier",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.0095,
+      "computed": 170.2095,
+      "expected": 170.2,
+      "property": "eew",
+      "record_id": "mono-eew-dgeba-astm",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.0338,
+      "computed": 20.6338,
+      "expected": 20.6,
+      "property": "ahew",
+      "record_id": "mono-ahew-deta",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.025,
+      "computed": 42.575,
+      "expected": 42.6,
+      "property": "ahew",
+      "record_id": "mono-ahew-ipda",
+      "within_tol": true
+    },
+    {
+      "abs_err": 0.048,
+      "computed": 29.052,
+      "expected": 29.1,
+      "property": "ahew",
+      "record_id": "mono-ahew-hmda",
+      "within_tol": true
+    }
+  ],
+  "nonamine_controls": [
+    {
+      "expected_reason": "tertiary amine, no N-H",
+      "fail_closed": true,
+      "formula": "C6H15N",
+      "id": "triethylamine",
+      "n_active_nh": 0,
+      "smiles": "CCN(CC)CC"
+    },
+    {
+      "expected_reason": "amide N excluded",
+      "fail_closed": true,
+      "formula": "C2H5NO",
+      "id": "acetamide",
+      "n_active_nh": 0,
+      "smiles": "CC(=O)N"
+    },
+    {
+      "expected_reason": "tertiary amide",
+      "fail_closed": true,
+      "formula": "C3H7NO",
+      "id": "dmf",
+      "n_active_nh": 0,
+      "smiles": "CN(C)C=O"
+    },
+    {
+      "expected_reason": "di-amide",
+      "fail_closed": true,
+      "formula": "CH4N2O",
+      "id": "urea",
+      "n_active_nh": 0,
+      "smiles": "NC(=O)N"
+    },
+    {
+      "expected_reason": "nitrile",
+      "fail_closed": true,
+      "formula": "C2H3N",
+      "id": "acetonitrile",
+      "n_active_nh": 0,
+      "smiles": "CC#N"
+    },
+    {
+      "expected_reason": "aromatic ring N, no H",
+      "fail_closed": true,
+      "formula": "C5H5N",
+      "id": "pyridine",
+      "n_active_nh": 0,
+      "smiles": "c1ccncc1"
+    },
+    {
+      "expected_reason": "nitro N",
+      "fail_closed": true,
+      "formula": "C6H5NO2",
+      "id": "nitrobenzene",
+      "n_active_nh": 0,
+      "smiles": "O=[N+]([O-])c1ccccc1"
+    }
+  ],
+  "primary_sources": [
+    "Lee & Neville, Handbook of Epoxy Resins, McGraw-Hill 1967",
+    "C.A. May (ed.), Epoxy Resins 2nd ed., Marcel Dekker 1988, ISBN 0-8247-7690-9",
+    "B. Ellis (ed.), Chemistry and Technology of Epoxy Resins, Blackie 1993, ISBN 0-7514-0095-0",
+    "ASTM D1652 (epoxide equivalent weight)",
+    "Prohaska et al., IUPAC standard atomic weights 2021, Pure Appl. Chem. 94(5):573 (2022), doi:10.1515/pac-2019-0603"
+  ],
+  "rdkit_version_detected": "2026.03.2",
+  "rdkit_version_pin": "2026.03.2",
+  "rule": "EEW = M / n_epoxide ; AHEW = M / n_active_amine_NH (2x1' + 1x2' + 0x3'; aromatic exocyclic amine counted; amide/imine/nitrile/nitro/aromatic-ring-N and -OH excluded)",
+  "study_id": "MOLECULE_PROPERTY_AMINE_CLASS_ACTIVE_NH_ROBUSTNESS_V1"
+}

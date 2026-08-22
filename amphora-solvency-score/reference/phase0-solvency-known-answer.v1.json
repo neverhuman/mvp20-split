@@ -1,0 +1,984 @@
+{
+  "acceptance_bar": {
+    "applicability_domain_fail_closed_rate": 1.0,
+    "authority_lock_preservation_rate": 1.0,
+    "classification_accuracy_rate": 0.85,
+    "held_out_polymer_generalization_rate": 0.8,
+    "high_confidence_false_compatible_rate_ceiling": 0.05,
+    "hsp_over_dd_baseline_lift": 0.15,
+    "reported_auroc_hansen_ceiling_only": 0.85
+  },
+  "authority": {
+    "commercial_product_authority": false,
+    "constraint_only": true,
+    "optimizer_authority": false,
+    "scientific_readiness": "LOCKED_INTERNAL"
+  },
+  "fixture_id": "amphora-solvency-score-phase0-known-answer-2026-07-21",
+  "pairs": [
+    {
+      "observed_compatible": false,
+      "pair_id": "epoxy-dgeba-linear-uncured::n-hexane",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "n-hexane",
+      "sources": [
+        "Huntsman Araldite GY-6010 TDS: no solubility in aliphatic hydrocarbons"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "epoxy-dgeba-linear-uncured::cyclohexane",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "cyclohexane",
+      "sources": [
+        "Hansen 2nd ed. Fig 5.1 DGEBA: cyclohexane outside sphere"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::toluene",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "toluene",
+      "sources": [
+        "Huntsman Araldite GY-6010 TDS: good solvent"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::p-xylene",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "p-xylene",
+      "sources": [
+        "Dow DER-331 TDS: xylene compatible"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::dichloromethane",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "dichloromethane",
+      "sources": [
+        "Hansen 2nd ed. Fig 5.1 DGEBA: within sphere"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::chloroform",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "chloroform",
+      "sources": [
+        "Sigma-Aldrich DGEBA solubility chart: chloroform good"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::ethyl-acetate",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "ethyl-acetate",
+      "sources": [
+        "Huntsman Araldite GY-6010 TDS: ester solvents dissolve"
+      ],
+      "subgroup": "ester"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::acetone",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "acetone",
+      "sources": [
+        "Huntsman Araldite GY-6010 TDS: acetone good solvent"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::methyl-ethyl-ketone",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "methyl-ethyl-ketone",
+      "sources": [
+        "Huntsman Araldite GY-6010 TDS: MEK preferred solvent"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "epoxy-dgeba-linear-uncured::methanol",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "methanol",
+      "sources": [
+        "Dow DER-331 TDS: methanol poor solvent for DGEBA"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "epoxy-dgeba-linear-uncured::ethanol",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "ethanol",
+      "sources": [
+        "Dow DER-331 TDS: ethanol at best partial solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "epoxy-dgeba-linear-uncured::n-butanol",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "n-butanol",
+      "sources": [
+        "Dow DER-331 TDS: butanol partial only"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::tetrahydrofuran",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "tetrahydrofuran",
+      "sources": [
+        "Sigma-Aldrich DGEBA solubility chart: THF good solvent"
+      ],
+      "subgroup": "ether"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "epoxy-dgeba-linear-uncured::dimethylformamide",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "dimethylformamide",
+      "sources": [
+        "Hansen 2nd ed. Fig 5.1 DGEBA: DMF within sphere"
+      ],
+      "subgroup": "amide"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "epoxy-dgeba-linear-uncured::water",
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "solvent_id": "water",
+      "sources": [
+        "Universally documented: DGEBA insoluble in water"
+      ],
+      "subgroup": "protic-polar"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polymethyl-methacrylate::n-hexane",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "n-hexane",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: PMMA insoluble in aliphatic"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polymethyl-methacrylate::cyclohexane",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "cyclohexane",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: cyclohexane non-solvent"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::toluene",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "toluene",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: PMMA soluble in toluene"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::p-xylene",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "p-xylene",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: xylene good solvent"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::dichloromethane",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "dichloromethane",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: DCM excellent solvent"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::chloroform",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "chloroform",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: chloroform standard PMMA solvent"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::ethyl-acetate",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "ethyl-acetate",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: ethyl acetate compatible"
+      ],
+      "subgroup": "ester"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::acetone",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "acetone",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: acetone excellent PMMA solvent"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::methyl-ethyl-ketone",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "methyl-ethyl-ketone",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: MEK dissolves PMMA"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polymethyl-methacrylate::methanol",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "methanol",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: methanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polymethyl-methacrylate::ethanol",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "ethanol",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: ethanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polymethyl-methacrylate::n-butanol",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "n-butanol",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: butanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::tetrahydrofuran",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "tetrahydrofuran",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: THF excellent PMMA solvent"
+      ],
+      "subgroup": "ether"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polymethyl-methacrylate::dimethylformamide",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "dimethylformamide",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: DMF good solvent"
+      ],
+      "subgroup": "amide"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polymethyl-methacrylate::water",
+      "polymer_id": "polymethyl-methacrylate",
+      "solvent_id": "water",
+      "sources": [
+        "Universally documented: PMMA insoluble in water"
+      ],
+      "subgroup": "protic-polar"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::n-hexane",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "n-hexane",
+      "sources": [
+        "Brandrup PH VII/571: PVC insoluble in aliphatic"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::cyclohexane",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "cyclohexane",
+      "sources": [
+        "Brandrup PH VII/571: cyclohexane non-solvent"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::toluene",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "toluene",
+      "sources": [
+        "Brandrup PH VII/571: toluene marginal, classified non-solvent"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::p-xylene",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "p-xylene",
+      "sources": [
+        "Brandrup PH VII/571: xylene non-solvent for PVC"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polyvinyl-chloride::dichloromethane",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "dichloromethane",
+      "sources": [
+        "Brandrup PH VII/571: DCM standard PVC solvent"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polyvinyl-chloride::chloroform",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "chloroform",
+      "sources": [
+        "Brandrup PH VII/571: chloroform good PVC solvent"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::ethyl-acetate",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "ethyl-acetate",
+      "sources": [
+        "Brandrup PH VII/571: ethyl acetate non-solvent for PVC"
+      ],
+      "subgroup": "ester"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::acetone",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "acetone",
+      "sources": [
+        "Brandrup PH VII/571: acetone non-solvent, only swelling"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polyvinyl-chloride::methyl-ethyl-ketone",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "methyl-ethyl-ketone",
+      "sources": [
+        "Brandrup PH VII/571: MEK dissolves PVC"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::methanol",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "methanol",
+      "sources": [
+        "Brandrup PH VII/571: alcohols non-solvents"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::ethanol",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "ethanol",
+      "sources": [
+        "Brandrup PH VII/571: ethanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::n-butanol",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "n-butanol",
+      "sources": [
+        "Brandrup PH VII/571: butanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polyvinyl-chloride::tetrahydrofuran",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "tetrahydrofuran",
+      "sources": [
+        "Brandrup PH VII/571: THF preferred PVC solvent"
+      ],
+      "subgroup": "ether"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polyvinyl-chloride::dimethylformamide",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "dimethylformamide",
+      "sources": [
+        "Brandrup PH VII/571: DMF preferred PVC solvent"
+      ],
+      "subgroup": "amide"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyvinyl-chloride::water",
+      "polymer_id": "polyvinyl-chloride",
+      "solvent_id": "water",
+      "sources": [
+        "Universally documented: PVC insoluble in water"
+      ],
+      "subgroup": "protic-polar"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polystyrene::n-hexane",
+      "polymer_id": "polystyrene",
+      "solvent_id": "n-hexane",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: PS insoluble in aliphatic"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::cyclohexane",
+      "polymer_id": "polystyrene",
+      "solvent_id": "cyclohexane",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: cyclohexane theta solvent, dissolves PS"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::toluene",
+      "polymer_id": "polystyrene",
+      "solvent_id": "toluene",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: toluene standard PS solvent"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::p-xylene",
+      "polymer_id": "polystyrene",
+      "solvent_id": "p-xylene",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: xylene excellent PS solvent"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::dichloromethane",
+      "polymer_id": "polystyrene",
+      "solvent_id": "dichloromethane",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: DCM good PS solvent"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::chloroform",
+      "polymer_id": "polystyrene",
+      "solvent_id": "chloroform",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: chloroform excellent"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::ethyl-acetate",
+      "polymer_id": "polystyrene",
+      "solvent_id": "ethyl-acetate",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: ethyl acetate compatible"
+      ],
+      "subgroup": "ester"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polystyrene::acetone",
+      "polymer_id": "polystyrene",
+      "solvent_id": "acetone",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: acetone non-solvent, marginal"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::methyl-ethyl-ketone",
+      "polymer_id": "polystyrene",
+      "solvent_id": "methyl-ethyl-ketone",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: MEK compatible with PS"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polystyrene::methanol",
+      "polymer_id": "polystyrene",
+      "solvent_id": "methanol",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: alcohols non-solvents"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polystyrene::ethanol",
+      "polymer_id": "polystyrene",
+      "solvent_id": "ethanol",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: ethanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polystyrene::n-butanol",
+      "polymer_id": "polystyrene",
+      "solvent_id": "n-butanol",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: butanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::tetrahydrofuran",
+      "polymer_id": "polystyrene",
+      "solvent_id": "tetrahydrofuran",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: THF preferred PS solvent"
+      ],
+      "subgroup": "ether"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polystyrene::dimethylformamide",
+      "polymer_id": "polystyrene",
+      "solvent_id": "dimethylformamide",
+      "sources": [
+        "Van Krevelen 4th ed Table 7.5: DMF marginal but dissolves PS"
+      ],
+      "subgroup": "amide"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polystyrene::water",
+      "polymer_id": "polystyrene",
+      "solvent_id": "water",
+      "sources": [
+        "Universally documented: PS insoluble in water"
+      ],
+      "subgroup": "protic-polar"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::n-hexane",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "n-hexane",
+      "sources": [
+        "Brandrup PH VII/571: nylon insoluble in aliphatic"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::cyclohexane",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "cyclohexane",
+      "sources": [
+        "Brandrup PH VII/571: cyclohexane non-solvent"
+      ],
+      "subgroup": "aliphatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::toluene",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "toluene",
+      "sources": [
+        "Brandrup PH VII/571: toluene non-solvent for Nylon 66"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::p-xylene",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "p-xylene",
+      "sources": [
+        "Brandrup PH VII/571: xylene non-solvent"
+      ],
+      "subgroup": "aromatic-hydrocarbon"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::dichloromethane",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "dichloromethane",
+      "sources": [
+        "Brandrup PH VII/571: DCM non-solvent for Nylon 66"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::chloroform",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "chloroform",
+      "sources": [
+        "Brandrup PH VII/571: chloroform non-solvent"
+      ],
+      "subgroup": "chlorinated"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::ethyl-acetate",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "ethyl-acetate",
+      "sources": [
+        "Brandrup PH VII/571: ester non-solvent"
+      ],
+      "subgroup": "ester"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::acetone",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "acetone",
+      "sources": [
+        "Brandrup PH VII/571: acetone non-solvent"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::methyl-ethyl-ketone",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "methyl-ethyl-ketone",
+      "sources": [
+        "Brandrup PH VII/571: MEK non-solvent"
+      ],
+      "subgroup": "ketone"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::methanol",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "methanol",
+      "sources": [
+        "Brandrup PH VII/571: methanol non-solvent (partial swelling)"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::ethanol",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "ethanol",
+      "sources": [
+        "Brandrup PH VII/571: ethanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::n-butanol",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "n-butanol",
+      "sources": [
+        "Brandrup PH VII/571: butanol non-solvent"
+      ],
+      "subgroup": "alcohol"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::tetrahydrofuran",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "tetrahydrofuran",
+      "sources": [
+        "Brandrup PH VII/571: THF non-solvent for Nylon 66"
+      ],
+      "subgroup": "ether"
+    },
+    {
+      "observed_compatible": true,
+      "pair_id": "polyamide-nylon66::dimethylformamide",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "dimethylformamide",
+      "sources": [
+        "Brandrup PH VII/571: DMF dissolves Nylon 66 at elevated T"
+      ],
+      "subgroup": "amide"
+    },
+    {
+      "observed_compatible": false,
+      "pair_id": "polyamide-nylon66::water",
+      "polymer_id": "polyamide-nylon66",
+      "solvent_id": "water",
+      "sources": [
+        "Brandrup PH VII/571: water non-solvent for Nylon 66 (swelling only)"
+      ],
+      "subgroup": "protic-polar"
+    }
+  ],
+  "polymers": [
+    {
+      "delta_d_mpa_half": 17.4,
+      "delta_h_mpa_half": 7.0,
+      "delta_p_mpa_half": 10.5,
+      "interaction_radius_r": 9.0,
+      "polymer_id": "epoxy-dgeba-linear-uncured",
+      "sources": [
+        "Hansen 2nd ed. Table A.2 DGEBA epoxy"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 18.6,
+      "delta_h_mpa_half": 7.5,
+      "delta_p_mpa_half": 10.5,
+      "interaction_radius_r": 8.6,
+      "polymer_id": "polymethyl-methacrylate",
+      "sources": [
+        "Hansen 2nd ed. Table A.2 PMMA"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 18.2,
+      "delta_h_mpa_half": 8.3,
+      "delta_p_mpa_half": 7.5,
+      "interaction_radius_r": 3.5,
+      "polymer_id": "polyvinyl-chloride",
+      "sources": [
+        "Hansen 2nd ed. Table A.2 PVC"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 21.3,
+      "delta_h_mpa_half": 4.3,
+      "delta_p_mpa_half": 5.8,
+      "interaction_radius_r": 12.7,
+      "polymer_id": "polystyrene",
+      "sources": [
+        "Hansen 2nd ed. Table A.2 PS"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 17.4,
+      "delta_h_mpa_half": 14.6,
+      "delta_p_mpa_half": 9.9,
+      "interaction_radius_r": 5.1,
+      "polymer_id": "polyamide-nylon66",
+      "sources": [
+        "Hansen 2nd ed. Table A.2 Nylon 66"
+      ]
+    }
+  ],
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored HSP-parameter compilation from published Hansen/Van Krevelen/Brandrup secondary tables plus supplier TDS solvency charts for Phase-0 solvent-polymer compatibility controls only",
+    "source_id": "amphora_phase0_solvency_hansen_known_answer",
+    "source_url": "local:amphora-solvency-score/reference/phase0-solvency-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.solvency-score-phase0-known-answer.v1",
+  "solvents": [
+    {
+      "delta_d_mpa_half": 14.9,
+      "delta_h_mpa_half": 0.0,
+      "delta_p_mpa_half": 0.0,
+      "smiles": "CCCCCC",
+      "solvent_id": "n-hexane",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 16.8,
+      "delta_h_mpa_half": 0.2,
+      "delta_p_mpa_half": 0.0,
+      "smiles": "C1CCCCC1",
+      "solvent_id": "cyclohexane",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 18.0,
+      "delta_h_mpa_half": 2.0,
+      "delta_p_mpa_half": 1.4,
+      "smiles": "Cc1ccccc1",
+      "solvent_id": "toluene",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 17.6,
+      "delta_h_mpa_half": 3.1,
+      "delta_p_mpa_half": 1.0,
+      "smiles": "Cc1ccc(C)cc1",
+      "solvent_id": "p-xylene",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 17.0,
+      "delta_h_mpa_half": 7.1,
+      "delta_p_mpa_half": 7.3,
+      "smiles": "ClCCl",
+      "solvent_id": "dichloromethane",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 17.8,
+      "delta_h_mpa_half": 5.7,
+      "delta_p_mpa_half": 3.1,
+      "smiles": "ClC(Cl)Cl",
+      "solvent_id": "chloroform",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 15.8,
+      "delta_h_mpa_half": 7.2,
+      "delta_p_mpa_half": 5.3,
+      "smiles": "CCOC(C)=O",
+      "solvent_id": "ethyl-acetate",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 15.5,
+      "delta_h_mpa_half": 7.0,
+      "delta_p_mpa_half": 10.4,
+      "smiles": "CC(C)=O",
+      "solvent_id": "acetone",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 16.0,
+      "delta_h_mpa_half": 5.1,
+      "delta_p_mpa_half": 9.0,
+      "smiles": "CCC(C)=O",
+      "solvent_id": "methyl-ethyl-ketone",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 15.1,
+      "delta_h_mpa_half": 22.3,
+      "delta_p_mpa_half": 12.3,
+      "smiles": "CO",
+      "solvent_id": "methanol",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 15.8,
+      "delta_h_mpa_half": 19.4,
+      "delta_p_mpa_half": 8.8,
+      "smiles": "CCO",
+      "solvent_id": "ethanol",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 16.0,
+      "delta_h_mpa_half": 15.8,
+      "delta_p_mpa_half": 5.7,
+      "smiles": "CCCCO",
+      "solvent_id": "n-butanol",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 16.8,
+      "delta_h_mpa_half": 8.0,
+      "delta_p_mpa_half": 5.7,
+      "smiles": "C1CCOC1",
+      "solvent_id": "tetrahydrofuran",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 17.4,
+      "delta_h_mpa_half": 11.3,
+      "delta_p_mpa_half": 13.7,
+      "smiles": "CN(C)C=O",
+      "solvent_id": "dimethylformamide",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    },
+    {
+      "delta_d_mpa_half": 15.5,
+      "delta_h_mpa_half": 42.3,
+      "delta_p_mpa_half": 16.0,
+      "smiles": "O",
+      "solvent_id": "water",
+      "sources": [
+        "Hansen 2nd ed. Table A.1"
+      ]
+    }
+  ],
+  "toolkit_version": "2026.03.2"
+}

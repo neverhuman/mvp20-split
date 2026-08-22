@@ -1,0 +1,808 @@
+warning: unused import: `FormulationUniverseAccountingV1`
+  --> amphora-formulation-capabilities/tests/formulation_universe_redteam_t06_independent.rs:17:36
+   |
+17 |     validate_formulation_universe, FormulationUniverseAccountingV1,
+   |                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `amphora-formulation-capabilities` (test "formulation_universe_redteam_t06_independent") generated 1 warning (run `cargo fix --test "formulation_universe_redteam_t06_independent" -p amphora-formulation-capabilities` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.54s
+     Running unittests src/lib.rs (target/debug/deps/amphora_assurance_capabilities-5320f0ab62b3b3bc)
+
+running 22 tests
+test diagnostics::tests::banned_claim_lint_normalizes_unicode_case_and_format ... ok
+test diagnostics::tests::deterministic_control_diagnostic_rejects_unsupported_or_malformed_module_id ... ok
+test diagnostics::tests::promoted_structured_fixtures_reject_unknown_and_duplicate_fields ... ok
+test diagnostics::tests::redteam_attack_axes_are_the_full_24_module_specific_set ... ok
+test tests::constructor_rejects_unsupported_ids_and_descriptors_are_non_engine ... ok
+test tests::correctly_bound_host_receipt_can_accept_evidence ... ok
+test tests::candidate_supplied_signature_shape_fails_closed ... ok
+test tests::candidate_types_are_enforced ... ok
+test diagnostics::tests::cro_fixture_private_material_is_absent_and_execution_is_locked ... ok
+test tests::cro_v2_packet_is_candidate_formula_signed_and_non_executable ... ok
+test diagnostics::tests::report_fixture_components_are_bound ... ok
+test tests::fto_guard_never_reports_legal_closure ... ok
+test tests::results_are_deterministic_and_cannot_supply_registry_fields ... ok
+test tests::current_source_and_known_answer_gates_remain_failed ... ok
+test diagnostics::tests::source_control_rejects_unknown_fields_and_laundering ... ok
+test diagnostics::tests::promoted_control_counts_and_zero_authority_outputs_are_exact ... ok
+test tests::every_assurance_result_has_an_empty_objective_vector ... ok
+test diagnostics::tests::all_nine_live_diagnostics_pass_strict_contracts ... ok
+test diagnostics::tests::deterministic_control_diagnostic_supports_the_nine_expected_module_ids ... ok
+test diagnostics::tests::redteam_corpus_is_exact_and_reproducible ... ok
+test diagnostics::tests::deterministic_control_diagnostic_zero_authority_locks_populated_true_for_every_required_key ... ok
+test diagnostics::tests::deterministic_control_diagnostic_result_is_byte_stable_on_replay ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.71s
+
+     Running tests/cro_protocol_packager_phase0_kpi.rs (target/debug/deps/cro_protocol_packager_phase0_kpi-d5aad0ef0b6dd346)
+
+running 1 test
+test cro_protocol_packager_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests/cro_protocol_packager_t02_adversarial_probe.rs (target/debug/deps/cro_protocol_packager_t02_adversarial_probe-a8b543e0d3953fea)
+
+running 1 test
+test t02_adversarial_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/evidence_intake_validator_phase0_kpi.rs (target/debug/deps/evidence_intake_validator_phase0_kpi-b28de7b8530076fe)
+
+running 1 test
+test evidence_intake_validator_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/evidence_intake_validator_t04_adversarial_forgery.rs (target/debug/deps/evidence_intake_validator_t04_adversarial_forgery-51c6332504f5471c)
+
+running 1 test
+test t04_adversarial_forgery_report ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.33s
+
+     Running tests/ip_fto_guard_counsel_assertion_probes.rs (target/debug/deps/ip_fto_guard_counsel_assertion_probes-25fbd16fa9bc2c20)
+
+running 16 tests
+test a3_nested_one_level_deeper_is_detected ... ok
+test a6_semantic_alt_claim_key_is_detected ... ok
+test a4_case_variant_key_is_detected ... ok
+test clean_candidate_is_not_flagged ... ok
+test a5_alternate_path_name_is_detected ... ok
+test a8_unicode_confusable_key_is_detected ... ok
+test control_exact_path_true_is_still_detected ... ok
+test a2_counsel_fto_array_container_is_detected ... ok
+test v4_deeply_nested_array_of_objects_alias_is_detected ... ok
+test v5_fullwidth_unicode_escape_key_is_detected ... ok
+test a1_top_level_key_is_detected ... ok
+test v3_zero_width_joiner_in_key_is_detected ... ok
+test v1_uncovered_homoglyph_deletion_signedbycounsel_is_detected ... ok
+test v2_uncovered_homoglyph_deletion_counselfto_is_detected ... ok
+test a7_counsel_fto_string_container_is_detected ... ok
+test primary_kpi_value_path_is_populated_and_matches_fixture_recompute ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/ip_fto_guard_phase0_kpi.rs (target/debug/deps/ip_fto_guard_phase0_kpi-768d10e2a398af8b)
+
+running 1 test
+test ip_fto_guard_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.44s
+
+     Running tests/known_answer_benchmarks_phase0_kpi.rs (target/debug/deps/known_answer_benchmarks_phase0_kpi-211e1a5f0b5d03ae)
+
+running 1 test
+test known_answer_benchmarks_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/optimizer_orchestrator_phase0_kpi.rs (target/debug/deps/optimizer_orchestrator_phase0_kpi-9effb88195d834c8)
+
+running 1 test
+test optimizer_orchestrator_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/redteam_audit_phase0_kpi.rs (target/debug/deps/redteam_audit_phase0_kpi-e0d3c255d5380064)
+
+running 1 test
+test redteam_audit_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.35s
+
+     Running tests/report_packager_phase0_kpi.rs (target/debug/deps/report_packager_phase0_kpi-44f31bbe95c8df60)
+
+running 1 test
+test report_packager_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running tests/source_ledger_phase0_kpi.rs (target/debug/deps/source_ledger_phase0_kpi-e8b5ba4f04fc5a16)
+
+running 1 test
+test source_ledger_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.21s
+
+     Running tests/sourceability_ehs_phase0_kpi.rs (target/debug/deps/sourceability_ehs_phase0_kpi-0557b83d2319a7a6)
+
+running 1 test
+test sourceability_ehs_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_barrier_corrosion_score-193a6cc6fb7ae611)
+
+running 6 tests
+test tests::eis_v2_rejects_clipping_and_requires_all_identifiability_gates ... ok
+test tests::test_short_or_field_spectrum_cannot_claim_circuit_fit ... ok
+test tests::test_barrier_index_fails_closed_on_degenerate_spectra ... ok
+test tests::test_theil_sen_slope_and_time_reversal_are_distinct ... ok
+test tests::test_synthetic_equivalent_circuit_is_recovered ... ok
+test tests::test_fit_keeps_endpoints_separate_and_summary_never_claims_circuit ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/main.rs (target/debug/deps/amphora_tui-1addd1a6dc56868d)
+
+running 59 tests
+test compound::tests::envelope_collector_rejects_objectives_and_optimizer_use ... ok
+test compound::tests::report_card_lanes_cover_each_campaign_module_once ... ok
+test compound::tests::pairing_is_deterministic_and_prefers_distinct_scaffold_groups ... ok
+test control::data_v2::tests::nist_rating_is_preserved_beside_numeric_rate ... ok
+test control::data_v2::tests::bigsoldb_preserves_observations_and_density_identity_join ... ok
+test control::data_v2::tests::fixed_gzip_header_and_sorted_indexes_are_reproducible ... ok
+test control::data_v2::tests::identity_overlap_is_reported_without_discarding_rows ... ok
+test control::data_v2::tests::forbidden_classes_cannot_be_promotion_evidence ... ok
+test control::phase0_issuance_outputs_do_not_change_local_benchmark_genesis ... ok
+test control::tests::corrosion_phase_gates_are_calculated_from_locked_results ... ok
+test control::tests::cure_vendor_rows_are_quarantined_and_endpoint_separated ... ok
+test control::tests::receipt_identity_binds_metrics_added_after_construction ... ok
+test control::tests::legacy_molecule_controls_are_inventoried_but_not_promotion_eligible ... ok
+test control::tests::rights_policy_is_conservative ... ok
+test control::tests::source_and_system_split_leakage_is_detected ... ok
+test control::tests::run_preflight_verifies_matching_raw_files_and_rejects_mismatch ... ok
+test control::tests::scientific_model_preflight_is_unsigned_and_state_free_for_all_modules ... ok
+test phase0::tests::authoritative_paths_reject_substitution ... ok
+test phase0::tests::candidate_supplied_and_forged_source_locks_fail_before_evaluation ... ok
+test phase0::tests::evaluator_rejects_repository_local_private_key ... ok
+test phase0::tests::acquisition_wave_attack_families_remain_locked ... ok
+test phase0::tests::local_key_never_enters_phase0_trust ... ok
+test phase0::tests::interrupted_staged_install_restores_authoritative_module ... ok
+test control::tests::benchmark_lock_is_strict_and_bound_to_current_parents ... ok
+test phase0::tests::portfolio_attack_lock_covers_all_authority_and_provenance_failures ... ok
+test phase0::tests::promoted_control_attack_families_remain_locked ... ok
+test phase0::tests::re_evaluate_refuses_a_repository_local_signing_key ... ok
+test phase0::tests::re_evaluate_dry_run_moves_nothing ... ok
+test phase0::tests::exact_tree_copy_and_hash_manifest_preserve_every_byte ... ok
+test control::data_v2::tests::pronto_parser_selects_only_time_ordered_process_streams ... ok
+test phase0::tests::registry_cohorts_are_exact ... ok
+test phase0::tests::re_evaluate_refuses_every_module_with_an_intact_binding ... ok
+test phase0::tests::re_evaluate_refuses_a_single_signature ... ok
+test phase0::tests::re_evaluate_requires_a_caller_supplied_timestamp ... ok
+test control::tests::current_molecule_benchmarks_auto_demote_with_explicit_failed_gates ... ok
+test control::tests::explicit_fetch_rejects_changed_remote_bytes_before_install ... ok
+test phase1::tests::candidate_and_cross_module_paths_are_rejected ... ok
+test phase1::tests::empty_phase1_trust_store_authorizes_no_signers ... ok
+test tests::live_profile_without_design_gate_fails_closed ... ok
+test tests::fixed_demo_configuration_has_a_stable_run_identity ... ok
+test phase0::tests::supersession_archive_rejects_cross_module_substitution ... ok
+test phase0::tests::reissue_refuses_evaluation_review_and_movement_history ... ok
+test tests::pot_life_preflight_parses_all_operator_arguments ... ok
+test tests::scientific_model_preflight_and_fit_parse_exact_workflow ... ok
+test tests::profile_injection_includes_objectives_and_hard_constraints ... ok
+test tests::pot_life_protocol_command_is_separate_from_legacy_benchmark_commands ... ok
+test phase0::tests::re_evaluate_archive_layout_supersedes_receipt_review_result_and_movement ... ok
+test control::data_v2::tests::chebi_parser_requires_and_preserves_three_hundred_structures ... ok
+test phase0::tests::shipped_benchmark_results_stay_bound_to_signed_evaluation_receipts ... ok
+test control::tests::explicit_fetch_installs_payload_license_headers_and_receipt_immutably ... ok
+test control::tests::qualification_preflight_is_read_only_and_protocol_receipt_verifies ... ok
+test control::tests::corrosion_manifest_reproduces_day_zero_counts_from_raw_hashes ... ok
+test control::tests::scientific_locked_benchmarks_auto_demote_and_sign_receipts ... ok
+test control::tests::missing_corrosion_evidence_calculates_failed_not_placeholder_passes ... ok
+test control::tests::corrosion_audit_accumulates_derived_counts_across_sources ... ok
+test control::data_v2::tests::acquire_normalize_consume_and_audit_are_reproducible_end_to_end ... ok
+test control::tests::module_locks_are_strict_and_bound_to_current_parents ... ok
+test control::tests::molecule_evidence_cli_flow_builds_and_signs_negative_receipts ... ok
+test phase0::tests::source_ledger_historical_movement_and_status_are_read_only has been running for over 60 seconds
+test phase0::tests::source_ledger_historical_movement_and_status_are_read_only ... ok
+
+test result: ok. 59 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 69.02s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_core-232e9d82275d6936)
+
+running 57 tests
+test artifacts::tests::rights_quarantine_blocks_row_provenance ... ok
+test artifacts::tests::public_receipt_cannot_grant_ranking ... ok
+test compound::tests::result_scanner_rejects_nested_rank_or_execution_authority ... ok
+test compound_v2::tests::all_zero_hashes_are_rejected_for_v2_contracts ... ok
+test compound::tests::manifest_locks_versions_thresholds_and_nonranking_authority ... ok
+test compound_v2::tests::report_lane_table_covers_exactly_29_modules ... ok
+test compound_v2::tests::schema_identity_locks_tag_commit_and_proto_hashes ... ok
+test compound_v2::tests::unsafe_artifact_paths_are_rejected ... ok
+test contract::tests::candidate_keeps_original_and_v1_hashes_separate ... ok
+test contract::tests::strict_parser_rejects_duplicate_and_escaped_duplicate_keys ... ok
+test contract::tests::strict_parser_rejects_invalid_utf8_and_excess_depth ... ok
+test crypto::tests::trust_store_rejects_key_id_overwrite ... ok
+test data_v2::tests::candidate_supplied_paths_cannot_escape_reference_root ... ok
+test compound_v2::tests::reaction_split_enforces_hash_buckets_coverage_and_leakage ... ok
+test data_v2::tests::relabeling_excluded_source_requires_independent_rights_receipt ... ok
+test evidence::tests::rejects_traversal_before_filesystem_access ... ok
+test jcs::tests::non_finite_values_and_invalid_expected_hashes_are_rejected ... ok
+test data_v2::tests::excluded_source_cannot_satisfy_rights_gate ... ok
+test data_v2::tests::loader_policy_rejects_quarantine_scoring_and_authority_escalation ... ok
+test jcs::tests::rfc8785_number_formatting_is_ecmascript_compatible ... ok
+test jcs::tests::rfc8785_property_order_and_unicode_are_canonical ... ok
+test data_v2::tests::rights_trust_store_rejects_development_identity ... ok
+test phase0::tests::automated_review_cannot_claim_human_independence ... ok
+test phase0::tests::benchmark_execution_completion_is_distinct_from_scientific_outcome ... ok
+test phase0::tests::bundle_rejects_cross_module_and_legacy_receipt_laundering ... ok
+test phase0::tests::deterministic_science_outcome_is_not_applicable ... ok
+test phase0::tests::failed_science_must_be_retained ... ok
+test phase0::tests::movement_id_is_hash_derived ... ok
+test phase0::tests::failed_science_can_be_eligible_but_stays_audit_only ... ok
+test phase0::tests::preparation_revision_id_binds_unsigned_history ... ok
+test phase0::tests::registry_succession_chain_rejects_gaps_forks_cycles_duplicates_and_reordering ... ok
+test phase0::tests::review_rejects_same_and_local_signers ... ok
+test phase0::tests::stripped_claim_lock_and_authority_escalation_fail_closed ... ok
+test phase1::tests::failed_confidence_gate_cannot_be_phase1_eligible ... ok
+test phase1::tests::failed_science_is_retained_without_authority_change ... ok
+test phase1::tests::altered_replay_fails ... ok
+test compound_v2::tests::grammar_requires_packed_fingerprints_and_unique_templates ... ok
+test restored_tests::canonical_hash_ignores_object_insertion_order ... ok
+test restored_tests::rank_movements_and_history_remain_deterministic ... ok
+test phase0::tests::supersession_id_is_deterministic_and_module_bound ... ok
+test technical::tests::dossier_cannot_recommend_filing_without_locked_differentiator ... ok
+test technical::tests::campaign_rejects_cross_endpoint_feature_linkage ... ok
+test technical::tests::formulation_model_binding_rejects_forged_candidate_or_rights ... ok
+test technical::tests::rights_blocked_rows_must_be_quarantined ... ok
+test technical::tests::single_frequency_eis_never_enables_spectrum_claims ... ok
+test technical::tests::gel_time_and_pot_life_are_distinct_endpoints ... ok
+test crypto::tests::verifies_ed25519_dsse_and_rejects_revocation ... ok
+test technical::tests::formulation_v2_binds_receipt_and_every_parent_content ... ok
+test data_v2::tests::rights_receipt_rejects_forgery_revocation_wrong_role_and_stripped_exclusions ... ok
+test read_only::tests::mutation_is_detected_and_build_outputs_are_excluded ... ok
+test artifacts::tests::signed_model_artifact_binds_module_and_payload_bytes ... ok
+test artifacts::tests::receipt_signature_is_bound_and_policy_only_reduces_privilege ... ok
+test phase0::tests::signed_evaluation_rejects_replay_drift ... ok
+test molecule_evidence::tests::rejects_family_or_scaffold_overlap_and_incomplete_label_protocol ... ok
+test molecule_evidence::tests::rejects_toolkit_mismatch_and_revoked_review_key ... ok
+test molecule_evidence::tests::verifies_complete_context_and_binds_candidate_prediction ... ok
+test molecule_evidence::tests::rejects_signature_parent_policy_rights_and_claim_lock_tampering ... ok
+
+test result: ok. 57 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.22s
+
+     Running tests/candidate_contract_phase0_kpi.rs (target/debug/deps/candidate_contract_phase0_kpi-0e1a31d7f1eafa4d)
+
+running 1 test
+test candidate_contract_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/run_provenance_phase0_kpi.rs (target/debug/deps/run_provenance_phase0_kpi-8655848cc6f6d92e)
+
+running 1 test
+test run_provenance_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.04s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_cure_potlife_gate-214518e35a97afac)
+
+running 26 tests
+test tests::arrhenius_potlife_ratio_matches_published_epoxy_amine_rules_of_thumb ... ok
+test tests::effective_clock_integrates_actual_material_not_ambient_temperature ... ok
+test tests::effective_cure_rate_is_byte_deterministic_across_replays ... ok
+test tests::effective_cure_rate_is_unity_at_reference_temperature ... ok
+test tests::effective_cure_rate_monotone_increases_with_temperature_for_positive_ea ... ok
+test tests::effective_cure_rate_rejects_non_finite_inputs ... ok
+test tests::fahrenheit_kelvin_conversion_is_dimensionally_correct ... ok
+test tests::fahrenheit_to_kelvin_rejects_non_finite_input ... ok
+test tests::flory_stockmayer_bounds_require_known_functionality_distributions ... ok
+test tests::interval_censoring_has_zero_error_inside_and_log_distance_outside ... ok
+test tests::effective_cure_rate_rejects_non_positive_temperature_or_ea ... ok
+test tests::celsius_to_kelvin_rejects_temperatures_below_absolute_zero_and_non_finite ... ok
+test tests::protocol_has_exact_owned_design_and_scale_gate ... ok
+test tests::certified_mapping_is_required_for_viscosity_doubling ... ok
+test tests::untouched_operator_templates_fail_preflight ... ok
+test tests::application_endpoint_and_viscosity_proxy_remain_separate ... ok
+test tests::strict_prediction_contract_rejects_self_escalation ... ok
+test tests::time_series_ordering_and_cadence_are_strict ... ok
+test tests::reduced_fit_abstains_when_temperature_contrast_is_absent ... ok
+test tests::owned_run_contract_quarantines_public_and_supplier_rows ... ok
+test tests::split_leakage_detects_batch_day_and_mix_overlap ... ok
+test tests::reduced_fit_recovers_synthetic_activation_energy ... ok
+test tests::geometry_ood_abstains_and_authority_requires_both_gates ... ok
+test tests::locked_evaluation_binds_hashes_runs_hostile_nulls_and_replay ... ok
+test tests::test_preflight_accepts_every_contract_kind_and_remains_strict ... ok
+test tests::expert_packet_is_sealed_and_not_sent ... ok
+
+test result: ok. 26 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.59s
+
+     Running tests/cure_potlife_phase0_kpi.rs (target/debug/deps/cure_potlife_phase0_kpi-5b1049fe5303b09b)
+
+running 1 test
+test cure_potlife_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_engine-83f7897f56e84dfd)
+
+running 9 tests
+test tests::symlinked_evidence_root_is_rejected ... ok
+test tests::present_malformed_evidence_fails_engine_construction ... ok
+test tests::registry_is_exact_and_has_no_ranking_capability ... ok
+test tests::mutation_changes_lineage_only ... ok
+test tests::explicit_campaign_traversal_dispatches_each_capability_family ... ok
+test tests::scientific_objectives_are_quarantined ... ok
+test tests::missing_evidence_context_is_stable_and_candidate_evidence_cannot_replace_it ... ok
+test tests::pinned_host_normalization_feeds_one_fact_record_to_molecule_modules ... ok
+test tests::scoring_is_equal_across_one_two_and_eight_workers ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_formulation_capabilities-b24e04296f06b97c)
+
+running 48 tests
+test tests::candidate_supplied_qc_release_is_ignored_without_host_receipt ... ok
+test tests::cure_is_failed_gates_and_never_scored ... ok
+test tests::evaluate_envelope_policy_abstains_on_non_authoritative_without_synthetic_flag ... ok
+test tests::equivalent_balance_uses_only_host_molecule_facts_and_rejects_zero_groups ... ok
+test tests::evaluate_envelope_policy_abstains_on_missing_policy_or_snapshot ... ok
+test tests::declarative_universe_reconciles_without_fixed_cardinalities ... ok
+test tests::evaluate_envelope_policy_abstains_on_untrusted_snapshot ... ok
+test tests::evaluate_envelope_policy_boundary_pass_is_bit_exact_and_authority_stays_locked ... ok
+test tests::evaluate_envelope_policy_errors_on_inverted_or_non_finite_bounds ... ok
+test tests::evaluate_envelope_policy_errors_on_missing_feature_or_unit_mismatch ... ok
+test tests::evaluate_envelope_policy_abstains_on_wrong_policy_schema_or_empty_policy_id ... ok
+test tests::evaluate_envelope_policy_errors_on_unknown_feature_path ... ok
+test tests::every_result_is_objective_empty_and_quarantined ... ok
+test tests::missing_conditions_abstain_without_defaults ... ok
+test tests::process_qc_baseline_contamination_when_baseline_last_equals_monitoring_first_rejects ... ok
+test tests::process_qc_baseline_contamination_when_monitoring_first_below_baseline_last_rejects ... ok
+test tests::evaluate_envelope_policy_errors_on_empty_or_duplicate_constraints ... ok
+test tests::process_qc_rejects_reordered_batches_and_baseline_contamination ... ok
+test tests::process_qc_output_never_contains_release_or_qualification_authority ... ok
+test tests::process_qc_audit_shell_is_reproducible_and_has_zero_authority ... ok
+test tests::process_qc_reordered_batches_within_monitoring_rejects ... ok
+test tests::process_qc_specification_and_control_channels_are_decoupled ... ok
+test tests::process_qc_time_leakage_duplicate_baseline_sequence_rejects ... ok
+test tests::process_qc_time_leakage_duplicate_monitoring_sequence_rejects ... ok
+test tests::supports_exactly_the_twelve_audited_modules ... ok
+test tests::runtime_emits_all_three_spc_detectors_separate_from_specifications ... ok
+test tests::unresolved_public_data_is_not_opened_or_scored ... ok
+test tests::v1_cure_artifact_is_diagnostic_replay_only ... ok
+test tests::validate_formulation_mass_conservation_identity_holds_bit_exactly ... ok
+test tests::validate_formulation_mass_abstains_when_either_part_is_missing ... ok
+test tests::valid_host_qc_receipt_admits_diagnostics_but_never_release_authority ... ok
+test tests::serialized_results_cannot_supply_identity_authority_or_locks ... ok
+test tests::validate_formulation_mass_is_ingredient_order_stable ... ok
+test tests::validate_formulation_mass_rejects_non_finite_or_negative_masses ... ok
+test tests::validate_formulation_mass_records_zero_mass_ingredients_separately_from_positive ... ok
+test tests::validate_formulation_mass_never_upgrades_authority ... ok
+test tests::validate_formulation_mass_ignores_candidate_supplied_property_claims ... ok
+test tests::v1_cure_artifact_cannot_reach_domain_evaluation ... ok
+test tests::validate_formulation_universe_abstains_when_no_axes_registered ... ok
+test tests::validate_formulation_universe_authority_envelope_stays_locked_across_all_paths ... ok
+test tests::validate_formulation_universe_axis_order_produces_byte_identical_output ... ok
+test tests::validate_formulation_universe_ignores_candidate_feasibility_claims_and_computes_counts_deterministically ... ok
+test tests::validate_formulation_universe_errors_on_empty_axes_or_empty_axis_values ... ok
+test tests::validate_formulation_universe_rejects_canonical_duplicate_axis_entries ... ok
+test tests::validate_formulation_universe_rejects_infeasible_indices_out_of_range_or_duplicated ... ok
+test tests::zero_mass_entries_are_diagnostic_only_and_do_not_change_mass_balance ... ok
+test tests::verified_corrosion_artifact_is_consumed_without_candidate_authority ... ok
+test tests::validate_formulation_universe_rejects_cartesian_cardinality_overflow ... ok
+
+test result: ok. 48 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/design_rule_score_phase0_kpi.rs (target/debug/deps/design_rule_score_phase0_kpi-973575b520b7d918)
+
+running 1 test
+test design_rule_score_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/envelope_gates_phase0_kpi.rs (target/debug/deps/envelope_gates_phase0_kpi-1f8b5f480663d0c4)
+
+running 1 test
+test envelope_gates_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/formulation_arithmetic_phase0_kpi.rs (target/debug/deps/formulation_arithmetic_phase0_kpi-9643f64b84122a52)
+
+running 1 test
+test formulation_arithmetic_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/formulation_universe_phase0_kpi.rs (target/debug/deps/formulation_universe_phase0_kpi-7dbac1047e87ae55)
+
+running 1 test
+test formulation_universe_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.33s
+
+     Running tests/formulation_universe_redteam_t06_independent.rs (target/debug/deps/formulation_universe_redteam_t06_independent-4dfca090b8f2feda)
+
+running 4 tests
+test t06_attack2_diagnostic_which_branch ... ok
+test t06_attack2_duplicate_factor_numeric_type_evasion ... ok
+test t06_attack3_index_identity_instability_across_value_order ... ok
+test t06_attack1_cardinality_overflow_fresh_boundaries ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/ingredient_library_phase0_kpi.rs (target/debug/deps/ingredient_library_phase0_kpi-58fd3e7c41ec740a)
+
+running 1 test
+test ingredient_library_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/process_qc_twin_phase0_kpi.rs (target/debug/deps/process_qc_twin_phase0_kpi-d594f66dbe3d9170)
+
+running 1 test
+test process_qc_twin_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/public_corrosion_benchmark_phase0_kpi.rs (target/debug/deps/public_corrosion_benchmark_phase0_kpi-a51607b23bb33060)
+
+running 1 test
+test public_corrosion_benchmark_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/tolerance_robustness_phase0_kpi.rs (target/debug/deps/tolerance_robustness_phase0_kpi-86469b4aadeb4134)
+
+running 1 test
+test tolerance_robustness_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_molecule_capabilities-968247a514e23aa0)
+
+running 45 tests
+test tests::commercial_product_structure_never_upgrades_measured_only_claims ... ok
+test tests::design_gate_is_byte_deterministic_across_replays ... ok
+test tests::caller_supplied_role_receipt_cannot_authorize_an_objective ... ok
+test tests::design_gate_never_upgrades_authority ... ok
+test tests::corrected_ipda_identity_and_ahew_are_regression_locked ... ok
+test tests::design_gate_passes_dual_functional_when_declared_role_has_matching_group ... ok
+test tests::design_gate_pass_means_structural_applicability_only ... ok
+test tests::design_gate_reason_is_specific_when_role_appropriate_reactive_group_is_missing ... ok
+test tests::design_gate_never_positively_passes_without_rdkit_and_ontology ... ok
+test tests::design_gate_reason_captures_specific_lexical_issue_categories ... ok
+test tests::design_gate_rejects_obvious_bad_structures_and_roles ... ok
+test tests::design_gate_reason_is_specific_when_role_is_missing_or_unsupported ... ok
+test tests::every_molecular_capability_is_quarantined_and_objective_empty ... ok
+test tests::generator_emits_lineage_but_no_proposals ... ok
+test tests::novelty_abstains_when_the_pinned_fingerprint_backend_is_unavailable ... ok
+test tests::novelty_abstains_on_markush_or_mixture_smiles_input ... ok
+test tests::novelty_abstain_is_byte_deterministic_across_replays ... ok
+test tests::novelty_corpus_binds_structures_rights_and_authority_locks ... ok
+test tests::novelty_corpus_rejects_forged_rights_or_stripped_locks ... ok
+test tests::novelty_corpus_rejects_stale_content_or_rights_hashes ... ok
+test tests::novelty_corpus_rejects_toolkit_or_fingerprint_policy_drift ... ok
+test tests::novelty_corpus_rejects_duplicate_or_malformed_entries ... ok
+test tests::property_emits_hash_diagnostics_without_properties ... ok
+test tests::novelty_ignores_candidate_supplied_authority_or_score_fields ... ok
+test tests::property_exact_implementation_locked_against_dgeba_deta_ipda ... ok
+test tests::property_monodisperse_hit_rate_meets_kpi_tolerance ... ok
+test tests::property_result_is_byte_deterministic_across_replays ... ok
+test tests::property_publishes_exact_equivalent_weights_under_property_results ... ok
+test tests::property_negative_controls_are_fail_closed_deterministically ... ok
+test tests::property_ignores_candidate_supplied_authority_fields ... ok
+test tests::property_technical_grade_lower_bound_locks_commercial_claim ... ok
+test tests::property_zero_functional_group_count_never_divides ... ok
+test tests::role_probability_rejects_mismatched_feature_and_coefficient_counts ... ok
+test tests::role_model_in_domain_rejects_dual_role_or_out_of_range_mw ... ok
+test tests::role_probability_rejects_nan_or_inf_coefficients ... ok
+test tests::results_are_byte_deterministic_and_cannot_supply_identity_or_locks ... ok
+test tests::role_probability_rejects_nonpositive_or_missing_scales ... ok
+test tests::role_probability_saturates_correctly_on_pure_resin_and_pure_hardener ... ok
+test tests::role_ranker_abstains_for_missing_and_wrong_roles ... ok
+test tests::role_ranker_out_of_domain_structure_yields_abstained_audit_only ... ok
+test tests::role_ranker_ignores_candidate_supplied_role_fit_score ... ok
+test tests::role_ranker_abstains_for_dual_role_even_with_forged_receipt_json ... ok
+test tests::role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi ... FAILED
+test tests::role_ranker_result_is_byte_deterministic_across_replays ... ok
+test tests::novelty_exact_match_is_deterministic_audit_only ... ok
+
+failures:
+
+---- tests::role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi stdout ----
+
+thread 'tests::role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi' (1485034) panicked at amphora-molecule-capabilities/src/lib.rs:2116:13:
+assertion `left == right` failed: dicyandiamide
+  left: 4
+ right: 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi
+
+test result: FAILED. 44 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+error: test failed, to rerun pass `-p amphora-molecule-capabilities --lib`
+     Running tests/design_gate_phase0_kpi.rs (target/debug/deps/design_gate_phase0_kpi-c275afaabb124b39)
+
+running 1 test
+test design_gate_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/molecule_generator_phase0_kpi.rs (target/debug/deps/molecule_generator_phase0_kpi-75e67bb6ee32d754)
+
+running 1 test
+test molecule_generator_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/molecule_novelty_phase0_kpi.rs (target/debug/deps/molecule_novelty_phase0_kpi-d8f626644ee7f4f9)
+
+running 1 test
+test molecule_novelty_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/property_phase0_kpi.rs (target/debug/deps/property_phase0_kpi-a215b7f594f33b1c)
+
+running 1 test
+test property_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/role_ranker_phase0_kpi.rs (target/debug/deps/role_ranker_phase0_kpi-2b0e7cc672da2219)
+
+running 1 test
+test role_ranker_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_ord_codec-cb5b3d277d4e6e31)
+
+running 3 tests
+test tests::reference_only_and_malformed_datasets_fail_closed ... ok
+test tests::raw_scan_hashes_exact_embedded_reaction_bytes ... ok
+test tests::structural_classification_accepts_or_excludes_every_reaction ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/amphora_phase0_reviewer-becc37470b5c7a21)
+
+running 5 tests
+test tests::reviewer_allowlist_is_exact_and_rejects_unknown_modules ... ok
+test tests::altered_benchmark_and_false_human_review_are_rejected ... ok
+test tests::cross_module_paths_and_stripped_locks_are_rejected ... ok
+test tests::repository_key_and_output_overwrite_are_rejected ... ok
+test tests::forged_signature_and_wrong_role_are_rejected ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_rdkit_ffi-4fda42c9660f77cc)
+
+running 8 tests
+test tests::native_record_builds_deterministic_versioned_facts ... ok
+test tests::unsupported_components_and_polymers_fail_before_backend_use ... ok
+test tests::fingerprint_record_and_tanimoto_are_deterministic ... ok
+test tests::native_identity_preserves_isotope_charge_and_stereochemistry ... ok
+test tests::pinned_native_backend_matches_reactive_ontology_controls ... ok
+test tests::pinned_native_backend_scores_dicyandiamide_functionality_four ... ok
+test tests::pinned_native_fingerprints_replay_and_preserve_stereochemistry ... ok
+test tests::pinned_native_backend_excludes_guanidine_class_amine_hydrogens ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_solvency_score-0bd420e1a96d8ae2)
+
+running 11 tests
+test tests::hansen_ra_squared_is_deterministic_and_symmetric_in_input_pairing ... ok
+test tests::hansen_calculation_rejects_negative_hansen_parameters ... ok
+test tests::hansen_calculation_rejects_non_finite_inputs ... ok
+test tests::hansen_red_zero_at_identity_and_grows_with_distance ... ok
+test tests::hansen_red_flags_incompatible_when_ra_exceeds_polymer_radius ... ok
+test tests::hansen_red_rejects_zero_or_negative_interaction_radius ... ok
+test tests::test_conservation_and_unknown_fields_fail_closed ... ok
+test tests::test_flory_huggins_binary_critical_case_is_known ... ok
+test tests::test_tpd_is_permutation_invariant_and_detects_instability ... ok
+test tests::parameter_v2_requires_only_admissible_pairs_and_psd_covariance ... ok
+test tests::test_parameter_matrix_fit_prediction_and_uncertainty_are_bound ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/solvency_phase0_kpi.rs (target/debug/deps/solvency_phase0_kpi-a61cab965b648254)
+
+running 1 test
+test solvency_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_solver_lab-200421372d8c752d)
+
+running 2 tests
+test doe::tests::canonical_order_2x2 ... ok
+test doe::tests::cardinality_2e4 ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/solver_lab_demo.rs (target/debug/deps/solver_lab_demo-14fe67f3f01532e5)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/demo_replay.rs (target/debug/deps/demo_replay-7943c5f75bbbbd27)
+
+running 3 tests
+test shipped_evidence_pairs_are_byte_identical ... ok
+test diagnostics_carry_bounded_authority ... ok
+test fresh_two_replay_is_byte_identical ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.91s
+
+     Running tests/nsga2_determinism.rs (target/debug/deps/nsga2_determinism-666573429ff74c91)
+
+running 3 tests
+test seeded_individuals_enter_generation_zero ... ok
+test two_runs_same_seed_are_bit_identical ... ok
+test front_is_feasible_and_mutually_nondominated ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/oracle_pinning.rs (target/debug/deps/oracle_pinning-83c8c653ebe23836)
+
+running 4 tests
+test tampered_source_is_refused ... ok
+test unpinned_logical_id_is_refused ... ok
+test pinned_source_reads_and_records_provenance ... ok
+test live_tree_pins_all_verify ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/simplex_projection.rs (target/debug/deps/simplex_projection-7be533765c2885fa)
+
+running 6 tests
+test known_answer_clips_negative ... ok
+test known_answer_uniform_lift ... ok
+test known_answer_vertex ... ok
+test output_is_always_on_simplex ... ok
+test projection_is_deterministic ... ok
+test projection_is_idempotent_on_simplex_points ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_tui-6c57333060a4c195)
+
+running 9 tests
+test tests::empty_history_uses_fixed_chart_bounds ... ok
+test tests::selection_moves_and_modal_can_pin_the_selected_candidate ... ok
+test tests::chart_keeps_selected_candidate_inside_the_five_series ... ok
+test tests::initial_scoring_state_is_explicit_in_headless_text ... ok
+test tests::preview_serializes_without_ansi ... ok
+test tests::rank_delta_and_history_are_deterministic ... ok
+test tests::selection_navigates_the_visible_top_ten ... ok
+test tests::short_ids_are_readable_and_unique_for_colliding_endpoints ... ok
+test tests::chemical_preview_round_trips_as_typed_state ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/amphora_viscosity_score-fcc7801dc6761263)
+
+running 11 tests
+test tests::arrhenius_viscosity_rejects_negative_or_zero_viscosity_and_ea ... ok
+test tests::arrhenius_viscosity_rejects_non_finite_inputs ... ok
+test tests::arrhenius_viscosity_reduces_to_reference_at_reference_temperature ... ok
+test tests::arrhenius_viscosity_rejects_temperatures_outside_physical_range ... ok
+test tests::arrhenius_viscosity_monotone_decreases_with_temperature_for_positive_ea ... ok
+test tests::arrhenius_viscosity_is_byte_deterministic_across_replays ... ok
+test tests::test_known_answers_cover_mixing_temperature_crowding_yield_and_sag ... ok
+test tests::test_malformed_and_non_finite_inputs_fail_closed ... ok
+test tests::test_unknown_fields_are_rejected ... ok
+test tests::screen_contract_rejects_measured_outcome_features ... ok
+test tests::test_fit_replays_deterministically_and_ood_abstains ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/viscosity_phase0_kpi.rs (target/debug/deps/viscosity_phase0_kpi-d8d973ad263df7ca)
+
+running 1 test
+test viscosity_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running unittests src/main.rs (target/debug/deps/xtask-6c4e113acf0bc851)
+
+running 4 tests
+test tests::cure_metadata_audit_rejects_profile_inventory_divergence ... ok
+test tests::cure_metadata_audit_accepts_current_consistent_metadata ... ok
+test tests::cure_metadata_audit_does_not_depend_on_legacy_implementation_hashes ... ok
+test tests::cure_metadata_audit_does_not_depend_on_legacy_implementation_paths ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+   Doc-tests amphora_assurance_capabilities
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_barrier_corrosion_score
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_cure_potlife_gate
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_engine
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_formulation_capabilities
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_molecule_capabilities
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_ord_codec
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_rdkit_ffi
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_solvency_score
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_solver_lab
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_tui
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests amphora_viscosity_score
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: 1 target failed:
+    `-p amphora-molecule-capabilities --lib`

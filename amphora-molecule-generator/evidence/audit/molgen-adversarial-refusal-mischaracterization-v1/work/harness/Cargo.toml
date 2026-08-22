@@ -1,0 +1,14 @@
+[package]
+name = "molgen-adversarial-refusal-mischaracterization-harness"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[workspace]
+
+[dependencies]
+amphora-core = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-core" }
+amphora-molecule-capabilities = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-capabilities" }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+sha2 = "0.10"

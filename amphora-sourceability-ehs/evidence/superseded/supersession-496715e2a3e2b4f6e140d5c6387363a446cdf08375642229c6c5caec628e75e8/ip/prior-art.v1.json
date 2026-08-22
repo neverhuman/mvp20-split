@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "a2c850087f2e1b5f97cb7a7a7ff98b9c4bb3c7409650c8aac4c9b93fd7d0a4ac",
+  "module_id": "amphora-sourceability-ehs",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

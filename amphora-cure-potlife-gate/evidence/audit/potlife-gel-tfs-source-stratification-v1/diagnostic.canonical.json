@@ -1,0 +1,94 @@
+{
+  "G1_dataset_integrity": {
+    "dataset_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+    "dataset_sha256_matches": true,
+    "expected_dataset_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+    "n_rows": 25,
+    "n_rows_expected": 25,
+    "n_rows_matches": true,
+    "pooled_rho_reproduces": true,
+    "prior_signed_pooled_spearman_rho": 0.5667572791,
+    "reproduced_pooled_spearman_rho": 0.566757279115248
+  },
+  "G2_duplicate_row_audit": {
+    "dedup_permutation_p_two_sided": 0.00325,
+    "dedup_spearman_rho": 0.5799092360318102,
+    "dedup_still_significant_at_0_05": true,
+    "exact_duplicate_gel_tfs_pairs": [
+      [
+        "ancamide_2634",
+        "ancamide_2482"
+      ]
+    ],
+    "n_after_dedup": 24,
+    "n_duplicate_pairs": 1
+  },
+  "G3_leave_one_out_worst_case": {
+    "worst_case_dropped_system": "ancamide_2426",
+    "worst_case_loo_n": 24,
+    "worst_case_loo_permutation_p_two_sided": 0.01151,
+    "worst_case_loo_spearman_rho": 0.5097642900915312,
+    "worst_case_loo_still_significant_at_0_05": true
+  },
+  "G4_source_stratification": {
+    "criterion_met_claim_refuted": true,
+    "falsification_criterion": "pooled 'directional concordance HOLDS' claim is REFUTED as stated (undisclosed heterogeneity) if any inherent-provenance stratum with n>=5 rows shows two-sided permutation p > 0.05 for the same gel_h vs tfs_h relationship",
+    "n_with_phr": 16,
+    "n_without_phr": 9,
+    "stratification_variable": "presence of `phr` field in locked dataset row (inherent, not invented post-hoc)",
+    "systems_without_phr": [
+      "ancamide_2424",
+      "ancamide_2444",
+      "ancamide_2482",
+      "ancamide_2652",
+      "ancamide_2769",
+      "ancamide_2830",
+      "ancamide_3200",
+      "ancamide_3201",
+      "ancamide_260tn"
+    ],
+    "with_phr_permutation_p_two_sided": 0.0013,
+    "with_phr_significant_at_0_05": true,
+    "with_phr_spearman_rho": 0.7427956175154755,
+    "without_phr_permutation_p_two_sided": 0.572945,
+    "without_phr_rows_are_contiguous_tail_of_panel": true,
+    "without_phr_significant_at_0_05": false,
+    "without_phr_spearman_rho": 0.22037063867676338
+  },
+  "authority": "AUDIT_ONLY",
+  "claim_locks": {
+    "flips_scientific_readiness": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_prior_signed_receipt": false,
+    "modifies_signed_phase0_kpi": false,
+    "promotes_authority": false
+  },
+  "claim_under_attack": {
+    "prior_verdict": "the prior receipt reported this sub-claim as HOLDS (surviving) while REFUTING the fixed-fold-ratio H0 (G3)",
+    "quoted_headline_fragment": "directional concordance (Spearman rho=0.5667572791, permutation p=0.001799910004) HOLDS",
+    "receipt_path": "amphora-cure-potlife-gate/evidence/audit/potlife-gel-tfs-crossendpoint-v1/potlife-gel-tfs-crossendpoint-receipt.v1.dsse.json"
+  },
+  "constants": {
+    "n_permutations": 200000,
+    "seed": 12345
+  },
+  "does_not_close": [
+    "Does not claim the pooled arithmetic in the prior receipt is wrong -- rho=0.5667572791 reproduces exactly",
+    "Does not identify WHY the without-phr rows lack concordance (could be measurement noise, a different edition of the supplier guide, or genuinely different chemistry not disclosed in the row schema)",
+    "No authority promotion; scientific_readiness stays UNVALIDATED; PRE_PHASE_0 unchanged",
+    "Does not modify the prior signed receipt, the locked dataset, or the manifest"
+  ],
+  "gates_summary": {
+    "G1": true,
+    "G2_pooled_robust_to_dedup": true,
+    "G3_pooled_robust_to_worst_case_loo": true,
+    "G4_stratified_disclosure_gap": "REFUTED"
+  },
+  "headline": "Pooled directional-concordance claim on the locked n=25 gel<->TFS panel (prior receipt: Spearman rho=0.5667572791, p=0.0018, 'HOLDS') is REFUTED as an undisclosed-heterogeneity claim: stratified on the dataset's own `phr`-presence field (16 rows with phr vs 9 rows without, the latter a contiguous tail block), the with-phr stratum shows strong concordance (rho=0.7428, p=0.0013) while the without-phr stratum is statistically indistinguishable from zero concordance (rho=0.2204, p=0.5729). The pooled 'HOLDS on the panel' framing masks that ~36% of the panel (9/25 systems) carries no detectable gel<->TFS directional relationship at the module's own p<0.05 threshold. Duplicate-row and leave-one-out robustness checks (G2, G3) do NOT independently break the pooled claim -- both remain significant -- so this is specifically a stratified-disclosure refutation, not a pooled-arithmetic refutation.",
+  "module": "amphora-cure-potlife-gate",
+  "non_circularity": "The stratification variable (`phr` null vs populated) is a field already present in the locked dataset row schema; it was not fitted, learned, or tuned to produce this split -- it is read directly off each row. No quantity here is fitted to the module's signed Arrhenius KPI or any other prior receipt's estimates.",
+  "run_type": "AUDIT_ONLY_falsification_attack",
+  "schema": "amphora.cure-potlife-gate.gel-tfs-source-stratification-diagnostic.v1",
+  "verdict": "REFUTED"
+}

@@ -1,0 +1,1091 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "claim_locks": {
+    "flips_scientific_readiness": false,
+    "human_review_performed": false,
+    "modifies_manifest": false,
+    "no_live_model_calls": true,
+    "no_new_science": true,
+    "no_ranking_authority_granted": true,
+    "no_solver_authority_granted": true,
+    "oracles_read_only_signed_tree_artifacts": true,
+    "pre_phase_0_research_only": true,
+    "promotes_authority": false
+  },
+  "date": "2026-08-03",
+  "demo_id": "p4-2to4-full-factorial-screen",
+  "determinism": {
+    "floats": "f64_only",
+    "reductions": "ordered (canonical cell enumeration, sequential gate evaluation)",
+    "rng": "none (exhaustive 16-cell enumeration)"
+  },
+  "generated_on_host": "xbabe2",
+  "ghs_data_integrity_caveat": {
+    "campaign_item": "R-N01",
+    "note": "the pinned GHS KPI has a documented CID-attribution defect for IPDA and m-XDA (R-N01 fire-1 audit, cited in sources); IPDA cells' GHS rows therefore carry a data-integrity caveat until the superseding hazard-card receipt lands. The IPDA hard-exclusion outcome (none) and advisory flags used here also rest on the ECHA harmonised classification entries cited in the same card."
+  },
+  "pareto_status": "PARTITIONED",
+  "problem": {
+    "axes": {
+      "hardener_choice": [
+        "IPDA",
+        "TETA"
+      ],
+      "pigment_choice": [
+        "TiO2",
+        "carbon-black"
+      ],
+      "resin_choice": [
+        "DGEBA",
+        "DGEBF"
+      ],
+      "solvent_choice": [
+        "toluene",
+        "MEK"
+      ]
+    },
+    "cell_order": "axes sorted by name (byte order); mixed-radix enumeration, last sorted axis fastest",
+    "design_type": "2^k_full_factorial",
+    "gates": {
+      "envelope": "resin+hardener dosing policy must exist in the envelope-gates known-answer fixture and nominal dosing must sit inside every inclusive band; missing policy is fail-closed infeasible",
+      "ghs": {
+        "advisory_flags_with_condition": [
+          "H314",
+          "H317"
+        ],
+        "coverage": "hardener axis only",
+        "hard_exclusions": [
+          "H334",
+          "H340",
+          "H350",
+          "H351"
+        ],
+        "semantics": "advisory flags carry the GHS KPI's own procurement_gate_outcome (PPE-plan condition) rather than exclusion - the source KPI's published gate semantics, recorded verbatim"
+      },
+      "mass_balance": "part_A + part_B must close exactly (f64) to the policy's nominal total"
+    },
+    "universe_id": "2^4-full-factorial-adhesive-screen"
+  },
+  "results": {
+    "cartesian_accounting_matches_fixture": true,
+    "cells": [
+      {
+        "cell_index": 0,
+        "factors": {
+          "hardener_choice": "IPDA",
+          "pigment_choice": "TiO2",
+          "resin_choice": "DGEBA",
+          "solvent_choice": "toluene"
+        },
+        "gates": {
+          "envelope": {
+            "band_checks": [
+              {
+                "constraint_id": "part_A_mass_within_tolerance",
+                "feature_path": "mass.part_A_g",
+                "lower_inclusive": 95.0,
+                "margin_lower": 5.0,
+                "margin_upper": 5.0,
+                "pass": true,
+                "upper_inclusive": 105.0,
+                "value": 100.0
+              },
+              {
+                "constraint_id": "part_B_mass_within_tolerance",
+                "feature_path": "mass.part_B_g",
+                "lower_inclusive": 22.8,
+                "margin_lower": 1.1999999999999993,
+                "margin_upper": 1.1999999999999993,
+                "pass": true,
+                "upper_inclusive": 25.2,
+                "value": 24.0
+              },
+              {
+                "constraint_id": "total_mass_within_tolerance",
+                "feature_path": "mass.total_g",
+                "lower_inclusive": 117.8,
+                "margin_lower": 6.200000000000003,
+                "margin_upper": 6.199999999999989,
+                "pass": true,
+                "upper_inclusive": 130.2,
+                "value": 124.0
+              }
+            ],
+            "envelope_id": "dgeba-ipda-marine-primer-100to24",
+            "nominal_dose_g": {
+              "part_a": 100.0,
+              "part_b": 24.0,
+              "total": 124.0
+            },
+            "pass": true,
+            "policy_id": "dgeba-ipda-marine-primer-100to24-policy-v1"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H311",
+              "H314",
+              "H317",
+              "H332",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "IPDA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": {
+            "exact_f64_closure": true,
+            "nominal_total": 124.0,
+            "part_a_plus_part_b": 124.0,
+            "pass": true
+          }
+        },
+        "reasons": [],
+        "status": "SOLVED"
+      },
+      {
+        "cell_index": 1,
+        "factors": {
+          "hardener_choice": "IPDA",
+          "pigment_choice": "TiO2",
+          "resin_choice": "DGEBA",
+          "solvent_choice": "MEK"
+        },
+        "gates": {
+          "envelope": {
+            "band_checks": [
+              {
+                "constraint_id": "part_A_mass_within_tolerance",
+                "feature_path": "mass.part_A_g",
+                "lower_inclusive": 95.0,
+                "margin_lower": 5.0,
+                "margin_upper": 5.0,
+                "pass": true,
+                "upper_inclusive": 105.0,
+                "value": 100.0
+              },
+              {
+                "constraint_id": "part_B_mass_within_tolerance",
+                "feature_path": "mass.part_B_g",
+                "lower_inclusive": 22.8,
+                "margin_lower": 1.1999999999999993,
+                "margin_upper": 1.1999999999999993,
+                "pass": true,
+                "upper_inclusive": 25.2,
+                "value": 24.0
+              },
+              {
+                "constraint_id": "total_mass_within_tolerance",
+                "feature_path": "mass.total_g",
+                "lower_inclusive": 117.8,
+                "margin_lower": 6.200000000000003,
+                "margin_upper": 6.199999999999989,
+                "pass": true,
+                "upper_inclusive": 130.2,
+                "value": 124.0
+              }
+            ],
+            "envelope_id": "dgeba-ipda-marine-primer-100to24",
+            "nominal_dose_g": {
+              "part_a": 100.0,
+              "part_b": 24.0,
+              "total": 124.0
+            },
+            "pass": true,
+            "policy_id": "dgeba-ipda-marine-primer-100to24-policy-v1"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H311",
+              "H314",
+              "H317",
+              "H332",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "IPDA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": {
+            "exact_f64_closure": true,
+            "nominal_total": 124.0,
+            "part_a_plus_part_b": 124.0,
+            "pass": true
+          }
+        },
+        "reasons": [],
+        "status": "SOLVED"
+      },
+      {
+        "cell_index": 2,
+        "factors": {
+          "hardener_choice": "IPDA",
+          "pigment_choice": "TiO2",
+          "resin_choice": "DGEBF",
+          "solvent_choice": "toluene"
+        },
+        "gates": {
+          "envelope": {
+            "pass": false,
+            "policy_id": null,
+            "reason": "no envelope policy for resin=DGEBF + hardener=IPDA: the envelope-gates source covers DGEBA-only pairs; fail-closed"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H311",
+              "H314",
+              "H317",
+              "H332",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "IPDA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": null
+        },
+        "reasons": [
+          "ENVELOPE_GATE_NO_POLICY(resin=DGEBF, hardener=IPDA) [fail-closed: source has no DGEBF envelope]"
+        ],
+        "status": "INFEASIBLE"
+      },
+      {
+        "cell_index": 3,
+        "factors": {
+          "hardener_choice": "IPDA",
+          "pigment_choice": "TiO2",
+          "resin_choice": "DGEBF",
+          "solvent_choice": "MEK"
+        },
+        "gates": {
+          "envelope": {
+            "pass": false,
+            "policy_id": null,
+            "reason": "no envelope policy for resin=DGEBF + hardener=IPDA: the envelope-gates source covers DGEBA-only pairs; fail-closed"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H311",
+              "H314",
+              "H317",
+              "H332",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "IPDA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": null
+        },
+        "reasons": [
+          "ENVELOPE_GATE_NO_POLICY(resin=DGEBF, hardener=IPDA) [fail-closed: source has no DGEBF envelope]"
+        ],
+        "status": "INFEASIBLE"
+      },
+      {
+        "cell_index": 4,
+        "factors": {
+          "hardener_choice": "IPDA",
+          "pigment_choice": "carbon-black",
+          "resin_choice": "DGEBA",
+          "solvent_choice": "toluene"
+        },
+        "gates": {
+          "envelope": {
+            "band_checks": [
+              {
+                "constraint_id": "part_A_mass_within_tolerance",
+                "feature_path": "mass.part_A_g",
+                "lower_inclusive": 95.0,
+                "margin_lower": 5.0,
+                "margin_upper": 5.0,
+                "pass": true,
+                "upper_inclusive": 105.0,
+                "value": 100.0
+              },
+              {
+                "constraint_id": "part_B_mass_within_tolerance",
+                "feature_path": "mass.part_B_g",
+                "lower_inclusive": 22.8,
+                "margin_lower": 1.1999999999999993,
+                "margin_upper": 1.1999999999999993,
+                "pass": true,
+                "upper_inclusive": 25.2,
+                "value": 24.0
+              },
+              {
+                "constraint_id": "total_mass_within_tolerance",
+                "feature_path": "mass.total_g",
+                "lower_inclusive": 117.8,
+                "margin_lower": 6.200000000000003,
+                "margin_upper": 6.199999999999989,
+                "pass": true,
+                "upper_inclusive": 130.2,
+                "value": 124.0
+              }
+            ],
+            "envelope_id": "dgeba-ipda-marine-primer-100to24",
+            "nominal_dose_g": {
+              "part_a": 100.0,
+              "part_b": 24.0,
+              "total": 124.0
+            },
+            "pass": true,
+            "policy_id": "dgeba-ipda-marine-primer-100to24-policy-v1"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H311",
+              "H314",
+              "H317",
+              "H332",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "IPDA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": {
+            "exact_f64_closure": true,
+            "nominal_total": 124.0,
+            "part_a_plus_part_b": 124.0,
+            "pass": true
+          }
+        },
+        "reasons": [],
+        "status": "SOLVED"
+      },
+      {
+        "cell_index": 5,
+        "factors": {
+          "hardener_choice": "IPDA",
+          "pigment_choice": "carbon-black",
+          "resin_choice": "DGEBA",
+          "solvent_choice": "MEK"
+        },
+        "gates": {
+          "envelope": {
+            "band_checks": [
+              {
+                "constraint_id": "part_A_mass_within_tolerance",
+                "feature_path": "mass.part_A_g",
+                "lower_inclusive": 95.0,
+                "margin_lower": 5.0,
+                "margin_upper": 5.0,
+                "pass": true,
+                "upper_inclusive": 105.0,
+                "value": 100.0
+              },
+              {
+                "constraint_id": "part_B_mass_within_tolerance",
+                "feature_path": "mass.part_B_g",
+                "lower_inclusive": 22.8,
+                "margin_lower": 1.1999999999999993,
+                "margin_upper": 1.1999999999999993,
+                "pass": true,
+                "upper_inclusive": 25.2,
+                "value": 24.0
+              },
+              {
+                "constraint_id": "total_mass_within_tolerance",
+                "feature_path": "mass.total_g",
+                "lower_inclusive": 117.8,
+                "margin_lower": 6.200000000000003,
+                "margin_upper": 6.199999999999989,
+                "pass": true,
+                "upper_inclusive": 130.2,
+                "value": 124.0
+              }
+            ],
+            "envelope_id": "dgeba-ipda-marine-primer-100to24",
+            "nominal_dose_g": {
+              "part_a": 100.0,
+              "part_b": 24.0,
+              "total": 124.0
+            },
+            "pass": true,
+            "policy_id": "dgeba-ipda-marine-primer-100to24-policy-v1"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H311",
+              "H314",
+              "H317",
+              "H332",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "IPDA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": {
+            "exact_f64_closure": true,
+            "nominal_total": 124.0,
+            "part_a_plus_part_b": 124.0,
+            "pass": true
+          }
+        },
+        "reasons": [],
+        "status": "SOLVED"
+      },
+      {
+        "cell_index": 6,
+        "factors": {
+          "hardener_choice": "IPDA",
+          "pigment_choice": "carbon-black",
+          "resin_choice": "DGEBF",
+          "solvent_choice": "toluene"
+        },
+        "gates": {
+          "envelope": {
+            "pass": false,
+            "policy_id": null,
+            "reason": "no envelope policy for resin=DGEBF + hardener=IPDA: the envelope-gates source covers DGEBA-only pairs; fail-closed"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H311",
+              "H314",
+              "H317",
+              "H332",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "IPDA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": null
+        },
+        "reasons": [
+          "ENVELOPE_GATE_NO_POLICY(resin=DGEBF, hardener=IPDA) [fail-closed: source has no DGEBF envelope]"
+        ],
+        "status": "INFEASIBLE"
+      },
+      {
+        "cell_index": 7,
+        "factors": {
+          "hardener_choice": "IPDA",
+          "pigment_choice": "carbon-black",
+          "resin_choice": "DGEBF",
+          "solvent_choice": "MEK"
+        },
+        "gates": {
+          "envelope": {
+            "pass": false,
+            "policy_id": null,
+            "reason": "no envelope policy for resin=DGEBF + hardener=IPDA: the envelope-gates source covers DGEBA-only pairs; fail-closed"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H311",
+              "H314",
+              "H317",
+              "H332",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "IPDA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": null
+        },
+        "reasons": [
+          "ENVELOPE_GATE_NO_POLICY(resin=DGEBF, hardener=IPDA) [fail-closed: source has no DGEBF envelope]"
+        ],
+        "status": "INFEASIBLE"
+      },
+      {
+        "cell_index": 8,
+        "factors": {
+          "hardener_choice": "TETA",
+          "pigment_choice": "TiO2",
+          "resin_choice": "DGEBA",
+          "solvent_choice": "toluene"
+        },
+        "gates": {
+          "envelope": {
+            "band_checks": [
+              {
+                "constraint_id": "part_A_mass_within_tolerance",
+                "feature_path": "mass.part_A_g",
+                "lower_inclusive": 171.0,
+                "margin_lower": 9.0,
+                "margin_upper": 9.0,
+                "pass": true,
+                "upper_inclusive": 189.0,
+                "value": 180.0
+              },
+              {
+                "constraint_id": "part_B_mass_within_tolerance",
+                "feature_path": "mass.part_B_g",
+                "lower_inclusive": 19.0,
+                "margin_lower": 1.0,
+                "margin_upper": 1.0,
+                "pass": true,
+                "upper_inclusive": 21.0,
+                "value": 20.0
+              },
+              {
+                "constraint_id": "total_mass_within_tolerance",
+                "feature_path": "mass.total_g",
+                "lower_inclusive": 190.0,
+                "margin_lower": 10.0,
+                "margin_upper": 10.0,
+                "pass": true,
+                "upper_inclusive": 210.0,
+                "value": 200.0
+              }
+            ],
+            "envelope_id": "dgeba-teta-primer-9to1",
+            "nominal_dose_g": {
+              "part_a": 180.0,
+              "part_b": 20.0,
+              "total": 200.0
+            },
+            "pass": true,
+            "policy_id": "dgeba-teta-primer-9to1-policy-v1"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H312",
+              "H314",
+              "H317",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "TETA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": {
+            "exact_f64_closure": true,
+            "nominal_total": 200.0,
+            "part_a_plus_part_b": 200.0,
+            "pass": true
+          }
+        },
+        "reasons": [],
+        "status": "SOLVED"
+      },
+      {
+        "cell_index": 9,
+        "factors": {
+          "hardener_choice": "TETA",
+          "pigment_choice": "TiO2",
+          "resin_choice": "DGEBA",
+          "solvent_choice": "MEK"
+        },
+        "gates": {
+          "envelope": {
+            "band_checks": [
+              {
+                "constraint_id": "part_A_mass_within_tolerance",
+                "feature_path": "mass.part_A_g",
+                "lower_inclusive": 171.0,
+                "margin_lower": 9.0,
+                "margin_upper": 9.0,
+                "pass": true,
+                "upper_inclusive": 189.0,
+                "value": 180.0
+              },
+              {
+                "constraint_id": "part_B_mass_within_tolerance",
+                "feature_path": "mass.part_B_g",
+                "lower_inclusive": 19.0,
+                "margin_lower": 1.0,
+                "margin_upper": 1.0,
+                "pass": true,
+                "upper_inclusive": 21.0,
+                "value": 20.0
+              },
+              {
+                "constraint_id": "total_mass_within_tolerance",
+                "feature_path": "mass.total_g",
+                "lower_inclusive": 190.0,
+                "margin_lower": 10.0,
+                "margin_upper": 10.0,
+                "pass": true,
+                "upper_inclusive": 210.0,
+                "value": 200.0
+              }
+            ],
+            "envelope_id": "dgeba-teta-primer-9to1",
+            "nominal_dose_g": {
+              "part_a": 180.0,
+              "part_b": 20.0,
+              "total": 200.0
+            },
+            "pass": true,
+            "policy_id": "dgeba-teta-primer-9to1-policy-v1"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H312",
+              "H314",
+              "H317",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "TETA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": {
+            "exact_f64_closure": true,
+            "nominal_total": 200.0,
+            "part_a_plus_part_b": 200.0,
+            "pass": true
+          }
+        },
+        "reasons": [],
+        "status": "SOLVED"
+      },
+      {
+        "cell_index": 10,
+        "factors": {
+          "hardener_choice": "TETA",
+          "pigment_choice": "TiO2",
+          "resin_choice": "DGEBF",
+          "solvent_choice": "toluene"
+        },
+        "gates": {
+          "envelope": {
+            "pass": false,
+            "policy_id": null,
+            "reason": "no envelope policy for resin=DGEBF + hardener=TETA: the envelope-gates source covers DGEBA-only pairs; fail-closed"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H312",
+              "H314",
+              "H317",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "TETA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": null
+        },
+        "reasons": [
+          "ENVELOPE_GATE_NO_POLICY(resin=DGEBF, hardener=TETA) [fail-closed: source has no DGEBF envelope]"
+        ],
+        "status": "INFEASIBLE"
+      },
+      {
+        "cell_index": 11,
+        "factors": {
+          "hardener_choice": "TETA",
+          "pigment_choice": "TiO2",
+          "resin_choice": "DGEBF",
+          "solvent_choice": "MEK"
+        },
+        "gates": {
+          "envelope": {
+            "pass": false,
+            "policy_id": null,
+            "reason": "no envelope policy for resin=DGEBF + hardener=TETA: the envelope-gates source covers DGEBA-only pairs; fail-closed"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H312",
+              "H314",
+              "H317",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "TETA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": null
+        },
+        "reasons": [
+          "ENVELOPE_GATE_NO_POLICY(resin=DGEBF, hardener=TETA) [fail-closed: source has no DGEBF envelope]"
+        ],
+        "status": "INFEASIBLE"
+      },
+      {
+        "cell_index": 12,
+        "factors": {
+          "hardener_choice": "TETA",
+          "pigment_choice": "carbon-black",
+          "resin_choice": "DGEBA",
+          "solvent_choice": "toluene"
+        },
+        "gates": {
+          "envelope": {
+            "band_checks": [
+              {
+                "constraint_id": "part_A_mass_within_tolerance",
+                "feature_path": "mass.part_A_g",
+                "lower_inclusive": 171.0,
+                "margin_lower": 9.0,
+                "margin_upper": 9.0,
+                "pass": true,
+                "upper_inclusive": 189.0,
+                "value": 180.0
+              },
+              {
+                "constraint_id": "part_B_mass_within_tolerance",
+                "feature_path": "mass.part_B_g",
+                "lower_inclusive": 19.0,
+                "margin_lower": 1.0,
+                "margin_upper": 1.0,
+                "pass": true,
+                "upper_inclusive": 21.0,
+                "value": 20.0
+              },
+              {
+                "constraint_id": "total_mass_within_tolerance",
+                "feature_path": "mass.total_g",
+                "lower_inclusive": 190.0,
+                "margin_lower": 10.0,
+                "margin_upper": 10.0,
+                "pass": true,
+                "upper_inclusive": 210.0,
+                "value": 200.0
+              }
+            ],
+            "envelope_id": "dgeba-teta-primer-9to1",
+            "nominal_dose_g": {
+              "part_a": 180.0,
+              "part_b": 20.0,
+              "total": 200.0
+            },
+            "pass": true,
+            "policy_id": "dgeba-teta-primer-9to1-policy-v1"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H312",
+              "H314",
+              "H317",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "TETA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": {
+            "exact_f64_closure": true,
+            "nominal_total": 200.0,
+            "part_a_plus_part_b": 200.0,
+            "pass": true
+          }
+        },
+        "reasons": [],
+        "status": "SOLVED"
+      },
+      {
+        "cell_index": 13,
+        "factors": {
+          "hardener_choice": "TETA",
+          "pigment_choice": "carbon-black",
+          "resin_choice": "DGEBA",
+          "solvent_choice": "MEK"
+        },
+        "gates": {
+          "envelope": {
+            "band_checks": [
+              {
+                "constraint_id": "part_A_mass_within_tolerance",
+                "feature_path": "mass.part_A_g",
+                "lower_inclusive": 171.0,
+                "margin_lower": 9.0,
+                "margin_upper": 9.0,
+                "pass": true,
+                "upper_inclusive": 189.0,
+                "value": 180.0
+              },
+              {
+                "constraint_id": "part_B_mass_within_tolerance",
+                "feature_path": "mass.part_B_g",
+                "lower_inclusive": 19.0,
+                "margin_lower": 1.0,
+                "margin_upper": 1.0,
+                "pass": true,
+                "upper_inclusive": 21.0,
+                "value": 20.0
+              },
+              {
+                "constraint_id": "total_mass_within_tolerance",
+                "feature_path": "mass.total_g",
+                "lower_inclusive": 190.0,
+                "margin_lower": 10.0,
+                "margin_upper": 10.0,
+                "pass": true,
+                "upper_inclusive": 210.0,
+                "value": 200.0
+              }
+            ],
+            "envelope_id": "dgeba-teta-primer-9to1",
+            "nominal_dose_g": {
+              "part_a": 180.0,
+              "part_b": 20.0,
+              "total": 200.0
+            },
+            "pass": true,
+            "policy_id": "dgeba-teta-primer-9to1-policy-v1"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H312",
+              "H314",
+              "H317",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "TETA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": {
+            "exact_f64_closure": true,
+            "nominal_total": 200.0,
+            "part_a_plus_part_b": 200.0,
+            "pass": true
+          }
+        },
+        "reasons": [],
+        "status": "SOLVED"
+      },
+      {
+        "cell_index": 14,
+        "factors": {
+          "hardener_choice": "TETA",
+          "pigment_choice": "carbon-black",
+          "resin_choice": "DGEBF",
+          "solvent_choice": "toluene"
+        },
+        "gates": {
+          "envelope": {
+            "pass": false,
+            "policy_id": null,
+            "reason": "no envelope policy for resin=DGEBF + hardener=TETA: the envelope-gates source covers DGEBA-only pairs; fail-closed"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H312",
+              "H314",
+              "H317",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "TETA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": null
+        },
+        "reasons": [
+          "ENVELOPE_GATE_NO_POLICY(resin=DGEBF, hardener=TETA) [fail-closed: source has no DGEBF envelope]"
+        ],
+        "status": "INFEASIBLE"
+      },
+      {
+        "cell_index": 15,
+        "factors": {
+          "hardener_choice": "TETA",
+          "pigment_choice": "carbon-black",
+          "resin_choice": "DGEBF",
+          "solvent_choice": "MEK"
+        },
+        "gates": {
+          "envelope": {
+            "pass": false,
+            "policy_id": null,
+            "reason": "no envelope policy for resin=DGEBF + hardener=TETA: the envelope-gates source covers DGEBA-only pairs; fail-closed"
+          },
+          "ghs": {
+            "advisory_flags": [
+              "H314",
+              "H317"
+            ],
+            "condition": "CORROSIVE_PPE_PLAN_REQUIRED",
+            "coverage": "HARDENER_AXIS_ONLY - the pinned GHS KPI covers the 5 canonical epoxy amines; solvent and pigment axes carry no hazard claim from this demo",
+            "h_statement_codes": [
+              "H302",
+              "H312",
+              "H314",
+              "H317",
+              "H411"
+            ],
+            "hard_exclusion_hits": [],
+            "hardener": "TETA",
+            "hardener_card_found": true,
+            "pass": true
+          },
+          "mass_balance": null
+        },
+        "reasons": [
+          "ENVELOPE_GATE_NO_POLICY(resin=DGEBF, hardener=TETA) [fail-closed: source has no DGEBF envelope]"
+        ],
+        "status": "INFEASIBLE"
+      }
+    ],
+    "expected_cartesian_total": 16,
+    "fixture_declared_infeasible_count_note": "the fixture's expected_infeasible_candidate_count = 0 refers to DECLARATIVE Cartesian accounting only (feasibility_basis DECLARATIVE_ACCOUNTING_ONLY); this demo overlays real dosing/hazard gates on top, which is why its partition differs",
+    "infeasible_cell_indices": [
+      2,
+      3,
+      6,
+      7,
+      10,
+      11,
+      14,
+      15
+    ],
+    "n_cells": 16,
+    "n_infeasible": 8,
+    "n_solved": 8,
+    "solved_cell_indices": [
+      0,
+      1,
+      4,
+      5,
+      8,
+      9,
+      12,
+      13
+    ]
+  },
+  "schema": "amphora.solver-lab.demo-p4-2to4-full-factorial-screen.diagnostic.v1",
+  "sources": [
+    {
+      "logical_id": "formulation_universe_known_answer",
+      "rel_path": "amphora-formulation-universe/reference/phase0-formulation-universe-known-answer.v1.json",
+      "sha256": "cb3cdb8bd40ebfeadd929ab42fed7df4596375aa1d00b24242755479676029b3"
+    },
+    {
+      "logical_id": "envelope_gates_known_answer",
+      "rel_path": "amphora-envelope-gates/reference/phase0-envelope-gates-known-answer.v1.json",
+      "sha256": "aab0b9a8af2e14ab053744f1dee88f785be37321d582039716a81fee9aec5b52"
+    },
+    {
+      "logical_id": "ghs_clp_hazard_prescreen_kpi",
+      "rel_path": "amphora-sourceability-ehs/evidence/phase0/kpis/ghs-clp-public-hazard-prescreen-5-canonical-epoxy-amines-kpi.v1.json",
+      "sha256": "86528e37afc02d4010fac0051b256078222803ee194fb9d1131caca5a035f102"
+    },
+    {
+      "logical_id": "rn01_fire1_cid_attribution_audit_receipt",
+      "rel_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+      "sha256": "39a84e3a0c17c6ca62982853ce0a833cb6edcfc7ba3d7a82dd2bc04f9d5178c0"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "d0ccb6b560da87837d725d447b7f5c69c99abc9ec25c3af3d22181f5e9696d50",
+  "module_id": "amphora-known-answer-benchmarks",
+  "parent_revision_id": null,
+  "revision_id": "preparation-revision-29f4e24245b736737e988d9d212ace7212dd0621262897e448a0de574667c6c2",
+  "revision_number": 1,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-1b6eff235e2f3d12cbc4cd167d82cc6ba61fd5338f011414923a169a318d3fe5",
+  "supersession_path": "evidence/superseded/supersession-1b6eff235e2f3d12cbc4cd167d82cc6ba61fd5338f011414923a169a318d3fe5/supersession.v1.json",
+  "supersession_sha256": "152318d61dbcb5a76b6d4473568273b120bcda8b0080039460785b71bfa87ac6",
+  "unsigned_preparation_only": true
+}

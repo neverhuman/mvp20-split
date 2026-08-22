@@ -1,0 +1,184 @@
+{
+  "attack": {
+    "amphora_tui_binary_sha256": "6823888b01cd45fd31baa6dcab2d00d736c12ede2f0761fcfa2bf81d193fd58a",
+    "candidate_a_sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f",
+    "candidate_b_sha256": "9e756c5403f6c166576e77a66cb61cb79a2adec1c091a88a0f5a95bf0b559e41",
+    "cli_invocation_template": "FAKETIME_BASE_MS=<T> LD_PRELOAD=harness/faketime_shim.so target/release/amphora-tui run --candidate <path> --population 4 --generations 1 --workers 1 --seed <seed> --headless --jsonl",
+    "collision_case": {
+      "resulting_run_id_both_requests": "run-1800000000000",
+      "run_A": {
+        "candidate": "candidate_A.json (DGEBA-monomer)",
+        "seed": 111
+      },
+      "run_B": {
+        "candidate": "candidate_B.json (TETA-hardener-B, DIFFERENT molecule)",
+        "seed": 222
+      },
+      "shared_faketime_base_ms": 1800000000000
+    },
+    "control_case": {
+      "run_A": {
+        "candidate": "candidate_A.json (DGEBA-monomer)",
+        "seed": 111
+      },
+      "run_A_faketime_base_ms": 1900000000000,
+      "run_B": {
+        "candidate": "candidate_B.json (TETA-hardener-B, DIFFERENT molecule)",
+        "seed": 222
+      },
+      "run_B_faketime_base_ms": 1900000005000
+    },
+    "description": "Built nothing new in Rust; used the existing real production binary target/release/amphora-tui (bin from amphora-cli crate, main.rs sha256 pinned below, unchanged since the 2026-08-15 fire). Wrote a small LD_PRELOAD shared object (faketime_shim.c, standard black-box time-interposition technique, same class as libfaketime) that intercepts glibc clock_gettime(CLOCK_REALTIME, ...) only, passing CLOCK_MONOTONIC and all other clock ids straight through to the real libc via dlsym(RTLD_NEXT, ...). It returns FAKETIME_BASE_MS + (real monotonic elapsed since process start), so within one process wall-clock deltas stay real (no div-by-zero / non-finite JSON floats) while the ABSOLUTE epoch value is deterministically pinned and reproducible across separate process invocations. No amphora source file was modified; the technique is purely external interposition on a real, unmodified binary. Two experiments, both from the module's live evidence/audit subtree (no writes outside amphora-run-provenance): (1) COLLISION: invoked `run` for candidate A (seed 111) and then, in the SAME working directory, for a genuinely DIFFERENT candidate B (different candidate_id, different SMILES, seed 222) with the IDENTICAL FAKETIME_BASE_MS value, forcing both invocations' run_id to be the string produced by now_ms() at the very first CLOCK_REALTIME read of each process (base_ms + 0 elapsed). (2) CONTROL: same two candidates/seeds, but with FAKETIME_BASE_MS values 5 seconds apart (no collision), to confirm the harness itself is discriminating and the shortcut is specific to the collision, not an artifact of faking the clock.",
+    "faketime_shim_c_sha256": "252b8ce939ac5a4347ca384a7f076de79a6b4a49773d2813911d54b37a50100c",
+    "faketime_shim_so_sha256": "a98f595439e46effdeb5a4f0056cf4180c37a92db7bcf04bc3ba54c2e0ed55a4"
+  },
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "claim_under_attack": {
+    "claim_section": "KPI register and promotion gates",
+    "claim_text": "Locked target: Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0.",
+    "note": "This is the module's third headline claim and, as of this fire, the only one of the three not yet directly tested. T-13 (2026-08-06) refuted hash-chain-integrity-1.0 (verify_run is an internal-consistency predicate, not a tamper-evidence predicate: 0/8 consistent re-forges detected). W-T-PROV (2026-08-13) refuted the standards-conformance framing against in-toto/SLSA. The 2026-08-15 ROTATION fire refuted cross-run replay byte-equality, root-causing it to production run_id being wall-clock derived (format!(\"run-{}\", now_ms())) rather than the already-computed content-derived deterministic_run_id. That fire observed the divergence but did not exploit it. This study is the escalation: it uses the SAME root cause to force two DIFFERENT, legitimate, concurrently-issued requests to collide on run_id, and tests whether that collision causes 'silent acceptance' of the second request under the first request's identity -- the exact scenario the locked KPI target above claims cannot happen.",
+    "receipt_path": "amphora-run-provenance/docs/mission.md"
+  },
+  "fire_id": "20260817T110001-2327100-8c34d93ee6d1",
+  "flips_scientific_readiness": false,
+  "human_review_performed": false,
+  "mode": "ROTATION",
+  "modifies_falsification_ledger_in_place": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_module_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-run-provenance",
+  "prior_related_evidence": {
+    "T-13": "evidence/audit/real-archive-tamper-scale-v1/real-archive-tamper-scale-receipt.v1.dsse.json",
+    "W-T-PROV": "evidence/phase0/repairs/W-T-PROV/done/w-t-prov-done-receipt.v1.dsse.json",
+    "fixed-seed-replay-determinism-v1": "evidence/audit/fixed-seed-replay-determinism-v1/fixed-seed-replay-determinism-receipt.v1.dsse.json",
+    "relation": "T-13 showed verify_run cannot detect reforged tampering within a single archive. W-T-PROV showed the artifact meets no external signing/attestation standard. The 2026-08-15 fire showed production run_id is wall-clock, not content, derived, so two genuinely-identical requests produce different hashes. This study shows the converse and more consequential failure mode enabled by the SAME root cause: two genuinely-DIFFERENT requests that happen to collide on wall-clock milliseconds produce the SAME identity, and the second is silently, successfully answered with the first's result."
+  },
+  "promotes_authority": false,
+  "proposed_repair": "Use the already-computed content-derived scoring_run_id (deterministic_run_id over candidate+seed+population+generations+workers+lane+profile) as the archive path key for the production `run` subcommand, exactly as `demo` mode already does at line 499 -- this simultaneously repairs the 2026-08-15 replay-determinism finding (identical requests get identical, comparable identity) and this collision finding (only requests with genuinely identical inputs can ever collide on archive identity, and for those the existing 'verified immutable run' shortcut becomes semantically correct rather than an unauthorized-substitution hazard).",
+  "provenance": {
+    "amphora_cli_main_rs_sha256": "ab6a9782367c897cdc0b0591a64459f7332b03f296abd36329c2aa23073ed80f",
+    "amphora_tui_binary_sha256": "6823888b01cd45fd31baa6dcab2d00d736c12ede2f0761fcfa2bf81d193fd58a",
+    "archive_file_sha256": {
+      "collision/shared-archive": {
+        "events.jsonl": "061258590aed73ecb951cdba314055fe0750ead0d5d53e95049a96e5facff9e3",
+        "final-state.json": "2d90b038e4112569b705ae9112bc52353db2796e9960d41b9b711b9377141ed6",
+        "manifest.json": "ecb61e8d52b5e40cdcd482ab2de3bf797fda7b5265b2a9945cb9a78b1001b941",
+        "provenance.json": "cbf624a320a4ad7f009b1abe0b526cc72500759357cd1c1acab7fd41a0b675e8",
+        "snapshot-000011.json": "28d2f08fc05ddb6eb2c44b1656a3a962e060d393a3f0388b321a6a06ed105b5d",
+        "snapshot-000021.json": "3379052c2d158ca028c07eb79427d53a725b15544f56a378e730287403008474",
+        "snapshot-000022.json": "2d90b038e4112569b705ae9112bc52353db2796e9960d41b9b711b9377141ed6"
+      },
+      "control/run-A": {
+        "events.jsonl": "e62666bd65a0e639cad54dc2abdc2612a347bfa02bd3dd0277b9c1e342c003da",
+        "final-state.json": "930f23a67549c5aeb60d152b20be354fbf620a504b7fca980006e869965fcae5",
+        "manifest.json": "8d562b601505abdb8f9d8ab426d0310af2f858e92ae2457f1bad79d30b77546a",
+        "provenance.json": "656ccc7150ddc1450fc699c61c78051224108ad836e652119e0a4438cd0cf924",
+        "snapshot-000011.json": "cec41b5983537fd7ffe08ecedad0222ea7eff488c910a2d1d4fad580f33a1cc1",
+        "snapshot-000021.json": "07322f411cf41951b8f7c2f9f18a0012dc317a43d0a5bd310a861cc355f389ba",
+        "snapshot-000022.json": "930f23a67549c5aeb60d152b20be354fbf620a504b7fca980006e869965fcae5"
+      },
+      "control/run-B": {
+        "events.jsonl": "ce5b62d91423d82d645b5d9ea71d231a240bb4e18edfc8324d6ea8a88ba8beae",
+        "final-state.json": "3813216e9a54e1ecd0f5f8786cb483d4bcfed25c8c74f41bf6833cdac4ba7bf2",
+        "manifest.json": "20cd4b07d42f059c47aebd6aef8fd66e94179b492c7cda5032d0313448c2d395",
+        "provenance.json": "affd7c0719fa8ad6101f83a3107f06fe30e64daafdce979a93dc2ce72ecde99c",
+        "snapshot-000011.json": "54c7043c8f7c109c7f50cee823b8f683875599f12ae02b38b0ac68c1e6dfcad8",
+        "snapshot-000021.json": "1bd280e77da8bf07c99f0029495c9ec44b7f5b232ba58a18e43f55b6ea24500f",
+        "snapshot-000022.json": "3813216e9a54e1ecd0f5f8786cb483d4bcfed25c8c74f41bf6833cdac4ba7bf2"
+      }
+    },
+    "candidate_a_sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f",
+    "candidate_b_sha256": "9e756c5403f6c166576e77a66cb61cb79a2adec1c091a88a0f5a95bf0b559e41",
+    "faketime_shim_c_sha256": "252b8ce939ac5a4347ca384a7f076de79a6b4a49773d2813911d54b37a50100c",
+    "faketime_shim_so_sha256": "a98f595439e46effdeb5a4f0056cf4180c37a92db7bcf04bc3ba54c2e0ed55a4",
+    "module_manifest_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f"
+  },
+  "refutation_criterion_observation_occurred": true,
+  "refutation_criterion_verbatim": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0.",
+  "refutation_observation": "Request B (candidate_id=TETA-hardener-B, seed=222, a structurally valid, fully-authorized, non-malformed molecule request distinct from request A) was answered with exit code 0 and JSON {\"immutable_existing_run\": true, \"root_hash\": \"c511b5d7ccd4bc48f6331f5535437888de8d08b8f1d324dd256bcfd90ad22b3b\", \"run_id\": \"run-1800000000000\", \"schema\": \"amphora.run-replay.v1\"} without the module ever reading request B's candidate into a scoring pass, without creating any archive for request B, and without any warning, error, or field distinguishing 'this is someone else's cached result' from 'this is your freshly verified run'. The archive .amphora/runs/run-1800000000000 that request B's root_hash refers to contains zero references to candidate_id TETA-hardener-B or seed 222 anywhere in manifest.json, events.jsonl (22/22 events), or final-state.json; its sole content is request A's genuine run (seed 111, DGEBA-monomer). This is silent acceptance, under a false 'verified' label, of an unauthorized substitution of one request's output for another's -- exactly the observation the locked KPI target above pre-commits to never occurring. The control experiment (same two candidates/seeds, run_id's 5 seconds apart instead of colliding) produced two distinct archives with two distinct candidate_contract_value_hash values, and run B's archive genuinely contains the seed=222 event -- confirming the shortcut is specific to the run_id collision, not a harness artifact or a general miscount.",
+  "reproducibility": {
+    "determinism_basis": "This diagnostic reads only pinned, already-recorded artifacts written to evidence/audit/run-id-collision-silent-substitution-v1/archives/ during the two live CLI experiments (collision and control), plus the pinned amphora-cli/src/main.rs and amphora-tui binary already on disk. No wall-clock, no RNG, no re-invocation of the CLI occurs inside this builder script, so re-running it twice against the same recorded archives is byte-identical by construction. The underlying asymmetry under test -- that the CLI, when live-invoked under a forced clock collision, silently substitutes request A for request B -- is the finding itself, captured once in the recorded archives and re-derived byte-stably here.",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "results": {
+    "collision_case": {
+      "amphora_runs_dirs_created": [
+        "run-1800000000000"
+      ],
+      "n_distinct_archives_for_2_different_requests": 1,
+      "request_b_candidate_and_seed_ever_executed": false,
+      "root_hash_of_out_B_equals_root_hash_of_run_A_archive": true,
+      "run_B_exit_code": 0,
+      "run_B_reported_immutable_existing_run": true,
+      "run_B_reported_root_hash": "c511b5d7ccd4bc48f6331f5535437888de8d08b8f1d324dd256bcfd90ad22b3b",
+      "run_B_rerun_stdout_confirms_deterministic_shortcut": {
+        "immutable_existing_run": true,
+        "root_hash": "c511b5d7ccd4bc48f6331f5535437888de8d08b8f1d324dd256bcfd90ad22b3b",
+        "run_id": "run-1800000000000",
+        "schema": "amphora.run-replay.v1"
+      },
+      "run_B_stdout": {
+        "immutable_existing_run": true,
+        "root_hash": "c511b5d7ccd4bc48f6331f5535437888de8d08b8f1d324dd256bcfd90ad22b3b",
+        "run_id": "run-1800000000000",
+        "schema": "amphora.run-replay.v1"
+      },
+      "shared_archive_contains_any_trace_of_candidate_b_id": false,
+      "shared_archive_event_count": 22,
+      "shared_archive_first_event_payload": {
+        "population": 4,
+        "seed": 111
+      },
+      "shared_archive_first_event_seed_is_run_A_seed_111": true,
+      "shared_archive_manifest_candidate_contract_value_hash": "95c4858a30ea748d65fa0042d67ef1b0f9bfaf63c45a8fe9020d6e99ba2cb838",
+      "shared_archive_provenance_json_root_hash": "c511b5d7ccd4bc48f6331f5535437888de8d08b8f1d324dd256bcfd90ad22b3b"
+    },
+    "control_case": {
+      "amphora_runs_dirs_created": [
+        "run-1900000000000",
+        "run-1900000005000"
+      ],
+      "candidate_hashes_differ_as_expected": true,
+      "n_distinct_archives_for_2_different_requests": 2,
+      "run_A_candidate_contract_value_hash": "95c4858a30ea748d65fa0042d67ef1b0f9bfaf63c45a8fe9020d6e99ba2cb838",
+      "run_B_archive_contains_seed_222_event": true,
+      "run_B_candidate_contract_value_hash": "836863e9161f756ae66187890495993451bea122ae8438d53f88db1bd6d9cd5c",
+      "run_B_genuinely_executed": true
+    }
+  },
+  "root_cause_source_read": {
+    "archive_shortcut_block": {
+      "line": 557,
+      "src": "let archive_path = Path::new(\".amphora/runs\").join(&run_id);"
+    },
+    "file": "amphora-cli/src/main.rs",
+    "interpretation": "This is the SAME root cause identified by the 2026-08-15 fire (production run_id keyed to wall-clock now_ms(), not to the already-computed content-derived scoring_run_id), but this study demonstrates its downstream consequence for a DIFFERENT part of the same function: the existence-check shortcut at line 558 treats path existence under .amphora/runs/<run_id> as sufficient proof that the CURRENT request has already been honored. Because run_id carries no content binding (it is exactly and only now_ms()), path existence says nothing about whether the archive at that path corresponds to the CURRENT candidate/seed/population/generations/workers -- only that SOME earlier request happened to be issued in the same wall-clock millisecond. When that happens, verify_run(&archive_path) legitimately succeeds (it is genuinely checking a self-consistent, untampered archive -- consistent with T-13's finding that verify_run is a real internal-consistency predicate), and the CLI reports success for a request whose actual inputs were never read past manifest/candidate loading, never scored, and never archived.",
+    "run_id_source": {
+      "line": 501,
+      "src": "format!(\"run-{}\", now_ms())"
+    },
+    "shortcut_existence_check": {
+      "line": 558,
+      "src": "if archive_path.exists() {"
+    },
+    "shortcut_verify_and_return": {
+      "lines": "559-570",
+      "src": "let root_hash = verify_run(&archive_path)?; ... println!(\"verified immutable run {run_id}: {root_hash}\"); return Ok(());"
+    }
+  },
+  "runs_live_rust_runtime": true,
+  "schema": "amphora.run-provenance.run-id-collision-silent-substitution-receipt.v1",
+  "signing_key": {
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY audit receipt under evidence/audit/"
+  },
+  "study_id": "run-id-collision-silent-substitution-v1",
+  "verdict": "CLAIM_REFUTED",
+  "verdict_rationale": "The module's own mission.md, KPI register, locks a promotion gate stating zero silent acceptance of unauthorized inputs before Phase 0. Forcing a run_id collision between two legitimate, differently-seeded, differently-charactered molecule requests (via external LD_PRELOAD clock interposition on the real, unmodified production binary -- no amphora source touched) causes the SECOND request to be silently and successfully answered with the FIRST request's stale, unrelated archive: exit 0, 'immutable_existing_run': true, a root_hash that verify_run legitimately validates (it is a genuinely self-consistent archive -- this is not a verify_run tamper-detection bug, it is an identity/binding bug one call frame above verify_run), and zero trace of the second request's actual candidate or seed anywhere in the output or the archive. A control run with non-colliding run_ids behaves correctly (two distinct, genuinely-executed archives), isolating the defect to the collision path specifically. This is the third of the module's three headline KPI claims to fall under direct testing, and it shares a root cause with the second (wall-clock-derived run_id) while exposing a more severe consequence: not merely non-reproducible hashes, but an unauthorized request answered under someone else's identity with no error signal, in a portfolio where this very cron infrastructure runs multiple concurrent automated agents against xbabe2."
+}

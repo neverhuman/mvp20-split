@@ -1,0 +1,67 @@
+{
+  "license_text_diverges": {
+    "expected_rule": "license_text_matches_live_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Overwrote DR-LANG-IBERIAN-01's license_evidence_quote with a fabricated 'no attribution required' claim contradicting the recorded CC BY (attribution-required) WebFetch evidence.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-IBERIAN-01",
+        "reason": "DR-LANG-IBERIAN-01: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "literal_english_translation_query": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native pt query string 'Polímeros SciELO difusão água DGEBA TETA coeficiente' with its literal English gloss, while leaving language:'pt' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "es/pt query field is a literal English translation or contains no es/pt marker vocabulary: 'Polimeros SciELO water diffusion DGEBA TETA coefficient'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "missing_recorded_query": {
+    "expected_rule": "citation_has_recorded_query_and_result",
+    "expected_rule_fired": true,
+    "how_planted": "Scrubbed every occurrence of DR-LANG-IBERIAN-05's url (https://dialnet.unirioja.es/servlet/tesis?codigo=156409) from a copy of this fire's search-record queries/results.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-IBERIAN-05",
+        "reason": "DR-LANG-IBERIAN-05: url https://dialnet.unirioja.es/servlet/tesis?codigo=156409 does not appear in any recorded search-record query/result this fire",
+        "rule": "citation_has_recorded_query_and_result"
+      }
+    ]
+  },
+  "native_citation_not_verbatim": {
+    "expected_rule": "native_citation_verbatim_in_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced DR-LANG-IBERIAN-05's native_citation (the exact Spanish thesis title) with an English paraphrase, simulating a silently-translated/paraphrased citation.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-IBERIAN-05",
+        "reason": "DR-LANG-IBERIAN-05: native_citation 'Study of the curing of composite materials made from an epoxy system and elastomeric particles' does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "native_citation_verbatim_in_evidence"
+      }
+    ]
+  },
+  "rediscovery_dropped": {
+    "expected_rule": "rediscovery_recall",
+    "expected_rule_fired": true,
+    "how_planted": "Cleared DR-LANG-IBERIAN-01's rediscovers field (real id 'PRIOR-BARRIER-DIFFUSION-POLIMEROS-01', found live in amphora-redteam-audit's diagnostic.canonical.json) to None in a copy of this fire's disposition-ledger entries, simulating a fire that found the same source but failed to link it back to the previously-supplied candidate it rediscovers.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "PRIOR-BARRIER-DIFFUSION-POLIMEROS-01",
+        "reason": "previously-supplied candidate PRIOR-BARRIER-DIFFUSION-POLIMEROS-01 was neither rediscovered (no disposition entry with rediscovers==PRIOR-BARRIER-DIFFUSION-POLIMEROS-01) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-design-rule-score/evidence/phase0",
+  "eligible_sources": [
+    {
+      "authorization_overlay_id": "authorization-ec6d6c588ef2ba1c8d383676974344cfb3f8dd3dc41f1060f2fa83808f482288",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-ec6d6c588ef2ba1c8d383676974344cfb3f8dd3dc41f1060f2fa83808f482288.json",
+      "authorization_overlay_sha256": "7edd6a5283e32f993d2990ba566e308fcd4ed908b4144a6cf1a28d742f28cc94",
+      "declared_sha256": "354fdd18e48609dd6ed3b9ad8385913d87ac221149adf0abaf3720e789195374",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/354fdd18e48609dd6ed3b9ad8385913d87ac221149adf0abaf3720e789195374.jsonl.gz",
+      "observed_sha256": "354fdd18e48609dd6ed3b9ad8385913d87ac221149adf0abaf3720e789195374",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/polyomics_chi_dimethylformamide-a3e116674c838a71.rights-receipt.v1.json",
+      "rights_receipt_sha256": "707bc948aa184790deadf49e729910670a86a026c02b9234064a40e7d3ba64e0",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-1f79d8abf39c1d239ffd78b3525c4e3d83ef63a29ef1bc75cdd083f95ae066e5",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-1f79d8abf39c1d239ffd78b3525c4e3d83ef63a29ef1bc75cdd083f95ae066e5.json",
+      "authorization_overlay_sha256": "e719a1edddc24703c143e751516cb78b4af71d79a20faecae688ffeec54f3144",
+      "declared_sha256": "3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a.jsonl.gz",
+      "observed_sha256": "3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/bigsoldb_solubility-879f55f39db977e2.rights-receipt.v1.json",
+      "rights_receipt_sha256": "e57cb4148c59bcd05acb747a9e64ce4719bdf27077e2021411e2047adb4bb73e",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-acb8b819b51138d18609aa117558bb9dfc069d1f3d05cfd895db7f89dc0cd9be",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v3/authorizations/events/authorization-acb8b819b51138d18609aa117558bb9dfc069d1f3d05cfd895db7f89dc0cd9be.json",
+      "authorization_overlay_sha256": "ae70a69c34761c78c29f46c5074c2062d466b9b45ffb5d557a1ca3f495a5223b",
+      "declared_sha256": "bda6fd5ab1315a063e8d309239fb8aff0074fc6060c30a67ea2a7d291a01d69e",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v3/objects/bda6fd5ab1315a063e8d309239fb8aff0074fc6060c30a67ea2a7d291a01d69e.jsonl.gz",
+      "observed_sha256": "bda6fd5ab1315a063e8d309239fb8aff0074fc6060c30a67ea2a7d291a01d69e",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v3/authorizations/receipts/purformance_experiment_v3-b6e89fe900b1aaf7.rights-receipt.v1.json",
+      "rights_receipt_sha256": "97222756b54b79c068f3666ffbf002bcf7d1ba504547bd1d1b7907cf3ca47675",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-d34e7539e9050e2522bea1dde8ebd9c08b839112d3cc843eec00951517e0002a",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v3/authorizations/events/authorization-d34e7539e9050e2522bea1dde8ebd9c08b839112d3cc843eec00951517e0002a.json",
+      "authorization_overlay_sha256": "825d201a30e23682c4ee68c24c6e502846f95c9eb29f16e036ebc5a5e243ab16",
+      "declared_sha256": "e9c9ba5b0e727099cacfd6b18fff1df063ac5dad71e3e6803511a87c5221b85e",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v3/objects/e9c9ba5b0e727099cacfd6b18fff1df063ac5dad71e3e6803511a87c5221b85e.jsonl.gz",
+      "observed_sha256": "e9c9ba5b0e727099cacfd6b18fff1df063ac5dad71e3e6803511a87c5221b85e",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v3/authorizations/receipts/purformance_evaluation_v3-c02e82b4ab80ea2d.rights-receipt.v1.json",
+      "rights_receipt_sha256": "76ff9def048648e17632ff51499a339587970ddce13321369825ba6f4cd0e1a5",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/feedback_v1/dataset_context.json",
+      "observed_sha256": "9e4a3ccd0b3783920ca59bf5e0c79b07da5e8934dffbe6206100b02a7ae62572",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/quarantine/feedback_v2/objects/4a43dbaa1daffd3c5680eea4b3aca938cf22752f8a73909840d262a556891aeb.jsonl.gz",
+      "observed_sha256": "4a43dbaa1daffd3c5680eea4b3aca938cf22752f8a73909840d262a556891aeb",
+      "reason": "ContextOnly material remains quarantined and cannot satisfy a Phase-0 gate"
+    }
+  ],
+  "inventory_hash": "5ef89899dbe57c7b1dc3e33023ff11368cd8f3c63b8d6b2c048dc1321c96f83a",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-design-rule-score",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v2"
+}

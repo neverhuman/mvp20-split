@@ -1,0 +1,20 @@
+{
+  "schema": "amphora.split-manifest.v1",
+  "split_id": "molecule-role-legacy-replay-no-sealed-holdout-2026-07-17",
+  "dataset_hash": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+  "assignment_method": "legacy exact and measured-only controls are replay-only; zero blinded human labels are represented as a sealed holdout",
+  "assignments": [
+    {"row_id":"exact-dgeba","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"resin","scaffold":"dgeba","time":"legacy","lot":"defined"},
+    {"row_id":"exact-dgebf","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"resin","scaffold":"dgebf","time":"legacy","lot":"defined"},
+    {"row_id":"exact-erl4221","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"resin","scaffold":"erl4221","time":"legacy","lot":"defined"},
+    {"row_id":"exact-deta","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"hardener","scaffold":"deta","time":"legacy","lot":"defined"},
+    {"row_id":"exact-teta","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"hardener","scaffold":"teta","time":"legacy","lot":"defined"},
+    {"row_id":"exact-tepa","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"hardener","scaffold":"tepa","time":"legacy","lot":"defined"},
+    {"row_id":"exact-ipda-library-structure","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"hardener","scaffold":"ipda","time":"legacy","lot":"defined"},
+    {"row_id":"exact-pacm","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"hardener","scaffold":"pacm","time":"legacy","lot":"defined"},
+    {"row_id":"exact-amino-amide-exclusion","split":"PILOT_REPLAY","source":"legacy_molecule_role_controls","family":"hardener","scaffold":"amino-amide","time":"legacy","lot":"defined"},
+    {"row_id":"measured-epon-828","split":"MEASURED_ONLY_ANNEX","source":"legacy_molecule_role_controls","family":"commercial-resin","scaffold":"measured-only-epon","time":"legacy","lot":"polydisperse"},
+    {"row_id":"measured-ancamide-700b75","split":"MEASURED_ONLY_ANNEX","source":"legacy_molecule_role_controls","family":"commercial-hardener","scaffold":"measured-only-ancamide","time":"legacy","lot":"mixture"},
+    {"row_id":"measured-versamid-140","split":"MEASURED_ONLY_ANNEX","source":"legacy_molecule_role_controls","family":"commercial-hardener","scaffold":"measured-only-versamid","time":"legacy","lot":"polydisperse"}
+  ]
+}

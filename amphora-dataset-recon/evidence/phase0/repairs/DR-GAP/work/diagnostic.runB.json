@@ -1,0 +1,79 @@
+{
+  "deleted_row_victim_module": "amphora-cure-potlife-gate",
+  "deleted_row_victim_row_id": "Q07",
+  "mutant_a_deleted_row": {
+    "independent_pre_tier0_module_count": 12,
+    "independent_pre_tier0_modules": [
+      "amphora-barrier-corrosion-score",
+      "amphora-cure-potlife-gate",
+      "amphora-design-rule-score",
+      "amphora-ingredient-library",
+      "amphora-ip-fto-guard",
+      "amphora-molecule-generator",
+      "amphora-molecule-novelty",
+      "amphora-molecule-property",
+      "amphora-molecule-role-ranker",
+      "amphora-public-corrosion-benchmark",
+      "amphora-sourceability-ehs",
+      "amphora-viscosity-score"
+    ],
+    "independent_queue_line_count": 14,
+    "label": "MUTANT_A_DELETED_ROW_Q07",
+    "reasons": [
+      "queue line sha256=87d3f9d220722431... absent from register"
+    ],
+    "refutation_criterion_fired": true,
+    "register_total_rows": 25
+  },
+  "mutant_a_sha256": "56aefad6445cb481a4bf93d8c415767a213e12003f7311883d15216306764b4f",
+  "mutant_b_blanked_fact": {
+    "independent_pre_tier0_module_count": 12,
+    "independent_pre_tier0_modules": [
+      "amphora-barrier-corrosion-score",
+      "amphora-cure-potlife-gate",
+      "amphora-design-rule-score",
+      "amphora-ingredient-library",
+      "amphora-ip-fto-guard",
+      "amphora-molecule-generator",
+      "amphora-molecule-novelty",
+      "amphora-molecule-property",
+      "amphora-molecule-role-ranker",
+      "amphora-public-corrosion-benchmark",
+      "amphora-sourceability-ehs",
+      "amphora-viscosity-score"
+    ],
+    "independent_queue_line_count": 14,
+    "label": "MUTANT_B_BLANKED_FACT_B05",
+    "reasons": [
+      "row B05 missing/empty mandated fact 'qualifying_dataset_requirements'"
+    ],
+    "refutation_criterion_fired": true,
+    "register_total_rows": 26
+  },
+  "mutant_b_sha256": "f0aa61b3ef5e7c80637797b26b93d48cdcfd2a4abe4bbc38ecdd682a306f19b1",
+  "real_register": {
+    "independent_pre_tier0_module_count": 12,
+    "independent_pre_tier0_modules": [
+      "amphora-barrier-corrosion-score",
+      "amphora-cure-potlife-gate",
+      "amphora-design-rule-score",
+      "amphora-ingredient-library",
+      "amphora-ip-fto-guard",
+      "amphora-molecule-generator",
+      "amphora-molecule-novelty",
+      "amphora-molecule-property",
+      "amphora-molecule-role-ranker",
+      "amphora-public-corrosion-benchmark",
+      "amphora-sourceability-ehs",
+      "amphora-viscosity-score"
+    ],
+    "independent_queue_line_count": 14,
+    "label": "REAL_REGISTER",
+    "reasons": [],
+    "refutation_criterion_fired": false,
+    "register_total_rows": 26
+  },
+  "real_register_sha256": "82af1cfdc1e0dc415622983ec081b36d08c74534e7532e7272651ad0f2a2f92e",
+  "refutation_criterion_verbatim": "Any gap row lacks one of the four mandated statements, or a data ask live in the queue at the register's snapshot date, a promotion blocker naming a dataset, or a MODELED or ASSUMED recipe element published before that snapshot is absent from the register.",
+  "schema": "amphora.dataset-recon.dr-gap-completeness-diagnostic.v1"
+}

@@ -1,0 +1,107 @@
+{
+  "blueprint_axis": [
+    {
+      "cited_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "criterion_clause": "cited blueprint sha256 that does not match the blueprint file",
+      "fully_accepted_despite_mismatched_citation": false,
+      "probe": "wrong_blueprint_sha256_citation",
+      "real_blueprint_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+      "rejected_by": "verify_blueprint_citations",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_blueprint_citations_err": "CRO feasibility package hash binding is invalid",
+      "verify_blueprint_citations_ok": false,
+      "verify_signature_ok": true
+    },
+    {
+      "accepted_with_no_citation": false,
+      "probe": "no_blueprint_citation_present",
+      "rejected_by": "validate",
+      "sign_ok": false,
+      "validate_ok": false,
+      "verify_signature_ok": false
+    }
+  ],
+  "blueprint_content_binding_gap_still_present": false,
+  "control_correct_citation_accepted": true,
+  "directive_probes": [
+    {
+      "accepted": true,
+      "expected_accept": true,
+      "group": "control_correct_citation",
+      "probe": "correctly_cited_packet_round_trips_including_new_gate",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_blueprint_citations_ok": true,
+      "verify_signature_ok": true
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_execution_authorized"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_EXECUTION_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_PROCUREMENT_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_SAFETY_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_SYNTHESIS_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_PERFORMANCE_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_QUALIFICATION_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "NO_RANKING_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_claim_lock_strip",
+      "lock": "UNMADE_DIGITAL_PROPOSAL"
+    },
+    {
+      "fail_closed": true,
+      "group": "t02_shape_status_drift"
+    },
+    {
+      "control_unmutated_signature_verifies": true,
+      "fail_closed": true,
+      "group": "t02_shape_one_byte_mutation"
+    },
+    {
+      "fail_closed": true,
+      "group": "w_cro1_shape_lock_hash_not_derived"
+    }
+  ],
+  "harness": "cf_packet_repair_content_binding_probe",
+  "n_t02_shape_slipped_through": 0,
+  "positive_control": {
+    "detected": true,
+    "evidence": "verify_blueprint_citations(root) returned Err(Binding) for the planted-defect packet",
+    "how_planted": "baseline_packet_with_citation(real_hash) cloned, then blueprint_citations[0].sha256 rewritten from b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879 to ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, candidate_sha256 and packet_id recomputed to keep the packet self-consistent",
+    "planted_defect": "candidate_binding.blueprint_citations[0].sha256 mutated to a value not matching the real blueprint.md bytes"
+  },
+  "real_blueprint_path": "amphora-report-packager/reference/mvp20/out/blueprint.md",
+  "real_blueprint_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+  "schema_under_test": "amphora.cro-protocol-package.v2"
+}

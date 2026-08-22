@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": { "const": true },
+    "acquisition_unit_id": { "minLength": 1, "type": "string" },
+    "artifact_path": { "minLength": 1, "type": "string" },
+    "artifact_sha256": { "pattern": "^[0-9a-f]{64}$", "type": "string" },
+    "authority_ceiling": { "const": "AUDIT_ONLY" },
+    "dataset_id": { "minLength": 1, "type": "string" },
+    "exclusions": {
+      "items": { "minLength": 1, "type": "string" },
+      "minItems": 9,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "license": { "minLength": 1, "type": "string" },
+    "module_id": { "pattern": "^amphora-[a-z0-9-]+$", "type": "string" },
+    "receipt_id": { "pattern": "^rights-review-[0-9a-f]{64}$", "type": "string" },
+    "reviewer_key_id": { "pattern": "^rights-reviewer-[0-9a-f]{64}$", "type": "string" },
+    "rights_class": { "const": "DERIVATIVE_ALLOWED" },
+    "rights_decision_hash": { "pattern": "^[0-9a-f]{64}$", "type": "string" },
+    "rights_decision_id": { "minLength": 1, "type": "string" },
+    "schema": { "const": "amphora.rights-review-receipt.v1" },
+    "signature": { "type": "object" },
+    "snapshot_id": { "enum": ["feedback-v2", "feedback-v3"] }
+  },
+  "required": [
+    "schema",
+    "receipt_id",
+    "module_id",
+    "snapshot_id",
+    "dataset_id",
+    "acquisition_unit_id",
+    "rights_decision_id",
+    "rights_decision_hash",
+    "artifact_path",
+    "artifact_sha256",
+    "rights_class",
+    "license",
+    "accepted",
+    "authority_ceiling",
+    "exclusions",
+    "reviewer_key_id",
+    "signature"
+  ],
+  "title": "Amphora signed rights-review receipt v1",
+  "type": "object"
+}

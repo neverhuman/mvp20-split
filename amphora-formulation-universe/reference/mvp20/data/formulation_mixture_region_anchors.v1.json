@@ -1,0 +1,163 @@
+{
+  "schema": "amphora.formulation-universe.mixture-region-anchors.v1",
+  "anchor_id": "amphora-formulation-universe-mixture-region-anchors-2026-07-30",
+  "rights": {
+    "license": "CC0-1.0",
+    "status": "ACCEPTED",
+    "eligible_for_derivatives": true,
+    "source_id": "amphora_formulation_universe_mixture_region_anchors",
+    "source_url": "local:amphora-formulation-universe/reference/mvp20/data/formulation_mixture_region_anchors.v1.json",
+    "scope": "Amphora-authored compilation of closed-form Scheffe simplex-design point/term counts (published closed forms, not copied tables) plus Amphora-authored marine epoxy-amine constrained-mixture component-bound regions, for AUDIT_ONLY mixture-geometry oracles."
+  },
+  "primary_sources": [
+    {
+      "key": "scheffe1958",
+      "citation": "Scheffe, H. (1958) 'Experiments with Mixtures', Journal of the Royal Statistical Society Series B 20(2):344-360.",
+      "doi": "10.1111/j.2517-6161.1958.tb00299.x",
+      "supplies": "Simplex-lattice design {q,m}; point count C(q+m-1, m); canonical (Scheffe) polynomial form and its term count; saturation of {q,m} for the degree-m canonical polynomial."
+    },
+    {
+      "key": "scheffe1963",
+      "citation": "Scheffe, H. (1963) 'The Simplex-Centroid Design for Experiments with Mixtures', Journal of the Royal Statistical Society Series B 25(2):235-263.",
+      "doi": "10.1111/j.2517-6161.1963.tb00506.x",
+      "supplies": "Simplex-centroid design; point count 2^q - 1."
+    },
+    {
+      "key": "mcleananderson1966",
+      "citation": "McLean, R.A. and Anderson, V.L. (1966) 'Extreme Vertices Design of Mixture Experiments', Technometrics 8(3):447-454.",
+      "doi": "10.1080/00401706.1966.10490377",
+      "supplies": "Extreme-vertices generation for a constrained mixture region with lower and upper component bounds: set q-1 components to bound levels, fill the remaining component by difference, discard out-of-bound fills."
+    },
+    {
+      "key": "sneemarquardt1974",
+      "citation": "Snee, R.D. and Marquardt, D.W. (1974) 'Extreme Vertices Designs for Linear Mixture Models', Technometrics 16(3):399-408.",
+      "doi": "10.1080/00401706.1974.10489209",
+      "supplies": "Caveat that the McLean-Anderson generator emits candidate points that are not extreme vertices of the constrained region, so a screening step is required."
+    },
+    {
+      "key": "piepel1983",
+      "citation": "Piepel, G.F. (1983) 'Defining Consistent Constraint Regions in Mixture Experiments', Technometrics 25(1):97-101.",
+      "doi": "10.1080/00401706.1983.10487825",
+      "supplies": "Consistency predicate sum(l) <= 1 <= sum(u) for a non-empty constrained mixture region, and the implied (consistent) bounds l*_i = max(l_i, 1 - sum_{j!=i} u_j), u*_i = min(u_i, 1 - sum_{j!=i} l_j), which equal the exact attainable range of x_i over the region."
+    },
+    {
+      "key": "motzkin1953",
+      "citation": "Motzkin, T.S., Raiffa, H., Thompson, G.L., Thrall, R.M. (1953) 'The Double Description Method', in Contributions to the Theory of Games Vol. II, Annals of Mathematics Studies 28, Princeton University Press, pp. 51-73.",
+      "isbn": "978-0-691-07935-6",
+      "supplies": "Independent (cut-the-simplex) vertex enumeration path used as the parity oracle against the McLean-Anderson generator."
+    },
+    {
+      "key": "cornell2002",
+      "citation": "Cornell, J.A. (2002) 'Experiments with Mixtures: Designs, Models, and the Analysis of Mixture Data', 3rd ed., Wiley.",
+      "isbn": "0-471-07916-2",
+      "supplies": "Textbook consolidation of the above closed forms (simplex-lattice, simplex-centroid, special-cubic term count q + C(q,2) + C(q,3))."
+    }
+  ],
+  "closed_form_anchors": {
+    "note": "Values below are evaluated from the published closed forms, independently re-derived by brute-force enumeration in the harness. They are closed-form evaluations, not reproductions of copyrighted tables.",
+    "simplex_lattice_points": [
+      {"q": 2, "m": 2, "expected_points": 3},
+      {"q": 2, "m": 3, "expected_points": 4},
+      {"q": 3, "m": 1, "expected_points": 3},
+      {"q": 3, "m": 2, "expected_points": 6},
+      {"q": 3, "m": 3, "expected_points": 10},
+      {"q": 3, "m": 4, "expected_points": 15},
+      {"q": 4, "m": 1, "expected_points": 4},
+      {"q": 4, "m": 2, "expected_points": 10},
+      {"q": 4, "m": 3, "expected_points": 20},
+      {"q": 4, "m": 4, "expected_points": 35},
+      {"q": 5, "m": 2, "expected_points": 15},
+      {"q": 5, "m": 3, "expected_points": 35},
+      {"q": 6, "m": 2, "expected_points": 21}
+    ],
+    "simplex_centroid_points": [
+      {"q": 3, "expected_points": 7},
+      {"q": 4, "expected_points": 15},
+      {"q": 5, "expected_points": 31},
+      {"q": 6, "expected_points": 63}
+    ],
+    "canonical_polynomial_terms": [
+      {"q": 3, "degree": "linear", "expected_terms": 3},
+      {"q": 4, "degree": "linear", "expected_terms": 4},
+      {"q": 5, "degree": "linear", "expected_terms": 5},
+      {"q": 3, "degree": "quadratic", "expected_terms": 6},
+      {"q": 4, "degree": "quadratic", "expected_terms": 10},
+      {"q": 5, "degree": "quadratic", "expected_terms": 15},
+      {"q": 3, "degree": "special_cubic", "expected_terms": 7},
+      {"q": 4, "degree": "special_cubic", "expected_terms": 14},
+      {"q": 5, "degree": "special_cubic", "expected_terms": 25},
+      {"q": 3, "degree": "full_cubic", "expected_terms": 10},
+      {"q": 4, "degree": "full_cubic", "expected_terms": 20},
+      {"q": 5, "degree": "full_cubic", "expected_terms": 35}
+    ]
+  },
+  "coating_mixture_regions": [
+    {
+      "region_id": "marine-primer-4c",
+      "industrial_context": "Marine anti-corrosion two-part epoxy-amine primer, weight fractions of the mixed (A+B) wet paint.",
+      "components": ["dgeba_resin", "amine_hardener", "pigment_tio2_zno", "solvent_xylene_mibk"],
+      "lower": ["0.30", "0.08", "0.15", "0.05"],
+      "upper": ["0.50", "0.20", "0.40", "0.25"]
+    },
+    {
+      "region_id": "hb-barrier-topcoat-5c",
+      "industrial_context": "High-build glass-flake barrier topcoat over epoxy primer, weight fractions of the mixed wet paint.",
+      "components": ["dgeba_resin", "amine_hardener", "pigment_tio2", "glass_flake_filler", "solvent_xylene_mibk"],
+      "lower": ["0.25", "0.06", "0.05", "0.05", "0.05"],
+      "upper": ["0.45", "0.18", "0.20", "0.30", "0.25"]
+    },
+    {
+      "region_id": "solventfree-tanklining-3c",
+      "industrial_context": "Solvent-free epoxy-amine ballast/cargo tank lining, weight fractions of the mixed wet coating.",
+      "components": ["dgeba_resin", "amine_hardener", "talc_filler"],
+      "lower": ["0.55", "0.15", "0.05"],
+      "upper": ["0.75", "0.30", "0.25"]
+    },
+    {
+      "region_id": "upper-tightening-4c",
+      "industrial_context": "Deliberately loose declared upper bounds on a 4-component epoxy-amine primer; exercises Piepel 1983 upper implied-bound tightening.",
+      "components": ["dgeba_resin", "amine_hardener", "filler", "solvent"],
+      "lower": ["0.40", "0.10", "0.10", "0.10"],
+      "upper": ["0.90", "0.60", "0.50", "0.40"]
+    },
+    {
+      "region_id": "lower-tightening-3c",
+      "industrial_context": "Narrow-window tank-lining region with sum(upper) only slightly above 1; exercises Piepel 1983 lower implied-bound tightening.",
+      "components": ["dgeba_resin", "amine_hardener", "talc_filler"],
+      "lower": ["0.60", "0.15", "0.05"],
+      "upper": ["0.70", "0.22", "0.12"]
+    },
+    {
+      "region_id": "degenerate-singlepoint-3c",
+      "industrial_context": "Fully specified epoxy-amine lining where sum(lower) == 1 exactly; the constrained region collapses to one point.",
+      "components": ["dgeba_resin", "amine_hardener", "talc_filler"],
+      "lower": ["0.60", "0.25", "0.15"],
+      "upper": ["0.80", "0.35", "0.25"]
+    }
+  ],
+  "cartesian_closure_cases": {
+    "note": "Uniform 1/m grid on each of q composition axes: (m+1)^q mixed-radix Cartesian points, of which exactly C(q+m-1, m) satisfy the closure constraint sum(x) = 1.",
+    "cases": [
+      {"q": 3, "m": 4}, {"q": 3, "m": 10},
+      {"q": 4, "m": 4}, {"q": 4, "m": 8},
+      {"q": 5, "m": 5}, {"q": 5, "m": 10},
+      {"q": 6, "m": 4}, {"q": 6, "m": 6}
+    ],
+    "module_cardinality_ceiling": 10000,
+    "ceiling_source": "amphora-formulation-universe Phase-0 KPI: MAX_FORMULATION_UNIVERSE_CARDINALITY = 10000"
+  },
+  "failclosed_probes": [
+    {"probe_id": "sum_lower_exceeds_one", "expect": "REJECT"},
+    {"probe_id": "sum_upper_below_one", "expect": "REJECT"},
+    {"probe_id": "lower_exceeds_upper", "expect": "REJECT"},
+    {"probe_id": "negative_lower_bound", "expect": "REJECT"},
+    {"probe_id": "upper_exceeds_one", "expect": "REJECT"},
+    {"probe_id": "single_component_region", "expect": "REJECT"},
+    {"probe_id": "non_numeric_bound", "expect": "REJECT"},
+    {"probe_id": "duplicate_component_name", "expect": "REJECT"},
+    {"probe_id": "nan_bound", "expect": "REJECT"},
+    {"probe_id": "bound_vector_length_mismatch", "expect": "REJECT"},
+    {"probe_id": "lattice_degree_zero", "expect": "REJECT"},
+    {"probe_id": "lattice_single_component", "expect": "REJECT"}
+  ]
+}

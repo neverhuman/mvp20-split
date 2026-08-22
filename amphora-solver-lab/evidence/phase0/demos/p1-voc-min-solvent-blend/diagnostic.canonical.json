@@ -1,0 +1,834 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "claim_locks": {
+    "flips_scientific_readiness": false,
+    "human_review_performed": false,
+    "modifies_manifest": false,
+    "no_live_model_calls": true,
+    "no_new_science": true,
+    "no_ranking_authority_granted": true,
+    "no_solver_authority_granted": true,
+    "oracles_read_only_signed_tree_artifacts": true,
+    "pre_phase_0_research_only": true,
+    "promotes_authority": false
+  },
+  "date": "2026-08-03",
+  "demo_id": "p1-voc-min-solvent-blend",
+  "determinism": {
+    "floats": "f64_only",
+    "grid_resolution_volume_fraction": 0.05,
+    "nsga2_seed": 539363331,
+    "projected_gradient": {
+      "iters": 5000,
+      "step": 0.01,
+      "x0": "uniform"
+    },
+    "reductions": "ordered (sorted solvent keys, sequential sums)",
+    "rng": "splitmix64"
+  },
+  "generated_on_host": "xbabe2",
+  "pareto_status": "OPTIMAL",
+  "problem": {
+    "binder": {
+      "assumption_note": "DGEBA liquid epoxy resin dosed as 100% non-volatile; facts.json carries no nonvol entry for liquid resins, so its VOC contribution is exactly zero by declared assumption",
+      "density_g_ml": 1.16,
+      "entry": "resin.dgeba_828",
+      "nonvol_assumption": 1.0
+    },
+    "candidate_solvents": [
+      {
+        "density_g_ml": 0.818,
+        "fact_entries": [
+          "solvent.mak.density",
+          "solvent.mak.flash_c",
+          "solvent.mak.hsp"
+        ],
+        "flash_c": 39.0,
+        "hsp_d_p_h": [
+          16.2,
+          5.7,
+          4.1
+        ],
+        "key": "mak"
+      },
+      {
+        "density_g_ml": 0.802,
+        "fact_entries": [
+          "solvent.mibk.density",
+          "solvent.mibk.flash_c",
+          "solvent.mibk.hsp"
+        ],
+        "flash_c": 16.0,
+        "hsp_d_p_h": [
+          15.3,
+          6.1,
+          4.1
+        ],
+        "key": "mibk"
+      },
+      {
+        "density_g_ml": 0.81,
+        "fact_entries": [
+          "solvent.n_butanol.density",
+          "solvent.n_butanol.flash_c",
+          "solvent.n_butanol.hsp"
+        ],
+        "flash_c": 36.0,
+        "hsp_d_p_h": [
+          16.0,
+          5.7,
+          15.8
+        ],
+        "key": "n_butanol"
+      },
+      {
+        "density_g_ml": 0.923,
+        "fact_entries": [
+          "solvent.pm.density",
+          "solvent.pm.flash_c",
+          "solvent.pm.hsp"
+        ],
+        "flash_c": 33.0,
+        "hsp_d_p_h": [
+          15.6,
+          6.3,
+          11.6
+        ],
+        "key": "pm"
+      },
+      {
+        "density_g_ml": 0.97,
+        "fact_entries": [
+          "solvent.pma.density",
+          "solvent.pma.flash_c",
+          "solvent.pma.hsp"
+        ],
+        "flash_c": 45.0,
+        "hsp_d_p_h": [
+          15.5,
+          5.5,
+          9.8
+        ],
+        "key": "pma"
+      },
+      {
+        "density_g_ml": 0.87,
+        "fact_entries": [
+          "solvent.xylene.density",
+          "solvent.xylene.flash_c",
+          "solvent.xylene.hsp"
+        ],
+        "flash_c": 27.0,
+        "hsp_d_p_h": [
+          17.6,
+          1.0,
+          3.1
+        ],
+        "key": "xylene"
+      }
+    ],
+    "constraints": {
+      "hansen_red_vs_dgeba_sphere": {
+        "cap": 1.0,
+        "center_d_p_h": [
+          18.8,
+          10.8,
+          11.6
+        ],
+        "radius": 16.5,
+        "source_entries": [
+          "binder.dgeba.hsp",
+          "binder.dgeba.hsp_radius"
+        ]
+      },
+      "min_flash_point_c": 38.0,
+      "voc_cap_g_per_l": 340.0,
+      "volume_solids": {
+        "lower": 0.63,
+        "upper": 0.67
+      }
+    },
+    "excluded_ingredients": [
+      {
+        "action": "EXCLUDED_FAIL_CLOSED (cannot certify constraints without pinned facts)",
+        "missing_facts": [
+          "hsp"
+        ],
+        "solvent": "aromatic100"
+      },
+      {
+        "action": "EXCLUDED_FAIL_CLOSED (cannot certify constraints without pinned facts)",
+        "missing_facts": [
+          "flash_c",
+          "hsp"
+        ],
+        "solvent": "butyl_alcohol"
+      },
+      {
+        "action": "EXCLUDED_FAIL_CLOSED (cannot certify constraints without pinned facts)",
+        "missing_facts": [
+          "flash_c",
+          "hsp"
+        ],
+        "solvent": "mineral_spirits"
+      },
+      {
+        "action": "EXCLUDED_FAIL_CLOSED (cannot certify constraints without pinned facts)",
+        "missing_facts": [
+          "flash_c",
+          "hsp"
+        ],
+        "solvent": "naphtha"
+      }
+    ],
+    "objective": "minimize VOC = sum_i m_i * (1 - nonvol_i) / V_total (g/L of wet paint)",
+    "solvent_nonvol_assumption": 0.0,
+    "solvent_nonvol_note": "carrier solvents are dosed as fully volatile (nonvol = 0); facts.json carries nonvol only for solvent-cut resins/hardeners, none of which enter this blend"
+  },
+  "results": {
+    "active_constraints": [
+      {
+        "bound": 0.67,
+        "constraint": "volume_solids_upper_bound",
+        "status": "ACTIVE",
+        "value": 0.67,
+        "why": "VOC is strictly decreasing in volume solids, so the optimizer sits on the 67% upper bound"
+      },
+      {
+        "constraint": "simplex_vertex",
+        "status": "ACTIVE",
+        "why": "the linear VOC objective over the flash-feasible simplex face is minimized at the lowest-density vertex (MAK)"
+      },
+      {
+        "constraint": "flash_point_gate",
+        "min_flash_c_on_support": 39.0,
+        "required_min_c": 38.0,
+        "status": "ACTIVE_AS_EXCLUSION",
+        "why": "excludes 4 of 6 characterized solvents (incl. the lower-density MIBK) from the support; slack of the surviving support is 1.0 C"
+      }
+    ],
+    "flash_gate_exclusions": [
+      {
+        "flash_c": 16.0,
+        "reason": "flash 16 C < required 38 C: any positive weight is infeasible",
+        "solvent": "mibk"
+      },
+      {
+        "flash_c": 36.0,
+        "reason": "flash 36 C < required 38 C: any positive weight is infeasible",
+        "solvent": "n_butanol"
+      },
+      {
+        "flash_c": 33.0,
+        "reason": "flash 33 C < required 38 C: any positive weight is infeasible",
+        "solvent": "pm"
+      },
+      {
+        "flash_c": 27.0,
+        "reason": "flash 27 C < required 38 C: any positive weight is infeasible",
+        "solvent": "xylene"
+      }
+    ],
+    "inactive_constraints": [
+      {
+        "bound": 1.0,
+        "constraint": "hansen_red_cap",
+        "slack": 0.3663839981243573,
+        "status": "INACTIVE",
+        "value": 0.6336160018756427
+      },
+      {
+        "bound": 340.0,
+        "constraint": "voc_cap_g_per_l",
+        "slack": 70.06000000000006,
+        "status": "INACTIVE",
+        "value": 269.93999999999994
+      },
+      {
+        "bound": 0.63,
+        "constraint": "volume_solids_lower_bound",
+        "slack": 0.040000000000000036,
+        "status": "INACTIVE",
+        "value": 0.67
+      }
+    ],
+    "method_agreement": {
+      "grid_min_voc_g_per_l": 269.93999999999994,
+      "grid_pg_agree_within_1e_9": true,
+      "grid_vs_pg_abs_gap": 0.0,
+      "nsga2_front_min_voc_g_per_l": 269.93999999999994,
+      "nsga2_never_beats_exhaustive_optimum": true,
+      "projected_gradient_min_voc_g_per_l": 269.93999999999994
+    },
+    "optimal_blend": {
+      "carrier_volume_fraction": 0.32999999999999996,
+      "composition_volume_fraction_of_carrier": {
+        "mak": 1.0
+      },
+      "hansen_red_vs_dgeba": 0.6336160018756427,
+      "min_flash_c_on_support": 39.0,
+      "voc_g_per_l": 269.93999999999994,
+      "volume_solids": 0.67,
+      "wet_mass_g_per_l": {
+        "carrier_solvents": 269.93999999999994,
+        "resin_dgeba_828": 777.2
+      }
+    },
+    "pareto_slice_voc_vs_red": [
+      {
+        "composition_volume_fraction": {
+          "mak": 1.0
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6336160018756427,
+        "voc_g_per_l": 269.93999999999994
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.9806212556094008,
+          "pma": 0.01937874439059914
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6297717946005621,
+        "voc_g_per_l": 270.91203781863237
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.9722528748861076,
+          "pma": 0.02774712511389254
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6281278815373736,
+        "voc_g_per_l": 271.3317957957128
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.9605624414464742,
+          "pma": 0.03943755855352586
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.62584787737258,
+        "voc_g_per_l": 271.9181879370448
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.9605624414464742,
+          "pma": 0.03943755855352586
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.62584787737258,
+        "voc_g_per_l": 271.9181879370448
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.9432559449048308,
+          "pma": 0.05674405509516933
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6225082960382525,
+        "voc_g_per_l": 272.7862818035737
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.9275655756484226,
+          "pma": 0.07243442435157751
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6195179512511886,
+        "voc_g_per_l": 273.5733107254751
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.9275655756484226,
+          "pma": 0.07243442435157751
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6195179512511886,
+        "voc_g_per_l": 273.5733107254751
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.9136072389613301,
+          "pma": 0.08639276103866977
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6168880165416204,
+        "voc_g_per_l": 274.27346089369956
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.8961933455965778,
+          "pma": 0.10380665440342218
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6136476006306266,
+        "voc_g_per_l": 275.1469417848756
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.8826273690813539,
+          "pma": 0.11737263091864614
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.611154867306034,
+        "voc_g_per_l": 275.8274111668792
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.8652448465991235,
+          "pma": 0.13475515340087646
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6080019578630855,
+        "voc_g_per_l": 276.6993184945879
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.8511070185903978,
+          "pma": 0.14889298140960208
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6054720976819373,
+        "voc_g_per_l": 277.4084719475055
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.8511070185903978,
+          "pma": 0.14889298140960208
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6054720976819373,
+        "voc_g_per_l": 277.4084719475055
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.8255222117090311,
+          "pma": 0.17447778829096888
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.6009739330339068,
+        "voc_g_per_l": 278.69180586067495
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.8171251520106083,
+          "pma": 0.18287484798939163
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5995204060822035,
+        "voc_g_per_l": 279.1130023751478
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.7918236317010784,
+          "pma": 0.20817636829892172
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5952100050292888,
+        "voc_g_per_l": 280.3821266338739
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.7814179961183724,
+          "pma": 0.21858200388162752
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5934678596377128,
+        "voc_g_per_l": 280.9040733147023
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.7607632954435112,
+          "pma": 0.23923670455648888
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5900634155018057,
+        "voc_g_per_l": 281.94011310055345
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.7447127239082013,
+          "pma": 0.25528727609179874
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5874677567499803,
+        "voc_g_per_l": 282.74520976876454
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.7276157421827032,
+          "pma": 0.2723842578172968
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5847515936362756,
+        "voc_g_per_l": 283.60279437211557
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.7241481776402536,
+          "pma": 0.2758518223597465
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5842068999625428,
+        "voc_g_per_l": 283.7767274095649
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.7034050218212777,
+          "pma": 0.29659497817872227
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5809926035509847,
+        "voc_g_per_l": 284.81720410544466
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.6982663773761846,
+          "pma": 0.3017336226238155
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5802081025155628,
+        "voc_g_per_l": 285.0749585108105
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.6904344673869326,
+          "pma": 0.30956553261306746
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5790214973532868,
+        "voc_g_per_l": 285.4678071158714
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.6769639983261302,
+          "pma": 0.3230360016738698
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.577006393269326,
+        "voc_g_per_l": 286.14348584396123
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.65772198227138,
+          "pma": 0.34227801772861993
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5741850754607297,
+        "voc_g_per_l": 287.1086653692675
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.6499498481983574,
+          "pma": 0.35005015180164256
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5730647729086207,
+        "voc_g_per_l": 287.4985156143703
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.6322217740625979,
+          "pma": 0.36777822593740217
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5705513452725868,
+        "voc_g_per_l": 288.3877558130201
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.6139515691277724,
+          "pma": 0.3860484308722276
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5680227648659305,
+        "voc_g_per_l": 289.30418929255086
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.6016884266734952,
+          "pma": 0.3983115733265049
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5663611033313677,
+        "voc_g_per_l": 289.91930851805745
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.5779636283910494,
+          "pma": 0.4220363716089506
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5632284935560014,
+        "voc_g_per_l": 291.1093443999049
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.5699160891016167,
+          "pma": 0.4300839108983834
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5621907453414199,
+        "voc_g_per_l": 291.5130089706629
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.5476765860917252,
+          "pma": 0.4523234139082748
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5593891757851103,
+        "voc_g_per_l": 292.628542441639
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.5067895073036369,
+          "pma": 0.49321049269636297
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5544964934371066,
+        "voc_g_per_l": 294.6794383136495
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.5009210192271825,
+          "pma": 0.49907898077281754
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5538220866727345,
+        "voc_g_per_l": 294.97380167556446
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.5009210192271825,
+          "pma": 0.49907898077281754
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5538220866727345,
+        "voc_g_per_l": 294.97380167556446
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.4552090301398495,
+          "pma": 0.5447909698601506
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5488126849927846,
+        "voc_g_per_l": 297.2667150481851
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.4338183471346597,
+          "pma": 0.5661816528653402
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5466191469985577,
+        "voc_g_per_l": 298.33967170772536
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.42423935429228654,
+          "pma": 0.5757606457077136
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5456684347878342,
+        "voc_g_per_l": 298.8201539886989
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.40277381834645365,
+          "pma": 0.5972261816535465
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5436096025937898,
+        "voc_g_per_l": 299.89686527174183
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.3692341192718299,
+          "pma": 0.6307658807281702
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5405932028430808,
+        "voc_g_per_l": 301.579216577325
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.3609183060245833,
+          "pma": 0.6390816939754166
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5398835494282477,
+        "voc_g_per_l": 301.9963377698068
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.34744803640510935,
+          "pma": 0.6525519635948905
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5387665459756303,
+        "voc_g_per_l": 302.67200649391964
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.32923212633351184,
+          "pma": 0.670767873666488
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5373203703117199,
+        "voc_g_per_l": 303.58571654311095
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.3062124409839602,
+          "pma": 0.6937875590160397
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.535599504927835,
+        "voc_g_per_l": 304.74038396024446
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.2891154592584621,
+          "pma": 0.710884540741538
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5343991149194216,
+        "voc_g_per_l": 305.5979685635955
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.2646203328107279,
+          "pma": 0.7353796671892721
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5327957186790827,
+        "voc_g_per_l": 306.8266441062138
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.24933403303116514,
+          "pma": 0.7506659669688348
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5318650897855882,
+        "voc_g_per_l": 307.5934049031567
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.23393829577112035,
+          "pma": 0.7660617042288796
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5309825032956065,
+        "voc_g_per_l": 308.36565508412053
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.20577825884763618,
+          "pma": 0.7942217411523638
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5295111183560726,
+        "voc_g_per_l": 309.7781625362025
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.19252851963951828,
+          "pma": 0.8074714803604818
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5288831085954165,
+        "voc_g_per_l": 310.4427694548817
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.18268234148934615,
+          "pma": 0.8173176585106539
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5284431961330464,
+        "voc_g_per_l": 310.9366537508943
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.159751888984008,
+          "pma": 0.840248111015992
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5275075326028752,
+        "voc_g_per_l": 312.0868452485621
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.12668500098390995,
+          "pma": 0.87331499901609
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5263781973034908,
+        "voc_g_per_l": 313.745480350647
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.11058906231597904,
+          "pma": 0.8894109376840209
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5259229100963014,
+        "voc_g_per_l": 314.5528526342304
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.06596789826950013,
+          "pma": 0.9340321017304998
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.524985687486134,
+        "voc_g_per_l": 316.7910502228018
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.02949584534254157,
+          "pma": 0.9705041546574584
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5245756404707121,
+        "voc_g_per_l": 318.62048839761803
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.01872190136056337,
+          "pma": 0.9812780986394367
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5245159255861156,
+        "voc_g_per_l": 319.1609094277541
+      },
+      {
+        "composition_volume_fraction": {
+          "mak": 0.0011528414320295414,
+          "pma": 0.9988471585679704
+        },
+        "min_flash_c_on_support": 39.0,
+        "red": 0.5244786772311377,
+        "voc_g_per_l": 320.04217347376925
+      }
+    ],
+    "search_accounting": {
+      "grid_cells_feasible": 21,
+      "grid_cells_total": 53130,
+      "nsga2_front_min_red": 0.5244786772311377,
+      "nsga2_front_size": 60
+    }
+  },
+  "schema": "amphora.solver-lab.demo-p1-voc-min-solvent-blend.diagnostic.v1",
+  "sources": [
+    {
+      "logical_id": "ingredient_library_facts",
+      "rel_path": "amphora-ingredient-library/reference/mvp20/data/facts.json",
+      "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+    }
+  ]
+}

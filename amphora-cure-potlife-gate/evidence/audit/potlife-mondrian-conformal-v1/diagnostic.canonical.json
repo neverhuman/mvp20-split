@@ -1,0 +1,325 @@
+{
+  "all_structural_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "claim_locks": {
+    "audit_only_no_authority": true,
+    "class_conditional_90pct_remains_data_starved": true,
+    "cro_gated_promotion_still_blocked": true,
+    "no_manifest_mutation": true,
+    "phase1_named_baseline_still_not_beaten": true,
+    "pre_phase_0_research_only": true
+  },
+  "closes": [
+    "Answers the prior receipt's open question with the CORRECT construction: a Mondrian (class-conditional) conformal predictor gives category-conditional coverage by design, unlike the marginal jackknife+ band.",
+    "Fixes the aromatic-amine under-coverage (0.778) at 80% class-conditionally.",
+    "Quantifies the EXACT per-amine-class held-out data volume needed for a finite class-conditional 90%/80% pot-life gate band (was qualitative before)."
+  ],
+  "crosscheck_mape_vs_signed_kpi": {
+    "abs_difference": 0.0,
+    "recomputed_held_out_mape": 0.147333604516,
+    "signed_kpi_arrhenius_pot_life_mape": 0.1473336045156335,
+    "ties_to_signed_truth_table": true
+  },
+  "does_not_close": [
+    "Does NOT achieve a finite 90% class-conditional band: every amine class is data-starved at 90% (needs n>=10/class; max is now 9).",
+    "Does NOT modify the signed Arrhenius KPI, the prior signed conformal receipt, or the 66-receipt master manifest.",
+    "Does NOT promote the module out of PRE_PHASE_0 (human dual-identity keys required).",
+    "Does NOT beat the Phase-1 named pot-life baseline; owned independently-mixed CRO runs still pending.",
+    "Point-level exchangeability is assumed within class; the effective independent-unit count is the smaller n_systems, so 90% conditional coverage is even more data-starved at the system level."
+  ],
+  "families": {
+    "aliphatic-polyamine": 9,
+    "amidoamine-adduct": 6,
+    "aromatic-amine": 9,
+    "cycloaliphatic-amine": 9,
+    "mannich-base": 3
+  },
+  "families_independent_systems": {
+    "aliphatic-polyamine": 3,
+    "amidoamine-adduct": 2,
+    "aromatic-amine": 3,
+    "cycloaliphatic-amine": 3,
+    "mannich-base": 1
+  },
+  "gates": {
+    "G1_marginal_still_meets_nominal": {
+      "definition": "marginal LOO (jackknife+) empirical coverage >= nominal at alpha in {0.10,0.20}",
+      "passed": true
+    },
+    "G2_aromatic_amine_conditional_fixed_at_80pct": {
+      "definition": "aromatic-amine (which under-covered 0.778 under the prior marginal / leave-one-family-out band) has a FINITE and class-conditionally-valid Mondrian band at 80%",
+      "empirical_class_conditional_coverage": 0.888889,
+      "passed": true
+    },
+    "G3_score_fail_closed": {
+      "definition": "nonconformity score / empty-class band fails closed on NaN/Inf/<=0/empty-cal inputs",
+      "n_fail_closed": 6,
+      "n_probes": 6,
+      "passed": true,
+      "probes": [
+        {
+          "fail_closed": true,
+          "probe": "nan_pred"
+        },
+        {
+          "fail_closed": true,
+          "probe": "inf_obs"
+        },
+        {
+          "fail_closed": true,
+          "probe": "zero_pred"
+        },
+        {
+          "fail_closed": true,
+          "probe": "negative_obs"
+        },
+        {
+          "fail_closed": true,
+          "probe": "none_pred"
+        },
+        {
+          "fail_closed": true,
+          "probe": "empty_class_cal"
+        }
+      ]
+    },
+    "G4_mape_reproduces_signed_kpi": {
+      "definition": "recomputed held-out MAPE matches signed KPI to <1e-9",
+      "passed": true
+    },
+    "G5_90pct_class_conditional_data_starved": {
+      "confirmed": true,
+      "definition": "at 90% NO amine class reaches the finite-band threshold (n>=10) given <=9 pts/class -> documents the exact Phase-1 data requirement; this is an HONEST infeasibility result, not a failure",
+      "n_classes_with_finite_90pct_band": 0
+    }
+  },
+  "headline": "Mondrian (class-conditional) conformal on the signed Arrhenius pot-life gate: the finite-sample category-conditional guarantee requires n>=10 held-out points PER amine class at 90% and n>=5 at 80%. At 90% ALL 5 classes are data-starved (max class has 9<10 pts) -> class-conditional 90% bands are INFINITE (G5 confirms). At 80% 4/5 classes reach a finite class-conditional band and 4/5 meet nominal; in particular aromatic-amine -- which UNDER-covered (0.778) under the prior marginal/leave-one-family-out band -- is class-conditionally valid at 80% (cov 0.888889). The marginal jackknife+ band still meets nominal (G1 PASS) and reproduces the prior signed receipt. MAPE ties to signed KPI (delta 2.8e-17).",
+  "human_review_performed": false,
+  "marginal_jackknife_plus_anchor": {
+    "alpha_0.10": {
+      "empirical_coverage": 0.916667,
+      "meets_nominal": true,
+      "n": 36,
+      "n_covered": 33,
+      "nominal_coverage": 0.9
+    },
+    "alpha_0.20": {
+      "empirical_coverage": 0.805556,
+      "meets_nominal": true,
+      "n": 36,
+      "n_covered": 29,
+      "nominal_coverage": 0.8
+    }
+  },
+  "modifies_manifest": false,
+  "modifies_prior_signed_receipt": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-cure-potlife-gate",
+  "mondrian_class_conditional": {
+    "alpha_0.10": {
+      "all_classes_finite_and_valid": false,
+      "n_classes": 5,
+      "n_classes_conditionally_valid": 0,
+      "n_classes_with_finite_band": 0,
+      "nominal_coverage": 0.9,
+      "per_class": {
+        "aliphatic-polyamine": {
+          "additional_points_needed_for_finite_band": 1,
+          "class_band_multiplicative_factor_median": null,
+          "empirical_class_conditional_coverage": null,
+          "finite_band": false,
+          "meets_nominal_conditional": null,
+          "n_class": 9,
+          "n_systems": 3,
+          "reason": "within-class LOO conformal rank exceeds calibration size"
+        },
+        "amidoamine-adduct": {
+          "additional_points_needed_for_finite_band": 4,
+          "class_band_multiplicative_factor_median": null,
+          "empirical_class_conditional_coverage": null,
+          "finite_band": false,
+          "meets_nominal_conditional": null,
+          "n_class": 6,
+          "n_systems": 2,
+          "reason": "within-class LOO conformal rank exceeds calibration size"
+        },
+        "aromatic-amine": {
+          "additional_points_needed_for_finite_band": 1,
+          "class_band_multiplicative_factor_median": null,
+          "empirical_class_conditional_coverage": null,
+          "finite_band": false,
+          "meets_nominal_conditional": null,
+          "n_class": 9,
+          "n_systems": 3,
+          "reason": "within-class LOO conformal rank exceeds calibration size"
+        },
+        "cycloaliphatic-amine": {
+          "additional_points_needed_for_finite_band": 1,
+          "class_band_multiplicative_factor_median": null,
+          "empirical_class_conditional_coverage": null,
+          "finite_band": false,
+          "meets_nominal_conditional": null,
+          "n_class": 9,
+          "n_systems": 3,
+          "reason": "within-class LOO conformal rank exceeds calibration size"
+        },
+        "mannich-base": {
+          "additional_points_needed_for_finite_band": 7,
+          "class_band_multiplicative_factor_median": null,
+          "empirical_class_conditional_coverage": null,
+          "finite_band": false,
+          "meets_nominal_conditional": null,
+          "n_class": 3,
+          "n_systems": 1,
+          "reason": "within-class LOO conformal rank exceeds calibration size"
+        }
+      },
+      "worst_class_conditional_coverage_among_finite": null
+    },
+    "alpha_0.20": {
+      "all_classes_finite_and_valid": false,
+      "n_classes": 5,
+      "n_classes_conditionally_valid": 4,
+      "n_classes_with_finite_band": 4,
+      "nominal_coverage": 0.8,
+      "per_class": {
+        "aliphatic-polyamine": {
+          "additional_points_needed_for_finite_band": 0,
+          "class_band_halfwidth_log_median": 0.33542261,
+          "class_band_multiplicative_factor_median": 1.398531,
+          "empirical_class_conditional_coverage": 0.888889,
+          "finite_band": true,
+          "meets_nominal_conditional": true,
+          "n_class": 9,
+          "n_covered": 8,
+          "n_systems": 3
+        },
+        "amidoamine-adduct": {
+          "additional_points_needed_for_finite_band": 0,
+          "class_band_halfwidth_log_median": 0.31307059,
+          "class_band_multiplicative_factor_median": 1.367618,
+          "empirical_class_conditional_coverage": 0.833333,
+          "finite_band": true,
+          "meets_nominal_conditional": true,
+          "n_class": 6,
+          "n_covered": 5,
+          "n_systems": 2
+        },
+        "aromatic-amine": {
+          "additional_points_needed_for_finite_band": 0,
+          "class_band_halfwidth_log_median": 0.35426927,
+          "class_band_multiplicative_factor_median": 1.425139,
+          "empirical_class_conditional_coverage": 0.888889,
+          "finite_band": true,
+          "meets_nominal_conditional": true,
+          "n_class": 9,
+          "n_covered": 8,
+          "n_systems": 3
+        },
+        "cycloaliphatic-amine": {
+          "additional_points_needed_for_finite_band": 0,
+          "class_band_halfwidth_log_median": 0.28333114,
+          "class_band_multiplicative_factor_median": 1.327545,
+          "empirical_class_conditional_coverage": 0.888889,
+          "finite_band": true,
+          "meets_nominal_conditional": true,
+          "n_class": 9,
+          "n_covered": 8,
+          "n_systems": 3
+        },
+        "mannich-base": {
+          "additional_points_needed_for_finite_band": 2,
+          "class_band_multiplicative_factor_median": null,
+          "empirical_class_conditional_coverage": null,
+          "finite_band": false,
+          "meets_nominal_conditional": null,
+          "n_class": 3,
+          "n_systems": 1,
+          "reason": "within-class LOO conformal rank exceeds calibration size"
+        }
+      },
+      "worst_class_conditional_coverage_among_finite": 0.833333
+    }
+  },
+  "mondrian_feasibility": {
+    "alpha_0.10": {
+      "derivation": "within-class LOO cal size m=n-1; finite band iff ceil((m+1)(1-alpha)) <= m",
+      "min_class_size_for_finite_band": 10,
+      "nominal_coverage": 0.9
+    },
+    "alpha_0.20": {
+      "derivation": "within-class LOO cal size m=n-1; finite band iff ceil((m+1)(1-alpha)) <= m",
+      "min_class_size_for_finite_band": 5,
+      "nominal_coverage": 0.8
+    }
+  },
+  "n_points": 36,
+  "non_circularity": "The Arrhenius activation energies are external published constants (Prime 1997; Kamal & Sourour 1973; Blanco 2005), not fit to these 36 points, so the log-residuals are genuinely out-of-sample. Mondrian calibration is within-class leave-one-out; no test point informs its own band, and no cross-class leakage occurs (each class is calibrated only on itself).",
+  "nonconformity_score": "s_i = |ln(pred_i) - ln(obs_i)| (multiplicative pot-life error), identical to signed marginal receipt",
+  "phase1_data_requirement": {
+    "classes_short_of_80pct": {
+      "aliphatic-polyamine": {
+        "have": 9,
+        "need": 5,
+        "short_by": 0
+      },
+      "amidoamine-adduct": {
+        "have": 6,
+        "need": 5,
+        "short_by": 0
+      },
+      "aromatic-amine": {
+        "have": 9,
+        "need": 5,
+        "short_by": 0
+      },
+      "cycloaliphatic-amine": {
+        "have": 9,
+        "need": 5,
+        "short_by": 0
+      },
+      "mannich-base": {
+        "have": 3,
+        "need": 5,
+        "short_by": 2
+      }
+    },
+    "classes_short_of_90pct": {
+      "aliphatic-polyamine": {
+        "have": 9,
+        "need": 10,
+        "short_by": 1
+      },
+      "amidoamine-adduct": {
+        "have": 6,
+        "need": 10,
+        "short_by": 4
+      },
+      "aromatic-amine": {
+        "have": 9,
+        "need": 10,
+        "short_by": 1
+      },
+      "cycloaliphatic-amine": {
+        "have": 9,
+        "need": 10,
+        "short_by": 1
+      },
+      "mannich-base": {
+        "have": 3,
+        "need": 10,
+        "short_by": 7
+      }
+    },
+    "current_max_class_size": 9,
+    "min_held_out_points_per_class_for_finite_80pct_band": 5,
+    "min_held_out_points_per_class_for_finite_90pct_band": 10
+  },
+  "prior_marginal_conformal_receipt_sha256": "2288740c461e2926ce3cef3ec11927c77f2410d8244381bce9f8ad9751b48d9d",
+  "promotes_authority": false,
+  "purpose": "Answer the open Phase-1 question flagged by the signed marginal conformal receipt -- 'the CRO gate needs class-stratified intervals' -- by building the correct construction for category-conditional coverage (a Mondrian conformal predictor) on the SAME signed 12-system x 3-held-out-temperature truth table. Quantifies the per-amine-class data requirement for a finite class-conditional 90%/80% pot-life band. No new data, no model refit.",
+  "run_type": "THEORY_AND_MODEL_AXIS_MONDRIAN_CLASS_CONDITIONAL_CONFORMAL",
+  "schema": "amphora.cure-potlife-gate.mondrian-conformal-diagnostic.v1",
+  "theory_reference": "Mondrian / taxonomy conformal: Vovk, Lindsay, Nouretdinov & Gammerman 2003 'Mondrian Confidence Machine' (RHUL-ML tech report); Vovk, Gammerman & Shafer 2005 'Algorithmic Learning in a Random World' ch.4, Springer ISBN 978-0-387-00152-4; Bostrom, Johansson & Lofstrom 2021 'Mondrian conformal predictors', PMLR 152 (COPA). Underlying model: Arrhenius (1889) k(T)=A*exp(-Ea/RT), pot_life(T)=pot_life_ref*exp[(Ea/R)(1/T-1/T_ref)], R=8.31446261815324 J/(mol.K) CODATA 2018, T_ref=295.928 K (22.78 C).",
+  "within_system_correlation_caveat": "Each system contributes 3 held-out temperatures; the 3 points share one activation energy and are correlated. Point-level exchangeability matches the prior signed receipt's convention, but the EFFECTIVE independent-unit count per class is n_systems (max 3), so class-conditional 90% coverage is even more data-starved at the system level. Reported for honesty; both counts are shown."
+}

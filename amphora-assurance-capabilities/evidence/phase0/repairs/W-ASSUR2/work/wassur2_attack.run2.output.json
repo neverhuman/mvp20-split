@@ -1,0 +1,868 @@
+{
+  "records": [
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "control",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "control-clean-negative",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "control",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "control-known-good-A8-cyrillic-dze",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": true,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "CG",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "CG1-eta-for-n-in-signed",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": true,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "CG",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "CG2-ghe-for-r-in-cleared-with-fto",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": true,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "CG",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "CG3-ghe-for-r-in-attorney-with-fto",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": true,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "CG",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "CG4-te-for-t-in-attest-with-counsel",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "CG-baseline",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "CG-baseline-fto-cleared-uncorrupted",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "CG-baseline",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "CG-baseline-attorney-fto-uncorrupted",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "MA",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "MA1-bold-signed-by-counsel",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "MA",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "MA2-italic-counsel-fto",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "MA",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "MA3-double-struck-counsel-fto",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "MA",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "MA4-monospace-signed-by-counsel",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "FW",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FW1-fullwidth-signed-by-counsel",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "FW",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FW2-fullwidth-counsel-fto-mixedcase",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "ZB",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "ZB1-zwnj-mid-key",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "ZB",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "ZB2-rlo-pdf-wrap",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "ZB",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "ZB3-lri-pdi-isolate-split",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "CM",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "CM1-standalone-combining-acute-on-s",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": true,
+      "false_positive": false,
+      "family": "CM",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "CM2-zalgo-heavy-combining-stack",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP01-batch-id",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP02-supplier-french-accent",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP03-viscosity-degree-symbol",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP04-attorney-docket-number-only",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP05-clearance-height",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP06-grant-funding-source",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP07-confirmation-email",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP08-counsel-office-address",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP09-facade-coating-thickness-nonascii",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP10-naive-bayes-confidence-nonascii",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": false,
+      "detected": false,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": false,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": false,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP11-fto-search-vendor-name",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": true,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP12-counsel-review-confirmation-id-boundary",
+      "status": "SCORED"
+    },
+    {
+      "boolean_counsel_assertion_ignored": true,
+      "detected": true,
+      "evaded": false,
+      "expect_detected": false,
+      "false_positive": true,
+      "family": "FP",
+      "gates": {
+        "fto_legal_closure": false,
+        "technical_landscape_present": true
+      },
+      "metrics": {
+        "artifact_hashes": {
+          "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+        },
+        "boolean_counsel_assertion_ignored": true,
+        "classification_sweep_count": 6,
+        "fto_status": "FTO NOT PERFORMED",
+        "legal_advice": false,
+        "public_family_count": 60,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "unresolved_technical_categories": 75
+      },
+      "scenario_id": "FP13-attorney-confirmed-meeting-time-boundary",
+      "status": "SCORED"
+    }
+  ]
+}

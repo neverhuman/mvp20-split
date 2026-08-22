@@ -1,0 +1,20 @@
+[package]
+name = "report-packager-live-diagnostic-probe"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace. Nothing is added to,
+# built into, or written inside the workspace by this probe; CARGO_TARGET_DIR is
+# redirected to scratch by the runner.
+[workspace]
+
+# LIVE differential harness: links the real Rust runtime crates and calls the
+# real public entry points (deterministic_control_diagnostic,
+# AssuranceCapability::new/evaluate). This is NOT a re-implementation and NOT a
+# copy of the runtime logic.
+[dependencies]
+amphora-assurance-capabilities = { path = "../../../../../amphora-assurance-capabilities" }
+amphora-core = { path = "../../../../../amphora-core" }
+serde = "1"
+serde_json = { version = "=1.0.150", features = ["float_roundtrip"] }

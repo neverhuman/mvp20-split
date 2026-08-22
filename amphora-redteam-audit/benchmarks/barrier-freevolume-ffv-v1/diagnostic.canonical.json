@@ -1,0 +1,480 @@
+{
+  "authority": "AUDIT_ONLY",
+  "does_not_close": [
+    "does NOT promote amphora-barrier-corrosion-score: phase-0 is a governance state (scientific_success_required_for_phase0=false on all live locks; 0/29 ranked modules scientific_readiness==VALIDATED) needing two trust-anchored phase0 signatures this AUDIT_ONLY key cannot supply",
+    "does NOT change the manifest (still 66 receipts / 11 modules)",
+    "does NOT modify any existing receipt or any shipped Rust engine",
+    "Part B FFV is a MAGNITUDE bounds check on assumed densities, not a calibrated prediction; the penetrant size proxy is REFUTED and reported as such"
+  ],
+  "fitted_parameters": "NONE (zero free parameters; all constants are published)",
+  "honest_negatives": {
+    "penetrant_size_proxy_REFUTED": {
+      "hypothesis": "VdW-volume-equivalent sphere diameter ranks penetrants like the kinetic diameter that governs diffusion selectivity",
+      "rows": [
+        {
+          "penetrant": "H2O",
+          "published_kinetic_diam_A": 2.65,
+          "vabc_A3": 17.35,
+          "vdw_equiv_diam_A": 3.212
+        },
+        {
+          "penetrant": "O2",
+          "published_kinetic_diam_A": 3.46,
+          "vabc_A3": 23.5,
+          "vdw_equiv_diam_A": 3.554
+        },
+        {
+          "penetrant": "N2",
+          "published_kinetic_diam_A": 3.64,
+          "vabc_A3": 25.28,
+          "vdw_equiv_diam_A": 3.641
+        },
+        {
+          "penetrant": "CO2",
+          "published_kinetic_diam_A": 3.3,
+          "vabc_A3": 38.16,
+          "vdw_equiv_diam_A": 4.177
+        },
+        {
+          "penetrant": "CH4",
+          "published_kinetic_diam_A": 3.8,
+          "vabc_A3": 25.86,
+          "vdw_equiv_diam_A": 3.669
+        },
+        {
+          "penetrant": "Cl2",
+          "published_kinetic_diam_A": 3.2,
+          "vabc_A3": 38.98,
+          "vdw_equiv_diam_A": 4.207
+        },
+        {
+          "penetrant": "H2",
+          "published_kinetic_diam_A": 2.89,
+          "vabc_A3": 8.56,
+          "vdw_equiv_diam_A": 2.538
+        }
+      ],
+      "spearman_vs_published_kinetic_diameter": 0.3929,
+      "verdict": "REFUTED: shape (linear CO2/Cl2/N2 vs the volume-equivalent sphere) breaks the volume->kinetic-diameter map. Free volume sets the polymer side; penetrant selectivity needs kinetic diameter, not VdW volume."
+    },
+    "per_hardener_ranking_BLOCKED": "Absolute per-network permeability ranking needs rights-clean (measured cured density + measured P_O2/P_H2O) per hardener; not acquired this session. FFV differences at a shared assumed density are density-confounded and are NOT reported as a ranking."
+  },
+  "inputs_live_from_tree": {
+    "epoxy_amine_smiles": "reports/data/epoxy-amine-20-audit-probes.v1.json",
+    "n_probes": 20
+  },
+  "known_answer_battery": {
+    "all_pass": true,
+    "gates": [
+      {
+        "detail": "|Vx(CH4) 24.95 - lit 24.95| = 0.0 cm3/mol < 0.05",
+        "gate": "G1_mcgowan_methane_definitional",
+        "pass": true
+      },
+      {
+        "detail": "|Vx(EtOH) 44.91 - lit 44.91| = 0.0 < 0.05",
+        "gate": "G2_mcgowan_ethanol_definitional",
+        "pass": true
+      },
+      {
+        "detail": "|Vx(C6H6) 71.64 - lit 71.64| = 0.0 < 0.05",
+        "gate": "G3_mcgowan_benzene_definitional",
+        "pass": true
+      },
+      {
+        "detail": "VABC benzene 48.887 vs Bondi 48.36 -> rel err 0.0109 < 0.03 (non-circular external)",
+        "gate": "G4_vabc_benzene_vs_bondi",
+        "pass": true
+      },
+      {
+        "detail": "VABC cyclohexane 60.22 vs Bondi 61.42 -> rel err 0.0195 < 0.03",
+        "gate": "G5_vabc_cyclohexane_vs_bondi",
+        "pass": true
+      },
+      {
+        "detail": "Pearson(VABC, RDKit explicit-geometry) = 0.99926 >= 0.999 over n=20",
+        "gate": "G6_vabc_vs_rdkit_geom_pearson",
+        "pass": true
+      },
+      {
+        "detail": "Pearson(VABC, McGowan independent lineage) = 0.99833 >= 0.998 over n=20",
+        "gate": "G7_vabc_vs_mcgowan_pearson",
+        "pass": true
+      },
+      {
+        "detail": "mean RDKit/VABC = 1.0355 in [1.00,1.08]: atom-additivity reproduces 3D-overlap VdW volume within ~3.5%",
+        "gate": "G8_additivity_vs_geometry_ratio",
+        "pass": true
+      }
+    ],
+    "n_gates": 8,
+    "n_pass": 8,
+    "scope": "volumetric foundation only (G1-G8); the non-circular, load-bearing KPIs. Network FFV is diagnostic, not gated."
+  },
+  "non_circularity": "VABC/McGowan/RDKit use NO permeability, FFV or barrier data. McGowan is a different atomic lineage from Bondi; RDKit is pure geometry. The load-bearing KPI is cross-method agreement (G6/G7/G8), independent of the barrier claim being supported.",
+  "part_A_volumetric_foundation": {
+    "anchors": {
+      "benzene": {
+        "mcgowan_cm3mol": 71.64,
+        "rdkit_geom_A3": 83.4768,
+        "smiles": "c1ccccc1",
+        "vabc_A3": 81.18,
+        "vabc_cm3mol": 48.887
+      },
+      "cyclohexane": {
+        "mcgowan_cm3mol": 84.54,
+        "rdkit_geom_A3": 100.6176,
+        "smiles": "C1CCCCC1",
+        "vabc_A3": 100.0,
+        "vabc_cm3mol": 60.22
+      },
+      "ethanol": {
+        "mcgowan_cm3mol": 44.91,
+        "rdkit_geom_A3": 53.9328,
+        "smiles": "CCO",
+        "vabc_A3": 51.95,
+        "vabc_cm3mol": 31.284
+      },
+      "methane": {
+        "mcgowan_cm3mol": 24.95,
+        "rdkit_geom_A3": 28.304,
+        "smiles": "C",
+        "vabc_A3": 25.86,
+        "vabc_cm3mol": 15.573
+      },
+      "toluene": {
+        "mcgowan_cm3mol": 85.73,
+        "rdkit_geom_A3": 100.2448,
+        "smiles": "Cc1ccccc1",
+        "vabc_A3": 98.48,
+        "vabc_cm3mol": 59.305
+      },
+      "water": {
+        "mcgowan_cm3mol": 16.73,
+        "rdkit_geom_A3": 19.952,
+        "smiles": "O",
+        "vabc_A3": 17.35,
+        "vabc_cm3mol": 10.448
+      }
+    },
+    "cross_method_stats": {
+      "mean_rdkit_over_vabc_ratio": 1.0355,
+      "pearson_vabc_mcgowan": 0.99833,
+      "pearson_vabc_rdkit_geom": 0.99926
+    },
+    "probe_battery": [
+      {
+        "mcgowan_cm3mol": 114.79,
+        "name": "Phenyl glycidyl ether",
+        "rdkit_geom_A3": 144.2048,
+        "rdkit_over_vabc": 1.0427,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "c1ccccc1OCC2CO2",
+        "vabc_A3": 138.3,
+        "vabc_cm3mol": 83.284
+      },
+      {
+        "mcgowan_cm3mol": 128.88,
+        "name": "p-Cresyl glycidyl ether",
+        "rdkit_geom_A3": 161.0336,
+        "rdkit_over_vabc": 1.0349,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "Cc1ccc(OCC2CO2)cc1",
+        "vabc_A3": 155.6,
+        "vabc_cm3mol": 93.702
+      },
+      {
+        "mcgowan_cm3mol": 171.15,
+        "name": "4-tert-Butylphenyl glycidyl ether",
+        "rdkit_geom_A3": 211.1776,
+        "rdkit_over_vabc": 1.0177,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "CC(C)(C)c1ccc(OCC2CO2)cc1",
+        "vabc_A3": 207.5,
+        "vabc_cm3mol": 124.956
+      },
+      {
+        "mcgowan_cm3mol": 157.94,
+        "name": "Resorcinol diglycidyl ether",
+        "rdkit_geom_A3": 205.3232,
+        "rdkit_over_vabc": 1.0507,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "c1cc(OCC2CO2)cc(OCC3CO3)c1",
+        "vabc_A3": 195.42,
+        "vabc_cm3mol": 117.682
+      },
+      {
+        "mcgowan_cm3mol": 157.94,
+        "name": "Hydroquinone diglycidyl ether",
+        "rdkit_geom_A3": 205.208,
+        "rdkit_over_vabc": 1.0501,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "c1cc(OCC2CO2)ccc1OCC3CO3",
+        "vabc_A3": 195.42,
+        "vabc_cm3mol": 117.682
+      },
+      {
+        "mcgowan_cm3mol": 157.94,
+        "name": "Catechol diglycidyl ether",
+        "rdkit_geom_A3": 205.2,
+        "rdkit_over_vabc": 1.05,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "c1ccc(OCC2CO2)c(OCC3CO3)c1",
+        "vabc_A3": 195.42,
+        "vabc_cm3mol": 117.682
+      },
+      {
+        "mcgowan_cm3mol": 153.52,
+        "name": "1,4-Butanediol diglycidyl ether",
+        "rdkit_geom_A3": 201.1712,
+        "rdkit_over_vabc": 1.0478,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "C1OC1COCCCCOCC2CO2",
+        "vabc_A3": 192.0,
+        "vabc_cm3mol": 115.622
+      },
+      {
+        "mcgowan_cm3mol": 181.7,
+        "name": "1,6-Hexanediol diglycidyl ether",
+        "rdkit_geom_A3": 234.664,
+        "rdkit_over_vabc": 1.0356,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "C1OC1COCCCCCCOCC2CO2",
+        "vabc_A3": 226.6,
+        "vabc_cm3mol": 136.459
+      },
+      {
+        "mcgowan_cm3mol": 232.81,
+        "name": "Bisphenol F diglycidyl ether model",
+        "rdkit_geom_A3": 293.8832,
+        "rdkit_over_vabc": 1.0299,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "c1cc(OCC2CO2)ccc1Cc3ccc(OCC4CO4)cc3",
+        "vabc_A3": 285.34,
+        "vabc_cm3mol": 171.832
+      },
+      {
+        "mcgowan_cm3mol": 260.99,
+        "name": "Bisphenol A diglycidyl ether model",
+        "rdkit_geom_A3": 327.504,
+        "rdkit_over_vabc": 1.0236,
+        "role": "EPOXIDE_RESIN",
+        "smiles": "CC(c1ccc(OCC2CO2)cc1)(c3ccc(OCC4CO4)cc3)C",
+        "vabc_A3": 319.94,
+        "vabc_cm3mol": 192.668
+      },
+      {
+        "mcgowan_cm3mol": 59.0,
+        "name": "Ethylenediamine",
+        "rdkit_geom_A3": 69.752,
+        "rdkit_over_vabc": 1.0705,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NCCN",
+        "vabc_A3": 65.16,
+        "vabc_cm3mol": 39.239
+      },
+      {
+        "mcgowan_cm3mol": 97.16,
+        "name": "Diethylenetriamine",
+        "rdkit_geom_A3": 116.12,
+        "rdkit_over_vabc": 1.0484,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NCCNCCN",
+        "vabc_A3": 110.76,
+        "vabc_cm3mol": 66.7
+      },
+      {
+        "mcgowan_cm3mol": 135.32,
+        "name": "Triethylenetetramine",
+        "rdkit_geom_A3": 161.9184,
+        "rdkit_over_vabc": 1.0355,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NCCNCCNCCN",
+        "vabc_A3": 156.36,
+        "vabc_cm3mol": 94.16
+      },
+      {
+        "mcgowan_cm3mol": 73.09,
+        "name": "1,3-Diaminopropane",
+        "rdkit_geom_A3": 86.4752,
+        "rdkit_over_vabc": 1.0487,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NCCCN",
+        "vabc_A3": 82.46,
+        "vabc_cm3mol": 49.657
+      },
+      {
+        "mcgowan_cm3mol": 87.18,
+        "name": "1,4-Diaminobutane",
+        "rdkit_geom_A3": 103.192,
+        "rdkit_over_vabc": 1.0344,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NCCCCN",
+        "vabc_A3": 99.76,
+        "vabc_cm3mol": 60.075
+      },
+      {
+        "mcgowan_cm3mol": 115.36,
+        "name": "1,6-Diaminohexane",
+        "rdkit_geom_A3": 136.8256,
+        "rdkit_over_vabc": 1.0184,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NCCCCCCN",
+        "vabc_A3": 134.36,
+        "vabc_cm3mol": 80.912
+      },
+      {
+        "mcgowan_cm3mol": 119.78,
+        "name": "m-Xylylenediamine",
+        "rdkit_geom_A3": 141.5584,
+        "rdkit_over_vabc": 1.0274,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NCc1cccc(CN)c1",
+        "vabc_A3": 137.78,
+        "vabc_cm3mol": 82.971
+      },
+      {
+        "mcgowan_cm3mol": 119.78,
+        "name": "p-Xylylenediamine",
+        "rdkit_geom_A3": 141.5744,
+        "rdkit_over_vabc": 1.0275,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NCc1ccc(CN)cc1",
+        "vabc_A3": 137.78,
+        "vabc_cm3mol": 82.971
+      },
+      {
+        "mcgowan_cm3mol": 160.86,
+        "name": "Isophorone diamine model",
+        "rdkit_geom_A3": 192.5152,
+        "rdkit_over_vabc": 1.0069,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+        "vabc_A3": 191.2,
+        "vabc_cm3mol": 115.141
+      },
+      {
+        "mcgowan_cm3mol": 178.18,
+        "name": "4,4'-Methylenebis(cyclohexylamine)",
+        "rdkit_geom_A3": 215.1952,
+        "rdkit_over_vabc": 1.0082,
+        "role": "REACTIVE_AMINE_HARDENER",
+        "smiles": "NC1CCC(CC1)C2CCC(CC2)N",
+        "vabc_A3": 213.44,
+        "vabc_cm3mol": 128.534
+      }
+    ]
+  },
+  "part_B_network_ffv_bounds_DIAGNOSTIC": {
+    "all_ffv_in_amorphous_band": true,
+    "amorphous_glassy_ffv_reference_band": [
+      0.08,
+      0.2
+    ],
+    "assumed_density_band_gcc": [
+      1.1,
+      1.16,
+      1.2
+    ],
+    "ffv_span_observed": [
+      0.0827,
+      0.1806
+    ],
+    "networks": [
+      {
+        "M_repeat_gmol": 740.94,
+        "Vw_repeat_cm3mol": 424.58,
+        "dgeba_per_amine": 2.0,
+        "ffv_by_rho_gcc": {
+          "1.10": 0.1806,
+          "1.16": 0.1359,
+          "1.20": 0.1061
+        },
+        "in_amorphous_band": true,
+        "network": "DGEBA+EDA",
+        "nh_reactive": 4
+      },
+      {
+        "M_repeat_gmol": 797.05,
+        "Vw_repeat_cm3mol": 466.25,
+        "dgeba_per_amine": 2.0,
+        "ffv_by_rho_gcc": {
+          "1.10": 0.1635,
+          "1.16": 0.1179,
+          "1.20": 0.0874
+        },
+        "in_amorphous_band": true,
+        "network": "DGEBA+HMDA",
+        "nh_reactive": 4
+      },
+      {
+        "M_repeat_gmol": 817.04,
+        "Vw_repeat_cm3mol": 468.31,
+        "dgeba_per_amine": 2.0,
+        "ffv_by_rho_gcc": {
+          "1.10": 0.1804,
+          "1.16": 0.1356,
+          "1.20": 0.1058
+        },
+        "in_amorphous_band": true,
+        "network": "DGEBA+mXDA",
+        "nh_reactive": 4
+      },
+      {
+        "M_repeat_gmol": 851.14,
+        "Vw_repeat_cm3mol": 500.48,
+        "dgeba_per_amine": 2.0,
+        "ffv_by_rho_gcc": {
+          "1.10": 0.1591,
+          "1.16": 0.1133,
+          "1.20": 0.0827
+        },
+        "in_amorphous_band": true,
+        "network": "DGEBA+IPDA",
+        "nh_reactive": 4
+      },
+      {
+        "M_repeat_gmol": 877.18,
+        "Vw_repeat_cm3mol": 513.87,
+        "dgeba_per_amine": 2.0,
+        "ffv_by_rho_gcc": {
+          "1.10": 0.1623,
+          "1.16": 0.1166,
+          "1.20": 0.0861
+        },
+        "in_amorphous_band": true,
+        "network": "DGEBA+PACM",
+        "nh_reactive": 4
+      },
+      {
+        "M_repeat_gmol": 1167.5,
+        "Vw_repeat_cm3mol": 672.16,
+        "dgeba_per_amine": 3.0,
+        "ffv_by_rho_gcc": {
+          "1.10": 0.1767,
+          "1.16": 0.1318,
+          "1.20": 0.1019
+        },
+        "in_amorphous_band": true,
+        "network": "DGEBA+TETA",
+        "nh_reactive": 6
+      }
+    ],
+    "note": "FFV MAGNITUDE lands in the amorphous glassy band for real DGEBA-amine networks (bounds-consistent, like the DiBenedetto/CPVC receipts). It is NOT scored as a pass/fail gate and is NOT a calibrated predictor: the absolute value is density-controlled (a 0.10 g/cc density swing moves FFV by ~0.07), and additive Vw carries a known ~few-% overestimate of occupied volume at ring-opened networks. The load-bearing missing input is therefore MEASURED per-network cured density (rights-blocked), not more theory.",
+    "status": "DIAGNOSTIC_NOT_A_GATE"
+  },
+  "schema": "amphora.redteam-audit.barrier-freevolume-ffv-v1.diagnostic.v1",
+  "target_capability": "free-volume barrier-transport axis (a-priori occupied volume -> FFV -> Cohen-Turnbull penetrant diffusion). NEW axis: all 66 receipts are equilibrium-state; none computes the free volume that sets diffusion RATE.",
+  "target_module": "amphora-barrier-corrosion-score",
+  "theory": {
+    "ffv": "FFV = (V - 1.3*Vw)/V ; V = M/rho molar volume (Van Krevelen ch.4)",
+    "occupied_volume": "V_occ = 1.3 * Vw (Bondi 1964 universal packing factor)",
+    "transport": "Doolittle/Cohen-Turnbull 1959: D = A*exp(-B/FFV); lower FFV -> lower penetrant diffusivity -> slower H2O/O2/Cl- flux to steel -> better barrier",
+    "volume_methods": {
+      "A_VABC": "Zhao-Abraham-Zissimos 2003 atom-additive VdW volume (~Bondi)",
+      "B_McGowan": "Abraham-McGowan 1987 characteristic volume (independent lineage)",
+      "C_RDKit": "explicit-conformer 3D grid VdW volume (pure geometry)"
+    }
+  },
+  "verdict": "ENGINE_READY__FOUNDATION_KNOWN_ANSWER_VALIDATED__FFV_BOUNDS_CONSISTENT_DIAGNOSTIC__ABSOLUTE_PERMEABILITY_CALIBRATION_DATA_RIGHTS_BLOCKED"
+}

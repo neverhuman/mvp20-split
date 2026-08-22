@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-a4c0caea439dafe4194e4fded16f52e2750194b66e886ca471aa3688c88471a9",
+      "path": "events/a4c0caea439dafe4194e4fded16f52e2750194b66e886ca471aa3688c88471a9.json",
+      "sha256": "65b6288422128d1f5c4633a9e39f92a1036425ed5d5e87cc98cdce8813813e48"
+    }
+  ],
+  "module_id": "amphora-envelope-gates",
+  "schema": "amphora.module-movement-ledger.v1"
+}

@@ -1,0 +1,76 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "210c0ed962e28cc20be82af740e34854ded8e22357c18e88a5768306f6df3095",
+  "payload_decoded": {
+    "authority": "AUDIT_ONLY",
+    "carried_scientific_content": {
+      "finding": "Dielectric NO_COMPETENT_MODEL: on the zero-contamination RadonPy PI1070 clean-only pipeline (n_clean=113; n_train=67, n_calib=22, n_test=24), ML test R2=-0.02625668447651175 (MAE=13.056624833276937), stack R2=-0.04820763516393378, Onsager physics R2=-1.0405349777711903 (MAE=19.887546403521394); paired bootstrap 90% CI of (physics_MAE - ML_MAE) = [-0.40165565626212735, 13.918536931816268] includes zero. Both pre-registered refute criteria fire: neither physics nor ML nor the stack is a competent dielectric-constant predictor on the physically-valid subset.",
+      "original_internal_two_replay_canonical_sha256": "35996054d621afcfa519de8103dc3eef2d130d9f3ce7acdfb93fe304efa2fb6e",
+      "receipt_id": "c8-fire2-dielectric-clean-subset-pipeline",
+      "unchanged": true,
+      "verdict": "REFUTED"
+    },
+    "claim": "Anchored re-issue of the DSSE signature identity for amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json. The scientific content of the original receipt is carried forward UNCHANGED and is bound below by the sha256 of the original file bytes and of its decoded DSSE payload; the original file remains in place, un-deleted and un-modified.",
+    "date": "2026-08-03",
+    "derivation": "Corrected value = the signing identity ONLY. Full derivation: (1) read original file, sha256(original bytes) == superseded_sha256 recorded before any write; (2) base64-decode original DSSE payload, record sha256 as original_decoded_payload_sha256; (3) verify the original envelope cryptographically (results embedded above) and diagnose why strict trust-store verification fails; (4) re-attest the identical scientific content under the anchored PHASE0_EVALUATOR key whose seed-derived key_id and public key byte-match the pinned entry in config/phase0-trust-store.v1.json; (5) two-replay canonical-serialization gate on this payload (json.dumps sort_keys=True separators=(',',':'), serialized twice, asserted byte-equal); (6) after writing, re-verify the original file sha256 is byte-intact and DSSE-verify this re-issue against the trust store. No scientific number was altered, re-derived, or re-interpreted; every value's derivation remains the original receipt's derivation, byte-intact at superseded_sha256.",
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-molecule-property",
+    "original_decoded_payload_sha256": "eded31b4af6bfe13a74b1867443349f31d215e5538e24e414e906b717b518b2c",
+    "original_file_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+    "original_signature_record": {
+      "defect": "Signed by non-anchored LOCAL_DEVELOPMENT_AUDIT_ONLY key local-9028773f49591193 (public_key_hex 4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93), which is NOT present in config/phase0-trust-store.v1.json; strict trust-store verification fails.",
+      "embedded_public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+      "keyid": "local-9028773f49591193",
+      "payloadType": "application/vnd.amphora.molecule-property.c8-phys-ml-stack-comparison-receipt.v1+json",
+      "sig_b64": "lSTt4mYo/fxnGh1jZw84CJtd9kSBh8yJ5jM8ZDmcWkOKMWbnh/ymp5arYip0zSAH/XnvVyfW98jwqT4ghp3CDg==",
+      "signature_cryptographically_valid_with_anchored_evaluator_public_key": false,
+      "signature_cryptographically_valid_with_embedded_public_key": true,
+      "strict_trust_store_lookup_of_original_keyid_succeeds": false
+    },
+    "promotes_authority": false,
+    "reattack_at_signing_time": {
+      "check": "sha256(original file) equals pre-recorded value; seed-derived key matches pinned trust-store evaluator entry",
+      "original_sha256_reverified": true,
+      "seed_derived_key_matches_trust_store": true
+    },
+    "reissue_kind": "SIGNATURE_IDENTITY_REISSUE",
+    "repair_item": "R-A11",
+    "repair_mode": "interactive-2026-08-03",
+    "schema": "amphora.molecule-property.c8-phys-ml-stack-comparison-receipt.anchored-reissue.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "supersedes": {
+      "reason": "signature-identity re-issue only - scientific content unchanged, re-verified byte-intact",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+      "superseded_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "trust_store": {
+      "path": "config/phase0-trust-store.v1.json",
+      "pinned_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "pinned_evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "seed_derived_key_matches_pinned_entry": true,
+      "sha256": "fc4fa87f70e58befc39b386a0975c9520a44b1d944c7c4a896d6c16b7437b233"
+    },
+    "two_replay_sha256_gate": "PASS"
+  },
+  "signature": {
+    "payload": "eyJhdXRob3JpdHkiOiJBVURJVF9PTkxZIiwiY2FycmllZF9zY2llbnRpZmljX2NvbnRlbnQiOnsiZmluZGluZyI6IkRpZWxlY3RyaWMgTk9fQ09NUEVURU5UX01PREVMOiBvbiB0aGUgemVyby1jb250YW1pbmF0aW9uIFJhZG9uUHkgUEkxMDcwIGNsZWFuLW9ubHkgcGlwZWxpbmUgKG5fY2xlYW49MTEzOyBuX3RyYWluPTY3LCBuX2NhbGliPTIyLCBuX3Rlc3Q9MjQpLCBNTCB0ZXN0IFIyPS0wLjAyNjI1NjY4NDQ3NjUxMTc1IChNQUU9MTMuMDU2NjI0ODMzMjc2OTM3KSwgc3RhY2sgUjI9LTAuMDQ4MjA3NjM1MTYzOTMzNzgsIE9uc2FnZXIgcGh5c2ljcyBSMj0tMS4wNDA1MzQ5Nzc3NzExOTAzIChNQUU9MTkuODg3NTQ2NDAzNTIxMzk0KTsgcGFpcmVkIGJvb3RzdHJhcCA5MCUgQ0kgb2YgKHBoeXNpY3NfTUFFIC0gTUxfTUFFKSA9IFstMC40MDE2NTU2NTYyNjIxMjczNSwgMTMuOTE4NTM2OTMxODE2MjY4XSBpbmNsdWRlcyB6ZXJvLiBCb3RoIHByZS1yZWdpc3RlcmVkIHJlZnV0ZSBjcml0ZXJpYSBmaXJlOiBuZWl0aGVyIHBoeXNpY3Mgbm9yIE1MIG5vciB0aGUgc3RhY2sgaXMgYSBjb21wZXRlbnQgZGllbGVjdHJpYy1jb25zdGFudCBwcmVkaWN0b3Igb24gdGhlIHBoeXNpY2FsbHktdmFsaWQgc3Vic2V0LiIsIm9yaWdpbmFsX2ludGVybmFsX3R3b19yZXBsYXlfY2Fub25pY2FsX3NoYTI1NiI6IjM1OTk2MDU0ZDYyMWFmY2ZhNTE5ZGU4MTAzZGMzZWVmMmQxMzBkOWYzY2U3YWNkZmI5M2ZlMzA0ZWZhMmZiNmUiLCJyZWNlaXB0X2lkIjoiYzgtZmlyZTItZGllbGVjdHJpYy1jbGVhbi1zdWJzZXQtcGlwZWxpbmUiLCJ1bmNoYW5nZWQiOnRydWUsInZlcmRpY3QiOiJSRUZVVEVEIn0sImNsYWltIjoiQW5jaG9yZWQgcmUtaXNzdWUgb2YgdGhlIERTU0Ugc2lnbmF0dXJlIGlkZW50aXR5IGZvciBhbXBob3JhLW1vbGVjdWxlLXByb3BlcnR5L2JlbmNobWFya3MvcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLWM4LWZpcmUyLWNsZWFuLXN1YnNldC12MS9jOF9maXJlMl9kaWVsZWN0cmljX2NsZWFuX3N1YnNldF9yZWNlaXB0LnYxLmpzb24uIFRoZSBzY2llbnRpZmljIGNvbnRlbnQgb2YgdGhlIG9yaWdpbmFsIHJlY2VpcHQgaXMgY2FycmllZCBmb3J3YXJkIFVOQ0hBTkdFRCBhbmQgaXMgYm91bmQgYmVsb3cgYnkgdGhlIHNoYTI1NiBvZiB0aGUgb3JpZ2luYWwgZmlsZSBieXRlcyBhbmQgb2YgaXRzIGRlY29kZWQgRFNTRSBwYXlsb2FkOyB0aGUgb3JpZ2luYWwgZmlsZSByZW1haW5zIGluIHBsYWNlLCB1bi1kZWxldGVkIGFuZCB1bi1tb2RpZmllZC4iLCJkYXRlIjoiMjAyNi0wOC0wMyIsImRlcml2YXRpb24iOiJDb3JyZWN0ZWQgdmFsdWUgPSB0aGUgc2lnbmluZyBpZGVudGl0eSBPTkxZLiBGdWxsIGRlcml2YXRpb246ICgxKSByZWFkIG9yaWdpbmFsIGZpbGUsIHNoYTI1NihvcmlnaW5hbCBieXRlcykgPT0gc3VwZXJzZWRlZF9zaGEyNTYgcmVjb3JkZWQgYmVmb3JlIGFueSB3cml0ZTsgKDIpIGJhc2U2NC1kZWNvZGUgb3JpZ2luYWwgRFNTRSBwYXlsb2FkLCByZWNvcmQgc2hhMjU2IGFzIG9yaWdpbmFsX2RlY29kZWRfcGF5bG9hZF9zaGEyNTY7ICgzKSB2ZXJpZnkgdGhlIG9yaWdpbmFsIGVudmVsb3BlIGNyeXB0b2dyYXBoaWNhbGx5IChyZXN1bHRzIGVtYmVkZGVkIGFib3ZlKSBhbmQgZGlhZ25vc2Ugd2h5IHN0cmljdCB0cnVzdC1zdG9yZSB2ZXJpZmljYXRpb24gZmFpbHM7ICg0KSByZS1hdHRlc3QgdGhlIGlkZW50aWNhbCBzY2llbnRpZmljIGNvbnRlbnQgdW5kZXIgdGhlIGFuY2hvcmVkIFBIQVNFMF9FVkFMVUFUT1Iga2V5IHdob3NlIHNlZWQtZGVyaXZlZCBrZXlfaWQgYW5kIHB1YmxpYyBrZXkgYnl0ZS1tYXRjaCB0aGUgcGlubmVkIGVudHJ5IGluIGNvbmZpZy9waGFzZTAtdHJ1c3Qtc3RvcmUudjEuanNvbjsgKDUpIHR3by1yZXBsYXkgY2Fub25pY2FsLXNlcmlhbGl6YXRpb24gZ2F0ZSBvbiB0aGlzIHBheWxvYWQgKGpzb24uZHVtcHMgc29ydF9rZXlzPVRydWUgc2VwYXJhdG9ycz0oJywnLCc6JyksIHNlcmlhbGl6ZWQgdHdpY2UsIGFzc2VydGVkIGJ5dGUtZXF1YWwpOyAoNikgYWZ0ZXIgd3JpdGluZywgcmUtdmVyaWZ5IHRoZSBvcmlnaW5hbCBmaWxlIHNoYTI1NiBpcyBieXRlLWludGFjdCBhbmQgRFNTRS12ZXJpZnkgdGhpcyByZS1pc3N1ZSBhZ2FpbnN0IHRoZSB0cnVzdCBzdG9yZS4gTm8gc2NpZW50aWZpYyBudW1iZXIgd2FzIGFsdGVyZWQsIHJlLWRlcml2ZWQsIG9yIHJlLWludGVycHJldGVkOyBldmVyeSB2YWx1ZSdzIGRlcml2YXRpb24gcmVtYWlucyB0aGUgb3JpZ2luYWwgcmVjZWlwdCdzIGRlcml2YXRpb24sIGJ5dGUtaW50YWN0IGF0IHN1cGVyc2VkZWRfc2hhMjU2LiIsImZsaXBzX3NjaWVudGlmaWNfcmVhZGluZXNzIjpmYWxzZSwiZ2VuZXJhdGVkX29uX2hvc3QiOiJ4YmFiZTIiLCJtb2RpZmllc19leGlzdGluZ19yZWNlaXB0cyI6ZmFsc2UsIm1vZGlmaWVzX21hbmlmZXN0IjpmYWxzZSwibW9kdWxlIjoiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eSIsIm9yaWdpbmFsX2RlY29kZWRfcGF5bG9hZF9zaGEyNTYiOiJlZGVkMzFiNGFmNmJmZTEzYTc0YjE4Njc0NDMzNDlmMzFkMjE1ZTU1MzhlMjRlNDE0ZTkwNmI3MTdiNTE4YjJjIiwib3JpZ2luYWxfZmlsZV9zaGEyNTYiOiJkYTkwZjY0Mjk5YjBjYWQ2Mjc4YjRlZjMyYjE2NzMzNmU2ZDNiMTBhMjZmNTcwOTA2Y2JkZjU2OGVmNDQwNGU3Iiwib3JpZ2luYWxfc2lnbmF0dXJlX3JlY29yZCI6eyJkZWZlY3QiOiJTaWduZWQgYnkgbm9uLWFuY2hvcmVkIExPQ0FMX0RFVkVMT1BNRU5UX0FVRElUX09OTFkga2V5IGxvY2FsLTkwMjg3NzNmNDk1OTExOTMgKHB1YmxpY19rZXlfaGV4IDRiNzIyZjQ1MTZlMDM1Y2UzY2I5NWNjZWNmZmU0NjM4YTY4N2Q5MjQxZTY5NzBmNGMxY2Y1YzI4NWIyZWRmOTMpLCB3aGljaCBpcyBOT1QgcHJlc2VudCBpbiBjb25maWcvcGhhc2UwLXRydXN0LXN0b3JlLnYxLmpzb247IHN0cmljdCB0cnVzdC1zdG9yZSB2ZXJpZmljYXRpb24gZmFpbHMuIiwiZW1iZWRkZWRfcHVibGljX2tleV9oZXgiOiI0YjcyMmY0NTE2ZTAzNWNlM2NiOTVjY2VjZmZlNDYzOGE2ODdkOTI0MWU2OTcwZjRjMWNmNWMyODViMmVkZjkzIiwia2V5aWQiOiJsb2NhbC05MDI4NzczZjQ5NTkxMTkzIiwicGF5bG9hZFR5cGUiOiJhcHBsaWNhdGlvbi92bmQuYW1waG9yYS5tb2xlY3VsZS1wcm9wZXJ0eS5jOC1waHlzLW1sLXN0YWNrLWNvbXBhcmlzb24tcmVjZWlwdC52MStqc29uIiwic2lnX2I2NCI6ImxTVHQ0bVlvL2Z4bkdoMWpadzg0Q0p0ZDlrU0JoOHlKNWpNOFpEbWNXa09LTVdibmgveW1wNWFyWWlwMHpTQUgvWG52VnlmVzk4andxVDRnaHAzQ0RnPT0iLCJzaWduYXR1cmVfY3J5cHRvZ3JhcGhpY2FsbHlfdmFsaWRfd2l0aF9hbmNob3JlZF9ldmFsdWF0b3JfcHVibGljX2tleSI6ZmFsc2UsInNpZ25hdHVyZV9jcnlwdG9ncmFwaGljYWxseV92YWxpZF93aXRoX2VtYmVkZGVkX3B1YmxpY19rZXkiOnRydWUsInN0cmljdF90cnVzdF9zdG9yZV9sb29rdXBfb2Zfb3JpZ2luYWxfa2V5aWRfc3VjY2VlZHMiOmZhbHNlfSwicHJvbW90ZXNfYXV0aG9yaXR5IjpmYWxzZSwicmVhdHRhY2tfYXRfc2lnbmluZ190aW1lIjp7ImNoZWNrIjoic2hhMjU2KG9yaWdpbmFsIGZpbGUpIGVxdWFscyBwcmUtcmVjb3JkZWQgdmFsdWU7IHNlZWQtZGVyaXZlZCBrZXkgbWF0Y2hlcyBwaW5uZWQgdHJ1c3Qtc3RvcmUgZXZhbHVhdG9yIGVudHJ5Iiwib3JpZ2luYWxfc2hhMjU2X3JldmVyaWZpZWQiOnRydWUsInNlZWRfZGVyaXZlZF9rZXlfbWF0Y2hlc190cnVzdF9zdG9yZSI6dHJ1ZX0sInJlaXNzdWVfa2luZCI6IlNJR05BVFVSRV9JREVOVElUWV9SRUlTU1VFIiwicmVwYWlyX2l0ZW0iOiJSLUExMSIsInJlcGFpcl9tb2RlIjoiaW50ZXJhY3RpdmUtMjAyNi0wOC0wMyIsInNjaGVtYSI6ImFtcGhvcmEubW9sZWN1bGUtcHJvcGVydHkuYzgtcGh5cy1tbC1zdGFjay1jb21wYXJpc29uLXJlY2VpcHQuYW5jaG9yZWQtcmVpc3N1ZS52MSIsInNpZ25pbmdfa2V5Ijp7ImRlcml2ZXNfcGlubmVkX3RydXN0X3N0b3JlX2tleV9pZCI6dHJ1ZSwia2V5X2lkIjoicGhhc2UwLWV2YWx1YXRvci0zZWY2YjM1Y2RiYmZlYTc0YTk2YTVjOWI5OGE1MTVkNTcxNThhMDllY2FmZjEwYWNmYTFmMTU5OTBiZTAwMTc4IiwicHVibGljX2tleV9oZXgiOiI2Y2YwN2FiZjFhNTVhZGFhYzEzZTc4YWJjMzFjNTMxZDAzZDhmMGQ0MjMyMzQ2MzQ0YTczNjQxOGM3YjQ1NjY0Iiwicm9sZSI6IlBIQVNFMF9FVkFMVUFUT1IifSwic3VwZXJzZWRlcyI6eyJyZWFzb24iOiJzaWduYXR1cmUtaWRlbnRpdHkgcmUtaXNzdWUgb25seSAtIHNjaWVudGlmaWMgY29udGVudCB1bmNoYW5nZWQsIHJlLXZlcmlmaWVkIGJ5dGUtaW50YWN0Iiwic3VwZXJzZWRlZF9kZWxldGVkX29yX21vZGlmaWVkIjpmYWxzZSwic3VwZXJzZWRlZF9wYXRoIjoiYW1waG9yYS1tb2xlY3VsZS1wcm9wZXJ0eS9iZW5jaG1hcmtzL3BoeXMtbWwtc3RhY2stY29tcGFyaXNvbi1jOC1maXJlMi1jbGVhbi1zdWJzZXQtdjEvYzhfZmlyZTJfZGllbGVjdHJpY19jbGVhbl9zdWJzZXRfcmVjZWlwdC52MS5qc29uIiwic3VwZXJzZWRlZF9zaGEyNTYiOiJkYTkwZjY0Mjk5YjBjYWQ2Mjc4YjRlZjMyYjE2NzMzNmU2ZDNiMTBhMjZmNTcwOTA2Y2JkZjU2OGVmNDQwNGU3In0sInRydXN0X2FuY2hvcmVkX2luX3BoYXNlMF9zdG9yZSI6dHJ1ZSwidHJ1c3Rfc3RvcmUiOnsicGF0aCI6ImNvbmZpZy9waGFzZTAtdHJ1c3Qtc3RvcmUudjEuanNvbiIsInBpbm5lZF9ldmFsdWF0b3Jfa2V5X2lkIjoicGhhc2UwLWV2YWx1YXRvci0zZWY2YjM1Y2RiYmZlYTc0YTk2YTVjOWI5OGE1MTVkNTcxNThhMDllY2FmZjEwYWNmYTFmMTU5OTBiZTAwMTc4IiwicGlubmVkX2V2YWx1YXRvcl9wdWJsaWNfa2V5X2hleCI6IjZjZjA3YWJmMWE1NWFkYWFjMTNlNzhhYmMzMWM1MzFkMDNkOGYwZDQyMzIzNDYzNDRhNzM2NDE4YzdiNDU2NjQiLCJzZWVkX2Rlcml2ZWRfa2V5X21hdGNoZXNfcGlubmVkX2VudHJ5Ijp0cnVlLCJzaGEyNTYiOiJmYzRmYTg3ZjcwZTU4YmVmYzM5YjM4NmEwOTc1Yzk1MjBhNDRiMWQ5NDRjN2M0YTg5NmQ2YzE2Yjc0MzdiMjMzIn0sInR3b19yZXBsYXlfc2hhMjU2X2dhdGUiOiJQQVNTIn0=",
+    "payloadType": "application/vnd.amphora.molecule-property.c8-phys-ml-stack-comparison-receipt.anchored-reissue.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "zRPYMOECEdgRawEV5ncx2gEdCYMbjh4BfIaVTeCDOIjgU09MTxzxFnqi1D3OvgjYt1x+RJQ8jVvTQ1KSIhN1CQ=="
+      }
+    ]
+  }
+}

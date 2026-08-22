@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amphora.invalid/schemas/acquisition-unit.v2.schema.json",
+  "title": "AcquisitionUnitV2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "acquisition_unit_id", "source_intent_id", "title", "filename", "source_url", "expected_sha256", "expected_bytes", "cache_import_path", "credential_ref", "parser", "endpoint", "unit", "identity_columns", "condition_columns", "citation_column", "value_column", "evidence_class", "rights_decision_id", "consumers", "blocked_reason"],
+  "properties": {
+    "schema": {"const": "amphora.acquisition-unit.v2"},
+    "acquisition_unit_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]+$"},
+    "source_intent_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "filename": {"type": "string", "minLength": 1},
+    "source_url": {"type": ["string", "null"], "format": "uri"},
+    "expected_sha256": {"oneOf": [{"type": "string", "pattern": "^[0-9a-f]{64}$"}, {"type": "null"}]},
+    "expected_bytes": {"type": ["integer", "null"], "minimum": 0},
+    "cache_import_path": {"type": ["string", "null"]},
+    "credential_ref": {"type": ["string", "null"]},
+    "parser": {"enum": ["BIGSOLDB_SOLUBILITY", "BIGSOLDB_DENSITY", "NIST_CORR_ZIP", "CSV", "ZIP_CSV_CORPUS", "SPLIT_CSV", "METADATA_ONLY", "SECOM_ZIP", "PRONTO_PROCESS_ZIP", "CHEBI_SDF_GZIP"]},
+    "endpoint": {"type": "string", "minLength": 1},
+    "unit": {"type": ["string", "null"]},
+    "identity_columns": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "condition_columns": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "citation_column": {"type": ["string", "null"]},
+    "value_column": {"type": ["string", "null"]},
+    "evidence_class": {"enum": ["OWNED_MEASURED", "EXTERNAL_MEASURED", "COMPUTED", "PREDICTED", "GENERATED", "WEAK_LABEL", "METADATA_ONLY", "PROHIBITED"]},
+    "rights_decision_id": {"type": "string", "minLength": 1},
+    "consumers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["module_id", "consumer", "scoring", "authority_limit"],
+        "properties": {
+          "module_id": {"type": "string", "minLength": 1},
+          "consumer": {"enum": ["OFFLINE_BENCHMARK", "TRAINING_CORPUS", "RETRIEVAL_INDEX", "DIAGNOSTIC"]},
+          "scoring": {"type": "boolean"},
+          "authority_limit": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "blocked_reason": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "days_since_t03": 10,
+  "fresh_probe_results_2026_08_15": [
+    {
+      "binding_margin": null,
+      "fired_as_expected": true,
+      "kpi_expected": "Err (REJECT)",
+      "policy_bounds": {
+        "lower_inclusive": 200.0,
+        "upper_inclusive": 100.0
+      },
+      "reasons": [
+        "inverted_bounds:part_A_mass_within_tolerance"
+      ],
+      "sub_probe": "lower_gt_upper",
+      "verdict": "REJECT"
+    },
+    {
+      "binding_margin": "nan",
+      "fired_as_expected": false,
+      "kpi_expected": "Err (REJECT)",
+      "policy_bounds": {
+        "lower_inclusive": "NaN",
+        "upper_inclusive": 189.0
+      },
+      "reasons": [],
+      "sub_probe": "lower_is_nan",
+      "verdict": "FAIL"
+    },
+    {
+      "binding_margin": 1.0,
+      "fired_as_expected": false,
+      "kpi_expected": "Err (REJECT)",
+      "policy_bounds": {
+        "lower_inclusive": 171.0,
+        "upper_inclusive": "Infinity"
+      },
+      "reasons": [],
+      "sub_probe": "upper_is_infinity",
+      "verdict": "PASS"
+    }
+  ],
+  "kpi_claim_under_test": {
+    "kpi_claimed_note_verbatim": "ENVELOPE_BOUND_INVERSION axis. Three probes: lower > upper, lower = NaN, upper = Infinity. All return Err.",
+    "kpi_claimed_observed": 1.0,
+    "kpi_claimed_passed": true,
+    "metric_name": "envelope_bound_inversion_fail_closed_rate"
+  },
+  "kpi_metric_is_currently_stale_and_false": true,
+  "kpi_note_is_currently_true": false,
+  "module": "amphora-envelope-gates",
+  "n_fired_as_expected": 1,
+  "n_probes": 3,
+  "n_supersession_or_retraction_references": 0,
+  "observed_rate_today": 0.3333333333333333,
+  "provenance_continuity": {
+    "kpi_sha256_now": "1e8ce600d2ebc3f07bb8b05d3b3fb728685dc8d9fe6094bee7810185e0ff1b7f",
+    "kpi_unchanged_since_t03": true,
+    "oracle_sha256_now": "68aed836f07e501f8013286a4a756677d912ce926ea098c571d4407d34248a42",
+    "oracle_unchanged_since_t03": true,
+    "t03_recorded_kpi_sha256": "1e8ce600d2ebc3f07bb8b05d3b3fb728685dc8d9fe6094bee7810185e0ff1b7f",
+    "t03_recorded_oracle_sha256": "68aed836f07e501f8013286a4a756677d912ce926ea098c571d4407d34248a42"
+  },
+  "retraction_index_exists": false,
+  "run_date": "2026-08-15",
+  "study_id": "kpi-claim-currency-v1",
+  "supersession_or_retraction_references_to_kpi_file": []
+}

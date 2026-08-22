@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "CONTRACT_FIXTURES",
+  "missing_values_imputed": false,
+  "module_id": "amphora-formulation-arithmetic",
+  "rights_gate_passed": true,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "09d719c1616a9afe22a2773718aeeb69833928cdd617fdada432f8021dddb962"
+}

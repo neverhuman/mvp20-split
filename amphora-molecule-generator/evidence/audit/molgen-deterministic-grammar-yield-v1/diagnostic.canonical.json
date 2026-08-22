@@ -1,0 +1,652 @@
+{
+  "accepted_proposals": [
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "CC(C)(c1ccc(N)cc1)c1ccc(N)cc1",
+      "difunctional_hardener": true,
+      "family": "F4_bridged_bisaniline",
+      "feasible_sa_below_6": true,
+      "input_smiles": "Nc1ccc(C(C)(C)c2ccc(N)cc2)cc1",
+      "name": "4,4'-isopropylidenedianiline",
+      "sa_score": 1.896621,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "name": "IPDA",
+      "sa_score": 3.922821,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NC1CCC(N)CC1",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NC1CCC(N)CC1",
+      "name": "1,4-DACH",
+      "sa_score": 2.424602,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NC1CCCC(N)C1",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NC1CCCC(N)C1",
+      "name": "1,3-DACH",
+      "sa_score": 3.224467,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NC1CCCCC1N",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NC1CCCCC1N",
+      "name": "1,2-DACH",
+      "sa_score": 3.082815,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCC1CCC(CN)C1",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCC1CCC(CN)C1",
+      "name": "1,3-cyclopentane-bis(aminomethyl)",
+      "sa_score": 3.187913,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCC1CCC(CN)CC1",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCC1CCC(CN)CC1",
+      "name": "1,4-BAC",
+      "sa_score": 2.265295,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCC1CCCC(CN)C1",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCC1CCCC(CN)C1",
+      "name": "1,3-BAC",
+      "sa_score": 3.112956,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCC1CCCCC1CN",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCC1CCCCC1CN",
+      "name": "1,2-BAC",
+      "sa_score": 3.048512,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCCCCCCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCCCCCCCCCN",
+      "name": "1,12-diaminoalkane(C12)",
+      "sa_score": 1.445587,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCCCCCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCCCCCCCCN",
+      "name": "1,11-diaminoalkane(C11)",
+      "sa_score": 1.491252,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCCCCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCCCCCCCN",
+      "name": "1,10-diaminoalkane(C10)",
+      "sa_score": 1.545012,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCCCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCCCCCCN",
+      "name": "1,9-diaminoalkane(C9)",
+      "sa_score": 1.608627,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCCCCCN",
+      "name": "1,8-diaminoalkane(C8)",
+      "sa_score": 1.684497,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCCCCN",
+      "name": "1,7-diaminoalkane(C7)",
+      "sa_score": 1.776015,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCCCN",
+      "name": "1,6-diaminoalkane(C6)",
+      "sa_score": 1.888164,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCCN",
+      "name": "1,5-diaminoalkane(C5)",
+      "sa_score": 1.936231,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCCN",
+      "name": "1,4-diaminoalkane(C4)",
+      "sa_score": 2.011207,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCCN",
+      "difunctional_hardener": true,
+      "family": "F2_alpha_omega_diamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCCN",
+      "name": "1,3-diaminoalkane(C3)",
+      "sa_score": 2.323135,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCCN",
+      "difunctional_hardener": true,
+      "family": "F1_polyethyleneamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCN",
+      "name": "EDA",
+      "sa_score": 2.300385,
+      "valid": true
+    },
+    {
+      "active_nh": 3,
+      "amine_sites": 3,
+      "canonical_smiles": "NCCN1CCCNCC1",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCN1CCCNCC1",
+      "name": "homopiperazine-N,N'",
+      "sa_score": 2.243384,
+      "valid": true
+    },
+    {
+      "active_nh": 3,
+      "amine_sites": 3,
+      "canonical_smiles": "NCCN1CCNCC1",
+      "difunctional_hardener": true,
+      "family": "F3_cycloaliphatic",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCN1CCNCC1",
+      "name": "piperazine-bis(aminoethyl)/AEP",
+      "sa_score": 2.274507,
+      "valid": true
+    },
+    {
+      "active_nh": 5,
+      "amine_sites": 3,
+      "canonical_smiles": "NCCNCCN",
+      "difunctional_hardener": true,
+      "family": "F1_polyethyleneamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCNCCN",
+      "name": "DETA",
+      "sa_score": 2.449624,
+      "valid": true
+    },
+    {
+      "active_nh": 6,
+      "amine_sites": 4,
+      "canonical_smiles": "NCCNCCNCCN",
+      "difunctional_hardener": true,
+      "family": "F1_polyethyleneamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCNCCNCCN",
+      "name": "TETA",
+      "sa_score": 2.467656,
+      "valid": true
+    },
+    {
+      "active_nh": 7,
+      "amine_sites": 5,
+      "canonical_smiles": "NCCNCCNCCNCCN",
+      "difunctional_hardener": true,
+      "family": "F1_polyethyleneamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCNCCNCCNCCN",
+      "name": "TEPA",
+      "sa_score": 2.399594,
+      "valid": true
+    },
+    {
+      "active_nh": 8,
+      "amine_sites": 6,
+      "canonical_smiles": "NCCNCCNCCNCCNCCN",
+      "difunctional_hardener": true,
+      "family": "F1_polyethyleneamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCNCCNCCNCCNCCN",
+      "name": "PEHA",
+      "sa_score": 2.317909,
+      "valid": true
+    },
+    {
+      "active_nh": 9,
+      "amine_sites": 7,
+      "canonical_smiles": "NCCNCCNCCNCCNCCNCCN",
+      "difunctional_hardener": true,
+      "family": "F1_polyethyleneamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCNCCNCCNCCNCCNCCN",
+      "name": "ethyleneamine-k6",
+      "sa_score": 2.269855,
+      "valid": true
+    },
+    {
+      "active_nh": 10,
+      "amine_sites": 8,
+      "canonical_smiles": "NCCNCCNCCNCCNCCNCCNCCN",
+      "difunctional_hardener": true,
+      "family": "F1_polyethyleneamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCNCCNCCNCCNCCNCCNCCN",
+      "name": "ethyleneamine-k7",
+      "sa_score": 2.24545,
+      "valid": true
+    },
+    {
+      "active_nh": 11,
+      "amine_sites": 9,
+      "canonical_smiles": "NCCNCCNCCNCCNCCNCCNCCNCCN",
+      "difunctional_hardener": true,
+      "family": "F1_polyethyleneamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCCNCCNCCNCCNCCNCCNCCNCCN",
+      "name": "ethyleneamine-k8",
+      "sa_score": 2.238711,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCc1ccc(CN)cc1",
+      "difunctional_hardener": true,
+      "family": "F5_xylylenediamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCc1ccc(CN)cc1",
+      "name": "p-XDA/PXDA",
+      "sa_score": 1.656183,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCc1cccc(CN)c1",
+      "difunctional_hardener": true,
+      "family": "F5_xylylenediamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCc1cccc(CN)c1",
+      "name": "m-XDA/MXDA",
+      "sa_score": 1.747706,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "NCc1ccccc1CN",
+      "difunctional_hardener": true,
+      "family": "F5_xylylenediamine",
+      "feasible_sa_below_6": true,
+      "input_smiles": "NCc1ccccc1CN",
+      "name": "o-XDA",
+      "sa_score": 1.797374,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+      "difunctional_hardener": true,
+      "family": "F4_bridged_bisaniline",
+      "feasible_sa_below_6": true,
+      "input_smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+      "name": "benzidine(4,4'-diaminobiphenyl)",
+      "sa_score": 1.377404,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "Nc1ccc(C(=O)c2ccc(N)cc2)cc1",
+      "difunctional_hardener": true,
+      "family": "F4_bridged_bisaniline",
+      "feasible_sa_below_6": true,
+      "input_smiles": "Nc1ccc(C(=O)c2ccc(N)cc2)cc1",
+      "name": "4,4'-diaminobenzophenone",
+      "sa_score": 1.640167,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "difunctional_hardener": true,
+      "family": "F4_bridged_bisaniline",
+      "feasible_sa_below_6": true,
+      "input_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "name": "MDA/DDM(methylene)",
+      "sa_score": 1.591053,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "Nc1ccc(Oc2ccc(N)cc2)cc1",
+      "difunctional_hardener": true,
+      "family": "F4_bridged_bisaniline",
+      "feasible_sa_below_6": true,
+      "input_smiles": "Nc1ccc(Oc2ccc(N)cc2)cc1",
+      "name": "4,4'-oxydianiline(ODA)",
+      "sa_score": 1.55722,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "difunctional_hardener": true,
+      "family": "F4_bridged_bisaniline",
+      "feasible_sa_below_6": true,
+      "input_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "name": "DDS(sulfone)",
+      "sa_score": 1.762741,
+      "valid": true
+    },
+    {
+      "active_nh": 4,
+      "amine_sites": 2,
+      "canonical_smiles": "Nc1ccc(Sc2ccc(N)cc2)cc1",
+      "difunctional_hardener": true,
+      "family": "F4_bridged_bisaniline",
+      "feasible_sa_below_6": true,
+      "input_smiles": "Nc1ccc(Sc2ccc(N)cc2)cc1",
+      "name": "4,4'-thiodianiline",
+      "sa_score": 1.872474,
+      "valid": true
+    }
+  ],
+  "closes": [],
+  "does_not_close": [
+    "Runtime remains LOCKED_INTERNAL; no proposal emission enabled.",
+    "No Phase-0 promotion; scientific_readiness stays UNVALIDATED.",
+    "No trained-generative-model or prospective closed-loop superiority evidence.",
+    "Structural novelty is not an IP/FTO novelty claim (counsel-owned)."
+  ],
+  "fail_closed_decoy_demo": {
+    "all_rejected": true,
+    "n_decoys": 10,
+    "results": [
+      {
+        "name": "toluene(no amine)",
+        "rejected": true,
+        "smiles": "Cc1ccccc1",
+        "valid": true
+      },
+      {
+        "name": "acetone(no NH)",
+        "rejected": true,
+        "smiles": "CC(C)=O",
+        "valid": true
+      },
+      {
+        "name": "acetamide(amide NH)",
+        "rejected": true,
+        "smiles": "CC(N)=O",
+        "valid": true
+      },
+      {
+        "name": "pyridine(aromatic-N no H)",
+        "rejected": true,
+        "smiles": "c1ccncc1",
+        "valid": true
+      },
+      {
+        "name": "nitrobenzene(nitro)",
+        "rejected": true,
+        "smiles": "O=[N+]([O-])c1ccccc1",
+        "valid": true
+      },
+      {
+        "name": "aniline(monofunctional)",
+        "rejected": true,
+        "smiles": "Nc1ccccc1",
+        "valid": true
+      },
+      {
+        "name": "benzylamine(monofunctional)",
+        "rejected": true,
+        "smiles": "NCc1ccccc1",
+        "valid": true
+      },
+      {
+        "name": "ethanol(no N)",
+        "rejected": true,
+        "smiles": "CCO",
+        "valid": true
+      },
+      {
+        "name": "invalid-unclosed-ring",
+        "rejected": true,
+        "smiles": "C1CC",
+        "valid": false
+      },
+      {
+        "name": "invalid-pentavalent-C",
+        "rejected": true,
+        "smiles": "C(C)(C)(C)(C)C",
+        "valid": false
+      }
+    ]
+  },
+  "generator_grammar": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20260728,
+    "difunctional_hardener_universe": 38,
+    "families": [
+      "F1_polyethyleneamine",
+      "F2_alpha_omega_diamine",
+      "F3_cycloaliphatic",
+      "F4_bridged_bisaniline",
+      "F5_xylylenediamine"
+    ],
+    "feasible_fraction_bootstrap95_ci": [
+      1.0,
+      1.0
+    ],
+    "feasible_fraction_over_hardeners": 1.0,
+    "novel_vs_prior_curated_seed": 27,
+    "productions_emitted": 39,
+    "sa_max": 3.922821,
+    "sa_median_bootstrap95_ci": [
+      1.797374,
+      2.287446
+    ],
+    "sa_median_over_hardeners": 2.124959,
+    "sa_min": 1.377404,
+    "unique_canonical": 38,
+    "uniqueness_fraction": 0.974359,
+    "valid": 39,
+    "valid_unique_difunctional_feasible_yield": 38,
+    "validity_fraction": 1.0
+  },
+  "hash_and_count_lock": {
+    "grammar_productions_emitted": 39,
+    "pi1m_locked_sha256": "fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17",
+    "sa_ka_prefix_rows_compared": 3000
+  },
+  "headline": "Deterministic rule/template generative grammar over 5 published epoxy-amine hardener scaffold families enumerates 39 productions -> 39 valid, 38 unique, 38 valid-unique-difunctional-feasible (SA<6) hardener proposals (27 structurally novel vs the prior curated 12-seed), feasible-fraction 1.0000 (bootstrap 95% CI [1.0000,1.0000]); SA instrument re-confirmed non-circular (0.98800 exact vs PI1M shipped column); 10/10 non-hardener/invalid decoys fail closed; locked runtime yield stays 0.",
+  "hypothesis_evaluation": {
+    "caveats": [
+      "AUDIT_ONLY: module runtime stays LOCKED_INTERNAL, emits no proposals (governance, not science).",
+      "Deterministic rule/template ENUMERATION over fixed published scaffold grammars; NOT a trained generative model. No prospective closed-loop superiority is claimed.",
+      "Yield bounds the generative PROCEDURE over a defined enumerable space; it is not an unbounded discovery claim.",
+      "Novelty is structural-vs-corpus/seed only; NO IP, freedom-to-operate, or wet-lab claim. Per-member commercial availability is not asserted.",
+      "SA<6 is the published Ertl feasibility proxy, not a synthesis guarantee."
+    ],
+    "deterministic_grammar_valid_unique_feasible_yield": 38,
+    "feasibility_preserved_all_accepted_sa_below_6": true,
+    "feasible_fraction_over_hardener_universe": 1.0,
+    "hypothesis": "Deterministic generation can improve valid unique proposal yield without sacrificing feasibility.",
+    "locked_runtime_valid_unique_proposal_yield": 0,
+    "novel_vs_prior_curated_seed": 27,
+    "verdict": "CORROBORATED_IN_AUDIT_INSTRUMENT"
+  },
+  "metric_self_tests": {
+    "amide_rejected": true,
+    "difunctional_eda_accepted": true,
+    "eda_valid": true,
+    "invalid_rejected": true,
+    "monoamine_aniline_rejected": true,
+    "sa_scale_orientation": true
+  },
+  "metric_self_tests_all_pass": true,
+  "non_circularity": "SA feasibility instrument re-confirmed in-artifact as a strict known-answer test reproducing PI1M's independently-shipped 'SA Score' column (ground truth not self-produced). Grammar productions are fixed published scaffold families, fit to no label.",
+  "novel_vs_seed_names": [
+    "1,10-diaminoalkane(C10)",
+    "1,11-diaminoalkane(C11)",
+    "1,12-diaminoalkane(C12)",
+    "1,2-BAC",
+    "1,2-DACH",
+    "1,3-DACH",
+    "1,3-cyclopentane-bis(aminomethyl)",
+    "1,3-diaminoalkane(C3)",
+    "1,4-BAC",
+    "1,4-DACH",
+    "1,4-diaminoalkane(C4)",
+    "1,5-diaminoalkane(C5)",
+    "1,6-diaminoalkane(C6)",
+    "1,7-diaminoalkane(C7)",
+    "1,8-diaminoalkane(C8)",
+    "1,9-diaminoalkane(C9)",
+    "4,4'-diaminobenzophenone",
+    "4,4'-isopropylidenedianiline",
+    "4,4'-oxydianiline(ODA)",
+    "4,4'-thiodianiline",
+    "benzidine(4,4'-diaminobiphenyl)",
+    "ethyleneamine-k6",
+    "ethyleneamine-k7",
+    "ethyleneamine-k8",
+    "homopiperazine-N,N'",
+    "o-XDA",
+    "p-XDA/PXDA"
+  ],
+  "purpose": "Replace the prior hand-curated 12-proposal set with a DEFINED, enumerable deterministic generative grammar over published epoxy-amine hardener scaffold families and bound its valid/unique/feasible yield through the validated instrument with calibrated intervals -> closes the 'fixed list, not a generator' gap flagged by molgen-quality-feasibility-baseline-v1.",
+  "rdkit_version": "2026.03.2",
+  "rights_posture": "PI1M (rights_class CONTEXT_ONLY, promotion_eligible=false) used ONLY as a non-scored known-answer reference for the SA instrument, its declared role. No KPI scored on it. Manifest (66 receipts / 11 modules) untouched; no locked dataset or signed Phase-0 KPI modified.",
+  "sa_feasibility_known_answer": {
+    "exact_reproduction_fraction": 0.988,
+    "exact_reproduction_gate": 0.98,
+    "max_abs_delta_vs_shipped": 0.66062943,
+    "n_valid_compared": 3000,
+    "pass": true
+  },
+  "schema": "amphora.molecule-generator.grammar-yield-diagnostic.v1",
+  "study_id": "molgen-deterministic-grammar-yield-v1",
+  "theory_reference": {
+    "combinatorial_enumeration": [
+      "Reymond et al. 2010 WIREs Comput. Mol. Sci. 2(5):717-733 (GDB)",
+      "Segler et al. 2018 Nature 555(7698):604-610 (templates)",
+      "Corey & Wipke 1969 Science 166(3902):178-192"
+    ],
+    "confidence_intervals": "Efron 1979 Ann. Statist. 7(1):1-26 (bootstrap)",
+    "cure_reactivity_gate": "Lee & Neville 1967 Handbook of Epoxy Resins (McGraw-Hill)",
+    "feasibility_sa_score": "Ertl & Schuffenhauer 2009 J. Cheminform. 1:8",
+    "generation_metrics": [
+      "Polykovskiy et al. 2020 Front. Pharmacol. 11:565644 (MOSES)",
+      "Brown et al. 2019 J. Chem. Inf. Model. 59(3):1096-1108 (GuacaMol)"
+    ],
+    "toolkit": "RDKit Contrib/SA_Score fpscores reference implementation"
+  }
+}

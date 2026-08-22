@@ -1,0 +1,8 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "abe77e579e0e05f35d237ee57eabc119d793e20a0b4d0ee4ac36f6d0e8200227",
+  "import_hashes": [],
+  "module_id": "amphora-tolerance-robustness",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

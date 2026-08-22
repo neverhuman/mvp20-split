@@ -1,0 +1,19 @@
+[package]
+name = "rp-real-archive-tamper-harness"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace. Nothing is added to,
+# built into, or written inside the workspace by this harness; CARGO_TARGET_DIR
+# is redirected to scratch by the runner.
+[workspace]
+
+# LIVE harness: links the real Rust runtime crate and calls the real public
+# entry points (verify_run, stable_hash) against copies of REAL in-tree run
+# archives found under .amphora/runs/. This is NOT a re-implementation of
+# verify_run and NOT a synthetic tempdir fixture.
+[dependencies]
+amphora-core = { path = "../../../../../amphora-core" }
+serde_json = { version = "=1.0.150", features = ["float_roundtrip"] }
+sha2 = "0.10"

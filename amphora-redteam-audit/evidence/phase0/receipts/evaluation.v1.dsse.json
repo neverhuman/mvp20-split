@@ -1,0 +1,52 @@
+{
+  "applicability_domain": [
+    "registered amphora-redteam-audit contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "audit_execution_passed": true,
+  "benchmark_execution_complete": true,
+  "bundle_hash": "e97db58ea40be1ef7ac65439d2597e93276f78e21cb90d97b1644af814b489d0",
+  "bundle_parent_hashes": {
+    "evidence/phase0/benchmark/benchmark-lock.v1.json": "4ffdfa1a40b426036160b4c2e25bdaaff978aa762ec98c8c3243d514bfbe71cf",
+    "evidence/phase0/dataset/dataset-manifest.v1.json": "382e3c79ab2808510ec69da5947ae68a127dc00ce70e2f87260af4cbd910f145",
+    "evidence/phase0/promotion/policy.v1.json": "38067c309cd73d163b38d84420459f4e57a809cde89bb11c56daacd55c2df58a",
+    "evidence/phase0/raw/SHA256SUMS": "ad826e167767f10905bc44fe6931fdce1ecdfe2c1ea3605fef50d7cdf1600c01",
+    "evidence/phase0/registry/succession.v1.json": "0be2e86905ad249bfd908889e297ff4871221e4c71ed4cc4d313690738c9fe44",
+    "evidence/phase0/sources/source-lock.v1.json": "1a023e4d4a5df665aefaf61aca6c25d5592d1924813f47ebe58b48fcf3d31dd1",
+    "evidence/phase0/split/split-manifest.v1.json": "36a1d5172a6b3ccd8b01054fe43a753463dff26e41dd05536f09fb72f61c7bcc",
+    "evidence/superseded/supersession-c722f6209cc68d21f0bd8cd115680a3fce8e96fdfa2d4e8b7167e8fde3318b85/supersession.v1.json": "ddff19ebb1de469cf1bafe4e552c55d4aea3cdf2960c8069dd1face681012199",
+    "ip/claim-contract.v1.json": "b2eddcf0146595e09589f25844071968e78251aff31d315042bf35eecac71dd0",
+    "ip/disclosure-log.v1.json": "7d77becf494943292b02cf6e9b74943a5519507bdb74f54fa9622305e3c7de36",
+    "ip/prior-art.v1.json": "12b1d3a7d550377be235d891d27244fdb0adbac8e7ba5b4bcc035a6fe526f491",
+    "ip/technical-dossier.v1.json": "5bcf08f24df53b163a9441b6a41f1035598f314d7547fa7c2787297933b9e6e6"
+  },
+  "claim_lock_hash": "c826603852aa6b43833711bc3c59d3827b003deeca476f433a9b7021c44d1ee8",
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "failed_gates": [],
+  "metrics": {
+    "benchmark_execution_complete": true,
+    "benchmark_result_sha256": "2bba87aa9a2e5caffe6ede62685a953fa8d676b9b015a8d73640e1b3178d8e9c",
+    "replay_identical": true,
+    "rights_gate_passed": true
+  },
+  "module_class": "DETERMINISTIC_CONTROL",
+  "module_id": "amphora-redteam-audit",
+  "phase0_eligible": true,
+  "receipt_id": "phase0-evaluation-fe9e91191310bc21f551cb63a684ac5c94aba85cb18f03c979998e98e4f12e8a",
+  "replay_hash": "68e76ed27f365d040e9f7c27d640492d8b88eac60b0f9775424f20c46fe8473b",
+  "retained_negative_results": [],
+  "schema": "amphora.module-phase0-evaluation-receipt.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "scientific_readiness": "NOT_APPLICABLE",
+  "signature": {
+    "payload": "eyJhcHBsaWNhYmlsaXR5X2RvbWFpbiI6WyJyZWdpc3RlcmVkIGFtcGhvcmEtcmVkdGVhbS1hdWRpdCBjb250cmFjdCBhbmQgc3ludGhldGljIGZpeHR1cmVzIiwiYWJzdGFpbiBvbiBtYWxmb3JtZWQsIHN0YWxlLCB1bmF1dGhvcml6ZWQsIG9yIG91dC1vZi1jb250cmFjdCBpbnB1dCJdLCJhdWRpdF9leGVjdXRpb25fcGFzc2VkIjp0cnVlLCJiZW5jaG1hcmtfZXhlY3V0aW9uX2NvbXBsZXRlIjp0cnVlLCJidW5kbGVfaGFzaCI6ImU5N2RiNThlYTQwYmUxZWY3YWM2NTQzOWQyNTk3ZTkzMjc2Zjc4ZTIxY2I5MGQ5N2IxNjQ0YWY4MTRiNDg5ZDAiLCJidW5kbGVfcGFyZW50X2hhc2hlcyI6eyJldmlkZW5jZS9waGFzZTAvYmVuY2htYXJrL2JlbmNobWFyay1sb2NrLnYxLmpzb24iOiI0ZmZkZmExYTQwYjQyNjAzNjE2MGI0YzJlMjViZGFhZmY5NzhhYTc2MmVjOThjOGMzMjQzZDUxNGJmYmU3MWNmIiwiZXZpZGVuY2UvcGhhc2UwL2RhdGFzZXQvZGF0YXNldC1tYW5pZmVzdC52MS5qc29uIjoiMzgyZTNjNzlhYjI4MDg1MTBlYzY5ZGE1OTQ3YWU2OGExMjdkYzAwY2U3MGUyZjg3MjYwYWY0Y2JkOTEwZjE0NSIsImV2aWRlbmNlL3BoYXNlMC9wcm9tb3Rpb24vcG9saWN5LnYxLmpzb24iOiIzODA2N2MzMDljZDczZDE2M2IzOGQ4NDQyMDQ1OWY0ZTU3YTgwOWNkZTg5YmIxMWM1NmRhYWNkNTVjMmRmNThhIiwiZXZpZGVuY2UvcGhhc2UwL3Jhdy9TSEEyNTZTVU1TIjoiYWQ4MjZlMTY3NzY3ZjEwOTA1YmM0NGZlNjkzMWZkY2UxZWNkZmUyYzFlYTM2MDVmZWY1MGQ3Y2RmMTYwMGMwMSIsImV2aWRlbmNlL3BoYXNlMC9yZWdpc3RyeS9zdWNjZXNzaW9uLnYxLmpzb24iOiIwYmUyZTg2OTA1YWQyNDliZmQ5MDg4ODllMjk3ZmY0ODcxMjIxZTRjNzFlZDRjYzRkMzEzNjkwNzM4YzlmZTQ0IiwiZXZpZGVuY2UvcGhhc2UwL3NvdXJjZXMvc291cmNlLWxvY2sudjEuanNvbiI6IjFhMDIzZTRkNGE1ZGY2NjVhZWZhZjYxYWNhNmMyNWQ1NTkyZDE5MjQ4MTNmNDdlYmU1OGI0OGZjZjNkMzFkZDEiLCJldmlkZW5jZS9waGFzZTAvc3BsaXQvc3BsaXQtbWFuaWZlc3QudjEuanNvbiI6IjM2YTFkNTE3MmE2YjNjY2Q4YjAxMDU0ZmU0M2E3NTM0NjNkZmYyNmU0MWRkMDU1MzZmMDlmYjcyZjYxYzdiY2MiLCJldmlkZW5jZS9zdXBlcnNlZGVkL3N1cGVyc2Vzc2lvbi1jNzIyZjYyMDljYzY4ZDIxZjBiZDhjZDExNTY4MGEzZmNlOGU5NmZkZmEyZDRlOGI3MTY3ZThmZGUzMzE4Yjg1L3N1cGVyc2Vzc2lvbi52MS5qc29uIjoiZGRmZjE5ZWJiMWRlNDY5Y2YxYmFmZTRlNTUyYzU1ZDRhZWEzY2RmMjk2MGM4MDY5ZGQxZmFjZTY4MTAxMjE5OSIsImlwL2NsYWltLWNvbnRyYWN0LnYxLmpzb24iOiJiMmVkZGNmMDE0NjU5NWUwOTU4OWYyNTg0NDA3MTk2OGU3ODI1MWFmZjMxZDMxNTA0MmJmMzVlZWNhYzcxZGQwIiwiaXAvZGlzY2xvc3VyZS1sb2cudjEuanNvbiI6IjdkNzdiZWNmNDk0OTQzMjkyYjAyY2Y2ZTliNzQ5NDNhNTUxOTUwN2JkYjc0ZjU0ZmE5NjIyMzA1ZTNjN2RlMzYiLCJpcC9wcmlvci1hcnQudjEuanNvbiI6IjEyYjFkM2E3ZDU1MDM3N2JlMjM1ZDg5MWQyNzI0NGZkYjBhZGJhYzhlN2JhNWI0YmNjMDM1YTZmZTUyNmY0OTEiLCJpcC90ZWNobmljYWwtZG9zc2llci52MS5qc29uIjoiNWJjZjA4ZjI0ZGY1M2IxNjNhOTQ0MWI2YTQxZjEwMzU1OThmMzE0ZDc1NDdmYTdjMjc4NzI5NzkzM2I5ZTZlNiJ9LCJjbGFpbV9sb2NrX2hhc2giOiJjODI2NjAzODUyYWE2YjQzODMzNzExYmMzYzU5ZDM4MjdiMDAzZGVlY2E0NzZmNDMzYTliNzAyMWM0NGQxZWU4IiwiZGVjaXNpb25fdXNlX2NlaWxpbmciOiJBVURJVF9PTkxZIiwiZXZhbHVhdG9yX2tleV9pZCI6InBoYXNlMC1ldmFsdWF0b3ItM2VmNmIzNWNkYmJmZWE3NGE5NmE1YzliOThhNTE1ZDU3MTU4YTA5ZWNhZmYxMGFjZmExZjE1OTkwYmUwMDE3OCIsImZhaWxlZF9nYXRlcyI6W10sIm1ldHJpY3MiOnsiYmVuY2htYXJrX2V4ZWN1dGlvbl9jb21wbGV0ZSI6dHJ1ZSwiYmVuY2htYXJrX3Jlc3VsdF9zaGEyNTYiOiIyYmJhODdhYTlhMmU1Y2FmZmU2ZWRlNjI2ODVhOTUzZmE4ZDY3NmI5YjAxNWE4ZDczNjQwZTFiMzE3OGQ4ZTljIiwicmVwbGF5X2lkZW50aWNhbCI6dHJ1ZSwicmlnaHRzX2dhdGVfcGFzc2VkIjp0cnVlfSwibW9kdWxlX2NsYXNzIjoiREVURVJNSU5JU1RJQ19DT05UUk9MIiwibW9kdWxlX2lkIjoiYW1waG9yYS1yZWR0ZWFtLWF1ZGl0IiwicGhhc2UwX2VsaWdpYmxlIjp0cnVlLCJyZWNlaXB0X2lkIjoicGhhc2UwLWV2YWx1YXRpb24tZmU5ZTkxMTkxMzEwYmMyMWY1NTFjYjYzYTY4NGFjNWM5NGFiYTg1Y2IxOGYwM2M5Nzk5OThlOThlNGYxMmU4YSIsInJlcGxheV9oYXNoIjoiNjhlNzZlZDI3ZjM2NWQwNDBlOWY3YzI3ZDY0MDQ5MmQ4Yjg4ZWFjNjBiMGY5Nzc1NDI0ZjIwYzQ2ZmU4NDczYiIsInJldGFpbmVkX25lZ2F0aXZlX3Jlc3VsdHMiOltdLCJzY2hlbWEiOiJhbXBob3JhLm1vZHVsZS1waGFzZTAtZXZhbHVhdGlvbi1yZWNlaXB0LnYxIiwic2NpZW50aWZpY19vdXRjb21lIjoiTk9UX0FQUExJQ0FCTEUiLCJzY2llbnRpZmljX3JlYWRpbmVzcyI6Ik5PVF9BUFBMSUNBQkxFIn0=",
+    "payloadType": "application/vnd.amphora.module-phase0-evaluation-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "Zd1Hii+ubUXSudCtJuvtTBKbhCY2rFA6lSOF8LF2I3TAEEu1WHCKH19cQBjgEMLN3LXuIwqoW5xwVLapkm7bDQ=="
+      }
+    ]
+  }
+}

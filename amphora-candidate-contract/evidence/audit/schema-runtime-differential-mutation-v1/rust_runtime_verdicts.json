@@ -1,0 +1,1220 @@
+{
+  "CH_top_inchi_key_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_inchi_key_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_inchi_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_inchi_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_inchikey_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_inchikey_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_mol_block_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_mol_block_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_mol_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_mol_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_mol_v2000_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_mol_v2000_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_mol_v3000_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_mol_v3000_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_recipe_csv_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_recipe_csv_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_sdf_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_sdf_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_sdf_records_no_optin": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "CH_top_sdf_records_optin": {
+    "detail": {
+      "variant": "Err:ChemistryNormalizationUnavailable"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_dup_candidate_id": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_dup_candidate_type": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_dup_escaped_key": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_dup_extra_key": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_dup_nested_key": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_nonfinite_infinity": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_nonfinite_nan": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_nonfinite_neg_infinity": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "L_nonfinite_nested": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "POS_base_evidence_package": {
+    "detail": {
+      "candidate_type": "evidence_package",
+      "contract_hash_v1": "d06e50dfaac6bf0991412e32aefdfbdecaa19fe075befeeb537cc7f401f530c2",
+      "original_bytes_sha256": "d06e50dfaac6bf0991412e32aefdfbdecaa19fe075befeeb537cc7f401f530c2",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "POS_base_formulation": {
+    "detail": {
+      "candidate_type": "formulation",
+      "contract_hash_v1": "041ebcc70e69a2ffac114cbcd3e6e578becc9599af2018b4de14fd88606839b7",
+      "original_bytes_sha256": "041ebcc70e69a2ffac114cbcd3e6e578becc9599af2018b4de14fd88606839b7",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "POS_base_molecule": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "66ead3eb47543409490cddc7201a9f090a9cebc9b9f366d91c9f2e89b0ae39f8",
+      "original_bytes_sha256": "66ead3eb47543409490cddc7201a9f090a9cebc9b9f366d91c9f2e89b0ae39f8",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "POS_formulation_bare_molecule": {
+    "detail": {
+      "candidate_type": "formulation",
+      "contract_hash_v1": "ff4ed668505ed948dede112b2dad48f980a14339711a7862c5a4b6d03a098bd5",
+      "original_bytes_sha256": "ff4ed668505ed948dede112b2dad48f980a14339711a7862c5a4b6d03a098bd5",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "POS_molecule_extra_benign_key": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "6f03621e04e9462700d895b2251042222399e64261f009385d4bcf139e803f50",
+      "original_bytes_sha256": "6f03621e04e9462700d895b2251042222399e64261f009385d4bcf139e803f50",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "P_bare_word": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "P_empty_input": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "P_leading_zero": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "P_non_utf8": {
+    "detail": {
+      "variant": "Err:InvalidUtf8"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "P_single_quotes": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "P_trailing_comma": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "P_unquoted_key": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "P_unterminated_object": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_depth_k001": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "9d8b6970c7c16a01517865fd8314a66b6cc672f9e313d786330467521d37d77a",
+      "original_bytes_sha256": "9d8b6970c7c16a01517865fd8314a66b6cc672f9e313d786330467521d37d77a",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_depth_k032": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "ec04a89c15416ace80b3ac7740385a0e6038ff8f245d5a345cb6d6170b5dc405",
+      "original_bytes_sha256": "ec04a89c15416ace80b3ac7740385a0e6038ff8f245d5a345cb6d6170b5dc405",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_depth_k060": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "220a45ccc88fbfcf7dd846ded4b418ce693684f6cec088de33dcd95ecd249453",
+      "original_bytes_sha256": "220a45ccc88fbfcf7dd846ded4b418ce693684f6cec088de33dcd95ecd249453",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_depth_k061": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "e9519f4f85770096523a1a9d2c0eee9ff5b77ba9b829042f98c8460577dc7a7e",
+      "original_bytes_sha256": "e9519f4f85770096523a1a9d2c0eee9ff5b77ba9b829042f98c8460577dc7a7e",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_depth_k062": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "14cd89132357d2abe1ba9bec05b5e326ec8faa66ea982119d96195a859164744",
+      "original_bytes_sha256": "14cd89132357d2abe1ba9bec05b5e326ec8faa66ea982119d96195a859164744",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_depth_k063": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "5b9fa203d6c0155a3b11fa5748d3c32021ab90cbe9134413fa9164d1dd77cdfe",
+      "original_bytes_sha256": "5b9fa203d6c0155a3b11fa5748d3c32021ab90cbe9134413fa9164d1dd77cdfe",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_depth_k064": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_depth_k065": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_depth_k066": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_depth_k067": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_depth_k068": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_depth_k100": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_size_at_cap": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "c0fcb8a51c9dc9dac402b24fe9fdc5a7d0f54f28f0ba481122dcf76001e6b86e",
+      "original_bytes_sha256": "c0fcb8a51c9dc9dac402b24fe9fdc5a7d0f54f28f0ba481122dcf76001e6b86e",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_size_over_1": {
+    "detail": {
+      "variant": "Err:RequestTooLarge"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_size_over_1k": {
+    "detail": {
+      "variant": "Err:RequestTooLarge"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_size_under_1k": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "77c3ee820424d10610843356ddacd81e35536b5963fb616c9859e0e0a4ea61ec",
+      "original_bytes_sha256": "77c3ee820424d10610843356ddacd81e35536b5963fb616c9859e0e0a4ea61ec",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_width_w000001": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "ef79889c7dc35754995ce1f90f73a0bd621fababcca37caf06e6bd72ab730a92",
+      "original_bytes_sha256": "ef79889c7dc35754995ce1f90f73a0bd621fababcca37caf06e6bd72ab730a92",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_width_w000100": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "e5f9c8027dd4b60ccf58c014bad19982124b8b877b1caac45e5f127cdcfe120e",
+      "original_bytes_sha256": "e5f9c8027dd4b60ccf58c014bad19982124b8b877b1caac45e5f127cdcfe120e",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_width_w099990": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "0c96954255fd6655c7f4b425c3f5d271af889a020c0a204769d971764b3ac31b",
+      "original_bytes_sha256": "0c96954255fd6655c7f4b425c3f5d271af889a020c0a204769d971764b3ac31b",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_width_w099995": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "a88d2c0da21c5063466c8b3a7d0bc90b2e84ec0e678107daa943572ecd861f2e",
+      "original_bytes_sha256": "a88d2c0da21c5063466c8b3a7d0bc90b2e84ec0e678107daa943572ecd861f2e",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "R_width_w099996": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_width_w099997": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_width_w099998": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_width_w099999": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_width_w100000": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_width_w100001": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "R_width_w100002": {
+    "detail": {
+      "variant": "Err:InvalidJson"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_arr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_drop": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_emptystr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_false": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_float": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_int0": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_int42": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_intneg": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_null": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_obj": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_id_true": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_payload_arr": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_payload_drop": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_payload_emptystr": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_payload_float": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_payload_int42": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_payload_null": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_payload_true": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_arr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_drop": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_int42": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_null": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_obj": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_true": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_val_00_widget": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_val_01_Molecule": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_val_02_MOLECULE": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_val_03_molecule_trail_ws": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_val_04_molecule_lead_ws": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_val_05_mol": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_val_06_formulation2": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_evidence_package_type_val_07_evidence": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_arr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_drop": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_emptystr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_false": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_float": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_int0": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_int42": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_intneg": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_null": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_obj": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_id_true": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_payload_arr": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_payload_drop": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_payload_emptystr": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_payload_float": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_payload_int42": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_payload_null": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_payload_true": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_arr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_drop": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_int42": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_null": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_obj": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_true": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_val_00_widget": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_val_01_Molecule": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_val_02_MOLECULE": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_val_03_molecule_trail_ws": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_val_04_molecule_lead_ws": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_val_05_mol": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_val_06_formulation2": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_formulation_type_val_07_evidence": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_arr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_drop": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_emptystr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_false": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_float": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_int0": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_int42": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_intneg": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_null": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_obj": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_id_true": {
+    "detail": {
+      "variant": "Err:InvalidCandidateId"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_payload_arr": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_payload_drop": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_payload_emptystr": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_payload_float": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_payload_int42": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_payload_null": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_payload_true": {
+    "detail": {
+      "variant": "Err:PayloadMismatch"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_arr": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_drop": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_int42": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_null": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_obj": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_true": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_val_00_widget": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_val_01_Molecule": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_val_02_MOLECULE": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_val_03_molecule_trail_ws": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_val_04_molecule_lead_ws": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_val_05_mol": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_val_06_formulation2": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_molecule_type_val_07_evidence": {
+    "detail": {
+      "variant": "Err:InvalidCandidateType"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_toplevel_array": {
+    "detail": {
+      "variant": "Err:CandidateNotObject"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_toplevel_false": {
+    "detail": {
+      "variant": "Err:CandidateNotObject"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_toplevel_float": {
+    "detail": {
+      "variant": "Err:CandidateNotObject"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_toplevel_int": {
+    "detail": {
+      "variant": "Err:CandidateNotObject"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_toplevel_null": {
+    "detail": {
+      "variant": "Err:CandidateNotObject"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_toplevel_string": {
+    "detail": {
+      "variant": "Err:CandidateNotObject"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "S_toplevel_true": {
+    "detail": {
+      "variant": "Err:CandidateNotObject"
+    },
+    "runtime_verdict": "REJECT"
+  },
+  "X_evidence_plus_formulation": {
+    "detail": {
+      "candidate_type": "evidence_package",
+      "contract_hash_v1": "1687b2eafa44151a925dcd71422ae81d7cbe920847dba3f3c014341f13adb777",
+      "original_bytes_sha256": "1687b2eafa44151a925dcd71422ae81d7cbe920847dba3f3c014341f13adb777",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_evidence_plus_molecule": {
+    "detail": {
+      "candidate_type": "evidence_package",
+      "contract_hash_v1": "305269bede7e0973e503551e6a82977f531c5bafd75cfa493a39aa486dbf049b",
+      "original_bytes_sha256": "305269bede7e0973e503551e6a82977f531c5bafd75cfa493a39aa486dbf049b",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_formulation_plus_molecule_canonical_smiles": {
+    "detail": {
+      "candidate_type": "formulation",
+      "contract_hash_v1": "44f0e5c3bd1cefb277b2bd5ca8f19c5d2e5161df33118bddf090d59fdcda2442",
+      "original_bytes_sha256": "44f0e5c3bd1cefb277b2bd5ca8f19c5d2e5161df33118bddf090d59fdcda2442",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_formulation_plus_molecule_smiles": {
+    "detail": {
+      "candidate_type": "formulation",
+      "contract_hash_v1": "230707e84be1cf90ed502c77eb30ba70d65bf846d3f22b68f8149e8a583209b3",
+      "original_bytes_sha256": "230707e84be1cf90ed502c77eb30ba70d65bf846d3f22b68f8149e8a583209b3",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_formulation_plus_molecule_structhash": {
+    "detail": {
+      "candidate_type": "formulation",
+      "contract_hash_v1": "e1ff7024f538dc1d06a8b95597a7d2db126eff57d827569185983b67af5cfc0b",
+      "original_bytes_sha256": "e1ff7024f538dc1d06a8b95597a7d2db126eff57d827569185983b67af5cfc0b",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_inchi": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "e703800e89abb0cdafc0d4b5b1daaf5bcb0e3d4ae91cc6f7faeefb792aa658ea",
+      "original_bytes_sha256": "e703800e89abb0cdafc0d4b5b1daaf5bcb0e3d4ae91cc6f7faeefb792aa658ea",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_inchi_key": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "13d4d53a86501394d4620d3f243011b2a8e38049591dd34f2640b9f4c7279ad7",
+      "original_bytes_sha256": "13d4d53a86501394d4620d3f243011b2a8e38049591dd34f2640b9f4c7279ad7",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_inchikey": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "5674238a7042957c5f6fd17090d57ab05c7e88aacc9129e3b08aac494b36db1d",
+      "original_bytes_sha256": "5674238a7042957c5f6fd17090d57ab05c7e88aacc9129e3b08aac494b36db1d",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_mol": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "5be248838db7e8aa462a819c97d594fa8ed45cf0d9c5cb1d2a8a50cbbb5937a8",
+      "original_bytes_sha256": "5be248838db7e8aa462a819c97d594fa8ed45cf0d9c5cb1d2a8a50cbbb5937a8",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_mol_block": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "af15b4419f258134575435f144cf06a48f56cca2c71b5a642a61a78f5e9b44ad",
+      "original_bytes_sha256": "af15b4419f258134575435f144cf06a48f56cca2c71b5a642a61a78f5e9b44ad",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_mol_v2000": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "7182a60e5a12ac35559a195eabd3ca64f976d1981039b63646cac69a4bfcd98e",
+      "original_bytes_sha256": "7182a60e5a12ac35559a195eabd3ca64f976d1981039b63646cac69a4bfcd98e",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_mol_v3000": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "36fd64d9fa59f19d698227d5da037295107a63b59c402d8e7c974b472ee95164",
+      "original_bytes_sha256": "36fd64d9fa59f19d698227d5da037295107a63b59c402d8e7c974b472ee95164",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_sdf": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "e214f6cc99de9e4481d90e736dfcc35fd25997fc53c0de3f34e9c5c96db0499b",
+      "original_bytes_sha256": "e214f6cc99de9e4481d90e736dfcc35fd25997fc53c0de3f34e9c5c96db0499b",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_nested_sdf_records": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "48d7e878a139b287778f92785aa93336ee4597b65850aa4884f3410d210d4d33",
+      "original_bytes_sha256": "48d7e878a139b287778f92785aa93336ee4597b65850aa4884f3410d210d4d33",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  },
+  "X_molecule_plus_formulation": {
+    "detail": {
+      "candidate_type": "molecule",
+      "contract_hash_v1": "287b966fe2498e74d4f028a6d3aa63343713083dffc3437d26e591b7ec50fd03",
+      "original_bytes_sha256": "287b966fe2498e74d4f028a6d3aa63343713083dffc3437d26e591b7ec50fd03",
+      "variant": "Ok"
+    },
+    "runtime_verdict": "ACCEPT"
+  }
+}

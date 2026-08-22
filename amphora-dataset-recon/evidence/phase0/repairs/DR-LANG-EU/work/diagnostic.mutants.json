@@ -1,0 +1,85 @@
+{
+  "license_text_diverges": {
+    "expected_rule": "license_text_matches_live_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Overwrote DR-LANG-EU-11's license_evidence_quote with a fabricated 'fully open, no restriction' claim contradicting the recorded CC BY-NC-ND WebFetch evidence.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-EU-11",
+        "reason": "DR-LANG-EU-11: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "literal_english_translation_query_it": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native it query string 'resina epossidica ammina indurente cinetica di indurimento set di dati' with its literal English gloss, while leaving language:'it' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "it query field is a literal English translation or contains no it marker vocabulary: 'epoxy resin amine hardener cure kinetics dataset'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "literal_english_translation_query_nl": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native nl query string 'epoxyhars amine uitharder uithardingskinetiek DSC dataset' with its literal English gloss, while leaving language:'nl' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "nl query field is a literal English translation or contains no nl marker vocabulary: 'epoxy resin amine hardener cure kinetics DSC dataset'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "missing_recorded_query": {
+    "expected_rule": "citation_has_recorded_query_and_result",
+    "expected_rule_fired": true,
+    "how_planted": "Scrubbed every occurrence of DR-LANG-EU-11's url (https://webthesis.biblio.polito.it/24890/) from a copy of this fire's search-record queries/results.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-EU-11",
+        "reason": "DR-LANG-EU-11: url https://webthesis.biblio.polito.it/24890/ does not appear in any recorded search-record query/result this fire",
+        "rule": "citation_has_recorded_query_and_result"
+      }
+    ]
+  },
+  "native_citation_not_verbatim": {
+    "expected_rule": "native_citation_verbatim_in_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced DR-LANG-EU-10's native_citation (the exact Italian MARECO/Bonassola sentence) with an English paraphrase, simulating a silently-translated/paraphrased citation.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-EU-10",
+        "reason": "DR-LANG-EU-10: native_citation 'Marine atmosphere exposure trials were started for steel specimens at the Bonassola coastal site.' does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "native_citation_verbatim_in_evidence"
+      }
+    ]
+  },
+  "rediscovery_dropped": {
+    "expected_rule": "rediscovery_recall",
+    "expected_rule_fired": true,
+    "how_planted": "Injected two SYNTHETIC previously-supplied candidate ids ('NL-PRIOR-TEST', 'IT-PRIOR-TEST') into the checker's previously_supplied_ids input -- since this fire genuinely found zero real prior nl/it candidates (see intake_manifest), synthetic ids are required to prove this rule is a real, non-vacuous check rather than one that trivially never fires on an empty input list.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "NL-PRIOR-TEST",
+        "reason": "previously-supplied candidate NL-PRIOR-TEST was neither rediscovered (no disposition entry with rediscovers==NL-PRIOR-TEST) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      },
+      {
+        "candidate_id": "IT-PRIOR-TEST",
+        "reason": "previously-supplied candidate IT-PRIOR-TEST was neither rediscovered (no disposition entry with rediscovers==IT-PRIOR-TEST) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      }
+    ]
+  }
+}

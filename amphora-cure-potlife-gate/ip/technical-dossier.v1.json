@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-cure-potlife-gate",
+    "performance lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "6f29cf26c9953cddedda590cb6a8775dc9c3d149bfc1931f8fc5066aaaabee10",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-cure-potlife-gate",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

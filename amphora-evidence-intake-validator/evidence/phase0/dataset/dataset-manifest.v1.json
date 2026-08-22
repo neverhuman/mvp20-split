@@ -1,0 +1,10 @@
+{
+  "candidate_supplied_rows": 0,
+  "dataset_kind": "CONTRACT_FIXTURES",
+  "missing_values_imputed": false,
+  "module_id": "amphora-evidence-intake-validator",
+  "rights_gate_passed": true,
+  "schema": "amphora.module-phase0-dataset-manifest.v1",
+  "scientific_success_asserted": false,
+  "source_lock_sha256": "0fa0b38088a5cee1a797406c20ae8ab5040ebcd7e4bc6a5d7baf4cca6296f806"
+}

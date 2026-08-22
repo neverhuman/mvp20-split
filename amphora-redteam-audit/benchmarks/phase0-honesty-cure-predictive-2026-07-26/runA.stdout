@@ -1,0 +1,323 @@
+{
+  "authority": "AUDIT_ONLY",
+  "does_not": [
+    "does NOT promote any module to PHASE_0 or assert scientific_readiness==VALIDATED",
+    "does NOT modify any of the 66 existing signed receipts or the manifest (stays 66/11)",
+    "does NOT treat any newly-fetched number as data: PART B re-verifies existing signed values; PART C uses only the 4 in-tree/PMC-verified peaks",
+    "does NOT flip any rights gate or authority ceiling",
+    "does NOT cross the network-Tg n>=12 gate (declined as gate-gaming, logged honestly)"
+  ],
+  "gap_map_honest": {
+    "adhesion_barrier_corrosion": "Owens-Wendt / EIS-barrier models need rights-clean coating contact-angle or measured-EIS data; none in-tree (data-rights wall). BLOCKED on data.",
+    "cure_potlife_gate": "Kissinger/isoconversional Ea recovery is solid & now has a predictive Tp forecast, but a NON-circular deployment KPI needs an INDEPENDENT isothermal gel-time/pot-life measurement to validate the Arrhenius extrapolation. No rights-clean isothermal gel-time dataset is in-tree. BLOCKED on data acquisition.",
+    "isoconversional_ea_alpha_profile": "Lascano reports Ea(alpha) only GRAPHICALLY (Fig 8); no tabulated T_alpha. Honest KAS/Friedman/FWO Ea(alpha) needs the raw conversion-temperature table, which is not published. Figure digitisation is not trustworthy enough for a founder-grade receipt. BLOCKED on data.",
+    "network_tg_(highest_value_gap)": "BLOCKED on n>=12 unique rights-clean stoichiometric-full-cure DGEBA+amine Tg systems; only 7 exist page-verified. Crossing the gate autonomously would require stitching heterogeneously-cured values from assorted sources = gaming the count (v2 showed heterogeneous data REFUTES the model). DECLINED, not faked.",
+    "solvent_property_suite": "COMPLETE: a-priori Tb, dHvap, Pvap/VOC, flash point/GHS, refractive index, surface tension, molar volume, Hildebrand delta, Hansen vector, all signed AUDIT_ONLY, non-circular, validated-in-domain. No open honest gap remains here."
+  },
+  "host": "xbabe2-canonical",
+  "part_a_phase0_honesty": {
+    "claim_full_phase0_means_validated_science": false,
+    "founder_skepticism_upheld": true,
+    "interpretation": "PHASE_0 is a GOVERNANCE lifecycle lock (folder-confinement, two-replay, signatures, supersession), NOT a certificate of externally-validated science. Zero modules carry scientific_readiness==VALIDATED, so the portfolio does NOT have 'full Phase-0' in any scientific sense.",
+    "n_modules_scanned": 29,
+    "n_modules_scientific_readiness_VALIDATED": 0,
+    "per_module": [
+      {
+        "module": "amphora-barrier-corrosion-score",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-candidate-contract",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-cro-protocol-packager",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-cure-potlife-gate",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-design-rule-score",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-envelope-gates",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-evidence-intake-validator",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-formulation-arithmetic",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-formulation-universe",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-ingredient-library",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-ip-fto-guard",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-known-answer-benchmarks",
+        "phase": "PHASE_0",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-model-card-authority",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-molecule-design-gate",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-molecule-generator",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-molecule-novelty",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-molecule-property",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-molecule-role-ranker",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-optimizer-orchestrator",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-process-qc-twin",
+        "phase": "PHASE_0",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-public-corrosion-benchmark",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-redteam-audit",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-report-packager",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-run-provenance",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-solvency-score",
+        "phase": "PHASE_0",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-source-ledger",
+        "phase": "PHASE_0",
+        "scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "module": "amphora-sourceability-ehs",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      {
+        "module": "amphora-tolerance-robustness",
+        "phase": "PHASE_0",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "module": "amphora-viscosity-score",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      }
+    ],
+    "phase_tally": {
+      "PHASE_0": 17,
+      "PRE_PHASE_0": 12
+    },
+    "scientific_readiness_tally": {
+      "LOCKED_INTERNAL": 4,
+      "NOT_APPLICABLE": 13,
+      "UNVALIDATED": 12
+    }
+  },
+  "part_b_provenance_reverification": {
+    "all_provenance_checks_pass": true,
+    "checks": [
+      {
+        "dataset": "dgeba-ipda-lascano cure peaks",
+        "in_tree_signed_value": [
+          [
+            2.5,
+            351.5
+          ],
+          [
+            5.0,
+            361.9
+          ],
+          [
+            10.0,
+            373.2
+          ],
+          [
+            20.0,
+            388.9
+          ]
+        ],
+        "match": true,
+        "pmc_reread_this_run": [
+          [
+            2.5,
+            351.5
+          ],
+          [
+            5.0,
+            361.9
+          ],
+          [
+            10.0,
+            373.2
+          ],
+          [
+            20.0,
+            388.9
+          ]
+        ],
+        "source": "PMC6473346 / doi:10.3390/polym16... -> 10.3390/polym11030391, Table 3, CC-BY-4.0"
+      },
+      {
+        "dataset": "DGEBA+{DDS,1,3-BAC,C8DA} pristine Tg",
+        "in_tree_source_S2_present": true,
+        "match": true,
+        "pmc_reread_this_run_C": {
+          "8CH2DA_C8DA": 94.0,
+          "CYDM_1,3-BAC": 97.0,
+          "DDS": 200.0
+        },
+        "source": "PMC10780492 / doi:10.3390/polym16010067, CC-BY-4.0"
+      }
+    ],
+    "note": "Independent human re-reading of CC-BY full text this run reproduces the numbers already in the signed in-tree datasets EXACTLY -> the load-bearing rights-clean data is traceable and un-drifted."
+  },
+  "part_c_cure_kinetics_predictive": {
+    "method_consistency_at_peak": {
+      "HONEST_caveat": "these at-peak (single-conversion) FWO/Starink values are NOT expected to equal the paper's conversion-AVERAGED tabulated values; they are reported only to show the method ORDERING (Kissinger < FWO) is reproduced from the peaks",
+      "fwo_doyle_ea_kJ_per_mol": 60.2754,
+      "fwo_r2": 0.995134,
+      "reported_alpha_averaged": {
+        "FWO": 62.8,
+        "Friedman": 61.2,
+        "KAS": 59.8,
+        "Starink": 60.0
+      },
+      "starink_ea_kJ_per_mol": 57.461,
+      "starink_r2": 0.993856
+    },
+    "peaks_used_K": [
+      [
+        2.5,
+        351.5
+      ],
+      [
+        5.0,
+        361.9
+      ],
+      [
+        10.0,
+        373.2
+      ],
+      [
+        20.0,
+        388.9
+      ]
+    ],
+    "predictive_forecast_KPI": {
+      "honest_strength_statement": "the 4 Kissinger points are near-collinear by construction, so a small forecast MAE is a self-consistency check, NOT a strong independent test; it is a floor on predictive fidelity, honestly labelled, not oversold",
+      "mae_K": 2.2476,
+      "max_abs_err_K": 3.9136,
+      "n_folds": 4,
+      "per_fold": [
+        {
+          "abs_error_K": 2.4443,
+          "held_out_beta_K_per_min": 2.5,
+          "tp_measured_K": 351.5,
+          "tp_predicted_K": 349.0557
+        },
+        {
+          "abs_error_K": 0.5884,
+          "held_out_beta_K_per_min": 5.0,
+          "tp_measured_K": 361.9,
+          "tp_predicted_K": 362.4884
+        },
+        {
+          "abs_error_K": 2.0442,
+          "held_out_beta_K_per_min": 10.0,
+          "tp_measured_K": 373.2,
+          "tp_predicted_K": 375.2442
+        },
+        {
+          "abs_error_K": 3.9136,
+          "held_out_beta_K_per_min": 20.0,
+          "tp_measured_K": 388.9,
+          "tp_predicted_K": 384.9864
+        }
+      ],
+      "protocol": "leave-one-heating-rate-out; refit Kissinger on other 3 peaks; solve Kissinger relation for held-out beta's Tp; score in Kelvin",
+      "what_is_new_vs_existing_anchor": "the signed multisystem anchor reports only leave-one-rate-out Ea SPREAD; this scores a predicted-vs-measured held-out OBSERVABLE (Tp)"
+    },
+    "recovery_test_like_for_like": {
+      "abs_err_kJ_per_mol": 0.039,
+      "method": "Kissinger (at peak conversion)",
+      "non_circular": "consumes only raw (beta,Tp) peaks; the reported Ea is a validation target, never an input",
+      "r2": 0.993794,
+      "recomputed_ea_kJ_per_mol": 57.261,
+      "reported_ea_kJ_per_mol": 57.3
+    },
+    "system": "DGEBA(+bio-diluent) + IPDA, Lascano PMC6473346, CC-BY-4.0"
+  },
+  "promotes_authority": false,
+  "run_date": "2026-07-26",
+  "schema": "amphora.redteam-audit.phase0-honesty-and-cure-predictive.v1",
+  "target_modules": [
+    "(portfolio)",
+    "amphora-cure-potlife-gate"
+  ]
+}
+SHA256 ab123d5d8254a529f956c1f2ba04e97b382aa17e8cd66efd03285ec964a86ac3

@@ -1,0 +1,135 @@
+{
+  "authority": "AUDIT_ONLY",
+  "barrier_water_uptake_engine": {
+    "cross_class_positive_control": {
+      "engine_valid_cross_class": true,
+      "note": "Canonical polymer physical constants (representative handbook values), rank-only positive control. NO coating-performance claim; the in-scope scientific claim is the DGEBA-amine within-family result above.",
+      "rows": [
+        {
+          "delta_h_MPa_half": 0.0,
+          "polymer": "PTFE",
+          "typ_water_uptake_pct": 0.01
+        },
+        {
+          "delta_h_MPa_half": 2.8,
+          "polymer": "PS",
+          "typ_water_uptake_pct": 0.05
+        },
+        {
+          "delta_h_MPa_half": 7.5,
+          "polymer": "PMMA",
+          "typ_water_uptake_pct": 0.4
+        },
+        {
+          "delta_h_MPa_half": 12.0,
+          "polymer": "PA6",
+          "typ_water_uptake_pct": 9.5
+        },
+        {
+          "delta_h_MPa_half": 26.0,
+          "polymer": "PVOH",
+          "typ_water_uptake_pct": 40.0
+        }
+      ],
+      "spearman_delta_h_vs_uptake": 1.0
+    },
+    "in_scope_dgeba_amine": {
+      "data_source": "Polymers 2024, 16(1):67 (doi 10.3390/polym16010067 = PMC10780492), CC BY 4.0, already rights-established in-tree. Equilibrium water uptake Q of DGEBA cured with three structurally different diamines under one immersion protocol.",
+      "hydrophilicity_group_density_REFUTED_within_family": true,
+      "measured_uptake_order_low_to_high": "EP-CYDM 0.16% < EP-DDS 1.7% < EP-8CH2DA 2.0%",
+      "mechanism": "Within a single DGEBA-amine resin family the two parameter-free hydrophilicity descriptors ANTI-correlate with uptake (rho=-0.5): the cycloaliphatic CYDM network has the HIGHEST hydroxyl density yet the LOWEST uptake. The controlling variable is amine-backbone free volume / crosslink density -- rigid cycloaliphatic CYDM packs tightest (0.16%), flexible octamethylene 8CH2DA opens the most free volume (2.0%), rigid aromatic-sulfone DDS is intermediate (1.7%). The free-volume proxy alone (rho=+0.5) captures the extreme but not the polar-sulfone DDS, so with n=3 and >=2 competing effects the model is underdetermined (not statistically significant at n=3 either way).",
+      "n_systems": 3,
+      "rows": [
+        {
+          "Q_water_uptake_meas_pct": 1.7,
+          "amine_type": "aromatic",
+          "c_OH_mol_per_kg": 4.305066,
+          "c_polar_mol_per_kg": 12.915197,
+          "diamine_MW": 248.3,
+          "flexible_aliphatic_CH2_in_amine": 0,
+          "n_polar_atoms_O_plus_N": 12,
+          "n_secondary_OH": 4,
+          "repeat_mass_g_per_2DGEBA_plus_diamine": 929.138,
+          "system": "EP-DDS"
+        },
+        {
+          "Q_water_uptake_meas_pct": 0.16,
+          "amine_type": "cycloaliphatic",
+          "c_OH_mol_per_kg": 4.859771,
+          "c_polar_mol_per_kg": 12.149428,
+          "diamine_MW": 142.246,
+          "flexible_aliphatic_CH2_in_amine": 2,
+          "n_polar_atoms_O_plus_N": 10,
+          "n_secondary_OH": 4,
+          "repeat_mass_g_per_2DGEBA_plus_diamine": 823.084,
+          "system": "EP-CYDM"
+        },
+        {
+          "Q_water_uptake_meas_pct": 2.0,
+          "amine_type": "aliphatic",
+          "c_OH_mol_per_kg": 4.847897,
+          "c_polar_mol_per_kg": 12.119743,
+          "diamine_MW": 144.262,
+          "flexible_aliphatic_CH2_in_amine": 8,
+          "n_polar_atoms_O_plus_N": 10,
+          "n_secondary_OH": 4,
+          "repeat_mass_g_per_2DGEBA_plus_diamine": 825.1,
+          "system": "EP-8CH2DA"
+        }
+      ],
+      "spearman_vs_measured_uptake": {
+        "c_OH_hydrophilicity": -0.5,
+        "c_polar_hydrophilicity": -0.5,
+        "flexible_CH2_free_volume_proxy": 0.5
+      },
+      "validation_bar_spearman": 0.9
+    },
+    "theory": "Equilibrium water uptake of a polymer film is set by the balance of (i) hydrophilic H-bonding-group affinity (well captured across polymer classes by the Hansen hydrogen-bonding parameter delta_h / polar-group concentration) and (ii) accessible free volume / crosslink density that hosts sorbed and clustered water. This is the barrier property governing marine osmotic blistering and cathodic disbondment.",
+    "verdict": "BARRIER_WATER_UPTAKE__HYDROPHILICITY_RANK_VALID_CROSS_CLASS__WITHIN_DGEBA_AMINE_GROUP_DENSITY_REFUTED_FREE_VOLUME_AND_DATA_CO_LIMITED: a-priori hydrophilic-group density (c_OH, c_polar) ranks equilibrium water uptake across polymer classes (cross-class Spearman 1.00) but ANTI-correlates within the in-scope DGEBA-amine family (Spearman -0.50, n=3), where free volume / crosslink density dominates. The barrier-water axis cannot be promoted; it needs a validated free-volume/crosslink descriptor plus protocol-controlled n>=~10 -- the same wall as network Tg."
+  },
+  "coating_application": "Marine two-part epoxy-amine anti-corrosion films: equilibrium water uptake is the primary driver of osmotic blistering and cathodic-disbondment kinetics. This increment establishes the physics engine and, more importantly, RED-TEAMS the naive a-priori model against real CC BY 4.0 protocol-controlled data, proving the axis is not promotable yet and stating exactly what it needs.",
+  "does_not": [
+    "promote any module or authority tier",
+    "modify the manifest or any of the 66 signed receipts",
+    "sign any phase0 evaluation or review receipt",
+    "make any coating-performance or service-life claim",
+    "claim statistical significance at n=3"
+  ],
+  "phase0_reconciliation_redteam": {
+    "benchmark_lock_governance": {
+      "interpretation": "Phase-0 is a GOVERNANCE gate: no benchmark-lock in the portfolio makes scientific success a precondition for Phase-0. 'FULL Phase-0' therefore does NOT mean 'validated science'.",
+      "scientific_success_required_for_phase0__false": 29,
+      "scientific_success_required_for_phase0__true": 0
+    },
+    "founder_answer_do_we_have_full_phase0": "NO in the scientific sense. 0 of 29 modules are scientific_readiness==VALIDATED; the 10 modules the report labels PHASE_0 are 7 NOT_APPLICABLE (pure governance/infra) + 3 LOCKED_INTERNAL (internal ceiling, not externally validated), and every one of the 29 benchmark-locks sets scientific_success_required_for_phase0=false. This autonomous AUDIT_ONLY cron cannot promote any module: promotion is derived only from a module-local movement event carrying two distinct trusted-human-key signatures, which it does not hold and must not forge.",
+    "inputs": {
+      "module_manifest_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+      "n_benchmark_locks_scanned": 29,
+      "phase0_decision_report_v2_sha256": "9467b62782321b4359922f50d646317b260df187093d9c8c96b1c5a7e25db965"
+    },
+    "live_counts": {
+      "module_count": 29,
+      "phase0_count": 10,
+      "pre_phase0_count": 19,
+      "status": "EXECUTION_INCOMPLETE"
+    },
+    "n_modules_scientifically_VALIDATED": 0,
+    "phase0_modules_readiness_breakdown": {
+      "LOCKED_INTERNAL": 3,
+      "NOT_APPLICABLE": 7
+    },
+    "scientific_readiness_all_modules_decision_report": {
+      "LOCKED_INTERNAL": 3,
+      "NOT_APPLICABLE": 7,
+      "UNVALIDATED": 19
+    },
+    "scientific_readiness_all_modules_module_manifest": {
+      "UNVALIDATED": 29
+    }
+  },
+  "predecessor": "owk-adhesion-and-phase0-redteam-v1",
+  "schema": "amphora.redteam-audit.barrier-water-uptake-hydrophilicity.diagnostic.v1",
+  "target_capability": "equilibrium water uptake / barrier-water transport of the cured film",
+  "target_kpi_id": "barrier-water-uptake-hydrophilicity-rank-v1",
+  "target_module": "amphora-barrier-corrosion-score"
+}

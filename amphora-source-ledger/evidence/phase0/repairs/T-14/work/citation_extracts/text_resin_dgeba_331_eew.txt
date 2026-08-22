@@ -1,0 +1,2365 @@
+ DOW
+LIQUID
+ EPOXY
+RESINS
+                        DOWLIQUID
+                        EPOXY
+                        RESINS
+                                                                                                                         Liquid Epoxy Resins
+    Note: Safety information on the handling                   Safe Handling and Storage Manual
+    of novolac resins, epoxy resins, solvents,                 (Form No. 296-00312) and DOW Epoxy                        Cured with BF3 · MEA
+    diluents, modifiers, and other common                      Curing Agents Product Stewardship, Safe                        Physical Properties . . . . . . . . . . .27
+    “epoxy” formulation materials is critical.                 Handling and Storage Manual (Form                              Electrical Properties . . . . . . . . . .28
+    However, plant conditions and environ-                     No. 296-01331), are available from the                         Chemical, Solvent Resistance, and
+    ments vary so widely, no warranty of any                   Dow Plastics (Thermoset Applications)                            Thermal Degradation . . . . . . .29
+    kind can be given. Formulators-customers                   Department or your Dow sales representative.
+    should contact their suppliers of each of                  ©1966, 1969, 1976, 1988, 1990, 1998, 1999                 Liquid Epoxy Resins
+    these materials for specific safe handling                 The Dow Chemical Company                                  Cured with Polyamide Curing Agent
+    recommendations. Companion bulletins,                      All rights reserved.                                           Physical Properties . . . . . . . . . . .30
+    DOW Epoxy Resins Product Stewardship,
+                                                                                                                              Electrical Properties . . . . . . . . . .31
+                                                                                                                              Chemical, Solvent Resistance, and
+                                                                                                                                Thermal Degradation . . . . . . .32
+Contents
+Introduction . . . . . . . . . . . . . . . . . .2             Resin Performance Data . . . . . .16
+                                                                                                                         Liquid Epoxy Resins
+Products and Properties . . . . . . . . . . .3                Test Methods . . . . . . . . . . . . . . . . . . . .17
+                                                                                                                         Containing a Reactive Diluent
+Resin Structure . . . . . . . . . . . . . . . . . .5          Chemical and Solvent
+                                                                                                                              Physical Properties . . . . . . . . . . .32
+                                                              Resistance . . . . . . . . . . . . . . . . . . . . . .17
+                                                                                                                              Electrical Properties . . . . . . . . . .33
+Curing Agents . . . . . . . . . . . . . . . .6                Cure Schedules . . . . . . . . . . . . . . . . . .18
+                                                                                                                              Chemical, Solvent Resistance, and
+Primary and Secondary
+                                                                                                                                Thermal Degradation . . . . . . .33
+     Polyfunctional Amines . . . . . . . .6                   Liquid Epoxy Resins Cured
+     Aliphatic Polyamines . . . . . . . . .7                  with D.E.H.* 24
+                                                                                                                         Additional Property Data . . . . . .34
+     Aromatic Polyamines . . . . . . . . .7                        Physical Properties . . . . . . . . . . .19
+     Calculation of                                                Electrical Properties . . . . . . . . . .20
+                                                                                                                         Storage . . . . . . . . . . . . . . . . . . . . . . . .35
+       Stoichiometric Ratios . . . . . . .7                        Chemical, Solvent Resistance, and
+Anhydrides . . . . . . . . . . . . . . . . . . . . .9                 Thermal Degradation . . . . . .21
+                                                                                                                         Hazards And Handling
+Polyamides . . . . . . . . . . . . . . . . . . . . .10
+                                                                                                                         Precautions . . . . . . . . . . . . . . . . . . . .36
+Catalytic Curing Agents . . . . . . . . . . .11               Liquid Epoxy Resins
+                                                                                                                         Health Hazards . . . . . . . . . . . . . . . . . .36
+                                                              Cured with 1,2-Cyclohexane Diamine
+                                                                                                                         Handling Precautions . . . . . . . . . . . . .38
+Reactive Diluents,                                                 Physical Properties . . . . . . . . . . .22
+                                                                                                                         Flammability . . . . . . . . . . . . . . . . . . .39
+Modifiers, Fillers . . . . . . . . . . . . . .12                   Electrical Properties . . . . . . . . . .22
+                                                                                                                         Spill Containment and Cleanup . . . . .39
+Reactive Diluents . . . . . . . . . . . . . . . .12                Chemical, Solvent Resistance, and
+Resin Modifiers . . . . . . . . . . . . . . . . . .13                Thermal Degradation . . . . . . .23
+                                                                                                                         Appendix–Abbreviations . . . . . . .40
+Fillers . . . . . . . . . . . . . . . . . . . . . . . . .14
+                                                              Liquid Epoxy Resins Cured with Nadic
+                                                                                                                         Product Stewardship . . . . . . . . . .41
+Epoxy Formulating                                             Methyl Anhydride
+Techniques . . . . . . . . . . . . . . . . . . .15                 Physical Properties . . . . . . . . . . .24
+Equipment . . . . . . . . . . . . . . . . . . . . .15              Electrical Properties . . . . . . . . . .25
+Temperature Control . . . . . . . . . . . . .15                    Chemical, Solvent Resistance, and
+Viscosity vs Temperature of D.E.R.                                   Thermal Degradation . . . . . . .26
+     Liquid Epoxy Resins . . . . . . . . . .15
+
+
+
+1
+             INTRODUCTION                                                             such modifiers often adversely affect
+                                                                                      the physical, chemical, or solvent resis-
+D.E.R.* liquid epoxy resins, developed     • No volatile loss
+                                                                                      tance properties of an epoxy system, or
+and marketed by The Dow Chemical             during cure of product.
+                                                                                      they limit the choice of curing agents
+Company, are commercially established      • Dimensional stability during
+                                                                                      and thus limit use in many
+as major raw materials in the fields of      cure. They exhibit little shrinkage
+                                                                                      applications.
+tooling, encapsulation, adhesives, lami-     and can be used for very accurate
+nates, and coatings.                         reproduction.
+                                                                                      D.E.R. 732 and D.E.R. 736 flexible
+                                           • Chemical resistance. Good
+                                                                                      epoxy resins are designed to overcome
+Similar commercial success has been          resistance to a variety of chemicals
+                                                                                      many of the specific disadvantages of
+earned by the families of D.E.R. solid       (including solvents, acids, and bases)
+                                                                                      these other flexibilizing systems. They
+and solution epoxy resins, flexible          results with properly cured
+                                                                                      are compatible with practically all other
+epoxy resins, brominated epoxy resins,       formulations.
+                                                                                      epoxy resins and are shelf stable after
+D.E.N.* epoxy novolac resins, and          • Chemical inertness. They accept a
+                                                                                      mixing. Because they are true epoxy
+D.E.H.* epoxy curing agents … also           wide range of fillers and pigments;
+                                                                                      resins, they react with all epoxy curing
+produced and marketed by Dow.                they do not affect encapsulated parts
+                                                                                      agents and become an integral part of
+And since these products are used with       or common containers.
+                                                                                      the cured system.
+various curing agents, diluents, and       • Durability. Cured formulations
+modifiers, an almost unlimited range and     exhibit good hardness, impact
+                                                                                      Table 1 on page 4 lists the typical
+variety of properties may be obtained.       strength, and toughness.
+                                                                                      properties of DOW liquid epoxy resins;
+                                           • Adhesion. The tenacity of epoxy
+                                                                                      Table 2 lists the typical properties of
+This bulletin describes the bisphenol A-     adhesion to almost any surface
+                                                                                      two liquid epoxy resins that contain a
+based liquid epoxy resins and aliphatic      is without equal among organic
+                                                                                      reactive diluent (a C12-C14 aliphatic
+glycol epoxy resins offered by Dow.          coatings.
+                                                                                      glycidyl ether), which provides reduced
+Information on other DOW epoxy and         • Versatility in curing agent choice
+                                                                                      viscosities. Each resin is briefly
+epoxy-related products may be                and curing conditions.
+                                                                                      described in the following paragraphs.
+obtained from your Dow sales repre-
+                                                                                      Table 3 lists the typical properties of
+sentative or by calling 1-800-441-4369.    Typically, bisphenol A/epichlorohydrin
+                                                                                      two flexible epoxy resins.
+                                           based resins, novolac based epoxy
+The curing of a liquid epoxy resin —       resins, and other di- or multifunctional
+                                                                                      Note: Prior to handling any of these resins,
+i.e., converting it to a thermoset solid   resins containing the aromatic ring        or related curing agents, diluents, catalysts,
+— is fundamental to its commercial         structure will cure to hard, rigid com-    or solvents, be certain you have acquired
+use. This is also true of epoxy, poly-     positions having rather low impact and     from your supplier(s) adequate information
+ester, phenolic, and melamine resins.      elongation characteristics. There are      pertaining to safe operations for your workers
+However, liquid epoxy resins, because      many approaches to improving these         and your plant. Request Material Safety Data
+of their structure and the method of       properties and increasing flexibility in   (MSD) sheets for each product from its
+their cure, are superior to these other    epoxy resin systems. Among them are        supplier. See “Hazards” section, pages 39-42,
+resins in the following properties:        modifications with vegetable oils,         and the bulletins mentioned in the note on
+                                           polyamide or polysulfide curing agents,    the inside of the front cover.
+                                           or long chain polyglycols. However,
+
+
+
+
+*Trademark of The Dow Chemical Company.
+
+                                                                                                                                       2
+    PRODUCTS
+      AND
+    PROPERTIES                                              lack of polymer fractions,
+                                                            D.E.R. 332 resin provides uni-
+                                                            form performance and excep-
+                                                                                             D.E.R. 732 & D.E.R. 736 Epoxy Resins
+                                                                                             D.E.R. 732 and D.E.R. 736 are polygly-
+                                                                                             col di-epoxides. Dow flexible epoxy
+                                                            tionally low viscosity and       resins are principally used as additives
+D.E.R. 317 Epoxy Resin                          color. Under some conditions of cure, as     to base epoxy systems in formulations
+A high viscosity, fast reacting (20% faster     illustrated in the cure schedule and         where greater elongation, higher
+than D.E.R. 331) liquid epoxy resin             property data (pages 18-33), it gives        impact resistance, and increased flexi-
+designed for adhesive applications              improved elevated temperature proper-        bility are required.
+requiring quick gelling with amine cur-         ties.
+ing agents.                                                                                  †Note: Under certain conditions, liquid epoxy
+                                                                                             resins may crystallize. Crystallization may take
+                                                D.E.R. 332 resin frequently crystallizes
+                                                                                             the form of turbidity or the presence of crystals in
+D.E.R. 324 Epoxy Resin                          at room temperature. The pure digly-         the material or on the container. Occasionally,
+A formulated blend of D.E.R. 331 and a          cidyl ether of bisphenol A is a solid with   crystallization may continue to the point where
+C12-C14 aliphatic glycidyl ether to produce     a melting point of approximately 42°C        solidification occurs. The occurrence of crystalliza-
+a low viscosity product. The product has        (108°F). Crystallization may be induced      tion is in no way an indication that an epoxy resin
+utility in filled formulations for flooring     by chilling, seeding by dust particles, or   is contaminated or out of specification. Rather, it
+                                                                                             is a phenomenon which can occasionally occur
+compounds, grouts, adhesives,                   incorporation of filler. Warming to 50-
+                                                                                             during storage at room temperature or below.
+decoupage coatings, and high solids             55°C (122-131°F) restores the resin to a
+coatings. Blend ratio is 83/17 D.E.R. 331       liquid state. Long-term warm storage         Material that shows evidence of crystallization
+to diluent.                                     may result in slight discoloration but       can be returned to its original liquid state by
+                                                does not affect resin performance.           heating it to a temperature of approximately
+D.E.R. 325 Epoxy Resin                                                                       50°C (122°F). This temperature should be
+                                                                                             maintained until dissolution occurs. Suggestions
+A medium viscosity resin blend of 92/8          D.E.R. 337 Epoxy Resin
+                                                                                             for heating include the use of a standard vented
+ratio of D.E.R. 331 to C12-C14 aliphatic gly-   An intermediate epoxide equivalent           laboratory convection oven or steam. If steam is
+cidyl ether. Used in same applications as       weight bisphenol A semi-solid epoxy          used, it should be circulated around tightly
+D.E.R. 324.                                     resin. Used in adhesives and coatings or     closed containers which have been assembled
+                                                as a modifier for other epoxy resins to      under a tarpaulin. (Note: Always exercise
+D.E.R. 330 Epoxy Resin                          improve impact strength, extensibility,      good safety habits when working with elevated
+                                                                                             temperatures. Also, for further information
+A low epoxide equivalent weight liquid          and adhesion.
+                                                                                             and/or advice on dissolution procedures, call or
+resin processed to give very low viscosi-                                                    write The Dow Chemical Company,
+ty without the use of a reactive diluent.       D.E.R. 362 & D.E.R. 364 Epoxy Resins         Dow Plastics, Customer Information Group,
+                                                Medium viscosity liquid epoxy resins         P.O. Box 1206, Midland, MI 48641-1206,
+D.E.R. 331 Epoxy Resin                          based on bisphenol A which possesses         (1-800-441-4369), FAX 517-832-1465.
+A general purpose, widely used liquid           the unique characteristic of crystalliza-
+                                                                                             Crystallization is chiefly a result of the purity
+resin. It is recognized as a standard from      tion resistance.† D.E.R. 362 and D.E.R.
+                                                                                             and uniformity of a liquid epoxy resin.
+which variations have been developed.           364 contain no solvents, no diluents, and    For example, pure diglycidyl ether of bisphenol A
+                                                are suited for applications ranging from     (DGEBA) is a solid. Factors that may encourage
+D.E.R. 332 Epoxy Resin                          coatings to composites.                      crystallization include thermal cycling and the
+The uniqueness of D.E.R. 332 epoxy                                                           presence of filler, which acts as seed material for
+resin is reflected in its maximum epox-         D.E.R. 383 Epoxy Resin                       crystal formation. To discourage crystallization,
+                                                                                             store epoxy resins at room temperature or higher.
+ide equivalent weight of 178 (chemically        A liquid epoxy resin designed to provide
+                                                                                             Also, avoid situations where temperatures cycle
+pure diglycidyl ether of bisphenol A            reduced viscosity and extended pot life      from room temperature to lower temperatures,
+would have an epoxide equivalent weight         while maintaining properties essentially     as is sometimes the case in a warehouse.
+of 170). Because of its high purity and         equivalent to those of D.E.R. 331 epoxy
+                                                resin.
+
+3
+                      Typical Properties† of DOW Liquid Epoxy Resins
+Table   1
+                                       Viscosity                           Flash    Specific   Weight
+                    Epoxide            Range                  Color, Max   Point,   Gravity,   (Lbs/Gal)
+Resin               Equiv. Wt.         (cps @ 25°C)           (Gardner)    (°F) 2   25/25°C    @ 25°C
+D.E.R. 317          192-203            16,000-25,000          5            485      1.16       9.7
+D.E.R. 330          176-185            7,000-10,000           125 3        485      1.16       9.7
+D.E.R. 331          182-192            11,000-14,000          125 3        485      1.16       9.7
+D.E.R. 332          172-176            4,000-6,000            75 3         485      1.16       9.7
+D.E.R. 337          230-250            400-800 1              3            485      1.16       9.7
+D.E.R. 362          185-205            4,500-6,500            1            480      1.14       9.5
+D.E.R. 364          190-210            4,000-7,000            2            480      1.16       9.7
+D.E.R. 383          176-183            9,000-10,500           125 3        485      1.16       9.7
+170% non-volatile in DOWANOL* DB solvent.
+2Pensky-Martens, ASTM D-93.
+3APHA Color — ASTM method 1209.
+†Typical properties; not to be construed as specifications.
+
+
+
+
+                     Typical Properties† of DOW Liquid Epoxy Resins
+Table   2            Containing a Reactive Diluent
+                                        Viscosity                          Flash    Specific Weight
+                    Epoxide              Range                Color, Max   Point,    Gravity, (Lbs/Gal)
+Resin              Equiv. Wt.         (cps @ 25°C)            (Gardner)    (°F)1    25/25°C @ 25°C
+D.E.R. 324          197-206              600-800                   3        350       1.11       9.3
+D.E.R. 325          185-206             850-2,800                  2        375       1.14       9.5
+1Pensky-Martens, ASTM D-93.
+†Typical properties; not to be construed as specifications.
+
+
+
+                     Typical Properties† of DOW Liquid Epoxy Resins
+Table   3            Based On Polyglycol Di-epoxides
+                                        Viscosity                          Flash    Specific Weight
+                    Epoxide              Range                Color, Max   Point,    Gravity, (Lbs/Gal)
+Resin              Equiv. Wt.         (cps @ 25°C)             (APHA)      (°F)1    25/25°C @ 25°C
+D.E.R. 732          305-335               55-100                  125       310       1.06       8.9
+D.E.R. 736          175-205               30-60                   125       320       1.14       9.5
+1Pensky-Martens Closed Cup
+†Typical properties; not to be construed as specifications.
+
+
+
+
+                                                                                                           4
+     RESIN
+    STRUCTURE   Epoxy resins contain a reactive oxirane structure
+
+                       O
+                   — CH — CH2
+
+                which is commonly referred to as an “epoxy” functionality. Liquid epoxy
+                resins are converted through these reactive epoxy sites into tough,
+                insoluble, and infusible solids.
+
+                The simplest possible epoxy resin derived from the reaction of bisphenol
+                A and epichlorohydrin is (2,2-bis[4-(2'3' epoxy propoxy) phenyl]
+                propane), commonly called the diglycidyl ether of bisphenol A (DGEBA).
+
+                     O                        CH3                 O
+                  CH2— CH— CH2— O—          — C—      — O— CH2— CH— CH2
+                                              CH3
+                The higher molecular weight homologs are represented by the
+                following theoretical structure:
+
+
+                   O                            CH3               OH
+                 CH2— CH— CH2—— O—            — C—       — O— CH2— CH—CH2——
+                                                CH3
+                                                                                n
+
+
+                                              CH3                   O
+                                   —O—       — C—       — O— CH2— CH— CH2
+                                               CH3
+
+                Generic Bisphenol A Based Epoxy Resin Chemical Structure
+                With increasing molecular weight, another reactive site — the OH group
+                — is introduced. This group can react at higher temperatures with anhy-
+                drides, organic acids, amino resins, and phenolic resins, or with epoxide
+                groups (when catalyzed) to give additional cross-linking.
+
+                Typical value of “n” is about 0.15 for D.E.R. 331 epoxy resin (epoxy equiv-
+                alent weight range of 182-192 and viscosity of 11,000-14,000 cps at 25°C).
+                The low melting point solid resins begin at an “n” of about 2.5.
+                In high melting point solid resins, “n” may be as high as 18.
+
+                    O                R           R´        O
+                     —  —   —
+                  CH2 CH CH2 O——   —   —
+                                CH2 CH O —— CH2 CH O CH2 CH— CH2
+                                               —    — — —
+
+                                                         n
+
+
+                Generic Aliphatic Polyglycol Diepoxide Structure
+                D.E.R. 736 resin has a lower value of “n,” and hence a shorter chain
+                length than D.E.R. 732.
+
+5
+          CURING
+ AGENTS                                          The amines react with the epoxy
+                                                 group through the active amine
+                                                                                          The presence of hydroxyls, however,
+                                                                                          has an important function because
+                                                 hydrogen. Each primary amine             they assist in opening the epoxide
+Many commercial materials are suitable       group is theoretically capable of reacting   ring. Alcoholic or phenolic hydroxyls
+as reactive cross-linking agents for liq-    with two epoxide groups, and each sec-       accelerate the primary and secondary
+uid epoxy resins. The most common            ondary amine group is capable of react-      amine cures and thus provide for the
+types of curing agents are:                  ing with one epoxide group. The reac-        more rapid gel time of the amine
+                                             tion of a primary amine with an epoxy is     adducts and the higher molecular
+• primary and secondary polyamines           seen as follows:                             weight resins.
+  and their adducts
+                                                            O
+                                                RNH2 + CH2— CH
+• anhydrides
+                                                     H
+• polyamides                                         RN— CH2— CH
+                                                                OH
+• catalytic types
+                                             The secondary amine thus formed
+Primary And Secondary                        reacts further:
+Polyfunctional Amines                           H                    O
+Typical of this class of curing agents are      RN— CH2— CH + CH2—CH
+aliphatic amine compounds, such as                         OH
+D.E.H. 20 epoxy hardener (diethylene
+                                                           OH
+triamine), D.E.H. 24 epoxy hardener
+(triethylene tetramine), and D.E.H. 26               CH2—CH
+                                                RN
+epoxy hardener (tetraethylene penta-                 CH2—CH
+mine). Also used are adducts of the                        OH
+above amines with epoxy resins, dilu-        Theoretically, the hydroxyls formed
+ents, or other amine-reactive com-           should be capable of reacting with epoxy
+pounds. Room temperature cures are           groups to form an ether linage:
+usually employed.
+                                                                O
+Aromatic amines, such as metaphenylene               CH     + CH2— CH
+diamine and diamino diphenyl sulfone,                OH
+are also widely used to achieve higher
+                                                     CH
+heat distortion temperatures. Elevated
+                                                     O
+temperature cures are usually employed.
+                                                     CH2—CH
+                                                           OH
+                                             This reaction is often catalyzed by
+                                             tertiary amines. However, the tertiary
+                                             amine formed by the epoxy-secondary
+                                             amine reaction is apparently too immo-
+                                             bile and sterically hindered to act as a
+                                             catalyst.
+
+
+
+                                                                                                                                  6
+Aliphatic Polyamines                        follows, using D.E.H. 20 (NH2 — CH2 —         Equation (3):
+The liquid aliphatic polyamines and their   CH2 — NH — CH2 — CH2 — NH2)                                                     Total Wt
+                                                                                           EEW of mix =
+adducts are convenient to handle, give      as an example:                                                        Wt a   Wt b   Wt c
+                                                                                                                       +      +
+excellent cured resin physical character-                                                                        EEWa EEWb EEWc
+istics, including chemical and solvent      1. To calculate the Amine H equivalent
+resistance, and cure at ambient or mod-        weight, use the following equation:        Total weight includes all materials,
+erately elevated temperatures. Good                                                       both reactive and nonreactive.
+long-term retention of properties is pos-   Equation (1):
+sible at temperatures up to 100°C.                                  MW of amine           a,b,c, etc., are only the materials
+                                            Amine H eq wt =
+Short-term exposure at higher tempera-                         no. of active hydrogen     reactive with the curing agent, and
+tures can be tolerated. Pot life is short                                                 are characterized by an epoxy ring.
+and exotherm is high in thick sections
+and large masses. See Table 4.              Example:
+                                                                         103.2
+                                            Amine H eq wt D.E.H. 20 =
+                                                                           5
+                                                                               = 20.6     Example:
+Aromatic Polyamines                                                                       100 parts D.E.R. 331        Avg EEW 189
+Most aromatic polyamines are solids         2. To calculate the stoichiometric ratio of
+                                                                                          100 parts D.E.R. 337        Avg EEW 240
+and are usually incorporated in the resin      DEH 20 to use with D.E.R. 331 epoxy        30 parts BGE (diluent)      Avg EEW 130
+by melting at elevated temperatures.           resin having an epoxide equivalent         230 parts Filler                   —
+Pot life is considerably longer than with      weight of 189:                             460 Total
+
+aliphatic polyamines, and elevated tem-                                                                               460                460
+perature cures are required to develop      Equation (2):                                 EEW of mix =
+                                                                                                             100 + 100 + 30
+                                                                                                                                    =
+                                                                                                                                        1.1766
+                                                                                                                                               = 391
+
+optimum properties. See Table 5.                              Amine H eq wt ⫻ 100                            189   240   130
+                                            phr† of amine =
+                                                              Epoxide eq wt of resin
+                                                                                          By equation (2):
+Cured systems give excellent perfor-
+                                                                                                                 20.6 ⫻ 100
+mance up to about 150°C (302°F). They                                                     Amount D.E.H. 20 =                = 5.27 parts per
+                                            Example:                                                                 391           hundred parts
+are used in adhesives, wet lay-up lami-                                                                                           filled formulation
+                                            phr D.E.H. 20 to be used with D.E.R. 331.
+nates, tooling, small pottings, and coat-
+                                                    20.6 ⫻ 100                            †Parts by wt per 100 parts resin
+ings. Shrinkage of aromatic polyamine       phr =              = 10.9
+                                                        189
+cured resins, particularly with the high-
+molecular-weight resins, is quite low —     3. Frequently, epoxy resins are blended,
+a useful feature for encapsulation and         filled, or modified with reactive and
+potting.                                       nonreactive components. It is then
+                                               necessary to adjust the concentration
+Calculation of Stoichiometric Ratios           of the curing agent to cure only the
+To obtain optimum properties with poly-        portion of the mix that is reactive;
+functional epoxide-reactive curing             e.g., the resins and any reactive dilu-
+agents (particularly the amines), it is        ent present. This may be simply done
+desirable to react the resin and the cur-      by calculating the epoxide equivalent
+ing agent at approximately stoichiometric      weight (EEW) of the total mix and
+quantities. To determine the ratio             then applying equation (2) to deter-
+required, calculations can be made as          mine the amount of curing agent to
+                                               add to 100 parts of formulation.
+
+
+
+
+7
+                                Aliphatic Polyamines and Adducts†
+ Table   4
+                               Wt. Per        PHR
+                               Active         D.E.R.          Suggested Cure
+ Curing Agent                  H              331             Schedule                             Source     Comments
+
+ D.E.H. 20                     20.6           10.9            Gel at RT plus several days at RT    The Dow    General purpose RT curing agent. High exotherm in
+ (diethylene                                                  or 1-2 hrs at 100°C for full cure.   Chemical   large mass. May blush under humid conditions.
+ triamine, DETA)                                                                                   Company
+
+ D.E.H. 24                     24.4           12.9            Gel at RT plus several days at RT    Dow        General purpose RT curing agent. High exotherm in
+ (triethylene                                                 or 1-2 hrs at 100°C for full cure.              large mass. Lower vapor pressure than D.E.H. 20.
+ tetramine, TETA)                                                                                             May blush under humid conditions.
+
+ D.E.H. 26                     27.1           14.3            Gel at RT plus several days at RT    Dow        RT curing agent often used in 2 package protective
+ (tetraethylene                                               or 1-2 hrs at 100°C for full cure.              coating systems. May blush under humid conditions.
+ pentamine, TEPA)
+
+ D.E.H. 29                     28.8           15.2            Gel at RT plus several days at RT    Dow        Amine curing agent with low vapor pressure for safer
+ (amine mix)                                                  or 1-2 hrs at 100°C for full cure.              handling. Similar in properties to D.E.H. 24 but cured
+                                                                                                              samples have less tendency to blush when cured under
+                                                                                                              humid conditions.
+
+ D.E.H. 39                     43             22.8            Gel at RT plus several days at RT    Dow        Trifunctional amine with short pot life. Imparts moderate
+ (amino ethyl                                                 or 1-2 hrs at 100°C for full cure.              degree of flexibility and gives improved impact.
+ piperazine, AEP)
+
+ D.E.H. 52                     53             28.0            Gel at RT plus several days at RT    Dow        Amine adduct with D.E.R. 331. Fast cure time. Viscosity
+ (amine-epoxy resin                                           or 1-2 hrs at 100°C for full cure.              6,000-8,000 cps. Lower vapor pressure and less critical
+ adduct)                                                                                                      ratios offer improved handling characteristics.
+
+ D.E.H. 58                     30             15.9            Gel at RT plus several days at RT    Dow        Amine containing an accelerator for fast reacting
+ (accelerated                                                 or 1-2 hrs at 100°C for full cure.              ambient cure systems.
+ aliphatic amine)
+
+ XUS 19036.00                  34             18.0            Gel at RT plus several days at RT    Dow        Amine curing agent with low-odor, non-corrosive and
+ (polyethylene                                                or 1-2 hrs at 100°C for full cure.              excellent chemical-resistant properties, especially for
+ polyamine)                                                                                                   secondary containment applications with reduced blush
+                                                                                                              tendency under humid cure conditions.
+
+RT = Room Temperature
+†Typical properties; not to be construed as specifications.
+
+
+
+
+                                                                                                                                                                       8
+                               Aromatic Polyamines†
+    Table   5
+                               Wt. Per          PHR
+                               Active           D.E.R.          Suggested Cure
+    Curing Agent               H                331             Schedule                                   Comments
+
+    Metaphenylene              27               14.3            Gel at 55°C + 2 hrs at 125°C + 2           Aromatic diamine with a melting point of approx. 60°C.
+    diamine (MPDA)                                              hrs at 175°C.                              Can be used to make eutectic mix. Good elevated temp.
+                                                                                                           performance. Used in laminates, castings, and
+                                                                                                           filament winding.
+
+    Diamino diphenyl           57               30.2            1 hr at 150°C                              Aromatic polyamine with a melting point of approx.
+    sulfone (DDS or                                             3 hrs at 220°C.                            175°C. Used in laminates. Has good B-stage shelf life.
+    DADS)                                                                                                  Cure may be accelerated with BF3•MEA or
+                                                                                                           aliphatic amines.
+
+    Diethyltoluene             44.6             23.6            2 hrs at 100°C                             Low viscosity liquid aromatic diamine. Gives longer pot
+    diamine                                                     4 hrs at 175°C.                            life than other aromatic amines. Low exotherm.
+
+
+
+
+†Typical formulations and cure schedules only; not to be construed as specifications.
+
+
+
+
+Anhydrides                                                      1. The opening of the anhydride ring                    At low elevated temperature cures, the
+Liquid and solid anhydrides are                                    with an alcoholic hydroxyl to form                   ether and ester reactions take place at
+extensively used to cure epoxy resins.                             the monoester:                                       about the same rate. At higher tempera-
+Products typical of this class are shown                                                                                tures, the ester linkage occurs more
+                                                                             O                  O
+in Table 6.                                                                                                             frequently, and this probably accounts for
+                                                                    —C—C                    — C— C— O— CH
+                                                                             O + HO— CH                                 the reduced elevated temperature perfor-
+The reactivity rate of some anhydrides                              —C—C                    —C— C—OH                    mance of systems gelled at initially high
+with epoxies is slow. An accelerator, usual-                                 O                      O                   temperatures. Since reaction (3) can take
+ly a tertiary amine, is often used (0.5% to                     2. Subsequent to (1), the nascent car-                  place independently in the acid medium,
+3%) to speed gel time and cure. The opti-                          boxylic groups react with the epoxide                the ratio of anhydride to epoxy is less
+mum amount is usually critical, depending                          to give an ester linkage:                            critical than with an amine. It can vary
+upon the anhydride and resin used and                                O                                                  from 0.5 to 0.9 equivalents of anhydride
+cure schedules. Amounts above or below                          — C— C— O— CH              O                            per equivalent of epoxy and should be
+the “correct” amount reduce high temper-                                                + CH2— CH                       determined experimentally to achieve
+                                                                —C— C—OH
+ature performance. The “best” concentra-                                                                                desired properties.
+                                                                       O                     O
+tion should be determined experimentally.
+                                                                                        — C— C— O— CH
+Eutectic mixtures to depress resin melt-                                                                                Pot life of the mix is usually long;
+ing points may be prepared.                                                             — C— C— O— CH2— CH              exotherm is low. Elevated temperature
+                                                                                             O            OH            cures are necessary and long post cures
+The reaction of anhydrides with epoxy                           3. The epoxide groups react with nascent                are required to develop ultimate proper-
+groups is complex, with several compet-                            or existing hydroxyl groups, catalyzed               ties. Electrical and physical strength
+ing reactions capable of taking place.                             by the acid, producing an ether linkage:             properties are good over a wide tempera-
+The three most important are:                                                    O                                      ture range. Chemical resistance to some
+                                                               HC— OH + CH2— CH                  HC— O— CH2— CH         reagents is less than with amine-cured sys-
+                                                                                                               OH       tems, but is better against aqueous acids.
+
+
+9
+                                    Anhydrides†
+ Table   6
+                                PHR
+                                D.E.R.        Suggested Cure
+Curing Agent                    331           Schedule                                       Comments
+
+Nadic methyl                    60-901        2 hrs at 90°C + 4 hrs at 165°C +               Liquid anhydride having long pot life at room temp.
+anhydride (NMA)                               16 hrs at 200°C                                Excellent elevated temp. properties.
+
+Hexahydrophthalic               60-751        2 hrs at 100°C + 2-6 hrs at 150°C              Low melting point solid, approx. 35°C, soluble in liquid
+anhydride (HHPA)                                                                             resin at room temp. Used in potting, filament windings, and
+                                                                                             clear castings.
+
+Trimellitic anhydride           60-901        24 hrs at 150-180°C                            Good electrical properties, good high temperature
+(TMA)                                                                                        properties. Reacts rapidly at high temperatures.
+
+Dodecenyl succinic              95-1301       2 hrs at 100°C + 4-6 hrs at 150°C              Liquid anhydride. Imparts flexibility to cured composition.
+anhydride (DDSA)
+
+Phthalic                        40-65         24 hrs at 120°C or 8 hrs at 150°C              Solid anhydride with melting point 128°C. Low exotherm
+anhydride (PA)                                                                               and long pot life. Used in large encapsulations.
+
+Methyl                          60-751        3 hrs at 100°C + 6 hrs at 140°C                Excellent light stability, fast gel time.
+hexahydrophthalic
+anhydride (MHHPA)
+
+Tetrahydrophthalic              60-751        24 hrs at 120°C or 8 hrs at 150°C              Solid anhydride with melting point of 100°C. Similar to
+anhydride (THPA)                                                                             hexahydrophthalic anhydride in cured resin properties.
+                                                                                             Used in pottings and encapsulations.
+
+Methyl                          70-901        2 hrs at 90°C + 4 hrs at 150°C                 Liquid anhydride with higher reactivity than NMA but
+tetrahydrophthalic                                                                           similar cured physical properties.
+anhydride (MTHPA)
+
+1Plus suitable accelerator.
+†Typical formulations and cure schedules only; not to be construed as specifications.
+
+
+
+Polyamides                                                   The reactivity of polyamides with                   without blushing and show outstanding
+This class of compounds can be consid-                       epoxies is similar to that of the aliphatic         adhesion. Formulations are high in vis-
+ered as modified polyfunctional aliphatic                    amines. Since the polyamides are                    cosity and are sometimes incompatible
+amines, since the polyamides most                            relatively large polymers, the ratio of             with the resin until reaction has been
+widely used are the condensation                             polyamide to epoxy is less critical than            initiated. They are usually dark in color.
+products of dimerized fatty acids and a                      with the low-molecular-weight amines. It            Polyamide systems lose structural
+difunctional amine such as ethylenedi-                       is varied quite broadly to obtain proper-           strength and insulation value rapidly
+amine. Their theorized structure is                          ties from hard to semi-flexible. In this            with increasing temperatures, and are
+represented as follows:                                      sense, the polyamides can be considered             usually restricted to applications under
+                                                             resin modifiers as well as curing agents.           65˚C (149˚F). Similar products from two
+     O    O                                                                                                      polyamide curing agent producers are
+OH—— C—R— C—NH—CH2— CH2—NH—— H                               Polyamide-cured formulations have                   shown in Table 7.
+                                                             longer pot life than formulations cured
+                      n = 5 to 15                  n
+                                                             with aliphatic polyamines and their
+                                                             adducts. They cure at room temperature
+
+                                                                                                                                                           10
+                                 Polyamides†
+  Table   7
+                                 PHR
+                                 D.E.R.               Suggested Cure
+ Curing Agent                    331                  Schedule                                     Comments
+
+ Versamid 1 100                  70-110               RT + several days to full cure.              Semi-solid polyamide resin used primarily as a solvent cut solution
+ Ancamide 2 100                                                                                    to cure intermediate-molecular-weight epoxy resins in coating
+                                                                                                   applications. Also available in solutions. Can be used to cure resins
+                                                                                                   on wet substrates.
+
+ Versamid 115                    60-100               RT gel + several days to full cure           High-viscosity fluid polyamide. Can be used at 100% solids by
+ Ancamide 220                                         or 1-2 hrs at 100°C.                         warming to reduce viscosity. Used in laminates, adhesives, potting,
+                                                                                                   sealants, and coatings. Also available in solution.
+
+ Versamid 125                    50-100               RT gel + several days to full cure           Intermediate-viscosity fluid polyamide. Can be blended at RT or
+ Ancamide 260A                                        or 1-2 hrs at 100°C.                         warmed slightly to reduce viscosity. Used in wet lay-ups, adhe-
+                                                                                                   sives, potting, sealants, coatings, epoxy mortars, and tooling.
+
+ Versamid 140                    30-70                RT gel + several days to full cure           Low-viscosity polyamide having higher heat distortion, excellent
+ Ancamide 350A                                        or 1-2 hrs at 100°C.                         adhesion, and low shrinkage. Used in 100% solids spray applica-
+                                                                                                   tions, wet lay-ups, epoxy mortars, casting, tooling, and adhesives.
+
+
+
+ RT = Room Temperature                                                         1
+                                                                                Trademark of Henkel
+ †Typical properties; not to be construed as specifications.                   2
+                                                                                Trademark of Air Products and Chemicals, Inc.
+
+
+
+
+ Catalytic Curing Agents                                                                       O                            latent catalysts, such as BF3 · MEA
+ Catalytic curing agents are those com-                                 CH2— CH            + CH2— CH                        (boron trifluoride monoethylamine)
+ pounds that promote epoxy-to-epoxy or                                         O⍜                                           complex or dicyandiamide. The latent
+ epoxy-to-hydroxyl reactions and do not                                                    CH2— CH                          catalysts depend on dissociation by heat
+                                                                                                 O                          with the dissociation products capable of
+ themselves serve as direct cross-linking
+                                                                                                 CH2— CH
+ agents. Tertiary amines, amine salts,                                                                                      initiating epoxy cures.
+                                                                                                         O⍜
+ boron trifluoride complexes, and amine
+                                                                This continues until a dense cross-linked
+ borates are in this class.                                                                                                 The amount of catalyst used may vary
+                                                                structure containing the stable ether
+                                                                                                                            from 2 to 10 phr. The specific amount
+                                                                linkages is formed.
+ The mechanism of epoxy-to-epoxy                                                                                            for a given system should be determined
+ polymerization using a tertiary amine                                                                                      experimentally to develop the optimum
+                                                                This oversimplified explanation does
+ catalyst (or other catalytic curing agent)                                                                                 in properties desired. Tertiary amine
+                                                                not consider the hydroxyl groups either
+ theoretically takes place as follows:                                                                                      catalysts are used, for example, in small
+                                                                present in the higher weight resin
+                                                                                                                            amounts to accelerate the cure of
+                                                                homologs or introduced by resin modi-
+ 1. Opening of the epoxy group:                                                                                             anhydride-epoxy or aromatic amine-epoxy
+                                                                fiers and curing agents. While the steps
+         O                                                                                                                  combinations, and they are also used in
+                                                                of the epoxy-hydroxyl reaction differ, the
+ R3N + CH2— CH                   R3N — CH2— CH                                                                              conjunction with latent catalysts to attain
+                                                                end structure is very similar to that
+                                                   O⍜                                                                       various degrees of B-staging.
+                                                                postulated for the epoxy-epoxy reaction.
+ 2. The ion thus formed is capable of
+                                                                Pot life is moderate (2 to 24 hours) for                    Examples of catalytic curing agents are Benzyl
+    opening another epoxy group:
+                                                                tertiary amine and amine salts, and is                      Dimethylamine (BDMA), BF3 Monoethylamine
+                                                                                                                            (BF3 •MEA), Dimethyl Aminomethyl Phenol.
+                                                                very long, up to several months, for the
+
+11
+                 REACTIVE
+                   DILUENTS,                                                                     Epoxy resins may be modified for
+
+                  MODIFIERS,                                                                     several reasons:
+
+
+                 FILLERS
+                                                                                                 • to enhance physical properties, such
+                                                                                                   as impact strength and adhesion,
+                                                                                                 • to alter viscosity,
+                                                                                                 • to improve pot life, lower exotherm, or
+                                                                                                   reduce shrinkage, and
+                                                                                                 • to lower the cost of the formulation.
+Reactive Diluents                            Reactive diluents in common use are†:
+A reactive diluent is used primarily to                                                          Butyl glycidyl ether produces maximum
+reduce viscosity. Adding a reactive dilu-                                   O                    viscosity reduction. However, excessive
+ent also permits higher filler loading and    CH3— CH2— CH2— CH2— O— CH2— CH— CH2
+                                                                                                 exposure to these products may present
+gives better wetting and impregnation.                                                           serious health hazards. Consult product
+                                                   Butyl Glycidyl Ether (BGE)                    labels and current Material Safety Data
+Preferably, the diluent should react with              (Molecular weight — 130)                  (MSD) sheets before using. The higher-
+the curing agent at approximately the                                                            molecular-weight reactive diluents — like
+same rate as the resin, contribute sub-                                                          the C12-C14 aliphatic ethers — are safer to
+                                                                       O
+stantial viscosity reduction at low con-                                                         work with, but not quite as efficient.
+                                                          R— O— CH2— CH— CH2
+centrations, and be nonreactive with the
+resin under normal storage conditions.                    R = C12 to C14                         Figure 1 shows the viscosity-diluent
+                                                C12-C14 Aliphatic Glycidyl Ether                 concentration relationship for represen-
+                                                    (Molecular weight — 242-270)                 tative DOW epoxy resins. The amount
+                                                                                                 of curing agent, when used on a
+                                                                                                 stoichiometric basis, should be adjusted
+                                                                             O
+                                                                                                 for the change in epoxide equivalent
+                                                                 — O— CH2— CH— CH2
+                                                                                                 value of the diluent-modified resin.
+                                                      H3C
+                                                                                                 See “Calculation of Stoichiometric
+                                                  Cresyl Glycidyl Ether (CGE)                    Ratios,” page 7.
+                                                       (Molecular weight — 165)
+
+
+
+                                                                  C2H5   O
+                                                     CH3(CH2)3CHCH2OCH2CH—CH2
+
+                                                2 — Ethylhexyl Glycidyl Ether
+                                                       (Molecular weight — 186)
+
+                                             † Typical diluents only; not to be construed as a
+                                              recommendation from Dow.
+
+
+
+
+                                                                                                                                           12
+                                                                                                                                                Resin Modifiers
+ Figure 1:                                                                                                                                      Resin modifiers are used to improve
+ Effect of Diluents on D.E.R. Epoxy Resins†
+                                                                                                                                                mechanical and thermal shock resis-
+                                                                                                                                                tance, increase elongation, and obtain
+                          100,000
+                                                                                                                                                higher impact strength and flexibility.
+                                                                                                                                                Usually there is some sacrifice of physi-
+                                                                                                                                                cal strength, electrical properties, chem-
+                                                                                              D.E.R. 337 and CGE
+                                                                                                                                                ical or solvent resistance, or elevated
+                                 10,000                                                                                                         temperature performance.
+
+                                                                                                                                                Epoxy compounds, such as the
+                Viscosity, cps
+
+
+
+
+                                                                                                                                                aliphatic diepoxides (D.E.R. 732 and
+                                  1,000                                                       D.E.R. 337 and BGE                                D.E.R. 736 flexible epoxy resins), or
+                                                                                                                                                monofunctional epoxide compounds
+                                                                                              D.E.R. 331 and CGE                                (such as C12 - C14 Glycidyl Ether ) are
+                                                                                              D.E.R. 331 and C12-C14 Aliphatic Glycidyl Ether
+                                                                                              D.E.R. 331 and 2-Ethylhexyl Glycidyl Ether        examples of reactive epoxide-type
+                                   100                                                                                                          modifiers. Such compounds can be used
+                                                                                              D.E.R. 331 and BGE
+                                                                                                                                                at ratios up to 1:1 to obtain a flexible
+                                                                                                                                                cured composition. They have the added
+                                                                                                                                                advantage of being shelf stable when
+                                    10                                                                                                          blended with the resin.
+                                          5   10    15                           20      25
+                                              % Diluent
+                                                                                                                                                The low viscosity and light color of
+                                                                                                                                                D.E.R. 732 and D.E.R. 736 resins offer
+                                                                                                                                                viscosity reduction in epoxy formula-
+ Figure 2:                                                   100,000                                                                            tions without affecting color of cured
+ Viscosity vs Flexible Resin
+ Concentration (D.E.R. 331                                              10,000                                                                  compositions. These advantages are
+ with D.E.R. 732 and                                                                                                                            not found with most other flexibilizers.
+ D.E.R. 736)                                                                                                                                    Figure 2 shows the effect on viscosity of
+                                                                                                                                                increasing amounts of flexible resin in
+                                                                                                                                                blends with D.E.R. 331.
+                                                    Viscosity, cps at 25°C
+
+
+
+
+                                                                             1,000
+                                                                                                                   D.E.R. 331                   Modifiers which may be reactive as
+                                                                                                                      and
+                                                                                                                   D.E.R. 732                   curing agents are often used. Common
+                                                                                                                                                among these are polysulfide polymers,
+                                                                                                                                                triphenyl phosphite, and various
+                                                                              100                                                               polyamides. The latter react readily with
+                                                                                                             D.E.R. 331
+                                                                                                                and                             the epoxy and were discussed under
+                                                                                                             D.E.R. 736                         “Curing Agents,” page 6. The polysulfide
+                                                                                                                                                polymers react slowly with the epoxies
+                                                                                                                                                when used alone. One to three phr of an
+                                                                               10                                                               active catalytic amine or an amine salt,
+                                                                                     0    20        40       60           80    100
+                                                                                                  % Flexible Resin                              such as 2,4,6 Tri (Dimethyl
+                                                                                                                                                Aminomethyl) Phenol, are used to
+      †For illustrative purposes only; not to be construed as specifications.                                                                   accelerate cure.
+
+13
+Triphenyl phosphite reduces viscosity        Fillers†                                   Such improvements are usually
+and lowers cost. Ratios up to 25 phr         The use of fillers in epoxy compositions   achieved at the sacrifice of tensile,
+appear to have no gross effect on room       can lower costs, reduce exotherm,          flexural, and impact strength (when
+temperature physical properties.             extend pot life, and achieve improve-      granular fillers are used). Most fillers
+Triphenyl phosphite, although reactive       ment in one or more of the cured resin     reduce the coefficient of thermal
+with the epoxy, is not an effective curing   properties indicated:                      expansion and shrinkage in proportion
+agent by itself. A polyfunctional curing                                                to the amount of filler rather than the
+agent is necessary to effect a cure.         • Improved machinability                   type of filler used.
+About 75% of the normal stoichiometric           powdered aluminum or copper
+amount of amine gives optimum results            calcium carbonate                      Fibrous and flake fillers, such as
+when 25 phr triphenyl phosphite is used          calcium silicate                       chopped glass strand, glass flake, and
+with a resin such as D.E.R. 331.                                                        mica, impart high viscosities at low filler
+                                             • Improved abrasion resistance             loadings (10 to 25 phr). Medium-weight
+Nonreactive modifiers are not used exten-        alumina                                granular fillers, such as powdered alu-
+sively, as they cause reduction in cured         flint powder                           minum, alumina, and silica, may be used
+resin properties. When used, their more          carborundum                            at loadings up to 200 phr. Heavy fillers,
+common function is to lower cost.                silica                                 such as powdered iron, iron oxide, and
+Materials such as dibutyl phthalate,             molybdenum disulfide                   coarse sand, may be loaded at ratios up
+nonylphenol, pine oil, and glycol ethers                                                to 800 phr.
+may be used. Chief requisites are that       • Improved impact strength
+they be compatible with the resin before         chopped glass                          The finer particle size fillers are easier
+and after cure, not vaporize or foam dur-        other fibrous materials                to incorporate, and have less tendency
+ing cure, and not migrate excessively                                                   to settle. Coarse and heavy fillers tend to
+from the cured composition.                  • Improved electrical properties           settle and cake on standing unless some
+                                                 mica                                   light-weight filler or anti-settling agent is
+                                                 silica                                 also incorporated. Fumed silica com-
+                                                 powdered or flaked glass               pounds are effective as anti-settling and
+                                                                                        thixotropic agents.
+                                             • Improved thermal conductivity
+                                                                                        †Typical fillers only; not to be construed as a
+                                                 metallic fillers                       recommendation from Dow.
+                                                 coarse sand
+                                                 alumina
+
+                                             • Improved anti-settling, flow, or
+                                               thixotropic properties
+                                                  colloidal silicas
+                                                  clays
+
+
+
+
+                                                                                                                                          14
+                     EPOXY
+                    FORMULATING
+          TECHNIQUES                                                                                            Viscosity vs Temperature of
+                                                                                                                D.E.R. Liquid Epoxy Resins
+ The full advantages of using epoxy          curing agents is possible, since resin                             Figure 3 shows viscosity curves of
+ resins, particularly in high volume         and curing agent are mixed and deliv-                              D.E.R. liquid resins over a practical
+ applications, depend on the total           ered almost instantaneously to the point                           range of temperatures. Reducing viscosi-
+ formulation — resin, curing agent, etc.—    of application. Also, heat can be applied                          ty by elevating temperature helps incor-
+ and on the proper formulation processing    to reduce viscosity and/or shorten cure                            porate higher filler loadings and aids in
+ techniques.                                 time, or the components can be de-aired                            deaerating mixes. It also assists the dis-
+                                             for those applications where a bubble-                             solving and thorough mixing of solid or
+ Each application has its unique perfor-     free mix is required. Equipment is also                            high viscosity curing agents.
+ mance requirements. However, some           available to dispense product directly
+ special considerations are common to        into evacuated molds. The use of such                              Figure 4 is a plot of the viscosity of two
+ many applications, and a knowledge of       equipment minimizes the need for direct                            concentrations of each flexible resin
+ them is essential in determining            contact with the materials.                                        with D.E.R. 331 resin (a liquid bisphenol A
+ practical solutions.                                                                                           type epoxy resin) through a temperature
+                                             Batch mixing may be done in conven-                                range of 0 to 100°C.
+ Some of these considerations are:           tional paint or mortar mixing equipment.
+                                                                                         Figure 3:
+                                             For laboratory or small batch mixes, dis-
+ • Establishing and maintaining safe                                                     Viscosity vs Temperature for
+   handling and disposal procedures to       posable containers and portable stirring    D.E.R. Liquid Epoxy Resins†
+   maximize worker and plant safety.         equipment are adequate. Take care to
+                                             ensure thorough mixing.
+ • Preparing (quickly and easily) the        Uncatalyzed or over-catalyzed
+   right amount of thoroughly mixed          areas in a poor mix may result
+   formulation at the correct curing                                                          D.E.R. 330
+                                             in a non-uniform cure and poor
+   agent/resin ratio.
+                                             performance. Note: Batch mix-
+                                             ing requires special care to                          D.E.R. 331
+ • Avoiding excessive exotherm, prema-                                            10,000
+   ture gelling, and waste of batch mixes.   prevent exposure of employees                                    D.E.R. 337
+                                             to resins, hardeners, etc. See
+ • Eliminating air entrapment in cast-
+                                                                                       Viscosity, cps
+
+
+
+
+                                             “Hazards,” page 36.
+   ings, laminations, and adhesive joints.
+                                                                                                        1,000
+                                             Temperature Control
+ • Preventing spillage and subsequent
+   problems of toxicity exposure and         Where large batches of moder-
+   cleanup.                                  ately reactive mixes (those
+                                             with a pot life of several hours
+                                                                                                     D.E.R. 332
+ Equipment                                   or days) are necessary, cooling          100
+ Several types of automatic mixing and       and circulation facilities should
+ dispensing equipment are commercially       prolong pot life. This technique
+ available. Use of adequately engineered     is particularly adaptable to low
+ equipment makes it possible to meter,       viscosity formulations for
+ mix, and deliver automatically the right    impregnating, dipping, etc. Pot              0       20        40     60      80       100      120
+ amount of formulation. The mix is uni-      life may be further prolonged                                      Temperature, °C
+ form, and the changes in viscosity that     by stepwise addition of fresh
+ occur when batch mixes start to react       mix to the resin tank. This also serves to     †For illustrative purposes only; not to be construed as
+ are avoided. The use of very fast           control viscosity as the batch ages.           specifications.
+
+
+
+15
+                                                                    RESIN
+                                                                    PERFORMANCE
+  Figure 4:
+  Viscosity vs Temperature (Blends of
+  D.E.R. 732 and D.E.R. 736 with
+                                                                    DATA
+  D.E.R. 331)
+
+ 100,000
+                                                          Tables 10 through 30 show typi-           Generally, 10% to 30% of DOW flexible
+                                                          cal properties of unfilled castings       epoxy resin is a good starting point
+        10,000                                            with the Dow liquid epoxy resins          range to improve resilience while
+                                                          cured by D.E.H. 24 (TETA),                retaining most of the desirable
+                                                          BE3 •MEA, NMA, etc. No                    properties of the unmodified system.
+                              30% D.E.R. 732
+                              70% D.E.R. 331              optimization of curing agents,            With this level of modification,
+                                                          phr ratios, or cure schedules             elongation, impact and sometimes
+                                                          was made.                                 tensile strength are increased while
+                 1,000
+                                                                                                    flexural and compressive strengths
+Viscosity, cps
+
+
+
+
+                                                              The specific curing agents select-    are decreased.
+                                                              ed were chosen because each is
+                                           D.E.R. 331         typical of its class and is in com-   D.E.R. 732 resin or D.E.R. 736 resin
+                                                              mon use. Curing agents of             are often favored at the lower levels of
+    100 50% D.E.R. 732                                        similar chemical structure can be     modification because of the viscosity
+          50% D.E.R. 331
+                                                              expected to give similar              reduction they provide. Heat distortion
+                 50% D.E.R. 736
+                 50% D.E.R. 331                               performance, when recommend-          temperatures are lower with increasing
+                                                              ed adjustments of ratio and cure      amounts of flexible resin. Solvent and
+                                  30% D.E.R. 736
+                                                              schedule are followed.                chemical resistance may lessen, depend-
+     10                           70%  D.E.R. 331             Dow flexible epoxy resins, when       ing on the system and type of exposure.
+        0        20      40        60       80      100       used alone, develop soft cured        Electrical properties are essentially
+                       Temperature,°C                         compositions having low physical      unaffected at room temperatures,
+                                                              strength properties. Therefore,       but are likely to fall off at elevated
+*Trademark of The Dow Chemical Company
+                                                      they are best utilitzed in blends with        temperatures.
+                                                      bisphenol A/epichlorohydrin resins
+                                                      such as D.E.R. 331 resin or an epoxy          In cured systems containing 50% or
+                                                      novolac resin such as D.E.N. 438* resin.      more of DOW flexible epoxy resins, ten-
+                                                      Liquid, semi-solid, or low molecular          sile, flexural, and compressive strengths
+                                                      weight solid epoxy resins also may be         are lowered substantially, and impact
+                                                      used. The amount of flexible resin            resistance and elongation are greatly
+                                                      required is dependent on the end use          increased (compared to those properties
+                                                      application and the desired properties        in unmodified epoxy resins). D.E.R. 736
+                                                      of the formulation.                           resin, with its shorter chain length, has
+                                                                                                    less effect on physical properties at a
+                                                                                                    given flexible resin content than does
+                                                                                                    D.E.R. 732 resin.
+
+
+
+
+                                                                                                                                            16
+ The cure schedules and formulating                   Test Methods                                        Chemical And Solvent Resistance
+ techniques used in preparing specimens               When comparing Dow data with data                   Because of the great number of
+ for physical property testing are shown              from other sources, consider the                    samples involved, chemical and solvent
+ in Table 9. The cure schedules are not               method of test. For example, Dow                    resistance data were limited to inorganic
+ necessarily optimum, but are used as                 flexural strength data were obtained on             and organic acids and bases, common
+ standard conditions to allow direct com-             coupons 1/4" thick by 1/2" wide using a             solvents, oxidizing agents, and water.
+ parison with data on other Dow epoxy                 span of 4". If the coupon size is reduced           Amine, anhydride, and catalytic-cured
+ resins listed in other bulletins.                    to 1/8" thick and the span is reduced to            systems were extensively exposed to
+                                                      2", values for flexural strengths will              show the effect of the type of catalyst
+ The test methods given in Table 8 were               typically be 2,000 to 5,000 psi higher for          on resistance. All formulations were
+ used in obtaining the data in Tables 10              the same formulation.                               exposed to a limited number of
+ and 12.                                                                                                  reagents to compare the effect of
+                                                      Whenever possible, all data were gath-              molecular weight change and diluents.
+                                                      ered by the ASTM procedures listed in
+                                                      Table 8, page 17. Procedures are given
+                                                      where an ASTM test was not used.
+
+
+                                                  Test Methods
+ Table    8
+     Property                                     Test Methods            Sample Size and Comments
+
+     Heat Distortion Temperature                  ASTM D 648              1/2" x 1/2" bars; span 4"
+
+     Flexural Strength and Modulus                ASTM D 790              1/2" W x 1/4" D bars; span 4"
+
+     Yield Compressive Strength and Modulus at
+     10% Deformation or Less                      ASTM D 695              1/2" x 1/2" x 1" bars
+
+     Tensile Strength and Ultimate Elongation     ASTM D 638              Dimensions per ASTM designation:
+                                                                              F = 2.25"      T = 0.125"
+                                                                              W = 0.500"     D = 4.5"
+                                                                          rate 0.2"/min.
+
+     Hardness, Rockwell M                         ASTM D 785              1/4" thick coupons
+
+     Izod Impact Strength                         ASTM D 256              1/2" x 1/2" x 2 1/2" bars
+
+     Chemical and Solvent Resistance              ASTM D 543              3" x 1" x 0.125" coupons
+
+     Thermal Degradation                          —                       2" dia. x 0.125" coupons exposed in air convection oven at specified temperature.
+
+     Dielectric Constant and Dissipation Factor   ASTM D 150              Cond. A: Samples conditioned 40 hrs at 23°C and 50% relative humidity.
+                                                                          Cond. C: Samples conditioned 48 hrs at 50°C.
+                                                                          Cond. D: Samples conditioned 96 hrs at 23°C and 96% relative humidity.
+
+     Volume and Surface Resistivity               ASTM D 257              —
+
+     Pot Life and Peak Exotherm                   —                       Determined on 500 gm samples. Tests initiated at elevated temperature were
+                                                                          maintained in constant temperature bath or oven.
+
+
+17
+The following cure schedules were used in preparing test specimens for the data presented in Tables 12 through 33.
+                                        Cure Schedules†
+ Table   9
+                                          Initial Gel                         Post Cure
+                                          Time                Temp            Time        Temp
+ Curing Agent                             Hrs                 °C              Hrs         °C     Comments
+
+ D.E.H. 20                                16                  25              2           100    For high viscosity resins; both resins and molds preheated
+ (diethylene triamine)                                                                           to 55°C to reduce viscosity.
+
+ D.E.H. 24                                16                  25              3           100    For high viscosity resins; both resins and molds preheated
+ (triethylene tetramine)                                                                         to 55°C to reduce viscosity.
+
+ Nadic Methyl Anhydride1                  2                   90              4           165    Resin, curing agent, and molds preheated to 90°C.
+                                                                              +16         200
+
+ BF3 Monoethylamine                       4                   100             16          150    Resin preheated to 80-100°C to dissolve catalyst.
+ (BF3 • MEA)                                                                                     Molds preheated to 100°C.
+
+ Versamid 140 2                           16                  25              3           100    Resins and curing agent preheated to 55°C to reduce
+ (polyamide)                                                                                     viscosity. Molds preheated to 65°C to permit release of
+                                                                                                 entrapped bubbles. Higher viscosity resins may require
+                                                                                                 higher mix temperatures.
+
+ 1,2-Cyclohexane Diamine                  16                  25              2           100    For high viscosity resins, molds preheated to 55°C to
+ (cycloaliphatic amine)                                                                          reduce viscosity. Ideal post cure includes several hours
+                                                                                                 at 150°C.
+
+ D.E.H. 20                                16                  25              2           100    For high viscosity resins; both resins and molds preheated
+ (diethylene triamine)                                                                           to 55°C to reduce viscosity.
+
+ D.E.H. 39                                16                  25              4           60     For high viscosity resins; both resins and molds preheated
+ (aminoethyl piperazine)                                                                         to 55°C to reduce viscosity.
+
+11.5 parts Benzyldimethylamine (BDMA) as accelerator per one hundred parts resin.
+2Polyamide from Henkel.
+†For illustrative purposes only; not to be construed as specifications.
+
+
+
+
+                                                                                                                                                            18
+                                                   Physical Properties — DOW Liquid Epoxy Resins Cured with D.E.H. 24†
+  Table   10
+                                                                                                                  30%          30%
+                                                                                                                  D.E.R. 732   D.E.R. 736
+                                                 D.E.R.     D.E.R.    D.E.R.      D.E.R.       D.E.R.    D.E.R.   70%          70%
+ Resin                                           362        330       331         332          317       383      D.E.R. 331   D.E.R. 331
+
+ Average Epoxide Equivalent Weight               195        180       190         174          197       180      218          192
+
+ phr                                             13.2       13.5      13.0        14.0         12.2      13       11           13
+
+ Formulation Viscosity, cps at 25°C              1,000      1,250     2,250       900          3,200     1,650    540          400
+
+ Reactivity & Exotherm (Min.)1                   31         40        25          43           25        40       —            —
+ of a 500 Gram Mass    (°C)2                     80         80        74          68           75        88       —            —
+ (@ 25°C)              (°C)3                     270        271       266         283          270       270      —            —
+                       (Min.)4                   44         55        36          55           40        55       —            —
+
+ Heat Deflection Temperature (°C)                100        104       111         107          104       100      58           76
+
+ Flexural Strength (psi)                         17,000     17,700    13,900      15,590       17,000    17,000   10,825       14,400
+
+ Flexural Modulus (psi x 10 5 )                  5.51       4.90      4.4         4.05         4.74      5.0      3.25         4.21
+
+ Yield Compressive Strength (psi)                16,000     15,000    16,300      15,840       14,500    15,800   12,200       12,040
+
+ Compressive Modulus (psi x 10 5 ) at            3.50       3.40      4.4         2.63         4.06      3.37     2.99         3.51
+ 10% deformation or less
+
+ Tensile Strength (psi)                          10,300     8,950     11,400      9,620        10,700    10,900   6,600        9,225
+
+ Ultimate Elongation, %                          3.4        2.8       4.4         4.4          2.7       3.1      5.53         6.00
+
+ Izod Impact Strength (ft. lb./in. notch)        —          0.40      0.50        0.50         0.50      0.50     .54          .61
+
+ Hardness (Rockwell M)                           107        107       106         107          109       107      87           91
+
+ 1Time to transition point or gel.
+ 2Temperature at transition point.
+ 3Temperature at peak exotherm.
+ 4Time to peak exotherm.
+ †Typical values; not to be construed as specifications.
+
+
+
+
+19
+                                                  Electrical Properties – DOW Liquid Epoxy Resins Cured with D.E.H. 24†
+ Table   11
+                                                D.E.R.        D.E.R.        D.E.R.        D.E.R.         D.E.R.        30% D.E.R. 732   30% D.E.R. 736
+Resin                                           330           331           332           317            383           70% D.E.R. 331   70% D.E.R. 331
+
+Dielectric Constant
+    Cond. A
+        Frequency, Hz 60                        3.97          4.02          3.98          4.02           —             3.87             3.95
+                      10 3                      3.86          3.90          3.86          3.95           4.31          3.76             3.85
+                      10 6                      3.39          3.42          3.27          3.43           —             3.27             3.32
+
+      Cond. D
+         Frequency, Hz 60                       4.24          4.27          4.23          4.21           —             3.92             4.58
+                       10 3                     4.13          4.17          4.07          4.12           —             4.53             4.32
+                       10 6                     3.52          3.55          3.42          3.54           —             3.69             3.58
+
+Dissipation Factor
+    Cond. A
+        Frequency, Hz 60                        .009          .007          .010          0.008          —             .014             .013
+                      10 3                      .020          .020          .027          0.018          0.019         .022             .023
+                      10 6                      .029          .032          .031          0.034          —             .032             .033
+
+      Cond. D
+         Frequency, Hz 60                       .023          .010          .013          0.010          —             .074             .043
+                       10 3                     .025          .023          .030          0.020          —             .045             .037
+                       10 6                     .033          .036          .035          0.036          —             .051             .043
+
+Volume Resistivity (ohm—cm)
+    Cond. A                                     1.51 x 1015   6.1 x 1015    1.29 x 1015   1.18 x 1015    1.58 x 1015   1.97 x 1015      1.24 x 1015
+    Cond. C                                     1.76 x 1015   1.7 x 1015    1.1 x 1015    8.5 x 1014     —             4.43 x 1015      1.79 x 1014
+
+Surface Resistivity (ohm)
+    Cond. A                                     1.73 x 1014   7.85 x 1015   7.85 x 1014   >7.85 x 1015   2.22 x 1015   3.14 x 1015      3.94 x 1015
+    Cond. C                                     3.14 x 1014   6.3 x 1015    9.42 x 1014   7.85 x 1014    —             2.04 x 1013      7.22 x 1013
+
+–– = Not Determined
+†Typical values; not to be construed as specifications.
+
+
+
+
+                                                                                                                                                      20
+                                  Chemical, Solvent Resistance, and Thermal Degradation —
+  Table    12                     DOW Liquid Epoxy Resins Cured With D.E.H. 24†
+
+                                                                                                                                         30% D.E.R. 732        30% D.E.R. 736
+                                   D.E.R. 330                D.E.R. 331          D.E.R. 332          D.E.R. 317         D.E.R. 383       70% D.E.R. 331        70% D.E.R. 331
+                                     % WT                      % WT                % WT                % WT               % WT               % WT                  % WT
+ Resin                            Change, Days              Change, Days        Change, Days        Change, Days       Change, Days       Change, Days          Change, Days
+
+ Reagent                          7 28 120                  7 28 120            7 28 120            7 28 120            7 28 120           7 28 120              7 28 120
+
+ Sulfuric Acid 30%                .56 1.24 2.85              .69 1.8 3.10        .62 1.33 3.08      0.64 1.27 2.80      .66 1.31 2.94      1.10 4.26 9.31        1.81 3.61 7.90
+
+ Sulfuric Acid 3%                   — — —                    .61 1.27 2.66        — — —               — — —               — — —            2.21 4.54 9.93        1.90 4.03 9.38
+
+ Hydrochloric Acid 36%              — — —                   1.13 2.35 5.58        — — —               — — —             1.86 3.15 6.53    5.42 10.60 26.40      3.54 6.11 15.30
+
+ Hydrochloric Acid 10%              — — —                   0.64 1.45 3.15        — — —               — — —              — — —             2.39 4.92 10.40       2.00 4.11 9.24
+
+ Nitric Acid 40%                    — — —                     1.9 4.1 D           — — —               — — —               4.24 D D           D — —
+                                                                                                                                              1
+                                                                                                                                                                  D — —
+
+ Nitric Acid 10%                    — — —                    .81 1.77 3.95        — — —               — — —              — — —             3.21 6.69 15.20      2.21 4.69 10.60
+
+ Ammonium Hydroxide 28%             — — —                    .35 .84 1.79         — — —               — — —              — — —              .85 1.85 3.75         .56 1.37 3.10
+
+ Ammonium Hydroxide 10%             — — —                    .37 .81 1.73         — — —               — — —              — — —               — — —                — — —
+
+ Acetic Acid 25%                    — — —                   2.99 6.14 14.2        — — —               — — —              — — —            14.30 D —              10.86 D —
+
+ Ethyl Alcohol 95%                  — — —                     .14 .37 .86         — — —               — — —              — — —            4.95 9.78 20.40       1.49 3.03 6.45
+
+ Acetone                           .17 .74 4.48               .45 2.1 7.7        .19 .80 4.68       0.83 3.11 7.80      .92 3.62 12.0        D — —               4.28 10.50 —
+
+ Ethylene Dichloride                — — —                    .29 1.14 6.43        — — —               — — —              — — —               D — —               10.00 D —
+
+ Toluene                            — — —                     .04 .07 .16         — — —               — — —              .20 .21 .24      3.31 10.10 24.10       .03 .10 .81 —
+
+ Sodium Hydroxide 50%              0.00 -.06 -.11             .0 .04 .02        –.01 –.05 –.07     –0.02 –0.07 –0.11     .03 -.10 -.13       .02 .01 .02           .01 .00 .05
+
+ Sodium Hydroxide 10%               — — —                    .36 .66 1.41         — — —               — — —              — — —              .68 1.39 2.67         .48 1.03 2.23
+
+ JP 4 Fuel                         .03 -.01 .09              .02 -.01 .09        .02 -.02 .08       0.14 0.20 -0.21      — — —               .02 .04 .24           .03 .04 .22
+
+ Citric Acid 10%                    — — —                    .39 .80 1.65         — — —               — — —              — — —             1.09 2.16 4.30         .71 1.48 3.24
+
+ Chromic Acid 40%                   — — —                  –1.53 –5.82 –17.3      — — —               — — —              — — —           –3.17 –12.10 –34.40   –1.60 –6.43 –19.80
+
+ Distilled Water                   .40 .79 1.68               .41 .88 1.7        .41 .80 1.69       0.43 0.77 1.78       .38 .76 1.40       .92 1.93 3.80         .64 1.36 3.11
+
+ HRS                             100 200 300 500           100 200 300 500     100 200 300 500     100 200 300 500     100 200 300 500   100 200 300 500       100 200 300 500
+ Thermal Degradation
+ (% Wt. Loss) 160°C              .95 .95 1.32 1.41          .71 1.0 1.4 1.6    .92 .96 1.07 1.42   0.70 1.2 1.4 1.7    1.1 1.3 1.6 1.8   1.83 2.47 2.89 3.27   1.50 2.11 2.57 3.41
+
+ 210°C                          2.11 3.77 — 7.39            3.4 5.4 6.8 7.8    2.07 3.51 — 7.00    3.30 5.2 7.0 7.7    3.9 5.5 6.9 9.2     4.73 D — —             D D — —
+
+ D = Decomposed
+ — = Not Determined
+ †Typical values; not to be construed as specifications.
+
+
+
+
+21
+                                                  Physical Properties — DOW Liquid Epoxy Resins
+ Table   13                                       Cured with 1,2-Cyclohexane Diamine†
+
+Resin                                                     D.E.R. 331                        D.E.R. 383
+Average Epoxide Equivalent Weight                         190                               180
+phr                                                       17                                16
+Formulation Viscosity, cps at 25°C                        1,020                             700
+Reactivity & Exotherm (Min.)1                             50                                95
+of a 500 Gram Mass    (°C)2                               113                               118
+(@25°C)               (°C)3                               172                               176
+                      (Min.)4                             56                                103
+Heat Deflection Temperature (°C)                          110                               110
+Flexural Strength (psi)                                   15,400                            15,200
+Flexural Modulus (psi x 105 )                             4.2                               4.1
+Yield Compressive Strength (psi)                          16,000                            15,800
+Compressive Modulus (psi x 105 ) at                       3.9                               4.0
+10% deformation or less
+
+Tensile Strength (psi)                                    10,300                            12,100
+Ultimate Elongation (%)                                   4.0                               4.1
+Izod Impact Strength (ft. lb./in. notch)                  0.40                              0.40
+Hardness (Rockwell M)                                     106                               106
+
+1Time to transition point or gel.                                  4Time to peak exotherm.
+2Temperature at transition point.                                  †Typical values; not to be construed as specifications.
+3Temperature at peak exotherm.
+
+
+
+                                                  Electrical Properties — DOW Liquid Epoxy Resins
+ Table   14                                       Cured with 1,2-Cyclohexane Diamine†
+
+Resin                                                     D.E.R. 331                        D.E.R. 383
+Dielectric Constant
+    Cond. A.
+        Frequency, Hz 10 3                                4.50                              4.35
+Dissipation Factor
+    Cond. A.
+        Frequency, Hz 10 3                                .016                              .008
+Volume Resistivity (ohm-cm)
+    Cond. A                                               4.0 x 1015                        4.2 x 1015
+Surface Resistivity (ohm)
+    Cond. A                                               5.6 x 1015                        5.9 x 1015
+
+†Typical values; not to be construed as specifications.
+
+
+
+
+                                                                                                                             22
+                                                   Chemical, Solvent Resistance, and Thermal Degradation —
+  Table   15                                       DOW Liquid Epoxy Resins Cured with 1,2-Cyclohexane Diamine†
+
+                                                   D.E.R. 331                            D.E.R. 383
+ Resin                                             % WT Change, Days                     % WT Change, Days
+
+ Reagent                                           7         28        120               7           28          120
+
+ Sulfuric Acid 30%                                 .67       1.20      2.25              .57         .98         1.85
+
+ Nitric Acid 40%                                   4.11      17.1      D                 3.27        9.83        D
+
+ Acetone                                           1.76      5.80      21.3              2.45        10.2        25.0
+
+ Toluene                                           .32       .48       .57               .66         1.70        4.64
+
+ Sodium Hydroxide 50%                              .08       -.34      -.09              -.16        .08         .02
+
+ Hydrochloric Acid 36%                             2.29      4.41      8.94              2.10        3.64        6.15
+
+ Distilled Water                                   .64       .95       1.62              .47         .89         1.38
+
+ HRS                                               100       200       300     500       100         200         300    500
+
+ Thermal Degradation
+ (% Wt. Loss)        160°C                         1.4       1.6       1.9     2.0       1.3         1.5         1.7    1.7
+                     210°C                         3.8       5.6       7.3     9.9       3.8         5.8         7.2    9.7
+
+ D = Decomposed
+ †Typical values; not to be construed as specifications.
+
+
+
+
+23
+                                            Physical Properties — DOW Liquid Epoxy Resins Cured with Nadic Methyl Anhydride†
+ Table   16
+                                                                                                                               30%          30%
+                                                                                                                               D.E.R. 732   D.E.R. 736
+                                           D.E.R.    D.E.R.          D.E.R.              D.E.R.              D.E.R.   D.E.R.   70%          70%
+Resin                                      330       331             332                 337                 317      383      D.E.R. 331   D.E.R. 331
+
+Average Epoxide Equivalent Weight          180       190             174                 240                 197      180      218          192
+
+phr                                        87.5      87.5            87.5                87.5                87.5     87.5     87.5         87.5
+
+Formulation Viscosity, cps at 80°C         35        38              30                  225                 45       36       27.5         25
+
+Reactivity & Exotherm (Min.)1              158       129             97                  37                  80       160      —            —
+of a 500 Gram Mass    (°C)2                113       99              93                  92                  100      112      —            —
+(@ 80°C)              (°C)3                132       146             152                 153                 155      130      —            —
+                      (Min.)4              180       153             125                 65                  100      182      —            —
+
+Heat Deflection Temperature (°C)           148       156             135                 111                 147      144      87           116
+
+Flexural Strength (psi)                    19,200    14,000          21,200              18,870              15,000   18,500   16,700       16,400
+
+Flexural Modulus (psi x 10 5 )             4.70      4.40            4.72                3.52                4.41     4.80     4.45         4.35
+
+Yield Compressive Strength (psi)           16,900    18,300          20,190              18,940              15,000   17,100   17,730       16,150
+
+Compressive Modulus (psi x 10 5 ) at       3.84      4.40            3.40                3.24                4.41     3.80     2.14         2.82
+10% deformation or less
+
+Tensile Strength (psi)                     6,340     10,000          6,260               7,330               7,000    7,000    10,640       11,570
+
+Ultimate Elongation, %                     1.4       2.5             1.6                 0.9                 1.8      1.7      5.5          6.2
+
+Izod Impact Strength (ft. lb./in. notch)   0.30      0.48            0.21                0.49                0.48     0.30     .47          .41
+
+Hardness (Rockwell M)                      111       111             114                 113                 1.09     112      108          106
+
+1Time to transition point or gel.                           4Time to peak exotherm.
+2Temperature at transition point.                           †Typical values; not to be construed as specifications.
+3Temperature at peak exotherm.
+
+
+
+
+                                                                                                                                                     24
+                                         Electrical Properties — DOW Liquid Epoxy Resins Cured with Nadic Methyl Anhydride†
+  Table   17
+                                        D.E.R.             D.E.R.        D.E.R.        D.E.R.         D.E.R.         D.E.R.        30% D.E.R. 732   30% D.E.R. 736
+ Resin                                  330                331           332           337            317            383           70% D.E.R. 331   70% D.E.R. 331
+
+ Dielectric Constant
+     Cond. A
+         Frequency, Hz 60               3.15               3.15          3.14          3.36           3.12           —             3.20             3.19
+                       10 3             3.13               3.14          3.12          3.33           3.09           3.54          3.18             3.17
+                       10 6             3.01               2.97          2.99          3.10           2.89           —             2.98             3.00
+
+       Cond. D
+          Frequency, Hz 60              3.39               3.34          3.30          3.46           3.22           —             4.27             3.36
+                        10 3            3.35               3.32          3.29          3.43           3.19           —             3.32             3.36
+                        10 6            3.14               3.11          3.13          3.15           3.01           —             3.09             3.12
+
+ Dissipation Factor
+     Cond. A
+         Frequency, Hz 60               .0030              .0020         .0049         .0037          .0024          —             .0061            .0053
+                       10 3             .0054              .0054         .0045         .0060          .0053          .0038         .0066            .0069
+                       10 6             .016               .017          .015          .027           .018           —             .021             .020
+
+       Cond. D
+          Frequency, Hz 60              .0079              .0023         .0030         .0035          .0038          —             .0060            .0061
+                        10 3            .0063              .0059         .0044         .0067          .0059          —             .076             .0078
+                        10 6            .020               .021          .018          .028           .020           —             .025             .026
+
+ Volume Resistivity (ohm—cm)
+
+       Cond. A                          6.11 x 1015        6.1 x 1015    7.2 x 1015    7.3 x 1015     9.0 x 1014     6.15 x 1015   4.71 x 1015      1.73 x 1015
+
+       Cond. C                          3.67 x 1015        1.17 x 1015   1.01 x 1015   2.9 x 1015     4.74 x 1014    —             4.71 x 1015      1.24 x 1015
+
+ Surface Resistivity (ohm)
+
+       Cond. A                          4.71 x 1015        3.93 x 1015   6.28 x 1015   >7.85 x 1015   >7.85 x 1015   4.95 x 1015   3.53 x 1015      7.85 x 1015
+
+       Cond. C                          3.93 x 1015        3.93 x 1016   1.1 x 1015    3.93 x 1015    3.93 x 1015    —             7.85 x 1015      2.67 x 1014
+
+ –– = Not Determined
+ †Typical values; not to be construed as specifications.
+
+
+
+
+25
+                             Chemical, Solvent Resistance, and Thermal Degradation —
+ Table     18                DOW Liquid Epoxy Resins Cured with Nadic Methyl Anhydride†
+                                                                                                                                           30% D.E.R. 732      30% D.E.R. 736
+                            D.E.R. 330           D.E.R. 331        D.E.R. 332        D.E.R. 337         D.E.R. 317        D.E.R. 383       70% D.E.R. 331      70% D.E.R. 331
+                              % WT                 % WT              % WT              % WT               % WT              % WT               % WT                % WT
+Resin                      Change, Days         Change, Days      Change, Days      Change, Days       Change, Days      Change, Days       Change, Days        Change, Days
+
+Reagent                     7 28 120            7 28 120          7 28 120           7 28 120          7 28 120          7 28 120           7 28 120            7 28 120
+
+Sulfuric
+                             .33 .48 .54          .33 .83 .55       .28 .41 .51       .29 .57 1.14     0.41 0.66 1.20      .14 .22 .36        .23 .52 .77         .35 .53 .56
+Acid 30%
+
+Sulfuric                      — — —                                                    — — —             — — —             — — —               — — —               — — —
+                                                  .50 .81 .96       .41 .64 .85
+Acid 3%
+
+Hydrochloric                  — — —              .32 .56 1.36      .26 .46 1.11        — — —             — — —             .21 .38 .88         — — —               — — —
+Acid 36%
+
+Hydrochloric                  — — —                                                    — — —             — — —             — — —               — — —               — — —
+Acid 10%                                          .42 .66 .78       .30 .53 .66
+
+
+Nitric Acid 40%               — — —               .40 1.1 1.7      .36 .99 5.38        — — —             — — —            .20 .65 3.41         — — —               — — —
+
+                              — — —                                                    — — —             — — —             — — —               — — —               — — —
+Nitric Acid 10%                                   .47 .81 .94       .40 .66 .83
+
+Ammonium                      — — —                                                    — — —             — — —             — — —               — — —               — — —
+Hydroxide 28%                                    .67 1.24 1.84     .57 1.09 1.78
+
+Ammonium                      — — —              .59 1.06 1.36     .60 .97 1.28        — — —             — — —             — — —               — — —               — — —
+Hydroxide 10%
+
+Acetic Acid 25%               — — —               .46 .73 .90       .45 .63 .84        — — —             — — —             — — —               — — —               — — —
+
+                              — — —               .20 .37 .59       .11 .22 .37        — — —             — — —             — — —               — — —               — — —
+Ethyl Alcohol 95%
+
+Acetone                    3.77 12.20 21.60      4.8 13.0 22.3     1.07 17.70 D        6.13 D —         6.29 17.1 D      2.33 5.62 18.8        D— —               5.74 15.3 D
+
+Ethylene Dichloride           — — —               6.73 D —          9.81 D —           — — —             — — —             — — —               — — —               — — —
+
+Toluene                       — — —               .06 .09 .28       .02 .04 .24        — — —             — — —             .10 .14 .18         — — —               — — —
+
+Sodium                     –.02 –.13 –.21                                            –.04 –.08 –.25                      –.16 –.26 –.26      –.01 –.01 –.01      –.02 –.05 –.07
+                                                –.08 –.12 –.16    –.30 –.83 –1.45                      0.05 0.04 0.05
+Hydroxide 50%
+
+Sodium                        — — —               .37 .51 .50       .34 .54 .68        — — —             — — —             — — —               — — —               — — —
+Hydroxide 10%
+
+JP 4 Fuel                   .02 –.02 .12          .02 .02 .16       .02 .02 .13       .01 .03 .19      0.14 0.26 0.30      — — —              .02 .02 .18         .03 .02 .16
+
+Citric Acid 10%               — — —               .50 .79 .94       .41 .64 .85        — — —             — — —             — — —               — — —               — — —
+
+Chromic Acid 40%              — — —             .07 –.62 –2.14    .07 –.96 –3.44       — — —             — — —             — — —               — — —               — — —
+
+Distilled Water              .47 .74 .86          .52 .82 .87       .40 .61 .84       .41 .90 1.79     0.59 0.96 1.30      .26 .54 .70        .45 .83 1.40        .48 .80 1.02
+
+HRS                        100 200 300 500      100 200 300 500   100 200 300 500   100 200 300 500    100 200 300 500   100 200 300 500    100 200 300 500     100 200 300 500
+
+Thermal Degradation
+(% Wt. Loss)
+160°C                      .21 .13 .13 .16      .12 .07 .10 .10   .27 .05 .09 .09    .36 .27 .36 .36   .35 .40 .40 .43   .17 .04 .09 .11     .61 .45 .56 .56     .28 .22 .28 .22
+210°C                       .28 .28 – .84       .66 1.1 1.5 1.8    .28 .31 – .76    2.38 2.59 – 3.18   .70 1.3 1.5 2.0   1.1 1.1 1.6 2.3    .77 2.58 – 2.54    1.02 1.44 – 2.81
+                           6.26 10.50 – –       5.60 10.20 – –     5.10 9.30 – –    10.90 14.90 – –     6.10 9.80 – –     – – – –            11.80 – – –        24.90 D – –
+260°C
+
+D = Decomposed
+— = Not Determined
+†Typical values; not to be construed as specifications.
+
+
+
+
+                                                                                                                                                                                 26
+                                             Physical Properties — DOW Liquid Epoxy Resins Cured with BF3 · MEA†
+  Table   19
+                                            D.E.R.       D.E.R.               D.E.R.                D.E.R.         30% D.E.R. 732   30% D.E.R. 736
+ Resin                                      330          331                  332                   337            70% D.E.R. 331   70% D.E.R. 331
+
+ Average Epoxide Equivalent Weight          180          190                  174                   240            218              192
+
+ phr                                        3            3                    3                     3              3                3
+
+ Formulation Viscosity, cps at 100°C        35           40                   30                    900            48               45
+
+ Reactivity & Exotherm
+ of a 500 Gram Mass            (Min.)1      260          190                  125                   380            —                —
+ (@100°C)                      (°C)2        106          110                  115                   90             —                —
+                               (°C/Min.)3   129          160                  253                   93             —                —
+                               (Min.)4      325          240                  140                   435            —                —
+
+ Heat Deflection Temperature (°C)           121          168                  130                   148            59               72
+
+ Flexural Strength (psi)                    12,200       14,500               13,430                11,950         12,055           14,580
+
+ Flexural Modulus (psi x 10 5 )             .47          4.5                  3.21                  3.21           3.69             4.42
+
+ Yield Compressive Strength (psi)           16,100       16,500               16,930                14,720         10,600           11,000
+
+ Compressive Modulus (psi x 10 5 ) at       3.48         3.3                  2.59                  2.48           2.46             2.64
+ 10% deformation or less
+
+ Tensile Strength (psi)                     4,620        5,700                4,280                 6,620          6,425            8,930
+
+ Ultimate Elongation (%)                    .1           1.6                  .80                   1.7            7.8              6.45
+
+ Izod Impact Strength (ft. lb./in. notch) 0.30           0.26                 0.25                  0.46           .54              .49
+
+ Hardness (Rockwell M)                      110          111                  112                   109            87               95
+
+ 1Time to transition point or gel.                       4Time to peak exotherm.
+ 2Temperature at transition point.                       †Typical values; not to be construed as specifications.
+ 3Temperature at peak exotherm.
+
+
+
+
+27
+                                                 Electrical Properties — DOW Liquid Epoxy Resins Cured with BF3 · MEA†
+ Table   20
+                                                D.E.R.        D.E.R.         D.E.R.        D.E.R.         30% D.E.R. 732   30% D.E.R. 736
+Resin                                           330           331            332           337            70% D.E.R. 331   70% D.E.R. 331
+
+Dielectric Constant
+    Cond. A
+    Frequency, Hz 60                            3.43          3.47           3.36          3.36           3.46             3.54
+                    10 3                        3.40          3.45           3.34          3.33           3.40             3.48
+                    10 6                        3.22          3.23           3.15          3.16           3.13             3.20
+
+      Cond. D
+      Frequency, Hz 60                          3.70          3.71           3.59          3.71           3.27             4.34
+                    10 3                        3.66          3.70           3.58          3.68           4.08             3.82
+                    10 6                        3.39          3.41           3.31          3.32           3.50             3.43
+
+Dissipation Factor
+    Cond. A
+    Frequency, Hz 60                            .0039         .0029          .0032         .0040          .0044            .0089
+                   10 3                         .0054         .0053          .0052         .0068          .012             .0097
+                   10 6                         .022          .023           .023          .025           .024             .031
+
+      Cond. D
+      Frequency, Hz 60                          .0160         .0039          .0046         .0071          .052             .013
+                    10 3                        .0078         .0068          .0062         .0083          .031             .014
+                    10 6                        .027          .034           .027          .035           .047             .041
+
+Volume Resistivity (ohm-cm)
+    Cond. A                                     4.81 x 1015   8.6 x 1015     1.92 x 1015   5.1 x 10 15    7.52 x 1014      3.77 x 1015
+    Cond. C                                     1.68 x 1015   1.2 x 1016     2.64 x 1015   1.78 x 10 15   1.10 x 1014      1.51 x 1015
+
+Surface Resistivity (ohm)
+    Cond. A                                     7.85 x 1015   >7.85 x 1015   2.36 x 1015   >7.85 x 1015   4.71 x 1014      1.57 x 1015
+    Cond. C                                     1.26 x 1015   >7.85 x 1015   2.36 x 1015   1.38 x 1015    6.28 x 1015      1.02 x 1015
+
+†Typical values; not to be construed as specifications.
+
+
+
+
+                                                                                                                                            28
+                             Chemical, Solvent Resistance, and Thermal Degradation — DOW Liquid Epoxy Resins Cured with BF3 · MEA†
+  Table     21
+                                                                                                                    30% D.E.R. 732        30% D.E.R. 736
+                             D.E.R. 330                     D.E.R. 331         D.E.R. 332         D.E.R. 337        70% D.E.R. 331        70% D.E.R. 331
+                               % WT                           % WT               % WT               % WT                % WT                  % WT
+ Resin                      Change, Days                   Change, Days       Change, Days       Change, Days        Change, Days          Change, Days
+
+ Reagent                     7 28 120                       7 28 120          7 28 120            7 28 120            7 28 120              7 28 120
+
+ Sulfuric                                                    .40 1.1 1.2
+                              34 .73 1.13                                       33 .53 1.05        .21 .60 1.02        48 .88 1.29           .36 .71 1.11
+ Acid 30%
+
+ Sulfuric                      — — —                        .52 1.05 1.66        — — —              — — —               — — —                 — — —
+ Acid 3%
+
+ Hydrochloric                  — — —                                             — — —              — — —               — — —                 — — —
+                                                             .26 .49 1.17
+ Acid 36%
+
+ Hydrochloric                  — — —                                             — — —              — — —               — — —                 — — —
+ Acid 10%                                                    .44 .87 1.38
+
+
+ Nitric Acid 40%               — — —                         .45 1.2 1.5         — — —              — — —               — — —                 — — —
+
+                               — — —                        .48 1.00 1.59        — — —              — — —               — — —                 — — —
+ Nitric Acid 10%
+
+ Ammonium                      — — —                                             — — —              — — —               — — —                 — — —
+                                                            .57 1.22 2.17
+ Hydroxide 28%
+
+ Ammonium                      — — —                        .57 1.16 1.93        — — —              — — —               — — —                 — — —
+ Hydroxide 10%
+
+ Acetic Acid 25%               — — —                        .53 1.03 1.65        — — —              — — —               — — —                 — — —
+
+ Ethyl Alcohol 95%             — — —                         .20 .43 .80         — — —              — — —               — — —                 — — —
+
+ Acetone                     .27 .84 4.00                    .43 1.2 3.2       .30 .93 4.67       1.12 3.16 12.6         D — —                7.71 D —
+
+ Ethylene Dichloride           — — —                        .85 2.39 8.26        — — —              — — —               — — —                 — — —
+
+ Toluene                       — — —                         .09 .17 .26         — — —              — — —               — — —                 — — —
+
+ Sodium                      .01 –.04 .03                                      0.2 –.04 .01                                                   .02 .03 .04
+                                                            –.03 –.02 0.00                        –.03 –.04 –.02        .01 .05 .03
+ Hydroxide 50%
+
+ Sodium                        — — —                         .50 .94 1.46        — — —              — — —               — — —                 — — —
+ Hydroxide 10%
+
+ JP 4 Fuel                    .03 .08 .23                    .02 .06 .23        .02 .05 .20        –.01 .00 .16         .03 .06 .27           04 .05 .28
+
+ Citric Acid 10%               — — —                        .56 1.10 .169        — — —              — — —               — — —                 — — —
+
+ Chromic Acid 40%              — — —                       –.50 –2.42 –7.74      — — —              — — —               — — —                 — — —
+
+ Distilled Water             .51 .99 1.71                    .62 1.2 1.8       .53 .99 1.57       .60 1.18 1.92        .75 1.54 2.68         .56 1.12 2.04
+
+ HRS                        100 200 300 500                100 200 300 500    100 200 300 500    100 200 300 500     100 200 300 500       100 200 300 500
+
+ Thermal Degradation
+ (% Wt. Loss)
+ 160°C                      .37 .41 .41 .57                .36 .48 .11 .86     .25 .36 .41 .41   .54 .72 .80 1.07    4.44 5.72 6.63 7.8   2.40 3.32 4.09 4.84
+ 210°C                     1.42 1.87 – 3.37                2.6 4.0 4.9 5.5    .98 1.46 – 3.05    1.65 2.45 – 3.69   13.50 15.20 – 18.0    12.30 15.20 – 20.40
+ 260°C                      22.40 D – –                    19.60 D – –         20.80 D – –        22.60 D – –         44.10 D – –          43.00 D – –
+
+
+ D = Decomposed
+ — = Not Determined
+ †Typical values; not to be construed as specifications.
+
+
+
+
+29
+                           Physical Properties — DOW Liquid Epoxy Resins Cured with Polyamide6 Curing Agent†
+Table   22
+                                                                                                                                       30% D.E.R. 732   30% D.E.R. 736
+Resin                     D.E.R. 330          D.E.R. 331          D.E.R. 332       D.E.R. 337        D.E.R. 317       D.E.R. 383       70% D.E.R. 331   70% D.E.R. 331
+
+Average Epoxide
+Equivalent Weight         180                 190                 174              240               197              180              218              192
+
+phr                       43                  43                  43               43                43               43               43               43
+
+Formulation Viscosity,
+          °C              25        50        25          50      25       50      25       50       25       50      25       50      25       50      25       50
+          cps             8,800     1,200     16,000      1,250   6,500    960     —        62,000   81,200   1,370   9,300    1,210   2,650    400     2,550    310
+
+Reactivity & Exotherm
+of a 500 Gram Mass
+            (°C)1         25        50        25          50      25       50      —        50       25       50      25       50      —        —       —        —
+            (Min.)2       169       30        94          22      160      31      —        16       114      25      169      32      —        —       —        —
+            (°C)3         53        80        56          90      70       76      —        95       70       92      54       81      —        —       —        —
+            (°C)4         89        228       118         226     153      215     —        172      250      235     89       230     —        —       —        —
+            (Min.)5       194       44        110         35      185      48      —        25       130      38      194      47      —        —       —        —
+
+Heat Deflection
+Temperature (°C)          86                  101                 92               88                83               83               52               53
+
+Flexural Strength (psi)   13,100              9,700               12,170           11,330            12,300           13,000           8,350            11,250
+
+Flexural Modulus
+(psi x 10 5 )             3.83                3.50                3.27             2.13              3.31             3.92             2.47             3.36
+
+Yield Compressive
+Strength (psi)            11,800              12,400              12,290           11,780            12,200           12,100           12,800           13,500
+
+Compressive
+Modulus (psi x 105 ) at
+10% deformation or less   2.95                3.70                2.39             3.84              3.11             2.92             1.74             2.23
+
+Tensile Strength (psi)    7,600               8,300               6,810            7,290             8,900            8,000            4,830            6,850
+
+Ultimate Elongation (%)   3.6                 3.9                 2.0              –                 4.6              4.0              15.3             4.73
+
+Izod Impact Strength
+(ft. lb./in. notch)       0.40                0.50                0.44             1.03              0.49             0.40             .66              .52
+
+Hardness (Rockwell M)     89                  80                  82               72                86               87               60               74
+
+
+1Initial temperature of mix.
+2Time to transition point or gel.
+3Temperature at transition point.
+4Temperature at peak exotherm.
+5Time to peak exotherm.
+6For example Versamid 140 or Ancamide 350 A. (Curing agent is a 350-400 amine value polyamide.)
+— = Not Determined
+– = Not run due to high viscosity.
+†Typical values; not to be construed as specifications.
+
+
+
+
+                                                                                                                                                                       30
+                                     Electrical Properties — DOW Liquid Epoxy Resins Cured with Polyamide1 Curing Agent†
+     Table   23
+                                    D.E.R.         D.E.R.          D.E.R.          D.E.R.          D.E.R.         D.E.R.        30% D.E.R. 732   30% D.E.R. 736
+     Resin                          330            331             332             337             317            383           70% D.E.R. 331   70% D.E.R. 331
+
+     Dielectric Constant
+       Cond. A
+            Frequency, Hz 60        3.13           3.23            3.24            3.20            3.39           —             3.36             3.37
+                          10 3      3.12           3.19            3.20            3.17            3.35           3.76          3.28             3.31
+                          10 6      2.95           2.99            2.95            2.91            3.04           —             3.98             3.06
+
+       Cond. D
+          Frequency, Hz 60          3.39           3.48            3.44            3.48            3.58           —             3.63             4.17
+                        10 3        3.35           3.44            3.39            3.40            3.52           —             3.90             3.74
+                        10 6        3.09           3.10            3.07            3.08            3.15           —             3.30             3.26
+
+     Dissipation Factor
+       Cond. A
+            Frequency, Hz 60        .0045          .0036           .0097           .0063           .0047          —             .011             .010
+                          10 3      .0065          .0070           .0097           .0091           .010           .0070         .016             .012
+                          10 6      .019           .019            .021            .021            .020           —             .024             .021
+
+       Cond. D
+          Frequency, Hz 60          .0098          .0059           .0078           .0210           .0047          —             .058             .055
+                        10 3        .010           .011            .011            .014            .010           —             .036             .031
+                        10 6        .022           .026            .026            .027            .020           —             .044             .036
+
+     Volume Resistivity
+     (ohm-cm)
+        Cond. A                     1.44 x 1015    1.22 x 1016     4.86 x 1015     1.21 x 1016     6.04 x 1015    1.38 x 1015   4.81 x 1015      1.81 x 1015
+
+       Cond. C                      7.68 x 1014    1.22 x 1016     2.91 x 1014     1.45 x 1015     3.62 x 1015    —             2.53 x 1013      1.04 x 1013
+
+     Surface Resistivity (ohm)
+       Cond. A                      1.26 x 1015    5.5 x 1015      7.85 x 1015     7.85 x 1015     >7.85 x 1015   2.40 x 1015   3.93 x 1015      7.85 x 1015
+
+       Cond. C                      1.26 x 1015    7.85 x 1015     2.04 x 1014     1.33 x 1015     1.57 x 1015    —             9.89 x 1012      4.0 x 1013
+
+ 1
+  For example Versamid 140 or Ancamide 350 A. (Curing agent is a 350-400 amine value polyamide.)
+ — = Not Determined
+ †Typical values; not to be construed as specifications.
+
+
+
+
+31
+                                Chemical, Solvent Resistance, and Thermal Degradation —
+ Table     24                   DOW Liquid Epoxy Resins Cured with Polyamide1 Curing Agent†
+                                                                                                                                                      30% D.E.R. 732        30% D.E.R. 736
+                                D.E.R. 330          D.E.R. 331         D.E.R. 332          D.E.R. 337           D.E.R. 317           D.E.R. 383       70% D.E.R. 331        70% D.E.R. 331
+                                  % WT                % WT               % WT                % WT                 % WT                 % WT               % WT                  % WT
+ Resin                         Change, Days        Change, Days       Change, Days        Change, Days         Change, Days         Change, Days       Change, Days          Change, Days
+
+ Reagent                        7 28 120           7 28 120           7 28 120            7 28 120             7 28 120             7 28 120            7 28 120              7 28 120
+
+ Sulfuric Acid 30%              .58 1.32 3.70        .67 1.9 3.6       .52 1.18 3.35      1.05 3.10 7.08       0.64 1.27 3.51        .40 .74 1.50      3.38 8.18 24.60        2.64 5.94 14.60
+
+ Nitric Acid 40%                  — — —              1.7 3.8 6.6        — — —               — — —                 — — —                2.86 0 0           — — —                    — — —
+
+ Acetone                       2.08 4.65 14.10      3.4 7.3 16.2      2.17 4.77 14.2      5.79 13.04 D         3.49 6.87 15.4         — — —               22.0 D —                 D ——
+
+ Toluene                          — — —              1.5 3.7 8.0        — — —               — — —                 — — —             6.61 17.4 27.2        — — —                    — — —
+
+ Sodium Hydroxide 50%            0.00 0.2 .11       –.01 .07 .20       0.00 0.00 .07        .04 .03 .15        –.02 –.07 –.10        .05 –.06 –.06        .09 .19 .34              .07 .11 .27
+
+ JP 4 Fuel                       .03 .06 .34         .03 .05 .29        .02 .04 .23         .02 .06 .31          .23 .40 .59          — — —               .11 .27 .93              .07 .15 .59
+
+ Distilled Water                .47 1.03 2.36        .58 1.3 2.6       .47 .99 2.24       .47 1.18 2.61         .62 1.14 2.40        .44 .88 15.3       1.17 2.44 4.83        1.16 2.38 4.86
+
+ HRS                           100 200 300 500     100 200 300 500    100 200 300 500    100 200 300 500      100 200 300 500       100 200 300 500    100 200 300 500       100 200 300 500
+
+ Thermal Degradation          .77 1.15 1.39 1.53   .73 1.1 1.4 1.6   .50 .74 .95 1.07   1.05 1.48 1.73 1.82   1.01 1.30 1.62 1.71   .90 1.3 1.8 2.0   1.33 1.81 2.13 2.35   1.15 1.64 1.79 2.32
+ (% Wt. Loss) 160°C
+ 210°C                        2.15 3.18 — 4.35     2.9 4.2 5.0 5.6   1.61 2.44 — 4.08   2.66 3.55 — 5.48      2.80 3.91 4.97 5.50   3.8 5.0 6.0 7.3   3.64 4.88 — 6.24      4.52     D — —
+
+
+D = Decomposed
+— = Not Determined
+1
+  For example Versamid 140 or Ancamide 350 A. (Curing agent is a 350-400 amine value polyamide.)
+†Typical values; not to be construed as specifications.
+
+
+
+                                 Physical Properties — DOW Liquid Epoxy Resins Containing a Reactive Diluent†
+ Table     25
+Resin                            D.E.R. 324       D.E.R. 325                            D.E.R. 324        D.E.R. 325                                  D.E.R. 324          D.E.R. 325
+Curing Agent                             —D.E.H. 24—                                             —Polymide5—                                            —1,2-Cyclohexane Diamine—
+
+phr                                  12.2                12.5                               33                     33                                      17                          17
+
+Reactivity & Exotherm
+of a 500 Gram Mass
+(@ 25°C) (Min.)1                      41                 35                                245                     225                                      86                          65
+             (°C)2                    66                 60                                 50                      50                                      77                          94
+             (°C)3                   230                 230                                68                      68                                     240                         250
+             (Min.)4                  48                  39                               260                     250                                      92                          75
+
+Heat Deflection
+Temperature (°C)                      65                  88                                50                     63                                      81                          99
+
+Flexural Strength (psi)   6
+                                    16,400              19,200                            11,500                 15,400                                  18,800                      21,400
+
+Flexural Modulus
+(psi x 105 )                         4.57                5.11                              3.25                   4.33                                    4.76                        5.06
+
+Yield Compressive
+Strength (psi)                      11,800              14,300                            8,400                  11,700                                  13,900                      15,900
+
+Compressive Modulus
+(psi x 105 ) at
+10% deformation or less              2.58                3.05                              2.14                   2.85                                    2.97                        3.24
+
+Tensile Strength (psi)               9,000              10,300                            6,700                   8,700                                   6,900                      11,800
+
+Ultimate Elongation (%)              8.70                6.37                              7.32                   4.53                                    2.03                        8.95
+
+Glass Transition
+Temperature (°C)                      82                 102                                67                     88                                      102                         124
+
+
+1Time to transition point or gel.                        5For example Versamid 140 or Ancamide 350 A. (Curing agent is a 350-400 amine value polyamide.)
+2Temperature at transition point.                        6Sample size 1'' W x 1/8'' D; Span 2''.
+3Temperature at peak exotherm.                           †Typical values; not to be construed as specifications.
+4Time to peak exotherm.
+                                                                                                                                                                                                 32
+                           Electrical Properties — DOW Liquid Epoxy Resins Containing a Reactive Diluent†
+  Table    26
+ Resin                        D.E.R. 324             D.E.R. 325             D.E.R. 324              D.E.R. 325                      D.E.R. 324                     D.E.R. 325
+ Curing Agent                 D.E.H. 24              D.E.H. 24              Polyamide1              Polyamide                 1,2-Cyclohexane Diamine        1,2-Cyclohexane Diamine
+
+ Dielectric Constant
+    Cond. A
+    Frequency, 1000 Hz            3.99                   4.18                  3.64                    3.68                            3.91                              4.21
+
+ Dissipation Factor
+    Cond. A
+    Frequency, 1000 Hz            .014                  .0082                  .012                   .0090                            .0069                             .016
+
+ 1
+   For example Versamid 140 or Ancamide 350 A. (Curing agent is a 350-400 amine value polyamide.)
+ †Typical values; not to be construed as specifications.
+
+
+                              Chemical, Solvent Resistance, and Thermal Degradation —
+  Table    27                 DOW Liquid Epoxy Resins Containing a Reactive Diluent†
+
+ Resin                            D.E.R. 324              D.E.R. 325              D.E.R. 324                  D.E.R. 325                 D.E.R. 324                 D.E.R. 325
+
+ Curing Agent                     D.E.H. 24               D.E.H. 24               Polyamide1               Polyamide               1,2-Cyclohexane Diamine    1,2-Cyclohexane Diamine
+                                    % WT                    % WT                    % WT                     % WT                           % WT                       % WT
+                                 Change, Days            Change, Days            Change, Days             Change, Days                  Change, Days               Change, Days
+
+ Reagent                         7 28 120                7 28 120                 7 28 120                7 28 120                       7 28 120                   7 28 120
+
+ Sulfuric Acid 30%               .88 1.95 4.34            .70 1.56 3.57           .46 1.13 2.35               .29 .81 1.78               .52 1.18 2.23              .49 1.01 1.96
+
+ Sulfuric Acid 3%                .83 1.67 3.46            .67 1.31 2.61           .68 1.28 2.14               .53 1.09 2.06              .56 1.09 1.83              .61 1.13 1.90
+
+ Hydrochloric Acid 36%           2.70 5.38 11.2          1.80 3.77 7.98          3.45 6.48 13.6           2.16 4.22 9.13                 3.62 6.99 15.2            2.55 5.17 11.1
+
+ Hydrochloric Acid 10%           .76 1.53 3.08            .80 1.58 3.29           .69 1.32 2.24               .51 1.34 1.95              .44 6.25 6.34              .41 2.18 1.86
+
+ Nitric Acid 40%                 5.20    D D             9.67   D D               4.82 D D                3.13      D    D              5.42 D       D             4.38 D       D
+
+ Nitric Acid 10%                 1.01 1.96 4.07           .88 1.74 3.79           .85 1.78 3.21               .66 1.32 2.63              .77 1.58 2.87              .79 1.57 3.04
+
+ Acetic Acid 25%                 6.61 12.2 26.2          4.37 8.43 18.3           7.00 12.6 25.4          4.14 7.65 15.3                7.41 13.3 27.6             5.44 9.94 20.5
+
+ Sodium Hydroxide 50%             .03 .04 .14              .03 .01 .16             .05 .03 .05                 .06 .07 .06                .05 .03 .20                .03 .09 .21
+
+ Ammonium Hydroxide 28%          .67 1.27 2.61            .45 .95 2.23            .98 1.48 2.67               .67 1.33 2.36              .60 1.09 1.66              .54 .98 1.68
+
+ Ethanol 95%                     2.13 4.13 8.70           .53 1.24 2.48          4.79 8.70 15.1           2.09 3.84 7.33                2.69 5.38 11.5              .41 1.56 4.13
+
+ Toluene                         3.29 9.04 24.5            .08 .14 .34            24.5 D     D           7.66 17.8 25.1                 3.98 12.1 39.6               .15 .21 .58
+
+ Acetone                        8.74 16.7 D              3.32 8.15 18.4           17.2 D     D           10.2      D     D              15.2    D    D             4.82     D   D
+
+ Ethylene Dichloride             D       D   D           8.23 23.3 D              D      D   D                D    D     D               D      D    D              15.9 D      D
+
+ Distilled Water                 .49 .86 1.65            .34 .77 1.58            .70 1.28 2.19           .58 1.01 1.98                  .50    .87   1.18          .48    .84   1.31
+
+ HRS                            100 200 300 500          100 200 300 500         100 200 300 500          100 200 300 500               100 200 300 500            100 200 300 500
+
+ Thermal Degradation
+ (% Wt. Loss)
+ 160°C                          2.3 2.8 3.6 3.9          1.4 1.4 2.1 2.5          3.5 7.1 5.5 6.3         1.4 2.0 2.6 3.0               2.7 3.3 3.7 4.1            1.9 2.3 2.6 2.6
+ 210°C                         6.1 7.9 11.6 17.4        4.4 6.2 7.8 10.3         6.9 8.1 9.1 10.2         4.3 5.5 6.4 2.4              5.2 7.6 10.6 16.4          4.3 6.3 8.2 10.4
+
+
+ D = Decomposed
+ 1
+   For example Versamid 140 or Ancamide 350 A. (Curing agent is a 350-400 amine value polyamide.)
+ †Typical values; not to be construed as specifications.
+
+
+
+
+33
+ADDITIONAL PROPERTY DATA                                                               Physical Properties of D.E.R. 332 and D.E.R. 732
+                                        Table   28                                     Resins Cured with Amino Ethyl Piperazine
+
+In Table 28, D.E.R. 332 was selected    D.E.R. 332 and D.E.R. 732 (Ratio)             100:0            85:15           70:30           50:50   35:65
+for best color; D.E.R. 331 performs     D.E.H. 39                                     25.0             23.5            21.5            19.5    17.5
+similarly when blended with D.E.R.
+                                        Tensile Strength (psi)                        7,000            8,200           6,600           2,100   300
+732 and cured with amino ethyl
+piperazine (AEP). Systems were          Ultimate Elongation (%)                       6.6              8.7             8.7             115     66
+blended at 40°C, adding the
+                                        Color (Gardner)                               2                1               <1              <1      <1
+chemical equivalent quantity of AEP.
+They were cured four hours at 60°C,     Condition                                     Rigid            Rigid           Flex.           Flex.   Flex.
+and may also be cured at room
+                                        Wt. Loss, 4 hr at 205°C (%)                   0.48             0.61            0.82            1.23    1.72
+temperature. Samples of one-eighth
+inch thickness were tested.             Wt. Loss, 8 hr at 205°C (%)                   0.87             0.85            1.20            1.94    3.00
+
+                                        Acetone Extraction (% – 2 hrs.)               0                0               0               0.83    2.00
+
+                                                                                       Physical Properties of D.E.R. 331 and D.E.R. 732
+                                        Table   29                                     Resins Cured with D.E.H. 20
+
+                                        D.E.R. 331 and D.E.R. 732 (Ratio)             100:0                   90:10             70:30          50:50
+
+                                        D.E.H. 20 (phr)1                              11.0                    10.5              9.5            8.4
+
+                                        Flexural Strength (psi)                       12,200                  16,000            12,400         1,700†
+
+                                        Flexural Modulus (x 10 5 )                    4.5                     4.0               3.4            0.29
+
+                                        Compressive Strength (psi)                    26,600                  32,000            32,900         16,700
+
+                                        Compressive Modulus (x 10 5 )                 3.7                     3.5               3.0            2.8
+
+                                        Tensile Strength (psi)                        7,500                   4,700             6,200          1,400
+
+                                        Tensile Modulus (x 10 5 )                     2.1                     1.9               2.5            0.20
+
+                                        Izod Impact Strength (ft. lbs./in. notch)     0.43                    0.48              0.76           2.00
+                                       1Cure Schedule: gel at room temp.; post cure 2 hrs. at 100°C.       †Yielded, but did not break.
+
+                                                                                       Physical Properties of D.E.R. 331 and D.E.R. 736
+                                        Table   30                                     Resins Cured with Nadic Methyl Anhydride
+
+                                       D.E.R. 331 and D.E.R. 736 (Ratio)              100:0                   90:10             70:30          50:50
+
+                                       Nadic Methyl Anhydride                         86/5                    82/5              75/5           69/5
+
+                                       Flexural Strength (psi)                        6,300                   10,400            13,400         17,800
+
+                                       Flexural Modulus (x 10 5 )                     5.0                     5.3               4.7            4.6
+
+                                       Compressive Strength (psi)                     30,100                  31,400            28,800         26,700
+
+                                       Compressive Modulus (x 10 5 )                  4.5                     4.1               4.1            4.0
+
+                                       Tensile Strength (psi)                         3,300                   3,200             3,300          3,300
+
+                                       Tensile Modulus (x 10 5 )                      1.9                     2.0               1.9            2.0
+
+                                       Izod Impact Strength (ft. lbs./in. notch)      0.16                    0.16              0.44           0.38
+                                       1Cure Schedule: 4 hrs. at 80°C and 15 hrs. at 150°C.
+                                                                                                                                                        34
+     STORAGE     These comments are necessarily general        Each anticipated condition of elevated
+                 and abbreviated. More complete details        temperature storage should be checked
+                 are available in the technical brochures,     to determine its effect on the resin.
+                 DOW Epoxy Resins-Product Stewardship,
+               Safe Handling and Storage Manual(Form
+                                                               Bulk Storage
+               No. 296-00312) and DOW Epoxy Curing
+                                                               For large consumers of epoxy resins,
+               Agents-Product Stewardship, Safe Handling
+                                                               bulk storage of liquid resins is entirely
+               and Storage Manual (Form No. 296-01331),
+                                                               feasible. Dow personnel, experienced in
+               available from your Dow sales representative.
+                                                               bulk storage and handling, are available
+                                                               to assist you by making suggestions
+               Liquid epoxy resins are stable for long
+                                                               regarding the design of storage and han-
+               periods of time at room temperature.
+                                                               dling facilities.1
+               Diluent or solvent cut resins should be
+               stored in tight containers to prevent           1
+                                                                Many bulk storage and handling details are
+               loss of the volatiles. A good practice is
+                                                               discussed in the two aforementioned technical
+               to store all resins and curing agents in
+                                                               brochures.
+               tight containers, because some are sus-
+               ceptible to moisture absorption, which
+               may affect rate of cure and other prop-
+               erties. Moderate elevated temperature
+               storage (50-55°C; 122-131°F) to reduce
+               viscosity or prevent resin crystallization
+               has little effect on most DOW resins,
+               even after several months time. Storage
+               at temperatures above 55°C is satisfac-
+               tory for periods of two or three days for
+               processing purposes. At these higher
+               temperatures, some color and viscosity
+               increase occurs. The rate of increase
+               depends upon the temperature and
+               varies for different resins.
+
+
+
+
+35
+        HAZARDS &
+        HANDLING
+        PRECAUTIONS                                                                          Curing Agents
+                                                                                             Curing agents can be hazardous to
+                                                                                             health. For example, aliphatic amine-
+                                                                                             type materials are capable of causing
+Material Safety Data sheets on                Health Hazards                                 serious irritation, even burns, depending
+D.E.R. and D.E.H. product types are           Consult the Specific Manufacturers             upon the degree of contact. In addition,
+available from Dow Plastics† to help          Material Safety Data Sheet before              they may cause a serious rash or an
+customers meet their handling and             handling any chemical.                         asthmatic-type response in sensitized
+disposal needs and applicable OSHA                                                           persons. This response may develop
+requirements.                                 Liquid Epoxy Resins                            after several weeks or months of contact
+                                              Skin                                           with the liquid or vapors that cause no
+Because of the wide variety of materi-                                                       immediate apparent effects, or it may
+                                              D.E.R. 317, D.E.R. 324, D.E.R. 325,
+als used in epoxy resin systems, the                                                         result from a single massive exposure.
+                                              D.E.R. 330, D.E.R. 331, D.E.R. 332,
+following discussion is only a general
+                                              D.E.R. 337, D.E.R. 362, D.E.R. 364, and
+guide. Also, because of the many                                                             The aromatic amine curing agents
+                                              D.E.R. 383 epoxy resins are not acutely
+plant environments involved, no war-                                                         discussed in this bulletin are considered
+                                              irritating to the skin. However, they
+ranty of any kind can be given. For                                                          to present a less acute hazard from skin
+                                              are capable of causing skin sensitiza-
+more detailed information, formula-                                                          contact than the aliphatic amine curing
+                                              tion. Susceptibility to skin irritation
+tors should contact the manufacturer                                                         agents. For example, they are consider-
+                                              and sensitization varies from person to
+of each material used. The Dow tech-                                                         ably less irritating to the skin, and
+                                              person. These epoxy resins, however,
+nical brochures, DOW Epoxy Resins                                                            although they may cause skin sensitiza-
+                                              are considered to be milder skin sensi-
+Product Stewardship Safe Handling                                                            tion responses, they are less likely to
+                                              tizers than amine-type curing agents or
+and Storage Manual, Form No. 296-                                                            than the aliphatic amines. And because
+                                              epoxy functional reactive diluents.
+00312 and DOW Epoxy Curing                                                                   the aromatic amine curing agents are
+Agents Product Stewardship Safe                                                              usually solids, they are considered to
+                                              Inhalation
+Handling and Storage Manual, Form                                                            present no significant acute vapor
+                                              Vapor inhalation with most liquid resins
+No. 296-01331 can be helpful.                                                                inhalation hazard, unless handled at
+                                              is not considered a problem unless the
+                                              resins are heated. D.E.R. 333, D.E.R.          elevated temperatures.
+Ask your Dow sales representative
+                                              343, and D.E.R. 345 resins are excep-
+for copies, or call the Dow                                                                  Anhydride curing agents are
+                                              tions: they contain xylene solvent with
+Customer Information Group at                                                                considered to be capable of causing
+                                              a TLV of 100 ppm (1997).
+1-800-441-4369 to request these                                                              severe eye and skin irritation, even
+brochures.                                                                                   burns, depending upon the severity of
+                                              Ingestion and Eye Contact
+                                              All of the liquid resins are low in acute      contact. In addition, some of them may
+Note: Dow recommends that its customers       oral toxicity. Eye contact should result       cause sensitization responses.
+conduct a continuing training program for     in only slight, transient irritation. (Note:
+all personnel involved in epoxy handling,                                                    Continued next page
+                                              In the event of skin contact, thoroughly
+formulating, disposal, etc. Planning for
+                                              wash the affected area with copious
+employee and plant safety has value only
+                                              amounts of soap and water. Remove
+when it is interpreted and practiced by the
+people involved.
+                                              contaminated clothing and launder
+                                              before reuse. In the event of eye con-
+                                              tact, the eyes should be flushed with
+† Dow Plastics, a business group of The Dow   plenty of water. If eye or skin irritation
+Chemical Company and its subsidiaries.        persists, seek qualified medical attention.)
+
+
+                                                                                                                                      36
+     HAZARDS &
+     HANDLING
+     PRECAUTIONS                                         Resin Modifiers
+                                                         These materials vary greatly in their
+                                                         chemical structure. Therefore, a general
+                                                         statement concerning their degree of haz-
+            Polyamide-type curing agents are             ard cannot be made. The epoxy-type com-
+            distinctly less hazardous to handle          pounds may be considered to present the
+            than the other curing agents. They are       same degree of hazard as do the liquid
+            considered to present a low degree           epoxy resins. However, other reactive
+            of health hazard.                            modifiers may be more or less hazardous
+                                                         depending upon the product. Consult
+            Because of the differences in the            your supplier(s) prior to use.
+            catalytic-type curing agents suggested
+            for use, no general statement can be         Fillers
+            made as to the hazards involved in           Fillers vary in their degree of hazard from
+            their handling and use.                      handling. Some, such as the clays, may be
+                                                         considered essentially nonhazardous.
+            Note: Specific information should be         However, dusts of glass, silica bearing
+            requested from the manufacturer of each      powders, and powdered metals may
+            curing agent prior to its use.
+                                                         present a serious hazard from inhalation
+                                                         and/or explosion. Consult your
+            Reactive Diluents                            supplier(s) prior to use.
+            Because of their toxicological properties,
+            the reactive diluents proposed for use are
+                                                         Cured Resins
+            considered to present a high degree of
+                                                         Resins that are completely polymerized
+            hazard. For example, they are capable of
+                                                         (cured) are considered to be toxicological-
+            causing skin and eye irritation. They are
+                                                         ly inert. Therefore, they present no health
+            also capable of causing sensitization
+                                                         problems from handling.
+            responses in a significant number of peo-
+                                                         However, dusts from machining cast
+            ple who contact them. They may also pre-
+                                                         or molded parts may be an inhalation
+            sent a significant hazard from inhalation.
+                                                         or explosion hazard.
+            In short, they may be considered more
+            hazardous than the liquid epoxy resins.
+            Consult your supplier(s) prior to use.
+
+
+
+
+37
+HANDLING PRECAUTIONS
+        Each of these materials, when handled       3. Suitable protective clothing to prevent
+        alone, may require special precautions         contact should be worn; the particu-
+        for their safe handling. Consult with          lar type of clothing depends on the
+        the manufacturer of each product               operation. (Caution: Impervious
+        concerning proper handling                     clothing can increase the hazard if
+        procedures prior to use.                       contamination occurs on the inside.
+        Resins systems, comprised of epoxy             Do not wear or use contaminated arti-
+        resins, curing agents, and other modi-         cles unless they have been thorough-
+        fiers, require special precautions for         ly decontaminated.)
+        their safe handling. Specific recommen-
+        dations can only be made when specific      4. Contamination of the work area
+        conditions of handling are known.              should be minimized by placing clean
+        However, in general, resin systems             disposable paper on tables and bench-
+        should be handled so that all                  es. The paper should be renewed
+        human contact is prevented.                    twice daily or immediately following
+        This can best be done by handling the          gross contamination. (Note: Proper
+        materials in an enclosed system. If that       disposal of “disposables” is necessary
+        is not feasible, the following guidelines      or they can be a source of contamina-
+        and precautions can be helpful in              tion to other workers.)
+        avoiding health problems.
+                                                    5. Contact with the material can be
+        1. All personnel concerned with the            reduced by the use of disposable
+           handling of these materials must            utensils, such as paper dippers,
+           maintain strict cleanliness of both         containers, etc. See note in “4.”
+           their person and the area in which
+           they work. There is no substitute for    6. Contact with vapors should be
+           strict cleanliness and housekeeping.        prevented. Ventilation sufficient to
+                                                       remove all vapor at the point of use,
+        2. Continued instruction of all employ-        and to assure fresh air supply, should
+           ees must be given concerning the            be provided.
+           consequences of contact, as well as
+           the precautions necessary for safe       7. Isolate epoxy resin work areas from
+           operations. Remember:                       other work areas to limit the direct
+          • liquid epoxy resins may cause              exposure of untrained workers and
+             allergic sensitization and/or             their exposure to contaminated tools
+             irritation.                               and equipment.
+          • avoid contact with eyes and skin.
+          • avoid breathing vapors (especially        Continued next page
+             of solvent containing systems).
+          • do not take internally.
+
+
+
+
+                                                                                              38
+ HANDLING PRECAUTIONS
+ The preceding comments are based on             Spill Containment and Cleanup                  Liquid and solution resins should be
+ extensive experience and are expressed          Persons engaged in spill cleanup should        prevented from entering sewers or
+ in good faith. We will work with                be protected from vapors and from skin         drains, or any body of water, including
+ customers-users to assist them in the           contact by wearing appropriate protective      rivers, streams or lakes. If spilled material
+ proper use and handling of these                clothing and equipment.                        does enter drains or waterways, notify
+ materials. However, The Dow Chemical                                                           local authorities at once.
+ Company can accept no liability for             The immediate concern in any spill is to
+ operations not under its direct control.        protect personnel and to prevent a possi-
+ Responsibility for proper use, storage,         ble fire hazard. Also, personnel engaged
+ and handling of these materials is that of      in spill cleanup should know proper dis-
+                                                                                                For Chemical Emergency
+ the customer-user.                              posal techniques in advance.
+                                                                                                (Spill, Leak, Fire, Exposure or
+                                                                                                Accident), call CHEMTREC,
+ Flammability                                    For small spills of liquid or solution
+                                                                                                day or night, at
+ All D.E.R. epoxy resins are organic             epoxy resin (less than 5 gallons), apply
+                                                                                                1-800-424-9300 in the U.S.
+ materials and will burn when sufficient         an absorbent material or a high surface-
+ heat and oxygen are supplied.                   area material such as sand to the spill,
+                                                                                                In Canada, call CANUTEC at
+                                                 then shovel the mass into a suitable con-
+                                                                                                613-996-6666
+ A common measure of flammability is             tainer. The residue on the floor or dock
+ flash-point temperature (e.g., see Table 1,     should be removed with steam or hot
+                                                                                                In Mexico, call SETIQ at
+ page 4). This value indicates the mini-         soapy water. (Note: Use of methylene
+                                                                                                91-800-97-619
+ mum temperature at which flammable              chloride, acetone or aromatic solvents in
+ conditions are produced in controlled           cleanup poses a distinct hazard and
+ laboratory experiments at atmospheric           should be avoided.) For solution resins,
+ pressure.                                       keep spark-producing equipment away
+                                                 from the spill site. Also, if possible, shut
+ Note: Solvents, diluents, and other materials
+                                                 off or remove all potential sources of
+ used with epoxy resins commonly increase the
+                                                 ignition.
+ hazard of flammability and/or explosion.
+ Consult your supplier(s) prior to use.
+                                                 In the event of a larger spill (55 gallons
+                                                 or more), employees should stay up
+ Fires involving D.E.R. epoxy resins can
+                                                 wind. Evacuate and rope off the spill
+ be extinguished with foam, dry powder,
+                                                 area. Shut off leaks and all potential
+ or carbon dioxide. Water is not normally
+                                                 sources of ignition. The spill should be
+ an effective extinguishing agent with
+                                                 contained with a dike, and excess resin
+ these resins.
+                                                 should be collected in suitable containers
+                                                 for final disposal. Hot soapy water or
+ When burning, these resins give off
+                                                 steam may be required for final cleanup.
+ toxic byproducts, such as carbon
+                                                 (Note: The use of solvents during
+ monoxide gas. Therefore, avoid breath-
+                                                 cleanup is hazardous and should be
+ ing fumes, gases, or smoke resulting
+                                                 avoided.)
+ from a fire. Fire fighters should use an
+ organic vapor respirator or self-con-
+                                                 Epoxy resins are often heated when
+ tained breathing apparatus.
+                                                 handled in bulk. In spills of hot resin,
+                                                 care should be taken to avoid thermal
+                                                 burns.
+
+39
+   APPENDIX—
+   ABBREVIATIONS
+AEP      —   Amino Ethyl Piperazine
+BDMA     —   Benzyldimethylamine
+BGE      —   Butyl Glycidyl Ether
+CGE      —   Cresyl Glycidyl Ether
+CPS      —   Centipoise (viscosity);
+                    Cycles per Second (electrical)
+DDS or
+DADS     —   Diamino Diphenyl Sulfone
+DDSA     —   Dodecenyl Succinic Anhydride
+DEAPA    —   Diethylaminopropylamine
+DETA     —   Diethylene Triamine
+DGE      —   Diglycidyl Ether
+DICY     —   Dicyandiamide
+EEW      —   Epoxide Equivalent Weight
+HDT      —   Heat Distortion Temperature
+HHPA     —   Hexahydrophthalic Anhydride
+MEA      —   Monoethylamine
+MEK      —   Methyl Ethyl Ketone
+MIBK     —   Methyl Isobutyl Ketone
+MPDA     —   Metaphenylene Diamine
+MSDS     —   Material Safety Data Sheet
+MTHPA    —   Methyltetrahydrophthalic Anhydride
+MW       —   Molecular Weight
+NMA      —   Nadic Methyl Anhydride
+PA       —   Phthalic Anhydride
+PGE      —   Phenyl Glycidyl Ether
+PHR      —   Parts per Hundred Parts Resin
+                    (by weight)
+TEPA     —   Tetraethylene Pentamine
+TETA     —   Triethylene Tetramine
+THPA     —   Tetrahydrophthalic Anhydride
+
+
+
+
+                                                     40
+     PRODUCT
+     STEWARDSHIP                                         Internally, Dow’s Product Stewardship
+                                                         program encompasses the education of
+                                                         its employees in safe handling proce-
+                                                         dures, protective clothing and equipment,
+            Dow encourages its customers and             and the use of safety devices, such as eye
+            potential users of Dow products to review    wash fountains, and emergency showers.
+            their applications of such products from     It involves monitoring of personnel for
+            the standpoint of human health and envi-     potential vapor exposure, continuous
+            ronmental quality. When requested, Dow       measurement of area and effluent water
+            personnel will assist customers in dealing   for organic contaminants, and periodic
+            with ecological and product safety consid-   medical surveillance.
+            erations. Your Dow sales representative
+            can arrange the proper contacts. Dow         Externally, the Product Stewardship
+            product literature, including Material       program means helping in the education
+            Safety Data sheets, should be consulted      of those who transport, unload, use, and
+            prior to the use of Dow products. These      dispose of a product. This is accom-
+            may be obtained from your Dow sales          plished through bulletins, pamphlets,
+            representative or sales office.              product literature, correspondence, tele-
+                                                         phone contacts, seminars, and training
+            The Dow Chemical Company has a fun-          programs. In these and other programs,
+            damental concern for all who make, dis-      agendas may include discussion of the
+            tribute, and use its products, and for the   product hazards, suggested industrial
+            environment in which we live. The            hygiene practices, and suggested
+            success of this Product Stewardship          product handling practices.
+            program rests with each and every
+            individual involved with Dow products —      More detailed product stewardship
+            from the initial concept and research to     information is available in two product
+            the manufacture, sale, distribution, use,    safe handling and storage manuals:
+            and disposal of each product.                DOW Epoxy Resins Product Stewardship,
+                                                         Safe Handling and Storage Manual,
+                                                         Form No. 296-00312 and DOW Epoxy
+                                                         Curing Agents Product Stewardship,
+                                                         Safe Handling and Storage Manual,
+                                                         Form No. 296-01331.
+
+
+
+
+41
+                                                For additional information
+                                             in the U.S. and Canada, call the
+                                           Dow Customer Information Group at
+                                    1-800-441-4369 or 1-517-832-1426 or cig@dow.com.
+
+                                                                   In Mexico,
+                                                             call 95-800-441-4369.
+
+                                   In Europe, contact the Dow Information Centre
+                                   in The Netherlands at ++31-20-6916268 (phone),
+                                 ++31-20-6916418 (fax) or dicinfo@euronet.nl (e-mail).
+
+                                                    In the Pacific area, call
+                                             the Dow Customer Service Center at
+                                              81-120-024394 (toll-free in Japan) or
+                                                81-3-5460-2114 (outside Japan).
+
+                                                    In Brazil, call
+                                  the Dow Chemical Service Center at 55 11 51889367.
+
+
+
+
+NOTICE: No freedom from any patent owned by Seller or others is to be inferred. Because use conditions and applicable laws may differ from one
+location to another and may change with time, Customer is responsible for determining whether products and the information in this document are
+appropriate for Customer’s use and for ensuring that Customer’s workplace and disposal practices are in compliance with applicable laws and other
+governmental enactments. Seller assumes no obligation or liability for the information in this document. NO WARRANTIES ARE GIVEN; ALL
+IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PAR TICULAR USE ARE EXPRESSLY EXCLUDED.
+
+                                                                  Published January 1999
+
+                       The Dow Chemical Company, 2040 Dow Center, Midland, MI 48674
+          Dow Chemical Canada Inc., 1086 Modeland Rd., P.O. Box 1012, Sarnia, Ontario, N7T 7K7, Canada
+         Dow Quimica Mexicana, S.A. de C.V., Torre Optima – Mezzanine, Av. Paseo de Las Palmas No. 405,
+                              Col. Lomas de Chapultepec, 11000 Mexico, D.F., Mexico
+                         Dow Europe S.A., Bachtobelstr. 3, CH-8810 Horgan, Switzerland
+    Dow Chemical Japan Ltd., Tennoz Central Tower,2-2-4 Higashi Shinagawa, Shinagawa-ku Tokyo 140-8617, Japan.
+            Dow Quimica S.A., Rua Alexandre Dumas, 1671, P.O. Box 9037, 01065-970 Sao Paulo, Brazil
+
+
+
+
+                                                      We don’t succeed unless you do.
+
+                                                           *Trademark of The Dow Chemical Company.
+                                        Dow Plastics, a business group of The Dow Chemical Company and its subsidiaries.
+                                                                             255/8138
+
+
+
+Printed in U.S.A.                                                                                                          Form No. 296-00224-0199 WC+M
+

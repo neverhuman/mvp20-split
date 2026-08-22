@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "b5282c3f866b2bfb299f8bc768fd1b42b91b2f31f1a673c9f60a230b93e1c7f2",
+  "import_hashes": [],
+  "module_id": "amphora-formulation-arithmetic",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

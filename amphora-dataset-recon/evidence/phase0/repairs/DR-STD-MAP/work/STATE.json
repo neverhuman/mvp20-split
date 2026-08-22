@@ -1,0 +1,29 @@
+{
+  "campaign_item_id": "DR-STD-MAP",
+  "fires": [
+    {
+      "fire_id": "20260810T160002-3096524-741041e674fd",
+      "date": "2026-08-10",
+      "verdict": "CLAIM_SURVIVED",
+      "receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/done/dr-std-map-receipt.v1.dsse.json",
+      "mapping_table_rows": 41,
+      "integrity_gap_rows": 12,
+      "summary": "Built the first DR-STD-MAP consolidated mapping table (41 standard rows: GB/T, JIS, DIN, GOST, KS, NF, plus CSN/UNI/NEN/PN/UNE/NP EN-ISO-adoption classes) from the 8 prior DR-LANG-* fires' scattered standard_mapping data plus 7 fresh title-level WebSearch queries. 12 rows honestly declared as integrity gaps (unmapped or unconfirmed). Independent 4-limb checker (census completeness, required-fields-or-declared-gap, scope-consistency swap-detection, sourced-mapping) ran clean twice (byte-identical) against the real table and correctly fired against all 5 planted-defect mutants including the item's own named salt-spray-for-EEW swap attack."
+    },
+    {
+      "fire_id": "20260810T170001-3732775-ad6a5dd6f225",
+      "date": "2026-08-10",
+      "verdict": "CLAIM_REFUTED",
+      "receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/done/dr-std-map-fire2-receipt.v1.dsse.json",
+      "row_count": 42,
+      "integrity_gap_rows": 11,
+      "summary": "Independent 5th-limb gap-flag-consistency audit found GOST Р 56752-2015 signed integrity_gap=false in fire-1's table despite identical weak-evidence language to 5 rows correctly flagged true -- a real internal-consistency defect fire-1's 4 limbs never checked. Fixed with fresh evidence (docs.cntd.ru title-level confirmation), and closed 2 more open items (KS D 9502 = ISO 9227:2006(MOD), distinct from the 2005-vintage row already confirmed; ČSN EN ISO 3001 confirmed, PN-EN ISO 3001 split out as its own honest gap). max_fires=2 reached for this item."
+    }
+  ],
+  "open_items_for_next_fire": [
+    "CSN/PN epoxy-equivalent-weight (ISO 3001) standard was never searched in any language -- a dedicated Czech/Polish WebSearch would close this.",
+    "GOST R 56752-2015, CSN EN ISO 9227, UNE/NP EN ISO 9227/12944 rest on pattern-inference or WebSearch-only citations -- a dedicated WebFetch against each standards-body page would upgrade these from unconfirmed to page-confirmed (mirroring the DR-LANG-EU fire-2 spot-check pattern).",
+    "GB/T 6822, GB/T 6748, JIS K5551/5552/5553 ship-hull/marine-primer standards have NO ASTM/ISO equivalent found in 3 language communities -- could attempt a 4th-language search (e.g. es/pt/ru ship-hull-specific) or declare this SATURATED if the pattern holds.",
+    "KS D 9502 vs KS D ISO 9227:2005 relationship (same standard under two designations, or genuinely distinct) was never resolved -- would need a WebFetch of the KSSN detail page for KS D 9502 itself."
+  ]
+}

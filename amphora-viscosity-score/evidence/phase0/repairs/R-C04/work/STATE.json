@@ -1,0 +1,49 @@
+{
+  "item_id": "R-C04",
+  "module_id": "amphora-viscosity-score",
+  "fires": [
+    {
+      "fire_id": "20260812T040001-4187595-821716c37e86",
+      "date": "2026-08-12",
+      "action": "Ran a data-availability audit for the pre-registered cluster-bootstrap protocol (resample 13 test polymers with replacement, B=5000, seed=0, on R2(FFW_B3) - R2(ML_B4)). Verified the FFW KPI's conformal_receipt_sha256 cross-link matches the conformal+AD scientific receipt's real sha256 (same seed=0 polymer-safe partition confirmed). Recursively scanned every signed KPI/receipt in the module's FFW-vs-ML lineage for any array of length 194 (per-test-row) or 13 (per-test-polymer). Found zero.",
+      "result": "BLOCKED_DATA: no signed artifact persists per-row or per-polymer actual/predicted values for FFW_B3 or ML_B4.",
+      "receipt": "amphora-viscosity-score/evidence/phase0/repairs/R-C04/attempts/cluster-bootstrap-data-audit-v1/cluster-bootstrap-data-audit-v1-receipt.v1.dsse.json",
+      "data_ask_filed": true
+    },
+    {
+      "fire_id": "20260812T050001-574491-f43fd01f90c2",
+      "date": "2026-08-12",
+      "action": "Checked whether the missing per-row prediction arrays had landed since fire 1 -- they had not (confirmed via full-tree search, no new receipt/csv). Then audited fire 1's proposed remediation path itself: its checkpoint's human_action_needed field claimed the missing arrays could be produced by 're-running the harness with per-row logging... no rights review needed... not the quarantined row-level CSV'. Tested this by hash comparison: pulled input_csv_sha256 from the FFW_B3 receipt and dataset_local_csv_sha256 from the parent ML B4 model receipt, and raw_sha256/quarantined/rights_class from the module's own acquisition-receipt.json, normalized-dataset manifest.json, and rights.json for the Polyverse melt-viscosity dataset. All four hashes are byte-identical (3cd923b4d67399f9c201b06acb282ee82b3a85345e06ff74c0b9d6941265f811); both quarantined flags are true; rights_class is CONTEXT_ONLY; the rights decision's basis text explicitly reads 'physically quarantine all derivatives'. Fire 1's 'no rights review needed' assertion is therefore false: re-running the harness to emit new per-row derivative arrays would re-consume the identical quarantined CSV and create a new derivative squarely inside the quarantine-all-derivatives basis.",
+      "result": "BLOCKED_RIGHTS (upgraded/corrected from fire 1's BLOCKED_DATA characterization of the remediation path -- fire 1's BLOCKED_DATA verdict for that fire itself is not disputed, but its proposed fix was rights-blocked, not an unblocked engineering re-run). Filed a supersedes block against fire 1's checkpoint (byte-identical, not modified) narrowing the human action needed to a specific counsel question.",
+      "receipt": "amphora-viscosity-score/evidence/phase0/repairs/R-C04/attempts/rights-boundary-audit-v1/rights-boundary-audit-v1-receipt.v1.dsse.json",
+      "data_ask_filed": false,
+      "rights_ask_filed": true
+    },
+    {
+      "fire_id": "20260812T060001-1024222-7ef99baa4e81",
+      "date": "2026-08-12",
+      "action": "Final permitted fire (3 of 3). Re-verified the rights.json decision.decision_receipt for the Polyverse melt-viscosity dataset is still null (counsel review still pending, unchanged since fire 2). Re-ran a freshness scan across the fixed 9-file FFW-vs-ML signed lineage for any length-13/length-194 array -- zero hits -- and validated the scanner with a positive control (planted a decoy 13-element array, confirmed detection) so the clean scan cannot be mistaken for a broken one. Evaluated the item's honest re-scope hatch (available this fire per the done_criterion's len(fires)>=max_fires-1 clause and flagged in fire 2's next_fire_should): tested the only analytic method needing no per-row data (Olkin & Finn 1995 asymptotic R^2 variance formula) against the published aggregate KPI numbers. Found it unsound on this specific claim in three independent ways: (1) using n=194 rows silently drops the clustering the cluster bootstrap exists to respect (SE=0.0434, an order of magnitude too tight); (2) substituting n=13 clusters into the same row-level-derived formula is a relabeling, not a valid cluster-robust derivation (SE=0.1081, no defensible sampling interpretation); (3) B4's fitted-parameter count was never persisted as an integer ('many (histogram GBM leaves)'), so degrees-of-freedom is undefined at n=13. Did not report any fabricated interval.",
+      "result": "BLOCKED_RIGHTS (terminal for this item -- 3 of 3 fires exhausted). Rights block unchanged from fire 2; the re-scope hatch was evaluated in good faith and explicitly declined as statistically unsound rather than invoked with a fabricated number.",
+      "receipt": "amphora-viscosity-score/evidence/phase0/repairs/R-C04/attempts/final-disposition-v1/final-disposition-v1-receipt.v1.dsse.json",
+      "data_ask_filed": false,
+      "rights_ask_filed": false
+    }
+  ],
+  "next_fire_should": [
+    "No further campaign fires are permitted on this item (max_fires=3, 3 used). This item is now TERMINAL BLOCKED pending exactly one human action: counsel review of the Polyverse melt-viscosity rights.json (rights_decision_id rights_polyverse_melt_viscosity) to determine whether persisting per-row/per-polymer B3/B4 prediction arrays (a narrow derivative of already-fit, already-disclosed models, used only to compute an uncertainty interval around an already-published aggregate statistic) falls inside or outside the 'physically quarantine all derivatives' basis.",
+    "If a human/future process reopens this item (e.g. via campaign.json re-scoping by the launcher, not by this cron), and counsel has cleared the narrow derivative: re-run the FFW_B3/ML_B4 harness with per-row logging enabled, sign the resulting arrays, then execute the actual pre-registered B=5000 seed=0 cluster bootstrap and supersede the FFW KPI.",
+    "Do NOT open the quarantined Polyverse row-level CSV or its normalized/*.jsonl.gz form under any circumstance to manufacture the missing arrays.",
+    "Do NOT report a fabricated analytic interval for the R2(B3)-R2(B4) gap -- fire 3 demonstrated the only candidate analytic shortcuts are unsound for this claim (see final-disposition-v1 receipt's rescope_hatch_evaluation)."
+  ],
+  "blocking_gap": {
+    "missing_arrays": [
+      "test_row_polymer_id (length 194, one of 13 unique values)",
+      "test_row_y_true_log10_viscosity (length 194)",
+      "test_row_y_pred_B3_ffw_linear_mw_and_arrhenius_t (length 194)",
+      "test_row_y_pred_B4_full_histgbm (length 194)"
+    ],
+    "source_of_truth": "Same harness that produced polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json and the parent ML B4 HistGBM fit -- BUT re-running it necessarily re-consumes the quarantined raw Polyverse CSV (sha256 3cd923b4d67399f9c201b06acb282ee82b3a85345e06ff74c0b9d6941265f811, quarantined=true, rights_class=CONTEXT_ONLY, basis='physically quarantine all derivatives'). This is a rights-clearance gap, not a pure pipeline-engineering gap.",
+    "corrected_by_fire": "20260812T050001-574491-f43fd01f90c2",
+    "reconfirmed_terminal_by_fire": "20260812T060001-1024222-7ef99baa4e81"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "acceptance_gates": {
+    "G1_every_core_recovery_within_3kJ": true,
+    "G2_every_core_linearity_r2_ge_0p98": true,
+    "G3_every_system_physically_plausible_40_90kJ": true,
+    "G4_every_system_monotonic_peak_shift": true,
+    "G5_every_source_ccby_commercial_derivative_inscope": true,
+    "G6_ge2_independent_core_dgeba_sources": true,
+    "G7_core_median_abs_recovery_le_2kJ": true,
+    "G8_generalization_recovery_within_4kJ": true
+  },
+  "aggregate_kpi": {
+    "all_systems_max_abs_recovery_error_kJ_per_mol": 1.397335,
+    "core_max_abs_recovery_error_kJ_per_mol": 1.397335,
+    "core_median_abs_recovery_error_kJ_per_mol": 0.718149,
+    "core_min_r2": 0.987207,
+    "n_independent_core_dgeba_sources": 2
+  },
+  "all_acceptance_gates_pass": true,
+  "authority": "AUDIT_ONLY",
+  "capability": "Cross-source method-fidelity of the first-principles Kissinger non-isothermal cure-kinetics estimator: recover the reported cure activation energy of independent rights-clean (CC-BY-4.0) two-part epoxy-amine DSC datasets from raw (heating-rate, peak-temperature) pairs alone. Core = DGEBA + amine (in-scope); generalization = non-DGEBA epoxy-amine, reported but excluded from the core KPI.",
+  "dataset": {
+    "dataset_id": "ccby-epoxy-amine-dsc-kissinger-multisystem-v1",
+    "dataset_sha256": "f84076b5582f906f55a11156ff62fcd28047ffa03eadea1c05791216302846d8",
+    "independent_core_dois": [
+      "10.3390/ma14164673",
+      "10.3390/polym11030391"
+    ],
+    "n_core_dgeba_systems": 2,
+    "n_generalization_systems": 1,
+    "n_systems": 3
+  },
+  "does_not": [
+    "does NOT promote amphora-cure-potlife-gate to PHASE_0",
+    "does NOT sign a trust-anchored phase0 evaluation/review receipt",
+    "does NOT flip rights_gate_passed on the cure-potlife source-lock",
+    "does NOT modify any of the 66 signed receipts or the manifest",
+    "does NOT change the Phase-0 count (still 10: 9 infra + solvency)",
+    "does NOT assert Amphora wet-lab measurement or product qualification",
+    "does NOT use any non-CC-BY (e.g. CC-BY-NC / CC-BY-NC-ND) source: three otherwise-suitable DGEBA-amine papers were rejected this run on rights"
+  ],
+  "gas_constant_J_per_mol_K": 8.314462618,
+  "non_circularity": "For every system the estimator consumes ONLY the raw (heating_rate, peak_temperature) pairs. Each paper's reported Kissinger Ea is read ONLY as a validation target, never as an input. Recovering each paper's Kissinger Ea from its raw peaks is therefore a genuine method-fidelity test, not a tautology.",
+  "physics_note": "Kissinger recovers the peak-based (reaction) apparent Ea. Across all three independent epoxy-amine systems the recovered Ea lands in the 40-90 kJ/mol band characteristic of amine-cured epoxy and reproduces each paper's own Kissinger value to <=1.5 kJ/mol, confirming the estimator is source-robust, not tuned to one formulation.",
+  "relation_to_cure_potlife": "Establishes a rights-clean, in-scope, cross-source kinetics benchmark for the cure-potlife capability that rests on MULTIPLE independent CC-BY sources instead of one anchor or the quarantined vendor TDS the module's KPI currently depends on. Does NOT by itself satisfy the pot-life Phase-0 gate (gel/pot-life apparent Ea differs from reaction Ea) and does NOT flip rights_gate_passed (that needs each source ingested through the module source-ledger under a signed rights receipt).",
+  "schema": "amphora.redteam-audit.cure-kinetics-kissinger-multisystem-ccby.diagnostic.v1",
+  "systems": [
+    {
+      "amine_class": "cycloaliphatic",
+      "doi": "10.3390/polym11030391",
+      "kissinger_fit": {
+        "ea_kJ_per_mol": 57.261036,
+        "pre_exponential_A_per_min": 47213804.601463,
+        "r2": 0.993794,
+        "se_ea_kJ_per_mol": 3.199755,
+        "slope_K": -6886.919678
+      },
+      "leave_one_heating_rate_out": {
+        "folds": [
+          {
+            "ea_kJ_per_mol": 53.516251,
+            "left_out_heating_rate_K_per_min": 2.5
+          },
+          {
+            "ea_kJ_per_mol": 57.597321,
+            "left_out_heating_rate_K_per_min": 5.0
+          },
+          {
+            "ea_kJ_per_mol": 56.476569,
+            "left_out_heating_rate_K_per_min": 10.0
+          },
+          {
+            "ea_kJ_per_mol": 63.65286,
+            "left_out_heating_rate_K_per_min": 20.0
+          }
+        ],
+        "spread_kJ_per_mol": 10.136609
+      },
+      "monotonic_peak_shift": true,
+      "n_heating_rates": 4,
+      "physically_plausible_40_90kJ": true,
+      "recovery": {
+        "abs_error_kJ_per_mol": 0.038964,
+        "recomputed_kissinger_ea_kJ_per_mol": 57.261036,
+        "reported_kissinger_ea_kJ_per_mol": 57.3
+      },
+      "rights_clean_ccby_commercial_derivative_inscope": true,
+      "scope_tier": "CORE_DGEBA_AMINE",
+      "system_id": "dgeba-ipda-lascano-polym11030391"
+    },
+    {
+      "amine_class": "cycloaliphatic",
+      "doi": "10.3390/ma14164673",
+      "kissinger_fit": {
+        "ea_kJ_per_mol": 68.552665,
+        "pre_exponential_A_per_min": 117186765.474324,
+        "r2": 0.987207,
+        "se_ea_kJ_per_mol": 7.803956,
+        "slope_K": -8244.990452
+      },
+      "leave_one_heating_rate_out": {
+        "folds": [
+          {
+            "ea_kJ_per_mol": 96.734639,
+            "left_out_heating_rate_K_per_min": 5.0
+          },
+          {
+            "ea_kJ_per_mol": 70.574087,
+            "left_out_heating_rate_K_per_min": 10.0
+          },
+          {
+            "ea_kJ_per_mol": 60.617369,
+            "left_out_heating_rate_K_per_min": 15.0
+          }
+        ],
+        "spread_kJ_per_mol": 36.11727
+      },
+      "monotonic_peak_shift": true,
+      "n_heating_rates": 3,
+      "physically_plausible_40_90kJ": true,
+      "recovery": {
+        "abs_error_kJ_per_mol": 1.397335,
+        "recomputed_kissinger_ea_kJ_per_mol": 68.552665,
+        "reported_kissinger_ea_kJ_per_mol": 69.95
+      },
+      "rights_clean_ccby_commercial_derivative_inscope": true,
+      "scope_tier": "CORE_DGEBA_AMINE",
+      "system_id": "dgeba-bdge-ipda-prepreg-ma14164673"
+    },
+    {
+      "amine_class": "aromatic",
+      "doi": "10.3390/molecules31040640",
+      "kissinger_fit": {
+        "ea_kJ_per_mol": 63.656621,
+        "pre_exponential_A_per_min": 975974.043939,
+        "r2": 0.999667,
+        "se_ea_kJ_per_mol": 0.670526,
+        "slope_K": -7656.131714
+      },
+      "leave_one_heating_rate_out": {
+        "folds": [
+          {
+            "ea_kJ_per_mol": 63.215038,
+            "left_out_heating_rate_K_per_min": 1.0
+          },
+          {
+            "ea_kJ_per_mol": 63.667038,
+            "left_out_heating_rate_K_per_min": 3.0
+          },
+          {
+            "ea_kJ_per_mol": 63.656655,
+            "left_out_heating_rate_K_per_min": 5.0
+          },
+          {
+            "ea_kJ_per_mol": 63.213441,
+            "left_out_heating_rate_K_per_min": 10.0
+          },
+          {
+            "ea_kJ_per_mol": 64.503217,
+            "left_out_heating_rate_K_per_min": 15.0
+          }
+        ],
+        "spread_kJ_per_mol": 1.289776
+      },
+      "monotonic_peak_shift": true,
+      "n_heating_rates": 5,
+      "physically_plausible_40_90kJ": true,
+      "recovery": {
+        "abs_error_kJ_per_mol": 1.036941,
+        "recomputed_kissinger_ea_kJ_per_mol": 63.656621,
+        "reported_kissinger_ea_kJ_per_mol": 64.693562
+      },
+      "rights_clean_ccby_commercial_derivative_inscope": true,
+      "scope_tier": "GENERALIZATION_EPOXY_AMINE",
+      "system_id": "multifunctional-epoxy-dds-molecules31040640"
+    }
+  ],
+  "target_module": "amphora-cure-potlife-gate",
+  "theory": "Kissinger (1957): ln(beta/Tp^2) = -Ea/(R*Tp) + ln(A*R/Ea); Ea = -R*slope."
+}

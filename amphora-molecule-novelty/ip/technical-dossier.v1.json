@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-molecule-novelty",
+    "molecule lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "5d7fcace70c6476d04a18c36c8bdd85f0cbabe223fb045703776a486c82f74fc",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-molecule-novelty",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

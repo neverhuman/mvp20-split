@@ -1,0 +1,325 @@
+{
+  "authority_ceiling": "LIMITED_SANITY",
+  "awaiting": [
+    "PHASE0_EVALUATOR signed evaluation.v1.dsse.json",
+    "PHASE0_INTERNAL_REVIEWER signed phase0-review-receipt.v1.json",
+    "eventual full-contract evaluate_locked_benchmark run once dataset, split, and model artifact hash chain is signed",
+    "Phase-1 wet-lab formulation rheology (Krebs KU + sag) to extend beyond pure-solvent Arrhenius primitive"
+  ],
+  "benchmark_lock_sha256": "161d65810edcd729a4883e42eacdaa40b4b3a4375b9a46e74b81db27a81133e7",
+  "benchmark_result_path": "evidence/phase0/benchmark/result.v1.json",
+  "benchmark_result_sha256": "6164d8d153533f71c372ef28792c1f8521de35ddaa0d60a3dce12c196dac314e",
+  "capability": "Deterministic Arrhenius temperature dependence of pure-solvent Newtonian viscosity (Svante Arrhenius 1889); \u03b7(T) = \u03b7_ref \u00b7 exp[(E_a/R)\u00b7(1/T \u2212 1/T_ref)]. Phase-0 covers pure Newtonian solvents only; Phase-1 will extend to formulation blends (Grunberg-Nissan), pigment crowding (Krieger-Dougherty), non-Newtonian yield flow (Herschel-Bulkley), and Krebs KU + sag with wet-lab data.",
+  "claim_locks": {
+    "commercial_formulation_is_measured_only": true,
+    "formulation_blend_out_of_scope_at_phase_0": true,
+    "fto_not_performed": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_qualification_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "non_newtonian_regime_out_of_scope_at_phase_0": true,
+    "polydisperse_grade_is_measured_only": true,
+    "pre_phase_0_research_only": true,
+    "solver_use_disabled": true,
+    "unresolved_rights_quarantined": true
+  },
+  "dataset_fixture_sha256": "e4d8f92ac99a91bcbc1ac15f776eef716b55c900fd608e1423019e9b132f8428",
+  "fitted_or_physical_model_artifact": {
+    "activation_energy_units": "J/mol",
+    "baseline_prediction_rule": "constant_baseline_eta_at_25c: eta_predicted = eta_ref_25c regardless of T",
+    "fitting_method": "linear_least_squares_in_ln_eta_vs_inverse_kelvin_via_numpy_polyfit_over_20_40_60c_points",
+    "gas_constant_j_mol_k": 8.31446261815324,
+    "model_type": "deterministic_physical_arrhenius_per_solvent",
+    "per_solvent_parameters": [
+      {
+        "fitted_activation_energy_j_mol": 15530.237,
+        "fitted_r_squared": 0.998923,
+        "formula": "H2O",
+        "smiles": "O",
+        "solvent_id": "water",
+        "viscosity_mpas_25c": 0.8905
+      },
+      {
+        "fitted_activation_energy_j_mol": 10815.319,
+        "fitted_r_squared": 0.999866,
+        "formula": "CH3OH",
+        "smiles": "CO",
+        "solvent_id": "methanol",
+        "viscosity_mpas_25c": 0.544
+      },
+      {
+        "fitted_activation_energy_j_mol": 14375.136,
+        "fitted_r_squared": 0.999972,
+        "formula": "C2H5OH",
+        "smiles": "CCO",
+        "solvent_id": "ethanol",
+        "viscosity_mpas_25c": 1.074
+      },
+      {
+        "fitted_activation_energy_j_mol": 18484.026,
+        "fitted_r_squared": 0.999391,
+        "formula": "C4H9OH",
+        "smiles": "CCCCO",
+        "solvent_id": "n-butanol",
+        "viscosity_mpas_25c": 2.544
+      },
+      {
+        "fitted_activation_energy_j_mol": 7307.553,
+        "fitted_r_squared": 0.999681,
+        "formula": "C3H6O",
+        "smiles": "CC(C)=O",
+        "solvent_id": "acetone",
+        "viscosity_mpas_25c": 0.306
+      },
+      {
+        "fitted_activation_energy_j_mol": 8448.211,
+        "fitted_r_squared": 1.0,
+        "formula": "C4H8O",
+        "smiles": "CCC(C)=O",
+        "solvent_id": "methyl-ethyl-ketone",
+        "viscosity_mpas_25c": 0.398
+      },
+      {
+        "fitted_activation_energy_j_mol": 8873.301,
+        "fitted_r_squared": 0.999809,
+        "formula": "C7H8",
+        "smiles": "Cc1ccccc1",
+        "solvent_id": "toluene",
+        "viscosity_mpas_25c": 0.56
+      },
+      {
+        "fitted_activation_energy_j_mol": 9658.938,
+        "fitted_r_squared": 0.999391,
+        "formula": "C8H10",
+        "smiles": "Cc1ccc(C)cc1",
+        "solvent_id": "p-xylene",
+        "viscosity_mpas_25c": 0.605
+      },
+      {
+        "fitted_activation_energy_j_mol": 8278.734,
+        "fitted_r_squared": 0.997295,
+        "formula": "C6H14",
+        "smiles": "CCCCCC",
+        "solvent_id": "n-hexane",
+        "viscosity_mpas_25c": 0.294
+      },
+      {
+        "fitted_activation_energy_j_mol": 14221.198,
+        "fitted_r_squared": 0.996675,
+        "formula": "C6H12",
+        "smiles": "C1CCCCC1",
+        "solvent_id": "cyclohexane",
+        "viscosity_mpas_25c": 0.898
+      },
+      {
+        "fitted_activation_energy_j_mol": 6801.074,
+        "fitted_r_squared": 0.999975,
+        "formula": "CH2Cl2",
+        "smiles": "ClCCl",
+        "solvent_id": "dichloromethane",
+        "viscosity_mpas_25c": 0.413
+      },
+      {
+        "fitted_activation_energy_j_mol": 8805.689,
+        "fitted_r_squared": 0.999572,
+        "formula": "CHCl3",
+        "smiles": "ClC(Cl)Cl",
+        "solvent_id": "chloroform",
+        "viscosity_mpas_25c": 0.542
+      },
+      {
+        "fitted_activation_energy_j_mol": 9068.266,
+        "fitted_r_squared": 0.999732,
+        "formula": "C4H8O2",
+        "smiles": "CCOC(C)=O",
+        "solvent_id": "ethyl-acetate",
+        "viscosity_mpas_25c": 0.428
+      },
+      {
+        "fitted_activation_energy_j_mol": 8941.003,
+        "fitted_r_squared": 0.990372,
+        "formula": "C4H8O",
+        "smiles": "C1CCOC1",
+        "solvent_id": "tetrahydrofuran",
+        "viscosity_mpas_25c": 0.463
+      },
+      {
+        "fitted_activation_energy_j_mol": 11696.818,
+        "fitted_r_squared": 0.996246,
+        "formula": "C3H7NO",
+        "smiles": "CN(C)C=O",
+        "solvent_id": "dimethylformamide",
+        "viscosity_mpas_25c": 0.802
+      },
+      {
+        "fitted_activation_energy_j_mol": 7910.478,
+        "fitted_r_squared": 0.998257,
+        "formula": "C4H10O",
+        "smiles": "CCOCC",
+        "solvent_id": "diethyl-ether",
+        "viscosity_mpas_25c": 0.224
+      },
+      {
+        "fitted_activation_energy_j_mol": 22399.542,
+        "fitted_r_squared": 0.999728,
+        "formula": "C3H8O",
+        "smiles": "CC(C)O",
+        "solvent_id": "isopropanol",
+        "viscosity_mpas_25c": 2.038
+      },
+      {
+        "fitted_activation_energy_j_mol": 7738.656,
+        "fitted_r_squared": 0.999042,
+        "formula": "C5H12",
+        "smiles": "CCCCC",
+        "solvent_id": "n-pentane",
+        "viscosity_mpas_25c": 0.224
+      },
+      {
+        "fitted_activation_energy_j_mol": 9334.904,
+        "fitted_r_squared": 0.999673,
+        "formula": "C7H16",
+        "smiles": "CCCCCCC",
+        "solvent_id": "n-heptane",
+        "viscosity_mpas_25c": 0.386
+      },
+      {
+        "fitted_activation_energy_j_mol": 9398.197,
+        "fitted_r_squared": 0.999967,
+        "formula": "C8H18",
+        "smiles": "CCCCCCCC",
+        "solvent_id": "n-octane",
+        "viscosity_mpas_25c": 0.508
+      },
+      {
+        "fitted_activation_energy_j_mol": 10490.339,
+        "fitted_r_squared": 0.999767,
+        "formula": "C6H6",
+        "smiles": "c1ccccc1",
+        "solvent_id": "benzene",
+        "viscosity_mpas_25c": 0.604
+      },
+      {
+        "fitted_activation_energy_j_mol": 14521.357,
+        "fitted_r_squared": 0.999986,
+        "formula": "C2H6OS",
+        "smiles": "CS(=O)C",
+        "solvent_id": "dimethyl-sulfoxide",
+        "viscosity_mpas_25c": 1.996
+      },
+      {
+        "fitted_activation_energy_j_mol": 8321.869,
+        "fitted_r_squared": 0.999306,
+        "formula": "C2H3N",
+        "smiles": "CC#N",
+        "solvent_id": "acetonitrile",
+        "viscosity_mpas_25c": 0.343
+      },
+      {
+        "fitted_activation_energy_j_mol": 13876.714,
+        "fitted_r_squared": 0.999881,
+        "formula": "C4H8O2",
+        "smiles": "C1COCCO1",
+        "solvent_id": "1-4-dioxane",
+        "viscosity_mpas_25c": 1.187
+      },
+      {
+        "fitted_activation_energy_j_mol": 58008.347,
+        "fitted_r_squared": 0.99925,
+        "formula": "C3H8O3",
+        "smiles": "OCC(O)CO",
+        "solvent_id": "glycerol",
+        "viscosity_mpas_25c": 934.0
+      }
+    ],
+    "prediction_rule": "arrhenius_viscosity(eta_ref_pa_s, 25.0, T_c, Ea_j_mol) \u2192 eta_pa_s; conversion mPa\u00b7s \u2194 Pa\u00b7s: multiply/divide by 1e-3",
+    "reference_temperature_c": 25.0,
+    "schema": "amphora.viscosity-score-arrhenius-per-solvent.v1"
+  },
+  "kpi_id": "amphora-viscosity-score-phase0-arrhenius-v1",
+  "metrics": [
+    {
+      "authority": "LIMITED_SANITY",
+      "ceiling": 0.05,
+      "direction": "MINIMIZE",
+      "name": "arrhenius_mape_within_training_range",
+      "note": "Mean absolute percent error across 25 solvents \u00d7 2 within-range temperatures (40\u00b0C, 60\u00b0C).",
+      "observed": 0.012594631159526496,
+      "passed": true,
+      "sample_size": 50
+    },
+    {
+      "authority": "LIMITED_SANITY",
+      "constant_baseline_mape": 0.653723028790123,
+      "direction": "MAXIMIZE",
+      "floor": 0.2,
+      "name": "arrhenius_over_constant_baseline_lift",
+      "note": "Baseline = constant viscosity at 25\u00b0C (no temperature correction). Arrhenius reduces MAPE from ~65% to ~1.3%, a 64 percentage-point lift.",
+      "observed": 0.6411283976305965,
+      "passed": true
+    },
+    {
+      "authority": "LIMITED_SANITY",
+      "ceiling": 0.08,
+      "direction": "MINIMIZE",
+      "name": "held_out_temperature_extrapolation_mape",
+      "note": "Fitted E_a comes from {20,40,60}\u00b0C. Predicting viscosity at 30\u00b0C is a held-out interpolation. Observed MAPE 0.49%; worst-case 1.92%.",
+      "observed": 0.004896809946923296,
+      "passed": true,
+      "sample_size": 25,
+      "worst_case_absolute_percent_error": 0.0191585766384277
+    },
+    {
+      "authority": "LIMITED_SANITY",
+      "direction": "MAXIMIZE",
+      "floor": 0.85,
+      "name": "per_solvent_minimum_prediction_quality_rate",
+      "note": "Fraction of solvents where predicted 30\u00b0C viscosity is within \u00b110% of published value. Observed 100% at \u00b110%; also 100% at the tighter \u00b15%.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 25,
+      "within_5_percent_rate": 1.0
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "applicability_domain_fail_closed_rate",
+      "note": "arrhenius_viscosity returns Err(Range) for all 10 red-team probes: NaN viscosity, Infinity T_ref, NaN E_a, zero/negative viscosity and E_a, T below absolute zero, T above 500\u00b0C boiling-regime ceiling.",
+      "observed": 1.0,
+      "passed": true,
+      "probe_sample_size": 10
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "authority_lock_preservation_rate",
+      "note": "Fixture authority block preserves optimizer_authority=false, solver_use_disabled=true, commercial_formulation_authority=false.",
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "authority": "AUDIT_ONLY",
+      "direction": "MAXIMIZE",
+      "name": "r_squared_arrhenius_minimum",
+      "note": "Reported observationally. Every solvent's ln(\u03b7) vs. 1/T linear fit has R\u00b2 \u2265 0.99 (minimum observed 0.9904 for THF; median > 0.9995), indicating Arrhenius is an excellent single-mechanism thermal-activation model for these Newtonian solvents.",
+      "observed": 0.990372,
+      "reported_ceiling": 0.99,
+      "sample_size": 25
+    }
+  ],
+  "module_id": "amphora-viscosity-score",
+  "phase0_deterministic_gates_passed": true,
+  "populated_at": "2026-07-21",
+  "population": "Twenty-five pure Newtonian solvents with published dynamic viscosity at 20/25/30/40/60\u00b0C from CRC Handbook 100th ed., NIST Chemistry WebBook, and Yaws' Handbook. Domain excludes formulation blends, non-Newtonian fluids, and temperatures outside [\u2212273.14, 500.0]\u00b0C.",
+  "schema": "amphora.module-phase0-kpi.v1",
+  "solver_use_ceiling": "DISABLED",
+  "split_methodology": "Per-solvent Arrhenius (E_a) fitted offline on {20, 40, 60}\u00b0C via linear regression in ln(\u03b7) vs. 1/T (numpy.polyfit). Held-out validation at 30\u00b0C (interpolation within training range) and at 25\u00b0C (used only as \u03b7_ref anchor at runtime).",
+  "theory": "Arrhenius (1889): \u03b7(T) = A \u00b7 exp(E_a / RT); linearizes to ln(\u03b7) = ln(A) + E_a/(R\u00b7T). Textbook thermal physics; ISO standard for viscosity-temperature extrapolation on Newtonian fluids. R = 8.31446261815324 J/(mol\u00b7K) (CODATA 2018)."
+}

@@ -1,0 +1,306 @@
+{
+  "cpvc_pigment_axis": {
+    "assessment": {
+      "authority_ceilings_respected": [
+        "EVIDENCE_ONLY",
+        "DISABLED solver-use",
+        "GATED ops",
+        "AUDIT_ONLY (promotes nothing)"
+      ],
+      "non_circularity": "Inputs OA and rho are two physically independent measurements (spatula rub-out endpoint per ISO 787-5; pycnometric density); neither is a CPVC measurement. The engine has zero fitted parameters. The falsification target (random-packing band) is pure geometry, not a coating measurement, so the consistency test cannot be circular.",
+      "precise_data_ask_for_founders": "To move amphora pigment-formulation from PRE_PHASE_0 to a validatable KPI, acquire a rights-clean (CC-BY / licensed) dataset of >=12 coating pigments each with (i) ISO 787-5 oil absorption, (ii) pycnometric density, and (iii) CPVC measured by an INDEPENDENT transition method. Then MAPE/Spearman of engine-CPVC vs measured-CPVC becomes a real external-validation KPI.",
+      "what_this_is": "An ENGINE-READY + PHYSICALLY-CONSISTENT feasibility artifact that OPENS the pigment-formulation barrier layer, plus a live phase-0 honesty red-team.",
+      "what_this_is_NOT": [
+        "NOT a precision external validation: a rights-clean set of pigments with INDEPENDENTLY-MEASURED CPVC (density-series / gas-permeation-transition / fluorescence method) is required for that and was NOT obtainable rights-clean this session -> this is the diagnosed data-acquisition blocker.",
+        "NOT a promotion: signed with LOCAL_DEVELOPMENT_AUDIT_ONLY key; does not change Phase-0 counts or the 66-receipt / 11-module manifest.",
+        "The pigment OA/rho are REFERENCE_NOMINAL constants (with ranges), used to demonstrate engine physics, not asserted as a measured dataset."
+      ]
+    },
+    "authority": "AUDIT_ONLY",
+    "axis_gap_map": {
+      "covered_axes_by_layer": {
+        "barrier_bulk_molecular": [
+          "barrier-water-uptake/hydrophilicity",
+          "wet-Tg/Kelley-Bueche-plasticization",
+          "corrosion-rate/QSPR"
+        ],
+        "cured_network_molecular": [
+          "network-Tg/van-Krevelen",
+          "crosslink-density/rubber-elasticity",
+          "EEW-AHEW/stoichiometry",
+          "cure-kinetics/Kissinger",
+          "cure-potlife/Arrhenius",
+          "DiBenedetto-vitrification/Flory-gel",
+          "cured-network-density(refuted)"
+        ],
+        "solvent_molecular": [
+          "boiling-point/Joback",
+          "heat-of-vaporization/Joback",
+          "vapor-pressure/VOC",
+          "flash-point/GHS Catoire",
+          "surface-tension/Parachor",
+          "refractive-index/Lorentz-Lorenz",
+          "cohesive-energy/Hildebrand-Fedors",
+          "Hansen-vector/HvK",
+          "dielectric/Onsager",
+          "molar-volume/density",
+          "solubility/BigSolDB"
+        ],
+        "surface_molecular": [
+          "OWK-adhesion/Fowkes",
+          "wet-adhesion/surface-energetics"
+        ]
+      },
+      "n_covered_axes": 23,
+      "uncovered_axes": {
+        "pigment_formulation_barrier": [
+          "CPVC / critical pigment volume concentration (THIS axis)",
+          "reduced PVC Lambda = PVC/CPVC (barrier/permeability transition parameter)",
+          "pigment packing / oil-absorption"
+        ]
+      },
+      "uncovered_high_value_layer": "pigment_formulation_barrier",
+      "why_highest_value": "Every one of the ~23 covered axes reasons about MOLECULES (solvent, cured-network, or surface chemistry). None reasons about the PIGMENTED FILM. For a marine anti-corrosion coating the single governing barrier/mechanical parameter is CPVC: below it the film is a continuous barrier; above it interstitial voids open and water/O2 permeability, blistering and under-film corrosion rise sharply (reduced PVC Lambda=PVC/CPVC). Opening this layer is the highest-value un-touched gap in the portfolio."
+    },
+    "cpvc_engine": {
+      "constants": {
+        "RCP_monodisperse_spheres": 0.6366,
+        "RLP_monodisperse_spheres": 0.555,
+        "equiaxed_permissible_band": [
+          0.44,
+          0.7405
+        ],
+        "oil_density_x100": 93.5,
+        "ordered_close_packing_pi_over_3root2": 0.74048
+      },
+      "directional_physics_reproduced": [
+        "dense equiaxed extender barytes -> HIGH CPVC (~0.68): packs efficiently (correct)",
+        "high-structure laminar talc/mica -> LOW CPVC (~0.40-0.45): poor packing (correct)",
+        "anticorrosive zinc_phosphate CPVC ~0.52 -> formulate PVC<CPVC for barrier (actionable)"
+      ],
+      "engine": "CPVC = 1 / (1 + OA*rho/93.5)  [Asbeck & Van Loo, Ind.Eng.Chem. 41(1949)1470]",
+      "fitted_parameters": 0,
+      "packing_bounds_falsification_KPI": {
+        "fraction_in_band": 1.0,
+        "interpretation": "Every equiaxed/nodular pigment's parameter-free CPVC lands inside the geometrically-permissible packing band [0.44, 0.7405] (lower=cohesive random-loose, upper=ordered close packing pi/(3root2)). A value outside (e.g. 0.9 or 0.2) is impossible as a packing fraction and would FALSIFY the Asbeck-Van Loo packing premise. It does not. Non-circular: the bounds are pure sphere-packing geometry and use ZERO external CPVC data. Note the platy laminar pigments (mica 0.375, talc 0.447) fall at/below the equiaxed floor -- the engine correctly reflects anisotropic platy packing, so the equiaxed-band test is applied only to equiaxed/nodular habits.",
+        "n_equiaxed_or_nodular": 7,
+        "n_in_permissible_band": 7,
+        "passes": true
+      },
+      "rows": [
+        {
+          "cpvc_in_equiaxed_band": true,
+          "cpvc_predicted": 0.5455,
+          "cpvc_range_from_OA_range": [
+            0.4872,
+            0.5877
+          ],
+          "density_g_per_cm3": 4.1,
+          "equiaxed_packing_band_test_applies": true,
+          "marine_role": "opacity/UV, general",
+          "morphology": "equiaxed",
+          "oil_absorption_g_per_100g": 19.0,
+          "oil_absorption_range": [
+            16,
+            24
+          ],
+          "pigment": "rutile_TiO2"
+        },
+        {
+          "cpvc_in_equiaxed_band": true,
+          "cpvc_predicted": 0.5439,
+          "cpvc_range_from_OA_range": [
+            0.455,
+            0.6254
+          ],
+          "density_g_per_cm3": 5.6,
+          "equiaxed_packing_band_test_applies": true,
+          "marine_role": "fungistat/adhesion",
+          "morphology": "equiaxed",
+          "oil_absorption_g_per_100g": 14.0,
+          "oil_absorption_range": [
+            10,
+            20
+          ],
+          "pigment": "zinc_oxide"
+        },
+        {
+          "cpvc_in_equiaxed_band": true,
+          "cpvc_predicted": 0.4832,
+          "cpvc_range_from_OA_range": [
+            0.4279,
+            0.5549
+          ],
+          "density_g_per_cm3": 5.0,
+          "equiaxed_packing_band_test_applies": true,
+          "marine_role": "color/barrier",
+          "morphology": "equiaxed",
+          "oil_absorption_g_per_100g": 20.0,
+          "oil_absorption_range": [
+            15,
+            25
+          ],
+          "pigment": "red_iron_oxide_synth"
+        },
+        {
+          "cpvc_in_equiaxed_band": true,
+          "cpvc_predicted": 0.6775,
+          "cpvc_range_from_OA_range": [
+            0.6178,
+            0.7242
+          ],
+          "density_g_per_cm3": 4.45,
+          "equiaxed_packing_band_test_applies": true,
+          "marine_role": "dense extender/barrier",
+          "morphology": "equiaxed",
+          "oil_absorption_g_per_100g": 10.0,
+          "oil_absorption_range": [
+            8,
+            13
+          ],
+          "pigment": "barytes_BaSO4"
+        },
+        {
+          "cpvc_in_equiaxed_band": true,
+          "cpvc_predicted": 0.6832,
+          "cpvc_range_from_OA_range": [
+            0.6216,
+            0.7263
+          ],
+          "density_g_per_cm3": 2.71,
+          "equiaxed_packing_band_test_applies": true,
+          "marine_role": "extender",
+          "morphology": "nodular",
+          "oil_absorption_g_per_100g": 16.0,
+          "oil_absorption_range": [
+            13,
+            21
+          ],
+          "pigment": "calcium_carbonate"
+        },
+        {
+          "cpvc_in_equiaxed_band": true,
+          "cpvc_predicted": 0.5186,
+          "cpvc_range_from_OA_range": [
+            0.4013,
+            0.6013
+          ],
+          "density_g_per_cm3": 3.1,
+          "equiaxed_packing_band_test_applies": true,
+          "marine_role": "ANTICORROSIVE pigment",
+          "morphology": "nodular",
+          "oil_absorption_g_per_100g": 28.0,
+          "oil_absorption_range": [
+            20,
+            45
+          ],
+          "pigment": "zinc_phosphate"
+        },
+        {
+          "cpvc_in_equiaxed_band": true,
+          "cpvc_predicted": 0.567,
+          "cpvc_range_from_OA_range": [
+            0.4833,
+            0.6208
+          ],
+          "density_g_per_cm3": 7.14,
+          "equiaxed_packing_band_test_applies": true,
+          "marine_role": "zinc-rich primer (cathodic)",
+          "morphology": "equiaxed",
+          "oil_absorption_g_per_100g": 10.0,
+          "oil_absorption_range": [
+            8,
+            14
+          ],
+          "pigment": "zinc_dust"
+        },
+        {
+          "cpvc_in_equiaxed_band": null,
+          "cpvc_predicted": 0.4474,
+          "cpvc_range_from_OA_range": [
+            0.382,
+            0.5312
+          ],
+          "density_g_per_cm3": 2.75,
+          "equiaxed_packing_band_test_applies": false,
+          "marine_role": "anti-settle/barrier(platy)",
+          "morphology": "laminar",
+          "oil_absorption_g_per_100g": 42.0,
+          "oil_absorption_range": [
+            30,
+            55
+          ],
+          "pigment": "talc"
+        },
+        {
+          "cpvc_in_equiaxed_band": null,
+          "cpvc_predicted": 0.3753,
+          "cpvc_range_from_OA_range": [
+            0.337,
+            0.4523
+          ],
+          "density_g_per_cm3": 2.83,
+          "equiaxed_packing_band_test_applies": false,
+          "marine_role": "barrier(platy)/reinforcement",
+          "morphology": "laminar",
+          "oil_absorption_g_per_100g": 55.0,
+          "oil_absorption_range": [
+            40,
+            65
+          ],
+          "pigment": "muscovite_mica"
+        },
+        {
+          "cpvc_in_equiaxed_band": null,
+          "cpvc_predicted": 0.5358,
+          "cpvc_range_from_OA_range": [
+            0.4539,
+            0.5974
+          ],
+          "density_g_per_cm3": 4.5,
+          "equiaxed_packing_band_test_applies": false,
+          "marine_role": "MIO barrier(platy), marine",
+          "morphology": "laminar",
+          "oil_absorption_g_per_100g": 18.0,
+          "oil_absorption_range": [
+            14,
+            25
+          ],
+          "pigment": "micaceous_iron_oxide"
+        }
+      ],
+      "tio2_magnitude_anchor": {
+        "engine_at_treated_grade_OA24": 0.4872,
+        "engine_reproduces_consensus_magnitude": true,
+        "measured_density_method_band": [
+          0.45,
+          0.5
+        ],
+        "note": "Treated rutile grade (OA~24) -> engine 0.487, inside the textbook density-method CPVC band 0.45-0.50. Single independent magnitude anchor."
+      }
+    },
+    "phase0_honesty_redteam": {
+      "all_locks_scientific_success_not_required": true,
+      "n_benchmark_locks_live": 29,
+      "n_locks_requiring_scientific_success_for_phase0": 0,
+      "n_modules_scientific_readiness_VALIDATED": 0,
+      "phase_distribution": {
+        "PHASE_0": 16,
+        "PRE_PHASE_0": 13,
+        "UNSET": 11
+      },
+      "scientific_readiness_distribution": {
+        "LOCKED_INTERNAL": 3,
+        "NOT_APPLICABLE": 13,
+        "UNSET": 11,
+        "UNVALIDATED": 13
+      },
+      "verdict": "PHASE_0_IS_GOVERNANCE_ONLY: 0/40 ranked modules have scientific_readiness==VALIDATED and 29/29 benchmark-locks set scientific_success_required_for_phase0=false. 'FULL Phase-0' is a governance/authority state, NOT validated science. This AUDIT_ONLY key cannot promote (needs 2 trust-anchored sigs)."
+    },
+    "schema": "amphora.redteam-audit.cpvc-pigment-formulation-axis-v1",
+    "target_capability": "pigment-formulation barrier: CPVC / reduced-PVC",
+    "target_module": "amphora-barrier-corrosion-score (+amphora-formulation-arithmetic)",
+    "theory": "Asbeck & Van Loo critical pigment volume concentration (1949)",
+    "verdict": "ENGINE_READY__PHYSICAL_BOUNDS_CONSISTENT__PRECISION_VALIDATION_DATA_RIGHTS_BLOCKED. Opens the pigment-formulation barrier layer (untouched by all 66 receipts) with a zero-parameter Asbeck-Van Loo CPVC engine that passes a non-circular first-principles packing-bounds falsification test and reproduces the TiO2 magnitude anchor. Genuine pre-phase-0 groundwork; not promotable and not a measured validation."
+  }
+}

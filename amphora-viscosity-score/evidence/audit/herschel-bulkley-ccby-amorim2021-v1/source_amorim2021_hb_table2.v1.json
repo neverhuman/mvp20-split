@@ -1,0 +1,30 @@
+{
+  "schema": "amphora.viscosity-score.external-source-lock.v1",
+  "source_id": "amorim-oliveira-mancini-sirqueira-2021-sn-applied-sciences",
+  "citation": "Amorim AAPO, Oliveira MG, Mancini MC, Sirqueira AS (2021) \"Rheological, EMI and corrosion properties of epoxy coating with nanoparticle and conductive carbon black\", SN Applied Sciences 3:236.",
+  "doi": "10.1007/s42452-021-04247-7",
+  "publisher": "Springer Nature (SN Applied Sciences)",
+  "license": "CC BY 4.0 (Springer Nature Open Access; verified in article Compliance-with-Ethical-Standards section: 'This article is licensed under a Creative Commons Attribution 4.0 International License')",
+  "eligible_for_derivatives": true,
+  "retrieved_from": "https://link.springer.com/content/pdf/10.1007/s42452-021-04247-7.pdf",
+  "retrieved_pdf_sha256": "c75bb4d694feea171184ea37290eee5d5d90046fa14e50e18374908993b4b766",
+  "retrieval_date": "2026-08-01",
+  "in_scope_rationale": "Bi-component commercial DGEBA epoxy resin / polyamide (amine-class) hardener anti-corrosion coating (grade JUMBO, volume solids 80%, TiO2 filler 25%, general filler 32%) applied to steel substrates and evaluated for 3.5wt% NaCl corrosion resistance -- squarely in the marine/industrial anti-corrosion two-part epoxy-amine coating scope. Modification is with conductive carbon black + organoclay nanoparticles (APA, HT), not pigment PVC, so this closes HERSCHEL_BULKLEY only, not KRIEGER_DOUGHERTY (no pigment/filler volume-fraction viscosity ladder in this source).",
+  "table_transcribed": "Table 2a (Herschel-Bulkley fitted rheological parameters), from steady-shear flow curves measured on a stress-controlled rheometer (parallel plates, 40mm, 25C, 1mm gap, shear rate 0.1 to 100 /s), fit with R software per the paper's Methods 2.3. Model: eta = tau_0/gamma_dot + K*gamma_dot^(n-1) (paper's Eq.1), which is byte-identical in functional form to amphora-viscosity-score::herschel_bulkley_apparent_viscosity (src/lib.rs:1227): yield_stress_pa/shear_rate_s_inv + consistency_pa_s_n*shear_rate_s_inv.powf(flow_index_n - 1.0).",
+  "data_integrity_note": "IMPORTANT -- the as-printed PDF table renders tau_0 and K with a comma before the final 3 digits for every one of the 12 values in this sub-table (e.g. '123,900', '1,054,000'), while n, R-squared and MRD% in the SAME table use a period as decimal point (e.g. '0.7069', '0.9995'). This is internally inconsistent formatting (locale decimal-mark mixup, most likely introduced by a Word/Excel-to-PDF export on a machine with Brazilian pt-BR locale defaults, given the authors' Brazilian affiliations). Reading tau_0/K literally as English thousands-grouped integers (e.g. tau_0_epoxy = 123900 Pa) is numerically INCONSISTENT with the paper's own Fig.3 apparent-viscosity axis (explicitly bounded 1e0 to 1e5 Pa.s over the same 0.1-100 /s shear-rate range): plugging the literal reading into the paper's own Eq.1 at gamma_dot=0.1/s yields eta_apparent = 1.34e6 Pa.s for the Epoxy control alone (13x the chart's own axis ceiling), and every other formulation's literal tau_0 is even larger. The internally-consistent reading (last comma = decimal separator, matching every other decimal field in the table) divides tau_0 and K by 1000; plugging THAT reading into the same equation reproduces the paper's stated Fig.3 axis range (1e0-1e5 Pa.s) for all 6 formulations at both shear-rate extremes -- this is the value used as 'corrected' below, and it is what this benchmark tests the module against. Both readings are recorded raw below for auditability.",
+  "rows": [
+    {"sample": "Epoxy", "tau0_pa_as_printed": "123,900", "tau0_pa_corrected": 123.900, "tau0_pa_literal_english": 123900.0, "K_pa_sn_as_printed": "48,990", "K_pa_sn_corrected": 48.990, "K_pa_sn_literal_english": 48990.0, "n": 0.7069, "r2": 0.9995, "mrd_pct": 5.49},
+    {"sample": "1", "tau0_pa_as_printed": "631,700", "tau0_pa_corrected": 631.700, "tau0_pa_literal_english": 631700.0, "K_pa_sn_as_printed": "166,800", "K_pa_sn_corrected": 166.800, "K_pa_sn_literal_english": 166800.0, "n": 0.5978, "r2": 0.9986, "mrd_pct": 4.02},
+    {"sample": "2", "tau0_pa_as_printed": "627,100", "tau0_pa_corrected": 627.100, "tau0_pa_literal_english": 627100.0, "K_pa_sn_as_printed": "193,400", "K_pa_sn_corrected": 193.400, "K_pa_sn_literal_english": 193400.0, "n": 0.5718, "r2": 0.9983, "mrd_pct": 4.19},
+    {"sample": "3", "tau0_pa_as_printed": "1,054,000", "tau0_pa_corrected": 1054.000, "tau0_pa_literal_english": 1054000.0, "K_pa_sn_as_printed": "333,000", "K_pa_sn_corrected": 333.000, "K_pa_sn_literal_english": 333000.0, "n": 0.5534, "r2": 0.9983, "mrd_pct": 4.09},
+    {"sample": "4", "tau0_pa_as_printed": "1,514,000", "tau0_pa_corrected": 1514.000, "tau0_pa_literal_english": 1514000.0, "K_pa_sn_as_printed": "561,900", "K_pa_sn_corrected": 561.900, "K_pa_sn_literal_english": 561900.0, "n": 0.5032, "r2": 0.9985, "mrd_pct": 3.17},
+    {"sample": "5", "tau0_pa_as_printed": "754,100", "tau0_pa_corrected": 754.100, "tau0_pa_literal_english": 754100.0, "K_pa_sn_as_printed": "257,300", "K_pa_sn_corrected": 257.300, "K_pa_sn_literal_english": 257300.0, "n": 0.5493, "r2": 0.9983, "mrd_pct": 4.03}
+  ],
+  "paper_reported_facts_used_as_independent_checks": {
+    "fig3_apparent_viscosity_axis_range_pa_s": [1.0, 100000.0],
+    "fig3_shear_rate_axis_range_s_inv": [0.1, 100.0],
+    "text_claim_all_formulations_shear_thinning_n_lt_1": true,
+    "text_claim_sample4_largest_yield_stress": true,
+    "text_claim_K_increases_substantially_with_nanoparticle_concentration": true
+  }
+}

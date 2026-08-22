@@ -1,0 +1,387 @@
+{
+  "schema": "mvp20.v5_epoch30_unresolved_supplier_declaration_gap_register.v1",
+  "micro_version": "mvp20.30",
+  "retrieved": "2026-07-07",
+  "input_artifacts_read": [
+    "out/v5_epoch29_public_corrosion_dataset_manifest.json",
+    "out/v5_epoch29_usbr_21019_raw_data_ingest_report.json",
+    "out/v5_epoch29_public_eis_feature_table.json",
+    "out/v5_epoch29_corrosion_benchmark_model_card.json",
+    "out/v5_epoch29_public_control_benchmark_score_lift.json",
+    "out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+    "out/v5_epoch29_future_redteam_failure_modes.json",
+    "out/v5_epoch29_score_caps_and_claim_locks.json",
+    "out/v5_epoch29_redteam_review.json",
+    "out/funnel_results.json",
+    "out/chemistry_cards.json",
+    "out/v5_epoch29_public_control_benchmark_score_lift.json",
+    "data/source_records.json",
+    "out/version_track.json"
+  ],
+  "official_public_sources_only": true,
+  "public_bom_sds_tds_ehs_source_currentness_ingested": true,
+  "no_signed_supplier_declarations": true,
+  "no_lot_coa": true,
+  "no_pfas_free_claim": true,
+  "no_tsca_compliant_claim": true,
+  "no_taa_domestic_claim": true,
+  "no_supplier_closed_claim": true,
+  "no_procurement_ready_claim": true,
+  "no_candidate_performance_claim": true,
+  "no_owned_candidate_wet_lab_data": true,
+  "no_candidate_corrosion_validation": true,
+  "no_lab_contact": true,
+  "no_supplier_contact": true,
+  "no_legal_work": true,
+  "no_authority_contact": true,
+  "no_procurement_action": true,
+  "claim_lock_sentence": "public BOM/SDS/TDS/EHS source-currentness data ingested; no signed supplier declarations; no lot CoA; no PFAS-free, TSCA-compliant, TAA/domestic, procurement, or candidate performance claim.",
+  "title": "mvp20.30 unresolved supplier declaration gap register",
+  "gap_rows": [
+    {
+      "gap_id": "GAP30-001",
+      "material_key": "dgeba_828",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-002",
+      "material_key": "ancamide_350a",
+      "sourceability_classification": "exact_named_grade",
+      "public_packet_status": "PUBLIC_EXACT_NAMED_ANCHOR_PRESENT_DECLARATIONS_MISSING",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-003",
+      "material_key": "silica",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-004",
+      "material_key": "talc",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-005",
+      "material_key": "mica",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-006",
+      "material_key": "dispersant",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-007",
+      "material_key": "defoamer",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-008",
+      "material_key": "thixotrope",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-009",
+      "material_key": "iron_oxide_black",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-010",
+      "material_key": "iron_oxide_yellow",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-011",
+      "material_key": "naphtha",
+      "sourceability_classification": "unresolved_generic_key",
+      "public_packet_status": "UNRESOLVED_GENERIC_KEY_PUBLIC_CONTEXT_ONLY",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-012",
+      "material_key": "n_butanol",
+      "sourceability_classification": "exact_named_grade",
+      "public_packet_status": "PUBLIC_EXACT_NAMED_ANCHOR_PRESENT_DECLARATIONS_MISSING",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    },
+    {
+      "gap_id": "GAP30-013",
+      "material_key": "zinc_phosphate",
+      "sourceability_classification": "representative_grade_anchor",
+      "public_packet_status": "PUBLIC_REPRESENTATIVE_ANCHOR_PRESENT_SELECTED_GRADE_UNRESOLVED",
+      "missing_supplier_declaration_fields": [
+        "signed supplier PFAS declaration",
+        "signed supplier TSCA inventory/compliance statement",
+        "country of origin / TAA or domestic-origin declaration",
+        "current selected-grade SDS",
+        "current selected-grade TDS",
+        "lot certificate of analysis",
+        "lead time and procurement availability",
+        "controlled-substance/export/procurement terms review"
+      ],
+      "lot_coa_present": false,
+      "closure_status": "OPEN_SUPPLIER_DECLARATION_REQUIRED",
+      "blocks_claims": [
+        "PFAS-free",
+        "TSCA-compliant",
+        "TAA/domestic-origin",
+        "supplier closed",
+        "procurement-ready",
+        "candidate performance"
+      ]
+    }
+  ],
+  "summary": {
+    "gap_count": 13,
+    "all_rows_open": true,
+    "signed_supplier_declarations_present": false,
+    "lot_coa_present": false,
+    "supplier_closure_claim_allowed": false
+  }
+}

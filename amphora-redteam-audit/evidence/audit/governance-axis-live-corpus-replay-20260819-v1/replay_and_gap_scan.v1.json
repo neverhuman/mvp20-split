@@ -1,0 +1,91 @@
+{
+  "all_compared_fields_identical": true,
+  "attack": "Re-ran the module's own unmodified governance-axis-live-corpus-v1 oracle (sha256-pinned script, fresh rsync scratch copy of today's tree, release-built amphora-phase0-reviewer) to check whether the 2026-07-31 HYPOTHESIS_PARTIALLY_REFUTED finding (RED_TEAM gate mediation fails on 4/24 outer axes because amphora-cli's workspace_root() resolves from a compile-time constant, not the reviewed --workspace path) is still live, then checked whether that finding was ever registered in the falsification ledger and whether mission.md still asserts an unqualified 'RED_TEAM across 47 attack axes ... are passing' claim without it.",
+  "claim_under_attack": "amphora-redteam-audit/docs/mission.md prose: 'All Phase-0 deterministic gates ... (RIGHTS, LOCKED_SPLIT, LOCKED_BENCHMARK, TWO_REPLAYS, RED_TEAM across 47 attack axes, CLAIM_LOCKS, FOLDER_CONFINEMENT, BENCHMARK_EXECUTION_COMPLETE, MODULE_INVARIANTS) are passing.'",
+  "defect_reproduced_today": true,
+  "field_comparison": {
+    "g7_reexecution_root_binding.declared_hash_tracks_reviewed_workspace": {
+      "identical": true,
+      "replay_20260819": false,
+      "shipped_20260731": false
+    },
+    "g7_reexecution_root_binding.diagnostic_line_changed_after_tamper": {
+      "identical": true,
+      "replay_20260819": false,
+      "shipped_20260731": false
+    },
+    "g7_reexecution_root_binding.workspace_root_is_compile_time_constant": {
+      "identical": true,
+      "replay_20260819": true,
+      "shipped_20260731": true
+    },
+    "hypothesis": {
+      "identical": true,
+      "replay_20260819": "H0: the outer 23-axis portfolio-governance attack block declared in amphora-redteam-audit's Phase-0 benchmark lock is completely mediated and fail-closed under the live Phase-0 reference monitor, including against an adversary holding the evaluator signing identity.",
+      "shipped_20260731": "H0: the outer 23-axis portfolio-governance attack block declared in amphora-redteam-audit's Phase-0 benchmark lock is completely mediated and fail-closed under the live Phase-0 reference monitor, including against an adversary holding the evaluator signing identity."
+    },
+    "verdict": {
+      "identical": true,
+      "replay_20260819": "HYPOTHESIS_PARTIALLY_REFUTED",
+      "shipped_20260731": "HYPOTHESIS_PARTIALLY_REFUTED"
+    },
+    "verdict_basis.axes_unmediated_or_structurally_limited": {
+      "identical": true,
+      "replay_20260819": [
+        "FAILING_DETERMINISTIC_DIAGNOSTIC",
+        "FALSE_MOVEMENT_CLAIM",
+        "STALE_PARENT",
+        "STRIPPED_MISSION_LOCKS"
+      ],
+      "shipped_20260731": [
+        "FAILING_DETERMINISTIC_DIAGNOSTIC",
+        "FALSE_MOVEMENT_CLAIM",
+        "STALE_PARENT",
+        "STRIPPED_MISSION_LOCKS"
+      ]
+    },
+    "verdict_basis.axes_with_a_live_fail_closed_detector": {
+      "identical": true,
+      "replay_20260819": 20,
+      "shipped_20260731": 20
+    },
+    "verdict_basis.mutants_killed_of_total": {
+      "identical": true,
+      "replay_20260819": [
+        20,
+        24
+      ],
+      "shipped_20260731": [
+        20,
+        24
+      ]
+    }
+  },
+  "ledger_scan": {
+    "finding_never_registered_in_ledger": true,
+    "ledger_path": "logs/falsification-ledger.jsonl",
+    "ledger_total_lines_scanned": 329,
+    "matches": [],
+    "needles": [
+      "governance-axis-live-corpus",
+      "2796aea60d0fdd9a",
+      "2796aea6",
+      "73f4b974"
+    ]
+  },
+  "mission_prose_scan": {
+    "caveat_for_this_defect_already_present_pre_repair": false,
+    "mission_path": "amphora-redteam-audit/docs/mission.md",
+    "mission_pre_repair_sha256": "abad6a3925d81d12206bf4c1fcf8f98504c347323b7a4a866ee50f1710f889e6",
+    "unqualified_red_team_passing_claim_present": true
+  },
+  "module_id": "amphora-redteam-audit",
+  "oracle_script_path": "amphora-redteam-audit/benchmarks/governance-axis-live-corpus-v1/oracle_governance_axis_corpus.py",
+  "oracle_script_sha256": "f64c479e11f707916a8bbaad9175823524c92b16ffb07d7c98bd277fbf84a561",
+  "replay_result_sha256_20260819": "2796aea60d0fdd9aae3b701d0fbae89314f5c02425ad031f77e2a3c8a0d712f2",
+  "schema": "amphora.redteam-audit.governance-axis-replay-ledger-gap.v1",
+  "shipped_result_sha256_20260731": "2796aea60d0fdd9aae3b701d0fbae89314f5c02425ad031f77e2a3c8a0d712f2",
+  "source_citation": "amphora-cli/src/main.rs fn workspace_root()",
+  "source_still_uses_compile_time_workspace_root": true,
+  "verdict": "CLAIM_REFUTED"
+}

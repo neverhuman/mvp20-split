@@ -1,0 +1,17 @@
+[package]
+name = "optimizer-numeric-runtime-probe"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace. Nothing is added to,
+# built into, or written inside the workspace by this probe; CARGO_TARGET_DIR is
+# redirected to scratch by the runner.
+[workspace]
+
+# LIVE differential harness: links the real Rust runtime crate and calls the
+# real public entry point amphora_core::authorize_optimizer_request.
+# This is NOT a re-implementation and NOT a copy of the runtime logic.
+[dependencies]
+amphora-core = { path = "../../../../../amphora-core" }
+serde_json = { version = "=1.0.150", features = ["float_roundtrip"] }

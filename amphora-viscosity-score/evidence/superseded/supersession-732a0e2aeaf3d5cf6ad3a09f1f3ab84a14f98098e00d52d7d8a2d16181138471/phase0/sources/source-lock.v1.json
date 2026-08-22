@@ -1,0 +1,42 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-viscosity-score/evidence/phase0",
+  "imported_locks": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "f6466bbce86ab02eb6dd833d2d34852b6793c6f98c7c6eace40cc59fe0ff7583",
+      "source_path": "config/program/viscosity-sources.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "a6ef9b6c2d8d6d73bde295ed5e3b28ff1c35736fd68ad5cedc7fb3161c3f15ee",
+      "source_path": "config/program/viscosity-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "3ce4a1697e4ebfc160e97ab37a10831dd027275ac6f1cdf3223329dbc7a5aa8e",
+      "source_path": "config/benchmark-locks/amphora-viscosity-score.v1.json"
+    }
+  ],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-viscosity-score",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/rheology/source-landscape.v1.json",
+      "observed_sha256": "60001489cb1abdb860bbae411672e42f56f3c80d26868367663de99c00609749",
+      "rights_evidence_path": "amphora-viscosity-score/reference/rheology/source-landscape.v1.json",
+      "rights_status": "KNOWN"
+    }
+  ]
+}

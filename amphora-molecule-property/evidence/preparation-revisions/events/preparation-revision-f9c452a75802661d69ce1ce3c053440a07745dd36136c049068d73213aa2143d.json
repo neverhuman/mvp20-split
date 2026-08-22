@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "89d4bec698eb05cdd1ba01c5c296dfe0c6d2d1e11d06d8f039da00975b3b01d7",
+  "module_id": "amphora-molecule-property",
+  "parent_revision_id": null,
+  "revision_id": "preparation-revision-f9c452a75802661d69ce1ce3c053440a07745dd36136c049068d73213aa2143d",
+  "revision_number": 1,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-3037a1cccead4df6aa255647f41e2c85587e820030928baf882358e703f7a989",
+  "supersession_path": "evidence/superseded/supersession-3037a1cccead4df6aa255647f41e2c85587e820030928baf882358e703f7a989/supersession.v1.json",
+  "supersession_sha256": "9c1570efc8e3435c23eeea9bbbd06f90f612512988517ac0e40bd54f5c8b6f54",
+  "unsigned_preparation_only": true
+}

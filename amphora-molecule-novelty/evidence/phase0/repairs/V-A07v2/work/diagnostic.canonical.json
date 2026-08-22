@@ -1,0 +1,617 @@
+{
+  "attack_summary": "Sixth independent IPDA re-derivation and sixth independent reimplementation of the four-family conformal table (fresh code, not copied from run_ra07v2.py or run_wnov1_verify.py), diffed against R-A07v2's shipped table cell-by-cell, PLUS a novel structural-identity attack no prior fire in this chain applied: an InChIKey mobile-H tautomer-collision audit of the 350-structure 'canonically distinct' corpus, testing whether RDKit canonical-SMILES-string dedup (the sole method used by R-A07/V-A07/R-A07v2/W-NOV1) actually catches every duplicate. Genuinely falsifying observations sought: (a) any of the 20 shipped cells failing to reproduce; (b) an undisclosed flip anywhere in the 20-cell table; (c) the DSSE signatures of R-A07v2 or W-NOV1 failing to verify; (d) an InChIKey collision among the 350 corpus structures RDKit's canonical-SMILES dedup missed.",
+  "campaign_item": "V-A07v2",
+  "checks": {
+    "1a_csv_sha_locked": true,
+    "2a_n_rows_with_Tg_443": true,
+    "2b_n_canonically_unique_350": true,
+    "2c_n_dedupe_350": true,
+    "2d_dedup_canonical_set_sha_matches_locked": true,
+    "3a_inchikey_computed_for_all_but_at_most_a_few_of_350": true,
+    "3b_n_distinct_inchikey_groups_among_350": 348,
+    "3c_no_undisclosed_inchikey_duplicate_among_350_canonically_distinct": false,
+    "3d_n_truly_distinct_after_inchikey_dedup": true,
+    "3e_zero_cells_flip_when_corpus_duplicate_defect_is_corrected": true,
+    "4a_planted_pair_canonical_smiles_differ": true,
+    "4b_planted_pair_inchikey_identical": true,
+    "4c_planted_pair_not_already_present_in_real_corpus": true,
+    "4d_mutant_corpus_grows_by_exactly_2_under_canonical_smiles_dedup": true,
+    "5a_positive_control_detector_fires_on_planted_pair": true,
+    "5b_no_other_new_collisions_introduced_by_planting": true,
+    "5c_real_corpus_unchanged_when_rerun_alongside_mutant_check": false,
+    "6a_old_signed_ipda_is_C9H20N2_refutation_reproduced": true,
+    "6b_v6_rederived_ipda_is_C10H22N2": true,
+    "6c_v6_canonical_equals_ra07v2_canonical": true,
+    "6d_v6_canonical_equals_w_nov1_canonical": true,
+    "6e_v6_canonical_equals_genmod_ground_truth": true,
+    "6f_v6_input_string_distinct_from_all_five_prior_strings": true,
+    "6g_v6_ipda_one_six_membered_ring": true,
+    "6h_v6_ipda_two_primary_amine_nitrogens": true,
+    "6i_v6_ipda_three_methyl_carbons": true,
+    "7a_n_cells_compared": true,
+    "7b_n_cells_matching_shipped_r_a07v2": 20,
+    "7c_all_20_cells_reproduce_exactly": true,
+    "7d_zero_undisclosed_flips_found": true,
+    "8a_atompair_ipda_a01_novel_true_reproduced": true,
+    "8b_morgan_ipda_nn_unchanged_by_structural_fix": true,
+    "9a_top_level_five_of_five_novel": true,
+    "p1_r_a07v2_done_receipt_byte_intact": true,
+    "p2_w_nov1_done_receipt_byte_intact": true,
+    "p3_r_a07v2_dsse_verifies_against_pinned_key": true,
+    "p4_w_nov1_dsse_verifies_against_pinned_key": true,
+    "p5_r_a07_done_receipt_exists_and_hashes": true,
+    "p6_v_a07_done_receipt_exists_and_hashes": true
+  },
+  "checks_all_pass": true,
+  "corpus": {
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "dedup_set_sha256": "74513e30071335d097ee83315f5b21249da86ea6a5d61e98a27d07b631593dce",
+    "n_canonically_unique_350": 350,
+    "n_rows_with_Tg": 443
+  },
+  "date": "2026-08-11",
+  "flip_completeness_verdict": "COMPLETE -- zero undisclosed flips found across all 20 (family, candidate) cells; the single disclosed flip (atompair_2048/IPDA/alpha=0.01, NOVEL false->true) independently reproduces; the InChIKey mobile-H tautomer collision audit (a check class no prior receipt in this chain applied) finds zero undisclosed duplicate structures among the 350 canonically-distinct corpus rows, and the same detector correctly fires on a planted lactam/lactim tautomer duplicate pair that RDKit canonical-SMILES-only dedup (the method every prior receipt uses) cannot see.",
+  "generated_on_host": "xbabe2",
+  "inchikey_audit": {
+    "materiality_check": {
+      "cells_that_flip": [],
+      "conclusion": "The exchangeability precondition IS violated (2 undisclosed duplicate structures in the 350-row corpus every receipt in this chain calls 'canonically distinct'), but correcting it changes NO published NOVEL/NOT-NOVEL verdict in the 20-cell table: the near-neighbour structures involved (PDMS/PE backbone repeat units) are far in Tanimoto space from all 5 epoxy-amine hardener candidates in all four families, so removing one duplicate of each does not shift any candidate's leave-one-out calibration rank across an alpha boundary.",
+      "method": "Rebuilt the calibration corpus with the 2 InChIKey-duplicate groups reduced to 1 representative each (348 genuinely distinct structures), recomputed the full four-family conformal table with fresh index-based LOO calibration on this truthful corpus, and diffed novel_by_alpha against R-A07v2's shipped (350-structure, defect-carrying) table for all 20 cells.",
+      "n_cells_that_flip_verdict_when_corpus_is_corrected": 0,
+      "n_truly_distinct_structures": 348
+    },
+    "method": "For each of the 350 RDKit-canonical-SMILES-distinct corpus structures, compute rdkit.Chem.inchi.MolToInchiKey and group by key. A group with >1 member is a duplicate structure the canonical-SMILES dedup did not catch (InChI's mobile-H layer normalizes tautomer pairs -- lactam/lactim, 1H/2H-tetrazole, 2-pyridone/2-hydroxypyridine, etc -- that RDKit's canonical SMILES leaves as distinct strings because the formal bonding differs).",
+    "n_distinct_inchikey_groups_among_350": 348,
+    "n_inchikey_computation_failures": 0,
+    "n_undisclosed_duplicate_groups_found": 2,
+    "root_cause": "cap() = s.replace('*','C'), used identically by R-A07/V-A07/R-A07v2/W-NOV1/this script, does not normalize atom-mapped wildcard dummy-atom notation. Some OpenPoly PSMILES rows for a repeat unit use bare '*' end-groups, others use atom-mapped '[*:1]'/'[*:2]' end-groups for the SAME polymer under a second display name (e.g. 'PDMS' vs 'Polydimethylsiloxane (PDMS)'; 'PE' vs 'High-density polyethylene (HDPE)'). Naive string replacement turns '[*:1]' into '[C:1]' (an atom-mapped carbon, not a plain methyl cap), so the two notations canonicalize to two different RDKit SMILES strings and both survive canonical-SMILES dedup as if distinct. InChIKey ignores atom-map numbers and correctly identifies them as the same repeat-unit structure.",
+    "undisclosed_duplicate_groups": {
+      "KZAXAEXZWIXIJS-UHFFFAOYSA-N": [
+        [
+          "PDMS",
+          "[C]O[Si]([C])(C)C"
+        ],
+        [
+          "Polydimethylsiloxane (PDMS)",
+          "C[Si](C)(O[C:2])[C:1]"
+        ]
+      ],
+      "SXGJUVHTYJRXJQ-UHFFFAOYSA-N": [
+        [
+          "PE",
+          "[C]CC[C]"
+        ],
+        [
+          "High-density polyethylene (HDPE)",
+          "C(C[C:2])[C:1]"
+        ]
+      ]
+    }
+  },
+  "ipda_sixth_rederivation": {
+    "canonical": "CC1(C)CC(N)CC(C)(CN)C1",
+    "cas": "2855-13-2",
+    "constitution_crosschecks": {
+      "one_six_membered_ring": true,
+      "three_methyl_carbons": true,
+      "two_primary_amine_nitrogens": true
+    },
+    "distinct_from_all_five_prior_derivations": true,
+    "formula": "C10H22N2",
+    "input_smiles": "C1C(C)(C)CC(N)CC1(C)CN",
+    "matches_genmod_ground_truth": true,
+    "matches_r_a07v2_canonical": true,
+    "matches_w_nov1_canonical": true
+  },
+  "material_defect_found_but_immaterial_to_verdicts": true,
+  "n_undisclosed_flips_found": 0,
+  "positive_control": {
+    "detected": true,
+    "evidence": "InChIKey grouping over the 352-row mutant corpus places both planted rows in a single group under key XUWHAWMETYGRKB-UHFFFAOYSA-N (group members: ['PLANTED_lactam_2-piperidone_(defect)', 'PLANTED_lactim_tautomer_of_2-piperidone_(defect)']), a collision absent from the real 350-row corpus (0 collisions found there); canonical-SMILES-only dedup of the same mutant corpus reports 352 distinct structures (grew by exactly 2), confirming that method alone would NOT have caught this planted duplicate -- only the InChIKey check does.",
+    "how_planted": "corpus copy = corpus_dedupe (350 real entries, untouched) + 2 synthetic rows as above; the real 350-entry corpus used for the actual verification is never mutated -- the planted pair only exists in the separate mutant list built for this control.",
+    "planted_defect": "Two rows added to a COPY of the deduplicated corpus: 2-piperidone (lactam, SMILES O=C1CCCCN1) under display name 'PLANTED_lactam_2-piperidone_(defect)', and its lactim tautomer (SMILES OC1=NCCCC1) under display name 'PLANTED_lactim_tautomer_of_2-piperidone_(defect)'. RDKit canonical SMILES for the two differ (O=C1CCCCN1 vs OC1=NCCCC1), so the canonical-SMILES-string dedup used by R-A07/R-A07v2/W-NOV1 treats them as two distinct structures and would silently admit both into the calibration corpus; InChIKey for both is identical (XUWHAWMETYGRKB-UHFFFAOYSA-N), because they are the same real compound in two tautomeric forms."
+  },
+  "r_a07v2_sha256": "45b75c2a1a534d6ec0667e55e5ad130ecaa66bdaa60bb5cd12088a1af694328e",
+  "rdkit_version": "2026.03.2",
+  "rights_posture": "AUDIT/VERIFY artifact. External corpus SHA-256-locked, rights-clean, read-only. No manifest, ledger, locked dataset, or existing signed receipt modified.",
+  "schema": "amphora.molecule-novelty.v-a07v2-independent-verify-diagnostic.v1",
+  "study_id": "v-a07v2-independent-verify-of-r-a07v2-and-w-nov1-v1",
+  "theory_reference": [
+    "Vovk, Gammerman, Shafer 2005, Algorithmic Learning in a Random World, ISBN 978-0-387-00152-4, sec 2.1 (exchangeability)",
+    "Heller, Pletnev et al. 2015, J Cheminform 7:23, DOI:10.1186/s13321-015-0068-4 (InChI 1, mobile-H tautomer normalization)",
+    "Rogers & Hahn 2010, J Chem Inf Model 50:742, DOI:10.1021/ci100050t (Morgan/ECFP)",
+    "Bajusz, Racz, Heberger 2015, J Cheminform 7:20, DOI:10.1186/s13321-015-0069-3 (Tanimoto; 0.40 cutoff)",
+    "Lee, H. & Neville, K. 1967, Handbook of Epoxy Resins, McGraw-Hill (isophorone diamine constitution)"
+  ],
+  "top_level_five_over_five": {
+    "n_novel": 5,
+    "per_candidate": {
+      "DDS": {
+        "nn_tanimoto_vs_deduped_350": 0.39285714285714285,
+        "novel_below_0_40": true
+      },
+      "DETA": {
+        "nn_tanimoto_vs_deduped_350": 0.16666666666666666,
+        "novel_below_0_40": true
+      },
+      "IPDA": {
+        "nn_tanimoto_vs_deduped_350": 0.16666666666666666,
+        "novel_below_0_40": true
+      },
+      "TETA": {
+        "nn_tanimoto_vs_deduped_350": 0.15789473684210525,
+        "novel_below_0_40": true
+      },
+      "m-XDA": {
+        "nn_tanimoto_vs_deduped_350": 0.23809523809523808,
+        "novel_below_0_40": true
+      }
+    }
+  },
+  "twenty_cell_diff_vs_r_a07v2_shipped_table": [
+    {
+      "candidate": "DDS",
+      "family": "morgan_r2_2048",
+      "mine_nn": 0.39285714285714285,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": true
+      },
+      "mine_p": 0.15954415954415954,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.39285714285714285,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": true
+      },
+      "shipped_p": 0.15954415954415954,
+      "verdict_match": true
+    },
+    {
+      "candidate": "DETA",
+      "family": "morgan_r2_2048",
+      "mine_nn": 0.16666666666666666,
+      "mine_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.005698005698005698,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.16666666666666666,
+      "shipped_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.005698005698005698,
+      "verdict_match": true
+    },
+    {
+      "candidate": "IPDA",
+      "family": "morgan_r2_2048",
+      "mine_nn": 0.16666666666666666,
+      "mine_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.005698005698005698,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.16666666666666666,
+      "shipped_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.005698005698005698,
+      "verdict_match": true
+    },
+    {
+      "candidate": "TETA",
+      "family": "morgan_r2_2048",
+      "mine_nn": 0.15789473684210525,
+      "mine_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.002849002849002849,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.15789473684210525,
+      "shipped_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.002849002849002849,
+      "verdict_match": true
+    },
+    {
+      "candidate": "m-XDA",
+      "family": "morgan_r2_2048",
+      "mine_nn": 0.23809523809523808,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.02849002849002849,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.23809523809523808,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.02849002849002849,
+      "verdict_match": true
+    },
+    {
+      "candidate": "DDS",
+      "family": "maccs_166",
+      "mine_nn": 0.6,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.08547008547008547,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.6,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.08547008547008547,
+      "verdict_match": true
+    },
+    {
+      "candidate": "DETA",
+      "family": "maccs_166",
+      "mine_nn": 0.5384615384615384,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.045584045584045586,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.5384615384615384,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.045584045584045586,
+      "verdict_match": true
+    },
+    {
+      "candidate": "IPDA",
+      "family": "maccs_166",
+      "mine_nn": 0.4634146341463415,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.017094017094017096,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.4634146341463415,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.017094017094017096,
+      "verdict_match": true
+    },
+    {
+      "candidate": "TETA",
+      "family": "maccs_166",
+      "mine_nn": 0.5384615384615384,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.045584045584045586,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.5384615384615384,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.045584045584045586,
+      "verdict_match": true
+    },
+    {
+      "candidate": "m-XDA",
+      "family": "maccs_166",
+      "mine_nn": 0.3684210526315789,
+      "mine_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.002849002849002849,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.3684210526315789,
+      "shipped_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.002849002849002849,
+      "verdict_match": true
+    },
+    {
+      "candidate": "DDS",
+      "family": "atompair_2048",
+      "mine_nn": 0.5151515151515151,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": false
+      },
+      "mine_p": 0.24786324786324787,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.5151515151515151,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": false
+      },
+      "shipped_p": 0.24786324786324787,
+      "verdict_match": true
+    },
+    {
+      "candidate": "DETA",
+      "family": "atompair_2048",
+      "mine_nn": 0.17142857142857143,
+      "mine_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.002849002849002849,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.17142857142857143,
+      "shipped_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.002849002849002849,
+      "verdict_match": true
+    },
+    {
+      "candidate": "IPDA",
+      "family": "atompair_2048",
+      "mine_nn": 0.2542372881355932,
+      "mine_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.008547008547008548,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.2542372881355932,
+      "shipped_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.008547008547008548,
+      "verdict_match": true
+    },
+    {
+      "candidate": "TETA",
+      "family": "atompair_2048",
+      "mine_nn": 0.1780821917808219,
+      "mine_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.002849002849002849,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.1780821917808219,
+      "shipped_novel_by_alpha": {
+        "a0.01": true,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.002849002849002849,
+      "verdict_match": true
+    },
+    {
+      "candidate": "m-XDA",
+      "family": "atompair_2048",
+      "mine_nn": 0.27419354838709675,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.011396011396011397,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.27419354838709675,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.011396011396011397,
+      "verdict_match": true
+    },
+    {
+      "candidate": "DDS",
+      "family": "toptorsion_2048",
+      "mine_nn": 0.6538461538461539,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": false
+      },
+      "mine_p": 0.46438746438746437,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.6538461538461539,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": false,
+        "a0.2": false
+      },
+      "shipped_p": 0.46438746438746437,
+      "verdict_match": true
+    },
+    {
+      "candidate": "DETA",
+      "family": "toptorsion_2048",
+      "mine_nn": 0.18181818181818182,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.03418803418803419,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.18181818181818182,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.03418803418803419,
+      "verdict_match": true
+    },
+    {
+      "candidate": "IPDA",
+      "family": "toptorsion_2048",
+      "mine_nn": 0.16,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.019943019943019943,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.16,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.019943019943019943,
+      "verdict_match": true
+    },
+    {
+      "candidate": "TETA",
+      "family": "toptorsion_2048",
+      "mine_nn": 0.15384615384615385,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.019943019943019943,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.15384615384615385,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": true,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.019943019943019943,
+      "verdict_match": true
+    },
+    {
+      "candidate": "m-XDA",
+      "family": "toptorsion_2048",
+      "mine_nn": 0.2608695652173913,
+      "mine_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "mine_p": 0.07692307692307693,
+      "nn_match": true,
+      "p_match": true,
+      "shipped_nn": 0.2608695652173913,
+      "shipped_novel_by_alpha": {
+        "a0.01": false,
+        "a0.05": false,
+        "a0.1": true,
+        "a0.2": true
+      },
+      "shipped_p": 0.07692307692307693,
+      "verdict_match": true
+    }
+  ],
+  "undisclosed_flips": [],
+  "verifies_prior_verify_item": "W-NOV1",
+  "verifies_repair_item": "R-A07v2",
+  "w_nov1_sha256": "250f1633b1cc5e7623a5fda64693afe27680df4873f907f43235d4823eeeefde"
+}

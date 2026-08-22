@@ -1,0 +1,51 @@
+{
+  "payload": {
+    "authority_lock": {
+      "fto_not_performed": true,
+      "no_optimizer_authority": true,
+      "no_patentability_authority": true,
+      "no_procurement_authority": true,
+      "no_product_performance_authority": true,
+      "no_qualification_authority": true,
+      "no_ranking_authority": true,
+      "no_regulatory_authority": true,
+      "no_release_authority": true,
+      "no_safety_authority": true
+    },
+    "authoritative": false,
+    "canonical_hash_manifest": {
+      "known-answer-report.md": "47a3b69e19e57a3e42d326026246dfdfee7d978bff88231adb5f4b2b64a26f75"
+    },
+    "decision_use_ceiling": "AUDIT_ONLY",
+    "fixture_id": "report-known-answer-001",
+    "fixture_only": true,
+    "narrative": [
+      "This package is a non-authoritative deterministic renderer fixture."
+    ],
+    "ranking_eligible": false,
+    "rendered_document": "# Known-answer audit package\n\nThis package is a non-authoritative deterministic renderer fixture.\n\nScore envelope SHA-256: `9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2`\n\n## Authority lock\n\n- `fto_not_performed`: `true`\n- `no_optimizer_authority`: `true`\n- `no_patentability_authority`: `true`\n- `no_procurement_authority`: `true`\n- `no_product_performance_authority`: `true`\n- `no_qualification_authority`: `true`\n- `no_ranking_authority`: `true`\n- `no_regulatory_authority`: `true`\n- `no_release_authority`: `true`\n- `no_safety_authority`: `true`\n\nScientific readiness: `UNVALIDATED`\nDecision use: `AUDIT_ONLY`\nRanking eligible: `false`\n",
+    "scientific_readiness": "UNVALIDATED",
+    "score_envelope_sha256": "9d0d49de3002a6377f14ef6b90bf2d38dc1bf3c7e41f88f1dde596776ee2f9c2",
+    "score_envelopes": [
+      {
+        "authority_tier": "EVIDENCE_ONLY",
+        "candidate_id": "fixture-candidate",
+        "claim_locks": {
+          "no_ranking_authority": true
+        },
+        "module_id": "amphora-report-packager",
+        "ranking_eligible": false,
+        "score_semantics": "EVIDENCE_ONLY",
+        "status": "SCORED"
+      }
+    ],
+    "title": "Known-answer audit package"
+  },
+  "schema": "amphora.report-package-known-answer.v1",
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "report-fixture-6eec53bda395a1a4b9ff12eb2c05bac501063f79d5264f119422f9623ce6c129",
+    "public_key_hex": "325902dfdd0bd1e3fcc40bec383358514874e632a7031479d82621349a7739cd",
+    "signature_hex": "28ce5dc0554f2eb7571a6c10602581876e8a35f16089530b465447d3a234a80f64f84a4ae302c116c39114bf7ac53570f7987d2ad987095f3549840fa28f6a00"
+  }
+}

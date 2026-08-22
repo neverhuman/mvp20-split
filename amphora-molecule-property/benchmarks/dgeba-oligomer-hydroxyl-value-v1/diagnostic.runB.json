@@ -1,0 +1,186 @@
+{
+  "all_gates_passed": true,
+  "atomic_weight_uncertainty": {
+    "bar_mg_koh_per_g": 0.5,
+    "headroom_factor": 110.6,
+    "ohv1_mg_koh_per_g": 89.7925,
+    "target": "OHV(n=1)",
+    "u_M1_g_per_mol": 0.03137,
+    "u_MKOH_g_per_mol": 0.000209,
+    "u_ohv1_mg_koh_per_g": 0.004522
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "gates": {
+    "G1_monomer_zero_hydroxyl_number": {
+      "oh_total_n0": 0,
+      "ohv_n0_mg_koh_per_g": 0.0,
+      "passed": true
+    },
+    "G2_per_oligomer_oh_count_and_class": {
+      "M0_g_per_mol": 340.419,
+      "M_repeat_g_per_mol": 284.355,
+      "koh_factor": 56100.0,
+      "passed": true,
+      "rows": [
+        {
+          "counts_consistent": true,
+          "formula": "C21H24O4",
+          "molwt_g_per_mol": 340.419,
+          "n": 0,
+          "n_epoxide": 2,
+          "oh_phenolic": 0,
+          "oh_primary": 0,
+          "oh_secondary": 0,
+          "oh_total": 0,
+          "ohv_rule_mg_koh_per_g": 0.0
+        },
+        {
+          "counts_consistent": true,
+          "formula": "C39H44O7",
+          "molwt_g_per_mol": 624.774,
+          "n": 1,
+          "n_epoxide": 2,
+          "oh_phenolic": 0,
+          "oh_primary": 0,
+          "oh_secondary": 1,
+          "oh_total": 1,
+          "ohv_rule_mg_koh_per_g": 89.792
+        },
+        {
+          "counts_consistent": true,
+          "formula": "C57H64O10",
+          "molwt_g_per_mol": 909.129,
+          "n": 2,
+          "n_epoxide": 2,
+          "oh_phenolic": 0,
+          "oh_primary": 0,
+          "oh_secondary": 2,
+          "oh_total": 2,
+          "ohv_rule_mg_koh_per_g": 123.415
+        },
+        {
+          "counts_consistent": true,
+          "formula": "C75H84O13",
+          "molwt_g_per_mol": 1193.484,
+          "n": 3,
+          "n_epoxide": 2,
+          "oh_phenolic": 0,
+          "oh_primary": 0,
+          "oh_secondary": 3,
+          "oh_total": 3,
+          "ohv_rule_mg_koh_per_g": 141.016
+        }
+      ]
+    },
+    "G3_monotone_bounded_advancement_consistent": {
+      "all_below_asymptote": true,
+      "asymptote_mg_koh_per_g": 197.289,
+      "monotone_increasing": true,
+      "note": "OHV and EEW are two independent structural read-outs of one advancement variable n; asymptote = 56100 / M(C18H20O3 repeat).",
+      "oh_count_equals_mass_advancement_n": true,
+      "ohv_series_mg_koh_per_g": [
+        0.0,
+        89.792,
+        123.415,
+        141.016
+      ],
+      "passed": true
+    },
+    "G4_failclosed_non_advancement_oh_controls": {
+      "passed": true,
+      "rows": [
+        {
+          "correctly_excluded": true,
+          "expectation_matched": true,
+          "is_dgeba_advancement_series_member": false,
+          "n_epoxide": 0,
+          "name": "bisphenol-A (2 phenolic OH, precursor)",
+          "oh_phenolic": 2,
+          "oh_primary": 0,
+          "oh_secondary": 0,
+          "oh_total": 2
+        },
+        {
+          "correctly_excluded": true,
+          "expectation_matched": true,
+          "is_dgeba_advancement_series_member": false,
+          "n_epoxide": 1,
+          "name": "glycidol (1 primary OH)",
+          "oh_phenolic": 0,
+          "oh_primary": 1,
+          "oh_secondary": 0,
+          "oh_total": 1
+        },
+        {
+          "correctly_excluded": true,
+          "expectation_matched": true,
+          "is_dgeba_advancement_series_member": false,
+          "n_epoxide": 0,
+          "name": "neopentyl glycol (2 primary OH)",
+          "oh_phenolic": 0,
+          "oh_primary": 2,
+          "oh_secondary": 0,
+          "oh_total": 2
+        },
+        {
+          "correctly_excluded": true,
+          "expectation_matched": true,
+          "is_dgeba_advancement_series_member": false,
+          "n_epoxide": 0,
+          "name": "DGEBA fully hydrolyzed diol (primary+secondary from opened epoxides, not oligomer)",
+          "oh_phenolic": 0,
+          "oh_primary": 2,
+          "oh_secondary": 2,
+          "oh_total": 4
+        }
+      ]
+    }
+  },
+  "koh_molar_mass_g_per_mol": 56.1056,
+  "maps_to_module_hypothesis": "Adds a NEW molecular property (hydroxyl value, mg KOH/g) to the module's 'canonical structure rules reproduce locked known-answer equivalent weights' claim. OHV(n) is a second, independent structural read-out of the SAME advancement variable n that governs EEW(n), computed by independent RDKit OH classification, with fail-closed controls separating advancement secondary OH from phenolic/primary OH. Corroborative only: asserts no exact OHV for polydisperse commercial grades (composition is measured, not derived) and modifies no live lock.",
+  "module": "amphora-molecule-property",
+  "oligomers": {
+    "0": {
+      "formula": "C21H24O4",
+      "molwt_g_per_mol": 340.419,
+      "oh_secondary": 0,
+      "oh_total": 0,
+      "ohv_mg_koh_per_g": 0.0,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC2CO2)cc1"
+    },
+    "1": {
+      "formula": "C39H44O7",
+      "molwt_g_per_mol": 624.774,
+      "oh_secondary": 1,
+      "oh_total": 1,
+      "ohv_mg_koh_per_g": 89.792,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC3CO3)cc2)cc1"
+    },
+    "2": {
+      "formula": "C57H64O10",
+      "molwt_g_per_mol": 909.129,
+      "oh_secondary": 2,
+      "oh_total": 2,
+      "ohv_mg_koh_per_g": 123.415,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC(O)COc3ccc(cc3)C(C)(C)c3ccc(OCC4CO4)cc3)cc2)cc1"
+    },
+    "3": {
+      "formula": "C75H84O13",
+      "molwt_g_per_mol": 1193.484,
+      "oh_secondary": 3,
+      "oh_total": 3,
+      "ohv_mg_koh_per_g": 141.016,
+      "smiles": "C(C1CO1)Oc1ccc(cc1)C(C)(C)c1ccc(OCC(O)COc2ccc(cc2)C(C)(C)c2ccc(OCC(O)COc3ccc(cc3)C(C)(C)c3ccc(OCC(O)COc4ccc(cc4)C(C)(C)c4ccc(OCC5CO5)cc4)cc3)cc2)cc1"
+    }
+  },
+  "primary_sources": [
+    "Lee & Neville 1967 Handbook of Epoxy Resins (advancement/secondary-OH)",
+    "May 1988 Epoxy Resins 2nd ed ISBN 0-8247-7690-9",
+    "ASTM D4274 (hydroxyl number; 56100 factor)",
+    "Prohaska et al. Pure Appl. Chem. 94(5):573 (2022) doi:10.1515/pac-2019-0603"
+  ],
+  "rdkit_version_detected": "2026.03.2",
+  "rule": "OHV(n) = 56100 * n / (M0 + n*M_repeat) [mg KOH/g] for the linear DGEBA oligomer series; n secondary aliphatic hydroxyls, zero phenolic/primary.",
+  "study_id": "dgeba-oligomer-hydroxyl-value-v1"
+}

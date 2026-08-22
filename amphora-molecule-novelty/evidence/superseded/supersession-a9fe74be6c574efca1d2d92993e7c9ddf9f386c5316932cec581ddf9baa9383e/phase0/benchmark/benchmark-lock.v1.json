@@ -1,0 +1,25 @@
+{
+  "attacks": [
+    "STALE_PARENT",
+    "SAME_SIGNER_REVIEW",
+    "FORGED_RIGHTS",
+    "MISSING_LICENSE",
+    "STRIPPED_CLAIM_LOCK",
+    "CANDIDATE_SUPPLIED_EVIDENCE",
+    "CROSS_MODULE_PATH_SUBSTITUTION",
+    "REPLAY_DRIFT",
+    "FALSE_MOVEMENT_CLAIM",
+    "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+    "LEGACY_AMPHORA_RECEIPT_LAUNDERING",
+    "PATENT_FIELD_CONFUSION",
+    "MARKUSH_MIXTURE_MASQUERADING"
+  ],
+  "dataset_manifest_sha256": "6e8c2bb34bc5c50112943cfe8ca68811e4b81c130f706a98eceed68ddb938524",
+  "module_id": "amphora-molecule-novelty",
+  "negative_result_authority": "AUDIT_ONLY",
+  "replay_count": 2,
+  "runner": "EXACT_LOCKED_MODULE_BENCHMARK",
+  "schema": "amphora.module-phase0-benchmark-lock.v1",
+  "scientific_success_required_for_phase0": false,
+  "split_manifest_sha256": "5f727320fcfa76a67a572e2423f9829cc0e4eb88fe2eec58f2c35f83a4feed25"
+}

@@ -1,0 +1,20 @@
+{
+  "authority": "AUDIT_ONLY",
+  "canonical_diagnostic_sha256": "e783569022c13ec3df776caf2d80ada228aabcb130f3d2012a66d520a24472a7",
+  "kpis": {
+    "all_gates_pass": true,
+    "canonical_vs_grid_max_gap_pairs": 3,
+    "dispersion_argmax_k_at_cutoff_1p0": 4,
+    "fail_closed_rate": 1.0,
+    "grid_cells_ge_0p85_bar": 22,
+    "grid_cells_total": 49,
+    "reproduction_accuracy": 0.893333,
+    "reproduction_correct_of_n": "67/75"
+  },
+  "module": "amphora-solvency-score",
+  "receipt_id": "hansen-sphere-coeff-robustness-07181e3bfddd0b9959b219a083a882aea28253404bf157e473ae560c5437ab9f",
+  "receipt_path": "amphora-solvency-score/reference/mvp20/data/hansen_sphere_coefficient_robustness_receipt.v1.json",
+  "receipt_sha256": "34b94011c13b9f246e7e920d2d561b9c5d21d1716c379ba19cc1351d4e1804d1",
+  "schema": "amphora.solvency-score.phase0-kpi.hansen-sphere-coefficient-robustness.v1",
+  "two_replay_sha256_gate": "PASS"
+}

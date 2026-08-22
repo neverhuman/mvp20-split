@@ -1,0 +1,623 @@
+{
+  "claim_under_attack": {
+    "claim_text": "The module's RF-ML-base split-conformal marginal coverage on OpenPoly Tg (0.9663 at nominal 0.95, single random seed=0 split) with claim_lock 'conformal_guarantee_holds_only_under_exchangeability', is robust to non-exchangeable (scaffold-group) deployment shift.",
+    "dataset_fixture_sha256_pinned_in_kpi": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "prior_analogous_attack": "amphora-tolerance-robustness/evidence/audit/repeated-scaffold-monte-carlo-conformal-openpoly-tg-v1/ (same protocol, Ridge base predictor, REFUTED, mean 0.8746)",
+    "receipt_paths": [
+      "amphora-tolerance-robustness/evidence/phase0/kpis/split-conformal-on-rf-ml-openpoly-tg-kpi.v1.json"
+    ],
+    "scientific_receipt_sha256_pinned_in_kpi": "a269fef5885ddcbf674e9d625d806c5926454f660064718a4e2fee12b4ae67d7"
+  },
+  "dataset": {
+    "expected_n": 442,
+    "expected_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "n_polymers_after_filter": 443,
+    "path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+    "sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "sha256_matches_prior_signed_receipts": true
+  },
+  "draws": [
+    {
+      "coverage_random": 0.9438202247191011,
+      "coverage_scaffold_safe": 0.9662921348314607,
+      "gap_scaffold_minus_random": 0.022471910112359605,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 178,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 0
+    },
+    {
+      "coverage_random": 0.9887640449438202,
+      "coverage_scaffold_safe": 0.7971698113207547,
+      "gap_scaffold_minus_random": -0.1915942336230655,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 424,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 1
+    },
+    {
+      "coverage_random": 0.9606741573033708,
+      "coverage_scaffold_safe": 0.9224806201550387,
+      "gap_scaffold_minus_random": -0.03819353714833207,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 258,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 2
+    },
+    {
+      "coverage_random": 0.9887640449438202,
+      "coverage_scaffold_safe": 0.5348837209302325,
+      "gap_scaffold_minus_random": -0.4538803240135877,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 430,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 3
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.9266862170087976,
+      "gap_scaffold_minus_random": -0.045223895350752996,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 341,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 4
+    },
+    {
+      "coverage_random": 0.9943820224719101,
+      "coverage_scaffold_safe": 0.9588607594936709,
+      "gap_scaffold_minus_random": -0.03552126297823921,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 316,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 5
+    },
+    {
+      "coverage_random": 0.9662921348314607,
+      "coverage_scaffold_safe": 0.8522727272727273,
+      "gap_scaffold_minus_random": -0.11401940755873341,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 264,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 6
+    },
+    {
+      "coverage_random": 0.9550561797752809,
+      "coverage_scaffold_safe": 0.845,
+      "gap_scaffold_minus_random": -0.11005617977528093,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 400,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 7
+    },
+    {
+      "coverage_random": 0.9775280898876404,
+      "coverage_scaffold_safe": 0.973421926910299,
+      "gap_scaffold_minus_random": -0.004106162977341343,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 301,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 8
+    },
+    {
+      "coverage_random": 0.9606741573033708,
+      "coverage_scaffold_safe": 0.7551020408163265,
+      "gap_scaffold_minus_random": -0.20557211648704432,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 343,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 9
+    },
+    {
+      "coverage_random": 0.9775280898876404,
+      "coverage_scaffold_safe": 0.6308411214953271,
+      "gap_scaffold_minus_random": -0.3466869683923133,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 428,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 10
+    },
+    {
+      "coverage_random": 0.949438202247191,
+      "coverage_scaffold_safe": 0.8944591029023746,
+      "gap_scaffold_minus_random": -0.05497909934481637,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 379,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 11
+    },
+    {
+      "coverage_random": 0.9943820224719101,
+      "coverage_scaffold_safe": 0.9970059880239521,
+      "gap_scaffold_minus_random": 0.002623965552042029,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 334,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 12
+    },
+    {
+      "coverage_random": 0.9550561797752809,
+      "coverage_scaffold_safe": 0.8825757575757576,
+      "gap_scaffold_minus_random": -0.07248042219952333,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 264,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 13
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.9512195121951219,
+      "gap_scaffold_minus_random": -0.020690600164428696,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 410,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 14
+    },
+    {
+      "coverage_random": 0.9550561797752809,
+      "coverage_scaffold_safe": 0.6460674157303371,
+      "gap_scaffold_minus_random": -0.3089887640449438,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 178,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 15
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.9563953488372093,
+      "gap_scaffold_minus_random": -0.015514763522341268,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 344,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 16
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.9802816901408451,
+      "gap_scaffold_minus_random": 0.008371577781294492,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 355,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 17
+    },
+    {
+      "coverage_random": 0.9662921348314607,
+      "coverage_scaffold_safe": 0.9502617801047121,
+      "gap_scaffold_minus_random": -0.01603035472674863,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 382,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 18
+    },
+    {
+      "coverage_random": 0.9831460674157303,
+      "coverage_scaffold_safe": 0.976,
+      "gap_scaffold_minus_random": -0.007146067415730317,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 375,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 19
+    },
+    {
+      "coverage_random": 0.9325842696629213,
+      "coverage_scaffold_safe": 0.9527027027027027,
+      "gap_scaffold_minus_random": 0.020118433039781447,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 296,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 20
+    },
+    {
+      "coverage_random": 0.9943820224719101,
+      "coverage_scaffold_safe": 0.8843537414965986,
+      "gap_scaffold_minus_random": -0.11002828097531148,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 294,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 21
+    },
+    {
+      "coverage_random": 0.9831460674157303,
+      "coverage_scaffold_safe": 0.9548022598870056,
+      "gap_scaffold_minus_random": -0.028343807528724674,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 177,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 22
+    },
+    {
+      "coverage_random": 0.9943820224719101,
+      "coverage_scaffold_safe": 0.7830423940149626,
+      "gap_scaffold_minus_random": -0.21133962845694754,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 401,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 23
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.8707865168539326,
+      "gap_scaffold_minus_random": -0.101123595505618,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 178,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 24
+    },
+    {
+      "coverage_random": 0.9831460674157303,
+      "coverage_scaffold_safe": 0.8793774319066148,
+      "gap_scaffold_minus_random": -0.10376863550911553,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 257,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 25
+    },
+    {
+      "coverage_random": 0.9550561797752809,
+      "coverage_scaffold_safe": 0.8489932885906041,
+      "gap_scaffold_minus_random": -0.10606289118467682,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 298,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 26
+    },
+    {
+      "coverage_random": 0.949438202247191,
+      "coverage_scaffold_safe": 0.8819672131147541,
+      "gap_scaffold_minus_random": -0.06747098913243688,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 305,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 27
+    },
+    {
+      "coverage_random": 0.9606741573033708,
+      "coverage_scaffold_safe": 0.9457547169811321,
+      "gap_scaffold_minus_random": -0.014919440322238686,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 424,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 28
+    },
+    {
+      "coverage_random": 0.9325842696629213,
+      "coverage_scaffold_safe": 0.7198067632850241,
+      "gap_scaffold_minus_random": -0.21277750637789716,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 414,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 29
+    },
+    {
+      "coverage_random": 0.9775280898876404,
+      "coverage_scaffold_safe": 0.9190031152647975,
+      "gap_scaffold_minus_random": -0.058524974622842896,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 321,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 30
+    },
+    {
+      "coverage_random": 0.9382022471910112,
+      "coverage_scaffold_safe": 0.9690721649484536,
+      "gap_scaffold_minus_random": 0.03086991775744241,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 291,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 31
+    },
+    {
+      "coverage_random": 0.9775280898876404,
+      "coverage_scaffold_safe": 0.9549071618037135,
+      "gap_scaffold_minus_random": -0.022620928083926906,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 377,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 32
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.7965517241379311,
+      "gap_scaffold_minus_random": -0.17535838822161953,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 290,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 33
+    },
+    {
+      "coverage_random": 0.9157303370786517,
+      "coverage_scaffold_safe": 0.7986577181208053,
+      "gap_scaffold_minus_random": -0.11707261895784637,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 298,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 34
+    },
+    {
+      "coverage_random": 0.949438202247191,
+      "coverage_scaffold_safe": 0.4693396226415094,
+      "gap_scaffold_minus_random": -0.4800985796056816,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 424,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 35
+    },
+    {
+      "coverage_random": 0.9831460674157303,
+      "coverage_scaffold_safe": 0.7522123893805309,
+      "gap_scaffold_minus_random": -0.23093367803519937,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 339,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 36
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.8218181818181818,
+      "gap_scaffold_minus_random": -0.15009193054136882,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 275,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 37
+    },
+    {
+      "coverage_random": 0.9887640449438202,
+      "coverage_scaffold_safe": 0.8702290076335878,
+      "gap_scaffold_minus_random": -0.1185350373102324,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 262,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 38
+    },
+    {
+      "coverage_random": 0.9943820224719101,
+      "coverage_scaffold_safe": 0.9265536723163842,
+      "gap_scaffold_minus_random": -0.06782835015552591,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 177,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 39
+    },
+    {
+      "coverage_random": 0.949438202247191,
+      "coverage_scaffold_safe": 0.9048991354466859,
+      "gap_scaffold_minus_random": -0.04453906680050512,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 347,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 40
+    },
+    {
+      "coverage_random": 0.9325842696629213,
+      "coverage_scaffold_safe": 0.9265536723163842,
+      "gap_scaffold_minus_random": -0.006030597346537103,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 177,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 41
+    },
+    {
+      "coverage_random": 0.898876404494382,
+      "coverage_scaffold_safe": 0.9850299401197605,
+      "gap_scaffold_minus_random": 0.08615353562537853,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 334,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 42
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.7243243243243244,
+      "gap_scaffold_minus_random": -0.24758578803522624,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 185,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 43
+    },
+    {
+      "coverage_random": 0.9887640449438202,
+      "coverage_scaffold_safe": 0.8721804511278195,
+      "gap_scaffold_minus_random": -0.1165835938160007,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 266,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 44
+    },
+    {
+      "coverage_random": 0.9887640449438202,
+      "coverage_scaffold_safe": 0.8714285714285714,
+      "gap_scaffold_minus_random": -0.11733547351524876,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 280,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 45
+    },
+    {
+      "coverage_random": 0.9382022471910112,
+      "coverage_scaffold_safe": 0.9073482428115016,
+      "gap_scaffold_minus_random": -0.03085400437950958,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 313,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 46
+    },
+    {
+      "coverage_random": 0.9775280898876404,
+      "coverage_scaffold_safe": 0.9660574412532638,
+      "gap_scaffold_minus_random": -0.011470648634376635,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 383,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 47
+    },
+    {
+      "coverage_random": 0.9719101123595506,
+      "coverage_scaffold_safe": 0.7679558011049724,
+      "gap_scaffold_minus_random": -0.2039543112545782,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 181,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 48
+    },
+    {
+      "coverage_random": 0.9550561797752809,
+      "coverage_scaffold_safe": 0.7195571955719557,
+      "gap_scaffold_minus_random": -0.23549898420332516,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 271,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 49
+    },
+    {
+      "coverage_random": 0.9887640449438202,
+      "coverage_scaffold_safe": 0.9485861182519281,
+      "gap_scaffold_minus_random": -0.04017792669189213,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 389,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 50
+    },
+    {
+      "coverage_random": 0.9606741573033708,
+      "coverage_scaffold_safe": 0.867704280155642,
+      "gap_scaffold_minus_random": -0.09296987714772875,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 257,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 51
+    },
+    {
+      "coverage_random": 0.898876404494382,
+      "coverage_scaffold_safe": 0.9713375796178344,
+      "gap_scaffold_minus_random": 0.0724611751234524,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 314,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 52
+    },
+    {
+      "coverage_random": 0.9831460674157303,
+      "coverage_scaffold_safe": 0.9333333333333333,
+      "gap_scaffold_minus_random": -0.04981273408239695,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 300,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 53
+    },
+    {
+      "coverage_random": 0.9943820224719101,
+      "coverage_scaffold_safe": 0.848314606741573,
+      "gap_scaffold_minus_random": -0.1460674157303371,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 178,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 54
+    },
+    {
+      "coverage_random": 0.9831460674157303,
+      "coverage_scaffold_safe": 0.8184615384615385,
+      "gap_scaffold_minus_random": -0.16468452895419183,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 325,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 55
+    },
+    {
+      "coverage_random": 0.9775280898876404,
+      "coverage_scaffold_safe": 0.8700564971751412,
+      "gap_scaffold_minus_random": -0.10747159271249918,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 177,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 56
+    },
+    {
+      "coverage_random": 0.9943820224719101,
+      "coverage_scaffold_safe": 0.9212121212121213,
+      "gap_scaffold_minus_random": -0.07316990125978884,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 330,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 57
+    },
+    {
+      "coverage_random": 0.898876404494382,
+      "coverage_scaffold_safe": 0.6834532374100719,
+      "gap_scaffold_minus_random": -0.21542316708431009,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 417,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 58
+    },
+    {
+      "coverage_random": 0.9606741573033708,
+      "coverage_scaffold_safe": 0.8192090395480226,
+      "gap_scaffold_minus_random": -0.1414651177553482,
+      "n_test_random": 178,
+      "n_test_scaffold_safe": 177,
+      "scaffold_overlap_train_pool_vs_test": 0,
+      "seed": 59
+    }
+  ],
+  "falsification_tests": {
+    "F1_wilcoxon_signed_rank_scaffold_lt_random": {
+      "alpha": 0.05,
+      "p_value": 1.0341837196269557e-09,
+      "refutes": true,
+      "statistic": 101.0
+    },
+    "F2_fraction_draws_below_floor": {
+      "fraction_below_floor": 0.55,
+      "n_below_floor": 33,
+      "n_seeds": 60,
+      "refutes": true,
+      "threshold": 0.25
+    },
+    "F3_bootstrap_ci_mean_coverage_excludes_nominal": {
+      "ci_95_lower": 0.8330378666737983,
+      "ci_95_upper": 0.888817616402816,
+      "n_bootstrap": 10000,
+      "nominal_target": 0.95,
+      "refutes": true
+    }
+  },
+  "featurization": {
+    "additional_features": [
+      "log10(molecular_weight)"
+    ],
+    "morgan_bits": 512,
+    "morgan_radius": 2,
+    "scaler": "NONE (RF is scale-invariant, matches KPI's fitted_or_physical_model_artifact)"
+  },
+  "n_seeds": 60,
+  "rf_kwargs": {
+    "max_depth": 10,
+    "n_estimators": 300,
+    "random_state": 0
+  },
+  "run_type": "AUDIT_ONLY falsification attack, N=60 scaffold-disjoint Monte Carlo probe of the RF-ML split-conformal sibling KPI (never previously scaffold-tested)",
+  "study_id": "amphora-tolerance-robustness-rf-ml-scaffold-monte-carlo-conformal-v1",
+  "summary_stats": {
+    "coverage_random_mean": 0.9657303370786517,
+    "coverage_random_median": 0.9719101123595506,
+    "coverage_scaffold_safe_max": 0.9970059880239521,
+    "coverage_scaffold_safe_mean": 0.862070209834277,
+    "coverage_scaffold_safe_median": 0.8822714853452558,
+    "coverage_scaffold_safe_min": 0.4693396226415094,
+    "coverage_scaffold_safe_std": 0.11174071818272806,
+    "gap_mean": -0.1036601272443747,
+    "gap_median": -0.0830698892037588,
+    "gap_std": 0.11321787634015894
+  },
+  "target_test_n_fixed_across_draws": 177,
+  "theory_references": [
+    "Bemis GW, Murcko MA (1996) J. Med. Chem. 39(15):2887-2893 -- generic scaffold definition",
+    "Papadopoulos H, Proedrou K, Vovk V, Gammerman A (2002) ECML -- split-conformal prediction",
+    "Breiman L (2001) Machine Learning 45:5-32 -- Random Forests",
+    "Wilcoxon F (1945) Biometrics Bull 1(6):80-83 -- signed-rank test",
+    "Efron B, Tibshirani RJ (1993) An Introduction to the Bootstrap, Chapman & Hall -- percentile bootstrap CI"
+  ],
+  "verdict": {
+    "overall": "CLAIM_REFUTED",
+    "rationale": "At least one pre-registered falsification test (F1/F2/F3) triggered for the RF-ML base predictor split-conformal marginal coverage claim under scaffold-disjoint (non-exchangeable) resampling of the SAME openpoly Tg corpus the KPI's own random-split evaluation used."
+  }
+}

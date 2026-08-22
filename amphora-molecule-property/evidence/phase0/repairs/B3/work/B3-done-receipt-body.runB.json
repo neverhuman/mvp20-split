@@ -1,0 +1,958 @@
+{
+  "acceptance": {
+    "canonical_command": "P=/home/ubuntu/.local/share/amphora/rdkit-2026.03.2; export RDKIT_INCLUDE_DIR=$P/include/rdkit RDKIT_LIB_DIR=$P/lib BOOST_INCLUDE_DIR=$P/include LD_LIBRARY_PATH=$P/lib; flock -w 300 .cron.lock ~/.cargo/bin/cargo test --workspace --locked --features rdkit",
+    "result": "cargo test --workspace --locked --features rdkit --no-fail-fast: 1 failing test workspace-wide, PRE-EXISTING and unrelated to B3 -- phase0::tests::source_ledger_historical_movement_and_status_are_read_only (amphora-cli/src/phase0.rs:3217, status[\"phase0_count\"] observed 9, expected 16). Proof of independence: the identical failure reproduces byte-for-byte with amphora-molecule-property/docs/mission.md and evidence/phase0/kpis/RETRACTION-INDEX.md reverted to their pre-repair HEAD bytes (git stash push limited to exactly those two paths, mission.md sha256 d7488f02f94c3349f4a00e1201bd08f22a69ffdd475998ecefcbf58950105d89), then restored. Root cause is the open result.v1.json RUNTIME-vs-MODULE-HARNESS schema-era reconciliation item: portfolio_status_with_replays derives each row from evidence/phase0/benchmark/result.v1.json .first_replay, and modules whose result.v1.json is in the other schema era fall back to scientific_passed=false. B3 touches no .rs file, no result.v1.json, no KPI receipt, and no mission front-matter. All other targets pass (amphora-cli bin: 51 passed / 1 failed; every other test binary: 0 failed). No governance test regressed."
+  },
+  "action": "sweep amphora-molecule-property/docs/mission.md for every narrative claim contradicted by the module's signed refutation/retraction receipts (W3+C8 dielectric, C7 Tg/density cross-corpus, W7 multi-target macro-bisection, W8 Van Krevelen ridge Y_gi admissibility), replace each with the corrected position quoted from the receipt bytes and citing the refuting receipt inline, then re-attack by grepping the stale strings to zero and proving the front-matter byte-identical",
+  "all_gates_passed": true,
+  "authoritative_corrected_positions_quoted_from_receipt_bytes": {
+    "dielectric_clean_subset_numbers_reverified_from_receipt": {
+      "constraint": "eps_static >= eps_infinity = n_measured^2 (Frohlich 1949 Ch.2 / Debye 1929, model-independent thermodynamic inequality)",
+      "fraction_admissible": 0.10511627906976745,
+      "ml": {
+        "MAE": 13.056624833276937,
+        "R2": -0.02625668447651175
+      },
+      "n_calib": 22,
+      "n_test": 24,
+      "n_train": 67,
+      "paired_bootstrap_physics_minus_ml_mae_ci90_includes_zero": true,
+      "physically_valid_rows": 113,
+      "physics": {
+        "MAE": 19.887546403521394,
+        "R2": -1.0405349777711903
+      },
+      "source": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+      "source_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+      "stack": {
+        "MAE": 14.522128739742584,
+        "R2": -0.04820763516393378
+      },
+      "total_radonpy_dielectric_rows": 1075,
+      "violation_rows": 962
+    },
+    "dielectric_constant_module_level": {
+      "quoted_from": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json -> founder_f8_panel_row_text.dielectric_constant",
+      "quoted_from_sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+      "verbatim": "NO COMPETENT MODEL -- label integrity failure (89.5% of RadonPy ground-truth violates eps_static>=n^2); on the n=113 physically-valid subset all of {physics MAE 19.9 R2 -1.04, ML MAE 13.1 R2 -0.03, stack MAE 14.5 R2 -0.05} fail to beat the test-set mean. Do not report a point estimate."
+    },
+    "dielectric_prior_numbers_withdrawn": {
+      "quoted_from": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+      "quoted_from_sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b",
+      "verbatim": "The contaminated-population numbers previously presented as representative dielectric-ML skill (mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json overall R2=0.6991 / RadonPy-slice R2=0.7001; external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json R2=0.0248 evaluated against the same 89.5%-corrupted RadonPy target column; C8 fire 1's full-population dielectric row R2=0.6427) are WITHDRAWN as evidence of genuine chemistry-to-dielectric-constant predictive skill. They remain on disk for audit-trail completeness only and MUST NOT be cited in any founder-facing or KPI-surface summary as a positive result."
+    },
+    "tg_cross_corpus": {
+      "degradation_factor_A_openpoly_to_polyuniverse": 6.664730972378266,
+      "degradation_factor_B_polyuniverse_to_openpoly": 16.59532571140167,
+      "direction_A_mae_K": 253.58008302058136,
+      "direction_A_r2": -92.93916993212326,
+      "direction_B_mae_K": 231.65066270670428,
+      "direction_B_r2": -6.79936550224655,
+      "source": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+      "source_sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+      "verdict": "REFUTED"
+    },
+    "van_krevelen_ridge_ygi": {
+      "n_groups": 24,
+      "n_groups_with_gt50pct_relative_deviation_from_published": 13,
+      "n_sign_flipped_vs_published_positive_baseline": 2,
+      "sign_flipped_groups": [
+        {
+          "Y_fitted_K_g_per_mol": -3125.1482313108504,
+          "Y_published_K_g_per_mol": 2000,
+          "group": "vinyl_CH2",
+          "n_train_polymers_with_group": 31
+        },
+        {
+          "Y_fitted_K_g_per_mol": -2843.550181839689,
+          "Y_published_K_g_per_mol": 5500,
+          "group": "nitrile",
+          "n_train_polymers_with_group": 124
+        }
+      ],
+      "source": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+      "source_sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed",
+      "spearman_rho_n_train_vs_abs_relative_deviation": -0.5231260000976025,
+      "verdict": "REFUTED"
+    }
+  },
+  "authority": "AUDIT_ONLY",
+  "ceiling": "AUDIT_ONLY prose-surface repair of docs/mission.md narrative claims. Does not alter any KPI receipt, signed artifact, locked fixture, benchmark lock, manifest, honesty ceiling, authority ceiling, the falsification ledger, or the mission front-matter. Corrects what the module ADVERTISES to match what its signed receipts ESTABLISH.",
+  "date": "2026-08-04",
+  "flips_scientific_readiness": false,
+  "frontmatter_invariance": {
+    "byte_identical": true,
+    "front_matter_sha256_after": "696de56f52698915dfda89d45a85010d2053f0ba03e108338096653ecc13be5c",
+    "front_matter_sha256_before": "696de56f52698915dfda89d45a85010d2053f0ba03e108338096653ecc13be5c",
+    "json_parse_equal": true,
+    "method": "extract the leading '---\\n<json>\\n---\\n' block from the pre-repair copy (/tmp/b3_mission.before.md) and the post-repair live file, compare raw bytes and, independently, json.loads() equality of the front-matter object"
+  },
+  "gates": {
+    "all_inline_cited_paths_resolve_on_disk": true,
+    "dielectric_wording_quoted_verbatim_from_receipt": true,
+    "every_recorded_new_prose_present_in_live_file": true,
+    "every_recorded_old_prose_present_in_pre_repair_file": true,
+    "every_repair_cites_a_refuting_receipt_inline": true,
+    "front_matter_byte_identical": true,
+    "no_standing_result_falsely_retracted": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "two_replay_byte_stable_this_receipt": true,
+    "w3_retraction_list_pin_still_matches_disk": true,
+    "zero_stale_strings_remain": true
+  },
+  "generated_on_host": "xbabe2",
+  "honest_finding_correcting_the_repair_brief": {
+    "brief_asserted": "The B3 item brief stated the dielectric ML result advertised in mission.md -- 'REAL POSITIVE lift', 'R2 +0.66', 'MAE ~0.40 eps_r' -- was RETRACTED.",
+    "receipt_bytes_say": "Those three numbers belong to evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json (sha256 cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139), which W3 dispositions NOT_RETRACTED_LABELS_ADMISSIBLE and R-A09 records as STANDS. OpenPoly's own dielectric column has 0/295 admissibility violations; the 89.5% label defect is isolated to RadonPy PI1070. The two RETRACTED dielectric KPIs (external-validation OpenPoly->RadonPy, and mixed-openpoly-radonpy conformal) have NO prose presence in mission.md.",
+    "repair_taken": "the within-OpenPoly measurements are preserved verbatim and re-scoped, NOT deleted or falsely marked retracted; the capability/portfolio claims are replaced with the receipt's own founder-panel wording. Falsely retracting a standing result would itself be a receipt-contradicting edit.",
+    "what_was_actually_stale": "the module-/portfolio-LEVEL dielectric CAPABILITY claims built on those within-corpus numbers -- 'Directly delivers the coating IP prediction capability for POLYMER DIELECTRIC CONSTANT', 'amphora-molecule-property can now offer polymer dielectric constant prediction ... Directly applicable to coating chemistry decisions for electrical-insulation applications', and the portfolio-wide roll-up citing 'dielectric R2 +0.66'. Those contradict C8 fire 3's consolidated NO COMPETENT MODEL row and W3's prior_numbers_withdrawn."
+  },
+  "human_review_performed": false,
+  "modifies_benchmark_lock": false,
+  "modifies_existing_receipts": false,
+  "modifies_falsification_ledger": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_mission_frontmatter": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "organizational_independence_asserted": false,
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "prose_repairs": [
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S-A",
+      "new_prose": "optimizer, or product-performance authority; interval boundaries are\nmarginal not conditional; Phase-1 would require wet-lab Tg validation\non formulations sampled from the tested AD interior and a cross-\ndataset transfer test to an independent experimental epoxy Tg dataset.\n\nCORRECTED SCOPE (C7). That cross-dataset transfer test has since been run and\nFAILED. Training on OpenPoly experimental Tg and cold-predicting Polyuniverse\nEpoxy MD Tg degrades MAE 6.66x; the reverse direction degrades 16.60x; both\ndirections are anti-predictive (R2 -92.94 and -6.80, worse than a\npredict-the-training-median null) because the two corpora occupy non-overlapping\nTg ranges (medians 346.3 K vs 117.8 K) and a bagged-tree RF cannot extrapolate\npast its training-label range. Verdict CLAIM_REFUTED, receipt\n`benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json`.\nThese coverage and applicability-domain numbers therefore hold within the\nPolyuniverse Epoxy computed corpus only; cross-corpus transfer is refuted.\n`evidence/phase0/kpis/RETRACTION-INDEX.md`\nrecords this KPI as STANDS-WITHIN-CORPUS-ONLY.\n",
+      "new_prose_sha256": "0b85d038ba683842e3a6239727dba6852e6f07fe43b48301ca07e6012c911024",
+      "old_prose": "optimizer, or product-performance authority; interval boundaries are\nmarginal not conditional; Phase-1 would require wet-lab Tg validation\non formulations sampled from the tested AD interior and a cross-\ndataset transfer test to an independent experimental epoxy Tg dataset.\n",
+      "old_prose_line_range_in_pre_repair_file": "133-142",
+      "old_prose_sha256": "1ccfa2c47087345f99d4db6fada6c28a974ee1bd5744e1e6a92cb7d51f58d1e7",
+      "rationale": "the cross-dataset transfer test this claim scope defers to Phase-1 has since been run and refuted",
+      "refuted_by": [
+        "C7_FINAL_TG_DENSITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C7_FINAL_TG_DENSITY": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+      },
+      "section": "Polyuniverse Epoxy Tg conformal + AD - claim scope"
+    },
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S-B",
+      "new_prose": "supervised-ML only \u2014 no physical group-contribution (Van Krevelen,\nBicerano) baseline is included, which would be a Phase-1 extension. It\ngrants no batch-release, manufacturing-qualification, optimizer, or\nproduct-performance authority. Within RadonPy/Polyuniverse chemotype only;\ncross-corpus transfer of any Tg model in this module is refuted, see\n`benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json`;\nstatus STANDS-WITHIN-CORPUS-ONLY in `evidence/phase0/kpis/RETRACTION-INDEX.md`.\n",
+      "new_prose_sha256": "b7bdbfa91d55d1a4ee5d882d85ef0a4e25e8074116349191e668e0da15193561",
+      "old_prose": "supervised-ML only \u2014 no physical group-contribution (Van Krevelen,\nBicerano) baseline is included, which would be a Phase-1 extension. It\ngrants no batch-release, manufacturing-qualification, optimizer, or\nproduct-performance authority.\n",
+      "old_prose_line_range_in_pre_repair_file": "204-210",
+      "old_prose_sha256": "41abba817f0b2249a7606e7203f72cb317ce24ac6929df1037434d36620ede83",
+      "rationale": "index status STANDS-WITHIN-CORPUS-ONLY must be disclosed in prose",
+      "refuted_by": [
+        "C7_FINAL_TG_DENSITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C7_FINAL_TG_DENSITY": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+      },
+      "section": "named-baseline head-to-head on Polyuniverse Epoxy Tg - claim scope"
+    },
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S-C",
+      "new_prose": "Claim scope: this KPI documents ML value-add over a **simplified 18-group\nVan Krevelen physical baseline** on Polyuniverse Epoxy 1M chemistry\nonly. It does NOT claim ML beats the full Bicerano 40-group table\n(which would need Phase-1 implementation), nor a chemistry-aware graph\nneural network baseline (polyBERT, Chemprop). It grants no batch-release,\nmanufacturing-qualification, optimizer, or product-performance authority.\nWithin Polyuniverse Epoxy chemotype only; cross-corpus transfer refuted, see\n`benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json`;\nstatus STANDS-WITHIN-CORPUS-ONLY in `evidence/phase0/kpis/RETRACTION-INDEX.md`.\n",
+      "new_prose_sha256": "e406a2c7149f6f633dc6a4a9d4e336e2cb91f2fdd0e66176467f178fe89d40d8",
+      "old_prose": "Claim scope: this KPI documents ML value-add over a **simplified 18-group\nVan Krevelen physical baseline** on Polyuniverse Epoxy 1M chemistry\nonly. It does NOT claim ML beats the full Bicerano 40-group table\n(which would need Phase-1 implementation), nor a chemistry-aware graph\nneural network baseline (polyBERT, Chemprop). It grants no batch-release,\nmanufacturing-qualification, optimizer, or product-performance authority.\n",
+      "old_prose_line_range_in_pre_repair_file": "283-288",
+      "old_prose_sha256": "ad0b94115a4b66fbb93d1170d07275d998b58ba4a80f588dc1b3510bfab441f1",
+      "rationale": "index status STANDS-WITHIN-CORPUS-ONLY must be disclosed in prose",
+      "refuted_by": [
+        "C7_FINAL_TG_DENSITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C7_FINAL_TG_DENSITY": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+      },
+      "section": "Van Krevelen physical baseline vs ML - claim scope"
+    },
+    {
+      "disposition": "REFUTED_CLAIM_REPLACED",
+      "id": "S1",
+      "new_prose": "**AGGREGATE-MAE FINDING \u2014 the structural claim built on it is REFUTED (W8, below)**: Ridge Y_gi fit BEATS the published-values baseline by **32.6 K** on held-out scaffold-safe test polymers, reaching Bicerano-level *aggregate* MAE. That is an aggregate-error statement within the Polyuniverse Epoxy MD-simulated corpus and nothing more: it does NOT establish that the fitted 24-group table is physically correct. The physical-admissibility audit\n`evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`\n(W8, verdict `REFUTED`) shows 2 of 24 fitted coefficients are sign-reversed against a published table in which 0/24 values are negative. `evidence/phase0/kpis/RETRACTION-INDEX.md` records this KPI as REFUTED.\n",
+      "new_prose_sha256": "a458438925a6c0f45516c94b6a6d4e81bcd788996d6f34ff1ef613595e255f1b",
+      "old_prose": "**MAJOR POSITIVE FINDING**: Ridge Y_gi fit BEATS the published-values baseline by **32.6 K** on held-out scaffold-safe test polymers, reaching Bicerano-level accuracy.\n",
+      "old_prose_line_range_in_pre_repair_file": "733",
+      "old_prose_sha256": "3225a8e8925edc571482931ecc88f8f2b43c8385641e91a49ac5b57112e3b99e",
+      "rationale": "aggregate MAE stands; the structural claim it was used to support is refuted",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "Ridge Y_gi fit on 807 Polyuniverse Epoxy polymers - headline"
+    },
+    {
+      "disposition": "REFUTED_CLAIM_REPLACED",
+      "id": "S2",
+      "new_prose": "1. **CORRECTED \u2014 \"the 24-group STRUCTURE is CONFIRMED CORRECT at scale\" is REFUTED**: the aggregate fit numbers stand as measured (Train MAE 22.6 K, Test MAE 22.0 K, 0.6 K train/test gap, so the fitted values do interpolate to unseen scaffold-safe test polymers *within this corpus*), but structural correctness does not follow from aggregate MAE. Per\n`evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`\n(W8, verdict `REFUTED`, pre-registered criterion \">=1 of 24 fitted Y_gi has sign opposite to its published (100% positive) counterpart\"), 2 of 24 fitted Y_gi are SIGN-REVERSED: `vinyl_CH2` fitted **-3125.15** vs published **+2000** K.g/mol, and `nitrile` fitted **-2843.55** vs published **+5500** K.g/mol. The receipt's own words: \"This is not a magnitude disagreement ... it is a directional physical contradiction that falsifies the claim that the fit 'confirms the 24-group STRUCTURE is correct.'\"\n",
+      "new_prose_sha256": "27355d6f3d9a21c2dd92f143b3f8e069c9d587fb897fa4548f5e87696919d6dd",
+      "old_prose": "1. **The 24-group STRUCTURE is CONFIRMED CORRECT at scale**: Train MAE 22.6 K, Test MAE 22.0 K \u2014 the 0.6 K generalization gap is negligible. Ridge-fitted Y_gi values robustly generalize to unseen scaffold-safe test polymers.\n",
+      "old_prose_line_range_in_pre_repair_file": "771",
+      "old_prose_sha256": "3621d9d1a825baa526083ef7de60246a229bcc7801056e82671ed92f8a1f29ce",
+      "rationale": "2/24 fitted Y_gi sign-reversed against a 0/24-negative published table",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "Ridge Y_gi fit on 807 - SCIENTIFIC RESOLUTION item 1"
+    },
+    {
+      "disposition": "REFUTED_CLAIM_REPLACED",
+      "id": "S3",
+      "new_prose": "2. **CORRECTED \u2014 \"the prior under-determination hypothesis is RESOLVED\" holds only for common-support groups**: n_train = 807 does remove the n=15 LOO-CV catastrophe (MAE 33 K -> 121 K) for groups carried by most training polymers, but it does NOT resolve under-determination for rare ones. Both sign-flipped coefficients sit in the bottom third of training support (`vinyl_CH2` n_train=31, rank 7/24; `nitrile` n_train=124, rank 9/24) and the Spearman correlation between n_train and |ratio_fitted_over_published - 1| across all 24 groups is **-0.523** (more support, less deviation) \u2014 the same under-determination mechanism the 15-polymer receipt diagnosed. W8 states the claim lock `prior_ridge_receipt_under_determination_hypothesis_now_resolved` \"is therefore false for the rare-group coefficients\". Resolution must be scope-limited to groups with n_train of roughly 500 or more. Receipt:\n`evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`.\n",
+      "new_prose_sha256": "ad9a1f271a46f59a566a943538338afc68928083cc055d973fcc8ece80f2ac6b",
+      "old_prose": "2. **The prior \"under-determination\" hypothesis is RESOLVED**: With n_train = 807 polymers (vs prior n=15), the calibration system is now over-determined; the LOO-CV catastrophe (MAE jumped from 33 K to 121 K on n=15) does not occur here.\n",
+      "old_prose_line_range_in_pre_repair_file": "773",
+      "old_prose_sha256": "772f32fd8e27faead4a39b705229c6a0d3386313b15df26a1e76eced287307a7",
+      "rationale": "under-determination unresolved for rare groups; Spearman rho -0.523",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "Ridge Y_gi fit on 807 - SCIENTIFIC RESOLUTION item 2"
+    },
+    {
+      "disposition": "REFUTED_CLAIM_REPLACED",
+      "id": "S4",
+      "new_prose": "4. **CORRECTED \u2014 fitted Y_gi values are NOT uniformly chemistry-plausible**: ratios do cluster around published values for high-frequency (high-support) groups, but **13 of 24 (54%)** deviate by more than 50% in magnitude from published, and **2 of 24 are physically inadmissible** \u2014 negative Y_gi in a theory whose own published table asserts every group makes a positive contribution to Tg. The low-support deviations therefore are not benign finite-sample noise; they include outright sign reversals. Receipt:\n`evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`\n(W8, verdict `REFUTED`).\n",
+      "new_prose_sha256": "a200b42b159c343eb2a74d07f96338b23bcdcd12a29c3683924b5471f364b3f8",
+      "old_prose": "4. **Fitted Y_gi values are chemistry-plausible**: Ratios cluster around published values for high-frequency groups; deviations for low-frequency groups reflect finite-sample noise, not structural mismatch.\n",
+      "old_prose_line_range_in_pre_repair_file": "777",
+      "old_prose_sha256": "febb5f89a7de5f4400912f62fd8f1ed64d7bbbcb7a68bf5670415a0771945eb3",
+      "rationale": "13/24 deviate >50%; 2/24 physically inadmissible - not benign finite-sample noise",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "Ridge Y_gi fit on 807 - SCIENTIFIC RESOLUTION item 4"
+    },
+    {
+      "disposition": "REFUTED_CLAIM_REPLACED",
+      "id": "S5",
+      "new_prose": "**Portfolio implication (CORRECTED)**: this receipt shows a 24-group Van Krevelen calibration can reach Bicerano-level *aggregate* MAE on MD-simulated Polyuniverse Epoxy data given adequate training data. It does NOT prove the group structure is correct, and unconstrained Ridge is shown to produce physically inadmissible (negative) coefficients wherever group support is thin. Phase-1 must therefore (a) constrain the fit to non-negative Y_gi, matching the published theory's positivity requirement, or acquire enough polymers containing the under-supported groups (`vinyl_CH2` n=31, `nitrile` n=124) to determine them, and (b) acquire 100+ EXPERIMENTAL polymer Tg values (Bicerano 2002 database, POLY-DB) to re-run this calibration on the target experimental context. Refuting receipt:\n`evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`.\n",
+      "new_prose_sha256": "02c667783b5d3f618a82295c2317b0172fec25b064f9ea22c6c5e09a83d477b1",
+      "old_prose": "**Portfolio implication**: For Phase-1, this receipt proves that a 24-group Van Krevelen calibration can achieve Bicerano-level MAE with adequate training data. The next Phase-1 gate must acquire 100+ EXPERIMENTAL polymer Tg values (Bicerano 2002 database, POLY-DB) to re-run this calibration on the target experimental context.\n",
+      "old_prose_line_range_in_pre_repair_file": "779",
+      "old_prose_sha256": "9309c64c95ce36ac526acd72d89901b158f5b65e7c429e5d2c19b48fdc6b2c3b",
+      "rationale": "'proves' overstated; Phase-1 remediation from the receipt's own followups substituted",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "Ridge Y_gi fit on 807 - portfolio implication"
+    },
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S6",
+      "new_prose": "Claim scope: this KPI documents Ridge Y_gi calibration on n=807\nMD-simulated Polyuniverse Epoxy polymers reaching Bicerano-level test\nMAE. Grants no batch-release, manufacturing-qualification, optimizer,\nor product-performance authority. Fitted Y_gi values are calibrated for\nthe MD-simulated context of Polyuniverse Epoxy; published Y_gi remain\ncorrect for experimental-Tg applications. The KPI's own claim locks\n`24_group_structure_confirmed_correct_at_scale` and\n`prior_ridge_receipt_under_determination_hypothesis_now_resolved` are REFUTED\nas stated and must be read as scope-limited to groups with n_train of roughly\n500 or more, per\n`evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`.",
+      "new_prose_sha256": "c640e34c918b74207e5af0fedef74f3654deb78a589d56d82db8f328779da581",
+      "old_prose": "Claim scope: this KPI documents Ridge Y_gi calibration on n=807\nMD-simulated Polyuniverse Epoxy polymers reaching Bicerano-level test\nMAE. Grants no batch-release, manufacturing-qualification, optimizer,\nor product-performance authority. Fitted Y_gi values are calibrated for\nthe MD-simulated context of Polyuniverse Epoxy; published Y_gi remain\ncorrect for experimental-Tg applications.",
+      "old_prose_line_range_in_pre_repair_file": "786-791",
+      "old_prose_sha256": "2c8217a59af570ec2294bae34f63aab722870b39ba9d5cb369dd09d8014e80de",
+      "rationale": "the two refuted claim locks named explicitly",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "Ridge Y_gi fit on 807 - claim scope"
+    },
+    {
+      "disposition": "SCOPED_NO_INLINE_PATH_NEEDED",
+      "id": "S7",
+      "new_prose": "### Empirical benchmark result \u2014 OpenPoly dielectric constant ML baseline (within-OpenPoly-corpus lift, n=295; module-level dielectric position: NO COMPETENT MODEL)\n",
+      "new_prose_sha256": "32080ac274828256bd9ef90aa2aa5b9fe95b59a55da2cd3dd13e60171260711f",
+      "old_prose": "### Empirical benchmark result \u2014 OpenPoly dielectric constant ML baseline (REAL POSITIVE lift, n=295)\n",
+      "old_prose_line_range_in_pre_repair_file": "885",
+      "old_prose_sha256": "da6151f26ebccfdb2e3c1e58b8fee3779195ca1eb6618b3415eeef0bfeb8ab48",
+      "rationale": "heading re-scoped; both receipt paths cited in the notice block immediately below it",
+      "refuted_by": [
+        "W3_DIELECTRIC_RETRACTION",
+        "C8_FIRE3_CONSOLIDATED"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+        "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C8_FIRE3_CONSOLIDATED": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+        "W3_DIELECTRIC_RETRACTION": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+      },
+      "section": "OpenPoly dielectric constant ML baseline - heading"
+    },
+    {
+      "disposition": "RETRACTED_CLAIM_REPLACED",
+      "id": "S8",
+      "new_prose": "> **RETRACTION / SCOPE NOTICE \u2014 dielectric constant.** The module's portfolio-level\n> dielectric-constant claim is RETRACTED. The authoritative module position is the\n> consolidated founder-panel row, quoted verbatim from\n> `benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json`\n> (`founder_f8_panel_row_text.dielectric_constant`):\n>\n> > \"NO COMPETENT MODEL -- label integrity failure (89.5% of RadonPy ground-truth\n> > violates eps_static>=n^2); on the n=113 physically-valid subset all of\n> > {physics MAE 19.9 R2 -1.04, ML MAE 13.1 R2 -0.03, stack MAE 14.5 R2 -0.05}\n> > fail to beat the test-set mean. Do not report a point estimate.\"\n>\n> The constraint is model-independent: eps_static >= eps_infinity = n_measured^2\n> (Frohlich 1949 Ch.2 / Debye 1929). 962 of 1075 RadonPy PI1070\n> `static_dielectric_const` rows violate it; only 113 rows (10.5%) are admissible.\n> On that clean subset the zero-contamination retrain gives physics MAE 19.8875\n> R2 -1.0405, ML MAE 13.0566 R2 -0.0263, stack MAE 14.5221 R2 -0.0482, and the\n> paired-bootstrap 90% CI of (physics MAE - ML MAE) includes zero\n> (`benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json`).\n>\n> What SURVIVES is narrower than this section originally advertised. The superseding\n> retraction receipt\n> `evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json`\n> (campaign item W3, verdict `CLAIM_REFUTED`) dispositions THIS KPI \u2014\n> `evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json`,\n> SHA-256 `cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139` \u2014\n> as `NOT_RETRACTED_LABELS_ADMISSIBLE`, because it trains and evaluates entirely on\n> OpenPoly's own dielectric column, which the same audit found to have 0/295\n> admissibility violations. Its numbers below therefore stand AS MEASURED **within the\n> OpenPoly literature chemotype only**, and per that receipt \"must not be read as\n> evidence about RadonPy-derived dielectric predictions\".\n>\n> The module's two other dielectric KPIs ARE retracted by the same receipt and by\n> the repo-root `logs/claims-requiring-retraction.jsonl` lines 1-2:\n> `evidence/phase0/kpis/external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json`\n> (R2 0.0248 scored against the 89.5%-inadmissible target) and\n> `evidence/phase0/kpis/mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json`\n> (test R2 0.6991, RadonPy-slice R2 0.7001). Per W3 those numbers \"are WITHDRAWN as evidence of genuine\n> chemistry-to-dielectric-constant predictive skill ... and MUST NOT be cited in any\n> founder-facing or KPI-surface summary as a positive result.\" See also\n> `evidence/phase0/kpis/RETRACTION-INDEX.md`\n> (section R-A09: both KPIs RETRACTED, this one STANDS).\n\nThis section records a WITHIN-CORPUS ML baseline for POLYMER DIELECTRIC CONSTANT on the\nOpenPoly literature corpus. It does NOT deliver a deployable coating-IP dielectric\nprediction capability: every cross-corpus dielectric evaluation this module attempted has\nbeen retracted, so applicability to marine electrical enclosures, cable coatings, or\ndielectric layers is NOT established.\n",
+      "new_prose_sha256": "4e80fec50d9e414035f22b0cd27a1928366a6d53da79c3867f390300b01bcc99",
+      "old_prose": "Directly delivers the coating IP prediction capability for POLYMER DIELECTRIC\nCONSTANT \u2014 a real electrical-insulation property directly relevant to marine\nelectrical enclosures, cable coatings, and dielectric layers.\n",
+      "old_prose_line_range_in_pre_repair_file": "887-889",
+      "old_prose_sha256": "7cee56f42c5e52400219a13ec87b67bca3d2b5d8bebe329001f857836415db1d",
+      "rationale": "capability-delivery claim replaced by the receipt's own founder-panel NO COMPETENT MODEL wording plus the explicit NOT_RETRACTED_LABELS_ADMISSIBLE scoping for the n=295 numbers",
+      "refuted_by": [
+        "W3_DIELECTRIC_RETRACTION",
+        "C8_FIRE3_CONSOLIDATED",
+        "C8_FIRE2_CLEAN_SUBSET"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+        "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+        "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C8_FIRE2_CLEAN_SUBSET": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+        "C8_FIRE3_CONSOLIDATED": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+        "W3_DIELECTRIC_RETRACTION": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+      },
+      "section": "OpenPoly dielectric constant ML baseline - lede / capability claim"
+    },
+    {
+      "disposition": "SCOPED_NO_INLINE_PATH_NEEDED",
+      "id": "S9",
+      "new_prose": "**WITHIN-CORPUS POSITIVE FINDING (OpenPoly n=295 only; see the retraction/scope notice\nabove)**: Random Forest / HistGBM / Ridge on Morgan\n",
+      "new_prose_sha256": "0a2cb6d82df6e8d3252f5180773e41c00b9c0c0ef2004b2252c83b713bec4020",
+      "old_prose": "**MAJOR POSITIVE FINDING**: Random Forest / HistGBM / Ridge on Morgan\n",
+      "old_prose_line_range_in_pre_repair_file": "905",
+      "old_prose_sha256": "0aa9255a6f0cc9963db141dcf30c10b3090c070a561f3b2688503ae1dd8f1146",
+      "rationale": "banner re-scoped to within-OpenPoly; points at the notice block that carries the citations",
+      "refuted_by": [
+        "W3_DIELECTRIC_RETRACTION"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W3_DIELECTRIC_RETRACTION": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+      },
+      "section": "OpenPoly dielectric constant ML baseline - finding banner"
+    },
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S10",
+      "new_prose": "1. **Within-corpus predictive skill (OpenPoly chemotype only)**: MAE 0.4040 \u03b5r units\n   means the model predicts dielectric constant within ~8.0% of the target range for\n   held-out OpenPoly scaffold families. Pearson r = +0.773 indicates strong\n   rank-correlation with published \u03b5r values. This is a within-corpus statement only \u2014\n   the module's only cross-corpus dielectric evaluations are RETRACTED and its\n   module-level position is \"NO COMPETENT MODEL -- label integrity failure\", see\n   `evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json`.\n",
+      "new_prose_sha256": "286571f4bef99889b3c5096a5201703ab16b1f237479cec7bb49e11767a7fa56",
+      "old_prose": "1. **REAL predictive capability**: MAE 0.4040 \u03b5r units means the model predicts\n   dielectric constant within ~8.0% of the target range for held-out scaffold families.\n   Pearson r = +0.773 indicates strong rank-correlation with published \u03b5r values.\n",
+      "old_prose_line_range_in_pre_repair_file": "938-940",
+      "old_prose_sha256": "e0e2e89c793c8c59fe3807ef57d657768c2e6a6dd76eeef29d5b3eb9459d79f1",
+      "rationale": "'REAL predictive capability' re-scoped to within-corpus predictive skill",
+      "refuted_by": [
+        "W3_DIELECTRIC_RETRACTION"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W3_DIELECTRIC_RETRACTION": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+      },
+      "section": "OpenPoly dielectric constant ML baseline - interpretation item 1"
+    },
+    {
+      "disposition": "RETRACTED_CLAIM_REPLACED",
+      "id": "S11",
+      "new_prose": "**Portfolio implication (CORRECTED \u2014 the original claim here is RETRACTED)**:\n`amphora-molecule-property` CANNOT offer polymer dielectric constant prediction as a\nportfolio capability. The authoritative module-level position, quoted verbatim from\n`benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json`\n(`founder_f8_panel_row_text.dielectric_constant`), is: \"NO COMPETENT MODEL -- label\nintegrity failure (89.5% of RadonPy ground-truth violates eps_static>=n^2); on the n=113\nphysically-valid subset all of {physics MAE 19.9 R2 -1.04, ML MAE 13.1 R2 -0.03, stack\nMAE 14.5 R2 -0.05} fail to beat the test-set mean. Do not report a point estimate.\"\nWhat remains citable is only the narrow measurement recorded above \u2014 MAE 0.4040 \u03b5r,\nholdout R\u00b2 +0.5649, LOSO-CV R\u00b2 +0.6591 \u2014 **within the OpenPoly literature chemotype\nonly**, whose labels pass their own admissibility control (0/295 violations), per\n`evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json`\ndisposition `NOT_RETRACTED_LABELS_ADMISSIBLE`. Cross-corpus dielectric transfer is\nretracted; applicability to electrical-insulation coating decisions is NOT established.\n",
+      "new_prose_sha256": "b1583e2f0514fcd81030c2af14eac3c792dcfea4dc19c6c6af797bed61c8a082",
+      "old_prose": "**Portfolio implication**: `amphora-molecule-property` can now offer polymer\ndielectric constant prediction with a defended MAE ~0.40 \u03b5r units on Morgan-\nfingerprint features. Directly applicable to coating chemistry decisions for\nelectrical-insulation applications.\n",
+      "old_prose_line_range_in_pre_repair_file": "956-959",
+      "old_prose_sha256": "e847bbef6b0c4eb44fa49e299558ece03c9f46224af11c5126f49653eb2adc47",
+      "rationale": "the headline stale claim; replaced with the receipt's verbatim founder-panel wording",
+      "refuted_by": [
+        "W3_DIELECTRIC_RETRACTION",
+        "C8_FIRE3_CONSOLIDATED"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+        "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C8_FIRE3_CONSOLIDATED": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+        "W3_DIELECTRIC_RETRACTION": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+      },
+      "section": "OpenPoly dielectric constant ML baseline - portfolio implication"
+    },
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S12",
+      "new_prose": "1. **Push #20 Ridge BEATS published Van Krevelen 1990 baseline by 20.9 K** (+22.9% relative) on an independent experimental dataset. The data-driven Y_gi calibration outperforms the textbook Y_gi even outside its MD-simulated training distribution. CORRECTED SCOPE: this is an aggregate-error comparison and does NOT vindicate the fitted 24-group table structurally \u2014 2 of the 24 coefficients being applied here (`vinyl_CH2`, `nitrile`) are sign-reversed and physically inadmissible per\n`evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`\n(W8, verdict `REFUTED`), so \"resolves the applicability-domain hypothesis\" must be read as scope-limited to the well-supported groups.\n",
+      "new_prose_sha256": "df29eb9f5fbc60ad941e85a4636f0001157c4a22d635f0d87b79c54544022545",
+      "old_prose": "1. **Push #20 Ridge BEATS published Van Krevelen 1990 baseline by 20.9 K** (+22.9% relative) on an independent experimental dataset. The data-driven Y_gi calibration outperforms the textbook Y_gi even outside its MD-simulated training distribution \u2014 RESOLVES the Push #20 Phase-1 hypothesis about applicability domain.\n",
+      "old_prose_line_range_in_pre_repair_file": "1102",
+      "old_prose_sha256": "84adc3f79c40fbcb5761ad0a677cde302a64538dc66cda416abdd024df76b5ee",
+      "rationale": "aggregate-error comparison; does not vindicate the fitted table structurally",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "external validation of Push #20 Ridge Y_gi - finding 1"
+    },
+    {
+      "disposition": "REFUTED_CLAIM_REPLACED",
+      "id": "S13",
+      "new_prose": "4. **Real rank correlation** (Pearson r = +0.264) shows the fitted 24-group table carries *some* ordinal Tg signal on experimental data. CORRECTED: it does not confirm the 24-group structure \u2014 that claim is REFUTED by\n`evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`\n\u2014 and r = +0.264 alongside MAE 70.42 K is a weak screening signal, not a predictor.\n",
+      "new_prose_sha256": "d86bee3f080efcd53412ffb1fffec680275f5e2f342b65cc528a4ea965065d8e",
+      "old_prose": "4. **Real rank correlation** (Pearson r = +0.264) confirms the 24-group structure captures ordinal Tg signal on experimental data \u2014 enough for coating-family screening even when absolute MAE is high.\n",
+      "old_prose_line_range_in_pre_repair_file": "1108",
+      "old_prose_sha256": "93f4a57a4c4e1f5f2c6bc723c1ffa7392f896a8f84bb24a1392e626004ed8922",
+      "rationale": "'confirms the 24-group structure' is exactly the claim W8 refutes",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "external validation of Push #20 Ridge Y_gi - finding 4"
+    },
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S14",
+      "new_prose": "- Confirms Push #20's Ridge Y_gi calibration has aggregate-error generalization value on\n  this dataset (MAE 70.42 K vs NULL median 71.39 K \u2014 a +1.0 K / +1.4% margin). CORRECTED:\n  it does NOT vindicate the fitted 24-group table structurally; 2 of its 24 coefficients are\n  sign-reversed and physically inadmissible, see\n  `evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json`.\n",
+      "new_prose_sha256": "a7fb4660add61cf42cf2d4924a7e7728bb6e74d1326d8929d6a301ec702624d7",
+      "old_prose": "- Confirms Push #20's Ridge Y_gi calibration has real generalization value.\n",
+      "old_prose_line_range_in_pre_repair_file": "1126",
+      "old_prose_sha256": "4a12ab54fba1892c31f8e14c046b2dbd6dfe24401bcf8dceb63e49c2b1234819",
+      "rationale": "'real generalization value' quantified (+1.0 K over NULL) and structurally caveated",
+      "refuted_by": [
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "refuting_receipt_sha256": {
+        "W8_VK_RIDGE_YGI_ADMISSIBILITY": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+      },
+      "section": "external validation of Push #20 Ridge Y_gi - portfolio bullet"
+    },
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S15",
+      "new_prose": "1. **ML delivers substantial lift over physics-Ridge on experimental Tg \u2014 within the\n   OpenPoly corpus only**: ML LOSO MAE 51.24 K vs physics-Ridge 70.42 K on SAME polymers\n   = +27.2% relative improvement. Direct empirical answer to red-team: on this\n   experimental data distribution, ML dominates the frozen physics-Ridge inference.\n   Within RadonPy/OpenPoly-corpus chemotype only; cross-corpus transfer is REFUTED, see\n   `benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json`\n   (overall_verdict `CLAIM_REFUTED`).\n\n2. **Portfolio priority (CORRECTED \u2014 scope-limited)**: within the OpenPoly\n   experimental-Tg distribution the ML pipeline (Morgan fingerprints + Random Forest /\n   HistGBM) outperforms physics-Ridge. This does NOT license it as a general coating Tg\n   predictor. Trained on OpenPoly experimental Tg (n=443) and cold-applied to\n   Polyuniverse Epoxy MD Tg it degrades **6.66x** (MAE 253.58 K, R\u00b2 -92.94); in reverse\n   it degrades **16.60x** (MAE 231.65 K, R\u00b2 -6.80); both directions are WORSE than a\n   predict-the-training-median null, i.e. anti-predictive, because the two corpora\n   occupy non-overlapping label ranges. The module's honest applicability domain for\n   this baseline is within-OpenPoly-corpus ONLY, and\n   `evidence/phase0/kpis/RETRACTION-INDEX.md`\n   records the KPI as STANDS-WITHIN-CORPUS-ONLY. Same receipt as above.\n\n3. **Positive R\u00b2 on rigorous LOSO-CV** confirms cross-*scaffold* generalization inside\n   the OpenPoly corpus. CORRECTED: it does not confirm cross-*corpus* generalization \u2014\n   that stronger claim was tested directly and refuted (C7, receipt cited above).\n",
+      "new_prose_sha256": "55490a1b59fdc017a7828a4ab56c1fa09d1210297454db6663fe4ee01dd9c469",
+      "old_prose": "1. **ML delivers substantial lift over physics-Ridge on experimental Tg**: ML LOSO\n   MAE 51.24 K vs physics-Ridge 70.42 K on SAME polymers = +27.2%\n   relative improvement. Direct empirical answer to red-team: on this experimental\n   data distribution, ML strictly dominates the frozen physics-Ridge inference.\n\n2. **Portfolio priority**: For coating Tg prediction on experimental targets, the\n   ML pipeline (Morgan fingerprints + Random Forest / HistGBM) should be the\n   primary predictor; physics-Ridge remains useful as a fast rank-order signal.\n\n3. **Positive R\u00b2 on rigorous LOSO-CV** confirms cross-scaffold generalization.\n",
+      "old_prose_line_range_in_pre_repair_file": "1195-1204",
+      "old_prose_sha256": "34a62daedc35fe908c161c96da587b8f90129c019d3b8824df7f0ec1cb56b1dc",
+      "rationale": "cross-corpus transfer refuted at 6.66x/16.60x, anti-predictive in both directions",
+      "refuted_by": [
+        "C7_FINAL_TG_DENSITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C7_FINAL_TG_DENSITY": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+      },
+      "section": "ML baseline on OpenPoly experimental Tg - interpretation items 1-3"
+    },
+    {
+      "disposition": "RETRACTED_CLAIM_REPLACED",
+      "id": "S16",
+      "new_prose": "4. **Portfolio-wide answer (CORRECTED)**: Push #23's dielectric LOSO-CV R\u00b2 +0.6591 may\n   only be cited scoped to the OpenPoly literature chemotype. The module's\n   portfolio-level dielectric position is \"NO COMPETENT MODEL -- label integrity\n   failure (89.5% of RadonPy ground-truth violates eps_static>=n^2)\", per\n   `evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json`\n   and `benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json`.\n   The Tg numbers in this section likewise hold **within the OpenPoly corpus only**\n   (cross-corpus transfer REFUTED at 6.66x/16.60x degradation,\n   `benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json`).\n   The module therefore has a within-OpenPoly-corpus Tg baseline with published-reference\n   MAE <= 50 K on ~59% of that corpus \u2014 not a general defended coating-IP Tg predictor.\n",
+      "new_prose_sha256": "73aeb6ddddda976c7e56f16833be3d3728c1547a907a331c455ff6018ac2c2e8",
+      "old_prose": "4. **Portfolio-wide answer**: Combined with Push #23 (dielectric R\u00b2 +0.66), Push\n   #24 (contact angle mixed), Push #25 (physics validation), and this push, the\n   `amphora-molecule-property` module now has a defended coating-IP Tg predictor\n   with published-reference MAE \u2264 50 K on ~59% of independent literature polymers.\n",
+      "old_prose_line_range_in_pre_repair_file": "1206-1209",
+      "old_prose_sha256": "7f8ceb80137adcc6f56a1c7284e594c1590fc09539c475b3f19e18b786452e1e",
+      "rationale": "rolls the retracted portfolio-level dielectric claim and the refuted cross-corpus Tg claim into one 'defended coating-IP predictor' sentence",
+      "refuted_by": [
+        "W3_DIELECTRIC_RETRACTION",
+        "C8_FIRE3_CONSOLIDATED",
+        "C7_FINAL_TG_DENSITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+        "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+        "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C7_FINAL_TG_DENSITY": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08",
+        "C8_FIRE3_CONSOLIDATED": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57",
+        "W3_DIELECTRIC_RETRACTION": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+      },
+      "section": "ML baseline on OpenPoly experimental Tg - portfolio-wide answer"
+    },
+    {
+      "disposition": "SCOPED_WITHIN_CORPUS_ONLY",
+      "id": "S17",
+      "new_prose": "Applicability domain restricted to the openpoly scaffold distribution \u2014 and, per C7's\ndirect cross-corpus test, to the OpenPoly corpus itself: transfer to an independent Tg\ncorpus is REFUTED\n(`benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json`).\nPhase-1 explicitly flags: extend to 1000+ experimental Tg polymers; add conformal\nprediction UQ; Bicerano 40-group physics baseline head-to-head; and re-test transfer on a\ncorpus whose Tg range overlaps the training range.",
+      "new_prose_sha256": "c63a93e55af6446937d9611da8780c866269f1863a51871078e88889eb81d639",
+      "old_prose": "Applicability domain restricted to the openpoly scaffold distribution. Phase-1\nexplicitly flags: extend to 1000+ experimental Tg polymers; add conformal\nprediction UQ; Bicerano 40-group physics baseline head-to-head.",
+      "old_prose_line_range_in_pre_repair_file": "1220-1222",
+      "old_prose_sha256": "e66edeeb53b503ee467babce97f7e5b37b4347e80dac3a1b62338180fa9d852e",
+      "rationale": "applicability domain extended from scaffold-level to corpus-level per C7",
+      "refuted_by": [
+        "C7_FINAL_TG_DENSITY"
+      ],
+      "refuting_receipt_paths": [
+        "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+      ],
+      "refuting_receipt_sha256": {
+        "C7_FINAL_TG_DENSITY": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+      },
+      "section": "ML baseline on OpenPoly experimental Tg - claim scope"
+    }
+  ],
+  "reattack": {
+    "every_stale_string_was_present_before": true,
+    "frontmatter_byte_identical": true,
+    "method": "re-read the live post-repair mission.md, count occurrences of every stale string in the pre-repair copy and in the post-repair file; require count_before >= 1 and count_after == 0 for each; independently recompute the front-matter sha256 on both",
+    "per_string": [
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "REAL POSITIVE lift, n=295"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "Directly delivers the coating IP prediction capability for POLYMER DIELECTRIC"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "can now offer polymer\ndielectric constant prediction with a defended MAE ~0.40"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "Directly applicable to coating chemistry decisions for\nelectrical-insulation applications."
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "1. **REAL predictive capability**"
+      },
+      {
+        "count_after": 0,
+        "count_before": 2,
+        "stale_string": "**MAJOR POSITIVE FINDING**"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "Combined with Push #23 (dielectric R\u00b2 +0.66)"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "The 24-group STRUCTURE is CONFIRMED CORRECT at scale**:"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "2. **The prior \"under-determination\" hypothesis is RESOLVED**"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "4. **Fitted Y_gi values are chemistry-plausible**"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "this receipt proves that a 24-group Van Krevelen calibration"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "2. **Portfolio priority**: For coating Tg prediction on experimental targets"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "ML strictly dominates the frozen physics-Ridge inference"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "3. **Positive R\u00b2 on rigorous LOSO-CV** confirms cross-scaffold generalization."
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "- Confirms Push #20's Ridge Y_gi calibration has real generalization value."
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "confirms the 24-group structure captures ordinal Tg signal"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "RESOLVES the Push #20 Phase-1 hypothesis about applicability domain."
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "Applicability domain restricted to the openpoly scaffold distribution. Phase-1"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "**Portfolio implication**: `amphora-molecule-property` can now offer polymer"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "**Portfolio implication**: For Phase-1, this receipt proves"
+      },
+      {
+        "count_after": 0,
+        "count_before": 1,
+        "stale_string": "reaching Bicerano-level accuracy."
+      }
+    ],
+    "stale_occurrences_after": 0,
+    "stale_occurrences_before": 22,
+    "stale_strings_checked": 21
+  },
+  "receipt_id": "b3-mission-prose-retraction-repair",
+  "receipts_cited": {
+    "C7_FINAL_TG_DENSITY": {
+      "path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+      "sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+    },
+    "C8_FIRE2_CLEAN_SUBSET": {
+      "path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+      "sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7"
+    },
+    "C8_FIRE3_CONSOLIDATED": {
+      "path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/c8_fire3_final_consolidated_receipt.v1.json",
+      "sha256": "c55b90201534ea4e68a4d475c501591ff51d112aca6a18c7a1ab2be6e4db6b57"
+    },
+    "RETRACTION_CLAIM_LIST": {
+      "path": "logs/claims-requiring-retraction.jsonl",
+      "sha256": "9fb68dde1d1eb8bc3057edbb3deed6361cfa08dea029985188e4d8b23b311404"
+    },
+    "RETRACTION_INDEX": {
+      "path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "sha256": "501fe8066e305fde547403830dbd9cba7d40b5d74561176a6d57f8caf253c16d"
+    },
+    "W3_DIELECTRIC_RETRACTION": {
+      "path": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+      "sha256": "0d4880c6452afb6d397bb9c3762630aded598063b8f7a579066c805479390b7b"
+    },
+    "W7_MULTITARGET_MACRO_BISECTION": {
+      "path": "amphora-molecule-property/evidence/audit/multitarget-macro-bisection-external-validity-w7-v1/multitarget-macro-bisection-external-validity-receipt.v1.dsse.json",
+      "sha256": "24bc32043db26138d618746912f540b32bc6fbe13074892006d11803388f904c"
+    },
+    "W8_VK_RIDGE_YGI_ADMISSIBILITY": {
+      "path": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+      "sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed"
+    }
+  },
+  "repair_artifacts": {
+    "done_receipt": "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json",
+    "patch_harness": "amphora-molecule-property/evidence/phase0/repairs/B3/work/patch_mission.py",
+    "pre_repair_snapshot": "amphora-molecule-property/evidence/phase0/repairs/B3/work/mission.md.before",
+    "reattack_diagnostic_json": "amphora-molecule-property/evidence/phase0/repairs/B3/work/B3-reattack-diagnostic.v1.json",
+    "reattack_harness": "amphora-molecule-property/evidence/phase0/repairs/B3/work/reattack.py",
+    "retraction_index_md": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md (R-B3 section appended; file is append-only, prior bytes preserved as prefix)",
+    "retraction_index_md_sha256_after_append": "501fe8066e305fde547403830dbd9cba7d40b5d74561176a6d57f8caf253c16d",
+    "retraction_index_md_sha256_before_append": "9f5e5ce3a8995bfba6afccf6093ba786679575c9cbcdedd2f4ebad22412fc77c",
+    "sweep_table_json": "amphora-molecule-property/evidence/phase0/repairs/B3/work/B3-prose-sweep.v1.json",
+    "work_dir": "amphora-molecule-property/evidence/phase0/repairs/B3/work/"
+  },
+  "repair_item": "B3",
+  "repair_mode": "interactive-2026-08-04",
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No data source opened, no dataset read. This repair reads only already-in-tree, already-signed receipts of this module plus the module's own mission prose. No quarantined/CONTEXT_ONLY source touched.",
+  "schema": "amphora.phase0-repair.mission-prose-retraction-sweep.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY repair done-receipt under evidence/phase0/repairs/"
+  },
+  "sweep_completeness": {
+    "conclusion": "every RETRACTED or REFUTED RadonPy-derived KPI in the index (external-validation dielectric, mixed dielectric conformal, mixed refractive-index conformal, multi-target 4-properties, radonpy-density-ml-vs-VK, stacked-ml-VK-density) is absent from the pre-repair mission.md prose. The stale prose in this file was confined to the OpenPoly / Polyuniverse sections repaired here.",
+    "counts_in_pre_repair_mission_md": {
+      "PI1070": 0,
+      "RadonPy": 0,
+      "density": 0,
+      "eps_static": 0,
+      "multi-target": 0,
+      "refractive": 0,
+      "thermal conductivity": 0
+    },
+    "method": "case-insensitive grep -c on the pre-repair snapshot; a zero count proves the corresponding RETRACTED/REFUTED RadonPy-side claim had no mission.md prose surface at all"
+  },
+  "sweep_table": [
+    {
+      "index_status": "RETRACTED",
+      "kpi_in_retraction_index": "external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json",
+      "mission_md_prose_found": false,
+      "note": "no prose surface: 'RadonPy' occurs 0 times in the pre-repair mission.md (probe recorded in completeness_probes). Nothing to repair.",
+      "refuting_receipt": "W3_DIELECTRIC_RETRACTION"
+    },
+    {
+      "index_status": "RETRACTED",
+      "kpi_in_retraction_index": "mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json",
+      "mission_md_prose_found": false,
+      "note": "no prose surface (same probe). Nothing to repair.",
+      "refuting_receipt": "W3_DIELECTRIC_RETRACTION"
+    },
+    {
+      "index_status": "STANDS",
+      "kpi_in_retraction_index": "openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - OpenPoly dielectric constant ML baseline (lines 885-975)",
+      "refuting_receipt": "none (W3 disposition NOT_RETRACTED_LABELS_ADMISSIBLE)",
+      "repair_ids": [
+        "S7",
+        "S8",
+        "S9",
+        "S10",
+        "S11"
+      ],
+      "stale_passages": [
+        "L885 heading 'REAL POSITIVE lift, n=295'",
+        "L887-889 'Directly delivers the coating IP prediction capability for POLYMER DIELECTRIC CONSTANT - a real electrical-insulation property directly relevant to marine electrical enclosures, cable coatings, and dielectric layers.'",
+        "L905 '**MAJOR POSITIVE FINDING**'",
+        "L938-940 '1. **REAL predictive capability**'",
+        "L956-959 '**Portfolio implication**: `amphora-molecule-property` can now offer polymer dielectric constant prediction with a defended MAE ~0.40 eps_r units ... Directly applicable to coating chemistry decisions for electrical-insulation applications.'"
+      ],
+      "why_stale": "The n=295 MEASUREMENTS stand (W3 upholds this KPI; OpenPoly's own dielectric column has 0/295 admissibility violations). What is contradicted is the module-/portfolio-LEVEL capability advertisement built on them: C8 fire 3's consolidated founder-panel row for dielectric_constant reads NO COMPETENT MODEL, and W3 withdraws every cross-corpus dielectric number. Prose repaired by scoping, not by falsely retracting a standing result."
+    },
+    {
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "kpi_in_retraction_index": "openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - ML baseline on OpenPoly experimental Tg (lines 1146-1222)",
+      "refuting_receipt": "C7_FINAL_TG_DENSITY",
+      "repair_ids": [
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "stale_passages": [
+        "L1195-1198 'ML strictly dominates the frozen physics-Ridge inference' (unscoped)",
+        "L1200-1202 '2. **Portfolio priority**: For coating Tg prediction on experimental targets, the ML pipeline ... should be the primary predictor'",
+        "L1204 '3. **Positive R2 on rigorous LOSO-CV** confirms cross-scaffold generalization.'",
+        "L1206-1209 '4. **Portfolio-wide answer**: Combined with Push #23 (dielectric R2 +0.66) ... the module now has a defended coating-IP Tg predictor'",
+        "L1220 'Applicability domain restricted to the openpoly scaffold distribution.' (silent on the cross-corpus refutation)"
+      ],
+      "why_stale": "C7 final (overall_verdict CLAIM_REFUTED) shows OpenPoly<->Polyuniverse Tg transfer degrades 6.66x / 16.60x and is anti-predictive against a train-median null in both directions. Prose must say within-corpus only."
+    },
+    {
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "kpi_in_retraction_index": "radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json",
+      "mission_md_prose_found": false,
+      "note": "no prose surface: 'density' occurs 0 times in the pre-repair mission.md. Nothing to repair.",
+      "refuting_receipt": "C7_FINAL_TG_DENSITY"
+    },
+    {
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "kpi_in_retraction_index": "stacked-ml-van-krevelen-density-radonpy-kpi.v1.json",
+      "mission_md_prose_found": false,
+      "note": "no prose surface (same probe). Nothing to repair.",
+      "refuting_receipt": "none"
+    },
+    {
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "kpi_in_retraction_index": "mixed-openpoly-radonpy-refractive-index-conformal-kpi.v1.json",
+      "mission_md_prose_found": false,
+      "note": "no prose surface: 'refractive' occurs 0 times in the pre-repair mission.md. Nothing to repair.",
+      "refuting_receipt": "W7_MULTITARGET_MACRO_BISECTION"
+    },
+    {
+      "index_status": "REFUTED",
+      "kpi_in_retraction_index": "multi-target-ml-radonpy-4-properties-audit-kpi.v1.json",
+      "mission_md_prose_found": false,
+      "note": "no prose surface: 'multi-target', 'refractive', 'thermal conductivity' all occur 0 times in the pre-repair mission.md. Nothing to repair - the W7 refutation has no mission.md advertisement to correct.",
+      "refuting_receipt": "W7_MULTITARGET_MACRO_BISECTION"
+    },
+    {
+      "index_status": "REFUTED",
+      "kpi_in_retraction_index": "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - Ridge regression Y_gi fit on 807 Polyuniverse Epoxy polymers (lines 721-793)",
+      "refuting_receipt": "W8_VK_RIDGE_YGI_ADMISSIBILITY",
+      "repair_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "stale_passages": [
+        "L733 '**MAJOR POSITIVE FINDING**: Ridge Y_gi fit BEATS the published-values baseline by 32.6 K ... reaching Bicerano-level accuracy.'",
+        "L771 '1. **The 24-group STRUCTURE is CONFIRMED CORRECT at scale**'",
+        "L773 '2. **The prior \"under-determination\" hypothesis is RESOLVED**'",
+        "L777 '4. **Fitted Y_gi values are chemistry-plausible**: ... deviations for low-frequency groups reflect finite-sample noise, not structural mismatch.'",
+        "L779 '**Portfolio implication**: ... this receipt proves that a 24-group Van Krevelen calibration can achieve Bicerano-level MAE'",
+        "L786-791 claim scope silent on the two refuted claim locks"
+      ],
+      "why_stale": "W8 (verdict REFUTED) finds 2/24 fitted Y_gi sign-reversed against a 0/24-negative published table (vinyl_CH2 -3125.15 vs +2000; nitrile -2843.55 vs +5500), 13/24 deviating >50% in magnitude, and Spearman rho -0.523 between training support and deviation - a directional physical contradiction that falsifies 'structure confirmed correct' and leaves under-determination unresolved for rare groups."
+    },
+    {
+      "index_status": "STANDS",
+      "kpi_in_retraction_index": "external-validation-polyuniverse-ridge-on-openpoly-tg-kpi.v1.json",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - external validation of Push #20 Ridge Y_gi on OpenPoly experimental Tg (lines 1076-1144)",
+      "refuting_receipt": "W8_VK_RIDGE_YGI_ADMISSIBILITY (indirect: this KPI applies the coefficients W8 refutes)",
+      "repair_ids": [
+        "S12",
+        "S13",
+        "S14"
+      ],
+      "stale_passages": [
+        "L1102 'RESOLVES the Push #20 Phase-1 hypothesis about applicability domain.'",
+        "L1108 '4. **Real rank correlation** ... confirms the 24-group structure captures ordinal Tg signal'",
+        "L1126 '- Confirms Push #20's Ridge Y_gi calibration has real generalization value.'"
+      ],
+      "why_stale": "The KPI's own numbers stand (index: STANDS) but its prose re-asserts the 24-group-structure claim that W8 refutes, and inherits 2 physically inadmissible coefficients. Repaired by scoping to aggregate-error only, not by retracting the numbers."
+    },
+    {
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "kpi_in_retraction_index": "polyuniverse-epoxy-tg-conformal-coverage-and-applicability-domain-kpi.v1.json",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - Polyuniverse Epoxy Tg conformal intervals + AD audit (lines 76-142)",
+      "refuting_receipt": "none in index; C7_FINAL_TG_DENSITY answers the section's own open Phase-1 question",
+      "repair_ids": [
+        "S-A"
+      ],
+      "stale_passages": [
+        "L140-142 'Phase-1 would require ... a cross-dataset transfer test to an independent experimental epoxy Tg dataset.' - stale as forward-looking: that test has since been run (C7) and FAILED."
+      ],
+      "why_stale": "Prose presents the cross-corpus transfer test as an open Phase-1 item; C7 executed it and reached CLAIM_REFUTED. Repaired by recording the answer and the STANDS-WITHIN-CORPUS-ONLY status."
+    },
+    {
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "kpi_in_retraction_index": "polyuniverse-epoxy-tg-named-baseline-benchmark-kpi.v1.json",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - named-baseline head-to-head on Polyuniverse Epoxy Tg (lines 144-210)",
+      "refuting_receipt": "none in index",
+      "repair_ids": [
+        "S-B"
+      ],
+      "stale_passages": [
+        "L204-210 claim scope says 'Polyuniverse Epoxy 1M computed polymer chemistry only' but does not disclose the index status or the cross-corpus refutation"
+      ],
+      "why_stale": "Scope statement was already narrow; missing only the explicit within-corpus-only disclosure the index now mandates. Repaired additively."
+    },
+    {
+      "index_status": "STANDS-WITHIN-CORPUS-ONLY",
+      "kpi_in_retraction_index": "polyuniverse-epoxy-tg-van-krevelen-physical-baseline-vs-ml-kpi.v1.json",
+      "mission_md_prose_found": true,
+      "mission_md_section": "### Empirical benchmark result - Van Krevelen physical group-contribution Tg baseline vs ML (lines 212-288)",
+      "refuting_receipt": "none in index",
+      "repair_ids": [
+        "S-C"
+      ],
+      "stale_passages": [
+        "L283-288 claim scope does not disclose the index status or the cross-corpus refutation"
+      ],
+      "why_stale": "Same as above; repaired additively."
+    },
+    {
+      "index_status": "STANDS",
+      "kpi_in_retraction_index": "openpoly-water-contact-angle-ml-baseline-kpi.v1.json / openpoly-water-uptake-ml-baseline-audit-kpi.v1.json / polyuniverse-epoxy-tg-external-validation-5-canonical-epoxy-amines-kpi.v1.json / van-krevelen-ridge-retuned-Ygi-on-15-canonical-homopolymers-kpi.v1.json / van-krevelen-tg-corrected-formula-on-15-canonical-homopolymers-kpi.v1.json / van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json / van-krevelen-tg-LOO-rescaled-15-canonical-homopolymers-kpi.v1.json / coating-candidate-design-card-5-canonical-epoxy-amines-kpi.v1.json",
+      "mission_md_prose_found": true,
+      "refuting_receipt": "none - no refuting receipt targets these KPIs",
+      "repair_ids": [],
+      "stale_passages": [],
+      "why_stale": "n/a - prose reviewed and left byte-unchanged. These sections are already honest-negative or correctly scoped (water uptake HONEST NEGATIVE, contact angle MIXED FINDING, VK 15-polymer sections MAJOR HONEST FINDING documenting a broken formula). No claim contradicted by the retraction index."
+    },
+    {
+      "index_status": "GENERALIZATION CLAIM RETRACTED (arithmetic NOT retracted)",
+      "kpi_in_retraction_index": "R-N02 coordinated C=N (amidine/guanidine) categorical fix",
+      "mission_md_prose_found": false,
+      "note": "mission.md's EEW/AHEW prose (lines 34-61) reports only the 3 exact anchors + 6 monodisperse + 5 negative controls, which R-N02's scope note explicitly preserves as NOT retracted. No amine-hardener structure-class generalization claim appears in the prose. Nothing to repair.",
+      "refuting_receipt": "amine-nh-guanidine-conjugation-gap-v1"
+    },
+    {
+      "index_status": "SIGNATURE IDENTITY ONLY superseded",
+      "kpi_in_retraction_index": "R-A11 anchored signature-identity re-issue",
+      "mission_md_prose_found": false,
+      "note": "scientific content carries forward unchanged; mission.md cites no signing-key identity for that receipt. Nothing to repair.",
+      "refuting_receipt": "n/a"
+    }
+  ],
+  "target_file": {
+    "amendments_after_the_20_pair_patch": [
+      {
+        "id": "A1",
+        "in_repair": "S8",
+        "new": "> the repo-root `logs/claims-requiring-retraction.jsonl` lines 1-2:",
+        "old": "> `logs/claims-requiring-retraction.jsonl` lines 1-2:",
+        "reason": "mission.md cites paths module-relative, but the retraction list lives at the REPOSITORY root (there is no amphora-molecule-property/logs/). Disambiguated so every inline citation resolves; folded into the S8 new_prose recorded below, which matches the live file byte-for-byte."
+      },
+      {
+        "id": "A2",
+        "in_repair": "S8",
+        "new": "`evidence/phase0/kpis/external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json` / `evidence/phase0/kpis/mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json`",
+        "old": "`external-validation-dielectric-ml-openpoly-to-radonpy-kpi.v1.json` / `mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json` (bare filenames)",
+        "reason": "the two RETRACTED dielectric KPIs were named by bare filename, which the citation-resolvability re-attack rejected. Expanded to module-relative paths that resolve on disk; folded into the S8 new_prose recorded below."
+      }
+    ],
+    "lines_after": 1393,
+    "lines_before": 1270,
+    "path": "amphora-molecule-property/docs/mission.md",
+    "prose_passages_repaired": 20,
+    "sha256_after": "49ee7f1900948ccd9cc890ecdd7c1f52669bd218ba9ff6a4bc8538f7784145d7",
+    "sha256_after_the_20_pair_patch_before_amendment": "94fecbab755108b8f7be995bdebe63b4b99788a78e445e33c2f2a524e2ff648c",
+    "sha256_before": "d7488f02f94c3349f4a00e1201bd08f22a69ffdd475998ecefcbf58950105d89"
+  },
+  "trust_anchored_in_phase0_store": true
+}

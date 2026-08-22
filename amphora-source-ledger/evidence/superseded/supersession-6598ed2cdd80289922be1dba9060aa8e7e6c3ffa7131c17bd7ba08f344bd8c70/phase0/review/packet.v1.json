@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "c46936b4d592fb5f76fc22dc132b258534503459b740041ef333b9c9fd1be2b9",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-source-ledger",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

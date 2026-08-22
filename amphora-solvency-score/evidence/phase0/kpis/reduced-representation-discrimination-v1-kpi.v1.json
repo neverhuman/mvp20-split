@@ -1,0 +1,28 @@
+{
+  "authority": "AUDIT_ONLY",
+  "canonical_diagnostic_sha256": "1bb81064b78e1d68bf4401cf053a0a57812efef87f81474ec0e1f2d0ecc9763c",
+  "kpis": {
+    "all_gates_pass": true,
+    "auroc_bagley_volume_dependent": 0.922078,
+    "auroc_hansen_red": 0.948773,
+    "auroc_teas_fractional": 0.808081,
+    "fail_closed_rate": 1.0,
+    "gap_hansen_minus_bagley_ci95": [
+      -0.047625,
+      0.109017
+    ],
+    "gap_hansen_minus_teas_ci95": [
+      0.044094,
+      0.24749
+    ],
+    "hansen_reproduction_correct_of_n": "67/75",
+    "verdict_bagley": "NONINFERIOR_WITHIN_BOOTSTRAP_CI",
+    "verdict_teas": "REDUCED_REP_DEGRADES_DISCRIMINATION"
+  },
+  "module": "amphora-solvency-score",
+  "receipt_id": "reduced-representation-discrimination-359f72f6626007f137019b5ed9de5583e23e234ea93cde52dbf47a4f3239e0a2",
+  "receipt_path": "amphora-solvency-score/reference/mvp20/data/reduced_representation_discrimination_receipt.v1.json",
+  "receipt_sha256": "f7fcc697beb040d71b76ad747465ec2e97b8b68f42652545bed514ee9b147752",
+  "schema": "amphora.solvency-score.phase0-kpi.reduced-representation-discrimination.v1",
+  "two_replay_sha256_gate": "PASS"
+}

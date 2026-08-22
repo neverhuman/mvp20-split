@@ -1,0 +1,50 @@
+{
+  "abstain_outside_applicability": true,
+  "applicability_domain": [
+    "module-local locked evidence for amphora-molecule-role-ranker",
+    "molecule lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_locks": {
+    "ambiguous_role_is_audit_only": true,
+    "candidate_role_evidence_is_not_self_authorizing": true,
+    "commercial_product_values_not_upgraded_from_defined_monomer": true,
+    "defined_structure_does_not_establish_liquid_state": true,
+    "feedback_v1_polymer_corpus_context_only": true,
+    "fto_not_performed": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+    "no_procurement_authority": true,
+    "no_product_performance_authority": true,
+    "no_product_release_or_qualification": true,
+    "no_qualification_authority": true,
+    "no_ranking_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_superiority_claim": true,
+    "pre_phase_0_research_only": true,
+    "role_rank_is_not_qualification_or_procurement_authority": true,
+    "unresolved_rights_quarantined": true
+  },
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "module_class": "SCIENTIFIC_OR_EVIDENCE",
+  "module_id": "amphora-molecule-role-ranker",
+  "prohibited_authorities": [
+    "RANKING",
+    "OPTIMIZER_USE",
+    "RELEASE",
+    "QUALIFICATION",
+    "PATENTABILITY",
+    "FTO",
+    "PROCUREMENT",
+    "REGULATORY",
+    "SAFETY",
+    "PRODUCT_PERFORMANCE"
+  ],
+  "registry_manifest_hash": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7",
+  "schema": "amphora.module-claim-contract.v1",
+  "scientific_readiness_ceiling": "LOCKED_INTERNAL"
+}

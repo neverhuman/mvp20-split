@@ -1,0 +1,131 @@
+{
+ "annex_candidate_ids": [
+  "DR-LANG-EU-11",
+  "DR-LANG-KO-02",
+  "DR-LANG-KO-04"
+ ],
+ "annex_exists": true,
+ "clause1_annex_entry_live_in_primary_ledger_hits": [],
+ "clause1_observed": false,
+ "clause3_nonconforming_outside_annex_observed": false,
+ "dataset_ledger_sha256": "a4e8b70e434ee99fe7704451b826c8e2d73bbaa16a6d196788149ff6b458d418",
+ "dataset_ledger_total_lines": 14,
+ "disposition_ledger_sha256": "858f470545126fdf39d30559f5b9b5e63daaf4d6970cdda7fa5a2d7e1bee3b5c",
+ "disposition_ledger_total_lines": 99,
+ "envelope_scope_statement": "Coating IP scope ONLY: marine anti-corrosion, two-part epoxy-amine, DGEBA + amine hardeners, related pigments/fillers/solvents.",
+ "flagged_count": 3,
+ "flagged_in_primary_ledger": [
+  {
+   "candidate_id": "DR-LANG-KO-02",
+   "coverage_quote": "Rebar (reinforcement steel) exploration test results across 6 infrastructure facility types (bridges, tunnels, dams, ports, rivers, water/sewage systems), evaluating main/distribution/vertical/horizontal/tie reinforcement, 30 columns x 3,482 rows. Adjacent-domain: concrete-embedded structural rebar inspection, not coated-steel marine-hull corrosion -- disclosed, not conflated.",
+   "disposition_verdict": "RECOMMENDED",
+   "fire_id_of_entry": "20260810T100002-3826207-0feb3e17adea",
+   "language": "ko",
+   "ledger_entry_id": "DR-LANG-KO-02-DSL-01",
+   "markers_hit": [
+    "adjacent-domain",
+    "not coated-steel"
+   ],
+   "recipe_elements": [],
+   "serves_recipe_elements": []
+  },
+  {
+   "candidate_id": "DR-LANG-KO-04",
+   "coverage_quote": "DSC-based cure-behavior study of an epoxy/acid-anhydride system with silica filler, authored by KRICT researchers -- directly satisfies the directive's named 'KRICT-class institute archives' scope. Adjacent-domain caveat: anhydride-cured, not amine-cured -- the portfolio's headline hardener class is amine, disclosed rather than conflated; DSC cure-kinetics methodology is directly transferable rega",
+   "disposition_verdict": "RECOMMENDED",
+   "fire_id_of_entry": "20260810T100002-3826207-0feb3e17adea",
+   "language": "ko",
+   "ledger_entry_id": "DR-LANG-KO-04-DSL-01",
+   "markers_hit": [
+    "adjacent-domain",
+    "anhydride",
+    "not amine-cured"
+   ],
+   "recipe_elements": [],
+   "serves_recipe_elements": []
+  },
+  {
+   "candidate_id": "DR-LANG-EU-11",
+   "coverage_quote": "Development of epoxy composite materials using a biobased resin derived from cardanol (extracted from cashew nutshell), thermally cured with amine hardeners and reinforced with microcrystalline cellulose powder or cellulose microfibrils; curing process evaluated via spectroscopic analysis monitoring functional-group conversion vs. time/temperature/epoxide:amine molar ratio; polymeric matrix and co",
+   "disposition_verdict": "RECOMMENDED",
+   "fire_id_of_entry": "20260810T140001-2033197-225224d5b207",
+   "language": "it",
+   "ledger_entry_id": "DR-LANG-EU-DSL-01",
+   "markers_hit": [
+    "biobased",
+    "cardanol",
+    "not the portfolio's core"
+   ],
+   "recipe_elements": [
+    "amine-cure-conversion-tracking"
+   ],
+   "serves_recipe_elements": [
+    "amine-cure-conversion-tracking"
+   ]
+  }
+ ],
+ "mode": "real",
+ "refutation_criterion_observed_overall": false,
+ "resolved": [
+  {
+   "candidate_id": "DR-LANG-KO-02",
+   "coverage_quote": "Rebar (reinforcement steel) exploration test results across 6 infrastructure facility types (bridges, tunnels, dams, ports, rivers, water/sewage systems), evaluating main/distribution/vertical/horizontal/tie reinforcement, 30 columns x 3,482 rows. Adjacent-domain: concrete-embedded structural rebar inspection, not coated-steel marine-hull corrosion -- disclosed, not conflated.",
+   "disposition_verdict": "RECOMMENDED",
+   "fire_id_of_entry": "20260810T100002-3826207-0feb3e17adea",
+   "in_annex": true,
+   "language": "ko",
+   "latest_verdict": "REJECTED",
+   "ledger_entry_id": "DR-LANG-KO-02-DSL-01",
+   "markers_hit": [
+    "adjacent-domain",
+    "not coated-steel"
+   ],
+   "quarantine_flag": true,
+   "recipe_elements": [],
+   "serves_recipe_elements": []
+  },
+  {
+   "candidate_id": "DR-LANG-KO-04",
+   "coverage_quote": "DSC-based cure-behavior study of an epoxy/acid-anhydride system with silica filler, authored by KRICT researchers -- directly satisfies the directive's named 'KRICT-class institute archives' scope. Adjacent-domain caveat: anhydride-cured, not amine-cured -- the portfolio's headline hardener class is amine, disclosed rather than conflated; DSC cure-kinetics methodology is directly transferable rega",
+   "disposition_verdict": "RECOMMENDED",
+   "fire_id_of_entry": "20260810T100002-3826207-0feb3e17adea",
+   "in_annex": true,
+   "language": "ko",
+   "latest_verdict": "REJECTED",
+   "ledger_entry_id": "DR-LANG-KO-04-DSL-01",
+   "markers_hit": [
+    "adjacent-domain",
+    "anhydride",
+    "not amine-cured"
+   ],
+   "quarantine_flag": true,
+   "recipe_elements": [],
+   "serves_recipe_elements": []
+  },
+  {
+   "candidate_id": "DR-LANG-EU-11",
+   "coverage_quote": "Development of epoxy composite materials using a biobased resin derived from cardanol (extracted from cashew nutshell), thermally cured with amine hardeners and reinforced with microcrystalline cellulose powder or cellulose microfibrils; curing process evaluated via spectroscopic analysis monitoring functional-group conversion vs. time/temperature/epoxide:amine molar ratio; polymeric matrix and co",
+   "disposition_verdict": "RECOMMENDED",
+   "fire_id_of_entry": "20260810T140001-2033197-225224d5b207",
+   "in_annex": true,
+   "language": "it",
+   "latest_verdict": "REJECTED",
+   "ledger_entry_id": "DR-LANG-EU-DSL-01",
+   "markers_hit": [
+    "biobased",
+    "cardanol",
+    "not the portfolio's core"
+   ],
+   "quarantine_flag": true,
+   "recipe_elements": [
+    "amine-cure-conversion-tracking"
+   ],
+   "serves_recipe_elements": [
+    "amine-cure-conversion-tracking"
+   ]
+  }
+ ],
+ "resolved_count": 3,
+ "unresolved": [],
+ "unresolved_count": 0
+}

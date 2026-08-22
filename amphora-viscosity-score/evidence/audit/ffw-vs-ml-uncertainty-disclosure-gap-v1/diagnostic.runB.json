@@ -1,0 +1,64 @@
+{
+  "cluster_count_audit": {
+    "below_recommended_cluster_count": true,
+    "min_recommended_clusters_cameron_gelbach_miller_2008_cameron_miller_2015": 30,
+    "n_test_polymers": 13,
+    "n_test_rows": 194,
+    "n_train_polymers": 41,
+    "n_train_rows": 863,
+    "theory": [
+      "Cameron, A.C., Gelbach, J.B. & Miller, D.L. (2008) 'Bootstrap-Based Improvements for Inference with Clustered Errors', Review of Economics and Statistics 90(3):414-427.",
+      "Cameron, A.C. & Miller, D.L. (2015) 'A Practitioner's Guide to Cluster-Robust Inference', Journal of Human Resources 50(2):317-372."
+    ]
+  },
+  "disclosure_comparison": {
+    "conformal_kpi_documents_conditional_coverage_gap": true,
+    "conformal_kpi_uncertainty_tokens_present": [],
+    "conformal_kpi_worst_ad_quintile_sample_size": 5,
+    "ffw_kpi_has_any_uncertainty_disclosure": false,
+    "ffw_kpi_physics_wins_claim_lock_value": true,
+    "ffw_kpi_uncertainty_tokens_present": []
+  },
+  "does_not_close": [
+    "Does not modify the FFW KPI, the FFW scientific receipt, the conformal+AD KPI or receipt, docs/mission.md, or the 66-receipt master manifest.",
+    "Does not open, parse, or derive any value from the underlying quarantined Polyverse melt-viscosity row-level CSV -- only already-signed downstream JSON KPI/receipt bytes were read.",
+    "Does not assert the B3/B4 R^2 point estimates are numerically wrong; the positive-control check confirms internal arithmetic self-consistency.",
+    "Does not compute a genuine cluster-bootstrap or leave-one-polymer-out interval for the R^2 gap -- that would require row-level access to the quarantined dataset, which this audit deliberately does not touch. It establishes only that the module's OWN disclosure standard (as already applied to the sibling KPI) is not met here."
+  ],
+  "inputs_sha256": {
+    "conformal_kpi": "34b77002aa5a3067ad35030cd2bedb819b7da3cd16c6219bf1245a414c3fabb8",
+    "conformal_receipt": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+    "ffw_kpi": "5137bdae3eb4418492fee70395656842fcf32d92fcf7bc8cf3cbd867c3d0e98b",
+    "ffw_receipt": "3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3",
+    "mission_md": "a6d41ae98ef106891f812a634a26e187d148ebf22abac33bdc001751a0f3b3cc"
+  },
+  "interpretation": "The FFW-vs-ML KPI's headline finding (physical B3 R^2=0.5972 beats ML B4 R^2=0.4536 by +0.1436, claim_lock physics_wins_ml_loses_documented_honestly=true) is a single point-estimate comparison, seed=0, on a test set of 194 rows drawn from only 13 independent polymer chemistries -- fewer clusters than the published rule-of-thumb threshold (G>=~30) below which cluster-robust inference is known to be unreliable (Cameron, Gelbach & Miller 2008; Cameron & Miller 2015). The KPI JSON body contains zero bootstrap, confidence-interval, cluster, jackknife, or standard-error tokens anywhere. Its own sibling KPI -- built on the IDENTICAL 41-train/13-test polymer partition (cross-linked by matching conformal_receipt_sha256) -- DOES apply this level of scrutiny to itself, explicitly documenting that its own R^2=0.4535 is far below the parent's source-safe R^2=0.944, and that marginal conformal coverage hides a conditional-coverage collapse in the worst applicability-domain quintile (194 test rows split into 5 quintiles, ~39 rows/quintile on average; worst-quintile coverage 0.379 vs marginal 0.897). This audit does NOT dispute the FFW-vs-ML numbers themselves -- the positive-control check above confirms they are internally self-consistent (RMSE/R^2 imply an identical SS_tot/n=5.731677 across all 5 baselines, to 1e-6 relative precision). What is refuted is the claim_lock's implicit assertion that the finding is 'documented honestly' to the standard the module itself already applies one file over: a headline result resting on only 13 independent chemical units, with zero quantified uncertainty, is not disclosed as fragile the way the sibling KPI's small-n findings are.",
+  "numeric_self_consistency_positive_control": {
+    "implied_ss_tot_over_n_by_baseline": {
+      "b0_constant_mean": 5.731677328037003,
+      "b1_ffw_pure_mw_34": 5.731677328037003,
+      "b2_ffw_linear_mw_only": 5.7316773280370015,
+      "b3_ffw_linear_mw_and_arrhenius_T": 5.731677328037003,
+      "b4_full_ml_histgbm": 5.731677328037002
+    },
+    "max_relative_spread": 3.099191977732321e-16,
+    "note": "For every baseline evaluated on the same n=194 polymer-safe test rows, RMSE^2 / (1 - R^2) must equal the same implied SS_tot/n. This is a pure arithmetic identity check on numbers already present in the signed KPI body; it does NOT touch any quarantined row data.",
+    "self_consistent": true
+  },
+  "partition_cross_link": {
+    "conformal_receipt_actual_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+    "ffw_kpi_declared_conformal_receipt_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+    "partition_linked": true
+  },
+  "purpose": "Methodological completeness audit: does the signed Fox-Flory-Whitten-vs-ML KPI disclose estimation uncertainty for its headline 'physics beats ML' R^2 gap to the same standard the module's own sibling KPI (polymer-safe conformal+applicability-domain), built on the IDENTICAL seed=0 polymer-safe partition, already applies to itself?",
+  "results": {
+    "disclosure_gap_confirmed": true,
+    "ffw_kpi_discloses_zero_uncertainty_quantification": true,
+    "ffw_r2_gap_numerically_self_consistent": true,
+    "same_partition_confirmed": true,
+    "sibling_kpi_on_same_partition_discloses_conditional_gap": true,
+    "test_cluster_count_below_published_inference_threshold": true
+  },
+  "schema": "amphora.viscosity-score.ffw-vs-ml-uncertainty-disclosure-audit-diagnostic.v1",
+  "verdict": "REFUTED"
+}

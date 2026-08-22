@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-b84d5030684c428bb9eecd7da361cab7ccb69b15c14225f09b9655b374bf384c",
+      "path": "events/b84d5030684c428bb9eecd7da361cab7ccb69b15c14225f09b9655b374bf384c.json",
+      "sha256": "077f99e51352d8276ac00f0b10d3bf0ffa031fdc9e507a760e2ba0d7541811c6"
+    }
+  ],
+  "module_id": "amphora-candidate-contract",
+  "schema": "amphora.module-movement-ledger.v1"
+}

@@ -1,0 +1,13 @@
+[package]
+name = "amphora-tui"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+amphora-core = { path = "../amphora-core" }
+anyhow.workspace = true
+crossterm.workspace = true
+ratatui.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+

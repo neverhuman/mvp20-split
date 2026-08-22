@@ -1,0 +1,29 @@
+{
+  "attacks": [
+    "STALE_PARENT",
+    "SAME_SIGNER_REVIEW",
+    "WRONG_ROLE_SIGNATURE",
+    "FORGED_SIGNATURE",
+    "REPOSITORY_LOCAL_PRIVATE_KEY",
+    "FORGED_RIGHTS",
+    "MISSING_LICENSE",
+    "STRIPPED_CLAIM_LOCK",
+    "CANDIDATE_SUPPLIED_EVIDENCE",
+    "CROSS_MODULE_PATH_SUBSTITUTION",
+    "REPLAY_DRIFT",
+    "ALTERED_BENCHMARK_OUTPUT",
+    "FALSE_HUMAN_REVIEW_CLAIM",
+    "FALSE_MOVEMENT_CLAIM",
+    "AUTHORITY_ESCALATION",
+    "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+    "LEGACY_AMPHORA_RECEIPT_LAUNDERING"
+  ],
+  "dataset_manifest_sha256": "2ef29d416cae080afd9e5d3eaad409108b0025550820a228d69faad0d1deef0b",
+  "module_id": "amphora-candidate-contract",
+  "negative_result_authority": "AUDIT_ONLY",
+  "replay_count": 2,
+  "runner": "NATIVE_WORKSPACE_LOCKED",
+  "schema": "amphora.module-phase0-benchmark-lock.v1",
+  "scientific_success_required_for_phase0": false,
+  "split_manifest_sha256": "6b1e5f98966a72099d2419c425e52943f99f194ec4519f935c00f36a9a40857e"
+}

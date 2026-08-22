@@ -1,0 +1,297 @@
+{
+  "authority": "AUDIT_ONLY",
+  "coating_application": {
+    "interpretation": "W_a(water) = 107.2 mN/m and S < 0: water wets but does not spread on the cured DGEBA-DDS surface -- a moderately hydrophobic interface consistent with marine barrier intent. This is a single rights-clean coating datapoint, NOT a cross-system KPI; the multi-system adhesion KPI is data-rights-blocked.",
+    "model": "Young-Dupre (exact identity): W_a = gamma_l (1 + cos theta)",
+    "rights_clean_anchor": {
+      "license": "CC BY 4.0",
+      "measured_water_contact_angle_deg": 61.77,
+      "source": "MDPI Polymers 2024, 16(1):67 (PMC10780492)",
+      "system": "cured DGEBA + DDS marine epoxy (pristine, t=0)"
+    },
+    "scope_honesty": "Young-Dupre needs only one liquid and gives W_a directly; it does NOT decompose into gamma_s^d / gamma_s^p (that needs >=2 liquids). The decomposition + held-out-liquid prediction (the true adhesion capstone) awaits a CC-licensed multi-liquid contact-angle dataset on DGEBA-amine networks.",
+    "water_spreading_coefficient_mN_m": -38.364716,
+    "water_work_of_adhesion_mN_m": 107.235284
+  },
+  "does_not": [
+    "promote any module or change the Phase-0 count",
+    "sign any phase0 evaluation or review receipt",
+    "modify any of the 66 existing signed receipts or the manifest",
+    "assert scientific VALIDATED status for any module",
+    "use a measured target as a model feature (non-circular)"
+  ],
+  "human_review_performed": false,
+  "organizational_independence_asserted": false,
+  "owk_adhesion_engine": {
+    "constants": {
+      "gamma_water_mN_m_at_20C": 72.8,
+      "reference_gamma_water_d_literature_mN_m": 21.8
+    },
+    "data_source": "Fowkes, Ind. Eng. Chem. 1964, 56(12):40 (public-domain fundamental physical measurements; values reproduced verbatim in Adamson & Gast and in Israelachvili). Alkane/cyclo-alkane surface tensions and their water interfacial tensions at 20 C.",
+    "gamma_w_d_consensus": {
+      "abs_dev_from_literature_21_8": 0.156251,
+      "all_within_1_mN_m_of_mean": false,
+      "mean_mN_m": 21.956251,
+      "n_aliphatic": 7,
+      "sd_mN_m": 0.627823
+    },
+    "loo_prediction_kpi": {
+      "description": "leave-one-out: gamma_w^d fitted on the other n-1 aliphatics, predict the held-out liquid/water interfacial tension",
+      "loo_mae_mN_m": 0.529725,
+      "loo_mape_pct": 1.03656,
+      "loo_max_abs_err_mN_m": 1.416175,
+      "n": 7,
+      "rows": [
+        {
+          "abs_err_mN_m": 0.115773,
+          "gamma_12_meas_mN_m": 51.1,
+          "gamma_12_pred_mN_m": 50.984227,
+          "gamma_2_mN_m": 18.4,
+          "gamma_w_d_fit_mN_m": 21.974299,
+          "liquid": "n-hexane",
+          "pct_err": 0.226562
+        },
+        {
+          "abs_err_mN_m": 0.785448,
+          "gamma_12_meas_mN_m": 50.2,
+          "gamma_12_pred_mN_m": 50.985448,
+          "gamma_2_mN_m": 20.4,
+          "gamma_w_d_fit_mN_m": 21.839074,
+          "liquid": "n-heptane",
+          "pct_err": 1.564637
+        },
+        {
+          "abs_err_mN_m": 0.05137,
+          "gamma_12_meas_mN_m": 50.8,
+          "gamma_12_pred_mN_m": 50.85137,
+          "gamma_2_mN_m": 21.8,
+          "gamma_w_d_fit_mN_m": 21.948883,
+          "liquid": "n-octane",
+          "pct_err": 0.101122
+        },
+        {
+          "abs_err_mN_m": 0.367333,
+          "gamma_12_meas_mN_m": 51.2,
+          "gamma_12_pred_mN_m": 50.832667,
+          "gamma_2_mN_m": 23.9,
+          "gamma_w_d_fit_mN_m": 22.006404,
+          "liquid": "n-decane",
+          "pct_err": 0.717447
+        },
+        {
+          "abs_err_mN_m": 1.416175,
+          "gamma_12_meas_mN_m": 52.2,
+          "gamma_12_pred_mN_m": 50.783825,
+          "gamma_2_mN_m": 25.6,
+          "gamma_w_d_fit_mN_m": 22.141603,
+          "liquid": "n-tetradecane",
+          "pct_err": 2.712979
+        },
+        {
+          "abs_err_mN_m": 0.906863,
+          "gamma_12_meas_mN_m": 50.2,
+          "gamma_12_pred_mN_m": 51.106863,
+          "gamma_2_mN_m": 25.5,
+          "gamma_w_d_fit_mN_m": 21.835218,
+          "liquid": "cyclohexane",
+          "pct_err": 1.806499
+        },
+        {
+          "abs_err_mN_m": 0.06511,
+          "gamma_12_meas_mN_m": 51.4,
+          "gamma_12_pred_mN_m": 51.46511,
+          "gamma_2_mN_m": 29.9,
+          "gamma_w_d_fit_mN_m": 21.948277,
+          "liquid": "decalin",
+          "pct_err": 0.126674
+        }
+      ]
+    },
+    "positive_control_nondispersive": {
+      "all_controls_correctly_flagged": true,
+      "description": "aromatics & CCl4: apparent gamma_w^d must diverge (>3 sigma) from the aliphatic consensus because pi/induced-dipole interactions are not captured by the dispersive geometric mean",
+      "rows": [
+        {
+          "apparent_gamma_w_d_mN_m": 38.485208,
+          "flagged_nondispersive": true,
+          "gamma_12_meas_mN_m": 35.0,
+          "gamma_2_mN_m": 28.9,
+          "liquid": "benzene",
+          "sigma_from_aliphatic_consensus": 26.327395
+        },
+        {
+          "apparent_gamma_w_d_mN_m": 37.289825,
+          "flagged_nondispersive": true,
+          "gamma_12_meas_mN_m": 36.1,
+          "gamma_2_mN_m": 28.5,
+          "liquid": "toluene",
+          "sigma_from_aliphatic_consensus": 24.423384
+        },
+        {
+          "apparent_gamma_w_d_mN_m": 27.809328,
+          "flagged_nondispersive": true,
+          "gamma_12_meas_mN_m": 45.0,
+          "gamma_2_mN_m": 26.8,
+          "liquid": "carbon_tetrachloride",
+          "sigma_from_aliphatic_consensus": 9.322808
+        }
+      ]
+    },
+    "recovered_gamma_w_d": [
+      {
+        "gamma_12_mN_m": 51.1,
+        "gamma_2_mN_m": 18.4,
+        "liquid": "n-hexane",
+        "recovered_gamma_w_d_mN_m": 21.847962
+      },
+      {
+        "gamma_12_mN_m": 50.2,
+        "gamma_2_mN_m": 20.4,
+        "liquid": "n-heptane",
+        "recovered_gamma_w_d_mN_m": 22.659314
+      },
+      {
+        "gamma_12_mN_m": 50.8,
+        "gamma_2_mN_m": 21.8,
+        "liquid": "n-octane",
+        "recovered_gamma_w_d_mN_m": 22.000459
+      },
+      {
+        "gamma_12_mN_m": 51.2,
+        "gamma_2_mN_m": 23.9,
+        "liquid": "n-decane",
+        "recovered_gamma_w_d_mN_m": 21.655335
+      },
+      {
+        "gamma_12_mN_m": 52.2,
+        "gamma_2_mN_m": 25.6,
+        "liquid": "n-tetradecane",
+        "recovered_gamma_w_d_mN_m": 20.844141
+      },
+      {
+        "gamma_12_mN_m": 50.2,
+        "gamma_2_mN_m": 25.5,
+        "liquid": "cyclohexane",
+        "recovered_gamma_w_d_mN_m": 22.682451
+      },
+      {
+        "gamma_12_mN_m": 51.4,
+        "gamma_2_mN_m": 29.9,
+        "liquid": "decalin",
+        "recovered_gamma_w_d_mN_m": 22.004097
+      }
+    ],
+    "theory": "Fowkes / Owens-Wendt-Kaelble geometric-mean combining rule for the dispersive component of interfacial free energy: gamma_12 = gamma_1 + gamma_2 - 2*sqrt(gamma_1^d * gamma_2^d). This is the engine that yields the solid<->coating work of adhesion W_a = gamma_1 + gamma_2 - gamma_12 and the interfacial water resistance governing marine cathodic disbondment.",
+    "verdict": "ENGINE_VALIDATED_ON_PUBLIC_DOMAIN_CONSTANTS: the dispersive geometric-mean combining rule recovers gamma_w^d = 21.96 +/- 0.63 mN/m across 7 independent aliphatics (literature 21.8), LOO interfacial-tension MAPE 1.04%, and correctly rejects all 3 non-dispersive controls (>3 sigma). The OWK adhesion engine is sound; the coating solid-surface-energy CAPSTONE remains data-rights-blocked (no CC-licensed MULTI-liquid contact-angle set on cured DGEBA-amine found this run)."
+  },
+  "phase0_reconciliation_redteam": {
+    "benchmark_lock_governance": {
+      "interpretation": "Phase-0 is a GOVERNANCE gate: no benchmark-lock in the portfolio makes scientific success a precondition for Phase-0. 'FULL Phase-0' therefore does NOT mean 'validated science'.",
+      "scientific_success_required_for_phase0__false": 29,
+      "scientific_success_required_for_phase0__true": 0
+    },
+    "founder_question_answer": {
+      "can_this_cron_move_any_module_PRE_to_PHASE_0": false,
+      "closest_to_real_science": {
+        "module": "amphora-solvency-score",
+        "state": "already PHASE_0 by governance; the ONLY module with an externally-validated scientific track record behind it (BigSolDB leave-solute-out RMSE 0.877), yet its scientific_readiness ceiling is still LOCKED_INTERNAL, not VALIDATED."
+      },
+      "why": "Phase advancement is derived only from a module-local movement event carrying two DISTINCT trusted-human-key signatures. An autonomous cron holds only the LOCAL_DEVELOPMENT_AUDIT_ONLY key (not trust-anchored), so it can neither forge the movement event nor sign the evaluation/review. Every PRE_PHASE_0 module additionally carries at least one unmet gate (data-rights, un-executed benchmark, or eval-binding). Honest verdict: 0 autonomous promotions available."
+    },
+    "inputs": {
+      "module_manifest_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+      "n_benchmark_locks_scanned": 29,
+      "phase0_decision_report_v2_sha256": "9467b62782321b4359922f50d646317b260df187093d9c8c96b1c5a7e25db965"
+    },
+    "live_counts": {
+      "module_count": 29,
+      "phase0_count": 10,
+      "pre_phase0_count": 19,
+      "status": "EXECUTION_INCOMPLETE"
+    },
+    "n_modules_scientifically_VALIDATED": 0,
+    "phase0_module_ids": [
+      "amphora-candidate-contract",
+      "amphora-envelope-gates",
+      "amphora-formulation-arithmetic",
+      "amphora-formulation-universe",
+      "amphora-model-card-authority",
+      "amphora-molecule-design-gate",
+      "amphora-process-qc-twin",
+      "amphora-run-provenance",
+      "amphora-solvency-score",
+      "amphora-tolerance-robustness"
+    ],
+    "phase0_modules_readiness_breakdown": {
+      "LOCKED_INTERNAL": 3,
+      "NOT_APPLICABLE": 7
+    },
+    "phase0_readiness_per_module": {
+      "amphora-candidate-contract": "NOT_APPLICABLE",
+      "amphora-envelope-gates": "NOT_APPLICABLE",
+      "amphora-formulation-arithmetic": "NOT_APPLICABLE",
+      "amphora-formulation-universe": "NOT_APPLICABLE",
+      "amphora-model-card-authority": "NOT_APPLICABLE",
+      "amphora-molecule-design-gate": "NOT_APPLICABLE",
+      "amphora-process-qc-twin": "LOCKED_INTERNAL",
+      "amphora-run-provenance": "NOT_APPLICABLE",
+      "amphora-solvency-score": "LOCKED_INTERNAL",
+      "amphora-tolerance-robustness": "LOCKED_INTERNAL"
+    },
+    "pre_phase0_blocker_taxonomy": {
+      "benchmark_not_executed": [
+        "amphora-barrier-corrosion-score",
+        "amphora-design-rule-score",
+        "amphora-ingredient-library",
+        "amphora-molecule-novelty"
+      ],
+      "data_rights_walled": [
+        "amphora-cure-potlife-gate",
+        "amphora-ip-fto-guard",
+        "amphora-molecule-generator",
+        "amphora-molecule-role-ranker",
+        "amphora-sourceability-ehs",
+        "amphora-viscosity-score"
+      ],
+      "eval_binding_mismatch": [
+        "amphora-cro-protocol-packager",
+        "amphora-evidence-intake-validator",
+        "amphora-known-answer-benchmarks",
+        "amphora-molecule-property",
+        "amphora-optimizer-orchestrator",
+        "amphora-public-corrosion-benchmark",
+        "amphora-redteam-audit",
+        "amphora-report-packager",
+        "amphora-source-ledger"
+      ],
+      "other": []
+    },
+    "pre_phase0_needs_human_key_signature": [
+      "amphora-barrier-corrosion-score",
+      "amphora-cure-potlife-gate",
+      "amphora-design-rule-score",
+      "amphora-ingredient-library",
+      "amphora-ip-fto-guard",
+      "amphora-known-answer-benchmarks",
+      "amphora-molecule-generator",
+      "amphora-molecule-novelty",
+      "amphora-molecule-property",
+      "amphora-molecule-role-ranker",
+      "amphora-public-corrosion-benchmark",
+      "amphora-sourceability-ehs",
+      "amphora-viscosity-score"
+    ],
+    "scientific_readiness_all_modules": {
+      "LOCKED_INTERNAL": 3,
+      "NOT_APPLICABLE": 7,
+      "UNVALIDATED": 19
+    }
+  },
+  "predecessor": "surface-tension-parachor-ccby-v1 (liquid surface tension input)",
+  "promotes_authority": false,
+  "schema": "amphora.redteam-audit.owk-adhesion-and-phase0-redteam.v1",
+  "supersedes_nothing": true,
+  "target_capability": "work_of_adhesion / interfacial_free_energy (ADHESION axis)",
+  "target_kpi_id": "owk-fowkes-combining-rule-loo-interfacial-tension",
+  "target_module": "amphora-molecule-property"
+}

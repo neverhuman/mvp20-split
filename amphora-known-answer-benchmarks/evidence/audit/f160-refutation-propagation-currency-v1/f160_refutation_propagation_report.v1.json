@@ -1,0 +1,67 @@
+{
+  "any_propagation_found": false,
+  "attacked_claim": {
+    "location": "amphora-known-answer-benchmarks/docs/mission.md#Current-benchmark-result + docs/capability-profile.json#benchmarks[amphora-known-answer-benchmarks-checked-current] + evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "text": "That the module's live-consumed KPI surfaces (pinned_verified_pass_count_13_rate=PASSED, arithmetic_subset_6_of_6_pass_rate=PASSED, capability-profile n_pass=6/6) are CURRENT with respect to the module's own prior signed falsification findings."
+  },
+  "byte_identity_vs_attack_time": {
+    "arithmetic_audit.json": true,
+    "control_by_control_receipt.v1.json": true,
+    "docs/mission.md": true,
+    "known_reference_cards.json": true,
+    "mil_recovery.json": true
+  },
+  "consumer_surface_propagation_check": {
+    "docs/capability-profile.json": {
+      "propagation_markers_found": [],
+      "still_reports_n_pass_6_of_6_uncaveated": false
+    },
+    "docs/mission.md": {
+      "propagation_markers_found": [],
+      "still_claims_13_pass_uncaveated": true,
+      "still_claims_6_of_6_uncaveated": true
+    },
+    "evidence/phase0/kpis/RETRACTION-INDEX.md": {
+      "has_f160_entry": false,
+      "propagation_markers_found": []
+    },
+    "reference/mvp20/out/arithmetic_audit.json": {
+      "f160_rows_still_pass_true_uncaveated": true,
+      "propagation_markers_found": []
+    }
+  },
+  "counterfactual_kpi_impact_rederived": {
+    "arithmetic_subset_pass": "4/6",
+    "unverified_count": 3,
+    "verified_pass_count": 11
+  },
+  "does_not_close": [
+    "Does not re-argue whether the underlying density arithmetic (8.22, 10.24 lb/gal) is physically correct -- that is the prior receipt's concern.",
+    "Does not modify docs/mission.md, docs/capability-profile.json, RETRACTION-INDEX.md, control_by_control_receipt.v1.json, or any signed Phase-0 KPI; flags them for human/repair-fire correction only.",
+    "Does not establish a specific SLA for how quickly a REFUTED finding must propagate; treats >24h with zero movement on any surface as sufficient to call the currency claim false for this fire."
+  ],
+  "falsification_criterion": {
+    "refuted_if": "the already-signed 2026-08-16 f160-density-source-conflict-credit-violation-v1 REFUTED finding is not propagated into ANY live consumer surface (mission.md prose+KPI, capability-profile.json, RETRACTION-INDEX.md, arithmetic_audit.json), AND every hash-pinned source file the prior receipt cited is BYTE-IDENTICAL to its state at the prior attack time (proving zero repair action was taken, not merely a documentation lag)",
+    "survives_if": "at least one consumer surface carries a caveat/correction pointing to the prior finding, OR a RETRACTION-INDEX entry exists for it, OR any of the hash-pinned source files has changed since the prior attack time"
+  },
+  "independent_rederivation_from_scratch": {
+    "matches_prior_receipt_finding": true,
+    "method": "Parsed known_reference_cards.json red_team_self_audit + F160-BLACK card source_conflict block directly (not the prior receipt's prose); cross-referenced arithmetic_audit.json row URLs against the F160-BLACK card's source_urls; flagged any non-F160-BLACK control sharing that URL with VERIFIED_PASS status and no source_conflict field of its own.",
+    "reconciled_controls_requiring_disqualification": [
+      "ARITH-MIL-F160-COMPONENT-A-DENSITY",
+      "ARITH-MIL-F160-COMPONENT-B-DENSITY"
+    ]
+  },
+  "prior_refuting_receipt": {
+    "evaluator_key_derives_pinned_trust_store_key": true,
+    "ledger_ts": "2026-08-16T20:08:06Z",
+    "path": "amphora-known-answer-benchmarks/evidence/audit/f160-density-source-conflict-credit-violation-v1/receipt.v1.dsse.json",
+    "receipt_id": "f160-density-source-conflict-credit-violation-v1",
+    "signature_independently_reverified": true,
+    "verdict": "REFUTED"
+  },
+  "verdict": {
+    "overall": "REFUTED"
+  },
+  "zero_repair_action_taken": true
+}

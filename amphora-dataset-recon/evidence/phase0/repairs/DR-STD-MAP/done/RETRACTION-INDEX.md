@@ -1,0 +1,9 @@
+# DR-STD-MAP retraction index
+
+Append-only. Never rewrite or delete a row.
+
+| claim | refuted-by | superseded-by | date |
+|---|---|---|---|
+| GOST Р 56752-2015 row signed integrity_gap=false in dr-std-map-receipt.v1.dsse.json (fire 20260810T160002-3096524-741041e674fd) despite stating weak/unreachable evidentiary language identical to 5 rows correctly flagged integrity_gap=true | 5th-limb gap-flag-consistency audit, dr-std-map-fire2-receipt.v1.dsse.json (fire 20260810T170001-3732775-ad6a5dd6f225) | mapping-table.v2.json (same receipt) | 2026-08-10 |
+| DIN EN ISO 9227, NF EN ISO 9227, PN-EN ISO 9227 rows signed integrity_gap=false in dr-std-map-fire2-receipt.v1.dsse.json / mapping-table.v2.json with NO edition/year specified, despite live-verified edition churn (DIN: 2017-07->2023-03 WITHDRAWN->2024-10 current; NF: pre-2022->2022-11+A1:2024; PN: 2017-06->2023-02), inconsistent with structurally identical UNE/NP/CSN ISO-9227 rows correctly flagged integrity_gap=true | ISO-9227 edition-currency audit, dr-std-map-iso9227-edition-currency-receipt.v1.dsse.json (fire 20260815T190002-1692638-e6c8305dbc05) | mapping-table.v3.json (same audit) | 2026-08-15 |
+| KS D ISO 9227:2005 row signed integrity_gap=false with comparability_rating 'method_class_confirmed_iso_explicit_astm_inferred' in dr-std-map-fire2-receipt.v1.dsse.json / mapping-table.v2.json (carried forward unchanged into v3) -- fire-3 flagged this row as an open, undischarged item because its JS-rendered portal check failed; standard.go.kr's own structured record shows KS D ISO 9227 was ABOLISHED 2005-12-28 (notification 2005-0989, reason 'KSD9502와 규격중복' i.e. duplicate of KS D 9502), so the row misrepresented a 21-year-dead standard as live and method-class comparable | KS D ISO 9227 abolition-status audit, dr-std-map-ks-d-iso9227-abolition-receipt.v1.dsse.json (fire 20260817T130001-3407163-2ada8f0e6fcd) | mapping-table.v4.json (same audit) | 2026-08-17 |

@@ -1,0 +1,12 @@
+{
+  "schema": "amphora.dataset-recon.repair-state.v1",
+  "campaign_item_id": "DR-LANG-JA",
+  "last_fire_id": "20260810T070001-2413728-f647d0aacb23",
+  "status": "done_criterion_met_fire_1_of_2",
+  "done_receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-JA/done/dr-lang-ja-receipt.v1.dsse.json",
+  "claim_verdict": "CLAIM_SURVIVED",
+  "candidates_recorded": ["DR-LANG-JA-01","DR-LANG-JA-02","DR-LANG-JA-03","DR-LANG-JA-04","DR-LANG-JA-05","DR-LANG-JA-06"],
+  "previously_supplied_candidates_rediscovered": ["C3", "polyinfo"],
+  "empty_result_gaps": ["jis-eew-testdata-annex-ja"],
+  "notes": "If a 2nd fire runs against this item (max_fires=2), it should spot-check this fire's own deliverable (per the item's ATTACK SHAPE) rather than repeat these same 7 queries -- candidates for a 2nd-fire follow-up: (1) retry JASNAOE P-49-18 PDF extraction with a non-WebFetch text-capable path, (2) search ClassNK for a ship-hull-specific JIS anti-corrosive-paint standard number, (3) re-verify all 5 refutation-criterion limbs against live sources a second time (true external audit, not just the internal checker this fire already ran)."
+}

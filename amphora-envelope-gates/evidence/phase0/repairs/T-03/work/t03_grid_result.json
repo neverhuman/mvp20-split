@@ -1,0 +1,230 @@
+{
+  "n_cells": 18,
+  "n_non_abstaining_scalar_on_invalid_input": 1,
+  "n_slipped_through": 5,
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "margin": -50.0,
+      "reasons": [],
+      "verdict": "FAIL"
+    },
+    "how_planted": "mk_snap(HI_A + 50.0) on the untouched TETA policy (no bound tampering)",
+    "planted_defect": "candidate mass.part_A_g = 239.0 g, 50g over the real 189g inclusive upper bound, against the unmodified, non-inverted, finite TETA policy bounds"
+  },
+  "refutation_criterion_observation_occurred": true,
+  "refutation_criterion_verbatim": "Any invalid or boundary-gaming input yields a PASS or a non-abstaining scalar.",
+  "results": [
+    {
+      "boundary_class": "inclusive_bound_off_by_one",
+      "description": "unregistered forged policy (no policy_id) with lower bound loosened by 1 ULP; value placed exactly on the forged (illegitimate) boundary",
+      "margin_repr": "0x0.0p+0",
+      "metric": "envelope_policy_substitution_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "evaluate_gate() has NO policy_id / registry / fixture_only check at all -- any dict shaped {authoritative!=True, constraints:[...]} is accepted.",
+      "reasons": [],
+      "slipped_through": true,
+      "verdict": "PASS"
+    },
+    {
+      "boundary_class": "inverted_envelope_min_gt_max",
+      "description": "unregistered forged policy, additionally inverted (lower=1e6 > upper=0)",
+      "margin_repr": null,
+      "metric": "envelope_policy_substitution_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "tests whether policy-substitution rejection is independent of the separate inversion check",
+      "reasons": [
+        "inverted_bounds:forged_inv"
+      ],
+      "slipped_through": false,
+      "verdict": "REJECT"
+    },
+    {
+      "boundary_class": "nan_inf_bounds",
+      "description": "unregistered forged policy with -inf/+inf bounds (value-free envelope) fed a value 2.6x the real 189g upper bound",
+      "margin_repr": "inf",
+      "metric": "envelope_policy_substitution_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "EXCURSION-INVARIANCE / VALUE-FREE BYPASS probe (directive A.1): if bounds are +/-inf, margin is +inf for ANY candidate value regardless of physical magnitude -- the gate becomes value-free.",
+      "reasons": [],
+      "slipped_through": true,
+      "verdict": "PASS"
+    },
+    {
+      "boundary_class": "unit_scale_substitution",
+      "description": "forged policy keeps g-scale numeric bounds [171,189] but relabels unit 'kg' (1000x real-world magnitude); snapshot value 180 relabeled unit 'kg' to match",
+      "margin_repr": "0x1.2000000000000p+3",
+      "metric": "envelope_policy_substitution_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "string-only unit check: matching (forged) unit labels pass numeric comparison even though 180 kg != 180 g; no dimensional conversion is ever performed. Recorded as a documentation/label gap even where the numeric verdict happens to be technically 'PASS is the wrong question' -- see receipt discussion.",
+      "reasons": [],
+      "slipped_through": false,
+      "verdict": "PASS"
+    },
+    {
+      "boundary_class": "inclusive_bound_off_by_one",
+      "description": "trusted snapshot value = nextafter(171.0, -inf) (1 ULP below published inclusive lower bound) -- must FAIL, not PASS",
+      "margin_repr": "-0x1.0000000000000p-45",
+      "metric": "trusted_feature_substitution_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [],
+      "slipped_through": false,
+      "verdict": "FAIL"
+    },
+    {
+      "boundary_class": "inverted_envelope_min_gt_max",
+      "description": "real policy with part_B bound inverted in place, snapshot part_A substituted to a wildly-out 500g value",
+      "margin_repr": null,
+      "metric": "trusted_feature_substitution_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [
+        "inverted_bounds:part_B_mass_within_tolerance"
+      ],
+      "slipped_through": false,
+      "verdict": "REJECT"
+    },
+    {
+      "boundary_class": "nan_inf_bounds",
+      "description": "part_A genuinely in-range (180g, margin +9); part_B trusted feature value substituted with NaN (undefined reading) -- CONFIRMED FALSE PASS via min() ordering",
+      "margin_repr": "0x1.2000000000000p+3",
+      "metric": "trusted_feature_substitution_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "THIS IS THE SLIP: verdict PASS, margin 9.0, part_B's NaN is invisible in the output. A corrupted/undefined feature reading is silently accepted as satisfying its constraint.",
+      "reasons": [],
+      "slipped_through": true,
+      "verdict": "PASS"
+    },
+    {
+      "boundary_class": "unit_scale_substitution",
+      "description": "trusted snapshot value 180000 (mg-scale number) mislabeled unit 'g' -- true 1000x unit-scale substitution",
+      "margin_repr": "-0x1.5f31800000000p+17",
+      "metric": "trusted_feature_substitution_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [],
+      "slipped_through": false,
+      "verdict": "FAIL"
+    },
+    {
+      "boundary_class": "inclusive_bound_off_by_one",
+      "description": "part_A lower_inclusive set to nextafter(189.0, +inf) -- smallest possible inversion (1 ULP over upper)",
+      "margin_repr": null,
+      "metric": "envelope_bound_inversion_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [
+        "inverted_bounds:part_A_mass_within_tolerance"
+      ],
+      "slipped_through": false,
+      "verdict": "REJECT"
+    },
+    {
+      "boundary_class": "inverted_envelope_min_gt_max",
+      "description": "ALL THREE constraints inverted simultaneously (existing G5 probe only inverts constraint[0])",
+      "margin_repr": null,
+      "metric": "envelope_bound_inversion_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [
+        "inverted_bounds:part_A_mass_within_tolerance"
+      ],
+      "slipped_through": false,
+      "verdict": "REJECT"
+    },
+    {
+      "boundary_class": "nan_inf_bounds",
+      "description": "part_A bounds set to [-inf, +inf] on the REAL, registered TETA policy; value 500g (2.6x the real 189g upper) -- CONFIRMED SLIP",
+      "margin_repr": "0x1.0000000000000p+0",
+      "metric": "envelope_bound_inversion_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "THIS IS THE SLIP: verdict PASS, margin +inf. Bound-inversion check (float(lo) > float(hi)) never fires because -inf > +inf is False in IEEE 754 -- a non-finite bound is treated as a legitimate, wide-open envelope rather than rejected as boundary-gaming input.",
+      "reasons": [],
+      "slipped_through": true,
+      "verdict": "PASS"
+    },
+    {
+      "boundary_class": "nan_inf_bounds_nan_lower_kpi_claim_check",
+      "description": "KPI text claims 'lower = NaN ... All return Err' (probe_sample_size 3) -- this exact case was NEVER executed anywhere in run_envelope_gates.py's G5 battery before this fire",
+      "margin_repr": "nan",
+      "metric": "envelope_bound_inversion_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": true,
+      "note": "Verdict is FAIL not REJECT/Err as the KPI claims; margin is NaN (a non-abstaining scalar) rather than an abstention -- the KPI's own claimed probe was never actually run by the oracle it cites.",
+      "reasons": [],
+      "slipped_through": false,
+      "verdict": "FAIL"
+    },
+    {
+      "boundary_class": "unit_scale_substitution",
+      "description": "part_A bounds inverted (189,171) AND relabeled unit 'kg'; snapshot value 180 relabeled 'kg' to match",
+      "margin_repr": null,
+      "metric": "envelope_bound_inversion_fail_closed_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [
+        "inverted_bounds:part_A_mass_within_tolerance"
+      ],
+      "slipped_through": false,
+      "verdict": "REJECT"
+    },
+    {
+      "boundary_class": "inclusive_bound_off_by_one",
+      "description": "candidate claims pass_all_hard=True on part_A = nextafter(189.0, +inf) (1 ULP over upper)",
+      "margin_repr": "-0x1.0000000000000p-45",
+      "metric": "candidate_gate_pass_injection_ignore_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [],
+      "slipped_through": false,
+      "verdict": "FAIL"
+    },
+    {
+      "boundary_class": "inverted_envelope_min_gt_max",
+      "description": "candidate claims pass_all_hard=True while part_A bounds are locally inverted",
+      "margin_repr": null,
+      "metric": "candidate_gate_pass_injection_ignore_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [
+        "inverted_bounds:part_A_mass_within_tolerance"
+      ],
+      "slipped_through": false,
+      "verdict": "REJECT"
+    },
+    {
+      "boundary_class": "nan_inf_bounds",
+      "description": "candidate claims pass_all_hard=True on the +/-inf value-free bounds policy with value 500g",
+      "margin_repr": "0x1.0000000000000p+0",
+      "metric": "candidate_gate_pass_injection_ignore_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "Confirms the earlier value-free PASS is authority-independent of candidate injection: the oracle already PASSes this on its own even without a candidate claim.",
+      "reasons": [],
+      "slipped_through": true,
+      "verdict": "PASS"
+    },
+    {
+      "boundary_class": "unit_scale_substitution",
+      "description": "candidate claims pass_all_hard=True on part_A value 180000 (mg-scale) mislabeled unit 'g'",
+      "margin_repr": "-0x1.5f31800000000p+17",
+      "metric": "candidate_gate_pass_injection_ignore_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "",
+      "reasons": [],
+      "slipped_through": false,
+      "verdict": "FAIL"
+    },
+    {
+      "boundary_class": "source_inspection",
+      "description": "static check: is the candidate_claims parameter ever referenced in evaluate_gate()'s body?",
+      "margin_repr": null,
+      "metric": "candidate_gate_pass_injection_ignore_rate",
+      "non_abstaining_scalar_on_invalid_input": false,
+      "note": "candidate_claims is accepted as a parameter but the function body never reads it -- injection is ignored by construction, not by active detection.",
+      "reasons": [],
+      "slipped_through": false,
+      "verdict": "NOT_REFERENCED"
+    }
+  ],
+  "schema": "amphora.envelope-gates.t03-metamorphic-boundary-fuzz-grid.v1"
+}

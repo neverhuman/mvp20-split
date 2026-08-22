@@ -1,0 +1,145 @@
+{
+  "payload": {
+    "authoritative": false,
+    "authority_lock": {
+      "fto_not_performed": true,
+      "no_optimizer_authority": true,
+      "no_patentability_authority": true,
+      "no_procurement_authority": true,
+      "no_product_performance_authority": true,
+      "no_qualification_authority": true,
+      "no_ranking_authority": true,
+      "no_regulatory_authority": true,
+      "no_release_authority": true,
+      "no_safety_authority": true
+    },
+    "blinding": {
+      "enabled": true,
+      "masked_fields": [
+        "formula_id",
+        "treatment"
+      ]
+    },
+    "candidate": {
+      "candidate_id": "external-wei2024-wetc-zd-acat-go-formula",
+      "candidate_type": "formulation",
+      "formulation": {
+        "formula_id": "external-wei2024-0.5-0.375-mass-only"
+      }
+    },
+    "candidate_sha256": "9fd7a08f2afc346e52da6f20445a7a506d68d1012744310f860164fc695bf112",
+    "canonical_rendering": "# Locked CRO fixture cro-external-wei2024-salt-spray-v1\n\nCandidate SHA-256: `9fd7a08f2afc346e52da6f20445a7a506d68d1012744310f860164fc695bf112`\nFormula SHA-256: `dc1357730ed279975bcd70a8ce0737cfdbd3629b0550d1f93151111c8fda71bb`\n\n## Recipe\n1. ADD ep-147w-epoxy-resin 0.5 g (tolerance -0.01/+0.01)\n2. ADD eh613w-curing-agent 0.375 g (tolerance -0.01/+0.01)\n3. ADD deionized-water-solvent 1 mL (tolerance -0.05/+0.05)\n\n## Controls\n- blank-control [NEGATIVE]: uncoated cold-rolled steel substrate\n- reference-control [COMPARATOR]: zinc-dust-only WETC reference formulation (pre-ACAT/GO baseline per source)\n\n## Decision rules\n- salt_spray_hours_at_final_readout >= 336 h => CONTINUE\n\n## Early-kill rules\n- taber_wear_cycles_completed < 1000 cycles => STOP\n\n## Required outputs\n- raw_measurements.csv\n- custody_log.json\n- deviations.json\n- signed_result_receipt.json\n\n## Authority lock\n- fto_not_performed: true\n- no_optimizer_authority: true\n- no_patentability_authority: true\n- no_procurement_authority: true\n- no_product_performance_authority: true\n- no_qualification_authority: true\n- no_ranking_authority: true\n- no_regulatory_authority: true\n- no_release_authority: true\n- no_safety_authority: true\n\nScientific readiness: UNVALIDATED\nDecision use: AUDIT_ONLY\nRanking eligible: false\nLab execution: NOT_EXECUTED\n",
+    "controls": [
+      {
+        "control_id": "blank-control",
+        "control_type": "NEGATIVE",
+        "treatment": "uncoated cold-rolled steel substrate"
+      },
+      {
+        "control_id": "reference-control",
+        "control_type": "COMPARATOR",
+        "treatment": "zinc-dust-only WETC reference formulation (pre-ACAT/GO baseline per source)"
+      }
+    ],
+    "custody": {
+      "handoffs": [
+        "PACKAGER_TO_CRO",
+        "CRO_RECEIPT",
+        "CRO_TO_ARCHIVE"
+      ],
+      "sample_ids_required": true,
+      "tamper_evidence_required": true
+    },
+    "decision_rules": [
+      {
+        "metric": "salt_spray_hours_at_final_readout",
+        "operator": ">=",
+        "outcome": "CONTINUE",
+        "threshold": 336.0,
+        "threshold_provenance": "verbatim_source_parameter (ASTM B-117 salt-spray, longest of 6 stated readout timepoints: 24/72/120/168/240/336 h)",
+        "unit": "h"
+      }
+    ],
+    "decision_use_ceiling": "AUDIT_ONLY",
+    "early_kill_rules": [
+      {
+        "metric": "taber_wear_cycles_completed",
+        "operator": "<",
+        "outcome": "STOP",
+        "threshold": 1000.0,
+        "threshold_provenance": "verbatim_source_parameter (ASTM D4060 Taber Abrasion Tester, stated 1000 wear-cycle protocol)",
+        "unit": "cycles"
+      }
+    ],
+    "external_source": {
+      "rights_evidence_path": "amphora-cro-protocol-packager/evidence/phase0/sources/imports/S12-wei2024-polymers-16-1252-methods-excerpt.v1.json",
+      "source_id": "S12"
+    },
+    "fixture_id": "cro-external-wei2024-salt-spray-v1",
+    "fixture_only": true,
+    "formula_sha256": "dc1357730ed279975bcd70a8ce0737cfdbd3629b0550d1f93151111c8fda71bb",
+    "lab_execution_status": "NOT_EXECUTED",
+    "narrative": [
+      "First externally-sourced CRO protocol candidate in this module: real recipe masses and QC checkpoints from Wei et al. 2024 (CC BY 4.0), not self-authored synthetic values.",
+      "No laboratory execution or product authority is asserted."
+    ],
+    "ranking_eligible": false,
+    "recipe_steps": [
+      {
+        "action": "ADD",
+        "amount": 0.5,
+        "amount_provenance": "verbatim_source_parameter",
+        "ingredient_id": "ep-147w-epoxy-resin",
+        "sequence": 1,
+        "tolerance": {
+          "minus": 0.01,
+          "plus": 0.01
+        },
+        "tolerance_provenance": "assumed_not_in_source (analytical-balance precision; paper states no tolerance)",
+        "unit": "g"
+      },
+      {
+        "action": "ADD",
+        "amount": 0.375,
+        "amount_provenance": "verbatim_source_parameter",
+        "ingredient_id": "eh613w-curing-agent",
+        "sequence": 2,
+        "tolerance": {
+          "minus": 0.01,
+          "plus": 0.01
+        },
+        "tolerance_provenance": "assumed_not_in_source (analytical-balance precision; paper states no tolerance)",
+        "unit": "g"
+      },
+      {
+        "action": "ADD",
+        "amount": 1.0,
+        "amount_provenance": "verbatim_source_parameter",
+        "ingredient_id": "deionized-water-solvent",
+        "sequence": 3,
+        "tolerance": {
+          "minus": 0.05,
+          "plus": 0.05
+        },
+        "tolerance_provenance": "assumed_not_in_source (graduated-pipette precision; paper states no tolerance)",
+        "unit": "mL"
+      }
+    ],
+    "required_outputs": [
+      "raw_measurements.csv",
+      "custody_log.json",
+      "deviations.json",
+      "signed_result_receipt.json"
+    ],
+    "results": null,
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "schema": "amphora.cro-protocol-known-answer.v1",
+  "signature": {
+    "algorithm": "Ed25519",
+    "candidate_supplied": false,
+    "key_id": "cro-external-fixture-1ce313f435eddd91ff48809dcaad5cb5769110eb7de02c7a7e1d6596a8b20a3c",
+    "public_key_hex": "49f83e486e5295e6bd961206ae0bc2f018559dccbea89940395f8b4137069176",
+    "signature_hex": "cddc2d533dd0bb114723ffa80be28b88acb94afa5b6e1cd964ac630daba93035d591f616ef6632f35986548d3f18c0e69ba49f2ecdab4e29ff009e63a38f6a05"
+  }
+}

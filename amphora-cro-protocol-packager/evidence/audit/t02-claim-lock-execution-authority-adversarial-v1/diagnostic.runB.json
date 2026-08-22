@@ -1,0 +1,380 @@
+{
+  "axis": "FIRST adversarial test of amphora-cro-protocol-packager (zero prior ledger verdicts). Targets the CLAIM-LOCK path (claim_locks map, all 8 REQUIRED_CRO_CLAIM_LOCKS) and the execution_authority_locked path (execution_authorized scalar, ranking_eligible, authority_ceiling) of the live CroProtocolPackageV2 signed-packet contract, plus the previously-unexamined locked_numeric_thresholds / protocol_lock_sha256 binding pair.",
+  "campaign_item_id": "T-02",
+  "claim_under_attack": "amphora-cro-protocol-packager/docs/mission.md (campaign item T-02 claim_text): amphora-cro-protocol-packager has never received an adversarial verdict; its constructive SIGNED_RECEIPT-era receipts (8/8 CRO claim-locks true + sign-verify round-trip 1.0 at n=5, cro-protocol-packager-signed-packet-kpi.v1.json) are untested claims about the strength of the packager's claim-lock and execution-authority enforcement.",
+  "directive_obligation": "T2-02",
+  "directive_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+  "directive_probes": [
+    {
+      "fail_closed": true,
+      "group": "directive_a_execution_authorized_true",
+      "path": "execution_authority_locked",
+      "probe": "execution_authorized_flipped_true"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_EXECUTION_AUTHORITY",
+      "mutation": "removed_from_map",
+      "path": "claim_lock",
+      "probe": "stripped_NO_EXECUTION_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_EXECUTION_AUTHORITY",
+      "mutation": "value_set_false",
+      "path": "claim_lock",
+      "probe": "nulled_NO_EXECUTION_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_PROCUREMENT_AUTHORITY",
+      "mutation": "removed_from_map",
+      "path": "claim_lock",
+      "probe": "stripped_NO_PROCUREMENT_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_PROCUREMENT_AUTHORITY",
+      "mutation": "value_set_false",
+      "path": "claim_lock",
+      "probe": "nulled_NO_PROCUREMENT_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_SAFETY_CLAIM",
+      "mutation": "removed_from_map",
+      "path": "claim_lock",
+      "probe": "stripped_NO_SAFETY_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_SAFETY_CLAIM",
+      "mutation": "value_set_false",
+      "path": "claim_lock",
+      "probe": "nulled_NO_SAFETY_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_SYNTHESIS_CLAIM",
+      "mutation": "removed_from_map",
+      "path": "claim_lock",
+      "probe": "stripped_NO_SYNTHESIS_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_SYNTHESIS_CLAIM",
+      "mutation": "value_set_false",
+      "path": "claim_lock",
+      "probe": "nulled_NO_SYNTHESIS_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_PERFORMANCE_CLAIM",
+      "mutation": "removed_from_map",
+      "path": "claim_lock",
+      "probe": "stripped_NO_PERFORMANCE_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_PERFORMANCE_CLAIM",
+      "mutation": "value_set_false",
+      "path": "claim_lock",
+      "probe": "nulled_NO_PERFORMANCE_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_QUALIFICATION_CLAIM",
+      "mutation": "removed_from_map",
+      "path": "claim_lock",
+      "probe": "stripped_NO_QUALIFICATION_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_QUALIFICATION_CLAIM",
+      "mutation": "value_set_false",
+      "path": "claim_lock",
+      "probe": "nulled_NO_QUALIFICATION_CLAIM"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_RANKING_AUTHORITY",
+      "mutation": "removed_from_map",
+      "path": "claim_lock",
+      "probe": "stripped_NO_RANKING_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "NO_RANKING_AUTHORITY",
+      "mutation": "value_set_false",
+      "path": "claim_lock",
+      "probe": "nulled_NO_RANKING_AUTHORITY"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "UNMADE_DIGITAL_PROPOSAL",
+      "mutation": "removed_from_map",
+      "path": "claim_lock",
+      "probe": "stripped_UNMADE_DIGITAL_PROPOSAL"
+    },
+    {
+      "fail_closed": true,
+      "group": "directive_b_strip_or_null_claim_locks",
+      "lock": "UNMADE_DIGITAL_PROPOSAL",
+      "mutation": "value_set_false",
+      "path": "claim_lock",
+      "probe": "nulled_UNMADE_DIGITAL_PROPOSAL"
+    },
+    {
+      "control_unmutated_signature_verifies": true,
+      "fail_closed": true,
+      "group": "directive_c_one_byte_mutation",
+      "path": "signature",
+      "probe": "signed_packet_payload_one_byte_flip"
+    },
+    {
+      "fail_closed": false,
+      "group": "directive_d_packet_authored_threshold",
+      "injected_threshold_key": "attacker_pass_fail_yield_strength_min_mpa",
+      "injected_threshold_value": 9999.0,
+      "packet_authored_threshold_accepted": true,
+      "packet_id_recomputed_after_mutation": true,
+      "path": "locked_numeric_thresholds/protocol_lock_sha256",
+      "positive_control_missing_lock_hash_rejected": true,
+      "probe": "attacker_threshold_with_undereived_protocol_lock_hash",
+      "protocol_lock_sha256_is_content_derived": false,
+      "protocol_lock_sha256_used": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_signature_ok": true
+    }
+  ],
+  "directive_probes_slipped_through": [
+    {
+      "fail_closed": false,
+      "group": "directive_d_packet_authored_threshold",
+      "injected_threshold_key": "attacker_pass_fail_yield_strength_min_mpa",
+      "injected_threshold_value": 9999.0,
+      "packet_authored_threshold_accepted": true,
+      "packet_id_recomputed_after_mutation": true,
+      "path": "locked_numeric_thresholds/protocol_lock_sha256",
+      "positive_control_missing_lock_hash_rejected": true,
+      "probe": "attacker_threshold_with_undereived_protocol_lock_hash",
+      "protocol_lock_sha256_is_content_derived": false,
+      "protocol_lock_sha256_used": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sign_ok": true,
+      "validate_ok": true,
+      "verify_signature_ok": true
+    }
+  ],
+  "directive_ref": {
+    "doc": "AMPHORA-DIRECTIVE-2026-08-05",
+    "item_id": "T2-02",
+    "md_path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+    "md_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+    "owner": "LOOP",
+    "section": "A.1"
+  },
+  "directive_sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d",
+  "directive_sha256_verified_now": true,
+  "does_not_close": [
+    "No live production or CLI code path was found that reads locked_numeric_thresholds or protocol_lock_sha256 for any purpose (grepped whole workspace: these two fields appear ONLY inside CroProtocolPackageV2's own definition and its format-only validate() arm). This receipt does not show a packet-authored threshold being used to make a live pass/fail decision anywhere today -- it shows that the signed-packet contract's OWN claim-lock machinery accepts and signs one, which is what the pre-committed refutation_criterion names ('a packet-authored threshold is accepted'), independent of whether a consumer exists yet.",
+    "If any future code path is added that reads locked_numeric_thresholds as an authoritative decision input (e.g. a CRO acceptance gate), trusting protocol_lock_sha256 as proof the thresholds were host-set rather than packet-authored, it would be trivially forgeable exactly as demonstrated here -- this is the live risk this finding flags for repair, not a hypothetical.",
+    "The 8-alternate-encoding sub-harness (V1-V8 x 2 paths) found 0 leaks; taken alone it would license CLAIM_SURVIVED for the claim-lock and execution-authority-locked deserialization boundary specifically. The module-level verdict is REFUTED because of the separate (d) threshold-binding finding, not because the encoding harness found a leak.",
+    "This probe exercises the Rust runtime only (CroProtocolPackageV2 in amphora-assurance-capabilities). It does not probe amphora-cli's invocation surface or any HTTP/CLI boundary that might construct a packet from untrusted input before calling these APIs."
+  ],
+  "encoding_leaks_detected": [],
+  "encoding_table": [
+    {
+      "description": "add a rogue top-level sibling key alongside the real field",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "claim_lock",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V1_top_level_key"
+    },
+    {
+      "description": "add a rogue top-level sibling key alongside the real field",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "execution_authority_locked",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V1_top_level_key"
+    },
+    {
+      "description": "wrap the target value in an array container",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "claim_lock",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V2_array_container"
+    },
+    {
+      "description": "wrap the target value in an array container",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "execution_authority_locked",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V2_array_container"
+    },
+    {
+      "description": "bury an override several levels deep in an opaque sibling value",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "claim_lock",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V3_deep_nesting"
+    },
+    {
+      "description": "bury an override several levels deep in an opaque sibling value",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "execution_authority_locked",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V3_deep_nesting"
+    },
+    {
+      "description": "lower/mixed-case spelling of the real key",
+      "deserialize_ok": true,
+      "leak_detected": false,
+      "path": "claim_lock",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V4_key_case_variant"
+    },
+    {
+      "description": "lower/mixed-case spelling of the real key",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "execution_authority_locked",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V4_key_case_variant"
+    },
+    {
+      "description": "a differently-named synonym key",
+      "deserialize_ok": true,
+      "leak_detected": false,
+      "path": "claim_lock",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V5_alternate_key_name"
+    },
+    {
+      "description": "a differently-named synonym key",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "execution_authority_locked",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V5_alternate_key_name"
+    },
+    {
+      "description": "a semantically-equivalent alternate field name",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "claim_lock",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V6_semantic_alt_field"
+    },
+    {
+      "description": "a semantically-equivalent alternate field name",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "execution_authority_locked",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V6_semantic_alt_field"
+    },
+    {
+      "description": "encode the target value as a JSON string blob instead of its native type",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "claim_lock",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V7_string_container"
+    },
+    {
+      "description": "encode the target value as a JSON string blob instead of its native type",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "execution_authority_locked",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V7_string_container"
+    },
+    {
+      "description": "Unicode-homoglyph spelling of the real key (Greek Omicron for Latin O)",
+      "deserialize_ok": true,
+      "leak_detected": false,
+      "path": "claim_lock",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V8_unicode_homoglyph_key"
+    },
+    {
+      "description": "Unicode-homoglyph spelling of the real key (Greek Omicron for Latin O)",
+      "deserialize_ok": false,
+      "leak_detected": false,
+      "path": "execution_authority_locked",
+      "result": "EVADED (poisoned encoding never produced a valid, bad-state CroProtocolPackageV2)",
+      "vector_id": "V8_unicode_homoglyph_key"
+    }
+  ],
+  "founder_directive_done_criteria_met": false,
+  "founder_directive_done_criteria_met_detail": {
+    "every_mutation_invalidates_the_package": "TRUE for all mutations EXCEPT the (d) threshold-injection construction, which validates, signs, and verifies successfully with status still DRAFT_FOR_CRO_FEASIBILITY_REVIEW.",
+    "every_stripped_lock_fails_closed": true,
+    "no_packet_authored_threshold_is_honored": "FALSE at the validate()/sign()/verify_signature() layer: an attacker-authored threshold IS accepted into a validly-signed package (see threshold_injection_probe). This receipt did not find any downstream consumer that reads locked_numeric_thresholds to make a decision (see does_not_close) -- 'honored' in the sense of driving a live decision was not observed because nothing in the current runtime reads this field for any purpose. 'Accepted' by the signed-packet contract itself WAS observed, which is what the refutation_criterion names.",
+    "status_stays_draft_for_cro_feasibility_review": true
+  },
+  "founder_directive_done_criteria_verbatim": "Status stays DRAFT_FOR_CRO_FEASIBILITY_REVIEW; every mutation invalidates the package; every stripped lock fails closed; no packet-authored threshold is honored.",
+  "harness": "amphora-assurance-capabilities/tests/cro_protocol_packager_t02_adversarial_probe.rs (cargo test, real compiled runtime)",
+  "harness_rs_sha256": "7d3959863564d7a8fd04abb15e66bd9e74db6fea182d97f9fc6066ef364f3c01",
+  "headline": "REFUTED: directive attack (d) -- a packet-authored performance/decision threshold in locked_numeric_thresholds, paired with a format-valid but content-undereived protocol_lock_sha256 (\"aaaaaaaaaaaaaaaa...\", never the hash of anything), was ACCEPTED end-to-end: validate()=Ok, sign()=Ok, verify_signature()=Ok (validate_ok=True, sign_ok=True, verify_signature_ok=True). protocol_lock_sha256 is format-checked (64 lowercase hex) but never content-bound to locked_numeric_thresholds anywhere in the codebase -- no producer or consumer computes it as a hash of the thresholds it claims to lock. A positive control (same construction with protocol_lock_sha256 omitted) IS correctly rejected (positive_control_missing_lock_hash_rejected=True), proving the harness discriminates a real binding defect rather than being vacuously green. Separately: directive probes (a) execution_authorized->true, (b) strip/null each of the 8 REQUIRED_CRO_CLAIM_LOCKS in turn (16 probes), and (c) a one-byte flip inside the DSSE-signed payload of an already-signed packet, ALL fail closed (17 additional probes beyond (d), 0 slipped through). The 8-alternate-encoding injection harness (V1-V8, same taxonomy as the amphora-candidate-contract T-01 probe) run against both the claim-lock path and the execution_authority_locked path (16 vector/path combinations) found 0 leaks -- all 16 EVADED, because execution_authorized is a strict top-level scalar field behind #[serde(deny_unknown_fields)] (any misnamed/wrapped encoding fails at deserialize) and claim_locks required-key membership is checked exactly by string equality (any misnamed/homoglyph key fails the required-lock presence check at validate()). The encoding harness alone would have licensed CLAIM_SURVIVED; the directive (d) threshold-binding finding overrides that to CLAIM_REFUTED for the module as a whole, because refutation_criterion item (iii) (\"a packet-authored threshold is accepted\") DID occur.",
+  "module": "amphora-cro-protocol-packager",
+  "n_detected_leak": 0,
+  "n_directive_probes": 19,
+  "n_encoding_path_combinations": 16,
+  "n_encoding_vectors": 8,
+  "n_evaded": 16,
+  "n_slipped_through_total": 1,
+  "non_circularity": "Uses the REAL compiled amphora-assurance-capabilities crate's CroProtocolPackageV2::draft/validate/sign/verify_signature (same public API amphora-cli and the module's own Phase-0 KPI harness use), invoked from a Rust #[test] integration test in the crate's own tests/ directory (amphora-assurance-capabilities/tests/cro_protocol_packager_t02_adversarial_probe.rs), compiled and run via `cargo test -p amphora-assurance-capabilities --offline`. Not a Python re-implementation of validate()/sign()/verify_signature().",
+  "probe_stdout_sha256": "4e72a91c51de4e8cab15803860bb5a2dccf1aebe4f0801eccbe30d8314d40ef7",
+  "refutation_criterion_observed": true,
+  "refutation_criterion_statement": "REFUTATION DID OCCUR via directive attack (d): a packet-authored performance/decision threshold (locked_numeric_thresholds) WAS accepted through validate()/sign()/verify_signature() when paired with a format-valid but content-undereived protocol_lock_sha256. This is exactly clause (iii) of the refutation_criterion (\"a packet-authored threshold is accepted\"). Clauses (i) (\"any mutation verifies\") and (ii) (\"any lock is bypassable\") did NOT occur in the remaining 34 probes (19 directive-(a)/(b)/(c) probes minus the (d) group, plus 16 encoding x path combinations): execution_authorized=true, all 16 strip/null claim-lock mutations, and the one-byte signed-payload flip all failed closed, and all 16 alternate-encoding vector/path combinations were evaded.",
+  "refutation_criterion_verbatim": "Any mutation verifies, any lock is bypassable, or a packet-authored threshold is accepted.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.cro-protocol-packager.t02-adversarial-claim-lock-execution-authority-diagnostic.v1",
+  "source_hashes": {
+    "amphora-assurance-capabilities/Cargo.toml": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea",
+    "amphora-assurance-capabilities/src/lib.rs": "d80e09105f43c25ebf0851460c54d49246d3906056f3dbce2b6ff3a78469b7ca"
+  },
+  "study_id": "amphora-cro-protocol-packager-t02-claim-lock-execution-authority-adversarial-v1",
+  "theory_reference": "Saltzer & Schroeder (1975) 'The Protection of Information in Computer Systems' Proceedings of the IEEE 63(9):1278-1308 -- complete mediation requires every field that participates in a trust decision to be independently authenticated, not merely format-checked; a field that LOOKS like a cryptographic binding (a 64-hex-char 'lock' hash) but is never computed from the content it claims to bind provides no actual integrity guarantee. NIST FIPS 180-4 (2015) SHA-256 -- a hash is only a binding if the verifier recomputes and compares it against the bound content; format validity (length + alphabet) is not content validity. in-toto Attestation v1.0 (2020) / DSSE -- the signed envelope faithfully protects EXACTLY the bytes it signs (this receipt's directive-(c) one-byte-flip probe confirms that layer holds); it cannot protect against a field inside those bytes that was never bound to anything in the first place.",
+  "threshold_injection_probe": {
+    "fail_closed": false,
+    "group": "directive_d_packet_authored_threshold",
+    "injected_threshold_key": "attacker_pass_fail_yield_strength_min_mpa",
+    "injected_threshold_value": 9999.0,
+    "packet_authored_threshold_accepted": true,
+    "packet_id_recomputed_after_mutation": true,
+    "path": "locked_numeric_thresholds/protocol_lock_sha256",
+    "positive_control_missing_lock_hash_rejected": true,
+    "probe": "attacker_threshold_with_undereived_protocol_lock_hash",
+    "protocol_lock_sha256_is_content_derived": false,
+    "protocol_lock_sha256_used": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sign_ok": true,
+    "validate_ok": true,
+    "verify_signature_ok": true
+  },
+  "two_replay_byte_identical": true,
+  "verdict": "REFUTED"
+}

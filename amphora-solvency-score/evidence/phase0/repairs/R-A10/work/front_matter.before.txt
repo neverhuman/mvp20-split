@@ -1,0 +1,3 @@
+---
+{"audit_date":"2026-07-17","authority_ceiling":"RULE_CITED","candidate_types":["formulation"],"capability_profile":"capability-profile.json","consumers":[],"dependencies":["amphora-candidate-contract","amphora-source-ledger"],"evidence_inventory":"../../config/module-evidence-inventory.json","lane":"formulation","module_id":"amphora-solvency-score","operational_readiness":"READY","phase":"PHASE_0","schema":"amphora.module-mission.v1","scientific_readiness":"LOCKED_INTERNAL","solver_use_ceiling":"CONSTRAINT_ONLY"}
+---

@@ -1,0 +1,47 @@
+{
+  "authority_tier": "REAL_ARITHMETIC",
+  "candidate_id": "Envelope-65-black",
+  "claim_locks": {
+    "arithmetic_is_not_performance_proof": true
+  },
+  "evidence_scope": "formulation",
+  "explanations": [
+    "Deterministic formulation arithmetic is optimizer-usable but not performance proof."
+  ],
+  "gates": {
+    "arithmetic_computed": true
+  },
+  "metrics": {
+    "model_card": {
+      "can_optimize": true,
+      "current_pass": true,
+      "current_status": "SCORED",
+      "dataset_checksums": {},
+      "dataset_ids": [
+        "fixtures/formulation_candidate.json"
+      ],
+      "direction": "maximize",
+      "kpi_name": "formulation",
+      "model_authority": "REAL_ARITHMETIC",
+      "score_semantics": "OPTIMIZATION_OBJECTIVE",
+      "unit": "normalized_0_1",
+      "validation_bar": "optimizer-authorized deterministic scorer"
+    },
+    "volume_solids_pct": 65.0
+  },
+  "missing_inputs": [],
+  "module_id": "fixture-formulation-arithmetic",
+  "module_version": "0.1.0",
+  "objective_values": {
+    "volume_solids_pct": 65.0
+  },
+  "schema_version": "amphora.score-envelope.v1",
+  "score_0_1": 1.0,
+  "score_semantics": "OPTIMIZATION_OBJECTIVE",
+  "source_refs": [
+    "fixtures/formulation_candidate.json"
+  ],
+  "status": "SCORED",
+  "uncertainty": {},
+  "usable_by_optimizer": true
+}

@@ -1,0 +1,53 @@
+{
+  "candidates": {
+    "D_int_repr_defect": {
+      "failed_modules": 0,
+      "feasible": true,
+      "gate_literal": "110"
+    },
+    "E_float_repr_control": {
+      "failed_modules": 0,
+      "feasible": false,
+      "gate_literal": "110.0"
+    },
+    "F_true_pass_control": {
+      "failed_modules": 0,
+      "feasible": true,
+      "gate_literal": "200"
+    }
+  },
+  "d_and_e_should_be_identical_and_denied_under_rfc8259_value_semantics": false,
+  "defect_wrongly_admits_excluded_value_as_feasible": true,
+  "divergence_observed": true,
+  "final_sorted_order": [
+    {
+      "candidate_id": "ddd-int-repr-defect",
+      "failed_modules": 0,
+      "feasible": true,
+      "ranked": false
+    },
+    {
+      "candidate_id": "fff-true-pass-control",
+      "failed_modules": 0,
+      "feasible": true,
+      "ranked": false
+    },
+    {
+      "candidate_id": "eee-float-repr-control",
+      "failed_modules": 0,
+      "feasible": false,
+      "ranked": false
+    }
+  ],
+  "hard_constraint": {
+    "expected_literal": "110.0",
+    "expected_literal_is_float": true,
+    "module_id": "amphora-molecule-property",
+    "operator": "!=",
+    "path": "flagged_batch_code"
+  },
+  "probe": "optimizer-hard-constraint-numeric-representation-feasibility-v1",
+  "profile_id": "numeric-representation-feasibility-probe-v1",
+  "representation_flips_feasible_for_identical_real_number": true,
+  "true_pass_control_works": true
+}

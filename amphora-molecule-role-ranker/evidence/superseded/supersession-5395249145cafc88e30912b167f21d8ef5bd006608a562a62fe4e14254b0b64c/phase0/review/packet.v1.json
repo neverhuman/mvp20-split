@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "4cf20da479c64f3774e255370c00216126a1fa85841765c08d3c733e3373658f",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-molecule-role-ranker",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

@@ -1,0 +1,119 @@
+{
+ "frontmatter_byte_identical": true,
+ "frontmatter_json_parse_equal": true,
+ "frontmatter_sha256_after": "696de56f52698915dfda89d45a85010d2053f0ba03e108338096653ecc13be5c",
+ "frontmatter_sha256_before": "696de56f52698915dfda89d45a85010d2053f0ba03e108338096653ecc13be5c",
+ "lines_after": 1393,
+ "lines_before": 1270,
+ "mission_sha256_after": "49ee7f1900948ccd9cc890ecdd7c1f52669bd218ba9ff6a4bc8538f7784145d7",
+ "mission_sha256_before": "d7488f02f94c3349f4a00e1201bd08f22a69ffdd475998ecefcbf58950105d89",
+ "stale_occurrences_after": 0,
+ "stale_string_sweep": [
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "REAL POSITIVE lift, n=295"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "Directly delivers the coating IP prediction capability for POLYMER DIELECTRIC"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "can now offer polymer\ndielectric constant prediction with a defended MAE ~0.40"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "Directly applicable to coating chemistry decisions for\nelectrical-insulation applications."
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "1. **REAL predictive capability**"
+  },
+  {
+   "count_after": 0,
+   "count_before": 2,
+   "stale_string": "**MAJOR POSITIVE FINDING**"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "Combined with Push #23 (dielectric R\u00b2 +0.66)"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "The 24-group STRUCTURE is CONFIRMED CORRECT at scale**:"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "2. **The prior \"under-determination\" hypothesis is RESOLVED**"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "4. **Fitted Y_gi values are chemistry-plausible**"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "this receipt proves that a 24-group Van Krevelen calibration"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "2. **Portfolio priority**: For coating Tg prediction on experimental targets"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "ML strictly dominates the frozen physics-Ridge inference"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "3. **Positive R\u00b2 on rigorous LOSO-CV** confirms cross-scaffold generalization."
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "- Confirms Push #20's Ridge Y_gi calibration has real generalization value."
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "confirms the 24-group structure captures ordinal Tg signal"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "RESOLVES the Push #20 Phase-1 hypothesis about applicability domain."
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "Applicability domain restricted to the openpoly scaffold distribution. Phase-1"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "**Portfolio implication**: `amphora-molecule-property` can now offer polymer"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "**Portfolio implication**: For Phase-1, this receipt proves"
+  },
+  {
+   "count_after": 0,
+   "count_before": 1,
+   "stale_string": "reaching Bicerano-level accuracy."
+  }
+ ],
+ "stale_strings_checked": 21
+}

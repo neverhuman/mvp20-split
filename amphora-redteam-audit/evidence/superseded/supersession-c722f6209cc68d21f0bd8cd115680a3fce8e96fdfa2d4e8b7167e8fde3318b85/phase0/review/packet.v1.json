@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "d01eb5a992c6dc23451f90b06301a90fb5a9d27f870c45c6153d06bab8ae1712",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-redteam-audit",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

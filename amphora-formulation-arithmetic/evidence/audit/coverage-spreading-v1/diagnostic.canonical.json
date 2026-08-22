@@ -1,0 +1,205 @@
+{
+  "acceptance": {
+    "1604_external_anchor_pass": true,
+    "known_answer_battery_pass": true,
+    "lpu_validated_by_mc_all_outputs": true,
+    "vs_reproduces_prior_receipt": true
+  },
+  "applied_spec": {
+    "declared_transfer_loss_frac": 0.35,
+    "dft_control_rel_halfwidth_rectangular": 0.2,
+    "dft_mil": 5.0,
+    "dft_um": 127.0,
+    "note": "transfer_loss and dft_control are DECLARED APPLICATION parameters (SSPC consumption / ISO 19840 control), not formulation properties and not fitted."
+  },
+  "closes": [
+    "adds theoretical/practical coverage, WFT<->DFT closure, and dry-film areal mass to the dimensioned arithmetic surface",
+    "anchors the coverage+unit chain to the exact US-customary 1604 ft^2/gal.mil identity",
+    "carries GUM+MC calibrated intervals onto coverage, separating formulation vs application variance"
+  ],
+  "does_not_close": [
+    "not product qualification, batch release, or wet-lab coverage on a real substrate",
+    "practical transfer-loss factor is a declared application input, not a validated predictive model",
+    "does not modify the live Rust engine (still MASS_ONLY), any locked dataset, the signed Phase-0 KPI, or the 66/11 manifest"
+  ],
+  "fitted_parameters": 0,
+  "input_uncertainty_budget": {
+    "density_type_b_u": {
+      "barytes_extender": 0.03864609725875737,
+      "dgeba_der331": 0.004421161235090468,
+      "iron_oxide_red": 0.07772815877574013,
+      "mica_barrier": 0.04123737180438799,
+      "n_butanol_solvent": 0.003714947285404375,
+      "talc_extender": 0.037700574708263185,
+      "teta_hardener": 0.01701118847503999,
+      "xylene_solvent": 0.01288490719149088,
+      "zinc_phosphate_anticorrosive": 0.05569634937168983
+    },
+    "dft_control_u_um": 14.664696837416496,
+    "vs_u_c_lpu": 0.0025523912309000415
+  },
+  "known_answer_battery": [
+    {
+      "abs_err": 0.0,
+      "id": "KA1_1604_rule_external_unit_identity",
+      "note": "Wicks/Jones/Pappas 2007; 1 US gal=231 in^3 & 1 in=2.54 cm exact -> 1604.1667 ft^2/gal per mil at 100% VS. Non-circular: pure unit chain, engine not consulted for target.",
+      "observed": 1604.1666666666665,
+      "pass": true,
+      "target": 1604.1666666666665
+    },
+    {
+      "id": "KA2_full_solids_definition",
+      "observed_TC": 10.0,
+      "observed_WFT": 100.0,
+      "pass": true,
+      "target_TC": 10.0,
+      "target_WFT": 100.0
+    },
+    {
+      "id": "KA3_half_solids_definition",
+      "observed_TC": 5.0,
+      "observed_WFT": 200.0,
+      "pass": true,
+      "target_TC": 5.0,
+      "target_WFT": 200.0
+    },
+    {
+      "id": "KA4_closure_WFT_times_VS_eq_DFT",
+      "pass": true,
+      "residual": 0.0
+    },
+    {
+      "id": "KA5_closure_TC_times_DFT_eq_1000VS",
+      "pass": true,
+      "residual": 0.0
+    },
+    {
+      "id": "KA6_practical_loss_definition",
+      "pass": true,
+      "pc_loss0": 5.254881701870701,
+      "pc_loss30_over_tc": 0.7,
+      "tc": 5.254881701870701
+    },
+    {
+      "id": "KA7_areal_mass_definition",
+      "observed": 193.71198970490028,
+      "pass": true,
+      "target": 193.71198970490028
+    },
+    {
+      "TC_1x": 5.254881701870701,
+      "TC_2x": 5.254881701870701,
+      "abs_err": 0.0,
+      "id": "KA8_intensive_scale_invariance",
+      "pass": true
+    },
+    {
+      "id": "KA9_hostile_null_zero_dft_and_zero_solids_fail_closed",
+      "pass": true,
+      "tc_at_dft0_isinf": true,
+      "wft_at_vs0_isinf": true
+    }
+  ],
+  "known_answer_battery_pass": true,
+  "mc_config": {
+    "input_pdf": "rectangular (Type B, half-width = u*sqrt(3))",
+    "n": 400000,
+    "seed": 20260729
+  },
+  "module": "amphora-formulation-arithmetic",
+  "non_circularity": "Every known-answer target is fixed by DEFINITION (VS=1 => TC=1000/DFT; VS=0.5 => WFT=2*DFT; closure residuals=0; loss=0 => PC=TC) or by an EXACT external unit identity (1604 rule). No target is produced by the coverage engine.",
+  "point_estimates": {
+    "dry_film_areal_mass_g_per_m2": 246.01422692522337,
+    "dry_film_density_g_cm3": 1.937119897049003,
+    "practical_coverage_m2_per_L": 3.415673106215956,
+    "theoretical_coverage_ft2_per_gal": 214.1145340108066,
+    "theoretical_coverage_m2_per_L": 5.254881701870701,
+    "volume_solids_frac": 0.6673699761375791,
+    "wet_film_thickness_mil": 7.492096106776677,
+    "wet_film_thickness_um": 190.2992411121276
+  },
+  "real_formulation_name": "marine anti-corrosion 2K epoxy-amine primer (DGEBA DER-331 + TETA, iron-oxide/zinc-phosphate/barytes/talc/mica, xylene/n-butanol)",
+  "reproduces_prior_volume_solids": {
+    "abs_err": 3.7579050982117224e-11,
+    "prior_point": 0.6673699761,
+    "prior_u_c": 0.0025523912,
+    "recomputed_point": 0.6673699761375791,
+    "recomputed_u_c": 0.0025523912309000415,
+    "reproduces": true,
+    "u_c_abs_err": 3.090004163999738e-11,
+    "u_c_reproduces": true
+  },
+  "results": {
+    "theoretical_coverage_m2_per_L": {
+      "as_applied_with_dft_control": {
+        "effective_coverage_factor_k_mc": 1.6547258217026313,
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.030195531255438012,
+        "mc_ci95_halfwidth": 1.0358867155586124,
+        "mc_ci95_high": 6.4872525222698965,
+        "mc_ci95_low": 4.415479091152672,
+        "mc_mean": 5.327805292490924,
+        "mc_std": 0.6260171334564273,
+        "point_estimate": 5.254881701870701,
+        "u_c_lpu": 0.607114213536704
+      },
+      "at_nominal_dft": {
+        "effective_coverage_factor_k_mc": 1.7503249535028829,
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0007841104351726576,
+        "mc_ci95_halfwidth": 0.03514971482485407,
+        "mc_ci95_high": 5.289630088499141,
+        "mc_ci95_low": 5.219330658849433,
+        "mc_mean": 5.2547796845709,
+        "mc_std": 0.020081822380758386,
+        "point_estimate": 5.254881701870701,
+        "u_c_lpu": 0.020097568747244422
+      }
+    },
+    "wet_film_thickness_um": {
+      "as_applied_with_dft_control": {
+        "effective_coverage_factor_k_mc": 1.644004405789282,
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0005205643677288381,
+        "mc_ci95_halfwidth": 36.16376408686857,
+        "mc_ci95_high": 226.4759903412773,
+        "mc_ci95_low": 154.14846216754017,
+        "mc_mean": 190.26508610196035,
+        "mc_std": 21.9973644593163,
+        "point_estimate": 190.2992411121276,
+        "u_c_lpu": 21.985913415194837
+      },
+      "at_nominal_dft": {
+        "effective_coverage_factor_k_mc": 1.750380715133071,
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0006183508350711148,
+        "mc_ci95_halfwidth": 1.2731562083295955,
+        "mc_ci95_high": 191.59544879657872,
+        "mc_ci95_low": 189.04913637991953,
+        "mc_mean": 190.30571528928712,
+        "mc_std": 0.7273595951568771,
+        "point_estimate": 190.2992411121276,
+        "u_c_lpu": 0.7278093585699393
+      }
+    }
+  },
+  "run_type": "AUDIT_ONLY",
+  "study_id": "formulation-arithmetic-coverage-spreading-v1",
+  "target_capability": "applied-film coverage / practical spreading rate + WFT<->DFT closure (dimensioned formulation arithmetic)",
+  "theory_reference": {
+    "coverage_spreading": "Wicks, Jones, Pappas & Wicks 2007, Organic Coatings: Science and Technology, 3rd ed., Wiley, ISBN 978-0-471-69806-7 (Ch.23 application arithmetic)",
+    "external_anchor_1604_rule": "231 in^3/gal / (0.001 in * 144 in^2/ft^2) = 1604.1667 ft^2/gal per mil at 100% volume solids; exact US-customary unit identity",
+    "standards": [
+      "ASTM D5145 practical/theoretical spreading rate",
+      "ISO 3233 volume of non-volatile matter",
+      "ASTM D2697 volume solids"
+    ],
+    "uncertainty": [
+      "JCGM 100:2008 (GUM) sec.5.1 LPU",
+      "JCGM 101:2008 (GUM S1) Monte Carlo"
+    ]
+  },
+  "uncertainty_finding": "At the nominal DFT setpoint, coverage/WFT uncertainty is driven purely by volume-solids uncertainty (dominant xylene density); once realistic +/-20% as-applied DFT control is admitted it DOMINATES the applied coverage interval -- i.e. applied-coverage variance is an APPLICATION-control problem, not a formulation-arithmetic one.",
+  "verdict": "COVERAGE_SPREADING_ENGINE_READY__KNOWN_ANSWER_BATTERY_PASS__1604_ANCHOR_EXACT",
+  "why_not_bootstrap_conformal": "Zero fitted parameters: predictive uncertainty is input-measurement propagation, not residual resampling. GUM LPU validated against Monte Carlo is the calibrated interval; bootstrap/split-conformal do not apply."
+}

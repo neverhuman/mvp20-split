@@ -1,0 +1,354 @@
+{
+  "acceptance": {
+    "known_answer_battery_pass": true,
+    "lpu_validated_by_mc_all_outputs": true,
+    "primer_reproduction_pass": true
+  },
+  "closes": [
+    "adds stoichiometric PHR <-> by-volume ratio <-> amine:epoxide equivalents index conversions to the dimensioned arithmetic surface",
+    "quantifies the weight-vs-volume metering uncertainty penalty and the exact convention-confusion systematic error feeding the envelope-gates stoich-ratio gap",
+    "carries GUM+MC calibrated intervals onto PHR, volume ratio, and the equivalents index"
+  ],
+  "connects_to": [
+    "amphora-envelope-gates-stoichiometric-ratio-tolerance (mass +/-5% -> ratio +10.53/-9.52%)",
+    "amphora-envelope-gates-stoichiometric-index-equivalents (amine-H:epoxide equivalents index)",
+    "amphora-formulation-arithmetic-dimensioned (stoichiometric PHR primer, 539f3e67)"
+  ],
+  "declared_application_parameter": {
+    "note": "pump/cup dispense repeatability; a DECLARED application band (like DFT control in the coverage receipt), not a formulation property and not fitted.",
+    "volumetric_metering_rel_halfwidth_rectangular": 0.02
+  },
+  "does_not_close": [
+    "not product qualification, batch release, or wet-lab cure verification",
+    "volumetric metering band is a declared application input, not a validated pump model",
+    "does not modify the live Rust engine (still MASS_ONLY), any locked dataset, the signed Phase-0 KPI, or the 66/11 manifest"
+  ],
+  "finding": "For DGEBA(EEW 187, band 182-192) + polyamide/amine hardeners the amine:epoxide index precision is DOMINATED by the resin's published EEW band (~1.5%% relative); moving from weight to volume metering adds only ~0.1 pp of RSS uncertainty from the two densities, so density variation is second-order to EEW spread. BUT the systematic error of CONFUSING the weight and volume ratio conventions equals the density ratio exactly: for DER-331(1.16)+Ancamide 350A(0.97) a weight-spec poured by volume gives r=rho_B/rho_A=0.836 (-16.4%% amine, under-cure) and a volume-spec weighed gives r=rho_A/rho_B=1.196 (+19.6%% amine) -- both far outside the +/-10%% mass-tolerance envelope from amphora-envelope-gates-stoichiometric-ratio-tolerance. Convention discipline, not density precision, is the load-bearing control for volume-metered 2K epoxy.",
+  "fitted_parameters": 0,
+  "inputs_provenance": "amphora-ingredient-library facts.json load_bearing TDS entries (resin.dgeba_331 EEW 187 band 182-192 / density 1.16; hardener.ancamide_350a AHEW 100 / density 0.97; hardener.versamid_115 AHEW 198 / density 0.97; hardener.ancamide_2353 AHEW 114 / density 1.01) + primer TETA AHEW 146.23/6.",
+  "known_answer_battery": [
+    {
+      "id": "KA1_equal_density_volume_equals_weight",
+      "note": "definition: rho_A=rho_B => Rv=PHR.",
+      "pass": true,
+      "phr": 53.475935828877006,
+      "rv_equal_density": 53.475935828877006
+    },
+    {
+      "id": "KA2_volume_weight_roundtrip_inverse",
+      "pass": true,
+      "phr_in": 53.4759,
+      "phr_out": 53.4759,
+      "residual": 0.0
+    },
+    {
+      "id": "KA3_stoichiometric_index_is_one",
+      "note": "definition: PHR=100*AHEW/EEW => r=1 independent of density.",
+      "pass": true,
+      "r_at_stoich_phr": 1.0
+    },
+    {
+      "abs_err": 0.0,
+      "expected_rho_B_over_rho_A": 0.8362068965517242,
+      "id": "KA4_convention_confusion_equals_density_ratio",
+      "note": "weight-spec phr measured by volume => r = rho_B/rho_A exactly.",
+      "pass": true,
+      "r_confused": 0.8362068965517242
+    },
+    {
+      "id": "KA5_intensive_scale_invariance",
+      "pass": true,
+      "r_10x": 1.0,
+      "r_1x": 1.0
+    },
+    {
+      "abs_err_phr": 0.03297682709447258,
+      "id": "KA6_external_reproduces_dimensioned_primer_100to13",
+      "pass": true,
+      "recipe_phr": 13.0,
+      "stoich_phr": 13.032976827094473
+    },
+    {
+      "id": "KA7_hostile_null_zero_ew_or_density_fail_closed",
+      "pass": true,
+      "phr_at_eew0_isinf": true,
+      "r_at_ahew0_isinf": true,
+      "rv_at_rhob0_isinf": true
+    },
+    {
+      "id": "KA8_hardener_monotonic_increases_index",
+      "pass": true,
+      "r_at_phr40": 0.7480000000000001,
+      "r_at_phr60": 1.122
+    }
+  ],
+  "known_answer_battery_pass": true,
+  "lpu_validated_by_mc_all_outputs": true,
+  "mc_config": {
+    "input_pdf": "rectangular (EEW over published band; others half-width = u*sqrt(3))",
+    "n": 400000,
+    "seed": 20260730
+  },
+  "module": "amphora-formulation-arithmetic",
+  "non_circularity": "Every known-answer target is fixed by DEFINITION (rho_A=rho_B => Rv=PHR; PHR=100*AHEW/EEW => r=1), by EXACT ratio algebra (convention-confusion => r=rho_A/rho_B; round-trip inverse residual=0), or by EXTERNAL reproduction of the prior dimensioned primer (100:13). No target is produced by the conversion engine.",
+  "primer_reproduction": {
+    "hardener": "TETA (AHEW 146.23/6 = 24.3717)",
+    "note": "reproduces the amphora-formulation-arithmetic-dimensioned primer as very-near-stoichiometric (r within ~0.3% of 1); provenance tie to the dimensioned engine (539f3e67).",
+    "recipe_eq_index_r": 0.9974697394515489,
+    "recipe_phr": 13.0,
+    "recipe_r_within_1pct_of_stoich": true,
+    "recipe_within_half_phr_of_stoich": true,
+    "resin": "DGEBA DER-331 (EEW 187)",
+    "stoichiometric_phr": 13.032976827094473
+  },
+  "run_type": "AUDIT_ONLY",
+  "study_id": "formulation-arithmetic-mix-ratio-conversion-v1",
+  "target_capability": "two-part epoxy mix-ratio arithmetic: stoichiometric PHR (by weight) <-> by-volume ratio <-> amine:epoxide equivalents index, with GUM/MC intervals",
+  "theory_reference": {
+    "equivalents_index": "Ellis (ed.) 1993 Chemistry and Technology of Epoxy Resins (ISBN 978-0-7514-0095-6): amine-H:epoxide stoichiometry, r=1 at match",
+    "phr_stoichiometry": "Lee & Neville 1967 Handbook of Epoxy Resins (LCCN 66-27772); Petrie 2006 Epoxy Adhesive Formulations (ISBN 0-07-145544-2) Ch.3: phr = 100*AHEW/EEW",
+    "uncertainty": [
+      "JCGM 100:2008 (GUM) sec.5.1 LPU",
+      "JCGM 101:2008 (GUM S1) Monte Carlo"
+    ],
+    "volume_conversion": "Rv = PHR*(rho_A/rho_B): elementary V=m/rho volumetric identity (ASTM D1475 density basis); pure unit relation, not fitted"
+  },
+  "verdict": "MIX_RATIO_CONVERSION_ENGINE_READY__KNOWN_ANSWER_BATTERY_PASS__PRIMER_REPRODUCED",
+  "why_not_bootstrap_conformal": "Zero fitted parameters: the predictive uncertainty is input equivalent-weight/density measurement propagation, not residual resampling. GUM LPU validated against Monte Carlo is the calibrated interval.",
+  "worked_systems": [
+    {
+      "convention_confusion_systematic_r": {
+        "note": "exact = rho_B/rho_A (weight-spec poured by volume) or rho_A/rho_B (volume-spec weighed); confusing the two conventions mis-doses the amine:epoxide index by this much.",
+        "volume_spec_measured_by_weight_dev_pct": 19.58762886597938,
+        "volume_spec_measured_by_weight_r": 1.1958762886597938,
+        "weight_spec_measured_by_volume_dev_pct": -16.37931034482758,
+        "weight_spec_measured_by_volume_r": 0.8362068965517242,
+        "worst_case_abs_index_deviation_pct": 19.58762886597938
+      },
+      "eq_index_field_volume_dosing": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.001323937959174871,
+        "mc_ci95_high": 1.0388935258407552,
+        "mc_ci95_low": 0.9618831551676486,
+        "mc_mean": 1.0000529890734795,
+        "mc_std": 0.020319086123426346,
+        "point": 1.0,
+        "rel_u_lpu": 0.020292184914011798,
+        "u_c_lpu": 0.020292184914011798
+      },
+      "eq_index_field_weight_dosing": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0017729382506100708,
+        "mc_ci95_high": 1.0371336031190246,
+        "mc_ci95_low": 0.9635085426604595,
+        "mc_mean": 1.0000431240118655,
+        "mc_std": 0.019529657819065658,
+        "point": 1.0,
+        "rel_u_lpu": 0.01949503294169691,
+        "u_c_lpu": 0.01949503294169691
+      },
+      "hardener_id": "ancamide_350a",
+      "inputs": {
+        "ahew": 100.0,
+        "ahew_grade": "TDS",
+        "eew_band": [
+          182.0,
+          192.0
+        ],
+        "eew_resin": 187.0,
+        "rho_A": 1.16,
+        "rho_A_grade": "TDS",
+        "rho_B": 0.97,
+        "rho_B_grade": "TDS",
+        "u_ahew": 0.2901149197588202,
+        "u_eew": 2.886751345948129,
+        "u_rho_A": 0.004421161235090468,
+        "u_rho_B": 0.004021711907467598
+      },
+      "phr_by_weight": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0015974667272650126,
+        "mc_ci95_high": 54.93028122293114,
+        "mc_ci95_low": 52.08593847055579,
+        "mc_mean": 53.48726418471323,
+        "mc_std": 0.8413128391880459,
+        "point": 53.475935828877006,
+        "rel_u_lpu": 0.015707417867508153,
+        "u_c_lpu": 0.8399688699202221
+      },
+      "ratio_by_volume_per_100_resin": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0009577970553620723,
+        "mc_ci95_high": 65.89713680181845,
+        "mc_ci95_low": 62.08949740743216,
+        "mc_mean": 63.96553032948066,
+        "mc_std": 1.0681350980050084,
+        "point": 63.95060367164673,
+        "rel_u_lpu": 0.016686504584577162,
+        "u_c_lpu": 1.0671120413534103
+      },
+      "volume_metering_penalty": {
+        "density_rss_penalty_pp": 0.09790867170690089,
+        "note": "extra relative r-uncertainty from carrying rho_A,rho_B when metering by volume vs by weight",
+        "rel_r_volume_input_only": 0.016686504584577162,
+        "rel_r_weight_input_only": 0.015707417867508153
+      }
+    },
+    {
+      "convention_confusion_systematic_r": {
+        "note": "exact = rho_B/rho_A (weight-spec poured by volume) or rho_A/rho_B (volume-spec weighed); confusing the two conventions mis-doses the amine:epoxide index by this much.",
+        "volume_spec_measured_by_weight_dev_pct": 19.58762886597938,
+        "volume_spec_measured_by_weight_r": 1.1958762886597938,
+        "weight_spec_measured_by_volume_dev_pct": -16.37931034482758,
+        "weight_spec_measured_by_volume_r": 0.8362068965517242,
+        "worst_case_abs_index_deviation_pct": 19.58762886597938
+      },
+      "eq_index_field_volume_dosing": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.000518164915040929,
+        "mc_ci95_high": 1.0388491553969317,
+        "mc_ci95_low": 0.9619641133219982,
+        "mc_mean": 1.0000374877469782,
+        "mc_std": 0.02028014681682847,
+        "point": 1.0,
+        "rel_u_lpu": 0.020290655277380828,
+        "u_c_lpu": 0.020290655277380828
+      },
+      "eq_index_field_weight_dosing": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0005674804236332327,
+        "mc_ci95_high": 1.037129628937301,
+        "mc_ci95_low": 0.9636197065217029,
+        "mc_mean": 1.000034652598313,
+        "mc_std": 0.019482384881184076,
+        "point": 1.0,
+        "rel_u_lpu": 0.019493440753209836,
+        "u_c_lpu": 0.019493440753209836
+      },
+      "hardener_id": "versamid_115",
+      "inputs": {
+        "ahew": 198.0,
+        "ahew_grade": "TDS",
+        "eew_band": [
+          182.0,
+          192.0
+        ],
+        "eew_resin": 187.0,
+        "rho_A": 1.16,
+        "rho_A_grade": "TDS",
+        "rho_B": 0.97,
+        "rho_B_grade": "TDS",
+        "u_ahew": 0.5723052798405177,
+        "u_eew": 2.886751345948129,
+        "u_rho_A": 0.004421161235090468,
+        "u_rho_B": 0.004021711907467598
+      },
+      "phr_by_weight": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.00027829319255019404,
+        "mc_ci95_high": 108.76492063054768,
+        "mc_ci95_low": 103.13594825508807,
+        "mc_mean": 105.90546176101068,
+        "mc_std": 1.6633920321032052,
+        "point": 105.88235294117646,
+        "rel_u_lpu": 0.015705441702338993,
+        "u_c_lpu": 1.6629291214241286
+      },
+      "ratio_by_volume_per_100_resin": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.00044089745972959347,
+        "mc_ci95_high": 130.47718116637841,
+        "mc_ci95_low": 122.94537783870723,
+        "mc_mean": 126.65349287154524,
+        "mc_std": 2.11357817056538,
+        "point": 126.62219526986051,
+        "rel_u_lpu": 0.016684644384947767,
+        "u_c_lpu": 2.112646299319038
+      },
+      "volume_metering_penalty": {
+        "density_rss_penalty_pp": 0.09792026826087735,
+        "note": "extra relative r-uncertainty from carrying rho_A,rho_B when metering by volume vs by weight",
+        "rel_r_volume_input_only": 0.016684644384947767,
+        "rel_r_weight_input_only": 0.015705441702338993
+      }
+    },
+    {
+      "convention_confusion_systematic_r": {
+        "note": "exact = rho_B/rho_A (weight-spec poured by volume) or rho_A/rho_B (volume-spec weighed); confusing the two conventions mis-doses the amine:epoxide index by this much.",
+        "volume_spec_measured_by_weight_dev_pct": 14.851485148514843,
+        "volume_spec_measured_by_weight_r": 1.1485148514851484,
+        "weight_spec_measured_by_volume_dev_pct": -12.93103448275862,
+        "weight_spec_measured_by_volume_r": 0.8706896551724138,
+        "worst_case_abs_index_deviation_pct": 14.851485148514843
+      },
+      "eq_index_field_volume_dosing": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0010053111689536794,
+        "mc_ci95_high": 1.045580358833965,
+        "mc_ci95_low": 0.9557668904161332,
+        "mc_mean": 1.000089995148654,
+        "mc_std": 0.023308932265513036,
+        "point": 1.0,
+        "rel_u_lpu": 0.02333236499545594,
+        "u_c_lpu": 0.02333236499545594
+      },
+      "eq_index_field_weight_dosing": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.001910646790554436,
+        "mc_ci95_high": 1.0409549324871392,
+        "mc_ci95_low": 0.9600980005306516,
+        "mc_mean": 1.0000507905960563,
+        "mc_std": 0.021095062420710273,
+        "point": 1.0,
+        "rel_u_lpu": 0.02113536763402095,
+        "u_c_lpu": 0.02113536763402095
+      },
+      "hardener_id": "ancamide_2353",
+      "inputs": {
+        "ahew": 114.0,
+        "ahew_grade": "SUPPLIER_GUIDE",
+        "eew_band": [
+          182.0,
+          192.0
+        ],
+        "eew_resin": 187.0,
+        "rho_A": 1.16,
+        "rho_A_grade": "TDS",
+        "rho_B": 1.01,
+        "rho_B_grade": "SUPPLIER_GUIDE",
+        "u_ahew": 0.9876909098160889,
+        "u_eew": 2.886751345948129,
+        "u_rho_A": 0.004421161235090468,
+        "u_rho_B": 0.009210908388065391
+      },
+      "phr_by_weight": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0002799840631143615,
+        "mc_ci95_high": 63.00918229388038,
+        "mc_ci95_low": 59.00826919217904,
+        "mc_mean": 60.97654521794992,
+        "mc_std": 1.0794781728829919,
+        "point": 60.962566844919785,
+        "rel_u_lpu": 0.017702271935881194,
+        "u_c_lpu": 1.0791759361981048
+      },
+      "ratio_by_volume_per_100_resin": {
+        "linearization_validated_by_mc": true,
+        "lpu_vs_mc_std_rel_diff": 0.0008654274526076402,
+        "mc_ci95_high": 72.78426828988015,
+        "mc_ci95_low": 67.37316644442922,
+        "mc_mean": 70.03659729358466,
+        "mc_std": 1.4207956250179676,
+        "point": 70.01641340604647,
+        "rel_u_lpu": 0.020274760737129412,
+        "u_c_lpu": 1.4195660294795323
+      },
+      "volume_metering_penalty": {
+        "density_rss_penalty_pp": 0.25724888012482183,
+        "note": "extra relative r-uncertainty from carrying rho_A,rho_B when metering by volume vs by weight",
+        "rel_r_volume_input_only": 0.020274760737129412,
+        "rel_r_weight_input_only": 0.017702271935881194
+      }
+    }
+  ]
+}

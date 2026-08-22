@@ -1,0 +1,399 @@
+{
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "all_8_adjacent_pairs_by_separation": [
+        {
+          "pair": "cyclohexanone/m_xylene",
+          "relative_separation": 0.0361
+        },
+        {
+          "pair": "m_xylene/n_butyl_acetate",
+          "relative_separation": 0.0826
+        },
+        {
+          "pair": "n_butyl_acetate/n_butanol",
+          "relative_separation": 0.0965
+        },
+        {
+          "pair": "ethylbenzene/cyclohexanone",
+          "relative_separation": 0.1163
+        },
+        {
+          "pair": "mibk/toluene",
+          "relative_separation": 0.4014
+        },
+        {
+          "pair": "methanol/mek_2_butanone",
+          "relative_separation": 0.4018
+        },
+        {
+          "pair": "toluene/ethylbenzene",
+          "relative_separation": 0.4792
+        },
+        {
+          "pair": "mek_2_butanone/mibk",
+          "relative_separation": 1.2764
+        }
+      ],
+      "any_band_assignment_flip": true,
+      "any_rank_order_flip_within_band": true,
+      "band_assignment_flip_thresholds": {
+        "n_butanol": {
+          "baseline_vhr": 92.0,
+          "bias_needed_to_cross_HIGH_boundary": 0.08696,
+          "margin_bias_points_short_of_flip": -0.02346,
+          "quantified_bias_max_available": 0.11042
+        }
+      },
+      "bias_envelope": {
+        "bias_max": 0.11042,
+        "bias_min": 0.04927,
+        "n_source_rows": 18,
+        "source_receipt": "amphora-sourceability-ehs/reference/mvp20/data/vhr_temperature_envelope_crossmethod_audit_receipt.v1.json#/kpis/ccwatson_crossmethod_rows"
+      },
+      "mutation_label": "planted_n_butanol_vp_defect",
+      "n_panel": 9,
+      "rank_order_flip_threshold_relative_separation": 0.05828,
+      "ranked_panel": [
+        {
+          "rank": 1,
+          "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "solvent": "methanol",
+          "vapor_hazard_ratio": 835.526
+        },
+        {
+          "rank": 2,
+          "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "solvent": "mek_2_butanone",
+          "vapor_hazard_ratio": 596.053
+        },
+        {
+          "rank": 3,
+          "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "solvent": "mibk",
+          "vapor_hazard_ratio": 261.842
+        },
+        {
+          "rank": 4,
+          "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "solvent": "toluene",
+          "vapor_hazard_ratio": 186.842
+        },
+        {
+          "rank": 5,
+          "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "solvent": "ethylbenzene",
+          "vapor_hazard_ratio": 126.316
+        },
+        {
+          "rank": 6,
+          "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "solvent": "cyclohexanone",
+          "vapor_hazard_ratio": 113.158
+        },
+        {
+          "rank": 7,
+          "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "solvent": "m_xylene",
+          "vapor_hazard_ratio": 109.211
+        },
+        {
+          "rank": 8,
+          "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "solvent": "n_butyl_acetate",
+          "vapor_hazard_ratio": 100.877
+        },
+        {
+          "rank": 9,
+          "screening_band": "MODERATE_INHALATION_HAZARD_VENTILATION_RECOMMENDED",
+          "solvent": "n_butanol",
+          "vapor_hazard_ratio": 92.0
+        }
+      ],
+      "tightest_5_pairs_evaluated": [
+        {
+          "band_assignment_flips_under_worstcase_bias": false,
+          "crosses_band_boundary_at_baseline": false,
+          "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_vhr": 113.158,
+          "higher_vhr_solvent": "cyclohexanone",
+          "higher_vhr_worstcase_biased": 118.7333,
+          "lower_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_vhr": 109.211,
+          "lower_vhr_solvent": "m_xylene",
+          "lower_vhr_worstcase_biased": 121.2701,
+          "rank_order_flips_under_worstcase_bias": true,
+          "relative_separation": 0.036141048062924064
+        },
+        {
+          "band_assignment_flips_under_worstcase_bias": false,
+          "crosses_band_boundary_at_baseline": false,
+          "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_vhr": 109.211,
+          "higher_vhr_solvent": "m_xylene",
+          "higher_vhr_worstcase_biased": 114.5918,
+          "lower_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_vhr": 100.877,
+          "lower_vhr_solvent": "n_butyl_acetate",
+          "lower_vhr_worstcase_biased": 112.0158,
+          "rank_order_flips_under_worstcase_bias": false,
+          "relative_separation": 0.08261546239479767
+        },
+        {
+          "band_assignment_flips_under_worstcase_bias": true,
+          "crosses_band_boundary_at_baseline": true,
+          "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_vhr": 100.877,
+          "higher_vhr_solvent": "n_butyl_acetate",
+          "higher_vhr_worstcase_biased": 105.8472,
+          "lower_band": "MODERATE_INHALATION_HAZARD_VENTILATION_RECOMMENDED",
+          "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_vhr": 92.0,
+          "lower_vhr_solvent": "n_butanol",
+          "lower_vhr_worstcase_biased": 102.1586,
+          "rank_order_flips_under_worstcase_bias": false,
+          "relative_separation": 0.09648913043478258
+        },
+        {
+          "band_assignment_flips_under_worstcase_bias": false,
+          "crosses_band_boundary_at_baseline": false,
+          "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_vhr": 126.316,
+          "higher_vhr_solvent": "ethylbenzene",
+          "higher_vhr_worstcase_biased": 132.5396,
+          "lower_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_vhr": 113.158,
+          "lower_vhr_solvent": "cyclohexanone",
+          "lower_vhr_worstcase_biased": 125.6529,
+          "rank_order_flips_under_worstcase_bias": false,
+          "relative_separation": 0.11627989183265885
+        },
+        {
+          "band_assignment_flips_under_worstcase_bias": false,
+          "crosses_band_boundary_at_baseline": false,
+          "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "higher_vhr": 261.842,
+          "higher_vhr_solvent": "mibk",
+          "higher_vhr_worstcase_biased": 274.743,
+          "lower_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+          "lower_vhr": 186.842,
+          "lower_vhr_solvent": "toluene",
+          "lower_vhr_worstcase_biased": 207.4731,
+          "rank_order_flips_under_worstcase_bias": false,
+          "relative_separation": 0.4014086768499585
+        }
+      ],
+      "worst_actor": "methanol",
+      "worst_actor_call_flips_under_worstcase_bias": false,
+      "worst_actor_margin_over_second_place": 0.4018
+    },
+    "how_planted": "In-memory deep copy of vapor_hazard_ratio_inhalation_prescreen_receipt.v1.json with solvent_cards_ranked[n_butanol].vapor_pressure_mmHg_25C changed 6.7 -> 6.992; vapor_hazard_ratio (88.158 -> 92.0) and screening_band recomputed from the mutated VP using the identical VHR formula and band() thresholds as the real run. The on-disk receipt was NOT modified.",
+    "planted_defect": "n_butanol vapor_pressure_mmHg_25C mutated from the receipt's real 6.7 mmHg to 6.992 mmHg (+4.36%), a single-solvent transcription-scale VP error."
+  },
+  "real": {
+    "all_8_adjacent_pairs_by_separation": [
+      {
+        "pair": "cyclohexanone/m_xylene",
+        "relative_separation": 0.0361
+      },
+      {
+        "pair": "m_xylene/n_butyl_acetate",
+        "relative_separation": 0.0826
+      },
+      {
+        "pair": "ethylbenzene/cyclohexanone",
+        "relative_separation": 0.1163
+      },
+      {
+        "pair": "n_butyl_acetate/n_butanol",
+        "relative_separation": 0.1443
+      },
+      {
+        "pair": "mibk/toluene",
+        "relative_separation": 0.4014
+      },
+      {
+        "pair": "methanol/mek_2_butanone",
+        "relative_separation": 0.4018
+      },
+      {
+        "pair": "toluene/ethylbenzene",
+        "relative_separation": 0.4792
+      },
+      {
+        "pair": "mek_2_butanone/mibk",
+        "relative_separation": 1.2764
+      }
+    ],
+    "any_band_assignment_flip": false,
+    "any_rank_order_flip_within_band": true,
+    "band_assignment_flip_thresholds": {
+      "n_butanol": {
+        "baseline_vhr": 88.158,
+        "bias_needed_to_cross_HIGH_boundary": 0.13433,
+        "margin_bias_points_short_of_flip": 0.02391,
+        "quantified_bias_max_available": 0.11042
+      }
+    },
+    "bias_envelope": {
+      "bias_max": 0.11042,
+      "bias_min": 0.04927,
+      "n_source_rows": 18,
+      "source_receipt": "amphora-sourceability-ehs/reference/mvp20/data/vhr_temperature_envelope_crossmethod_audit_receipt.v1.json#/kpis/ccwatson_crossmethod_rows"
+    },
+    "mutation_label": "real_unmutated_panel",
+    "n_panel": 9,
+    "rank_order_flip_threshold_relative_separation": 0.05828,
+    "ranked_panel": [
+      {
+        "rank": 1,
+        "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "solvent": "methanol",
+        "vapor_hazard_ratio": 835.526
+      },
+      {
+        "rank": 2,
+        "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "solvent": "mek_2_butanone",
+        "vapor_hazard_ratio": 596.053
+      },
+      {
+        "rank": 3,
+        "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "solvent": "mibk",
+        "vapor_hazard_ratio": 261.842
+      },
+      {
+        "rank": 4,
+        "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "solvent": "toluene",
+        "vapor_hazard_ratio": 186.842
+      },
+      {
+        "rank": 5,
+        "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "solvent": "ethylbenzene",
+        "vapor_hazard_ratio": 126.316
+      },
+      {
+        "rank": 6,
+        "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "solvent": "cyclohexanone",
+        "vapor_hazard_ratio": 113.158
+      },
+      {
+        "rank": 7,
+        "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "solvent": "m_xylene",
+        "vapor_hazard_ratio": 109.211
+      },
+      {
+        "rank": 8,
+        "screening_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "solvent": "n_butyl_acetate",
+        "vapor_hazard_ratio": 100.877
+      },
+      {
+        "rank": 9,
+        "screening_band": "MODERATE_INHALATION_HAZARD_VENTILATION_RECOMMENDED",
+        "solvent": "n_butanol",
+        "vapor_hazard_ratio": 88.158
+      }
+    ],
+    "tightest_5_pairs_evaluated": [
+      {
+        "band_assignment_flips_under_worstcase_bias": false,
+        "crosses_band_boundary_at_baseline": false,
+        "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_vhr": 113.158,
+        "higher_vhr_solvent": "cyclohexanone",
+        "higher_vhr_worstcase_biased": 118.7333,
+        "lower_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "lower_vhr": 109.211,
+        "lower_vhr_solvent": "m_xylene",
+        "lower_vhr_worstcase_biased": 121.2701,
+        "rank_order_flips_under_worstcase_bias": true,
+        "relative_separation": 0.036141048062924064
+      },
+      {
+        "band_assignment_flips_under_worstcase_bias": false,
+        "crosses_band_boundary_at_baseline": false,
+        "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_vhr": 109.211,
+        "higher_vhr_solvent": "m_xylene",
+        "higher_vhr_worstcase_biased": 114.5918,
+        "lower_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "lower_vhr": 100.877,
+        "lower_vhr_solvent": "n_butyl_acetate",
+        "lower_vhr_worstcase_biased": 112.0158,
+        "rank_order_flips_under_worstcase_bias": false,
+        "relative_separation": 0.08261546239479767
+      },
+      {
+        "band_assignment_flips_under_worstcase_bias": false,
+        "crosses_band_boundary_at_baseline": false,
+        "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_vhr": 126.316,
+        "higher_vhr_solvent": "ethylbenzene",
+        "higher_vhr_worstcase_biased": 132.5396,
+        "lower_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "lower_vhr": 113.158,
+        "lower_vhr_solvent": "cyclohexanone",
+        "lower_vhr_worstcase_biased": 125.6529,
+        "rank_order_flips_under_worstcase_bias": false,
+        "relative_separation": 0.11627989183265885
+      },
+      {
+        "band_assignment_flips_under_worstcase_bias": false,
+        "crosses_band_boundary_at_baseline": true,
+        "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_vhr": 100.877,
+        "higher_vhr_solvent": "n_butyl_acetate",
+        "higher_vhr_worstcase_biased": 105.8472,
+        "lower_band": "MODERATE_INHALATION_HAZARD_VENTILATION_RECOMMENDED",
+        "lower_band_worstcase_biased": "MODERATE_INHALATION_HAZARD_VENTILATION_RECOMMENDED",
+        "lower_vhr": 88.158,
+        "lower_vhr_solvent": "n_butanol",
+        "lower_vhr_worstcase_biased": 97.8924,
+        "rank_order_flips_under_worstcase_bias": false,
+        "relative_separation": 0.1442750516118787
+      },
+      {
+        "band_assignment_flips_under_worstcase_bias": false,
+        "crosses_band_boundary_at_baseline": false,
+        "higher_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "higher_vhr": 261.842,
+        "higher_vhr_solvent": "mibk",
+        "higher_vhr_worstcase_biased": 274.743,
+        "lower_band": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "lower_band_worstcase_biased": "HIGH_INHALATION_HAZARD_ENGINEERING_VENTILATION_REQUIRED",
+        "lower_vhr": 186.842,
+        "lower_vhr_solvent": "toluene",
+        "lower_vhr_worstcase_biased": 207.4731,
+        "rank_order_flips_under_worstcase_bias": false,
+        "relative_separation": 0.4014086768499585
+      }
+    ],
+    "worst_actor": "methanol",
+    "worst_actor_call_flips_under_worstcase_bias": false,
+    "worst_actor_margin_over_second_place": 0.4018
+  }
+}

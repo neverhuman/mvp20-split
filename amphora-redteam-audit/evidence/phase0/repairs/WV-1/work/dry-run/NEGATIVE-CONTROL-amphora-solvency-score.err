@@ -1,0 +1,1 @@
+Error: phase0 re-evaluate refuses amphora-solvency-score: only a module listed in UNBOUND_BENCHMARK_RESULTS - whose shipped benchmark result is already unbound from its own signed evaluation receipt - can be repaired

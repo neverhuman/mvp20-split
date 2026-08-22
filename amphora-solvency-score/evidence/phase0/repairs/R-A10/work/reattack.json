@@ -1,0 +1,12 @@
+{
+  "bigsoldb_0_8742_present": true,
+  "bigsoldb_0_8770_present": true,
+  "front_matter_byte_identical": true,
+  "grep_PRE_PHASE_0_prose_gone": true,
+  "grep_pre_phase_0_prose_gone": true,
+  "grep_shadow_prose_gone": true,
+  "grep_unvalidated_prose_gone": true,
+  "mission_md_sha256_after": "250594b9fb44e6f504e3f786845e72cf90a2336ff838c248b2b81df63e679f36",
+  "mission_md_sha256_before": "5de41beeb3304df7ac08c860d9ff7e058523e51c31fb02c5891025dbf74fe6a4",
+  "w7_banner_count": 3
+}

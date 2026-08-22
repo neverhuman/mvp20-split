@@ -1,0 +1,17 @@
+{
+  "item_id": "DR-LANG-RU",
+  "fires_completed": 1,
+  "max_fires": 2,
+  "last_fire_id": "20260810T090001-3307991-b3648fc59c25",
+  "status": "done_criterion_met_fire_1",
+  "done_receipt": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-RU/done/dr-lang-ru-receipt.v1.dsse.json",
+  "candidates_recorded": ["DR-LANG-RU-01","DR-LANG-RU-02","DR-LANG-RU-03","DR-LANG-RU-04","DR-LANG-RU-05","DR-LANG-RU-06"],
+  "dataset_ledger_entries": ["DR-LANG-RU-DSL-01 (DR-LANG-RU-01, RECOMMENDED, 8.3333)"],
+  "open_for_a_future_fire_if_needed": [
+    "protect.gost.ru official full-text access terms for GOST R 56752-2015 / GOST 34388-2018 -- not directly WebFetched",
+    "Russian Maritime Register of Shipping Rules Appendix 52 full content -- located, not extracted",
+    "eLIBRARY.ru item id=24102757 (carbon-nanotube epoxy cure-kinetics DSC study) -- access-restricted, not independently evaluated",
+    "TsNII KM Prometey own institutional publication archive -- not directly located"
+  ],
+  "note": "Fire 1 of max 2 met the done_criterion in full (search-record + disposition-ledger + coverage-map + second-ever dataset-ledger entry, all DSSE-signed, two-replay + 5-mutant positive control passed, independently re-verified against the pinned trust store). A second fire is only warranted if a future spot-check finds a real gap (CLAIM_REFUTED) or the operator wants deeper follow-up on the open items above."
+}

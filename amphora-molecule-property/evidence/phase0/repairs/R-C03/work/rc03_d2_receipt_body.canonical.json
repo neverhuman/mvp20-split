@@ -1,0 +1,250 @@
+{
+  "abstention_target": 0.9,
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "R-C03",
+  "ceiling": "AUDIT_ONLY. Demonstrates gate feasibility and calibration methodology against the C7 failing pairs; does not modify or wire the gate into any shipped serving code path, manifest, or authority ceiling. Deliverable 3 (constrained NNLS/projected VK Ridge refit) remains open for a subsequent fire of this campaign item.",
+  "claim_locks": {
+    "ad_gate_demonstration_reproduced_with_positive_control": true,
+    "c7_original_external_validity_refutation_REMAINS_refuted_not_reinstated": true,
+    "fto_not_performed": true,
+    "gate_is_a_demonstration_not_yet_wired_into_a_shipped_serving_predictor": true,
+    "no_batch_release_authority": true,
+    "no_manufacturing_qualification_authority": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_product_performance_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true,
+    "no_solver_authority": true,
+    "no_wet_lab_evidence_upgrade": true,
+    "pre_phase_0_research_only": true,
+    "unresolved_rights_quarantined": false
+  },
+  "claim_under_attack": {
+    "claim_text": "Without a gate, the shipped OpenPoly Tg RF and RadonPy density RF baselines silently emit numeric predictions on inputs that C7 proved are outside their applicability domain (Tg: OpenPoly<->Polyuniverse Epoxy cross-corpus, both directions blow past 6.66x /16.60x the 2x degradation bar; density: RadonPy macro-bisection macro_a(n=16)<->macro_b(n=1061), 13.74x/7.59x). This repair's claim under test: an AD gate keyed to each predictor's own training set can distinguish these known-failing OOD inputs from in-domain inputs well enough to abstain on them, without discarding most legitimate within-corpus predictions.",
+    "receipt_path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+  },
+  "coverage_target": 0.9,
+  "featurization": {
+    "additional_rf_feature": "log10(MolWt+1)",
+    "morgan_bits": 512,
+    "morgan_radius": 2
+  },
+  "flips_scientific_readiness": false,
+  "gate_design": {
+    "combined_rule": "ABSTAIN if EITHER component fires (logical OR).",
+    "component_1_tanimoto_nn_distance": "For a query molecule, compute the minimum Tanimoto distance (1 - similarity, Morgan r=2/512-bit fingerprints, same convention as the C7/W7 attacks) to any molecule in the model's OWN training set. ABSTAIN if this exceeds tau. tau is calibrated PER TRAINING SET using k-fold (n>=1000: 5-fold) or leave-one-out (n=16) cross-validation on that training set ALONE -- the OOD test labels and features are never touched during calibration -- as the smallest threshold that admits >=90% of the training corpus's own out-of-fold queries (order-statistic construction: tau = the ceil(0.90*n)-th smallest OOF NN-distance, which guarantees within-corpus coverage >=90% by construction).",
+    "component_2_training_label_range": "ABSTAIN if the underlying RandomForestRegressor's raw prediction on the query falls outside [min(y_train), max(y_train)]. Reported honestly: measured marginal contribution was 0 abstentions beyond component 1 on all 4 legs, because bagged-tree RF predictions are convex combinations of training-fold leaf labels and are therefore structurally near-incapable of falling outside the training label range for this model family. Implemented and measured (not silently omitted) because the objective names it explicitly and it would have real power for other model families (e.g. linear extrapolators); the gate's actual power here comes from component 1."
+  },
+  "gates": {
+    "all_four_legs_meet_90pct_abstention_on_failing_transfer": true,
+    "all_four_legs_meet_90pct_within_corpus_coverage": true,
+    "calibration_never_touched_ood_test_labels_or_features": true,
+    "positive_control_detects_disabled_gate_on_all_four_legs": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "compute_ad_gate.py_sha256": "811894b04ab525832247045bc8ca9839eae964d4a0f9ffc6e464927215554c11",
+    "diagnostic.out.json_sha256": "31084416f9247ff4e06805c9cf3c6d7db2c90cb24cb9027be5b884f26f8f0904"
+  },
+  "input_data": {
+    "openpoly_csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "polyuniverse_csv_sha256": "9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45",
+    "radonpy_csv_sha256": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4"
+  },
+  "legs": [
+    {
+      "abstention_rate_meets_90pct_target": true,
+      "abstention_rate_on_failing_transfer": 1.0,
+      "leg": "tg_A_train_openpoly_test_polyuniverse",
+      "leg_passes_acceptance": true,
+      "n_combined_abstain": 5000,
+      "n_range_abstain": 0,
+      "n_range_abstain_marginal_beyond_tanimoto": 0,
+      "n_tanimoto_abstain": 5000,
+      "n_test": 5000,
+      "n_train": 443,
+      "positive_control_abstention_rate_with_gate_disabled": 0.0,
+      "positive_control_disabled_tau": 1.1,
+      "positive_control_fired": true,
+      "tau_tanimoto_distance": 0.5714285714285714,
+      "train_label_range": [
+        146.0,
+        589.0
+      ],
+      "within_corpus_coverage_meets_90pct_target": true,
+      "within_corpus_coverage_rate": 0.9006772009029346
+    },
+    {
+      "abstention_rate_meets_90pct_target": true,
+      "abstention_rate_on_failing_transfer": 1.0,
+      "leg": "tg_B_train_polyuniverse_test_openpoly",
+      "leg_passes_acceptance": true,
+      "n_combined_abstain": 443,
+      "n_range_abstain": 0,
+      "n_range_abstain_marginal_beyond_tanimoto": 0,
+      "n_tanimoto_abstain": 443,
+      "n_test": 443,
+      "n_train": 5000,
+      "positive_control_abstention_rate_with_gate_disabled": 0.0,
+      "positive_control_disabled_tau": 1.1,
+      "positive_control_fired": true,
+      "tau_tanimoto_distance": 0.5333333333333333,
+      "train_label_range": [
+        22.772299,
+        237.03786
+      ],
+      "within_corpus_coverage_meets_90pct_target": true,
+      "within_corpus_coverage_rate": 0.9018
+    },
+    {
+      "abstention_rate_meets_90pct_target": true,
+      "abstention_rate_on_failing_transfer": 0.9820923656927427,
+      "leg": "density_A_train_macro_a_test_macro_b",
+      "leg_passes_acceptance": true,
+      "n_combined_abstain": 1042,
+      "n_range_abstain": 0,
+      "n_range_abstain_marginal_beyond_tanimoto": 0,
+      "n_tanimoto_abstain": 1042,
+      "n_test": 1061,
+      "n_train": 16,
+      "positive_control_abstention_rate_with_gate_disabled": 0.0,
+      "positive_control_disabled_tau": 1.1,
+      "positive_control_fired": true,
+      "tau_tanimoto_distance": 0.6956521739130435,
+      "train_label_range": [
+        1.27745434,
+        1.914482486
+      ],
+      "within_corpus_coverage_meets_90pct_target": true,
+      "within_corpus_coverage_rate": 0.9375
+    },
+    {
+      "abstention_rate_meets_90pct_target": true,
+      "abstention_rate_on_failing_transfer": 0.9375,
+      "leg": "density_B_train_macro_b_test_macro_a",
+      "leg_passes_acceptance": true,
+      "n_combined_abstain": 15,
+      "n_range_abstain": 0,
+      "n_range_abstain_marginal_beyond_tanimoto": 0,
+      "n_tanimoto_abstain": 15,
+      "n_test": 16,
+      "n_train": 1061,
+      "positive_control_abstention_rate_with_gate_disabled": 0.0,
+      "positive_control_disabled_tau": 1.1,
+      "positive_control_fired": true,
+      "tau_tanimoto_distance": 0.5135135135135135,
+      "train_label_range": [
+        0.742358507,
+        1.815896982
+      ],
+      "within_corpus_coverage_meets_90pct_target": true,
+      "within_corpus_coverage_rate": 0.9000942507068803
+    }
+  ],
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "R-C03 deliverable 2: add an applicability-domain gate (training-label range + Tanimoto NN-distance threshold) to the Tg/density predictors so out-of-distribution inputs ABSTAIN, and demonstrate on the C7 cross-corpus / macro-bisection failing transfers that the gate abstains on >=90% of the failing transfers while keeping >=90% of within-corpus coverage.",
+  "observed_result": {
+    "all_four_legs_pass_acceptance": true,
+    "density_A_abstention": 0.9820923656927427,
+    "density_A_coverage": 0.9375,
+    "density_B_abstention": 0.9375,
+    "density_B_coverage": 0.9000942507068803,
+    "tg_A_abstention": 1.0,
+    "tg_A_coverage": 0.9006772009029346,
+    "tg_B_abstention": 1.0,
+    "tg_B_coverage": 0.9018
+  },
+  "organizational_independence_asserted": false,
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "interpretation": "With the real calibrated tau, all 4 legs abstain on >=93.75% of the failing cross-corpus/macro-bisection transfers (tg legs: 100%). With the gate disabled (tau=1.1), abstention collapses to 0.0% on all 4 legs -- below the 90% acceptance bar -- confirming this evaluation harness has real power to detect a broken/disabled AD gate rather than rubber-stamping a hardcoded pass.",
+      "leg_abstention_rate_real_vs_disabled": [
+        {
+          "disabled_gate_abstention_rate": 0.0,
+          "leg": "tg_A_train_openpoly_test_polyuniverse",
+          "positive_control_fired": true,
+          "real_abstention_rate": 1.0
+        },
+        {
+          "disabled_gate_abstention_rate": 0.0,
+          "leg": "tg_B_train_polyuniverse_test_openpoly",
+          "positive_control_fired": true,
+          "real_abstention_rate": 1.0
+        },
+        {
+          "disabled_gate_abstention_rate": 0.0,
+          "leg": "density_A_train_macro_a_test_macro_b",
+          "positive_control_fired": true,
+          "real_abstention_rate": 0.9820923656927427
+        },
+        {
+          "disabled_gate_abstention_rate": 0.0,
+          "leg": "density_B_train_macro_b_test_macro_a",
+          "positive_control_fired": true,
+          "real_abstention_rate": 0.9375
+        }
+      ]
+    },
+    "how_planted": "In compute_ad_gate.py leg_result(), the SAME already-computed nn_dist_test array is re-thresholded against DISABLED_TAU=1.1 instead of the calibrated tau, for all 4 legs, in the same run as the real (non-disabled) computation -- no re-fetch of data, only the threshold changes.",
+    "planted_defect": "AD gate's Tanimoto NN-distance threshold (tau, calibrated per leg via within-corpus CV/LOO to admit >=90% within-corpus coverage) replaced with 1.1 -- a value above the maximum possible Tanimoto distance of 1.0, so the distance check can never fire and the gate is effectively disabled."
+  },
+  "pre_registered_acceptance_criterion": "Per leg: abstention_rate_on_failing_transfer >= 0.90 AND within_corpus_coverage_rate >= 0.90. ALL FOUR legs (tg_A, tg_B, density_A, density_B) must pass for the demonstration to be accepted as SURVIVED. Falls to CLAIM_REFUTED (repair in progress) if any leg misses either bar.",
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this deliverable's science (all gates pass) and NOT key custody. Manifest untouched at 66/11.",
+  "radonpy_macro_bisection": {
+    "method": "scipy average-linkage agglomerative clustering on full Tanimoto distance matrix, fcluster maxclust=2 (same procedure as C7 fire 2)",
+    "n_macro_a": 16,
+    "n_macro_b": 1061
+  },
+  "receipt_id": "rc03-d2-ad-gate-tg-density-demonstration",
+  "recommended_followups": [
+    "R-C03 deliverable 3 (constrained NNLS/projected VK Ridge refit, scoped to n_train>=500, no sign flips by construction) remains open for a subsequent fire.",
+    "Wiring this gate into the actually-served Tg/density predictor code path (not just this demonstration) is a follow-on engineering task outside R-C03's 3 pre-registered deliverables."
+  ],
+  "repair_deliverable": "2_of_3: applicability-domain gate (training-label range + Tanimoto NN-distance threshold) on Tg/density predictors",
+  "repair_status": "deliverable_2_of_3_landed_survived_reattack_ad_gate_demonstrated",
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened. Reads only already-in-tree, already-rights-cleared CSVs (OpenPoly, Polyuniverse Epoxy, RadonPy PI1070) via a fresh deterministic compute script, and already-signed C7 receipts for source-of-truth cross-referencing.",
+  "schema": "amphora.molecule-property.ad-gate-tg-density-c7-demonstration.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY R-C03 deliverable-2 AD-gate demonstration checkpoint under evidence/phase0/repairs/R-C03/attempts/"
+  },
+  "source_receipts": {
+    "c7_final_verdict": {
+      "path": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+      "sha256": "958f4d69a10ee79f5f9f129aa8475be87d124ec726f19d2d9d6eeabdbc4e9e08"
+    },
+    "c7_fire2_density_macro_bisection": {
+      "path": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json",
+      "sha256": "1ba393b905e0a0463bd1b2c3ae5f6e3a538b31c341e3d6ca955b0d3936f8968a"
+    }
+  },
+  "study_id": "amphora-molecule-property-rc03-deliverable2-ad-gate-v1",
+  "verdict": "CLAIM_SURVIVED",
+  "why": "The C7 external-validity refutation of the raw (ungated) OpenPoly Tg RF and RadonPy density RF baselines remains REFUTED and is NOT reinstated here. What this receipt adds is deliverable 2 of R-C03: an applicability-domain gate keyed to each predictor's OWN training set, calibrated using only within-corpus cross-validation (no peeking at the OOD test labels), tested against the exact 4 failing transfers C7 identified. All 4 legs meet the pre-registered 90%/90% bar (abstention 93.75-100% on the failing transfers, coverage 90.0-93.75% within corpus), and a positive control confirms the evaluation harness detects a deliberately disabled gate (abstention collapses to 0.0% on all 4 legs when tau is set above the maximum possible Tanimoto distance). The gate's real power comes entirely from the Tanimoto NN-distance component; the training-label-range component measured 0 marginal abstentions for this RF model family and is reported honestly rather than inflated."
+}

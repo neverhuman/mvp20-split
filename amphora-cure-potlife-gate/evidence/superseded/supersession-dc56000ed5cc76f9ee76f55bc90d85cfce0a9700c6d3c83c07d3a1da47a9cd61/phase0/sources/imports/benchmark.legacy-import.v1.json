@@ -1,0 +1,50 @@
+{
+  "schema": "amphora.benchmark-lock.v1",
+  "benchmark_id": "cure-phase-acceleration-lock-2026-07-17",
+  "module_id": "amphora-cure-potlife-gate",
+  "endpoints": ["measured_gel_time_min"],
+  "baselines": [
+    "global_median",
+    "hardener_family_median",
+    "stoichiometric_arrhenius_log_linear",
+    "regularized_spline_gam",
+    "deterministic_boosted_stumps",
+    "current_implementation",
+    "shuffled_label_null",
+    "missing_condition_null"
+  ],
+  "metrics": [
+    {"metric":"eligible_condition_row_count","direction":"minimize_shortfall","unit":"count","threshold":50.0},
+    {"metric":"publisher_count","direction":"minimize_shortfall","unit":"count","threshold":3.0},
+    {"metric":"untouched_source_family_holdout_count","direction":"minimize_shortfall","unit":"count","threshold":10.0},
+    {"metric":"fraction_within_factor_1_5","direction":"maximize","unit":"fraction","threshold":0.80},
+    {"metric":"absolute_lift","direction":"maximize","unit":"absolute_fraction","threshold":0.10},
+    {"metric":"paired_ci_lower","direction":"maximize","unit":"absolute_fraction","threshold":0.0},
+    {"metric":"interval_90_coverage","direction":"within_range","unit":"fraction","threshold":0.85}
+  ],
+  "uncertainty_method": "95% paired source/family-block bootstrap; exact paired permutation fallback is diagnostic only below three publishers",
+  "thresholds": {
+    "minimum_eligible_condition_rows": 50.0,
+    "minimum_publishers": 3.0,
+    "minimum_untouched_source_family_holdouts": 10.0,
+    "minimum_fraction_within_factor_1_5": 0.80,
+    "minimum_absolute_lift": 0.10,
+    "minimum_paired_ci_lower_exclusive": 0.0,
+    "minimum_interval_90_coverage": 0.85,
+    "maximum_interval_90_coverage": 0.95
+  },
+  "exclusions": [
+    "rows without explicit derivative-use eligibility",
+    "non-Bis-A or non-DGEBA resin systems",
+    "rows missing resin, hardener family, mix ratio, temperature, test mass, or method",
+    "supplier gel time relabeled as coating pot life",
+    "Arrhenius fits without genuine multi-temperature series",
+    "Kamal-Sourour or isoconversional fits without DSC conversion curves"
+  ],
+  "dataset_hashes": {
+    "config/program/cure-sources.v1.json": "a6fdac638c611b56852bdfd20baedd4e881831be45eb67693976030a7b316702",
+    "amphora-cure-potlife-gate/reference/mvp20/data/cure_verification_set.json": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+    "config/program/cure-split.v1.json": "1fcde86723524843ba3a3bffb7ea65cd54dd9328198e2fc0d8133e7a0d894a0d"
+  },
+  "split_hash": "1fcde86723524843ba3a3bffb7ea65cd54dd9328198e2fc0d8133e7a0d894a0d"
+}

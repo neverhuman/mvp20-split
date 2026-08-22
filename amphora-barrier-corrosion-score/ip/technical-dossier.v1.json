@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-barrier-corrosion-score",
+    "performance lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "619521e9c8c4676e3cc8d57694309ed29186ce02eacc7184613dafdd708a6e16",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-barrier-corrosion-score",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

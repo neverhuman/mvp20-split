@@ -1,0 +1,417 @@
+{
+  "A_gate_semantics": {
+    "distinct_target_scientific_readiness_values": [
+      "LOCKED_INTERNAL",
+      "NOT_APPLICABLE"
+    ],
+    "n_gates_requiring_scientific_success_for_phase0": 0,
+    "n_modules_with_phase0_gate": 29,
+    "n_promotion_policies_requiring_scientific_success": 0,
+    "rows": [
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-barrier-corrosion-score",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-candidate-contract",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-cro-protocol-packager",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-cure-potlife-gate",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-design-rule-score",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-envelope-gates",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-evidence-intake-validator",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-formulation-arithmetic",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-formulation-universe",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-ingredient-library",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-ip-fto-guard",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-known-answer-benchmarks",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-model-card-authority",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-molecule-design-gate",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-molecule-generator",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-molecule-novelty",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-molecule-property",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-molecule-role-ranker",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-optimizer-orchestrator",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-process-qc-twin",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-public-corrosion-benchmark",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-redteam-audit",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-report-packager",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-run-provenance",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-solvency-score",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-source-ledger",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-sourceability-ehs",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-tolerance-robustness",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "benchmark_lock_scientific_success_required_for_phase0": false,
+        "module_id": "amphora-viscosity-score",
+        "promotion_policy_human_review_performed": false,
+        "promotion_policy_scientific_success_required": false,
+        "promotion_policy_target_scientific_readiness": "LOCKED_INTERNAL"
+      }
+    ]
+  },
+  "B_signed_readiness": {
+    "n_asserting_VALIDATED_scientific_readiness": 0,
+    "n_signed_evaluation_receipts": 19,
+    "readiness_distribution": {
+      "LOCKED_INTERNAL": 6,
+      "NOT_APPLICABLE": 13
+    },
+    "rows": [
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-candidate-contract",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-cro-protocol-packager",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-envelope-gates",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-evidence-intake-validator",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-formulation-arithmetic",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-formulation-universe",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-known-answer-benchmarks",
+        "signed_scientific_outcome": "FAILED",
+        "signed_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-model-card-authority",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-molecule-design-gate",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-molecule-property",
+        "signed_scientific_outcome": "FAILED",
+        "signed_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-optimizer-orchestrator",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-process-qc-twin",
+        "signed_scientific_outcome": "FAILED",
+        "signed_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-public-corrosion-benchmark",
+        "signed_scientific_outcome": "FAILED",
+        "signed_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-redteam-audit",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-report-packager",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-run-provenance",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-solvency-score",
+        "signed_scientific_outcome": "PASSED",
+        "signed_scientific_readiness": "LOCKED_INTERNAL"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-source-ledger",
+        "signed_scientific_outcome": "NOT_APPLICABLE",
+        "signed_scientific_readiness": "NOT_APPLICABLE"
+      },
+      {
+        "evaluator_key_trust_anchored": true,
+        "evaluator_signature_valid": true,
+        "module_id": "amphora-tolerance-robustness",
+        "signed_scientific_outcome": "FAILED",
+        "signed_scientific_readiness": "LOCKED_INTERNAL"
+      }
+    ]
+  },
+  "C_solvency_promotion_crypto_reverification": {
+    "all_checks_pass": true,
+    "checks": {
+      "benchmark_binding_matches_disk_no_drift": true,
+      "distinct_signing_identities_independence": true,
+      "evaluator_key_trust_anchored_authorized_role": true,
+      "evaluator_signature_valid": true,
+      "honest_label_human_review_not_claimed": true,
+      "honest_label_scientific_readiness_locked_internal_not_validated": true,
+      "review_accepted_for_phase0": true,
+      "review_binds_exact_ondisk_evaluation_receipt": true,
+      "reviewer_key_trust_anchored_authorized_role": true,
+      "reviewer_signature_valid": true
+    },
+    "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "module_id": "amphora-solvency-score",
+    "reviewer_key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b"
+  },
+  "D_cure_potlife_independent_reproduction": {
+    "all_six_metrics_reproduce_bit_close": true,
+    "claimed_in_kpi": {
+      "arrhenius_over_constant_baseline_lift": 0.8051198523,
+      "arrhenius_pot_life_mape": 0.1473336045,
+      "constant_baseline_mape": 0.9524534568,
+      "held_out_30c_mape": 0.1562961131,
+      "per_system_within_40pct_rate": 1.0,
+      "within_20pct_rate": 0.0833333333
+    },
+    "module_id": "amphora-cure-potlife-gate",
+    "non_circular_cited_Ea_independent_of_scoring_data": true,
+    "note": "Arrhenius KPI reproduces bit-exact via from-scratch code path; the cited activation energies are NOT reverse-fit from the scored pot-life data (mean Ea_fit/cited ~0.89). BUT dataset rights_gate_passed is false, so this real physics cannot honestly promote to Phase-0 on current data.",
+    "recomputed": {
+      "arrhenius_over_constant_baseline_lift": 0.8051198523,
+      "arrhenius_pot_life_mape": 0.1473336045,
+      "constant_baseline_mape": 0.9524534568,
+      "held_out_30c_mape": 0.1562961131,
+      "mean_Ea_fit_over_cited_ratio": 0.893239975,
+      "per_system_within_40pct_rate": 1.0,
+      "within_20pct_rate": 0.0833333333
+    },
+    "reference_temperature_k_used": 295.9277777778,
+    "rights_gate_passed": false
+  },
+  "authority": "AUDIT_ONLY",
+  "does_not": [
+    "does not modify any signed receipt, benchmark, promotion policy, or manifest",
+    "does not promote, demote, or re-sign any module",
+    "emits no secret key material"
+  ],
+  "question": "What does a PHASE_0 badge mean? Does any Phase-0 gate require scientific success or assert VALIDATED readiness, or is every PHASE_0 a reproducibility/rights/independence governance-lock with UNVALIDATED science?",
+  "schema": "amphora.redteam-audit.phase0-scientific-readiness-honesty-v1",
+  "verdict": {
+    "cure_potlife_science_is_real_but_rights_blocked": true,
+    "founder_headline": "PHASE_0 in this portfolio means a reproducibility + rights + independence governance-lock (byte-stable benchmark, rights-qualified data, two distinct trust-anchored signatures) at scientific_readiness=LOCKED_INTERNAL. It does NOT mean a model was scientifically validated: 0 of 29 Phase-0 gates require scientific success and 0 signed evaluation receipts assert VALIDATED readiness. The real predictive science that exists (e.g. cure-potlife Arrhenius, reproduced here bit-exact and shown non-circular) is gated by DATA RIGHTS, not by missing science. Present the Phase-0 count as an engineering/governance milestone, never as a count of validated scientific capabilities.",
+    "n_modules_scientifically_validated_at_phase0": 0,
+    "phase0_is_governance_lock_not_scientific_validation": true,
+    "solvency_only_science_module_at_bound_phase0_is_cryptographically_defensible": true
+  }
+}

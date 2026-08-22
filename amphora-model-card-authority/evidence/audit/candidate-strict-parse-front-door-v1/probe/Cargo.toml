@@ -1,0 +1,19 @@
+[package]
+name = "mca-dupkey-front-door-probe"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace. Nothing is added to,
+# built into, or written inside the workspace by this probe; CARGO_TARGET_DIR is
+# redirected to scratch by the runner. Mirrors the live-runtime-envelope-parity-v1
+# runtime_probe pattern.
+[workspace]
+
+# LIVE differential harness: links the real amphora-core and amphora-engine
+# crates and calls the real public entry points (amphora_core::parse_json_strict,
+# EnginePool::score_campaign_modules). This is NOT a re-implementation.
+[dependencies]
+amphora-core = { path = "../../../../../amphora-core" }
+amphora-engine = { path = "../../../../../amphora-engine" }
+serde_json = { version = "=1.0.150", features = ["float_roundtrip"] }

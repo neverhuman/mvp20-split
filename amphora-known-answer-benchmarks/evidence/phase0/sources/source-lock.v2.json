@@ -1,0 +1,100 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-known-answer-benchmarks/evidence/phase0",
+  "eligible_sources": [
+    {
+      "authorization_overlay_id": "authorization-4a4a199f4026ecafa0f70377269c760254f7d066bb33efa1573a7b179ff761e0",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-4a4a199f4026ecafa0f70377269c760254f7d066bb33efa1573a7b179ff761e0.json",
+      "authorization_overlay_sha256": "e1549aca1ce15ba14483783c9e0566a4b75236e8878000991b285edf985b0240",
+      "declared_sha256": "3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a.jsonl.gz",
+      "observed_sha256": "3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/bigsoldb_solubility-879f55f39db977e2.rights-receipt.v1.json",
+      "rights_receipt_sha256": "4c9ffe0e098540348992f98603ec714b0e7fbbff7f5a3948ec976253bbbba9e7",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-4862c0b742a3254206dd1eb9561eace3ba79badf5488afefc42a1f199041a467",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-4862c0b742a3254206dd1eb9561eace3ba79badf5488afefc42a1f199041a467.json",
+      "authorization_overlay_sha256": "5895f04ae6d0eeb4bf63ea36304073fc0a965419d0e2940c9e33a88b9bbf7c83",
+      "declared_sha256": "e8ca985df15935d1b38b29b68eaf51a9e1fe4c9a30fce23086197cb7536296db",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/e8ca985df15935d1b38b29b68eaf51a9e1fe4c9a30fce23086197cb7536296db.jsonl.gz",
+      "observed_sha256": "e8ca985df15935d1b38b29b68eaf51a9e1fe4c9a30fce23086197cb7536296db",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/point2_run_log-c10a0a7467d8555a.rights-receipt.v1.json",
+      "rights_receipt_sha256": "38f5905ae36b6bcca0ba81efd79cb997422facdc5a02e184414e9807f9b192b3",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-f71b3bcdde6215a0e8707d15982aed266de5b770f6b080d10b4a12fa54a22000",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-f71b3bcdde6215a0e8707d15982aed266de5b770f6b080d10b4a12fa54a22000.json",
+      "authorization_overlay_sha256": "ee3cd753589666758e352f5759336b0184ccd1d7fed076abc6e31437bd7ee4dc",
+      "declared_sha256": "fecd513f4d11cd0da7ca4251cce82a542ac1edc2e0e3329b383fb256f64c04a9",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/fecd513f4d11cd0da7ca4251cce82a542ac1edc2e0e3329b383fb256f64c04a9.jsonl.gz",
+      "observed_sha256": "fecd513f4d11cd0da7ca4251cce82a542ac1edc2e0e3329b383fb256f64c04a9",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/openpoly_counts-9d6c34c0c1fc0b6a.rights-receipt.v1.json",
+      "rights_receipt_sha256": "cd47bb266082773da0c3f4e1174e15abb79c888db9b1658c98ff201101d84ab2",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/feedback_v1/dataset_context.json",
+      "observed_sha256": "8baa9906a2124ccefde35acf1a886ab807215ed2a948de22d14b245a8deb0a81",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/arithmetic_audit.json",
+      "observed_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/control_by_control_receipt.v1.json",
+      "observed_sha256": "be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=KNOWN, license_present=true"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/feedback_v1_aggregate_report.json",
+      "observed_sha256": "7f2c8b7e6ec48152d395d4e1fa540e1ccf4c5ccf60d41ef08c7982396db228f7",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/feedback_v1_dataset_benchmark_report.json",
+      "observed_sha256": "0543c15114f7092b4e50ecee377979ee239ced3eaf6dcc7e2a8671c057dfb7cb",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/known_answer_report.json",
+      "observed_sha256": "8ad390291d012c2adfcb707dfbb84c151d1748a81fdd3d5109116abd4072c1e3",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/known_reference_cards.json",
+      "observed_sha256": "5078f66f685d3bc3e5efe20603823e6a7fc50f7e6817393746a2e51591345103",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/mil_recovery.json",
+      "observed_sha256": "99aec4b8279e0215a7b3ff36f6570cc12eae1c42731622ed7a3857acf6bb077d",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    }
+  ],
+  "inventory_hash": "53b1b61d0fae88302acf2c916d3d6f03961c7031216e35ab95bf495b289c289d",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-known-answer-benchmarks",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v2"
+}

@@ -1,0 +1,1282 @@
+[
+ {
+  "id": "V-B01",
+  "module": "amphora-assurance-capabilities",
+  "promised": "Signed verify receipt with the novel-encoding results and an explicit verdict on R-B01.",
+  "receipt_path": "amphora-assurance-capabilities/evidence/phase0/repairs/V-B01/done/verify-receipt.V-B01.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-ASSUR1",
+  "module": "amphora-assurance-capabilities",
+  "promised": "All V-B01 evading encodings detected, added as regression tests, cargo green, and the original 8 still caught. On CLAIM_SURVIVED the receipt must also carry positive_con\u2026",
+  "receipt_path": "amphora-assurance-capabilities/evidence/phase0/repairs/W-ASSUR1/done/repair-receipt.W-ASSUR1.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-ASSUR2",
+  "module": "amphora-assurance-capabilities",
+  "promised": ">=5 confusable families probed (Cyrillic/Greek lookalikes, mathematical alphanumerics, fullwidth forms, zero-width/bidi controls, non-stripped combining marks) with per-\u2026",
+  "receipt_path": "amphora-assurance-capabilities/evidence/phase0/repairs/W-ASSUR2/done/attack-receipt.W-ASSUR2.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "C3",
+  "module": "amphora-barrier-corrosion-score",
+  "promised": "Signed pre-registration receipt binding the frozen script hash + shadow-data test results under benchmarks/st19168-preregistered-v1/; quarantined xlsx untouched.",
+  "receipt_path": "amphora-barrier-corrosion-score/benchmarks/st19168-preregistered-v1/preregistration-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "C4",
+  "module": "amphora-barrier-corrosion-score",
+  "promised": "Either a new hash-locked rights-clean 3rd series + signed acquisition receipt, or a signed exhaustive-search-negative receipt + data ask.",
+  "receipt_path": "amphora-barrier-corrosion-score/evidence/audit/alam2022-pa450-pa3282-acquisition-v1/acquisition-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "R-C05",
+  "module": "amphora-barrier-corrosion-score",
+  "promised": "Pre-registered acceptance met and stated numerically against its threshold, with the per-seed/per-leg table, and the superseding artifact landed at the done/ glob with i\u2026",
+  "receipt_path": "amphora-barrier-corrosion-score/evidence/phase0/repairs/R-C05/attempts/r-c05-mondrian-repair-checkpoint-fire1.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (3 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 3
+ },
+ {
+  "id": "V-B02",
+  "module": "amphora-barrier-corrosion-score",
+  "promised": "Signed verify receipt at the done/ glob with an explicit verdict on R-B02.",
+  "receipt_path": "amphora-barrier-corrosion-score/evidence/phase0/repairs/V-B02/done/v-b02-independent-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-KPI-BARR",
+  "module": "amphora-barrier-corrosion-score",
+  "promised": "Signed Phase-0 KPI carrying the family-safe result with the leakage caveat, values matching the source receipt.",
+  "receipt_path": "amphora-barrier-corrosion-score/evidence/phase0/kpis/corr-rate-family-safe-qspr-kpi.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W1",
+  "module": "amphora-barrier-corrosion-score",
+  "promised": "A new benchmarks/ directory contains a two-replay byte-stable DSSE-signed receipt reporting blinded Kendall tau vs both hostile nulls across the 3 in-class series, with \u2026",
+  "receipt_path": "amphora-barrier-corrosion-score/benchmarks/three-series-barrier-ranking-v1/three-series-barrier-ranking-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-01",
+  "module": "amphora-candidate-contract",
+  "promised": "All 8 alternate encodings from the ported harness executed against the contract/envelope parsing path, with a per-encoding detected / evaded result table. Any case that \u2026",
+  "receipt_path": "amphora-candidate-contract/evidence/audit/eight-vector-facts-injection-v1/eight-vector-facts-injection-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-01B",
+  "module": "amphora-candidate-contract",
+  "promised": "Every consumer of /candidate/normalized_molecule/* enumerated across all modules with the count stated and the search method quoted (so the denominator is checkable), ea\u2026",
+  "receipt_path": "amphora-candidate-contract/evidence/phase0/repairs/T-01B/done/normalized-molecule-consumer-sweep-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-CONTRACT",
+  "module": "amphora-candidate-contract",
+  "promised": ">=10 normative requirements enumerated from RFC 8785 (JSON Canonicalization Scheme) plus the JSON Schema draft the contract declares, with RFC 8785 treated as load-beari\u2026",
+  "receipt_path": "amphora-candidate-contract/evidence/phase0/repairs/W-T-CONTRACT/done/rfc8785-jcs-conformance-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "CF-ALT",
+  "module": "amphora-cro-protocol-packager",
+  "promised": "Wherever evidence cannot distinguish candidate ingredients (two curatives, two thinner systems), the blueprint ships the primary plus ranked alternates with the discrimi\u2026",
+  "receipt_path": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-ALT/attempts/cf-alt-ranked-alternates-discriminating-experiment-audit-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "CF-PROC",
+  "module": "amphora-cro-protocol-packager",
+  "promised": "Signed blueprint section: component A/B preparation, induction behavior, thinning limits, application parameters against the envelope's WFT/coverage/cure schedule, and t\u2026",
+  "receipt_path": "amphora-cro-protocol-packager/evidence/audit/cf-proc-mixing-induction-application-crosswalk-v1/cf-proc-mixing-induction-application-crosswalk-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (4 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "CF-RISK",
+  "module": "amphora-cro-protocol-packager",
+  "promised": "Signed blueprint section: pinholing/wetting/film-build and pot-life risks specific to this recipe, the application-limit parameters most likely to be exceeded, and their\u2026",
+  "receipt_path": "amphora-cro-protocol-packager/evidence/audit/cf-risk-known-failure-modes-v1/cf-risk-known-failure-modes-audit-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (5 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "CF-TEST",
+  "module": "amphora-cro-protocol-packager",
+  "promised": "Signed protocol qualifying the system against the envelope and the relevant MIL-DTL-24441-class requirements, conforming to the portfolio's common transfer path: methods\u2026",
+  "receipt_path": "amphora-cro-protocol-packager/evidence/audit/cf-test-preregistration-completeness-v1/cf-test-preregistration-completeness-audit-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (4 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 4
+ },
+ {
+  "id": "T-02",
+  "module": "amphora-cro-protocol-packager",
+  "promised": "All 8 alternate encodings executed against BOTH the claim-lock and the execution_authority_locked paths, with a per-encoding per-path result table. Any case that slips t\u2026",
+  "receipt_path": "amphora-cro-protocol-packager/evidence/audit/t02-claim-lock-execution-authority-adversarial-v1/t02-claim-lock-execution-authority-adversarial-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-CRO1",
+  "module": "amphora-cro-protocol-packager",
+  "promised": "protocol_lock_sha256 recomputed from canonical packet content and mismatches rejected; T-02's exact evading vector re-run and shown REJECTED with the observed output quo\u2026",
+  "receipt_path": "amphora-cro-protocol-packager/evidence/audit/w-cro1-protocol-lock-content-binding-repair-v1/w-cro1-protocol-lock-content-binding-repair-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-D-CRO",
+  "module": "amphora-cro-protocol-packager",
+  "promised": ">=12 named sources swept, each recorded with the exact query string used and EITHER its licence quoted verbatim from the source OR the blocking licence quoted verbatim. \u2026",
+  "receipt_path": "amphora-cro-protocol-packager/evidence/audit/w-d-cro-external-candidate-binding-parity-v1/w-d-cro-external-candidate-binding-parity-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (3 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "C5",
+  "module": "amphora-cure-potlife-gate",
+  "promised": "Signed Kissinger/OFW/Starink head-to-head receipt under benchmarks/kissinger-ozawa-baseline-v1/ + signed rights-integrity note + ledger entries.",
+  "receipt_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-cure-potlife-gate/benchmarks/kissinger-ozawa-baseline-v1/kissinger-ozawa-baseline-headtohead-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "R-C02",
+  "module": "amphora-cure-potlife-gate",
+  "promised": "Pre-registered acceptance met and stated numerically against its threshold, with the per-seed/per-leg table, and the superseding artifact landed at the done/ glob with i\u2026",
+  "receipt_path": "amphora-cure-potlife-gate/evidence/phase0/repairs/R-C02/done/R-C02-repair-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-ANNEX",
+  "module": "amphora-dataset-recon",
+  "promised": "Signed check that the annex exists (superior chemistries, alternative feedstocks, adjacent systems and adjacent-problem sources are REPORTED, not suppressed) and that th\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-ANNEX/attempts/dr-annex-attempt-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "DR-COVERAGE",
+  "module": "amphora-dataset-recon",
+  "promised": "Signed gap-by-gap (and, once CF-TIER exists, recipe-element-by-element) map in which every row carries exactly one of: the best RECOMMENDED source, the best CONDITIONAL \u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-COVERAGE/attempts/dr-coverage-fire1-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "DR-D2-COVERAGE",
+  "module": "amphora-dataset-recon",
+  "promised": "Signed receipt carrying the full obligation-coverage table for AMPHORA-DIRECTIVE-2026-08-09 (UNMAPPED and ORPHAN lists reported even when empty, directive cited by path+\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-D2-COVERAGE/done/dr-d2-coverage-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-DISP",
+  "module": "amphora-dataset-recon",
+  "promised": "First deliverable: a sha256-pinned candidate-intake manifest enumerating every previously-furnished source (each source named inside the 14 data-acquisition-queue lines,\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-DISP/attempts/dr-disp-fire1-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "DR-GAP",
+  "module": "amphora-dataset-recon",
+  "promised": "Signed gap register in which every row states the four mandated facts: what measurement or label class is missing, at what minimum n, under what measurement standard, an\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-GAP/done/dr-gap-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-LANG-CEE",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the Polish and Czech literature communities (national journal indexes and polytechnic theses repositories and wherever\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-CEE/done/dr-lang-cee-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-LANG-DE",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the German literature communities (DIN annexes, Fraunhofer/DECHEMA archives, German-language coatings journals and whe\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-DE/done/dr-lang-de-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-LANG-EU",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the Dutch and Italian literature communities (national repositories and coatings-institute archives and wherever the r\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-EU/done/dr-lang-eu-fire2-spotcheck-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "DR-LANG-FR",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the French literature communities (NF standards annexes, HAL/theses.fr, French-language corrosion literature and where\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-FR/done/dr-lang-fr-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-LANG-IBERIAN",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the Spanish and Portuguese literature communities (SciELO-class regional indexes, national theses repositories and whe\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-IBERIAN/done/dr-lang-iberian-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-LANG-JA",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the Japanese literature communities (J-STAGE, NIMS/PoLyInfo-class national materials databases, JIS test-data annexes \u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-JA/done/dr-lang-ja-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-LANG-KO",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the Korean literature communities (KCI, KS standards annexes, KRICT-class institute archives and wherever the research\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-KO/done/dr-lang-ko-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-LANG-RU",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the Russian literature communities (eLIBRARY/RSCI, GOST test-data annexes, institute report archives and wherever the \u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-RU/done/dr-lang-ru-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-LANG-ZH",
+  "module": "amphora-dataset-recon",
+  "promised": "Dataset-ledger entries and search-record lines for the Chinese literature communities (CNKI/Wanfang-class indexes, GB/T standards annexes, CAS institute archives and whe\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-LANG-ZH/done/dr-lang-zh-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-RUBRIC",
+  "module": "amphora-dataset-recon",
+  "promised": "Signed rubric artifact covering at least the six mandated dimensions (gap fit, provenance & measurement quality, rights clarity, uniqueness, integrity risk, acquisition \u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/done/dr-rubric-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-SEARCH-RECORD",
+  "module": "amphora-dataset-recon",
+  "promised": "Signed assembly of the search record: rubric used, language communities and repository classes searched with the native-language query forms, AND the considered-and-excl\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-SEARCH-RECORD/done/dr-search-record-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "DR-STD-MAP",
+  "module": "amphora-dataset-recon",
+  "promised": "Signed mapping table covering every non-ASTM/ISO standard cited by any ledger entry (GB/T, JIS, DIN, GOST, KS, NF classes at minimum): closest equivalent named, known me\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-STD-MAP/done/dr-std-map-fire2-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "PROBE-WEB",
+  "module": "amphora-dataset-recon",
+  "promised": "Signed receipt reporting the fire's usable tool inventory (WebSearch/WebFetch/raw HTTP), one native-script query round-trip (Chinese or Japanese) with the native query s\u2026",
+  "receipt_path": "amphora-dataset-recon/evidence/phase0/repairs/PROBE-WEB/done/probe-web-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "C6",
+  "module": "amphora-design-rule-score",
+  "promised": "Signed superseding KPI receipt referencing split-integrity-dedup-v1 + data ask filed + ledger entry.",
+  "receipt_path": "amphora-design-rule-score/evidence/phase0/kpis/purformance-scratch-hardness-dedup-superseding-kpi.v1.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=UNKNOWN [ANOMALY: fires[].outcome UNKNOWN despite ledger-confirmed verdict, see followup]; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 2
+ },
+ {
+  "id": "T-03",
+  "module": "amphora-envelope-gates",
+  "promised": "All 4 named boundary classes -- inclusive-bound off-by-one, inverted envelope (min>max), NaN/Inf bounds, unit-scale substitution -- executed against each of the 4 fail-c\u2026",
+  "receipt_path": "amphora-envelope-gates/evidence/phase0/repairs/T-03/done/t03-adversarial-attack-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-D-ENVGATE",
+  "module": "amphora-envelope-gates",
+  "promised": ">=12 named sources swept, each recorded with the exact query string used and EITHER its licence quoted verbatim from the source OR the blocking licence quoted verbatim. \u2026",
+  "receipt_path": "amphora-envelope-gates/evidence/phase0/repairs/W-D-ENVGATE/attempts/w-d-envgate-sweep-rescore-attempt-1.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "T-04",
+  "module": "amphora-evidence-intake-validator",
+  "promised": ">=5 forgery classes crafted and run (re-signed-with-wrong-key, truncated-keyid, payload/signature mismatch, valid-envelope-tampered-payload, cross-module replay), each w\u2026",
+  "receipt_path": "amphora-evidence-intake-validator/evidence/phase0/repairs/T-04/done/t04-adversarial-forgery-done.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-REAL-EIV",
+  "module": "amphora-evidence-intake-validator",
+  "promised": "Superseding KPI with real-corpus n and rates, including explicit results on the known-defective receipts.",
+  "receipt_path": "amphora-evidence-intake-validator/evidence/phase0/repairs/V1-REAL-EIV/done/v1-real-eiv-superseding-kpi.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-EIV",
+  "module": "amphora-evidence-intake-validator",
+  "promised": ">=8 normative requirements enumerated from the DSSE specification (secure-systems-lab/dsse), covering the PAE construction and the envelope schema, at a pinned spec vers\u2026",
+  "receipt_path": "amphora-evidence-intake-validator/evidence/phase0/repairs/W-T-EIV/done/w-t-eiv-dsse-spec-conformance-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "CF-ARITH",
+  "module": "amphora-formulation-arithmetic",
+  "promised": "Signed artifact showing the mass balance and EEW/AHEW stoichiometry by which the candidate formulation lands the 1:1 volume mix ratio, 65\u00b12% volume solids, \u2264340 g/L VOC,\u2026",
+  "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/CF-ARITH/done/CF-ARITH.done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "T-05",
+  "module": "amphora-formulation-arithmetic",
+  "promised": "Every arithmetic identity the module implements enumerated with its count stated, and each recomputed under BOTH mass and volume basis with exact rationals (fractions.Fr\u2026",
+  "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/done/T-05.done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-ARITH",
+  "module": "amphora-formulation-arithmetic",
+  "promised": ">=6 normative requirements enumerated from EPA Method 24 (40 CFR Part 60 Appendix A-7, US federal regulation, public domain) and the density-basis identities derivable f\u2026",
+  "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/done/W-T-ARITH.done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-06",
+  "module": "amphora-formulation-universe",
+  "promised": "All 3 attacks executed -- cardinality overflow, duplicate-factor collapse, and index laundering of an out-of-universe candidate -- with counts and the smuggled candidate\u2026",
+  "receipt_path": "amphora-formulation-universe/evidence/phase0/repairs/T-06/done/t06-independent-adversarial-attack-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-ING",
+  "module": "amphora-ingredient-library",
+  "promised": "Signed re-run of constant-crosscheck-v1 showing the TDS band in force and the gap-zone probes rejecting.",
+  "receipt_path": "amphora-ingredient-library/evidence/phase0/repairs/V1-ING/done/repair-V1-ING-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-ING1",
+  "module": "amphora-ingredient-library",
+  "promised": "Signed Phase-0 KPI restating the TDS-verified constants with correct n and the disclosed divergence named. On CLAIM_SURVIVED the receipt must also carry positive_control\u2026",
+  "receipt_path": "amphora-ingredient-library/evidence/phase0/kpis/hardener-tds-verified-constants-kpi.v1.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-ING2",
+  "module": "amphora-ingredient-library",
+  "promised": "Live-TDS verification extended to the reactive constants (EEW and AHEW/amine value) with n stated, per-constant within-gate/divergent verdict against the same 3.0% gate,\u2026",
+  "receipt_path": "amphora-ingredient-library/evidence/phase0/repairs/W-ING2/done/reactive-constant-tds-verified-superseding-kpi.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "R-S02",
+  "module": "amphora-ip-fto-guard",
+  "promised": "Cumulative per-row adjudication of all 54 CPC rows: each row marked faithful / misassigned / fabricated, quoting the CPC definition text consulted and the row's own asse\u2026",
+  "receipt_path": "amphora-ip-fto-guard/evidence/phase0/repairs/R-S02/attempts/cpc-category-screen-audit-batch1.R-S02.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (3 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 3
+ },
+ {
+  "id": "R-S03",
+  "module": "amphora-ip-fto-guard",
+  "promised": "All 6 claim-charted families adjudicated: for each, the assignee of record named with the source consulted and a chain status of current / stale / misattributed. A BLOCK\u2026",
+  "receipt_path": "amphora-ip-fto-guard/evidence/phase0/repairs/R-S03/done/assignee-ownership-chain-audit.R-S03.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-FTO-READON",
+  "module": "amphora-ip-fto-guard",
+  "promised": "Element-by-element claim chart under BOTH constructions with a per-element reads-on verdict, an overall verdict of reads-on / does-not-read-on / genuinely-ambiguous-pend\u2026",
+  "receipt_path": "amphora-ip-fto-guard/evidence/phase0/repairs/W-FTO-READON/done/claim-readon-adjudication.W-FTO-READON.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-FTO1",
+  "module": "amphora-ip-fto-guard",
+  "promised": "Signed sensitivity analysis over the charted families with an explicit flip/no-flip verdict per family.",
+  "receipt_path": "amphora-ip-fto-guard/evidence/phase0/repairs/W-FTO1/done/claim-construction-sensitivity.W-FTO1.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-A05",
+  "module": "amphora-known-answer-benchmarks",
+  "promised": "Signed verify receipt at the done/ glob with an explicit verdict on R-A05.",
+  "receipt_path": "amphora-known-answer-benchmarks/evidence/phase0/repairs/V-A05/done/V-A05-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-07",
+  "module": "amphora-model-card-authority",
+  "promised": ">=6 authority-escalation cases executed (failed card attempting to rank, card claiming authority above its ceiling, each under >=3 alternate encodings and nested overrid\u2026",
+  "receipt_path": "amphora-model-card-authority/evidence/phase0/repairs/T-07/done/t07-authority-escalation-encoding-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-KPI-MCA",
+  "module": "amphora-model-card-authority",
+  "promised": "A signed Phase-0 KPI in evidence/phase0/kpis/ restating the audit's measured values with correct n and binding.",
+  "receipt_path": "amphora-model-card-authority/evidence/phase0/kpis/live-runtime-envelope-parity-kpi.v1.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-MCA",
+  "module": "amphora-model-card-authority",
+  "promised": ">=9 normative requirements enumerated from Mitchell et al. 2019 'Model Cards for Model Reporting' (DOI 10.1145/3287560.3287596), scoring every section it specifies, and \u2026",
+  "receipt_path": "amphora-model-card-authority/evidence/phase0/repairs/W-T-MCA/done/w-t-mca-mitchell-2019-conformance-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-08",
+  "module": "amphora-molecule-design-gate",
+  "promised": ">=10 held-out real coating molecules run through the gate via the REAL RDKit FFI, including at minimum the 3 named hostile nulls (tertiary-amine accelerator, imidazole l\u2026",
+  "receipt_path": "amphora-molecule-design-gate/evidence/phase0/repairs/T-08/done/t08-design-gate-live-runtime-adversarial-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "U-E2E",
+  "module": "amphora-molecule-design-gate",
+  "promised": "A candidate set of >=20 structures published with provenance per candidate (which of the 5 canonical amines, or which of the 38 grammar proposals with its corrected R-A0\u2026",
+  "receipt_path": "amphora-molecule-design-gate/evidence/phase0/repairs/U-E2E/done/u-e2e-candidate-set-partial-matrix-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "U-E2E-B",
+  "module": "amphora-molecule-design-gate",
+  "promised": "The completed matrix over all >=20 candidates x all 6 evaluator families with no blank cells, the coverage-yield KPI stated for all four K values, the abstention histogr\u2026",
+  "receipt_path": "amphora-molecule-design-gate/evidence/phase0/repairs/U-E2E-B/done/u-e2e-b-ranking-coverage-yield-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-DESIGNGATE",
+  "module": "amphora-molecule-design-gate",
+  "promised": ">=5 normative requirements enumerated from the OECD principles for QSAR model validation, with at least one named published applicability-domain method (leverage/William\u2026",
+  "receipt_path": "amphora-molecule-design-gate/evidence/phase0/repairs/W-T-DESIGNGATE/done/w-t-designgate-ad-comparator-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "R-S06",
+  "module": "amphora-molecule-generator",
+  "promised": "All 3 attack families executed -- known-hard-to-synthesise structures scoring SA<6, degenerate-but-valid SMILES passing the validity check, and boundary probing at SA 5.\u2026",
+  "receipt_path": "amphora-molecule-generator/evidence/phase0/repairs/R-S06/done/r-s06-sa-validity-adversarial-probe-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "U-GEN",
+  "module": "amphora-molecule-generator",
+  "promised": "Signed design receipt containing all four deliverables: the minimal runtime routing path, EVERY governance blocker quoted with file:line, the solver-lab integration requ\u2026",
+  "receipt_path": "amphora-molecule-generator/evidence/phase0/repairs/U-GEN/done/u-gen-live-proposal-path-design-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "V-A06",
+  "module": "amphora-molecule-generator",
+  "promised": "Signed verify receipt at the done/ glob with an explicit verdict on R-A06.",
+  "receipt_path": "amphora-molecule-generator/evidence/phase0/repairs/V-A06/done/v-a06-molecule-generator-repair-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-A06v2",
+  "module": "amphora-molecule-generator",
+  "promised": "Signed verify receipt reproducing both conventions with an independent instrument validation. On CLAIM_SURVIVED the receipt must also carry positive_control{planted_defe\u2026",
+  "receipt_path": "amphora-molecule-generator/evidence/phase0/repairs/V-A06v2/done/v-a06v2-molecule-generator-independent-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-GEN1",
+  "module": "amphora-molecule-generator",
+  "promised": "Signed sweep receipt covering every proportion interval in the tree, with exact CIs where degenerate.",
+  "receipt_path": "amphora-molecule-generator/evidence/phase0/repairs/W-GEN1/done/w-gen1-portfolio-ci-degeneracy-sweep-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "V-A07",
+  "module": "amphora-molecule-novelty",
+  "promised": "Signed verify receipt at the done/ glob with an explicit verdict on R-A07.",
+  "receipt_path": "amphora-molecule-novelty/evidence/phase0/repairs/V-A07/done/v-a07-independent-verify-of-r-a07-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-A07v2",
+  "module": "amphora-molecule-novelty",
+  "promised": "Signed verify receipt covering all four families with a flip-completeness verdict. On CLAIM_SURVIVED the receipt must also carry positive_control{planted_defect, how_pla\u2026",
+  "receipt_path": "amphora-molecule-novelty/evidence/phase0/repairs/V-A07v2/done/v-a07v2-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-D-NOV",
+  "module": "amphora-molecule-novelty",
+  "promised": ">=12 named sources swept, each recorded with the exact query string used and EITHER its licence quoted verbatim from the source OR the blocking licence quoted verbatim. \u2026",
+  "receipt_path": "amphora-molecule-novelty/evidence/phase0/repairs/W-D-NOV/done/W-D-NOV-second-corpus-novelty-retest-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "W-NOV1",
+  "module": "amphora-molecule-novelty",
+  "promised": "Superseding KPI with all four fingerprint families on the corrected structure, every flip disclosed.",
+  "receipt_path": "amphora-molecule-novelty/evidence/phase0/repairs/W-NOV1/done/w-nov1-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "C7",
+  "module": "amphora-molecule-property",
+  "promised": "Signed external-validation receipts for Tg and density with explicit within-vs-external degradation factors + ledger entries.",
+  "receipt_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 3
+ },
+ {
+  "id": "C8",
+  "module": "amphora-molecule-property",
+  "promised": "One consolidated signed phys/ML/stack receipt covering density, Tg (with new stack arm), dielectric, RI + ledger entry.",
+  "receipt_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (3 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 3
+ },
+ {
+  "id": "R-C03",
+  "module": "amphora-molecule-property",
+  "promised": "Pre-registered acceptance met and stated numerically against its threshold, with the per-seed/per-leg table, and the superseding artifact landed at the done/ glob with i\u2026",
+  "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-C03/attempts/rc03-d1-group-safe-headline-superseding-kpi.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (4 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 3
+ },
+ {
+  "id": "U-AD",
+  "module": "amphora-molecule-property",
+  "promised": "Signed KPI with the sweep table over all 5 AD thresholds {0.20,0.25,0.30,0.35,0.40} for >=3 evaluators (Tg, density, RI), each cell reporting coverage, MAE and a proper \u2026",
+  "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/U-AD/done/u-ad-abstention-vs-error-frontier-kpi.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "U-MLIP",
+  "module": "amphora-molecule-property",
+  "promised": "Signed feasibility receipt answering all four questions with evidence: licence quoted verbatim for model weights and training data (or the specific barrier named); a che\u2026",
+  "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/U-MLIP/done/u-mlip-molecule-property-mlip-dielectric-feasibility-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-N02a",
+  "module": "amphora-molecule-property",
+  "promised": "Signed verify receipt at the done/ glob with explicit verdict.",
+  "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/V-N02a/done/v-n02a-molecule-property-independent-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-MOLPROP",
+  "module": "amphora-molecule-property",
+  "promised": "Signed Phase-0 KPI carrying the leave-class-out result WITH the governing macro-bisection refutation cited and the scope limit stated.",
+  "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/V1-MOLPROP/done/v1-molprop-density-leave-class-out-scoped-kpi.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-PROP1",
+  "module": "amphora-molecule-property",
+  "promised": "Superseding KPI with data-justified support threshold and per-group scoping of the claim locks.",
+  "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/W-PROP1/done/van-krevelen-ridge-scope-limited-superseding-kpi.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W2",
+  "module": "amphora-molecule-property",
+  "promised": "One signed consolidated corpus-integrity receipt covering >= 4 corpora with per-corpus admissible fractions, the constraint + citation used for each, and the list of dep\u2026",
+  "receipt_path": "amphora-molecule-property/evidence/audit/corpus-admissibility-audit-v1/corpus-admissibility-audit-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (3 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 3
+ },
+ {
+  "id": "W3",
+  "module": "amphora-molecule-property",
+  "promised": "A signed superseding dielectric KPI receipt on xbabe2 plus logs/claims-requiring-retraction.jsonl with >= 1 valid JSON line, and a ledger entry.",
+  "receipt_path": "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "R-S05",
+  "module": "amphora-molecule-role-ranker",
+  "promised": "DETA and TETA both simulated with literature reactivity ratios cited by year+DOI, r(T) swept over >=3 temperatures spanning the plausible cure range, with a direction-re\u2026",
+  "receipt_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-S05/done/r-s05-deta-teta-reactivity-temperature-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-A12a",
+  "module": "amphora-molecule-role-ranker",
+  "promised": "Signed verify receipt at the done/ glob with an explicit verdict on R-A12.",
+  "receipt_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/V-A12a/done/v-a12a-molecule-role-ranker-independent-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-N02b",
+  "module": "amphora-molecule-role-ranker",
+  "promised": "Signed verify receipt at the done/ glob with explicit verdict.",
+  "receipt_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/V-N02b/done/v-n02b-molecule-role-ranker-independent-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-ROLE-CI",
+  "module": "amphora-molecule-role-ranker",
+  "promised": "Superseding KPI landed with every degenerate interval in this module recomputed by a named exact method, the old and new bounds shown side by side, the method justified,\u2026",
+  "receipt_path": "amphora-molecule-role-ranker/evidence/phase0/repairs/W-ROLE-CI/done/w-role-ci-superseding-kpi-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-09",
+  "module": "amphora-optimizer-orchestrator",
+  "promised": "All 8 alternate encodings executed against the quarantine gate's inputs (objective and constraint), with a per-encoding blocked / reached-forbidden-path result table. An\u2026",
+  "receipt_path": "amphora-optimizer-orchestrator/evidence/phase0/repairs/T-09/done/authorization-injection-encoding-t09-done.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-OPT",
+  "module": "amphora-optimizer-orchestrator",
+  "promised": ">=8 normative requirements enumerated from Anderson 1972 (ESD-TR-73-51) for the three reference-monitor properties -- complete mediation, tamper-resistance, verifiabilit\u2026",
+  "receipt_path": "amphora-optimizer-orchestrator/evidence/phase0/repairs/W-T-OPT/done/w-t-opt-reference-monitor-baseline-audit-done.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-10",
+  "module": "amphora-process-qc-twin",
+  "promised": ">=3 chart parameterisations run under BOTH stress regimes -- control limits estimated from short reference windows, and AR(1) autocorrelated input -- with measured ARL a\u2026",
+  "receipt_path": "amphora-process-qc-twin/evidence/audit/ar1-estparam-drift-corpus-v1/ar1-estparam-drift-corpus-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-QC",
+  "module": "amphora-process-qc-twin",
+  "promised": "Signed MR-detector receipt AND a Phase-0 KPI restating the ARL characterisation.",
+  "receipt_path": "amphora-process-qc-twin/evidence/audit/mr-memory-detector-arl-degradation-v1/mr-memory-detector-arl-degradation-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (3 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-QC",
+  "module": "amphora-process-qc-twin",
+  "promised": ">=6 normative requirements enumerated from the NIST/SEMATECH e-Handbook of Statistical Methods section 6.3.2 (public domain, DOI 10.18434/M32189), comparing measured aga\u2026",
+  "receipt_path": "amphora-process-qc-twin/evidence/phase0/repairs/W-T-QC/done/w-t-qc-nist-sematech-arl-baseline-audit-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "C10",
+  "module": "amphora-public-corrosion-benchmark",
+  "promised": "Signed consolidated KPI receipt indexing the 4 audit verdicts + refreshed data ask + ledger entry.",
+  "receipt_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/kpis/audit-verdicts-consolidated-kpi.v1.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "R-S07",
+  "module": "amphora-public-corrosion-benchmark",
+  "promised": "check_index_completeness.py committed and executable, plus a receipt quoting BOTH observed exit codes: 0 against the live R-A08-refreshed index, and nonzero against a te\u2026",
+  "receipt_path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/R-S07/done/R-S07-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-A08",
+  "module": "amphora-public-corrosion-benchmark",
+  "promised": "Signed verify receipt at the done/ glob with an explicit verdict on R-A08.",
+  "receipt_path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/V-A08/done/V-A08-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-N03",
+  "module": "amphora-public-corrosion-benchmark",
+  "promised": "Signed verify receipt at the done/ glob.",
+  "receipt_path": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/V-N03/done/V-N03-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W4",
+  "module": "amphora-public-corrosion-benchmark",
+  "promised": "One signed completeness receipt with a per-module table of indexed vs unindexed signed findings across all modules, negative findings called out separately, plus a ledge\u2026",
+  "receipt_path": "amphora-public-corrosion-benchmark/evidence/audit/kpi-surface-completeness-v1/kpi-surface-completeness-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-N02c",
+  "module": "amphora-rdkit-ffi",
+  "promised": "Signed verify receipt at the done/ glob with explicit verdict.",
+  "receipt_path": "amphora-rdkit-ffi/evidence/phase0/repairs/V-N02c/done/v-n02c-rdkit-ffi-independent-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-FFI1",
+  "module": "amphora-rdkit-ffi",
+  "promised": "Signed per-class validation against published AHEW values with an explicit verdict per amine class. On CLAIM_SURVIVED the receipt must also carry positive_control{plante\u2026",
+  "receipt_path": "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI1/done/w-ffi1-rdkit-ffi-ahew-class-validation-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "D-COVERAGE",
+  "module": "amphora-redteam-audit",
+  "promised": "Signed receipt containing the full 43-row coverage table (obligation id, section, owner, campaign items, item statuses, fires, receipts), the UNMAPPED and ORPHAN lists (\u2026",
+  "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/D-COVERAGE/done/d-coverage-founder-directive-coverage-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "R-A00",
+  "module": "amphora-redteam-audit",
+  "promised": "Signed coverage receipt at the done/ glob; every claim in it re-checkable.",
+  "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/R-A00/done/r-a00-retraction-index-completeness-sweep-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "R-Z99",
+  "module": "amphora-redteam-audit",
+  "promised": "Signed audit receipt at the done/ glob; failures individually named.",
+  "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/R-Z99/done/r-z99-wave-r-batch-audit-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-11",
+  "module": "amphora-redteam-audit",
+  "promised": "A synthetic module fixture constructed that satisfies EVERY stated control predicate (all 9 rates 1.0) while violating registry/ranking quarantine intent, with the passi\u2026",
+  "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/T-11/done/t11-optimizer-quarantine-coverage-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "U-PROSE",
+  "module": "amphora-redteam-audit",
+  "promised": "All 29 modules covered with a per-module row (a module with no stale claim still gets a row saying so), every flagged prose claim citing the refuting receipt path and a \u2026",
+  "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/U-PROSE/done/u-prose-mission-prose-staleness-sweep-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-RESOLVE",
+  "module": "amphora-redteam-audit",
+  "promised": "Signed resolution table covering every RETRACTION-INDEX row portfolio-wide, with per-row verdicts.",
+  "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/V1-RESOLVE/done/v1-resolve-retraction-resolution-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-RTA1",
+  "module": "amphora-redteam-audit",
+  "promised": "Signed uniqueness audit over all repair ids with a false-done reachability verdict per collision.",
+  "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/W-RTA1/done/w-rta1-repair-id-uniqueness-audit-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "W-RTA2",
+  "module": "amphora-redteam-audit",
+  "promised": "Signed demonstration with an explicit verdict on whether the survival bar is mechanically enforceable.",
+  "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/W-RTA2/done/w-rta2-survival-bar-gameability-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-12",
+  "module": "amphora-report-packager",
+  "promised": ">=3 forged-package classes fed in (mismatched module ids, replayed receipt, receipt signed by a non-anchored key) with the packager's refusal shown for each. ABSORBED FR\u2026",
+  "receipt_path": "amphora-report-packager/evidence/phase0/repairs/T-12/done/t12-forged-upstream-receipt-directive-t2-12.done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-13",
+  "module": "amphora-run-provenance",
+  "promised": "All 4 tamper probes -- truncated chain, reordered links, substituted intermediate hash, replayed archive -- run over >=20 REAL in-tree run archives rather than the n=3 f\u2026",
+  "receipt_path": "amphora-run-provenance/evidence/audit/real-archive-tamper-scale-v1/real-archive-tamper-scale-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-PROV",
+  "module": "amphora-run-provenance",
+  "promised": ">=10 normative requirements enumerated from in-toto attestation v1 plus the SLSA provenance requirements for levels L1-L3, concluding with the highest level this module \u2026",
+  "receipt_path": "amphora-run-provenance/evidence/phase0/repairs/W-T-PROV/done/w-t-prov-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "C1",
+  "module": "amphora-solvency-score",
+  "promised": "A DSSE-signed forensic receipt exists under amphora-solvency-score/evidence/audit/signing-violation-forensics-v1/ covering all 4 flagged files with per-file chain verifi\u2026",
+  "receipt_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-solvency-score/evidence/audit/signing-violation-forensics-v1/signing-violation-forensics-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=UNKNOWN [ANOMALY: fires[].outcome UNKNOWN despite ledger-confirmed verdict, see followup]; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "V-A10",
+  "module": "amphora-solvency-score",
+  "promised": "Signed verify receipt with an explicit verdict on R-A10 (mission prose consistent with front-matter, W7 void disclosure present and accurate, BigSolDB headline citing th\u2026",
+  "receipt_path": "amphora-solvency-score/evidence/phase0/repairs/V-A10/done/va10-independent-verify-v2-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-B03",
+  "module": "amphora-solvency-score",
+  "promised": "Signed verify receipt at the done/ glob with an explicit verdict on R-B03.",
+  "receipt_path": "amphora-solvency-score/evidence/phase0/repairs/V-B03/done/vb03-independent-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-SOLV",
+  "module": "amphora-solvency-score",
+  "promised": "Superseding KPI(s) reporting the fair comparison with abstention accounting, superseding both refuted KPIs by sha.",
+  "receipt_path": "amphora-solvency-score/evidence/phase0/repairs/V1-SOLV/done/ml-vs-physics-corrected-comparison-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W6",
+  "module": "amphora-solvency-score",
+  "promised": "A signed receipt reporting the re-derived headline metric under at least one genuinely harder split or a stronger comparator, with an explicit survive/refute verdict; pl\u2026",
+  "receipt_path": "amphora-solvency-score/evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "T-14",
+  "module": "amphora-source-ledger",
+  "promised": ">=10 citations sampled from facts.json and verified SUBSTANTIVELY (does the cited page/table/substance actually support the value?), each marked supports / resolves-but-\u2026",
+  "receipt_path": "amphora-source-ledger/evidence/phase0/repairs/T-14/done/t-14-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-REAL-SL",
+  "module": "amphora-source-ledger",
+  "promised": "Signed KPI reporting real-corpus citation coverage over facts.json with the uncited constants enumerated.",
+  "receipt_path": "amphora-source-ledger/evidence/phase0/repairs/V1-REAL-SL/done/v1-real-sl-real-corpus-citation-coverage-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-T-SLEDGER",
+  "module": "amphora-source-ledger",
+  "promised": ">=8 normative requirements enumerated from the FAIR data principles (Wilkinson et al. 2016, DOI 10.1038/sdata.2016.18) and JCGM 200:2012 VIM clause 2.41 metrological tra\u2026",
+  "receipt_path": "amphora-source-ledger/evidence/phase0/repairs/W-T-SLEDGER/done/w-t-sledger-fair-vim-baseline-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "R-N01",
+  "module": "amphora-sourceability-ehs",
+  "promised": "Banked audit receipt + superseding hazard cards with CAS-correct CIDs and re-evaluated gates.",
+  "receipt_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-N01/attempts/r-n01-fire1-ghs-clp-cid-attribution-audit-rebank-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "R-S04",
+  "module": "amphora-sourceability-ehs",
+  "promised": ">=5 tightest-margin solvent pairs enumerated with their VHR-band separation, the +5-11% method bias propagated through BOTH members of each pair, and an explicit flips /\u2026",
+  "receipt_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-S04/done/r-s04-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "U-GHS",
+  "module": "amphora-sourceability-ehs",
+  "promised": "SMARTS prescreen committed and runnable, every alert citing a published source with year+DOI/ISBN, the three-valued fail-closed contract demonstrated (it must never emit\u2026",
+  "receipt_path": "amphora-sourceability-ehs/evidence/phase0/repairs/U-GHS/done/u-ghs-done-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V-A12b",
+  "module": "amphora-sourceability-ehs",
+  "promised": "Signed verify receipt at the done/ glob with an explicit verdict on R-A12.",
+  "receipt_path": "amphora-sourceability-ehs/evidence/phase0/repairs/V-A12b/done/v-a12b-sourceability-ehs-independent-verify-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-EHS1",
+  "module": "amphora-sourceability-ehs",
+  "promised": "Signed reconciliation citing both sources with an explicit authoritative-source rule.",
+  "receipt_path": "amphora-sourceability-ehs/evidence/phase0/repairs/W-EHS1/done/w-ehs1-dds-h351-iarc-pubchem-reconciliation-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; independently deep-read against its own done_criterion text this fire",
+  "evidence_tier": "DEEP_READ",
+  "n_fires": 1
+ },
+ {
+  "id": "R-C01",
+  "module": "amphora-tolerance-robustness",
+  "promised": "Pre-registered acceptance met and stated numerically against its threshold, with the per-seed/per-leg table, and the superseding artifact landed at the done/ glob with i\u2026",
+  "receipt_path": "amphora-tolerance-robustness/evidence/phase0/repairs/R-C01/attempts/r-c01-fire1-repair-checkpoint-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (2 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 2
+ },
+ {
+  "id": "W-TOL1",
+  "module": "amphora-tolerance-robustness",
+  "promised": "Both rows resolved with a real referent, re-verified by the same check V1-RESOLVE applied.",
+  "receipt_path": "amphora-tolerance-robustness/evidence/phase0/repairs/W-TOL1/done/w-tol1-retraction-index-row-resolution-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W5",
+  "module": "amphora-tolerance-robustness",
+  "promised": "A signed receipt reporting re-derived coverage on the admissible subset AND a worst-stratum conditional-coverage number, with an explicit statement of whether the module\u2026",
+  "receipt_path": "amphora-tolerance-robustness/evidence/audit/conformal-coverage-attack-v1/conformal-coverage-attack-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_REFUTED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "V1-KPI-VISC",
+  "module": "amphora-viscosity-score",
+  "promised": "Signed Phase-0 KPI for the HB validation with source, licence, locale-repair note, and explicit scope limits.",
+  "receipt_path": "amphora-viscosity-score/evidence/phase0/repairs/V1-KPI-VISC/done/herschel-bulkley-kpi-promotion-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); supersede/code change-evidence present; outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ },
+ {
+  "id": "W-VISC2",
+  "module": "amphora-viscosity-score",
+  "promised": "Krieger-Dougherty benchmark landed as a signed done receipt: the published baseline cited with year+DOI, the model-vs-baseline comparison reported with its metric and n,\u2026",
+  "receipt_path": "amphora-viscosity-score/evidence/phase0/repairs/W-VISC2/done/krieger-dougherty-benchmark-landed-v1/krieger-dougherty-benchmark-landed-receipt.v1.dsse.json",
+  "verdict": "DELIVERED",
+  "evidence": "DSSE valid (1 artifact(s)); no supersede/code filename or 'supersedes' field (receipt itself is the produced evidence); outcome=CLAIM_SURVIVED; graded by 100%-coverage mechanical scan (DSSE validity + artifact existence + payload content-signal + aggregate red-flag sweeps: 0/66 CLAIM_SURVIVED missing positive_control, 0 missing artifacts); not individually deep-read this fire",
+  "evidence_tier": "MECHANICAL",
+  "n_fires": 1
+ }
+]

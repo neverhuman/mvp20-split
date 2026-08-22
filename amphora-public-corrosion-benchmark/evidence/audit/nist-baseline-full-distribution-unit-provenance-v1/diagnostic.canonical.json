@@ -1,0 +1,264 @@
+{
+  "audit_id": "nist-baseline-full-distribution-unit-provenance-v1",
+  "dataset": {
+    "csv_sha256": "9b6b82d0a562cfd68c5c452a8e75f0ae4c8bc21a72d89a7bc07049242e4c5cc5",
+    "material_groups": [
+      "Aluminum and alloys",
+      "Carbon and alloy steels",
+      "Copper and alloys",
+      "Nickel and alloys",
+      "Stainless steels"
+    ],
+    "n_seawater_records_after_filter": 142,
+    "n_seawater_records_missing_mils_column": 0,
+    "n_total_records_in_raw_csv": 24721,
+    "source": "NIST CORR-DATA Database v2017, doi:10.18434/M3TH4R"
+  },
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, optimizer, or corrosion-rank authority.",
+    "Does not dispute or repeat nist-baseline-descriptive-boundary-provenance-v1's row-trace finding; extends its coverage from 2 to 25 rate fields via an independent whole-array method.",
+    "Does not establish which of the two columns (mm/yr or mils/yr) is physically correct, only whether the pinned raw CSV's two independent unit columns produce consistent AGGREGATE group statistics, not just consistent single boundary rows.",
+    "Does not modify or supersede any existing signed artifact."
+  ],
+  "headline": "Full-distribution unit-provenance audit (T4 escalation) of the NIST CORR-DATA marine steel KPI's seawater_uncoated_substrate_baselines, extending nist-baseline-descriptive-boundary-provenance-v1's 2-field row-trace to all 25 rate-valued reported fields via independent whole-array reconstruction from the mils/yr column. n=142 Seawater records, 0 missing a mils/yr entry. Of 25 rate fields compared, 4 breach the 20% bar: Aluminum and alloys/min_mm_yr=78%; Copper and alloys/min_mm_yr=86%; Nickel and alloys/max_mm_yr=59%; Stainless steels/p25_mm_yr=62%. Conclusion: H0 (the descriptive block is aggregate-unit-consistent across its full reported field surface) is H0 REFUTED.",
+  "human_review_performed": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "n_tests_failed": 1,
+  "positive_control": null,
+  "prior_audit_relationship": "Escalation of evidence/audit/nist-baseline-descriptive-boundary-provenance-v1/ (2026-08-14, H0_REFUTED, 2/10 boundary values breached: Aluminum min 675%, Nickel max 59%). That audit traced only the single row supplying each group's min_mm_yr/max_mm_yr (2 of 30 reported fields, the only ones traceable to one row) and explicitly left the other 20 (n/p25/median/p75 x 5 groups) untested. This audit covers all 25 rate-valued fields (n excluded as a coverage diagnostic, not a rate comparison) via independent whole-array reconstruction from the mils/yr column rather than single-row tracing, so it can catch a broad unit-consistency defect that no single-row trace would surface. Does not dispute or repeat the prior finding; both breaches it names are additionally reproduced below via this whole-array method as a cross-method consistency check.",
+  "promotes_authority": false,
+  "schema": "amphora.public-corrosion-benchmark.audit.v1",
+  "scientific_success_asserted": false,
+  "target_claim": "evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json#fitted_or_physical_model_artifact.seawater_uncoated_substrate_baselines (the descriptive per-material-group reference-rate block; the ONLY claim surface RETRACTION-INDEX.md's R-N03 correction left standing)",
+  "tests": {
+    "T1_population_reproduction": {
+      "n_material_groups": 5,
+      "n_seawater_records": 142,
+      "pass": true,
+      "refutes_claim": false
+    },
+    "T4_full_distribution_unit_provenance": {
+      "breaches": [
+        {
+          "field": "min_mm_yr",
+          "group": "Aluminum and alloys",
+          "relative_discrepancy": 0.7779999999999998
+        },
+        {
+          "field": "min_mm_yr",
+          "group": "Copper and alloys",
+          "relative_discrepancy": 0.8588888888888889
+        },
+        {
+          "field": "max_mm_yr",
+          "group": "Nickel and alloys",
+          "relative_discrepancy": 0.5948837209302328
+        },
+        {
+          "field": "p25_mm_yr",
+          "group": "Stainless steels",
+          "relative_discrepancy": 0.619
+        }
+      ],
+      "max_relative_diff_observed": 0.8588888888888889,
+      "method": "for every Seawater record with a populated mils/yr column, shadow_mm_yr = mils_yr_col * 0.0254; recompute n/min/p25/median/p75/max per group from the shadow array (numpy default percentile, same method as the signed KPI) and compare to the signed mm/yr-column-derived value for all 25 rate fields (5 groups x min/p25/median/p75/max).",
+      "n_fields_breaching": 4,
+      "n_fields_compared": 25,
+      "per_group_field_diffs": {
+        "Aluminum and alloys": {
+          "max_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.002142857142857303,
+            "shadow_from_mils": 0.2794,
+            "signed": 0.28
+          },
+          "median_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.015999999999999924,
+            "shadow_from_mils": 0.0014223999999999999,
+            "signed": 0.0014
+          },
+          "min_mm_yr": {
+            "breaches_20pct_bar": true,
+            "relative_discrepancy": 0.7779999999999998,
+            "shadow_from_mils": 0.00035559999999999997,
+            "signed": 0.0002
+          },
+          "n": {
+            "coverage_fraction": 1.0,
+            "shadow_n_with_mils_coverage": 19,
+            "signed": 19
+          },
+          "p25_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.03011111111111106,
+            "shadow_from_mils": 0.0009270999999999999,
+            "signed": 0.0009
+          },
+          "p75_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.02419354838709677,
+            "shadow_from_mils": 0.0015875,
+            "signed": 0.00155
+          }
+        },
+        "Carbon and alloy steels": {
+          "max_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.01330769230769238,
+            "shadow_from_mils": 2.5654,
+            "signed": 2.6
+          },
+          "median_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.015999999999999903,
+            "shadow_from_mils": 0.1016,
+            "signed": 0.1
+          },
+          "min_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.10066666666666674,
+            "shadow_from_mils": 0.03302,
+            "signed": 0.03
+          },
+          "n": {
+            "coverage_fraction": 1.0,
+            "shadow_n_with_mils_coverage": 44,
+            "signed": 44
+          },
+          "p25_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.008062500000000083,
+            "shadow_from_mils": 0.08064500000000001,
+            "signed": 0.08
+          },
+          "p75_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.011766666666666592,
+            "shadow_from_mils": 0.15176499999999998,
+            "signed": 0.15
+          }
+        },
+        "Copper and alloys": {
+          "max_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.016000000000000014,
+            "shadow_from_mils": 1.016,
+            "signed": 1.0
+          },
+          "median_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.016000000000000042,
+            "shadow_from_mils": 0.01016,
+            "signed": 0.01
+          },
+          "min_mm_yr": {
+            "breaches_20pct_bar": true,
+            "relative_discrepancy": 0.8588888888888889,
+            "shadow_from_mils": 0.000254,
+            "signed": 0.0018
+          },
+          "n": {
+            "coverage_fraction": 1.0,
+            "shadow_n_with_mils_coverage": 37,
+            "signed": 37
+          },
+          "p25_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.016000000000000042,
+            "shadow_from_mils": 0.00508,
+            "signed": 0.005
+          },
+          "p75_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.016000000000000042,
+            "shadow_from_mils": 0.02032,
+            "signed": 0.02
+          }
+        },
+        "Nickel and alloys": {
+          "max_mm_yr": {
+            "breaches_20pct_bar": true,
+            "relative_discrepancy": 0.5948837209302328,
+            "shadow_from_mils": 0.06858,
+            "signed": 0.043
+          },
+          "median_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.1533333333333333,
+            "shadow_from_mils": 0.00508,
+            "signed": 0.006
+          },
+          "min_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.015999999999999955,
+            "shadow_from_mils": 0.001016,
+            "signed": 0.001
+          },
+          "n": {
+            "coverage_fraction": 1.0,
+            "shadow_n_with_mils_coverage": 23,
+            "signed": 23
+          },
+          "p25_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.1533333333333333,
+            "shadow_from_mils": 0.00254,
+            "signed": 0.003
+          },
+          "p75_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.05488372093023258,
+            "shadow_from_mils": 0.020319999999999998,
+            "signed": 0.0215
+          }
+        },
+        "Stainless steels": {
+          "max_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.002631578947368482,
+            "shadow_from_mils": 1.905,
+            "signed": 1.9
+          },
+          "median_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.058333333333333265,
+            "shadow_from_mils": 0.0127,
+            "signed": 0.012
+          },
+          "min_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.1533333333333333,
+            "shadow_from_mils": 0.00254,
+            "signed": 0.003
+          },
+          "n": {
+            "coverage_fraction": 1.0,
+            "shadow_n_with_mils_coverage": 19,
+            "signed": 19
+          },
+          "p25_mm_yr": {
+            "breaches_20pct_bar": true,
+            "relative_discrepancy": 0.619,
+            "shadow_from_mils": 0.00381,
+            "signed": 0.01
+          },
+          "p75_mm_yr": {
+            "breaches_20pct_bar": false,
+            "relative_discrepancy": 0.05657142857142884,
+            "shadow_from_mils": 0.033019999999999994,
+            "signed": 0.035
+          }
+        }
+      },
+      "refute_bar": "any shadow-reconstructed field differs from the signed KPI value by >20%% relative (identical bar to the prior boundary-provenance audit)",
+      "refutes_claim": true
+    }
+  },
+  "tests_failed": [
+    "T4_full_distribution_unit_provenance"
+  ],
+  "verdict": "H0_REFUTED"
+}

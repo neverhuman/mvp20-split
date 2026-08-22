@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-2751f78c387ef48a47e5a86faf38c7f3c66bb4c503e36a9f16773d0f002d5d4c",
+  "module_id": "amphora-barrier-corrosion-score",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-3f5f4d42a5a705f0fe6170e30dcf0af932c12e188716f44d6b0c076f397a2068.json",
+      "revision_id": "preparation-revision-3f5f4d42a5a705f0fe6170e30dcf0af932c12e188716f44d6b0c076f397a2068",
+      "sha256": "c15fa2bacde6487e7ad4edf12843c0fd8a176d52e3681e5d6eb732cc01d025b3"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-2751f78c387ef48a47e5a86faf38c7f3c66bb4c503e36a9f16773d0f002d5d4c.json",
+      "revision_id": "preparation-revision-2751f78c387ef48a47e5a86faf38c7f3c66bb4c503e36a9f16773d0f002d5d4c",
+      "sha256": "475feeaeb4d518caf1b15046a15d1c3762a764f2b2840653cacf25018468c91c"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

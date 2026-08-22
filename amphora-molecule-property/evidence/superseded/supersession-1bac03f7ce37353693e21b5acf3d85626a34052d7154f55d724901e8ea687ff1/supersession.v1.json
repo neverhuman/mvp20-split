@@ -1,0 +1,30 @@
+{
+  "archive_root": "evidence/superseded/supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1",
+  "archived_artifacts": {
+    "ip/claim-contract.v1.json": "854ed716c8d95ab0291921afca3db23197a4b3e6de68d6ffaece3287649b3d4e",
+    "ip/disclosure-log.v1.json": "9afc8d9b3ec65919d886b50ec92a588de9d0401807572720fc253a3a44fd1088",
+    "ip/prior-art.v1.json": "810b00f5413d66e83dd150ba544c3abfc71119bb3f930d047a3f0131b3b15255",
+    "ip/technical-dossier.v1.json": "2daac84dd256fb9d219ed636aa9b3f3fe2611f35937a6d83be38de5787b33bf2",
+    "phase0/benchmark/benchmark-lock.v1.json": "de2a5d875a1ca7e5c66fc4754c595ac048b2a8fbf393f7d67ee0722776defbeb",
+    "phase0/bundle.v1.json": "28198069905af86f5f2f576c8844ccd3d185f10353ae84aa8a11d13219d89654",
+    "phase0/dataset/dataset-manifest.v1.json": "f0a16ca72e3b952cf30671d26d15d761b00e2594b311f300ef9fc55b572e1be5",
+    "phase0/kpis/property-eew-ahew-kpi.v1.json": "5f3b758d7f68df396a3ad861a2f99bb47fd22384d9814cd3f7fd3bbcc4bc6b74",
+    "phase0/promotion/policy.v1.json": "fed6c3de00e0dcf026f9f75463a1d4faaf0b38e364bb1c0e0ebceb0b5e7ef5f7",
+    "phase0/raw/SHA256SUMS": "717095751bc23499e7a12f8243be08f871028935414efee89520c83e7ea9118d",
+    "phase0/raw/objects/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/receipts/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/review/packet.v1.json": "c3cc868b8b90a79cd71e1d40557161dd523c86e5778067cfa41f3d8a1a0ab0f2",
+    "phase0/sources/imports/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "phase0/sources/imports/benchmark.legacy-import.v1.json": "cae7d558ccdcd2e5909c14a58e1a0f33f72eb2be5207f3caf8be18d9c2a1070d",
+    "phase0/sources/imports/source.legacy-import.v1.json": "db1fb8a4c257c82740176aedeecd8c34a9ae1e6b6e824f08535e06fcc0c4abf6",
+    "phase0/sources/imports/split.legacy-import.v1.json": "6d6be71599ef32e44682ab762d2f8603da633a597d00ba0cdec129dd2e670dfa",
+    "phase0/sources/source-lock.v2.json": "e2e70cd0f499cfeea02abdf7d2dead777b4fb4e0c88638179808ff8352bcc34a",
+    "phase0/split/split-manifest.v1.json": "ccaf811f35c8fe0a8e6edf8aaa2890092465a5f151e454d9e1e0ebfdaf615a91"
+  },
+  "authority_transferred": false,
+  "module_id": "amphora-molecule-property",
+  "reason": "STALE_UNSIGNED_PREPARATION_REISSUE",
+  "schema": "amphora.module-phase0-supersession.v1",
+  "supersession_id": "supersession-1bac03f7ce37353693e21b5acf3d85626a34052d7154f55d724901e8ea687ff1",
+  "unsigned_preparation_only": true
+}

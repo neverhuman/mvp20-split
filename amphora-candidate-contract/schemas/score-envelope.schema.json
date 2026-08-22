@@ -1,0 +1,199 @@
+{
+  "$id": "https://amphora.local/schemas/score-envelope.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_tier": {
+      "enum": [
+        "REAL_ARITHMETIC",
+        "RULE_CITED",
+        "LIMITED_SANITY",
+        "MODELED_DIRECTIONAL",
+        "CRO_GATED",
+        "EVIDENCE_ONLY",
+        "ROADMAP"
+      ]
+    },
+    "candidate_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "claim_locks": {
+      "type": "object"
+    },
+    "explanations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "evidence_scope": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "gates": {
+      "type": "object"
+    },
+    "metrics": {
+      "additionalProperties": true,
+      "allOf": [
+        {
+          "if": {"required": ["model_receipt_schema"]},
+          "then": {
+            "required": [
+              "model_id",
+              "model_receipt_schema",
+              "model_receipt_hash",
+              "formula_hash",
+              "input_hash",
+              "ingredient_catalog_hash",
+              "ingredient_catalog_source_hash",
+              "normalization_version",
+              "prediction_status",
+              "primary_prediction",
+              "solver_use",
+              "model_readiness_status",
+              "authority_receipt",
+              "score_content_hash",
+              "claim_boundary"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "authority_receipt": {"type": ["object", "null"]},
+        "claim_boundary": {"type": "string"},
+        "formula_hash": {"pattern": "^[0-9a-fA-F]{64}$", "type": "string"},
+        "input_kind": {"enum": ["formulation", "molecule"]},
+        "ingredient_catalog_hash": {"pattern": "^[0-9a-fA-F]{64}$", "type": "string"},
+        "ingredient_catalog_source_hash": {"type": ["string", "null"], "pattern": "^[0-9a-fA-F]{64}$"},
+        "input_hash": {"pattern": "^[0-9a-fA-F]{64}$", "type": "string"},
+        "model_card": {
+          "additionalProperties": true,
+          "properties": {
+            "can_optimize": {"type": "boolean"},
+            "current_pass": {"type": "boolean"},
+            "current_status": {"enum": ["SCORED", "FAILED_GATES", "INSUFFICIENT_INPUT", "NO_AUTHORITY", "ERROR"]},
+            "dataset_checksums": {"additionalProperties": {"type": "string"}, "type": "object"},
+            "dataset_ids": {"items": {"minLength": 1, "type": "string"}, "type": "array"},
+            "direction": {"enum": ["maximize", "minimize", "context"]},
+            "kpi_name": {"minLength": 1, "type": "string"},
+            "model_authority": {"enum": ["REAL_ARITHMETIC", "RULE_CITED", "LIMITED_SANITY", "MODELED_DIRECTIONAL", "CRO_GATED", "EVIDENCE_ONLY", "ROADMAP"]},
+            "model_readiness_status": {"enum": ["NOT_PROVEN", "MODEL_READINESS_ONLY", "R&D_RANKING_READY", "COMPUTATIONAL_VALIDATED", "NOT_APPLICABLE"]},
+            "product_claim_ready": {"const": false},
+            "solver_use": {"enum": ["DISABLED", "AUDIT_ONLY", "CONSTRAINT_ONLY", "OBJECTIVE", "R&D_OBJECTIVE"]},
+            "unit": {"minLength": 1, "type": "string"},
+            "validation_bar": {"minLength": 1, "type": "string"}
+          },
+          "required": ["kpi_name", "unit", "direction", "model_authority", "dataset_ids", "dataset_checksums", "validation_bar", "current_status", "current_pass", "can_optimize"],
+          "type": "object"
+        },
+        "model_id": {"type": "string"},
+        "model_readiness_status": {"enum": ["NOT_PROVEN", "MODEL_READINESS_ONLY", "R&D_RANKING_READY", "COMPUTATIONAL_VALIDATED", "NOT_APPLICABLE"]},
+        "model_receipt_hash": {"pattern": "^[0-9a-fA-F]{64}$", "type": "string"},
+        "model_receipt_schema": {"const": "amphora.model-output.v1"},
+        "normalization_version": {"type": "string", "minLength": 1},
+        "prediction_status": {"enum": ["IN_DOMAIN", "OUT_OF_DOMAIN", "OOD", "INCONCLUSIVE", "INSUFFICIENT_INPUT", "NOT_RUN", "NOT_APPLICABLE"]},
+        "primary_prediction": {
+          "additionalProperties": true,
+          "properties": {
+            "lower_95": {"type": ["number", "null"]},
+            "unit": {"type": "string", "minLength": 1},
+            "upper_95": {"type": ["number", "null"]},
+            "value": {"type": ["number", "null"]}
+          },
+          "required": ["value", "unit", "lower_95", "upper_95"],
+          "type": "object"
+        },
+        "score_content_hash": {"pattern": "^[0-9a-fA-F]{64}$", "type": "string"},
+        "solver_use": {"enum": ["DISABLED", "AUDIT_ONLY", "CONSTRAINT_ONLY", "OBJECTIVE", "R&D_OBJECTIVE"]}
+      },
+      "required": ["model_card"],
+      "type": "object"
+    },
+    "missing_inputs": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "module_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "module_version": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "objective_values": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "amphora.score-envelope.v1"
+    },
+    "score_semantics": {
+      "enum": [
+        "OPTIMIZATION_OBJECTIVE",
+        "AUDIT_CONSTRAINT",
+        "EVIDENCE_ONLY",
+        "ROADMAP",
+        "NO_AUTHORITY",
+        "ERROR",
+        "INSUFFICIENT_INPUT"
+      ]
+    },
+    "score_0_1": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "source_refs": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "SCORED",
+        "FAILED_GATES",
+        "INSUFFICIENT_INPUT",
+        "NO_AUTHORITY",
+        "ERROR"
+      ]
+    },
+    "uncertainty": {
+      "type": "object"
+    },
+    "usable_by_optimizer": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "module_id",
+    "module_version",
+    "candidate_id",
+    "status",
+    "authority_tier",
+    "score_0_1",
+    "objective_values",
+    "metrics",
+    "gates",
+    "uncertainty",
+    "claim_locks",
+    "missing_inputs",
+    "explanations",
+    "source_refs",
+    "usable_by_optimizer",
+    "evidence_scope",
+    "score_semantics",
+    "schema_version"
+  ],
+  "title": "ScoreEnvelope",
+  "type": "object"
+}

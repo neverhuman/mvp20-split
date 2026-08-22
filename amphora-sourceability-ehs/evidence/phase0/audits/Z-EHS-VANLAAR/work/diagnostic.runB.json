@@ -1,0 +1,267 @@
+{
+  "any_dominance_flip_under_van_laar_methanol_gamma": true,
+  "blends": {
+    "wash_carryover_methanol_1pct": {
+      "mass_fractions": {
+        "m_xylene": 0.97,
+        "methanol": 0.01,
+        "n_butanol": 0.02
+      },
+      "molar_masses_g_per_mol": {
+        "m_xylene": 106.168,
+        "methanol": 32.042,
+        "n_butanol": 74.123
+      },
+      "mole_fractions": {
+        "m_xylene": 0.940122,
+        "methanol": 0.032113,
+        "n_butanol": 0.027764
+      },
+      "per_temperature": {
+        "15.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 55.805073,
+            "methanol": 15.637032,
+            "n_butanol": 1.019777
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 55.805073,
+            "methanol": 92.283163,
+            "n_butanol": 1.019777
+          },
+          "dominance_flips_under_real_gamma": true,
+          "dominant_contributor_ideal_gamma1": "m_xylene",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": 3.5688,
+          "gamma_methanol_van_laar_at_this_x_and_T": 5.9016,
+          "van_laar_exceeds_gamma_crit": true
+        },
+        "25.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 102.645584,
+            "methanol": 26.841029,
+            "n_butanol": 2.257092
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 102.645584,
+            "methanol": 158.404423,
+            "n_butanol": 2.257092
+          },
+          "dominance_flips_under_real_gamma": true,
+          "dominant_contributor_ideal_gamma1": "m_xylene",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": 3.8242,
+          "gamma_methanol_van_laar_at_this_x_and_T": 5.9016,
+          "van_laar_exceeds_gamma_crit": true
+        },
+        "40.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 234.117899,
+            "methanol": 56.144858,
+            "n_butanol": 6.485905
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 234.117899,
+            "methanol": 331.343248,
+            "n_butanol": 6.485905
+          },
+          "dominance_flips_under_real_gamma": true,
+          "dominant_contributor_ideal_gamma1": "m_xylene",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": 4.1699,
+          "gamma_methanol_van_laar_at_this_x_and_T": 5.9016,
+          "van_laar_exceeds_gamma_crit": true
+        }
+      }
+    },
+    "wash_carryover_methanol_3pct": {
+      "mass_fractions": {
+        "m_xylene": 0.95,
+        "methanol": 0.03,
+        "n_butanol": 0.02
+      },
+      "molar_masses_g_per_mol": {
+        "m_xylene": 106.168,
+        "methanol": 32.042,
+        "n_butanol": 74.123
+      },
+      "mole_fractions": {
+        "m_xylene": 0.881222,
+        "methanol": 0.092206,
+        "n_butanol": 0.026572
+      },
+      "per_temperature": {
+        "15.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 52.308776,
+            "methanol": 44.897752,
+            "n_butanol": 0.97601
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 52.308776,
+            "methanol": 216.102485,
+            "n_butanol": 0.97601
+          },
+          "dominance_flips_under_real_gamma": true,
+          "dominant_contributor_ideal_gamma1": "m_xylene",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": 1.1651,
+          "gamma_methanol_van_laar_at_this_x_and_T": 4.8132,
+          "van_laar_exceeds_gamma_crit": true
+        },
+        "25.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 96.214637,
+            "methanol": 77.067173,
+            "n_butanol": 2.160222
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 96.214637,
+            "methanol": 370.940791,
+            "n_butanol": 2.160222
+          },
+          "dominance_flips_under_real_gamma": true,
+          "dominant_contributor_ideal_gamma1": "m_xylene",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": 1.2485,
+          "gamma_methanol_van_laar_at_this_x_and_T": 4.8132,
+          "van_laar_exceeds_gamma_crit": true
+        },
+        "40.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 219.449955,
+            "methanol": 161.205646,
+            "n_butanol": 6.207541
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 219.449955,
+            "methanol": 775.917261,
+            "n_butanol": 6.207541
+          },
+          "dominance_flips_under_real_gamma": true,
+          "dominant_contributor_ideal_gamma1": "m_xylene",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": 1.3613,
+          "gamma_methanol_van_laar_at_this_x_and_T": 4.8132,
+          "van_laar_exceeds_gamma_crit": true
+        }
+      }
+    },
+    "wash_carryover_methanol_6pct": {
+      "mass_fractions": {
+        "m_xylene": 0.92,
+        "methanol": 0.06,
+        "n_butanol": 0.02
+      },
+      "molar_masses_g_per_mol": {
+        "m_xylene": 106.168,
+        "methanol": 32.042,
+        "n_butanol": 74.123
+      },
+      "mole_fractions": {
+        "m_xylene": 0.801777,
+        "methanol": 0.173257,
+        "n_butanol": 0.024965
+      },
+      "per_temperature": {
+        "15.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 47.593003,
+            "methanol": 84.364341,
+            "n_butanol": 0.916977
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 47.593003,
+            "methanol": 314.018027,
+            "n_butanol": 0.916977
+          },
+          "dominance_flips_under_real_gamma": false,
+          "dominant_contributor_ideal_gamma1": "methanol",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": null,
+          "gamma_methanol_van_laar_at_this_x_and_T": 3.7222,
+          "van_laar_exceeds_gamma_crit": false
+        },
+        "25.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 87.540636,
+            "methanol": 144.811733,
+            "n_butanol": 2.029564
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 87.540636,
+            "methanol": 539.013215,
+            "n_butanol": 2.029564
+          },
+          "dominance_flips_under_real_gamma": false,
+          "dominant_contributor_ideal_gamma1": "methanol",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": null,
+          "gamma_methanol_van_laar_at_this_x_and_T": 3.7222,
+          "van_laar_exceeds_gamma_crit": false
+        },
+        "40.0": {
+          "contribution_ideal_gamma1": {
+            "m_xylene": 199.665966,
+            "methanol": 302.910669,
+            "n_butanol": 5.832086
+          },
+          "contribution_with_van_laar_methanol_gamma": {
+            "m_xylene": 199.665966,
+            "methanol": 1127.483597,
+            "n_butanol": 5.832086
+          },
+          "dominance_flips_under_real_gamma": false,
+          "dominant_contributor_ideal_gamma1": "methanol",
+          "dominant_contributor_with_real_gamma": "methanol",
+          "gamma_crit_methanol_to_overtake_dominant_per_module_definition": null,
+          "gamma_methanol_van_laar_at_this_x_and_T": 3.7222,
+          "van_laar_exceeds_gamma_crit": false
+        }
+      }
+    }
+  },
+  "module": "amphora-sourceability-ehs",
+  "molar_mass_records": {
+    "m_xylene": {
+      "formula_match": true,
+      "molar_mass_g_per_mol": 106.168,
+      "rdkit_formula": "C8H10"
+    },
+    "mek_2_butanone": {
+      "formula_match": true,
+      "molar_mass_g_per_mol": 72.107,
+      "rdkit_formula": "C4H8O"
+    },
+    "methanol": {
+      "formula_match": true,
+      "molar_mass_g_per_mol": 32.042,
+      "rdkit_formula": "CH4O"
+    },
+    "n_butanol": {
+      "formula_match": true,
+      "molar_mass_g_per_mol": 74.123,
+      "rdkit_formula": "C4H10O"
+    },
+    "toluene": {
+      "formula_match": true,
+      "molar_mass_g_per_mol": 92.141,
+      "rdkit_formula": "C7H8"
+    }
+  },
+  "schema": "amphora.sourceability-ehs.audit.z-ehs-vanlaar.diagnostic.v1",
+  "van_laar_fit_from_azeotrope": {
+    "A12": 1.888706,
+    "A21": 1.991341,
+    "P1sat_methanol_mmHg": 739.954512,
+    "P2sat_toluene_mmHg": 161.646475,
+    "P_mmHg": 759.812485,
+    "T_C": 63.87,
+    "gamma1_at_azeotrope": 1.026837,
+    "gamma1_infinite_dilution_methanol_in_toluene": 6.610809,
+    "gamma2_at_azeotrope": 4.700458,
+    "gamma2_infinite_dilution_toluene_in_methanol": 7.325351,
+    "x1_methanol": 0.887,
+    "x2_toluene": 0.113
+  }
+}

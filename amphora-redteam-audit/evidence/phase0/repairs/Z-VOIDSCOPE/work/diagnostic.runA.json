@@ -1,0 +1,86 @@
+{
+  "analyzed_path": "amphora-assurance-capabilities/src/diagnostics.rs",
+  "diagnostic_fn_count": 9,
+  "mutated_function": null,
+  "per_function": {
+    "cro_protocol_packager_diagnostic": {
+      "body_char_len": 4520,
+      "external_dependency_markers_found": [
+        "protocol_fixture_accepted(",
+        "strict_json("
+      ],
+      "has_external_dependency": true,
+      "module_id": "amphora-cro-protocol-packager"
+    },
+    "envelope_gates_diagnostic": {
+      "body_char_len": 8018,
+      "external_dependency_markers_found": [
+        "evaluate_envelope_policy("
+      ],
+      "has_external_dependency": true,
+      "module_id": "amphora-envelope-gates"
+    },
+    "evidence_intake_diagnostic": {
+      "body_char_len": 3510,
+      "external_dependency_markers_found": [
+        "evidence_fixture_accepted(",
+        "strict_json("
+      ],
+      "has_external_dependency": true,
+      "module_id": "amphora-evidence-intake-validator"
+    },
+    "formulation_arithmetic_diagnostic": {
+      "body_char_len": 7303,
+      "external_dependency_markers_found": [
+        "validate_formulation_mass("
+      ],
+      "has_external_dependency": true,
+      "module_id": "amphora-formulation-arithmetic"
+    },
+    "formulation_universe_diagnostic": {
+      "body_char_len": 6110,
+      "external_dependency_markers_found": [
+        "validate_formulation_universe("
+      ],
+      "has_external_dependency": true,
+      "module_id": "amphora-formulation-universe"
+    },
+    "optimizer_orchestrator_diagnostic": {
+      "body_char_len": 7638,
+      "external_dependency_markers_found": [
+        "authorize_optimizer_request("
+      ],
+      "has_external_dependency": true,
+      "module_id": "amphora-optimizer-orchestrator"
+    },
+    "redteam_diagnostic": {
+      "body_char_len": 3455,
+      "external_dependency_markers_found": [],
+      "has_external_dependency": false,
+      "module_id": "amphora-redteam-audit"
+    },
+    "report_packager_diagnostic": {
+      "body_char_len": 2824,
+      "external_dependency_markers_found": [
+        "report_fixture_accepted(",
+        "strict_json("
+      ],
+      "has_external_dependency": true,
+      "module_id": "amphora-report-packager"
+    },
+    "source_ledger_diagnostic": {
+      "body_char_len": 6277,
+      "external_dependency_markers_found": [
+        "source_control_accepted(",
+        "strict_json("
+      ],
+      "has_external_dependency": true,
+      "module_id": "amphora-source-ledger"
+    }
+  },
+  "schema": "amphora.redteam-audit.diagnostic-tautology-scope-scan.v1",
+  "tautological_count": 1,
+  "tautological_fn_names": [
+    "redteam_diagnostic"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "closes": [
+    "Injectivity (collision-resistance) of the formula binding on a designed distinct-recipe lattice: no false-same under module scheme or true JCS.",
+    "Quantified size of the value-preserving numeric-type ambiguity surface: 2^k=16 module digest classes for one nominal recipe, vs 1 under RFC-8785 JCS.",
+    "Bound on the fragility: structural (key-order/whitespace) re-encodings are invariant; only numeric TYPE is at issue.",
+    "Semantic characterization: the binding is nominal-exact, not tolerance-aware."
+  ],
+  "does_not_close": [
+    "Reason-level parity vs the Rust runtime error taxonomy (Phase-1 differential harness).",
+    "Any CRO acceptance, wet-lab execution, or product qualification (Phase-1 external).",
+    "The RFC-8785 JCS re-lock itself, which requires editing + re-locking the Rust CanonicalHash and the signed benchmark -- human dual-identity Phase-0 ceremony, out of scope for this AUDIT_ONLY cron."
+  ],
+  "fixture": {
+    "fixture_id": "cro-known-answer-150g-v1",
+    "module_scheme_anchor_matches_shipped": true,
+    "module_scheme_identity_digest": "7d3967d4c902a46b34f8ce8dcf3d6d8f68001d113e877f407e87cf543ab9f849",
+    "path": "amphora-cro-protocol-packager/reference/mvp20/fixtures/known-answer-protocol-package.v1.json",
+    "sha256": "72e1f99bb6c0748d9c7b0f5376b8d2c63e7932288e8e5a3e8387e23d25a7323e",
+    "shipped_formula_sha256": "7d3967d4c902a46b34f8ce8dcf3d6d8f68001d113e877f407e87cf543ab9f849"
+  },
+  "gates": {
+    "G1_injectivity_no_collision": {
+      "module_scheme_collisions": 0,
+      "module_scheme_distinct_digests": 12,
+      "n_distinct_nominal_recipes": 12,
+      "note": "On a designed lattice of nominally distinct recipes (amount, ingredient, sequence, tolerance, action, unit, step-count, list-order), both the module scheme and true JCS assign a unique digest to each -> the binding never UNDER-binds (no false-same collision). Complements the random tamper probes of packet-binding-parity-v1 with a structured injectivity lattice.",
+      "passed": true,
+      "source": "HAC 1996 9.2.2 binding must be an injective map of the committed value",
+      "true_jcs_collisions": 0,
+      "true_jcs_distinct_digests": 12,
+      "variant_ids": [
+        "action0_add_to_mix",
+        "amount0_110_to_110p5",
+        "amount0_110_to_111",
+        "amount1_40_to_41",
+        "append_third_step",
+        "as_shipped",
+        "drop_tolerance0",
+        "ingredient0_swap",
+        "list_reorder",
+        "sequence_swap",
+        "tolerance0_change",
+        "unit0_g_to_kg"
+      ]
+    },
+    "G2_type_orbit_module_fragments_jcs_collapses": {
+      "flippable_leaf_paths": [
+        [
+          0,
+          "amount"
+        ],
+        [
+          0,
+          "sequence"
+        ],
+        [
+          1,
+          "amount"
+        ],
+        [
+          1,
+          "sequence"
+        ]
+      ],
+      "integer_valued_numeric_leaves_k": 4,
+      "note": "Every integer-valued numeric leaf (2 amounts + 2 sequence indices = k=4) may be legally spelled as JSON int or float by a conformant producer. Under the module scheme each independent spelling flips one digest bit, fragmenting the SAME nominal recipe into 2^k = 16 distinct formula_sha256 values. True RFC-8785 JCS normalizes all of them to 1. This is the quantified size of the ambiguity surface, extending canonicalization-conformance-v1's single-token int/float example (which flipped only `amount`) to the full numeric-leaf set.",
+      "observed_module_scheme_classes": 16,
+      "observed_true_jcs_classes": 1,
+      "passed": true,
+      "predicted_module_classes_2_pow_k": 16
+    },
+    "G3_structural_invariance_both_schemes": {
+      "module_scheme_structural_classes": 1,
+      "note": "Key-permutation and whitespace/indentation re-encodings leave BOTH the module scheme (sort_keys+separators) and true JCS digests invariant -> the residual fragility is bounded to numeric-TYPE alone; structural ambiguity is already prevented in the live scheme.",
+      "passed": true,
+      "true_jcs_structural_classes": 1
+    },
+    "G4_binding_is_nominal_exact_not_tolerance_aware": {
+      "applied_perturbation_g": 0.25,
+      "declared_plus_tolerance_g": 0.5,
+      "module_scheme_digest_changed": true,
+      "note": "Changing amount 110.0 -> 110.25 g (inside the declared +/-0.5 g tolerance band) changes the digest under both schemes. The binding therefore commits the NOMINAL recipe point, not the tolerance-admissible set -- an intended-but-previously-unstated exactness property. A CRO measuring an in-spec 110.25 g must still reference the nominal packet; the digest is not a spec-band membership test.",
+      "passed": true,
+      "perturbation_within_tolerance": true,
+      "true_jcs_digest_changed": true
+    },
+    "G5_jcs_relock_unifies_orbit": {
+      "jcs_classes_after": 1,
+      "module_classes_before": 16,
+      "note": "Re-locking the Rust CanonicalHash to RFC-8785 JCS number rendering collapses the 16-way numeric-type ambiguity to a single canonical digest -- the concrete Phase-1 fix, consistent with canonicalization-conformance-v1's recommendation.",
+      "passed": true,
+      "reduction_factor": 16
+    }
+  },
+  "headline": "An independent from-spec RFC-8785 JCS serializer characterizes the CRO formula binding as a two-sided robustness object: (i) it is INJECTIVE -- 12 nominally distinct recipes yield 12 distinct digests under both the module scheme and true JCS, so it never under-binds (no false-same collision); (ii) its ONLY value-preserving fragility is JSON numeric TYPE -- the k=4 integer-valued numeric leaves (2 amounts + 2 sequence indices) fragment the SAME nominal recipe into 2^4=16 distinct module digests, which true RFC-8785 JCS collapses to 1; (iii) key-order and whitespace re-encodings are invariant under both schemes; and (iv) an in-spec sub-tolerance perturbation still changes the digest, so the binding commits the nominal recipe point, not the tolerance band. The fragility is one-directional: the binding OVER-binds (fragile to benign re-encoding) but never UNDER-binds.",
+  "module": "amphora-cro-protocol-packager",
+  "non_circularity": "The oracle never invokes the Rust CroProtocolPackageV2 runtime; it re-derives every digest from the checked-in fixture bytes using CPython stdlib json/hashlib and a from-spec RFC-8785 JCS serializer. The module scheme is reproduced independently as compact sorted json.dumps and anchored to the shipped formula_sha256.",
+  "purpose": "Quantify the invariance group and injectivity of the CRO formula binding -- properties neither packet-binding-parity-v1 (self-consistency + tamper detection) nor canonicalization-conformance-v1 (single-point byte-equality vs JCS) measured -- and size the numeric-type ambiguity surface (2^k) that an RFC-8785 re-lock removes.",
+  "run_type": "INDEPENDENT_REPRESENTATION_INVARIANCE_AND_INJECTIVITY_VS_SIGNED_FIXTURE",
+  "schema": "amphora.cro-protocol-packager.representation-invariance-diagnostic.v1",
+  "study_id": "representation-invariance-injectivity-v1",
+  "theory_reference": [
+    "IETF RFC 8785 (2020) JSON Canonicalization Scheme",
+    "ECMA-262 7.1.12.1 Number::toString",
+    "NIST FIPS 180-4 (2015) SHA-256",
+    "Menezes/van Oorschot/Vanstone, Handbook of Applied Cryptography (1996), 9.2.2"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "informational_disclosures": [
+    {
+      "canonical_smiles": "CC=N",
+      "id": "ketimine-self-exclusion-side-effect",
+      "note": "Primary ketimine >C=N-H: the new rule's neighbor-carbon check fires on the imine's OWN double bond partner (the candidate N itself), so this non-amine imine N-H is now excluded post-fix (was miscounted as 1 pre-fix). This is a positive collateral correctness effect of structural symmetry with is_carbonyl_carbon, not a claim made or tested by R-N02; disclosed as informational only.",
+      "observed_reactive_amine_hydrogen_count": 0,
+      "smiles": "CC=N"
+    },
+    {
+      "canonical_smiles": "CC(=O)C=CN",
+      "id": "vinylogous-enaminone-conjugation-blind-spot",
+      "note": "Push-pull enaminone (vinylogous amide): the amine nitrogen's direct neighbor is a vinyl carbon double-bonded to carbon (not O/S/N), so NEITHER the pre-existing carbonyl rule NOR the new C=N rule excludes it, despite real resonance delocalization through the vinyl bridge. This local-neighbor-only design limitation is IDENTICAL in kind and pre-existing for the O/S rule (equally misses vinylogous amides); it is not introduced by, or specific to, the R-N02 C=N fix and is therefore not a valid falsifier of R-N02's claim. Disclosed as an out-of-scope residual gap.",
+      "observed_reactive_amine_hydrogen_count": 2,
+      "smiles": "CC(=O)C=CN"
+    }
+  ],
+  "n_probes_failed": 1,
+  "n_probes_novel_vs_all_prior_r_n02_family_fires": 3,
+  "n_probes_total": 8,
+  "probe_rows": [
+    {
+      "canonical_smiles": "N=C(Nc1ccccc1)Nc1ccccc1",
+      "category": "r_n02_probe_reattack",
+      "expected_reactive_amine_hydrogen_count": 0,
+      "id": "dpg-diphenylguanidine-accelerator",
+      "observed_reactive_amine_hydrogen_count": 0,
+      "pass": true,
+      "smiles": "c1ccccc1NC(=N)Nc2ccccc2"
+    },
+    {
+      "canonical_smiles": "Cc1ccccc1NC(=N)Nc1ccccc1C",
+      "category": "r_n02_probe_reattack",
+      "expected_reactive_amine_hydrogen_count": 0,
+      "id": "dotg-di-o-tolylguanidine-accelerator",
+      "observed_reactive_amine_hydrogen_count": 0,
+      "pass": true,
+      "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C"
+    },
+    {
+      "canonical_smiles": "N=C(N)N",
+      "category": "r_n02_probe_reattack",
+      "expected_reactive_amine_hydrogen_count": 0,
+      "id": "guanidine",
+      "observed_reactive_amine_hydrogen_count": 0,
+      "pass": true,
+      "smiles": "NC(=N)N"
+    },
+    {
+      "canonical_smiles": "N#CN=C(N)N",
+      "category": "r_n02_probe_reattack",
+      "expected_reactive_amine_hydrogen_count": 0,
+      "id": "dicyandiamide",
+      "observed_reactive_amine_hydrogen_count": 4,
+      "pass": false,
+      "smiles": "NC(=NC#N)N"
+    },
+    {
+      "canonical_smiles": "N=C(N)NC(=N)N",
+      "category": "r_n02_probe_reattack",
+      "expected_reactive_amine_hydrogen_count": 0,
+      "id": "biguanide",
+      "observed_reactive_amine_hydrogen_count": 0,
+      "pass": true,
+      "smiles": "NC(=N)NC(=N)N"
+    },
+    {
+      "canonical_smiles": "CC1(C)CC(N)CC(CN)C1",
+      "category": "over_exclusion_regression_probe",
+      "expected_reactive_amine_hydrogen_count": 4,
+      "id": "ipda-isophoronediamine-hardener-sanity",
+      "observed_reactive_amine_hydrogen_count": 4,
+      "pass": true,
+      "smiles": "CC1(C)CC(CN)CC(N)C1"
+    },
+    {
+      "canonical_smiles": "N=C(N)NCCCCN",
+      "category": "over_exclusion_regression_probe",
+      "expected_reactive_amine_hydrogen_count": 2,
+      "id": "agmatine-remote-amine-over-exclusion-probe",
+      "observed_reactive_amine_hydrogen_count": 2,
+      "pass": true,
+      "smiles": "NCCCCNC(N)=N"
+    },
+    {
+      "canonical_smiles": "NC(N)=[NH2+]",
+      "category": "formal_charge_interaction_sanity",
+      "expected_reactive_amine_hydrogen_count": 0,
+      "id": "guanidinium-protonated-sanity",
+      "observed_reactive_amine_hydrogen_count": 0,
+      "pass": true,
+      "smiles": "NC(=[NH2+])N"
+    }
+  ],
+  "schema": "amphora.rdkit-ffi.v-n02c-verify-diagnostic.v1",
+  "toolkit_provenance": {
+    "detected_version": "2026.03.2",
+    "exact_version_match": true,
+    "required_version": "2026.03.2",
+    "toolkit": "RDKit C++"
+  },
+  "verdict": "CLAIM_REFUTED"
+}

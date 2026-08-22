@@ -1,0 +1,1693 @@
+{
+  "checks": {
+    "1a_csv_sha_locked": true,
+    "1b_n_rows_with_Tg_443": true,
+    "1c_n_canonically_unique_350": true,
+    "1d_n_dedupe_350": true,
+    "1e_n_duplicate_groups_36": true,
+    "1f_n_duplicate_rows_129": true,
+    "1g_dedup_canonical_set_sha_matches_locked_value": true,
+    "2a_old_signed_ipda_is_C9H20N2_refutation_reproduced": true,
+    "2b_v2_rederived_ipda_is_C10H22N2": true,
+    "2c_v2_rederivation_canonical_equals_ra07_corrected": true,
+    "2d_v2_rederivation_canonical_equals_genmod_ground_truth": true,
+    "2e_v2_input_string_differs_from_ra07_and_va07_strings": true,
+    "2f_v2_ipda_one_six_membered_ring": true,
+    "2g_v2_ipda_two_primary_amine_nitrogens": true,
+    "2h_v2_ipda_three_methyl_carbons": true,
+    "3a_dedup_only_flip_count_reproduces_ra07_disclosed_5": true,
+    "3b_dedup_only_flip_cells_match_ra07_declared_set": true,
+    "3c_structure_only_flip_count_reproduces_va07_finding": true,
+    "3d_structure_only_flip_cell_matches_va07": true,
+    "4a_ra07_shipped_table_reproduces_exactly_under_OLD_ipda_all_20_cells": true,
+    "4b_n_cells_compared": 20,
+    "4c_ipda_nn_shifts_reproduce_va07_measurements_1e-12": true,
+    "4d_morgan_family_ipda_nn_unchanged_by_structural_fix": true,
+    "4e_three_non_morgan_families_ipda_nn_all_shift": true,
+    "5a_top_level_five_of_five_novel": true,
+    "5b_top_level_matches_ra07_published_per_candidate_1e-12": true,
+    "5c_nn_range": [
+      0.15789473684210525,
+      0.39285714285714285
+    ],
+    "6a_dds_cross_family_a05_still_0_of_4": true,
+    "7a_r_a07_dsse_signature_verifies": true,
+    "7b_v_a07_dsse_signature_verifies": true,
+    "7c_evaluator_key_pinned_in_phase0_trust_store": true,
+    "p1_r_a07_done_receipt_byte_intact": true,
+    "p2_v_a07_verify_receipt_byte_intact": true,
+    "p3_dedup_audit_receipt_byte_intact": true,
+    "p4_identity_audit_receipt_byte_intact": true,
+    "p5_genmod_ipda_ground_truth_byte_intact": true,
+    "p6_v_a07_verdict_is_claim_refuted": true,
+    "p7_v_a07_reported_all_self_tests_pass": true
+  },
+  "checks_all_pass": true,
+  "corpus": {
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "deduped_corpus_canonical_set_sha256": "74513e30071335d097ee83315f5b21249da86ea6a5d61e98a27d07b631593dce",
+    "n_canonically_unique_structures": 350,
+    "n_duplicate_groups": 36,
+    "n_duplicate_rows": 129,
+    "n_rows_with_Tg": 443,
+    "rights": "CC-BY rights-clean OpenPoly benchmark (locked, read-only)",
+    "source": "OpenPoly final_polymer_properties_fromliterature.csv (Ma et al. 2023)",
+    "wildcard_cap": "'*'->'C' (methyl end-cap, reproduces signed featurization)"
+  },
+  "corrected_family_alpha_table_deduped_350_all_four_families_corrected_ipda": {
+    "atompair_2048": {
+      "DDS": {
+        "alpha": 0.48484848484848486,
+        "conformal_p": 0.24786324786324787,
+        "isolated_count": 86,
+        "n": 350,
+        "nn_reference_name": "polyethersulfone",
+        "nn_tanimoto": 0.5151515151515151,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": false
+        }
+      },
+      "DETA": {
+        "alpha": 0.8285714285714285,
+        "conformal_p": 0.002849002849002849,
+        "isolated_count": 0,
+        "n": 350,
+        "nn_reference_name": "Poly(vinyl formal)",
+        "nn_tanimoto": 0.17142857142857143,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "alpha": 0.7457627118644068,
+        "conformal_p": 0.008547008547008548,
+        "isolated_count": 2,
+        "n": 350,
+        "nn_reference_name": "PMP",
+        "nn_tanimoto": 0.2542372881355932,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "TETA": {
+        "alpha": 0.821917808219178,
+        "conformal_p": 0.002849002849002849,
+        "isolated_count": 0,
+        "n": 350,
+        "nn_reference_name": "Poly(1,2-epoxyoctane)",
+        "nn_tanimoto": 0.1780821917808219,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "m-XDA": {
+        "alpha": 0.7258064516129032,
+        "conformal_p": 0.011396011396011397,
+        "isolated_count": 3,
+        "n": 350,
+        "nn_reference_name": "poly(p-xylylene)",
+        "nn_tanimoto": 0.27419354838709675,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      }
+    },
+    "maccs_166": {
+      "DDS": {
+        "alpha": 0.4,
+        "conformal_p": 0.08547008547008547,
+        "isolated_count": 29,
+        "n": 350,
+        "nn_reference_name": "polyethersulfone",
+        "nn_tanimoto": 0.6,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "DETA": {
+        "alpha": 0.46153846153846156,
+        "conformal_p": 0.045584045584045586,
+        "isolated_count": 15,
+        "n": 350,
+        "nn_reference_name": "PA6",
+        "nn_tanimoto": 0.5384615384615384,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "alpha": 0.5365853658536586,
+        "conformal_p": 0.017094017094017096,
+        "isolated_count": 5,
+        "n": 350,
+        "nn_reference_name": "Poly[2-(tert-butylamino)ethyl methacrylate]",
+        "nn_tanimoto": 0.4634146341463415,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "TETA": {
+        "alpha": 0.46153846153846156,
+        "conformal_p": 0.045584045584045586,
+        "isolated_count": 15,
+        "n": 350,
+        "nn_reference_name": "PA6",
+        "nn_tanimoto": 0.5384615384615384,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "m-XDA": {
+        "alpha": 0.631578947368421,
+        "conformal_p": 0.002849002849002849,
+        "isolated_count": 0,
+        "n": 350,
+        "nn_reference_name": "PEI",
+        "nn_tanimoto": 0.3684210526315789,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      }
+    },
+    "morgan_r2_2048": {
+      "DDS": {
+        "alpha": 0.6071428571428572,
+        "conformal_p": 0.15954415954415954,
+        "isolated_count": 55,
+        "n": 350,
+        "nn_reference_name": "polyethersulfone",
+        "nn_tanimoto": 0.39285714285714285,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": true
+        }
+      },
+      "DETA": {
+        "alpha": 0.8333333333333334,
+        "conformal_p": 0.005698005698005698,
+        "isolated_count": 1,
+        "n": 350,
+        "nn_reference_name": "PEI",
+        "nn_tanimoto": 0.16666666666666666,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "alpha": 0.8333333333333334,
+        "conformal_p": 0.005698005698005698,
+        "isolated_count": 1,
+        "n": 350,
+        "nn_reference_name": "poly(1,3-adamantane)s",
+        "nn_tanimoto": 0.16666666666666666,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "TETA": {
+        "alpha": 0.8421052631578947,
+        "conformal_p": 0.002849002849002849,
+        "isolated_count": 0,
+        "n": 350,
+        "nn_reference_name": "PEI",
+        "nn_tanimoto": 0.15789473684210525,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "m-XDA": {
+        "alpha": 0.7619047619047619,
+        "conformal_p": 0.02849002849002849,
+        "isolated_count": 9,
+        "n": 350,
+        "nn_reference_name": "poly(p-xylylene)",
+        "nn_tanimoto": 0.23809523809523808,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      }
+    },
+    "toptorsion_2048": {
+      "DDS": {
+        "alpha": 0.34615384615384615,
+        "conformal_p": 0.46438746438746437,
+        "isolated_count": 162,
+        "n": 350,
+        "nn_reference_name": "polyethersulfone",
+        "nn_tanimoto": 0.6538461538461539,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": false
+        }
+      },
+      "DETA": {
+        "alpha": 0.8181818181818181,
+        "conformal_p": 0.03418803418803419,
+        "isolated_count": 11,
+        "n": 350,
+        "nn_reference_name": "PPy",
+        "nn_tanimoto": 0.18181818181818182,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "alpha": 0.84,
+        "conformal_p": 0.019943019943019943,
+        "isolated_count": 6,
+        "n": 350,
+        "nn_reference_name": "poly(1,3-adamantane)s",
+        "nn_tanimoto": 0.16,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "TETA": {
+        "alpha": 0.8461538461538461,
+        "conformal_p": 0.019943019943019943,
+        "isolated_count": 6,
+        "n": 350,
+        "nn_reference_name": "PPy",
+        "nn_tanimoto": 0.15384615384615385,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "m-XDA": {
+        "alpha": 0.7391304347826086,
+        "conformal_p": 0.07692307692307693,
+        "isolated_count": 26,
+        "n": 350,
+        "nn_reference_name": "Poly(3-methylstyrene)",
+        "nn_tanimoto": 0.2608695652173913,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": true,
+          "a0.2": true
+        }
+      }
+    }
+  },
+  "corrected_ipda": {
+    "cas": "2855-13-2",
+    "constitution_crosschecks": {
+      "one_six_membered_ring": true,
+      "three_methyl_carbons": true,
+      "two_primary_amine_nitrogens": true
+    },
+    "genmod_ground_truth_path": "amphora-molecule-generator/reference/mvp20/data/hardener_stoichiometric_envelope.v1.json",
+    "genmod_ground_truth_sha256": "b1a08e856cab233c69c09673ed0d96a40c38346753afae4ad415b5948edaa9a8",
+    "iupac_name": "3-(aminomethyl)-3,5,5-trimethylcyclohexan-1-amine",
+    "matches_genmod_known_answer_ground_truth": true,
+    "matches_ra07_corrected_canonical": true,
+    "superseded_formula": "C9H20N2",
+    "superseded_smiles": "CC1(CC(CC(C1)N)C)CN",
+    "v2_canonical": "CC1(C)CC(N)CC(C)(CN)C1",
+    "v2_derivation": "Third independent re-derivation from the isophorone diamine constitution (Lee & Neville 1967): cyclohexane ring; C1 quaternary carbon bearing an exocyclic aminomethyl group and a methyl; C3 bearing the ring primary amine; C5 gem-dimethyl. Written starting from the exocyclic aminomethyl carbon -- R-A07 started from the ring primary-amine carbon and V-A07 from the gem-dimethyl carbon -- so this string is not a transcription of either.",
+    "v2_formula": "C10H22N2",
+    "v2_independent_input_smiles": "NCC1(C)CC(N)CC(C)(C)C1"
+  },
+  "cross_family_novelty_counts_alpha_0_05_fully_corrected": {
+    "DDS": "0/4",
+    "DETA": "4/4",
+    "IPDA": "4/4",
+    "TETA": "4/4",
+    "m-XDA": "3/4"
+  },
+  "date": "2026-08-04",
+  "flip_disclosure": {
+    "A_dedup_effect_old_structure_ra07_disclosed_set": {
+      "cells": [
+        {
+          "alpha": "a0.05",
+          "candidate": "DDS",
+          "family": "maccs_166",
+          "from_conformal_p": 0.04954954954954955,
+          "from_novel": true,
+          "to_conformal_p": 0.08547008547008547,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.01",
+          "candidate": "IPDA",
+          "family": "maccs_166",
+          "from_conformal_p": 0.006756756756756757,
+          "from_novel": true,
+          "to_conformal_p": 0.017094017094017096,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.2",
+          "candidate": "DDS",
+          "family": "atompair_2048",
+          "from_conformal_p": 0.19144144144144143,
+          "from_novel": true,
+          "to_conformal_p": 0.24786324786324787,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.01",
+          "candidate": "IPDA",
+          "family": "atompair_2048",
+          "from_conformal_p": 0.009009009009009009,
+          "from_novel": true,
+          "to_conformal_p": 0.011396011396011397,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.01",
+          "candidate": "m-XDA",
+          "family": "atompair_2048",
+          "from_conformal_p": 0.009009009009009009,
+          "from_novel": true,
+          "to_conformal_p": 0.011396011396011397,
+          "to_novel": false
+        }
+      ],
+      "definition": "originally-signed contaminated-443 table vs deduplicated-350 table, both with the OLD IPDA string",
+      "n": 5
+    },
+    "B_structural_effect_undisclosed_by_ra07_found_by_va07": {
+      "cells": [
+        {
+          "alpha": "a0.01",
+          "candidate": "IPDA",
+          "family": "atompair_2048",
+          "from_conformal_p": 0.011396011396011397,
+          "from_novel": false,
+          "to_conformal_p": 0.008547008547008548,
+          "to_novel": true
+        }
+      ],
+      "definition": "deduplicated-350 with OLD IPDA vs deduplicated-350 with CORRECTED IPDA (all four families)",
+      "n": 1
+    },
+    "C_total_originally_signed_to_fully_corrected": {
+      "cells": [
+        {
+          "alpha": "a0.05",
+          "candidate": "DDS",
+          "family": "maccs_166",
+          "from_conformal_p": 0.04954954954954955,
+          "from_novel": true,
+          "to_conformal_p": 0.08547008547008547,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.01",
+          "candidate": "IPDA",
+          "family": "maccs_166",
+          "from_conformal_p": 0.006756756756756757,
+          "from_novel": true,
+          "to_conformal_p": 0.017094017094017096,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.2",
+          "candidate": "DDS",
+          "family": "atompair_2048",
+          "from_conformal_p": 0.19144144144144143,
+          "from_novel": true,
+          "to_conformal_p": 0.24786324786324787,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.01",
+          "candidate": "m-XDA",
+          "family": "atompair_2048",
+          "from_conformal_p": 0.009009009009009009,
+          "from_novel": true,
+          "to_conformal_p": 0.011396011396011397,
+          "to_novel": false
+        }
+      ],
+      "definition": "originally-signed contaminated-443 + OLD IPDA vs deduplicated-350 + CORRECTED IPDA -- the net difference a reader of the original receipt experiences",
+      "interpretation": "atompair_2048 / IPDA / alpha=0.01 appears in set A (true -> false) and in set B (false -> true) and therefore CANCELS in the net comparison C: its originally signed verdict happens to coincide with the fully-corrected verdict, but only because two independent errors offset. It is disclosed in A and B regardless.",
+      "n": 4
+    },
+    "D_dedup_effect_under_correct_structure": {
+      "cells": [
+        {
+          "alpha": "a0.05",
+          "candidate": "DDS",
+          "family": "maccs_166",
+          "from_conformal_p": 0.04954954954954955,
+          "from_novel": true,
+          "to_conformal_p": 0.08547008547008547,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.01",
+          "candidate": "IPDA",
+          "family": "maccs_166",
+          "from_conformal_p": 0.006756756756756757,
+          "from_novel": true,
+          "to_conformal_p": 0.017094017094017096,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.2",
+          "candidate": "DDS",
+          "family": "atompair_2048",
+          "from_conformal_p": 0.19144144144144143,
+          "from_novel": true,
+          "to_conformal_p": 0.24786324786324787,
+          "to_novel": false
+        },
+        {
+          "alpha": "a0.01",
+          "candidate": "m-XDA",
+          "family": "atompair_2048",
+          "from_conformal_p": 0.009009009009009009,
+          "from_novel": true,
+          "to_conformal_p": 0.011396011396011397,
+          "to_novel": false
+        }
+      ],
+      "definition": "contaminated-443 + CORRECTED IPDA vs deduplicated-350 + CORRECTED IPDA -- the exchangeability correction isolated, with correct chemistry throughout",
+      "n": 4
+    },
+    "note": "Complete disclosure. Three independent difference sets are published so no flip can hide in a comparison that was never made."
+  },
+  "generated_on_host": "xbabe2",
+  "headline": "R-A07v2 republishes the complete four-family conformal novelty table on the deduplicated 350-distinct OpenPoly calibration corpus with the corrected isophorone diamine structure (CAS 2855-13-2, C10H22N2) propagated into ALL FOUR fingerprint families -- morgan_r2_2048, maccs_166, atompair_2048 and toptorsion_2048 -- not only into the morgan-only side table R-A07 shipped. Every flip is disclosed: 5 cells flip from the originally-signed contaminated-443 table to the deduplicated table (R-A07's declared set, reproduced exactly), and 1 further cell -- atompair_2048 / IPDA / alpha=0.01 -- flips when the IPDA structural fix is actually applied in that family, the undisclosed flip V-A07 surfaced. Relative to what was ORIGINALLY signed, 4 cells differ under the fully-corrected table. THE TOP-LEVEL 5/5-NOVEL HEADLINE STANDS: on the deduplicated corpus with the corrected structure, all 5 candidates have Morgan(r2,2048) Tanimoto nearest-neighbour similarity below the 0.40 Bajusz-Racz-Heberger cutoff (range 0.1579-0.3929), and the IPDA structural correction leaves the Morgan nearest-neighbour similarity unchanged, so the headline never depended on the defective cells.",
+  "ipda_nn_shift_by_family": [
+    {
+      "changed": false,
+      "corrected_nn": 0.16666666666666666,
+      "family": "morgan_r2_2048",
+      "shipped_nn_old_structure": 0.16666666666666666
+    },
+    {
+      "changed": true,
+      "corrected_nn": 0.4634146341463415,
+      "family": "maccs_166",
+      "shipped_nn_old_structure": 0.4666666666666667
+    },
+    {
+      "changed": true,
+      "corrected_nn": 0.2542372881355932,
+      "family": "atompair_2048",
+      "shipped_nn_old_structure": 0.2777777777777778
+    },
+    {
+      "changed": true,
+      "corrected_nn": 0.16,
+      "family": "toptorsion_2048",
+      "shipped_nn_old_structure": 0.1794871794871795
+    }
+  ],
+  "method": "Identical pipeline to R-A07 and to the refuting audits: '*'->'C' methyl cap; canonical RDKit SMILES dedup (structure-only, label-free); families morgan_r2_2048 / maccs_166 / atompair_2048 / toptorsion_2048; leave-one-out nonconformity alpha_i = 1 - NN_LOO(i); candidate alpha_x = 1 - max_j Tanimoto; conformal p = (#{alpha_i >= alpha_x} + 1)/(n + 1); NOVEL iff p < alpha for alpha in {0.01, 0.05, 0.10, 0.20}; fixed-cutoff lane NOVEL iff Morgan NN Tanimoto < 0.40. The ONLY change from R-A07 is that the corrected IPDA structure is used in every family, not just morgan_r2_2048.",
+  "ra07_shipped_table_parity_under_old_ipda": {
+    "all_cells_reproduce": true,
+    "n_cells_compared": 20,
+    "note": "Confirms V-A07's central finding constructively: R-A07's shipped four-family table reproduces EXACTLY when the OLD, refuted C9H20N2 string is used in all four families, i.e. the structural correction was never applied there.",
+    "per_cell": [
+      {
+        "candidate": "DDS",
+        "family": "morgan_r2_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "DETA",
+        "family": "morgan_r2_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "IPDA",
+        "family": "morgan_r2_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "TETA",
+        "family": "morgan_r2_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "m-XDA",
+        "family": "morgan_r2_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "DDS",
+        "family": "maccs_166",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "DETA",
+        "family": "maccs_166",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "IPDA",
+        "family": "maccs_166",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "TETA",
+        "family": "maccs_166",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "m-XDA",
+        "family": "maccs_166",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "DDS",
+        "family": "atompair_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "DETA",
+        "family": "atompair_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "IPDA",
+        "family": "atompair_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "TETA",
+        "family": "atompair_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "m-XDA",
+        "family": "atompair_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "DDS",
+        "family": "toptorsion_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "DETA",
+        "family": "toptorsion_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "IPDA",
+        "family": "toptorsion_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "TETA",
+        "family": "toptorsion_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      },
+      {
+        "candidate": "m-XDA",
+        "family": "toptorsion_2048",
+        "nn_matches_1e-12": true,
+        "p_matches_1e-12": true,
+        "verdicts_match": true
+      }
+    ]
+  },
+  "rdkit_version": "2026.03.2",
+  "reference_tables_for_audit": {
+    "contaminated_443_corrected_ipda": {
+      "atompair_2048": {
+        "DDS": {
+          "alpha": 0.48484848484848486,
+          "conformal_p": 0.19144144144144143,
+          "isolated_count": 84,
+          "n": 443,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.5151515151515151,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.8285714285714285,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_reference_name": "Poly(vinyl formal)",
+          "nn_tanimoto": 0.17142857142857143,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.7457627118644068,
+          "conformal_p": 0.006756756756756757,
+          "isolated_count": 2,
+          "n": 443,
+          "nn_reference_name": "PMP",
+          "nn_tanimoto": 0.2542372881355932,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.821917808219178,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_reference_name": "Poly(1,2-epoxyoctane)",
+          "nn_tanimoto": 0.1780821917808219,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7258064516129032,
+          "conformal_p": 0.009009009009009009,
+          "isolated_count": 3,
+          "n": 443,
+          "nn_reference_name": "poly(p-xylylene)",
+          "nn_tanimoto": 0.27419354838709675,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "maccs_166": {
+        "DDS": {
+          "alpha": 0.4,
+          "conformal_p": 0.04954954954954955,
+          "isolated_count": 21,
+          "n": 443,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.6,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.024774774774774775,
+          "isolated_count": 10,
+          "n": 443,
+          "nn_reference_name": "PA6",
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.5365853658536586,
+          "conformal_p": 0.006756756756756757,
+          "isolated_count": 2,
+          "n": 443,
+          "nn_reference_name": "Poly[2-(tert-butylamino)ethyl methacrylate]",
+          "nn_tanimoto": 0.4634146341463415,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.024774774774774775,
+          "isolated_count": 10,
+          "n": 443,
+          "nn_reference_name": "PA6",
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.631578947368421,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.3684210526315789,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "morgan_r2_2048": {
+        "DDS": {
+          "alpha": 0.6071428571428572,
+          "conformal_p": 0.11486486486486487,
+          "isolated_count": 50,
+          "n": 443,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.39285714285714285,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.0045045045045045045,
+          "isolated_count": 1,
+          "n": 443,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.0045045045045045045,
+          "isolated_count": 1,
+          "n": 443,
+          "nn_reference_name": "poly(1,3-adamantane)s",
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8421052631578947,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.15789473684210525,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7619047619047619,
+          "conformal_p": 0.02252252252252252,
+          "isolated_count": 9,
+          "n": 443,
+          "nn_reference_name": "poly(p-xylylene)",
+          "nn_tanimoto": 0.23809523809523808,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "toptorsion_2048": {
+        "DDS": {
+          "alpha": 0.34615384615384615,
+          "conformal_p": 0.3581081081081081,
+          "isolated_count": 158,
+          "n": 443,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.6538461538461539,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "DETA": {
+          "alpha": 0.8181818181818181,
+          "conformal_p": 0.02702702702702703,
+          "isolated_count": 11,
+          "n": 443,
+          "nn_reference_name": "PPy",
+          "nn_tanimoto": 0.18181818181818182,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.84,
+          "conformal_p": 0.015765765765765764,
+          "isolated_count": 6,
+          "n": 443,
+          "nn_reference_name": "poly(1,3-adamantane)s",
+          "nn_tanimoto": 0.16,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8461538461538461,
+          "conformal_p": 0.015765765765765764,
+          "isolated_count": 6,
+          "n": 443,
+          "nn_reference_name": "PPy",
+          "nn_tanimoto": 0.15384615384615385,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7391304347826086,
+          "conformal_p": 0.05855855855855856,
+          "isolated_count": 25,
+          "n": 443,
+          "nn_reference_name": "Poly(3-methylstyrene)",
+          "nn_tanimoto": 0.2608695652173913,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      }
+    },
+    "originally_signed_contaminated_443_old_ipda": {
+      "atompair_2048": {
+        "DDS": {
+          "alpha": 0.48484848484848486,
+          "conformal_p": 0.19144144144144143,
+          "isolated_count": 84,
+          "n": 443,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.5151515151515151,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.8285714285714285,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_reference_name": "Poly(vinyl formal)",
+          "nn_tanimoto": 0.17142857142857143,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.7222222222222222,
+          "conformal_p": 0.009009009009009009,
+          "isolated_count": 3,
+          "n": 443,
+          "nn_reference_name": "PMP",
+          "nn_tanimoto": 0.2777777777777778,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.821917808219178,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_reference_name": "Poly(1,2-epoxyoctane)",
+          "nn_tanimoto": 0.1780821917808219,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7258064516129032,
+          "conformal_p": 0.009009009009009009,
+          "isolated_count": 3,
+          "n": 443,
+          "nn_reference_name": "poly(p-xylylene)",
+          "nn_tanimoto": 0.27419354838709675,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "maccs_166": {
+        "DDS": {
+          "alpha": 0.4,
+          "conformal_p": 0.04954954954954955,
+          "isolated_count": 21,
+          "n": 443,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.6,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.024774774774774775,
+          "isolated_count": 10,
+          "n": 443,
+          "nn_reference_name": "PA6",
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.5333333333333333,
+          "conformal_p": 0.006756756756756757,
+          "isolated_count": 2,
+          "n": 443,
+          "nn_reference_name": "polyphthalamide",
+          "nn_tanimoto": 0.4666666666666667,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.024774774774774775,
+          "isolated_count": 10,
+          "n": 443,
+          "nn_reference_name": "PA6",
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.631578947368421,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.3684210526315789,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "morgan_r2_2048": {
+        "DDS": {
+          "alpha": 0.6071428571428572,
+          "conformal_p": 0.11486486486486487,
+          "isolated_count": 50,
+          "n": 443,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.39285714285714285,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.0045045045045045045,
+          "isolated_count": 1,
+          "n": 443,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.0045045045045045045,
+          "isolated_count": 1,
+          "n": 443,
+          "nn_reference_name": "polynorbornene",
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8421052631578947,
+          "conformal_p": 0.0022522522522522522,
+          "isolated_count": 0,
+          "n": 443,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.15789473684210525,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7619047619047619,
+          "conformal_p": 0.02252252252252252,
+          "isolated_count": 9,
+          "n": 443,
+          "nn_reference_name": "poly(p-xylylene)",
+          "nn_tanimoto": 0.23809523809523808,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "toptorsion_2048": {
+        "DDS": {
+          "alpha": 0.34615384615384615,
+          "conformal_p": 0.3581081081081081,
+          "isolated_count": 158,
+          "n": 443,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.6538461538461539,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "DETA": {
+          "alpha": 0.8181818181818181,
+          "conformal_p": 0.02702702702702703,
+          "isolated_count": 11,
+          "n": 443,
+          "nn_reference_name": "PPy",
+          "nn_tanimoto": 0.18181818181818182,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8205128205128205,
+          "conformal_p": 0.02702702702702703,
+          "isolated_count": 11,
+          "n": 443,
+          "nn_reference_name": "Poly[4-(1-adamantyl)styrene]",
+          "nn_tanimoto": 0.1794871794871795,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8461538461538461,
+          "conformal_p": 0.015765765765765764,
+          "isolated_count": 6,
+          "n": 443,
+          "nn_reference_name": "PPy",
+          "nn_tanimoto": 0.15384615384615385,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7391304347826086,
+          "conformal_p": 0.05855855855855856,
+          "isolated_count": 25,
+          "n": 443,
+          "nn_reference_name": "Poly(3-methylstyrene)",
+          "nn_tanimoto": 0.2608695652173913,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      }
+    },
+    "ra07_shipped_deduped_350_old_ipda": {
+      "atompair_2048": {
+        "DDS": {
+          "alpha": 0.48484848484848486,
+          "conformal_p": 0.24786324786324787,
+          "isolated_count": 86,
+          "n": 350,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.5151515151515151,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "DETA": {
+          "alpha": 0.8285714285714285,
+          "conformal_p": 0.002849002849002849,
+          "isolated_count": 0,
+          "n": 350,
+          "nn_reference_name": "Poly(vinyl formal)",
+          "nn_tanimoto": 0.17142857142857143,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.7222222222222222,
+          "conformal_p": 0.011396011396011397,
+          "isolated_count": 3,
+          "n": 350,
+          "nn_reference_name": "PMP",
+          "nn_tanimoto": 0.2777777777777778,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.821917808219178,
+          "conformal_p": 0.002849002849002849,
+          "isolated_count": 0,
+          "n": 350,
+          "nn_reference_name": "Poly(1,2-epoxyoctane)",
+          "nn_tanimoto": 0.1780821917808219,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7258064516129032,
+          "conformal_p": 0.011396011396011397,
+          "isolated_count": 3,
+          "n": 350,
+          "nn_reference_name": "poly(p-xylylene)",
+          "nn_tanimoto": 0.27419354838709675,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "maccs_166": {
+        "DDS": {
+          "alpha": 0.4,
+          "conformal_p": 0.08547008547008547,
+          "isolated_count": 29,
+          "n": 350,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.6,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.045584045584045586,
+          "isolated_count": 15,
+          "n": 350,
+          "nn_reference_name": "PA6",
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.5333333333333333,
+          "conformal_p": 0.017094017094017096,
+          "isolated_count": 5,
+          "n": 350,
+          "nn_reference_name": "polyphthalamide",
+          "nn_tanimoto": 0.4666666666666667,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.46153846153846156,
+          "conformal_p": 0.045584045584045586,
+          "isolated_count": 15,
+          "n": 350,
+          "nn_reference_name": "PA6",
+          "nn_tanimoto": 0.5384615384615384,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.631578947368421,
+          "conformal_p": 0.002849002849002849,
+          "isolated_count": 0,
+          "n": 350,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.3684210526315789,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "morgan_r2_2048": {
+        "DDS": {
+          "alpha": 0.6071428571428572,
+          "conformal_p": 0.15954415954415954,
+          "isolated_count": 55,
+          "n": 350,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.39285714285714285,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "DETA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.005698005698005698,
+          "isolated_count": 1,
+          "n": 350,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.005698005698005698,
+          "isolated_count": 1,
+          "n": 350,
+          "nn_reference_name": "polynorbornene",
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8421052631578947,
+          "conformal_p": 0.002849002849002849,
+          "isolated_count": 0,
+          "n": 350,
+          "nn_reference_name": "PEI",
+          "nn_tanimoto": 0.15789473684210525,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7619047619047619,
+          "conformal_p": 0.02849002849002849,
+          "isolated_count": 9,
+          "n": 350,
+          "nn_reference_name": "poly(p-xylylene)",
+          "nn_tanimoto": 0.23809523809523808,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "toptorsion_2048": {
+        "DDS": {
+          "alpha": 0.34615384615384615,
+          "conformal_p": 0.46438746438746437,
+          "isolated_count": 162,
+          "n": 350,
+          "nn_reference_name": "polyethersulfone",
+          "nn_tanimoto": 0.6538461538461539,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "DETA": {
+          "alpha": 0.8181818181818181,
+          "conformal_p": 0.03418803418803419,
+          "isolated_count": 11,
+          "n": 350,
+          "nn_reference_name": "PPy",
+          "nn_tanimoto": 0.18181818181818182,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "IPDA": {
+          "alpha": 0.8205128205128205,
+          "conformal_p": 0.03418803418803419,
+          "isolated_count": 11,
+          "n": 350,
+          "nn_reference_name": "Poly[4-(1-adamantyl)styrene]",
+          "nn_tanimoto": 0.1794871794871795,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "TETA": {
+          "alpha": 0.8461538461538461,
+          "conformal_p": 0.019943019943019943,
+          "isolated_count": 6,
+          "n": 350,
+          "nn_reference_name": "PPy",
+          "nn_tanimoto": 0.15384615384615385,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "m-XDA": {
+          "alpha": 0.7391304347826086,
+          "conformal_p": 0.07692307692307693,
+          "isolated_count": 26,
+          "n": 350,
+          "nn_reference_name": "Poly(3-methylstyrene)",
+          "nn_tanimoto": 0.2608695652173913,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      }
+    }
+  },
+  "refuted_by_verify_item": "V-A07",
+  "repair_item": "R-A07v2",
+  "rights_posture": "AUDIT/REPAIR artifact. External corpus SHA-256-locked, rights-clean, read-only. No manifest, ledger, locked dataset, or existing signed receipt modified; supersession by NEW receipt only.",
+  "schema": "amphora.molecule-novelty.r-a07v2-superseding-repair-diagnostic.v1",
+  "study_id": "r-a07v2-four-family-ipda-propagation-repair-v1",
+  "supersedes_repair_item": "R-A07",
+  "theory_reference": [
+    "Vovk, Gammerman, Shafer 2005, Algorithmic Learning in a Random World, ISBN 978-0-387-00152-4, sec 2.1 (exchangeability)",
+    "Rogers & Hahn 2010, J Chem Inf Model 50:742, DOI:10.1021/ci100050t (Morgan/ECFP)",
+    "Bajusz, Racz, Heberger 2015, J Cheminform 7:20, DOI:10.1186/s13321-015-0069-3 (Tanimoto; 0.40 cutoff)",
+    "Durant et al. 2002 DOI:10.1021/ci010132r (MACCS); Carhart et al. 1985 DOI:10.1021/ci00046a002 (atom pairs); Nilakantan et al. 1987 DOI:10.1021/ci00054a008 (topological torsions)",
+    "Lee, H. & Neville, K. 1967, Handbook of Epoxy Resins, McGraw-Hill (isophorone diamine constitution)",
+    "Ma et al. 2023 OpenPoly / OMG_PhysicalProperties dataset"
+  ],
+  "top_level_five_over_five": {
+    "lane": "morgan_r2_2048 Tanimoto fixed 0.40 cutoff, deduplicated 350-structure corpus, corrected IPDA structure",
+    "n_candidates": 5,
+    "n_novel": 5,
+    "per_candidate": {
+      "DDS": {
+        "candidate_smiles_canonical": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+        "nn_reference_name": "polyethersulfone",
+        "nn_tanimoto_vs_deduped_350": 0.39285714285714285,
+        "novel_below_0_40": true
+      },
+      "DETA": {
+        "candidate_smiles_canonical": "NCCNCCN",
+        "nn_reference_name": "PEI",
+        "nn_tanimoto_vs_deduped_350": 0.16666666666666666,
+        "novel_below_0_40": true
+      },
+      "IPDA": {
+        "candidate_smiles_canonical": "CC1(C)CC(N)CC(C)(CN)C1",
+        "nn_reference_name": "poly(1,3-adamantane)s",
+        "nn_tanimoto_vs_deduped_350": 0.16666666666666666,
+        "novel_below_0_40": true
+      },
+      "TETA": {
+        "candidate_smiles_canonical": "NCCNCCNCCN",
+        "nn_reference_name": "PEI",
+        "nn_tanimoto_vs_deduped_350": 0.15789473684210525,
+        "novel_below_0_40": true
+      },
+      "m-XDA": {
+        "candidate_smiles_canonical": "NCc1cccc(CN)c1",
+        "nn_reference_name": "poly(p-xylylene)",
+        "nn_tanimoto_vs_deduped_350": 0.23809523809523808,
+        "novel_below_0_40": true
+      }
+    },
+    "verdict": "5/5 NOVEL -- the headline STANDS under both corrections and under the four-family propagation",
+    "why_unaffected": "The fixed-cutoff headline is computed in the morgan_r2_2048 family only, and the IPDA structural correction leaves the Morgan(r2,2048) nearest-neighbour Tanimoto unchanged at 0.16666666666666666. The defect V-A07 found was confined to the maccs_166 / atompair_2048 / toptorsion_2048 cells of the conformal side table."
+  },
+  "values_read_from_v_a07_verify_receipt_bytes": {
+    "additional_flips": [
+      {
+        "alpha": "a0.01",
+        "candidate": "IPDA",
+        "family": "atompair_2048",
+        "shipped_conformal_p": 0.011396011396011397,
+        "shipped_verdict_old_broken_structure_novel": false,
+        "structurally_corrected_conformal_p": 0.008547008547008548,
+        "true_verdict_structurally_corrected_novel": true
+      }
+    ],
+    "five_flip_cells_independently_reproduced": true,
+    "ipda_nn_shifts": [
+      {
+        "family": "maccs_166",
+        "shipped_nn": 0.4666666666666667,
+        "structurally_corrected_nn": 0.4634146341463415
+      },
+      {
+        "family": "atompair_2048",
+        "shipped_nn": 0.2777777777777778,
+        "structurally_corrected_nn": 0.2542372881355932
+      },
+      {
+        "family": "toptorsion_2048",
+        "shipped_nn": 0.1794871794871795,
+        "structurally_corrected_nn": 0.16
+      }
+    ],
+    "n_additional_undisclosed_flips": 1,
+    "n_self_tests": 11,
+    "ra07_declared_flip_cells": [
+      [
+        "atompair_2048",
+        "DDS",
+        "a0.2"
+      ],
+      [
+        "atompair_2048",
+        "IPDA",
+        "a0.01"
+      ],
+      [
+        "atompair_2048",
+        "m-XDA",
+        "a0.01"
+      ],
+      [
+        "maccs_166",
+        "DDS",
+        "a0.05"
+      ],
+      [
+        "maccs_166",
+        "IPDA",
+        "a0.01"
+      ]
+    ],
+    "ra07_table_uses_old_broken_ipda_structure_in_all_four_families": true,
+    "self_tests_all_pass": true,
+    "verdict": "CLAIM_REFUTED"
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-public-corrosion-benchmark/evidence/phase0",
+  "imported_locks": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "bb430af31bec46408e4f9cfd841d27b9d608cb68a97f583506acea25d8d856e4",
+      "source_path": "config/program/corrosion-sources.v2.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "338e80c57f3816e7c8eee060e8bbcada999b61fc94aed3027d9b0c27fd637055",
+      "source_path": "config/program/corrosion-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "c9ca98af8eb32fd58a43ca35c21757d635ab92f2cfbdedf733410632aad11e20",
+      "source_path": "config/benchmark-locks/amphora-public-corrosion-benchmark.v1.json"
+    }
+  ],
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v1",
+  "sources": [
+    {
+      "declared_sha256": "670facbd4e90d79c1bd6b8eb69259e8d5cd1dc2731943edbf8d3ca67e22c9cb0",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/locks/corr_data_database-013d9c5d7d4b9433.json",
+      "observed_sha256": "670facbd4e90d79c1bd6b8eb69259e8d5cd1dc2731943edbf8d3ca67e22c9cb0",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv",
+      "observed_sha256": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "c72f611d6eea10598dc705c621c161ab86f94ab9f3cf0001787f98966743b16a",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128758_2-e-p-1k-2-s_erosion.csv",
+      "observed_sha256": "c72f611d6eea10598dc705c621c161ab86f94ab9f3cf0001787f98966743b16a",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "d319386d740e5def9db8a53591731a2e756e6ad21763a1f13aba63e8c20716a1",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128759_2-e-p-1k-2-s_impact.csv",
+      "observed_sha256": "d319386d740e5def9db8a53591731a2e756e6ad21763a1f13aba63e8c20716a1",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128760_2-e-p-1k-2-s_rust_creep.csv",
+      "observed_sha256": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "db5667c619b03afca704f062e8b64e766219f24837038dde50548c88e7ff0995",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128761_2-e-p-1k-2-s_wet_dry_adhesion.csv",
+      "observed_sha256": "db5667c619b03afca704f062e8b64e766219f24837038dde50548c88e7ff0995",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv",
+      "observed_sha256": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "6ae2777bf20721935ecf83d74f973304374919e25170c5fefeb1b6741c409657",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128763_2-e-p-2k-2-s_erosion.csv",
+      "observed_sha256": "6ae2777bf20721935ecf83d74f973304374919e25170c5fefeb1b6741c409657",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "cba0d127347507e2fce6a6dd8e7ddd8bb9872944246a464ed285ec0f34272f36",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128764_2-e-p-2k-2-s_impact.csv",
+      "observed_sha256": "cba0d127347507e2fce6a6dd8e7ddd8bb9872944246a464ed285ec0f34272f36",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128765_2-e-p-2k-2-s_rust_creep.csv",
+      "observed_sha256": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "673129010365ef3984c2e2a287ff14b1c9d315d9107e446cc86e367d10ab1b42",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128766_2-e-p-2k-2-s_wet_dry_adhesion.csv",
+      "observed_sha256": "673129010365ef3984c2e2a287ff14b1c9d315d9107e446cc86e367d10ab1b42",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv",
+      "observed_sha256": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "2d17de08d48b96921874302e746f6a024c22b3708c935273a8112252f7de3f11",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128768_2-z-p-1k-2-s_erosion.csv",
+      "observed_sha256": "2d17de08d48b96921874302e746f6a024c22b3708c935273a8112252f7de3f11",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "b3580e3f7ea033d52e082526517002b4c6b9e03eeb68e6b783363091255b1c86",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128769_2-z-p-1k-2-s_impact.csv",
+      "observed_sha256": "b3580e3f7ea033d52e082526517002b4c6b9e03eeb68e6b783363091255b1c86",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128770_2-z-p-1k-2-s_rust_creep.csv",
+      "observed_sha256": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "716904a260db91ea3b3d4395fa66d3f08e2466433b6e10047a1bb0e5797609d8",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128771_2-z-p-1k-2-s_wet_dry_adhesion.csv",
+      "observed_sha256": "716904a260db91ea3b3d4395fa66d3f08e2466433b6e10047a1bb0e5797609d8",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv",
+      "observed_sha256": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "ff17e7606af558480b067ca067d69c3f0651dbc2f1c7d5593726d917a7179424",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128773_2-z-p-2k-2-s_erosion.csv",
+      "observed_sha256": "ff17e7606af558480b067ca067d69c3f0651dbc2f1c7d5593726d917a7179424",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "5e6b2f93d87e182bdf5b9c905bd43ce405c92a1c865e4f7a7449f6f594056a96",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128774_2-z-p-2k-2-s_impact.csv",
+      "observed_sha256": "5e6b2f93d87e182bdf5b9c905bd43ce405c92a1c865e4f7a7449f6f594056a96",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128775_2-z-p-2k-2-s_rust_creep.csv",
+      "observed_sha256": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "1d69b9371aa99b72b2d24da151023f1f9822607fd7f9002c65f5acc29478efe5",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128776_2-z-p-2k-2-s_wet_dry_adhesion.csv",
+      "observed_sha256": "1d69b9371aa99b72b2d24da151023f1f9822607fd7f9002c65f5acc29478efe5",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv",
+      "observed_sha256": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "bec75f2d7330c51b7ea2a8949c8db60ff92948bf3bce10d467a527e53dfa5d73",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128778_3-d-p-2k-2-s_erosion.csv",
+      "observed_sha256": "bec75f2d7330c51b7ea2a8949c8db60ff92948bf3bce10d467a527e53dfa5d73",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "edecd4849f1c610c5cf107d76bb852da6013d8d15352672112b9b1adc09e78fa",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128780_3-d-p-2k-2-s_impact.csv",
+      "observed_sha256": "edecd4849f1c610c5cf107d76bb852da6013d8d15352672112b9b1adc09e78fa",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128781_3-d-p-2k-2-s_rust_creep.csv",
+      "observed_sha256": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "f05baa3cfa3e94bd6ad734d777b5934c67530f30d0d27139ded712e3840a062d",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128782_3-d-p-2k-2-s_wet_dry_adhesion.csv",
+      "observed_sha256": "f05baa3cfa3e94bd6ad734d777b5934c67530f30d0d27139ded712e3840a062d",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv",
+      "observed_sha256": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "6ecc53e3b62a05c5b819cb7a6710c8b5cd3be92f414ea0742dceb7b8b15a17f9",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128785_3-z-p-2k-2-s_erosion.csv",
+      "observed_sha256": "6ecc53e3b62a05c5b819cb7a6710c8b5cd3be92f414ea0742dceb7b8b15a17f9",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "1fa8be3d29843f163e94a28fe991a1527c4669b879981d980563777481800531",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128786_3-z-p-2k-2-s_impact.csv",
+      "observed_sha256": "1fa8be3d29843f163e94a28fe991a1527c4669b879981d980563777481800531",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128787_3-z-p-2k-2-s_rust_creep.csv",
+      "observed_sha256": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "b22fdbebd467a22c040885c1531d757585bad5cfdc8fac5b0ccc968b1f07b5b4",
+      "hash_current": true,
+      "license_present": true,
+      "module_relative_path": "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128788_3-z-p-2k-2-s_wet_dry_adhesion.csv",
+      "observed_sha256": "b22fdbebd467a22c040885c1531d757585bad5cfdc8fac5b0ccc968b1f07b5b4",
+      "rights_evidence_path": "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "rights_status": "KNOWN"
+    },
+    {
+      "declared_sha256": "e318214998d2691f5866324b84e13ed361d89a388daeb27d3f39ce2beb14fc20",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/feedback_v1_nist_benchmark.json",
+      "observed_sha256": "e318214998d2691f5866324b84e13ed361d89a388daeb27d3f39ce2beb14fc20",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "1572d664af8ad654f55743ee5c4729025b2a8859adfcb6c8ae95abd87a2687b6",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_epoch29_corrosion_benchmark_model_card.json",
+      "observed_sha256": "1572d664af8ad654f55743ee5c4729025b2a8859adfcb6c8ae95abd87a2687b6",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "671dacef8517464182a3fb7508a6bcf3f8814a3d414e8634d154b87c59b011ed",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_epoch29_dataset_rights_and_source_currentness_ledger.json",
+      "observed_sha256": "671dacef8517464182a3fb7508a6bcf3f8814a3d414e8634d154b87c59b011ed",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "b59bc8fff1b65e287945e52b19f4849f252e018b62e9626bed0814584f3d9a5a",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_epoch29_public_corrosion_dataset_manifest.json",
+      "observed_sha256": "b59bc8fff1b65e287945e52b19f4849f252e018b62e9626bed0814584f3d9a5a",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "58082a5356a51f74cf38fe5175de18435995de998ac23473437ffa19623059c4",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_epoch29_public_eis_feature_table.json",
+      "observed_sha256": "58082a5356a51f74cf38fe5175de18435995de998ac23473437ffa19623059c4",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "d58316fad1db07e3f01ec4ec136e98d786cb7c799ba51cd643df9fe601ad6ed0",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_epoch29_unseen_benchmark.json",
+      "observed_sha256": "d58316fad1db07e3f01ec4ec136e98d786cb7c799ba51cd643df9fe601ad6ed0",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    },
+    {
+      "declared_sha256": "5daada4f00b4ca6cb99a92cf0d7cb733d1118fc46630d6cf55e996aa2e3547b8",
+      "hash_current": true,
+      "license_present": false,
+      "module_relative_path": "reference/mvp20/out/v5_epoch30_lift_audit.json",
+      "observed_sha256": "5daada4f00b4ca6cb99a92cf0d7cb733d1118fc46630d6cf55e996aa2e3547b8",
+      "rights_evidence_path": null,
+      "rights_status": "UNRESOLVED"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "3b6c2899968af9570955b5c3acb1f8325b517f7d2ea11f663f544c7cd49b7693",
+  "import_hashes": [],
+  "module_id": "amphora-process-qc-twin",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

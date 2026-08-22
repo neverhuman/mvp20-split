@@ -1,0 +1,97 @@
+{
+  "attack_description": "Fits the identical HistGBM (same feature engineering/hyperparameters/seed=0) on ALL 7282 classified rows (the deployed-equivalent full fit), then scores it on the 417 rows classify_family() returns None for -- the population the KPI's own payload lists as an open Phase-1 gap ('extend metallurgical-family taxonomy beyond the 94.58% keyword/regex classifier coverage'). This population has never been evaluated by any receipt in this module: every prior benchmark restricts to the classified_subset before any train/test split is drawn.",
+  "attacks_claim": "evidence/phase0/kpis/corr-rate-family-safe-qspr-kpi.v1.dsse.json: GroupKFold(group=metallurgical_family, 5-fold) HistGBM R2=0.132087 on the NIST CORR-DATA classified subset (n=7282, 17 families), 'the module's strongest rights-clean empirical claim'.",
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-barrier-corrosion-score/corr-rate-unclassified-holdout-v1",
+  "cohort": {
+    "classified_subset_n": 7282,
+    "family_coverage_pct": 94.583712,
+    "full_cohort_n": 7699,
+    "n_unclassified_material_composition_unknown": 335,
+    "n_unclassified_with_known_composition_lookup": 82,
+    "unclassified_holdout_n": 417,
+    "unclassified_material_sample_first25_sorted": [
+      "20",
+      "20, cast alloys only",
+      "20Mo-6",
+      "26Cr-1Mo",
+      "304L",
+      "309Cb",
+      "316L",
+      "317L",
+      "44-Co-31Cr-13W",
+      "44Co-31Cr-13W",
+      "5 Cr",
+      "53-Co-30Cr-4.5W",
+      "53Co-30Cr-4.5W",
+      "600",
+      "67Zr-33Ni",
+      "7-Mo",
+      "70Cu-29Ni-1Sn",
+      "70Cu-30Ni",
+      "718",
+      "825",
+      "90Cu-10Ni",
+      "A-286",
+      "ALPHA-1",
+      "ALPHA-2",
+      "AP 65"
+    ]
+  },
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "canonical_round_decimals": 6,
+    "omp_num_threads": "1",
+    "seed": 0
+  },
+  "model": {
+    "estimator": "HistGradientBoostingRegressor",
+    "params": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "random_state": 0
+    },
+    "sklearn_version": "1.7.2"
+  },
+  "modifies_manifest": false,
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "criterion_fired": true,
+      "shuffled_error_reduction_vs_global_mean_baseline_pct": -14.652938,
+      "shuffled_r2": -0.423325
+    },
+    "how_planted": "yu_shuffled = np.random.RandomState(20260819).shuffle(copy of yu); scored the SAME pred_u against yu_shuffled instead of yu",
+    "planted_defect": "full random shuffle of the unclassified-holdout log10(corrosion rate) targets (y), fixed seed=20260819, applied AFTER prediction so the model's predictions are unchanged but the targets they are scored against are pure noise"
+  },
+  "promotes_authority": false,
+  "refutation_criterion": "REFUTED if (a) unclassified-holdout gbm.r2 <= 0.0, OR (b) unclassified-holdout error_reduction_vs_global_mean_baseline_pct <= 0.0, fit on all 7282 classified rows / identical feature engineering / HistGBM hyperparameters / seed=0, evaluated on the 417-row population classify_family() itself returns None for. SURVIVED otherwise, even if reduced relative to the within-taxonomy family-safe/LOFO/source-LOFO numbers.",
+  "results": {
+    "unclassified_holdout": {
+      "baseline_global_mean": {
+        "mae": 1.153819,
+        "r2": -0.082763,
+        "rmse": 1.416362
+      },
+      "error_reduction_vs_global_mean_baseline_pct": 16.440851,
+      "gbm": {
+        "mae": 0.949486,
+        "r2": 0.244,
+        "rmse": 1.1835
+      },
+      "n_test": 417,
+      "n_train": 7282
+    }
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-unclassified-holdout-attack.v1",
+  "scope_honesty": "Diagnostic on bare metal/alloy substrate corrosion (NIST CORR-DATA), same scope ceiling as corr-rate-qspr-v1, corr-rate-family-safe-v1, corr-rate-family-lofo-v1, and corr-rate-marine-envelope-v1: NOT organic-coating barrier performance. No candidate/coating superiority claim; no batch-release, manufacturing-qualification, optimizer, or product-performance authority.",
+  "verdict": "CLAIM_SURVIVED"
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "amphora.solvency-split.v1",
+  "module_id": "amphora-solvency-score",
+  "split_id": "solvency-promotion-data-not-yet-acquired",
+  "dataset_sha256": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6",
+  "assignments": []
+}

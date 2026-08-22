@@ -1,0 +1,67 @@
+{
+  "m1_delete_row_gost_34388": {
+    "label": "mutant1",
+    "refutation_criterion_fired": true,
+    "row_count": 40,
+    "violation_count": 1,
+    "violations": [
+      {
+        "detail": "census token 'GOST343' (class GOST) has no matching mapping_table row",
+        "limb": 1,
+        "rule": "census_completeness"
+      }
+    ]
+  },
+  "m2_blank_required_field": {
+    "label": "mutant2",
+    "refutation_criterion_fired": true,
+    "row_count": 41,
+    "violation_count": 1,
+    "violations": [
+      {
+        "detail": "DIN EN ISO 9227: missing ['comparability_rating'] and NOT declared integrity_gap",
+        "limb": 2,
+        "rule": "required_fields_or_declared_gap"
+      }
+    ]
+  },
+  "m3_swap_saltspray_for_eew_ATTACK_SHAPE": {
+    "label": "mutant3",
+    "refutation_criterion_fired": true,
+    "row_count": 41,
+    "violation_count": 1,
+    "violations": [
+      {
+        "detail": "GOST 34388-2018: own category ['SALT_SPRAY'] does not overlap target-equivalence category ['EEW'] -- possible mismatched mapping (e.g. a salt-spray protocol mapped to a titration/EEW method)",
+        "limb": 3,
+        "rule": "scope_consistency"
+      }
+    ]
+  },
+  "m4_strip_source": {
+    "label": "mutant4",
+    "refutation_criterion_fired": true,
+    "row_count": 41,
+    "violation_count": 1,
+    "violations": [
+      {
+        "detail": "NF EN ISO 9227: no source.kind recorded",
+        "limb": 4,
+        "rule": "sourced_mapping"
+      }
+    ]
+  },
+  "m5_swap_coating_for_accreditation": {
+    "label": "mutant5",
+    "refutation_criterion_fired": true,
+    "row_count": 41,
+    "violation_count": 1,
+    "violations": [
+      {
+        "detail": "DIN EN ISO 12944: own category ['MARINE_COATING'] does not overlap target-equivalence category ['ACCREDITATION'] -- possible mismatched mapping (e.g. a salt-spray protocol mapped to a titration/EEW method)",
+        "limb": 3,
+        "rule": "scope_consistency"
+      }
+    ]
+  }
+}

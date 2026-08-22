@@ -1,0 +1,30 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "ef3e9e3ad9f49cca509d98392eb874989995f672c5e9285a7b9ae0c89f107c17",
+  "import_hashes": [
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "source",
+      "module_relative_path": "evidence/phase0/sources/imports/source.legacy-import.v1.json",
+      "sha256": "bb430af31bec46408e4f9cfd841d27b9d608cb68a97f583506acea25d8d856e4",
+      "source_path": "config/program/corrosion-sources.v2.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "split",
+      "module_relative_path": "evidence/phase0/sources/imports/split.legacy-import.v1.json",
+      "sha256": "338e80c57f3816e7c8eee060e8bbcada999b61fc94aed3027d9b0c27fd637055",
+      "source_path": "config/program/corrosion-split.v1.json"
+    },
+    {
+      "authoritative_copy_is_module_local": true,
+      "kind": "benchmark",
+      "module_relative_path": "evidence/phase0/sources/imports/benchmark.legacy-import.v1.json",
+      "sha256": "c9ca98af8eb32fd58a43ca35c21757d635ab92f2cfbdedf733410632aad11e20",
+      "source_path": "config/benchmark-locks/amphora-public-corrosion-benchmark.v1.json"
+    }
+  ],
+  "module_id": "amphora-public-corrosion-benchmark",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

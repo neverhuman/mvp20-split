@@ -1,0 +1,121 @@
+{
+  "$schema": "amphora.module-audit-receipt.v1",
+  "affected_receipt": {
+    "modified_by_this_audit": false,
+    "note": "This audit does NOT edit, supersede, or delete the affected receipt (ROTATION-mode fire; supersession is a REPAIR-mode action for an R-prefixed campaign item). The affected receipt's own numeric result (p=0.2554, not significant), its boolean field, its headline, and its verdict code all already agree with each other and are NOT in dispute -- EIS_WITHIN_INSTRUMENT_DISCRIMINATION_NOT_ESTABLISHED is the correct reading of that receipt's own statistics. Only the 'meaning' prose sentence is wrong, and only that sentence should be corrected. Left as-is, any downstream consumer (mission.md prose, a future consolidated-index build, a human skimming only 'meaning') that trusts the explanatory gloss over the raw fields would report the wrong conclusion -- that within-instrument EIS discrimination IS established, when the module's own statistics say it is not.",
+    "path": "evidence/audit/eis-reproducibility-discrimination-power-v1/eis-reproducibility-discrimination-power-receipt.v1.dsse.json",
+    "sha256": "10b4427b541a2994126cee530a68e5598c971ee43ee6d53257c3ee81e7924702"
+  },
+  "audit_id": "eis-reproducibility-self-consistency-v1",
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "awaiting": [
+    "A repair fire (R-prefixed campaign item) to supersede the affected receipt's 'meaning' field and log it in RETRACTION-INDEX.md."
+  ],
+  "axis": "governance",
+  "campaign_item_id": "",
+  "does_not_close": [
+    "This receipt performs no new coating-physics test and fits no model; it is a structural/textual self-consistency audit of the repo's own signed-receipt tree.",
+    "It does not modify, supersede, or delete the affected receipt (eis-reproducibility-discrimination-power-v1) or any other file.",
+    "The DOES/does-NOT marker convention is this codebase's own observed house style (confirmed present and used consistently for genuine emphasis elsewhere in this module's receipts); a receipt phrasing the same contradiction without that exact marker would not be caught by this pass.",
+    "No manifest, no signed Phase-0 KPI, and no cross-module file was touched."
+  ],
+  "findings_detail": [
+    {
+      "boolean_field": "eis_discriminates_systems_above_noise_floor",
+      "boolean_value": false,
+      "contradicting_sentence": "Partitions the prior 'underpowered' verdict: the EIS instrument's endpoint barrier signal DOES separate the six benchmark systems above its own ISO-5725 measurement-noise floor (parametric hostile-null p below), so the single-instrument benchmark has real within-instrument discrimination validity;",
+      "json_path": "interpretation",
+      "keyword_overlap": [
+        "discrimi",
+        "eis",
+        "floor",
+        "noise",
+        "systems"
+      ],
+      "receipt_path": "evidence/audit/eis-reproducibility-discrimination-power-v1/eis-reproducibility-discrimination-power-receipt.v1.dsse.json"
+    }
+  ],
+  "headline": "Scanned 11 currently-signed evidence/audit/ receipts in this module with a general (non-hardcoded, non-file-specific) keyword-overlap polarity detector: 1 self-contradiction(s) found in 1 receipt(s). evidence/audit/eis-reproducibility-discrimination-power-v1's own 'interpretation.meaning' field asserts 'the EIS instrument's endpoint barrier signal DOES separate the six benchmark systems above its own ISO-5725 measurement-noise floor ... has real within-instrument discrimination validity' -- the literal opposite of that same receipt's own boolean field interpretation.eis_discriminates_systems_above_noise_floor=false, its discrimination.significant_at_0p05=false (p=0.2554), its headline ('does NOT separate ... above its measurement-noise floor'), and its own verdict code EIS_WITHIN_INSTRUMENT_DISCRIMINATION_NOT_ESTABLISHED. The detector fired on exactly this 1 of 11 scanned receipts -- 0/10 others, confirming specificity rather than a systematically over-eager rule.",
+  "human_review_performed": false,
+  "hypothesis_H0": "No signed evidence/audit/ receipt in amphora-public-corrosion-benchmark contains a boolean field whose value is contradicted by an explicit DOES/does-NOT polarity assertion about the same predicate (>=2 shared stopword-stripped keyword stems) in that receipt's own 'meaning' text.",
+  "methodology": {
+    "detector": "for every dict in the decoded payload carrying a string field 'meaning' plus >=1 boolean sibling: split 'meaning' into sentences on [.;]; for each boolean field build a stopword-stripped, 8-char-stemmed keyword set from its own name; any sentence sharing >=min(2,|keywords|) of those stems is 'about' that predicate; if that sentence contains this codebase's own house-style emphasis marker \\bDOES\\b it is scored polarity=True, if it contains \\bdoes NOT\\b / \\bdoes not\\b it is scored polarity=False; a scored polarity that disagrees with the boolean's actual value is a finding.",
+    "determinism": "glob.glob() results sorted; no randomness; pure function of on-disk bytes.",
+    "scope": "every evidence/audit/*/*.dsse.json signed receipt currently on disk in this module",
+    "signed_receipt_detection": "a .dsse.json file counts iff it is a dict with either a top-level 'signature' dict containing a 'payload' key, or top-level 'payload'+'signatures' keys; the base64 payload is decoded and parsed.",
+    "specificity_check": "the same unmodified detector was run against all currently-signed evidence/audit/ receipts in the module, not hand-selected to the one receipt already suspected of the defect; per-receipt finding counts are reported below so a follow-up audit can confirm the detector was not systematically biased toward or away from any one file."
+  },
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "per_receipt_finding_counts": [
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/consolidated-index-third-recurrence-v1/consolidated-index-third-recurrence-receipt.v1.dsse.json",
+      "sha256": "73cdfa6a7eb05745d38a29fe8f01503883140d0f957a5dfbbdfcf70abb2e555b"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/consolidated-kpi-staleness-v1/consolidated-kpi-staleness-receipt.v1.dsse.json",
+      "sha256": "aeaa6af745a35785fbb64e6dcd0fceb0b1ce26b2a6af10c754d567a55ef1367b"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/eis-brasher-kingsbury-water-uptake-admissibility-v1/eis-brasher-kingsbury-water-uptake-admissibility-receipt.v1.dsse.json",
+      "sha256": "db72894bd478bfb43e0654fb3fd2d4cec6881e0587a5cae3579e2f22e21cf171"
+    },
+    {
+      "n_findings": 1,
+      "path": "evidence/audit/eis-reproducibility-discrimination-power-v1/eis-reproducibility-discrimination-power-receipt.v1.dsse.json",
+      "sha256": "10b4427b541a2994126cee530a68e5598c971ee43ee6d53257c3ee81e7924702"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json",
+      "sha256": "e48fdfed42169582dfcf72c4b0d45304ed6534d1a95e09e171ded364d18789cf"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/kpi-surface-completeness-v1/kpi-surface-completeness-receipt.v1.dsse.json",
+      "sha256": "1a8eeb31c48a0ecaf6e6a49688c5304705a89dfb961694fc9d839186e5dbee0c"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/multi-instrument-concordance-v1/multi-instrument-concordance-receipt.v1.dsse.json",
+      "sha256": "bb1a11855a31e0338263fd85a15354ce5436a3b29e1f2a5202f3680693fc483a"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/nist-baseline-descriptive-boundary-provenance-v1/nist-baseline-descriptive-boundary-provenance-receipt.v1.dsse.json",
+      "sha256": "141104ccf1b51f550f24c7b482b060884bb69e66f92bd8f2bf0f75e1a277435c"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json",
+      "sha256": "ad3589cf1254cb941c322285064d45fe411db80ad4eda32ce4a195b93c37d1a6"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json",
+      "sha256": "7f127db900f8558db6b509d0e94984bc713de3d0859f042dc5af3a4fd58dd007"
+    },
+    {
+      "n_findings": 0,
+      "path": "evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json",
+      "sha256": "469c8a1a090a904d0d3f281fd290a515023d967d724147c90444d8e226255549"
+    }
+  ],
+  "phase": "PRE_PHASE_0",
+  "promotes_authority": false,
+  "purpose": "Intra-receipt self-consistency audit: does each signed evidence/audit/ receipt in this module agree with itself -- specifically, does its free-text 'meaning' interpretation ever assert the opposite polarity from a co-located boolean/verdict field about the same predicate? Orthogonal escalation past the three prior REFUTED cross-file staleness findings on this module's audit corpus (kpi-surface-completeness-v1, consolidated-kpi-staleness-v1, consolidated-index-third-recurrence-v1), which all tested whether the consolidated INDEX reflects what's on disk. This never reads the index; it tests whether each on-disk receipt reflects itself.",
+  "recommended_repair": "A future R-prefixed repair item should supersede eis-reproducibility-discrimination-power-v1's receipt with a corrected 'meaning' sentence (e.g. 'does NOT separate' in place of 'DOES separate'), per the supersede-never-rewrite protocol, and log the correction in RETRACTION-INDEX.md. This audit intentionally does not perform that repair itself (ROTATION mode, no R-/V- campaign item bound to this fire).",
+  "schema": "amphora.public-corrosion-benchmark.eis-reproducibility-self-consistency.v1",
+  "scientific_success_asserted": false,
+  "totals": {
+    "n_findings_total": 1,
+    "n_receipts_scanned": 11,
+    "n_receipts_with_findings": 1
+  },
+  "verdict": "H0_REFUTED"
+}

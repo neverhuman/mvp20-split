@@ -1,0 +1,148 @@
+{
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "claim_under_attack": "amphora-process-qc-twin/evidence/audit/mr-memory-detector-arl-degradation-v1/mr-memory-detector-arl-degradation-receipt.v1.dsse.json (folded into evidence/phase0/kpis/arl-characterization-consolidated-kpi.v2.json and restated in docs/mission.md's 'ARL characterization KPI' section), field estimated_parameter_memory_detectors_MR_d2.sigma_estimator, asserts VERBATIM: 'MRbar/d2(2) -- the estimator the Individuals chart actually defaults to (operating estimator, not the S/c4 upper bound)'; the twin field estimated_parameter_memory_detectors_S_c4.sigma_estimator asserts VERBATIM: 'S/c4(m) (flagged by the source receipt as an UPPER BOUND, not the operating estimator -- see MRbar/d2 cross below, now CLOSED)'. The receipt's own 'purpose' field states this attribution is exactly what it exists to test: 'Recomputes the module's guaranteed 30-batch union false-alarm table under the sigma estimator the Individuals chart actually defaults to.' This attribution -- not merely the false-alarm numbers -- is the claim under attack here.",
+  "claim_verdict": "REFUTED",
+  "closes": [
+    "Closes whether 'the estimator the Individuals chart actually defaults to' in mr-memory-detector-arl-degradation-v1 / KPI v2 is factually MRbar/d2, as asserted."
+  ],
+  "does_not_close": [
+    "Does not re-run the ARL/false-alarm Monte Carlo grid under the TRUE operating estimator (raw, uncorrected sample S over the baseline window) -- that characterization remains an open gap and is the natural next repair (would need its own MC study analogous to estparam-arl-degradation-v1/moving-range-arl-degradation-v1 but keyed to raw S, not S/c4 or MRbar/d2).",
+    "Does not assert which estimator SHOULD be used (that is a module design decision, not an audit finding); only that the deployed one differs from what was characterized and labeled 'operating'.",
+    "Does not modify, delete, or re-sign mr-memory-detector-arl-degradation-v1, arl-characterization-consolidated-kpi.v2.json, or any other prior signed receipt (supersede-never-rewrite; all remain byte-intact on disk)."
+  ],
+  "flips_scientific_readiness": false,
+  "honest_headline": "REFUTED. The signed mr-memory-detector-arl-degradation-v1 receipt (folded into the consolidated ARL-characterization KPI v2 and restated in mission.md) asserts MRbar/d2(2) is 'the estimator the Individuals chart actually defaults to (operating estimator)' and S/c4(m) is merely an 'upper bound, not the operating estimator'. Direct inspection of the live, checked amphora-formulation-capabilities/src/lib.rs::audit_process_qc function -- cross-confirmed by the module's own bit-exact independent-recompute Phase-0 gate (which already labels the quantity 'sample stdev') and by a fresh cargo-executed probe on this exact checkout -- shows the runtime computes plain (uncorrected) sample standard deviation over the full baseline window: no moving range is ever computed. This tracks the S/c4 family (raw_S vs S/c4 diverges only -1.3% on a drifting baseline) and diverges sharply from MRbar/d2 (+246% on the same input) -- the exact opposite of the attacked receipt's classification. The consequence is real, not cosmetic: on a physically plausible drifting baseline, a genuine out-of-control shift that a correctly MRbar/d2-attributed 3-sigma limit would flag is missed by all three live detectors (Shewhart, EWMA, CUSUM) because the runtime's actual raw-S estimate inflates under baseline drift. No receipt on file has ever characterized ARL/false-alarm/recall degradation under the estimator the runtime actually uses (raw, uncorrected sample S); the entire consolidated ARL-characterization KPI v2 has, since its first fire, characterized an estimator (MRbar/d2) the deployed code does not implement.",
+  "human_review_performed": false,
+  "independent_python_rederivation": {
+    "c4_20": 0.986934267524653,
+    "formulas": {
+      "MRbar_over_d2": "mean(|x_i - x_{i-1}|) / 1.128  -- the estimator the attacked receipt names as operating",
+      "S_over_c4": "raw_S / c4(n), c4(n)=sqrt(2/(n-1))*Gamma(n/2)/Gamma((n-1)/2)  -- unbiased-for-normal estimator",
+      "raw_S": "sqrt(sum((x_i - mean)^2) / (n-1))  -- identical to lib.rs::audit_process_qc"
+    },
+    "interpretation": "On the module's own benign closed-form sawtooth fixture, raw S, S/c4, and MRbar/d2 happen to sit within ~11% of one another -- close enough that the misattribution was easy to miss and never previously exercised. Under a physically realistic drifting baseline (a plausible pilot-onboarding warm-up transient, not a contrived edge case), raw S diverges from MRbar/d2 by 246%, while diverging from S/c4 by only -1.3% -- i.e. the runtime's ACTUAL estimator tracks the S/c4 family (as expected, since raw S and S/c4 are both full-sample-variance-based, differing only by a deterministic bias correction) and does NOT track MRbar/d2 at all. This is the opposite of the attacked receipt's classification, which treats S/c4 as the sidelined 'upper bound' and MRbar/d2 as the real operating estimator.",
+    "scenario_a_sawtooth_module_own_fixture_pattern": {
+      "MRbar": 0.14736842105263367,
+      "MRbar_over_d2": 0.1306457633445334,
+      "S_over_c4": 0.14701612335937858,
+      "mean": 100.0,
+      "raw_S": 0.14509525002200233,
+      "raw_S_vs_MRbar_d2_relative_diff_pct": 11.060049945411057,
+      "runtime_baseline_sigma_matches_raw_S": true,
+      "values": [
+        99.8,
+        99.9,
+        100.0,
+        100.1,
+        100.2,
+        99.8,
+        99.9,
+        100.0,
+        100.1,
+        100.2,
+        99.8,
+        99.9,
+        100.0,
+        100.1,
+        100.2,
+        99.8,
+        99.9,
+        100.0,
+        100.1,
+        100.2
+      ]
+    },
+    "scenario_b_drift_warmup_physically_realistic": {
+      "MRbar": 0.21939058171745268,
+      "MRbar_over_d2": 0.19449519655802544,
+      "S_over_c4": 0.6821027811036198,
+      "description": "Linear ramp of total range 2.0 across the 20 baseline observations (e.g. a cure-oven or dispense-head warm-up during pilot onboarding) with the same local wiggle superimposed as scenario A. Finite, uniquely and strictly sequenced, non-empty batch ids: passes every existing fail-closed gate in audit_process_qc (time-ordering, contamination, missingness).",
+      "mean": 100.0,
+      "raw_S": 0.6731906086450297,
+      "raw_S_vs_MRbar_d2_relative_diff_pct": 246.12197142061083,
+      "raw_S_vs_S_over_c4_relative_diff_pct": -1.3065732475347052,
+      "runtime_baseline_sigma_matches_raw_S": true,
+      "values": [
+        98.8,
+        99.005263,
+        99.210526,
+        99.415789,
+        99.621053,
+        99.326316,
+        99.531579,
+        99.736842,
+        99.942105,
+        100.147368,
+        99.852632,
+        100.057895,
+        100.263158,
+        100.468421,
+        100.673684,
+        100.378947,
+        100.584211,
+        100.789474,
+        100.994737,
+        101.2
+      ]
+    }
+  },
+  "live_runtime_probe": {
+    "command": "cargo test --workspace --locked --test qc_sigma_estimator_attribution_probe -- --nocapture",
+    "harness": "amphora-formulation-capabilities/tests/qc_sigma_estimator_attribution_probe.rs",
+    "harness_sha256": "0c4ae607a02319b4da3e6b4b4281776ad2686c2ad942c6e3c13afd1a39416d85",
+    "note": "New probe-only test file (no assertions; data capture only). Not a KPI gate; does not alter or supersede process_qc_twin_phase0_kpi.rs or any signed KPI.",
+    "scenario_a_baseline_sigma_runtime": 0.14509525002200233,
+    "scenario_b_alerts_on_designed_shift": {
+      "cusum": [],
+      "ewma": [],
+      "shewhart": []
+    },
+    "scenario_b_baseline_sigma_runtime": 0.6731906086450297,
+    "stdout_line": "PROBE_JSON:{\"scenario_a_sawtooth\":{\"baseline_mean\":100.0,\"baseline_sigma\":0.14509525002200233,\"baseline_sigma_bits\":4594395627601993973},\"scenario_b_drift_warmup\":{\"baseline_mean\":99.99999999999999,\"baseline_sigma\":0.6731906086450297,\"baseline_sigma_bits\":4604238781493762562,\"cusum_alerts\":[],\"designed_shift_value\":100.777981,\"ewma_alerts\":[],\"shewhart_alerts\":[]}}",
+    "test_result_line": "test probe_sigma_estimator_attribution ... ok"
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-process-qc-twin",
+  "operational_consequence_demonstrated_live": {
+    "conclusion": "A shift that a correctly-attributed MRbar/d2-based limit would catch is missed by all three detectors (Shewhart, EWMA, CUSUM) in the live, checked runtime under a physically plausible drifting baseline, because the runtime's real estimator (raw sample S) inflates under baseline drift in a way MRbar/d2 does not. This is a directly demonstrated, real (cargo-executed, not simulated) consequence of the misattribution, not merely a labeling nitpick.",
+    "detected_by_actual_runtime": false,
+    "mrbar_d2_based_ucl_scenario_b": 100.58348558967407,
+    "raw_s_based_ucl_scenario_b_actual_runtime": 102.01957182593509,
+    "runtime_cusum_alerts_on_designed_shift": [],
+    "runtime_ewma_alerts_on_designed_shift": [],
+    "runtime_shewhart_alerts_on_designed_shift": [],
+    "setup": "Scenario B baseline (drift-warmup) plus one monitoring observation at 100.777981, designed offline as mean_B + 4*MRbar/d2(2)_B -- a genuine out-of-control condition that a correctly MRbar/d2-based 3-sigma Shewhart limit WOULD flag (4 sigma_mr > 3 sigma_mr limit).",
+    "would_flag_under_claimed_operating_estimator": true
+  },
+  "organizational_independence_asserted": false,
+  "promotes_authority": false,
+  "provenance": {
+    "attacked_kpi_v2_sha256": "e4edd98172870a8d3b1c588a018343934498a5a55e7bd111ff85114bdfaaedd0",
+    "attacked_receipt_sha256": "62e97a5293029d37458c892f92dbc34be0178e8fae8a3c35c89eeadbca1d1bbe",
+    "benchmark_lock_sha256": "37d5cb67c2aa7c566aaa7689bc81b1dad9f50d78c3bc9505bc0c3ed73b451a83",
+    "lib_rs_sha256_as_read": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
+    "phase0_kpi_test_sha256": "80fd0b35688d339abfdaacf5b9f26393aebe7e01aea9c7c0fc20d655c4d04287",
+    "probe_test_sha256": "0c4ae607a02319b4da3e6b4b4281776ad2686c2ad942c6e3c13afd1a39416d85"
+  },
+  "refutation_criterion_applied": "The attacked field is a factual claim about which sigma estimator the live, checked amphora-process-qc-twin implementation uses: 'the estimator the Individuals chart actually defaults to'. This is refuted if direct inspection of the live, checked source (amphora-formulation-capabilities/src/lib.rs::audit_process_qc, the exact function mission.md cites as 'the live checked implementation') shows the runtime computes a different estimator, AND real (not simulated) execution of that function confirms the mismatch has operational consequence (a genuine out-of-control shift, flaggable under the claimed estimator's control limits, is missed under the runtime's actual limits). Both occurred.",
+  "schema": "amphora.process-qc-twin.sigma-estimator-attribution-parity-receipt.v1",
+  "source_ground_truth": {
+    "formula_classification": "Bessel-corrected (n-1) sample variance of the full baseline window, square-rooted. This is the plain (uncorrected-by-c4) sample standard deviation S. It is computed directly from squared deviations about the baseline mean; the function contains no consecutive-difference (moving-range) computation anywhere, and no division by a c4(n) or d2(2) unbiasing constant.",
+    "hash_note": "The two hashes above differ. This audit does not adjudicate why (concurrent unrelated edits by other agents are permitted under this fire's concurrency model); it is flagged here for transparency and provenance only, and is NOT part of this receipt's claim_verdict. The sigma formula quoted below was read from the file at the sha256 this audit actually captured, and cross-confirmed live via `cargo test` against the same checkout, so this finding is grounded in the exact bytes that were executed.",
+    "independent_confirmation_the_module_already_blessed": {
+      "cross_check": "This is the module's own Phase-0 KPI gate's independent recompute, asserted bit-exact (`.to_bits()` equality) against the runtime's `baseline_mean` / `baseline_sigma` (shewhart_arith_ok gate). Its own doc comment already labels the quantity 'sample stdev', not MRbar/d2 -- the module's own blessed ground truth for 'what the runtime does' independently corroborates this audit's source reading, using a mechanism (bit-exact to_bits() equality) the module's own governance already treats as authoritative.",
+      "doc_comment_verbatim": "Independent Rust recompute of baseline mean and sample stdev using the same",
+      "file_sha256": "80fd0b35688d339abfdaacf5b9f26393aebe7e01aea9c7c0fc20d655c4d04287",
+      "function": "independent_mean_sigma",
+      "location": "amphora-formulation-capabilities/tests/process_qc_twin_phase0_kpi.rs"
+    },
+    "lib_rs_sha256_as_read_this_audit": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
+    "live_implementation_function": "amphora-formulation-capabilities/src/lib.rs::audit_process_qc",
+    "mission_md_cited_lib_rs_sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+    "sigma_formula_extracted_lines_113_121": "let mean = series.baseline.iter().map(|o| o.value).sum::<f64>() / series.baseline.len() as f64;\nlet var = series.baseline.iter().map(|o| (o.value - mean).powi(2)).sum::<f64>() / (series.baseline.len() - 1) as f64;\nlet sigma = var.sqrt();"
+  },
+  "study_id": "sigma-estimator-attribution-parity-v1"
+}

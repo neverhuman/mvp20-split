@@ -1,0 +1,258 @@
+{
+  "arithmetic_identities_enumerated_count": 15,
+  "arithmetic_identities_per_formulation": 1,
+  "conclusion": "The R-A05 defect class (mass-fraction-weighted averaging of a volume-basis percentage) CANNOT manifest in this module's KAT: no formulation record carries a volume-basis percentage, density, or volume field of any kind -- every quantity is a raw mass_g value and the sole identity is pure addition, not a weighted average. 0/15 formulations flagged; this is a scope-mismatch negative result (attack ported and run to completion, found no applicable target), not evidence the identity survived a genuine test of THAT defect class.",
+  "fixture_path": "amphora-formulation-arithmetic/reference/phase0-formulation-arithmetic-known-answer.v1.json",
+  "fixture_sha256": "31c9b84c9c8c847ad72cc133d929e795bdc36e02c6a638676eb41ee87f9fd202",
+  "identities": [
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "180",
+          "part_b_g": "12",
+          "total_g": "192"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-primer-dgeba-teta-standard",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "190",
+          "part_b_g": "11",
+          "total_g": "201"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-primer-dgeba-deta-industrial",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "100",
+          "part_b_g": "15",
+          "total_g": "115"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-adhesive-dgeba-tepa-neat",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "126",
+          "part_b_g": "30",
+          "total_g": "156"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-primer-dgeba-ipda-4to1",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "207",
+          "part_b_g": "30",
+          "total_g": "237"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-topcoat-dgeba-pacm-marine",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "130",
+          "part_b_g": "15",
+          "total_g": "145"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-primer-dgeba-dach-clearcoat",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "190",
+          "part_b_g": "22",
+          "total_g": "212"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-industrial-dgeba-mxda-tank-lining",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "100",
+          "part_b_g": "14",
+          "total_g": "114"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-composite-dgeba-mpda-aerospace",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "120",
+          "part_b_g": "27",
+          "total_g": "147"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-laminate-dgeba-mda-high-temp",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "175",
+          "part_b_g": "50",
+          "total_g": "225"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-primer-dgeba-amidoamine-huntsman",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "160",
+          "part_b_g": "53",
+          "total_g": "213"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-topcoat-dgeba-amidoamine-momentive",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "125",
+          "part_b_g": "36",
+          "total_g": "161"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-primer-dgeba-mannich-fast-cure",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "353/2",
+          "part_b_g": "12",
+          "total_g": "377/2"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-white-topcoat-dgeba-teta-below-cpvc",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "251",
+          "part_b_g": "11",
+          "total_g": "262"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-red-primer-dgeba-deta-highly-pigmented",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    },
+    {
+      "both_ways_recompute": {
+        "mass_basis_sum": {
+          "part_a_g": "100",
+          "part_b_g": "24",
+          "total_g": "124"
+        },
+        "volume_basis_markers_present": [],
+        "volume_basis_reinterpretation_applicable": false
+      },
+      "formulation_id": "epoxy-neat-dgeba-ipda-clear-adhesive",
+      "identity": "mass_balance_identity: sum(part_A.mass_g) + sum(part_B.mass_g) == total_g",
+      "invalid_basis_used": false,
+      "mass_basis_identity_holds_exact_rational": true,
+      "published_basis": "mass_g_per_batch (declared arithmetic_scope=MASS_ONLY in mission.md)"
+    }
+  ],
+  "invalid_basis_flagged_count": 0,
+  "mass_basis_identity_exact_pass_count": 15,
+  "mass_basis_identity_exact_pass_rate": 1.0,
+  "module": "amphora-formulation-arithmetic",
+  "note_on_identity_count": "Each of the 15 formulations asserts exactly ONE arithmetic identity (mass_balance_identity: part_A + part_B == total_g); there is no second identity type (e.g. no volume-solids %, no phr, no equivalent-ratio identity) in this KAT fixture -- confirmed by exhaustive key-scan across every formulation and ingredient record.",
+  "ported_defect_class": "mass-fraction-weighted averaging of volume-basis percentages, invalid whenever component densities differ",
+  "ported_from": "amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/work/r_a05_repair.py",
+  "schema": "amphora.formulation-arithmetic.t05-mass-volume-basis-audit.v1",
+  "volume_basis_markers_found_anywhere_in_fixture": []
+}

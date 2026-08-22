@@ -1,0 +1,52 @@
+{
+  "counts": {
+    "MODULE-HARNESS": 17,
+    "RUNTIME": 10,
+    "total": 27
+  },
+  "guard_log_line_count": 1,
+  "guard_log_lines": [
+    "2026-08-04T06:46:57+00:00 RESTORED_SCHEMA_FLIP amphora-solvency-score/evidence/phase0/benchmark/result.v1.json"
+  ],
+  "shapes": {
+    "amphora-candidate-contract/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-cro-protocol-packager/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-cure-potlife-gate/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-envelope-gates/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-evidence-intake-validator/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-formulation-arithmetic/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-formulation-universe/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-ingredient-library/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-ip-fto-guard/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-known-answer-benchmarks/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-model-card-authority/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-molecule-design-gate/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-molecule-generator/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-molecule-novelty/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-molecule-property/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-molecule-role-ranker/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-optimizer-orchestrator/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-process-qc-twin/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-public-corrosion-benchmark/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-report-packager/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-run-provenance/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-solvency-score/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-source-ledger/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-sourceability-ehs/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS",
+    "amphora-tolerance-robustness/evidence/phase0/benchmark/result.v1.json": "RUNTIME",
+    "amphora-viscosity-score/evidence/phase0/benchmark/result.v1.json": "MODULE-HARNESS"
+  },
+  "unbound_count": 9,
+  "unbound_modules": [
+    "amphora-cro-protocol-packager",
+    "amphora-evidence-intake-validator",
+    "amphora-known-answer-benchmarks",
+    "amphora-molecule-design-gate",
+    "amphora-molecule-property",
+    "amphora-optimizer-orchestrator",
+    "amphora-redteam-audit",
+    "amphora-report-packager",
+    "amphora-source-ledger"
+  ]
+}

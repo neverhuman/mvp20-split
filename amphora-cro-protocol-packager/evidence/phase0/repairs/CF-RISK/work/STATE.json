@@ -1,0 +1,21 @@
+{
+  "campaign_item_id": "CF-RISK",
+  "deliverable_shas_at_this_fire": {
+    "README.md": "7eb3d7eb838d94c9434733bd4b4bf255284f1ff2dc6134e2fbcaba2356c91795",
+    "docs/capability-profile.json": "fedd96f1808d64630940788e88972053f324135b09d11c60d9467084ba7885aa",
+    "docs/mission.md": "2aaab0da35b0e6a8f09bde6be119cd5630128cebabe6d52853275661b136786a",
+    "docs/moonshot.md": "56b768ed8b0bba5de3c37c357d7439712753379b3b90d4609816cb8ff1d46443",
+    "reference/mvp20/out/capture_template.json": "a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881",
+    "reference/mvp20/out/cro_protocol.md": "84d6e2803f1627159b2c9a8353dee095a31ca0b99a6fdd196316b89ad858038a",
+    "reference/mvp20/out/falsification_protocol.json": "79040c136af5ecfad26d81d64790416a79bd1c1ce1eb2cb9f1912b2b0a4e8658",
+    "reference/mvp20/out/power_analysis.json": "36dfd0f7ec383c7cc31c77a3fad54d10bcba1d99f156575065d27814d7eaf9eb"
+  },
+  "done_receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-RISK/done/cf-risk-known-failure-modes-repair-receipt.v2.dsse.json",
+  "final_fire_for_item": true,
+  "harness_script_sha256": "252f3566092b024b2299d670423ad37cd3b831f035c1af12b4fa52522994c673",
+  "last_fire_sequence": 2,
+  "last_verdict": "CLAIM_SURVIVED",
+  "max_fires": 2,
+  "missing_or_unqualified_risks": [],
+  "next_fire_should": "none -- done_criterion met, item closed"
+}

@@ -1,0 +1,260 @@
+{
+  "actionable_answer": {
+    "binding_constraint_summary": "All 5 candidates carry GHS_H317 (skin sensitiser), structurally unrelaxable. IPDA is blocked SOLELY by H317 -- it already clears both soft gates (AD=0.3421>=0.30, chi_water=2.868>=2.0), so it is the single candidate one hazard-clean substitute away from feasibility. DDS/DETA/TETA/m-XDA additionally fail the AD-Tanimoto gate by 0.0105-0.0500 Tanimoto units (DDS also carries H351).",
+    "cost_to_move_by_candidate": {
+      "DDS:AD_TANIMOTO_MIN": 0.05,
+      "DETA:AD_TANIMOTO_MIN": 0.036842,
+      "TETA:AD_TANIMOTO_MIN": 0.010526,
+      "m-XDA:AD_TANIMOTO_MIN": 0.05
+    },
+    "not_a_recommendation": "No candidate is recommended. This is a diagnosis of which gate binds and what it would cost to move the MOVABLE gates -- the hazard gate is not among the movable ones."
+  },
+  "campaign_item_id": "X-SOLVER-P3",
+  "claim_under_attack": "An EMPTY_FEASIBLE_SET can be turned into an actionable answer without weakening a gate.",
+  "constraint_registry": {
+    "AD_TANIMOTO_MIN": {
+      "authority_class_required": "FORMULATION_TECHNICAL_LEAD_SIGNOFF",
+      "class": "SOFT_PREFERENCE",
+      "relaxable": true,
+      "source_kpi": "coating_candidate_design_card_kpi (amphora-molecule-property)"
+    },
+    "CHI_WATER_MIN": {
+      "authority_class_required": "FORMULATION_TECHNICAL_LEAD_SIGNOFF",
+      "class": "SOFT_PREFERENCE",
+      "relaxable": true,
+      "source_kpi": "coating_candidate_design_card_kpi (amphora-molecule-property)"
+    },
+    "GHS_H317_SKIN_SENSITISER": {
+      "authority_class_required": "STRUCTURALLY_FORBIDDEN_NO_AUTHORITY_SUFFICES",
+      "class": "HAZARD",
+      "relaxable": false,
+      "source_kpi": "ghs_clp_hazard_prescreen_kpi (amphora-sourceability-ehs)"
+    },
+    "GHS_H351_SUSPECTED_CARCINOGEN": {
+      "authority_class_required": "STRUCTURALLY_FORBIDDEN_NO_AUTHORITY_SUFFICES",
+      "class": "HAZARD",
+      "relaxable": false,
+      "source_kpi": "ghs_clp_hazard_prescreen_kpi (amphora-sourceability-ehs)"
+    },
+    "RIGHTS_USBR_REVIEW_REQUIRED": {
+      "authority_class_required": "STRUCTURALLY_FORBIDDEN_NO_AUTHORITY_SUFFICES",
+      "class": "RIGHTS",
+      "relaxable": false,
+      "source_kpi": "synthetic -- no live P3 candidate is rights-blocked this fire; registered so the RIGHTS class is structurally tested even though the current P3 blocking set never exercises it live"
+    }
+  },
+  "engine_location": "amphora-redteam-audit/evidence/phase0/repairs/X-SOLVER-P3/work/relaxation_registry.py -- deliberately NOT added to amphora-solver-lab's own crate, so solver-lab's authority-ceiling-unchanged claim is provably true (the crate is byte-for-byte untouched) rather than merely asserted.",
+  "final_feasible_set_after_max_soft_relaxation": [],
+  "gating_item": {
+    "done_receipt": "amphora-sourceability-ehs/evidence/phase0/repairs/X-EHS-CID/done/x-ehs-cid-done-receipt.v1.dsse.json",
+    "gate_status": "SATISFIED -- done receipt present, claim_verdict CLAIM_SURVIVED, P3 blocking set no longer PROVISIONAL (rn01_correction_status.verdict_robustness in the live P3 diagnostic now reads UNCONDITIONAL)",
+    "id": "X-EHS-CID"
+  },
+  "hazard_attempts_on_real_candidates": [
+    {
+      "attempted_action": "propose_relaxation (real registry, unmodified)",
+      "candidate": "DDS",
+      "constraint": "GHS_H317_SKIN_SENSITISER",
+      "outcome": "REJECTED_FAIL_CLOSED"
+    },
+    {
+      "attempted_action": "propose_relaxation (real registry, unmodified)",
+      "candidate": "DDS",
+      "constraint": "GHS_H351_SUSPECTED_CARCINOGEN",
+      "outcome": "REJECTED_FAIL_CLOSED"
+    },
+    {
+      "attempted_action": "propose_relaxation (real registry, unmodified)",
+      "candidate": "DETA",
+      "constraint": "GHS_H317_SKIN_SENSITISER",
+      "outcome": "REJECTED_FAIL_CLOSED"
+    },
+    {
+      "attempted_action": "propose_relaxation (real registry, unmodified)",
+      "candidate": "IPDA",
+      "constraint": "GHS_H317_SKIN_SENSITISER",
+      "outcome": "REJECTED_FAIL_CLOSED"
+    },
+    {
+      "attempted_action": "propose_relaxation (real registry, unmodified)",
+      "candidate": "TETA",
+      "constraint": "GHS_H317_SKIN_SENSITISER",
+      "outcome": "REJECTED_FAIL_CLOSED"
+    },
+    {
+      "attempted_action": "propose_relaxation (real registry, unmodified)",
+      "candidate": "m-XDA",
+      "constraint": "GHS_H317_SKIN_SENSITISER",
+      "outcome": "REJECTED_FAIL_CLOSED"
+    }
+  ],
+  "hazard_rights_all_failed_closed": true,
+  "positive_control": {
+    "detected": true,
+    "evidence": "propose_relaxation('GHS_H317_SKIN_SENSITISER', 'IPDA', ..., registry=mutated_registry) returned a relaxation proposal instead of raising RelaxationForbidden: {\"applied\": false, \"authority_class_required\": \"FORMULATION_TECHNICAL_LEAD_SIGNOFF\", \"candidate\": \"IPDA\", \"constraint\": \"GHS_H317_SKIN_SENSITISER\", \"constraint_class\": \"SOFT_PREFERENCE\", \"cost_to_move\": 1.0, \"cost_to_move_units\": \"threshold_minus_actual (constraint-native units)\", \"decided_by\": null, \"decision\": null, \"pre_relaxation_infeasibility_proof\": \"IPDA: carries GHS_H317_SKIN_SENSITISER (real fact; placeholder threshold/actual since H317 has no numeric threshold in reality -- this attempt tests the CLASS gate only)\", \"proposal_marker\": \"AUDIT_ONLY_PROPOSAL_NOT_DECISION\", \"source_kpi\": \"ghs_clp_hazard_prescreen_kpi (amphora-sourceability-ehs)\"}",
+    "how_planted": "copy.deepcopy(CONSTRAINT_REGISTRY) then mutated_registry['GHS_H317_SKIN_SENSITISER']['class'/'relaxable'/'authority_class_required'] overwritten in-memory; the real module-level CONSTRAINT_REGISTRY object is never touched",
+    "planted_defect": "GHS_H317_SKIN_SENSITISER reclassified from class=HAZARD/relaxable=False to class=SOFT_PREFERENCE/relaxable=True"
+  },
+  "relaxation_proposals_on_real_blocking_set": [
+    {
+      "applied": false,
+      "authority_class_required": "FORMULATION_TECHNICAL_LEAD_SIGNOFF",
+      "candidate": "DDS",
+      "constraint": "AD_TANIMOTO_MIN",
+      "constraint_class": "SOFT_PREFERENCE",
+      "cost_to_move": 0.05,
+      "cost_to_move_units": "threshold_minus_actual (constraint-native units)",
+      "decided_by": null,
+      "decision": null,
+      "pre_relaxation_infeasibility_proof": "DDS: AD-Tanimoto=0.2500 < AD_MIN=0.3 (source: coating_candidate_design_card_kpi via P3 diagnostic sha256=82c2d174e5b7120a8c4ec138b5855cf0700b6fde91c266eed0d17a4bdebac7ca)",
+      "proposal_marker": "AUDIT_ONLY_PROPOSAL_NOT_DECISION",
+      "source_kpi": "coating_candidate_design_card_kpi (amphora-molecule-property)"
+    },
+    {
+      "applied": false,
+      "authority_class_required": "FORMULATION_TECHNICAL_LEAD_SIGNOFF",
+      "candidate": "DETA",
+      "constraint": "AD_TANIMOTO_MIN",
+      "constraint_class": "SOFT_PREFERENCE",
+      "cost_to_move": 0.036842,
+      "cost_to_move_units": "threshold_minus_actual (constraint-native units)",
+      "decided_by": null,
+      "decision": null,
+      "pre_relaxation_infeasibility_proof": "DETA: AD-Tanimoto=0.2632 < AD_MIN=0.3 (source: coating_candidate_design_card_kpi via P3 diagnostic sha256=82c2d174e5b7120a8c4ec138b5855cf0700b6fde91c266eed0d17a4bdebac7ca)",
+      "proposal_marker": "AUDIT_ONLY_PROPOSAL_NOT_DECISION",
+      "source_kpi": "coating_candidate_design_card_kpi (amphora-molecule-property)"
+    },
+    {
+      "applied": false,
+      "authority_class_required": "FORMULATION_TECHNICAL_LEAD_SIGNOFF",
+      "candidate": "TETA",
+      "constraint": "AD_TANIMOTO_MIN",
+      "constraint_class": "SOFT_PREFERENCE",
+      "cost_to_move": 0.010526,
+      "cost_to_move_units": "threshold_minus_actual (constraint-native units)",
+      "decided_by": null,
+      "decision": null,
+      "pre_relaxation_infeasibility_proof": "TETA: AD-Tanimoto=0.2895 < AD_MIN=0.3 (source: coating_candidate_design_card_kpi via P3 diagnostic sha256=82c2d174e5b7120a8c4ec138b5855cf0700b6fde91c266eed0d17a4bdebac7ca)",
+      "proposal_marker": "AUDIT_ONLY_PROPOSAL_NOT_DECISION",
+      "source_kpi": "coating_candidate_design_card_kpi (amphora-molecule-property)"
+    },
+    {
+      "applied": false,
+      "authority_class_required": "FORMULATION_TECHNICAL_LEAD_SIGNOFF",
+      "candidate": "m-XDA",
+      "constraint": "AD_TANIMOTO_MIN",
+      "constraint_class": "SOFT_PREFERENCE",
+      "cost_to_move": 0.05,
+      "cost_to_move_units": "threshold_minus_actual (constraint-native units)",
+      "decided_by": null,
+      "decision": null,
+      "pre_relaxation_infeasibility_proof": "m-XDA: AD-Tanimoto=0.2500 < AD_MIN=0.3 (source: coating_candidate_design_card_kpi via P3 diagnostic sha256=82c2d174e5b7120a8c4ec138b5855cf0700b6fde91c266eed0d17a4bdebac7ca)",
+      "proposal_marker": "AUDIT_ONLY_PROPOSAL_NOT_DECISION",
+      "source_kpi": "coating_candidate_design_card_kpi (amphora-molecule-property)"
+    }
+  ],
+  "residual_after_max_soft_relaxation": [
+    {
+      "candidate": "DDS",
+      "residual_hazard_blockers_after_max_soft_relaxation": [
+        "GHS_H317_SKIN_SENSITISER",
+        "GHS_H351_SUSPECTED_CARCINOGEN"
+      ],
+      "would_be_feasible_after_max_soft_relaxation": false
+    },
+    {
+      "candidate": "DETA",
+      "residual_hazard_blockers_after_max_soft_relaxation": [
+        "GHS_H317_SKIN_SENSITISER"
+      ],
+      "would_be_feasible_after_max_soft_relaxation": false
+    },
+    {
+      "candidate": "IPDA",
+      "residual_hazard_blockers_after_max_soft_relaxation": [
+        "GHS_H317_SKIN_SENSITISER"
+      ],
+      "would_be_feasible_after_max_soft_relaxation": false
+    },
+    {
+      "candidate": "TETA",
+      "residual_hazard_blockers_after_max_soft_relaxation": [
+        "GHS_H317_SKIN_SENSITISER"
+      ],
+      "would_be_feasible_after_max_soft_relaxation": false
+    },
+    {
+      "candidate": "m-XDA",
+      "residual_hazard_blockers_after_max_soft_relaxation": [
+        "GHS_H317_SKIN_SENSITISER"
+      ],
+      "would_be_feasible_after_max_soft_relaxation": false
+    }
+  ],
+  "run_date": "2026-08-14",
+  "schema": "amphora.redteam-audit.x-solver-p3-relaxation-audit-trail.diagnostic.v1",
+  "solver_lab_authority_ceiling": {
+    "after": {
+      "authority": "AUDIT_ONLY",
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "claim_locks": {
+        "flips_scientific_readiness": false,
+        "human_review_performed": false,
+        "modifies_manifest": false,
+        "no_live_model_calls": true,
+        "no_new_science": true,
+        "no_ranking_authority_granted": true,
+        "no_solver_authority_granted": true,
+        "oracles_read_only_signed_tree_artifacts": true,
+        "pre_phase_0_research_only": true,
+        "promotes_authority": false
+      }
+    },
+    "before": {
+      "authority": "AUDIT_ONLY",
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "claim_locks": {
+        "flips_scientific_readiness": false,
+        "human_review_performed": false,
+        "modifies_manifest": false,
+        "no_live_model_calls": true,
+        "no_new_science": true,
+        "no_ranking_authority_granted": true,
+        "no_solver_authority_granted": true,
+        "oracles_read_only_signed_tree_artifacts": true,
+        "pre_phase_0_research_only": true,
+        "promotes_authority": false
+      }
+    },
+    "unchanged_because": "amphora-solver-lab's crate source was not written to by this fire; the relaxation-proposal engine lives entirely under amphora-redteam-audit and only READS solver-lab's signed diagnostic output via subprocess invocation of its existing pinned binary. File-level git-diff proof is recorded in the signed receipt, generated at sign time."
+  },
+  "solver_lab_p3_ground_truth": {
+    "invocation": "cargo run -q -p amphora-solver-lab --bin solver_lab_demo -- p3 <path> (x2, read-only, source unmodified)",
+    "n_candidates": 5,
+    "n_feasible": 0,
+    "pareto_status": "BLOCKED",
+    "rn01_correction_status_verdict_robustness": "The EMPTY_FEASIBLE_SET verdict is now UNCONDITIONAL: every one of the 5 candidates carries H317 in the CAS-correct superseding hazard cards (IPDA's H317 confirmed at correct CID 17857, removing the earlier PROVISIONAL marking), DDS additionally carries H351, and DDS/DETA/TETA/m-XDA also fail the AD-Tanimoto >= 0.30 gate on the unaffected design-card KPI.",
+    "sha256": "82c2d174e5b7120a8c4ec138b5855cf0700b6fde91c266eed0d17a4bdebac7ca",
+    "two_replay_byte_identical": true,
+    "verdict": "EMPTY_FEASIBLE_SET"
+  },
+  "structural_failclosed_tests": [
+    {
+      "class": "HAZARD",
+      "constraint": "GHS_H317_SKIN_SENSITISER",
+      "result": "RAISED_RELAXATIONFORBIDDEN_AS_REQUIRED"
+    },
+    {
+      "class": "HAZARD",
+      "constraint": "GHS_H351_SUSPECTED_CARCINOGEN",
+      "result": "RAISED_RELAXATIONFORBIDDEN_AS_REQUIRED"
+    },
+    {
+      "class": "RIGHTS",
+      "constraint": "RIGHTS_USBR_REVIEW_REQUIRED",
+      "result": "RAISED_RELAXATIONFORBIDDEN_AS_REQUIRED"
+    }
+  ],
+  "verdict": "CLAIM_SURVIVED",
+  "verdict_reasoning": "The refuting observation that would have flipped this to CLAIM_REFUTED: any structural-fail-closed test on a HAZARD/RIGHTS constraint NOT raising RelaxationForbidden against the REAL (unmutated) registry, or the positive control failing to detect the planted defect (propose_relaxation succeeding for a hazard constraint on the real registry, or the mutated-registry attempt ALSO raising RelaxationForbidden, which would mean the check has no discriminating power at all). Neither occurred: 3/3 structural tests raised as required against the real registry, all 6 hazard attempts on real infeasible candidates were rejected, and the positive control's mutated registry DID produce a relaxation proposal for the planted-defect constraint, proving the check can tell a correctly-configured registry from a broken one."
+}

@@ -1,0 +1,52 @@
+{
+ "schema": "mvp20.redteam_self_audit.v1",
+ "title": "Red-Team Self-Audit",
+ "generated_utc": "2026-07-03T00:00:00Z",
+ "guardrails": [
+  {
+   "attack": "Known actuals were used to tune or rank the unknown candidates.",
+   "answer": "Known actuals are post-hoc checks only and are not used to generate unknown candidate cards or assign feasibility bands.",
+   "artifact_paths": [
+    "out/known_reference_cards.json",
+    "out/chemistry_cards.json"
+   ]
+  },
+  {
+   "attack": "Known-control checks are being sold as corrosion or product performance.",
+   "answer": "Known-Control Recovery Check is pass/fail validation behavior; it is not a candidate evidence rank.",
+   "artifact_paths": [
+    "out/known_reference_cards.json"
+   ]
+  },
+  {
+   "attack": "Partial-TDS anchors get the same credit as full-BOM controls.",
+   "answer": "Partial-TDS anchors are visibly marked KNOWN PARTIAL-TDS and cannot receive full-BOM recovery credit.",
+   "artifact_paths": [
+    "out/known_reference_cards.json"
+   ]
+  },
+  {
+   "attack": "Unknown compounds are invented molecules.",
+   "answer": "Unknown candidate cards are formulation chemistry concepts made from real sourced raw materials, with source IDs and grade classes rather than invented CAS numbers.",
+   "artifact_paths": [
+    "out/chemistry_cards.json"
+   ]
+  },
+  {
+   "attack": "Cure and corrosion ranking are quietly restored through card prose.",
+   "answer": "Cure and corrosion remain failed/no-authority or directional until CRO data closes the registered bars.",
+   "artifact_paths": [
+    "out/validation_cards.json",
+    "out/capture_template.json"
+   ]
+  }
+ ],
+ "banned_claim_guards_preserved": [
+  "no proven corrosion",
+  "no validated corrosion ranking",
+  "no QPL/NAVSEA approval",
+  "no procurement approval",
+  "no FTO performed",
+  "no wet-lab rivalry"
+ ]
+}

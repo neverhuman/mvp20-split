@@ -1,0 +1,784 @@
+{
+  "schema": "mvp20.cro_capture.v2",
+  "instructions": "Build ALL THREE carried candidates per the blueprint; return every field with units, method, condition and deviations. Blank fields fail-close (ABSENT). Each measurement maps to the engine parameter it updates (see 'updates').",
+  "prediction_ledger": {
+    "M00097": {
+      "volume_solids_pct": 65.0,
+      "voc_g_per_l": 281.499,
+      "weight_lb_per_gal": 9.161,
+      "mix_ratio_by_volume": 1.0,
+      "pvc_pct": 9.326,
+      "lambda_pvc_cpvc": 0.173,
+      "stoichiometric_ratio": 0.7,
+      "pot_life_h": {
+        "tier": "CRO-GATED",
+        "class_precedent_lower_bound": 4.0
+      },
+      "corrosion": {
+        "tier": "CRO-GATED",
+        "rank_model": "demoted (card FAIL)"
+      }
+    },
+    "M00101": {
+      "volume_solids_pct": 65.0,
+      "voc_g_per_l": 281.583,
+      "weight_lb_per_gal": 9.188,
+      "mix_ratio_by_volume": 1.0,
+      "pvc_pct": 9.495,
+      "lambda_pvc_cpvc": 0.177,
+      "stoichiometric_ratio": 0.7,
+      "pot_life_h": {
+        "tier": "CRO-GATED",
+        "class_precedent_lower_bound": 4.0
+      },
+      "corrosion": {
+        "tier": "CRO-GATED",
+        "rank_model": "demoted (card FAIL)"
+      }
+    },
+    "M00109": {
+      "volume_solids_pct": 65.0,
+      "voc_g_per_l": 281.555,
+      "weight_lb_per_gal": 9.228,
+      "mix_ratio_by_volume": 1.0,
+      "pvc_pct": 9.982,
+      "lambda_pvc_cpvc": 0.187,
+      "stoichiometric_ratio": 0.7,
+      "pot_life_h": {
+        "tier": "CRO-GATED",
+        "class_precedent_lower_bound": 4.0
+      },
+      "corrosion": {
+        "tier": "CRO-GATED",
+        "rank_model": "demoted (card FAIL)"
+      }
+    }
+  },
+  "candidates": [
+    "M00097",
+    "M00101",
+    "M00109"
+  ],
+  "batch_sizes": {
+    "screen": {
+      "size": "250 g mixed",
+      "purpose": "compatibility, gel/phase split, fast solids/VOC/KU check"
+    },
+    "bench": {
+      "size": "1 kg/component",
+      "purpose": "drawdown, sprayability, pot life, adhesion/corrosion panels"
+    },
+    "kit": {
+      "size": "5 gal kit",
+      "purpose": "packaging, mix-volume, spray handling, retained samples"
+    },
+    "pilot": {
+      "size": "50 gal pilot",
+      "purpose": "process sensitivity and scale-up repeatability"
+    }
+  },
+  "panel_prep": {
+    "standard": "SSPC-SP10/NACE No.2 near-white blast",
+    "profile_mils": "2.5-3.5",
+    "soluble_salts": "record method and result before coating",
+    "substrate": "carbon steel panels with heat/lot recorded",
+    "precoat_hold_time_h": "record blast-to-coat time"
+  },
+  "environmental_controls": {
+    "ambient_temp_f": "record at prep, mix, application, cure",
+    "relative_humidity_pct": "record at prep, application, cure",
+    "substrate_temp_f": "record and maintain >=5F above dew point",
+    "dew_point_f": "record computed or measured dew point",
+    "material_temp_f": "record Part A, Part B, mixed material"
+  },
+  "application": {
+    "mix_ratio": "1:1 by volume",
+    "induction_min": "record actual induction time",
+    "application_method": "drawdown, airless spray, brush, or roller",
+    "wft_mils": "target 7-9; record each panel",
+    "dft_mils": "target 4.5-6.0; record per SSPC-PA 2 style grid",
+    "spray_setup": "tip, pressure, hose length, filter, thinner addition if any"
+  },
+  "controls": {
+    "positive_control": "Lineage-60 public MIL F160/F161 reconstruction; run only after exact ingredient lots, current SDS/TDS/CoA review, lab acceptance, and chain of custody are confirmed",
+    "negative_control": "uncoated blasted steel witness panel where method permits",
+    "reference_panel": "commercial QPL-listed Type-IV reference panel only if current product lot, SDS/TDS, QPL status, acquisition path, and chain of custody are confirmed",
+    "control_acceptance": "if controls fail or deviate materially, the corrosion arm is REVIEW/REPEAT, not a pass"
+  },
+  "randomization": {
+    "panel_id_schema": "MVP20-{track_code}-{arm_code}-{replicate:02d}-{blind_suffix}",
+    "blind_track_codes": "CRO assigns blind A/B/C/D codes after receiving batch IDs",
+    "blocking": "randomize by corrosion arm, substrate lot, panel position, and chamber/rack position",
+    "seed_return_field": "randomization_seed_and_panel_map_path"
+  },
+  "panel_counts": {
+    "minimum_panels_per_track_per_corrosion_arm": 3,
+    "default_panels_per_track_per_corrosion_arm_if_budget_allows": 6,
+    "panel_count_rule": "6 panels/track/arm is the default quote request; 3 is only the minimum floor",
+    "corrosion_arms": [
+      "b117_1000h",
+      "cyclic_d5894",
+      "eis_immersion",
+      "immersion_d870"
+    ],
+    "adhesion_panels_per_track": 5,
+    "opacity_drawdowns_per_color": 3
+  },
+  "calibration_records": {
+    "required": [
+      "Stormer viscometer",
+      "density cup/balance",
+      "DFT gauge",
+      "salt-fog chamber",
+      "cyclic chamber",
+      "EIS potentiostat",
+      "pull-off adhesion tester",
+      "gloss/opacity meter"
+    ],
+    "fields": [
+      "instrument_id",
+      "calibration_due_date",
+      "calibration_certificate_path",
+      "pre_run_check",
+      "post_run_check"
+    ]
+  },
+  "returned_file_schema": {
+    "eis_immersion": "raw .csv/.z/.xlsx export for every time point + fitted-equivalent-circuit file if used",
+    "b117_1000h": "panel photos at intake, interval checks, final; D1654 rating sheet; chamber log",
+    "cyclic_d5894": "cycle log, interval photos, final D1654/rust/blister ratings",
+    "immersion_d870": "immersion bath log, blister rating sheet, final photos",
+    "adhesion_mpa": "pull-off raw force/fixture file, failure mode photos, dolly map",
+    "opacity_d2805": "contrast-ratio drawdown readings and photos for black/yellow twins",
+    "method24": "volatile, water, density, weight-solids, volume-solids worksheets"
+  },
+  "return_schema": {
+    "method": "string ASTM/ISO/EPA/internal SOP identifier",
+    "unit": "string unit for the raw value",
+    "condition": "temperature/RH/substrate/immersion/spray condition",
+    "replicate_count": "integer n, minimum set by field",
+    "deviation_code": "one of DEV-NONE/DEV-PREP/DEV-BATCH/DEV-ENV/DEV-APP/DEV-METHOD/DEV-DATA",
+    "raw_value": "number, string, or structured list of replicate raw values",
+    "pass_fail": "PASS/FAIL/REVIEW/ABSENT",
+    "raw_file_path": "machine-readable raw export path when an instrument generates one",
+    "attachment_path": "photo, EIS file, panel image, raw instrument export, or lab notebook path"
+  },
+  "deviation_codes": {
+    "DEV-NONE": "no deviation",
+    "DEV-PREP": "surface prep/profile/salt/dew-point deviation",
+    "DEV-BATCH": "lot, charge order, mass, grind, or letdown deviation",
+    "DEV-ENV": "temperature/RH/material temperature outside target",
+    "DEV-APP": "mix, induction, spray, WFT/DFT, or pot-life application deviation",
+    "DEV-METHOD": "test method or calibration deviation",
+    "DEV-DATA": "missing raw data, photo, attachment, or replicate"
+  },
+  "early_kill_gates": [
+    {
+      "gate": "gel_or_phase_split",
+      "kill_if": "gel, seed, phase split, or irreversible incompatibility before application",
+      "target": "no gel, seed, phase split, or irreversible incompatibility before application",
+      "method": "visual check plus KU trend during induction and first 90 min",
+      "numeric_target": "0 observed gel/phase-split events",
+      "tolerance": "none allowed",
+      "stop_rule": "repeat/review if control invalid; otherwise stop or reformulate on confirmed incompatibility",
+      "return_fields": [
+        "visual_observation",
+        "ku_vs_time_3temps.raw_value",
+        "photo_attachment_path"
+      ],
+      "required_raw_returned_fields": [
+        "visual_observation",
+        "ku_vs_time_3temps.raw_value",
+        "photo_attachment_path"
+      ],
+      "fail_or_inconclusive_rule": "repeat/review if control invalid; otherwise stop or reformulate on confirmed incompatibility"
+    },
+    {
+      "gate": "pot_life_below_90_min",
+      "kill_if": "mixed material fails 90 min sprayable/KU window at 73F",
+      "target": "sprayable mixed material at 73F for >=90 min",
+      "method": "ASTM D562 KU-vs-time at 65/73/95F plus application observation",
+      "numeric_target": ">=90 min at 73F",
+      "tolerance": "no severe KU spike, gel, phase split, or unapproved thinning",
+      "stop_rule": "repeat/review on control failure or noisy tie; stop/reformulate if valid sample fails",
+      "return_fields": [
+        "pot_life_h.raw_value",
+        "ku_vs_time_3temps.raw_value",
+        "temperature_log"
+      ],
+      "required_raw_returned_fields": [
+        "pot_life_h.raw_value",
+        "ku_vs_time_3temps.raw_value",
+        "temperature_log"
+      ],
+      "fail_or_inconclusive_rule": "repeat/review on control failure or noisy tie; stop/reformulate if valid sample fails"
+    },
+    {
+      "gate": "voc_over_340_g_l",
+      "kill_if": "EPA Method 24 VOC >340 g/L",
+      "target": "mixed VOC <=340 g/L",
+      "method": "EPA Method 24 / ASTM D3960",
+      "numeric_target": "<=340 g/L",
+      "tolerance": "worksheet-controlled lab result",
+      "stop_rule": "inconclusive if worksheet missing; stop/reformulate if valid value exceeds target",
+      "return_fields": [
+        "voc_g_l.raw_value",
+        "method24_worksheet_path"
+      ],
+      "required_raw_returned_fields": [
+        "voc_g_l.raw_value",
+        "method24_worksheet_path"
+      ],
+      "fail_or_inconclusive_rule": "inconclusive if worksheet missing; stop/reformulate if valid value exceeds target"
+    },
+    {
+      "gate": "volume_solids_outside_63_67",
+      "kill_if": "ASTM D2697 volume solids outside 63-67%",
+      "target": "mixed volume solids 63-67%",
+      "method": "ASTM D2697 or lab-accepted Method 24 solids worksheet",
+      "numeric_target": "63-67%",
+      "tolerance": "replicates must not straddle boundary without pre-registered call",
+      "stop_rule": "inconclusive if raw replicates/worksheet missing; stop/reformulate if valid value outside range",
+      "return_fields": [
+        "volume_solids_pct.raw_value",
+        "replicate_values",
+        "worksheet_path"
+      ],
+      "required_raw_returned_fields": [
+        "volume_solids_pct.raw_value",
+        "replicate_values",
+        "worksheet_path"
+      ],
+      "fail_or_inconclusive_rule": "inconclusive if raw replicates/worksheet missing; stop/reformulate if valid value outside range"
+    },
+    {
+      "gate": "severe_sag_or_pinhole",
+      "kill_if": "severe sag, pinhole, solvent pop, cratering, or non-wetting at target WFT",
+      "target": "target film can be applied without severe sag/pinhole/crater/solvent pop",
+      "method": "drawdown + airless spray observation, ASTM D4400/D1210",
+      "numeric_target": "Hegman >=6; sag >=12 mil target",
+      "tolerance": "no severe defects preventing valid corrosion panels",
+      "stop_rule": "inconclusive if setup missing; stop/reformulate if valid application collapses",
+      "return_fields": [
+        "fineness_hegman.raw_value",
+        "sag_mils.raw_value",
+        "panel_photos_path"
+      ],
+      "required_raw_returned_fields": [
+        "fineness_hegman.raw_value",
+        "sag_mils.raw_value",
+        "panel_photos_path"
+      ],
+      "fail_or_inconclusive_rule": "inconclusive if setup missing; stop/reformulate if valid application collapses"
+    },
+    {
+      "gate": "failed_adhesion",
+      "kill_if": "pull-off or immersion adhesion misses acceptance basis",
+      "target": "adhesion meets pre-registered acceptance or control-normalized margin",
+      "method": "ASTM D4541 dry and post-immersion",
+      "numeric_target": ">=20% margin vs threshold/control basis where specified",
+      "tolerance": "failure mode must be recorded",
+      "stop_rule": "repeat/review on adhesive failure or control failure; stop on valid adhesion miss",
+      "return_fields": [
+        "adhesion_mpa.raw_value",
+        "failure_mode",
+        "dolly_map_path"
+      ],
+      "required_raw_returned_fields": [
+        "adhesion_mpa.raw_value",
+        "failure_mode",
+        "dolly_map_path"
+      ],
+      "fail_or_inconclusive_rule": "repeat/review on adhesive failure or control failure; stop on valid adhesion miss"
+    },
+    {
+      "gate": "early_corrosion_failure",
+      "kill_if": "early blistering, rust creep, or EIS collapse relative to controls",
+      "target": "no early blistering/rust/EIS collapse relative to controls",
+      "method": "ASTM B117/D1654, ASTM D870, ISO 16773 EIS",
+      "numeric_target": "no tied/noisy decisive pair; EIS gap target >=1.0 log10 |Z| where used",
+      "tolerance": "greater than replicate scatter",
+      "stop_rule": "controls fail -> repeat/review, not pass; tied/noisy decisive pair -> no model promotion",
+      "return_fields": [
+        "eis_immersion.raw_spectra_path",
+        "b117_1000h.scribe_creep_mm",
+        "immersion_d870.photos_path"
+      ],
+      "required_raw_returned_fields": [
+        "eis_immersion.raw_spectra_path",
+        "b117_1000h.scribe_creep_mm",
+        "immersion_d870.photos_path"
+      ],
+      "fail_or_inconclusive_rule": "controls fail -> repeat/review, not pass; tied/noisy decisive pair -> no model promotion"
+    }
+  ],
+  "statistical_decision_rules": {
+    "locked_rank_hash": "1bc2b361e80ea2ec3e98a0f34a88b363032fde77cc512f83974115599bd99df1",
+    "protocol_timestamp_utc": "2026-07-03T00:00:00Z",
+    "primary": "PASS only if the measured immersion rank has Kendall tau >= 0.5 with the LOCKED rank AND a strictly higher tau than BOTH hostile nulls (solids-only, PVC-only).",
+    "key_pairwise": "the Enhanced-65 > Envelope-65 non-obvious call must hold in the measured data (the single most decisive, PVC-contrarian bet).",
+    "tie_rule": "two tracks are TIED if their |Z|@0.01Hz overlap within replicate scatter (6 panels/track/arm default if budget allows; 3 panels/track/arm minimum floor); ties are excluded from tau, not narrated as agreement.",
+    "power_caveat": "n=4 rank has low power; the decisive, adequately-powered test is the key pairwise bet above, not the full 4-item correlation -- stated honestly, not oversold.",
+    "hostile_nulls": {
+      "solids_only": [
+        "Lineage-60",
+        "CRO-Robust-65",
+        "Enhanced-65",
+        "Envelope-65"
+      ],
+      "pvc_only": [
+        "Lineage-60",
+        "Envelope-65",
+        "CRO-Robust-65",
+        "Enhanced-65"
+      ]
+    },
+    "falsification_protocol_path": "out/falsification_protocol.json",
+    "power_analysis_path": "out/power_analysis.json",
+    "minimum_detectable_effect": {
+      "eis_log10_abs_z_0p01hz": "target detectable difference >=1.0 log10 ohm-cm2 and greater than within-track replicate scatter",
+      "scribe_creep_mm": "target detectable difference >=2 mm and greater than within-track replicate scatter",
+      "d1654_rating": "target detectable difference >=1 rating unit with no control failure",
+      "adhesion_mpa": "target detectable difference >=20% versus control or pre-registered acceptance threshold"
+    },
+    "replicate_scatter_threshold": "pre-register replicate scatter per arm from 6 panels/track/arm by default, with 3 only as the minimum floor; tracks whose intervals overlap are tied and excluded from tau, not counted as agreement",
+    "inconclusive_outcome": "INCONCLUSIVE if controls fail, randomization is broken, the key pairwise call is tied, replicate scatter masks the ordering, or the locked rank does not beat both nulls."
+  },
+  "supplier_declaration_template": {
+    "fields": [
+      "bom_line",
+      "candidate_grade",
+      "alternate_grade",
+      "supplier",
+      "country_of_origin",
+      "domestic_taa_status",
+      "pfas_declaration",
+      "tsca_inventory_status",
+      "reach_status",
+      "prop65_status",
+      "sds_revision",
+      "tds_revision",
+      "coa_lot_fields",
+      "minimum_order",
+      "lead_time",
+      "shelf_life",
+      "storage_conditions"
+    ],
+    "rendering_rule": "render unknown / RFQ required until a signed supplier declaration or current SDS/TDS/CoA is attached",
+    "bom_lines": [
+      "DGEBA-828-class epoxy",
+      "Ancamide-350A-class polyamide",
+      "silica extender",
+      "black iron oxide",
+      "yellow iron oxide",
+      "high-flash naphtha",
+      "n-butanol",
+      "dispersant",
+      "defoamer",
+      "organoclay thixotrope",
+      "zinc phosphate optional"
+    ],
+    "rfq_packet_path": "out/supplier_rfq_packet.json",
+    "line_count": 30
+  },
+  "per_candidate_measurements": {
+    "ku_vs_time_3temps": {
+      "method": "ASTM D562 Stormer at 65/73/95F, 30-min intervals to 2x initial KU",
+      "unit": "KU and minutes",
+      "condition": "65/73/95F, 50% RH target",
+      "replicate_count": 3,
+      "updates": "cure model refit (Arrhenius) -- WEEK-1 GATE before full battery"
+    },
+    "pot_life_h": {
+      "method": "viscosity-doubling @73F/50%RH",
+      "unit": "hours",
+      "condition": "73F/50% RH",
+      "replicate_count": 3,
+      "updates": "pot-life gate margin"
+    },
+    "volume_solids_pct": {
+      "method": "ASTM D2697",
+      "unit": "vol %",
+      "condition": "mixed coating",
+      "replicate_count": 3,
+      "updates": "ingredient nv/density posteriors"
+    },
+    "voc_g_l": {
+      "method": "EPA Method 24 (measured, the compliance number)",
+      "unit": "g/L",
+      "condition": "mixed coating",
+      "replicate_count": 3,
+      "updates": "solvent-split recentre"
+    },
+    "density_lb_gal": {
+      "method": "ASTM D1475",
+      "unit": "lb/gal",
+      "condition": "Part A, Part B, and mixed",
+      "replicate_count": 3,
+      "updates": "ingredient density posteriors"
+    },
+    "viscosity_ku": {
+      "method": "ASTM D562",
+      "unit": "KU",
+      "condition": "Part A, Part B, and mixed at 25C",
+      "replicate_count": 3,
+      "updates": "future viscosity model (no card yet)"
+    },
+    "fineness_hegman": {
+      "method": "ASTM D1210",
+      "unit": "Hegman",
+      "condition": "post-grind Part A and Part B",
+      "replicate_count": 2,
+      "updates": "dispersion process parameters"
+    },
+    "dry_times_h": {
+      "method": "ASTM D5895/D1640 (set-to-touch, dry-hard, recoat@6h intercoat check)",
+      "unit": "hours",
+      "condition": "target WFT/DFT, 73F/50% RH",
+      "replicate_count": 3,
+      "updates": "cure model film-stage terms"
+    },
+    "sag_mils": {
+      "method": "ASTM D4400",
+      "unit": "mils",
+      "condition": "mixed coating, application temperature recorded",
+      "replicate_count": 3,
+      "updates": "rheology additive ladder"
+    },
+    "adhesion_mpa": {
+      "method": "ASTM D4541 on SP-10 near-white blast, 2.5-3.5 mil profile",
+      "unit": "MPa",
+      "condition": "dry and post-immersion panels",
+      "replicate_count": 5,
+      "updates": "ABSENT->REAL (never predicted)"
+    },
+    "b117_1000h": {
+      "method": "ASTM B117 + D1654 scribe/field",
+      "unit": "rating and creep mm",
+      "condition": "scribed panels, target DFT",
+      "replicate_count": 6,
+      "minimum_floor": 3,
+      "updates": "comparative corrosion screen across carry-3 only; not a standalone natural-environment predictor"
+    },
+    "cyclic_d5894": {
+      "method": "ASTM D5894",
+      "unit": "rating and creep mm",
+      "condition": "scribed panels, target DFT",
+      "replicate_count": 6,
+      "minimum_floor": 3,
+      "updates": "controlled cyclic corrosion decision"
+    },
+    "eis_immersion": {
+      "method": "ISO 16773 practice, |Z|_0.01Hz vs time, 3.5% NaCl",
+      "unit": "ohm-cm2",
+      "condition": "3.5% NaCl immersion time series",
+      "replicate_count": 6,
+      "minimum_floor": 3,
+      "updates": "corrosion decision with raw spectra/time series"
+    },
+    "immersion_d870": {
+      "method": "ASTM D870 + D714 blistering",
+      "unit": "rating",
+      "condition": "immersion duration and temperature recorded",
+      "replicate_count": 6,
+      "minimum_floor": 3,
+      "updates": "immersion decision"
+    },
+    "storage_d1849": {
+      "method": "ASTM D1849 accelerated + D869 settling",
+      "unit": "rating/KU/density",
+      "condition": "sealed Part A and Part B retains",
+      "replicate_count": 3,
+      "updates": "shelf-life extrapolation (FLAGGED)"
+    }
+  },
+  "batch_record": [
+    "ingredient lots + measured EEW/amine-value where retested",
+    "mill type/rpm/time/temp",
+    "Hegman endpoint",
+    "letdown sequence",
+    "ambient T/RH/dew point/substrate temperature",
+    "panel prep/profile/soluble salts",
+    "application setup/WFT/DFT",
+    "deviations (coded + free text)"
+  ],
+  "decision_experiment": {
+    "purpose": "fund a controlled corrosion/pot-life decision experiment, not a trusted corrosion ranking",
+    "required_side_by_side_tracks": [
+      "Lineage-60",
+      "Envelope-65",
+      "Enhanced-65"
+    ],
+    "commercial_qpl_reference": "required if obtainable; record product, lot, QPL listing evidence, and acquisition path",
+    "minimum_design": "all tracks built, applied, randomized, and exposed under one CRO protocol with raw data returned",
+    "no_predictive_corrosion_model": true
+  },
+  "named_candidate_tracks": [
+    "Lineage-60",
+    "Envelope-65",
+    "Enhanced-65"
+  ],
+  "sample_labels": {
+    "Lineage-60": {
+      "part_A": "MVP20-Lineage-60-A",
+      "part_B": "MVP20-Lineage-60-B",
+      "mixed": "MVP20-Lineage-60-MIXED"
+    },
+    "Envelope-65": {
+      "part_A": "MVP20-Envelope-65-A",
+      "part_B": "MVP20-Envelope-65-B",
+      "mixed": "MVP20-Envelope-65-MIXED"
+    },
+    "Enhanced-65": {
+      "part_A": "MVP20-Enhanced-65-A",
+      "part_B": "MVP20-Enhanced-65-B",
+      "mixed": "MVP20-Enhanced-65-MIXED"
+    },
+    "CRO-Robust-65": {
+      "part_A": "MVP20-CRO-Robust-65-A",
+      "part_B": "MVP20-CRO-Robust-65-B",
+      "mixed": "MVP20-CRO-Robust-65-MIXED"
+    }
+  },
+  "chain_of_custody": {
+    "required": true,
+    "fields": [
+      "sample_label",
+      "lot_id",
+      "seal_id",
+      "handoff_datetime_utc",
+      "from",
+      "to",
+      "condition",
+      "signature"
+    ],
+    "reject_if_missing": true
+  },
+  "panel_map_files": {
+    "randomization_seed_file": "required path returned by CRO",
+    "blind_panel_map_csv": "required path returned by CRO",
+    "chamber_position_map_csv": "required path returned by CRO",
+    "sample_label_crosswalk_csv": "required path returned by CRO"
+  },
+  "cost_time_estimate": {
+    "week_1_screen": {
+      "cost_usd_range": [
+        1500,
+        3000
+      ],
+      "calendar_days": "5-7",
+      "decision": "pot-life/compatibility kill gate"
+    },
+    "full_battery": {
+      "cost_usd_range": [
+        25000,
+        65000
+      ],
+      "calendar_days": "45-100",
+      "decision": "corrosion/adhesion/sprayability decision"
+    },
+    "pilot": {
+      "cost_usd_range": [
+        15000,
+        40000
+      ],
+      "calendar_days": "20-45",
+      "decision": "only if bench gates pass"
+    },
+    "quote_required": true
+  },
+  "lab_acceptance_signoff": {
+    "required_before_ship": true,
+    "fields": [
+      "lab_name",
+      "technical_contact",
+      "accepted_methods",
+      "deviations_preapproved",
+      "quote_id",
+      "signature",
+      "date"
+    ]
+  },
+  "returned_data_validation": {
+    "fail_close_if": [
+      "missing raw_file_path",
+      "missing attachment_path",
+      "missing replicate_count",
+      "unapproved deviation",
+      "control failure",
+      "broken blind map"
+    ],
+    "required_statuses": [
+      "PASS",
+      "FAIL",
+      "REVIEW",
+      "ABSENT"
+    ],
+    "raw_path_presence_required": true
+  },
+  "reference_controls": {
+    "lineage_60": "mandatory public-lineage control in every corrosion arm only after exact ingredient lots, current SDS/TDS/CoA review, lab acceptance, and chain of custody are confirmed",
+    "commercial_qpl_reference": "required if obtainable; use only with current product lot, SDS/TDS, QPL evidence, acquisition path, and chain of custody; otherwise document unavailable",
+    "commercial_reference_controls_path": "out/commercial_reference_controls.json",
+    "commercial_reference_status_rule": "unknown / RFQ required until exact product, lot, QPL listing, SDS/TDS and acquisition path are attached",
+    "negative_control": "uncoated blasted steel witness panel where method permits"
+  },
+  "acceptance_gates": [
+    {
+      "gate": "pot_life",
+      "method": "ASTM D562 KU-vs-time at 65/73/95F plus application observation",
+      "accept_if": "mixed material remains sprayable for >=90 min at 73F with no gel, phase split, severe viscosity spike, or unapproved thinning",
+      "raw_data_required": [
+        "KU time series",
+        "temperature/RH log",
+        "mix time",
+        "induction time",
+        "photos/notes"
+      ],
+      "fail_or_inconclusive_if": "controls invalid, replicate scatter masks the 90-min call, or lab deviates from temperature/mix protocol"
+    },
+    {
+      "gate": "method24_voc",
+      "method": "EPA Method 24 / ASTM D3960 workflow",
+      "accept_if": "measured mixed VOC <=340 g/L with lab worksheet returned",
+      "raw_data_required": [
+        "volatile matter",
+        "water",
+        "density",
+        "weight solids",
+        "volume solids",
+        "calculation worksheet"
+      ],
+      "fail_or_inconclusive_if": "worksheet missing, replicate inconsistency unresolved, or Method 24 deviation unapproved"
+    },
+    {
+      "gate": "volume_solids",
+      "method": "ASTM D2697 or lab-accepted Method 24 solids worksheet",
+      "accept_if": "measured mixed volume solids 63-67%",
+      "raw_data_required": [
+        "replicate raw values",
+        "density inputs",
+        "calculation worksheet"
+      ],
+      "fail_or_inconclusive_if": "replicates straddle the acceptance boundary without a pre-registered call"
+    },
+    {
+      "gate": "sprayability",
+      "method": "drawdown + airless spray observation, ASTM D562/D4400/D1210",
+      "accept_if": "Hegman >=6, target WFT/DFT achievable, sag >=12 mil target, no severe pinhole/crater/solvent pop",
+      "raw_data_required": [
+        "spray setup",
+        "WFT/DFT map",
+        "Hegman",
+        "sag readings",
+        "panel photos"
+      ],
+      "fail_or_inconclusive_if": "application defects prevent valid corrosion panels or setup is not recorded"
+    },
+    {
+      "gate": "adhesion",
+      "method": "ASTM D4541 dry and post-immersion",
+      "accept_if": ">=20% margin versus pre-registered acceptance threshold or control-normalized basis, with failure mode recorded",
+      "raw_data_required": [
+        "pull-off force",
+        "failure mode photos",
+        "dolly map",
+        "substrate/profile log"
+      ],
+      "fail_or_inconclusive_if": "adhesive failure invalidates the reading or controls fail"
+    },
+    {
+      "gate": "eis_immersion",
+      "method": "ISO 16773 EIS in 3.5% NaCl",
+      "accept_if": "key Enhanced-65 vs Envelope-65 pairwise gap >=1.0 log10 |Z|@0.01Hz and greater than replicate scatter",
+      "raw_data_required": [
+        "raw spectra",
+        "fit files if used",
+        "timepoints",
+        "cell geometry",
+        "panel map"
+      ],
+      "fail_or_inconclusive_if": "key pairwise result ties, spectra are missing, controls fail, or scatter overlaps"
+    },
+    {
+      "gate": "b117_d1654",
+      "method": "ASTM B117 exposure plus ASTM D1654 rating",
+      "accept_if": "scribe creep and D1654 rating meet pre-registered threshold and key pairwise call is not tied",
+      "raw_data_required": [
+        "chamber log",
+        "interval photos",
+        "final photos",
+        "scribe creep mm",
+        "D1654 rating sheet"
+      ],
+      "fail_or_inconclusive_if": "control failure, chamber deviation, or overlapping scatter prevents a call"
+    },
+    {
+      "gate": "cyclic_d5894",
+      "method": "ASTM D5894 cyclic exposure",
+      "accept_if": "no control failure and candidate ranking does not contradict the decisive pairwise call",
+      "raw_data_required": [
+        "cycle log",
+        "interval photos",
+        "final ratings",
+        "raw panel map"
+      ],
+      "fail_or_inconclusive_if": "cycle logs missing, controls fail, or rank is tied within scatter"
+    },
+    {
+      "gate": "immersion_d870",
+      "method": "ASTM D870 immersion plus blister/rust/photo record",
+      "accept_if": "no early blistering/rust collapse and EIS/B117 decision remains interpretable",
+      "raw_data_required": [
+        "bath log",
+        "photos",
+        "blister ratings",
+        "final observations"
+      ],
+      "fail_or_inconclusive_if": "bath condition invalid, controls fail, or candidate separation is not interpretable"
+    },
+    {
+      "gate": "shelf_stability",
+      "method": "ASTM D1849 accelerated storage plus D869 settling on retained Part A and Part B",
+      "accept_if": "no hard settle, gel, skinning, irreversible viscosity drift, or density/KU drift outside pre-registered limits",
+      "raw_data_required": [
+        "retain IDs",
+        "storage temperature",
+        "settling rating",
+        "KU/density before-after",
+        "photos"
+      ],
+      "fail_or_inconclusive_if": "retains not sealed/identified or storage conditions missing"
+    },
+    {
+      "gate": "raw_data_return",
+      "method": "CRO data package audit",
+      "accept_if": "every result includes method, unit, condition, replicate count, deviation code, raw_value, pass_fail, raw_file_path, and attachment_path",
+      "raw_data_required": [
+        "complete return_schema",
+        "chain of custody",
+        "randomization map",
+        "calibration records"
+      ],
+      "fail_or_inconclusive_if": "missing raw data, broken blind map, unapproved deviation, or missing calibration record"
+    }
+  ],
+  "inconclusive_handling": {
+    "status": "INCONCLUSIVE",
+    "conditions": [
+      "commercial or Lineage-60 control fails",
+      "unapproved CRO method/application deviation",
+      "replicate scatter overlaps the decisive Enhanced-65 vs Envelope-65 pairwise result",
+      "key pairwise result is tied",
+      "raw spectra/photos/rating worksheets are missing",
+      "blind randomization or chain of custody is broken"
+    ],
+    "rule": "inconclusive is not success; repeat, reformulate, or stop before customer-facing qualification language"
+  },
+  "explicit_decision_outcomes": {
+    "controls_fail": "repeat/review; never treat candidate data as pass",
+    "lineage_60_wins_all_65_fail": "do not qualify 65%; use Lineage-60 path if otherwise obtainable",
+    "envelope65_beats_enhanced65": "demote zinc-phosphate hypothesis",
+    "noisy_or_tied_decisive_pair": "no model promotion; collect more data or reformulate"
+  }
+}

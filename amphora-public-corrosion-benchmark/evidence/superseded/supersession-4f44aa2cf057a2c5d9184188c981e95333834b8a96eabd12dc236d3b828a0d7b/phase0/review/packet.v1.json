@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "2cf87b245c6cf8d8281a8ae245ae649d201ce772ce3cfd54cfed754ce0b26081",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

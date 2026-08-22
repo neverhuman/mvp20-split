@@ -1,0 +1,13 @@
+[package]
+name = "cc_probe"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+amphora-core = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-core" }
+amphora-engine = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-engine", features = ["rdkit"] }
+amphora-rdkit-ffi = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-rdkit-ffi", features = ["rdkit"] }
+serde_json = "1"
+anyhow = "1"
+
+[workspace]

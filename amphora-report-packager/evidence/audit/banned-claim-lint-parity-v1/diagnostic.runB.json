@@ -1,0 +1,255 @@
+{
+  "closes": "Independent oracle re-derives all four deliverable anchors + the benchmark receipt byte-exact, reproduces the INSUFFICIENT_INPUT quarantine decision across 5 records, and runs a controlled-vocabulary banned-claim lint (validated on +/- controls) showing every authority-risk term in the deliverables is disclaimed.",
+  "does_not_close": "Does not promote the module, flip scientific_readiness, run the Rust runtime, or certify banned_claim_lint_pass=true -- that still requires the authorized Phase-1 signing pipeline and human dual-identity keys. The lint is a lexical baseline, not legal adjudication; FTO/regulatory/qualification remain out of scope.",
+  "g0_anchor_parity": {
+    "all_artifacts_byte_exact": true,
+    "artifact_parity": {
+      "CUSTOMER_FACING.tex": {
+        "byte_exact": true,
+        "pinned_sha256": "ba69a64ca49fc5973faea36c0cbcbc6ea89fca60b73d3556758f4882cad83b71",
+        "reproduced_sha256": "ba69a64ca49fc5973faea36c0cbcbc6ea89fca60b73d3556758f4882cad83b71",
+        "size_bytes": 29437
+      },
+      "FOUNDER_FACING.tex": {
+        "byte_exact": true,
+        "pinned_sha256": "d0517f12e93ffec1a8ebac67fb5040bd6c70627e57738b4f6fbb8448e10b6742",
+        "reproduced_sha256": "d0517f12e93ffec1a8ebac67fb5040bd6c70627e57738b4f6fbb8448e10b6742",
+        "size_bytes": 43547
+      },
+      "blueprint.md": {
+        "byte_exact": true,
+        "pinned_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+        "reproduced_sha256": "b3db17345245812b4b186433e56f9bb86fc04e28d47f3d121d4036d5dc9cc879",
+        "size_bytes": 38407
+      },
+      "f718_style_datasheet.md": {
+        "byte_exact": true,
+        "pinned_sha256": "0c34557390f7cf8f38e5bc375646ce325c53c0451a14ef52b9b1c8934291795b",
+        "reproduced_sha256": "0c34557390f7cf8f38e5bc375646ce325c53c0451a14ef52b9b1c8934291795b",
+        "size_bytes": 2086
+      }
+    },
+    "benchmark_result_byte_exact": true,
+    "benchmark_result_pinned_sha256": "fc797aac97caa75ce25fba2f3c7b00742c7b3a601647982284c223121f0fc6e1",
+    "benchmark_result_reproduced_sha256": "fc797aac97caa75ce25fba2f3c7b00742c7b3a601647982284c223121f0fc6e1",
+    "diagnostic_sha256_recorded": "aaf6663b4572e8ec016b387a287816ef4b1c00a59078eaaac05c0636d0cbaeb6",
+    "diagnostic_sha256_rederived": "aaf6663b4572e8ec016b387a287816ef4b1c00a59078eaaac05c0636d0cbaeb6",
+    "diagnostic_sha256_reproduced_via_stable_hash": true,
+    "pass": true,
+    "two_replay_diagnostic_sha256_consistent": true
+  },
+  "g1_runtime_decision_parity": {
+    "generated_document_count": 4,
+    "pass": true,
+    "per_record": [
+      {
+        "all_match": true,
+        "candidate_id": "phase0-kpi-report-packager-0",
+        "checks": {
+          "authority_lock_present_gate": true,
+          "banned_claim_lint_pass_gate": true,
+          "evidence_scope": true,
+          "generated_document_count": true,
+          "missing_inputs": true,
+          "score_envelopes_valid_gate": true,
+          "signed_report_package_present_gate": true,
+          "signed_report_package_present_metric": true,
+          "status": true
+        }
+      },
+      {
+        "all_match": true,
+        "candidate_id": "phase0-kpi-report-packager-1",
+        "checks": {
+          "authority_lock_present_gate": true,
+          "banned_claim_lint_pass_gate": true,
+          "evidence_scope": true,
+          "generated_document_count": true,
+          "missing_inputs": true,
+          "score_envelopes_valid_gate": true,
+          "signed_report_package_present_gate": true,
+          "signed_report_package_present_metric": true,
+          "status": true
+        }
+      },
+      {
+        "all_match": true,
+        "candidate_id": "phase0-kpi-report-packager-2",
+        "checks": {
+          "authority_lock_present_gate": true,
+          "banned_claim_lint_pass_gate": true,
+          "evidence_scope": true,
+          "generated_document_count": true,
+          "missing_inputs": true,
+          "score_envelopes_valid_gate": true,
+          "signed_report_package_present_gate": true,
+          "signed_report_package_present_metric": true,
+          "status": true
+        }
+      },
+      {
+        "all_match": true,
+        "candidate_id": "phase0-kpi-report-packager-3",
+        "checks": {
+          "authority_lock_present_gate": true,
+          "banned_claim_lint_pass_gate": true,
+          "evidence_scope": true,
+          "generated_document_count": true,
+          "missing_inputs": true,
+          "score_envelopes_valid_gate": true,
+          "signed_report_package_present_gate": true,
+          "signed_report_package_present_metric": true,
+          "status": true
+        }
+      },
+      {
+        "all_match": true,
+        "candidate_id": "phase0-kpi-report-packager-4",
+        "checks": {
+          "authority_lock_present_gate": true,
+          "banned_claim_lint_pass_gate": true,
+          "evidence_scope": true,
+          "generated_document_count": true,
+          "missing_inputs": true,
+          "score_envelopes_valid_gate": true,
+          "signed_report_package_present_gate": true,
+          "signed_report_package_present_metric": true,
+          "status": true
+        }
+      }
+    ],
+    "records_checked": 5,
+    "reimplemented_result": {
+      "evidence_scope": "report_package",
+      "explanations": [
+        "Human deliverables remain downstream of sealed score envelopes and authority locks."
+      ],
+      "gates": {
+        "authority_lock_present": false,
+        "banned_claim_lint_pass": false,
+        "score_envelopes_valid": false,
+        "signed_report_package_present": false
+      },
+      "metrics": {
+        "generated_document_count": 4,
+        "ranking_quarantine": true,
+        "scientific_applicability": "UNVALIDATED",
+        "signed_report_package_present": false
+      },
+      "missing_inputs": [
+        "registry-verified score envelopes and a signed deterministic report package"
+      ],
+      "status": "INSUFFICIENT_INPUT"
+    }
+  },
+  "g2_banned_claim_lint": {
+    "all_deliverables_carry_authority_lock_banner": true,
+    "controls_validated": true,
+    "hypothesis_zero_affirmative_overclaim": true,
+    "lexicon_size": 29,
+    "negative_control_affirmative_flags": 0,
+    "pass": true,
+    "per_document": {
+      "CUSTOMER_FACING.tex": {
+        "affirmative_overclaim_count": 0,
+        "affirmative_overclaims": [],
+        "carries_authority_lock_banner": true,
+        "disclaimed_count": 2,
+        "total_hits": 2
+      },
+      "FOUNDER_FACING.tex": {
+        "affirmative_overclaim_count": 0,
+        "affirmative_overclaims": [],
+        "carries_authority_lock_banner": true,
+        "disclaimed_count": 2,
+        "total_hits": 2
+      },
+      "blueprint.md": {
+        "affirmative_overclaim_count": 0,
+        "affirmative_overclaims": [],
+        "carries_authority_lock_banner": true,
+        "disclaimed_count": 4,
+        "total_hits": 4
+      },
+      "f718_style_datasheet.md": {
+        "affirmative_overclaim_count": 0,
+        "affirmative_overclaims": [],
+        "carries_authority_lock_banner": true,
+        "disclaimed_count": 4,
+        "total_hits": 4
+      }
+    },
+    "positive_control_affirmative_flags": 6,
+    "theory_reference": "FTC 16 CFR Part 260 (Green Guides); FDA 21 CFR Part 801; module red-team overclaim taxonomy (docs/mission.md)",
+    "total_affirmative_overclaims": 0,
+    "total_disclaimed_occurrences": 12
+  },
+  "g3_tamper_fail_closed": {
+    "pass": true,
+    "probe_count": 8,
+    "probes": [
+      {
+        "fail_closed": true,
+        "probe": "byte_flip_deliverable_anchor_break"
+      },
+      {
+        "fail_closed": true,
+        "observed_count": 3,
+        "probe": "emptied_artifact_count_drop"
+      },
+      {
+        "fail_closed": true,
+        "probe": "candidate_type_formulation_rejected"
+      },
+      {
+        "fail_closed": true,
+        "probe": "unknown_module_id_rejected"
+      },
+      {
+        "fail_closed": true,
+        "probe": "whitespace_module_id_rejected"
+      },
+      {
+        "affirmative_flags": 3,
+        "fail_closed": true,
+        "probe": "injected_overclaim_lint_flags"
+      },
+      {
+        "fail_closed": true,
+        "probe": "authority_lock_never_emitted_true_from_packaging"
+      },
+      {
+        "fail_closed": true,
+        "probe": "clean_noop_stable"
+      }
+    ]
+  },
+  "gates": {
+    "all_pass": true,
+    "g0_anchor_parity": true,
+    "g1_runtime_decision_parity": true,
+    "g2_banned_claim_lint": true,
+    "g3_tamper_fail_closed": true
+  },
+  "hypothesis": "The runtime honestly pins banned_claim_lint_pass=false (no lint pipeline yet); an independent published-standard lint corroborates that the shipped deliverables carry zero AFFIRMATIVE authority-escalating overclaim (all risk vocabulary is disclaimed), so the false gate is conservative rather than papering over a real overclaim.",
+  "module": "amphora-report-packager",
+  "non_circularity": "Pure CPython; no import of the Rust runtime. Artifact and receipt hashes re-derived from primary bytes; lint lexicon derived from FTC/FDA published standards; decision reimplemented from lib.rs semantics and compared to shipped records.",
+  "purpose": "Independently re-derive the report-packager signed-deliverable quarantine anchors and decision, and execute a published-standard banned-claim lint over the four human deliverables against the declared 'banned_claim_lint_required' invariant.",
+  "run_type": "AUDIT_ONLY_INDEPENDENT_ORACLE",
+  "runtime_source_anchors": {
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "descriptor_invariants": [
+      "banned_claim_lint_required",
+      "human_deliverables_downstream_only"
+    ],
+    "impl": "amphora-assurance-capabilities/src/lib.rs::evaluate_report_packager"
+  },
+  "schema": "amphora.report-packager.banned-claim-lint-parity-diagnostic.v1",
+  "study_id": "report-packager-banned-claim-lint-parity-v1",
+  "theory_reference": [
+    "FTC 16 CFR Part 260 (Green Guides), 2012",
+    "FDA 21 CFR Part 801 (Labeling)",
+    "IEEE 830-1998 SRS; in-toto Attestation v1.0; SLSA v1.0",
+    "amphora-report-packager/docs/mission.md red-team overclaim taxonomy"
+  ]
+}

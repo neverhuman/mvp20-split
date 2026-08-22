@@ -1,0 +1,974 @@
+{
+  "all_known_answer_gates_passed": true,
+  "attacked_claim": {
+    "asserted_under_estimator": "sigma_hat = S/c4(m), explicitly flagged by that receipt as an UPPER BOUND on the memory arms' guaranteed ARL0, not the operating value",
+    "asserted_value": 50,
+    "field": "baseline_size_requirement.smallest_tabulated_m_meeting_criterion",
+    "receipt": "estparam-memory-detector-arl-degradation-v1"
+  },
+  "authority": "AUDIT_ONLY",
+  "baseline_size_requirement": {
+    "criterion": "p95 (guaranteed) union false-alarm count <= 1.5",
+    "false_alarm_budget_per_30_batch": 1.5,
+    "m50_still_meets_budget_under_MRbar_d2": true,
+    "m50_union_fa_p95_MRbar_d2": 1.44946,
+    "m50_union_fa_p95_Sc4_prior_receipt": 1.10155,
+    "smallest_tabulated_m_meeting_criterion_MRbar_d2": 50,
+    "smallest_tabulated_m_meeting_criterion_Sc4_prior_receipt": 50,
+    "tabulated_m": [
+      20,
+      30,
+      50,
+      100,
+      300,
+      1000
+    ],
+    "union_fa_p95_by_m_MRbar_d2": {
+      "100": 0.83253,
+      "1000": 0.31594,
+      "20": 3.73831,
+      "30": 2.41076,
+      "300": 0.45638,
+      "50": 1.44946
+    }
+  },
+  "claim_verdict": "SURVIVED",
+  "closes": [
+    "Closes the 'MRbar/d2 x EWMA/CUSUM cross' open item shared by estparam-memory-detector-arl-degradation-v1 and moving-range-arl-degradation-v1.",
+    "Recomputes the module's guaranteed 30-batch union false-alarm table under the sigma estimator the Individuals chart actually defaults to.",
+    "Directly tests whether the previously-reported smallest_tabulated_m_meeting_criterion=50 survives the switch from S/c4 (upper bound, per prior receipt's own caveat) to MRbar/d2 (operating estimator)."
+  ],
+  "detector_design": {
+    "cusum_h": 5.0,
+    "cusum_k": 0.5,
+    "ewma_L": 3.0,
+    "ewma_lambda": 0.2,
+    "note": "All three charts read the SAME standardized stream off the SAME Phase-I baseline in the live module; if the Individuals chart uses MRbar/d2 the EWMA/CUSUM arms operate on that same estimate.",
+    "shewhart_individuals_L": 3.0,
+    "sigma_estimator": "MRbar/d2(2), d2(2)=2/sqrt(pi) (Montgomery default for Individuals charts; NIST/SEMATECH 6.3.2)"
+  },
+  "does_not_close": [
+    "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+    "Assumes i.i.d. normal in-control data; autocorrelation and non-normality are not modeled and remain open.",
+    "The union false-alarm figure is a per-node sum of 30/ARL0 across the three arms sharing one (U,W) draw; it is still a Bonferroni-style rate approximation of the union alarm event, not an exact union probability.",
+    "The Lucas-Crosier two-sided CUSUM 1/ARL=1/ARL+ +1/ARL- combination is an approximation (validated to <=6% against Montgomery Table 9.4 in the prior receipt).",
+    "The W sampling law is characterized by Monte Carlo (no closed form for MRbar/d2), so the reported percentiles carry MC sampling noise on top of the exact conditional-ARL formula; quantified by the grid-convergence gate.",
+    "No prospective time-ordered 30-batch pilot is checked in; this is a theory characterization, not a false-alarm measurement on real batches.",
+    "Out-of-control (ARL1) performance under MRbar/d2-estimated parameters, and the recall >=90% half of the KPI, are not characterized here.",
+    "Covers only the span-2 moving range d2(2); larger MR spans are not characterized."
+  ],
+  "estimated_parameter_distribution_by_baseline_m": [
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.52197,
+        "arl0_mean": 3850.716,
+        "arl0_median": 183.157,
+        "arl0_p05_guaranteed": 24.587,
+        "arl0_p25": 67.837
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.47559,
+        "arl0_mean": 3715.703,
+        "arl0_median": 219.986,
+        "arl0_p05_guaranteed": 27.327,
+        "arl0_p25": 80.668
+      },
+      "m": 20,
+      "mc_mean_sigma_hat": 1.000059,
+      "mc_sigma_samples": 1000000,
+      "mc_var_sigma_hat": 0.04280784,
+      "shewhart": {
+        "P_arl0_below_200": 0.43896,
+        "arl0_mean": 5977.341,
+        "arl0_median": 269.166,
+        "arl0_p05_guaranteed": 21.191,
+        "arl0_p25": 81.916
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.19873,
+        "mean": 0.93285,
+        "median": 0.42808,
+        "p95_guaranteed": 3.73831,
+        "p99": 6.2216
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.45898,
+        "arl0_mean": 1445.613,
+        "arl0_median": 230.976,
+        "arl0_p05_guaranteed": 37.465,
+        "arl0_p25": 96.484
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.40576,
+        "arl0_mean": 1540.14,
+        "arl0_median": 277.87,
+        "arl0_p05_guaranteed": 42.69,
+        "arl0_p25": 115.191
+      },
+      "m": 30,
+      "mc_mean_sigma_hat": 1.000112,
+      "mc_sigma_samples": 1000000,
+      "mc_var_sigma_hat": 0.0281951,
+      "shewhart": {
+        "P_arl0_below_200": 0.39941,
+        "arl0_mean": 2020.538,
+        "arl0_median": 297.47,
+        "arl0_p05_guaranteed": 32.848,
+        "arl0_p25": 109.544
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.11865,
+        "mean": 0.65143,
+        "median": 0.34843,
+        "p95_guaranteed": 2.41076,
+        "p99": 3.90799
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.37061,
+        "arl0_mean": 776.41,
+        "arl0_median": 288.11,
+        "arl0_p05_guaranteed": 61.566,
+        "arl0_p25": 140.86
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.30664,
+        "arl0_mean": 878.054,
+        "arl0_median": 345.356,
+        "arl0_p05_guaranteed": 71.171,
+        "arl0_p25": 168.297
+      },
+      "m": 50,
+      "mc_mean_sigma_hat": 1.000082,
+      "mc_sigma_samples": 1000000,
+      "mc_var_sigma_hat": 0.01673886,
+      "shewhart": {
+        "P_arl0_below_200": 0.3457,
+        "arl0_mean": 924.632,
+        "arl0_median": 324.721,
+        "arl0_p05_guaranteed": 54.061,
+        "arl0_p25": 145.589
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.04736,
+        "mean": 0.45031,
+        "median": 0.28906,
+        "p95_guaranteed": 1.44946,
+        "p99": 2.27588
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.2334,
+        "arl0_mean": 559.362,
+        "arl0_median": 354.354,
+        "arl0_p05_guaranteed": 106.352,
+        "arl0_p25": 208.03
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.16553,
+        "arl0_mean": 652.36,
+        "arl0_median": 423.516,
+        "arl0_p05_guaranteed": 127.996,
+        "arl0_p25": 248.588
+      },
+      "m": 100,
+      "mc_mean_sigma_hat": 1.000009,
+      "mc_sigma_samples": 1000000,
+      "mc_var_sigma_hat": 0.00833297,
+      "shewhart": {
+        "P_arl0_below_200": 0.26221,
+        "arl0_mean": 562.824,
+        "arl0_median": 344.438,
+        "arl0_p05_guaranteed": 92.748,
+        "arl0_p25": 194.741
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.00195,
+        "mean": 0.31651,
+        "median": 0.24438,
+        "p95_guaranteed": 0.83253,
+        "p99": 1.23686
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.05029,
+        "arl0_mean": 484.238,
+        "arl0_median": 419.282,
+        "arl0_p05_guaranteed": 199.783,
+        "arl0_p25": 304.774
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.02148,
+        "arl0_mean": 575.219,
+        "arl0_median": 501.729,
+        "arl0_p05_guaranteed": 240.681,
+        "arl0_p25": 365.951
+      },
+      "m": 300,
+      "mc_mean_sigma_hat": 0.999971,
+      "mc_sigma_samples": 1000000,
+      "mc_var_sigma_hat": 0.00276388,
+      "shewhart": {
+        "P_arl0_below_200": 0.11426,
+        "arl0_mean": 421.882,
+        "arl0_median": 362.251,
+        "arl0_p05_guaranteed": 164.654,
+        "arl0_p25": 257.779
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.0,
+        "mean": 0.2361,
+        "median": 0.21463,
+        "p95_guaranteed": 0.45638,
+        "p99": 0.60381
+      }
+    },
+    {
+      "cusum": {
+        "P_arl0_below_200": 0.0,
+        "arl0_mean": 469.595,
+        "arl0_median": 450.362,
+        "arl0_p05_guaranteed": 295.368,
+        "arl0_p25": 376.799
+      },
+      "ewma": {
+        "P_arl0_below_200": 0.0,
+        "arl0_mean": 562.201,
+        "arl0_median": 540.207,
+        "arl0_p05_guaranteed": 358.485,
+        "arl0_p25": 454.541
+      },
+      "m": 1000,
+      "mc_mean_sigma_hat": 0.999992,
+      "mc_sigma_samples": 1000000,
+      "mc_var_sigma_hat": 0.00082652,
+      "shewhart": {
+        "P_arl0_below_200": 0.01562,
+        "arl0_mean": 384.783,
+        "arl0_median": 367.344,
+        "arl0_p05_guaranteed": 236.466,
+        "arl0_p25": 303.977
+      },
+      "union_false_alarms_per_30_batch": {
+        "P_exceeds_budget_1p5": 0.0,
+        "mean": 0.20991,
+        "median": 0.20367,
+        "p95_guaranteed": 0.31594,
+        "p99": 0.37295
+      }
+    }
+  ],
+  "gates": {
+    "c4_d2_constants_known_answer": {
+      "c4_max_abs_err": 4.07e-05,
+      "c4_rows": [
+        {
+          "abs_err": 1.54e-05,
+          "c4_computed": 0.797885,
+          "c4_published": 0.7979,
+          "m": 2
+        },
+        {
+          "abs_err": 2.69e-05,
+          "c4_computed": 0.886227,
+          "c4_published": 0.8862,
+          "m": 3
+        },
+        {
+          "abs_err": 1.44e-05,
+          "c4_computed": 0.939986,
+          "c4_published": 0.94,
+          "m": 5
+        },
+        {
+          "abs_err": 4.07e-05,
+          "c4_computed": 0.972659,
+          "c4_published": 0.9727,
+          "m": 10
+        },
+        {
+          "abs_err": 4.04e-05,
+          "c4_computed": 0.98964,
+          "c4_published": 0.9896,
+          "m": 25
+        }
+      ],
+      "d2_abs_err": 0.000379,
+      "d2_computed": 1.128379,
+      "d2_published": 1.128,
+      "passed": true,
+      "source": "Montgomery 2020 App. VI; NIST/SEMATECH 6.3.2",
+      "tol": 0.0005
+    },
+    "fail_closed": {
+      "passed": true,
+      "rows": [
+        {
+          "check": "tampered_c4_rejected",
+          "passed": true
+        },
+        {
+          "check": "tampered_d2_rejected",
+          "passed": true
+        },
+        {
+          "check": "m_lt_2_rejected",
+          "passed": true
+        },
+        {
+          "check": "ewma_p05_monotone_increasing_in_m",
+          "passed": true,
+          "values": [
+            27.327,
+            42.69,
+            71.171,
+            127.996,
+            240.681,
+            358.485
+          ]
+        },
+        {
+          "check": "cusum_p05_monotone_increasing_in_m",
+          "passed": true,
+          "values": [
+            24.587,
+            37.465,
+            61.566,
+            106.352,
+            199.783,
+            295.368
+          ]
+        },
+        {
+          "check": "union_fa_p95_monotone_decreasing_in_m",
+          "passed": true,
+          "values": [
+            3.73831,
+            2.41076,
+            1.44946,
+            0.83253,
+            0.45638,
+            0.31594
+          ]
+        },
+        {
+          "check": "union_fa_p95_exceeds_known_parameter_value",
+          "passed": true
+        },
+        {
+          "check": "MR_ewma_cusum_p05_le_Sc4_p05_all_m_conservative_direction",
+          "detail": [
+            {
+              "cusum_mr_le_sc4": true,
+              "ewma_mr_le_sc4": true,
+              "m": 20,
+              "mr_cusum_p05": 24.587,
+              "mr_ewma_p05": 27.327,
+              "sc4_cusum_p05_prior_receipt": 30.222,
+              "sc4_ewma_p05_prior_receipt": 34.411
+            },
+            {
+              "cusum_mr_le_sc4": true,
+              "ewma_mr_le_sc4": true,
+              "m": 30,
+              "mr_cusum_p05": 37.465,
+              "mr_ewma_p05": 42.69,
+              "sc4_cusum_p05_prior_receipt": 45.752,
+              "sc4_ewma_p05_prior_receipt": 53.296
+            },
+            {
+              "cusum_mr_le_sc4": true,
+              "ewma_mr_le_sc4": true,
+              "m": 50,
+              "mr_cusum_p05": 61.566,
+              "mr_ewma_p05": 71.171,
+              "sc4_cusum_p05_prior_receipt": 74.954,
+              "sc4_ewma_p05_prior_receipt": 86.198
+            },
+            {
+              "cusum_mr_le_sc4": true,
+              "ewma_mr_le_sc4": true,
+              "m": 100,
+              "mr_cusum_p05": 106.352,
+              "mr_ewma_p05": 127.996,
+              "sc4_cusum_p05_prior_receipt": 129.349,
+              "sc4_ewma_p05_prior_receipt": 152.355
+            },
+            {
+              "cusum_mr_le_sc4": true,
+              "ewma_mr_le_sc4": true,
+              "m": 300,
+              "mr_cusum_p05": 199.783,
+              "mr_ewma_p05": 240.681,
+              "sc4_cusum_p05_prior_receipt": 227.824,
+              "sc4_ewma_p05_prior_receipt": 276.86
+            },
+            {
+              "cusum_mr_le_sc4": true,
+              "ewma_mr_le_sc4": true,
+              "m": 1000,
+              "mr_cusum_p05": 295.368,
+              "mr_ewma_p05": 358.485,
+              "sc4_cusum_p05_prior_receipt": 323.049,
+              "sc4_ewma_p05_prior_receipt": 390.457
+            }
+          ],
+          "passed": true
+        },
+        {
+          "check": "MR_union_fa_p95_ge_Sc4_union_fa_p95_all_m",
+          "detail": [
+            {
+              "m": 20,
+              "mr_ge_sc4": true,
+              "mr_union_fa_p95": 3.73831,
+              "sc4_union_fa_p95_prior_receipt": 2.66102
+            },
+            {
+              "m": 30,
+              "mr_ge_sc4": true,
+              "mr_union_fa_p95": 2.41076,
+              "sc4_union_fa_p95_prior_receipt": 1.73991
+            },
+            {
+              "m": 50,
+              "mr_ge_sc4": true,
+              "mr_union_fa_p95": 1.44946,
+              "sc4_union_fa_p95_prior_receipt": 1.10155
+            },
+            {
+              "m": 100,
+              "mr_ge_sc4": true,
+              "mr_union_fa_p95": 0.83253,
+              "sc4_union_fa_p95_prior_receipt": 0.67757
+            },
+            {
+              "m": 300,
+              "mr_ge_sc4": true,
+              "mr_union_fa_p95": 0.45638,
+              "sc4_union_fa_p95_prior_receipt": 0.39133
+            },
+            {
+              "m": 1000,
+              "mr_ge_sc4": true,
+              "mr_union_fa_p95": 0.31594,
+              "sc4_union_fa_p95_prior_receipt": 0.28652
+            }
+          ],
+          "passed": true
+        }
+      ]
+    },
+    "known_parameter_limit_m_to_inf": {
+      "known_parameter_arl0": {
+        "cusum": 465.504,
+        "ewma": 559.596,
+        "shewhart": 370.398
+      },
+      "known_parameter_union_fa_per_30_batch": 0.19905,
+      "m_1e5_median_arl0": {
+        "cusum": 465.294,
+        "ewma": 559.35,
+        "shewhart": 370.221
+      },
+      "max_rel_err": 0.00048,
+      "note": "As baseline m -> inf, U -> 0 and W -> 1, so the estimated-parameter median ARL0 must collapse onto the known-parameter ARL0.",
+      "passed": true,
+      "tol": 0.03
+    },
+    "markov_chain_vs_published_anchors": {
+      "cusum_max_rel_err": 0.00363,
+      "cusum_rows": [
+        {
+          "arl_markov_chain": 465.504,
+          "arl_published_montgomery_t9p4": 465.0,
+          "rel_err": 0.00108,
+          "shift_sigma": 0.0
+        },
+        {
+          "arl_markov_chain": 139.5039,
+          "arl_published_montgomery_t9p4": 139.0,
+          "rel_err": 0.00363,
+          "shift_sigma": 0.25
+        },
+        {
+          "arl_markov_chain": 37.9966,
+          "arl_published_montgomery_t9p4": 38.0,
+          "rel_err": 9e-05,
+          "shift_sigma": 0.5
+        },
+        {
+          "arl_markov_chain": 17.0481,
+          "arl_published_montgomery_t9p4": 17.0,
+          "rel_err": 0.00283,
+          "shift_sigma": 0.75
+        },
+        {
+          "arl_markov_chain": 10.3758,
+          "arl_published_montgomery_t9p4": 10.4,
+          "rel_err": 0.00233,
+          "shift_sigma": 1.0
+        },
+        {
+          "arl_markov_chain": 5.7471,
+          "arl_published_montgomery_t9p4": 5.75,
+          "rel_err": 0.0005,
+          "shift_sigma": 1.5
+        },
+        {
+          "arl_markov_chain": 4.0088,
+          "arl_published_montgomery_t9p4": 4.01,
+          "rel_err": 0.00029,
+          "shift_sigma": 2.0
+        }
+      ],
+      "ewma_arl0_known_param": 559.596,
+      "passed": true,
+      "shewhart_arl0": 370.3983,
+      "shewhart_rel_err": 4e-06,
+      "source": "Brook & Evans 1972; Page 1954; Montgomery 2020 Table 9.4; Shewhart 1931",
+      "tol": 0.06
+    },
+    "mr_variance_closed_form_vs_mc": {
+      "max_rel_err": 0.00247,
+      "passed": true,
+      "rows": [
+        {
+          "m": 20,
+          "mc_mean_sigma_hat": 0.99934,
+          "rel_err": 0.00247,
+          "var_closed_form": 0.04278898,
+          "var_mc": 0.04268343
+        },
+        {
+          "m": 30,
+          "mc_mean_sigma_hat": 1.00021,
+          "rel_err": 0.00078,
+          "var_closed_form": 0.02819415,
+          "var_mc": 0.02821627
+        },
+        {
+          "m": 100,
+          "mc_mean_sigma_hat": 1.00019,
+          "rel_err": 0.00027,
+          "var_closed_form": 0.00832185,
+          "var_mc": 0.00831958
+        },
+        {
+          "m": 1000,
+          "mc_mean_sigma_hat": 0.99999,
+          "rel_err": 0.00102,
+          "var_closed_form": 0.00082702,
+          "var_mc": 0.00082617
+        }
+      ],
+      "source": "Cryer & Ryan 1990 JQT 22(3):187-192 (adjacent MR correlation rho=-1/2)",
+      "tol": 0.03
+    },
+    "patnaik_proxy_vs_empirical_w_law": {
+      "max_rel_err": 0.0663,
+      "note": "Patnaik (1950) nu_eff scaled-chi proxy for the W=sigma_hat_MR/sigma law vs the empirical-MC W law, BOTH driven through the identical Montgomery-Table-9.4-validated Markov-chain ARL formula -- isolates the W-law approximation error only. Same coarse-cross-check role and tolerance regime established in moving-range-arl-degradation-v1 (worst error at smallest m).",
+      "passed": true,
+      "role": "COARSE_ANALYTIC_CROSS_CHECK",
+      "rows": [
+        {
+          "m": 20,
+          "mc_cusum_p05": 24.587,
+          "mc_ewma_p05": 27.327,
+          "mc_shewhart_p05": 21.191,
+          "mc_union_fa_p95": 3.73831,
+          "nu_eff": 11.9196,
+          "patnaik_cusum_p05": 24.152,
+          "patnaik_ewma_p05": 26.62,
+          "patnaik_shewhart_p05": 19.786,
+          "patnaik_union_fa_p95": 3.83039,
+          "rel_err_cusum": 0.01769,
+          "rel_err_ewma": 0.02587,
+          "rel_err_shewhart": 0.0663,
+          "rel_err_union_fa": 0.02463
+        },
+        {
+          "m": 30,
+          "mc_cusum_p05": 37.465,
+          "mc_ewma_p05": 42.69,
+          "mc_shewhart_p05": 32.848,
+          "mc_union_fa_p95": 2.41076,
+          "nu_eff": 17.9738,
+          "patnaik_cusum_p05": 36.941,
+          "patnaik_ewma_p05": 41.769,
+          "patnaik_shewhart_p05": 31.219,
+          "patnaik_union_fa_p95": 2.44925,
+          "rel_err_cusum": 0.01399,
+          "rel_err_ewma": 0.02157,
+          "rel_err_shewhart": 0.04959,
+          "rel_err_union_fa": 0.01597
+        },
+        {
+          "m": 50,
+          "mc_cusum_p05": 61.566,
+          "mc_ewma_p05": 71.171,
+          "mc_shewhart_p05": 54.061,
+          "mc_union_fa_p95": 1.44946,
+          "nu_eff": 30.0771,
+          "patnaik_cusum_p05": 60.179,
+          "patnaik_ewma_p05": 70.241,
+          "patnaik_shewhart_p05": 53.099,
+          "patnaik_union_fa_p95": 1.46616,
+          "rel_err_cusum": 0.02253,
+          "rel_err_ewma": 0.01307,
+          "rel_err_shewhart": 0.01779,
+          "rel_err_union_fa": 0.01152
+        },
+        {
+          "m": 100,
+          "mc_cusum_p05": 106.352,
+          "mc_ewma_p05": 127.996,
+          "mc_shewhart_p05": 92.748,
+          "mc_union_fa_p95": 0.83253,
+          "nu_eff": 60.3297,
+          "patnaik_cusum_p05": 104.673,
+          "patnaik_ewma_p05": 126.79,
+          "patnaik_shewhart_p05": 91.52,
+          "patnaik_union_fa_p95": 0.83965,
+          "rel_err_cusum": 0.01579,
+          "rel_err_ewma": 0.00942,
+          "rel_err_shewhart": 0.01324,
+          "rel_err_union_fa": 0.00855
+        },
+        {
+          "m": 300,
+          "mc_cusum_p05": 199.783,
+          "mc_ewma_p05": 240.681,
+          "mc_shewhart_p05": 164.654,
+          "mc_union_fa_p95": 0.45638,
+          "nu_eff": 181.3314,
+          "patnaik_cusum_p05": 198.828,
+          "patnaik_ewma_p05": 240.595,
+          "patnaik_shewhart_p05": 163.966,
+          "patnaik_union_fa_p95": 0.45868,
+          "rel_err_cusum": 0.00478,
+          "rel_err_ewma": 0.00036,
+          "rel_err_shewhart": 0.00418,
+          "rel_err_union_fa": 0.00504
+        },
+        {
+          "m": 1000,
+          "mc_cusum_p05": 295.368,
+          "mc_ewma_p05": 358.485,
+          "mc_shewhart_p05": 236.466,
+          "mc_union_fa_p95": 0.31594,
+          "nu_eff": 604.8322,
+          "patnaik_cusum_p05": 294.714,
+          "patnaik_ewma_p05": 357.789,
+          "patnaik_shewhart_p05": 236.205,
+          "patnaik_union_fa_p95": 0.31656,
+          "rel_err_cusum": 0.00221,
+          "rel_err_ewma": 0.00194,
+          "rel_err_shewhart": 0.0011,
+          "rel_err_union_fa": 0.00196
+        }
+      ],
+      "tol": 0.2
+    },
+    "quadrature_grid_convergence": {
+      "max_rel_err": 0.03433,
+      "note": "64x64 vs 96x96 (U,W) grid nodes; W nodes are independent MC draws (different seed) at each resolution, so this also exercises Monte Carlo sampling-noise stability, not just grid density.",
+      "passed": true,
+      "rows": [
+        {
+          "chart": "shewhart",
+          "m": 30,
+          "p05_grid64": 32.97,
+          "p05_grid96": 34.142,
+          "rel_err": 0.03433
+        },
+        {
+          "chart": "ewma",
+          "m": 30,
+          "p05_grid64": 42.649,
+          "p05_grid96": 42.607,
+          "rel_err": 0.00099
+        },
+        {
+          "chart": "cusum",
+          "m": 30,
+          "p05_grid64": 37.465,
+          "p05_grid96": 36.534,
+          "rel_err": 0.02548
+        },
+        {
+          "chart": "union_fa_p95",
+          "m": 30,
+          "p05_grid64": 2.40955,
+          "p05_grid96": 2.36246,
+          "rel_err": 0.01993
+        },
+        {
+          "chart": "shewhart",
+          "m": 50,
+          "p05_grid64": 53.994,
+          "p05_grid96": 55.486,
+          "rel_err": 0.02689
+        },
+        {
+          "chart": "ewma",
+          "m": 50,
+          "p05_grid64": 71.172,
+          "p05_grid96": 70.815,
+          "rel_err": 0.00504
+        },
+        {
+          "chart": "cusum",
+          "m": 50,
+          "p05_grid64": 61.686,
+          "p05_grid96": 59.992,
+          "rel_err": 0.02824
+        },
+        {
+          "chart": "union_fa_p95",
+          "m": 50,
+          "p05_grid64": 1.45047,
+          "p05_grid96": 1.46334,
+          "rel_err": 0.00879
+        },
+        {
+          "chart": "shewhart",
+          "m": 100,
+          "p05_grid64": 92.786,
+          "p05_grid96": 92.948,
+          "rel_err": 0.00174
+        },
+        {
+          "chart": "ewma",
+          "m": 100,
+          "p05_grid64": 128.272,
+          "p05_grid96": 126.061,
+          "rel_err": 0.01754
+        },
+        {
+          "chart": "cusum",
+          "m": 100,
+          "p05_grid64": 106.683,
+          "p05_grid96": 106.176,
+          "rel_err": 0.00478
+        },
+        {
+          "chart": "union_fa_p95",
+          "m": 100,
+          "p05_grid64": 0.82956,
+          "p05_grid96": 0.83438,
+          "rel_err": 0.00578
+        }
+      ],
+      "tol": 0.08
+    },
+    "shewhart_cross_check_vs_moving_range_receipt": {
+      "max_rel_err": 0.0296,
+      "note": "Independent-seed cross-validation of this receipt's empirical-W-law Shewhart conditional-ARL pipeline against moving-range-arl-degradation-v1's independently-seeded direct MC (different method: MRbar/d2 conditional decision, not the (U,W) grid) at shared baseline sizes.",
+      "passed": true,
+      "rows": [
+        {
+          "m": 20,
+          "moving_range_arl_degradation_v1_shewhart_p05": 21.481,
+          "rel_err": 0.0135,
+          "this_receipt_shewhart_p05": 21.191
+        },
+        {
+          "m": 30,
+          "moving_range_arl_degradation_v1_shewhart_p05": 33.85,
+          "rel_err": 0.0296,
+          "this_receipt_shewhart_p05": 32.848
+        },
+        {
+          "m": 50,
+          "moving_range_arl_degradation_v1_shewhart_p05": 54.891,
+          "rel_err": 0.01512,
+          "this_receipt_shewhart_p05": 54.061
+        },
+        {
+          "m": 100,
+          "moving_range_arl_degradation_v1_shewhart_p05": 92.566,
+          "rel_err": 0.00197,
+          "this_receipt_shewhart_p05": 92.748
+        },
+        {
+          "m": 300,
+          "moving_range_arl_degradation_v1_shewhart_p05": 162.843,
+          "rel_err": 0.01112,
+          "this_receipt_shewhart_p05": 164.654
+        }
+      ],
+      "tol": 0.05
+    }
+  },
+  "governance": {
+    "flips_scientific_readiness": false,
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "modifies_signed_phase0_kpi": false,
+    "module_scientific_readiness": "LOCKED_INTERNAL",
+    "portfolio_manifest_modules": 11,
+    "portfolio_manifest_receipts": 66,
+    "promotes_authority": false
+  },
+  "guaranteed_arl0_retention_at_m30_vs_known_parameter": {
+    "cusum": 0.0805,
+    "ewma": 0.0763,
+    "shewhart": 0.0887
+  },
+  "headline": "Under the ACTUAL Individuals-chart default sigma estimator sigma_hat=MRbar/d2 (not S/c4), the guaranteed (95th-pct) union false-alarm count at the module's previously-reported sufficient baseline m=50 is 1.44946 (vs 1.10155 under S/c4), against the locked budget of 1.5. The smallest tabulated baseline meeting the budget under MR/d2 is m=50 (UNCHANGED from the S/c4-based claim of m=50). m=50 STILL MEETS the budget once MRbar/d2 replaces S/c4.",
+  "known_parameter_reference": {
+    "arl0": {
+      "cusum": 465.504,
+      "ewma": 559.596,
+      "shewhart": 370.398
+    },
+    "prior_receipt": "spc-arl-characterization-v1",
+    "union_false_alarms_per_30_batch": 0.19905
+  },
+  "kpi_linkage": {
+    "closes_prior_does_not_close_item": "estparam-memory-detector-arl-degradation-v1 does_not_close: 'The MRbar/d2 x EWMA/CUSUM cross is still open.'",
+    "false_alarm_budget_expected_per_30_batch": 1.5,
+    "module_locked_kpi": "prospective 30-batch pilot: seeded-control recall >=90%, false alarms <=5%, zero false releases"
+  },
+  "module": "amphora-process-qc-twin",
+  "mr_estimator_moments_closed_form": {
+    "cov_adjacent_MR_unit_sigma": 0.16275158,
+    "d2_span2": 1.12837917,
+    "rho_adjacent_moving_ranges": -0.5,
+    "source": "Cryer & Ryan 1990 JQT 22(3):187-192",
+    "var_MR_unit_sigma": 0.72676046
+  },
+  "non_circularity": "The W=sigma_hat_MR/sigma sampling law has no closed form and is characterized here by direct Monte Carlo of the correlated moving-range process (independent of, and cross-checked against, moving-range-arl-degradation-v1's own MC and closed-form moments). The conditional ARL0 at each (U,W) node is the EXACT deterministic Brook-Evans Markov-chain / geometric formula, already validated against Montgomery Table 9.4 and Siegmund 1985 in estparam-memory-detector-arl-degradation-v1 -- no run is ever simulated, eliminating single-run noise from the reported percentiles.",
+  "patnaik_proxy_cross_check_by_baseline_m": [
+    {
+      "m": 20,
+      "mc_cusum_p05": 24.587,
+      "mc_ewma_p05": 27.327,
+      "mc_shewhart_p05": 21.191,
+      "mc_union_fa_p95": 3.73831,
+      "nu_eff": 11.9196,
+      "patnaik_cusum_p05": 24.152,
+      "patnaik_ewma_p05": 26.62,
+      "patnaik_shewhart_p05": 19.786,
+      "patnaik_union_fa_p95": 3.83039,
+      "rel_err_cusum": 0.01769,
+      "rel_err_ewma": 0.02587,
+      "rel_err_shewhart": 0.0663,
+      "rel_err_union_fa": 0.02463
+    },
+    {
+      "m": 30,
+      "mc_cusum_p05": 37.465,
+      "mc_ewma_p05": 42.69,
+      "mc_shewhart_p05": 32.848,
+      "mc_union_fa_p95": 2.41076,
+      "nu_eff": 17.9738,
+      "patnaik_cusum_p05": 36.941,
+      "patnaik_ewma_p05": 41.769,
+      "patnaik_shewhart_p05": 31.219,
+      "patnaik_union_fa_p95": 2.44925,
+      "rel_err_cusum": 0.01399,
+      "rel_err_ewma": 0.02157,
+      "rel_err_shewhart": 0.04959,
+      "rel_err_union_fa": 0.01597
+    },
+    {
+      "m": 50,
+      "mc_cusum_p05": 61.566,
+      "mc_ewma_p05": 71.171,
+      "mc_shewhart_p05": 54.061,
+      "mc_union_fa_p95": 1.44946,
+      "nu_eff": 30.0771,
+      "patnaik_cusum_p05": 60.179,
+      "patnaik_ewma_p05": 70.241,
+      "patnaik_shewhart_p05": 53.099,
+      "patnaik_union_fa_p95": 1.46616,
+      "rel_err_cusum": 0.02253,
+      "rel_err_ewma": 0.01307,
+      "rel_err_shewhart": 0.01779,
+      "rel_err_union_fa": 0.01152
+    },
+    {
+      "m": 100,
+      "mc_cusum_p05": 106.352,
+      "mc_ewma_p05": 127.996,
+      "mc_shewhart_p05": 92.748,
+      "mc_union_fa_p95": 0.83253,
+      "nu_eff": 60.3297,
+      "patnaik_cusum_p05": 104.673,
+      "patnaik_ewma_p05": 126.79,
+      "patnaik_shewhart_p05": 91.52,
+      "patnaik_union_fa_p95": 0.83965,
+      "rel_err_cusum": 0.01579,
+      "rel_err_ewma": 0.00942,
+      "rel_err_shewhart": 0.01324,
+      "rel_err_union_fa": 0.00855
+    },
+    {
+      "m": 300,
+      "mc_cusum_p05": 199.783,
+      "mc_ewma_p05": 240.681,
+      "mc_shewhart_p05": 164.654,
+      "mc_union_fa_p95": 0.45638,
+      "nu_eff": 181.3314,
+      "patnaik_cusum_p05": 198.828,
+      "patnaik_ewma_p05": 240.595,
+      "patnaik_shewhart_p05": 163.966,
+      "patnaik_union_fa_p95": 0.45868,
+      "rel_err_cusum": 0.00478,
+      "rel_err_ewma": 0.00036,
+      "rel_err_shewhart": 0.00418,
+      "rel_err_union_fa": 0.00504
+    },
+    {
+      "m": 1000,
+      "mc_cusum_p05": 295.368,
+      "mc_ewma_p05": 358.485,
+      "mc_shewhart_p05": 236.466,
+      "mc_union_fa_p95": 0.31594,
+      "nu_eff": 604.8322,
+      "patnaik_cusum_p05": 294.714,
+      "patnaik_ewma_p05": 357.789,
+      "patnaik_shewhart_p05": 236.205,
+      "patnaik_union_fa_p95": 0.31656,
+      "rel_err_cusum": 0.00221,
+      "rel_err_ewma": 0.00194,
+      "rel_err_shewhart": 0.0011,
+      "rel_err_union_fa": 0.00196
+    }
+  ],
+  "purpose": "Attack estparam-memory-detector-arl-degradation-v1's smallest_tabulated_m_meeting_criterion=50 claim by recomputing the union false-alarm table with the estimator the module's Individuals chart actually defaults to (MRbar/d2), closing the 'MRbar/d2 x EWMA/CUSUM cross' both prior receipts left explicitly open.",
+  "reproducibility_seed": {
+    "cusum_states": 100,
+    "ewma_states": 201,
+    "mc_seed_base": 20260803,
+    "n_sigma_mc": 1000000,
+    "numpy": "1.26.4",
+    "quadrature_nodes": [
+      64,
+      64
+    ],
+    "quadrature_nodes_fine": [
+      96,
+      96
+    ]
+  },
+  "run_type": "AUDIT_ONLY_THEORY_CHARACTERIZATION",
+  "schema": "amphora.process-qc-twin.mr-memory-detector-arl-degradation.v1",
+  "study_id": "mr-memory-detector-arl-degradation-v1",
+  "theory_reference": {
+    "anchors": "Montgomery 2020 Table 9.4; NIST/SEMATECH 6.3; Shewhart 1931",
+    "estimated_parameter_cusum": "Jones, Champ & Rigdon 2004 JQT 36(1):95-108",
+    "estimated_parameter_ewma": "Jones, Champ & Rigdon 2001 Technometrics 43(2):156-167",
+    "markov_chain_arl": "Brook & Evans 1972 Biometrika 59(3):539-549",
+    "moving_range_estimator": "Montgomery 2020 ISQC 8th ed. Ch.6.4; NIST/SEMATECH 6.3.2",
+    "mr_vs_s_efficiency": "Cryer & Ryan 1990 JQT 22(3):187-192",
+    "patnaik_chi_proxy": "Patnaik 1950 Biometrika 37:78-87"
+  }
+}

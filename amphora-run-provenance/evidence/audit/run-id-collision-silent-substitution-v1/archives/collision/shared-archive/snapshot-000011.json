@@ -1,0 +1,901 @@
+{
+  "schema": "amphora.rust-state.v1",
+  "run_id": "run-1800000000000",
+  "generation": 0,
+  "generations": 1,
+  "phase": "RANKED",
+  "scoring_completed": 4,
+  "scoring_total": 4,
+  "rejected_candidates": 0,
+  "worker_failures": 0,
+  "throughput": {
+    "attempted": 4,
+    "valid": 4,
+    "scored": 4,
+    "survivors": 0,
+    "solutions": 0,
+    "started_at_ms": 1800000000069,
+    "recent": [
+      {
+        "at_ms": 1800000000107,
+        "attempted": 1,
+        "valid": 1,
+        "scored": 0,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1800000000123,
+        "attempted": 2,
+        "valid": 2,
+        "scored": 1,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1800000000148,
+        "attempted": 3,
+        "valid": 3,
+        "scored": 2,
+        "survivors": 0,
+        "solutions": 0
+      },
+      {
+        "at_ms": 1800000000170,
+        "attempted": 4,
+        "valid": 4,
+        "scored": 3,
+        "survivors": 0,
+        "solutions": 0
+      }
+    ]
+  },
+  "active_workers": 1,
+  "registered_modules": 29,
+  "active_modules": 4,
+  "modules": [
+    {
+      "module_id": "amphora-molecule-property",
+      "authority_tier": "REAL_ARITHMETIC",
+      "readiness": "MODEL_READINESS_ONLY",
+      "active": true,
+      "attempted_count": 4,
+      "scored_count": 0,
+      "failed_count": 0,
+      "insufficient_count": 4,
+      "last_status": "INSUFFICIENT_INPUT",
+      "last_score": null,
+      "average_latency_ms": 0.25,
+      "last_latency_ms": 1
+    },
+    {
+      "module_id": "amphora-molecule-role-ranker",
+      "authority_tier": "LIMITED_SANITY",
+      "readiness": "MODEL_READINESS_ONLY",
+      "active": true,
+      "attempted_count": 4,
+      "scored_count": 0,
+      "failed_count": 0,
+      "insufficient_count": 4,
+      "last_status": "INSUFFICIENT_INPUT",
+      "last_score": null,
+      "average_latency_ms": 0.25,
+      "last_latency_ms": 1
+    },
+    {
+      "module_id": "amphora-molecule-novelty",
+      "authority_tier": "LIMITED_SANITY",
+      "readiness": "MODEL_READINESS_ONLY",
+      "active": true,
+      "attempted_count": 4,
+      "scored_count": 0,
+      "failed_count": 0,
+      "insufficient_count": 4,
+      "last_status": "INSUFFICIENT_INPUT",
+      "last_score": null,
+      "average_latency_ms": 0.25,
+      "last_latency_ms": 1
+    },
+    {
+      "module_id": "amphora-molecule-design-gate",
+      "authority_tier": "REAL_ARITHMETIC",
+      "readiness": "MODEL_READINESS_ONLY",
+      "active": true,
+      "attempted_count": 4,
+      "scored_count": 0,
+      "failed_count": 4,
+      "insufficient_count": 0,
+      "last_status": "FAILED_GATES",
+      "last_score": null,
+      "average_latency_ms": 0.25,
+      "last_latency_ms": 1
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "DGEBA-monomer",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "DGEBA-monomer-m0276d33a6e21",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "DGEBA-monomer-ma09d1af61df1",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    },
+    {
+      "candidate_id": "DGEBA-monomer-mf55f6134f7f6",
+      "current_rank": null,
+      "previous_rank": null,
+      "rank_delta": null,
+      "movement": "—",
+      "feasible": false,
+      "ranked": false,
+      "pareto_rank": null,
+      "moo_display_score": null,
+      "eligible_objectives": 0,
+      "failed_modules": 4,
+      "objective_rows": [],
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      },
+      "display_kpis": [
+        {
+          "id": "design_gate_status",
+          "label": "Design gate",
+          "unit": "boolean",
+          "value": false
+        }
+      ],
+      "mutation_id": null,
+      "parent_ids": [],
+      "generation": 0,
+      "chemical_preview": null
+    }
+  ],
+  "history": [
+    {
+      "generation": 0,
+      "best_feasible_score": null,
+      "mean_feasible_score": null,
+      "feasible_count": 0,
+      "ranked_count": 0,
+      "top10": []
+    }
+  ],
+  "records": [
+    {
+      "candidate_id": "DGEBA-monomer",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "DGEBA-monomer",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "resin EEW band for Envelope-65"
+        },
+        "evidence_refs": {},
+        "molecule": {
+          "name": "DGEBA monomer",
+          "role": "resin",
+          "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [],
+      "generation": 0,
+      "mutation_id": null,
+      "lifecycle_status": "SCORED",
+      "result_hash": "326795408c865b7315671ac114077dfdb03aed34ab4f69dd23a945440494c419",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "DGEBA-monomer-m0276d33a6e21",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "DGEBA-monomer-m0276d33a6e21",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "resin EEW band for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "0276d33a6e21",
+          "parent_ids": [
+            "DGEBA-monomer"
+          ]
+        },
+        "molecule": {
+          "name": "DGEBA monomer",
+          "role": "resin",
+          "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "DGEBA-monomer"
+      ],
+      "generation": 0,
+      "mutation_id": "0276d33a6e21",
+      "lifecycle_status": "SCORED",
+      "result_hash": "7fb964f7a9a969f1a75bb52587207ba40078eae6bfc730a74d46e2e919d7b49c",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "DGEBA-monomer-ma09d1af61df1",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "DGEBA-monomer-ma09d1af61df1",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "resin EEW band for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "a09d1af61df1",
+          "parent_ids": [
+            "DGEBA-monomer"
+          ]
+        },
+        "molecule": {
+          "name": "DGEBA monomer",
+          "role": "resin",
+          "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "DGEBA-monomer"
+      ],
+      "generation": 0,
+      "mutation_id": "a09d1af61df1",
+      "lifecycle_status": "SCORED",
+      "result_hash": "c5df8aebe28d513f86d8005c490c2079f28920a592e37903f7b698cc38ea1587",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    },
+    {
+      "candidate_id": "DGEBA-monomer-mf55f6134f7f6",
+      "candidate_type": "molecule",
+      "candidate": {
+        "candidate_id": "DGEBA-monomer-mf55f6134f7f6",
+        "candidate_type": "molecule",
+        "context": {
+          "dft_basis_mil": 5.0,
+          "optimization_request": {
+            "hard_constraints": [
+              {
+                "expected": true,
+                "id": "molecule_design_gate",
+                "label": "Structural design gate",
+                "module_id": "amphora-molecule-design-gate",
+                "operator": "==",
+                "path": "pass_all_hard",
+                "section": "gates"
+              }
+            ],
+            "objective_list": [
+              {
+                "direction": "maximize",
+                "id": "role_fit",
+                "label": "Role fit",
+                "module_id": "amphora-molecule-role-ranker",
+                "path": "role_fit",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              },
+              {
+                "direction": "maximize",
+                "id": "novelty_score",
+                "label": "Novelty — design-space objective",
+                "module_id": "amphora-molecule-novelty",
+                "path": "novelty_score",
+                "section": "objective_values",
+                "unit": "normalized_0_1"
+              }
+            ]
+          },
+          "target_spec": "resin EEW band for Envelope-65"
+        },
+        "evidence_refs": {},
+        "lineage": {
+          "generation": 1,
+          "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+          "mutation_id": "f55f6134f7f6",
+          "parent_ids": [
+            "DGEBA-monomer"
+          ]
+        },
+        "molecule": {
+          "name": "DGEBA monomer",
+          "role": "resin",
+          "smiles": "C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1",
+          "source_refs": [
+            "data/molecule_library.json"
+          ]
+        }
+      },
+      "canonical_structure_hash": null,
+      "parent_ids": [
+        "DGEBA-monomer"
+      ],
+      "generation": 0,
+      "mutation_id": "f55f6134f7f6",
+      "lifecycle_status": "SCORED",
+      "result_hash": "58f49ffc5aa86763491b8633503f44d7b0926ecc8aacd91a890366a6e7569fc2",
+      "objective_rows": [],
+      "hard_constraint_pass": false,
+      "claim_locks": {
+        "amphora-molecule-design-gate": {
+          "does_not_establish_ehs_safety": true,
+          "does_not_establish_procurement": true,
+          "does_not_establish_product_performance": true,
+          "does_not_establish_qualification": true,
+          "does_not_establish_synthesis_feasibility": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-novelty": {
+          "corpus_distance_is_not_synthesis_feasibility": true,
+          "frontier_requires_experimental_validation": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "novelty_is_not_performance": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-property": {
+          "benchmark_required_for_optimizer_use": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "estimated_density_not_authoritative": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "unresolved_rights_quarantined": true
+        },
+        "amphora-molecule-role-ranker": {
+          "ambiguous_role_is_audit_only": true,
+          "candidate_role_evidence_is_not_self_authorizing": true,
+          "commercial_product_values_not_upgraded_from_defined_monomer": true,
+          "defined_structure_does_not_establish_liquid_state": true,
+          "feedback_v1_polymer_corpus_context_only": true,
+          "no_phase_1_or_phase_2_claim": true,
+          "no_polyamide_marine_or_approval_claim_from_smiles_or_text": true,
+          "no_product_release_or_qualification": true,
+          "no_superiority_claim": true,
+          "pre_phase_0_research_only": true,
+          "role_rank_is_not_qualification_or_procurement_authority": true,
+          "unresolved_rights_quarantined": true
+        }
+      }
+    }
+  ],
+  "objective_ready": false,
+  "finished": false,
+  "logs": [
+    "run run-1800000000000 started: generation 0/1 | population 4 | workers 1 | active submodels 4/29",
+    "generation 0/1: scoring 4/4 valid candidates",
+    "generation 0/1 complete: attempted 4 | valid 4 | scored 4"
+  ]
+}

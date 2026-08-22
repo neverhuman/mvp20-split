@@ -1,0 +1,6 @@
+    Blocking waiting for file lock on package cache
+   Compiling amphora-formulation-capabilities v0.1.0 (/home/ubuntu/amphora/build/mvp20-split/amphora-formulation-capabilities)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.13s
+     Running tests/formulation_universe_doe_citation_fidelity_v1.rs (target/debug/deps/formulation_universe_doe_citation_fidelity_v1-07f9bb5ce2e0ce3e)
+DOE_CITATION_FIDELITY_MISMATCHES=[{"claimed_k":5,"claimed_p":1,"design_type":"2^(k-p)_fractional_factorial","expected_cartesian_total_in_fixture":32,"finding":"fixture/citation claims a 2^(k-p) fractional-factorial design but expected_cartesian_total equals the FULL 2^k space, not the fraction; the live runtime returns that same full total, confirming validate_formulation_universe has no generator/defining-relation/aliasing logic and cannot represent or verify a genuine fractional design","full_unfractionated_total_2_pow_k":32,"genuine_fraction_total_2_pow_k_minus_p":16,"nominal_source":"Montgomery 2017 8th ed. §8.2 (2^(5-1) half-fraction)","runtime_returned_cartesian_total":32,"universe_id":"2^(5-1)-half-fraction-screening"}]
+DOE_CITATION_FIDELITY_FRACTIONAL_ENTRIES_EXAMINED=1

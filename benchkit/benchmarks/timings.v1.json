@@ -1,0 +1,44 @@
+{
+  "cases": {
+    "bootstrap_mean_ci_n30_B20000": {
+      "kit_wall_seconds": 0.10886828205548227,
+      "original_wall_seconds": 0.21298185409978032,
+      "speedup_x": 1.956326030672909
+    },
+    "cluster_bootstrap_rmse_ci_600groups_B1000": {
+      "kit_wall_seconds": 0.13995024585165083,
+      "original_wall_seconds": 0.2906572229694575,
+      "speedup_x": 2.076861110180243
+    },
+    "conditional_arls_m20_64x64": {
+      "kit_wall_seconds": 5.244035634910688,
+      "note": "original audit runs this for 6 baselines m in [20, 30, 50, 100, 300, 1000]",
+      "original_wall_seconds": 77.48662972683087,
+      "speedup_x": 14.77614477121122
+    },
+    "ewma_arl_N201": {
+      "hand_rolled_wall_seconds": 0.1953206139151007,
+      "kit_wall_seconds": 0.005013539921492338,
+      "speedup_x": 38.95862344244808
+    },
+    "ewma_arl_N601": {
+      "hand_rolled_wall_seconds": 5.870538522023708,
+      "kit_wall_seconds": 0.026721440022811294,
+      "speedup_x": 219.69394302897615
+    },
+    "mean_pairwise_tanimoto_741fps": {
+      "kit_wall_seconds": 0.030861185863614082,
+      "original_wall_seconds": 0.5676708437968045,
+      "speedup_x": 18.394330221318526
+    },
+    "nn_max_tanimoto_241x500": {
+      "kit_wall_seconds": 0.012938912026584148,
+      "original_wall_seconds": 0.25572880008257926,
+      "speedup_x": 19.764320180642827
+    }
+  },
+  "host": "xbabe2",
+  "python": "3.12.3",
+  "schema": "amphora.benchkit.timings.v1",
+  "timings_informative_only": true
+}

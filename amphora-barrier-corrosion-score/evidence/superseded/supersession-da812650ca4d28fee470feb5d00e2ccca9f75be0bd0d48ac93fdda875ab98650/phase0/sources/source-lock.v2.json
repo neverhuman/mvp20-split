@@ -1,0 +1,39 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-barrier-corrosion-score/evidence/phase0",
+  "eligible_sources": [
+    {
+      "declared_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/eis/source-landscape.v1.json",
+      "observed_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423",
+      "rights_receipt_path": "reference/eis/source-landscape.v1.json",
+      "rights_receipt_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423"
+    },
+    {
+      "declared_sha256": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx",
+      "observed_sha256": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1",
+      "rights_receipt_path": "reference/eis/source-landscape.v1.json",
+      "rights_receipt_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423"
+    },
+    {
+      "declared_sha256": "80d8f4d281874dae6263b45b0846b305e09b1165cc0f02a5c358c41c579a734c",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/80d8f4d281874dae6263b45b0846b305e09b1165cc0f02a5c358c41c579a734c.jsonl.gz",
+      "observed_sha256": "80d8f4d281874dae6263b45b0846b305e09b1165cc0f02a5c358c41c579a734c",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_corr_data_database.json",
+      "rights_receipt_sha256": "e76b62fca8704ea752f0270de1ed9937d51d3228f275a896886eb1b7755d11fe"
+    }
+  ],
+  "excluded_sources": [],
+  "inventory_hash": "af601cf96e4ad0461b06ff430e8b3fa95720839af0e87d21017e52ba0d25ec67",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-barrier-corrosion-score",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

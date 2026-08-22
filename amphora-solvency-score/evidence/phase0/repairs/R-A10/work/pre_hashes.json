@@ -1,0 +1,37 @@
+{
+  "falsification_ledger": {
+    "bytes": 59537,
+    "path": "logs/falsification-ledger.jsonl",
+    "sha256": "2972e4a46d8e946332d36f3d9cb953b6380c222bb968b7e70796b22a366dfda7"
+  },
+  "master_manifest": {
+    "bytes": 117672,
+    "path": "amphora-molecule-property/reference/mvp20/data/amphora_coating_scientific_receipts_manifest.v1.json",
+    "sha256": "f5623b3171d65de2dc805b740aef71ad6163554dcf9b5b394d84181b3ad6bf08"
+  },
+  "mission_md": {
+    "bytes": 37074,
+    "path": "amphora-solvency-score/docs/mission.md",
+    "sha256": "5de41beeb3304df7ac08c860d9ff7e058523e51c31fb02c5891025dbf74fe6a4"
+  },
+  "voided_kpi_flory_huggins": {
+    "bytes": 14316,
+    "path": "amphora-solvency-score/evidence/phase0/kpis/omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json",
+    "sha256": "98b20b84e3f1d362835c57107a3464163717cac47ab5d095a31fad64051032aa"
+  },
+  "voided_kpi_hansen_3component": {
+    "bytes": 13281,
+    "path": "amphora-solvency-score/evidence/phase0/kpis/omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json",
+    "sha256": "3950f643f06f433b3615379dc2708e058b804f2c390303feb3370d9f3255ab29"
+  },
+  "w6_hardened_receipt": {
+    "bytes": 12625,
+    "path": "amphora-solvency-score/evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json",
+    "sha256": "13b081836a33934a57c7b86043261f07522582b76b2c98f0efaa9e2f170df0c6"
+  },
+  "w7_refutation_receipt": {
+    "bytes": 22911,
+    "path": "amphora-solvency-score/evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json",
+    "sha256": "874e1dca3efb1a005e3c6fc4d2b791b6c9576c33b9886af4093fa551b7cf1b0f"
+  }
+}

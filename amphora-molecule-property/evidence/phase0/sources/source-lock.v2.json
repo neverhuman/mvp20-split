@@ -1,0 +1,153 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-molecule-property/evidence/phase0",
+  "eligible_sources": [
+    {
+      "authorization_overlay_id": "authorization-4611c69417afc08ac71925ce7c6beb5a3199af775b240401f094c5a040708e5b",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-4611c69417afc08ac71925ce7c6beb5a3199af775b240401f094c5a040708e5b.json",
+      "authorization_overlay_sha256": "ccaf7b5d13f57e0aeaca2c6cea49d555ccc86ae17ca64f5cd78693cfa5c1f02e",
+      "declared_sha256": "14bcdf900b9c91e6ca4dab2f7c8dcde49cb8831accc8369e57cee43307b41c38",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/14bcdf900b9c91e6ca4dab2f7c8dcde49cb8831accc8369e57cee43307b41c38.jsonl.gz",
+      "observed_sha256": "14bcdf900b9c91e6ca4dab2f7c8dcde49cb8831accc8369e57cee43307b41c38",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/radonpy_pi1070-4ee41d526db3d03e.rights-receipt.v1.json",
+      "rights_receipt_sha256": "f9b75fde0191c28f4029cc2c018f8dfbba43d26d0d6640e8ac0a0f3478cfaecf",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-14148411de82e261c0e524c01c8d36396760f4c5001784026e592e290c886f38",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-14148411de82e261c0e524c01c8d36396760f4c5001784026e592e290c886f38.json",
+      "authorization_overlay_sha256": "883b4a97ab21e40f89c8c929f3637713591ec536b0001a43d28c75101709e744",
+      "declared_sha256": "2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05.jsonl.gz",
+      "observed_sha256": "2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/omg_physical_properties-3e5af76bc6a1f8ea.rights-receipt.v1.json",
+      "rights_receipt_sha256": "839d199274d8e6a629d866b6f1eefb7351742624f7180f042e48189aee68a261",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-972495d99558fc402482480e39872068763fa67b6965e9a7e6dedf39b5345efa",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-972495d99558fc402482480e39872068763fa67b6965e9a7e6dedf39b5345efa.json",
+      "authorization_overlay_sha256": "e742b7ed37b6e84e15edc12917afa67def1da4648c2e8a9b911132050d2db692",
+      "declared_sha256": "4176fe4ee4a7e930badcf30cba96ab998022fc3f9157c69bdd259ddb9e27f028",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/4176fe4ee4a7e930badcf30cba96ab998022fc3f9157c69bdd259ddb9e27f028.jsonl.gz",
+      "observed_sha256": "4176fe4ee4a7e930badcf30cba96ab998022fc3f9157c69bdd259ddb9e27f028",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/openpoly_model_results-ddb3953b132fb747.rights-receipt.v1.json",
+      "rights_receipt_sha256": "03d3efb986a41db13ea0e5ae5f07075188f5a345252fdac0f37da4ebe2365d45",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-dfd184bae627115c5340712d6c8e3292b0055fe89d54096c5a3a1f0eb77b3970",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-dfd184bae627115c5340712d6c8e3292b0055fe89d54096c5a3a1f0eb77b3970.json",
+      "authorization_overlay_sha256": "f60cafe11f23f57193131020906f0fc45a630ece4738819b89121fd1b40f32d2",
+      "declared_sha256": "793fc17f5a57dad790fae3889c215525af15436147e7f168f59e4fa48f9089e7",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/793fc17f5a57dad790fae3889c215525af15436147e7f168f59e4fa48f9089e7.jsonl.gz",
+      "observed_sha256": "793fc17f5a57dad790fae3889c215525af15436147e7f168f59e4fa48f9089e7",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/point2_train_split-7c11717da5fd5b85.rights-receipt.v1.json",
+      "rights_receipt_sha256": "7e75b2182d6609e1af24533978733c8fa04f8bf7d5602ab0d32e4313dd6317dc",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-a3de99ddca1b80096262e377907772ed9aad98e47eb7b289c6e6aba15159e1bb",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-a3de99ddca1b80096262e377907772ed9aad98e47eb7b289c6e6aba15159e1bb.json",
+      "authorization_overlay_sha256": "2486bc33728a1f52d2039e736d01f989077c0bf6215d1fc5d72adab9ab41a809",
+      "declared_sha256": "9850530553585373bca9cb0fddf3181547f8e138b0b0000e8f1b7e36bd3079e8",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/9850530553585373bca9cb0fddf3181547f8e138b0b0000e8f1b7e36bd3079e8.jsonl.gz",
+      "observed_sha256": "9850530553585373bca9cb0fddf3181547f8e138b0b0000e8f1b7e36bd3079e8",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/polyomics_small_molecules-4dc408ff468f9b59.rights-receipt.v1.json",
+      "rights_receipt_sha256": "f5de51b1edcdb9a29679d6acf047d003ffe3438bc856577ea46939c354d8feb8",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-8303dca3190db0f6002766fbe7f441ef91a296c62ba3365b8b727d9dd41fd548",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v2/authorizations/events/authorization-8303dca3190db0f6002766fbe7f441ef91a296c62ba3365b8b727d9dd41fd548.json",
+      "authorization_overlay_sha256": "8f56f7a9ec3bb9424f2513ce28d990696a2ef90839da81a7b43e3da0f38ecd35",
+      "declared_sha256": "cbda8b22adccfaa760b9ab8a31c4ed024cafe42326954c408b1d5383d93c8436",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/cbda8b22adccfaa760b9ab8a31c4ed024cafe42326954c408b1d5383d93c8436.jsonl.gz",
+      "observed_sha256": "cbda8b22adccfaa760b9ab8a31c4ed024cafe42326954c408b1d5383d93c8436",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/authorizations/receipts/openpoly_properties-8de5baf76f79610f.rights-receipt.v1.json",
+      "rights_receipt_sha256": "8a86d292231fee5f5549ae63cba8fe72a34cbba92cdf76abb9a14c3fa06a3290",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-13bbc6613fbefc39e732e9188e0da6a88165f291b3ad13d15136d7005be51a75",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v3/authorizations/events/authorization-13bbc6613fbefc39e732e9188e0da6a88165f291b3ad13d15136d7005be51a75.json",
+      "authorization_overlay_sha256": "9edf9a839a554b4b6bf6c539df9055e930d8a0e5655edffc8857376be97c9873",
+      "declared_sha256": "36e01a8d8ed79bb295715dfd3e67183ff6fbc6a0db60ea77e410f3386961ed22",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v3/objects/36e01a8d8ed79bb295715dfd3e67183ff6fbc6a0db60ea77e410f3386961ed22.jsonl.gz",
+      "observed_sha256": "36e01a8d8ed79bb295715dfd3e67183ff6fbc6a0db60ea77e410f3386961ed22",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v3/authorizations/receipts/omg_physical_properties_v3-3e5af76bc6a1f8ea.rights-receipt.v1.json",
+      "rights_receipt_sha256": "0b04adc239f1311ccc78fdf1b4e74d3533be331cc9279e722964503a9a982ab3",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    },
+    {
+      "authorization_overlay_id": "authorization-66148159aa59c0cb0c0c4d56c1c92f2167f8f4c922e210f12fd3298a71cc7ad1",
+      "authorization_overlay_path": "reference/mvp20/data/feedback_v3/authorizations/events/authorization-66148159aa59c0cb0c0c4d56c1c92f2167f8f4c922e210f12fd3298a71cc7ad1.json",
+      "authorization_overlay_sha256": "3539a4eab1537653660edf16ec0a026abd9439996f6631e26cf01d16babecd24",
+      "declared_sha256": "e7ebf8a80cb04cb2d9493a12f79900d9b2d7bb6faa44561c743fcea9061028c8",
+      "hash_current": true,
+      "independently_reviewed": true,
+      "module_relative_path": "reference/mvp20/data/feedback_v3/objects/e7ebf8a80cb04cb2d9493a12f79900d9b2d7bb6faa44561c743fcea9061028c8.jsonl.gz",
+      "observed_sha256": "e7ebf8a80cb04cb2d9493a12f79900d9b2d7bb6faa44561c743fcea9061028c8",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v3/authorizations/receipts/chebi_release_252_3star_v3-8f17627476c66e89.rights-receipt.v1.json",
+      "rights_receipt_sha256": "5f93d559e5e12c4dc332b927d7c47226019085d77a3d48f111e76890c4ae038a",
+      "rights_reviewer_key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/eew_ahew_benchmark.v1.json",
+      "observed_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/feedback_v1/dataset_context.json",
+      "observed_sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/feedback_v1_property_benchmark.json",
+      "observed_sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b",
+      "reason": "inventory source has no activation-bound cryptographic authorization overlay: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    }
+  ],
+  "inventory_hash": "9bc72f0507da2ae15cc5d962cfac5594a9391f49b86aa3fffdb16a80cd672a81",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-molecule-property",
+  "rights_gate_passed": true,
+  "schema": "amphora.phase0-source-lock.v2"
+}

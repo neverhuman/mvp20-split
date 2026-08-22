@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "6969f24344532cca4bdeb4ea9f7d805a989ef7726829945a0cb743091e216775",
+  "module_id": "amphora-process-qc-twin",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

@@ -1,0 +1,94 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "ceiling": "AUDIT_ONLY. Does not alter the shipped van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json, any manifest, or any authority ceiling. Extends the module's falsification record: the KPI's headline 'confirms 24-group structure correct' / 'under-determination now resolved' claims are shown to hold only for the common-support groups, not the full 24-group table.",
+  "claim_under_attack": {
+    "capability_text_quoted": "Ridge regression fit of Y_gi values on 807 scaffold-safe train polymers from Polyuniverse Epoxy, with 168 scaffold-safe held-out test polymers. Directly resolves the Phase-1 question flagged in the prior 15-polymer Ridge receipt. MAJOR FINDING: data-driven Y_gi calibration achieves test MAE = 22.0 K (matching Bicerano's ~30 K target), BEATING the published Y_gi baseline MAE = 54.6 K by 32.6 K. Confirms the Van Krevelen 24-group STRUCTURE is correct and Bicerano-quality when properly calibrated on adequate data. Grants no batch-release, manufacturing-qualification, optimizer, or product-performance authority.",
+    "claim_locks_tested": [
+      "24_group_structure_confirmed_correct_at_scale",
+      "prior_ridge_receipt_under_determination_hypothesis_now_resolved"
+    ],
+    "kpi_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979",
+    "receipt": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json"
+  },
+  "fire_sequence": "ROTATION fire. Identifies the strongest never-before-attacked standing positive claim in amphora-molecule-property: van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json's 'MAJOR FINDING' that data-driven Ridge calibration of the Van Krevelen 24-group Y_gi table 'confirms the 24-group STRUCTURE is correct' and 'resolves' the module's own prior 15-polymer under-determination finding. Applies this module's established physical-admissibility audit methodology (same style as the C8/W2 eps_static>=n^2 dielectric label audit) directly to the receipt's own stored fitted-vs-published Y_gi coefficient table -- no new featurization or re-derivation pipeline required, so the attack is bit-exactly reproducible from the two already-hash-pinned JSON artifacts alone.",
+  "flips_scientific_readiness": false,
+  "gates": {
+    "audit_computed_from_already_hash_pinned_kpi_only": true,
+    "self_contained_no_external_pipeline_reproduction_risk": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "two_replay_byte_stable_this_receipt": true
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "compute_vk_ygi_admissibility.py_sha256": "6c8d492103de337e9c245438ae29c2031aee2a0118c5843b2b47495bfad89c3f",
+    "ridge_fit_kpi_path": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json",
+    "ridge_fit_kpi_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979"
+  },
+  "method": "Self-contained data audit: load the ridge-fit KPI's own fitted_Ygi_comparison array (24 rows, each with published and fitted Y_gi in K.g/mol plus n_train_polymers_with_group). Check sign concordance between fitted and published values (published table is 0/24 negative by publication convention -- Y_gi is a positive additive rigidity/Tg-elevation contribution in this theory). Rank all 24 groups by training support to test whether any sign flips concentrate at low support (the same under-determination mechanism the module's own prior 15-polymer receipt diagnosed). Compute Spearman rank correlation between n_train_polymers_with_group and |ratio_fitted_over_published - 1| across all 24 groups as a mechanism check, using a dependency-free rank implementation.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "n_fitted_negative": 2,
+  "n_groups": 24,
+  "n_groups_with_gt50pct_relative_deviation_from_published": 13,
+  "n_groups_with_gt50pct_relative_deviation_from_published_frac": 0.5416666666666666,
+  "n_published_negative": 0,
+  "n_sign_flipped_vs_published_positive_baseline": 2,
+  "objective": "Test whether the fitted Y_gi coefficients in van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json are physically admissible under the same Van Krevelen 1990 / Bicerano 2002 group-contribution theory the receipt itself cites as ground truth (claim_lock published_Ygi_remain_correct_for_experimental_Tg_context=true), as a precondition for the receipt's claim that the 24-group structure is 'confirmed correct' and that the prior under-determination finding is 'now resolved' at n=807 training polymers.",
+  "organizational_independence_asserted": false,
+  "pre_registered_refute_criterion": ">=1 of 24 fitted Y_gi has sign opposite to its published (100% positive) counterpart => REFUTES '24-group structure confirmed correct' / 'under-determination hypothesis now resolved'",
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Manifest untouched at 66/11.",
+  "receipt_id": "w8-vk-ridge-ygi-admissibility-audit",
+  "recommended_followups": [
+    "van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json's claim_locks.24_group_structure_confirmed_correct_at_scale and prior_ridge_receipt_under_determination_hypothesis_now_resolved should be qualified as scope-limited to groups with n_train >~500, not asserted for the full 24-group table.",
+    "Any downstream KPI or report row citing 'Van Krevelen 24-group structure confirmed' (grep evidence/phase0/kpis/*.json and reports/) should be checked for whether it discloses the 2 sign-flipped, physically-inadmissible rare-group coefficients.",
+    "Phase-1 remediation: clip Ridge-fitted Y_gi to non-negative (matching published theory's positivity constraint) via a bounded/constrained regression, or collect enough additional MD-simulated polymers containing vinyl_CH2 and nitrile groups (currently n=31 and n=124) to properly determine those coefficients."
+  ],
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened. This audit reads only the already-in-tree, already-signed van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json, which stores its own published and fitted Y_gi tables verbatim.",
+  "schema": "amphora.molecule-property.van-krevelen-ygi-physical-admissibility-audit-receipt.v1",
+  "sign_flipped_groups": [
+    {
+      "Y_fitted_K_g_per_mol": -3125.1482313108504,
+      "Y_published_K_g_per_mol": 2000,
+      "group": "vinyl_CH2",
+      "n_train_percentile_from_bottom": 29.2,
+      "n_train_polymers_with_group": 31,
+      "n_train_rank_ascending_of_24": 7
+    },
+    {
+      "Y_fitted_K_g_per_mol": -2843.550181839689,
+      "Y_published_K_g_per_mol": 5500,
+      "group": "nitrile",
+      "n_train_percentile_from_bottom": 37.5,
+      "n_train_polymers_with_group": 124,
+      "n_train_rank_ascending_of_24": 9
+    }
+  ],
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY audit receipt under evidence/audit/"
+  },
+  "spearman_rho_n_train_vs_abs_relative_deviation": -0.5231260000976025,
+  "study_id": "vk-ridge-ygi-admissibility-w8-v1",
+  "verdict": "REFUTED",
+  "why": "2 of 24 fitted Y_gi coefficients (vinyl_CH2: fitted=-3125.15 vs published=+2000 K.g/mol; nitrile: fitted=-2843.55 vs published=+5500 K.g/mol) are SIGN-REVERSED relative to their published counterparts, in a table where 0/24 published values are negative -- i.e. the receipt's own ground-truth column asserts every one of these 24 groups makes a positive contribution to Tg, and the fitted model contradicts that direction for 2 of them. This is not a magnitude disagreement (which the receipt already discloses and treats as expected calibration drift) -- it is a directional physical contradiction that falsifies the claim that the fit 'confirms the 24-group STRUCTURE is correct.' Both sign-flipped groups sit in the bottom third of training support (vinyl_CH2 rank 7/24, nitrile rank 9/24, ascending by n_train_polymers_with_group), and the Spearman correlation between n_train and |ratio-1| deviation across all 24 groups is -0.523 (moderate negative -- more training support predicts smaller deviation from published), directly reproducing the same under-determination failure mode the module's own prior 15-polymer ridge-retuned receipt diagnosed. The 1000-polymer receipt's claim lock 'prior_ridge_receipt_under_determination_hypothesis_now_resolved' is therefore false for the rare-group coefficients: n=807 total training polymers resolves under-determination for common groups (n_train~800) but not for rare ones (n_train=31, 124), which is exactly where the physically inadmissible signs appear. Additionally, 13/24 (54%) of all fitted coefficients deviate >50% in magnitude from published, further undermining 'Bicerano-quality when properly calibrated' as a structural (not just aggregate-MAE) claim."
+}

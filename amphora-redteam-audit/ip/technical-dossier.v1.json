@@ -1,0 +1,12 @@
+{
+  "applicability_domain": [
+    "registered amphora-redteam-audit contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_contract_sha256": "b2eddcf0146595e09589f25844071968e78251aff31d315042bf35eecac71dd0",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-redteam-audit",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

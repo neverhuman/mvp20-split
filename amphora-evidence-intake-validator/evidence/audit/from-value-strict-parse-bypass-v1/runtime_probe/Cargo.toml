@@ -1,0 +1,19 @@
+[package]
+name = "eiv-strict-parse-bypass-probe"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace. Nothing is added to,
+# built into, or written inside the workspace by this probe; CARGO_TARGET_DIR is
+# redirected to scratch by the runner.
+[workspace]
+
+# LIVE differential harness: links the real amphora-core crate and calls its
+# real public entry points (canonicalize, stable_hash, parse_json_strict,
+# CandidateEnvelope::from_bytes, CandidateEnvelope::from_value). This is NOT a
+# re-implementation and NOT a copy of the runtime logic.
+[dependencies]
+amphora-core = { path = "../../../../../amphora-core" }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+sha2 = "0.10"

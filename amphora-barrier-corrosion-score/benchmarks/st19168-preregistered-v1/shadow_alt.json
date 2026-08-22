@@ -1,0 +1,98 @@
+{
+  "calibration": {
+    "achieved_mean_gap": 0.000289,
+    "calibration_seed": 190168999,
+    "trials": 4000
+  },
+  "n_systems": 10,
+  "purpose": "Power probe: locked_barrier_index constructed with population Kendall tau ~ TARGET_TAU vs the truth endpoints; hostile nulls remain uncorrelated.",
+  "rank_mixing_weight_w": 0.5,
+  "rng": "numpy.random.default_rng (PCG64), O'Neill 2014",
+  "schema": "amphora.barrier-corrosion-score.st19168-preregistered-shadow-data.v1",
+  "seed": 190168002,
+  "shadow_type": "ALTERNATIVE",
+  "systems": [
+    {
+      "eis_log10_z_ohm_0p01hz": 7.559835,
+      "locked_barrier_index": 0.276621,
+      "pvc_pct": 23.309336,
+      "rust_creep_mm": 2.187169,
+      "solids_pct": 78.511166,
+      "system_id": "SHADOW-ALT-01"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 8.795406,
+      "locked_barrier_index": 0.433288,
+      "pvc_pct": 40.429594,
+      "rust_creep_mm": 1.184774,
+      "solids_pct": 60.613595,
+      "system_id": "SHADOW-ALT-02"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 8.625945,
+      "locked_barrier_index": 0.571185,
+      "pvc_pct": 21.320992,
+      "rust_creep_mm": 1.546973,
+      "solids_pct": 67.049697,
+      "system_id": "SHADOW-ALT-03"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 9.53992,
+      "locked_barrier_index": 0.512153,
+      "pvc_pct": 10.969251,
+      "rust_creep_mm": 0.142327,
+      "solids_pct": 49.826521,
+      "system_id": "SHADOW-ALT-04"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 8.78521,
+      "locked_barrier_index": 0.55335,
+      "pvc_pct": 25.898953,
+      "rust_creep_mm": 0.900139,
+      "solids_pct": 59.835056,
+      "system_id": "SHADOW-ALT-05"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 8.242234,
+      "locked_barrier_index": 0.30352,
+      "pvc_pct": 35.932954,
+      "rust_creep_mm": 1.409054,
+      "solids_pct": 72.870203,
+      "system_id": "SHADOW-ALT-06"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 7.433885,
+      "locked_barrier_index": 0.234114,
+      "pvc_pct": 27.640842,
+      "rust_creep_mm": 2.330818,
+      "solids_pct": 69.592142,
+      "system_id": "SHADOW-ALT-07"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 9.709637,
+      "locked_barrier_index": 0.508496,
+      "pvc_pct": 43.807048,
+      "rust_creep_mm": 0.210183,
+      "solids_pct": 73.463488,
+      "system_id": "SHADOW-ALT-08"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 5.578823,
+      "locked_barrier_index": 0.084546,
+      "pvc_pct": 17.987987,
+      "rust_creep_mm": 3.236648,
+      "solids_pct": 84.345805,
+      "system_id": "SHADOW-ALT-09"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 6.685826,
+      "locked_barrier_index": 0.116505,
+      "pvc_pct": 18.461948,
+      "rust_creep_mm": 3.26784,
+      "solids_pct": 54.626198,
+      "system_id": "SHADOW-ALT-10"
+    }
+  ],
+  "target_population_tau": 0.5,
+  "this_draw_observed_tau_locked_vs_truth": 0.644444
+}

@@ -1,0 +1,936 @@
+{
+  "corpus_id": "optimizer-constraint-path-addressing-v1",
+  "counts": {
+    "fixtures": 7,
+    "nodes_total": 40,
+    "paths": 28,
+    "probe_values": 40,
+    "site_a_cases": 7840,
+    "site_b_cases": 196
+  },
+  "determinism": {
+    "clock": false,
+    "network": false,
+    "ordering": "fixtures in declaration order; paths in declaration order; probe values sorted by canonical JSON text",
+    "randomness": false
+  },
+  "fixtures": [
+    {
+      "fixture_id": "F1_nested_canonical",
+      "gates": {
+        "alpha": 1001,
+        "beta": {
+          "delta": {
+            "eps": 1003
+          },
+          "gamma": 1002
+        }
+      },
+      "note": "Well-formed nested gates tree; all keys dot-free and non-empty."
+    },
+    {
+      "fixture_id": "F2_unspellable_keys",
+      "gates": {
+        "": 2002,
+        "a..b": 2003,
+        "beta.gamma": 2001,
+        "plain": 2005,
+        "trail.": 2004
+      },
+      "note": "Gate keys that the dot-split grammar cannot spell: a key containing '.', the empty key, a key with a doubled dot, a trailing-dot key."
+    },
+    {
+      "fixture_id": "F3_shadow_collision",
+      "gates": {
+        "beta": {
+          "gamma": 3002
+        },
+        "beta.gamma": 3001,
+        "plain": 3003
+      },
+      "note": "Flat dotted key 'beta.gamma' coexisting with nested beta->gamma. Tests which node the text 'beta.gamma' binds."
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "gates": {
+        "arr": [
+          4001,
+          4002
+        ],
+        "flag": true,
+        "nul": null,
+        "objarr": [
+          {
+            "k": 4003
+          }
+        ],
+        "plain": 4005,
+        "str": "s4004"
+      },
+      "note": "Array interiors, array-of-object, JSON null, string, bool."
+    },
+    {
+      "fixture_id": "F5_deep",
+      "gates": {
+        "l1": {
+          "l2": {
+            "l3": {
+              "l4": 5001
+            }
+          }
+        },
+        "plain": 5002
+      },
+      "note": "Four-level nesting; depth control for the walk."
+    },
+    {
+      "fixture_id": "F7_whitespace_key",
+      "gates": {
+        " ": 7001,
+        "plain": 7002
+      },
+      "note": "A gate key that is a single ASCII space. The constraint site trims the declared path before its emptiness guard, so this key is unreachable there; the display site does not trim."
+    },
+    {
+      "fixture_id": "F6_shadow_baseline",
+      "gates": {
+        "beta.gamma": 3001,
+        "plain": 6001
+      },
+      "note": "F3 with the nested object REMOVED. Differs from F3 only by keys an emitter may freely add; used for the verdict-flip experiment."
+    }
+  ],
+  "generator": "build_path_corpus.py",
+  "identification_method": {
+    "site_a": "black-box equality probing: a single hard constraint at the declared path with operator '==' is swept over every probe value; the unique probe value that yields an authorization ACCEPT identifies the resolved node.",
+    "site_b": "direct read-back: the display-KPI definition returns the resolved value verbatim in RankedCandidate.display_kpis, so no probing is required.",
+    "uniqueness_precondition": "all fixture scalars are pairwise distinct, so at most one probe value can match any resolved node"
+  },
+  "node_index": [
+    {
+      "fixture_id": "F1_nested_canonical",
+      "node_path": [],
+      "value_canonical": "{\"alpha\":1001,\"beta\":{\"delta\":{\"eps\":1003},\"gamma\":1002}}"
+    },
+    {
+      "fixture_id": "F1_nested_canonical",
+      "node_path": [
+        "alpha"
+      ],
+      "value_canonical": "1001"
+    },
+    {
+      "fixture_id": "F1_nested_canonical",
+      "node_path": [
+        "beta"
+      ],
+      "value_canonical": "{\"delta\":{\"eps\":1003},\"gamma\":1002}"
+    },
+    {
+      "fixture_id": "F1_nested_canonical",
+      "node_path": [
+        "beta",
+        "gamma"
+      ],
+      "value_canonical": "1002"
+    },
+    {
+      "fixture_id": "F1_nested_canonical",
+      "node_path": [
+        "beta",
+        "delta"
+      ],
+      "value_canonical": "{\"eps\":1003}"
+    },
+    {
+      "fixture_id": "F1_nested_canonical",
+      "node_path": [
+        "beta",
+        "delta",
+        "eps"
+      ],
+      "value_canonical": "1003"
+    },
+    {
+      "fixture_id": "F2_unspellable_keys",
+      "node_path": [],
+      "value_canonical": "{\"\":2002,\"a..b\":2003,\"beta.gamma\":2001,\"plain\":2005,\"trail.\":2004}"
+    },
+    {
+      "fixture_id": "F2_unspellable_keys",
+      "node_path": [
+        "beta.gamma"
+      ],
+      "value_canonical": "2001"
+    },
+    {
+      "fixture_id": "F2_unspellable_keys",
+      "node_path": [
+        ""
+      ],
+      "value_canonical": "2002"
+    },
+    {
+      "fixture_id": "F2_unspellable_keys",
+      "node_path": [
+        "a..b"
+      ],
+      "value_canonical": "2003"
+    },
+    {
+      "fixture_id": "F2_unspellable_keys",
+      "node_path": [
+        "trail."
+      ],
+      "value_canonical": "2004"
+    },
+    {
+      "fixture_id": "F2_unspellable_keys",
+      "node_path": [
+        "plain"
+      ],
+      "value_canonical": "2005"
+    },
+    {
+      "fixture_id": "F3_shadow_collision",
+      "node_path": [],
+      "value_canonical": "{\"beta\":{\"gamma\":3002},\"beta.gamma\":3001,\"plain\":3003}"
+    },
+    {
+      "fixture_id": "F3_shadow_collision",
+      "node_path": [
+        "beta.gamma"
+      ],
+      "value_canonical": "3001"
+    },
+    {
+      "fixture_id": "F3_shadow_collision",
+      "node_path": [
+        "beta"
+      ],
+      "value_canonical": "{\"gamma\":3002}"
+    },
+    {
+      "fixture_id": "F3_shadow_collision",
+      "node_path": [
+        "beta",
+        "gamma"
+      ],
+      "value_canonical": "3002"
+    },
+    {
+      "fixture_id": "F3_shadow_collision",
+      "node_path": [
+        "plain"
+      ],
+      "value_canonical": "3003"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [],
+      "value_canonical": "{\"arr\":[4001,4002],\"flag\":true,\"nul\":null,\"objarr\":[{\"k\":4003}],\"plain\":4005,\"str\":\"s4004\"}"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "arr"
+      ],
+      "value_canonical": "[4001,4002]"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "arr",
+        0
+      ],
+      "value_canonical": "4001"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "arr",
+        1
+      ],
+      "value_canonical": "4002"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "objarr"
+      ],
+      "value_canonical": "[{\"k\":4003}]"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "objarr",
+        0
+      ],
+      "value_canonical": "{\"k\":4003}"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "objarr",
+        0,
+        "k"
+      ],
+      "value_canonical": "4003"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "nul"
+      ],
+      "value_canonical": "null"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "str"
+      ],
+      "value_canonical": "\"s4004\""
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "flag"
+      ],
+      "value_canonical": "true"
+    },
+    {
+      "fixture_id": "F4_arrays_and_types",
+      "node_path": [
+        "plain"
+      ],
+      "value_canonical": "4005"
+    },
+    {
+      "fixture_id": "F5_deep",
+      "node_path": [],
+      "value_canonical": "{\"l1\":{\"l2\":{\"l3\":{\"l4\":5001}}},\"plain\":5002}"
+    },
+    {
+      "fixture_id": "F5_deep",
+      "node_path": [
+        "l1"
+      ],
+      "value_canonical": "{\"l2\":{\"l3\":{\"l4\":5001}}}"
+    },
+    {
+      "fixture_id": "F5_deep",
+      "node_path": [
+        "l1",
+        "l2"
+      ],
+      "value_canonical": "{\"l3\":{\"l4\":5001}}"
+    },
+    {
+      "fixture_id": "F5_deep",
+      "node_path": [
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "value_canonical": "{\"l4\":5001}"
+    },
+    {
+      "fixture_id": "F5_deep",
+      "node_path": [
+        "l1",
+        "l2",
+        "l3",
+        "l4"
+      ],
+      "value_canonical": "5001"
+    },
+    {
+      "fixture_id": "F5_deep",
+      "node_path": [
+        "plain"
+      ],
+      "value_canonical": "5002"
+    },
+    {
+      "fixture_id": "F7_whitespace_key",
+      "node_path": [],
+      "value_canonical": "{\" \":7001,\"plain\":7002}"
+    },
+    {
+      "fixture_id": "F7_whitespace_key",
+      "node_path": [
+        " "
+      ],
+      "value_canonical": "7001"
+    },
+    {
+      "fixture_id": "F7_whitespace_key",
+      "node_path": [
+        "plain"
+      ],
+      "value_canonical": "7002"
+    },
+    {
+      "fixture_id": "F6_shadow_baseline",
+      "node_path": [],
+      "value_canonical": "{\"beta.gamma\":3001,\"plain\":6001}"
+    },
+    {
+      "fixture_id": "F6_shadow_baseline",
+      "node_path": [
+        "beta.gamma"
+      ],
+      "value_canonical": "3001"
+    },
+    {
+      "fixture_id": "F6_shadow_baseline",
+      "node_path": [
+        "plain"
+      ],
+      "value_canonical": "6001"
+    }
+  ],
+  "paths": [
+    {
+      "intent": "plain single segment",
+      "path_id": "P01",
+      "text": "alpha"
+    },
+    {
+      "intent": "interior object node",
+      "path_id": "P02",
+      "text": "beta"
+    },
+    {
+      "intent": "canonical two-segment path",
+      "path_id": "P03",
+      "text": "beta.gamma"
+    },
+    {
+      "intent": "leading separator",
+      "path_id": "P04",
+      "text": ".beta.gamma"
+    },
+    {
+      "intent": "doubled interior separator",
+      "path_id": "P05",
+      "text": "beta..gamma"
+    },
+    {
+      "intent": "trailing separator",
+      "path_id": "P06",
+      "text": "beta.gamma."
+    },
+    {
+      "intent": "separator padding on all sides",
+      "path_id": "P07",
+      "text": "...beta...gamma..."
+    },
+    {
+      "intent": "three-segment path",
+      "path_id": "P08",
+      "text": "beta.delta.eps"
+    },
+    {
+      "intent": "single segment present in most fixtures",
+      "path_id": "P09",
+      "text": "plain"
+    },
+    {
+      "intent": "empty path text",
+      "path_id": "P10",
+      "text": ""
+    },
+    {
+      "intent": "whitespace-only path text",
+      "path_id": "P11",
+      "text": " "
+    },
+    {
+      "intent": "separator-only path text",
+      "path_id": "P12",
+      "text": "."
+    },
+    {
+      "intent": "double-separator-only path text",
+      "path_id": "P13",
+      "text": ".."
+    },
+    {
+      "intent": "text equal to an F2 key containing a doubled dot",
+      "path_id": "P14",
+      "text": "a..b"
+    },
+    {
+      "intent": "text equal to an F2 key with a trailing dot",
+      "path_id": "P15",
+      "text": "trail."
+    },
+    {
+      "intent": "array-valued node",
+      "path_id": "P16",
+      "text": "arr"
+    },
+    {
+      "intent": "array element by index",
+      "path_id": "P17",
+      "text": "arr.0"
+    },
+    {
+      "intent": "second array element by index",
+      "path_id": "P18",
+      "text": "arr.1"
+    },
+    {
+      "intent": "member of an object inside an array",
+      "path_id": "P19",
+      "text": "objarr.0.k"
+    },
+    {
+      "intent": "array-of-object node",
+      "path_id": "P20",
+      "text": "objarr"
+    },
+    {
+      "intent": "JSON null leaf",
+      "path_id": "P21",
+      "text": "nul"
+    },
+    {
+      "intent": "string leaf",
+      "path_id": "P22",
+      "text": "str"
+    },
+    {
+      "intent": "boolean leaf",
+      "path_id": "P23",
+      "text": "flag"
+    },
+    {
+      "intent": "four-segment deep path",
+      "path_id": "P24",
+      "text": "l1.l2.l3.l4"
+    },
+    {
+      "intent": "interior node of the deep tree",
+      "path_id": "P25",
+      "text": "l1.l2"
+    },
+    {
+      "intent": "absent single segment",
+      "path_id": "P26",
+      "text": "absent_key"
+    },
+    {
+      "intent": "walk past a scalar leaf",
+      "path_id": "P27",
+      "text": "beta.gamma.extra"
+    },
+    {
+      "intent": "text that dot-splits identically to the F2 key 'a..b'",
+      "path_id": "P28",
+      "text": "a.b"
+    }
+  ],
+  "probe_values": [
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V000",
+      "value": "s4004",
+      "value_canonical": "\"s4004\""
+    },
+    {
+      "occurs_in_fixtures": [
+        "F1_nested_canonical"
+      ],
+      "probe_id": "V001",
+      "value": 1001,
+      "value_canonical": "1001"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F1_nested_canonical"
+      ],
+      "probe_id": "V002",
+      "value": 1002,
+      "value_canonical": "1002"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F1_nested_canonical"
+      ],
+      "probe_id": "V003",
+      "value": 1003,
+      "value_canonical": "1003"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F2_unspellable_keys"
+      ],
+      "probe_id": "V004",
+      "value": 2001,
+      "value_canonical": "2001"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F2_unspellable_keys"
+      ],
+      "probe_id": "V005",
+      "value": 2002,
+      "value_canonical": "2002"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F2_unspellable_keys"
+      ],
+      "probe_id": "V006",
+      "value": 2003,
+      "value_canonical": "2003"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F2_unspellable_keys"
+      ],
+      "probe_id": "V007",
+      "value": 2004,
+      "value_canonical": "2004"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F2_unspellable_keys"
+      ],
+      "probe_id": "V008",
+      "value": 2005,
+      "value_canonical": "2005"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F3_shadow_collision",
+        "F6_shadow_baseline"
+      ],
+      "probe_id": "V009",
+      "value": 3001,
+      "value_canonical": "3001"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F3_shadow_collision"
+      ],
+      "probe_id": "V010",
+      "value": 3002,
+      "value_canonical": "3002"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F3_shadow_collision"
+      ],
+      "probe_id": "V011",
+      "value": 3003,
+      "value_canonical": "3003"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V012",
+      "value": 4001,
+      "value_canonical": "4001"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V013",
+      "value": 4002,
+      "value_canonical": "4002"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V014",
+      "value": 4003,
+      "value_canonical": "4003"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V015",
+      "value": 4005,
+      "value_canonical": "4005"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F5_deep"
+      ],
+      "probe_id": "V016",
+      "value": 5001,
+      "value_canonical": "5001"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F5_deep"
+      ],
+      "probe_id": "V017",
+      "value": 5002,
+      "value_canonical": "5002"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F6_shadow_baseline"
+      ],
+      "probe_id": "V018",
+      "value": 6001,
+      "value_canonical": "6001"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F7_whitespace_key"
+      ],
+      "probe_id": "V019",
+      "value": 7001,
+      "value_canonical": "7001"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F7_whitespace_key"
+      ],
+      "probe_id": "V020",
+      "value": 7002,
+      "value_canonical": "7002"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V021",
+      "value": [
+        4001,
+        4002
+      ],
+      "value_canonical": "[4001,4002]"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V022",
+      "value": [
+        {
+          "k": 4003
+        }
+      ],
+      "value_canonical": "[{\"k\":4003}]"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V023",
+      "value": null,
+      "value_canonical": "null"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V024",
+      "value": true,
+      "value_canonical": "true"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F7_whitespace_key"
+      ],
+      "probe_id": "V025",
+      "value": {
+        " ": 7001,
+        "plain": 7002
+      },
+      "value_canonical": "{\" \":7001,\"plain\":7002}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F2_unspellable_keys"
+      ],
+      "probe_id": "V026",
+      "value": {
+        "": 2002,
+        "a..b": 2003,
+        "beta.gamma": 2001,
+        "plain": 2005,
+        "trail.": 2004
+      },
+      "value_canonical": "{\"\":2002,\"a..b\":2003,\"beta.gamma\":2001,\"plain\":2005,\"trail.\":2004}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F1_nested_canonical"
+      ],
+      "probe_id": "V027",
+      "value": {
+        "alpha": 1001,
+        "beta": {
+          "delta": {
+            "eps": 1003
+          },
+          "gamma": 1002
+        }
+      },
+      "value_canonical": "{\"alpha\":1001,\"beta\":{\"delta\":{\"eps\":1003},\"gamma\":1002}}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V028",
+      "value": {
+        "arr": [
+          4001,
+          4002
+        ],
+        "flag": true,
+        "nul": null,
+        "objarr": [
+          {
+            "k": 4003
+          }
+        ],
+        "plain": 4005,
+        "str": "s4004"
+      },
+      "value_canonical": "{\"arr\":[4001,4002],\"flag\":true,\"nul\":null,\"objarr\":[{\"k\":4003}],\"plain\":4005,\"str\":\"s4004\"}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F3_shadow_collision"
+      ],
+      "probe_id": "V029",
+      "value": {
+        "beta": {
+          "gamma": 3002
+        },
+        "beta.gamma": 3001,
+        "plain": 3003
+      },
+      "value_canonical": "{\"beta\":{\"gamma\":3002},\"beta.gamma\":3001,\"plain\":3003}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F6_shadow_baseline"
+      ],
+      "probe_id": "V030",
+      "value": {
+        "beta.gamma": 3001,
+        "plain": 6001
+      },
+      "value_canonical": "{\"beta.gamma\":3001,\"plain\":6001}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F1_nested_canonical"
+      ],
+      "probe_id": "V031",
+      "value": {
+        "delta": {
+          "eps": 1003
+        },
+        "gamma": 1002
+      },
+      "value_canonical": "{\"delta\":{\"eps\":1003},\"gamma\":1002}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F1_nested_canonical"
+      ],
+      "probe_id": "V032",
+      "value": {
+        "eps": 1003
+      },
+      "value_canonical": "{\"eps\":1003}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F3_shadow_collision"
+      ],
+      "probe_id": "V033",
+      "value": {
+        "gamma": 3002
+      },
+      "value_canonical": "{\"gamma\":3002}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F4_arrays_and_types"
+      ],
+      "probe_id": "V034",
+      "value": {
+        "k": 4003
+      },
+      "value_canonical": "{\"k\":4003}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F5_deep"
+      ],
+      "probe_id": "V035",
+      "value": {
+        "l1": {
+          "l2": {
+            "l3": {
+              "l4": 5001
+            }
+          }
+        },
+        "plain": 5002
+      },
+      "value_canonical": "{\"l1\":{\"l2\":{\"l3\":{\"l4\":5001}}},\"plain\":5002}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F5_deep"
+      ],
+      "probe_id": "V036",
+      "value": {
+        "l2": {
+          "l3": {
+            "l4": 5001
+          }
+        }
+      },
+      "value_canonical": "{\"l2\":{\"l3\":{\"l4\":5001}}}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F5_deep"
+      ],
+      "probe_id": "V037",
+      "value": {
+        "l3": {
+          "l4": 5001
+        }
+      },
+      "value_canonical": "{\"l3\":{\"l4\":5001}}"
+    },
+    {
+      "occurs_in_fixtures": [
+        "F5_deep"
+      ],
+      "probe_id": "V038",
+      "value": {
+        "l4": 5001
+      },
+      "value_canonical": "{\"l4\":5001}"
+    },
+    {
+      "occurs_in_fixtures": [],
+      "probe_id": "VSENT",
+      "value": "__AMPHORA_NO_SUCH_GATE_VALUE__",
+      "value_canonical": "\"__AMPHORA_NO_SUCH_GATE_VALUE__\""
+    }
+  ],
+  "schema": "amphora.optimizer-orchestrator.path-addressing-corpus.v1"
+}

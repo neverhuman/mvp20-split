@@ -1,0 +1,153 @@
+{
+  "label_aware_checker_on_real_entries": [
+    {
+      "expected_value_checked": "1.16",
+      "found_label_adjacent": true,
+      "key": "resin.dgeba_331.density",
+      "matched_contexts": [
+        {
+          "context": "185            7,000-10,000           125 3        485      1.16       9.7 | D.E.R. 331          182-192            11,000-14,",
+          "pos": 22240
+        }
+      ],
+      "n_label_adjacent_occurrences": 1,
+      "note": "true citation: D.E.R. 331 row in the Dow Epoxy Resins comparison table",
+      "product_label_required": "331",
+      "text_file": "text_dgeba_331.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "1.01",
+      "found_label_adjacent": true,
+      "key": "hardener.ancamide_2353.density",
+      "matched_contexts": [
+        {
+          "context": "DE\u00ae 2353   Modified Polyamide      9        3,000           1.01               330          114           60               6",
+          "pos": 227029
+        }
+      ],
+      "n_label_adjacent_occurrences": 1,
+      "note": "true citation: ANCAMIDE(R) 2353 row in the Evonik Americas curing-agent guide",
+      "product_label_required": "2353",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    }
+  ],
+  "label_aware_checker_on_wrongproduct_planted_entries": [
+    {
+      "expected_value_checked": "1.16",
+      "found_label_adjacent": true,
+      "key": "resin.dgeba_331.density",
+      "matched_contexts": [
+        {
+          "context": "176            4,000-6,000            75 3         485      1.16       9.7 | D.E.R. 337          230-250            400-800 1 ",
+          "pos": 22438
+        }
+      ],
+      "n_label_adjacent_occurrences": 1,
+      "note": "PLANTED: swapped claimed product identity to D.E.R. 337 (real, adjacent row, same literal 1.16 value)",
+      "product_label_required": "337",
+      "text_file": "text_dgeba_331.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "1.01",
+      "found_label_adjacent": true,
+      "key": "hardener.ancamide_2353.density",
+      "matched_contexts": [
+        {
+          "context": "CAMINE\u00ae 2286   Adduct              1           60           1.01               325           95           50               4",
+          "pos": 158954
+        }
+      ],
+      "n_label_adjacent_occurrences": 1,
+      "note": "PLANTED: swapped claimed product identity to ANCAMINE(R) 2286 (real, different product row, same literal 1.01 value)",
+      "product_label_required": "2286",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    }
+  ],
+  "label_aware_fix_also_insufficient": true,
+  "occurrence_census": [
+    {
+      "expected": "1.16",
+      "key": "resin.dgeba_331.density",
+      "raw_substring_occurrences": 9,
+      "textfile": "text_dgeba_331.txt"
+    },
+    {
+      "expected": "1.01",
+      "key": "hardener.ancamide_2353.density",
+      "raw_substring_occurrences": 10,
+      "textfile": "citation_extracts/text_hardener_ancamide_2353_ahew.txt"
+    }
+  ],
+  "original_checker_on_real_entries": [
+    {
+      "expected_value_checked": "1.16",
+      "found_literal": true,
+      "key": "resin.dgeba_331.density",
+      "note": "true citation: D.E.R. 331 row in the Dow Epoxy Resins comparison table",
+      "text_file": "text_dgeba_331.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "1.01",
+      "found_literal": true,
+      "key": "hardener.ancamide_2353.density",
+      "note": "true citation: ANCAMIDE(R) 2353 row in the Evonik Americas curing-agent guide",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    }
+  ],
+  "original_checker_on_wrongproduct_planted_entries": [
+    {
+      "expected_value_checked": "1.16",
+      "found_literal": true,
+      "key": "resin.dgeba_331.density",
+      "note": "PLANTED: swapped claimed product identity to D.E.R. 337 (real, adjacent row, same literal 1.16 value)",
+      "text_file": "text_dgeba_331.txt",
+      "verdict": "supports"
+    },
+    {
+      "expected_value_checked": "1.01",
+      "found_literal": true,
+      "key": "hardener.ancamide_2353.density",
+      "note": "PLANTED: swapped claimed product identity to ANCAMINE(R) 2286 (real, different product row, same literal 1.01 value)",
+      "text_file": "citation_extracts/text_hardener_ancamide_2353_ahew.txt",
+      "verdict": "supports"
+    }
+  ],
+  "refutation_confirmed": true,
+  "summary": {
+    "label_aware_checker_correctly_validates_real_n": 2,
+    "label_aware_checker_wrongly_validates_n": 2,
+    "label_aware_fix_also_insufficient": true,
+    "n_wrongproduct_entries_tested": 2,
+    "original_checker_correctly_validates_real_n": 2,
+    "original_checker_wrongly_validates_n": 2,
+    "refutation_confirmed": true
+  },
+  "table_header_confirmation": {
+    "ancamide_2353_source": {
+      "matched_column": "Specific Gravity (header confirmed present at char offset ~222502, directly above the ANCAMIDE(R) 2353 row at ~227029)",
+      "note": "the word 'Density' occurs only once in the whole 398760-char document, far from this table (offset 357626); 'Specific Gravity' is the true column header, occurring 18x, matching facts.json's stored unit g/mL by physical equivalence (specific gravity numerically equals density in g/mL at reference temperature).",
+      "textfile": "citation_extracts/text_hardener_ancamide_2353_ahew.txt"
+    },
+    "dgeba_331_source": {
+      "control_row_confirming_this_is_a_real_varying_column": "D.E.R. 362   185-205   4,500-6,500   1   480   1.14   9.5 (differs at 1.14, proving the column is not a constant/misparsed artifact)",
+      "matched_column": "Specific Gravity, 25/25C",
+      "raw_rows_sharing_value_1_16": [
+        "D.E.R. 317   192-203   16,000-25,000   5   485   1.16   9.7",
+        "D.E.R. 330   176-185   7,000-10,000    125-3   485   1.16   9.7",
+        "D.E.R. 331   182-192   11,000-14,000   125-3   485   1.16   9.7",
+        "D.E.R. 332   172-176   4,000-6,000     75-3    485   1.16   9.7",
+        "D.E.R. 337   230-250   400-800-1       3       485   1.16   9.7",
+        "D.E.R. 364   190-210   4,000-7,000     2       480   1.16   9.7",
+        "D.E.R. 383   176-183   9,000-10,500    125-3   485   1.16   9.7"
+      ],
+      "table_title": "Typical Properties of DOW Liquid Epoxy Resins (Table 1)",
+      "textfile": "text_dgeba_331.txt"
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "attack_under_test": {
+    "claim": "ROLE_VERDICT_INVARIANT_UNDER_SMILES_REENCODING, 549/549 evaluations 0 disagreements, in-fixture only (39 self-authored records)",
+    "receipt": "amphora-molecule-role-ranker/benchmarks/role-fact-provenance-invariance-v1/replay_receipt.v1.dsse.json"
+  },
+  "claim_locks": {
+    "measured_only_lock_preserved": true,
+    "no_objective_emitted": true,
+    "promotes_authority": false
+  },
+  "closes": [],
+  "corpus_results": [
+    {
+      "citation": "4,4'-Diaminodiphenyl sulfone (DDS), CAS 80-08-0, formula C12H12N2O2S, MW 248.30. Cited as the hot-curing aromatic-amine reference hardener in Wiegand & Osburg (2023), 'Synthesis, Curing and Thermal Behavior of Amine Hardeners from Potentially Renewable Sources', Polymers 15(4):990, https://doi.org/10.3390/polym15040990 (CC BY 4.0; fetched and license text confirmed verbatim from https://pmc.ncbi.nlm.nih.gov/articles/PMC9962791/ in the prior W-D-ROLE sweep fire, source 9).",
+      "derived_handles": {
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "expected_role": "hardener",
+      "id": "dds-diaminodiphenyl-sulfone",
+      "n_encoding_variants": 20,
+      "n_variant_disagreements": 0,
+      "note": "real external molecule, canonical SMILES verified disjoint from all 41 canonical SMILES in reference/phase0-role-known-answer.v2.json (44 records). Both amines are aniline-type (exocyclic NH2 on an aromatic ring, not an in-ring pyrrole/imidazole N-H like EMI-24's hostile null), neither adjacent to the ring's own carbonyl/sulfonyl carbon (the sulfone S is two bonds from each N, not a direct neighbor), so both should count as reactive amine H.",
+      "observed_role": "hardener",
+      "role_pass": true,
+      "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+    },
+    {
+      "citation": "4-Amino-3-methoxybenzylamine ('Compound 5' in the source paper), synthesized from vanillin, formula C8H12N2O, MW 152.2 (matches the paper's reported M+=152). Wiegand & Osburg (2023), Polymers 15(4):990, https://doi.org/10.3390/polym15040990 (CC BY 4.0). Paper states: 'Two differently substituted diamines were prepared to act as amine-curing agents for epoxy resins' and reports DSC onset 71C / Tg 68C, cold-curing behavior similar to IPDA -- an independent published DSC/TGA cure-behavior attestation of hardener role, not a supplier TDS claim.",
+      "derived_handles": {
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "expected_role": "hardener",
+      "id": "compound5-vanillin-derived-amine-hardener",
+      "n_encoding_variants": 14,
+      "n_variant_disagreements": 0,
+      "note": "novel bio-based/renewable amine hardener chemotype (lignin-derived), zero representation in the 44-record self-authored fixture per the prior sweep's structural_or_factor_overlap finding. One aromatic (aniline-type) NH2 plus one aliphatic benzylic CH2NH2, neither carbonyl/sulfonyl-adjacent.",
+      "observed_role": "hardener",
+      "role_pass": true,
+      "smiles": "NCc1cc(OC)c(N)cc1"
+    },
+    {
+      "citation": "4-Amino-3,5-dimethoxybenzylamine ('Compound 6' in the source paper), synthesized from syringaldehyde, formula C9H14N2O2, MW 182.22 (matches the paper's reported M+=182). Same source and license as compound 5. Paper reports DSC onset 79C / Tg 160C and TGA thermal stability 'similar to those formed with IPDA'.",
+      "derived_handles": {
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "expected_role": "hardener",
+      "id": "compound6-syringaldehyde-derived-amine-hardener",
+      "n_encoding_variants": 16,
+      "n_variant_disagreements": 0,
+      "note": "second independent instance of the lignin-derived bio-based amine hardener chemotype, dimethoxy-substituted analog of compound 5.",
+      "observed_role": "hardener",
+      "role_pass": true,
+      "smiles": "NCc1cc(OC)c(N)c(OC)c1"
+    },
+    {
+      "citation": "Discrete n=5 oligomer analog of a poly(propylene glycol) diamine polyetheramine (Jeffamine/Baxxodur-class; BASF's own Baxxodur EC-1xx/2xx/3xx product-line description states 'EC 302 = polyetheramine D 400 analog', fetched verbatim from basf.com/global/en/legal.html + product pages in the prior W-D-ROLE sweep fire, source 4). Commercial Jeffamine/Baxxodur polyetheramine products are average-MW mixtures over a distribution of n; this harness uses a single discrete n=5 oligomer (MW 364.5) as a structural representative, matching how the portfolio's own DGEBA oligomer-series receipts already handle polymeric analogs with an explicit n.",
+      "derived_handles": {
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 4
+      },
+      "expected_role": "hardener",
+      "id": "jeffamine-d400-baxxodur-ec302-polyetheramine-analog",
+      "n_encoding_variants": 28,
+      "n_variant_disagreements": 0,
+      "note": "polyetheramine chemotype, zero representation in the 44-record fixture per the prior sweep's structural_or_factor_overlap finding. Two terminal primary amines on secondary carbons, polyether backbone, no carbonyl/sulfonyl neighbor to either amine nitrogen.",
+      "observed_role": "hardener",
+      "role_pass": true,
+      "smiles": "CC(N)COC(C)COC(C)COC(C)COC(C)COC(C)CN"
+    },
+    {
+      "citation": "Simplified single-Mannich-site phenalkamine: cardanol (a C15-alkyl-substituted phenol from cashew nutshell liquid, CNSL) condensed with formaldehyde and triethylenetetramine (TETA) via the Mannich reaction, the synthesis route documented for Cardolite NX-series phenalkamine curing agents (cardolite.com/phenalkamines/, prior W-D-ROLE sweep fire source 5) and in the open cure-chemistry literature (e.g. Jaillet et al. and related cardanol-Mannich-base curing-kinetics studies of phenalkamines synthesized from polyethylenepolyamines). Uses a saturated C15 alkyl chain in place of real cardanol's mixed mono/di/tri-ene chain (41% triene major component) -- immaterial to the has_oxirane/reactive_amine_hydrogen rule under test, which does not inspect the alkyl tail.",
+      "derived_handles": {
+        "has_oxirane": false,
+        "has_reactive_amine_hydrogen": true,
+        "oxirane_ring_count": 0,
+        "reactive_amine_hydrogen_count": 5
+      },
+      "expected_role": "hardener",
+      "id": "phenalkamine-cardanol-teta-mannich-base",
+      "n_encoding_variants": 36,
+      "n_variant_disagreements": 0,
+      "note": "phenalkamine chemotype, zero representation in the 44-record fixture per the prior sweep's structural_or_factor_overlap finding -- flagged there as directly analogous in kind to the guanidine gap that broke the rule once already (a whole chemotype family absent from the self-authored fixture). Three secondary benzylamine/polyamine N-H (1H each) plus one terminal primary N-H2 (2H) = 5 reactive amine H expected; none adjacent to a carbonyl/sulfonyl carbon or sulfur. Phenalkamines are formulated as the stoichiometric hardener component in industry TDS/literature (unlike DPG/ DOTG guanidine accelerators, which are never listed as curing agents and are used at sub-stoichiometric catalytic loadings), so 'hardener' is the correct attested expectation, not a repeat of the guanidine failure mode.",
+      "observed_role": "hardener",
+      "role_pass": true,
+      "smiles": "Oc1cc(CCCCCCCCCCCCCCC)ccc1CNCCNCCNCCN"
+    },
+    {
+      "citation": "3,4-Epoxycyclohexylmethyl 3,4-epoxycyclohexanecarboxylate (ERL-4221 / Uvacure-1500-class cycloaliphatic epoxy cross-linker), CAS 2386-87-0, formula C14H20O4, MW 252.31. PubChem / Sigma-Aldrich product 407208 / Cymit Quimica CAS record (cymitquimica.com/cas/2386-87-0), cross-checked 2026-08-16. Real, widely-used non-glycidyl cycloaliphatic diepoxy resin (UV-stable marine/aerospace topcoats), zero representation in the 39-record self-authored fixture (which is exclusively glycidyl-ether DGEBA-family resins) and never probed by any prior role-ranker fire.",
+      "derived_handles": {
+        "has_oxirane": true,
+        "has_reactive_amine_hydrogen": false,
+        "oxirane_ring_count": 2,
+        "reactive_amine_hydrogen_count": 0
+      },
+      "expected_role": "resin",
+      "id": "erl4221-cycloaliphatic-fused-bicyclic-diepoxide",
+      "n_encoding_variants": 21,
+      "n_variant_disagreements": 0,
+      "note": "Hardest oxirane-side structural test the module has faced: two FUSED bicyclo[4.1.0]heptane epoxide rings (SSSR perception for fused/bridged polycyclics is a documented cheminformatics edge case) exercised across the full canonical/kekule/every-atom-rooted/explicit-H sweep.",
+      "observed_role": "resin",
+      "role_pass": true,
+      "smiles": "O=C(OCC1CCC2OC2C1)C3CCC4OC4C3"
+    }
+  ],
+  "corpus_summary": {
+    "disagreements": [],
+    "n_disagreements": 0,
+    "n_molecules": 6,
+    "n_role_fail": 0,
+    "n_role_pass": 6,
+    "total_encoding_variant_evaluations": 135
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent for a real Phase-1 evaluation)",
+    "PHASE_1_INDEPENDENT_EVALUATION (still needs external double-labelled expert reference)",
+    "RDKit_C++_CEILING (still RDKit-only; no second cheminformatics toolkit cross-check)"
+  ],
+  "external_corpus_source": {
+    "path": "amphora-molecule-role-ranker/benchmarks/role-external-corpus-validation-v1/diagnostic.canonical.json",
+    "sha256": "63c8db44831874c55449e1db4c50f9209758674f0e7dd41c0afd9a84508c0f77"
+  },
+  "fidelity_to_source_rule": {
+    "smarts_byte_identical_to_source": true,
+    "source_diagnostic_path": "amphora-molecule-role-ranker/benchmarks/role-fact-provenance-invariance-v1/diagnostic.canonical.json",
+    "source_diagnostic_sha256_matches_recorded": true,
+    "source_diagnostic_sha256_observed": "7cf8584aa40774832eebf71b46026a9ed922327a37621edc6369e5aa32655a48"
+  },
+  "interpretation": "6/6 external-corpus molecules (5 real, previously-validated hardener chemotypes + 1 new real fused-bicyclic cycloaliphatic diepoxide resin, CAS-verified formula/MW admissibility 1/1) got the expected role, with 0 SMILES-encoding-invariance disagreements across 135 deterministic re-encodings (canonical + kekule + every-heavy-atom-rooted + explicit-H). Positive control: the identical comparison path detected a planted structural defect (both aniline -NH2 groups struck from DDS) as True. Verdict: CLAIM_SURVIVED.",
+  "new_probe_admissibility": [
+    {
+      "cited_average_mw": 252.31,
+      "cited_formula": "C14H20O4",
+      "formula_matches": true,
+      "id": "erl4221-cycloaliphatic-fused-bicyclic-diepoxide",
+      "mw_matches": true,
+      "recomputed_average_mw": 252.31,
+      "recomputed_formula": "C14H20O4"
+    }
+  ],
+  "positive_control": {
+    "base_handles": {
+      "has_oxirane": false,
+      "has_reactive_amine_hydrogen": true,
+      "oxirane_ring_count": 0,
+      "reactive_amine_hydrogen_count": 4
+    },
+    "base_role": "hardener",
+    "detected": true,
+    "evidence": "reactive_amine_hydrogen_count 4 -> 0; role hardener -> ABSTAIN",
+    "how_planted": "string edit: 'Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1' -> 'c1ccc(cc1)S(=O)(=O)c1ccc(cc1)' (both leading/trailing N removed)",
+    "planted_defect": "both aniline -NH2 groups on DDS (CAS 80-08-0, Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1, a real hardener) struck to -H (yielding plain diphenyl sulfone, a real non-reactive out-of-domain molecule), fed through the identical derive_handles/role_of comparison path used by the real encoding-invariance loop above, as if it were a claimed re-encoding of the same molecule",
+    "poisoned_handles": {
+      "has_oxirane": false,
+      "has_reactive_amine_hydrogen": false,
+      "oxirane_ring_count": 0,
+      "reactive_amine_hydrogen_count": 0
+    },
+    "poisoned_role": "ABSTAIN"
+  },
+  "primary_references": [
+    "Weininger, D. (1988) SMILES 1. JCICS 28(1):31-36. doi:10.1021/ci00057a005",
+    "Weininger et al. (1989) SMILES 2 canonicalization. JCICS 29(2):97-101. doi:10.1021/ci00062a008",
+    "Landrum, G. RDKit: open-source cheminformatics (pinned 2026.03.2).",
+    "PubChem / Sigma-Aldrich 407208 / Cymit Quimica: CAS 2386-87-0 (ERL-4221), C14H20O4, MW 252.31, cross-checked 2026-08-16.",
+    "Wiegand & Osburg (2023) Polymers 15(4):990. doi:10.3390/polym15040990 (CC BY 4.0)."
+  ],
+  "purpose": "Re-attack role-fact-provenance-invariance-v1's ledger-unattacked SMILES-encoding-invariance claim on real external molecules it never saw: the 5 already-validated external hardener chemotypes plus one brand-new fused-bicyclic cycloaliphatic diepoxide resin chemotype.",
+  "schema": "amphora.molecule-role-ranker.role-encoding-invariance-external-corpus.v1",
+  "toolkit": {
+    "python": "3.12.3",
+    "rdkit_version": "2026.03.2"
+  },
+  "verdict": "CLAIM_SURVIVED"
+}

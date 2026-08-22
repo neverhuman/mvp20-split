@@ -1,0 +1,2457 @@
+{
+  "active_nh_regressions": [],
+  "n_active_nh_regressions_vs_r_a06v2": 0,
+  "n_candidates": 20,
+  "n_failed_gates": 0,
+  "n_scored": 20,
+  "purpose": "U-E2E PART A: build the >=20-candidate end-to-end set (5 canonical amines + 15 R-A06v2-labelled grammar proposals) and run every one through the REAL production design_gate_result decision via the live RDKit C++ FFI, cross-checking the live active-hydrogen count against the R-A06v2-corrected label carried into each candidate's provenance.",
+  "results": [
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 170.3,
+      "canonical_isomeric_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "cas_or_note": "CAS 2855-13-2, C10H22N2, R-A07v2-corrected structure (supersedes stale C9H20N2 demethylated string)",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C10H22N2",
+      "id": "canon-ipda",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "IPDA (isophorone diamine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.125,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.8235294117647058,
+      "novelty_score": 0.875,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 42.575,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+        "canonical_structure_sha256": "bf3967386a926eaacd6a3d379839b34f9956f0b553d005cefed17d87f4e0869c",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C10H22N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 170.3,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:bf3967386a926eaacd6a3d379839b34f9956f0b553d005cefed17d87f4e0869c",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "canonical_amine",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "b5d401b9d38bd2462953d030f35ea5ccf98acb3be0083b99666570230a446073",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "canon-ipda",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F3_cycloaliphatic"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 248.307,
+      "canonical_isomeric_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "cas_or_note": "CAS 80-08-0, per R-N01 CAS-correct CID attribution",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C12H12N2O2S",
+      "id": "canon-dds",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "DDS (4,4'-diaminodiphenyl sulfone)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.1111111111111111,
+      "novelty_nearest_structure_id": "tert-butyl-benzene-control",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.75,
+      "novelty_score": 0.8888888888888888,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 62.07675,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+        "canonical_structure_sha256": "47d1046846e9a8563cf169be5e3aae5c87939d80908e648d66f29c417d7c5cd8",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C12H12N2O2S",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 248.307,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:47d1046846e9a8563cf169be5e3aae5c87939d80908e648d66f29c417d7c5cd8",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "canonical_amine",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "843f53c4ee1c3fb3e973176fefc7b1108aa517afe66edc5814e8eaf061f5489b",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "canon-dds",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F4_bridged_bisaniline"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 103.169,
+      "canonical_isomeric_smiles": "NCCNCCN",
+      "cas_or_note": "CAS 111-40-0",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C4H13N3",
+      "id": "canon-deta",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 5,
+      "name": "DETA (diethylenetriamine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.36363636363636365,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.6363636363636364,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 20.6338,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCNCCN",
+        "canonical_structure_sha256": "907c5669df3591158dff663a75d79f76be4441127337b110a9d1c10ca4f3c72b",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C4H13N3",
+        "functionality": {
+          "amine_hydrogen": 5,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 103.169,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 5
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:907c5669df3591158dff663a75d79f76be4441127337b110a9d1c10ca4f3c72b",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "canonical_amine",
+      "r_a06v2_expected_active_nh": 5,
+      "r_a06v2_expected_amine_centres": 3,
+      "smiles": "NCCNCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "62c5fe99b762bccccab62e75b5fef9e516905d5adf35bc50ee18c436948ea0d8",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "canon-deta",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 146.238,
+      "canonical_isomeric_smiles": "NCCNCCNCCN",
+      "cas_or_note": "CAS 112-24-3",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C6H18N4",
+      "id": "canon-teta",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 6,
+      "name": "TETA (triethylenetetramine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.3333333333333333,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.6666666666666667,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 24.373,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCNCCNCCN",
+        "canonical_structure_sha256": "1a0f38aa9bcb8cc011e5326313d1007cc689f610dc085c880e1f071f5b52ffd2",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C6H18N4",
+        "functionality": {
+          "amine_hydrogen": 6,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 146.238,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 6
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:1a0f38aa9bcb8cc011e5326313d1007cc689f610dc085c880e1f071f5b52ffd2",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "canonical_amine",
+      "r_a06v2_expected_active_nh": 6,
+      "r_a06v2_expected_amine_centres": 4,
+      "smiles": "NCCNCCNCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "6c5b90270d9618a228c765ca9443eb6c6cb0f7c3e65e8636767f531505235977",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "canon-teta",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 136.198,
+      "canonical_isomeric_smiles": "NCc1cccc(CN)c1",
+      "cas_or_note": "CAS 1477-55-0",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C8H12N2",
+      "id": "canon-mxda",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "m-XDA (1,3-xylylenediamine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.17647058823529413,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.5384615384615384,
+      "novelty_score": 0.8235294117647058,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 34.0495,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCc1cccc(CN)c1",
+        "canonical_structure_sha256": "c7c63df1a42eac8a5cd97ff6f04ce2673b0997633d1dccc16b84f1cd36e2b0d6",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C8H12N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 136.198,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:c7c63df1a42eac8a5cd97ff6f04ce2673b0997633d1dccc16b84f1cd36e2b0d6",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "canonical_amine",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCc1cccc(CN)c1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "59c9f62e3137888e609b04c5aab52700b5389aadc910f65586cad6b0a16b8a72",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "canon-mxda",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F5_xylylenediamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 60.1,
+      "canonical_isomeric_smiles": "NCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 19",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C2H8N2",
+      "id": "gen-eda",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "EDA (ethylenediamine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": true,
+      "novelty_maximum_tanimoto_similarity": 1.0,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.0,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 15.025,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCN",
+        "canonical_structure_sha256": "dcc73bf631f9be42113cee3ffcf0bb8889cf63dd94af75ebee2dd18d532966b2",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C2H8N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 60.1,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:dcc73bf631f9be42113cee3ffcf0bb8889cf63dd94af75ebee2dd18d532966b2",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "c2318732f77e4f1d6287eb466322b75002a78d06ea3a74285dac2e12025dee69",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-eda",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 189.307,
+      "canonical_isomeric_smiles": "NCCNCCNCCNCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 24",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C8H23N5",
+      "id": "gen-tepa",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 7,
+      "name": "TEPA (tetraethylenepentamine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.3333333333333333,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.6666666666666667,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 27.043857142857142,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCNCCNCCNCCN",
+        "canonical_structure_sha256": "d9f3a2c8dec5330d433291ecbcec3f197ca8b0f3c998d3656203be95ed3466b0",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C8H23N5",
+        "functionality": {
+          "amine_hydrogen": 7,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 189.307,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 7
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:d9f3a2c8dec5330d433291ecbcec3f197ca8b0f3c998d3656203be95ed3466b0",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 7,
+      "r_a06v2_expected_amine_centres": 5,
+      "smiles": "NCCNCCNCCNCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "adb369cacce4a0453cd900366ee6ef2b29555d5777fda1cef713a19461ea2011",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-tepa",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 232.376,
+      "canonical_isomeric_smiles": "NCCNCCNCCNCCNCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 25",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C10H28N6",
+      "id": "gen-peha",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 8,
+      "name": "PEHA (pentaethylenehexamine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.3333333333333333,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.6666666666666667,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 29.047,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCNCCNCCNCCNCCN",
+        "canonical_structure_sha256": "1f810ad00bee254dcb22ef3c381161390af18e3a24cf804ca696c25719ba33fb",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C10H28N6",
+        "functionality": {
+          "amine_hydrogen": 8,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 232.376,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 8
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:1f810ad00bee254dcb22ef3c381161390af18e3a24cf804ca696c25719ba33fb",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 8,
+      "r_a06v2_expected_amine_centres": 6,
+      "smiles": "NCCNCCNCCNCCNCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "4f5d088c0e1536b67d4df5ece330834d9d8404eae1fb825ad1093b977b72d86e",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-peha",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F1_polyethyleneamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 88.154,
+      "canonical_isomeric_smiles": "NCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 17",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C4H12N2",
+      "id": "gen-c4-diaminobutane",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "1,4-diaminobutane (C4)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.5,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.5,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 22.0385,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCCCN",
+        "canonical_structure_sha256": "abfb247b65d73ec882481ade82d4889da2b7c6b2de8b16ffaffd43b58e6a0d6c",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C4H12N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 88.154,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:abfb247b65d73ec882481ade82d4889da2b7c6b2de8b16ffaffd43b58e6a0d6c",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCCCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "3d1f7d68179d14ae73144d8f7dcfc27e4f201155dad7d5a0b89b33a05e0e7aa3",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-c4-diaminobutane",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 116.208,
+      "canonical_isomeric_smiles": "NCCCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 15",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C6H16N2",
+      "id": "gen-c6-diaminohexane",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "1,6-diaminohexane (C6)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.4444444444444444,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.5555555555555556,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 29.052,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCCCCCN",
+        "canonical_structure_sha256": "aece2e97a54d8057b5ecfd13b5243e8b29ca3505cd8d5e083dd6ab3b16814c76",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C6H16N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 116.208,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:aece2e97a54d8057b5ecfd13b5243e8b29ca3505cd8d5e083dd6ab3b16814c76",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCCCCCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "da8616de33b6022f0c619185add939d279c702f9162ee9ae9b3ff55eb80805c8",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-c6-diaminohexane",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 144.262,
+      "canonical_isomeric_smiles": "NCCCCCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 13",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C8H20N2",
+      "id": "gen-c8-diaminooctane",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "1,8-diaminooctane (C8)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.4444444444444444,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.5555555555555556,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 36.0655,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCCCCCCCN",
+        "canonical_structure_sha256": "455ec57be42767337544e5af218e77accbf28a9b0adebdb9ec791ed8a4d43b0e",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C8H20N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 144.262,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:455ec57be42767337544e5af218e77accbf28a9b0adebdb9ec791ed8a4d43b0e",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCCCCCCCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "fbd41e49d4bd18be91efe4d1b1a3f6e5900a6e38ffc7960165a5aab558543a03",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-c8-diaminooctane",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 172.316,
+      "canonical_isomeric_smiles": "NCCCCCCCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 11",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C10H24N2",
+      "id": "gen-c10-diaminodecane",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "1,10-diaminodecane (C10)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.4444444444444444,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.5555555555555556,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 43.079,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCCCCCCCCCN",
+        "canonical_structure_sha256": "3b58304869816b789839e44862e5d42798998ea9344e1bc8d3e3c58eca89ede7",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C10H24N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 172.316,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:3b58304869816b789839e44862e5d42798998ea9344e1bc8d3e3c58eca89ede7",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCCCCCCCCCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "151942e81a7fe7ce87a0542ac55117d5f1ae99018b3e38ccda5e65a28a76b932",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-c10-diaminodecane",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 200.37,
+      "canonical_isomeric_smiles": "NCCCCCCCCCCCCN",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 9",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C12H28N2",
+      "id": "gen-c12-diaminododecane",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "1,12-diaminododecane (C12)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.4444444444444444,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.0,
+      "novelty_score": 0.5555555555555556,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 50.0925,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCCCCCCCCCCCN",
+        "canonical_structure_sha256": "02513a009e5b003772813065ca09f7fc37727156bcaedb54c2d5c3d2d44ff3b4",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C12H28N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 200.37,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:02513a009e5b003772813065ca09f7fc37727156bcaedb54c2d5c3d2d44ff3b4",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCCCCCCCCCCCCN",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "c929d701b1a064a5cebeb20cbf1104f16cd29220198150fa1c1edf812ae6abee",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-c12-diaminododecane",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F2_alpha_omega_diamine"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 114.192,
+      "canonical_isomeric_smiles": "NC1CCC(N)CC1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 2",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C6H14N2",
+      "id": "gen-14-dach",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "1,4-DACH (1,4-diaminocyclohexane)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.15,
+      "novelty_nearest_structure_id": "cyclohexane-carboxylate-control",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.5,
+      "novelty_score": 0.85,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 28.548,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NC1CCC(N)CC1",
+        "canonical_structure_sha256": "192947493091c281bc4b716e34f673a8237ada9d29cfc03100a1251046e7c8d3",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C6H14N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 114.192,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:192947493091c281bc4b716e34f673a8237ada9d29cfc03100a1251046e7c8d3",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NC1CCC(N)CC1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "12322458c4a45efc57b5522f615efae7c74b1bc18580a99a8538870686250ff9",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-14-dach",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F3_cycloaliphatic"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 142.246,
+      "canonical_isomeric_smiles": "NCC1CCCC(CN)C1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 7",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C8H18N2",
+      "id": "gen-13-bac",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "1,3-BAC (1,3-bis(aminomethyl)cyclohexane)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.17647058823529413,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.5384615384615384,
+      "novelty_score": 0.8235294117647058,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 35.5615,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCC1CCCC(CN)C1",
+        "canonical_structure_sha256": "722fbe1927214c0c7b361d717bb535fc3336d686fc1a9a7f8d7c8b60e03937e3",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C8H18N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 142.246,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:722fbe1927214c0c7b361d717bb535fc3336d686fc1a9a7f8d7c8b60e03937e3",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCC1CCCC(CN)C1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "e787eb4da384c9b188b15c4af3f109c916fe1c01011508ab8725d172e8da7d49",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-13-bac",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F3_cycloaliphatic"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 129.207,
+      "canonical_isomeric_smiles": "NCCN1CCNCC1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 21 (mixed primary/secondary/tertiary N; active_NH != 2*centres)",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C6H15N3",
+      "id": "gen-aep",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 3,
+      "name": "AEP (1-(2-aminoethyl)piperazine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.21052631578947367,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.9333333333333333,
+      "novelty_score": 0.7894736842105263,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 43.068999999999996,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCCN1CCNCC1",
+        "canonical_structure_sha256": "00af420c931313f22e8f157701a07719ebb7519d4d0c974a8d55e2a9bf93470a",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C6H15N3",
+        "functionality": {
+          "amine_hydrogen": 3,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 129.207,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 3
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:00af420c931313f22e8f157701a07719ebb7519d4d0c974a8d55e2a9bf93470a",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 3,
+      "r_a06v2_expected_amine_centres": 3,
+      "smiles": "NCCN1CCNCC1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "d8355b04afda6ddd15c31d304acd5b49e9b212164883c097aa4cdc2f6e9c4319",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-aep",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F3_cycloaliphatic"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 226.323,
+      "canonical_isomeric_smiles": "CC(C)(c1ccc(N)cc1)c1ccc(N)cc1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 0",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C15H18N2",
+      "id": "gen-isopropylidenedianiline",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "4,4'-isopropylidenedianiline",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.30434782608695654,
+      "novelty_nearest_structure_id": "tert-butyl-benzene-control",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.7222222222222222,
+      "novelty_score": 0.6956521739130435,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 56.58075,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "CC(C)(c1ccc(N)cc1)c1ccc(N)cc1",
+        "canonical_structure_sha256": "bd9cd6d0fbfdf9b2584ac17583b4abbf3d9b7c87054cebc903d8dc60b418b168",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C15H18N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 226.323,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:bd9cd6d0fbfdf9b2584ac17583b4abbf3d9b7c87054cebc903d8dc60b418b168",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "CC(C)(c1ccc(N)cc1)c1ccc(N)cc1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "c3edf148e75fa6140d9ab8615a475251df8e67ab261702e5a70b83c08f76178f",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-isopropylidenedianiline",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F4_bridged_bisaniline"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 198.269,
+      "canonical_isomeric_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 34, CAS 101-77-9",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C13H14N2",
+      "id": "gen-mda-ddm",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "MDA/DDM (4,4'-diaminodiphenylmethane)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.12,
+      "novelty_nearest_structure_id": "tert-butyl-benzene-control",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.7222222222222222,
+      "novelty_score": 0.88,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 49.56725,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+        "canonical_structure_sha256": "e16d602c9c76a63a8a3bf1a901f655c12d8051a9126745753fdc255a194fd332",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C13H14N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 198.269,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:e16d602c9c76a63a8a3bf1a901f655c12d8051a9126745753fdc255a194fd332",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "05ac4ebfe0062334da012a8b7e1f111fbc9d57e29d3059b94b8eff5ece875732",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-mda-ddm",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F4_bridged_bisaniline"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 184.242,
+      "canonical_isomeric_smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 32",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C12H12N2",
+      "id": "gen-benzidine",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "benzidine (4,4'-diaminobiphenyl)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.13636363636363635,
+      "novelty_nearest_structure_id": "tert-butyl-benzene-control",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.6666666666666667,
+      "novelty_score": 0.8636363636363636,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 46.0605,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+        "canonical_structure_sha256": "900961b259ed72bec9a0877e083f5813d555ea922465749d77d7d55f24d9dbee",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C12H12N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 184.242,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:900961b259ed72bec9a0877e083f5813d555ea922465749d77d7d55f24d9dbee",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "Nc1ccc(-c2ccc(N)cc2)cc1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "665e4a264e82fa00e0982f59ca93dc4ca51723f99c8011faa52e2319f560b207",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-benzidine",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F4_bridged_bisaniline"
+    },
+    {
+      "active_nh_matches_r_a06v2_label": true,
+      "average_molecular_weight_g_mol": 136.198,
+      "canonical_isomeric_smiles": "NCc1ccc(CN)cc1",
+      "cas_or_note": "molgen R-A06v2 per_proposal_table index 29",
+      "declared_role": "hardener",
+      "design_gate_gates": {
+        "explicit_role": true,
+        "pass_all_hard": true,
+        "role_appropriate_reactivity": true,
+        "valid_single_component": true
+      },
+      "design_gate_per_call_two_replay_byte_stable": true,
+      "design_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+      "design_gate_status": "SCORED",
+      "formula": "C8H12N2",
+      "id": "gen-pxda",
+      "live_ffi_oxirane_ring_count": 0,
+      "live_ffi_reactive_amine_hydrogen_count": 4,
+      "name": "p-XDA (1,4-xylylenediamine)",
+      "novelty_corpus_sha256": "b25635c2ac255cef52e46032adff3afd29497c70080ecc5dabd1be823f46d838",
+      "novelty_exact_structure_match": false,
+      "novelty_maximum_tanimoto_similarity": 0.23076923076923078,
+      "novelty_nearest_structure_id": "amine-ethylenediamine",
+      "novelty_per_call_two_replay_byte_stable": true,
+      "novelty_scaffold_aware_distance": 0.5,
+      "novelty_score": 0.7692307692307692,
+      "novelty_status": "SCORED",
+      "property_per_call_two_replay_byte_stable": true,
+      "property_results": {
+        "ahew_g_per_eq": 34.0495,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "NCc1ccc(CN)cc1",
+        "canonical_structure_sha256": "3f30878e4213484d728f1066ed839cc95365ff1547f675aba32d3249e5811ca9",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": null,
+        "formula": "C8H12N2",
+        "functionality": {
+          "amine_hydrogen": 4,
+          "epoxide": 0
+        },
+        "molecular_weight_g_mol": 136.198,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": false,
+          "has_reactive_amine_hydrogen": true
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 0,
+          "reactive_amine_hydrogens": 4
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:3f30878e4213484d728f1066ed839cc95365ff1547f675aba32d3249e5811ca9",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_status": "SCORED",
+      "provenance": "grammar_proposal",
+      "r_a06v2_expected_active_nh": 4,
+      "r_a06v2_expected_amine_centres": 2,
+      "smiles": "NCc1ccc(CN)cc1",
+      "solvency_full_result": {
+        "evidence_scope": "UNPIGMENTED_CARRIER_SOLVENCY_SHADOW_ONLY",
+        "explanations": [
+          "The deterministic phase-stability result applies only to the unpigmented liquid carrier/resin submixture; the reported fraction is not a compatibility probability."
+        ],
+        "gates": {
+          "constraint_only": true,
+          "host_verified_artifact_and_receipt": false,
+          "in_applicability_domain": false
+        },
+        "metrics": {
+          "candidate_contract_hash_v1": "cdc2c303dca50816fc234ce31001da41d5b4326d6b11656c9fe21edafd37444b",
+          "computed_single_phase_fraction": null,
+          "min_tpd_rt": null,
+          "minimum_hessian_eigenvalue": null,
+          "numeric_compatibility_prediction": null,
+          "prediction": {
+            "abstention_reasons": [
+              "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+            ],
+            "authority": "SHADOW",
+            "candidate_id": "gen-pxda",
+            "computed_single_phase_fraction": null,
+            "converged": false,
+            "in_applicability_domain": false,
+            "min_tpd_rt": null,
+            "minimum_hessian_eigenvalue": null,
+            "module_id": "amphora-solvency-score",
+            "numeric_compatibility_prediction": null,
+            "parameter_interval_min_tpd_rt": null,
+            "schema": "amphora.solvency-prediction.v1"
+          },
+          "ranking_quarantine": true,
+          "scientific_applicability": "UNVALIDATED"
+        },
+        "missing_inputs": [
+          "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+        ],
+        "objective_values": {},
+        "score_0_1": null,
+        "source_refs": [
+          "https://doi.org/10.1063/1.1723621",
+          "https://doi.org/10.1016/0378-3812(82)85001-2",
+          "https://doi.org/10.1016/j.fluid.2022.113472"
+        ],
+        "status": "INSUFFICIENT_INPUT",
+        "uncertainty": {
+          "min_tpd_parameter_90": null
+        }
+      },
+      "solvency_missing_inputs": [
+        "missing host FeatureSnapshot key verified_formulation_model.amphora-solvency-score"
+      ],
+      "solvency_status": "INSUFFICIENT_INPUT",
+      "source_family": "F5_xylylenediamine"
+    }
+  ],
+  "schema": "amphora.molecule-design-gate.u-e2e-candidate-set-design-gate.diagnostic.v1",
+  "toolkit_provenance": {
+    "detected_version": "2026.03.2",
+    "exact_version_match": true,
+    "required_version": "2026.03.2",
+    "toolkit": "RDKit C++"
+  }
+}

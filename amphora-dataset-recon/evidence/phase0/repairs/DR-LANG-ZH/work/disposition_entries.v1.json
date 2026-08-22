@@ -1,0 +1,310 @@
+[
+  {
+    "candidates_pinned": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "date": "2026-08-10",
+    "entry_type": "candidate_intake_manifest",
+    "fire_id": "20260810T060001-1892882-de641a9ef68c",
+    "framing": "AUDIT-ONLY",
+    "note": "Frozen candidate-intake manifest of every previously-furnished source as of this fire's start (README: disposition-ledger's first entry is this sha256-pinned manifest). C1 (National Materials Corrosion and Protection Science Data Center, zh), C2 (CNKI, zh), and C4 (BUAA fhclxb 603-epoxy cure-kinetics paper, zh) are IN SCOPE for this DR-LANG-ZH (Chinese-only) item and are independently re-searched and re-evaluated below with a 'rediscovers' backlink to this candidate_id. C3 (J-STAGE) is Japanese-language and OUT OF SCOPE for DR-LANG-ZH -- explicitly excluded here, not silently dropped; deferred to a future DR-LANG-JA item.",
+    "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "source_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/candidate_snapshot.v1.json",
+    "source_sha256": "92562484b58e040791a5adfcbf94767447ba53f3316fb54a5253e9709e667cf8"
+  },
+  {
+    "candidate_id": "DR-LANG-ZH-01",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Categories stated: basic corrosion knowledge, high-temperature corrosion data, natural-environment data (30+ national outdoor exposure stations + distributed monitoring points), industrial-environment corrosion data (materials/coatings/plating), specialized-materials (marine engineering, automotive, petrochemical, power), monitoring/testing data, standards/publications, lab/statistical data. Per-dataset record counts unavailable without registration (agreement-gated tier).",
+    "custodian": "Hosted institution: University of Science and Technology Beijing (北京科技大学); supervised by China's Ministry of Science and Technology as one of the first 20 National Science and Technology Resource Sharing Service Platforms (approved 2019). This fire independently rediscovered the center's OWN direct domain (corrdata.org.cn) rather than reaching it only via the nbsdc.cn umbrella portal as DR-RUBRIC's frozen snapshot (C1) did, and corrects C1's looser custodian attribution ('Chinese Academy of Sciences (CAS) National Basic Disciplines Public Science Data Center, naming a partner...'): CAS's own Institute of Metal Research (imr.cas.cn) runs an organizationally distinct, topically-adjacent corrosion center and is NOT this data center's custodian.",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=5, rights_clarity=5, uniqueness=10, integrity_risk=4, acquisition_cost_friction=6, overall=6.3333 -> CONDITIONAL. Blocker: registration/agreement-gated access tier; human next action: register an evaluator account or request written agreement terms, then re-evaluate a specific named dataset within the platform.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T060001-1892882-de641a9ef68c",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [
+      "locale_unit_convention_unverified"
+    ],
+    "language": "zh",
+    "license_evidence_quote": "Custodian: operates under China's Ministry of Science and Technology national S&T resource platform system. Categories: basic corrosion knowledge, high-temperature corrosion data, natural-environment data, industrial-environment corrosion data, specialized materials, monitoring/testing data, standards and publications, laboratory/statistical data. Access: user registration/login portal present; 'open sharing' emphasized but specific download/license/commercial-use terms not detailed on this page.",
+    "name": "National Materials Corrosion and Protection Science Data Center (direct domain)",
+    "native_citation": "国家材料腐蚀与防护科学数据中心",
+    "native_citation_romanization": "Guojia Cailiao Fushi yu Fanghu Kexue Shuju Zhongxin",
+    "rank": 1,
+    "rediscovers": "C1",
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 6,
+      "gap_fit": 8,
+      "integrity_risk": 4,
+      "provenance_measurement_quality": 5,
+      "rights_clarity": 5,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 6.3333,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "NOT_CONFIRMED_THIS_FIRE",
+      "comparability_rating": "unconfirmed_no_per_dataset_drilldown",
+      "published_standard": "Site lists a 'Standards and publications' (标准出版物) category among its database offerings; no single measurement standard pinned to a specific dataset without per-dataset drill-down (not performed this fire, per no-acquisition discipline)."
+    },
+    "translation_confidence": "machine_translated_medium",
+    "translation_confidence_note": "WebFetch tool auto-summarized the zh homepage into English; native category labels reflected in the tool's summary were not independently re-verified character-by-character against page source this fire.",
+    "url": "https://www.corrdata.org.cn/"
+  },
+  {
+    "candidate_id": "DR-LANG-ZH-02",
+    "confidence_flag": "LOW",
+    "coverage": "Unknown -- platform unreachable from this host both this fire and PROBE-WEB.",
+    "custodian": "Tsinghua Tongfang / China Academic Journals",
+    "disposition": {
+      "reason": "REJECTED by rubric.v1.json floor rule (acquisition_cost_friction=0). rubric.v1.json score: gap_fit=5, provenance_measurement_quality=0, rights_clarity=2, uniqueness=6, integrity_risk=0, acquisition_cost_friction=0, overall=2.1667 -> REJECTED. Blocker: network-level TLS block from this host, independently re-confirmed this fire; human next action: attempt access from a host/egress path not behind this CDN misroute, or use an institutional CNKI mirror/API.",
+      "verdict": "REJECTED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T060001-1892882-de641a9ef68c",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "zh",
+    "license_evidence_quote": "Hostname/IP does not match certificate's altnames: Host: www.cnki.net. is not in the cert's altnames: DNS:*.cdn.myqcloud.com, ...",
+    "name": "CNKI (China National Knowledge Infrastructure)",
+    "native_citation": "中国知网",
+    "native_citation_romanization": "Zhongguo Zhiwang",
+    "rank": 6,
+    "rediscovers": "C2",
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 0,
+      "gap_fit": 5,
+      "integrity_risk": 0,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 2,
+      "uniqueness": 6
+    },
+    "rubric_overall_score": 2.1667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "unconfirmed_unreachable",
+      "published_standard": "N/A -- platform unreachable, no specific dataset content retrieved"
+    },
+    "translation_confidence": "no_translation_attempted_unknown",
+    "translation_confidence_note": "No page content of any kind was retrieved (TLS block); nothing to translate.",
+    "url": "https://www.cnki.net"
+  },
+  {
+    "candidate_id": "DR-LANG-ZH-03",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Single named epoxy system ('603', thermoplastic-toughened), non-isothermal DSC, two dominant reactions (double-peak thermogram), validated against three typical cure schedules. n=1 system study; portfolio minimum-n threshold for cure-kinetics benchmark inclusion not independently checked against this record (full text not acquired).",
+    "custodian": "Beihang University (BUAA), 复合材料学报 (Acta Materiae Compositae Sinica) editorial office",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=8, rights_clarity=2, uniqueness=6, integrity_risk=10, acquisition_cost_friction=4, overall=6.3333 -> CONDITIONAL. Blocker: paywalled full text; single-system (n=1) primary study; human next action: obtain institutional/publisher access to fhclxb.buaa.edu.cn/article/id/13902 and confirm uncertainty reporting and n against the portfolio's cure-kinetics benchmark bar.",
+      "verdict": "CONDITIONAL"
+    },
+    "doi": "10.13801/j.cnki.fhclxb.20170328.001",
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T060001-1892882-de641a9ef68c",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "zh",
+    "license_evidence_quote": "journal 复合材料学报 (Acta Materiae Compositae Sinica) 2018 Vol.35 No.1 pp.95-102, DOI 10.13801/j.cnki.fhclxb.20170328.001, method = non-isothermal DSC + Kissinger method + Kamal equation, two dominant reactions (double-peak DSC)",
+    "name": "\"Establishment and Validation of a Cure Kinetics Model for the 603 Epoxy Resin System\", Acta Materiae Compositae Sinica 2018, 35(1), 95-102",
+    "native_citation": "603环氧树脂体系固化动力学模型的建立与验证",
+    "native_citation_romanization": "603 Huanyang Shuzhi Tixi Guhua Donglixue Moxing de Jianli yu Yanzheng",
+    "rank": 2,
+    "rediscovers": "C4",
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 8,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 8,
+      "rights_clarity": 2,
+      "uniqueness": 6
+    },
+    "rubric_overall_score": 6.3333,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-cure-kinetics"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "Kissinger-method DSC cure kinetics is broadly method-class-comparable to ASTM E698 (Arrhenius kinetic constants by DSC); NOT independently confirmed against this specific paper's exact protocol this fire (no acquisition of full text).",
+      "comparability_rating": "method_class_plausible_unconfirmed",
+      "published_standard": "Non-isothermal DSC cure-kinetics protocol; Kissinger method + Kamal equation named in the abstract-level metadata retrieved. No explicit ASTM/ISO standard number cited at that level of detail."
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "Native title, journal name, volume/issue/pages, and DOI directly quoted from the native-script WebSearch result this fire, not machine-translated after the fact. Author names were returned by the search tool already romanized (Li Tingting et al.); native hanzi author names were NOT independently confirmed this fire and are not fabricated here.",
+    "url": "https://fhclxb.buaa.edu.cn/article/id/13902"
+  },
+  {
+    "candidate_id": "DR-LANG-ZH-04",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Full standard scope, requirements, and test methods (not individually enumerated this fire -- full text access/purchase terms unconfirmed).",
+    "custodian": "State Administration for Market Regulation (国家市场监督管理总局) via the National Committee for Paint and Pigment Standardization; drafted by China State Shipbuilding Corporation 725 Research Institute (Xiamen Testing Station).",
+    "data_class_note": "This is a published national STANDARDS document, not a raw-measurement dataset -- category mismatch with the rubric's data_class vocabulary (built for datasets) is flagged honestly rather than silently forced into a better-scoring bucket.",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=2, rights_clarity=2, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=6.0 -> CONDITIONAL. Blocker: full-text purchase/access terms not confirmed on the SAMR metadata page; human next action: purchase or request GB/T 6822-2024 full text via China Standards Press or SAMR, then confirm test-method-level ASTM/ISO comparability.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T060001-1892882-de641a9ef68c",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "zh",
+    "license_evidence_quote": "Standard Number: GB/T 6822-2024; Title: 船体防污防锈漆体系; Publication Date: 2024-11-28; Implementation Date: 2025-06-01; Replaces: GB/T 6822-2014; page does not state whether full text is free or purchase-only.",
+    "name": "GB/T 6822-2024 船体防污防锈漆体系 (Anti-fouling and anti-corrosive paint systems on ship hulls)",
+    "native_citation": "GB/T 6822-2024 船体防污防锈漆体系",
+    "native_citation_romanization": "GB/T 6822-2024 Chuanti Fangwu Fangxiuqi Tixi",
+    "rank": 3,
+    "rediscovers": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 8,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 2,
+      "rights_clarity": 2,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 6.0,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-ip-fto-guard"
+      ],
+      "recipe_elements": [
+        "marine-hull-envelope-standard-mapping"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "NOT_FOUND -- searched explicitly this fire; no stated ISO/ASTM cross-reference located.",
+      "comparability_rating": "unconfirmed_no_equivalence_found",
+      "published_standard": "GB/T 6822-2024 船体防污防锈漆体系, published 2024-11-28, implemented 2025-06-01, replaces GB/T 6822-2014. Specifies product classification, requirements, test methods, inspection rules, marking/packaging/transport/storage for antifouling/anticorrosive paint systems below and at the waterline of steel ship hulls."
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "Standard number, title, dates, and supersession chain cross-confirmed across the official SAMR platform page and two independent zh news/industry summaries.",
+    "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=28045D84DA7F9055E06397BE0A0A7C5C"
+  },
+  {
+    "candidate_id": "DR-LANG-ZH-05",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Historical lineage only -- substantively superseded by the GB/T 6748 and GB/T 6822 lineage, both independently found this fire.",
+    "custodian": "全国涂料和颜料标准化技术委员会 (National Paint and Pigment Standardization Technical Committee)",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=3, provenance_measurement_quality=0, rights_clarity=2, uniqueness=2, integrity_risk=8, acquisition_cost_friction=4, overall=3.1667 -> CONDITIONAL. Historical/superseded lineage entry -- retained for provenance/gap-fit context only, NOT a current standard_mapping citation; substantively superseded by the GB/T 6748 and GB/T 6822 lineage. No acquisition action recommended.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T060001-1892882-de641a9ef68c",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [
+      "version_instability"
+    ],
+    "language": "zh",
+    "license_evidence_quote": "Standard Number: GB/T 13351-1992; Title: 船底防锈漆通用技术条件; Status: Abolished as of April 1, 2008; No full text download link is visible, nor are license/access terms explicitly stated.",
+    "name": "GB/T 13351-1992 船底防锈漆通用技术条件 (superseded/abolished)",
+    "native_citation": "GB/T 13351-1992 船底防锈漆通用技术条件",
+    "native_citation_romanization": "GB/T 13351-1992 Chuandi Fangxiuqi Tongyong Jishu Tiaojian",
+    "rank": 5,
+    "rediscovers": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 3,
+      "integrity_risk": 8,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 2,
+      "uniqueness": 2
+    },
+    "rubric_overall_score": 3.1667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "NOT_CONFIRMED_THIS_FIRE -- moot, standard is abolished.",
+      "comparability_rating": "not_applicable_abolished",
+      "published_standard": "GB/T 13351-1992, published 1992-01-14, implemented 1992-12-01, ABOLISHED 2008-04-01."
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "Standard number, title, and abolition date read directly from the official SAMR platform page.",
+    "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7844CD3A7E05397BE0A0AB82A"
+  },
+  {
+    "candidate_id": "DR-LANG-ZH-06",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Journals, dissertations/theses, conference proceedings, patents, standards, technical reports, legal/regulatory documents, scientific data. Several coatings-adjacent theses surfaced incidentally by query 1 (D325476, D03173881) but not individually gap-evaluated this fire.",
+    "custodian": "北京万方数据股份有限公司 (Beijing Wanfang Data Co., Ltd.)",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=5, provenance_measurement_quality=0, rights_clarity=2, uniqueness=6, integrity_risk=6, acquisition_cost_friction=4, overall=3.8333 -> CONDITIONAL. Blocker: institutional-login/subscription-gated; human next action: obtain institutional Wanfang access, then individually gap-evaluate the coatings-adjacent theses surfaced incidentally this fire (D325476, D03173881).",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T060001-1892882-de641a9ef68c",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "zh",
+    "license_evidence_quote": "Operator: 北京万方数据股份有限公司 (Beijing Wanfang Data Co., Ltd.). Indexes: academic journals, dissertations/theses, conference proceedings, patents, standards, technical reports, legal/regulatory documents. Access: institutional-login and paid-membership (万方会员) tiers stated; no explicit free public full-text access statement.",
+    "name": "Wanfang Data (万方数据)",
+    "native_citation": "万方数据",
+    "native_citation_romanization": "Wanfang Shuju",
+    "rank": 4,
+    "rediscovers": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 5,
+      "integrity_risk": 6,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 2,
+      "uniqueness": 6
+    },
+    "rubric_overall_score": 3.8333,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-LANG-ZH-20260810T060001-1892882-de641a9ef68c",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_aggregator",
+      "published_standard": "N/A -- general aggregator, not a single dataset/standard"
+    },
+    "translation_confidence": "machine_translated_medium",
+    "translation_confidence_note": "WebFetch tool auto-summarized the zh homepage's access-tier language into English; not independently re-verified character-by-character.",
+    "url": "https://www.wanfangdata.com.cn"
+  }
+]

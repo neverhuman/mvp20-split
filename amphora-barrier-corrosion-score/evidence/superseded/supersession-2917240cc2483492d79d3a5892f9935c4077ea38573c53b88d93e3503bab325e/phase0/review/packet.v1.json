@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "0e267c0410275fd4fbf0ec838ae1ac94ad8b18292950a9f6c49cc92b0ab1f7c2",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-barrier-corrosion-score",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

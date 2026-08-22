@@ -1,0 +1,420 @@
+{
+  "amphora-assurance-capabilities": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-barrier-corrosion-score": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "MODELED_DIRECTIONAL",
+    "solver_use_ceiling": "AUDIT_ONLY",
+    "operational_readiness": "BLOCKED",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "performance",
+    "module_id": "amphora-barrier-corrosion-score",
+    "purpose": "This module supports the decision of which barrier hypotheses merit blinded panel testing. Its falsifiable hypothesis is that a locked barrier ranking can outperform solids-only and PVC-only hostile nulls."
+  },
+  "amphora-bridge": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-candidate-contract": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-candidate-contract",
+    "purpose": "This module supports the decision of whether candidate and score messages are canonical and safe to dispatch. Its falsifiable hypothesis is that runtime and JSON Schema accept and reject the same finite typed corpus."
+  },
+  "amphora-cli": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-core": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-cro-protocol-packager": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "CRO_GATED",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-cro-protocol-packager",
+    "purpose": "This module supports the decision of whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol. Its falsifiable hypothesis is that candidate and formula binding prevents ambiguous or nonnumeric lab packets."
+  },
+  "amphora-cure-potlife-gate": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "CRO_GATED",
+    "solver_use_ceiling": "CONSTRAINT_ONLY",
+    "operational_readiness": "BLOCKED",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "performance",
+    "module_id": "amphora-cure-potlife-gate",
+    "purpose": "This module supports the decision of whether a formulation should proceed to multi-temperature CRO cure testing. Its falsifiable hypothesis is that locked family/source-held-out validation can beat the declared pot-life baseline."
+  },
+  "amphora-design-rule-score": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "RULE_CITED",
+    "solver_use_ceiling": "AUDIT_ONLY",
+    "operational_readiness": "SHADOW",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "formulation",
+    "module_id": "amphora-design-rule-score",
+    "purpose": "This module supports the decision of which within-study directional hypotheses deserve experiments. Its falsifiable hypothesis is that eligible literature series can improve directional decisions over the declared baseline."
+  },
+  "amphora-engine": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-envelope-gates": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "REAL_ARITHMETIC",
+    "solver_use_ceiling": "CONSTRAINT_ONLY",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "formulation",
+    "module_id": "amphora-envelope-gates",
+    "purpose": "This module supports the decision of whether deterministic formulation margins satisfy the declared screening envelope. Its falsifiable hypothesis is that hard-gate booleans, signed margins, and domain status can remain logically identical."
+  },
+  "amphora-evidence-intake-validator": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-evidence-intake-validator",
+    "purpose": "This module supports the decision of whether observed evidence bytes may enter the accepted evidence store. Its falsifiable hypothesis is that byte hashing and manifest binding reject missing, mutated, unsigned, or overclaiming packages."
+  },
+  "amphora-formulation-arithmetic": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "REAL_ARITHMETIC",
+    "solver_use_ceiling": "OBJECTIVE",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "formulation",
+    "module_id": "amphora-formulation-arithmetic",
+    "purpose": "This module supports the decision of whether a declared two-part recipe has finite internally consistent formulation arithmetic. Its falsifiable hypothesis is that cited constants and exact equations reproduce known formulation metrics."
+  },
+  "amphora-formulation-capabilities": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-formulation-universe": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "REAL_ARITHMETIC",
+    "solver_use_ceiling": "AUDIT_ONLY",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "formulation",
+    "module_id": "amphora-formulation-universe",
+    "purpose": "This module supports the decision of whether a declared formulation search space has been completely accounted. Its falsifiable hypothesis is that Cartesian enumeration can report every solved and infeasible combination without silent loss."
+  },
+  "amphora-ingredient-library": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "RULE_CITED",
+    "solver_use_ceiling": "AUDIT_ONLY",
+    "operational_readiness": "GATED",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "formulation",
+    "module_id": "amphora-ingredient-library",
+    "purpose": "This module supports the decision of whether all positive-mass ingredients have cited constants for the requested calculation. Its falsifiable hypothesis is that a provenance-locked catalog can fail closed on every missing active ingredient constant."
+  },
+  "amphora-ip-fto-guard": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "GATED",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "infrastructure",
+    "module_id": "amphora-ip-fto-guard",
+    "purpose": "This module supports the decision of which technical patent categories require qualified counsel review. Its falsifiable hypothesis is that technical landscape screening can surface unresolved categories without claiming FTO."
+  },
+  "amphora-known-answer-benchmarks": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "LIMITED_SANITY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "BLOCKED",
+    "scientific_readiness": "LOCKED_INTERNAL",
+    "lane": "infrastructure",
+    "module_id": "amphora-known-answer-benchmarks",
+    "purpose": "This module supports the decision of whether deterministic services still match locked positive and negative controls. Its falsifiable hypothesis is that known answers expose arithmetic, unit, and applicability regressions."
+  },
+  "amphora-model-card-authority": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-model-card-authority",
+    "purpose": "This module supports the decision of whether a model receipt may be used at a requested R&D authority level. Its falsifiable hypothesis is that minimum-privilege policy rejects every incomplete, stale, spoofed, or over-ceiling grant."
+  },
+  "amphora-molecule-capabilities": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-molecule-design-gate": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "REAL_ARITHMETIC",
+    "solver_use_ceiling": "CONSTRAINT_ONLY",
+    "operational_readiness": "READY",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "molecule",
+    "module_id": "amphora-molecule-design-gate",
+    "purpose": "This module supports the decision of whether a defined molecule passes structural applicability rules. Its falsifiable hypothesis is that explicit-role substructure controls reject malformed and nonreactive candidates."
+  },
+  "amphora-molecule-generator": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "ROADMAP",
+    "solver_use_ceiling": "AUDIT_ONLY",
+    "operational_readiness": "ROADMAP",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "molecule",
+    "module_id": "amphora-molecule-generator",
+    "purpose": "This module supports the decision of which valid, diverse molecular proposals enter expert review. Its falsifiable hypothesis is that deterministic generation can improve valid unique proposal yield without sacrificing feasibility."
+  },
+  "amphora-molecule-novelty": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "LIMITED_SANITY",
+    "solver_use_ceiling": "R&D_OBJECTIVE",
+    "operational_readiness": "READY",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "molecule",
+    "module_id": "amphora-molecule-novelty",
+    "purpose": "This module supports the decision of whether a molecule expands the frozen corpus design space. Its falsifiable hypothesis is that canonical corpus distance provides deterministic diversity pressure."
+  },
+  "amphora-molecule-property": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "REAL_ARITHMETIC",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "AUDIT",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "molecule",
+    "module_id": "amphora-molecule-property",
+    "purpose": "This module supports the decision of whether exact molecular properties are computable within a defined single-component domain. Its falsifiable hypothesis is that canonical structure rules reproduce locked EEW/AHEW known answers."
+  },
+  "amphora-molecule-role-ranker": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "LIMITED_SANITY",
+    "solver_use_ceiling": "R&D_OBJECTIVE",
+    "operational_readiness": "SHADOW",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "molecule",
+    "module_id": "amphora-molecule-role-ranker",
+    "purpose": "This module supports the decision of whether a defined molecule fits an explicitly declared resin or hardener role. Its falsifiable hypothesis is that exact reactive-function controls can noninferiorly reproduce a frozen role-fit baseline."
+  },
+  "amphora-optimizer-orchestrator": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-optimizer-orchestrator",
+    "purpose": "This module supports the decision of which centrally authorized objectives and constraints may reach Pareto selection. Its falsifiable hypothesis is that identity-bound policy can prevent every unauthorized row from ranking."
+  },
+  "amphora-ord-codec": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-phase0-reviewer": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-process-qc-twin": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "AUDIT_ONLY",
+    "operational_readiness": "OPEN",
+    "scientific_readiness": "LOCKED_INTERNAL",
+    "lane": "performance",
+    "module_id": "amphora-process-qc-twin",
+    "purpose": "This module supports the decision of which batches require review without granting release authority. Its falsifiable hypothesis is that a prospective detector can recall seeded deviations with few false alarms and no false releases."
+  },
+  "amphora-public-corrosion-benchmark": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "AUDIT_ONLY",
+    "operational_readiness": "AUDIT",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "formulation",
+    "module_id": "amphora-public-corrosion-benchmark",
+    "purpose": "This module supports the decision of whether public corrosion data can support a reproducible external benchmark. Its falsifiable hypothesis is that a provenance-locked benchmark can distinguish declared models from hostile nulls."
+  },
+  "amphora-rdkit-ffi": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-redteam-audit": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-redteam-audit",
+    "purpose": "This module supports the decision of whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries. Its falsifiable hypothesis is that a locked adversarial corpus detects malformed envelopes and authority escalation."
+  },
+  "amphora-report-packager": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-report-packager",
+    "purpose": "This module supports the decision of whether validated envelopes can be packaged without stripping locks or escalating claims. Its falsifiable hypothesis is that downstream packaging preserves every authority and claim-lock field."
+  },
+  "amphora-run-provenance": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-run-provenance",
+    "purpose": "This module supports the decision of whether a complete validated run can be replayed from hash-bound inputs. Its falsifiable hypothesis is that fixed-seed replay is byte-identical outside declared wall-clock telemetry."
+  },
+  "amphora-solvency-score": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "RULE_CITED",
+    "solver_use_ceiling": "CONSTRAINT_ONLY",
+    "operational_readiness": "SHADOW",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "formulation",
+    "module_id": "amphora-solvency-score",
+    "purpose": "This module supports the decision of which solvent blends merit compatibility measurement. Its falsifiable hypothesis is that a measured group-held-out blend model can outperform HSP-only screening."
+  },
+  "amphora-source-ledger": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "RULE_CITED",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "COMPLETE",
+    "scientific_readiness": "NOT_APPLICABLE",
+    "lane": "infrastructure",
+    "module_id": "amphora-source-ledger",
+    "purpose": "This module supports the decision of whether a scientific constant has a current traceable source and permitted use. Its falsifiable hypothesis is that hash-bound source records prevent uncited constants from entering calculations."
+  },
+  "amphora-sourceability-ehs": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "GATED",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "infrastructure",
+    "module_id": "amphora-sourceability-ehs",
+    "purpose": "This module supports the decision of whether candidate-bound public evidence justifies further supplier diligence. Its falsifiable hypothesis is that exact-grade current hash-verified evidence can answer prescreen questions without procurement claims."
+  },
+  "amphora-tolerance-robustness": {
+    "has_mission_md": true,
+    "phase": "PHASE_0",
+    "authority_ceiling": "LIMITED_SANITY",
+    "solver_use_ceiling": "CONSTRAINT_ONLY",
+    "operational_readiness": "SHADOW",
+    "scientific_readiness": "LOCKED_INTERNAL",
+    "lane": "formulation",
+    "module_id": "amphora-tolerance-robustness",
+    "purpose": "This module supports the decision of whether declared input tolerances preserve all hard formulation gates. Its falsifiable hypothesis is that locked finite perturbations can identify fragile formulations reproducibly."
+  },
+  "amphora-tui": {
+    "phase": null,
+    "authority_ceiling": null,
+    "solver_use_ceiling": null,
+    "operational_readiness": null,
+    "scientific_readiness": null,
+    "purpose": null,
+    "has_mission_md": false
+  },
+  "amphora-viscosity-score": {
+    "has_mission_md": true,
+    "phase": "PRE_PHASE_0",
+    "authority_ceiling": "LIMITED_SANITY",
+    "solver_use_ceiling": "DISABLED",
+    "operational_readiness": "SHADOW",
+    "scientific_readiness": "UNVALIDATED",
+    "lane": "performance",
+    "module_id": "amphora-viscosity-score",
+    "purpose": "This module supports the decision of whether rheology and sag should be measured for a formulation. Its falsifiable hypothesis is that a measured, temperature-aware model can predict KU and sag across formulation families."
+  }
+}

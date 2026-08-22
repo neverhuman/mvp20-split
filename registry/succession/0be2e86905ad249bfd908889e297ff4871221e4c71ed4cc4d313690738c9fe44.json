@@ -1,0 +1,79 @@
+{
+  "edits": [
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-evidence-intake-validator",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-evidence-intake-validator",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "non_blocking_claim_locks",
+      "module_id": "amphora-redteam-audit",
+      "new_value": [
+        "artifact_vs_evidence_separation",
+        "no_current_claim_upgrade_allowed"
+      ],
+      "old_value": [
+        "artifact_vs_evidence_separation",
+        "current_claim_upgrade_allowed"
+      ]
+    },
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-redteam-audit",
+      "new_value": "COMPLETE",
+      "old_value": "BLOCKED"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-redteam-audit",
+      "new_value": "COMPLETE",
+      "old_value": "BLOCKED"
+    },
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-report-packager",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-report-packager",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "operational_readiness",
+      "module_id": "amphora-source-ledger",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    },
+    {
+      "field": "readiness",
+      "module_id": "amphora-source-ledger",
+      "new_value": "COMPLETE",
+      "old_value": "GATED"
+    }
+  ],
+  "no_authority_change": true,
+  "no_ranking_change": true,
+  "no_rights_change": true,
+  "no_scientific_change": true,
+  "no_solver_change": true,
+  "predecessor": {
+    "path": "registry/archive/be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7/module-manifest.json",
+    "sha256": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7"
+  },
+  "schema": "amphora.module-registry-succession.v1",
+  "succession_id": "registry-succession-9ab3cfef5326e8394944fb6a1f15bf46c0f510f37d1946ef60db6d987eed9da9",
+  "successor": {
+    "path": "registry/archive/bff63ed55151f6f9055312a3cd4026fc11edc320c0df61f3593be54d833c87fc/module-manifest.json",
+    "sha256": "bff63ed55151f6f9055312a3cd4026fc11edc320c0df61f3593be54d833c87fc"
+  }
+}

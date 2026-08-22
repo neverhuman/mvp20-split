@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "2cf87b245c6cf8d8281a8ae245ae649d201ce772ce3cfd54cfed754ce0b26081",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "parent_revision_id": null,
+  "revision_id": "preparation-revision-88f4b0f87f86f407446847be3f76a20811e3fa782ab6313bc1b684fcd1435671",
+  "revision_number": 1,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-4f44aa2cf057a2c5d9184188c981e95333834b8a96eabd12dc236d3b828a0d7b",
+  "supersession_path": "evidence/superseded/supersession-4f44aa2cf057a2c5d9184188c981e95333834b8a96eabd12dc236d3b828a0d7b/supersession.v1.json",
+  "supersession_sha256": "2005da1e2e98a60f0032e4dc2ba77917c27c7a65f58538f0c5c161d2a64115e0",
+  "unsigned_preparation_only": true
+}

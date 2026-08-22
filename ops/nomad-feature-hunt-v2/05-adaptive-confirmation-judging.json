@@ -1,0 +1,12 @@
+{
+  "runbook_version": "2.0",
+  "name": "adaptive-confirmation-judging",
+  "phases": ["adaptive", "confirmation", "judging", "verify"],
+  "adaptive_roles": 20,
+  "adaptive_specs_maximum": 40,
+  "confirmation": {"views_per_target_maximum": 8, "folds": 5, "trees": 400, "unseal_count": 1},
+  "tie_band": 0.0001,
+  "hard_counts": {"attempted": 4000, "validated": 2500, "per_domain": 150, "families": 120},
+  "budget_usd": 1000,
+  "delivery": "promotion-inbox-only"
+}

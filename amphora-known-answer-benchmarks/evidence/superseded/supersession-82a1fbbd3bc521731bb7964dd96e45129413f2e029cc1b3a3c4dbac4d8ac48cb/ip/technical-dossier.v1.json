@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-known-answer-benchmarks",
+    "infrastructure lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "5b75a2b2f1e1fad0635db2527595763afda34eb3cef6269a2037078593299c97",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-known-answer-benchmarks",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

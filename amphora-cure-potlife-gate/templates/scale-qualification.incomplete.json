@@ -1,0 +1,45 @@
+{
+  "schema": "amphora.pot-life-scale-qualification.v1",
+  "qualification_id": "",
+  "performed_with_non_reactive_fluid": false,
+  "qualification_fluid_sha256": "REPLACE_WITH_MEASURED_FLUID_SHA256",
+  "sprayer_dead_volume_demand_g": 0.0,
+  "test_card_demand_g": 0.0,
+  "maximum_facility_approved_fill_g": 0.0,
+  "primary_geometry": {
+    "geometry_id": "",
+    "shape": "",
+    "inside_diameter_mm": 0.0,
+    "fill_height_mm": 0.0,
+    "headspace_ml": 0.0,
+    "nominal_volume_ml": 0.0,
+    "lid_handling": ""
+  },
+  "second_geometry": {
+    "geometry_id": "",
+    "shape": "",
+    "inside_diameter_mm": 0.0,
+    "fill_height_mm": 0.0,
+    "headspace_ml": 0.0,
+    "nominal_volume_ml": 0.0,
+    "lid_handling": ""
+  },
+  "distinct_geometry_confirmed_safe": false,
+  "airless_spray_setup": {
+    "setup_id": "",
+    "pump_id": "",
+    "tip_orifice_in": 0.0,
+    "tip_fan_width_in": 0.0,
+    "locked_pressure_psi": 0.0,
+    "hose_length_ft": 0.0,
+    "hose_inside_diameter_in": 0.0,
+    "filter_mesh": 0,
+    "locked_pass_count": 0,
+    "thinning_allowed": false
+  },
+  "calibration_ids": {
+    "stormer": "",
+    "temperature_logger": "",
+    "sprayer_pressure": ""
+  }
+}

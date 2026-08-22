@@ -1,0 +1,710 @@
+{
+  "control_distinct_run_ids": {
+    "total_exists_errors": 0,
+    "total_io_errors": 0,
+    "total_ok": 320,
+    "total_other_errors": 0
+  },
+  "kpi_claim_under_test": {
+    "kpi_path": "amphora-run-provenance/evidence/phase0/kpis/run-provenance-hash-chain-integrity-kpi.v1.json",
+    "metric": "duplicate_archive_create_rejected_via_exists_rate",
+    "prediction_rule_step_1": "verify base/run_id does not already exist (else Exists)"
+  },
+  "n_threads_per_trial": 8,
+  "n_trials": 40,
+  "race": {
+    "per_trial": [
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 0,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 1,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 2,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 3,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 4,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 5,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 6,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 7,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 8,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 9,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 10,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 11,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 12,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 13,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 14,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 15,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 16,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 17,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 18,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 19,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 20,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 21,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 22,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 23,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 24,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 25,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 26,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 27,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 28,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 29,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 30,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 31,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 32,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 33,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 34,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 35,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 36,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 37,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 38,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      },
+      {
+        "exists_count": 0,
+        "io_count": 7,
+        "ok_count": 1,
+        "other_count": 0,
+        "trial": 39,
+        "variants": [
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Io",
+          "Ok"
+        ]
+      }
+    ],
+    "shared_run_id": "shared-collision-run-id",
+    "total_exists_errors": 0,
+    "total_io_errors": 280,
+    "total_ok": 40,
+    "total_other_errors": 0,
+    "trials_with_at_least_one_io_loser": 40,
+    "trials_with_more_than_one_ok_result": 0,
+    "trials_with_only_exists_losers": 0,
+    "trials_with_zero_ok_result": 0
+  },
+  "refuted": true,
+  "schema": "amphora.run-provenance.concurrent-create-toctou.v1"
+}

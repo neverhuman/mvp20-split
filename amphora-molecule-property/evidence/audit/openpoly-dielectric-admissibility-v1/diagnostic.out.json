@@ -1,0 +1,389 @@
+{
+  "claim_under_attack": {
+    "capability_text": "OpenPoly literature dielectric constant ML baseline: 295 polymers \u00d7 111 raw Bemis-Murcko scaffolds. Rigorously tests Ridge, Random Forest, HistGradientBoostingRegressor on Morgan fingerprints (radius=2, 512 bits) + log10(MW). REAL POSITIVE LIFT: best model (RandomForest) achieves scaffold-safe holdout test MAE = 0.4040 vs NULL 0.7027 (+42.5% relative improvement), test R\u00b2 = +0.565, and LOSO-CV R\u00b2 = +0.659 under 111-fold CV. Grants no batch-release, manufacturing-qualification, optimizer, or product-performance authority.",
+    "kpi_id": "amphora-molecule-property-phase0-openpoly-dielectric-constant-ml-baseline-v1",
+    "kpi_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+    "kpi_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+  },
+  "dataset_fixture_sha256_match": true,
+  "dataset_fixture_sha256_observed": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+  "dataset_fixture_sha256_pinned_in_kpi": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+  "n_csv_rows_total": 741,
+  "positive_control": {
+    "all_planted_defects_detected": true,
+    "corrupted_data_audit": {
+      "R1_ionic_non_negative": {
+        "n_checked": 295,
+        "n_violations": 3,
+        "passed": false,
+        "violations": [
+          {
+            "electronic": 4.41,
+            "ionic": -0.621,
+            "name": "polymer_dielectric_constant_228",
+            "total": 5.03
+          },
+          {
+            "electronic": 5.54,
+            "ionic": -1.15,
+            "name": "polymer_dielectric_constant_212",
+            "total": 6.69
+          },
+          {
+            "electronic": 5.35,
+            "ionic": -0.972,
+            "name": "polymer_dielectric_constant_217",
+            "total": 6.32
+          }
+        ]
+      },
+      "R2_electronic_geq_1": {
+        "n_checked": 295,
+        "n_violations": 3,
+        "passed": false,
+        "violations": [
+          {
+            "electronic": 0.5,
+            "ionic": 0.925,
+            "name": "polymer_dielectric_constant_206",
+            "total": 6.59
+          },
+          {
+            "electronic": 0.5,
+            "ionic": 0.732,
+            "name": "polymer_dielectric_constant_138",
+            "total": 4.27
+          },
+          {
+            "electronic": 0.5,
+            "ionic": 0.693,
+            "name": "polymer_dielectric_constant_133",
+            "total": 4.4
+          }
+        ]
+      },
+      "R3_total_equals_electronic_plus_ionic": {
+        "n_checked": 295,
+        "n_violations": 9,
+        "passed": false,
+        "tolerance": 0.011,
+        "violations": [
+          {
+            "abs_diff": 1.241,
+            "electronic": 4.41,
+            "ionic": -0.621,
+            "name": "polymer_dielectric_constant_228",
+            "total": 5.03
+          },
+          {
+            "abs_diff": 2.3,
+            "electronic": 5.54,
+            "ionic": -1.15,
+            "name": "polymer_dielectric_constant_212",
+            "total": 6.69
+          },
+          {
+            "abs_diff": 1.9420000000000002,
+            "electronic": 5.35,
+            "ionic": -0.972,
+            "name": "polymer_dielectric_constant_217",
+            "total": 6.32
+          },
+          {
+            "abs_diff": 5.165,
+            "electronic": 0.5,
+            "ionic": 0.925,
+            "name": "polymer_dielectric_constant_206",
+            "total": 6.59
+          },
+          {
+            "abs_diff": 3.0379999999999994,
+            "electronic": 0.5,
+            "ionic": 0.732,
+            "name": "polymer_dielectric_constant_138",
+            "total": 4.27
+          },
+          {
+            "abs_diff": 3.2070000000000003,
+            "electronic": 0.5,
+            "ionic": 0.693,
+            "name": "polymer_dielectric_constant_133",
+            "total": 4.4
+          },
+          {
+            "abs_diff": 5.0015,
+            "electronic": 3.96,
+            "ionic": 0.6835,
+            "name": "polymer_dielectric_constant_134",
+            "total": 9.645
+          },
+          {
+            "abs_diff": 5.0,
+            "electronic": 3.8,
+            "ionic": 1.04,
+            "name": "polymer_dielectric_constant_317",
+            "total": 9.84
+          },
+          {
+            "abs_diff": 4.998,
+            "electronic": 4.21,
+            "ionic": 0.542,
+            "name": "polymer_dielectric_constant_136",
+            "total": 9.75
+          }
+        ]
+      },
+      "R4_refractive_index_geq_1": {
+        "n_checked": 148,
+        "n_violations": 3,
+        "passed": false,
+        "violations": [
+          {
+            "name": "PLA",
+            "refractive_index": 0.8
+          },
+          {
+            "name": "PMMA",
+            "refractive_index": 0.8
+          },
+          {
+            "name": "PCL",
+            "refractive_index": 0.8
+          }
+        ]
+      },
+      "all_checks_passed": false,
+      "n_dielectric_triplet_rows": 295,
+      "n_refractive_index_rows": 148
+    },
+    "expected_violations_per_rule": {
+      "R1": 3,
+      "R2": 3,
+      "R3": 9,
+      "R4": 3
+    },
+    "observed_violations_per_rule": {
+      "R1": 3,
+      "R2": 3,
+      "R3": 9,
+      "R4": 3
+    },
+    "per_defect_detection": [
+      {
+        "after": "-0.621",
+        "before": "0.621",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_228",
+        "targets": "R1"
+      },
+      {
+        "after": "-1.15",
+        "before": "1.15",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_212",
+        "targets": "R1"
+      },
+      {
+        "after": "-0.972",
+        "before": "0.972",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_217",
+        "targets": "R1"
+      },
+      {
+        "after": "0.5",
+        "before": "5.67",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_206",
+        "targets": "R2"
+      },
+      {
+        "after": "0.5",
+        "before": "3.53",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_138",
+        "targets": "R2"
+      },
+      {
+        "after": "0.5",
+        "before": "3.7",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_133",
+        "targets": "R2"
+      },
+      {
+        "after": "9.645",
+        "before": "4.645",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_134",
+        "targets": "R3"
+      },
+      {
+        "after": "9.84",
+        "before": "4.84",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_317",
+        "targets": "R3"
+      },
+      {
+        "after": "9.75",
+        "before": "4.75",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_136",
+        "targets": "R3"
+      },
+      {
+        "after": "0.8",
+        "before": "1.456632143",
+        "caught_by_targeted_rule": true,
+        "field": "Refractive Index",
+        "row_name": "PLA",
+        "targets": "R4"
+      },
+      {
+        "after": "0.8",
+        "before": "1.490662665",
+        "caught_by_targeted_rule": true,
+        "field": "Refractive Index",
+        "row_name": "PMMA",
+        "targets": "R4"
+      },
+      {
+        "after": "0.8",
+        "before": "1.491857143",
+        "caught_by_targeted_rule": true,
+        "field": "Refractive Index",
+        "row_name": "PCL",
+        "targets": "R4"
+      }
+    ],
+    "planted_defects": [
+      {
+        "after": "-0.621",
+        "before": "0.621",
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_228",
+        "targets": "R1"
+      },
+      {
+        "after": "-1.15",
+        "before": "1.15",
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_212",
+        "targets": "R1"
+      },
+      {
+        "after": "-0.972",
+        "before": "0.972",
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_217",
+        "targets": "R1"
+      },
+      {
+        "after": "0.5",
+        "before": "5.67",
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_206",
+        "targets": "R2"
+      },
+      {
+        "after": "0.5",
+        "before": "3.53",
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_138",
+        "targets": "R2"
+      },
+      {
+        "after": "0.5",
+        "before": "3.7",
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_133",
+        "targets": "R2"
+      },
+      {
+        "after": "9.645",
+        "before": "4.645",
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_134",
+        "targets": "R3"
+      },
+      {
+        "after": "9.84",
+        "before": "4.84",
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_317",
+        "targets": "R3"
+      },
+      {
+        "after": "9.75",
+        "before": "4.75",
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_136",
+        "targets": "R3"
+      },
+      {
+        "after": "0.8",
+        "before": "1.456632143",
+        "field": "Refractive Index",
+        "row_name": "PLA",
+        "targets": "R4"
+      },
+      {
+        "after": "0.8",
+        "before": "1.490662665",
+        "field": "Refractive Index",
+        "row_name": "PMMA",
+        "targets": "R4"
+      },
+      {
+        "after": "0.8",
+        "before": "1.491857143",
+        "field": "Refractive Index",
+        "row_name": "PCL",
+        "targets": "R4"
+      }
+    ]
+  },
+  "pre_registered_refute_criterion": "If >=1 row violates R1 (ionic>=0), R2 (electronic>=1), R3 (total==electronic+ionic within 0.011), or R4 (refractive_index>=1) on the REAL data, the KPI's ground-truth dielectric labels are physically inadmissible and the claim is REFUTED. If 0 rows violate all four on real data AND the positive control (12 planted defects, 3 per rule) is fully detected on the corrupted copy, the claim SURVIVES this attack.",
+  "real_data_audit": {
+    "R1_ionic_non_negative": {
+      "n_checked": 295,
+      "n_violations": 0,
+      "passed": true,
+      "violations": []
+    },
+    "R2_electronic_geq_1": {
+      "n_checked": 295,
+      "n_violations": 0,
+      "passed": true,
+      "violations": []
+    },
+    "R3_total_equals_electronic_plus_ionic": {
+      "n_checked": 295,
+      "n_violations": 0,
+      "passed": true,
+      "tolerance": 0.011,
+      "violations": []
+    },
+    "R4_refractive_index_geq_1": {
+      "n_checked": 148,
+      "n_violations": 0,
+      "passed": true,
+      "violations": []
+    },
+    "all_checks_passed": true,
+    "n_dielectric_triplet_rows": 295,
+    "n_refractive_index_rows": 148
+  },
+  "real_data_two_replay_byte_identical": true,
+  "verdict": "SURVIVED"
+}

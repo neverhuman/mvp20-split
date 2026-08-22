@@ -1,0 +1,489 @@
+{
+  "excluded": [
+    {
+      "Y_fitted_K_g_per_mol": -2843.550181839689,
+      "Y_published_K_g_per_mol": 5500,
+      "abs_relative_deviation": 1.5170091239708525,
+      "group": "nitrile",
+      "n_train_polymers_with_group": 124,
+      "ratio_fitted_over_published": -0.5170091239708525,
+      "sign_admissible": false
+    },
+    {
+      "Y_fitted_K_g_per_mol": 3745.796758915482,
+      "Y_published_K_g_per_mol": 1500,
+      "abs_relative_deviation": 1.4971978392769878,
+      "group": "F",
+      "n_train_polymers_with_group": 32,
+      "ratio_fitted_over_published": 2.497197839276988,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": -3125.1482313108504,
+      "Y_published_K_g_per_mol": 2000,
+      "abs_relative_deviation": 2.5625741156554254,
+      "group": "vinyl_CH2",
+      "n_train_polymers_with_group": 31,
+      "ratio_fitted_over_published": -1.5625741156554251,
+      "sign_admissible": false
+    },
+    {
+      "Y_fitted_K_g_per_mol": 1456.4321413319951,
+      "Y_published_K_g_per_mol": 15000,
+      "abs_relative_deviation": 0.9029045239112004,
+      "group": "ester",
+      "n_train_polymers_with_group": 18,
+      "ratio_fitted_over_published": 0.09709547608879968,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 9241.336635233636,
+      "Y_published_K_g_per_mol": 4500,
+      "abs_relative_deviation": 1.0536303633852526,
+      "group": "Br",
+      "n_train_polymers_with_group": 16,
+      "ratio_fitted_over_published": 2.0536303633852526,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 10824.23794021889,
+      "Y_published_K_g_per_mol": 20000,
+      "abs_relative_deviation": 0.4587881029890555,
+      "group": "sulfone",
+      "n_train_polymers_with_group": 15,
+      "ratio_fitted_over_published": 0.5412118970109445,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 2070.108759827247,
+      "Y_published_K_g_per_mol": 4000,
+      "abs_relative_deviation": 0.4824728100431882,
+      "group": "Cl",
+      "n_train_polymers_with_group": 4,
+      "ratio_fitted_over_published": 0.5175271899568118,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 526.8309386457724,
+      "Y_published_K_g_per_mol": 5000,
+      "abs_relative_deviation": 0.8946338122708455,
+      "group": "sulfide",
+      "n_train_polymers_with_group": 1,
+      "ratio_fitted_over_published": 0.10536618772915449,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 0.0,
+      "Y_published_K_g_per_mol": 4000,
+      "abs_relative_deviation": 1.0,
+      "group": "Si_O",
+      "n_train_polymers_with_group": 0,
+      "ratio_fitted_over_published": 0.0,
+      "sign_admissible": false
+    }
+  ],
+  "in_scope": [
+    {
+      "Y_fitted_K_g_per_mol": 4178.026959043282,
+      "Y_published_K_g_per_mol": 2700,
+      "abs_relative_deviation": 0.5474173922382526,
+      "group": "CH2",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 1.5474173922382526,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 6151.500942703433,
+      "Y_published_K_g_per_mol": 5200,
+      "abs_relative_deviation": 0.18298095051989094,
+      "group": "CH3",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 1.182980950519891,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 6779.817076578444,
+      "Y_published_K_g_per_mol": 4600,
+      "abs_relative_deviation": 0.4738732775170531,
+      "group": "CH",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 1.473873277517053,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 2375.4713089823917,
+      "Y_published_K_g_per_mol": 4000,
+      "abs_relative_deviation": 0.40613217275440205,
+      "group": "ether_O",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 0.593867827245598,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 7228.458913352506,
+      "Y_published_K_g_per_mol": 8000,
+      "abs_relative_deviation": 0.09644263583093671,
+      "group": "primary_amine",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 0.9035573641690633,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 4167.802007542193,
+      "Y_published_K_g_per_mol": 6000,
+      "abs_relative_deviation": 0.30536633207630115,
+      "group": "epoxide",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 0.6946336679236988,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 4474.234962950936,
+      "Y_published_K_g_per_mol": 4900,
+      "abs_relative_deviation": 0.08689082388756397,
+      "group": "C_quat",
+      "n_train_polymers_with_group": 740,
+      "ratio_fitted_over_published": 0.913109176112436,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 5093.954398903177,
+      "Y_published_K_g_per_mol": 1900,
+      "abs_relative_deviation": 1.6810286310016722,
+      "group": "vinyl_CH",
+      "n_train_polymers_with_group": 656,
+      "ratio_fitted_over_published": 2.681028631001672,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 4251.357077718797,
+      "Y_published_K_g_per_mol": 3000,
+      "abs_relative_deviation": 0.4171190259062656,
+      "group": "tertiary_amine",
+      "n_train_polymers_with_group": 596,
+      "ratio_fitted_over_published": 1.4171190259062656,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 8457.898096924913,
+      "Y_published_K_g_per_mol": 4000,
+      "abs_relative_deviation": 1.1144745242312282,
+      "group": "secondary_amine",
+      "n_train_polymers_with_group": 526,
+      "ratio_fitted_over_published": 2.114474524231228,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 6651.656520398236,
+      "Y_published_K_g_per_mol": 12000,
+      "abs_relative_deviation": 0.4456952899668136,
+      "group": "hydroxyl",
+      "n_train_polymers_with_group": 414,
+      "ratio_fitted_over_published": 0.5543047100331864,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 7993.283766013424,
+      "Y_published_K_g_per_mol": 5000,
+      "abs_relative_deviation": 0.5986567532026847,
+      "group": "aromatic_C_sub",
+      "n_train_polymers_with_group": 313,
+      "ratio_fitted_over_published": 1.5986567532026847,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 4039.033840363744,
+      "Y_published_K_g_per_mol": 1700,
+      "abs_relative_deviation": 1.3759022590374963,
+      "group": "aromatic_C_H",
+      "n_train_polymers_with_group": 225,
+      "ratio_fitted_over_published": 2.3759022590374963,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 5268.050276561636,
+      "Y_published_K_g_per_mol": 12000,
+      "abs_relative_deviation": 0.5609958102865303,
+      "group": "amide",
+      "n_train_polymers_with_group": 156,
+      "ratio_fitted_over_published": 0.43900418971346966,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 6508.419237689383,
+      "Y_published_K_g_per_mol": 11000,
+      "abs_relative_deviation": 0.40832552384641974,
+      "group": "carbonyl",
+      "n_train_polymers_with_group": 154,
+      "ratio_fitted_over_published": 0.5916744761535803,
+      "sign_admissible": true
+    }
+  ],
+  "rows": [
+    {
+      "Y_fitted_K_g_per_mol": 4178.026959043282,
+      "Y_published_K_g_per_mol": 2700,
+      "abs_relative_deviation": 0.5474173922382526,
+      "group": "CH2",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 1.5474173922382526,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 6151.500942703433,
+      "Y_published_K_g_per_mol": 5200,
+      "abs_relative_deviation": 0.18298095051989094,
+      "group": "CH3",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 1.182980950519891,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 6779.817076578444,
+      "Y_published_K_g_per_mol": 4600,
+      "abs_relative_deviation": 0.4738732775170531,
+      "group": "CH",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 1.473873277517053,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 4474.234962950936,
+      "Y_published_K_g_per_mol": 4900,
+      "abs_relative_deviation": 0.08689082388756397,
+      "group": "C_quat",
+      "n_train_polymers_with_group": 740,
+      "ratio_fitted_over_published": 0.913109176112436,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": -3125.1482313108504,
+      "Y_published_K_g_per_mol": 2000,
+      "abs_relative_deviation": 2.5625741156554254,
+      "group": "vinyl_CH2",
+      "n_train_polymers_with_group": 31,
+      "ratio_fitted_over_published": -1.5625741156554251,
+      "sign_admissible": false
+    },
+    {
+      "Y_fitted_K_g_per_mol": 5093.954398903177,
+      "Y_published_K_g_per_mol": 1900,
+      "abs_relative_deviation": 1.6810286310016722,
+      "group": "vinyl_CH",
+      "n_train_polymers_with_group": 656,
+      "ratio_fitted_over_published": 2.681028631001672,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 4039.033840363744,
+      "Y_published_K_g_per_mol": 1700,
+      "abs_relative_deviation": 1.3759022590374963,
+      "group": "aromatic_C_H",
+      "n_train_polymers_with_group": 225,
+      "ratio_fitted_over_published": 2.3759022590374963,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 7993.283766013424,
+      "Y_published_K_g_per_mol": 5000,
+      "abs_relative_deviation": 0.5986567532026847,
+      "group": "aromatic_C_sub",
+      "n_train_polymers_with_group": 313,
+      "ratio_fitted_over_published": 1.5986567532026847,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 2375.4713089823917,
+      "Y_published_K_g_per_mol": 4000,
+      "abs_relative_deviation": 0.40613217275440205,
+      "group": "ether_O",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 0.593867827245598,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 6651.656520398236,
+      "Y_published_K_g_per_mol": 12000,
+      "abs_relative_deviation": 0.4456952899668136,
+      "group": "hydroxyl",
+      "n_train_polymers_with_group": 414,
+      "ratio_fitted_over_published": 0.5543047100331864,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 6508.419237689383,
+      "Y_published_K_g_per_mol": 11000,
+      "abs_relative_deviation": 0.40832552384641974,
+      "group": "carbonyl",
+      "n_train_polymers_with_group": 154,
+      "ratio_fitted_over_published": 0.5916744761535803,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 1456.4321413319951,
+      "Y_published_K_g_per_mol": 15000,
+      "abs_relative_deviation": 0.9029045239112004,
+      "group": "ester",
+      "n_train_polymers_with_group": 18,
+      "ratio_fitted_over_published": 0.09709547608879968,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 5268.050276561636,
+      "Y_published_K_g_per_mol": 12000,
+      "abs_relative_deviation": 0.5609958102865303,
+      "group": "amide",
+      "n_train_polymers_with_group": 156,
+      "ratio_fitted_over_published": 0.43900418971346966,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 7228.458913352506,
+      "Y_published_K_g_per_mol": 8000,
+      "abs_relative_deviation": 0.09644263583093671,
+      "group": "primary_amine",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 0.9035573641690633,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 8457.898096924913,
+      "Y_published_K_g_per_mol": 4000,
+      "abs_relative_deviation": 1.1144745242312282,
+      "group": "secondary_amine",
+      "n_train_polymers_with_group": 526,
+      "ratio_fitted_over_published": 2.114474524231228,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 4251.357077718797,
+      "Y_published_K_g_per_mol": 3000,
+      "abs_relative_deviation": 0.4171190259062656,
+      "group": "tertiary_amine",
+      "n_train_polymers_with_group": 596,
+      "ratio_fitted_over_published": 1.4171190259062656,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": -2843.550181839689,
+      "Y_published_K_g_per_mol": 5500,
+      "abs_relative_deviation": 1.5170091239708525,
+      "group": "nitrile",
+      "n_train_polymers_with_group": 124,
+      "ratio_fitted_over_published": -0.5170091239708525,
+      "sign_admissible": false
+    },
+    {
+      "Y_fitted_K_g_per_mol": 3745.796758915482,
+      "Y_published_K_g_per_mol": 1500,
+      "abs_relative_deviation": 1.4971978392769878,
+      "group": "F",
+      "n_train_polymers_with_group": 32,
+      "ratio_fitted_over_published": 2.497197839276988,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 2070.108759827247,
+      "Y_published_K_g_per_mol": 4000,
+      "abs_relative_deviation": 0.4824728100431882,
+      "group": "Cl",
+      "n_train_polymers_with_group": 4,
+      "ratio_fitted_over_published": 0.5175271899568118,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 9241.336635233636,
+      "Y_published_K_g_per_mol": 4500,
+      "abs_relative_deviation": 1.0536303633852526,
+      "group": "Br",
+      "n_train_polymers_with_group": 16,
+      "ratio_fitted_over_published": 2.0536303633852526,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 10824.23794021889,
+      "Y_published_K_g_per_mol": 20000,
+      "abs_relative_deviation": 0.4587881029890555,
+      "group": "sulfone",
+      "n_train_polymers_with_group": 15,
+      "ratio_fitted_over_published": 0.5412118970109445,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 526.8309386457724,
+      "Y_published_K_g_per_mol": 5000,
+      "abs_relative_deviation": 0.8946338122708455,
+      "group": "sulfide",
+      "n_train_polymers_with_group": 1,
+      "ratio_fitted_over_published": 0.10536618772915449,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 4167.802007542193,
+      "Y_published_K_g_per_mol": 6000,
+      "abs_relative_deviation": 0.30536633207630115,
+      "group": "epoxide",
+      "n_train_polymers_with_group": 807,
+      "ratio_fitted_over_published": 0.6946336679236988,
+      "sign_admissible": true
+    },
+    {
+      "Y_fitted_K_g_per_mol": 0.0,
+      "Y_published_K_g_per_mol": 4000,
+      "abs_relative_deviation": 1.0,
+      "group": "Si_O",
+      "n_train_polymers_with_group": 0,
+      "ratio_fitted_over_published": 0.0,
+      "sign_admissible": false
+    }
+  ],
+  "summary": {
+    "excluded_groups": [
+      "nitrile",
+      "F",
+      "vinyl_CH2",
+      "ester",
+      "Br",
+      "sulfone",
+      "Cl",
+      "sulfide",
+      "Si_O"
+    ],
+    "in_scope_groups": [
+      "CH2",
+      "CH3",
+      "CH",
+      "ether_O",
+      "primary_amine",
+      "epoxide",
+      "C_quat",
+      "vinyl_CH",
+      "tertiary_amine",
+      "secondary_amine",
+      "hydroxyl",
+      "aromatic_C_sub",
+      "aromatic_C_H",
+      "amide",
+      "carbonyl"
+    ],
+    "in_scope_groups_with_gt50pct_magnitude_deviation": [
+      "CH2",
+      "vinyl_CH",
+      "secondary_amine",
+      "aromatic_C_sub",
+      "aromatic_C_H",
+      "amide"
+    ],
+    "in_scope_sign_flips": [],
+    "kpi_sha256": "ba24230c8d11e414f0779daf433a5afe6e375c0d594035db1341a545409cc979",
+    "max_inadmissible_n_train": 124,
+    "n_groups_excluded": 9,
+    "n_groups_in_scope": 15,
+    "next_observed_n_train_above_threshold": 154,
+    "rescoped_claim_survives_original_criterion": true,
+    "threshold_n_train": 125,
+    "w8_currency_reverified": true,
+    "w8_receipt_sha256": "0b22fec6a041287f5473449d0c08f85ebe20449f82c4638ca8627c29643e0fed",
+    "w8_script_sha256": "6c8d492103de337e9c245438ae29c2031aee2a0118c5843b2b47495bfad89c3f"
+  }
+}

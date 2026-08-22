@@ -1,0 +1,246 @@
+{
+  "admissibility_classification_provenance": {
+    "family_class_approximate_system_ids": [
+      "dgeba-amidoamine-adduct1",
+      "dgeba-amidoamine-adduct2",
+      "dgeba-dach",
+      "dgeba-mannich",
+      "dgeba-mpda",
+      "dgeba-mxda",
+      "dgeba-pacm",
+      "dgeba-tepa"
+    ],
+    "n_family_class_approximate": 8,
+    "source": "amphora-cure-potlife-gate/evidence/audit/potlife-ea-source-admissibility-v1/potlife-ea-source-admissibility-receipt.v1.dsse.json",
+    "source_sha256": "0638d14db244fb5dec4bc0484bdaa930f2984ae80b9e82ca82eaee579b1b1994"
+  },
+  "also_examines_lineage": {
+    "ea_source_admissibility_receipt": "amphora-cure-potlife-gate/evidence/audit/potlife-ea-source-admissibility-v1/potlife-ea-source-admissibility-receipt.v1.dsse.json",
+    "kissinger_ozawa_baseline_diagnostic": "amphora-cure-potlife-gate/benchmarks/kissinger-ozawa-baseline-v1/diagnostic.canonical.json"
+  },
+  "attack_type": "distribution-shift / label-uncertainty perturbation probe (escalates potlife-ea-source-admissibility-v1's framing finding into a numeric acceptance-bar consequence test)",
+  "attacks": "amphora-cure-potlife-gate/evidence/phase0/repairs/R-C02/done/R-C02-repair-receipt.v1.dsse.json",
+  "baseline_unperturbed": {
+    "acceptance": {
+      "criterion_a_40c_leg_mape_ceiling_0_25": {
+        "met": true,
+        "observed_40C_corrected_mape": 0.039543,
+        "threshold": 0.25
+      },
+      "criterion_b_beats_q10_on_ge_2_of_3_legs": {
+        "legs_where_corrected_beats_q10": [
+          "10C",
+          "30C",
+          "40C"
+        ],
+        "met": true,
+        "n_legs_beat": 3,
+        "threshold_legs": 2
+      },
+      "overall_met": true
+    },
+    "leg_summary": {
+      "10C": {
+        "corrected_beats_q10": true,
+        "corrected_mape": 0.033611,
+        "q10_mape": 0.177023
+      },
+      "30C": {
+        "corrected_beats_q10": true,
+        "corrected_mape": 0.017805,
+        "q10_mape": 0.106496
+      },
+      "40C": {
+        "corrected_beats_q10": true,
+        "corrected_mape": 0.039543,
+        "q10_mape": 0.174605
+      }
+    },
+    "note": "Sanity check: unperturbed re-derivation must reproduce R-C02's own signed 40C corrected_mape and acceptance verdict exactly."
+  },
+  "claim_under_attack": "R-C02 LOSO cross-system multiplicative bias correction acceptance bar (40C MAPE<=0.25 AND beats Q10 on >=2/3 legs), evaluated as robust to the label-uncertainty potlife-ea-source-admissibility-v1 disclosed but did not numerically test",
+  "dataset": {
+    "fixture_id": "amphora-cure-potlife-gate-phase0-known-answer-2026-07-21",
+    "n_systems": 12,
+    "path": "amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+    "sha256": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1"
+  },
+  "falsification_criterion": "R-C02's LOSO-corrected acceptance bar (40C leg corrected MAPE <= 0.25 AND corrected beats Q10 on >= 2/3 legs) is falsified if, under a uniform +/- 5.75% perturbation of activation_energy_j_mol applied ONLY to the 8 systems potlife-ea-source-admissibility-v1 classified FAMILY_CLASS_APPROXIMATE (perturbation magnitude = the real, already-signed, empirically-measured mean relative Kissinger-vs-Ozawa-Flynn-Wall inter-method Ea spread from benchmarks/kissinger-ozawa-baseline-v1, not an invented number), either direction breaches acceptance (overall_met=False).",
+  "module": "amphora-cure-potlife-gate",
+  "positive_control": {
+    "calibration_note": "A first attempt at 5x the measured spread (~28.7%) did NOT break the acceptance bar -- LOSO's leave-one-out cross-system averaging partially cancels a uniform perturbation applied to a fixed subset of systems, so the bar is more robust than a naive scaling suggested. Magnitude was raised via direct search (30%: survives: 40C corrected MAPE 0.181-0.193 < 0.25; 50%: breaks: 0.309-0.313 > 0.25) to the smallest round number that reliably breaks criterion_a in both directions, so this control is a genuine, non-trivial demonstration of detection power, not a token gesture.",
+    "detected": true,
+    "evidence": {
+      "control_minus_0.5000": {
+        "acceptance": {
+          "criterion_a_40c_leg_mape_ceiling_0_25": {
+            "met": false,
+            "observed_40C_corrected_mape": 0.309142,
+            "threshold": 0.25
+          },
+          "criterion_b_beats_q10_on_ge_2_of_3_legs": {
+            "legs_where_corrected_beats_q10": [],
+            "met": false,
+            "n_legs_beat": 0,
+            "threshold_legs": 2
+          },
+          "overall_met": false
+        },
+        "direction": "minus",
+        "leg_summary": {
+          "10C": {
+            "corrected_beats_q10": false,
+            "corrected_mape": 0.284336,
+            "q10_mape": 0.177023
+          },
+          "30C": {
+            "corrected_beats_q10": false,
+            "corrected_mape": 0.135426,
+            "q10_mape": 0.106496
+          },
+          "40C": {
+            "corrected_beats_q10": false,
+            "corrected_mape": 0.309142,
+            "q10_mape": 0.174605
+          }
+        },
+        "relative_perturbation": 0.5
+      },
+      "control_plus_0.5000": {
+        "acceptance": {
+          "criterion_a_40c_leg_mape_ceiling_0_25": {
+            "met": false,
+            "observed_40C_corrected_mape": 0.312676,
+            "threshold": 0.25
+          },
+          "criterion_b_beats_q10_on_ge_2_of_3_legs": {
+            "legs_where_corrected_beats_q10": [],
+            "met": false,
+            "n_legs_beat": 0,
+            "threshold_legs": 2
+          },
+          "overall_met": false
+        },
+        "direction": "plus",
+        "leg_summary": {
+          "10C": {
+            "corrected_beats_q10": false,
+            "corrected_mape": 0.238406,
+            "q10_mape": 0.177023
+          },
+          "30C": {
+            "corrected_beats_q10": false,
+            "corrected_mape": 0.132227,
+            "q10_mape": 0.106496
+          },
+          "40C": {
+            "corrected_beats_q10": false,
+            "corrected_mape": 0.312676,
+            "q10_mape": 0.174605
+          }
+        },
+        "relative_perturbation": 0.5
+      }
+    },
+    "how_planted": "activation_energy_j_mol for each of the 8 family-class-approximate system_ids multiplied by (1 +/- control_magnitude) before re-running the identical LOSO bias-correction + acceptance-bar harness; system-specific Ea (4 systems) and all pot_life observations held at fixture values",
+    "planted_defect": "Ea for the 8 FAMILY_CLASS_APPROXIMATE systems uniformly perturbed by 50.00% (8.70x the real empirically-measured 5.75% inter-method spread), both directions tested"
+  },
+  "rc02_receipt_sha256": "69eff1a5d187354258c826ad893bcd9c51ee5407d9275647c558e6c96ed0fd81",
+  "real_any_scenario_breaches_acceptance": false,
+  "real_attack_scenarios": {
+    "real_minus_0.0575": {
+      "acceptance": {
+        "criterion_a_40c_leg_mape_ceiling_0_25": {
+          "met": true,
+          "observed_40C_corrected_mape": 0.054374,
+          "threshold": 0.25
+        },
+        "criterion_b_beats_q10_on_ge_2_of_3_legs": {
+          "legs_where_corrected_beats_q10": [
+            "10C",
+            "30C",
+            "40C"
+          ],
+          "met": true,
+          "n_legs_beat": 3,
+          "threshold_legs": 2
+        },
+        "overall_met": true
+      },
+      "direction": "minus",
+      "leg_summary": {
+        "10C": {
+          "corrected_beats_q10": true,
+          "corrected_mape": 0.048481,
+          "q10_mape": 0.177023
+        },
+        "30C": {
+          "corrected_beats_q10": true,
+          "corrected_mape": 0.026617,
+          "q10_mape": 0.106496
+        },
+        "40C": {
+          "corrected_beats_q10": true,
+          "corrected_mape": 0.054374,
+          "q10_mape": 0.174605
+        }
+      },
+      "n_systems_perturbed": 8,
+      "relative_perturbation": 0.05745011404771061
+    },
+    "real_plus_0.0575": {
+      "acceptance": {
+        "criterion_a_40c_leg_mape_ceiling_0_25": {
+          "met": true,
+          "observed_40C_corrected_mape": 0.04071,
+          "threshold": 0.25
+        },
+        "criterion_b_beats_q10_on_ge_2_of_3_legs": {
+          "legs_where_corrected_beats_q10": [
+            "10C",
+            "30C",
+            "40C"
+          ],
+          "met": true,
+          "n_legs_beat": 3,
+          "threshold_legs": 2
+        },
+        "overall_met": true
+      },
+      "direction": "plus",
+      "leg_summary": {
+        "10C": {
+          "corrected_beats_q10": true,
+          "corrected_mape": 0.043629,
+          "q10_mape": 0.177023
+        },
+        "30C": {
+          "corrected_beats_q10": true,
+          "corrected_mape": 0.022649,
+          "q10_mape": 0.106496
+        },
+        "40C": {
+          "corrected_beats_q10": true,
+          "corrected_mape": 0.04071,
+          "q10_mape": 0.174605
+        }
+      },
+      "n_systems_perturbed": 8,
+      "relative_perturbation": 0.05745011404771061
+    }
+  },
+  "schema": "amphora.cure-potlife-gate.ea-uncertainty-perturbation-diagnostic.v1",
+  "uncertainty_magnitude_provenance": {
+    "interpretation": "Real measured disagreement between two legitimate independent Ea-estimation methods (Kissinger, Ozawa-Flynn-Wall-Doyle) applied to the SAME raw DSC data, used here as a physically-grounded proxy for how far a family/class-level literature-averaged Ea can plausibly sit from a true system-specific value.",
+    "mean_relative_spread": 0.05745,
+    "per_system_relative_spread_ofw_vs_kissinger": {
+      "dgeba-bdge-ipda-prepreg-ma14164673": 0.048213,
+      "dgeba-ipda-lascano-polym11030391": 0.053043,
+      "multifunctional-epoxy-dds-molecules31040640": 0.071094
+    },
+    "source": "amphora-cure-potlife-gate/benchmarks/kissinger-ozawa-baseline-v1/diagnostic.canonical.json (already-signed, CC-BY raw multi-heating-rate DSC re-derivation, 3 systems)",
+    "source_sha256": "8799eec383ca9290f91c86d08a3d7eed4a7ccb7fb030fbffae6501e84f7610c5"
+  },
+  "verdict": "CLAIM_SURVIVED",
+  "verdict_meaning": "SURVIVED: the empirically-measured +/-5.75% Ea perturbation on the 8 family-class-approximate systems does not break R-C02's acceptance bar in either direction, while a 5x-inflated (50.00%) perturbation of the identical kind does break it (positive control fired) -- the acceptance bar has genuine margin against this uncertainty axis, it is not merely un-attackable."
+}

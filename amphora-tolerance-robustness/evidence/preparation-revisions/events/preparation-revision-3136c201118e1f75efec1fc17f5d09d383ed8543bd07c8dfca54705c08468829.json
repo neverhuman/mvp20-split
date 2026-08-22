@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "34c1c3423506f9e01e41a8027595b3cb94cd00d1f22704a1682a44efb8ac60a6",
+  "module_id": "amphora-tolerance-robustness",
+  "parent_revision_id": "preparation-revision-958be09f43bce7e1e0417d4cb5a9de4e95a302def3857b392db4be9caef3fdbc",
+  "revision_id": "preparation-revision-3136c201118e1f75efec1fc17f5d09d383ed8543bd07c8dfca54705c08468829",
+  "revision_number": 2,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-e13f28ee568b136a364b0a3ad84514f8c3977bd0b893e13b0a55e5707a5b2cb3",
+  "supersession_path": "evidence/superseded/supersession-e13f28ee568b136a364b0a3ad84514f8c3977bd0b893e13b0a55e5707a5b2cb3/supersession.v1.json",
+  "supersession_sha256": "8b37ec432c6a3f52f105facfb9e2153065668c58feb159d1815be4d43c430408",
+  "unsigned_preparation_only": true
+}

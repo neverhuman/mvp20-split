@@ -1,0 +1,8 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "0155bffa200c13ece3a741c0134d527a3d79cd5ae92b03e162b93f471180d783",
+  "import_hashes": [],
+  "module_id": "amphora-sourceability-ehs",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

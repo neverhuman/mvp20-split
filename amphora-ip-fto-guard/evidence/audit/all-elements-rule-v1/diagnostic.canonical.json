@@ -1,0 +1,154 @@
+{
+  "authority": "AUDIT_ONLY",
+  "check1_grounded_non_read": {
+    "all_grounded": true,
+    "conclusive_non_read_count": 6,
+    "conclusive_non_read_rows": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      26
+    ],
+    "doctrine": "AllElementsRule_London1991_WarnerJenkinson1997",
+    "ungrounded_non_read_violations": []
+  },
+  "check2_abstention": {
+    "all_abstain": true,
+    "over_claim_violations": [],
+    "unclear_unresolved_rows": 54
+  },
+  "check3_not_fto_universal": {
+    "conclusive_non_reads_are_preliminary_claim1_only": true,
+    "conclusive_non_reads_carry_counsel_handoff": true,
+    "conclusive_non_reads_still_not_fto": true,
+    "every_row_not_fto_true": true,
+    "family_status_unverified_by_design": true,
+    "interpretation": "Element-grounded non-reads are the strongest rows yet STILL not FTO: claim-1-only, dependent claims / prosecution history / equivalents unreviewed."
+  },
+  "check4_chart_enumerates_claim": {
+    "all_charts_enumerate_claim_elements": true,
+    "charted_families": 6,
+    "mismatches": []
+  },
+  "check5_authority_envelope": {
+    "envelope_clean": true,
+    "forbidden_legal_closure_key_hits": []
+  },
+  "does_not_close": [
+    "No FTO, no legal advice, no clearance. All-Elements screen is claim-1 / category only; dependent claims, prosecution history, jurisdictions and doctrine-of-equivalents remain counsel scope.",
+    "Does not modify the manifest (66 receipts / 11 modules), the pinned fixture, or any signed Phase-0 KPI.",
+    "AUDIT_ONLY: promotes no authority and flips no scientific_readiness."
+  ],
+  "element_provenance_anchoring": {
+    "lenient_anchor_fraction": 0.8571,
+    "lenient_anchored": 6,
+    "note": "Missing/avoided limitations are semantically mapped (some are composite negatives), so this is a REPORTED anchoring fraction, not a hard gate. It confirms the avoided limitations reference real charted claim tokens rather than fabricated elements.",
+    "per_row": [
+      {
+        "missing_anchored_strict": 2,
+        "missing_total": 2,
+        "n": 1
+      },
+      {
+        "missing_anchored_strict": 0,
+        "missing_total": 1,
+        "n": 2
+      },
+      {
+        "missing_anchored_strict": 1,
+        "missing_total": 1,
+        "n": 3
+      },
+      {
+        "missing_anchored_strict": 1,
+        "missing_total": 1,
+        "n": 4
+      },
+      {
+        "missing_anchored_strict": 1,
+        "missing_total": 1,
+        "n": 5
+      },
+      {
+        "missing_anchored_strict": 1,
+        "missing_total": 1,
+        "n": 26
+      }
+    ],
+    "strict_anchor_fraction": 0.8571,
+    "strict_token_anchored": 6,
+    "total_missing_limitations": 7
+  },
+  "fail_closed_mutation_demo": {
+    "all_mutations_caught": true,
+    "mutations": [
+      {
+        "caught": true,
+        "caught_by": "check1_grounded_non_read",
+        "mutation": "ungrounded_non_read_flip_unclear_to_NO",
+        "target_n": 6
+      },
+      {
+        "caught": true,
+        "caught_by": "check1_grounded_non_read",
+        "mutation": "strip_missing_limitation_from_conclusive_NO",
+        "target_n": 1
+      },
+      {
+        "caught": true,
+        "caught_by": "check2_abstention",
+        "mutation": "inject_missing_limitation_onto_UNCLEAR",
+        "target_n": 6
+      },
+      {
+        "caught": true,
+        "caught_by": "check4_chart_enumerates_claim",
+        "mutation": "desync_chart_from_claim_elements",
+        "target_n": 1
+      }
+    ]
+  },
+  "hash_and_count_lock": {
+    "family_count_matches_pin": true,
+    "fixture_sha256_matches_pin": true,
+    "sweep_count_matches_pin": true
+  },
+  "headline": "All-Elements-Rule structural grounding of pinned landscape (SHA 52ada090..., 60 families / 6 sweeps): 6/6 conclusive non-reads are element-grounded (>=1 documented missing limitation + charted claim), 54/54 UNCLEAR rows abstain (0 asserted missing, not charted), every conclusive non-read STILL not_fto=true + counsel-handoff (claim-1-only), all 6/6 charts enumerate their claim_elements, authority envelope clean (0 legal-closure keys), strict token-anchor 0.8571 / lenient 0.8571, all 4/4 fail-closed mutations caught -> hypothesis 'surface unresolved without claiming FTO' CORROBORATED under the All-Elements Rule.",
+  "human_review_performed": false,
+  "inputs": {
+    "cpc_ipc_sweeps": 6,
+    "families": 60,
+    "fixture_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+    "fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "pinned_fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+  },
+  "kpi_reconstruction": {
+    "fto_claimed_rows": 0,
+    "grounded_conclusive_non_reads": 6,
+    "hypothesis_surfaces_unresolved_without_claiming_fto": true,
+    "unresolved_technical_categories_recomputed": 54
+  },
+  "modifies_manifest": false,
+  "modifies_pinned_fixture": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ip-fto-guard",
+  "non_circularity": "The runtime is not invoked. An independent CPython parser recomputes All-Elements-Rule predicates directly from patent_landscape.json and compares to published doctrine, not to module output. The dataset SHA-256 is checked against the KPI-pinned value.",
+  "organizational_independence_asserted": false,
+  "promotes_authority": false,
+  "purpose": "Independently re-derive, with a-priori patent-law doctrine (All-Elements Rule), that the pinned landscape asserts conclusive non-reads ONLY when >=1 claim limitation is documented absent, abstains on every UNCLEAR row, and never elevates any row to FTO.",
+  "run_type": "ALL_ELEMENTS_RULE_STRUCTURAL_AUDIT",
+  "schema": "amphora.ip-fto-guard.all-elements-rule-diagnostic.v1",
+  "theory_reference": {
+    "doctrine": "All-Elements Rule (element-by-element non-infringement)",
+    "note": "Doctrine applied only as a STRUCTURAL prescreen predicate; this is not legal advice and performs no FTO.",
+    "primary_authorities": [
+      "London v. Carson Pirie Scott & Co., 946 F.2d 1534, 1538 (Fed. Cir. 1991)",
+      "Warner-Jenkinson Co. v. Hilton Davis Chem. Co., 520 U.S. 17, 29 (1997)",
+      "Pennwalt Corp. v. Durand-Wayland, Inc., 833 F.2d 931 (Fed. Cir. 1987)",
+      "35 U.S.C. Sec. 112(b) (claim limitations define metes and bounds)",
+      "MPEP 9th ed. Rev. 07.2022 Sec. 2131 (anticipation: each and every element)"
+    ]
+  }
+}

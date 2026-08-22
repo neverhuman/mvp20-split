@@ -1,0 +1,153 @@
+{
+  "authority": "AUDIT_ONLY",
+  "does_not": [
+    "promote any module or authority tier",
+    "modify the manifest or any of the 66 signed receipts",
+    "sign any phase0 evaluation or review receipt",
+    "make any coating-performance or service-life claim"
+  ],
+  "phase0_honesty_redteam": {
+    "benchmark_lock_governance": {
+      "interpretation": "No benchmark-lock in the portfolio makes scientific success a precondition for Phase-0. 'FULL Phase-0' therefore does NOT mean 'validated science'.",
+      "n_benchmark_locks_scanned": 29,
+      "scientific_success_required_for_phase0__false": 29,
+      "scientific_success_required_for_phase0__true": 0
+    },
+    "founder_answer_do_we_have_full_phase0": "NO in the scientific sense. 0 of 29 modules are scientific_readiness==VALIDATED; the 10 modules labelled PHASE_0 are 7 NOT_APPLICABLE (pure governance/infra, no science object) + 3 LOCKED_INTERNAL (internal ceiling, NOT externally validated), and every one has decision_use_ceiling==AUDIT_ONLY with promotable==false. All 29 benchmark-locks set scientific_success_required_for_phase0=false, so 'Phase-0' is a GOVERNANCE gate, not a validated-science gate. This autonomous AUDIT_ONLY cron cannot promote any module: promotion derives only from a module-local movement event carrying two distinct trusted-human-key signatures, which it does not hold and must not forge.",
+    "inputs": {
+      "module_manifest_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+      "n_benchmark_locks_scanned": 29,
+      "phase0_decision_report_v2_sha256": "9467b62782321b4359922f50d646317b260df187093d9c8c96b1c5a7e25db965"
+    },
+    "live_counts": {
+      "module_count": 29,
+      "phase0_count": 10,
+      "pre_phase0_count": 19,
+      "status": "EXECUTION_INCOMPLETE"
+    },
+    "n_modules": 29,
+    "n_modules_scientifically_VALIDATED": 0,
+    "phase0_modules_decision_use_ceiling_breakdown": {
+      "AUDIT_ONLY": 10
+    },
+    "phase0_modules_promotable_true_count": 0,
+    "phase0_modules_readiness_breakdown": {
+      "LOCKED_INTERNAL": 3,
+      "NOT_APPLICABLE": 7
+    }
+  },
+  "run_type": "WET_ADHESION_SURFACE_ENERGETICS_CCBY_REDTEAM",
+  "schema": "amphora.redteam-audit.wet-adhesion-surface-energetics-ccby-v1.diagnostic.v1",
+  "target_capability": "cathodic-disbondment / wet-adhesion-loss risk ranking",
+  "target_module": "amphora-barrier-corrosion-score",
+  "wet_adhesion_surface_energetics": {
+    "a_priori_predictor_non_circularity": "c_polar (total O+N concentration, mol/kg) and c_OH are taken VERBATIM from the already-signed barrier-water receipt, where they were defined for a DIFFERENT target (bulk uptake). They never saw any contact angle, so testing them against surface wettability here is non-circular.",
+    "authority": "AUDIT_ONLY",
+    "constants": {
+      "gamma_water_mN_m_at_20C": 72.8
+    },
+    "cross_class_positive_control": {
+      "engine_valid_cross_class": true,
+      "note": "Canonical polymer physical constants (representative handbook values), rank-only positive control. NO coating-performance claim; the in-scope scientific claim is the DGEBA-amine within-family result.",
+      "rows": [
+        {
+          "cos_theta": -0.34202,
+          "delta_h_MPa_half": 0.0,
+          "polymer": "PTFE",
+          "theta_water_deg": 110.0
+        },
+        {
+          "cos_theta": 0.034899,
+          "delta_h_MPa_half": 2.8,
+          "polymer": "PS",
+          "theta_water_deg": 88.0
+        },
+        {
+          "cos_theta": 0.34202,
+          "delta_h_MPa_half": 7.5,
+          "polymer": "PMMA",
+          "theta_water_deg": 70.0
+        },
+        {
+          "cos_theta": 0.45399,
+          "delta_h_MPa_half": 12.0,
+          "polymer": "PA6",
+          "theta_water_deg": 63.0
+        },
+        {
+          "cos_theta": 0.866025,
+          "delta_h_MPa_half": 26.0,
+          "polymer": "PVOH",
+          "theta_water_deg": 30.0
+        }
+      ],
+      "spearman_delta_h_vs_cos_theta": 1.0
+    },
+    "dataset": {
+      "measured_property": "sessile-drop water contact angle (before UV), 3 DGEBA-diamine networks",
+      "n_systems": 3,
+      "rights": "CC BY 4.0 (Creative Commons Attribution) -- already rights-established in-tree",
+      "source": "Polymers 2024, 16(1):67 (doi 10.3390/polym16010067 = PMC10780492)"
+    },
+    "does_not": [
+      "promote any module or authority tier",
+      "modify the manifest or any of the 66 signed receipts",
+      "sign any phase0 evaluation or review receipt",
+      "make any coating-performance, adhesion-strength, or service-life claim",
+      "claim statistical significance at n=3",
+      "claim a full polar/dispersive surface-energy split from a single probe liquid"
+    ],
+    "marine_relevance": "Wet-adhesion loss / cathodic disbondment is the #1 field failure mode of marine anti-corrosion epoxy-amine coatings. This increment gives a parameter-free, non-circular directional ranking for it and PROVES it is a separate design axis from osmotic blistering -- correcting any single 'hydrophilicity' shortcut in the founder report.",
+    "parameter_free_engine": "Young-Dupre W_a(water) = gamma_water*(1+cos theta); zero fitted parameters",
+    "relation_to_prior_receipts": "The signed OWK receipt computed W_a(water)=107.2 for EP-DDS ONLY and did NOT compute EP-CYDM or EP-8CH2DA, the a-priori predictor, or the surface/bulk decoupling. W_a(DDS) reproduces here (107.235 mN/m) as a consistency check. This increment adds the other two networks, the non-circular predictor test, and the decoupling finding.",
+    "rows": [
+      {
+        "Q_bulk_uptake_pct_measured": 1.7,
+        "amine_type": "aromatic-sulfone",
+        "c_OH_mol_per_kg_apriori": 4.305066,
+        "c_polar_mol_per_kg_apriori": 12.915197,
+        "cos_theta": 0.473012,
+        "system": "EP-DDS",
+        "theta_water_deg_measured": 61.77,
+        "work_of_adhesion_water_mN_m": 107.235284
+      },
+      {
+        "Q_bulk_uptake_pct_measured": 0.16,
+        "amine_type": "cycloaliphatic",
+        "c_OH_mol_per_kg_apriori": 4.859771,
+        "c_polar_mol_per_kg_apriori": 12.149428,
+        "cos_theta": 0.258313,
+        "system": "EP-CYDM",
+        "theta_water_deg_measured": 75.03,
+        "work_of_adhesion_water_mN_m": 91.605205
+      },
+      {
+        "Q_bulk_uptake_pct_measured": 2.0,
+        "amine_type": "aliphatic-C8",
+        "c_OH_mol_per_kg_apriori": 4.847897,
+        "c_polar_mol_per_kg_apriori": 12.119743,
+        "cos_theta": 0.196973,
+        "system": "EP-8CH2DA",
+        "theta_water_deg_measured": 78.64,
+        "work_of_adhesion_water_mN_m": 87.13963
+      }
+    ],
+    "spearman": {
+      "c_OH_apriori_vs_cos_theta_surface": -0.5,
+      "c_polar_apriori_vs_cos_theta_surface": 1.0,
+      "c_polar_apriori_vs_work_of_adhesion_water": 1.0,
+      "reference_c_polar_vs_bulk_uptake_from_signed_barrier_water_receipt": -0.5,
+      "surface_cos_theta_vs_bulk_uptake": -0.5
+    },
+    "target_capability": "wet-adhesion-loss / cathodic-disbondment risk ranking of cured DGEBA-amine films",
+    "target_module": "amphora-barrier-corrosion-score (adhesion / cathodic-disbondment sub-axis)",
+    "theory": "Cathodic disbondment / wet-adhesion loss is initiated when water thermodynamically displaces the coating<->steel bond at the buried interface. The parameter-free Young-Dupre work of water adhesion W_a(water) = gamma_water*(1+cos theta) measures the surface water-wetting driving force; a higher W_a(water) implies a more water-wettable surface and a larger disbondment driving force. This is a SURFACE property, physically distinct from BULK equilibrium uptake (which drives osmotic blistering and is free-volume-limited).",
+    "validity_gates": {
+      "cross_class_rank_valid_rho_ge_0_9": true,
+      "extends_owk_receipt_from_1_to_3_networks": true,
+      "surface_bulk_decoupled_rho_lt_0": true,
+      "surface_wettability_rank_valid_in_family_rho_ge_0_9": true
+    },
+    "verdict": "WET_ADHESION_SURFACE_ENERGETICS__DIRECTION_VALIDATED_AND_DECOUPLED_FROM_BULK: the a-priori total-polar-atom density c_polar ranks SURFACE water wettability perfectly in-family (Spearman +1.0, n=3) and cross-class (Spearman 1.00), while the SAME descriptor ANTI-ranks BULK uptake (-0.5) and surface wettability itself ANTI-correlates with bulk uptake (-0.5). Surface (cathodic-disbondment) and bulk (osmotic-blistering) are governed by DIFFERENT physics -- polar-group chemistry vs free volume. The hydroxyl-only descriptor c_OH is the wrong surface descriptor (-0.5) because DDS's surface polarity is the sulfone, captured only by c_polar. NOT promotable: n=3 (not significant) and single-probe-liquid W_a(water) is not the full surface-energy split (needs >=2 probe liquids, protocol-controlled n>=~10). Actionable: rank disbondment risk by SURFACE polar-group density, blistering risk by FREE VOLUME; do not conflate."
+  }
+}

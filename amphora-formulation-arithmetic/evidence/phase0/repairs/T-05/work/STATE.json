@@ -1,0 +1,9 @@
+{
+  "item_id": "T-05",
+  "status": "done",
+  "verdict": "CLAIM_REFUTED",
+  "fire_id": "20260805T230001-1303777-7b404ec3e30b",
+  "date": "2026-08-05",
+  "done_receipt": "amphora-formulation-arithmetic/evidence/phase0/repairs/T-05/done/T-05.done-receipt.v1.dsse.json",
+  "note": "Completed in a single fire. Part 1 (R-A05 basis oracle port) is a scope-mismatch negative (0/15 applicable). Part 2 (directive T2-05 EquivalentBalanceV1 attack) is a genuine refutation via candidate-supplied-constant injection. No further fires needed unless a repair item (R-05) is opened to close the override-path gap."
+}

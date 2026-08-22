@@ -1,0 +1,15 @@
+test_t6_accounting_identity (__main__.TestAccountingAndDeterminism.test_t6_accounting_identity) ... ok
+test_t7_determinism_two_replay (__main__.TestAccountingAndDeterminism.test_t7_determinism_two_replay) ... ok
+test_t1_fedors_anchor_totals (__main__.TestAnchors.test_t1_fedors_anchor_totals) ... ok
+test_t1_vk_anchor_components (__main__.TestAnchors.test_t1_vk_anchor_components) ... ok
+test_t5_water_vk_abstains_out_of_envelope (__main__.TestAnchors.test_t5_water_vk_abstains_out_of_envelope) ... ok
+test_full_coverage_no_silent_zero (__main__.TestPathologies.test_full_coverage_no_silent_zero) ... ok
+test_t2_near_zero_positive_volume_abstains (__main__.TestPathologies.test_t2_near_zero_positive_volume_abstains) ... ok
+test_t2_synthetic_zero_volume_abstains (__main__.TestPathologies.test_t2_synthetic_zero_volume_abstains) ... ok
+test_t3_uncovered_fragment_rejected (__main__.TestPathologies.test_t3_uncovered_fragment_rejected) ... ok
+test_t4_parse_error_rejected (__main__.TestPathologies.test_t4_parse_error_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.022s
+
+OK

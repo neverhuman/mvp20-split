@@ -1,0 +1,67 @@
+{
+  "license_text_diverges": {
+    "expected_rule": "license_text_matches_live_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Overwrote DR-LANG-FR-02's license_evidence_quote with a fabricated 'fully open, no purchase required' claim contradicting the recorded AFNOR-boutique WebFetch evidence (which states a paid-purchase model).",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-FR-02",
+        "reason": "DR-LANG-FR-02: license_evidence_quote does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "license_text_matches_live_evidence"
+      }
+    ]
+  },
+  "literal_english_translation_query": {
+    "expected_rule": "native_query_not_literal_translation",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced the native fr query string 'résine époxyde amine durcisseur cinétique de durcissement jeu de données' with its literal English gloss, while leaving language:'fr' unchanged.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": null,
+        "reason": "fr query field is a literal English translation or contains no French marker vocabulary: 'epoxy resin amine hardener cure kinetics dataset'",
+        "rule": "native_query_not_literal_translation"
+      }
+    ]
+  },
+  "missing_recorded_query": {
+    "expected_rule": "citation_has_recorded_query_and_result",
+    "expected_rule_fired": true,
+    "how_planted": "Scrubbed every occurrence of DR-LANG-FR-02's url (https://www.boutique.afnor.org/fr-fr/norme/nf-en-iso-9227/essais-de-corrosion-en-atmospheres-artificielles-essais-aux-brouillards-sal/fa201512/340484) from a copy of this fire's search-record queries/results.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-FR-02",
+        "reason": "DR-LANG-FR-02: url https://www.boutique.afnor.org/fr-fr/norme/nf-en-iso-9227/essais-de-corrosion-en-atmospheres-artificielles-essais-aux-brouillards-sal/fa201512/340484 does not appear in any recorded search-record query/result this fire",
+        "rule": "citation_has_recorded_query_and_result"
+      }
+    ]
+  },
+  "native_citation_not_verbatim": {
+    "expected_rule": "native_citation_verbatim_in_evidence",
+    "expected_rule_fired": true,
+    "how_planted": "Replaced DR-LANG-FR-06's native_citation (the exact French thesis title) with an English paraphrase, simulating a silently-translated/paraphrased citation.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "DR-LANG-FR-06",
+        "reason": "DR-LANG-FR-06: native_citation 'Study of the durability of an anticorrosion epoxy primer' does not appear verbatim in this fire's recorded search-record evidence text",
+        "rule": "native_citation_verbatim_in_evidence"
+      }
+    ]
+  },
+  "rediscovery_dropped": {
+    "expected_rule": "rediscovery_recall",
+    "expected_rule_fired": true,
+    "how_planted": "Injected a SYNTHETIC previously-supplied candidate id ('FR-PRIOR-TEST') into the checker's previously_supplied_ids input -- since this fire genuinely found zero real prior fr candidates (see intake_manifest), a synthetic id is required to prove this rule is a real, non-vacuous check rather than one that trivially never fires on an empty input list.",
+    "refutation_criterion_fired": true,
+    "violations": [
+      {
+        "candidate_id": "FR-PRIOR-TEST",
+        "reason": "previously-supplied candidate FR-PRIOR-TEST was neither rediscovered (no disposition entry with rediscovers==FR-PRIOR-TEST) nor explicitly explained",
+        "rule": "rediscovery_recall"
+      }
+    ]
+  }
+}

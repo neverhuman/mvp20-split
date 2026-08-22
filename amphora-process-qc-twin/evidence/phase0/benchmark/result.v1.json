@@ -1,0 +1,201 @@
+{
+  "benchmark_execution_complete": true,
+  "bundle_sha256": "c4809f2be8a1ad993bdb002f2e25d16dee196bd3fd90dca1dd7eab12d8b1f5af",
+  "first_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-process-qc-twin/reference/mvp20/out/capture_template.json": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+        "amphora-process-qc-twin/reference/mvp20/out/process-qc-audit-shell.v1.json": "e81f219121523ccf1f20c3c490c917ae413a30190df0515dd250c689056929c1",
+        "config/benchmark-lock.v1.json": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+        "module-manifest.json": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+      },
+      "benchmark_lock_hash": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+      "claim_locks": {
+        "no_batch_release_authority_first_90_days": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_release_claim_without_spc": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "process_qc_twin_requires_accepted_batch_data": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evidence_tier": "PUBLIC_RETROSPECTIVE",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "CHECKED_ARTIFACT_REPORTED_METRICS",
+          "deterministic_control_diagnostic": null,
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": false,
+          "observations": [
+            {
+              "json_path": "source_bindings[0].row_count",
+              "value": 1567
+            },
+            {
+              "json_path": "source_bindings[1].row_count",
+              "value": 189010
+            },
+            {
+              "json_path": "owned_deterministic_controls.false_positive_alert_count",
+              "value": 0
+            },
+            {
+              "json_path": "owned_deterministic_controls.missed_deviation_detector_count",
+              "value": 0
+            },
+            {
+              "json_path": "authority_ceiling",
+              "value": "AUDIT_ONLY"
+            }
+          ],
+          "operational_readiness": "OPEN",
+          "process_qc_audit_shell": {
+            "authority_ceiling": "AUDIT_ONLY",
+            "baseline_observation_count": 30,
+            "batch_release_authorized": false,
+            "detector_alert_counts": {
+              "CUSUM": 10,
+              "EWMA": 10,
+              "SHEWHART": 10
+            },
+            "false_positive_alert_count": 0,
+            "fixture_sha256": "51f9829dc8985d76f7f53be65b28d07148f5d6b312495b84dcbf8bb24e20a096",
+            "malformed_missingness_rejected": true,
+            "manufacturing_qualification_authorized": false,
+            "missed_deviation_detector_count": 0,
+            "reordered_time_rejected": true,
+            "schema": "amphora.process-qc-audit-shell.v1",
+            "shifted_monitoring_count": 10,
+            "specification_control_separation_passed": true,
+            "stable_monitoring_count": 20
+          },
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": "DIAGNOSTIC_CONTROLS_PASS"
+        }
+      },
+      "module_id": "amphora-process-qc-twin",
+      "passed": false,
+      "receipt_id": "receipt-330add3cfe7872cad6c45bf0",
+      "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "19cde7d337e08097bc1557cf1976cc84c6aa222e10d161875aee268ffeb4a599",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": false,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "legacy_local_receipt_authority": "NONE",
+  "module_id": "amphora-process-qc-twin",
+  "replay_identical": true,
+  "schema": "amphora.module-phase0-benchmark-result.v1",
+  "scientific_outcome": "FAILED",
+  "second_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-process-qc-twin/reference/mvp20/out/capture_template.json": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d",
+        "amphora-process-qc-twin/reference/mvp20/out/process-qc-audit-shell.v1.json": "e81f219121523ccf1f20c3c490c917ae413a30190df0515dd250c689056929c1",
+        "config/benchmark-lock.v1.json": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+        "module-manifest.json": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+      },
+      "benchmark_lock_hash": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+      "claim_locks": {
+        "no_batch_release_authority_first_90_days": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_release_claim_without_spc": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "process_qc_twin_requires_accepted_batch_data": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "AUDIT_ONLY",
+      "evidence_tier": "PUBLIC_RETROSPECTIVE",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "CHECKED_ARTIFACT_REPORTED_METRICS",
+          "deterministic_control_diagnostic": null,
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": false,
+          "observations": [
+            {
+              "json_path": "source_bindings[0].row_count",
+              "value": 1567
+            },
+            {
+              "json_path": "source_bindings[1].row_count",
+              "value": 189010
+            },
+            {
+              "json_path": "owned_deterministic_controls.false_positive_alert_count",
+              "value": 0
+            },
+            {
+              "json_path": "owned_deterministic_controls.missed_deviation_detector_count",
+              "value": 0
+            },
+            {
+              "json_path": "authority_ceiling",
+              "value": "AUDIT_ONLY"
+            }
+          ],
+          "operational_readiness": "OPEN",
+          "process_qc_audit_shell": {
+            "authority_ceiling": "AUDIT_ONLY",
+            "baseline_observation_count": 30,
+            "batch_release_authorized": false,
+            "detector_alert_counts": {
+              "CUSUM": 10,
+              "EWMA": 10,
+              "SHEWHART": 10
+            },
+            "false_positive_alert_count": 0,
+            "fixture_sha256": "51f9829dc8985d76f7f53be65b28d07148f5d6b312495b84dcbf8bb24e20a096",
+            "malformed_missingness_rejected": true,
+            "manufacturing_qualification_authorized": false,
+            "missed_deviation_detector_count": 0,
+            "reordered_time_rejected": true,
+            "schema": "amphora.process-qc-audit-shell.v1",
+            "shifted_monitoring_count": 10,
+            "specification_control_separation_passed": true,
+            "stable_monitoring_count": 20
+          },
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": "DIAGNOSTIC_CONTROLS_PASS"
+        }
+      },
+      "module_id": "amphora-process-qc-twin",
+      "passed": false,
+      "receipt_id": "receipt-330add3cfe7872cad6c45bf0",
+      "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "19cde7d337e08097bc1557cf1976cc84c6aa222e10d161875aee268ffeb4a599",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": false,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

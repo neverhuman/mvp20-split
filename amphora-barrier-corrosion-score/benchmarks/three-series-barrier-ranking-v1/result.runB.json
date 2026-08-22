@@ -1,0 +1,260 @@
+{
+  "aggregate": {
+    "all_gates_pass": false,
+    "locked_kpi_verdict": "LOCKED_KPI_NOT_SUPPORTED_STRUCTURALLY_NOT_EVALUABLE",
+    "n_series_evaluated": 3,
+    "n_series_feasibility_ok": 0,
+    "n_series_locked_predictor_available": 0
+  },
+  "alpha": 0.05,
+  "benchmark": "three-series-barrier-ranking-v1",
+  "bonus_within_study_corroboration_not_one_of_the_3": {
+    "cite": "Alam, Samad, Seikh, Mohammed, Al-Zahrani, Sherif, Materials (Basel) 15(7):2562 (2022)",
+    "does_not_close": [
+      "This is a within-study (no-pooling) analysis of 3 small literature ladders, not the locked mission.md primary KPI itself (a blinded four-track independent-panel comparison). It cannot promote authority, phase, or manifest state on its own."
+    ],
+    "doi": "10.3390/ma15072562",
+    "feasibility": "FAIL_CLOSED_INSUFFICIENT_N",
+    "feasibility_floor": 6,
+    "gate_summary": {
+      "step1_primary_locked_target": false,
+      "step2_superiority_vs_solids": null,
+      "step3_superiority_vs_pvc": null
+    },
+    "h1a_primary_locked_vs_truth": {
+      "hypothesis": "tau_b(locked_barrier_index, truth) > 0, one-sided, AND >= 0.50",
+      "reason": "locked_barrier_index unavailable (see locked_predictor_availability)",
+      "verdict": "NOT_EVALUABLE"
+    },
+    "informational_only_not_gated": {
+      "note": "n < FEASIBILITY_FLOOR for this series; the frozen protocol's own pre-committed floor means NO inferential gate is evaluated below. These numbers are reported for transparency only, exactly as barrier-null-char-v1 reported Spearman headroom at these same small n -- they are not, and cannot be treated as, a pass/fail statistical test.",
+      "pvc_only_null_vs_truth": {
+        "reason": "PVC=0 (constant) for every system in this series (unpigmented/clear-coat study); tau_b denominator is zero",
+        "status": "UNDEFINED_DEGENERATE_PREDICTOR"
+      },
+      "solids_only_null_vs_truth": {
+        "method": "exact_full_enumeration",
+        "min_achievable_p_value_one_sided_at_this_n": 0.16666667,
+        "n_reference_permutations": 6,
+        "observed_tau": 0.333333,
+        "p_value_one_sided": 0.57142857,
+        "status": "OK"
+      }
+    },
+    "locked_predictor_availability": {
+      "available": false,
+      "reason": "metrics.barrier_index has no code path in the live amphora-barrier-corrosion-score/src/lib.rs that ever sets it to Some(..); it is unconditionally None on every EisPredictionV1 construction site (abstain() and both literal constructions inside predict()), independently confirmed by re-running the module's own live unit test suite this fire (cargo test -p amphora-barrier-corrosion-score: 5/5 passed, including test_fit_keeps_endpoints_separate_and_summary_never_claims_circuit's assert!(prediction.barrier_index.is_none())). Separately, predict() requires a full multi-frequency EisObservationV1.spectrum plus a rights_receipt_sha256 and rights_eligible=true; this literature table-read captured only a single summary resistance metric per level, not a per-frequency spectrum or an instrument-level rights receipt, so even a hypothetical working model could not be fed a real observation for this series."
+    },
+    "metric": "RP2 (MOhm-equivalent) @30d saline immersion, PA-3282 series",
+    "n_systems": 3,
+    "series_id": "alam2022_pa450_pa3282__F_series_BONUS_NOT_ONE_OF_THE_3",
+    "system_ids": [
+      "alam2022_F::F-0",
+      "alam2022_F::F-1",
+      "alam2022_F::F-2"
+    ],
+    "use_limit_honored": "within-study direction or bibliographic anchor only; no cross-study pooling",
+    "variable": "PA-3282 hardener stoichiometric ratio (F-0/F-1/F-2)",
+    "verdict": "NOT_EVALUABLE"
+  },
+  "campaign_item_id": "W1",
+  "does_not_close": [
+    "This is a within-study (no cross-study pooling), literature-corroboration analysis of 3 small CC-BY ladders. It is not the mission.md-locked primary KPI itself (a blinded four-track independent-panel comparison) and cannot promote authority, phase, or manifest state.",
+    "It does not establish, and explicitly refutes as currently evaluable, any claim that a locked barrier ranking (metrics.barrier_index) outperforms the solids-only/PVC-only hostile nulls -- the locked predictor is structurally unavailable in the live implementation, independent of these 3 series' n."
+  ],
+  "feasibility_floor": 6,
+  "honest_power_statement": {
+    "closed_form_n_required_for_80pct_power_at_locked_target_tau_0p50_alpha_0p05_one_sided": 24.72,
+    "meta_level_n_equals_3_series_statement": {
+      "can_ever_reach_alpha_0p05_at_n_3_series": false,
+      "interpretation": "Even in the best possible case -- all 3 series agreeing in direction -- a 3-unit sign test cannot reach one-sided alpha=0.05 (min p=1/8=0.125). The honest conclusion is unconditional: tau>=0.5 is NOT resolvable, in principle, from 3 series of this size, regardless of what the data show. This mirrors and extends the pre-registered n=10 ST-19168 finding (~41% achieved power for a SINGLE series at n=10) to the present n=3,4,5 per-series, n=3-series-of-evidence reality: small-n underpowering is a structural, recurring, honestly-disclosed property of this module's literature corroboration, not something this fire's data happened to produce.",
+      "min_achievable_one_sided_p_value_at_n_3_series": 0.125,
+      "question": "Is tau>=0.5 resolvable using the 3 series as 3 independent units of evidence?",
+      "weakest_possible_aggregation": "exact binomial sign test on 3 series-level directional point estimates"
+    },
+    "per_series_headline": "At the locked target tau=0.50, one-sided alpha=0.05: asperti2024 (n=4) has ~13% asymptotic achieved power and would require an observed tau of ~0.99 to reach 80% power; zhu2022 (n=5) has ~19% achieved power and would require tau~0.95; alam2022 E-series (n=3) is combinatorially INCAPABLE of reaching alpha=0.05 one-sided significance at ANY observed tau (including a perfect tau=1.0), because with n=3 there are only 3!=6 possible permutations and the best achievable exact one-sided p-value is 1/6~0.167 > 0.05 -- this is an exact combinatorial fact, not an asymptotic approximation.",
+    "per_series_power_at_actual_n": [
+      {
+        "bonett_wright_asymptotic_achieved_power_at_locked_target_tau_0p50": 0.1332,
+        "bonett_wright_asymptotic_min_detectable_tau_at_80pct_power": 0.9881,
+        "can_ever_reach_alpha_0p05_one_sided_at_this_n": true,
+        "min_achievable_exact_one_sided_p_value_at_this_n": 0.04166667,
+        "n_systems": 4,
+        "series_id": "asperti2024"
+      },
+      {
+        "bonett_wright_asymptotic_achieved_power_at_locked_target_tau_0p50": 0.1866,
+        "bonett_wright_asymptotic_min_detectable_tau_at_80pct_power": 0.9479,
+        "can_ever_reach_alpha_0p05_one_sided_at_this_n": true,
+        "min_achievable_exact_one_sided_p_value_at_this_n": 0.00833333,
+        "n_systems": 5,
+        "series_id": "zhu2022"
+      },
+      {
+        "bonett_wright_asymptotic_achieved_power_at_locked_target_tau_0p50": null,
+        "bonett_wright_asymptotic_min_detectable_tau_at_80pct_power": "DEGENERATE_AT_N_LE_3_ONLY_R_TO_1_ASYMPTOTE",
+        "can_ever_reach_alpha_0p05_one_sided_at_this_n": false,
+        "min_achievable_exact_one_sided_p_value_at_this_n": 0.16666667,
+        "n_systems": 3,
+        "series_id": "alam2022_pa450_pa3282"
+      }
+    ],
+    "reference": "Bonett & Wright 2000, Psychometrika 65(1):23-28, DOI:10.1007/BF02294183 (same formula cited in PREREGISTRATION.md and reused unchanged)"
+  },
+  "locked_tau_target": 0.5,
+  "module": "amphora-barrier-corrosion-score",
+  "primary_3_series_no_pooling": [
+    {
+      "cite": "Asperti et al., Materials 17(12):3028 (2024), DOI 10.3390/ma17123028",
+      "does_not_close": [
+        "This is a within-study (no-pooling) analysis of 3 small literature ladders, not the locked mission.md primary KPI itself (a blinded four-track independent-panel comparison). It cannot promote authority, phase, or manifest state on its own."
+      ],
+      "doi": "10.3390/ma17123028",
+      "feasibility": "FAIL_CLOSED_INSUFFICIENT_N",
+      "feasibility_floor": 6,
+      "gate_summary": {
+        "step1_primary_locked_target": false,
+        "step2_superiority_vs_solids": null,
+        "step3_superiority_vs_pvc": null
+      },
+      "h1a_primary_locked_vs_truth": {
+        "hypothesis": "tau_b(locked_barrier_index, truth) > 0, one-sided, AND >= 0.50",
+        "reason": "locked_barrier_index unavailable (see locked_predictor_availability)",
+        "verdict": "NOT_EVALUABLE"
+      },
+      "informational_only_not_gated": {
+        "note": "n < FEASIBILITY_FLOOR for this series; the frozen protocol's own pre-committed floor means NO inferential gate is evaluated below. These numbers are reported for transparency only, exactly as barrier-null-char-v1 reported Spearman headroom at these same small n -- they are not, and cannot be treated as, a pass/fail statistical test.",
+        "pvc_only_null_vs_truth": "identical to solids_only_null_vs_truth: within this single-resin filler ladder both hostile nulls collapse to the same monotone-in-loading predictor, matching the already-locked convention in benchmarks/barrier-null-char-v1 (SHA-256 of its signed receipt recorded in this receipt's provenance block).",
+        "solids_only_null_vs_truth": {
+          "method": "exact_full_enumeration",
+          "min_achievable_p_value_one_sided_at_this_n": 0.04166667,
+          "n_reference_permutations": 24,
+          "observed_tau": 0.0,
+          "p_value_one_sided": 0.64,
+          "status": "OK"
+        }
+      },
+      "locked_predictor_availability": {
+        "available": false,
+        "reason": "metrics.barrier_index has no code path in the live amphora-barrier-corrosion-score/src/lib.rs that ever sets it to Some(..); it is unconditionally None on every EisPredictionV1 construction site (abstain() and both literal constructions inside predict()), independently confirmed by re-running the module's own live unit test suite this fire (cargo test -p amphora-barrier-corrosion-score: 5/5 passed, including test_fit_keeps_endpoints_separate_and_summary_never_claims_circuit's assert!(prediction.barrier_index.is_none())). Separately, predict() requires a full multi-frequency EisObservationV1.spectrum plus a rights_receipt_sha256 and rights_eligible=true; this literature table-read captured only a single summary resistance metric per level, not a per-frequency spectrum or an instrument-level rights receipt, so even a hypothetical working model could not be fed a real observation for this series."
+      },
+      "metric": "coating resistance Rc (ohm.cm2) @1000h, 3.5% NaCl",
+      "n_systems": 4,
+      "series_id": "asperti2024",
+      "system_ids": [
+        "asperti2024::0",
+        "asperti2024::1",
+        "asperti2024::3",
+        "asperti2024::5"
+      ],
+      "use_limit_honored": "within-study direction or bibliographic anchor only; no cross-study pooling",
+      "variable": "nanoclay Cloisite 30B wt%",
+      "verdict": "NOT_EVALUABLE"
+    },
+    {
+      "cite": "Zhu et al., Materials 15(3):1194 (2022), DOI 10.3390/ma15031194",
+      "does_not_close": [
+        "This is a within-study (no-pooling) analysis of 3 small literature ladders, not the locked mission.md primary KPI itself (a blinded four-track independent-panel comparison). It cannot promote authority, phase, or manifest state on its own."
+      ],
+      "doi": "visible from PMC article metadata",
+      "feasibility": "FAIL_CLOSED_INSUFFICIENT_N",
+      "feasibility_floor": 6,
+      "gate_summary": {
+        "step1_primary_locked_target": false,
+        "step2_superiority_vs_solids": null,
+        "step3_superiority_vs_pvc": null
+      },
+      "h1a_primary_locked_vs_truth": {
+        "hypothesis": "tau_b(locked_barrier_index, truth) > 0, one-sided, AND >= 0.50",
+        "reason": "locked_barrier_index unavailable (see locked_predictor_availability)",
+        "verdict": "NOT_EVALUABLE"
+      },
+      "informational_only_not_gated": {
+        "note": "n < FEASIBILITY_FLOOR for this series; the frozen protocol's own pre-committed floor means NO inferential gate is evaluated below. These numbers are reported for transparency only, exactly as barrier-null-char-v1 reported Spearman headroom at these same small n -- they are not, and cannot be treated as, a pass/fail statistical test.",
+        "pvc_only_null_vs_truth": "identical to solids_only_null_vs_truth: within this single-resin filler ladder both hostile nulls collapse to the same monotone-in-loading predictor, matching the already-locked convention in benchmarks/barrier-null-char-v1 (SHA-256 of its signed receipt recorded in this receipt's provenance block).",
+        "solids_only_null_vs_truth": {
+          "method": "exact_full_enumeration",
+          "min_achievable_p_value_one_sided_at_this_n": 0.00833333,
+          "n_reference_permutations": 120,
+          "observed_tau": 0.4,
+          "p_value_one_sided": 0.24793388,
+          "status": "OK"
+        }
+      },
+      "locked_predictor_availability": {
+        "available": false,
+        "reason": "metrics.barrier_index has no code path in the live amphora-barrier-corrosion-score/src/lib.rs that ever sets it to Some(..); it is unconditionally None on every EisPredictionV1 construction site (abstain() and both literal constructions inside predict()), independently confirmed by re-running the module's own live unit test suite this fire (cargo test -p amphora-barrier-corrosion-score: 5/5 passed, including test_fit_keeps_endpoints_separate_and_summary_never_claims_circuit's assert!(prediction.barrier_index.is_none())). Separately, predict() requires a full multi-frequency EisObservationV1.spectrum plus a rights_receipt_sha256 and rights_eligible=true; this literature table-read captured only a single summary resistance metric per level, not a per-frequency spectrum or an instrument-level rights receipt, so even a hypothetical working model could not be fed a real observation for this series."
+      },
+      "metric": "Rc (ohm.cm2) @60h, CO2-sat 3.5% NaCl",
+      "n_systems": 5,
+      "series_id": "zhu2022",
+      "system_ids": [
+        "zhu2022::0",
+        "zhu2022::0.2",
+        "zhu2022::0.5",
+        "zhu2022::0.7",
+        "zhu2022::1.0"
+      ],
+      "use_limit_honored": "within-study direction or bibliographic anchor only; no cross-study pooling",
+      "variable": "graphene wt% in fixed 35% mica/epoxy",
+      "verdict": "NOT_EVALUABLE"
+    },
+    {
+      "cite": "Alam et al., Materials 15(7):2562 (2022), DOI 10.3390/ma15072562",
+      "does_not_close": [
+        "This is a within-study (no-pooling) analysis of 3 small literature ladders, not the locked mission.md primary KPI itself (a blinded four-track independent-panel comparison). It cannot promote authority, phase, or manifest state on its own."
+      ],
+      "doi": "10.3390/ma15072562",
+      "feasibility": "FAIL_CLOSED_INSUFFICIENT_N",
+      "feasibility_floor": 6,
+      "gate_summary": {
+        "step1_primary_locked_target": false,
+        "step2_superiority_vs_solids": null,
+        "step3_superiority_vs_pvc": null
+      },
+      "h1a_primary_locked_vs_truth": {
+        "hypothesis": "tau_b(locked_barrier_index, truth) > 0, one-sided, AND >= 0.50",
+        "reason": "locked_barrier_index unavailable (see locked_predictor_availability)",
+        "verdict": "NOT_EVALUABLE"
+      },
+      "informational_only_not_gated": {
+        "note": "n < FEASIBILITY_FLOOR for this series; the frozen protocol's own pre-committed floor means NO inferential gate is evaluated below. These numbers are reported for transparency only, exactly as barrier-null-char-v1 reported Spearman headroom at these same small n -- they are not, and cannot be treated as, a pass/fail statistical test.",
+        "pvc_only_null_vs_truth": {
+          "reason": "PVC=0 (constant) for every system in this series (unpigmented/clear-coat study); tau_b denominator is zero",
+          "status": "UNDEFINED_DEGENERATE_PREDICTOR"
+        },
+        "solids_only_null_vs_truth": {
+          "method": "exact_full_enumeration",
+          "min_achievable_p_value_one_sided_at_this_n": 0.16666667,
+          "n_reference_permutations": 6,
+          "observed_tau": -0.333333,
+          "p_value_one_sided": 0.85714286,
+          "status": "OK"
+        }
+      },
+      "locked_predictor_availability": {
+        "available": false,
+        "reason": "metrics.barrier_index has no code path in the live amphora-barrier-corrosion-score/src/lib.rs that ever sets it to Some(..); it is unconditionally None on every EisPredictionV1 construction site (abstain() and both literal constructions inside predict()), independently confirmed by re-running the module's own live unit test suite this fire (cargo test -p amphora-barrier-corrosion-score: 5/5 passed, including test_fit_keeps_endpoints_separate_and_summary_never_claims_circuit's assert!(prediction.barrier_index.is_none())). Separately, predict() requires a full multi-frequency EisObservationV1.spectrum plus a rights_receipt_sha256 and rights_eligible=true; this literature table-read captured only a single summary resistance metric per level, not a per-frequency spectrum or an instrument-level rights receipt, so even a hypothetical working model could not be fed a real observation for this series."
+      },
+      "metric": "RP2 (long-time-constant polarization resistance, MOhm.cm2-equivalent) @30 days, saline immersion",
+      "n_systems": 3,
+      "series_id": "alam2022_pa450_pa3282",
+      "system_ids": [
+        "alam2022_pa450_pa3282::E-0",
+        "alam2022_pa450_pa3282::E-1",
+        "alam2022_pa450_pa3282::E-2"
+      ],
+      "use_limit_honored": "within-study direction or bibliographic anchor only; no cross-study pooling",
+      "variable": "PA-450 hardener stoichiometric ratio (E-0/E-1/E-2)",
+      "verdict": "NOT_EVALUABLE"
+    }
+  ],
+  "provenance": {
+    "adaptation_disclosure": "Adapts the frozen st19168-preregistered-v1 script's numerical primitives and pre-committed constants (unchanged) to 3 independent within-study literature series instead of one ST-19168 draw; see module docstring for the full disclosed deviation, per Nosek et al. 2018 PNAS 115(11):2600-2606.",
+    "barrier_null_char_v1_receipt_sha256": "9857f3c74b4d42ef9ab39d37e98bf50d0c9d29555d1bd30464f366254986b644",
+    "corrosion_series_json_sha256": "4a858ff7dc3263c9d3396bda5d136de5480929d930cf1d9135d286a82fdc78c6",
+    "frozen_st19168_preregistered_script_sha256": "c1a81616ba61b7393898f18fe6ccac84600a5e6932f9d40ae5e839a30c7fd326",
+    "lib_rs_sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27"
+  },
+  "schema": "amphora.barrier-corrosion-score.three-series-barrier-ranking-analysis-result.v1"
+}

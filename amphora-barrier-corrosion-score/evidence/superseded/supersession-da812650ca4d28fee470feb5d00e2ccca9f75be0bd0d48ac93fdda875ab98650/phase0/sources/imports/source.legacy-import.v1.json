@@ -1,0 +1,17 @@
+{
+  "schema": "amphora.module-source-census.v1",
+  "module_id": "amphora-barrier-corrosion-score",
+  "sources": [
+    {
+      "source_id": "eis-source-landscape-v1",
+      "publisher": "Amphora",
+      "source_url": "local:amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+      "license": "MIXED_CONTEXT_ONLY",
+      "rights_status": "QUARANTINED_CONTEXT",
+      "eligible_for_derivatives": false,
+      "restrictions": ["Official ST-19168 is acquired and hash-bound but remains untouched and quarantined pending rights review"],
+      "local_manifest": "amphora-barrier-corrosion-score/reference/eis/source-landscape.v1.json",
+      "local_manifest_sha256": "264a182ae16a8fb9b7e6420d7922968e6fd358d05391310f164688cdf55af423"
+    }
+  ]
+}

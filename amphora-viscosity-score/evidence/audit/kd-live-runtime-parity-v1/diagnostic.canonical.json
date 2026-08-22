@@ -1,0 +1,337 @@
+{
+  "guard_rail_agree_count": 5,
+  "guard_rail_all_agree": false,
+  "guard_rail_checks": [
+    {
+      "agrees_with_rust": false,
+      "case": "negative_liquid_viscosity",
+      "eta_liquid_pa_s": -1.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": 0.3,
+      "phi_max": 0.6,
+      "python_is_ok_and_sane": true,
+      "python_oracle_outcome": {
+        "exception": null,
+        "python_raised": false,
+        "value": -2.8284271247461903,
+        "value_kind": "finite_real"
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": false,
+      "case": "zero_liquid_viscosity",
+      "eta_liquid_pa_s": 0.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": 0.3,
+      "phi_max": 0.6,
+      "python_is_ok_and_sane": true,
+      "python_oracle_outcome": {
+        "exception": null,
+        "python_raised": false,
+        "value": 0.0,
+        "value_kind": "finite_real"
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": false,
+      "case": "negative_pigment_fraction",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": -0.1,
+      "phi_max": 0.6,
+      "python_is_ok_and_sane": true,
+      "python_oracle_outcome": {
+        "exception": null,
+        "python_raised": false,
+        "value": 0.7935600855193298,
+        "value_kind": "finite_real"
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": true,
+      "case": "pigment_fraction_over_one",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": 1.1,
+      "phi_max": 0.95,
+      "python_is_ok_and_sane": false,
+      "python_oracle_outcome": {
+        "complex_repr": "(30.670191162953152-74.04439146617679j)",
+        "exception": null,
+        "python_raised": false,
+        "value": null,
+        "value_kind": "complex"
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": false,
+      "case": "max_packing_fraction_over_one",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": 0.3,
+      "phi_max": 1.1,
+      "python_is_ok_and_sane": true,
+      "python_oracle_outcome": {
+        "exception": null,
+        "python_raised": false,
+        "value": 2.4006697491664086,
+        "value_kind": "finite_real"
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": true,
+      "case": "pigment_equals_max_packing",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": 0.5,
+      "phi_max": 0.5,
+      "python_is_ok_and_sane": false,
+      "python_oracle_outcome": {
+        "exception": "ZeroDivisionError",
+        "python_raised": true,
+        "value": null,
+        "value_kind": null
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": true,
+      "case": "pigment_exceeds_max_packing_noninteger_exponent",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": 0.6,
+      "phi_max": 0.5,
+      "python_is_ok_and_sane": false,
+      "python_oracle_outcome": {
+        "complex_repr": "(-5.286856317202823+5.286856317202822j)",
+        "exception": null,
+        "python_raised": false,
+        "value": null,
+        "value_kind": "complex"
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": false,
+      "case": "negative_intrinsic_viscosity",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": -1.0,
+      "phi": 0.3,
+      "phi_max": 0.6,
+      "python_is_ok_and_sane": true,
+      "python_oracle_outcome": {
+        "exception": null,
+        "python_raised": false,
+        "value": 0.6597539553864471,
+        "value_kind": "finite_real"
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": true,
+      "case": "nan_pigment_fraction",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": "NaN",
+      "phi_max": 0.6,
+      "python_is_ok_and_sane": false,
+      "python_oracle_outcome": {
+        "exception": null,
+        "python_raised": false,
+        "value": null,
+        "value_kind": "nan"
+      },
+      "rust_is_ok": false
+    },
+    {
+      "agrees_with_rust": true,
+      "case": "valid_baseline_sanity",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "phi": 0.3,
+      "phi_max": 0.6,
+      "python_is_ok_and_sane": true,
+      "python_oracle_outcome": {
+        "exception": null,
+        "python_raised": false,
+        "value": 2.8284271247461903,
+        "value_kind": "finite_real"
+      },
+      "rust_is_ok": true
+    }
+  ],
+  "guard_rail_total_count": 10,
+  "live_rust_source": "kd_live_runA.json",
+  "module_id": "amphora-viscosity-score",
+  "numeric_all_within_tolerance": true,
+  "numeric_max_rel_diff": 0.0,
+  "numeric_parity_checks": [
+    {
+      "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+      "phi": 0.088646,
+      "python_oracle_value": 20.557669473896112,
+      "rel_diff": 0.0,
+      "rust_value": 20.557669473896112,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+      "phi": 0.076239,
+      "python_oracle_value": 11.212628468739458,
+      "rel_diff": 0.0,
+      "rust_value": 11.212628468739458,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+      "phi": 0.064249,
+      "python_oracle_value": 9.709857192595626,
+      "rel_diff": 0.0,
+      "rust_value": 9.709857192595626,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+      "phi": 0.052655,
+      "python_oracle_value": 8.923209036466774,
+      "rel_diff": 0.0,
+      "rust_value": 8.923209036466774,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+      "phi": 0.041439,
+      "python_oracle_value": 8.408288111697509,
+      "rel_diff": 0.0,
+      "rust_value": 8.408288111697509,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "free_intrinsic_viscosity_3param",
+      "phi": 0.088646,
+      "python_oracle_value": 22.48348893805515,
+      "rel_diff": 0.0,
+      "rust_value": 22.48348893805515,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "free_intrinsic_viscosity_3param",
+      "phi": 0.076239,
+      "python_oracle_value": 14.119903308312972,
+      "rel_diff": 0.0,
+      "rust_value": 14.119903308312972,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "free_intrinsic_viscosity_3param",
+      "phi": 0.064249,
+      "python_oracle_value": 9.063533117513286,
+      "rel_diff": 0.0,
+      "rust_value": 9.063533117513286,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "free_intrinsic_viscosity_3param",
+      "phi": 0.052655,
+      "python_oracle_value": 5.9372446684851745,
+      "rel_diff": 0.0,
+      "rust_value": 5.9372446684851745,
+      "within_tolerance": true
+    },
+    {
+      "fit_label": "free_intrinsic_viscosity_3param",
+      "phi": 0.041439,
+      "python_oracle_value": 3.96375640774045,
+      "rel_diff": 0.0,
+      "rust_value": 3.96375640774045,
+      "within_tolerance": true
+    }
+  ],
+  "positive_control": {
+    "detected": true,
+    "evidence": [
+      {
+        "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+        "mutant_value": 20.348566180772263,
+        "phi": 0.088646,
+        "rel_diff": 0.010171546604023689,
+        "rust_value": 20.557669473896112
+      },
+      {
+        "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+        "mutant_value": 10.523958216450705,
+        "phi": 0.076239,
+        "rel_diff": 0.06141916270647421,
+        "rust_value": 11.212628468739458
+      },
+      {
+        "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+        "mutant_value": 8.964012719324137,
+        "phi": 0.064249,
+        "rel_diff": 0.07681312489747456,
+        "rust_value": 9.709857192595626
+      },
+      {
+        "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+        "mutant_value": 8.222548104703705,
+        "phi": 0.052655,
+        "rel_diff": 0.07852118323124059,
+        "rust_value": 8.923209036466774
+      },
+      {
+        "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+        "mutant_value": 7.802921961616918,
+        "phi": 0.041439,
+        "rel_diff": 0.07199636145179333,
+        "rust_value": 8.408288111697509
+      },
+      {
+        "fit_label": "free_intrinsic_viscosity_3param",
+        "mutant_value": 1.2507698133662706,
+        "phi": 0.088646,
+        "rel_diff": 0.9443694073988116,
+        "rust_value": 22.48348893805515
+      },
+      {
+        "fit_label": "free_intrinsic_viscosity_3param",
+        "mutant_value": 1.155823235936516,
+        "phi": 0.076239,
+        "rel_diff": 0.9181422697663917,
+        "rust_value": 14.119903308312972
+      },
+      {
+        "fit_label": "free_intrinsic_viscosity_3param",
+        "mutant_value": 1.083814418110965,
+        "phi": 0.064249,
+        "rel_diff": 0.8804203168831886,
+        "rust_value": 9.063533117513286
+      },
+      {
+        "fit_label": "free_intrinsic_viscosity_3param",
+        "mutant_value": 1.029673293169516,
+        "phi": 0.052655,
+        "rel_diff": 0.8265738822193045,
+        "rust_value": 5.9372446684851745
+      },
+      {
+        "fit_label": "free_intrinsic_viscosity_3param",
+        "mutant_value": 0.9897709860710087,
+        "phi": 0.041439,
+        "rel_diff": 0.7502946992054867,
+        "rust_value": 3.96375640774045
+      }
+    ],
+    "how_planted": "kd_vec_mutant_wrong_exponent() in this comparator: (1 - phi/phi_max) ** (-eta_intr * phi) replaces (1 - phi/phi_max) ** (-eta_intr * phi_max); all other logic identical to the real oracle and to the live-Rust call",
+    "mutant_max_rel_diff": 0.9443694073988116,
+    "planted_defect": "mutant Python oracle uses -eta_intr * phi instead of -eta_intr * phi_max in the Krieger-Dougherty exponent -- a wrong-exponent re-derivation bug, the same class of implementation-drift defect this parity check exists to catch"
+  },
+  "refutation_criterion": "The 'replicated verbatim from src/lib.rs:1208-1224' claim (covering both the closed-form arithmetic AND the four guard/validity clauses) would be REFUTED by observing EITHER (a) any of the 10 (fit, phi) live-Rust numeric points differing from the Python kd_vec oracle by more than 1e-9 relative, OR (b) any of the 10 guard-rail edge cases where the live-Rust Ok/Err outcome disagrees with whether the Python oracle produces a finite real (sane) value vs. raises/produces nan/inf/complex. It would SURVIVE only if all numeric points matched within tolerance AND all guard-rail cases agreed.",
+  "schema": "amphora.viscosity-score.kd-live-runtime-parity-comparator-diagnostic.v1",
+  "tolerance_rel": 1e-09,
+  "verdict": "CLAIM_REFUTED"
+}

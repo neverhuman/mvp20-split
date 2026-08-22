@@ -1,0 +1,1119 @@
+{
+  "benchmark_execution_complete": true,
+  "bundle_sha256": "dd42b3f506e7d48e720b10daa86864d4f80d0c5dcafa4460fa5924e98ec7e3d5",
+  "first_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-formulation-universe/reference/mvp20/data/corrosion_series.json": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+        "amphora-formulation-universe/reference/mvp20/data/cure_verification_set.json": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+        "amphora-formulation-universe/reference/mvp20/data/facts.json": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+        "config/benchmark-lock.v1.json": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+        "module-manifest.json": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+      },
+      "benchmark_lock_hash": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+      "claim_locks": {
+        "enumeration_is_not_performance_evidence": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "CONSTRAINT_ONLY",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+          "deterministic_control_diagnostic": {
+            "details": {
+              "authority_upgrade_count": 0,
+              "candidate_created_evidence_count": 0,
+              "fixture_hashes": {
+                "axis-order-and-claims-invariant": "24f7e20e0d0206b6e4746b684db36aa748f642891bcda69eebce3fbb31397030",
+                "canonical-duplicate-values": "2838f30c40b663d3ef52f520a390d10bae0e1822de38cb6d6394ea8e33044e75",
+                "cardinality-overflow": "5f6c9dd17e7002be06687d42d730339abb471ccac016502dc4727a9991640d13",
+                "duplicate-infeasible-index": "b5d21b679535eb21391fd07f7973aba4c644ec88fdd35aebe3e5fb457ff34c46",
+                "empty-axes": "c4674a2a530a552814a6cba4c176569ce6bdbbb5f88a3bdec9a91db7e03cb5d8",
+                "empty-axis-values": "f9119bd6fb546e50277c61a1d2371b466e498634e34bb9179fe6a787ae26fd3d",
+                "indices-without-registered-axes": "3d886b3bf7fa11b8147eff3f0ed0078b50fbe04ebf7bcb72da188589aaa90acc",
+                "known-answer-12-10-2": "4e46cbe989f9094a9037252eb93bf675b6f6177850d0778e186c67f3753330ab",
+                "missing-axes": "6dfce861bb85c640493463a09f84eec33a2b8be7898459eba5054487f5971ea2",
+                "non-object-axes": "cc7708ee42763fb00290fd04a747716be2997cbfe99d13475ebd399cc38d0206",
+                "out-of-range-infeasible-index": "ec681f6967918b0d9247f2189aa7c1ad589278181ab18ed6768396aa1aabae0d"
+              },
+              "fixture_inputs": [
+                {
+                  "axes": {
+                    "hardener": [
+                      "h1",
+                      "h2"
+                    ],
+                    "pigment": [
+                      "p1",
+                      "p2"
+                    ],
+                    "resin": [
+                      "r1",
+                      "r2",
+                      "r3"
+                    ]
+                  },
+                  "case_id": "known-answer-12-10-2",
+                  "claims": null,
+                  "infeasible_indices": [
+                    1,
+                    10
+                  ]
+                },
+                {
+                  "axes": {
+                    "hardener": [
+                      "h1",
+                      "h2"
+                    ],
+                    "pigment": [
+                      "p1",
+                      "p2"
+                    ],
+                    "resin": [
+                      "r1",
+                      "r2",
+                      "r3"
+                    ]
+                  },
+                  "case_id": "axis-order-and-claims-invariant",
+                  "claims": {
+                    "ahew": null,
+                    "density": null,
+                    "eew": null,
+                    "evidence": "complete",
+                    "feasibility": true,
+                    "nonvolatile": null,
+                    "oil_absorption": null,
+                    "performance": "superior"
+                  },
+                  "infeasible_indices": [
+                    10,
+                    1
+                  ]
+                },
+                {
+                  "axes": null,
+                  "case_id": "missing-axes",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {},
+                  "case_id": "empty-axes",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": [],
+                  "case_id": "non-object-axes",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {
+                    "resin": []
+                  },
+                  "case_id": "empty-axis-values",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {
+                    "resin": [
+                      {
+                        "a": 1,
+                        "b": 2
+                      },
+                      {
+                        "a": 1,
+                        "b": 2
+                      }
+                    ]
+                  },
+                  "case_id": "canonical-duplicate-values",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {
+                    "a": [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28,
+                      29,
+                      30,
+                      31,
+                      32,
+                      33,
+                      34,
+                      35,
+                      36,
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47,
+                      48,
+                      49,
+                      50,
+                      51,
+                      52,
+                      53,
+                      54,
+                      55,
+                      56,
+                      57,
+                      58,
+                      59,
+                      60,
+                      61,
+                      62,
+                      63,
+                      64,
+                      65,
+                      66,
+                      67,
+                      68,
+                      69,
+                      70,
+                      71,
+                      72,
+                      73,
+                      74,
+                      75,
+                      76,
+                      77,
+                      78,
+                      79,
+                      80,
+                      81,
+                      82,
+                      83,
+                      84,
+                      85,
+                      86,
+                      87,
+                      88,
+                      89,
+                      90,
+                      91,
+                      92,
+                      93,
+                      94,
+                      95,
+                      96,
+                      97,
+                      98,
+                      99,
+                      100
+                    ],
+                    "b": [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28,
+                      29,
+                      30,
+                      31,
+                      32,
+                      33,
+                      34,
+                      35,
+                      36,
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47,
+                      48,
+                      49,
+                      50,
+                      51,
+                      52,
+                      53,
+                      54,
+                      55,
+                      56,
+                      57,
+                      58,
+                      59,
+                      60,
+                      61,
+                      62,
+                      63,
+                      64,
+                      65,
+                      66,
+                      67,
+                      68,
+                      69,
+                      70,
+                      71,
+                      72,
+                      73,
+                      74,
+                      75,
+                      76,
+                      77,
+                      78,
+                      79,
+                      80,
+                      81,
+                      82,
+                      83,
+                      84,
+                      85,
+                      86,
+                      87,
+                      88,
+                      89,
+                      90,
+                      91,
+                      92,
+                      93,
+                      94,
+                      95,
+                      96,
+                      97,
+                      98,
+                      99
+                    ]
+                  },
+                  "case_id": "cardinality-overflow",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {
+                    "a": [
+                      1,
+                      2
+                    ]
+                  },
+                  "case_id": "duplicate-infeasible-index",
+                  "claims": null,
+                  "infeasible_indices": [
+                    1,
+                    1
+                  ]
+                },
+                {
+                  "axes": {
+                    "a": [
+                      1,
+                      2
+                    ]
+                  },
+                  "case_id": "out-of-range-infeasible-index",
+                  "claims": null,
+                  "infeasible_indices": [
+                    2
+                  ]
+                },
+                {
+                  "axes": null,
+                  "case_id": "indices-without-registered-axes",
+                  "claims": null,
+                  "infeasible_indices": [
+                    0
+                  ]
+                }
+              ],
+              "fixture_results": {
+                "axis-order-and-claims-invariant": {
+                  "authority_upgrade": false,
+                  "axis_cardinalities": {
+                    "hardener": 2,
+                    "pigment": 2,
+                    "resin": 3
+                  },
+                  "candidate_created_evidence": false,
+                  "candidate_feasibility_claims_ignored": true,
+                  "cartesian_total": 12,
+                  "feasibility_basis": "DECLARATIVE_ACCOUNTING_ONLY",
+                  "infeasible_candidate_count": 2,
+                  "objective_values": {},
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "solved_candidate_count": 10,
+                  "status": "UNVALIDATED",
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "canonical-duplicate-values": {
+                  "error": "formulation universe axis resin contains canonical duplicates"
+                },
+                "cardinality-overflow": {
+                  "error": "formulation universe cardinality overflow"
+                },
+                "duplicate-infeasible-index": {
+                  "error": "formulation universe infeasible index 1 is duplicate or out of range"
+                },
+                "empty-axes": {
+                  "error": "formulation universe axes must not be empty"
+                },
+                "empty-axis-values": {
+                  "error": "formulation universe axis resin must not be empty"
+                },
+                "indices-without-registered-axes": {
+                  "error": "infeasible indices require registered axes"
+                },
+                "known-answer-12-10-2": {
+                  "authority_upgrade": false,
+                  "axis_cardinalities": {
+                    "hardener": 2,
+                    "pigment": 2,
+                    "resin": 3
+                  },
+                  "candidate_created_evidence": false,
+                  "candidate_feasibility_claims_ignored": false,
+                  "cartesian_total": 12,
+                  "feasibility_basis": "DECLARATIVE_ACCOUNTING_ONLY",
+                  "infeasible_candidate_count": 2,
+                  "objective_values": {},
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "solved_candidate_count": 10,
+                  "status": "UNVALIDATED",
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "missing-axes": {
+                  "authority_upgrade": false,
+                  "axis_cardinalities": {},
+                  "candidate_created_evidence": false,
+                  "candidate_feasibility_claims_ignored": false,
+                  "cartesian_total": null,
+                  "feasibility_basis": "DECLARATIVE_ACCOUNTING_ONLY",
+                  "infeasible_candidate_count": null,
+                  "objective_values": {},
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "solved_candidate_count": null,
+                  "status": "ABSTAIN",
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "non-object-axes": {
+                  "error": "formulation universe axes must be an object"
+                },
+                "out-of-range-infeasible-index": {
+                  "error": "formulation universe infeasible index 2 is duplicate or out of range"
+                }
+              },
+              "known_answer": {
+                "axis_product": "3x2x2",
+                "cartesian_total": 12,
+                "infeasible": 2,
+                "solved": 10,
+                "solved_meaning": "DECLARATIVE_ACCOUNTING_ONLY"
+              },
+              "objective_value_count": 0,
+              "result_digest": "afe780a259760a607395e15b63a04eae0189afa83e7ef8749c306ea79117274b",
+              "unresolved_legacy_data_open_count": 0
+            },
+            "expected_fixture_outcomes": {
+              "axis-order-and-claims-invariant": "ACCEPT",
+              "canonical-duplicate-values": "REJECT",
+              "cardinality-overflow": "REJECT",
+              "duplicate-infeasible-index": "REJECT",
+              "empty-axes": "REJECT",
+              "empty-axis-values": "REJECT",
+              "indices-without-registered-axes": "REJECT",
+              "known-answer-12-10-2": "ACCEPT",
+              "missing-axes": "REJECT",
+              "non-object-axes": "REJECT",
+              "out-of-range-infeasible-index": "REJECT"
+            },
+            "implementation_readiness": "COMPLETE",
+            "module_id": "amphora-formulation-universe",
+            "negative_control_count": 9,
+            "observed_fixture_outcomes": {
+              "axis-order-and-claims-invariant": "ACCEPT",
+              "canonical-duplicate-values": "REJECT",
+              "cardinality-overflow": "REJECT",
+              "duplicate-infeasible-index": "REJECT",
+              "empty-axes": "REJECT",
+              "empty-axis-values": "REJECT",
+              "indices-without-registered-axes": "REJECT",
+              "known-answer-12-10-2": "ACCEPT",
+              "missing-axes": "REJECT",
+              "non-object-axes": "REJECT",
+              "out-of-range-infeasible-index": "REJECT"
+            },
+            "passed": true,
+            "positive_control_count": 2,
+            "schema": "amphora.deterministic-control-diagnostic.v1",
+            "zero_authority_assertions": {
+              "fto_not_performed": true,
+              "no_optimizer_authority": true,
+              "no_patentability_authority": true,
+              "no_procurement_authority": true,
+              "no_product_performance_authority": true,
+              "no_qualification_authority": true,
+              "no_ranking_authority": true,
+              "no_regulatory_authority": true,
+              "no_release_authority": true,
+              "no_safety_authority": true
+            }
+          },
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": true,
+          "observations": [],
+          "operational_readiness": "COMPLETE",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": null
+        }
+      },
+      "module_id": "amphora-formulation-universe",
+      "passed": true,
+      "receipt_id": "receipt-f585691688cd96e4b811eb02",
+      "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "2956322eb29b8b5fdeeb970517314b42138f9d8c206a3d142031c88511a776af",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "legacy_local_receipt_authority": "NONE",
+  "module_id": "amphora-formulation-universe",
+  "replay_identical": true,
+  "schema": "amphora.module-phase0-benchmark-result.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "second_replay": {
+    "diagnostic_receipt": {
+      "applicability_limits": [
+        "solvent-borne two-component epoxy-polyamide marine coatings",
+        "digital evidence only; no product qualification or superiority claim"
+      ],
+      "artifact_hashes": {
+        "amphora-formulation-universe/reference/mvp20/data/corrosion_series.json": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+        "amphora-formulation-universe/reference/mvp20/data/cure_verification_set.json": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+        "amphora-formulation-universe/reference/mvp20/data/facts.json": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+        "config/benchmark-lock.v1.json": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+        "module-manifest.json": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5"
+      },
+      "benchmark_lock_hash": "940ee9ad8f91e07811e4a9ce2f04d503b51c4e89144503d94a77add09c22cbfb",
+      "claim_locks": {
+        "enumeration_is_not_performance_evidence": true,
+        "no_phase_1_or_phase_2_claim": true,
+        "no_product_release_or_qualification": true,
+        "no_superiority_claim": true,
+        "pre_phase_0_research_only": true,
+        "unresolved_rights_quarantined": true
+      },
+      "confidence_intervals": {},
+      "decision_use_ceiling": "CONSTRAINT_ONLY",
+      "evidence_tier": "SYNTHETIC_DIAGNOSTIC",
+      "metrics": {
+        "command": "benchmark run --locked --all",
+        "details": {
+          "artifact_hash_match": true,
+          "current_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+          "deterministic_control_diagnostic": {
+            "details": {
+              "authority_upgrade_count": 0,
+              "candidate_created_evidence_count": 0,
+              "fixture_hashes": {
+                "axis-order-and-claims-invariant": "24f7e20e0d0206b6e4746b684db36aa748f642891bcda69eebce3fbb31397030",
+                "canonical-duplicate-values": "2838f30c40b663d3ef52f520a390d10bae0e1822de38cb6d6394ea8e33044e75",
+                "cardinality-overflow": "5f6c9dd17e7002be06687d42d730339abb471ccac016502dc4727a9991640d13",
+                "duplicate-infeasible-index": "b5d21b679535eb21391fd07f7973aba4c644ec88fdd35aebe3e5fb457ff34c46",
+                "empty-axes": "c4674a2a530a552814a6cba4c176569ce6bdbbb5f88a3bdec9a91db7e03cb5d8",
+                "empty-axis-values": "f9119bd6fb546e50277c61a1d2371b466e498634e34bb9179fe6a787ae26fd3d",
+                "indices-without-registered-axes": "3d886b3bf7fa11b8147eff3f0ed0078b50fbe04ebf7bcb72da188589aaa90acc",
+                "known-answer-12-10-2": "4e46cbe989f9094a9037252eb93bf675b6f6177850d0778e186c67f3753330ab",
+                "missing-axes": "6dfce861bb85c640493463a09f84eec33a2b8be7898459eba5054487f5971ea2",
+                "non-object-axes": "cc7708ee42763fb00290fd04a747716be2997cbfe99d13475ebd399cc38d0206",
+                "out-of-range-infeasible-index": "ec681f6967918b0d9247f2189aa7c1ad589278181ab18ed6768396aa1aabae0d"
+              },
+              "fixture_inputs": [
+                {
+                  "axes": {
+                    "hardener": [
+                      "h1",
+                      "h2"
+                    ],
+                    "pigment": [
+                      "p1",
+                      "p2"
+                    ],
+                    "resin": [
+                      "r1",
+                      "r2",
+                      "r3"
+                    ]
+                  },
+                  "case_id": "known-answer-12-10-2",
+                  "claims": null,
+                  "infeasible_indices": [
+                    1,
+                    10
+                  ]
+                },
+                {
+                  "axes": {
+                    "hardener": [
+                      "h1",
+                      "h2"
+                    ],
+                    "pigment": [
+                      "p1",
+                      "p2"
+                    ],
+                    "resin": [
+                      "r1",
+                      "r2",
+                      "r3"
+                    ]
+                  },
+                  "case_id": "axis-order-and-claims-invariant",
+                  "claims": {
+                    "ahew": null,
+                    "density": null,
+                    "eew": null,
+                    "evidence": "complete",
+                    "feasibility": true,
+                    "nonvolatile": null,
+                    "oil_absorption": null,
+                    "performance": "superior"
+                  },
+                  "infeasible_indices": [
+                    10,
+                    1
+                  ]
+                },
+                {
+                  "axes": null,
+                  "case_id": "missing-axes",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {},
+                  "case_id": "empty-axes",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": [],
+                  "case_id": "non-object-axes",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {
+                    "resin": []
+                  },
+                  "case_id": "empty-axis-values",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {
+                    "resin": [
+                      {
+                        "a": 1,
+                        "b": 2
+                      },
+                      {
+                        "a": 1,
+                        "b": 2
+                      }
+                    ]
+                  },
+                  "case_id": "canonical-duplicate-values",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {
+                    "a": [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28,
+                      29,
+                      30,
+                      31,
+                      32,
+                      33,
+                      34,
+                      35,
+                      36,
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47,
+                      48,
+                      49,
+                      50,
+                      51,
+                      52,
+                      53,
+                      54,
+                      55,
+                      56,
+                      57,
+                      58,
+                      59,
+                      60,
+                      61,
+                      62,
+                      63,
+                      64,
+                      65,
+                      66,
+                      67,
+                      68,
+                      69,
+                      70,
+                      71,
+                      72,
+                      73,
+                      74,
+                      75,
+                      76,
+                      77,
+                      78,
+                      79,
+                      80,
+                      81,
+                      82,
+                      83,
+                      84,
+                      85,
+                      86,
+                      87,
+                      88,
+                      89,
+                      90,
+                      91,
+                      92,
+                      93,
+                      94,
+                      95,
+                      96,
+                      97,
+                      98,
+                      99,
+                      100
+                    ],
+                    "b": [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15,
+                      16,
+                      17,
+                      18,
+                      19,
+                      20,
+                      21,
+                      22,
+                      23,
+                      24,
+                      25,
+                      26,
+                      27,
+                      28,
+                      29,
+                      30,
+                      31,
+                      32,
+                      33,
+                      34,
+                      35,
+                      36,
+                      37,
+                      38,
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47,
+                      48,
+                      49,
+                      50,
+                      51,
+                      52,
+                      53,
+                      54,
+                      55,
+                      56,
+                      57,
+                      58,
+                      59,
+                      60,
+                      61,
+                      62,
+                      63,
+                      64,
+                      65,
+                      66,
+                      67,
+                      68,
+                      69,
+                      70,
+                      71,
+                      72,
+                      73,
+                      74,
+                      75,
+                      76,
+                      77,
+                      78,
+                      79,
+                      80,
+                      81,
+                      82,
+                      83,
+                      84,
+                      85,
+                      86,
+                      87,
+                      88,
+                      89,
+                      90,
+                      91,
+                      92,
+                      93,
+                      94,
+                      95,
+                      96,
+                      97,
+                      98,
+                      99
+                    ]
+                  },
+                  "case_id": "cardinality-overflow",
+                  "claims": null,
+                  "infeasible_indices": null
+                },
+                {
+                  "axes": {
+                    "a": [
+                      1,
+                      2
+                    ]
+                  },
+                  "case_id": "duplicate-infeasible-index",
+                  "claims": null,
+                  "infeasible_indices": [
+                    1,
+                    1
+                  ]
+                },
+                {
+                  "axes": {
+                    "a": [
+                      1,
+                      2
+                    ]
+                  },
+                  "case_id": "out-of-range-infeasible-index",
+                  "claims": null,
+                  "infeasible_indices": [
+                    2
+                  ]
+                },
+                {
+                  "axes": null,
+                  "case_id": "indices-without-registered-axes",
+                  "claims": null,
+                  "infeasible_indices": [
+                    0
+                  ]
+                }
+              ],
+              "fixture_results": {
+                "axis-order-and-claims-invariant": {
+                  "authority_upgrade": false,
+                  "axis_cardinalities": {
+                    "hardener": 2,
+                    "pigment": 2,
+                    "resin": 3
+                  },
+                  "candidate_created_evidence": false,
+                  "candidate_feasibility_claims_ignored": true,
+                  "cartesian_total": 12,
+                  "feasibility_basis": "DECLARATIVE_ACCOUNTING_ONLY",
+                  "infeasible_candidate_count": 2,
+                  "objective_values": {},
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "solved_candidate_count": 10,
+                  "status": "UNVALIDATED",
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "canonical-duplicate-values": {
+                  "error": "formulation universe axis resin contains canonical duplicates"
+                },
+                "cardinality-overflow": {
+                  "error": "formulation universe cardinality overflow"
+                },
+                "duplicate-infeasible-index": {
+                  "error": "formulation universe infeasible index 1 is duplicate or out of range"
+                },
+                "empty-axes": {
+                  "error": "formulation universe axes must not be empty"
+                },
+                "empty-axis-values": {
+                  "error": "formulation universe axis resin must not be empty"
+                },
+                "indices-without-registered-axes": {
+                  "error": "infeasible indices require registered axes"
+                },
+                "known-answer-12-10-2": {
+                  "authority_upgrade": false,
+                  "axis_cardinalities": {
+                    "hardener": 2,
+                    "pigment": 2,
+                    "resin": 3
+                  },
+                  "candidate_created_evidence": false,
+                  "candidate_feasibility_claims_ignored": false,
+                  "cartesian_total": 12,
+                  "feasibility_basis": "DECLARATIVE_ACCOUNTING_ONLY",
+                  "infeasible_candidate_count": 2,
+                  "objective_values": {},
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "solved_candidate_count": 10,
+                  "status": "UNVALIDATED",
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "missing-axes": {
+                  "authority_upgrade": false,
+                  "axis_cardinalities": {},
+                  "candidate_created_evidence": false,
+                  "candidate_feasibility_claims_ignored": false,
+                  "cartesian_total": null,
+                  "feasibility_basis": "DECLARATIVE_ACCOUNTING_ONLY",
+                  "infeasible_candidate_count": null,
+                  "objective_values": {},
+                  "ranking_eligible": false,
+                  "scientific_readiness": "UNVALIDATED",
+                  "solved_candidate_count": null,
+                  "status": "ABSTAIN",
+                  "unresolved_legacy_data_accessed": false,
+                  "usable_by_optimizer": false
+                },
+                "non-object-axes": {
+                  "error": "formulation universe axes must be an object"
+                },
+                "out-of-range-infeasible-index": {
+                  "error": "formulation universe infeasible index 2 is duplicate or out of range"
+                }
+              },
+              "known_answer": {
+                "axis_product": "3x2x2",
+                "cartesian_total": 12,
+                "infeasible": 2,
+                "solved": 10,
+                "solved_meaning": "DECLARATIVE_ACCOUNTING_ONLY"
+              },
+              "objective_value_count": 0,
+              "result_digest": "afe780a259760a607395e15b63a04eae0189afa83e7ef8749c306ea79117274b",
+              "unresolved_legacy_data_open_count": 0
+            },
+            "expected_fixture_outcomes": {
+              "axis-order-and-claims-invariant": "ACCEPT",
+              "canonical-duplicate-values": "REJECT",
+              "cardinality-overflow": "REJECT",
+              "duplicate-infeasible-index": "REJECT",
+              "empty-axes": "REJECT",
+              "empty-axis-values": "REJECT",
+              "indices-without-registered-axes": "REJECT",
+              "known-answer-12-10-2": "ACCEPT",
+              "missing-axes": "REJECT",
+              "non-object-axes": "REJECT",
+              "out-of-range-infeasible-index": "REJECT"
+            },
+            "implementation_readiness": "COMPLETE",
+            "module_id": "amphora-formulation-universe",
+            "negative_control_count": 9,
+            "observed_fixture_outcomes": {
+              "axis-order-and-claims-invariant": "ACCEPT",
+              "canonical-duplicate-values": "REJECT",
+              "cardinality-overflow": "REJECT",
+              "duplicate-infeasible-index": "REJECT",
+              "empty-axes": "REJECT",
+              "empty-axis-values": "REJECT",
+              "indices-without-registered-axes": "REJECT",
+              "known-answer-12-10-2": "ACCEPT",
+              "missing-axes": "REJECT",
+              "non-object-axes": "REJECT",
+              "out-of-range-infeasible-index": "REJECT"
+            },
+            "passed": true,
+            "positive_control_count": 2,
+            "schema": "amphora.deterministic-control-diagnostic.v1",
+            "zero_authority_assertions": {
+              "fto_not_performed": true,
+              "no_optimizer_authority": true,
+              "no_patentability_authority": true,
+              "no_procurement_authority": true,
+              "no_product_performance_authority": true,
+              "no_qualification_authority": true,
+              "no_ranking_authority": true,
+              "no_regulatory_authority": true,
+              "no_release_authority": true,
+              "no_safety_authority": true
+            }
+          },
+          "deterministic_control_diagnostic_error": null,
+          "locked_gate_passed": true,
+          "observations": [],
+          "operational_readiness": "COMPLETE",
+          "ranking_quarantine_preserved": true,
+          "registry_identity_match": true,
+          "reported_result_status": null
+        }
+      },
+      "module_id": "amphora-formulation-universe",
+      "passed": true,
+      "receipt_id": "receipt-f585691688cd96e4b811eb02",
+      "registry_manifest_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+      "registry_owned_identity": true,
+      "schema": "amphora.evaluation-receipt.v1"
+    },
+    "diagnostic_sha256": "2956322eb29b8b5fdeeb970517314b42138f9d8c206a3d142031c88511a776af",
+    "execution_passed": true,
+    "exit_code": 0,
+    "legacy_local_signature_authority": "NONE",
+    "scientific_passed": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "group": "N_SUPERSET",
+    "n_bytes": 86,
+    "name": "N01_nonfinite_nan",
+    "runtime_expected": "REJECT",
+    "sha256": "231c127185cd2d31f95db4bde874cefd5c9bd543f2bcc140df621a7e7c69cfa3"
+  },
+  {
+    "group": "N_SUPERSET",
+    "n_bytes": 91,
+    "name": "N02_nonfinite_infinity",
+    "runtime_expected": "REJECT",
+    "sha256": "1ab6648e1dbd8420ad8eb48ff81979b0da6c11425904f4ea54f22b28799aaa45"
+  },
+  {
+    "group": "N_SUPERSET",
+    "n_bytes": 93,
+    "name": "N03_duplicate_keys",
+    "runtime_expected": "REJECT",
+    "sha256": "087d57d7af846962d2d92df20d06a036203b8b696ca3d4a3e9851cf538911786"
+  },
+  {
+    "group": "N_SUPERSET",
+    "n_bytes": 8388755,
+    "name": "N04_oversize_gt_8mib",
+    "runtime_expected": "REJECT",
+    "sha256": "8197eafbb4c925240c6bfc42f007a11cefc9f52c3b0c3c3711707bb3d52ac267"
+  },
+  {
+    "group": "N_SUPERSET",
+    "n_bytes": 699,
+    "name": "N05_overdeep_nesting_100",
+    "runtime_expected": "REJECT",
+    "sha256": "2d435ddf6834e6f5802e3e4421125dd514b35846c701acca8b32cf2f39b8293c"
+  },
+  {
+    "group": "N_SUPERSET",
+    "n_bytes": 588980,
+    "name": "N06_overwide_collection_100001",
+    "runtime_expected": "REJECT",
+    "sha256": "0812838696d75fb801a05a0377e6af5ebeec0479967a2a17ae5e6ead451e06ad"
+  },
+  {
+    "group": "N_PARSE",
+    "n_bytes": 75,
+    "name": "N07_trailing_comma",
+    "runtime_expected": "REJECT",
+    "sha256": "bdb25e6d419c78421a8527144129da65a985ab54070aa19bf53808f88f47fc9d"
+  },
+  {
+    "group": "N_PARSE",
+    "n_bytes": 75,
+    "name": "N08_non_utf8",
+    "runtime_expected": "REJECT",
+    "sha256": "248687e0d8ca6a5d7e9dbe2071d07ae72fc09bc236df6fb2201494a9f2bbd9c5"
+  },
+  {
+    "group": "S",
+    "n_bytes": 391,
+    "name": "P1_positive_molecule",
+    "runtime_expected": "ACCEPT",
+    "sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f"
+  },
+  {
+    "group": "S",
+    "n_bytes": 1543,
+    "name": "P2_positive_formulation",
+    "runtime_expected": "ACCEPT",
+    "sha256": "de617b7311530cb2d6701860daba9db9b37a0ea0d0733ed4e969b8db617f614f"
+  },
+  {
+    "group": "S",
+    "n_bytes": 1778,
+    "name": "P3_positive_evidence_package",
+    "runtime_expected": "ACCEPT",
+    "sha256": "da26a9f8c7c59cbc4eb47f099db22808bb83dd804161005d2aefc3323f61f5fb"
+  },
+  {
+    "group": "S",
+    "n_bytes": 7,
+    "name": "S01_top_level_array",
+    "runtime_expected": "REJECT",
+    "sha256": "a615eeaee21de5179de080de8c3052c8da901138406ba71c38c032845f7d54f4"
+  },
+  {
+    "group": "S",
+    "n_bytes": 7,
+    "name": "S02_top_level_string",
+    "runtime_expected": "REJECT",
+    "sha256": "5aa762ae383fbb727af3c7a36d4940a5b8c40a989452d2304fc958ff3f354e7a"
+  },
+  {
+    "group": "S",
+    "n_bytes": 55,
+    "name": "S03_candidate_id_missing",
+    "runtime_expected": "REJECT",
+    "sha256": "3b5534d0ecc7e2a21adfe03e007a0df5577af5af1a2a422d783ddd5b5d13f66f"
+  },
+  {
+    "group": "S",
+    "n_bytes": 73,
+    "name": "S04_candidate_id_empty",
+    "runtime_expected": "REJECT",
+    "sha256": "0b868efcb333dad9909e9a85e5715c840aa0b0eae53a209e3bb0ba2e24b7e959"
+  },
+  {
+    "group": "S",
+    "n_bytes": 72,
+    "name": "S05_candidate_id_integer",
+    "runtime_expected": "REJECT",
+    "sha256": "7bb7195dbc2ed56d52d5b3e427201274d35e8ab8624f61b5a5f09082a7422e88"
+  },
+  {
+    "group": "S",
+    "n_bytes": 46,
+    "name": "S06_candidate_type_missing",
+    "runtime_expected": "REJECT",
+    "sha256": "d0a81d2e5e99d5b5778a4d864a86d2508ee02525e32ad80d2938808badadcf8e"
+  },
+  {
+    "group": "S",
+    "n_bytes": 72,
+    "name": "S07_candidate_type_unknown",
+    "runtime_expected": "REJECT",
+    "sha256": "3b72cb453e55b61ca808b099707e0386e67b6cd4dbd86b5701daa3a47ec5802f"
+  },
+  {
+    "group": "S",
+    "n_bytes": 48,
+    "name": "S08_molecule_payload_missing",
+    "runtime_expected": "REJECT",
+    "sha256": "6b6c0ee2cb453f8d2f9cd7012ef6c424429f792df3821624b910e5a1c55822fc"
+  },
+  {
+    "group": "S",
+    "n_bytes": 51,
+    "name": "S09_formulation_payload_missing",
+    "runtime_expected": "REJECT",
+    "sha256": "e9ad63f9da747490e50af7efd5b409d35d7e449ae67371265404754f228ec5dd"
+  },
+  {
+    "group": "S",
+    "n_bytes": 56,
+    "name": "S10_evidence_payload_missing",
+    "runtime_expected": "REJECT",
+    "sha256": "177f7f3d96164bb9ad042856da0b0d389470d28a24ac6620e8508fd76a321ef8"
+  },
+  {
+    "group": "S",
+    "n_bytes": 63,
+    "name": "S11_molecule_payload_not_object",
+    "runtime_expected": "REJECT",
+    "sha256": "5eed89e7fe02e58dd52dab3d9281eb2eb96188ade477607b158b4d38b5bd6901"
+  },
+  {
+    "group": "S",
+    "n_bytes": 102,
+    "name": "S12_chem_v2_field_no_optin",
+    "runtime_expected": "REJECT",
+    "sha256": "524cd58f7919492dad2577bf8cdea83d8884cfb6e6e59450864d28327dd11216"
+  },
+  {
+    "group": "S",
+    "n_bytes": 151,
+    "name": "S13_chem_v2_field_with_optin",
+    "runtime_expected": "REJECT",
+    "sha256": "1236f42683ec93d33e734d4e02dc3632975bfe880f490a76de6055cdf68378a7"
+  }
+]

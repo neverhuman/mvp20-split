@@ -1,0 +1,52 @@
+{
+  "authority_tier": "REAL_ARITHMETIC",
+  "candidate_id": "bad-high-solvent",
+  "claim_locks": {
+    "gate_pass_is_not_wet_lab_performance": true
+  },
+  "evidence_scope": "formulation",
+  "explanations": [
+    "Failed hard gates are audit constraints, not optimizer objectives."
+  ],
+  "gates": {
+    "failed": [
+      "volume_solids"
+    ],
+    "pass_all_hard": false
+  },
+  "metrics": {
+    "model_card": {
+      "can_optimize": false,
+      "current_pass": false,
+      "current_status": "FAILED_GATES",
+      "dataset_checksums": {},
+      "dataset_ids": [
+        "fixtures/formulation_candidate.json"
+      ],
+      "direction": "context",
+      "kpi_name": "formulation",
+      "model_authority": "REAL_ARITHMETIC",
+      "score_semantics": "AUDIT_CONSTRAINT",
+      "unit": "normalized_0_1",
+      "validation_bar": "not optimizer-authorized objective"
+    },
+    "volume_solids_pct": 42.0
+  },
+  "missing_inputs": [
+    "volume_solids"
+  ],
+  "module_id": "fixture-envelope-gates",
+  "module_version": "0.1.0",
+  "objective_values": {
+    "failed_gate_count": 1
+  },
+  "schema_version": "amphora.score-envelope.v1",
+  "score_0_1": 0.0,
+  "score_semantics": "AUDIT_CONSTRAINT",
+  "source_refs": [
+    "fixtures/formulation_candidate.json"
+  ],
+  "status": "FAILED_GATES",
+  "uncertainty": {},
+  "usable_by_optimizer": false
+}

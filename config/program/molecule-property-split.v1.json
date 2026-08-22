@@ -1,0 +1,16 @@
+{
+  "schema": "amphora.split-manifest.v1",
+  "split_id": "molecule-property-legacy-replay-no-sealed-controls-2026-07-17",
+  "dataset_hash": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "assignment_method": "legacy controls are replay-only; zero records are represented as independently sealed controls",
+  "assignments": [
+    {"row_id":"exact-dgeba","split":"PILOT_REPLAY","source":"legacy_molecule_property_controls","family":"epoxy","scaffold":"dgeba","time":"legacy","lot":"defined"},
+    {"row_id":"exact-deta","split":"PILOT_REPLAY","source":"legacy_molecule_property_controls","family":"amine","scaffold":"deta","time":"legacy","lot":"defined"},
+    {"row_id":"exact-ipda","split":"PILOT_REPLAY","source":"legacy_molecule_property_controls","family":"amine","scaffold":"ipda","time":"legacy","lot":"defined"},
+    {"row_id":"negative-amide-n","split":"PILOT_REPLAY","source":"legacy_molecule_property_controls","family":"negative","scaffold":"amide","time":"legacy","lot":"defined"},
+    {"row_id":"negative-missing-reactive-group","split":"PILOT_REPLAY","source":"legacy_molecule_property_controls","family":"negative","scaffold":"ethanol","time":"legacy","lot":"defined"},
+    {"row_id":"negative-invalid-smiles","split":"PILOT_REPLAY","source":"legacy_molecule_property_controls","family":"invalid","scaffold":"invalid","time":"legacy","lot":"defined"},
+    {"row_id":"negative-mixture","split":"PILOT_REPLAY","source":"legacy_molecule_property_controls","family":"invalid","scaffold":"mixture","time":"legacy","lot":"defined"},
+    {"row_id":"negative-polymer-wildcard","split":"PILOT_REPLAY","source":"legacy_molecule_property_controls","family":"invalid","scaffold":"polymer","time":"legacy","lot":"defined"}
+  ]
+}

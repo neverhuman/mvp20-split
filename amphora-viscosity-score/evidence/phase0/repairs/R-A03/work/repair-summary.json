@@ -1,0 +1,31 @@
+{
+  "front_matter_byte_identical": true,
+  "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "ledger_exists_untouched": true,
+  "manifest_sha256_now": "f5623b3171d65de2dc805b740aef71ad6163554dcf9b5b394d84181b3ad6bf08",
+  "mission_sha_after": "81fc24a8307fca33d764e0a9436bd08d0095c2ef2edbd86de3fe5cecd69070e5",
+  "mission_sha_before": "a6d41ae98ef106891f812a634a26e187d148ebf22abac33bdc001751a0f3b3cc",
+  "payload_canonical_sha256": "5a032290c361446d32115f5a9c942cd92b695e24fe1c1973250f2b860b9bd196",
+  "reattack_markers_found": [
+    "context_only",
+    "georgia tech",
+    "promotion_eligible",
+    "quarantine"
+  ],
+  "reattack_overall_pass": true,
+  "receipt": "/home/ubuntu/amphora/build/mvp20-split/amphora-viscosity-score/evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json",
+  "receipt_sha256": "2fb31dfbe96c5c8131fb317bcd6390846ee0e6c3365fa364b5e8bbe0a55a93ff",
+  "retraction_index": "/home/ubuntu/amphora/build/mvp20-split/amphora-viscosity-score/evidence/phase0/kpis/RETRACTION-INDEX.md",
+  "retraction_index_sha256": "4ed6b2cd3e5eaa508aac3cb93be3b4a117977688afe8feaabeea45d769930c34",
+  "self_verified": true,
+  "superseded_intact_after": {
+    "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-vs-ml-kpi.v1.json": true,
+    "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-polymer-safe-conformal-coverage-and-applicability-domain-kpi.v1.json": true,
+    "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json": true,
+    "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json": true,
+    "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json": true
+  },
+  "trust_anchored": true,
+  "two_replay_pre_repro_sha256": "7bc9b83d0ee87c19d1395f51f49bc322d38e7d3df8eca48c5ce1bf30f5aa5ab9",
+  "two_replay_sha256_gate": "PASS"
+}

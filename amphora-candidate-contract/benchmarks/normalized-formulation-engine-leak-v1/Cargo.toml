@@ -1,0 +1,16 @@
+[package]
+name = "formulation-engine-leak-oracle"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "formulation_engine_leak_oracle"
+path = "rust_harness_main.rs"
+
+[dependencies]
+amphora-engine = { path = "/home/ubuntu/amphora/build/mvp20-split/amphora-engine" }
+serde_json = "1"
+sha2 = "0.10"
+
+[workspace]

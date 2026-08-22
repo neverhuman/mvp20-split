@@ -1,0 +1,41 @@
+{
+  "schema": "amphora.module-source-census.v1",
+  "module_id": "amphora-molecule-role-ranker",
+  "frozen_on": "2026-07-17",
+  "sources": [
+    {
+      "source_id": "legacy_molecule_role_controls",
+      "publisher": "Amphora local benchmark compilation",
+      "study_id": "MOLECULE_ROLE_LEGACY_CONTROLS",
+      "source_url": "amphora-molecule-role-ranker/reference/mvp20/data/role_fit_benchmark.v1.json",
+      "acquisition_status": "ACQUIRED",
+      "local_manifest": "amphora-molecule-role-ranker/reference/mvp20/data/role_fit_benchmark.v1.json",
+      "local_manifest_sha256": "9a03b71ed2fa2a47a5898ceb95f6f350eb14d57f0572a8defcda49e7e5643c63",
+      "license": "Mixed public and supplier references; no single hash-bound derivative license or blinded label receipt covers the compiled benchmark",
+      "rights_status": "QUARANTINED",
+      "eligible_for_derivatives": false,
+      "restrictions": [
+        "legacy controls are replay-only",
+        "commercial product rows remain measured-only",
+        "not a blinded expert-parity holdout"
+      ]
+    },
+    {
+      "source_id": "coatings_reactive_molecule_truth_set_v1",
+      "publisher": "Independent chemistry review panel",
+      "study_id": "COATINGS_REACTIVE_MOLECULE_TRUTH_SET_V1",
+      "source_url": "https://www.ebi.ac.uk/chebi/downloads/",
+      "acquisition_status": "NOT_ACQUIRED",
+      "local_manifest": null,
+      "local_manifest_sha256": null,
+      "license": "CC BY 4.0 molecular records plus separately signed human-label receipt required",
+      "rights_status": "PLANNED",
+      "eligible_for_derivatives": false,
+      "restrictions": [
+        "minimum 300 deduplicated molecules",
+        "two independent labels and pre-unblinding adjudication required",
+        "sealed ambiguous and out-of-domain controls required"
+      ]
+    }
+  ]
+}

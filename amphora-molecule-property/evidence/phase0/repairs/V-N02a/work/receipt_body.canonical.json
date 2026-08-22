@@ -1,0 +1,333 @@
+{
+  "all_legs_pass": true,
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "V-N02a",
+  "claim_under_attack": "The coordinated C=N amine-rule fix (R-N02) withstands independent adversarial verification in this module: amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+  "fire_id": "20260804T010001-2885876-e367b1f56e17",
+  "flips_scientific_readiness": false,
+  "human_review_performed": false,
+  "input_artifacts": {
+    "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+    "shipped_n_active_amine_nh_source_sha256": "6af029de1add4ace1f051bad327ee5de3349756c80cb5a4af092b4835db731d4",
+    "target_receipt_sha256": "74e2c759c1f56ba435ad2807be1f2bdc37c479d68fca81934569901072ba6519",
+    "target_source_file": "amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/compute_amine_class.py",
+    "target_source_file_sha256": "b1d846ef4b3b103c500ec2b28a7918aeec685bd4ffe555e5f8181a2174ede15a",
+    "verify_sweep_script_sha256": "9ea6e79bca1b30d8b884865b31ca5e58f6f44d04753fcd9572ca5c3bb441c3f1"
+  },
+  "leg1_original_3_probes": {
+    "all_zero": true,
+    "refute_criterion": "any of the 3 probes returns nonzero n_active_nh",
+    "rows": [
+      {
+        "canonical_smiles": "N=C(N)N",
+        "formula": "CH5N3",
+        "id": "guanidine",
+        "mw": 59.072,
+        "n_active_nh": 0,
+        "note": "CAS 113-00-8",
+        "smiles": "NC(=N)N",
+        "theoretical_ahew": null
+      },
+      {
+        "canonical_smiles": "N#CN=C(N)N",
+        "formula": "C2H4N4",
+        "id": "dicyandiamide",
+        "mw": 84.082,
+        "n_active_nh": 0,
+        "note": "CAS 461-58-5; DICY",
+        "smiles": "NC(=NC#N)N",
+        "theoretical_ahew": null
+      },
+      {
+        "canonical_smiles": "N=C(N)NC(=N)N",
+        "formula": "C2H7N5",
+        "id": "biguanide",
+        "mw": 101.113,
+        "n_active_nh": 0,
+        "note": "CAS 461-71-2",
+        "smiles": "NC(=N)NC(=N)N",
+        "theoretical_ahew": null
+      }
+    ]
+  },
+  "leg2_26_record_regression": {
+    "all_match": true,
+    "n_records": 26,
+    "refute_criterion": "any record's computed n_active_nh diverges from the module's own asserted truth value",
+    "rows": [
+      {
+        "computed_n_active_nh": 5,
+        "expected_n_active_nh": 5,
+        "match": true,
+        "record_id": "exact-deta",
+        "smiles": "NCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "exact-ipda",
+        "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+      },
+      {
+        "computed_n_active_nh": 5,
+        "expected_n_active_nh": 5,
+        "match": true,
+        "record_id": "mono-ahew-deta",
+        "smiles": "NCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "mono-ahew-ipda",
+        "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "mono-ahew-hmda",
+        "smiles": "NCCCCCCN"
+      },
+      {
+        "computed_n_active_nh": 5,
+        "expected_n_active_nh": 5,
+        "match": true,
+        "record_id": "deta",
+        "smiles": "NCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 6,
+        "expected_n_active_nh": 6,
+        "match": true,
+        "record_id": "teta",
+        "smiles": "NCCNCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 7,
+        "expected_n_active_nh": 7,
+        "match": true,
+        "record_id": "tepa",
+        "smiles": "NCCNCCNCCNCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "eda",
+        "smiles": "NCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "ipda",
+        "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "hmda",
+        "smiles": "NCCCCCCN"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "mxda",
+        "smiles": "NCc1cccc(CN)c1"
+      },
+      {
+        "computed_n_active_nh": 2,
+        "expected_n_active_nh": 2,
+        "match": true,
+        "record_id": "piperazine",
+        "smiles": "C1CNCCN1"
+      },
+      {
+        "computed_n_active_nh": 3,
+        "expected_n_active_nh": 3,
+        "match": true,
+        "record_id": "aep",
+        "smiles": "NCCN1CCNCC1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "dach",
+        "smiles": "NC1CCCCC1N"
+      },
+      {
+        "computed_n_active_nh": 2,
+        "expected_n_active_nh": 2,
+        "match": true,
+        "record_id": "aniline",
+        "smiles": "Nc1ccccc1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "mda",
+        "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1"
+      },
+      {
+        "computed_n_active_nh": 4,
+        "expected_n_active_nh": 4,
+        "match": true,
+        "record_id": "dds",
+        "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "triethylamine",
+        "smiles": "CCN(CC)CC"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "acetamide",
+        "smiles": "CC(=O)N"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "dmf",
+        "smiles": "CN(C)C=O"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "urea",
+        "smiles": "NC(=O)N"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "acetonitrile",
+        "smiles": "CC#N"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "pyridine",
+        "smiles": "c1ccncc1"
+      },
+      {
+        "computed_n_active_nh": 0,
+        "expected_n_active_nh": 0,
+        "match": true,
+        "record_id": "nitrobenzene",
+        "smiles": "O=[N+]([O-])c1ccccc1"
+      },
+      {
+        "computed_n_active_nh": 2,
+        "expected_n_active_nh": 2,
+        "match": true,
+        "record_id": "ethanolamine",
+        "smiles": "NCCO"
+      }
+    ]
+  },
+  "leg3_novel_amidine_probes": {
+    "all_expected": true,
+    "refute_criterion": "any novel probe's computed n_active_nh diverges from its chemically-justified expected value",
+    "rows": [
+      {
+        "canonical_smiles": "CC(=N)N",
+        "expected_n_active_nh": 0,
+        "formula": "C2H6N2",
+        "id": "acetamidine",
+        "match": true,
+        "mw": 58.084,
+        "n_active_nh": 0,
+        "note": "CAS 60-10-6; simple aliphatic amidine, C=N-bearing carbon distinct from guanidine's N-C(=N)-N core; tests whether the R-N02 exclusion generalizes beyond the 3-nitrogen guanidine pattern to a 2-nitrogen amidine pattern.",
+        "smiles": "CC(=N)N",
+        "theoretical_ahew": null
+      },
+      {
+        "canonical_smiles": "N=C(N)c1ccccc1",
+        "expected_n_active_nh": 0,
+        "formula": "C7H8N2",
+        "id": "benzamidine",
+        "match": true,
+        "mw": 120.155,
+        "n_active_nh": 0,
+        "note": "CAS 618-39-3; aromatic-substituted amidine; tests substituent-independence of the exclusion.",
+        "smiles": "NC(=N)c1ccccc1",
+        "theoretical_ahew": null
+      },
+      {
+        "canonical_smiles": "Nc1ccccn1",
+        "expected_n_active_nh": 2,
+        "formula": "C5H6N2",
+        "id": "2-aminopyridine",
+        "match": true,
+        "mw": 94.117,
+        "n_active_nh": 2,
+        "note": "CAS 504-29-0; ADVERSARIAL BOUNDARY probe -- primary aromatic exocyclic amine (same class as aniline, already n_active_nh=2 in the 26-record set); the ring C-N bond is aromatic (bond order 1.5 in RDKit), not a localized C=N pi-acceptor, so the amidine/guanidine delocalization mechanism the shipped rule targets does not apply. Refutes R-N02 if the fix over-fires and zeroes this out.",
+        "smiles": "Nc1ccccn1",
+        "theoretical_ahew": 47.0585
+      }
+    ]
+  },
+  "method": "Wrote a fresh verification harness (evidence/phase0/repairs/V-N02a/work/vn02a_verify_sweep.py) that extracts n_active_amine_nh() VERBATIM by source marker from the LIVE, currently-shipped benchmarks/amine-class-active-nh-robustness-v1/compute_amine_class.py -- an independent extraction, not a copy of R-N02's own rn02_property_sweep.py bytes or import. Three legs: (1) re-run the 3 ORIGINAL refuting probes (guanidine CAS 113-00-8, dicyandiamide/DICY CAS 461-58-5, biguanide CAS 461-71-2); refute if any returns nonzero. (2) re-run the full 26-record zero-regression check (3 exact anchors, 6 monodisperse, 13 amine-grid, 7 nonamine controls, 1 hydroxyl probe) with expected n_active_nh values TRANSCRIBED DIRECTLY from R-N02's own already-signed, byte-verified done receipt (zero_regression_evidence.molecule_property_26_records.records), not from any sweep script; refute on any mismatch. (3) construct and run 3 NOVEL amidine-family probes absent from R-N02's probe set, the 26-record regression set, and the sibling role-ranker DPG/DOTG probes: acetamidine (CAS 60-10-6) and benzamidine (CAS 618-39-3), both true amidines whose C=N-bearing carbon is structurally distinct from guanidine's 3-nitrogen N-C(=N)-N core -- chemically-justified expected n_active_nh=0 under the shipped rule's own stated mechanism (the exclusion fires per attached carbon bearing ANY C=N, zeroing all N-H on nitrogens bonded to that carbon, exactly as observed for guanidine's 3 nitrogens) -- plus 2-aminopyridine (CAS 504-29-0) as a deliberately ADVERSARIAL boundary probe: a primary aromatic exocyclic amine, same structural class as aniline (already n_active_nh=2 in the 26-record set), whose ring carbon-nitrogen bond is an AROMATIC bond (RDKit GetBondTypeAsDouble()==1.5) rather than a localized C=N double bond (==2.0) -- chemically-justified expected n_active_nh=2 because the amidine/guanidine lone-pair-into-adjacent-pi-acceptor mechanism the shipped rule targets requires a LOCALIZED C=N pi-acceptor, which an aromatic ring bond is not. This probe would refute R-N02 if the C=N fix over-fired on aromatic systems and silently zeroed a real primary-amine hardener/accelerator component.",
+  "modifies_benchmark_lock": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "objective": "INDEPENDENT VERIFY of interactive repair R-N02, per campaign item V-N02a. Did not write R-N02; attacked it. Re-ran the original 3 refuting probes and the 26-record zero-regression check from a FRESH, independent extraction of the currently-shipped n_active_amine_nh() (not a replay of R-N02's own stored sweep bytes or script), then constructed and ran 2+ NOVEL amidine-family probes never used by R-N02 or any prior fire, including one deliberately adversarial boundary case designed to catch over-exclusion.",
+  "organizational_independence_asserted": false,
+  "pre_registered_refute_criterion": "This verification would have REFUTED R-N02 if ANY of: (a) any of the 3 original probes (guanidine/DICY/biguanide) returned nonzero n_active_nh under the currently-shipped rule; (b) any of the 26 previously-validated regression records diverged from its own asserted truth value; (c) acetamidine or benzamidine returned nonzero n_active_nh (would show the fix is guanidine-specific, not a genuine categorical amidine/guanidine rule); (d) 2-aminopyridine returned 0 instead of 2 (would show the fix over-fires on aromatic ring systems, silently disqualifying a real primary-amine component that is chemically NOT an amidine/guanidine). None of these occurred; all three legs pass; see rows above for the per-probe/per-record observed values.",
+  "primary_sources": [
+    "Lee & Neville, Handbook of Epoxy Resins, McGraw-Hill 1967",
+    "C.A. May (ed.), Epoxy Resins 2nd ed., Marcel Dekker 1988, ISBN 0-8247-7690-9",
+    "B. Ellis (ed.), Chemistry and Technology of Epoxy Resins, Blackie 1993, ISBN 0-7514-0095-0",
+    "ASTM D1652 (epoxide equivalent weight)"
+  ],
+  "promotes_authority": false,
+  "r_n02_done_receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+  "r_n02_done_receipt_sha256": "bdd71b4044c6f4975e8fa6c9754251567c9f394264a24a1880d40065186737f3",
+  "receipt_id": "v-n02a-molecule-property-independent-verify-48e833c7e0c0341c8a74f012c049180b",
+  "repair_item_verified": "R-N02",
+  "reproducibility": {
+    "determinism_basis": "no RNG, no wall clock, fixed hardcoded probe SMILES, sort_keys canonical JSON.",
+    "sweep_runA_sha256": "48e833c7e0c0341c8a74f012c049180b59eff22cf2a3c431ce7cacae2883ec94",
+    "sweep_runB_sha256": "48e833c7e0c0341c8a74f012c049180b59eff22cf2a3c431ce7cacae2883ec94",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new external data source opened or acquired. All 3 novel probe molecules (acetamidine, benzamidine, 2-aminopyridine) are constructed in-script from CAS-identified SMILES (public-domain chemical identity facts), evaluated purely structurally via the already-licensed pinned RDKit backend. All regression truth values are transcribed from an already-in-tree, already-signed receipt.",
+  "schema": "amphora.molecule-property.v-n02a-independent-verify-receipt.v1",
+  "scope_note": "This verification is CATEGORICAL/structural only, matching R-N02's own scope. It does not reopen the quantitative AHEW question R-N02 explicitly left open (whether a guanidine/amidine-class latent hardener has some nonzero equivalent weight in a mechanistic sense distinct from 1:1 RT amine-epoxide addition) -- acetamidine and benzamidine's theoretical_ahew is correctly reported as null (undefined under the M/n rule), same as guanidine/DICY/biguanide.",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY V-N02a independent-verify done-receipt under evidence/phase0/repairs/V-N02a/done/"
+  },
+  "verdict": "CLAIM_SURVIVED",
+  "why": "The R-N02 fix (widening the neighbor-carbon double-bond-partner set from {O,S} to {O,S,N} in n_active_amine_nh's amide/amidine/guanidine exclusion check) generalizes correctly beyond the 3 probes and 26 records it was originally verified against: it correctly zeroes two structurally-distinct novel amidine chemotypes (acetamidine, benzamidine) via the SAME mechanism (carbon bearing an explicit, non-aromatic C=N double bond), and it correctly does NOT zero a chemically-similar-looking but mechanistically-distinct aromatic amine (2-aminopyridine), because RDKit's aromatic bond typing (order 1.5) does not satisfy the rule's ==2.0 double-bond test -- the fix is bounded to the exact physical mechanism it claims (localized C=N lone-pair delocalization) rather than over-firing on any nitrogen-adjacent aromatic ring."
+}

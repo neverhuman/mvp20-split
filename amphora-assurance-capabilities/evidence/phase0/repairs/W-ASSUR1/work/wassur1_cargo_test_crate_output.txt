@@ -1,0 +1,120 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.35s
+     Running unittests src/lib.rs (target/debug/deps/amphora_assurance_capabilities-dca42c59f3ce4693)
+
+running 22 tests
+test diagnostics::tests::deterministic_control_diagnostic_rejects_unsupported_or_malformed_module_id ... ok
+test diagnostics::tests::banned_claim_lint_normalizes_unicode_case_and_format ... ok
+test diagnostics::tests::promoted_structured_fixtures_reject_unknown_and_duplicate_fields ... ok
+test diagnostics::tests::redteam_attack_axes_are_the_full_24_module_specific_set ... ok
+test tests::candidate_types_are_enforced ... ok
+test tests::candidate_supplied_signature_shape_fails_closed ... ok
+test tests::constructor_rejects_unsupported_ids_and_descriptors_are_non_engine ... ok
+test tests::correctly_bound_host_receipt_can_accept_evidence ... ok
+test diagnostics::tests::cro_fixture_private_material_is_absent_and_execution_is_locked ... ok
+test diagnostics::tests::report_fixture_components_are_bound ... ok
+test tests::cro_v2_packet_is_candidate_formula_signed_and_non_executable ... ok
+test tests::fto_guard_never_reports_legal_closure ... ok
+test tests::results_are_deterministic_and_cannot_supply_registry_fields ... ok
+test diagnostics::tests::source_control_rejects_unknown_fields_and_laundering ... ok
+test diagnostics::tests::promoted_control_counts_and_zero_authority_outputs_are_exact ... ok
+test tests::current_source_and_known_answer_gates_remain_failed ... ok
+test diagnostics::tests::deterministic_control_diagnostic_zero_authority_locks_populated_true_for_every_required_key ... ok
+test tests::every_assurance_result_has_an_empty_objective_vector ... ok
+test diagnostics::tests::deterministic_control_diagnostic_supports_the_nine_expected_module_ids ... ok
+test diagnostics::tests::all_nine_live_diagnostics_pass_strict_contracts ... ok
+test diagnostics::tests::redteam_corpus_is_exact_and_reproducible ... ok
+test diagnostics::tests::deterministic_control_diagnostic_result_is_byte_stable_on_replay ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.41s
+
+     Running tests/cro_protocol_packager_phase0_kpi.rs (target/debug/deps/cro_protocol_packager_phase0_kpi-d9b6bf7f04330fef)
+
+running 1 test
+test cro_protocol_packager_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.28s
+
+     Running tests/evidence_intake_validator_phase0_kpi.rs (target/debug/deps/evidence_intake_validator_phase0_kpi-2638b0778640d5e5)
+
+running 1 test
+test evidence_intake_validator_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/ip_fto_guard_counsel_assertion_probes.rs (target/debug/deps/ip_fto_guard_counsel_assertion_probes-b57bbd644738dfbd)
+
+running 16 tests
+test control_exact_path_true_is_still_detected ... ok
+test a5_alternate_path_name_is_detected ... ok
+test clean_candidate_is_not_flagged ... ok
+test a1_top_level_key_is_detected ... ok
+test a3_nested_one_level_deeper_is_detected ... ok
+test a2_counsel_fto_array_container_is_detected ... ok
+test a8_unicode_confusable_key_is_detected ... ok
+test a7_counsel_fto_string_container_is_detected ... ok
+test a6_semantic_alt_claim_key_is_detected ... ok
+test a4_case_variant_key_is_detected ... ok
+test v1_uncovered_homoglyph_deletion_signedbycounsel_is_detected ... ok
+test v4_deeply_nested_array_of_objects_alias_is_detected ... ok
+test v3_zero_width_joiner_in_key_is_detected ... ok
+test v2_uncovered_homoglyph_deletion_counselfto_is_detected ... ok
+test v5_fullwidth_unicode_escape_key_is_detected ... ok
+test primary_kpi_value_path_is_populated_and_matches_fixture_recompute ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/ip_fto_guard_phase0_kpi.rs (target/debug/deps/ip_fto_guard_phase0_kpi-63e618f0afb739ed)
+
+running 1 test
+test ip_fto_guard_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.45s
+
+     Running tests/known_answer_benchmarks_phase0_kpi.rs (target/debug/deps/known_answer_benchmarks_phase0_kpi-b889190ebbe8de6c)
+
+running 1 test
+test known_answer_benchmarks_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/optimizer_orchestrator_phase0_kpi.rs (target/debug/deps/optimizer_orchestrator_phase0_kpi-0541f96e15ea2885)
+
+running 1 test
+test optimizer_orchestrator_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/redteam_audit_phase0_kpi.rs (target/debug/deps/redteam_audit_phase0_kpi-98c55183c2578a74)
+
+running 1 test
+test redteam_audit_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.51s
+
+     Running tests/report_packager_phase0_kpi.rs (target/debug/deps/report_packager_phase0_kpi-ef0892d8d7e56b94)
+
+running 1 test
+test report_packager_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+     Running tests/source_ledger_phase0_kpi.rs (target/debug/deps/source_ledger_phase0_kpi-3e7d962e62c7ab40)
+
+running 1 test
+test source_ledger_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.27s
+
+     Running tests/sourceability_ehs_phase0_kpi.rs (target/debug/deps/sourceability_ehs_phase0_kpi-110ccba9ae262303)
+
+running 1 test
+test sourceability_ehs_phase0_kpi_report_is_deterministic_and_gates_pass ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+   Doc-tests amphora_assurance_capabilities
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

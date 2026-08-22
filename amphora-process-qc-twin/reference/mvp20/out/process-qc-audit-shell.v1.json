@@ -1,0 +1,70 @@
+{
+  "schema": "amphora.process-qc-audit-shell-report.v1",
+  "module_id": "amphora-process-qc-twin",
+  "snapshot_id": "feedback-v3-2026-07-19",
+  "catalog_sha256": "d37ce23bc14a5fe12e337458a4d18b3925f9e4924619e50d9416e78ba70ace65",
+  "source_bindings": [
+    {
+      "acquisition_unit_id": "uci_secom_archive_v3",
+      "dataset_id": "uci_secom_archive_v3-eea568baf3c22290",
+      "raw_sha256": "eea568baf3c2229096d7d294cf0b096b5502bd96d92c0b80a65b84714059be8e",
+      "normalized_sha256": "e48e4aafb820e968c1c883ce72fb65b7cd8a803e58046a52d41a1741de921aaa",
+      "row_count": 1567,
+      "rejection_count": 0,
+      "fail_label_count": 104,
+      "rows_with_missing_features": 1567,
+      "total_missing_features": 41951,
+      "maximum_missing_features_in_row": 152
+    },
+    {
+      "acquisition_unit_id": "pronto_process_archive_v3",
+      "dataset_id": "pronto_process_archive_v3-6879563fb7df5a71",
+      "raw_sha256": "6879563fb7df5a71984c52157774f58b3f4725bd7ab0c717f7fcd57313f08961",
+      "normalized_sha256": "79792befa1aa74286dcb608e5dfd2a3835e96889e190487a6c95e13ccd002f98",
+      "row_count": 189010,
+      "rejection_count": 0,
+      "rows_with_missing_or_non_numeric_sensors": 3601,
+      "total_missing_or_non_numeric_sensors": 86446,
+      "maximum_missing_or_non_numeric_sensors_in_row": 45,
+      "timestamp_encoding_counts": {
+        "DATE_MINUTE": 175809,
+        "EXCEL_SERIAL": 13201
+      },
+      "maximum_time_segment": 2
+    }
+  ],
+  "owned_deterministic_controls": {
+    "schema": "amphora.process-qc-audit-shell.v1",
+    "baseline_observation_count": 30,
+    "stable_monitoring_count": 20,
+    "shifted_monitoring_count": 10,
+    "false_positive_alert_count": 0,
+    "missed_deviation_detector_count": 0,
+    "detector_alert_counts": {
+      "CUSUM": 10,
+      "EWMA": 10,
+      "SHEWHART": 10
+    },
+    "malformed_missingness_rejected": true,
+    "reordered_time_rejected": true,
+    "specification_control_separation_passed": true,
+    "fixture_sha256": "51f9829dc8985d76f7f53be65b28d07148f5d6b312495b84dcbf8bb24e20a096",
+    "authority_ceiling": "AUDIT_ONLY",
+    "batch_release_authorized": false,
+    "manufacturing_qualification_authorized": false
+  },
+  "observations": [
+    "UCI SECOM archive integrity and 1,567-row alignment passed; missingness is retained, not imputed.",
+    "PRONTO complete archive integrity passed; only ten named Process Data CSV streams were normalized.",
+    "PRONTO dual timestamp encodings and the encoding boundary remain visible as time segments.",
+    "Owned deterministic controls produced zero stable-fixture alerts and detected the declared shift with Shewhart, EWMA, and CUSUM.",
+    "Malformed missingness, reordered time, and specification/control conflation attacks fail closed."
+  ],
+  "reported_result_status": "DIAGNOSTIC_CONTROLS_PASS",
+  "scientific_claim_status": "NO_EMPIRICAL_RELEASE_OR_MANUFACTURING_QUALIFICATION_CLAIM",
+  "authority_ceiling": "AUDIT_ONLY",
+  "ranking_authorized": false,
+  "optimizer_authorized": false,
+  "batch_release_authorized": false,
+  "manufacturing_qualification_authorized": false
+}

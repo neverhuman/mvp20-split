@@ -1,0 +1,12 @@
+{
+  "runbook_version": "2.0",
+  "name": "optional-jailgun",
+  "required": false,
+  "visible_model": "GPT-5.6",
+  "tabs": 10,
+  "family_cards_per_tab_maximum": 8,
+  "failed_probe_action": "write_skipped_receipt_and_continue",
+  "blocks_jnoccio": false,
+  "blocks_execution": false,
+  "blocks_scoring": false
+}

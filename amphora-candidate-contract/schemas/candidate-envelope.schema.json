@@ -1,0 +1,291 @@
+{
+  "$id": "https://amphora.local/schemas/candidate-envelope.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "inchi": false,
+    "inchi_key": false,
+    "inchikey": false,
+    "mol": false,
+    "mol_block": false,
+    "mol_v2000": false,
+    "mol_v3000": false,
+    "sdf": false,
+    "sdf_records": false,
+    "recipe_csv": false,
+    "candidate_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "candidate_type": {
+      "enum": [
+        "molecule",
+        "formulation",
+        "evidence_package"
+      ]
+    },
+    "context": {
+      "additionalProperties": true,
+      "properties": {
+        "model_run": {
+          "additionalProperties": true,
+          "properties": {
+            "generation": {
+              "type": "number"
+            },
+            "model_run_id": {
+              "type": "string"
+            },
+            "parent_ids": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "proposal_metadata": {
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "optimization_request": {
+          "additionalProperties": true,
+          "properties": {
+            "budget": {
+              "type": "number"
+            },
+            "deterministic_seed": {
+              "type": "number"
+            },
+            "hard_constraints": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "constraints": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "objective_list": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "objectives": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "seed_policy": {
+              "type": "string"
+            },
+            "target_domain": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "evidence_refs": {
+      "additionalProperties": true,
+      "type": "object"
+    },
+    "formulation": {
+      "additionalProperties": true,
+      "properties": {
+        "recipe_csv": false,
+        "application": {
+          "additionalProperties": true,
+          "properties": {
+            "dft_mil": {"exclusiveMinimum": 0, "type": ["number", "null"]},
+            "relative_humidity_pct": {"maximum": 100, "minimum": 0, "type": ["number", "null"]},
+            "substrate": {"minLength": 1, "type": ["string", "null"]},
+            "surface_preparation": {"minLength": 1, "type": ["string", "null"]},
+            "temperature_C": {"type": ["number", "null"]}
+          },
+          "type": "object"
+        },
+        "basis": {
+          "const": "mass_g_per_batch"
+        },
+        "batch_mass_g": {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        "ingredient_catalog_version": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "ingredient_property_keys": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "input_uncertainty": {
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "part_A": {"$ref": "#/$defs/inputUncertaintyPart"},
+            "part_B": {"$ref": "#/$defs/inputUncertaintyPart"}
+          },
+          "type": "object"
+        },
+        "part_A": {
+          "additionalProperties": {"minimum": 0, "type": "number"},
+          "type": "object"
+        },
+        "part_B": {
+          "additionalProperties": {"minimum": 0, "type": "number"},
+          "type": "object"
+        },
+        "process": {
+          "additionalProperties": true,
+          "properties": {
+            "application_method": {"type": ["string", "null"]},
+            "induction_time_min": {"minimum": 0, "type": ["number", "null"]},
+            "mix_order": {
+              "items": {"type": "string"},
+              "type": ["array", "string", "null"]
+            },
+            "pot_age_h": {"minimum": 0, "type": ["number", "null"]}
+          },
+          "type": "object"
+        },
+        "recipe": {
+          "additionalProperties": false,
+          "properties": {
+            "part_A": {"$ref": "#/$defs/canonicalRecipePart"},
+            "part_B": {"$ref": "#/$defs/canonicalRecipePart"}
+          },
+          "required": ["part_A", "part_B"],
+          "type": "object"
+        },
+        "solvent_pairs": {
+          "items": {
+            "items": {"minLength": 1, "type": "string"},
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "target_envelope": {
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "molecule": {
+      "additionalProperties": true,
+      "properties": {
+        "inchi": false,
+        "inchi_key": false,
+        "inchikey": false,
+        "mol": false,
+        "mol_block": false,
+        "mol_v2000": false,
+        "mol_v3000": false,
+        "sdf": false,
+        "sdf_records": false,
+        "canonical_smiles": {"type": "string"},
+        "canonical_structure_hash": {"pattern": "^[0-9a-fA-F]{64}$", "type": "string"},
+        "descriptor_version": {"type": "string"},
+        "cas": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "role_evidence_status": {"type": "string"},
+        "rdkit_version": {"type": "string"},
+        "smiles": {
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "candidate_id",
+    "candidate_type"
+  ],
+  "allOf": [
+    {
+      "if": {"properties": {"candidate_type": {"const": "molecule"}}, "required": ["candidate_type"]},
+      "then": {"required": ["molecule"], "not": {"required": ["formulation"]}}
+    },
+    {
+      "if": {"properties": {"candidate_type": {"const": "formulation"}}, "required": ["candidate_type"]},
+      "then": {
+        "required": ["formulation"],
+        "not": {
+          "anyOf": [
+            {"properties": {"molecule": {"required": ["smiles"]}}, "required": ["molecule"]},
+            {"properties": {"molecule": {"required": ["canonical_smiles"]}}, "required": ["molecule"]},
+            {"properties": {"molecule": {"required": ["canonical_structure_hash"]}}, "required": ["molecule"]}
+          ]
+        }
+      }
+    },
+    {
+      "if": {"properties": {"candidate_type": {"const": "evidence_package"}}, "required": ["candidate_type"]},
+      "then": {
+        "required": ["evidence_refs"],
+        "not": {"anyOf": [{"required": ["molecule"]}, {"required": ["formulation"]}]}
+      }
+    }
+  ],
+  "$defs": {
+    "canonicalIngredient": {
+      "additionalProperties": true,
+      "properties": {
+        "ingredient_id": {"minLength": 1, "type": "string"},
+        "mass_g": {"minimum": 0, "type": "number"}
+      },
+      "required": ["ingredient_id", "mass_g"],
+      "type": "object"
+    },
+    "canonicalRecipePart": {
+      "additionalProperties": {"$ref": "#/$defs/canonicalIngredient"},
+      "type": "object"
+    },
+    "inputUncertaintyFields": {
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "ahew_g_per_eq_abs": {"minimum": 0, "type": "number"},
+        "density_g_ml_abs": {"minimum": 0, "type": "number"},
+        "eew_g_per_eq_abs": {"minimum": 0, "type": "number"},
+        "mass_g_abs": {"minimum": 0, "type": "number"},
+        "nonvolatile_fraction_abs": {"minimum": 0, "type": "number"},
+        "oil_absorption_g_per_100g_abs": {"minimum": 0, "type": "number"},
+        "solid_density_g_ml_abs": {"minimum": 0, "type": "number"}
+      },
+      "type": "object"
+    },
+    "inputUncertaintyPart": {
+      "additionalProperties": {"$ref": "#/$defs/inputUncertaintyFields"},
+      "minProperties": 1,
+      "type": "object"
+    }
+  },
+  "title": "CandidateEnvelope",
+  "type": "object"
+}

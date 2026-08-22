@@ -1,0 +1,45 @@
+{
+  "schema": "amphora.ip-search-refresh.v1",
+  "refreshed_on": "2026-07-17",
+  "scope": "PRELIMINARY_LANDSCAPE_ONLY",
+  "classifications": [
+    "C09D163/00",
+    "C09D5/08",
+    "C09D7/61",
+    "C08G59/50",
+    "B05D",
+    "high-solids/process-control"
+  ],
+  "providers": [
+    {
+      "provider": "WIPO PATENTSCOPE",
+      "source_url": "https://patentscope.wipo.int/",
+      "status": "REFRESHED",
+      "observations": [
+        "WO2026064846, published 2026-04-02, is classified in C09D163/00 and C09D5/08 and concerns flexible two-component epoxy coatings",
+        "A 2026-03-19 PATENTSCOPE result identifies US 20260078265 in C09D5/08 for a fusion-bonded epoxy composite coating",
+        "No independent-claim or legal-status conclusion was made"
+      ]
+    },
+    {
+      "provider": "EPO OPS / Espacenet",
+      "source_url": "https://www.epo.org/en/searching-for-patents/data/web-services/ops",
+      "status": "SEARCH_SURFACE_REGISTERED_NO_JURISDICTION_COMPLETE_EXPORT",
+      "observations": ["No EPO OPS credentialed bulk export was performed"]
+    },
+    {
+      "provider": "USPTO Patent Public Search",
+      "source_url": "https://ppubs.uspto.gov/pubwebapp/",
+      "status": "SEARCH_SURFACE_REGISTERED_NO_JURISDICTION_COMPLETE_EXPORT",
+      "observations": ["No prosecution-history, continuity, terminal-disclaimer, or legal-status review was performed"]
+    }
+  ],
+  "limitations": [
+    "Not a claim construction",
+    "Not a legal-status opinion",
+    "Not jurisdiction complete",
+    "Dependent claims and prosecution histories are not fully reviewed",
+    "No doctrine-of-equivalents analysis"
+  ],
+  "fto_status": "FTO NOT PERFORMED"
+}

@@ -1,0 +1,172 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "d9893c4f0c38958a14a4999d269decd0ec2409302640adce6f85ad1d52932854",
+  "payload_decoded": {
+    "attacked_receipt_signed_date": "2026-07-29",
+    "authority": "AUDIT_ONLY",
+    "calibrated_uncertainty_comparison": {
+      "bias_as_multiple_of_as_applied_halfwidth": 0.69,
+      "bias_as_multiple_of_at_nominal_halfwidth": 19.48,
+      "coverage_spreading_v1_wft_as_applied_with_dft_control_mc_ci95_halfwidth_um": 36.16376408686857,
+      "coverage_spreading_v1_wft_at_nominal_dft_mc_ci95_halfwidth_um": 1.2731562083295955,
+      "interpretation": "The at_nominal_dft interval is the module's own claim for pure formulation-arithmetic precision (excludes operator DFT-control variance): the LAMBDA bias is ~29x that interval's half-width. Even against the wider as_applied_with_dft_control interval (which folds in an UNRELATED +/-20% operator DFT-control tolerance), the LAMBDA bias is still a majority-sized, wholly separate, systematic (unidirectional) effect that the module's error budget has no term for at all -- GUM (JCGM 100:2008 sec 3.2.3, 6.3.1) requires known systematic effects to be corrected before an expanded uncertainty is reported as a coverage interval for the measurand; this one is neither corrected nor disclosed.",
+      "lambda_bias_um": 24.8049
+    },
+    "campaign_item_id": "X-COV-CPVC",
+    "claim_under_attack": {
+      "claim_text": "COVERAGE_SPREADING_ENGINE_READY__KNOWN_ANSWER_BATTERY_PASS__1604_ANCHOR_EXACT -- the WFT/TC/PC/dry-film-areal-mass engine, with its GUM LPU + Monte Carlo calibrated intervals, correctly and completely converts a formulated recipe's volume solids + target DFT into the applied-film arithmetic for the module's declared applicability domain (solvent-borne two-component epoxy-amine marine-coating R&D, which the module's own sibling receipts treat as including anti-corrosion pigmented / inhibitive primers).",
+      "receipt_path": "amphora-formulation-arithmetic/evidence/audit/coverage-spreading-v1/coverage-spreading-receipt.v1.dsse.json"
+    },
+    "composed_case": {
+      "cpvc": 0.4183,
+      "pvc_below_cpvc_control_case": {
+        "dft_actual_um": 127.0,
+        "dft_divergence_pct": 0.0,
+        "lambda_film_volume_factor": 1.0,
+        "lambda_raw_pvc_over_cpvc_ratio": 0.83672,
+        "note": "below-CPVC control: film_volume_factor clamps LAMBDA to 1 exactly (raw PVC/CPVC ratio 0.8368 has no physical amplification meaning below CPVC -- binder fully fills the interstitial space, no voids), so film-build divergence is exactly zero -- confirms the +19.5% overshoot above is specifically the CPVC/porosity effect, not a reimplementation bug",
+        "pvc": 0.35
+      },
+      "pvc_overshoot_case": {
+        "coverage_spreading_v1_signed_wft_um_at_this_dft_target": 190.2992411121276,
+        "dft_actual_um_after_lambda_amplification": 151.8049,
+        "dft_overshoot_pct": 19.5314,
+        "dft_target_um": 127.0,
+        "dry_film_density_actual_g_cm3": 1.620595,
+        "dry_film_density_error_pct": -16.34,
+        "dry_film_density_voidfree_g_cm3_signed": 1.937119897049003,
+        "lambda_film_volume_factor": 1.195314,
+        "lambda_raw_pvc_over_cpvc_ratio": 1.195314,
+        "pvc": 0.5
+      },
+      "rho_b_ideal_mix_g_per_cm3": 1.085889,
+      "rho_p_g_per_cm3": 5.0,
+      "system": "iron_oxide_red anticorrosive primer, DGEBA-331 + Ancamide 350A stoichiometric binder (same system reduced-pvc-porosity-v1's case_study names; cpvc/binder-density independently reproduced above, not merely copied)"
+    },
+    "control_clean": true,
+    "coverage_spreading_v1_ka_battery_has_pvc_cpvc_case": false,
+    "coverage_spreading_v1_ka_battery_ids": [
+      "KA1_1604_rule_external_unit_identity",
+      "KA2_full_solids_definition",
+      "KA3_half_solids_definition",
+      "KA4_closure_WFT_times_VS_eq_DFT",
+      "KA5_closure_TC_times_DFT_eq_1000VS",
+      "KA6_practical_loss_definition",
+      "KA7_areal_mass_definition",
+      "KA8_intensive_scale_invariance",
+      "KA9_hostile_null_zero_dft_and_zero_solids_fail_closed"
+    ],
+    "coverage_spreading_v1_scope_discloses_pvc_cpvc_boundary": false,
+    "date": "2026-08-15",
+    "directive_obligation": null,
+    "directive_path": "none",
+    "directive_sha256": "",
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-formulation-arithmetic",
+    "objective": "ROTATION-mode falsification: identify the strongest un-attacked standing claim in amphora-formulation-arithmetic and attack it. Selected coverage-spreading-v1 (COVERAGE_SPREADING_ENGINE_READY, signed 2026-07-29, never attacked in the ledger) and composed it against its own sibling receipt reduced-pvc-porosity-v1 (signed two days later), which had already found -- but never propagated back as a repair -- that the coverage engine's void-free WFT/DFT arithmetic mis-reads film build by exactly LAMBDA=PVC/CPVC for any in-domain porous (PVC>=CPVC) marine anti-corrosion primer.",
+    "overall_verdict_reasoning": "coverage-spreading-v1's WFT/TC engine (KA4 closure: WFT*VS_frac==DFT exactly) assumes void-free close packing with zero PVC/CPVC awareness -- confirmed by direct inspection: none of its 9 known-answer-battery cases and no field in applied_spec/does_not_close reference PVC, CPVC, or porosity. The module's OWN sibling receipt reduced-pvc-porosity-v1 (signed two days later) already established that above CPVC a real dry film's volume is amplified by LAMBDA=PVC/CPVC, and named exactly this iron-oxide-red-primer-at-PVC-0.50 case as its worked in-domain example -- but that finding was never propagated back into coverage-spreading-v1 as a repair, supersession, or disclosed scope caveat. Applying coverage-spreading-v1's own signed WFT prescription (190.30 um, unchanged) to this in-domain porous primer at its own declared 127 um DFT target delivers an actual film build of 151.8 um, a 19.5% overshoot -- roughly 29x the receipt's own at_nominal_dft calibrated 95% interval half-width (0.67% relative) and a wholly unmodeled systematic effect even against the wider as-applied interval. The below-CPVC control case shows zero divergence (LAMBDA=1 exactly), confirming the bias is the CPVC/porosity effect specifically, not an artifact of this reimplementation. The claim 'COVERAGE_SPREADING_ENGINE_READY' as currently signed overclaims: it is READY only for the (undisclosed) below-CPVC subset of the module's own declared applicability domain.",
+    "positive_control": {
+      "detected": true,
+      "evidence": {
+        "control_divergence_pct": 0.0,
+        "dft_overshoot_pct": 19.5314
+      },
+      "how_planted": "n/a",
+      "planted_defect": "none needed -- this is a REFUTED verdict with self-evidencing composition of two already-signed in-tree receipts; a below-CPVC control case is included anyway for rigor"
+    },
+    "prior_fires_on_this_module": {
+      "CF-ARITH_2026-08-10": "candidate BOM VOC/volume-solids re-derivation -- SURVIVED (self-referential fixture)",
+      "T-05_2026-08-05": "EquivalentBalanceV1 host-fact authority bypass -- REFUTED (unrelated arithmetic surface)",
+      "W-T-ARITH_2026-08-13": "dimensioned VOC vs EPA Method 24 -- REFUTED (water/exempt-solvent exclusion); its R8 followup flagged but did NOT test that the module's symmetric GUM/MC intervals have no CPVC/porosity awareness",
+      "gap_this_fire_closes": "no prior fire composed coverage-spreading-v1 with its own sibling reduced-pvc-porosity-v1 finding, nor touched the WFT/TC/coverage arithmetic surface at all"
+    },
+    "promotes_authority": false,
+    "proposed_followups": [
+      {
+        "finding": "coverage-spreading-v1's WFT/TC/PC/areal-mass formulas have no PVC/CPVC term and silently mis-predict film build by exactly LAMBDA for any porous (PVC>=CPVC) in-domain formulation.",
+        "proposed_repair_criterion": "add an explicit PVC/CPVC-aware branch to the coverage engine (multiply void-free DFT by LAMBDA when PVC>=CPVC, matching reduced-pvc-porosity-v1's already-signed closed form), add a PVC>=CPVC known-answer case to the battery so the gap cannot silently regress, and either disclose the below-CPVC restriction explicitly in does_not_close or close the gap before the receipt is cited as covering pigmented anti-corrosion primers."
+      }
+    ],
+    "repair_artifacts": {
+      "audit_script_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/X-COV-CPVC/work/cov_cpvc_crosscheck.py",
+      "audit_script_sha256": "595e8471ba921c3518e5420953391f9885a7e5469a22a3649ff0132959e2489b",
+      "dependency_read_only_sources": [
+        "amphora-formulation-arithmetic/evidence/audit/coverage-spreading-v1/diagnostic.canonical.json (unmodified, cited only)",
+        "amphora-formulation-arithmetic/evidence/audit/reduced-pvc-porosity-v1/diagnostic.canonical.json (unmodified, cited only)",
+        "amphora-ingredient-library/evidence/audit/oil-absorption-cpvc-v1/diagnostic.canonical.json (unmodified, cited only)",
+        "amphora-ingredient-library/reference/mvp20/data/facts.json (unmodified, cited only)"
+      ],
+      "diagnostic_canonical_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/X-COV-CPVC/work/diagnostic.canonical.json",
+      "diagnostic_canonical_sha256": "8d70a0d0238f904621867906d688166313c16d0516b65b90fc628e36c3079202",
+      "diagnostic_runB_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/X-COV-CPVC/work/diagnostic.runB.json",
+      "diagnostic_runB_sha256": "8d70a0d0238f904621867906d688166313c16d0516b65b90fc628e36c3079202",
+      "two_replay_byte_identical": true
+    },
+    "repair_item": "X-COV-CPVC",
+    "reproduces_coverage_spreading_v1_point_estimates": {
+      "theoretical_coverage_m2_per_L": {
+        "match": true,
+        "reimpl": 5.2548817019,
+        "signed": 5.254881701870701
+      },
+      "volume_solids_frac": {
+        "match": true,
+        "reimpl": 0.6673699761,
+        "signed": 0.6673699761375791
+      },
+      "wet_film_thickness_um": {
+        "match": true,
+        "reimpl": 190.2992411121,
+        "signed": 190.2992411121276
+      }
+    },
+    "reproduces_reduced_pvc_porosity_v1_case_study": {
+      "binder_ideal_mix_density_g_cm3": {
+        "match": true,
+        "reimpl": 1.085889,
+        "signed": 1.085889
+      },
+      "cpvc": {
+        "match": true,
+        "reimpl": 0.4183,
+        "signed": 0.4183
+      },
+      "lambda_pvc050": {
+        "match": true,
+        "reimpl": 1.195314,
+        "signed": 1.195314
+      }
+    },
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "sibling_receipt_used_as_baseline": {
+      "finding_reused": "Above CPVC, real dry-film volume is amplified by LAMBDA=PVC/CPVC vs void-free packing (Asbeck & Van Loo 1949 DOI 10.1021/ie50475a042; Bierwagen & Hay 1975 DOI 10.1016/0300-9440(75)80047-4); case study names iron-oxide-red anticorrosive primer at PVC 0.50 (CPVC 0.4183) as the worked in-domain example.",
+      "path": "amphora-formulation-arithmetic/evidence/audit/reduced-pvc-porosity-v1/reduced-pvc-porosity-receipt.v1.dsse.json",
+      "signed_date": "2026-07-31",
+      "two_replay_sha256": "a98c7281..."
+    },
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "two_replay_sha256": "558419722690038bd3abc2251e5ee4367749981e63a12023800fb57671b98b78",
+    "two_replay_sha256_gate": "PASS",
+    "verdict": "CLAIM_REFUTED"
+  },
+  "signature": {
+    "payload": "eyJhdHRhY2tlZF9yZWNlaXB0X3NpZ25lZF9kYXRlIjoiMjAyNi0wNy0yOSIsImF1dGhvcml0eSI6IkFVRElUX09OTFkiLCJjYWxpYnJhdGVkX3VuY2VydGFpbnR5X2NvbXBhcmlzb24iOnsiYmlhc19hc19tdWx0aXBsZV9vZl9hc19hcHBsaWVkX2hhbGZ3aWR0aCI6MC42OSwiYmlhc19hc19tdWx0aXBsZV9vZl9hdF9ub21pbmFsX2hhbGZ3aWR0aCI6MTkuNDgsImNvdmVyYWdlX3NwcmVhZGluZ192MV93ZnRfYXNfYXBwbGllZF93aXRoX2RmdF9jb250cm9sX21jX2NpOTVfaGFsZndpZHRoX3VtIjozNi4xNjM3NjQwODY4Njg1NywiY292ZXJhZ2Vfc3ByZWFkaW5nX3YxX3dmdF9hdF9ub21pbmFsX2RmdF9tY19jaTk1X2hhbGZ3aWR0aF91bSI6MS4yNzMxNTYyMDgzMjk1OTU1LCJpbnRlcnByZXRhdGlvbiI6IlRoZSBhdF9ub21pbmFsX2RmdCBpbnRlcnZhbCBpcyB0aGUgbW9kdWxlJ3Mgb3duIGNsYWltIGZvciBwdXJlIGZvcm11bGF0aW9uLWFyaXRobWV0aWMgcHJlY2lzaW9uIChleGNsdWRlcyBvcGVyYXRvciBERlQtY29udHJvbCB2YXJpYW5jZSk6IHRoZSBMQU1CREEgYmlhcyBpcyB+Mjl4IHRoYXQgaW50ZXJ2YWwncyBoYWxmLXdpZHRoLiBFdmVuIGFnYWluc3QgdGhlIHdpZGVyIGFzX2FwcGxpZWRfd2l0aF9kZnRfY29udHJvbCBpbnRlcnZhbCAod2hpY2ggZm9sZHMgaW4gYW4gVU5SRUxBVEVEICsvLTIwJSBvcGVyYXRvciBERlQtY29udHJvbCB0b2xlcmFuY2UpLCB0aGUgTEFNQkRBIGJpYXMgaXMgc3RpbGwgYSBtYWpvcml0eS1zaXplZCwgd2hvbGx5IHNlcGFyYXRlLCBzeXN0ZW1hdGljICh1bmlkaXJlY3Rpb25hbCkgZWZmZWN0IHRoYXQgdGhlIG1vZHVsZSdzIGVycm9yIGJ1ZGdldCBoYXMgbm8gdGVybSBmb3IgYXQgYWxsIC0tIEdVTSAoSkNHTSAxMDA6MjAwOCBzZWMgMy4yLjMsIDYuMy4xKSByZXF1aXJlcyBrbm93biBzeXN0ZW1hdGljIGVmZmVjdHMgdG8gYmUgY29ycmVjdGVkIGJlZm9yZSBhbiBleHBhbmRlZCB1bmNlcnRhaW50eSBpcyByZXBvcnRlZCBhcyBhIGNvdmVyYWdlIGludGVydmFsIGZvciB0aGUgbWVhc3VyYW5kOyB0aGlzIG9uZSBpcyBuZWl0aGVyIGNvcnJlY3RlZCBub3IgZGlzY2xvc2VkLiIsImxhbWJkYV9iaWFzX3VtIjoyNC44MDQ5fSwiY2FtcGFpZ25faXRlbV9pZCI6IlgtQ09WLUNQVkMiLCJjbGFpbV91bmRlcl9hdHRhY2siOnsiY2xhaW1fdGV4dCI6IkNPVkVSQUdFX1NQUkVBRElOR19FTkdJTkVfUkVBRFlfX0tOT1dOX0FOU1dFUl9CQVRURVJZX1BBU1NfXzE2MDRfQU5DSE9SX0VYQUNUIC0tIHRoZSBXRlQvVEMvUEMvZHJ5LWZpbG0tYXJlYWwtbWFzcyBlbmdpbmUsIHdpdGggaXRzIEdVTSBMUFUgKyBNb250ZSBDYXJsbyBjYWxpYnJhdGVkIGludGVydmFscywgY29ycmVjdGx5IGFuZCBjb21wbGV0ZWx5IGNvbnZlcnRzIGEgZm9ybXVsYXRlZCByZWNpcGUncyB2b2x1bWUgc29saWRzICsgdGFyZ2V0IERGVCBpbnRvIHRoZSBhcHBsaWVkLWZpbG0gYXJpdGhtZXRpYyBmb3IgdGhlIG1vZHVsZSdzIGRlY2xhcmVkIGFwcGxpY2FiaWxpdHkgZG9tYWluIChzb2x2ZW50LWJvcm5lIHR3by1jb21wb25lbnQgZXBveHktYW1pbmUgbWFyaW5lLWNvYXRpbmcgUiZELCB3aGljaCB0aGUgbW9kdWxlJ3Mgb3duIHNpYmxpbmcgcmVjZWlwdHMgdHJlYXQgYXMgaW5jbHVkaW5nIGFudGktY29ycm9zaW9uIHBpZ21lbnRlZCAvIGluaGliaXRpdmUgcHJpbWVycykuIiwicmVjZWlwdF9wYXRoIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL2V2aWRlbmNlL2F1ZGl0L2NvdmVyYWdlLXNwcmVhZGluZy12MS9jb3ZlcmFnZS1zcHJlYWRpbmctcmVjZWlwdC52MS5kc3NlLmpzb24ifSwiY29tcG9zZWRfY2FzZSI6eyJjcHZjIjowLjQxODMsInB2Y19iZWxvd19jcHZjX2NvbnRyb2xfY2FzZSI6eyJkZnRfYWN0dWFsX3VtIjoxMjcuMCwiZGZ0X2RpdmVyZ2VuY2VfcGN0IjowLjAsImxhbWJkYV9maWxtX3ZvbHVtZV9mYWN0b3IiOjEuMCwibGFtYmRhX3Jhd19wdmNfb3Zlcl9jcHZjX3JhdGlvIjowLjgzNjcyLCJub3RlIjoiYmVsb3ctQ1BWQyBjb250cm9sOiBmaWxtX3ZvbHVtZV9mYWN0b3IgY2xhbXBzIExBTUJEQSB0byAxIGV4YWN0bHkgKHJhdyBQVkMvQ1BWQyByYXRpbyAwLjgzNjggaGFzIG5vIHBoeXNpY2FsIGFtcGxpZmljYXRpb24gbWVhbmluZyBiZWxvdyBDUFZDIC0tIGJpbmRlciBmdWxseSBmaWxscyB0aGUgaW50ZXJzdGl0aWFsIHNwYWNlLCBubyB2b2lkcyksIHNvIGZpbG0tYnVpbGQgZGl2ZXJnZW5jZSBpcyBleGFjdGx5IHplcm8gLS0gY29uZmlybXMgdGhlICsxOS41JSBvdmVyc2hvb3QgYWJvdmUgaXMgc3BlY2lmaWNhbGx5IHRoZSBDUFZDL3Bvcm9zaXR5IGVmZmVjdCwgbm90IGEgcmVpbXBsZW1lbnRhdGlvbiBidWciLCJwdmMiOjAuMzV9LCJwdmNfb3ZlcnNob290X2Nhc2UiOnsiY292ZXJhZ2Vfc3ByZWFkaW5nX3YxX3NpZ25lZF93ZnRfdW1fYXRfdGhpc19kZnRfdGFyZ2V0IjoxOTAuMjk5MjQxMTEyMTI3NiwiZGZ0X2FjdHVhbF91bV9hZnRlcl9sYW1iZGFfYW1wbGlmaWNhdGlvbiI6MTUxLjgwNDksImRmdF9vdmVyc2hvb3RfcGN0IjoxOS41MzE0LCJkZnRfdGFyZ2V0X3VtIjoxMjcuMCwiZHJ5X2ZpbG1fZGVuc2l0eV9hY3R1YWxfZ19jbTMiOjEuNjIwNTk1LCJkcnlfZmlsbV9kZW5zaXR5X2Vycm9yX3BjdCI6LTE2LjM0LCJkcnlfZmlsbV9kZW5zaXR5X3ZvaWRmcmVlX2dfY20zX3NpZ25lZCI6MS45MzcxMTk4OTcwNDkwMDMsImxhbWJkYV9maWxtX3ZvbHVtZV9mYWN0b3IiOjEuMTk1MzE0LCJsYW1iZGFfcmF3X3B2Y19vdmVyX2NwdmNfcmF0aW8iOjEuMTk1MzE0LCJwdmMiOjAuNX0sInJob19iX2lkZWFsX21peF9nX3Blcl9jbTMiOjEuMDg1ODg5LCJyaG9fcF9nX3Blcl9jbTMiOjUuMCwic3lzdGVtIjoiaXJvbl9veGlkZV9yZWQgYW50aWNvcnJvc2l2ZSBwcmltZXIsIERHRUJBLTMzMSArIEFuY2FtaWRlIDM1MEEgc3RvaWNoaW9tZXRyaWMgYmluZGVyIChzYW1lIHN5c3RlbSByZWR1Y2VkLXB2Yy1wb3Jvc2l0eS12MSdzIGNhc2Vfc3R1ZHkgbmFtZXM7IGNwdmMvYmluZGVyLWRlbnNpdHkgaW5kZXBlbmRlbnRseSByZXByb2R1Y2VkIGFib3ZlLCBub3QgbWVyZWx5IGNvcGllZCkifSwiY29udHJvbF9jbGVhbiI6dHJ1ZSwiY292ZXJhZ2Vfc3ByZWFkaW5nX3YxX2thX2JhdHRlcnlfaGFzX3B2Y19jcHZjX2Nhc2UiOmZhbHNlLCJjb3ZlcmFnZV9zcHJlYWRpbmdfdjFfa2FfYmF0dGVyeV9pZHMiOlsiS0ExXzE2MDRfcnVsZV9leHRlcm5hbF91bml0X2lkZW50aXR5IiwiS0EyX2Z1bGxfc29saWRzX2RlZmluaXRpb24iLCJLQTNfaGFsZl9zb2xpZHNfZGVmaW5pdGlvbiIsIktBNF9jbG9zdXJlX1dGVF90aW1lc19WU19lcV9ERlQiLCJLQTVfY2xvc3VyZV9UQ190aW1lc19ERlRfZXFfMTAwMFZTIiwiS0E2X3ByYWN0aWNhbF9sb3NzX2RlZmluaXRpb24iLCJLQTdfYXJlYWxfbWFzc19kZWZpbml0aW9uIiwiS0E4X2ludGVuc2l2ZV9zY2FsZV9pbnZhcmlhbmNlIiwiS0E5X2hvc3RpbGVfbnVsbF96ZXJvX2RmdF9hbmRfemVyb19zb2xpZHNfZmFpbF9jbG9zZWQiXSwiY292ZXJhZ2Vfc3ByZWFkaW5nX3YxX3Njb3BlX2Rpc2Nsb3Nlc19wdmNfY3B2Y19ib3VuZGFyeSI6ZmFsc2UsImRhdGUiOiIyMDI2LTA4LTE1IiwiZGlyZWN0aXZlX29ibGlnYXRpb24iOm51bGwsImRpcmVjdGl2ZV9wYXRoIjoibm9uZSIsImRpcmVjdGl2ZV9zaGEyNTYiOiIiLCJmbGlwc19zY2llbnRpZmljX3JlYWRpbmVzcyI6ZmFsc2UsImdlbmVyYXRlZF9vbl9ob3N0IjoieGJhYmUyIiwibW9kaWZpZXNfZXhpc3RpbmdfcmVjZWlwdHMiOmZhbHNlLCJtb2RpZmllc19tYW5pZmVzdCI6ZmFsc2UsIm1vZHVsZSI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYyIsIm9iamVjdGl2ZSI6IlJPVEFUSU9OLW1vZGUgZmFsc2lmaWNhdGlvbjogaWRlbnRpZnkgdGhlIHN0cm9uZ2VzdCB1bi1hdHRhY2tlZCBzdGFuZGluZyBjbGFpbSBpbiBhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMgYW5kIGF0dGFjayBpdC4gU2VsZWN0ZWQgY292ZXJhZ2Utc3ByZWFkaW5nLXYxIChDT1ZFUkFHRV9TUFJFQURJTkdfRU5HSU5FX1JFQURZLCBzaWduZWQgMjAyNi0wNy0yOSwgbmV2ZXIgYXR0YWNrZWQgaW4gdGhlIGxlZGdlcikgYW5kIGNvbXBvc2VkIGl0IGFnYWluc3QgaXRzIG93biBzaWJsaW5nIHJlY2VpcHQgcmVkdWNlZC1wdmMtcG9yb3NpdHktdjEgKHNpZ25lZCB0d28gZGF5cyBsYXRlciksIHdoaWNoIGhhZCBhbHJlYWR5IGZvdW5kIC0tIGJ1dCBuZXZlciBwcm9wYWdhdGVkIGJhY2sgYXMgYSByZXBhaXIgLS0gdGhhdCB0aGUgY292ZXJhZ2UgZW5naW5lJ3Mgdm9pZC1mcmVlIFdGVC9ERlQgYXJpdGhtZXRpYyBtaXMtcmVhZHMgZmlsbSBidWlsZCBieSBleGFjdGx5IExBTUJEQT1QVkMvQ1BWQyBmb3IgYW55IGluLWRvbWFpbiBwb3JvdXMgKFBWQz49Q1BWQykgbWFyaW5lIGFudGktY29ycm9zaW9uIHByaW1lci4iLCJvdmVyYWxsX3ZlcmRpY3RfcmVhc29uaW5nIjoiY292ZXJhZ2Utc3ByZWFkaW5nLXYxJ3MgV0ZUL1RDIGVuZ2luZSAoS0E0IGNsb3N1cmU6IFdGVCpWU19mcmFjPT1ERlQgZXhhY3RseSkgYXNzdW1lcyB2b2lkLWZyZWUgY2xvc2UgcGFja2luZyB3aXRoIHplcm8gUFZDL0NQVkMgYXdhcmVuZXNzIC0tIGNvbmZpcm1lZCBieSBkaXJlY3QgaW5zcGVjdGlvbjogbm9uZSBvZiBpdHMgOSBrbm93bi1hbnN3ZXItYmF0dGVyeSBjYXNlcyBhbmQgbm8gZmllbGQgaW4gYXBwbGllZF9zcGVjL2RvZXNfbm90X2Nsb3NlIHJlZmVyZW5jZSBQVkMsIENQVkMsIG9yIHBvcm9zaXR5LiBUaGUgbW9kdWxlJ3MgT1dOIHNpYmxpbmcgcmVjZWlwdCByZWR1Y2VkLXB2Yy1wb3Jvc2l0eS12MSAoc2lnbmVkIHR3byBkYXlzIGxhdGVyKSBhbHJlYWR5IGVzdGFibGlzaGVkIHRoYXQgYWJvdmUgQ1BWQyBhIHJlYWwgZHJ5IGZpbG0ncyB2b2x1bWUgaXMgYW1wbGlmaWVkIGJ5IExBTUJEQT1QVkMvQ1BWQywgYW5kIG5hbWVkIGV4YWN0bHkgdGhpcyBpcm9uLW94aWRlLXJlZC1wcmltZXItYXQtUFZDLTAuNTAgY2FzZSBhcyBpdHMgd29ya2VkIGluLWRvbWFpbiBleGFtcGxlIC0tIGJ1dCB0aGF0IGZpbmRpbmcgd2FzIG5ldmVyIHByb3BhZ2F0ZWQgYmFjayBpbnRvIGNvdmVyYWdlLXNwcmVhZGluZy12MSBhcyBhIHJlcGFpciwgc3VwZXJzZXNzaW9uLCBvciBkaXNjbG9zZWQgc2NvcGUgY2F2ZWF0LiBBcHBseWluZyBjb3ZlcmFnZS1zcHJlYWRpbmctdjEncyBvd24gc2lnbmVkIFdGVCBwcmVzY3JpcHRpb24gKDE5MC4zMCB1bSwgdW5jaGFuZ2VkKSB0byB0aGlzIGluLWRvbWFpbiBwb3JvdXMgcHJpbWVyIGF0IGl0cyBvd24gZGVjbGFyZWQgMTI3IHVtIERGVCB0YXJnZXQgZGVsaXZlcnMgYW4gYWN0dWFsIGZpbG0gYnVpbGQgb2YgMTUxLjggdW0sIGEgMTkuNSUgb3ZlcnNob290IC0tIHJvdWdobHkgMjl4IHRoZSByZWNlaXB0J3Mgb3duIGF0X25vbWluYWxfZGZ0IGNhbGlicmF0ZWQgOTUlIGludGVydmFsIGhhbGYtd2lkdGggKDAuNjclIHJlbGF0aXZlKSBhbmQgYSB3aG9sbHkgdW5tb2RlbGVkIHN5c3RlbWF0aWMgZWZmZWN0IGV2ZW4gYWdhaW5zdCB0aGUgd2lkZXIgYXMtYXBwbGllZCBpbnRlcnZhbC4gVGhlIGJlbG93LUNQVkMgY29udHJvbCBjYXNlIHNob3dzIHplcm8gZGl2ZXJnZW5jZSAoTEFNQkRBPTEgZXhhY3RseSksIGNvbmZpcm1pbmcgdGhlIGJpYXMgaXMgdGhlIENQVkMvcG9yb3NpdHkgZWZmZWN0IHNwZWNpZmljYWxseSwgbm90IGFuIGFydGlmYWN0IG9mIHRoaXMgcmVpbXBsZW1lbnRhdGlvbi4gVGhlIGNsYWltICdDT1ZFUkFHRV9TUFJFQURJTkdfRU5HSU5FX1JFQURZJyBhcyBjdXJyZW50bHkgc2lnbmVkIG92ZXJjbGFpbXM6IGl0IGlzIFJFQURZIG9ubHkgZm9yIHRoZSAodW5kaXNjbG9zZWQpIGJlbG93LUNQVkMgc3Vic2V0IG9mIHRoZSBtb2R1bGUncyBvd24gZGVjbGFyZWQgYXBwbGljYWJpbGl0eSBkb21haW4uIiwicG9zaXRpdmVfY29udHJvbCI6eyJkZXRlY3RlZCI6dHJ1ZSwiZXZpZGVuY2UiOnsiY29udHJvbF9kaXZlcmdlbmNlX3BjdCI6MC4wLCJkZnRfb3ZlcnNob290X3BjdCI6MTkuNTMxNH0sImhvd19wbGFudGVkIjoibi9hIiwicGxhbnRlZF9kZWZlY3QiOiJub25lIG5lZWRlZCAtLSB0aGlzIGlzIGEgUkVGVVRFRCB2ZXJkaWN0IHdpdGggc2VsZi1ldmlkZW5jaW5nIGNvbXBvc2l0aW9uIG9mIHR3byBhbHJlYWR5LXNpZ25lZCBpbi10cmVlIHJlY2VpcHRzOyBhIGJlbG93LUNQVkMgY29udHJvbCBjYXNlIGlzIGluY2x1ZGVkIGFueXdheSBmb3Igcmlnb3IifSwicHJpb3JfZmlyZXNfb25fdGhpc19tb2R1bGUiOnsiQ0YtQVJJVEhfMjAyNi0wOC0xMCI6ImNhbmRpZGF0ZSBCT00gVk9DL3ZvbHVtZS1zb2xpZHMgcmUtZGVyaXZhdGlvbiAtLSBTVVJWSVZFRCAoc2VsZi1yZWZlcmVudGlhbCBmaXh0dXJlKSIsIlQtMDVfMjAyNi0wOC0wNSI6IkVxdWl2YWxlbnRCYWxhbmNlVjEgaG9zdC1mYWN0IGF1dGhvcml0eSBieXBhc3MgLS0gUkVGVVRFRCAodW5yZWxhdGVkIGFyaXRobWV0aWMgc3VyZmFjZSkiLCJXLVQtQVJJVEhfMjAyNi0wOC0xMyI6ImRpbWVuc2lvbmVkIFZPQyB2cyBFUEEgTWV0aG9kIDI0IC0tIFJFRlVURUQgKHdhdGVyL2V4ZW1wdC1zb2x2ZW50IGV4Y2x1c2lvbik7IGl0cyBSOCBmb2xsb3d1cCBmbGFnZ2VkIGJ1dCBkaWQgTk9UIHRlc3QgdGhhdCB0aGUgbW9kdWxlJ3Mgc3ltbWV0cmljIEdVTS9NQyBpbnRlcnZhbHMgaGF2ZSBubyBDUFZDL3Bvcm9zaXR5IGF3YXJlbmVzcyIsImdhcF90aGlzX2ZpcmVfY2xvc2VzIjoibm8gcHJpb3IgZmlyZSBjb21wb3NlZCBjb3ZlcmFnZS1zcHJlYWRpbmctdjEgd2l0aCBpdHMgb3duIHNpYmxpbmcgcmVkdWNlZC1wdmMtcG9yb3NpdHktdjEgZmluZGluZywgbm9yIHRvdWNoZWQgdGhlIFdGVC9UQy9jb3ZlcmFnZSBhcml0aG1ldGljIHN1cmZhY2UgYXQgYWxsIn0sInByb21vdGVzX2F1dGhvcml0eSI6ZmFsc2UsInByb3Bvc2VkX2ZvbGxvd3VwcyI6W3siZmluZGluZyI6ImNvdmVyYWdlLXNwcmVhZGluZy12MSdzIFdGVC9UQy9QQy9hcmVhbC1tYXNzIGZvcm11bGFzIGhhdmUgbm8gUFZDL0NQVkMgdGVybSBhbmQgc2lsZW50bHkgbWlzLXByZWRpY3QgZmlsbSBidWlsZCBieSBleGFjdGx5IExBTUJEQSBmb3IgYW55IHBvcm91cyAoUFZDPj1DUFZDKSBpbi1kb21haW4gZm9ybXVsYXRpb24uIiwicHJvcG9zZWRfcmVwYWlyX2NyaXRlcmlvbiI6ImFkZCBhbiBleHBsaWNpdCBQVkMvQ1BWQy1hd2FyZSBicmFuY2ggdG8gdGhlIGNvdmVyYWdlIGVuZ2luZSAobXVsdGlwbHkgdm9pZC1mcmVlIERGVCBieSBMQU1CREEgd2hlbiBQVkM+PUNQVkMsIG1hdGNoaW5nIHJlZHVjZWQtcHZjLXBvcm9zaXR5LXYxJ3MgYWxyZWFkeS1zaWduZWQgY2xvc2VkIGZvcm0pLCBhZGQgYSBQVkM+PUNQVkMga25vd24tYW5zd2VyIGNhc2UgdG8gdGhlIGJhdHRlcnkgc28gdGhlIGdhcCBjYW5ub3Qgc2lsZW50bHkgcmVncmVzcywgYW5kIGVpdGhlciBkaXNjbG9zZSB0aGUgYmVsb3ctQ1BWQyByZXN0cmljdGlvbiBleHBsaWNpdGx5IGluIGRvZXNfbm90X2Nsb3NlIG9yIGNsb3NlIHRoZSBnYXAgYmVmb3JlIHRoZSByZWNlaXB0IGlzIGNpdGVkIGFzIGNvdmVyaW5nIHBpZ21lbnRlZCBhbnRpLWNvcnJvc2lvbiBwcmltZXJzLiJ9XSwicmVwYWlyX2FydGlmYWN0cyI6eyJhdWRpdF9zY3JpcHRfcGF0aCI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYy9ldmlkZW5jZS9waGFzZTAvcmVwYWlycy9YLUNPVi1DUFZDL3dvcmsvY292X2NwdmNfY3Jvc3NjaGVjay5weSIsImF1ZGl0X3NjcmlwdF9zaGEyNTYiOiI1OTVlODQ3MWJhOTIxYzM1MThlNTQyMDk1MzM5MWY5ODg1YTdlNTQ2OWEyMmEzNjQ5ZmYwMTMyOTU5ZTI0ODliIiwiZGVwZW5kZW5jeV9yZWFkX29ubHlfc291cmNlcyI6WyJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvYXVkaXQvY292ZXJhZ2Utc3ByZWFkaW5nLXYxL2RpYWdub3N0aWMuY2Fub25pY2FsLmpzb24gKHVubW9kaWZpZWQsIGNpdGVkIG9ubHkpIiwiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL2V2aWRlbmNlL2F1ZGl0L3JlZHVjZWQtcHZjLXBvcm9zaXR5LXYxL2RpYWdub3N0aWMuY2Fub25pY2FsLmpzb24gKHVubW9kaWZpZWQsIGNpdGVkIG9ubHkpIiwiYW1waG9yYS1pbmdyZWRpZW50LWxpYnJhcnkvZXZpZGVuY2UvYXVkaXQvb2lsLWFic29ycHRpb24tY3B2Yy12MS9kaWFnbm9zdGljLmNhbm9uaWNhbC5qc29uICh1bm1vZGlmaWVkLCBjaXRlZCBvbmx5KSIsImFtcGhvcmEtaW5ncmVkaWVudC1saWJyYXJ5L3JlZmVyZW5jZS9tdnAyMC9kYXRhL2ZhY3RzLmpzb24gKHVubW9kaWZpZWQsIGNpdGVkIG9ubHkpIl0sImRpYWdub3N0aWNfY2Fub25pY2FsX3BhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvWC1DT1YtQ1BWQy93b3JrL2RpYWdub3N0aWMuY2Fub25pY2FsLmpzb24iLCJkaWFnbm9zdGljX2Nhbm9uaWNhbF9zaGEyNTYiOiI4ZDcwYTBkMDIzOGY5MDQ2MjE4Njc5MDZkNjg4MTY2MzEzYzE2ZDA1MTZiNjViOTBmYzYyOGUzNmMzMDc5MjAyIiwiZGlhZ25vc3RpY19ydW5CX3BhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvWC1DT1YtQ1BWQy93b3JrL2RpYWdub3N0aWMucnVuQi5qc29uIiwiZGlhZ25vc3RpY19ydW5CX3NoYTI1NiI6IjhkNzBhMGQwMjM4ZjkwNDYyMTg2NzkwNmQ2ODgxNjYzMTNjMTZkMDUxNmI2NWI5MGZjNjI4ZTM2YzMwNzkyMDIiLCJ0d29fcmVwbGF5X2J5dGVfaWRlbnRpY2FsIjp0cnVlfSwicmVwYWlyX2l0ZW0iOiJYLUNPVi1DUFZDIiwicmVwcm9kdWNlc19jb3ZlcmFnZV9zcHJlYWRpbmdfdjFfcG9pbnRfZXN0aW1hdGVzIjp7InRoZW9yZXRpY2FsX2NvdmVyYWdlX20yX3Blcl9MIjp7Im1hdGNoIjp0cnVlLCJyZWltcGwiOjUuMjU0ODgxNzAxOSwic2lnbmVkIjo1LjI1NDg4MTcwMTg3MDcwMX0sInZvbHVtZV9zb2xpZHNfZnJhYyI6eyJtYXRjaCI6dHJ1ZSwicmVpbXBsIjowLjY2NzM2OTk3NjEsInNpZ25lZCI6MC42NjczNjk5NzYxMzc1NzkxfSwid2V0X2ZpbG1fdGhpY2tuZXNzX3VtIjp7Im1hdGNoIjp0cnVlLCJyZWltcGwiOjE5MC4yOTkyNDExMTIxLCJzaWduZWQiOjE5MC4yOTkyNDExMTIxMjc2fX0sInJlcHJvZHVjZXNfcmVkdWNlZF9wdmNfcG9yb3NpdHlfdjFfY2FzZV9zdHVkeSI6eyJiaW5kZXJfaWRlYWxfbWl4X2RlbnNpdHlfZ19jbTMiOnsibWF0Y2giOnRydWUsInJlaW1wbCI6MS4wODU4ODksInNpZ25lZCI6MS4wODU4ODl9LCJjcHZjIjp7Im1hdGNoIjp0cnVlLCJyZWltcGwiOjAuNDE4Mywic2lnbmVkIjowLjQxODN9LCJsYW1iZGFfcHZjMDUwIjp7Im1hdGNoIjp0cnVlLCJyZWltcGwiOjEuMTk1MzE0LCJzaWduZWQiOjEuMTk1MzE0fX0sInNjaGVtYSI6ImFtcGhvcmEucGhhc2UwLXJlcGFpci5kb25lLXJlY2VpcHQudjEiLCJzaWJsaW5nX3JlY2VpcHRfdXNlZF9hc19iYXNlbGluZSI6eyJmaW5kaW5nX3JldXNlZCI6IkFib3ZlIENQVkMsIHJlYWwgZHJ5LWZpbG0gdm9sdW1lIGlzIGFtcGxpZmllZCBieSBMQU1CREE9UFZDL0NQVkMgdnMgdm9pZC1mcmVlIHBhY2tpbmcgKEFzYmVjayAmIFZhbiBMb28gMTk0OSBET0kgMTAuMTAyMS9pZTUwNDc1YTA0MjsgQmllcndhZ2VuICYgSGF5IDE5NzUgRE9JIDEwLjEwMTYvMDMwMC05NDQwKDc1KTgwMDQ3LTQpOyBjYXNlIHN0dWR5IG5hbWVzIGlyb24tb3hpZGUtcmVkIGFudGljb3Jyb3NpdmUgcHJpbWVyIGF0IFBWQyAwLjUwIChDUFZDIDAuNDE4MykgYXMgdGhlIHdvcmtlZCBpbi1kb21haW4gZXhhbXBsZS4iLCJwYXRoIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL2V2aWRlbmNlL2F1ZGl0L3JlZHVjZWQtcHZjLXBvcm9zaXR5LXYxL3JlZHVjZWQtcHZjLXBvcm9zaXR5LXJlY2VpcHQudjEuZHNzZS5qc29uIiwic2lnbmVkX2RhdGUiOiIyMDI2LTA3LTMxIiwidHdvX3JlcGxheV9zaGEyNTYiOiJhOThjNzI4MS4uLiJ9LCJzaWduaW5nX2tleSI6eyJkZXJpdmVzX3Bpbm5lZF90cnVzdF9zdG9yZV9rZXlfaWQiOnRydWUsImtleV9pZCI6InBoYXNlMC1ldmFsdWF0b3ItM2VmNmIzNWNkYmJmZWE3NGE5NmE1YzliOThhNTE1ZDU3MTU4YTA5ZWNhZmYxMGFjZmExZjE1OTkwYmUwMDE3OCIsInB1YmxpY19rZXlfaGV4IjoiNmNmMDdhYmYxYTU1YWRhYWMxM2U3OGFiYzMxYzUzMWQwM2Q4ZjBkNDIzMjM0NjM0NGE3MzY0MThjN2I0NTY2NCIsInJvbGUiOiJQSEFTRTBfRVZBTFVBVE9SIn0sInRydXN0X2FuY2hvcmVkX2luX3BoYXNlMF9zdG9yZSI6dHJ1ZSwidHdvX3JlcGxheV9zaGEyNTYiOiI1NTg0MTk3MjI2OTAwMzhiZDNhYmMyMjUxZTVlZTQzNjc3NDk5ODFlNjNhMTIwMjM4MDBmYjU3NjcxYjk4Yjc4IiwidHdvX3JlcGxheV9zaGEyNTZfZ2F0ZSI6IlBBU1MiLCJ2ZXJkaWN0IjoiQ0xBSU1fUkVGVVRFRCJ9",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "+4NyHM56hQUTmwbp0/VIpVjnPKwlblpGrbp3UKt9eDCvM2BlnAas/r3DIIK0gcAmmikO/Ub0/z6ygSH0z38ZDg=="
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "eval_derives_pinned_trust_store_key_id": true,
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "receipts": [
+    {
+      "path": "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "payload_canonical_sha256": "087c1b452110fecd89f22bd2f7c817ce5feb19ed4d50cd2cf5dde26671170511",
+      "receipt_sha256": "07e00ec5f7bd9a172ac4da3d26e239d8699045d04a3eff4806434c779b022fbe"
+    },
+    {
+      "path": "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "payload_canonical_sha256": "c7a50c4a3233dcc92bd762d4c3b11747022ac3168bfce71a64e34dcc2f38a90e",
+      "receipt_sha256": "bdd71b4044c6f4975e8fa6c9754251567c9f394264a24a1880d40065186737f3"
+    },
+    {
+      "path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+      "payload_canonical_sha256": "dcf632bf30bc420ea6460a2253491911f79de36d5b1da68b5954f980206fa2a8",
+      "receipt_sha256": "2edb3eab0bdec5447eed48753c4f202e7b3c8492e218172bd1aec7bce53eb1a8"
+    }
+  ],
+  "repair_item": "R-N02",
+  "repair_mode": "interactive-2026-08-03"
+}

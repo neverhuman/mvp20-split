@@ -1,0 +1,62 @@
+{
+  "asset": {
+    "current_license": "USBR_RIGHTS_REVIEW_REQUIRED",
+    "current_rights_status": "ACQUIRED_UNTOUCHED_QUARANTINED_PENDING_RIGHTS_REVIEW",
+    "eligible_for_derivatives": false,
+    "raw_path": "amphora-barrier-corrosion-score/reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx",
+    "raw_sha256": "9e34fccc83fa7b9d7f3cb21c0076ff34f30266cae5d11df02d6d00c72e9d44e1",
+    "source_id": "usbr-st-19168",
+    "source_url": "https://data.usbr.gov/catalog/4640/item/11562"
+  },
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "C2",
+  "claim_under_attack": {
+    "claim_text": "strict_validation_bar '>=3 strictly in-class open table-read epoxy-amine ordered series' is still not met (2 of 3: asperti2024, zhu2022) and cannot be met without new data.",
+    "receipt_path": "amphora-barrier-corrosion-score/reference/mvp20/data/corrosion_series.json",
+    "status_after_this_package": "NOT refuted, NOT closed. This package only files the human-actionable access request; it does not add a 3rd series, since the asset remains rights-quarantined and unopened.",
+    "strict_literature_count_at_time_of_request": 2,
+    "strict_literature_series_at_time_of_request": [
+      "asperti2024",
+      "zhu2022"
+    ]
+  },
+  "human_action_required": "File a USBR RISE data-use confirmation request for catalog item 4640/item 11562, or equivalent written confirmation of 17 U.S.C. 105 public-domain status and derivative-reuse permission. Full instructions in the RIGHTS-REVIEW-REQUEST.md referenced above.",
+  "modifies_existing_manifest_or_mission": false,
+  "modifies_source_landscape": false,
+  "module_id": "amphora-barrier-corrosion-score",
+  "opened_or_parsed_quarantined_asset": false,
+  "package": {
+    "data_acquisition_queue_entry_module": "amphora-barrier-corrosion-score",
+    "data_acquisition_queue_entry_sha256": "a52d036296f3d78dcfb033ec6b7df3aaa454c507fe0b31feac5fbae8eaaedcda",
+    "data_acquisition_queue_file_xbabe1": "/home/ubuntu/amphora-cron/data-acquisition-queue.jsonl",
+    "referenced_existing_public_corrosion_benchmark_queue_entries_sha256": [
+      "c8a3902f7855e8c27c4e6698c40dda1d163c4a6c7d6c3dae1db83c6699724aa2",
+      "92b10b4a5c0f4d6669ac5cd7bef976374d7cc848ba49be0d753d665542c10cbc"
+    ],
+    "rights_basis_precedent": "US Federal Government work, public domain, 17 U.S.C. 105 - established for USBR RISE catalog item 8048 / project 21019 (same publisher, same data.usbr.gov RISE catalog); ST-19168 (catalog item 4640/item 11562) is expected to share this basis but it has not yet been confirmed for this specific catalog item.",
+    "rights_review_request_md_path": "amphora-barrier-corrosion-score/evidence/audit/st-19168-rights-review-v1/RIGHTS-REVIEW-REQUEST.md",
+    "rights_review_request_md_sha256": "1f97c6ab1561c063bf5d03ead5cd9c0050d5f1fbf421a21c4486057a348d6289"
+  },
+  "promotes_nothing": true,
+  "receipt_id": "rights-review-request-usbr-st-19168-v1",
+  "request_status": "PENDING_HUMAN_RIGHTS_REVIEW",
+  "schema": "amphora.rights-review-request-receipt.v1",
+  "signature": {
+    "payload": "ewogICJhc3NldCI6IHsKICAgICJjdXJyZW50X2xpY2Vuc2UiOiAiVVNCUl9SSUdIVFNfUkVWSUVXX1JFUVVJUkVEIiwKICAgICJjdXJyZW50X3JpZ2h0c19zdGF0dXMiOiAiQUNRVUlSRURfVU5UT1VDSEVEX1FVQVJBTlRJTkVEX1BFTkRJTkdfUklHSFRTX1JFVklFVyIsCiAgICAiZWxpZ2libGVfZm9yX2Rlcml2YXRpdmVzIjogZmFsc2UsCiAgICAicmF3X3BhdGgiOiAiYW1waG9yYS1iYXJyaWVyLWNvcnJvc2lvbi1zY29yZS9yZWZlcmVuY2UvZWlzL3N0LTE5MTY4L3Jhdy8xOTE2OF9pbmhpYml0aXZlX2NvYXRpbmdfc3lzdGVtX2RhdGEueGxzeCIsCiAgICAicmF3X3NoYTI1NiI6ICI5ZTM0ZmNjYzgzZmE3YjlkN2YzY2IyMWMwMDc2ZmYzNGYzMDI2NmNhZTVkMTFkZjAyZDZkMDBjNzJlOWQ0NGUxIiwKICAgICJzb3VyY2VfaWQiOiAidXNici1zdC0xOTE2OCIsCiAgICAic291cmNlX3VybCI6ICJodHRwczovL2RhdGEudXNici5nb3YvY2F0YWxvZy80NjQwL2l0ZW0vMTE1NjIiCiAgfSwKICAiYXV0aG9yaXR5IjogIkFVRElUX09OTFkiLAogICJjYW1wYWlnbl9pdGVtX2lkIjogIkMyIiwKICAiY2xhaW1fdW5kZXJfYXR0YWNrIjogewogICAgImNsYWltX3RleHQiOiAic3RyaWN0X3ZhbGlkYXRpb25fYmFyICc+PTMgc3RyaWN0bHkgaW4tY2xhc3Mgb3BlbiB0YWJsZS1yZWFkIGVwb3h5LWFtaW5lIG9yZGVyZWQgc2VyaWVzJyBpcyBzdGlsbCBub3QgbWV0ICgyIG9mIDM6IGFzcGVydGkyMDI0LCB6aHUyMDIyKSBhbmQgY2Fubm90IGJlIG1ldCB3aXRob3V0IG5ldyBkYXRhLiIsCiAgICAicmVjZWlwdF9wYXRoIjogImFtcGhvcmEtYmFycmllci1jb3Jyb3Npb24tc2NvcmUvcmVmZXJlbmNlL212cDIwL2RhdGEvY29ycm9zaW9uX3Nlcmllcy5qc29uIiwKICAgICJzdGF0dXNfYWZ0ZXJfdGhpc19wYWNrYWdlIjogIk5PVCByZWZ1dGVkLCBOT1QgY2xvc2VkLiBUaGlzIHBhY2thZ2Ugb25seSBmaWxlcyB0aGUgaHVtYW4tYWN0aW9uYWJsZSBhY2Nlc3MgcmVxdWVzdDsgaXQgZG9lcyBub3QgYWRkIGEgM3JkIHNlcmllcywgc2luY2UgdGhlIGFzc2V0IHJlbWFpbnMgcmlnaHRzLXF1YXJhbnRpbmVkIGFuZCB1bm9wZW5lZC4iLAogICAgInN0cmljdF9saXRlcmF0dXJlX2NvdW50X2F0X3RpbWVfb2ZfcmVxdWVzdCI6IDIsCiAgICAic3RyaWN0X2xpdGVyYXR1cmVfc2VyaWVzX2F0X3RpbWVfb2ZfcmVxdWVzdCI6IFsKICAgICAgImFzcGVydGkyMDI0IiwKICAgICAgInpodTIwMjIiCiAgICBdCiAgfSwKICAiaHVtYW5fYWN0aW9uX3JlcXVpcmVkIjogIkZpbGUgYSBVU0JSIFJJU0UgZGF0YS11c2UgY29uZmlybWF0aW9uIHJlcXVlc3QgZm9yIGNhdGFsb2cgaXRlbSA0NjQwL2l0ZW0gMTE1NjIsIG9yIGVxdWl2YWxlbnQgd3JpdHRlbiBjb25maXJtYXRpb24gb2YgMTcgVS5TLkMuIDEwNSBwdWJsaWMtZG9tYWluIHN0YXR1cyBhbmQgZGVyaXZhdGl2ZS1yZXVzZSBwZXJtaXNzaW9uLiBGdWxsIGluc3RydWN0aW9ucyBpbiB0aGUgUklHSFRTLVJFVklFVy1SRVFVRVNULm1kIHJlZmVyZW5jZWQgYWJvdmUuIiwKICAibW9kaWZpZXNfZXhpc3RpbmdfbWFuaWZlc3Rfb3JfbWlzc2lvbiI6IGZhbHNlLAogICJtb2RpZmllc19zb3VyY2VfbGFuZHNjYXBlIjogZmFsc2UsCiAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLWJhcnJpZXItY29ycm9zaW9uLXNjb3JlIiwKICAib3BlbmVkX29yX3BhcnNlZF9xdWFyYW50aW5lZF9hc3NldCI6IGZhbHNlLAogICJwYWNrYWdlIjogewogICAgImRhdGFfYWNxdWlzaXRpb25fcXVldWVfZW50cnlfbW9kdWxlIjogImFtcGhvcmEtYmFycmllci1jb3Jyb3Npb24tc2NvcmUiLAogICAgImRhdGFfYWNxdWlzaXRpb25fcXVldWVfZW50cnlfc2hhMjU2IjogImE1MmQwMzYyOTZmM2Q3OGRjZmIwMzNlYzZiN2RmM2FhYTQ1NGM1MDdmZTBiMzFmZWFjNWZiYWU4ZWFhZWRjZGEiLAogICAgImRhdGFfYWNxdWlzaXRpb25fcXVldWVfZmlsZV94YmFiZTEiOiAiL2hvbWUvdWJ1bnR1L2FtcGhvcmEtY3Jvbi9kYXRhLWFjcXVpc2l0aW9uLXF1ZXVlLmpzb25sIiwKICAgICJyZWZlcmVuY2VkX2V4aXN0aW5nX3B1YmxpY19jb3Jyb3Npb25fYmVuY2htYXJrX3F1ZXVlX2VudHJpZXNfc2hhMjU2IjogWwogICAgICAiYzhhMzkwMmY3ODU1ZThjMjdjNGU2Njk4YzQwZGRhMWQxNjNjNGE2YzdkNmMzZGFlMWRiODNjNjY5OTcyNGFhMiIsCiAgICAgICI5MmIxMGI0YTVjMGY0ZDY2NjlhYzVjZDdiZWY5NzYzNzRkN2NjODQ4YmE0OWJlMGQ3NTNkNjY1NTQyYzEwY2JjIgogICAgXSwKICAgICJyaWdodHNfYmFzaXNfcHJlY2VkZW50IjogIlVTIEZlZGVyYWwgR292ZXJubWVudCB3b3JrLCBwdWJsaWMgZG9tYWluLCAxNyBVLlMuQy4gMTA1IC0gZXN0YWJsaXNoZWQgZm9yIFVTQlIgUklTRSBjYXRhbG9nIGl0ZW0gODA0OCAvIHByb2plY3QgMjEwMTkgKHNhbWUgcHVibGlzaGVyLCBzYW1lIGRhdGEudXNici5nb3YgUklTRSBjYXRhbG9nKTsgU1QtMTkxNjggKGNhdGFsb2cgaXRlbSA0NjQwL2l0ZW0gMTE1NjIpIGlzIGV4cGVjdGVkIHRvIHNoYXJlIHRoaXMgYmFzaXMgYnV0IGl0IGhhcyBub3QgeWV0IGJlZW4gY29uZmlybWVkIGZvciB0aGlzIHNwZWNpZmljIGNhdGFsb2cgaXRlbS4iLAogICAgInJpZ2h0c19yZXZpZXdfcmVxdWVzdF9tZF9wYXRoIjogImFtcGhvcmEtYmFycmllci1jb3Jyb3Npb24tc2NvcmUvZXZpZGVuY2UvYXVkaXQvc3QtMTkxNjgtcmlnaHRzLXJldmlldy12MS9SSUdIVFMtUkVWSUVXLVJFUVVFU1QubWQiLAogICAgInJpZ2h0c19yZXZpZXdfcmVxdWVzdF9tZF9zaGEyNTYiOiAiMWY5N2M2YWIxNTYxYzA2M2JmNWQwM2VhZDVjZDljMDA1MGQ1ZjFmYmY0MjFhMjFjNDQ4NjA1N2EzNDhkNjI4OSIKICB9LAogICJwcm9tb3Rlc19ub3RoaW5nIjogdHJ1ZSwKICAicmVjZWlwdF9pZCI6ICJyaWdodHMtcmV2aWV3LXJlcXVlc3QtdXNici1zdC0xOTE2OC12MSIsCiAgInJlcXVlc3Rfc3RhdHVzIjogIlBFTkRJTkdfSFVNQU5fUklHSFRTX1JFVklFVyIsCiAgInNjaGVtYSI6ICJhbXBob3JhLnJpZ2h0cy1yZXZpZXctcmVxdWVzdC1yZWNlaXB0LnYxIiwKICAic2lnbmluZ19rZXkiOiB7CiAgICAiYXV0aG9yaXR5IjogIkxPQ0FMX0RFVkVMT1BNRU5UX0FVRElUX09OTFkiLAogICAgImtleV9pZCI6ICJsb2NhbC05MDI4NzczZjQ5NTkxMTkzIiwKICAgICJub3RlIjogIk5PVCBpbiBjb25maWcvcGhhc2UwLXRydXN0LXN0b3JlLnYxLmpzb247IGF1ZGl0IGV2aWRlbmNlIG9ubHkuIFRoaXMgc2lnbmF0dXJlIGF0dGVzdHMgdGhlIHBhY2thZ2Ugd2FzIGFzc2VtYmxlZCBhcyBkZXNjcmliZWQ7IGl0IGlzIG5vdCBhIHJpZ2h0cyBkZXRlcm1pbmF0aW9uIGFuZCBncmFudHMgbm8gZGVyaXZhdGl2ZS11c2UgYXV0aG9yaXR5LiIsCiAgICAicHVibGljX2tleV9oZXgiOiAiNGI3MjJmNDUxNmUwMzVjZTNjYjk1Y2NlY2ZmZTQ2MzhhNjg3ZDkyNDFlNjk3MGY0YzFjZjVjMjg1YjJlZGY5MyIsCiAgICAidHJ1c3RfYW5jaG9yZWQiOiBmYWxzZQogIH0sCiAgIndoYXRfdW5sb2Nrc19pZl9yaWdodHNfZ3JhbnRlZCI6ICJBIHJpZ2h0cy1jbGVhcmVkLCB0YWJsZS1yZWFkIGV4dHJhY3Rpb24gb2YgU1QtMTkxNjggKDEwIGNvYXRpbmcgc3lzdGVtcykgaXMgdGhlIGNsb3Nlc3Qgb24tZGlzayBjYW5kaWRhdGUgdG8gY2xvc2UgdGhlIG1vZHVsZSdzIHN0cmljdF92YWxpZGF0aW9uX2JhciBnYXAgKDIvMyAtPiBwb3RlbnRpYWxseSA+PTMpLCBlbmFibGluZyB0aGUgbW9kdWxlJ3MgZmlyc3QgZGVmZW5zaWJsZSBjb2F0aW5nLWJhcnJpZXIgbGl0ZXJhdHVyZSB2YWxpZGF0aW9uIHBlciBjb3Jyb3Npb25fc2VyaWVzLmpzb24ncyBvd24gbGl0ZXJhdHVyZV9iYXJfc3RhdHVzIHByZWNvbmRpdGlvbi4iCn0=",
+    "payloadType": "application/vnd.amphora.rights-review-request-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "eaRZkjJ2KIJw0FcZrXU044x7h7xAyKhM+JsQYL5U6acPhUdav+CTqK08FntIMUDpCmQdAJkUCo2/RXtt59btDw=="
+      }
+    ]
+  },
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "note": "NOT in config/phase0-trust-store.v1.json; audit evidence only. This signature attests the package was assembled as described; it is not a rights determination and grants no derivative-use authority.",
+    "public_key_hex": "4b722f4516e035ce3cb95ccecffe4638a687d9241e6970f4c1cf5c285b2edf93",
+    "trust_anchored": false
+  },
+  "what_unlocks_if_rights_granted": "A rights-cleared, table-read extraction of ST-19168 (10 coating systems) is the closest on-disk candidate to close the module's strict_validation_bar gap (2/3 -> potentially >=3), enabling the module's first defensible coating-barrier literature validation per corrosion_series.json's own literature_bar_status precondition."
+}

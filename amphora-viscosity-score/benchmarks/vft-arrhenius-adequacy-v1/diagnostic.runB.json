@@ -1,0 +1,1428 @@
+{
+  "claim_locks": {
+    "audit_only_no_authority": true,
+    "does_not_modify_signed_kpi": true,
+    "formulation_blend_out_of_scope": true,
+    "no_manifest_mutation": true,
+    "no_promotion": true,
+    "phase_0_scope_pure_newtonian_solvents_only": true,
+    "pre_phase_0_research_only": true
+  },
+  "closes": [
+    "Establishes that the incumbent Arrhenius viscosity-temperature law is not under-fitting relative to the canonical 3-parameter VFT competitor over the 25-60 C coating window for pure Newtonian solvents."
+  ],
+  "does_not_close": [
+    "Does NOT address the circularity of per-solvent fitting: both laws still consume the target solvent's own viscosity. A structure-only (a-priori) prediction (e.g. Orrick-Erbar / Sastri-Rao group contribution) remains an open non-circular test requiring a rights-clean group-contribution table.",
+    "Does NOT extend beyond pure-solvent Arrhenius to formulation blends (Grunberg-Nissan), pigment crowding (Krieger-Dougherty), or Krebs KU + sag (Phase-1 wet-lab).",
+    "Does NOT edit the signed Arrhenius KPI or the 66-receipt master manifest; does NOT promote the module out of PRE_PHASE_0 (human dual-identity keys)."
+  ],
+  "gas_constant_j_mol_k": 8.31446261815324,
+  "held_out_summary": {
+    "pooled_loto_mape_arrhenius": 0.0083552117,
+    "pooled_loto_mape_vft": 0.0088999175,
+    "pooled_mape_delta_vft_minus_arrhenius": 0.0005447059,
+    "solvents_arrhenius_wins": 16,
+    "solvents_tie": 5,
+    "solvents_vft_wins": 4
+  },
+  "n_loto_folds_total": 100,
+  "n_solvents": 25,
+  "parsimony_summary": {
+    "n_solvents": 25,
+    "note": "BIC computed in ln(eta) residual space, n=4 points, Arrhenius k=2 vs VFT k=3.",
+    "solvents_bic_favours_arrhenius": 13
+  },
+  "per_solvent": [
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0152871842,
+          "arrhenius_pred_mpas": 0.87688676,
+          "held_out_c": 25.0,
+          "published_mpas": 0.8905,
+          "vft_ape": 0.0008252836,
+          "vft_pred_mpas": 0.88976508
+        },
+        {
+          "arrhenius_ape": 0.0035818547,
+          "arrhenius_pred_mpas": 0.80005545,
+          "held_out_c": 30.0,
+          "published_mpas": 0.7972,
+          "vft_ape": 0.0004368532,
+          "vft_pred_mpas": 0.79754826
+        },
+        {
+          "arrhenius_ape": 0.0131688826,
+          "arrhenius_pred_mpas": 0.66129533,
+          "held_out_c": 40.0,
+          "published_mpas": 0.6527,
+          "vft_ape": 0.000800049,
+          "vft_pred_mpas": 0.65217781
+        },
+        {
+          "arrhenius_ape": 0.034181076,
+          "arrhenius_pred_mpas": 0.45055453,
+          "held_out_c": 60.0,
+          "published_mpas": 0.4665,
+          "vft_ape": 0.0043033535,
+          "vft_pred_mpas": 0.46850751
+        }
+      ],
+      "fullfit_bic_arrhenius": -37.35079195,
+      "fullfit_bic_vft": -65.09857647,
+      "loto_arrhenius_mape": 0.0165547494,
+      "loto_vft_mape": 0.0015913848,
+      "loto_winner": "vft",
+      "smiles": "O",
+      "solvent_id": "water",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.8905,
+        0.7972,
+        0.6527,
+        0.4665
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0103918039,
+          "arrhenius_pred_mpas": 0.54965314,
+          "held_out_c": 25.0,
+          "published_mpas": 0.544,
+          "vft_ape": 0.0103918039,
+          "vft_pred_mpas": 0.54965314
+        },
+        {
+          "arrhenius_ape": 0.0014492848,
+          "arrhenius_pred_mpas": 0.50926086,
+          "held_out_c": 30.0,
+          "published_mpas": 0.51,
+          "vft_ape": 0.0014492848,
+          "vft_pred_mpas": 0.50926086
+        },
+        {
+          "arrhenius_ape": 0.0100038166,
+          "arrhenius_pred_mpas": 0.44450829,
+          "held_out_c": 40.0,
+          "published_mpas": 0.449,
+          "vft_ape": 0.0100038166,
+          "vft_pred_mpas": 0.44450829
+        },
+        {
+          "arrhenius_ape": 0.0261109829,
+          "arrhenius_pred_mpas": 0.35708662,
+          "held_out_c": 60.0,
+          "published_mpas": 0.348,
+          "vft_ape": 0.0261109829,
+          "vft_pred_mpas": 0.35708662
+        }
+      ],
+      "fullfit_bic_arrhenius": -39.88736793,
+      "fullfit_bic_vft": -38.50107357,
+      "loto_arrhenius_mape": 0.011988972,
+      "loto_vft_mape": 0.011988972,
+      "loto_winner": "tie",
+      "smiles": "CO",
+      "solvent_id": "methanol",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.544,
+        0.51,
+        0.449,
+        0.348
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0091687389,
+          "arrhenius_pred_mpas": 1.08384723,
+          "held_out_c": 25.0,
+          "published_mpas": 1.074,
+          "vft_ape": 0.0091687389,
+          "vft_pred_mpas": 1.08384723
+        },
+        {
+          "arrhenius_ape": 0.0017852572,
+          "arrhenius_pred_mpas": 0.98124509,
+          "held_out_c": 30.0,
+          "published_mpas": 0.983,
+          "vft_ape": 0.0017852572,
+          "vft_pred_mpas": 0.98124509
+        },
+        {
+          "arrhenius_ape": 0.0081626828,
+          "arrhenius_pred_mpas": 0.81925762,
+          "held_out_c": 40.0,
+          "published_mpas": 0.826,
+          "vft_ape": 0.0081626828,
+          "vft_pred_mpas": 0.81925762
+        },
+        {
+          "arrhenius_ape": 0.0216877683,
+          "arrhenius_pred_mpas": 0.60381747,
+          "held_out_c": 60.0,
+          "published_mpas": 0.591,
+          "vft_ape": 0.0216877683,
+          "vft_pred_mpas": 0.60381747
+        }
+      ],
+      "fullfit_bic_arrhenius": -41.28252576,
+      "fullfit_bic_vft": -39.8962314,
+      "loto_arrhenius_mape": 0.0102011118,
+      "loto_vft_mape": 0.0102011118,
+      "loto_winner": "tie",
+      "smiles": "CCO",
+      "solvent_id": "ethanol",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        1.074,
+        0.983,
+        0.826,
+        0.591
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0054152479,
+          "arrhenius_pred_mpas": 2.53022361,
+          "held_out_c": 25.0,
+          "published_mpas": 2.544,
+          "vft_ape": 0.0051120055,
+          "vft_pred_mpas": 2.55700494
+        },
+        {
+          "arrhenius_ape": 0.0011753861,
+          "arrhenius_pred_mpas": 2.25035186,
+          "held_out_c": 30.0,
+          "published_mpas": 2.253,
+          "vft_ape": 0.0027621639,
+          "vft_pred_mpas": 2.24677684
+        },
+        {
+          "arrhenius_ape": 0.0079141664,
+          "arrhenius_pred_mpas": 1.79610304,
+          "held_out_c": 40.0,
+          "published_mpas": 1.782,
+          "vft_ape": 0.0051003501,
+          "vft_pred_mpas": 1.79108882
+        },
+        {
+          "arrhenius_ape": 0.0183427087,
+          "arrhenius_pred_mpas": 1.1652272,
+          "held_out_c": 60.0,
+          "published_mpas": 1.187,
+          "vft_ape": 0.0183427087,
+          "vft_pred_mpas": 1.1652272
+        }
+      ],
+      "fullfit_bic_arrhenius": -42.53565716,
+      "fullfit_bic_vft": -50.41260914,
+      "loto_arrhenius_mape": 0.0082118773,
+      "loto_vft_mape": 0.007829307,
+      "loto_winner": "vft",
+      "smiles": "CCCCO",
+      "solvent_id": "n-butanol",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        2.544,
+        2.253,
+        1.782,
+        1.187
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0079709104,
+          "arrhenius_pred_mpas": 0.3084391,
+          "held_out_c": 25.0,
+          "published_mpas": 0.306,
+          "vft_ape": 0.0079709104,
+          "vft_pred_mpas": 0.3084391
+        },
+        {
+          "arrhenius_ape": 0.000885434,
+          "arrhenius_pred_mpas": 0.29274057,
+          "held_out_c": 30.0,
+          "published_mpas": 0.293,
+          "vft_ape": 0.000885434,
+          "vft_pred_mpas": 0.29274057
+        },
+        {
+          "arrhenius_ape": 0.0079952174,
+          "arrhenius_pred_mpas": 0.26684929,
+          "held_out_c": 40.0,
+          "published_mpas": 0.269,
+          "vft_ape": 0.0079952174,
+          "vft_pred_mpas": 0.26684929
+        },
+        {
+          "arrhenius_ape": 0.0205891976,
+          "arrhenius_pred_mpas": 0.23065316,
+          "held_out_c": 60.0,
+          "published_mpas": 0.226,
+          "vft_ape": 0.0205891976,
+          "vft_pred_mpas": 0.23065316
+        }
+      ],
+      "fullfit_bic_arrhenius": -41.79173158,
+      "fullfit_bic_vft": -40.40543721,
+      "loto_arrhenius_mape": 0.0093601899,
+      "loto_vft_mape": 0.0093601899,
+      "loto_winner": "tie",
+      "smiles": "CC(C)=O",
+      "solvent_id": "acetone",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.306,
+        0.293,
+        0.269,
+        0.226
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0002875324,
+          "arrhenius_pred_mpas": 0.39788556,
+          "held_out_c": 25.0,
+          "published_mpas": 0.398,
+          "vft_ape": 0.0002875324,
+          "vft_pred_mpas": 0.39788556
+        },
+        {
+          "arrhenius_ape": 0.0016284514,
+          "arrhenius_pred_mpas": 0.3766123,
+          "held_out_c": 30.0,
+          "published_mpas": 0.376,
+          "vft_ape": 0.0016284514,
+          "vft_pred_mpas": 0.3766123
+        },
+        {
+          "arrhenius_ape": 0.0018494079,
+          "arrhenius_pred_mpas": 0.33837305,
+          "held_out_c": 40.0,
+          "published_mpas": 0.339,
+          "vft_ape": 0.0035478219,
+          "vft_pred_mpas": 0.33779729
+        },
+        {
+          "arrhenius_ape": 0.0033620712,
+          "arrhenius_pred_mpas": 0.27993802,
+          "held_out_c": 60.0,
+          "published_mpas": 0.279,
+          "vft_ape": 0.0208098945,
+          "vft_pred_mpas": 0.28480596
+        }
+      ],
+      "fullfit_bic_arrhenius": -53.33113606,
+      "fullfit_bic_vft": -51.9448417,
+      "loto_arrhenius_mape": 0.0017818657,
+      "loto_vft_mape": 0.006568425,
+      "loto_winner": "arrhenius",
+      "smiles": "CCC(C)=O",
+      "solvent_id": "methyl-ethyl-ketone",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.398,
+        0.376,
+        0.339,
+        0.279
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0017584871,
+          "arrhenius_pred_mpas": 0.55901525,
+          "held_out_c": 25.0,
+          "published_mpas": 0.56,
+          "vft_ape": 0.0017584871,
+          "vft_pred_mpas": 0.55901525
+        },
+        {
+          "arrhenius_ape": 0.0023136651,
+          "arrhenius_pred_mpas": 0.52721699,
+          "held_out_c": 30.0,
+          "published_mpas": 0.526,
+          "vft_ape": 0.0023136651,
+          "vft_pred_mpas": 0.52721699
+        },
+        {
+          "arrhenius_ape": 0.0010594762,
+          "arrhenius_pred_mpas": 0.46950205,
+          "held_out_c": 40.0,
+          "published_mpas": 0.47,
+          "vft_ape": 0.0044093101,
+          "vft_pred_mpas": 0.46792762
+        },
+        {
+          "arrhenius_ape": 0.0009108626,
+          "arrhenius_pred_mpas": 0.38134704,
+          "held_out_c": 60.0,
+          "published_mpas": 0.381,
+          "vft_ape": 0.0253404331,
+          "vft_pred_mpas": 0.39065471
+        }
+      ],
+      "fullfit_bic_arrhenius": -52.96249802,
+      "fullfit_bic_vft": -51.57626957,
+      "loto_arrhenius_mape": 0.0015106227,
+      "loto_vft_mape": 0.0084554739,
+      "loto_winner": "arrhenius",
+      "smiles": "Cc1ccccc1",
+      "solvent_id": "toluene",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.56,
+        0.526,
+        0.47,
+        0.381
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0084512801,
+          "arrhenius_pred_mpas": 0.61011302,
+          "held_out_c": 25.0,
+          "published_mpas": 0.605,
+          "vft_ape": 0.0084512801,
+          "vft_pred_mpas": 0.61011302
+        },
+        {
+          "arrhenius_ape": 0.0025487924,
+          "arrhenius_pred_mpas": 0.56854719,
+          "held_out_c": 30.0,
+          "published_mpas": 0.57,
+          "vft_ape": 0.0025487924,
+          "vft_pred_mpas": 0.56854719
+        },
+        {
+          "arrhenius_ape": 0.0063229385,
+          "arrhenius_pred_mpas": 0.50180692,
+          "held_out_c": 40.0,
+          "published_mpas": 0.505,
+          "vft_ape": 0.0063229385,
+          "vft_pred_mpas": 0.50180692
+        },
+        {
+          "arrhenius_ape": 0.0176156372,
+          "arrhenius_pred_mpas": 0.40704625,
+          "held_out_c": 60.0,
+          "published_mpas": 0.4,
+          "vft_ape": 0.0176156372,
+          "vft_pred_mpas": 0.40704625
+        }
+      ],
+      "fullfit_bic_arrhenius": -42.66997861,
+      "fullfit_bic_vft": -41.28368425,
+      "loto_arrhenius_mape": 0.008734662,
+      "loto_vft_mape": 0.008734662,
+      "loto_winner": "tie",
+      "smiles": "Cc1ccc(C)cc1",
+      "solvent_id": "p-xylene",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.605,
+        0.57,
+        0.505,
+        0.4
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0030494649,
+          "arrhenius_pred_mpas": 0.29310346,
+          "held_out_c": 25.0,
+          "published_mpas": 0.294,
+          "vft_ape": 2.72561e-05,
+          "vft_pred_mpas": 0.29399199
+        },
+        {
+          "arrhenius_ape": 0.000626569,
+          "arrhenius_pred_mpas": 0.27917481,
+          "held_out_c": 30.0,
+          "published_mpas": 0.279,
+          "vft_ape": 1.75133e-05,
+          "vft_pred_mpas": 0.27900489
+        },
+        {
+          "arrhenius_ape": 0.002708124,
+          "arrhenius_pred_mpas": 0.25368516,
+          "held_out_c": 40.0,
+          "published_mpas": 0.253,
+          "vft_ape": 2.86142e-05,
+          "vft_pred_mpas": 0.25299276
+        },
+        {
+          "arrhenius_ape": 0.007081514,
+          "arrhenius_pred_mpas": 0.21149164,
+          "held_out_c": 60.0,
+          "published_mpas": 0.213,
+          "vft_ape": 0.0002024492,
+          "vft_pred_mpas": 0.21304312
+        }
+      ],
+      "fullfit_bic_arrhenius": -50.10656445,
+      "fullfit_bic_vft": -90.72229318,
+      "loto_arrhenius_mape": 0.003366418,
+      "loto_vft_mape": 6.89582e-05,
+      "loto_winner": "vft",
+      "smiles": "CCCCCC",
+      "solvent_id": "n-hexane",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.294,
+        0.279,
+        0.253,
+        0.213
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0084491649,
+          "arrhenius_pred_mpas": 0.89041265,
+          "held_out_c": 25.0,
+          "published_mpas": 0.898,
+          "vft_ape": 0.0205281834,
+          "vft_pred_mpas": 0.91643431
+        },
+        {
+          "arrhenius_ape": 0.0067428043,
+          "arrhenius_pred_mpas": 0.81546416,
+          "held_out_c": 30.0,
+          "published_mpas": 0.821,
+          "vft_ape": 0.0105442677,
+          "vft_pred_mpas": 0.81234316
+        },
+        {
+          "arrhenius_ape": 0.0191160225,
+          "arrhenius_pred_mpas": 0.69197978,
+          "held_out_c": 40.0,
+          "published_mpas": 0.679,
+          "vft_ape": 0.0191160225,
+          "vft_pred_mpas": 0.69197978
+        },
+        {
+          "arrhenius_ape": 0.0407268701,
+          "arrhenius_pred_mpas": 0.48635148,
+          "held_out_c": 60.0,
+          "published_mpas": 0.507,
+          "vft_ape": 0.0407268701,
+          "vft_pred_mpas": 0.48635148
+        }
+      ],
+      "fullfit_bic_arrhenius": -35.68245366,
+      "fullfit_bic_vft": -39.69745048,
+      "loto_arrhenius_mape": 0.0187587155,
+      "loto_vft_mape": 0.0227288359,
+      "loto_winner": "arrhenius",
+      "smiles": "C1CCCCC1",
+      "solvent_id": "cyclohexane",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.898,
+        0.821,
+        0.679,
+        0.507
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0011731555,
+          "arrhenius_pred_mpas": 0.41251549,
+          "held_out_c": 25.0,
+          "published_mpas": 0.413,
+          "vft_ape": 0.0011731555,
+          "vft_pred_mpas": 0.41251549
+        },
+        {
+          "arrhenius_ape": 0.0017182947,
+          "arrhenius_pred_mpas": 0.39467701,
+          "held_out_c": 30.0,
+          "published_mpas": 0.394,
+          "vft_ape": 0.0017182947,
+          "vft_pred_mpas": 0.39467701
+        },
+        {
+          "arrhenius_ape": 0.0009422341,
+          "arrhenius_pred_mpas": 0.36165891,
+          "held_out_c": 40.0,
+          "published_mpas": 0.362,
+          "vft_ape": 0.0033381083,
+          "vft_pred_mpas": 0.3607916
+        },
+        {
+          "arrhenius_ape": 0.0010583502,
+          "arrhenius_pred_mpas": 0.30932703,
+          "held_out_c": 60.0,
+          "published_mpas": 0.309,
+          "vft_ape": 0.0191633871,
+          "vft_pred_mpas": 0.31492149
+        }
+      ],
+      "fullfit_bic_arrhenius": -55.16404381,
+      "fullfit_bic_vft": -53.77774945,
+      "loto_arrhenius_mape": 0.0012230086,
+      "loto_vft_mape": 0.0063482364,
+      "loto_winner": "arrhenius",
+      "smiles": "ClCCl",
+      "solvent_id": "dichloromethane",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.413,
+        0.394,
+        0.362,
+        0.309
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.004815852,
+          "arrhenius_pred_mpas": 0.53938981,
+          "held_out_c": 25.0,
+          "published_mpas": 0.542,
+          "vft_ape": 0.002485314,
+          "vft_pred_mpas": 0.54065296
+        },
+        {
+          "arrhenius_ape": 0.00208915,
+          "arrhenius_pred_mpas": 0.51106547,
+          "held_out_c": 30.0,
+          "published_mpas": 0.51,
+          "vft_ape": 0.0013647187,
+          "vft_pred_mpas": 0.51069601
+        },
+        {
+          "arrhenius_ape": 0.0028057685,
+          "arrhenius_pred_mpas": 0.45828224,
+          "held_out_c": 40.0,
+          "published_mpas": 0.457,
+          "vft_ape": 0.0024663858,
+          "vft_pred_mpas": 0.45587286
+        },
+        {
+          "arrhenius_ape": 0.0083820067,
+          "arrhenius_pred_mpas": 0.37284837,
+          "held_out_c": 60.0,
+          "published_mpas": 0.376,
+          "vft_ape": 0.0139214543,
+          "vft_pred_mpas": 0.38123447
+        }
+      ],
+      "fullfit_bic_arrhenius": -47.87024132,
+      "fullfit_bic_vft": -56.0655862,
+      "loto_arrhenius_mape": 0.0045231943,
+      "loto_vft_mape": 0.0050594682,
+      "loto_winner": "arrhenius",
+      "smiles": "ClC(Cl)Cl",
+      "solvent_id": "chloroform",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.542,
+        0.51,
+        0.457,
+        0.376
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.009579625,
+          "arrhenius_pred_mpas": 0.43210008,
+          "held_out_c": 25.0,
+          "published_mpas": 0.428,
+          "vft_ape": 0.009579625,
+          "vft_pred_mpas": 0.43210008
+        },
+        {
+          "arrhenius_ape": 0.0057869021,
+          "arrhenius_pred_mpas": 0.40365052,
+          "held_out_c": 30.0,
+          "published_mpas": 0.406,
+          "vft_ape": 0.0057869021,
+          "vft_pred_mpas": 0.40365052
+        },
+        {
+          "arrhenius_ape": 0.0032694045,
+          "arrhenius_pred_mpas": 0.35981974,
+          "held_out_c": 40.0,
+          "published_mpas": 0.361,
+          "vft_ape": 0.0032694045,
+          "vft_pred_mpas": 0.35981974
+        },
+        {
+          "arrhenius_ape": 0.0123818217,
+          "arrhenius_pred_mpas": 0.29460311,
+          "held_out_c": 60.0,
+          "published_mpas": 0.291,
+          "vft_ape": 0.0123818217,
+          "vft_pred_mpas": 0.29460311
+        }
+      ],
+      "fullfit_bic_arrhenius": -42.98633689,
+      "fullfit_bic_vft": -41.60004253,
+      "loto_arrhenius_mape": 0.0077544383,
+      "loto_vft_mape": 0.0077544383,
+      "loto_winner": "tie",
+      "smiles": "CCOC(C)=O",
+      "solvent_id": "ethyl-acetate",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.428,
+        0.406,
+        0.361,
+        0.291
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0143291362,
+          "arrhenius_pred_mpas": 0.45636561,
+          "held_out_c": 25.0,
+          "published_mpas": 0.463,
+          "vft_ape": 0.0103851307,
+          "vft_pred_mpas": 0.45819168
+        },
+        {
+          "arrhenius_ape": 0.0076344704,
+          "arrhenius_pred_mpas": 0.43832099,
+          "held_out_c": 30.0,
+          "published_mpas": 0.435,
+          "vft_ape": 0.0056242554,
+          "vft_pred_mpas": 0.43744655
+        },
+        {
+          "arrhenius_ape": 0.0065637763,
+          "arrhenius_pred_mpas": 0.39759269,
+          "held_out_c": 40.0,
+          "published_mpas": 0.395,
+          "vft_ape": 0.0093790432,
+          "vft_pred_mpas": 0.39129528
+        },
+        {
+          "arrhenius_ape": 0.0214257871,
+          "arrhenius_pred_mpas": 0.32684379,
+          "held_out_c": 60.0,
+          "published_mpas": 0.334,
+          "vft_ape": 0.0428930431,
+          "vft_pred_mpas": 0.34832628
+        }
+      ],
+      "fullfit_bic_arrhenius": -39.49523921,
+      "fullfit_bic_vft": -44.80152657,
+      "loto_arrhenius_mape": 0.0124882925,
+      "loto_vft_mape": 0.0170703681,
+      "loto_winner": "arrhenius",
+      "smiles": "C1CCOC1",
+      "solvent_id": "tetrahydrofuran",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.463,
+        0.435,
+        0.395,
+        0.334
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0009067982,
+          "arrhenius_pred_mpas": 0.80272725,
+          "held_out_c": 25.0,
+          "published_mpas": 0.802,
+          "vft_ape": 0.0009067982,
+          "vft_pred_mpas": 0.80272725
+        },
+        {
+          "arrhenius_ape": 0.0012935959,
+          "arrhenius_pred_mpas": 0.7499689,
+          "held_out_c": 30.0,
+          "published_mpas": 0.749,
+          "vft_ape": 0.0012935959,
+          "vft_pred_mpas": 0.7499689
+        },
+        {
+          "arrhenius_ape": 0.0027843243,
+          "arrhenius_pred_mpas": 0.65816235,
+          "held_out_c": 40.0,
+          "published_mpas": 0.66,
+          "vft_ape": 0.0033257579,
+          "vft_pred_mpas": 0.657805
+        },
+        {
+          "arrhenius_ape": 0.005922408,
+          "arrhenius_pred_mpas": 0.52307965,
+          "held_out_c": 60.0,
+          "published_mpas": 0.52,
+          "vft_ape": 0.020045011,
+          "vft_pred_mpas": 0.53042341
+        }
+      ],
+      "fullfit_bic_arrhenius": -50.96004677,
+      "fullfit_bic_vft": -49.57375241,
+      "loto_arrhenius_mape": 0.0027267816,
+      "loto_vft_mape": 0.0063927908,
+      "loto_winner": "arrhenius",
+      "smiles": "CN(C)C=O",
+      "solvent_id": "dimethylformamide",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.802,
+        0.749,
+        0.66,
+        0.52
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0019956739,
+          "arrhenius_pred_mpas": 0.22355297,
+          "held_out_c": 25.0,
+          "published_mpas": 0.224,
+          "vft_ape": 0.0009587898,
+          "vft_pred_mpas": 0.22378523
+        },
+        {
+          "arrhenius_ape": 0.0008304241,
+          "arrhenius_pred_mpas": 0.21317688,
+          "held_out_c": 30.0,
+          "published_mpas": 0.213,
+          "vft_ape": 0.0005295299,
+          "vft_pred_mpas": 0.21311279
+        },
+        {
+          "arrhenius_ape": 0.0012051873,
+          "arrhenius_pred_mpas": 0.19423381,
+          "held_out_c": 40.0,
+          "published_mpas": 0.194,
+          "vft_ape": 0.000971664,
+          "vft_pred_mpas": 0.1938115
+        },
+        {
+          "arrhenius_ape": 0.0035629065,
+          "arrhenius_pred_mpas": 0.16341568,
+          "held_out_c": 60.0,
+          "published_mpas": 0.164,
+          "vft_ape": 0.0057666251,
+          "vft_pred_mpas": 0.16494573
+        }
+      ],
+      "fullfit_bic_arrhenius": -54.84338603,
+      "fullfit_bic_vft": -63.62897566,
+      "loto_arrhenius_mape": 0.001898548,
+      "loto_vft_mape": 0.0020566522,
+      "loto_winner": "arrhenius",
+      "smiles": "CCOCC",
+      "solvent_id": "diethyl-ether",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.224,
+        0.213,
+        0.194,
+        0.164
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0043461139,
+          "arrhenius_pred_mpas": 2.04685738,
+          "held_out_c": 25.0,
+          "published_mpas": 2.038,
+          "vft_ape": 0.0159789091,
+          "vft_pred_mpas": 2.07056502
+        },
+        {
+          "arrhenius_ape": 0.007963541,
+          "arrhenius_pred_mpas": 1.75987268,
+          "held_out_c": 30.0,
+          "published_mpas": 1.774,
+          "vft_ape": 0.0086296729,
+          "vft_pred_mpas": 1.75869096
+        },
+        {
+          "arrhenius_ape": 0.0057183063,
+          "arrhenius_pred_mpas": 1.33861107,
+          "held_out_c": 40.0,
+          "published_mpas": 1.331,
+          "vft_ape": 0.0057183063,
+          "vft_pred_mpas": 1.33861107
+        },
+        {
+          "arrhenius_ape": 0.0081175422,
+          "arrhenius_pred_mpas": 0.80044914,
+          "held_out_c": 60.0,
+          "published_mpas": 0.807,
+          "vft_ape": 0.0081175422,
+          "vft_pred_mpas": 0.80044914
+        }
+      ],
+      "fullfit_bic_arrhenius": -42.37396381,
+      "fullfit_bic_vft": -41.25299909,
+      "loto_arrhenius_mape": 0.0065363758,
+      "loto_vft_mape": 0.0096111076,
+      "loto_winner": "arrhenius",
+      "smiles": "CC(C)O",
+      "solvent_id": "isopropanol",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        2.038,
+        1.774,
+        1.331,
+        0.807
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0019956739,
+          "arrhenius_pred_mpas": 0.22355297,
+          "held_out_c": 25.0,
+          "published_mpas": 0.224,
+          "vft_ape": 0.0009587898,
+          "vft_pred_mpas": 0.22378523
+        },
+        {
+          "arrhenius_ape": 0.0008304241,
+          "arrhenius_pred_mpas": 0.21317688,
+          "held_out_c": 30.0,
+          "published_mpas": 0.213,
+          "vft_ape": 0.0005295299,
+          "vft_pred_mpas": 0.21311279
+        },
+        {
+          "arrhenius_ape": 0.0012051873,
+          "arrhenius_pred_mpas": 0.19423381,
+          "held_out_c": 40.0,
+          "published_mpas": 0.194,
+          "vft_ape": 0.000971664,
+          "vft_pred_mpas": 0.1938115
+        },
+        {
+          "arrhenius_ape": 0.0035629065,
+          "arrhenius_pred_mpas": 0.16341568,
+          "held_out_c": 60.0,
+          "published_mpas": 0.164,
+          "vft_ape": 0.0057666251,
+          "vft_pred_mpas": 0.16494573
+        }
+      ],
+      "fullfit_bic_arrhenius": -54.84338603,
+      "fullfit_bic_vft": -63.62897566,
+      "loto_arrhenius_mape": 0.001898548,
+      "loto_vft_mape": 0.0020566522,
+      "loto_winner": "arrhenius",
+      "smiles": "CCCCC",
+      "solvent_id": "n-pentane",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.224,
+        0.213,
+        0.194,
+        0.164
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0038558036,
+          "arrhenius_pred_mpas": 0.38748834,
+          "held_out_c": 25.0,
+          "published_mpas": 0.386,
+          "vft_ape": 0.0055695867,
+          "vft_pred_mpas": 0.38814986
+        },
+        {
+          "arrhenius_ape": 0.0032735472,
+          "arrhenius_pred_mpas": 0.36380516,
+          "held_out_c": 30.0,
+          "published_mpas": 0.365,
+          "vft_ape": 0.0032735472,
+          "vft_pred_mpas": 0.36380516
+        },
+        {
+          "arrhenius_ape": 6.45972e-05,
+          "arrhenius_pred_mpas": 0.32497901,
+          "held_out_c": 40.0,
+          "published_mpas": 0.325,
+          "vft_ape": 6.45972e-05,
+          "vft_pred_mpas": 0.32497901
+        },
+        {
+          "arrhenius_ape": 0.0025670128,
+          "arrhenius_pred_mpas": 0.26467769,
+          "held_out_c": 60.0,
+          "published_mpas": 0.264,
+          "vft_ape": 0.0025670128,
+          "vft_pred_mpas": 0.26467769
+        }
+      ],
+      "fullfit_bic_arrhenius": -49.77043342,
+      "fullfit_bic_vft": -48.38413906,
+      "loto_arrhenius_mape": 0.0024402402,
+      "loto_vft_mape": 0.002868686,
+      "loto_winner": "arrhenius",
+      "smiles": "CCCCCCC",
+      "solvent_id": "n-heptane",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.386,
+        0.365,
+        0.325,
+        0.264
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0031477003,
+          "arrhenius_pred_mpas": 0.50959903,
+          "held_out_c": 25.0,
+          "published_mpas": 0.508,
+          "vft_ape": 0.0031477003,
+          "vft_pred_mpas": 0.50959903
+        },
+        {
+          "arrhenius_ape": 0.0011065569,
+          "arrhenius_pred_mpas": 0.47852893,
+          "held_out_c": 30.0,
+          "published_mpas": 0.478,
+          "vft_ape": 0.0011065569,
+          "vft_pred_mpas": 0.47852893
+        },
+        {
+          "arrhenius_ape": 0.005120428,
+          "arrhenius_pred_mpas": 0.42481358,
+          "held_out_c": 40.0,
+          "published_mpas": 0.427,
+          "vft_ape": 0.005120428,
+          "vft_pred_mpas": 0.42481358
+        },
+        {
+          "arrhenius_ape": 0.0118766196,
+          "arrhenius_pred_mpas": 0.34707368,
+          "held_out_c": 60.0,
+          "published_mpas": 0.343,
+          "vft_ape": 0.0237774127,
+          "vft_pred_mpas": 0.35115565
+        }
+      ],
+      "fullfit_bic_arrhenius": -46.05205831,
+      "fullfit_bic_vft": -44.66576395,
+      "loto_arrhenius_mape": 0.0053128262,
+      "loto_vft_mape": 0.0082880245,
+      "loto_winner": "arrhenius",
+      "smiles": "CCCCCCCC",
+      "solvent_id": "n-octane",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.508,
+        0.478,
+        0.427,
+        0.343
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0015346202,
+          "arrhenius_pred_mpas": 0.60307309,
+          "held_out_c": 25.0,
+          "published_mpas": 0.604,
+          "vft_ape": 0.0055055413,
+          "vft_pred_mpas": 0.60732535
+        },
+        {
+          "arrhenius_ape": 0.0021350341,
+          "arrhenius_pred_mpas": 0.56279584,
+          "held_out_c": 30.0,
+          "published_mpas": 0.564,
+          "vft_ape": 0.0029746435,
+          "vft_pred_mpas": 0.5623223
+        },
+        {
+          "arrhenius_ape": 0.0046638472,
+          "arrhenius_pred_mpas": 0.49429461,
+          "held_out_c": 40.0,
+          "published_mpas": 0.492,
+          "vft_ape": 0.0046638472,
+          "vft_pred_mpas": 0.49429461
+        },
+        {
+          "arrhenius_ape": 0.0098204321,
+          "arrhenius_pred_mpas": 0.38517985,
+          "held_out_c": 60.0,
+          "published_mpas": 0.389,
+          "vft_ape": 0.0098204321,
+          "vft_pred_mpas": 0.38517985
+        }
+      ],
+      "fullfit_bic_arrhenius": -46.86674023,
+      "fullfit_bic_vft": -49.80938861,
+      "loto_arrhenius_mape": 0.0045384834,
+      "loto_vft_mape": 0.005741116,
+      "loto_winner": "arrhenius",
+      "smiles": "c1ccccc1",
+      "solvent_id": "benzene",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.604,
+        0.564,
+        0.492,
+        0.389
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0064367151,
+          "arrhenius_pred_mpas": 1.98315232,
+          "held_out_c": 25.0,
+          "published_mpas": 1.996,
+          "vft_ape": 0.0051454303,
+          "vft_pred_mpas": 1.98572972
+        },
+        {
+          "arrhenius_ape": 0.0036224076,
+          "arrhenius_pred_mpas": 1.80852758,
+          "held_out_c": 30.0,
+          "published_mpas": 1.802,
+          "vft_ape": 0.0028408874,
+          "vft_pred_mpas": 1.80711928
+        },
+        {
+          "arrhenius_ape": 0.0026446085,
+          "arrhenius_pred_mpas": 1.50296427,
+          "held_out_c": 40.0,
+          "published_mpas": 1.499,
+          "vft_ape": 0.0051561325,
+          "vft_pred_mpas": 1.49127096
+        },
+        {
+          "arrhenius_ape": 0.0091019959,
+          "arrhenius_pred_mpas": 1.06521535,
+          "held_out_c": 60.0,
+          "published_mpas": 1.075,
+          "vft_ape": 0.0295297221,
+          "vft_pred_mpas": 1.10674445
+        }
+      ],
+      "fullfit_bic_arrhenius": -46.01909572,
+      "fullfit_bic_vft": -50.19165548,
+      "loto_arrhenius_mape": 0.0054514318,
+      "loto_vft_mape": 0.0106680431,
+      "loto_winner": "arrhenius",
+      "smiles": "CS(=O)C",
+      "solvent_id": "dimethyl-sulfoxide",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        1.996,
+        1.802,
+        1.499,
+        1.075
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0012999983,
+          "arrhenius_pred_mpas": 0.3425541,
+          "held_out_c": 25.0,
+          "published_mpas": 0.343,
+          "vft_ape": 0.0012451945,
+          "vft_pred_mpas": 0.3425729
+        },
+        {
+          "arrhenius_ape": 0.0008209679,
+          "arrhenius_pred_mpas": 0.32526681,
+          "held_out_c": 30.0,
+          "published_mpas": 0.325,
+          "vft_ape": 0.0006861582,
+          "vft_pred_mpas": 0.325223
+        },
+        {
+          "arrhenius_ape": 0.0004082787,
+          "arrhenius_pred_mpas": 0.29412003,
+          "held_out_c": 40.0,
+          "published_mpas": 0.294,
+          "vft_ape": 0.0012764109,
+          "vft_pred_mpas": 0.29362474
+        },
+        {
+          "arrhenius_ape": 0.0016039118,
+          "arrhenius_pred_mpas": 0.24460704,
+          "held_out_c": 60.0,
+          "published_mpas": 0.245,
+          "vft_ape": 0.0076044451,
+          "vft_pred_mpas": 0.24686309
+        }
+      ],
+      "fullfit_bic_arrhenius": -58.93932734,
+      "fullfit_bic_vft": -61.5421937,
+      "loto_arrhenius_mape": 0.0010332892,
+      "loto_vft_mape": 0.0027030522,
+      "loto_winner": "arrhenius",
+      "smiles": "CC#N",
+      "solvent_id": "acetonitrile",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        0.343,
+        0.325,
+        0.294,
+        0.245
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.0014777411,
+          "arrhenius_pred_mpas": 1.18875408,
+          "held_out_c": 25.0,
+          "published_mpas": 1.187,
+          "vft_ape": 0.0097642769,
+          "vft_pred_mpas": 1.1985902
+        },
+        {
+          "arrhenius_ape": 0.0046494051,
+          "arrhenius_pred_mpas": 1.0819461,
+          "held_out_c": 30.0,
+          "published_mpas": 1.087,
+          "vft_ape": 0.0052913759,
+          "vft_pred_mpas": 1.08124827
+        },
+        {
+          "arrhenius_ape": 0.0045540321,
+          "arrhenius_pred_mpas": 0.91113051,
+          "held_out_c": 40.0,
+          "published_mpas": 0.907,
+          "vft_ape": 0.0045540321,
+          "vft_pred_mpas": 0.91113051
+        },
+        {
+          "arrhenius_ape": 0.0077198807,
+          "arrhenius_pred_mpas": 0.65788172,
+          "held_out_c": 60.0,
+          "published_mpas": 0.663,
+          "vft_ape": 0.0077198807,
+          "vft_pred_mpas": 0.65788172
+        }
+      ],
+      "fullfit_bic_arrhenius": -45.64233245,
+      "fullfit_bic_vft": -45.18023578,
+      "loto_arrhenius_mape": 0.0046002648,
+      "loto_vft_mape": 0.0068323914,
+      "loto_winner": "arrhenius",
+      "smiles": "C1COCCO1",
+      "solvent_id": "1-4-dioxane",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        1.187,
+        1.087,
+        0.907,
+        0.663
+      ]
+    },
+    {
+      "folds": [
+        {
+          "arrhenius_ape": 0.04547028,
+          "arrhenius_pred_mpas": 891.53075852,
+          "held_out_c": 25.0,
+          "published_mpas": 934.0,
+          "vft_ape": 0.0214934885,
+          "vft_pred_mpas": 954.07491828
+        },
+        {
+          "arrhenius_ape": 0.0005210417,
+          "arrhenius_pred_mpas": 623.32460898,
+          "held_out_c": 30.0,
+          "published_mpas": 623.0,
+          "vft_ape": 0.0112249159,
+          "vft_pred_mpas": 616.00687738
+        },
+        {
+          "arrhenius_ape": 0.0547728889,
+          "arrhenius_pred_mpas": 304.82936488,
+          "held_out_c": 40.0,
+          "published_mpas": 289.0,
+          "vft_ape": 0.0204133425,
+          "vft_pred_mpas": 294.899456
+        },
+        {
+          "arrhenius_ape": 0.1231773294,
+          "arrhenius_pred_mpas": 71.28568312,
+          "held_out_c": 60.0,
+          "published_mpas": 81.3,
+          "vft_ape": 0.1129466172,
+          "vft_pred_mpas": 72.11744002
+        }
+      ],
+      "fullfit_bic_arrhenius": -26.91950792,
+      "fullfit_bic_vft": -39.17190752,
+      "loto_arrhenius_mape": 0.055985385,
+      "loto_vft_mape": 0.041519591,
+      "loto_winner": "vft",
+      "smiles": "OCC(O)CO",
+      "solvent_id": "glycerol",
+      "temperatures_c": [
+        25.0,
+        30.0,
+        40.0,
+        60.0
+      ],
+      "viscosity_mpas": [
+        934.0,
+        623.0,
+        289.0,
+        81.3
+      ]
+    }
+  ],
+  "points_per_solvent_c": [
+    25.0,
+    30.0,
+    40.0,
+    60.0
+  ],
+  "purpose": "Falsifiable model-adequacy / parsimony audit of the signed Arrhenius viscosity-temperature KPI: does the 3-parameter Vogel-Fulcher-Tammann law out-generalise the incumbent 2-parameter Arrhenius law on held-out temperature for the 25 pure Newtonian solvents, using only viscosities already in the signed benchmark result?",
+  "schema": "amphora.viscosity-score.vft-arrhenius-adequacy-diagnostic.v1",
+  "source_result_path": "amphora-viscosity-score/evidence/phase0/benchmark/result.v1.json",
+  "source_result_sha256": "6164d8d153533f71c372ef28792c1f8521de35ddaa0d60a3dce12c196dac314e",
+  "verdict": "ARRHENIUS_ADEQUATE_PARSIMONY_FAVOURED",
+  "vft_t0_grid": {
+    "hi_margin_k": 1.0,
+    "lo_k": 0.0,
+    "step_k": 0.25
+  }
+}

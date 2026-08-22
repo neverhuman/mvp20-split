@@ -1,0 +1,377 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-candidate-contract-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "molecule",
+    "formulation",
+    "evidence_package"
+  ],
+  "ceilings": {
+    "authority_tier": "EVIDENCE_ONLY",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "DISABLED"
+  },
+  "consumers": [
+    "amphora-barrier-corrosion-score",
+    "amphora-cro-protocol-packager",
+    "amphora-cure-potlife-gate",
+    "amphora-design-rule-score",
+    "amphora-envelope-gates",
+    "amphora-evidence-intake-validator",
+    "amphora-formulation-arithmetic",
+    "amphora-formulation-universe",
+    "amphora-ingredient-library",
+    "amphora-ip-fto-guard",
+    "amphora-known-answer-benchmarks",
+    "amphora-model-card-authority",
+    "amphora-molecule-design-gate",
+    "amphora-molecule-generator",
+    "amphora-molecule-novelty",
+    "amphora-molecule-property",
+    "amphora-molecule-role-ranker",
+    "amphora-optimizer-orchestrator",
+    "amphora-process-qc-twin",
+    "amphora-public-corrosion-benchmark",
+    "amphora-redteam-audit",
+    "amphora-report-packager",
+    "amphora-run-provenance",
+    "amphora-solvency-score",
+    "amphora-source-ledger",
+    "amphora-sourceability-ehs",
+    "amphora-tolerance-robustness",
+    "amphora-viscosity-score"
+  ],
+  "current_state": {
+    "adapter_registered": false,
+    "checked_artifact_count": 10,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "COMPLETE",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "NOT_APPLICABLE"
+  },
+  "datasets": [
+    {
+      "dataset_id": "candidate-contract-parity-corpus",
+      "hash": null,
+      "path": null,
+      "rights": "UNRESOLVED",
+      "status": "NOT_CHECKED_IN",
+      "version": null
+    }
+  ],
+  "dependencies": [],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/canonical_formulation_candidate.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "8be98d9ed927346fb23b6abd030528a202fa87621c1ecc3ebbc5b149e87ee0f8"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/evidence_package_candidate.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "da26a9f8c7c59cbc4eb47f099db22808bb83dd804161005d2aefc3323f61f5fb"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/formulation_candidate.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "de617b7311530cb2d6701860daba9db9b37a0ea0d0733ed4e969b8db617f614f"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/molecule_candidate.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "9cee73f4158c404a09f969ab1bd710f8174ef9ef59fc01ac41cec267a5c6ed5f"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/score_artifact_only_evidence.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "2781f8179a5115b209e1da6d40c21c7affd7ac9ee49dc76ded40fc2fd2e11fd7"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/score_failed_gate.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "4486661e9f0140187226175796ea3a86c7582e73b3021d29a6c3ca7b43546218"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/score_formulation_objective.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "8e4868f25a86167201eaa39685e6e93c2283669fd058b7b43bf98168518722ef"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/score_molecule_objective.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "c86ba9daa7d1b62c243bd849aa6b2c52dbf66c1bca323f302115f8ca90a90744"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/score_no_authority.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "850fac537acb659af8d0463fc2ae3e74bf65dcd8d47b0b36a1e2447725ada20e"
+      },
+      {
+        "kind": "input_fixture",
+        "path": "amphora-candidate-contract/fixtures/score_roadmap_generated_lead.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "cc438c0821e98f57929512f515365751ef52b0b7ac6e8813bb83fdabe337c48b"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "No checked-in module-specific benchmark result artifact was identified.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "Validated chemistry file parsers and locked cross-toolkit normalization vectors"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-engine/src/lib.rs",
+      "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-engine/Cargo.toml",
+      "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
+    },
+    "known_contradictions": [
+      "Runtime support is JSON CandidateEnvelope plus molecule SMILES; InChI, MOL, SDF, and recipe CSV remain target contracts rather than implemented parsers."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-engine/src/lib.rs",
+      "scenario": "Reject non-finite candidate and score values before serialization.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-candidate-contract",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": null,
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-engine/src/lib.rs",
+        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-candidate-contract-example",
+      "candidate_type": "molecule",
+      "molecule": {
+        "role": "resin",
+        "smiles": "CC"
+      }
+    },
+    "current_output": {
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_id": "amphora-candidate-contract-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {
+        "contract_valid": null
+      },
+      "metrics": {
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "schema parity",
+          "model_authority": "EVIDENCE_ONLY",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        }
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-candidate-contract",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "JSON",
+      "molecule SMILES"
+    ],
+    "target": [
+      "isomeric SMILES",
+      "canonical SMILES",
+      "InChI",
+      "InChIKey",
+      "MOL V2000",
+      "MOL V3000",
+      "single-record SDF",
+      "multi-record SDF",
+      "canonical formulation JSON",
+      "recipe CSV"
+    ],
+    "target_formats_are_runtime_supported": false,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "schema parity",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1.",
+      "unit": "declared by locked benchmark",
+      "value_path": "gates.contract_valid"
+    }
+  ],
+  "lane": "infrastructure",
+  "module_id": "amphora-candidate-contract",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "gates.contract_valid",
+    "non_blocking_claim_locks": [
+      "schema_validation_does_not_upgrade_domain_claims"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 5,
+      "decision_value": 5,
+      "downstream_leverage": 5,
+      "effort": 2,
+      "evidence_gap": 4,
+      "external_delay": 0
+    },
+    "ladder": "infrastructure_assurance",
+    "p0_override": false,
+    "rank": 1,
+    "score": 45
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

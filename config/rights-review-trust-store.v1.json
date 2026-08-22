@@ -1,0 +1,15 @@
+{
+  "authorization_status": "AUTHORIZED_RIGHTS_REVIEW_IDENTITIES",
+  "keys": [
+    {
+      "algorithm": "Ed25519",
+      "development": false,
+      "key_id": "rights-reviewer-f461207571ee4e75bd8874f705174b857dbc2dd974f5bd0940d4867bf8a72183",
+      "public_key_hex": "af70c41df442bd05ba02d04c63ff348f82df053f43b6d68d7d4d5f767f2af925",
+      "revoked": false,
+      "rights_review_authorized": true,
+      "role": "RIGHTS_REVIEWER"
+    }
+  ],
+  "schema": "amphora.rights-review-trust-store.v1"
+}

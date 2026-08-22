@@ -1,0 +1,28 @@
+{
+  "attacks": [
+    "STALE_PARENT",
+    "SAME_SIGNER_REVIEW",
+    "FORGED_RIGHTS",
+    "MISSING_LICENSE",
+    "STRIPPED_CLAIM_LOCK",
+    "CANDIDATE_SUPPLIED_EVIDENCE",
+    "CROSS_MODULE_PATH_SUBSTITUTION",
+    "REPLAY_DRIFT",
+    "FALSE_MOVEMENT_CLAIM",
+    "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+    "LEGACY_AMPHORA_RECEIPT_LAUNDERING",
+    "TIME_LEAKAGE",
+    "BASELINE_CONTAMINATION",
+    "REORDERED_BATCHES",
+    "SPECIFICATION_CONTROL_CONFLATION",
+    "UNAUTHORIZED_RELEASE"
+  ],
+  "dataset_manifest_sha256": "79ba45de486d06134b55772fd234423a23ef21c2182ee1bcd6c0773b20d5da07",
+  "module_id": "amphora-process-qc-twin",
+  "negative_result_authority": "AUDIT_ONLY",
+  "replay_count": 2,
+  "runner": "EXACT_LOCKED_MODULE_BENCHMARK",
+  "schema": "amphora.module-phase0-benchmark-lock.v1",
+  "scientific_success_required_for_phase0": false,
+  "split_manifest_sha256": "00b0841c965110912370da682e24344c49e806508a6598b36e69572d6a64072c"
+}

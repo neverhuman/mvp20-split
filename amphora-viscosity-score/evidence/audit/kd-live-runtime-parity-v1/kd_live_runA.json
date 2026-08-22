@@ -1,0 +1,155 @@
+{
+  "edge_case_guard_battery": [
+    {
+      "case": "negative_liquid_viscosity",
+      "eta_liquid_pa_s": -1.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": false,
+      "phi": 0.3,
+      "phi_max": 0.6,
+      "value_if_ok": null
+    },
+    {
+      "case": "zero_liquid_viscosity",
+      "eta_liquid_pa_s": 0.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": false,
+      "phi": 0.3,
+      "phi_max": 0.6,
+      "value_if_ok": null
+    },
+    {
+      "case": "negative_pigment_fraction",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": false,
+      "phi": -0.1,
+      "phi_max": 0.6,
+      "value_if_ok": null
+    },
+    {
+      "case": "pigment_fraction_over_one",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": false,
+      "phi": 1.1,
+      "phi_max": 0.95,
+      "value_if_ok": null
+    },
+    {
+      "case": "max_packing_fraction_over_one",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": false,
+      "phi": 0.3,
+      "phi_max": 1.1,
+      "value_if_ok": null
+    },
+    {
+      "case": "pigment_equals_max_packing",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": false,
+      "phi": 0.5,
+      "phi_max": 0.5,
+      "value_if_ok": null
+    },
+    {
+      "case": "pigment_exceeds_max_packing_noninteger_exponent",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": false,
+      "phi": 0.6,
+      "phi_max": 0.5,
+      "value_if_ok": null
+    },
+    {
+      "case": "negative_intrinsic_viscosity",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": -1.0,
+      "is_ok": false,
+      "phi": 0.3,
+      "phi_max": 0.6,
+      "value_if_ok": null
+    },
+    {
+      "case": "nan_pigment_fraction",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": false,
+      "phi": null,
+      "phi_max": 0.6,
+      "value_if_ok": null
+    },
+    {
+      "case": "valid_baseline_sanity",
+      "eta_liquid_pa_s": 1.0,
+      "intrinsic_viscosity": 2.5,
+      "is_ok": true,
+      "phi": 0.3,
+      "phi_max": 0.6,
+      "value_if_ok": 2.8284271247461903
+    }
+  ],
+  "fits": [
+    {
+      "curve": [
+        {
+          "eta_pa_s_live_rust": 20.557669473896112,
+          "phi": 0.088646
+        },
+        {
+          "eta_pa_s_live_rust": 11.212628468739458,
+          "phi": 0.076239
+        },
+        {
+          "eta_pa_s_live_rust": 9.709857192595626,
+          "phi": 0.064249
+        },
+        {
+          "eta_pa_s_live_rust": 8.923209036466774,
+          "phi": 0.052655
+        },
+        {
+          "eta_pa_s_live_rust": 8.408288111697509,
+          "phi": 0.041439
+        }
+      ],
+      "eta_liquid_pa_s": 7.316387,
+      "fit_label": "fixed_einstein_intrinsic_viscosity_2p5",
+      "intrinsic_viscosity": 2.5,
+      "phi_max": 0.089532
+    },
+    {
+      "curve": [
+        {
+          "eta_pa_s_live_rust": 22.48348893805515,
+          "phi": 0.088646
+        },
+        {
+          "eta_pa_s_live_rust": 14.119903308312972,
+          "phi": 0.076239
+        },
+        {
+          "eta_pa_s_live_rust": 9.063533117513286,
+          "phi": 0.064249
+        },
+        {
+          "eta_pa_s_live_rust": 5.9372446684851745,
+          "phi": 0.052655
+        },
+        {
+          "eta_pa_s_live_rust": 3.96375640774045,
+          "phi": 0.041439
+        }
+      ],
+      "eta_liquid_pa_s": 0.929077,
+      "fit_label": "free_intrinsic_viscosity_3param",
+      "intrinsic_viscosity": 34.2402,
+      "phi_max": 0.95
+    }
+  ],
+  "function_under_test": "krieger_dougherty (src/lib.rs:1208-1224), called live via the compiled crate -- not reimplemented",
+  "module_id": "amphora-viscosity-score",
+  "schema": "amphora.viscosity-score.kd-live-runtime-parity-diagnostic.v1"
+}

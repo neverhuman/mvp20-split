@@ -1,0 +1,25 @@
+{
+  "schema": "amphora.rdkit-ffi.w-ffi2-state.v1",
+  "campaign_item_id": "W-FFI2",
+  "last_fire_id": "20260806T090003-2795399-4f0d8fc61dda",
+  "status_after_this_fire": "repair_landed_in_module_but_workspace_companion_pending",
+  "what_is_done": [
+    "bridge.cc: added is_nitrile_carbon + is_cyanamide_substituted_guanidine_carbon; count_reactive_amine_hydrogens no longer unconditionally excludes amidine/guanidine N-H when the imine nitrogen carries a cyanamide (nitrile) substituent (the dicyandiamide/cyanoguanidine motif).",
+    "lib.rs: split dicyandiamide out of pinned_native_backend_excludes_guanidine_class_amine_hydrogens (now DPG/DOTG/guanidine/biguanide only, still 0); added pinned_native_backend_scores_dicyandiamide_functionality_four (DICY=4, plus two adversarial narrowness probes: n-methylguanidine and a remote-nitrile guanidine, both must stay 0).",
+    "cargo test -p amphora-rdkit-ffi --features rdkit: 8/8 green.",
+    "Re-ran W-FFI1's ffi1-verify harness UNMODIFIED: 14/14 probes now match published convention (was 13/14).",
+    "Re-ran V-N02c's vn02c-verify harness UNMODIFIED: 7/8 unchanged (zero regressions), 1/8 (dicyandiamide) intentionally flips to reflect the repair.",
+    "Positive control: standalone mutant crate at /tmp/wffi2-mutant (deleted after use) with an over-broad 'nitrile anywhere in molecule' defect planted; the remote-nitrile adversarial test detected it (failed on the mutant, passes on the real fix).",
+    "Signed repair-attempt receipt (evidence/phase0/repairs/W-FFI2/attempts/w-ffi2-rdkit-ffi-cyanoguanidine-repair-receipt.v1.dsse.json), DSSE Ed25519, self-verified against the pinned PHASE0_EVALUATOR trust-store entry."
+  ],
+  "what_is_NOT_done": [
+    "cargo test --workspace --features rdkit --no-fail-fast has exactly ONE failing test: amphora-molecule-capabilities::tests::role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi. It is a companion test from R-N02's own 2026-08-03 coordinated 3-module repair batch and hardcodes reactive_amine_hydrogen_count==0 for dicyandiamide inside the same guanidine_class fixture this repair partially corrects.",
+    "This fire's write scope was confined to amphora-rdkit-ffi ONLY (module confinement instruction for this fire); amphora-molecule-capabilities was NOT edited.",
+    "Because of the above, the done_criterion's 'cargo test green in the crate and the workspace' bar is not fully met; the receipt was written to attempts/, not done/."
+  ],
+  "next_fire_should": [
+    "If module confinement is lifted or a coordinated multi-module repair is explicitly authorized: update amphora-molecule-capabilities/src/lib.rs's role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi to remove dicyandiamide from the guanidine_class all-zero fixture (mirroring exactly what this fire did in amphora-rdkit-ffi/src/lib.rs), add its own dedicated dicyandiamide-functionality-four assertion, verify cargo test --workspace is fully green, and promote the receipt from attempts/ to done/ (a NEW receipt superseding this one, per supersede-never-rewrite).",
+    "Do not re-litigate the structural criterion itself (cyanamide-substituted guanidine carbon) -- it is implemented, tested, and survived re-attack by both W-FFI1's and V-N02c's original unmodified harnesses. The remaining work is purely the cross-module companion-test coordination.",
+    "amphora-molecule-property's independent Python re-implementation (compute_amine_class.py::n_active_amine_nh) was NOT touched or checked against this repair; if a future fire scope permits, verify whether it has the same DICY=0 blind spot (R-N02's original coordinated fix applied to it identically, so it likely needs the identical narrow exemption)."
+  ]
+}

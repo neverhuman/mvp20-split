@@ -1,0 +1,5 @@
+{"fire_id":"fixture-clean-before","module":"fixture","ts":"2026-08-03T15:00:00+00:00"}
+{"fire_id":"20260803T150004-335042-88e86edf7333","module":"amphora-ip-fto-guard","ts":"\\2026-08-03T15:08:37+00:00"}
+{"fire_id":"fixture-clean-between","module":"fixture","ts":"2026-08-04T10:00:00+00:00"}
+{"fire_id":"20260804T100001-3937441-823cffd3f9d8","module":"amphora-sourceability-ehs","ts":"\\2026-08-04T10:07:20+00:00"}
+{"fire_id":"fixture-clean-after","module":"fixture","ts":"2026-08-04T10:10:00+00:00"}

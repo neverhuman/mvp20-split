@@ -1,0 +1,387 @@
+{
+  "kpi_harness_binds_v1_only": true,
+  "n_probes_failed": 0,
+  "n_probes_novel": 4,
+  "n_probes_total": 6,
+  "probe_rows": [
+    {
+      "average_molecular_weight_g_mol": 211.268,
+      "canonical_isomeric_smiles": "N=C(Nc1ccccc1)Nc1ccccc1",
+      "citation": "1,3-diphenylguanidine (DPG), CAS 102-06-7, rubber vulcanization secondary accelerator; US Patent 9,238,706 documents guanidine derivatives as epoxy curing accelerators. Original R-N02 refuting probe.",
+      "expected_formula": "C13H13N3",
+      "expected_mw": 211.268,
+      "expected_reactive_amine_hydrogen_count": 0,
+      "expected_role": "out_of_domain",
+      "formula": "C13H13N3",
+      "formula_matches_published": true,
+      "id": "dpg-diphenylguanidine-accelerator",
+      "mw_matches_published": true,
+      "novel_vs_r_n02_original_5": false,
+      "observed_role": "out_of_domain",
+      "oxirane_ring_count": 0,
+      "pass": true,
+      "reactive_amine_hydrogen_count": 0,
+      "reactive_amine_hydrogen_count_matches_expected": true,
+      "role_matches_expected": true,
+      "smiles": "c1ccccc1NC(=N)Nc2ccccc2"
+    },
+    {
+      "average_molecular_weight_g_mol": 239.322,
+      "canonical_isomeric_smiles": "Cc1ccccc1NC(=N)Nc1ccccc1C",
+      "citation": "N,N'-di-o-tolylguanidine (DOTG), CAS 97-39-2, rubber vulcanization accelerator, structural analog of DPG. Original R-N02 refuting probe.",
+      "expected_formula": "C15H17N3",
+      "expected_mw": 239.322,
+      "expected_reactive_amine_hydrogen_count": 0,
+      "expected_role": "out_of_domain",
+      "formula": "C15H17N3",
+      "formula_matches_published": true,
+      "id": "dotg-di-o-tolylguanidine-accelerator",
+      "mw_matches_published": true,
+      "novel_vs_r_n02_original_5": false,
+      "observed_role": "out_of_domain",
+      "oxirane_ring_count": 0,
+      "pass": true,
+      "reactive_amine_hydrogen_count": 0,
+      "reactive_amine_hydrogen_count_matches_expected": true,
+      "role_matches_expected": true,
+      "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C"
+    },
+    {
+      "average_molecular_weight_g_mol": 115.18,
+      "canonical_isomeric_smiles": "CN(C)C(=N)N(C)C",
+      "citation": "1,1,3,3-tetramethylguanidine (TMG), CAS 80-70-6, C5H13N3, MW 115.18. Widely used non-nucleophilic organic superbase catalyst/accelerator in epoxy (anhydride-cure) and polyurethane chemistry. NOT one of R-N02's original 5 probes (DPG, DOTG, guanidine, DICY, biguanide).",
+      "expected_formula": "C5H13N3",
+      "expected_mw": 115.183,
+      "expected_reactive_amine_hydrogen_count": 0,
+      "expected_role": "out_of_domain",
+      "formula": "C5H13N3",
+      "formula_matches_published": true,
+      "id": "tmg-tetramethylguanidine-novel",
+      "mw_matches_published": true,
+      "novel_vs_r_n02_original_5": true,
+      "observed_role": "out_of_domain",
+      "oxirane_ring_count": 0,
+      "pass": true,
+      "reactive_amine_hydrogen_count": 0,
+      "reactive_amine_hydrogen_count_matches_expected": true,
+      "role_matches_expected": true,
+      "smiles": "CN(C)C(=N)N(C)C"
+    },
+    {
+      "average_molecular_weight_g_mol": 171.288,
+      "canonical_isomeric_smiles": "CN(C)C(=NC(C)(C)C)N(C)C",
+      "citation": "2-tert-butyl-1,1,3,3-tetramethylguanidine (Barton's base), CAS 29166-72-1, C9H21N3, MW 171.28. Strong hindered guanidine base/catalyst. NOT one of R-N02's original 5 probes; fully N-substituted (zero N-H by construction) -- tests classification stability when the exclusion rule is not even needed to reach count=0.",
+      "expected_formula": "C9H21N3",
+      "expected_mw": 171.288,
+      "expected_reactive_amine_hydrogen_count": 0,
+      "expected_role": "out_of_domain",
+      "formula": "C9H21N3",
+      "formula_matches_published": true,
+      "id": "bartons-base-tbtmg-novel",
+      "mw_matches_published": true,
+      "novel_vs_r_n02_original_5": true,
+      "observed_role": "out_of_domain",
+      "oxirane_ring_count": 0,
+      "pass": true,
+      "reactive_amine_hydrogen_count": 0,
+      "reactive_amine_hydrogen_count_matches_expected": true,
+      "role_matches_expected": true,
+      "smiles": "CC(C)(C)N=C(N(C)C)N(C)C"
+    },
+    {
+      "average_molecular_weight_g_mol": 135.17,
+      "canonical_isomeric_smiles": "N=C(N)Nc1ccccc1",
+      "citation": "1-phenylguanidine, CAS 2002-98-6, C7H9N3, MW 135.17. Mono-aryl guanidine with a free primary NH2 plus imino N-H -- a different substitution pattern (primary amine neighbor) than any of R-N02's original 5 probes, none of which carried a free NH2 on the guanidine carbon.",
+      "expected_formula": "C7H9N3",
+      "expected_mw": 135.174,
+      "expected_reactive_amine_hydrogen_count": 0,
+      "expected_role": "out_of_domain",
+      "formula": "C7H9N3",
+      "formula_matches_published": true,
+      "id": "1-phenylguanidine-novel",
+      "mw_matches_published": true,
+      "novel_vs_r_n02_original_5": true,
+      "observed_role": "out_of_domain",
+      "oxirane_ring_count": 0,
+      "pass": true,
+      "reactive_amine_hydrogen_count": 0,
+      "reactive_amine_hydrogen_count_matches_expected": true,
+      "role_matches_expected": true,
+      "smiles": "NC(=N)Nc1ccccc1"
+    },
+    {
+      "average_molecular_weight_g_mol": 130.195,
+      "canonical_isomeric_smiles": "N=C(N)NCCCCN",
+      "citation": "Agmatine (4-aminobutylguanidine), CAS 306-60-5, C5H14N4, MW 130.19. ADVERSARIAL over-exclusion probe: a molecule with a real, structurally remote primary amine (terminal butyl -NH2, 2 H's, attached to a plain CH2 carbon far from the guanidine carbon) COEXISTING with an incidental guanidine group elsewhere in the same molecule. The R-N02 fix must exclude only the N-H atoms whose OWN attached carbon bears the C=N bond (the guanidine's own 3 N's), not collaterally zero out unrelated amine N-H elsewhere in the molecule. Not tested by R-N02, its refuting receipts, or any other novel probe in this verify -- every other probe here has zero non-guanidine N-H, so none could catch a too-broad, whole-molecule exclusion bug. Pre-registered refute trigger: observed reactive_amine_hydrogen_count != 2 or observed_role != hardener.",
+      "expected_formula": "C5H14N4",
+      "expected_mw": 130.195,
+      "expected_reactive_amine_hydrogen_count": 2,
+      "expected_role": "hardener",
+      "formula": "C5H14N4",
+      "formula_matches_published": true,
+      "id": "agmatine-over-exclusion-boundary-novel",
+      "mw_matches_published": true,
+      "novel_vs_r_n02_original_5": true,
+      "observed_role": "hardener",
+      "oxirane_ring_count": 0,
+      "pass": true,
+      "reactive_amine_hydrogen_count": 2,
+      "reactive_amine_hydrogen_count_matches_expected": true,
+      "role_matches_expected": true,
+      "smiles": "NCCCCNC(=N)N"
+    }
+  ],
+  "refute_reasons": [],
+  "schema": "amphora.molecule-role-ranker.v-n02b-independent-verify.diagnostic.v1",
+  "toolkit_provenance": {
+    "detected_version": "2026.03.2",
+    "exact_version_match": true,
+    "toolkit": "RDKit C++"
+  },
+  "v1_file_still_exists_standalone": true,
+  "v1_fixture_n_mismatch_via_real_ffi": 0,
+  "v1_fixture_n_records": 39,
+  "v1_fixture_rows": [
+    {
+      "id": "resin-dgeba",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 2,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-diglycidyl-resorcinol",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 2,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-egdge",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 2,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-bdgde",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 2,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-tmp-triglycidyl",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 3,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-glycidol",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-phenyl-glycidyl-ether",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-butyl-glycidyl-ether",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-cyclohexene-oxide",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-styrene-oxide",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-epichlorohydrin",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "resin-tgddm",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 4,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "hardener-deta",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 5
+    },
+    {
+      "id": "hardener-teta",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 6
+    },
+    {
+      "id": "hardener-tepa",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 7
+    },
+    {
+      "id": "hardener-ipda",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4
+    },
+    {
+      "id": "hardener-hmda",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4
+    },
+    {
+      "id": "hardener-mxda",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4
+    },
+    {
+      "id": "hardener-pacm",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4
+    },
+    {
+      "id": "hardener-dach",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4
+    },
+    {
+      "id": "hardener-mpda",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4
+    },
+    {
+      "id": "hardener-benzylamine",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 2
+    },
+    {
+      "id": "hardener-eda",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 4
+    },
+    {
+      "id": "hardener-taea",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 6
+    },
+    {
+      "id": "ambiguous-glycidyl-amine",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 2
+    },
+    {
+      "id": "ambiguous-n-glycidyl-aniline",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 1
+    },
+    {
+      "id": "ambiguous-glycidyl-piperazine",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 1
+    },
+    {
+      "id": "ambiguous-2aminoethyl-glycidyl-ether",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 2
+    },
+    {
+      "id": "ambiguous-3aminopropyl-glycidyl-ether",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 2
+    },
+    {
+      "id": "ambiguous-hydroxyethyl-glycidyl-amine",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 1,
+      "observed_reactive_amine_hydrogen_count": 1
+    },
+    {
+      "id": "ood-nbutane",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "ood-ethanol",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "ood-acetamide",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "ood-acetone",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "ood-cyclohexane",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "ood-toluene",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 0,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "commercial-dgeba-tds1",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 2,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "commercial-dgeba-tds2",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 2,
+      "observed_reactive_amine_hydrogen_count": 0
+    },
+    {
+      "id": "commercial-dgeba-tds3",
+      "matches_fixture_facts": true,
+      "observed_oxirane_ring_count": 2,
+      "observed_reactive_amine_hydrogen_count": 0
+    }
+  ],
+  "v1_fixture_sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+  "v1_fixture_sha256_expected": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f",
+  "v2_embeds_v1_39_records_structurally_identical": true,
+  "v2_fixture_n_records": 44,
+  "v2_fixture_sha256": "7345ab13d31d9d8ce31392e3648c6a74db3e541162e0aea9ff24035b38a22a4e",
+  "v2_fixture_sha256_expected": "7345ab13d31d9d8ce31392e3648c6a74db3e541162e0aea9ff24035b38a22a4e",
+  "verdict": "CLAIM_SURVIVED"
+}

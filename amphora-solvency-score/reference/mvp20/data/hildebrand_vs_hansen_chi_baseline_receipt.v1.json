@@ -1,0 +1,142 @@
+{
+  "all_gates_pass": true,
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-solvency-score/hildebrand-vs-hansen-chi-v1",
+  "claim_locks": {
+    "authority_ceiling": "RULE_CITED",
+    "constraint_only": true,
+    "no_product_or_optimizer_authority": true,
+    "no_wet_lab_or_candidate_performance_claim": true,
+    "scientific_readiness": "LOCKED_INTERNAL"
+  },
+  "closes": [],
+  "constants": {
+    "R_gas_J_per_mol_K": 8.314462618,
+    "chi_S_entropic": 0.34,
+    "implied_molar_volume_cm3_per_mol": {
+      "chloroform": 80.65,
+      "ethanol": 58.68,
+      "water": 18.07
+    },
+    "implied_vs_literature_relative_error": {
+      "chloroform": 0.0056,
+      "ethanol": 0.005,
+      "water": 0.0
+    },
+    "literature_molar_volume_cm3_per_mol": {
+      "chloroform": 80.2,
+      "ethanol": 58.39,
+      "water": 18.07
+    },
+    "prefactor_Vs_over_RT_per_solvent": {
+      "chloroform": 0.0325338435,
+      "ethanol": 0.0236712453,
+      "water": 0.0072893559
+    },
+    "solvent_hansen_hsp_MPa_half": {
+      "chloroform": [
+        17.8,
+        3.1,
+        5.7
+      ],
+      "ethanol": [
+        15.8,
+        8.8,
+        19.4
+      ],
+      "water": [
+        15.5,
+        16.0,
+        42.3
+      ]
+    },
+    "temperature_K": 298.15
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent on host)",
+    "module promotion to PHASE_0 (requires human dual-identity ceremony keys)",
+    "portfolio manifest edit (66 receipts / 11 modules unchanged)",
+    "external solubility validation beyond the 8-pair in-tree corpus (the externally-validated science remains the separate BigSolDB leave-solute-out benchmark)"
+  ],
+  "edits_portfolio_manifest": false,
+  "fail_closed_rate": 1.0,
+  "gates": {
+    "G1_hansen_known_answer_reproduced": true,
+    "G2_prefactor_constant_per_solvent": true,
+    "G3_implied_molar_volume_within_2pct_of_literature": true,
+    "G4_hildebrand_worse_on_mae": true,
+    "G5_fail_closed_on_nonphysical_inputs": true
+  },
+  "headline_result": {
+    "hansen_3_component": {
+      "fraction_within_factor_of_3": 0.75,
+      "mae_chi_units": 0.6558380331,
+      "n_within_factor_of_3": 6,
+      "pearson_r": 0.8692336903,
+      "rmse_chi_units": 0.8551887358,
+      "spearman_r": 0.7425282824
+    },
+    "hansen_known_answer_reproduction_exact": true,
+    "hildebrand_1_parameter": {
+      "fraction_within_factor_of_3": 0.75,
+      "mae_chi_units": 1.7297636534,
+      "n_within_factor_of_3": 6,
+      "pearson_r": 0.459784888,
+      "rmse_chi_units": 2.661659631,
+      "spearman_r": 0.598813131
+    },
+    "interpretation": "Independent re-derivation of the Hansen 3-component chi reproduces the signed external-validation receipt exactly (max |err| 0.00e+00 chi units; MAE 0.6558, Pearson 0.8692), confirming the prefactor and Ra metric. Swapping ONLY the cohesive-distance term for the single Hildebrand parameter delta_total (Hildebrand & Scott 1950) degrades MAE from 0.6558 to 1.7298 chi units (2.64x worse) and Pearson from 0.869 to 0.460. The degradation is concentrated in the strongly hydrogen-bonding water systems (PVA, PEG, PS in water): Hansen MAE 1.224 vs Hildebrand MAE 4.266, because the scalar delta folds water's large delta_H=42.3 into a single term and grossly over-predicts chi. This a-priori, unfitted comparison corroborates Hansen's central thesis that resolving cohesive energy into dD/dP/dH is required for polar/H-bonding coating systems, and is not reproducible by the 1-D Hildebrand parameter.",
+    "mae_ratio_hildebrand_over_hansen": 2.6374860348,
+    "water_subset_strong_hbond": {
+      "hansen_mae": 1.2235362966,
+      "hildebrand_mae": 4.2664178256,
+      "n": 3
+    }
+  },
+  "human_review_performed": false,
+  "module": "amphora-solvency-score",
+  "organizational_independence_asserted": false,
+  "physical_baselines": {
+    "comparator_hildebrand": "J. H. Hildebrand & R. L. Scott, The Solubility of Nonelectrolytes, 3rd ed., Reinhold 1950 (regular-solution theory); Van Krevelen 1990 Sec. 7.2 Eq. 7.9 (scalar-delta chi).",
+    "incumbent_hansen": "C. M. Hansen, Hansen Solubility Parameters: A User's Handbook, 2nd ed., CRC Press 2007, ISBN 978-0-8493-7248-3, Eq. 2.9; Van Krevelen & Te Nijenhuis, Properties of Polymers, 4th ed., Elsevier 1990, Sec. 7.2."
+  },
+  "promotes_authority": false,
+  "provenance": {
+    "external_chi_data_source": "Van Krevelen & Te Nijenhuis, Properties of Polymers, 4th ed., Elsevier 1990, Table 7.6; Bawn 1949; Sakurada 1954 J. Polym. Sci.; Krigbaum 1959; Malcolm & Rowlinson 1957 Trans. Faraday Soc. 53:921 -- all via the in-tree hansen_chi_external_validation_8_published_polymer_solvent_pairs receipt.",
+    "scope": "marine anti-corrosion two-part epoxy-amine coating solvency: coating-relevant polymers and solvents (chloroform, water, ethanol)",
+    "solvent_hsp_source": "Hansen 2007 Table A.1 (experimental)"
+  },
+  "purpose": "A-priori (unfitted) head-to-head of two published cohesive-energy chi models on the module's in-tree external-validation corpus (8 published polymer-solvent chi values, Van Krevelen 1990 Table 7.6 / Bawn 1949 / Sakurada 1954 / Krigbaum 1959 / Malcolm-Rowlinson 1957): the incumbent Hansen three-component parameter (dD/dP/dH) versus the single Hildebrand solubility parameter delta_total. The two models share an identical entropic term (0.34) and identical prefactor V_s/(RT); ONLY the cohesive-distance metric differs, so the comparison isolates the value of resolving cohesion into three components. The prefactor is back-derived from the already-signed Hansen receipt, reproducing its chi column byte-exactly (known-answer bind) before the Hildebrand column is swapped in.",
+  "receipt_id": "hildebrand-vs-hansen-chi-baseline-578ec0df5b730e0af66818e71b19c2a009de34f92698e681b4b6f0f0c7972931",
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "f47de3e2456e3fca85a98ddcc07b6305f00300e67d9b0bb524d806dae7aab73e",
+    "harness_sha256": "d0c2ac6b57fb8ff74185e0d47d3e6cd56b02085ca42e3bffcb9e4a262aab3a45",
+    "independent_runs": true,
+    "replays": 2,
+    "runB_diagnostic_sha256": "f47de3e2456e3fca85a98ddcc07b6305f00300e67d9b0bb524d806dae7aab73e",
+    "source_receipt_sha256": "2e512aa4e34b97d24c36cf3f0aec0410e534f4bdc6ee1c85c0fa72e35e25fa6b",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "run_type": "PHYSICAL_BASELINE_HEAD_TO_HEAD_REPLAY",
+  "schema": "amphora.solvency-score.hildebrand-vs-hansen-chi-baseline-receipt.v1",
+  "signature": {
+    "payload": "ewogICJhbGxfZ2F0ZXNfcGFzcyI6IHRydWUsCiAgImF1dGhvcml0eSI6ICJBVURJVF9PTkxZIiwKICAiYmVuY2htYXJrIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUvaGlsZGVicmFuZC12cy1oYW5zZW4tY2hpLXYxIiwKICAiY2xhaW1fbG9ja3MiOiB7CiAgICAiYXV0aG9yaXR5X2NlaWxpbmciOiAiUlVMRV9DSVRFRCIsCiAgICAiY29uc3RyYWludF9vbmx5IjogdHJ1ZSwKICAgICJub19wcm9kdWN0X29yX29wdGltaXplcl9hdXRob3JpdHkiOiB0cnVlLAogICAgIm5vX3dldF9sYWJfb3JfY2FuZGlkYXRlX3BlcmZvcm1hbmNlX2NsYWltIjogdHJ1ZSwKICAgICJzY2llbnRpZmljX3JlYWRpbmVzcyI6ICJMT0NLRURfSU5URVJOQUwiCiAgfSwKICAiY2xvc2VzIjogW10sCiAgImNvbnN0YW50cyI6IHsKICAgICJSX2dhc19KX3Blcl9tb2xfSyI6IDguMzE0NDYyNjE4LAogICAgImNoaV9TX2VudHJvcGljIjogMC4zNCwKICAgICJpbXBsaWVkX21vbGFyX3ZvbHVtZV9jbTNfcGVyX21vbCI6IHsKICAgICAgImNobG9yb2Zvcm0iOiA4MC42NSwKICAgICAgImV0aGFub2wiOiA1OC42OCwKICAgICAgIndhdGVyIjogMTguMDcKICAgIH0sCiAgICAiaW1wbGllZF92c19saXRlcmF0dXJlX3JlbGF0aXZlX2Vycm9yIjogewogICAgICAiY2hsb3JvZm9ybSI6IDAuMDA1NiwKICAgICAgImV0aGFub2wiOiAwLjAwNSwKICAgICAgIndhdGVyIjogMC4wCiAgICB9LAogICAgImxpdGVyYXR1cmVfbW9sYXJfdm9sdW1lX2NtM19wZXJfbW9sIjogewogICAgICAiY2hsb3JvZm9ybSI6IDgwLjIsCiAgICAgICJldGhhbm9sIjogNTguMzksCiAgICAgICJ3YXRlciI6IDE4LjA3CiAgICB9LAogICAgInByZWZhY3Rvcl9Wc19vdmVyX1JUX3Blcl9zb2x2ZW50IjogewogICAgICAiY2hsb3JvZm9ybSI6IDAuMDMyNTMzODQzNSwKICAgICAgImV0aGFub2wiOiAwLjAyMzY3MTI0NTMsCiAgICAgICJ3YXRlciI6IDAuMDA3Mjg5MzU1OQogICAgfSwKICAgICJzb2x2ZW50X2hhbnNlbl9oc3BfTVBhX2hhbGYiOiB7CiAgICAgICJjaGxvcm9mb3JtIjogWwogICAgICAgIDE3LjgsCiAgICAgICAgMy4xLAogICAgICAgIDUuNwogICAgICBdLAogICAgICAiZXRoYW5vbCI6IFsKICAgICAgICAxNS44LAogICAgICAgIDguOCwKICAgICAgICAxOS40CiAgICAgIF0sCiAgICAgICJ3YXRlciI6IFsKICAgICAgICAxNS41LAogICAgICAgIDE2LjAsCiAgICAgICAgNDIuMwogICAgICBdCiAgICB9LAogICAgInRlbXBlcmF0dXJlX0siOiAyOTguMTUKICB9LAogICJkb2VzX25vdF9jbG9zZSI6IFsKICAgICJFVkFMVUFUSU9OX1NJR05BVFVSRV9BQlNFTlQgKHRydXN0LWFuY2hvcmVkIHBoYXNlMC1ldmFsdWF0b3Iga2V5IGFic2VudCBvbiBob3N0KSIsCiAgICAibW9kdWxlIHByb21vdGlvbiB0byBQSEFTRV8wIChyZXF1aXJlcyBodW1hbiBkdWFsLWlkZW50aXR5IGNlcmVtb255IGtleXMpIiwKICAgICJwb3J0Zm9saW8gbWFuaWZlc3QgZWRpdCAoNjYgcmVjZWlwdHMgLyAxMSBtb2R1bGVzIHVuY2hhbmdlZCkiLAogICAgImV4dGVybmFsIHNvbHViaWxpdHkgdmFsaWRhdGlvbiBiZXlvbmQgdGhlIDgtcGFpciBpbi10cmVlIGNvcnB1cyAodGhlIGV4dGVybmFsbHktdmFsaWRhdGVkIHNjaWVuY2UgcmVtYWlucyB0aGUgc2VwYXJhdGUgQmlnU29sREIgbGVhdmUtc29sdXRlLW91dCBiZW5jaG1hcmspIgogIF0sCiAgImVkaXRzX3BvcnRmb2xpb19tYW5pZmVzdCI6IGZhbHNlLAogICJmYWlsX2Nsb3NlZF9yYXRlIjogMS4wLAogICJnYXRlcyI6IHsKICAgICJHMV9oYW5zZW5fa25vd25fYW5zd2VyX3JlcHJvZHVjZWQiOiB0cnVlLAogICAgIkcyX3ByZWZhY3Rvcl9jb25zdGFudF9wZXJfc29sdmVudCI6IHRydWUsCiAgICAiRzNfaW1wbGllZF9tb2xhcl92b2x1bWVfd2l0aGluXzJwY3Rfb2ZfbGl0ZXJhdHVyZSI6IHRydWUsCiAgICAiRzRfaGlsZGVicmFuZF93b3JzZV9vbl9tYWUiOiB0cnVlLAogICAgIkc1X2ZhaWxfY2xvc2VkX29uX25vbnBoeXNpY2FsX2lucHV0cyI6IHRydWUKICB9LAogICJoZWFkbGluZV9yZXN1bHQiOiB7CiAgICAiaGFuc2VuXzNfY29tcG9uZW50IjogewogICAgICAiZnJhY3Rpb25fd2l0aGluX2ZhY3Rvcl9vZl8zIjogMC43NSwKICAgICAgIm1hZV9jaGlfdW5pdHMiOiAwLjY1NTgzODAzMzEsCiAgICAgICJuX3dpdGhpbl9mYWN0b3Jfb2ZfMyI6IDYsCiAgICAgICJwZWFyc29uX3IiOiAwLjg2OTIzMzY5MDMsCiAgICAgICJybXNlX2NoaV91bml0cyI6IDAuODU1MTg4NzM1OCwKICAgICAgInNwZWFybWFuX3IiOiAwLjc0MjUyODI4MjQKICAgIH0sCiAgICAiaGFuc2VuX2tub3duX2Fuc3dlcl9yZXByb2R1Y3Rpb25fZXhhY3QiOiB0cnVlLAogICAgImhpbGRlYnJhbmRfMV9wYXJhbWV0ZXIiOiB7CiAgICAgICJmcmFjdGlvbl93aXRoaW5fZmFjdG9yX29mXzMiOiAwLjc1LAogICAgICAibWFlX2NoaV91bml0cyI6IDEuNzI5NzYzNjUzNCwKICAgICAgIm5fd2l0aGluX2ZhY3Rvcl9vZl8zIjogNiwKICAgICAgInBlYXJzb25fciI6IDAuNDU5Nzg0ODg4LAogICAgICAicm1zZV9jaGlfdW5pdHMiOiAyLjY2MTY1OTYzMSwKICAgICAgInNwZWFybWFuX3IiOiAwLjU5ODgxMzEzMQogICAgfSwKICAgICJpbnRlcnByZXRhdGlvbiI6ICJJbmRlcGVuZGVudCByZS1kZXJpdmF0aW9uIG9mIHRoZSBIYW5zZW4gMy1jb21wb25lbnQgY2hpIHJlcHJvZHVjZXMgdGhlIHNpZ25lZCBleHRlcm5hbC12YWxpZGF0aW9uIHJlY2VpcHQgZXhhY3RseSAobWF4IHxlcnJ8IDAuMDBlKzAwIGNoaSB1bml0czsgTUFFIDAuNjU1OCwgUGVhcnNvbiAwLjg2OTIpLCBjb25maXJtaW5nIHRoZSBwcmVmYWN0b3IgYW5kIFJhIG1ldHJpYy4gU3dhcHBpbmcgT05MWSB0aGUgY29oZXNpdmUtZGlzdGFuY2UgdGVybSBmb3IgdGhlIHNpbmdsZSBIaWxkZWJyYW5kIHBhcmFtZXRlciBkZWx0YV90b3RhbCAoSGlsZGVicmFuZCAmIFNjb3R0IDE5NTApIGRlZ3JhZGVzIE1BRSBmcm9tIDAuNjU1OCB0byAxLjcyOTggY2hpIHVuaXRzICgyLjY0eCB3b3JzZSkgYW5kIFBlYXJzb24gZnJvbSAwLjg2OSB0byAwLjQ2MC4gVGhlIGRlZ3JhZGF0aW9uIGlzIGNvbmNlbnRyYXRlZCBpbiB0aGUgc3Ryb25nbHkgaHlkcm9nZW4tYm9uZGluZyB3YXRlciBzeXN0ZW1zIChQVkEsIFBFRywgUFMgaW4gd2F0ZXIpOiBIYW5zZW4gTUFFIDEuMjI0IHZzIEhpbGRlYnJhbmQgTUFFIDQuMjY2LCBiZWNhdXNlIHRoZSBzY2FsYXIgZGVsdGEgZm9sZHMgd2F0ZXIncyBsYXJnZSBkZWx0YV9IPTQyLjMgaW50byBhIHNpbmdsZSB0ZXJtIGFuZCBncm9zc2x5IG92ZXItcHJlZGljdHMgY2hpLiBUaGlzIGEtcHJpb3JpLCB1bmZpdHRlZCBjb21wYXJpc29uIGNvcnJvYm9yYXRlcyBIYW5zZW4ncyBjZW50cmFsIHRoZXNpcyB0aGF0IHJlc29sdmluZyBjb2hlc2l2ZSBlbmVyZ3kgaW50byBkRC9kUC9kSCBpcyByZXF1aXJlZCBmb3IgcG9sYXIvSC1ib25kaW5nIGNvYXRpbmcgc3lzdGVtcywgYW5kIGlzIG5vdCByZXByb2R1Y2libGUgYnkgdGhlIDEtRCBIaWxkZWJyYW5kIHBhcmFtZXRlci4iLAogICAgIm1hZV9yYXRpb19oaWxkZWJyYW5kX292ZXJfaGFuc2VuIjogMi42Mzc0ODYwMzQ4LAogICAgIndhdGVyX3N1YnNldF9zdHJvbmdfaGJvbmQiOiB7CiAgICAgICJoYW5zZW5fbWFlIjogMS4yMjM1MzYyOTY2LAogICAgICAiaGlsZGVicmFuZF9tYWUiOiA0LjI2NjQxNzgyNTYsCiAgICAgICJuIjogMwogICAgfQogIH0sCiAgImh1bWFuX3Jldmlld19wZXJmb3JtZWQiOiBmYWxzZSwKICAibW9kdWxlIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUiLAogICJvcmdhbml6YXRpb25hbF9pbmRlcGVuZGVuY2VfYXNzZXJ0ZWQiOiBmYWxzZSwKICAicGh5c2ljYWxfYmFzZWxpbmVzIjogewogICAgImNvbXBhcmF0b3JfaGlsZGVicmFuZCI6ICJKLiBILiBIaWxkZWJyYW5kICYgUi4gTC4gU2NvdHQsIFRoZSBTb2x1YmlsaXR5IG9mIE5vbmVsZWN0cm9seXRlcywgM3JkIGVkLiwgUmVpbmhvbGQgMTk1MCAocmVndWxhci1zb2x1dGlvbiB0aGVvcnkpOyBWYW4gS3JldmVsZW4gMTk5MCBTZWMuIDcuMiBFcS4gNy45IChzY2FsYXItZGVsdGEgY2hpKS4iLAogICAgImluY3VtYmVudF9oYW5zZW4iOiAiQy4gTS4gSGFuc2VuLCBIYW5zZW4gU29sdWJpbGl0eSBQYXJhbWV0ZXJzOiBBIFVzZXIncyBIYW5kYm9vaywgMm5kIGVkLiwgQ1JDIFByZXNzIDIwMDcsIElTQk4gOTc4LTAtODQ5My03MjQ4LTMsIEVxLiAyLjk7IFZhbiBLcmV2ZWxlbiAmIFRlIE5pamVuaHVpcywgUHJvcGVydGllcyBvZiBQb2x5bWVycywgNHRoIGVkLiwgRWxzZXZpZXIgMTk5MCwgU2VjLiA3LjIuIgogIH0sCiAgInByb21vdGVzX2F1dGhvcml0eSI6IGZhbHNlLAogICJwcm92ZW5hbmNlIjogewogICAgImV4dGVybmFsX2NoaV9kYXRhX3NvdXJjZSI6ICJWYW4gS3JldmVsZW4gJiBUZSBOaWplbmh1aXMsIFByb3BlcnRpZXMgb2YgUG9seW1lcnMsIDR0aCBlZC4sIEVsc2V2aWVyIDE5OTAsIFRhYmxlIDcuNjsgQmF3biAxOTQ5OyBTYWt1cmFkYSAxOTU0IEouIFBvbHltLiBTY2kuOyBLcmlnYmF1bSAxOTU5OyBNYWxjb2xtICYgUm93bGluc29uIDE5NTcgVHJhbnMuIEZhcmFkYXkgU29jLiA1Mzo5MjEgLS0gYWxsIHZpYSB0aGUgaW4tdHJlZSBoYW5zZW5fY2hpX2V4dGVybmFsX3ZhbGlkYXRpb25fOF9wdWJsaXNoZWRfcG9seW1lcl9zb2x2ZW50X3BhaXJzIHJlY2VpcHQuIiwKICAgICJzY29wZSI6ICJtYXJpbmUgYW50aS1jb3Jyb3Npb24gdHdvLXBhcnQgZXBveHktYW1pbmUgY29hdGluZyBzb2x2ZW5jeTogY29hdGluZy1yZWxldmFudCBwb2x5bWVycyBhbmQgc29sdmVudHMgKGNobG9yb2Zvcm0sIHdhdGVyLCBldGhhbm9sKSIsCiAgICAic29sdmVudF9oc3Bfc291cmNlIjogIkhhbnNlbiAyMDA3IFRhYmxlIEEuMSAoZXhwZXJpbWVudGFsKSIKICB9LAogICJwdXJwb3NlIjogIkEtcHJpb3JpICh1bmZpdHRlZCkgaGVhZC10by1oZWFkIG9mIHR3byBwdWJsaXNoZWQgY29oZXNpdmUtZW5lcmd5IGNoaSBtb2RlbHMgb24gdGhlIG1vZHVsZSdzIGluLXRyZWUgZXh0ZXJuYWwtdmFsaWRhdGlvbiBjb3JwdXMgKDggcHVibGlzaGVkIHBvbHltZXItc29sdmVudCBjaGkgdmFsdWVzLCBWYW4gS3JldmVsZW4gMTk5MCBUYWJsZSA3LjYgLyBCYXduIDE5NDkgLyBTYWt1cmFkYSAxOTU0IC8gS3JpZ2JhdW0gMTk1OSAvIE1hbGNvbG0tUm93bGluc29uIDE5NTcpOiB0aGUgaW5jdW1iZW50IEhhbnNlbiB0aHJlZS1jb21wb25lbnQgcGFyYW1ldGVyIChkRC9kUC9kSCkgdmVyc3VzIHRoZSBzaW5nbGUgSGlsZGVicmFuZCBzb2x1YmlsaXR5IHBhcmFtZXRlciBkZWx0YV90b3RhbC4gVGhlIHR3byBtb2RlbHMgc2hhcmUgYW4gaWRlbnRpY2FsIGVudHJvcGljIHRlcm0gKDAuMzQpIGFuZCBpZGVudGljYWwgcHJlZmFjdG9yIFZfcy8oUlQpOyBPTkxZIHRoZSBjb2hlc2l2ZS1kaXN0YW5jZSBtZXRyaWMgZGlmZmVycywgc28gdGhlIGNvbXBhcmlzb24gaXNvbGF0ZXMgdGhlIHZhbHVlIG9mIHJlc29sdmluZyBjb2hlc2lvbiBpbnRvIHRocmVlIGNvbXBvbmVudHMuIFRoZSBwcmVmYWN0b3IgaXMgYmFjay1kZXJpdmVkIGZyb20gdGhlIGFscmVhZHktc2lnbmVkIEhhbnNlbiByZWNlaXB0LCByZXByb2R1Y2luZyBpdHMgY2hpIGNvbHVtbiBieXRlLWV4YWN0bHkgKGtub3duLWFuc3dlciBiaW5kKSBiZWZvcmUgdGhlIEhpbGRlYnJhbmQgY29sdW1uIGlzIHN3YXBwZWQgaW4uIiwKICAicmVjZWlwdF9pZCI6ICJoaWxkZWJyYW5kLXZzLWhhbnNlbi1jaGktYmFzZWxpbmUtNTc4ZWMwZGY1YjczMGUwYWY2NjgxOGU3MWIxOWMyYTAwOWRlMzRmOTI2OThlNjgxYjRiNmYwZjBjNzk3MjkzMSIsCiAgInJlcHJvZHVjaWJpbGl0eSI6IHsKICAgICJjYW5vbmljYWxfZGlhZ25vc3RpY19zaGEyNTYiOiAiZjQ3ZGUzZTI0NTZlM2ZjYTg1YTk4ZGRjYzA3YjYzMDVmMDAzMDBlNjdkOWIwYmI1MjRkODA2ZGFlN2FhYjczZSIsCiAgICAiaGFybmVzc19zaGEyNTYiOiAiZDBjMmFjNmI1N2ZiOGZmNzQxODVlMGQ0N2QzZTZjZDU2YjAyMDg1Y2E0MmUzYmZmY2I5ZTRhMjYyYWFiM2E0NSIsCiAgICAiaW5kZXBlbmRlbnRfcnVucyI6IHRydWUsCiAgICAicmVwbGF5cyI6IDIsCiAgICAicnVuQl9kaWFnbm9zdGljX3NoYTI1NiI6ICJmNDdkZTNlMjQ1NmUzZmNhODVhOThkZGNjMDdiNjMwNWYwMDMwMGU2N2Q5YjBiYjUyNGQ4MDZkYWU3YWFiNzNlIiwKICAgICJzb3VyY2VfcmVjZWlwdF9zaGEyNTYiOiAiMmU1MTJhYTRlMzRiOTdkMjRjMzZjZjNmMGFlYzA0MTBlNTM0ZjRiZGM2ZWUxYzg1YzBmYTcyZTM1ZTI1ZmE2YiIsCiAgICAidHdvX3JlcGxheV9zaGEyNTZfZ2F0ZSI6ICJQQVNTIgogIH0sCiAgInJ1bl90eXBlIjogIlBIWVNJQ0FMX0JBU0VMSU5FX0hFQURfVE9fSEVBRF9SRVBMQVkiLAogICJzY2hlbWEiOiAiYW1waG9yYS5zb2x2ZW5jeS1zY29yZS5oaWxkZWJyYW5kLXZzLWhhbnNlbi1jaGktYmFzZWxpbmUtcmVjZWlwdC52MSIsCiAgInNpZ25pbmdfa2V5IjogewogICAgImF1dGhvcml0eSI6ICJMT0NBTF9ERVZFTE9QTUVOVF9BVURJVF9PTkxZIiwKICAgICJrZXlfaWQiOiAibG9jYWwtOTAyODc3M2Y0OTU5MTE5MyIsCiAgICAidHJ1c3RfYW5jaG9yZWRfaW5fcGhhc2UwX3N0b3JlIjogZmFsc2UKICB9LAogICJzb3VyY2VfcmVjZWlwdCI6IHsKICAgICJwYXRoIjogImFtcGhvcmEtc29sdmVuY3ktc2NvcmUvcmVmZXJlbmNlL212cDIwL2RhdGEvaGFuc2VuX2NoaV9leHRlcm5hbF92YWxpZGF0aW9uXzhfcHVibGlzaGVkX3BvbHltZXJfc29sdmVudF9wYWlyc19yZWNlaXB0LnYxLmpzb24iLAogICAgInNoYTI1NiI6ICIyZTUxMmFhNGUzNGI5N2QyNGMzNmNmM2YwYWVjMDQxMGU1MzRmNGJkYzZlZTFjODVjMGZhNzJlMzVlMjVmYTZiIgogIH0sCiAgInRhcmdldF9wcm9wZXJ0eSI6ICJGbG9yeS1IdWdnaW5zIGludGVyYWN0aW9uIHBhcmFtZXRlciBjaGkgKHBvbHltZXItc29sdmVudCkiCn0=",
+    "payloadType": "application/vnd.amphora.hildebrand-vs-hansen-chi-baseline-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "local-9028773f49591193",
+        "sig": "R52OkXUDK3IEsHUlcGOA93IV3rPBwAOtmcRoPyMkwqWoQRWxIeq+RRy8BBKfVekpFpX1WYgmjfuvG9+OHpzGDA=="
+      }
+    ]
+  },
+  "signing_key": {
+    "authority": "LOCAL_DEVELOPMENT_AUDIT_ONLY",
+    "key_id": "local-9028773f49591193",
+    "trust_anchored_in_phase0_store": false
+  },
+  "source_receipt": {
+    "path": "amphora-solvency-score/reference/mvp20/data/hansen_chi_external_validation_8_published_polymer_solvent_pairs_receipt.v1.json",
+    "sha256": "2e512aa4e34b97d24c36cf3f0aec0410e534f4bdc6ee1c85c0fa72e35e25fa6b"
+  },
+  "target_property": "Flory-Huggins interaction parameter chi (polymer-solvent)"
+}

@@ -1,0 +1,94 @@
+{
+  "authority": "AUDIT_ONLY",
+  "bundle_pinned_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+  "chain_constants_match_amphora_phase0_reviewer_hardcoded_values": true,
+  "checkA_entry_drift": {
+    "entries_identical": true,
+    "live_entry": {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-ip-fto-guard/docs/capability-profile.json",
+      "documentation": "amphora-ip-fto-guard/docs/mission.md",
+      "import_path": "amphora_ip_fto_guard",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "counsel_required_for_legal_conclusions",
+        "fto_not_performed",
+        "not_legal_advice"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-ip-fto-guard",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    "live_head_entry_sha256": "eb6c9b230834adb9a688b5270fda8f6f2b2537c351105e26f7b93c5b4c25be6a",
+    "pinned_entry": {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-ip-fto-guard/docs/capability-profile.json",
+      "documentation": "amphora-ip-fto-guard/docs/mission.md",
+      "import_path": "amphora_ip_fto_guard",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "counsel_required_for_legal_conclusions",
+        "fto_not_performed",
+        "not_legal_advice"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-ip-fto-guard",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    "pinned_snapshot_entry_sha256": "eb6c9b230834adb9a688b5270fda8f6f2b2537c351105e26f7b93c5b4c25be6a"
+  },
+  "checkB_succession_edits_since_pin": {
+    "no_succession_edit_since_pin": false,
+    "records_touching_module_between_pin_and_head": [
+      {
+        "record_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "succession_id": "registry-succession-FORGED-positive-control"
+      }
+    ]
+  },
+  "claim_under_attack": "amphora-ip-fto-guard/ip/claim-contract.v1.json and amphora-ip-fto-guard/evidence/phase0/bundle.v1.json registry_manifest_hash pin faithfully identifies the amphora-ip-fto-guard module's CURRENT entry in the live root module-manifest.json, even though the pinned hash is not byte-equal to the live manifest file's own hash.",
+  "does_not_close": [
+    "Does not verify any field of module-manifest.json other than the amphora-ip-fto-guard entry itself.",
+    "Does not modify claim-contract.v1.json, bundle.v1.json, module-manifest.json, or the registry succession chain/records/archive.",
+    "Does not establish FTO, patentability, procurement, or legal closure."
+  ],
+  "forge_succession_edit_control_active": true,
+  "inputs": {
+    "bundle_path": "amphora-ip-fto-guard/evidence/phase0/bundle.v1.json",
+    "claim_contract_path": "amphora-ip-fto-guard/ip/claim-contract.v1.json",
+    "live_manifest_path": "module-manifest.json",
+    "succession_chain_path": "registry/succession-chain.v1.json"
+  },
+  "live_manifest_sha256": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f",
+  "mutate_manifest_entry_control_active": false,
+  "pin_archive_file_hash_matches_dirname": true,
+  "pin_known_to_succession_chain": true,
+  "pinned_hash": "25b7b7f03c46200dae9d1d1da82c67b8dc353070c3cb3690adc7bab52b5753a5",
+  "pins_self_consistent": true,
+  "refutation_criterion": "REFUTED if (a) the canonicalized amphora-ip-fto-guard manifest entry at the pinned snapshot differs from the entry at live HEAD, OR (b) any registry succession record between the pinned snapshot and HEAD lists 'amphora-ip-fto-guard' in its edits. Either observation means a real, undisclosed edit to this module's manifest row happened after the pin was set and the pin was never advanced to reflect it -- the same defect class as PIN-01/PIN-02, just on a field neither of those audits checked.",
+  "results": {
+    "H0_verdict": "REFUTED",
+    "part_a_refuted_entry_drift": false,
+    "part_b_refuted_succession_edit": true
+  },
+  "schema": "amphora.ip-fto-guard.registry-manifest-pin-freshness-diagnostic.v1",
+  "study_id": "registry-manifest-pin-freshness-v1"
+}

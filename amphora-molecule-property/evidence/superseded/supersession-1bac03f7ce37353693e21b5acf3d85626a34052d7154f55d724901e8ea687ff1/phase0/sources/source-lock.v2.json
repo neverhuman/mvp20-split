@@ -1,0 +1,103 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-molecule-property/evidence/phase0",
+  "eligible_sources": [
+    {
+      "declared_sha256": "14bcdf900b9c91e6ca4dab2f7c8dcde49cb8831accc8369e57cee43307b41c38",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/14bcdf900b9c91e6ca4dab2f7c8dcde49cb8831accc8369e57cee43307b41c38.jsonl.gz",
+      "observed_sha256": "14bcdf900b9c91e6ca4dab2f7c8dcde49cb8831accc8369e57cee43307b41c38",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_radonpy_pi1070.json",
+      "rights_receipt_sha256": "e27e73032a29ec4dbbd7a78a40faa540564a08c5690447a8601b2ff65c5576d8"
+    },
+    {
+      "declared_sha256": "2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05.jsonl.gz",
+      "observed_sha256": "2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_omg_physical_properties.json",
+      "rights_receipt_sha256": "27dd192ede667e6c99c4e81b2933e16a21d5e018ea5cf0e63de661295d602310"
+    },
+    {
+      "declared_sha256": "4176fe4ee4a7e930badcf30cba96ab998022fc3f9157c69bdd259ddb9e27f028",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/4176fe4ee4a7e930badcf30cba96ab998022fc3f9157c69bdd259ddb9e27f028.jsonl.gz",
+      "observed_sha256": "4176fe4ee4a7e930badcf30cba96ab998022fc3f9157c69bdd259ddb9e27f028",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_openpoly_model_results.json",
+      "rights_receipt_sha256": "3772d5d63a203db08b401b5d4f222536a8865db551b9bc4a7096f9b7dcd8f919"
+    },
+    {
+      "declared_sha256": "793fc17f5a57dad790fae3889c215525af15436147e7f168f59e4fa48f9089e7",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/793fc17f5a57dad790fae3889c215525af15436147e7f168f59e4fa48f9089e7.jsonl.gz",
+      "observed_sha256": "793fc17f5a57dad790fae3889c215525af15436147e7f168f59e4fa48f9089e7",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_point2_train_split.json",
+      "rights_receipt_sha256": "a4ca8d997ea4a27cb5eaa36e81332ae852a09c3863d445bc4b3ef029ce18e330"
+    },
+    {
+      "declared_sha256": "9850530553585373bca9cb0fddf3181547f8e138b0b0000e8f1b7e36bd3079e8",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/9850530553585373bca9cb0fddf3181547f8e138b0b0000e8f1b7e36bd3079e8.jsonl.gz",
+      "observed_sha256": "9850530553585373bca9cb0fddf3181547f8e138b0b0000e8f1b7e36bd3079e8",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_polyomics_small_molecules.json",
+      "rights_receipt_sha256": "921a0a17bd32fb8e91044b8f6091a31956c558fe4d98eefca1526209ceddbd99"
+    },
+    {
+      "declared_sha256": "cbda8b22adccfaa760b9ab8a31c4ed024cafe42326954c408b1d5383d93c8436",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/cbda8b22adccfaa760b9ab8a31c4ed024cafe42326954c408b1d5383d93c8436.jsonl.gz",
+      "observed_sha256": "cbda8b22adccfaa760b9ab8a31c4ed024cafe42326954c408b1d5383d93c8436",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_openpoly_properties.json",
+      "rights_receipt_sha256": "0b8a1d0971a34c9d05b11052e9ce0a3a5fb80e43975be3cc7750e9cb1e4efe18"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/corrosion_series.json",
+      "observed_sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/cure_verification_set.json",
+      "observed_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/eew_ahew_benchmark.v1.json",
+      "observed_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/facts.json",
+      "observed_sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/feedback_v1/dataset_context.json",
+      "observed_sha256": "49a3f6ffd663ce136542c6efa650f881d037b3a24fede9d6b1866e7f918ab01a",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/out/feedback_v1_property_benchmark.json",
+      "observed_sha256": "b217554ab6f7b3e7200fa832b00f00a3f4a37c70304378348436f8d3d4ec955b",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    }
+  ],
+  "inventory_hash": "0a426abc2d1d0f89f74bfa6efc5f6bf9e25de150c38b7f4c22a15957dc3aedc0",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-molecule-property",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

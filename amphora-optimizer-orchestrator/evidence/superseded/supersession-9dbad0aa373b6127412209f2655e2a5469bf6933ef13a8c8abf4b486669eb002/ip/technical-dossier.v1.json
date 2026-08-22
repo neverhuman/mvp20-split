@@ -1,0 +1,12 @@
+{
+  "applicability_domain": [
+    "registered amphora-optimizer-orchestrator contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_contract_sha256": "5375c87977083c55fbd163be458218c8a14dc1a6ed7fcd6e4ed3a830ce645b9b",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-optimizer-orchestrator",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

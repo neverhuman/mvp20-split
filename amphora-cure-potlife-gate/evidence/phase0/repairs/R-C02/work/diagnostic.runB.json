@@ -1,0 +1,599 @@
+{
+  "acceptance": {
+    "criterion_a_40c_leg_mape_ceiling_0_25": {
+      "met": true,
+      "observed_40C_corrected_mape": 0.039543,
+      "threshold": 0.25
+    },
+    "criterion_b_beats_q10_on_ge_2_of_3_legs": {
+      "legs_where_corrected_beats_q10": [
+        "10C",
+        "30C",
+        "40C"
+      ],
+      "met": true,
+      "n_legs_beat": 3,
+      "threshold_legs": 2
+    },
+    "overall_met": true
+  },
+  "acceptance_bar_reference_pinned_from": "amphora-cure-potlife-gate/evidence/audit/potlife-q10-heuristic-ablation-v1/potlife-q10-heuristic-ablation-receipt.v1.dsse.json",
+  "campaign_item_id": "R-C02",
+  "candidate_model": {
+    "dof_accounting": "For every system s, the leg-L correction factor is computed from the OTHER 11 systems only (leave-one-system-out); system s's own datum never informs its own correction. No temperature-domain extrapolation of a per-system curve (avoids the T0-identifiability failure mode that refuted VFT in potlife-arrhenius-curvature-mechanism-v1).",
+    "form": "corrected_pred(s, L) = arrhenius_pred(s, L) * exp(mean_{i != s}[ln(observed_i,L / arrhenius_pred_i,L)])",
+    "name": "LOSO cross-system multiplicative bias correction on incumbent per-system published-Ea Arrhenius",
+    "physical_basis": "Corrects the already-established, direction-consistent (12/12 systems, both warm legs) convexity of ln(pot life) vs 1/T reported in potlife-arrhenius-curvature-mechanism-v1, using an empirical population-level calibration factor rather than a per-system parametric curvature law."
+  },
+  "constants": {
+    "gas_constant_j_mol_k": 8.31446261815324,
+    "q10": 2.0,
+    "reference_temperature_c": 22.78,
+    "reference_temperature_k": 295.92999999999995
+  },
+  "dataset": {
+    "fixture_id": "amphora-cure-potlife-gate-phase0-known-answer-2026-07-21",
+    "n_legs": 3,
+    "n_pooled_points": 36,
+    "n_systems": 12,
+    "path": "amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json",
+    "sha256": "7ba2d0d925571fd18bbfece1846a27bee186e3c30f7c342fdcb02bc0537c2ce1"
+  },
+  "leg_summary": {
+    "10C": {
+      "arrhenius_mape": 0.034406,
+      "corrected_beats_q10": true,
+      "corrected_breaches_040c_extrapolation_ceiling_0_25": false,
+      "corrected_mape": 0.033611,
+      "q10_mape": 0.177023
+    },
+    "30C": {
+      "arrhenius_mape": 0.156148,
+      "corrected_beats_q10": true,
+      "corrected_breaches_040c_extrapolation_ceiling_0_25": false,
+      "corrected_mape": 0.017805,
+      "q10_mape": 0.106496
+    },
+    "40C": {
+      "arrhenius_mape": 0.251119,
+      "corrected_beats_q10": true,
+      "corrected_breaches_040c_extrapolation_ceiling_0_25": false,
+      "corrected_mape": 0.039543,
+      "q10_mape": 0.174605
+    }
+  },
+  "module": "amphora-cure-potlife-gate",
+  "overall": {
+    "overall_arrhenius_mape": 0.147224,
+    "overall_corrected_mape": 0.03032,
+    "overall_q10_mape": 0.152708
+  },
+  "per_system": [
+    {
+      "hardener_family": "aliphatic-polyamine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.020493,
+          "arrhenius_predicted_min": 82.27856,
+          "corrected_abs_pct_err": 0.006876,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 84.577571,
+          "loso_correction_factor": 1.027942,
+          "observed_min": 84.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_predicted_min": 72.750769
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.161132,
+          "arrhenius_predicted_min": 17.616229,
+          "corrected_abs_pct_err": 0.006091,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 20.872087,
+          "loso_correction_factor": 1.184821,
+          "observed_min": 21.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_predicted_min": 18.187692
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.268679,
+          "arrhenius_predicted_min": 8.775853,
+          "corrected_abs_pct_err": 0.024421,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 11.706947,
+          "loso_correction_factor": 1.333995,
+          "observed_min": 12.0,
+          "q10_abs_pct_err": 0.242179,
+          "q10_predicted_min": 9.093846
+        }
+      },
+      "system_id": "dgeba-teta"
+    },
+    {
+      "hardener_family": "aliphatic-polyamine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.033056,
+          "arrhenius_predicted_min": 125.702695,
+          "corrected_abs_pct_err": 0.007204,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 129.063507,
+          "loso_correction_factor": 1.026736,
+          "observed_min": 130.0,
+          "q10_abs_pct_err": 0.160568,
+          "q10_predicted_min": 109.126154
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.155813,
+          "arrhenius_predicted_min": 26.169801,
+          "corrected_abs_pct_err": 0.000786,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 31.024364,
+          "loso_correction_factor": 1.185503,
+          "observed_min": 31.0,
+          "q10_abs_pct_err": 0.11995,
+          "q10_predicted_min": 27.281538
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.284842,
+          "arrhenius_predicted_min": 12.872845,
+          "corrected_abs_pct_err": 0.047919,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 17.137462,
+          "loso_correction_factor": 1.331288,
+          "observed_min": 18.0,
+          "q10_abs_pct_err": 0.242179,
+          "q10_predicted_min": 13.640769
+        }
+      },
+      "system_id": "dgeba-deta"
+    },
+    {
+      "hardener_family": "aliphatic-polyamine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.038297,
+          "arrhenius_predicted_min": 161.566023,
+          "corrected_abs_pct_err": 0.013073,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 165.80374,
+          "loso_correction_factor": 1.026229,
+          "observed_min": 168.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_predicted_min": 145.501538
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.152973,
+          "arrhenius_predicted_min": 35.575149,
+          "corrected_abs_pct_err": 0.00446,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 42.187308,
+          "loso_correction_factor": 1.185865,
+          "observed_min": 42.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_predicted_min": 36.375385
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.252151,
+          "arrhenius_predicted_min": 17.948384,
+          "corrected_abs_pct_err": 0.000343,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 23.991757,
+          "loso_correction_factor": 1.336708,
+          "observed_min": 24.0,
+          "q10_abs_pct_err": 0.242179,
+          "q10_predicted_min": 18.187692
+        }
+      },
+      "system_id": "dgeba-tepa"
+    },
+    {
+      "hardener_family": "cycloaliphatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.039467,
+          "arrhenius_predicted_min": 748.416201,
+          "corrected_abs_pct_err": 0.074298,
+          "corrected_beats_arrhenius": false,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 773.49491,
+          "loso_correction_factor": 1.033509,
+          "observed_min": 720.0,
+          "q10_abs_pct_err": 0.191658,
+          "q10_predicted_min": 582.006153
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.150341,
+          "arrhenius_predicted_min": 131.697162,
+          "corrected_abs_pct_err": 0.007865,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 156.219047,
+          "loso_correction_factor": 1.186199,
+          "observed_min": 155.0,
+          "q10_abs_pct_err": 0.06128,
+          "q10_predicted_min": 145.501538
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.210007,
+          "arrhenius_predicted_min": 60.039499,
+          "corrected_abs_pct_err": 0.061267,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": false,
+          "corrected_predicted_min": 80.65629,
+          "loso_correction_factor": 1.343387,
+          "observed_min": 76.0,
+          "q10_abs_pct_err": 0.042753,
+          "q10_predicted_min": 72.750769
+        }
+      },
+      "system_id": "dgeba-ipda"
+    },
+    {
+      "hardener_family": "cycloaliphatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.002022,
+          "arrhenius_predicted_min": 1082.184106,
+          "corrected_abs_pct_err": 0.032151,
+          "corrected_beats_arrhenius": false,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 1114.722969,
+          "loso_correction_factor": 1.030068,
+          "observed_min": 1080.0,
+          "q10_abs_pct_err": 0.191658,
+          "q10_predicted_min": 873.00923
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.160803,
+          "arrhenius_predicted_min": 201.407319,
+          "corrected_abs_pct_err": 0.005666,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 238.640232,
+          "loso_correction_factor": 1.184864,
+          "observed_min": 240.0,
+          "q10_abs_pct_err": 0.090615,
+          "q10_predicted_min": 218.252307
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.246592,
+          "arrhenius_predicted_min": 94.176032,
+          "corrected_abs_pct_err": 0.007765,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 125.97068,
+          "loso_correction_factor": 1.337609,
+          "observed_min": 125.0,
+          "q10_abs_pct_err": 0.126991,
+          "q10_predicted_min": 109.126154
+        }
+      },
+      "system_id": "dgeba-pacm"
+    },
+    {
+      "hardener_family": "cycloaliphatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.007923,
+          "arrhenius_predicted_min": 463.644748,
+          "corrected_abs_pct_err": 0.038784,
+          "corrected_beats_arrhenius": false,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 477.840518,
+          "loso_correction_factor": 1.030618,
+          "observed_min": 460.0,
+          "q10_abs_pct_err": 0.156513,
+          "q10_predicted_min": 388.004102
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.154961,
+          "arrhenius_predicted_min": 91.26417,
+          "corrected_abs_pct_err": 0.001887,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 108.203819,
+          "loso_correction_factor": 1.185611,
+          "observed_min": 108.0,
+          "q10_abs_pct_err": 0.101842,
+          "q10_predicted_min": 97.001026
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.245356,
+          "arrhenius_predicted_min": 43.769334,
+          "corrected_abs_pct_err": 0.009568,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 58.554963,
+          "loso_correction_factor": 1.337808,
+          "observed_min": 58.0,
+          "q10_abs_pct_err": 0.163784,
+          "q10_predicted_min": 48.500513
+        }
+      },
+      "system_id": "dgeba-dach"
+    },
+    {
+      "hardener_family": "aromatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.003078,
+          "arrhenius_predicted_min": 260.800171,
+          "corrected_abs_pct_err": 0.033337,
+          "corrected_beats_arrhenius": false,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 268.667558,
+          "loso_correction_factor": 1.030166,
+          "observed_min": 260.0,
+          "q10_abs_pct_err": 0.160568,
+          "q10_predicted_min": 218.252307
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.144398,
+          "arrhenius_predicted_min": 51.336095,
+          "corrected_abs_pct_err": 0.015557,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 60.933422,
+          "loso_correction_factor": 1.186951,
+          "observed_min": 60.0,
+          "q10_abs_pct_err": 0.090615,
+          "q10_predicted_min": 54.563077
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.230617,
+          "arrhenius_predicted_min": 24.62025,
+          "corrected_abs_pct_err": 0.031098,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 32.995136,
+          "loso_correction_factor": 1.340162,
+          "observed_min": 32.0,
+          "q10_abs_pct_err": 0.147452,
+          "q10_predicted_min": 27.281538
+        }
+      },
+      "system_id": "dgeba-mxda"
+    },
+    {
+      "hardener_family": "aromatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.020906,
+          "arrhenius_predicted_min": 3133.100408,
+          "corrected_abs_pct_err": 0.006413,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 3220.521459,
+          "loso_correction_factor": 1.027902,
+          "observed_min": 3200.0,
+          "q10_abs_pct_err": 0.317962,
+          "q10_predicted_min": 2182.523074
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.196553,
+          "arrhenius_predicted_min": 465.998971,
+          "corrected_abs_pct_err": 0.051786,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 549.964364,
+          "loso_correction_factor": 1.180184,
+          "observed_min": 580.0,
+          "q10_abs_pct_err": 0.059257,
+          "q10_predicted_min": 545.630769
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.296808,
+          "arrhenius_predicted_min": 196.893833,
+          "corrected_abs_pct_err": 0.065284,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": false,
+          "corrected_predicted_min": 261.720596,
+          "loso_correction_factor": 1.329247,
+          "observed_min": 280.0,
+          "q10_abs_pct_err": 0.025659,
+          "q10_predicted_min": 272.815384
+        }
+      },
+      "system_id": "dgeba-mpda"
+    },
+    {
+      "hardener_family": "aromatic-amine",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.011554,
+          "arrhenius_predicted_min": 2372.27137,
+          "corrected_abs_pct_err": 0.016905,
+          "corrected_beats_arrhenius": false,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 2440.571843,
+          "loso_correction_factor": 1.028791,
+          "observed_min": 2400.0,
+          "q10_abs_pct_err": 0.272492,
+          "q10_predicted_min": 1746.018459
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.183439,
+          "arrhenius_predicted_min": 383.783507,
+          "corrected_abs_pct_err": 0.034889,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 453.602171,
+          "loso_correction_factor": 1.181922,
+          "observed_min": 470.0,
+          "q10_abs_pct_err": 0.071267,
+          "q10_predicted_min": 436.504615
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.298175,
+          "arrhenius_predicted_min": 168.438051,
+          "corrected_abs_pct_err": 0.067266,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 223.856219,
+          "loso_correction_factor": 1.329012,
+          "observed_min": 240.0,
+          "q10_abs_pct_err": 0.090615,
+          "q10_predicted_min": 218.252307
+        }
+      },
+      "system_id": "dgeba-mda"
+    },
+    {
+      "hardener_family": "amidoamine-adduct",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.065524,
+          "arrhenius_predicted_min": 467.237834,
+          "corrected_abs_pct_err": 0.043514,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 478.242757,
+          "loso_correction_factor": 1.023553,
+          "observed_min": 500.0,
+          "q10_abs_pct_err": 0.126991,
+          "q10_predicted_min": 436.504615
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.149909,
+          "arrhenius_predicted_min": 108.81169,
+          "corrected_abs_pct_err": 0.008424,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 129.078289,
+          "loso_correction_factor": 1.186254,
+          "observed_min": 128.0,
+          "q10_abs_pct_err": 0.147452,
+          "q10_predicted_min": 109.126154
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.239101,
+          "arrhenius_predicted_min": 56.306518,
+          "corrected_abs_pct_err": 0.018701,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 75.383857,
+          "loso_correction_factor": 1.338812,
+          "observed_min": 74.0,
+          "q10_abs_pct_err": 0.262661,
+          "q10_predicted_min": 54.563077
+        }
+      },
+      "system_id": "dgeba-amidoamine-adduct1"
+    },
+    {
+      "hardener_family": "amidoamine-adduct",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.032017,
+          "arrhenius_predicted_min": 329.114241,
+          "corrected_abs_pct_err": 0.00604,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 337.946507,
+          "loso_correction_factor": 1.026836,
+          "observed_min": 340.0,
+          "q10_abs_pct_err": 0.144109,
+          "q10_predicted_min": 291.003077
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.161132,
+          "arrhenius_predicted_min": 70.464915,
+          "corrected_abs_pct_err": 0.006091,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 83.488346,
+          "loso_correction_factor": 1.184821,
+          "observed_min": 84.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_predicted_min": 72.750769
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.268679,
+          "arrhenius_predicted_min": 35.10341,
+          "corrected_abs_pct_err": 0.024421,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 46.827787,
+          "loso_correction_factor": 1.333995,
+          "observed_min": 48.0,
+          "q10_abs_pct_err": 0.242179,
+          "q10_predicted_min": 36.375385
+        }
+      },
+      "system_id": "dgeba-amidoamine-adduct2"
+    },
+    {
+      "hardener_family": "mannich-base",
+      "legs": {
+        "10C": {
+          "arrhenius_abs_pct_err": 0.138529,
+          "arrhenius_predicted_min": 36.181801,
+          "corrected_abs_pct_err": 0.124735,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 36.761144,
+          "loso_correction_factor": 1.016012,
+          "observed_min": 42.0,
+          "q10_abs_pct_err": 0.133919,
+          "q10_predicted_min": 36.375385
+        },
+        "30C": {
+          "arrhenius_abs_pct_err": 0.102323,
+          "arrhenius_predicted_min": 9.42561,
+          "corrected_abs_pct_err": 0.070159,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 11.236667,
+          "loso_correction_factor": 1.192142,
+          "observed_min": 10.5,
+          "q10_abs_pct_err": 0.133919,
+          "q10_predicted_min": 9.093846
+        },
+        "40C": {
+          "arrhenius_abs_pct_err": 0.17242,
+          "arrhenius_predicted_min": 5.130995,
+          "corrected_abs_pct_err": 0.116468,
+          "corrected_beats_arrhenius": true,
+          "corrected_beats_q10": true,
+          "corrected_predicted_min": 6.9221,
+          "loso_correction_factor": 1.349076,
+          "observed_min": 6.2,
+          "q10_abs_pct_err": 0.266625,
+          "q10_predicted_min": 4.546923
+        }
+      },
+      "system_id": "dgeba-mannich"
+    }
+  ],
+  "positive_control": {
+    "detected": true,
+    "evidence": {
+      "criterion_a_40c_leg_mape_ceiling_0_25": {
+        "met": false,
+        "observed_40C_defect_mape": 0.251119,
+        "threshold": 0.25
+      },
+      "criterion_b_beats_q10_on_ge_2_of_3_legs": {
+        "legs_where_defect_beats_q10": [
+          "10C"
+        ],
+        "met": false,
+        "n_legs_beat": 1,
+        "threshold_legs": 2
+      },
+      "overall_met": false
+    },
+    "how_planted": "acceptance harness re-evaluated with corrected_predicted_min substituted by arrhenius_predicted_min (correction factor identically 1.0) for all 12 systems x 3 legs, everything else (dataset, Q10 baseline, MAPE formula, thresholds) held identical",
+    "planted_defect": "loso_correction_factor forced to 1.0 for every (system, leg) pair, i.e. the candidate collapses back to the unmodified incumbent per-system published-Ea Arrhenius model that R-C02 exists to repair"
+  },
+  "schema": "amphora.cure-potlife-gate.r-c02-loso-bias-correction-diagnostic.v1"
+}

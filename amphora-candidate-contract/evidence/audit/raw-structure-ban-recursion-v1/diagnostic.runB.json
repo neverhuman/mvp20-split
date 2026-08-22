@@ -1,0 +1,458 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "banned_key_family_discovered": [
+    "inchi",
+    "inchi_key",
+    "inchikey",
+    "mol",
+    "mol_block",
+    "mol_v2000",
+    "mol_v3000",
+    "recipe_csv",
+    "sdf",
+    "sdf_records"
+  ],
+  "closes": [
+    "First independent enumeration of the raw-structure ban's attack surface across the candidate-envelope schema's open sub-bags.",
+    "Proves the ban is a declared-surface mechanism (non-recursive) and lists the exact closable smuggling channels."
+  ],
+  "counts": {
+    "n_base_positive": 3,
+    "n_cases": 23,
+    "n_declared_surface": 8,
+    "n_open_bag_probes": 12,
+    "n_smuggling_channels": 12
+  },
+  "does_not_close": [
+    "Whether the Rust runtime front door rejects each listed channel (prior receipt shows runtime is a strict reject-superset over its tested classes; per-channel runtime confirmation is future work).",
+    "Deep structural/semantic validity of smuggled payloads (only key-name admission is characterized)."
+  ],
+  "gates": {
+    "G1_declared_surface_ban_enforced": {
+      "detail": "8/8 declared-surface injections REJECT + 3/3 bases ACCEPT",
+      "pass": true
+    },
+    "G2_ban_is_non_recursive": {
+      "channels": [
+        "context",
+        "context",
+        "context/model_run",
+        "context/model_run/proposal_metadata",
+        "context/optimization_request",
+        "evidence_refs",
+        "evidence_refs/evidence_package",
+        "formulation",
+        "formulation/application",
+        "formulation/process",
+        "formulation/target_envelope",
+        "molecule"
+      ],
+      "detail": "12 open sub-bags admit a smuggled banned key (each also accepts a benign key => genuine non-recursion)",
+      "pass": true
+    },
+    "G3_mutation_closes_hole_noncircular": {
+      "detail": "patching schema `context` with mol_block:false flips ACCEPT->REJECT (probe reads real schema; hole is real & closable)",
+      "pass": true
+    }
+  },
+  "headline": "Schema-layer raw-structure ban is NON-RECURSIVE: enforced at the declared surfaces (8/8 reject + bases accept) but 12 open sub-bags admit smuggled raw-structure/recipe keys => the JSON Schema alone does NOT enforce the no-raw-structure provenance invariant; the runtime front door (strict reject-superset, schema-runtime-parity-v1) is load-bearing for this invariant.",
+  "hypothesis": {
+    "H": "The no-raw-structure/no-free-recipe ban encoded in candidate-envelope.schema.json is enforced RECURSIVELY at every candidate sub-object.",
+    "basis": "declared surfaces enforce it; open sub-bags do not",
+    "verdict": "REFUTED"
+  },
+  "module": "amphora-candidate-contract",
+  "mutation_control": {
+    "accept_after_patch": false,
+    "accept_before_patch": true,
+    "flips_accept_to_reject": true,
+    "key": "mol_block",
+    "site": "context"
+  },
+  "non_circularity": "Banned key family re-derived by walking the on-disk schema for `false`-valued properties (not hardcoded); verdicts produced by a conformant Draft 2020-12 validator; mutation control re-validates against a patched schema.",
+  "per_case": [
+    {
+      "as_expected": true,
+      "case": "BASE_molecule",
+      "class": "base_positive",
+      "expect": "ACCEPT",
+      "injected": null,
+      "site": "(root)",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "as_expected": true,
+      "case": "BASE_formulation",
+      "class": "base_positive",
+      "expect": "ACCEPT",
+      "injected": null,
+      "site": "(root)",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "as_expected": true,
+      "case": "BASE_evidence_package",
+      "class": "base_positive",
+      "expect": "ACCEPT",
+      "injected": null,
+      "site": "(root)",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "as_expected": true,
+      "attributed_to_ban": true,
+      "base_validates_clean": true,
+      "case": "DS_top_mol_block",
+      "class": "declared_surface",
+      "expect": "REJECT",
+      "injected": "mol_block",
+      "site": "(root)",
+      "verdict": {
+        "accept": false,
+        "keyword": null,
+        "path": "",
+        "reason": "False schema does not allow 'RAW-STRUCTURE-SMUGGLED'"
+      }
+    },
+    {
+      "as_expected": true,
+      "attributed_to_ban": true,
+      "base_validates_clean": true,
+      "case": "DS_top_sdf",
+      "class": "declared_surface",
+      "expect": "REJECT",
+      "injected": "sdf",
+      "site": "(root)",
+      "verdict": {
+        "accept": false,
+        "keyword": null,
+        "path": "",
+        "reason": "False schema does not allow 'RAW-STRUCTURE-SMUGGLED'"
+      }
+    },
+    {
+      "as_expected": true,
+      "attributed_to_ban": true,
+      "base_validates_clean": true,
+      "case": "DS_top_recipe_csv",
+      "class": "declared_surface",
+      "expect": "REJECT",
+      "injected": "recipe_csv",
+      "site": "(root)",
+      "verdict": {
+        "accept": false,
+        "keyword": null,
+        "path": "",
+        "reason": "False schema does not allow 'RAW-STRUCTURE-SMUGGLED'"
+      }
+    },
+    {
+      "as_expected": true,
+      "attributed_to_ban": true,
+      "base_validates_clean": true,
+      "case": "DS_top_inchi_evid",
+      "class": "declared_surface",
+      "expect": "REJECT",
+      "injected": "inchi",
+      "site": "(root)",
+      "verdict": {
+        "accept": false,
+        "keyword": null,
+        "path": "",
+        "reason": "False schema does not allow 'RAW-STRUCTURE-SMUGGLED'"
+      }
+    },
+    {
+      "as_expected": true,
+      "attributed_to_ban": true,
+      "base_validates_clean": true,
+      "case": "DS_molecule_mol_block",
+      "class": "declared_surface",
+      "expect": "REJECT",
+      "injected": "mol_block",
+      "site": "molecule",
+      "verdict": {
+        "accept": false,
+        "keyword": null,
+        "path": "molecule",
+        "reason": "False schema does not allow 'RAW-STRUCTURE-SMUGGLED'"
+      }
+    },
+    {
+      "as_expected": true,
+      "attributed_to_ban": true,
+      "base_validates_clean": true,
+      "case": "DS_molecule_inchi_key",
+      "class": "declared_surface",
+      "expect": "REJECT",
+      "injected": "inchi_key",
+      "site": "molecule",
+      "verdict": {
+        "accept": false,
+        "keyword": null,
+        "path": "molecule",
+        "reason": "False schema does not allow 'RAW-STRUCTURE-SMUGGLED'"
+      }
+    },
+    {
+      "as_expected": true,
+      "attributed_to_ban": true,
+      "base_validates_clean": true,
+      "case": "DS_molecule_sdf_records",
+      "class": "declared_surface",
+      "expect": "REJECT",
+      "injected": "sdf_records",
+      "site": "molecule",
+      "verdict": {
+        "accept": false,
+        "keyword": null,
+        "path": "molecule",
+        "reason": "False schema does not allow 'RAW-STRUCTURE-SMUGGLED'"
+      }
+    },
+    {
+      "as_expected": true,
+      "attributed_to_ban": true,
+      "base_validates_clean": true,
+      "case": "DS_formulation_recipe_csv",
+      "class": "declared_surface",
+      "expect": "REJECT",
+      "injected": "recipe_csv",
+      "site": "formulation",
+      "verdict": {
+        "accept": false,
+        "keyword": null,
+        "path": "formulation",
+        "reason": "False schema does not allow 'RAW-STRUCTURE-SMUGGLED'"
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_context",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "mol_block",
+      "is_smuggling_channel": true,
+      "site": "context",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_context_recipe_csv",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "recipe_csv",
+      "is_smuggling_channel": true,
+      "site": "context",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_context_model_run",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "mol_block",
+      "is_smuggling_channel": true,
+      "site": "context/model_run",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_context_proposal_meta",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "mol_block",
+      "is_smuggling_channel": true,
+      "site": "context/model_run/proposal_metadata",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_context_optreq",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "sdf",
+      "is_smuggling_channel": true,
+      "site": "context/optimization_request",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_evidence_refs",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "mol_block",
+      "is_smuggling_channel": true,
+      "site": "evidence_refs",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_molecule_recipe_csv",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "recipe_csv",
+      "is_smuggling_channel": true,
+      "site": "molecule",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_formulation_mol_block",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "mol_block",
+      "is_smuggling_channel": true,
+      "site": "formulation",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_formulation_target_env",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "sdf",
+      "is_smuggling_channel": true,
+      "site": "formulation/target_envelope",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_formulation_application",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "inchi",
+      "is_smuggling_channel": true,
+      "site": "formulation/application",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_formulation_process",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "mol_v3000",
+      "is_smuggling_channel": true,
+      "site": "formulation/process",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    },
+    {
+      "benign_key_accepted": true,
+      "case": "OB_evref_nested_pkg",
+      "class": "open_bag_probe",
+      "expect": "OBSERVE",
+      "injected": "mol_block",
+      "is_smuggling_channel": true,
+      "site": "evidence_refs/evidence_package",
+      "verdict": {
+        "accept": true,
+        "keyword": null,
+        "path": null,
+        "reason": null
+      }
+    }
+  ],
+  "probe_keys": {
+    "recipe": "recipe_csv",
+    "structure": "mol_block"
+  },
+  "purpose": "Quantify the exact schema-layer attack surface of the raw-structure provenance ban and prove it is a declared-surface-only mechanism, motivating the load-bearing runtime front door.",
+  "run_type": "adversarial-schema-completeness",
+  "schema": "amphora.candidate-contract.raw-structure-ban-recursion-diagnostic.v1",
+  "smuggling_channels": [
+    "context",
+    "context",
+    "context/model_run",
+    "context/model_run/proposal_metadata",
+    "context/optimization_request",
+    "evidence_refs",
+    "evidence_refs/evidence_package",
+    "formulation",
+    "formulation/application",
+    "formulation/process",
+    "formulation/target_envelope",
+    "molecule"
+  ],
+  "study_id": "raw-structure-ban-recursion-v1",
+  "theory_reference": {
+    "canonicalization": "IETF RFC 8785 (2020) JCS",
+    "json_grammar": "IETF RFC 8259 (2017)",
+    "json_schema": "draft 2020-12 (2020-12-08) additionalProperties default-open semantics",
+    "reinforces": "amphora-candidate-contract schema-runtime-parity-v1 (runtime strict reject-superset)",
+    "weakness_taxonomy": [
+      "CWE-20 Improper Input Validation",
+      "CWE-915 Improperly Controlled Modification of Object Attributes"
+    ]
+  }
+}

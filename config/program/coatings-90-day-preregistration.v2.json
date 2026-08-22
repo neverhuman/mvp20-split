@@ -1,0 +1,18 @@
+{
+  "schema": "amphora.coatings-90-day-preregistration.v2",
+  "program_id": "coatings-submodel-evidence-20260717-admin-v2",
+  "issued_on": "2026-07-19",
+  "status": "AWAITING_EXTERNAL_COUNTERSIGNATURE_DAY_0_NOT_SET",
+  "supersedes_administration_only": "config/program/coatings-90-day-preregistration.v1.json",
+  "v1_sha256": "dd8b88025c3e0e7672f75f26ed22963e76e6188b5e2d7d12bc2f6f82d7288f2c",
+  "reason": "The 2026-07-17 calendar start passed while status remained PREREGISTERED_NOT_EXECUTED.",
+  "day_0_rule": "UTC date of accepted external counterparty countersignature",
+  "day_0": null,
+  "counterparty_signature": null,
+  "scientific_protocol_changes": false,
+  "preserved_without_change": ["scientific endpoints","estimators","splits","thresholds","stop rules","applicability ceiling","prohibited claims"],
+  "phase1_attempt_modules": ["amphora-barrier-corrosion-score","amphora-cure-potlife-gate","amphora-viscosity-score","amphora-solvency-score","amphora-molecule-property","amphora-molecule-role-ranker","amphora-public-corrosion-benchmark"],
+  "execution_blockers": ["external counterparty signature absent","day 0 unset","raw outcome access prohibited before countersignature","post-outcome estimator change prohibited"],
+  "failure_disposition": "Remain Phase 0/LOCKED_INTERNAL or UNVALIDATED within existing authority; never auto-promote.",
+  "optimizer_objectives_authorized": false
+}

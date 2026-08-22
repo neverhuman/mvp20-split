@@ -1,0 +1,9 @@
+{
+  "campaign_item_id": "W-T-CONTRACT",
+  "status": "done",
+  "last_fire_id": "20260813T160001-640153-7205f9e52661",
+  "done_receipt": "amphora-candidate-contract/evidence/phase0/repairs/W-T-CONTRACT/done/rfc8785-jcs-conformance-receipt.v1.dsse.json",
+  "claim_verdict": "CLAIM_REFUTED",
+  "summary": "contract_hash_v1 (amphora-core::stable_hash/canonicalize) diverges from RFC 8785 JCS on property-name ordering (UTF-16 code-unit sort) and negative-zero canonicalization; agrees on exponent-form numbers. JSON Schema draft 2020-12 side (S1-S6) already CONFORMANT/correctly-scoped, backed by pre-existing schema-runtime-parity-v1 receipt (jsonschema 4.26.0). 15 normative requirements enumerated, 3 divergent, both documented as proposed_followups. docs/mission.md and RETRACTION-INDEX.md corrected in place.",
+  "followups_filed": ["F1: contract_hash_v1 RFC-8785 conformance repair or re-label (deferred, portfolio-wide blast radius)", "F2: JSON-Schema-only lexical/resource gap documented, no code change needed"]
+}

@@ -1,0 +1,11 @@
+./amphora-assurance-capabilities/tests/sourceability_ehs_phase0_kpi.rs:4://! AssuranceCapability::new("amphora-sourceability-ehs")) which loads the
+./amphora-assurance-capabilities/tests/sourceability_ehs_phase0_kpi.rs:205:    let cap = AssuranceCapability::new(SOURCEABILITY_EHS).expect("capability constructs");
+./amphora-engine/src/lib.rs
+./amphora-core/src/lib.rs
+./amphora-core/src/compound_v2.rs
+./amphora-assurance-capabilities/tests/sourceability_ehs_phase0_kpi.rs
+./amphora-assurance-capabilities/src/lib.rs
+./amphora-sourceability-ehs/evidence/phase0/audits/EHS-REDCHEM/work/ehs_redchem_probe_main.rs
+./amphora-phase0-reviewer/src/main.rs
+./xtask/src/main.rs
+./amphora-redteam-audit/evidence/phase0/repairs/T-11/work/t11_optimizer_quarantine_coverage_probe_main.rs

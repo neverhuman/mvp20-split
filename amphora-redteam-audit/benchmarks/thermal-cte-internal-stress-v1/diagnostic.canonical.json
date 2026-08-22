@@ -1,0 +1,215 @@
+{
+  "also_feeds": "amphora-barrier-corrosion-score (thermal micro-cracking -> under-film corrosion pathway)",
+  "authority": "AUDIT_ONLY",
+  "does_not": [
+    "does NOT promote amphora-tolerance-robustness to VALIDATED scientific_readiness (phase-0 is a governance state; needs two trust-anchored human phase0 signatures this AUDIT_ONLY key cannot supply)",
+    "does NOT change the manifest (still 66 receipts / 11 modules)",
+    "does NOT modify any shipped engine or any of the 66 signed receipts"
+  ],
+  "engine_output": {
+    "best_system": "DGEBA+DDS",
+    "ranking_low_stress_is_best": [
+      {
+        "Tg_C": 208.0,
+        "alpha_glass_linear_ppm_per_K": 35.332,
+        "amine": "DDS",
+        "amine_class": "aromatic",
+        "cyclic_thermal_stress_MPa": 3.59,
+        "delta_alpha_vs_steel_ppm_per_K": 23.332,
+        "stress_over_tensile_strength": 0.0598,
+        "stress_rank_low_is_best": 1,
+        "system": "DGEBA+DDS"
+      },
+      {
+        "Tg_C": 158.0,
+        "alpha_glass_linear_ppm_per_K": 39.429,
+        "amine": "IPDA",
+        "amine_class": "cycloaliphatic",
+        "cyclic_thermal_stress_MPa": 4.22,
+        "delta_alpha_vs_steel_ppm_per_K": 27.429,
+        "stress_over_tensile_strength": 0.0703,
+        "stress_rank_low_is_best": 2,
+        "system": "DGEBA+IPDA"
+      },
+      {
+        "Tg_C": 120.0,
+        "alpha_glass_linear_ppm_per_K": 43.24,
+        "amine": "TETA",
+        "amine_class": "aliphatic",
+        "cyclic_thermal_stress_MPa": 4.806,
+        "delta_alpha_vs_steel_ppm_per_K": 31.24,
+        "stress_over_tensile_strength": 0.0801,
+        "stress_rank_low_is_best": 3,
+        "system": "DGEBA+TETA"
+      },
+      {
+        "Tg_C": 115.0,
+        "alpha_glass_linear_ppm_per_K": 43.798,
+        "amine": "DETA",
+        "amine_class": "aliphatic",
+        "cyclic_thermal_stress_MPa": 4.892,
+        "delta_alpha_vs_steel_ppm_per_K": 31.798,
+        "stress_over_tensile_strength": 0.0815,
+        "stress_rank_low_is_best": 4,
+        "system": "DGEBA+DETA"
+      },
+      {
+        "Tg_C": 100.0,
+        "alpha_glass_linear_ppm_per_K": 45.558,
+        "amine": "m-XDA",
+        "amine_class": "araliphatic",
+        "cyclic_thermal_stress_MPa": 5.163,
+        "delta_alpha_vs_steel_ppm_per_K": 33.558,
+        "stress_over_tensile_strength": 0.086,
+        "stress_rank_low_is_best": 5,
+        "system": "DGEBA+m-XDA"
+      },
+      {
+        "Tg_C": 97.0,
+        "alpha_glass_linear_ppm_per_K": 45.927,
+        "amine": "1,3-BAC",
+        "amine_class": "cycloaliphatic",
+        "cyclic_thermal_stress_MPa": 5.22,
+        "delta_alpha_vs_steel_ppm_per_K": 33.927,
+        "stress_over_tensile_strength": 0.087,
+        "stress_rank_low_is_best": 6,
+        "system": "DGEBA+1,3-BAC"
+      },
+      {
+        "Tg_C": 94.0,
+        "alpha_glass_linear_ppm_per_K": 46.303,
+        "amine": "C8DA",
+        "amine_class": "aliphatic",
+        "cyclic_thermal_stress_MPa": 5.277,
+        "delta_alpha_vs_steel_ppm_per_K": 34.303,
+        "stress_over_tensile_strength": 0.088,
+        "stress_rank_low_is_best": 7,
+        "system": "DGEBA+C8DA"
+      }
+    ],
+    "ranking_monotone_decreasing_with_Tg": true,
+    "stress_range_MPa": [
+      3.59,
+      5.277
+    ],
+    "worst_system": "DGEBA+C8DA"
+  },
+  "fitted_parameters": "NONE (zero free parameters; all constants are published universal rules or flagged reference values)",
+  "honest_limitations": [
+    "Boyer glassy rule UNDER-predicts absolute glassy CTE of densely crosslinked thermosets by ~30-40% vs typical measured epoxy (50-70 ppm/K linear); reported magnitudes are DIRECTIONAL, not calibrated.",
+    "Stress magnitude also depends on the (flagged, nominal) modulus, Poisson ratio and stress-free reference temperature; only the RANKING is defended.",
+    "Precise per-network validation needs measured coating CTE + modulus (DMA/TMA) -- MEASUREMENT/DATA-RIGHTS BLOCKED this session.",
+    "Neglects cure-shrinkage stress and viscoelastic relaxation; models elastic thermal-cycling stress amplitude only."
+  ],
+  "known_answer_battery": {
+    "tier_A_exact_noncircular": {
+      "all_pass": true,
+      "n_pass": 5,
+      "n_total": 5,
+      "tests": [
+        {
+          "id": "isotropic_alpha_V_eq_3_alpha_L",
+          "max_abs_residual": 0.0,
+          "pass": true,
+          "tol": 1e-12
+        },
+        {
+          "id": "stress_zero_at_matched_CTE",
+          "pass": true,
+          "tol": 1e-09,
+          "value_MPa": 0.0
+        },
+        {
+          "id": "stress_linear_in_dT",
+          "pass": true,
+          "residual": 0.0,
+          "tol": 1e-09
+        },
+        {
+          "id": "sign_tensile_when_coating_CTE_gt_substrate_on_cooling",
+          "pass": true,
+          "value_MPa": 5.846154
+        },
+        {
+          "id": "biaxial_amplification_gt_1",
+          "pass": true,
+          "value": 1.538462
+        }
+      ]
+    },
+    "tier_B_universal_rule_consistency": {
+      "all_pass": true,
+      "n_pass": 2,
+      "n_total": 2,
+      "note": "Boyer/Simha-Boyer are empirical universal rules with documented +-20-25% scatter; Tier B is reported consistency, Tier A is the load-bearing correctness proof.",
+      "tests": [
+        {
+          "derived_K2_minus_K1": 0.051,
+          "id": "glassy_constant_derived_vs_literature",
+          "literature_alpha_g_Tg": 0.048,
+          "note": "K_g = K2-K1 = 0.051 vs independently reported ~0.048.",
+          "pass": true,
+          "relative_diff": 0.0625,
+          "tol": 0.1
+        },
+        {
+          "documented_scatter_tol": 0.25,
+          "id": "simha_boyer_reproduction_reference_polymers",
+          "pass": true,
+          "provenance": "REFERENCE_NOMINAL canonical textbook alpha,Tg (linear amorphous polymers); consistency check, mildly circular vs the rule's own calibration set -- reported, not a gate.",
+          "rows": [
+            {
+              "polymer": "polystyrene",
+              "rel_diff": 0.1223,
+              "simha_boyer_product": 0.1268,
+              "target_K1": 0.113
+            },
+            {
+              "polymer": "PMMA",
+              "rel_diff": 0.0035,
+              "simha_boyer_product": 0.1134,
+              "target_K1": 0.113
+            },
+            {
+              "polymer": "PVC",
+              "rel_diff": 0.0288,
+              "simha_boyer_product": 0.1097,
+              "target_K1": 0.113
+            }
+          ],
+          "worst_rel_diff": 0.1223
+        }
+      ]
+    }
+  },
+  "new_axis_justification": "No prior receipt (66/11) addresses thermo-mechanical internal stress; all prior axes are transport, solvency, Tg, cure-kinetics, surface energetics, or formulation arithmetic.",
+  "non_circularity": {
+    "engine_ranking": "depends ONLY on measured network Tg (real in-tree data); independent of every REFERENCE_NOMINAL constant",
+    "tier_A": "pure mathematics / exact continuum-mechanics identities; independent of any measured value"
+  },
+  "real_input_data": {
+    "n_systems": 7,
+    "provenance": "7 protocol-consistent DGEBA-amine network Tg from 3 independent sources; read LIVE (traces to signed network-tg-feasibility-v4 receipt)",
+    "source_file": "amphora-redteam-audit/benchmarks/network-tg-feasibility-v4/diagnostic.canonical.json"
+  },
+  "reference_nominal_constants": {
+    "epoxy_glassy_modulus_GPa": 2.5,
+    "epoxy_poisson_ratio": 0.35,
+    "epoxy_tensile_strength_MPa": 60.0,
+    "marine_thermal_cycle_dT_K": 40.0,
+    "note": "REFERENCE_NOMINAL public engineering values; set the STRESS MAGNITUDE SCALE only. The cracking-risk RANKING depends on network Tg alone and is independent of every constant in this block.",
+    "steel_CTE_linear_per_K": 1.2e-05
+  },
+  "schema": "amphora.redteam-audit.thermal-cte-internal-stress-v1.diagnostic.v1",
+  "target_capability": "thermal-cycling internal-stress / cracking-risk estimate for marine DGEBA-amine coatings on carbon steel",
+  "target_module": "amphora-tolerance-robustness",
+  "theory": {
+    "all_volumetric_constants": true,
+    "biaxial_thin_film_stress": "sigma = E*(alpha_coat-alpha_sub)*dT/(1-nu)",
+    "boyer_bondi_K2_alpha_l_times_Tg": 0.164,
+    "derived_glassy_constant_alpha_g_times_Tg": 0.051,
+    "isotropic_identity": "alpha_volumetric = 3 * alpha_linear",
+    "simha_boyer_K1_alpha_l_minus_alpha_g_times_Tg": 0.113
+  },
+  "verdict": "ENGINE_READY__EXACT_PHYSICS_VALIDATED__RANKING_DIRECTIONALLY_VALID__MAGNITUDE_APPROXIMATE__PRECISION_VALIDATION_MEASUREMENT_BLOCKED"
+}

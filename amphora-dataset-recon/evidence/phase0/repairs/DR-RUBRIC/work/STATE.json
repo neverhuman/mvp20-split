@@ -1,0 +1,14 @@
+{
+  "schema": "amphora.dataset-recon.dr-rubric-state.v1",
+  "campaign_item_id": "DR-RUBRIC",
+  "status": "done",
+  "fires": [
+    {
+      "fire_id": "20260810T040001-863993-9a3373941084",
+      "date": "2026-08-10",
+      "action": "Authored rubric.v1.json (six mandated dimensions, each a closed-vocabulary table lookup / fixed-formula sum), a frozen 4-candidate snapshot built entirely from already-gathered PROBE-WEB recon facts (no new acquisition/search this fire), scorer.py, an independent second-party re-derivation script, and a mutation-sensitivity attack. Ran the full two-replay determinism gate plus a positive control (defect-planted non-deterministic scorer) plus a rights-flip mutation attack. All attacks failed to break the rubric -> CLAIM_SURVIVED. Signed done receipt.",
+      "outcome": "CLAIM_SURVIVED",
+      "done_criterion_met": true
+    }
+  ]
+}

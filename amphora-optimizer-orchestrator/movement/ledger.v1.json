@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "event_id": "movement-571ac9f8efb320c46d03e75401db617796f85ed71ae7fa25fc95f5a7117a375c",
+      "path": "events/571ac9f8efb320c46d03e75401db617796f85ed71ae7fa25fc95f5a7117a375c.json",
+      "sha256": "35deb68da8c5da4058624bb6ee797d4f94473ba8cf367881b7a4740fef0ce55e"
+    }
+  ],
+  "module_id": "amphora-optimizer-orchestrator",
+  "schema": "amphora.module-movement-ledger.v1"
+}

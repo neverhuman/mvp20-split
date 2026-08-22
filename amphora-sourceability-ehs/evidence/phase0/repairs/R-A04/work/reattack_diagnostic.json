@@ -1,0 +1,40 @@
+{
+  "matcher_selfcheck": {
+    "correctly_flagged_z2": true,
+    "correctly_rejected_as_not_z2": true,
+    "known_z1_only_panel_substance": "Xylenes",
+    "known_z2_substance_not_in_panel": "Styrene",
+    "matcher_trustworthy": true
+  },
+  "method": "re-run of the refuting osha_table_z1_z2_attribution_audit check: Table Z-2 roster (21 rows) read live from the refuting audit receipt on disk (not re-typed); per-solvent 'Table Z-1' claims extracted live from the three superseded receipts on disk; case-insensitive exact-name membership matcher with two self-check probes",
+  "observed": {
+    "audited_receipt_body_sha256": {
+      "mixture_additivity_receipt": "9a01c11eea500434c1093855d1020e3bf434d1f4e9148e37a2d56adfbd86efcd",
+      "vapor_hazard_ratio_receipt": "7816ce9868726cfaa718ffa6e5023068ebf45e5e1d262e3954637d535a3e8e63",
+      "vhr_temperature_envelope_receipt": "d2b403608fbeb9ccbd0ffcf6d0c7ac5b94c91d6fc89a68e699b786a8f9f1eacf"
+    },
+    "envelope_receipt_misattributed_to_z1": [
+      "toluene"
+    ],
+    "envelope_receipt_solvents_audited": 6,
+    "mixture_receipt_pel_denominator_source_still_claims_z1": true,
+    "toluene_actually_in_table_z2": true,
+    "toluene_twa_used_ppm": 200,
+    "toluene_z2_twa_ppm": 200,
+    "twa_numerically_unaffected": true,
+    "vhr_kpi_gate_under_attack": {
+      "floor": 9,
+      "gate_id": "all_scored_have_osha_public_pel",
+      "note": "every VHR denominator is a public-domain OSHA Table Z-1 PEL",
+      "observed": 9,
+      "passed": true
+    },
+    "vhr_receipt_misattributed_to_z1": [
+      "toluene"
+    ],
+    "vhr_receipt_solvents_audited": 9
+  },
+  "result": "REFUTATION REPRODUCED against the live superseded receipts: toluene (claimed 'Table Z-1' in all three) is on the 21-row 29 CFR 1910.1000 Table Z-2 roster; the other 5/6 envelope-panel and 8/9 VHR-panel attributions are correctly Z-1-only. The corrected attribution in THIS receipt (toluene = Table Z-2) is consistent with the re-run: this receipt itself passes the audit's refutation criterion by no longer claiming Z-1 for toluene.",
+  "roster_rows": 21,
+  "roster_source": "amphora-sourceability-ehs/reference/mvp20/data/osha_table_z1_z2_attribution_audit_receipt.v1.json"
+}

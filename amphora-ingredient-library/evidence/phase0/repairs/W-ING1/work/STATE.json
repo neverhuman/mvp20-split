@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-05",
+  "done_receipt_path": "amphora-ingredient-library/evidence/phase0/repairs/W-ING1/done/repair-W-ING1-done-receipt.v1.dsse.json",
+  "done_receipt_sha256": "adeaac8a9ed66204e9613604ee6eae4e91b6c3612dcf58004adccde757a1c070",
+  "item": "W-ING1",
+  "kpi_path": "amphora-ingredient-library/evidence/phase0/kpis/hardener-tds-verified-constants-kpi.v1.json",
+  "kpi_sha256": "dd5580ab37939f15e7fcf96bea55ba0d49282d2b0ddca1d3c7f2c544211306e7",
+  "status": "done",
+  "verdict": "CLAIM_SURVIVED"
+}

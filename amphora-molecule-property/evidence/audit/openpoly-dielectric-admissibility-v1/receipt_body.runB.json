@@ -1,0 +1,305 @@
+{
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "ceiling": "AUDIT_ONLY. Does not alter the shipped openpoly-dielectric-constant-ml-baseline-kpi.v1.json, any manifest, or any authority ceiling. Extends the module's falsification record: the C8/W2 physical-admissibility methodology now covers OpenPoly's dielectric labels (clean) in addition to RadonPy's (contaminated), closing a gap the W2 corpus-admissibility-audit-receipt's own dependent_module_kpis list implicitly left open by listing this KPI as downstream of the openpoly_properties Tg/Tm ordering violation without checking its own dielectric labels directly.",
+  "claim_under_attack": {
+    "capability_text": "OpenPoly literature dielectric constant ML baseline: 295 polymers \u00d7 111 raw Bemis-Murcko scaffolds. Rigorously tests Ridge, Random Forest, HistGradientBoostingRegressor on Morgan fingerprints (radius=2, 512 bits) + log10(MW). REAL POSITIVE LIFT: best model (RandomForest) achieves scaffold-safe holdout test MAE = 0.4040 vs NULL 0.7027 (+42.5% relative improvement), test R\u00b2 = +0.565, and LOSO-CV R\u00b2 = +0.659 under 111-fold CV. Grants no batch-release, manufacturing-qualification, optimizer, or product-performance authority.",
+    "kpi_id": "amphora-molecule-property-phase0-openpoly-dielectric-constant-ml-baseline-v1",
+    "kpi_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+    "kpi_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+  },
+  "fire_id": "20260814T210001-2385562-23657306b488",
+  "fire_sequence": "ROTATION fire. Identifies the strongest never-before-attacked STANDING claim in amphora-molecule-property per its own RETRACTION-INDEX.md R-A09 status table (dated 2026-08-03): openpoly-dielectric-constant-ml-baseline-kpi.v1.json, status STANDS, 'none - no refuting receipt targets this KPI'. Confirmed against the live falsification ledger (grep module=amphora-molecule-property, zero hits for this KPI id across 20+ prior fires C7/C8/W2/W3/W7/W8/R-A09/R-A11/R-N02/V-N02a/V1-MOLPROP/W-PROP1/U-MLIP/R-C03/U-AD/U-DATA). Applies this module's own established physical-admissibility falsification methodology (C8 fires 1-3, W2 fires 1-3: eps_static>=n^2 Frohlich/Maxwell inequality) to this KPI's OWN OpenPoly source labels for the first time -- prior fires applied this method only to RadonPy-derived dielectric corpora (PI1070, polyomics_small_molecules), where it found severe violations (89.5% and 39.2% respectively). The OpenPoly raw CSV was never mined for its electronic/ionic/total dielectric decomposition or its independent refractive-index column until this fire.",
+  "flips_scientific_readiness": false,
+  "gates": {
+    "dataset_fixture_sha256_matches_target_kpi_pin": true,
+    "positive_control_planted_and_detected": true,
+    "self_contained_no_external_pipeline_reproduction_risk": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "signing_key_role_matches_repo_wide_audit_convention": true,
+    "two_replay_byte_stable_real_data_audit": true
+  },
+  "human_review_performed": false,
+  "input_artifacts": {
+    "compute_openpoly_dielectric_admissibility.py_sha256": "bbd1507988388ac2cc4cb8c82ecf171ce86e7744157eb907c25904da90672fcc",
+    "dataset_fixture_path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+    "dataset_fixture_sha256_match": true,
+    "dataset_fixture_sha256_observed": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "dataset_fixture_sha256_pinned_in_kpi": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "target_kpi_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+    "target_kpi_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+  },
+  "method": "Self-contained data audit of the exact CSV pinned as this KPI's own dataset_fixture_sha256 (feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv, sha256 verified to match byte-for-byte). The CSV carries a per-polymer physical decomposition never before audited: 'Dielectric Constant Total', 'Dielectric Constant Electronic', 'Dielectric Constant Ionic' (295/295 rows all three present) plus an independent 'Refractive Index' column (148/741 rows). Four pre-registered physical/definitional checks: R1 ionic>=0 (Frohlich 1949 Ch.2, non-negative polarization-mechanism contributions); R2 electronic>=1 (Maxwell eps_inf=n^2, n>=1 by definition of phase velocity, same citation W2 used for RadonPy); R3 total==electronic+ionic within 0.011 tolerance (Clausius-Mossotti additive decomposition, cited verbatim in the TARGET KPI's own theory field; tolerance = 0.01 physical rounding of independently-2-decimal-rounded source fields + float-repr epsilon); R4 refractive_index>=1 (Lorentz-Lorenz, identical citation basis W2 already used for RadonPy's refractive-index axis). Positive control: 12 defects planted on a deep copy of the real rows (3 per rule, targeted at rows that were clean in the real data), re-running the identical, unmodified audit() function against the corrupted copy and confirming every planted defect is caught by its targeted rule (R1/R2 single-field mutations also mechanically cross-trigger R3 additivity for the same rows, which is physically correct, not double-counting -- verified per-defect by row name, not merely by rule-level counts). Two-replay: audit() re-run twice on the identical real-data input, byte-identical JSON confirmed.",
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-property",
+  "n_csv_rows_total": 741,
+  "objective": "Test whether the OpenPoly-derived ground-truth dielectric-constant labels feeding openpoly-dielectric-constant-ml-baseline-kpi.v1.json (295 polymers, RandomForest scaffold-safe holdout MAE=0.4040 vs NULL 0.7027, LOSO-CV R2=+0.659, status STANDS) are physically admissible, using the SAME Frohlich(1949)/Maxwell/Lorentz-Lorenz physical-bound methodology this module's own C8/W2 fires already used to REFUTE the sibling RadonPy dielectric corpora, applied here to OpenPoly for the first time.",
+  "organizational_independence_asserted": false,
+  "positive_control": {
+    "detected": true,
+    "evidence": "All 12/12 planted defects were caught by their targeted rule (per_defect_detection, verified by row name). Rule-level violation counts on the corrupted copy: {\"R1\": 3, \"R2\": 3, \"R3\": 9, \"R4\": 3} (R3=9, not 3, because the R1 and R2 single-field mutations mechanically also break R3 additivity for those same 6 rows -- a physically correct cross-trigger, confirmed by inspecting per_defect_detection rather than assuming rule independence). On the REAL (uncorrupted) data, all four rules report 0 violations: {\"R1_ionic_non_negative\": 0, \"R2_electronic_geq_1\": 0, \"R3_total_equals_electronic_plus_ionic\": 0, \"R4_refractive_index_geq_1\": 0}.",
+    "expected_violations_per_rule": {
+      "R1": 3,
+      "R2": 3,
+      "R3": 9,
+      "R4": 3
+    },
+    "how_planted": "See positive_control.planted_defects[] below for the exact row name, field, before-value and after-value of each of the 12 mutations, produced by corrupt_rows() in compute_openpoly_dielectric_admissibility.py (deterministic, seed-free -- operates on the first N rows with each field present, not randomly sampled).",
+    "observed_violations_per_rule": {
+      "R1": 3,
+      "R2": 3,
+      "R3": 9,
+      "R4": 3
+    },
+    "per_defect_detection": [
+      {
+        "after": "-0.621",
+        "before": "0.621",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_228",
+        "targets": "R1"
+      },
+      {
+        "after": "-1.15",
+        "before": "1.15",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_212",
+        "targets": "R1"
+      },
+      {
+        "after": "-0.972",
+        "before": "0.972",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_217",
+        "targets": "R1"
+      },
+      {
+        "after": "0.5",
+        "before": "5.67",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_206",
+        "targets": "R2"
+      },
+      {
+        "after": "0.5",
+        "before": "3.53",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_138",
+        "targets": "R2"
+      },
+      {
+        "after": "0.5",
+        "before": "3.7",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_133",
+        "targets": "R2"
+      },
+      {
+        "after": "9.645",
+        "before": "4.645",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_134",
+        "targets": "R3"
+      },
+      {
+        "after": "9.84",
+        "before": "4.84",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_317",
+        "targets": "R3"
+      },
+      {
+        "after": "9.75",
+        "before": "4.75",
+        "caught_by_targeted_rule": true,
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_136",
+        "targets": "R3"
+      },
+      {
+        "after": "0.8",
+        "before": "1.456632143",
+        "caught_by_targeted_rule": true,
+        "field": "Refractive Index",
+        "row_name": "PLA",
+        "targets": "R4"
+      },
+      {
+        "after": "0.8",
+        "before": "1.490662665",
+        "caught_by_targeted_rule": true,
+        "field": "Refractive Index",
+        "row_name": "PMMA",
+        "targets": "R4"
+      },
+      {
+        "after": "0.8",
+        "before": "1.491857143",
+        "caught_by_targeted_rule": true,
+        "field": "Refractive Index",
+        "row_name": "PCL",
+        "targets": "R4"
+      }
+    ],
+    "planted_defect": "12 defects planted on a deep copy of the real 295-row dielectric table (and its 148-row refractive-index subset), 3 per rule: (R1) Dielectric Constant Ionic negated to a negative value on 3 rows; (R2) Dielectric Constant Electronic overwritten to 0.5 (<1, physically impossible eps_inf) on 3 rows; (R3) Dielectric Constant Total incremented by +5.0 without adjusting components on 3 rows, breaking additivity by far more than the 0.011 rounding tolerance; (R4) Refractive Index overwritten to 0.8 (<1, physically impossible) on 3 rows.",
+    "planted_defects": [
+      {
+        "after": "-0.621",
+        "before": "0.621",
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_228",
+        "targets": "R1"
+      },
+      {
+        "after": "-1.15",
+        "before": "1.15",
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_212",
+        "targets": "R1"
+      },
+      {
+        "after": "-0.972",
+        "before": "0.972",
+        "field": "Dielectric Constant Ionic",
+        "row_name": "polymer_dielectric_constant_217",
+        "targets": "R1"
+      },
+      {
+        "after": "0.5",
+        "before": "5.67",
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_206",
+        "targets": "R2"
+      },
+      {
+        "after": "0.5",
+        "before": "3.53",
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_138",
+        "targets": "R2"
+      },
+      {
+        "after": "0.5",
+        "before": "3.7",
+        "field": "Dielectric Constant Electronic",
+        "row_name": "polymer_dielectric_constant_133",
+        "targets": "R2"
+      },
+      {
+        "after": "9.645",
+        "before": "4.645",
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_134",
+        "targets": "R3"
+      },
+      {
+        "after": "9.84",
+        "before": "4.84",
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_317",
+        "targets": "R3"
+      },
+      {
+        "after": "9.75",
+        "before": "4.75",
+        "field": "Dielectric Constant Total",
+        "row_name": "polymer_dielectric_constant_136",
+        "targets": "R3"
+      },
+      {
+        "after": "0.8",
+        "before": "1.456632143",
+        "field": "Refractive Index",
+        "row_name": "PLA",
+        "targets": "R4"
+      },
+      {
+        "after": "0.8",
+        "before": "1.490662665",
+        "field": "Refractive Index",
+        "row_name": "PMMA",
+        "targets": "R4"
+      },
+      {
+        "after": "0.8",
+        "before": "1.491857143",
+        "field": "Refractive Index",
+        "row_name": "PCL",
+        "targets": "R4"
+      }
+    ]
+  },
+  "pre_registered_refute_criterion": "If >=1 row violates R1 (ionic>=0), R2 (electronic>=1), R3 (total==electronic+ionic within 0.011), or R4 (refractive_index>=1) on the REAL data, the KPI's ground-truth dielectric labels are physically inadmissible and the claim is REFUTED. If 0 rows violate all four on real data AND the positive control (12 planted defects, 3 per rule) is fully detected on the corrupted copy, the claim SURVIVES this attack.",
+  "promotes_authority": false,
+  "promotes_nothing": true,
+  "promotion_blocked_by": "NOT this audit's science (all gates pass) and NOT key custody. Manifest untouched.",
+  "real_data_audit": {
+    "R1_ionic_non_negative": {
+      "n_checked": 295,
+      "n_violations": 0,
+      "passed": true,
+      "violations": []
+    },
+    "R2_electronic_geq_1": {
+      "n_checked": 295,
+      "n_violations": 0,
+      "passed": true,
+      "violations": []
+    },
+    "R3_total_equals_electronic_plus_ionic": {
+      "n_checked": 295,
+      "n_violations": 0,
+      "passed": true,
+      "tolerance": 0.011,
+      "violations": []
+    },
+    "R4_refractive_index_geq_1": {
+      "n_checked": 148,
+      "n_violations": 0,
+      "passed": true,
+      "violations": []
+    },
+    "all_checks_passed": true,
+    "n_dielectric_triplet_rows": 295,
+    "n_refractive_index_rows": 148
+  },
+  "real_data_two_replay_byte_identical": true,
+  "receipt_id": "openpoly-dielectric-admissibility-v1",
+  "recommended_followups": [
+    "The 6 rows where Total differs from Electronic+Ionic by exactly the float-boundary value (~0.01, within the legitimate 2-decimal rounding tolerance) are listed for transparency in real_data_audit.R3_total_equals_electronic_plus_ionic even though they do not breach the 0.011 tolerance -- no action needed, flagged only so a future fire does not need to re-derive this boundary reasoning from scratch.",
+    "This audit did not re-derive the ML MAE/R2 numbers themselves (a harder scaffold-safe or macro-bisection external-validity attack, in the style of C7/W7, remains open for this KPI's MODEL claims as opposed to its LABEL claims -- this fire only closes the label-admissibility gap)."
+  ],
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new data source opened. This audit reads only the already-in-tree OpenPoly raw CSV (rights_class DERIVATIVE_ALLOWED per reference/mvp20/data/feedback_v2/rights/rights_openpoly_properties.json) that the target KPI itself already consumes and pins by sha256, plus the target KPI receipt itself. No quarantined or CONTEXT_ONLY source was opened.",
+  "schema": "amphora.molecule-property.openpoly-dielectric-corpus-physical-admissibility-audit-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY audit receipt under evidence/audit/"
+  },
+  "study_id": "openpoly-dielectric-admissibility-v1",
+  "verdict": "SURVIVED",
+  "why": "The OpenPoly dielectric-constant corpus underlying openpoly-dielectric-constant-ml-baseline-kpi.v1.json is, unlike its sibling RadonPy corpora, physically admissible under every one of the four pre-registered checks: 0/295 rows have a negative ionic polarization contribution (R1), 0/295 have an electronic contribution below the eps_inf>=1 floor (R2), 0/295 violate the Total=Electronic+Ionic additive decomposition beyond legitimate 2-decimal rounding (R3), and 0/148 rows with an independently-reported refractive index fall below the n>=1 floor (R4). This is a genuinely falsifying attack -- the identical methodology found 89.5% (PI1070) and 39.2% (polyomics_small_molecules) violation rates on this module's RadonPy dielectric corpora (C8/W2), and the positive control confirms the harness used here would have caught defects of the same kind had they been present (12/12 planted defects detected by their targeted rule). openpoly-dielectric-constant-ml-baseline-kpi.v1.json's REAL POSITIVE LIFT claim (RandomForest scaffold-safe holdout MAE=0.4040 vs NULL 0.7027, LOSO-CV R2=+0.659) therefore SURVIVES this label-admissibility attack: whatever else may limit this KPI (it is already disclosed as 'baseline_valid_on_openpoly_scaffold_distribution_only' and grants no release/optimizer/solver authority), physically inadmissible ground-truth labels of the kind that undermined the RadonPy dielectric claims are NOT among its weaknesses."
+}

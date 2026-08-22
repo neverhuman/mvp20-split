@@ -1,0 +1,10 @@
+{
+  "command": "RDKIT_INCLUDE_DIR/RDKIT_LIB_DIR/BOOST_INCLUDE_DIR/LD_LIBRARY_PATH from /home/ubuntu/.local/share/amphora/rdkit-2026.03.2; flock -w 300 .cron.lock ~/.cargo/bin/cargo test --workspace --locked --features rdkit",
+  "exit_code": 0,
+  "failing_tests": [],
+  "suites": 62,
+  "tests_failed": 0,
+  "tests_ignored": 0,
+  "tests_passed": 378,
+  "toolchain": "1.96.0 (rust-toolchain.toml)"
+}

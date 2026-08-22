@@ -1,0 +1,8 @@
+{
+  "base_image": "python:3.12.11-slim-bookworm@sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+  "built_image": "nomad-feature-sandbox:2026-07-18",
+  "built_image_digest": "sha256:a90678209779aff69c091946f0117b764cf55de35b6be7fa842369f27707f4be",
+  "dockerfile_sha256": "cba56837c3fc0df8250bc51cb3bb636849148f50d0f7cdc6313014f977328b3c",
+  "platform": "linux/amd64",
+  "requirements_lock_sha256": "aa00a00d6888f10728e7b001eadc5b6308bd25c7559c8a26cf7c90b746ce0c63"
+}

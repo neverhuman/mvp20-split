@@ -1,0 +1,222 @@
+{
+  "benchmark_data_sha256": "3de26f203423a80212e6c90aaa511e5112c79bf92ac56b4c63260c3086d4638f",
+  "n_regression_records": 26,
+  "probe_molecules": [
+    {
+      "canonical_smiles": "N=C(N)N",
+      "formula": "CH5N3",
+      "id": "guanidine",
+      "mw": 59.072,
+      "n_active_nh": 4,
+      "note": "CAS 113-00-8; original refuting probe (a)",
+      "smiles": "NC(=N)N",
+      "theoretical_ahew": 14.768
+    },
+    {
+      "canonical_smiles": "N#CN=C(N)N",
+      "formula": "C2H4N4",
+      "id": "dicyandiamide",
+      "mw": 84.082,
+      "n_active_nh": 4,
+      "note": "CAS 461-58-5; DICY; original refuting probe (a)",
+      "smiles": "NC(=NC#N)N",
+      "theoretical_ahew": 21.0205
+    },
+    {
+      "canonical_smiles": "N=C(N)NC(=N)N",
+      "formula": "C2H7N5",
+      "id": "biguanide",
+      "mw": 101.113,
+      "n_active_nh": 5,
+      "note": "CAS 461-71-2; original refuting probe (a)",
+      "smiles": "NC(=N)NC(=N)N",
+      "theoretical_ahew": 20.2226
+    },
+    {
+      "canonical_smiles": "N=C(Nc1ccccc1)Nc1ccccc1",
+      "formula": "C13H13N3",
+      "id": "dpg-diphenylguanidine-accelerator",
+      "mw": 211.268,
+      "n_active_nh": 2,
+      "note": "CAS 102-06-7; sibling refuting probe (b), cross-module consistency",
+      "smiles": "c1ccccc1NC(=N)Nc2ccccc2",
+      "theoretical_ahew": 105.634
+    },
+    {
+      "canonical_smiles": "Cc1ccccc1NC(=N)Nc1ccccc1C",
+      "formula": "C15H17N3",
+      "id": "dotg-di-o-tolylguanidine-accelerator",
+      "mw": 239.322,
+      "n_active_nh": 2,
+      "note": "CAS 97-39-2; sibling refuting probe (b), cross-module consistency",
+      "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C",
+      "theoretical_ahew": 119.661
+    }
+  ],
+  "rdkit_version_detected": "2026.03.2",
+  "regression_records": [
+    {
+      "n_active_nh": 5,
+      "property": "ahew",
+      "record_id": "exact-deta",
+      "smiles": "NCCNCCN"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "exact-ipda",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "n_active_nh": 5,
+      "property": "ahew",
+      "record_id": "mono-ahew-deta",
+      "smiles": "NCCNCCN"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "mono-ahew-ipda",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "mono-ahew-hmda",
+      "smiles": "NCCCCCCN"
+    },
+    {
+      "n_active_nh": 5,
+      "property": "ahew",
+      "record_id": "deta",
+      "smiles": "NCCNCCN"
+    },
+    {
+      "n_active_nh": 6,
+      "property": "ahew",
+      "record_id": "teta",
+      "smiles": "NCCNCCNCCN"
+    },
+    {
+      "n_active_nh": 7,
+      "property": "ahew",
+      "record_id": "tepa",
+      "smiles": "NCCNCCNCCNCCN"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "eda",
+      "smiles": "NCCN"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "ipda",
+      "smiles": "CC1(C)CC(N)CC(C)(CN)C1"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "hmda",
+      "smiles": "NCCCCCCN"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "mxda",
+      "smiles": "NCc1cccc(CN)c1"
+    },
+    {
+      "n_active_nh": 2,
+      "property": "ahew",
+      "record_id": "piperazine",
+      "smiles": "C1CNCCN1"
+    },
+    {
+      "n_active_nh": 3,
+      "property": "ahew",
+      "record_id": "aep",
+      "smiles": "NCCN1CCNCC1"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "dach",
+      "smiles": "NC1CCCCC1N"
+    },
+    {
+      "n_active_nh": 2,
+      "property": "ahew",
+      "record_id": "aniline",
+      "smiles": "Nc1ccccc1"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "mda",
+      "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1"
+    },
+    {
+      "n_active_nh": 4,
+      "property": "ahew",
+      "record_id": "dds",
+      "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+    },
+    {
+      "n_active_nh": 0,
+      "property": "ahew",
+      "record_id": "triethylamine",
+      "smiles": "CCN(CC)CC"
+    },
+    {
+      "n_active_nh": 0,
+      "property": "ahew",
+      "record_id": "acetamide",
+      "smiles": "CC(=O)N"
+    },
+    {
+      "n_active_nh": 0,
+      "property": "ahew",
+      "record_id": "dmf",
+      "smiles": "CN(C)C=O"
+    },
+    {
+      "n_active_nh": 0,
+      "property": "ahew",
+      "record_id": "urea",
+      "smiles": "NC(=O)N"
+    },
+    {
+      "n_active_nh": 0,
+      "property": "ahew",
+      "record_id": "acetonitrile",
+      "smiles": "CC#N"
+    },
+    {
+      "n_active_nh": 0,
+      "property": "ahew",
+      "record_id": "pyridine",
+      "smiles": "c1ccncc1"
+    },
+    {
+      "n_active_nh": 0,
+      "property": "ahew",
+      "record_id": "nitrobenzene",
+      "smiles": "O=[N+]([O-])c1ccccc1"
+    },
+    {
+      "n_active_nh": 2,
+      "property": "ahew",
+      "record_id": "ethanolamine",
+      "smiles": "NCCO"
+    }
+  ],
+  "repair_item": "R-N02",
+  "repair_mode": "interactive-2026-08-03",
+  "schema": "amphora.molecule-property.rn02-property-sweep.v1",
+  "shipped_n_active_amine_nh_source_sha256": "c13f31324edd06c467bf5e875aec8533431f1ca30f150dc803381bf5ddf08181",
+  "target_receipt_sha256": "74e2c759c1f56ba435ad2807be1f2bdc37c479d68fca81934569901072ba6519",
+  "target_source_file": "amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/compute_amine_class.py",
+  "target_source_file_sha256": "ff3649a1dc1001795d06eba7a9cd64f3b933a5abafcfad3893c23cd4a690c53d"
+}

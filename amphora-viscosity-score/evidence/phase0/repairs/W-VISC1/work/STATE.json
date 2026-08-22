@@ -1,0 +1,15 @@
+{
+  "schema": "amphora.viscosity-score.w-visc1-state.v1",
+  "campaign_item_id": "W-VISC1",
+  "last_fire_date": "2026-08-05",
+  "status": "pending",
+  "summary": "Fire 1 attacked the pinned claim ('KRIEGER_DOUGHERTY cannot be benchmarked against any rights-clean dataset currently reachable') by extending the C9 search: closed 2 open leads (RSC Advances c5ra06914a, De Gruyter 10.3139/217.3338 -- both confirmed closed-access via Unpaywall) and found a new, unambiguous CC BY 4.0, on-scope candidate (Finke et al. 2021, Materials 14(11):2752, boehmite/Araldite-LY556). Ran a full KRIEGER_DOUGHERTY benchmark against figure-digitized (phi, eta) pairs from it. Verdict: CLAIM_REFUTED on the narrow reachability claim, but the benchmark itself is underpowered (dilute-regime phi_max/intrinsic-viscosity non-identifiability, phi range 0.04-0.09 vs plausible phi_max 0.5-0.74).",
+  "receipt_this_fire": "amphora-viscosity-score/evidence/phase0/repairs/W-VISC1/attempts/krieger-dougherty-ccby-reachability-probe-v1/krieger-dougherty-ccby-reachability-probe-receipt.v1.dsse.json",
+  "does_not_change": "Reynolds et al. 2024 (C9 fire 2) remains independently CC BY-NC-ND rights-blocked; that verdict is unmodified and still needs human rights review to resolve.",
+  "why_not_done": "The item's literal done_criterion asks for a signed BLOCKED_RIGHTS receipt. This fire's honest finding is CLAIM_REFUTED (a rights-clean benchmark path exists, contrary to the blanket 'unreachable' framing), so the receipt was signed into attempts/, not done/, per the output contract (done/ only when the stated criterion is met).",
+  "next_fire_options": [
+    "Option A: treat this fire's CLAIM_REFUTED finding as the item's final answer -- promote a KPI documenting 'reachable-but-underpowered', formally closing W-VISC1 as resolved-not-blocked (requires a human/launcher decision on whether that satisfies the item's intent, since it differs from the pre-registered BLOCKED_RIGHTS expectation).",
+    "Option B: pursue author contact or a repository search for Finke et al. 2021's raw (non-digitized) data, or a higher-phi CC-BY dataset that actually spans toward phi_max, to get a decisive (non-underpowered) benchmark.",
+    "Option C: file a data-acquisition-queue ask for a high-phi (phi>0.2) rights-clean filled-resin viscosity ladder, since the core remaining gap is a phi-range/power problem, not a pure rights problem."
+  ]
+}

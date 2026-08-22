@@ -1,0 +1,246 @@
+{
+  "anomaly_resolutions": [
+    {
+      "computation": {
+        "component_B_rows_kg_as_printed": {
+          "epoxy_resin": 86.18,
+          "naphtha": 55.79,
+          "paint_thinner": 26.63,
+          "zinc_pigment": 86.84
+        },
+        "component_B_rows_lb": {
+          "epoxy_resin": 190.0,
+          "naphtha": 123.0,
+          "paint_thinner": 58.7,
+          "zinc_pigment": 1900.0
+        },
+        "pigment_pct_using_lb_column_or_corrected_kg": 83.63780428753797,
+        "pigment_pct_using_printed_kg_column": 33.99624177889133,
+        "spec_range_pct": [
+          81.5,
+          85.5
+        ],
+        "zinc_kg_corrected_from_lb": 861.8248
+      },
+      "method": "Internal cross-check against the SAME document's own Quantitative Requirements table (not merely a re-read of the ingredient table). MIL-DTL-24441/19B(SH) states Component B 'Pigment content, percent (%)' must fall in [81.5, 85.5]. Zinc pigment is Component B's only pigment ingredient (thixatrope amount is '---' for this formula).",
+      "result": "Printed-kg-column pigment content = 34.0% -- FAILS the document's own 81.5-85.5% spec by a wide margin. Lb-column (equivalently, kg corrected via lb*0.453592 = 861.8 kg) pigment content = 83.6% -- PASSES the spec cleanly, near the range midpoint. This is a self-consistency proof internal to the primary source: only the 861.8 kg reading is compatible with the same document's own quantitative requirements table. CONCLUSION: the printed '86.84 kg' zinc-pigment figure is the transcription error; 861.8 kg (equivalently, use the 1900.0 lb figure) is correct. v1's flag is RESOLVED -- disposition upgraded from RECOMMENDED_WITH_FLAG to RECOMMENDED_WITH_RESOLVED_FLAG. The row is now usable as a known-answer control input provided the corrected 861.8 kg (not the printed 86.84 kg) is used.",
+      "still_not_done": "This resolution proves WHICH figure is correct; it does not itself add a control to the locked fixture. That remains an R- item action per v1 followup 1, now unblocked for this specific row.",
+      "target": "source n=5 (MIL-DTL-24441/19B(SH), zinc primer Formula 159) -- v1 proposed_followup 2"
+    },
+    {
+      "computation": {
+        "lb_to_kg_factor_check": 94.347136,
+        "this_fire_30A_lb": 208.0,
+        "this_fire_30A_printed_kg": 93.35,
+        "v1_source4_31A_printed_kg_for_same_208lb_naphtha": 94.35
+      },
+      "method": "Cross-document match against source n=4 (/31A) already in the v1 corpus: same naphtha grade, same 208.0 lb quantity, different document.",
+      "result": "94.35 kg (source 4's figure, matching the exact lb*0.453592 conversion) is correct; /30A's own printed 93.35 kg is a single-digit transcription error. Disposition: RECOMMENDED_WITH_FLAG, RESOLVED (use 94.35 kg for this row, not the printed 93.35 kg).",
+      "still_not_done": "Same caveat as above -- resolution only, no control landed in the locked fixture this fire.",
+      "target": "source n=14 (MIL-DTL-24441/30A(SH), haze gray Formula 151 Type IV) -- new anomaly found and resolved in the same fire it was discovered"
+    }
+  ],
+  "campaign_item_id": "W-D-KAB",
+  "extends": {
+    "prior_receipt": "amphora-known-answer-benchmarks/evidence/phase0/repairs/W-D-KAB/done/W-D-KAB-source-sweep-receipt.v1.dsse.json",
+    "prior_sweep_record_sha256": "fa3298efe2254afe202a6c815d9bd8db36309623a48d7ecbb2b7f553d70f20a5",
+    "relationship": "extension, not correction -- all 12 v1 source entries are carried forward byte-identical below; this fire adds 2 new swept sources (13,14) and resolves 2 data-integrity anomalies (1 flagged in v1, 1 newly discovered and resolved in this same fire) via independent cross-checks, not re-assertion."
+  },
+  "objective": "Grow the known-answer control corpus from real published data; every source's licence quoted verbatim or blocking licence quoted verbatim; BLOCKED_DATA acceptable with a real 12-source sweep record.",
+  "schema": "amphora.known-answer-benchmarks.data-sweep.v2",
+  "sources_swept": [
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Defines VOC ceilings by Type: Type III <340 g/L (2.8 lb/gal), Type IV <340 g/L, Type V <250 g/L (2.08 lb/gal); Table III verification-requirements framework; references 40 CFR 60 Method 24 for density/volume-solids/weight-solids determination.",
+      "disposition": "RECOMMENDED",
+      "disposition_reason": "US federal government work; explicit DoD-wide approved-use statement; zero copyright notices anywhere in the 212620-byte extracted text; consistent with 17 U.S.C. Sec.105 (no copyright protection for US Government works).",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, 212620 bytes, pdftotext -layout",
+      "license_quote_verbatim": "This specification is approved for use by the Naval Sea Systems Command, Department of the Navy, and is available for use by all Departments and Agencies of the Department of Defense.",
+      "n": 1,
+      "name": "MIL-DTL-24441D(SH), PAINT, EPOXY-POLYAMIDE, GENERAL SPECIFICATION FOR (27 Aug 2009, superseding MIL-DTL-24441C(SH) 19 May 1999)",
+      "query": "MIL-DTL-24441 epoxy polyamide coating formula volume solids Navy specification",
+      "structural_overlap": "Same chemistry class as our target space: two-component epoxy-polyamide marine/steel coatings.",
+      "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441D.024992.pdf"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Complete mass-basis worked formula. Component A (7 ingredients: thixatrope, polyamide 15.88kg/35.0lb, polyamide adduct 136.08kg/300.0lb, titanium dioxide 45.36kg/100.0lb, magnesium silicate 187.79kg/414.0lb, butyl alcohol 114.31kg/252.0lb, copper phthalocyanine blue 0.45kg/1.0lb, yellow iron oxide 9.07kg/20.0lb). Component B (5 ingredients incl. epoxy resin [named alternates: EPON 828/ARALDITE 6010/DER 331/EPO-TUF 37-140] 226.8kg/500.0lb, naphtha 90.72kg/200.0lb, aluminum silicate 68.04kg/150.0lb, magnesium silicate 129.73kg/286.0lb). Footnote 14: 'For VOC calculations, component A makes approximately 379 liters (100 gallons) and component B makes approximately 386 liters (102 gallons).'",
+      "disposition": "RECOMMENDED",
+      "disposition_reason": "Same US federal government status as source 1.",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, 158510 bytes, pdftotext -layout",
+      "license_quote_verbatim": "This specification is approved for use by the Naval Sea Systems Command, Department of the Navy, and is available for use by all Departments and Agencies of the Department of Defense.",
+      "n": 2,
+      "name": "MIL-DTL-24441/29B(SH), PAINT, EPOXY-POLYAMIDE, GREEN PRIMER, FORMULA 150, TYPE IV (27 Aug 2009, superseding /29A(SH) 19 May 1999)",
+      "query": "MIL-DTL-24441 epoxy polyamide coating formula volume solids Navy specification (sheet index -> direct download)",
+      "structural_overlap": "Direct: same epoxy resins our module already references by name (EPON 828, DER 331) as the DGEBA source in Component B; independently recomputable weight-solids% and approximate VOC (g/L) cross-checkable against the <340 g/L Type IV ceiling from source 1.",
+      "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_29B.052764.pdf"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Parallel Type III mass-basis formula for the same Formula 150 green primer. Component A (7 items incl. magnesium silicate 226.80kg/500.0lb, butyl alcohol 113.40kg/250.0lb). Component B (4 items incl. epoxy resin 226.80kg/500.0lb, naphtha 122.95kg/249.0lb, aluminum silicate 68.04kg/150.0lb).",
+      "disposition": "RECOMMENDED",
+      "disposition_reason": "Explicit unlimited public-release distribution statement, zero copyright notices.",
+      "fetch_method": "curl -A Mozilla/5.0 -e https://everyspec.com/, HTTP 200, 25078 bytes, pdftotext -layout",
+      "license_quote_verbatim": "DISTRIBUTION STATEMENT A.  Approved for public release; distribution is unlimited.",
+      "n": 3,
+      "name": "MIL-DTL-24441/20A(SH), PAINT, EPOXY-POLYAMIDE, GREEN PRIMER, FORMULA 150, TYPE III (19 May 1999, superseding MIL-P-24441/20(SH) 23 Jul 1991)",
+      "query": "everyspec.com MIL-DTL-24441 pdf (sheet index)",
+      "structural_overlap": "Same formula family as source 2 at a different VOC-restriction Type; enables a within-formula Type III vs Type IV solvent-content differential check.",
+      "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_20A.024998.pdf"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Component A (4 items: polyamide 16.33kg/36.0lb, polyamide adduct 139.71kg/308.0lb, titanium dioxide 238.14kg/525.0lb, butyl alcohol 115.21kg/254.0lb). Component B (3 items: epoxy resin 233.60kg/515.0lb, magnesium silicate 176.90kg/390.0lb, naphtha 94.35kg/208.0lb).",
+      "disposition": "RECOMMENDED",
+      "disposition_reason": "Same as source 3.",
+      "fetch_method": "curl -A Mozilla/5.0 -e https://everyspec.com/, HTTP 200, 23159 bytes, pdftotext -layout",
+      "license_quote_verbatim": "DISTRIBUTION STATEMENT A.  Approved for public release; distribution is unlimited.",
+      "n": 4,
+      "name": "MIL-DTL-24441/31A(SH), PAINT, EPOXY-POLYAMIDE, WHITE, FORMULA 152, TYPE IV (19 May 1999, superseding MIL-P-24441/31(SH) 23 Jul 1991)",
+      "query": "everyspec.com MIL-DTL-24441 pdf (sheet index)",
+      "structural_overlap": "Same epoxy-polyamide chemistry, TiO2-pigmented white topcoat variant; independent 3rd worked formula for cross-formula weight-solids/VOC consistency checking.",
+      "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_31A.026399.pdf"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Component A (4 items: polyamide 3.63kg/8.0lb, polyamide adduct 48.08kg/106.0lb, naphtha 13.61kg/30.0lb, paint thinner 5.99kg/13.2lb). Component B (4 items: zinc pigment 86.84kg/1900.0lb, epoxy resin 86.18kg/190.0lb, naphtha 55.79kg/123.0lb, paint thinner 26.63kg/58.7lb).",
+      "data_integrity_flag": "Zinc pigment row prints 86.84 kg / 1900.0 lb. 1900 lb x 0.453592 kg/lb = 861.82 kg, a ~9.9x mismatch against the printed 86.84 kg. Every other row in the same table converts consistently (epoxy resin 190.0lb->86.18kg matches printed 86.18kg exactly; naphtha 123.0lb->55.79kg matches; paint thinner 58.7lb->26.62kg matches printed 26.63kg within rounding). This isolates the zinc-pigment row as an internal inconsistency in the primary document (not introduced by this fire's extraction -- pdftotext -layout output checked verbatim). Filed as proposed_followup 2.",
+      "disposition": "RECOMMENDED_WITH_FLAG",
+      "disposition_reason": "Public-release DoD document, but internal data-integrity anomaly found (see flag) -- do not adopt this specific row until resolved.",
+      "fetch_method": "curl -A Mozilla/5.0 -e https://everyspec.com/, HTTP 200, 21713 bytes, pdftotext -layout",
+      "license_quote_verbatim": "DISTRIBUTION STATEMENT A.  Approved for public release; distribution is unlimited.",
+      "n": 5,
+      "name": "MIL-DTL-24441/19B(SH), PAINT, EPOXY-POLYAMIDE, ZINC PRIMER, FORMULA 159, TYPE III (19 May 1999, superseding MIL-P-24441/19A(SH) 23 Jul 1991)",
+      "query": "everyspec.com MIL-DTL-24441 pdf (sheet index)",
+      "structural_overlap": "Zinc-rich cathodic-protection primer variant, distinct pigment chemistry (zinc dust) from sources 2-4's TiO2/pigment systems -- widens the corpus's factor coverage.",
+      "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_19B.024997.pdf"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Weight per epoxide (EEW) 185-192 g/eq (ASTM D-1625); density 1.16 g/mL / 9.7 lb/gal (ASTM D1475); viscosity 110-150 P at 25C (ASTM D445). Single-component property sheet, not a full formulation -- no volume-solids or VOC value stated for a mixed system.",
+      "disposition": "BLOCKED",
+      "disposition_reason": "No affirmative reproduction/redistribution grant found anywhere in the document; only a liability disclaimer and a trademark note. Absence of a copyright notice is not the same as public-domain status for a commercial manufacturer document -- silence is not permission.",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, 205064 bytes, pdftotext -layout (westlakeepoxy.com origin PDF returned HTTP 403 direct; this is a third-party mirror of the same document, http://www.westlakeepoxy.com/en-US/product/epon-resin-828 cited as source-of-record on page 1)",
+      "license_quote_verbatim": "(R) and (TM) Licensed trademarks of Westlake Inc. The information provided herein was believed by Westlake Inc. (\"Westlake\") to be accurate at the time of preparation or prepared from sources believed to be reliable, but it is the responsibility of the user to investigate and understand other pertinent sources of information, to comply with all laws and procedures applicable to the safe handling and use of the product and to determine the suitability of the product for its intended use. All products supplied by Westlake Epoxy are subject to Westlake Epoxy's terms and conditions of sale. WESTLAKE MAKES NO WARRANTY, EXPRESS OR IMPLIED, CONCERNING THE PRODUCT OR THE MERCHANTABILITY OR FITNESS THEREOF FOR ANY PURPOSE OR CONCERNING THE ACCURACY OF ANY INFORMATION PROVIDED BY WESTLAKE, except that the product shall conform to Westlake's specifications. Nothing contained herein constitutes an offer for the sale of any product.",
+      "n": 6,
+      "name": "Westlake Epoxy (formerly Hexion) EPON(TM) Resin 828 Technical Data Sheet, Revision 6/21/2021, Generated 2022-05-25",
+      "query": "EPON 828 technical data sheet volume solids composition Hexion",
+      "structural_overlap": "Same resin named by trade name (EPON 828) as an alternate in sources 2-4's footnote 10; usable only as an unlicensed cross-reference pending rights clearance, not as a locked control on its own.",
+      "url": "https://miller-stephenson.com/wp-content/uploads/2024/06/EPON-828_TDS.pdf"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Complete single-product control: mass density 1.5 kg/L (12.7 lb/US gal); volume solids 87 +/- 2%; VOC (3 bases: EU Directive 2010/75/EU SED max 102.0 g/kg / max 153.0 g/L, EPA Method 24 145.0 g/L); theoretical spreading rate 8.7 m2/L for 100um.",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Warranty/liability disclaimer and trademark note only; no copyright statement and no affirmative reproduction/redistribution grant.",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, 285137 bytes, pdftotext -layout",
+      "license_quote_verbatim": "PPG warrants (i) its title to the product, (ii) that the quality of the product conforms to PPG's specifications for such product in effect at the time of manufacture and (iii) that the product shall be delivered free of the rightful claim of any third person for infringement of any U.S. patent covering the product. THESE ARE THE ONLY WARRANTIES THAT PPG MAKES ... The PPG logo, and all other PPG marks are property of the PPG group of companies. All other third-party marks are property of their respective owners.",
+      "n": 7,
+      "name": "PPG AMERCOAT 240 / SIGMACOVER 240 Product Data Sheet, Ref. 7991, October 4, 2022",
+      "query": "PPG Amercoat Sigma marine epoxy coating technical data sheet terms of use copyright",
+      "structural_overlap": "Two-component phenalkamine epoxy for industrial/marine use, same performance class as our target space, but a competitor formulation (no disclosed composition, only finished-product property values).",
+      "url": "https://max.ppg.com/adaptivemedia/rendition?id=298dc6ca40f29e6b1beed9d0f07dba16bd1560f8"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Two-component polyamine-cured epoxy mastic: solids by volume 82 +/- 2% (standard grade, ISO 3233) / 74 +/- 2% (winter grade); density 1.4 kg/L (calculated); VOC-US/Hong Kong 1.8-2.09 lbs/gal (US EPA Method 24, tested).",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Liability/accuracy disclaimer only ('Disclaimer' section heading present); no copyright notice, no affirmative reproduction/redistribution grant.",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, 105123 bytes, pdftotext -layout",
+      "license_quote_verbatim": "The information in this document is given to the best of Jotun's knowledge, based on laboratory testing and practical experience. Jotun's products are considered as semi-finished goods and as such, products are often used under conditions beyond Jotun's control. Jotun cannot guarantee anything but the quality of the product itself. Minor product variations may be implemented in order to comply with local requirements. Jotun reserves the right to change the given data without further notice.",
+      "n": 8,
+      "name": "Jotun Jotamastic 87 Technical Data Sheet, Date of issue 19 April 2017",
+      "query": "Jotun Hempel marine epoxy coating technical data sheet volume solids theoretical spreading rate PDF",
+      "structural_overlap": "Same epoxy-polyamine marine coating class; cites ISO 3233 as its own volume-solids test method (see source 10).",
+      "url": "https://files.ekmcdn.com/jotunmarine/resources/other/jota87tds.pdf"
+    },
+    {
+      "copyright_string_occurrences": 1,
+      "coverage": "Defines the exact arithmetic method (weight solids, volume solids, solvent content, VOC, HAP content, density) our module's controls should mirror, but the standard's own worked examples were not read (paywalled).",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Explicit copyright, all rights reserved, $86.00 purchase required, explicit AI-use prohibition on the standard's content.",
+      "fetch_method": "WebFetch, HTTP 200 (store landing page only; full standard text is paywalled and was not purchased/read)",
+      "license_quote_verbatim": "Copyright \u00a9 1996 - 2026 ASTM. All Rights Reserved. ASTM International, 100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA, 19428-2959 USA ... Using Artificial Intelligence (AI) on ASTM standards and related intellectual property is prohibited. Violations will result in suspension of access. ... These formula values may not be used to replace measured values required by government regulations unless specifically stated in the governing documents.",
+      "n": 9,
+      "name": "ASTM D5201-05a, Standard Practice for Calculating Formulation Physical Constants of Paints and Coatings",
+      "query": "ASTM D5201 standard practice calculating VOC coatings worked example",
+      "structural_overlap": "Direct methodological overlap with the module's arithmetic-control subset (ARITH-*); cited indirectly by MIL-DTL-24441 (which points to 40 CFR 60 Method 24, the regulatory analogue) rather than by D5201 itself.",
+      "url": "https://store.astm.org/d5201-05a.html"
+    },
+    {
+      "copyright_string_occurrences": 1,
+      "coverage": "This is the exact test method Jotun's Jotamastic 87 TDS (source 8) cites for its own 'Solids by volume' line -- same functional role as ASTM D2697/D5201 in the US market.",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Explicit copyright and reproduction prohibition; the specific standard page itself could not be fetched (403), so this quote is from ISO's general copyright policy, not the D3233 product page directly -- noted as a fetch-method caveat.",
+      "fetch_method": "WebSearch + WebFetch; direct standard page 403 Forbidden, general ISO copyright-policy page used for the verbatim quote instead",
+      "license_quote_verbatim": "\u00a9 ISO, 2019 \u00b7 All rights reserved \u00b7 Where ISO Publications are provided in hard-copy form, photocopying or reproduction in any form is not permitted without prior written authorization from ISO.",
+      "n": 10,
+      "name": "ISO 3233:2019, Paints and varnishes -- Determination of percentage volume of solid matter",
+      "query": "ASTM D5201 standard practice calculating VOC coatings worked example (ISO analogue) -> https://www.iso.org/standard/40554.html returned HTTP 403 -> iso.org copyright policy reproduction standards all rights reserved",
+      "structural_overlap": "Same arithmetic domain as source 9; cited by a source-8 manufacturer TDS already in our sweep.",
+      "url": "https://www.iso.org/copyright.html (fallback; the standard's own product page 403'd)"
+    },
+    {
+      "copyright_string_occurrences": 1,
+      "coverage": "Search-snippet only (not independently verified against the primary PDF this fire): Ancamine 2578 -- 72% solids in butanol/xylene 80:20, amine value 250-270 mgKOH/g, viscosity 2000-3200 mPa.s at 25C; Ancamine 2849 -- amine value 370-440 mgKOH/g; Ancamine 2712M -- amine value 500-560 mgKOH/g.",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Explicit copyright and no-redistribution clause on Evonik's own site.",
+      "fetch_method": "WebSearch (snippet only for the numeric data) + WebFetch (403/404 on the PDFs; legal-notice page fetched successfully after a 301 redirect)",
+      "license_quote_verbatim": "The Content may not be duplicated, disseminated, modified and/or made available to the public unless permitted under applicable copyright laws. ... Copies of the Content for private use must reference our copyright. ... use of the Content on other websites is prohibited.",
+      "n": 11,
+      "name": "Evonik Ancamine amine-hardener TDS family (2578, 2849, 2712M) + Evonik corporate legal notice",
+      "query": "Ancamine amine hardener technical data sheet amine value volume solids -> Ancamine evonik.com terms of use copyright legal notice",
+      "structural_overlap": "Amine-hardener class directly in our target space (polyamide/polyamide-adduct curing agents), but data provenance is weak (search snippet, not primary document) in addition to being rights-blocked -- flagged in proposed_followup 4.",
+      "url": "products.evonik.com/assets/.../Ancamine_2578_EMEA_TDS...pdf (HTTP 404 on direct re-fetch); specialchem.com/coatings/product/evonik-ancamine-2280 (HTTP 403); fallback quoted from https://www.evonik.com/en/meta/legal-notice.html (redirected from corporate.evonik.com/en/footer-en/legal-notice)"
+    },
+    {
+      "copyright_string_occurrences": 1,
+      "coverage": "Search-snippet only (not independently verified against the primary Huntsman PDF this fire): Araldite GY 250 density 1.17 g/cm3; EEW not retrieved.",
+      "disposition": "BLOCKED",
+      "disposition_reason": "Explicit copyright/IP-reservation clause on Huntsman's own site.",
+      "fetch_method": "WebSearch (snippet only for numeric data) + WebFetch (empty/403 on distributor pages; terms page fetched successfully)",
+      "license_quote_verbatim": "All right, title and interest (including all copyrights, trademarks and other intellectual property rights) in and to the Site is the sole and exclusive property of or are licensed to Huntsman and/or its affiliates. ... No intellectual property rights in and to the information or content on this Site are transferred to visitors of this Site.",
+      "n": 12,
+      "name": "Huntsman Araldite GY 250 TDS + Huntsman corporate terms and conditions",
+      "query": "Araldite GY 250 Huntsman technical data sheet epoxide equivalent weight density -> huntsman.com terms of use copyright all rights reserved website",
+      "structural_overlap": "Same resin family, named as an alternate ('ARALDITE 6010, Huntsman Advanced Materials') in sources 2-4's footnote 10; weak provenance (snippet only) in addition to rights-blocked, flagged in proposed_followup 4.",
+      "url": "knowde.com/stores/jubail-chemical-industries/products/araldite-gy-250 (WebFetch returned no content); coatings.specialchem.com/product/r-huntsman-araldite-gy-250 (HTTP 403); fallback quoted from https://www.huntsman.com/terms-and-conditions"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Complete mass-basis worked formula, haze gray (TiO2 + magnesium silicate + black iron oxide) pigment system, distinct from sources 2-5's green/white/zinc pigmentation. Component A (6 items: polyamide 9.53kg/21.0lb, polyamide adduct 134.72kg/297.0lb, magnesium silicate 180.53kg/398.0lb, titanium dioxide 48.08kg/106.0lb, black iron oxide 7.26kg/16.0lb, butyl alcohol 118.39kg/261.0lb). Component B (3 items: epoxy resin 240.41kg/530.0lb, magnesium silicate 120.20kg/265.0lb, naphtha 100.25kg/221.0lb).",
+      "disposition": "RECOMMENDED",
+      "disposition_reason": "Same US federal government status as sources 1-4; zero copyright notices in the 24338-byte extracted text.",
+      "fetch_method": "curl -A Mozilla/5.0 -e https://everyspec.com/, HTTP 200, 24338 bytes, pdftotext -layout (re-verified with plain pdftotext, identical figures)",
+      "integrity_check": "All 9 rows: |printed_kg - lb*0.453592| <= 0.006 kg. No anomaly.",
+      "license_quote_verbatim": "This specification is approved for use by the Naval Sea Systems Command, Department of the Navy, and is available for use by all Departments and Agencies of the Department of Defense. ... DISTRIBUTION STATEMENT A. Approved for public release; distribution is unlimited.",
+      "n": 13,
+      "name": "MIL-DTL-24441/21A(SH), PAINT, EPOXY-POLYAMIDE, HAZE GRAY, FORMULA 151, TYPE III (19 May 1999, superseding MIL-P-24441/21(SH) 23 Jul 1991)",
+      "query": "everyspec.com MIL-DTL-24441 sheet list index /1 /9 /15 /33 aluminum haze gray primer",
+      "structural_overlap": "Same epoxy-polyamide chemistry class; 4th distinct pigment system in the corpus (after green, white, zinc); every one of 9 ingredient rows independently spot-checked lb->kg (factor 0.453592) and found self-consistent to <=0.006 kg -- a clean control, no flag.",
+      "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_21A.024999.pdf"
+    },
+    {
+      "copyright_string_occurrences": 0,
+      "coverage": "Component A (6 items: polyamide 16.33kg/36.0lb, polyamide adduct 140.16kg/309.0lb, magnesium silicate 165.11kg/364.0lb, titanium dioxide 45.81kg/101.0lb, black iron oxide 7.03kg/15.5lb, butyl alcohol 117.03kg/258.0lb). Component B (3 items: epoxy resin 233.60kg/515.0lb, magnesium silicate 176.90kg/390.0lb, naphtha 93.35kg/208.0lb [FLAGGED, see below]).",
+      "data_integrity_flag": "Naphtha row prints 93.35 kg / 208.0 lb. 208.0 lb x 0.453592 kg/lb = 94.35 kg, a 1.00 kg discrepancy (~1.1%) against the printed figure -- small, but real: every other row in this table (epoxy resin 515.0lb->233.60kg exact, magnesium silicate 390.0lb->176.90kg exact) converts with <=0.003 kg residual. INDEPENDENTLY CROSS-CHECKED (not merely re-asserted) against a second, separate MIL-DTL-24441 document already in this corpus: source 4 (/31A, Formula 152 White, Type IV) specifies the IDENTICAL ingredient (footnote-4 naphtha, ASTM D3734 Type I, AMSCO Super High Flash Naphtha) at the IDENTICAL quantity, 208.0 lb, and /31A prints the mathematically correct 94.35 kg for that exact figure. Two independently-issued Navy specification sheets citing the same naphtha grade at the same pound quantity give different kg figures (93.35 vs 94.35) for what must be the same conversion -- this proves /30A's printed kg column (93.35) is a single-digit transcription typo (tens-digit 4->3), not a real formulation difference. CORRECTED VALUE: 94.35 kg (use the lb column / cross-document match, not /30A's own kg column, for this row).",
+      "disposition": "RECOMMENDED_WITH_FLAG",
+      "disposition_reason": "Public-release DoD document, Type IV (higher-solids) variant of source 13's formula, but one row fails an independent cross-document consistency check (see data_integrity_flag) -- do not adopt this specific row until the fixture-building fire substitutes the corrected figure.",
+      "fetch_method": "curl -A Mozilla/5.0, HTTP 200, 23398 bytes, pdftotext -layout AND plain pdftotext (both agree)",
+      "license_quote_verbatim": "This specification is approved for use by the Naval Sea Systems Command, Department of the Navy, and is available for use by all Departments and Agencies of the Department of Defense. ... DISTRIBUTION STATEMENT A. Approved for public release; distribution is unlimited.",
+      "n": 14,
+      "name": "MIL-DTL-24441/30A(SH), PAINT, EPOXY-POLYAMIDE, HAZE GRAY, FORMULA 151, TYPE IV (19 May 1999, superseding MIL-P-24441/30(SH) 23 Jul 1991)",
+      "query": "everyspec.com MIL-DTL-24441 sheet list index /1 /9 /15 /33 aluminum haze gray primer",
+      "structural_overlap": "Type IV (lower-VOC) sibling of source 13's Type III haze gray formula -- enables the same within-formula Type III vs Type IV differential check already noted for sources 2/3 (green primer).",
+      "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/download.php?spec=MIL-DTL-24441_30A.026311.pdf"
+    }
+  ],
+  "tally": {
+    "blocked": 7,
+    "note": "12 v1 sources unchanged (4 RECOMMENDED clean, 1 RECOMMENDED_WITH_FLAG now RESOLVED, 7 BLOCKED) + 2 new sources this fire (1 RECOMMENDED clean [13/21A], 1 RECOMMENDED_WITH_FLAG found-and-RESOLVED-same-fire [14/30A]). 5+2+0+7=14 (2 with-flag rows counted once each in recommended_with_resolved_flag, not double-counted in 'recommended').",
+    "recommended": 5,
+    "recommended_with_flag_unresolved": 0,
+    "recommended_with_resolved_flag": 2,
+    "swept": 14
+  }
+}

@@ -1,0 +1,719 @@
+{
+  "$schema": "schemas/module-manifest.schema.json",
+  "modules": [
+    {
+      "authority_ceiling": "MODELED_DIRECTIONAL",
+      "authority_tier": "MODELED_DIRECTIONAL",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-barrier-corrosion-score/docs/capability-profile.json",
+      "documentation": "amphora-barrier-corrosion-score/docs/mission.md",
+      "import_path": "amphora_barrier_corrosion_score",
+      "lane": "performance",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "measured_eis_required",
+        "no_formulation_only_corrosion_claim",
+        "no_service_life_claim",
+        "no_rank_authority"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-barrier-corrosion-score",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "molecule|formulation|evidence_package",
+      "candidate_types": [
+        "molecule",
+        "formulation",
+        "evidence_package"
+      ],
+      "capability_profile": "amphora-candidate-contract/docs/capability-profile.json",
+      "documentation": "amphora-candidate-contract/docs/mission.md",
+      "import_path": "amphora_candidate_contract",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "schema_validation_does_not_upgrade_domain_claims"
+      ],
+      "operational_readiness": "COMPLETE",
+      "project": "amphora-candidate-contract",
+      "ranking_eligible": false,
+      "readiness": "COMPLETE",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "CRO_GATED",
+      "authority_tier": "CRO_GATED",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-cro-protocol-packager/docs/capability-profile.json",
+      "documentation": "amphora-cro-protocol-packager/docs/mission.md",
+      "import_path": "amphora_cro_protocol_packager",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "cro_execution_required",
+        "protocol_packet_is_not_test_result"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-cro-protocol-packager",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "CRO_GATED",
+      "authority_tier": "CRO_GATED",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-cure-potlife-gate/docs/capability-profile.json",
+      "documentation": "amphora-cure-potlife-gate/docs/mission.md",
+      "import_path": "amphora_cure_potlife_gate",
+      "lane": "performance",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "no_candidate_specific_pot_life_prediction",
+        "no_rank_authority",
+        "pot_life_model_failed",
+        "pot_life_remains_bench_gated"
+      ],
+      "operational_readiness": "BLOCKED",
+      "project": "amphora-cure-potlife-gate",
+      "ranking_eligible": false,
+      "readiness": "BLOCKED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "authority_ceiling": "RULE_CITED",
+      "authority_tier": "RULE_CITED",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-design-rule-score/docs/capability-profile.json",
+      "documentation": "amphora-design-rule-score/docs/mission.md",
+      "import_path": "amphora_design_rule_score",
+      "lane": "formulation",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "cost_absent_if_uncited",
+        "design_rule_score_is_not_corrosion_or_pot_life_proof",
+        "directional_hypothesis_only",
+        "feedback_v1_bigsoldb_context_only",
+        "no_candidate_pot_life_prediction",
+        "no_rank_authority"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-design-rule-score",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "REAL_ARITHMETIC",
+      "authority_tier": "REAL_ARITHMETIC",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-envelope-gates/docs/capability-profile.json",
+      "documentation": "amphora-envelope-gates/docs/mission.md",
+      "import_path": "amphora_envelope_gates",
+      "lane": "formulation",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "gate_pass_is_not_wet_lab_performance"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-envelope-gates",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "evidence_package",
+      "candidate_types": [
+        "evidence_package"
+      ],
+      "capability_profile": "amphora-evidence-intake-validator/docs/capability-profile.json",
+      "documentation": "amphora-evidence-intake-validator/docs/mission.md",
+      "import_path": "amphora_evidence_intake_validator",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "computed_as_measured_rejected",
+        "external_closure_claims_not_created_by_validator"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-evidence-intake-validator",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "REAL_ARITHMETIC",
+      "authority_tier": "REAL_ARITHMETIC",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-formulation-arithmetic/docs/capability-profile.json",
+      "documentation": "amphora-formulation-arithmetic/docs/mission.md",
+      "import_path": "amphora_formulation_arithmetic",
+      "lane": "formulation",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "arithmetic_is_not_performance_proof",
+        "gate_pass_is_not_wet_lab_performance"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-formulation-arithmetic",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "REAL_ARITHMETIC",
+      "authority_tier": "REAL_ARITHMETIC",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-formulation-universe/docs/capability-profile.json",
+      "documentation": "amphora-formulation-universe/docs/mission.md",
+      "import_path": "amphora_formulation_universe",
+      "lane": "formulation",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "enumeration_is_not_performance_evidence"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-formulation-universe",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "RULE_CITED",
+      "authority_tier": "RULE_CITED",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-ingredient-library/docs/capability-profile.json",
+      "documentation": "amphora-ingredient-library/docs/mission.md",
+      "import_path": "amphora_ingredient_library",
+      "lane": "formulation",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "ingredient_roles_are_not_performance_claims",
+        "uncited_constants_rejected"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-ingredient-library",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-ip-fto-guard/docs/capability-profile.json",
+      "documentation": "amphora-ip-fto-guard/docs/mission.md",
+      "import_path": "amphora_ip_fto_guard",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "counsel_required_for_legal_conclusions",
+        "fto_not_performed",
+        "not_legal_advice"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-ip-fto-guard",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "LIMITED_SANITY",
+      "authority_tier": "LIMITED_SANITY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-known-answer-benchmarks/docs/capability-profile.json",
+      "documentation": "amphora-known-answer-benchmarks/docs/mission.md",
+      "import_path": "amphora_known_answer_benchmarks",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "feedback_v1_benchmarks_do_not_validate_candidate_performance",
+        "known_answers_do_not_validate_candidate_performance",
+        "negative_controls_must_reject"
+      ],
+      "operational_readiness": "BLOCKED",
+      "project": "amphora-known-answer-benchmarks",
+      "ranking_eligible": false,
+      "readiness": "BLOCKED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-model-card-authority/docs/capability-profile.json",
+      "documentation": "amphora-model-card-authority/docs/mission.md",
+      "import_path": "amphora_model_card_authority",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "authority_registry_is_binding",
+        "failed_cards_cannot_rank"
+      ],
+      "operational_readiness": "COMPLETE",
+      "project": "amphora-model-card-authority",
+      "ranking_eligible": false,
+      "readiness": "COMPLETE",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "ROADMAP",
+      "authority_tier": "ROADMAP",
+      "candidate_type": "molecule",
+      "candidate_types": [
+        "molecule"
+      ],
+      "capability_profile": "amphora-molecule-generator/docs/capability-profile.json",
+      "documentation": "amphora-molecule-generator/docs/mission.md",
+      "import_path": "amphora_molecule_generator",
+      "lane": "molecule",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "feedback_v1_polymer_corpus_context_only",
+        "generated_molecules_unmade_unvalidated",
+        "not_a_compliant_recommendation"
+      ],
+      "operational_readiness": "ROADMAP",
+      "project": "amphora-molecule-generator",
+      "ranking_eligible": false,
+      "readiness": "ROADMAP",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "REAL_ARITHMETIC",
+      "authority_tier": "REAL_ARITHMETIC",
+      "candidate_type": "molecule",
+      "candidate_types": [
+        "molecule"
+      ],
+      "capability_profile": "amphora-molecule-property/docs/capability-profile.json",
+      "documentation": "amphora-molecule-property/docs/mission.md",
+      "import_path": "amphora_molecule_property",
+      "lane": "molecule",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "benchmark_required_for_optimizer_use",
+        "commercial_product_values_not_upgraded_from_defined_monomer",
+        "estimated_density_not_authoritative"
+      ],
+      "operational_readiness": "AUDIT",
+      "project": "amphora-molecule-property",
+      "ranking_eligible": false,
+      "readiness": "AUDIT",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "LIMITED_SANITY",
+      "authority_tier": "LIMITED_SANITY",
+      "candidate_type": "molecule",
+      "candidate_types": [
+        "molecule"
+      ],
+      "capability_profile": "amphora-molecule-role-ranker/docs/capability-profile.json",
+      "documentation": "amphora-molecule-role-ranker/docs/mission.md",
+      "import_path": "amphora_molecule_role_ranker",
+      "lane": "molecule",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "ambiguous_role_is_audit_only",
+        "role_rank_is_not_qualification_or_procurement_authority",
+        "feedback_v1_polymer_corpus_context_only",
+        "no_polyamide_marine_or_approval_claim_from_smiles_or_text",
+        "candidate_role_evidence_is_not_self_authorizing",
+        "defined_structure_does_not_establish_liquid_state",
+        "commercial_product_values_not_upgraded_from_defined_monomer"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-molecule-role-ranker",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "LIMITED_SANITY",
+      "authority_tier": "LIMITED_SANITY",
+      "candidate_type": "molecule",
+      "candidate_types": [
+        "molecule"
+      ],
+      "capability_profile": "amphora-molecule-novelty/docs/capability-profile.json",
+      "documentation": "amphora-molecule-novelty/docs/mission.md",
+      "import_path": "amphora_molecule_novelty",
+      "lane": "molecule",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "novelty_is_not_performance",
+        "corpus_distance_is_not_synthesis_feasibility",
+        "frontier_requires_experimental_validation"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-molecule-novelty",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "REAL_ARITHMETIC",
+      "authority_tier": "REAL_ARITHMETIC",
+      "candidate_type": "molecule",
+      "candidate_types": [
+        "molecule"
+      ],
+      "capability_profile": "amphora-molecule-design-gate/docs/capability-profile.json",
+      "documentation": "amphora-molecule-design-gate/docs/mission.md",
+      "import_path": "amphora_molecule_design_gate",
+      "lane": "molecule",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "does_not_establish_ehs_safety",
+        "does_not_establish_procurement",
+        "does_not_establish_product_performance",
+        "does_not_establish_qualification",
+        "does_not_establish_synthesis_feasibility"
+      ],
+      "operational_readiness": "READY",
+      "project": "amphora-molecule-design-gate",
+      "ranking_eligible": false,
+      "readiness": "READY",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "evidence_package",
+      "candidate_types": [
+        "evidence_package"
+      ],
+      "capability_profile": "amphora-optimizer-orchestrator/docs/capability-profile.json",
+      "documentation": "amphora-optimizer-orchestrator/docs/mission.md",
+      "import_path": "amphora_optimizer_orchestrator",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "claim_locks_remain_binding",
+        "optimizer_must_not_use_failed_or_no_authority_scores"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-optimizer-orchestrator",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-process-qc-twin/docs/capability-profile.json",
+      "documentation": "amphora-process-qc-twin/docs/mission.md",
+      "import_path": "amphora_process_qc_twin",
+      "lane": "performance",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "no_batch_release_authority_first_90_days",
+        "no_release_claim_without_spc",
+        "process_qc_twin_requires_accepted_batch_data"
+      ],
+      "operational_readiness": "OPEN",
+      "project": "amphora-process-qc-twin",
+      "ranking_eligible": false,
+      "readiness": "OPEN",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-public-corrosion-benchmark/docs/capability-profile.json",
+      "documentation": "amphora-public-corrosion-benchmark/docs/mission.md",
+      "import_path": "amphora_public_corrosion_benchmark",
+      "lane": "formulation",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "benchmark_only_status",
+        "feedback_v1_nist_corr_data_context_only",
+        "no_candidate_corrosion_validation",
+        "no_owned_candidate_wet_lab_data"
+      ],
+      "operational_readiness": "AUDIT",
+      "project": "amphora-public-corrosion-benchmark",
+      "ranking_eligible": false,
+      "readiness": "AUDIT",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "evidence_package",
+      "candidate_types": [
+        "evidence_package"
+      ],
+      "capability_profile": "amphora-redteam-audit/docs/capability-profile.json",
+      "documentation": "amphora-redteam-audit/docs/mission.md",
+      "import_path": "amphora_redteam_audit",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "artifact_vs_evidence_separation",
+        "current_claim_upgrade_allowed"
+      ],
+      "operational_readiness": "BLOCKED",
+      "project": "amphora-redteam-audit",
+      "ranking_eligible": false,
+      "readiness": "BLOCKED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "evidence_package",
+      "candidate_types": [
+        "evidence_package"
+      ],
+      "capability_profile": "amphora-report-packager/docs/capability-profile.json",
+      "documentation": "amphora-report-packager/docs/mission.md",
+      "import_path": "amphora_report_packager",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "banned_claim_lint_required",
+        "human_deliverables_downstream_only"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-report-packager",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "evidence_package",
+      "candidate_types": [
+        "evidence_package"
+      ],
+      "capability_profile": "amphora-run-provenance/docs/capability-profile.json",
+      "documentation": "amphora-run-provenance/docs/mission.md",
+      "import_path": "amphora_run_provenance",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "run_hash_is_attestation_not_evidence"
+      ],
+      "operational_readiness": "COMPLETE",
+      "project": "amphora-run-provenance",
+      "ranking_eligible": false,
+      "readiness": "COMPLETE",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "RULE_CITED",
+      "authority_tier": "RULE_CITED",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-solvency-score/docs/capability-profile.json",
+      "documentation": "amphora-solvency-score/docs/mission.md",
+      "import_path": "amphora_solvency_score",
+      "lane": "formulation",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "no_fabricated_fallback_score",
+        "single_phase_fraction_is_not_probability",
+        "unpigmented_carrier_only",
+        "no_rank_authority"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-solvency-score",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "authority_ceiling": "RULE_CITED",
+      "authority_tier": "RULE_CITED",
+      "candidate_type": "evidence_package",
+      "candidate_types": [
+        "evidence_package"
+      ],
+      "capability_profile": "amphora-source-ledger/docs/capability-profile.json",
+      "documentation": "amphora-source-ledger/docs/mission.md",
+      "import_path": "amphora_source_ledger",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "feedback_v1_public_data_is_audited_not_owned_evidence",
+        "no_uncited_constants",
+        "public_sources_do_not_create_owned_evidence"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-source-ledger",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "EVIDENCE_ONLY",
+      "authority_tier": "EVIDENCE_ONLY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-sourceability-ehs/docs/capability-profile.json",
+      "documentation": "amphora-sourceability-ehs/docs/mission.md",
+      "import_path": "amphora_sourceability_ehs",
+      "lane": "infrastructure",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "no_pfas_free_claim",
+        "no_procurement_ready_claim",
+        "no_taa_domestic_claim",
+        "no_tsca_compliant_claim"
+      ],
+      "operational_readiness": "GATED",
+      "project": "amphora-sourceability-ehs",
+      "ranking_eligible": false,
+      "readiness": "GATED",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    },
+    {
+      "authority_ceiling": "LIMITED_SANITY",
+      "authority_tier": "LIMITED_SANITY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-tolerance-robustness/docs/capability-profile.json",
+      "documentation": "amphora-tolerance-robustness/docs/mission.md",
+      "import_path": "amphora_tolerance_robustness",
+      "lane": "formulation",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "fixed_bands_not_scientifically_promoted",
+        "monte_carlo_is_input_tolerance_only",
+        "unseen_simulation_is_not_unseen_experimental_data"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-tolerance-robustness",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "authority_ceiling": "LIMITED_SANITY",
+      "authority_tier": "LIMITED_SANITY",
+      "candidate_type": "formulation",
+      "candidate_types": [
+        "formulation"
+      ],
+      "capability_profile": "amphora-viscosity-score/docs/capability-profile.json",
+      "documentation": "amphora-viscosity-score/docs/mission.md",
+      "import_path": "amphora_viscosity_score",
+      "lane": "performance",
+      "model_readiness_ceiling": "MODEL_READINESS_ONLY",
+      "non_blocking_claim_locks": [
+        "owned_rheology_measurement_required",
+        "separate_ku_and_sag_heads",
+        "exact_ku_prediction_remains_null",
+        "no_rank_authority"
+      ],
+      "operational_readiness": "SHADOW",
+      "project": "amphora-viscosity-score",
+      "ranking_eligible": false,
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "DISABLED"
+    }
+  ],
+  "policy": {
+    "authority_resolution": "minimum_privilege",
+    "mandatory_claim_locks": [
+      "pre_phase_0_research_only",
+      "no_phase_1_or_phase_2_claim",
+      "no_superiority_claim",
+      "no_product_release_or_qualification",
+      "unresolved_rights_quarantined"
+    ],
+    "normalization_owner": "amphora-candidate-contract",
+    "product_claim_ready": false,
+    "rust_final_ranking_enforcement": true,
+    "unknown_module_policy": "REJECT",
+    "unknown_true_claim_lock_policy": "BLOCK"
+  },
+  "repository": "amphora-mvp20",
+  "schema": "amphora.module-manifest.v2"
+}

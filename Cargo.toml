@@ -1,0 +1,49 @@
+[workspace]
+resolver = "2"
+members = [
+    "amphora-core",
+    "amphora-ord-codec",
+    "amphora-assurance-capabilities",
+    "amphora-formulation-capabilities",
+    "amphora-molecule-capabilities",
+    "amphora-rdkit-ffi",
+    "amphora-engine",
+    "amphora-cure-potlife-gate",
+    "amphora-viscosity-score",
+    "amphora-solvency-score",
+    "amphora-barrier-corrosion-score",
+    "amphora-tui",
+    "amphora-cli",
+    "amphora-phase0-reviewer",
+    "amphora-solver-lab",
+    "xtask",
+]
+default-members = ["amphora-cli"]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1"
+base64 = "0.22"
+clap = { version = "4", features = ["derive"] }
+crossterm = "0.29"
+ed25519-dalek = "2"
+flate2 = "1"
+prost = "=0.14.4"
+ratatui = { version = "0.30.2", default-features = false, features = ["crossterm_0_29"] }
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+# float_roundtrip is mandatory, not incidental: the evaluator and the independent
+# reviewer both hash canonical JSON, so a float that parses to a different double
+# in one binary than the other breaks byte-identical replay verification. Without
+# it here, the feature reached amphora-cli transitively but not
+# amphora-phase0-reviewer, and 17-significant-digit benchmark observations hashed
+# differently in the two.
+serde_json = { version = "1", features = ["float_roundtrip"] }
+serde_jcs = "=0.2.0"
+sha2 = "0.10"
+thiserror = "2"
+unicode-normalization = "0.1"

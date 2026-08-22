@@ -1,0 +1,12 @@
+{
+  "applicability_domain": [
+    "registered amphora-envelope-gates contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_contract_sha256": "91ce127c9ac84a357d3278188f10753d475f00376df0dc64dd3165e540531baa",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-envelope-gates",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

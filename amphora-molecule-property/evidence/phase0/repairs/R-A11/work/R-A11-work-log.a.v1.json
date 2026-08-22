@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-03",
+  "module": "amphora-molecule-property",
+  "original_decoded_payload_sha256": "eded31b4af6bfe13a74b1867443349f31d215e5538e24e414e906b717b518b2c",
+  "original_sha256_pre_recorded": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+  "original_signature_valid_with_anchored_pubkey": false,
+  "original_signature_valid_with_embedded_pubkey": true,
+  "reattack": {
+    "dsse_verifies_against_trust_store": true,
+    "keyid_equals_pinned_trust_store_key_id": true,
+    "keyid_prefix_phase0_evaluator_3ef6b35": true,
+    "original_byte_intact": true,
+    "original_sha256_after_write": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+    "original_sha256_before": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+    "reloaded_payload_sha256_matches_two_replay_sha256": true,
+    "self_verified_with_seed_derived_pubkey": true
+  },
+  "reissue_file_sha256": "2c57343a35c892c50891ecf91914996cf5707e99cce9c48e2cf11e214a4da190",
+  "reissue_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.anchored-reissue.v1.json",
+  "reissue_payload_two_replay_sha256": "210c0ed962e28cc20be82af740e34854ded8e22357c18e88a5768306f6df3095",
+  "repair_item": "R-A11",
+  "repair_mode": "interactive-2026-08-03",
+  "retraction_index": {
+    "existed_before": false,
+    "path": "amphora-molecule-property/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "sha256_after": "4dd0409b70a5981c483eada5126aeadc92bfdb647af5ede4b0eeb97cc73ce34a",
+    "sha256_before": null
+  },
+  "target": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json"
+}

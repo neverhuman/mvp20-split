@@ -1,0 +1,158 @@
+{
+  "$schema": "amphora.module-audit-receipt.v1",
+  "already_indexed_elsewhere": {
+    "mission_md_mentions_this_defect": false,
+    "retraction_index_md_mentions_this_defect": false
+  },
+  "audit_id": "nist-baseline-still-valid-claim-currency-v1",
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "REAL_ARITHMETIC",
+  "awaiting": [
+    "A repair fire (R-prefixed campaign item) to supersede the v3 KPI's still_valid_from_v1 block and update RETRACTION-INDEX.md + docs/mission.md in the same fire."
+  ],
+  "axis": "governance",
+  "campaign_item_id": "",
+  "contradicting_audits": [
+    {
+      "path": "evidence/audit/nist-baseline-descriptive-boundary-provenance-v1/nist-baseline-descriptive-boundary-provenance-receipt.v1.dsse.json",
+      "pubkey_matches_pinned_evaluator": true,
+      "sha256": "141104ccf1b51f550f24c7b482b060884bb69e66f92bd8f2bf0f75e1a277435c",
+      "signature_valid": true,
+      "verdict": "H0_REFUTED"
+    },
+    {
+      "path": "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json",
+      "pubkey_matches_pinned_evaluator": true,
+      "sha256": "7f127db900f8558db6b509d0e94984bc713de3d0859f042dc5af3a4fd58dd007",
+      "signature_valid": true,
+      "verdict": "H0_REFUTED"
+    }
+  ],
+  "contradictions_found": [
+    {
+      "audited_receipt_own_signed_value": 0.0002,
+      "contradicting_audit": "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json",
+      "contradicting_audit_verdict": "H0_REFUTED",
+      "field": "min_mm_yr",
+      "group": "Aluminum and alloys",
+      "kpi_value_matches_the_exact_value_the_audit_examined": true,
+      "relative_discrepancy_found_by_audit": 0.7779999999999998,
+      "still_valid_from_v1_value_in_live_kpi": 0.0002,
+      "value_present_in_still_valid_block": true
+    },
+    {
+      "audited_receipt_own_signed_value": 0.0018,
+      "contradicting_audit": "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json",
+      "contradicting_audit_verdict": "H0_REFUTED",
+      "field": "min_mm_yr",
+      "group": "Copper and alloys",
+      "kpi_value_matches_the_exact_value_the_audit_examined": true,
+      "relative_discrepancy_found_by_audit": 0.8588888888888889,
+      "still_valid_from_v1_value_in_live_kpi": 0.0018,
+      "value_present_in_still_valid_block": true
+    },
+    {
+      "audited_receipt_own_signed_value": 0.043,
+      "contradicting_audit": "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json",
+      "contradicting_audit_verdict": "H0_REFUTED",
+      "field": "max_mm_yr",
+      "group": "Nickel and alloys",
+      "kpi_value_matches_the_exact_value_the_audit_examined": true,
+      "relative_discrepancy_found_by_audit": 0.5948837209302328,
+      "still_valid_from_v1_value_in_live_kpi": 0.043,
+      "value_present_in_still_valid_block": true
+    },
+    {
+      "audited_receipt_own_signed_value": 0.01,
+      "contradicting_audit": "evidence/audit/nist-baseline-full-distribution-unit-provenance-v1/nist-baseline-full-distribution-unit-provenance-receipt.v1.dsse.json",
+      "contradicting_audit_verdict": "H0_REFUTED",
+      "field": "p25_mm_yr",
+      "group": "Stainless steels",
+      "kpi_value_matches_the_exact_value_the_audit_examined": true,
+      "relative_discrepancy_found_by_audit": 0.619,
+      "still_valid_from_v1_value_in_live_kpi": 0.01,
+      "value_present_in_still_valid_block": true
+    }
+  ],
+  "does_not_close": [
+    "This receipt derives nothing new from raw data; it is a provenance/currency reconciliation between already-signed receipts.",
+    "It does not modify, supersede, or delete the KPI or either contradicting audit receipt.",
+    "The 21/25 fields the full-distribution audit found unit-consistent (including all of Carbon and alloy steels, the row mission.md singles out as 'the reference number') are NOT disputed by this audit.",
+    "No manifest, no other module's file, and no signed Phase-0 promotion gate was touched."
+  ],
+  "headline": "Cross-receipt currency audit (not a re-derivation -- prior fires on 2026-08-14 and 2026-08-16 already re-derived the raw data twice): the currently-LIVE flagship KPI (evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json) carries a field literally named 'still_valid_from_v1' over its seawater_uncoated_substrate_baselines block. 4 of its leaf values, across 4 of its 5 material groups (Aluminum min_mm_yr, Copper min_mm_yr, Nickel max_mm_yr, Stainless p25_mm_yr), are byte-exact matches to values that nist-baseline-full-distribution-unit-provenance-v1 (signed 2026-08-16, real-Ed25519-verified here) already found to disagree with the same raw CSV's own independently-tabulated mils/yr column by 59-86% -- H0_REFUTED in that receipt. The 'still_valid_from_v1' KPI has never been superseded to reflect this: RETRACTION-INDEX.md has NOT been updated, and mission.md HAS NOT been updated -- mission.md still tells a reader the table 'reproduce[s] exactly from the raw CSV and remain[s] valid' and calls the Carbon-steel row 'the reference number that anti-corrosion coatings must materially reduce', with zero acknowledgement that 4 of its 5 material-group rows carry at least one already-refuted field. Same staleness failure mode that recurred 3x on the consolidated index (2026-08-02, -03, -16) and once on receipt self-consistency (2026-08-17), now confirmed on the module's single most load-bearing artifact.",
+  "human_review_performed": false,
+  "hypothesis_H0": "Every (group, field) leaf value under the live v3 KPI's corrected_values.still_valid_from_v1.seawater_uncoated_substrate_baselines is consistent with (not contradicted by) every currently-signed evidence/audit/ receipt in this module dated after the still_valid_from_v1 claim was made.",
+  "kpi_under_test": {
+    "confirmed_current_non_superseded": true,
+    "n_kpi_candidate_files_considered": 9,
+    "path": "evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json",
+    "pubkey_matches_pinned_evaluator": true,
+    "sha256": "b1725c94c14191ff88923eba93c2455629af32e6d06d4429c4d95eedaf676f08",
+    "signature_valid": true
+  },
+  "methodology": {
+    "cross_reference": "for each (group, field) breach reported by the later audits' own 'breaches' list, the exact numeric value the audit examined (tests.*.per_group_field_diffs[group][field].signed) is compared byte-exact against the live KPI's still_valid_from_v1 value for the same (group, field) -- confirming the audit was examining the SAME number the KPI currently asserts is still valid, not a stale or different value.",
+    "determinism": "pure function of on-disk signed-receipt bytes; no randomness.",
+    "real_signature_verification": "each of the 3 receipts (KPI + 2 audits) is independently Ed25519-verified via the DSSEv1 PAE construction against its own embedded reviewer_public_key_hex, which is then cross-checked byte-for-byte against the pinned Phase-0 evaluator public key derived fresh from /home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed.",
+    "scope": "loads the live v3 KPI (confirmed current: no supersedes.superseded_path anywhere in 22 on-disk DSSE receipts names it) and the 2 later signed audit receipts that independently re-derived the same descriptive block from raw data; does not re-run any derivation itself -- pure cross-receipt provenance reconciliation of evidence that already exists, signed, in this module."
+  },
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module_id": "amphora-public-corrosion-benchmark",
+  "phase": "PRE_PHASE_0",
+  "promotes_authority": false,
+  "recommended_repair": "A future R-prefixed repair item should supersede the v3 KPI's still_valid_from_v1.seawater_uncoated_substrate_baselines block, dropping or footnoting the 4 unit-inconsistent fields (Aluminum min_mm_yr, Copper min_mm_yr, Nickel max_mm_yr, Stainless p25_mm_yr) per the full-distribution audit's own shadow_from_mils-reconstructed values, log the correction in RETRACTION-INDEX.md, and update the corresponding docs/mission.md table + 'remain valid' prose in the same fire. This audit intentionally performs no repair itself (ROTATION mode, no R-/V- campaign item bound to this fire).",
+  "schema": "amphora.public-corrosion-benchmark.nist-baseline-still-valid-claim-currency.v1",
+  "scientific_success_asserted": false,
+  "still_valid_block_under_test": {
+    "Aluminum and alloys": {
+      "max_mm_yr": 0.28,
+      "median_mm_yr": 0.0014,
+      "min_mm_yr": 0.0002,
+      "n": 19,
+      "p25_mm_yr": 0.0009,
+      "p75_mm_yr": 0.0015500000000000002
+    },
+    "Carbon and alloy steels": {
+      "max_mm_yr": 2.6,
+      "median_mm_yr": 0.1,
+      "min_mm_yr": 0.03,
+      "n": 44,
+      "p25_mm_yr": 0.08,
+      "p75_mm_yr": 0.15
+    },
+    "Copper and alloys": {
+      "max_mm_yr": 1.0,
+      "median_mm_yr": 0.01,
+      "min_mm_yr": 0.0018,
+      "n": 37,
+      "p25_mm_yr": 0.005,
+      "p75_mm_yr": 0.02
+    },
+    "Nickel and alloys": {
+      "max_mm_yr": 0.043,
+      "median_mm_yr": 0.006,
+      "min_mm_yr": 0.001,
+      "n": 23,
+      "p25_mm_yr": 0.003,
+      "p75_mm_yr": 0.0215
+    },
+    "Stainless steels": {
+      "max_mm_yr": 1.9,
+      "median_mm_yr": 0.012,
+      "min_mm_yr": 0.003,
+      "n": 19,
+      "p25_mm_yr": 0.01,
+      "p75_mm_yr": 0.035
+    }
+  },
+  "target_claim": "evidence/phase0/repairs/R-N03/done/nist-corr-data-marine-steel-corrosion-baseline-kpi.v3.dsse.json#corrected_values.still_valid_from_v1.seawater_uncoated_substrate_baselines (the module's flagship, currently-live KPI; R-N03's explicit persistence claim that this descriptive per-material-group block remains correct after the Ridge-vs-NULL predictive retraction; verbatim-echoed by docs/mission.md as 'reproduce exactly from the raw CSV and remain valid')",
+  "totals": {
+    "all_contradicting_values_confirmed_byte_exact_in_kpi": true,
+    "n_fields_affected": 4,
+    "n_groups_affected": 4,
+    "n_groups_in_still_valid_block": 5
+  },
+  "verdict": "H0_REFUTED"
+}

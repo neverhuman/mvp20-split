@@ -1,0 +1,801 @@
+{
+  "campaign_item_id": "U-PROSE",
+  "claim_under_attack": {
+    "claim_text": "Every numeric claim in every module's mission.md is consistent with that module's retraction index and the falsification ledger.",
+    "receipt_path": "logs/falsification-ledger.jsonl"
+  },
+  "claims_requiring_retraction_snapshot": {
+    "path": "logs/claims-requiring-retraction.jsonl",
+    "sha256": "9fb68dde1d1eb8bc3057edbb3deed6361cfa08dea029985188e4d8b23b311404"
+  },
+  "headline": "1/29 modules ADVERTISES_RETRACTED_RESULT",
+  "ledger_snapshot": {
+    "path": "logs/falsification-ledger.jsonl",
+    "sha256": "22510b60fa8d8e30231068916a31c42c030bbfedcc4c8d44d1f355770b7c7b66"
+  },
+  "mechanical_candidate_modules": [
+    "amphora-barrier-corrosion-score",
+    "amphora-cure-potlife-gate",
+    "amphora-design-rule-score",
+    "amphora-evidence-intake-validator",
+    "amphora-molecule-generator",
+    "amphora-molecule-property",
+    "amphora-molecule-role-ranker",
+    "amphora-public-corrosion-benchmark",
+    "amphora-solvency-score",
+    "amphora-viscosity-score"
+  ],
+  "mechanical_candidates": [
+    {
+      "claim": "corr-rate-conformal-v1/corr-rate-conformal-receipt.v1.dsse.json (distribution-free marginal coverage 0.90/0.80 targets)",
+      "fire_id": null,
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "0.80",
+        "0.90"
+      ],
+      "module": "amphora-barrier-corrosion-score",
+      "receipt": "amphora-barrier-corrosion-score/benchmarks/corr-rate-conformal-domain-shift-v1/corr-rate-conformal-domain-shift-receipt.v1.dsse.json"
+    },
+    {
+      "claim": "docs/mission.md falsifiable hypothesis: locked barrier ranking (metrics.barrier_index) outperforms solids-only+PVC-only hostile nulls, tau>=0.5",
+      "fire_id": "20260802T001344-2561741-034da1bb0555",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "0.05"
+      ],
+      "module": "amphora-barrier-corrosion-score",
+      "receipt": "amphora-barrier-corrosion-score/benchmarks/three-series-barrier-ranking-v1/three-series-barrier-ranking-receipt.v1.dsse.json"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "15%"
+      ],
+      "module": "amphora-cure-potlife-gate",
+      "source_cell": "docs/mission.md (pre-repair sha256 e8d12fa8d373e548151fa3d93920cd858ba84233c778bdbaf668d13c58ca706d): \"The Arrhenius model reproduces published epoxy-amine pot-life temperature-scaling to under 15% error across a 30-degree temperature range (10\u00b0C to 40\u00b0C)\""
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "-1.0"
+      ],
+      "module": "amphora-cure-potlife-gate",
+      "source_cell": "implicit claim that the known-answer fixture's CC0-1.0 rights are settled (in-file self-assertion)"
+    },
+    {
+      "claim": "docs/mission.md standing prose: Arrhenius reproduces pot-life temperature-scaling under 15% error across 10C-40C (also underlies KPI held_out_temperature_extrapolation_mape PASSED framing, evidence/phase0/kpis/cure-potlife-arrhenius-kpi.v1.json)",
+      "fire_id": "20260802T080003-586221-41478e9a4da6",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "0.25",
+        "25.12"
+      ],
+      "module": "amphora-cure-potlife-gate",
+      "receipt": "amphora-cure-potlife-gate/evidence/audit/potlife-kpi-envelope-disclosure-gap-v1/potlife-kpi-envelope-disclosure-gap-receipt.v1.dsse.json"
+    },
+    {
+      "claim": "amphora-design-rule-score/evidence/phase0/kpis/purformance-scratch-hardness-named-baseline-benchmark-kpi.v1.json (b5_histgbm_r2=0.8555 vs b1_vernetzung_only_r2=0.0156)",
+      "fire_id": null,
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "0.0156",
+        "0.8555"
+      ],
+      "module": "amphora-design-rule-score",
+      "receipt": "amphora-design-rule-score/evidence/phase0/kpis/purformance-scratch-hardness-dedup-superseding-kpi.v1.json"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "1.0"
+      ],
+      "module": "amphora-evidence-intake-validator",
+      "source_cell": "The receipt-integrity validators 1.0 rates hold on the real in-tree DSSE corpus, not just on n=3 synthetic fixtures"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "95%"
+      ],
+      "module": "amphora-molecule-generator",
+      "source_cell": "`molgen-deterministic-grammar-yield-v1`: feasible_fraction bootstrap 95% CI = [1.0000, 1.0000] at k=n=38. **Corrected to exact Clopper-Pearson [0.9075, 1.0000]** (percentile bootstrap is degenerate at the all-success boundary; 0.0925 lower-bound gap exceeds the a-priori 0.02 admissibility threshold)."
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "1.0"
+      ],
+      "module": "amphora-molecule-property",
+      "source_cell": "`amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/amine_class_active_nh_robustness_receipt.v1.json` (sha256 `74e2c759...`) generalizes its active-N-H structure rule to the amine-hardener structure class as a whole (`amine_grid_classification_accuracy` 1.0, `nonamine_fail_closed_rate` 1.0 beyond the 13 tested structures) - i.e. guanidine/amidine-class curing agents are correctly classified"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "0.40"
+      ],
+      "module": "amphora-molecule-property",
+      "source_cell": "L885 / L887-889 / L956-959: dielectric section advertises \"REAL POSITIVE lift\", \"Directly delivers the coating IP prediction capability for POLYMER DIELECTRIC CONSTANT\", and \"`amphora-molecule-property` can now offer polymer dielectric constant prediction with a defended MAE ~0.40 eps_r units ... Directly applicable to coating chemistry decisions for electrical-insulation applications\""
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "32.6"
+      ],
+      "module": "amphora-molecule-property",
+      "source_cell": "L733 \"**MAJOR POSITIVE FINDING**: Ridge Y_gi fit BEATS the published-values baseline by 32.6 K ... reaching Bicerano-level accuracy\"; L771 \"The 24-group STRUCTURE is CONFIRMED CORRECT at scale\"; L773 \"The prior 'under-determination' hypothesis is RESOLVED\"; L777 \"Fitted Y_gi values are chemistry-plausible ... not structural mismatch\"; L779 \"this receipt proves that a 24-group Van Krevelen calibration can achieve Bicerano-level MAE\""
+    },
+    {
+      "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+      "fire_id": null,
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "16.60",
+        "6.66"
+      ],
+      "module": "amphora-molecule-property",
+      "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1/c7_tg_density_external_validity_receipt.v1.json"
+    },
+    {
+      "claim": "amphora-molecule-property/evidence/phase0/kpis/openpoly-experimental-tg-ml-baseline-kpi.v1.json",
+      "fire_id": null,
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "16.60",
+        "6.66"
+      ],
+      "module": "amphora-molecule-property",
+      "receipt": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+    },
+    {
+      "claim": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json (claim: founder-facing physics-vs-ML-vs-stack table buildable entirely from receipt-backed numbers, no placeholders)",
+      "fire_id": null,
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "-0.026",
+        "-0.048",
+        "-0.40",
+        "-1.04",
+        "10.5"
+      ],
+      "module": "amphora-molecule-property",
+      "receipt": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json"
+    },
+    {
+      "claim": "amphora-molecule-property/evidence/phase0/kpis/van-krevelen-ridge-fit-on-1000-polyuniverse-polymers-kpi.v1.json (claim: data-driven Ridge Y_gi calibration confirms the Van Krevelen 24-group structure is correct and resolves prior under-determination at n=807)",
+      "fire_id": "20260803T020003-3690003-9fea9029ad50",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "-0.52",
+        "100%"
+      ],
+      "module": "amphora-molecule-property",
+      "receipt": "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json"
+    },
+    {
+      "claim": "amphora-molecule-property/benchmarks/amine-class-active-nh-robustness-v1/amine_class_active_nh_robustness_receipt.v1.json (amine-hardener structure-rule generalization: 100% correct active-N-H classification, 100% non-amine fail-closed rate)",
+      "fire_id": "20260803T180001-2431769-2ec3a78bbee1",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "100%"
+      ],
+      "module": "amphora-molecule-property",
+      "receipt": "amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "1.0"
+      ],
+      "module": "amphora-molecule-role-ranker",
+      "source_cell": "The generalization inference from `amphora-molecule-role-ranker/evidence/phase0/kpis/role-classification-kpi.v1.json` (sha256 `88689040...`, `structural_inference_agreement_rate` 1.0) plus the prior `role-live-runtime-domain-probe-v1` SURVIVED verdict: that the deterministic role rule fails closed on real out-of-domain accelerator/catalyst chemotypes generally"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "0.0475",
+        "0.6331",
+        "0.6806",
+        "7.0"
+      ],
+      "module": "amphora-public-corrosion-benchmark",
+      "source_cell": "NIST CORR-DATA marine steel baseline: \"Ridge LOSD-CV MAE(log10)=0.6331 vs NULL 0.6806, +0.0475 log10 (7.0%) improvement, modest but real\" (`evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json`, sha256 bfbc32fe02df1d0bf8c7611ad8ab28c57f960eede7e640cda1db0b16078ab888)"
+    },
+    {
+      "claim": "evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json#fitted_or_physical_model_artifact.improvement_MAE_log10_reduction=0.0475 (Ridge beats per-material-group-median NULL on LOSD-CV, the modules only externally-validated positive result)",
+      "fire_id": "20260802T160001-2348865-f6d2ba42d9b4",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "0.0475",
+        "0.5888",
+        "0.6331"
+      ],
+      "module": "amphora-public-corrosion-benchmark",
+      "receipt": "amphora-public-corrosion-benchmark/evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json"
+    },
+    {
+      "claim": "evidence/phase0/kpis/nist-corr-data-marine-steel-corrosion-baseline-kpi.v1.json#fitted_or_physical_model_artifact.improvement_MAE_log10_reduction=0.0475 (Ridge beats per-material-group-median NULL on LOSD-CV; implicit claim that the beats-null effect reflects group-transferable predictive info)",
+      "fire_id": "20260803T200002-3671414-3840f82b7d84",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "0.0475"
+      ],
+      "module": "amphora-public-corrosion-benchmark",
+      "receipt": "amphora-public-corrosion-benchmark/evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "0.5",
+        "5.2",
+        "59.9"
+      ],
+      "module": "amphora-solvency-score",
+      "source_cell": "\"ML (HistGBM) beats classical Flory-Huggins theory\" (KPI `evidence/phase0/kpis/omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json`) \u2014 comparison void: delta_p to 5.2e9 MPa^0.5 vs 59.9 ceiling; B2 comparator degenerate (slope ~1e-19); valid classical baseline never run; fair re-run queued (R-B03/W7b)"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "0.5",
+        "5.33",
+        "59.9"
+      ],
+      "module": "amphora-solvency-score",
+      "source_cell": "\"ML beats classical Hansen 1967/2007 3-component theory\" (KPI `evidence/phase0/kpis/omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json`) \u2014 comparison void: Hansen components to 5.33e17 MPa^0.5 vs 59.9 ceiling; rescaled comparator degenerate (slope ~1e-35); valid classical baseline never run; fair re-run queued (R-B03/W7b)"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "0.5"
+      ],
+      "module": "amphora-solvency-score",
+      "source_cell": "Fedors 1974 delta_p behind `reference/mvp20/data/omg_chi_flory_huggins_physical_baseline_receipt.v1.json` (sha256 `87c49f22\u2026`) is a valid classical-theory instrument \u2014 refuted: delta_p to 5.155e9 MPa^0.5 (envelope [9.6, 59.875]) via denominator collapse sum dV_i \u2192 0 on silent zero-volume fragments; generator never committed"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "0.5",
+        "5.33"
+      ],
+      "module": "amphora-solvency-score",
+      "source_cell": "Van Krevelen/Hoftyzer delta_d/delta_p/delta_h behind `reference/mvp20/data/omg_chi_hansen_3component_physical_baseline_receipt.v1.json` (sha256 `f56e179c\u2026`) is a valid classical-theory instrument \u2014 refuted: components to 5.33e17 MPa^0.5 by the same defect"
+    },
+    {
+      "claim": "amphora-solvency-score/evidence/phase0/kpis/omg-chi-flory-huggins-physical-baseline-vs-ml-kpi.v1.json + omg-chi-hansen-3component-physical-baseline-vs-ml-kpi.v1.json (ML beats classical Flory-Huggins/Hansen theory via genuine Fedors/Van-Krevelen group-contribution physical baseline)",
+      "fire_id": "20260803T090002-220863-0590d4cbc9da",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "59.9"
+      ],
+      "module": "amphora-solvency-score",
+      "receipt": "amphora-solvency-score/evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "0.944"
+      ],
+      "module": "amphora-viscosity-score",
+      "source_cell": "mission.md presented Polyverse melt-viscosity results (conformal+AD, FFW-vs-ML, parent source-safe R2 0.944) with zero rights caveat while the module rights decision is CONTEXT_ONLY / promotion_eligible=false / quarantine-all-derivatives (Georgia Tech GPULA)"
+    },
+    {
+      "kind": "retraction_index_row",
+      "matched_numbers": [
+        "0.4536",
+        "0.5972"
+      ],
+      "module": "amphora-viscosity-score",
+      "source_cell": "FFW-beats-ML headline (R2 +0.5972 vs +0.4536) presented as documented-honestly with no interval disclosure despite resting on 13 independent test polymer chemistries"
+    },
+    {
+      "claim": "amphora-viscosity-score/docs/mission.md standing prose: Polyverse melt-viscosity Empirical benchmark result sections (conformal+AD, Fox-Flory-Whitten-vs-ML, parent R2=0.944) are properly rights-disclosed Phase-0 evidence",
+      "fire_id": "20260802T180003-169208-c1eca54b47d0",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "0.944"
+      ],
+      "module": "amphora-viscosity-score",
+      "receipt": "amphora-viscosity-score/evidence/audit/polyverse-rights-disclosure-gap-v1/polyverse-rights-disclosure-gap-receipt.v1.dsse.json"
+    },
+    {
+      "claim": "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-vs-ml-kpi.v1.json :: headline finding best_physical_ffw_baseline_beats_ml_r2_documented (physics R2=0.5972 beats ML R2=0.4536 by +0.1436), claim_lock physics_wins_ml_loses_documented_honestly=true",
+      "fire_id": "20260803T060002-2746547-be6ffcedb651",
+      "kind": "ledger_refuted_verdict",
+      "matched_numbers": [
+        "0.1436",
+        "0.4536",
+        "0.5972"
+      ],
+      "module": "amphora-viscosity-score",
+      "receipt": "amphora-viscosity-score/evidence/audit/ffw-vs-ml-uncertainty-disclosure-gap-v1/ffw-vs-ml-uncertainty-disclosure-gap-receipt.v1.dsse.json"
+    }
+  ],
+  "module": "amphora-redteam-audit",
+  "modules_covered": [
+    "amphora-barrier-corrosion-score",
+    "amphora-candidate-contract",
+    "amphora-cro-protocol-packager",
+    "amphora-cure-potlife-gate",
+    "amphora-design-rule-score",
+    "amphora-envelope-gates",
+    "amphora-evidence-intake-validator",
+    "amphora-formulation-arithmetic",
+    "amphora-formulation-universe",
+    "amphora-ingredient-library",
+    "amphora-ip-fto-guard",
+    "amphora-known-answer-benchmarks",
+    "amphora-model-card-authority",
+    "amphora-molecule-design-gate",
+    "amphora-molecule-generator",
+    "amphora-molecule-novelty",
+    "amphora-molecule-property",
+    "amphora-molecule-role-ranker",
+    "amphora-optimizer-orchestrator",
+    "amphora-process-qc-twin",
+    "amphora-public-corrosion-benchmark",
+    "amphora-redteam-audit",
+    "amphora-report-packager",
+    "amphora-run-provenance",
+    "amphora-solvency-score",
+    "amphora-sourceability-ehs",
+    "amphora-source-ledger",
+    "amphora-tolerance-robustness",
+    "amphora-viscosity-score"
+  ],
+  "n_modules_total": 29,
+  "n_modules_with_mechanical_candidates": 10,
+  "per_module_table": [
+    {
+      "evidence": "mission.md's own text already reports, in the same section as the 0.90/0.80 conformal targets, a 'REQUIRED honest demonstration that exchangeability fails' with observed cross-source coverage collapsing to 0.5518 (0.3482 below the 0.90 target), and the three-series barrier-ranking section states plainly that all 3 series fall below FEASIBILITY_FLOOR=6 with 'No checked result pro[motable]'. The refuted results are disclosed, not advertised as passing.",
+      "mission_present": true,
+      "mission_sha256": "c49c13bc5bbf88e356ee9908b7f4508f35492bd944385de61aadaf1b59d94177",
+      "module": "amphora-barrier-corrosion-score",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 2,
+      "n_refuted_ledger_verdicts": 4,
+      "n_retraction_index_rows": 1,
+      "refuting_receipts": [
+        "amphora-barrier-corrosion-score/benchmarks/corr-rate-conformal-domain-shift-v1/corr-rate-conformal-domain-shift-receipt.v1.dsse.json",
+        "amphora-barrier-corrosion-score/benchmarks/three-series-barrier-ranking-v1/three-series-barrier-ranking-receipt.v1.dsse.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "ALREADY_REPAIRED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "6903641b86f6a1714fdec4822553ad7d78acd2fd9eb4ec4ce3abddf6e01f39f5",
+      "module": "amphora-candidate-contract",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 1,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "be635eecb3aeffb78cd8a2b4e6d01d6b3b11a02f9fec4498867682b90b336ed2",
+      "module": "amphora-cro-protocol-packager",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 11,
+      "n_retraction_index_rows": 2,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "mission.md carries an explicit 'Qualified temperature-scaling statement (repair R-A02, 2026-08-03; supersedes the earlier blanket claim of under 15% error ...)' with the full per-leg MAPE breakdown (3.445% / 15.628% / 25.124%) and an explicit warning not to read the pooled 14.7% as uniform. Fixture rights carries a matching 'under human review' note.",
+      "mission_present": true,
+      "mission_sha256": "4e4f72c38097eeec63bb9c6de003bf2df7c6d4084d8caf690d508805060c57bc",
+      "module": "amphora-cure-potlife-gate",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 3,
+      "n_refuted_ledger_verdicts": 4,
+      "n_retraction_index_rows": 2,
+      "refuting_receipts": [
+        "amphora-cure-potlife-gate/evidence/audit/potlife-kpi-envelope-disclosure-gap-v1/potlife-kpi-envelope-disclosure-gap-receipt.v1.dsse.json",
+        "amphora-cure-potlife-gate/evidence/audit/rights-integrity-contradiction-v1/rights-integrity-contradiction-receipt.v1.dsse.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "ALREADY_REPAIRED"
+    },
+    {
+      "evidence": "Both 2026-08-01 REFUTED ledger lines (campaign C6) show that a leak-free re-baseline (deduped LOIO on 58 unique observations, correcting a 27/27 and 27/42 per-fold leak) collapses HistGBM from R2=+0.8555 to R2=-0.0469 (<= the constant-mean floor of -0.0535, i.e. no skill), and that Guth-Gold 1938 physics (R2=0.2437, concordance C=0.7111, CI [0.6155,0.7980] excludes chance) becomes the strongest leak-free arm -- the OPPOSITE ranking from what mission.md's 'HONEST INTERPRETATION' still asserts. amphora-design-rule-score/evidence/phase0/kpis/RETRACTION-INDEX.md exists but only records an unrelated signature-identity re-issue (R-A11); it has no row for this leak/dedup finding at all, so the module's own retraction bookkeeping is incomplete on top of the prose staleness.",
+      "mission_present": true,
+      "mission_sha256": "0eda24390fc11e6afaf29cb2b0f6618b6f97e2116df1638e90bdbaeedad3ca11",
+      "module": "amphora-design-rule-score",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 1,
+      "n_refuted_ledger_verdicts": 3,
+      "n_retraction_index_rows": 1,
+      "refuting_receipts": [
+        "amphora-design-rule-score/evidence/phase0/kpis/purformance-scratch-hardness-dedup-superseding-kpi.v1.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": "docs/mission.md line ~202, under the header 'HONEST INTERPRETATION': \"Full HistGBM (R\u00b2 = +0.8555, matching parent LOIO R\u00b2 = 0.856 exactly) crushes every non-ML baseline\" -- presented as the module's current, uncaveated headline finding.",
+      "status": "ADVERTISES_RETRACTED_RESULT"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "7edf54d9b73d0d872ab2ba69f8220e8bfa596c747d80e64b70fc6be5a3aff135",
+      "module": "amphora-envelope-gates",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "mission.md explicitly states, dated 2026-08-04: 'the shipped 1.0 positive_scenarios_scored_rate does NOT generalize to the module's own real in-tree DSSE corpus' with the honest re-measured rate cited alongside.",
+      "mission_present": true,
+      "mission_sha256": "ff702334be291b10f271c794e943d4a008cfe1112dc3c49ef9245235920ac525",
+      "module": "amphora-evidence-intake-validator",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 1,
+      "n_refuted_ledger_verdicts": 2,
+      "n_retraction_index_rows": 2,
+      "refuting_receipts": [
+        "amphora-evidence-intake-validator/evidence/phase0/repairs/V1-REAL-EIV/done/v1-real-eiv-superseding-kpi.v1.dsse.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "ALREADY_REPAIRED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "b06229d96bbea467f800249865001cb26b3e10663cb89945979fedbcd150dfc3",
+      "module": "amphora-formulation-arithmetic",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "850e989ad1a1cc9b2d61bc664028cb67a07abcb77e60442b9e9b4c1d7811d779",
+      "module": "amphora-formulation-universe",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "551ece862c85f9b920898db34bc1e96c46d0a1ba831f83a7fe73ad24d53f1124",
+      "module": "amphora-ingredient-library",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 2,
+      "n_retraction_index_rows": 4,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "0ed7e0a1fcfe2014b2f6199e9353e481309ad7760efc90b3b08a431441958bbb",
+      "module": "amphora-ip-fto-guard",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 4,
+      "n_retraction_index_rows": 3,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "7e2cfd5d01342d106a7d332c3e70dcf61097627d433107fda680015069444092",
+      "module": "amphora-known-answer-benchmarks",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 1,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "6243f32fe06ff489704268373256051771d39bb30bf4aceb565a1ed6ae43ecb9",
+      "module": "amphora-model-card-authority",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 0,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "b62d649014e97e804aeb961728ff4f0b58f9aa83e242e977829d66da4135da22",
+      "module": "amphora-molecule-design-gate",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 0,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep matched token '95%' between a RETRACTION-INDEX row (the feasible_fraction bootstrap-CI-vs-Clopper-Pearson correction) and mission.md, but the live mission.md occurrence is the unrelated locked-target sentence 'At least 99% validity, 95% uniqueness ...' -- a coincidental digit match, not a citation of the refuted CI. Confirmed false positive on manual read.",
+      "mission_present": true,
+      "mission_sha256": "d483f4467c7085af8934d5a5583dd75dc8254baf89d553192eac3719a921b7a5",
+      "module": "amphora-molecule-generator",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 1,
+      "n_refuted_ledger_verdicts": 5,
+      "n_retraction_index_rows": 4,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "fba2a45d7dcc3d755b31ba23f2b11be2e77acfa2886a29809ec27aa1810263cc",
+      "module": "amphora-molecule-novelty",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 3,
+      "n_retraction_index_rows": 3,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "All 8 mechanical candidate hits (dielectric MAE~0.40 claim, VK Y_gi 32.6K claim, Tg/density C7 6.66x/16.60x transfer numbers, C8 dielectric clean-subset numbers, W8 sign-reversal -0.52/100%, amine-N-H 100% guanidine gap) resolve to text that is EITHER (a) an inline block-quoted correction citing the exact refuting receipt (dielectric, Y_gi, Tg/density all read this way -- this is what B3's repair on 2026-08-04 landed) or (b) the still-valid narrow/scope-limited residual measurement the correction itself says remains citable (e.g. MAE 0.4040 on the OpenPoly-only clean subset). This is the state B3 produced; this fire finds no regression since B3 landed.",
+      "mission_present": true,
+      "mission_sha256": "1a7a859c26e6436200ee54879c7cd7a894e43ff02dd3c78cd9c1fe42b8ff9375",
+      "module": "amphora-molecule-property",
+      "n_claims_requiring_retraction": 3,
+      "n_mechanical_candidates": 8,
+      "n_refuted_ledger_verdicts": 14,
+      "n_retraction_index_rows": 35,
+      "refuting_receipts": [
+        "amphora-molecule-property/evidence/phase0/repairs/B3/done/B3.done-receipt.v1.dsse.json",
+        "amphora-molecule-property/evidence/audit/dielectric-retraction-v1/dielectric-retraction-superseding-kpi-receipt.v1.dsse.json",
+        "amphora-molecule-property/evidence/audit/vk-ridge-ygi-admissibility-w8-v1/vk-ridge-ygi-admissibility-audit-receipt.v1.dsse.json",
+        "amphora-molecule-property/evidence/audit/amine-nh-guanidine-conjugation-gap-v1/amine-nh-guanidine-conjugation-gap-receipt.v1.dsse.json",
+        "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "ALREADY_REPAIRED"
+    },
+    {
+      "evidence": "The module's OWN evidence/phase0/kpis/RETRACTION-INDEX.md records that the 'generalization inference ... that the deterministic role rule fails closed on real out-of-domain accelerator/catalyst chemotypes generally' was CLAIM_REFUTED: DPG (CAS 102-06-7) and DOTG (CAS 97-39-2), real guanidine-class accelerators, were classified `hardener` with `reactive_amine_hydrogen_count`=3 through the real RDKit FFI. The raw 1.0 numbers reported in mission.md are locally true (correct on the 39-record fixture) so this is NOT an advertised-false-number defect, but the module's own retraction index already names the caveat and mission.md carries none of it -- a silent disclosure gap one severity notch below ADVERTISES_RETRACTED_RESULT.",
+      "mission_present": true,
+      "mission_sha256": "73b3c250dd80f5a942545d7f126ed2032a42b9c67ce39fe36662f71b74ea441d",
+      "module": "amphora-molecule-role-ranker",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 1,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 3,
+      "refuting_receipts": [
+        "amphora-molecule-role-ranker/benchmarks/role-guanidine-accelerator-domain-probe-v1/replay_receipt.v1.dsse.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": "docs/mission.md reports `structural_inference_agreement_rate` 1.0 and `out_of_domain_rejection_rate` 1.0 on the 39-record self-authored fixture with no caveat anywhere in the file (grepped for 'guanidine', 'DPG', 'DOTG', 'accelerator', 'R-N02', 'generaliz' -- zero hits).",
+      "status": "DISCLOSURE_GAP"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "ccbd7c25d7f857c8b10091ce29906245a0956ba75129fcef9c1802500211034d",
+      "module": "amphora-optimizer-orchestrator",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 0,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "d79832b1cd0581b4ff77095f7d436a674892929ae8a693ab776bd7e0b8b9a28d",
+      "module": "amphora-process-qc-twin",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 2,
+      "n_retraction_index_rows": 1,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Every occurrence of the retracted NIST Ridge-vs-NULL numbers (0.6331/0.6806/0.0475/7.0%) in mission.md carries an inline '*[RETRACTED 2026-08-03, repair R-A08 -- not independently reproducible and not fold-robust ...]*' marker plus a '> CORRECTED / SUPERSEDED' block quoting the honest re-implementation numbers (0.5888/0.6736).",
+      "mission_present": true,
+      "mission_sha256": "652787b3961608d65b184a04d37fd33c8a797645881384b6eeb594452da2734a",
+      "module": "amphora-public-corrosion-benchmark",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 3,
+      "n_refuted_ledger_verdicts": 5,
+      "n_retraction_index_rows": 4,
+      "refuting_receipts": [
+        "amphora-public-corrosion-benchmark/evidence/audit/nist-baseline-fold-significance-v1/nist-baseline-fold-significance-receipt.v1.dsse.json",
+        "amphora-public-corrosion-benchmark/evidence/audit/nist-baseline-material-group-extrapolation-v1/nist-baseline-material-group-extrapolation-receipt.v1.dsse.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "ALREADY_REPAIRED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "abad6a3925d81d12206bf4c1fcf8f98504c347323b7a4a866ee50f1710f889e6",
+      "module": "amphora-redteam-audit",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 5,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "d3d5295df280e22810f320cfff0ae58a43b6c8f21e003942a731adf567479030",
+      "module": "amphora-report-packager",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "61ea445e82829c9ffb4faa8fd9f2a0b85a059bcc0357618ce80088fa382d2018",
+      "module": "amphora-run-provenance",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "The Fedors/Van-Krevelen delta_p and Hansen-component ceiling-breach numbers (5.2e9, 5.33e17 vs the 59.9 MPa^0.5 admissibility ceiling) appear in mission.md only inside a '> ... (campaign item W7, verdict CLAIM_REFUTED) voided this section's KPI' block quote.",
+      "mission_present": true,
+      "mission_sha256": "32a56a35f5976820440db2303d2f7b3db09c91a22c0b580d0351d9cb7909ff9d",
+      "module": "amphora-solvency-score",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 5,
+      "n_refuted_ledger_verdicts": 2,
+      "n_retraction_index_rows": 9,
+      "refuting_receipts": [
+        "amphora-solvency-score/evidence/audit/flory-hansen-physical-admissibility-v1/flory-hansen-physical-admissibility-audit-receipt.v1.dsse.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "ALREADY_REPAIRED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "323d717376b181d0921880ea6e547bab797d44f17fd33355104ceedc10544408",
+      "module": "amphora-sourceability-ehs",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 5,
+      "n_retraction_index_rows": 12,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "7d7c068fb2059dd4d7905efbfa7dd9d846938a2a7d4c4979c84eadc0c1ae6281",
+      "module": "amphora-source-ledger",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 1,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": false,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Mechanical sweep found zero numeric-token overlap between this module's RETRACTION-INDEX.md rows / logs/claims-requiring-retraction.jsonl entries / REFUTED falsification-ledger.jsonl verdicts and the module's current docs/mission.md prose.",
+      "mission_present": true,
+      "mission_sha256": "09f933f755f1c0f796e5785eefb3626d4117771afe8b30d4c004ae5163f782d6",
+      "module": "amphora-tolerance-robustness",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 0,
+      "n_refuted_ledger_verdicts": 3,
+      "n_retraction_index_rows": 0,
+      "refuting_receipts": [],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "NO_STALE_CLAIM_DETECTED"
+    },
+    {
+      "evidence": "Every occurrence of the Polyverse R2=0.944 parent figure and the FFW-vs-ML R2 0.5972/0.4536 pair carries an adjacent '[Polyverse dataset: CONTEXT_ONLY, promotion_eligible=false, pending counsel]' and/or '[n=13 independent chemistries, no resampled interval - interval work queued as R-C04]' caveat, matching repair R-A03.",
+      "mission_present": true,
+      "mission_sha256": "321108d3c8902e03992db19064630d6506e41fd0a8060cde97d07abbeb4e5a82",
+      "module": "amphora-viscosity-score",
+      "n_claims_requiring_retraction": 0,
+      "n_mechanical_candidates": 4,
+      "n_refuted_ledger_verdicts": 3,
+      "n_retraction_index_rows": 2,
+      "refuting_receipts": [
+        "amphora-viscosity-score/evidence/audit/polyverse-rights-disclosure-gap-v1/polyverse-rights-disclosure-gap-receipt.v1.dsse.json",
+        "amphora-viscosity-score/evidence/audit/ffw-vs-ml-uncertainty-disclosure-gap-v1/ffw-vs-ml-uncertainty-disclosure-gap-receipt.v1.dsse.json"
+      ],
+      "retraction_index_present": true,
+      "stale_claim": null,
+      "status": "ALREADY_REPAIRED"
+    }
+  ],
+  "proposed_followups": [
+    {
+      "defect": "docs/mission.md 'HONEST INTERPRETATION' headline (line ~202) still advertises B5 HistGBM R2=+0.8555 'crushes every non-ML baseline' with zero mention that the leak-free re-baseline (2026-08-01, campaign C6, REFUTED x2) collapses it to R2=-0.0469 (no skill, below the constant-mean floor) and promotes Guth-Gold physics (R2=0.2437) to strongest leak-free arm. evidence/phase0/kpis/RETRACTION-INDEX.md also has no row for this finding at all (only the unrelated R-A11 signature reissue).",
+      "module": "amphora-design-rule-score",
+      "proposed_done_criterion": "docs/mission.md's LOIO-CV section is amended (supersede-never-rewrite, new prose alongside the existing text, not a silent edit) to state the leak-free R2 collapse and cite purformance-scratch-hardness-dedup-superseding-kpi.v1.json inline, AND evidence/phase0/kpis/RETRACTION-INDEX.md gains a row for the C6 finding citing both 2026-08-01 REFUTED ledger lines; a re-run of this same numeric cross-reference sweep against the repaired mission.md finds status=ALREADY_REPAIRED for this module."
+    },
+    {
+      "defect": "docs/mission.md reports structural_inference_agreement_rate=1.0 and out_of_domain_rejection_rate=1.0 on the 39-record fixture with no mention that the module's own RETRACTION-INDEX.md records the broader 'fails closed on real out-of-domain accelerator/catalyst chemotypes generally' inference as CLAIM_REFUTED (DPG/DOTG guanidine accelerators misclassified as hardener via the real FFI).",
+      "module": "amphora-molecule-role-ranker",
+      "proposed_done_criterion": "docs/mission.md gains a short disclosure note next to the role-classification-kpi section citing role-guanidine-accelerator-domain-probe-v1/replay_receipt.v1.dsse.json and the R-N02 coordinated fix, scoping the 1.0 rates to the tested fixture rather than implying unconditional generalization; re-run finds status=ALREADY_REPAIRED."
+    }
+  ],
+  "schema": "amphora.redteam-audit.mission-prose-staleness-sweep.v1",
+  "summary_counts": {
+    "ADVERTISES_RETRACTED_RESULT": 1,
+    "ALREADY_REPAIRED": 7,
+    "DISCLOSURE_GAP": 1,
+    "NO_STALE_CLAIM_DETECTED": 20
+  },
+  "verdict": "CLAIM_REFUTED"
+}

@@ -1,0 +1,27 @@
+{
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "human_review_performed": false,
+  "local_development_keys_authorized": false,
+  "module_id": "amphora-candidate-contract",
+  "required_distinct_roles": [
+    "PHASE0_EVALUATOR",
+    "PHASE0_INTERNAL_REVIEWER"
+  ],
+  "required_independence_scope": "CODE_PATH_AND_SIGNING_IDENTITY",
+  "required_gates": [
+    "RIGHTS",
+    "LOCKED_SPLIT",
+    "LOCKED_BENCHMARK",
+    "TWO_REPLAYS",
+    "RED_TEAM",
+    "CLAIM_LOCKS",
+    "FOLDER_CONFINEMENT",
+    "EVALUATOR_SIGNATURE",
+    "INDEPENDENT_REVIEW_SIGNATURE"
+  ],
+  "required_review_method": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION",
+  "schema": "amphora.module-phase0-promotion-policy.v1",
+  "scientific_success_required": false,
+  "target_phase": "PHASE_0",
+  "target_scientific_readiness": "NOT_APPLICABLE"
+}

@@ -1,0 +1,12 @@
+[package]
+name = "amphora-barrier-corrosion-score"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+amphora-core = { path = "../amphora-core" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+

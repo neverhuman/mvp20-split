@@ -1,0 +1,556 @@
+{
+  "all_ci_fields_examined": [
+    {
+      "ci": [
+        -1.60206,
+        -0.478862
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "results_summary.mondrian_by_magnitude_tercile_alpha_0.10.tercile_thresholds_log10",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-barrier-corrosion-score/benchmarks/corr-rate-conformal-v1/corr-rate-conformal-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.989306,
+        1.076048
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "headline_result_leave_material_out.rmse_cluster_bootstrap_ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-barrier-corrosion-score/benchmarks/corr-rate-qspr-v1/inhouse_benchmark_receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.029631,
+        0.111783
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "test_1_paired_cluster_bootstrap_delta_rmse.delta_rmse_ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-barrier-corrosion-score/benchmarks/corr-rate-qspr-v1/significance_receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.0,
+        0.218
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "calibration.empirical_power_probe.full_gate_clopper_pearson_95ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-barrier-corrosion-score/benchmarks/st19168-preregistered-v1/preregistration-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.2127,
+        0.7341
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "calibration.empirical_power_probe.step1_clopper_pearson_95ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-barrier-corrosion-score/benchmarks/st19168-preregistered-v1/preregistration-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.0,
+        0.218
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "calibration.type1_error_probe.clopper_pearson_95ci",
+      "k": 15,
+      "n": null,
+      "receipt": "amphora-barrier-corrosion-score/benchmarks/st19168-preregistered-v1/preregistration-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.833333,
+        1.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "results.bootstrap_ci95_coverage_alpha0.10",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-cure-potlife-gate/evidence/audit/potlife-conformal-interval-v1/potlife-conformal-interval-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.1651395315,
+        0.7247239404
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "gates.G4_power_law_alternative.bootstrap_b_ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-cure-potlife-gate/evidence/audit/potlife-gel-tfs-crossendpoint-v1/potlife-gel-tfs-crossendpoint-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.1651395315,
+        0.7247239404
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "results.bootstrap_b_ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-cure-potlife-gate/evidence/audit/potlife-gel-tfs-crossendpoint-v1/potlife-gel-tfs-crossendpoint-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        182.0,
+        192.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "metrology_constants.commercial_dgeba_eew_spec_g_per_eq",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-envelope-gates/evidence/audit/stoichiometric-index-equivalents-v1/stoichiometric-index-equivalents-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        13.1928,
+        16.2049
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "refuted_facts.0.admissible_replacement_interval_MPa0.5",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-ingredient-library/evidence/audit/hansen-block-sphere-coherence-v1/hansen-block-sphere-coherence-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        13.1928,
+        16.2049
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "results.G3_sphere_discrimination.radius_calibration_analysis.exact_separating_R0_interval_MPa0.5",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-ingredient-library/evidence/audit/hansen-block-sphere-coherence-v1/hansen-block-sphere-coherence-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "results.feasible_fraction_bootstrap95_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1/molgen-deterministic-grammar-yield-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.797374,
+        2.287446
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "results.sa_median_bootstrap95_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1/molgen-deterministic-grammar-yield-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "attacked_claim.reported_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1/molgen-grammar-yield-ci-inadmissibility-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.921053,
+        1.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "results.off_boundary_control_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1/molgen-grammar-yield-ci-inadmissibility-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.668175,
+        0.802383
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "results.intdiv_1_bootstrap95_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-scaffold-diversity-v1/molgen-scaffold-diversity-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        100.0,
+        264.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "envelope_coverage_test.commercial_envelope_g_per_eq",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-stoichiometric-envelope-coverage-v1/molgen-stoichiometric-envelope-coverage-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        100.0,
+        264.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "results.commercial_envelope_g_per_eq",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-stoichiometric-envelope-coverage-v1/molgen-stoichiometric-envelope-coverage-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.907487,
+        1.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "corrected_values.feasible_fraction_exact_clopper_pearson95_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "corrected_values.superseded_feasible_fraction_bootstrap95_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.9075,
+        1.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "derivation.1_clopper_pearson.corrected_ci_4dp",
+      "k": 38,
+      "n": 38,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "derivation.1_clopper_pearson.superseded_reported_ci",
+      "k": 38,
+      "n": 38,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.907487,
+        1.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "re_attack.a_ci_inadmissibility.observed_cp_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.907487,
+        1.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "carried_forward_corrections_confirmed_by_v_a06.feasible_fraction_exact_clopper_pearson95_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.907487,
+        1.0
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "clopper_pearson_independent.r_a06_reported_ci",
+      "k": 38,
+      "n": 38,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/V-A06/done/v-a06-molecule-generator-repair-verify-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "headline_result.accuracy_gap_det_minus_fitted_ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "headline_result.fitted_loocv_accuracy_ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        -0.191828,
+        0.496549
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "tests.T4_fickian_time_consistency.cluster_bootstrap.ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-public-corrosion-benchmark/evidence/audit/eis-brasher-kingsbury-water-uptake-admissibility-v1/eis-brasher-kingsbury-water-uptake-admissibility-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        -0.7,
+        0.5
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "primary_result_within_environment.cluster_bootstrap.ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-public-corrosion-benchmark/evidence/audit/eis-rustcreep-crossmodality-v1/eis-rustcreep-crossmodality-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        -0.028329182046960166,
+        0.4799661988052148
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "checks.6_escalation_beyond_repair_self_check.bootstrap_ci_seed_1234_b20000",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/V-A08/done/V-A08-verify-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        -0.03428695141686245,
+        0.4735875057221617
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "checks.6_escalation_beyond_repair_self_check.bootstrap_ci_seed_99999_b20000",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-public-corrosion-benchmark/evidence/phase0/repairs/V-A08/done/V-A08-verify-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.8416341720920943,
+        0.9154344725058612
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "headline_result_leave_solute_out.model_rmse_ci95_cluster_bootstrap",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-solvency-score/benchmarks/bigsoldb-v1/inhouse_benchmark_receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.1307416836052442,
+        1.2025207027490066
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "admissibility_hardened_evaluation.best_baseline.rmse_ci95_cluster_bootstrap",
+      "k": null,
+      "n": 94015,
+      "receipt": "amphora-solvency-score/evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.8404785445796423,
+        0.9114412999049273
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "admissibility_hardened_evaluation.model_rmse_ci95_cluster_bootstrap",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-solvency-score/evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.8416341720920943,
+        0.9154344725058612
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "full_corpus_signed_comparator.model_rmse_ci95",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-solvency-score/evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        0.5573041117529433,
+        0.8008527205071096
+      ],
+      "degenerate_at_boundary": false,
+      "field_path": "part_b_radonpy_eps_r_admissible_subset.conformal.coverage_admissible_subset_wilson_95ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-tolerance-robustness/evidence/audit/conformal-coverage-attack-v1/conformal-coverage-attack-receipt.v1.dsse.json"
+    }
+  ],
+  "already_known_instance_degenerate_fields": [
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "results.feasible_fraction_bootstrap95_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1/molgen-deterministic-grammar-yield-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "attacked_claim.reported_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1/molgen-grammar-yield-ci-inadmissibility-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "corrected_values.superseded_feasible_fraction_bootstrap95_ci",
+      "k": null,
+      "n": null,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "derivation.1_clopper_pearson.superseded_reported_ci",
+      "k": 38,
+      "n": 38,
+      "receipt": "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json"
+    }
+  ],
+  "attacked_claim": {
+    "claim_text": "No signed artifact in the portfolio reports a percentile-bootstrap confidence interval that is degenerate at the k=n or k=0 boundary.",
+    "receipt_path": "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1/"
+  },
+  "counts": {
+    "n_ci_fields_total": 37,
+    "n_degenerate_fields_already_known_instance": 4,
+    "n_degenerate_fields_new_finding": 2,
+    "n_degenerate_fields_total": 6,
+    "n_dsse_files_scanned": 294,
+    "n_files_with_ci_fields": 22
+  },
+  "does_not_close": [
+    "Does not modify, delete, or re-sign any scanned artifact, including the amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/ replay_receipt.v1.dsse.json this sweep flags as a new finding -- repair of that instance is out of scope for this sweep (different module) and is recorded here as a finding only.",
+    "Does not modify the master manifest or any mission.md front-matter.",
+    "Does not claim the sweep's regex/key-name heuristic (\"ci\"/\"interval\"/\"confidence\" substring match) is provably exhaustive against every conceivable field-naming convention in the portfolio -- it is a systematic, deterministic, whole-tree structural search over all 294 DSSE artifacts found under amphora-*/ at sweep time, not a proof of completeness over hypothetical future naming schemes."
+  ],
+  "falsification_criterion": {
+    "declared_a_priori": true,
+    "gap_threshold_for_inadmissibility_note": 0.02,
+    "rule": "CLAIM_REFUTED if the sweep finds >=1 DSSE-signed artifact, other than the already-known/audited/repaired molgen-deterministic-grammar-yield-v1 instance and its own audit/repair/verify trail, reporting a degenerate-at-boundary proportion CI. CLAIM_SURVIVED if none is found."
+  },
+  "headline": "Portfolio sweep of 294 signed *.dsse.json artifacts across every amphora-* module found 37 proportion/interval CI fields in 22 files; 6 are degenerate at the k=n/k=0 boundary, of which 2 are NEW occurrences outside the already-fixed molgen-deterministic-grammar-yield-v1 instance. CLAIM_REFUTED.",
+  "known_instance_paths_excluded_from_new_finding_count": [
+    "amphora-molecule-generator/evidence/audit/molgen-deterministic-grammar-yield-v1/molgen-deterministic-grammar-yield-receipt.v1.dsse.json",
+    "amphora-molecule-generator/evidence/audit/molgen-grammar-yield-bootstrap-ci-inadmissibility-v1/molgen-grammar-yield-ci-inadmissibility-receipt.v1.dsse.json",
+    "amphora-molecule-generator/evidence/phase0/repairs/R-A06/done/molgen-r-a06-superseding-repair-receipt.v1.dsse.json",
+    "amphora-molecule-generator/evidence/phase0/repairs/R-A06v2/done/molgen-r-a06v2-functionality-convention-repair-receipt.v1.dsse.json",
+    "amphora-molecule-generator/evidence/phase0/repairs/V-A06/done/v-a06-molecule-generator-repair-verify-receipt.v1.dsse.json"
+  ],
+  "new_finding_degenerate_fields": [
+    {
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "clopper_pearson_ci": null,
+      "degenerate_at_boundary": true,
+      "field_path": "headline_result.accuracy_gap_det_minus_fitted_ci95",
+      "k": 24,
+      "n": 24,
+      "note": "difference-of-two-saturated-proportions statistic; root-caused to the same fitted_loocv_accuracy_ci95 k=n=24 saturation, not an independent raw-proportion CI",
+      "receipt": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json"
+    },
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "clopper_pearson_ci": [
+        0.8575264022774743,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "headline_result.fitted_loocv_accuracy_ci95",
+      "k": 24,
+      "lower_gap_vs_reported_bootstrap": 0.14247359772252566,
+      "n": 24,
+      "receipt": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json",
+      "signed_artifact_signature_independently_verified": true,
+      "signed_artifact_signature_keyid": "local-9028773f49591193",
+      "source_diagnostic": {
+        "path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/diagnostic.canonical.json",
+        "sha256": "075aeaaf8204c712838e41a3c8b42d89f974d1454c65fe75e1862c14700b3ba2"
+      },
+      "upper_gap_vs_reported_bootstrap": 0.0
+    }
+  ],
+  "new_finding_inadmissible_by_gap_threshold": [
+    {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "clopper_pearson_ci": [
+        0.8575264022774743,
+        1.0
+      ],
+      "degenerate_at_boundary": true,
+      "field_path": "headline_result.fitted_loocv_accuracy_ci95",
+      "k": 24,
+      "lower_gap_vs_reported_bootstrap": 0.14247359772252566,
+      "n": 24,
+      "receipt": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/replay_receipt.v1.dsse.json",
+      "signed_artifact_signature_independently_verified": true,
+      "signed_artifact_signature_keyid": "local-9028773f49591193",
+      "source_diagnostic": {
+        "path": "amphora-molecule-role-ranker/benchmarks/role-parsimony-conformal-v1/diagnostic.canonical.json",
+        "sha256": "075aeaaf8204c712838e41a3c8b42d89f974d1454c65fe75e1862c14700b3ba2"
+      },
+      "upper_gap_vs_reported_bootstrap": 0.0
+    }
+  ],
+  "purpose": "Sweep every signed (*.dsse.json) artifact across all amphora-* module trees for a percentile-bootstrap proportion confidence interval degenerate at the k=n or k=0 boundary, the defect class found and repaired in amphora-molecule-generator's molgen-deterministic-grammar-yield-v1 receipt.",
+  "rights_posture": "Read-only scan of already-checked-in, hash-locked repo files (DSSE receipts and their own frozen diagnostics). No new external data acquired; no quarantined data touched.",
+  "scan_root": "/home/ubuntu/amphora/build/mvp20-split",
+  "schema": "amphora.molecule-generator.w-gen1-portfolio-ci-degeneracy-sweep.diagnostic.v1",
+  "study_id": "w-gen1-portfolio-exact-ci-sweep",
+  "verdict": "CLAIM_REFUTED"
+}

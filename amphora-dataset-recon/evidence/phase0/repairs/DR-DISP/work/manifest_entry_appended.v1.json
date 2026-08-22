@@ -1,0 +1,51 @@
+{
+  "candidate_count": 21,
+  "candidates_pinned": [
+    "DR-DISP-Q01",
+    "DR-DISP-Q02",
+    "DR-DISP-Q03",
+    "DR-DISP-Q04",
+    "DR-DISP-Q05",
+    "DR-DISP-Q06",
+    "DR-DISP-Q07",
+    "DR-DISP-Q08",
+    "DR-DISP-Q09",
+    "DR-DISP-Q10",
+    "DR-DISP-Q11",
+    "DR-DISP-Q12",
+    "DR-DISP-Q13",
+    "DR-DISP-Q14",
+    "DR-DISP-BASK-R-D01",
+    "DR-DISP-BASK-R-D02",
+    "DR-DISP-BASK-R-D03",
+    "DR-DISP-BASK-R-D04",
+    "DR-DISP-BASK-R-D05",
+    "DR-DISP-BASK-R-D06",
+    "DR-DISP-ORB-UMLIP"
+  ],
+  "date": "2026-08-10",
+  "entry_type": "candidate_intake_manifest",
+  "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+  "framing": "AUDIT-ONLY",
+  "note": "DR-DISP first deliverable: the sha256-pinned candidate-intake manifest of EVERY previously-furnished source for this module's disposition ledger, as distinct from the per-DR-LANG-item 'candidates_pinned' snapshots already in this ledger (those pin small engine-discovery working sets like C1-C4, not this closed input set). Closed input set = the 14 data-acquisition-queue lines that predate any fire_id tag (lines 1-14 of /home/ubuntu/amphora-cron/data-acquisition-queue.jsonl on xbabe1, confirmed by fire_id absence -- all subsequent lines carry a fire_id and are engine-discovered candidates from other campaign items, not part of this closed set) + the six B-ASK asks R-D01..R-D06 (docs/directives/2026-08-05-closing-the-open-portfolio.md Section B.4) + U-MLIP's Orb-v3 reference (amphora-molecule-property U-MLIP done receipt). 21 candidates total. Every one receives its own disposition entry immediately following this manifest line, each candidate_id prefixed DR-DISP-.",
+  "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+  "schema": "amphora.dataset-recon.disposition-ledger.v1",
+  "source_pins": {
+    "b_ask_directive_md": {
+      "description": "Full-file sha256 of the directive document containing Section B.4 'The six data and rights asks', which names R-D01..R-D06 verbatim.",
+      "path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+      "sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d"
+    },
+    "queue_lines_1_14": {
+      "description": "Byte-exact snapshot of lines 1-14 of /home/ubuntu/amphora-cron/data-acquisition-queue.jsonl on xbabe1, taken this fire (these 14 lines predate the fire_id convention and are immutable by construction -- xbabe1 is append-only for this file and lines 1-14 are never rewritten).",
+      "line_count": 14,
+      "sha256": "8899cb8f8f4f908a5a0ceb232c1d3c5c185d8983d1a10226e23cf890abba95bc",
+      "snapshot_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-DISP/work/queue14.snapshot.jsonl"
+    },
+    "u_mlip_orb_reference_receipt": {
+      "description": "Full-file sha256 of the already-signed U-MLIP done receipt this manifest cites (not re-derived) for the Orb-v3 disposition.",
+      "path": "amphora-molecule-property/evidence/phase0/repairs/U-MLIP/done/u-mlip-molecule-property-mlip-dielectric-feasibility-receipt.v1.dsse.json",
+      "sha256": "1dbe69908c621de91f508fb599cb550114caf779ec6cd12733db0f813742152e"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "item_id": "W-AUDIT",
+  "last_fire_id": "20260814T050002-2102213-f395cf047c3c",
+  "status": "both_fires_complete_max_fires_exhausted",
+  "n_done_items_at_read_time": 128,
+  "fire1": {
+    "fire_id": "20260814T040001-1700358-92031d80832c",
+    "n_deep_read": 15,
+    "deep_read_ids": ["PROBE-WEB","C1","C6","W-RTA1","W-T-EIV","R-A00","V-N02a","U-AD","DR-LANG-ZH","CF-ARITH","C3","C4","W-GEN1","C10","W-EHS1"],
+    "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/W-AUDIT/done/w-audit-done-column-adjudication-receipt.v1.dsse.json",
+    "known_defect": "23/128 receipt_path citations in its adjudication_table pointed at the wrong artifact (early attempts/ checkpoint or pre-repair evidence/audit/ receipt instead of the item's true done/-glob-satisfying artifact) -- corrected in fire 2."
+  },
+  "fire2": {
+    "fire_id": "20260814T050002-2102213-f395cf047c3c",
+    "n_deep_read": 29,
+    "deep_read_ids": ["CF-ARITH","T-05","W-T-ARITH","R-S02","R-S03","W-FTO-READON","W-FTO1","V-A05","V-A07","V-A07v2","W-D-NOV","W-NOV1","R-S05","V-A12a","V-N02b","W-ROLE-CI","T-09","W-T-OPT","T-10","W-QC","W-T-QC","T-12","T-13","W-T-PROV","R-C01","W-TOL1","W5","V1-KPI-VISC","W-VISC2"],
+    "n_citation_corrected": 23,
+    "citation_corrected_ids": ["R-C05","V1-KPI-BARR","T-01","CF-ALT","CF-PROC","CF-RISK","CF-TEST","T-02","W-CRO1","W-D-CRO","DR-ANNEX","DR-COVERAGE","DR-DISP","W-D-ENVGATE","W-ING1","R-S02","V1-KPI-MCA","R-C03","T-10","W-QC","T-13","R-N01","R-C01"],
+    "n_unique_items_freshly_examined": 47,
+    "receipt_path": "amphora-redteam-audit/evidence/phase0/repairs/W-AUDIT/done/w-audit-done-column-adjudication-receipt.v2.dsse.json",
+    "supersedes": "amphora-redteam-audit/evidence/phase0/repairs/W-AUDIT/done/w-audit-done-column-adjudication-receipt.v1.dsse.json"
+  },
+  "cumulative_n_delivered": 128,
+  "cumulative_n_partial": 0,
+  "cumulative_n_not_delivered": 0,
+  "cumulative_n_not_locatable": 0,
+  "cumulative_n_deep_or_corrected_across_both_fires": 62,
+  "verdict_fire2": "CLAIM_SURVIVED",
+  "flagged_process_anomaly_items_fire1": ["C1","C6"],
+  "flagged_process_anomaly_fire2": {
+    "systemic_citation_bug": "23/128 done items, see proposed_followups in v2 receipt",
+    "positive_control_governance_gap_items": ["W-NOV1","V-A12a","V-N02b","V1-KPI-VISC"]
+  },
+  "max_fires_reached": true,
+  "next_fire_instructions": "max_fires=2 for W-AUDIT is now exhausted; item is done. Any further W-AUDIT-style work must be filed as a NEW campaign item by the operator (e.g. to act on the two new followups: fix the receipt-path-selection methodology, and backfill positive_control for the 4 pre-rule survivals). Do not re-fire W-AUDIT itself."
+}

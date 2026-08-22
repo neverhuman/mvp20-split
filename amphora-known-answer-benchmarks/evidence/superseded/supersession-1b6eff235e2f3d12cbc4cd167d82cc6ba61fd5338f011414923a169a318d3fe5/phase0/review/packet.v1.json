@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "d0ccb6b560da87837d725d447b7f5c69c99abc9ec25c3af3d22181f5e9696d50",
+  "evaluation_receipt_sha256": null,
+  "module_id": "amphora-known-answer-benchmarks",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

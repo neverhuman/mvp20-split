@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-design-rule-score",
+    "formulation lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "425c85bdb76d3843819600bf9235089a497b65c7ffa9b1c3a444da8c64f3df64",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-design-rule-score",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

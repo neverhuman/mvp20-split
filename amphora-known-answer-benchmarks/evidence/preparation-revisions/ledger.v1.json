@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-8760ef6592f4c3119a3dc9afd54f36749fa25ade78542ee0950250bb47788a18",
+  "module_id": "amphora-known-answer-benchmarks",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-29f4e24245b736737e988d9d212ace7212dd0621262897e448a0de574667c6c2.json",
+      "revision_id": "preparation-revision-29f4e24245b736737e988d9d212ace7212dd0621262897e448a0de574667c6c2",
+      "sha256": "f7009ac073d7a84d7c9e22e20b47118f217d265c4ca5d885ffd8a79efe388ea3"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-8760ef6592f4c3119a3dc9afd54f36749fa25ade78542ee0950250bb47788a18.json",
+      "revision_id": "preparation-revision-8760ef6592f4c3119a3dc9afd54f36749fa25ade78542ee0950250bb47788a18",
+      "sha256": "f61d73137a2249f04d411c82a6530b6e8d970a702c1cc98ce1dd4bc2fb114d4b"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

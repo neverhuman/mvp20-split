@@ -1,0 +1,9 @@
+
+running 4 tests
+test t06_attack2_diagnostic_which_branch ... ok
+test t06_attack2_duplicate_factor_numeric_type_evasion ... ok
+test t06_attack3_index_identity_instability_across_value_order ... ok
+test t06_attack1_cardinality_overflow_fresh_boundaries ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

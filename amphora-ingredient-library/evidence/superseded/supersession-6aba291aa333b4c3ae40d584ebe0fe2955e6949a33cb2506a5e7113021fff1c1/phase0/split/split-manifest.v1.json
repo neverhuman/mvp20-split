@@ -1,0 +1,8 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "a67103493a8dfa1365406e386cdd65558e2564b008e1c15a2a894ff339dfa97f",
+  "import_hashes": [],
+  "module_id": "amphora-ingredient-library",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

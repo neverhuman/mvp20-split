@@ -1,0 +1,274 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "f377a3705c535a1075f20702c482ea8eff0389106e4404bc99461cd3d997d6ef",
+  "payload_decoded": {
+    "authority": "AUDIT_ONLY",
+    "baseline": {
+      "astm_conventions_cited_not_reproduced": [
+        "ASTM D1475 (density of paint/varnish/lacquer) -- Method 24 sec 6.1, 11.3.3",
+        "ASTM D2369 (volatile content of coatings) -- Method 24 sec 6.2, 11.2.2/11.3.1",
+        "ASTM D2697 -- referenced by this module's own docs as the volume-solids convention Method 24 sec 11.3.4 delegates to ('manufacturer's formulation'); Method 24's own text does not name D2697 explicitly, D2697 is this module's citation, not the CFR's",
+        "ASTM D6093 -- not cited by Method 24 text at all; appears only in this module's campaign-item framing as an alternate industry convention"
+      ],
+      "citation": "40 CFR Part 60, Appendix A-7 (Test Methods 19 through 25E)",
+      "doi_isbn": "not applicable -- US federal regulation (40 CFR), public domain under 17 U.S.C. sec 105; CFR citation is the standard scholarly reference in place of a DOI/ISBN",
+      "name": "EPA Method 24 -- Determination of Volatile Matter Content, Water Content, Density, Volume Solids, and Weight Solids of Surface Coatings",
+      "public_domain": true,
+      "retrieved": "2026-08-13",
+      "url_authoritative": "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-C/part-60/appendix-Appendix%20A-7%20to%20Part%2060",
+      "url_primary": "https://www.epa.gov/sites/default/files/2020-12/documents/method_24.pdf",
+      "version": "unofficial internet version dated October 7, 2020 (points to eCFR as authoritative)"
+    },
+    "campaign_item_id": "W-T-ARITH",
+    "claim_under_attack": {
+      "claim_text": "The arithmetic identities conform to the published standards that define them.",
+      "receipt_path": "amphora-formulation-arithmetic/evidence/phase0/kpis/"
+    },
+    "date": "2026-08-13",
+    "directive_obligation": null,
+    "directive_path": "none",
+    "directive_sha256": "",
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-formulation-arithmetic",
+    "objective": "THEORY-DIMENSION item: measure amphora-formulation-arithmetic's dimensioned arithmetic identities (VOC g/L, volume solids, weight solids, density) against a NAMED PUBLISHED BASELINE for the first time -- prior receipts in this module were all self-referential (checked only against the module's own fixture).",
+    "overall_verdict_reasoning": "R2 is a genuine, structural divergence from EPA Method 24 Eq. 24-3/24-4/24-5: the module's voc_g_per_L_epa_method24 field -- named for this exact method -- computes Wv*Dc (total volatile mass basis) unconditionally, never Wo*Dc (nonaqueous-volatile-only basis), because its ingredient schema has no water or exempt-solvent category at all (0/83 facts.json entries). Method 24 makes this exclusion non-optional the moment water or an exempt solvent is present (Eq. 24-4, Eq. 24-5). The waterborne probe shows a 50.0% VOC overstatement versus the EPA-conformant value on a realistic 30g-water addition to the module's own marine-primer fixture. This is the SAME mass/volume-basis-conflation defect CLASS already found once in this portfolio (amphora-known-answer-benchmarks ARITH-A221-X70P1-VOLUME-SOLIDS, 2026-08-03) -- a self-referential fixture that never exercised the water/exempt-solvent path let it go undetected until measured against the actual regulatory text. R4/R6/R8 are additional, lower-severity gaps filed as proposed_followups. R1/R3/R5/R7 hold as CONFORMANT/NOT_APPLICABLE for the cases they cover.",
+    "positive_control": {
+      "detected": true,
+      "evidence": {
+        "divergence_abs_g_per_L": 124.3917603755,
+        "divergence_rel": 0.5,
+        "engine_naive_voc_g_per_L": 373.1752811266,
+        "epa_conformant_voc_g_per_L": 248.783520751,
+        "zero_water_control_divergence": 0.0
+      },
+      "how_planted": "in-memory ingredient list for the re-implemented compute_formulation() call only -- no in-tree file was modified; BASE_INGREDIENTS (from formulation_dimensioned_audit.py, unmodified) plus one appended dict {id: water_diluent, mass_g: 30.0, density: 1.00, nonvol: 0.0}",
+      "note": "included for rigor even though the overall verdict is CLAIM_REFUTED (which does not strictly require a positive control) -- demonstrates the R2 divergence is a real, structural, repeatable defect and not a one-off arithmetic slip: the zero-water control shows the two formulas coincide exactly (divergence 0.0) when no water is present, and diverge by the water's full mass contribution the instant water is added, exactly as Eq. 24-4 predicts.",
+      "planted_defect": "added a 30 g water ingredient (density 1.00 g/cm3, the value EPA Method 24 sec 1.1 itself assigns water CAS 7732-18-5) to the real marine-primer fixture, tagged with the module's ONLY available volatile role ('solvent', nonvol=0.0) since no water-specific role exists"
+    },
+    "prior_fires_on_this_claim_id": {
+      "CF-ARITH_2026-08-10": "independently re-derived a candidate BOM's VOC/volume-solids numbers from scratch with a xylene-density positive control; SURVIVED",
+      "T-05_2026-08-05": "attacked stoichiometric EquivalentBalanceV1 mass-vs-volume basis via live Rust; unrelated defect found (candidate-supplied-constant injection); REFUTED",
+      "gap_this_fire_closes": "neither prior fire measured against a NAMED PUBLISHED BASELINE (EPA Method 24); both compared against the module's own re-derivation"
+    },
+    "promotes_authority": false,
+    "proposed_followups": [
+      {
+        "finding": "voc_g_per_L_epa_method24 (and any downstream field derived from it) computes Wv*Dc, not Wo*Dc; it silently includes water and exempt-solvent mass in the VOC numerator whenever either is present, because the ingredient schema has no category for either. This is the same mass/volume-basis-conflation defect class the founder brief names as having already bitten this portfolio once.",
+        "proposed_repair_criterion": "add explicit 'water' and 'exempt_solvent' roles (or boolean flags) to the dimensioned-engine ingredient schema; change voc_g_L computation to M_vol_organic_only/V_total per Eq. 24-3/24-4/24-5's Wo hierarchy; add a waterborne known-answer probe (e.g. this fire's 30g-water variant) asserting engine_voc == epa_conformant_voc to the known-answer battery so the gap cannot silently regress; rename the field away from '_epa_method24' suffix until the fix lands, since the current name overclaims conformance",
+        "requirement_id": "R2"
+      },
+      {
+        "finding": "Method 24 sec 11.3.4 delegates the volume-solids formula to 'the manufacturer's formulation' with no equation given in the CFR text itself; the module's ASTM-D2697-style component-volume-summation convention cannot be verified against Method 24's own (silent) text at the equation level, only cited as an industry convention.",
+        "proposed_repair_criterion": "either (a) obtain lawful access to ASTM D2697 text and verify the module's Vs formula reproduces D2697's worked examples exactly, filing that as a NEW, separate paid-standard-conformance receipt (never reproducing D2697 text), or (b) explicitly document in mission.md that volume-solids arithmetic conforms to the ASTM D2697 CONVENTION by citation only and is NOT verifiable against the free EPA Method 24 text, closing this as a permanent NOT_APPLICABLE_AT_EQUATION_LEVEL rather than an open gap",
+        "requirement_id": "R4"
+      },
+      {
+        "finding": "the module's GUM Type-B density uncertainty budget never references Method 24 Table 24-1's measured intra/inter-laboratory density precision (+/-0.001 / +/-0.002 kg/L) as a floor or component, even though that table is a directly-applicable published precision statement for exactly the quantity (Dc) the budget models.",
+        "proposed_repair_criterion": "add a Table-24-1-derived measurement-precision floor as an explicit additional Type-B component (or a documented lower bound) in uncertainty-propagation-v1's density budget, and report the ratio of supplier-grade dispersion to EPA measurement-precision floor per ingredient so a reader can see which term dominates",
+        "requirement_id": "R6"
+      },
+      {
+        "finding": "Method 24's asymmetric waterborne confidence-limit rule (lower bound for Wv/Dc, upper bound for Ww) has no counterpart in the module's symmetric GUM/MC intervals; currently moot only because R2 means no waterborne formulation can be correctly represented at all yet.",
+        "proposed_repair_criterion": "once R2 is repaired and a waterborne ingredient category exists, add the sec 9.2/12.6 asymmetric confidence-limit substitution as an explicit computation path, gated on a 'waterborne: true' formulation flag, with its own known-answer probe",
+        "requirement_id": "R8"
+      }
+    ],
+    "repair_artifacts": {
+      "audit_script_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/w_t_arith_epa24_audit.py",
+      "audit_script_sha256": "79daeaa458ddf32bbd6656e8d28aee2ee7a7f66a28b367cb69c6925722bcb277",
+      "dependency_read_only_sources": [
+        "amphora-redteam-audit/benchmarks/formulation-arithmetic-dimensioned-v1/diagnostic.canonical.json (unmodified, cited only)",
+        "amphora-formulation-arithmetic/evidence/audit/uncertainty-propagation-v1/diagnostic.canonical.json (unmodified, cited only)",
+        "amphora-ingredient-library/reference/mvp20/data/facts.json (unmodified, cited only)"
+      ],
+      "diagnostic_canonical_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/diagnostic.canonical.json",
+      "diagnostic_canonical_sha256": "517314e534f1989dd80658f6ebf096396e7328d61964f41823b3c478c75fba08",
+      "diagnostic_runB_path": "amphora-formulation-arithmetic/evidence/phase0/repairs/W-T-ARITH/work/diagnostic.runB.json",
+      "diagnostic_runB_sha256": "517314e534f1989dd80658f6ebf096396e7328d61964f41823b3c478c75fba08",
+      "two_replay_byte_identical": true
+    },
+    "repair_item": "W-T-ARITH",
+    "reproduces_prior_audited_engine_output": {
+      "total_mass_g": {
+        "audited": 333.0,
+        "match": true,
+        "reimpl": 333.0
+      },
+      "total_volume_cm3": {
+        "audited": 211.1735303804,
+        "match": true,
+        "reimpl": 211.1735303804
+      },
+      "voc_g_per_L": {
+        "audited": 284.1265185647,
+        "match": true,
+        "reimpl": 284.1265185647
+      },
+      "volume_solids": {
+        "audited": 0.6673699761,
+        "match": true,
+        "reimpl": 0.6673699761
+      }
+    },
+    "requirement_count": 8,
+    "requirements": [
+      {
+        "applies_to": "amphora-formulation-arithmetic dimensioned engine, weight_solids_frac output",
+        "epa_citation": "Method 24 sec 12.5, Eq. 24-6",
+        "epa_quoted_text": "\"Weight Fraction Solids. Ws = 1 - Wv  Eq. 24-6\"",
+        "evidence": {
+          "computation": "module's own wt_solids (M_nv/M_total) + volatile weight fraction (M_vol/M_total) for the real primer",
+          "residual_from_1": -1.982e-11,
+          "sum": 0.99999999998,
+          "volatile_weight_frac": 0.1801801802,
+          "wt_solids": 0.8198198198
+        },
+        "id": "R1",
+        "requirement_paraphrase": "Weight fraction solids and weight fraction volatile matter must sum to exactly 1 (mass balance).",
+        "verdict": "CONFORMANT"
+      },
+      {
+        "applies_to": "amphora-formulation-arithmetic dimensioned engine, voc_g_per_L_epa_method24 output -- the field is even NAMED after this method while not implementing its water-exclusion clause",
+        "epa_citation": "Method 24 sec 12.4, Eq. 24-3/24-4/24-5",
+        "epa_quoted_text": "\"12.4.2 Waterborne Coatings. Wo = Wv - Ww  Eq. 24-4\" ; \"12.4.3 Coatings Containing Exempt Solvents. Wo = Wv - WE - Ww  Eq. 24-5\" (contrast: \"12.4.1 Solvent-borne Coatings. Wo = Wv  Eq. 24-3\")",
+        "evidence": {
+          "engine_formula": "voc_g_L = 1000 * M_vol / V_total, where M_vol sums ALL nonvol<1 ingredient mass indiscriminately -- this is 1000*Wv*Dc, not 1000*Wo*Dc.",
+          "no_water_control": {
+            "divergence": 0.0,
+            "engine_naive_voc_g_L": 284.1265185647,
+            "epa_conformant_voc_g_L": 284.1265185647,
+            "note": "with water mass 0, the naive and EPA-conformant (Wo-based) formulas must coincide -- verifies the probe itself is sound"
+          },
+          "structural_gap": "amphora-ingredient-library/reference/mvp20/data/facts.json has 0/83 entries tagged water or exempt-solvent; the dimensioned engine's ingredient schema (formulation_dimensioned_audit.py) has exactly one volatile role ('solvent', nonvol=0.0) with no water/exempt distinction, so it has no way to compute Wo != Wv even in principle.",
+          "waterborne_probe": {
+            "divergence_abs_g_per_L": 124.3917603755,
+            "divergence_rel": 0.5,
+            "engine_naive_voc_g_L_includes_water_mass": 373.1752811266,
+            "epa_conformant_voc_g_L_excludes_water_per_Eq24-4": 248.783520751,
+            "note": "same primer + 30g water treated by the engine as an ordinary 'solvent' ingredient (density 1.00 g/cm3, the value Method 24 sec 1.1 itself assigns water, CAS 7732-18-5)"
+          }
+        },
+        "id": "R2",
+        "requirement_paraphrase": "The VOC-relevant volatile fraction (Wo, 'nonaqueous volatile matter') MUST exclude water and exempt-solvent mass from the numerator whenever either is present; only solvent-borne coatings with neither may use total volatile mass Wv directly as Wo.",
+        "verdict": "DIVERGENT"
+      },
+      {
+        "applies_to": "amphora-formulation-arithmetic dimensioned engine, voc_g_per_L_epa_method24 output on the existing (solvent-only) fixture",
+        "epa_citation": "Method 24 sec 11.3.3 Dc + sec 12.4 Wo (density-basis identity derivable, not itself an EPA equation number)",
+        "epa_quoted_text": "Dc (sec 11.3.3, \"Determine the density (Dc, kg/l) of the surface coating\") combined with Wo (sec 12.4) implies VOC content per liter of coating = 1000 * Wo * Dc (g/L); Method 24 does not print this composite equation, it is the direct dimensional consequence of its own defined quantities.",
+        "evidence": {
+          "conditional_on": "R2 -- the identity only holds because the real-primer fixture happens to contain no water/exempt solvent (Wo==Wv there); it is NOT a general guarantee, as R2's waterborne probe demonstrates",
+          "no_water_case": {
+            "abs_diff": 0.0,
+            "derived_1000_Wo_Dc": 284.1265185647,
+            "engine_value": 284.1265185647
+          }
+        },
+        "id": "R3",
+        "requirement_paraphrase": "the module's VOC formula equals the EPA-derivable density-basis identity 1000*Wo*Dc, provided Wo (not Wv) is used",
+        "verdict": "CONFORMANT_CONDITIONAL"
+      },
+      {
+        "applies_to": "amphora-formulation-arithmetic dimensioned engine, volume_solids_frac_astm_d2697 output",
+        "epa_citation": "Method 24 sec 11.3.4",
+        "epa_quoted_text": "\"11.3.4 Solids Content. Determine the volume fraction (Vs) solids of the coating by calculation using the manufacturer's formulation.\"",
+        "evidence": {
+          "closure_check": "volume_fraction_sum_minus_1 residual (module's own internal identity, not an EPA identity)",
+          "closure_value": 0.0,
+          "engine_value": 0.6673699761,
+          "finding": "cannot be checked bit-for-bit against Method-24 TEXT because the text contains no such equation to check against -- this is a genuine gap in the free/public baseline, not a module defect",
+          "module_convention_used": "vol_solids = V_solids / V_total (component-volume summation from mass/density) -- this is the module's own docs' citation of ASTM D2697, not a CFR-defined formula"
+        },
+        "id": "R4",
+        "requirement_paraphrase": "Method 24 itself specifies NO numeric equation for volume-fraction solids -- it explicitly delegates the calculation to 'the manufacturer's formulation' with no formula given anywhere in the method text (sections 1 through 17 read in full; no Vs equation number exists alongside Eq. 24-1 through 24-6).",
+        "verdict": "NOT_APPLICABLE_AT_EQUATION_LEVEL"
+      },
+      {
+        "applies_to": "amphora-formulation-arithmetic dimensioned engine, wet_paint_density_g_cm3 / wet_paint_density_g_L outputs",
+        "epa_citation": "Method 24 sec 11.3.3 (\"Dc, kg/l\") and sec 12.1 nomenclature (\"Dc = Density of coating or ink, g/cm3(g/in3)\")",
+        "epa_quoted_text": "\"Determine the density (Dc, kg/l) of the surface coating using the procedure in ASTM D 1475.\" / \"Dc = Density of coating or ink, g/cm3(g/in3).\"",
+        "evidence": {
+          "density_roundtrip_residual_M_total_minus_rho_times_V": 0.0,
+          "engine_wet_density_g_L": 1576.9021780339,
+          "engine_wet_density_g_cm3": 1.576902178,
+          "g_cm3_times_1000_equals_g_L": -3.4e-08,
+          "note": "1 g/cm3 == 1 kg/L numerically; Method 24's two nomenclature statements (sec 11.3.3 kg/l vs sec 12.1 g/cm3) are the same number, not a contradiction",
+          "units_dimensionally_consistent": true
+        },
+        "id": "R5",
+        "requirement_paraphrase": "coating density must be a single self-consistent quantity Dc; kg/L and g/cm3 are numerically identical units (1 g/cm3 = 1 kg/L), so both of Method 24's own unit statements must agree with each other and with the mass/volume identity M_total = Dc * V_total.",
+        "verdict": "CONFORMANT"
+      },
+      {
+        "applies_to": "amphora-formulation-arithmetic/evidence/audit/uncertainty-propagation-v1 GUM Type-B budget, density::dgeba_der331 input",
+        "epa_citation": "Method 24 sec 13.1, Table 24-1",
+        "epa_quoted_text": "\"TABLE 24-1 -- ANALYTICAL PRECISION STATEMENTS ... Density, Dc Intra-laboratory +/-0.001 kg/l ; Inter-laboratory +/-0.002 kg/l\"",
+        "evidence": {
+          "dgeba_331_density_u_combined_kg_per_L": 0.0044211612,
+          "epa_intra_lab_density_precision_kg_per_L": 0.001,
+          "finding": "the module's GUM Type-B density uncertainty (evidence/audit/uncertainty-propagation-v1) is built entirely from SUPPLIER-GRADE dispersion bands (TDS 0.5%, SUPPLIER_GUIDE 1.5%, DISTRIBUTOR 2.5%, REFERENCE_NOMINAL 3.0%) and never references or includes Method 24's Table 24-1 measurement-repeatability floor as a component at all",
+          "interpretation": "these are different uncertainty SOURCES (supplier declaration variability vs analytical measurement repeatability), so a numeric mismatch is not itself a bug -- but the module's budget has no explicit floor/component tied to the published measurement-precision standard, which is the completeness gap being reported",
+          "ratio_module_uncertainty_to_epa_floor": 4.421
+        },
+        "id": "R6",
+        "requirement_paraphrase": "Method 24 states the empirically-measured repeatability of a Dc determination is +/-0.001 kg/L (intra-lab) / +/-0.002 kg/L (inter-lab) -- this is a measurement-precision floor a calibrated uncertainty budget for coating density should at minimum be able to compare itself against.",
+        "verdict": "DIVERGENT_IN_KIND"
+      },
+      {
+        "applies_to": "n/a -- scope boundary check",
+        "epa_citation": "Method 24 sec 12.2, Eq. 24-1",
+        "epa_quoted_text": "\"12.2 To determine if a coating or ink can be classified as a thin-film UV cured coating or ink, use the following equation: C = F A Dc  Eq. 24-1\"",
+        "evidence": {
+          "reason": "amphora-formulation-arithmetic has no UV-cured-coating scope and no F/A/C fields anywhere in its ingredient or formulation schema (confirmed by reading formulation_dimensioned_audit.py's compute_formulation() signature and the module's fixture)"
+        },
+        "id": "R7",
+        "requirement_paraphrase": "thin-film UV-radiation-cured coating classification requires substrate area (A), manufacturer film thickness (F), and coating-on-substrate mass (C).",
+        "verdict": "NOT_APPLICABLE"
+      },
+      {
+        "applies_to": "amphora-formulation-arithmetic/evidence/audit/uncertainty-propagation-v1 -- and, if a waterborne formulation were ever added, this asymmetric rule would need to be implemented alongside the R2 fix",
+        "epa_citation": "Method 24 sec 9.2, 12.6",
+        "epa_quoted_text": "\"9.2 Confidence Limits for Waterborne Coatings. Because of the inherent increased imprecision in the determination of the VOC content of waterborne coatings as the weight percent of water increases, measured parameters for waterborne coatings are replaced with appropriate confidence limits... For Wv and Dc, use the lower confidence limits; for Ww, use the upper confidence limit.\"",
+        "evidence": {
+          "reason": "the module's GUM/MC uncertainty engine (uncertainty-propagation-v1) reports symmetric two-sided intervals (ci95_lpu_low/high, mc_ci95_low/high) for every output uniformly, with no waterborne-specific asymmetric confidence-limit substitution rule; consistent with R2's finding that the module has no waterborne coating category at all, so this Method-24 requirement has no formulation in scope to apply to yet",
+          "symmetric_around_point_estimate": true,
+          "voc_g_per_L_ci95_lpu_high": 286.5268875722,
+          "voc_g_per_L_ci95_lpu_low": 281.7261495571
+        },
+        "id": "R8",
+        "requirement_paraphrase": "for waterborne coatings, Method 24 requires ASYMMETRIC treatment: Wv and Dc pulled to their lower confidence bound, Ww pushed to its upper bound, when computing the reported VOC figure -- not a symmetric interval.",
+        "verdict": "NOT_APPLICABLE"
+      }
+    ],
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "trust_anchored_in_phase0_store": true,
+    "two_replay_sha256": "6e1ad9f5c82c3bfe5c3b05b0e2810a5f6e73302ebdb116feb4d65c10370f0dd1",
+    "two_replay_sha256_gate": "PASS",
+    "verdict": "CLAIM_REFUTED",
+    "verdict_counts": {
+      "conformant": 3,
+      "divergent": 2,
+      "not_applicable": 3
+    }
+  },
+  "signature": {
+    "payload": "eyJhdXRob3JpdHkiOiJBVURJVF9PTkxZIiwiYmFzZWxpbmUiOnsiYXN0bV9jb252ZW50aW9uc19jaXRlZF9ub3RfcmVwcm9kdWNlZCI6WyJBU1RNIEQxNDc1IChkZW5zaXR5IG9mIHBhaW50L3Zhcm5pc2gvbGFjcXVlcikgLS0gTWV0aG9kIDI0IHNlYyA2LjEsIDExLjMuMyIsIkFTVE0gRDIzNjkgKHZvbGF0aWxlIGNvbnRlbnQgb2YgY29hdGluZ3MpIC0tIE1ldGhvZCAyNCBzZWMgNi4yLCAxMS4yLjIvMTEuMy4xIiwiQVNUTSBEMjY5NyAtLSByZWZlcmVuY2VkIGJ5IHRoaXMgbW9kdWxlJ3Mgb3duIGRvY3MgYXMgdGhlIHZvbHVtZS1zb2xpZHMgY29udmVudGlvbiBNZXRob2QgMjQgc2VjIDExLjMuNCBkZWxlZ2F0ZXMgdG8gKCdtYW51ZmFjdHVyZXIncyBmb3JtdWxhdGlvbicpOyBNZXRob2QgMjQncyBvd24gdGV4dCBkb2VzIG5vdCBuYW1lIEQyNjk3IGV4cGxpY2l0bHksIEQyNjk3IGlzIHRoaXMgbW9kdWxlJ3MgY2l0YXRpb24sIG5vdCB0aGUgQ0ZSJ3MiLCJBU1RNIEQ2MDkzIC0tIG5vdCBjaXRlZCBieSBNZXRob2QgMjQgdGV4dCBhdCBhbGw7IGFwcGVhcnMgb25seSBpbiB0aGlzIG1vZHVsZSdzIGNhbXBhaWduLWl0ZW0gZnJhbWluZyBhcyBhbiBhbHRlcm5hdGUgaW5kdXN0cnkgY29udmVudGlvbiJdLCJjaXRhdGlvbiI6IjQwIENGUiBQYXJ0IDYwLCBBcHBlbmRpeCBBLTcgKFRlc3QgTWV0aG9kcyAxOSB0aHJvdWdoIDI1RSkiLCJkb2lfaXNibiI6Im5vdCBhcHBsaWNhYmxlIC0tIFVTIGZlZGVyYWwgcmVndWxhdGlvbiAoNDAgQ0ZSKSwgcHVibGljIGRvbWFpbiB1bmRlciAxNyBVLlMuQy4gc2VjIDEwNTsgQ0ZSIGNpdGF0aW9uIGlzIHRoZSBzdGFuZGFyZCBzY2hvbGFybHkgcmVmZXJlbmNlIGluIHBsYWNlIG9mIGEgRE9JL0lTQk4iLCJuYW1lIjoiRVBBIE1ldGhvZCAyNCAtLSBEZXRlcm1pbmF0aW9uIG9mIFZvbGF0aWxlIE1hdHRlciBDb250ZW50LCBXYXRlciBDb250ZW50LCBEZW5zaXR5LCBWb2x1bWUgU29saWRzLCBhbmQgV2VpZ2h0IFNvbGlkcyBvZiBTdXJmYWNlIENvYXRpbmdzIiwicHVibGljX2RvbWFpbiI6dHJ1ZSwicmV0cmlldmVkIjoiMjAyNi0wOC0xMyIsInVybF9hdXRob3JpdGF0aXZlIjoiaHR0cHM6Ly93d3cuZWNmci5nb3YvY3VycmVudC90aXRsZS00MC9jaGFwdGVyLUkvc3ViY2hhcHRlci1DL3BhcnQtNjAvYXBwZW5kaXgtQXBwZW5kaXglMjBBLTclMjB0byUyMFBhcnQlMjA2MCIsInVybF9wcmltYXJ5IjoiaHR0cHM6Ly93d3cuZXBhLmdvdi9zaXRlcy9kZWZhdWx0L2ZpbGVzLzIwMjAtMTIvZG9jdW1lbnRzL21ldGhvZF8yNC5wZGYiLCJ2ZXJzaW9uIjoidW5vZmZpY2lhbCBpbnRlcm5ldCB2ZXJzaW9uIGRhdGVkIE9jdG9iZXIgNywgMjAyMCAocG9pbnRzIHRvIGVDRlIgYXMgYXV0aG9yaXRhdGl2ZSkifSwiY2FtcGFpZ25faXRlbV9pZCI6IlctVC1BUklUSCIsImNsYWltX3VuZGVyX2F0dGFjayI6eyJjbGFpbV90ZXh0IjoiVGhlIGFyaXRobWV0aWMgaWRlbnRpdGllcyBjb25mb3JtIHRvIHRoZSBwdWJsaXNoZWQgc3RhbmRhcmRzIHRoYXQgZGVmaW5lIHRoZW0uIiwicmVjZWlwdF9wYXRoIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL2V2aWRlbmNlL3BoYXNlMC9rcGlzLyJ9LCJkYXRlIjoiMjAyNi0wOC0xMyIsImRpcmVjdGl2ZV9vYmxpZ2F0aW9uIjpudWxsLCJkaXJlY3RpdmVfcGF0aCI6Im5vbmUiLCJkaXJlY3RpdmVfc2hhMjU2IjoiIiwiZmxpcHNfc2NpZW50aWZpY19yZWFkaW5lc3MiOmZhbHNlLCJnZW5lcmF0ZWRfb25faG9zdCI6InhiYWJlMiIsIm1vZGlmaWVzX2V4aXN0aW5nX3JlY2VpcHRzIjpmYWxzZSwibW9kaWZpZXNfbWFuaWZlc3QiOmZhbHNlLCJtb2R1bGUiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMiLCJvYmplY3RpdmUiOiJUSEVPUlktRElNRU5TSU9OIGl0ZW06IG1lYXN1cmUgYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljJ3MgZGltZW5zaW9uZWQgYXJpdGhtZXRpYyBpZGVudGl0aWVzIChWT0MgZy9MLCB2b2x1bWUgc29saWRzLCB3ZWlnaHQgc29saWRzLCBkZW5zaXR5KSBhZ2FpbnN0IGEgTkFNRUQgUFVCTElTSEVEIEJBU0VMSU5FIGZvciB0aGUgZmlyc3QgdGltZSAtLSBwcmlvciByZWNlaXB0cyBpbiB0aGlzIG1vZHVsZSB3ZXJlIGFsbCBzZWxmLXJlZmVyZW50aWFsIChjaGVja2VkIG9ubHkgYWdhaW5zdCB0aGUgbW9kdWxlJ3Mgb3duIGZpeHR1cmUpLiIsIm92ZXJhbGxfdmVyZGljdF9yZWFzb25pbmciOiJSMiBpcyBhIGdlbnVpbmUsIHN0cnVjdHVyYWwgZGl2ZXJnZW5jZSBmcm9tIEVQQSBNZXRob2QgMjQgRXEuIDI0LTMvMjQtNC8yNC01OiB0aGUgbW9kdWxlJ3Mgdm9jX2dfcGVyX0xfZXBhX21ldGhvZDI0IGZpZWxkIC0tIG5hbWVkIGZvciB0aGlzIGV4YWN0IG1ldGhvZCAtLSBjb21wdXRlcyBXdipEYyAodG90YWwgdm9sYXRpbGUgbWFzcyBiYXNpcykgdW5jb25kaXRpb25hbGx5LCBuZXZlciBXbypEYyAobm9uYXF1ZW91cy12b2xhdGlsZS1vbmx5IGJhc2lzKSwgYmVjYXVzZSBpdHMgaW5ncmVkaWVudCBzY2hlbWEgaGFzIG5vIHdhdGVyIG9yIGV4ZW1wdC1zb2x2ZW50IGNhdGVnb3J5IGF0IGFsbCAoMC84MyBmYWN0cy5qc29uIGVudHJpZXMpLiBNZXRob2QgMjQgbWFrZXMgdGhpcyBleGNsdXNpb24gbm9uLW9wdGlvbmFsIHRoZSBtb21lbnQgd2F0ZXIgb3IgYW4gZXhlbXB0IHNvbHZlbnQgaXMgcHJlc2VudCAoRXEuIDI0LTQsIEVxLiAyNC01KS4gVGhlIHdhdGVyYm9ybmUgcHJvYmUgc2hvd3MgYSA1MC4wJSBWT0Mgb3ZlcnN0YXRlbWVudCB2ZXJzdXMgdGhlIEVQQS1jb25mb3JtYW50IHZhbHVlIG9uIGEgcmVhbGlzdGljIDMwZy13YXRlciBhZGRpdGlvbiB0byB0aGUgbW9kdWxlJ3Mgb3duIG1hcmluZS1wcmltZXIgZml4dHVyZS4gVGhpcyBpcyB0aGUgU0FNRSBtYXNzL3ZvbHVtZS1iYXNpcy1jb25mbGF0aW9uIGRlZmVjdCBDTEFTUyBhbHJlYWR5IGZvdW5kIG9uY2UgaW4gdGhpcyBwb3J0Zm9saW8gKGFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MgQVJJVEgtQTIyMS1YNzBQMS1WT0xVTUUtU09MSURTLCAyMDI2LTA4LTAzKSAtLSBhIHNlbGYtcmVmZXJlbnRpYWwgZml4dHVyZSB0aGF0IG5ldmVyIGV4ZXJjaXNlZCB0aGUgd2F0ZXIvZXhlbXB0LXNvbHZlbnQgcGF0aCBsZXQgaXQgZ28gdW5kZXRlY3RlZCB1bnRpbCBtZWFzdXJlZCBhZ2FpbnN0IHRoZSBhY3R1YWwgcmVndWxhdG9yeSB0ZXh0LiBSNC9SNi9SOCBhcmUgYWRkaXRpb25hbCwgbG93ZXItc2V2ZXJpdHkgZ2FwcyBmaWxlZCBhcyBwcm9wb3NlZF9mb2xsb3d1cHMuIFIxL1IzL1I1L1I3IGhvbGQgYXMgQ09ORk9STUFOVC9OT1RfQVBQTElDQUJMRSBmb3IgdGhlIGNhc2VzIHRoZXkgY292ZXIuIiwicG9zaXRpdmVfY29udHJvbCI6eyJkZXRlY3RlZCI6dHJ1ZSwiZXZpZGVuY2UiOnsiZGl2ZXJnZW5jZV9hYnNfZ19wZXJfTCI6MTI0LjM5MTc2MDM3NTUsImRpdmVyZ2VuY2VfcmVsIjowLjUsImVuZ2luZV9uYWl2ZV92b2NfZ19wZXJfTCI6MzczLjE3NTI4MTEyNjYsImVwYV9jb25mb3JtYW50X3ZvY19nX3Blcl9MIjoyNDguNzgzNTIwNzUxLCJ6ZXJvX3dhdGVyX2NvbnRyb2xfZGl2ZXJnZW5jZSI6MC4wfSwiaG93X3BsYW50ZWQiOiJpbi1tZW1vcnkgaW5ncmVkaWVudCBsaXN0IGZvciB0aGUgcmUtaW1wbGVtZW50ZWQgY29tcHV0ZV9mb3JtdWxhdGlvbigpIGNhbGwgb25seSAtLSBubyBpbi10cmVlIGZpbGUgd2FzIG1vZGlmaWVkOyBCQVNFX0lOR1JFRElFTlRTIChmcm9tIGZvcm11bGF0aW9uX2RpbWVuc2lvbmVkX2F1ZGl0LnB5LCB1bm1vZGlmaWVkKSBwbHVzIG9uZSBhcHBlbmRlZCBkaWN0IHtpZDogd2F0ZXJfZGlsdWVudCwgbWFzc19nOiAzMC4wLCBkZW5zaXR5OiAxLjAwLCBub252b2w6IDAuMH0iLCJub3RlIjoiaW5jbHVkZWQgZm9yIHJpZ29yIGV2ZW4gdGhvdWdoIHRoZSBvdmVyYWxsIHZlcmRpY3QgaXMgQ0xBSU1fUkVGVVRFRCAod2hpY2ggZG9lcyBub3Qgc3RyaWN0bHkgcmVxdWlyZSBhIHBvc2l0aXZlIGNvbnRyb2wpIC0tIGRlbW9uc3RyYXRlcyB0aGUgUjIgZGl2ZXJnZW5jZSBpcyBhIHJlYWwsIHN0cnVjdHVyYWwsIHJlcGVhdGFibGUgZGVmZWN0IGFuZCBub3QgYSBvbmUtb2ZmIGFyaXRobWV0aWMgc2xpcDogdGhlIHplcm8td2F0ZXIgY29udHJvbCBzaG93cyB0aGUgdHdvIGZvcm11bGFzIGNvaW5jaWRlIGV4YWN0bHkgKGRpdmVyZ2VuY2UgMC4wKSB3aGVuIG5vIHdhdGVyIGlzIHByZXNlbnQsIGFuZCBkaXZlcmdlIGJ5IHRoZSB3YXRlcidzIGZ1bGwgbWFzcyBjb250cmlidXRpb24gdGhlIGluc3RhbnQgd2F0ZXIgaXMgYWRkZWQsIGV4YWN0bHkgYXMgRXEuIDI0LTQgcHJlZGljdHMuIiwicGxhbnRlZF9kZWZlY3QiOiJhZGRlZCBhIDMwIGcgd2F0ZXIgaW5ncmVkaWVudCAoZGVuc2l0eSAxLjAwIGcvY20zLCB0aGUgdmFsdWUgRVBBIE1ldGhvZCAyNCBzZWMgMS4xIGl0c2VsZiBhc3NpZ25zIHdhdGVyIENBUyA3NzMyLTE4LTUpIHRvIHRoZSByZWFsIG1hcmluZS1wcmltZXIgZml4dHVyZSwgdGFnZ2VkIHdpdGggdGhlIG1vZHVsZSdzIE9OTFkgYXZhaWxhYmxlIHZvbGF0aWxlIHJvbGUgKCdzb2x2ZW50Jywgbm9udm9sPTAuMCkgc2luY2Ugbm8gd2F0ZXItc3BlY2lmaWMgcm9sZSBleGlzdHMifSwicHJpb3JfZmlyZXNfb25fdGhpc19jbGFpbV9pZCI6eyJDRi1BUklUSF8yMDI2LTA4LTEwIjoiaW5kZXBlbmRlbnRseSByZS1kZXJpdmVkIGEgY2FuZGlkYXRlIEJPTSdzIFZPQy92b2x1bWUtc29saWRzIG51bWJlcnMgZnJvbSBzY3JhdGNoIHdpdGggYSB4eWxlbmUtZGVuc2l0eSBwb3NpdGl2ZSBjb250cm9sOyBTVVJWSVZFRCIsIlQtMDVfMjAyNi0wOC0wNSI6ImF0dGFja2VkIHN0b2ljaGlvbWV0cmljIEVxdWl2YWxlbnRCYWxhbmNlVjEgbWFzcy12cy12b2x1bWUgYmFzaXMgdmlhIGxpdmUgUnVzdDsgdW5yZWxhdGVkIGRlZmVjdCBmb3VuZCAoY2FuZGlkYXRlLXN1cHBsaWVkLWNvbnN0YW50IGluamVjdGlvbik7IFJFRlVURUQiLCJnYXBfdGhpc19maXJlX2Nsb3NlcyI6Im5laXRoZXIgcHJpb3IgZmlyZSBtZWFzdXJlZCBhZ2FpbnN0IGEgTkFNRUQgUFVCTElTSEVEIEJBU0VMSU5FIChFUEEgTWV0aG9kIDI0KTsgYm90aCBjb21wYXJlZCBhZ2FpbnN0IHRoZSBtb2R1bGUncyBvd24gcmUtZGVyaXZhdGlvbiJ9LCJwcm9tb3Rlc19hdXRob3JpdHkiOmZhbHNlLCJwcm9wb3NlZF9mb2xsb3d1cHMiOlt7ImZpbmRpbmciOiJ2b2NfZ19wZXJfTF9lcGFfbWV0aG9kMjQgKGFuZCBhbnkgZG93bnN0cmVhbSBmaWVsZCBkZXJpdmVkIGZyb20gaXQpIGNvbXB1dGVzIFd2KkRjLCBub3QgV28qRGM7IGl0IHNpbGVudGx5IGluY2x1ZGVzIHdhdGVyIGFuZCBleGVtcHQtc29sdmVudCBtYXNzIGluIHRoZSBWT0MgbnVtZXJhdG9yIHdoZW5ldmVyIGVpdGhlciBpcyBwcmVzZW50LCBiZWNhdXNlIHRoZSBpbmdyZWRpZW50IHNjaGVtYSBoYXMgbm8gY2F0ZWdvcnkgZm9yIGVpdGhlci4gVGhpcyBpcyB0aGUgc2FtZSBtYXNzL3ZvbHVtZS1iYXNpcy1jb25mbGF0aW9uIGRlZmVjdCBjbGFzcyB0aGUgZm91bmRlciBicmllZiBuYW1lcyBhcyBoYXZpbmcgYWxyZWFkeSBiaXR0ZW4gdGhpcyBwb3J0Zm9saW8gb25jZS4iLCJwcm9wb3NlZF9yZXBhaXJfY3JpdGVyaW9uIjoiYWRkIGV4cGxpY2l0ICd3YXRlcicgYW5kICdleGVtcHRfc29sdmVudCcgcm9sZXMgKG9yIGJvb2xlYW4gZmxhZ3MpIHRvIHRoZSBkaW1lbnNpb25lZC1lbmdpbmUgaW5ncmVkaWVudCBzY2hlbWE7IGNoYW5nZSB2b2NfZ19MIGNvbXB1dGF0aW9uIHRvIE1fdm9sX29yZ2FuaWNfb25seS9WX3RvdGFsIHBlciBFcS4gMjQtMy8yNC00LzI0LTUncyBXbyBoaWVyYXJjaHk7IGFkZCBhIHdhdGVyYm9ybmUga25vd24tYW5zd2VyIHByb2JlIChlLmcuIHRoaXMgZmlyZSdzIDMwZy13YXRlciB2YXJpYW50KSBhc3NlcnRpbmcgZW5naW5lX3ZvYyA9PSBlcGFfY29uZm9ybWFudF92b2MgdG8gdGhlIGtub3duLWFuc3dlciBiYXR0ZXJ5IHNvIHRoZSBnYXAgY2Fubm90IHNpbGVudGx5IHJlZ3Jlc3M7IHJlbmFtZSB0aGUgZmllbGQgYXdheSBmcm9tICdfZXBhX21ldGhvZDI0JyBzdWZmaXggdW50aWwgdGhlIGZpeCBsYW5kcywgc2luY2UgdGhlIGN1cnJlbnQgbmFtZSBvdmVyY2xhaW1zIGNvbmZvcm1hbmNlIiwicmVxdWlyZW1lbnRfaWQiOiJSMiJ9LHsiZmluZGluZyI6Ik1ldGhvZCAyNCBzZWMgMTEuMy40IGRlbGVnYXRlcyB0aGUgdm9sdW1lLXNvbGlkcyBmb3JtdWxhIHRvICd0aGUgbWFudWZhY3R1cmVyJ3MgZm9ybXVsYXRpb24nIHdpdGggbm8gZXF1YXRpb24gZ2l2ZW4gaW4gdGhlIENGUiB0ZXh0IGl0c2VsZjsgdGhlIG1vZHVsZSdzIEFTVE0tRDI2OTctc3R5bGUgY29tcG9uZW50LXZvbHVtZS1zdW1tYXRpb24gY29udmVudGlvbiBjYW5ub3QgYmUgdmVyaWZpZWQgYWdhaW5zdCBNZXRob2QgMjQncyBvd24gKHNpbGVudCkgdGV4dCBhdCB0aGUgZXF1YXRpb24gbGV2ZWwsIG9ubHkgY2l0ZWQgYXMgYW4gaW5kdXN0cnkgY29udmVudGlvbi4iLCJwcm9wb3NlZF9yZXBhaXJfY3JpdGVyaW9uIjoiZWl0aGVyIChhKSBvYnRhaW4gbGF3ZnVsIGFjY2VzcyB0byBBU1RNIEQyNjk3IHRleHQgYW5kIHZlcmlmeSB0aGUgbW9kdWxlJ3MgVnMgZm9ybXVsYSByZXByb2R1Y2VzIEQyNjk3J3Mgd29ya2VkIGV4YW1wbGVzIGV4YWN0bHksIGZpbGluZyB0aGF0IGFzIGEgTkVXLCBzZXBhcmF0ZSBwYWlkLXN0YW5kYXJkLWNvbmZvcm1hbmNlIHJlY2VpcHQgKG5ldmVyIHJlcHJvZHVjaW5nIEQyNjk3IHRleHQpLCBvciAoYikgZXhwbGljaXRseSBkb2N1bWVudCBpbiBtaXNzaW9uLm1kIHRoYXQgdm9sdW1lLXNvbGlkcyBhcml0aG1ldGljIGNvbmZvcm1zIHRvIHRoZSBBU1RNIEQyNjk3IENPTlZFTlRJT04gYnkgY2l0YXRpb24gb25seSBhbmQgaXMgTk9UIHZlcmlmaWFibGUgYWdhaW5zdCB0aGUgZnJlZSBFUEEgTWV0aG9kIDI0IHRleHQsIGNsb3NpbmcgdGhpcyBhcyBhIHBlcm1hbmVudCBOT1RfQVBQTElDQUJMRV9BVF9FUVVBVElPTl9MRVZFTCByYXRoZXIgdGhhbiBhbiBvcGVuIGdhcCIsInJlcXVpcmVtZW50X2lkIjoiUjQifSx7ImZpbmRpbmciOiJ0aGUgbW9kdWxlJ3MgR1VNIFR5cGUtQiBkZW5zaXR5IHVuY2VydGFpbnR5IGJ1ZGdldCBuZXZlciByZWZlcmVuY2VzIE1ldGhvZCAyNCBUYWJsZSAyNC0xJ3MgbWVhc3VyZWQgaW50cmEvaW50ZXItbGFib3JhdG9yeSBkZW5zaXR5IHByZWNpc2lvbiAoKy8tMC4wMDEgLyArLy0wLjAwMiBrZy9MKSBhcyBhIGZsb29yIG9yIGNvbXBvbmVudCwgZXZlbiB0aG91Z2ggdGhhdCB0YWJsZSBpcyBhIGRpcmVjdGx5LWFwcGxpY2FibGUgcHVibGlzaGVkIHByZWNpc2lvbiBzdGF0ZW1lbnQgZm9yIGV4YWN0bHkgdGhlIHF1YW50aXR5IChEYykgdGhlIGJ1ZGdldCBtb2RlbHMuIiwicHJvcG9zZWRfcmVwYWlyX2NyaXRlcmlvbiI6ImFkZCBhIFRhYmxlLTI0LTEtZGVyaXZlZCBtZWFzdXJlbWVudC1wcmVjaXNpb24gZmxvb3IgYXMgYW4gZXhwbGljaXQgYWRkaXRpb25hbCBUeXBlLUIgY29tcG9uZW50IChvciBhIGRvY3VtZW50ZWQgbG93ZXIgYm91bmQpIGluIHVuY2VydGFpbnR5LXByb3BhZ2F0aW9uLXYxJ3MgZGVuc2l0eSBidWRnZXQsIGFuZCByZXBvcnQgdGhlIHJhdGlvIG9mIHN1cHBsaWVyLWdyYWRlIGRpc3BlcnNpb24gdG8gRVBBIG1lYXN1cmVtZW50LXByZWNpc2lvbiBmbG9vciBwZXIgaW5ncmVkaWVudCBzbyBhIHJlYWRlciBjYW4gc2VlIHdoaWNoIHRlcm0gZG9taW5hdGVzIiwicmVxdWlyZW1lbnRfaWQiOiJSNiJ9LHsiZmluZGluZyI6Ik1ldGhvZCAyNCdzIGFzeW1tZXRyaWMgd2F0ZXJib3JuZSBjb25maWRlbmNlLWxpbWl0IHJ1bGUgKGxvd2VyIGJvdW5kIGZvciBXdi9EYywgdXBwZXIgYm91bmQgZm9yIFd3KSBoYXMgbm8gY291bnRlcnBhcnQgaW4gdGhlIG1vZHVsZSdzIHN5bW1ldHJpYyBHVU0vTUMgaW50ZXJ2YWxzOyBjdXJyZW50bHkgbW9vdCBvbmx5IGJlY2F1c2UgUjIgbWVhbnMgbm8gd2F0ZXJib3JuZSBmb3JtdWxhdGlvbiBjYW4gYmUgY29ycmVjdGx5IHJlcHJlc2VudGVkIGF0IGFsbCB5ZXQuIiwicHJvcG9zZWRfcmVwYWlyX2NyaXRlcmlvbiI6Im9uY2UgUjIgaXMgcmVwYWlyZWQgYW5kIGEgd2F0ZXJib3JuZSBpbmdyZWRpZW50IGNhdGVnb3J5IGV4aXN0cywgYWRkIHRoZSBzZWMgOS4yLzEyLjYgYXN5bW1ldHJpYyBjb25maWRlbmNlLWxpbWl0IHN1YnN0aXR1dGlvbiBhcyBhbiBleHBsaWNpdCBjb21wdXRhdGlvbiBwYXRoLCBnYXRlZCBvbiBhICd3YXRlcmJvcm5lOiB0cnVlJyBmb3JtdWxhdGlvbiBmbGFnLCB3aXRoIGl0cyBvd24ga25vd24tYW5zd2VyIHByb2JlIiwicmVxdWlyZW1lbnRfaWQiOiJSOCJ9XSwicmVwYWlyX2FydGlmYWN0cyI6eyJhdWRpdF9zY3JpcHRfcGF0aCI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYy9ldmlkZW5jZS9waGFzZTAvcmVwYWlycy9XLVQtQVJJVEgvd29yay93X3RfYXJpdGhfZXBhMjRfYXVkaXQucHkiLCJhdWRpdF9zY3JpcHRfc2hhMjU2IjoiNzlkYWVhYTQ1OGRkZjMyYmJkNjY1NmU4ZDI4YWVlMmVlN2E3ZjY2YTI4YjM2N2NiNjljNjkyNTcyMmJjYjI3NyIsImRlcGVuZGVuY3lfcmVhZF9vbmx5X3NvdXJjZXMiOlsiYW1waG9yYS1yZWR0ZWFtLWF1ZGl0L2JlbmNobWFya3MvZm9ybXVsYXRpb24tYXJpdGhtZXRpYy1kaW1lbnNpb25lZC12MS9kaWFnbm9zdGljLmNhbm9uaWNhbC5qc29uICh1bm1vZGlmaWVkLCBjaXRlZCBvbmx5KSIsImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYy9ldmlkZW5jZS9hdWRpdC91bmNlcnRhaW50eS1wcm9wYWdhdGlvbi12MS9kaWFnbm9zdGljLmNhbm9uaWNhbC5qc29uICh1bm1vZGlmaWVkLCBjaXRlZCBvbmx5KSIsImFtcGhvcmEtaW5ncmVkaWVudC1saWJyYXJ5L3JlZmVyZW5jZS9tdnAyMC9kYXRhL2ZhY3RzLmpzb24gKHVubW9kaWZpZWQsIGNpdGVkIG9ubHkpIl0sImRpYWdub3N0aWNfY2Fub25pY2FsX3BhdGgiOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMvZXZpZGVuY2UvcGhhc2UwL3JlcGFpcnMvVy1ULUFSSVRIL3dvcmsvZGlhZ25vc3RpYy5jYW5vbmljYWwuanNvbiIsImRpYWdub3N0aWNfY2Fub25pY2FsX3NoYTI1NiI6IjUxNzMxNGU1MzRmMTk4OWRkODA2NThmNmViZjA5NjM5NmU3MzI4ZDYxOTY0ZjQxODIzYjNjNDc4Yzc1ZmJhMDgiLCJkaWFnbm9zdGljX3J1bkJfcGF0aCI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYy9ldmlkZW5jZS9waGFzZTAvcmVwYWlycy9XLVQtQVJJVEgvd29yay9kaWFnbm9zdGljLnJ1bkIuanNvbiIsImRpYWdub3N0aWNfcnVuQl9zaGEyNTYiOiI1MTczMTRlNTM0ZjE5ODlkZDgwNjU4ZjZlYmYwOTYzOTZlNzMyOGQ2MTk2NGY0MTgyM2IzYzQ3OGM3NWZiYTA4IiwidHdvX3JlcGxheV9ieXRlX2lkZW50aWNhbCI6dHJ1ZX0sInJlcGFpcl9pdGVtIjoiVy1ULUFSSVRIIiwicmVwcm9kdWNlc19wcmlvcl9hdWRpdGVkX2VuZ2luZV9vdXRwdXQiOnsidG90YWxfbWFzc19nIjp7ImF1ZGl0ZWQiOjMzMy4wLCJtYXRjaCI6dHJ1ZSwicmVpbXBsIjozMzMuMH0sInRvdGFsX3ZvbHVtZV9jbTMiOnsiYXVkaXRlZCI6MjExLjE3MzUzMDM4MDQsIm1hdGNoIjp0cnVlLCJyZWltcGwiOjIxMS4xNzM1MzAzODA0fSwidm9jX2dfcGVyX0wiOnsiYXVkaXRlZCI6Mjg0LjEyNjUxODU2NDcsIm1hdGNoIjp0cnVlLCJyZWltcGwiOjI4NC4xMjY1MTg1NjQ3fSwidm9sdW1lX3NvbGlkcyI6eyJhdWRpdGVkIjowLjY2NzM2OTk3NjEsIm1hdGNoIjp0cnVlLCJyZWltcGwiOjAuNjY3MzY5OTc2MX19LCJyZXF1aXJlbWVudF9jb3VudCI6OCwicmVxdWlyZW1lbnRzIjpbeyJhcHBsaWVzX3RvIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljIGRpbWVuc2lvbmVkIGVuZ2luZSwgd2VpZ2h0X3NvbGlkc19mcmFjIG91dHB1dCIsImVwYV9jaXRhdGlvbiI6Ik1ldGhvZCAyNCBzZWMgMTIuNSwgRXEuIDI0LTYiLCJlcGFfcXVvdGVkX3RleHQiOiJcIldlaWdodCBGcmFjdGlvbiBTb2xpZHMuIFdzID0gMSAtIFd2ICBFcS4gMjQtNlwiIiwiZXZpZGVuY2UiOnsiY29tcHV0YXRpb24iOiJtb2R1bGUncyBvd24gd3Rfc29saWRzIChNX252L01fdG90YWwpICsgdm9sYXRpbGUgd2VpZ2h0IGZyYWN0aW9uIChNX3ZvbC9NX3RvdGFsKSBmb3IgdGhlIHJlYWwgcHJpbWVyIiwicmVzaWR1YWxfZnJvbV8xIjotMS45ODJlLTExLCJzdW0iOjAuOTk5OTk5OTk5OTgsInZvbGF0aWxlX3dlaWdodF9mcmFjIjowLjE4MDE4MDE4MDIsInd0X3NvbGlkcyI6MC44MTk4MTk4MTk4fSwiaWQiOiJSMSIsInJlcXVpcmVtZW50X3BhcmFwaHJhc2UiOiJXZWlnaHQgZnJhY3Rpb24gc29saWRzIGFuZCB3ZWlnaHQgZnJhY3Rpb24gdm9sYXRpbGUgbWF0dGVyIG11c3Qgc3VtIHRvIGV4YWN0bHkgMSAobWFzcyBiYWxhbmNlKS4iLCJ2ZXJkaWN0IjoiQ09ORk9STUFOVCJ9LHsiYXBwbGllc190byI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYyBkaW1lbnNpb25lZCBlbmdpbmUsIHZvY19nX3Blcl9MX2VwYV9tZXRob2QyNCBvdXRwdXQgLS0gdGhlIGZpZWxkIGlzIGV2ZW4gTkFNRUQgYWZ0ZXIgdGhpcyBtZXRob2Qgd2hpbGUgbm90IGltcGxlbWVudGluZyBpdHMgd2F0ZXItZXhjbHVzaW9uIGNsYXVzZSIsImVwYV9jaXRhdGlvbiI6Ik1ldGhvZCAyNCBzZWMgMTIuNCwgRXEuIDI0LTMvMjQtNC8yNC01IiwiZXBhX3F1b3RlZF90ZXh0IjoiXCIxMi40LjIgV2F0ZXJib3JuZSBDb2F0aW5ncy4gV28gPSBXdiAtIFd3ICBFcS4gMjQtNFwiIDsgXCIxMi40LjMgQ29hdGluZ3MgQ29udGFpbmluZyBFeGVtcHQgU29sdmVudHMuIFdvID0gV3YgLSBXRSAtIFd3ICBFcS4gMjQtNVwiIChjb250cmFzdDogXCIxMi40LjEgU29sdmVudC1ib3JuZSBDb2F0aW5ncy4gV28gPSBXdiAgRXEuIDI0LTNcIikiLCJldmlkZW5jZSI6eyJlbmdpbmVfZm9ybXVsYSI6InZvY19nX0wgPSAxMDAwICogTV92b2wgLyBWX3RvdGFsLCB3aGVyZSBNX3ZvbCBzdW1zIEFMTCBub252b2w8MSBpbmdyZWRpZW50IG1hc3MgaW5kaXNjcmltaW5hdGVseSAtLSB0aGlzIGlzIDEwMDAqV3YqRGMsIG5vdCAxMDAwKldvKkRjLiIsIm5vX3dhdGVyX2NvbnRyb2wiOnsiZGl2ZXJnZW5jZSI6MC4wLCJlbmdpbmVfbmFpdmVfdm9jX2dfTCI6Mjg0LjEyNjUxODU2NDcsImVwYV9jb25mb3JtYW50X3ZvY19nX0wiOjI4NC4xMjY1MTg1NjQ3LCJub3RlIjoid2l0aCB3YXRlciBtYXNzIDAsIHRoZSBuYWl2ZSBhbmQgRVBBLWNvbmZvcm1hbnQgKFdvLWJhc2VkKSBmb3JtdWxhcyBtdXN0IGNvaW5jaWRlIC0tIHZlcmlmaWVzIHRoZSBwcm9iZSBpdHNlbGYgaXMgc291bmQifSwic3RydWN0dXJhbF9nYXAiOiJhbXBob3JhLWluZ3JlZGllbnQtbGlicmFyeS9yZWZlcmVuY2UvbXZwMjAvZGF0YS9mYWN0cy5qc29uIGhhcyAwLzgzIGVudHJpZXMgdGFnZ2VkIHdhdGVyIG9yIGV4ZW1wdC1zb2x2ZW50OyB0aGUgZGltZW5zaW9uZWQgZW5naW5lJ3MgaW5ncmVkaWVudCBzY2hlbWEgKGZvcm11bGF0aW9uX2RpbWVuc2lvbmVkX2F1ZGl0LnB5KSBoYXMgZXhhY3RseSBvbmUgdm9sYXRpbGUgcm9sZSAoJ3NvbHZlbnQnLCBub252b2w9MC4wKSB3aXRoIG5vIHdhdGVyL2V4ZW1wdCBkaXN0aW5jdGlvbiwgc28gaXQgaGFzIG5vIHdheSB0byBjb21wdXRlIFdvICE9IFd2IGV2ZW4gaW4gcHJpbmNpcGxlLiIsIndhdGVyYm9ybmVfcHJvYmUiOnsiZGl2ZXJnZW5jZV9hYnNfZ19wZXJfTCI6MTI0LjM5MTc2MDM3NTUsImRpdmVyZ2VuY2VfcmVsIjowLjUsImVuZ2luZV9uYWl2ZV92b2NfZ19MX2luY2x1ZGVzX3dhdGVyX21hc3MiOjM3My4xNzUyODExMjY2LCJlcGFfY29uZm9ybWFudF92b2NfZ19MX2V4Y2x1ZGVzX3dhdGVyX3Blcl9FcTI0LTQiOjI0OC43ODM1MjA3NTEsIm5vdGUiOiJzYW1lIHByaW1lciArIDMwZyB3YXRlciB0cmVhdGVkIGJ5IHRoZSBlbmdpbmUgYXMgYW4gb3JkaW5hcnkgJ3NvbHZlbnQnIGluZ3JlZGllbnQgKGRlbnNpdHkgMS4wMCBnL2NtMywgdGhlIHZhbHVlIE1ldGhvZCAyNCBzZWMgMS4xIGl0c2VsZiBhc3NpZ25zIHdhdGVyLCBDQVMgNzczMi0xOC01KSJ9fSwiaWQiOiJSMiIsInJlcXVpcmVtZW50X3BhcmFwaHJhc2UiOiJUaGUgVk9DLXJlbGV2YW50IHZvbGF0aWxlIGZyYWN0aW9uIChXbywgJ25vbmFxdWVvdXMgdm9sYXRpbGUgbWF0dGVyJykgTVVTVCBleGNsdWRlIHdhdGVyIGFuZCBleGVtcHQtc29sdmVudCBtYXNzIGZyb20gdGhlIG51bWVyYXRvciB3aGVuZXZlciBlaXRoZXIgaXMgcHJlc2VudDsgb25seSBzb2x2ZW50LWJvcm5lIGNvYXRpbmdzIHdpdGggbmVpdGhlciBtYXkgdXNlIHRvdGFsIHZvbGF0aWxlIG1hc3MgV3YgZGlyZWN0bHkgYXMgV28uIiwidmVyZGljdCI6IkRJVkVSR0VOVCJ9LHsiYXBwbGllc190byI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYyBkaW1lbnNpb25lZCBlbmdpbmUsIHZvY19nX3Blcl9MX2VwYV9tZXRob2QyNCBvdXRwdXQgb24gdGhlIGV4aXN0aW5nIChzb2x2ZW50LW9ubHkpIGZpeHR1cmUiLCJlcGFfY2l0YXRpb24iOiJNZXRob2QgMjQgc2VjIDExLjMuMyBEYyArIHNlYyAxMi40IFdvIChkZW5zaXR5LWJhc2lzIGlkZW50aXR5IGRlcml2YWJsZSwgbm90IGl0c2VsZiBhbiBFUEEgZXF1YXRpb24gbnVtYmVyKSIsImVwYV9xdW90ZWRfdGV4dCI6IkRjIChzZWMgMTEuMy4zLCBcIkRldGVybWluZSB0aGUgZGVuc2l0eSAoRGMsIGtnL2wpIG9mIHRoZSBzdXJmYWNlIGNvYXRpbmdcIikgY29tYmluZWQgd2l0aCBXbyAoc2VjIDEyLjQpIGltcGxpZXMgVk9DIGNvbnRlbnQgcGVyIGxpdGVyIG9mIGNvYXRpbmcgPSAxMDAwICogV28gKiBEYyAoZy9MKTsgTWV0aG9kIDI0IGRvZXMgbm90IHByaW50IHRoaXMgY29tcG9zaXRlIGVxdWF0aW9uLCBpdCBpcyB0aGUgZGlyZWN0IGRpbWVuc2lvbmFsIGNvbnNlcXVlbmNlIG9mIGl0cyBvd24gZGVmaW5lZCBxdWFudGl0aWVzLiIsImV2aWRlbmNlIjp7ImNvbmRpdGlvbmFsX29uIjoiUjIgLS0gdGhlIGlkZW50aXR5IG9ubHkgaG9sZHMgYmVjYXVzZSB0aGUgcmVhbC1wcmltZXIgZml4dHVyZSBoYXBwZW5zIHRvIGNvbnRhaW4gbm8gd2F0ZXIvZXhlbXB0IHNvbHZlbnQgKFdvPT1XdiB0aGVyZSk7IGl0IGlzIE5PVCBhIGdlbmVyYWwgZ3VhcmFudGVlLCBhcyBSMidzIHdhdGVyYm9ybmUgcHJvYmUgZGVtb25zdHJhdGVzIiwibm9fd2F0ZXJfY2FzZSI6eyJhYnNfZGlmZiI6MC4wLCJkZXJpdmVkXzEwMDBfV29fRGMiOjI4NC4xMjY1MTg1NjQ3LCJlbmdpbmVfdmFsdWUiOjI4NC4xMjY1MTg1NjQ3fX0sImlkIjoiUjMiLCJyZXF1aXJlbWVudF9wYXJhcGhyYXNlIjoidGhlIG1vZHVsZSdzIFZPQyBmb3JtdWxhIGVxdWFscyB0aGUgRVBBLWRlcml2YWJsZSBkZW5zaXR5LWJhc2lzIGlkZW50aXR5IDEwMDAqV28qRGMsIHByb3ZpZGVkIFdvIChub3QgV3YpIGlzIHVzZWQiLCJ2ZXJkaWN0IjoiQ09ORk9STUFOVF9DT05ESVRJT05BTCJ9LHsiYXBwbGllc190byI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYyBkaW1lbnNpb25lZCBlbmdpbmUsIHZvbHVtZV9zb2xpZHNfZnJhY19hc3RtX2QyNjk3IG91dHB1dCIsImVwYV9jaXRhdGlvbiI6Ik1ldGhvZCAyNCBzZWMgMTEuMy40IiwiZXBhX3F1b3RlZF90ZXh0IjoiXCIxMS4zLjQgU29saWRzIENvbnRlbnQuIERldGVybWluZSB0aGUgdm9sdW1lIGZyYWN0aW9uIChWcykgc29saWRzIG9mIHRoZSBjb2F0aW5nIGJ5IGNhbGN1bGF0aW9uIHVzaW5nIHRoZSBtYW51ZmFjdHVyZXIncyBmb3JtdWxhdGlvbi5cIiIsImV2aWRlbmNlIjp7ImNsb3N1cmVfY2hlY2siOiJ2b2x1bWVfZnJhY3Rpb25fc3VtX21pbnVzXzEgcmVzaWR1YWwgKG1vZHVsZSdzIG93biBpbnRlcm5hbCBpZGVudGl0eSwgbm90IGFuIEVQQSBpZGVudGl0eSkiLCJjbG9zdXJlX3ZhbHVlIjowLjAsImVuZ2luZV92YWx1ZSI6MC42NjczNjk5NzYxLCJmaW5kaW5nIjoiY2Fubm90IGJlIGNoZWNrZWQgYml0LWZvci1iaXQgYWdhaW5zdCBNZXRob2QtMjQgVEVYVCBiZWNhdXNlIHRoZSB0ZXh0IGNvbnRhaW5zIG5vIHN1Y2ggZXF1YXRpb24gdG8gY2hlY2sgYWdhaW5zdCAtLSB0aGlzIGlzIGEgZ2VudWluZSBnYXAgaW4gdGhlIGZyZWUvcHVibGljIGJhc2VsaW5lLCBub3QgYSBtb2R1bGUgZGVmZWN0IiwibW9kdWxlX2NvbnZlbnRpb25fdXNlZCI6InZvbF9zb2xpZHMgPSBWX3NvbGlkcyAvIFZfdG90YWwgKGNvbXBvbmVudC12b2x1bWUgc3VtbWF0aW9uIGZyb20gbWFzcy9kZW5zaXR5KSAtLSB0aGlzIGlzIHRoZSBtb2R1bGUncyBvd24gZG9jcycgY2l0YXRpb24gb2YgQVNUTSBEMjY5Nywgbm90IGEgQ0ZSLWRlZmluZWQgZm9ybXVsYSJ9LCJpZCI6IlI0IiwicmVxdWlyZW1lbnRfcGFyYXBocmFzZSI6Ik1ldGhvZCAyNCBpdHNlbGYgc3BlY2lmaWVzIE5PIG51bWVyaWMgZXF1YXRpb24gZm9yIHZvbHVtZS1mcmFjdGlvbiBzb2xpZHMgLS0gaXQgZXhwbGljaXRseSBkZWxlZ2F0ZXMgdGhlIGNhbGN1bGF0aW9uIHRvICd0aGUgbWFudWZhY3R1cmVyJ3MgZm9ybXVsYXRpb24nIHdpdGggbm8gZm9ybXVsYSBnaXZlbiBhbnl3aGVyZSBpbiB0aGUgbWV0aG9kIHRleHQgKHNlY3Rpb25zIDEgdGhyb3VnaCAxNyByZWFkIGluIGZ1bGw7IG5vIFZzIGVxdWF0aW9uIG51bWJlciBleGlzdHMgYWxvbmdzaWRlIEVxLiAyNC0xIHRocm91Z2ggMjQtNikuIiwidmVyZGljdCI6Ik5PVF9BUFBMSUNBQkxFX0FUX0VRVUFUSU9OX0xFVkVMIn0seyJhcHBsaWVzX3RvIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljIGRpbWVuc2lvbmVkIGVuZ2luZSwgd2V0X3BhaW50X2RlbnNpdHlfZ19jbTMgLyB3ZXRfcGFpbnRfZGVuc2l0eV9nX0wgb3V0cHV0cyIsImVwYV9jaXRhdGlvbiI6Ik1ldGhvZCAyNCBzZWMgMTEuMy4zIChcIkRjLCBrZy9sXCIpIGFuZCBzZWMgMTIuMSBub21lbmNsYXR1cmUgKFwiRGMgPSBEZW5zaXR5IG9mIGNvYXRpbmcgb3IgaW5rLCBnL2NtMyhnL2luMylcIikiLCJlcGFfcXVvdGVkX3RleHQiOiJcIkRldGVybWluZSB0aGUgZGVuc2l0eSAoRGMsIGtnL2wpIG9mIHRoZSBzdXJmYWNlIGNvYXRpbmcgdXNpbmcgdGhlIHByb2NlZHVyZSBpbiBBU1RNIEQgMTQ3NS5cIiAvIFwiRGMgPSBEZW5zaXR5IG9mIGNvYXRpbmcgb3IgaW5rLCBnL2NtMyhnL2luMykuXCIiLCJldmlkZW5jZSI6eyJkZW5zaXR5X3JvdW5kdHJpcF9yZXNpZHVhbF9NX3RvdGFsX21pbnVzX3Job190aW1lc19WIjowLjAsImVuZ2luZV93ZXRfZGVuc2l0eV9nX0wiOjE1NzYuOTAyMTc4MDMzOSwiZW5naW5lX3dldF9kZW5zaXR5X2dfY20zIjoxLjU3NjkwMjE3OCwiZ19jbTNfdGltZXNfMTAwMF9lcXVhbHNfZ19MIjotMy40ZS0wOCwibm90ZSI6IjEgZy9jbTMgPT0gMSBrZy9MIG51bWVyaWNhbGx5OyBNZXRob2QgMjQncyB0d28gbm9tZW5jbGF0dXJlIHN0YXRlbWVudHMgKHNlYyAxMS4zLjMga2cvbCB2cyBzZWMgMTIuMSBnL2NtMykgYXJlIHRoZSBzYW1lIG51bWJlciwgbm90IGEgY29udHJhZGljdGlvbiIsInVuaXRzX2RpbWVuc2lvbmFsbHlfY29uc2lzdGVudCI6dHJ1ZX0sImlkIjoiUjUiLCJyZXF1aXJlbWVudF9wYXJhcGhyYXNlIjoiY29hdGluZyBkZW5zaXR5IG11c3QgYmUgYSBzaW5nbGUgc2VsZi1jb25zaXN0ZW50IHF1YW50aXR5IERjOyBrZy9MIGFuZCBnL2NtMyBhcmUgbnVtZXJpY2FsbHkgaWRlbnRpY2FsIHVuaXRzICgxIGcvY20zID0gMSBrZy9MKSwgc28gYm90aCBvZiBNZXRob2QgMjQncyBvd24gdW5pdCBzdGF0ZW1lbnRzIG11c3QgYWdyZWUgd2l0aCBlYWNoIG90aGVyIGFuZCB3aXRoIHRoZSBtYXNzL3ZvbHVtZSBpZGVudGl0eSBNX3RvdGFsID0gRGMgKiBWX3RvdGFsLiIsInZlcmRpY3QiOiJDT05GT1JNQU5UIn0seyJhcHBsaWVzX3RvIjoiYW1waG9yYS1mb3JtdWxhdGlvbi1hcml0aG1ldGljL2V2aWRlbmNlL2F1ZGl0L3VuY2VydGFpbnR5LXByb3BhZ2F0aW9uLXYxIEdVTSBUeXBlLUIgYnVkZ2V0LCBkZW5zaXR5OjpkZ2ViYV9kZXIzMzEgaW5wdXQiLCJlcGFfY2l0YXRpb24iOiJNZXRob2QgMjQgc2VjIDEzLjEsIFRhYmxlIDI0LTEiLCJlcGFfcXVvdGVkX3RleHQiOiJcIlRBQkxFIDI0LTEgLS0gQU5BTFlUSUNBTCBQUkVDSVNJT04gU1RBVEVNRU5UUyAuLi4gRGVuc2l0eSwgRGMgSW50cmEtbGFib3JhdG9yeSArLy0wLjAwMSBrZy9sIDsgSW50ZXItbGFib3JhdG9yeSArLy0wLjAwMiBrZy9sXCIiLCJldmlkZW5jZSI6eyJkZ2ViYV8zMzFfZGVuc2l0eV91X2NvbWJpbmVkX2tnX3Blcl9MIjowLjAwNDQyMTE2MTIsImVwYV9pbnRyYV9sYWJfZGVuc2l0eV9wcmVjaXNpb25fa2dfcGVyX0wiOjAuMDAxLCJmaW5kaW5nIjoidGhlIG1vZHVsZSdzIEdVTSBUeXBlLUIgZGVuc2l0eSB1bmNlcnRhaW50eSAoZXZpZGVuY2UvYXVkaXQvdW5jZXJ0YWludHktcHJvcGFnYXRpb24tdjEpIGlzIGJ1aWx0IGVudGlyZWx5IGZyb20gU1VQUExJRVItR1JBREUgZGlzcGVyc2lvbiBiYW5kcyAoVERTIDAuNSUsIFNVUFBMSUVSX0dVSURFIDEuNSUsIERJU1RSSUJVVE9SIDIuNSUsIFJFRkVSRU5DRV9OT01JTkFMIDMuMCUpIGFuZCBuZXZlciByZWZlcmVuY2VzIG9yIGluY2x1ZGVzIE1ldGhvZCAyNCdzIFRhYmxlIDI0LTEgbWVhc3VyZW1lbnQtcmVwZWF0YWJpbGl0eSBmbG9vciBhcyBhIGNvbXBvbmVudCBhdCBhbGwiLCJpbnRlcnByZXRhdGlvbiI6InRoZXNlIGFyZSBkaWZmZXJlbnQgdW5jZXJ0YWludHkgU09VUkNFUyAoc3VwcGxpZXIgZGVjbGFyYXRpb24gdmFyaWFiaWxpdHkgdnMgYW5hbHl0aWNhbCBtZWFzdXJlbWVudCByZXBlYXRhYmlsaXR5KSwgc28gYSBudW1lcmljIG1pc21hdGNoIGlzIG5vdCBpdHNlbGYgYSBidWcgLS0gYnV0IHRoZSBtb2R1bGUncyBidWRnZXQgaGFzIG5vIGV4cGxpY2l0IGZsb29yL2NvbXBvbmVudCB0aWVkIHRvIHRoZSBwdWJsaXNoZWQgbWVhc3VyZW1lbnQtcHJlY2lzaW9uIHN0YW5kYXJkLCB3aGljaCBpcyB0aGUgY29tcGxldGVuZXNzIGdhcCBiZWluZyByZXBvcnRlZCIsInJhdGlvX21vZHVsZV91bmNlcnRhaW50eV90b19lcGFfZmxvb3IiOjQuNDIxfSwiaWQiOiJSNiIsInJlcXVpcmVtZW50X3BhcmFwaHJhc2UiOiJNZXRob2QgMjQgc3RhdGVzIHRoZSBlbXBpcmljYWxseS1tZWFzdXJlZCByZXBlYXRhYmlsaXR5IG9mIGEgRGMgZGV0ZXJtaW5hdGlvbiBpcyArLy0wLjAwMSBrZy9MIChpbnRyYS1sYWIpIC8gKy8tMC4wMDIga2cvTCAoaW50ZXItbGFiKSAtLSB0aGlzIGlzIGEgbWVhc3VyZW1lbnQtcHJlY2lzaW9uIGZsb29yIGEgY2FsaWJyYXRlZCB1bmNlcnRhaW50eSBidWRnZXQgZm9yIGNvYXRpbmcgZGVuc2l0eSBzaG91bGQgYXQgbWluaW11bSBiZSBhYmxlIHRvIGNvbXBhcmUgaXRzZWxmIGFnYWluc3QuIiwidmVyZGljdCI6IkRJVkVSR0VOVF9JTl9LSU5EIn0seyJhcHBsaWVzX3RvIjoibi9hIC0tIHNjb3BlIGJvdW5kYXJ5IGNoZWNrIiwiZXBhX2NpdGF0aW9uIjoiTWV0aG9kIDI0IHNlYyAxMi4yLCBFcS4gMjQtMSIsImVwYV9xdW90ZWRfdGV4dCI6IlwiMTIuMiBUbyBkZXRlcm1pbmUgaWYgYSBjb2F0aW5nIG9yIGluayBjYW4gYmUgY2xhc3NpZmllZCBhcyBhIHRoaW4tZmlsbSBVViBjdXJlZCBjb2F0aW5nIG9yIGluaywgdXNlIHRoZSBmb2xsb3dpbmcgZXF1YXRpb246IEMgPSBGIEEgRGMgIEVxLiAyNC0xXCIiLCJldmlkZW5jZSI6eyJyZWFzb24iOiJhbXBob3JhLWZvcm11bGF0aW9uLWFyaXRobWV0aWMgaGFzIG5vIFVWLWN1cmVkLWNvYXRpbmcgc2NvcGUgYW5kIG5vIEYvQS9DIGZpZWxkcyBhbnl3aGVyZSBpbiBpdHMgaW5ncmVkaWVudCBvciBmb3JtdWxhdGlvbiBzY2hlbWEgKGNvbmZpcm1lZCBieSByZWFkaW5nIGZvcm11bGF0aW9uX2RpbWVuc2lvbmVkX2F1ZGl0LnB5J3MgY29tcHV0ZV9mb3JtdWxhdGlvbigpIHNpZ25hdHVyZSBhbmQgdGhlIG1vZHVsZSdzIGZpeHR1cmUpIn0sImlkIjoiUjciLCJyZXF1aXJlbWVudF9wYXJhcGhyYXNlIjoidGhpbi1maWxtIFVWLXJhZGlhdGlvbi1jdXJlZCBjb2F0aW5nIGNsYXNzaWZpY2F0aW9uIHJlcXVpcmVzIHN1YnN0cmF0ZSBhcmVhIChBKSwgbWFudWZhY3R1cmVyIGZpbG0gdGhpY2tuZXNzIChGKSwgYW5kIGNvYXRpbmctb24tc3Vic3RyYXRlIG1hc3MgKEMpLiIsInZlcmRpY3QiOiJOT1RfQVBQTElDQUJMRSJ9LHsiYXBwbGllc190byI6ImFtcGhvcmEtZm9ybXVsYXRpb24tYXJpdGhtZXRpYy9ldmlkZW5jZS9hdWRpdC91bmNlcnRhaW50eS1wcm9wYWdhdGlvbi12MSAtLSBhbmQsIGlmIGEgd2F0ZXJib3JuZSBmb3JtdWxhdGlvbiB3ZXJlIGV2ZXIgYWRkZWQsIHRoaXMgYXN5bW1ldHJpYyBydWxlIHdvdWxkIG5lZWQgdG8gYmUgaW1wbGVtZW50ZWQgYWxvbmdzaWRlIHRoZSBSMiBmaXgiLCJlcGFfY2l0YXRpb24iOiJNZXRob2QgMjQgc2VjIDkuMiwgMTIuNiIsImVwYV9xdW90ZWRfdGV4dCI6IlwiOS4yIENvbmZpZGVuY2UgTGltaXRzIGZvciBXYXRlcmJvcm5lIENvYXRpbmdzLiBCZWNhdXNlIG9mIHRoZSBpbmhlcmVudCBpbmNyZWFzZWQgaW1wcmVjaXNpb24gaW4gdGhlIGRldGVybWluYXRpb24gb2YgdGhlIFZPQyBjb250ZW50IG9mIHdhdGVyYm9ybmUgY29hdGluZ3MgYXMgdGhlIHdlaWdodCBwZXJjZW50IG9mIHdhdGVyIGluY3JlYXNlcywgbWVhc3VyZWQgcGFyYW1ldGVycyBmb3Igd2F0ZXJib3JuZSBjb2F0aW5ncyBhcmUgcmVwbGFjZWQgd2l0aCBhcHByb3ByaWF0ZSBjb25maWRlbmNlIGxpbWl0cy4uLiBGb3IgV3YgYW5kIERjLCB1c2UgdGhlIGxvd2VyIGNvbmZpZGVuY2UgbGltaXRzOyBmb3IgV3csIHVzZSB0aGUgdXBwZXIgY29uZmlkZW5jZSBsaW1pdC5cIiIsImV2aWRlbmNlIjp7InJlYXNvbiI6InRoZSBtb2R1bGUncyBHVU0vTUMgdW5jZXJ0YWludHkgZW5naW5lICh1bmNlcnRhaW50eS1wcm9wYWdhdGlvbi12MSkgcmVwb3J0cyBzeW1tZXRyaWMgdHdvLXNpZGVkIGludGVydmFscyAoY2k5NV9scHVfbG93L2hpZ2gsIG1jX2NpOTVfbG93L2hpZ2gpIGZvciBldmVyeSBvdXRwdXQgdW5pZm9ybWx5LCB3aXRoIG5vIHdhdGVyYm9ybmUtc3BlY2lmaWMgYXN5bW1ldHJpYyBjb25maWRlbmNlLWxpbWl0IHN1YnN0aXR1dGlvbiBydWxlOyBjb25zaXN0ZW50IHdpdGggUjIncyBmaW5kaW5nIHRoYXQgdGhlIG1vZHVsZSBoYXMgbm8gd2F0ZXJib3JuZSBjb2F0aW5nIGNhdGVnb3J5IGF0IGFsbCwgc28gdGhpcyBNZXRob2QtMjQgcmVxdWlyZW1lbnQgaGFzIG5vIGZvcm11bGF0aW9uIGluIHNjb3BlIHRvIGFwcGx5IHRvIHlldCIsInN5bW1ldHJpY19hcm91bmRfcG9pbnRfZXN0aW1hdGUiOnRydWUsInZvY19nX3Blcl9MX2NpOTVfbHB1X2hpZ2giOjI4Ni41MjY4ODc1NzIyLCJ2b2NfZ19wZXJfTF9jaTk1X2xwdV9sb3ciOjI4MS43MjYxNDk1NTcxfSwiaWQiOiJSOCIsInJlcXVpcmVtZW50X3BhcmFwaHJhc2UiOiJmb3Igd2F0ZXJib3JuZSBjb2F0aW5ncywgTWV0aG9kIDI0IHJlcXVpcmVzIEFTWU1NRVRSSUMgdHJlYXRtZW50OiBXdiBhbmQgRGMgcHVsbGVkIHRvIHRoZWlyIGxvd2VyIGNvbmZpZGVuY2UgYm91bmQsIFd3IHB1c2hlZCB0byBpdHMgdXBwZXIgYm91bmQsIHdoZW4gY29tcHV0aW5nIHRoZSByZXBvcnRlZCBWT0MgZmlndXJlIC0tIG5vdCBhIHN5bW1ldHJpYyBpbnRlcnZhbC4iLCJ2ZXJkaWN0IjoiTk9UX0FQUExJQ0FCTEUifV0sInNjaGVtYSI6ImFtcGhvcmEucGhhc2UwLXJlcGFpci5kb25lLXJlY2VpcHQudjEiLCJzaWduaW5nX2tleSI6eyJkZXJpdmVzX3Bpbm5lZF90cnVzdF9zdG9yZV9rZXlfaWQiOnRydWUsImtleV9pZCI6InBoYXNlMC1ldmFsdWF0b3ItM2VmNmIzNWNkYmJmZWE3NGE5NmE1YzliOThhNTE1ZDU3MTU4YTA5ZWNhZmYxMGFjZmExZjE1OTkwYmUwMDE3OCIsInB1YmxpY19rZXlfaGV4IjoiNmNmMDdhYmYxYTU1YWRhYWMxM2U3OGFiYzMxYzUzMWQwM2Q4ZjBkNDIzMjM0NjM0NGE3MzY0MThjN2I0NTY2NCIsInJvbGUiOiJQSEFTRTBfRVZBTFVBVE9SIn0sInRydXN0X2FuY2hvcmVkX2luX3BoYXNlMF9zdG9yZSI6dHJ1ZSwidHdvX3JlcGxheV9zaGEyNTYiOiI2ZTFhZDlmNWM4MmMzYmZlNWMzYjA1YjBlMjgxMGE1ZjZlNzMzMDJlYmRiMTE2ZmViNGQ2NWMxMDM3MGYwZGQxIiwidHdvX3JlcGxheV9zaGEyNTZfZ2F0ZSI6IlBBU1MiLCJ2ZXJkaWN0IjoiQ0xBSU1fUkVGVVRFRCIsInZlcmRpY3RfY291bnRzIjp7ImNvbmZvcm1hbnQiOjMsImRpdmVyZ2VudCI6Miwibm90X2FwcGxpY2FibGUiOjN9fQ==",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "/saW3uvowYkZit3WYdNm4eZsSP9nMRygmvQoNcBwc5C2kJIHCbtPiUJESMD4ZCz+iq+wE1HIF94dBji2XOdhCw=="
+      }
+    ]
+  }
+}

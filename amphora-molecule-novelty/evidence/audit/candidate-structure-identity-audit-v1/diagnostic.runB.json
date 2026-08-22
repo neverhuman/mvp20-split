@@ -1,0 +1,176 @@
+{
+  "any_identity_mismatch": true,
+  "authority": "AUDIT_ONLY",
+  "baseline_known_answer": {
+    "all_exact": true,
+    "lane": "morgan_r2_2048/tanimoto (PSMILES monomer)",
+    "per_candidate": [
+      {
+        "abs_delta": 0.0,
+        "candidate": "IPDA",
+        "exact": true,
+        "nn_tanimoto": 0.16666666666666666,
+        "signed_receipt_nn": 0.16666666666666666
+      },
+      {
+        "abs_delta": 0.0,
+        "candidate": "DDS",
+        "exact": true,
+        "nn_tanimoto": 0.39285714285714285,
+        "signed_receipt_nn": 0.39285714285714285
+      },
+      {
+        "abs_delta": 0.0,
+        "candidate": "DETA",
+        "exact": true,
+        "nn_tanimoto": 0.16666666666666666,
+        "signed_receipt_nn": 0.16666666666666666
+      },
+      {
+        "abs_delta": 0.0,
+        "candidate": "TETA",
+        "exact": true,
+        "nn_tanimoto": 0.15789473684210525,
+        "signed_receipt_nn": 0.15789473684210525
+      },
+      {
+        "abs_delta": 0.0,
+        "candidate": "m-XDA",
+        "exact": true,
+        "nn_tanimoto": 0.23809523809523808,
+        "signed_receipt_nn": 0.23809523809523808
+      }
+    ]
+  },
+  "classification_flips": false,
+  "closes": [
+    "Tests whether the signed novelty KPI's candidate structures are correctly identified, using an independent ground-truth structure set from a different module lineage."
+  ],
+  "corpus": {
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "n_corpus_members": 443,
+    "n_rows_with_Tg": 443,
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source": "OpenPoly final_polymer_properties_fromliterature.csv (Ma et al. 2023)",
+    "structure_set_sha256": "25b7f35c26594d7be5454826c0f399d7716131214c3c314646930257cf560304",
+    "wildcard_cap": "'*'->'C' (methyl end-cap; identical convention to all prior receipts)"
+  },
+  "does_not_close": [
+    "USPTO/legal prior-art novelty.",
+    "Comprehensive prior-art corpus (ChEMBL/PubChem/USPTO).",
+    "Does not modify any prior signed receipt, the manifest, or the locked Phase-0 KPI.",
+    "Does not establish whether the corrected structure remains NOVEL or NOT-NOVEL as a product-performance or FTO claim -- reports the recomputed reference-similarity number only."
+  ],
+  "headline": "Cross-module candidate-structure identity check against the independent, Lee & Neville 1967-cited known_answer_amines set in amphora-molecule-generator: H0_REFUTED_CANDIDATE_STRUCTURE_MISLABELED. n_candidates_checked=5, n_genmod_matches_found=5, n_identity_mismatches=1 (['IPDA']). For IPDA the signed KPI's candidate_smiles ('CC1(CC(CC(C1)N)C)CN') canonicalizes to C9H20N2, a DEMETHYLATED HOMOLOG missing one ring methyl relative to real isophorone diamine (CAS 2855-13-2, C10H22N2, per Lee & Neville 1967). Baseline internal-consistency re-derivation of the signed monomer/methyl-capped Morgan(r2,2048)/Tanimoto NN values is exact for all 5 candidates (ka_baseline_all_exact=True), isolating the defect to candidate structure identity, not the featurization pipeline. Recomputing NN Tanimoto with the STRUCTURALLY-CORRECT SMILES for each mismatching candidate: classification_flips=False (impact={'IPDA': {'signed_nn': 0.16666666666666666, 'corrected_nn': 0.16666666666666666, 'flips': False}}).",
+  "hypothesis_evaluation": {
+    "h0": "Every signed candidate_smiles string in the Phase-0 Tanimoto-NN novelty KPI is a correct structural representation of the named hardener, per an independent hash-lockable ground-truth structure set.",
+    "h0_refuted": true,
+    "verdict": "H0_REFUTED_CANDIDATE_STRUCTURE_MISLABELED"
+  },
+  "identity_check": {
+    "DDS": {
+      "formula_match": true,
+      "genmod_canonical": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "genmod_entry_found": true,
+      "genmod_expected_active_nh": 4,
+      "genmod_expected_basic_n": 2,
+      "genmod_formula": "C12H12N2O2S",
+      "genmod_name": "4,4'-diaminodiphenylsulfone (DDS)",
+      "genmod_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "same_molecule": true,
+      "signed_canonical": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "signed_formula": "C12H12N2O2S",
+      "signed_smiles": "NC1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)N"
+    },
+    "DETA": {
+      "formula_match": true,
+      "genmod_canonical": "NCCNCCN",
+      "genmod_entry_found": true,
+      "genmod_expected_active_nh": 5,
+      "genmod_expected_basic_n": 3,
+      "genmod_formula": "C4H13N3",
+      "genmod_name": "diethylenetriamine (DETA)",
+      "genmod_smiles": "NCCNCCN",
+      "same_molecule": true,
+      "signed_canonical": "NCCNCCN",
+      "signed_formula": "C4H13N3",
+      "signed_smiles": "NCCNCCN"
+    },
+    "IPDA": {
+      "formula_match": false,
+      "genmod_canonical": "CC1(C)CC(N)CC(C)(CN)C1",
+      "genmod_entry_found": true,
+      "genmod_expected_active_nh": 4,
+      "genmod_expected_basic_n": 2,
+      "genmod_formula": "C10H22N2",
+      "genmod_name": "isophoronediamine (IPDA)",
+      "genmod_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "same_molecule": false,
+      "signed_canonical": "CC1CC(N)CC(C)(CN)C1",
+      "signed_formula": "C9H20N2",
+      "signed_smiles": "CC1(CC(CC(C1)N)C)CN"
+    },
+    "TETA": {
+      "formula_match": true,
+      "genmod_canonical": "NCCNCCNCCN",
+      "genmod_entry_found": true,
+      "genmod_expected_active_nh": 6,
+      "genmod_expected_basic_n": 4,
+      "genmod_formula": "C6H18N4",
+      "genmod_name": "triethylenetetramine (TETA)",
+      "genmod_smiles": "NCCNCCNCCN",
+      "same_molecule": true,
+      "signed_canonical": "NCCNCCNCCN",
+      "signed_formula": "C6H18N4",
+      "signed_smiles": "NCCNCCNCCN"
+    },
+    "m-XDA": {
+      "formula_match": true,
+      "genmod_canonical": "NCc1cccc(CN)c1",
+      "genmod_entry_found": true,
+      "genmod_expected_active_nh": 4,
+      "genmod_expected_basic_n": 2,
+      "genmod_formula": "C8H12N2",
+      "genmod_name": "m-xylylenediamine (MXDA)",
+      "genmod_smiles": "NCc1cccc(CN)c1",
+      "same_molecule": true,
+      "signed_canonical": "NCc1cccc(CN)c1",
+      "signed_formula": "C8H12N2",
+      "signed_smiles": "NCC1=CC=CC(=C1)CN"
+    }
+  },
+  "impact_of_correction": {
+    "IPDA": {
+      "classification_flips": false,
+      "corrected_nn_reference_name": "poly(1,3-adamantane)s",
+      "corrected_nn_tanimoto": 0.16666666666666666,
+      "corrected_novel_below_0_40": true,
+      "corrected_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "nn_delta": 0.0,
+      "signed_nn_tanimoto": 0.16666666666666666,
+      "signed_novel_below_0_40": true
+    }
+  },
+  "independent_ground_truth_source": {
+    "file": "amphora-molecule-generator/reference/mvp20/data/hardener_stoichiometric_envelope.v1.json",
+    "file_sha256": "b1a08e856cab233c69c09673ed0d96a40c38346753afae4ad415b5948edaa9a8",
+    "note": "Definitional known-answer set. expected_active_nh is hand-checkable from the structure; AHEW is then the exact definitional quotient M/n_activeH with M re-derived by RDKit from IUPAC 2021 standard atomic weights. These test the INSTRUMENT, not any commercial product claim.",
+    "section": "known_answer_amines"
+  },
+  "mismatches": [
+    "IPDA"
+  ],
+  "non_circularity": "Independent ground-truth source (amphora-molecule-generator known_answer_amines, citing Lee & Neville 1967) was authored for a different purpose (AHEW/amine-value instrument testing) by a different audit lineage; not derived from or party to any amphora-molecule-novelty receipt. Baseline Tanimoto-NN re-derivation independently confirms the featurization pipeline itself reproduces the signed values exactly.",
+  "novelty_threshold": 0.4,
+  "purpose": "Test whether the 5 signed candidate_smiles strings in the Phase-0 Tanimoto-NN novelty KPI actually represent the named industrial epoxy-amine hardeners they claim to be, using an independent, already-hash-lockable ground-truth structure set from a different module (amphora-molecule-generator), not the same asserted structures re-checked circularly.",
+  "rdkit_version": "2026.03.2",
+  "rights_posture": "OpenPoly Ma et al. 2023, CC/DERIVATIVE_ALLOWED, SHA-256-locked, read-only. amphora-molecule-generator envelope file read-only, in-scope, no new external data.",
+  "self_tests_all_pass": true,
+  "study_id": "amphora-molecule-novelty-candidate-structure-identity-audit-v1",
+  "theory_reference": [
+    "Lee, H. & Neville, K. 1967, Handbook of Epoxy Resins, McGraw-Hill (LCCN 66-23992)",
+    "Rogers & Hahn 2010 J Chem Inf Model 50:742 (ECFP/Morgan)",
+    "Bajusz, Racz, Heberger 2015 J Cheminform 7:20 (Tanimoto; 0.40 threshold)",
+    "Ma et al. 2023 OpenPoly / OMG_PhysicalProperties dataset"
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "part_a_gate_probes": {
+    "disagreements": [],
+    "n_disagreements": 0,
+    "n_hostile_nulls": 4,
+    "n_pass": 13,
+    "n_probes": 13,
+    "results": [
+      {
+        "canonical_isomeric_smiles": "O=C(OCC1CCC2OC2C1)C1CCC2OC2C1",
+        "citation": "3,4-epoxycyclohexylmethyl 3,4-epoxycyclohexanecarboxylate (ERL-4221, Dow CAS 2386-87-0, PubChem CID 68563), C14H20O4 MW 252.30",
+        "declared_role": "resin",
+        "expected_status": "SCORED",
+        "formula": "C14H20O4",
+        "hostile_null": false,
+        "id": "erl4221-cycloaliphatic-diepoxide",
+        "note": "real cycloaliphatic diepoxide resin, correctly declared",
+        "observed_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+        "observed_oxirane_ring_count": 2,
+        "observed_reactive_amine_hydrogen_count": 0,
+        "observed_status": "SCORED",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "C1(COC(=O)C2CC3OC3CC2)CC4OC4CC1"
+      },
+      {
+        "canonical_isomeric_smiles": "NCCOCCOCCOCCN",
+        "citation": "4,7,10-trioxatridecane-1,13-diamine (Jeffamine EDR-148, CAS 929-59-9), C10H24N2O3 MW 220.31",
+        "declared_role": "hardener",
+        "expected_status": "SCORED",
+        "formula": "C8H20N2O3",
+        "hostile_null": false,
+        "id": "edr148-triethyleneglycol-diamine",
+        "note": "real ether-backbone diamine hardener, correctly declared",
+        "observed_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 4,
+        "observed_status": "SCORED",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "NCCOCCOCCOCCN"
+      },
+      {
+        "canonical_isomeric_smiles": "NCCN1CCNCC1",
+        "citation": "1-(2-aminoethyl)piperazine (AEP, CAS 140-31-8)",
+        "declared_role": "hardener",
+        "expected_status": "SCORED",
+        "formula": "C6H15N3",
+        "hostile_null": false,
+        "id": "aep-aminoethylpiperazine",
+        "note": "mixed primary/secondary-ring/tertiary-ring nitrogen hardener",
+        "observed_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 3,
+        "observed_status": "SCORED",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "NCCN1CCNCC1"
+      },
+      {
+        "canonical_isomeric_smiles": "CCCCNC(CC(=O)OCC)C(=O)OCC",
+        "citation": "diethyl 2-(butylamino)succinate, monofunctional model of the Michael-adduct secondary amine in commercial polyaspartic marine topcoat hardeners",
+        "declared_role": "hardener",
+        "expected_status": "SCORED",
+        "formula": "C12H23NO4",
+        "hostile_null": false,
+        "id": "aspartic-ester-secondary-amine",
+        "note": "secondary amine, alpha-carbon (not N) bears the ester substituent",
+        "observed_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 1,
+        "observed_status": "SCORED",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "CCCCNC(CC(=O)OCC)C(=O)OCC"
+      },
+      {
+        "canonical_isomeric_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+        "citation": "4,4'-diaminodiphenyl sulfone (DDS, CAS 80-08-0)",
+        "declared_role": "hardener",
+        "expected_status": "SCORED",
+        "formula": "C12H12N2O2S",
+        "hostile_null": false,
+        "id": "dds-diaminodiphenylsulfone",
+        "note": "sulfonyl exclusion must not over-reach to a distant, unrelated sulfone",
+        "observed_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 4,
+        "observed_status": "SCORED",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+      },
+      {
+        "canonical_isomeric_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+        "citation": "4,4'-diaminodiphenylmethane (DDM/MDA, CAS 101-77-9)",
+        "declared_role": "hardener",
+        "expected_status": "SCORED",
+        "formula": "C13H14N2",
+        "hostile_null": false,
+        "id": "ddm-diaminodiphenylmethane",
+        "note": "real aromatic diamine hardener held out of the fixture",
+        "observed_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 4,
+        "observed_status": "SCORED",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1"
+      },
+      {
+        "canonical_isomeric_smiles": "CCc1cc(CC)c(N)c(C)c1N",
+        "citation": "diethyltoluenediamine (DETDA / Ethacure 100 congener, CAS 68479-98-1)",
+        "declared_role": "hardener",
+        "expected_status": "SCORED",
+        "formula": "C11H18N2",
+        "hostile_null": false,
+        "id": "detda-hindered-aromatic-diamine",
+        "note": "sterically hindered aniline nitrogens still recognized",
+        "observed_gate_reason": "supported_single_component_with_role_appropriate_reactivity",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 4,
+        "observed_status": "SCORED",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "Cc1c(N)c(CC)cc(CC)c1N"
+      },
+      {
+        "canonical_isomeric_smiles": "CN(C)Cc1ccccc1",
+        "citation": "N,N-dimethylbenzylamine (BDMA, CAS 103-83-3), a cure accelerator/catalyst, not a stoichiometric hardener",
+        "declared_role": "hardener",
+        "expected_status": "FAILED_GATES",
+        "formula": "C9H13N",
+        "hostile_null": true,
+        "id": "bdma-tertiary-amine-accelerator",
+        "note": "HOSTILE NULL: no N-H at all; declaring it hardener must fail closed",
+        "observed_gate_reason": "missing_role_appropriate_reactive_group",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 0,
+        "observed_status": "FAILED_GATES",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "CN(C)Cc1ccccc1"
+      },
+      {
+        "canonical_isomeric_smiles": "CCc1nc(C)c[nH]1",
+        "citation": "2-ethyl-4-methylimidazole (EMI-24, CAS 931-36-2), a latent curing agent that initiates anionic ring-opening, not stoichiometric N-H addition",
+        "declared_role": "hardener",
+        "expected_status": "FAILED_GATES",
+        "formula": "C6H10N2",
+        "hostile_null": true,
+        "id": "emi24-imidazole-latent-hardener",
+        "note": "HOSTILE NULL: aromatic pyrrole-type ring N-H must not count as reactive",
+        "observed_gate_reason": "missing_role_appropriate_reactive_group",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 0,
+        "observed_status": "FAILED_GATES",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "Cc1c[nH]c(CC)n1"
+      },
+      {
+        "canonical_isomeric_smiles": "N=C(Nc1ccccc1)Nc1ccccc1",
+        "citation": "1,3-diphenylguanidine (DPG, CAS 102-06-7), rubber/epoxy cure accelerator (US Patent 9,238,706), not a stoichiometric hardener",
+        "declared_role": "hardener",
+        "expected_status": "FAILED_GATES",
+        "formula": "C13H13N3",
+        "hostile_null": true,
+        "id": "dpg-diphenylguanidine-accelerator",
+        "note": "HOSTILE NULL named by the campaign item; guanidine C=N exclusion (R-N02) re-verified live through the design gate itself, not just role-ranker",
+        "observed_gate_reason": "missing_role_appropriate_reactive_group",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 0,
+        "observed_status": "FAILED_GATES",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "c1ccccc1NC(=N)Nc2ccccc2"
+      },
+      {
+        "canonical_isomeric_smiles": "Cc1ccccc1NC(=N)Nc1ccccc1C",
+        "citation": "N,N'-di-o-tolylguanidine (DOTG, CAS 97-39-2), more active DPG analog, rubber/epoxy cure accelerator",
+        "declared_role": "hardener",
+        "expected_status": "FAILED_GATES",
+        "formula": "C15H17N3",
+        "hostile_null": true,
+        "id": "dotg-di-o-tolylguanidine-accelerator",
+        "note": "second guanidine-class accelerator, bonus hostile null",
+        "observed_gate_reason": "missing_role_appropriate_reactive_group",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 0,
+        "observed_status": "FAILED_GATES",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "Cc1ccccc1NC(=N)Nc2ccccc2C"
+      },
+      {
+        "canonical_isomeric_smiles": "O=C(OCC1CCC2OC2C1)C1CCC2OC2C1",
+        "citation": "same ERL-4221 diepoxide as above, adversarially declared as hardener",
+        "declared_role": "hardener",
+        "expected_status": "FAILED_GATES",
+        "formula": "C14H20O4",
+        "hostile_null": false,
+        "id": "erl4221-declared-hardener-mismatch",
+        "note": "cross-declaration mismatch: a real resin has zero reactive amine hydrogens",
+        "observed_gate_reason": "missing_role_appropriate_reactive_group",
+        "observed_oxirane_ring_count": 2,
+        "observed_reactive_amine_hydrogen_count": 0,
+        "observed_status": "FAILED_GATES",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "C1(COC(=O)C2CC3OC3CC2)CC4OC4CC1"
+      },
+      {
+        "canonical_isomeric_smiles": "NCCOCCOCCOCCN",
+        "citation": "same EDR-148 diamine as above, adversarially declared as resin",
+        "declared_role": "resin",
+        "expected_status": "FAILED_GATES",
+        "formula": "C8H20N2O3",
+        "hostile_null": false,
+        "id": "edr148-declared-resin-mismatch",
+        "note": "cross-declaration mismatch: a real hardener has zero oxirane rings",
+        "observed_gate_reason": "missing_role_appropriate_reactive_group",
+        "observed_oxirane_ring_count": 0,
+        "observed_reactive_amine_hydrogen_count": 4,
+        "observed_status": "FAILED_GATES",
+        "pass": true,
+        "per_call_two_replay_byte_stable": true,
+        "smiles": "NCCOCCOCCOCCN"
+      }
+    ]
+  },
+  "part_b_generation_authorization": [
+    {
+      "authorized": false,
+      "error": "verified sparse Phase-0 generator runtime grant is absent",
+      "parent_structures": [
+        "C1OC1",
+        "NCCN"
+      ],
+      "reaction_family": "epoxy-amine-addition",
+      "request_id": "t08-mutation-attack-1",
+      "requested_role": "resin"
+    },
+    {
+      "authorized": false,
+      "error": "verified sparse Phase-0 generator runtime grant is absent",
+      "parent_structures": [
+        "CN(C)Cc1ccccc1"
+      ],
+      "reaction_family": "arbitrary-forged-family",
+      "request_id": "t08-mutation-attack-2-hostile-parent",
+      "requested_role": "hardener"
+    },
+    {
+      "authorized": false,
+      "error": "verified sparse Phase-0 generator runtime grant is absent",
+      "parent_structures": [
+        "C1OC1"
+      ],
+      "reaction_family": "epoxy-amine-addition",
+      "request_id": "",
+      "requested_role": "resin"
+    }
+  ],
+  "part_b_generation_violations": [],
+  "part_b_mutation_quarantine": [
+    {
+      "candidate_id": "mutation-probe-1",
+      "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+      "input_molecule": {
+        "role": "resin",
+        "smiles": "C1OC1"
+      },
+      "molecule_field_byte_identical": true,
+      "output_molecule": {
+        "role": "resin",
+        "smiles": "C1OC1"
+      },
+      "quarantined_no_structure_change": true
+    },
+    {
+      "candidate_id": "mutation-probe-2-injected-directive",
+      "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+      "input_molecule": {
+        "force_structure_change": true,
+        "mutation_directive": "add_epoxide_ring",
+        "role": "resin",
+        "smiles": "C1OC1",
+        "target_smiles": "C1OC1CCOC1CO1"
+      },
+      "molecule_field_byte_identical": true,
+      "output_molecule": {
+        "force_structure_change": true,
+        "mutation_directive": "add_epoxide_ring",
+        "role": "resin",
+        "smiles": "C1OC1",
+        "target_smiles": "C1OC1CCOC1CO1"
+      },
+      "quarantined_no_structure_change": true
+    },
+    {
+      "candidate_id": "mutation-probe-3-hostile-null-structure",
+      "generation_status": "QUARANTINED_NO_STRUCTURE_CHANGE",
+      "input_molecule": {
+        "role": "hardener",
+        "smiles": "CN(C)Cc1ccccc1"
+      },
+      "molecule_field_byte_identical": true,
+      "output_molecule": {
+        "role": "hardener",
+        "smiles": "CN(C)Cc1ccccc1"
+      },
+      "quarantined_no_structure_change": true
+    }
+  ],
+  "part_b_mutation_violations": [],
+  "part_b_slip_throughs": [],
+  "part_b_structural_fail_closed": [
+    {
+      "declared_role": "resin",
+      "expected_ffi_error_class": "WildcardOrPolymerStructure",
+      "fails_closed": true,
+      "ffi_rejects_before_backend_use": true,
+      "id": "wildcard-dgeba-oligomer-polymer-endgroups",
+      "note": "polymer/wildcard-atom input: a DGEBA oligomer repeat unit with open chain ends written as RDKit dummy atoms, the way a polymer-notation submission would arrive",
+      "observed_ffi_error": "WildcardOrPolymerStructure",
+      "observed_ffi_result": "Err",
+      "observed_gate_reason": "wildcard_or_query_structure",
+      "observed_gate_status": "FAILED_GATES",
+      "observed_valid_single_component_gate": false,
+      "smiles": "*OCC(O)COc1ccc(C(C)(C)c2ccc(OCC(O)CO*)cc2)cc1"
+    },
+    {
+      "declared_role": "resin",
+      "expected_ffi_error_class": "MultiFragmentStructure",
+      "fails_closed": true,
+      "ffi_rejects_before_backend_use": true,
+      "id": "multi-component-epoxide-plus-amine-mixture",
+      "note": "multi-component species: an epoxide and a diamine hardener written as one two-fragment SMILES, as a pre-mixed formulation submission might arrive",
+      "observed_ffi_error": "MultiFragmentStructure",
+      "observed_ffi_result": "Err",
+      "observed_gate_reason": "multi_fragment_structure",
+      "observed_gate_status": "FAILED_GATES",
+      "observed_valid_single_component_gate": false,
+      "smiles": "C1OC1.NCCN"
+    },
+    {
+      "declared_role": "resin",
+      "expected_ffi_error_class": "InvalidStructure-or-backend-rejection",
+      "fails_closed": true,
+      "ffi_rejects_before_backend_use": true,
+      "id": "invalid-valence-hypervalent-carbon",
+      "note": "invalid valence: a central carbon written with 5 substituents (max valence 4), lexically clean SMILES with no wildcard/fragment marker",
+      "observed_ffi_error": "InvalidStructure(Explicit valence for atom # 1 C, 6, is greater than permitted)",
+      "observed_ffi_result": "Err",
+      "observed_gate_reason": "positive_applicability_unavailable_without_rdkit_and_ontology",
+      "observed_gate_status": "FAILED_GATES",
+      "observed_valid_single_component_gate": true,
+      "smiles": "CC(C)(C)(C)(C)C"
+    }
+  ],
+  "positive_control": {
+    "detected": true,
+    "evidence": "evaluate_authorized returned status=SCORED for a candidate whose raw SMILES is a two-fragment mixture that molecule_facts() rejects outright -- proving the checker in this harness (status==\"SCORED\" => flagged) fires when a disallowed structure's facts are smuggled past the FFI layer",
+    "how_planted": "constructed MoleculeFactsV1 literal in this harness's own source with oxirane_ring_count=1/has_oxirane=true instead of calling molecule_facts(), then fed it into the live evaluate_authorized(DESIGN_GATE_ID, ...) call via FeatureSnapshot.values[\"molecule_facts_v1\"], exactly mirroring the module's own fact-snapshot-authority-v1 'verbatim' snapshot mode",
+    "planted_defect": "MoleculeFactsV1{oxirane_ring_count:1, ...} hand-attached to the multi-fragment probe 'C1OC1.NCCN' declared role=resin -- a facts record the real molecule_facts() FFI itself refuses to ever produce for this SMILES (it returns Err(MultiFragmentStructure) before touching the RDKit backend)",
+    "poisoned_observed_status": "SCORED"
+  },
+  "purpose": "FIRST adversarial verdict for amphora-molecule-design-gate: (A) run the real design_gate_result decision (via MoleculeCapability::evaluate_authorized) through the REAL pinned RDKit C++ FFI on >=10 held-out real coating molecules including the 3 named hostile nulls; (B) founder directive T2-08 fail-closed attack (polymers/wildcards/invalid-valence/multi-component/mutation).",
+  "schema": "amphora.molecule-design-gate.t08-live-runtime-adversarial-probe.diagnostic.v1",
+  "toolkit_provenance": {
+    "detected_version": "2026.03.2",
+    "exact_version_match": true,
+    "required_version": "2026.03.2",
+    "toolkit": "RDKit C++"
+  },
+  "verdict": {
+    "part_a_all_scored_as_expected": true,
+    "part_b_no_generation_violations": true,
+    "part_b_no_mutation_violations": true,
+    "part_b_no_slip_throughs": true,
+    "positive_control_fired": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "campaign_item_id": "W-TOL1",
+  "status": "done",
+  "fires_used": 1,
+  "max_fires": 1,
+  "done_receipt": "amphora-tolerance-robustness/evidence/phase0/repairs/W-TOL1/done/w-tol1-retraction-index-row-resolution-receipt.v1.dsse.json",
+  "index_before_sha256": "1a2bdc3b90b5b64f495b52365c4b6a283823191922376985f82db30d78796c1b",
+  "index_after_sha256": "40960ebd3b6141bc87406b63410e58950406271cc76d3616a757f85cfbf32bfa",
+  "notes": "Both NOT_RESOLVED rows from V1-RESOLVE rewritten with honest, R-C01-referenced superseded-by text. Underlying scientific claims still REFUTED and unrepaired; R-C01 is the tracked fix. Nothing further to do for W-TOL1 (max_fires=1)."
+}

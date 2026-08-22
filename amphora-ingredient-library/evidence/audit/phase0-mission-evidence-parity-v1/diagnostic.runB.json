@@ -1,0 +1,61 @@
+{
+  "authority": "AUDIT_ONLY",
+  "claimA_result_artifact_identity": {
+    "control_naive_string_gate_would_flag_1char_mutation": true,
+    "cross_process_two_replay_byte_identical": true,
+    "internal_first_vs_second_replay_byte_identical": true,
+    "live_run1_ok": true,
+    "live_run1_sha256": "06229682503e25a26da0391dac29c4f44e8ad46948c4b9ad77f76101b109fc1e",
+    "live_run2_ok": true,
+    "live_run2_sha256": "06229682503e25a26da0391dac29c4f44e8ad46948c4b9ad77f76101b109fc1e",
+    "mission_claimed_sha256": "2afb9213103d34e7754a6699d3df9ee113ea08ba679506331d01cdc6ca9dd732",
+    "result_hash_matches_mission_citation": false
+  },
+  "claimB_kpi_receipt_live_presence": {
+    "claimed_live_path": "evidence/phase0/kpis/ingredient-library-ledger-quarantine-kpi.v1.json",
+    "found_in_superseded": [
+      {
+        "path": "amphora-ingredient-library/evidence/superseded/supersession-6aba291aa333b4c3ae40d584ebe0fe2955e6949a33cb2506a5e7113021fff1c1/phase0/kpis/ingredient-library-ledger-quarantine-kpi.v1.json",
+        "supersession_reason": "STALE_UNSIGNED_PREPARATION_REISSUE"
+      }
+    ],
+    "present_in_live_tree": false
+  },
+  "claimC_kpi_numeric_substance": {
+    "all_match": true,
+    "diffs": [],
+    "n_mission_kpi_bullets_parsed": 13
+  },
+  "closes": [
+    "Establishes whether mission.md's 'Honest current state' artifact citations (the primary human/governance-facing claim surface for this module) are currently verifiable by independent re-execution, which none of the prior 5 amphora-ingredient-library audit receipts checked (all 5 audited facts.json chemistry/physical constants, not the Phase-0 harness evidence citations themselves)."
+  ],
+  "does_not_close": [
+    "Does not re-audit the KPI scenarios' scientific design (already exercised by the harness's own 23 red-team attack axes); this receipt only checks artifact-identity/provenance parity.",
+    "Does not determine WHEN mission.md's citation went stale or who last regenerated it; no git history is available on this host (mvp20-split is not a git repository).",
+    "Does not modify mission.md, the module manifest, or any locked dataset; files only a finding."
+  ],
+  "flips_scientific_readiness": false,
+  "headline": "REFUTED: live-reproduced result.v1.json hashes to 06229682503e25a26da0391dac29c4f44e8ad46948c4b9ad77f76101b109fc1e, which does NOT match mission.md's cited '2afb9213103d34e7754a6699d3df9ee113ea08ba679506331d01cdc6ca9dd732' -- and the cited Phase-0 KPI receipt is ABSENT from the live tree (found only under evidence/superseded/, reason(s): ['STALE_UNSIGNED_PREPARATION_REISSUE']). Underlying numeric KPI gate substance (fail-closed rates) MATCHES mission.md's prose across all 13 parsed KPI bullets, and two independent cross-process re-runs of the real Rust harness are byte-identical to each other -- so this is a documentation/provenance staleness defect, not evidence of runtime nondeterminism or a broken fail-closed gate.",
+  "human_review_performed": false,
+  "hypothesis": "H0: the live-tree evidence and freshly re-executed benchmark output exactly match every artifact-identity and numeric claim mission.md makes in its 'Honest current state' / 'Current benchmark result' section.",
+  "inputs": {
+    "mission_md_rel": "amphora-ingredient-library/docs/mission.md",
+    "mission_md_sha256": "01f55dfa865ef8eb8516ef1d1ad9a3fa52768d28a0f2a7dcd656fe543f9cd185",
+    "result_v1_json_rel": "amphora-ingredient-library/evidence/phase0/benchmark/result.v1.json"
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_module_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ingredient-library",
+  "non_circularity": "The oracle is the real compiled Rust test binary (amphora-formulation-capabilities/tests/ingredient_library_phase0_kpi.rs) invoked via `cargo test`, run twice as independent OS processes (not two in-process replays of one invocation) to distinguish genuine nondeterminism from a stale documentation citation. The comparison target (mission.md prose) is parsed mechanically via regex, not eyeballed, and the KPI substance check is a numeric field-by-field diff independent of the hash check.",
+  "promotes_authority": false,
+  "purpose": "Falsify mission.md's 'Honest current state' claim that evidence/phase0/benchmark/result.v1.json is a byte-stable canonical receipt with a specific cited SHA-256, and that a live Phase-0 KPI receipt exists at evidence/phase0/kpis/ingredient-library-ledger-quarantine-kpi.v1.json, by independently re-executing the real Rust Phase-0 harness (not re-deriving in Python) and diffing both artifact identity and KPI substance against the documented claim.",
+  "run1_log_tail": "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out",
+  "run2_log_tail": "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.ingredient-library-mission-evidence-parity.v1",
+  "theory_reference": {
+    "method": "Byte-identity / artifact-provenance audit in the spirit of the module's own declared benchmark-lock.v1.json attack vocabulary (STALE_PARENT, FALSE_BENCHMARK_EXECUTION_COMPLETE, SUPERSESSION_ARCHIVE_SUBSTITUTION); refutation criterion is a documented-vs-live artifact mismatch, analogous to the portfolio's prior metric-schema-parity and power-adequacy refutations in other modules."
+  }
+}

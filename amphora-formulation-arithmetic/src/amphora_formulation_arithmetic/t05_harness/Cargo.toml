@@ -1,0 +1,22 @@
+[package]
+name = "t05-equivalent-balance-attack"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[[bin]]
+name = "t05_equivalent_balance_attack"
+path = "src/main.rs"
+
+[dependencies]
+amphora-formulation-capabilities = { path = "../../../../amphora-formulation-capabilities" }
+amphora-rdkit-ffi = { path = "../../../../amphora-rdkit-ffi" }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+
+# Standalone workspace root: this probe crate is deliberately NOT a member of
+# the repo root workspace (amphora-formulation-arithmetic is docs/evidence only,
+# not a Cargo member). The empty [workspace] table below stops Cargo's upward
+# search from trying to fold this crate into ../../../../Cargo.toml.
+[workspace]

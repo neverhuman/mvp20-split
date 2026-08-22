@@ -1,0 +1,362 @@
+{
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "payload_canonical_sha256": "3b39f33d161cbb8e6ec758563acf38882f80d7e197ed99d7005cef1499469760",
+  "payload_decoded": {
+    "action": "Superseding correction of ARITH-A221-X70P1-VOLUME-SOLIDS reference 'actual' (43.7 -> 42.4165, exact volume-weighted re-derivation) plus a both-methods sweep of every volume-solids control in control_by_control_receipt.v1.json; original receipt untouched.",
+    "also_affected_not_modified": {
+      "arithmetic_audit.json": {
+        "note": "carries the same conflated recomputed=43.7 in row id=A221-X70P1; superseded by the corrected value herein; not modified",
+        "path": "amphora-known-answer-benchmarks/reference/mvp20/out/arithmetic_audit.json",
+        "sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c"
+      },
+      "result.v1.json": {
+        "note": "arithmetic_subset_6_of_6_pass_rate KPI numerically unchanged (1.0); not modified",
+        "path": "amphora-known-answer-benchmarks/evidence/phase0/benchmark/result.v1.json",
+        "sha256": "3f2f6853f132f032a4b62a52ff3485d6f9b88b44affb3d50e84e8d310808ab11"
+      }
+    },
+    "authority": "AUDIT_ONLY",
+    "corrected_pass_rate": {
+      "a221_corrected_abs_delta_vs_expected_pp": 0.0835,
+      "a702_topdown_abs_delta_vs_expected_pp": 0.252,
+      "aggregate_status_unchanged": "INCOMPLETE",
+      "arithmetic_subset_pass_rate_before": 1.0,
+      "arithmetic_subset_pass_rate_corrected": 1.0,
+      "control_count": 14,
+      "note": "The repair corrects the A221 reference 'actual' from 43.7 (invalid mass-fraction-weighted) to 42.4165 (exact volume-weighted); |42.5-42.4165|=0.0835pp and |62.0-61.748|=0.252pp both sit far inside the +/-2.0pp band, so no VERIFIED_PASS/FAIL bit flips and the arithmetic_subset_6_of_6_pass_rate KPI value (1.0) is numerically unchanged. What changes is the reference values' derivation honesty, not the pass-rate.",
+      "tolerance_band_pp": 2.0,
+      "verified_pass_count_before": 13,
+      "verified_pass_count_corrected": 13
+    },
+    "corrected_values": {
+      "ARITH-A221-X70P1-VOLUME-SOLIDS": {
+        "abs_delta_vs_expected_42_5_pp": 0.0835,
+        "corrected_actual": 42.4165,
+        "corrected_actual_exact_fraction": "51833/1222",
+        "matches_refuting_recompute_to_4dp": true,
+        "method": "exact rational volume-weighted average: (vol_A*46.0% + vol_B*31.5%)/(vol_A+vol_B), vol=mass/density, from the refuting receipt's TDS transcription (masses 1000/200 g, densities 1.51/0.92 g/mL)",
+        "status_after_correction": "VERIFIED_PASS (unchanged)",
+        "superseded_actual": 43.7
+      },
+      "ARITH-A702B75P1-VOLUME-SOLIDS": {
+        "delta_explanation": {
+          "conclusion": "A702B75P1's larger delta is disclosed approximation noise from class-constant substitution in a bottom-up BOM recompute - a different, honest mechanism - NOT the silent invalid mass-fraction averaging that produced A221's 43.7. Both the receipt value (|60.7-62.0|=1.3pp) and the exact top-down value (|61.748-62.0|=0.252pp) sit inside the +/-2.0pp band.",
+          "decomposition": {
+            "meaning_1": "-0.252pp of the recorded -1.31pp delta is inherent TDS rounding slack: the exact volume-weighted recompute from the TDS's own component data (masses 1000/284 g, densities 1.64/0.95 g/mL, component VS 67.9/49.2%) gives 61.748, not 62.0.",
+            "meaning_2": "The remaining ~-1.048pp is the engine's bottom-up full-BOM recompute using flagged APPROXIMATE class constants for 4 trade-name lines (ancamide_702b75 - the dominant 202 g B-side binder - ancamine_k54, antiterra_u, bentone_sd2), disclosed at generation time in arithmetic_audit.json 'approx' and known_answer_report.json. Corroboration: the same engine run's bottom-up mix density 1.448 g/mL overshoots the exact TDS-derived mix density 1.41300 g/mL by +0.035 (~2.5% total-volume understatement), demonstrating that the approximate constants materially shift computed volumes; the same-order shift on the solids-volume side yields the -1.048pp VS shortfall.",
+            "published_62_0_minus_exact_topdown_pp": 0.252,
+            "residual_engine_vs_topdown_pp": -1.048
+          },
+          "evidence_not_conflated": "The invalid mass-fraction method gives 63.7639 (|63.7639-60.7|=3.0639pp, and on the OPPOSITE side of the published 62.0), so 60.7 is NOT reproducible by the A221 bug mechanism.",
+          "is_mass_basis_conflation": false,
+          "receipt_recorded_delta_pp": -1.31
+        },
+        "exact_topdown_reference_fraction": "642797/10410",
+        "exact_topdown_reference_value": 61.748,
+        "invalid_method_value_for_comparison": 63.7639,
+        "not_mass_basis_conflated": true,
+        "receipt_actual_retained": 60.7,
+        "status_after_review": "VERIFIED_PASS (unchanged)"
+      }
+    },
+    "date": "2026-08-03",
+    "derivations": {
+      "A221-X70P1": {
+        "correct_volume_weighted_pct": {
+          "exact": "51833/1222",
+          "rounded_4dp": 42.4165
+        },
+        "inputs_from_refuting_receipt_transcription": {
+          "dens_A": "151/100",
+          "dens_B": "23/25",
+          "mass_A": "1000",
+          "mass_B": "200",
+          "published_mix_density": "137/100",
+          "published_mix_vs": "85/2",
+          "published_mix_wt": "129/2",
+          "receipt_actual": "437/10",
+          "vol_pct_A": "46",
+          "vol_pct_B": "63/2",
+          "wt_pct_A": "70",
+          "wt_pct_B": "371/10"
+        },
+        "invalid_mass_fraction_pct": {
+          "exact": "523/12",
+          "rounded_4dp": 43.5833
+        },
+        "solids_vol_mL": {
+          "approx": 373.114,
+          "exact": "1295825/3473"
+        },
+        "total_vol_mL": {
+          "approx": 879.643,
+          "exact": "3055000/3473"
+        },
+        "vol_A_mL": {
+          "approx": 662.2517,
+          "exact": "100000/151"
+        },
+        "vol_B_mL": {
+          "approx": 217.3913,
+          "exact": "5000/23"
+        }
+      },
+      "A702B75P1": {
+        "correct_volume_weighted_pct": {
+          "exact": "642797/10410",
+          "rounded_4dp": 61.748
+        },
+        "inputs_transcribed_from_tds": {
+          "dens_A": "41/25",
+          "dens_B": "19/20",
+          "mass_A": "1000",
+          "mass_B": "284",
+          "published_mix_density": "141/100",
+          "published_mix_vs": "62",
+          "published_mix_wt": "771/10",
+          "receipt_actual": "607/10",
+          "vol_pct_A": "679/10",
+          "vol_pct_B": "246/5",
+          "wt_pct_A": "833/10",
+          "wt_pct_B": "111/2"
+        },
+        "internal_consistency_gates": {
+          "delta": 0.0511,
+          "density_delta": 0.003,
+          "derived_mix_density_g_per_mL": 1.413,
+          "mix_ratio_by_volume_published": 2.0,
+          "mix_ratio_by_volume_recomputed": 2.0397,
+          "mix_ratio_by_weight_published": 3.5,
+          "mix_ratio_by_weight_recomputed": 3.5211,
+          "passes_sanity_gate_abs_lt_0_1pp": true,
+          "published_mix_density_g_per_mL": 1.41,
+          "published_mix_wt_pct_solids": 77.1,
+          "recomputed_mix_wt_pct_solids": 77.1511
+        },
+        "invalid_mass_fraction_pct": {
+          "exact": "102341/1605",
+          "rounded_4dp": 63.7639
+        },
+        "solids_vol_mL": {
+          "approx": 561.1065,
+          "exact": "10927549/19475"
+        },
+        "tds_pdf_sha256": "7b95cd630cf392c87fbd852afea0e6d77591dcdb0d62f6390e5c46ba7d061abe",
+        "total_vol_mL": {
+          "approx": 908.7035,
+          "exact": "707880/779"
+        },
+        "vol_A_mL": {
+          "approx": 609.7561,
+          "exact": "25000/41"
+        },
+        "vol_B_mL": {
+          "approx": 298.9474,
+          "exact": "5680/19"
+        }
+      }
+    },
+    "flips_scientific_readiness": false,
+    "generated_on_host": "xbabe2",
+    "method_statement": "For every control in control_by_control_receipt.v1.json carrying a volume-solids semantic, the mix volume-solids % was recomputed BOTH ways with exact rational arithmetic (fractions.Fraction, floats only at final 4dp rounding): (1) CORRECT volume-weighted: total solids volume / total mix volume * 100, component volume = mass/density - the only valid way to combine volume-basis percentages of components with different densities; (2) INVALID mass-fraction-weighted: sum(mass_fraction_i * vol_pct_i) - valid only if all densities are equal (false in both controls: 1.51 vs 0.92 and 1.64 vs 0.95 g/mL). A control is flagged as conflated when its receipt 'actual' lies within 0.2pp of method (2) but not method (1) - the same 'closely reproduces' band the refuting receipt used.",
+    "modifies_existing_receipts": false,
+    "modifies_manifest": false,
+    "module": "amphora-known-answer-benchmarks",
+    "promotes_authority": false,
+    "reattack_observed_results": {
+      "abs_gap_corrected_vs_invalid_pp": 1.1668,
+      "check_rerun": "falsification criterion of evidence/audit/arith-volume-solids-mass-basis-conflation-v1 receipt.v1.dsse.json, applied to the corrected value",
+      "correct_method_reproduces_published_42_5_within_0_2pp": true,
+      "corrected_a221_equals_refuting_recompute_to_4dp": true,
+      "corrected_actual_not_reproducible_by_invalid_method": true,
+      "internal_consistency_gate_replicated": {
+        "delta": 0.0167,
+        "passes_abs_lt_0_1pp": true,
+        "published": 64.5,
+        "recomputed_mix_wt_pct_solids": 64.5167
+      },
+      "invalid_method_still_reproduces_old_actual_43_7_within_0_2pp": true,
+      "sweep_covers_every_volume_solids_control": true,
+      "volume_solids_controls_swept": 2,
+      "volume_solids_controls_total": 2
+    },
+    "refuted_by": {
+      "receipt": "amphora-known-answer-benchmarks/evidence/audit/arith-volume-solids-mass-basis-conflation-v1/receipt.v1.dsse.json",
+      "receipt_sha256": "86fde264ea67cced89357c9aa086403e90e693a85ce45bb14a17ee0a6578a2ee",
+      "report_sha256": "1bb26b16e1d4ddc17a1c61d82b0517d3f70fcc51599a7e7a2e24096651efae9c",
+      "verifier_sha256": "a8d44fe3d1afa6e0ce451e256f336a844b218b98cbc7265266a10a2879701b5d"
+    },
+    "repair_artifacts": {
+      "repair_script_path": "amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/work/r_a05_repair.py",
+      "retraction_index_path": "amphora-known-answer-benchmarks/evidence/phase0/kpis/RETRACTION-INDEX.md",
+      "sweep_report_path": "amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/work/R-A05-volume-solids-sweep.v1.json",
+      "sweep_report_sha256": "12f486180791579f1e86571722481309b8947ed1dafb1d01a5c8dc33f450c5ca",
+      "tds_pdf_path": "amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/work/a702b75_us_tds.pdf",
+      "tds_pdf_sha256": "7b95cd630cf392c87fbd852afea0e6d77591dcdb0d62f6390e5c46ba7d061abe"
+    },
+    "repair_item": "R-A05",
+    "repair_mode": "interactive-2026-08-03",
+    "schema": "amphora.phase0-repair.done-receipt.v1",
+    "signing_key": {
+      "derives_pinned_trust_store_key_id": true,
+      "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+      "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+      "role": "PHASE0_EVALUATOR"
+    },
+    "source_documents": {
+      "a221_tds": {
+        "title": "Evonik Ancamide 221 EMEA TDS (values as transcribed by the refuting receipt)",
+        "url": "https://products.evonik.com/assets/em/ea/Ancamide_221_EMEA_TDS_EN_EN_TDS_PV_52041324_en_GB_EMEA.pdf"
+      },
+      "a702b75_tds": {
+        "fetched": "2026-08-03",
+        "footer_stamp": "Evonik Operations | Ancamide 702B75 us | 3/26/2026",
+        "pdf_sha256": "7b95cd630cf392c87fbd852afea0e6d77591dcdb0d62f6390e5c46ba7d061abe",
+        "title": "Evonik Ancamide 702B75 US TDS, A702B75P1 Appendix I formulation + Technical Data",
+        "url": "https://products.evonik.com/assets/s_/us/Ancamide_702B75_us_TDS_EN_EN_TDS_PV_52042312_en_US_US.pdf"
+      }
+    },
+    "supersedes": {
+      "reason": "Its ARITH-A221-X70P1-VOLUME-SOLIDS 'actual' (43.7) is refuted by evidence/audit/arith-volume-solids-mass-basis-conflation-v1: 43.7 is reproducible from the cited Evonik Ancamide 221 EMEA TDS only via invalid mass-fraction-weighted averaging of volume-basis percentages (invalid because component densities differ, 1.51 vs 0.92 g/mL); the correct volume-weighted recompute gives 42.4165 (matches the TDS's published 42.5 to 0.0835pp). VERIFIED_PASS statuses and the 6/6 arithmetic pass-rate are NOT retracted (all deltas stay inside the +/-2.0pp band); the superseded artifact remains byte-intact.",
+      "superseded_deleted_or_modified": false,
+      "superseded_path": "amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json",
+      "superseded_sha256": "be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc"
+    },
+    "sweep": {
+      "coverage": "2/2 volume-solids controls swept both ways; remaining 12/14 controls enumerated with their semantic (density or exact_status) - none carries a volume-solids semantic",
+      "flagged_as_mass_basis_conflated": [
+        "ARITH-A221-X70P1-VOLUME-SOLIDS"
+      ],
+      "non_volume_solids_controls": [
+        {
+          "control_id": "ARITH-A221-X70P1-DENSITY",
+          "reason": "no volume-solids semantic",
+          "semantic": "density",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "ARITH-A702B75P1-DENSITY",
+          "reason": "no volume-solids semantic",
+          "semantic": "density",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "ARITH-MIL-F160-COMPONENT-A-DENSITY",
+          "reason": "no volume-solids semantic",
+          "semantic": "density",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "ARITH-MIL-F160-COMPONENT-B-DENSITY",
+          "reason": "no volume-solids semantic",
+          "semantic": "density",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "F160-BLACK",
+          "reason": "no volume-solids semantic",
+          "semantic": "exact_status",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "F161-YELLOW",
+          "reason": "no volume-solids semantic",
+          "semantic": "exact_status",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "EVONIK-SPF-A702B75P1",
+          "reason": "no volume-solids semantic",
+          "semantic": "exact_status",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "NCP-TYPE-IV-ANCHOR",
+          "reason": "no volume-solids semantic",
+          "semantic": "exact_status",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "INTL-F150-ANCHOR",
+          "reason": "no volume-solids semantic",
+          "semantic": "exact_status",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "NEG-CONTROL-1",
+          "reason": "no volume-solids semantic",
+          "semantic": "exact_status",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "NEG-CONTROL-2",
+          "reason": "no volume-solids semantic",
+          "semantic": "exact_status",
+          "swept": false,
+          "volume_solids_semantic": false
+        },
+        {
+          "control_id": "NEG-CONTROL-3",
+          "reason": "no volume-solids semantic",
+          "semantic": "exact_status",
+          "swept": false,
+          "volume_solids_semantic": false
+        }
+      ],
+      "volume_solids_controls": [
+        {
+          "abs_delta_receipt_actual_vs_correct_pp": 1.2835,
+          "abs_delta_receipt_actual_vs_invalid_pp": 0.1167,
+          "control_id": "ARITH-A221-X70P1-VOLUME-SOLIDS",
+          "correct_reproduces_published_within_0_3pp": true,
+          "correct_volume_weighted": 42.4165,
+          "invalid_mass_fraction_weighted": 43.5833,
+          "receipt_actual": 43.7,
+          "receipt_actual_matches_correct_within_0_2pp": false,
+          "receipt_actual_matches_invalid_within_0_2pp": true,
+          "receipt_expected": 42.5,
+          "semantic": "volume_solids_pct",
+          "verdict": "MASS_BASIS_CONFLATION_CONFIRMED"
+        },
+        {
+          "abs_delta_receipt_actual_vs_correct_pp": 1.048,
+          "abs_delta_receipt_actual_vs_invalid_pp": 3.0639,
+          "control_id": "ARITH-A702B75P1-VOLUME-SOLIDS",
+          "correct_reproduces_published_within_0_3pp": true,
+          "correct_volume_weighted": 61.748,
+          "invalid_mass_fraction_weighted": 63.7639,
+          "receipt_actual": 60.7,
+          "receipt_actual_matches_correct_within_0_2pp": false,
+          "receipt_actual_matches_invalid_within_0_2pp": false,
+          "receipt_expected": 62.0,
+          "semantic": "volume_solids_pct",
+          "verdict": "NOT_MASS_BASIS_CONFLATED"
+        }
+      ]
+    },
+    "trust_anchored_in_phase0_store": true,
+    "two_replay_sha256": "daffd9a36969e53b7e174df5addd26d8b7f6f7598568095729c2b7d09285932d",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "signature": {
+    "payload": "eyJhY3Rpb24iOiJTdXBlcnNlZGluZyBjb3JyZWN0aW9uIG9mIEFSSVRILUEyMjEtWDcwUDEtVk9MVU1FLVNPTElEUyByZWZlcmVuY2UgJ2FjdHVhbCcgKDQzLjcgLT4gNDIuNDE2NSwgZXhhY3Qgdm9sdW1lLXdlaWdodGVkIHJlLWRlcml2YXRpb24pIHBsdXMgYSBib3RoLW1ldGhvZHMgc3dlZXAgb2YgZXZlcnkgdm9sdW1lLXNvbGlkcyBjb250cm9sIGluIGNvbnRyb2xfYnlfY29udHJvbF9yZWNlaXB0LnYxLmpzb247IG9yaWdpbmFsIHJlY2VpcHQgdW50b3VjaGVkLiIsImFsc29fYWZmZWN0ZWRfbm90X21vZGlmaWVkIjp7ImFyaXRobWV0aWNfYXVkaXQuanNvbiI6eyJub3RlIjoiY2FycmllcyB0aGUgc2FtZSBjb25mbGF0ZWQgcmVjb21wdXRlZD00My43IGluIHJvdyBpZD1BMjIxLVg3MFAxOyBzdXBlcnNlZGVkIGJ5IHRoZSBjb3JyZWN0ZWQgdmFsdWUgaGVyZWluOyBub3QgbW9kaWZpZWQiLCJwYXRoIjoiYW1waG9yYS1rbm93bi1hbnN3ZXItYmVuY2htYXJrcy9yZWZlcmVuY2UvbXZwMjAvb3V0L2FyaXRobWV0aWNfYXVkaXQuanNvbiIsInNoYTI1NiI6ImI5YmViMDhhMzZlZWM0MGFiYjk2YzQ4YTA1YzA3NmVjNGEyMDFiZWRmMTIyZThkYmQ1MzQ5OGU5ZTlhZTE0OGMifSwicmVzdWx0LnYxLmpzb24iOnsibm90ZSI6ImFyaXRobWV0aWNfc3Vic2V0XzZfb2ZfNl9wYXNzX3JhdGUgS1BJIG51bWVyaWNhbGx5IHVuY2hhbmdlZCAoMS4wKTsgbm90IG1vZGlmaWVkIiwicGF0aCI6ImFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MvZXZpZGVuY2UvcGhhc2UwL2JlbmNobWFyay9yZXN1bHQudjEuanNvbiIsInNoYTI1NiI6IjNmMmY2ODUzZjEzMmYwMzJhNGI2MmE1MmZmMzQ4NWQ2ZjliODhiNDRhZmZiM2Q1MGU4NGU4ZDMxMDgwOGFiMTEifX0sImF1dGhvcml0eSI6IkFVRElUX09OTFkiLCJjb3JyZWN0ZWRfcGFzc19yYXRlIjp7ImEyMjFfY29ycmVjdGVkX2Fic19kZWx0YV92c19leHBlY3RlZF9wcCI6MC4wODM1LCJhNzAyX3RvcGRvd25fYWJzX2RlbHRhX3ZzX2V4cGVjdGVkX3BwIjowLjI1MiwiYWdncmVnYXRlX3N0YXR1c191bmNoYW5nZWQiOiJJTkNPTVBMRVRFIiwiYXJpdGhtZXRpY19zdWJzZXRfcGFzc19yYXRlX2JlZm9yZSI6MS4wLCJhcml0aG1ldGljX3N1YnNldF9wYXNzX3JhdGVfY29ycmVjdGVkIjoxLjAsImNvbnRyb2xfY291bnQiOjE0LCJub3RlIjoiVGhlIHJlcGFpciBjb3JyZWN0cyB0aGUgQTIyMSByZWZlcmVuY2UgJ2FjdHVhbCcgZnJvbSA0My43IChpbnZhbGlkIG1hc3MtZnJhY3Rpb24td2VpZ2h0ZWQpIHRvIDQyLjQxNjUgKGV4YWN0IHZvbHVtZS13ZWlnaHRlZCk7IHw0Mi41LTQyLjQxNjV8PTAuMDgzNXBwIGFuZCB8NjIuMC02MS43NDh8PTAuMjUycHAgYm90aCBzaXQgZmFyIGluc2lkZSB0aGUgKy8tMi4wcHAgYmFuZCwgc28gbm8gVkVSSUZJRURfUEFTUy9GQUlMIGJpdCBmbGlwcyBhbmQgdGhlIGFyaXRobWV0aWNfc3Vic2V0XzZfb2ZfNl9wYXNzX3JhdGUgS1BJIHZhbHVlICgxLjApIGlzIG51bWVyaWNhbGx5IHVuY2hhbmdlZC4gV2hhdCBjaGFuZ2VzIGlzIHRoZSByZWZlcmVuY2UgdmFsdWVzJyBkZXJpdmF0aW9uIGhvbmVzdHksIG5vdCB0aGUgcGFzcy1yYXRlLiIsInRvbGVyYW5jZV9iYW5kX3BwIjoyLjAsInZlcmlmaWVkX3Bhc3NfY291bnRfYmVmb3JlIjoxMywidmVyaWZpZWRfcGFzc19jb3VudF9jb3JyZWN0ZWQiOjEzfSwiY29ycmVjdGVkX3ZhbHVlcyI6eyJBUklUSC1BMjIxLVg3MFAxLVZPTFVNRS1TT0xJRFMiOnsiYWJzX2RlbHRhX3ZzX2V4cGVjdGVkXzQyXzVfcHAiOjAuMDgzNSwiY29ycmVjdGVkX2FjdHVhbCI6NDIuNDE2NSwiY29ycmVjdGVkX2FjdHVhbF9leGFjdF9mcmFjdGlvbiI6IjUxODMzLzEyMjIiLCJtYXRjaGVzX3JlZnV0aW5nX3JlY29tcHV0ZV90b180ZHAiOnRydWUsIm1ldGhvZCI6ImV4YWN0IHJhdGlvbmFsIHZvbHVtZS13ZWlnaHRlZCBhdmVyYWdlOiAodm9sX0EqNDYuMCUgKyB2b2xfQiozMS41JSkvKHZvbF9BK3ZvbF9CKSwgdm9sPW1hc3MvZGVuc2l0eSwgZnJvbSB0aGUgcmVmdXRpbmcgcmVjZWlwdCdzIFREUyB0cmFuc2NyaXB0aW9uIChtYXNzZXMgMTAwMC8yMDAgZywgZGVuc2l0aWVzIDEuNTEvMC45MiBnL21MKSIsInN0YXR1c19hZnRlcl9jb3JyZWN0aW9uIjoiVkVSSUZJRURfUEFTUyAodW5jaGFuZ2VkKSIsInN1cGVyc2VkZWRfYWN0dWFsIjo0My43fSwiQVJJVEgtQTcwMkI3NVAxLVZPTFVNRS1TT0xJRFMiOnsiZGVsdGFfZXhwbGFuYXRpb24iOnsiY29uY2x1c2lvbiI6IkE3MDJCNzVQMSdzIGxhcmdlciBkZWx0YSBpcyBkaXNjbG9zZWQgYXBwcm94aW1hdGlvbiBub2lzZSBmcm9tIGNsYXNzLWNvbnN0YW50IHN1YnN0aXR1dGlvbiBpbiBhIGJvdHRvbS11cCBCT00gcmVjb21wdXRlIC0gYSBkaWZmZXJlbnQsIGhvbmVzdCBtZWNoYW5pc20gLSBOT1QgdGhlIHNpbGVudCBpbnZhbGlkIG1hc3MtZnJhY3Rpb24gYXZlcmFnaW5nIHRoYXQgcHJvZHVjZWQgQTIyMSdzIDQzLjcuIEJvdGggdGhlIHJlY2VpcHQgdmFsdWUgKHw2MC43LTYyLjB8PTEuM3BwKSBhbmQgdGhlIGV4YWN0IHRvcC1kb3duIHZhbHVlICh8NjEuNzQ4LTYyLjB8PTAuMjUycHApIHNpdCBpbnNpZGUgdGhlICsvLTIuMHBwIGJhbmQuIiwiZGVjb21wb3NpdGlvbiI6eyJtZWFuaW5nXzEiOiItMC4yNTJwcCBvZiB0aGUgcmVjb3JkZWQgLTEuMzFwcCBkZWx0YSBpcyBpbmhlcmVudCBURFMgcm91bmRpbmcgc2xhY2s6IHRoZSBleGFjdCB2b2x1bWUtd2VpZ2h0ZWQgcmVjb21wdXRlIGZyb20gdGhlIFREUydzIG93biBjb21wb25lbnQgZGF0YSAobWFzc2VzIDEwMDAvMjg0IGcsIGRlbnNpdGllcyAxLjY0LzAuOTUgZy9tTCwgY29tcG9uZW50IFZTIDY3LjkvNDkuMiUpIGdpdmVzIDYxLjc0OCwgbm90IDYyLjAuIiwibWVhbmluZ18yIjoiVGhlIHJlbWFpbmluZyB+LTEuMDQ4cHAgaXMgdGhlIGVuZ2luZSdzIGJvdHRvbS11cCBmdWxsLUJPTSByZWNvbXB1dGUgdXNpbmcgZmxhZ2dlZCBBUFBST1hJTUFURSBjbGFzcyBjb25zdGFudHMgZm9yIDQgdHJhZGUtbmFtZSBsaW5lcyAoYW5jYW1pZGVfNzAyYjc1IC0gdGhlIGRvbWluYW50IDIwMiBnIEItc2lkZSBiaW5kZXIgLSBhbmNhbWluZV9rNTQsIGFudGl0ZXJyYV91LCBiZW50b25lX3NkMiksIGRpc2Nsb3NlZCBhdCBnZW5lcmF0aW9uIHRpbWUgaW4gYXJpdGhtZXRpY19hdWRpdC5qc29uICdhcHByb3gnIGFuZCBrbm93bl9hbnN3ZXJfcmVwb3J0Lmpzb24uIENvcnJvYm9yYXRpb246IHRoZSBzYW1lIGVuZ2luZSBydW4ncyBib3R0b20tdXAgbWl4IGRlbnNpdHkgMS40NDggZy9tTCBvdmVyc2hvb3RzIHRoZSBleGFjdCBURFMtZGVyaXZlZCBtaXggZGVuc2l0eSAxLjQxMzAwIGcvbUwgYnkgKzAuMDM1ICh+Mi41JSB0b3RhbC12b2x1bWUgdW5kZXJzdGF0ZW1lbnQpLCBkZW1vbnN0cmF0aW5nIHRoYXQgdGhlIGFwcHJveGltYXRlIGNvbnN0YW50cyBtYXRlcmlhbGx5IHNoaWZ0IGNvbXB1dGVkIHZvbHVtZXM7IHRoZSBzYW1lLW9yZGVyIHNoaWZ0IG9uIHRoZSBzb2xpZHMtdm9sdW1lIHNpZGUgeWllbGRzIHRoZSAtMS4wNDhwcCBWUyBzaG9ydGZhbGwuIiwicHVibGlzaGVkXzYyXzBfbWludXNfZXhhY3RfdG9wZG93bl9wcCI6MC4yNTIsInJlc2lkdWFsX2VuZ2luZV92c190b3Bkb3duX3BwIjotMS4wNDh9LCJldmlkZW5jZV9ub3RfY29uZmxhdGVkIjoiVGhlIGludmFsaWQgbWFzcy1mcmFjdGlvbiBtZXRob2QgZ2l2ZXMgNjMuNzYzOSAofDYzLjc2MzktNjAuN3w9My4wNjM5cHAsIGFuZCBvbiB0aGUgT1BQT1NJVEUgc2lkZSBvZiB0aGUgcHVibGlzaGVkIDYyLjApLCBzbyA2MC43IGlzIE5PVCByZXByb2R1Y2libGUgYnkgdGhlIEEyMjEgYnVnIG1lY2hhbmlzbS4iLCJpc19tYXNzX2Jhc2lzX2NvbmZsYXRpb24iOmZhbHNlLCJyZWNlaXB0X3JlY29yZGVkX2RlbHRhX3BwIjotMS4zMX0sImV4YWN0X3RvcGRvd25fcmVmZXJlbmNlX2ZyYWN0aW9uIjoiNjQyNzk3LzEwNDEwIiwiZXhhY3RfdG9wZG93bl9yZWZlcmVuY2VfdmFsdWUiOjYxLjc0OCwiaW52YWxpZF9tZXRob2RfdmFsdWVfZm9yX2NvbXBhcmlzb24iOjYzLjc2MzksIm5vdF9tYXNzX2Jhc2lzX2NvbmZsYXRlZCI6dHJ1ZSwicmVjZWlwdF9hY3R1YWxfcmV0YWluZWQiOjYwLjcsInN0YXR1c19hZnRlcl9yZXZpZXciOiJWRVJJRklFRF9QQVNTICh1bmNoYW5nZWQpIn19LCJkYXRlIjoiMjAyNi0wOC0wMyIsImRlcml2YXRpb25zIjp7IkEyMjEtWDcwUDEiOnsiY29ycmVjdF92b2x1bWVfd2VpZ2h0ZWRfcGN0Ijp7ImV4YWN0IjoiNTE4MzMvMTIyMiIsInJvdW5kZWRfNGRwIjo0Mi40MTY1fSwiaW5wdXRzX2Zyb21fcmVmdXRpbmdfcmVjZWlwdF90cmFuc2NyaXB0aW9uIjp7ImRlbnNfQSI6IjE1MS8xMDAiLCJkZW5zX0IiOiIyMy8yNSIsIm1hc3NfQSI6IjEwMDAiLCJtYXNzX0IiOiIyMDAiLCJwdWJsaXNoZWRfbWl4X2RlbnNpdHkiOiIxMzcvMTAwIiwicHVibGlzaGVkX21peF92cyI6Ijg1LzIiLCJwdWJsaXNoZWRfbWl4X3d0IjoiMTI5LzIiLCJyZWNlaXB0X2FjdHVhbCI6IjQzNy8xMCIsInZvbF9wY3RfQSI6IjQ2Iiwidm9sX3BjdF9CIjoiNjMvMiIsInd0X3BjdF9BIjoiNzAiLCJ3dF9wY3RfQiI6IjM3MS8xMCJ9LCJpbnZhbGlkX21hc3NfZnJhY3Rpb25fcGN0Ijp7ImV4YWN0IjoiNTIzLzEyIiwicm91bmRlZF80ZHAiOjQzLjU4MzN9LCJzb2xpZHNfdm9sX21MIjp7ImFwcHJveCI6MzczLjExNCwiZXhhY3QiOiIxMjk1ODI1LzM0NzMifSwidG90YWxfdm9sX21MIjp7ImFwcHJveCI6ODc5LjY0MywiZXhhY3QiOiIzMDU1MDAwLzM0NzMifSwidm9sX0FfbUwiOnsiYXBwcm94Ijo2NjIuMjUxNywiZXhhY3QiOiIxMDAwMDAvMTUxIn0sInZvbF9CX21MIjp7ImFwcHJveCI6MjE3LjM5MTMsImV4YWN0IjoiNTAwMC8yMyJ9fSwiQTcwMkI3NVAxIjp7ImNvcnJlY3Rfdm9sdW1lX3dlaWdodGVkX3BjdCI6eyJleGFjdCI6IjY0Mjc5Ny8xMDQxMCIsInJvdW5kZWRfNGRwIjo2MS43NDh9LCJpbnB1dHNfdHJhbnNjcmliZWRfZnJvbV90ZHMiOnsiZGVuc19BIjoiNDEvMjUiLCJkZW5zX0IiOiIxOS8yMCIsIm1hc3NfQSI6IjEwMDAiLCJtYXNzX0IiOiIyODQiLCJwdWJsaXNoZWRfbWl4X2RlbnNpdHkiOiIxNDEvMTAwIiwicHVibGlzaGVkX21peF92cyI6IjYyIiwicHVibGlzaGVkX21peF93dCI6Ijc3MS8xMCIsInJlY2VpcHRfYWN0dWFsIjoiNjA3LzEwIiwidm9sX3BjdF9BIjoiNjc5LzEwIiwidm9sX3BjdF9CIjoiMjQ2LzUiLCJ3dF9wY3RfQSI6IjgzMy8xMCIsInd0X3BjdF9CIjoiMTExLzIifSwiaW50ZXJuYWxfY29uc2lzdGVuY3lfZ2F0ZXMiOnsiZGVsdGEiOjAuMDUxMSwiZGVuc2l0eV9kZWx0YSI6MC4wMDMsImRlcml2ZWRfbWl4X2RlbnNpdHlfZ19wZXJfbUwiOjEuNDEzLCJtaXhfcmF0aW9fYnlfdm9sdW1lX3B1Ymxpc2hlZCI6Mi4wLCJtaXhfcmF0aW9fYnlfdm9sdW1lX3JlY29tcHV0ZWQiOjIuMDM5NywibWl4X3JhdGlvX2J5X3dlaWdodF9wdWJsaXNoZWQiOjMuNSwibWl4X3JhdGlvX2J5X3dlaWdodF9yZWNvbXB1dGVkIjozLjUyMTEsInBhc3Nlc19zYW5pdHlfZ2F0ZV9hYnNfbHRfMF8xcHAiOnRydWUsInB1Ymxpc2hlZF9taXhfZGVuc2l0eV9nX3Blcl9tTCI6MS40MSwicHVibGlzaGVkX21peF93dF9wY3Rfc29saWRzIjo3Ny4xLCJyZWNvbXB1dGVkX21peF93dF9wY3Rfc29saWRzIjo3Ny4xNTExfSwiaW52YWxpZF9tYXNzX2ZyYWN0aW9uX3BjdCI6eyJleGFjdCI6IjEwMjM0MS8xNjA1Iiwicm91bmRlZF80ZHAiOjYzLjc2Mzl9LCJzb2xpZHNfdm9sX21MIjp7ImFwcHJveCI6NTYxLjEwNjUsImV4YWN0IjoiMTA5Mjc1NDkvMTk0NzUifSwidGRzX3BkZl9zaGEyNTYiOiI3Yjk1Y2Q2MzBjZjM5MmM4N2ZiZDg1MmFmZWEwZTZkNzc1OTFkY2RiMGQ2MmY2MzkwZTVjNDZiYTdkMDYxYWJlIiwidG90YWxfdm9sX21MIjp7ImFwcHJveCI6OTA4LjcwMzUsImV4YWN0IjoiNzA3ODgwLzc3OSJ9LCJ2b2xfQV9tTCI6eyJhcHByb3giOjYwOS43NTYxLCJleGFjdCI6IjI1MDAwLzQxIn0sInZvbF9CX21MIjp7ImFwcHJveCI6Mjk4Ljk0NzQsImV4YWN0IjoiNTY4MC8xOSJ9fX0sImZsaXBzX3NjaWVudGlmaWNfcmVhZGluZXNzIjpmYWxzZSwiZ2VuZXJhdGVkX29uX2hvc3QiOiJ4YmFiZTIiLCJtZXRob2Rfc3RhdGVtZW50IjoiRm9yIGV2ZXJ5IGNvbnRyb2wgaW4gY29udHJvbF9ieV9jb250cm9sX3JlY2VpcHQudjEuanNvbiBjYXJyeWluZyBhIHZvbHVtZS1zb2xpZHMgc2VtYW50aWMsIHRoZSBtaXggdm9sdW1lLXNvbGlkcyAlIHdhcyByZWNvbXB1dGVkIEJPVEggd2F5cyB3aXRoIGV4YWN0IHJhdGlvbmFsIGFyaXRobWV0aWMgKGZyYWN0aW9ucy5GcmFjdGlvbiwgZmxvYXRzIG9ubHkgYXQgZmluYWwgNGRwIHJvdW5kaW5nKTogKDEpIENPUlJFQ1Qgdm9sdW1lLXdlaWdodGVkOiB0b3RhbCBzb2xpZHMgdm9sdW1lIC8gdG90YWwgbWl4IHZvbHVtZSAqIDEwMCwgY29tcG9uZW50IHZvbHVtZSA9IG1hc3MvZGVuc2l0eSAtIHRoZSBvbmx5IHZhbGlkIHdheSB0byBjb21iaW5lIHZvbHVtZS1iYXNpcyBwZXJjZW50YWdlcyBvZiBjb21wb25lbnRzIHdpdGggZGlmZmVyZW50IGRlbnNpdGllczsgKDIpIElOVkFMSUQgbWFzcy1mcmFjdGlvbi13ZWlnaHRlZDogc3VtKG1hc3NfZnJhY3Rpb25faSAqIHZvbF9wY3RfaSkgLSB2YWxpZCBvbmx5IGlmIGFsbCBkZW5zaXRpZXMgYXJlIGVxdWFsIChmYWxzZSBpbiBib3RoIGNvbnRyb2xzOiAxLjUxIHZzIDAuOTIgYW5kIDEuNjQgdnMgMC45NSBnL21MKS4gQSBjb250cm9sIGlzIGZsYWdnZWQgYXMgY29uZmxhdGVkIHdoZW4gaXRzIHJlY2VpcHQgJ2FjdHVhbCcgbGllcyB3aXRoaW4gMC4ycHAgb2YgbWV0aG9kICgyKSBidXQgbm90IG1ldGhvZCAoMSkgLSB0aGUgc2FtZSAnY2xvc2VseSByZXByb2R1Y2VzJyBiYW5kIHRoZSByZWZ1dGluZyByZWNlaXB0IHVzZWQuIiwibW9kaWZpZXNfZXhpc3RpbmdfcmVjZWlwdHMiOmZhbHNlLCJtb2RpZmllc19tYW5pZmVzdCI6ZmFsc2UsIm1vZHVsZSI6ImFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MiLCJwcm9tb3Rlc19hdXRob3JpdHkiOmZhbHNlLCJyZWF0dGFja19vYnNlcnZlZF9yZXN1bHRzIjp7ImFic19nYXBfY29ycmVjdGVkX3ZzX2ludmFsaWRfcHAiOjEuMTY2OCwiY2hlY2tfcmVydW4iOiJmYWxzaWZpY2F0aW9uIGNyaXRlcmlvbiBvZiBldmlkZW5jZS9hdWRpdC9hcml0aC12b2x1bWUtc29saWRzLW1hc3MtYmFzaXMtY29uZmxhdGlvbi12MSByZWNlaXB0LnYxLmRzc2UuanNvbiwgYXBwbGllZCB0byB0aGUgY29ycmVjdGVkIHZhbHVlIiwiY29ycmVjdF9tZXRob2RfcmVwcm9kdWNlc19wdWJsaXNoZWRfNDJfNV93aXRoaW5fMF8ycHAiOnRydWUsImNvcnJlY3RlZF9hMjIxX2VxdWFsc19yZWZ1dGluZ19yZWNvbXB1dGVfdG9fNGRwIjp0cnVlLCJjb3JyZWN0ZWRfYWN0dWFsX25vdF9yZXByb2R1Y2libGVfYnlfaW52YWxpZF9tZXRob2QiOnRydWUsImludGVybmFsX2NvbnNpc3RlbmN5X2dhdGVfcmVwbGljYXRlZCI6eyJkZWx0YSI6MC4wMTY3LCJwYXNzZXNfYWJzX2x0XzBfMXBwIjp0cnVlLCJwdWJsaXNoZWQiOjY0LjUsInJlY29tcHV0ZWRfbWl4X3d0X3BjdF9zb2xpZHMiOjY0LjUxNjd9LCJpbnZhbGlkX21ldGhvZF9zdGlsbF9yZXByb2R1Y2VzX29sZF9hY3R1YWxfNDNfN193aXRoaW5fMF8ycHAiOnRydWUsInN3ZWVwX2NvdmVyc19ldmVyeV92b2x1bWVfc29saWRzX2NvbnRyb2wiOnRydWUsInZvbHVtZV9zb2xpZHNfY29udHJvbHNfc3dlcHQiOjIsInZvbHVtZV9zb2xpZHNfY29udHJvbHNfdG90YWwiOjJ9LCJyZWZ1dGVkX2J5Ijp7InJlY2VpcHQiOiJhbXBob3JhLWtub3duLWFuc3dlci1iZW5jaG1hcmtzL2V2aWRlbmNlL2F1ZGl0L2FyaXRoLXZvbHVtZS1zb2xpZHMtbWFzcy1iYXNpcy1jb25mbGF0aW9uLXYxL3JlY2VpcHQudjEuZHNzZS5qc29uIiwicmVjZWlwdF9zaGEyNTYiOiI4NmZkZTI2NGVhNjdjY2VkODkzNTdjOWFhMDg2NDAzZTkwZTY5M2E4NWNlNDViYjE0YTE3ZWUwYTY1NzhhMmVlIiwicmVwb3J0X3NoYTI1NiI6IjFiYjI2YjE2ZTFkNGRkYzE3YTFjNjFkODJiMDUxN2QzZjcwZmNjNTE1OTlhN2U3YTJlMjQwOTY2NTFlZmFlOWMiLCJ2ZXJpZmllcl9zaGEyNTYiOiJhOGQ0NGZlM2QxYWZhNmUwY2U0NTFlMjU2ZjMzNmE4NDRiMjE4Yjk4Y2JjNzI2NTI2NmExMGEyODc5NzAxYjVkIn0sInJlcGFpcl9hcnRpZmFjdHMiOnsicmVwYWlyX3NjcmlwdF9wYXRoIjoiYW1waG9yYS1rbm93bi1hbnN3ZXItYmVuY2htYXJrcy9ldmlkZW5jZS9waGFzZTAvcmVwYWlycy9SLUEwNS93b3JrL3JfYTA1X3JlcGFpci5weSIsInJldHJhY3Rpb25faW5kZXhfcGF0aCI6ImFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MvZXZpZGVuY2UvcGhhc2UwL2twaXMvUkVUUkFDVElPTi1JTkRFWC5tZCIsInN3ZWVwX3JlcG9ydF9wYXRoIjoiYW1waG9yYS1rbm93bi1hbnN3ZXItYmVuY2htYXJrcy9ldmlkZW5jZS9waGFzZTAvcmVwYWlycy9SLUEwNS93b3JrL1ItQTA1LXZvbHVtZS1zb2xpZHMtc3dlZXAudjEuanNvbiIsInN3ZWVwX3JlcG9ydF9zaGEyNTYiOiIxMmY0ODYxODA3OTE1NzlmMWU4NjU3MTcyMjQ4MTMwOWI4OTQ3ZWQxZGFmYjFkMDFhNWM4ZGMzM2Y0NTBjNWNhIiwidGRzX3BkZl9wYXRoIjoiYW1waG9yYS1rbm93bi1hbnN3ZXItYmVuY2htYXJrcy9ldmlkZW5jZS9waGFzZTAvcmVwYWlycy9SLUEwNS93b3JrL2E3MDJiNzVfdXNfdGRzLnBkZiIsInRkc19wZGZfc2hhMjU2IjoiN2I5NWNkNjMwY2YzOTJjODdmYmQ4NTJhZmVhMGU2ZDc3NTkxZGNkYjBkNjJmNjM5MGU1YzQ2YmE3ZDA2MWFiZSJ9LCJyZXBhaXJfaXRlbSI6IlItQTA1IiwicmVwYWlyX21vZGUiOiJpbnRlcmFjdGl2ZS0yMDI2LTA4LTAzIiwic2NoZW1hIjoiYW1waG9yYS5waGFzZTAtcmVwYWlyLmRvbmUtcmVjZWlwdC52MSIsInNpZ25pbmdfa2V5Ijp7ImRlcml2ZXNfcGlubmVkX3RydXN0X3N0b3JlX2tleV9pZCI6dHJ1ZSwia2V5X2lkIjoicGhhc2UwLWV2YWx1YXRvci0zZWY2YjM1Y2RiYmZlYTc0YTk2YTVjOWI5OGE1MTVkNTcxNThhMDllY2FmZjEwYWNmYTFmMTU5OTBiZTAwMTc4IiwicHVibGljX2tleV9oZXgiOiI2Y2YwN2FiZjFhNTVhZGFhYzEzZTc4YWJjMzFjNTMxZDAzZDhmMGQ0MjMyMzQ2MzQ0YTczNjQxOGM3YjQ1NjY0Iiwicm9sZSI6IlBIQVNFMF9FVkFMVUFUT1IifSwic291cmNlX2RvY3VtZW50cyI6eyJhMjIxX3RkcyI6eyJ0aXRsZSI6IkV2b25payBBbmNhbWlkZSAyMjEgRU1FQSBURFMgKHZhbHVlcyBhcyB0cmFuc2NyaWJlZCBieSB0aGUgcmVmdXRpbmcgcmVjZWlwdCkiLCJ1cmwiOiJodHRwczovL3Byb2R1Y3RzLmV2b25pay5jb20vYXNzZXRzL2VtL2VhL0FuY2FtaWRlXzIyMV9FTUVBX1REU19FTl9FTl9URFNfUFZfNTIwNDEzMjRfZW5fR0JfRU1FQS5wZGYifSwiYTcwMmI3NV90ZHMiOnsiZmV0Y2hlZCI6IjIwMjYtMDgtMDMiLCJmb290ZXJfc3RhbXAiOiJFdm9uaWsgT3BlcmF0aW9ucyB8IEFuY2FtaWRlIDcwMkI3NSB1cyB8IDMvMjYvMjAyNiIsInBkZl9zaGEyNTYiOiI3Yjk1Y2Q2MzBjZjM5MmM4N2ZiZDg1MmFmZWEwZTZkNzc1OTFkY2RiMGQ2MmY2MzkwZTVjNDZiYTdkMDYxYWJlIiwidGl0bGUiOiJFdm9uaWsgQW5jYW1pZGUgNzAyQjc1IFVTIFREUywgQTcwMkI3NVAxIEFwcGVuZGl4IEkgZm9ybXVsYXRpb24gKyBUZWNobmljYWwgRGF0YSIsInVybCI6Imh0dHBzOi8vcHJvZHVjdHMuZXZvbmlrLmNvbS9hc3NldHMvc18vdXMvQW5jYW1pZGVfNzAyQjc1X3VzX1REU19FTl9FTl9URFNfUFZfNTIwNDIzMTJfZW5fVVNfVVMucGRmIn19LCJzdXBlcnNlZGVzIjp7InJlYXNvbiI6Ikl0cyBBUklUSC1BMjIxLVg3MFAxLVZPTFVNRS1TT0xJRFMgJ2FjdHVhbCcgKDQzLjcpIGlzIHJlZnV0ZWQgYnkgZXZpZGVuY2UvYXVkaXQvYXJpdGgtdm9sdW1lLXNvbGlkcy1tYXNzLWJhc2lzLWNvbmZsYXRpb24tdjE6IDQzLjcgaXMgcmVwcm9kdWNpYmxlIGZyb20gdGhlIGNpdGVkIEV2b25payBBbmNhbWlkZSAyMjEgRU1FQSBURFMgb25seSB2aWEgaW52YWxpZCBtYXNzLWZyYWN0aW9uLXdlaWdodGVkIGF2ZXJhZ2luZyBvZiB2b2x1bWUtYmFzaXMgcGVyY2VudGFnZXMgKGludmFsaWQgYmVjYXVzZSBjb21wb25lbnQgZGVuc2l0aWVzIGRpZmZlciwgMS41MSB2cyAwLjkyIGcvbUwpOyB0aGUgY29ycmVjdCB2b2x1bWUtd2VpZ2h0ZWQgcmVjb21wdXRlIGdpdmVzIDQyLjQxNjUgKG1hdGNoZXMgdGhlIFREUydzIHB1Ymxpc2hlZCA0Mi41IHRvIDAuMDgzNXBwKS4gVkVSSUZJRURfUEFTUyBzdGF0dXNlcyBhbmQgdGhlIDYvNiBhcml0aG1ldGljIHBhc3MtcmF0ZSBhcmUgTk9UIHJldHJhY3RlZCAoYWxsIGRlbHRhcyBzdGF5IGluc2lkZSB0aGUgKy8tMi4wcHAgYmFuZCk7IHRoZSBzdXBlcnNlZGVkIGFydGlmYWN0IHJlbWFpbnMgYnl0ZS1pbnRhY3QuIiwic3VwZXJzZWRlZF9kZWxldGVkX29yX21vZGlmaWVkIjpmYWxzZSwic3VwZXJzZWRlZF9wYXRoIjoiYW1waG9yYS1rbm93bi1hbnN3ZXItYmVuY2htYXJrcy9yZWZlcmVuY2UvbXZwMjAvb3V0L2NvbnRyb2xfYnlfY29udHJvbF9yZWNlaXB0LnYxLmpzb24iLCJzdXBlcnNlZGVkX3NoYTI1NiI6ImJlNTM3YzA2YTNjYzMyNWI0ZWNkNmVlNzFiZDZlZDI4NGQ1NzA4ODNiYjJmMTIzZTdjOTY5ZDU3NGM2MGQzY2MifSwic3dlZXAiOnsiY292ZXJhZ2UiOiIyLzIgdm9sdW1lLXNvbGlkcyBjb250cm9scyBzd2VwdCBib3RoIHdheXM7IHJlbWFpbmluZyAxMi8xNCBjb250cm9scyBlbnVtZXJhdGVkIHdpdGggdGhlaXIgc2VtYW50aWMgKGRlbnNpdHkgb3IgZXhhY3Rfc3RhdHVzKSAtIG5vbmUgY2FycmllcyBhIHZvbHVtZS1zb2xpZHMgc2VtYW50aWMiLCJmbGFnZ2VkX2FzX21hc3NfYmFzaXNfY29uZmxhdGVkIjpbIkFSSVRILUEyMjEtWDcwUDEtVk9MVU1FLVNPTElEUyJdLCJub25fdm9sdW1lX3NvbGlkc19jb250cm9scyI6W3siY29udHJvbF9pZCI6IkFSSVRILUEyMjEtWDcwUDEtREVOU0lUWSIsInJlYXNvbiI6Im5vIHZvbHVtZS1zb2xpZHMgc2VtYW50aWMiLCJzZW1hbnRpYyI6ImRlbnNpdHkiLCJzd2VwdCI6ZmFsc2UsInZvbHVtZV9zb2xpZHNfc2VtYW50aWMiOmZhbHNlfSx7ImNvbnRyb2xfaWQiOiJBUklUSC1BNzAyQjc1UDEtREVOU0lUWSIsInJlYXNvbiI6Im5vIHZvbHVtZS1zb2xpZHMgc2VtYW50aWMiLCJzZW1hbnRpYyI6ImRlbnNpdHkiLCJzd2VwdCI6ZmFsc2UsInZvbHVtZV9zb2xpZHNfc2VtYW50aWMiOmZhbHNlfSx7ImNvbnRyb2xfaWQiOiJBUklUSC1NSUwtRjE2MC1DT01QT05FTlQtQS1ERU5TSVRZIiwicmVhc29uIjoibm8gdm9sdW1lLXNvbGlkcyBzZW1hbnRpYyIsInNlbWFudGljIjoiZGVuc2l0eSIsInN3ZXB0IjpmYWxzZSwidm9sdW1lX3NvbGlkc19zZW1hbnRpYyI6ZmFsc2V9LHsiY29udHJvbF9pZCI6IkFSSVRILU1JTC1GMTYwLUNPTVBPTkVOVC1CLURFTlNJVFkiLCJyZWFzb24iOiJubyB2b2x1bWUtc29saWRzIHNlbWFudGljIiwic2VtYW50aWMiOiJkZW5zaXR5Iiwic3dlcHQiOmZhbHNlLCJ2b2x1bWVfc29saWRzX3NlbWFudGljIjpmYWxzZX0seyJjb250cm9sX2lkIjoiRjE2MC1CTEFDSyIsInJlYXNvbiI6Im5vIHZvbHVtZS1zb2xpZHMgc2VtYW50aWMiLCJzZW1hbnRpYyI6ImV4YWN0X3N0YXR1cyIsInN3ZXB0IjpmYWxzZSwidm9sdW1lX3NvbGlkc19zZW1hbnRpYyI6ZmFsc2V9LHsiY29udHJvbF9pZCI6IkYxNjEtWUVMTE9XIiwicmVhc29uIjoibm8gdm9sdW1lLXNvbGlkcyBzZW1hbnRpYyIsInNlbWFudGljIjoiZXhhY3Rfc3RhdHVzIiwic3dlcHQiOmZhbHNlLCJ2b2x1bWVfc29saWRzX3NlbWFudGljIjpmYWxzZX0seyJjb250cm9sX2lkIjoiRVZPTklLLVNQRi1BNzAyQjc1UDEiLCJyZWFzb24iOiJubyB2b2x1bWUtc29saWRzIHNlbWFudGljIiwic2VtYW50aWMiOiJleGFjdF9zdGF0dXMiLCJzd2VwdCI6ZmFsc2UsInZvbHVtZV9zb2xpZHNfc2VtYW50aWMiOmZhbHNlfSx7ImNvbnRyb2xfaWQiOiJOQ1AtVFlQRS1JVi1BTkNIT1IiLCJyZWFzb24iOiJubyB2b2x1bWUtc29saWRzIHNlbWFudGljIiwic2VtYW50aWMiOiJleGFjdF9zdGF0dXMiLCJzd2VwdCI6ZmFsc2UsInZvbHVtZV9zb2xpZHNfc2VtYW50aWMiOmZhbHNlfSx7ImNvbnRyb2xfaWQiOiJJTlRMLUYxNTAtQU5DSE9SIiwicmVhc29uIjoibm8gdm9sdW1lLXNvbGlkcyBzZW1hbnRpYyIsInNlbWFudGljIjoiZXhhY3Rfc3RhdHVzIiwic3dlcHQiOmZhbHNlLCJ2b2x1bWVfc29saWRzX3NlbWFudGljIjpmYWxzZX0seyJjb250cm9sX2lkIjoiTkVHLUNPTlRST0wtMSIsInJlYXNvbiI6Im5vIHZvbHVtZS1zb2xpZHMgc2VtYW50aWMiLCJzZW1hbnRpYyI6ImV4YWN0X3N0YXR1cyIsInN3ZXB0IjpmYWxzZSwidm9sdW1lX3NvbGlkc19zZW1hbnRpYyI6ZmFsc2V9LHsiY29udHJvbF9pZCI6Ik5FRy1DT05UUk9MLTIiLCJyZWFzb24iOiJubyB2b2x1bWUtc29saWRzIHNlbWFudGljIiwic2VtYW50aWMiOiJleGFjdF9zdGF0dXMiLCJzd2VwdCI6ZmFsc2UsInZvbHVtZV9zb2xpZHNfc2VtYW50aWMiOmZhbHNlfSx7ImNvbnRyb2xfaWQiOiJORUctQ09OVFJPTC0zIiwicmVhc29uIjoibm8gdm9sdW1lLXNvbGlkcyBzZW1hbnRpYyIsInNlbWFudGljIjoiZXhhY3Rfc3RhdHVzIiwic3dlcHQiOmZhbHNlLCJ2b2x1bWVfc29saWRzX3NlbWFudGljIjpmYWxzZX1dLCJ2b2x1bWVfc29saWRzX2NvbnRyb2xzIjpbeyJhYnNfZGVsdGFfcmVjZWlwdF9hY3R1YWxfdnNfY29ycmVjdF9wcCI6MS4yODM1LCJhYnNfZGVsdGFfcmVjZWlwdF9hY3R1YWxfdnNfaW52YWxpZF9wcCI6MC4xMTY3LCJjb250cm9sX2lkIjoiQVJJVEgtQTIyMS1YNzBQMS1WT0xVTUUtU09MSURTIiwiY29ycmVjdF9yZXByb2R1Y2VzX3B1Ymxpc2hlZF93aXRoaW5fMF8zcHAiOnRydWUsImNvcnJlY3Rfdm9sdW1lX3dlaWdodGVkIjo0Mi40MTY1LCJpbnZhbGlkX21hc3NfZnJhY3Rpb25fd2VpZ2h0ZWQiOjQzLjU4MzMsInJlY2VpcHRfYWN0dWFsIjo0My43LCJyZWNlaXB0X2FjdHVhbF9tYXRjaGVzX2NvcnJlY3Rfd2l0aGluXzBfMnBwIjpmYWxzZSwicmVjZWlwdF9hY3R1YWxfbWF0Y2hlc19pbnZhbGlkX3dpdGhpbl8wXzJwcCI6dHJ1ZSwicmVjZWlwdF9leHBlY3RlZCI6NDIuNSwic2VtYW50aWMiOiJ2b2x1bWVfc29saWRzX3BjdCIsInZlcmRpY3QiOiJNQVNTX0JBU0lTX0NPTkZMQVRJT05fQ09ORklSTUVEIn0seyJhYnNfZGVsdGFfcmVjZWlwdF9hY3R1YWxfdnNfY29ycmVjdF9wcCI6MS4wNDgsImFic19kZWx0YV9yZWNlaXB0X2FjdHVhbF92c19pbnZhbGlkX3BwIjozLjA2MzksImNvbnRyb2xfaWQiOiJBUklUSC1BNzAyQjc1UDEtVk9MVU1FLVNPTElEUyIsImNvcnJlY3RfcmVwcm9kdWNlc19wdWJsaXNoZWRfd2l0aGluXzBfM3BwIjp0cnVlLCJjb3JyZWN0X3ZvbHVtZV93ZWlnaHRlZCI6NjEuNzQ4LCJpbnZhbGlkX21hc3NfZnJhY3Rpb25fd2VpZ2h0ZWQiOjYzLjc2MzksInJlY2VpcHRfYWN0dWFsIjo2MC43LCJyZWNlaXB0X2FjdHVhbF9tYXRjaGVzX2NvcnJlY3Rfd2l0aGluXzBfMnBwIjpmYWxzZSwicmVjZWlwdF9hY3R1YWxfbWF0Y2hlc19pbnZhbGlkX3dpdGhpbl8wXzJwcCI6ZmFsc2UsInJlY2VpcHRfZXhwZWN0ZWQiOjYyLjAsInNlbWFudGljIjoidm9sdW1lX3NvbGlkc19wY3QiLCJ2ZXJkaWN0IjoiTk9UX01BU1NfQkFTSVNfQ09ORkxBVEVEIn1dfSwidHJ1c3RfYW5jaG9yZWRfaW5fcGhhc2UwX3N0b3JlIjp0cnVlLCJ0d29fcmVwbGF5X3NoYTI1NiI6ImRhZmZkOWEzNjk2OWU1M2I3ZTE3NGRmNWFkZGQyNmQ4YjdmNmY3NTk4NTY4MDk1NzI5YzJiN2QwOTI4NTkzMmQiLCJ0d29fcmVwbGF5X3NoYTI1Nl9nYXRlIjoiUEFTUyJ9",
+    "payloadType": "application/vnd.amphora.phase0-repair.done-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "7425Fn1cSyRl9BhF3BqR2Nwd3QXfMc3gqRDuGVaCN6hmOId9QeNYrRzwTsoTu3ueQKD0j/d2fJvcfkASMriICA=="
+      }
+    ]
+  }
+}

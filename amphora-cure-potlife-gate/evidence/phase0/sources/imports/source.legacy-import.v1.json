@@ -1,0 +1,59 @@
+{
+  "schema": "amphora.module-source-census.v1",
+  "module_id": "amphora-cure-potlife-gate",
+  "frozen_on": "2026-07-17",
+  "endpoint_policy": [
+    "GEL_TIME",
+    "POT_LIFE",
+    "DRY_HARD_TIME",
+    "THROUGH_CURE_TIME",
+    "DSC_CONVERSION"
+  ],
+  "sources": [
+    {
+      "source_id": "evonik_epoxy_curing_agent_guide",
+      "publisher": "Evonik",
+      "source_url": "https://products.evonik.com/assets/10/33/TubeMap_ECA_for_2K_Adhesive_Application_EN_Asset_2221033.pdf",
+      "acquisition_status": "CENSUSED_FROM_EXISTING_REFERENCE",
+      "local_manifest": "amphora-cure-potlife-gate/reference/mvp20/data/cure_verification_set.json",
+      "local_manifest_sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "license": "Vendor publication; no explicit derivative-use permission is checked in",
+      "rights_status": "QUARANTINED",
+      "eligible_for_derivatives": false,
+      "restrictions": ["Do not train or benchmark until derivative-use eligibility is established"],
+      "reported_rows": 25,
+      "reported_rows_with_phr": 16,
+      "chemistry_complete_rows": 0
+    },
+    {
+      "source_id": "huntsman_versamid_eh_50",
+      "publisher": "Huntsman",
+      "source_url": "https://products.huntsman.com/products/versamid-eh-50-w3zzvmsz",
+      "acquisition_status": "CENSUS_ONLY",
+      "local_manifest": null,
+      "local_manifest_sha256": null,
+      "license": "Vendor publication; no explicit derivative-use permission is checked in",
+      "rights_status": "QUARANTINED",
+      "eligible_for_derivatives": false,
+      "restrictions": ["Do not train or benchmark until derivative-use eligibility is established"],
+      "reported_rows": 0,
+      "reported_rows_with_phr": 0,
+      "chemistry_complete_rows": 0
+    },
+    {
+      "source_id": "cardolite_epoxy_curing_agents",
+      "publisher": "Cardolite",
+      "source_url": "https://www-new.cardolite.com/epoxy-curing-agents/",
+      "acquisition_status": "CENSUS_ONLY",
+      "local_manifest": null,
+      "local_manifest_sha256": null,
+      "license": "Vendor publication; no explicit derivative-use permission is checked in",
+      "rights_status": "QUARANTINED",
+      "eligible_for_derivatives": false,
+      "restrictions": ["Do not train or benchmark until derivative-use eligibility is established"],
+      "reported_rows": 0,
+      "reported_rows_with_phr": 0,
+      "chemistry_complete_rows": 0
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "any_direction_significantly_undercovers_at_0.05": true,
+  "attacks_claim": {
+    "attack_type": "distribution-shift (covariate shift between calibration and test sets, induced by environment-domain partition instead of the receipt's material-bucket-parity partition of the SAME held-out rows)",
+    "refutation_criterion": "Observed test coverage significantly below (one-sided exact binomial test, alpha=0.05) the receipt's stated 0.90 or 0.80 target in either calibration/deployment direction.",
+    "target_receipt": "corr-rate-conformal-v1/corr-rate-conformal-receipt.v1.dsse.json",
+    "target_statement": "Group-safe (leave-material-out) split conformal delivers distribution-free marginal coverage at the 0.90 and 0.80 targets on the rights-clean NIST CORR-DATA corrosion-rate model.",
+    "theoretical_basis": "Tibshirani, Barber, Candes, Ramdas 2019 NeurIPS 'Conformal Prediction Under Covariate Shift': split-conformal marginal coverage requires cal/test exchangeability and is NOT robust to covariate shift without likelihood-ratio reweighting."
+  },
+  "authority": "AUDIT_ONLY",
+  "benchmark": "corr-rate-conformal-domain-shift-v1",
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "license": "NIST public data",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "binomial_test": "exact log-space stdlib implementation (no scipy dependency)",
+    "float_round_decimals": 6,
+    "no_timestamp": true,
+    "omp_num_threads": "1",
+    "seed": 0,
+    "sklearn_histgbm_early_stopping": false
+  },
+  "fail_closed_checks": {
+    "all_pass": true,
+    "forward_cal_all_nonmarine": true,
+    "forward_cal_test_row_disjoint": true,
+    "forward_test_all_marine": true,
+    "reverse_cal_all_marine": true,
+    "reverse_cal_test_row_disjoint": true,
+    "reverse_test_all_nonmarine": true,
+    "train_disjoint_from_all_heldout": true
+  },
+  "forward_calibrate_nonmarine_deploy_marine": {
+    "base_model_test_r2": 0.334259,
+    "base_model_test_rmse_log10": 1.131188,
+    "coverage": {
+      "alpha_0.10": {
+        "binomial_pvalue_coverage_less_than_target": 0.994368,
+        "conformal_quantile_log10": 1.886153,
+        "mean_interval_width_log10": 3.772306,
+        "meets_target": true,
+        "n_covered": 962,
+        "n_test": 1043,
+        "observed_test_coverage": 0.922339,
+        "significantly_undercovers_at_0.05": false,
+        "target_coverage": 0.9
+      },
+      "alpha_0.20": {
+        "binomial_pvalue_coverage_less_than_target": 0.141207,
+        "conformal_quantile_log10": 1.390879,
+        "mean_interval_width_log10": 2.781759,
+        "meets_target": false,
+        "n_covered": 820,
+        "n_test": 1043,
+        "observed_test_coverage": 0.786194,
+        "significantly_undercovers_at_0.05": false,
+        "target_coverage": 0.8
+      }
+    },
+    "direction": "calibrate_nonmarine_deploy_marine",
+    "n_cal": 2773,
+    "n_test": 1043
+  },
+  "module": "amphora-barrier-corrosion-score",
+  "promotes_authority": false,
+  "reverse_calibrate_marine_deploy_nonmarine": {
+    "base_model_test_r2": 0.166742,
+    "base_model_test_rmse_log10": 1.114373,
+    "coverage": {
+      "alpha_0.10": {
+        "binomial_pvalue_coverage_less_than_target": 3.1e-05,
+        "conformal_quantile_log10": 1.720094,
+        "mean_interval_width_log10": 3.440187,
+        "meets_target": false,
+        "n_covered": 2430,
+        "n_test": 2773,
+        "observed_test_coverage": 0.876307,
+        "significantly_undercovers_at_0.05": true,
+        "target_coverage": 0.9
+      },
+      "alpha_0.20": {
+        "binomial_pvalue_coverage_less_than_target": 0.853077,
+        "conformal_quantile_log10": 1.42339,
+        "mean_interval_width_log10": 2.846781,
+        "meets_target": true,
+        "n_covered": 2240,
+        "n_test": 2773,
+        "observed_test_coverage": 0.807789,
+        "significantly_undercovers_at_0.05": false,
+        "target_coverage": 0.8
+      }
+    },
+    "direction": "calibrate_marine_deploy_nonmarine",
+    "n_cal": 1043,
+    "n_test": 2773
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-conformal-domain-shift.v1",
+  "scope_honesty": "Bare-metal/alloy substrate corrosion (same ceiling as corr-rate-qspr-v1 / corr-rate-conformal-v1). AUDIT_ONLY: does not flip scientific_readiness, does not modify the manifest (66/11 untouched), grants no coating-barrier ranking authority.",
+  "shared_train_split": {
+    "n_heldout_marine_rows": 1043,
+    "n_heldout_nonmarine_rows": 2773,
+    "n_heldout_rows": 3816,
+    "n_train_materials": 366,
+    "n_train_rows": 3883,
+    "note": "train materials IDENTICAL to corr-rate-conformal-v1 group_split (bucket 2,3,4); only cal/test ASSIGNMENT of the held-out rows (buckets 0+1) is changed, from material-bucket parity to environment domain (marine/chloride vs not)."
+  },
+  "verdict": {
+    "finding": "The corr-rate-conformal-v1 'distribution-free marginal coverage' claim does NOT survive a realistic environment-domain cal/test partition of the SAME held-out rows: at least one direction (calibrate-on-one-environment-regime, deploy-on-the-other) shows observed coverage significantly below the receipt's stated target (one-sided binomial p<0.05). The prior receipt's Mondrian marine stratification used cal and test marine subsets drawn from the SAME material-bucket partition (approximately exchangeable by construction) and so never exercised this failure mode.",
+    "outcome": "CLAIM_REFUTED"
+  }
+}

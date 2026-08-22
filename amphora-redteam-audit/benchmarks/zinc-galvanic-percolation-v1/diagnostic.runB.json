@@ -1,0 +1,212 @@
+{
+  "also_feeds": [
+    "amphora-formulation-arithmetic",
+    "amphora-design-rule-score",
+    "amphora-cpvc-pigment-formulation (companion CPVC axis)"
+  ],
+  "authority": "AUDIT_ONLY",
+  "benchmark": "amphora-redteam-audit/zinc-galvanic-percolation-v1",
+  "does_not_close": [
+    "does NOT promote amphora-barrier-corrosion-score to VALIDATED scientific_readiness (phase-0 is a governance state; 0/29 modules scientific_readiness==VALIDATED; needs two trust-anchored phase0 signatures this AUDIT_ONLY key cannot supply)",
+    "does NOT change the manifest (still 66 receipts / 11 modules)",
+    "does NOT modify the shipped Rust engine or any of the 66 signed receipts"
+  ],
+  "engine_output": {
+    "candidate_ladder": [
+      {
+        "areal_sacrificial_capacity_Ah_per_m2": 88.397,
+        "areal_zinc_mass_kg_per_m2": 0.1078,
+        "candidate": "below_percolation_60wt",
+        "dft_um": 75.0,
+        "galvanic_driving_force_V": 0.3148,
+        "percolation_threshold_vol_fraction": 0.2895,
+        "protection_mode": "BARRIER_ONLY_below_percolation",
+        "sacrificially_active": false,
+        "zinc_vol_fraction": 0.2013,
+        "zinc_wt_pct": 60.0
+      },
+      {
+        "areal_sacrificial_capacity_Ah_per_m2": 176.498,
+        "areal_zinc_mass_kg_per_m2": 0.2153,
+        "candidate": "marine_spec_min_80wt",
+        "dft_um": 75.0,
+        "galvanic_driving_force_V": 0.3148,
+        "percolation_threshold_vol_fraction": 0.2895,
+        "protection_mode": "SACRIFICIAL_GALVANIC",
+        "sacrificially_active": true,
+        "zinc_vol_fraction": 0.402,
+        "zinc_wt_pct": 80.0
+      },
+      {
+        "areal_sacrificial_capacity_Ah_per_m2": 289.338,
+        "areal_zinc_mass_kg_per_m2": 0.3529,
+        "candidate": "marine_spec_high_92wt",
+        "dft_um": 75.0,
+        "galvanic_driving_force_V": 0.3148,
+        "percolation_threshold_vol_fraction": 0.2895,
+        "protection_mode": "SACRIFICIAL_GALVANIC",
+        "sacrificially_active": true,
+        "zinc_vol_fraction": 0.659,
+        "zinc_wt_pct": 92.0
+      }
+    ],
+    "galvanic_driving_force_V": 0.3148,
+    "percolation_threshold_vol_fraction": 0.2895,
+    "percolation_threshold_wt_pct_binder1p20": 70.8,
+    "zinc_theoretical_capacity_Ah_per_kg": 819.868
+  },
+  "fitted_parameters": "NONE (zero free parameters; all values are tabulated physical constants or flagged REFERENCE_NOMINAL best-practice anchors)",
+  "honest_limitations": [
+    "Overlapping-sphere phi_c=0.2895 (=> ~70.8 wt% Zn) is a LOWER BOUND for spherical zinc DUST; real marine specs load 80-92 wt% for network redundancy, galvanic throwing power, and eventual Zn-corrosion-product barrier. The model gives the physical floor, not the operating point.",
+    "Zinc FLAKE / lamellar zinc percolates at LOWER loading (higher aspect ratio) -- same aspect-ratio physics as the flake-tortuosity barrier axis; not captured by the equal-sphere estimate.",
+    "Practical galvanic-series potentials are REFERENCE_NOMINAL; real free/polarized potentials shift with pH, oxygen, temperature and polarization (throwing power). Only the thermodynamic FEASIBILITY & ordering are defended.",
+    "No measured EIS / galvanic-current or accelerated-immersion data was used; field service-life is NOT claimed (that requires measured data => blocked)."
+  ],
+  "known_answer_battery": {
+    "all_pass": true,
+    "tier_a_exact_identities": [
+      {
+        "id": "galvanic_driving_force_exact_and_positive",
+        "pass": true,
+        "residual_vs_arithmetic": 0.0,
+        "sign_positive_zinc_protects_iron": true,
+        "tol": 1e-12,
+        "value_V": 0.3148
+      },
+      {
+        "id": "nernst_emf_equals_dE0_at_Q_unity",
+        "pass": true,
+        "residual": 0.0,
+        "tol": 1e-12
+      },
+      {
+        "id": "nernst_log_antisymmetry",
+        "pass": true,
+        "residual": 0.0,
+        "tol": 1e-12
+      },
+      {
+        "capacity_Ah_kg": 819.867885,
+        "id": "faraday_capacity_recovers_electron_count_z2",
+        "pass": true,
+        "residual_vs_2": 0.0,
+        "tol": 1e-12,
+        "z_recovered": 2.0
+      },
+      {
+        "id": "percolation_phi_c_identity",
+        "pass": true,
+        "phi_c": 0.289509711,
+        "residual_vs_definition": 0.0,
+        "tol": 1e-12
+      },
+      {
+        "id": "wt_vol_fraction_inverse_roundtrip",
+        "max_abs_residual": 0.0,
+        "pass": true,
+        "tol": 1e-12
+      }
+    ],
+    "tier_a_pass": 6,
+    "tier_a_total": 6,
+    "tier_b_consistency_anchors": [
+      {
+        "E_criterion_V": -0.8,
+        "E_steel_free_V": -0.61,
+        "E_zinc_V": -1.03,
+        "id": "cathodic_protection_potential_window",
+        "overpotential_headroom_V": 0.23,
+        "pass": true
+      },
+      {
+        "id": "galvanic_series_ordering_Zn_Fe_Cu",
+        "pass": true,
+        "potentials_V": [
+          -1.03,
+          -0.61,
+          -0.36
+        ]
+      },
+      {
+        "gap_to_spec_min_wt_pct": 9.2,
+        "id": "percolation_wt_pct_is_lower_bound_of_spec_window",
+        "interpretation": "bare-percolation is a physical LOWER BOUND; marine specs load ABOVE it for network redundancy + galvanic throwing power + eventual Zn-corrosion-product barrier.",
+        "pass": true,
+        "predicted_below_spec_min": true,
+        "predicted_percolation_wt_pct": 70.8,
+        "spec_window_wt_pct": [
+          80.0,
+          92.0
+        ]
+      },
+      {
+        "cited_Ah_kg": 820.0,
+        "computed_Ah_kg": 819.8679,
+        "id": "zinc_capacity_matches_cited_820_Ah_kg",
+        "pass": true,
+        "rel_err_pct": 0.0161,
+        "tol_pct": 0.1
+      },
+      {
+        "id": "percolation_wt_pct_density_sensitivity_is_damped",
+        "pass": true,
+        "rel_binder_density_change_pct": 7.917,
+        "rel_threshold_shift_pct": 2.366,
+        "sensitivity_ratio": 0.299,
+        "shift_pt": 1.68,
+        "wt_pct_binder_1p105": 72.47,
+        "wt_pct_binder_1p20": 70.8
+      }
+    ],
+    "tier_b_pass": 5,
+    "tier_b_total": 5,
+    "total": 11,
+    "total_pass": 11
+  },
+  "new_axis_justification": "grep of all 66 signed receipts + 30 prior AUDIT axes for zinc|galvanic|percolation|cathodic|sacrificial|electrochem|potential => ZERO hits. Every prior axis models the BARRIER mechanism (transport/FFV/tortuosity/permeance/uptake/adhesion/Tg/cure/CTE/formulation). Zinc-rich primer sacrificial protection is the single largest missing marine anti-corrosion mechanism (SSPC-Paint 20, ISO 12944-5 the dominant marine primer class).",
+  "non_circularity": "The exact identities (Tier A) use ONLY tabulated physical constants; none is fitted to, or derived from, any coating performance measurement. The percolation threshold is a pure geometric invariant, independent of the galvanic thermodynamics. The marine spec window is used ONLY as an external direction check (predicted bound < spec min), never as a fit target.",
+  "real_input_data": {
+    "note": "Primary inputs are public-domain physical constants and published marine standards; no proprietary or rights-restricted dataset is used.",
+    "physical_constants": {
+      "E0_Fe2+_Fe_V": -0.447,
+      "E0_Zn2+_Zn_V": -0.7618,
+      "M_Zn_g_per_mol": 65.38,
+      "eta_c_continuum_percolation": 0.3418,
+      "faraday_C_per_mol": 96485.33212,
+      "gas_constant_J_per_mol_K": 8.314462618,
+      "rho_Zn_g_per_cm3": 7.14
+    },
+    "sources": [
+      "CRC Handbook of Chemistry and Physics, 97th ed. (standard electrode potentials)",
+      "CODATA 2018 (Faraday, gas constant)",
+      "IUPAC 2021 standard atomic weights (Zn 65.38)",
+      "Rintoul & Torquato, J. Phys. A 30 (1997) L585 (eta_c=0.3418 overlapping-sphere percolation)",
+      "SSPC-Paint 20 / ISO 12944-5 / NACE SP0169 & ISO 15589-1 (marine best practice, REFERENCE_NOMINAL)"
+    ]
+  },
+  "reference_nominal_constants": {
+    "copper_free_potential_seawater_V_AgAgCl": -0.36,
+    "cured_epoxy_binder_density_g_cm3": 1.2,
+    "in_tree_measured_cured_density_g_cm3": 1.105,
+    "note": "REFERENCE_NOMINAL public marine engineering / best-practice values. They set the CONSISTENCY / magnitude scale only; the Tier-A EXACT identities (driving force, Nernst limit, Faraday capacity, percolation identity, wt<->vol inverse) depend on tabulated physical constants alone and on NONE of these nominal values.",
+    "protection_criterion_V_AgAgCl": -0.8,
+    "sspc_paint20_practice_zinc_wt_pct_window": [
+      80.0,
+      92.0
+    ],
+    "steel_free_potential_seawater_V_AgAgCl": -0.61,
+    "zinc_free_potential_seawater_V_AgAgCl": -1.03,
+    "zinc_theoretical_capacity_cited_Ah_kg": 820.0
+  },
+  "target_capability": "Open the SACRIFICIAL (galvanic) marine protection mechanism -- zinc-rich epoxy primers -- orthogonal to every prior BARRIER-mechanism receipt. Decide (a) thermodynamic feasibility of Zn sacrificing to protect Fe, (b) whether a given zinc loading percolates into a sacrificially-active network vs remaining barrier-only, (c) areal sacrificial charge capacity.",
+  "target_module": "amphora-barrier-corrosion-score",
+  "theory": {
+    "cathodic_protection_criterion": "steel protected when polarized <= -0.80 V vs Ag/AgCl (NACE SP0169/ISO 15589)",
+    "continuum_percolation": "phi_c = 1 - exp(-eta_c), eta_c=0.3418 (Rintoul-Torquato 1997)",
+    "faraday_capacity": "C = zF/M_Zn => 820 Ah/kg theoretical zinc anode capacity",
+    "galvanic_driving_force": "dE0 = E0(Fe2+/Fe) - E0(Zn2+/Zn); >0 => Zn sacrifices",
+    "nernst": "E = dE0 - (RT/zF) ln Q ; E==dE0 at Q=1",
+    "wt_vol_identity": "w = rho_f*phi / (rho_f*phi + rho_b*(1-phi)), invertible"
+  },
+  "verdict": "ENGINE_READY__EXACT_ELECTROCHEMISTRY_VALIDATED__SACRIFICIAL_FEASIBILITY_AND_PERCOLATION_STATE_DEFENDED__PERCOLATION_MAGNITUDE_IS_LOWER_BOUND__FIELD_THROWING_POWER_AND_PSD_SHAPE_MEASUREMENT_BLOCKED"
+}

@@ -1,0 +1,522 @@
+{
+  "adequacy_vs_independent_identity": {
+    "agreement_rate": 1.0,
+    "confusion_tally": {
+      "hardener:network_former:expected_former": 11,
+      "hardener:non_network_former:expected_nonformer": 1,
+      "resin:network_former:expected_former": 6,
+      "resin:non_network_former:expected_nonformer": 6
+    },
+    "finding": "Flory gate reclassifies the 6 mono-epoxide 'resins' as non-network reactive diluents and the mono-primary-amine 'hardener' (benzylamine, g=2) as a non-crosslinking chain-extender -- distinctions the binary reactive-function rule from role-parsimony-conformal-v1 cannot make.",
+    "n_agree_with_independent_identity": 24,
+    "n_scored_single_role": 24
+  },
+  "anchor_cross_check": {
+    "dgeba_diamine_pc": 0.57735,
+    "expected_1_over_sqrt3": 0.57735,
+    "matches": true,
+    "portfolio_reference": "Flory gel point 0.577 (amphora-dibenedetto-vitrification-cure-bounds)"
+  },
+  "canonical_pair_gel_table": [
+    {
+      "branch_product": 3,
+      "f_epoxy": 2,
+      "g_amineH": 4,
+      "gel_conversion_pc": 0.57735,
+      "gels": true,
+      "hardener": "hardener-ipda",
+      "resin": "resin-dgeba"
+    },
+    {
+      "branch_product": 4,
+      "f_epoxy": 2,
+      "g_amineH": 5,
+      "gel_conversion_pc": 0.5,
+      "gels": true,
+      "hardener": "hardener-deta",
+      "resin": "resin-dgeba"
+    },
+    {
+      "branch_product": 1,
+      "f_epoxy": 2,
+      "g_amineH": 2,
+      "gel_conversion_pc": 1.0,
+      "gels": false,
+      "hardener": "hardener-benzylamine",
+      "resin": "resin-dgeba"
+    },
+    {
+      "branch_product": 6,
+      "f_epoxy": 3,
+      "g_amineH": 4,
+      "gel_conversion_pc": 0.408248,
+      "gels": true,
+      "hardener": "hardener-ipda",
+      "resin": "resin-tmp-triglycidyl"
+    },
+    {
+      "branch_product": 12,
+      "f_epoxy": 4,
+      "g_amineH": 5,
+      "gel_conversion_pc": 0.288675,
+      "gels": true,
+      "hardener": "hardener-deta",
+      "resin": "resin-tgddm"
+    },
+    {
+      "branch_product": 0,
+      "f_epoxy": 1,
+      "g_amineH": 4,
+      "gel_conversion_pc": null,
+      "gels": false,
+      "hardener": "hardener-ipda",
+      "resin": "resin-phenyl-glycidyl-ether"
+    },
+    {
+      "branch_product": 0,
+      "f_epoxy": 1,
+      "g_amineH": 5,
+      "gel_conversion_pc": null,
+      "gels": false,
+      "hardener": "hardener-deta",
+      "resin": "resin-butyl-glycidyl-ether"
+    }
+  ],
+  "claim_locks": {
+    "measured_only_lock_preserved": true,
+    "no_objective_emitted": true,
+    "promotes_authority": false
+  },
+  "closes": [],
+  "comparison_to_prior_baseline": {
+    "molecules_reclassified_vs_binary_rule": 7,
+    "prior": "role-parsimony-conformal-v1 (binary reactive-function classifier)",
+    "prior_can_distinguish_functionality": false,
+    "this_baseline_adds": "network-formation capacity (gelation) as an orthogonal zero-parameter physical axis"
+  },
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent)",
+    "PHASE_1_INDEPENDENT_EVALUATION (needs external double-labelled expert reference)",
+    "external_rights (fixture is self-authored CC0; not an external benchmark)",
+    "kinetic_gel_time (Flory gives thermodynamic gel-point conversion, not cure clock time)"
+  ],
+  "fail_closed": {
+    "abstain_record_ids": [
+      "ambiguous-glycidyl-amine",
+      "ambiguous-n-glycidyl-aniline",
+      "ambiguous-glycidyl-piperazine",
+      "ambiguous-2aminoethyl-glycidyl-ether",
+      "ambiguous-3aminopropyl-glycidyl-ether",
+      "ambiguous-hydroxyethyl-glycidyl-amine",
+      "ood-nbutane",
+      "ood-ethanol",
+      "ood-acetamide",
+      "ood-acetone",
+      "ood-cyclohexane",
+      "ood-toluene",
+      "commercial-dgeba-tds1",
+      "commercial-dgeba-tds2",
+      "commercial-dgeba-tds3"
+    ],
+    "all_non_single_role_abstained": true,
+    "n_abstain": 15,
+    "n_ambiguous_AB_self_reactive": 6,
+    "n_measured_product_only": 3,
+    "n_out_of_domain": 6
+  },
+  "fixture": {
+    "n_records": 39,
+    "path": "amphora-molecule-role-ranker/reference/phase0-role-known-answer.v1.json",
+    "rights": "CC0-1.0",
+    "sha256": "8ce4d54192a20e8de1bb89f6181b11630fc184b4dda2918ce934610630855c8f"
+  },
+  "functionality_rederivation": {
+    "agreement_rate": 1.0,
+    "matches_fixture": 39,
+    "mismatches": [],
+    "n": 39
+  },
+  "interpretation": "RDKit re-derives functionality for all 39 records in exact agreement with the fixture facts (100%), so the analysis is non-circular. The zero-parameter Flory-Stockmayer gate agrees with the independent compound-identity label on 24/24 single-role monomers: it correctly demotes the 6 mono-epoxide 'resins' to non-network reactive diluents and flags benzylamine (mono-primary amine, g=2) as a non-crosslinking chain-extender, both of which the prior binary reactive-function rule cannot distinguish. The canonical DGEBA+diamine gel conversion reproduces p_c=1/sqrt(3)=0.57735 matching the portfolio Flory gel point 0.577. All out-of-domain, ambiguous A-B self-reactive, and measured-product-only records fail closed (ABSTAIN). This ADDS a physical network-formation axis orthogonal to the binary role classifier; it does not overturn it. Validation only; no candidate, product, objective, or promotion claim.",
+  "model": {
+    "fitted_parameters": 0,
+    "gel_conversion_balanced": "p_c = 1/sqrt((f-1)*(g-1))",
+    "name": "Flory-Stockmayer A_f+B_g gelation criterion",
+    "network_reachable_iff": "(f-1)*(g-1) > 1",
+    "standard_partner_amine_g": 4,
+    "standard_partner_epoxy_f": 2
+  },
+  "network_adequacy_grades": [
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 2,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 0,
+      "independent_identity": "network_resin",
+      "record_id": "resin-dgeba"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 2,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 0,
+      "independent_identity": "network_resin",
+      "record_id": "resin-diglycidyl-resorcinol"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 2,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 0,
+      "independent_identity": "network_resin",
+      "record_id": "resin-egdge"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 2,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 0,
+      "independent_identity": "network_resin",
+      "record_id": "resin-bdgde"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 3,
+      "flory_branch_product": 6,
+      "flory_grade": "network_former",
+      "g": 0,
+      "independent_identity": "network_resin",
+      "record_id": "resin-tmp-triglycidyl"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 1,
+      "flory_branch_product": 0,
+      "flory_grade": "non_network_former",
+      "g": 0,
+      "independent_identity": "reactive_diluent",
+      "record_id": "resin-glycidol"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 1,
+      "flory_branch_product": 0,
+      "flory_grade": "non_network_former",
+      "g": 0,
+      "independent_identity": "reactive_diluent",
+      "record_id": "resin-phenyl-glycidyl-ether"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 1,
+      "flory_branch_product": 0,
+      "flory_grade": "non_network_former",
+      "g": 0,
+      "independent_identity": "reactive_diluent",
+      "record_id": "resin-butyl-glycidyl-ether"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 1,
+      "flory_branch_product": 0,
+      "flory_grade": "non_network_former",
+      "g": 0,
+      "independent_identity": "reactive_diluent",
+      "record_id": "resin-cyclohexene-oxide"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 1,
+      "flory_branch_product": 0,
+      "flory_grade": "non_network_former",
+      "g": 0,
+      "independent_identity": "reactive_diluent",
+      "record_id": "resin-styrene-oxide"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 1,
+      "flory_branch_product": 0,
+      "flory_grade": "non_network_former",
+      "g": 0,
+      "independent_identity": "reactive_diluent",
+      "record_id": "resin-epichlorohydrin"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "resin",
+      "f": 4,
+      "flory_branch_product": 9,
+      "flory_grade": "network_former",
+      "g": 0,
+      "independent_identity": "network_resin",
+      "record_id": "resin-tgddm"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 4,
+      "flory_grade": "network_former",
+      "g": 5,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-deta"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 5,
+      "flory_grade": "network_former",
+      "g": 6,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-teta"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 6,
+      "flory_grade": "network_former",
+      "g": 7,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-tepa"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 4,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-ipda"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 4,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-hmda"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 4,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-mxda"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 4,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-pacm"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 4,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-dach"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 4,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-mpda"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 1,
+      "flory_grade": "non_network_former",
+      "g": 2,
+      "independent_identity": "chain_extender",
+      "record_id": "hardener-benzylamine"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 3,
+      "flory_grade": "network_former",
+      "g": 4,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-eda"
+    },
+    {
+      "agrees_with_identity": true,
+      "class": "hardener",
+      "f": 0,
+      "flory_branch_product": 5,
+      "flory_grade": "network_former",
+      "g": 6,
+      "independent_identity": "network_hardener",
+      "record_id": "hardener-taea"
+    },
+    {
+      "class": "ambiguous",
+      "f": 1,
+      "flory_grade": "ABSTAIN",
+      "g": 2,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ambiguous-glycidyl-amine"
+    },
+    {
+      "class": "ambiguous",
+      "f": 1,
+      "flory_grade": "ABSTAIN",
+      "g": 1,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ambiguous-n-glycidyl-aniline"
+    },
+    {
+      "class": "ambiguous",
+      "f": 1,
+      "flory_grade": "ABSTAIN",
+      "g": 1,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ambiguous-glycidyl-piperazine"
+    },
+    {
+      "class": "ambiguous",
+      "f": 1,
+      "flory_grade": "ABSTAIN",
+      "g": 2,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ambiguous-2aminoethyl-glycidyl-ether"
+    },
+    {
+      "class": "ambiguous",
+      "f": 1,
+      "flory_grade": "ABSTAIN",
+      "g": 2,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ambiguous-3aminopropyl-glycidyl-ether"
+    },
+    {
+      "class": "ambiguous",
+      "f": 1,
+      "flory_grade": "ABSTAIN",
+      "g": 1,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ambiguous-hydroxyethyl-glycidyl-amine"
+    },
+    {
+      "class": "out_of_domain",
+      "f": 0,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ood-nbutane"
+    },
+    {
+      "class": "out_of_domain",
+      "f": 0,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ood-ethanol"
+    },
+    {
+      "class": "out_of_domain",
+      "f": 0,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ood-acetamide"
+    },
+    {
+      "class": "out_of_domain",
+      "f": 0,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ood-acetone"
+    },
+    {
+      "class": "out_of_domain",
+      "f": 0,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ood-cyclohexane"
+    },
+    {
+      "class": "out_of_domain",
+      "f": 0,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "ood-toluene"
+    },
+    {
+      "class": "measured_product_only",
+      "f": 2,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "commercial-dgeba-tds1"
+    },
+    {
+      "class": "measured_product_only",
+      "f": 2,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "commercial-dgeba-tds2"
+    },
+    {
+      "class": "measured_product_only",
+      "f": 2,
+      "flory_grade": "ABSTAIN",
+      "g": 0,
+      "reason": "not a single-role network monomer (A-B self-reactive, non-reactive, or measured-product-only)",
+      "record_id": "commercial-dgeba-tds3"
+    }
+  ],
+  "primary_references": [
+    "Flory, P.J. (1941) J. Am. Chem. Soc. 63(11):3083-3090. doi:10.1021/ja01856a061",
+    "Stockmayer, W.H. (1943) J. Chem. Phys. 11(2):45-55. doi:10.1063/1.1723803",
+    "Odian, G. (2004) Principles of Polymerization, 4th ed., Wiley, ch.2.10, ISBN 978-0-471-27400-1"
+  ],
+  "purpose": "Add an a-priori Flory-Stockmayer network-adequacy sub-grade to the role ranker and test the falsifiable hypothesis that the functionality gate (f-1)(g-1)>1 separates network-forming epoxy/amine monomers from monofunctional reactive diluents / chain-extenders that the prior binary reactive-function rule cannot distinguish. Zero fitted parameters; functionality re-derived from SMILES with pinned RDKit and cross-checked against the CC0 fixture. Validation only; no candidate/product/promotion.",
+  "schema": "amphora.molecule-role-ranker.role-flory-gelation-v1.diagnostic.v1",
+  "toolkit": {
+    "python": "3.12.3",
+    "rdkit": "2026.03.2"
+  },
+  "verdict": "HYPOTHESIS_CORROBORATED"
+}

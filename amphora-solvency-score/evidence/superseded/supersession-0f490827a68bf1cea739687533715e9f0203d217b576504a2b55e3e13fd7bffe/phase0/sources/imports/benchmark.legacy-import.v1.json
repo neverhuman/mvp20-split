@@ -1,0 +1,25 @@
+{
+  "schema": "amphora.solvency-benchmark-lock.v1",
+  "module_id": "amphora-solvency-score",
+  "benchmark_id": "carrier-solvency-promotion-v1",
+  "dataset_sha256": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6",
+  "split_sha256": "48b174964b9cb9c01b89425abc8a8f16f7a308624b7efdeacc83c3aa9f6f16cb",
+  "baselines": ["HSP_RED", "CONSTANT_CHI_FLORY_HUGGINS", "UNIFAC_FV", "RAW_OPENCOSMO"],
+  "hostile_nulls": ["solvent-family-shuffle", "resin-lot-leakage", "composition-permutation"],
+  "thresholds": {
+    "group_held_out_auroc_min": 0.8,
+    "clustered_bootstrap_auroc_lower_min": 0.7,
+    "brier_max": 0.15,
+    "ece_max": 0.1,
+    "incompatible_sensitivity_min": 0.9,
+    "incompatible_sensitivity_lower_min": 0.75,
+    "high_confidence_false_compatible_rate_max": 0.1,
+    "high_confidence_false_compatible_upper_max": 0.2,
+    "in_domain_coverage_min": 0.8,
+    "subgroup_sensitivity_min": 0.75,
+    "theory_auroc_lift_min": 0.03,
+    "theory_auroc_lift_lower_95_min": 0.0,
+    "theory_brier_degradation_max": 0.01
+  },
+  "immutable": true
+}

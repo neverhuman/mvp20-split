@@ -1,0 +1,144 @@
+{
+  "attack": "generation-yield-provenance-authenticity-audit",
+  "conditions": {
+    "condition_A_harness_never_invokes_generation": true,
+    "condition_B_non_overlap_member_is_own_declared_non_hardener_decoy": true
+  },
+  "dgeba_own_decoy_classification": {
+    "entry_found": true,
+    "expected_active_nh": 0,
+    "interpretation": "This module's own hand-checkable ground truth (hardener_stoichiometric_envelope.v1.json) classifies DGEBA as a fail_closed_decoy that hardener-functionality instruments MUST reject (expected_active_nh=0, 'not a hardener'). The target receipt nonetheless folds DGEBA into the same 12-member set counted toward `deterministic_generator_valid_unique_feasible_yield`, whose corroboration gate requires ALL 12 members (valid AND unique AND SA<6) to pass -- i.e. DGEBA's inclusion is load-bearing to the CORROBORATED_IN_AUDIT_INSTRUMENT verdict.",
+    "note": "DGEBA (epoxide resin, not a hardener)"
+  },
+  "does_not_close": [
+    "Runtime remains LOCKED_INTERNAL; no proposal emission enabled; this audit changes nothing operational.",
+    "This is an AUDIT_ONLY diagnostic; it grants no promotion authority.",
+    "This audit does not dispute the SA-feasibility or validity computations themselves (RDKit calls independently reproduced exact SA scores and validity for all 12 items); it disputes only whether the count is evidence of GENERATION capability.",
+    "11 of the 12 INSCOPE molecules do genuinely coincide with this module's own 38-item deterministic-grammar output (re-derived independently here); only the provenance chain (hardcoded vs. generator-sourced) and DGEBA's domain membership are in question."
+  ],
+  "grammar_own_38_accepted_recanonicalized_count": 38,
+  "grammar_recanonicalization_mismatches_vs_stored": [],
+  "grammar_receipt_sha256_as_read": "c5115761b369ad513400dba4f551ce0ebb5332c1d294077e8693715782488696",
+  "harness_provenance_check": {
+    "generation_or_grammar_code_import_markers_checked": [
+      "amphora_molecule",
+      "amphora-molecule-capabilities",
+      "amphora_molecule_generator",
+      "generate_authorized",
+      "grammar",
+      "pyo3",
+      "maturin",
+      "subprocess",
+      "cargo",
+      "import amphora",
+      "from amphora"
+    ],
+    "generation_or_grammar_code_import_markers_found": [],
+    "harness_invokes_any_generation_or_grammar_code": false,
+    "harness_path": "amphora-molecule-generator/evidence/audit/molgen-quality-feasibility-baseline-v1/run_molgen_quality.py",
+    "harness_sha256_as_read": "5d892fbd13ff73b6aab0d55d66b92f1631eeaf7627dd7b8fdf3bd63ddc979562",
+    "inscope_literal_block_present": true,
+    "interpretation": "The harness that produces `deterministic_generator_valid_unique_feasible_yield` imports only rdkit/sascorer/gzip/json/os/statistics/sys. It never imports or calls amphora-molecule-capabilities, the Rust generator crate/FFI, the deterministic hardener grammar, or any subprocess invoking cargo/rustc. The 12-item `INSCOPE` list is a hardcoded Python literal of independently-known commercial molecules, not output of any generation process this module owns or tested here."
+  },
+  "inscope_recanonicalized": [
+    {
+      "canonical_smiles": "NCCN",
+      "input_smiles": "NCCN",
+      "name": "ethylenediamine (EDA) hardener"
+    },
+    {
+      "canonical_smiles": "NCCNCCN",
+      "input_smiles": "NCCNCCN",
+      "name": "diethylenetriamine (DETA) hardener"
+    },
+    {
+      "canonical_smiles": "NCCNCCNCCN",
+      "input_smiles": "NCCNCCNCCN",
+      "name": "triethylenetetramine (TETA) hardener"
+    },
+    {
+      "canonical_smiles": "NCCNCCNCCNCCN",
+      "input_smiles": "NCCNCCNCCNCCN",
+      "name": "tetraethylenepentamine (TEPA) hardener"
+    },
+    {
+      "canonical_smiles": "NCCNCCNCCNCCNCCN",
+      "input_smiles": "NCCNCCNCCNCCNCCN",
+      "name": "pentaethylenehexamine (PEHA) hardener"
+    },
+    {
+      "canonical_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "input_smiles": "CC1(C)CC(N)CC(C)(CN)C1",
+      "name": "isophoronediamine (IPDA) hardener"
+    },
+    {
+      "canonical_smiles": "NCc1cccc(CN)c1",
+      "input_smiles": "NCc1cccc(CN)c1",
+      "name": "m-xylylenediamine (MXDA) hardener"
+    },
+    {
+      "canonical_smiles": "NCC1CCCC(CN)C1",
+      "input_smiles": "NCC1CCCC(CN)C1",
+      "name": "1,3-bis(aminomethyl)cyclohexane (1,3-BAC) hardener"
+    },
+    {
+      "canonical_smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+      "input_smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1",
+      "name": "4,4'-diaminodiphenylsulfone (DDS) hardener"
+    },
+    {
+      "canonical_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "input_smiles": "Nc1ccc(Cc2ccc(N)cc2)cc1",
+      "name": "4,4'-methylenedianiline (MDA/DDM) hardener"
+    },
+    {
+      "canonical_smiles": "NCCN1CCNCC1",
+      "input_smiles": "NCCN1CCNCC1",
+      "name": "N-aminoethylpiperazine (AEP) hardener"
+    },
+    {
+      "canonical_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "input_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+      "name": "DGEBA diglycidyl ether epoxy monomer (n=0)"
+    }
+  ],
+  "inscope_transcription_verified_verbatim_in_harness": true,
+  "overlap_analysis": {
+    "n_inscope": 12,
+    "n_non_overlap_with_own_38_grammar_output": 1,
+    "n_overlap_with_own_38_grammar_output": 11,
+    "non_overlap_cross_checked_against_own_fail_closed_decoys": {
+      "DGEBA diglycidyl ether epoxy monomer (n=0)": [
+        "DGEBA (epoxide resin, not a hardener)"
+      ]
+    },
+    "non_overlap_names": [
+      "DGEBA diglycidyl ether epoxy monomer (n=0)"
+    ],
+    "overlap_names": [
+      "1,3-bis(aminomethyl)cyclohexane (1,3-BAC) hardener",
+      "4,4'-diaminodiphenylsulfone (DDS) hardener",
+      "4,4'-methylenedianiline (MDA/DDM) hardener",
+      "N-aminoethylpiperazine (AEP) hardener",
+      "diethylenetriamine (DETA) hardener",
+      "ethylenediamine (EDA) hardener",
+      "isophoronediamine (IPDA) hardener",
+      "m-xylylenediamine (MXDA) hardener",
+      "pentaethylenehexamine (PEHA) hardener",
+      "tetraethylenepentamine (TEPA) hardener",
+      "triethylenetetramine (TETA) hardener"
+    ]
+  },
+  "refutation_criterion": "If the N molecules counted toward `deterministic_generator_valid_unique_feasible_yield` were not produced by exercising any generation process (this module's own deterministic hardener grammar or any other generator) -- i.e. the harness that computes the count never imports or calls generation/grammar code and instead hardcodes the molecule list as source literals -- and/or if any counted molecule falls outside the applicability domain the generator targets (hardener chemistry) per this module's own reference ground truth (hardener_stoichiometric_envelope.v1.json fail_closed_decoys), then the field name and the CORROBORATED_IN_AUDIT_INSTRUMENT verdict for the 'deterministic generation' hypothesis mischaracterize the measurement as generation-capability evidence -> REFUTED. Otherwise SURVIVED.",
+  "refutation_criterion_observation_occurred": true,
+  "study_id": "MOLGEN_GENERATION_YIELD_PROVENANCE_AUTHENTICITY_V1",
+  "target_claim": {
+    "claimed_hypothesis_under_test": "Deterministic generation can improve valid unique proposal yield without sacrificing feasibility.",
+    "claimed_verdict": "CORROBORATED_IN_AUDIT_INSTRUMENT",
+    "claimed_yield": 12,
+    "field": "results.deterministic_generator_valid_unique_feasible_yield + hypothesis_evaluation.verdict",
+    "receipt": "amphora-molecule-generator/evidence/audit/molgen-quality-feasibility-baseline-v1/molgen-quality-feasibility-baseline-receipt.v1.dsse.json",
+    "target_receipt_sha256_as_read": "b169ee53df26231b1cdcf245fb953178538e9dbc2fee30d2c3febb344e5de647"
+  },
+  "verdict": "REFUTED"
+}

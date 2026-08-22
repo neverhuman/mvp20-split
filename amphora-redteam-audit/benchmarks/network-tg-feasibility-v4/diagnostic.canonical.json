@@ -1,0 +1,310 @@
+{
+  "DGEBA_smiles": "CC(C)(c1ccc(OCC2CO2)cc1)c1ccc(OCC2CO2)cc1",
+  "EEW_DGEBA": 170.2095,
+  "M_DGEBA": 340.419,
+  "acquisition_log": {
+    "attempts": [
+      {
+        "fetched": true,
+        "license": "CC-BY-4.0",
+        "outcome": "EVIDENCE_NOT_MERGED",
+        "reason": "DGEBA + amines but cold/hot-cure reference Tg (IPDA 112, DDS 181) disagree with the fully-post-cured training set by 27-46 C -> merging would inject a cure-state bias larger than the G2 gate. Used to QUANTIFY the confound instead.",
+        "source": "Polymers 2023 15(4)990 (PMC9962791)"
+      },
+      {
+        "fetched": true,
+        "license": "CC-BY",
+        "outcome": "REJECTED",
+        "reason": "cures a bisphenol-A epoxy with a phenalkamine (cardanol-based NON-DISCRETE mixture) -> no single-molecule SMILES -> no computable a-priori descriptor.",
+        "source": "PMC7023579 'Extender Particle Size ... Model Epoxy Coatings'"
+      },
+      {
+        "fetched": true,
+        "license": "CC-BY",
+        "outcome": "REJECTED",
+        "reason": "reported Tg values (52.9/100.4/96.8) are Tg0 of fresh/uncured or accelerator-only mixtures, not the fully-cured network Tg the model targets.",
+        "source": "PMC9607094 'l-Arginine as a Bio-Based Curing Agent'"
+      },
+      {
+        "fetched": false,
+        "license": "CC-BY",
+        "outcome": "INACCESSIBLE",
+        "reason": "HTTP 403 to automated fetch (publisher bot block); PMC mirror used where an open-access copy exists.",
+        "source": "mdpi.com direct article HTML"
+      },
+      {
+        "fetched": false,
+        "license": "unknown",
+        "outcome": "INACCESSIBLE",
+        "reason": "HTTP 402 paywall to automated fetch.",
+        "source": "IJPS 10.1155/2019/9604714 (DGEBA-EDA)"
+      },
+      {
+        "fetched": "partial",
+        "license": "arXiv",
+        "outcome": "NOT_ADDED",
+        "reason": "PDF stream unparseable via fetch; its DDS reference (204 C) is already in the set as S3; its novel divanillin diamines are exotic bio-based structures outside marine-coating scope and carry SMILES-verification risk.",
+        "source": "arXiv:1911.08960 (Savonnet divanillin)"
+      }
+    ],
+    "new_protocol_consistent_points_merged_this_run": 0,
+    "standard": "a Tg value is merged ONLY if it is (a) rights-clean, (b) page-verified from a fetchable source, (c) a fully-cured stoichiometric DGEBA+DISCRETE-amine network, and (d) protocol-consistent (single declared cure state) with the existing set."
+  },
+  "authority": "AUDIT_ONLY",
+  "cross_protocol_evidence_not_merged": [
+    {
+      "Tg_C_cold_cure": 112,
+      "amine": "IPDA",
+      "cure_state": "cold-cure reference",
+      "dsc": "10 K/min",
+      "license": "CC-BY-4.0",
+      "source": "Polymers 2023 15(4)990 (PMC9962791) Table 1"
+    },
+    {
+      "Tg_C_this_paper": 181,
+      "amine": "DDS",
+      "cure_state": "hot-cure reference",
+      "dsc": "10 K/min",
+      "license": "CC-BY-4.0",
+      "source": "Polymers 2023 15(4)990 (PMC9962791) Table 1"
+    }
+  ],
+  "data_requirement": {
+    "insample_2desc_r2": 0.546897,
+    "insample_2desc_rmse_C": 25.985284,
+    "mean_leverage_prediction_inflation_vs_sigma": {
+      "n=12": 1.1547,
+      "n=20": 1.0847,
+      "n=30": 1.0541,
+      "n=7": 1.3229
+    },
+    "model": "2-descriptor OLS (intercept + B + n_x), p=3, the minimum the governing physics needs",
+    "reading": "The <=25 C gate is co-gated: (C1) a protocol-controlled set of n>=12 (ideally ~20) to make the LOO trustworthy, AND (C2) a third steric/side-group descriptor (or nonlinearity) to lower the ~26 C linear-model structural floor. Neither alone suffices.",
+    "two_binding_constraints": {
+      "C1_leverage_data_scarcity": "At n=7 the 3-param model burns 43% of its DoF on leverage (mean hat=0.43), inflating held-out error ~1.32x over the in-sample sigma -- which is why the 2-axis LOO (48.96 C) is WORSE than the 1-axis LOO (35.73 C) even though the 2-axis IN-SAMPLE fit is tighter than the 1-axis in-sample fit. By n>=12 the inflation falls to ~1.15x and by n>=20 to ~1.08x, so n>=12 (G1) is the minimum for a LOO that reflects model SKILL rather than leverage.",
+      "C2_model_structural_error": "HONEST CEILING: the linear B+n_x in-sample RMSE is already 26.0 C (R2 0.55) at n=7 -- essentially AT the <=25 C gate. More protocol-consistent data DE-LEVERAGES the LOO but cannot push a LINEAR 2-descriptor model below its own ~26 C in-sample structural error, which is dominated by systems a linear B+n_x cannot encode: the DDS aromatic-sulfone rigidity (under-fit) and the IPDA gem-dimethyl STERIC boost (v3's diagnosed missing axis). So crossing <=25 C requires a steric/side-group descriptor OR a nonlinear model IN ADDITION to more data."
+    },
+    "unbiased_sigma_2desc_C": 34.375299
+  },
+  "does_not": [
+    "does NOT promote amphora-molecule-property or any module to PHASE_0 or VALIDATED",
+    "does NOT add any PHASE_0 module or modify the 66 signed receipts or the manifest",
+    "does NOT fabricate, web-summarize, mid-range, or MERGE any cross-protocol Tg value",
+    "does NOT perform PHASE0_EVALUATOR / PHASE0_INTERNAL_REVIEWER signing",
+    "does NOT claim a validated Tg KPI: G1 (n>=12) and G2 (<=25 C) remain unmet"
+  ],
+  "gate_feasibility": {
+    "G2_below_cross_protocol_scatter": true,
+    "G2_below_same_protocol_floor": true,
+    "G2_target_loo_mae_C": 25.0,
+    "conclusion": "The <=25 C G2 gate lies ABOVE the ~8.6 C same-protocol inter-lab floor (=> achievable in principle) but BELOW the 27-46 C cross-cure-state scatter of a single amine (=> UNACHIEVABLE on any dataset that mixes cure states). Therefore the network-Tg Phase-0 KPI is gated on protocol-CONSISTENT curation, not merely on rights-clean data VOLUME: a model trained on protocol-mixed open-literature Tg cannot reach <=25 C no matter how good it is, because the LABELS themselves disagree by more than the gate.",
+    "cross_protocol_scatter_C_range": [
+      27.0,
+      46.0
+    ],
+    "same_protocol_floor_C": 8.641
+  },
+  "honest_limitations": [
+    "n=7 protocol-consistent unique systems is UNCHANGED; still below the n>=12 G1 gate.",
+    "the cold-cure evidence (IPDA 112, DDS 181) is a REFERENCE-hardener datum, not a full cure map; it bounds the cure-state effect but is not itself a merged training label.",
+    "the leverage inflation figures are mean-leverage OLS approximations, not a substitute for a real learning curve, which requires the very data that is missing.",
+    "protocol consistency is necessary but not sufficient: a real dataset must also fix DSC rate and (mid-point vs onset) Tg convention, which add further scatter if uncontrolled."
+  ],
+  "incumbent_state_from_signed_receipts": {
+    "note": "quoted from signed in-tree audits; B/n_x LOO recomputed here and must match.",
+    "polyuniverse_ml_MAE_C": 39.119479,
+    "raw_van_krevelen_MAE_C": 109.077814,
+    "v3_backbone_LOO_C": 35.730624,
+    "xlink_v1_2axis_LOO_C": 48.96
+  },
+  "models": {
+    "insample_B_plus_nx_2axis": {
+      "coefficients": [
+        -13.132229,
+        175.856913,
+        25.065389
+      ],
+      "insample_r2": 0.546897,
+      "insample_rmse_C": 25.985284,
+      "n_params": 3,
+      "unbiased_sigma_C": 34.375299
+    },
+    "loo_B_1axis": {
+      "loo_mae_C": 35.730624,
+      "loo_rmse_C": 42.296484,
+      "n_params": 2
+    },
+    "loo_B_plus_nx_2axis": {
+      "loo_mae_C": 48.961969,
+      "loo_rmse_C": 62.818655,
+      "n_params": 3
+    },
+    "loo_null_mean_Tg_C": 37.047619,
+    "loo_nx_1axis": {
+      "loo_mae_C": 44.047957,
+      "loo_rmse_C": 50.735996,
+      "n_params": 2
+    },
+    "reading": "1-axis B LOO 35.73 C (reproduces signed v3); 2-axis LOO 48.96 C (reproduces signed xlink-v1 overfit). The 2-axis IN-SAMPLE R2 is only 0.547 (RMSE 26.0 C): the two descriptors capture the crosslink-density and stiffness axes but a LINEAR B+n_x still leaves ~45% of in-sample variance unexplained (DDS sulfone rigidity, IPDA gem-dimethyl sterics). So the model is CO-limited: n=7 data starvation (in-sample->LOO blow-up) AND a linear-form/steric structural error already ~AT the gate. See data_requirement."
+  },
+  "phase0_reconciliation_redteam": {
+    "finding": "0 of 29 modules are scientific_readiness=VALIDATED. The 10 modules the decision report labels PHASE_0 are governance/engineering completions: 7 target_status=NOT_APPLICABLE (deterministic-control/infra) and 3 LOCKED_INTERNAL (solvency, process-qc-twin, tolerance-robustness) -- none are externally-validated predictive science. 'FULL Phase-0' is a governance milestone, NOT a count of validated scientific capabilities. Founder skepticism is correct. network-Tg remains the highest-value scientific gap and is NOT closed by this run.",
+    "n_modules": 29,
+    "n_scientific_readiness_VALIDATED": 0,
+    "phase0_decision_report_phase_distribution": {
+      "PHASE_0": 10,
+      "PRE_PHASE_0": 19
+    },
+    "phase0_modules_target_status_distribution": {
+      "LOCKED_INTERNAL": 3,
+      "NOT_APPLICABLE": 7
+    },
+    "scientific_readiness_distribution": {
+      "UNVALIDATED": 29
+    }
+  },
+  "predecessor": "network-tg-feasibility-v3 + network-crosslink-density-v1 (both signed; untouched)",
+  "protocol_consistent_training_set": {
+    "classes_spanned": [
+      "aliphatic",
+      "araliphatic",
+      "aromatic",
+      "cycloaliphatic"
+    ],
+    "independent_sources": 3,
+    "n_measurements": 9,
+    "n_unique_systems": 7,
+    "systems": [
+      {
+        "B_backbone": 0.333333,
+        "Tg_consensus_C": 97.0,
+        "active_amine_H": 4,
+        "amine": "1,3-BAC",
+        "amine_class": "cycloaliphatic",
+        "n_measurements": 1,
+        "n_x_mol_per_kg": 3.644828,
+        "system": "DGEBA+1,3-BAC",
+        "tg_values_C": [
+          97
+        ]
+      },
+      {
+        "B_backbone": 0.0,
+        "Tg_consensus_C": 94.0,
+        "active_amine_H": 4,
+        "amine": "C8DA",
+        "amine_class": "aliphatic",
+        "n_measurements": 1,
+        "n_x_mol_per_kg": 3.635923,
+        "system": "DGEBA+C8DA",
+        "tg_values_C": [
+          94
+        ]
+      },
+      {
+        "B_backbone": 0.6,
+        "Tg_consensus_C": 208.0,
+        "active_amine_H": 4,
+        "amine": "DDS",
+        "amine_class": "aromatic",
+        "n_measurements": 3,
+        "n_x_mol_per_kg": 3.228775,
+        "system": "DGEBA+DDS",
+        "tg_values_C": [
+          220,
+          200,
+          204
+        ]
+      },
+      {
+        "B_backbone": 0.0,
+        "Tg_consensus_C": 115.0,
+        "active_amine_H": 5,
+        "amine": "DETA",
+        "amine_class": "aliphatic",
+        "n_measurements": 1,
+        "n_x_mol_per_kg": 4.715911,
+        "system": "DGEBA+DETA",
+        "tg_values_C": [
+          115
+        ]
+      },
+      {
+        "B_backbone": 0.4,
+        "Tg_consensus_C": 158.0,
+        "active_amine_H": 4,
+        "amine": "IPDA",
+        "amine_class": "cycloaliphatic",
+        "n_measurements": 1,
+        "n_x_mol_per_kg": 3.524693,
+        "system": "DGEBA+IPDA",
+        "tg_values_C": [
+          158
+        ]
+      },
+      {
+        "B_backbone": 0.0,
+        "Tg_consensus_C": 120.0,
+        "active_amine_H": 6,
+        "amine": "TETA",
+        "amine_class": "aliphatic",
+        "n_measurements": 1,
+        "n_x_mol_per_kg": 5.139208,
+        "system": "DGEBA+TETA",
+        "tg_values_C": [
+          120
+        ]
+      },
+      {
+        "B_backbone": 0.333333,
+        "Tg_consensus_C": 100.0,
+        "active_amine_H": 4,
+        "amine": "m-XDA",
+        "amine_class": "araliphatic",
+        "n_measurements": 1,
+        "n_x_mol_per_kg": 3.671809,
+        "system": "DGEBA+m-XDA",
+        "tg_values_C": [
+          100
+        ]
+      }
+    ]
+  },
+  "protocol_sensitivity": {
+    "cross_protocol_scatter_same_amine_C": {
+      "DDS_postcure_consensus_minus_thispaper": 27.0,
+      "IPDA_fullcure_minus_coldcure": 46.0,
+      "evidence_ids": [
+        "Polymers 2023 15(4)990 PMC9962791 (CC BY): IPDA 112 C, DDS 181 C",
+        "post-cured set: IPDA 158 C (May 1988), DDS consensus 208 C (S1/S2/S3)"
+      ],
+      "reading": "the SAME amine shifts 27-46 C purely from cure state (cold/hot reference vs full post-cure). Cure state, not chemistry, dominates at this magnitude."
+    },
+    "same_protocol_inter_lab_floor_C": {
+      "mean_C": 208.0,
+      "measurements": [
+        220,
+        200,
+        204
+      ],
+      "population_std_C": 8.641,
+      "range_C": 20.0,
+      "reading": "fully-post-cured DDS across 3 independent labs scatters ~8.6 C (std) / 20 C (range): this is the irreducible SAME-PROTOCOL Tg noise floor.",
+      "system": "DGEBA+DDS post-cured"
+    }
+  },
+  "schema": "amphora.redteam-audit.network-tg-feasibility-v4.diagnostic.v1",
+  "supersedes_nothing": true,
+  "target_capability": "glass_transition_temperature_of_DGEBA_amine_networks",
+  "target_kpi_id": "network-tg-protocol-curation-feasibility-v4",
+  "target_module": "amphora-molecule-property",
+  "theory": {
+    "descriptors": {
+      "B_backbone": "N-to-N shortest-path rigid-bond fraction (rigid = aromatic|in-ring|multiple).",
+      "n_x_mol_per_kg": "Flory perfect-network crosslink strand density from amine SMILES + DGEBA molar mass ONLY; strands/amine = 1.5*n_N; density-free."
+    },
+    "governing_physics": "network Tg rises with BOTH strand stiffness (B) AND crosslink density (n_x) (DiBenedetto/Fox-Loshaek/Van Krevelen ch.6); a single descriptor is structurally insufficient, so >=2 params are mandatory.",
+    "non_circularity": "both descriptors computed purely from amine SMILES; measured Tg never a feature"
+  },
+  "verdict": "PROTOCOL_CURATION_AND_MODEL_CO_LIMITED (NOT a Phase-0 promotion). This run sharpens the prior 'just acquire n>=12' framing into TWO quantified, decision-relevant findings. FINDING 1 (new, from page-verified CC-BY evidence): the SAME amine's Tg shifts 27-46 C purely with cure state (IPDA full 158 vs cold 112; DDS post-cured 208 vs hot-cure ref 181) -- LARGER than the <=25 C G2 gate. The gate sits ABOVE the ~8.6 C same-protocol inter-lab floor but BELOW the 27-46 C cross-cure-state scatter, so the network-Tg KPI is achievable ONLY on a protocol-CONTROLLED rights-clean dataset; naive aggregation of open-literature Tg (which mixes cure states) can never reach it. FINDING 2 (honest ceiling): the two governing non-circular descriptors B (1-axis LOO 35.73 C) and Flory n_x are in hand, but their LINEAR combination already has ~26 C in-sample RMSE (R2 0.55) at n=7 -- so more data DE-LEVERAGES the LOO yet cannot cross <=25 C without a steric/side-group descriptor (IPDA gem-dimethyl; DDS sulfone) or a nonlinear model. Concrete spec to close the gap: (a) >=5 additional fully-post-cured DGEBA + DISCRETE-amine Tg points under ONE declared cure protocol + ONE DSC rate (n>=12, ideally ~20), AND (b) a third steric descriptor. 0 new points merged this run -- all fetchable rights-clean candidates failed protocol/discreteness/access screens (logged). Founder takeaway: network-Tg is the highest-value gap, its physics is understood, and it is blocked by protocol-consistent data curation PLUS one more descriptor, NOT by governance."
+}

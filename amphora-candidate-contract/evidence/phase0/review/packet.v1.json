@@ -1,0 +1,12 @@
+{
+  "bundle_sha256": "12a899bc0523b0641b2616dbd31fc5f3bb8c7364dd3108ad7206aecb7b9a5c12",
+  "evaluation_receipt_sha256": null,
+  "human_review_performed": false,
+  "independence_scope": "CODE_PATH_AND_SIGNING_IDENTITY",
+  "module_id": "amphora-candidate-contract",
+  "review_method": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION",
+  "required_independent_reimplementation": true,
+  "reviewer_identity": "BLINDED_UNASSIGNED",
+  "schema": "amphora.module-phase0-blinded-review-packet.v1",
+  "unsigned": true
+}

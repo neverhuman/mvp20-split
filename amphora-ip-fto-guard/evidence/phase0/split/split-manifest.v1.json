@@ -1,0 +1,8 @@
+{
+  "assignment_method": "LOCKED_MODULE_LOCAL_IMPORT_OR_ABSTAIN",
+  "dataset_manifest_sha256": "7b4c7a1814544da598a48a4d226f49db91434f0a7c5faf815c79ff92874e343e",
+  "import_hashes": [],
+  "module_id": "amphora-ip-fto-guard",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

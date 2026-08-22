@@ -1,0 +1,14 @@
+{
+  "runbook_version": "2.0",
+  "name": "evidence-preflight",
+  "phases": ["preflight", "evidence"],
+  "gates": {
+    "atlas_columns": 9969,
+    "atlas_definitions": 9160,
+    "existing_columns": 809,
+    "relevant_sources": 250,
+    "sources_per_domain": 20,
+    "test_labels_used": false
+  },
+  "command": "python -m nomad_feature_hunt.v2 evidence --run-id <run_id>"
+}

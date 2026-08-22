@@ -1,0 +1,343 @@
+{
+  "all_known_answer_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "baseline_size_requirement": {
+    "guaranteed_arl0_p05_target": 200.0,
+    "interpretation": "At the pilot baseline (m=30) the median in-control ARL0 stays near the nominal 370 but the 5th-percentile (unlucky-baseline) ARL0 is far lower and P(ARL0<200) is non-negligible: the <=5% false-alarm budget holds in EXPECTATION (median 30-batch expected false alarms << 1.5) but NOT with high assurance for any single realized baseline. Recovering guaranteed near-nominal performance needs a substantially larger baseline, consistent with Quesenberry's m>=300 recommendation for Individuals charts.",
+    "m20_P_arl0_below_200": 0.43525,
+    "m20_guaranteed_arl0_p05": 30.239,
+    "m30_P_arl0_below_200": 0.384,
+    "m30_guaranteed_arl0_p05": 46.953,
+    "smallest_tabulated_m_meeting_target": null
+  },
+  "closes": [
+    "Quantifies, for the first time in this module, the estimated-parameter (finite baseline) degradation of the Shewhart Individuals in-control ARL0 -- the explicit Phase-1 gap left open by spc-arl-characterization-v1.",
+    "Reproduces control-chart constants c4(n) and d2(n=2) vs Montgomery/NIST tables (max abs err < 5e-4) and recovers the known-parameter ARL0=370.40 as the m->inf limit, cross-anchoring the prior receipt.",
+    "Deterministic 2-D quadrature of the conditional ARL0 law is independently corroborated by pinned-seed Monte-Carlo integration (percentile agreement < 3%).",
+    "Turns the module's locked <=5% false-alarm KPI into a concrete baseline-size requirement: budget holds in expectation at m=30 but guaranteed performance needs a much larger baseline (Quesenberry m>=300)."
+  ],
+  "detector_design": {
+    "limits_sigma": 3.0,
+    "mu_estimator": "Xbar",
+    "sigma_distribution": "(m-1)S^2/sigma^2 ~ chi^2_{m-1}",
+    "sigma_estimator": "sample_S",
+    "type": "Shewhart Individuals"
+  },
+  "does_not_close": [
+    "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+    "Covers only the Shewhart Individuals chart with the sample-S sigma estimator; the moving-range estimator (MR-bar/d2) has fewer effective degrees of freedom so degrades at least as much (conservative direction), and estimated-parameter EWMA (Jones 2002) / CUSUM guaranteed-ARL remain open.",
+    "Assumes i.i.d. normal in-control data; non-normality and autocorrelation are not modeled.",
+    "No prospective time-ordered 30-batch pilot is checked in; this is a theory characterization, not a recall/false-alarm measurement on real batches."
+  ],
+  "estimated_parameter_distribution_by_baseline_m": [
+    {
+      "E_perpoint_FAR": 0.00863609,
+      "FAR_inflation_vs_known": 3.19879,
+      "P_arl0_below_100": 0.25688,
+      "P_arl0_below_200": 0.43525,
+      "P_arl0_below_370p4": 0.593,
+      "arl0_mean_tail_sensitive": 1820.843,
+      "arl0_median": 255.791,
+      "arl0_p05": 30.239,
+      "arl0_p25": 97.151,
+      "arl0_p75": 773.468,
+      "arl0_p95": 4924.674,
+      "c4": 0.986934,
+      "coverage_u": 1.0,
+      "coverage_w": 1.0,
+      "exp_false_alarms_30batch_median": 0.11728,
+      "exp_false_alarms_30batch_p95": 0.00609,
+      "m": 20,
+      "sd_W_theory": 0.161123,
+      "within_5pct_budget_median": true,
+      "within_5pct_budget_p95": true
+    },
+    {
+      "E_perpoint_FAR": 0.00620868,
+      "FAR_inflation_vs_known": 2.29968,
+      "P_arl0_below_100": 0.18364,
+      "P_arl0_below_200": 0.384,
+      "P_arl0_below_370p4": 0.57845,
+      "arl0_mean_tail_sensitive": 885.781,
+      "arl0_median": 287.594,
+      "arl0_p05": 46.953,
+      "arl0_p25": 128.539,
+      "arl0_p75": 704.552,
+      "arl0_p95": 3024.242,
+      "c4": 0.991418,
+      "coverage_u": 1.0,
+      "coverage_w": 1.0,
+      "exp_false_alarms_30batch_median": 0.10431,
+      "exp_false_alarms_30batch_p95": 0.00992,
+      "m": 30,
+      "sd_W_theory": 0.13073,
+      "within_5pct_budget_median": true,
+      "within_5pct_budget_p95": true
+    },
+    {
+      "E_perpoint_FAR": 0.00459586,
+      "FAR_inflation_vs_known": 1.7023,
+      "P_arl0_below_100": 0.1014,
+      "P_arl0_below_200": 0.31424,
+      "P_arl0_below_370p4": 0.56258,
+      "arl0_mean_tail_sensitive": 584.767,
+      "arl0_median": 316.946,
+      "arl0_p05": 73.936,
+      "arl0_p25": 168.131,
+      "arl0_p75": 630.656,
+      "arl0_p95": 1872.403,
+      "c4": 0.994911,
+      "coverage_u": 1.0,
+      "coverage_w": 1.0,
+      "exp_false_alarms_30batch_median": 0.09465,
+      "exp_false_alarms_30batch_p95": 0.01602,
+      "m": 50,
+      "sd_W_theory": 0.100755,
+      "within_5pct_budget_median": true,
+      "within_5pct_budget_p95": true
+    },
+    {
+      "E_perpoint_FAR": 0.00357156,
+      "FAR_inflation_vs_known": 1.3229,
+      "P_arl0_below_100": 0.02723,
+      "P_arl0_below_200": 0.21205,
+      "P_arl0_below_370p4": 0.54551,
+      "arl0_mean_tail_sensitive": 455.914,
+      "arl0_median": 342.048,
+      "arl0_p05": 117.929,
+      "arl0_p25": 216.926,
+      "arl0_p75": 553.853,
+      "arl0_p95": 1162.361,
+      "c4": 0.997478,
+      "coverage_u": 1.0,
+      "coverage_w": 1.0,
+      "exp_false_alarms_30batch_median": 0.08771,
+      "exp_false_alarms_30batch_p95": 0.02581,
+      "m": 100,
+      "sd_W_theory": 0.070977,
+      "within_5pct_budget_median": true,
+      "within_5pct_budget_p95": true
+    },
+    {
+      "E_perpoint_FAR": 0.00311702,
+      "FAR_inflation_vs_known": 1.15454,
+      "P_arl0_below_100": 0.00248,
+      "P_arl0_below_200": 0.11237,
+      "P_arl0_below_370p4": 0.53258,
+      "arl0_mean_tail_sensitive": 409.027,
+      "arl0_median": 355.726,
+      "arl0_p05": 164.733,
+      "arl0_p25": 257.018,
+      "arl0_p75": 498.907,
+      "arl0_p95": 831.62,
+      "c4": 0.998745,
+      "coverage_u": 1.0,
+      "coverage_w": 1.0,
+      "exp_false_alarms_30batch_median": 0.08433,
+      "exp_false_alarms_30batch_p95": 0.03607,
+      "m": 200,
+      "sd_W_theory": 0.050094,
+      "within_5pct_budget_median": true,
+      "within_5pct_budget_p95": true
+    },
+    {
+      "E_perpoint_FAR": 0.00297384,
+      "FAR_inflation_vs_known": 1.10151,
+      "P_arl0_below_100": 0.00025,
+      "P_arl0_below_200": 0.06398,
+      "P_arl0_below_370p4": 0.52703,
+      "arl0_mean_tail_sensitive": 395.328,
+      "arl0_median": 360.539,
+      "arl0_p05": 191.095,
+      "arl0_p25": 276.182,
+      "arl0_p75": 474.796,
+      "arl0_p95": 716.958,
+      "c4": 0.999164,
+      "coverage_u": 1.0,
+      "coverage_w": 1.0,
+      "exp_false_alarms_30batch_median": 0.08321,
+      "exp_false_alarms_30batch_p95": 0.04184,
+      "m": 300,
+      "sd_W_theory": 0.040876,
+      "within_5pct_budget_median": true,
+      "within_5pct_budget_p95": true
+    }
+  ],
+  "flips_scientific_readiness": false,
+  "gates": {
+    "c4_constant_known_answer": {
+      "max_abs_err": 4.1e-05,
+      "passed": true,
+      "per_n": [
+        {
+          "abs_err": 1.5e-05,
+          "c4_computed": 0.797885,
+          "c4_published": 0.7979,
+          "n": 2,
+          "within_tol": true
+        },
+        {
+          "abs_err": 2.7e-05,
+          "c4_computed": 0.886227,
+          "c4_published": 0.8862,
+          "n": 3,
+          "within_tol": true
+        },
+        {
+          "abs_err": 1.4e-05,
+          "c4_computed": 0.939986,
+          "c4_published": 0.94,
+          "n": 5,
+          "within_tol": true
+        },
+        {
+          "abs_err": 4.1e-05,
+          "c4_computed": 0.972659,
+          "c4_published": 0.9727,
+          "n": 10,
+          "within_tol": true
+        },
+        {
+          "abs_err": 4e-05,
+          "c4_computed": 0.98964,
+          "c4_published": 0.9896,
+          "n": 25,
+          "within_tol": true
+        },
+        {
+          "abs_err": 1.8e-05,
+          "c4_computed": 0.991418,
+          "c4_published": 0.9914,
+          "n": 30,
+          "within_tol": true
+        }
+      ],
+      "source": "Montgomery ISQC 8e Appendix VI; NIST e-Handbook 6.3.2",
+      "tol_abs": 0.0005
+    },
+    "d2_constant_known_answer": {
+      "abs_err": 0.000379,
+      "d2_computed": 1.128379,
+      "d2_published": 1.128,
+      "passed": true,
+      "source": "Montgomery ISQC Appendix VI (n=2); NIST e-Handbook 6.3.2",
+      "tol_abs": 0.0005
+    },
+    "fail_closed": {
+      "all_detected": true,
+      "cases": [
+        {
+          "case": "tampered_c4_n5_+0.01",
+          "detected": true
+        },
+        {
+          "case": "invalid_baseline_m1_rejected",
+          "detected": true
+        },
+        {
+          "case": "p05_arl0_increases_20_to_300",
+          "detected": true,
+          "p05_m20": 30.239,
+          "p05_m300": 191.095
+        },
+        {
+          "case": "estimated_p05_below_known_370p4",
+          "detected": true
+        }
+      ],
+      "passed": true
+    },
+    "known_parameter_limit_m_to_inf": {
+      "arl0_known": 370.3983,
+      "arl0_median": 370.387,
+      "arl0_p05": 366.183,
+      "m": 1000000,
+      "median_rel_err": 3.1e-05,
+      "note": "As baseline m->inf the estimated-parameter ARL0 law collapses to the known-parameter geometric point mass ARL0=370.40 (self-consistency vs spc-arl-characterization-v1). The MEDIAN converges fast (rel err ~3e-5 at m=1e6); the 5th-percentile converges only as O(m^-1/2) because sd(S/sigma) ~ 1/sqrt(2m) and dARL/dW is steep near L=3 sigma -- i.e. guaranteed low-percentile performance needs a very large baseline, the quantitative content of the Quesenberry-1993 m>=300 rule itself.",
+      "p05_rel_err": 0.011381,
+      "passed": true,
+      "tol_rel_median": 0.001,
+      "tol_rel_p05": 0.02
+    },
+    "mc_quadrature_method_agreement": {
+      "max_rel_err": 0.00236,
+      "mc_n": 2000000,
+      "mc_seed": 20260728,
+      "note": "Independent pinned-seed Monte-Carlo integration corroborates the deterministic quadrature percentiles (tail-insensitive summaries).",
+      "passed": true,
+      "per_m": [
+        {
+          "m": 20,
+          "mc": {
+            "E_perpoint_FAR": 0.00862297,
+            "arl0_median": 255.854,
+            "arl0_p05": 30.303,
+            "arl0_p95": 4925.923
+          },
+          "rel_err_median": 0.00025,
+          "rel_err_p05": 0.00212,
+          "rel_err_p95": 0.00025,
+          "within_tol": true
+        },
+        {
+          "m": 30,
+          "mc": {
+            "E_perpoint_FAR": 0.00620157,
+            "arl0_median": 287.569,
+            "arl0_p05": 47.064,
+            "arl0_p95": 3023.019
+          },
+          "rel_err_median": 9e-05,
+          "rel_err_p05": 0.00236,
+          "rel_err_p95": 0.0004,
+          "within_tol": true
+        },
+        {
+          "m": 100,
+          "mc": {
+            "E_perpoint_FAR": 0.00356973,
+            "arl0_median": 342.043,
+            "arl0_p05": 118.151,
+            "arl0_p95": 1162.938
+          },
+          "rel_err_median": 1e-05,
+          "rel_err_p05": 0.00188,
+          "rel_err_p95": 0.0005,
+          "within_tol": true
+        }
+      ],
+      "tol_rel": 0.03
+    },
+    "phi_and_known_arl0_known_answer": {
+      "P0_perpoint_far": 0.0026998,
+      "Phi3_computed": 0.9986501,
+      "Phi3_published": 0.9986501,
+      "abs_err": 0.0,
+      "arl0_known_matches_prior_receipt_370p3983": true,
+      "arl0_known_param": 370.3983,
+      "passed": true,
+      "source": "2*Phi(-3); NIST/SEMATECH e-Handbook 6.3.1"
+    }
+  },
+  "headline": "Estimated-parameter ARL0 degradation for the module's Shewhart Individuals chart (L=3), computed exactly over the joint sampling law of (Xbar,S) and cross-checked by pinned-seed Monte Carlo. At the module's m=20-30 pilot baseline the in-control run-length law is right-skewed and the GUARANTEED (5th-pct) ARL0 collapses far below the nominal 370.4, quantifying the Quesenberry-1993 finite-baseline penalty the prior known-parameter receipt flagged as a best-case bound.",
+  "known_parameter_reference": {
+    "arl0": 370.3983,
+    "perpoint_far": 0.0026998
+  },
+  "kpi_linkage": {
+    "closes_prior_does_not_close_item": "spc-arl-characterization-v1 does_not_close: 'the module estimates limits from a finite baseline, so real ARL0 is shorter and right-skewed (Quesenberry 1993) -- known-parameter figures are a BEST-CASE bound.'",
+    "false_alarm_budget_expected_per_30_batch": 1.5,
+    "known_parameter_shewhart_exp_fa_30batch": 0.08099,
+    "module_locked_kpi": "prospective 30-batch pilot: seeded-control recall >=90%, false alarms <=5%, zero false releases"
+  },
+  "module": "amphora-process-qc-twin",
+  "non_circularity": "Uses only closed-form / exactly-quadratured sampling distributions of the Shewhart estimators (Xbar ~ N, (m-1)S^2/sigma^2 ~ chi^2_{m-1}) and published control-chart constants (c4,d2). Independent of the module's self-authored synthetic universes, of the arithmetic-correctness KPI receipt, and of the known-parameter ARL tables in spc-arl-characterization-v1 (which it instead recovers as the m->inf limit).",
+  "purpose": "Convert the qualitative 'real ARL0 is shorter and right-skewed (Quesenberry 1993)' caveat of spc-arl-characterization-v1 into a quantified, signed baseline-size requirement for the module's locked <=5% false-alarm KPI.",
+  "run_type": "SPC_ESTIMATED_PARAMETER_ARL_DEGRADATION_AUDIT",
+  "study_id": "estparam-arl-degradation-v1",
+  "theory_reference": {
+    "chart_constants": "Montgomery Introduction to SQC 8th ed. Appendix VI; NIST/SEMATECH e-Handbook 6.3.2 (c4, d2).",
+    "estimated_parameter_arl": "Quesenberry 1993 J.Qual.Technol. 25(4):237-247 (SPC Q-charts / m>=300 rule for Individuals); Jensen, Jones-Farmer, Champ, Woodall 2006 J.Qual.Technol. 38(4):349-364 (review); Saleh, Mahmoud, Keefe, Woodall 2015 J.Qual.Technol. 47(2):127-138 (conditional/guaranteed perf).",
+    "known_parameter_baseline": "spc-arl-characterization-v1 (this module)."
+  }
+}

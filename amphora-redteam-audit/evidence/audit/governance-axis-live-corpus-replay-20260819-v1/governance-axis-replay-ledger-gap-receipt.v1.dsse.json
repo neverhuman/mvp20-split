@@ -1,0 +1,61 @@
+{
+  "all_compared_fields_identical_to_20260731_run": true,
+  "attack_type": "replication_with_pinned_script_hash + ledger_registration_audit + mission_prose_staleness_check",
+  "authority": "AUDIT_ONLY",
+  "axes_unmediated_or_structurally_limited": [
+    "FAILING_DETERMINISTIC_DIAGNOSTIC",
+    "FALSE_MOVEMENT_CLAIM",
+    "STALE_PARENT",
+    "STRIPPED_MISSION_LOCKS"
+  ],
+  "claim_under_attack": "amphora-redteam-audit/docs/mission.md prose: 'All Phase-0 deterministic gates ... (RIGHTS, LOCKED_SPLIT, LOCKED_BENCHMARK, TWO_REPLAYS, RED_TEAM across 47 attack axes, CLAIM_LOCKS, FOLDER_CONFINEMENT, BENCHMARK_EXECUTION_COMPLETE, MODULE_INVARIANTS) are passing.'",
+  "defect_reproduced_today": true,
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "evaluator_public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+  "finding_document_path": "amphora-redteam-audit/evidence/audit/governance-axis-live-corpus-replay-20260819-v1/replay_and_gap_scan.v1.json",
+  "finding_document_sha256": "d76dfe4c3f54473ba6d66f7f42457e5dde6f056d62c2ef6a7fd3fb5ec15db6a7",
+  "ledger_scan": {
+    "finding_never_registered_in_ledger": true,
+    "ledger_path": "logs/falsification-ledger.jsonl",
+    "ledger_total_lines_scanned": 329,
+    "matches": [],
+    "needles": [
+      "governance-axis-live-corpus",
+      "2796aea60d0fdd9a",
+      "2796aea6",
+      "73f4b974"
+    ]
+  },
+  "mission_md_post_repair_sha256": "af730e14e820a08b6294c191557f0007a8a906cf28a3a6980f5b773e060224fe",
+  "mission_md_repaired_this_fire": true,
+  "mission_prose_scan": {
+    "caveat_for_this_defect_already_present_pre_repair": false,
+    "mission_path": "amphora-redteam-audit/docs/mission.md",
+    "mission_pre_repair_sha256": "abad6a3925d81d12206bf4c1fcf8f98504c347323b7a4a866ee50f1710f889e6",
+    "unqualified_red_team_passing_claim_present": true
+  },
+  "module_id": "amphora-redteam-audit",
+  "oracle_script_sha256": "f64c479e11f707916a8bbaad9175823524c92b16ffb07d7c98bd277fbf84a561",
+  "phase0_promotion_effect": "NONE",
+  "portfolio_manifest_mutated": false,
+  "receipt_id": "redteam-audit-governance-axis-replay-ledger-gap-d76dfe4c3f54473b",
+  "replay_count": 2,
+  "replay_result_sha256_20260819": "2796aea60d0fdd9aae3b701d0fbae89314f5c02425ad031f77e2a3c8a0d712f2",
+  "reviewed_workspace_is_scratch_copy": true,
+  "schema": "amphora.redteam-audit.governance-axis-replay-ledger-gap-receipt.v1",
+  "scientific_readiness": "NOT_APPLICABLE",
+  "shipped_kpi_or_benchmark_lock_mutated": false,
+  "shipped_result_sha256_20260731": "2796aea60d0fdd9aae3b701d0fbae89314f5c02425ad031f77e2a3c8a0d712f2",
+  "signature": {
+    "payload": "eyJhbGxfY29tcGFyZWRfZmllbGRzX2lkZW50aWNhbF90b18yMDI2MDczMV9ydW4iOnRydWUsImF0dGFja190eXBlIjoicmVwbGljYXRpb25fd2l0aF9waW5uZWRfc2NyaXB0X2hhc2ggKyBsZWRnZXJfcmVnaXN0cmF0aW9uX2F1ZGl0ICsgbWlzc2lvbl9wcm9zZV9zdGFsZW5lc3NfY2hlY2siLCJhdXRob3JpdHkiOiJBVURJVF9PTkxZIiwiYXhlc191bm1lZGlhdGVkX29yX3N0cnVjdHVyYWxseV9saW1pdGVkIjpbIkZBSUxJTkdfREVURVJNSU5JU1RJQ19ESUFHTk9TVElDIiwiRkFMU0VfTU9WRU1FTlRfQ0xBSU0iLCJTVEFMRV9QQVJFTlQiLCJTVFJJUFBFRF9NSVNTSU9OX0xPQ0tTIl0sImNsYWltX3VuZGVyX2F0dGFjayI6ImFtcGhvcmEtcmVkdGVhbS1hdWRpdC9kb2NzL21pc3Npb24ubWQgcHJvc2U6ICdBbGwgUGhhc2UtMCBkZXRlcm1pbmlzdGljIGdhdGVzIC4uLiAoUklHSFRTLCBMT0NLRURfU1BMSVQsIExPQ0tFRF9CRU5DSE1BUkssIFRXT19SRVBMQVlTLCBSRURfVEVBTSBhY3Jvc3MgNDcgYXR0YWNrIGF4ZXMsIENMQUlNX0xPQ0tTLCBGT0xERVJfQ09ORklORU1FTlQsIEJFTkNITUFSS19FWEVDVVRJT05fQ09NUExFVEUsIE1PRFVMRV9JTlZBUklBTlRTKSBhcmUgcGFzc2luZy4nIiwiZGVmZWN0X3JlcHJvZHVjZWRfdG9kYXkiOnRydWUsImV2YWx1YXRvcl9rZXlfaWQiOiJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLCJldmFsdWF0b3JfcHVibGljX2tleV9oZXgiOiI2Y2YwN2FiZjFhNTVhZGFhYzEzZTc4YWJjMzFjNTMxZDAzZDhmMGQ0MjMyMzQ2MzQ0YTczNjQxOGM3YjQ1NjY0IiwiZmluZGluZ19kb2N1bWVudF9wYXRoIjoiYW1waG9yYS1yZWR0ZWFtLWF1ZGl0L2V2aWRlbmNlL2F1ZGl0L2dvdmVybmFuY2UtYXhpcy1saXZlLWNvcnB1cy1yZXBsYXktMjAyNjA4MTktdjEvcmVwbGF5X2FuZF9nYXBfc2Nhbi52MS5qc29uIiwiZmluZGluZ19kb2N1bWVudF9zaGEyNTYiOiJkNzZkZmU0YzNmNTQ0NzNiYTZkNjZmN2Y0MjQ1N2U1ZGRlNmYwNTZkNjJjMmVmNmE3ZmQzZmI1ZWMxNWRiNmE3IiwibGVkZ2VyX3NjYW4iOnsiZmluZGluZ19uZXZlcl9yZWdpc3RlcmVkX2luX2xlZGdlciI6dHJ1ZSwibGVkZ2VyX3BhdGgiOiJsb2dzL2ZhbHNpZmljYXRpb24tbGVkZ2VyLmpzb25sIiwibGVkZ2VyX3RvdGFsX2xpbmVzX3NjYW5uZWQiOjMyOSwibWF0Y2hlcyI6W10sIm5lZWRsZXMiOlsiZ292ZXJuYW5jZS1heGlzLWxpdmUtY29ycHVzIiwiMjc5NmFlYTYwZDBmZGQ5YSIsIjI3OTZhZWE2IiwiNzNmNGI5NzQiXX0sIm1pc3Npb25fbWRfcG9zdF9yZXBhaXJfc2hhMjU2IjoiYWY3MzBlMTRlODIwYTA4YjYyOTRjMTkxNTU3ZjAwMDdhOGE5MDZjZjI4YTNhNjk4MGY1Yjc3M2UwNjAyMjRmZSIsIm1pc3Npb25fbWRfcmVwYWlyZWRfdGhpc19maXJlIjp0cnVlLCJtaXNzaW9uX3Byb3NlX3NjYW4iOnsiY2F2ZWF0X2Zvcl90aGlzX2RlZmVjdF9hbHJlYWR5X3ByZXNlbnRfcHJlX3JlcGFpciI6ZmFsc2UsIm1pc3Npb25fcGF0aCI6ImFtcGhvcmEtcmVkdGVhbS1hdWRpdC9kb2NzL21pc3Npb24ubWQiLCJtaXNzaW9uX3ByZV9yZXBhaXJfc2hhMjU2IjoiYWJhZDZhMzkyNWQ4MWQxMjIwNmJmNGMxZmNmOGY5ODUwNGMzNDczMjNiN2E0YTg2NmVlNTBmMTcxMGY4ODllNiIsInVucXVhbGlmaWVkX3JlZF90ZWFtX3Bhc3NpbmdfY2xhaW1fcHJlc2VudCI6dHJ1ZX0sIm1vZHVsZV9pZCI6ImFtcGhvcmEtcmVkdGVhbS1hdWRpdCIsIm9yYWNsZV9zY3JpcHRfc2hhMjU2IjoiZjY0YzQ3OWUxMWY3MDc5MTZhOGJiYWFkOTE3NTgyMzUyNGM5MmIxNmZmYjA3ZDdjOThiZDI3N2ZiZjg0YTU2MSIsInBoYXNlMF9wcm9tb3Rpb25fZWZmZWN0IjoiTk9ORSIsInBvcnRmb2xpb19tYW5pZmVzdF9tdXRhdGVkIjpmYWxzZSwicmVjZWlwdF9pZCI6InJlZHRlYW0tYXVkaXQtZ292ZXJuYW5jZS1heGlzLXJlcGxheS1sZWRnZXItZ2FwLWQ3NmRmZTRjM2Y1NDQ3M2IiLCJyZXBsYXlfY291bnQiOjIsInJlcGxheV9yZXN1bHRfc2hhMjU2XzIwMjYwODE5IjoiMjc5NmFlYTYwZDBmZGQ5YWFlM2I3MDFkMGZiYWU4OTMxNGY1YzAyNDI1YWQwMzFmNzdlMmEzYzhhMGQ3MTJmMiIsInJldmlld2VkX3dvcmtzcGFjZV9pc19zY3JhdGNoX2NvcHkiOnRydWUsInNjaGVtYSI6ImFtcGhvcmEucmVkdGVhbS1hdWRpdC5nb3Zlcm5hbmNlLWF4aXMtcmVwbGF5LWxlZGdlci1nYXAtcmVjZWlwdC52MSIsInNjaWVudGlmaWNfcmVhZGluZXNzIjoiTk9UX0FQUExJQ0FCTEUiLCJzaGlwcGVkX2twaV9vcl9iZW5jaG1hcmtfbG9ja19tdXRhdGVkIjpmYWxzZSwic2hpcHBlZF9yZXN1bHRfc2hhMjU2XzIwMjYwNzMxIjoiMjc5NmFlYTYwZDBmZGQ5YWFlM2I3MDFkMGZiYWU4OTMxNGY1YzAyNDI1YWQwMzFmNzdlMmEzYzhhMGQ3MTJmMiIsInNvdXJjZV9zdGlsbF91c2VzX2NvbXBpbGVfdGltZV93b3Jrc3BhY2Vfcm9vdCI6dHJ1ZSwidmVyZGljdCI6IkNMQUlNX1JFRlVURUQifQ==",
+    "payloadType": "application/vnd.amphora.redteam-audit-governance-axis-replay-ledger-gap-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "fBjlkmDEGLnYR01aP7aoZ9RXhmqDJu+Zf2sLMBc+xQ04jrjlHuXuIG0cLv/kwqsqlA5/2Qi9S90XzY9KcP64Dg=="
+      }
+    ]
+  },
+  "source_still_uses_compile_time_workspace_root": true,
+  "verdict": "CLAIM_REFUTED"
+}

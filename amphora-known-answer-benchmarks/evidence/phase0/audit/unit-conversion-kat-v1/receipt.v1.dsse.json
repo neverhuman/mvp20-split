@@ -1,0 +1,87 @@
+{
+  "artifacts": {
+    "report": {
+      "path": "amphora-known-answer-benchmarks/benchmarks/unit-conversion-kat-v1/unit_conversion_kat_report.v1.json",
+      "sha256": "31e9609860def5295fe326a5878b4b9624e76ff0399ada9f64b3957e60462eb7"
+    },
+    "vectors_file": {
+      "path": "amphora-known-answer-benchmarks/reference/mvp20/data/unit_conversion_kat_vectors.v1.json",
+      "sha256": "ad196c31f844d09cd9239d28802a42159b3c8bc53964e694d3024b4febcbb44f"
+    },
+    "verifier": {
+      "path": "amphora-known-answer-benchmarks/benchmarks/unit-conversion-kat-v1/verify_unit_conversion_kat.py",
+      "sha256": "5aa263caf60750974d24b11e653108ffe7ca38d7fcdc9fe69a92fbbf35ecd461"
+    }
+  },
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "LIMITED_SANITY",
+  "closes_gate": "UNIT_CONVERSION_KNOWN_ANSWER_AXIS_UNCOVERED (module-local, limited sanity)",
+  "cross_check": {
+    "F160_compA_implied_gml": "0.984973",
+    "F160_compA_lbgal": 8.22,
+    "F160_compB_implied_gml": "1.227023",
+    "F160_compB_lbgal": 10.24,
+    "note": "The two live MIL-DTL-24441 F-160 lb/gal controls in this module (8.22 and 10.24 lb/gal) imply g/mL densities via the NIST-exact factor 8.345404; this battery locks that factor so a future edit to the conversion constant is caught as a known-answer regression."
+  },
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "design": {
+    "fail_closed_criterion": "each hostile trap (water 8.33 lb/gal; Imperial gallon 10.0224 lb/gal; mil-as-mm 1000 um) must NOT equal the exact correct answer",
+    "gate_arithmetic": "fractions.Fraction exact rational only; no floating point enters the pass/fail decision, guaranteeing byte-stable replays by construction",
+    "positive_pass_criterion": "round_half_up(independently_derived_exact_rational, decimals) == pinned_expected, where the derivation uses ONLY raw defining constants (independent of the pinned value -> non-circular)"
+  },
+  "does_not_close": [
+    "F160-BLACK historical control still UNVERIFIED (needs authoritative /38B or NAVSEA/DLA artifact)",
+    "PHASE0_EVALUATOR + PHASE0_INTERNAL_REVIEWER dual-identity promotion signatures",
+    "any candidate-performance, qualification, regulatory, or FTO claim"
+  ],
+  "edits_portfolio_manifest": false,
+  "flips_front_matter": false,
+  "human_dual_identity_ceremony_performed": false,
+  "hypothesis_advanced": "Known answers expose arithmetic, UNIT, and applicability regressions (module mission). This receipt exercises the UNIT axis.",
+  "methodology_primary_sources": [
+    "FIPS 140-3 Section 7.4 Known-Answer Test methodology (2019)",
+    "NIST SP 811 (2008) Guide for the Use of the SI, Appendix B",
+    "NIST Handbook 44 (US gallon = 231 in^3 exact)",
+    "1959 international yard-and-pound agreement (1 lb = 0.45359237 kg; 1 in = 25.4 mm exact)",
+    "BIPM SI Brochure (T/K = t/degC + 273.15)",
+    "EPA Method 24 / 40 CFR Part 59 (VOC g/L <-> lb/gal)"
+  ],
+  "module_id": "amphora-known-answer-benchmarks",
+  "promotes_authority": false,
+  "purpose": "Extend the module's known-answer battery on the unit / dimensional-analysis axis with exact primary-source-anchored conversion test vectors, closing the gap that the six live ARITH-* controls mix arithmetic with a single lb/gal conversion and have no dedicated, non-circular unit-conversion regression set.",
+  "receipt_id": "unit-conversion-kat-v1",
+  "results": {
+    "aggregate_status": "PASS",
+    "fail_closed_flag_rate": "1.000000",
+    "headline": "14/14 exact positive conversions reproduced; 3/3 hostile unit traps rejected",
+    "n_fail_closed": 3,
+    "n_fail_closed_correctly_flagged": 3,
+    "n_positive": 14,
+    "n_positive_pass": 14,
+    "positive_pass_rate": "1.000000"
+  },
+  "schema": "amphora.known-answer.unit-conversion-kat-receipt.v1",
+  "scope": "solvent-borne two-part epoxy-amine marine anti-corrosion coating formulation arithmetic",
+  "signature": {
+    "payload": "ewogICJhcnRpZmFjdHMiOiB7CiAgICAicmVwb3J0IjogewogICAgICAicGF0aCI6ICJhbXBob3JhLWtub3duLWFuc3dlci1iZW5jaG1hcmtzL2JlbmNobWFya3MvdW5pdC1jb252ZXJzaW9uLWthdC12MS91bml0X2NvbnZlcnNpb25fa2F0X3JlcG9ydC52MS5qc29uIiwKICAgICAgInNoYTI1NiI6ICIzMWU5NjA5ODYwZGVmNTI5NWZlMzI2YTU4NzhiNGI5NjI0ZTc2ZmYwMzk5YWRhOWY2NGIzOTU3ZTYwNDYyZWI3IgogICAgfSwKICAgICJ2ZWN0b3JzX2ZpbGUiOiB7CiAgICAgICJwYXRoIjogImFtcGhvcmEta25vd24tYW5zd2VyLWJlbmNobWFya3MvcmVmZXJlbmNlL212cDIwL2RhdGEvdW5pdF9jb252ZXJzaW9uX2thdF92ZWN0b3JzLnYxLmpzb24iLAogICAgICAic2hhMjU2IjogImFkMTk2YzMxZjg0NGQwOWNkOTIzOWQyODgwMmE0MjE1OWIzYzhiYzUzOTY0ZTY5NGQzMDI0YjRmZWJjYmI0NGYiCiAgICB9LAogICAgInZlcmlmaWVyIjogewogICAgICAicGF0aCI6ICJhbXBob3JhLWtub3duLWFuc3dlci1iZW5jaG1hcmtzL2JlbmNobWFya3MvdW5pdC1jb252ZXJzaW9uLWthdC12MS92ZXJpZnlfdW5pdF9jb252ZXJzaW9uX2thdC5weSIsCiAgICAgICJzaGEyNTYiOiAiNWFhMjYzY2FmNjA3NTA5NzRkMjRiMTFlNjUzMTA4ZmZlN2NhMzhkN2ZjZGM5ZmU2OWE5MmZiYmYzNWVjZDQ2MSIKICAgIH0KICB9LAogICJhdXRob3JpdHkiOiAiQVVESVRfT05MWSIsCiAgImF1dGhvcml0eV9jZWlsaW5nIjogIkxJTUlURURfU0FOSVRZIiwKICAiY2xvc2VzX2dhdGUiOiAiVU5JVF9DT05WRVJTSU9OX0tOT1dOX0FOU1dFUl9BWElTX1VOQ09WRVJFRCAobW9kdWxlLWxvY2FsLCBsaW1pdGVkIHNhbml0eSkiLAogICJjcm9zc19jaGVjayI6IHsKICAgICJGMTYwX2NvbXBBX2ltcGxpZWRfZ21sIjogIjAuOTg0OTczIiwKICAgICJGMTYwX2NvbXBBX2xiZ2FsIjogOC4yMiwKICAgICJGMTYwX2NvbXBCX2ltcGxpZWRfZ21sIjogIjEuMjI3MDIzIiwKICAgICJGMTYwX2NvbXBCX2xiZ2FsIjogMTAuMjQsCiAgICAibm90ZSI6ICJUaGUgdHdvIGxpdmUgTUlMLURUTC0yNDQ0MSBGLTE2MCBsYi9nYWwgY29udHJvbHMgaW4gdGhpcyBtb2R1bGUgKDguMjIgYW5kIDEwLjI0IGxiL2dhbCkgaW1wbHkgZy9tTCBkZW5zaXRpZXMgdmlhIHRoZSBOSVNULWV4YWN0IGZhY3RvciA4LjM0NTQwNDsgdGhpcyBiYXR0ZXJ5IGxvY2tzIHRoYXQgZmFjdG9yIHNvIGEgZnV0dXJlIGVkaXQgdG8gdGhlIGNvbnZlcnNpb24gY29uc3RhbnQgaXMgY2F1Z2h0IGFzIGEga25vd24tYW5zd2VyIHJlZ3Jlc3Npb24uIgogIH0sCiAgImRlY2lzaW9uX3VzZV9jZWlsaW5nIjogIkFVRElUX09OTFkiLAogICJkZXNpZ24iOiB7CiAgICAiZmFpbF9jbG9zZWRfY3JpdGVyaW9uIjogImVhY2ggaG9zdGlsZSB0cmFwICh3YXRlciA4LjMzIGxiL2dhbDsgSW1wZXJpYWwgZ2FsbG9uIDEwLjAyMjQgbGIvZ2FsOyBtaWwtYXMtbW0gMTAwMCB1bSkgbXVzdCBOT1QgZXF1YWwgdGhlIGV4YWN0IGNvcnJlY3QgYW5zd2VyIiwKICAgICJnYXRlX2FyaXRobWV0aWMiOiAiZnJhY3Rpb25zLkZyYWN0aW9uIGV4YWN0IHJhdGlvbmFsIG9ubHk7IG5vIGZsb2F0aW5nIHBvaW50IGVudGVycyB0aGUgcGFzcy9mYWlsIGRlY2lzaW9uLCBndWFyYW50ZWVpbmcgYnl0ZS1zdGFibGUgcmVwbGF5cyBieSBjb25zdHJ1Y3Rpb24iLAogICAgInBvc2l0aXZlX3Bhc3NfY3JpdGVyaW9uIjogInJvdW5kX2hhbGZfdXAoaW5kZXBlbmRlbnRseV9kZXJpdmVkX2V4YWN0X3JhdGlvbmFsLCBkZWNpbWFscykgPT0gcGlubmVkX2V4cGVjdGVkLCB3aGVyZSB0aGUgZGVyaXZhdGlvbiB1c2VzIE9OTFkgcmF3IGRlZmluaW5nIGNvbnN0YW50cyAoaW5kZXBlbmRlbnQgb2YgdGhlIHBpbm5lZCB2YWx1ZSAtPiBub24tY2lyY3VsYXIpIgogIH0sCiAgImRvZXNfbm90X2Nsb3NlIjogWwogICAgIkYxNjAtQkxBQ0sgaGlzdG9yaWNhbCBjb250cm9sIHN0aWxsIFVOVkVSSUZJRUQgKG5lZWRzIGF1dGhvcml0YXRpdmUgLzM4QiBvciBOQVZTRUEvRExBIGFydGlmYWN0KSIsCiAgICAiUEhBU0UwX0VWQUxVQVRPUiArIFBIQVNFMF9JTlRFUk5BTF9SRVZJRVdFUiBkdWFsLWlkZW50aXR5IHByb21vdGlvbiBzaWduYXR1cmVzIiwKICAgICJhbnkgY2FuZGlkYXRlLXBlcmZvcm1hbmNlLCBxdWFsaWZpY2F0aW9uLCByZWd1bGF0b3J5LCBvciBGVE8gY2xhaW0iCiAgXSwKICAiZWRpdHNfcG9ydGZvbGlvX21hbmlmZXN0IjogZmFsc2UsCiAgImZsaXBzX2Zyb250X21hdHRlciI6IGZhbHNlLAogICJodW1hbl9kdWFsX2lkZW50aXR5X2NlcmVtb255X3BlcmZvcm1lZCI6IGZhbHNlLAogICJoeXBvdGhlc2lzX2FkdmFuY2VkIjogIktub3duIGFuc3dlcnMgZXhwb3NlIGFyaXRobWV0aWMsIFVOSVQsIGFuZCBhcHBsaWNhYmlsaXR5IHJlZ3Jlc3Npb25zIChtb2R1bGUgbWlzc2lvbikuIFRoaXMgcmVjZWlwdCBleGVyY2lzZXMgdGhlIFVOSVQgYXhpcy4iLAogICJtZXRob2RvbG9neV9wcmltYXJ5X3NvdXJjZXMiOiBbCiAgICAiRklQUyAxNDAtMyBTZWN0aW9uIDcuNCBLbm93bi1BbnN3ZXIgVGVzdCBtZXRob2RvbG9neSAoMjAxOSkiLAogICAgIk5JU1QgU1AgODExICgyMDA4KSBHdWlkZSBmb3IgdGhlIFVzZSBvZiB0aGUgU0ksIEFwcGVuZGl4IEIiLAogICAgIk5JU1QgSGFuZGJvb2sgNDQgKFVTIGdhbGxvbiA9IDIzMSBpbl4zIGV4YWN0KSIsCiAgICAiMTk1OSBpbnRlcm5hdGlvbmFsIHlhcmQtYW5kLXBvdW5kIGFncmVlbWVudCAoMSBsYiA9IDAuNDUzNTkyMzcga2c7IDEgaW4gPSAyNS40IG1tIGV4YWN0KSIsCiAgICAiQklQTSBTSSBCcm9jaHVyZSAoVC9LID0gdC9kZWdDICsgMjczLjE1KSIsCiAgICAiRVBBIE1ldGhvZCAyNCAvIDQwIENGUiBQYXJ0IDU5IChWT0MgZy9MIDwtPiBsYi9nYWwpIgogIF0sCiAgIm1vZHVsZV9pZCI6ICJhbXBob3JhLWtub3duLWFuc3dlci1iZW5jaG1hcmtzIiwKICAicHJvbW90ZXNfYXV0aG9yaXR5IjogZmFsc2UsCiAgInB1cnBvc2UiOiAiRXh0ZW5kIHRoZSBtb2R1bGUncyBrbm93bi1hbnN3ZXIgYmF0dGVyeSBvbiB0aGUgdW5pdCAvIGRpbWVuc2lvbmFsLWFuYWx5c2lzIGF4aXMgd2l0aCBleGFjdCBwcmltYXJ5LXNvdXJjZS1hbmNob3JlZCBjb252ZXJzaW9uIHRlc3QgdmVjdG9ycywgY2xvc2luZyB0aGUgZ2FwIHRoYXQgdGhlIHNpeCBsaXZlIEFSSVRILSogY29udHJvbHMgbWl4IGFyaXRobWV0aWMgd2l0aCBhIHNpbmdsZSBsYi9nYWwgY29udmVyc2lvbiBhbmQgaGF2ZSBubyBkZWRpY2F0ZWQsIG5vbi1jaXJjdWxhciB1bml0LWNvbnZlcnNpb24gcmVncmVzc2lvbiBzZXQuIiwKICAicmVjZWlwdF9pZCI6ICJ1bml0LWNvbnZlcnNpb24ta2F0LXYxIiwKICAicmVzdWx0cyI6IHsKICAgICJhZ2dyZWdhdGVfc3RhdHVzIjogIlBBU1MiLAogICAgImZhaWxfY2xvc2VkX2ZsYWdfcmF0ZSI6ICIxLjAwMDAwMCIsCiAgICAiaGVhZGxpbmUiOiAiMTQvMTQgZXhhY3QgcG9zaXRpdmUgY29udmVyc2lvbnMgcmVwcm9kdWNlZDsgMy8zIGhvc3RpbGUgdW5pdCB0cmFwcyByZWplY3RlZCIsCiAgICAibl9mYWlsX2Nsb3NlZCI6IDMsCiAgICAibl9mYWlsX2Nsb3NlZF9jb3JyZWN0bHlfZmxhZ2dlZCI6IDMsCiAgICAibl9wb3NpdGl2ZSI6IDE0LAogICAgIm5fcG9zaXRpdmVfcGFzcyI6IDE0LAogICAgInBvc2l0aXZlX3Bhc3NfcmF0ZSI6ICIxLjAwMDAwMCIKICB9LAogICJzY2hlbWEiOiAiYW1waG9yYS5rbm93bi1hbnN3ZXIudW5pdC1jb252ZXJzaW9uLWthdC1yZWNlaXB0LnYxIiwKICAic2NvcGUiOiAic29sdmVudC1ib3JuZSB0d28tcGFydCBlcG94eS1hbWluZSBtYXJpbmUgYW50aS1jb3Jyb3Npb24gY29hdGluZyBmb3JtdWxhdGlvbiBhcml0aG1ldGljIiwKICAic2lnbmluZ19rZXkiOiB7CiAgICAiYXV0aG9yaXR5IjogIkFVRElUX09OTFkiLAogICAgImtleV9pZCI6ICJwaGFzZTAtZXZhbHVhdG9yLTNlZjZiMzVjZGJiZmVhNzRhOTZhNWM5Yjk4YTUxNWQ1NzE1OGEwOWVjYWZmMTBhY2ZhMWYxNTk5MGJlMDAxNzgiLAogICAgIm5vdGUiOiAicGhhc2UwLWV2YWx1YXRvciBzZWVkIHVzZWQgZm9yIEFVRElUX09OTFkgc2lnbmluZyBvbmx5OyBubyBkdWFsLWlkZW50aXR5IGNlcmVtb255IiwKICAgICJ0cnVzdF9hbmNob3JlZF9pbl9waGFzZTBfcHJvbW90aW9uX3N0b3JlIjogZmFsc2UKICB9LAogICJ0d29fcmVwbGF5X2dhdGUiOiB7CiAgICAiYnl0ZV9zdGFibGUiOiB0cnVlLAogICAgInJlcGxheV9hX3JlcG9ydF9zaGEyNTYiOiAiMzFlOTYwOTg2MGRlZjUyOTVmZTMyNmE1ODc4YjRiOTYyNGU3NmZmMDM5OWFkYTlmNjRiMzk1N2U2MDQ2MmViNyIsCiAgICAicmVwbGF5X2JfcmVwb3J0X3NoYTI1NiI6ICIzMWU5NjA5ODYwZGVmNTI5NWZlMzI2YTU4NzhiNGI5NjI0ZTc2ZmYwMzk5YWRhOWY2NGIzOTU3ZTYwNDYyZWI3IiwKICAgICJyZXBsYXlzIjogMgogIH0KfQ==",
+    "payloadType": "application/vnd.amphora.known-answer-unit-conversion-kat-receipt.v1+json",
+    "signatures": [
+      {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "sig": "F4Dia5eHjLtARxw3ld0B3yssjzZvfxAAN+7nFAboYRF6Lu39F9w8t6ZvmPNMAR2ep07KJEuu/IzrlZBbLTUHDA=="
+      }
+    ]
+  },
+  "signing_key": {
+    "authority": "AUDIT_ONLY",
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "note": "phase0-evaluator seed used for AUDIT_ONLY signing only; no dual-identity ceremony",
+    "trust_anchored_in_phase0_promotion_store": false
+  },
+  "two_replay_gate": {
+    "byte_stable": true,
+    "replay_a_report_sha256": "31e9609860def5295fe326a5878b4b9624e76ff0399ada9f64b3957e60462eb7",
+    "replay_b_report_sha256": "31e9609860def5295fe326a5878b4b9624e76ff0399ada9f64b3957e60462eb7",
+    "replays": 2
+  }
+}

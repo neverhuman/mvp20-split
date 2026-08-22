@@ -1,0 +1,249 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "amphora-molecule-design-gate-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "molecule"
+  ],
+  "ceilings": {
+    "authority_tier": "REAL_ARITHMETIC",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "CONSTRAINT_ONLY"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 0,
+    "checked_benchmark_status": "NO_CHECKED_BENCHMARK_RESULT",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "READY",
+    "runtime_integration": "ScoreEnvelope service present; scientific promotion not inferred from execution or tests.",
+    "scientific_readiness": "NOT_APPLICABLE"
+  },
+  "datasets": [
+    {
+      "dataset_id": "structural-applicability-controls",
+      "hash": null,
+      "path": null,
+      "rights": "UNRESOLVED",
+      "status": "NOT_CHECKED_IN",
+      "version": null
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "No checked-in dataset, output artifact, or non-README fixture was discovered for this module.",
+    "artifacts": [],
+    "current_benchmark": {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "gap": "No checked-in module-specific benchmark result artifact was identified.",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NO_CHECKED_BENCHMARK_RESULT"
+    },
+    "external_dependencies": [
+      "Independent structural controls, EHS review, and synthesis assessment"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-molecule-capabilities/src/lib.rs",
+      "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
+      "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+    },
+    "known_contradictions": [
+      "Structural applicability gates do not establish EHS acceptability, synthesis feasibility, qualification, procurement, or performance."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-molecule-capabilities/src/lib.rs",
+      "scenario": "Reject malformed chemistry and preserve EHS/synthesis/performance claim locks.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-molecule-design-gate",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "molecule",
+        "dataset_id": "structural-applicability-rules-v1",
+        "model_id": "molecule-design-gate-v1",
+        "model_readiness_status": "MODEL_READINESS_ONLY",
+        "solver_use": "CONSTRAINT_ONLY",
+        "track_id": "molecule_design_gate"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-molecule-capabilities/src/lib.rs",
+        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-molecule-design-gate-example",
+      "candidate_type": "molecule",
+      "molecule": {
+        "role": "resin",
+        "smiles": "CC"
+      }
+    },
+    "current_output": {
+      "authority_tier": "REAL_ARITHMETIC",
+      "candidate_id": "amphora-molecule-design-gate-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {
+        "pass_all_hard": null
+      },
+      "metrics": {
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "negative-control rejection",
+          "model_authority": "REAL_ARITHMETIC",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        }
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-molecule-design-gate",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "negative-control rejection",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "Zero silent acceptance of malformed, unsupported, or unauthorized inputs before Phase 0; locked module-specific benchmark required for Phase 1.",
+      "unit": "declared by locked benchmark",
+      "value_path": "gates.pass_all_hard"
+    }
+  ],
+  "lane": "molecule",
+  "module_id": "amphora-molecule-design-gate",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "gates.pass_all_hard",
+    "non_blocking_claim_locks": [
+      "does_not_establish_ehs_safety",
+      "does_not_establish_procurement",
+      "does_not_establish_product_performance",
+      "does_not_establish_qualification",
+      "does_not_establish_synthesis_feasibility"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 3,
+      "decision_value": 1,
+      "downstream_leverage": 1,
+      "effort": 2,
+      "evidence_gap": 1,
+      "external_delay": 1
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 17,
+    "score": 11
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

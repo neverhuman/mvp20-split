@@ -1,0 +1,412 @@
+{
+  "campaign_item_id": "W-OMG-CONF",
+  "claim_under_attack": "reference/mvp20/data/omg_chi_conformal_and_applicability_domain_receipt.v1.json + evidence/phase0/kpis/omg-chi-3-solvent-conformal-coverage-and-applicability-domain-kpi.v1.json (split-conformal marginal coverage >=90%/80% at alpha=0.10/0.20, hostile-null y-shuffle passes, per-AD-quintile floor holds -- scaffold-safe on water/ethanol/chloroform)",
+  "elapsed_sec": 59.61223602294922,
+  "fail_fraction_threshold": 0.2,
+  "gbm_hyperparameters": {
+    "l2_regularization": 0.1,
+    "learning_rate": 0.05,
+    "max_depth": 8,
+    "max_iter": 500,
+    "min_samples_leaf": 25,
+    "random_state": 0
+  },
+  "n_null_seeds": 10,
+  "provenance": {
+    "corpus_path": "/home/ubuntu/amphora/build/mvp20-split/feedback/v3/normalized/omg_physical_properties_v3.jsonl.gz",
+    "corpus_sha256": "36e01a8d8ed79bb295715dfd3e67183ff6fbc6a0db60ea77e410f3386961ed22",
+    "dataset_id": "omg_physical_properties_v3-3e5af76bc6a1f8ea",
+    "manifest_quarantined": false,
+    "manifest_rights_class": "DERIVATIVE_ALLOWED",
+    "n_chi_records": 346179,
+    "n_records_streamed": 346555,
+    "n_sample": 20000,
+    "n_unique_smiles_chi_labeled": 265721,
+    "split_seed": 0
+  },
+  "results": {
+    "ethanol": {
+      "ad_quintile_coverage": {
+        "0.1": [
+          {
+            "ad_max": 0.49122807017543857,
+            "ad_min": 0.2,
+            "coverage": 0.8032345013477089,
+            "n": 742,
+            "quintile": 0
+          },
+          {
+            "ad_max": 0.5319148936170213,
+            "ad_min": 0.49122807017543857,
+            "coverage": 0.9137466307277629,
+            "n": 742,
+            "quintile": 1
+          },
+          {
+            "ad_max": 0.5645161290322581,
+            "ad_min": 0.5319148936170213,
+            "coverage": 0.9366576819407008,
+            "n": 742,
+            "quintile": 2
+          },
+          {
+            "ad_max": 0.6111111111111112,
+            "ad_min": 0.5645161290322581,
+            "coverage": 0.931266846361186,
+            "n": 742,
+            "quintile": 3
+          },
+          {
+            "ad_max": 1.0,
+            "ad_min": 0.6111111111111112,
+            "coverage": 0.9487870619946092,
+            "n": 742,
+            "quintile": 4
+          }
+        ],
+        "0.2": [
+          {
+            "ad_max": 0.49122807017543857,
+            "ad_min": 0.2,
+            "coverage": 0.6630727762803235,
+            "n": 742,
+            "quintile": 0
+          },
+          {
+            "ad_max": 0.5319148936170213,
+            "ad_min": 0.49122807017543857,
+            "coverage": 0.8153638814016172,
+            "n": 742,
+            "quintile": 1
+          },
+          {
+            "ad_max": 0.5645161290322581,
+            "ad_min": 0.5319148936170213,
+            "coverage": 0.8369272237196765,
+            "n": 742,
+            "quintile": 2
+          },
+          {
+            "ad_max": 0.6111111111111112,
+            "ad_min": 0.5645161290322581,
+            "coverage": 0.8369272237196765,
+            "n": 742,
+            "quintile": 3
+          },
+          {
+            "ad_max": 1.0,
+            "ad_min": 0.6111111111111112,
+            "coverage": 0.8490566037735849,
+            "n": 742,
+            "quintile": 4
+          }
+        ]
+      },
+      "hostile_null_multiseed": {
+        "fail_fraction": 0.0,
+        "mean_null_width_inflation_ratio_over_real_signal": 2.4016770786322295,
+        "n_seeds": 10,
+        "n_seeds_below_naive_0.90": 2,
+        "n_seeds_below_worst_case_floor_0.80": 0,
+        "refutation_criterion": "fail_fraction > 0.2 at worst-case floor 0.80, alpha=0.10",
+        "refutation_criterion_met": false,
+        "runs": [
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9024258760107817,
+            "median_width": 0.42781549410622116,
+            "seed": 0
+          },
+          {
+            "below_naive_0.90": true,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.889487870619946,
+            "median_width": 0.4241172082861045,
+            "seed": 1
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9037735849056604,
+            "median_width": 0.434821976509308,
+            "seed": 2
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9005390835579515,
+            "median_width": 0.4371965385456587,
+            "seed": 3
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9037735849056604,
+            "median_width": 0.4298314152388198,
+            "seed": 4
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9129380053908356,
+            "median_width": 0.4431688778110066,
+            "seed": 5
+          },
+          {
+            "below_naive_0.90": true,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.8959568733153639,
+            "median_width": 0.4267806980454289,
+            "seed": 6
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9080862533692723,
+            "median_width": 0.44324644116458645,
+            "seed": 7
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9024258760107817,
+            "median_width": 0.4337540995614749,
+            "seed": 8
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9075471698113208,
+            "median_width": 0.43663477767797665,
+            "seed": 9
+          }
+        ]
+      },
+      "n_cal": 4000,
+      "n_test": 3710,
+      "n_train": 12290,
+      "positive_control": {
+        "detected": true,
+        "evidence": "coverage collapsed from 0.9067 to 0.0388 under the planted post-calibration shift",
+        "how_planted": "shifted_pred_test = pred_test + 2*0.090299; qhat reused from the REAL (unshifted) calibration residuals, then coverage recomputed on the shift",
+        "planted_defect": "test predictions shifted by +2*qhat(alpha=0.1) post-calibration (simulates calibration/deployment exchangeability break)",
+        "post_shift_coverage": 0.03881401617250674,
+        "pre_shift_coverage": 0.9067385444743935,
+        "target_floor": 0.9
+      },
+      "real_signal": {
+        "0.1": {
+          "coverage": 0.9067385444743935,
+          "median_width": 0.18059744857192644,
+          "meets_target": true,
+          "qhat": 0.09029872428596322,
+          "target_floor": 0.9
+        },
+        "0.2": {
+          "coverage": 0.8002695417789757,
+          "median_width": 0.1243022675687743,
+          "meets_target": true,
+          "qhat": 0.06215113378438716,
+          "target_floor": 0.8
+        }
+      },
+      "real_test_r2": 0.8190602054489338,
+      "worst_ad_quintile_coverage_alpha010": 0.8032345013477089,
+      "worst_ad_quintile_coverage_alpha020": 0.6630727762803235
+    },
+    "water": {
+      "ad_quintile_coverage": {
+        "0.1": [
+          {
+            "ad_max": 0.49122807017543857,
+            "ad_min": 0.2,
+            "coverage": 0.8059299191374663,
+            "n": 742,
+            "quintile": 0
+          },
+          {
+            "ad_max": 0.5319148936170213,
+            "ad_min": 0.49122807017543857,
+            "coverage": 0.9002695417789758,
+            "n": 742,
+            "quintile": 1
+          },
+          {
+            "ad_max": 0.5645161290322581,
+            "ad_min": 0.5319148936170213,
+            "coverage": 0.9258760107816711,
+            "n": 742,
+            "quintile": 2
+          },
+          {
+            "ad_max": 0.6111111111111112,
+            "ad_min": 0.5645161290322581,
+            "coverage": 0.9123989218328841,
+            "n": 742,
+            "quintile": 3
+          },
+          {
+            "ad_max": 1.0,
+            "ad_min": 0.6111111111111112,
+            "coverage": 0.9380053908355795,
+            "n": 742,
+            "quintile": 4
+          }
+        ],
+        "0.2": [
+          {
+            "ad_max": 0.49122807017543857,
+            "ad_min": 0.2,
+            "coverage": 0.6886792452830188,
+            "n": 742,
+            "quintile": 0
+          },
+          {
+            "ad_max": 0.5319148936170213,
+            "ad_min": 0.49122807017543857,
+            "coverage": 0.8086253369272237,
+            "n": 742,
+            "quintile": 1
+          },
+          {
+            "ad_max": 0.5645161290322581,
+            "ad_min": 0.5319148936170213,
+            "coverage": 0.8355795148247979,
+            "n": 742,
+            "quintile": 2
+          },
+          {
+            "ad_max": 0.6111111111111112,
+            "ad_min": 0.5645161290322581,
+            "coverage": 0.8288409703504043,
+            "n": 742,
+            "quintile": 3
+          },
+          {
+            "ad_max": 1.0,
+            "ad_min": 0.6111111111111112,
+            "coverage": 0.8679245283018868,
+            "n": 742,
+            "quintile": 4
+          }
+        ]
+      },
+      "hostile_null_multiseed": {
+        "fail_fraction": 0.0,
+        "mean_null_width_inflation_ratio_over_real_signal": 3.517472153693741,
+        "n_seeds": 10,
+        "n_seeds_below_naive_0.90": 5,
+        "n_seeds_below_worst_case_floor_0.80": 0,
+        "refutation_criterion": "fail_fraction > 0.2 at worst-case floor 0.80, alpha=0.10",
+        "refutation_criterion_met": false,
+        "runs": [
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9129380053908356,
+            "median_width": 0.6525692467819327,
+            "seed": 0
+          },
+          {
+            "below_naive_0.90": true,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.8797843665768194,
+            "median_width": 0.5963883718735166,
+            "seed": 1
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9053908355795148,
+            "median_width": 0.6465450176941165,
+            "seed": 2
+          },
+          {
+            "below_naive_0.90": true,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.898921832884097,
+            "median_width": 0.6394204840941643,
+            "seed": 3
+          },
+          {
+            "below_naive_0.90": true,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.8908355795148248,
+            "median_width": 0.6208873950479017,
+            "seed": 4
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9134770889487871,
+            "median_width": 0.6536328519358796,
+            "seed": 5
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9024258760107817,
+            "median_width": 0.6319981925706637,
+            "seed": 6
+          },
+          {
+            "below_naive_0.90": true,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.8964959568733154,
+            "median_width": 0.6301162072541735,
+            "seed": 7
+          },
+          {
+            "below_naive_0.90": false,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.9140161725067385,
+            "median_width": 0.6529353055861158,
+            "seed": 8
+          },
+          {
+            "below_naive_0.90": true,
+            "below_worst_case_floor_0.80": false,
+            "coverage": 0.8938005390835579,
+            "median_width": 0.6241973323362798,
+            "seed": 9
+          }
+        ]
+      },
+      "n_cal": 4000,
+      "n_test": 3710,
+      "n_train": 12290,
+      "positive_control": {
+        "detected": true,
+        "evidence": "coverage collapsed from 0.8965 to 0.0493 under the planted post-calibration shift",
+        "how_planted": "shifted_pred_test = pred_test + 2*0.090245; qhat reused from the REAL (unshifted) calibration residuals, then coverage recomputed on the shift",
+        "planted_defect": "test predictions shifted by +2*qhat(alpha=0.1) post-calibration (simulates calibration/deployment exchangeability break)",
+        "post_shift_coverage": 0.049326145552560645,
+        "pre_shift_coverage": 0.8964959568733154,
+        "target_floor": 0.9
+      },
+      "real_signal": {
+        "0.1": {
+          "coverage": 0.8964959568733154,
+          "median_width": 0.18049013973025785,
+          "meets_target": false,
+          "qhat": 0.09024506986512892,
+          "target_floor": 0.9
+        },
+        "0.2": {
+          "coverage": 0.8059299191374663,
+          "median_width": 0.13225518025723382,
+          "meets_target": true,
+          "qhat": 0.06612759012861691,
+          "target_floor": 0.8
+        }
+      },
+      "real_test_r2": 0.9073500775252326,
+      "worst_ad_quintile_coverage_alpha010": 0.8059299191374663,
+      "worst_ad_quintile_coverage_alpha020": 0.6886792452830188
+    }
+  },
+  "schema": "amphora.solvency-score-omg-chi-conformal-hostile-null-robustness-audit.v1",
+  "scope_note": "Independent re-derivation at reduced scale (n_sample=20000 vs signed receipt's 98506) using the SAME real OMG PhysicalProperties v3 corpus, SAME scaffold-safe 60/20/20-by-scaffold split methodology, SAME 528-feature (16 rdkit descriptors + 512-bit Morgan r=2) spec, and SAME HistGradientBoostingRegressor hyperparameters already used by this module's own ml-vs-physics-coverage-scope-v1 benchmark. NOT a byte-identical replay of the signed receipt (different n_sample, split_seed used only for sampling+split not identical to original's internal RNG stream) -- scored as an independent re-derivation attack, restricted to water and ethanol (the two solvents whose signed hostile-null diagnostic already sits below 0.90 naive target in the original receipt).",
+  "verdict": "CLAIM_SURVIVED"
+}

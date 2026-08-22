@@ -1,0 +1,951 @@
+[
+  {
+    "candidate_id": "DR-DISP-Q01",
+    "closed_input_set_source": "queue_line_1",
+    "confidence_flag": "MEDIUM",
+    "coverage": "3 proprietary adduct-hardener AHEW/amine-value constants needed to compute the nominal amine-H:epoxide stoichiometric index for envelope-gates G1/G4 (currently 7/10 coverage).",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=3, rights_clarity=2, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=6.1667 -> CONDITIONAL. Next action: Human to transcribe TDS AHEW/amine value for the 3 hardeners into a rights-clean CC0 fact table (per queue line 1's own next_action).",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'manufacturer TDS - factual equivalent-weight constant, cite-only; confirm redistribution terms'; license_verified=false.",
+    "name": "Manufacturer TDS AHEW/amine-value: Huntsman Aradur 3486, Momentive Epikure 3125, Air Products Ancamine 2735",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 8,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 3,
+      "rights_clarity": 2,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 6.1667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-envelope-gates"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://www.huntsman.com ; https://www.momentive.com ; https://www.airproducts.com"
+  },
+  {
+    "candidate_id": "DR-DISP-Q02",
+    "closed_input_set_source": "queue_line_2",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Would supply the real-world false-positive rate and measured titration precision sigma for the dgeba-polydispersity-cross-titration-v1 QC detector, currently resting on ASSUMED 0.5-2% precision.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=6, provenance_measurement_quality=0, rights_clarity=2, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=5.3333 -> CONDITIONAL. Next action: Human to locate >=10 real DGEBA lots with both EEW and hydroxyl value measured (per queue line 2's own next_action).",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'MDPI/CC-BY preferred...supplier TDS=cite-only...ASTM standards are PAID and NOT redistributable'; license_verified=false. No single candidate paper/TDS pair identified yet -- this queue line names search directions, not a pinned source.",
+    "name": "Paired ASTM D1652 (EEW) + ASTM D4274 (hydroxyl value) DGEBA lot measurements -- search direction, no specific source pinned",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 6,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 2,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 5.3333,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://www.mdpi.com/search?q=epoxy+equivalent+weight+hydroxyl+value+DGEBA ; https://www.hexion.com ; https://www.olin.com"
+  },
+  {
+    "candidate_id": "DR-DISP-Q03",
+    "closed_input_set_source": "queue_line_3",
+    "confidence_flag": "MEDIUM",
+    "coverage": "~306 existing summary rows x ~40-60 frequency decades-points each => ~12k-18k complex impedance points across 6 coating systems x 4 baths x ~70 dates. Unlocks Brasher-Kingsbury-admissible water-uptake work after H0_REFUTED on 6/6 physical screens against the 0.01Hz-only summary.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=10, provenance_measurement_quality=8, rights_clarity=10, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=8.6667 -> RECOMMENDED. Next action: Human to file a RISE data request to USBR for the raw frequency-resolved EIS sweeps behind catalog item 8048 (= B-ASK R-D02).",
+      "verdict": "RECOMMENDED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'US Federal Government work, public domain (17 U.S.C. 105)'; license_verified=true.",
+    "name": "USBR RISE frequency-resolved raw EIS sweeps behind project 21019 / catalog item 8048",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 10,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 8,
+      "rights_clarity": 10,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 8.6667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "recipe_elements": [
+        "frequency-resolved-eis-water-uptake-admissibility"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://data.usbr.gov/catalog/8048"
+  },
+  {
+    "candidate_id": "DR-DISP-Q04",
+    "closed_input_set_source": "queue_line_4",
+    "confidence_flag": "MEDIUM",
+    "coverage": "6 of 306 published USBR-21019 EIS records (1.96%) have |phase|>90deg, physically impossible for a passive LTI two-terminal cell; localized to one source file, replicate 2/HAR bath.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=10, provenance_measurement_quality=8, rights_clarity=10, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=8.6667 -> RECOMMENDED. Next action: Human to notify USBR of the passivity violation in item 128772 and request a corrected re-issue or documented phase convention (per queue line 4's own next_action).",
+      "verdict": "RECOMMENDED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'US Federal Government work, public domain (17 U.S.C. 105)'; license_verified=true.",
+    "name": "USBR RISE erratum/corrected re-issue of catalog item 128772 (6/306 phase-impossible rows)",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 10,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 8,
+      "rights_clarity": 10,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 8.6667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "recipe_elements": [
+        "eis-passivity-erratum-correction"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://data.usbr.gov/catalog/8048/item/128772"
+  },
+  {
+    "candidate_id": "DR-DISP-Q05",
+    "closed_input_set_source": "queue_line_5",
+    "confidence_flag": "MEDIUM",
+    "coverage": "10 inhibitive coating systems; would raise corrosion_series.json strict_literature_count from 2 to 3, meeting the >=3 strict_validation_bar.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=10, provenance_measurement_quality=8, rights_clarity=0, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=7.0 -> REJECTED. Next action: Human to file a USBR RISE data-use confirmation request for catalog item 4640/11562 (= B-ASK R-D01, package already written and signed).",
+      "verdict": "REJECTED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "reference/eis/source-landscape.v1.json: license=USBR_RIGHTS_REVIEW_REQUIRED, rights_status=ACQUIRED_UNTOUCHED_QUARANTINED_PENDING_RIGHTS_REVIEW, eligible_for_derivatives=false. This cron does NOT open, parse, or derive from this quarantined file -- disposition is scored from the queue line's own already-disclosed rights metadata only.",
+    "name": "USBR RISE catalog item 4640/11562, ST-19168 inhibitive coating system dataset -- already on disk, QUARANTINED",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 10,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 8,
+      "rights_clarity": 0,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 7.0,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-barrier-corrosion-score"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://data.usbr.gov/catalog/4640/item/11562"
+  },
+  {
+    "candidate_id": "DR-DISP-Q06",
+    "closed_input_set_source": "queue_line_6",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Already-acquired CC-BY-4.0 asset already integrated into amphora-barrier-corrosion-score's literature_bar count; the queue line's ask is an internal double-keying spot-check of an existing transcription, not a new-source acquisition question.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "Not a new-source acquisition candidate for this ledger: identical asset already acquired, rights-cleared (CC-BY-4.0, license_verified=true) and integrated. The six-dimension data-source rubric does not apply to an internal transcription-QA task on already-held data; no new source is being proposed, so no acquisition disposition is actionable here. Disqualifying finding for DR-DISP purposes: out of scope as a candidate, not a quality judgment on the underlying data. Next action: Human or independent second-pass spot-check of a sample of Table 5/6 cells against the MDPI PDF (per queue line 6's own next_action) -- an amphora-barrier-corrosion-score QA task, not a DR-DISP acquisition ask.",
+      "verdict": "REJECTED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: CC-BY-4.0; license_verified=true; 'same already-acquired CC-BY-4.0 asset; no new source, no rights action needed' (queue line 6's own candidate_source text).",
+    "name": "alam2022_pa450_pa3282 (Materials 15(7):2562, DOI 10.3390/ma15072562) Table 5/6 transcription QA",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "10.3390/ma15072562"
+  },
+  {
+    "candidate_id": "DR-DISP-Q07",
+    "closed_input_set_source": "queue_line_7",
+    "confidence_flag": "MEDIUM",
+    "coverage": "12-system Arrhenius Phase-0 KPI fixture; 10/12 systems cite named vendor TDS directly, the same category of source the module's own census quarantines elsewhere (3/3 QUARANTINED).",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=10, provenance_measurement_quality=5, rights_clarity=2, uniqueness=10, integrity_risk=10, acquisition_cost_friction=10, overall=7.8333 -> CONDITIONAL. Next action: Human to formally ratify or downgrade the CC0 self-assertion via a signed PHASE0 rights receipt (= B-ASK R-D04).",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'Self-asserted CC0-1.0 by the fixture itself (unreviewed); underlying facts sourced from vendor TDS documents of unconfirmed redistribution/derivative-use rights'; license_verified=false. Documented in a prior signed AUDIT_ONLY receipt: amphora-cure-potlife-gate/evidence/audit/rights-integrity-contradiction-v1/.",
+    "name": "cure-potlife-gate known-answer fixture (phase0-cure-potlife-known-answer.v1.json) self-asserted CC0, rights-integrity contradiction",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 10,
+      "gap_fit": 10,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 5,
+      "rights_clarity": 2,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 7.8333,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-cure-potlife-gate"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "local:amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json"
+  },
+  {
+    "candidate_id": "DR-DISP-Q08",
+    "closed_input_set_source": "queue_line_8",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Would grow n beyond the 58 leak-free unique Purformance observations that currently underpower the physics-beats-Rule-1 significance test (paired CI [-0.0019,0.2144] includes zero).",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=0, rights_clarity=2, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=5.6667 -> CONDITIONAL. Next action: Human to contact Cordts/Sassmannshausen/Rendel/Klein/Reddemann/Berge re a follow-on HTE release, or commission a DoE (= B-ASK R-D05).",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'CC-BY-4.0 (existing Purformance dataset); license of any follow-on dataset unknown pending identification'; license_verified=false. No sibling/follow-on release identified yet.",
+    "name": "Independent 2K-PU/2K-epoxy scratch-hardness HTE DoE -- sibling to Cordts et al. 2024 Purformance (Zenodo 13742098)",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 8,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 2,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 5.6667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-design-rule-score"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://zenodo.org/records/13742098"
+  },
+  {
+    "candidate_id": "DR-DISP-Q09",
+    "closed_input_set_source": "queue_line_9",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Would let the shipped RadonPy density RF baseline (MAE 0.0566 g/cm3) be cross-validated against a genuinely independent corpus; RadonPy is currently the ONLY rights-cleared polymer-density corpus in the module.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=0, rights_clarity=2, uniqueness=10, integrity_risk=0, acquisition_cost_friction=4, overall=4.0 -> CONDITIONAL. Next action: Human to identify and rights-clear a second polymer-density corpus (per queue line 9's own next_action).",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'Unknown pending identification/rights review'; license_verified=false. PoLyInfo (NIMS, a Japanese custodian) was not itself fetched/read this fire -- translation_confidence is honestly rated no_translation_attempted_unknown rather than assumed.",
+    "name": "Independent second polymer-density corpus disjoint from RadonPy PI1070 -- PoLyInfo / Bicerano 2002 Ch.3 / alt MD corpus",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 8,
+      "integrity_risk": 0,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 2,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 4.0,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://polymer.nims.go.jp/ ; Bicerano J. (2002) ISBN 0-8247-0712-0"
+  },
+  {
+    "candidate_id": "DR-DISP-Q10",
+    "closed_input_set_source": "queue_line_10",
+    "confidence_flag": "MEDIUM",
+    "coverage": "RadonPy PI1070's static_dielectric_const violates eps_static>=n^2 (Frohlich 1949) in 89.5% of rows (962/1075); this is the dominant (79%) data source for the shipped dielectric ML KPI.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=0, rights_clarity=2, uniqueness=10, integrity_risk=0, acquisition_cost_friction=4, overall=4.0 -> CONDITIONAL. Next action: Human to confirm with RadonPy/PI1070 authors whether static_dielectric_const used production-converged trajectories, and identify a rights-clean experimental reference set (= B-ASK R-D06, part 1).",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'Unknown pending identification/rights review'; license_verified=false. PoLyInfo not fetched this fire.",
+    "name": "Experimental polymer static dielectric constant dataset, or RadonPy production-converged re-simulation confirmation",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 8,
+      "integrity_risk": 0,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 2,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 4.0,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://polymer.nims.go.jp/ ; github.com/RadonPy/RadonPy"
+  },
+  {
+    "candidate_id": "DR-DISP-Q11",
+    "closed_input_set_source": "queue_line_11",
+    "confidence_flag": "MEDIUM",
+    "coverage": "OpenPoly (741 polymers) has NO density column in this module's current CSV export, blocking the Lorentz-Lorenz refractive-index and Onsager dielectric physics arms on the OpenPoly half of the mixed population.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=0, rights_clarity=8, uniqueness=10, integrity_risk=10, acquisition_cost_friction=4, overall=6.6667 -> CONDITIONAL. Next action: Human (or a future fire) to check the linked Zenodo deposit (zenodo.org/records/13863778) or upstream /data CSVs directly for a density field not present in this module's current CSV export.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "THIS FIRE'S OWN EVALUATIVE WebFetch of github.com/TheJacksonLab/OMG_PhysicalProperties (read-to-evaluate only, no clone/download) confirmed the repo states 'Apache License, Version 2.0' is NOT what was found -- the fetch returned 'The repository is licensed under the MIT License, as indicated in the README navigation and footer', an upgrade from the queue line's own 'license terms per upstream repo...unconfirmed' to a specific, quoted, permissive license. The fetch could NOT confirm or deny a density column's existence without opening the linked Zenodo data files (zenodo.org/records/13863778), which this fire did not do (no-acquisition discipline) -- that specific sub-question remains open.",
+    "name": "OpenPoly-matched density field -- github.com/TheJacksonLab/OMG_PhysicalProperties upstream repo re-check",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 4,
+      "gap_fit": 8,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 8,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 6.6667,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://github.com/TheJacksonLab/OMG_PhysicalProperties"
+  },
+  {
+    "candidate_id": "DR-DISP-Q12",
+    "closed_input_set_source": "queue_line_12",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Would benchmark KRIEGER_DOUGHERTY (src/lib.rs:1208), currently completely unbenchmarked in-tree; an extensive prior open-literature sweep found qualitative discussion of phi_max but no rights-clean digitizable numeric eta-vs-phi table.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=8, provenance_measurement_quality=0, rights_clarity=2, uniqueness=10, integrity_risk=10, acquisition_cost_friction=0, overall=5.0 -> REJECTED. Next action: Human (or a future fire with browser access) to check MDPI Coatings 12(10):1473 supplementary files directly, and run a Zenodo/Figshare dataset-specific search (per queue line 12's own next_action).",
+      "verdict": "REJECTED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "queue line 12: 'MDPI page returned 403 to automated fetch this fire, needs a direct browser check' -- an automated-fetch network block, the same categorical pattern (and same rubric-floor consequence) as DR-LANG-ZH-02's CNKI TLS block.",
+    "name": "eta-vs-phi pigment/filler volume-fraction viscosity dataset for an epoxy-amine coating system -- MDPI Coatings 12(10):1473 supplementary + Zenodo/Figshare search",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 0,
+      "gap_fit": 8,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 0,
+      "rights_clarity": 2,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 5.0,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://doi.org/10.3390/coatings12101473"
+  },
+  {
+    "candidate_id": "DR-DISP-Q13",
+    "closed_input_set_source": "queue_line_13",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Explicit Krieger-Dougherty (1959) fit with a cited phi_m~=0.54; multi-point Phi sweep across mono/polydisperse conditions, multiple shear rates, >=2 temperatures. Full text confirmed via pdftotext extraction of the VTechWorks OA PDF.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "rubric.v1.json score: gap_fit=10, provenance_measurement_quality=8, rights_clarity=5, uniqueness=10, integrity_risk=10, acquisition_cost_friction=10, overall=8.8333 -> RECOMMENDED. Next action: Human counsel review of whether CC BY-NC-ND permits internal, non-distributed, AUDIT_ONLY quantitative benchmarking (= B-ASK R-D03).",
+      "verdict": "RECOMMENDED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "license field: 'CC BY-NC-ND...confirmed verbatim from the article's own copyright line'; license_verified=true. Rights wall (needs counsel confirmation this NC-ND scope permits internal AUDIT_ONLY benchmarking) not a data wall -- the dataset itself is in hand via an OA repository copy, matching the same rights-profile pattern already scored RECOMMENDED for DR-LANG-DE-06 (also CC BY-NC-ND).",
+    "name": "Reynolds, Unterhalter, Francoeur, Bortner & Raeymaekers 2024, Advanced Engineering Materials 26(10):2301630 -- Krieger-Dougherty glass-microsphere-filled photopolymer eta(phi) sweep",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": {
+      "acquisition_cost_friction": 10,
+      "gap_fit": 10,
+      "integrity_risk": 10,
+      "provenance_measurement_quality": 8,
+      "rights_clarity": 5,
+      "uniqueness": 10
+    },
+    "rubric_overall_score": 8.8333,
+    "rubric_path": "amphora-dataset-recon/evidence/phase0/repairs/DR-RUBRIC/work/rubric.v1.json",
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-viscosity-score"
+      ],
+      "recipe_elements": [
+        "krieger-dougherty-pigment-loading-benchmark"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://doi.org/10.1002/adem.202301630 ; https://hdl.handle.net/10919/140523"
+  },
+  {
+    "candidate_id": "DR-DISP-Q14",
+    "closed_input_set_source": "queue_line_14",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Queue line 14 itself states this is the identical candidate_source sha256 as queue line 3 (c8a3902f7855e8c27c4e6698c40dda1d163c4a6c7d6c3dae1db83c6699724aa2), now also named as the unlock for 2 further stalled capabilities (within-instrument discrimination p=0.2554 at n=6; 3-instrument concordance Kendall W=0.492 weak/null at n=6).",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "Inherits DR-DISP-Q03's verdict and rubric score verbatim -- this is a priority escalation of the identical underlying candidate (same sha256), NOT an independently distinct source; re-scoring it separately with the rubric would double-count one dataset as two candidates. Recorded here with its own candidate_id, as the closed-input-set manifest requires exactly one verdict per QUEUE LINE (14 lines = 14 manifest entries), while being explicit that no new acquisition value is being claimed beyond queue line 3's. Next action: Human: escalate the existing RISE data request citing 3 blocked capabilities, not 1 (per queue line 14's own next_action; = B-ASK R-D02).",
+      "verdict": "RECOMMENDED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "Same as DR-DISP-Q03: US Federal Government work, public domain (17 U.S.C. 105), license_verified=true.",
+    "name": "ESCALATION of queue line 3 (USBR RISE frequency-resolved EIS sweeps, project 21019/catalog 8048) -- same candidate, not a new source",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "recipe_elements": [
+        "frequency-resolved-eis-water-uptake-admissibility",
+        "eis-within-instrument-discrimination-power",
+        "eis-multi-instrument-concordance"
+      ]
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://data.usbr.gov/catalog/8048"
+  },
+  {
+    "candidate_id": "DR-DISP-BASK-R-D01",
+    "closed_input_set_source": "b_ask",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Unlocks the entire barrier-corrosion wet-panel campaign (C.2); the package is written and signed, it needs a human to send it. Governance action, not a data source -- rubric_attrs intentionally None.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "CONDITIONAL by definition: blocker named (a human must send the already-prepared, already-signed rights-review request) and routed to a human action (owner class HUMAN per docs/directives/2026-08-05-closing-the-open-portfolio.md B.4). Not a data source, so the six-dimension data rubric does not apply; the disposition rests directly on the directive table's own text. Next action: Human sends the prepared USBR ST-19168 RIGHTS-REVIEW-REQUEST to USBR RISE.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "N/A -- governance/rights ask, not a dataset. Directive text quoted verbatim in this fire's manifest.",
+    "name": "B-ASK R-D01: send the prepared USBR ST-19168 RIGHTS-REVIEW-REQUEST to USBR RISE",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-barrier-corrosion-score"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "local:amphora-barrier-corrosion-score/evidence/audit/st-19168-rights-review-v1/RIGHTS-REVIEW-REQUEST.md"
+  },
+  {
+    "candidate_id": "DR-DISP-BASK-R-D02",
+    "closed_input_set_source": "b_ask",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Pairs with DR-DISP-Q03/Q14 (queue #3/#14); rights already verified public-domain.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "CONDITIONAL: blocker named (file/escalate the RISE request) and routed to a human action per the directive's B.4 table. Next action: Human files/escalates the USBR RISE request for frequency-resolved raw EIS sweeps.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "N/A -- governance/rights ask.",
+    "name": "B-ASK R-D02: file/escalate the USBR RISE request for frequency-resolved raw EIS sweeps",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-public-corrosion-benchmark"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://data.usbr.gov/catalog/8048"
+  },
+  {
+    "candidate_id": "DR-DISP-BASK-R-D03",
+    "closed_input_set_source": "b_ask",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Pairs with DR-DISP-Q13. This is a rights wall, not a data wall -- the loop found the dataset and stopped.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "CONDITIONAL: blocker named (counsel legal review) and routed to a human action (counsel) per the directive's B.4 table. Next action: Human (counsel) answers whether CC BY-NC-ND permits internal AUDIT_ONLY benchmarking.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "N/A -- governance/rights ask.",
+    "name": "B-ASK R-D03: counsel question -- does the Reynolds 2024 CC BY-NC-ND licence permit internal, non-distributed, AUDIT_ONLY quantitative benchmarking?",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-viscosity-score"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://doi.org/10.1002/adem.202301630"
+  },
+  {
+    "candidate_id": "DR-DISP-BASK-R-D04",
+    "closed_input_set_source": "b_ask",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Pairs with DR-DISP-Q07 (queue #7); cure-potlife-gate's structural integrity, independent of the science fix in C.3.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "CONDITIONAL: blocker named (issue a signed rights receipt ratifying or downgrading the self-asserted CC0) and routed to a human action per the directive's B.4 table. Next action: Human ratifies or downgrades the cure fixture's CC0 self-assertion via a signed rights receipt.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "N/A -- governance/rights ask.",
+    "name": "B-ASK R-D04: ratify or downgrade the cure fixture's self-asserted CC0 via a signed rights receipt",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-cure-potlife-gate"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "local:amphora-cure-potlife-gate/reference/phase0-cure-potlife-known-answer.v1.json"
+  },
+  {
+    "candidate_id": "DR-DISP-BASK-R-D05",
+    "closed_input_set_source": "b_ask",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Pairs with DR-DISP-Q08 (queue #8); design-rule-score n=58 single-formulator is the binding constraint no model can fix.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "CONDITIONAL: blocker named (contact authors or commission a DoE) and routed to a human action per the directive's B.4 table. Next action: Human contacts PURformance authors re a sibling HTE release, or commissions a DoE.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "N/A -- governance/rights ask.",
+    "name": "B-ASK R-D05: contact PURformance authors re a sibling HTE release, or commission a DoE",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-design-rule-score"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://zenodo.org/records/13742098"
+  },
+  {
+    "candidate_id": "DR-DISP-BASK-R-D06",
+    "closed_input_set_source": "b_ask",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Pairs with DR-DISP-Q10/Q11 (queues #10/#11); molecule-property dielectric labels (89.5% physically inadmissible) and the second density corpus.",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "CONDITIONAL: blocker named (contact RadonPy/PI1070 authors; locate OpenPoly density field) and routed to a human action per the directive's B.4 table. This fire made partial progress on the OpenPoly half (see DR-DISP-Q11: MIT license confirmed via live WebFetch this fire) but the human contact with RadonPy authors remains unactioned. Next action: Human confirms production-convergence with RadonPy/PI1070 authors; locates an OpenPoly-matched density field.",
+      "verdict": "CONDITIONAL"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "N/A -- governance/rights ask.",
+    "name": "B-ASK R-D06: confirm with RadonPy/PI1070 authors whether dielectric trajectories were production-converged; locate an OpenPoly-matched density field",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [
+        "amphora-molecule-property"
+      ],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "github.com/RadonPy/RadonPy ; https://github.com/TheJacksonLab/OMG_PhysicalProperties"
+  },
+  {
+    "candidate_id": "DR-DISP-ORB-UMLIP",
+    "closed_input_set_source": "u_mlip_orb_reference",
+    "confidence_flag": "MEDIUM",
+    "coverage": "Founder-referenced MLIP capability, already fully evaluated by the signed U-MLIP receipt (amphora-molecule-property, 2026-08-10).",
+    "custodian": "N/A -- closed-input-set candidate (previously-furnished source), not an engine-discovered literature find",
+    "disposition": {
+      "reason": "REJECTED per the already-signed U-MLIP receipt's own different_problem_class_finding, quoted verbatim: 'there is NO shared task between Orb-v3 and any module in this portfolio. Orb-v3 maps atomic coordinates to energies and forces; no module here consumes atomic coordinates or emits forces/energies -- every module here predicts formulation- or bulk-scale properties from 2D molecular graphs and composition. An Amphora-vs-Orb comparison is therefore not a benchmark, it is a category error.' Independently, the same receipt found the training-data rights chain MIXED/PARTIALLY UNVERIFIED (OMol25 CC BY 4.0 confirmed; OMat24/MPtrj/Alexandria/OPoly26 unquotable from a primary host). Either finding alone (category error; rights) is independently disqualifying; both apply. Not re-derived this fire -- cited by path+sha256 per repair-mode discipline against re-deriving an already-signed finding. Next action: None -- REJECTED, no further human action requested by this candidate.",
+      "verdict": "REJECTED"
+    },
+    "entry_type": "candidate_disposition",
+    "fire_id": "20260810T230001-2867766-5b74f12b40d8",
+    "framing": "AUDIT-ONLY",
+    "integrity_risks": [],
+    "language": "en",
+    "license_evidence_quote": "See amphora-molecule-property/evidence/phase0/repairs/U-MLIP/done/ receipt evidence_by_question.1_rights (MIXED/PARTIALLY UNVERIFIED).",
+    "name": "Orb-v3 (orbital-materials/orb-models) machine-learned interatomic potential -- U-MLIP's Orb reference",
+    "native_citation": null,
+    "native_citation_romanization": null,
+    "rank": null,
+    "rubric_dimensions": null,
+    "rubric_overall_score": null,
+    "rubric_path": null,
+    "run_id": "DR-DISP-20260810T230001-2867766-5b74f12b40d8",
+    "schema": "amphora.dataset-recon.disposition-ledger.v1",
+    "serves": {
+      "module_gaps": [],
+      "recipe_elements": []
+    },
+    "snapshot_date": "2026-08-10",
+    "standard_mapping": {
+      "astm_iso_equiv": "N/A",
+      "comparability_rating": "not_applicable_non_standards_candidate",
+      "published_standard": "N/A"
+    },
+    "translation_confidence": "native_script_verified_high",
+    "translation_confidence_note": "English-language source; no translation step in this fire's evaluation.",
+    "url": "https://github.com/orbital-materials/orb-models ; arXiv:2504.06231"
+  }
+]

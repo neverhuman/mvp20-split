@@ -1,0 +1,39 @@
+{
+  "authority": "AUDIT_ONLY",
+  "claimA_result_artifact_identity": {
+    "control_naive_string_gate_would_flag_1char_mutation": true,
+    "cross_process_two_replay_byte_identical": true,
+    "internal_first_vs_second_replay_byte_identical": true,
+    "live_run1_ok": true,
+    "live_run1_sha256": "06229682503e25a26da0391dac29c4f44e8ad46948c4b9ad77f76101b109fc1e",
+    "live_run2_ok": true,
+    "live_run2_sha256": "06229682503e25a26da0391dac29c4f44e8ad46948c4b9ad77f76101b109fc1e",
+    "mission_claimed_sha256": "2afb9213103d34e7754a6699d3df9ee113ea08ba679506331d01cdc6ca9dd732",
+    "result_hash_matches_mission_citation": false
+  },
+  "claimB_kpi_receipt_live_presence": {
+    "claimed_live_path": "evidence/phase0/kpis/ingredient-library-ledger-quarantine-kpi.v1.json",
+    "found_in_superseded": [
+      {
+        "path": "amphora-ingredient-library/evidence/superseded/supersession-6aba291aa333b4c3ae40d584ebe0fe2955e6949a33cb2506a5e7113021fff1c1/phase0/kpis/ingredient-library-ledger-quarantine-kpi.v1.json",
+        "supersession_reason": "STALE_UNSIGNED_PREPARATION_REISSUE"
+      }
+    ],
+    "present_in_live_tree": false
+  },
+  "claimC_kpi_numeric_substance": {
+    "all_match": true,
+    "diffs": [],
+    "n_mission_kpi_bullets_parsed": 13
+  },
+  "closes": [
+    "Establishes whether mission.md's 'Honest current state' artifact citations (the primary human/governance-facing claim surface for this module) are currently verifiable by independent re-execution, which none of the prior 5 amphora-ingredient-library audit receipts checked (all 5 audited facts.json chemistry/physical constants, not the Phase-0 harness evidence citations themselves)."
+  ],
+  "does_not_close": [
+    "Does not re-audit the KPI scenarios' scientific design (already exercised by the harness's own 23 red-team attack axes); this receipt only checks artifact-identity/provenance parity.",
+    "Does not determine WHEN mission.md's citation went stale or who last regenerated it; no git history is available o
+---
+result_hash_matches_mission: False
+kpi_live_present: False
+kpi_substance_all_match: True
+cross_process_byte_identical: True

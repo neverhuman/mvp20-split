@@ -1,0 +1,239 @@
+{
+  "campaign_json_done_check_audit": {
+    "campaign_json_sha256": "796a17b3588e5bc2a39e9d43b3ff6edabe24ee6d317a79c3a0d70f910ec98654",
+    "current_items_targeting_a_colliding_id": [],
+    "entries_with_glob_not_prefixed_by_own_module": [],
+    "n_unqualified": 0,
+    "total_done_check_entries_current": 111
+  },
+  "claim_under_attack": {
+    "claim_text": "Every repair id in the portfolio maps to exactly one repair, and every done_check glob matches only its own item's receipts.",
+    "receipt_path": "logs/falsification-ledger.jsonl"
+  },
+  "collision_detail": [
+    {
+      "byte_identical_receipt_shared_across_modules": [],
+      "instances": [
+        {
+          "done_files": [
+            {
+              "file_sha256": "a0f5a47f9c08b63351acf730640abdc628f2bca0af44c533cf50269b1c64b7de",
+              "filename": "R-A11.done-receipt.v1.dsse.json",
+              "module_field_in_payload": "amphora-design-rule-score",
+              "repair_item_field_in_payload": "R-A11"
+            }
+          ],
+          "module": "amphora-design-rule-score",
+          "path": "amphora-design-rule-score/evidence/phase0/repairs/R-A11"
+        },
+        {
+          "done_files": [
+            {
+              "file_sha256": "d74de21c7596d9bdda4d548b8b5fcaf87d22bbb122829a8f2438d50d613b74fa",
+              "filename": "R-A11.done-receipt.v1.dsse.json",
+              "module_field_in_payload": "amphora-molecule-property",
+              "repair_item_field_in_payload": "R-A11"
+            }
+          ],
+          "module": "amphora-molecule-property",
+          "path": "amphora-molecule-property/evidence/phase0/repairs/R-A11"
+        }
+      ],
+      "modules": [
+        "amphora-design-rule-score",
+        "amphora-molecule-property"
+      ],
+      "n_modules": 2,
+      "repair_id": "R-A11",
+      "same_filename_used_by_multiple_modules": {
+        "R-A11.done-receipt.v1.dsse.json": [
+          "amphora-design-rule-score",
+          "amphora-molecule-property"
+        ]
+      }
+    },
+    {
+      "byte_identical_receipt_shared_across_modules": [],
+      "instances": [
+        {
+          "done_files": [
+            {
+              "file_sha256": "6e4e0927390e6dc35fcd0eca694a6d53cdd4e756d3dee94697e3256795a12f09",
+              "filename": "ra12_reinstatement_batch_receipt.v1.dsse.json",
+              "module_field_in_payload": "amphora-sourceability-ehs",
+              "repair_item_field_in_payload": "R-A12"
+            }
+          ],
+          "module": "amphora-sourceability-ehs",
+          "path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12"
+        },
+        {
+          "done_files": [
+            {
+              "file_sha256": "a0a7138cb001be6e896b18c7874ae4060f33bb32369fdb272971fd88f04ef7c9",
+              "filename": "ra12_reinstatement_batch_receipt.v1.dsse.json",
+              "module_field_in_payload": "amphora-molecule-role-ranker",
+              "repair_item_field_in_payload": "R-A12"
+            }
+          ],
+          "module": "amphora-molecule-role-ranker",
+          "path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12"
+        }
+      ],
+      "modules": [
+        "amphora-molecule-role-ranker",
+        "amphora-sourceability-ehs"
+      ],
+      "n_modules": 2,
+      "repair_id": "R-A12",
+      "same_filename_used_by_multiple_modules": {
+        "ra12_reinstatement_batch_receipt.v1.dsse.json": [
+          "amphora-molecule-role-ranker",
+          "amphora-sourceability-ehs"
+        ]
+      }
+    },
+    {
+      "byte_identical_receipt_shared_across_modules": [],
+      "instances": [
+        {
+          "done_files": [
+            {
+              "file_sha256": "07e00ec5f7bd9a172ac4da3d26e239d8699045d04a3eff4806434c779b022fbe",
+              "filename": "rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+              "module_field_in_payload": "amphora-rdkit-ffi",
+              "repair_item_field_in_payload": "R-N02"
+            }
+          ],
+          "module": "amphora-rdkit-ffi",
+          "path": "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02"
+        },
+        {
+          "done_files": [
+            {
+              "file_sha256": "2edb3eab0bdec5447eed48753c4f202e7b3c8492e218172bd1aec7bce53eb1a8",
+              "filename": "rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+              "module_field_in_payload": "amphora-molecule-role-ranker",
+              "repair_item_field_in_payload": "R-N02"
+            }
+          ],
+          "module": "amphora-molecule-role-ranker",
+          "path": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02"
+        },
+        {
+          "done_files": [
+            {
+              "file_sha256": "bdd71b4044c6f4975e8fa6c9754251567c9f394264a24a1880d40065186737f3",
+              "filename": "rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+              "module_field_in_payload": "amphora-molecule-property",
+              "repair_item_field_in_payload": "R-N02"
+            }
+          ],
+          "module": "amphora-molecule-property",
+          "path": "amphora-molecule-property/evidence/phase0/repairs/R-N02"
+        }
+      ],
+      "modules": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-rdkit-ffi"
+      ],
+      "n_modules": 3,
+      "repair_id": "R-N02",
+      "same_filename_used_by_multiple_modules": {}
+    }
+  ],
+  "collision_ids": [
+    "R-A11",
+    "R-A12",
+    "R-N02"
+  ],
+  "n_ids_reused_across_or_within_modules": 3,
+  "qualitative_notes": {
+    "R-A11": "Two independently-conceived defects, both 'anchored signature-identity re-issue' repairs, coincidentally assigned the same auto-incremented Wave-R id: amphora-design-rule-score/R-A11 re-issues guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json; amphora-molecule-property/R-A11 re-issues phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json. Different target artifacts, different module field in payload, different file sha256. This is a true ID-ASSIGNMENT COLLISION (unrelated repairs, same id) -- already flagged non-fatal by R-Z99 (2026-08-05) but left unresolved.",
+    "R-A12": "Signing-key-selection-bug reinstatement batch, rolled out per-module under the SAME id by design (root_cause identical string in both payloads: 'Signing-key selection bug in the hourly cron fires...'). amphora-molecule-role-ranker/R-A12 and amphora-sourceability-ehs/R-A12 share a filename (ra12_reinstatement_batch_receipt.v1.dsse.json) but differ in file sha256 and in payload module_id/reinstated_artifacts -- this is INTENTIONAL id reuse for one conceptual multi-module batch fix, not an accidental collision, but it is still an id shared across module namespaces with no schema field disambiguating batch-siblings from coincidental collisions.",
+    "R-N02": "Coordinated C=N amine-exclusion fix, independently re-implemented and verified in 3 modules under the same id (amphora-molecule-property, amphora-molecule-role-ranker, amphora-rdkit-ffi), each with its own V-N02a/b/c independent-verify campaign item. Distinct filenames, distinct file sha256 per module. Same pattern as R-A12: deliberate coordinated reuse, not a coincidental collision."
+  },
+  "reachability_simulation": {
+    "any_reachable_false_done_via_current_mechanism": false,
+    "method": "Reproduced lib/remote_verify.py mode=donecheck exactly: glob.glob(os.path.join(root, pat), recursive=True) where root is the single shared mvp20-split checkout and pat is the item's done_check.glob string. For every collision, built the glob string AS IF owned by each colliding module in turn and checked whether any match falls outside that module's own subtree.",
+    "tests": [
+      {
+        "any_match_outside_owning_module": false,
+        "collision_id": "R-A11",
+        "glob": "amphora-design-rule-score/evidence/phase0/repairs/R-A11/done/**/*.json",
+        "glob_as_if_owned_by": "amphora-design-rule-score",
+        "leaked_matches": [],
+        "matches": [
+          "amphora-design-rule-score/evidence/phase0/repairs/R-A11/done/R-A11.done-receipt.v1.dsse.json"
+        ]
+      },
+      {
+        "any_match_outside_owning_module": false,
+        "collision_id": "R-A11",
+        "glob": "amphora-molecule-property/evidence/phase0/repairs/R-A11/done/**/*.json",
+        "glob_as_if_owned_by": "amphora-molecule-property",
+        "leaked_matches": [],
+        "matches": [
+          "amphora-molecule-property/evidence/phase0/repairs/R-A11/done/R-A11.done-receipt.v1.dsse.json"
+        ]
+      },
+      {
+        "any_match_outside_owning_module": false,
+        "collision_id": "R-A12",
+        "glob": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/**/*.json",
+        "glob_as_if_owned_by": "amphora-molecule-role-ranker",
+        "leaked_matches": [],
+        "matches": [
+          "amphora-molecule-role-ranker/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+        ]
+      },
+      {
+        "any_match_outside_owning_module": false,
+        "collision_id": "R-A12",
+        "glob": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/**/*.json",
+        "glob_as_if_owned_by": "amphora-sourceability-ehs",
+        "leaked_matches": [],
+        "matches": [
+          "amphora-sourceability-ehs/evidence/phase0/repairs/R-A12/done/ra12_reinstatement_batch_receipt.v1.dsse.json"
+        ]
+      },
+      {
+        "any_match_outside_owning_module": false,
+        "collision_id": "R-N02",
+        "glob": "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/**/*.json",
+        "glob_as_if_owned_by": "amphora-molecule-property",
+        "leaked_matches": [],
+        "matches": [
+          "amphora-molecule-property/evidence/phase0/repairs/R-N02/done/rn02-molecule-property-coordinated-cn-fix-repair-receipt.v1.dsse.json"
+        ]
+      },
+      {
+        "any_match_outside_owning_module": false,
+        "collision_id": "R-N02",
+        "glob": "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/**/*.json",
+        "glob_as_if_owned_by": "amphora-molecule-role-ranker",
+        "leaked_matches": [],
+        "matches": [
+          "amphora-molecule-role-ranker/evidence/phase0/repairs/R-N02/done/rn02-molecule-role-ranker-coordinated-cn-fix-repair-receipt.v1.dsse.json"
+        ]
+      },
+      {
+        "any_match_outside_owning_module": false,
+        "collision_id": "R-N02",
+        "glob": "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/**/*.json",
+        "glob_as_if_owned_by": "amphora-rdkit-ffi",
+        "leaked_matches": [],
+        "matches": [
+          "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json"
+        ]
+      }
+    ]
+  },
+  "recommended_fix": "(a) Add a namespace-collision linter (outside lib/remote_verify.py, which is baseline-hashed) that fails CI/campaign-authoring if a new repair id's directory already exists under a DIFFERENT module with a different root_cause/action fingerprint; (b) require every batch repair item's payload to carry an explicit 'batch_sibling_of' array so intentional cross-module id reuse (R-A12, R-N02 pattern) is schema-distinguishable from accidental collision (R-A11 pattern) instead of requiring a manual audit like this one to tell them apart.",
+  "repair_status": "identified_not_yet_fixed",
+  "total_distinct_repair_ids": 59,
+  "total_repair_directories_enumerated": 63,
+  "verdict": "CLAIM_REFUTED",
+  "verdict_reasoning": "CLAIM has two conjuncts. (1) id-uniqueness: REFUTED by direct enumeration -- 3 ids (R-A11, R-A12, R-N02) are each used by more than one module's repair item, across 7 total repair instances. This alone falsifies 'every repair id maps to exactly one repair.' (2) done_check-glob false-done reachability: investigated exhaustively via source-level reproduction of the ONLY mechanism that currently evaluates done_check (lib/remote_verify.py mode=donecheck) against the ONLY glob strings that currently exist for structured items (100% of the 111 live campaign.json done_check.glob entries, 0/111 lacking their own module-name prefix). Under that mechanism, os.path.join(root, pat) with pat always starting '<owning-module>/' makes cross-module matches structurally impossible regardless of trailing <id> collisions -- confirmed empirically for all 3 colliding ids: 0/7 reachability tests show a match outside the intended module. No byte-identical receipt is filed under two different modules' done/ dirs (R-A12's identically-NAMED file differs in content); no unsigned or cross-module DSSE was found. This part of the claim therefore SURVIVES the strongest available attack against the current enforcement mechanism. Residual gap: the ORIGINAL done_check definitions used when the R-A11/R-A12/R-N02 items were themselves marked done are not recoverable (they predate this repo's git history and are no longer present in campaign.json), so historical reachability at time-of-completion cannot be verified either way -- reported as an open, non-fabricated gap, not assumed safe."
+}

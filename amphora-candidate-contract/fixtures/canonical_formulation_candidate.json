@@ -1,0 +1,40 @@
+{
+  "candidate_id": "Envelope-65-black-canonical",
+  "candidate_type": "formulation",
+  "formulation": {
+    "recipe": {
+      "part_A": {
+        "defoamer": {"ingredient_id": "defoamer", "mass_g": 0.5},
+        "dgeba_828": {"ingredient_id": "dgeba_828", "mass_g": 100.0},
+        "dispersant": {"ingredient_id": "dispersant", "mass_g": 1.2},
+        "iron_oxide_black": {"ingredient_id": "iron_oxide_black", "mass_g": 3.5},
+        "naphtha": {"ingredient_id": "naphtha", "mass_g": 8.4},
+        "silica": {"ingredient_id": "silica", "mass_g": 22.0},
+        "thixotrope": {"ingredient_id": "thixotrope", "mass_g": 1.8}
+      },
+      "part_B": {
+        "ancamide_350a": {"ingredient_id": "ancamide_350a", "mass_g": 37.13},
+        "dispersant": {"ingredient_id": "dispersant", "mass_g": 0.8},
+        "n_butanol": {"ingredient_id": "n_butanol", "mass_g": 53.03},
+        "silica": {"ingredient_id": "silica", "mass_g": 10.0},
+        "thixotrope": {"ingredient_id": "thixotrope", "mass_g": 1.2}
+      }
+    },
+    "basis": "mass_g_per_batch",
+    "batch_mass_g": 239.56,
+    "ingredient_catalog_version": "facts.v2",
+    "application": {
+      "dft_mil": 5.0,
+      "temperature_C": 25.0,
+      "relative_humidity_pct": 50.0,
+      "substrate": "steel",
+      "surface_preparation": "declared"
+    },
+    "process": {
+      "application_method": null,
+      "induction_time_min": null,
+      "mix_order": null,
+      "pot_age_h": 0.0
+    }
+  }
+}

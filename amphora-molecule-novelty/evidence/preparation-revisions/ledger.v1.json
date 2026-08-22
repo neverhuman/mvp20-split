@@ -1,0 +1,17 @@
+{
+  "head_revision_id": "preparation-revision-cf1a1ca96e41ba0ae881664d20504f6b35f00ff59dd1b113fd5091978766b294",
+  "module_id": "amphora-molecule-novelty",
+  "revisions": [
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-9ab596901982f080df67e239d14973065c7bb1d61a0804622fa8f2807f731fdf.json",
+      "revision_id": "preparation-revision-9ab596901982f080df67e239d14973065c7bb1d61a0804622fa8f2807f731fdf",
+      "sha256": "98a297cab81317eeeb76c35a0db35c7db0efb70d03ecb126521bc9971227b300"
+    },
+    {
+      "path": "evidence/preparation-revisions/events/preparation-revision-cf1a1ca96e41ba0ae881664d20504f6b35f00ff59dd1b113fd5091978766b294.json",
+      "revision_id": "preparation-revision-cf1a1ca96e41ba0ae881664d20504f6b35f00ff59dd1b113fd5091978766b294",
+      "sha256": "69bbae2d7d2a304e13015a700484b97392c032ddccb6b84fa7c591d39fd54085"
+    }
+  ],
+  "schema": "amphora.module-phase0-preparation-ledger.v1"
+}

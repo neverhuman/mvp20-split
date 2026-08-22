@@ -1,0 +1,8 @@
+{
+  "front_matter_byte_identical": true,
+  "mission_sha256_after": "9833b966af23d3651cbcfbc4b405f12b8d042951ab764bb996723b5f2db05c0d",
+  "mission_sha256_before": "928acbeb8796866cdf48cd644d5ab4ced5c92e29d3f92d681ed70bb929db44c9",
+  "n_prose_edits": 4,
+  "retraction_index_path": "/home/ubuntu/amphora/build/mvp20-split/amphora-public-corrosion-benchmark/evidence/phase0/kpis/RETRACTION-INDEX.md",
+  "retraction_index_sha256": "9700400a39b0607f22ed88c78176c7338237e1818b9a687cedd3583e67a9d986"
+}

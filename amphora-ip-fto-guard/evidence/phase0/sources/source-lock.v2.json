@@ -1,0 +1,18 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-ip-fto-guard/evidence/phase0",
+  "eligible_sources": [],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/data/patent_landscape.json",
+      "observed_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+      "reason": "inventory source excluded: hash_current=true, rights_status=UNRESOLVED, license_present=false"
+    }
+  ],
+  "inventory_hash": "564842f1d8b1e98b2b462b946ad864e3a93376ce6fee7e7c2c19ebf487cba0b4",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-ip-fto-guard",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

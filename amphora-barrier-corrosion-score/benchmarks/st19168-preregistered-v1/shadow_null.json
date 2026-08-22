@@ -1,0 +1,90 @@
+{
+  "n_systems": 10,
+  "purpose": "Type-I error probe: locked_barrier_index constructed with NO population rank relationship to the truth endpoints.",
+  "rng": "numpy.random.default_rng (PCG64), O'Neill 2014",
+  "schema": "amphora.barrier-corrosion-score.st19168-preregistered-shadow-data.v1",
+  "seed": 190168001,
+  "shadow_type": "NULL",
+  "systems": [
+    {
+      "eis_log10_z_ohm_0p01hz": 8.001544,
+      "locked_barrier_index": 0.161179,
+      "pvc_pct": 39.362931,
+      "rust_creep_mm": 1.576283,
+      "solids_pct": 63.770404,
+      "system_id": "SHADOW-NULL-01"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 6.373249,
+      "locked_barrier_index": 0.994468,
+      "pvc_pct": 28.97691,
+      "rust_creep_mm": 2.884525,
+      "solids_pct": 54.627018,
+      "system_id": "SHADOW-NULL-02"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 7.76798,
+      "locked_barrier_index": 0.716168,
+      "pvc_pct": 19.928407,
+      "rust_creep_mm": 1.84847,
+      "solids_pct": 47.887836,
+      "system_id": "SHADOW-NULL-03"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 5.750776,
+      "locked_barrier_index": 0.987537,
+      "pvc_pct": 39.052031,
+      "rust_creep_mm": 3.842846,
+      "solids_pct": 72.175552,
+      "system_id": "SHADOW-NULL-04"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 8.114536,
+      "locked_barrier_index": 0.494166,
+      "pvc_pct": 30.975454,
+      "rust_creep_mm": 1.526255,
+      "solids_pct": 69.390228,
+      "system_id": "SHADOW-NULL-05"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 9.474911,
+      "locked_barrier_index": 0.78498,
+      "pvc_pct": 13.874802,
+      "rust_creep_mm": 1.60196,
+      "solids_pct": 51.367888,
+      "system_id": "SHADOW-NULL-06"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 8.234481,
+      "locked_barrier_index": 0.380327,
+      "pvc_pct": 22.290874,
+      "rust_creep_mm": 1.228191,
+      "solids_pct": 52.055179,
+      "system_id": "SHADOW-NULL-07"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 6.020167,
+      "locked_barrier_index": 0.277648,
+      "pvc_pct": 29.566044,
+      "rust_creep_mm": 3.124286,
+      "solids_pct": 44.204651,
+      "system_id": "SHADOW-NULL-08"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 9.58454,
+      "locked_barrier_index": 0.032848,
+      "pvc_pct": 36.131484,
+      "rust_creep_mm": 0.295893,
+      "solids_pct": 52.662625,
+      "system_id": "SHADOW-NULL-09"
+    },
+    {
+      "eis_log10_z_ohm_0p01hz": 8.831601,
+      "locked_barrier_index": 0.586649,
+      "pvc_pct": 28.413091,
+      "rust_creep_mm": 0.904093,
+      "solids_pct": 58.704836,
+      "system_id": "SHADOW-NULL-10"
+    }
+  ]
+}

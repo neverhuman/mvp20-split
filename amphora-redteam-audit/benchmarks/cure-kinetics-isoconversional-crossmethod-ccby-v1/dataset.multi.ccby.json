@@ -1,0 +1,136 @@
+{
+  "schema": "amphora.rights-clean-multisystem-dataset.v1",
+  "dataset_id": "ccby-epoxy-amine-dsc-kissinger-multisystem-v1",
+  "purpose": "Cross-source method-fidelity benchmark for the Kissinger non-isothermal cure-kinetics estimator on GENUINELY rights-clean (CC-BY-4.0, commercial + derivative use permitted) two-part epoxy-amine DSC datasets. Extends the single-dataset anchor (cure-kinetics-kissinger-ccby-anchor-v1) into a multi-system suite so the estimator is validated across independent labs and amine chemistries, not one formulation.",
+  "non_circularity": "For every system the estimator consumes ONLY the raw (heating_rate, peak_temperature) pairs. Each paper's reported Kissinger Ea is read ONLY as a validation target, never as an input. Recovering each paper's Kissinger Ea from its raw peaks is therefore a genuine method-fidelity test, not a tautology.",
+  "gas_constant_J_per_mol_K": 8.314462618,
+  "scope_tiers": {
+    "CORE_DGEBA_AMINE": "Two-part epoxy where the epoxy is DGEBA (diglycidyl ether of bisphenol A, optionally with a glycidyl-ether reactive diluent) cured with an amine hardener. Directly in the marine anti-corrosion two-part epoxy-amine IP scope. Contributes to the core pass/fail KPI.",
+    "GENERALIZATION_EPOXY_AMINE": "Epoxy-amine thermoset whose epoxy backbone is NOT DGEBA (e.g. multifunctional aerospace resin). Included ONLY to test whether the Kissinger estimator generalizes across the broader epoxy-amine reactivity class. Reported honestly but EXCLUDED from the core DGEBA pass/fail KPI so no adjacent-industry data can inflate the in-scope result."
+  },
+  "systems": [
+    {
+      "system_id": "dgeba-ipda-lascano-polym11030391",
+      "scope_tier": "CORE_DGEBA_AMINE",
+      "epoxy_amine": true,
+      "chemistry": {
+        "epoxy": "DGEBA-based epoxy (Resoltech 1070 ECO, DGEBA with a partially bio-based reactive diluent)",
+        "hardener": "isophorone diamine (IPDA; 3-aminomethyl-3,5,5-trimethylcyclohexylamine), Resoltech 1074 ECO",
+        "amine_class": "cycloaliphatic"
+      },
+      "rights": {
+        "license": "CC-BY-4.0",
+        "rights_class": "DERIVATIVE_ALLOWED",
+        "commercial_use_allowed": true,
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Lascano D., Quiles-Carrillo L., Balart R., Boronat T., Montanes N. Kinetic Analysis of the Curing of a Partially Biobased Epoxy Resin Using Dynamic Differential Scanning Calorimetry. Polymers (Basel). 2019;11(3):391.",
+        "doi": "10.3390/polym11030391",
+        "pmc_id": "PMC6473346",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6473346/",
+        "publisher": "MDPI",
+        "retrieved_utc_date": "2026-07-25"
+      },
+      "measurement": {
+        "technique": "non-isothermal (dynamic) DSC exotherm-peak method",
+        "source_table": "Table 3 (peak cure temperature vs heating rate)",
+        "published_unit": "K"
+      },
+      "raw_inputs": [
+        {"heating_rate_K_per_min": 2.5, "peak_temperature_K": 351.5},
+        {"heating_rate_K_per_min": 5.0, "peak_temperature_K": 361.9},
+        {"heating_rate_K_per_min": 10.0, "peak_temperature_K": 373.2},
+        {"heating_rate_K_per_min": 20.0, "peak_temperature_K": 388.9}
+      ],
+      "reference_outputs": {
+        "kissinger_Ea_kJ_per_mol": 57.3,
+        "kissinger_uncertainty_kJ_per_mol": 3.1,
+        "other_methods_kJ_per_mol": [
+          {"method": "KAS", "Ea": 59.8, "uncertainty": 3.3},
+          {"method": "FWO", "Ea": 62.8, "uncertainty": 3.1},
+          {"method": "Starink", "Ea": 60.0, "uncertainty": 3.3}
+        ]
+      }
+    },
+    {
+      "system_id": "dgeba-bdge-ipda-prepreg-ma14164673",
+      "scope_tier": "CORE_DGEBA_AMINE",
+      "epoxy_amine": true,
+      "chemistry": {
+        "epoxy": "7901 DNK toughened epoxy resin (mainly DGEBA and BDGE, 1,4-butanediol diglycidyl ether reactive diluent)",
+        "hardener": "isophorone diamine (IPDA), main curing agent",
+        "amine_class": "cycloaliphatic"
+      },
+      "rights": {
+        "license": "CC-BY-4.0",
+        "rights_class": "DERIVATIVE_ALLOWED",
+        "commercial_use_allowed": true,
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Zhang X., et al. The Curing Kinetics of E-Glass Fiber/Epoxy Resin Prepreg and the Bending Properties of Its Products. Materials (Basel). 2021;14(16):4673.",
+        "doi": "10.3390/ma14164673",
+        "pmc_id": "PMC8399898",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8399898/",
+        "publisher": "MDPI",
+        "retrieved_utc_date": "2026-07-25"
+      },
+      "measurement": {
+        "technique": "non-isothermal (dynamic) DSC exotherm-peak method",
+        "source_table": "Table 3 (heating rate vs peak temperature Tp/K, published to integer Kelvin)",
+        "published_unit": "K",
+        "data_precision_note": "Peak temperatures are published only to integer Kelvin (Table 3), and only 3 heating rates are reported; recovery and linearity are therefore expected to be slightly coarser than the 4-point system and this is gated and reported honestly."
+      },
+      "raw_inputs": [
+        {"heating_rate_K_per_min": 5.0, "peak_temperature_K": 412.0},
+        {"heating_rate_K_per_min": 10.0, "peak_temperature_K": 427.0},
+        {"heating_rate_K_per_min": 15.0, "peak_temperature_K": 433.0}
+      ],
+      "reference_outputs": {
+        "kissinger_Ea_kJ_per_mol": 69.95,
+        "kissinger_uncertainty_kJ_per_mol": null,
+        "other_methods_kJ_per_mol": []
+      }
+    },
+    {
+      "system_id": "multifunctional-epoxy-dds-molecules31040640",
+      "scope_tier": "GENERALIZATION_EPOXY_AMINE",
+      "epoxy_amine": true,
+      "chemistry": {
+        "epoxy": "tetrafunctional + trifunctional epoxy resin with poly(ether sulfone) (PES) toughener (aerospace-type, NOT DGEBA)",
+        "hardener": "4,4'-diaminodiphenyl sulfone (DDS, aromatic diamine) with dicyandiamide accelerator",
+        "amine_class": "aromatic"
+      },
+      "rights": {
+        "license": "CC-BY-4.0",
+        "rights_class": "DERIVATIVE_ALLOWED",
+        "commercial_use_allowed": true,
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Modeling of Cure Kinetics and Rheological Behavior of an Epoxy Resin Using DSC and Rheometry. Molecules. 2026;31(4):640.",
+        "doi": "10.3390/molecules31040640",
+        "pmc_id": "PMC12943695",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12943695/",
+        "publisher": "MDPI",
+        "retrieved_utc_date": "2026-07-25"
+      },
+      "measurement": {
+        "technique": "non-isothermal (dynamic) DSC exotherm-peak method",
+        "source_table": "Table 2 (heating rate vs peak temperature Tp, published in degC)",
+        "published_unit": "C",
+        "kelvin_conversion": "peak_temperature_K = peak_temperature_C + 273.15"
+      },
+      "raw_inputs": [
+        {"heating_rate_K_per_min": 1.0, "peak_temperature_C": 175.72, "peak_temperature_K": 448.87},
+        {"heating_rate_K_per_min": 3.0, "peak_temperature_C": 202.93, "peak_temperature_K": 476.08},
+        {"heating_rate_K_per_min": 5.0, "peak_temperature_C": 216.78, "peak_temperature_K": 489.93},
+        {"heating_rate_K_per_min": 10.0, "peak_temperature_C": 236.01, "peak_temperature_K": 509.16},
+        {"heating_rate_K_per_min": 15.0, "peak_temperature_C": 249.91, "peak_temperature_K": 523.06}
+      ],
+      "reference_outputs": {
+        "kissinger_Ea_kJ_per_mol": 64.693562,
+        "kissinger_uncertainty_kJ_per_mol": null,
+        "other_methods_kJ_per_mol": [
+          {"method": "Ozawa", "Ea": 67.970111, "uncertainty": null},
+          {"method": "Starink_0p2_0p8", "Ea": 80.620616, "uncertainty": null}
+        ]
+      }
+    }
+  ]
+}

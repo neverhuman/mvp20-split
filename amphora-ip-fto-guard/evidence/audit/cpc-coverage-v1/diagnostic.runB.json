@@ -1,0 +1,886 @@
+{
+  "authority": "AUDIT_ONLY",
+  "checkA_sweep_validity_and_axes": {
+    "all_mandatory_axes_covered": true,
+    "all_sweeps_well_formed_or_informal": true,
+    "declared_sweep_count": 6,
+    "informal_process_descriptors": [
+      "high-solids/process"
+    ],
+    "invalid_or_overbroad_sweeps": [],
+    "mandatory_axes": {
+      "amine_polyamide_curative": {
+        "covered": true,
+        "cpc_title": "C08G59/50 Epoxy resins cured with amines / polyamides"
+      },
+      "anticorrosive_function": {
+        "covered": true,
+        "cpc_title": "C09D5/08 Anti-corrosive paints"
+      },
+      "application_process": {
+        "covered": true,
+        "cpc_title": "B05D Processes for applying liquids to surfaces (+ high-solids/process)"
+      },
+      "epoxy_resin_binder": {
+        "covered": true,
+        "cpc_title": "C09D163/00 Coating compositions based on epoxy resins"
+      },
+      "pigment_filler": {
+        "covered": true,
+        "cpc_title": "C09D7/61 Coatings characterised by the pigments/fillers"
+      }
+    },
+    "well_formed_main_group_buckets": [
+      "C08G59",
+      "C09D163",
+      "C09D5",
+      "C09D7"
+    ],
+    "well_formed_subclass_buckets": [
+      "B05D"
+    ]
+  },
+  "checkB_family_coverage": {
+    "bucket_coverage_fraction": 0.3846,
+    "coarse_category_buckets": [
+      "C09D"
+    ],
+    "covered_buckets": [
+      "B05D",
+      "C08G59",
+      "C09D163",
+      "C09D5",
+      "C09D7"
+    ],
+    "distinct_bucket_count": 13,
+    "families_reaching_a_declared_sweep": 43,
+    "family_coverage_counts": {
+      "COARSE_ONLY": 5,
+      "FULLY_COVERED": 42,
+      "NO_CPC": 0,
+      "ORPHAN_BEARING": 12,
+      "PARTIAL": 1
+    },
+    "interpretation": "The declared 6 sweeps scope the DGEBA-epoxy / amine-curative / anticorrosive / pigment-filler / application core. Remaining rows classified under adjacency symbols (surface-conversion, silicone, polyurethane, chlorinated polyolefin, informatics) are surfaced as unresolved, not cleared; bare-subclass rows are coarse category screens broader than any charted sweep.",
+    "orphan_adjacency_buckets": [
+      "C09D123",
+      "C09D175",
+      "C09D183",
+      "C23C22",
+      "G01N",
+      "G06N",
+      "G16C"
+    ],
+    "orphan_adjacency_histogram": {
+      "C09D123": 1,
+      "C09D175": 1,
+      "C09D183": 2,
+      "C23C22": 4,
+      "G01N": 2,
+      "G06N": 2,
+      "G16C": 2
+    },
+    "per_family": [
+      {
+        "class": "COARSE_ONLY",
+        "labels": [
+          "COARSE"
+        ],
+        "n": 1,
+        "tokens": [
+          "C09D"
+        ]
+      },
+      {
+        "class": "COARSE_ONLY",
+        "labels": [
+          "COARSE"
+        ],
+        "n": 2,
+        "tokens": [
+          "C09D"
+        ]
+      },
+      {
+        "class": "COARSE_ONLY",
+        "labels": [
+          "COARSE"
+        ],
+        "n": 3,
+        "tokens": [
+          "C09D"
+        ]
+      },
+      {
+        "class": "COARSE_ONLY",
+        "labels": [
+          "COARSE"
+        ],
+        "n": 4,
+        "tokens": [
+          "C09D"
+        ]
+      },
+      {
+        "class": "COARSE_ONLY",
+        "labels": [
+          "COARSE"
+        ],
+        "n": 5,
+        "tokens": [
+          "C09D"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 6,
+        "tokens": [
+          "C09D163/00",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 7,
+        "tokens": [
+          "C09D5/10"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 8,
+        "tokens": [
+          "C09D7/61",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 9,
+        "tokens": [
+          "C09D7/61",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 10,
+        "tokens": [
+          "C09D5/08",
+          "C09D7/65"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 11,
+        "tokens": [
+          "C08G59/00",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 12,
+        "tokens": [
+          "C08G59/50",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 13,
+        "tokens": [
+          "C08G59/50"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "ORPHAN",
+          "COVERED"
+        ],
+        "n": 14,
+        "tokens": [
+          "C09D183/00",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 15,
+        "tokens": [
+          "C08G59/00",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 16,
+        "tokens": [
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "COVERED",
+          "ORPHAN"
+        ],
+        "n": 17,
+        "tokens": [
+          "C09D5/08",
+          "G01N"
+        ]
+      },
+      {
+        "class": "PARTIAL",
+        "labels": [
+          "COVERED",
+          "COARSE"
+        ],
+        "n": 18,
+        "tokens": [
+          "B05D",
+          "C09D"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 19,
+        "tokens": [
+          "C08G59/50",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 20,
+        "tokens": [
+          "C08G59/00",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "ORPHAN"
+        ],
+        "n": 21,
+        "tokens": [
+          "C09D123/28"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 22,
+        "tokens": [
+          "C09D7/61",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 23,
+        "tokens": [
+          "C09D7/61"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 24,
+        "tokens": [
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "ORPHAN",
+          "ORPHAN",
+          "COARSE"
+        ],
+        "n": 25,
+        "tokens": [
+          "G16C",
+          "G06N",
+          "C09D"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "COVERED",
+          "ORPHAN",
+          "COVERED"
+        ],
+        "n": 26,
+        "tokens": [
+          "C09D163/00",
+          "C09D175/02",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 27,
+        "tokens": [
+          "C09D163/00",
+          "C08G59/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 28,
+        "tokens": [
+          "C08G59/00",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 29,
+        "tokens": [
+          "C09D7/43",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "ORPHAN",
+          "COVERED"
+        ],
+        "n": 30,
+        "tokens": [
+          "C23C22/00",
+          "B05D"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "ORPHAN",
+          "COVERED"
+        ],
+        "n": 31,
+        "tokens": [
+          "C23C22/00",
+          "B05D"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "ORPHAN",
+          "COVERED"
+        ],
+        "n": 32,
+        "tokens": [
+          "C23C22/00",
+          "B05D"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 33,
+        "tokens": [
+          "C08G59/50",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "ORPHAN",
+          "COVERED"
+        ],
+        "n": 34,
+        "tokens": [
+          "C09D183/00",
+          "B05D"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 35,
+        "tokens": [
+          "C08G59/50",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 36,
+        "tokens": [
+          "C08G59/50"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 37,
+        "tokens": [
+          "C09D163/00",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 38,
+        "tokens": [
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 39,
+        "tokens": [
+          "C09D163/00",
+          "C08G59/50"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 40,
+        "tokens": [
+          "C09D163/00",
+          "C08G59/50"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 41,
+        "tokens": [
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 42,
+        "tokens": [
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 43,
+        "tokens": [
+          "C09D5/08",
+          "C09D7/61"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 44,
+        "tokens": [
+          "C09D5/08",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 45,
+        "tokens": [
+          "C09D7/61",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 46,
+        "tokens": [
+          "C09D7/61",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 47,
+        "tokens": [
+          "C09D7/61",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 48,
+        "tokens": [
+          "C09D7/61",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 49,
+        "tokens": [
+          "C08G59/50"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED"
+        ],
+        "n": 50,
+        "tokens": [
+          "C08G59/50"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 51,
+        "tokens": [
+          "C08G59/50",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 52,
+        "tokens": [
+          "B05D",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "COVERED",
+          "ORPHAN"
+        ],
+        "n": 53,
+        "tokens": [
+          "B05D",
+          "C23C22/00"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "COVERED",
+          "ORPHAN"
+        ],
+        "n": 54,
+        "tokens": [
+          "B05D",
+          "G01N"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 55,
+        "tokens": [
+          "C08G59/00",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 56,
+        "tokens": [
+          "C09D5/08",
+          "C09D7/65"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 57,
+        "tokens": [
+          "C08G59/00",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 58,
+        "tokens": [
+          "C09D163/00",
+          "C09D5/08"
+        ]
+      },
+      {
+        "class": "FULLY_COVERED",
+        "labels": [
+          "COVERED",
+          "COVERED"
+        ],
+        "n": 59,
+        "tokens": [
+          "C09D5/10",
+          "C09D163/00"
+        ]
+      },
+      {
+        "class": "ORPHAN_BEARING",
+        "labels": [
+          "ORPHAN",
+          "ORPHAN",
+          "COARSE"
+        ],
+        "n": 60,
+        "tokens": [
+          "G16C",
+          "G06N",
+          "C09D"
+        ]
+      }
+    ],
+    "token_coverage_fraction": 0.7925
+  },
+  "checkC_no_cpc_clearance": {
+    "cpc_is_search_scope_not_clearance": true,
+    "every_row_not_fto_true": true,
+    "interpretation": "CPC/IPC classification scopes the prior-art SEARCH; it is not a clearance signal. Rows outside the charted sweep neighborhood are held unresolved, never elevated to FTO. (Conclusive non-reads are grounded on missing claim ELEMENTS, per the All-Elements-Rule receipt, not on class membership.)",
+    "non_core_row_count": 18,
+    "non_core_rows_all_not_fto": true,
+    "non_core_rows_never_assert_fto_language": true
+  },
+  "checkD_partial_order": {
+    "assertions": {
+      "C09D163_00_le_C09D_ancestor": true,
+      "C09D_strict_ancestor_of_C09D163_00": true,
+      "antisymmetry_strict_only_one_way": true,
+      "distinct_main_groups_incomparable": true,
+      "main_group_le_subclass": true,
+      "not_across_subclass": true,
+      "reflexive_C08G59_le_C08G59": true,
+      "subgroup_le_main_group": true,
+      "transitive_subgroup_le_subclass": true
+    },
+    "partial_order_well_formed": true
+  },
+  "checkE_authority_envelope": {
+    "envelope_clean": true,
+    "forbidden_legal_closure_key_hits": []
+  },
+  "does_not_close": [
+    "No FTO, no legal advice, no clearance. CPC/IPC coverage is a search-scoping measure only; dependent claims, prosecution history, jurisdictions, legal status and doctrine-of-equivalents remain counsel scope.",
+    "Coverage completeness is measured against the ON-DISK fixture's own classified families; it is NOT a claim that the fixture enumerates every relevant patent family in the CPC neighborhood.",
+    "Does not modify the manifest (66 receipts / 11 modules), the pinned fixture, or any signed Phase-0 KPI.",
+    "AUDIT_ONLY: promotes no authority and flips no scientific_readiness."
+  ],
+  "fail_closed_mutation_demo": {
+    "all_mutations_caught": true,
+    "mutations": [
+      {
+        "caught": true,
+        "caught_by": "checkA_mandatory_axes",
+        "mutation": "drop_mandatory_axis_sweep_C08G59_50"
+      },
+      {
+        "caught": true,
+        "caught_by": "checkA_symbol_validity",
+        "mutation": "corrupt_declared_sweep_to_malformed_symbol"
+      },
+      {
+        "caught": true,
+        "caught_by": "checkA_overbroad_reject",
+        "mutation": "widen_sweep_to_bare_section_C_overbroad"
+      },
+      {
+        "caught": true,
+        "caught_by": "checkC_no_cpc_clearance",
+        "mutation": "inject_orphan_family_asserting_fto_cleared"
+      }
+    ]
+  },
+  "hash_and_count_lock": {
+    "family_count_matches_pin": true,
+    "fixture_sha256_matches_pin": true,
+    "sweep_count_matches_pin": true
+  },
+  "headline": "CPC/IPC classification coverage & subsumption audit of pinned landscape (SHA 52ada090..., 60 families / 6 sweeps): all 5 CPC sweeps well-formed (+1 informal process descriptor), 5/5 mandatory epoxy-amine coating axes covered (resin C09D163 / curative C08G59 / anticorrosive C09D5 / pigment C09D7 / process B05D); family coverage: 42 fully-covered, 1 partial, 5 coarse-category, 12 adjacency, 0 no-CPC; token-coverage 0.7925, bucket-coverage 0.3846; 7 adjacency buckets (C09D123, C09D175, C09D183, C23C22, G01N, G06N, G16C) surfaced as unresolved not cleared; CPC is search-scope not clearance (every row not_fto=true), subordination is a well-formed partial order, authority envelope clean, all 4/4 fail-closed mutations caught -> hypothesis 'surface unresolved without claiming FTO' CORROBORATED under the CPC/IPC scoping model.",
+  "human_review_performed": false,
+  "inputs": {
+    "cpc_ipc_sweeps": 6,
+    "families": 60,
+    "fixture_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+    "fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "pinned_fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc"
+  },
+  "kpi_reconstruction": {
+    "bucket_coverage_fraction": 0.3846,
+    "fto_claimed_rows": 0,
+    "hypothesis_surfaces_unresolved_without_claiming_fto": true,
+    "mandatory_axes_covered": true,
+    "orphan_adjacency_buckets": [
+      "C09D123",
+      "C09D175",
+      "C09D183",
+      "C23C22",
+      "G01N",
+      "G06N",
+      "G16C"
+    ],
+    "token_coverage_fraction": 0.7925
+  },
+  "modifies_manifest": false,
+  "modifies_pinned_fixture": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-ip-fto-guard",
+  "non_circularity": "The runtime is not invoked. An independent CPython parser recomputes CPC subordination and coverage directly from patent_landscape.json against the published IPC/CPC hierarchy grammar, not against module output. The dataset SHA-256 is checked against the KPI-pinned value.",
+  "organizational_independence_asserted": false,
+  "promotes_authority": false,
+  "purpose": "Independently re-derive, with the published CPC/IPC classification hierarchy, that the pinned landscape's 6 sweeps are well-formed symbols spanning the 5 mandatory technical axes of a DGEBA + amine anticorrosive coating, measure family-level coverage completeness, and confirm classification is used as a SEARCH-SCOPING tool - never a clearance signal.",
+  "run_type": "CPC_IPC_COVERAGE_SUBSUMPTION_AUDIT",
+  "schema": "amphora.ip-fto-guard.cpc-coverage-diagnostic.v1",
+  "theory_reference": {
+    "framework": "Cooperative Patent Classification (CPC) / International Patent Classification (IPC)",
+    "note": "Classification framework applied only as a STRUCTURAL search-scoping predicate; this is not legal advice and performs no FTO.",
+    "primary_authorities": [
+      "Strasbourg Agreement Concerning the International Patent Classification, 24 Mar 1971 (amended 28 Sep 1979), WIPO",
+      "WIPO, Guide to the International Patent Classification (2022) - hierarchical structure & subordination of symbols",
+      "CPC Guide to the CPC (EPO/USPTO, 2023) - Section/Class/Subclass/Main group/Subgroup hierarchy",
+      "MPEP 9th ed. Rev. 07.2022 Sec. 905 (Classification) - CPC/IPC as the prior-art / landscape search scoping framework"
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "authority": "AUDIT_ONLY",
+  "benchmark": "corr-rate-conformal-per-environment-coverage-v1",
+  "dataset": {
+    "in_tree_path": "feedback/v1/derived/nist_corr_reference.json",
+    "license": "NIST public data",
+    "n_raw_records": 24721,
+    "name": "NIST CORR-DATA (Dow Chemical Co.) derived reference",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "source_sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "forward_calibrate_nonmarine_deploy_marine": {
+    "overall": {
+      "conservative_mondrian_coverage": 0.922339,
+      "meets_acceptance_floor_0.88_conservative_mondrian": true,
+      "meets_acceptance_floor_0.88_pooled": true,
+      "n_test": 1043,
+      "pooled_coverage": 0.922339
+    },
+    "per_chloride_environment_class": {
+      "alkali": {
+        "conservative_mondrian_coverage": null,
+        "has_marine_calibration_support": true,
+        "n_cal": 480,
+        "n_test": 0,
+        "pooled_coverage": null
+      },
+      "halide": {
+        "conservative_mondrian_coverage": 0.912716,
+        "has_marine_calibration_support": true,
+        "n_cal": 253,
+        "n_covered_conservative_mondrian": 847,
+        "n_covered_pooled": 847,
+        "n_test": 928,
+        "pooled_coverage": 0.912716,
+        "used_own_quantile_in_conservative_mechanism": true
+      },
+      "organic_acid": {
+        "conservative_mondrian_coverage": null,
+        "has_marine_calibration_support": true,
+        "n_cal": 322,
+        "n_test": 0,
+        "pooled_coverage": null
+      },
+      "other": {
+        "conservative_mondrian_coverage": 1.0,
+        "has_marine_calibration_support": true,
+        "n_cal": 415,
+        "n_covered_conservative_mondrian": 115,
+        "n_covered_pooled": 115,
+        "n_test": 115,
+        "pooled_coverage": 1.0,
+        "used_own_quantile_in_conservative_mechanism": true
+      },
+      "other_acid": {
+        "conservative_mondrian_coverage": null,
+        "has_marine_calibration_support": true,
+        "n_cal": 662,
+        "n_test": 0,
+        "pooled_coverage": null
+      },
+      "salt_other": {
+        "conservative_mondrian_coverage": null,
+        "has_marine_calibration_support": true,
+        "n_cal": 71,
+        "n_test": 0,
+        "pooled_coverage": null
+      },
+      "sulfuric": {
+        "conservative_mondrian_coverage": null,
+        "has_marine_calibration_support": true,
+        "n_cal": 557,
+        "n_test": 0,
+        "pooled_coverage": null
+      },
+      "water": {
+        "conservative_mondrian_coverage": null,
+        "has_marine_calibration_support": true,
+        "n_cal": 13,
+        "n_test": 0,
+        "pooled_coverage": null
+      }
+    }
+  },
+  "module": "amphora-barrier-corrosion-score",
+  "prior_acceptance_status": {
+    "both_directions_meet_floor": false,
+    "floor": 0.88,
+    "forward_meets_floor": true,
+    "reverse_meets_floor": false
+  },
+  "promotes_authority": false,
+  "protocol_note": "IDENTICAL data load, feature scheme, base model (HistGradientBoostingRegressor, seed=0), group_split (bucket=idx%5, train={2,3,4}), and marine-axis cal/test assignment (forward: cal=nonmarine,test=marine; reverse: cal=marine,test=nonmarine) as the refuting receipt corr-rate-conformal-domain-shift-v1 and both prior R-C05 fires. alpha=0.10 (0.90 target). Two calibrators reported side-by-side per class: 'pooled' = the ORIGINAL refuted marginal calibrator (single direction-level quantile applied to every class); 'conservative_mondrian' = fire 1's best repair variant (per-class quantile clamped to >= pooled, min_class_n=5).",
+  "repair_item": "R-C05",
+  "rescope_rationale": "Pre-registered acceptance (both directions >= 0.88 pooled coverage via Mondrian chloride-environment-class calibration) is now shown structurally unreachable: fire 1 (empirical, best variant 0.877389, 8 rows short) and fire 2 (analytic proof: 6/8 chloride classes have EXACTLY ZERO marine-calibration rows in the reverse leg, forcing 75.9% of test rows to the pooled fallback regardless of hyperparameter; supplementary reweighted-conformal probe failed an order of magnitude worse, domain-classifier AUC=1.0). This is fire 3 of max_fires=3, the final permitted fire; the item's own pre-registered re-scope hatch is invoked: the per-environment-class coverage table below becomes the claim in place of a single pooled >=0.88 number, honestly reporting which chloride-environment classes ARE and are NOT covered by any calibration mechanism tried.",
+  "resolution": "rescope",
+  "reverse_calibrate_marine_deploy_nonmarine": {
+    "classes_with_marine_calibration_support": [
+      "halide",
+      "other"
+    ],
+    "classes_with_zero_marine_calibration_support": [
+      "alkali",
+      "organic_acid",
+      "other_acid",
+      "salt_other",
+      "sulfuric",
+      "water"
+    ],
+    "fraction_test_rows_without_any_calibration_support": 0.759106,
+    "n_test_rows_in_classes_with_support": 668,
+    "n_test_rows_in_classes_without_support": 2105,
+    "overall": {
+      "conservative_mondrian_coverage": 0.877389,
+      "meets_acceptance_floor_0.88_conservative_mondrian": false,
+      "meets_acceptance_floor_0.88_pooled": false,
+      "n_test": 2773,
+      "pooled_coverage": 0.876307
+    },
+    "per_chloride_environment_class": {
+      "alkali": {
+        "conservative_mondrian_coverage": 0.916667,
+        "has_marine_calibration_support": false,
+        "n_cal": 0,
+        "n_covered_conservative_mondrian": 440,
+        "n_covered_pooled": 440,
+        "n_test": 480,
+        "pooled_coverage": 0.916667,
+        "used_own_quantile_in_conservative_mechanism": false
+      },
+      "halide": {
+        "conservative_mondrian_coverage": 0.952569,
+        "has_marine_calibration_support": true,
+        "n_cal": 928,
+        "n_covered_conservative_mondrian": 241,
+        "n_covered_pooled": 238,
+        "n_test": 253,
+        "pooled_coverage": 0.940711,
+        "used_own_quantile_in_conservative_mechanism": true
+      },
+      "organic_acid": {
+        "conservative_mondrian_coverage": 0.913043,
+        "has_marine_calibration_support": false,
+        "n_cal": 0,
+        "n_covered_conservative_mondrian": 294,
+        "n_covered_pooled": 294,
+        "n_test": 322,
+        "pooled_coverage": 0.913043,
+        "used_own_quantile_in_conservative_mechanism": false
+      },
+      "other": {
+        "conservative_mondrian_coverage": 0.920482,
+        "has_marine_calibration_support": true,
+        "n_cal": 115,
+        "n_covered_conservative_mondrian": 382,
+        "n_covered_pooled": 382,
+        "n_test": 415,
+        "pooled_coverage": 0.920482,
+        "used_own_quantile_in_conservative_mechanism": true
+      },
+      "other_acid": {
+        "conservative_mondrian_coverage": 0.799094,
+        "has_marine_calibration_support": false,
+        "n_cal": 0,
+        "n_covered_conservative_mondrian": 529,
+        "n_covered_pooled": 529,
+        "n_test": 662,
+        "pooled_coverage": 0.799094,
+        "used_own_quantile_in_conservative_mechanism": false
+      },
+      "salt_other": {
+        "conservative_mondrian_coverage": 0.873239,
+        "has_marine_calibration_support": false,
+        "n_cal": 0,
+        "n_covered_conservative_mondrian": 62,
+        "n_covered_pooled": 62,
+        "n_test": 71,
+        "pooled_coverage": 0.873239,
+        "used_own_quantile_in_conservative_mechanism": false
+      },
+      "sulfuric": {
+        "conservative_mondrian_coverage": 0.852783,
+        "has_marine_calibration_support": false,
+        "n_cal": 0,
+        "n_covered_conservative_mondrian": 475,
+        "n_covered_pooled": 475,
+        "n_test": 557,
+        "pooled_coverage": 0.852783,
+        "used_own_quantile_in_conservative_mechanism": false
+      },
+      "water": {
+        "conservative_mondrian_coverage": 0.769231,
+        "has_marine_calibration_support": false,
+        "n_cal": 0,
+        "n_covered_conservative_mondrian": 10,
+        "n_covered_pooled": 10,
+        "n_test": 13,
+        "pooled_coverage": 0.769231,
+        "used_own_quantile_in_conservative_mechanism": false
+      }
+    }
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-conformal-per-environment-coverage.v1"
+}

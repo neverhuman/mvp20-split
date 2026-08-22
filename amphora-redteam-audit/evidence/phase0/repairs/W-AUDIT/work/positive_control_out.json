@@ -1,0 +1,18 @@
+{
+ "positive_control": {
+  "planted_defect": "Fabricated a synthetic done item FAKE-01 whose done_criterion promises a superseding KPI correcting EEW 185->187.5 g/eq, but whose sole receipt is narrative-only: it states the finding in prose ('a future fire should update the KPI') with no supersede-named artifact file, no supersedes/superseded_path field in its own DSSE payload, and no code diff -- the exact report-without-change shape the audit's objective describes.",
+  "how_planted": "artifact path='amphora-fake-module/evidence/phase0/repairs/FAKE-01/done/fake01-narrative-receipt.v1.dsse.json' (filename contains no supersede/superseding token); payload JSON (sha256 26429ddf97c9d4172a94c30d5d67341ef59dc68c1bfe1c1423d300e3c3ea6e85) contains no 'supersedes' or 'superseded_path' key.",
+  "detector": "has_change_evidence(): any_code_artifact OR any_supersede_named_artifact OR any_supersedes_field -- the identical predicate applied to all 128 real done items in this audit's mechanical scan (audit_scan.py).",
+  "detected": true,
+  "evidence": {
+   "planted_item_has_change_evidence": false,
+   "planted_item_verdict_under_detector": "NOT_DELIVERED-signal (no change evidence found)",
+   "real_control_item": "W-ING2",
+   "real_control_artifact_paths": [
+    "amphora-ingredient-library/evidence/phase0/repairs/W-ING2/done/reactive-constant-tds-verified-superseding-kpi.v1.dsse.json"
+   ],
+   "real_control_has_change_evidence": true,
+   "real_control_verdict_under_detector": "DELIVERED-signal (change evidence found)"
+  }
+ }
+}

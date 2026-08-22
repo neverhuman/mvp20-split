@@ -1,0 +1,9 @@
+{
+  "campaign_item_id": "W-PROP1",
+  "done_receipt_path": "amphora-molecule-property/evidence/phase0/repairs/W-PROP1/done/van-krevelen-ridge-scope-limited-superseding-kpi.v1.dsse.json",
+  "fire_id": "20260805T100001-937579-bc890a7ce316",
+  "n_groups_excluded": 9,
+  "n_groups_in_scope": 15,
+  "status": "done",
+  "threshold_n_train": 125
+}

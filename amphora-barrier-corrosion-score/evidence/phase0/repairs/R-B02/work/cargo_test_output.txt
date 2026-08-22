@@ -1,0 +1,19 @@
+
+running 6 tests
+test tests::test_barrier_index_fails_closed_on_degenerate_spectra ... ok
+test tests::test_short_or_field_spectrum_cannot_claim_circuit_fit ... ok
+test tests::test_theil_sen_slope_and_time_reversal_are_distinct ... ok
+test tests::eis_v2_rejects_clipping_and_requires_all_identifiability_gates ... ok
+test tests::test_synthetic_equivalent_circuit_is_recovered ... ok
+test tests::test_fit_keeps_endpoints_separate_and_summary_never_claims_circuit ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.34s
+     Running unittests src/lib.rs (target/debug/deps/amphora_barrier_corrosion_score-f0495131ebd2ab3b)
+   Doc-tests amphora_barrier_corrosion_score

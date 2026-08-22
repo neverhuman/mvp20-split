@@ -1,0 +1,138 @@
+{
+  "authority": "AUDIT_ONLY",
+  "dataset": {
+    "dry_Tg_C": 89.4,
+    "equilibrium_water_uptake_wtpct": 3.0,
+    "measured_depression_C_range": [
+      22.9,
+      27.9
+    ],
+    "measured_wet_Tg_C_range": [
+      61.5,
+      66.5
+    ],
+    "rights": {
+      "attribution": "Gibhardt D., Buggisch C., Meyer D., Fiedler B. Hygrothermal Aging History of Amine-Epoxy Resins: Effects on Thermo-Mechanical Properties. Front. Mater. 2022;9:826076.",
+      "doi": "10.3389/fmats.2022.826076",
+      "in_scope": true,
+      "license": "CC-BY-4.0",
+      "publisher": "Frontiers (all research articles CC BY 4.0)",
+      "rights_class": "DERIVATIVE_ALLOWED",
+      "values_provenance": "text-stated (Tg, uptake) + text-stated saturated-Tg range"
+    },
+    "role": "external non-circular validation (text-stated values only)",
+    "system": "Hexion EPIKOTE MGS RIMR 135 (DGEBA 75-90% + HDDGE 10-20%) + EPIKURE MGS RIMH 137 (polyoxypropylene diamine 50-75% + IPDA 25-50%); two-part amine-cured DGEBA infusion resin, in marine epoxy-amine scope"
+  },
+  "does_not": [
+    "does NOT promote amphora-molecule-property or any module to PHASE_0",
+    "does NOT sign a trust-anchored phase0 evaluation/review receipt",
+    "does NOT modify any of the 66 signed receipts or the manifest",
+    "does NOT claim a validated a-priori wet-Tg MAGNITUDE (explicitly refuted here)",
+    "does NOT assert Amphora wet-lab measurement or product qualification"
+  ],
+  "effective_tg_water_diagnostic": {
+    "back_solved_tg_water_K_to_match_measured": 103.253938,
+    "glassy_water_convention_K": 136.0,
+    "interpretation": "The Tg_water Fox would require to reproduce the data is BELOW even the glassy-water convention, i.e. absorbed water plasticizes this epoxy network MORE strongly than a generic free-volume diluent -- consistent with H-bond-network disruption and bound/clustered water in the cured amine-epoxy.",
+    "liquidlike_water_convention_K": 277.15
+  },
+  "empirical_plasticization_slope": {
+    "definition": "dTg/d(wt% water), calibrated on the single measured saturation point",
+    "literature_band_C_per_wtpct": [
+      5.0,
+      10.0
+    ],
+    "slope_C_per_wtpct_mid": 8.466667,
+    "slope_C_per_wtpct_range": [
+      7.633333,
+      9.3
+    ]
+  },
+  "hypothesis_test": {
+    "H0_parameter_free_magnitude_accurate": "a parameter-free Fox/Kelley-Bueche prediction reproduces the measured wet-Tg depression within the measured band",
+    "detail": "best parameter-free depression 17.26 C vs measured band [22.90, 27.90] C",
+    "result": "REFUTED"
+  },
+  "illustrative_in_scope_deployment": {
+    "caveat": "FIRST-ORDER SCREEN ONLY. Empirical slope transferred from a DIFFERENT in-scope DGEBA-amine system; dry Tg and uptake are cross-source pairs from signed in-tree receipts; NOT a measurement and NOT validated for these systems. Shown to size the marine barrier-softening risk, not to claim it.",
+    "systems": [
+      {
+        "amine": "4,4'-diaminodiphenyl sulfone",
+        "dry_Tg_C": 208.0,
+        "dry_Tg_source": "in-tree network-tg consensus (3 meas)",
+        "equilibrium_water_uptake_wtpct": 1.7,
+        "estimated_wet_Tg_C_range": [
+          192.19,
+          195.023333
+        ],
+        "estimated_wet_Tg_depression_C_range": [
+          12.976667,
+          15.81
+        ],
+        "system": "DGEBA+DDS",
+        "uptake_source": "in-tree barrier EP-DDS (PMC10780492)"
+      },
+      {
+        "amine": "1,8-diaminooctane (C8DA / 8CH2DA)",
+        "dry_Tg_C": 94.0,
+        "dry_Tg_source": "in-tree network-tg (C8DA)",
+        "equilibrium_water_uptake_wtpct": 2.0,
+        "estimated_wet_Tg_C_range": [
+          75.4,
+          78.733333
+        ],
+        "estimated_wet_Tg_depression_C_range": [
+          15.266667,
+          18.6
+        ],
+        "system": "DGEBA+octamethylenediamine",
+        "uptake_source": "in-tree barrier EP-8CH2DA (PMC10780492)"
+      }
+    ]
+  },
+  "marine_relevance": "A ~25 C wet-Tg drop at only 3 wt% seawater uptake means a nominally 89 C-Tg marine primer can fall to ~64 C wet -- still above service temperature, but the margin erodes fast for lower-Tg aliphatic-amine systems. This engine turns dry-Tg + uptake (both already predicted in-tree) into a wet-service-margin screen.",
+  "parameter_free_best_depression_C": 17.255823,
+  "parameter_free_engines": {
+    "fox_glassy_136K": {
+      "model": "Fox 1956 (mass-fraction)",
+      "predicted_depression_C": 17.255823,
+      "predicted_wet_tg_C": 72.144177,
+      "tg_water_K": 136.0
+    },
+    "fox_liquidlike_277K": {
+      "model": "Fox 1956 (mass-fraction)",
+      "predicted_depression_C": 3.320748,
+      "predicted_wet_tg_C": 86.079252,
+      "tg_water_K": 277.15
+    },
+    "kelley_bueche_glassy_136K": {
+      "model": "Kelley-Bueche 1961 (volume-fraction, k=1)",
+      "predicted_depression_C": 8.107157,
+      "predicted_wet_tg_C": 81.292843,
+      "tg_water_K": 136.0,
+      "water_volume_fraction": 0.035785
+    },
+    "kelley_bueche_liquidlike_277K": {
+      "model": "Kelley-Bueche 1961 (volume-fraction, k=1)",
+      "predicted_depression_C": 3.056064,
+      "predicted_wet_tg_C": 86.343936,
+      "tg_water_K": 277.15,
+      "water_volume_fraction": 0.035785
+    }
+  },
+  "phase0_reconciliation_redteam": "Re-verified live this run: all 29 module benchmark-locks carry scientific_success_required_for_phase0=false and negative_result_authority=AUDIT_ONLY; 0/29 modules are scientific_readiness=VALIDATED. 'FULL Phase-0' is a GOVERNANCE state, not a validated-science state. This increment adds real, non-circular science under AUDIT_ONLY and changes no authority or count.",
+  "predecessor": null,
+  "schema": "amphora.redteam-audit.wet-tg-plasticization-kelley-bueche.v1",
+  "target_capability": "Predict the water-saturated (wet) glass-transition temperature of a cured two-part DGEBA-amine marine coating from its dry Tg and equilibrium water uptake -- the barrier-softening property that governs osmotic blistering and cathodic-disbondment kinetics under seawater immersion.",
+  "target_kpi_id": "wet-tg-water-plasticization-marine-barrier-softening",
+  "target_module": "amphora-molecule-property",
+  "theory": "Fox (1956) mass-fraction Tg rule and Kelley & Bueche (1961) free-volume polymer-diluent Tg model, with absorbed water as the plasticizing diluent. Glass-transition of water taken from the literature (glassy 136 K; liquid-like 277 K). No parameter is fitted to the measured wet Tg.",
+  "validity_gates": {
+    "V1_direction_all_engines_predict_Tg_drop": true,
+    "V2_empirical_slope_in_literature_5_to_10_C_per_wtpct": true,
+    "V3_effective_tg_water_below_glassy_convention_confirms_anomalous_plasticization": true,
+    "V4_non_circularity_measured_wetTg_never_an_input_to_any_prediction": true,
+    "V5_rights_gate_ccby_derivative_allowed_in_scope_dgeba_amine": true
+  },
+  "verdict": "WET_TG_PLASTICIZATION_ENGINE_ESTABLISHED :: DIRECTION_VALIDATED (all engines predict the correct Tg drop) :: PARAMETER_FREE_MAGNITUDE_REFUTED (naive Fox/Kelley-Bueche UNDER-predict the measured depression by ~1.5x-8x). TRUSTWORTHY OUTPUT = the empirical plasticization slope 8.5 C per wt%% water (literature-consistent); a-priori magnitude is NOT trustworthy for marine barrier-softening assessment and must be empirically calibrated."
+}

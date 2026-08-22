@@ -1,0 +1,344 @@
+{
+  "schema": "mvp20.v5_non_candidate_fixture_packages.v1",
+  "micro_version": "mvp20.14",
+  "retrieved": "2026-07-06",
+  "rule": "Fixtures are synthetic non-candidate validator inputs. They are not physical evidence, not candidate data, and cannot close any external claim.",
+  "fixture_packages": [
+    {
+      "package_id": "FIX-PASS-001",
+      "name": "minimal pass fixture",
+      "targeted_failure_mode": "minimal pass",
+      "fixture_only": true,
+      "non_candidate_fixture": true,
+      "candidate_data_created": false,
+      "candidate_evidence": false,
+      "not_physical_evidence": true,
+      "external_closure_claims_allowed": false,
+      "claim_upgrade_allowed": false,
+      "checks": {
+        "has_manifest_hash": true,
+        "all_samples_linked": true,
+        "computed_values_claimed_measured": false,
+        "narrative_only": false,
+        "controls_valid": true,
+        "raw_file_present": true,
+        "calibration_present": true,
+        "ip_fto_claim_made": false,
+        "physical_validation_claim_made": false,
+        "supplier_closure_claim_made": false,
+        "authority_or_procurement_claim_made": false
+      },
+      "object_types_present": [
+        "dataset_manifest",
+        "sample_registry",
+        "batch_record",
+        "instrument_raw_file",
+        "qc_measurement_table",
+        "panel_photo_set",
+        "environment_log",
+        "rating_sheet",
+        "supplier_declaration",
+        "model_update_event"
+      ],
+      "expected_outcome": "ACCEPT",
+      "expected_rejection_reasons": []
+    },
+    {
+      "package_id": "FIX-FAIL-001",
+      "name": "missing hash fixture",
+      "targeted_failure_mode": "missing hash",
+      "fixture_only": true,
+      "non_candidate_fixture": true,
+      "candidate_data_created": false,
+      "candidate_evidence": false,
+      "not_physical_evidence": true,
+      "external_closure_claims_allowed": false,
+      "claim_upgrade_allowed": false,
+      "checks": {
+        "has_manifest_hash": false,
+        "all_samples_linked": true,
+        "computed_values_claimed_measured": false,
+        "narrative_only": false,
+        "controls_valid": true,
+        "raw_file_present": true,
+        "calibration_present": true,
+        "ip_fto_claim_made": false,
+        "physical_validation_claim_made": false,
+        "supplier_closure_claim_made": false,
+        "authority_or_procurement_claim_made": false
+      },
+      "object_types_present": [
+        "dataset_manifest",
+        "sample_registry",
+        "batch_record",
+        "instrument_raw_file",
+        "qc_measurement_table",
+        "panel_photo_set",
+        "environment_log",
+        "rating_sheet",
+        "supplier_declaration",
+        "model_update_event"
+      ],
+      "expected_outcome": "REJECT",
+      "expected_rejection_reasons": [
+        "missing manifest/file hash"
+      ]
+    },
+    {
+      "package_id": "FIX-FAIL-002",
+      "name": "orphan sample fixture",
+      "targeted_failure_mode": "orphan sample",
+      "fixture_only": true,
+      "non_candidate_fixture": true,
+      "candidate_data_created": false,
+      "candidate_evidence": false,
+      "not_physical_evidence": true,
+      "external_closure_claims_allowed": false,
+      "claim_upgrade_allowed": false,
+      "checks": {
+        "has_manifest_hash": true,
+        "all_samples_linked": false,
+        "computed_values_claimed_measured": false,
+        "narrative_only": false,
+        "controls_valid": true,
+        "raw_file_present": true,
+        "calibration_present": true,
+        "ip_fto_claim_made": false,
+        "physical_validation_claim_made": false,
+        "supplier_closure_claim_made": false,
+        "authority_or_procurement_claim_made": false
+      },
+      "object_types_present": [
+        "dataset_manifest",
+        "sample_registry",
+        "batch_record",
+        "instrument_raw_file",
+        "qc_measurement_table",
+        "panel_photo_set",
+        "environment_log",
+        "rating_sheet",
+        "supplier_declaration",
+        "model_update_event"
+      ],
+      "expected_outcome": "REJECT",
+      "expected_rejection_reasons": [
+        "orphan sample/panel id"
+      ]
+    },
+    {
+      "package_id": "FIX-FAIL-003",
+      "name": "computed as measured fixture",
+      "targeted_failure_mode": "computed-as-measured value",
+      "fixture_only": true,
+      "non_candidate_fixture": true,
+      "candidate_data_created": false,
+      "candidate_evidence": false,
+      "not_physical_evidence": true,
+      "external_closure_claims_allowed": false,
+      "claim_upgrade_allowed": false,
+      "checks": {
+        "has_manifest_hash": true,
+        "all_samples_linked": true,
+        "computed_values_claimed_measured": true,
+        "narrative_only": false,
+        "controls_valid": true,
+        "raw_file_present": true,
+        "calibration_present": true,
+        "ip_fto_claim_made": false,
+        "physical_validation_claim_made": false,
+        "supplier_closure_claim_made": false,
+        "authority_or_procurement_claim_made": false
+      },
+      "object_types_present": [
+        "dataset_manifest",
+        "sample_registry",
+        "batch_record",
+        "instrument_raw_file",
+        "qc_measurement_table",
+        "panel_photo_set",
+        "environment_log",
+        "rating_sheet",
+        "supplier_declaration",
+        "model_update_event"
+      ],
+      "expected_outcome": "REJECT",
+      "expected_rejection_reasons": [
+        "computed-as-measured QC value"
+      ]
+    },
+    {
+      "package_id": "FIX-FAIL-004",
+      "name": "narrative only fixture",
+      "targeted_failure_mode": "narrative-only evidence",
+      "fixture_only": true,
+      "non_candidate_fixture": true,
+      "candidate_data_created": false,
+      "candidate_evidence": false,
+      "not_physical_evidence": true,
+      "external_closure_claims_allowed": false,
+      "claim_upgrade_allowed": false,
+      "checks": {
+        "has_manifest_hash": true,
+        "all_samples_linked": true,
+        "computed_values_claimed_measured": false,
+        "narrative_only": true,
+        "controls_valid": true,
+        "raw_file_present": true,
+        "calibration_present": true,
+        "ip_fto_claim_made": false,
+        "physical_validation_claim_made": false,
+        "supplier_closure_claim_made": false,
+        "authority_or_procurement_claim_made": false
+      },
+      "object_types_present": [
+        "dataset_manifest",
+        "sample_registry",
+        "batch_record",
+        "instrument_raw_file",
+        "qc_measurement_table",
+        "panel_photo_set",
+        "environment_log",
+        "rating_sheet",
+        "supplier_declaration",
+        "model_update_event"
+      ],
+      "expected_outcome": "REJECT",
+      "expected_rejection_reasons": [
+        "narrative-only evidence package"
+      ]
+    },
+    {
+      "package_id": "FIX-FAIL-005",
+      "name": "invalid control fixture",
+      "targeted_failure_mode": "invalid control",
+      "fixture_only": true,
+      "non_candidate_fixture": true,
+      "candidate_data_created": false,
+      "candidate_evidence": false,
+      "not_physical_evidence": true,
+      "external_closure_claims_allowed": false,
+      "claim_upgrade_allowed": false,
+      "checks": {
+        "has_manifest_hash": true,
+        "all_samples_linked": true,
+        "computed_values_claimed_measured": false,
+        "narrative_only": false,
+        "controls_valid": false,
+        "raw_file_present": true,
+        "calibration_present": true,
+        "ip_fto_claim_made": false,
+        "physical_validation_claim_made": false,
+        "supplier_closure_claim_made": false,
+        "authority_or_procurement_claim_made": false
+      },
+      "object_types_present": [
+        "dataset_manifest",
+        "sample_registry",
+        "batch_record",
+        "instrument_raw_file",
+        "qc_measurement_table",
+        "panel_photo_set",
+        "environment_log",
+        "rating_sheet",
+        "supplier_declaration",
+        "model_update_event"
+      ],
+      "expected_outcome": "REJECT",
+      "expected_rejection_reasons": [
+        "invalid or failed control"
+      ]
+    },
+    {
+      "package_id": "FIX-FAIL-006",
+      "name": "missing calibration/raw file fixture",
+      "targeted_failure_mode": "missing calibration/raw file",
+      "fixture_only": true,
+      "non_candidate_fixture": true,
+      "candidate_data_created": false,
+      "candidate_evidence": false,
+      "not_physical_evidence": true,
+      "external_closure_claims_allowed": false,
+      "claim_upgrade_allowed": false,
+      "checks": {
+        "has_manifest_hash": true,
+        "all_samples_linked": true,
+        "computed_values_claimed_measured": false,
+        "narrative_only": false,
+        "controls_valid": true,
+        "raw_file_present": false,
+        "calibration_present": false,
+        "ip_fto_claim_made": false,
+        "physical_validation_claim_made": false,
+        "supplier_closure_claim_made": false,
+        "authority_or_procurement_claim_made": false
+      },
+      "object_types_present": [
+        "dataset_manifest",
+        "sample_registry",
+        "batch_record",
+        "instrument_raw_file",
+        "qc_measurement_table",
+        "panel_photo_set",
+        "environment_log",
+        "rating_sheet",
+        "supplier_declaration",
+        "model_update_event"
+      ],
+      "expected_outcome": "REJECT",
+      "expected_rejection_reasons": [
+        "missing raw file",
+        "missing calibration file"
+      ]
+    },
+    {
+      "package_id": "FIX-FAIL-007",
+      "name": "IP/FTO overclaim fixture",
+      "targeted_failure_mode": "IP/FTO overclaim",
+      "fixture_only": true,
+      "non_candidate_fixture": true,
+      "candidate_data_created": false,
+      "candidate_evidence": false,
+      "not_physical_evidence": true,
+      "external_closure_claims_allowed": false,
+      "claim_upgrade_allowed": false,
+      "checks": {
+        "has_manifest_hash": true,
+        "all_samples_linked": true,
+        "computed_values_claimed_measured": false,
+        "narrative_only": false,
+        "controls_valid": true,
+        "raw_file_present": true,
+        "calibration_present": true,
+        "ip_fto_claim_made": true,
+        "physical_validation_claim_made": false,
+        "supplier_closure_claim_made": false,
+        "authority_or_procurement_claim_made": false
+      },
+      "object_types_present": [
+        "dataset_manifest",
+        "sample_registry",
+        "batch_record",
+        "instrument_raw_file",
+        "qc_measurement_table",
+        "panel_photo_set",
+        "environment_log",
+        "rating_sheet",
+        "supplier_declaration",
+        "model_update_event"
+      ],
+      "expected_outcome": "REJECT",
+      "expected_rejection_reasons": [
+        "IP/FTO overclaim without counsel"
+      ]
+    }
+  ],
+  "summary": {
+    "fixture_count": 8,
+    "pass_fixture_count": 1,
+    "fail_fixture_count": 7,
+    "fixture_only_rows": 8,
+    "candidate_data_created_rows": 0,
+    "candidate_evidence_rows": 0,
+    "not_physical_evidence_rows": 8
+  }
+}

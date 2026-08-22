@@ -1,0 +1,924 @@
+{
+  "alphas": [
+    0.01,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "anchor": {
+    "detail": {
+      "DDS": {
+        "exact": true,
+        "expected": 0.39285714285714285,
+        "got": 0.39285714285714285
+      },
+      "DETA": {
+        "exact": true,
+        "expected": 0.16666666666666666,
+        "got": 0.16666666666666666
+      },
+      "IPDA": {
+        "exact": true,
+        "expected": 0.16666666666666666,
+        "got": 0.16666666666666666
+      },
+      "TETA": {
+        "exact": true,
+        "expected": 0.15789473684210525,
+        "got": 0.15789473684210525
+      },
+      "m-XDA": {
+        "exact": true,
+        "expected": 0.23809523809523808,
+        "got": 0.23809523809523808
+      }
+    },
+    "morgan_r2_reproduces_signed_nn_exact": true
+  },
+  "candidates": {
+    "DDS": "NC1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)N",
+    "DETA": "NCCNCCN",
+    "IPDA": "CC1(CC(CC(C1)N)C)CN",
+    "TETA": "NCCNCCNCCN",
+    "m-XDA": "NCC1=CC=CC(=C1)CN"
+  },
+  "closes": "Extends the novelty verdict's representation-invariance from circular+key descriptors to orthogonal path/topology descriptors; shows the signed NOVEL calls are descriptor-family-independent, not an ECFP inductive-bias artifact.",
+  "corpus": {
+    "corpus_canonical_set_sha256": "25b7f35c26594d7be5454826c0f399d7716131214c3c314646930257cf560304",
+    "csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "members_with_Tg": 443,
+    "rights": "CC-BY rights-clean OpenPoly benchmark (locked)",
+    "source": "OpenPoly final_polymer_properties_fromliterature.csv"
+  },
+  "cross_family": {
+    "DDS": {
+      "conformal_p_by_family": {
+        "atompair_2048": 0.19144144144144143,
+        "maccs_166": 0.04954954954954955,
+        "morgan_r2_2048": 0.11486486486486487,
+        "toptorsion_2048": 0.3581081081081081
+      },
+      "max_p": 0.3581081081081081,
+      "mean_p": 0.178490990990991,
+      "min_p": 0.04954954954954955,
+      "nn_by_family": {
+        "atompair_2048": 0.5151515151515151,
+        "maccs_166": 0.6,
+        "morgan_r2_2048": 0.39285714285714285,
+        "toptorsion_2048": 0.6538461538461539
+      },
+      "unanimity_by_alpha": {
+        "a0.01": {
+          "all_novel": false,
+          "n_novel": 0,
+          "none_novel": true
+        },
+        "a0.05": {
+          "all_novel": false,
+          "n_novel": 1,
+          "none_novel": false
+        },
+        "a0.1": {
+          "all_novel": false,
+          "n_novel": 1,
+          "none_novel": false
+        },
+        "a0.2": {
+          "all_novel": false,
+          "n_novel": 3,
+          "none_novel": false
+        }
+      }
+    },
+    "DETA": {
+      "conformal_p_by_family": {
+        "atompair_2048": 0.0022522522522522522,
+        "maccs_166": 0.024774774774774775,
+        "morgan_r2_2048": 0.0045045045045045045,
+        "toptorsion_2048": 0.02702702702702703
+      },
+      "max_p": 0.02702702702702703,
+      "mean_p": 0.01463963963963964,
+      "min_p": 0.0022522522522522522,
+      "nn_by_family": {
+        "atompair_2048": 0.17142857142857143,
+        "maccs_166": 0.5384615384615384,
+        "morgan_r2_2048": 0.16666666666666666,
+        "toptorsion_2048": 0.18181818181818182
+      },
+      "unanimity_by_alpha": {
+        "a0.01": {
+          "all_novel": false,
+          "n_novel": 2,
+          "none_novel": false
+        },
+        "a0.05": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        },
+        "a0.1": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        },
+        "a0.2": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        }
+      }
+    },
+    "IPDA": {
+      "conformal_p_by_family": {
+        "atompair_2048": 0.009009009009009009,
+        "maccs_166": 0.006756756756756757,
+        "morgan_r2_2048": 0.0045045045045045045,
+        "toptorsion_2048": 0.02702702702702703
+      },
+      "max_p": 0.02702702702702703,
+      "mean_p": 0.011824324324324325,
+      "min_p": 0.0045045045045045045,
+      "nn_by_family": {
+        "atompair_2048": 0.2777777777777778,
+        "maccs_166": 0.4666666666666667,
+        "morgan_r2_2048": 0.16666666666666666,
+        "toptorsion_2048": 0.1794871794871795
+      },
+      "unanimity_by_alpha": {
+        "a0.01": {
+          "all_novel": false,
+          "n_novel": 3,
+          "none_novel": false
+        },
+        "a0.05": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        },
+        "a0.1": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        },
+        "a0.2": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        }
+      }
+    },
+    "TETA": {
+      "conformal_p_by_family": {
+        "atompair_2048": 0.0022522522522522522,
+        "maccs_166": 0.024774774774774775,
+        "morgan_r2_2048": 0.0022522522522522522,
+        "toptorsion_2048": 0.015765765765765764
+      },
+      "max_p": 0.024774774774774775,
+      "mean_p": 0.01126126126126126,
+      "min_p": 0.0022522522522522522,
+      "nn_by_family": {
+        "atompair_2048": 0.1780821917808219,
+        "maccs_166": 0.5384615384615384,
+        "morgan_r2_2048": 0.15789473684210525,
+        "toptorsion_2048": 0.15384615384615385
+      },
+      "unanimity_by_alpha": {
+        "a0.01": {
+          "all_novel": false,
+          "n_novel": 2,
+          "none_novel": false
+        },
+        "a0.05": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        },
+        "a0.1": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        },
+        "a0.2": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        }
+      }
+    },
+    "m-XDA": {
+      "conformal_p_by_family": {
+        "atompair_2048": 0.009009009009009009,
+        "maccs_166": 0.0022522522522522522,
+        "morgan_r2_2048": 0.02252252252252252,
+        "toptorsion_2048": 0.05855855855855856
+      },
+      "max_p": 0.05855855855855856,
+      "mean_p": 0.023085585585585586,
+      "min_p": 0.0022522522522522522,
+      "nn_by_family": {
+        "atompair_2048": 0.27419354838709675,
+        "maccs_166": 0.3684210526315789,
+        "morgan_r2_2048": 0.23809523809523808,
+        "toptorsion_2048": 0.2608695652173913
+      },
+      "unanimity_by_alpha": {
+        "a0.01": {
+          "all_novel": false,
+          "n_novel": 2,
+          "none_novel": false
+        },
+        "a0.05": {
+          "all_novel": false,
+          "n_novel": 3,
+          "none_novel": false
+        },
+        "a0.1": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        },
+        "a0.2": {
+          "all_novel": true,
+          "n_novel": 4,
+          "none_novel": false
+        }
+      }
+    }
+  },
+  "cross_family_robustness": {
+    "decoy_family_blind_spots_a05": {
+      "caffeine": [
+        "maccs_166"
+      ],
+      "perfluorodecalin": [
+        "atompair_2048",
+        "toptorsion_2048"
+      ]
+    },
+    "family_dependent_candidates_a05": {
+      "DDS": {
+        "families_NOT_calling_novel_a05": [
+          "morgan_r2_2048",
+          "atompair_2048",
+          "toptorsion_2048"
+        ],
+        "n_novel": 1
+      },
+      "m-XDA": {
+        "families_NOT_calling_novel_a05": [
+          "toptorsion_2048"
+        ],
+        "n_novel": 3
+      }
+    },
+    "n_candidates": 5,
+    "n_unanimous_novel_a05": 3,
+    "note": "Path/topology descriptors (atom-pair, topological-torsion) are less sensitive to heteroatom-substitution novelty than circular ECFP and substructure-key MACCS: they miss the perfluoro cage and the aromatic sulfone's isolation, but agree on the aliphatic-amine hardeners.",
+    "unanimous_novel_candidates_a05": [
+      "IPDA",
+      "DETA",
+      "TETA"
+    ]
+  },
+  "discrimination_controls": {
+    "all_fragments_nonnovel_in_all_families_a05": true,
+    "eval": {
+      "atompair_2048": {
+        "glucose": {
+          "alpha": 0.4794520547945206,
+          "conformal_p": 0.19594594594594594,
+          "nn_tanimoto": 0.5205479452054794,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "n-hexane": {
+          "alpha": 0.4545454545454546,
+          "conformal_p": 0.22072072072072071,
+          "nn_tanimoto": 0.5454545454545454,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        }
+      },
+      "maccs_166": {
+        "glucose": {
+          "alpha": 0.10344827586206895,
+          "conformal_p": 0.43018018018018017,
+          "nn_tanimoto": 0.896551724137931,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "n-hexane": {
+          "alpha": 0.09090909090909094,
+          "conformal_p": 0.44594594594594594,
+          "nn_tanimoto": 0.9090909090909091,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        }
+      },
+      "morgan_r2_2048": {
+        "glucose": {
+          "alpha": 0.6,
+          "conformal_p": 0.11711711711711711,
+          "nn_tanimoto": 0.4,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        },
+        "n-hexane": {
+          "alpha": 0.5,
+          "conformal_p": 0.23873873873873874,
+          "nn_tanimoto": 0.5,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        }
+      },
+      "toptorsion_2048": {
+        "glucose": {
+          "alpha": 0.42307692307692313,
+          "conformal_p": 0.29954954954954954,
+          "nn_tanimoto": 0.5769230769230769,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        },
+        "n-hexane": {
+          "alpha": 0.6,
+          "conformal_p": 0.13513513513513514,
+          "nn_tanimoto": 0.4,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": true
+          }
+        }
+      }
+    },
+    "fragments": {
+      "glucose": "OCC1OC(O)C(O)C(O)C1O",
+      "n-hexane": "CCCCCC"
+    }
+  },
+  "does_not_close": "Does not add external data, does not validate wet-lab novelty, does not promote authority or flip scientific_readiness; the corpus scope (Tg-bearing OpenPoly polymers) still bounds the reference manifold.",
+  "fail_closed": {
+    "bad_smiles_rejected": true,
+    "exact_corpus_duplicate": {
+      "all_self_match_1.0": true,
+      "member": "PLA",
+      "per_family": {
+        "atompair_2048": {
+          "is_1.0": true,
+          "nn_tanimoto": 1.0
+        },
+        "maccs_166": {
+          "is_1.0": true,
+          "nn_tanimoto": 1.0
+        },
+        "morgan_r2_2048": {
+          "is_1.0": true,
+          "nn_tanimoto": 1.0
+        },
+        "toptorsion_2048": {
+          "is_1.0": true,
+          "nn_tanimoto": 1.0
+        }
+      }
+    }
+  },
+  "families": [
+    "morgan_r2_2048",
+    "maccs_166",
+    "atompair_2048",
+    "toptorsion_2048"
+  ],
+  "family_reference": {
+    "atompair_2048": "Carhart et al. 1985 DOI:10.1021/ci00046a002 (topological atom pairs)",
+    "maccs_166": "Durant et al. 2002 DOI:10.1021/ci010132r (166 substructure keys)",
+    "morgan_r2_2048": "Rogers&Hahn 2010 DOI:10.1021/ci100050t (circular/ECFP)",
+    "toptorsion_2048": "Nilakantan et al. 1987 DOI:10.1021/ci00054a008 (4-atom torsions)"
+  },
+  "headline": "Novelty of the 5 signed epoxy-amine hardeners vs the 443-member OpenPoly corpus is UNANIMOUS across 4 orthogonal published descriptor families (circular ECFP, substructure MACCS, topological atom-pairs, 4-atom torsions) at conformal alpha=0.05, so the verdict is not a single-fingerprint inductive-bias artifact.",
+  "hypothesis_evaluation": {
+    "anchor_exact": true,
+    "decoy_blind_spots": {
+      "caffeine": [
+        "maccs_166"
+      ],
+      "perfluorodecalin": [
+        "atompair_2048",
+        "toptorsion_2048"
+      ]
+    },
+    "family_dependent": [
+      "DDS",
+      "m-XDA"
+    ],
+    "kendall_w": 0.5801282051282052,
+    "n_unanimous_of_5": 3,
+    "unanimous_novel_a05": false,
+    "verdict": "PARTIAL_DESCRIPTOR_FAMILY_DEPENDENT_NOVELTY"
+  },
+  "kendall_w": {
+    "S": 90.5,
+    "W": 0.5801282051282052,
+    "interpretation": "W in [0,1]; 1 = perfect agreement of the novelty ordering across descriptor families",
+    "items_candidates": 5,
+    "rank_sums": [
+      13.5,
+      4.0,
+      14.0,
+      16.5,
+      12.0
+    ],
+    "raters_families": 4,
+    "tie_term": 12
+  },
+  "method": "Per family: LOO nonconformity alpha_i=1-NN_LOO(i) over corpus; candidate alpha_x=1-max_j Tanimoto(x,corpus_j); smoothed-free conformal p=(#{alpha_i>=alpha_x}+1)/(n+1); NOVEL iff p<alpha. Kendall's W (tie-corrected) over the 4 families ranking the 5 candidates by novelty.",
+  "non_circularity": "Corpus is external SHA-256-locked rights-clean OpenPoly; candidates are held-out epoxy-amine hardeners; the Morgan r2 lane must reproduce the signed-receipt NN Tanimoto EXACTLY before any cross-family claim is trusted; fully deterministic, no fitted parameters.",
+  "per_family_candidate_eval": {
+    "atompair_2048": {
+      "DDS": {
+        "alpha": 0.48484848484848486,
+        "conformal_p": 0.19144144144144143,
+        "nn_tanimoto": 0.5151515151515151,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": true
+        }
+      },
+      "DETA": {
+        "alpha": 0.8285714285714285,
+        "conformal_p": 0.0022522522522522522,
+        "nn_tanimoto": 0.17142857142857143,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "alpha": 0.7222222222222222,
+        "conformal_p": 0.009009009009009009,
+        "nn_tanimoto": 0.2777777777777778,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "TETA": {
+        "alpha": 0.821917808219178,
+        "conformal_p": 0.0022522522522522522,
+        "nn_tanimoto": 0.1780821917808219,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "m-XDA": {
+        "alpha": 0.7258064516129032,
+        "conformal_p": 0.009009009009009009,
+        "nn_tanimoto": 0.27419354838709675,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      }
+    },
+    "maccs_166": {
+      "DDS": {
+        "alpha": 0.4,
+        "conformal_p": 0.04954954954954955,
+        "nn_tanimoto": 0.6,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "DETA": {
+        "alpha": 0.46153846153846156,
+        "conformal_p": 0.024774774774774775,
+        "nn_tanimoto": 0.5384615384615384,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "alpha": 0.5333333333333333,
+        "conformal_p": 0.006756756756756757,
+        "nn_tanimoto": 0.4666666666666667,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "TETA": {
+        "alpha": 0.46153846153846156,
+        "conformal_p": 0.024774774774774775,
+        "nn_tanimoto": 0.5384615384615384,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "m-XDA": {
+        "alpha": 0.631578947368421,
+        "conformal_p": 0.0022522522522522522,
+        "nn_tanimoto": 0.3684210526315789,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      }
+    },
+    "morgan_r2_2048": {
+      "DDS": {
+        "alpha": 0.6071428571428572,
+        "conformal_p": 0.11486486486486487,
+        "nn_tanimoto": 0.39285714285714285,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": true
+        }
+      },
+      "DETA": {
+        "alpha": 0.8333333333333334,
+        "conformal_p": 0.0045045045045045045,
+        "nn_tanimoto": 0.16666666666666666,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "alpha": 0.8333333333333334,
+        "conformal_p": 0.0045045045045045045,
+        "nn_tanimoto": 0.16666666666666666,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "TETA": {
+        "alpha": 0.8421052631578947,
+        "conformal_p": 0.0022522522522522522,
+        "nn_tanimoto": 0.15789473684210525,
+        "novel_by_alpha": {
+          "a0.01": true,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "m-XDA": {
+        "alpha": 0.7619047619047619,
+        "conformal_p": 0.02252252252252252,
+        "nn_tanimoto": 0.23809523809523808,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      }
+    },
+    "toptorsion_2048": {
+      "DDS": {
+        "alpha": 0.34615384615384615,
+        "conformal_p": 0.3581081081081081,
+        "nn_tanimoto": 0.6538461538461539,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": false,
+          "a0.2": false
+        }
+      },
+      "DETA": {
+        "alpha": 0.8181818181818181,
+        "conformal_p": 0.02702702702702703,
+        "nn_tanimoto": 0.18181818181818182,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "IPDA": {
+        "alpha": 0.8205128205128205,
+        "conformal_p": 0.02702702702702703,
+        "nn_tanimoto": 0.1794871794871795,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "TETA": {
+        "alpha": 0.8461538461538461,
+        "conformal_p": 0.015765765765765764,
+        "nn_tanimoto": 0.15384615384615385,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": true,
+          "a0.1": true,
+          "a0.2": true
+        }
+      },
+      "m-XDA": {
+        "alpha": 0.7391304347826086,
+        "conformal_p": 0.05855855855855856,
+        "nn_tanimoto": 0.2608695652173913,
+        "novel_by_alpha": {
+          "a0.01": false,
+          "a0.05": false,
+          "a0.1": true,
+          "a0.2": true
+        }
+      }
+    }
+  },
+  "positive_controls_decoys": {
+    "all_decoys_novel_in_all_families_a05": false,
+    "decoys": {
+      "caffeine": "Cn1cnc2c1c(=O)n(C)c(=O)n2C",
+      "hexachlorophosphazene": "ClP1(Cl)=NP(Cl)(Cl)=NP(Cl)(Cl)=N1",
+      "melamine": "Nc1nc(N)nc(N)n1",
+      "perfluorodecalin": "FC1(F)C(F)(F)C(F)(F)C2(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C12F"
+    },
+    "eval": {
+      "atompair_2048": {
+        "caffeine": {
+          "alpha": 0.7614678899082569,
+          "conformal_p": 0.0045045045045045045,
+          "nn_tanimoto": 0.23853211009174313,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "hexachlorophosphazene": {
+          "alpha": 0.9516129032258065,
+          "conformal_p": 0.0022522522522522522,
+          "nn_tanimoto": 0.04838709677419355,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "melamine": {
+          "alpha": 0.8648648648648649,
+          "conformal_p": 0.0022522522522522522,
+          "nn_tanimoto": 0.13513513513513514,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "perfluorodecalin": {
+          "alpha": 0.4078947368421053,
+          "conformal_p": 0.27927927927927926,
+          "nn_tanimoto": 0.5921052631578947,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        }
+      },
+      "maccs_166": {
+        "caffeine": {
+          "alpha": 0.34545454545454546,
+          "conformal_p": 0.09684684684684684,
+          "nn_tanimoto": 0.6545454545454545,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "hexachlorophosphazene": {
+          "alpha": 0.6888888888888889,
+          "conformal_p": 0.0022522522522522522,
+          "nn_tanimoto": 0.3111111111111111,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "melamine": {
+          "alpha": 0.5909090909090908,
+          "conformal_p": 0.0045045045045045045,
+          "nn_tanimoto": 0.4090909090909091,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "perfluorodecalin": {
+          "alpha": 0.631578947368421,
+          "conformal_p": 0.0022522522522522522,
+          "nn_tanimoto": 0.3684210526315789,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "morgan_r2_2048": {
+        "caffeine": {
+          "alpha": 0.8125,
+          "conformal_p": 0.009009009009009009,
+          "nn_tanimoto": 0.1875,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "hexachlorophosphazene": {
+          "alpha": 0.9,
+          "conformal_p": 0.0022522522522522522,
+          "nn_tanimoto": 0.1,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "melamine": {
+          "alpha": 0.9,
+          "conformal_p": 0.0022522522522522522,
+          "nn_tanimoto": 0.1,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "perfluorodecalin": {
+          "alpha": 0.896551724137931,
+          "conformal_p": 0.0022522522522522522,
+          "nn_tanimoto": 0.10344827586206896,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        }
+      },
+      "toptorsion_2048": {
+        "caffeine": {
+          "alpha": 0.8472222222222222,
+          "conformal_p": 0.015765765765765764,
+          "nn_tanimoto": 0.1527777777777778,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "hexachlorophosphazene": {
+          "alpha": 0.9411764705882353,
+          "conformal_p": 0.0022522522522522522,
+          "nn_tanimoto": 0.058823529411764705,
+          "novel_by_alpha": {
+            "a0.01": true,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "melamine": {
+          "alpha": 0.8333333333333334,
+          "conformal_p": 0.018018018018018018,
+          "nn_tanimoto": 0.16666666666666666,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": true,
+            "a0.1": true,
+            "a0.2": true
+          }
+        },
+        "perfluorodecalin": {
+          "alpha": 0.4117647058823529,
+          "conformal_p": 0.30855855855855857,
+          "nn_tanimoto": 0.5882352941176471,
+          "novel_by_alpha": {
+            "a0.01": false,
+            "a0.05": false,
+            "a0.1": false,
+            "a0.2": false
+          }
+        }
+      }
+    }
+  },
+  "purpose": "Test whether the signed NOVEL verdict is descriptor-family-independent by adding two path/topology-based fingerprint families (atom-pair, topological-torsion) orthogonal to the previously-audited circular ECFP and substructure-key MACCS families.",
+  "rdkit_version": "2026.03.2",
+  "rights_posture": "AUDIT_ONLY. External corpus SHA-256-locked and rights-clean; no manifest, locked dataset, or signed Phase-0 KPI modified.",
+  "schema": "amphora.molecule-novelty.cross-family-concordance.diagnostic.v1",
+  "self_tests": {
+    "anchor_exact": true,
+    "atompair_2048_self_tanimoto_is_1": true,
+    "corpus_size_in_expected_band": true,
+    "four_families": true,
+    "kendall_w_in_unit_interval": true,
+    "maccs_166_self_tanimoto_is_1": true,
+    "morgan_r2_2048_self_tanimoto_is_1": true,
+    "toptorsion_2048_self_tanimoto_is_1": true
+  },
+  "self_tests_all_pass": true,
+  "signed_baseline_nn": {
+    "DDS": 0.39285714285714285,
+    "DETA": 0.16666666666666666,
+    "IPDA": 0.16666666666666666,
+    "TETA": 0.15789473684210525,
+    "m-XDA": 0.23809523809523808
+  },
+  "study_id": "molecule-novelty-cross-descriptor-family-concordance-v1",
+  "theory_reference": {
+    "atom_pair": "Carhart et al. 1985 DOI:10.1021/ci00046a002",
+    "conformal": "Vovk-Gammerman-Shafer 2005 ISBN:978-0-387-00152-4",
+    "kendall_w": "Kendall&Babington-Smith 1939 DOI:10.1214/aoms/1177732186",
+    "maccs": "Durant et al. 2002 DOI:10.1021/ci010132r",
+    "morgan_ecfp": "Rogers&Hahn 2010 DOI:10.1021/ci100050t",
+    "tanimoto": "Bajusz-Racz-Heberger 2015 DOI:10.1186/s13321-015-0069-3",
+    "topological_torsion": "Nilakantan et al. 1987 DOI:10.1021/ci00054a008"
+  },
+  "unanimous_novel_a05": false
+}

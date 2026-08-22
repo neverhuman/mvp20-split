@@ -1,0 +1,14 @@
+{
+  "item_id": "DR-LANG-EU",
+  "max_fires": 2,
+  "fires_used": 2,
+  "fire2_outcome": "CLAIM_REFUTED",
+  "fire2_summary": "Genuine second-party live spot-check of the fire-1 deliverable (the open item fire 1 explicitly flagged as not yet done). Live re-fetch of the exact URLs fire 1 cited found DR-LANG-EU-02 (NEN-EN-ISO 9227:2017, nl) and DR-LANG-EU-07 (UNI EN ISO 9227:2017, it) both cite withdrawn/superseded standard editions. Corrected via 2 supersede-never-rewrite disposition-ledger entries (DR-LANG-EU-02-CORRECTED, DR-LANG-EU-07-CORRECTED) plus a new RETRACTION-INDEX.md. All other spot-check dimensions (query authenticity, citation resolution, rediscovery-recall) held up.",
+  "still_open_for_a_future_item": [
+    "Bologna AMS Laurea thesis PDF text extraction still inconclusive on DSC/Kissinger content",
+    "CNR-ICMATE MARECO data-access/license terms still unconfirmed (2nd independent re-fetch this fire reconfirmed the same evidence-quality gap)",
+    "nl cure-kinetics remains a genuine empty result",
+    "live re-verification was not extended to DR-LANG-EU-03/04/08/09 (REJECTED paid-institute entries, judged lower-value to re-check live than versioned standard citations)"
+  ],
+  "max_fires_reached": true
+}

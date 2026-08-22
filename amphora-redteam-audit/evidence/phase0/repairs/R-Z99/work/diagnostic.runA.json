@@ -1,0 +1,546 @@
+{
+  "claim_under_attack": {
+    "claim_text": "Every interactive Wave R done receipt (R-A01..R-A04, R-A09..R-A11, R-A13) is mechanically sound: originals byte-intact per embedded shas, DSSE verifies anchored, mission front-matter untouched, corrected claims substantive.",
+    "receipt_path": "logs/falsification-ledger.jsonl"
+  },
+  "evaluator_key": {
+    "derived_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "pin_match": true,
+    "pinned_trust_store_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178"
+  },
+  "module_frontmatter_parity": {
+    "amphora-cure-potlife-gate": {
+      "live_front_matter": {
+        "authority_ceiling": "CRO_GATED",
+        "operational_readiness": "BLOCKED",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      "mismatches": [],
+      "mission_md_path": "amphora-cure-potlife-gate/docs/mission.md",
+      "pass": true,
+      "rank_snapshot": {
+        "authority_ceiling": "CRO_GATED",
+        "operational_readiness": "BLOCKED",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      }
+    },
+    "amphora-design-rule-score": {
+      "live_front_matter": {
+        "authority_ceiling": "RULE_CITED",
+        "operational_readiness": "SHADOW",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      "mismatches": [],
+      "mission_md_path": "amphora-design-rule-score/docs/mission.md",
+      "pass": true,
+      "rank_snapshot": {
+        "authority_ceiling": "RULE_CITED",
+        "operational_readiness": "SHADOW",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      }
+    },
+    "amphora-ingredient-library": {
+      "live_front_matter": {
+        "authority_ceiling": "RULE_CITED",
+        "operational_readiness": "GATED",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      "mismatches": [],
+      "mission_md_path": "amphora-ingredient-library/docs/mission.md",
+      "pass": true,
+      "rank_snapshot": {
+        "authority_ceiling": "RULE_CITED",
+        "operational_readiness": "GATED",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      }
+    },
+    "amphora-ip-fto-guard": {
+      "live_front_matter": {
+        "authority_ceiling": "EVIDENCE_ONLY",
+        "operational_readiness": "GATED",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      "mismatches": [],
+      "mission_md_path": "amphora-ip-fto-guard/docs/mission.md",
+      "pass": true,
+      "rank_snapshot": {
+        "authority_ceiling": "EVIDENCE_ONLY",
+        "operational_readiness": "GATED",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      }
+    },
+    "amphora-molecule-property": {
+      "live_front_matter": {
+        "authority_ceiling": "REAL_ARITHMETIC",
+        "operational_readiness": "AUDIT",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      "mismatches": [],
+      "mission_md_path": "amphora-molecule-property/docs/mission.md",
+      "pass": true,
+      "rank_snapshot": {
+        "authority_ceiling": "REAL_ARITHMETIC",
+        "operational_readiness": "AUDIT",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      }
+    },
+    "amphora-solvency-score": {
+      "live_front_matter": {
+        "authority_ceiling": "RULE_CITED",
+        "operational_readiness": "READY",
+        "phase": "PHASE_0",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      },
+      "mismatches": [],
+      "mission_md_path": "amphora-solvency-score/docs/mission.md",
+      "pass": true,
+      "rank_snapshot": {
+        "authority_ceiling": "RULE_CITED",
+        "operational_readiness": "READY",
+        "phase": "PHASE_0",
+        "scientific_readiness": "LOCKED_INTERNAL"
+      }
+    },
+    "amphora-sourceability-ehs": {
+      "live_front_matter": {
+        "authority_ceiling": "EVIDENCE_ONLY",
+        "operational_readiness": "GATED",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      "mismatches": [],
+      "mission_md_path": "amphora-sourceability-ehs/docs/mission.md",
+      "pass": true,
+      "rank_snapshot": {
+        "authority_ceiling": "EVIDENCE_ONLY",
+        "operational_readiness": "GATED",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      }
+    },
+    "amphora-viscosity-score": {
+      "live_front_matter": {
+        "authority_ceiling": "LIMITED_SANITY",
+        "operational_readiness": "SHADOW",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      },
+      "mismatches": [],
+      "mission_md_path": "amphora-viscosity-score/docs/mission.md",
+      "pass": true,
+      "rank_snapshot": {
+        "authority_ceiling": "LIMITED_SANITY",
+        "operational_readiness": "SHADOW",
+        "phase": "PRE_PHASE_0",
+        "scientific_readiness": "UNVALIDATED"
+      }
+    }
+  },
+  "observations_non_fatal": {
+    "duplicate_repair_item_ids_across_modules": {
+      "R-A11": [
+        "amphora-design-rule-score",
+        "amphora-molecule-property"
+      ]
+    },
+    "note": "R-A11 is used as the repair_item id by two independent, unrelated repairs in two different modules (amphora-design-rule-score anchoring the Guth-Gold baseline receipt; amphora-molecule-property anchoring the phys-ml-stack c8-fire2 receipt). Both receipts independently pass all four mechanical checks; the shared id is a campaign numbering collision, not a data-integrity defect, and does not affect this claim's truth value."
+  },
+  "pre_registered_refutation_criteria": {
+    "n_modules_frontmatter_checked": 8,
+    "n_receipts_audited": 9,
+    "n_spot_checked_for_substantiveness": 3,
+    "n_supersedes_entries_checked": 15,
+    "verdict": "CLAIM_SURVIVED",
+    "would_refute_if": "ANY of: (a) a supersedes-block path's live bytes (or, when the superseded artifact is mission.md prose intentionally amended, its preserved pre-repair backup) fail to sha256-match the declared superseded_sha256; (b) a receipt's DSSE envelope fails Ed25519 verification against the pinned PHASE0_EVALUATOR key or signs with a non-pinned keyid; (c) a module's live mission.md front-matter (phase/scientific_readiness/authority_ceiling/operational_readiness) diverges from that module's rank snapshot, indicating a promotion smuggled in via the repair; (d) any of the 3 hand-read spot-check receipts turns out to contain only boilerplate/placeholder corrected-claim text with no verifiable specific defect and fix."
+  },
+  "rows": [
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "65b73a7f4e7c1dfbf9d19b7b207ac932bf2829b845028e5e868ef67039c60615",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": null,
+      "module": "amphora-ingredient-library",
+      "receipt_path": "amphora-ingredient-library/evidence/phase0/repairs/R-A01/done/repair-R-A01-done-receipt.v1.dsse.json",
+      "repair_item": "R-A01",
+      "row_pass": true,
+      "supersedes_entries_checked": 1,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "clean_path": "amphora-ingredient-library/evidence/audit/constant-crosscheck-v1/constant-crosscheck-receipt.v1.dsse.json",
+          "expect_sha256": "85b207a9f5d0c2d07b1d2b78c8635250d8d29cd3402ff2ce546942f61d28a50f",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "85b207a9f5d0c2d07b1d2b78c8635250d8d29cd3402ff2ce546942f61d28a50f",
+          "pass": true,
+          "path": "amphora-ingredient-library/evidence/audit/constant-crosscheck-v1/constant-crosscheck-receipt.v1.dsse.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        }
+      ]
+    },
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "4254608105e515ab4206af172123e466d91bbecf6dfa822e11bf192754c281df",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": {
+        "front_matter_byte_identical": true,
+        "preserved_backup": "amphora-cure-potlife-gate/evidence/phase0/repairs/R-A02/work/mission.md.pre-repair"
+      },
+      "module": "amphora-cure-potlife-gate",
+      "receipt_path": "amphora-cure-potlife-gate/evidence/phase0/repairs/R-A02/done/R-A02-repair-receipt.v1.dsse.json",
+      "repair_item": "R-A02",
+      "row_pass": true,
+      "supersedes_entries_checked": 1,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "clean_path": "amphora-cure-potlife-gate/docs/mission.md",
+          "expect_sha256": "e8d12fa8d373e548151fa3d93920cd858ba84233c778bdbaf668d13c58ca706d",
+          "kind": "direct_or_preserved_file",
+          "live_match": false,
+          "live_sha256": "4e4f72c38097eeec63bb9c6de003bf2df7c6d4084d8caf690d508805060c57bc",
+          "pass": true,
+          "path": "amphora-cure-potlife-gate/docs/mission.md (pre-repair prose revision)",
+          "preserved_at": null,
+          "preserved_at_unstructured_search": "amphora-cure-potlife-gate/evidence/phase0/repairs/R-A02/work/mission.md.pre-repair",
+          "preserved_match": true,
+          "preserved_sha256": null
+        }
+      ]
+    },
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "5a032290c361446d32115f5a9c942cd92b695e24fe1c1973250f2b860b9bd196",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": null,
+      "module": "amphora-viscosity-score",
+      "receipt_path": "amphora-viscosity-score/evidence/phase0/repairs/R-A03/done/r-a03-disclosure-repair-receipt.v1.dsse.json",
+      "repair_item": "R-A03",
+      "row_pass": true,
+      "supersedes_entries_checked": 5,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "clean_path": "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-vs-ml-kpi.v1.json",
+          "expect_sha256": "5137bdae3eb4418492fee70395656842fcf32d92fcf7bc8cf3cbd867c3d0e98b",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "5137bdae3eb4418492fee70395656842fcf32d92fcf7bc8cf3cbd867c3d0e98b",
+          "pass": true,
+          "path": "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-vs-ml-kpi.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        },
+        {
+          "clean_path": "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-polymer-safe-conformal-coverage-and-applicability-domain-kpi.v1.json",
+          "expect_sha256": "34b77002aa5a3067ad35030cd2bedb819b7da3cd16c6219bf1245a414c3fabb8",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "34b77002aa5a3067ad35030cd2bedb819b7da3cd16c6219bf1245a414c3fabb8",
+          "pass": true,
+          "path": "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-polymer-safe-conformal-coverage-and-applicability-domain-kpi.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        },
+        {
+          "clean_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json",
+          "expect_sha256": "29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff",
+          "pass": true,
+          "path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        },
+        {
+          "clean_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json",
+          "expect_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+          "pass": true,
+          "path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        },
+        {
+          "clean_path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json",
+          "expect_sha256": "3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3",
+          "pass": true,
+          "path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        }
+      ]
+    },
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "bf858887eea8fea215d3bef1adeff05c3c4622fa79354221fb4ad8ade8a108b7",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": null,
+      "module": "amphora-sourceability-ehs",
+      "receipt_path": "amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json",
+      "repair_item": "R-A04",
+      "row_pass": true,
+      "supersedes_entries_checked": 3,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "clean_path": "amphora-sourceability-ehs/reference/mvp20/data/vapor_hazard_ratio_inhalation_prescreen_receipt.v1.json",
+          "expect_sha256": "24b2311523613eab44f6b356748aba6574768e3ac502491009ef3af552d8f5b4",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "24b2311523613eab44f6b356748aba6574768e3ac502491009ef3af552d8f5b4",
+          "pass": true,
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/vapor_hazard_ratio_inhalation_prescreen_receipt.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        },
+        {
+          "clean_path": "amphora-sourceability-ehs/reference/mvp20/data/vhr_temperature_envelope_inhalation_prescreen_receipt.v1.json",
+          "expect_sha256": "33d8a165ec537f31a5f4c1b19ecaef0607034a998c89b07dff62fea281f4872a",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "33d8a165ec537f31a5f4c1b19ecaef0607034a998c89b07dff62fea281f4872a",
+          "pass": true,
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/vhr_temperature_envelope_inhalation_prescreen_receipt.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        },
+        {
+          "clean_path": "amphora-sourceability-ehs/reference/mvp20/data/mixture_additivity_raoult_osha_inhalation_prescreen_receipt.v1.json",
+          "expect_sha256": "70c406e5be98144edb85d2a376914c1315ca42281bec1f20689a7e5ba4814441",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "70c406e5be98144edb85d2a376914c1315ca42281bec1f20689a7e5ba4814441",
+          "pass": true,
+          "path": "amphora-sourceability-ehs/reference/mvp20/data/mixture_additivity_raoult_osha_inhalation_prescreen_receipt.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        }
+      ]
+    },
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "e0887195df6d7910382bbdd9e36e22dcd01f79dbe73e628ac7917f2d6a9942a7",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": null,
+      "module": "amphora-molecule-property",
+      "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-A09/done/R-A09.done-receipt.v1.dsse.json",
+      "repair_item": "R-A09",
+      "row_pass": true,
+      "supersedes_entries_checked": 1,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "computed_digest": "408273c46004441113ebb34a509218248f0514b13c93749e7379332fcd8edf20",
+          "digest_match": true,
+          "expect_sha256": "408273c46004441113ebb34a509218248f0514b13c93749e7379332fcd8edf20",
+          "kind": "directory_listing_digest",
+          "mismatched_files": [],
+          "n_files": 21,
+          "pass": true,
+          "path": "amphora-molecule-property/evidence/phase0/kpis/ (unannotated 21-file KPI status surface as dated 2026-07-23)",
+          "per_file_all_match": true
+        }
+      ]
+    },
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "714dd2be18b9bf0cc36182b98eb585efe645ad3b14007ff30de61371ea2343e5",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": {
+        "front_matter_byte_identical": true,
+        "preserved_backup": "amphora-solvency-score/evidence/phase0/repairs/R-A10/work/mission.md.pre-R-A10"
+      },
+      "module": "amphora-solvency-score",
+      "receipt_path": "amphora-solvency-score/evidence/phase0/repairs/R-A10/done/r-a10-prose-consistency-w7-disclosure-repair-receipt.v1.dsse.json",
+      "repair_item": "R-A10",
+      "row_pass": true,
+      "supersedes_entries_checked": 1,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "clean_path": "amphora-solvency-score/docs/mission.md",
+          "expect_sha256": "5de41beeb3304df7ac08c860d9ff7e058523e51c31fb02c5891025dbf74fe6a4",
+          "kind": "direct_or_preserved_file",
+          "live_match": false,
+          "live_sha256": "32a56a35f5976820440db2303d2f7b3db09c91a22c0b580d0351d9cb7909ff9d",
+          "pass": true,
+          "path": "amphora-solvency-score/docs/mission.md",
+          "preserved_at": "amphora-solvency-score/evidence/phase0/repairs/R-A10/work/mission.md.pre-R-A10",
+          "preserved_match": true,
+          "preserved_sha256": "5de41beeb3304df7ac08c860d9ff7e058523e51c31fb02c5891025dbf74fe6a4"
+        }
+      ]
+    },
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "8ebd3746ee2443aea813241a0d5bb8b84709d4fe93a51ff7efb19e9e30278434",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": null,
+      "module": "amphora-design-rule-score",
+      "receipt_path": "amphora-design-rule-score/evidence/phase0/repairs/R-A11/done/R-A11.done-receipt.v1.dsse.json",
+      "repair_item": "R-A11",
+      "row_pass": true,
+      "supersedes_entries_checked": 1,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "clean_path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json",
+          "expect_sha256": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "5a6b482b35299366461775effb046e639c2a46c83b165f799b410841cf414ffd",
+          "pass": true,
+          "path": "amphora-design-rule-score/benchmarks/guth-gold-physical-baseline-v1/physical_baseline_receipt.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        }
+      ]
+    },
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "19322c407185ffb5e56d710fb2dc9041f7d6535a478c12b1853f80f35b374519",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": null,
+      "module": "amphora-molecule-property",
+      "receipt_path": "amphora-molecule-property/evidence/phase0/repairs/R-A11/done/R-A11.done-receipt.v1.dsse.json",
+      "repair_item": "R-A11",
+      "row_pass": true,
+      "supersedes_entries_checked": 1,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "clean_path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+          "expect_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "da90f64299b0cad6278b4ef32b167336e6d3b10a26f570906cbdf568ef4404e7",
+          "pass": true,
+          "path": "amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-fire2-clean-subset-v1/c8_fire2_dielectric_clean_subset_receipt.v1.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        }
+      ]
+    },
+    {
+      "dsse_verify": {
+        "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+        "keyid_pinned_match": true,
+        "pass": true,
+        "payload_sha256": "f1db838716c11ffb2cff36ef126f91eaa553ec6eff66bae97f25d4fe3ed4da02",
+        "sig_valid": true
+      },
+      "mission_frontmatter_parity_pass": true,
+      "mission_frontmatter_prose_edit_identity_check": null,
+      "module": "amphora-ip-fto-guard",
+      "receipt_path": "amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json",
+      "repair_item": "R-A13",
+      "row_pass": true,
+      "supersedes_entries_checked": 1,
+      "supersedes_pass": true,
+      "supersedes_results": [
+        {
+          "clean_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+          "expect_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+          "kind": "direct_or_preserved_file",
+          "live_match": true,
+          "live_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+          "pass": true,
+          "path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+          "preserved_at": null,
+          "preserved_match": null,
+          "preserved_sha256": null
+        }
+      ]
+    }
+  ],
+  "schema": "amphora.redteam-audit.r-z99-wave-r-batch-audit-diagnostic.v1",
+  "spot_check_substantiveness_judgment": {
+    "amphora-design-rule-score/evidence/phase0/repairs/R-A11/done/R-A11.done-receipt.v1.dsse.json": {
+      "substantive": true,
+      "why": "Reads as a bare 'signature-identity re-issue' at first glance, but the artifact trail is real and independently verifiable: an anchored-reissue file was written (physical_baseline_receipt.v1.anchored-reissue.v1.json, sha confirmed live), and a brand-new evidence/phase0/kpis/RETRACTION-INDEX.md was created for a module that had none before (existed_before:false, sha confirmed live). This is a genuine anchoring-gap repair, not a placeholder re-sign."
+    },
+    "amphora-ip-fto-guard/evidence/phase0/repairs/R-A13/done/claim-chart-supersede-repair.R-A13.v1.dsse.json": {
+      "substantive": true,
+      "why": "Replaces two fabricated/unsupported claim-1 elements ('polyurea topcoat', 'low VOC coating system') with the real rendered EP2653485A2 claim-1 text (epoxy binder, >=82% volume solids per modified ISO 3233, <5hr dry-to-walk-on at 20C), flips design-around advice accordingly (baseline already sits below the volume-solids threshold; withdraws the prior polyurea-package rationale), and states residual scope limits (no legal-status verification, no equivalents analysis). Not boilerplate."
+    },
+    "amphora-sourceability-ehs/evidence/phase0/repairs/R-A04/done/r-a04-osha-table-z2-attribution-correction-receipt.v1.dsse.json": {
+      "substantive": true,
+      "why": "Names the specific defect (toluene misattributed OSHA Table Z-1 vs actual Table Z-2), cites 29 CFR 1910.1000(b)(2) and the Z-2 acceptable-ceiling/peak structure, re-derives the 21-row Z-2 roster live from the refuting receipt, includes two matcher self-check probes (Styrene/Xylenes) to demonstrate the classifier is trustworthy, and explicitly scopes what is NOT changed (8/9 and 5/6 other attributions verified still correct, TWA ppm numerically unaffected). Not boilerplate."
+    }
+  },
+  "summary_counts": {
+    "n_rows": 9,
+    "n_rows_fail": 0,
+    "n_rows_pass": 9
+  },
+  "verdict": "CLAIM_SURVIVED"
+}

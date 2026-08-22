@@ -1,0 +1,249 @@
+{
+  "array_scan_results": {
+    "conformal_kpi": [
+      {
+        "element_type": "str",
+        "key": "awaiting",
+        "key_matches_suspect_substring": false,
+        "length": 5,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "awaiting"
+      },
+      {
+        "element_type": "dict",
+        "key": "metrics",
+        "key_matches_suspect_substring": false,
+        "length": 14,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "metrics"
+      },
+      {
+        "element_type": "str",
+        "key": "theory",
+        "key_matches_suspect_substring": false,
+        "length": 14,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "theory"
+      }
+    ],
+    "conformal_scientific_receipt": [
+      {
+        "element_type": "str",
+        "key": "applicability_domain_references",
+        "key_matches_suspect_substring": false,
+        "length": 5,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "kpis.applicability_domain_references"
+      },
+      {
+        "element_type": "str",
+        "key": "coating_rheology_theory_references",
+        "key_matches_suspect_substring": false,
+        "length": 5,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "kpis.coating_rheology_theory_references"
+      },
+      {
+        "element_type": "str",
+        "key": "conformal_theory_references",
+        "key_matches_suspect_substring": false,
+        "length": 4,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "kpis.conformal_theory_references"
+      },
+      {
+        "element_type": "dict",
+        "key": "ad_quintile_coverage",
+        "key_matches_suspect_substring": false,
+        "length": 5,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "kpis.per_alpha.0.10.ad_quintile_coverage"
+      },
+      {
+        "element_type": "dict",
+        "key": "ad_quintile_coverage",
+        "key_matches_suspect_substring": false,
+        "length": 5,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "kpis.per_alpha.0.20.ad_quintile_coverage"
+      }
+    ],
+    "ffw_kpi": [
+      {
+        "element_type": "str",
+        "key": "awaiting",
+        "key_matches_suspect_substring": false,
+        "length": 5,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "awaiting"
+      },
+      {
+        "element_type": "list",
+        "key": "ranking_by_polymer_safe_test_r2",
+        "key_matches_suspect_substring": true,
+        "length": 5,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "fitted_or_physical_model_artifact.ranking_by_polymer_safe_test_r2"
+      },
+      {
+        "element_type": "dict",
+        "key": "metrics",
+        "key_matches_suspect_substring": false,
+        "length": 11,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "metrics"
+      },
+      {
+        "element_type": "str",
+        "key": "theory",
+        "key_matches_suspect_substring": false,
+        "length": 9,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "theory"
+      }
+    ],
+    "ffw_scientific_receipt": [
+      {
+        "element_type": "list",
+        "key": "baseline_ranking_by_r2",
+        "key_matches_suspect_substring": false,
+        "length": 5,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "kpis.baseline_ranking_by_r2"
+      },
+      {
+        "element_type": "str",
+        "key": "theory_references",
+        "key_matches_suspect_substring": false,
+        "length": 9,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "kpis.theory_references"
+      }
+    ],
+    "parent_model_receipt": [],
+    "prior_disclosure_gap_audit_receipt": [
+      {
+        "element_type": "str",
+        "key": "theory",
+        "key_matches_suspect_substring": false,
+        "length": 2,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "cluster_count_audit.theory"
+      },
+      {
+        "element_type": "empty",
+        "key": "conformal_kpi_uncertainty_tokens_present",
+        "key_matches_suspect_substring": false,
+        "length": 0,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "disclosure_comparison.conformal_kpi_uncertainty_tokens_present"
+      },
+      {
+        "element_type": "empty",
+        "key": "ffw_kpi_uncertainty_tokens_present",
+        "key_matches_suspect_substring": false,
+        "length": 0,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "disclosure_comparison.ffw_kpi_uncertainty_tokens_present"
+      },
+      {
+        "element_type": "str",
+        "key": "does_not_close",
+        "key_matches_suspect_substring": false,
+        "length": 4,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "does_not_close"
+      },
+      {
+        "element_type": "str",
+        "key": "theory",
+        "key_matches_suspect_substring": false,
+        "length": 4,
+        "length_matches_n_test_polymers": false,
+        "length_matches_n_test_rows": false,
+        "path": "theory"
+      }
+    ]
+  },
+  "audit_id": "cluster-bootstrap-data-availability-audit-v1",
+  "conclusion": {
+    "data_ask": {
+      "gap": "Per-test-row (or, minimally, per-test-polymer-aggregated) actual log10(melt viscosity) values AND both FFW_B3 and ML_B4 model predictions for the 194 polymer-safe test rows / 13 test polymers, persisted as a new signed JSON array (e.g. a polyverse_melt_viscosity_ffw_vs_ml_per_row_predictions receipt) alongside the existing aggregate FFW-vs-ML KPI.",
+      "missing_arrays": [
+        "test_row_polymer_id (length 194, one of 13 unique values)",
+        "test_row_y_true_log10_viscosity (length 194)",
+        "test_row_y_pred_B3_ffw_linear_mw_and_arrhenius_t (length 194)",
+        "test_row_y_pred_B4_full_histgbm (length 194)"
+      ],
+      "source_of_truth": "These would be produced by the same harness that generated polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json and the ML B4 HistGBM fit referenced by the FFW KPI -- re-run that harness with per-row prediction logging enabled and sign the resulting array as a new receipt. No new external data acquisition is required; this is a re-run-and-persist gap in the existing pipeline, not a missing dataset."
+    },
+    "genuine_cluster_bootstrap_executable_from_signed_artifacts": false,
+    "n_candidate_per_row_or_per_polymer_prediction_arrays_found": 0,
+    "quarantine_confirmation": "amphora-viscosity-score/reference/mvp20/quarantine/feedback_v2/exclusions/polyverse_melt_viscosity-3cd923b4d67399f9.json confirms partition=QUARANTINE_EXCLUDED, status=EXCLUDED_BY_RIGHTS, random_row_split_forbidden=true for the underlying row-level dataset; this audit did not open the row-level CSV or its .jsonl.gz shadow.",
+    "reasoning": "A cluster bootstrap of R2(FFW_B3) - R2(ML_B4) requires, for each of the 13 test polymers, that polymer's per-row actual log10(viscosity) values and BOTH models' per-row predictions, so that resampled polymer sets can be re-scored. Every signed artifact examined (FFW KPI, FFW scientific receipt, conformal+AD KPI, conformal+AD scientific receipt, parent model receipt, and the prior disclosure-gap audit receipt) persists only AGGREGATE statistics over the full 194-row test set or its 5 applicability-domain quintiles (r2, rmse, mae, pearson_r, quintile coverage) -- never a per-row or per-polymer residual, prediction, or (actual, predicted) pair for either the FFW_B3 or ML_B4 model. Aggregate R2/RMSE cannot be decomposed back into per-polymer contributions without the underlying rows, so the pre-registered protocol cannot be executed without either (a) new signed per-row prediction arrays being added to the pipeline's model/KPI receipts, or (b) opening the quarantined Polyverse row-level CSV, which is out of scope for this item and this cron's rights authority."
+  },
+  "cross_link_check": {
+    "actual_conformal_scientific_receipt_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+    "ffw_kpi_conformal_receipt_sha256_field": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4",
+    "match": true,
+    "note": "Confirms FFW KPI and conformal+AD KPI share the identical seed=0 polymer-safe partition, per the item's instruction to verify via this cross-link field."
+  },
+  "files_examined": {
+    "conformal_kpi": {
+      "is_dsse_envelope": false,
+      "path": "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-polymer-safe-conformal-coverage-and-applicability-domain-kpi.v1.json",
+      "payload_sha256": null,
+      "raw_file_sha256": "34b77002aa5a3067ad35030cd2bedb819b7da3cd16c6219bf1245a414c3fabb8"
+    },
+    "conformal_scientific_receipt": {
+      "is_dsse_envelope": true,
+      "path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_conformal_and_applicability_domain_receipt.v1.json",
+      "payload_sha256": "7ec42ee929e4e2de2bde90b1e867d67ae87548e8b7c4749e94afa70a884fa5bc",
+      "raw_file_sha256": "4e0f56ca46e41b2ee14b63fa93836cc71b4d2b94b98b8a6bab4028f44a332fc4"
+    },
+    "ffw_kpi": {
+      "is_dsse_envelope": false,
+      "path": "amphora-viscosity-score/evidence/phase0/kpis/polyverse-melt-viscosity-fox-flory-whitten-physical-baseline-vs-ml-kpi.v1.json",
+      "payload_sha256": null,
+      "raw_file_sha256": "5137bdae3eb4418492fee70395656842fcf32d92fcf7bc8cf3cbd867c3d0e98b"
+    },
+    "ffw_scientific_receipt": {
+      "is_dsse_envelope": true,
+      "path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_fox_flory_whitten_physical_baseline_receipt.v1.json",
+      "payload_sha256": "c8198f67e0528d3fb8e29d3f81896fb3c60724dd1fc2bb01f6f8c59fde3a8921",
+      "raw_file_sha256": "3b1897f6159d3b69d2fd35b71343a4b9bada0adf5ebbc349115339fc5fb9cfc3"
+    },
+    "parent_model_receipt": {
+      "is_dsse_envelope": true,
+      "path": "amphora-viscosity-score/reference/mvp20/data/polyverse_melt_viscosity_model_receipt.v1.json",
+      "payload_sha256": "8ed1b2b8ecb2408fc5543367e34b9833988c70466840bc2d6a76c33565c605f7",
+      "raw_file_sha256": "29983f3ebc6f71b7e30df62829c602e130e99d3461d786d83791827afc9550ff"
+    },
+    "prior_disclosure_gap_audit_receipt": {
+      "is_dsse_envelope": true,
+      "path": "amphora-viscosity-score/evidence/audit/ffw-vs-ml-uncertainty-disclosure-gap-v1/ffw-vs-ml-uncertainty-disclosure-gap-receipt.v1.dsse.json",
+      "payload_sha256": "69b3271dfbb3c29389987070367559b14789f65edf772721957d448e4ab9a13a",
+      "raw_file_sha256": "d522b8ef86cab9d60077d7f7ff5e7254f168cbefc26b27bd34504ba784c911ca"
+    }
+  },
+  "objective": "Determine whether a genuine cluster bootstrap (resample the 13 test polymers with replacement, B=5000, seed=0) of the R2 difference FFW_B3 - ML_B4 can be computed from already-signed artifacts alone, per R-C04's pre-registered protocol.",
+  "per_row_or_per_polymer_arrays_found": []
+}

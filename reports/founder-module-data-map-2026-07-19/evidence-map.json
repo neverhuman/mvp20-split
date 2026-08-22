@@ -1,0 +1,338 @@
+{
+  "schema": "amphora.founder-module-data-map.v1",
+  "as_of": "2026-07-19",
+  "scope": "Repository-grounded map of model methods, dataset bindings, and downloaded-but-unactivated holdings.",
+  "definitions": {
+    "bound": "A module-local artifact or explicit module lock exists.",
+    "accounted": "A downloaded acquisition unit has a normalized manifest and at least one named module lock.",
+    "unaccounted": "Raw downloaded bytes exist, but no normalized manifest and no module-specific lock activates them.",
+    "support": "Data plumbing, fixtures, constraints, or diagnostic context; it does not by itself establish model validity, training use, ranking authority, or product performance."
+  },
+  "authority": {
+    "module_count": 29,
+    "ranking_eligible_count": 0,
+    "solver_use_ceilings": {
+      "DISABLED": 14,
+      "AUDIT_ONLY": 10,
+      "CONSTRAINT_ONLY": 5
+    }
+  },
+  "sources": [
+    {
+      "path": "config/module-evidence-inventory.json",
+      "sha256": "7bf3e74d20180e03a541a4672828146f0d75167dc6e77806322c9bc4f844c1ae"
+    },
+    {
+      "path": "config/program/phase0-decision-report.v2.json",
+      "sha256": "be2aaaa1c3772409f1c5eb3514081acd8f2b33d88600970d45c633744db0591c"
+    },
+    {
+      "path": "registry/archive/be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7/module-manifest.json",
+      "sha256": "be6d3e8023c17a779d8503f3bfcfb15b0020d5ec5c768c9791013ff4134ed6b7"
+    },
+    {
+      "path": "feedback/v1/dataset_sources.json",
+      "sha256": "11b6b6a6767873d9ad2c79729c9a980529a81c1eb1593c08aecf829d66c98a04"
+    },
+    {
+      "path": "feedback/v1/acquisition_report.json",
+      "sha256": "f717a3319a7dd9ea55edb0b6b46b2c781dc6d312f9ed10d16b5b62ef4aa388e1"
+    },
+    {
+      "path": "feedback/v2/catalog.json",
+      "sha256": "c7ad68a0977862b5f7797cc781088492e79af0554f01b9486cf8ca0f94c3eed4"
+    },
+    {
+      "path": "feedback/v3/catalog.json",
+      "sha256": "d37ce23bc14a5fe12e337458a4d18b3925f9e4924619e50d9416e78ba70ace65"
+    },
+    {
+      "path": "feedback/v4/catalog.json",
+      "sha256": "bea0d3131ded316c2b53a5adbb4ecc201a83dfbc462a9ed59ae5a153c4f7c1e0"
+    }
+  ],
+  "downloaded_accounted": {
+    "acquisition_unit_records": 26,
+    "raw_bytes_across_manifests": 2473556779,
+    "raw_gib_across_manifests": 2.304,
+    "module_lock_files": 37,
+    "modules_with_locks": 14,
+    "note": "The byte total sums raw_bytes in the 26 v2/v3 normalized manifests and may include repeated upstream packages; it is not asserted as unique storage."
+  },
+  "modules": [
+    {
+      "group": "infrastructure",
+      "module": "amphora-candidate-contract",
+      "method": "Typed schema and canonical identity validation",
+      "data": "Candidate-contract parity corpus (fixture)",
+      "live_use": "Deterministic control",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-cro-protocol-packager",
+      "method": "Protocol and capture-template packaging",
+      "data": "CRO capture and falsification templates (fixture)",
+      "live_use": "Packaging control",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-evidence-intake-validator",
+      "method": "Signature, hash, provenance, and candidate-binding validation",
+      "data": "Evidence-intake rule suite",
+      "live_use": "Deterministic authority gate",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-ip-fto-guard",
+      "method": "Patent and claim-category audit",
+      "data": "patent_landscape.json",
+      "live_use": "Audit only; not legal opinion",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-known-answer-benchmarks",
+      "method": "Deterministic known-answer reconciliation",
+      "data": "BigSolDB solubility + OpenPoly counts + POINT2 run-log locks",
+      "live_use": "Benchmark control",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-model-card-authority",
+      "method": "Least-privilege authority and claim-lock enforcement",
+      "data": "Authority red-team corpus (fixture)",
+      "live_use": "Policy control",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-optimizer-orchestrator",
+      "method": "Policy authorization, applicability, coverage, and abstention orchestration",
+      "data": "Module envelopes + signed manifest; no science dataset",
+      "live_use": "Central policy brain; ranking off",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-redteam-audit",
+      "method": "Deterministic adversarial claim rejection",
+      "data": "Claim registry + negative-test corpus",
+      "live_use": "Fail-closed audit",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-report-packager",
+      "method": "Claim-locked packaging and lint",
+      "data": "Report claim-lint corpus (fixture)",
+      "live_use": "Output control",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-run-provenance",
+      "method": "JCS hashing, replay, and event lineage",
+      "data": "Fixed-seed replay corpus (fixture)",
+      "live_use": "Provenance control",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-source-ledger",
+      "method": "Source, rights, and citation ledger",
+      "data": "facts/source_records + CORR checksum lock",
+      "live_use": "Custody control",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "infrastructure",
+      "module": "amphora-sourceability-ehs",
+      "method": "Supplier and regulatory evidence audit",
+      "data": "21 public supplier/regulatory documents",
+      "live_use": "Evidence lookup; no safety claim",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "formulation",
+      "module": "amphora-design-rule-score",
+      "method": "Directional literature rules",
+      "data": "BigSolDB + PolyOmics + PolyVERSE + PURformance locks",
+      "live_use": "Diagnostic context",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "formulation",
+      "module": "amphora-envelope-gates",
+      "method": "Signed numeric envelope gates",
+      "data": "Module validation fixtures",
+      "live_use": "Hard constraint only",
+      "ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "group": "formulation",
+      "module": "amphora-formulation-arithmetic",
+      "method": "Exact mass and equivalent arithmetic",
+      "data": "Facts + cure/corrosion verification fixtures",
+      "live_use": "Arithmetic audit; no objective",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "formulation",
+      "module": "amphora-formulation-universe",
+      "method": "Deterministic Cartesian enumeration and accounting",
+      "data": "Ingredient and candidate fixtures",
+      "live_use": "Audit cohort construction",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "formulation",
+      "module": "amphora-ingredient-library",
+      "method": "Typed constant and source lookup",
+      "data": "BigSolDB density lock + local facts",
+      "live_use": "Lookup evidence",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "formulation",
+      "module": "amphora-public-corrosion-benchmark",
+      "method": "Grouped endpoint benchmark against baseline",
+      "data": "CORR-DATA lock + 30 USBR public-corrosion CSVs",
+      "live_use": "Diagnostic; observed no lift",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "formulation",
+      "module": "amphora-solvency-score",
+      "method": "Carrier-solvency and phase-stability constraints",
+      "data": "BigSolDB + OMG properties + PolyOmics + PolyVERSE locks",
+      "live_use": "Hard constraint only",
+      "ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "group": "formulation",
+      "module": "amphora-tolerance-robustness",
+      "method": "Deterministic perturbation and margin checks",
+      "data": "BigSolDB density + RadonPy locks + local fixtures",
+      "live_use": "Hard constraint only",
+      "ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "group": "performance",
+      "module": "amphora-barrier-corrosion-score",
+      "method": "Measured EIS endpoint contract",
+      "data": "CORR-DATA lock + untouched/right-quarantined ST-19168 workbook",
+      "live_use": "Endpoint audit; no checked benchmark",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "performance",
+      "module": "amphora-cure-potlife-gate",
+      "method": "Cure, gel, film-set, and pot-life constraint checks",
+      "data": "PolyVERSE thermoset-mechanics lock + verification fixtures",
+      "live_use": "Exploratory constraint",
+      "ceiling": "CONSTRAINT_ONLY"
+    },
+    {
+      "group": "performance",
+      "module": "amphora-process-qc-twin",
+      "method": "Drift, missingness, and process-control diagnostics",
+      "data": "UCI SECOM + PRONTO locks",
+      "live_use": "Offline diagnostic",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "performance",
+      "module": "amphora-viscosity-score",
+      "method": "Rheology and sag gate",
+      "data": "PolyVERSE melt-viscosity lock + source landscape",
+      "live_use": "Model use disabled",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "molecule",
+      "module": "amphora-molecule-generator",
+      "method": "Deterministic proposal and quarantine pipeline",
+      "data": "PI1M lock; OMG reaction archive is present but unactivated",
+      "live_use": "Proposal audit only",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "molecule",
+      "module": "amphora-molecule-property",
+      "method": "RDKit identity/reactive-group + exact/nearest-neighbor diagnostics",
+      "data": "OpenPoly + OMG properties + POINT2 + PolyOmics + RadonPy + ChEBI locks; EEW/AHEW benchmark",
+      "live_use": "Model use disabled",
+      "ceiling": "DISABLED"
+    },
+    {
+      "group": "molecule",
+      "module": "amphora-molecule-role-ranker",
+      "method": "Role ontology and role-fit benchmark",
+      "data": "Local molecule library/role benchmark; OMG reaction archive is present but unactivated",
+      "live_use": "Audit only; not ranking authority",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "molecule",
+      "module": "amphora-molecule-novelty",
+      "method": "Fingerprint, distance, and deduplication diagnostics",
+      "data": "OpenPoly + PI1M + POINT2 test + PolyOmics locks",
+      "live_use": "Audit only; novelty not established",
+      "ceiling": "AUDIT_ONLY"
+    },
+    {
+      "group": "molecule",
+      "module": "amphora-molecule-design-gate",
+      "method": "RDKit structural applicability and hard constraints",
+      "data": "Structural control fixtures",
+      "live_use": "Hard constraint only",
+      "ceiling": "CONSTRAINT_ONLY"
+    }
+  ],
+  "downloaded_unaccounted": [
+    {
+      "path": "feedback/v1/external_data/omg_public_zips/raw/OMG_monomers_CRU.zip",
+      "acquisition_unit": "omg_structure_reaction",
+      "bytes": 162475424,
+      "sha256": "4577e389b4c33e825b2922ee714a21eef5016ca2d8684c6355aa8d35a5da034f",
+      "catalog_intent": "molecule-generator TRAINING_CORPUS; molecule-role-ranker DIAGNOSTIC; scoring false",
+      "why_unaccounted": "No normalized manifest and no module lock; present but not activated."
+    },
+    {
+      "path": "feedback/v1/external_data/polyuniverse_epoxy/raw/Epoxy_1M_p.csv",
+      "acquisition_unit": "polyuniverse_pairs",
+      "bytes": 265396937,
+      "sha256": "9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45",
+      "catalog_intent": "No named consumer",
+      "why_unaccounted": "No normalized manifest/module lock; upstream data license unresolved."
+    },
+    {
+      "path": "feedback/v1/external_data/polyuniverse_epoxy/raw/epoxy_diE.csv",
+      "acquisition_unit": "polyuniverse_epoxides",
+      "bytes": 888169,
+      "sha256": "14fe4febeb0157470c113634c607bff46f3f0b4fed6376b54e2da8315bfde448",
+      "catalog_intent": "No named consumer",
+      "why_unaccounted": "No normalized manifest/module lock; upstream data license unresolved."
+    },
+    {
+      "path": "feedback/v1/external_data/polyuniverse_epoxy/raw/epoxy_diN.csv",
+      "acquisition_unit": "polyuniverse_amines",
+      "bytes": 315528,
+      "sha256": "8bdd4e9416e6805e5cbaa283acabf8a4918f51a95d47768f0e89d05f7b960389",
+      "catalog_intent": "No named consumer",
+      "why_unaccounted": "No normalized manifest/module lock; upstream data license unresolved."
+    }
+  ],
+  "downloaded_unaccounted_total_bytes": 429076058,
+  "downloaded_unaccounted_total_mib": 409.199,
+  "excluded_from_unaccounted": [
+    "feedback/v1/derived/polymer_corpus_rows.jsonl is derived and used by benchmark reports; it is not a raw download.",
+    "feedback/v4/catalog.json describes 550 ORD objects / 1181061030 bytes, but the corpus is not materialized locally; catalog-only is not downloaded data.",
+    "feedback/v1/external_data/polyomics contains reference documents rather than dataset payloads.",
+    "artifacts/* contains model/tool artifacts and is not classified as downloaded dataset holdings."
+  ]
+}

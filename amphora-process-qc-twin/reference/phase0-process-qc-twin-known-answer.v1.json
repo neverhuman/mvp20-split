@@ -1,0 +1,2601 @@
+{
+  "acceptance_bar": {
+    "authority_lock_preservation_rate_floor": 1.0,
+    "baseline_contamination_fail_closed_rate_floor": 1.0,
+    "cusum_tabular_arithmetic_correctness_rate_floor": 1.0,
+    "ewma_recursion_arithmetic_correctness_rate_floor": 1.0,
+    "reordered_batches_fail_closed_rate_floor": 1.0,
+    "seeded_shift_detection_recall_rate_floor": 1.0,
+    "shewhart_control_limit_arithmetic_correctness_rate_floor": 1.0,
+    "specification_control_separation_correctness_rate_floor": 1.0,
+    "stable_process_false_positive_absence_rate_floor": 1.0,
+    "time_leakage_fail_closed_rate_floor": 1.0
+  },
+  "authority": {
+    "authority_ceiling": "EVIDENCE_ONLY",
+    "batch_release_authority": false,
+    "detector_status_output": "AUDIT_ONLY",
+    "manufacturing_qualification_authority": false,
+    "scientific_readiness": "UNVALIDATED",
+    "solver_use_ceiling": "AUDIT_ONLY"
+  },
+  "detector_parameters": {
+    "cusum_h": 5.0,
+    "cusum_k": 0.5,
+    "ewma_l": 3.0,
+    "ewma_lambda": 0.2,
+    "shewhart_sigma": 3.0
+  },
+  "fixture_id": "amphora-process-qc-twin-phase0-known-answer-2026-07-21",
+  "rights": {
+    "eligible_for_derivatives": true,
+    "license": "CC0-1.0",
+    "scope": "Amphora-authored synthetic SPC universes modeling scenarios cited in Shewhart 1931, Roberts 1959, Page 1954, Montgomery 2020 Ch. 6/9, and NIST/SEMATECH Sec. 6.3.2. No copyrighted textbook values reproduced; every numeric value is Amphora hand-constructed from closed-form pattern mu + ((seq-1) mod 5 - 2)*delta with delta=0.1 (or drift/shift derivations thereof).",
+    "source_id": "amphora_phase0_process_qc_twin_known_answer",
+    "source_url": "local:amphora-process-qc-twin/reference/phase0-process-qc-twin-known-answer.v1.json",
+    "status": "ACCEPTED"
+  },
+  "schema": "amphora.process-qc-twin-phase0-known-answer.v1",
+  "toolkit_version": "2026.03.2",
+  "universes": [
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": [],
+      "expected_ewma_alerts": [],
+      "expected_shewhart_alerts": [],
+      "expected_specification_failures": [],
+      "industrial_context": "solvent-borne primer viscosity (mPa*s) held at nominal during a stable-run period",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.2
+        }
+      ],
+      "nominal_source": "Montgomery 2020 8th ed. Ch. 6 Sec. 6.4 (individuals chart, stable-baseline zero-alert control case); NIST/SEMATECH e-Handbook Sec. 6.3.2",
+      "scenario_type": "STABLE",
+      "specification_lower": 99.0,
+      "specification_upper": 101.0,
+      "universe_id": "stable-baseline-stable-monitoring",
+      "variable": "primer_viscosity_mpas"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_ewma_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_shewhart_alerts": [],
+      "expected_specification_failures": [],
+      "industrial_context": "cure gel-time (min) with mild lot-to-lot bias after supplier change at batch 25",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.345095250022
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 99.94509525002199
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 100.045095250022
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.145095250022
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.24509525002199
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.345095250022
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 99.94509525002199
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 100.045095250022
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.145095250022
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.24509525002199
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.345095250022
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 99.94509525002199
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 100.045095250022
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.145095250022
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.24509525002199
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.345095250022
+        },
+        {
+          "batch_id": "monitor-041",
+          "sequence": 41,
+          "value": 99.94509525002199
+        },
+        {
+          "batch_id": "monitor-042",
+          "sequence": 42,
+          "value": 100.045095250022
+        },
+        {
+          "batch_id": "monitor-043",
+          "sequence": 43,
+          "value": 100.145095250022
+        },
+        {
+          "batch_id": "monitor-044",
+          "sequence": 44,
+          "value": 100.24509525002199
+        },
+        {
+          "batch_id": "monitor-045",
+          "sequence": 45,
+          "value": 100.345095250022
+        },
+        {
+          "batch_id": "monitor-046",
+          "sequence": 46,
+          "value": 99.94509525002199
+        },
+        {
+          "batch_id": "monitor-047",
+          "sequence": 47,
+          "value": 100.045095250022
+        },
+        {
+          "batch_id": "monitor-048",
+          "sequence": 48,
+          "value": 100.145095250022
+        },
+        {
+          "batch_id": "monitor-049",
+          "sequence": 49,
+          "value": 100.24509525002199
+        },
+        {
+          "batch_id": "monitor-050",
+          "sequence": 50,
+          "value": 100.345095250022
+        }
+      ],
+      "nominal_source": "Roberts 1959 Technometrics 1(3):239-250 (EWMA for small persistent shift); Montgomery 2020 8th ed. Ch. 9 Sec. 9.2 (EWMA vs. Shewhart for 1sigma shift)",
+      "scenario_type": "STEP_SHIFT_1SIGMA",
+      "specification_lower": null,
+      "specification_upper": null,
+      "universe_id": "step-shift-1sigma-at-25",
+      "variable": "cure_gel_time_min"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_ewma_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_shewhart_alerts": [
+        "monitor-025",
+        "monitor-030",
+        "monitor-035",
+        "monitor-040",
+        "monitor-045",
+        "monitor-050"
+      ],
+      "expected_specification_failures": [],
+      "industrial_context": "batch dry-film-thickness (mils) with equipment-drift bias after airless-spray retooling",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.49019050004401
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 100.090190500044
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 100.19019050004401
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.290190500044
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.390190500044
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.49019050004401
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 100.090190500044
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 100.19019050004401
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.290190500044
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.390190500044
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.49019050004401
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 100.090190500044
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 100.19019050004401
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.290190500044
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.390190500044
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.49019050004401
+        },
+        {
+          "batch_id": "monitor-041",
+          "sequence": 41,
+          "value": 100.090190500044
+        },
+        {
+          "batch_id": "monitor-042",
+          "sequence": 42,
+          "value": 100.19019050004401
+        },
+        {
+          "batch_id": "monitor-043",
+          "sequence": 43,
+          "value": 100.290190500044
+        },
+        {
+          "batch_id": "monitor-044",
+          "sequence": 44,
+          "value": 100.390190500044
+        },
+        {
+          "batch_id": "monitor-045",
+          "sequence": 45,
+          "value": 100.49019050004401
+        },
+        {
+          "batch_id": "monitor-046",
+          "sequence": 46,
+          "value": 100.090190500044
+        },
+        {
+          "batch_id": "monitor-047",
+          "sequence": 47,
+          "value": 100.19019050004401
+        },
+        {
+          "batch_id": "monitor-048",
+          "sequence": 48,
+          "value": 100.290190500044
+        },
+        {
+          "batch_id": "monitor-049",
+          "sequence": 49,
+          "value": 100.390190500044
+        },
+        {
+          "batch_id": "monitor-050",
+          "sequence": 50,
+          "value": 100.49019050004401
+        }
+      ],
+      "nominal_source": "Montgomery 2020 8th ed. Example 6.3 pattern (2sigma persistent shift); NIST/SEMATECH Sec. 6.3.2 Shewhart individuals",
+      "scenario_type": "STEP_SHIFT_2SIGMA",
+      "specification_lower": null,
+      "specification_upper": null,
+      "universe_id": "step-shift-2sigma-at-25",
+      "variable": "dft_mils"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_ewma_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_shewhart_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_specification_failures": [],
+      "industrial_context": "adhesion pull-off (MPa) with severe substrate-prep failure after batch 25",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.635285750066
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 100.235285750066
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 100.335285750066
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.435285750066
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.535285750066
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.635285750066
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 100.235285750066
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 100.335285750066
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.435285750066
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.535285750066
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.635285750066
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 100.235285750066
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 100.335285750066
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.435285750066
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.535285750066
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.635285750066
+        },
+        {
+          "batch_id": "monitor-041",
+          "sequence": 41,
+          "value": 100.235285750066
+        },
+        {
+          "batch_id": "monitor-042",
+          "sequence": 42,
+          "value": 100.335285750066
+        },
+        {
+          "batch_id": "monitor-043",
+          "sequence": 43,
+          "value": 100.435285750066
+        },
+        {
+          "batch_id": "monitor-044",
+          "sequence": 44,
+          "value": 100.535285750066
+        },
+        {
+          "batch_id": "monitor-045",
+          "sequence": 45,
+          "value": 100.635285750066
+        },
+        {
+          "batch_id": "monitor-046",
+          "sequence": 46,
+          "value": 100.235285750066
+        },
+        {
+          "batch_id": "monitor-047",
+          "sequence": 47,
+          "value": 100.335285750066
+        },
+        {
+          "batch_id": "monitor-048",
+          "sequence": 48,
+          "value": 100.435285750066
+        },
+        {
+          "batch_id": "monitor-049",
+          "sequence": 49,
+          "value": 100.535285750066
+        },
+        {
+          "batch_id": "monitor-050",
+          "sequence": 50,
+          "value": 100.635285750066
+        }
+      ],
+      "nominal_source": "Shewhart 1931 Economic Control of Quality of Manufactured Product Ch. III (large shift trivially detected by 3-sigma chart); NIST/SEMATECH Sec. 6.3.2",
+      "scenario_type": "STEP_SHIFT_3SIGMA",
+      "specification_lower": null,
+      "specification_upper": null,
+      "universe_id": "step-shift-3sigma-at-25",
+      "variable": "adhesion_pull_off_mpa"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_ewma_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_shewhart_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_specification_failures": [],
+      "industrial_context": "amine-hardener stoichiometry (phr) with slow supplier-dispenser wear over batches 21-45",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 100.0290190500044
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 100.0580381000088
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.0870571500132
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.1160762000176
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.145095250022
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 100.1741143000264
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 100.2031333500308
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.2321524000352
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.2611714500396
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.290190500044
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 100.3192095500484
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 100.3482286000528
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.3772476500572
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.40626670006161
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.435285750066
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 100.46430480007041
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 100.4933238500748
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.52234290007921
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.5513619500836
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.58038100008801
+        },
+        {
+          "batch_id": "monitor-041",
+          "sequence": 41,
+          "value": 100.6094000500924
+        },
+        {
+          "batch_id": "monitor-042",
+          "sequence": 42,
+          "value": 100.63841910009681
+        },
+        {
+          "batch_id": "monitor-043",
+          "sequence": 43,
+          "value": 100.6674381501012
+        },
+        {
+          "batch_id": "monitor-044",
+          "sequence": 44,
+          "value": 100.69645720010561
+        },
+        {
+          "batch_id": "monitor-045",
+          "sequence": 45,
+          "value": 100.72547625011
+        }
+      ],
+      "nominal_source": "Page 1954 Biometrika 41(1/2):100-115 (continuous inspection for accumulated drift); Montgomery 2020 Ch. 9 Sec. 9.1 (CUSUM detects drift earlier than Shewhart)",
+      "scenario_type": "LINEAR_DRIFT",
+      "specification_lower": null,
+      "specification_upper": null,
+      "universe_id": "linear-drift-monitoring",
+      "variable": "hardener_phr"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_ewma_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_shewhart_alerts": [
+        "monitor-030"
+      ],
+      "expected_specification_failures": [],
+      "industrial_context": "solvent lot-purity metric (pct) with single contamination event at batch 30",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.72547625011
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.2
+        }
+      ],
+      "nominal_source": "Shewhart 1931 Ch. III (large single-point excursion where individuals chart wins over MR); Montgomery 2020 Ch. 6 Sec. 6.4 (individuals chart is fastest for isolated outlier)",
+      "scenario_type": "ISOLATED_OUTLIER",
+      "specification_lower": null,
+      "specification_upper": null,
+      "universe_id": "isolated-outlier-mid-run",
+      "variable": "solvent_purity_pct"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": [],
+      "expected_ewma_alerts": [],
+      "expected_shewhart_alerts": [],
+      "expected_specification_failures": [
+        "monitor-021",
+        "monitor-025",
+        "monitor-026",
+        "monitor-030",
+        "monitor-031",
+        "monitor-035",
+        "monitor-036",
+        "monitor-040"
+      ],
+      "industrial_context": "dry-film thickness (mils) held in control but violating tight application spec",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.2
+        }
+      ],
+      "nominal_source": "NIST/SEMATECH Sec. 6.3.2.4 (control limits != specification limits); Juran 1999 Sec. 45.9 (Cp vs. Cpk - spec vs. control separation)",
+      "scenario_type": "SPEC_ONLY_FAIL",
+      "specification_lower": 99.9,
+      "specification_upper": 100.1,
+      "universe_id": "spec-only-failure-tight-spec",
+      "variable": "dft_tight_spec_mils"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_ewma_alerts": "PIN_FORWARD_FROM_RUNTIME",
+      "expected_shewhart_alerts": [
+        "monitor-021",
+        "monitor-022",
+        "monitor-023",
+        "monitor-024",
+        "monitor-025",
+        "monitor-026",
+        "monitor-027",
+        "monitor-028",
+        "monitor-029",
+        "monitor-030",
+        "monitor-031",
+        "monitor-032",
+        "monitor-033",
+        "monitor-034",
+        "monitor-035",
+        "monitor-036",
+        "monitor-037",
+        "monitor-038",
+        "monitor-039",
+        "monitor-040"
+      ],
+      "expected_specification_failures": [],
+      "industrial_context": "gloss (60 deg) with factory-wide equipment-warmup drift not yet touching customer spec",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.50783337507701
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.50783337507701
+        }
+      ],
+      "nominal_source": "Montgomery 2020 Ch. 6 (control-vs-spec distinction; process out of control but inside spec still a Special Cause)",
+      "scenario_type": "CONTROL_ONLY_FAIL",
+      "specification_lower": 95.0,
+      "specification_upper": 105.0,
+      "universe_id": "control-only-failure-constant-shift",
+      "variable": "gloss_60deg"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": [],
+      "expected_ewma_alerts": [],
+      "expected_shewhart_alerts": [],
+      "expected_specification_failures": [],
+      "industrial_context": "primer thickness at nominal with tight-spec but exactly-at-limit boundary conformance",
+      "monitoring": [
+        {
+          "batch_id": "monitor-021",
+          "sequence": 21,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-022",
+          "sequence": 22,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-023",
+          "sequence": 23,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-024",
+          "sequence": 24,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-025",
+          "sequence": 25,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.2
+        }
+      ],
+      "nominal_source": "NIST/SEMATECH Sec. 6.3.2 (boundary handling with strict inequalities); Montgomery 2020 Ch. 6",
+      "scenario_type": "BOUNDARY_TIGHT_SPEC",
+      "specification_lower": 99.8,
+      "specification_upper": 100.2,
+      "universe_id": "boundary-tight-spec-just-inside",
+      "variable": "primer_thickness_boundary_mils"
+    },
+    {
+      "baseline": [
+        {
+          "batch_id": "baseline-001",
+          "sequence": 1,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-002",
+          "sequence": 2,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-003",
+          "sequence": 3,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-004",
+          "sequence": 4,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-005",
+          "sequence": 5,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-006",
+          "sequence": 6,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-007",
+          "sequence": 7,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-008",
+          "sequence": 8,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-009",
+          "sequence": 9,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-010",
+          "sequence": 10,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-011",
+          "sequence": 11,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-012",
+          "sequence": 12,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-013",
+          "sequence": 13,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-014",
+          "sequence": 14,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-015",
+          "sequence": 15,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-016",
+          "sequence": 16,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-017",
+          "sequence": 17,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-018",
+          "sequence": 18,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-019",
+          "sequence": 19,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-020",
+          "sequence": 20,
+          "value": 100.2
+        },
+        {
+          "batch_id": "baseline-021",
+          "sequence": 21,
+          "value": 99.8
+        },
+        {
+          "batch_id": "baseline-022",
+          "sequence": 22,
+          "value": 99.9
+        },
+        {
+          "batch_id": "baseline-023",
+          "sequence": 23,
+          "value": 100.0
+        },
+        {
+          "batch_id": "baseline-024",
+          "sequence": 24,
+          "value": 100.1
+        },
+        {
+          "batch_id": "baseline-025",
+          "sequence": 25,
+          "value": 100.2
+        }
+      ],
+      "expected_cusum_alerts": [],
+      "expected_ewma_alerts": [],
+      "expected_shewhart_alerts": [],
+      "expected_specification_failures": [],
+      "industrial_context": "long-baseline stability run for potlife (h) sanity control",
+      "monitoring": [
+        {
+          "batch_id": "monitor-026",
+          "sequence": 26,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-027",
+          "sequence": 27,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-028",
+          "sequence": 28,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-029",
+          "sequence": 29,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-030",
+          "sequence": 30,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-031",
+          "sequence": 31,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-032",
+          "sequence": 32,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-033",
+          "sequence": 33,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-034",
+          "sequence": 34,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-035",
+          "sequence": 35,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-036",
+          "sequence": 36,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-037",
+          "sequence": 37,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-038",
+          "sequence": 38,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-039",
+          "sequence": 39,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-040",
+          "sequence": 40,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-041",
+          "sequence": 41,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-042",
+          "sequence": 42,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-043",
+          "sequence": 43,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-044",
+          "sequence": 44,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-045",
+          "sequence": 45,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-046",
+          "sequence": 46,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-047",
+          "sequence": 47,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-048",
+          "sequence": 48,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-049",
+          "sequence": 49,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-050",
+          "sequence": 50,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-051",
+          "sequence": 51,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-052",
+          "sequence": 52,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-053",
+          "sequence": 53,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-054",
+          "sequence": 54,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-055",
+          "sequence": 55,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-056",
+          "sequence": 56,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-057",
+          "sequence": 57,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-058",
+          "sequence": 58,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-059",
+          "sequence": 59,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-060",
+          "sequence": 60,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-061",
+          "sequence": 61,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-062",
+          "sequence": 62,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-063",
+          "sequence": 63,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-064",
+          "sequence": 64,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-065",
+          "sequence": 65,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-066",
+          "sequence": 66,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-067",
+          "sequence": 67,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-068",
+          "sequence": 68,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-069",
+          "sequence": 69,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-070",
+          "sequence": 70,
+          "value": 100.2
+        },
+        {
+          "batch_id": "monitor-071",
+          "sequence": 71,
+          "value": 99.8
+        },
+        {
+          "batch_id": "monitor-072",
+          "sequence": 72,
+          "value": 99.9
+        },
+        {
+          "batch_id": "monitor-073",
+          "sequence": 73,
+          "value": 100.0
+        },
+        {
+          "batch_id": "monitor-074",
+          "sequence": 74,
+          "value": 100.1
+        },
+        {
+          "batch_id": "monitor-075",
+          "sequence": 75,
+          "value": 100.2
+        }
+      ],
+      "nominal_source": "Shewhart 1931 (baseline size influence on sigma estimation); Montgomery 2020 Ch. 6 (n>=25 recommended for individuals baseline)",
+      "scenario_type": "LARGE_STABLE",
+      "specification_lower": 99.5,
+      "specification_upper": 100.5,
+      "universe_id": "larger-baseline-stable-long-monitoring",
+      "variable": "potlife_hours"
+    }
+  ]
+}

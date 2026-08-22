@@ -1,0 +1,262 @@
+{
+  "analysis": {
+    "alpha_gel_floor": 0.57735,
+    "constants": {
+      "Tg0_C": -20.0,
+      "Tg_inf_C": 69.95,
+      "f_epoxy": 2,
+      "g_amine": 4,
+      "lambda": 0.4
+    },
+    "n_respect_ceiling": 7,
+    "n_respect_gel": 7,
+    "n_rows": 7,
+    "n_within_window": 7,
+    "rows": [
+      {
+        "T_cure_C": 40.0,
+        "alpha_gel_floor": 0.57735,
+        "alpha_meas": 0.69,
+        "alpha_unc": 0.14,
+        "alpha_vit_ceiling": 0.833565,
+        "respects_gel_floor": true,
+        "respects_vit_ceiling": true,
+        "tg_at_meas_alpha_C": 22.3655,
+        "vitrification_active": true,
+        "within_physical_window": true
+      },
+      {
+        "T_cure_C": 50.0,
+        "alpha_gel_floor": 0.57735,
+        "alpha_meas": 0.75,
+        "alpha_unc": 0.12,
+        "alpha_vit_ceiling": 0.897666,
+        "respects_gel_floor": true,
+        "respects_vit_ceiling": true,
+        "tg_at_meas_alpha_C": 29.0636,
+        "vitrification_active": true,
+        "within_physical_window": true
+      },
+      {
+        "T_cure_C": 60.0,
+        "alpha_gel_floor": 0.57735,
+        "alpha_meas": 0.85,
+        "alpha_unc": 0.1,
+        "alpha_vit_ceiling": 0.952608,
+        "respects_gel_floor": true,
+        "respects_vit_ceiling": true,
+        "tg_at_meas_alpha_C": 42.4143,
+        "vitrification_active": true,
+        "within_physical_window": true
+      },
+      {
+        "T_cure_C": 70.0,
+        "alpha_gel_floor": 0.57735,
+        "alpha_meas": 0.88,
+        "alpha_unc": 0.1,
+        "alpha_vit_ceiling": 1.0,
+        "respects_gel_floor": true,
+        "respects_vit_ceiling": true,
+        "tg_at_meas_alpha_C": 47.0814,
+        "vitrification_active": false,
+        "within_physical_window": true
+      },
+      {
+        "T_cure_C": 80.0,
+        "alpha_gel_floor": 0.57735,
+        "alpha_meas": 0.95,
+        "alpha_unc": 0.06,
+        "alpha_vit_ceiling": 1.0,
+        "respects_gel_floor": true,
+        "respects_vit_ceiling": true,
+        "tg_at_meas_alpha_C": 59.4907,
+        "vitrification_active": false,
+        "within_physical_window": true
+      },
+      {
+        "T_cure_C": 90.0,
+        "alpha_gel_floor": 0.57735,
+        "alpha_meas": 0.94,
+        "alpha_unc": 0.06,
+        "alpha_vit_ceiling": 1.0,
+        "respects_gel_floor": true,
+        "respects_vit_ceiling": true,
+        "tg_at_meas_alpha_C": 57.5716,
+        "vitrification_active": false,
+        "within_physical_window": true
+      },
+      {
+        "T_cure_C": 100.0,
+        "alpha_gel_floor": 0.57735,
+        "alpha_meas": 0.93,
+        "alpha_unc": 0.06,
+        "alpha_vit_ceiling": 1.0,
+        "respects_gel_floor": true,
+        "respects_vit_ceiling": true,
+        "tg_at_meas_alpha_C": 55.7045,
+        "vitrification_active": false,
+        "within_physical_window": true
+      }
+    ],
+    "vit_branch_residuals_meas_minus_ceiling": [
+      -0.143565,
+      -0.147666,
+      -0.102608
+    ]
+  },
+  "apriori_constants_not_tuned": {
+    "Tg0_C": -20.0,
+    "Tg_inf_C": 69.95,
+    "lambda": 0.4,
+    "provenance": "Tg0 and lambda fixed from independent DGEBA-amine literature (Wisanrakkit-Gillham 1990; Pascault-Williams) BEFORE analysis and NOT tuned to the conversion panel. Tg_inf is the matched-material measured value from the same CC-BY source (8.5 wt% AuNP composite)."
+  },
+  "dataset": {
+    "Tg_inf_C_matched_material": 69.95,
+    "Tg_inf_unc_C": 0.14,
+    "dataset_id": "ccby-dgeba-mxda-isothermal-conversion-vitrification-v1",
+    "rows": [
+      {
+        "T_cure_C": 40.0,
+        "alpha_meas": 0.69,
+        "alpha_unc": 0.14
+      },
+      {
+        "T_cure_C": 50.0,
+        "alpha_meas": 0.75,
+        "alpha_unc": 0.12
+      },
+      {
+        "T_cure_C": 60.0,
+        "alpha_meas": 0.85,
+        "alpha_unc": 0.1
+      },
+      {
+        "T_cure_C": 70.0,
+        "alpha_meas": 0.88,
+        "alpha_unc": 0.1
+      },
+      {
+        "T_cure_C": 80.0,
+        "alpha_meas": 0.95,
+        "alpha_unc": 0.06
+      },
+      {
+        "T_cure_C": 90.0,
+        "alpha_meas": 0.94,
+        "alpha_unc": 0.06
+      },
+      {
+        "T_cure_C": 100.0,
+        "alpha_meas": 0.93,
+        "alpha_unc": 0.06
+      }
+    ],
+    "source": {
+      "citation": "Terenzi et al., Nanomaterials 2023, 13(6), 1064",
+      "doi": "10.3390/nano13061064",
+      "eligible_for_derivatives": true,
+      "license": "CC-BY-4.0",
+      "pmc": "PMC10054629"
+    },
+    "system": "DGEBA + m-xylylenediamine (mXDA), stoichiometric; 8.5 wt% AuNP composite"
+  },
+  "does_not": [
+    "does NOT fit any parameter to the validation panel (zero free parameters)",
+    "does NOT claim a validated alpha or Tg point predictor",
+    "does NOT promote any module to PHASE_0 or change any scientific_readiness",
+    "does NOT modify any existing signed receipt or the receipts manifest"
+  ],
+  "gates": {
+    "G1_all_measured_above_gel_floor": true,
+    "G2_all_measured_below_vit_ceiling": true,
+    "G3_all_within_physical_window": true,
+    "G4_bound_robust_over_apriori_box": true,
+    "G5_vitrification_branch_is_upper_bound": true,
+    "G6_gel_floor_below_all_ceilings": true,
+    "G7_nonzero_window_width": true
+  },
+  "honest_limitations": [
+    "NECESSARY-CONDITION bound test only: measured alpha lies within [gel floor, vitrification ceiling], which is required but not sufficient to validate a Tg(alpha) point predictor.",
+    "At low cure temperature (40-60 C) measured conversion sits well BELOW the vitrification ceiling (mean slack ~0.10 alpha): those points are KINETICALLY limited (finite 24 h cure), so vitrification is not the binding constraint there -- the ceiling is respected but not tight.",
+    "The tabulated alpha(T_cure) is for the 8.5 wt% AuNP composite (the only isothermal conversion table in the source); the matched Tg_inf=69.95 C is used accordingly. A neat-resin alpha(T_cure) table was NOT tabulated.",
+    "RED-TEAM NOTE (trap avoided): pairing the NEAT-resin Tg_inf (~111-121 C) with this COMPOSITE alpha(T_cure) manufactures a spuriously tight point-prediction fit (MAE~0.03). That material mismatch is REJECTED here; matched-material Tg_inf is used instead, which correctly yields only an upper-bound (not point) result.",
+    "Unlocking a real Tg(alpha) point-predictor KPI requires a matched-material dataset with Tg measured at >=4 partial conversions plus dCp0/dCp_inf; that dataset is not yet rights-cleared in-tree."
+  ],
+  "kpis": {
+    "alpha_gel_floor_flory_stockmayer": 0.57735,
+    "mean_low_T_ceiling_slack": 0.13128,
+    "n_rows": 7,
+    "n_within_physical_window": 7,
+    "vitrification_branch_all_below_ceiling": true,
+    "vitrification_branch_residuals_meas_minus_ceiling": [
+      -0.143565,
+      -0.147666,
+      -0.102608
+    ],
+    "window_coverage_fraction": 1.0
+  },
+  "schema": "amphora.dibenedetto-vitrification-cure-bounds-ccby.diagnostic.v1",
+  "sensitivity_sweep_apriori_box": [
+    {
+      "Tg0_C": -25.0,
+      "lambda": 0.35,
+      "n_rows": 7,
+      "n_within_window": 7
+    },
+    {
+      "Tg0_C": -25.0,
+      "lambda": 0.4,
+      "n_rows": 7,
+      "n_within_window": 7
+    },
+    {
+      "Tg0_C": -25.0,
+      "lambda": 0.45,
+      "n_rows": 7,
+      "n_within_window": 7
+    },
+    {
+      "Tg0_C": -20.0,
+      "lambda": 0.35,
+      "n_rows": 7,
+      "n_within_window": 7
+    },
+    {
+      "Tg0_C": -20.0,
+      "lambda": 0.4,
+      "n_rows": 7,
+      "n_within_window": 7
+    },
+    {
+      "Tg0_C": -20.0,
+      "lambda": 0.45,
+      "n_rows": 7,
+      "n_within_window": 7
+    },
+    {
+      "Tg0_C": -15.0,
+      "lambda": 0.35,
+      "n_rows": 7,
+      "n_within_window": 7
+    },
+    {
+      "Tg0_C": -15.0,
+      "lambda": 0.4,
+      "n_rows": 7,
+      "n_within_window": 7
+    },
+    {
+      "Tg0_C": -15.0,
+      "lambda": 0.45,
+      "n_rows": 7,
+      "n_within_window": 7
+    }
+  ],
+  "target_capability": "vitrification-limited achievable cure conversion vs cure temperature",
+  "target_module": "amphora-cure-potlife-gate",
+  "verdict": {
+    "gates_all_pass": true,
+    "label": "PHYSICAL_BOUNDS_CONSISTENT_NOT_A_POINT_PREDICTOR",
+    "one_line": "All 7 measured DGEBA/mXDA isothermal cure conversions lie inside the zero-free-parameter theoretical window [Flory-Stockmayer gel floor 0.577, DiBenedetto vitrification ceiling]; this is a NECESSARY-CONDITION bound test, NOT a validated point predictor of alpha."
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "barrier_tortuosity_axis": {
+    "assessment": {
+      "authority_ceilings_respected": [
+        "EVIDENCE_ONLY",
+        "DISABLED solver-use",
+        "GATED ops",
+        "AUDIT_ONLY (promotes nothing)"
+      ],
+      "non_circularity": "The known-answer battery checks the engine against results derived INDEPENDENTLY of the tortuous-path argument: Maxwell's 1873 dilute-sphere permeability (solved from Laplace's equation, no tortuosity assumption) which Nielsen must reproduce exactly at a=1 (KA2); an exact algebraic identity for the Cussler tortuosity (KA3); and the orientation-limit reductions of Bharadwaj to Cussler (S=1) and to pure volume exclusion (S=-0.5) (KA4/KA5). A negative control (KA11) confirms the tortuosity term contributes a large, non-trivial barrier improvement beyond mere volume exclusion. No check uses the engine to validate itself circularly.",
+      "what_this_is": "A verbatim-sourced, parameter-free geometric barrier-improvement engine for flake/lamellar-pigmented marine anti-corrosion films, with engine correctness validated to machine precision against independent analytic results. This is the defining physics of glass-flake / MIO / graphene marine barrier primers and directly serves amphora-barrier-corrosion-score."
+    },
+    "does_not_close": [
+      "does NOT promote any module to PHASE_0 (governance gate; 0/29 VALIDATED; needs two trust-anchored phase0 signatures this AUDIT_ONLY key cannot supply)",
+      "does NOT change the manifest (still 66 receipts / 11 modules)",
+      "does NOT claim a precision external validation: that needs a rights-clean set of >=8 epoxy-coating specimens each with independently-measured (filler volume fraction, effective aspect ratio via SEM/PSD, O2 or H2O permeability of neat + filled film) -- not obtainable rights-clean & in marine-epoxy scope this session (the diagnosed data blocker, same rights wall as every prior axis)",
+      "does NOT make any corrosion-rate or service-life claim: BIF is a transport ratio; measured EIS remains required per module claim-lock",
+      "REFERENCE_NOMINAL pigment (a, phi) are literature-typical geometry ranges used to exercise engine physics, NOT an asserted measured dataset"
+    ],
+    "founder_ask": "To move this axis from ENGINE_READY to precision-validated: a rights-clean (CC-BY or owned) dataset of >=8 epoxy(-amine) coating specimens, each with independently-measured filler volume fraction, effective in-film aspect ratio (SEM/image analysis or PSD), and measured O2/H2O permeability of both neat and filled film. Enables non-circular precision validation, model selection (Nielsen vs Cussler vs Bharadwaj), and an orientation-parameter S fit.",
+    "known_answer_battery": {
+      "battery_verdict": "PASS",
+      "checks": [
+        {
+          "check": "KA1_dilute_limit_Pr_to_1",
+          "detail": {
+            "max_abs_dev_at_phi_1e-9": 6.67666e-07
+          },
+          "pass": true,
+          "tol": 1e-06
+        },
+        {
+          "check": "KA2_nielsen_a1_equals_maxwell_spheres",
+          "detail": {
+            "anchor_phi_0.2": {
+              "hand_value_0.8_over_1.1": 0.727272727273,
+              "maxwell": 0.727272727273,
+              "nielsen_a1": 0.727272727273
+            },
+            "max_abs_diff": 0.0
+          },
+          "pass": true,
+          "tol": 1e-12
+        },
+        {
+          "check": "KA3_cussler_tau_is_perfect_square",
+          "detail": {
+            "max_abs_diff_vs_(1+a*phi/3)^2": 1e-12
+          },
+          "pass": true,
+          "tol": 1e-09
+        },
+        {
+          "check": "KA4_bharadwaj_S1_equals_cussler",
+          "detail": {
+            "max_abs_diff": 0.0
+          },
+          "pass": true,
+          "tol": 1e-12
+        },
+        {
+          "check": "KA5_bharadwaj_Sneg05_equals_volume_exclusion",
+          "detail": {
+            "max_abs_diff": 0.0
+          },
+          "pass": true,
+          "tol": 1e-12
+        },
+        {
+          "check": "KA6_orient_factor_endpoints",
+          "detail": {
+            "f(S=-0.5)": 0.0,
+            "f(S=0)": 0.333333333333,
+            "f(S=1)": 1.0
+          },
+          "pass": true,
+          "tol": 1e-12
+        },
+        {
+          "check": "KA7_Pr_strictly_decreasing_in_phi",
+          "detail": {
+            "tested_alphas": [
+              2,
+              10,
+              50,
+              200
+            ]
+          },
+          "pass": true
+        },
+        {
+          "check": "KA8_Pr_strictly_decreasing_in_alpha",
+          "detail": {
+            "tested_phis": [
+              0.02,
+              0.1,
+              0.2
+            ]
+          },
+          "pass": true
+        },
+        {
+          "check": "KA9_physical_bounds",
+          "detail": {
+            "Pr_in_(0,1]_tau>=1_BIF>=1_all_S": true
+          },
+          "pass": true
+        },
+        {
+          "check": "KA10_cussler_tau_gt_nielsen_tau",
+          "detail": {
+            "min_margin": 0.000166777778
+          },
+          "pass": true
+        },
+        {
+          "check": "KA11_negative_control_tortuosity_nontrivial",
+          "detail": {
+            "BIF_nielsen_a100_phi0.1": 6.666666666667,
+            "BIF_volume_exclusion_only": 1.111111111111,
+            "ratio": 6.0
+          },
+          "pass": true
+        }
+      ],
+      "n_pass": 11,
+      "n_total": 11
+    },
+    "reference_nominal_application": {
+      "authority": "REFERENCE_NOMINAL_ILLUSTRATIVE",
+      "caveat": "REFERENCE_NOMINAL geometry only. Nielsen is strictly valid for phi<0.01 (dilute); marine loadings phi~0.1-0.25 are semidilute -> Cussler/Bharadwaj apply. Effective in-film aspect ratio (post-application, after flake fracture and imperfect alignment) is a MEASURED input (SEM/PSD), typically well below the supplier nominal. Models assume impermeable, non-interacting, monodisperse platelets and ignore interfacial free-volume change, percolation, and film defects/cracks (the dominant real coating failure mode). BIF is therefore a geometric transport estimate, not a corrosion or service-life prediction; measured EIS remains required (module claim-lock).",
+      "rows": [
+        {
+          "BIF_bharadwaj_S0.5_melt_aligned": 10.0,
+          "BIF_bharadwaj_S0_random": 5.5882,
+          "BIF_cussler_semidilute": 14.4118,
+          "BIF_nielsen_dilute": 5.5882,
+          "applicable_model_for_this_phi": "Cussler/Bharadwaj (semidilute phi>=0.01)",
+          "aspect_ratio_a_nominal": 50,
+          "note": "marine glass-flake epoxy; flakes fracture in-film -> effective a < supplier a",
+          "pigment": "glass_flake_C_glass",
+          "volume_fraction_phi_nominal": 0.15
+        },
+        {
+          "BIF_bharadwaj_S0.5_melt_aligned": 2.7315,
+          "BIF_bharadwaj_S0_random": 1.9907,
+          "BIF_cussler_semidilute": 3.4722,
+          "BIF_nielsen_dilute": 2.5,
+          "applicable_model_for_this_phi": "Cussler/Bharadwaj (semidilute phi>=0.01)",
+          "aspect_ratio_a_nominal": 10,
+          "note": "lamellar MIO anti-corrosion pigment",
+          "pigment": "micaceous_iron_oxide_MIO",
+          "volume_fraction_phi_nominal": 0.2
+        },
+        {
+          "BIF_bharadwaj_S0.5_melt_aligned": 6.5292,
+          "BIF_bharadwaj_S0_random": 3.7801,
+          "BIF_cussler_semidilute": 9.2784,
+          "BIF_nielsen_dilute": 4.1237,
+          "applicable_model_for_this_phi": "Cussler/Bharadwaj (semidilute phi>=0.01)",
+          "aspect_ratio_a_nominal": 200,
+          "note": "well-exfoliated organomontmorillonite",
+          "pigment": "nanoclay_OMMT_dispersed",
+          "volume_fraction_phi_nominal": 0.03
+        },
+        {
+          "BIF_bharadwaj_S0.5_melt_aligned": 5.1253,
+          "BIF_bharadwaj_S0_random": 3.0677,
+          "BIF_cussler_semidilute": 7.1829,
+          "BIF_nielsen_dilute": 3.5354,
+          "applicable_model_for_this_phi": "Cussler/Bharadwaj (semidilute phi>=0.01)",
+          "aspect_ratio_a_nominal": 500,
+          "note": "exfoliated GNP, dilute regime",
+          "pigment": "graphene_nanoplatelet_GNP",
+          "volume_fraction_phi_nominal": 0.01
+        }
+      ]
+    },
+    "schema_note": "AUDIT_ONLY feasibility diagnostic; promotes nothing.",
+    "target_capability": "geometric barrier-improvement (permeability reduction) from lamellar/flake pigment tortuosity in marine anti-corrosion epoxy films",
+    "target_module": "amphora-barrier-corrosion-score",
+    "target_module_live_state": {
+      "authority_ceiling": "MODELED_DIRECTIONAL",
+      "non_blocking_claim_locks": [
+        "measured_eis_required",
+        "no_formulation_only_corrosion_claim",
+        "no_service_life_claim",
+        "no_rank_authority"
+      ],
+      "readiness": "SHADOW",
+      "scientific_readiness": "UNVALIDATED",
+      "solver_use_ceiling": "AUDIT_ONLY"
+    },
+    "theory": {
+      "equation_source_transcribed": "open-access review PMC7569879 (Eqs. 18-22), verbatim",
+      "models": {
+        "bharadwaj_2001": "Pr = (1-phi)/[1 + ((2/3)a*phi + (a*phi)^2/9)*(2/3)(S+1/2)] ; S in [-0.5,1], S=1 perpendicular(max tortuosity), S=0 random, S=-0.5 parallel(no tortuosity)",
+        "cussler_aris_1988": "tau = 1 + (2/3)a*phi + (a*phi)^2/9 = (1 + a*phi/3)^2 ; Pr = (1-phi)/tau ; semidilute phi>0.01",
+        "maxwell_1873_independent_anchor": "Pr = (1-phi)/(1+phi/2) ; dilute impermeable spheres; Nielsen(a=1) must reproduce this",
+        "nielsen_1967": "tau = 1 + (a*phi)/2 ; Pr = (1-phi)/tau ; dilute phi<0.01"
+      },
+      "parameter_free": true,
+      "primary_references": [
+        "L.E. Nielsen, J. Macromol. Sci. A1(5), 929-942 (1967)",
+        "E.L. Cussler, S.E. Hughes, W.J. Ward III, R. Aris, J. Membrane Sci. 38, 161-174 (1988)",
+        "S.S. Bharadwaj, Macromolecules 34(26), 9189-9192 (2001)",
+        "J.C. Maxwell, A Treatise on Electricity and Magnetism (1873) [dilute-sphere effective-medium limit]"
+      ],
+      "symbols": {
+        "BIF": "barrier improvement factor = 1/Pr",
+        "Pr": "P_composite / P_matrix",
+        "S": "Bharadwaj orientation order parameter",
+        "a": "platelet aspect ratio = lateral length / thickness (>=1)",
+        "phi": "filler volume fraction"
+      }
+    },
+    "verdict": "ENGINE_READY__KNOWN_ANSWER_VALIDATED__PRECISION_EXTERNAL_VALIDATION_DATA_RIGHTS_BLOCKED"
+  },
+  "phase0_honesty_redteam": {
+    "benchmark_locks": {
+      "n_distinct_modules": 29,
+      "n_live_locks": 29,
+      "n_locks_requiring_scientific_success": 0,
+      "scientific_success_required_for_phase0_counts": {
+        "False": 29
+      }
+    },
+    "claim_under_test": "portfolio has FULL Phase-0 (implying validated coating science)",
+    "conclusion": "0/29 modules carry scientific_readiness==VALIDATED; 0/29 are ranking_eligible; 0/29 live benchmark-locks require scientific success for Phase-0. Phase-0 is a GOVERNANCE gate (byte-stable benchmark + rights-qualified data + two trust-anchored signatures), NOT a count of scientifically validated coating models. Do NOT present a Phase-0 count to founders as validated capabilities.",
+    "manifest": {
+      "n_amphora_modules_covered": 11,
+      "n_receipts_indexed": 66
+    },
+    "module_manifest": {
+      "n_modules": 29,
+      "n_ranking_eligible_true": 0,
+      "n_scientific_readiness_VALIDATED": 0,
+      "scientific_readiness_counts": {
+        "UNVALIDATED": 29
+      }
+    },
+    "verdict": "REFUTED"
+  }
+}

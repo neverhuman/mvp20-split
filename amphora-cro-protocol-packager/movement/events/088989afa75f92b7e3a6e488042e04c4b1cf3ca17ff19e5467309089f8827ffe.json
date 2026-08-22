@@ -1,0 +1,39 @@
+{
+  "applicability_limits": [
+    "registered amphora-cro-protocol-packager contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "bundle_hash": "f12e093fc1409759ddcf1a500ad0b54c12cc71e9f17be83746f92a42ec1350c7",
+  "claim_lock_hash": "a9184d705ffb30d9e99fcc50b553a543f19d9b49453e87f9c5a09f0b3e2b4d84",
+  "current_phase": "PHASE_0",
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "effective_status_change": "PRE_PHASE_0->PHASE_0",
+  "evaluation_receipt_hash": "bcbc74367c98eba4fed85396cdfda1fdfe9eba2bb203676a55c3dda467ae0808",
+  "evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+  "event_id": "movement-088989afa75f92b7e3a6e488042e04c4b1cf3ca17ff19e5467309089f8827ffe",
+  "human_review_performed": false,
+  "independence_scope": "CODE_PATH_AND_SIGNING_IDENTITY",
+  "module_id": "amphora-cro-protocol-packager",
+  "parent_hashes": {
+    "evidence/phase0/benchmark/benchmark-lock.v1.json": "58f546a6e89544c39f144c5cf46bcd7ee91b778a221fa89c6c3363b4c84021e7",
+    "evidence/phase0/dataset/dataset-manifest.v1.json": "18e39cc84ed1964ce787eba79113d03234d05303e3f5f3fda7c840915b3d123c",
+    "evidence/phase0/promotion/policy.v1.json": "9b3c032e2b32695b22e7136df913136bfdfc710275e79d229e964990a9d7c42d",
+    "evidence/phase0/raw/SHA256SUMS": "f2e298c678ed039d05cc859b3b760939d53cb97e88ee8b62073150f730bae178",
+    "evidence/phase0/registry/succession.v1.json": "4331b19bc615f9c559da753dc5a0d23a269f0b033f129350db8ba48e495f099a",
+    "evidence/phase0/sources/source-lock.v1.json": "bc247ee93b0e3f728ef6c9718e6dad5217fdaa7a56eb64db571e5f0a8d42df92",
+    "evidence/phase0/split/split-manifest.v1.json": "bb30235b60d593d18ea2dd42e5879a6261f6a6d0a12bbcb255c527c93da05beb",
+    "evidence/superseded/supersession-27faec6a02bddffd75905c2c9327e0131d61a389104bbf71870abeb53d6b6384/supersession.v1.json": "131c41cd911ddf74f1676d84af0f3c44f93c643c3b52a767ab5214b9a898b109",
+    "ip/claim-contract.v1.json": "a142261f7f67205d408961631a17696adf6904c6a8326f282afd4f94139c6b04",
+    "ip/disclosure-log.v1.json": "984498b9c54fbec7a7894f511d4e9871b364a75449119343ee182c3b09d24e7b",
+    "ip/prior-art.v1.json": "0dd362f3331c8180b9cb23eb4ca5216475e7d87d09e8052d81f32cd7e68624dd",
+    "ip/technical-dossier.v1.json": "5d38bea1240afe4225d72ad148c31725b908146a27f86f2487e9d6af3f5f8cb1"
+  },
+  "previous_phase": "PRE_PHASE_0",
+  "retained_negative_results": [],
+  "review_method": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION",
+  "review_receipt_hash": "06aa28b7188498eac75160539601a7768d436a022d2b846fc26e0c24d709b1b0",
+  "reviewer_key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+  "schema": "amphora.module-movement-event.v1",
+  "scientific_outcome": "NOT_APPLICABLE",
+  "scientific_readiness": "NOT_APPLICABLE"
+}

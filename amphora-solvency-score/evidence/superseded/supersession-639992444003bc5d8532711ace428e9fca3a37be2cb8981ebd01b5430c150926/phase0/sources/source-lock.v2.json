@@ -1,0 +1,61 @@
+{
+  "candidate_supplied_evidence_allowed": false,
+  "canonical_home": "amphora-solvency-score/evidence/phase0",
+  "eligible_sources": [
+    {
+      "declared_sha256": "2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05.jsonl.gz",
+      "observed_sha256": "2bbf4c6a299dfad9fbe68239e51827cc22dc7de20d7488bb0775cef825f35a05",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_omg_physical_properties.json",
+      "rights_receipt_sha256": "011c021843c02ebd9a12a96ab6596e8d3305685f69aade6480554f22260dd7e5"
+    },
+    {
+      "declared_sha256": "354fdd18e48609dd6ed3b9ad8385913d87ac221149adf0abaf3720e789195374",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/354fdd18e48609dd6ed3b9ad8385913d87ac221149adf0abaf3720e789195374.jsonl.gz",
+      "observed_sha256": "354fdd18e48609dd6ed3b9ad8385913d87ac221149adf0abaf3720e789195374",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_polyomics_chi_dimethylformamide.json",
+      "rights_receipt_sha256": "0cbac7d6d6d49348ff64aae02c628a8f2c371705eaf70088bc3d642ba8aa076b"
+    },
+    {
+      "declared_sha256": "3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/mvp20/data/feedback_v2/objects/3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a.jsonl.gz",
+      "observed_sha256": "3ca9e1fce3444a2d8073dffbdca833a41f9259679bb5edc0c6c2485a8257ae3a",
+      "rights_receipt_path": "reference/mvp20/data/feedback_v2/rights/rights_bigsoldb_solubility.json",
+      "rights_receipt_sha256": "b02a67a37d9b7dc9fd076b732f8326e60d846c6a39e375389b81f920c77c3cba"
+    },
+    {
+      "declared_sha256": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6",
+      "hash_current": true,
+      "independently_reviewed": false,
+      "module_relative_path": "reference/solvency/source-landscape.v1.json",
+      "observed_sha256": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6",
+      "rights_receipt_path": "reference/solvency/source-landscape.v1.json",
+      "rights_receipt_sha256": "8d3f1e1f7d30b3e2c7e0d52df15ae6542a161a84ba54e94f46668a484cb63bd6"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/quarantine/feedback_v2/objects/81b9b86fe84ab89ee2d70f2ecda059562665c2729c50f579a56a7ccd2785eab8.jsonl.gz",
+      "observed_sha256": "81b9b86fe84ab89ee2d70f2ecda059562665c2729c50f579a56a7ccd2785eab8",
+      "reason": "ContextOnly material remains quarantined and cannot satisfy a Phase-0 gate"
+    },
+    {
+      "authority_ceiling": "CONTEXT_ONLY",
+      "module_relative_path": "reference/mvp20/quarantine/feedback_v2/objects/cbf127bad303e995c5c138821e662c4f35fb645abd3db9c3dd93e53f1018a15e.jsonl.gz",
+      "observed_sha256": "cbf127bad303e995c5c138821e662c4f35fb645abd3db9c3dd93e53f1018a15e",
+      "reason": "ContextOnly material remains quarantined and cannot satisfy a Phase-0 gate"
+    }
+  ],
+  "inventory_hash": "629954b7a5aa5c53f7934e80522b2480354aca8d709bb5da80c9740098b8e79d",
+  "legacy_amphora_receipt_authority": "NONE",
+  "module_id": "amphora-solvency-score",
+  "rights_gate_passed": false,
+  "schema": "amphora.phase0-source-lock.v2"
+}

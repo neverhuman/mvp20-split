@@ -1,0 +1,222 @@
+{
+  "W_from_mean_pairwise_check": 0.492063,
+  "authority": "EVIDENCE_ONLY",
+  "confound_control": "each system reduced to one scalar per bath-resolved instrument by aggregating over the IDENTICAL bath set BOR/DI/HAR/PRO, so exposure environment is balanced across systems by design",
+  "data_source": {
+    "author": "Brian Baumgarten",
+    "catalog_item": "8048",
+    "license": "US Government work, public domain (17 U.S.C. 105)",
+    "project": "21019",
+    "provider": "US Bureau of Reclamation (USBR) RISE",
+    "publication_date": "2024-09-11",
+    "rights_clean": true,
+    "url": "https://data.usbr.gov/rise/api/catalog-record/8048"
+  },
+  "does_not_close": [
+    "No coating-efficacy, product-performance, batch-release, or corrosion-rank authority.",
+    "n=6 systems: Friedman df=5, omnibus underpowered; a single system swaps the tail.",
+    "wet pull-off psi is a strength proxy, not a retained-adhesion ratio; area-caveated EIS.",
+    "Phase-1 needs >= ~12-20 independent systems (or frequency-resolved KK-validated spectra) to power a p<0.05 multi-instrument concordance and a calibrated coating-quality rank."
+  ],
+  "headline": "Multi-instrument concordance on rights-clean USBR-21019 (6 vinyl coating systems, 3 physically-independent corrosion instruments: EIS barrier, scribe rust-creep resistance, wet pull-off adhesion): Kendall's W=0.492 (Friedman chi2=7.38, df=5, chi2 p=0.194; exact-MC permutation p=0.202 over 200000 perms), mean pairwise Spearman=+0.238, leave-one-system-out W in [0.244, 0.689]. WEAK_OR_NULL_CONCORDANCE: the independent instruments positively co-order coating quality, but at n=6 the omnibus remains underpowered at 0.05 -- integrating a third instrument extends the prior single-pair test while confirming the module's model-readiness-only boundary.",
+  "human_review_performed": false,
+  "inputs": {
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128757_2-e-p-1k-2-s_eis.csv": "da169b07c55bcd33255c69396df63783988e548ee57d752ce66dc421e760f39f",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128759_2-e-p-1k-2-s_impact.csv": "d319386d740e5def9db8a53591731a2e756e6ad21763a1f13aba63e8c20716a1",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128760_2-e-p-1k-2-s_rust_creep.csv": "cb60d286a24ccac45de33858c5183aa5880a8f28862ca05c9195070cf9340e0a",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128761_2-e-p-1k-2-s_wet_dry_adhesion.csv": "db5667c619b03afca704f062e8b64e766219f24837038dde50548c88e7ff0995",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128762_2-e-p-2k-2-s_eis.csv": "a2e49c9dfdb28b839330318c2f6df52efe96b0e100666ec4f5d3b56fac6340ba",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128764_2-e-p-2k-2-s_impact.csv": "cba0d127347507e2fce6a6dd8e7ddd8bb9872944246a464ed285ec0f34272f36",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128765_2-e-p-2k-2-s_rust_creep.csv": "d35bb0bde029f2dcb9e1dea56cdf2c7a8631c974dc72ad6ef3c377e112554735",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128766_2-e-p-2k-2-s_wet_dry_adhesion.csv": "673129010365ef3984c2e2a287ff14b1c9d315d9107e446cc86e367d10ab1b42",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128767_2-z-p-1k-2-s_eis.csv": "bac1b0d18bcd5e74151c7282c7e42bc4d754edcc3c5ae9e0c76507a7709b351b",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128769_2-z-p-1k-2-s_impact.csv": "b3580e3f7ea033d52e082526517002b4c6b9e03eeb68e6b783363091255b1c86",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128770_2-z-p-1k-2-s_rust_creep.csv": "0846612c294259b30822fde128648962a019a19ff89fdf15daca7a41f945d89a",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128771_2-z-p-1k-2-s_wet_dry_adhesion.csv": "716904a260db91ea3b3d4395fa66d3f08e2466433b6e10047a1bb0e5797609d8",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128772_2-z-p-2k-2-s_eis.csv": "5544e142a47fa9314262b249de8d47541b87f7e7fddf86414b3eabb53f6d4525",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128774_2-z-p-2k-2-s_impact.csv": "5e6b2f93d87e182bdf5b9c905bd43ce405c92a1c865e4f7a7449f6f594056a96",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128775_2-z-p-2k-2-s_rust_creep.csv": "7e562fea6325ce865188e6a5321ff78dbd35b36443c7bb586059eeee7e3e1446",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128776_2-z-p-2k-2-s_wet_dry_adhesion.csv": "1d69b9371aa99b72b2d24da151023f1f9822607fd7f9002c65f5acc29478efe5",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128777_3-d-p-2k-2-s_eis.csv": "2cd236bb9fdb03f6ae49025de37f0a0f37b1f326918c948f651066a6b0be92cf",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128780_3-d-p-2k-2-s_impact.csv": "edecd4849f1c610c5cf107d76bb852da6013d8d15352672112b9b1adc09e78fa",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128781_3-d-p-2k-2-s_rust_creep.csv": "6ddc24c7f8e5ebdbb28e8888e4dc38f5f58cc51310323a2c125e059cdede8a93",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128782_3-d-p-2k-2-s_wet_dry_adhesion.csv": "f05baa3cfa3e94bd6ad734d777b5934c67530f30d0d27139ded712e3840a062d",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128783_3-z-p-2k-2-s_eis.csv": "f423a904e7cee65beb2078097ba3909d487b2a61147d27c6c0db110bf52cd311",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128786_3-z-p-2k-2-s_impact.csv": "1fa8be3d29843f163e94a28fe991a1527c4669b879981d980563777481800531",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128787_3-z-p-2k-2-s_rust_creep.csv": "991d3754dd64fd3c270ca0ae03c52316b2696eb141b41f956958b15aec73b50f",
+    "reference/mvp20/data/public_corrosion_datasets/usbr_21019/raw/128788_3-z-p-2k-2-s_wet_dry_adhesion.csv": "b22fdbebd467a22c040885c1531d757585bad5cfdc8fac5b0ccc968b1f07b5b4"
+  },
+  "instruments": {
+    "eis_barrier_log10Z": "ISO16773 low-frequency |Z|_0.01Hz (electrochemical barrier)",
+    "rustcreep_resistance": "negative mean scribe rust-creep width mm (visual, scribed panels)",
+    "wet_adhesion_pulloff": "median wet pull-off failure pressure psi (hydraulic stub)"
+  },
+  "interpretation": {
+    "concordance_direction_positive": true,
+    "meaning": "Kendall's W integrates a third independent instrument beyond the prior EIS x rust-creep pair. W ranges 0 (no agreement) to 1 (identical rankings); the Friedman chi2 and exact-MC permutation p test it against independent rankings. At n=6 systems the omnibus remains underpowered, but W and the leave-one-out band quantify how strongly the independent corrosion instruments co-order coating quality and set a concrete power target.",
+    "significant_at_0p05": false,
+    "verdict": "WEAK_OR_NULL_CONCORDANCE"
+  },
+  "kendall_W": {
+    "F_approx": 1.9375,
+    "F_df1": 4.333333,
+    "F_df2": 8.666667,
+    "F_p": 0.189515,
+    "S": 77.5,
+    "W": 0.492063,
+    "chi2_df": 5,
+    "chi2_p": 0.193815,
+    "column_rank_sums_by_system": {
+      "2-e-p-1k-2-s": 10.0,
+      "2-e-p-2k-2-s": 5.0,
+      "2-z-p-1k-2-s": 10.0,
+      "2-z-p-2k-2-s": 9.0,
+      "3-d-p-2k-2-s": 17.0,
+      "3-z-p-2k-2-s": 12.0
+    },
+    "friedman_chi2": 7.380952,
+    "hostile_null": "independent column permutation of each instrument's ranks",
+    "leave_one_system_out": {
+      "leave_one_system_out_W": [
+        0.488889,
+        0.422222,
+        0.511111,
+        0.577778,
+        0.244444,
+        0.688889
+      ],
+      "max": 0.688889,
+      "mean": 0.488889,
+      "min": 0.244444
+    },
+    "n_permutations": 200000,
+    "perm_p_one_sided": 0.202449,
+    "permutation_seed": 20260728,
+    "tie_correction_T": 0.0
+  },
+  "mean_pairwise_spearman": 0.238095,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-public-corrosion-benchmark",
+  "n_coating_systems": 6,
+  "n_instruments": 3,
+  "non_circularity": "EIS (electrochemical), scribe rust-creep (visual), and wet pull-off adhesion (hydraulic) are independent measurements on different panels; concordance is genuine cross-instrument corroboration and rank statistics are invariant to EIS cell-area normalisation.",
+  "pairwise_spearman": {
+    "eis_barrier_log10Z__vs__rustcreep_resistance": 0.771429,
+    "eis_barrier_log10Z__vs__wet_adhesion_pulloff": 0.142857,
+    "rustcreep_resistance__vs__wet_adhesion_pulloff": -0.2
+  },
+  "per_system_scores": {
+    "2-e-p-1k-2-s": {
+      "eis_barrier_log10Z": 9.55173,
+      "eis_perbath_log10Z": {
+        "BOR": 9.963315,
+        "DI": 9.219367,
+        "HAR": 6.881074,
+        "PRO": 9.884094
+      },
+      "rustcreep_mean_mm": 0.237432,
+      "rustcreep_resistance_score": -0.237432,
+      "wet_pulloff_psi_median": 1326.0
+    },
+    "2-e-p-2k-2-s": {
+      "eis_barrier_log10Z": 9.230769,
+      "eis_perbath_log10Z": {
+        "BOR": 9.744293,
+        "DI": 8.717245,
+        "HAR": 8.24252,
+        "PRO": 9.987666
+      },
+      "rustcreep_mean_mm": 0.269692,
+      "rustcreep_resistance_score": -0.269692,
+      "wet_pulloff_psi_median": 1250.0
+    },
+    "2-z-p-1k-2-s": {
+      "eis_barrier_log10Z": 9.264374,
+      "eis_perbath_log10Z": {
+        "BOR": 9.501059,
+        "DI": 9.003496,
+        "HAR": 9.027689,
+        "PRO": 10.025306
+      },
+      "rustcreep_mean_mm": 0.129297,
+      "rustcreep_resistance_score": -0.129297,
+      "wet_pulloff_psi_median": 1370.0
+    },
+    "2-z-p-2k-2-s": {
+      "eis_barrier_log10Z": 9.358823,
+      "eis_perbath_log10Z": {
+        "BOR": 9.409933,
+        "DI": 9.307712,
+        "HAR": 5.921166,
+        "PRO": 9.466868
+      },
+      "rustcreep_mean_mm": 0.128329,
+      "rustcreep_resistance_score": -0.128329,
+      "wet_pulloff_psi_median": 1234.5
+    },
+    "3-d-p-2k-2-s": {
+      "eis_barrier_log10Z": 10.498993,
+      "eis_perbath_log10Z": {
+        "BOR": 10.897077,
+        "DI": 9.953706,
+        "HAR": 10.295555,
+        "PRO": 10.702431
+      },
+      "rustcreep_mean_mm": 0.119375,
+      "rustcreep_resistance_score": -0.119375,
+      "wet_pulloff_psi_median": 1561.5
+    },
+    "3-z-p-2k-2-s": {
+      "eis_barrier_log10Z": 10.09283,
+      "eis_perbath_log10Z": {
+        "BOR": 10.356026,
+        "DI": 10.585824,
+        "HAR": 9.829635,
+        "PRO": 9.737987
+      },
+      "rustcreep_mean_mm": 0.063125,
+      "rustcreep_resistance_score": -0.063125,
+      "wet_pulloff_psi_median": 267.5
+    }
+  },
+  "promotes_authority": false,
+  "purpose": "Omnibus rank-concordance successor to the underpowered single-pair cross-modality test: do k=3 physically-independent corrosion-protection instruments (EIS barrier |Z|_0.01Hz, scribe rust-creep resistance, wet pull-off adhesion) agree on the ordering of 6 benchmark coating systems beyond a hostile permutation null, via Kendall's coefficient of concordance W with a Friedman chi-square omnibus, an exact-Monte-Carlo permutation p, and leave-one-system-out stability.",
+  "run_type": "AUDIT_ONLY",
+  "schema": "amphora.public-corrosion-benchmark.multi-instrument-concordance.v1",
+  "secondary_with_mechanical_impact": {
+    "W": 0.392857,
+    "chi2": 7.857143,
+    "chi2_p": 0.164286,
+    "impact_inlb_by_system": {
+      "2-e-p-1k-2-s": 48.0,
+      "2-e-p-2k-2-s": 36.0,
+      "2-z-p-1k-2-s": 110.0,
+      "2-z-p-2k-2-s": 140.0,
+      "3-d-p-2k-2-s": 69.5,
+      "3-z-p-2k-2-s": 86.5
+    },
+    "instruments": [
+      "eis_barrier_log10Z",
+      "rustcreep_resistance",
+      "wet_adhesion_pulloff",
+      "impact_toughness"
+    ],
+    "note": "Adds a MECHANICAL toughness endpoint to the 3 corrosion-protection instruments; tests a broader 'coating quality' latent that MIXES corrosion and mechanical performance, not a pure corrosion rank.",
+    "perm_p_one_sided": 0.161169
+  },
+  "systems": [
+    "2-e-p-1k-2-s",
+    "2-e-p-2k-2-s",
+    "2-z-p-1k-2-s",
+    "2-z-p-2k-2-s",
+    "3-d-p-2k-2-s",
+    "3-z-p-2k-2-s"
+  ],
+  "theory_reference": {
+    "concordance": "Kendall & Babington Smith 1939, Ann. Math. Statist. 10(3):275-287, DOI:10.1214/aoms/1177732186",
+    "eis_barrier": "ISO 16773-1..4:2016 low-frequency |Z| for organic coatings",
+    "omnibus": "Friedman 1937, JASA 32:675-701, DOI:10.1080/01621459.1937.10503522",
+    "orientation_prior": "all endpoints oriented higher-rank=better protection (barrier up, creep down, pull-off up)"
+  }
+}

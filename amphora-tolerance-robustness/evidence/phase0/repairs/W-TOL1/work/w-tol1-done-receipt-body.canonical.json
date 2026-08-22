@@ -1,0 +1,117 @@
+{
+  "action": "Rewrote both rows' superseded-by cells in evidence/phase0/kpis/RETRACTION-INDEX.md in place (the file is a living index of current supersession status, not itself a signed artifact; both pre- and post-repair byte content are preserved and sha256-pinned below for full auditability -- nothing is deleted or lost). Row 1: replaced the bare 'PENDING' token with an explicit statement that no repair receipt exists and a named, verifiable referent (campaign item R-C01, its pre-registered acceptance criterion quoted verbatim). Row 2: replaced the misleading citation of the label-admissibility receipt with an explicit statement that it does NOT cover this row's coverage claim, names R-C01 as the item that would produce the actual fix, and retains the label-admissibility receipt as correctly-scoped background context (still cited, but no longer implied to be a covering fix).",
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "W-TOL1",
+  "ceiling": "AUDIT_ONLY documentation-integrity repair of evidence/phase0/kpis/RETRACTION-INDEX.md. Does not alter, supersede, or claim to repair any signed KPI, benchmark, or scientific receipt; does not touch mission.md front-matter, the falsification ledger, or the portfolio manifest. Corrects only what the module's retraction index HONESTLY DISCLOSES about the status of two already-REFUTED KPIs.",
+  "claim_under_attack": {
+    "claim_text": "Every row in this module's retraction index resolves to a receipt that exists, verifies, and covers the claim it is attached to.",
+    "receipt_path": "amphora-tolerance-robustness/evidence/phase0/kpis/RETRACTION-INDEX.md"
+  },
+  "date": "2026-08-05",
+  "does_not_close": [
+    "R-C01 (restoring scaffold-safe conformal coverage >= 0.90 for the OpenPoly Tg KPI, or an honest re-scope of that KPI's number) -- still pending, max_fires=5, status=pending as of this fire.",
+    "An admissibility-stratified conformal-coverage recomputation for the RadonPy eps_r KPI -- also folded into R-C01's scope per the index text; not attempted here.",
+    "Any claim that the two REFUTED KPIs (split-conformal-prediction-openpoly-tg-kpi.v1.json; mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json) are once again trustworthy."
+  ],
+  "flips_scientific_readiness": false,
+  "gates": {
+    "before_after_snapshots_preserved_and_hash_pinned": true,
+    "both_rows_name_a_real_trackable_campaign_item": true,
+    "no_literal_pending_token_remains_in_either_row": true,
+    "no_manifest_or_frontmatter_touched": true,
+    "no_signed_kpi_or_receipt_modified": true,
+    "original_v1_resolve_sweep_script_unmodified_sha256_confirmed": true,
+    "postrepair_sweep_byte_stable_two_replay": true,
+    "refuted_by_cells_unchanged_for_both_rows": true,
+    "row2_no_longer_misattributes_label_admissibility_receipt_as_covering_coverage_claim": true,
+    "underlying_scientific_claims_honestly_still_marked_unrepaired": true
+  },
+  "generated_on_host": "xbabe2",
+  "human_review_performed": false,
+  "interpretation": "CLAIM_REFUTED (unchanged from V1-RESOLVE): the module-level claim 'every RETRACTION-INDEX row resolves to a receipt that exists, verifies, and covers the claim it is attached to' remains FALSE for both rows -- no receipt anywhere in the portfolio yet covers either the OpenPoly Tg coverage claim or the RadonPy eps_r coverage claim; both wait on campaign item R-C01. What THIS repair closes is narrower and is this item's actual assignment: V1-RESOLVE's specific finding that the index itself was dishonest or mis-referented (a dangling PENDING token; a citation that silently swapped in a different, narrower claim as if it were a fix). Per this item's own pre-registered resolution rule, both rows now honestly state 'no repair yet' and name the exact campaign item (R-C01) that owns the gap -- that satisfies this item's done_criterion even though the underlying science is still unrepaired.",
+  "modifies_existing_receipts": false,
+  "modifies_falsification_ledger": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_mission_frontmatter": false,
+  "modifies_other_module_files": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-tolerance-robustness",
+  "organizational_independence_asserted": false,
+  "prior_finding": {
+    "finding": "Of 80 RETRACTION-INDEX rows portfolio-wide, exactly 2 NOT_RESOLVED, both in amphora-tolerance-robustness: (1) OpenPoly Tg split-conformal-coverage row's superseded-by cell was the literal token PENDING with no referent; (2) RadonPy eps_r conformal-coverage row's superseded-by cell named a real, DSSE-verified receipt (dielectric-retraction-v1) that covers a narrower, different claim (label admissibility of RadonPy data) than the one this row is attached to (conformal coverage = 0.9558).",
+    "source": "amphora-redteam-audit/evidence/phase0/repairs/V1-RESOLVE/done/v1-resolve-retraction-resolution-receipt.v1.dsse.json",
+    "source_sha256": "9af2c696da888fc1d3f818d1fc00d1cdc3f3876e3673372d7bae87b170622d81"
+  },
+  "promotes_authority": false,
+  "re_attack": {
+    "method": "Re-ran the ORIGINAL, byte-unmodified V1-RESOLVE mechanical sweep script (same sha256 as when it produced the two NOT_RESOLVED findings) against the live, post-patch tree, twice, and byte-compared the two runs (two-replay gate on the diagnostic itself, independent of the receipt's own two-replay gate).",
+    "original_sweep_script": "amphora-redteam-audit/evidence/phase0/repairs/V1-RESOLVE/work/run_v1_resolve_sweep.py",
+    "original_sweep_script_sha256": "ed71f8eaf065af033936de4d23cc4ee3cf54beddd51c970f1cb52f36ddd25823",
+    "postrepair_diagnostic_files": [
+      "amphora-tolerance-robustness/evidence/phase0/repairs/W-TOL1/work/diagnostic.postrepair.runA.json",
+      "amphora-tolerance-robustness/evidence/phase0/repairs/W-TOL1/work/diagnostic.postrepair.runB.json"
+    ],
+    "postrepair_sweep_runA_sha256": "207c73b8a862836d64916fe567089abe57896be8852056ef79c8d101deb74c51",
+    "postrepair_sweep_two_replay_byte_identical": true,
+    "result": {
+      "both_rows_cite_R_C01": true,
+      "no_literal_pending_remains": true,
+      "row2_no_longer_implies_covering_fix": true
+    }
+  },
+  "receipt_id": "w-tol1-retraction-index-row-resolution",
+  "repair_item": "W-TOL1",
+  "repair_status": "index_hygiene_resolved_underlying_repair_pending",
+  "resolution": "rescope",
+  "resolution_rule_applied": "Per this item's own objective text: \"a row that honestly says 'no repair yet, queued as R-C01' is resolved; a row that says PENDING with no referent is not.\" Neither row's underlying scientific gap is closed by this repair -- that is campaign item R-C01's job, still pending. This repair closes only the INDEX's own honesty/referent gap that V1-RESOLVE found.",
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No data source opened, no dataset read. This repair reads and edits only already-in-tree module documentation (RETRACTION-INDEX.md) and already-signed receipts (read-only, for citation and hash-pinning). No quarantined or CONTEXT_ONLY source touched.",
+  "rows_repaired": [
+    {
+      "claim_excerpt": "OpenPoly Tg split-conformal coverage 0.9683 (split-conformal-prediction-openpoly-tg-kpi.v1.json)",
+      "refuted_by_unchanged": true,
+      "resolution_status": "HONEST_OPEN_ITEM_R-C01",
+      "row": 1,
+      "superseded_by_after": "NONE YET. No repair receipt exists for this claim. Explicitly tracked as open campaign item R-C01 (scaffold-aware conformal repair; acceptance criterion: mean coverage >= 0.90 on the same 60-seed scaffold-disjoint Monte Carlo draw used by the refuting receipt above, with an honest re-scope permitted if that bar cannot be met). Resolution status of R-C01 lives in the falsification ledger and campaign state, not in this row; do not read this row as pointing at a receipt that verifies (W-TOL1, 2026-08-05).",
+      "superseded_by_before": "PENDING \u2014 repair queued as campaign item R-C01 (scaffold-aware conformal, acceptance: mean >= 0.90 on the same 60-seed MC, honest re-scope hatch)",
+      "underlying_scientific_claim_status": "still REFUTED and unrepaired (mean coverage 0.8746 < 0.95); R-C01 has not landed"
+    },
+    {
+      "claim_excerpt": "RadonPy eps_r conformal coverage (mixed-openpoly-radonpy-dielectric-conformal-kpi.v1.json, coverage claim)",
+      "refuted_by_unchanged": true,
+      "resolution_status": "HONEST_OPEN_ITEM_R-C01",
+      "row": 2,
+      "superseded_by_after": "NONE YET for this claim's own conformal COVERAGE number (0.9558). The amphora-molecule-property dielectric retraction chain (evidence/audit/dielectric-retraction-v1/, logs/claims-requiring-retraction.jsonl) exists and DSSE-verifies, but refutes LABEL ADMISSIBILITY of RadonPy data, not this row's coverage number -- does not resolve this row. No receipt anywhere republishes a corrected admissibility-stratified coverage figure. Tracked as open item R-C01 (admissibility-stratified coverage recomputation); until it lands, 0.9558 stays refuted and unrepaired (W-TOL1, 2026-08-05).",
+      "superseded_by_before": "dielectric label-integrity retraction chain in amphora-molecule-property (evidence/audit/dielectric-retraction-v1/, logs/claims-requiring-retraction.jsonl); coverage under admissibility stratification queued within R-C01 scope",
+      "underlying_scientific_claim_status": "still REFUTED and unrepaired (admissible-subset coverage 0.6923 < 0.95); R-C01 has not landed; label-admissibility receipt correctly re-scoped as background, not as a covering fix"
+    }
+  ],
+  "schema": "amphora.phase0-repair.retraction-index-row-resolution.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY repair done-receipt under evidence/phase0/repairs/"
+  },
+  "target_file": {
+    "after_snapshot": "amphora-tolerance-robustness/evidence/phase0/repairs/W-TOL1/work/RETRACTION-INDEX.md.after",
+    "before_snapshot": "amphora-tolerance-robustness/evidence/phase0/repairs/W-TOL1/work/RETRACTION-INDEX.md.before",
+    "lines_after": 29,
+    "lines_before": 17,
+    "path": "amphora-tolerance-robustness/evidence/phase0/kpis/RETRACTION-INDEX.md",
+    "sha256_after": "40960ebd3b6141bc87406b63410e58950406271cc76d3616a757f85cfbf32bfa",
+    "sha256_before": "1a2bdc3b90b5b64f495b52365c4b6a283823191922376985f82db30d78796c1b"
+  },
+  "trust_anchored_in_phase0_store": true
+}

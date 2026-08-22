@@ -1,0 +1,1064 @@
+{
+  "all_property_results_byte_identical_across_all_8_vectors_and_control": true,
+  "all_vectors_had_raw_untyped_echo_hits": true,
+  "any_typed_field_leak": false,
+  "control_clean_molecule_facts_v1": {
+    "average_molecular_weight_g_mol": 44.053,
+    "canonical_isomeric_smiles": "C1CO1",
+    "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+    "formula": "C2H4O",
+    "ontology_version": "amphora.reactive-ontology.v1",
+    "oxirane_ring_count": 1,
+    "reactive_amine_hydrogen_count": 0,
+    "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+    },
+    "schema": "amphora.molecule-facts.v1",
+    "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+    "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+    }
+  },
+  "control_clean_property_results": {
+    "ahew_g_per_eq": null,
+    "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+    "canonical_isomeric_smiles": "C1CO1",
+    "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+    "commercial_product_claim_locked": false,
+    "eew_g_per_eq": 44.053,
+    "formula": "C2H4O",
+    "functionality": {
+      "amine_hydrogen": 0,
+      "epoxide": 1
+    },
+    "molecular_weight_g_mol": 44.053,
+    "ontology_version": "amphora.reactive-ontology.v1",
+    "reactive_flags": {
+      "dual_role": false,
+      "has_oxirane": true,
+      "has_reactive_amine_hydrogen": false
+    },
+    "reactive_group_counts": {
+      "oxirane_rings": 1,
+      "reactive_amine_hydrogens": 0
+    },
+    "schema": "amphora.molecule-property-results.v1",
+    "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+    "toolkit_provenance": {
+      "detected_version": "2026.03.2",
+      "exact_version_match": true,
+      "required_version": "2026.03.2",
+      "toolkit": "RDKit C++"
+    }
+  },
+  "distinct_property_results_byte_forms_observed": 1,
+  "interpretation": "raw_untyped_candidate_echo_poison_hits are the attacker's payload surviving verbatim in the documented raw-candidate-echo passthrough at /candidate/normalized_molecule/* (original input preserved for audit; never read by any Capability::evaluate() as facts -- see amphora-molecule-capabilities normalized_facts(), which reads only features.values['molecule_facts_v1'], itself populated only from /normalization/molecule_facts_v1, a key amphora-engine's normalize_molecule() unconditionally overwrites). typed_field_leak is the decisive check: whether the poison reached molecule_facts_v1 (the host-normalized struct) or property_results (the scored capability output built exclusively from it).",
+  "n_typed_field_leaks": 0,
+  "n_vectors": 8,
+  "poison_constants": {
+    "ahew_g_per_eq": 777777.0,
+    "average_molecular_weight_g_mol": 999999.0,
+    "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+    "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+    "eew_g_per_eq": 888888.0,
+    "oxirane_ring_count": 4242,
+    "reactive_amine_hydrogen_count": 4343,
+    "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL"
+  },
+  "positive_control": {
+    "detected": true,
+    "evidence": "poison_hits() on the mock's own output: [\"/property_results/molecular_weight_g_mol == POISON_MW (999999)\"]",
+    "how_planted": "naive_vulnerable_mock_consumer() in this probe's own source reads candidate[\"average_molecular_weight_g_mol\"] (POISON_MW = 999999.0) and echoes it verbatim into output.property_results.molecular_weight_g_mol, instead of calling the real host RDKit molecule_facts() pipeline",
+    "planted_defect": "a mock consumer that naively copies candidate-supplied 'average_molecular_weight_g_mol' straight into a property_results-shaped output, bypassing host RDKit recomputation (the exact defect class this harness exists to catch)"
+  },
+  "real_smiles_used": "C1OC1",
+  "schema": "amphora.candidate-contract.eight-vector-injection-probe.v1",
+  "vectors": [
+    {
+      "candidate_payload": {
+        "ahew_g_per_eq": 777777.0,
+        "average_molecular_weight_g_mol": 999999.0,
+        "candidate_id": "atk-v1-top-level",
+        "candidate_type": "molecule",
+        "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+        "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+        "eew_g_per_eq": 888888.0,
+        "molecule": {
+          "smiles": "C1OC1"
+        },
+        "molecule_facts_v1": {
+          "average_molecular_weight_g_mol": 999999.0,
+          "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+          "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+          "formula": "POISONED-FORMULA-C99Z",
+          "ontology_version": "POISONED-ONTOLOGY-C99Z",
+          "oxirane_ring_count": 4242,
+          "reactive_amine_hydrogen_count": 4343,
+          "reactive_flags": {
+            "dual_role": true,
+            "has_oxirane": true,
+            "has_reactive_amine_hydrogen": true
+          },
+          "schema": "amphora.molecule-facts.v1",
+          "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+          "toolkit_provenance": {
+            "detected_version": "2026.03.2",
+            "exact_version_match": true,
+            "required_version": "2026.03.2",
+            "toolkit": "RDKit C++"
+          }
+        },
+        "normalization": {
+          "canonical_structure_hash": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+          "error": null,
+          "molecule_facts_v1": {
+            "average_molecular_weight_g_mol": 999999.0,
+            "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+            "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+            "formula": "POISONED-FORMULA-C99Z",
+            "ontology_version": "POISONED-ONTOLOGY-C99Z",
+            "oxirane_ring_count": 4242,
+            "reactive_amine_hydrogen_count": 4343,
+            "reactive_flags": {
+              "dual_role": true,
+              "has_oxirane": true,
+              "has_reactive_amine_hydrogen": true
+            },
+            "schema": "amphora.molecule-facts.v1",
+            "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+            "toolkit_provenance": {
+              "detected_version": "2026.03.2",
+              "exact_version_match": true,
+              "required_version": "2026.03.2",
+              "toolkit": "RDKit C++"
+            }
+          },
+          "required_toolkit": "RDKit C++ 2026.03.2",
+          "status": "NORMALIZED",
+          "structure_policy": "attacker-forged-should-be-overwritten"
+        },
+        "oxirane_ring_count": 4242,
+        "reactive_amine_hydrogen_count": 4343,
+        "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL"
+      },
+      "description": "attacker-supplied MW/EEW/AHEW/group-count/identity/whole-facts-struct as top-level sibling keys of candidate_id/candidate_type",
+      "engine_call_error": null,
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "observed_molecule_facts_v1": {
+        "average_molecular_weight_g_mol": 44.053,
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "formula": "C2H4O",
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0,
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "schema": "amphora.molecule-facts.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "observed_property_results": {
+        "ahew_g_per_eq": null,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": 44.053,
+        "formula": "C2H4O",
+        "functionality": {
+          "amine_hydrogen": 0,
+          "epoxide": 1
+        },
+        "molecular_weight_g_mol": 44.053,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 1,
+          "reactive_amine_hydrogens": 0
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_poison_hits_anywhere_in_whole_result": [
+        "/candidate/normalized_molecule/ahew_g_per_eq == POISON_AHEW (777777)",
+        "/candidate/normalized_molecule/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/canonical_isomeric_smiles contains POISON_SMILES (\"POISONED-SMILES-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/eew_g_per_eq == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/molecule_facts_v1/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/molecule_facts_v1/canonical_isomeric_smiles contains POISON_SMILES (\"POISONED-SMILES-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/formula contains POISON_FORMULA (\"POISONED-FORMULA-C99Z\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/ontology_version contains POISON_ONTOLOGY (\"POISONED-ONTOLOGY-C99Z\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/oxirane_ring_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/molecule_facts_v1/reactive_amine_hydrogen_count == POISON_AMINE (4343)",
+        "/candidate/normalized_molecule/molecule_facts_v1/structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/oxirane_ring_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/reactive_amine_hydrogen_count == POISON_AMINE (4343)",
+        "/candidate/normalized_molecule/structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")"
+      ],
+      "raw_untyped_echo_hit_count": 16,
+      "typed_field_leak": false,
+      "typed_field_poison_hits": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V1_top_level_key"
+    },
+    {
+      "candidate_payload": {
+        "candidate_id": "atk-v2-array",
+        "candidate_type": "molecule",
+        "equivalents": [
+          {
+            "ahew_g_per_eq": 777777.0,
+            "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+            "eew_g_per_eq": 888888.0
+          }
+        ],
+        "evidence_refs": [
+          {
+            "eew_g_per_eq": 888888.0,
+            "molecule_facts_v1": {
+              "average_molecular_weight_g_mol": 999999.0,
+              "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+              "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+              "formula": "POISONED-FORMULA-C99Z",
+              "ontology_version": "POISONED-ONTOLOGY-C99Z",
+              "oxirane_ring_count": 4242,
+              "reactive_amine_hydrogen_count": 4343,
+              "reactive_flags": {
+                "dual_role": true,
+                "has_oxirane": true,
+                "has_reactive_amine_hydrogen": true
+              },
+              "schema": "amphora.molecule-facts.v1",
+              "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+              "toolkit_provenance": {
+                "detected_version": "2026.03.2",
+                "exact_version_match": true,
+                "required_version": "2026.03.2",
+                "toolkit": "RDKit C++"
+              }
+            }
+          }
+        ],
+        "molecule": {
+          "facts": [
+            {
+              "average_molecular_weight_g_mol": 999999.0,
+              "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+              "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+              "formula": "POISONED-FORMULA-C99Z",
+              "ontology_version": "POISONED-ONTOLOGY-C99Z",
+              "oxirane_ring_count": 4242,
+              "reactive_amine_hydrogen_count": 4343,
+              "reactive_flags": {
+                "dual_role": true,
+                "has_oxirane": true,
+                "has_reactive_amine_hydrogen": true
+              },
+              "schema": "amphora.molecule-facts.v1",
+              "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+              "toolkit_provenance": {
+                "detected_version": "2026.03.2",
+                "exact_version_match": true,
+                "required_version": "2026.03.2",
+                "toolkit": "RDKit C++"
+              }
+            }
+          ],
+          "smiles": "C1OC1"
+        },
+        "molecule_facts_v1": [
+          {
+            "average_molecular_weight_g_mol": 999999.0,
+            "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+            "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+            "formula": "POISONED-FORMULA-C99Z",
+            "ontology_version": "POISONED-ONTOLOGY-C99Z",
+            "oxirane_ring_count": 4242,
+            "reactive_amine_hydrogen_count": 4343,
+            "reactive_flags": {
+              "dual_role": true,
+              "has_oxirane": true,
+              "has_reactive_amine_hydrogen": true
+            },
+            "schema": "amphora.molecule-facts.v1",
+            "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+            "toolkit_provenance": {
+              "detected_version": "2026.03.2",
+              "exact_version_match": true,
+              "required_version": "2026.03.2",
+              "toolkit": "RDKit C++"
+            }
+          }
+        ]
+      },
+      "description": "attacker-supplied facts wrapped in JSON arrays at molecule.facts, top-level molecule_facts_v1, evidence_refs, and a synthetic equivalents array",
+      "engine_call_error": null,
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "observed_molecule_facts_v1": {
+        "average_molecular_weight_g_mol": 44.053,
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "formula": "C2H4O",
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0,
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "schema": "amphora.molecule-facts.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "observed_property_results": {
+        "ahew_g_per_eq": null,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": 44.053,
+        "formula": "C2H4O",
+        "functionality": {
+          "amine_hydrogen": 0,
+          "epoxide": 1
+        },
+        "molecular_weight_g_mol": 44.053,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 1,
+          "reactive_amine_hydrogens": 0
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_poison_hits_anywhere_in_whole_result": [
+        "/candidate/normalized_molecule/equivalents/0/ahew_g_per_eq == POISON_AHEW (777777)",
+        "/candidate/normalized_molecule/equivalents/0/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/equivalents/0/eew_g_per_eq == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/evidence_refs/0/eew_g_per_eq == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/evidence_refs/0/molecule_facts_v1/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/evidence_refs/0/molecule_facts_v1/canonical_isomeric_smiles contains POISON_SMILES (\"POISONED-SMILES-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/evidence_refs/0/molecule_facts_v1/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/evidence_refs/0/molecule_facts_v1/formula contains POISON_FORMULA (\"POISONED-FORMULA-C99Z\")",
+        "/candidate/normalized_molecule/evidence_refs/0/molecule_facts_v1/ontology_version contains POISON_ONTOLOGY (\"POISONED-ONTOLOGY-C99Z\")",
+        "/candidate/normalized_molecule/evidence_refs/0/molecule_facts_v1/oxirane_ring_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/evidence_refs/0/molecule_facts_v1/reactive_amine_hydrogen_count == POISON_AMINE (4343)",
+        "/candidate/normalized_molecule/evidence_refs/0/molecule_facts_v1/structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/molecule/facts/0/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/molecule/facts/0/canonical_isomeric_smiles contains POISON_SMILES (\"POISONED-SMILES-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/molecule/facts/0/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/molecule/facts/0/formula contains POISON_FORMULA (\"POISONED-FORMULA-C99Z\")",
+        "/candidate/normalized_molecule/molecule/facts/0/ontology_version contains POISON_ONTOLOGY (\"POISONED-ONTOLOGY-C99Z\")",
+        "/candidate/normalized_molecule/molecule/facts/0/oxirane_ring_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/molecule/facts/0/reactive_amine_hydrogen_count == POISON_AMINE (4343)",
+        "/candidate/normalized_molecule/molecule/facts/0/structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/0/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/molecule_facts_v1/0/canonical_isomeric_smiles contains POISON_SMILES (\"POISONED-SMILES-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/0/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/0/formula contains POISON_FORMULA (\"POISONED-FORMULA-C99Z\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/0/ontology_version contains POISON_ONTOLOGY (\"POISONED-ONTOLOGY-C99Z\")",
+        "/candidate/normalized_molecule/molecule_facts_v1/0/oxirane_ring_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/molecule_facts_v1/0/reactive_amine_hydrogen_count == POISON_AMINE (4343)",
+        "/candidate/normalized_molecule/molecule_facts_v1/0/structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")"
+      ],
+      "raw_untyped_echo_hit_count": 28,
+      "typed_field_leak": false,
+      "typed_field_poison_hits": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V2_array_container"
+    },
+    {
+      "candidate_payload": {
+        "candidate_id": "atk-v3-deep",
+        "candidate_type": "molecule",
+        "meta": {
+          "a": {
+            "b": {
+              "c": {
+                "d": {
+                  "ahew_g_per_eq": 777777.0,
+                  "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+                  "eew_g_per_eq": 888888.0
+                }
+              }
+            }
+          }
+        },
+        "molecule": {
+          "normalization": {
+            "molecule_facts_v1": {
+              "average_molecular_weight_g_mol": 999999.0,
+              "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+              "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+              "formula": "POISONED-FORMULA-C99Z",
+              "ontology_version": "POISONED-ONTOLOGY-C99Z",
+              "oxirane_ring_count": 4242,
+              "reactive_amine_hydrogen_count": 4343,
+              "reactive_flags": {
+                "dual_role": true,
+                "has_oxirane": true,
+                "has_reactive_amine_hydrogen": true
+              },
+              "schema": "amphora.molecule-facts.v1",
+              "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+              "toolkit_provenance": {
+                "detected_version": "2026.03.2",
+                "exact_version_match": true,
+                "required_version": "2026.03.2",
+                "toolkit": "RDKit C++"
+              }
+            }
+          },
+          "provenance": {
+            "host": {
+              "facts": {
+                "average_molecular_weight_g_mol": 999999.0,
+                "oxirane_ring_count": 4242
+              }
+            }
+          },
+          "smiles": "C1OC1"
+        }
+      },
+      "description": "attacker-supplied facts nested 4-5 levels deep under molecule.provenance.host.facts and meta.a.b.c.d",
+      "engine_call_error": null,
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "observed_molecule_facts_v1": {
+        "average_molecular_weight_g_mol": 44.053,
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "formula": "C2H4O",
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0,
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "schema": "amphora.molecule-facts.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "observed_property_results": {
+        "ahew_g_per_eq": null,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": 44.053,
+        "formula": "C2H4O",
+        "functionality": {
+          "amine_hydrogen": 0,
+          "epoxide": 1
+        },
+        "molecular_weight_g_mol": 44.053,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 1,
+          "reactive_amine_hydrogens": 0
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_poison_hits_anywhere_in_whole_result": [
+        "/candidate/normalized_molecule/meta/a/b/c/d/ahew_g_per_eq == POISON_AHEW (777777)",
+        "/candidate/normalized_molecule/meta/a/b/c/d/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/meta/a/b/c/d/eew_g_per_eq == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/molecule/normalization/molecule_facts_v1/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/molecule/normalization/molecule_facts_v1/canonical_isomeric_smiles contains POISON_SMILES (\"POISONED-SMILES-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/molecule/normalization/molecule_facts_v1/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/molecule/normalization/molecule_facts_v1/formula contains POISON_FORMULA (\"POISONED-FORMULA-C99Z\")",
+        "/candidate/normalized_molecule/molecule/normalization/molecule_facts_v1/ontology_version contains POISON_ONTOLOGY (\"POISONED-ONTOLOGY-C99Z\")",
+        "/candidate/normalized_molecule/molecule/normalization/molecule_facts_v1/oxirane_ring_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/molecule/normalization/molecule_facts_v1/reactive_amine_hydrogen_count == POISON_AMINE (4343)",
+        "/candidate/normalized_molecule/molecule/normalization/molecule_facts_v1/structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/molecule/provenance/host/facts/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/molecule/provenance/host/facts/oxirane_ring_count == POISON_OXIRANE (4242)"
+      ],
+      "raw_untyped_echo_hit_count": 13,
+      "typed_field_leak": false,
+      "typed_field_poison_hits": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V3_deep_nesting"
+    },
+    {
+      "candidate_payload": {
+        "Ahew_G_Per_Eq": 777777.0,
+        "Average_Molecular_Weight_G_Mol": 999999.0,
+        "Canonical_Structure_Sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+        "EEW_G_PER_EQ": 888888.0,
+        "MOLECULE_FACTS_V1": {
+          "average_molecular_weight_g_mol": 999999.0,
+          "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+          "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+          "formula": "POISONED-FORMULA-C99Z",
+          "ontology_version": "POISONED-ONTOLOGY-C99Z",
+          "oxirane_ring_count": 4242,
+          "reactive_amine_hydrogen_count": 4343,
+          "reactive_flags": {
+            "dual_role": true,
+            "has_oxirane": true,
+            "has_reactive_amine_hydrogen": true
+          },
+          "schema": "amphora.molecule-facts.v1",
+          "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+          "toolkit_provenance": {
+            "detected_version": "2026.03.2",
+            "exact_version_match": true,
+            "required_version": "2026.03.2",
+            "toolkit": "RDKit C++"
+          }
+        },
+        "Oxirane_Ring_Count": 4242,
+        "candidate_id": "atk-v4-case",
+        "candidate_type": "molecule",
+        "molecule": {
+          "smiles": "C1OC1"
+        }
+      },
+      "description": "attacker-supplied facts using PascalCase/UPPERCASE variants of the real snake_case field names",
+      "engine_call_error": null,
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "observed_molecule_facts_v1": {
+        "average_molecular_weight_g_mol": 44.053,
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "formula": "C2H4O",
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0,
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "schema": "amphora.molecule-facts.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "observed_property_results": {
+        "ahew_g_per_eq": null,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": 44.053,
+        "formula": "C2H4O",
+        "functionality": {
+          "amine_hydrogen": 0,
+          "epoxide": 1
+        },
+        "molecular_weight_g_mol": 44.053,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 1,
+          "reactive_amine_hydrogens": 0
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_poison_hits_anywhere_in_whole_result": [
+        "/candidate/normalized_molecule/Ahew_G_Per_Eq == POISON_AHEW (777777)",
+        "/candidate/normalized_molecule/Average_Molecular_Weight_G_Mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/Canonical_Structure_Sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/EEW_G_PER_EQ == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/MOLECULE_FACTS_V1/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/MOLECULE_FACTS_V1/canonical_isomeric_smiles contains POISON_SMILES (\"POISONED-SMILES-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/MOLECULE_FACTS_V1/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/MOLECULE_FACTS_V1/formula contains POISON_FORMULA (\"POISONED-FORMULA-C99Z\")",
+        "/candidate/normalized_molecule/MOLECULE_FACTS_V1/ontology_version contains POISON_ONTOLOGY (\"POISONED-ONTOLOGY-C99Z\")",
+        "/candidate/normalized_molecule/MOLECULE_FACTS_V1/oxirane_ring_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/MOLECULE_FACTS_V1/reactive_amine_hydrogen_count == POISON_AMINE (4343)",
+        "/candidate/normalized_molecule/MOLECULE_FACTS_V1/structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/Oxirane_Ring_Count == POISON_OXIRANE (4242)"
+      ],
+      "raw_untyped_echo_hit_count": 13,
+      "typed_field_leak": false,
+      "typed_field_poison_hits": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V4_key_case_variant"
+    },
+    {
+      "candidate_payload": {
+        "amine_h_equiv_wt": 777777.0,
+        "candidate_id": "atk-v5-altkey",
+        "candidate_type": "molecule",
+        "epoxy_equiv_wt": 888888.0,
+        "identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+        "molecular_weight": 999999.0,
+        "molecule": {
+          "ahew": 777777.0,
+          "eew": 888888.0,
+          "group_count": 4242,
+          "mw": 999999.0,
+          "smiles": "C1OC1"
+        },
+        "structure_hash": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+      },
+      "description": "attacker-supplied facts under plausible alternate/abbreviated key names (mw, eew, ahew, group_count, structure_hash, identity)",
+      "engine_call_error": null,
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "observed_molecule_facts_v1": {
+        "average_molecular_weight_g_mol": 44.053,
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "formula": "C2H4O",
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0,
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "schema": "amphora.molecule-facts.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "observed_property_results": {
+        "ahew_g_per_eq": null,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": 44.053,
+        "formula": "C2H4O",
+        "functionality": {
+          "amine_hydrogen": 0,
+          "epoxide": 1
+        },
+        "molecular_weight_g_mol": 44.053,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 1,
+          "reactive_amine_hydrogens": 0
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_poison_hits_anywhere_in_whole_result": [
+        "/candidate/normalized_molecule/amine_h_equiv_wt == POISON_AHEW (777777)",
+        "/candidate/normalized_molecule/epoxy_equiv_wt == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/molecular_weight == POISON_MW (999999)",
+        "/candidate/normalized_molecule/molecule/ahew == POISON_AHEW (777777)",
+        "/candidate/normalized_molecule/molecule/eew == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/molecule/group_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/molecule/mw == POISON_MW (999999)",
+        "/candidate/normalized_molecule/structure_hash contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")"
+      ],
+      "raw_untyped_echo_hit_count": 9,
+      "typed_field_leak": false,
+      "typed_field_poison_hits": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V5_alternate_key_name"
+    },
+    {
+      "candidate_payload": {
+        "candidate_id": "atk-v6-semalt",
+        "candidate_type": "molecule",
+        "counsel_confirmed_structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+        "cro_measured_molecular_weight_g_mol": 999999.0,
+        "declared_molecular_weight_g_mol": 999999.0,
+        "functional_group_count": 4242,
+        "molecule": {
+          "smiles": "C1OC1"
+        },
+        "trusted_ahew_g_per_eq": 777777.0,
+        "trusted_eew_g_per_eq": 888888.0,
+        "verified_canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+      },
+      "description": "attacker-supplied facts under semantically-equivalent alternate field names (declared/cro_measured/trusted/verified/counsel_confirmed prefixes)",
+      "engine_call_error": null,
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "observed_molecule_facts_v1": {
+        "average_molecular_weight_g_mol": 44.053,
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "formula": "C2H4O",
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0,
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "schema": "amphora.molecule-facts.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "observed_property_results": {
+        "ahew_g_per_eq": null,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": 44.053,
+        "formula": "C2H4O",
+        "functionality": {
+          "amine_hydrogen": 0,
+          "epoxide": 1
+        },
+        "molecular_weight_g_mol": 44.053,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 1,
+          "reactive_amine_hydrogens": 0
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_poison_hits_anywhere_in_whole_result": [
+        "/candidate/normalized_molecule/counsel_confirmed_structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/cro_measured_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/declared_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/functional_group_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/trusted_ahew_g_per_eq == POISON_AHEW (777777)",
+        "/candidate/normalized_molecule/trusted_eew_g_per_eq == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/verified_canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")"
+      ],
+      "raw_untyped_echo_hit_count": 7,
+      "typed_field_leak": false,
+      "typed_field_poison_hits": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V6_semantic_alt_field"
+    },
+    {
+      "candidate_payload": {
+        "ahew_g_per_eq": "777777",
+        "average_molecular_weight_g_mol": "999999",
+        "candidate_id": "atk-v7-string",
+        "candidate_type": "molecule",
+        "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+        "eew_g_per_eq": "888888",
+        "molecule": {
+          "smiles": "C1OC1"
+        },
+        "molecule_facts_v1": "{\"average_molecular_weight_g_mol\":999999.0,\"canonical_isomeric_smiles\":\"POISONED-SMILES-C99Z-NOT-REAL\",\"canonical_structure_sha256\":\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\",\"formula\":\"POISONED-FORMULA-C99Z\",\"ontology_version\":\"POISONED-ONTOLOGY-C99Z\",\"oxirane_ring_count\":4242,\"reactive_amine_hydrogen_count\":4343,\"reactive_flags\":{\"dual_role\":true,\"has_oxirane\":true,\"has_reactive_amine_hydrogen\":true},\"schema\":\"amphora.molecule-facts.v1\",\"structure_identity\":\"POISONED-IDENTITY-C99Z-NOT-REAL\",\"toolkit_provenance\":{\"detected_version\":\"2026.03.2\",\"exact_version_match\":true,\"required_version\":\"2026.03.2\",\"toolkit\":\"RDKit C++\"}}",
+        "oxirane_ring_count": "4242"
+      },
+      "description": "attacker-supplied facts re-typed as JSON strings instead of native number/object types, including the whole forged struct serialized as one string blob",
+      "engine_call_error": null,
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "observed_molecule_facts_v1": {
+        "average_molecular_weight_g_mol": 44.053,
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "formula": "C2H4O",
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0,
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "schema": "amphora.molecule-facts.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "observed_property_results": {
+        "ahew_g_per_eq": null,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": 44.053,
+        "formula": "C2H4O",
+        "functionality": {
+          "amine_hydrogen": 0,
+          "epoxide": 1
+        },
+        "molecular_weight_g_mol": 44.053,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 1,
+          "reactive_amine_hydrogens": 0
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_poison_hits_anywhere_in_whole_result": [
+        "/candidate/normalized_molecule/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/molecule_facts_v1 contains POISON_SHA (\"{\"average_molecular_weight_g_mol\":999999.0,\"canonical_isomeric_smiles\":\"POISONED-SMILES-C99Z-NOT-REAL\",\"canonical_structure_sha256\":\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\",\"formula\":\"POISONED-FORMULA-C99Z\",\"ontology_version\":\"POISONED-ONTOLOGY-C99Z\",\"oxirane_ring_count\":4242,\"reactive_amine_hydrogen_count\":4343,\"reactive_flags\":{\"dual_role\":true,\"has_oxirane\":true,\"has_reactive_amine_hydrogen\":true},\"schema\":\"amphora.molecule-facts.v1\",\"structure_identity\":\"POISONED-IDENTITY-C99Z-NOT-REAL\",\"toolkit_provenance\":{\"detected_version\":\"2026.03.2\",\"exact_version_match\":true,\"required_version\":\"2026.03.2\",\"toolkit\":\"RDKit C++\"}}\")",
+        "/candidate/normalized_molecule/molecule_facts_v1 contains POISON_SMILES (\"{\"average_molecular_weight_g_mol\":999999.0,\"canonical_isomeric_smiles\":\"POISONED-SMILES-C99Z-NOT-REAL\",\"canonical_structure_sha256\":\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\",\"formula\":\"POISONED-FORMULA-C99Z\",\"ontology_version\":\"POISONED-ONTOLOGY-C99Z\",\"oxirane_ring_count\":4242,\"reactive_amine_hydrogen_count\":4343,\"reactive_flags\":{\"dual_role\":true,\"has_oxirane\":true,\"has_reactive_amine_hydrogen\":true},\"schema\":\"amphora.molecule-facts.v1\",\"structure_identity\":\"POISONED-IDENTITY-C99Z-NOT-REAL\",\"toolkit_provenance\":{\"detected_version\":\"2026.03.2\",\"exact_version_match\":true,\"required_version\":\"2026.03.2\",\"toolkit\":\"RDKit C++\"}}\")",
+        "/candidate/normalized_molecule/molecule_facts_v1 contains POISON_IDENTITY (\"{\"average_molecular_weight_g_mol\":999999.0,\"canonical_isomeric_smiles\":\"POISONED-SMILES-C99Z-NOT-REAL\",\"canonical_structure_sha256\":\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\",\"formula\":\"POISONED-FORMULA-C99Z\",\"ontology_version\":\"POISONED-ONTOLOGY-C99Z\",\"oxirane_ring_count\":4242,\"reactive_amine_hydrogen_count\":4343,\"reactive_flags\":{\"dual_role\":true,\"has_oxirane\":true,\"has_reactive_amine_hydrogen\":true},\"schema\":\"amphora.molecule-facts.v1\",\"structure_identity\":\"POISONED-IDENTITY-C99Z-NOT-REAL\",\"toolkit_provenance\":{\"detected_version\":\"2026.03.2\",\"exact_version_match\":true,\"required_version\":\"2026.03.2\",\"toolkit\":\"RDKit C++\"}}\")",
+        "/candidate/normalized_molecule/molecule_facts_v1 contains POISON_FORMULA (\"{\"average_molecular_weight_g_mol\":999999.0,\"canonical_isomeric_smiles\":\"POISONED-SMILES-C99Z-NOT-REAL\",\"canonical_structure_sha256\":\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\",\"formula\":\"POISONED-FORMULA-C99Z\",\"ontology_version\":\"POISONED-ONTOLOGY-C99Z\",\"oxirane_ring_count\":4242,\"reactive_amine_hydrogen_count\":4343,\"reactive_flags\":{\"dual_role\":true,\"has_oxirane\":true,\"has_reactive_amine_hydrogen\":true},\"schema\":\"amphora.molecule-facts.v1\",\"structure_identity\":\"POISONED-IDENTITY-C99Z-NOT-REAL\",\"toolkit_provenance\":{\"detected_version\":\"2026.03.2\",\"exact_version_match\":true,\"required_version\":\"2026.03.2\",\"toolkit\":\"RDKit C++\"}}\")",
+        "/candidate/normalized_molecule/molecule_facts_v1 contains POISON_ONTOLOGY (\"{\"average_molecular_weight_g_mol\":999999.0,\"canonical_isomeric_smiles\":\"POISONED-SMILES-C99Z-NOT-REAL\",\"canonical_structure_sha256\":\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\",\"formula\":\"POISONED-FORMULA-C99Z\",\"ontology_version\":\"POISONED-ONTOLOGY-C99Z\",\"oxirane_ring_count\":4242,\"reactive_amine_hydrogen_count\":4343,\"reactive_flags\":{\"dual_role\":true,\"has_oxirane\":true,\"has_reactive_amine_hydrogen\":true},\"schema\":\"amphora.molecule-facts.v1\",\"structure_identity\":\"POISONED-IDENTITY-C99Z-NOT-REAL\",\"toolkit_provenance\":{\"detected_version\":\"2026.03.2\",\"exact_version_match\":true,\"required_version\":\"2026.03.2\",\"toolkit\":\"RDKit C++\"}}\")"
+      ],
+      "raw_untyped_echo_hit_count": 6,
+      "typed_field_leak": false,
+      "typed_field_poison_hits": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V7_string_container"
+    },
+    {
+      "candidate_payload": {
+        "ahew_g_per_еq": 777777.0,
+        "candidate_id": "atk-v8-homoglyph",
+        "candidate_type": "molecule",
+        "canoniсal_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+        "eew_g_per_еq": 888888.0,
+        "molecule": {
+          "smiles": "C1OC1"
+        },
+        "mоlecule_facts_v1": {
+          "average_molecular_weight_g_mol": 999999.0,
+          "canonical_isomeric_smiles": "POISONED-SMILES-C99Z-NOT-REAL",
+          "canonical_structure_sha256": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+          "formula": "POISONED-FORMULA-C99Z",
+          "ontology_version": "POISONED-ONTOLOGY-C99Z",
+          "oxirane_ring_count": 4242,
+          "reactive_amine_hydrogen_count": 4343,
+          "reactive_flags": {
+            "dual_role": true,
+            "has_oxirane": true,
+            "has_reactive_amine_hydrogen": true
+          },
+          "schema": "amphora.molecule-facts.v1",
+          "structure_identity": "POISONED-IDENTITY-C99Z-NOT-REAL",
+          "toolkit_provenance": {
+            "detected_version": "2026.03.2",
+            "exact_version_match": true,
+            "required_version": "2026.03.2",
+            "toolkit": "RDKit C++"
+          }
+        },
+        "аverage_molecular_weight_g_mol": 999999.0
+      },
+      "description": "attacker-supplied facts under keys using Cyrillic homoglyph characters (U+0430 a, U+0435 e, U+043E o, U+0441 c) substituted for visually-identical Latin letters",
+      "engine_call_error": null,
+      "engine_call_status": "ACCEPTED",
+      "molecule_facts_v1_byte_identical_to_clean_control": true,
+      "observed_molecule_facts_v1": {
+        "average_molecular_weight_g_mol": 44.053,
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "formula": "C2H4O",
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "oxirane_ring_count": 1,
+        "reactive_amine_hydrogen_count": 0,
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "schema": "amphora.molecule-facts.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "observed_property_results": {
+        "ahew_g_per_eq": null,
+        "authority_scope": "DEFINED_SINGLE_COMPONENT_STRUCTURE",
+        "canonical_isomeric_smiles": "C1CO1",
+        "canonical_structure_sha256": "59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "commercial_product_claim_locked": false,
+        "eew_g_per_eq": 44.053,
+        "formula": "C2H4O",
+        "functionality": {
+          "amine_hydrogen": 0,
+          "epoxide": 1
+        },
+        "molecular_weight_g_mol": 44.053,
+        "ontology_version": "amphora.reactive-ontology.v1",
+        "reactive_flags": {
+          "dual_role": false,
+          "has_oxirane": true,
+          "has_reactive_amine_hydrogen": false
+        },
+        "reactive_group_counts": {
+          "oxirane_rings": 1,
+          "reactive_amine_hydrogens": 0
+        },
+        "schema": "amphora.molecule-property-results.v1",
+        "structure_identity": "smiles-sha256:59b1a7b29b6a5f8bc1b877bcc4ec98feb203ff8d493c71bb46562c6918a0c0dc",
+        "toolkit_provenance": {
+          "detected_version": "2026.03.2",
+          "exact_version_match": true,
+          "required_version": "2026.03.2",
+          "toolkit": "RDKit C++"
+        }
+      },
+      "property_results_byte_identical_to_clean_control": true,
+      "raw_untyped_candidate_echo_poison_hits_anywhere_in_whole_result": [
+        "/candidate/normalized_molecule/ahew_g_per_еq == POISON_AHEW (777777)",
+        "/candidate/normalized_molecule/canoniсal_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/eew_g_per_еq == POISON_EEW (888888)",
+        "/candidate/normalized_molecule/mоlecule_facts_v1/average_molecular_weight_g_mol == POISON_MW (999999)",
+        "/candidate/normalized_molecule/mоlecule_facts_v1/canonical_isomeric_smiles contains POISON_SMILES (\"POISONED-SMILES-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/mоlecule_facts_v1/canonical_structure_sha256 contains POISON_SHA (\"deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\")",
+        "/candidate/normalized_molecule/mоlecule_facts_v1/formula contains POISON_FORMULA (\"POISONED-FORMULA-C99Z\")",
+        "/candidate/normalized_molecule/mоlecule_facts_v1/ontology_version contains POISON_ONTOLOGY (\"POISONED-ONTOLOGY-C99Z\")",
+        "/candidate/normalized_molecule/mоlecule_facts_v1/oxirane_ring_count == POISON_OXIRANE (4242)",
+        "/candidate/normalized_molecule/mоlecule_facts_v1/reactive_amine_hydrogen_count == POISON_AMINE (4343)",
+        "/candidate/normalized_molecule/mоlecule_facts_v1/structure_identity contains POISON_IDENTITY (\"POISONED-IDENTITY-C99Z-NOT-REAL\")",
+        "/candidate/normalized_molecule/аverage_molecular_weight_g_mol == POISON_MW (999999)"
+      ],
+      "raw_untyped_echo_hit_count": 12,
+      "typed_field_leak": false,
+      "typed_field_poison_hits": {
+        "in_molecule_facts_v1": [],
+        "in_property_results": []
+      },
+      "vector_id": "V8_unicode_homoglyph_key"
+    }
+  ]
+}

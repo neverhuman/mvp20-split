@@ -1,0 +1,166 @@
+{
+  "aggregate_status": "PASS",
+  "all_positive_exact": true,
+  "all_traps_rejected": true,
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "LIMITED_SANITY",
+  "cross_check_portfolio_constants": {
+    "F_C_per_mol": "96485.332123",
+    "R_J_per_mol_K": "8.314462618",
+    "note": "R = N_A*k_B and F = N_A*e are re-derived here as EXACT rational products of the SI-2019 defining constants, independent of any pinned value. The sacrificial-zinc specific charge derives to 819.868 Ah/kg, reproducing the amphora-zinc-galvanic control to 4 significant figures from F and IUPAC M_Zn = 65.38 alone; this locks the Faraday and gas constants that the portfolio's Arrhenius/Kissinger cure-kinetics, Eyring viscosity, and zinc galvanic modules depend on, so a future edit to R or F is caught as a known-answer regression.",
+    "zinc_cross_check_matches_to_4_sig_figs": true,
+    "zinc_galvanic_module_control_Ah_per_kg": 819.868,
+    "zinc_specific_charge_Ah_per_kg": "819.867885"
+  },
+  "fail_closed_flag_rate": "1.000000",
+  "fail_closed_results": [
+    {
+      "abs_error": "0.000009",
+      "correct_exact": "8.314463",
+      "correctly_flagged": true,
+      "id": "TRAP-R-PRE2019",
+      "wrong_value": 8.314472
+    },
+    {
+      "abs_error": "376000000000000000/1",
+      "correct_exact": "6.02214076e23",
+      "correctly_flagged": true,
+      "id": "TRAP-NA-PRE2019",
+      "wrong_value": "6.022137e23"
+    },
+    {
+      "abs_error": "3/20",
+      "correct_exact": "273.15",
+      "correctly_flagged": true,
+      "id": "TRAP-KELVIN-273",
+      "wrong_value": "273"
+    },
+    {
+      "abs_error": "14.667877",
+      "correct_exact": "96485.332123",
+      "correctly_flagged": true,
+      "id": "TRAP-F-96500",
+      "wrong_value": 96500.0
+    },
+    {
+      "abs_error": "6.327259",
+      "correct_exact": "8.314463",
+      "correctly_flagged": true,
+      "id": "TRAP-R-CAL-AS-J",
+      "wrong_value": 1.987204
+    }
+  ],
+  "methodology": "FIPS 140-3 Sec 7.4 Known-Answer Test (2019); CODATA 2018; BIPM SI Brochure 9th ed. (2019); IUPAC 2021 atomic weights. Exact rational re-derivation from SI-2019 defining constants; float-free gate.",
+  "module_id": "amphora-known-answer-benchmarks",
+  "n_fail_closed": 5,
+  "n_fail_closed_correctly_flagged": 5,
+  "n_positive": 10,
+  "n_positive_pass": 10,
+  "positive_pass_rate": "1.000000",
+  "positive_results": [
+    {
+      "exact_rational": "602214076000000000000000/1",
+      "id": "CONST-NA-DEF",
+      "independently_derived": "6.02214076e23",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "6.02214076e23",
+      "quantity": "Avogadro number",
+      "unit": "1/mol"
+    },
+    {
+      "exact_rational": "1380649/100000000000000000000000000000",
+      "id": "CONST-KB-DEF",
+      "independently_derived": "1.380649e-23",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "1.380649e-23",
+      "quantity": "Boltzmann constant",
+      "unit": "J/K"
+    },
+    {
+      "exact_rational": "801088317/5000000000000000000000000000",
+      "id": "CONST-E-DEF",
+      "independently_derived": "1.602176634e-19",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "1.602176634e-19",
+      "quantity": "elementary charge",
+      "unit": "C"
+    },
+    {
+      "exact_rational": "207861565453831/25000000000000",
+      "id": "R-FROM-NA-KB",
+      "independently_derived": "8.314462618",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "8.314462618",
+      "quantity": "molar gas constant",
+      "unit": "J/(mol K)"
+    },
+    {
+      "exact_rational": "120606665154137523/1250000000000",
+      "id": "F-FROM-NA-E",
+      "independently_derived": "96485.332123",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "96485.332123",
+      "quantity": "Faraday constant",
+      "unit": "C/mol"
+    },
+    {
+      "exact_rational": "5463/20",
+      "id": "TEMP-0C-TO-K",
+      "independently_derived": "273.15",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "273.15",
+      "quantity": "temperature offset",
+      "unit": "K"
+    },
+    {
+      "exact_rational": "101325/1",
+      "id": "STD-ATM-PA",
+      "independently_derived": "101325",
+      "match": true,
+      "mode": "exact",
+      "pinned_expected": "101325",
+      "quantity": "standard atmosphere",
+      "unit": "Pa"
+    },
+    {
+      "exact_rational": "1239478514801194253/500000000000000",
+      "id": "RT-298P15",
+      "independently_derived": "2478.957030",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "2478.957030",
+      "quantity": "molar thermal energy R*T",
+      "unit": "J/mol"
+    },
+    {
+      "exact_rational": "13400740572681947/500000000000000",
+      "id": "FARADAY-AH-PER-MOL-E",
+      "independently_derived": "26.801481",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "26.801481",
+      "quantity": "charge per mole of electrons",
+      "unit": "Ah/mol"
+    },
+    {
+      "exact_rational": "13400740572681947/16345000000000",
+      "id": "ZN-SPECIFIC-CHARGE",
+      "independently_derived": "819.867885",
+      "match": true,
+      "mode": "derived",
+      "pinned_expected": "819.867885",
+      "quantity": "sacrificial-zinc theoretical specific charge",
+      "unit": "Ah/kg"
+    }
+  ],
+  "schema": "amphora.known-answer.physical-constants-kat-report.v1",
+  "scientific_claim": "Deterministic physical-constant arithmetic reproduces the exact SI-2019 defined constants and their exact derived products (R, F, R*T, zinc specific charge); regressions to pre-2019 measured values, textbook roundings, or cal/J unit swaps are detected. NOT a candidate performance or qualification claim.",
+  "vector_set_id": "physical-constants-kat-v1",
+  "vectors_file_sha256": "a259a12b5e96630488b5da082586ef51af688f1561dcfe61369888c15d198e3f"
+}

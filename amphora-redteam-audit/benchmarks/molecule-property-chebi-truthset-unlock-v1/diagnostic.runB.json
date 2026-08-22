@@ -1,0 +1,62 @@
+{
+  "authority": "AUDIT_ONLY",
+  "chebi_acquisition": {
+    "download_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/archive/rel252/SDF/chebi_3_stars.sdf.gz",
+    "license": "CC BY 4.0",
+    "license_hash_matches_fetchlock": true,
+    "license_sha256_expected": "fe7b4ce83b8381cc5b216bbb4af73c570688d1b819c73bbaed8ca401f4677cd6",
+    "license_sha256_observed": "fe7b4ce83b8381cc5b216bbb4af73c570688d1b819c73bbaed8ca401f4677cd6",
+    "payload_hash_matches_fetchlock": true,
+    "payload_sha256_expected": "8f17627476c66e899dabe3cd7ae1cbb94f7ee6c67f2ee91f077a77a19c940ad7",
+    "payload_sha256_observed": "8f17627476c66e899dabe3cd7ae1cbb94f7ee6c67f2ee91f077a77a19c940ad7",
+    "publisher": "EMBL-EBI ChEBI",
+    "release_id": "ChEBI-252",
+    "source_id": "chebi_fixed_release_truth_set"
+  },
+  "honest_ceiling": "AUDIT_ONLY. No phase0 evaluation/review/promotion minted. No existing receipt or manifest modified. Raw ChEBI acquisition confers no derivative or promotion authority; the >=300 truth set still requires PubChem PUG-REST identity/formula/mass cross-check per selection_lock, an independent reference receipt, and sealed controls before any ceremony.",
+  "host": "canonical (xbabe2) /home/ubuntu/amphora/build/mvp20-split",
+  "in_scope_reactive_molecule_census": {
+    "defined_no_wildcard": 43859,
+    "definition": "single-component, RDKit-2026.03.2 parseable, no wildcard/polymer; in-scope = has oxirane epoxide OR non-amide/non-imine primary or secondary amine N-H",
+    "epoxide_multi_ge2": 13,
+    "in_scope_epoxide_or_amine": 9025,
+    "margin_over_gate_x": 30.1,
+    "minimum_300_gate_reachable": true,
+    "rdkit_parsed": 52806,
+    "single_component": 50749,
+    "smarts": {
+      "epoxide": "[C;R1]1[O;R1][C;R1]1",
+      "primary_amine": "[NX3;H2;!$(NC=O);!$(N=*)]",
+      "secondary_amine": "[NX3;H1;!$(NC=O);!$(N=*);!$(N-a)]"
+    },
+    "total_records": 52903,
+    "with_amine_NH": 8729,
+    "with_epoxide": 315
+  },
+  "promotes": false,
+  "rdkit_backend_unlock": {
+    "backend_available_after": true,
+    "backend_available_before": false,
+    "chemistry_gates_now_passing": [
+      "equivalent_weight_max_abs_error_at_most_0_5",
+      "reactive_group_counts_100_percent",
+      "structure_identity_and_mass_agree",
+      "invalid_and_out_of_domain_rejection_100_percent",
+      "all_exact_controls_executed"
+    ],
+    "detected_version": "2026.03.2",
+    "exact_version_match": true,
+    "gate_pinned_rdkit_2026_03_2_available_after": true,
+    "gate_pinned_rdkit_2026_03_2_available_before": false,
+    "live_max_abs_eew_ahew_error_g_per_eq": 0.033799999999999386,
+    "note": "amphora-tui + amphora-phase0-reviewer rebuilt with --features rdkit against pinned RDKit C++ 2026.03.2; observed live via 'benchmark run --locked --module amphora-molecule-property'",
+    "still_failing_gates": [
+      "minimum_300_truth_set_molecules",
+      "independent_reference_receipt_bound",
+      "sealed_controls_present"
+    ]
+  },
+  "schema": "amphora.redteam-audit.molecule-property-chebi-truthset-unlock.v1",
+  "study_id": "MOLECULE_PROPERTY_CHEBI_TRUTHSET_UNLOCK_V1",
+  "target_module": "amphora-molecule-property"
+}

@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "af0c65828bf2578829bf83f47f06df76a45ca93b2e8ea8e69ac3f3e103e3cb2e",
+  "module_id": "amphora-source-ledger",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

@@ -1,0 +1,191 @@
+{
+  "attack_type": "re-derivation from named independent published baseline + production code-path audit",
+  "baselines": [
+    {
+      "doi_or_url": "AD-758206 (DTIC); no DOI (predates DOI system); freely available via DTIC and NIST CSRC historical-papers mirrors.",
+      "full_citation": "J. P. Anderson, 'Computer Security Technology Planning Study', ESD-TR-73-51, Vol. II, October 1972, Deputy for Command and Management Systems, HQ Electronic Systems Division (AFSC), Hanscom Field, Bedford, MA. DTIC accession AD-758206.",
+      "name": "Anderson 1972 reference-monitor concept",
+      "properties_scored": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "version": "ESD-TR-73-51 Vol. II"
+    },
+    {
+      "doi_or_url": "10.1109/PROC.1975.9939",
+      "full_citation": "J. H. Saltzer and M. D. Schroeder, 'The Protection of Information in Computer Systems', Proceedings of the IEEE, vol. 63, no. 9, pp. 1278-1308, September 1975.",
+      "name": "Saltzer & Schroeder 1975 design principles",
+      "properties_scored": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8"
+      ],
+      "version": "Proc. IEEE 63(9)"
+    }
+  ],
+  "campaign_item_id": "W-T-OPT",
+  "citation_finding": {
+    "description": "The module's live theory field (evidence/phase0/kpis/optimizer-orchestrator-authorization-kpi.v1.json, sha256 d1c512a7cd043530e74d8f613e6c5de0fcd185247536776463afafae280bc008, field `theory`) attributes 'the foundational reference-monitor concept' to \"Anderson 1980 'Computer Security Threat Monitoring and Surveillance'\". That is a real paper (James P. Anderson, prepared for James P. Anderson Co., Fort Washington PA, April 1980) but it is about intrusion/threat *monitoring* and audit-trail surveillance, not the reference-monitor abstraction. The reference monitor and its three properties (complete mediation, tamper-resistance, verifiability) originate in the SAME author's EARLIER report: Anderson 1972, 'Computer Security Technology Planning Study', ESD-TR-73-51 Vol. II (AD-758206) \u2014 the paper this campaign item names. The KPI's citation names the correct author but the wrong report by a wrong year, so the module's claim that its quarantine contract 'implements the reference-monitor pattern' was never actually checked against the paper that defines that pattern until this fire.",
+    "evidence_span": "Anderson 1980 'Computer Security Threat Monitoring and Surveillance'",
+    "finding_id": "CITATION-ANDERSON-MISATTRIBUTION",
+    "kpi_path": "amphora-optimizer-orchestrator/evidence/phase0/kpis/optimizer-orchestrator-authorization-kpi.v1.json",
+    "kpi_sha256": "d1c512a7cd043530e74d8f613e6c5de0fcd185247536776463afafae280bc008",
+    "severity": "moderate"
+  },
+  "claim_tested": {
+    "claim_text": "The orchestrator's quarantine contract is stated against a published access-control model.",
+    "receipt_path": "amphora-optimizer-orchestrator/evidence/phase0/kpis/"
+  },
+  "claim_verdict": "CLAIM_REFUTED",
+  "does_not_close": [
+    "Does not modify the master portfolio manifest, module-manifest.json, or any locked dataset.",
+    "Does not promote authority or flip scientific_readiness; module remains AUDIT_ONLY / solver_use_ceiling DISABLED.",
+    "Does not itself repair the display_kpis mediation gap or the citation error; both are filed as proposed_followups (PF-1, PF-2) for a future repair-mode fire, not fixed in place here, to honor supersede-never-rewrite against the existing unsigned-but-live KPI file without a dedicated repair fire budget.",
+    "Does not assert the display_kpis gap is exploitable for privilege escalation: display_kpis never sets ranking_performed/usable_by_optimizer/eligible_objective_count, which remain hardcoded false/0 in rank_candidates regardless of what display_kpis reads; the finding is a formal complete-mediation divergence against the named baseline, not a demonstrated authority-escalation exploit."
+  ],
+  "module": "amphora-optimizer-orchestrator",
+  "observed_result": "11 normative requirements enumerated (3 Anderson 1972 properties + 8 Saltzer & Schroeder 1975 principles): 5 conformant, 6 divergent, 0 not_applicable. One citation-integrity finding confirmed in the live KPI file. Both refutation grounds independently verified against live file bytes at runtime (see runtime_source_anchors) rather than assumed.",
+  "proposed_followups": [
+    {
+      "finding": "A1/S3 complete-mediation bypass via display_kpis",
+      "followup_id": "PF-1",
+      "proposed_repair_criterion": "Either (a) route display_kpis reads through a dedicated read-only mediation function that is declared as a distinct, audited reference-monitor boundary in benchmark-lock.v1.json (its own attack axis, e.g. DISPLAY_PATH_UNMEDIATED_READ, with at least 3 fail-closed probes), or (b) document explicitly in docs/mission.md and the KPI theory field that display_kpis is an intentionally out-of-scope, non-authoritative read path (it never sets ranking_performed/usable_by_optimizer/eligible_objectives, which remain hardcoded false/0 in rank_candidates regardless of display_kpis content) and that the module's complete-mediation claim is scoped to the ranking/solver-authority boundary only, not to every read of envelope fields."
+    },
+    {
+      "finding": "CITATION-ANDERSON-MISATTRIBUTION",
+      "followup_id": "PF-2",
+      "proposed_repair_criterion": "Supersede the `theory` field of evidence/phase0/kpis/optimizer-orchestrator-authorization-kpi.v1.json (v1 -> v2, supersede-never-rewrite) replacing 'Anderson 1980 Computer Security Threat Monitoring and Surveillance' with 'Anderson 1972, Computer Security Technology Planning Study, ESD-TR-73-51 Vol. II, AD-758206' for the reference-monitor attribution, and update the matching sentence in docs/mission.md; add an entry to evidence/phase0/kpis/RETRACTION-INDEX.md."
+    },
+    {
+      "finding": "S5 separation-of-privilege has no principal-level separation",
+      "followup_id": "PF-3",
+      "proposed_repair_criterion": "If a future Phase-1 solver-enabled variant of this gate is ever proposed, require the policy object and the request object to be independently signed/attested by distinct principals before authorize_optimizer_request accepts them together, rather than both arriving as plain in-process arguments from a single caller. Not applicable at current Phase-0 AUDIT_ONLY scope since no real authority is ever granted."
+    },
+    {
+      "finding": "S8 psychological-acceptability naming hazard",
+      "followup_id": "PF-4",
+      "proposed_repair_criterion": "Rename the Ok() success payload (or add a distinct always-locked wrapper type) so that a caller cannot mistake `.is_ok()` for 'ranking/solver authority granted' without inspecting individual boolean fields; alternatively rename OptimizerAuthorizationV1 to something like OptimizerQuarantineDecisionV1 for the Phase-0 AUDIT_ONLY shape."
+    }
+  ],
+  "refutation_criterion": "The claim under attack asserts the quarantine contract 'is stated against a published access-control model'. This is refuted on two independent, concrete grounds found by direct inspection of live source and the live KPI receipt (not hypothetical): (1) the existing citation for the reference-monitor concept in the module's own theory field names the wrong Anderson report (1980 threat-monitoring paper) instead of the 1972 report that actually defines the reference monitor and the three properties this campaign item names; (2) when the contract is correctly measured against the right baseline (Anderson 1972 complete mediation, restated as S&S 1975 principle 3), it does NOT hold: the display_kpis path in rank_candidates reads the same protected object class (envelope objective_values / gates) via module_envelope()+envelope_value() without ever invoking authorize_optimizer_request, and this path is absent from all 6 declared attack axes and all 31 probes in the module's own benchmark.",
+  "requirement_count": 11,
+  "requirements": [
+    {
+      "code_ref": "amphora-core/src/lib.rs:469,477,630-724,868,876-887; config/kpis/molecule-demo.json",
+      "evidence": "authorize_optimizer_request (amphora-core/src/lib.rs:630) is invoked from exactly one production call site, inside rank_candidates at amphora-core/src/lib.rs:868, and correctly mediates every OBJECTIVE and hard_constraint declaration reaching Pareto ranking. But the same source function (rank_candidates) also builds `display_kpis` (amphora-core/src/lib.rs:876-887) by calling module_envelope()+envelope_value() (lib.rs:469, 477) directly against the raw `/score_envelopes` JSON \u2014 reading the identical protected object class (envelope `objective_values` and `gates` sections, by module_id+section+path) WITHOUT ever calling authorize_optimizer_request. config/kpis/molecule-demo.json (sha256 aae3d941867cc67b3c1b796ae81ea4700f060a60dc72833f64ca867f4f7f8ac2) ships a live display_kpis profile whose `eew`/`ahew` entries read section='objective_values', path='eew_g_per_eq'/'ahew_g_per_eq' directly. This is a second, unmediated reference path to the same object the gate exists to quarantine.",
+      "id": "A1",
+      "property": "Complete mediation",
+      "source": "Anderson 1972 (ESD-TR-73-51 Vol II, 'Computer Security Technology Planning Study', James P. Anderson & Co. for Deputy for Command and Management Systems, HQ Electronic Systems Division (AFSC), Hanscom AFB, Oct 1972; AD-758206)",
+      "statement": "The reference validation mechanism must be invoked on every reference by a subject to an object it protects; there must be no path by which the protected object can be reached that bypasses the mechanism.",
+      "verdict": "divergent"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:1,578-628,640-662; amphora-core/src/phase0.rs:32-42",
+      "evidence": "quarantined_optimizer_policy() (lib.rs:610-628), OPTIMIZER_MODULES (lib.rs:578-600), and REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS (amphora-core/src/phase0.rs:32-42) are Rust compile-time constants, not runtime-loaded configuration; the crate carries #![forbid(unsafe_code)] (lib.rs:1). authorize_optimizer_request additionally re-validates any policy struct passed to it against these hardcoded expected sets (lib.rs:640-662) and fails closed (Err) on any mismatch, so a caller cannot supply a runtime-tampered policy and have it accepted. Scope limit, not a divergence: this resists runtime/config tampering only, not source-level recompilation by someone with repo write access \u2014 the same limit every in-process reference monitor has.",
+      "id": "A2",
+      "property": "Tamper-resistance",
+      "source": "Anderson 1972 (ESD-TR-73-51)",
+      "statement": "The reference validation mechanism must itself be protected from unauthorized modification.",
+      "verdict": "conformant"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:630-724; amphora-optimizer-orchestrator/evidence/phase0/benchmark/benchmark-lock.v1.json",
+      "evidence": "authorize_optimizer_request itself is a single ~95-line pure function (lib.rs:630-724) with no I/O and no unsafe code, and is exercised by 5 positive-control scenarios plus 26 fail-closed probes across 6 declared attack axes (evidence/phase0/benchmark/benchmark-lock.v1.json `attacks`, module-specific subset OBJECTIVE_CONSTRAINT_INJECTION / UNKNOWN_OBJECTIVE_PATH_OPERATOR / DUPLICATE_SCORE_ENVELOPE / MISSING_OPTIMIZER_CLAIM_LOCK / FAILED_OR_NO_AUTHORITY_SCORE / SOLVER_RANKING_ESCALATION), so the function in isolation is verifiable and IS verified. But 'completeness of which can be assured' is a property of the reference-monitor BOUNDARY, not just the one function: none of the 6 declared attack axes, and none of the 31 probes, exercise the display_kpis path found divergent under A1/S3. The probe suite's completeness claim ('every one of the 6 module-specific attack axes... is exercised end-to-end', docs/mission.md) does not cover the actual mediation boundary of the module, so the completeness cannot in fact be assured at the boundary Anderson's definition addresses.",
+      "id": "A3",
+      "property": "Verifiability",
+      "source": "Anderson 1972 (ESD-TR-73-51)",
+      "statement": "The mechanism must be small enough to be subject to analysis and test, the completeness of which can be assured.",
+      "verdict": "divergent"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:630-724",
+      "evidence": "authorize_optimizer_request is one function, no external dependency at decision time, no network/filesystem access, operating purely on three in-memory structs (OptimizerAuthorizationRequestV1, &[OptimizerEnvelopeV1], OptimizerRegistryPolicyV1).",
+      "id": "S1",
+      "property": "Economy of mechanism",
+      "source": "Saltzer & Schroeder 1975 (DOI 10.1109/PROC.1975.9939, Proc. IEEE 63(9):1278-1308)",
+      "statement": "Keep the design as simple and small as possible.",
+      "verdict": "conformant"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:640-724",
+      "evidence": "Every guard clause in authorize_optimizer_request returns Err by default on any schema/policy/registry/objective/constraint/envelope irregularity (lib.rs:640-662, 666-668, 671-706). More strongly than a plain deny-default: the SOLE success path still returns a hardcoded zero-authority literal (status='NO_ELIGIBLE_OBJECTIVES', ranking_performed=false, solver_invoked=false, usable_by_optimizer=false, authority_upgrade=false, candidate_created_evidence=false \u2014 lib.rs:715-724); Ok() never grants real access under any input in the current fixture set.",
+      "id": "S2",
+      "property": "Fail-safe defaults",
+      "source": "Saltzer & Schroeder 1975",
+      "statement": "Base access decisions on permission rather than exclusion; the default is denial.",
+      "verdict": "conformant"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:469,477,876-887",
+      "evidence": "Same finding and code references as A1 (display_kpis unmediated read path).",
+      "id": "S3",
+      "property": "Complete mediation",
+      "source": "Saltzer & Schroeder 1975",
+      "statement": "Every access to every object must be checked for authority (S&S's own restatement of Anderson's property).",
+      "verdict": "divergent"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:578,610,630",
+      "evidence": "authorize_optimizer_request, quarantined_optimizer_policy, OPTIMIZER_MODULES, and REQUIRED_ZERO_AUTHORITY_CLAIM_LOCKS are all `pub` and in-repo (lib.rs:610,578); no secret salt, obfuscation, or hidden allowlist is used for the authorization decision.",
+      "id": "S4",
+      "property": "Open design",
+      "source": "Saltzer & Schroeder 1975",
+      "statement": "The protection mechanism must not depend on the ignorance of potential attackers; the design should be public.",
+      "verdict": "conformant"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:640-706,846-869",
+      "evidence": "The function does decompose into three independently-checked inputs (request, envelopes, policy) ANDed together (lib.rs:640-706) \u2014 a privilege-separation-shaped decomposition at the logic level. But there is no separation of PRINCIPALS: request, envelopes, and policy are all supplied by the same in-process caller (rank_candidates, lib.rs:846-869) in a single call, with no distinct authentication of 'who set the policy' vs 'who issued the request'. No cryptographic or organizational dual-control gate protects a call to authorize_optimizer_request itself.",
+      "id": "S5",
+      "property": "Separation of privilege",
+      "source": "Saltzer & Schroeder 1975",
+      "statement": "Where feasible, a protection mechanism requiring two keys/conditions to unlock is more robust than one requiring a single condition.",
+      "verdict": "divergent"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:715-724",
+      "evidence": "Same evidence as S2: under every input in the current fixture set the module grants zero ranking/solver/authority-upgrade privilege regardless of whether hard constraints pass (lib.rs:715-724) \u2014 a stricter-than-required least-privilege posture for a Phase-0/AUDIT_ONLY module.",
+      "id": "S6",
+      "property": "Least privilege",
+      "source": "Saltzer & Schroeder 1975",
+      "statement": "Every program and every user of the system should operate using the least set of privileges necessary to complete the job.",
+      "verdict": "conformant"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:578-600,610-628",
+      "evidence": "All 29 registered modules (OPTIMIZER_MODULES, lib.rs:578-600) are mediated by exactly one shared function and one shared policy singleton (quarantined_optimizer_policy, lib.rs:610). A defect in this one mechanism (such as the A1/S3 finding) is common-mode across the entire portfolio rather than isolated to one module. Flagged honestly as a deliberate centralization tradeoff inherent to the reference-monitor pattern itself (Anderson's model is explicitly a SINGLE monitor for ALL subjects) rather than an implementation defect; noted as divergent from the S&S principle's literal text, not as a recommendation to decentralize.",
+      "id": "S7",
+      "property": "Least common mechanism",
+      "source": "Saltzer & Schroeder 1975",
+      "statement": "Minimize the amount of mechanism common to more than one user/subject and depended upon by all of them, since a shared mechanism is a potential information/failure channel between them.",
+      "verdict": "divergent"
+    },
+    {
+      "code_ref": "amphora-core/src/lib.rs:565-574,630,715-724",
+      "evidence": "The success type OptimizerAuthorizationV1 (lib.rs:565-574) is returned by Ok() from a function literally named authorize_optimizer_request, and its only observed status value is 'NO_ELIGIBLE_OBJECTIVES' with every authority field pinned false \u2014 but nothing in the type signature (Result<OptimizerAuthorizationV1, String>) distinguishes this permanently-locked shape from what a future, less-restrictive OptimizerAuthorizationV1 would look like. A caller who pattern-matches on `.is_ok()` alone (a normal Rust idiom) reads 'authorized' where the actual grant is zero-authority; the field names most resembling a green light (`hard_constraints_passed`, `eligible_objective_count`) are exactly the ones that vary, inviting exactly the misreading S&S's principle warns against.",
+      "id": "S8",
+      "property": "Psychological acceptability",
+      "source": "Saltzer & Schroeder 1975",
+      "statement": "The human interface must be designed for ease of use so that users routinely and automatically apply the protection mechanism correctly.",
+      "verdict": "divergent"
+    }
+  ],
+  "runtime_source_anchors": {
+    "amphora-core/src/lib.rs": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+    "amphora-optimizer-orchestrator/docs/mission.md": "ccbd7c25d7f857c8b10091ce29906245a0956ba75129fcef9c1802500211034d",
+    "amphora-optimizer-orchestrator/evidence/phase0/kpis/optimizer-orchestrator-authorization-kpi.v1.json": "d1c512a7cd043530e74d8f613e6c5de0fcd185247536776463afafae280bc008",
+    "config/kpis/molecule-demo.json": "aae3d941867cc67b3c1b796ae81ea4700f060a60dc72833f64ca867f4f7f8ac2"
+  },
+  "schema": "amphora.optimizer-orchestrator.reference-monitor-baseline-audit.v1",
+  "verdict_tally": {
+    "conformant": 5,
+    "divergent": 6,
+    "not_applicable": 0
+  }
+}

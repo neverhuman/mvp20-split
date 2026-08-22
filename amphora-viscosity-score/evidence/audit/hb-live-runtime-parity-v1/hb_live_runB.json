@@ -1,0 +1,244 @@
+{
+  "edge_case_guard_battery": [
+    {
+      "K": 10.0,
+      "case": "negative_yield_stress",
+      "gamma_dot": 1.0,
+      "is_ok": false,
+      "n": 0.5,
+      "tau0": -1.0,
+      "value_if_ok": null
+    },
+    {
+      "K": 10.0,
+      "case": "zero_yield_stress_should_be_ok",
+      "gamma_dot": 1.0,
+      "is_ok": true,
+      "n": 0.5,
+      "tau0": 0.0,
+      "value_if_ok": 10.0
+    },
+    {
+      "K": 0.0,
+      "case": "zero_consistency",
+      "gamma_dot": 1.0,
+      "is_ok": false,
+      "n": 0.5,
+      "tau0": 10.0,
+      "value_if_ok": null
+    },
+    {
+      "K": -5.0,
+      "case": "negative_consistency",
+      "gamma_dot": 1.0,
+      "is_ok": false,
+      "n": 0.5,
+      "tau0": 10.0,
+      "value_if_ok": null
+    },
+    {
+      "K": 10.0,
+      "case": "zero_flow_index",
+      "gamma_dot": 1.0,
+      "is_ok": false,
+      "n": 0.0,
+      "tau0": 10.0,
+      "value_if_ok": null
+    },
+    {
+      "K": 10.0,
+      "case": "negative_flow_index",
+      "gamma_dot": 1.0,
+      "is_ok": false,
+      "n": -0.5,
+      "tau0": 10.0,
+      "value_if_ok": null
+    },
+    {
+      "K": 10.0,
+      "case": "zero_shear_rate",
+      "gamma_dot": 0.0,
+      "is_ok": false,
+      "n": 0.5,
+      "tau0": 10.0,
+      "value_if_ok": null
+    },
+    {
+      "K": 10.0,
+      "case": "negative_shear_rate",
+      "gamma_dot": -1.0,
+      "is_ok": false,
+      "n": 0.5,
+      "tau0": 10.0,
+      "value_if_ok": null
+    },
+    {
+      "K": 10.0,
+      "case": "nan_yield_stress",
+      "gamma_dot": 1.0,
+      "is_ok": false,
+      "n": 0.5,
+      "tau0": null,
+      "value_if_ok": null
+    },
+    {
+      "K": 10.0,
+      "case": "infinite_yield_stress",
+      "gamma_dot": 1.0,
+      "is_ok": false,
+      "n": 0.5,
+      "tau0": null,
+      "value_if_ok": null
+    }
+  ],
+  "function_under_test": "herschel_bulkley_apparent_viscosity (src/lib.rs:1227), called live via the compiled crate -- not reimplemented",
+  "module_id": "amphora-viscosity-score",
+  "rows": [
+    {
+      "K_pa_sn_corrected": 48.99,
+      "curve": [
+        {
+          "eta_apparent_pa_s_live_rust": 1335.207169931523,
+          "shear_rate_s_inv": 0.1
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 172.89000000000001,
+          "shear_rate_s_inv": 1.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 37.336374596698505,
+          "shear_rate_s_inv": 10.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 13.942033384747994,
+          "shear_rate_s_inv": 100.0
+        }
+      ],
+      "n": 0.7069,
+      "sample": "Epoxy",
+      "tau0_pa_corrected": 123.9
+    },
+    {
+      "K_pa_sn_corrected": 166.8,
+      "curve": [
+        {
+          "eta_apparent_pa_s_live_rust": 6738.1104767441675,
+          "shear_rate_s_inv": 0.1
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 798.5,
+          "shear_rate_s_inv": 1.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 129.23874332623768,
+          "shear_rate_s_inv": 10.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 32.48653743829901,
+          "shear_rate_s_inv": 100.0
+        }
+      ],
+      "n": 0.5978,
+      "sample": "1",
+      "tau0_pa_corrected": 631.7
+    },
+    {
+      "K_pa_sn_corrected": 193.4,
+      "curve": [
+        {
+          "eta_apparent_pa_s_live_rust": 6789.389826396761,
+          "shear_rate_s_inv": 0.1
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 820.5,
+          "shear_rate_s_inv": 1.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 134.86334502219253,
+          "shear_rate_s_inv": 10.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 33.18984797255199,
+          "shear_rate_s_inv": 100.0
+        }
+      ],
+      "n": 0.5718,
+      "sample": "2",
+      "tau0_pa_corrected": 627.1
+    },
+    {
+      "K_pa_sn_corrected": 333.0,
+      "curve": [
+        {
+          "eta_apparent_pa_s_live_rust": 11471.2027149496,
+          "shear_rate_s_inv": 0.1
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 1387.0,
+          "shear_rate_s_inv": 1.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 224.48148271024053,
+          "shear_rate_s_inv": 10.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 53.123782355763694,
+          "shear_rate_s_inv": 100.0
+        }
+      ],
+      "n": 0.5534,
+      "sample": "3",
+      "tau0_pa_corrected": 1054.0
+    },
+    {
+      "K_pa_sn_corrected": 561.9,
+      "curve": [
+        {
+          "eta_apparent_pa_s_live_rust": 16903.83936997845,
+          "shear_rate_s_inv": 0.1
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 2075.9,
+          "shear_rate_s_inv": 1.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 330.40247345304317,
+          "shear_rate_s_inv": 10.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 72.16417779374876,
+          "shear_rate_s_inv": 100.0
+        }
+      ],
+      "n": 0.5032,
+      "sample": "4",
+      "tau0_pa_corrected": 1514.0
+    },
+    {
+      "K_pa_sn_corrected": 257.3,
+      "curve": [
+        {
+          "eta_apparent_pa_s_live_rust": 8267.33970651764,
+          "shear_rate_s_inv": 0.1
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 1011.4000000000001,
+          "shear_rate_s_inv": 1.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 166.5564558607224,
+          "shear_rate_s_inv": 10.0
+        },
+        {
+          "eta_apparent_pa_s_live_rust": 39.82889901271129,
+          "shear_rate_s_inv": 100.0
+        }
+      ],
+      "n": 0.5493,
+      "sample": "5",
+      "tau0_pa_corrected": 754.1
+    }
+  ],
+  "schema": "amphora.viscosity-score.hb-live-runtime-parity-diagnostic.v1",
+  "source_lock_sha256_asserted_match": true
+}

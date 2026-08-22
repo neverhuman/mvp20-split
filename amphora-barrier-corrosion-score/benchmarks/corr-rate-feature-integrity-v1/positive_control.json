@@ -1,0 +1,16 @@
+{
+  "defect_input": {
+    "error_reduction_vs_best_baseline_pct": -2.7143931239361097,
+    "r2": -0.05561328631212814,
+    "refuted": true
+  },
+  "detected": true,
+  "how_planted": "np.random.RandomState(12345).shuffle(yc) applied to a copy of the identical yc array used by corr_rate_feature_integrity.py's real corrected-feature run; Xc (incl. corrected marine flag) and famc untouched.",
+  "planted_defect": "full random permutation (numpy RandomState seed=12345) of the log10(corrosion_rate) label vector yc across all classified rows -- a classic hostile-null y-shuffle -- while every X feature (composition vector, corrected env features including the fixed marine flag, temperature) and every family assignment is left byte-identical to the real (corrected-feature) input.",
+  "real_input": {
+    "error_reduction_vs_best_baseline_pct": 7.010173776401219,
+    "r2": 0.1312938104114908,
+    "refuted": false
+  },
+  "schema": "amphora.barrier-corrosion-score.corr-rate-feature-integrity-positive-control.v1"
+}

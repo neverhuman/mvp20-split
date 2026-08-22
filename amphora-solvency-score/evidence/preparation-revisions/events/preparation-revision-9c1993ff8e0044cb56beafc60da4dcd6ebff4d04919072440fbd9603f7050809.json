@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "783b3e9d86de166572a94a79f35b2a56dee4a0e78f14d4411e6a9f133f4dd893",
+  "module_id": "amphora-solvency-score",
+  "parent_revision_id": null,
+  "revision_id": "preparation-revision-9c1993ff8e0044cb56beafc60da4dcd6ebff4d04919072440fbd9603f7050809",
+  "revision_number": 1,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-0f490827a68bf1cea739687533715e9f0203d217b576504a2b55e3e13fd7bffe",
+  "supersession_path": "evidence/superseded/supersession-0f490827a68bf1cea739687533715e9f0203d217b576504a2b55e3e13fd7bffe/supersession.v1.json",
+  "supersession_sha256": "ee9dab508bca1a2d2d5c47b375a868add93477b57095314f9fe4e381ee98a9ae",
+  "unsigned_preparation_only": true
+}

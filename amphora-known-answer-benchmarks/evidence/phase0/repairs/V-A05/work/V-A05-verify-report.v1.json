@@ -1,0 +1,71 @@
+{
+  "checks": {
+    "1_precondition_done_receipt_exists": true,
+    "2_r_a05_dsse_signature_valid": true,
+    "2_r_a05_evaluator_key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "2_r_a05_evaluator_key_matches_pinned_trust_store": true,
+    "3_control_count_matches_receipt_field": true,
+    "3_control_count_on_disk": 14,
+    "3_non_volume_solids_controls_with_percentage_point_tolerance": [],
+    "3_r_a05_swept_control_ids": [
+      "ARITH-A221-X70P1-VOLUME-SOLIDS",
+      "ARITH-A702B75P1-VOLUME-SOLIDS"
+    ],
+    "3_r_a05_swept_matches_independent_enumeration": true,
+    "3_sweep_matches_r_a05_claim_2_of_2": true,
+    "3_volume_solids_controls_count": 2,
+    "3_volume_solids_controls_found": [
+      "ARITH-A221-X70P1-VOLUME-SOLIDS",
+      "ARITH-A702B75P1-VOLUME-SOLIDS"
+    ],
+    "4_a221_correct_reproduces_published_42_5_within_0_2pp": true,
+    "4_a221_invalid_still_closely_reproduces_superseded_actual_43_7": true,
+    "4_a702_correct_reproduces_published_62_0_within_0_3pp": true,
+    "4_independent_a221_correct_volume_weighted_4dp": 42.4165,
+    "4_independent_a221_correct_volume_weighted_exact": "51833/1222",
+    "4_independent_a221_invalid_mass_fraction_4dp": 43.5833,
+    "4_independent_a221_wt_pct_solids_sanity_gate_4dp": 64.5167,
+    "4_independent_a702_correct_volume_weighted_4dp": 61.748,
+    "4_independent_a702_correct_volume_weighted_exact": "642797/10410",
+    "4_independent_a702_invalid_mass_fraction_4dp": 63.7639,
+    "4_independent_a702_wt_pct_solids_sanity_gate_4dp": 77.1511,
+    "4_matches_r_a05_a221_corrected_actual_to_4dp": true,
+    "4_matches_r_a05_a702_topdown_reference_to_4dp": true,
+    "5_a221_fresh_fetch_contains_all_transcribed_source_numbers": true,
+    "5_a221_fresh_fetch_low_volume_solids_narrative_43pct_present": true,
+    "5_a221_fresh_pdf_present": true,
+    "5_a221_fresh_pdf_sha256": "fa2e8ff6973a1fb18189565653d762772333f62f8c6d079017ee9f3be376dc6f",
+    "5_a702_cached_pdf_present": true,
+    "5_a702_cached_pdf_sha256": "7b95cd630cf392c87fbd852afea0e6d77591dcdb0d62f6390e5c46ba7d061abe",
+    "5_a702_cached_pdf_sha256_matches_r_a05_claimed": true,
+    "6_all_byte_intact": true,
+    "6_byte_intact_checks": {
+      "amphora-known-answer-benchmarks/evidence/phase0/benchmark/result.v1.json": {
+        "actual_sha256": "3f2f6853f132f032a4b62a52ff3485d6f9b88b44affb3d50e84e8d310808ab11",
+        "byte_intact": true,
+        "expected_sha256": "3f2f6853f132f032a4b62a52ff3485d6f9b88b44affb3d50e84e8d310808ab11"
+      },
+      "amphora-known-answer-benchmarks/reference/mvp20/out/arithmetic_audit.json": {
+        "actual_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c",
+        "byte_intact": true,
+        "expected_sha256": "b9beb08a36eec40abb96c48a05c076ec4a201bedf122e8dbd53498e9e9ae148c"
+      },
+      "amphora-known-answer-benchmarks/reference/mvp20/out/control_by_control_receipt.v1.json": {
+        "actual_sha256": "be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc",
+        "byte_intact": true,
+        "expected_sha256": "be537c06a3cc325b4ecd6ee71bd6ed284d570883bb2f123e7c969d574c60d3cc"
+      }
+    },
+    "7_mission_md_mentions_43_7_or_42_5_or_volume_solids_control_id": false,
+    "7_mission_md_update_not_required": true,
+    "7_retraction_index_exists": true,
+    "7_retraction_index_mentions_42_4165": true,
+    "7_retraction_index_mentions_r_a05": true,
+    "8_reattack_corrected_a221_not_reproducible_by_superseded_actual_43_7": true,
+    "8_reattack_corrected_a221_reproduces_expected_42_5": true,
+    "all_checks_pass": true
+  },
+  "schema": "amphora.known-answer-benchmarks.repair-verify-report.v1",
+  "target_repair_item": "R-A05",
+  "verify_item": "V-A05"
+}

@@ -1,0 +1,892 @@
+{
+  "acceptance_bar_floors": {
+    "all_met": true,
+    "floor_results": {
+      "authority_lock_preservation_rate_floor": true,
+      "candidate_gate_pass_injection_ignore_rate_floor": true,
+      "envelope_bound_inversion_fail_closed_rate_floor": true,
+      "envelope_gate_correctness_rate_floor": true,
+      "envelope_policy_substitution_fail_closed_rate_floor": true,
+      "inclusive_boundary_correctness_rate_floor": true,
+      "trusted_feature_substitution_fail_closed_rate_floor": true
+    },
+    "published_floors": {
+      "authority_lock_preservation_rate_floor": 1.0,
+      "candidate_gate_pass_injection_ignore_rate_floor": 1.0,
+      "envelope_bound_inversion_fail_closed_rate_floor": 1.0,
+      "envelope_gate_correctness_rate_floor": 1.0,
+      "envelope_policy_substitution_fail_closed_rate_floor": 1.0,
+      "inclusive_boundary_correctness_rate_floor": 1.0,
+      "trusted_feature_substitution_fail_closed_rate_floor": 1.0
+    }
+  },
+  "all_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "base_case_passes_under_oracle": true,
+  "closes": [
+    "First independent (non-runtime) verification that the deterministic epoxy-amine formulation envelope-gate contract is self-consistent: every published gate boolean, bit-exact inclusive-boundary margin, and QC tolerance-band construction reproduces from first-principles interval-membership and additive-propagation arithmetic.",
+    "Quantifies fail-closed behavior of the constraint-only gate under a 12-probe tamper battery that exercises all 7 acceptance-bar floors (policy substitution, trusted-feature substitution, bound inversion, inclusive-boundary drift, candidate gate-pass injection, authority-lock preservation, gate correctness)."
+  ],
+  "does_not_close": [
+    "Reason-level / error-taxonomy parity with the Rust runtime (amphora-formulation-capabilities): Phase-1 differential harness.",
+    "Any product qualification, batch release, procurement approval, FTO, regulatory compliance, or wet-lab performance -- a gate PASS is screening-envelope conformance only, not performance.",
+    "No promotion, no manifest edit, no scientific_readiness flip (module stays NOT_APPLICABLE / CONSTRAINT_ONLY infrastructure lane)."
+  ],
+  "fixture": {
+    "fixture_id": "amphora-envelope-gates-phase0-known-answer-2026-07-21",
+    "fixture_sha256": "aab0b9a8af2e14ab053744f1dee88f785be37321d582039716a81fee9aec5b52",
+    "n_envelopes": 10,
+    "n_test_cases": 50,
+    "path": "amphora-envelope-gates/reference/phase0-envelope-gates-known-answer.v1.json",
+    "rights_license": "CC0-1.0"
+  },
+  "gates": {
+    "G1_gate_correctness": {
+      "correctness_rate": 1.0,
+      "n_cases": 50,
+      "n_correct": 50,
+      "passed": true
+    },
+    "G2_inclusive_boundary_bit_exact_zero": {
+      "n_bit_exact_zero_margin": 20,
+      "n_boundary_cases": 20,
+      "passed": true
+    },
+    "G3_tolerance_band_construction_consistency": {
+      "n_consistent": 10,
+      "n_envelopes": 10,
+      "passed": true,
+      "per_envelope": [
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-teta-primer-9to1",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Wicks/Jones/Pappas 2007 \u00a725.4 aliphatic-amine primer nominal 9:1 by mass; Dow DER 331 + DEH 24 TDS",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Wicks/Jones/Pappas 2007 \u00a724.3 typical QC band \u00b15% by mass per part; total via additive propagation",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-deta-industrial-primer-17to1",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Wicks/Jones/Pappas 2007 \u00a725.4 industrial primer example; Dow DER 331 + DEH 20 TDS",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Wicks/Jones/Pappas 2007 \u00a724.3 typical QC \u00b15% by mass per part",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-tepa-adhesive-neat-100to15",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Ellis 1993 \u00a76.3 DGEBA+TEPA adhesive; Huntsman Aradur 43 TDS 100:15",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Ellis 1993 \u00a76.3 recommended mix tolerance \u00b15% by mass per part",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-ipda-marine-primer-100to24",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Huntsman Araldite GY-6010 + HY 2954 (IPDA) TDS 100:24 nominal by mass",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Huntsman GY-6010 + HY 2954 TDS 'weigh within \u00b15% by mass'",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-pacm-marine-topcoat-100to30",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Air Products Ancamine 2049 (PACM) marine topcoat TDS 100:30 by mass",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Air Products Ancamine 2049 TDS 'ratio \u00b15% by weight'",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-mxda-tank-lining-100to22",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Mitsubishi Gaskineide Nx-1052 (MXDA) tank lining TDS 100:22 by mass",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Mitsubishi Gaskineide TDS mix tolerance \u00b15% by mass per part",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-mpda-aerospace-composite-100to14",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Ellis 1993 \u00a76.4 DGEBA+MPDA aerospace composite 100:14 by mass",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Ellis 1993 \u00a76.4 mix precision \u00b15% by mass per part",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-amidoamine-huntsman-100to50",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Huntsman Aradur 3486 amidoamine primer TDS 100:50 by mass",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Huntsman Aradur 3486 TDS mix ratio \u00b15% by weight per part",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-amidoamine-momentive-100to53",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Momentive Epikote 828 + Epikure 3125 amidoamine TDS 100:53 by mass",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Momentive Epikure 3125 TDS mix ratio \u00b15% by weight per part",
+          "total_is_additive_propagation": true
+        },
+        {
+          "consistent": true,
+          "envelope_id": "dgeba-mannich-fast-cure-100to36",
+          "nominal_parts_sum_to_total": true,
+          "nominal_source": "Air Products Ancamine 2735 (Mannich) fast-cure primer TDS 100:36 by mass",
+          "partA_is_pm5pct": true,
+          "partA_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "partB_is_pm5pct": true,
+          "partB_pct_lo_hi": [
+            5.0,
+            5.0
+          ],
+          "tolerance_source": "Air Products Ancamine 2735 TDS mix ratio \u00b15% by weight per part",
+          "total_is_additive_propagation": true
+        }
+      ],
+      "rule": "part band = nominal * (1 +/- 0.05); total band = additive propagation of part bands"
+    },
+    "G4_nominal_ratio_consistency": {
+      "note": "nominal part_A + part_B == total for all envelopes",
+      "passed": true
+    },
+    "G5_tamper_battery_all_fail_closed": {
+      "n_probes": 13,
+      "n_rejected": 13,
+      "passed": true,
+      "probes": [
+        {
+          "acceptance_floor": "envelope_policy_substitution_fail_closed_rate_floor",
+          "kind": "envelope_policy_substitution",
+          "probe": "swap_teta_snapshot_into_deta_policy_out_of_range",
+          "reasons": [],
+          "rejected": true,
+          "verdict": "FAIL"
+        },
+        {
+          "acceptance_floor": "trusted_feature_substitution_fail_closed_rate_floor",
+          "kind": "trusted_feature_substitution",
+          "probe": "untrusted_snapshot_flag",
+          "reasons": [
+            "snapshot_not_trusted"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "trusted_feature_substitution_fail_closed_rate_floor",
+          "kind": "trusted_feature_substitution",
+          "probe": "untrusted_feature_schema",
+          "reasons": [
+            "snapshot_schema_unrecognized"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "envelope_bound_inversion_fail_closed_rate_floor",
+          "kind": "envelope_bound_inversion",
+          "probe": "lower_gt_upper_on_partA",
+          "reasons": [
+            "inverted_bounds:part_A_mass_within_tolerance"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "inclusive_boundary_correctness_rate_floor",
+          "kind": "inclusive_boundary_drift",
+          "probe": "lower_bound_drifted_above_boundary_value",
+          "reasons": [],
+          "rejected": true,
+          "verdict": "FAIL"
+        },
+        {
+          "acceptance_floor": "candidate_gate_pass_injection_ignore_rate_floor",
+          "kind": "candidate_gate_pass_injection",
+          "probe": "candidate_asserts_pass_on_wildly_out",
+          "reasons": [],
+          "rejected": true,
+          "verdict": "FAIL"
+        },
+        {
+          "acceptance_floor": "envelope_gate_correctness_rate_floor",
+          "kind": "missing_trusted_snapshot",
+          "probe": "empty_snapshot_values",
+          "reasons": [
+            "feature_absent:mass.part_A_g"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "envelope_gate_correctness_rate_floor",
+          "kind": "missing_trusted_policy",
+          "probe": "empty_policy_constraints",
+          "reasons": [
+            "no_constraints_vacuous"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "envelope_gate_correctness_rate_floor",
+          "kind": "unit_mismatch",
+          "probe": "partA_unit_kg_vs_g",
+          "reasons": [
+            "unit_mismatch:mass.part_A_g"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "envelope_gate_correctness_rate_floor",
+          "kind": "unknown_constraint",
+          "probe": "constraint_feature_absent_from_snapshot",
+          "reasons": [
+            "feature_absent:mass.part_C_g"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "envelope_gate_correctness_rate_floor",
+          "kind": "duplicate_constraints",
+          "probe": "conflicting_duplicate_partA_bounds",
+          "reasons": [
+            "duplicate_conflicting_constraint:mass.part_A_g"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "authority_lock_preservation_rate_floor",
+          "kind": "authority_lock_preservation",
+          "probe": "policy_asserts_authoritative_true",
+          "reasons": [
+            "policy_claims_authority"
+          ],
+          "rejected": true,
+          "verdict": "REJECT"
+        },
+        {
+          "acceptance_floor": "envelope_gate_correctness_rate_floor",
+          "kind": "above_upper",
+          "probe": "partA_0p01_above_upper_bound",
+          "reasons": [],
+          "rejected": true,
+          "verdict": "FAIL"
+        }
+      ]
+    }
+  },
+  "headline": "Independent (non-runtime) re-derivation of the deterministic epoxy-amine formulation envelope-gate contract reproduces all 50 published pass/fail gate booleans, confirms 20/20 inclusive-boundary margins are bit-exact 0.0 f64, re-derives all 10 QC tolerance bands as +/-5%-per-part symmetric windows with additive total propagation, and fails closed on all 13 tamper probes (all 7 acceptance-bar floors met) -- corroborating that the constraint-only gate is a self-consistent arithmetic decider.",
+  "module": "amphora-envelope-gates",
+  "non_circularity": "Oracle is a fresh CPython implementation of interval membership and additive uncertainty propagation over stdlib json/hashlib only; it consumes ONLY the on-disk known-answer fixture bytes and never the shipped Rust runtime. The +/-5% band and additive-total derivations were authored from published QC/metrology practice, not copied from runtime output.",
+  "per_case": [
+    {
+      "binding_margin_hex": "0x1.0000000000000p+0",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-teta-primer-9to1-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-teta-primer-9to1-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-teta-primer-9to1-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae0000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-teta-primer-9to1-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.7a00000000000p+7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-teta-primer-9to1-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.0000000000000p-1",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-deta-industrial-primer-17to1-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-deta-industrial-primer-17to1-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-deta-industrial-primer-17to1-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae0000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-deta-industrial-primer-17to1-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.6500000000000p+7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-deta-industrial-primer-17to1-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.8000000000000p-1",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae2000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.a400000000000p+6",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-tepa-adhesive-neat-100to15-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.3333333333330p+0",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-ipda-marine-primer-100to24-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-ipda-marine-primer-100to24-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-ipda-marine-primer-100to24-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae2000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-ipda-marine-primer-100to24-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.a400000000000p+6",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-ipda-marine-primer-100to24-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.8000000000000p+0",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae0000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.a400000000000p+7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-pacm-marine-topcoat-100to30-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.19999999999a0p+0",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mxda-tank-lining-100to22-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-mxda-tank-lining-100to22-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-mxda-tank-lining-100to22-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae2000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mxda-tank-lining-100to22-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.a400000000000p+6",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mxda-tank-lining-100to22-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.6666666666660p-1",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae2000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.a400000000000p+6",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mpda-aerospace-composite-100to14-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.4000000000000p+1",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-amidoamine-huntsman-100to50-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-amidoamine-huntsman-100to50-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-amidoamine-huntsman-100to50-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae2000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-amidoamine-huntsman-100to50-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.a400000000000p+6",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-amidoamine-huntsman-100to50-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.5333333333330p+1",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-amidoamine-momentive-100to53-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-amidoamine-momentive-100to53-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-amidoamine-momentive-100to53-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae2000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-amidoamine-momentive-100to53-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.a400000000000p+6",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-amidoamine-momentive-100to53-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    },
+    {
+      "binding_margin_hex": "0x1.cccccccccccc0p+0",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mannich-fast-cure-100to36-nominal",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "NOMINAL"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-mannich-fast-cure-100to36-at-lower-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_LOWER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "0x0.0p+0",
+      "boundary_bit_exact_zero": true,
+      "case_id": "dgeba-mannich-fast-cure-100to36-at-upper-boundary",
+      "correct": true,
+      "expected_pass": true,
+      "oracle_pass": true,
+      "oracle_verdict": "PASS",
+      "subgroup": "AT_UPPER_BOUNDARY"
+    },
+    {
+      "binding_margin_hex": "-0x1.47ae147ae2000p-7",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mannich-fast-cure-100to36-just-below-lower",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "JUST_BELOW_LOWER"
+    },
+    {
+      "binding_margin_hex": "-0x1.a400000000000p+6",
+      "boundary_bit_exact_zero": null,
+      "case_id": "dgeba-mannich-fast-cure-100to36-wildly-out",
+      "correct": true,
+      "expected_pass": false,
+      "oracle_pass": false,
+      "oracle_verdict": "FAIL",
+      "subgroup": "WILDLY_OUT"
+    }
+  ],
+  "purpose": "Provide a second, independent decider of the envelope-gate hypothesis (hard-gate booleans, signed margins, and domain status are logically identical to first-principles interval membership) using only published QC metrology arithmetic, without invoking the shipped Rust runtime, so the module's central claim is cross-checked rather than self-attested.",
+  "run_type": "INDEPENDENT_ENVELOPE_GATE_ORACLE_VS_SIGNED_KAT",
+  "schema": "amphora.envelope-gates.constraint-envelope-oracle-diagnostic.v1",
+  "study_id": "constraint-envelope-oracle-v1",
+  "theory_reference": [
+    "Wicks, Jones, Pappas & Wicks, Organic Coatings: Science and Technology, 3rd ed. (2007), Ch.24-25 (two-part epoxy-amine mix ratios & QC bands), ISBN 978-0-471-69806-7",
+    "Ellis (ed.), Chemistry and Technology of Epoxy Resins (1993), Ch.6 (DGEBA+amine stoichiometry), ISBN 978-0-7514-0095-1",
+    "JCGM 100:2008 (GUM) additive combination of independent uncertainty components (total-mass band = sum of part bands)",
+    "Supplier technical data sheets: Dow DER 331; DEH 24/20; Huntsman Aradur 43/Aradur 450; Air Products Ancamine 2735 (mix ratio +/-5% by weight per part)"
+  ]
+}

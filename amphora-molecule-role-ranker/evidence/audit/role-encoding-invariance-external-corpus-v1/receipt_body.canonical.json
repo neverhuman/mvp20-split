@@ -1,0 +1,169 @@
+{
+  "attack": {
+    "corpus": [
+      {
+        "expected_role": "hardener",
+        "id": "dds-diaminodiphenyl-sulfone",
+        "n_variant_disagreements": 0,
+        "observed_role": "hardener",
+        "role_pass": true,
+        "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1"
+      },
+      {
+        "expected_role": "hardener",
+        "id": "compound5-vanillin-derived-amine-hardener",
+        "n_variant_disagreements": 0,
+        "observed_role": "hardener",
+        "role_pass": true,
+        "smiles": "NCc1cc(OC)c(N)cc1"
+      },
+      {
+        "expected_role": "hardener",
+        "id": "compound6-syringaldehyde-derived-amine-hardener",
+        "n_variant_disagreements": 0,
+        "observed_role": "hardener",
+        "role_pass": true,
+        "smiles": "NCc1cc(OC)c(N)c(OC)c1"
+      },
+      {
+        "expected_role": "hardener",
+        "id": "jeffamine-d400-baxxodur-ec302-polyetheramine-analog",
+        "n_variant_disagreements": 0,
+        "observed_role": "hardener",
+        "role_pass": true,
+        "smiles": "CC(N)COC(C)COC(C)COC(C)COC(C)COC(C)CN"
+      },
+      {
+        "expected_role": "hardener",
+        "id": "phenalkamine-cardanol-teta-mannich-base",
+        "n_variant_disagreements": 0,
+        "observed_role": "hardener",
+        "role_pass": true,
+        "smiles": "Oc1cc(CCCCCCCCCCCCCCC)ccc1CNCCNCCNCCN"
+      },
+      {
+        "expected_role": "resin",
+        "id": "erl4221-cycloaliphatic-fused-bicyclic-diepoxide",
+        "n_variant_disagreements": 0,
+        "observed_role": "resin",
+        "role_pass": true,
+        "smiles": "O=C(OCC1CCC2OC2C1)C3CCC4OC4C3"
+      }
+    ],
+    "harness_path": "amphora-molecule-role-ranker/evidence/audit/role-encoding-invariance-external-corpus-v1/run_encoding_invariance_external_corpus.py",
+    "harness_sha256": "03b8d2efdde137b0ad1be886d8e9cc107bafe67dcda3b1940b28998c3849f75a",
+    "new_probe_physical_admissibility": [
+      {
+        "cited_average_mw": 252.31,
+        "cited_formula": "C14H20O4",
+        "formula_matches": true,
+        "id": "erl4221-cycloaliphatic-fused-bicyclic-diepoxide",
+        "mw_matches": true,
+        "recomputed_average_mw": 252.31,
+        "recomputed_formula": "C14H20O4"
+      }
+    ],
+    "observed": "6/6 role matches, 0 encoding-invariance disagreements across 135 deterministic re-encodings -- refutation criterion NOT triggered",
+    "refutation_criterion": "would REFUTE if any external-corpus molecule's re-derived role != its literature-expected role, OR if any deterministic SMILES re-encoding (canonical/kekule/rooted-at-any-atom/explicit-H) of any corpus molecule produced different derived handles or a different role than its base encoding",
+    "smarts_fidelity_to_source_receipt": {
+      "smarts_byte_identical_to_source": true,
+      "source_diagnostic_path": "amphora-molecule-role-ranker/benchmarks/role-fact-provenance-invariance-v1/diagnostic.canonical.json",
+      "source_diagnostic_sha256_matches_recorded": true,
+      "source_diagnostic_sha256_observed": "7cf8584aa40774832eebf71b46026a9ed922327a37621edc6369e5aa32655a48"
+    },
+    "type": "external-corpus SMILES-encoding-invariance stress test"
+  },
+  "authority": "AUDIT_ONLY",
+  "campaign_item_id": "",
+  "claim_locks": {
+    "measured_only_lock_preserved": true,
+    "no_objective_emitted": true,
+    "promotes_authority": false
+  },
+  "claim_under_attack": {
+    "asserted": "role-fact-provenance-invariance-v1 (never before ledger-attacked): the zero-parameter role rule stays invariant across a deterministic sweep of SMILES encodings (canonical + kekule + every-heavy-atom-rooted + explicit-H) -- 'a molecule cannot change its resin/hardener/ABSTAIN role by being written differently'. Scored ONLY on the module's own 39-record self-authored fixture.",
+    "metric": "encoding_invariance.verdict = ROLE_VERDICT_INVARIANT_UNDER_SMILES_REENCODING (549/549 evaluations, 0 disagreements)",
+    "receipt": "amphora-molecule-role-ranker/benchmarks/role-fact-provenance-invariance-v1/replay_receipt.v1.dsse.json",
+    "receipt_sha256_at_attack_time": "7cf8584aa40774832eebf71b46026a9ed922327a37621edc6369e5aa32655a48"
+  },
+  "closes": [],
+  "does_not_close": [
+    "EVALUATION_SIGNATURE_ABSENT (trust-anchored phase0-evaluator key absent for a real Phase-1 evaluation)",
+    "PHASE_1_INDEPENDENT_EVALUATION (still needs external double-labelled expert reference)",
+    "RDKit_C++_CEILING (still RDKit-only; no second cheminformatics toolkit cross-check)"
+  ],
+  "fire_id": "20260816T160001-450461-36832d3d5ce2",
+  "fire_sequence": "ROTATION fire, empty campaign item. Read the module's full falsification-ledger history (10 prior fires). role-fact-provenance-invariance-v1's SMILES-encoding-invariance claim had never appeared in logs/falsification-ledger.jsonl under any module -- an untested but heavily relied-upon receipt (it is what makes the flagship role-classification-kpi's structural handles trustworthy against encoding-evasion). Attack: independently reconstructed the identical encoding-sweep methodology (SMARTS byte-verified against the source receipt's own diagnostic) and re-ran it on 6 real molecules the original 39-fixture sweep never saw: the 5 real external hardener chemotypes from role-external-corpus-validation-v1 (far more atoms/rotatable bonds than the fixture, stressing the every-heavy-atom-rooted sweep much harder) plus 1 brand-new real fused-bicyclic cycloaliphatic diepoxide resin chemotype (ERL-4221, CAS 2386-87-0) never probed by any prior role-ranker fire, whose formula/MW was independently re-derived from its SMILES and checked against the cited literature values before use as a probe.",
+  "flips_scientific_readiness": false,
+  "headline_result": {
+    "interpretation": "6/6 external-corpus molecules (5 real, previously-validated hardener chemotypes + 1 new real fused-bicyclic cycloaliphatic diepoxide resin, CAS-verified formula/MW admissibility 1/1) got the expected role, with 0 SMILES-encoding-invariance disagreements across 135 deterministic re-encodings (canonical + kekule + every-heavy-atom-rooted + explicit-H). Positive control: the identical comparison path detected a planted structural defect (both aniline -NH2 groups struck from DDS) as True. Verdict: CLAIM_SURVIVED.",
+    "n_disagreements": 0,
+    "n_molecules": 6,
+    "n_role_pass": 6,
+    "total_encoding_variant_evaluations": 135,
+    "verdict": "CLAIM_SURVIVED"
+  },
+  "human_review_performed": false,
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-molecule-role-ranker",
+  "organizational_independence_asserted": false,
+  "phase0_gap_ledger": {
+    "EVALUATION_SIGNATURE_ABSENT": "trust-anchored phase0-evaluator private key used for AUDIT_ONLY signing only, not a Phase-0 evaluation/review signature",
+    "MANIFEST_UNCHANGED": "master receipts manifest (66 receipts / 11 modules) NOT edited; requires human dual-identity Phase-0 ceremony keys",
+    "NEW_FINDING": "SMILES-encoding invariance for the deterministic role rule now has positive evidence beyond the self-authored fixture: 0/135 disagreements across 6 real external molecules including a fused-bicyclic cycloaliphatic diepoxide chemotype (a documented SSSR/ring-perception edge case) never previously probed for encoding stability.",
+    "SCOPE": "extends encoding-invariance evidence to 6 real external molecules (still RDKit-only, still no double-labelled expert reference); the underlying role rule and SMARTS handles are UNCHANGED from the receipt under attack"
+  },
+  "positive_control": {
+    "base_handles": {
+      "has_oxirane": false,
+      "has_reactive_amine_hydrogen": true,
+      "oxirane_ring_count": 0,
+      "reactive_amine_hydrogen_count": 4
+    },
+    "base_role": "hardener",
+    "detected": true,
+    "evidence": "reactive_amine_hydrogen_count 4 -> 0; role hardener -> ABSTAIN",
+    "how_planted": "string edit: 'Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1' -> 'c1ccc(cc1)S(=O)(=O)c1ccc(cc1)' (both leading/trailing N removed)",
+    "planted_defect": "both aniline -NH2 groups on DDS (CAS 80-08-0, Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1, a real hardener) struck to -H (yielding plain diphenyl sulfone, a real non-reactive out-of-domain molecule), fed through the identical derive_handles/role_of comparison path used by the real encoding-invariance loop above, as if it were a claimed re-encoding of the same molecule",
+    "poisoned_handles": {
+      "has_oxirane": false,
+      "has_reactive_amine_hydrogen": false,
+      "oxirane_ring_count": 0,
+      "reactive_amine_hydrogen_count": 0
+    },
+    "poisoned_role": "ABSTAIN"
+  },
+  "promotes_authority": false,
+  "receipt_id": "role-encoding-invariance-external-corpus-f46ebbf48f5d521ce297b3b6d9aada10",
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "f46ebbf48f5d521ce297b3b6d9aada1024787648482d37e0fc68bfcdeddbc52c",
+    "external_corpus_source_sha256": "63c8db44831874c55449e1db4c50f9209758674f0e7dd41c0afd9a84508c0f77",
+    "harness_sha256": "03b8d2efdde137b0ad1be886d8e9cc107bafe67dcda3b1940b28998c3849f75a",
+    "independent_runs": true,
+    "rdkit_version": "2026.03.2",
+    "replays": 2,
+    "runB_diagnostic_sha256": "f46ebbf48f5d521ce297b3b6d9aada1024787648482d37e0fc68bfcdeddbc52c",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "run_type": "SCIENCE_VALIDATION_REATTACK",
+  "schema": "amphora.molecule-role-ranker.role-encoding-invariance-external-corpus-audit-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY falsification receipt under evidence/audit/"
+  }
+}

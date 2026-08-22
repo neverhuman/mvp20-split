@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "1bd68091dba22ec31bcb4063b3f30c49ed1d981bbfa23731a6069afda80d8a49",
+  "module_id": "amphora-envelope-gates",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

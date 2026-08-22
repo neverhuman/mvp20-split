@@ -1,0 +1,377 @@
+{
+  "acquired_at": "2026-07-10T19:50:12Z",
+  "manifest_sha256": "f5d367ed0338b73ed53876c24eca831cba438662417e811d472bc65103a59aa4",
+  "schema_version": "amphora.feedback_v1.dataset_context.v1",
+  "source_count": 6,
+  "sources": [
+    {
+      "access_status": "public_direct",
+      "acquisition_status": "ACQUIRED",
+      "attempts": [
+        {
+          "filename": "BigSolDBv2.0.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:48Z",
+          "url": "https://zenodo.org/records/15094979/files/BigSolDBv2.0.csv?download=1"
+        },
+        {
+          "filename": "BigSolDBv2.0_densities.csv",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://zenodo.org/records/15094979/files/BigSolDBv2.0_densities.csv?download=1"
+        }
+      ],
+      "checksum_pass_count": 2,
+      "claim_locks": {
+        "dataset_is_benchmark_context_only": true,
+        "does_not_change_red_or_fallback_rules": true
+      },
+      "download_count": 2,
+      "id": "bigsoldb_v2",
+      "license": "CC-BY-4.0",
+      "local_raw_path": "feedback/v1/external_data/bigsoldb_v2/raw",
+      "profiles": [
+        {
+          "columns": 12,
+          "file": "BigSolDBv2.0.csv",
+          "headers": [
+            "SMILES_Solute",
+            "Temperature_K",
+            "Solvent",
+            "SMILES_Solvent",
+            "Solubility(mole_fraction)",
+            "Solubility(mol/L)",
+            "LogS(mol/L)",
+            "Compound_Name",
+            "CAS",
+            "PubChem_CID",
+            "FDA_Approved",
+            "Source"
+          ],
+          "kind": "csv",
+          "rows": 103944
+        },
+        {
+          "columns": 4,
+          "file": "BigSolDBv2.0_densities.csv",
+          "headers": [
+            "Solvent",
+            "Temperature_K",
+            "Density_g/cm^3",
+            "Source"
+          ],
+          "kind": "csv",
+          "rows": 2210
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [],
+      "source_url": "https://zenodo.org/records/15094979",
+      "target_repos": [
+        "amphora-solvency-score",
+        "amphora-design-rule-score",
+        "amphora-source-ledger",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "manual_reference",
+      "acquisition_status": "BLOCKED_AFTER_ATTEMPTS",
+      "attempts": [
+        {
+          "bytes": 1905,
+          "http_code": 200,
+          "method": "DISCOVERY_GET",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:11Z",
+          "url": "https://materialsmine.org/nm"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "manual_portal_reference_only": true
+      },
+      "download_count": 0,
+      "id": "nanomine",
+      "license": "portal reference; no conservative bulk artifact selected",
+      "local_raw_path": "feedback/v1/external_data/nanomine/raw",
+      "profiles": [],
+      "skip_reason": "manual_export_required_no_official_bulk_api_export_found",
+      "skipped_files": [],
+      "source_url": "https://materialsmine.org/nm",
+      "target_repos": [
+        "amphora-source-ledger",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "public_direct",
+      "acquisition_status": "PARTIAL",
+      "attempts": [
+        {
+          "filename": "CORR-DATA_Database.zip",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://opendata.nist.gov/1851/CORR-DATA_Database.zip"
+        },
+        {
+          "filename": "CORR-DATA_Database.zip.sha256",
+          "http_code": 200,
+          "method": "HEAD",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://opendata.nist.gov/1851/CORR-DATA_Database.zip.sha256"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "HEAD",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET_RANGE",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:49Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:50Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:52Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:56Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt"
+        },
+        {
+          "bytes": 123984,
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 200,
+          "method": "DISCOVERY_GET",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:49:56Z",
+          "url": "https://catalog.data.gov/dataset/corr-data"
+        },
+        {
+          "error": "HTTP Error 404: Not Found",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 404,
+          "method": "DISCOVERY_API",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:56Z",
+          "url": "https://catalog.data.gov/api/3/action/package_show?id=corr-data"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:56Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt.sha256"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:49:59Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt.sha256"
+        },
+        {
+          "error": "HTTP Error 403: Forbidden",
+          "filename": "CORR-DATA-fields.txt",
+          "http_code": 403,
+          "method": "GET",
+          "status": "HTTP_ERROR",
+          "timestamp": "2026-07-10T19:50:03Z",
+          "url": "https://opendata.nist.gov/od/ds/54AE54FB37AC022DE0531A570681D4291851/CORR-DATA-fields.txt.sha256"
+        }
+      ],
+      "checksum_pass_count": 2,
+      "claim_locks": {
+        "no_candidate_corrosion_validation": true,
+        "public_corrosion_data_is_evidence_only": true
+      },
+      "download_count": 2,
+      "id": "nist_corr_data",
+      "license": "NIST open license",
+      "local_raw_path": "feedback/v1/external_data/nist_corr_data/raw",
+      "profiles": [
+        {
+          "file": "CORR-DATA_Database.zip",
+          "kind": "zip",
+          "member_count": 3,
+          "members_sample": [
+            "CORR-DATA_Database.csv",
+            "about-CORR-DATA_Database.txt",
+            "columnDefinitions.txt"
+          ],
+          "total_uncompressed_bytes": 5511842
+        },
+        {
+          "bytes": 64,
+          "file": "CORR-DATA_Database.zip.sha256",
+          "kind": "file"
+        }
+      ],
+      "skip_reason": null,
+      "skipped_files": [
+        {
+          "filename": "CORR-DATA-fields.txt",
+          "reason": "download failed for CORR-DATA-fields.txt: HTTP Error 403: Forbidden"
+        }
+      ],
+      "source_url": "https://catalog.data.gov/dataset/corr-data",
+      "target_repos": [
+        "amphora-public-corrosion-benchmark",
+        "amphora-barrier-corrosion-score",
+        "amphora-source-ledger",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "prohibited_bulk",
+      "acquisition_status": "BLOCKED_AFTER_ATTEMPTS",
+      "attempts": [
+        {
+          "bytes": 23456,
+          "http_code": 200,
+          "method": "DISCOVERY_GET",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:11Z",
+          "url": "https://polymer.nims.go.jp/en/"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "bulk_download_prohibited": true,
+        "no_scraping_or_manual_mass_collection": true
+      },
+      "download_count": 0,
+      "id": "polyinfo",
+      "license": "MatNavi Service Terms of Use",
+      "local_raw_path": "feedback/v1/external_data/polyinfo/raw",
+      "profiles": [],
+      "skip_reason": "bulk_download_prohibited_no_official_export_found",
+      "skipped_files": [],
+      "source_url": "https://polymer.nims.go.jp/en/",
+      "target_repos": [
+        "amphora-source-ledger",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "service_reference_only",
+      "acquisition_status": "BLOCKED_AFTER_ATTEMPTS",
+      "attempts": [
+        {
+          "bytes": 95569,
+          "http_code": 200,
+          "method": "DISCOVERY_GET",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:11Z",
+          "url": "https://lively.chbe.gatech.edu/polymer-genome"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "tool_reference_not_ingested_as_public_dataset": true
+      },
+      "download_count": 0,
+      "id": "polymer_genome",
+      "license": "service reference; no bulk public dataset identified",
+      "local_raw_path": "feedback/v1/external_data/polymer_genome/raw",
+      "profiles": [],
+      "skip_reason": "service_reference_metadata_only_no_public_dataset_artifact_found",
+      "skipped_files": [],
+      "source_url": "https://lively.chbe.gatech.edu/polymer-genome",
+      "target_repos": [
+        "amphora-source-ledger",
+        "amphora-known-answer-benchmarks"
+      ]
+    },
+    {
+      "access_status": "metadata_only",
+      "acquisition_status": "PARTIAL",
+      "attempts": [
+        {
+          "bytes": 63029,
+          "filename": "polyomics_arxiv_abs.html",
+          "http_code": 200,
+          "method": "DISCOVERY_GET",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:11Z",
+          "url": "https://arxiv.org/abs/2511.11626"
+        },
+        {
+          "bytes": 8448990,
+          "filename": "polyomics_preprint.pdf",
+          "http_code": 200,
+          "method": "GET",
+          "status": "OK",
+          "timestamp": "2026-07-10T19:50:12Z",
+          "url": "https://arxiv.org/pdf/2511.11626"
+        }
+      ],
+      "checksum_pass_count": 0,
+      "claim_locks": {
+        "preprint_metadata_not_ingested_as_dataset": true
+      },
+      "download_count": 2,
+      "id": "polyomics",
+      "license": "preprint metadata only",
+      "local_raw_path": "feedback/v1/external_data/polyomics/raw",
+      "profiles": [
+        {
+          "bytes": 63029,
+          "file": "polyomics_arxiv_abs.html",
+          "kind": "file"
+        },
+        {
+          "bytes": 8448990,
+          "file": "polyomics_preprint.pdf",
+          "kind": "file"
+        }
+      ],
+      "skip_reason": "metadata_downloaded_no_dataset_artifact_found",
+      "skipped_files": [],
+      "source_url": "https://arxiv.org/abs/2511.11626",
+      "target_repos": [
+        "amphora-source-ledger",
+        "amphora-known-answer-benchmarks"
+      ]
+    }
+  ]
+}

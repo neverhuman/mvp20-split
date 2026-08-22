@@ -1,0 +1,231 @@
+{
+  "authority": "AUDIT_ONLY",
+  "authority_ceiling": "EVIDENCE_ONLY",
+  "campaign_item_id": "W-FFI2",
+  "claim_under_attack": {
+    "claim_text": "Active-hydrogen counting is correct for every amine class that appears in real coatings.",
+    "prior_related_receipts": {
+      "R-N02_coordinated_cn_fix": {
+        "path": "amphora-rdkit-ffi/evidence/phase0/repairs/R-N02/done/rn02-rdkit-ffi-coordinated-cn-fix-repair-receipt.v1.dsse.json",
+        "sha256": "07e00ec5f7bd9a172ac4da3d26e239d8699045d04a3eff4806434c779b022fbe"
+      },
+      "V-N02c_independent_verify": {
+        "path": "amphora-rdkit-ffi/evidence/phase0/repairs/V-N02c/done/v-n02c-rdkit-ffi-independent-verify-receipt.v1.dsse.json",
+        "sha256": "af0df4b37af59fe3a01255ad737c51d6caf41f7e5fa90c7887e3416766b64b2e"
+      },
+      "W-FFI1_refutation": {
+        "path": "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI1/done/w-ffi1-rdkit-ffi-ahew-class-validation-receipt.v1.dsse.json",
+        "sha256": "12d7dc29bf49968aa0d5934d9a9760473c241005c51d97f5cc6763d8ac3149d7"
+      }
+    },
+    "receipt_path": "amphora-rdkit-ffi/src/bridge.cc"
+  },
+  "crate_test": {
+    "command": "cargo test -p amphora-rdkit-ffi --features rdkit",
+    "modified_tests": [
+      "pinned_native_backend_excludes_guanidine_class_amine_hydrogens (dicyandiamide moved out of the all-zero probe list into its own dedicated test)"
+    ],
+    "new_tests": [
+      "pinned_native_backend_scores_dicyandiamide_functionality_four"
+    ],
+    "result": {
+      "failed": 0,
+      "ignored": 0,
+      "passed": 8,
+      "status": "ok"
+    }
+  },
+  "date": "2026-08-06",
+  "does_not_close": [
+    "amphora-molecule-capabilities's companion R-N02-era test (role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi) is now stale on its dicyandiamide row and needs its own coordinated update (matching this repair's structural criterion) in a fire permitted to write to that module; cargo test --workspace is NOT fully green until that companion fix lands.",
+    "Any change to amphora-molecule-property's independent Python AHEW re-implementation (n_active_amine_nh, compute_amine_class.py) or its own frozen audit artifacts -- out of this module's scope, not touched.",
+    "Whether DICY's functionality should be modeled as exactly 4 (simple N-H count, used here) or mechanistically higher (~7, if the nitrile's own later high-temperature addition across the triple bond is also counted) remains open; this repair implements the textbook/patent functionality-4 convention only, consistent with W-FFI1's own scoping.",
+    "The vinylogous-enaminone and ketimine side effects already disclosed by V-N02c as out-of-scope, non-refuting findings; not re-attacked here."
+  ],
+  "fire_id": "20260806T090003-2795399-4f0d8fc61dda",
+  "flips_scientific_readiness": false,
+  "gates_summary": {
+    "crate_level_cargo_test_green": true,
+    "original_refuting_harnesses_re_run_unmodified": true,
+    "positive_control_detects_planted_defect": true,
+    "real_production_ffi_not_reimplemented": true,
+    "signature_field_is_dsse_envelope_object": true,
+    "two_replay_byte_stable_this_receipt": true,
+    "workspace_level_cargo_test_green": false,
+    "zero_regressions_among_non_targeted_probes": true
+  },
+  "generated_on_host": "xbabe2",
+  "human_review_performed": false,
+  "implementation": {
+    "exclusion_logic_change": "count_reactive_amine_hydrogens no longer treats is_amidine_or_guanidine_carbon as unconditionally exclusionary; it additionally requires !is_cyanamide_substituted_guanidine_carbon. is_carbonyl_carbon/is_sulfonyl_sulfur exclusions are untouched.",
+    "file": "amphora-rdkit-ffi/src/bridge.cc",
+    "new_predicates": [
+      "is_nitrile_carbon",
+      "is_cyanamide_substituted_guanidine_carbon"
+    ]
+  },
+  "input_artifacts": {
+    "bridge_cc_after_sha256": "e9f70d8893118d6c096d40793800ffc41c92ad4b6fc0867a0c890b2ab35914b0",
+    "bridge_cc_before_sha256": "61a019262bd5a0222395be80adf2ac3ff12887ded589ecc6ab3510f72304c37d",
+    "ffi1_verify_harness_main_rs_sha256_unmodified": "9807e41f35cedea52a8fa2ae88cb6b12552f9e8c285cd53606cd45c8c9c329e8",
+    "lib_rs_after_sha256": "ea28c416b1fef1549acd87a07975f48233a4e188e9edf103e45ad80c9244ea9d",
+    "lib_rs_before_sha256": "310f18a9688e31befad45f5e254f7133239577c989396a2a078f70934bb340c7",
+    "vn02c_verify_harness_main_rs_sha256_unmodified": "c09a4fb4b1b5eb08ddecc3b809eaf33fa381c28d2968dda38c0a7ce35f1720c1"
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_no_live_config": true,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-rdkit-ffi",
+  "objective": "W-FFI2: repair the categorical defect W-FFI1 refuted on 2026-08-05 -- dicyandiamide (DICY), a real functionality-4 stoichiometric epoxy hardener (WO1993010168A1), was categorically zeroed by R-N02's amidine/guanidine C=N exclusion. Find the chemically-principled structural boundary separating a true amidine/guanidine HARDENER (DICY) from a catalytic ACCELERATOR (DPG/DOTG/guanidine, which must stay zero per R-N02/V-N02c), state it with published support, implement it in bridge.cc, and re-run the full R-N02/V-N02c probe set plus W-FFI1's 14 pre-registered probes with zero regressions.",
+  "organizational_independence_asserted": false,
+  "positive_control": {
+    "detected": true,
+    "evidence": "cargo test --features rdkit against the mutant: pinned_native_backend_scores_dicyandiamide_functionality_four FAILS -- 'remote nitrile (not on the imine nitrogen) must not exempt the guanidine N-H: left: 4, right: 0' on probe N#CCNC(=N)N (1-(cyanomethyl)guanidine, nitrile two bonds from the guanidine carbon, not on its imine nitrogen). Against the REAL (unmutated) implementation this same test passes (0). Full mutant test log: mutant_positive_control_test.txt (7 passed; 1 failed -- the planted-defect probe, and only that one).",
+    "how_planted": "Standalone mutant copy of the crate at /tmp/wffi2-mutant/amphora-rdkit-ffi (own Cargo.toml, isolated from the workspace); src/bridge.cc's is_cyanamide_substituted_guanidine_carbon body replaced with a molecule-wide is_nitrile_carbon scan (source sha256 of the mutant file: see mutant_bridge_cc_sha256 below). All other files (src/lib.rs, including the new adversarial test) copied byte-identical from the real repaired crate.",
+    "mutant_bridge_cc_sha256": "ed63322d49a77a7794466e8c6430272b8554bd33cb863572717b367c2933ee08",
+    "mutant_test_summary": {
+      "failed": 1,
+      "ignored": 0,
+      "passed": 7,
+      "status": "FAILED"
+    },
+    "planted_defect": "is_cyanamide_substituted_guanidine_carbon broadened from 'nitrile bonded to THIS carbon's own imine nitrogen' to 'any nitrile carbon anywhere in the molecule' -- a plausible, over-exclusion-relief implementation bug of exactly the kind the narrow structural criterion exists to avoid."
+  },
+  "promotes_authority": false,
+  "re_attack_of_own_fix": {
+    "protocol": "Per REPAIR-MODE rule 2, re-ran the ORIGINAL refuting attack (W-FFI1's ffi1-verify harness, same script sha256, same command `cargo run --release`, same 14 hardcoded probes, same pre-registered refute criterion) UNMODIFIED against the repaired bridge.cc, plus the prior R-N02/V-N02c probe set (V-N02c's vn02c-verify harness, also UNMODIFIED) for regression.",
+    "r_n02_v_n02c_vn02c_verify": {
+      "failing_probe_after": {
+        "canonical_smiles": "N#CN=C(N)N",
+        "category": "r_n02_probe_reattack",
+        "expected_reactive_amine_hydrogen_count": 0,
+        "id": "dicyandiamide",
+        "observed_reactive_amine_hydrogen_count": 4,
+        "pass": false,
+        "smiles": "NC(=NC#N)N"
+      },
+      "harness": "amphora-rdkit-ffi/evidence/phase0/repairs/V-N02c/work/vn02c-verify (UNCHANGED, path-dependency picks up the repaired bridge.cc automatically)",
+      "harness_unmodified": true,
+      "n_probes_failed_after": 1,
+      "n_probes_total": 8,
+      "non_regressed_probes_after": [
+        "dpg-diphenylguanidine-accelerator",
+        "dotg-di-o-tolylguanidine-accelerator",
+        "guanidine",
+        "biguanide",
+        "ipda-isophoronediamine-hardener-sanity",
+        "agmatine-remote-amine-over-exclusion-probe",
+        "guanidinium-protonated-sanity"
+      ],
+      "two_replay_byte_stable": true,
+      "two_replay_sha256": "763296b7ff49d1657368ebc97abd23c129e4c977ae5141f924df50684166371b",
+      "verdict_after_repair_interpretation": "The harness's own hardcoded expected_reactive_amine_hydrogen_count=0 for dicyandiamide is now STALE (superseded by this repair), so its raw verdict flips to CLAIM_REFUTED on exactly that one probe -- this is the INTENDED, disclosed consequence of the fix, not a new defect. All 7 other probes (2 accelerators, guanidine, biguanide, IPDA hardener sanity, agmatine remote-amine, protonated guanidinium) are UNCHANGED and still pass: zero regressions among the probes not targeted by this repair.",
+      "verdict_after_repair_raw": "CLAIM_REFUTED",
+      "verdict_before_repair": "CLAIM_SURVIVED (8/8, including dicyandiamide=0 per its own then-correct hardcoded expectation)"
+    },
+    "w_ffi1_ffi1_verify": {
+      "dicy_row_after": {
+        "canonical_smiles": "N#CN=C(N)N",
+        "class": "amidine_guanidine_hardener",
+        "expected_formula": "C2H4N4",
+        "expected_mw_g_mol": 84.08,
+        "formula_matches": true,
+        "id": "dicy-dicyandiamide-hardener",
+        "matches_published_convention": true,
+        "mw_matches_within_0.05": true,
+        "observed_ahew_g_per_eq": 21.0205,
+        "observed_formula": "C2H4N4",
+        "observed_mw_g_mol": 84.082,
+        "observed_reactive_amine_hydrogen_count": 4,
+        "published_active_hydrogen_count": 4,
+        "published_source": "WO1993010168A1 'Bis-dicyandiamides as curing agents for epoxy resins' (1993), explicit quote: \"dicyandiamide (cyanoguanidine) has a defined degree of functionality of four, that is, it is capable of addition to four epoxide radicals\"; corroborated independently by multiple epoxy-curing patent/technical sources describing dicyandiamide as possessing four active hydrogens (with some literature noting apparent 3-active-hydrogen kinetic behavior, but never zero)",
+        "smiles": "NC(=NC#N)N"
+      },
+      "harness": "amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI1/work/ffi1-verify (UNCHANGED, path-dependency picks up the repaired bridge.cc automatically)",
+      "harness_unmodified": true,
+      "n_probes_mismatching_after": 0,
+      "n_probes_total": 14,
+      "two_replay_byte_stable": true,
+      "two_replay_sha256": "7e36e6550610f4eef0e969c10f5b3083d202e12255e86451358ddd4177dd9c6f",
+      "verdict_after_repair": "CLAIM_SURVIVED",
+      "verdict_before_repair": "CLAIM_REFUTED (1/14 mismatching: dicy-dicyandiamide-hardener observed 0 vs published 4)"
+    }
+  },
+  "receipt_id": "w-ffi2-rdkit-ffi-cyanoguanidine-repair-79c64c80895788896d7627f0f85a8d8a",
+  "repair_status": "fix_landed_in_module_workspace_companion_pending",
+  "reproducibility": {
+    "canonical_diagnostic_sha256": "79c64c80895788896d7627f0f85a8d8af1f76e34bdb551d5cb53490755adc00e",
+    "determinism_basis": "diagnostic assembled by build_diagnostic.py purely from fixed, already-captured artifact files (no RNG, no wall clock); the two underlying re-attack harness runs (ffi1-verify, vn02c-verify) were independently invoked twice each via `cargo run --release` and produced byte-identical stdout (sha256 equal) before assembly.",
+    "harness_binary_provenance": "cargo test/run against amphora-rdkit-ffi (path dependency, feature=rdkit) compiled with cxx against the pinned RDKit 2026.03.2 prefix at /home/ubuntu/.local/share/amphora/rdkit-2026.03.2; toolkit_provenance.exact_version_match=true recorded in both re-attack harness runs.",
+    "independent_runs": true,
+    "replays": 2,
+    "runB_diagnostic_sha256": "79c64c80895788896d7627f0f85a8d8af1f76e34bdb551d5cb53490755adc00e",
+    "two_replay_sha256_gate": "PASS"
+  },
+  "reviewer_reference": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-internal-reviewer-47233af18e511a305548d4ee306da018612f5b5aca201f9986504d3d7db3011b",
+    "note": "Reviewer key referenced for provenance only; no independent human review performed.",
+    "public_key_hex": "33d3a5dbcae52c449df36c0670df0fa9d8a60819d166c33b96d62b2be1db083f",
+    "reviewer_signature_present": false,
+    "role": "PHASE0_INTERNAL_REVIEWER"
+  },
+  "rights_check": "No new external data source opened. Cyanoguanidine pKa figure is a predicted value from a public chemical-property aggregator (chembk.com), used only as corroborating quantitative context alongside two primary citations (WO1993010168A1 patent text; Fedtke et al. 1993 peer-reviewed mechanistic study). No quarantined or rights-restricted source was opened.",
+  "run_type": "REPAIR_ATTEMPT",
+  "schema": "amphora.rdkit-ffi.w-ffi2-cyanoguanidine-repair-receipt.v1",
+  "signing_key": {
+    "derives_pinned_trust_store_key_id": true,
+    "key_id": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "public_key_hex": "6cf07abf1a55adaac13e78abc31c531d03d8f0d4232346344a736418c7b45664",
+    "role": "PHASE0_EVALUATOR",
+    "signs_phase0_evaluation_or_review": false,
+    "used_for": "AUDIT_ONLY repair-attempt receipt under evidence/phase0/repairs/W-FFI2/attempts/"
+  },
+  "structural_criterion": {
+    "citations": [
+      {
+        "id": "WO1993010168A1",
+        "title": "Bis-dicyandiamides as curing agents for epoxy resins",
+        "type": "patent",
+        "used_for": "dicyandiamide functionality = 4",
+        "year": 1993
+      },
+      {
+        "authors": "Fedtke, M.; Domaratius, F.; Walter, K.",
+        "doi": "10.1007/BF00329879",
+        "journal": "Polymer Bulletin",
+        "pages": "429-435",
+        "title": "Curing of epoxy resins with dicyandiamide",
+        "type": "journal_article",
+        "used_for": "mechanistic evidence terminal amino N-H nucleophilically ring-opens epoxide",
+        "volume": 31,
+        "year": 1993
+      },
+      {
+        "cas": "461-58-5",
+        "caveat": "predicted (not experimentally measured) value from an aggregator database; corroborating, not sole, support -- the WO1993010168A1 functionality figure and Fedtke et al. 1993 mechanistic study are the primary citations",
+        "compound": "cyanoguanidine",
+        "source": "chembk.com",
+        "type": "database_predicted_value",
+        "used_for": "quantifying the resonance/basicity collapse vs guanidine pKaH 13.6",
+        "value": "pKa 0.73 +/- 0.70 (predicted)"
+      }
+    ],
+    "statement": "An amidine/guanidine carbon (C bearing a C=N double bond) excludes its attached amino nitrogens' N-H from reactive_amine_hydrogen_count UNLESS that carbon's own imine (=N) nitrogen itself bears a cyanamide (nitrile-carbon) substituent -- the specific N#C-N=C(NH2)(NH2) motif that structurally defines dicyandiamide (cyanoguanidine, CAS 461-58-5). In that narrow case the terminal amino N-H's are counted normally; the exemption does not apply to a nitrile anywhere else in the molecule, only to one bonded directly to the guanidine carbon's own imine nitrogen.",
+    "why_this_is_the_correct_boundary": "R-N02's exclusion is premised on symmetric, three-nitrogen 'Y-delocalized' resonance stabilizing guanidinium-type cations, which makes the neutral N-H non-nucleophilic (guanidine conjugate-acid pKaH = 13.6; delocalization-stabilized superbase). A cyano substituent on the imine nitrogen is a strong pi-acceptor that competes for that same electron density, collapsing the symmetric resonance the exclusion depends on: cyanoguanidine's conjugate-acid pKaH is reported at only ~0.7 (predicted; chembk.com CAS 461-58-5 listing), a >12 log-unit basicity collapse versus guanidine. Mechanistically, Fedtke, Domaratius & Walter, 'Curing of epoxy resins with dicyandiamide,' Polymer Bulletin 31:429-435 (1993), DOI 10.1007/BF00329879, show dicyandiamide's terminal amino nitrogens nucleophilically ring-open a glycidyl-ether epoxide model compound to form N-alkyl adducts -- direct evidence those N-H's are reactive, not resonance-inert. Patent WO1993010168A1 (1993) states dicyandiamide has a defined functionality of four. Pure alkyl/aryl/H-substituted guanidines (guanidine itself, DPG CAS 102-06-7, DOTG CAS 97-39-2, biguanide) carry no such substituent, retain the full symmetric resonance, and are unaffected: they stay 0."
+  },
+  "verdict": "CLAIM_SURVIVED",
+  "why": "The claim under attack -- that amphora-rdkit-ffi's active-hydrogen counting is correct across amine classes appearing in real coatings -- was refuted by W-FFI1 on dicyandiamide alone (13/14 other probes already agreed). This repair adds a narrow, cited, mechanistically-justified structural exemption (cyanamide-substituted guanidine carbon) that makes dicyandiamide score its published functionality of 4 while leaving the accelerator sub-class (DPG, DOTG, guanidine) and biguanide at 0, exactly preserving R-N02/V-N02c's own findings. Re-attacking with BOTH original unmodified harnesses now shows 14/14 (ffi1-verify) and 7/8-with-the-8th-being-the-intended-fix (vn02c-verify): the module's own claim, as re-attacked by the exact instruments that refuted and previously verified it, now WITHSTANDS. A positive control (planted over-broad-exemption defect in a standalone mutant copy) confirms the narrowness check is capable of catching a real defect of the kind it exists to prevent. Full workspace-green is a SEPARATE, disclosed, outstanding item (a companion test in a module out of this fire's write scope) and is recorded honestly rather than silently claimed.",
+  "workspace_test": {
+    "all_other_binaries_green": true,
+    "command": "cargo test --workspace --features rdkit --no-fail-fast",
+    "failing_binary_module": "amphora-molecule-capabilities",
+    "failing_test_names": [
+      "tests::role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi"
+    ],
+    "interpretation": "amphora-rdkit-ffi's OWN crate is fully green (8/8), and both original refuting-attack harnesses now agree with the repair, with zero regressions among probes not targeted by the fix. The single workspace-wide failure is a companion test in a DIFFERENT module (amphora-molecule-capabilities) that was written as part of R-N02's own 2026-08-03 coordinated 3-module batch and bakes in the same now-superseded dicyandiamide=0 expectation. This fire's write scope was confined to amphora-rdkit-ffi only (module confinement instruction), so that companion test could not be updated here. cargo test --workspace is therefore NOT fully green, and the item's done_criterion is not fully met this fire.",
+    "n_failing_binaries": 1,
+    "root_cause_of_failure": "amphora-molecule-capabilities/src/lib.rs::role_ranker_fails_closed_on_guanidine_class_accelerators_via_real_ffi is a companion regression test authored by R-N02's own coordinated, cross-module repair batch (2026-08-03); it hardcodes reactive_amine_hydrogen_count==0 for dicyandiamide inside the SAME 5-molecule guanidine_class fixture this repair now partially corrects. It is not a NEW break caused by careless scope creep -- it is the same kind of coordinated cross-module consequence R-N02 itself produced (3 modules, 3 done-receipts, cross-referenced) -- but this fire's write scope was confined to amphora-rdkit-ffi only and explicitly forbidden from touching other modules, so the companion test in amphora-molecule-capabilities could not be updated this fire."
+  }
+}

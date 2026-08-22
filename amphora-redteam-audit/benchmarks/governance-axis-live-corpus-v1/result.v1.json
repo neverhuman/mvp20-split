@@ -1,0 +1,691 @@
+{
+  "audit_date": "2026-07-31",
+  "claim_locks": {
+    "audit_only": true,
+    "no_phase_1_or_phase_2_claim": true,
+    "no_portfolio_artifact_mutated": true,
+    "no_product_performance_authority": true,
+    "no_qualification_authority": true,
+    "no_release_authority": true,
+    "pre_phase_0_research_only": true,
+    "scratch_workspace_only": true
+  },
+  "decision_use_ceiling": "AUDIT_ONLY",
+  "g1_shipped_state": {
+    "any_shipped_module_accepted": false,
+    "declared_equals_on_disk": false,
+    "on_disk_benchmark_result_sha256": "701482a26cbe704e06bdade4c3af3279e6fee066319c5041822f37ed8dbf9f1f",
+    "receipt_declared_benchmark_result_sha256": "2bba87aa9a2e5caffe6ede62685a953fa8d676b9b015a8d73640e1b3178d8e9c",
+    "recorded_result_missing_reviewer_required_fields": [
+      "bundle_sha256",
+      "replay_identical",
+      "scientific_outcome"
+    ],
+    "reviewer_verdicts": {
+      "amphora-evidence-intake-validator": {
+        "accepted": false,
+        "error": "recorded benchmark is not bound to the evaluation receipt",
+        "receipt_sha256": null
+      },
+      "amphora-redteam-audit": {
+        "accepted": false,
+        "error": "recorded benchmark is not bound to the evaluation receipt",
+        "receipt_sha256": null
+      },
+      "amphora-report-packager": {
+        "accepted": false,
+        "error": "recorded benchmark is not bound to the evaluation receipt",
+        "receipt_sha256": null
+      },
+      "amphora-source-ledger": {
+        "accepted": false,
+        "error": "recorded benchmark is not bound to the evaluation receipt",
+        "receipt_sha256": null
+      }
+    }
+  },
+  "g2_signing_parity": {
+    "keyid": "phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178",
+    "payload_b64_matches_shipped": true,
+    "signature_matches_shipped": true
+  },
+  "g3_repaired_baseline": {
+    "accepted": true,
+    "control_a": {
+      "accepted": true,
+      "error": "",
+      "receipt_sha256": "7d74a18d911cce3fdeea22f0f6691118556689026db0168e92ab1d2265851c5a"
+    },
+    "control_b": {
+      "accepted": true,
+      "error": "",
+      "receipt_sha256": "7d74a18d911cce3fdeea22f0f6691118556689026db0168e92ab1d2265851c5a"
+    },
+    "live_diagnostic_line_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+    "review_receipt_byte_stable_across_replays": true
+  },
+  "g4_axis_corpus": {
+    "axes_probed": [
+      "ALTERED_BENCHMARK_OUTPUT",
+      "AUTHORITY_ESCALATION",
+      "CANDIDATE_SUPPLIED_EVIDENCE",
+      "CROSS_MODULE_PATH_SUBSTITUTION",
+      "FAILING_DETERMINISTIC_DIAGNOSTIC",
+      "FALSE_BENCHMARK_EXECUTION_COMPLETE",
+      "FALSE_HUMAN_REVIEW_CLAIM",
+      "FALSE_MOVEMENT_CLAIM",
+      "FORGED_RIGHTS",
+      "FORGED_SIGNATURE",
+      "INCOMPLETE_REVIEW_POLICY",
+      "LEGACY_AMPHORA_RECEIPT_LAUNDERING",
+      "MISSING_LICENSE",
+      "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+      "REPLAY_DRIFT",
+      "REPOSITORY_LOCAL_PRIVATE_KEY",
+      "SAME_SIGNER_REVIEW",
+      "STALE_PARENT",
+      "STRIPPED_CLAIM_LOCK",
+      "STRIPPED_MISSION_LOCKS",
+      "SUPERSESSION_ARCHIVE_SUBSTITUTION",
+      "UNKNOWN_REVIEWER_MODULE",
+      "WRONG_ROLE_SIGNATURE"
+    ],
+    "axes_probed_count": 23,
+    "coverage_complete": true,
+    "outer_axis_block": [
+      "STALE_PARENT",
+      "SAME_SIGNER_REVIEW",
+      "WRONG_ROLE_SIGNATURE",
+      "FORGED_SIGNATURE",
+      "REPOSITORY_LOCAL_PRIVATE_KEY",
+      "FORGED_RIGHTS",
+      "MISSING_LICENSE",
+      "STRIPPED_CLAIM_LOCK",
+      "CANDIDATE_SUPPLIED_EVIDENCE",
+      "CROSS_MODULE_PATH_SUBSTITUTION",
+      "REPLAY_DRIFT",
+      "ALTERED_BENCHMARK_OUTPUT",
+      "FALSE_HUMAN_REVIEW_CLAIM",
+      "FALSE_MOVEMENT_CLAIM",
+      "AUTHORITY_ESCALATION",
+      "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+      "LEGACY_AMPHORA_RECEIPT_LAUNDERING",
+      "STRIPPED_MISSION_LOCKS",
+      "FAILING_DETERMINISTIC_DIAGNOSTIC",
+      "FALSE_BENCHMARK_EXECUTION_COMPLETE",
+      "INCOMPLETE_REVIEW_POLICY",
+      "UNKNOWN_REVIEWER_MODULE",
+      "SUPERSESSION_ARCHIVE_SUBSTITUTION"
+    ],
+    "outer_axis_count": 23,
+    "probe_count": 24,
+    "probes": [
+      {
+        "adversary": "NAIVE_CONTENT_TAMPER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/ip/prior-art.v1.json"
+        ],
+        "axis": "STALE_PARENT",
+        "detection_mechanism": "PARENT_HASH_BINDING",
+        "error": "stale parent hash: ip/prior-art.v1.json",
+        "fail_closed": true,
+        "index": 0,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/ip/prior-art.v1.json"
+        ],
+        "axis": "STALE_PARENT",
+        "detection_mechanism": null,
+        "error": "",
+        "fail_closed": false,
+        "index": 1,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": true
+      },
+      {
+        "adversary": "NAIVE_CONTENT_TAMPER",
+        "artifacts_touched": [
+          "config/phase0-trust-store.v1.json"
+        ],
+        "axis": "SAME_SIGNER_REVIEW",
+        "detection_mechanism": "TRUST_STORE_IDENTITY_SEPARATION",
+        "error": "trust identities are not distinct and hash-bound",
+        "fail_closed": true,
+        "index": 2,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "NAIVE_CONTENT_TAMPER",
+        "artifacts_touched": [],
+        "axis": "WRONG_ROLE_SIGNATURE",
+        "detection_mechanism": "ROLE_BINDING",
+        "error": "key phase0-evaluator-3ef6b35cdbbfea74a96a5c9b98a515d57158a09ecaff10acfa1f15990be00178 is not authorized for role PHASE0_INTERNAL_REVIEWER",
+        "fail_closed": true,
+        "index": 3,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": false,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "NAIVE_CONTENT_TAMPER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json"
+        ],
+        "axis": "FORGED_SIGNATURE",
+        "detection_mechanism": "DSSE_CRYPTOGRAPHIC_BINDING",
+        "error": "forged or invalid DSSE signature",
+        "fail_closed": true,
+        "index": 4,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "NAIVE_CONTENT_TAMPER",
+        "artifacts_touched": [],
+        "axis": "REPOSITORY_LOCAL_PRIVATE_KEY",
+        "detection_mechanism": "KEY_HYGIENE_CONFINEMENT",
+        "error": "repository-local Phase-0 private keys are forbidden",
+        "fail_closed": true,
+        "index": 5,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": false,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/evidence/phase0/sources/source-lock.v1.json"
+        ],
+        "axis": "FORGED_RIGHTS",
+        "detection_mechanism": "RIGHTS_SEMANTIC_PREDICATE",
+        "error": "source rights binding is false: reference/mvp20/data/claim_registry.json",
+        "fail_closed": true,
+        "index": 6,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/evidence/phase0/sources/source-lock.v1.json"
+        ],
+        "axis": "MISSING_LICENSE",
+        "detection_mechanism": "RIGHTS_SEMANTIC_PREDICATE",
+        "error": "source rights binding is false: reference/mvp20/data/claim_registry.json",
+        "fail_closed": true,
+        "index": 7,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/ip/claim-contract.v1.json"
+        ],
+        "axis": "STRIPPED_CLAIM_LOCK",
+        "detection_mechanism": "CLAIM_LOCK_SEMANTIC_PREDICATE",
+        "error": "a required zero-authority claim lock is absent or false",
+        "fail_closed": true,
+        "index": 8,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/evidence/phase0/sources/source-lock.v1.json"
+        ],
+        "axis": "CANDIDATE_SUPPLIED_EVIDENCE",
+        "detection_mechanism": "RIGHTS_SEMANTIC_PREDICATE",
+        "error": "deterministic-control rights policy is invalid",
+        "fail_closed": true,
+        "index": 9,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json"
+        ],
+        "axis": "CROSS_MODULE_PATH_SUBSTITUTION",
+        "detection_mechanism": "PATH_CONFINEMENT",
+        "error": "unsafe module-relative path: ../amphora-report-packager/ip/prior-art.v1.json",
+        "fail_closed": true,
+        "index": 10,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json"
+        ],
+        "axis": "REPLAY_DRIFT",
+        "detection_mechanism": "REPLAY_IDENTITY_PREDICATE",
+        "error": "evaluated benchmark replays are altered, failing, or non-identical",
+        "fail_closed": true,
+        "index": 11,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json"
+        ],
+        "axis": "ALTERED_BENCHMARK_OUTPUT",
+        "detection_mechanism": "LIVE_RE_EXECUTION",
+        "error": "current locked benchmark output differs from the evaluated output",
+        "fail_closed": true,
+        "index": 12,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/promotion/policy.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json"
+        ],
+        "axis": "FALSE_HUMAN_REVIEW_CLAIM",
+        "detection_mechanism": "POLICY_SEMANTIC_PREDICATE",
+        "error": "promotion policy weakens the automated dual-service Phase-0 gate",
+        "fail_closed": true,
+        "index": 13,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/movement/ledger.v1.json"
+        ],
+        "axis": "FALSE_MOVEMENT_CLAIM",
+        "detection_mechanism": null,
+        "error": "",
+        "fail_closed": false,
+        "index": 14,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": true
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/ip/claim-contract.v1.json"
+        ],
+        "axis": "AUTHORITY_ESCALATION",
+        "detection_mechanism": "CLAIM_LOCK_SEMANTIC_PREDICATE",
+        "error": "claim contract omits a required authority prohibition",
+        "fail_closed": true,
+        "index": 15,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/benchmark-lock.v1.json",
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json"
+        ],
+        "axis": "NEGATIVE_RESULT_AUTHORITY_ESCALATION",
+        "detection_mechanism": "BENCHMARK_LOCK_SEMANTIC_PREDICATE",
+        "error": "module benchmark lock is incomplete or altered",
+        "fail_closed": true,
+        "index": 16,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/evidence/phase0/sources/source-lock.v1.json"
+        ],
+        "axis": "LEGACY_AMPHORA_RECEIPT_LAUNDERING",
+        "detection_mechanism": "RIGHTS_SEMANTIC_PREDICATE",
+        "error": "deterministic-control rights policy is invalid",
+        "fail_closed": true,
+        "index": 17,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/docs/mission.md"
+        ],
+        "axis": "STRIPPED_MISSION_LOCKS",
+        "detection_mechanism": null,
+        "error": "",
+        "fail_closed": false,
+        "index": 18,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": true
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "config/benchmark-lock.v1.json"
+        ],
+        "axis": "FAILING_DETERMINISTIC_DIAGNOSTIC",
+        "detection_mechanism": null,
+        "error": "",
+        "fail_closed": false,
+        "index": 19,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": true
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json"
+        ],
+        "axis": "FALSE_BENCHMARK_EXECUTION_COMPLETE",
+        "detection_mechanism": "REPLAY_IDENTITY_PREDICATE",
+        "error": "evaluated benchmark does not prove complete byte-identical execution",
+        "fail_closed": true,
+        "index": 20,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/promotion/policy.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json"
+        ],
+        "axis": "INCOMPLETE_REVIEW_POLICY",
+        "detection_mechanism": "POLICY_SEMANTIC_PREDICATE",
+        "error": "promotion policy weakens the automated dual-service Phase-0 gate",
+        "fail_closed": true,
+        "index": 21,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "NAIVE_CONTENT_TAMPER",
+        "artifacts_touched": [],
+        "axis": "UNKNOWN_REVIEWER_MODULE",
+        "detection_mechanism": "DISPATCH_ALLOWLIST",
+        "error": "module is not in the locked 29-module reviewer allowlist",
+        "fail_closed": true,
+        "index": 22,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": false,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/evidence/superseded/supersession-c722f6209cc68d21f0bd8cd115680a3fce8e96fdfa2d4e8b7167e8fde3318b85/supersession.v1.json"
+        ],
+        "axis": "SUPERSESSION_ARCHIVE_SUBSTITUTION",
+        "detection_mechanism": "SCHEMA_DESERIALIZATION_WALL",
+        "error": "unknown field `claim_contract_sha256`, expected one of `schema`, `supersession_id`, `module_id`, `reason`, `archive_root`, `archived_artifacts`, `unsigned_preparation_only`, `authority_transferred` at line 2 column 25",
+        "fail_closed": true,
+        "index": 23,
+        "live_diagnostic_changed": false,
+        "live_diagnostic_passed": true,
+        "live_diagnostic_sha256": "e1cfa8145d575907877f63d853bde54fe837bab5a2dc934da66b10ccb9c1ca84",
+        "mutation_applied": true,
+        "mutation_effective": true,
+        "reviewer_accepted": false
+      }
+    ]
+  },
+  "g5_mutation_adequacy": {
+    "axes_killed_count": 20,
+    "axes_survived": [
+      "FAILING_DETERMINISTIC_DIAGNOSTIC",
+      "FALSE_MOVEMENT_CLAIM",
+      "STALE_PARENT",
+      "STRIPPED_MISSION_LOCKS"
+    ],
+    "ineffective_probes": [
+      "REPOSITORY_LOCAL_PRIVATE_KEY"
+    ],
+    "mechanism_histogram": {
+      "BENCHMARK_LOCK_SEMANTIC_PREDICATE": 1,
+      "CLAIM_LOCK_SEMANTIC_PREDICATE": 2,
+      "DISPATCH_ALLOWLIST": 1,
+      "DSSE_CRYPTOGRAPHIC_BINDING": 1,
+      "KEY_HYGIENE_CONFINEMENT": 1,
+      "LIVE_RE_EXECUTION": 1,
+      "PARENT_HASH_BINDING": 1,
+      "PATH_CONFINEMENT": 1,
+      "POLICY_SEMANTIC_PREDICATE": 2,
+      "REPLAY_IDENTITY_PREDICATE": 2,
+      "RIGHTS_SEMANTIC_PREDICATE": 4,
+      "ROLE_BINDING": 1,
+      "SCHEMA_DESERIALIZATION_WALL": 1,
+      "TRUST_STORE_IDENTITY_SEPARATION": 1
+    },
+    "mutants_killed": 20,
+    "mutants_survived": 4,
+    "rechained_adversary_kill_rate": [
+      14,
+      18
+    ],
+    "surviving_effective_mutants": [
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/evidence/phase0/benchmark/result.v1.json",
+          "amphora-redteam-audit/evidence/phase0/bundle.v1.json",
+          "amphora-redteam-audit/evidence/phase0/receipts/evaluation.v1.dsse.json",
+          "amphora-redteam-audit/ip/prior-art.v1.json"
+        ],
+        "axis": "STALE_PARENT",
+        "live_diagnostic_changed": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/movement/ledger.v1.json"
+        ],
+        "axis": "FALSE_MOVEMENT_CLAIM",
+        "live_diagnostic_changed": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "amphora-redteam-audit/docs/mission.md"
+        ],
+        "axis": "STRIPPED_MISSION_LOCKS",
+        "live_diagnostic_changed": false
+      },
+      {
+        "adversary": "RECHAINED_EVALUATOR_KEY_HOLDER",
+        "artifacts_touched": [
+          "config/benchmark-lock.v1.json"
+        ],
+        "axis": "FAILING_DETERMINISTIC_DIAGNOSTIC",
+        "live_diagnostic_changed": false
+      }
+    ]
+  },
+  "g6_residue_control": {
+    "accepted": true,
+    "error": "",
+    "receipt_sha256_matches_control_a": true
+  },
+  "g7_reexecution_root_binding": {
+    "compiled_in_workspace": "/home/ubuntu/amphora/build/mvp20-split",
+    "declared_hash_tracks_reviewed_workspace": false,
+    "diagnostic_declared_config_sha256": "43de2cbf4bc63747f675587fc63111bc578d7ae803e73a3300e809448a93d209",
+    "diagnostic_emitted_with_cwd_outside_any_workspace": true,
+    "diagnostic_line_changed_after_tamper": false,
+    "reviewed_workspace": "/home/ubuntu/amphora/build/redteam-live-scratch/ws",
+    "source_citation": "amphora-cli/src/main.rs fn workspace_root()",
+    "tampered_config_file_sha256": "a7dda8f348d22b7fa9807f79c32d79e83faa151d7ac9aac15cb937fffd004869",
+    "workspace_root_is_compile_time_constant": true
+  },
+  "hypothesis": "H0: the outer 23-axis portfolio-governance attack block declared in amphora-redteam-audit's Phase-0 benchmark lock is completely mediated and fail-closed under the live Phase-0 reference monitor, including against an adversary holding the evaluator signing identity.",
+  "module_id": "amphora-redteam-audit",
+  "remediation_non_authoritative": [
+    "resolve the benchmark workspace from the reviewer-supplied root (argument or environment) instead of env!(\"CARGO_MANIFEST_DIR\"), so live re-execution is bound to the reviewed tree",
+    "add mission front-matter lock and movement-ledger head predicates to the reviewer, or drop STRIPPED_MISSION_LOCKS / FALSE_MOVEMENT_CLAIM from the lock's declared axis set",
+    "anchor bundle parents outside the evaluator's own attestation (second-party signature or external timestamp) if STALE_PARENT is to hold against a key-holding insider",
+    "re-issue the stale evidence: every shipped module's evaluation receipt declares a benchmark_result_sha256 that no longer matches the on-disk result (g1)"
+  ],
+  "schema": "amphora.redteam-audit-governance-axis-corpus-result.v1",
+  "subject_under_test": "amphora-phase0-reviewer (live Rust reference monitor, release build)",
+  "theory_anchors": [
+    "Anderson 1972, ESD-TR-73-51 (reference monitor, complete mediation)",
+    "Saltzer & Schroeder 1975, Proc. IEEE 63(9):1278-1308 (fail-safe defaults, separation of privilege)",
+    "DeMillo, Lipton & Sayward 1978, IEEE Computer 11(4):34-41 (mutation adequacy)",
+    "Rapps & Weyuker 1985, IEEE TSE 11(4):367-375 (adequacy subsumption)",
+    "Zhu, Hall & May 1997, ACM CSUR 29(4):366-427 (adequacy criteria)",
+    "Haber & Stornetta 1991, J. Cryptology 3(2):99-111 (hash chaining)",
+    "NIST SP 800-53r5 CA-8 / SI-7"
+  ],
+  "verdict": "HYPOTHESIS_PARTIALLY_REFUTED",
+  "verdict_basis": {
+    "axes_unmediated_or_structurally_limited": [
+      "FAILING_DETERMINISTIC_DIAGNOSTIC",
+      "FALSE_MOVEMENT_CLAIM",
+      "STALE_PARENT",
+      "STRIPPED_MISSION_LOCKS"
+    ],
+    "axes_with_a_live_fail_closed_detector": 20,
+    "mutants_killed_of_total": [
+      20,
+      24
+    ],
+    "root_causes": {
+      "FAILING_DETERMINISTIC_DIAGNOSTIC": "the re-executed benchmark resolves its workspace from a compile-time constant, so the live diagnostic does not reflect the workspace under review (see g7)",
+      "FALSE_MOVEMENT_CLAIM": "movement/ledger.v1.json is outside the reviewer's read surface entirely",
+      "STALE_PARENT": "parent hash binding is an evaluator self-attestation; it detects third-party tampering but not an evaluator-key holder who re-declares the hashes",
+      "STRIPPED_MISSION_LOCKS": "docs/mission.md front-matter locks are never read by the reviewer even though the axis is a lock-required attack"
+    }
+  }
+}

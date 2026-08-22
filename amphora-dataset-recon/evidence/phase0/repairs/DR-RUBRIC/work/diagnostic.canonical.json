@@ -1,0 +1,44 @@
+{
+  "campaign_item_id": "DR-RUBRIC",
+  "claim_verdict": "CLAIM_SURVIVED",
+  "refutation_criterion_observed": false,
+  "refutation_criterion_verbatim": "Re-running the published rubric over the same frozen candidate snapshot yields a different ranking or verdict for any candidate, or any of the six mandated dimensions has no scoring rule a second party could apply.",
+  "schema": "amphora.dataset-recon.dr-rubric-diagnostic.v1",
+  "step1_real_two_replay": {
+    "byte_identical": true,
+    "runA_sha256": "d05bb7aa45ee09857150e9ad7fc705085183d6a5a6c10cf4e69d7c3ff035aa34",
+    "runB_sha256": "d05bb7aa45ee09857150e9ad7fc705085183d6a5a6c10cf4e69d7c3ff035aa34"
+  },
+  "step2_positive_control_defect_planted_scorer": {
+    "byte_identical": false,
+    "detected": true,
+    "evidence": "Two independent invocations of the defect-planted scorer over the identical frozen snapshot produced different SHA-256 hashes (1e185f5c99bf732f49389a47d73e98d99a87c0dad6fb44164b79ce5b9be353d7 vs 8a48c48aa4e3716e7228b867aba908473ed7c128e87e53e5c6397d88f05fa1be), because each call embeds its own wall-clock timestamp. The same two-replay check applied to the REAL scorer (step 1) found byte-identical hashes. This proves the two-replay gate has the power to catch a real non-determinism defect and did not simply pass because the check is toothless.",
+    "how_planted": "scorer_nondeterministic.py imports run() unchanged from scorer.py, then sets out['generated_at'] = time.time() before writing -- the ONLY difference from the real scorer.",
+    "planted_defect": "scorer_nondeterministic.py adds a time.time() 'generated_at' field to the output payload before serialization.",
+    "runA_defect_sha256": "1e185f5c99bf732f49389a47d73e98d99a87c0dad6fb44164b79ce5b9be353d7",
+    "runB_defect_sha256": "8a48c48aa4e3716e7228b867aba908473ed7c128e87e53e5c6397d88f05fa1be"
+  },
+  "step3_independent_second_party_check": {
+    "matches_scorer_py_runA_sha256": true,
+    "note": "runC_independent.json was produced by independent_reference_check.py, which re-implements all six formulas directly from rubric.v1.json's tables and never imports scorer.py. Its byte-identical match to scorer.py's own runA.json demonstrates a second, independently-written code path applying only the published rubric document reaches the identical ranking -- i.e. the rubric's scoring rules are mechanically reproducible by a second party, not merely self-consistent within one implementation.",
+    "runC_independent_sha256": "d05bb7aa45ee09857150e9ad7fc705085183d6a5a6c10cf4e69d7c3ff035aa34"
+  },
+  "step4_mutation_sensitivity_attack": {
+    "c1_overall_score_after": 5.5,
+    "c1_overall_score_before": 6.3333,
+    "c1_rank_after": 2,
+    "c1_rank_before": 1,
+    "c1_verdict_after": "REJECTED",
+    "c1_verdict_before": "CONDITIONAL",
+    "delta_matches_formula": true,
+    "mutated_candidate": "C1",
+    "mutated_field": "rights_tier",
+    "observed_delta": -0.8333,
+    "other_three_candidates_dimension_scores_unaffected": true,
+    "predicted_delta": -0.8333,
+    "rank_changed": true,
+    "value_after": "quarantined_or_prohibited",
+    "value_before": "agreement_gated_named_terms",
+    "verdict_changed_as_predicted": true
+  }
+}

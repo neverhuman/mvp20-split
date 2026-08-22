@@ -1,0 +1,13 @@
+{
+  "applicability_domain": [
+    "module-local locked evidence for amphora-process-qc-twin",
+    "performance lane only",
+    "abstain outside the source, method, family, scaffold, time, lot, and toolkit locks"
+  ],
+  "claim_contract_sha256": "6969f24344532cca4bdeb4ea9f7d805a989ef7726829945a0cb743091e216775",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-process-qc-twin",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

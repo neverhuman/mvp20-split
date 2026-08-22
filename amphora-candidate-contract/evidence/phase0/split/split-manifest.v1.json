@@ -1,0 +1,8 @@
+{
+  "assignment_method": "FIXED_CONTRACT_FIXTURE_SUITE",
+  "dataset_manifest_sha256": "2ef29d416cae080afd9e5d3eaad409108b0025550820a228d69faad0d1deef0b",
+  "import_hashes": [],
+  "module_id": "amphora-candidate-contract",
+  "schema": "amphora.module-phase0-split-manifest.v1",
+  "source_family_scaffold_time_lot_leakage_forbidden": true
+}

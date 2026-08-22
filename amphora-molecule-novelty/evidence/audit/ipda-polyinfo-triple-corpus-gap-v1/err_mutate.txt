@@ -1,0 +1,4 @@
+[t=0.1s] OpenPoly loaded: 350 distinct
+[t=30.8s] ChEBI loaded: raw=52903 distinct=50383
+[t=38.4s] PolyInfo loaded: raw=12400 distinct=12371 planted=True
+[t=41.3s] fingerprints built, triple-union size=63104

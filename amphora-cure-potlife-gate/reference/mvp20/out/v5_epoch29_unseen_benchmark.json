@@ -1,0 +1,441 @@
+{
+  "absolute_lift": -0.142857,
+  "artifact_version": "mvp20.29-cure-unseen-benchmark.v1",
+  "baseline_value": 0.428571,
+  "benchmark_type": "GROUPED_UNSEEN_CURE_ROWS",
+  "best_track": "phr_only",
+  "claim_boundary": "Model-readiness KPI only; public/product-guide cure rows do not guarantee paint pot life and all pot-life claims remain CRO-gated.",
+  "field_completeness": {
+    "ahew": {
+      "missing": 18,
+      "present": 7,
+      "total": 25
+    },
+    "amine_value": {
+      "missing": 18,
+      "present": 7,
+      "total": 25
+    },
+    "gel_min": {
+      "missing": 0,
+      "present": 25,
+      "total": 25
+    },
+    "phr": {
+      "missing": 9,
+      "present": 16,
+      "total": 25
+    },
+    "tfs_h": {
+      "missing": 0,
+      "present": 25,
+      "total": 25
+    }
+  },
+  "primary_metric": "fraction_within_x1.5_error_band",
+  "primary_track": "amineH",
+  "primary_value": 0.285714,
+  "promotion_policy": {
+    "minimum_fraction_within_x1.5": 0.8,
+    "requires_positive_baseline_lift": true
+  },
+  "promotion_status": "NOT_PROMOTED",
+  "sample_count": 7,
+  "schema_version": "amphora.unseen_benchmark.v1",
+  "source_hashes": {
+    "cure_verification_set.json": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+  },
+  "split_policy": "leave_one_row_out; each predictor track uses complete cases only and never imputes missing chemistry",
+  "tracks": {
+    "amineH": {
+      "absolute_lift": -0.142857,
+      "baseline_fraction_within_x1.5": 0.428571,
+      "confidence_interval_95": {
+        "lower": 0.082219,
+        "method": "wilson_95",
+        "upper": 0.641066
+      },
+      "folds": [
+        {
+          "actual_gel_min": 200,
+          "baseline_fold_error_factor": 1.818181818,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 1.697665826,
+          "held_out_hardener": "ancamide_350a",
+          "prediction_gel_min": 117.808815427,
+          "training_median_baseline_gel_min": 110.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 120,
+          "baseline_fold_error_factor": 1.090909091,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.052352324,
+          "held_out_hardener": "ancamide_260a",
+          "prediction_gel_min": 126.282278856,
+          "training_median_baseline_gel_min": 110.0,
+          "training_row_count": 6,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 65,
+          "baseline_fold_error_factor": 1.846153846,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.202262164,
+          "held_out_hardener": "ancamide_2353",
+          "prediction_gel_min": 143.147040678,
+          "training_median_baseline_gel_min": 120.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 285,
+          "baseline_fold_error_factor": 2.590909091,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.750287156,
+          "held_out_hardener": "ancamide_2426",
+          "prediction_gel_min": 103.625543019,
+          "training_median_baseline_gel_min": 110.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 60,
+          "baseline_fold_error_factor": 2.0,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.307373186,
+          "held_out_hardener": "ancamide_805",
+          "prediction_gel_min": 138.44239114,
+          "training_median_baseline_gel_min": 120.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 100,
+          "baseline_fold_error_factor": 1.2,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.046717565,
+          "held_out_hardener": "ancamide_2050",
+          "prediction_gel_min": 104.671756478,
+          "training_median_baseline_gel_min": 120.0,
+          "training_row_count": 6,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 120,
+          "baseline_fold_error_factor": 1.090909091,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 3.164744335,
+          "held_out_hardener": "ancamide_910",
+          "prediction_gel_min": 37.917754895,
+          "training_median_baseline_gel_min": 110.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        }
+      ],
+      "fraction_within_x1.5": 0.285714,
+      "median_fold_error": 2.202262,
+      "n": 7,
+      "p80_fold_error": 2.661704,
+      "predictors": [
+        "phr",
+        "ahew"
+      ],
+      "track": "amineH"
+    },
+    "phr_only": {
+      "absolute_lift": 0.0625,
+      "baseline_fraction_within_x1.5": 0.375,
+      "confidence_interval_95": {
+        "lower": 0.230987,
+        "method": "wilson_95",
+        "upper": 0.668214
+      },
+      "folds": [
+        {
+          "actual_gel_min": 200,
+          "baseline_fold_error_factor": 2.666666667,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.251446277,
+          "held_out_hardener": "ancamide_350a",
+          "prediction_gel_min": 88.831788723,
+          "training_median_baseline_gel_min": 75,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 120,
+          "baseline_fold_error_factor": 1.6,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 1.482533311,
+          "held_out_hardener": "ancamide_260a",
+          "prediction_gel_min": 80.942532009,
+          "training_median_baseline_gel_min": 75,
+          "training_row_count": 15,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 65,
+          "baseline_fold_error_factor": 1.369230769,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.392697625,
+          "held_out_hardener": "ancamide_2353",
+          "prediction_gel_min": 90.52534565,
+          "training_median_baseline_gel_min": 89,
+          "training_row_count": 15,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 285,
+          "baseline_fold_error_factor": 3.8,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 3.213398437,
+          "held_out_hardener": "ancamide_2426",
+          "prediction_gel_min": 88.691149129,
+          "training_median_baseline_gel_min": 75,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 60,
+          "baseline_fold_error_factor": 1.483333333,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.397324422,
+          "held_out_hardener": "ancamide_805",
+          "prediction_gel_min": 83.839465312,
+          "training_median_baseline_gel_min": 89,
+          "training_row_count": 15,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 100,
+          "baseline_fold_error_factor": 1.333333333,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.306646855,
+          "held_out_hardener": "ancamide_2050",
+          "prediction_gel_min": 76.531772636,
+          "training_median_baseline_gel_min": 75,
+          "training_row_count": 15,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 89,
+          "baseline_fold_error_factor": 1.186666667,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.151321259,
+          "held_out_hardener": "ancamide_2445",
+          "prediction_gel_min": 77.302489883,
+          "training_median_baseline_gel_min": 75,
+          "training_row_count": 15,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 170,
+          "baseline_fold_error_factor": 2.266666667,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 1.78103956,
+          "held_out_hardener": "ancamide_375a",
+          "prediction_gel_min": 95.449873127,
+          "training_median_baseline_gel_min": 75,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 65,
+          "baseline_fold_error_factor": 1.369230769,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.69072137,
+          "held_out_hardener": "ancamide_400",
+          "prediction_gel_min": 109.896889073,
+          "training_median_baseline_gel_min": 89,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 52,
+          "baseline_fold_error_factor": 1.711538462,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 1.932939449,
+          "held_out_hardener": "ancamide_351a",
+          "prediction_gel_min": 100.512851329,
+          "training_median_baseline_gel_min": 89,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 75,
+          "baseline_fold_error_factor": 1.186666667,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.114761935,
+          "held_out_hardener": "ancamide_261a",
+          "prediction_gel_min": 83.607145145,
+          "training_median_baseline_gel_min": 89,
+          "training_row_count": 15,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 57,
+          "baseline_fold_error_factor": 1.561403509,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 1.602664033,
+          "held_out_hardener": "ancamide_2767",
+          "prediction_gel_min": 91.351849887,
+          "training_median_baseline_gel_min": 89,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 32,
+          "baseline_fold_error_factor": 2.78125,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.770672997,
+          "held_out_hardener": "ancamide_2864",
+          "prediction_gel_min": 88.661535914,
+          "training_median_baseline_gel_min": 89,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 120,
+          "baseline_fold_error_factor": 1.6,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 7.356745313,
+          "held_out_hardener": "ancamide_910",
+          "prediction_gel_min": 16.311561008,
+          "training_median_baseline_gel_min": 75,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 29,
+          "baseline_fold_error_factor": 3.068965517,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.789037601,
+          "held_out_hardener": "ancamide_2832",
+          "prediction_gel_min": 80.882090426,
+          "training_median_baseline_gel_min": 89,
+          "training_row_count": 15,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 130,
+          "baseline_fold_error_factor": 1.733333333,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 1.269580344,
+          "held_out_hardener": "ancamide_2634",
+          "prediction_gel_min": 102.396040268,
+          "training_median_baseline_gel_min": 75,
+          "training_row_count": 15,
+          "within_x1.5": true
+        }
+      ],
+      "fraction_within_x1.5": 0.4375,
+      "median_fold_error": 1.646693,
+      "n": 16,
+      "p80_fold_error": 2.770673,
+      "predictors": [
+        "phr"
+      ],
+      "track": "phr_only"
+    },
+    "phr_plus_amine_value": {
+      "absolute_lift": -0.285714,
+      "baseline_fraction_within_x1.5": 0.428571,
+      "confidence_interval_95": {
+        "lower": 0.02568,
+        "method": "wilson_95",
+        "upper": 0.513128
+      },
+      "folds": [
+        {
+          "actual_gel_min": 200,
+          "baseline_fold_error_factor": 1.818181818,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 1.711727161,
+          "held_out_hardener": "ancamide_350a",
+          "prediction_gel_min": 116.841050726,
+          "training_median_baseline_gel_min": 110.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 120,
+          "baseline_fold_error_factor": 1.090909091,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 1.15712641,
+          "held_out_hardener": "ancamide_260a",
+          "prediction_gel_min": 103.7051777,
+          "training_median_baseline_gel_min": 110.0,
+          "training_row_count": 6,
+          "within_x1.5": true
+        },
+        {
+          "actual_gel_min": 65,
+          "baseline_fold_error_factor": 1.846153846,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.459606786,
+          "held_out_hardener": "ancamide_2353",
+          "prediction_gel_min": 159.874441058,
+          "training_median_baseline_gel_min": 120.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 285,
+          "baseline_fold_error_factor": 2.590909091,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.493040888,
+          "held_out_hardener": "ancamide_2426",
+          "prediction_gel_min": 114.318221312,
+          "training_median_baseline_gel_min": 110.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 60,
+          "baseline_fold_error_factor": 2.0,
+          "baseline_within_x1.5": false,
+          "fold_error_factor": 2.555873387,
+          "held_out_hardener": "ancamide_805",
+          "prediction_gel_min": 153.352403206,
+          "training_median_baseline_gel_min": 120.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 100,
+          "baseline_fold_error_factor": 1.2,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 2.129946926,
+          "held_out_hardener": "ancamide_2050",
+          "prediction_gel_min": 212.994692636,
+          "training_median_baseline_gel_min": 120.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        },
+        {
+          "actual_gel_min": 120,
+          "baseline_fold_error_factor": 1.090909091,
+          "baseline_within_x1.5": true,
+          "fold_error_factor": 8.947117954,
+          "held_out_hardener": "ancamide_910",
+          "prediction_gel_min": 13.412140158,
+          "training_median_baseline_gel_min": 110.0,
+          "training_row_count": 6,
+          "within_x1.5": false
+        }
+      ],
+      "fraction_within_x1.5": 0.142857,
+      "median_fold_error": 2.459607,
+      "n": 7,
+      "p80_fold_error": 2.543307,
+      "predictors": [
+        "phr",
+        "amine_value"
+      ],
+      "track": "phr_plus_amine_value"
+    }
+  }
+}
+

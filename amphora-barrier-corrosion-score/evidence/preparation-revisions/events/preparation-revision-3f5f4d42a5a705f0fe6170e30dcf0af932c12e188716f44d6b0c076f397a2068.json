@@ -1,0 +1,12 @@
+{
+  "archived_bundle_sha256": "0e267c0410275fd4fbf0ec838ae1ac94ad8b18292950a9f6c49cc92b0ab1f7c2",
+  "module_id": "amphora-barrier-corrosion-score",
+  "parent_revision_id": null,
+  "revision_id": "preparation-revision-3f5f4d42a5a705f0fe6170e30dcf0af932c12e188716f44d6b0c076f397a2068",
+  "revision_number": 1,
+  "schema": "amphora.module-phase0-preparation-revision.v1",
+  "supersession_id": "supersession-2917240cc2483492d79d3a5892f9935c4077ea38573c53b88d93e3503bab325e",
+  "supersession_path": "evidence/superseded/supersession-2917240cc2483492d79d3a5892f9935c4077ea38573c53b88d93e3503bab325e/supersession.v1.json",
+  "supersession_sha256": "36466cdc23b0aa4d54878aa9dbc5896e2ef780d53d7e47ac810087798953b9a4",
+  "unsigned_preparation_only": true
+}

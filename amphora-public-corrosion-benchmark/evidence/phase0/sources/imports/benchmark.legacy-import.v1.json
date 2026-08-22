@@ -1,0 +1,54 @@
+{
+  "schema": "amphora.benchmark-lock.v1",
+  "benchmark_id": "corrosion-phase-acceleration-lock-2026-07-17",
+  "module_id": "amphora-public-corrosion-benchmark",
+  "endpoints": [
+    "higher_endpoint_risk_classification",
+    "rust_creep_mm",
+    "wet_adhesion_mpa"
+  ],
+  "baselines": [
+    "majority_or_constant",
+    "latest_impedance_expert_threshold",
+    "monotone_log_linear_degradation",
+    "deterministic_gam",
+    "deterministic_boosted_stumps",
+    "current_implementation",
+    "label_shuffle_null",
+    "time_reversal_null",
+    "source_and_system_leakage_null"
+  ],
+  "metrics": [
+    {"metric":"independent_system_count","direction":"minimize_shortfall","unit":"count","threshold":30.0},
+    {"metric":"study_count","direction":"minimize_shortfall","unit":"count","threshold":3.0},
+    {"metric":"untouched_external_system_count","direction":"minimize_shortfall","unit":"count","threshold":10.0},
+    {"metric":"balanced_accuracy_lift","direction":"maximize","unit":"absolute_fraction","threshold":0.10},
+    {"metric":"paired_study_block_ci_lower","direction":"maximize","unit":"absolute_fraction","threshold":0.0},
+    {"metric":"calibration_error","direction":"minimize","unit":"absolute_fraction","threshold":0.10},
+    {"metric":"rust_creep_error_delta","direction":"minimize","unit":"mm","threshold":0.0},
+    {"metric":"wet_adhesion_error_delta","direction":"minimize","unit":"MPa","threshold":0.0}
+  ],
+  "uncertainty_method": "95% paired study-block bootstrap; exact paired permutation fallback is diagnostic only below three studies",
+  "thresholds": {
+    "minimum_independent_systems": 30.0,
+    "minimum_studies": 3.0,
+    "minimum_untouched_external_systems": 10.0,
+    "minimum_balanced_accuracy_lift": 0.10,
+    "minimum_paired_ci_lower_exclusive": 0.0,
+    "maximum_calibration_error": 0.10,
+    "maximum_continuous_error_delta": 0.0,
+    "maximum_system_or_source_leakage": 0.0
+  },
+  "exclusions": [
+    "rows without explicit derivative-use eligibility",
+    "candidate or product qualification claims",
+    "single-frequency |Z| summaries for Kramers-Kronig or equivalent-circuit claims",
+    "systems appearing across development and untouched external splits"
+  ],
+  "dataset_hashes": {
+    "config/program/corrosion-sources.v1.json": "4d722c5a5c10eb432ccec10a740cd2f68410e0c77aa7ad90fa6b546d646251be",
+    "amphora-public-corrosion-benchmark/reference/mvp20/out/v5_epoch29_public_corrosion_dataset_manifest.json": "b59bc8fff1b65e287945e52b19f4849f252e018b62e9626bed0814584f3d9a5a",
+    "config/program/corrosion-split.v1.json": "338e80c57f3816e7c8eee060e8bbcada999b61fc94aed3027d9b0c27fd637055"
+  },
+  "split_hash": "338e80c57f3816e7c8eee060e8bbcada999b61fc94aed3027d9b0c27fd637055"
+}

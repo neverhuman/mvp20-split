@@ -1,0 +1,1755 @@
+{
+  "A1_arrhenius_adequacy": {
+    "ea_kj_mol_q1_q3": [
+      3.118945,
+      52.103991
+    ],
+    "frac_ea_positive": 0.76,
+    "frac_r2_ge_0.70": 0.293333,
+    "frac_r2_ge_0.90": 0.12,
+    "mean_r2": 0.45732,
+    "median_ea_kj_mol": 28.070468,
+    "median_r2": 0.451979,
+    "n_series": 75,
+    "verdict": "ARRHENIUS_REFUTED_AS_ADEQUATE_LAW"
+  },
+  "A2_ea_plausibility_vs_vantHoff": {
+    "band_kj_mol": [
+      26.474431,
+      105.897724
+    ],
+    "ea_q10_2_reference_kj_mol": 52.948862,
+    "frac_positive_ea_in_band": 0.684211,
+    "median_implied_q10_25_to_35_c": 1.757335,
+    "n_series_with_positive_ea": 57,
+    "q10_q1_q3": [
+      1.263277,
+      2.064915
+    ]
+  },
+  "A3_lohto_head_to_head": {
+    "best_by_mae_log10": "P3b_gbm_plus_concentration",
+    "gbm_train_rows": 318,
+    "n_series": 78,
+    "paired_sign_tests": {
+      "P1_vantHoff_vs_P0_carry": {
+        "p_two_sided": 0.308168,
+        "ties": 0,
+        "wins_a": 34,
+        "wins_b": 44
+      },
+      "P1_vantHoff_vs_P3a_gbm": {
+        "p_two_sided": 0.428207,
+        "ties": 0,
+        "wins_a": 35,
+        "wins_b": 43
+      },
+      "P2_arrhenius_vs_P0_carry": {
+        "p_two_sided": 0.494382,
+        "ties": 1,
+        "wins_a": 35,
+        "wins_b": 42
+      },
+      "P2_arrhenius_vs_P3a_gbm": {
+        "p_two_sided": 0.734342,
+        "ties": 0,
+        "wins_a": 37,
+        "wins_b": 41
+      },
+      "P2_arrhenius_vs_P3b_gbm_conc": {
+        "p_two_sided": 0.734342,
+        "ties": 0,
+        "wins_a": 37,
+        "wins_b": 41
+      }
+    },
+    "per_predictor": {
+      "P0_carry_forward_null": {
+        "mae_log10": 0.662122,
+        "median_abs_factor": 2.777778,
+        "median_abs_log10": 0.443697,
+        "n": 78,
+        "rmse_log10": 0.948415
+      },
+      "P1_vantHoff_Q10_2": {
+        "mae_log10": 0.731608,
+        "median_abs_factor": 3.464018,
+        "median_abs_log10": 0.53958,
+        "n": 78,
+        "rmse_log10": 0.962007
+      },
+      "P2_arrhenius_2param": {
+        "mae_log10": 0.655518,
+        "median_abs_factor": 2.920325,
+        "median_abs_log10": 0.465431,
+        "n": 78,
+        "rmse_log10": 0.965574
+      },
+      "P3a_gbm_shipped_features": {
+        "mae_log10": 0.678244,
+        "median_abs_factor": 3.679831,
+        "median_abs_log10": 0.565828,
+        "n": 78,
+        "rmse_log10": 0.880693
+      },
+      "P3b_gbm_plus_concentration": {
+        "mae_log10": 0.614466,
+        "median_abs_factor": 3.081758,
+        "median_abs_log10": 0.488798,
+        "n": 78,
+        "rmse_log10": 0.818871
+      }
+    },
+    "physics_beats_carry_forward_null": true,
+    "physics_beats_ml": false,
+    "protocol": "leave-out-highest-temperature per series; all predictors see the identical information set (that series' lower-T points plus every other series' lower-T points)",
+    "ranking_by_mae_log10": [
+      "P3b_gbm_plus_concentration",
+      "P2_arrhenius_2param",
+      "P0_carry_forward_null",
+      "P3a_gbm_shipped_features",
+      "P1_vantHoff_Q10_2"
+    ]
+  },
+  "A4_marine_chloride_stratum": {
+    "best_predictor": "P3b_gbm_plus_concentration",
+    "n_series": 9,
+    "per_predictor": {
+      "P0_carry_forward_null": {
+        "mae_log10": 0.984645,
+        "median_abs_factor": 4.666667,
+        "median_abs_log10": 0.669007,
+        "n": 9,
+        "rmse_log10": 1.388125
+      },
+      "P1_vantHoff_Q10_2": {
+        "mae_log10": 0.949939,
+        "median_abs_factor": 3.358757,
+        "median_abs_log10": 0.526179,
+        "n": 9,
+        "rmse_log10": 1.249662
+      },
+      "P2_arrhenius_2param": {
+        "mae_log10": 0.971155,
+        "median_abs_factor": 8.529021,
+        "median_abs_log10": 0.930899,
+        "n": 9,
+        "rmse_log10": 1.189043
+      },
+      "P3a_gbm_shipped_features": {
+        "mae_log10": 0.731832,
+        "median_abs_factor": 5.349005,
+        "median_abs_log10": 0.728273,
+        "n": 9,
+        "rmse_log10": 0.86727
+      },
+      "P3b_gbm_plus_concentration": {
+        "mae_log10": 0.731682,
+        "median_abs_factor": 5.225597,
+        "median_abs_log10": 0.718136,
+        "n": 9,
+        "rmse_log10": 0.844011
+      }
+    },
+    "power_flag": "UNDERPOWERED"
+  },
+  "A5_hostile_null_shuffled_temperatures": {
+    "collapse_detected": true,
+    "median_r2_real": 0.451979,
+    "median_r2_shuffled": 0.288527,
+    "n_series": 75
+  },
+  "A6_replicate_irreducible_noise_floor": {
+    "best_predictor_mae_log10": 0.614466,
+    "best_predictor_within_noise_floor": true,
+    "mean_abs_dev_from_cell_median_log10": 0.326703,
+    "mean_pairwise_abs_diff_log10": 0.705391,
+    "median_abs_dev_from_cell_median_log10": 0.127636,
+    "median_pairwise_abs_diff_log10": 0.477121,
+    "n_replicate_observations": 290,
+    "n_replicate_pairs": 451,
+    "n_replicated_cells": 93,
+    "note": "replicate dispersion is measured on the SAME (material, environment, concentration, temperature) cell across independent literature entries; it involves no model and bounds what any predictor can achieve on this dataset"
+  },
+  "all_fail_closed_checks_pass": true,
+  "authority": "AUDIT_ONLY",
+  "benchmark": "arrhenius-temperature-law-v1",
+  "cohort": {
+    "n_points_retained": 396,
+    "n_series_arrhenius_fittable": 75,
+    "n_series_before_retention": 2526,
+    "n_series_in_lohto": 78,
+    "n_series_marine_or_chloride": 9,
+    "n_series_retained": 78
+  },
+  "dataset": {
+    "filters": {
+      "min_distinct_temperatures": 4,
+      "min_temperature_span_K": 20.0,
+      "rate_units": "mm/yr (mils/yr converted at 0.0254)",
+      "replicate_rule": "median of rates at identical (series, temperature)",
+      "series_key": [
+        "material",
+        "environment",
+        "concentration_text"
+      ],
+      "temperature_window_c": [
+        0.0,
+        150.0
+      ]
+    },
+    "n_rate_records": 7722,
+    "n_rate_records_with_temperature": 5059,
+    "n_records_total": 24721,
+    "path": "feedback/v1/derived/nist_corr_reference.json",
+    "rights_class": "DERIVATIVE_ALLOWED",
+    "rights_note": "NIST public data (NIST CORR-DATA); no external download performed",
+    "sha256": "d0d999e4072e75bda4e24fb4fc0c2fdec362d9d96fcc0f0d1a3d5f835540a1d4"
+  },
+  "determinism": {
+    "float_rounding_decimals": 6,
+    "omp_num_threads": "1",
+    "randomness": "numpy RandomState(0) used only for the A5 hostile null",
+    "seed": 0,
+    "timestamp_in_output": false
+  },
+  "fail_closed_checks": [
+    {
+      "check": "heldout_points_never_in_any_fitting_set",
+      "pass": true
+    },
+    {
+      "check": "gbm_train_row_count_equals_retained_minus_heldout",
+      "expected": 318,
+      "observed": 318,
+      "pass": true
+    },
+    {
+      "check": "every_retained_series_has_min_distinct_T_and_span",
+      "min_distinct_T": 4,
+      "min_span_K": 20.0,
+      "pass": true
+    },
+    {
+      "check": "unit_conversion_KAT_1_mil_per_year_eq_0.0254_mm_per_year",
+      "pass": true,
+      "value": 0.0254
+    },
+    {
+      "check": "vantHoff_Q10_2_reference_Ea_KAT",
+      "ea_q10_2_kj_mol": 52.948862,
+      "pass": true,
+      "recomputed_q10_from_that_Ea": 2.0
+    },
+    {
+      "R_J_per_mol_K": 8.314463,
+      "check": "gas_constant_is_SI_2019_exact_value",
+      "pass": true
+    },
+    {
+      "T_window_c": [
+        0.0,
+        150.0
+      ],
+      "check": "temperature_filter_excludes_non_aqueous_regime",
+      "pass": true
+    },
+    {
+      "check": "hostile_null_arrhenius_r2_collapses",
+      "median_r2_real": 0.451979,
+      "median_r2_shuffled": 0.288527,
+      "pass": true
+    },
+    {
+      "check": "all_series_keys_unique_and_sorted",
+      "pass": true
+    },
+    {
+      "check": "replicate_noise_floor_measured_model_free",
+      "n_replicated_cells": 93,
+      "pass": true
+    }
+  ],
+  "governance": {
+    "manifest_state": "66 receipts / 11 modules (untouched)",
+    "modifies_locked_dataset": false,
+    "modifies_manifest": false,
+    "phase": "PRE_PHASE_0",
+    "promotes_authority": false,
+    "scientific_readiness": "UNVALIDATED",
+    "solver_use_ceiling": "AUDIT_ONLY"
+  },
+  "methods": [
+    {
+      "citation": "S. Arrhenius, Z. Phys. Chem. 4:226-248 (1889)",
+      "fitted_on": "lower-temperature points only (held-out max-T point excluded)",
+      "form": "rate = A*exp(-Ea/(R*T)); ln(rate) linear in 1/T",
+      "name": "Arrhenius rate law",
+      "parameters_fitted_per_series": 2
+    },
+    {
+      "citation": "J. H. van 't Hoff, Etudes de dynamique chimique, Frederik Muller, Amsterdam 1884; corrosion-engineering form in M. G. Fontana & N. D. Greene, Corrosion Engineering, 3rd ed., McGraw-Hill 1986, ISBN 0-07-021463-8",
+      "form": "rate(T2) = rate(T1) * 2^((T2-T1)/10 degC)",
+      "name": "van 't Hoff Q10 rule (rate doubles per 10 K)",
+      "parameters_fitted_per_series": 0
+    },
+    {
+      "R_J_per_mol_K": 8.314463,
+      "citation": "SI-2019 / CODATA, NIST SP 330-2019",
+      "exact": true,
+      "name": "molar gas constant"
+    },
+    {
+      "citation": "amphora-barrier-corrosion-score benchmarks/corr-rate-qspr-v1 + corr-rate-conformal-v1 HistGradientBoostingRegressor, features imported verbatim from corr_rate_conformal.py",
+      "env_feature_names": [
+        "chloride",
+        "fluoride",
+        "bromide",
+        "halide",
+        "ox_acid",
+        "red_acid",
+        "org_acid",
+        "sulfuric",
+        "alkali",
+        "marine",
+        "salt",
+        "water",
+        "is_acid"
+      ],
+      "feature_source_sha256": "b968a89f41ad3b1491e679075b1a5b2be484fd341d386de113f80049b138c7f7",
+      "name": "incumbent ML comparator"
+    }
+  ],
+  "module": "amphora-barrier-corrosion-score",
+  "per_series": [
+    {
+      "T_anchor_c": 71.0,
+      "T_heldout_c": 110.0,
+      "abs_err_log10": {
+        "P0_carry": 0.425969,
+        "P1_vantHoff_Q10_2": 1.599986,
+        "P2_arrhenius": 0.530654,
+        "P3a_gbm": 2.343803,
+        "P3b_gbm_conc": 2.121909
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 5.769125,
+      "environment": "Carbon",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 0.003
+    },
+    {
+      "T_anchor_c": 100.0,
+      "T_heldout_c": 110.0,
+      "abs_err_log10": {
+        "P0_carry": 2.188695,
+        "P1_vantHoff_Q10_2": 2.489725,
+        "P2_arrhenius": 2.00577,
+        "P3a_gbm": 1.724497,
+        "P3b_gbm_conc": 2.051606
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 118.644675,
+      "environment": "Phosphoric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.2015
+    },
+    {
+      "T_anchor_c": 82.0,
+      "T_heldout_c": 99.0,
+      "abs_err_log10": {
+        "P0_carry": 0.669007,
+        "P1_vantHoff_Q10_2": 1.180758,
+        "P2_arrhenius": 0.928638,
+        "P3a_gbm": 1.162911,
+        "P3b_gbm_conc": 1.01374
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 10.952972,
+      "environment": "Sodium Chloride",
+      "marine_or_chloride": true,
+      "material": "304",
+      "n_train_T": 8,
+      "rate_heldout_mm_yr": 0.003
+    },
+    {
+      "T_anchor_c": 75.0,
+      "T_heldout_c": 76.0,
+      "abs_err_log10": {
+        "P0_carry": 0.522879,
+        "P1_vantHoff_Q10_2": 0.552982,
+        "P2_arrhenius": 0.359502,
+        "P3a_gbm": 0.568648,
+        "P3b_gbm_conc": 0.562375
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 6.623399,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.003
+    },
+    {
+      "T_anchor_c": 143.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.583577,
+        "P1_vantHoff_Q10_2": 0.794298,
+        "P2_arrhenius": 0.052147,
+        "P3a_gbm": 0.395696,
+        "P3b_gbm_conc": 0.132983
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 58.464389,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 6,
+      "rate_heldout_mm_yr": 1.2
+    },
+    {
+      "T_anchor_c": 115.0,
+      "T_heldout_c": 120.0,
+      "abs_err_log10": {
+        "P0_carry": 0.867374,
+        "P1_vantHoff_Q10_2": 0.716859,
+        "P2_arrhenius": 0.909172,
+        "P3a_gbm": 0.763673,
+        "P3b_gbm_conc": 0.595553
+      },
+      "concentration": "73",
+      "ea_lower_T_fit_kj_mol": -50.328459,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 2.8
+    },
+    {
+      "T_anchor_c": 138.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.500602,
+        "P1_vantHoff_Q10_2": 0.861838,
+        "P2_arrhenius": 0.522154,
+        "P3a_gbm": 0.741743,
+        "P3b_gbm_conc": 0.519849
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -182.997833,
+      "environment": "Sulfur",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.12
+    },
+    {
+      "T_anchor_c": 79.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.259637,
+        "P1_vantHoff_Q10_2": 0.161805,
+        "P2_arrhenius": 0.484688,
+        "P3a_gbm": 0.005421,
+        "P3b_gbm_conc": 0.406038
+      },
+      "concentration": "0.5",
+      "ea_lower_T_fit_kj_mol": 42.808775,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 6,
+      "rate_heldout_mm_yr": 20.0
+    },
+    {
+      "T_anchor_c": 79.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.323306,
+        "P1_vantHoff_Q10_2": 0.098136,
+        "P2_arrhenius": 0.017883,
+        "P3a_gbm": 0.005421,
+        "P3b_gbm_conc": 0.406038
+      },
+      "concentration": "1",
+      "ea_lower_T_fit_kj_mol": 51.112455,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 20.0
+    },
+    {
+      "T_anchor_c": 79.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.18996,
+        "P1_vantHoff_Q10_2": 0.231482,
+        "P2_arrhenius": 0.249783,
+        "P3a_gbm": 0.947429,
+        "P3b_gbm_conc": 0.501944
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": 70.221792,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 175.0
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.012211,
+        "P1_vantHoff_Q10_2": 0.40355,
+        "P2_arrhenius": 0.648915,
+        "P3a_gbm": 1.123544,
+        "P3b_gbm_conc": 0.352942
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": 58.809497,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 262.514
+    },
+    {
+      "T_anchor_c": 79.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.404571,
+        "P1_vantHoff_Q10_2": 0.016871,
+        "P2_arrhenius": 0.073365,
+        "P3a_gbm": 0.222905,
+        "P3b_gbm_conc": 0.578794
+      },
+      "concentration": "3",
+      "ea_lower_T_fit_kj_mol": 47.131328,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 33.0
+    },
+    {
+      "T_anchor_c": 40.0,
+      "T_heldout_c": 65.0,
+      "abs_err_log10": {
+        "P0_carry": 1.150156,
+        "P1_vantHoff_Q10_2": 0.397581,
+        "P2_arrhenius": 0.008028,
+        "P3a_gbm": 0.825404,
+        "P3b_gbm_conc": 0.131425
+      },
+      "concentration": "40",
+      "ea_lower_T_fit_kj_mol": 90.378604,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 325.0
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 1.829304,
+        "P1_vantHoff_Q10_2": 1.437965,
+        "P2_arrhenius": 0.672903,
+        "P3a_gbm": 0.834725,
+        "P3b_gbm_conc": 1.063173
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": 44.341755,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 6,
+      "rate_heldout_mm_yr": 135.0
+    },
+    {
+      "T_anchor_c": 79.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.518762,
+        "P1_vantHoff_Q10_2": 0.09732,
+        "P2_arrhenius": 0.732251,
+        "P3a_gbm": 0.947429,
+        "P3b_gbm_conc": 0.95535
+      },
+      "concentration": "80",
+      "ea_lower_T_fit_kj_mol": 103.559702,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 175.0
+    },
+    {
+      "T_anchor_c": 79.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.124939,
+        "P1_vantHoff_Q10_2": 0.296503,
+        "P2_arrhenius": 0.382779,
+        "P3a_gbm": 0.693549,
+        "P3b_gbm_conc": 0.176056
+      },
+      "concentration": "95",
+      "ea_lower_T_fit_kj_mol": 58.240641,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "304",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 4.0
+    },
+    {
+      "T_anchor_c": 71.0,
+      "T_heldout_c": 110.0,
+      "abs_err_log10": {
+        "P0_carry": 0.0,
+        "P1_vantHoff_Q10_2": 1.174017,
+        "P2_arrhenius": 0.023667,
+        "P3a_gbm": 1.950155,
+        "P3b_gbm_conc": 1.903959
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -5.9323,
+      "environment": "Carbon",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 0.003
+    },
+    {
+      "T_anchor_c": 100.0,
+      "T_heldout_c": 110.0,
+      "abs_err_log10": {
+        "P0_carry": 0.966924,
+        "P1_vantHoff_Q10_2": 1.267954,
+        "P2_arrhenius": 1.110714,
+        "P3a_gbm": 1.125654,
+        "P3b_gbm_conc": 1.42163
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 66.415587,
+      "environment": "Phosphoric Acid",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.15
+    },
+    {
+      "T_anchor_c": 100.0,
+      "T_heldout_c": 126.0,
+      "abs_err_log10": {
+        "P0_carry": 0.443697,
+        "P1_vantHoff_Q10_2": 1.226375,
+        "P2_arrhenius": 1.066724,
+        "P3a_gbm": 0.430648,
+        "P3b_gbm_conc": 0.12948
+      },
+      "concentration": "70",
+      "ea_lower_T_fit_kj_mol": 86.583645,
+      "environment": "Phosphoric Acid",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 5.4
+    },
+    {
+      "T_anchor_c": 100.0,
+      "T_heldout_c": 115.0,
+      "abs_err_log10": {
+        "P0_carry": 0.519525,
+        "P1_vantHoff_Q10_2": 0.97107,
+        "P2_arrhenius": 0.033379,
+        "P3a_gbm": 1.187802,
+        "P3b_gbm_conc": 0.735669
+      },
+      "concentration": "85",
+      "ea_lower_T_fit_kj_mol": 5.077845,
+      "environment": "Phosphoric Acid",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.13
+    },
+    {
+      "T_anchor_c": 99.0,
+      "T_heldout_c": 109.0,
+      "abs_err_log10": {
+        "P0_carry": 3.367977,
+        "P1_vantHoff_Q10_2": 3.066947,
+        "P2_arrhenius": 2.576827,
+        "P3a_gbm": 1.718711,
+        "P3b_gbm_conc": 1.657875
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 12.159662,
+      "environment": "Sodium Chloride",
+      "marine_or_chloride": true,
+      "material": "316",
+      "n_train_T": 10,
+      "rate_heldout_mm_yr": 7.0
+    },
+    {
+      "T_anchor_c": 75.0,
+      "T_heldout_c": 76.0,
+      "abs_err_log10": {
+        "P0_carry": 0.522879,
+        "P1_vantHoff_Q10_2": 0.552982,
+        "P2_arrhenius": 0.359502,
+        "P3a_gbm": 0.377963,
+        "P3b_gbm_conc": 0.242867
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 6.623399,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.003
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 143.0,
+      "abs_err_log10": {
+        "P0_carry": 2.491362,
+        "P1_vantHoff_Q10_2": 0.986212,
+        "P2_arrhenius": 2.456537,
+        "P3a_gbm": 1.625527,
+        "P3b_gbm_conc": 1.363331
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 4.648596,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 3.1
+    },
+    {
+      "T_anchor_c": 138.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.759668,
+        "P1_vantHoff_Q10_2": 1.120904,
+        "P2_arrhenius": 0.255934,
+        "P3a_gbm": 0.524186,
+        "P3b_gbm_conc": 0.47799
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -151.877337,
+      "environment": "Sulfur",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.08
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 107.0,
+      "abs_err_log10": {
+        "P0_carry": 0.595166,
+        "P1_vantHoff_Q10_2": 1.016608,
+        "P2_arrhenius": 1.027374,
+        "P3a_gbm": 0.568902,
+        "P3b_gbm_conc": 0.648032
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": 59.97407,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 7,
+      "rate_heldout_mm_yr": 1.27
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 95.0,
+      "abs_err_log10": {
+        "P0_carry": 0.321233,
+        "P1_vantHoff_Q10_2": 0.130312,
+        "P2_arrhenius": 1.361761,
+        "P3a_gbm": 1.005474,
+        "P3b_gbm_conc": 1.000029
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": 28.551404,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 7,
+      "rate_heldout_mm_yr": 44.0
+    },
+    {
+      "T_anchor_c": 40.0,
+      "T_heldout_c": 65.0,
+      "abs_err_log10": {
+        "P0_carry": 0.008068,
+        "P1_vantHoff_Q10_2": 0.760643,
+        "P2_arrhenius": 0.607792,
+        "P3a_gbm": 1.567557,
+        "P3b_gbm_conc": 0.843746
+      },
+      "concentration": "40",
+      "ea_lower_T_fit_kj_mol": 79.984916,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 160.0
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.620306,
+        "P1_vantHoff_Q10_2": 0.228967,
+        "P2_arrhenius": 0.493064,
+        "P3a_gbm": 0.156921,
+        "P3b_gbm_conc": 0.336987
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": 79.334322,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 3.5
+    },
+    {
+      "T_anchor_c": 79.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.522879,
+        "P1_vantHoff_Q10_2": 0.101437,
+        "P2_arrhenius": 0.406458,
+        "P3a_gbm": 1.299011,
+        "P3b_gbm_conc": 1.064255
+      },
+      "concentration": "80",
+      "ea_lower_T_fit_kj_mol": 30.732281,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "316",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 100.0
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.285236,
+        "P1_vantHoff_Q10_2": 0.106103,
+        "P2_arrhenius": 0.075753,
+        "P3a_gbm": 0.127066,
+        "P3b_gbm_conc": 0.269655
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": 68.544955,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "317",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 27.0
+    },
+    {
+      "T_anchor_c": 79.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.251812,
+        "P1_vantHoff_Q10_2": 0.16963,
+        "P2_arrhenius": 0.143678,
+        "P3a_gbm": 0.871794,
+        "P3b_gbm_conc": 0.914528
+      },
+      "concentration": "80",
+      "ea_lower_T_fit_kj_mol": 36.994424,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "317",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 150.0
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 82.0,
+      "abs_err_log10": {
+        "P0_carry": 3.0086,
+        "P1_vantHoff_Q10_2": 2.948394,
+        "P2_arrhenius": 4.113101,
+        "P3a_gbm": 2.950224,
+        "P3b_gbm_conc": 2.968467
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -68.096428,
+      "environment": "Hydrofluoric Acid",
+      "marine_or_chloride": false,
+      "material": "70-30 cupronickel",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 255.0
+    },
+    {
+      "T_anchor_c": 55.0,
+      "T_heldout_c": 80.0,
+      "abs_err_log10": {
+        "P0_carry": 1.69897,
+        "P1_vantHoff_Q10_2": 0.946395,
+        "P2_arrhenius": 2.397408,
+        "P3a_gbm": 0.419375,
+        "P3b_gbm_conc": 0.46284
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -69.687666,
+      "environment": "Hydrofluoric Acid",
+      "marine_or_chloride": false,
+      "material": "Admiralty brass",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.5
+    },
+    {
+      "T_anchor_c": 82.0,
+      "T_heldout_c": 91.0,
+      "abs_err_log10": {
+        "P0_carry": 0.427903,
+        "P1_vantHoff_Q10_2": 0.69883,
+        "P2_arrhenius": 0.047406,
+        "P3a_gbm": 0.137099,
+        "P3b_gbm_conc": 0.216451
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 13.830493,
+      "environment": "Fruit Juices",
+      "marine_or_chloride": false,
+      "material": "Alloy 400",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.28
+    },
+    {
+      "T_anchor_c": 104.0,
+      "T_heldout_c": 105.0,
+      "abs_err_log10": {
+        "P0_carry": 1.225309,
+        "P1_vantHoff_Q10_2": 1.195206,
+        "P2_arrhenius": 0.57788,
+        "P3a_gbm": 0.433221,
+        "P3b_gbm_conc": 0.17809
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": -58.53195,
+      "environment": "Nitric Acid",
+      "marine_or_chloride": false,
+      "material": "Alloy 625",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.84
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 95.0,
+      "abs_err_log10": {
+        "P0_carry": 0.080922,
+        "P1_vantHoff_Q10_2": 0.370623,
+        "P2_arrhenius": 0.101189,
+        "P3a_gbm": 0.518084,
+        "P3b_gbm_conc": 0.625432
+      },
+      "concentration": "8.5",
+      "ea_lower_T_fit_kj_mol": -5.802348,
+      "environment": "Lithium Chloride",
+      "marine_or_chloride": true,
+      "material": "Alloy C-22",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 3.0
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 95.0,
+      "abs_err_log10": {
+        "P0_carry": 0.024543,
+        "P1_vantHoff_Q10_2": 0.476088,
+        "P2_arrhenius": 0.10521,
+        "P3a_gbm": 0.072424,
+        "P3b_gbm_conc": 0.123462
+      },
+      "concentration": "8.5",
+      "ea_lower_T_fit_kj_mol": -37.147908,
+      "environment": "Lithium Chloride",
+      "marine_or_chloride": true,
+      "material": "Alloy C-276",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.86
+    },
+    {
+      "T_anchor_c": 140.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.653213,
+        "P1_vantHoff_Q10_2": 0.352183,
+        "P2_arrhenius": 0.768652,
+        "P3a_gbm": 0.728273,
+        "P3b_gbm_conc": 0.718136
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -28.501711,
+      "environment": "Chlorine",
+      "marine_or_chloride": true,
+      "material": "Aluminum alloy 1100",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 2.25
+    },
+    {
+      "T_anchor_c": 71.0,
+      "T_heldout_c": 100.0,
+      "abs_err_log10": {
+        "P0_carry": 0.0,
+        "P1_vantHoff_Q10_2": 0.872987,
+        "P2_arrhenius": 0.80915,
+        "P3a_gbm": 0.640807,
+        "P3b_gbm_conc": 0.677218
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -58.421196,
+      "environment": "Carbon",
+      "marine_or_chloride": false,
+      "material": "Carpenter 20 Carpenter Technology Corp.",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.003
+    },
+    {
+      "T_anchor_c": 120.0,
+      "T_heldout_c": 121.0,
+      "abs_err_log10": {
+        "P0_carry": 0.920819,
+        "P1_vantHoff_Q10_2": 0.950922,
+        "P2_arrhenius": 0.930899,
+        "P3a_gbm": 0.794886,
+        "P3b_gbm_conc": 0.820141
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 26.033553,
+      "environment": "Chlorine",
+      "marine_or_chloride": true,
+      "material": "Cast iron",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.18
+    },
+    {
+      "T_anchor_c": 55.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.24952,
+        "P1_vantHoff_Q10_2": 1.393434,
+        "P2_arrhenius": 0.947508,
+        "P3a_gbm": 0.164267,
+        "P3b_gbm_conc": 0.408615
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 44.615556,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Cast iron",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.152
+    },
+    {
+      "T_anchor_c": 50.0,
+      "T_heldout_c": 65.0,
+      "abs_err_log10": {
+        "P0_carry": 0.977724,
+        "P1_vantHoff_Q10_2": 0.526179,
+        "P2_arrhenius": 1.242485,
+        "P3a_gbm": 0.311531,
+        "P3b_gbm_conc": 0.498123
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -31.447118,
+      "environment": "Seawater",
+      "marine_or_chloride": true,
+      "material": "Ferralium 255",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.095
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 107.0,
+      "abs_err_log10": {
+        "P0_carry": 0.716003,
+        "P1_vantHoff_Q10_2": 1.137445,
+        "P2_arrhenius": 0.870134,
+        "P3a_gbm": 0.279396,
+        "P3b_gbm_conc": 0.479474
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": 25.53203,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy B Haynes International",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.25
+    },
+    {
+      "T_anchor_c": 60.0,
+      "T_heldout_c": 63.0,
+      "abs_err_log10": {
+        "P0_carry": 0.30103,
+        "P1_vantHoff_Q10_2": 0.210721,
+        "P2_arrhenius": 0.035369,
+        "P3a_gbm": 0.127951,
+        "P3b_gbm_conc": 0.164808
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": -19.514782,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy B Haynes International",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.5
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 82.0,
+      "abs_err_log10": {
+        "P0_carry": 0.414973,
+        "P1_vantHoff_Q10_2": 0.475179,
+        "P2_arrhenius": 0.446175,
+        "P3a_gbm": 0.395668,
+        "P3b_gbm_conc": 0.187073
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": 38.033083,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy B Haynes International",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.5
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 107.0,
+      "abs_err_log10": {
+        "P0_carry": 0.716003,
+        "P1_vantHoff_Q10_2": 1.137445,
+        "P2_arrhenius": 0.870134,
+        "P3a_gbm": 0.279396,
+        "P3b_gbm_conc": 0.479474
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": 25.53203,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy B-2 Haynes International",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.25
+    },
+    {
+      "T_anchor_c": 60.0,
+      "T_heldout_c": 63.0,
+      "abs_err_log10": {
+        "P0_carry": 0.30963,
+        "P1_vantHoff_Q10_2": 0.219321,
+        "P2_arrhenius": 0.043969,
+        "P3a_gbm": 0.136552,
+        "P3b_gbm_conc": 0.173408
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": -19.514782,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy B-2 Haynes International",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.51
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 82.0,
+      "abs_err_log10": {
+        "P0_carry": 0.414973,
+        "P1_vantHoff_Q10_2": 0.475179,
+        "P2_arrhenius": 0.446015,
+        "P3a_gbm": 0.395668,
+        "P3b_gbm_conc": 0.187073
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": 38.146841,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy B-2 Haynes International",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.5
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 107.0,
+      "abs_err_log10": {
+        "P0_carry": 0.159701,
+        "P1_vantHoff_Q10_2": 0.261741,
+        "P2_arrhenius": 0.441159,
+        "P3a_gbm": 0.90665,
+        "P3b_gbm_conc": 0.724933
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": 76.489325,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy C Haynes International",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 1.3
+    },
+    {
+      "T_anchor_c": 63.0,
+      "T_heldout_c": 77.0,
+      "abs_err_log10": {
+        "P0_carry": 0.90309,
+        "P1_vantHoff_Q10_2": 0.481648,
+        "P2_arrhenius": 0.834163,
+        "P3a_gbm": 0.199397,
+        "P3b_gbm_conc": 0.043466
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": -20.933492,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy C Haynes International",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.4
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 82.0,
+      "abs_err_log10": {
+        "P0_carry": 0.0,
+        "P1_vantHoff_Q10_2": 0.060206,
+        "P2_arrhenius": 0.129878,
+        "P3a_gbm": 0.646039,
+        "P3b_gbm_conc": 0.38183
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": 36.845605,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy C Haynes International",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 0.05
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 107.0,
+      "abs_err_log10": {
+        "P0_carry": 0.159701,
+        "P1_vantHoff_Q10_2": 0.261741,
+        "P2_arrhenius": 0.328191,
+        "P3a_gbm": 0.90665,
+        "P3b_gbm_conc": 0.724933
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": 58.340731,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy C-276 Haynes International",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 1.3
+    },
+    {
+      "T_anchor_c": 63.0,
+      "T_heldout_c": 77.0,
+      "abs_err_log10": {
+        "P0_carry": 1.0,
+        "P1_vantHoff_Q10_2": 0.578558,
+        "P2_arrhenius": 1.005528,
+        "P3a_gbm": 0.296307,
+        "P3b_gbm_conc": 0.053444
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": -29.988173,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy C-276 Haynes International",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.5
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 82.0,
+      "abs_err_log10": {
+        "P0_carry": 0.0,
+        "P1_vantHoff_Q10_2": 0.060206,
+        "P2_arrhenius": 0.0,
+        "P3a_gbm": 0.646039,
+        "P3b_gbm_conc": 0.38183
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": -0.0,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy C-276 Haynes International",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 0.05
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.0,
+        "P1_vantHoff_Q10_2": 0.391339,
+        "P2_arrhenius": 0.0,
+        "P3a_gbm": 0.667537,
+        "P3b_gbm_conc": 0.318389
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": -0.0,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy G Haynes International",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.05
+    },
+    {
+      "T_anchor_c": 80.0,
+      "T_heldout_c": 93.0,
+      "abs_err_log10": {
+        "P0_carry": 0.0,
+        "P1_vantHoff_Q10_2": 0.391339,
+        "P2_arrhenius": 0.0,
+        "P3a_gbm": 0.667537,
+        "P3b_gbm_conc": 0.318389
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": -0.0,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Hastelloy G-3 Haynes International",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.05
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.329059,
+        "P1_vantHoff_Q10_2": 1.386812,
+        "P2_arrhenius": 0.329059,
+        "P3a_gbm": 0.028752,
+        "P3b_gbm_conc": 0.19571
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": -0.0,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Inconel 600 Inco Alloys International, Inc.",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 0.0064
+    },
+    {
+      "T_anchor_c": 120.0,
+      "T_heldout_c": 130.0,
+      "abs_err_log10": {
+        "P0_carry": 0.69897,
+        "P1_vantHoff_Q10_2": 0.39794,
+        "P2_arrhenius": 0.945518,
+        "P3a_gbm": 0.563008,
+        "P3b_gbm_conc": 0.521075
+      },
+      "concentration": "70-73",
+      "ea_lower_T_fit_kj_mol": -26.417665,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Inconel 600 Inco Alloys International, Inc.",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.025
+    },
+    {
+      "T_anchor_c": 104.0,
+      "T_heldout_c": 115.0,
+      "abs_err_log10": {
+        "P0_carry": 0.221849,
+        "P1_vantHoff_Q10_2": 0.109284,
+        "P2_arrhenius": 0.163495,
+        "P3a_gbm": 0.135962,
+        "P3b_gbm_conc": 0.21554
+      },
+      "concentration": "73",
+      "ea_lower_T_fit_kj_mol": 3.011262,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Inconel 600 Inco Alloys International, Inc.",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.005
+    },
+    {
+      "T_anchor_c": 60.0,
+      "T_heldout_c": 80.0,
+      "abs_err_log10": {
+        "P0_carry": 0.81068,
+        "P1_vantHoff_Q10_2": 0.20862,
+        "P2_arrhenius": 0.424567,
+        "P3a_gbm": 0.485501,
+        "P3b_gbm_conc": 0.699985
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": 19.963156,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Inconel 600 Inco Alloys International, Inc.",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 1.94
+    },
+    {
+      "T_anchor_c": 55.0,
+      "T_heldout_c": 60.0,
+      "abs_err_log10": {
+        "P0_carry": 0.187087,
+        "P1_vantHoff_Q10_2": 0.337602,
+        "P2_arrhenius": 0.200265,
+        "P3a_gbm": 0.011165,
+        "P3b_gbm_conc": 0.020089
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 33.038859,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Low-carbon steel",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.13
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.414973,
+        "P1_vantHoff_Q10_2": 1.300898,
+        "P2_arrhenius": 0.301974,
+        "P3a_gbm": 0.275876,
+        "P3b_gbm_conc": 0.20351
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 8.172029,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Monel 400 Inco Alloys International, Inc.",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 0.013
+    },
+    {
+      "T_anchor_c": 120.0,
+      "T_heldout_c": 130.0,
+      "abs_err_log10": {
+        "P0_carry": 0.247784,
+        "P1_vantHoff_Q10_2": 0.053246,
+        "P2_arrhenius": 0.723959,
+        "P3a_gbm": 0.523661,
+        "P3b_gbm_conc": 0.542748
+      },
+      "concentration": "70-73",
+      "ea_lower_T_fit_kj_mol": -46.236268,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Monel 400 Inco Alloys International, Inc.",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.023
+    },
+    {
+      "T_anchor_c": 104.0,
+      "T_heldout_c": 115.0,
+      "abs_err_log10": {
+        "P0_carry": 0.636822,
+        "P1_vantHoff_Q10_2": 0.305689,
+        "P2_arrhenius": 0.650409,
+        "P3a_gbm": 0.275876,
+        "P3b_gbm_conc": 0.253661
+      },
+      "concentration": "73",
+      "ea_lower_T_fit_kj_mol": -30.128622,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Monel 400 Inco Alloys International, Inc.",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.013
+    },
+    {
+      "T_anchor_c": 90.0,
+      "T_heldout_c": 110.0,
+      "abs_err_log10": {
+        "P0_carry": 0.30103,
+        "P1_vantHoff_Q10_2": 0.30103,
+        "P2_arrhenius": 0.091334,
+        "P3a_gbm": 1.240771,
+        "P3b_gbm_conc": 1.089565
+      },
+      "concentration": "47",
+      "ea_lower_T_fit_kj_mol": 76.970322,
+      "environment": "Hydrofluoric Acid",
+      "marine_or_chloride": false,
+      "material": "Ni-30-19P",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 10.0
+    },
+    {
+      "T_anchor_c": 82.0,
+      "T_heldout_c": 91.0,
+      "abs_err_log10": {
+        "P0_carry": 0.352183,
+        "P1_vantHoff_Q10_2": 0.62311,
+        "P2_arrhenius": 0.218099,
+        "P3a_gbm": 0.055834,
+        "P3b_gbm_conc": 0.094272
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 5.951999,
+      "environment": "Fruit Juices",
+      "marine_or_chloride": false,
+      "material": "Nickel 200",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 0.4
+    },
+    {
+      "T_anchor_c": 130.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.370666,
+        "P1_vantHoff_Q10_2": 0.972726,
+        "P2_arrhenius": 0.230573,
+        "P3a_gbm": 0.224501,
+        "P3b_gbm_conc": 0.049221
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 18.217641,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Nickel 200",
+      "n_train_T": 9,
+      "rate_heldout_mm_yr": 0.0115
+    },
+    {
+      "T_anchor_c": 120.0,
+      "T_heldout_c": 130.0,
+      "abs_err_log10": {
+        "P0_carry": 0.69897,
+        "P1_vantHoff_Q10_2": 0.39794,
+        "P2_arrhenius": 0.709275,
+        "P3a_gbm": 0.561743,
+        "P3b_gbm_conc": 0.615951
+      },
+      "concentration": "70-73",
+      "ea_lower_T_fit_kj_mol": 16.966183,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Nickel 200",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.025
+    },
+    {
+      "T_anchor_c": 104.0,
+      "T_heldout_c": 115.0,
+      "abs_err_log10": {
+        "P0_carry": 0.425969,
+        "P1_vantHoff_Q10_2": 0.094836,
+        "P2_arrhenius": 0.425969,
+        "P3a_gbm": 0.066893,
+        "P3b_gbm_conc": 0.078663
+      },
+      "concentration": "73",
+      "ea_lower_T_fit_kj_mol": 0.0,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Nickel 200",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.008
+    },
+    {
+      "T_anchor_c": 77.0,
+      "T_heldout_c": 80.0,
+      "abs_err_log10": {
+        "P0_carry": 1.0,
+        "P1_vantHoff_Q10_2": 0.909691,
+        "P2_arrhenius": 0.436979,
+        "P3a_gbm": 0.64468,
+        "P3b_gbm_conc": 0.623405
+      },
+      "concentration": "10",
+      "ea_lower_T_fit_kj_mol": 42.184482,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Nickel 200",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 3.0
+    },
+    {
+      "T_anchor_c": 77.0,
+      "T_heldout_c": 78.0,
+      "abs_err_log10": {
+        "P0_carry": 1.763428,
+        "P1_vantHoff_Q10_2": 1.733325,
+        "P2_arrhenius": 0.687068,
+        "P3a_gbm": 0.941914,
+        "P3b_gbm_conc": 0.88861
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": 14.58613,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Nickel 200",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 2.9
+    },
+    {
+      "T_anchor_c": 100.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.720159,
+        "P1_vantHoff_Q10_2": 0.784991,
+        "P2_arrhenius": 0.542722,
+        "P3a_gbm": 1.159494,
+        "P3b_gbm_conc": 0.973749
+      },
+      "concentration": "20",
+      "ea_lower_T_fit_kj_mol": 40.212049,
+      "environment": "Sulfuric Acid",
+      "marine_or_chloride": false,
+      "material": "Niobium",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.21
+    },
+    {
+      "T_anchor_c": 100.0,
+      "T_heldout_c": 120.0,
+      "abs_err_log10": {
+        "P0_carry": 1.778151,
+        "P1_vantHoff_Q10_2": 1.176091,
+        "P2_arrhenius": 1.15,
+        "P3a_gbm": 0.875815,
+        "P3b_gbm_conc": 0.843075
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": -1.370591,
+      "environment": "Chlorine",
+      "marine_or_chloride": true,
+      "material": "Silver",
+      "n_train_T": 4,
+      "rate_heldout_mm_yr": 3.0
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 95.0,
+      "abs_err_log10": {
+        "P0_carry": 0.389452,
+        "P1_vantHoff_Q10_2": 0.449658,
+        "P2_arrhenius": 0.936494,
+        "P3a_gbm": 0.403854,
+        "P3b_gbm_conc": 0.285155
+      },
+      "concentration": "5",
+      "ea_lower_T_fit_kj_mol": 35.447656,
+      "environment": "Hydrochloric Acid",
+      "marine_or_chloride": true,
+      "material": "Titanium",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 0.031
+    },
+    {
+      "T_anchor_c": 29.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 2.431364,
+        "P1_vantHoff_Q10_2": 1.211099,
+        "P2_arrhenius": 2.431364,
+        "P3a_gbm": 1.69794,
+        "P3b_gbm_conc": 1.706523
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": -0.0,
+      "environment": "Potassium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Titanium",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 2.7
+    },
+    {
+      "T_anchor_c": 93.0,
+      "T_heldout_c": 121.0,
+      "abs_err_log10": {
+        "P0_carry": 0.335792,
+        "P1_vantHoff_Q10_2": 0.507092,
+        "P2_arrhenius": 0.010778,
+        "P3a_gbm": 0.380519,
+        "P3b_gbm_conc": 0.328346
+      },
+      "concentration": "40",
+      "ea_lower_T_fit_kj_mol": 17.343656,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Titanium",
+      "n_train_T": 3,
+      "rate_heldout_mm_yr": 0.13
+    },
+    {
+      "T_anchor_c": 66.0,
+      "T_heldout_c": 150.0,
+      "abs_err_log10": {
+        "P0_carry": 0.443697,
+        "P1_vantHoff_Q10_2": 2.084954,
+        "P2_arrhenius": 0.098387,
+        "P3a_gbm": 0.034454,
+        "P3b_gbm_conc": 0.025871
+      },
+      "concentration": "50",
+      "ea_lower_T_fit_kj_mol": 19.651771,
+      "environment": "Sodium Hydroxide",
+      "marine_or_chloride": false,
+      "material": "Titanium",
+      "n_train_T": 5,
+      "rate_heldout_mm_yr": 0.05
+    },
+    {
+      "T_anchor_c": 95.0,
+      "T_heldout_c": 100.0,
+      "abs_err_log10": {
+        "P0_carry": 0.477121,
+        "P1_vantHoff_Q10_2": 0.627636,
+        "P2_arrhenius": 1.352702,
+        "P3a_gbm": 0.749648,
+        "P3b_gbm_conc": 0.778349
+      },
+      "concentration": "",
+      "ea_lower_T_fit_kj_mol": 48.028011,
+      "environment": "Water",
+      "marine_or_chloride": false,
+      "material": "Zinc",
+      "n_train_T": 6,
+      "rate_heldout_mm_yr": 0.1
+    }
+  ],
+  "schema": "amphora.barrier-corrosion-score.arrhenius-temperature-law.v1",
+  "target_interpretation": {
+    "is_coating_barrier_performance": false,
+    "known_limitations": [
+      "NIST CORR-DATA aggregates heterogeneous literature sources; replicate spread at fixed (series, T) can exceed the temperature effect",
+      "concentration_text is free text; the numeric parse used for P3b takes the first number and ignores units/qualifiers",
+      "series are chemical-process environments, mostly not marine atmospheric; the marine/chloride stratum is small and power-flagged",
+      "no pressure/phase metadata: the [0,150] degC window is a proxy for the aqueous liquid regime, not a verified phase constraint"
+    ],
+    "role": "environmental/thermal severity input to a barrier-corrosion score; grants no coating-barrier, batch-release, optimizer or product-performance authority",
+    "target": "log10 corrosion rate of BARE metal/alloy substrate, mm/yr"
+  },
+  "verdict": {
+    "A1_arrhenius_law": "ARRHENIUS_REFUTED_AS_ADEQUATE_LAW",
+    "A1_detail": "median per-series R^2 = 0.452 with only 12.0% of series at R^2 >= 0.90; the sign is right (76.0% have Ea > 0) but the magnitude of scatter means a 2-parameter Arrhenius fit is not an adequate law here.",
+    "A2_vantHoff_scale": "CORROBORATED_IN_SCALE_NOT_IN_VALUE: 68.4% of positive-Ea series fall inside the [0.5x, 2x] van 't Hoff Q10=2 band, and the median implied Q10 over 25-35 degC is 1.76 -- the textbook 'doubles per 10 degC' rule OVERSTATES the median observed temperature sensitivity.",
+    "A3_head_to_head": "NO_PREDICTOR_SIGNIFICANTLY_BETTER: best MAE 0.614 log10 (factor 4.1) vs carry-forward null 0.662; every paired sign test has p >= 0.30. The 2-parameter Arrhenius fit ties the 300-tree HistGBM QSPR. The zero-parameter van 't Hoff Q10=2 rule is the WORST predictor, consistent with A2.",
+    "A5_red_team": "Shuffling rate values across temperatures within each series drops median R^2 from 0.452 to 0.289 -- a real but MODEST collapse, showing that a large part of the apparent Arrhenius linearity is small-sample (4-6 point) fitting artefact, not physics.",
+    "A6_ceiling": "The measured model-free replicate dispersion on identical (material, environment, concentration, temperature) cells is 0.705 log10 mean pairwise |diff| (451 pairs). The best predictor's LOHTO MAE is 0.614 log10. Prediction error is therefore of the SAME ORDER as the dataset's own source-to-source disagreement: the temperature-extrapolation ceiling on NIST CORR-DATA is set by data heterogeneity, not by model class.",
+    "authority_change": "NONE",
+    "consequence_for_the_module": "This bounds the corrosion-rate severity input: the wide calibrated intervals reported by corr-rate-conformal-v1 are HONEST, not a modelling failure -- a factor ~4-5 spread is the irreducible floor of this data source. Adding a physical temperature law does NOT tighten them. Any real improvement requires protocol-controlled primary corrosion-rate series, not a better estimator.",
+    "flips_scientific_readiness": false,
+    "headline": "The Arrhenius law is REFUTED as an adequate per-series description of NIST CORR-DATA corrosion rates, while the van 't Hoff Q10 rule is CORROBORATED IN SCALE but not in value; and on a strict leave-out-highest-temperature test NO predictor -- physical or ML -- is statistically distinguishable from a carry-forward null.",
+    "promotes": false
+  }
+}

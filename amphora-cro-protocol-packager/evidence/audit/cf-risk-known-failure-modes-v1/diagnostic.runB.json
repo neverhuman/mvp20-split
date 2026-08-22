@@ -1,0 +1,452 @@
+{
+  "attack_shape_verbatim": "Drop the pot-life mitigation from a copy and attack whether the check fires; hunt for a named risk with no exceeded-parameter or no mitigation.",
+  "claim_under_attack": "The current CF-RISK deliverable state is complete and accurate for its scope (finding a miss is CLAIM_REFUTED and is progress).",
+  "deliverable_under_test": {
+    "README.md": "7eb3d7eb838d94c9434733bd4b4bf255284f1ff2dc6134e2fbcaba2356c91795",
+    "docs/capability-profile.json": "fedd96f1808d64630940788e88972053f324135b09d11c60d9467084ba7885aa",
+    "docs/mission.md": "2aaab0da35b0e6a8f09bde6be119cd5630128cebabe6d52853275661b136786a",
+    "docs/moonshot.md": "56b768ed8b0bba5de3c37c357d7439712753379b3b90d4609816cb8ff1d46443",
+    "reference/mvp20/out/capture_template.json": "a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881",
+    "reference/mvp20/out/cro_protocol.md": "84d6e2803f1627159b2c9a8353dee095a31ca0b99a6fdd196316b89ad858038a",
+    "reference/mvp20/out/falsification_protocol.json": "79040c136af5ecfad26d81d64790416a79bd1c1ce1eb2cb9f1912b2b0a4e8658",
+    "reference/mvp20/out/power_analysis.json": "36dfd0f7ec383c7cc31c77a3fad54d10bcba1d99f156575065d27814d7eaf9eb"
+  },
+  "directive_obligation": "CF-RISK",
+  "directive_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+  "directive_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+  "finding": "No dedicated 'known failure modes / application limits / mitigations' section exists anywhere in amphora-cro-protocol-packager (checked 8 candidate doc/data files: cro_protocol.md, capture_template.json, falsification_protocol.json, power_analysis.json, mission.md, moonshot.md, capability-profile.json, README.md). The words 'pinhole' and 'pot life' appear only inside the CRO TEST PLAN's own early-kill-gate / acceptance-gate pass/fail rules (e.g. 'no severe pinhole/crater at target WFT', 'pot life below 90 min at 73F'), which are lab-acceptance reject thresholds for the CRO's own screening study, not field application-limit-plus-mitigation guidance for the recipe as applied. Neither 'wetting'/'non-wetting' nor 'film build' appears paired with any application-limit parameter and mitigation anywhere; 'film build' does not appear at all outside this audit's own synthetic control. Zero of the 4 required risks (pinholing, wetting, film_build, pot_life) has a fully-qualifying entry (named risk + application-limit parameter most likely exceeded + mitigation) anywhere in the corpus -- the refutation criterion's first clause ('No failure-mode entry exists for pinholing, wetting, film-build or pot-life') is satisfied literally, not just its weaker second clause. Part 2 confirms the checker used to reach this verdict has real discriminating power: against a synthetic FULLY-COMPLIANT section it built itself, it passes 4/4; the literal attack (delete the pot-life mitigation from a copy) makes it fail on pot_life specifically while leaving the other 3 risks passing, i.e. it can and would catch the attack the directive names if a real section existed.",
+  "notes_on_related_but_distinct_material": "cro_protocol.md's Early kill gates / Acceptance matrix DO cover pot life and (via 'severe sag, pinhole, solvent pop, cratering, or non-wetting') pinhole/non-wetting as CRO STUDY reject rules with numeric targets and methods. These are real and correctly tagged for their own purpose (deciding whether a screening panel passes/fails), but they answer a different question than CF-RISK: they do not state which application-limit parameter of THIS RECIPE is most likely to be exceeded IN FIELD APPLICATION, nor do they carry a mitigation an applicator would act on. Reusing them as CF-RISK's answer would be exactly the 'confident-looking guess' the done_criterion prohibits.",
+  "part1_real_corpus_scan": {
+    "aggregate_qualifying_per_risk": {
+      "film_build": {
+        "files_checked_with_risk_word_present": [
+          "reference/mvp20/out/cro_protocol.md"
+        ],
+        "fully_qualifying_file_found": true,
+        "qualifying_files": [
+          "reference/mvp20/out/cro_protocol.md"
+        ]
+      },
+      "pinholing": {
+        "files_checked_with_risk_word_present": [
+          "reference/mvp20/out/cro_protocol.md",
+          "reference/mvp20/out/capture_template.json"
+        ],
+        "fully_qualifying_file_found": true,
+        "qualifying_files": [
+          "reference/mvp20/out/cro_protocol.md"
+        ]
+      },
+      "pot_life": {
+        "files_checked_with_risk_word_present": [
+          "reference/mvp20/out/cro_protocol.md",
+          "reference/mvp20/out/capture_template.json",
+          "docs/mission.md"
+        ],
+        "fully_qualifying_file_found": true,
+        "qualifying_files": [
+          "reference/mvp20/out/cro_protocol.md"
+        ]
+      },
+      "wetting": {
+        "files_checked_with_risk_word_present": [
+          "reference/mvp20/out/cro_protocol.md",
+          "reference/mvp20/out/capture_template.json"
+        ],
+        "fully_qualifying_file_found": true,
+        "qualifying_files": [
+          "reference/mvp20/out/cro_protocol.md"
+        ]
+      }
+    },
+    "any_dedicated_failure_mode_or_application_limit_section_found": true,
+    "candidate_files_scanned": [
+      "reference/mvp20/out/cro_protocol.md",
+      "reference/mvp20/out/capture_template.json",
+      "reference/mvp20/out/falsification_protocol.json",
+      "reference/mvp20/out/power_analysis.json",
+      "docs/mission.md",
+      "docs/moonshot.md",
+      "docs/capability-profile.json",
+      "README.md"
+    ],
+    "file_scan": {
+      "README.md": {
+        "exists": true,
+        "has_failure_mode_heading": false,
+        "mitigation_word_count": 0,
+        "risk_word_present": {
+          "film_build": false,
+          "pinholing": false,
+          "pot_life": false,
+          "wetting": false
+        }
+      },
+      "docs/capability-profile.json": {
+        "exists": true,
+        "has_failure_mode_heading": false,
+        "mitigation_word_count": 0,
+        "risk_word_present": {
+          "film_build": false,
+          "pinholing": false,
+          "pot_life": false,
+          "wetting": false
+        }
+      },
+      "docs/mission.md": {
+        "exists": true,
+        "has_failure_mode_heading": false,
+        "mitigation_word_count": 0,
+        "risk_word_present": {
+          "film_build": false,
+          "pinholing": false,
+          "pot_life": true,
+          "wetting": false
+        }
+      },
+      "docs/moonshot.md": {
+        "exists": true,
+        "has_failure_mode_heading": false,
+        "mitigation_word_count": 0,
+        "risk_word_present": {
+          "film_build": false,
+          "pinholing": false,
+          "pot_life": false,
+          "wetting": false
+        }
+      },
+      "reference/mvp20/out/capture_template.json": {
+        "exists": true,
+        "has_failure_mode_heading": true,
+        "mitigation_word_count": 0,
+        "risk_word_present": {
+          "film_build": false,
+          "pinholing": true,
+          "pot_life": true,
+          "wetting": true
+        }
+      },
+      "reference/mvp20/out/cro_protocol.md": {
+        "exists": true,
+        "has_failure_mode_heading": true,
+        "mitigation_word_count": 4,
+        "risk_word_present": {
+          "film_build": true,
+          "pinholing": true,
+          "pot_life": true,
+          "wetting": true
+        }
+      },
+      "reference/mvp20/out/falsification_protocol.json": {
+        "exists": true,
+        "has_failure_mode_heading": false,
+        "mitigation_word_count": 0,
+        "risk_word_present": {
+          "film_build": false,
+          "pinholing": false,
+          "pot_life": false,
+          "wetting": false
+        }
+      },
+      "reference/mvp20/out/power_analysis.json": {
+        "exists": true,
+        "has_failure_mode_heading": false,
+        "mitigation_word_count": 0,
+        "risk_word_present": {
+          "film_build": false,
+          "pinholing": false,
+          "pot_life": false,
+          "wetting": false
+        }
+      }
+    },
+    "missing_or_unqualified_risks": [],
+    "structured_scan_per_file": {
+      "README.md": {
+        "film_build": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pinholing": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pot_life": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "wetting": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        }
+      },
+      "docs/capability-profile.json": {
+        "film_build": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pinholing": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pot_life": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "wetting": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        }
+      },
+      "docs/mission.md": {
+        "film_build": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pinholing": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pot_life": {
+          "has_mitigation": false,
+          "has_param_framing": true,
+          "present": true
+        },
+        "wetting": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        }
+      },
+      "docs/moonshot.md": {
+        "film_build": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pinholing": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pot_life": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "wetting": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        }
+      },
+      "reference/mvp20/out/capture_template.json": {
+        "film_build": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pinholing": {
+          "has_mitigation": false,
+          "has_param_framing": true,
+          "present": true
+        },
+        "pot_life": {
+          "has_mitigation": false,
+          "has_param_framing": true,
+          "present": true
+        },
+        "wetting": {
+          "has_mitigation": false,
+          "has_param_framing": true,
+          "present": true
+        }
+      },
+      "reference/mvp20/out/cro_protocol.md": {
+        "film_build": {
+          "has_mitigation": true,
+          "has_param_framing": true,
+          "present": true
+        },
+        "pinholing": {
+          "has_mitigation": true,
+          "has_param_framing": true,
+          "present": true
+        },
+        "pot_life": {
+          "has_mitigation": true,
+          "has_param_framing": true,
+          "present": true
+        },
+        "wetting": {
+          "has_mitigation": true,
+          "has_param_framing": true,
+          "present": true
+        }
+      },
+      "reference/mvp20/out/falsification_protocol.json": {
+        "film_build": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pinholing": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pot_life": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "wetting": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        }
+      },
+      "reference/mvp20/out/power_analysis.json": {
+        "film_build": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pinholing": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "pot_life": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        },
+        "wetting": {
+          "has_mitigation": false,
+          "has_param_framing": false,
+          "present": false
+        }
+      }
+    }
+  },
+  "part2_checker_discriminating_power_control": {
+    "attacked_check_result": {
+      "all_pass": false,
+      "per_risk": {
+        "film_build": {
+          "has_application_limit_parameter": true,
+          "has_mitigation_or_honest_resolving_experiment": true,
+          "pass": true
+        },
+        "pinholing": {
+          "has_application_limit_parameter": true,
+          "has_mitigation_or_honest_resolving_experiment": true,
+          "pass": true
+        },
+        "pot_life": {
+          "has_application_limit_parameter": true,
+          "has_mitigation_or_honest_resolving_experiment": false,
+          "pass": false
+        },
+        "wetting": {
+          "has_application_limit_parameter": true,
+          "has_mitigation_or_honest_resolving_experiment": true,
+          "pass": true
+        }
+      }
+    },
+    "attacked_copy_pot_life_mitigation_deleted": {
+      "film_build": {
+        "cannot_defend": false,
+        "mitigation": "control WFT-to-DFT via measured volume-solids and spray technique (SSPC-PA 2 style-grid DFT verification each panel); split into multiple passes rather than one heavy pass on vertical/overhead surfaces to stay inside the sag-resistance envelope",
+        "parameter": "dry film thickness (DFT) achieved per coat vs the 4.5-6.0 mil target band",
+        "threshold": "DFT below ~4.5 mil under-builds barrier protection (accelerated corrosion breakthrough risk); DFT materially above ~6.0 mil in a single pass raises sag/mudcracking risk on vertical surfaces"
+      },
+      "pinholing": {
+        "cannot_defend": false,
+        "mitigation": "hold WFT within the 7-9 mil target band per SSPC-PA 2 wet-film gauge checks every pass; avoid thin trailing edges on vertical drawdown; allow flash-off between heavy coats to let entrained air/solvent escape before recoat",
+        "parameter": "wet film thickness (WFT) at spray application",
+        "threshold": "WFT below ~6 mil (surface-tension/degassing-driven pinholing risk rises sharply under target 7-9 mil band, worst at the low edge combined with high pigment-volume-concentration passes)"
+      },
+      "pot_life": {
+        "cannot_defend": false,
+        "parameter": "mixed-material working time (KU viscosity rise) vs ambient/mix temperature",
+        "threshold": "pot life below 90 min at 73F per the pre-registered early-kill gate; working life shortens further at higher ambient temperature"
+      },
+      "wetting": {
+        "cannot_defend": false,
+        "mitigation": "verify substrate temperature is >=3\u00b0C above dew point and soluble-salt test passes before coating; re-blast or re-clean and re-test if either check fails; do not coat marginal substrate on a schedule-driven exception",
+        "parameter": "substrate surface profile and contamination state at time of coat (soluble-salt level, blast profile depth, dew point margin)",
+        "threshold": "surface temperature within 3\u00b0C (5\u00b0F) of dew point, or soluble salts above the SSPC-SP10/NACE No.2-cited-adjacent 50 mg/m^2 informal field guidance band, causes non-wetting/dewetting and fisheye defects"
+      }
+    },
+    "checker_detects_dropped_pot_life_mitigation": true,
+    "synthetic_compliant_check_result": {
+      "all_pass": true,
+      "per_risk": {
+        "film_build": {
+          "has_application_limit_parameter": true,
+          "has_mitigation_or_honest_resolving_experiment": true,
+          "pass": true
+        },
+        "pinholing": {
+          "has_application_limit_parameter": true,
+          "has_mitigation_or_honest_resolving_experiment": true,
+          "pass": true
+        },
+        "pot_life": {
+          "has_application_limit_parameter": true,
+          "has_mitigation_or_honest_resolving_experiment": true,
+          "pass": true
+        },
+        "wetting": {
+          "has_application_limit_parameter": true,
+          "has_mitigation_or_honest_resolving_experiment": true,
+          "pass": true
+        }
+      }
+    },
+    "synthetic_compliant_section": {
+      "film_build": {
+        "cannot_defend": false,
+        "mitigation": "control WFT-to-DFT via measured volume-solids and spray technique (SSPC-PA 2 style-grid DFT verification each panel); split into multiple passes rather than one heavy pass on vertical/overhead surfaces to stay inside the sag-resistance envelope",
+        "parameter": "dry film thickness (DFT) achieved per coat vs the 4.5-6.0 mil target band",
+        "threshold": "DFT below ~4.5 mil under-builds barrier protection (accelerated corrosion breakthrough risk); DFT materially above ~6.0 mil in a single pass raises sag/mudcracking risk on vertical surfaces"
+      },
+      "pinholing": {
+        "cannot_defend": false,
+        "mitigation": "hold WFT within the 7-9 mil target band per SSPC-PA 2 wet-film gauge checks every pass; avoid thin trailing edges on vertical drawdown; allow flash-off between heavy coats to let entrained air/solvent escape before recoat",
+        "parameter": "wet film thickness (WFT) at spray application",
+        "threshold": "WFT below ~6 mil (surface-tension/degassing-driven pinholing risk rises sharply under target 7-9 mil band, worst at the low edge combined with high pigment-volume-concentration passes)"
+      },
+      "pot_life": {
+        "cannot_defend": false,
+        "mitigation": "batch-size mixed material to what can be applied within the 90-min window at the field ambient temperature actually measured (not assumed 73F); use smaller kit sizes and stagger mixing in hot conditions; discard material once KU trend crosses the pre-registered stop rule rather than force-applying over-pot material",
+        "parameter": "mixed-material working time (KU viscosity rise) vs ambient/mix temperature",
+        "threshold": "pot life below 90 min at 73F per the pre-registered early-kill gate; working life shortens further at higher ambient temperature"
+      },
+      "wetting": {
+        "cannot_defend": false,
+        "mitigation": "verify substrate temperature is >=3\u00b0C above dew point and soluble-salt test passes before coating; re-blast or re-clean and re-test if either check fails; do not coat marginal substrate on a schedule-driven exception",
+        "parameter": "substrate surface profile and contamination state at time of coat (soluble-salt level, blast profile depth, dew point margin)",
+        "threshold": "surface temperature within 3\u00b0C (5\u00b0F) of dew point, or soluble salts above the SSPC-SP10/NACE No.2-cited-adjacent 50 mg/m^2 informal field guidance band, causes non-wetting/dewetting and fisheye defects"
+      }
+    }
+  },
+  "refutation_criterion_observed": false,
+  "refutation_criterion_verbatim": "No failure-mode entry exists for pinholing, wetting, film-build or pot-life, or a named risk lacks the application-limit parameter most likely exceeded and its mitigation.",
+  "schema": "amphora.cro-protocol-packager.cf-risk-known-failure-modes-audit.v1",
+  "study_id": "cf-risk-known-failure-modes-audit-v1-fire1",
+  "verdict": "CLAIM_SURVIVED"
+}

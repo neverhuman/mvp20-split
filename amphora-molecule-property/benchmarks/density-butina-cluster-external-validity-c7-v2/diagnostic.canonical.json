@@ -1,0 +1,214 @@
+{
+  "attack_1_leave_one_butina_cluster_out": {
+    "degradation_factor_vs_own_within_corpus": 0.9535355561477267,
+    "dist_thresh": 0.4,
+    "interpretation": "Fine Butina clusters are small chemical islands still densely surrounded by highly similar training neighbors from other nearby clusters; holding out one island barely perturbs local interpolation, so this proxy is WEAKER (0.95x, i.e. no degradation at all) than fire 1's leave-class-out (1.80x) and cannot be used as the fire's falsification attempt.",
+    "largest_cluster_sizes_top10": [
+      73,
+      33,
+      28,
+      20,
+      20,
+      19,
+      18,
+      17,
+      15,
+      15
+    ],
+    "method": "Butina 1999 J. Chem. Inf. Comput. Sci. 39(4):747-750, Tanimoto distance on Morgan r=2/512-bit fingerprints",
+    "min_cluster_size": 8,
+    "n_clusters": 411,
+    "n_eligible_clusters": 30,
+    "n_pooled_test": 469,
+    "n_singleton_clusters": 277,
+    "per_cluster": {
+      "0": {
+        "mae": 0.01772925363924673,
+        "n_test": 73
+      },
+      "1": {
+        "mae": 0.03561732792303041,
+        "n_test": 33
+      },
+      "10": {
+        "mae": 0.022443754421176527,
+        "n_test": 17
+      },
+      "12": {
+        "mae": 0.030469399933750432,
+        "n_test": 8
+      },
+      "13": {
+        "mae": 0.08319093207933329,
+        "n_test": 15
+      },
+      "14": {
+        "mae": 0.02491812536533334,
+        "n_test": 15
+      },
+      "15": {
+        "mae": 0.02202009525933346,
+        "n_test": 15
+      },
+      "17": {
+        "mae": 0.03115509583500001,
+        "n_test": 14
+      },
+      "18": {
+        "mae": 0.04901727788571418,
+        "n_test": 14
+      },
+      "19": {
+        "mae": 0.024169574978571386,
+        "n_test": 14
+      },
+      "2": {
+        "mae": 0.019683093669368566,
+        "n_test": 19
+      },
+      "21": {
+        "mae": 0.02285521222125038,
+        "n_test": 8
+      },
+      "22": {
+        "mae": 0.03017064081833339,
+        "n_test": 12
+      },
+      "23": {
+        "mae": 0.040745345012499934,
+        "n_test": 12
+      },
+      "27": {
+        "mae": 0.10998219270825751,
+        "n_test": 11
+      },
+      "3": {
+        "mae": 0.018371557190908962,
+        "n_test": 11
+      },
+      "31": {
+        "mae": 0.10911303679699995,
+        "n_test": 10
+      },
+      "33": {
+        "mae": 0.11240650480699994,
+        "n_test": 10
+      },
+      "34": {
+        "mae": 0.052399067737000225,
+        "n_test": 10
+      },
+      "35": {
+        "mae": 0.025542914300000254,
+        "n_test": 10
+      },
+      "37": {
+        "mae": 0.03584977035444455,
+        "n_test": 9
+      },
+      "38": {
+        "mae": 0.034586281054375334,
+        "n_test": 8
+      },
+      "39": {
+        "mae": 0.043651403293749474,
+        "n_test": 8
+      },
+      "4": {
+        "mae": 0.03520409133728573,
+        "n_test": 28
+      },
+      "40": {
+        "mae": 0.014889399033333466,
+        "n_test": 9
+      },
+      "45": {
+        "mae": 0.09052020142624975,
+        "n_test": 8
+      },
+      "5": {
+        "mae": 0.05715131719799989,
+        "n_test": 20
+      },
+      "6": {
+        "mae": 0.03968245638337499,
+        "n_test": 20
+      },
+      "8": {
+        "mae": 0.05652054984277802,
+        "n_test": 18
+      },
+      "9": {
+        "mae": 0.01754244545060002,
+        "n_test": 10
+      }
+    },
+    "pooled_mae": 0.03889946635031207,
+    "status": "DOCUMENTED_NEGATIVE_RESULT_WEAKER_THAN_FIRE1"
+  },
+  "attack_2_hierarchical_macro_bisection_PRIMARY": {
+    "degradation_factor_A_vs_own_within_corpus": 13.73773717681496,
+    "degradation_factor_B_vs_own_within_corpus": 7.5933361123638585,
+    "direction_A_train_macro_a_test_macro_b": {
+      "mae": 0.5604307480655227,
+      "n_test": 1061,
+      "n_train": 16,
+      "null_mae_using_train_median": 0.6417353935461828,
+      "r2": -12.151676175050213,
+      "test_y_range": [
+        0.742358507,
+        1.815896982
+      ],
+      "train_y_range": [
+        1.27745434,
+        1.914482486
+      ]
+    },
+    "direction_B_train_macro_b_test_macro_a": {
+      "mae": 0.3097700140127193,
+      "n_test": 16,
+      "n_train": 1061,
+      "null_mae_using_train_median": 0.6117158916875001,
+      "r2": -5.010432272343768,
+      "test_y_range": [
+        1.27745434,
+        1.914482486
+      ],
+      "train_y_range": [
+        0.742358507,
+        1.815896982
+      ]
+    },
+    "method": "scipy average-linkage agglomerative clustering on the full n x n Tanimoto distance matrix (Sokal & Michener 1958 UPGMA-family average linkage; Murtagh & Contreras 2012 review), cut to 2 clusters (fcluster maxclust=2). Produces two large, internally-diverse macro-chemotype halves that are collectively maximally separated -- the within-corpus analogue of a true second-corpus split.",
+    "n_macro_a": 16,
+    "n_macro_b": 1061,
+    "refuted_A": true,
+    "refuted_B": true
+  },
+  "campaign_item_id": "C7",
+  "data_availability_note": "No second rights-cleared polymer-density corpus exists in this module (re-verified this fire, unchanged from fire 1); a literal cross-corpus swap remains BLOCKED_DATA and is queued in data-acquisition-queue.jsonl. The hierarchical macro-bisection is the hardest within-corpus proxy found across two attack designs this fire.",
+  "degradation_refute_threshold": 2.0,
+  "featurization": {
+    "additional_features": [
+      "log10(MolWt+1)"
+    ],
+    "morgan_bits": 512,
+    "morgan_radius": 2
+  },
+  "n_polymers": 1077,
+  "official_shipped_headline": {
+    "random_60_20_20_split_test_mae_g_per_cm3": 0.056644705523222164,
+    "source_receipt": "amphora-molecule-property/evidence/phase0/kpis/radonpy-density-ml-vs-van-krevelen-physics-kpi.v1.json"
+  },
+  "overall_refuted": true,
+  "own_features_within_corpus_5fold": {
+    "mae": 0.040794982525313994,
+    "n": 1077,
+    "null_mae": 0.1380798145510678,
+    "r2": 0.8443376962521218
+  },
+  "radonpy_csv_sha256": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4",
+  "seed": 0,
+  "study_id": "amphora-molecule-property-c7-fire2-density-butina-cluster-external-validity-v1",
+  "supersedes_or_extends": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v1 (fire 1: leave-polymer-class-out, degradation 1.80x, SURVIVED)"
+}

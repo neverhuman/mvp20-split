@@ -1,0 +1,210 @@
+{
+  "campaign_item_id": "W-D-CRO",
+  "cc_by_count": 2,
+  "claim_under_attack": "The packager's claims are tested against real externally-authored test protocols.",
+  "current_state_at_fire_start": "evidence/phase0/sources/source-lock.v1.json lists exactly 1 source, reference/mvp20/fixtures/known-answer-protocol-package.v1.json (candidate_supplied_evidence_allowed=false, i.e. self-authored, internally compiled), backing the mission.md-documented n=5 hand-authored campaign/candidate/balance packets. Zero externally-authored protocol sources are present anywhere in the module.",
+  "finding": "The formal, official-text CRO-protocol-standard corpus (ASTM D1654/B117/D3359/D4541/D610, ISO 9227/4628, SSPC-SP, NACE/AMPP SP0108) is uniformly paywalled with no free-redistribution path; that portion of the done_criterion's target space is genuinely BLOCKED_DATA. However the sweep also surfaced 2 public-domain US-government specifications (FED-STD-141D, MIL-DTL-24441D) and 2 CC-BY open-access papers (PMC11085474, PMC7825044) carrying real, quotable, rights-clean external protocol material -- MIL-DTL-24441D in particular is a same-chemistry-class (epoxy-polyamide marine coating) external specification with a real QC test battery. None of these 4 qualifying sources has yet been imported into the module's evidence corpus; that ingestion is the concrete next step and is filed as proposed_followups, not attempted in this fire (DATA-DIMENSION scope: sweep and record, not ingest).",
+  "fire_id": "20260813T110002-2490015-1a7c0062f928",
+  "near_miss_count": 3,
+  "paywalled_count": 9,
+  "proposed_followups": [
+    {
+      "defect": "The module's entire protocol/fixture evidence base is self-authored (n=5 known-answer packets over 1 self-authored fixture file; source-lock.v1.json lists zero externally-sourced entries), despite this fire identifying 2 public-domain (FED-STD-141D, MIL-DTL-24441D) and 2 CC-BY (PMC11085474, PMC7825044) rights-clean qualifying sources that were never imported.",
+      "module": "amphora-cro-protocol-packager",
+      "proposed_done_criterion": "At least 1 externally-authored, rights-clean protocol excerpt (e.g. MIL-DTL-24441D's Formula 150 QC battery, or PMC11085474's salt-spray Methods section) is imported into evidence/phase0/sources/imports/ with a rights receipt binding its license, and source-lock.v1.json's sources[] array gains a non-self-authored, rights_status=KNOWN entry, all within this module's write scope."
+    },
+    {
+      "defect": "The 9 confirmed-paywalled ASTM/ISO/AMPP standards that anchor the packager's method-name vocabulary (cro_protocol.md's cited test methods) have never had a rights audit checking whether the module reproduces substantive standard TEXT (not just method numbers) from any of them, which would be a licence violation given every one is confirmed purchase-gated (S01-S09 in this fire's sweep).",
+      "module": "amphora-cro-protocol-packager",
+      "proposed_done_criterion": "An audit of cro_protocol.md, capture_template.json and falsification_protocol.json confirms every ASTM/ISO/NACE/SSPC method citation is limited to method NUMBER plus a generic, self-authored scope paraphrase, with zero verbatim reproduction of paywalled standard text; any violation found is removed or replaced."
+    },
+    {
+      "defect": "DTIC report ADA578091 ('Galvanic Corrosion Test Method for Coatings and Materials') was identified as a plausible 5th public-domain US-government coating corrosion test method, but apps.dtic.mil returned HTTP 403 to automated fetch this fire, so its distribution statement could not be quoted verbatim and it was not counted as a qualifying find.",
+      "module": "amphora-cro-protocol-packager",
+      "proposed_done_criterion": "A follow-up fire fetches ADA578091 via DTIC's public search UI or an alternate mirror, quotes its distribution statement verbatim, and either appends it to the acquisition queue as a qualifying public-domain source or records the specific blocking reason if it is not in fact publicly redistributable."
+    }
+  ],
+  "public_domain_count": 2,
+  "qualifying_finds": [
+    {
+      "n": "1 standard document; method index of ~190 individual named paint/varnish/lacquer test methods (drying time, flexibility, adhesion, film thickness, gloss, viscosity, hiding power, etc.)",
+      "next_action": "Fetch full FED-STD-141D PDF text via an OCR-capable channel (not available this fire), extract 3-5 method summaries applicable to two-part epoxy coating QC, and cite them as structural anchors alongside the module's self-authored fixture.",
+      "property_feature_coverage": "General paint/coating QC test-method vocabulary (method number + title + scope), overlapping capture_template.json's film-thickness/dry-time/cure fields; not corrosion-specific.",
+      "source_id": "S10",
+      "structural_or_factor_overlap": "Government test-method-index format (method number + title + scope + acceptance framing) is structurally close to what a packaged CRO protocol needs (named method + criteria); a genuine external, rights-clean protocol-structure template."
+    },
+    {
+      "n": "1 specification; 3 named formula variants (Formula 150 green primer, 151 and 157 topcoats)",
+      "next_action": "Obtain the full MIL-DTL-24441D spec text (DLA ASSIST canonical copy, not a vendor TDS mirror), extract its QC test-method battery and acceptance criteria, and ingest as the first genuinely external, rights-clean CRO-protocol structural source, replacing/supplementing the n=5 self-authored fixture.",
+      "property_feature_coverage": "Mix ratio (by weight/volume), VOC, application method, cure schedule, QC acceptance bands -- directly overlaps candidate_binding/capture_template mix-ratio and cure fields.",
+      "source_id": "S11",
+      "structural_or_factor_overlap": "HIGH -- a real external two-part epoxy-polyamide marine coating spec, same chemistry family (DGEBA-class resin + polyamide hardener) as this portfolio's target space; already leveraged once elsewhere (amphora-envelope-gates) for mix-ratio tolerance."
+    },
+    {
+      "n": "1 paper; 1 full salt-spray protocol across 6 named exposure timepoints",
+      "next_action": "Extract the Methods section verbatim (redistribution-safe under CC-BY 4.0 with attribution) and add as a second, non-self-authored known-answer protocol fixture in evidence/phase0/sources/imports/, with a rights_evidence entry citing the CC-BY licence URL directly in source-lock.v1.json.",
+      "property_feature_coverage": "Panel dimensions (70x150mm, 145+/-10um), scribe/cut geometry (2x 40mm diagonal), exposure schedule (24/72/120/168/240/336h) -- directly comparable to capture_template corrosion/scribe fields.",
+      "source_id": "S12",
+      "structural_or_factor_overlap": "HIGH -- real externally-authored, CC-BY, citable, with concrete numeric procedural parameters (not just a bare standard-number citation) for a waterborne epoxy anticorrosion coating, same functional class as the target recipe."
+    },
+    {
+      "n": "1 review paper; 4 named standard-method families cross-referenced",
+      "next_action": "Extract the ASTM<->ISO equivalence table into the module's docs as a rights-clean external cross-reference for method-crosswalk claims (relevant to prior CF-TIER evidence-tier work).",
+      "property_feature_coverage": "ASTM<->ISO method-equivalence table (salt spray, tape/peel adhesion, pull-off, impact/mandrel/pseudo-barnacle).",
+      "source_id": "S13",
+      "structural_or_factor_overlap": "MEDIUM -- survey-level, not primary protocol data, but CC-BY and gives a citable, external standard-equivalency mapping usable for method-naming crosswalks elsewhere in the module."
+    }
+  ],
+  "qualifying_finds_count": 4,
+  "schema": "amphora.cro-protocol-packager.w-d-cro-real-protocol-corpus-sweep-diagnostic.v1",
+  "sources_swept": [
+    {
+      "evidence_note": "Fetched store.astm.org product page directly this fire; price $77.00; full text purchase-gated, no free redistribution.",
+      "id": "S01",
+      "license_quoted_verbatim": "Copyright \u00a9 1996 - 2026 ASTM. All Rights Reserved. ASTM International, 100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA, 19428-2959 USA -- \"Using Artificial Intelligence (AI) on ASTM standards and related intellectual property is prohibited. Violations will result in suspension of access.\"",
+      "name": "ASTM D1654-08(2016)e1 -- Standard Test Method for Evaluation of Painted or Coated Specimens Subjected to Corrosive Environments",
+      "query": "ASTM D1654 evaluation painted coated specimens corrosive environments scope copyright",
+      "rights_status": "PAYWALLED",
+      "url": "https://store.astm.org/d1654-08r16e01.html"
+    },
+    {
+      "evidence_note": "Fetched store.astm.org product page directly this fire; price $96.00.",
+      "id": "S02",
+      "license_quoted_verbatim": "Copyright \u00a9 1996 - 2026 ASTM. All Rights Reserved. ASTM International, 100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA, 19428-2959 USA -- \"Reprints and copyright permissions can be requested through the Copyright Clearance Center.\"",
+      "name": "ASTM B117-19 -- Standard Practice for Operating Salt Spray (Fog) Apparatus",
+      "query": "ASTM B117 salt spray fog testing standard copyright terms",
+      "rights_status": "PAYWALLED",
+      "url": "https://store.astm.org/b0117-19.html"
+    },
+    {
+      "evidence_note": "Fetched store.astm.org product page directly this fire; price $72.00; DOI 10.1520/D3359-23.",
+      "id": "S03",
+      "license_quoted_verbatim": "\"Using Artificial Intelligence (AI) on ASTM standards and related intellectual property is prohibited. Violations will result in suspension of access.\" (same store.astm.org copyright boilerplate confirmed verbatim on S01/S02)",
+      "name": "ASTM D3359-23 -- Standard Test Methods for Rating Adhesion by Tape Test",
+      "query": "ASTM D3359 tape test adhesion standard store copyright price",
+      "rights_status": "PAYWALLED",
+      "url": "https://store.astm.org/d3359-23.html"
+    },
+    {
+      "evidence_note": "Fetched store.astm.org product page directly this fire; price $96.00; DOI 10.1520/D4541-09.",
+      "id": "S04",
+      "license_quoted_verbatim": "\"Using Artificial Intelligence (AI) on ASTM standards and related intellectual property is prohibited. Violations will result in suspension of access.\" (same store.astm.org copyright boilerplate confirmed verbatim on S01/S02)",
+      "name": "ASTM D4541-09/22 -- Standard Test Method for Pull-Off Strength of Coatings Using Portable Adhesion Testers",
+      "query": "ASTM D4541 pull-off adhesion strength standard store copyright price",
+      "rights_status": "PAYWALLED",
+      "url": "https://store.astm.org/d4541-09.html"
+    },
+    {
+      "evidence_note": "Pricing confirmed via search-engine-mediated page text this fire ($68 D610-07 / $78 D610-08 / $83 D610-08(2019)); direct WebFetch of iso/astm resale mirrors returned 403 for this specific URL, so this entry is corroborated but not independently page-fetched -- flagged INCONCLUSIVE-CORROBORATED rather than full verbatim.",
+      "id": "S05",
+      "license_quoted_verbatim": "Same ASTM copyright/purchase regime as S01-S04 (ASTM standards resold via ANSI webstore under identical ASTM International copyright); page confirms purchase-only PDF at $83.00, no free redistribution.",
+      "name": "ASTM D610-08(2019) -- Standard Practice for Evaluating Degree of Rusting on Painted Steel Surfaces",
+      "query": "ASTM D610 rust grading standard store copyright price",
+      "rights_status": "PAYWALLED",
+      "url": "https://webstore.ansi.org/standards/astm/astmd610082019"
+    },
+    {
+      "evidence_note": "Direct WebFetch of iso.org and webstore.ansi.org standard pages returned 403 (anti-bot). License text quoted verbatim as captured by search-engine page-text retrieval this fire from iso.org's own copyright/licence-agreement pages; not independently re-fetched by this script (no network access from xbabe2).",
+      "id": "S06",
+      "license_quoted_verbatim": "\"ISO Publications are protected by copyright law, database law, trademark law, unfair competition law, trade secret law, and any other applicable laws\" -- reproduction requires written permission under ISO's Policy for the Protection of ISO's Intellectual Property and ISO POCOSA (Policies and Procedures for Copyright, Copyright Exploitation Rights and Sales of ISO Publications).",
+      "name": "ISO 9227:2017/2022 -- Corrosion tests in artificial atmospheres -- Salt spray tests",
+      "query": "ISO 9227 corrosion tests artificial atmospheres salt spray preview copyright",
+      "rights_status": "PAYWALLED",
+      "url": "https://www.iso.org/standard/63543.html"
+    },
+    {
+      "evidence_note": "iso.org standard pages for parts 1-8/10 enumerated via search; direct WebFetch blocked (403) and the iTeh preview PDF returned undecoded binary content, so this entry is corroborated-not-independently-quoted from the primary page, consistent with S06.",
+      "id": "S07",
+      "license_quoted_verbatim": "Same ISO copyright policy as S06 (iso.org/store.iso.org, same publisher/platform); a free-preview PDF sample exists at cdn.standards.iteh.ai but its binary text could not be decoded by the tooling available this fire.",
+      "name": "ISO 4628 (Parts 1-10) -- Paints and varnishes -- Evaluation of degradation of coatings",
+      "query": "ISO 4628 evaluation degradation coatings blistering rusting cracking store copyright",
+      "rights_status": "PAYWALLED",
+      "url": "https://www.iso.org/standard/66400.html"
+    },
+    {
+      "evidence_note": "Direct WebFetch of store.ampp.org returned 403; license/DRM text quoted verbatim as captured by search-engine page-text retrieval this fire from AMPP's own store pages.",
+      "id": "S08",
+      "license_quoted_verbatim": "\"AMPP-published standards use Digital Rights Management (DRM) software to protect the copyright of publications, preventing unauthorized duplication and distribution\", requiring the FileOpen tool to view secured PDFs; pay-per-view access priced at $109.00.",
+      "name": "SSPC-SP surface-preparation standard family (now published under AMPP)",
+      "query": "SSPC-SP surface preparation standards AMPP copyright purchase",
+      "rights_status": "PAYWALLED",
+      "url": "https://content.ampp.org/standards/book/1151/Hand-Tool-Cleaning"
+    },
+    {
+      "evidence_note": "Direct WebFetch of store.ampp.org returned 403; pricing/DRM regime quoted verbatim as captured by search-engine page-text retrieval this fire.",
+      "id": "S09",
+      "license_quoted_verbatim": "\"$109.00\" Pay-Per-View Access (same AMPP DRM policy quoted at S08).",
+      "name": "NACE/AMPP SP0108-2008 -- Corrosion Control of Offshore Structures by Protective Coatings",
+      "query": "NACE AMPP SP0108 corrosion aluminum coatings cathodic protection standard price",
+      "rights_status": "PAYWALLED",
+      "url": "https://store.ampp.org/sp0108-2008-corrosion-control-of-offshore-structures-by-protective-coatings"
+    },
+    {
+      "evidence_note": "QUALIFYING FIND. U.S. federal government work, 17 U.S.C. Sec.105 no-copyright-in-US-government-works basis, corroborated by the host site's own terms-of-use statement quoted verbatim above. Full PDF located at galvanizeit.com and everyspec.com mirrors; PDF text extraction failed this fire (binary/encoded stream, no OCR tool available), so content has been identified and rights-cleared but not yet ingested.",
+      "id": "S10",
+      "license_quoted_verbatim": "\"The Site posts Site Content that is in the public domain (such as military and federal specifications and standards) and that may be freely downloaded from official government, military, or regulatory websites.\" (everyspec.com Terms of Use, fetched directly this fire at https://everyspec.com/terms_of_use.php)",
+      "name": "FED-STD-141D -- Paint, Varnish, Lacquer, and Related Materials: Methods of Inspection, Sampling and Testing",
+      "query": "Federal Test Method Standard 141 paint varnish lacquer public domain ASSIST",
+      "rights_status": "PUBLIC_DOMAIN",
+      "url": "https://everyspec.com/FED-STD/FED-STD-141D_11704/"
+    },
+    {
+      "evidence_note": "QUALIFYING FIND. Same public-domain basis as S10. Directly on-target: a real two-part epoxy-polyamide marine coating spec (our exact chemistry class), already cited once elsewhere in the portfolio (amphora-envelope-gates W-D-ENVGATE fire, 2026-08-13) for mix-ratio tolerance via a vendor TDS mirror, not yet ingested here as a CRO-protocol structural source.",
+      "id": "S11",
+      "license_quoted_verbatim": "\"The Site posts Site Content that is in the public domain (such as military and federal specifications and standards) and that may be freely downloaded from official government, military, or regulatory websites.\" (everyspec.com Terms of Use, fetched directly this fire at https://everyspec.com/terms_of_use.php)",
+      "name": "MIL-DTL-24441D -- Paint, Epoxy-Polyamide, General Specification for (Formula 150/151/157)",
+      "query": "MIL-DTL-24441 epoxy polyamide paint specification DLA ASSIST download",
+      "rights_status": "PUBLIC_DOMAIN",
+      "url": "https://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-DTL/MIL-DTL-24441D_24992/"
+    },
+    {
+      "evidence_note": "QUALIFYING FIND. doi:10.3390/polym16091252. Fetched directly this fire. Methods section names ASTM B-117 and states concrete procedural parameters: carbon-steel panels 70mm x 150mm x 145+/-10um, two parallel 40mm diagonal scribe cuts, exposure readout at 24/72/120/168/240/336h.",
+      "id": "S12",
+      "license_quoted_verbatim": "\"\u00a9 2024 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license\" (https://creativecommons.org/licenses/by/4.0/)",
+      "name": "Wei et al., 'Green and Heavy-Duty Anticorrosion Coatings: Waterborne Epoxy Thermoset Composites Modified through Variation of Zinc Dust Loading and Incorporation of Amine-Capped Aniline Trimer and Graphene Oxide', Polymers 2024, 16(9), 1252",
+      "query": "MDPI Coatings journal CC-BY supplementary materials salt spray test protocol epoxy marine",
+      "rights_status": "CC_BY",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11085474/"
+    },
+    {
+      "evidence_note": "QUALIFYING FIND (review, not primary data). doi:10.3390/polym13020173. Fetched directly this fire. Names and cross-references ASTM B117/ISO9227 (salt spray), ASTM D3359-09e2/ISO2409:2013 (tape adhesion), ASTM D4541-02/ISO4624:2016 (pull-off), ASTM D5618 (pseudo-barnacle/impact/mandrel) -- a citable external ASTM<->ISO method-equivalence map.",
+      "id": "S13",
+      "license_quoted_verbatim": "\"Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license\" (http://creativecommons.org/licenses/by/4.0/)",
+      "name": "'Mechanical Properties of Protective Coatings against Marine Fouling: A Review', Polymers 2021, 13(2), 173",
+      "query": "MDPI Coatings journal CC-BY supplementary materials salt spray test protocol epoxy marine",
+      "rights_status": "CC_BY",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7825044/"
+    },
+    {
+      "evidence_note": "NEAR-MISS. No specific open coatings/corrosion-testing protocol entry was located on protocols.io in this fire's search; the platform supports CC-BY licensing generally but no matching on-target entry surfaced.",
+      "id": "S14",
+      "license_quoted_verbatim": null,
+      "name": "protocols.io open protocol repository -- coating/corrosion salt-spray test protocol",
+      "query": "protocols.io coating corrosion salt spray test protocol license CC-BY",
+      "rights_status": "NO_QUALIFYING_RESULT",
+      "url": "https://www.protocols.io/"
+    },
+    {
+      "evidence_note": "NEAR-MISS. Located a generic EIS-equivalent-circuit-model corrosion dataset (record 13351508, uniform/passivating/coating systems) and confirmed Zenodo's general CC0/CC-BY-4.0/CC-BY-SA-4.0 licensing menu, but no dataset specifically packaging an external coating TEST PROTOCOL (vs. raw EIS data) was found.",
+      "id": "S15",
+      "license_quoted_verbatim": null,
+      "name": "Zenodo open-data repository -- coating corrosion test protocol dataset",
+      "query": "Zenodo open dataset corrosion test protocol coating CC-BY CC0",
+      "rights_status": "NO_QUALIFYING_RESULT",
+      "url": "https://zenodo.org/"
+    },
+    {
+      "evidence_note": "NEAR-MISS / UNRESOLVED. Search-engine snippet described this as \"Approved for public release; distribution unlimited\", consistent with a US-DoD-authored, public-domain report on a galvanic corrosion test method, but direct WebFetch of apps.dtic.mil returned 403 this fire so the distribution statement could not be quoted verbatim from the primary source. Not counted as a qualifying find until independently re-verified.",
+      "id": "S16",
+      "license_quoted_verbatim": null,
+      "name": "DTIC ADA578091 -- 'Galvanic Corrosion Test Method for Coatings and Materials' (Julia Russell)",
+      "query": "NIST technical note coating corrosion test method public domain",
+      "rights_status": "INCONCLUSIVE",
+      "url": "https://apps.dtic.mil/sti/pdfs/ADA578091.pdf"
+    }
+  ],
+  "sources_swept_count": 16,
+  "study_id": "w-d-cro-real-protocol-corpus-sweep-fire1",
+  "sweep_date": "2026-08-13",
+  "verdict": "BLOCKED_DATA"
+}

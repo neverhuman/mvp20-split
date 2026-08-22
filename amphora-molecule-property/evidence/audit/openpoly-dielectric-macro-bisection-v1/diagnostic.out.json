@@ -1,0 +1,172 @@
+{
+  "campaign_item_id": "",
+  "claim_under_attack": {
+    "claim_text": "OpenPoly dielectric constant ML baseline: RandomForest scaffold-safe holdout test MAE=0.4040 vs NULL 0.7027 (+42.5%), test R2=+0.565, LOSO-CV R2=+0.659 under 111-fold raw-Bemis-Murcko-scaffold CV. 'REAL POSITIVE LIFT.'",
+    "kpi_path": "amphora-molecule-property/evidence/phase0/kpis/openpoly-dielectric-constant-ml-baseline-kpi.v1.json",
+    "kpi_sha256": "cf94eb185fb8fd882328987f6484f8698125157b749d39d660b711f4e068d139"
+  },
+  "dataset_fixture_path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+  "dataset_fixture_sha256_observed": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+  "dataset_fixture_sha256_pinned_in_kpi": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+  "degradation_refute_threshold": 2.0,
+  "featurization": {
+    "additional_features": [
+      "log10(MolWt+1)"
+    ],
+    "morgan_bits": 512,
+    "morgan_radius": 2
+  },
+  "macro_bisection_method": "scipy average-linkage agglomerative clustering (UPGMA-family, Sokal & Michener 1958; Murtagh & Contreras 2012 review) on the full n x n Tanimoto distance matrix over Morgan r=2/512-bit fingerprints -- same primitives as C7 fire2 (density) and W7 (refractive_index, thermal_conductivity). The naive fcluster(maxclust=2) cut used by C7/W7 is DEGENERATE on this 295-molecule OpenPoly corpus (294 vs 1 -- see degenerate_naive_2cut in real_data_result), so this fire cuts the same dendrogram at k=12 sub-clusters instead and greedily bin-packs the 12 intact sub-clusters (largest first, into whichever macro-side is currently smaller) into two macro-chemotype halves -- see balanced_macro_bisection() in the compute script. Applied to OpenPoly dielectric constant for the first time.",
+  "overall_refuted": false,
+  "positive_control": {
+    "corrupted_run_result": {
+      "degenerate_naive_2cut": {
+        "degenerate": true,
+        "note": "raw fcluster(maxclust=2) sizes on THIS run's molecule set, reported for transparency; NOT used for the verdict when degenerate.",
+        "sizes": [
+          1,
+          294
+        ]
+      },
+      "degradation_factor_A": 10.13451344289455,
+      "degradation_factor_B": 10.144984999632037,
+      "direction_A_train_macro_a_test_macro_b": {
+        "mae": 53.20962585034003,
+        "n_test": 147,
+        "n_train": 148,
+        "null_mae_using_train_median": 53.20962585034014,
+        "r2": -4389.9688966126605,
+        "test_y_range": [
+          3.06,
+          6.82
+        ],
+        "train_y_range": [
+          57.69,
+          57.69
+        ]
+      },
+      "direction_B_train_macro_b_test_macro_a": {
+        "mae": 53.264605067567565,
+        "n_test": 148,
+        "n_train": 147,
+        "null_mae_using_train_median": 53.33999999999999,
+        "r2": -5.620076163526584e+31,
+        "test_y_range": [
+          57.69,
+          57.69
+        ],
+        "train_y_range": [
+          3.06,
+          6.82
+        ]
+      },
+      "k_subclusters": 12,
+      "n_macro_a": 148,
+      "n_macro_b": 147,
+      "n_total": 295,
+      "own_features_within_corpus_5fold": {
+        "mae": 5.2503384745763055,
+        "n": 295,
+        "r2": 0.7911649612265805
+      },
+      "property_refuted": true,
+      "refuted_A": true,
+      "refuted_B": true,
+      "subcluster_sizes_at_k": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        5,
+        5,
+        11,
+        51,
+        93,
+        120
+      ]
+    },
+    "detected": true,
+    "expected": "corrupted run's degradation_factor_A must exceed the 2.0x refute threshold (training on B, testing on the constant-overwritten A, must fail badly relative to within-corpus MAE)",
+    "how_planted": "y_corrupt[mask_a_probe] = real_y_max + 50.0, where mask_a_probe is the exact macro-A boolean mask returned by run() on the real, uncorrupted data (the corruption never touches the clustering step itself, only the labels fed into cross_group()); the full run() pipeline, including re-clustering, is then re-executed end-to-end on the corrupted labels, unmodified.",
+    "planted_defect": "Deep copy of the real 295-row Dielectric Constant Total labels with macro-group A's (n=148 of 295, from THIS run's own k=12 bin-packed balanced_macro_bisection, not the degenerate naive 2-cut) y-values overwritten to a constant 57.6900 (real range was [2.6100, 7.6900]), breaking any true structure-property relationship for that half while leaving macro-group B and all featurization/clustering code untouched."
+  },
+  "real_data_result": {
+    "degenerate_naive_2cut": {
+      "degenerate": true,
+      "note": "raw fcluster(maxclust=2) sizes on THIS run's molecule set, reported for transparency; NOT used for the verdict when degenerate.",
+      "sizes": [
+        1,
+        294
+      ]
+    },
+    "degradation_factor_A": 1.4212814423563123,
+    "degradation_factor_B": 1.4635526687882725,
+    "direction_A_train_macro_a_test_macro_b": {
+      "mae": 0.5850591836734693,
+      "n_test": 147,
+      "n_train": 148,
+      "null_mae_using_train_median": 0.6617687074829932,
+      "r2": 0.009421949485391212,
+      "test_y_range": [
+        3.06,
+        6.82
+      ],
+      "train_y_range": [
+        2.61,
+        7.69
+      ]
+    },
+    "direction_B_train_macro_b_test_macro_a": {
+      "mae": 0.6024597972972973,
+      "n_test": 148,
+      "n_train": 147,
+      "null_mae_using_train_median": 0.9242567567567569,
+      "r2": 0.4504243061622579,
+      "test_y_range": [
+        2.61,
+        7.69
+      ],
+      "train_y_range": [
+        3.06,
+        6.82
+      ]
+    },
+    "k_subclusters": 12,
+    "n_macro_a": 148,
+    "n_macro_b": 147,
+    "n_total": 295,
+    "own_features_within_corpus_5fold": {
+      "mae": 0.4116420338983053,
+      "n": 295,
+      "r2": 0.6763125230258575
+    },
+    "property_refuted": false,
+    "refuted_A": false,
+    "refuted_B": false,
+    "subcluster_sizes_at_k": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      4,
+      5,
+      5,
+      11,
+      51,
+      93,
+      120
+    ]
+  },
+  "seed": 0,
+  "shipped_kpi_numbers_for_reference": {
+    "LOSO_CV_R2": 0.659,
+    "holdout_test_MAE": 0.404,
+    "holdout_test_R2": 0.565,
+    "split_methodology_shipped": "raw Bemis-Murcko scaffold-safe 80/20 holdout AND 111-fold LOSO-CV (single scaffold held out per fold)"
+  },
+  "study_id": "amphora-molecule-property-openpoly-dielectric-macro-bisection-external-validity-v1",
+  "verdict": "SURVIVED"
+}

@@ -1,0 +1,31 @@
+{
+  "$id": "https://amphora.local/schemas/module-movement-event.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "required": ["schema", "event_id", "module_id", "previous_phase", "current_phase", "effective_status_change", "bundle_hash", "evaluation_receipt_hash", "review_receipt_hash", "parent_hashes", "evaluator_key_id", "reviewer_key_id", "review_method", "independence_scope", "human_review_performed", "claim_lock_hash", "scientific_outcome", "scientific_readiness", "decision_use_ceiling", "applicability_limits", "retained_negative_results"],
+  "properties": {
+    "schema": {"const": "amphora.module-movement-event.v1"},
+    "event_id": {"type": "string", "pattern": "^movement-[0-9a-f]{64}$"},
+    "module_id": {"type": "string", "pattern": "^amphora-[a-z0-9-]+$"},
+    "previous_phase": {"const": "PRE_PHASE_0"},
+    "current_phase": {"const": "PHASE_0"},
+    "effective_status_change": {"const": "PRE_PHASE_0->PHASE_0"},
+    "bundle_hash": {"$ref": "#/$defs/hash"},
+    "evaluation_receipt_hash": {"$ref": "#/$defs/hash"},
+    "review_receipt_hash": {"$ref": "#/$defs/hash"},
+    "parent_hashes": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "evaluator_key_id": {"type": "string", "minLength": 1},
+    "reviewer_key_id": {"type": "string", "minLength": 1},
+    "review_method": {"const": "AUTOMATED_INDEPENDENT_REIMPLEMENTATION"},
+    "independence_scope": {"const": "CODE_PATH_AND_SIGNING_IDENTITY"},
+    "human_review_performed": {"const": false},
+    "claim_lock_hash": {"$ref": "#/$defs/hash"},
+    "scientific_outcome": {"enum": ["PASSED", "FAILED", "NOT_APPLICABLE"]},
+    "scientific_readiness": {"enum": ["LOCKED_INTERNAL", "NOT_APPLICABLE"]},
+    "decision_use_ceiling": {"const": "AUDIT_ONLY"},
+    "applicability_limits": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "retained_negative_results": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+  "type": "object"
+}

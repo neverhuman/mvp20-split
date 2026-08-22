@@ -1,0 +1,36 @@
+{
+  "test_a_real_deployed_root_fails_closed": {
+    "engine_pool_constructed": true,
+    "evidence_context_marker_file_exists": false,
+    "generate_compounds_error": "verified sparse Phase-0 generator runtime grant is absent",
+    "generate_compounds_ok": false,
+    "test": "A_real_deployed_root"
+  },
+  "test_b1_two_real_keys_but_three_distinct_labels_SUCCEEDS": {
+    "case": "B1_two_real_keys_but_three_distinct_labels",
+    "generation_attempted": true,
+    "generation_succeeded": true,
+    "proposal_count": 1,
+    "rdkit_invoked": true,
+    "sample_product_smiles": "NCCNCCO",
+    "sample_reactive_amine_hydrogen_count": 3,
+    "verify_ok": true
+  },
+  "test_b2_three_real_keys_three_labels_control_SUCCEEDS": {
+    "case": "B2_three_real_keys_three_labels_control",
+    "generation_attempted": true,
+    "generation_succeeded": true,
+    "proposal_count": 1,
+    "rdkit_invoked": true,
+    "sample_product_smiles": "NCCNCCO",
+    "sample_reactive_amine_hydrogen_count": 3,
+    "verify_ok": true
+  },
+  "test_c_same_key_same_label_negative_control_MUST_FAIL": {
+    "case": "C_same_key_same_label_negative_control",
+    "generation_attempted": false,
+    "is_independence_error": true,
+    "verify_error": "evaluation and independent review are not independently signed",
+    "verify_ok": false
+  }
+}

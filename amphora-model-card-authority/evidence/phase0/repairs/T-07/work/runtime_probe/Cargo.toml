@@ -1,0 +1,19 @@
+[package]
+name = "mca-authority-encoding-probe"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: NOT a member of the mvp20-split workspace. Nothing is added to,
+# built into, or written inside the workspace by this probe.
+[workspace]
+
+# LIVE differential harness: links the real Rust runtime crate and calls the
+# real public entry points amphora_core::rank_candidates (raw-JSON ingestion
+# boundary, the site an attacker-controlled or corrupted engine-result.v1
+# document actually crosses) and amphora_core::authorize_optimizer_request
+# (typed reference-monitor entry point) for amphora-model-card-authority.
+# This is NOT a re-implementation of either function.
+[dependencies]
+amphora-core = { path = "../../../../../../../amphora-core" }
+serde_json = { version = "=1.0.150", features = ["float_roundtrip"] }

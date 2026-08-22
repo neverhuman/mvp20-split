@@ -1,0 +1,64 @@
+{
+  "generated_at": 1786334826.1653697,
+  "ranking": [
+    {
+      "candidate_id": "C1",
+      "dimension_scores": {
+        "acquisition_cost_friction": 6,
+        "gap_fit": 8,
+        "integrity_risk": 4,
+        "provenance_measurement_quality": 5,
+        "rights_clarity": 5,
+        "uniqueness": 10
+      },
+      "overall_score": 6.3333,
+      "rank": 1,
+      "verdict": "CONDITIONAL"
+    },
+    {
+      "candidate_id": "C4",
+      "dimension_scores": {
+        "acquisition_cost_friction": 4,
+        "gap_fit": 8,
+        "integrity_risk": 10,
+        "provenance_measurement_quality": 8,
+        "rights_clarity": 2,
+        "uniqueness": 6
+      },
+      "overall_score": 6.3333,
+      "rank": 2,
+      "verdict": "CONDITIONAL"
+    },
+    {
+      "candidate_id": "C3",
+      "dimension_scores": {
+        "acquisition_cost_friction": 4,
+        "gap_fit": 5,
+        "integrity_risk": 0,
+        "provenance_measurement_quality": 3,
+        "rights_clarity": 8,
+        "uniqueness": 10
+      },
+      "overall_score": 5.0,
+      "rank": 3,
+      "verdict": "CONDITIONAL"
+    },
+    {
+      "candidate_id": "C2",
+      "dimension_scores": {
+        "acquisition_cost_friction": 0,
+        "gap_fit": 5,
+        "integrity_risk": 0,
+        "provenance_measurement_quality": 0,
+        "rights_clarity": 2,
+        "uniqueness": 6
+      },
+      "overall_score": 2.1667,
+      "rank": 4,
+      "verdict": "REJECTED"
+    }
+  ],
+  "rubric_schema": "amphora.dataset-recon.evaluation-rubric.v1",
+  "schema": "amphora.dataset-recon.dr-rubric-scoring-output.v1",
+  "snapshot_schema": "amphora.dataset-recon.dr-rubric-frozen-snapshot.v1"
+}

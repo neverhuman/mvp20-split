@@ -1,0 +1,7 @@
+{
+  "claim_contract_sha256": "bb1772d5ab0a40bc0b1ee0d65e45a80b345e27fdf95c9f8171724be2b3194826",
+  "module_id": "amphora-solvency-score",
+  "patentability_opinion": "NOT PERFORMED",
+  "schema": "amphora.module-phase0-prior-art.v1",
+  "status": "ORGANIZED_NOT_FTO"
+}

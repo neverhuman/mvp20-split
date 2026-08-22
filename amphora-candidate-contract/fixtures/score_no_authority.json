@@ -1,0 +1,50 @@
+{
+  "authority_tier": "ROADMAP",
+  "candidate_id": "Envelope-65-black",
+  "claim_locks": {
+    "process_qc_twin_is_roadmap_until_batch_data_exists": true
+  },
+  "evidence_scope": "process_qc",
+  "explanations": [
+    "No accepted batch/QC/SPC evidence is present."
+  ],
+  "gates": {
+    "batch_release_authority": false
+  },
+  "metrics": {
+    "model_card": {
+      "can_optimize": false,
+      "current_pass": false,
+      "current_status": "NO_AUTHORITY",
+      "dataset_checksums": {},
+      "dataset_ids": [
+        "process-qc schema"
+      ],
+      "direction": "context",
+      "kpi_name": "process_qc",
+      "model_authority": "ROADMAP",
+      "score_semantics": "NO_AUTHORITY",
+      "unit": "normalized_0_1",
+      "validation_bar": "not optimizer-authorized objective"
+    },
+    "provided_fields": []
+  },
+  "missing_inputs": [
+    "batch_record",
+    "ku_spc"
+  ],
+  "module_id": "fixture-process-qc-twin",
+  "module_version": "0.1.0",
+  "objective_values": {
+    "process_qc_ready": false
+  },
+  "schema_version": "amphora.score-envelope.v1",
+  "score_0_1": 0.0,
+  "score_semantics": "NO_AUTHORITY",
+  "source_refs": [
+    "process-qc schema"
+  ],
+  "status": "NO_AUTHORITY",
+  "uncertainty": {},
+  "usable_by_optimizer": false
+}

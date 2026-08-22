@@ -1,0 +1,129 @@
+{
+  "call_site_scan": {
+    "all_grunberg_nissan_mix_call_sites_in_crate": [
+      1285,
+      2034,
+      2049
+    ],
+    "call_site_detail": [
+      {
+        "interactions_arg_resolved_text": "vec![vec![0.0",
+        "is_production": true,
+        "line": 1285,
+        "supplies_hardcoded_zero_matrix": true,
+        "window": "        })\n        .collect::<Result<Vec<_>, _>>()?;\n    let interactions = vec![vec![0.0; fractions.len()]; fractions.len()];\n    let liquid = grunberg_nissan_mix(&fractions, &viscosities, &interactions)?;"
+      },
+      {
+        "interactions_arg_resolved_text": "&[vec![0.0, 0.0], vec![0.0, 0.0]]",
+        "is_production": false,
+        "line": 2034,
+        "supplies_hardcoded_zero_matrix": true,
+        "window": "    #[test]\n    fn test_known_answers_cover_mixing_temperature_crowding_yield_and_sag() {\n        let mixed =\n            grunberg_nissan_mix(&[0.5, 0.5], &[1.0, 4.0], &[vec![0.0, 0.0], vec![0.0, 0.0]])"
+      },
+      {
+        "interactions_arg_resolved_text": "&[vec![0.0]]",
+        "is_production": false,
+        "line": 2049,
+        "supplies_hardcoded_zero_matrix": true,
+        "window": "\n    #[test]\n    fn test_malformed_and_non_finite_inputs_fail_closed() {\n        assert!(grunberg_nissan_mix(&[1.0], &[f64::NAN], &[vec![0.0]]).is_err());"
+      }
+    ],
+    "every_call_site_supplies_hardcoded_zero_matrix": true,
+    "production_call_site_count": 1,
+    "production_call_sites": [
+      1285
+    ],
+    "test_call_sites": [
+      2034,
+      2049
+    ]
+  },
+  "end_to_end_theory_apparent_viscosity_two_liquid_observation_pa_s": 2.000000001,
+  "finding": "grunberg_nissan_mix has exactly 1 production call site(s) in the entire crate (src/lib.rs, inside theory_apparent_viscosity), and it and both of the function's own unit tests supply ONLY a hardcoded all-zero interaction matrix. No struct field anywhere in the module schema (RheologyObservationV1, LiquidComponentV1, PigmentComponentV1, RheologyAdditiveV1) carries interaction-parameter data, so even a caller with real Grunberg-Nissan d_ij data has no way to supply it. theory_apparent_viscosity is called by both fit_model (line 1334, 1473 in src/lib.rs) and predict, i.e. every training row and every scored candidate. An independent pure-Python re-derivation confirms the live-Rust zero-interaction result is bit-equivalent (within 1e-9) to plain ideal (mass-fraction-weighted log-linear) mixing, and that supplying a non-zero, order-unity interaction term (the term that defines Grunberg-Nissan over ideal mixing) changes the result by 28.4% -- proving the omitted term is not negligible when the function IS given real interaction data. The module's cited \"Grunberg-Nissan blend mixing\" built-in path (docs/mission.md; reference/rheology/source-landscape.v1.json source_id \"grunberg-nissan-1949\") is, as actually wired into the live runtime, architecturally incapable of ever computing anything other than ideal mixing -- this is a structural/architecture gap, not merely a data gap awaiting wet-lab validation as mission.md currently frames it alongside Krieger-Dougherty and Herschel-Bulkley.",
+  "interaction_field_scan": {
+    "all_line_numbers_matching_interaction_case_insensitive": [
+      1174,
+      1179,
+      1180,
+      1187,
+      1202,
+      1284,
+      1285
+    ],
+    "lines_explained_by_function_def_or_known_call_sites": [
+      1171,
+      1172,
+      1173,
+      1174,
+      1175,
+      1176,
+      1177,
+      1178,
+      1179,
+      1180,
+      1181,
+      1182,
+      1183,
+      1184,
+      1185,
+      1186,
+      1187,
+      1188,
+      1189,
+      1190,
+      1191,
+      1192,
+      1193,
+      1194,
+      1195,
+      1196,
+      1197,
+      1198,
+      1199,
+      1200,
+      1201,
+      1202,
+      1203,
+      1204,
+      1205,
+      1206,
+      1284,
+      1285,
+      2033,
+      2034,
+      2048,
+      2049
+    ],
+    "no_schema_field_carries_interaction_data": true,
+    "unexplained_interaction_references": []
+  },
+  "lib_rs_sha256": "bacc4e2470cf2b49f356033abe4f4638fe29db36e49d8dd7c265d79db3a77824",
+  "live_rust_diagnostic_sha256": "bda976f62563494cd843e4898f091359f0df6569ee11d36eecb2e2d399185f09",
+  "module_id": "amphora-viscosity-score",
+  "numeric_checks": {
+    "gn_nonzero_interaction_py_vs_rust": {
+      "py": 2.568050833375483,
+      "rel_diff": 0.0,
+      "rust": 2.568050833375483,
+      "within_1e_9": true
+    },
+    "gn_zero_interaction_py_vs_rust": {
+      "py": 2.0,
+      "rel_diff": 0.0,
+      "rust": 2.0,
+      "within_1e_9": true
+    },
+    "ideal_mixing_py_vs_rust": {
+      "py": 2.0,
+      "rel_diff": 0.0,
+      "rust": 2.0,
+      "within_1e_9": true
+    }
+  },
+  "schema": "amphora.viscosity-score.gn-degenerate-ideal-mixing-diagnostic.v1",
+  "theory_apparent_viscosity_callers": [
+    1334,
+    1473
+  ],
+  "zero_vs_nonzero_interaction_rel_diff": 0.2840254166877414
+}

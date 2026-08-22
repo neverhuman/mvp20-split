@@ -1,0 +1,255 @@
+{
+  "all_known_answer_gates_passed": true,
+  "authority": "AUDIT_ONLY",
+  "closes": [
+    "Supplies the first published-theory characterization of the module's detector run-length behavior (ARL0/ARL1).",
+    "Independently reproduces the Shewhart geometric ARL table (max rel err 0.215%) and the Montgomery Table 9.4 two-sided CUSUM ARL profile via Siegmund 1985 (max rel err 3.03%, 0..2-sigma).",
+    "Validates an independent EWMA Markov-chain ARL solver against the lambda->1 Shewhart limiting case.",
+    "Grounds the module's locked <=5%% false-alarm / detection-speed KPI in run-length theory (known-parameter regime)."
+  ],
+  "detector_designs": {
+    "cusum": {
+      "h": 5.0,
+      "k": 0.5,
+      "standardized_tabular": true
+    },
+    "ewma": {
+      "L": 3.0,
+      "lambda": 0.2
+    },
+    "shewhart": {
+      "limits_sigma": 3.0,
+      "type": "Individuals"
+    }
+  },
+  "does_not_close": [
+    "Does NOT establish real-batch acceptability, product qualification, EHS acceptability, or batch-release authority.",
+    "ARL results assume i.i.d. normal in-control data with KNOWN mu,sigma; the module estimates limits from a finite baseline, so real ARL0 is shorter and right-skewed (Quesenberry 1993) -- known-parameter figures are a BEST-CASE bound.",
+    "No prospective time-ordered 30-batch pilot is checked in; recall/false-alarm on OWNED synthetic universes is unchanged by this receipt.",
+    "Siegmund CUSUM ARL is an approximation (gated only over the module-relevant 0..2-sigma small-shift regime)."
+  ],
+  "ewma_module_design_characterization": {
+    "arl0_grid_rel_change": 0.000372,
+    "arl0_m100": 559.596,
+    "arl0_m200": 559.804,
+    "arl1_by_shift": [
+      {
+        "arl_m100": 44.1246,
+        "arl_m200": 44.1267,
+        "grid_rel_change": 4.8e-05,
+        "shift_sigma": 0.5
+      },
+      {
+        "arl_m100": 10.8361,
+        "arl_m200": 10.8359,
+        "grid_rel_change": 1.9e-05,
+        "shift_sigma": 1.0
+      },
+      {
+        "arl_m100": 5.6049,
+        "arl_m200": 5.6048,
+        "grid_rel_change": 1.8e-05,
+        "shift_sigma": 1.5
+      },
+      {
+        "arl_m100": 3.8009,
+        "arl_m200": 3.8009,
+        "grid_rel_change": 1.2e-05,
+        "shift_sigma": 2.0
+      }
+    ],
+    "design": {
+      "L": 3.0,
+      "asymptotic_limit_sigma_units": 1.0,
+      "lambda": 0.2,
+      "sigma_z_asymptotic": 0.333333
+    },
+    "interpretation": "L=3 is a CONSERVATIVE EWMA design: computed ARL0 ~560 exceeds the canonical lambda=0.2 tuning (L=2.86 -> ARL0=370), i.e. FEWER false alarms at the cost of slightly slower small-shift detection. Reported as a computed characterization (grid-converged), cross-anchored by the lambda->1 limiting case above."
+  },
+  "flips_scientific_readiness": false,
+  "gates": {
+    "cusum_siegmund_vs_montgomery_table_9_4": {
+      "large_shift_informational": {
+        "3.0": 2.386,
+        "4.0": 1.721
+      },
+      "large_shift_note": "Siegmund approximation degrades for shifts >=3 sigma; Shewhart dominates that regime, so it is reported informationally, not gated.",
+      "max_rel_err": 0.03031,
+      "passed": true,
+      "per_shift": [
+        {
+          "arl_computed": 469.1112,
+          "arl_published": 465.0,
+          "rel_err": 0.00884,
+          "shift_sigma": 0.0,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 141.9262,
+          "arl_published": 139.0,
+          "rel_err": 0.02105,
+          "shift_sigma": 0.25,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 38.0196,
+          "arl_published": 38.0,
+          "rel_err": 0.00051,
+          "shift_sigma": 0.5,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 17.0306,
+          "arl_published": 17.0,
+          "rel_err": 0.0018,
+          "shift_sigma": 0.75,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 10.3362,
+          "arl_published": 10.4,
+          "rel_err": 0.00613,
+          "shift_sigma": 1.0,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 5.666,
+          "arl_published": 5.75,
+          "rel_err": 0.01461,
+          "shift_sigma": 1.5,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 3.8884,
+          "arl_published": 4.01,
+          "rel_err": 0.03031,
+          "shift_sigma": 2.0,
+          "within_tol": true
+        }
+      ],
+      "regime": "small-shift 0..2 sigma (module-relevant)",
+      "tol_rel": 0.06
+    },
+    "ewma_markov_limiting_case_known_answer": {
+      "cases": [
+        {
+          "L": 3.0,
+          "arl0_computed": 370.3983,
+          "arl0_exact_geometric": 370.3983,
+          "lambda": 1.0,
+          "note": "lambda->1 recovers Shewhart 3-sigma",
+          "rel_err": 0.0,
+          "within_tol": true
+        },
+        {
+          "L": 2.7,
+          "arl0_computed": 144.218,
+          "arl0_exact_geometric": 144.218,
+          "lambda": 1.0,
+          "note": "lambda->1 recovers Shewhart 2.7-sigma",
+          "rel_err": 0.0,
+          "within_tol": true
+        }
+      ],
+      "passed": true,
+      "tol_rel": 0.005
+    },
+    "shewhart_geometric_known_answer": {
+      "max_rel_err": 0.00215,
+      "passed": true,
+      "per_shift": [
+        {
+          "arl_computed": 370.3983,
+          "arl_published": 370.4,
+          "rel_err": 0.0,
+          "shift_sigma": 0.0,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 155.2242,
+          "arl_published": 155.2,
+          "rel_err": 0.00016,
+          "shift_sigma": 0.5,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 43.8947,
+          "arl_published": 43.9,
+          "rel_err": 0.00012,
+          "shift_sigma": 1.0,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 14.9677,
+          "arl_published": 15.0,
+          "rel_err": 0.00215,
+          "shift_sigma": 1.5,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 6.303,
+          "arl_published": 6.3,
+          "rel_err": 0.00047,
+          "shift_sigma": 2.0,
+          "within_tol": true
+        },
+        {
+          "arl_computed": 2.0,
+          "arl_published": 2.0,
+          "rel_err": 0.0,
+          "shift_sigma": 3.0,
+          "within_tol": true
+        }
+      ],
+      "tol_rel": 0.01
+    }
+  },
+  "headline": "Independent ARL run-length characterization of the live process-QC detector stack: Shewhart geometric table reproduced to <=0.21%, two-sided CUSUM (k=0.5,h=5) Siegmund ARL matches Montgomery Table 9.4 to <=3.0% over 0..2-sigma, and an independent EWMA Markov-chain solver recovers the lambda->1 Shewhart limit. Known-parameter false-alarm budget (union <=0.20 expected/30 batches) sits inside the module's 5% target; estimated-parameter degradation (Quesenberry 1993) is the explicit Phase-1 gap.",
+  "human_review_performed": false,
+  "kpi_linkage": {
+    "arl1_at_1sigma_shift": {
+      "cusum_k0.5_h5": 10.336,
+      "ewma_lam0.2_L3": 10.836,
+      "shewhart_3sigma": 43.895
+    },
+    "caveat_estimated_parameters": "The <=5% budget check holds for KNOWN mu,sigma. With limits estimated from a finite baseline (Individuals chart) the true in-control ARL0 is materially shorter and right-skewed (Quesenberry 1993), so real per-window false alarms will EXCEED these known-parameter figures. Closing this is the Phase-1 gap.",
+    "expected_false_alarms_per_window": {
+      "cusum_k0.5_h5_two_sided": {
+        "20": 0.0426,
+        "30": 0.064,
+        "50": 0.1066
+      },
+      "ewma_lam0.2_L3": {
+        "20": 0.0357,
+        "30": 0.0536,
+        "50": 0.0893
+      },
+      "shewhart_3sigma": {
+        "20": 0.054,
+        "30": 0.081,
+        "50": 0.135
+      }
+    },
+    "false_alarm_budget_5pct_of_30_batches": 1.5,
+    "module_locked_kpi": "prospective 30-batch pilot: seeded-control recall >=90%, false alarms <=5%, zero false releases",
+    "small_shift_ranking": "memory detectors dominate: at 1-sigma CUSUM (~10) ~ EWMA (~11) detect ~4x faster than Shewhart (~44); the three-detector UNION is justified because Shewhart in turn dominates for large (>=3-sigma) jumps.",
+    "union_expected_false_alarms_per_30_batch_bonferroni_upper_bound": 0.1985,
+    "union_within_5pct_budget_known_parameter": true
+  },
+  "modifies_locked_dataset": false,
+  "modifies_manifest": false,
+  "modifies_signed_phase0_kpi": false,
+  "module": "amphora-process-qc-twin",
+  "non_circularity": "ARL baselines are closed-form / Markov-chain results from the SPC literature (Shewhart geometric, Siegmund 1985 CUSUM, Brook-Evans/Lucas-Saccucci EWMA), independent of the module's self-authored synthetic universes and of the existing arithmetic-correctness KPI receipt.",
+  "promotes_authority": false,
+  "purpose": "First published-theory second-signal for the module's SPC detector RUN-LENGTH performance (false-alarm ARL0 and detection ARL1), grounding the module's own locked KPI thresholds (<=5% false alarms, >=90% recall) in Average-Run-Length theory.",
+  "run_type": "SPC_RUN_LENGTH_CHARACTERIZATION_AUDIT",
+  "schema": "amphora.process-qc-twin.spc-arl-characterization.v1",
+  "study_id": "spc-arl-characterization-v1",
+  "theory_reference": {
+    "cusum": "Page 1954 Biometrika 41:100-115; Siegmund 1985 (ISBN 978-0-387-96134-7); Montgomery 2020 Ch.9.1 Table 9.4",
+    "estimated_parameter_ceiling": "Quesenberry 1993 J.Qual.Technol. 25:237-247; Jensen et al. 2006",
+    "ewma": "Roberts 1959 Technometrics 1:239-250; Brook & Evans 1972 Biometrika 59:539-549; Lucas & Saccucci 1990 Technometrics 32:1-12",
+    "shewhart": "Shewhart 1931; Montgomery 2020 8th ed. Ch.6; NIST/SEMATECH e-Handbook 6.3.1"
+  }
+}

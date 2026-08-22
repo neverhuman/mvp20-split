@@ -1,0 +1,26 @@
+{
+  "campaign_item_id": "CF-TEST",
+  "deliverable_shas_at_this_fire": {
+    "capture_template_json": "amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json",
+    "capture_template_json_sha256": "a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881",
+    "cro_protocol_md": "amphora-cro-protocol-packager/reference/mvp20/out/cro_protocol.md",
+    "cro_protocol_md_sha256": "e13dc9aa380c5b0376cd1b8d5aebb2b3f78db98d042195f6a59abde74e8177d1",
+    "falsification_protocol_json": "amphora-cro-protocol-packager/reference/mvp20/out/falsification_protocol.json",
+    "falsification_protocol_json_sha256": "79040c136af5ecfad26d81d64790416a79bd1c1ce1eb2cb9f1912b2b0a4e8658"
+  },
+  "done_receipt": "amphora-cro-protocol-packager/evidence/phase0/repairs/CF-TEST/done/cf-test-preregistration-completeness-repair-receipt.v2.dsse.json",
+  "failing_axes": [],
+  "final_fire_for_item": true,
+  "harness_script_sha256": "a0af1a4c4016a4f19d7f144bdd2d350798e98f76837ae3d2cd2ae034410daf71",
+  "last_fire_sequence": 2,
+  "last_verdict": "CLAIM_SURVIVED",
+  "max_fires": 2,
+  "next_fire_should": "none -- done_criterion met, item closed",
+  "passing_axes": [
+    "axis_a",
+    "axis_b",
+    "axis_c",
+    "axis_d",
+    "axis_e"
+  ]
+}

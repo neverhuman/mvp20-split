@@ -1,0 +1,15 @@
+{
+  "schema_version": "amphora.simulation_config.v1",
+  "version": "mvp20.29-tolerance-bands.v1",
+  "seeds": [2001, 2027, 4242, 9001, 12001],
+  "draws_per_seed": 200,
+  "vs_target": 0.65,
+  "bands": {
+    "eew_rel": 0.02,
+    "ahew_rel": 0.05,
+    "density_rel": 0.01,
+    "oil_abs_rel": 0.1,
+    "nonvol_abs": 0.01
+  },
+  "claim_boundary": "UNSEEN_PERTURBATION_SIMULATION is not unseen experimental-data validation."
+}

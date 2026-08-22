@@ -1,0 +1,446 @@
+{
+  "$schema": "../../schemas/module-capability-profile.schema.json",
+  "audit_date": "2026-07-17",
+  "automatic_demotion": [
+    "schema divergence",
+    "source hash mutation",
+    "incomplete locked fold",
+    "authority ceiling violation",
+    "claim-lock loss",
+    "non-finite output"
+  ],
+  "benchmarks": [
+    {
+      "artifact_path": "amphora-cure-potlife-gate/reference/mvp20/out/v5_epoch30_lift_audit.json",
+      "artifact_sha256": "79e7ed9933482c5434aa5050ac9063a2cbb647e2fad0cb0f6aebbdd44a055af4",
+      "authority": "NO_PROMOTION_INFERRED",
+      "benchmark_id": "amphora-cure-potlife-gate-gel-time-checked-current",
+      "observations": [
+        {
+          "json_path": "status",
+          "value": "exploratory"
+        },
+        {
+          "json_path": "promotion_status",
+          "value": "EXPLORATORY_SIGNAL_REQUIRES_EXTERNAL_VALIDATION"
+        },
+        {
+          "json_path": "primary_metric",
+          "value": "fraction_within_x1.5_error_band"
+        },
+        {
+          "json_path": "model_metric",
+          "value": 0.4375
+        },
+        {
+          "json_path": "baseline_metric",
+          "value": 0.375
+        },
+        {
+          "json_path": "absolute_lift",
+          "value": 0.0625
+        }
+      ],
+      "reported_result_status": "exploratory",
+      "status": "CHECKED_ARTIFACT_REPORTED_STATUS"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "authority": "PROMOTION_REQUIRES_LOCKED_RECEIPT",
+      "benchmark_id": "coating-pot-life-physics-v1-locked-independent",
+      "observations": [],
+      "reported_result_status": null,
+      "status": "NOT_PASSED"
+    }
+  ],
+  "candidate_types": [
+    "formulation"
+  ],
+  "ceilings": {
+    "authority_tier": "CRO_GATED",
+    "model_readiness": "MODEL_READINESS_ONLY",
+    "product_claim_ready": false,
+    "ranking_eligible": false,
+    "solver_use": "CONSTRAINT_ONLY"
+  },
+  "consumers": [],
+  "current_state": {
+    "adapter_registered": true,
+    "checked_artifact_count": 6,
+    "checked_benchmark_status": "CHECKED_ARTIFACT_REPORTED_STATUS",
+    "implementation_version": "0.1.0",
+    "operational_readiness": "BLOCKED",
+    "runtime_integration": "Native gel-time scoring is registered; coating-pot-life-physics-v1 is a separate SHADOW contract workflow. Scientific promotion is not inferred from execution, preflight, or tests.",
+    "scientific_readiness": "UNVALIDATED"
+  },
+  "datasets": [
+    {
+      "dataset_id": "amphora-cure-potlife-gate/reference/mvp20/data/corrosion_series.json",
+      "hash": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde",
+      "path": "amphora-cure-potlife-gate/reference/mvp20/data/corrosion_series.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-cure-potlife-gate/reference/mvp20/data/cure_verification_set.json",
+      "hash": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2",
+      "path": "amphora-cure-potlife-gate/reference/mvp20/data/cure_verification_set.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-cure-potlife-gate/reference/mvp20/data/facts.json",
+      "hash": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb",
+      "path": "amphora-cure-potlife-gate/reference/mvp20/data/facts.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": null
+    },
+    {
+      "dataset_id": "amphora-cure-potlife-gate/reference/pot-life/source-landscape.v1.json",
+      "hash": "2944d9fbc67dfb9a6ce7ad1a026b94d8b8f9c49e54f30e442c8ea2f93b188417",
+      "path": "amphora-cure-potlife-gate/reference/pot-life/source-landscape.v1.json",
+      "rights": "UNRESOLVED",
+      "status": "CHECKED_IN_UNVALIDATED",
+      "version": "v1"
+    }
+  ],
+  "dependencies": [
+    "amphora-candidate-contract",
+    "amphora-source-ledger"
+  ],
+  "evidence_inventory": {
+    "artifact_gap": "Rights are reported per file; local presence is not evidence of ownership or permission.",
+    "artifacts": [
+      {
+        "kind": "dataset",
+        "path": "amphora-cure-potlife-gate/reference/mvp20/data/corrosion_series.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "ef5cf7b4af77dbb74aa2c9ae112fed56e9132b9bcb0265065c8490b15aebdfde"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-cure-potlife-gate/reference/mvp20/data/cure_verification_set.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "884356a094bd6f4def926e7ef218070b83d917742009c8922f953c097f9305d2"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-cure-potlife-gate/reference/mvp20/data/facts.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "0af2456a443692093fc4a89174e5cc87da86323108b14c3aa20cc3af159f06fb"
+      },
+      {
+        "kind": "dataset",
+        "path": "amphora-cure-potlife-gate/reference/pot-life/source-landscape.v1.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "2944d9fbc67dfb9a6ce7ad1a026b94d8b8f9c49e54f30e442c8ea2f93b188417"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-cure-potlife-gate/reference/mvp20/out/v5_epoch29_unseen_benchmark.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "5f464c738e9e261069964f6624feefad990a35bdb4d656ffaeb3518f02d48443"
+      },
+      {
+        "kind": "output_artifact",
+        "path": "amphora-cure-potlife-gate/reference/mvp20/out/v5_epoch30_lift_audit.json",
+        "rights": {
+          "evidence_path": null,
+          "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
+          "status": "UNRESOLVED"
+        },
+        "sha256": "79e7ed9933482c5434aa5050ac9063a2cbb647e2fad0cb0f6aebbdd44a055af4"
+      }
+    ],
+    "current_benchmark": {
+      "artifact_path": "amphora-cure-potlife-gate/reference/mvp20/out/v5_epoch30_lift_audit.json",
+      "artifact_sha256": "79e7ed9933482c5434aa5050ac9063a2cbb647e2fad0cb0f6aebbdd44a055af4",
+      "gap": "This is the legacy gel-time benchmark artifact. Its observations are transcribed checked-artifact fields, not coating pot-life physics evidence, an independent validation, or a promotion conclusion.",
+      "observations": [
+        {
+          "json_path": "status",
+          "value": "exploratory"
+        },
+        {
+          "json_path": "promotion_status",
+          "value": "EXPLORATORY_SIGNAL_REQUIRES_EXTERNAL_VALIDATION"
+        },
+        {
+          "json_path": "primary_metric",
+          "value": "fraction_within_x1.5_error_band"
+        },
+        {
+          "json_path": "model_metric",
+          "value": 0.4375
+        },
+        {
+          "json_path": "baseline_metric",
+          "value": 0.375
+        },
+        {
+          "json_path": "absolute_lift",
+          "value": 0.0625
+        }
+      ],
+      "reported_result_status": "exploratory",
+      "status": "CHECKED_ARTIFACT_REPORTED_STATUS"
+    },
+    "external_dependencies": [
+      "Genuinely external complete gel-time rows and multi-temperature CRO batches",
+      "Thirty-six independently mixed, owned coating pot-life runs plus packet-bound independent review"
+    ],
+    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "implementation": {
+      "path": "amphora-cure-potlife-gate/src/lib.rs",
+      "sha256": "1a1737339b903705a0af19e28277137c3476ef4ff5d145125996f2a3d0e13939",
+      "version": "0.1.0-rust",
+      "version_source_path": "amphora-cure-potlife-gate/Cargo.toml",
+      "version_source_sha256": "c3ff103a1edc87ad8b17058607bcb4a5c28ac375d2e0c716ff94d3e56277a150"
+    },
+    "known_contradictions": [
+      "The checked gel-time lift audit is exploratory and reports no statistically established lift or genuinely external locked validation set.",
+      "The coating-pot-life physics track has contracts and synthetic diagnostics but no checked-in owned 36-run benchmark or independent review."
+    ],
+    "red_team_fixture": {
+      "path": "amphora-cure-potlife-gate/src/lib.rs",
+      "scenario": "Strictly reject unknown fields and malformed hashes across the coating pot-life contract preflight.",
+      "selector": "native_workspace_locked"
+    },
+    "registry": {
+      "module_id": "amphora-cure-potlife-gate",
+      "path": "../../config/module-evidence-inventory.json"
+    },
+    "runtime_integration": {
+      "adapter_policy": {
+        "candidate_type": "formulation",
+        "dataset_id": "cure-verification-set.v1",
+        "model_id": "cure-potlife-v1",
+        "model_readiness_status": "MODEL_READINESS_ONLY",
+        "solver_use": "CONSTRAINT_ONLY",
+        "track_id": "cure_gel_film_set_pot_life"
+      },
+      "adapter_registered": true,
+      "registry_path": "amphora-engine/src/lib.rs",
+      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+    },
+    "tests": [
+      {
+        "path": "amphora-cure-potlife-gate/src/lib.rs",
+        "sha256": "1a1737339b903705a0af19e28277137c3476ef4ff5d145125996f2a3d0e13939"
+      },
+      {
+        "path": "amphora-cure-potlife-gate/src/contract.rs",
+        "sha256": "4f88268d559b11aa0f4f3e18d7173b528107454bc79f7242ec3c13c4c9decd70"
+      },
+      {
+        "path": "amphora-cure-potlife-gate/src/evaluation.rs",
+        "sha256": "36ba0132e1d3cad16a798a2a50a68d3e9c6d2868e9e01996ad7fb5cf660c595d"
+      },
+      {
+        "path": "amphora-cure-potlife-gate/src/physics.rs",
+        "sha256": "01d9f3365aa702d0b40eb3ab4819abe0fe923346543f8fe054c4e5d84832068e"
+      },
+      {
+        "path": "amphora-cure-potlife-gate/src/preflight.rs",
+        "sha256": "bfb7d7214a73107276ee3ab63ea2cfe1e367f291d3bb03c99da4d60acbd0fad7"
+      },
+      {
+        "path": "amphora-cure-potlife-gate/src/protocol.rs",
+        "sha256": "7dea16b049e1b514296b561225100a7d124883ae4eab2eda9b66ae8cbdfabe92"
+      },
+      {
+        "path": "amphora-cure-potlife-gate/src/tests.rs",
+        "sha256": "764ae2faac065e8b2f99435522749b9de812915edf93aa14954d1e1169bab69a"
+      }
+    ]
+  },
+  "examples": {
+    "current_input": {
+      "candidate_id": "amphora-cure-potlife-gate-example",
+      "candidate_type": "formulation",
+      "formulation": {
+        "application": {
+          "dft_mil": 5.0,
+          "relative_humidity_pct": 50.0,
+          "substrate": "steel",
+          "surface_preparation": "declared",
+          "temperature_C": 25.0
+        },
+        "basis": "mass_g_per_batch",
+        "batch_mass_g": 137.13,
+        "ingredient_catalog_version": "facts.v2",
+        "process": {
+          "application_method": null,
+          "induction_time_min": null,
+          "mix_order": null,
+          "pot_age_h": 0.0
+        },
+        "recipe": {
+          "part_A": {
+            "dgeba_828": {
+              "ingredient_id": "dgeba_828",
+              "mass_g": 100.0
+            }
+          },
+          "part_B": {
+            "ancamide_350a": {
+              "ingredient_id": "ancamide_350a",
+              "mass_g": 37.13
+            }
+          }
+        }
+      }
+    },
+    "current_output": {
+      "authority_tier": "CRO_GATED",
+      "candidate_id": "amphora-cure-potlife-gate-example",
+      "claim_locks": {},
+      "evidence_scope": "example",
+      "explanations": [
+        "Schema-valid fail-closed example; no scientific claim."
+      ],
+      "gates": {},
+      "metrics": {
+        "candidate_pot_life_prediction_h": null,
+        "model_card": {
+          "can_optimize": false,
+          "current_pass": false,
+          "current_status": "INSUFFICIENT_INPUT",
+          "dataset_checksums": {},
+          "dataset_ids": [],
+          "direction": "context",
+          "kpi_name": "within-1.5x rate",
+          "model_authority": "CRO_GATED",
+          "unit": "declared by locked benchmark",
+          "validation_bar": "example only; not promoted"
+        },
+        "unseen_benchmark": null
+      },
+      "missing_inputs": [
+        "module-specific current input"
+      ],
+      "module_id": "amphora-cure-potlife-gate",
+      "module_version": "0.0.0-example",
+      "objective_values": {},
+      "schema_version": "amphora.score-envelope.v1",
+      "score_0_1": null,
+      "score_semantics": "INSUFFICIENT_INPUT",
+      "source_refs": [],
+      "status": "INSUFFICIENT_INPUT",
+      "uncertainty": {},
+      "usable_by_optimizer": false
+    }
+  },
+  "input_formats": {
+    "current": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target": [
+      "canonical CandidateEnvelope JSON"
+    ],
+    "target_formats_are_runtime_supported": true,
+    "unsupported_fail_closed": true
+  },
+  "kpis": [
+    {
+      "baseline": "named in acceptance receipt",
+      "confidence_interval": "required for empirical promotion",
+      "direction": "context",
+      "evidence_source": "locked receipt required",
+      "failure_threshold": "any authority or integrity regression demotes automatically",
+      "metric_class": "primary",
+      "name": "within-1.5x rate",
+      "population": "declared applicability domain",
+      "promotion_phase": "PHASE_1",
+      "split": "group/time/source-safe locked independent evaluation",
+      "target": "At least 10 genuinely external complete rows with no family/source overlap, at least 80% within 1.5x, and at least 10-point baseline lift; promotion also requires multi-temperature CRO batches.",
+      "unit": "declared by locked benchmark",
+      "value_path": "metrics.unseen_benchmark"
+    }
+  ],
+  "lane": "performance",
+  "module_id": "amphora-cure-potlife-gate",
+  "normalization_owner": "amphora-candidate-contract",
+  "normalization_policy": {
+    "charge": "preserve; no silent neutralization",
+    "commercial_grades": "measured-only unless exact-grade evidence is bound",
+    "fragments": "reject unless a formulation policy explicitly permits them",
+    "isotopes": "preserve and declare",
+    "mixtures": "canonical formulation only",
+    "normalized_structure_or_formula_hash": "required before scoring",
+    "original_byte_hash": "required at external evidence intake",
+    "polymers": "reject ambiguous/query structures",
+    "stereochemistry": "preserve and declare",
+    "toolkit_and_version": "recorded by central normalizer"
+  },
+  "paths": {
+    "claim_locks": "claim_locks",
+    "evidence_gap": "missing_inputs",
+    "gate": "gates",
+    "metric": "metrics.unseen_benchmark",
+    "non_blocking_claim_locks": [
+      "no_candidate_specific_pot_life_prediction",
+      "no_rank_authority",
+      "pot_life_model_failed",
+      "pot_life_remains_bench_gated"
+    ],
+    "objective": null,
+    "uncertainty": "uncertainty"
+  },
+  "phase": "PRE_PHASE_0",
+  "phase_gates": {
+    "phase_0": [
+      "fail-closed contract tests pass",
+      "known current contradictions are resolved",
+      "no unsupported claim or authority path"
+    ],
+    "phase_1": [
+      "locked independent evaluation meets the KPI target",
+      "named baseline and confidence interval are reproducible"
+    ],
+    "phase_2": [
+      "prospective superiority independently replicates",
+      "owned provenance is frozen",
+      "patent-versus-trade-secret review is documented"
+    ]
+  },
+  "priority": {
+    "factors": {
+      "authority_risk_reduction": 3,
+      "decision_value": 5,
+      "downstream_leverage": 5,
+      "effort": 4,
+      "evidence_gap": 5,
+      "external_delay": 4
+    },
+    "ladder": "scientific_opportunity",
+    "p0_override": false,
+    "rank": 2,
+    "score": 38
+  },
+  "schema": "amphora.module-capability-profile.v1"
+}

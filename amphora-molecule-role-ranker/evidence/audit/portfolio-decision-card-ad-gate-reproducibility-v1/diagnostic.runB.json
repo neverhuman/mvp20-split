@@ -1,0 +1,330 @@
+{
+  "corpus_sizes": {
+    "contact_angle": 105,
+    "density": 1077,
+    "dielectric": 1369,
+    "refractive_index": 1164,
+    "tg": 373
+  },
+  "corpus_source_files": {
+    "openpoly_csv_sha256_cited_by_kpi": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+    "openpoly_normalized_jsonl_gz": "feedback/v2/normalized/openpoly_properties.jsonl.gz",
+    "openpoly_normalized_sha256": "cbda8b22adccfaa760b9ab8a31c4ed024cafe42326954c408b1d5383d93c8436",
+    "radonpy_csv_sha256_cited_by_kpi": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4",
+    "radonpy_normalized_jsonl_gz": "feedback/v2/normalized/radonpy_pi1070.jsonl.gz",
+    "radonpy_normalized_sha256": "14bcdf900b9c91e6ca4dab2f7c8dcde49cb8831accc8369e57cee43307b41c38"
+  },
+  "kpi_sha256_at_attack_time": "50d0b54833ebe08a3e0eea0cb7cc8436edb6e3884f211618e156e455f1a444c7",
+  "kpi_under_attack": "amphora-molecule-role-ranker/evidence/phase0/kpis/portfolio-integrated-candidate-decision-card-v2-5-canonical-epoxy-amines-kpi.v1.json",
+  "method": {
+    "candidate_representation": "raw candidate hardener monomer SMILES exactly as published in the KPI's own fitted_or_physical_model_artifact.candidate_cards[].smiles field",
+    "corpus_construction": "per-predictor REAL training corpus = property-specific non-null-value subset of the SHA-pinned openpoly_properties / radonpy_pi1070 normalized data (feedback/v2/normalized/*.jsonl.gz), matching each predictor's actual training-receipt-declared source (openpoly-only for Tg/contact-angle, radonpy-only for density, openpoly UNION radonpy non-null-per-property for dielectric/refractive-index)",
+    "fingerprint": "RDKit Morgan/ECFP radius=2 nBits=2048 (RDKit default folded bit-vector; Rogers & Hahn 2010, matching the KPI's own cited theory reference)",
+    "similarity": "Tanimoto (RDKit DataStructs.TanimotoSimilarity)"
+  },
+  "per_candidate": {
+    "DDS": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        },
+        "density": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        },
+        "dielectric": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        },
+        "refractive_index": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        },
+        "tg": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.39285714285714285,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.39285714285714285,
+          "recomputed_gate_pass_at_0_30": true
+        }
+      },
+      "n_ad_gates_passed_flipped": false,
+      "n_ad_gates_passed_published": 5,
+      "n_ad_gates_passed_recomputed": 5,
+      "smiles": "NC1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)N"
+    },
+    "DETA": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.16666666666666666,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.16666666666666666,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "density": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.14285714285714285,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.14285714285714285,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "dielectric": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.2222222222222222,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.2222222222222222,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "refractive_index": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.16666666666666666,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.16666666666666666,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "tg": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.16666666666666666,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.16666666666666666,
+          "recomputed_gate_pass_at_0_30": false
+        }
+      },
+      "n_ad_gates_passed_flipped": false,
+      "n_ad_gates_passed_published": 0,
+      "n_ad_gates_passed_recomputed": 0,
+      "smiles": "NCCNCCN"
+    },
+    "IPDA": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.13333333333333333,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.08571428571428572,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "density": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.28125,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.2,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "dielectric": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.28125,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.2,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "refractive_index": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.28125,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.2,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "tg": {
+          "exact_match": false,
+          "gate_outcome_flipped": false,
+          "published": 0.16666666666666666,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.14583333333333334,
+          "recomputed_gate_pass_at_0_30": false
+        }
+      },
+      "n_ad_gates_passed_flipped": false,
+      "n_ad_gates_passed_published": 0,
+      "n_ad_gates_passed_recomputed": 0,
+      "smiles": "CC1(CC(CC(C1)N)C)CN"
+    },
+    "TETA": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.15789473684210525,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.15789473684210525,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "density": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.13793103448275862,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.13793103448275862,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "dielectric": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.21052631578947367,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.21052631578947367,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "refractive_index": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.15789473684210525,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.15789473684210525,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "tg": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.15789473684210525,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.15789473684210525,
+          "recomputed_gate_pass_at_0_30": false
+        }
+      },
+      "n_ad_gates_passed_flipped": false,
+      "n_ad_gates_passed_published": 0,
+      "n_ad_gates_passed_recomputed": 0,
+      "smiles": "NCCNCCNCCN"
+    },
+    "m-XDA": {
+      "metrics": {
+        "contact_angle": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.17857142857142858,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.17857142857142858,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "density": {
+          "exact_match": false,
+          "gate_outcome_flipped": true,
+          "published": 0.3,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.28125,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "dielectric": {
+          "exact_match": false,
+          "gate_outcome_flipped": true,
+          "published": 0.3,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.28125,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "refractive_index": {
+          "exact_match": false,
+          "gate_outcome_flipped": true,
+          "published": 0.3,
+          "published_gate_pass_at_0_30": true,
+          "recomputed": 0.28125,
+          "recomputed_gate_pass_at_0_30": false
+        },
+        "tg": {
+          "exact_match": true,
+          "gate_outcome_flipped": false,
+          "published": 0.23809523809523808,
+          "published_gate_pass_at_0_30": false,
+          "recomputed": 0.23809523809523808,
+          "recomputed_gate_pass_at_0_30": false
+        }
+      },
+      "n_ad_gates_passed_flipped": true,
+      "n_ad_gates_passed_published": 3,
+      "n_ad_gates_passed_recomputed": 0,
+      "smiles": "NCC1=CC=CC(=C1)CN"
+    }
+  },
+  "pre_registered_refute_criterion": "Attack fires (REFUTED) iff independent re-derivation of the per-predictor Tanimoto-NN applicability-domain gate values, using the KPI's own cited corpora (openpoly_csv_sha256/radonpy_csv_sha256) and cited fingerprint reference (Rogers & Hahn 2010 ECFP, RDKit default Morgan radius=2/nBits=2048), changes the gate PASS/FAIL outcome (at the KPI's own published >=0.30 threshold) for at least one candidate, thereby changing n_candidates_with_zero_ad_gates_passed or the named honest_out_of_domain_documentation candidate list.",
+  "schema": "amphora.molecule-role-ranker.decision-card-ad-gate-reproducibility-diagnostic.v1",
+  "summary": {
+    "gate_flip_detail": [
+      {
+        "candidate": "m-XDA",
+        "predictor": "density",
+        "published_gate_pass": true,
+        "published_value": 0.3,
+        "recomputed_gate_pass": false,
+        "recomputed_nn_corpus_member": "*C(C*)Cc1cc(ccc1)C",
+        "recomputed_value": 0.28125
+      },
+      {
+        "candidate": "m-XDA",
+        "predictor": "dielectric",
+        "published_gate_pass": true,
+        "published_value": 0.3,
+        "recomputed_gate_pass": false,
+        "recomputed_nn_corpus_member": "*C(C*)Cc1cc(ccc1)C",
+        "recomputed_value": 0.28125
+      },
+      {
+        "candidate": "m-XDA",
+        "predictor": "refractive_index",
+        "published_gate_pass": true,
+        "published_value": 0.3,
+        "recomputed_gate_pass": false,
+        "recomputed_nn_corpus_member": "*C(C*)Cc1cc(ccc1)C",
+        "recomputed_value": 0.28125
+      }
+    ],
+    "n_candidates_with_zero_ad_gates_passed_published": 3,
+    "n_candidates_with_zero_ad_gates_passed_recomputed": 4,
+    "n_exact_matches": 17,
+    "n_gate_outcome_flips_at_0_30_threshold": 3,
+    "n_mismatches": 8,
+    "n_total_metrics_checked": 25,
+    "published_honest_out_of_domain_documentation_metric": {
+      "authority": "REAL_ARITHMETIC",
+      "direction": "MAXIMIZE",
+      "floor": 1.0,
+      "name": "honest_out_of_domain_documentation",
+      "note": "3/5 candidates have 0/5 AD gates passed \u2014 HONESTLY documented as OUT-OF-DOMAIN. This is red-team-defensible portfolio behavior: refuses to grant high-confidence scores to candidates outside training distributions. Candidates gated out: IPDA, TETA, DETA.",
+      "observed": 1.0,
+      "passed": true,
+      "sample_size": 5
+    },
+    "top_ranked_candidate": "DDS",
+    "top_ranked_candidate_still_passes_all_5_gates_under_reattack": true,
+    "zero_gate_candidates_published": [
+      "DETA",
+      "IPDA",
+      "TETA"
+    ],
+    "zero_gate_candidates_recomputed": [
+      "DETA",
+      "IPDA",
+      "TETA",
+      "m-XDA"
+    ]
+  },
+  "verdict": "CLAIM_REFUTED"
+}

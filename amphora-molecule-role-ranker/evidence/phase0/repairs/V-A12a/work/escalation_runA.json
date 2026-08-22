@@ -1,0 +1,142 @@
+{
+  "committed_script_sha256_verified": "3eeacaa08e5913b0a4a1c34afc2726fe40eb1f1e051f80f1c49fe907083e6fe8",
+  "eligible_hardeners": [
+    "hardener-ipda",
+    "hardener-pacm",
+    "hardener-mxda"
+  ],
+  "escalation": "positive_kinetic_substitution_effect_adjacent_stress",
+  "n_reversals": 0,
+  "n_tests": 12,
+  "rationale": "Original R-A12-reinstated benchmark tested only r=k2/k1 in {0.65,0.45} (Girard-Reydet 1995, measured for AROMATIC diamines) applied to ALIPHATIC eligible hardeners (IPDA/PACM/MXDA). This probes plausible r>1 regimes (secondary aliphatic amine more nucleophilic than primary) with fresh seeds never used by the committed script.",
+  "ratios_tested": {
+    "extreme_positive_stress_r10": 10.0,
+    "extreme_positive_stress_r3": 3.0,
+    "positive_mirror_of_girard_reydet_0p45": 2.222222,
+    "positive_mirror_of_girard_reydet_0p65": 1.538462
+  },
+  "reversals": [],
+  "rows": [
+    {
+      "direction_holds": true,
+      "hardener": "hardener-ipda",
+      "r_name": "positive_mirror_of_girard_reydet_0p65",
+      "r_ratio": 1.538462,
+      "rich_pct": 0.273662,
+      "seed_rich": 13940887372960071806,
+      "seed_starved": 1112484781153803889,
+      "starved_pct": 5.191244
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-ipda",
+      "r_name": "positive_mirror_of_girard_reydet_0p45",
+      "r_ratio": 2.222222,
+      "rich_pct": 0.379385,
+      "seed_rich": 12115424006858480619,
+      "seed_starved": 14129319910373352530,
+      "starved_pct": 4.983658
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-ipda",
+      "r_name": "extreme_positive_stress_r3",
+      "r_ratio": 3.0,
+      "rich_pct": 0.609641,
+      "seed_rich": 18049103155998365200,
+      "seed_starved": 5745388314619330298,
+      "starved_pct": 5.086404
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-ipda",
+      "r_name": "extreme_positive_stress_r10",
+      "r_ratio": 10.0,
+      "rich_pct": 1.113642,
+      "seed_rich": 18319062107602199627,
+      "seed_starved": 13449024361834460110,
+      "starved_pct": 4.899805
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-pacm",
+      "r_name": "positive_mirror_of_girard_reydet_0p65",
+      "r_ratio": 1.538462,
+      "rich_pct": 0.307325,
+      "seed_rich": 2448890808455420550,
+      "seed_starved": 17600353907469571108,
+      "starved_pct": 4.511271
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-pacm",
+      "r_name": "positive_mirror_of_girard_reydet_0p45",
+      "r_ratio": 2.222222,
+      "rich_pct": 0.436657,
+      "seed_rich": 5450319251854372343,
+      "seed_starved": 6570710928210643138,
+      "starved_pct": 4.759019
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-pacm",
+      "r_name": "extreme_positive_stress_r3",
+      "r_ratio": 3.0,
+      "rich_pct": 0.617731,
+      "seed_rich": 13372287621567464230,
+      "seed_starved": 14991510583839048076,
+      "starved_pct": 4.979897
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-pacm",
+      "r_name": "extreme_positive_stress_r10",
+      "r_ratio": 10.0,
+      "rich_pct": 1.163881,
+      "seed_rich": 10010168081894349994,
+      "seed_starved": 2473030314357257764,
+      "starved_pct": 5.11085
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-mxda",
+      "r_name": "positive_mirror_of_girard_reydet_0p65",
+      "r_ratio": 1.538462,
+      "rich_pct": 0.188117,
+      "seed_rich": 6716158039288003000,
+      "seed_starved": 7844241796252678337,
+      "starved_pct": 5.163526
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-mxda",
+      "r_name": "positive_mirror_of_girard_reydet_0p45",
+      "r_ratio": 2.222222,
+      "rich_pct": 0.396867,
+      "seed_rich": 14676739508383371917,
+      "seed_starved": 16320888156661845014,
+      "starved_pct": 4.979791
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-mxda",
+      "r_name": "extreme_positive_stress_r3",
+      "r_ratio": 3.0,
+      "rich_pct": 0.433385,
+      "seed_rich": 6107318373082254155,
+      "seed_starved": 3330284174432619371,
+      "starved_pct": 5.15399
+    },
+    {
+      "direction_holds": true,
+      "hardener": "hardener-mxda",
+      "r_name": "extreme_positive_stress_r10",
+      "r_ratio": 10.0,
+      "rich_pct": 0.873127,
+      "seed_rich": 12211619157401414603,
+      "seed_starved": 10329916725641296802,
+      "starved_pct": 5.269258
+    }
+  ],
+  "verdict": "H2_SURVIVED_UNDER_POSITIVE_SUBSTITUTION_STRESS"
+}

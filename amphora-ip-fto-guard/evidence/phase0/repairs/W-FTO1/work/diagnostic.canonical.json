@@ -1,0 +1,245 @@
+{
+  "campaign_item_id": "W-FTO1",
+  "charted_family_count": 6,
+  "does_not_close": [
+    "No FTO, no legal advice, no clearance opinion. This is a re-derivation exercise over the fixture's own claim-charted families using public patent text already on disk.",
+    "The 'broad / practitioner-cautious' construction for family n=1 is presented as a REASONABLE alternative a competent, cautious FTO counsel could adopt -- not as a definitive infringement conclusion. Whether counsel would ultimately adopt it requires prosecution-history review (file wrapper, any examiner remarks on 'about 70 percent' during examination) which this audit does not perform.",
+    "Does not modify the manifest (66 receipts / 11 modules), the pinned patent_landscape.json fixture, or any signed Phase-0 KPI.",
+    "AUDIT_ONLY: promotes no authority and flips no scientific_readiness."
+  ],
+  "excluded_families": [
+    26
+  ],
+  "families_excluded": 1,
+  "families_tested": 5,
+  "flip_families": [
+    1
+  ],
+  "hash_and_count_lock": {
+    "fixture_modified": false,
+    "manifest_module_count_unchanged": true,
+    "manifest_receipt_count_unchanged": true,
+    "note": "This run reads patent_landscape.json read-only; it is never written."
+  },
+  "headline": "Family n=1 (WO2016187380A1): the fixture's bright-line 'reads_on_ours: NO' rests in part on treating claim 1's hedge-qualified 'volume solids content of greater than about 70 percent' as a bare, unqualified 70% threshold. Re-reading the ACTUAL claim text and the specification's own disclosed 'high volume solids' embodiment ranges (which extend down to 'about 50%' and '60% to about 95%' for the identical concept) shows a reasonable, spec-informed construction under which a ~65% VS coating is not confidently excluded. This is a genuine claim-construction-sensitivity flip: 4/5 tested families (n=2,3,4,5) are robust across all three constructions tested (narrow, plain, broad); n=1 is not.",
+  "inputs": {
+    "patent_landscape_fixture_path": "amphora-ip-fto-guard/reference/mvp20/data/patent_landscape.json",
+    "patent_landscape_fixture_sha256": "52ada09074f435d515a8286e57b1d31da40fcbe3d0ec4f79a9be754e5cce63dc",
+    "raw_snapshot_sha256_pins_reused_from": "amphora-ip-fto-guard/evidence/audit/claim-chart-provenance-v1/SHA256SUMS.raw",
+    "raw_snapshot_sha256_reverified": {
+      "EP2653485A2.html": "54ea48f9eb65fbd93fdd1b479a4fd1c410ad1f1c74c96e22470b983c1c28cd0e",
+      "EP2931822A2.html": "b7831640e0c5585356d774043e62174e1d08c7f1947eab5a0f4b4c4ff05a1a15",
+      "EP3328938B1.html": "2be62772cd5b6e74c1c35f093638da55001879bd025bb54bc0252717fa567a11",
+      "US5059640A.html": "dbe292c5d6054a1e73ecc8903d5e4d5c515cc011640c6cbb55fdedb65edee4f2",
+      "WO2013159277A1.html": "14cfaa8dcc87f0065e2da9b85f159262adfd83fa95bd5f57f9df339c6e231d3a",
+      "WO2016187380A1.html": "f8dc254181e4b5171f6678009d1f6f65b17c0d7e9961fcd6127c4d93b1b735b2"
+    }
+  },
+  "module": "amphora-ip-fto-guard",
+  "no_flip_families": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "non_circularity": "Real claim-1 text is independently re-derived from the same hash-pinned raw HTML snapshots the prior claim-chart-provenance-v1 audit already fetched and pinned (SHA256 re-verified below, byte-for-byte, before use); this run performs no new network fetch. Constructions are applied to the REAL claim text and the REAL specification disclosure, not to the fixture's paraphrase.",
+  "purpose": "Falsification attack on the claim: 'The FTO screen's conclusions are robust to reasonable variation in how patent claims are construed', restricted to the 6 claim-charted families in patent_landscape.json (independent_claim_chart.charted=true).",
+  "results": [
+    {
+      "constructions": [
+        {
+          "basis": "Fixture `why` field treats the limitation as a bare threshold: 'our VS ~65% (<70%)'.",
+          "construed_scope": "volume solids content > 70.0% exactly, no tolerance",
+          "name": "narrow (fixture-implicit)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "Real claim 1 text (independently re-derived, quoted below) says 'volume solids content of greater than about 70 percent', not a bare '70 percent'. A POSA applying ordinary claim-construction practice to an 'about'-qualified numeric limitation gives it a modest tolerance tied to the field's own measurement reproducibility (ASTM D2697 / D5201 volume-solids determinations are typically reproducible to a few points, not to +/-5 points).",
+          "construed_scope": "volume solids content roughly >= 67-68% (small 'about' tolerance around 70%)",
+          "name": "plain/ordinary (POSA, hedge honored, modest tolerance)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "The specification's own general description of the invention (quoted below) discloses OVERLAPPING 'high volume solids' embodiment ranges for the same concept the claim numerically pins at 'about 70 percent': 'about 50% to about 100%', '60% to about 95%', and '70% to about 90%'. FTO counsel construing an ambiguous, hedge-qualified numeric term is expected to adopt the reading LEAST favorable to a clean-exclusion conclusion (i.e. the broadest reading a competent adversary could press), not the reading most convenient for the screen. Read in light of the spec's own lower embodiment floors for the identical 'high volume solids' concept, 'about 70 percent' is not demonstrably a hard, isolated 70.0% cutoff -- a coating at ~65% VS sits inside two of the three disclosed embodiment ranges for the same invention concept ('about 50% to about 100%' and '60% to about 95%'), so it cannot be confidently excluded on this limitation alone without further quantitative work the fixture does not do.",
+          "construed_scope": "volume solids content within the invention's own disclosed 'high volume solids' embodiment space (as low as ~50-60%), not a rigid 70.0% line",
+          "name": "broad / specification-informed, practitioner-cautious",
+          "ours_within_scope": "AMBIGUOUS / NOT CLEARLY EXCLUDED",
+          "reads_on_ours_under_this_construction": "UNCERTAIN (not a confident NO)"
+        }
+      ],
+      "doc": "WO2016187380A1",
+      "fixture_reads_on_ours": "NO",
+      "fixture_why": "no distinct reactive polar compatibilizer; our VS ~65% (<70%). Two independent limitations missing.",
+      "flip": true,
+      "grounding_term_tested": "volume solids content of greater than about 70 percent (claim 1)",
+      "n": 1,
+      "note_on_other_limitation": "Family 1's NO also rests on a second, independent limitation ('no distinct reactive polar compatibilizer', claim-1 component (c)). That element was separately checked: claim 1 requires component (c) as a THIRD, distinct ingredient beyond (a) epoxy and (b) polyamide hardener; our_primer_assumed lists epoxy + polyamide hardener + silica extender + iron-oxide color + solvent -- no third reactive/polar component under any construction tested (narrow, plain, or broad functional reading of 'reactive compatibilizer agent ... having at least one polar functionality'). This element does NOT flip; only the volume-solids element does.",
+      "our_baseline_assumed": "commodity DGEBA epoxy + dimer-acid reactive polyamide + silica extender + iron-oxide color + naphtha/butanol solvent; two-pack solvent-borne; volume solids ~65% (below 70%).",
+      "raw_snapshot_sha256": "f8dc254181e4b5171f6678009d1f6f65b17c0d7e9961fcd6127c4d93b1b735b2",
+      "real_claim1_excerpt": "What is claimed is: 1 . A curable epoxy resin coating composition useful for preparing a coating comprising: (a) at least one epoxy resin; (b) at least one polyamide hardener; and (c) at least one reactive compatibilizer agent having at least one polar functionality; wherein the curable epoxy resin coating composition has a volume solids content of greater than about 70 percent; and wherein the curable epoxy resin coating composition, when cured, shows a value of blooming and blushing from 4 to 5.",
+      "specification_disclosure_excerpt": "the high volume solids of the curable composition may range from about 50 % to about 100 %. In various embodiments, the high volume solids of the curable composition may range from about 50 % to about 100 %, from 60 % to about 95 %, or from 70 % to about 90 %.",
+      "verdict": "FLIP - NOT ROBUST"
+    },
+    {
+      "constructions": [
+        {
+          "basis": "Fixture: 'a specific micronized polyamide RHEOLOGY additive, not a curing agent'.",
+          "construed_scope": "solid powder, median particle size 1-10 um, specific diamine/monoacid/fatty-acid triad",
+          "name": "narrow (fixture-implicit)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "Real claim 1 (quoted below) requires 'a median particle size ranging from 1 um to 10 um'. A liquid curative has no median particle size in the ordinary sense a POSA in coatings/rheology additives would apply the term (a solid-particulate distribution measurement); the term does not read on a bulk liquid under its plain meaning.",
+          "construed_scope": "solid/powder form only",
+          "name": "plain/ordinary (POSA)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "Even reading 'particle size' as broadly as the specification allows (dispersed/emulsified droplet form is discussed elsewhere in the spec for handling), our_primer_assumed's 'dimer-acid reactive polyamide' is compositionally a condensation product of DIMER fatty acids with polyamines -- chemically outside the claim's own closed acid set (diamine limited to ethylene/hexamethylene diamine; monoacid limited to acetic/propionic; fatty acid limited to 12-hydroxystearic/lesquerolic). 'Consisting essentially of' this specific triad forecloses a broad reading that would sweep in a structurally different dimer-acid curative.",
+          "construed_scope": "closed triad (specified diamine + specified monoacid + specified fatty acid), any form",
+          "name": "broad / practitioner-cautious",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        }
+      ],
+      "doc": "EP3328938B1",
+      "fixture_reads_on_ours": "NO",
+      "fixture_why": "claims a specific micronized polyamide RHEOLOGY additive, not a curing agent; our dimer-acid liquid polyamide curative is different chemistry. The ONLY live-granted family here.",
+      "flip": false,
+      "grounding_term_tested": "median particle size 1-10 um + closed diamine/monoacid/fatty-acid triad (claim 1)",
+      "n": 2,
+      "our_baseline_assumed": "commodity DGEBA epoxy + dimer-acid reactive polyamide + silica extender + iron-oxide color + naphtha/butanol solvent; two-pack solvent-borne; volume solids ~65% (below 70%).",
+      "raw_snapshot_sha256": "2be62772cd5b6e74c1c35f093638da55001879bd025bb54bc0252717fa567a11",
+      "real_claim1_excerpt": "Claims ( 17 ) A polyamide composition consisting essentially of a polyamide having groups derived from: a diamine selected from the group consisting of ethylene diamine and hexamethylene diamine; a straight chain monocarboxylic acid independently selected from the group consisting of: acetic acid, propionic acid, and combinations thereof; a fatty acid independently selected from the group consisting of: 12-hydroxystearic acid, lesquerolic acid and combinations thereof; wherein the diamine, the straight chain monocarboxylic acid and fatty acid have a molar equivalent ratio ranging from 1:1.75: 0.25 to 1:0.75:1.25; or 1:1.5:0.5 to 1:1:1; and a median particle size ranging from 1 \u00b5m to 10 \u00b5m.",
+      "specification_disclosure_excerpt": null,
+      "verdict": "NO_FLIP - ROBUST"
+    },
+    {
+      "constructions": [
+        {
+          "basis": "Fixture: 'we use standard DGEBA only, no CHDM epoxy'.",
+          "construed_scope": "CHDM (1,4-cyclohexanedimethanol) diglycidyl ether epoxy resin specifically",
+          "name": "narrow (fixture-implicit)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "CHDM is a specific, named aliphatic diol (1,4-cyclohexanedimethanol); DGEBA's backbone is bisphenol-A, an aromatic diphenol. The terms name chemically non-overlapping monomer classes.",
+          "construed_scope": "same as narrow -- the term is a specific chemical name, not a functional term",
+          "name": "plain/ordinary (POSA)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "Even the broadest reading in the spec ('CHDM epoxy resin may include a mixture of CHDM diglycidylether with other compounds such as impurities') stays anchored to CHDM as the defining monomer; it does not extend to bisphenol-A-based DGEBA under any disclosed embodiment.",
+          "construed_scope": "CHDM-monomer-containing epoxy resins, including minor-impurity variants -- still excludes DGEBA",
+          "name": "broad / practitioner-cautious",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        }
+      ],
+      "doc": "EP2931822 via US2015/0329739A1 family member (EP claims did not render)",
+      "fixture_reads_on_ours": "NO (caveat: read US family claim, not EP)",
+      "fixture_why": "we use standard DGEBA only, no CHDM epoxy.",
+      "flip": false,
+      "grounding_term_tested": "CHDM (1,4-cyclohexanedimethanol) epoxy resin component (claim 1)",
+      "n": 3,
+      "our_baseline_assumed": "commodity DGEBA epoxy + dimer-acid reactive polyamide + silica extender + iron-oxide color + naphtha/butanol solvent; two-pack solvent-borne; volume solids ~65% (below 70%).",
+      "raw_snapshot_sha256": "b7831640e0c5585356d774043e62174e1d08c7f1947eab5a0f4b4c4ff05a1a15",
+      "real_claim1_excerpt": "ted to a curable coating composition including: a blend of at least two or more epoxy resins wherein at least one of the epoxy resins comprises (i) a CHDM epoxy resin (10 weight percent [wt %] to 95 wt %) having less than ( \u2047 ) 2 wt % chlorine (CI) content; and (ii) at least one other epoxy resin other than the epoxy resin in component (i) (5 wt % to 90 wt %); and the blend of at least two or more epoxy resins can include a CHDM epoxy resin component (i) having \u2047 10 wt % CHDM monoglycidyl ether or \u2047 30 wt % oligomeric epoxy resin.",
+      "specification_disclosure_excerpt": null,
+      "verdict": "NO_FLIP - ROBUST"
+    },
+    {
+      "constructions": [
+        {
+          "basis": "Fixture: 'no chlorinated polyolefin terpolymer in our primer'.",
+          "construed_scope": "poly(vinyl chloride-vinyl alcohol-vinyl acetate) or poly(vinyl chloride-vinyl acetate-maleic acid) terpolymer",
+          "name": "narrow (fixture-implicit)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "Spec names commercial exemplars (CONVINYL G-75, C-47) and gives explicit monomer-unit mole-percent ranges; the term is understood in the field as a specific chlorine-bearing vinyl terpolymer class, not any halogen-containing additive.",
+          "construed_scope": "same as narrow",
+          "name": "plain/ordinary (POSA)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "Even under the broadest disclosed variant (either named terpolymer chemistry, 1-20 wt% loading window), the limitation requires a chlorine-bearing terpolymer component to be PRESENT; our_primer_assumed contains no chlorinated component of any kind (DGEBA + dimer-acid polyamide + silica + iron oxide + naphtha/butanol). Absence of any candidate ingredient forecloses a flip regardless of how broadly the term is read.",
+          "construed_scope": "any chlorine-bearing polyolefin terpolymer at 1-20 wt%",
+          "name": "broad / practitioner-cautious",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        }
+      ],
+      "doc": "WO2013159277A1",
+      "fixture_reads_on_ours": "NO",
+      "fixture_why": "no chlorinated polyolefin terpolymer in our primer.",
+      "flip": false,
+      "grounding_term_tested": "chlorinated polyolefin based terpolymer, 1-20 wt% (claim 1)",
+      "n": 4,
+      "our_baseline_assumed": "commodity DGEBA epoxy + dimer-acid reactive polyamide + silica extender + iron-oxide color + naphtha/butanol solvent; two-pack solvent-borne; volume solids ~65% (below 70%).",
+      "raw_snapshot_sha256": "14cfaa8dcc87f0065e2da9b85f159262adfd83fa95bd5f57f9df339c6e231d3a",
+      "real_claim1_excerpt": "or a mixture thereof; b) from 1 wt.% to 20 wt.% a chlorinated polyolefin based terpolymer; and c) from 1 wt.%) to 40 wt.% a curing agent.",
+      "specification_disclosure_excerpt": null,
+      "verdict": "NO_FLIP - ROBUST"
+    },
+    {
+      "constructions": [
+        {
+          "basis": "Fixture: 'primary has no zinc phosphate; Enhanced-65 has zinc phosphate alone, with no molybdate/benzoate'.",
+          "construed_scope": "consisting essentially of ALL THREE: zinc phosphate + zinc molybdate + zinc benzoate salt, each within its stated parts-by-weight window",
+          "name": "narrow (fixture-implicit)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "'Consisting essentially of' (a recognized intermediate transitional phrase) still requires the basic and novel characteristic -- here, presence of all three named zinc salts -- to be met; it does not excuse ABSENCE of a required component, only tolerate unlisted non-material additions.",
+          "construed_scope": "same as narrow",
+          "name": "plain/ordinary (POSA)",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        },
+        {
+          "basis": "No construction of 'consisting essentially of X, Y, and Z' can be stretched to cover a formulation missing X entirely (primary) or missing Y and Z entirely (Enhanced-65); this is a presence/absence question, not an interpretive-boundary question, so breadth of construction cannot supply an absent ingredient. (Separately, the patent is EXPIRED ~2003 by fee lapse, so a flip here would not even change FTO risk -- noted for completeness, not relied upon for the construction verdict.)",
+          "construed_scope": "same as narrow",
+          "name": "broad / practitioner-cautious",
+          "ours_within_scope": false,
+          "reads_on_ours_under_this_construction": "NO"
+        }
+      ],
+      "doc": "US5059640A",
+      "fixture_reads_on_ours": "NO",
+      "fixture_why": "primary has no zinc phosphate; Enhanced-65 has zinc phosphate alone, with no molybdate/benzoate; also EXPIRED.",
+      "flip": false,
+      "grounding_term_tested": "consisting essentially of zinc phosphate + zinc molybdate + zinc benzoate triad (claim 1)",
+      "n": 5,
+      "our_baseline_assumed": "commodity DGEBA epoxy + dimer-acid reactive polyamide + silica extender + iron-oxide color + naphtha/butanol solvent; two-pack solvent-borne; volume solids ~65% (below 70%).",
+      "raw_snapshot_sha256": "dbe292c5d6054a1e73ecc8903d5e4d5c515cc011640c6cbb55fdedb65edee4f2",
+      "real_claim1_excerpt": "consisting essentially of about 10 to 120 parts by weight of at least one zinc phosphate, 40 to 260 parts by weight of zinc molybdate, and 1 to 30 parts by weight of at least one zinc salt of a benzoic acid, e.g. substituted zinc benzoate.",
+      "specification_disclosure_excerpt": null,
+      "verdict": "NO_FLIP - ROBUST"
+    },
+    {
+      "doc": "EP2653485A2",
+      "flip": null,
+      "n": 26,
+      "prior_refuting_receipt": "amphora-ip-fto-guard/evidence/audit/claim-chart-provenance-v1/claim-chart-provenance-receipt.v1.dsse.json",
+      "prior_refuting_receipt_sha256": "099d682faf024dcfaea27518de0b32adda3a6aed61ee6d711795fb18fb664c5e",
+      "reason": "evidence/audit/claim-chart-provenance-v1 (ledger entry fire_id 20260803T150004-335042-88e86edf7333, verdict REFUTED, 2026-08-03T15:08:37Z) already found this family's charted 'polyurea topcoat' element was not faithfully re-derived from the real claim text it cites. Running a claim-construction-sensitivity test on top of a chart already found fabricated would test the fabrication, not claim construction; the prior REFUTED finding stands and is not re-litigated here.",
+      "status": "EXCLUDED_MOOT_PRIOR_PROVENANCE_DEFECT",
+      "verdict": "EXCLUDED"
+    }
+  ],
+  "run_type": "audit_re_derivation",
+  "schema": "amphora.ip-fto-guard.claim-construction-sensitivity.v1",
+  "study_id": "amphora-ip-fto-guard/W-FTO1/claim-construction-sensitivity",
+  "theory_reference": "Phillips v. AWH Corp., 415 F.3d 1303 (Fed. Cir. 2005) (en banc) -- claims construed in light of the specification and prosecution history, not in isolation; Pall Corp. v. Micron Separations, Inc., 66 F.3d 1211 (Fed. Cir. 1995) -- 'about'/approximation terms construed by context, breadth varies with specification support; MPEP 2111.01 -- broadest reasonable interpretation informs how a competent, cautious practitioner should treat an ambiguous claim term for clearance purposes.",
+  "verdict": "CLAIM_REFUTED"
+}

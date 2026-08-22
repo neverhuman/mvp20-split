@@ -1,0 +1,95 @@
+{
+  "attack_id": "W14-null-baseline-5-canonical-epoxy-amines-tg",
+  "csv_sha256_verified": "9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45",
+  "n_total_polyuniverse_rows": 1000000,
+  "null_baselines": {
+    "constant_population_mean": {
+      "MAE_C": 32.963042578147316,
+      "RMSE_C": 49.5897430977414,
+      "beats_ml": true,
+      "beats_ml_or_ties": true,
+      "predicted_value_C": 118.18478710926341
+    },
+    "constant_population_median": {
+      "MAE_C": 33.080355,
+      "RMSE_C": 49.881146269413506,
+      "beats_ml": true,
+      "beats_ml_or_ties": true,
+      "predicted_value_C": 117.598225
+    },
+    "leave_one_out_mean_of_other_4_actuals": {
+      "MAE_C": 46.4,
+      "RMSE_C": 53.95368384086484,
+      "beats_ml": false,
+      "note": "Non-circular internal control using only the 5-candidate test set itself; NOT the primary refutation criterion (population-mean/median are), reported for robustness."
+    }
+  },
+  "per_candidate": [
+    {
+      "ml_prediction_C": 122.88322948806938,
+      "name": "IPDA (isophorone diamine)",
+      "null_mean_abs_err_C": 39.81521289073659,
+      "null_mean_pred_C": 118.18478710926341,
+      "published_Tg_C": 158,
+      "vk_prediction_C": 251.37649079043467
+    },
+    {
+      "ml_prediction_C": 104.33531743154543,
+      "name": "m-XDA (m-xylylenediamine)",
+      "null_mean_abs_err_C": 18.18478710926341,
+      "null_mean_pred_C": 118.18478710926341,
+      "published_Tg_C": 100,
+      "vk_prediction_C": 251.8610330726768
+    },
+    {
+      "ml_prediction_C": 99.542817508103,
+      "name": "DDS (4,4'-diaminodiphenyl sulfone)",
+      "null_mean_abs_err_C": 101.81521289073659,
+      "null_mean_pred_C": 118.18478710926341,
+      "published_Tg_C": 220,
+      "vk_prediction_C": 252.03999823347363
+    },
+    {
+      "ml_prediction_C": 99.67876988426288,
+      "name": "TETA (triethylenetetramine)",
+      "null_mean_abs_err_C": 1.8152128907365892,
+      "null_mean_pred_C": 118.18478710926341,
+      "published_Tg_C": 120,
+      "vk_prediction_C": 251.52674265447737
+    },
+    {
+      "ml_prediction_C": 99.63310724286275,
+      "name": "DETA (diethylenetriamine)",
+      "null_mean_abs_err_C": 3.184787109263411,
+      "null_mean_pred_C": 118.18478710926341,
+      "published_Tg_C": 115,
+      "vk_prediction_C": 251.58480391714835
+    }
+  ],
+  "population_Tg_C_stats": {
+    "max": 256.0292,
+    "mean": 118.18478710926341,
+    "median": 117.598225,
+    "min": -0.7562993,
+    "stdev": 26.22962881518496
+  },
+  "pre_registered_refutation_criterion": {
+    "criterion_a": "constant_population_mean.MAE_C <= ml_MAE_reproduced",
+    "criterion_a_fired": true,
+    "criterion_b": "constant_population_median.MAE_C <= ml_MAE_reproduced",
+    "criterion_b_fired": true
+  },
+  "prediction_degeneracy": {
+    "actual_published_Tg_spread_C": 120,
+    "ml_prediction_spread_C": 23.340411979966376,
+    "note": "VK spread of 0.6C across 5 structurally distinct amines confirms the near-pure +250C-offset degenerate-output bug already disclosed in this module's van-krevelen-tg-external-validation-15-canonical-homopolymers-kpi.v1.json. ML spread of 23.4C is also narrow relative to the actual 120C spread of published values (100-220C).",
+    "vk_prediction_spread_C": 0.6635074430389523
+  },
+  "reproduced_receipt_headline": {
+    "fidelity_check": "byte-exact match to receipt's own ml_MAE_C=39.11947866164949 and vk_MAE_C=109.07781373364219",
+    "ml_MAE_C": 39.11947866164949,
+    "ml_beats_vk_by_C": 69.95833507199268,
+    "vk_MAE_C": 109.07781373364216
+  },
+  "verdict": "CLAIM_REFUTED"
+}

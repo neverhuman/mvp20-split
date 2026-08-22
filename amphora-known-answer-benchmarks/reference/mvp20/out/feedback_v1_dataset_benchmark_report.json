@@ -1,0 +1,96 @@
+{
+  "blocked_source_warnings": [
+    {
+      "reason": "missing_kaggle_credentials",
+      "source_id": "kaggle_neurips_open_polymer_prediction",
+      "status": "BLOCKED_AFTER_ATTEMPTS"
+    },
+    {
+      "reason": "manual_export_required_no_official_bulk_api_export_found",
+      "source_id": "nanomine",
+      "status": "BLOCKED_AFTER_ATTEMPTS"
+    },
+    {
+      "reason": null,
+      "source_id": "nist_corr_data",
+      "status": "PARTIAL"
+    },
+    {
+      "reason": "bulk_download_prohibited_no_official_export_found",
+      "source_id": "polyinfo",
+      "status": "BLOCKED_AFTER_ATTEMPTS"
+    },
+    {
+      "reason": "service_reference_metadata_only_no_public_dataset_artifact_found",
+      "source_id": "polymer_genome",
+      "status": "BLOCKED_AFTER_ATTEMPTS"
+    },
+    {
+      "reason": "metadata_downloaded_no_dataset_artifact_found",
+      "source_id": "polyomics",
+      "status": "PARTIAL"
+    }
+  ],
+  "generated_at": "2026-07-10T20:51:29Z",
+  "manifest_hash": "6af21c2a58127f217b71cfdd9f25107fc1a7935c5d434e2f6ae725a8cae37685",
+  "manifest_sha256": "f5d367ed0338b73ed53876c24eca831cba438662417e811d472bc65103a59aa4",
+  "metrics": {
+    "acquired_or_partial_rate": 0.7333,
+    "acquired_or_partial_source_count": 11,
+    "acquisition_terminal_pass_rate": 1.0,
+    "blocked_after_attempts_source_count": 4,
+    "blocked_source_count": 6,
+    "checksum_expected_count": 7,
+    "checksum_pass_count": 7,
+    "checksum_pass_rate": 1.0,
+    "derived_row_counts": {
+      "nist_corr_reference.json": 24721,
+      "polymer_corpus_rows.jsonl": 836771,
+      "solvent_precedent_index.json": 269
+    },
+    "schema_pass_count": 15,
+    "schema_pass_rate": 1.0,
+    "skipped_source_count": 0,
+    "source_count": 15
+  },
+  "schema_version": "amphora.feedback_v1.dataset_benchmark_report.v1",
+  "source_ids": [
+    "bigsoldb_v2",
+    "kaggle_neurips_open_polymer_prediction",
+    "nanomine",
+    "nist_corr_data",
+    "omg_physical_properties",
+    "omg_public_zips",
+    "openpoly_benchmark",
+    "pi1m_v2",
+    "point2_metadata",
+    "polyinfo",
+    "polymer_genome",
+    "polyomics",
+    "polyuniverse_epoxy",
+    "polyverse_selected",
+    "radonpy_pi1070"
+  ],
+  "source_status_counts": {
+    "ACQUIRED": 9,
+    "BLOCKED_AFTER_ATTEMPTS": 4,
+    "PARTIAL": 2
+  },
+  "source_statuses": {
+    "bigsoldb_v2": "ACQUIRED",
+    "kaggle_neurips_open_polymer_prediction": "BLOCKED_AFTER_ATTEMPTS",
+    "nanomine": "BLOCKED_AFTER_ATTEMPTS",
+    "nist_corr_data": "PARTIAL",
+    "omg_physical_properties": "ACQUIRED",
+    "omg_public_zips": "ACQUIRED",
+    "openpoly_benchmark": "ACQUIRED",
+    "pi1m_v2": "ACQUIRED",
+    "point2_metadata": "ACQUIRED",
+    "polyinfo": "BLOCKED_AFTER_ATTEMPTS",
+    "polymer_genome": "BLOCKED_AFTER_ATTEMPTS",
+    "polyomics": "PARTIAL",
+    "polyuniverse_epoxy": "ACQUIRED",
+    "polyverse_selected": "ACQUIRED",
+    "radonpy_pi1070": "ACQUIRED"
+  }
+}

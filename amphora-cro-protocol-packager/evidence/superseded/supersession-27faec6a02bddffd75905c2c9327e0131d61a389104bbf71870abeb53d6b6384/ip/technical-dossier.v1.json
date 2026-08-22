@@ -1,0 +1,12 @@
+{
+  "applicability_domain": [
+    "registered amphora-cro-protocol-packager contract and synthetic fixtures",
+    "abstain on malformed, stale, unauthorized, or out-of-contract input"
+  ],
+  "claim_contract_sha256": "ad724685966d0aa89079aae3fa35b7f3e0563cc966c42d76b7d51438e038d26d",
+  "fto_status": "FTO NOT PERFORMED",
+  "module_id": "amphora-cro-protocol-packager",
+  "schema": "amphora.module-phase0-technical-dossier.v1",
+  "scientific_success_asserted": false,
+  "status": "PREPARED_NOT_PROMOTED"
+}

@@ -1,0 +1,34 @@
+{
+  "study_id": "amphora-molecule-property-rc03-deliverable2-ad-gate-v1",
+  "campaign_item_id": "R-C03",
+  "repair_deliverable": "2_of_3: applicability-domain gate (training-label range + Tanimoto NN-distance threshold) on Tg/density predictors",
+  "seed": 0,
+  "coverage_target": 0.9,
+  "abstention_target": 0.9,
+  "featurization": {
+    "morgan_radius": 2,
+    "morgan_bits": 512,
+    "additional_rf_feature": "log10(MolWt+1)"
+  },
+  "openpoly_csv_sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
+  "polyuniverse_csv_sha256": "9f1f5c593463b9c26a026948901e37b4db545d17f05d5cd80baca5c3e14e0c45",
+  "radonpy_csv_sha256": "4ee41d526db3d03eb5b83010672b4e63a4d51a114871a2187ca7fd57d30556a4",
+  "radonpy_macro_bisection": {
+    "n_macro_a": 16,
+    "n_macro_b": 1061,
+    "method": "scipy average-linkage agglomerative clustering on full Tanimoto distance matrix, fcluster maxclust=2 (same procedure as C7 fire 2)"
+  },
+  "all_four_legs_pass_acceptance": true,
+  "all_positive_controls_fired": true,
+  "source_attack_receipts": {
+    "c7_final_verdict": "amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/c7_final_tg_density_external_validity_verdict_receipt.v1.json",
+    "c7_fire2_density_macro_bisection": "amphora-molecule-property/benchmarks/density-butina-cluster-external-validity-c7-v2/c7_density_macro_bisection_external_validity_receipt.v1.json"
+  }
+}
+...
+tg_A_train_openpoly_test_polyuniverse abst= 1.0 cov= 0.9007 pass= True pc_fired= True
+tg_B_train_polyuniverse_test_openpoly abst= 1.0 cov= 0.9018 pass= True pc_fired= True
+density_A_train_macro_a_test_macro_b abst= 0.9821 cov= 0.9375 pass= True pc_fired= True
+density_B_train_macro_b_test_macro_a abst= 0.9375 cov= 0.9001 pass= True pc_fired= True
+ALL_PASS True ALL_PC_FIRED True
+WROTE diagnostic.out.json

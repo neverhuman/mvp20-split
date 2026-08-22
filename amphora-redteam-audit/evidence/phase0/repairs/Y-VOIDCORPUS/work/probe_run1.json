@@ -1,0 +1,66 @@
+{
+  "schema": "amphora.deterministic-control-diagnostic.v1",
+  "module_id": "amphora-redteam-audit",
+  "implementation_readiness": "COMPLETE",
+  "expected_fixture_outcomes": {
+    "negative-corpus": "REJECT",
+    "valid-baseline": "ACCEPT"
+  },
+  "observed_fixture_outcomes": {
+    "negative-corpus": "REJECT",
+    "valid-baseline": "ACCEPT"
+  },
+  "positive_control_count": 1,
+  "negative_control_count": 30000,
+  "zero_authority_assertions": {
+    "fto_not_performed": true,
+    "no_optimizer_authority": true,
+    "no_patentability_authority": true,
+    "no_procurement_authority": true,
+    "no_product_performance_authority": true,
+    "no_qualification_authority": true,
+    "no_ranking_authority": true,
+    "no_regulatory_authority": true,
+    "no_release_authority": true,
+    "no_safety_authority": true
+  },
+  "details": {
+    "all_negative_states_rejected": true,
+    "attack_axes": [
+      "IDENTITY_OR_MODULE_SUBSTITUTION",
+      "REGISTRY_TAMPERING",
+      "REGISTRY_SUPERSESSION_TAMPERING",
+      "FOLDER_CONFINEMENT_ESCAPE",
+      "DSSE_FORGERY",
+      "DSSE_WRONG_ROLE",
+      "DSSE_LOCAL_SIGNER",
+      "DSSE_REVOKED_SIGNER",
+      "DSSE_SAME_SIGNER",
+      "FALSE_HUMAN_REVIEW",
+      "INCOMPLETE_POLICY",
+      "ALTERED_DIAGNOSTIC",
+      "NONDETERMINISTIC_DIAGNOSTIC",
+      "FALSE_EXECUTION_COMPLETION",
+      "UNEXECUTED_SCIENCE",
+      "RIGHTS_LAUNDERING",
+      "EVIDENCE_LAUNDERING",
+      "SOURCE_DUPLICATE",
+      "SOURCE_MISSING_FIELD",
+      "SOURCE_WAIVER_LAUNDERING",
+      "REPORT_SIGNATURE_DEFECT",
+      "REPORT_ENVELOPE_BINDING_DEFECT",
+      "REPORT_CLAIM_LOCK_DEFECT",
+      "AUTHORITY_ESCALATION"
+    ],
+    "authority_granted_count": 0,
+    "corpus_algorithm": "singletons-then-pairs-then-ascending-masks-popcount-gte-3-v1",
+    "corpus_sha256": "874b87aa1500edc08d498a0351025d51869171b24138b2c2a5a02f58d9e53eae",
+    "covered_axis_count": 24,
+    "covered_axis_pair_count": 276,
+    "negative_case_count": 30000,
+    "required_axis_pair_count": 276,
+    "result_digest": "c3531c5b945372916c88c379a1f4f60f6a17dae14d6141f664dc6e91356a66a8",
+    "unique_negative_case_count": 30000
+  },
+  "passed": true
+}
